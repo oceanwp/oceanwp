@@ -1,5 +1,38 @@
 # Ocean Changelog
 
+### *2016.12.20* - 1.1.0
+Warning: The name of the theme changed to OceanWP because Ocean was already taken, WordPress will see the OceanWP theme as a new theme, so, you need to do a fews steps, look at this video:
+https://youtu.be/s5TUYhUMc-8
+
+1. In your WordPress dashboard, go to Theme Panel > Import/Export, and click on the export button, this will generate a json file.
+2. Install and activate the Widget Importer & Exporter plugin and go to Tools > Widget Import/Export to export your widgets.
+3. Download the new version of the theme on oceanwp.org.
+4. Return to your WordPress dashboard and upload the new version.
+5. If not already done, update WordPress, then, update all extensions.
+6. Go to Theme Panel > Import/Export and import the json file of the step 1.
+7. Go to Appearance > Widgets and delete all your widgets to prevent conflicts (optional).
+8. Go to Tools > Widget Import/Export and import the .wie file exported to the step 2.
+9. Check that everything is ok on your site, if so, go back to Appearance > Themes and delete the old Ocean theme.
+10. if you use a child theme, replace "wp_get_theme( 'Ocean' )" by "wp_get_theme( 'OceanWP' )".
+
+Do not worry, all your changes made to the theme will not be affected because I've not modified any filters, action or theme_mods.
+I'm really sorry for that, there will never be any changes of this kind again, I want the theme to be available in the WordPress directory, and the name Ocean was already taken in the waiting list, so I had to modify it to OceanWP.
+
+Do not hesitate to contact me via facebook or trough the support page if you have misunderstood or you are having an issue.
+
+* **Added** - New color option in the customizer to add a background to the transparent header style..
+* **Added** - Select2 script for the typography select.
+* **Added** - Typography for the H1, H2, H3 and H4 headings.
+* **Added** - New panel to add your own JS code directly into the customizer.
+* **Added** - New field in the customizer to add your own padding left/right for the menu items.
+* **Added** - New field in the customizer to add your own width for the dropdrow menu.
+* **Added** - function_exists to all functions in the helpers file, so you can alter them via the child theme.
+* **Tweak** - Large enhancement of the customizer options.
+* **Updated** - Font Awesome icons to 4.7.
+* **Deleted** - Options in the customizer to choose your links color between light and dark for the transparent header, you can choose your own color in the menu section.
+* **Fixed** - Problem to change the font size, font weight, letter spacing, etc, to the center header style.
+* **Fixed** - Problem with the button to open the mobile menu.
+
 ### *2016.12.12* - 1.0.9.1
 * **Fixed** - Problem with the customizer.
 
