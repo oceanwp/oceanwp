@@ -1,0 +1,101 @@
+ul.page-numbers {
+	display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0 0;
+    list-style: none;
+    text-align: right;
+    clear: both;
+
+    li {
+	    display: inline-block;
+	}
+}
+
+.page-links {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.page-numbers a,
+.page-numbers span,
+.page-links span {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 8px 0 0;
+    text-align: center;
+    color: $color-11;
+    border: 1px solid $border-color;
+    font-size: 18px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 2px;
+    transition: all .3s ease-in-out;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.page-numbers a span {
+    padding: 0;
+}
+
+.page-numbers a:hover,
+.page-links a:hover span,
+.page-numbers.current,
+.page-numbers.current:hover {
+    background-color: $color-8;
+    color: $color-2;
+}
+
+.oceanwp-pagination {
+    &.oceanwp-center ul.page-numbers,
+    &.oceanwp-center .page-links {
+        text-align: center;
+    }
+
+    &.oceanwp-left ul.page-numbers,
+    &.oceanwp-left .page-links {
+        text-align: left;
+    }
+}
+
+/* next/prev */
+.page-jump a {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.2;
+    padding-bottom: 3px;
+    border-bottom: 1px solid;
+    text-transform: uppercase;
+}
+
+/* infinite scroll */
+.infinite-scroll-loader {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -8px;
+    height: 16px;
+    line-height: 16px;
+    width: 30px;
+    background: url('./assets/img/loader.gif') center center no-repeat;
+    text-indent: -9999px;
+}
+
+#infscr-loading img {
+    display: none !important;
+}
+
+.infinite-scroll-nav {
+    display: none;
+}
+
+/* Add some padding */
+.infinite-scroll-wrap {
+    position: relative;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,15 @@
+.appearance_page_oceanwp-welcome .about-wrap .oceanwp-title { float: right; }
+.appearance_page_oceanwp-welcome .about-wrap .oceanwp-title .version { margin-right: 12px; margin-left: 0; }
+.appearance_page_oceanwp-welcome .about-wrap .social-wrap { float: left; }
+.appearance_page_oceanwp-welcome .about-wrap .social-wrap li { float: right; }
+.appearance_page_oceanwp-welcome .about-wrap .social-wrap li a { margin-right: 10px; margin-left: 0; }
+
+.appearance_page_oceanwp-welcome .about-wrap .oceanwp-bloc.col-2 { float: right; }
+.appearance_page_oceanwp-welcome .about-wrap .oceanwp-bloc.col-2.second { float: left; }
+
+.appearance_page_oceanwp-welcome .about-wrap .oceanwp-bloc h2.bloc-title:after { right: 50%; left: auto; margin-right: -30px; margin-left: 0; }
+
+
+.appearance_page_oceanwp-welcome .about-wrap .oceanwp-bloc ul.oceanwp-list li { float: right; }
+.appearance_page_oceanwp-welcome .about-wrap .oceanwp-bloc ul.oceanwp-list li:after { left: 0; right: auto; }
+.appearance_page_oceanwp-welcome .about-wrap .oceanwp-bloc ul.oceanwp-list li:nth-child(4n):after { right: -1px; left: auto; }

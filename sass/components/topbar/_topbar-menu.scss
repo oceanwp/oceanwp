@@ -1,0 +1,34 @@
+/**
+ * Top Bar Menu
+ */
+.top-bar-left.has-content .top-bar-menu,
+.top-bar-right.has-content .top-bar-menu {
+  margin: 0;
+  margin-right: 20px;
+  padding: 0;
+}
+
+.top-bar-menu,
+.top-bar-menu li {
+  display: block;
+  float: left;
+}
+
+#top-bar-content.top-bar-centered .top-bar-menu,
+#top-bar-content.top-bar-centered .top-bar-menu li {
+  display: inline-block;
+  float: none;
+}
+
+.top-bar-menu > li {
+  margin-right: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a .nav-arrow {
+    margin-left: 4px;
+    margin-right: 0;
+  }
+}

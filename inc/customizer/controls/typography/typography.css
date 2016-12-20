@@ -1,0 +1,7 @@
+/* Fix Select2 */
+body .select2-container { z-index: 99999999; }
+body .customize-control-select .select2-container { z-index: 1; }
+body .select2-container .select2-selection--single { height: 33px; }
+body .select2-container--default .select2-selection--single { height: 33px; border-color: #ddd; border-radius: 0; }
+body .select2-container--default .select2-selection--single .select2-selection__rendered { color: #32373c; line-height: 33px; }
+body .select2-container--default .select2-selection--single .select2-selection__arrow { height: 30px; }

@@ -1,0 +1,6 @@
+.customize-control-oceanwp-icon .icon-select { overflow-y: auto; border: 1px solid #ddd; max-height: 216px; }
+.customize-control-oceanwp-icon .icon-select label { display: block; float: left; width: 20%; text-align: center; }
+.customize-control-oceanwp-icon .icon-select .icon-select-input { display: none; }
+.customize-control-oceanwp-icon .icon-select .icon-select-label { display: block; background-color: #f5f5f5; color: #555; border: 1px solid #ddd; padding: 18px 14px; margin: 0; font-size: 16px; line-height: 1; transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -o-transition: all .3s ease; -ms-transition: all .3s ease; }
+.customize-control-oceanwp-icon .icon-select .icon-select-label:hover,
+.customize-control-oceanwp-icon .icon-select .icon-select-input:checked + .icon-select-label { background-color: #3498DB; color: #fff; border-color: #3498DB; }

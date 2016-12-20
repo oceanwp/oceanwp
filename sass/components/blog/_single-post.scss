@@ -1,0 +1,21 @@
+/**
+ * Single Post
+ */
+.single {
+	.thumbnail {
+		position: relative;
+		margin-bottom: 20px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	h1.entry-title {
+		font-size: 34px;
+	    padding: 0 0 20px;
+	    margin: 0 0 15px;
+	    border-bottom: 1px solid $color-9;
+	    letter-spacing: 0.6px;
+	}
+}

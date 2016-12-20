@@ -1,0 +1,41 @@
+/**
+ * MailChimp Widget
+ */
+.oceanwp-newsletter-form-wrap {
+    position: relative;
+
+    .oceanwp-mail-text {
+	    margin-bottom: 10px;
+	}
+
+	form {
+		position: relative;
+		max-width: 100%;
+    	margin: 0 auto;
+	}
+
+	input[type="email"] {
+	    height: 50px;
+	    padding: 0 15px;
+	    margin: 0;
+	}
+
+	button {
+	    display: block;
+	    position: absolute;
+	    top: 50%;
+	    right: 15px;
+	    padding: 0 15px;
+	    height: 60%;
+	    border-radius: 3px;
+	    -ms-transform: translateY(-50%);
+	    -webkit-transform: translateY(-50%);
+	    transform: translateY(-50%);
+	}
+}
+
+/* Prevent conflict with woocommerce */
+body.woocommerce .oceanwp-newsletter-form-wrap button {
+	padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}

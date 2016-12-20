@@ -1,0 +1,2 @@
+/* Fix for the tabs under the header in the edit mode */
+body.elementor-editor-active #main, .fl-builder-edit #main { z-index: 11; }

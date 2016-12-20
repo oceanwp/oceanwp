@@ -1,0 +1,83 @@
+// -----------------------------------\\
+// Silent Classes                     \\
+//                                    \\
+// Usage:                             \\
+// selector {                         \\
+//    @extend %selector;              \\
+// }                                  \\
+// -----------------------------------\\
+
+// The micro clearfix pleaceholder
+// ------------------------------------
+%clearfix {
+	*zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Clear element
+// ------------------------------------
+%clear {
+	display: block;
+	visibility: hidden;
+	clear: both;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+}
+
+// Reset list
+// ------------------------------------
+%reset-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// Inline list
+// ------------------------------------
+%inline-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	> li {
+		display: inline-block;
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	a {
+		display: block;
+	}
+}
+
+// Center-aligned a block level element
+// ------------------------------------
+%center-block {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+// Truncate text
+// ------------------------------------
+%truncate {
+	overflow: hidden;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-wrap: normal;
+}
+
+// Hide text
+// ------------------------------------
+%hide-text {
+	overflow: hidden;
+	white-space: nowrap;
+	text-indent: 110%;
+}

@@ -1,0 +1,132 @@
+.container {
+	width: 1200px;
+	max-width: 90%;
+    margin: 0 auto;
+}
+
+#outer-wrap {
+	overflow: hidden;
+}
+
+#wrap {
+	position: relative;
+}
+
+#main {
+	position: relative;
+    z-index: 1;
+
+    #content-wrap {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
+
+.no-margins #main #content-wrap,
+.landing-page #main #content-wrap {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.content-area {
+	float: left;
+	position: relative;
+	width: 72%;
+	padding-right: 30px;
+	border-right: 1px solid $color-9;
+}
+
+.widget-area {
+	float: right;
+	width: 28%;
+	padding-left: 30px;
+}
+
+body.content-full-screen #content-wrap,
+.content-full-screen {
+	width: 100% !important;
+	max-width: none !important;
+	padding: 0 !important;
+	border: 0 !important;
+}
+
+.content-full-width .content-area,
+body.content-full-screen #content-wrap {
+	width: 100% !important;
+	max-width: none !important;
+	padding: 0 !important;
+	border: 0 !important;
+}
+
+.content-full-screen .content-area {
+	float: none;
+	width: 100% !important;
+	max-width: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0 !important;
+}
+
+.content-left-sidebar .content-area {
+	float: right;
+	position: relative;
+	width: 72%;
+	padding-right: 0;
+	border-right: 0;
+	padding-left: 30px;
+	border-left: 1px solid $color-9;
+}
+
+.content-left-sidebar .widget-area {
+	float: left;
+	width: 28%;
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+/* Boxed Layout > Main */
+.boxed-main-layout {
+	background-color: $color-7;
+
+	#wrap {
+		width: 1280px;
+		max-width: 100% ;
+		margin: 0 auto;
+		background-color: $color-1;
+	}
+
+
+	&.wrap-boxshadow #wrap {
+		-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+		-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+		box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+	}
+
+	#wrap .container {
+		width: auto;
+		max-width: none;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	&.content-full-screen #content-wrap {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	#footer-widgets {
+		margin: 0;
+	}
+}
+
+/* Boxed Layout > Move absolute items */
+.boxed-main-layout {
+	.site-breadcrumbs,
+	#top-bar-social.top-bar-right {
+		right: 30px;
+	}
+
+	#top-bar-social.top-bar-left {
+		left: 30px;
+	}
+}

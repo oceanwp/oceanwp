@@ -1,0 +1,11 @@
+.customize-control-oceanwp-switch .switch { border: none; outline: 0; padding: 0; position: relative; border-radius: 30px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.customize-control-oceanwp-switch .switch label { background: rgba(0, 0, 0, 0.2); color: transparent; cursor: pointer; display: block; position: relative; transition: left 0.15s ease-out; height: 32px; width: 80px; border-radius: 30px; }
+.customize-control-oceanwp-switch .switch label:after { background: #fff; content: ''; display: block; height: 1.5rem; left: 0.25rem; position: absolute; top: 0.25rem; width: 32px; border-radius: 30px; -webkit-transition: all 0.25s ease-in-out; -moz-transition: all 0.25s ease-in-out; -ms-transition: all 0.25s ease-in-out; -o-transition: all 0.25s ease-in-out; transition: all 0.25s ease-in-out; }
+.customize-control-oceanwp-switch .switch input { left: 10px; opacity: 0; padding: 0; position: absolute; top: 9px; }
+.customize-control-oceanwp-switch .switch input + label { margin-left: 0; margin-right: 0; }
+.customize-control-oceanwp-switch .switch input:checked + label { background: #3498DB; }
+.customize-control-oceanwp-switch .switch input:checked + label:after { left: 44px; background: #ffffff; }
+.customize-control-oceanwp-switch .switch-off,
+.customize-control-oceanwp-switch .switch-on { padding: 0 10px; font-size: 12px; font-weight: 600; line-height: 32px; letter-spacing: 1px; text-transform: uppercase; }
+.customize-control-oceanwp-switch .switch-on { color: #fff; padding-right: 5px; }
+.customize-control-oceanwp-switch .switch-off { color: #777; padding-left: 5px; }

@@ -1,0 +1,195 @@
+@charset "utf-8";
+/*!
+ * Theme Name: 		OceanWP
+ * Theme URI: 		https://oceanwp.org/
+ * Author: 			Nick
+ * Author URI: 		https://oceanwp.org/about-me/
+ * Description: 	OceanWP is the perfect theme for your project. Lightweight and highly extendible, it will enable you to create almost any type of site with a beautiful & professional design. There are several options to personalise your website, multiple widget regions, a responsive design and much more. Developers will love his extensible codebase making it a joy to customise and extend. Looking for a Multi-Purpose theme? Look no further!
+ * Version: 		1.1.0
+ * Tags: 			two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, sticky-post, editor-style, threaded-comments, translation-ready
+ * Text Domain: 	oceanwp
+ *
+ * License: GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+// Configuration
+@import "config";
+
+/*------------------------------------*
+    $CONTENTS
+*------------------------------------*/
+/**
+ * BASE
+ * - MAIN
+ * - NORMALIZE
+ * - LAYOUTS
+ * - COMPONENTS
+ * - TYPOGRAPHY
+ * - FORMS
+ *
+ * COMPONENTS
+ * - TOP BAR
+ * - HEADER
+ * - NAVIGATIONS
+ * - PAGE HEADER
+ * - BLOG
+ * - SIDEBAR
+ * - CUSTOM SELECTS
+ * - PAGINATION
+ * - COMMENT
+ * - SEARCH
+ * - FOOTER
+ * - 404 PAGE
+ *
+ * SHORTCODES
+ * - POSTS SLIDER
+ *
+ * PLUGINS
+ * - SIDR
+ * - OWL CAROUSEL
+ * - MAGNIFIC POPUP
+ * - ELEMENTOR
+ */
+
+/*------------------------------------*
+	$MAIN
+*------------------------------------*/
+@import "base/main";
+
+/*------------------------------------*
+	$NORMALIZE
+*------------------------------------*/
+@import "base/normalize";
+
+/*------------------------------------*
+	$LAYOUTS
+*------------------------------------*/
+@import "layout";
+
+/*------------------------------------*
+	$COMPONENTS
+*------------------------------------*/
+@import "base/shared";
+@import "helpers/placeholder";
+
+/*------------------------------------*
+	$TYPOGRAPHY
+*------------------------------------*/
+@import "base/typography";
+
+/*------------------------------------*
+	$FORMS
+*------------------------------------*/
+@import "base/form";
+
+/*------------------------------------*
+	$TOP BAR
+*------------------------------------*/
+@import "components/topbar/topbar";
+@import "components/topbar/topbar-content";
+@import "components/topbar/topbar-menu";
+@import "components/topbar/topbar-social";
+
+/*------------------------------------*
+	$HEADER
+*------------------------------------*/
+@import "components/header/header";
+
+/*------------------------------------*
+	$NAVIGATIONS
+*------------------------------------*/
+@import "components/header/navigation";
+
+/*------------------------------------*
+	$PAGE HEADER
+*------------------------------------*/
+@import "components/page-header";
+
+/*------------------------------------*
+	$BLOG
+*------------------------------------*/
+@import "components/blog/blog-entries";
+@import "components/blog/blog-meta";
+@import "components/blog/gallery-format";
+@import "components/blog/video-audio-formats";
+@import "components/blog/link-format";
+@import "components/blog/quote-format";
+@import "components/blog/single-post";
+@import "components/blog/single-content";
+@import "components/blog/single-tags";
+@import "components/blog/single-next-prev";
+@import "components/blog/single-author-bio";
+@import "components/blog/single-related-posts";
+
+/*------------------------------------*
+	$SIDEBAR
+*------------------------------------*/
+@import "components/sidebar/sidebar";
+@import "components/sidebar/widget-about-me";
+@import "components/sidebar/widget-calendar";
+@import "components/sidebar/widget-contact-info";
+@import "components/sidebar/widget-custom-links";
+@import "components/sidebar/widget-instagram";
+@import "components/sidebar/widget-flickr";
+@import "components/sidebar/widget-mailchimp";
+@import "components/sidebar/widget-recent-posts";
+@import "components/sidebar/widget-social-icons";
+@import "components/sidebar/widget-tags";
+
+/*------------------------------------*
+	$CUSTOM SELECTS
+*------------------------------------*/
+@import "components/custom-selects";
+
+/*------------------------------------*
+	$PAGINATION
+*------------------------------------*/
+@import "components/pagination";
+
+/*------------------------------------*
+	$COMMENT
+*------------------------------------*/
+@import "components/comments";
+
+/*------------------------------------*
+	$SEARCH
+*------------------------------------*/
+@import "components/search";
+
+/*------------------------------------*
+	$FOOTER
+*------------------------------------*/
+@import "components/footer/footer-widgets";
+@import "components/footer/footer-bottom";
+@import "components/footer/scroll-top";
+
+/*------------------------------------*
+	$404 PAGE
+*------------------------------------*/
+@import "components/404";
+
+/*------------------------------------*
+	$POSTS SLIDER
+*------------------------------------*/
+@import "components/posts-slider";
+
+/*------------------------------------*
+	$SIDR
+*------------------------------------*/
+@import "components/plugins/sidr";
+
+/*------------------------------------*
+	$OWL CAROUSEL
+*------------------------------------*/
+@import "components/plugins/owl-carousel";
+
+/*------------------------------------*
+	$MAGNIFIC POPUP
+*------------------------------------*/
+@import "components/plugins/magnific-popup";
+
+/*------------------------------------*
+	$PAGE BUILDERS
+*------------------------------------*/
+@import "components/plugins/builders";

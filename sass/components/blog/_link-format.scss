@@ -1,0 +1,23 @@
+/**
+ * Link Format
+ */
+.link-entry {
+	i {
+	    position: absolute;
+	    top: 20px;
+	    right: 20px;
+	    width: 60px;
+	    height: 60px;
+	    font-size: 22px;
+	    line-height: 60px;
+	    background-color: $color-2;
+	    color: $color-1;
+	    text-align: center;
+		border-radius: 50%;
+		transition: all .3s ease;
+	}
+}
+
+.thumbnail:hover i {
+    background-color: $color-5;
+}

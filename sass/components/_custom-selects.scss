@@ -1,0 +1,30 @@
+.hasCustomSelect {
+    width: 100%;
+    z-index: 2;
+}
+
+.theme-select {
+    position: relative;
+    border: 1px solid $color-10;
+    color: $color-11;
+    height: 34px;
+    line-height: 32px;
+    padding: 0 45px 0 15px;
+    width: 100%;
+    z-index: 1;
+
+    &:after {
+        font-family: 'FontAwesome';
+        content: '\f107';
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        height: 32px;
+        width: 32px;
+        font-size: 11px;
+        color: $color-4;
+        border-left: 1px solid $color-10;
+        text-align: center;
+    }
+}

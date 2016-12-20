@@ -1,0 +1,65 @@
+/**
+ * Contact Info Widget
+ */
+.contact-info-widget {
+	 li {
+	 	display: inline-block;
+    	width: 100%;
+	    margin: 0 0 20px;
+	    padding: 0;
+	    border: 0;
+
+	    &:last-child {
+		    margin-bottom: 0;
+		}
+	}
+
+	i {
+	    float: left;
+	    width: 40px;
+	    height: 40px;
+	    line-height: 40px;
+	    border: 1px solid $border-color;
+	    color: $color-5;
+	    margin-right: 15px;
+	    text-align: center;
+		border-radius: 2px;
+	}
+
+	.oceanwp-info-wrap,
+	span.oceanwp-contact-title,
+	span.oceanwp-contact-text {
+	    display: block;
+	}
+
+	span.oceanwp-contact-title {
+	    color: #777;
+	    font-weight: bold;
+	    line-height: 1.4;
+	}
+
+	span.oceanwp-contact-text {
+	    line-height: 18px;
+	}
+
+	li.skype {
+	    display: inline-block;
+
+	    a {
+		    display: inline-block;
+		    background-color: #0ca5de;
+		    color: #fff;
+		    font-size: 12px;
+		    font-weight: 600;
+		    line-height: 1;
+		    letter-spacing: 1px;
+		    text-transform: uppercase;
+		    padding: 12px 15px;
+
+		    &:hover {
+			    background-color: #0581af;
+			    color: #fff;
+			}
+		}
+	}
+}
