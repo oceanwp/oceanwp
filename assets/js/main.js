@@ -670,7 +670,7 @@ function initCarousel() {
 	} );
 
 	// WooCommerce: prevent clicking
-	$j( '.product-entry-slider, .product .main-images a, .product .product-thumbnails a' ).click( function(e) {
+	$j( '.product .main-images a, .product .product-thumbnails a' ).click( function(e) {
 		e.preventDefault();
     } );
 

@@ -23,13 +23,15 @@ $attachment = get_post_thumbnail_id();
 if ( $attachment ) { ?>
 
 	<div class="woo-entry-image clr">
-		<?php
-		// Single Image
-		echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
-	        'class'         => 'woo-entry-image-main',
-	        'alt'           => get_the_title(),
-	        'itemprop'      => 'image',
-	    ) ); ?>
+		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
+			<?php
+			// Single Image
+			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
+		        'class'         => 'woo-entry-image-main',
+		        'alt'           => get_the_title(),
+		        'itemprop'      => 'image',
+		    ) ); ?>
+	    </a>
 	</div><!-- .woo-entry-image -->
 
 <?php
@@ -39,6 +41,8 @@ if ( $attachment ) { ?>
 else { ?>
 
 	<div class="woo-entry-image clr">
-    	<?php echo '<img src="'. wc_placeholder_img_src() .'" alt="'. esc_html__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />'; ?>
+		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
+    		<?php echo '<img src="'. wc_placeholder_img_src() .'" alt="'. esc_html__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />'; ?>
+    	</a>
 	</div><!-- .woo-entry-image -->
 <?php } ?>

@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2016.12.30* - 1.1.1.1
+* **Added** - Category description on the shop page.
+* **Fixed** - Non clickable products images with the gallery style.
+
 ### *2016.12.30* - 1.1.1
 * **Added** - New awesome option to create your own header style.
 * **Added** - Gallery lightbox for the default WordPress gallery.

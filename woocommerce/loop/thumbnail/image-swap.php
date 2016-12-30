@@ -42,32 +42,36 @@ if ( ! empty( $attachment_ids ) ) {
 if ( $secondary_img_id ) : ?>
 
 	<div class="woo-entry-image-swap woo-entry-image clr">
-		<?php
-		// Main Image
-		echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
-	        'class'         => 'woo-entry-image-main',
-	        'alt'           => get_the_title(),
-	        'itemprop'      => 'image',
-	    ) ); ?>
-		<?php
-		// Secondary Image
-		echo wp_get_attachment_image( $secondary_img_id, 'shop_catalog', '', array(
-	        'class'         => 'woo-entry-image-secondary',
-	        'alt'           => get_the_title(),
-	        'itemprop'      => 'image',
-	    ) ); ?>
+		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
+			<?php
+			// Main Image
+			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
+		        'class'         => 'woo-entry-image-main',
+		        'alt'           => get_the_title(),
+		        'itemprop'      => 'image',
+		    ) ); ?>
+			<?php
+			// Secondary Image
+			echo wp_get_attachment_image( $secondary_img_id, 'shop_catalog', '', array(
+		        'class'         => 'woo-entry-image-secondary',
+		        'alt'           => get_the_title(),
+		        'itemprop'      => 'image',
+		    ) ); ?>
+		</a>
 	</div><!-- .woo-entry-image-swap -->
 
 <?php else : ?>
 
 	<div class="woo-entry-image clr">
-		<?php
-		// Single Image
-		echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
-	        'class'         => 'woo-entry-image-main',
-	        'alt'           => get_the_title(),
-	        'itemprop'      => 'image',
-	    ) ); ?>
+		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
+			<?php
+			// Single Image
+			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
+		        'class'         => 'woo-entry-image-main',
+		        'alt'           => get_the_title(),
+		        'itemprop'      => 'image',
+		    ) ); ?>
+		</a>
 	</div><!-- .woo-entry-image -->
 
 <?php endif; ?>

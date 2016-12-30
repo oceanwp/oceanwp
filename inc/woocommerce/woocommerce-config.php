@@ -84,6 +84,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			add_action( 'woocommerce_after_shop_loop_item', array( $this, 'oceanwp_after_shop_loop_item' ), 10 );
 			add_action( 'woocommerce_after_shop_loop_item', array( $this, 'close_shop_loop_item_inner_div' ) );
 			add_action( 'woocommerce_before_shop_loop_item', array( $this, 'add_shop_loop_item_out_of_stock_badge' ) );
+			add_action( 'woocommerce_before_subcategory_title', array( $this, 'add_container_wrap_category' ), 8 );
+			add_action( 'woocommerce_before_subcategory_title', array( $this, 'add_div_before_category_thumbnail' ), 9 );
+			add_action( 'woocommerce_before_subcategory_title', array( $this, 'close_div_after_category_thumbnail' ), 11 );
+			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'add_div_before_category_title' ), 9 );
+			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'add_category_description' ), 11 );
+			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'close_div_after_category_title' ), 12 );
+			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'close_container_wrap_category' ), 13 );
+
 			add_action( 'woocommerce_after_single_product_summary', array( $this, 'clear_summary_floats' ), 1 );
 			add_action( 'woocommerce_before_account_navigation', array( $this, 'oceanwp_before_account_navigation' ) );
 			add_action( 'woocommerce_after_account_navigation', array( $this, 'oceanwp_after_account_navigation' ) );
@@ -168,8 +176,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'woocommerce_before_shop_loop', array( $this, 'result_count' ), 31 );
 			}
 
-			// Remove default product result/title/rating/price
+			// Remove default product result/link/title/rating/price
 			remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+			remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+			remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
+			remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
 			remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
 			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
@@ -483,7 +495,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				// Description
 				if ( get_theme_mod( 'ocean_woo_grid_list', true ) ) {
 					$length = get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
-					echo '<div class="woo-desc fffffffffff">';
+					echo '<div class="woo-desc">';
 						if ( ! $length ) {
 							echo strip_shortcodes( $post->post_excerpt );
 						} else {
@@ -551,9 +563,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function oceanwp_after_account_navigation() {
-
 			echo '</div>';
-
 		}
 
 		/**
@@ -567,6 +577,85 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					<?php echo apply_filters( 'ocean_woo_outofstock_text', esc_html__( 'Out of Stock', 'oceanwp' ) ); ?>
 				</div><!-- .product-entry-out-of-stock-badge -->
 			<?php }
+		}
+
+		/**
+		 * Adds container wrap for the thumbnail and title of the categories products.
+		 *
+		 * @since 1.1.1.1
+		 */
+		public static function add_container_wrap_category() {
+			echo '<div class="product-inner clr">';
+		}
+
+		/**
+		 * Adds a container div before the thumbnail for the categories products.
+		 *
+		 * @since 1.1.1.1
+		 */
+		public static function add_div_before_category_thumbnail( $category ) {
+			echo '<div class="woo-entry-image clr">';
+				echo '<a href="' . get_term_link( $category, 'product_cat' ) . '">';
+		}
+
+		/**
+		 * Close a container div before the thumbnail for the categories products.
+		 *
+		 * @since 1.1.1.1
+		 */
+		public static function close_div_after_category_thumbnail() {
+				echo '</a>';
+			echo '</div>';
+		}
+
+		/**
+		 * Adds a container div before the thumbnail for the categories products.
+		 *
+		 * @since 1.1.1.1
+		 */
+		public static function add_div_before_category_title( $category ) {
+			echo '<div class="woo-entry-inner clr">';
+				echo '<a href="' . get_term_link( $category, 'product_cat' ) . '">';
+		}
+
+		/**
+		 * Add description if list view for the categories products.
+		 *
+		 * @since 1.1.1.1
+		 */
+		public static function add_category_description( $category ) {
+				// Close category link openend in add_div_before_category_title()
+				echo '</a>';
+
+			// Var
+			$term 			= get_term( $category->term_id, 'product_cat' );
+			$description 	= $term->description;
+
+			// Description
+			if ( get_theme_mod( 'ocean_woo_grid_list', true )
+				&& $description ) {
+				echo '<div class="woo-desc">';
+					echo '<div class="description">' . $description . '</div>';
+				echo '</div>';
+			}
+		}
+
+		/**
+		 * Close a container div before the thumbnail for the categories products.
+		 *
+		 * @since 1.1.1.1
+		 */
+		public static function close_div_after_category_title() {
+			echo '</div>';
+		}
+
+		/**
+		 * Close container wrap for the thumbnail and title of the categories products.
+		 *
+		 * @since 1.1.1.1
+		 */
+		public static function close_container_wrap_category() {
+			echo '</div>';
 		}
 
 		/**

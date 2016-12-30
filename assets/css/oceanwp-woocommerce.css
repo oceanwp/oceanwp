@@ -504,7 +504,6 @@ Categories
 -------------------------------------------------------------------*/
 .woocommerce .term-description { margin-bottom: 40px }
 .woocommerce .term-description p:last-child { margin-bottom: 0 }
-.woocommerce ul.products li.product-category a img { margin-bottom: 20px }
 .woocommerce ul.products li.product h3 { font-size: 16px; color: inherit; margin: 0; }
 .products .product-category { text-align: center }
 .products .product-category img { display: block; margin: 0 auto; }

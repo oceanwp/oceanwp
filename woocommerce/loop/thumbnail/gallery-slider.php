@@ -40,11 +40,13 @@ if ( $attachment_ids ) : ?>
 		if ( has_post_thumbnail() ) : ?>
 
 			<div class="oceanwp-slider-slide">
-				<?php
-				echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', array(
-			        'alt'           => get_the_title(),
-			        'itemprop'      => 'image',
-			    ) ); ?>
+				<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
+					<?php
+					echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', array(
+				        'alt'           => get_the_title(),
+				        'itemprop'      => 'image',
+				    ) ); ?>
+			    </a>
 			</div>
 
 		<?php
@@ -62,11 +64,13 @@ if ( $attachment_ids ) : ?>
 				if ( $count < 5 ) : ?>
 
 					<div class="oceanwp-slider-slide">
-						<?php
-						echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', array(
-					        'alt'           => get_the_title(),
-					        'itemprop'      => 'image',
-					    ) ); ?>
+						<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
+							<?php
+							echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', array(
+						        'alt'           => get_the_title(),
+						        'itemprop'      => 'image',
+						    ) ); ?>
+					    </a>
 					</div>
 
 				<?php
