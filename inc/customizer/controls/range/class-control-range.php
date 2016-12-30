@@ -31,8 +31,8 @@ class OceanWP_Customizer_Range_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-range', OCEANWP_INC_DIR_URI . '/customizer/controls/range/range.js', array( 'jquery', 'customize-base' ), false, true );
-		wp_enqueue_style( 'oceanwp-range-css', OCEANWP_INC_DIR_URI . '/customizer/controls/range/range.css', null );
+		wp_enqueue_script( 'oceanwp-range', OCEANWP_INC_DIR_URI . 'customizer/controls/range/range.js', array( 'jquery', 'customize-base' ), false, true );
+		wp_enqueue_style( 'oceanwp-range-css', OCEANWP_INC_DIR_URI . 'customizer/controls/range/range.css', null );
 	}
 
 	/**

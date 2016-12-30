@@ -19,52 +19,69 @@ if ( ! has_post_thumbnail() ) {
 // Get global product data
 global $product;
 
-// Get gallery images and exclude featured image incase it's added in the gallery as well
-$attachment_id    = get_post_thumbnail_id();
-$attachment_ids   = $product->get_gallery_attachment_ids();
-$attachment_ids[] = $attachment_id;
-$attachment_ids   = array_unique( $attachment_ids );
+// Get first image
+$thumbnail_id  = get_post_thumbnail_id();
+
+// Get gallery images
+$attachment_ids = $product->get_gallery_attachment_ids();
+
+// Get attachments count
+$attachments_count = count( $attachment_ids );
 
 // If there are attachments display slider
 if ( $attachment_ids ) : ?>
 
-	<div class="product-entry-slider owl-carousel owl-theme clr">
+	<div class="product-entry-slider woo-entry-image clr">
 
 		<?php
 		// Define counter variable
-		$count=0; ?>
+		$count=0;
+
+		if ( has_post_thumbnail() ) : ?>
+
+			<div class="oceanwp-slider-slide">
+				<?php
+				echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', array(
+			        'alt'           => get_the_title(),
+			        'itemprop'      => 'image',
+			    ) ); ?>
+			</div>
 
 		<?php
-		// Loop through images
-		foreach ( $attachment_ids as $attachment_id ) : ?>
+		endif;
 
-			<?php
-			// Add to counter
-			$count++; ?>
+		if ( $attachments_count > 0 ) :
 
-			<?php
-			// Only display the first 5 images
-			if ( $count < 5 ) : ?>
+			// Loop through images
+			foreach ( $attachment_ids as $attachment_id ) :
 
-				<div class="oceanwp-slider-slide">
-					<?php 
-					echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', array(
-				        'alt'           => get_the_title(),
-				        'itemprop'      => 'image',
-				    ) ); ?>
-				</div>
+				// Add to counter
+				$count++;
 
-			<?php endif; ?>
+				// Only display the first 5 images
+				if ( $count < 5 ) : ?>
 
-		<?php endforeach; ?>
+					<div class="oceanwp-slider-slide">
+						<?php
+						echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', array(
+					        'alt'           => get_the_title(),
+					        'itemprop'      => 'image',
+					    ) ); ?>
+					</div>
+
+				<?php
+				endif;
+
+			endforeach;
+
+		endif; ?>
 
 	</div>
 
 <?php
-
 // There aren't any images so lets display the featured image
-else : ?>
+else :
 
-	<?php wc_get_template(  'loop/thumbnail/'. $style .'.php' ); ;?>
+	wc_get_template(  'loop/thumbnail/featured-image.php' );
 
-<?php endif; ?>
+endif; ?>

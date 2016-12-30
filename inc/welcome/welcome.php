@@ -134,7 +134,7 @@ class OCEANWP_Welcome {
 					<ul class="oceanwp-list clr">
 						<li>
 							<a href="https://oceanwp.org/extension/ocean-extra/<?php echo esc_attr( $aff_ref ); ?>" target="_blank"><?php esc_html_e( 'Ocean Extra', 'oceanwp' ); ?> - <span class="price">free</span></a>
-							<p><?php esc_html_e( 'Add extra features like metaboxes, custom CSS and a panel to activate the extensions.', 'oceanwp' ); ?></p>
+							<p><?php esc_html_e( 'Add extra features like metaboxes, import/export and a panel to activate the extensions.', 'oceanwp' ); ?></p>
 						</li>
 						<li>
 							<a href="https://oceanwp.org/extension/ocean-elementor-widgets/<?php echo esc_attr( $aff_ref ); ?>" target="_blank"><?php esc_html_e( 'Elementor Widgets', 'oceanwp' ); ?> - <span class="price">$39</span></a>

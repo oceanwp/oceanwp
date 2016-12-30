@@ -35,7 +35,7 @@ function oceanwp_standard_fonts() {
 }
 
 /**
- * List of All GooGle fonts
+ * List of All Google fonts
  *
  * @since 1.0.0
  */

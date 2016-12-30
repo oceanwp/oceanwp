@@ -20,6 +20,9 @@
 /*------------------------------------*
 	Mobile Menu
 *------------------------------------*/
+#site-logo .retina-logo-link,
+#site-logo .transparent-retina-logo-link { display: none; }
+
 #oceanwp-mobile-menu-icon { display: none; float: right; position: relative; right: -15px; }
 #oceanwp-mobile-menu-icon a { font-size: 13px; line-height: 74px; color: #555; padding: 0 15px; letter-spacing: 0.6px; }
 #oceanwp-mobile-menu-icon a:hover { color: #13aff0; }
@@ -151,16 +154,26 @@
 
 	/* logo */
 	#site-logo { margin-top: 0px !important; margin-bottom: 0px !important; }
+	#site-logo .custom-logo-link { display: none; }
+	#site-logo .retina-logo-link { display: block; }
+
+	/* Transparent logo */
+	#site-header.transparent-header #site-logo.has-transparent-logo .transparent-logo-link,
+	.is-sticky #site-header.transparent-header #site-logo.has-transparent-logo .custom-logo-link { display: none; }
+	#site-logo.has-transparent-logo .retina-logo-link { display: none; }
+	#site-logo.has-transparent-logo .transparent-retina-logo-link { display: block; }
+	.is-sticky #site-header.transparent-header #site-logo.has-transparent-logo .retina-logo-link { display: block; }
+	.is-sticky #site-header.transparent-header #site-logo.has-transparent-logo .transparent-retina-logo-link { display: none; }
 	
 	/* page header */
-	.page-header-with-background .page-header-title { font-size: 36px !important }
+	.page-header-with-background .page-header-title { font-size: 36px; }
 	.centered-page-header .page-header-title,
 	.centered-minimal-page-header .page-header-title,
-	.background-image-page-header .page-header-title { font-size: 24px !important }
+	.background-image-page-header .page-header-title { font-size: 24px; }
 	.centered-page-header .page-subheading,
 	.centered-minimal-page-header .page-header-subheading,
-	.background-image-page-header .page-subheading { font-size: 14px !important }
-	.background-image-page-header { max-height: 200px }
+	.background-image-page-header .page-subheading { font-size: 14px; }
+	.background-image-page-header { max-height: 200px; }
 	
 	/* breadcrumbs */
 	body.has-breadcrumbs .page-header-title { max-width: 100%; width: 100%; }

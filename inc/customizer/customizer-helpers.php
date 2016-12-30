@@ -15,6 +15,7 @@
 	# Header
 	# Logo
 	# Menu
+	# Page Header
 	# Blog
 	# WooCommerce
 
@@ -146,6 +147,14 @@ function oceanwp_cac_has_menu_social() {
 	}
 }
 
+function oceanwp_cac_has_custom_header() {
+	if ( 'custom' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 /*-------------------------------------------------------------------------------*/
 /* [ Logo ]
 /*-------------------------------------------------------------------------------*/
@@ -189,6 +198,25 @@ function oceanwp_cac_has_menu_dropdown_top_border() {
 }
 
 /*-------------------------------------------------------------------------------*/
+/* [ Page Header ]
+/*-------------------------------------------------------------------------------*/
+function oceanwp_cac_hasnt_bg_image_page_header() {
+	if ( 'background-image' == get_theme_mod( 'ocean_page_header_style' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_bg_image_page_header() {
+	if ( 'background-image' == get_theme_mod( 'ocean_page_header_style' ) ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+/*-------------------------------------------------------------------------------*/
 /* [ Blog ]
 /*-------------------------------------------------------------------------------*/
 function oceanwp_cac_grid_blog_style() {
@@ -208,11 +236,27 @@ function oceanwp_cac_blog_supports_equal_heights() {
 	}
 }
 
+function oceanwp_cac_has_blog_single_title_bg_image() {
+	if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 /*-------------------------------------------------------------------------------*/
 /* [ WooCommerce ]
 /*-------------------------------------------------------------------------------*/
 function oceanwp_cac_has_menu_cart() {
 	if ( 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_grid_list_buttons() {
+	if ( true == get_theme_mod( 'ocean_woo_grid_list', true ) ) {
 		return true;
 	} else {
 		return false;

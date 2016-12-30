@@ -43,6 +43,10 @@ HTML5 Shiv, Copyright 2014 Alexander Farkas
 Licenses: MIT/GPL2
 Source: https://github.com/aFarkas/html5shiv
 
+jQuery Cookie, Copyright 2006, 2014 Klaus Hartl
+License: MIT
+Source: https://github.com/js-cookie/js-cookie/
+
 customSelect, Copyright 2013 Adam Coulombe
 License: MIT
 Source: http://adam.co/lab/jquery/customselect/

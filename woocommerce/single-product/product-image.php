@@ -32,13 +32,13 @@ $image       = wp_get_attachment_image( $thumbnail_id, 'shop_single', '', array(
 
 <div class="images clr">
 
-	<div class="product-images-slider main-images owl-carousel owl-theme">
+	<div class="product-images-slider main-images">
 
 		<?php if ( has_post_thumbnail() ) : ?>
 
-        	<div>
+        	<div class="product-image">
 
-                <?php echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image product-image gallery-lightbox" title="%s">%s</a>', esc_url( $image_link ), esc_attr( $image_title ), $image ), $post->ID ); ?>
+                <?php echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image woo-lightbox" title="%s">%s</a>', esc_url( $image_link ), esc_attr( $image_title ), $image ), $post->ID ); ?>
 
         	</div>
 
@@ -61,10 +61,10 @@ $image       = wp_get_attachment_image( $thumbnail_id, 'shop_single', '', array(
 				    'itemprop'      => 'image',
 				) ); ?>
 
-				<div>
+				<div class="product-image">
 
     				<?php 
-        			echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image product-image gallery-lightbox" title="%s">%s</a>', esc_url( $image_link ), esc_attr( $image_title ), $image ), $post->ID ); ?>
+        			echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image woo-lightbox" title="%s">%s</a>', esc_url( $image_link ), esc_attr( $image_title ), $image ), $post->ID ); ?>
 
 				</div>
 
@@ -74,38 +74,8 @@ $image       = wp_get_attachment_image( $thumbnail_id, 'shop_single', '', array(
 		endif; ?>
 
 	</div>
-	    
-    <script type="text/javascript">
-    	var $j = jQuery.noConflict();
 
-		$j( document ).ready( function() {
-			$j( '.main-images' ).owlCarousel( {
-		        singleItem: true,
-		        navigation: true,
-		    	navigationText: ['<span class="fa fa-angle-left"></span>','<span class="fa fa-angle-right"></span>'],
-		        pagination: false,
-		        addClassActive: true,
-		        afterMove: function(args) {
-		            var owlMain 	= $j( '.main-images' ).data( 'owlCarousel' );
-		            var owlThumbs 	= $j( '.product-thumbnails' ).data( 'owlCarousel' );
-		            
-		            $j( '.active-thumbnail' ).removeClass( 'active-thumbnail' );
-		            $j( '.product-thumbnails' ).find( '.owl-item' ).eq(owlMain.currentItem).addClass( 'active-thumbnail' );
-
-		            if ( typeof owlThumbs != 'undefined' ) {
-		            	owlThumbs.goTo( owlMain.currentItem-1 );
-		            }
-		        }
-		    } );
-
-			$j( '.main-images a' ).click(function(e) {
-				e.preventDefault();
-			} );
-
-		} );
-    </script>
-
-	<div class="product-thumbnails owl-carousel owl-theme">
+	<div class="product-thumbnails">
 
 		<?php
 		$columns = apply_filters( 'woocommerce_product_thumbnails_columns', 3 );
@@ -117,11 +87,15 @@ $image       = wp_get_attachment_image( $thumbnail_id, 'shop_single', '', array(
 		    'itemprop'      => 'image',
 		) );
 
-		if ( has_post_thumbnail() ) :
+		if ( has_post_thumbnail() ) : ?>
 
-        	echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" title="%s" class="active-thumbnail woo-thumbnail">%s</a>', $thumbnail_link, $thumbnail_title, $thumbnail ), $post->ID );
+        	<div class="thumbnail-item">
 
-        else :
+        		<?php echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" title="%s" class="woo-thumbnail">%s</a>', $thumbnail_link, $thumbnail_title, $thumbnail ), $post->ID ); ?>
+
+        	</div>
+
+        <?php else :
 
 			// Display placeholder image
 			oceanwp_woo_placeholder_img();
@@ -139,40 +113,18 @@ $image       = wp_get_attachment_image( $thumbnail_id, 'shop_single', '', array(
 			) );
 
 			// Display thumbnail
-			if ( $thumbnail ) :
+			if ( $thumbnail ) : ?>
 
-				echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" title="%s" class="woo-thumbnail">%s</a>', $thumbnail_link, $thumbnail_title, $thumbnail ), $post->ID );
+	        	<div class="thumbnail-item">
 
-			endif;
+	        		<?php echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" title="%s" class="woo-thumbnail">%s</a>', $thumbnail_link, $thumbnail_title, $thumbnail ), $post->ID ); ?>
+
+	        	</div>
+
+        	<?php endif;
 
 		endforeach; ?>
 
 	</div><!-- .product-thumbnails -->
-
-    <script type="text/javascript">
-    	var $j = jQuery.noConflict();
-
-		$j( document ).ready( function() {
-			$j( '.product-thumbnails' ).owlCarousel( {
-		        items : 3,
-	        	itemsCustom: [[0, 2], [479,2], [619,3], [768,3], [1200, 3], [1600, 3]],
-		        transitionStyle: 'fade',
-		        navigation : true,
-		        navigationText: ['<span class="fa fa-angle-left"></span>','<span class="fa fa-angle-right"></span>'],
-		        addClassActive: true,
-		        pagination: false,
-		    } ); 
-		    
-		    $j( '.product-thumbnails .owl-item' ).click( function(e) {
-	            var owlMain 	= $j( '.main-images' ).data( 'owlCarousel' );
-	            var owlThumbs 	= $j( '.product-thumbnails' ).data( 'owlCarousel' );
-	            owlMain.goTo($j(e.currentTarget).index());
-		    } );
-		    
-		    $j( '.product-thumbnails a' ).click( function(e) {
-			    e.preventDefault();
-		    } );
-	    } );
-    </script>
 
 </div>

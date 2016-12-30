@@ -268,6 +268,103 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Page Header Title
+			 */
+			$wp_customize->add_setting( 'ocean_blog_single_page_header_title', array(
+				'default'           	=> 'blog',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_blog_single_page_header_title', array(
+				'label'	   				=> esc_html__( 'Page Header Title', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_single_post',
+				'settings' 				=> 'ocean_blog_single_page_header_title',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'blog' 				=> esc_html__( 'Blog','oceanwp' ),
+					'post-title' 		=> esc_html__( 'Post Title', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Add Container Featured Image In Page Header
+			 */
+			$wp_customize->add_setting( 'ocean_blog_single_featured_image_title', array(
+				'default'           	=> false,
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_blog_single_featured_image_title', array(
+				'label'	   				=> esc_html__( 'Featured Image In Page Header', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_single_post',
+				'settings' 				=> 'ocean_blog_single_featured_image_title',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Blog Single Page Header Background Image Height
+			 */
+			$wp_customize->add_setting( 'ocean_blog_single_title_bg_image_height', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '400',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_blog_single_title_bg_image_height', array(
+				'label'	   				=> esc_html__( 'Page Header Height (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_single_post',
+				'settings' 				=> 'ocean_blog_single_title_bg_image_height',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 800,
+			        'step'  => 1,
+			    ),
+				'active_callback' 		=> 'oceanwp_cac_has_blog_single_title_bg_image',
+			) ) );
+
+			/**
+			 * Blog Single Page Header Background Image Overlay Opacity
+			 */
+			$wp_customize->add_setting( 'ocean_blog_single_title_bg_image_overlay_opacity', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '0.5',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_blog_single_title_bg_image_overlay_opacity', array(
+				'label'	   				=> esc_html__( 'Overlay Opacity', 'oceanwp' ),
+				'section'  				=> 'ocean_single_post',
+				'settings' 				=> 'ocean_blog_single_title_bg_image_overlay_opacity',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 1,
+			        'step'  => 0.1,
+			    ),
+				'active_callback' 		=> 'oceanwp_cac_has_blog_single_title_bg_image',
+			) ) );
+
+			/**
+			 * Blog Single Page Header Background Image Overlay Color
+			 */
+			$wp_customize->add_setting( 'ocean_blog_single_title_bg_image_overlay_color', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '#000000',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_blog_single_title_bg_image_overlay_color', array(
+				'label'	   				=> esc_html__( 'Overlay Color', 'oceanwp' ),
+				'section'  				=> 'ocean_single_post',
+				'settings' 				=> 'ocean_blog_single_title_bg_image_overlay_color',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_blog_single_title_bg_image',
+			) ) );
+
+			/**
 			 * Blog Single Elements Positioning
 			 */
 			$wp_customize->add_setting( 'ocean_blog_single_elements_positioning', array(

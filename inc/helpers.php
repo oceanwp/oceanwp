@@ -115,6 +115,12 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 		if ( 'on' == get_post_meta( get_the_ID(), 'ocean_disable_margins', true ) ) {
 			$classes[] = 'no-margins';
 		}
+
+		// If WooCommerce grid/list buttons
+		if ( OCEANWP_WOOCOMMERCE_ACTIVE
+			&& get_theme_mod( 'ocean_woo_grid_list', true ) ) {
+			$classes[] = 'has-grid-list';
+		}
 		
 		// Return classes
 		return $classes;
@@ -302,6 +308,105 @@ if ( ! function_exists( 'oceanwp_grid_class' ) ) {
 
 }
 
+/**
+ * Removes the scheme of the passed URL to fit the current page.
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'oceanwp_correct_url_scheme' ) ) {
+
+	function oceanwp_correct_url_scheme( $url ) {
+
+		$url = str_replace( 'http://', '//', str_replace( 'https://', '//', $url ) );
+
+		return $url;
+	}
+
+}
+
+/**
+ * Gets the attachment ID from the url
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'oceanwp_get_attachment_id_from_url' ) ) {
+
+	function oceanwp_get_attachment_id_from_url( $attachment_url = '' ) {
+
+		global $wpdb;
+		$attachment_id = false;
+
+		if ( '' == $attachment_url || ! is_string( $attachment_url ) ) {
+			return '';
+		}
+
+		$upload_dir_paths = wp_upload_dir();
+		$upload_dir_paths_baseurl = $upload_dir_paths['baseurl'];
+
+		if ( substr( $attachment_url, 0, 2 ) == '//' ) {
+			$upload_dir_paths_baseurl = oceanwp_correct_url_scheme( $upload_dir_paths_baseurl );
+		}
+
+		// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image.
+		if ( false !== strpos( $attachment_url, $upload_dir_paths_baseurl ) ) {
+
+			// If this is the URL of an auto-generated thumbnail, get the URL of the original image.
+			$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif|tiff|svg)$)/i', '', $attachment_url );
+
+			// Remove the upload path base directory from the attachment URL.
+			$attachment_url = str_replace( $upload_dir_paths_baseurl . '/', '', $attachment_url );
+
+			// Run a custom database query to get the attachment ID from the modified attachment URL.
+			$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
+			$attachment_id = apply_filters( 'wpml_object_id', $attachment_id, 'attachment' );
+		}
+
+		return $attachment_id;
+
+	}
+
+}
+
+/**
+ * Gets the most important attachment data from the url
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'oceanwp_get_attachment_data_from_url' ) ) {
+
+	function oceanwp_get_attachment_data_from_url( $attachment_url = '' ) {
+
+		if ( '' == $attachment_url ) {
+			return false;
+		}
+
+		$attachment_data['url'] = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+		$attachment_data['id'] = oceanwp_get_attachment_id_from_url( $attachment_data['url'] );
+
+		if ( ! $attachment_data['id'] ) {
+			return false;
+		}
+
+		preg_match( '/\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', $attachment_url, $matches );
+		if ( count( $matches ) > 0 ) {
+			$dimensions 				= explode( 'x', $matches[0] );
+			$attachment_data['width'] 	= $dimensions[0];
+			$attachment_data['height'] 	= $dimensions[1];
+		} else {
+			$attachment_src 			= wp_get_attachment_image_src( $attachment_data['id'], 'full' );
+			$attachment_data['width'] 	= $attachment_src[1];
+			$attachment_data['height'] 	= $attachment_src[2];
+		}
+
+		$attachment_data['alt'] 	= get_post_field( '_wp_attachment_image_alt', $attachment_data['id'] );
+		$attachment_data['caption'] = get_post_field( 'post_excerpt', $attachment_data['id'] );
+		$attachment_data['title'] 	= get_post_field( 'post_title', $attachment_data['id'] );
+
+		return $attachment_data;
+	}
+
+}
+
 /*-------------------------------------------------------------------------------*/
 /* [ Page Header ]
 /*-------------------------------------------------------------------------------*/
@@ -323,8 +428,7 @@ if ( ! function_exists( 'oceanwp_has_page_header' ) ) {
 		if ( oceanwp_post_id() ) {
 
 			// Return if page header is disabled and there isn't a page header background defined
-			if ( 'on' == get_post_meta( oceanwp_post_id(), 'ocean_disable_title', true )
-				&& 'background-image' != $style ) {
+			if ( 'on' == get_post_meta( oceanwp_post_id(), 'ocean_disable_title', true ) ) {
 				$return	= false;
 			}
 
@@ -357,6 +461,13 @@ if ( ! function_exists( 'oceanwp_page_header_style' ) ) {
 		// Get for header style defined in page settings
 		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
 			$style = $meta;
+		}
+
+		// If featured image in page header
+		if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+			&& is_singular( 'post' )
+			&& has_post_thumbnail() ) {
+			$style = 'background-image';
 		}
 
 		// Sanitize data
@@ -468,7 +579,11 @@ if ( ! function_exists( 'oceanwp_title' ) ) {
 			// Single blog posts
 			elseif ( is_singular( 'post' ) ) {
 
-				$title = esc_html__( 'Blog', 'oceanwp' );
+				if ( 'post-title' == get_theme_mod( 'ocean_blog_single_page_header_title', 'post-title' ) ) {
+					$title = get_the_title();
+				} else {
+					$title = esc_html__( 'Blog', 'oceanwp' );
+				}
 
 			}
 
@@ -564,8 +679,21 @@ if ( ! function_exists( 'oceanwp_page_header_overlay' ) ) {
 
 		// Get options from post meta
 		else {
-			$overlay = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay', true );
-			$overlay_color = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay_color', true );
+			$overlay = get_theme_mod( 'ocean_page_header_bg_image_overlay_opacity', '0.5' );
+			$overlay_color = get_theme_mod( 'ocean_page_header_bg_image_overlay_color', '#000000' );
+
+			if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+				&& is_singular( 'post' ) ) {
+				$overlay = get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_opacity', '0.5' );
+				$overlay_color = get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_color', '#000000' );
+			}
+
+			if ( $meta_overlay = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay', true ) ) {
+				$overlay = $meta_overlay;
+			}
+			if ( $meta_overlay_color = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay_color', true ) ) {
+				$overlay_color = $meta_overlay_color;
+			}
 		}
 
 		// Check if overlay isn't set to none
@@ -576,7 +704,7 @@ if ( ! function_exists( 'oceanwp_page_header_overlay' ) ) {
 			if ( '0.5' != $overlay ) {
 				$add_style .= 'opacity:'. $overlay .';';
 			}
-			if ( $overlay_color ) {
+			if ( $overlay_color && '#000000' != $overlay_color ) {
 				$add_style .= 'background-color:'. $overlay_color .';';
 			}
 			if ( $add_style ) {
@@ -624,9 +752,12 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 
 			// Customize background color
 			if ( oceanwp_page_header_style() == 'solid-color' ) {
-				$bg_color = get_post_meta( oceanwp_post_id(), 'ocean_post_title_background_color', true );
-				if ( $bg_color ) {
-					$css .='background-color: '. $bg_color .' !important;';
+				$bg_color = get_theme_mod( 'ocean_page_header_background', '#f5f5f5' );
+				if ( $meta_bg_color = get_post_meta( oceanwp_post_id(), 'ocean_post_title_background_color', true ) ) {
+					$bg_color = $meta_bg_color;
+				}
+				if ( $bg_color && '#f5f5f5' != $bg_color ) {
+					$css .='background-color: '. $bg_color .';';
 				}
 			}
 
@@ -634,7 +765,17 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 			if ( oceanwp_page_header_style() == 'background-image' ) {
 
 				// Add background image
-				$bg_img = get_post_meta( oceanwp_post_id(), 'ocean_post_title_background', true );
+				$bg_img = get_theme_mod( 'ocean_page_header_bg_image' );
+
+				if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+					&& is_singular( 'post' )
+					&& has_post_thumbnail() ) {
+					$bg_img = get_the_post_thumbnail_url();
+				}
+
+				if ( $meta_bg_img = get_post_meta( oceanwp_post_id(), 'ocean_post_title_background', true ) ) {
+					$bg_img = $meta_bg_img;
+				}
 				$bg_img = $bg_img ? $bg_img : null;
 				$bg_img = apply_filters( 'ocean_page_header_background_image', $bg_img );
 
@@ -649,11 +790,18 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 							background-size: cover;';
 
 					// Custom height
-					$title_height = get_post_meta( oceanwp_post_id(), 'ocean_post_title_height', true );
-					$title_height = $title_height ? $title_height : '400px';
+					$title_height = get_theme_mod( 'ocean_page_header_bg_image_height', '400' );
+					if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+						&& is_singular( 'post' ) ) {
+						$title_height = get_theme_mod( 'ocean_blog_single_title_bg_image_height', '400' );
+					}
+					if ( $meta_title_height = get_post_meta( oceanwp_post_id(), 'ocean_post_title_height', true ) ) {
+						$title_height = $meta_title_height;
+					}
+					$title_height = $title_height ? $title_height : '400';
 					$title_height = apply_filters( 'ocean_post_title_height', $title_height );
-					if ( $title_height ) {
-						$css .= 'height:'. $title_height .' !important;';
+					if ( $title_height && '400' != $title_height ) {
+						$css .= 'height:'. $title_height .'px;';
 					}
 
 				}
@@ -1846,6 +1994,113 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 }
 
 /**
+ * Returns header page ID
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'oceanwp_header_page_id' ) ) {
+
+	function oceanwp_header_page_id() {
+
+		// Return false if custom header is not selected
+		if ( 'custom' != get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+			return false;
+		}
+
+		// Get page ID from Customizer
+		$page_id = get_theme_mod( 'ocean_header_page_id' );
+
+		// Get page content
+		if ( ! empty( $page_id ) ) {
+
+			$page = get_post( $page_id );
+
+			if ( $page && ! is_wp_error( $page ) ) {
+				$page_id = $page->post_content;
+			}
+
+		}
+
+		// Apply filters and return content
+		return apply_filters( 'ocean_header_page_id', $page_id );
+
+	}
+
+}
+
+/**
+ * Returns retina header logo
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'oceanwp_header_retina_logo' ) ) {
+
+	function oceanwp_header_retina_logo() {
+
+		$html = '';
+
+		// Get retina logo
+		$logo_url 		= get_theme_mod( 'ocean_retina_logo' );
+
+		// Get default logo height
+		$logo_height 	= get_theme_mod( 'ocean_logo_height' );
+
+		// Logo data
+		$logo_data = array(
+			'url'    	=> '',
+			'width'  	=> '',
+			'height' 	=> '',
+			'alt' 		=> '',
+		);
+
+		if ( $logo_url ) {
+
+			// Logo url
+			$logo_data['url'] 			= $logo_url;
+
+			// Logo data
+			$logo_attachment_data 		= oceanwp_get_attachment_data_from_url( $logo_url );
+
+			// Get logo data
+			if ( $logo_attachment_data ) {
+				$logo_data['width']  	= $logo_attachment_data['width'];
+				$logo_data['height'] 	= $logo_attachment_data['height'];
+				$logo_data['alt'] 		= $logo_attachment_data['alt'];
+			}
+
+			// Output image
+			$html = sprintf( '<a href="%1$s" class="retina-logo-link" rel="home" itemprop="url"><img src="%2$s" class="retina-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" style="max-height: %6$spx" /></a>',
+				esc_url( home_url( '/' ) ),
+				esc_url( $logo_data['url'] ),
+				esc_attr( $logo_data['width'] ),
+				esc_attr( $logo_data['height'] ),
+				esc_attr( $logo_data['alt'] ),
+				esc_attr( $logo_height )
+			);
+
+		}
+
+		// Return logo
+		return apply_filters( 'ocean_header_retina_logo', $html );
+
+	}
+
+}
+
+/**
+ * Echo retina header logo
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'the_custom_retina_logo' ) ) {
+
+	function the_custom_retina_logo() {
+		echo oceanwp_header_retina_logo();
+	}
+
+}
+
+/**
  * Returns transparent header logo
  *
  * @since 1.0.0
@@ -1859,33 +2114,89 @@ if ( ! function_exists( 'oceanwp_header_transparent_logo' ) ) {
 			return false;
 		}
 
-		// No custom transparent logo by default
-		$logo = false;
+		$html = '';
 
-		// Get transparent logo style defined in Customizer
-		$logo = get_theme_mod( 'ocean_transparent_header_logo' );
+		// Get logo
+		$logo_url 		= get_theme_mod( 'ocean_transparent_header_logo' );
+		$retina_url 	= get_theme_mod( 'ocean_transparent_header_logo_retina' );
 
-		// Check old method
-		if ( is_array( $logo ) ) {
-			if ( ! empty( $logo['url'] ) ) {
-				$logo = $logo['url'];
-			} else {
-				$logo = false;
+		// Logo data
+		$logo_data = array(
+			'url'    	=> '',
+			'width'  	=> '',
+			'height' 	=> '',
+			'alt' 		=> '',
+		);
+
+		// Retina logo data
+		$retina_data = array(
+			'url'    	=> '',
+			'width'  	=> '',
+			'height' 	=> '',
+			'alt' 		=> '',
+		);
+
+		if ( $logo_url ) {
+
+			// Logo url
+			$logo_data['url'] 			= $logo_url;
+			$retina_data['url'] 		= $retina_url;
+
+			// Logo data
+			$logo_attachment_data 		= oceanwp_get_attachment_data_from_url( $logo_url );
+			$retina_attachment_data 	= oceanwp_get_attachment_data_from_url( $retina_url );
+
+			// Get logo data
+			if ( $logo_attachment_data ) {
+				$logo_data['width']  	= $logo_attachment_data['width'];
+				$logo_data['height'] 	= $logo_attachment_data['height'];
+				$logo_data['alt'] 		= $logo_attachment_data['alt'];
 			}
-		}
 
-		// Apply filters for child theming
-		$logo = apply_filters( 'ocean_header_transparent_logo', $logo );
+			// Get retina logo height
+			if ( $retina_attachment_data ) {
+				$retina_data['height'] 	= $retina_attachment_data['height'];
+				$retina_data['width']  	= $retina_attachment_data['width'];
+				$retina_data['height'] 	= $retina_attachment_data['height'];
+			}
 
-		// If numeric logo is an attachment ID so lets get the URL
-		if ( is_numeric( $logo ) ) {
-			$logo = wp_get_attachment_image_src( $logo, 'full' );
-			$logo = $logo[0];
+			// Output image
+			$html = sprintf( '<a href="%1$s" class="transparent-logo-link" rel="home" itemprop="url"><img src="%2$s" class="transparent-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" /></a>',
+				esc_url( home_url( '/' ) ),
+				esc_url( $logo_data['url'] ),
+				esc_attr( $logo_data['width'] ),
+				esc_attr( $logo_data['height'] ),
+				esc_attr( $logo_data['alt'] )
+			);
+
+			// Output retina image
+			$html .= sprintf( '<a href="%1$s" class="transparent-retina-logo-link" rel="home" itemprop="url"><img src="%2$s" class="transparent-retina-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" style="max-height: %6$spx" /></a>',
+				esc_url( home_url( '/' ) ),
+				esc_url( $retina_data['url'] ),
+				esc_attr( $retina_data['width'] ),
+				esc_attr( $retina_data['height'] ),
+				esc_attr( $retina_data['alt'] ),
+				esc_attr( $logo_data['height'] )
+			);
+
 		}
 
 		// Return logo
-		return $logo;
+		return apply_filters( 'ocean_transparent_header_logo', $html );
 
+	}
+
+}
+
+/**
+ * Echo transparent header logo
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'the_custom_transparent_logo' ) ) {
+
+	function the_custom_transparent_logo() {
+		echo oceanwp_header_transparent_logo();
 	}
 
 }
@@ -1904,33 +2215,61 @@ if ( ! function_exists( 'oceanwp_header_full_screen_logo' ) ) {
 			return false;
 		}
 
-		// No custom logo by default
-		$logo = false;
+		$html = '';
 
-		// Get logo style defined in Customizer
-		$logo = get_theme_mod( 'ocean_full_screen_header_logo' );
+		// Get logo
+		$logo_url 		= get_theme_mod( 'ocean_full_screen_header_logo' );
 
-		// Check old method
-		if ( is_array( $logo ) ) {
-			if ( ! empty( $logo['url'] ) ) {
-				$logo = $logo['url'];
-			} else {
-				$logo = false;
+		// Logo data
+		$logo_data = array(
+			'url'    	=> '',
+			'width'  	=> '',
+			'height' 	=> '',
+			'alt' 		=> '',
+		);
+
+		if ( $logo_url ) {
+
+			// Logo url
+			$logo_data['url'] 			= $logo_url;
+
+			// Logo data
+			$logo_attachment_data 		= oceanwp_get_attachment_data_from_url( $logo_url );
+
+			// Get logo data
+			if ( $logo_attachment_data ) {
+				$logo_data['width']  	= $logo_attachment_data['width'];
+				$logo_data['height'] 	= $logo_attachment_data['height'];
+				$logo_data['alt'] 		= $logo_attachment_data['alt'];
 			}
-		}
 
-		// Apply filters for child theming
-		$logo = apply_filters( 'ocean_header_full_screen_logo', $logo );
+			// Output image
+			$html = sprintf( '<a href="%1$s" class="full-screen-logo-link" rel="home" itemprop="url"><img src="%2$s" class="full-screen-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" /></a>',
+				esc_url( home_url( '/' ) ),
+				esc_url( $logo_data['url'] ),
+				esc_attr( $logo_data['width'] ),
+				esc_attr( $logo_data['height'] ),
+				esc_attr( $logo_data['alt'] )
+			);
 
-		// If numeric logo is an attachment ID so lets get the URL
-		if ( is_numeric( $logo ) ) {
-			$logo = wp_get_attachment_image_src( $logo, 'full' );
-			$logo = $logo[0];
 		}
 
 		// Return logo
-		return $logo;
+		return apply_filters( 'ocean_full_screen_header_logo', $html );
 
+	}
+
+}
+
+/**
+ * Echo full_screen header logo
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'the_custom_full_screen_logo' ) ) {
+
+	function the_custom_full_screen_logo() {
+		echo oceanwp_header_full_screen_logo();
 	}
 
 }
@@ -2031,85 +2370,6 @@ if ( ! function_exists( 'oceanwp_header_logo_classes' ) ) {
 		// Return classes
 		return $classes;
 
-	}
-
-}
-
-/**
- * Adds js for the retina logo
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_retina_logo' ) ) {
-
-	function oceanwp_retina_logo( $output ) {
-
-		// Get theme options
-		$logo_url    				= get_theme_mod( 'ocean_retina_logo' );
-		$logo_height 				= get_theme_mod( 'ocean_logo_height' );
-		$transparent_logo_height 	= get_theme_mod( 'ocean_transparent_logo_height' );
-
-		// Apply filters
-		$logo_url    				= apply_filters( 'ocean_retina_logo_url', $logo_url );
-		$logo_height 				= apply_filters( 'ocean_retina_logo_height', $logo_height );
-
-		// Output JS for retina logo
-		if ( $logo_url && $logo_height ) {
-			$output .= '/* Retina Logo */
-			if ( window.devicePixelRatio >= 2 ) {
-				$j( "#site-logo img.custom-logo, li.middle-site-logo img.custom-logo" ).attr( "src", "'. $logo_url .'" );
-				$j( "#site-logo img.custom-logo, li.middle-site-logo img.custom-logo" ).css( "max-height", "'. intval( $logo_height ) .'px" );
-			}';
-		}
-
-		// Header transparent retina logo
-		if ( oceanwp_header_transparent_logo() && 'transparent' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
-			$post_id = oceanwp_post_id();
-			if ( $meta = get_post_meta( $post_id, 'ocean_transparent_header_logo_retina', true ) ) {
-				$transparent_retina_logo = $meta;
-			} else {
-				$transparent_retina_logo = get_theme_mod( 'ocean_transparent_header_logo_retina' );
-			}
-			if ( $meta = get_post_meta( $post_id, 'ocean_transparent_header_logo_retina_height', true ) ) {
-				$transparent_retina_logo_height = $meta;
-			} else {
-				$transparent_retina_logo_height = $transparent_logo_height;
-			}
-			if ( $transparent_retina_logo ) {
-				if ( is_numeric( $transparent_retina_logo ) ) {
-					$transparent_retina_logo = wp_get_attachment_image_src( $transparent_retina_logo, 'full' );
-					$transparent_retina_logo = $transparent_retina_logo[0];
-				} else {
-					$transparent_retina_logo = esc_url( $transparent_retina_logo );
-				}
-				if ( $transparent_retina_logo ) {
-					$transparent_logo_url = $transparent_retina_logo;
-					$transparent_logo_height = $transparent_retina_logo_height ? $transparent_retina_logo_height : $transparent_logo_height;
-
-					// Apply filters
-					$transparent_logo_url    = apply_filters( 'ocean_retina_transparent_logo_url', $transparent_logo_url );
-					$transparent_logo_height = apply_filters( 'ocean_retina_transparent_logo_height', $transparent_logo_height );
-
-					// Output JS for transparent retina logo
-					if ( $transparent_logo_url && $transparent_logo_height ) {
-						$output .= '/* Transparent Retina Logo */
-						if ( window.devicePixelRatio >= 2 ) {
-							$j( "#site-logo img.transparent-logo" ).attr( "src", "'. $transparent_logo_url .'" );
-							$j( "#site-logo img.transparent-logo" ).css( "max-height", "'. intval( $transparent_logo_height ) .'px" );
-						}';
-					}
-		
-				}
-			}
-		}
-
-		// Return
-		return $output;
-		
-	}
-	
-	if ( ! is_admin() ) {
-		add_action( 'oceanwp_footer_js', 'oceanwp_retina_logo', 9999 );
 	}
 
 }
@@ -2708,7 +2968,6 @@ if ( ! function_exists( 'oceanwp_has_shortcode' ) ) {
  *
  * @since 1.0.0
  */
-
 if ( ! function_exists( 'oceanwp_sidr_menu_source' ) ) {
 	
 	function oceanwp_sidr_menu_source() {
@@ -2740,6 +2999,21 @@ if ( ! function_exists( 'oceanwp_sidr_menu_source' ) ) {
 
 		// Return
 		return $items;
+
+	}
+
+}
+
+/**
+ * Query Autoptimize activation - check required if using a page builder
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'is_autoptimize_activated' ) ) {
+
+	function is_autoptimize_activated() {
+
+		return class_exists( 'autoptimizeBase' ) ? true : false;
 
 	}
 

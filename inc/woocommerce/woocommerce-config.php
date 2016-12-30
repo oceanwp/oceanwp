@@ -67,6 +67,19 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			add_action( 'woocommerce_enqueue_styles', array( $this, 'remove_styles' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'remove_scripts' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_css' ) );
+			if ( get_theme_mod( 'ocean_woo_shop_result_count', true )
+				|| get_theme_mod( 'ocean_woo_shop_sort', true )
+				|| get_theme_mod( 'ocean_woo_grid_list', true ) ) {
+				add_action( 'woocommerce_before_shop_loop', array( $this, 'add_shop_loop_div' ) );
+			}
+			if ( get_theme_mod( 'ocean_woo_grid_list', true ) ) {
+				add_action( 'woocommerce_before_shop_loop', array( $this, 'grid_list_buttons' ), 10 );
+			}
+			if ( get_theme_mod( 'ocean_woo_shop_result_count', true )
+				|| get_theme_mod( 'ocean_woo_shop_sort', true )
+				|| get_theme_mod( 'ocean_woo_grid_list', true ) ) {
+				add_action( 'woocommerce_before_shop_loop', array( $this, 'close_shop_loop_div' ), 40 );
+			}
 			add_action( 'woocommerce_before_shop_loop_item', array( $this, 'add_shop_loop_item_inner_div' ) );
 			add_action( 'woocommerce_after_shop_loop_item', array( $this, 'oceanwp_after_shop_loop_item' ), 10 );
 			add_action( 'woocommerce_after_shop_loop_item', array( $this, 'close_shop_loop_item_inner_div' ) );
@@ -145,17 +158,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 			}
 
-			// Remove result count if disabled
-			if ( ! get_theme_mod( 'ocean_woo_shop_result_count', true ) ) {
-				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-			}
-
 			// Remove orderby if disabled
 			if ( ! get_theme_mod( 'ocean_woo_shop_sort', true ) ) {
 				remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 			}
 
-			// Remove default product title/rating/price
+			// Add result count if not disabled
+			if ( get_theme_mod( 'ocean_woo_shop_result_count', true ) ) {
+				add_action( 'woocommerce_before_shop_loop', array( $this, 'result_count' ), 31 );
+			}
+
+			// Remove default product result/title/rating/price
+			remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 			remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
 			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
@@ -299,13 +313,75 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		}
 
 		/**
+		 * Adds an opening div "oceanwp-toolbar" around top elements.
+		 *
+		 * @since 1.1.1
+		 */
+		public static function add_shop_loop_div() {
+			echo '<div class="oceanwp-toolbar clr">';
+		}
+
+		/**
+		 * Add grid/list buttons.
+		 *
+		 * @since 1.1.1
+		 */
+		public static function grid_list_buttons() {
+
+			// Titles
+			$grid_view = esc_html__( 'Grid view', 'oceanwp' );
+			$list_view = esc_html__( 'List view', 'oceanwp' );
+
+			// Active class
+			if ( 'list' == get_theme_mod( 'ocean_woo_catalog_view', 'grid' ) ) {
+				$list = 'active ';
+				$grid = '';
+			} else {
+				$grid = 'active ';
+				$list = '';
+			}
+
+			$output = sprintf( '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="%1$s" class="%2$sgrid-btn"><span class="icon-grid"></span></a><a href="#" id="oceanwp-list" title="%3$s" class="%4$slist-btn"><span class="icon-list"></span></a></nav>', $grid_view, $grid, $list_view, $list );
+
+			echo apply_filters( 'oceanwp_grid_list_buttons_output', $output, $grid_view, $list_view );
+		}
+
+		/**
+		 * Closes the opening div "oceanwp-toolbar" around top elements.
+		 *
+		 * @since 1.1.1
+		 */
+		public static function close_shop_loop_div() {
+			echo '</div>';
+		}
+
+		/**
+		 * Add result count.
+		 *
+		 * @since 1.1.1
+		 */
+		public static function result_count() {
+			if ( function_exists( 'wc_get_template' ) ) {
+				wc_get_template( 'global/result-count.php' );
+			}
+		}
+
+		/**
 		 * Returns correct posts per page for the shop
 		 *
 		 * @since 1.0.0
 		 */
 		public static function loop_shop_per_page() {
-			$posts_per_page = get_theme_mod( 'ocean_woo_shop_posts_per_page' );
-			$posts_per_page = $posts_per_page ? $posts_per_page : '12';
+			if ( get_theme_mod( 'ocean_woo_shop_result_count', true ) ) {
+				$posts_per_page = ( isset( $_GET['products-per-page'] ) ) ? $_GET['products-per-page'] : get_theme_mod( 'ocean_woo_shop_posts_per_page', '12' );
+
+			    if ( $posts_per_page == 'all' ) {
+			        $posts_per_page = wp_count_posts( 'product' )->publish;
+			    }
+			} else {
+				$posts_per_page = get_theme_mod( 'ocean_woo_shop_posts_per_page' );
+				$posts_per_page = $posts_per_page ? $posts_per_page : '12';
+			}
 			return $posts_per_page;
 		}
 
@@ -388,22 +464,39 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function oceanwp_after_shop_loop_item() {
-			global $product, $woocommerce;
+			global $product, $woocommerce, $post;
 
-			// Category
-			echo $product->get_categories( ', ', '<span class="category">', '</span>' );
+			echo '<div class="woo-entry-inner">';
 
-			// Title
-			echo '<a href="'. esc_url( get_the_permalink() ) .'" class="title">'. get_the_title() .'</a>';
+				// Category
+				echo $product->get_categories( ', ', '<span class="category">', '</span>' );
 
-			// Price/Rating
-			echo '<div class="inner">';
-				woocommerce_template_loop_price();
-				woocommerce_template_loop_rating();
+				// Title
+				echo '<a href="'. esc_url( get_the_permalink() ) .'" class="title">'. get_the_title() .'</a>';
+
+				// Price/Rating
+				echo '<div class="inner">';
+					woocommerce_template_loop_price();
+					woocommerce_template_loop_rating();
+				echo '</div>';
+
+				// Description
+				if ( get_theme_mod( 'ocean_woo_grid_list', true ) ) {
+					$length = get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
+					echo '<div class="woo-desc fffffffffff">';
+						if ( ! $length ) {
+							echo strip_shortcodes( $post->post_excerpt );
+						} else {
+							echo wp_trim_words( strip_shortcodes( $post->post_excerpt ), $length );
+						}
+					echo '</div>';
+				}
+
+				// Button add to cart
+				woocommerce_template_loop_add_to_cart();
+
 			echo '</div>';
 
-			// Button add to cart
-			woocommerce_template_loop_add_to_cart();
 		}
 
 		/**
@@ -505,7 +598,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$style = get_theme_mod( 'ocean_woo_product_entry_style' );
 				$style = $style ? $style : 'image-swap';
 				// Get entry product media template part
-				wc_get_template(  'loop/thumbnail/'. $style .'.php' );
+				wc_get_template( 'loop/thumbnail/'. $style .'.php' );
 			}
 		}
 
@@ -580,6 +673,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				'.product_meta .tagged_as a:hover',
 				'.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover',
 				'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a',
+				'.woocommerce .oceanwp-grid-list a.active',
+				'.woocommerce .oceanwp-grid-list a:hover',
 			), $texts );
 		}
 
@@ -596,6 +691,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				'.woocommerce ul.products li.product .button:hover',
 				'.woocommerce ul.products li.product .product-inner .added_to_cart:hover',
 				'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a',
+				'.woocommerce .oceanwp-grid-list a.active',
+				'.woocommerce .oceanwp-grid-list a:hover',
 			), $borders );
 		}
 
@@ -683,6 +780,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				'.woocommerce .widget_shopping_cart .cart_list li:first-child',
 				'.woocommerce.widget_shopping_cart .cart_list li:first-child',
 				'.widget_product_categories li a',
+				'.woocommerce .oceanwp-toolbar',
+				'.woocommerce .products.list .product',
 			), $elements );
 		}
 

@@ -15,7 +15,7 @@ if ( ! class_exists( 'Ocean_Extra' ) ) {
 	return;
 } ?>
 
-<?php $audio = ocean_get_post_audio_html(); ?>
+<?php $audio = oceanwp_get_post_audio_html(); ?>
 
 <?php if ( $audio ) : ?>
 	

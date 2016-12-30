@@ -11,10 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Vars
-$home_url   		= home_url( '/' );
-$blog_name  		= get_bloginfo( 'name' );
-$transparent_logo 	= oceanwp_header_transparent_logo();
-$full_screen_logo 	= oceanwp_header_full_screen_logo(); ?>
+$retina_logo 		= get_theme_mod( 'ocean_retina_logo' );
+$transparent_logo 	= get_theme_mod( 'ocean_transparent_header_logo' );
+$full_screen_logo 	= get_theme_mod( 'ocean_full_screen_header_logo' ); ?>
 
 <div id="site-logo" class="<?php echo oceanwp_header_logo_classes(); ?>" itemscope itemtype="http://schema.org/Brand">
 
@@ -24,37 +23,27 @@ $full_screen_logo 	= oceanwp_header_full_screen_logo(); ?>
 		// Custom site-wide image logo
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 
+			// Default logo
 			the_custom_logo();
 
-			// Custom transparent header logo
-			if ( $transparent_logo ) { ?>
+			// Retina logo
+			if ( $retina_logo ) {
+				the_custom_retina_logo();
+			}
 
-				<a href="<?php echo esc_url( $home_url ); ?>" class="transparent-logo-link" rel="home">
+			// Transparent logo
+			if ( $transparent_logo ) {
+				the_custom_transparent_logo();
+			}
 
-					<img src="<?php echo esc_url( $transparent_logo ); ?>" class="transparent-logo" alt="<?php echo esc_attr( $blog_name ); ?>" width="<?php echo esc_attr( get_theme_mod( 'ocean_transparent_logo_width' ) ); ?>" height="<?php echo esc_attr( get_theme_mod( 'ocean_transparent_logo_height' ) ) ; ?>" data-no-retina />
-
-				</a>
-
-			<?php }
-
-			// Custom full screen header logo
-			if ( $full_screen_logo ) { ?>
-
-				<a href="<?php echo esc_url( $home_url ); ?>" class="full-screen-logo-link" rel="home">
-
-					<img src="<?php echo esc_url( $full_screen_logo ); ?>" class="full-screen-logo" alt="<?php echo esc_attr( $blog_name ); ?>" width="<?php echo esc_attr( get_theme_mod( 'ocean_full_screen_logo_width' ) ); ?>" height="<?php echo esc_attr( get_theme_mod( 'ocean_full_screen_logo_height' ) ) ; ?>" data-no-retina />
-
-				</a>
-
-			<?php }
-
-		} elseif ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-
-			jetpack_the_site_logo();
+			// Full screen logo
+			if ( $full_screen_logo ) {
+				the_custom_full_screen_logo();
+			}
 
 		} else { ?>
 
-			<a href="<?php echo esc_url( $home_url ); ?>" rel="home" class="site-title site-logo-text"><?php echo esc_html( $blog_name ); ?></a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title site-logo-text"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
 
 		<?php } ?>
 

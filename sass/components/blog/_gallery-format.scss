@@ -2,6 +2,7 @@
  *  Gallery Format
  */
 .gallery-format {
+	display: none;
     position: relative;
     overflow: hidden;
 
@@ -12,44 +13,14 @@
 	    margin-bottom: 0;
 	}
 
-	.slides > li {
-	    float: left;
+	.slick-prev,
+	.slick-next {
+	    opacity: 0;
+	    visibility: hidden;
 	}
 
-	&.owl-theme .owl-controls {
-		margin-top: 0;
-
-		.owl-buttons {
-			position: absolute;
-		    bottom: 0;
-		    right: 0;
-		    text-align: center;
-		}
-
-		.owl-prev, .owl-next {
-		    display: inline-block;
-		    background-color: rgba(0, 0, 0, 0.6);
-		    color: $color-1;
-		    width: 30px;
-		    height: 35px;
-		    line-height: 35px;
-		    font-size: 20px;
-		    text-align: center;
-		    opacity: 0;
-		    visibility: hidden;
-		    cursor: pointer;
-		    z-index: 10;
-		    transition: all .3s ease 0s;
-
-		    &:hover {
-		    	background-color: rgba(0,0,0,0.9);
-			    color: $color-1;
-			}
-		}
-	}
-
-	&.owl-theme:hover .owl-controls .owl-prev,
-	&.owl-theme:hover .owl-controls .owl-next {
+	&:hover .slick-prev,
+	&:hover .slick-next {
 	    opacity: 1;
 	    visibility: visible;
 	}

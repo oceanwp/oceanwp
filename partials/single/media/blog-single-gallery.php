@@ -26,7 +26,7 @@ if ( post_password_required() || empty( $attachments ) ) {
 
 <div class="thumbnail">
 
-	<div class="gallery-format owl-carousel owl-theme clr">
+	<div class="gallery-format clr">
 
 		<?php
 		// Loop through each attachment ID

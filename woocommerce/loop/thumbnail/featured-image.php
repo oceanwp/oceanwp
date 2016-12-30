@@ -20,17 +20,25 @@ if ( ! has_post_thumbnail() ) {
 $attachment = get_post_thumbnail_id();
 
 // Display featured image if defined
-if ( $attachment ) {
+if ( $attachment ) { ?>
 
-    echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
-        'class'         => 'woo-entry-image-main',
-        'alt'           => get_the_title(),
-        'itemprop'      => 'image',
-    ) );
+	<div class="woo-entry-image clr">
+		<?php
+		// Single Image
+		echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
+	        'class'         => 'woo-entry-image-main',
+	        'alt'           => get_the_title(),
+	        'itemprop'      => 'image',
+	    ) ); ?>
+	</div><!-- .woo-entry-image -->
 
+<?php
 }
 
 // Display placeholder
-else {
-    echo '<img src="'. wc_placeholder_img_src() .'" alt="'. esc_html__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />';
-} ?>
+else { ?>
+
+	<div class="woo-entry-image clr">
+    	<?php echo '<img src="'. wc_placeholder_img_src() .'" alt="'. esc_html__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />'; ?>
+	</div><!-- .woo-entry-image -->
+<?php } ?>

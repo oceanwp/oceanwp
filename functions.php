@@ -500,6 +500,7 @@ class OCEANWP_Theme_Class {
 			'about-me',
 			'contact-info',
 			'custom-links',
+			'custom-menu',
 			'facebook',
 			'flickr',
 			'instagram',
@@ -507,6 +508,8 @@ class OCEANWP_Theme_Class {
 			'recent-posts',
 			'social',
 			'video',
+			'custom-header-logo',
+			'custom-header-nav',
 		) );
 
 		// Loop through widgets and load their files
@@ -630,15 +633,7 @@ class OCEANWP_Theme_Class {
 			<script type="text/javascript">
 
 				/* OceanWP JS */
-
-				var $j = jQuery.noConflict();
-
-				$j( document ).ready( function() {
-					"use strict";
-
-					<?php echo oceanwp_minify_js( $output ); ?>
-
-				} );
+				<?php echo oceanwp_minify_js( $output ); ?>
 
 			</script>
 

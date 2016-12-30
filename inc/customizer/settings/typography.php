@@ -145,7 +145,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				),
 				'page_title' 				=> array(
 					'label' 				=> esc_html__( 'Page Title', 'oceanwp' ),
-					'target' 				=> '.page-header .page-header-title',
+					'target' 				=> '.page-header .page-header-title, .page-header.background-image-page-header .page-header-title',
 					'exclude' 				=> array( 'font-color' ),
 					'defaults' 				=> array(
 						'font-size' 		=> '32',

@@ -60,8 +60,8 @@ class OceanWP_Customizer_Sortable_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-sortable', OCEANWP_INC_DIR_URI . '/customizer/controls/sortable/sortable.js', array( 'jquery', 'customize-base', 'jquery-ui-core', 'jquery-ui-sortable' ), false, true );
-		wp_enqueue_style( 'oceanwp-sortable-css', OCEANWP_INC_DIR_URI . '/customizer/controls/sortable/sortable.css', null );
+		wp_enqueue_script( 'oceanwp-sortable', OCEANWP_INC_DIR_URI . 'customizer/controls/sortable/sortable.js', array( 'jquery', 'customize-base', 'jquery-ui-core', 'jquery-ui-sortable' ), false, true );
+		wp_enqueue_style( 'oceanwp-sortable-css', OCEANWP_INC_DIR_URI . 'customizer/controls/sortable/sortable.css', null );
 	}
 
 	/**

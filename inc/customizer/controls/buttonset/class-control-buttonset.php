@@ -33,8 +33,8 @@ class OceanWP_Customizer_Buttonset_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-buttonset', OCEANWP_INC_DIR_URI . '/customizer/controls/buttonset/buttonset.js', array( 'jquery', 'customize-base' ), false, true );
-		wp_enqueue_style( 'oceanwp-buttonset-css', OCEANWP_INC_DIR_URI . '/customizer/controls/buttonset/buttonset.css', null );
+		wp_enqueue_script( 'oceanwp-buttonset', OCEANWP_INC_DIR_URI . 'customizer/controls/buttonset/buttonset.js', array( 'jquery', 'customize-base' ), false, true );
+		wp_enqueue_style( 'oceanwp-buttonset-css', OCEANWP_INC_DIR_URI . 'customizer/controls/buttonset/buttonset.css', null );
 	}
 
 	/**

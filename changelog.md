@@ -1,4 +1,25 @@
-# Ocean Changelog
+# OceanWP Changelog
+
+### *2016.12.30* - 1.1.1
+* **Added** - New awesome option to create your own header style.
+* **Added** - Gallery lightbox for the default WordPress gallery.
+* **Added** - Two new widgets Custom Header Logo and Custom Header Nav to use with your page builder for the Custom Header style.
+* **Added** - Custom Menu widget with more options than the default WordPress widget.
+* **Added** - Options to add an image background to the page header (title) for all your pages via the customizer.
+* **Added** - New options in the Blog section of the customizer to add your featured images of your posts directly in the page header (title).
+* **Added** - New option in the Blog section of the customizer to add your post title in the page header (title).
+* **Added** - Grid/list buttons to the catalog products in the shop page.
+* **Added** - Links in the shop page to show the number of products.
+* **Added** - New color options in WooCommerce > Advanced Styling to customize the toolbar of the shop page.
+* **Added** - New color options in WooCommerce > Advanced Styling to customize the title and product description into the tabs.
+* **Added** - German language, thank you very much to Andreas Schu.
+* **Added** - Breadcrumbs in the blog page.
+* **Tweak** - Footer page ID, now you can add a page created with Elementor or Beaver Builder or any other page builder.
+* **Tweak** - All output logo improved.
+* **Fixed** - RTL problem with the carousel of posts galleries and products, I changed the script by Slick.
+* **Fixed** - There was a conflict with the select2 script (used to select a typography in the customizer) when WooCommerce was enabled because their version of the script is older.
+* **Removed** - Unnecessary elements in the front end of Elementor's post-type Library.
+* **Removed** - I deleted "$j( document ).ready( function() {" from the "Custom JS" option so that you can have full control of the code you enter.
 
 ### *2016.12.20* - 1.1.0
 Warning: The name of the theme changed to OceanWP because Ocean was already taken, WordPress will see the OceanWP theme as a new theme, so, you need to do a fews steps, look at this video:
@@ -20,7 +41,7 @@ I'm really sorry for that, there will never be any changes of this kind again, I
 
 Do not hesitate to contact me via facebook or trough the support page if you have misunderstood or you are having an issue.
 
-* **Added** - New color option in the customizer to add a background to the transparent header style..
+* **Added** - New color option in the customizer to add a background to the transparent header style.
 * **Added** - Select2 script for the typography select.
 * **Added** - Typography for the H1, H2, H3 and H4 headings.
 * **Added** - New panel to add your own JS code directly into the customizer.

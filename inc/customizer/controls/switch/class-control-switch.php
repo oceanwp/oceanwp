@@ -33,8 +33,8 @@ class OceanWP_Customizer_Switch_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-switch', OCEANWP_INC_DIR_URI . '/customizer/controls/switch/switch.js', array( 'jquery', 'customize-base' ), false, true );
-		wp_enqueue_style( 'oceanwp-switch-css', OCEANWP_INC_DIR_URI . '/customizer/controls/switch/switch.css', null );
+		wp_enqueue_script( 'oceanwp-switch', OCEANWP_INC_DIR_URI . 'customizer/controls/switch/switch.js', array( 'jquery', 'customize-base' ), false, true );
+		wp_enqueue_style( 'oceanwp-switch-css', OCEANWP_INC_DIR_URI . 'customizer/controls/switch/switch.css', null );
 	}
 
 	/**

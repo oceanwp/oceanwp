@@ -6,5 +6,12 @@
  * @package 	WooCommerce/Templates
  * @version     2.0.0
  */
-?>
-<ul class="products oceanwp-row clr">
+
+if ( get_theme_mod( 'ocean_woo_grid_list', true )
+	&& 'list' == get_theme_mod( 'ocean_woo_catalog_view', 'grid' ) ) {
+	$class = ' list';
+} else {
+	$class = ' grid';
+} ?>
+
+<ul class="products oceanwp-row clr<?php echo esc_attr( $class ); ?>">

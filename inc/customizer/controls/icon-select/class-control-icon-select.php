@@ -31,8 +31,8 @@ class OceanWP_Customizer_Icon_Select_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-icon-select', OCEANWP_INC_DIR_URI . '/customizer/controls/icon-select/icon-select.js', array( 'jquery', 'customize-base' ), false, true );
-		wp_enqueue_style( 'oceanwp-icon-select-css', OCEANWP_INC_DIR_URI . '/customizer/controls/icon-select/icon-select.css', null );
+		wp_enqueue_script( 'oceanwp-icon-select', OCEANWP_INC_DIR_URI . 'customizer/controls/icon-select/icon-select.js', array( 'jquery', 'customize-base' ), false, true );
+		wp_enqueue_style( 'oceanwp-icon-select-css', OCEANWP_INC_DIR_URI . 'customizer/controls/icon-select/icon-select.css', null );
 	}
 
 	/**

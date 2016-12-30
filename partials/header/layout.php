@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Header style
 $header_style = get_theme_mod( 'ocean_header_style', 'minimal' );
 
+// If transparent header style
 if ( 'transparent' == $header_style ) { ?>
 	<div id="transparent-header-wrap" class="clr">
 <?php
@@ -26,10 +27,14 @@ if ( 'transparent' == $header_style ) { ?>
 		get_template_part( 'partials/header/style/top-header' );
 	}
 
-
 	// If full screen header style
 	else if ( 'full_screen' == $header_style ) {
 		get_template_part( 'partials/header/style/full-screen-header' );
+	}
+
+	// If custom header style
+	else if ( 'custom' == $header_style ) {
+		get_template_part( 'partials/header/style/custom-header' );
 	}
 
 	// Default header style
@@ -55,6 +60,7 @@ if ( 'transparent' == $header_style ) { ?>
 </header><!-- #header -->
 
 <?php
+// If transparent header style
 if ( 'transparent' == $header_style ) { ?>
 	</div>
 <?php

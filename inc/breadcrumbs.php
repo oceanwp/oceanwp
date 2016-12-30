@@ -35,7 +35,7 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 
 	// Return if breadcrumbs are disabled
 	if ( ! get_theme_mod( 'ocean_breadcrumbs', true )
-		|| is_home() ) {
+		|| is_front_page() ) {
 		return;
 	}
 	
@@ -321,8 +321,13 @@ class OceanWP_Breadcrumb_Trail {
 			$this->add_network_home_link();
 			$this->add_site_home_link();
 
+			// If viewing the blog page.
+			if ( is_home() ) {
+				$this->add_home_items();
+			}
+
 			// If viewing a single post.
-			if ( is_singular() ) {
+			elseif ( is_singular() ) {
 				$this->add_singular_items();
 			}
 
@@ -465,6 +470,19 @@ class OceanWP_Breadcrumb_Trail {
 			elseif ( true === $this->args['show_title'] )
 				$this->items[] = is_multisite() && true === $this->args['network'] ? get_bloginfo( 'name' ) : $this->labels['home'];
 		}
+	}
+
+	/**
+	 * Adds blog page items to the items array.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @return void
+	 */
+	protected function add_home_items() {
+
+		if ( true === $this->args['show_title'] )
+			$this->items[] = get_the_title( get_option( 'page_for_posts', true ) );
 	}
 
 	/**
@@ -1013,7 +1031,12 @@ class OceanWP_Breadcrumb_Trail {
 		if ( $terms && ! is_wp_error( $terms ) ) {
 
 			// Sort the terms by ID and get the first category.
-			usort( $terms, '_usort_terms_by_ID' );
+			if ( function_exists( 'wp_list_sort' ) )
+				$terms = wp_list_sort( $terms, 'term_id' );
+
+			else
+				usort( $terms, '_usort_terms_by_ID' );
+
 			$term = get_term( $terms[0], $taxonomy );
 
 			// If the category has a parent, add the hierarchy to the trail.

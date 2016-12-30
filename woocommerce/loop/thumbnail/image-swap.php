@@ -41,7 +41,7 @@ if ( ! empty( $attachment_ids ) ) {
 // Return thumbnail
 if ( $secondary_img_id ) : ?>
 
-	<div class="woo-entry-image-swap oceanwp-clr">
+	<div class="woo-entry-image-swap woo-entry-image clr">
 		<?php
 		// Main Image
 		echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
@@ -60,12 +60,14 @@ if ( $secondary_img_id ) : ?>
 
 <?php else : ?>
 
-	<?php
-	// Single Image
-	echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
-        'class'         => 'woo-entry-image-main',
-        'alt'           => get_the_title(),
-        'itemprop'      => 'image',
-    ) ); ?>
+	<div class="woo-entry-image clr">
+		<?php
+		// Single Image
+		echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
+	        'class'         => 'woo-entry-image-main',
+	        'alt'           => get_the_title(),
+	        'itemprop'      => 'image',
+	    ) ); ?>
+	</div><!-- .woo-entry-image -->
 
 <?php endif; ?>

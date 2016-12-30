@@ -70,7 +70,44 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 					'top'			=> esc_html__( 'Top Menu', 'oceanwp' ),
 					'full_screen'	=> esc_html__( 'Full Screen', 'oceanwp' ),
 					'center'		=> esc_html__( 'Center', 'oceanwp' ),
+					'custom'		=> esc_html__( 'Custom Header', 'oceanwp' ),
 				),
+			) ) );
+
+			/**
+			 * Custom Header Page ID
+			 */
+			$wp_customize->add_setting( 'ocean_header_page_id', array(
+				'default' 				=> '',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dropdown_Pages( $wp_customize, 'ocean_header_page_id', array(
+				'label'	   				=> esc_html__( 'Page ID', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose a page where the content will be displayed in the header.', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_header_general',
+				'settings' 				=> 'ocean_header_page_id',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_custom_header',
+			) ) );
+
+			/**
+			 * Custom Header Add Container
+			 */
+			$wp_customize->add_setting( 'ocean_add_custom_header_container', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> true,
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_add_custom_header_container', array(
+				'label'	   				=> esc_html__( 'Add Container', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_header_general',
+				'settings' 				=> 'ocean_add_custom_header_container',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_custom_header',
 			) ) );
 
 			/**
@@ -218,6 +255,38 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) );
 
 			/**
+			 * Transparent Header Image Logo
+			 */
+			$wp_customize->add_setting( 'ocean_transparent_header_logo', array(
+				'default'           	=> '',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_transparent_header_logo', array(
+				'label'	   				=> esc_html__( 'Logo', 'oceanwp' ),
+				'section'  				=> 'ocean_header_transparent_style',
+				'settings' 				=> 'ocean_transparent_header_logo',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_transparent_header_style',
+			) ) );
+
+			/**
+			 * Transparent Header Retina Logo
+			 */
+			$wp_customize->add_setting( 'ocean_transparent_header_logo_retina', array(
+				'default'           	=> '',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_transparent_header_logo_retina', array(
+				'label'	   				=> esc_html__( 'Retina Logo', 'oceanwp' ),
+				'section'  				=> 'ocean_header_transparent_style',
+				'settings' 				=> 'ocean_transparent_header_logo_retina',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_transparent_header_style',
+			) ) );
+
+			/**
 			 * Transparent Header Background Color
 			 */
 			$wp_customize->add_setting( 'ocean_transparent_header_bg', array(
@@ -231,82 +300,6 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'settings' 				=> 'ocean_transparent_header_bg',
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_transparent_header_style',
-			) ) );
-
-			/**
-			 * Transparent Header Image Logo
-			 */
-			$wp_customize->add_setting( 'ocean_transparent_header_logo', array(
-				'default'           	=> '',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_transparent_header_logo', array(
-				'label'	   				=> esc_html__( 'Image Logo', 'oceanwp' ),
-				'description'	 		=> esc_html__( 'Select a custom logo (optional) for the transparent header.', 'oceanwp' ),
-				'section'  				=> 'ocean_header_transparent_style',
-				'settings' 				=> 'ocean_transparent_header_logo',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_transparent_header_style',
-			) ) );
-
-			/**
-			 * Transparent Header Retina Image Logo
-			 */
-			$wp_customize->add_setting( 'ocean_transparent_header_logo_retina', array(
-				'default'           	=> '',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_transparent_header_logo_retina', array(
-				'label'	   				=> esc_html__( 'Retina Image Logo', 'oceanwp' ),
-				'description'	 		=> esc_html__( 'Retina version for the transparent header custom logo.', 'oceanwp' ),
-				'section'  				=> 'ocean_header_transparent_style',
-				'settings' 				=> 'ocean_transparent_header_logo_retina',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_transparent_header_style',
-			) ) );
-
-			/**
-			 * Transparent Header Logo Height
-			 */
-			$wp_customize->add_setting( 'ocean_transparent_logo_height', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_transparent_logo_height', array(
-				'label'	   				=> esc_html__( 'Height (px)', 'oceanwp' ),
-				'type' 					=> 'number',
-				'section'  				=> 'ocean_header_transparent_style',
-				'settings' 				=> 'ocean_transparent_logo_height',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_transparent_header_style',
-			    'input_attrs' 			=> array(
-			        'min'   => 0,
-			        'max'   => 100,
-			    ),
-			) ) );
-
-			/**
-			 * Transparent Header Logo Width
-			 */
-			$wp_customize->add_setting( 'ocean_transparent_logo_width', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_transparent_logo_width', array(
-				'label'	   				=> esc_html__( 'Width (px)', 'oceanwp' ),
-				'type' 					=> 'number',
-				'section'  				=> 'ocean_header_transparent_style',
-				'settings' 				=> 'ocean_transparent_logo_width',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_transparent_header_style',
-			    'input_attrs' 			=> array(
-			        'min'   => 0,
-			        'max'   => 300,
-			    ),
 			) ) );
 
 			/**
@@ -417,7 +410,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) );
 
 			/**
-			 * Full Screen Header Image Logo
+			 * Full Screen Header Logo
 			 */
 			$wp_customize->add_setting( 'ocean_full_screen_header_logo', array(
 				'default'           	=> '',
@@ -425,54 +418,12 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_full_screen_header_logo', array(
-				'label'	   				=> esc_html__( 'Image Logo', 'oceanwp' ),
-				'description'	 		=> esc_html__( 'Select a custom logo (optional) when the menu is opened.', 'oceanwp' ),
+				'label'	   				=> esc_html__( 'Logo (optional)', 'oceanwp' ),
+				'description'	 		=> esc_html__( 'Select a custom logo when the menu is opened.', 'oceanwp' ),
 				'section'  				=> 'ocean_header_full_screen_style',
 				'settings' 				=> 'ocean_full_screen_header_logo',
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_full_screen_header_style',
-			) ) );
-
-			/**
-			 * Full Screen Header Logo Height
-			 */
-			$wp_customize->add_setting( 'ocean_full_screen_logo_height', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_full_screen_logo_height', array(
-				'label'	   				=> esc_html__( 'Height (px)', 'oceanwp' ),
-				'type' 					=> 'number',
-				'section'  				=> 'ocean_header_full_screen_style',
-				'settings' 				=> 'ocean_full_screen_logo_height',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_full_screen_header_style',
-			    'input_attrs' 			=> array(
-			        'min'   => 0,
-			        'max'   => 100,
-			    ),
-			) ) );
-
-			/**
-			 * Full Screen Header Logo Width
-			 */
-			$wp_customize->add_setting( 'ocean_full_screen_logo_width', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_full_screen_logo_width', array(
-				'label'	   				=> esc_html__( 'Width (px)', 'oceanwp' ),
-				'type' 					=> 'number',
-				'section'  				=> 'ocean_header_full_screen_style',
-				'settings' 				=> 'ocean_full_screen_logo_width',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_full_screen_header_style',
-			    'input_attrs' 			=> array(
-			        'min'   => 0,
-			        'max'   => 300,
-			    ),
 			) ) );
 
 			/**
@@ -715,7 +666,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) );
 
 			/**
-			 * Header Retina Image Logo
+			 * Header Retina Logo
 			 */
 			$wp_customize->add_setting( 'ocean_retina_logo', array(
 				'default'           	=> '',
@@ -723,7 +674,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_retina_logo', array(
-				'label'	   				=> esc_html__( 'Retina Image Logo', 'oceanwp' ),
+				'label'	   				=> esc_html__( 'Retina Logo', 'oceanwp' ),
 				'section'  				=> 'ocean_header_logo',
 				'settings' 				=> 'ocean_retina_logo',
 				'priority' 				=> 10,
@@ -748,27 +699,6 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
 			        'max'   => 100,
-			    ),
-			) ) );
-
-			/**
-			 * Header Logo Width
-			 */
-			$wp_customize->add_setting( 'ocean_logo_width', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_logo_width', array(
-				'label'	   				=> esc_html__( 'Width (px)', 'oceanwp' ),
-				'type' 					=> 'number',
-				'section'  				=> 'ocean_header_logo',
-				'settings' 				=> 'ocean_logo_width',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_custom_logo',
-			    'input_attrs' 			=> array(
-			        'min'   => 0,
-			        'max'   => 300,
 			    ),
 			) ) );
 
@@ -1056,7 +986,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_dropdown_width', array(
 				'label'	   				=> esc_html__( 'Width (px)', 'oceanwp' ),
-				'section'  				=> 'ocean_header_general',
+				'section'  				=> 'ocean_header_menu',
 				'settings' 				=> 'ocean_dropdown_width',
 				'priority' 				=> 10,
 			    'input_attrs' 			=> array(
@@ -1985,7 +1915,9 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Add header height
 			if ( ( 'top' != $header_style ) && ! empty( $header_height ) && '74' != $header_height ) {
-				$css .= '#site-logo #site-logo-inner,#oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner{height:'. $header_height .'px;}';
+				if ( 'custom' != $header_style ) {
+					$css .= '#site-logo #site-logo-inner,#oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner{height:'. $header_height .'px;}';
+				}
 				$css .= '#site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{line-height:'. $header_height .'px;}';
 			}
 

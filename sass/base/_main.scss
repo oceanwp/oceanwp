@@ -91,6 +91,17 @@ body .oceanwp-row {
 }
 
 /**
+ * No margin or padding class.
+ */
+.no-margin {
+	margin: 0 !important;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+/**
  * Responsive Videos.
  */
 .responsive-video-wrap,

@@ -33,8 +33,8 @@ class OceanWP_Customizer_Radio_Image_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-radio-image', OCEANWP_INC_DIR_URI . '/customizer/controls/radio-image/radio-image.js', array( 'jquery', 'customize-base' ), false, true );
-		wp_enqueue_style( 'oceanwp-radio-image-css', OCEANWP_INC_DIR_URI . '/customizer/controls/radio-image/radio-image.css', null );
+		wp_enqueue_script( 'oceanwp-radio-image', OCEANWP_INC_DIR_URI . 'customizer/controls/radio-image/radio-image.js', array( 'jquery', 'customize-base' ), false, true );
+		wp_enqueue_style( 'oceanwp-radio-image-css', OCEANWP_INC_DIR_URI . 'customizer/controls/radio-image/radio-image.css', null );
 	}
 
 	/**

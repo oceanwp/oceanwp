@@ -4,8 +4,6 @@
  *
  * @package     OceanWP WordPress theme
  * @subpackage  Controls
- * @see   		https://github.com/justintadlock/customizer-typography
- * @license     https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
@@ -33,7 +31,7 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'select2', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/select2.min.js', array( 'jquery' ), false, true );
+		wp_enqueue_script( 'oceanwp-select2', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/select2.min.js', array( 'jquery' ), false, true );
 		wp_enqueue_style( 'select2-css', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/select2.min.css', null );
 		wp_enqueue_script( 'oceanwp-typography', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/typography.js', array( 'jquery', 'select2' ), false, true );
 		wp_enqueue_style( 'oceanwp-typography-css', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/typography.css', null );

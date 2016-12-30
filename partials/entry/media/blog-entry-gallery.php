@@ -33,7 +33,7 @@ if ( 'grid-entry' == oceanwp_blog_entry_style() ) {
 
 <div class="thumbnail">
 
-	<div class="gallery-format owl-carousel owl-theme clr">
+	<div class="gallery-format clr">
 
 		<?php
 		// Loop through each attachment ID

@@ -27,6 +27,13 @@ get_header(); ?>
 
 					}
 
+					// Elementor library posts
+    				elseif ( is_singular( 'elementor_library' ) ) {
+
+    					get_template_part( 'partials/elementor/layout' );
+
+    				}
+
 					// All other post types.
 					else {
 

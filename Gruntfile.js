@@ -16,13 +16,14 @@ module.exports = function ( grunt ) {
 		uglify: {
 			dev: {
 				files: {
+					'assets/js/devs/cookie.min.js': 'assets/js/devs/cookie.js',
 					'assets/js/devs/customselect.min.js': 'assets/js/devs/customselect.js',
 					'assets/js/devs/equalHeights.min.js': 'assets/js/devs/equalHeights.js',
 					'assets/js/devs/images-loaded.min.js': 'assets/js/devs/images-loaded.js',
 					'assets/js/devs/isotope.min.js': 'assets/js/devs/isotope.js',
-					'assets/js/devs/owl.carousel.min.js': 'assets/js/devs/owl.carousel.js',
 					'assets/js/devs/scrollTo.min.js': 'assets/js/devs/scrollTo.js',
 					'assets/js/devs/sidr.min.js': 'assets/js/devs/sidr.js',
+					'assets/js/devs/slick.min.js': 'assets/js/devs/slick.js',
 					'assets/js/devs/smoothscroll.min.js': 'assets/js/devs/smoothscroll.js',
 					'assets/js/devs/superfish.min.js': 'assets/js/devs/superfish.js',
 					'assets/js/plugins.min.js': [ 'assets/js/devs/**/*.min.js' ],

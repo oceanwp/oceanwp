@@ -31,7 +31,7 @@ class OceanWP_Customizer_Heading_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_style( 'oceanwp-heading-css', OCEANWP_INC_DIR_URI . '/customizer/controls/heading/heading.css', null );
+		wp_enqueue_style( 'oceanwp-heading-css', OCEANWP_INC_DIR_URI . 'customizer/controls/heading/heading.css', null );
 	}
 
 	/**

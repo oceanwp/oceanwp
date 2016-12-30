@@ -24,6 +24,8 @@ $j( document ).on( 'ready', function() {
 	initCarousel();
 	// Custom select
 	customSelects();
+    // Woo catalog view
+    wooGridList();
     // Woo reviews scroll
     wooReviewsScroll();
 	// Woo categories widget
@@ -607,35 +609,70 @@ function smoothCommentScroll() {
 /* ==============================================
 CAROUSEL
 ============================================== */
-function initCarousel( context ) {
+function initCarousel() {
 	"use strict"
 
-	var $carousel = $j( '.gallery-format, .product-entry-slider', context );
+	var $carousel = $j( '.gallery-format, .product-entry-slider' );
+
+	// If RTL
+	if ( $j( 'body' ).hasClass( 'rtl' ) ) {
+		var rtl = true;
+	} else {
+		var rtl = false;
+	}
 
 	// Return autoplay to false if woo slider
 	if ( $j( 'body' ).hasClass( 'woocommerce' ) ) {
 		var autoplay = false;
 	} else {
-		var autoplay = 7000;
+		var autoplay = true;
 	}
+
+	// Slide speed
+	var speed = 7000;
 
 	// Gallery slider
 	$carousel.imagesLoaded( function() {
-		$carousel.owlCarousel( {
-	        singleItem: true,
-	        navigation: true,
-	        navigationText: ['<span class="fa fa-angle-left"></span>','<span class="fa fa-angle-right"></span>'],
-	        slideSpeed: 300,
-	        pagination: false,
-	        autoPlay: autoplay,
-	        stopOnHover: true,
-	    } );
+		$carousel.slick( {
+			autoplay: autoplay,
+			autoplaySpeed: speed,
+			prevArrow: '<button type="button" class="slick-prev"><span class="fa fa-angle-left"></span></button>',
+			nextArrow: '<button type="button" class="slick-next"><span class="fa fa-angle-right"></span></button>',
+			rtl: rtl,
+		} );
 	} );
 
-	// WooCommerce: Prevent clicking on Woo entry slider
-	$j( '.product-entry-slider' ).click( function() {
-		return false;
+	// WooCommerce slider
+    $j( '.product .main-images' ).slick( {
+		prevArrow: '<button type="button" class="slick-prev"><span class="fa fa-angle-left"></span></button>',
+		nextArrow: '<button type="button" class="slick-next"><span class="fa fa-angle-right"></span></button>',
+		asNavFor: '.product-thumbnails',
+		rtl: rtl,
 	} );
+
+	// WooCommerce thumbnails slider
+	$j( '.product .product-thumbnails' ).slick( {
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		prevArrow: '<button type="button" class="slick-prev"><span class="fa fa-angle-left"></span></button>',
+		nextArrow: '<button type="button" class="slick-next"><span class="fa fa-angle-right"></span></button>',
+		asNavFor: '.product .main-images',
+		focusOnSelect: true,
+		rtl: rtl,
+		responsive: [
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 2,
+				}
+			}
+		]
+	} );
+
+	// WooCommerce: prevent clicking
+	$j( '.product-entry-slider, .product .main-images a, .product .product-thumbnails a' ).click( function(e) {
+		e.preventDefault();
+    } );
 
 	// Posts slider
 	var $sliderWrap = $j( '#oceanwp-post-list' ),
@@ -645,27 +682,50 @@ function initCarousel( context ) {
 	// Slider style
 	if ( $sliderWrap.hasClass( 'one' ) ) {
         var $items 	= 1,
+        	$scroll = 1,
         	$small 	= 1,
         	$medium = 1,
         	$large 	= 1;
     } else if ( $sliderWrap.hasClass( 'two' ) ) {
         var $items 	= 3,
+        	$scroll = 3,
         	$small 	= 1,
         	$medium = 2,
         	$large 	= 3;
     }
 
     $slider.imagesLoaded( function() {
-	    $slider.owlCarousel( {
-	        items: $items,
-	        itemsCustom: [[0, $small], [480, $small], [980, $medium], [1200, $large]],
-	        navigation: true,
-	        navigationText: ['<span class="fa fa-angle-left"></span>','<span class="fa fa-angle-right"></span>'],
-	        slideSpeed: 500,
-	        pagination: false,
-	        autoPlay: $slideshow,
-	        stopOnHover: true,
-	    } );
+	    $slider.slick( {
+			infinite: true,
+			slidesToShow: $items,
+			slidesToScroll: $scroll,
+			prevArrow: '<button type="button" class="slick-prev"><span class="fa fa-angle-left"></span></button>',
+			nextArrow: '<button type="button" class="slick-next"><span class="fa fa-angle-right"></span></button>',
+			speed: 500,
+			autoplay: $slideshow,
+			autoplaySpeed: 7000,
+			rtl: rtl,
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: $large,
+					}
+				},
+				{
+					breakpoint: 980,
+					settings: {
+						slidesToShow: $medium,
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: $small,
+					}
+				}
+			]
+		} );
 	} );
 
 }
@@ -679,6 +739,56 @@ function customSelects() {
 	$j( oceanwpLocalize.customSelects ).customSelect( {
 		customClass: 'theme-select'
 	} );
+
+}
+
+/* ==============================================
+WOOCOMMERCE GRID LIST VIEW
+============================================== */
+function wooGridList() {
+	"use strict"
+
+	var oceanwpCookie = Cookies.noConflict();
+
+	if ( $j( 'body' ).hasClass( 'has-grid-list' ) ) {
+
+		$j( '#oceanwp-grid' ).on( 'click', function() {
+			$j( this ).addClass( 'active' );
+			$j( '#oceanwp-list' ).removeClass( 'active' );
+			oceanwpCookie.set( 'gridcookie', 'grid', { path: '' } );
+			$j( '.archive.woocommerce ul.products' ).fadeOut( 300, function() {
+				$j( this ).addClass( 'grid' ).removeClass( 'list' ).fadeIn( 300 );
+			} );
+			return false;
+		} );
+
+		$j( '#oceanwp-list' ).on( 'click', function() {
+			$j( this ).addClass( 'active' );
+			$j( '#oceanwp-grid' ).removeClass( 'active' );
+			oceanwpCookie.set( 'gridcookie', 'list', { path: '' } );
+			$j( '.archive.woocommerce ul.products' ).fadeOut( 300, function() {
+				$j( this ).addClass( 'list' ).removeClass( 'grid' ).fadeIn( 300 );
+			} );
+			return false;
+		} );
+
+		if ( oceanwpCookie.get( 'gridcookie' ) == 'grid' ) {
+	        $j( '.oceanwp-grid-list #oceanwp-grid' ).addClass( 'active' );
+	        $j( '.oceanwp-grid-list #oceanwp-list' ).removeClass( 'active' );
+	        $j( '.archive.woocommerce ul.products' ).addClass( 'grid' ).removeClass( 'list' );
+	    }
+
+	    if ( oceanwpCookie.get( 'gridcookie' ) == 'list' ) {
+	        $j( '.oceanwp-grid-list #oceanwp-list' ).addClass( 'active' );
+	        $j( '.oceanwp-grid-list #oceanwp-grid' ).removeClass( 'active' );
+	        $j( '.archive.woocommerce ul.products' ).addClass( 'list' ).removeClass( 'grid' );
+	    }
+
+	} else {
+
+		oceanwpCookie.remove( 'gridcookie', { path: '' } );
+
+	}
 
 }
 
@@ -751,6 +861,7 @@ function autoLightbox() {
 
 		if ( ! $j( this ).hasClass( 'no-lightbox' )
 			&& ! $j( this ).hasClass( 'gallery-lightbox' )
+			&& ! $j( this ).hasClass( 'woo-lightbox' )
 			&& ! $j( this ).hasClass( 'woo-thumbnail' ) ) {
 
 			$j( this ).addClass( 'oceanwp-lightbox' )
@@ -768,7 +879,7 @@ function initLightbox() {
 	"use strict"
 
 	// Lightbox
-    $j('.oceanwp-lightbox').magnificPopup( {
+    $j( '.oceanwp-lightbox' ).magnificPopup( {
         type: 'image',
         image:{
             cursor: 'mfp-zoom-out-cur',
@@ -783,7 +894,7 @@ function initLightbox() {
     } );
 
     // Gallery lightbox
-    $j('.gallery-lightbox').magnificPopup( {
+    $j('.gallery-lightbox:not(.slick-cloned), .gallery .gallery-item a:has(img), .product-image:not(.slick-cloned) a.woo-lightbox').magnificPopup( {
         type:'image',
         gallery: {
             enabled: true,
