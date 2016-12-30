@@ -13,7 +13,7 @@ if( !class_exists('WPUpdatesThemeUpdater_1916') ) {
     class WPUpdatesThemeUpdater_1916 {
     
         var $api_url;
-        var $theme_id = 1878;
+        var $theme_id = 1916;
         var $theme_slug;
         var $license_key;
     
