@@ -45,10 +45,19 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		'walker'         => new OceanWP_Custom_Nav_Walker(),
 	);
 
+	// Check if custom menu
+	if ( $menu = oceanwp_header_custom_menu() ) {
+		$menu_args['menu']  = $menu;
+	}
+
+	do_action( 'ocean_before_nav' );
+
 	// If is not full screen header style
 	if ( 'full_screen' != $header_style ) { ?>
 		<div id="site-navigation-wrap" class="<?php echo $wrap_classes; ?>">
 	<?php } ?>
+
+		<?php do_action( 'ocean_before_nav_inner' ); ?>
 
 		<nav id="site-navigation" class="<?php echo $inner_classes; ?>" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 
@@ -96,10 +105,14 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 		</nav><!-- #site-navigation -->
 
+		<?php do_action( 'ocean_after_nav_inner' ); ?>
+
 	<?php
 	// If is not full screen header style
 	if ( 'full_screen' != $header_style ) { ?>
 		</div><!-- #site-navigation-wrap -->
 	<?php } ?>
+
+	<?php do_action( 'ocean_after_nav' ); ?>
 
 <?php endif; ?>

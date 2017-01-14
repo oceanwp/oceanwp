@@ -1,7 +1,7 @@
 {
-  "name": "ocean",
+  "name": "oceanwp",
   "version": "1.0.0",
-  "description": "Ocean ... ...",
+  "description": "OceanWP ... ...",
   "main": "Gruntfile.js",
   "dependencies": {},
   "devDependencies": {

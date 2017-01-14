@@ -44,7 +44,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		}
 
 		// Cart Icon
-		if ( 'center' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+		if ( 'center' == oceanwp_header_style() ) {
 			$cart_icon = esc_html__( 'Cart', 'oceanwp' );
 		} else {
 			$cart_icon = '<i class="icon-handbag"></i>';

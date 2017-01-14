@@ -15,7 +15,11 @@ $retina_logo 		= get_theme_mod( 'ocean_retina_logo' );
 $transparent_logo 	= get_theme_mod( 'ocean_transparent_header_logo' );
 $full_screen_logo 	= get_theme_mod( 'ocean_full_screen_header_logo' ); ?>
 
+<?php do_action( 'ocean_before_logo' ); ?>
+
 <div id="site-logo" class="<?php echo oceanwp_header_logo_classes(); ?>" itemscope itemtype="http://schema.org/Brand">
+
+	<?php do_action( 'ocean_before_logo_inner' ); ?>
 
 	<div id="site-logo-inner" class="clr">
 
@@ -49,6 +53,8 @@ $full_screen_logo 	= get_theme_mod( 'ocean_full_screen_header_logo' ); ?>
 
 	</div><!-- #site-logo-inner -->
 
+	<?php do_action( 'ocean_after_logo_inner' ); ?>
+
 	<?php
 	// Site description
 	if ( 'top' == get_theme_mod( 'ocean_header_style', 'minimal' )
@@ -57,3 +63,5 @@ $full_screen_logo 	= get_theme_mod( 'ocean_full_screen_header_logo' ); ?>
 	<?php } ?>
 
 </div><!-- #site-logo -->
+
+<?php do_action( 'ocean_after_logo' ); ?>

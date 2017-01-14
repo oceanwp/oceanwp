@@ -120,7 +120,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_bottom_footer_color', array(
-				'label'	   				=> esc_html__( 'Color', 'oceanwp' ),
+				'label'	   				=> esc_html__( 'Text Color', 'oceanwp' ),
 				'section'  				=> $section,
 				'settings' 				=> 'ocean_bottom_footer_color',
 				'priority' 				=> 10,

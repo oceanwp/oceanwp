@@ -34,6 +34,8 @@ if ( $container ) {
 // Check if there is page for the header
 if ( $get_page ) : ?>
 
+    <?php do_action( 'ocean_before_header_inner' ); ?>
+
 	<div id="site-header-inner" class="<?php echo esc_attr( $class ); ?>clr">
 
 	    <?php
@@ -60,6 +62,8 @@ if ( $get_page ) : ?>
         } ?>
 
     </div>
+
+    <?php do_action( 'ocean_after_header_inner' ); ?>
 
 <?php
 endif;

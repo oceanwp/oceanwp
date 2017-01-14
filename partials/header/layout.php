@@ -11,7 +11,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Header style
-$header_style = get_theme_mod( 'ocean_header_style', 'minimal' );
+$header_style = oceanwp_header_style();
+
+// Header height, used for local scrolling
+$header_height = get_theme_mod( 'ocean_header_height', '74' );
+
+if ( class_exists( 'Ocean_Sticky_Header' ) ) {
+
+	$sticky_style = get_theme_mod( 'osh_sticky_header_style', 'shrink' );
+
+	if ( 'shrink' == $sticky_style ) {
+		$header_height = get_theme_mod( 'osh_shrink_header_height', '54' );
+	} else if ( 'fixed' == $sticky_style ) {
+		$header_height = get_theme_mod( 'osh_fixed_header_height', '54' );
+	}
+
+}
+
+do_action( 'ocean_before_header' );
 
 // If transparent header style
 if ( 'transparent' == $header_style ) { ?>
@@ -19,7 +36,7 @@ if ( 'transparent' == $header_style ) { ?>
 <?php
 } ?>
 
-<header id="site-header" class="<?php echo oceanwp_header_classes(); ?>" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+<header id="site-header" class="<?php echo oceanwp_header_classes(); ?>" itemscope="itemscope" itemtype="http://schema.org/WPHeader" data-height="<?php echo esc_attr( $header_height ); ?>">
 
 	<?php
 	// If top header style
@@ -40,6 +57,8 @@ if ( 'transparent' == $header_style ) { ?>
 	// Default header style
 	else { ?>
 
+		<?php do_action( 'ocean_before_header_inner' ); ?>
+
 		<div id="site-header-inner" class="container clr">
 
 			<?php get_template_part( 'partials/header/logo' ); ?>
@@ -54,6 +73,8 @@ if ( 'transparent' == $header_style ) { ?>
 
 		</div><!-- #site-header-inner -->
 
+		<?php do_action( 'ocean_after_header_inner' ); ?>
+
 	<?php
 	} ?>
 
@@ -64,4 +85,6 @@ if ( 'transparent' == $header_style ) { ?>
 if ( 'transparent' == $header_style ) { ?>
 	</div>
 <?php
-} ?>
+}
+
+do_action( 'ocean_after_header' ); ?>

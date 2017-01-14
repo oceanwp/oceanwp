@@ -24,7 +24,11 @@ if ( ! has_nav_menu( $menu_location ) ) {
 }
 $wrap_classes = implode( ' ', $wrap_classes ); ?>
 
+<?php do_action( 'ocean_before_footer_bottom' ); ?>
+
 <div id="footer-bottom" class="<?php echo $wrap_classes; ?>">
+
+	<?php do_action( 'ocean_before_footer_bottom_inner' ); ?>
 
 	<div id="footer-bottom-inner" class="container clr">
 
@@ -57,4 +61,8 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 
 	</div><!-- #footer-bottom-inner -->
 
+	<?php do_action( 'ocean_after_footer_bottom_inner' ); ?>
+
 </div><!-- #footer-bottom -->
+
+<?php do_action( 'ocean_after_footer_bottom' ); ?>

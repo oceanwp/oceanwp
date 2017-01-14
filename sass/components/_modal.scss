@@ -1,0 +1,73 @@
+.oceanwp-modal {
+	display: none;
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    min-width: 280px;
+    max-width: 700px;
+    max-height: 85%;
+    background-color: #ffffff;
+    padding: 50px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 999999;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+
+    .oceanwp-close-modal {
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    background-color: #13aff0;
+	    width: 30px;
+	    height: 30px;
+	    line-height: 1;
+
+	    &:hover {
+	    	background-color: #0b7cac;
+	    }
+
+	    &:before, &:after {
+	    	content: '';
+		    position: absolute;
+		    height: 2px;
+		    width: 16px;
+		    top: 50%;
+		    left: 50%;
+		    margin-top: -1px;
+		    margin-left: -8px;
+		    background-color: #fff;
+	    	border-radius: 5px;
+	    }
+
+	    &:before {
+	    	-webkit-transform: rotate(45deg);
+		    -moz-transform: rotate(45deg);
+		    -ms-transform: rotate(45deg);
+		    -o-transform: rotate(45deg);
+		    transform: rotate(45deg);
+	    }
+
+	    &:after {
+	    	-webkit-transform: rotate(-45deg);
+		    -moz-transform: rotate(-45deg);
+		    -ms-transform: rotate(-45deg);
+		    -o-transform: rotate(-45deg);
+		    transform: rotate(-45deg);
+	    }
+    }
+}
+
+/* Overlay */
+.oceanwp-popup-overlay {
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.9);
+}

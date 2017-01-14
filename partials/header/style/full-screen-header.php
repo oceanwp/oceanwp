@@ -10,6 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 } ?>
 
+<?php do_action( 'ocean_before_header_inner' ); ?>
+
 <div id="site-header-inner" class="container clr">
 
 	<?php get_template_part( 'partials/header/logo' ); ?>
@@ -33,3 +35,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php get_template_part( 'partials/header/mobile-icon' ); ?>
 
 </div><!-- #site-header-inner -->
+
+<?php do_action( 'ocean_after_header_inner' ); ?>

@@ -42,7 +42,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		<?php if ( OCEANWP_WOOCOMMERCE_ACTIVE ) { ?>
 			<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="mobile-wcmenucart"><?php echo $cart_icon; ?></a>
 		<?php } ?>
-		<a href="#mobile-menu" class="mobile-menu"><?php echo $icon; ?><span class="oceanwp-text"><?php echo $text; ?></span></a>
+		<a href="#" class="mobile-menu"><?php echo $icon; ?><span class="oceanwp-text"><?php echo $text; ?></span></a>
 		<?php do_action( 'ocean_after_mobile_icon' ); ?>
 	</div><!-- #oceanwp-mobile-menu-navbar -->
 

@@ -20,6 +20,8 @@ $j( document ).on( 'ready', function() {
 	mobileMenu();
     // Smooth comment scroll
     smoothCommentScroll();
+	// Modal
+	initModal();
 	// Carousel
 	initCarousel();
 	// Custom select
@@ -36,8 +38,10 @@ $j( document ).on( 'ready', function() {
     initLightbox();
 	// Masonry grids
 	masonryGrids();
+    // Responsive Video
+	initFitVids();
     // Equal height elements
-	equalHeightsInit();
+	initEqualHeight();
 	// Recent posts widget
 	postsWidget();
 	// Scroll effect
@@ -88,7 +92,7 @@ NAV NO CLICK
 function navNoClick() {
 	"use strict"
 
-	$j( 'li.nav-no-click > a, li.sidr-class-nav-no-click > a' ).live( 'click', function() {
+	$j( 'li.nav-no-click > a, li.sidr-class-nav-no-click > a' ).on( 'click', function() {
 		return false;
 	} );
 
@@ -492,12 +496,12 @@ function mobileMenu( event ) {
 
 		// Add sidr
 		$j( '.mobile-menu' ).sidr( {
-			name     : 'sidr',						// Name for the 'sidr'
-			source   : oceanwpLocalize.sidrSource,	// Override the source of the content
+			name     : 'sidr',							// Name for the 'sidr'
+			source   : oceanwpLocalize.sidrSource,		// Override the source of the content
 			side     : oceanwpLocalize.sidrSide,     	// Accepts 'left' or 'right'
 			displace : oceanwpLocalize.sidrDisplace, 	// Displace the body content or not
-			speed    : 300,            				// Accepts standard jQuery effects speeds (i.e. fast, normal or milliseconds)
-			renaming : true,						// The ids and classes will be prepended with a prefix when loading existent content
+			speed    : 300,            					// Accepts standard jQuery effects speeds (i.e. fast, normal or milliseconds)
+			renaming : true,							// The ids and classes will be prepended with a prefix when loading existent content
 			onOpen   : function() {
 
 				// Declare useful vars
@@ -547,7 +551,7 @@ function mobileMenu( event ) {
 				$j( '.oceanwp-sidr-overlay' ).fadeIn( 300 );
 
 				// Close sidr when clicking overlay
-				$j( '.oceanwp-sidr-overlay' ).on( 'click', function( event ) {
+				$j( '.oceanwp-sidr-overlay' ).on( 'click', function() {
 					$j.sidr( 'close', 'sidr' );
 					return false;
 				} );
@@ -573,17 +577,30 @@ function mobileMenu( event ) {
 
 		} );
 
+        // Replace sidr class in the icons classes
+		$j( '#sidr li.sidr-class-menu-item a i[class*="sidr-class-icon"]' ).each( function() {
+			var old_class = $j( this ).attr( 'class' ),
+				old_class = old_class.replace( 'sidr-class-icon-', 'icon-' );
+			$j( this ).attr( 'class', old_class );
+		} );
+
 		// Close sidr when clicking on close button
-		$j( 'a.sidr-class-toggle-sidr-close' ).on( 'click', function( event ) {
+		$j( 'a.sidr-class-toggle-sidr-close' ).on( 'click', function() {
 			$j.sidr( 'close', 'sidr' );
 			return false;
 		} );
 
 		// Close when clicking local scroll link
-		$j( 'li.sidr-class-local-scroll > a' ).click( function() {
-			var $target = $j( this ).hash;
+		$j( 'li.sidr-class-local-scroll > a' ).on( 'click', function() {
 			$j.sidr( 'close', 'sidr' );
-			$j( this ).scrollTo( $target );
+			scrollEffect();
+			return false;
+		} );
+
+		// Close when clicking local scroll link
+		$j( 'li.sidr-class-oceanwp-open-modal > a' ).on( 'click', function() {
+			$j.sidr( 'close', 'sidr' );
+			initModal();
 			return false;
 		} );
 
@@ -602,6 +619,52 @@ function smoothCommentScroll() {
 			scrollTop: $j( this.hash ).offset().top -120
 		}, 'normal' );
 		return false;
+	} );
+
+}
+
+/* ==============================================
+MODAL
+============================================== */
+function initModal() {
+	"use strict"
+
+	$j( '.oceanwp-open-modal, li.oceanwp-open-modal > a, li.sidr-class-oceanwp-open-modal > a' ).on( 'click', function() {
+
+		var $target = $j( this ).attr( 'href' );
+
+		if ( ! $j( $target ).length ) {
+
+			return;
+
+		} else {
+
+			// Add overlay
+			$j( 'body' ).append( '<div class="oceanwp-popup-overlay"></div>' );
+			$j( '.oceanwp-popup-overlay' ).fadeIn( 300 );
+
+			// Display modal
+			$j( $target ).fadeIn( 300 );
+
+			// Close modal
+			$j( '.oceanwp-popup-overlay, .oceanwp-close-modal' ).on( 'click', function( e ) {
+				e.preventDefault();
+
+				// Remove modal overlay
+				$j( '.oceanwp-popup-overlay' ).fadeOut( 300, function() {
+					$j( this ).remove();
+				} );
+
+				if ( ! $j( $target ).is( e.$target ) ) {
+					$j( $target ).fadeOut( 300 );
+				}
+
+			} );
+
+		}
+
+		return false;
+
 	} );
 
 }
@@ -1007,9 +1070,19 @@ function masonryGrids() {
 }
 
 /* ==============================================
+RESPONSIVE VIDEOS
+============================================== */
+function initFitVids() {
+	"use strict"
+
+	$j( '.responsive-video-wrap, .responsive-audio-wrap' ).fitVids();
+
+}
+
+/* ==============================================
 EQUAL HEIGHTS
 ============================================== */
-function equalHeightsInit() {
+function initEqualHeight() {
 	"use strict"
 
 	if ( $j.fn.equalHeights != undefined ) {
@@ -1053,19 +1126,27 @@ function scrollEffect() {
 
 	    $j( 'a[href*="#"]:not([href="#"])' ).on( 'click', function() {
 
-	        if ( location.pathname.replace(/^\//, '' ) == this.pathname.replace( /^\//, '' )
-	        	&& location.hostname == this.hostname
-	        	&& ! $j( this ).hasClass( 'no-effect' ) ) {
+	        if ( ! $j( this ).hasClass( 'no-effect' )
+	        	&& ! $j( this ).hasClass( 'oceanwp-open-modal' )
+	        	&& ! $j( this ).parent().hasClass( 'oceanwp-open-modal' ) ) {
 
-	            var target = $j( this.hash );
+	        	var $href     				= $j( this ).attr( 'href' ),
+				    $hrefHash 				= $href.substr( $href.indexOf( '#' ) ).slice( 1 ),
+				    $target   				= $j( '#' + $hrefHash ),
+					$adminbarHeight        	= getAdminbarHeight(),
+					$topbarHeight        	= getTopbarHeight(),
+					$stickyHeaderHeight    	= getStickyHeaderHeight(),
+				    $scrollPosition;
 
-	            target = target.length ? target : $j( '[name=' + this.hash.slice(1) + ']' );
+				if ( $target.length && '' !== $hrefHash ) {
+					$scrollPosition     	= $target.offset().top - $adminbarHeight - $topbarHeight - $stickyHeaderHeight;
 
-	            if ( target.length ) {
-	                $j( 'html,body' ).animate({
-	                    scrollTop: target.offset().top
-	                }, 1000);
-	                return false;
+	                $j( 'html, body' ).stop().animate( {
+						 scrollTop: Math.round( $scrollPosition )
+					}, 1000 );
+
+					return false;
+
 	            }
 	        }
 
@@ -1075,6 +1156,50 @@ function scrollEffect() {
 
 }
 
+function getAdminbarHeight() {
+	"use strict"
+
+	var $adminbarHeight = 0;
+
+	if ( $j( '#wpadminbar' ).length ) {
+		$adminbarHeight = parseInt( $j( '#wpadminbar' ).outerHeight() );
+	}
+
+	return $adminbarHeight;
+}
+
+function getTopbarHeight() {
+	"use strict"
+
+	var $topbarHeight = 0;
+
+	if ( $j( '#top-bar-wrap' ).hasClass( 'oceanwp-top-bar-sticky' )
+		&& $j( '#top-bar-wrap' ).length ) {
+		$topbarHeight = parseInt( $j( '#top-bar-wrap' ).outerHeight() );
+	}
+
+	return $topbarHeight;
+}
+
+function getStickyHeaderHeight() {
+	"use strict"
+
+	var $stickyHeaderHeight = 0;
+
+	if ( $j( '#site-header' ).hasClass( 'fixed-scroll' )
+		&& $j( '#site-header' ).length ) {
+		$stickyHeaderHeight = $j( '#site-header' ).attr( 'data-height' );
+	}
+
+	if ( $j( window ).width() <= 960
+		&& ! $j( '#site-header' ).hasClass( 'has-sticky-mobile' )
+		&& $j( '#site-header' ).length ) {
+		$stickyHeaderHeight = 0;
+	}
+
+	return $stickyHeaderHeight;
+}
+
 /* ==============================================
 SCROLL TOP
 ============================================== */
@@ -1082,8 +1207,9 @@ function scrollTop() {
 	"use strict"
 
 	var selectors  = {
-		scrollTop  : '#scroll-top',
-		topLink    : 'a[href="#go-top"]'
+		scrollTop  		: '#scroll-top',
+		topLink    		: 'a[href="#go-top"]',
+		slashTopLink 	: 'body.home a[href="/#go-top"]'
 	}
 
 	$j( window ).on( 'scroll', function() {

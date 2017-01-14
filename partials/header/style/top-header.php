@@ -28,6 +28,8 @@ if ( 'after' == $position ) { ?>
 
 <div class="header-top clr">
 
+	<?php do_action( 'ocean_before_header_inner' ); ?>
+
 	<div id="site-header-inner" class="container clr">
 
 		<?php
@@ -70,6 +72,8 @@ if ( 'after' == $position ) { ?>
 		</div>
 
 	</div><!-- #site-header-inner -->
+
+	<?php do_action( 'ocean_after_header_inner' ); ?>
 
 </div><!-- .header-top -->
 

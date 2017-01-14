@@ -11,10 +11,10 @@
 /*-------------------------------------------------------------------------------*
 
 	# General
-	# Page Header
-	# Blog
 	# Top Bar
 	# Header
+	# Page Header
+	# Blog
 	# Footer
 	# WooCommerce
 	# Other
@@ -54,7 +54,7 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 		}
 
 		// Top menu header style to control the responsive
-		if ( 'top' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+		if ( 'top' == oceanwp_header_style() ) {
 			$classes[] = 'top-header-style';
 		}
 
@@ -82,12 +82,12 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 		}
 
 		// Topbar
-		if ( get_theme_mod( 'ocean_top_bar', true ) ) {
+		if ( oceanwp_display_topbar() ) {
 			$classes[] = 'has-topbar';
 		}
 
 		// Transparent header style
-		if ( 'transparent' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+		if ( 'transparent' == oceanwp_header_style() ) {
 			$classes[] = 'has-transparent-header';
 		}
 
@@ -408,6 +408,841 @@ if ( ! function_exists( 'oceanwp_get_attachment_data_from_url' ) ) {
 }
 
 /*-------------------------------------------------------------------------------*/
+/* [ Top Bar ]
+/*-------------------------------------------------------------------------------*/
+
+/**
+ * Display top bar
+ *
+ * @since 1.1.2
+ */
+if ( ! function_exists( 'oceanwp_display_topbar' ) ) {
+
+	function oceanwp_display_topbar() {
+
+		// Return true by default
+		$return = true;
+
+		// Return false if disabled via Customizer
+		if ( true != get_theme_mod( 'ocean_top_bar', true ) ) {
+			$return = false;
+		}
+
+		// Check meta
+		$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_display_top_bar', true ) : '';
+
+		// Check if disabled via meta option
+		if ( 'on' == $meta ) {
+			$return = true;
+		} elseif ( 'off' == $meta ) {
+			$return = false;
+		}
+
+		// Apply filters and return
+		return apply_filters( 'ocean_display_top_bar', $return );
+
+	}
+
+}
+
+/**
+ * Add classes to the top bar wrap
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_topbar_classes' ) ) {
+
+	function oceanwp_topbar_classes() {
+
+		// Setup classes array
+		$classes = array();
+
+		// Clearfix class
+		$classes[] = 'clr';
+
+		// Set keys equal to vals
+		$classes = array_combine( $classes, $classes );
+		
+		// Apply filters for child theming
+		$classes = apply_filters( 'ocean_topbar_classes', $classes );
+
+		// Turn classes into space seperated string
+		$classes = implode( ' ', $classes );
+
+		// return classes
+		return $classes;
+
+	}
+
+}
+
+/**
+ * Topbar style
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_top_bar_style' ) ) {
+
+	function oceanwp_top_bar_style() {
+		$style = get_theme_mod( 'ocean_top_bar_style' );
+		$style = $style ? $style : 'one';
+		return apply_filters( 'ocean_top_bar_style', $style );
+	}
+
+
+}
+/**
+ * Topbar Content classes
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_topbar_content_classes' ) ) {
+
+	function oceanwp_topbar_content_classes() {
+
+		// Define classes
+		$classes = array( 'clr' );
+
+		// Check for content
+		if ( get_theme_mod( 'ocean_top_bar_content' ) ) {
+			$classes[] = 'has-content';
+		}
+
+		// Get topbar style
+		$style = oceanwp_top_bar_style();
+
+		// Add classes based on top bar style only if social is enabled
+		if ( get_theme_mod( 'ocean_top_bar_social', true ) ) {
+			if ( 'one' == $style ) {
+				$classes[] = 'top-bar-left';
+			} elseif ( 'two' == $style ) {
+				$classes[] = 'top-bar-right';
+			} elseif ( 'three' == $style ) {
+				$classes[] = 'top-bar-centered';
+			}
+		}
+
+		// Apply filters for child theming
+		$classes = apply_filters( 'ocean_top_bar_classes', $classes );
+
+		// Turn classes array into space seperated string
+		$classes = implode( ' ', $classes );
+
+		// Return classes
+		return esc_attr( $classes );
+
+	}
+
+}
+
+/**
+ * Returns topbar social alt
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_top_bar_social_alt' ) ) {
+
+	function oceanwp_top_bar_social_alt() {
+
+		// Get page ID from Customizer
+		$content = get_theme_mod( 'ocean_top_bar_social_alt' );
+
+		// Get page content
+		if ( ! empty( $content ) ) {
+
+			$page = get_post( $content );
+
+			if ( $page && ! is_wp_error( $page ) ) {
+				$content = $page->post_content;
+			}
+
+		}
+
+		// Return content
+		return $content;
+
+	}
+
+}
+
+/*-------------------------------------------------------------------------------*/
+/* [ Header ]
+/*-------------------------------------------------------------------------------*/
+
+/**
+ * Display header
+ *
+ * @since 1.1.2
+ */
+if ( ! function_exists( 'oceanwp_display_header' ) ) {
+
+	function oceanwp_display_header() {
+
+		// Return true by default
+		$return = true;
+
+		// Check meta
+		$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_display_header', true ) : '';
+
+		// Check if disabled via meta option
+		if ( 'on' == $meta ) {
+			$return = true;
+		} elseif ( 'off' == $meta ) {
+			$return = false;
+		}
+
+		// Apply filters and return
+		return apply_filters( 'ocean_display_header', $return );
+
+	}
+
+}
+
+/**
+ * Header style
+ *
+ * @since 1.1.2
+ */
+if ( ! function_exists( 'oceanwp_header_style' ) ) {
+
+	function oceanwp_header_style() {
+
+		// Get style from customizer setting
+		$style = get_theme_mod( 'ocean_header_style', 'minimal' );
+
+		// Sanitize style to make sure it isn't empty
+		$style = $style ? $style : 'minimal';
+
+		// Apply filters and return
+		return apply_filters( 'ocean_header_style', $style );
+
+	}
+
+}
+
+/**
+ * Add classes to the header wrap
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_header_classes' ) ) {
+
+	function oceanwp_header_classes() {
+
+		// Header style
+		$header_style = oceanwp_header_style();
+
+		// Setup classes array
+		$classes = array();
+
+		// Add header style class
+		$classes[] = $header_style . '-header';
+
+		// Search overlay
+		if ( 'overlay' == oceanwp_menu_search_style() ) {
+			$classes[] = 'search-overlay';
+		}
+
+		// Add class if social menu is enabled
+		if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
+			$classes[] = 'has-social';
+		}
+
+		// Menu position
+		if ( 'left-menu' == get_theme_mod( 'ocean_menu_position', 'right-menu' )
+			&& ( 'top' != $header_style ) ) {
+			$classes[] = 'left-menu';
+		}
+
+		// If the search header replace
+		if ( 'header_replace' == oceanwp_menu_search_style() ) {
+			$classes[] = 'header-replace';
+		}
+
+		// Clearfix class
+		$classes[] = 'clr';
+
+		// Set keys equal to vals
+		$classes = array_combine( $classes, $classes );
+		
+		// Apply filters for child theming
+		$classes = apply_filters( 'ocean_header_classes', $classes );
+
+		// Turn classes into space seperated string
+		$classes = implode( ' ', $classes );
+
+		// return classes
+		return $classes;
+
+	}
+
+}
+
+/**
+ * Returns header page ID
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'oceanwp_header_page_id' ) ) {
+
+	function oceanwp_header_page_id() {
+
+		// Return false if custom header is not selected
+		if ( 'custom' != oceanwp_header_style() ) {
+			return false;
+		}
+
+		// Get page ID from Customizer
+		$page_id = get_theme_mod( 'ocean_header_page_id' );
+
+		// Get page content
+		if ( ! empty( $page_id ) ) {
+
+			$page = get_post( $page_id );
+
+			if ( $page && ! is_wp_error( $page ) ) {
+				$page_id = $page->post_content;
+			}
+
+		}
+
+		// Apply filters and return content
+		return apply_filters( 'ocean_header_page_id', $page_id );
+
+	}
+
+}
+
+/**
+ * Returns retina header logo
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'oceanwp_header_retina_logo' ) ) {
+
+	function oceanwp_header_retina_logo() {
+
+		$html = '';
+
+		// Get retina logo
+		$logo_url 		= get_theme_mod( 'ocean_retina_logo' );
+
+		// Get default logo height
+		$logo_height 	= get_theme_mod( 'ocean_logo_height' );
+
+		// Logo data
+		$logo_data = array(
+			'url'    	=> '',
+			'width'  	=> '',
+			'height' 	=> '',
+			'alt' 		=> '',
+		);
+
+		if ( $logo_url ) {
+
+			// Logo url
+			$logo_data['url'] 			= $logo_url;
+
+			// Logo data
+			$logo_attachment_data 		= oceanwp_get_attachment_data_from_url( $logo_url );
+
+			// Get logo data
+			if ( $logo_attachment_data ) {
+				$logo_data['width']  	= $logo_attachment_data['width'];
+				$logo_data['height'] 	= $logo_attachment_data['height'];
+				$logo_data['alt'] 		= $logo_attachment_data['alt'];
+			}
+
+			// Output image
+			$html = sprintf( '<a href="%1$s" class="retina-logo-link" rel="home" itemprop="url"><img src="%2$s" class="retina-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" style="max-height: %6$spx" /></a>',
+				esc_url( home_url( '/' ) ),
+				esc_url( $logo_data['url'] ),
+				esc_attr( $logo_data['width'] ),
+				esc_attr( $logo_data['height'] ),
+				esc_attr( $logo_data['alt'] ),
+				esc_attr( $logo_height )
+			);
+
+		}
+
+		// Return logo
+		return apply_filters( 'ocean_header_retina_logo', $html );
+
+	}
+
+}
+
+/**
+ * Echo retina header logo
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'the_custom_retina_logo' ) ) {
+
+	function the_custom_retina_logo() {
+		echo oceanwp_header_retina_logo();
+	}
+
+}
+
+/**
+ * Returns transparent header logo
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_header_transparent_logo' ) ) {
+
+	function oceanwp_header_transparent_logo() {
+
+		// Return false if disabled
+		if ( 'transparent' != oceanwp_header_style() ) {
+			return false;
+		}
+
+		$html = '';
+
+		// Get logo
+		$logo_url 		= get_theme_mod( 'ocean_transparent_header_logo' );
+		$retina_url 	= get_theme_mod( 'ocean_transparent_header_logo_retina' );
+
+		// Logo data
+		$logo_data = array(
+			'url'    	=> '',
+			'width'  	=> '',
+			'height' 	=> '',
+			'alt' 		=> '',
+		);
+
+		// Retina logo data
+		$retina_data = array(
+			'url'    	=> '',
+			'width'  	=> '',
+			'height' 	=> '',
+			'alt' 		=> '',
+		);
+
+		if ( $logo_url ) {
+
+			// Logo url
+			$logo_data['url'] 			= $logo_url;
+			$retina_data['url'] 		= $retina_url;
+
+			// Logo data
+			$logo_attachment_data 		= oceanwp_get_attachment_data_from_url( $logo_url );
+			$retina_attachment_data 	= oceanwp_get_attachment_data_from_url( $retina_url );
+
+			// Get logo data
+			if ( $logo_attachment_data ) {
+				$logo_data['width']  	= $logo_attachment_data['width'];
+				$logo_data['height'] 	= $logo_attachment_data['height'];
+				$logo_data['alt'] 		= $logo_attachment_data['alt'];
+			}
+
+			// Get retina logo height
+			if ( $retina_attachment_data ) {
+				$retina_data['height'] 	= $retina_attachment_data['height'];
+				$retina_data['width']  	= $retina_attachment_data['width'];
+				$retina_data['height'] 	= $retina_attachment_data['height'];
+			}
+
+			// Output image
+			$html = sprintf( '<a href="%1$s" class="transparent-logo-link" rel="home" itemprop="url"><img src="%2$s" class="transparent-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" /></a>',
+				esc_url( home_url( '/' ) ),
+				esc_url( $logo_data['url'] ),
+				esc_attr( $logo_data['width'] ),
+				esc_attr( $logo_data['height'] ),
+				esc_attr( $logo_data['alt'] )
+			);
+
+			// Output retina image
+			$html .= sprintf( '<a href="%1$s" class="transparent-retina-logo-link" rel="home" itemprop="url"><img src="%2$s" class="transparent-retina-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" style="max-height: %6$spx" /></a>',
+				esc_url( home_url( '/' ) ),
+				esc_url( $retina_data['url'] ),
+				esc_attr( $retina_data['width'] ),
+				esc_attr( $retina_data['height'] ),
+				esc_attr( $retina_data['alt'] ),
+				esc_attr( $logo_data['height'] )
+			);
+
+		}
+
+		// Return logo
+		return apply_filters( 'ocean_transparent_header_logo', $html );
+
+	}
+
+}
+
+/**
+ * Echo transparent header logo
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'the_custom_transparent_logo' ) ) {
+
+	function the_custom_transparent_logo() {
+		echo oceanwp_header_transparent_logo();
+	}
+
+}
+
+/**
+ * Returns full screen header logo
+ *
+ * @since 1.0.4
+ */
+if ( ! function_exists( 'oceanwp_header_full_screen_logo' ) ) {
+
+	function oceanwp_header_full_screen_logo() {
+
+		// Return false if disabled
+		if ( 'full_screen' != oceanwp_header_style() ) {
+			return false;
+		}
+
+		$html = '';
+
+		// Get logo
+		$logo_url 		= get_theme_mod( 'ocean_full_screen_header_logo' );
+
+		// Logo data
+		$logo_data = array(
+			'url'    	=> '',
+			'width'  	=> '',
+			'height' 	=> '',
+			'alt' 		=> '',
+		);
+
+		if ( $logo_url ) {
+
+			// Logo url
+			$logo_data['url'] 			= $logo_url;
+
+			// Logo data
+			$logo_attachment_data 		= oceanwp_get_attachment_data_from_url( $logo_url );
+
+			// Get logo data
+			if ( $logo_attachment_data ) {
+				$logo_data['width']  	= $logo_attachment_data['width'];
+				$logo_data['height'] 	= $logo_attachment_data['height'];
+				$logo_data['alt'] 		= $logo_attachment_data['alt'];
+			}
+
+			// Output image
+			$html = sprintf( '<a href="%1$s" class="full-screen-logo-link" rel="home" itemprop="url"><img src="%2$s" class="full-screen-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" /></a>',
+				esc_url( home_url( '/' ) ),
+				esc_url( $logo_data['url'] ),
+				esc_attr( $logo_data['width'] ),
+				esc_attr( $logo_data['height'] ),
+				esc_attr( $logo_data['alt'] )
+			);
+
+		}
+
+		// Return logo
+		return apply_filters( 'ocean_full_screen_header_logo', $html );
+
+	}
+
+}
+
+/**
+ * Echo full_screen header logo
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'the_custom_full_screen_logo' ) ) {
+
+	function the_custom_full_screen_logo() {
+		echo oceanwp_header_full_screen_logo();
+	}
+
+}
+
+/**
+ * Returns correct menu classes
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_header_menu_classes' ) ) {
+
+	function oceanwp_header_menu_classes( $return ) {
+
+		// Define classes array
+		$classes = array();
+
+		// Return wrapper classes
+		if ( 'wrapper' == $return ) {
+
+			// Add special class if the dropdown top border option in the admin is disabled
+			if ( true != get_theme_mod( 'ocean_menu_dropdown_top_border', true ) ) {
+				$classes[] = 'oceanwp-dropdown-top-border';
+			}
+
+			// Add clearfix
+			$classes[] = 'clr';
+
+			// Set keys equal to vals
+			$classes = array_combine( $classes, $classes );
+
+			// Apply filters
+			$classes = apply_filters( 'ocean_header_menu_wrap_classes', $classes );
+
+		}
+
+		// Inner Classes
+		elseif ( 'inner' == $return ) {
+
+			// Core
+			$classes[] = 'navigation';
+			$classes[] = 'main-navigation';
+			$classes[] = 'clr';
+
+			// Add class if current link has background
+			if ( '' != get_theme_mod( 'ocean_menu_link_active_background' ) ) {
+				$classes[] = 'has-current-style';
+			}
+
+			// Set keys equal to vals
+			$classes = array_combine( $classes, $classes );
+
+			// Apply filters
+			$classes = apply_filters( 'ocean_header_menu_classes', $classes );
+
+		}
+
+		// Return
+		if ( is_array( $classes ) ) {
+			return implode( ' ', $classes );
+		} else {
+			return $return;
+		}
+
+	}
+
+}
+
+/**
+ * Returns custom menu
+ *
+ * @since 1.1.2
+ */
+if ( ! function_exists( 'oceanwp_header_custom_menu' ) ) {
+
+	function oceanwp_header_custom_menu() {
+
+		$menu = get_post_meta( oceanwp_post_id(), 'ocean_header_custom_menu', true );
+		$menu = 'default' != $menu ? $menu : '';
+		return apply_filters( 'ocean_custom_menu', $menu );
+
+	}
+
+}
+
+/**
+ * Header logo classes
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_header_logo_classes' ) ) {
+
+	function oceanwp_header_logo_classes() {
+
+		// Define classes array
+		$classes = array( 'clr' );
+
+		// Get custom transparent logo
+		if ( 'transparent' == oceanwp_header_style()
+			&& oceanwp_header_transparent_logo() ) {
+			$classes[] = 'has-transparent-logo';
+		}
+
+		// Get custom full screen logo
+		if ( 'full_screen' == oceanwp_header_style()
+			&& oceanwp_header_full_screen_logo() ) {
+			$classes[] = 'has-full-screen-logo';
+		}
+
+		// Apply filters for child theming
+		$classes = apply_filters( 'ocean_header_logo_classes', $classes );
+
+		// Turn classes into space seperated string
+		$classes = implode( ' ', $classes );
+
+		// Return classes
+		return $classes;
+
+	}
+
+}
+
+/**
+ * Returns menu search style
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_menu_search_style' ) ) {
+
+	function oceanwp_menu_search_style() {
+
+		// Get search style from Customizer
+		$style = get_theme_mod( 'ocean_menu_search_style', 'drop_down' );
+
+		// Apply filters for advanced edits
+		$style = apply_filters( 'ocean_menu_search_style', $style );
+
+		// Sanitize output so it's not empty and return
+		$style = $style ? $style : 'drop_down';
+
+		// Return style
+		return $style;
+
+	}
+
+}
+
+/**
+ * Adds the search icon to the menu items
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
+
+	function oceanwp_add_search_to_menu( $items, $args ) {
+
+		// Only used on main menu
+		if ( 'main_menu' != $args->theme_location ) {
+			return $items;
+		}
+
+		// Get search style
+		$search_style = oceanwp_menu_search_style();
+		$header_style = oceanwp_header_style();
+
+		// Return if disabled
+		if ( ! $search_style
+			|| 'disabled' == $search_style
+			|| 'top' == $header_style ) {
+			return $items;
+		}
+		
+		// Get correct search icon class
+		if ( 'drop_down' == $search_style ) {
+			$class = ' search-dropdown-toggle';
+		} elseif ( 'header_replace' == $search_style ) {
+			$class = ' search-header-replace-toggle';
+		} elseif ( 'overlay' == $search_style ) {
+			$class = ' search-overlay-toggle';
+		} else {
+			$class = '';
+		}
+
+		// Add search item to menu
+		$items .= '<li class="search-toggle-li">';
+			if ( 'full_screen' == $header_style ) {
+				$items .= '<form method="get" action="'. esc_url( home_url( '/' ) ) .'" class="header-searchform">';
+					$items .= '<input type="search" name="s" value="" autocomplete="off" />';
+					$items .= '<label>'. esc_html__( 'Type your search', 'oceanwp' ) .'<span><i></i><i></i><i></i></span></label>';
+				$items .= '</form>';
+			} else {
+				$items .= '<a href="#" class="site-search-toggle'. $class .'">';
+					if ( 'center' == $header_style ) {
+						$items .= '<span>'. esc_html__( 'Search', 'oceanwp' ) .'</span>';
+					} else {
+						$items .= '<span class="icon-magnifier"></span>';
+					}
+				$items .= '</a>';
+			}
+		$items .= '</li>';
+		
+		// Return nav $items
+		return $items;
+
+	}
+
+	add_filter( 'wp_nav_menu_items', 'oceanwp_add_search_to_menu', 11, 2 );
+
+}
+
+/**
+ * Outputs the search for the top header style
+ *
+ * @since 1.0.2
+ */
+if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
+
+	function oceanwp_top_header_search() {
+
+		// Get header & search style
+		$search_style = oceanwp_menu_search_style();
+
+		// Return if disabled
+		if ( 'top' != oceanwp_header_style()
+			|| ! $search_style
+			|| 'disabled' == $search_style ) {
+			return;
+		}
+		
+		// Get correct search icon class
+		if ( 'drop_down' == $search_style ) {
+			$class = ' search-dropdown-toggle';
+		} elseif ( 'header_replace' == $search_style ) {
+			$class = ' search-header-replace-toggle';
+		} elseif ( 'overlay' == $search_style ) {
+			$class = ' search-overlay-toggle';
+		} else {
+			$class = '';
+		}
+
+		// Add search item to menu
+		echo '<div id="search-toggle">';
+			echo '<a href="#" class="site-search-toggle'. $class .'">';
+				echo '<span class="icon-magnifier"></span>';
+			echo '</a>';
+		echo '</div>';
+		
+	}
+
+}
+
+/**
+ * Returns header search style
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_menu_cart_style' ) ) {
+
+	function oceanwp_menu_cart_style() {
+
+		// Return if WooCommerce isn't enabled or icon is disabled
+		if ( ! OCEANWP_WOOCOMMERCE_ACTIVE || 'disabled' == get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) {
+			return;
+		}
+
+		// Get Menu Icon Style
+		$style = get_theme_mod( 'ocean_woo_menu_icon_style', 'drop_down' );
+
+		// Return click style for these pages
+		if ( is_cart() || is_checkout() ) {
+			$style = 'custom_link';
+		}
+
+		// Apply filters for advanced edits
+		$style = apply_filters( 'ocean_menu_cart_style', $style );
+
+		// Sanitize output so it's not empty
+		if ( 'drop_down' == $style || ! $style ) {
+			$style = 'drop_down';
+		}
+
+		// Return style
+		return $style;
+
+	}
+
+}
+
+/*-------------------------------------------------------------------------------*/
 /* [ Page Header ]
 /*-------------------------------------------------------------------------------*/
 
@@ -579,7 +1414,7 @@ if ( ! function_exists( 'oceanwp_title' ) ) {
 			// Single blog posts
 			elseif ( is_singular( 'post' ) ) {
 
-				if ( 'post-title' == get_theme_mod( 'ocean_blog_single_page_header_title', 'post-title' ) ) {
+				if ( 'post-title' == get_theme_mod( 'ocean_blog_single_page_header_title', 'blog' ) ) {
 					$title = get_the_title();
 				} else {
 					$title = esc_html__( 'Blog', 'oceanwp' );
@@ -672,28 +1507,21 @@ if ( ! function_exists( 'oceanwp_page_header_overlay' ) ) {
 			return;
 		}
 
-		// Set default overlay for tax archives
-		if ( is_tax() || is_tag() || is_category() ) {
-			$overlay = '';
+		// Get options from post meta
+		$overlay = get_theme_mod( 'ocean_page_header_bg_image_overlay_opacity', '0.5' );
+		$overlay_color = get_theme_mod( 'ocean_page_header_bg_image_overlay_color', '#000000' );
+
+		if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+			&& is_singular( 'post' ) ) {
+			$overlay = get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_opacity', '0.5' );
+			$overlay_color = get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_color', '#000000' );
 		}
 
-		// Get options from post meta
-		else {
-			$overlay = get_theme_mod( 'ocean_page_header_bg_image_overlay_opacity', '0.5' );
-			$overlay_color = get_theme_mod( 'ocean_page_header_bg_image_overlay_color', '#000000' );
-
-			if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
-				&& is_singular( 'post' ) ) {
-				$overlay = get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_opacity', '0.5' );
-				$overlay_color = get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_color', '#000000' );
-			}
-
-			if ( $meta_overlay = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay', true ) ) {
-				$overlay = $meta_overlay;
-			}
-			if ( $meta_overlay_color = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay_color', true ) ) {
-				$overlay_color = $meta_overlay_color;
-			}
+		if ( $meta_overlay = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay', true ) ) {
+			$overlay = $meta_overlay;
+		}
+		if ( $meta_overlay_color = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay_color', true ) ) {
+			$overlay_color = $meta_overlay_color;
 		}
 
 		// Check if overlay isn't set to none
@@ -776,6 +1604,13 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 				if ( $meta_bg_img = get_post_meta( oceanwp_post_id(), 'ocean_post_title_background', true ) ) {
 					$bg_img = $meta_bg_img;
 				}
+
+				// Generate image URL if using ID
+				if ( is_numeric( $bg_img ) ) {
+					$bg_img = wp_get_attachment_image_src( $bg_img, 'full' );
+					$bg_img = $bg_img[0];
+				}
+				
 				$bg_img = $bg_img ? $bg_img : null;
 				$bg_img = apply_filters( 'ocean_page_header_background_image', $bg_img );
 
@@ -1070,6 +1905,7 @@ if ( ! function_exists( 'oceanwp_blog_entry_equal_heights' ) ) {
 
 
 }
+
 /**
  * Returns correct columns for the blog entries
  *
@@ -1090,6 +1926,102 @@ if ( ! function_exists( 'oceanwp_blog_entry_columns' ) ) {
 
 		// Return columns
 		return $columns;
+
+	}
+
+}
+
+/**
+ * Check if the post has a gallery
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_post_has_gallery' ) ) {
+
+	function oceanwp_post_has_gallery( $post_id = '' ) {
+
+		$post_id = $post_id ? $post_id : get_the_ID();
+
+		if ( get_post_meta( $post_id, 'ocean_gallery_id', true ) ) {
+			return true;
+		}
+
+	}
+
+}
+
+/**
+ * Retrieve attachment IDs
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_get_gallery_ids' ) ) {
+
+	function oceanwp_get_gallery_ids( $post_id = '' ) {
+
+		$post_id = $post_id ? $post_id : get_the_ID();
+		$attachment_ids = get_post_meta( $post_id, 'ocean_gallery_id', true );
+
+		if ( $attachment_ids ) {
+			return $attachment_ids;
+		}
+
+	}
+
+}
+
+/**
+ * Retrieve attachment data
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_get_attachment' ) ) {
+
+	function oceanwp_get_attachment( $id ) {
+
+		$attachment = get_post( $id );
+
+		return array(
+			'alt'         => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+			'caption'     => $attachment->post_excerpt,
+			'description' => $attachment->post_content,
+			'href'        => get_permalink( $attachment->ID ),
+			'src'         => $attachment->guid,
+			'title'       => $attachment->post_title,
+		);
+
+	}
+
+}
+
+/**
+ * Return gallery count
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_gallery_count' ) ) {
+
+	function oceanwp_gallery_count() {
+
+		$ids = oceanwp_get_gallery_ids();
+		return count( $ids );
+
+	}
+
+}
+
+/**
+ * Check if lightbox is enabled
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_gallery_is_lightbox_enabled' ) ) {
+
+	function oceanwp_gallery_is_lightbox_enabled() {
+
+		if ( 'on' == get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true ) ) {
+			return true;
+		}
 
 	}
 
@@ -1808,741 +2740,76 @@ if ( ! function_exists( 'oceanwp_blog_pagination_style' ) ) {
 }
 
 /*-------------------------------------------------------------------------------*/
-/* [ Top Bar ]
-/*-------------------------------------------------------------------------------*/
-
-/**
- * Add classes to the top bar wrap
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_topbar_classes' ) ) {
-
-	function oceanwp_topbar_classes() {
-
-		// Setup classes array
-		$classes = array();
-
-		// Clearfix class
-		$classes[] = 'clr';
-
-		// Set keys equal to vals
-		$classes = array_combine( $classes, $classes );
-		
-		// Apply filters for child theming
-		$classes = apply_filters( 'ocean_topbar_classes', $classes );
-
-		// Turn classes into space seperated string
-		$classes = implode( ' ', $classes );
-
-		// return classes
-		return $classes;
-
-	}
-
-}
-
-/**
- * Topbar style
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_top_bar_style' ) ) {
-
-	function oceanwp_top_bar_style() {
-		$style = get_theme_mod( 'ocean_top_bar_style' );
-		$style = $style ? $style : 'one';
-		return apply_filters( 'ocean_top_bar_style', $style );
-	}
-
-
-}
-/**
- * Topbar Content classes
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_topbar_content_classes' ) ) {
-
-	function oceanwp_topbar_content_classes() {
-
-		// Define classes
-		$classes = array( 'clr' );
-
-		// Check for content
-		if ( get_theme_mod( 'ocean_top_bar_content' ) ) {
-			$classes[] = 'has-content';
-		}
-
-		// Get topbar style
-		$style = oceanwp_top_bar_style();
-
-		// Add classes based on top bar style only if social is enabled
-		if ( get_theme_mod( 'ocean_top_bar_social', true ) ) {
-			if ( 'one' == $style ) {
-				$classes[] = 'top-bar-left';
-			} elseif ( 'two' == $style ) {
-				$classes[] = 'top-bar-right';
-			} elseif ( 'three' == $style ) {
-				$classes[] = 'top-bar-centered';
-			}
-		}
-
-		// Apply filters for child theming
-		$classes = apply_filters( 'ocean_top_bar_classes', $classes );
-
-		// Turn classes array into space seperated string
-		$classes = implode( ' ', $classes );
-
-		// Return classes
-		return esc_attr( $classes );
-
-	}
-
-}
-
-/**
- * Returns topbar social alt
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_top_bar_social_alt' ) ) {
-
-	function oceanwp_top_bar_social_alt() {
-
-		// Get page ID from Customizer
-		$content = get_theme_mod( 'ocean_top_bar_social_alt' );
-
-		// Get page content
-		if ( ! empty( $content ) ) {
-
-			$page = get_post( $content );
-
-			if ( $page && ! is_wp_error( $page ) ) {
-				$content = $page->post_content;
-			}
-
-		}
-
-		// Return content
-		return $content;
-
-	}
-
-}
-
-/*-------------------------------------------------------------------------------*/
-/* [ Header ]
-/*-------------------------------------------------------------------------------*/
-
-/**
- * Add classes to the header wrap
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_header_classes' ) ) {
-
-	function oceanwp_header_classes() {
-
-		// Header style
-		$header_style = get_theme_mod( 'ocean_header_style', 'minimal' );
-
-		// Setup classes array
-		$classes = array();
-
-		// Add header style class
-		$classes[] = $header_style . '-header';
-
-		// Search overlay
-		if ( 'overlay' == oceanwp_menu_search_style() ) {
-			$classes[] = 'search-overlay';
-		}
-
-		// Add class if social menu is enabled
-		if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
-			$classes[] = 'has-social';
-		}
-
-		// Menu position
-		if ( 'left-menu' == get_theme_mod( 'ocean_menu_position', 'right-menu' )
-			&& ( 'top' != $header_style ) ) {
-			$classes[] = 'left-menu';
-		}
-
-		// If the search header replace
-		if ( 'header_replace' == oceanwp_menu_search_style() ) {
-			$classes[] = 'header-replace';
-		}
-
-		// Clearfix class
-		$classes[] = 'clr';
-
-		// Set keys equal to vals
-		$classes = array_combine( $classes, $classes );
-		
-		// Apply filters for child theming
-		$classes = apply_filters( 'ocean_header_classes', $classes );
-
-		// Turn classes into space seperated string
-		$classes = implode( ' ', $classes );
-
-		// return classes
-		return $classes;
-
-	}
-
-}
-
-/**
- * Returns header page ID
- *
- * @since 1.1.1
- */
-if ( ! function_exists( 'oceanwp_header_page_id' ) ) {
-
-	function oceanwp_header_page_id() {
-
-		// Return false if custom header is not selected
-		if ( 'custom' != get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
-			return false;
-		}
-
-		// Get page ID from Customizer
-		$page_id = get_theme_mod( 'ocean_header_page_id' );
-
-		// Get page content
-		if ( ! empty( $page_id ) ) {
-
-			$page = get_post( $page_id );
-
-			if ( $page && ! is_wp_error( $page ) ) {
-				$page_id = $page->post_content;
-			}
-
-		}
-
-		// Apply filters and return content
-		return apply_filters( 'ocean_header_page_id', $page_id );
-
-	}
-
-}
-
-/**
- * Returns retina header logo
- *
- * @since 1.1.1
- */
-if ( ! function_exists( 'oceanwp_header_retina_logo' ) ) {
-
-	function oceanwp_header_retina_logo() {
-
-		$html = '';
-
-		// Get retina logo
-		$logo_url 		= get_theme_mod( 'ocean_retina_logo' );
-
-		// Get default logo height
-		$logo_height 	= get_theme_mod( 'ocean_logo_height' );
-
-		// Logo data
-		$logo_data = array(
-			'url'    	=> '',
-			'width'  	=> '',
-			'height' 	=> '',
-			'alt' 		=> '',
-		);
-
-		if ( $logo_url ) {
-
-			// Logo url
-			$logo_data['url'] 			= $logo_url;
-
-			// Logo data
-			$logo_attachment_data 		= oceanwp_get_attachment_data_from_url( $logo_url );
-
-			// Get logo data
-			if ( $logo_attachment_data ) {
-				$logo_data['width']  	= $logo_attachment_data['width'];
-				$logo_data['height'] 	= $logo_attachment_data['height'];
-				$logo_data['alt'] 		= $logo_attachment_data['alt'];
-			}
-
-			// Output image
-			$html = sprintf( '<a href="%1$s" class="retina-logo-link" rel="home" itemprop="url"><img src="%2$s" class="retina-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" style="max-height: %6$spx" /></a>',
-				esc_url( home_url( '/' ) ),
-				esc_url( $logo_data['url'] ),
-				esc_attr( $logo_data['width'] ),
-				esc_attr( $logo_data['height'] ),
-				esc_attr( $logo_data['alt'] ),
-				esc_attr( $logo_height )
-			);
-
-		}
-
-		// Return logo
-		return apply_filters( 'ocean_header_retina_logo', $html );
-
-	}
-
-}
-
-/**
- * Echo retina header logo
- *
- * @since 1.1.1
- */
-if ( ! function_exists( 'the_custom_retina_logo' ) ) {
-
-	function the_custom_retina_logo() {
-		echo oceanwp_header_retina_logo();
-	}
-
-}
-
-/**
- * Returns transparent header logo
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_header_transparent_logo' ) ) {
-
-	function oceanwp_header_transparent_logo() {
-
-		// Return false if disabled
-		if ( 'transparent' != get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
-			return false;
-		}
-
-		$html = '';
-
-		// Get logo
-		$logo_url 		= get_theme_mod( 'ocean_transparent_header_logo' );
-		$retina_url 	= get_theme_mod( 'ocean_transparent_header_logo_retina' );
-
-		// Logo data
-		$logo_data = array(
-			'url'    	=> '',
-			'width'  	=> '',
-			'height' 	=> '',
-			'alt' 		=> '',
-		);
-
-		// Retina logo data
-		$retina_data = array(
-			'url'    	=> '',
-			'width'  	=> '',
-			'height' 	=> '',
-			'alt' 		=> '',
-		);
-
-		if ( $logo_url ) {
-
-			// Logo url
-			$logo_data['url'] 			= $logo_url;
-			$retina_data['url'] 		= $retina_url;
-
-			// Logo data
-			$logo_attachment_data 		= oceanwp_get_attachment_data_from_url( $logo_url );
-			$retina_attachment_data 	= oceanwp_get_attachment_data_from_url( $retina_url );
-
-			// Get logo data
-			if ( $logo_attachment_data ) {
-				$logo_data['width']  	= $logo_attachment_data['width'];
-				$logo_data['height'] 	= $logo_attachment_data['height'];
-				$logo_data['alt'] 		= $logo_attachment_data['alt'];
-			}
-
-			// Get retina logo height
-			if ( $retina_attachment_data ) {
-				$retina_data['height'] 	= $retina_attachment_data['height'];
-				$retina_data['width']  	= $retina_attachment_data['width'];
-				$retina_data['height'] 	= $retina_attachment_data['height'];
-			}
-
-			// Output image
-			$html = sprintf( '<a href="%1$s" class="transparent-logo-link" rel="home" itemprop="url"><img src="%2$s" class="transparent-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" /></a>',
-				esc_url( home_url( '/' ) ),
-				esc_url( $logo_data['url'] ),
-				esc_attr( $logo_data['width'] ),
-				esc_attr( $logo_data['height'] ),
-				esc_attr( $logo_data['alt'] )
-			);
-
-			// Output retina image
-			$html .= sprintf( '<a href="%1$s" class="transparent-retina-logo-link" rel="home" itemprop="url"><img src="%2$s" class="transparent-retina-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" style="max-height: %6$spx" /></a>',
-				esc_url( home_url( '/' ) ),
-				esc_url( $retina_data['url'] ),
-				esc_attr( $retina_data['width'] ),
-				esc_attr( $retina_data['height'] ),
-				esc_attr( $retina_data['alt'] ),
-				esc_attr( $logo_data['height'] )
-			);
-
-		}
-
-		// Return logo
-		return apply_filters( 'ocean_transparent_header_logo', $html );
-
-	}
-
-}
-
-/**
- * Echo transparent header logo
- *
- * @since 1.1.1
- */
-if ( ! function_exists( 'the_custom_transparent_logo' ) ) {
-
-	function the_custom_transparent_logo() {
-		echo oceanwp_header_transparent_logo();
-	}
-
-}
-
-/**
- * Returns full screen header logo
- *
- * @since 1.0.4
- */
-if ( ! function_exists( 'oceanwp_header_full_screen_logo' ) ) {
-
-	function oceanwp_header_full_screen_logo() {
-
-		// Return false if disabled
-		if ( 'full_screen' != get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
-			return false;
-		}
-
-		$html = '';
-
-		// Get logo
-		$logo_url 		= get_theme_mod( 'ocean_full_screen_header_logo' );
-
-		// Logo data
-		$logo_data = array(
-			'url'    	=> '',
-			'width'  	=> '',
-			'height' 	=> '',
-			'alt' 		=> '',
-		);
-
-		if ( $logo_url ) {
-
-			// Logo url
-			$logo_data['url'] 			= $logo_url;
-
-			// Logo data
-			$logo_attachment_data 		= oceanwp_get_attachment_data_from_url( $logo_url );
-
-			// Get logo data
-			if ( $logo_attachment_data ) {
-				$logo_data['width']  	= $logo_attachment_data['width'];
-				$logo_data['height'] 	= $logo_attachment_data['height'];
-				$logo_data['alt'] 		= $logo_attachment_data['alt'];
-			}
-
-			// Output image
-			$html = sprintf( '<a href="%1$s" class="full-screen-logo-link" rel="home" itemprop="url"><img src="%2$s" class="full-screen-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" /></a>',
-				esc_url( home_url( '/' ) ),
-				esc_url( $logo_data['url'] ),
-				esc_attr( $logo_data['width'] ),
-				esc_attr( $logo_data['height'] ),
-				esc_attr( $logo_data['alt'] )
-			);
-
-		}
-
-		// Return logo
-		return apply_filters( 'ocean_full_screen_header_logo', $html );
-
-	}
-
-}
-
-/**
- * Echo full_screen header logo
- *
- * @since 1.1.1
- */
-if ( ! function_exists( 'the_custom_full_screen_logo' ) ) {
-
-	function the_custom_full_screen_logo() {
-		echo oceanwp_header_full_screen_logo();
-	}
-
-}
-
-/**
- * Returns correct menu classes
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_header_menu_classes' ) ) {
-
-	function oceanwp_header_menu_classes( $return ) {
-
-		// Define classes array
-		$classes = array();
-
-		// Return wrapper classes
-		if ( 'wrapper' == $return ) {
-
-			// Add special class if the dropdown top border option in the admin is disabled
-			if ( true != get_theme_mod( 'ocean_menu_dropdown_top_border', true ) ) {
-				$classes[] = 'oceanwp-dropdown-top-border';
-			}
-
-			// Add clearfix
-			$classes[] = 'clr';
-
-			// Set keys equal to vals
-			$classes = array_combine( $classes, $classes );
-
-			// Apply filters
-			$classes = apply_filters( 'ocean_header_menu_wrap_classes', $classes );
-
-		}
-
-		// Inner Classes
-		elseif ( 'inner' == $return ) {
-
-			// Core
-			$classes[] = 'navigation';
-			$classes[] = 'main-navigation';
-			$classes[] = 'clr';
-
-			// Add class if current link has background
-			if ( '' != get_theme_mod( 'ocean_menu_link_active_background' ) ) {
-				$classes[] = 'has-current-style';
-			}
-
-			// Set keys equal to vals
-			$classes = array_combine( $classes, $classes );
-
-			// Apply filters
-			$classes = apply_filters( 'ocean_header_menu_classes', $classes );
-
-		}
-
-		// Return
-		if ( is_array( $classes ) ) {
-			return implode( ' ', $classes );
-		} else {
-			return $return;
-		}
-
-	}
-
-}
-
-/**
- * Header logo classes
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_header_logo_classes' ) ) {
-
-	function oceanwp_header_logo_classes() {
-
-		// Define classes array
-		$classes = array( 'clr' );
-
-		// Get custom transparent logo
-		if ( 'transparent' == get_theme_mod( 'ocean_header_style', 'minimal' )
-			&& oceanwp_header_transparent_logo() ) {
-			$classes[] = 'has-transparent-logo';
-		}
-
-		// Get custom full screen logo
-		if ( 'full_screen' == get_theme_mod( 'ocean_header_style', 'minimal' )
-			&& oceanwp_header_full_screen_logo() ) {
-			$classes[] = 'has-full-screen-logo';
-		}
-
-		// Apply filters for child theming
-		$classes = apply_filters( 'ocean_header_logo_classes', $classes );
-
-		// Turn classes into space seperated string
-		$classes = implode( ' ', $classes );
-
-		// Return classes
-		return $classes;
-
-	}
-
-}
-
-/**
- * Returns menu search style
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_menu_search_style' ) ) {
-
-	function oceanwp_menu_search_style() {
-
-		// Get search style from Customizer
-		$style = get_theme_mod( 'ocean_menu_search_style', 'drop_down' );
-
-		// Apply filters for advanced edits
-		$style = apply_filters( 'ocean_menu_search_style', $style );
-
-		// Sanitize output so it's not empty and return
-		$style = $style ? $style : 'drop_down';
-
-		// Return style
-		return $style;
-
-	}
-
-}
-
-/**
- * Adds the search icon to the menu items
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
-
-	function oceanwp_add_search_to_menu( $items, $args ) {
-
-		// Only used on main menu
-		if ( 'main_menu' != $args->theme_location ) {
-			return $items;
-		}
-
-		// Get search style
-		$search_style = oceanwp_menu_search_style();
-		$header_style = get_theme_mod( 'ocean_header_style', 'minimal' );
-
-		// Return if disabled
-		if ( ! $search_style
-			|| 'disabled' == $search_style
-			|| 'top' == $header_style ) {
-			return $items;
-		}
-		
-		// Get correct search icon class
-		if ( 'drop_down' == $search_style ) {
-			$class = ' search-dropdown-toggle';
-		} elseif ( 'header_replace' == $search_style ) {
-			$class = ' search-header-replace-toggle';
-		} elseif ( 'overlay' == $search_style ) {
-			$class = ' search-overlay-toggle';
-		} else {
-			$class = '';
-		}
-
-		// Add search item to menu
-		$items .= '<li class="search-toggle-li">';
-			if ( 'full_screen' == $header_style ) {
-				$items .= '<form method="get" action="'. esc_url( home_url( '/' ) ) .'" class="header-searchform">';
-					$items .= '<input type="search" name="s" value="" autocomplete="off" />';
-					$items .= '<label>'. esc_html__( 'Type your search', 'oceanwp' ) .'<span><i></i><i></i><i></i></span></label>';
-				$items .= '</form>';
-			} else {
-				$items .= '<a href="#" class="site-search-toggle'. $class .'">';
-					if ( 'center' == $header_style ) {
-						$items .= '<span>'. esc_html__( 'Search', 'oceanwp' ) .'</span>';
-					} else {
-						$items .= '<span class="icon-magnifier"></span>';
-					}
-				$items .= '</a>';
-			}
-		$items .= '</li>';
-		
-		// Return nav $items
-		return $items;
-
-	}
-
-	add_filter( 'wp_nav_menu_items', 'oceanwp_add_search_to_menu', 11, 2 );
-
-}
-
-/**
- * Outputs the search for the top header style
- *
- * @since 1.0.2
- */
-if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
-
-	function oceanwp_top_header_search() {
-
-		// Get header & search style
-		$search_style = oceanwp_menu_search_style();
-
-		// Return if disabled
-		if ( 'top' != get_theme_mod( 'ocean_header_style', 'minimal' )
-			|| ! $search_style
-			|| 'disabled' == $search_style ) {
-			return;
-		}
-		
-		// Get correct search icon class
-		if ( 'drop_down' == $search_style ) {
-			$class = ' search-dropdown-toggle';
-		} elseif ( 'header_replace' == $search_style ) {
-			$class = ' search-header-replace-toggle';
-		} elseif ( 'overlay' == $search_style ) {
-			$class = ' search-overlay-toggle';
-		} else {
-			$class = '';
-		}
-
-		// Add search item to menu
-		echo '<div id="search-toggle">';
-			echo '<a href="#" class="site-search-toggle'. $class .'">';
-				echo '<span class="icon-magnifier"></span>';
-			echo '</a>';
-		echo '</div>';
-		
-	}
-
-}
-
-/**
- * Returns header search style
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_menu_cart_style' ) ) {
-
-	function oceanwp_menu_cart_style() {
-
-		// Return if WooCommerce isn't enabled or icon is disabled
-		if ( ! OCEANWP_WOOCOMMERCE_ACTIVE || 'disabled' == get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) {
-			return;
-		}
-
-		// Get Menu Icon Style
-		$style = get_theme_mod( 'ocean_woo_menu_icon_style', 'drop_down' );
-
-		// Return click style for these pages
-		if ( is_cart() || is_checkout() ) {
-			$style = 'custom_link';
-		}
-
-		// Apply filters for advanced edits
-		$style = apply_filters( 'ocean_menu_cart_style', $style );
-
-		// Sanitize output so it's not empty
-		if ( 'drop_down' == $style || ! $style ) {
-			$style = 'drop_down';
-		}
-
-		// Return style
-		return $style;
-
-	}
-
-}
-
-/*-------------------------------------------------------------------------------*/
 /* [ Footer ]
 /*-------------------------------------------------------------------------------*/
+
+/**
+ * Display footer widgets
+ *
+ * @since 1.1.2
+ */
+if ( ! function_exists( 'oceanwp_display_footer_widgets' ) ) {
+
+	function oceanwp_display_footer_widgets() {
+
+		// Return true by default
+		$return = true;
+
+		// Return false if disabled via Customizer
+		if ( true != get_theme_mod( 'ocean_footer_widgets', true ) ) {
+			$return = false;
+		}
+
+		// Check meta
+		$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_display_footer_widgets', true ) : '';
+
+		// Check if disabled via meta option
+		if ( 'on' == $meta ) {
+			$return = true;
+		} elseif ( 'off' == $meta ) {
+			$return = false;
+		}
+
+		// Apply filters and return
+		return apply_filters( 'ocean_display_footer_widgets', $return );
+
+	}
+
+}
+
+/**
+ * Display footer bottom
+ *
+ * @since 1.1.2
+ */
+if ( ! function_exists( 'oceanwp_display_footer_bottom' ) ) {
+
+	function oceanwp_display_footer_bottom() {
+
+		// Return true by default
+		$return = true;
+
+		// Return false if disabled via Customizer
+		if ( true != get_theme_mod( 'ocean_footer_bottom', true ) ) {
+			$return = false;
+		}
+
+		// Check meta
+		$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_display_footer_bottom', true ) : '';
+
+		// Check if disabled via meta option
+		if ( 'on' == $meta ) {
+			$return = true;
+		} elseif ( 'off' == $meta ) {
+			$return = false;
+		}
+
+		// Apply filters and return
+		return apply_filters( 'ocean_display_footer_bottom', $return );
+
+	}
+
+}
 
 /**
  * Add classes to the footer wrap

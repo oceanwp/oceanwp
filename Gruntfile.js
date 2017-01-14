@@ -19,6 +19,7 @@ module.exports = function ( grunt ) {
 					'assets/js/devs/cookie.min.js': 'assets/js/devs/cookie.js',
 					'assets/js/devs/customselect.min.js': 'assets/js/devs/customselect.js',
 					'assets/js/devs/equalHeights.min.js': 'assets/js/devs/equalHeights.js',
+					'assets/js/devs/fitvids.min.js': 'assets/js/devs/fitvids.js',
 					'assets/js/devs/images-loaded.min.js': 'assets/js/devs/images-loaded.js',
 					'assets/js/devs/isotope.min.js': 'assets/js/devs/isotope.js',
 					'assets/js/devs/scrollTo.min.js': 'assets/js/devs/scrollTo.js',

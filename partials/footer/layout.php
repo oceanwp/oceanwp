@@ -12,18 +12,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <footer id="footer" class="<?php echo oceanwp_footer_classes(); ?>" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 
+    <?php do_action( 'ocean_before_footer_inner' ); ?>
+
     <div id="footer-inner" class="clr">
 
         <?php
-        if ( true == get_theme_mod( 'ocean_footer_widgets', true ) )  {
+        // Display the footer widgets if enabled
+        if ( oceanwp_display_footer_widgets() ) {
         	get_template_part( 'partials/footer/widgets' );
-        } ?>
+        }
 
-        <?php
-        if ( true == get_theme_mod( 'ocean_footer_bottom', true ) )  {
+        // Display the footer bottom if enabled
+        if ( oceanwp_display_footer_bottom() ) {
         	get_template_part( 'partials/footer/copyright' );
         } ?>
         
     </div><!-- #footer-widgets -->
+
+    <?php do_action( 'ocean_after_footer_inner' ); ?>
 
 </footer><!-- #footer -->

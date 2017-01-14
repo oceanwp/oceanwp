@@ -29,7 +29,11 @@ if ( $style ) {
 // Turn into space seperated list
 $classes = implode( ' ', $classes ) ?>
 
+<?php do_action( 'ocean_before_page_header' ); ?>
+
 <header class="<?php echo esc_attr( $classes ); ?>">
+
+	<?php do_action( 'ocean_before_page_header_inner' ); ?>
 
 	<div class="container clr page-header-inner">
 
@@ -45,4 +49,8 @@ $classes = implode( ' ', $classes ) ?>
 
 	<?php oceanwp_page_header_overlay(); ?>
 
+	<?php do_action( 'ocean_after_page_header_inner' ); ?>
+
 </header><!-- .page-header -->
+
+<?php do_action( 'ocean_after_page_header' ); ?>

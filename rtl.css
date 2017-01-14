@@ -205,6 +205,11 @@ p.flickr_stream_wrap a { background-position: right center; padding-right: 25px;
 ul.page-numbers { text-align: left; }
 
 /*------------------------------------*
+	Modal
+*------------------------------------*/
+.oceanwp-modal .oceanwp-close-modal { left: 0; right: auto; }
+
+/*------------------------------------*
 	Footer
 *------------------------------------*/
 #footer-bottom #copyright,

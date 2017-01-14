@@ -900,7 +900,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Get style
 			$style 			= oceanwp_menu_cart_style();
-			$header_style 	= get_theme_mod( 'ocean_header_style', 'minimal' );
+			$header_style 	= oceanwp_header_style();
 
 			// Return items if no style
 			if ( ! $style ) {

@@ -1578,6 +1578,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'#oceanwp-post-list.one .oceanwp-post-category',
 				'#oceanwp-post-list.two .oceanwp-post-category',
 				'#oceanwp-post-list.two article:hover .slide-overlay-wrap',
+				'.oceanwp-modal .oceanwp-close-modal',
 			) );
 
 			// Borders
@@ -1623,6 +1624,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'.button:hover',
 				'#site-navigation-wrap .dropdown-menu > li.btn > a:hover > span',
 				'.post-quote-author',
+				'.oceanwp-modal .oceanwp-close-modal:hover',
 			) );
 
 			// Return array
@@ -1790,6 +1792,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$content_bottom_padding 		= get_theme_mod( 'ocean_page_content_bottom_padding', '50' );
 			$page_header_top_padding 		= get_theme_mod( 'ocean_page_header_top_padding', '34' );
 			$page_header_bottom_padding 	= get_theme_mod( 'ocean_page_header_bottom_padding', '34' );
+			$page_header_bg 				= get_theme_mod( 'ocean_page_header_background', '#f5f5f5' );
 			$page_header_title_color 		= get_theme_mod( 'ocean_page_header_title_color', '#333333' );
 			$breadcrumbs_text_color 		= get_theme_mod( 'ocean_breadcrumbs_text_color', '#c6c6c6' );
 			$breadcrumbs_seperator_color 	= get_theme_mod( 'ocean_breadcrumbs_seperator_color', '#c6c6c6' );
@@ -1933,6 +1936,11 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Page header bottom padding
 			if ( ! empty( $page_header_bottom_padding ) && '34' != $page_header_bottom_padding ) {
 				$css .= '.page-header, .has-transparent-header .page-header{padding-bottom:'. $page_header_bottom_padding .'px;}';
+			}
+
+			// Page header background
+			if ( ! empty( $page_header_bg ) && '#f5f5f5' != $page_header_bg ) {
+				$css .= '.page-header{background-color:'. $page_header_bg .';}';
 			}
 
 			// Page header color

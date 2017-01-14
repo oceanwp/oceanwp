@@ -39,7 +39,7 @@ if ( 'grid-entry' == oceanwp_blog_entry_style() ) {
 
 	<div class="link-entry clr">
 
-		<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'oceanwp_link_format', true ) ); ?>" target="_<?php echo esc_attr( get_post_meta( get_the_ID(), 'oceanwp_link_format_target', true ) ); ?>"><i class="icon-link"></i></a>
+		<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'ocean_link_format', true ) ); ?>" target="_<?php echo esc_attr( get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ); ?>"><i class="icon-link"></i></a>
 		
 	</div>
 

@@ -1,5 +1,17 @@
 # OceanWP Changelog
 
+### *2017.01.15* - 1.1.2
+* **Added** - Script to create modal, check: http://docs.oceanwp.org/article/356-how-to-create-modal/
+* **Added** - New functions for the new settings of the metabox.
+* **Added** - Several hooks through the theme for the Ocean Hooks extension.
+* **Added** - FitVids script to have responsive videos.
+* **Added** - Filter for the style of the header, now you can alter the header style via the child theme.
+* **Tweak** - Improvement of the local scrolling, now the height of the header is taken into account.
+* **Fixed** - Problem of the retina logo on the retina screen.
+* **Fixed** - Background color of the page header.
+* **Fixed** - Small issues.
+* **Deleted** - Responsive.css file, directly integrated into the style.css file.
+
 ### *2016.12.30* - 1.1.1.1
 * **Added** - Category description on the shop page.
 * **Fixed** - Non clickable products images with the gallery style.

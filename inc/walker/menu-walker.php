@@ -37,7 +37,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 	        // Megamenu columns
 	        $col = ! empty( $this->megamenu_col ) ? ( 'col-'. $this->megamenu_col .'' ) : 'col-2';
 
-	        if( $depth === 0 && $this->megamenu != '' && 'full_screen' != get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+	        if( $depth === 0 && $this->megamenu != '' && 'full_screen' != oceanwp_header_style() ) {
 	        	$output .= "\n$indent<ul class=\"megamenu ". $col ." sub-menu\">\n";
 	         } else {
 	         	$output .= "\n$indent<ul class=\"sub-menu\">\n";
@@ -57,7 +57,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			global $wp_query;
 			$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-			if ( 'center' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+			if ( 'center' == oceanwp_header_style() ) {
 				if ( ! isset( $this->break_point ) ) {
 
 					$menu_elements 		= wp_get_nav_menu_items( $args->menu );
@@ -174,7 +174,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			$item_output .= '<a'. $attributes .' class="menu-link">';
 
-			$item_output .= $args->link_before . $icon . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			$item_output .= $icon . $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 
 	    	if( $depth !== 0 ) {
 		    	$item_output .= $description;
@@ -208,7 +208,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 		public function end_el( &$output, $item, $depth = 0, $args = array() ) {
 
 			// Header style
-			$header_style = get_theme_mod( 'ocean_header_style', 'minimal' );
+			$header_style = oceanwp_header_style();
 
 			// If is center header
 			if ( 'center' == $header_style ) {
@@ -342,7 +342,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			// Define vars
 			$id_field     = $this->db_fields['id'];
-			$header_style = get_theme_mod( 'ocean_header_style', 'minimal' );
+			$header_style = oceanwp_header_style();
 
 			if ( is_object( $args[0] ) )
 			   $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );

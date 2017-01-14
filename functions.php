@@ -95,9 +95,6 @@ class OCEANWP_Theme_Class {
 			// Load theme CSS
 			add_action( 'wp_enqueue_scripts', array( 'OCEANWP_Theme_Class', 'theme_css' ) );
 
-			// Load responsive CSS - must be added last
-			add_action( 'wp_enqueue_scripts', array( 'OCEANWP_Theme_Class', 'responsive_css' ), 99 );
-
 			// Load theme js
 			add_action( 'wp_enqueue_scripts', array( 'OCEANWP_Theme_Class', 'theme_js' ) );
 
@@ -386,15 +383,6 @@ class OCEANWP_Theme_Class {
 	}
 
 	/**
-	 * Loads responsive css very last after all styles.
-	 *
-	 * @since 1.0.0
-	 */
-	public static function responsive_css() {
-		wp_enqueue_style( 'oceanwp-responsive', OCEANWP_CSS_DIR_URI .'oceanwp-responsive.min.css', false, OCEANWP_THEME_VERSION );
-	}
-
-	/**
 	 * Returns all js needed for the front-end
 	 *
 	 * @since 1.0.0
@@ -414,6 +402,9 @@ class OCEANWP_Theme_Class {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
+		// Register nicescroll script to use it in some extensions
+		wp_register_script( 'nicescroll', $dir .'dynamic/nicescroll.min.js', array( 'jquery' ), $theme_version, true );
 
 		// WooCommerce quantity buttons
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {

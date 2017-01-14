@@ -5,7 +5,7 @@
  * Author: 			Nick
  * Author URI: 		https://oceanwp.org/about-me/
  * Description: 	OceanWP is the perfect theme for your project. Lightweight and highly extendible, it will enable you to create almost any type of site with a beautiful & professional design. There are several options to personalise your website, multiple widget regions, a responsive design and much more. Developers will love his extensible codebase making it a joy to customise and extend. Looking for a Multi-Purpose theme? Look no further!
- * Version: 		1.1.1.1
+ * Version: 		1.1.2
  * Tags: 			two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, sticky-post, editor-style, threaded-comments, translation-ready
  * Text Domain: 	oceanwp
  *
@@ -41,6 +41,7 @@
  * - SEARCH
  * - FOOTER
  * - 404 PAGE
+ * - MODAL
  *
  * SHORTCODES
  * - POSTS SLIDER
@@ -50,6 +51,8 @@
  * - SIDR
  * - MAGNIFIC POPUP
  * - ELEMENTOR
+ *
+ * RESPONSIVE
  */
 
 /*------------------------------------*
@@ -171,6 +174,11 @@
 @import "components/404";
 
 /*------------------------------------*
+	$MODAL
+*------------------------------------*/
+@import "components/modal";
+
+/*------------------------------------*
 	$POSTS SLIDER
 *------------------------------------*/
 @import "components/posts-slider";
@@ -195,3 +203,8 @@
 	$PAGE BUILDERS
 *------------------------------------*/
 @import "components/plugins/builders";
+
+/*------------------------------------*
+	$RESPONSIVE
+*------------------------------------*/
+@import "components/responsive";

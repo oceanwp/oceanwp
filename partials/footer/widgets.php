@@ -32,7 +32,11 @@ if ( '1' == $columns ) {
 }
 $wrap_classes = implode( ' ', $wrap_classes ); ?>
 
+<?php do_action( 'ocean_before_footer_widgets' ); ?>
+
 <div id="footer-widgets" class="oceanwp-row <?php echo $wrap_classes; ?>">
+
+	<?php do_action( 'ocean_before_footer_widgets_inner' ); ?>
 
 	<div class="container">
 
@@ -96,4 +100,8 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 
 	</div><!-- .container -->
 
+	<?php do_action( 'ocean_after_footer_widgets_inner' ); ?>
+
 </div><!-- #footer-widgets -->
+
+<?php do_action( 'ocean_after_footer_widgets' ); ?>
