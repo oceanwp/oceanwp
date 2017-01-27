@@ -11,7 +11,7 @@
     padding: 50px;
     overflow-x: hidden;
     overflow-y: auto;
-    z-index: 999999;
+    z-index: 100002;
     -webkit-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
@@ -68,6 +68,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 100001;
     background: rgba(0,0,0,0.9);
 }

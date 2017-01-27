@@ -353,7 +353,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'active_callback' 		=> 'oceanwp_cac_has_boxed_layout',
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
-			        'max'   => 1600,
+			        'max'   => 1900,
 			        'step'  => 1,
 			    ),
 			) ) );
@@ -406,6 +406,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'section'  				=> 'ocean_general_settings',
 				'settings' 				=> 'ocean_main_container_width',
 				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_hasnt_boxed_layout',
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
 			        'max'   => 1980,
@@ -703,7 +704,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'priority' 				=> 10,
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
-			        'max'   => 100,
+			        'max'   => 200,
 			        'step'  => 1,
 			    ),
 			) ) );
@@ -724,7 +725,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'priority' 				=> 10,
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
-			        'max'   => 100,
+			        'max'   => 200,
 			        'step'  => 1,
 			    ),
 			) ) );
@@ -1905,7 +1906,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Content top padding
 			if ( ! empty( $main_container_width ) && '1200' != $main_container_width ) {
-				$css .= '.container,.boxed-main-layout #wrap{width:'. $main_container_width .'px;}';
+				$css .= '.container{width:'. $main_container_width .'px;}';
 			}
 
 			// Content top padding

@@ -340,6 +340,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function grid_list_buttons() {
 
+			// Return if is not in shop page
+			if ( ! oceanwp_is_woo_shop()
+				&& ! oceanwp_is_woo_tax() ) {
+				return;
+			}
+
 			// Titles
 			$grid_view = esc_html__( 'Grid view', 'oceanwp' );
 			$list_view = esc_html__( 'List view', 'oceanwp' );
@@ -373,7 +379,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.1.1
 		 */
 		public static function result_count() {
-			if ( function_exists( 'wc_get_template' ) ) {
+			if ( function_exists( 'wc_get_template' )
+				&& ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() ) ) {
 				wc_get_template( 'global/result-count.php' );
 			}
 		}
@@ -493,7 +500,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				echo '</div>';
 
 				// Description
-				if ( get_theme_mod( 'ocean_woo_grid_list', true ) ) {
+				if ( ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() )
+					&& get_theme_mod( 'ocean_woo_grid_list', true ) ) {
 					$length = get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
 					echo '<div class="woo-desc">';
 						if ( ! $length ) {

@@ -14,8 +14,6 @@ $j( document ).on( 'ready', function() {
 	menuSearch();
 	// Menu cart
 	menuCart();
-	// Mobile check
-	mobileCheck();
 	// Mobile menu
 	mobileMenu();
     // Smooth comment scroll
@@ -475,18 +473,6 @@ function menuCart() {
 }
 
 /* ==============================================
-MOBILE CHECK
-============================================== */
-function mobileCheck() {
-	"use strict"
-
-	if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent ) ) {
-		return true;
-	}
-
-}
-
-/* ==============================================
 MOBILE SCRIPT
 ============================================== */
 function mobileMenu( event ) {
@@ -672,10 +658,10 @@ function initModal() {
 /* ==============================================
 CAROUSEL
 ============================================== */
-function initCarousel() {
+function initCarousel( $context ) {
 	"use strict"
 
-	var $carousel = $j( '.gallery-format, .product-entry-slider' );
+	var $carousel = $j( '.gallery-format, .product-entry-slider', $context );
 
 	// If RTL
 	if ( $j( 'body' ).hasClass( 'rtl' ) ) {
@@ -736,60 +722,6 @@ function initCarousel() {
 	$j( '.product .main-images a, .product .product-thumbnails a' ).click( function(e) {
 		e.preventDefault();
     } );
-
-	// Posts slider
-	var $sliderWrap = $j( '#oceanwp-post-list' ),
-		$slider 	= $j( '#oceanwp-post-list .posts-slider' ),
-		$slideshow 	= $slider.data( 'slideshow' );
-
-	// Slider style
-	if ( $sliderWrap.hasClass( 'one' ) ) {
-        var $items 	= 1,
-        	$scroll = 1,
-        	$small 	= 1,
-        	$medium = 1,
-        	$large 	= 1;
-    } else if ( $sliderWrap.hasClass( 'two' ) ) {
-        var $items 	= 3,
-        	$scroll = 3,
-        	$small 	= 1,
-        	$medium = 2,
-        	$large 	= 3;
-    }
-
-    $slider.imagesLoaded( function() {
-	    $slider.slick( {
-			infinite: true,
-			slidesToShow: $items,
-			slidesToScroll: $scroll,
-			prevArrow: '<button type="button" class="slick-prev"><span class="fa fa-angle-left"></span></button>',
-			nextArrow: '<button type="button" class="slick-next"><span class="fa fa-angle-right"></span></button>',
-			speed: 500,
-			autoplay: $slideshow,
-			autoplaySpeed: 7000,
-			rtl: rtl,
-			responsive: [
-				{
-					breakpoint: 1200,
-					settings: {
-						slidesToShow: $large,
-					}
-				},
-				{
-					breakpoint: 980,
-					settings: {
-						slidesToShow: $medium,
-					}
-				},
-				{
-					breakpoint: 480,
-					settings: {
-						slidesToShow: $small,
-					}
-				}
-			]
-		} );
-	} );
 
 }
 
@@ -919,15 +851,23 @@ function autoLightbox() {
 
 		// If no image extension was found add the no lightbox class
 		if ( $image_formats_mask == -13 ) {
-			$j( this ).addClass( 'no-lightbox' )
+			$j( this ).addClass( 'no-lightbox' );
 		}
 
 		if ( ! $j( this ).hasClass( 'no-lightbox' )
 			&& ! $j( this ).hasClass( 'gallery-lightbox' )
+			&& ! $j( this ).parent().hasClass( 'gallery-icon' )
 			&& ! $j( this ).hasClass( 'woo-lightbox' )
 			&& ! $j( this ).hasClass( 'woo-thumbnail' ) ) {
 
-			$j( this ).addClass( 'oceanwp-lightbox' )
+			$j( this ).addClass( 'oceanwp-lightbox' );
+		    
+		}
+
+		if ( ! $j( this ).hasClass( 'no-lightbox' )
+			&& $j( this ).parent().hasClass( 'gallery-icon' ) ) {
+
+			$j( this ).addClass( 'gallery-lightbox' );
 		    
 		}
 
@@ -938,41 +878,24 @@ function autoLightbox() {
 /* ==============================================
 LIGHTBOX
 ============================================== */
-function initLightbox() {
+function initLightbox( $context ) {
 	"use strict"
 
 	// Lightbox
-    $j( '.oceanwp-lightbox' ).magnificPopup( {
-        type: 'image',
-        image:{
-            cursor: 'mfp-zoom-out-cur',
-            titleSrc: 'title',
-            verticalFit: true
-        },
-        callbacks: {
-            beforeOpen: function() {
-                this.st.mainClass = 'my-mfp-slide-bottom effect-rotate';
-            }
-        }
+	$j( 'body .site-content, body .entry' ).Chocolat( {
+        imageSelector   : '.oceanwp-lightbox'
     } );
 
     // Gallery lightbox
-    $j('.gallery-lightbox:not(.slick-cloned), .gallery .gallery-item a:has(img), .product-image:not(.slick-cloned) a.woo-lightbox').magnificPopup( {
-        type:'image',
-        gallery: {
-            enabled: true,
-            tPrev: 'Previous',
-            tNext: 'Next',
-        },
-        closeBtnInside: true,
-        preloader: false,
-        midClick: true,
-        removalDelay: 300,
-        callbacks: {
-            beforeOpen: function() {
-                this.st.mainClass = 'my-mfp-slide-bottom effect-rotate';
-            }
-        }
+	$j( '.gallery-format, .gallery', $context ).Chocolat( {
+        loop           	: true,
+        imageSelector   : '.gallery-lightbox:not(.slick-cloned)'
+    } );
+
+    // Product lightbox
+	$j( '.product-images-slider' ).Chocolat( {
+        loop           	: true,
+        imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
     } );
 
 }

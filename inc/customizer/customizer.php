@@ -52,7 +52,6 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			require_once( $dir . 'radio-image/class-control-radio-image.php' );
 			require_once( $dir . 'range/class-control-range.php' );
 			require_once( $dir . 'sortable/class-control-sortable.php' );
-			require_once( $dir . 'switch/class-control-switch.php' );
 			require_once( $dir . 'typography/class-control-typography.php' );
 
 			// Register the controls
@@ -65,7 +64,6 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Range_Control' );
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Radio_Image_Control' );
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Sortable_Control' );
-			$wp_customize->register_control_type( 'OceanWP_Customizer_Switch_Control' );
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Typography_Control' );
 
 		}
@@ -141,6 +139,10 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 
 			if ( get_theme_mod( 'oe_blog_panel_enable', true ) ) {
 				require_once( $dir .'blog.php' );
+			}
+
+			if ( get_theme_mod( 'oe_sidebar_panel_enable', true ) ) {
+				require_once( $dir .'sidebar.php' );
 			}
 
 			if ( get_theme_mod( 'oe_footer_widgets_panel_enable', true ) ) {

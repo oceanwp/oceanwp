@@ -1,2 +1,15 @@
 /* Fix for the tabs under the header in the edit mode */
 body.elementor-editor-active #main, .fl-builder-edit #main { z-index: 11; }
+body.has-transparent-header.elementor-editor-active {
+	#main {
+		z-index: inherit;
+	}
+
+	#site-header.transparent-header {
+		z-index: 10;
+	}
+
+	.elementor-section .elementor-container {
+		z-index: 12;
+	}
+}

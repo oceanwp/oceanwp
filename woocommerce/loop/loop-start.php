@@ -7,7 +7,8 @@
  * @version     2.0.0
  */
 
-if ( get_theme_mod( 'ocean_woo_grid_list', true )
+if ( ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() )
+	&& get_theme_mod( 'ocean_woo_grid_list', true )
 	&& 'list' == get_theme_mod( 'ocean_woo_catalog_view', 'grid' ) ) {
 	$class = ' list';
 } else {

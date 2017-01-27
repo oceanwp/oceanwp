@@ -79,7 +79,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 	<?php endif; // have_comments() ?>
 
 	<?php
-	function modify_comment_form_fields( $fields ){
+	function ocean_modify_comment_form_fields( $fields ){
 
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
@@ -93,7 +93,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 		return $fields;
 
 	}
-	add_filter( 'comment_form_default_fields', 'modify_comment_form_fields' );
+	add_filter( 'comment_form_default_fields', 'ocean_modify_comment_form_fields' );
 
 	comment_form(
 		array(

@@ -16,6 +16,7 @@ module.exports = function ( grunt ) {
 		uglify: {
 			dev: {
 				files: {
+					'assets/js/devs/chocolat.min.js': 'assets/js/devs/chocolat.js',
 					'assets/js/devs/cookie.min.js': 'assets/js/devs/cookie.js',
 					'assets/js/devs/customselect.min.js': 'assets/js/devs/customselect.js',
 					'assets/js/devs/equalHeights.min.js': 'assets/js/devs/equalHeights.js',
@@ -46,7 +47,6 @@ module.exports = function ( grunt ) {
 			},
 			prod: {
 				files: {
-					'assets/css/oceanwp-responsive.min.css': 'assets/css/oceanwp-responsive.css',
 					'assets/css/oceanwp-woocommerce.min.css': 'assets/css/oceanwp-woocommerce.css',
 					'inc/welcome/css/welcome.min.css': 'inc/welcome/css/welcome.css'
 				}

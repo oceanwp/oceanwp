@@ -43,6 +43,10 @@ HTML5 Shiv, Copyright 2014 Alexander Farkas
 Licenses: MIT/GPL2
 Source: https://github.com/aFarkas/html5shiv
 
+Chocolat, Copyright (c) Nicolas Turlais
+License: MIT
+Source: https://github.com/nicolas-t/Chocolat
+
 jQuery Cookie, Copyright 2006, 2014 Klaus Hartl
 License: MIT
 Source: https://github.com/js-cookie/js-cookie/
@@ -63,13 +67,9 @@ Isotope, Copyright 2015 Metafizzy
 License: MIT/GPLv3
 Source: http://isotope.metafizzy.co
 
-Magnific Popup, Copyright (c) 2016 Dmitry Semenov
+Slick, Copyright (c) Ken Wheeler
 License: MIT
-Source: http://dimsemenov.com/plugins/magnific-popup/
-
-OwlCarousel, Copyright (c) 2013 Bartosz Wojciechowski
-License: MIT
-Source: http://www.owlgraphic.com/owlcarousel/
+Source: http://github.com/kenwheeler/slick/
 
 scrollTo, Copyright (c) 2007-2015 Ariel Flesler
 License: MIT

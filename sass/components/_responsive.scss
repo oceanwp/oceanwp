@@ -72,7 +72,7 @@ only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
   
 	/* logo */
-	#site-logo {
+	#site-logo.has-retina-logo {
 		.custom-logo-link {
 			display: none;
 		}
@@ -408,12 +408,14 @@ only screen and (                min-resolution: 2dppx) {
 		margin-top: 0px !important;
 		margin-bottom: 0px !important;
 
-		.custom-logo-link {
-			display: none;
-		}
+		&.has-retina-logo {
+			.custom-logo-link {
+				display: none;
+			}
 
-		.retina-logo-link {
-			display: block;
+			.retina-logo-link {
+				display: block;
+			}
 		}
 	}
 

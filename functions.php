@@ -367,14 +367,14 @@ class OCEANWP_Theme_Class {
 		$dir = OCEANWP_CSS_DIR_URI;
 		$theme_version = OCEANWP_THEME_VERSION;
 
-		// Remove font awesome scripts from plugins
+		// Remove font awesome style from plugins
 		wp_deregister_style( 'font-awesome' );
 		wp_deregister_style( 'fontawesome' );
 
-		// Load font awesome script
+		// Load font awesome style
 		wp_enqueue_style( 'font-awesome', $dir .'devs/font-awesome.min.css', false, '4.7.0' );
 
-		// Register simple line icons script
+		// Register simple line icons style
 		wp_enqueue_style( 'simple-line-icons', $dir .'devs/simple-line-icons.min.css', false, '2.2.2' );
 
 		// Main Style.css File

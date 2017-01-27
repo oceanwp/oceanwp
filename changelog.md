@@ -1,5 +1,13 @@
 # OceanWP Changelog
 
+### *2017.01.27* - 1.1.3
+* **Added** - New panel in the customizer "Sidebar" to add background, control margin, padding, etc.
+* **Added** - New lightbox script "Chocolat" in replacement of Magnific Popup, lighter, responsive, possibility to add the lightbox in full screen and zoom on the image, more info: http://chocolat.insipi.de/
+* **Fixed** - Logo issue if youv've not set a retina logo, the custom logo not disappear anymore on retina screen.
+* **Fixed** - Problem with the transparent header in the editor mode of Elementor.
+* **Fixed** - Problem with images alignements.
+* **Fixed** - Small issues.
+
 ### *2017.01.15* - 1.1.2
 * **Added** - Script to create modal, check: http://docs.oceanwp.org/article/356-how-to-create-modal/
 * **Added** - New functions for the new settings of the metabox.

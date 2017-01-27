@@ -28,33 +28,6 @@ class OceanWP_Customizer_Sortable_Control extends WP_Customize_Control {
 	public $type = 'oceanwp-sortable';
 
 	/**
-	 * Constructor.
-	 * Supplied `$args` override class property defaults.
-	 * If `$args['settings']` is not defined, use the $id as the setting ID.
-	 *
-	 * @param WP_Customize_Manager $manager Customizer bootstrap instance.
-	 * @param string               $id      Control ID.
-	 * @param array                $args    {@see WP_Customize_Control::__construct}.
-	 */
-	public function __construct( $manager, $id, $args = array() ) {
-		parent::__construct( $manager, $id, $args );
-		add_filter( 'customize_sanitize_' . $id, array( $this, 'customize_sanitize' ) );
-	}
-
-	/**
-	 * Unserialize the setting before saving on DB.
-	 *
-	 * @param string $value Serialized settings.
-	 * @return array
-	 */
-	public function customize_sanitize( $value ) {
-
-		$value = maybe_unserialize( $value );
-		return $value;
-
-	}
-
-	/**
 	 * Enqueue control related scripts/styles.
 	 *
 	 * @access public
@@ -72,10 +45,9 @@ class OceanWP_Customizer_Sortable_Control extends WP_Customize_Control {
 	public function to_json() {
 		parent::to_json();
 
+		$this->json['default'] = $this->setting->default;
 		if ( isset( $this->default ) ) {
 			$this->json['default'] = $this->default;
-		} else {
-			$this->json['default'] = $this->setting->default;
 		}
 		$this->json['value']       = $this->value();
 		$this->json['choices']     = $this->choices;

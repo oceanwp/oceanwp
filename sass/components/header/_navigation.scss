@@ -388,6 +388,7 @@ body #wrap #searchform-overlay .container {
 	float: right;
     display: table;
     position: relative;
+    z-index: 10;
 
     &.simple-social {
 		right: -8px;
