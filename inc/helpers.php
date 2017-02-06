@@ -2983,6 +2983,56 @@ if ( ! function_exists( 'oceanwp_main_schema_markup' ) ) {
 }
 
 /**
+ * Translation support
+ *
+ * @since 1.1.4
+ */
+if ( ! function_exists( 'oceanwp_tm_translation' ) ) {
+
+	function oceanwp_tm_translation( $id, $val = '' ) {
+
+		// Translate theme mod val
+		if ( $val ) {
+
+			// WPML translation
+			if ( function_exists( 'icl_t' ) && $id ) {
+				$val = icl_t( 'Theme Mod', $id, $val );
+			}
+
+			// Polylang Translation
+			if ( function_exists( 'pll__' ) && $id ) {
+				$val = pll__( $val );
+			}
+
+			// Return the value
+			return $val;
+
+		}
+
+	}
+
+}
+
+/**
+ * Register translation strings
+ *
+ * @since 1.1.4
+ */
+if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
+
+	function oceanwp_register_tm_strings() {
+
+		return apply_filters( 'ocean_register_tm_strings', array(
+			'ocean_top_bar_content' 			=> '<i class="icon-phone"></i> 1-555-645-324 <i class="icon-user"></i> <a href="#">Sign in</a>',
+			'ocean_footer_copyright_text' 		=> 'Copyright - OceanWP Theme by Nick Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>',
+			'ocean_woo_menu_icon_custom_link' 	=> '',
+		) );
+
+	}
+
+}
+
+/**
  * Returns array of Social Options
  *
  * @since 1.0.0

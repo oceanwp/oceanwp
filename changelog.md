@@ -1,5 +1,11 @@
 # OceanWP Changelog
 
+### *2017.02.06* - 1.1.4
+* **Added** - Register translation string.
+* **Tweak** - All archive product éléments added în separate functions to easily alter them via thé child thème.
+* **Fixed** - Excerpt issue with the Elementor WooStore plugin.
+* **Deleted** - Modal scripts, integrated into the Ocean Modal Window extension.
+
 ### *2017.01.27* - 1.1.3
 * **Added** - New panel in the customizer "Sidebar" to add background, control margin, padding, etc.
 * **Added** - New lightbox script "Chocolat" in replacement of Magnific Popup, lighter, responsive, possibility to add the lightbox in full screen and zoom on the image, more info: http://chocolat.insipi.de/

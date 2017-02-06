@@ -80,6 +80,16 @@ class OCEANWP_Theme_Class {
 		// register sidebar widget areas
 		add_action( 'widgets_init', array( 'OCEANWP_Theme_Class', 'register_sidebars' ) );
 
+		// Registers theme_mod strings into Polylang
+		if ( class_exists( 'Polylang' ) ) {
+			add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'polylang_register_string' ) );
+		}
+
+		// Registers theme_mod strings into WPML
+		if ( class_exists( 'icl_object_id' ) ) {
+			add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'wpml_register_string' ) );
+		}
+
 		/** Admin only actions **/
 		if ( is_admin() ) {
 
@@ -588,6 +598,36 @@ class OCEANWP_Theme_Class {
 			'before_title'	=> '<h6 class="widget-title">',
 			'after_title'	=> '</h6>',
 		) );
+
+	}
+
+	/**
+	 * Registers theme_mod strings into Polylang.
+	 *
+	 * @since 1.1.4
+	 */
+	public static function polylang_register_string() {
+
+		if ( function_exists( 'pll_register_string' ) && $strings = oceanwp_register_tm_strings() ) {
+			foreach( $strings as $string => $default ) {
+				pll_register_string( $string, get_theme_mod( $string, $default ), 'Theme Mod', true );
+			}
+		}
+
+	}
+
+	/**
+	 * Registers theme_mod strings into WPML.
+	 *
+	 * @since 1.1.4
+	 */
+	public static function wpml_register_string() {
+
+		if ( function_exists( 'icl_register_string' ) && $strings = oceanwp_register_tm_strings() ) {
+			foreach( $strings as $string => $default ) {
+				icl_register_string( 'Theme Mod', $string, get_theme_mod( $string, $default ) );
+			}
+		}
 
 	}
 

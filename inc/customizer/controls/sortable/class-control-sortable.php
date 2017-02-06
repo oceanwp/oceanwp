@@ -49,7 +49,7 @@ class OceanWP_Customizer_Sortable_Control extends WP_Customize_Control {
 		if ( isset( $this->default ) ) {
 			$this->json['default'] = $this->default;
 		}
-		$this->json['value']       = $this->value();
+		$this->json['value']       = maybe_unserialize( $this->value() );
 		$this->json['choices']     = $this->choices;
 		$this->json['link']        = $this->get_link();
 		$this->json['id']          = $this->id;

@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Get copyright text
 $copy = get_theme_mod( 'ocean_footer_copyright_text', 'Copyright - OceanWP Theme by Nick Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>' );
+$copy = oceanwp_tm_translation( 'ocean_footer_copyright_text', $copy );
 
 // Get footer menu location and apply filters for child theming
 $menu_location = 'footer_menu';

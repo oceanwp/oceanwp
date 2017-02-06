@@ -228,6 +228,8 @@ Product Entries
 -------------------------------------------------------------------*/
 
 /* product entry > list view */
+.woocommerce .products.list .woostore-product-excerpt,
+.woocommerce .products.list .woostore-category-description { display: none; }
 .woocommerce .products.list .product { display: block; float: none; width: 100%; border-bottom: 1px solid #eaeaea; }
 .woocommerce .products.list .product-inner { text-align: left; }
 .woocommerce .products.list .product .woo-entry-image { float: left; width: 32%; margin: 0 3% 0 0; }

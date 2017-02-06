@@ -18,8 +18,6 @@ $j( document ).on( 'ready', function() {
 	mobileMenu();
     // Smooth comment scroll
     smoothCommentScroll();
-	// Modal
-	initModal();
 	// Carousel
 	initCarousel();
 	// Custom select
@@ -583,13 +581,6 @@ function mobileMenu( event ) {
 			return false;
 		} );
 
-		// Close when clicking local scroll link
-		$j( 'li.sidr-class-oceanwp-open-modal > a' ).on( 'click', function() {
-			$j.sidr( 'close', 'sidr' );
-			initModal();
-			return false;
-		} );
-
 	}
 
 }
@@ -605,52 +596,6 @@ function smoothCommentScroll() {
 			scrollTop: $j( this.hash ).offset().top -120
 		}, 'normal' );
 		return false;
-	} );
-
-}
-
-/* ==============================================
-MODAL
-============================================== */
-function initModal() {
-	"use strict"
-
-	$j( '.oceanwp-open-modal, li.oceanwp-open-modal > a, li.sidr-class-oceanwp-open-modal > a' ).on( 'click', function() {
-
-		var $target = $j( this ).attr( 'href' );
-
-		if ( ! $j( $target ).length ) {
-
-			return;
-
-		} else {
-
-			// Add overlay
-			$j( 'body' ).append( '<div class="oceanwp-popup-overlay"></div>' );
-			$j( '.oceanwp-popup-overlay' ).fadeIn( 300 );
-
-			// Display modal
-			$j( $target ).fadeIn( 300 );
-
-			// Close modal
-			$j( '.oceanwp-popup-overlay, .oceanwp-close-modal' ).on( 'click', function( e ) {
-				e.preventDefault();
-
-				// Remove modal overlay
-				$j( '.oceanwp-popup-overlay' ).fadeOut( 300, function() {
-					$j( this ).remove();
-				} );
-
-				if ( ! $j( $target ).is( e.$target ) ) {
-					$j( $target ).fadeOut( 300 );
-				}
-
-			} );
-
-		}
-
-		return false;
-
 	} );
 
 }
@@ -1050,8 +995,8 @@ function scrollEffect() {
 	    $j( 'a[href*="#"]:not([href="#"])' ).on( 'click', function() {
 
 	        if ( ! $j( this ).hasClass( 'no-effect' )
-	        	&& ! $j( this ).hasClass( 'oceanwp-open-modal' )
-	        	&& ! $j( this ).parent().hasClass( 'oceanwp-open-modal' ) ) {
+	        	&& ! $j( this ).hasClass( 'omw-open-modal' )
+	        	&& ! $j( this ).parent().hasClass( 'omw-open-modal' ) ) {
 
 	        	var $href     				= $j( this ).attr( 'href' ),
 				    $hrefHash 				= $href.substr( $href.indexOf( '#' ) ).slice( 1 ),
