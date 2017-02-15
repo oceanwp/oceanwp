@@ -17,7 +17,7 @@ $content = oceanwp_tm_translation( 'ocean_top_bar_content', $content );
 // Display topbar content
 if ( $content || has_nav_menu( 'topbar_menu' ) ) : ?>
 
-    <div id="top-bar-content" class="<?php echo oceanwp_topbar_content_classes(); ?>">
+    <div id="top-bar-content" class="<?php echo esc_attr( oceanwp_topbar_content_classes() ); ?>">
 
         <?php
         // Get topbar menu

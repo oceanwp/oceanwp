@@ -37,7 +37,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 	<?php if ( have_comments() ) : ?>
 
 		<h2 class="theme-heading comments-title">
-			<span class="text"><?php printf( _nx( 'This Post Has One Comment', 'This Post Has %1$s Comments', get_comments_number(), 'comments title', 'oceanwp' ), number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' ); ?></span>
+		<span class="text"><?php printf( esc_html( _n( 'This Post Has %d Comment', 'This Post Has %d Comments', get_comments_number(), 'oceanwp'  ) ), number_format_i18n( get_comments_number() ) ); ?></span>
 		</h2>
 
 		<ol class="comment-list">
@@ -97,7 +97,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 
 	comment_form(
 		array(
-			'must_log_in'			=> '<p class="must-log-in">'.  sprintf( esc_html__( 'You must be %slogged in%s to post a comment.', 'oceanwp' ), '<a href="'. wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) .'">', '</a>' ) .'</p>',
+			'must_log_in'			=> '<p class="must-log-in">'.  sprintf( esc_html__( 'You must be %1$slogged in%2$s to post a comment.', 'oceanwp' ), '<a href="'. wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) .'">', '</a>' ) .'</p>',
 			'logged_in_as'			=> '<p class="logged-in-as">'. esc_html__( 'Logged in as', 'oceanwp' ) .' <a href="'. admin_url( 'profile.php' ) .'">'. $user_identity .'</a>. <a href="' . wp_logout_url( get_permalink() ) .'" title="'. esc_html__( 'Log out of this account', 'oceanwp' ) .'">'. esc_html__( 'Log out &raquo;', 'oceanwp' ) .'</a></p>',
 			'comment_notes_before'	=> false,
 			'comment_notes_after'	=> false,

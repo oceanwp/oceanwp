@@ -377,9 +377,7 @@ Single Product
 .woocommerce div.product form.cart .variations td.value { padding: 0 0 15px }
 .woocommerce div.product form.cart .variations tr:last-child td { padding-top: 15px }
 .woocommerce div.product form.cart .variations .reset_variations { display: block; float: left; margin-top: 10px; font-size: 13px; color: #989898; font-weight: normal; border: 2px solid #ededed; padding: 3px 10px; border-radius: 3px; text-decoration: none; visibility: hidden; }
-.woocommerce div.product form.cart .variations .reset_variations:before { display: inline-block; font-family: 'simple-line-icons'; content: '\e082'; margin-right: 5px; vertical-align: top; -webkit-transition: all .3s ease; transition: all .3s ease; }
-.woocommerce div.product form.cart .variations .reset_variations:hover { color: #333 }
-.woocommerce div.product form.cart .variations .reset_variations:hover:before { color: red }
+.woocommerce div.product form.cart .variations .reset_variations:before { display: inline-block; font-family: 'simple-line-icons'; content: '\e082'; margin-right: 5px; color: red; vertical-align: top; }
 .single_variation { display: block; float: left; margin-bottom: 10px; }
 .variations_button { clear: both }
 

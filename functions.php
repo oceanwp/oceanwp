@@ -75,7 +75,7 @@ class OCEANWP_Theme_Class {
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'theme_setup' ), 10 );
 
 		// Load custom widgets
-		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'custom_widgets' ), 5 );
+		add_action( 'widgets_init', array( 'OCEANWP_Theme_Class', 'custom_widgets' ), 10 );
 
 		// register sidebar widget areas
 		add_action( 'widgets_init', array( 'OCEANWP_Theme_Class', 'register_sidebars' ) );
@@ -117,9 +117,6 @@ class OCEANWP_Theme_Class {
 			// Add an X-UA-Compatible header
 			add_filter( 'wp_headers', array( 'OCEANWP_Theme_Class', 'x_ua_compatible_headers' ) );
 
-			// Browser dependent CSS
-			add_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'browser_dependent_css' ) );
-
 			// Loads html5 shiv script
 			add_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'html5_shiv' ) );
 
@@ -138,15 +135,14 @@ class OCEANWP_Theme_Class {
 			// Add a responsive wrapper to the WordPress oembed output
 			add_filter( 'embed_oembed_html', array( 'OCEANWP_Theme_Class', 'add_responsive_wrap_to_oembeds' ), 99, 4 );
 
-			// Allow for the use of shortcodes in the WordPress excerpt
-			add_filter( 'the_excerpt', 'shortcode_unautop' );
-			add_filter( 'the_excerpt', 'do_shortcode' );
-
 			// Adds classes the post class
 			add_filter( 'post_class', array( 'OCEANWP_Theme_Class', 'post_class' ) );
 
 			// Add schema markup to the authors post link
 			add_filter( 'the_author_posts_link', array( 'OCEANWP_Theme_Class', 'the_author_posts_link' ) );
+
+			// Remove the default lightbox script for the beaver builder plugin
+			add_filter( 'fl_builder_override_lightbox', array( 'OCEANWP_Theme_Class', 'remove_bb_lightbox' ) );
 
 		}
 
@@ -465,36 +461,22 @@ class OCEANWP_Theme_Class {
 	}
 
 	/**
-	 * Adds CSS for ie8
-	 * Applies the oceanwp_ie_8_url filter so you can alter your IE8 stylesheet URL
-	 *
-	 * @since 1.0.0
-	 */
-	public static function browser_dependent_css() {
-		$ie_8 = apply_filters( 'ocean_ie8_stylesheet', OCEANWP_CSS_DIR_URI .'ie8.css' );
-		echo '<!--[if IE 8]><link rel="stylesheet" type="text/css" href="'. $ie_8 .'" media="screen"><![endif]-->';
-		$ie_9 = apply_filters( 'ocean_ie9_stylesheet', OCEANWP_CSS_DIR_URI .'ie9.css' );
-		echo '<!--[if IE 9]><link rel="stylesheet" type="text/css" href="'. $ie_9 .'" media="screen"><![endif]-->';
-	}
-
-	/**
 	 * Load HTML5 dependencies for IE8
 	 *
 	 * @since 1.0.0
 	 */
 	public static function html5_shiv() {
-		echo '<!--[if lt IE 9]><script src="'. OCEANWP_JS_DIR_URI .'html5.js"></script><![endif]-->';
+		wp_register_script( 'html5shiv', OCEANWP_JS_DIR_URI . 'html5.js', array(), OCEANWP_THEME_VERSION, false );
+		wp_enqueue_script( 'html5shiv' );
+		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 	}
 
 	/**
 	 * Include all custom widget classes
 	 *
-	 * @since 1.0.0
+	 * @since   1.0.0
 	 */
 	public static function custom_widgets() {
-
-		// Define directory for widgets
-		$dir = OCEANWP_INC_DIR .'widgets/';
 
 		// Define array of custom widgets for the theme
 		$widgets = apply_filters( 'ocean_custom_widgets', array(
@@ -516,8 +498,9 @@ class OCEANWP_Theme_Class {
 		// Loop through widgets and load their files
 		if ( $widgets && is_array( $widgets ) ) {
 			foreach ( $widgets as $widget ) {
-				if ( file_exists( $dir . $widget .'.php' ) ) {
-					require_once( $dir . $widget .'.php' );
+				$file = OCEANWP_INC_DIR .'widgets/' . $widget .'.php';
+				if ( file_exists ( $file ) ) {
+					require_once( $file );
 				}
 			}
 		}
@@ -806,6 +789,17 @@ class OCEANWP_Theme_Class {
 
 		// Return link
 		return $link;
+
+	}
+
+	/**
+	 * Add schema markup to the authors post link
+	 *
+	 * @since 1.1.5
+	 */
+	public static function remove_bb_lightbox() {
+
+		return true;
 
 	}
 

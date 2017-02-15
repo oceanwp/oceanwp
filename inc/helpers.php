@@ -140,28 +140,35 @@ if ( ! function_exists( 'oceanwp_post_id' ) ) {
 
 	function oceanwp_post_id() {
 
+		// Default value
+		$id = '';
+
 		// If singular get_the_ID
 		if ( is_singular() ) {
-			return get_the_ID();
+			$id = get_the_ID();
 		}
 
 		// Get ID of WooCommerce product archive
 		elseif ( OCEANWP_WOOCOMMERCE_ACTIVE && is_shop() ) {
 			$shop_id = wc_get_page_id( 'shop' );
 			if ( isset( $shop_id ) ) {
-				return $shop_id;
+				$id = $shop_id;
 			}
 		}
 
 		// Posts page
 		elseif ( is_home() && $page_for_posts = get_option( 'page_for_posts' ) ) {
-			return $page_for_posts;
+			$id = $page_for_posts;
 		}
 
-		// Return nothing
-		else {
-			return NULL;
-		}
+		// Apply filters
+		$id = apply_filters( 'oceanwp_post_id', $id );
+
+		// Sanitize
+		$id = $id ? $id : '';
+
+		// Return ID
+		return $id;
 
 	}
 
@@ -178,7 +185,7 @@ if ( ! function_exists( 'oceanwp_post_layout' ) ) {
 
 		// Check URL
 		if ( ! empty( $_GET['post_layout'] ) ) {
-			return $_GET['post_layout'];
+			return esc_html( $_GET['post_layout'] );
 		}
 
 		// Define variables
@@ -2387,8 +2394,6 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 
 	function oceanwp_comment( $comment, $args, $depth ) {
 
-		$GLOBALS['comment'] = $comment;
-
 		switch ( $comment->comment_type ) :
 			case 'pingback' :
 			case 'trackback' :
@@ -2398,7 +2403,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 
 			<article id="comment-<?php comment_ID(); ?>" class="comment-container">
-				<p><?php _e( 'Pingback:', 'oceanwp' ); ?> <span><span itemprop="name"><?php comment_author_link(); ?></span></span> <?php edit_comment_link( __( '(Edit)', 'oceanwp' ), '<span class="edit-link">', '</span>' ); ?></p>
+				<p><?php esc_html_e( 'Pingback:', 'oceanwp' ); ?> <span><span itemprop="name"><?php comment_author_link(); ?></span></span> <?php edit_comment_link( esc_html__( '(Edit)', 'oceanwp' ), '<span class="edit-link">', '</span>' ); ?></p>
 			</article>
 
 			<?php
@@ -2437,7 +2442,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 
 		                <div class="comment-entry">
 		                    <?php if ( '0' == $comment->comment_approved ) : ?>
-		                        <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'oceanwp' ); ?></p>
+		                        <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'oceanwp' ); ?></p>
 		                    <?php endif; ?>
 
 		                    <div class="comment-content">

@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### *2017.02.15* - 1.1.5
+* **Fixed** - Sub menus blinking.
+* **Fixed** - Problem double lightbox with Beaver Builder.
+* **Fixed** - Problem with WooCommerce images variation products.
+
 ### *2017.02.06* - 1.1.4
 * **Added** - Register translation string.
 * **Tweak** - All archive product éléments added în separate functions to easily alter them via thé child thème.

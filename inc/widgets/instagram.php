@@ -145,16 +145,16 @@ if ( ! class_exists( 'OceanWP_Instagram_Widget' ) ) {
 			<div class="oceanwp-container">
 
 				<p>
-					<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'oceanwp'); ?></label>			
+					<label for="<?php echo $this->get_field_id('title'); ?>"><?php esc_html_e('Title', 'oceanwp'); ?></label>			
 					<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $instance['title']; ?>" />
 				</p>
 
 				<p>
-					<strong><?php _e( 'Search Instagram for:', 'oceanwp' ); ?></strong>
+					<strong><?php esc_html_e( 'Search Instagram for:', 'oceanwp' ); ?></strong>
 					<span class="oceanwp-search-for-container">
 						<label class="oceanwp-seach-for">
 							<input type="radio" id="<?php echo $this->get_field_id( 'search_for' ); ?>" name="<?php echo $this->get_field_name( 'search_for' ); ?>" value="username" <?php checked( 'username', $instance['search_for'] ); ?> />
-							<?php _e( 'Username:', 'oceanwp' ); ?>
+							<?php esc_html_e( 'Username:', 'oceanwp' ); ?>
 						</label>
 						<input id="<?php echo $this->get_field_id( 'username' ); ?>" class="inline-field-text" name="<?php echo $this->get_field_name( 'username' ); ?>" type="text" value="<?php echo $instance['username']; ?>" />
 					</span>
@@ -162,149 +162,149 @@ if ( ! class_exists( 'OceanWP_Instagram_Widget' ) ) {
 					<span class="oceanwp-search-for-container">
 						<label class="oceanwp-seach-for">
 							<input type="radio" id="<?php echo $this->get_field_id( 'search_for' ); ?>" name="<?php echo $this->get_field_name( 'search_for' ); ?>" value="hashtag" <?php checked( 'hashtag', $instance['search_for'] ); ?> />
-							<?php _e( 'Hashtag:', 'oceanwp' ); ?>
+							<?php esc_html_e( 'Hashtag:', 'oceanwp' ); ?>
 						</label>
-						<input id="<?php echo $this->get_field_id( 'hashtag' ); ?>" class="inline-field-text" placeholder="<?php _e('without # sign', 'oceanwp'); ?>" name="<?php echo $this->get_field_name( 'hashtag' ); ?>" type="text" value="<?php echo $instance['hashtag']; ?>" />
+						<input id="<?php echo $this->get_field_id( 'hashtag' ); ?>" class="inline-field-text" placeholder="<?php esc_html_e('without # sign', 'oceanwp'); ?>" name="<?php echo $this->get_field_name( 'hashtag' ); ?>" type="text" value="<?php echo $instance['hashtag']; ?>" />
 					</span>
 				</p>
 
 		        <p class="<?php if ( 'hashtag' != $instance['search_for'] ) echo 'hidden'; ?>">
-		            <label for="<?php echo $this->get_field_id( 'blocked_users' ); ?>"><?php _e( 'Block Users', 'oceanwp' ); ?>:</label>
+		            <label for="<?php echo $this->get_field_id( 'blocked_users' ); ?>"><?php esc_html_e( 'Block Users', 'oceanwp' ); ?>:</label>
 					<input class="widefat" id="<?php echo $this->get_field_id( 'blocked_users' ); ?>" name="<?php echo $this->get_field_name( 'blocked_users' ); ?>" type="text" value="<?php echo $instance['blocked_users']; ?>" />
-					<small><?php _e( 'Enter usernames separated by commas whose images you don\'t want to show', 'oceanwp' ); ?></small>
+					<small><?php esc_html_e( 'Enter usernames separated by commas whose images you don\'t want to show', 'oceanwp' ); ?></small>
 		        </p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number Images To Show:', 'oceanwp' ); ?>
+					<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number Images To Show:', 'oceanwp' ); ?>
 						<input class="small-text" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" min="0" value="<?php echo $instance['number']; ?>" />
 					</label>
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'refresh_hour' ); ?>"><?php _e( 'Check New Images Every:', 'oceanwp' ); ?>
+					<label for="<?php echo $this->get_field_id( 'refresh_hour' ); ?>"><?php esc_html_e( 'Check New Images Every:', 'oceanwp' ); ?>
 						<input class="small-text" id="<?php echo $this->get_field_id( 'refresh_hour' ); ?>" name="<?php echo $this->get_field_name( 'refresh_hour' ); ?>" type="number" min="0" value="<?php echo $instance['refresh_hour']; ?>" />
-						<span><?php _e('hours', 'oceanwp'); ?></span>
+						<span><?php esc_html_e('hours', 'oceanwp'); ?></span>
 					</label>
 				</p>
 
 				<p class="oceanwp-left">
-					<label for="<?php echo $this->get_field_id('columns'); ?>"><?php _e('Images Style:', 'oceanwp'); ?></label>
+					<label for="<?php echo $this->get_field_id('columns'); ?>"><?php esc_html_e('Images Style:', 'oceanwp'); ?></label>
 					<select class='oceanwp-widget-select widefat' name="<?php echo $this->get_field_name('columns'); ?>" id="<?php echo $this->get_field_id('columns'); ?>">
-						<option value="style-one" <?php if($instance['columns'] == 'style-one') { ?>selected="selected"<?php } ?>><?php _e( 'Style 1', 'oceanwp' ); ?></option>
-						<option value="style-two" <?php if($instance['columns'] == 'style-two') { ?>selected="selected"<?php } ?>><?php _e( 'Style 2', 'oceanwp' ); ?></option>
-						<option value="style-three" <?php if($instance['columns'] == 'style-three') { ?>selected="selected"<?php } ?>><?php _e( 'Style 3', 'oceanwp' ); ?></option>
-						<option value="style-four" <?php if($instance['columns'] == 'style-four') { ?>selected="selected"<?php } ?>><?php _e( 'Style 4', 'oceanwp' ); ?></option>
-						<option value="two-columns" <?php if($instance['columns'] == 'two-columns') { ?>selected="selected"<?php } ?>><?php _e( '2 Columns', 'oceanwp' ); ?></option>
-						<option value="three-columns" <?php if($instance['columns'] == 'three-columns') { ?>selected="selected"<?php } ?>><?php _e( '3 Columns', 'oceanwp' ); ?></option>
-						<option value="four-columns" <?php if($instance['columns'] == 'four-columns') { ?>selected="selected"<?php } ?>><?php _e( '4 Columns', 'oceanwp' ); ?></option>
-						<option value="five-columns" <?php if($instance['columns'] == 'five-columns') { ?>selected="selected"<?php } ?>><?php _e( '5 Columns', 'oceanwp' ); ?></option>
-						<option value="six-columns" <?php if($instance['columns'] == 'six-columns') { ?>selected="selected"<?php } ?>><?php _e( '6 Columns', 'oceanwp' ); ?></option>
-						<option value="seven-columns" <?php if($instance['columns'] == 'seven-columns') { ?>selected="selected"<?php } ?>><?php _e( '7 Columns', 'oceanwp' ); ?></option>
-						<option value="eight-columns" <?php if($instance['columns'] == 'eight-columns') { ?>selected="selected"<?php } ?>><?php _e( '8 Columns', 'oceanwp' ); ?></option>
-						<option value="nine-columns" <?php if($instance['columns'] == 'nine-columns') { ?>selected="selected"<?php } ?>><?php _e( '9 Columns', 'oceanwp' ); ?></option>
-						<option value="ten-columns" <?php if($instance['columns'] == 'ten-columns') { ?>selected="selected"<?php } ?>><?php _e( '10 Columns', 'oceanwp' ); ?></option>
+						<option value="style-one" <?php if($instance['columns'] == 'style-one') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Style 1', 'oceanwp' ); ?></option>
+						<option value="style-two" <?php if($instance['columns'] == 'style-two') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Style 2', 'oceanwp' ); ?></option>
+						<option value="style-three" <?php if($instance['columns'] == 'style-three') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Style 3', 'oceanwp' ); ?></option>
+						<option value="style-four" <?php if($instance['columns'] == 'style-four') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Style 4', 'oceanwp' ); ?></option>
+						<option value="two-columns" <?php if($instance['columns'] == 'two-columns') { ?>selected="selected"<?php } ?>><?php esc_html_e( '2 Columns', 'oceanwp' ); ?></option>
+						<option value="three-columns" <?php if($instance['columns'] == 'three-columns') { ?>selected="selected"<?php } ?>><?php esc_html_e( '3 Columns', 'oceanwp' ); ?></option>
+						<option value="four-columns" <?php if($instance['columns'] == 'four-columns') { ?>selected="selected"<?php } ?>><?php esc_html_e( '4 Columns', 'oceanwp' ); ?></option>
+						<option value="five-columns" <?php if($instance['columns'] == 'five-columns') { ?>selected="selected"<?php } ?>><?php esc_html_e( '5 Columns', 'oceanwp' ); ?></option>
+						<option value="six-columns" <?php if($instance['columns'] == 'six-columns') { ?>selected="selected"<?php } ?>><?php esc_html_e( '6 Columns', 'oceanwp' ); ?></option>
+						<option value="seven-columns" <?php if($instance['columns'] == 'seven-columns') { ?>selected="selected"<?php } ?>><?php esc_html_e( '7 Columns', 'oceanwp' ); ?></option>
+						<option value="eight-columns" <?php if($instance['columns'] == 'eight-columns') { ?>selected="selected"<?php } ?>><?php esc_html_e( '8 Columns', 'oceanwp' ); ?></option>
+						<option value="nine-columns" <?php if($instance['columns'] == 'nine-columns') { ?>selected="selected"<?php } ?>><?php esc_html_e( '9 Columns', 'oceanwp' ); ?></option>
+						<option value="ten-columns" <?php if($instance['columns'] == 'ten-columns') { ?>selected="selected"<?php } ?>><?php esc_html_e( '10 Columns', 'oceanwp' ); ?></option>
 					</select>
 				</p>
 
 				<p class="oceanwp-right">
-					<label for="<?php echo $this->get_field_id('margin'); ?>"><?php _e('Margin:', 'oceanwp'); ?></label>
+					<label for="<?php echo $this->get_field_id('margin'); ?>"><?php esc_html_e('Margin:', 'oceanwp'); ?></label>
 					<select class='oceanwp-widget-select widefat' name="<?php echo $this->get_field_name('margin'); ?>" id="<?php echo $this->get_field_id('margin'); ?>">
-						<option value="margin" <?php if($instance['margin'] == 'margin') { ?>selected="selected"<?php } ?>><?php _e( 'Margin', 'oceanwp' ); ?></option>
-						<option value="no-margin" <?php if($instance['margin'] == 'no-margin') { ?>selected="selected"<?php } ?>><?php _e( 'No Margin', 'oceanwp' ); ?></option>
+						<option value="margin" <?php if($instance['margin'] == 'margin') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Margin', 'oceanwp' ); ?></option>
+						<option value="no-margin" <?php if($instance['margin'] == 'no-margin') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'No Margin', 'oceanwp' ); ?></option>
 					</select>
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'image_size' ); ?>"><strong><?php _e( 'Image format', 'oceanwp' ); ?></strong></label>
+					<label for="<?php echo $this->get_field_id( 'image_size' ); ?>"><strong><?php esc_html_e( 'Image format', 'oceanwp' ); ?></strong></label>
 					<select class="widefat" id="<?php echo $this->get_field_id( 'image_size' ); ?>" name="<?php echo $this->get_field_name( 'image_size' ); ?>">
-						<option value="oceanwp_insta_square" <?php echo ($instance['image_size'] == 'oceanwp_insta_square') ? ' selected="selected"' : ''; ?>><?php _e( 'Square - Cropped', 'oceanwp' ); ?></option>
-						<option value="full" <?php echo ($instance['image_size'] == 'full') ? ' selected="selected"' : ''; ?>><?php _e( 'Original - No Crop', 'oceanwp' ); ?></option>
+						<option value="oceanwp_insta_square" <?php echo ($instance['image_size'] == 'oceanwp_insta_square') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Square - Cropped', 'oceanwp' ); ?></option>
+						<option value="full" <?php echo ($instance['image_size'] == 'full') ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Original - No Crop', 'oceanwp' ); ?></option>
 					</select>
-					<small><?php _e( '<strong>Square - Cropped</strong> - images in 640x640 pixels. <br/><strong>Original - No Crop</strong> - original image size.', 'oceanwp' ); ?></small>
+					<small><?php esc_html_e( '<strong>Square - Cropped</strong> - images in 640x640 pixels. <br/><strong>Original - No Crop</strong> - original image size.', 'oceanwp' ); ?></small>
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'orderby' ); ?>"><strong><?php _e( 'Order by', 'oceanwp' ); ?></strong>
+					<label for="<?php echo $this->get_field_id( 'orderby' ); ?>"><strong><?php esc_html_e( 'Order by', 'oceanwp' ); ?></strong>
 						<select class="widefat" name="<?php echo $this->get_field_name( 'orderby' ); ?>" id="<?php echo $this->get_field_id( 'orderby' ); ?>">
-							<option value="date-ASC" <?php selected( $instance['orderby'], 'date-ASC', true); ?>><?php _e( 'Date - Ascending', 'oceanwp' ); ?></option>
-							<option value="date-DESC" <?php selected( $instance['orderby'], 'date-DESC', true); ?>><?php _e( 'Date - Descending', 'oceanwp' ); ?></option>
-							<option value="popular-ASC" <?php selected( $instance['orderby'], 'popular-ASC', true); ?>><?php _e( 'Popularity - Ascending', 'oceanwp' ); ?></option>
-							<option value="popular-DESC" <?php selected( $instance['orderby'], 'popular-DESC', true); ?>><?php _e( 'Popularity - Descending', 'oceanwp' ); ?></option>
-							<option value="rand" <?php selected( $instance['orderby'], 'rand', true); ?>><?php _e( 'Random', 'oceanwp' ); ?></option>
+							<option value="date-ASC" <?php selected( $instance['orderby'], 'date-ASC', true); ?>><?php esc_html_e( 'Date - Ascending', 'oceanwp' ); ?></option>
+							<option value="date-DESC" <?php selected( $instance['orderby'], 'date-DESC', true); ?>><?php esc_html_e( 'Date - Descending', 'oceanwp' ); ?></option>
+							<option value="popular-ASC" <?php selected( $instance['orderby'], 'popular-ASC', true); ?>><?php esc_html_e( 'Popularity - Ascending', 'oceanwp' ); ?></option>
+							<option value="popular-DESC" <?php selected( $instance['orderby'], 'popular-DESC', true); ?>><?php esc_html_e( 'Popularity - Descending', 'oceanwp' ); ?></option>
+							<option value="rand" <?php selected( $instance['orderby'], 'rand', true); ?>><?php esc_html_e( 'Random', 'oceanwp' ); ?></option>
 						</select>  
 					</label>
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'images_link' ); ?>"><strong><?php _e( 'Link To', 'oceanwp' ); ?></strong>
+					<label for="<?php echo $this->get_field_id( 'images_link' ); ?>"><strong><?php esc_html_e( 'Link To', 'oceanwp' ); ?></strong>
 						<select class="widefat" name="<?php echo $this->get_field_name( 'images_link' ); ?>" id="<?php echo $this->get_field_id( 'images_link' ); ?>">
-							<option value="image_url" <?php selected( $instance['images_link'], 'image_url', true); ?>><?php _e( 'Instagram Image', 'oceanwp' ); ?></option>
-							<option class="<?php if ( 'hashtag' == $instance['search_for'] ) echo 'hidden'; ?>" value="user_url" <?php selected( $instance['images_link'], 'user_url', true); ?>><?php _e( 'Instagram Profile', 'oceanwp' ); ?></option>
-							<option value="custom_url" <?php selected( $instance['images_link'], 'custom_url', true ); ?>><?php _e( 'Custom Link', 'oceanwp' ); ?></option>
-							<option value="none" <?php selected( $instance['images_link'], 'none', true); ?>><?php _e( 'None', 'oceanwp' ); ?></option>
+							<option value="image_url" <?php selected( $instance['images_link'], 'image_url', true); ?>><?php esc_html_e( 'Instagram Image', 'oceanwp' ); ?></option>
+							<option class="<?php if ( 'hashtag' == $instance['search_for'] ) echo 'hidden'; ?>" value="user_url" <?php selected( $instance['images_link'], 'user_url', true); ?>><?php esc_html_e( 'Instagram Profile', 'oceanwp' ); ?></option>
+							<option value="custom_url" <?php selected( $instance['images_link'], 'custom_url', true ); ?>><?php esc_html_e( 'Custom Link', 'oceanwp' ); ?></option>
+							<option value="none" <?php selected( $instance['images_link'], 'none', true); ?>><?php esc_html_e( 'None', 'oceanwp' ); ?></option>
 						</select>
 					</label>
 				</p>
 
 				<p class="<?php if ( 'custom_url' != $instance['images_link'] ) echo 'hidden'; ?>">
-					<label for="<?php echo $this->get_field_id( 'custom_url' ); ?>"><?php _e( 'Custom Link:', 'oceanwp'); ?></label>
+					<label for="<?php echo $this->get_field_id( 'custom_url' ); ?>"><?php esc_html_e( 'Custom Link:', 'oceanwp'); ?></label>
 					<input class="widefat" id="<?php echo $this->get_field_id( 'custom_url' ); ?>" name="<?php echo $this->get_field_name( 'custom_url' ); ?>" type="text" value="<?php echo $instance['custom_url']; ?>" />
-					<small><?php _e('Use this field only if the above option is set to <strong>Custom Link</strong>', 'oceanwp'); ?></small>
+					<small><?php esc_html_e('Use this field only if the above option is set to <strong>Custom Link</strong>', 'oceanwp'); ?></small>
 				</p>
 
 				<div class="oceanwp-header-wrap <?php if ( 'hashtag' == $instance['search_for'] ) echo 'hidden'; ?>">
 					<div class="oceanwp-header-options oceanwp-clr">
-						<h4 class="oceanwp-header-title"><?php _e( 'Header Options', 'oceanwp'); ?></h4>
+						<h4 class="oceanwp-header-title"><?php esc_html_e( 'Header Options', 'oceanwp'); ?></h4>
 						<p>
-							<label for="<?php echo $this->get_field_id('display_header'); ?>"><?php _e('Display Header:', 'oceanwp'); ?></label>
+							<label for="<?php echo $this->get_field_id('display_header'); ?>"><?php esc_html_e('Display Header:', 'oceanwp'); ?></label>
 							<select class='oceanwp-widget-select widefat' name="<?php echo $this->get_field_name('display_header'); ?>" id="<?php echo $this->get_field_id('display_header'); ?>">
-								<option value="no" <?php if($instance['display_header'] == 'no') { ?>selected="selected"<?php } ?>><?php _e( 'No', 'oceanwp' ); ?></option>
-								<option value="yes" <?php if($instance['display_header'] == 'yes') { ?>selected="selected"<?php } ?>><?php _e( 'Yes', 'oceanwp' ); ?></option>
+								<option value="no" <?php if($instance['display_header'] == 'no') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'No', 'oceanwp' ); ?></option>
+								<option value="yes" <?php if($instance['display_header'] == 'yes') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Yes', 'oceanwp' ); ?></option>
 							</select>
 						</p>
 
 						<div class="oceanwp-display-header-options <?php if ( 'yes' != $instance['display_header'] ) echo 'hidden'; ?>">
 							<p>
-								<label for="<?php echo $this->get_field_id('display_p_picture'); ?>"><?php _e('Display Profile Picture:', 'oceanwp'); ?></label>
+								<label for="<?php echo $this->get_field_id('display_p_picture'); ?>"><?php esc_html_e('Display Profile Picture:', 'oceanwp'); ?></label>
 								<select class='oceanwp-widget-select widefat' name="<?php echo $this->get_field_name('display_p_picture'); ?>" id="<?php echo $this->get_field_id('display_p_picture'); ?>">
-									<option value="yes" <?php if($instance['display_p_picture'] == 'yes') { ?>selected="selected"<?php } ?>><?php _e( 'Yes', 'oceanwp' ); ?></option>
-									<option value="no" <?php if($instance['display_p_picture'] == 'no') { ?>selected="selected"<?php } ?>><?php _e( 'No', 'oceanwp' ); ?></option>
+									<option value="yes" <?php if($instance['display_p_picture'] == 'yes') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Yes', 'oceanwp' ); ?></option>
+									<option value="no" <?php if($instance['display_p_picture'] == 'no') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'No', 'oceanwp' ); ?></option>
 								</select>
 							</p>
 
 							<p>
-								<label for="<?php echo $this->get_field_id('picture_radius'); ?>"><?php _e( 'Picture Radius:', 'oceanwp' ); ?></label>
+								<label for="<?php echo $this->get_field_id('picture_radius'); ?>"><?php esc_html_e( 'Picture Radius:', 'oceanwp' ); ?></label>
 								<select class='oceanwp-widget-select widefat' name="<?php echo $this->get_field_name('picture_radius'); ?>" id="<?php echo $this->get_field_id('picture_radius'); ?>">
-									<option value="rounded" <?php if($instance['picture_radius'] == 'rounded') { ?>selected="selected"<?php } ?>><?php _e( 'Rounded', 'oceanwp' ); ?></option>
-									<option value="square" <?php if($instance['picture_radius'] == 'square') { ?>selected="selected"<?php } ?>><?php _e( 'Square', 'oceanwp'); ?></option>
+									<option value="rounded" <?php if($instance['picture_radius'] == 'rounded') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Rounded', 'oceanwp' ); ?></option>
+									<option value="square" <?php if($instance['picture_radius'] == 'square') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Square', 'oceanwp'); ?></option>
 								</select>
 							</p>
 
 							<p>
-								<label for="<?php echo $this->get_field_id( 'display_name' ); ?>"><?php _e( 'Display Name:', 'oceanwp' ); ?>
-									<input class="widefat" id="<?php echo $this->get_field_id( 'display_name' ); ?>" name="<?php echo $this->get_field_name( 'display_name' ); ?>" type="text" placeholder="<?php _e( 'Default is username', 'oceanwp' ); ?>" value="<?php echo $instance['display_name']; ?>" />
+								<label for="<?php echo $this->get_field_id( 'display_name' ); ?>"><?php esc_html_e( 'Display Name:', 'oceanwp' ); ?>
+									<input class="widefat" id="<?php echo $this->get_field_id( 'display_name' ); ?>" name="<?php echo $this->get_field_name( 'display_name' ); ?>" type="text" placeholder="<?php esc_html_e( 'Default is username', 'oceanwp' ); ?>" value="<?php echo $instance['display_name']; ?>" />
 								</label>
 							</p>
 
 							<p>
-								<label for="<?php echo $this->get_field_id('description'); ?>"><?php _e('Description:', 'oceanwp'); ?></label>
+								<label for="<?php echo $this->get_field_id('description'); ?>"><?php esc_html_e('Description:', 'oceanwp'); ?></label>
 								<textarea rows="15" id="<?php echo $this->get_field_id( 'description' ); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>" class="widefat" style="height: 100px;"><?php if (  !empty( $instance['description'] ) ) { echo $instance['description']; } ?></textarea>
 							</p>
 
 							<p class="oceanwp-left">
-								<label for="<?php echo $this->get_field_id('header_position'); ?>"><?php _e( 'Position:', 'oceanwp' ); ?></label>
+								<label for="<?php echo $this->get_field_id('header_position'); ?>"><?php esc_html_e( 'Position:', 'oceanwp' ); ?></label>
 								<select class='oceanwp-widget-select widefat' name="<?php echo $this->get_field_name('header_position'); ?>" id="<?php echo $this->get_field_id('header_position'); ?>">
-									<option value="before" <?php if($instance['header_position'] == 'before') { ?>selected="selected"<?php } ?>><?php _e( 'Before Images', 'oceanwp' ); ?></option>
-									<option value="after" <?php if($instance['header_position'] == 'after') { ?>selected="selected"<?php } ?>><?php _e( 'After Images', 'oceanwp'); ?></option>
+									<option value="before" <?php if($instance['header_position'] == 'before') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Before Images', 'oceanwp' ); ?></option>
+									<option value="after" <?php if($instance['header_position'] == 'after') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'After Images', 'oceanwp'); ?></option>
 								</select>
 							</p>
 
 							<p class="oceanwp-right">
-								<label for="<?php echo $this->get_field_id('header_align'); ?>"><?php _e( 'Align:', 'oceanwp' ); ?></label>
+								<label for="<?php echo $this->get_field_id('header_align'); ?>"><?php esc_html_e( 'Align:', 'oceanwp' ); ?></label>
 								<select class='oceanwp-widget-select widefat' name="<?php echo $this->get_field_name('header_align'); ?>" id="<?php echo $this->get_field_id('header_align'); ?>">
-									<option value="left" <?php if($instance['header_align'] == 'left') { ?>selected="selected"<?php } ?>><?php _e( 'Left', 'oceanwp' ); ?></option>
-									<option value="right" <?php if($instance['header_align'] == 'right') { ?>selected="selected"<?php } ?>><?php _e( 'Right', 'oceanwp'); ?></option>
-									<option value="center" <?php if($instance['header_align'] == 'center') { ?>selected="selected"<?php } ?>><?php _e( 'Center', 'oceanwp'); ?></option>
+									<option value="left" <?php if($instance['header_align'] == 'left') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Left', 'oceanwp' ); ?></option>
+									<option value="right" <?php if($instance['header_align'] == 'right') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Right', 'oceanwp'); ?></option>
+									<option value="center" <?php if($instance['header_align'] == 'center') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Center', 'oceanwp'); ?></option>
 								</select>
 							</p>
 						</div>
@@ -312,18 +312,18 @@ if ( ! class_exists( 'OceanWP_Instagram_Widget' ) ) {
 				</div>
 
 				<p class="oceanwp-left">
-					<label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Button Target:', 'oceanwp' ); ?></label>
+					<label for="<?php echo $this->get_field_id('target'); ?>"><?php esc_html_e( 'Button Target:', 'oceanwp' ); ?></label>
 					<select class='oceanwp-widget-select widefat' name="<?php echo $this->get_field_name('target'); ?>" id="<?php echo $this->get_field_id('target'); ?>">
-						<option value="blank" <?php if($instance['target'] == 'blank') { ?>selected="selected"<?php } ?>><?php _e( 'Blank', 'oceanwp' ); ?></option>
-						<option value="self" <?php if($instance['target'] == 'self') { ?>selected="selected"<?php } ?>><?php _e( 'Self', 'oceanwp'); ?></option>
+						<option value="blank" <?php if($instance['target'] == 'blank') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Blank', 'oceanwp' ); ?></option>
+						<option value="self" <?php if($instance['target'] == 'self') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Self', 'oceanwp'); ?></option>
 					</select>
-					<small><?php _e( 'Same or new window', 'oceanwp' ); ?></small>
+					<small><?php esc_html_e( 'Same or new window', 'oceanwp' ); ?></small>
 				</p>
 
 				<p class="oceanwp-right">
-					<label for="<?php echo $this->get_field_id('follow'); ?>"><?php _e( 'Button Text:', 'oceanwp' ); ?></label>
+					<label for="<?php echo $this->get_field_id('follow'); ?>"><?php esc_html_e( 'Button Text:', 'oceanwp' ); ?></label>
 					<input class="widefat" id="<?php echo $this->get_field_id('follow'); ?>" name="<?php echo $this->get_field_name('follow'); ?>" type="text" value="<?php echo $instance['follow']; ?>" />
-					<small><?php _e( 'Leave empty for no button', 'oceanwp' ); ?></small>
+					<small><?php esc_html_e( 'Leave empty for no button', 'oceanwp' ); ?></small>
 				</p>
 
 				<div style="clear:both;"></div>

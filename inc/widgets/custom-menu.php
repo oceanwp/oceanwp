@@ -198,7 +198,7 @@ if ( ! class_exists( 'OceanWP_Custom_Menu_Widget' ) ) {
 					$url = admin_url( 'nav-menus.php' );
 				}
 				?>
-				<?php echo sprintf( __( 'No menus have been created yet. <a href="%s">Create some</a>.' ), esc_attr( $url ) ); ?>
+				<?php echo sprintf( esc_html__( 'No menus have been created yet. <a href="%s">Create some</a>.', 'oceanwp' ), esc_attr( $url ) ); ?>
 			</p>
 			<div class="nav-menu-widget-form-controls" <?php if ( empty( $menus ) ) { echo ' style="display:none" '; } ?>>
 				<p>

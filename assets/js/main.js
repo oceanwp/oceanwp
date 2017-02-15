@@ -52,6 +52,8 @@ $j( window ).on( 'load', function() {
 		// Infinite scroll
 		infiniteScrollInit();
 	}
+	// Variable image product
+	wooVariableImage();
 } );
 
 $j( window ).on( 'orientationchange', function() {
@@ -778,6 +780,83 @@ function wooCategoriesWidget() {
 }
 
 /* ==============================================
+WOOCOMMERCE VARIABLE IMAGE PRODUCT
+============================================== */
+function wooVariableImage() {
+	"use strict"
+
+	/**
+	 * Stores a default attribute for an element so it can be reset later
+	 */
+	$j.fn.wc_set_variation_attr = function( attr, value ) {
+		if ( undefined === this.attr( 'data-o_' + attr ) ) {
+			this.attr( 'data-o_' + attr, ( ! this.attr( attr ) ) ? '' : this.attr( attr ) );
+		}
+		this.attr( attr, value );
+	};
+
+	/**
+	 * Reset a default attribute for an element so it can be reset later
+	 */
+	$j.fn.wc_reset_variation_attr = function( attr ) {
+		if ( undefined !== this.attr( 'data-o_' + attr ) ) {
+			this.attr( attr, this.attr( 'data-o_' + attr ) );
+		}
+	};
+
+	/**
+	 * Sets product images for the chosen variation
+	 */
+	$j.fn.wc_variations_image_update = function( variation ) {
+		var $form 			= this,
+			$product 		= $form.closest( '.product' ),
+			$product_img 	= $product.find( 'div.images .main-images img:eq(1), div.images .product-thumbnails img:eq(3)' ),
+			$product_link 	= $product.find( 'div.images a.woocommerce-main-image:eq(1), div.images a.woo-thumbnail:eq(3)' );
+
+		if ( variation && variation.image_src && variation.image_src.length > 1 ) {
+
+			// Image attrs
+			$product_img.wc_set_variation_attr( 'src', variation.image_src );
+			$product_img.wc_set_variation_attr( 'title', variation.image_title );
+			$product_img.wc_set_variation_attr( 'alt', variation.image_alt );
+			$product_img.wc_set_variation_attr( 'srcset', variation.image_srcset );
+			$product_img.wc_set_variation_attr( 'sizes', variation.image_sizes );
+			$product_link.wc_set_variation_attr( 'href', variation.image_link );
+			$product_link.wc_set_variation_attr( 'title', variation.image_title );
+
+			// Refresh slide
+			$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
+
+			// Refresh lightbox
+			$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
+				loop           	: true,
+				imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
+            } );
+		} else {
+
+			// Reset image attrs
+			$product_img.wc_reset_variation_attr( 'src' );
+			$product_img.wc_reset_variation_attr( 'title' );
+			$product_img.wc_reset_variation_attr( 'alt' );
+			$product_img.wc_reset_variation_attr( 'srcset' );
+			$product_img.wc_reset_variation_attr( 'sizes' );
+			$product_link.wc_reset_variation_attr( 'href' );
+			$product_link.wc_reset_variation_attr( 'title' );
+
+			// Refresh slide
+			$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
+
+			// Refresh lightbox
+			$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
+				loop           	: true,
+				imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
+            } );
+		}
+	};
+	
+}
+
+/* ==============================================
 AUTO LIGHTBOX
 ============================================== */
 function autoLightbox() {
@@ -996,7 +1075,8 @@ function scrollEffect() {
 
 	        if ( ! $j( this ).hasClass( 'no-effect' )
 	        	&& ! $j( this ).hasClass( 'omw-open-modal' )
-	        	&& ! $j( this ).parent().hasClass( 'omw-open-modal' ) ) {
+	        	&& ! $j( this ).parent().hasClass( 'omw-open-modal' )
+	        	&& ! $j( this ).parent().parent().parent().hasClass( 'omw-open-modal' ) ) {
 
 	        	var $href     				= $j( this ).attr( 'href' ),
 				    $hrefHash 				= $href.substr( $href.indexOf( '#' ) ).slice( 1 ),

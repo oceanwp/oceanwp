@@ -46,9 +46,9 @@ if ( ! $profiles = get_theme_mod( 'ocean_top_bar_social_profiles' ) ) {
 
 // Get theme mods
 $link_target = get_theme_mod( 'ocean_top_bar_social_target', 'blank' );
-$link_target = ( 'blank' == $link_target || '_blank' == $link_target ) ? ' target="_blank"' : ''; ?>
+$link_target = $link_target ? $link_target : 'blank'; ?>
 
-<div id="top-bar-social" class="clr <?php echo $classes; ?>">
+<div id="top-bar-social" class="clr <?php echo esc_attr( $classes ); ?>">
 
 	<ul>
 
@@ -68,11 +68,11 @@ $link_target = ( 'blank' == $link_target || '_blank' == $link_target ) ? ' targe
 				}
 
 				// Display link
-				echo '<li class="oceanwp-'. $key .'">';
+				echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
 
-					echo '<a href="'. $url .'" title="'. $val['label'] .'" '. $link_target .'>';
+					echo '<a href="'. $url .'" title="'. esc_attr( $val['label'] ) .'" target="_'. esc_attr( $link_target ) .'">';
 
-						echo '<span class="'. $val['icon_class'] .'"></span>';
+						echo '<span class="'. esc_attr( $val['icon_class'] ) .'"></span>';
 
 					echo '</a>';
 

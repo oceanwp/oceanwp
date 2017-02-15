@@ -119,7 +119,7 @@ if ( ! class_exists( 'OceanWP_Custom_Links_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Link Target:', 'oceanwp' ); ?></label>
+				<label for="<?php echo $this->get_field_id('target'); ?>"><?php esc_html_e( 'Link Target:', 'oceanwp' ); ?></label>
 				<select class='widefat' name="<?php echo $this->get_field_name('target'); ?>" id="<?php echo $this->get_field_id('target'); ?>">
 					<option value="blank" <?php selected( $target, 'blank' ) ?>><?php esc_html_e( 'Blank', 'oceanwp' ); ?></option>
 					<option value="self" <?php selected( $target, 'self' ) ?>><?php esc_html_e( 'Self', 'oceanwp' ); ?></option>
@@ -127,7 +127,7 @@ if ( ! class_exists( 'OceanWP_Custom_Links_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('count'); ?>"><?php _e( 'Number of Custom Links:', 'oceanwp' ); ?></label>
+				<label for="<?php echo $this->get_field_id('count'); ?>"><?php esc_html_e( 'Number of Custom Links:', 'oceanwp' ); ?></label>
 				<select class='widefat' name="<?php echo $this->get_field_name('count'); ?>" id="<?php echo $this->get_field_id('count'); ?>">
 					<option value="1" <?php selected( $count, '1' ) ?>><?php esc_html_e( '1', 'oceanwp' ); ?></option>
 					<option value="2" <?php selected( $count, '2' ) ?>><?php esc_html_e( '2', 'oceanwp' ); ?></option>
