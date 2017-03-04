@@ -690,14 +690,12 @@ WOOCOMMERCE GRID LIST VIEW
 function wooGridList() {
 	"use strict"
 
-	var oceanwpCookie = Cookies.noConflict();
-
 	if ( $j( 'body' ).hasClass( 'has-grid-list' ) ) {
 
 		$j( '#oceanwp-grid' ).on( 'click', function() {
 			$j( this ).addClass( 'active' );
 			$j( '#oceanwp-list' ).removeClass( 'active' );
-			oceanwpCookie.set( 'gridcookie', 'grid', { path: '' } );
+			Cookies.set( 'gridcookie', 'grid', { path: '' } );
 			$j( '.archive.woocommerce ul.products' ).fadeOut( 300, function() {
 				$j( this ).addClass( 'grid' ).removeClass( 'list' ).fadeIn( 300 );
 			} );
@@ -707,20 +705,20 @@ function wooGridList() {
 		$j( '#oceanwp-list' ).on( 'click', function() {
 			$j( this ).addClass( 'active' );
 			$j( '#oceanwp-grid' ).removeClass( 'active' );
-			oceanwpCookie.set( 'gridcookie', 'list', { path: '' } );
+			Cookies.set( 'gridcookie', 'list', { path: '' } );
 			$j( '.archive.woocommerce ul.products' ).fadeOut( 300, function() {
 				$j( this ).addClass( 'list' ).removeClass( 'grid' ).fadeIn( 300 );
 			} );
 			return false;
 		} );
 
-		if ( oceanwpCookie.get( 'gridcookie' ) == 'grid' ) {
+		if ( Cookies.get( 'gridcookie' ) == 'grid' ) {
 	        $j( '.oceanwp-grid-list #oceanwp-grid' ).addClass( 'active' );
 	        $j( '.oceanwp-grid-list #oceanwp-list' ).removeClass( 'active' );
 	        $j( '.archive.woocommerce ul.products' ).addClass( 'grid' ).removeClass( 'list' );
 	    }
 
-	    if ( oceanwpCookie.get( 'gridcookie' ) == 'list' ) {
+	    if ( Cookies.get( 'gridcookie' ) == 'list' ) {
 	        $j( '.oceanwp-grid-list #oceanwp-list' ).addClass( 'active' );
 	        $j( '.oceanwp-grid-list #oceanwp-grid' ).removeClass( 'active' );
 	        $j( '.archive.woocommerce ul.products' ).addClass( 'list' ).removeClass( 'grid' );
@@ -728,7 +726,7 @@ function wooGridList() {
 
 	} else {
 
-		oceanwpCookie.remove( 'gridcookie', { path: '' } );
+		Cookies.remove( 'gridcookie', { path: '' } );
 
 	}
 
@@ -810,8 +808,8 @@ function wooVariableImage() {
 	$j.fn.wc_variations_image_update = function( variation ) {
 		var $form 			= this,
 			$product 		= $form.closest( '.product' ),
-			$product_img 	= $product.find( 'div.images .main-images img:eq(1), div.images .product-thumbnails img:eq(3)' ),
-			$product_link 	= $product.find( 'div.images a.woocommerce-main-image:eq(1), div.images a.woo-thumbnail:eq(3)' );
+			$product_img 	= $product.find( 'div.images .main-images img:eq(1), div.images .product-thumbnails .first-thumbnail:not(.slick-cloned) img' ),
+			$product_link 	= $product.find( 'div.images a.woocommerce-main-image:eq(1), div.images .first-thumbnail:not(.slick-cloned) a.woo-thumbnail:eq(3)' );
 
 		if ( variation && variation.image_src && variation.image_src.length > 1 ) {
 
@@ -825,13 +823,15 @@ function wooVariableImage() {
 			$product_link.wc_set_variation_attr( 'title', variation.image_title );
 
 			// Refresh slide
-			$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
+			if ( $j( 'body' ).hasClass( 'single-product' ) ) {
+				$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
 
-			// Refresh lightbox
-			$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
-				loop           	: true,
-				imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
-            } );
+				// Refresh lightbox
+				$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
+					loop           	: true,
+					imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
+	            } );
+	        }
 		} else {
 
 			// Reset image attrs
@@ -844,13 +844,15 @@ function wooVariableImage() {
 			$product_link.wc_reset_variation_attr( 'title' );
 
 			// Refresh slide
-			$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
+			if ( $j( 'body' ).hasClass( 'single-product' ) ) {
+				$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
 
-			// Refresh lightbox
-			$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
-				loop           	: true,
-				imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
-            } );
+				// Refresh lightbox
+				$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
+					loop           	: true,
+					imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
+	            } );
+	        }
 		}
 	};
 	
@@ -1074,6 +1076,7 @@ function scrollEffect() {
 	    $j( 'a[href*="#"]:not([href="#"])' ).on( 'click', function() {
 
 	        if ( ! $j( this ).hasClass( 'no-effect' )
+	        	&& ! $j( this ).hasClass( 'page-numbers' )
 	        	&& ! $j( this ).hasClass( 'omw-open-modal' )
 	        	&& ! $j( this ).parent().hasClass( 'omw-open-modal' )
 	        	&& ! $j( this ).parent().parent().parent().hasClass( 'omw-open-modal' ) ) {

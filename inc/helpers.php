@@ -3,7 +3,6 @@
  * This file includes helper functions used throughout the theme.
  *
  * @package OceanWP WordPress theme
- * @link    http://wpexplorer-themes.com/total/
  */
 
 /*-------------------------------------------------------------------------------*/
@@ -43,6 +42,11 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 		
 		// Main class
 		$classes[] = 'oceanwp-theme';
+
+		// If video header
+		if ( has_header_video() ) {
+			$classes[] = 'has-header-video';
+		}
 
 		// Boxed layout
 		if ( 'boxed' == get_theme_mod( 'ocean_main_layout_style', 'wide' ) ) {
@@ -656,9 +660,12 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 		}
 
 		// Menu position
-		if ( 'left-menu' == get_theme_mod( 'ocean_menu_position', 'right-menu' )
-			&& ( 'top' != $header_style ) ) {
-			$classes[] = 'left-menu';
+		if ( 'minimal' == $header_style || 'transparent' == $header_style ) {
+			if ( 'left-menu' == get_theme_mod( 'ocean_menu_position', 'right-menu' ) ) {
+				$classes[] = 'left-menu';
+			} elseif ( 'center-menu' == get_theme_mod( 'ocean_menu_position', 'right-menu' ) ) {
+				$classes[] = 'center-menu';
+			}
 		}
 
 		// If the search header replace
@@ -1630,15 +1637,60 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 				$bg_img = $bg_img ? $bg_img : null;
 				$bg_img = apply_filters( 'ocean_page_header_background_image', $bg_img );
 
+				// Immage attrs
+				$bg_img_position 		= get_theme_mod( 'ocean_page_header_bg_image_position', 'top center' );
+				$bg_img_attachment 		= get_theme_mod( 'ocean_page_header_bg_image_attachment', 'initial' );
+				$bg_img_repeat 			= get_theme_mod( 'ocean_page_header_bg_image_repeat', 'no-repeat' );
+				$bg_img_size 			= get_theme_mod( 'ocean_page_header_bg_image_size', 'cover' );
+
+				// If image attrs from single post section
+				if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+					&& is_singular( 'post' ) ) {
+					$bg_img_position 	= get_theme_mod( 'ocean_blog_single_title_bg_image_position', 'top center' );
+					$bg_img_attachment 	= get_theme_mod( 'ocean_blog_single_title_bg_image_attachment', 'initial' );
+					$bg_img_repeat 		= get_theme_mod( 'ocean_blog_single_title_bg_image_repeat', 'no-repeat' );
+					$bg_img_size 		= get_theme_mod( 'ocean_blog_single_title_bg_image_size', 'cover' );
+				}
+
+				// If meta image attrs
+				if ( $meta_bg_img_position = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_image_position', true ) ) {
+					$bg_img_position = $meta_bg_img_position;
+				}
+				if ( $meta_bg_img_attachment = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_image_attachment', true ) ) {
+					$bg_img_attachment = $meta_bg_img_attachment;
+				}
+				if ( $meta_bg_img_repeat = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_image_repeat', true ) ) {
+					$bg_img_repeat = $meta_bg_img_repeat;
+				}
+				if ( $meta_bg_img_size = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_image_size', true ) ) {
+					$bg_img_size = $meta_bg_img_size;
+				}
+
+
 				if ( $bg_img ) {
 
 					// Add css for background image
-					$css .= 'background-image: url('. $bg_img .' ) !important;
-							background-position: 50% 0;
-							-webkit-background-size: cover;
-							-moz-background-size: cover;
-							-o-background-size: cover;
-							background-size: cover;';
+					$css .= 'background-image: url( '. $bg_img .' ) !important;';
+
+					// Background position
+					if ( ! empty( $bg_img_position ) && 'top center' != $bg_img_position && 'initial' != $bg_img_position ) {
+						$css .= 'background-position:'. $bg_img_position .';';
+					}
+
+					// Background attachment
+					if ( ! empty( $bg_img_attachment ) && 'initial' != $bg_img_attachment ) {
+						$css .= 'background-attachment:'. $bg_img_attachment .';';
+					}
+
+					// Background repeat
+					if ( ! empty( $bg_img_repeat ) && 'no-repeat' != $bg_img_repeat && 'initial' != $bg_img_repeat ) {
+						$css .= 'background-repeat:'. $bg_img_repeat .';';
+					}
+
+					// Background size
+					if ( ! empty( $bg_img_size ) && 'cover' != $bg_img_size && 'initial' != $bg_img_size ) {
+						$css .= 'background-size:'. $bg_img_size .';';
+					}
 
 					// Custom height
 					$title_height 		= get_theme_mod( 'ocean_page_header_bg_image_height', '400' );

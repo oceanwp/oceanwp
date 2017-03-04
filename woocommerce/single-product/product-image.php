@@ -89,7 +89,7 @@ $image       = wp_get_attachment_image( $thumbnail_id, 'shop_single', '', array(
 
 		if ( has_post_thumbnail() ) : ?>
 
-        	<div class="thumbnail-item">
+        	<div class="thumbnail-item first-thumbnail">
 
         		<?php echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" title="%s" class="woo-thumbnail">%s</a>', $thumbnail_link, $thumbnail_title, $thumbnail ), $post->ID ); ?>
 

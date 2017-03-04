@@ -1,5 +1,22 @@
 # OceanWP Changelog
 
+### *2017.03.04* - 1.1.6
+* **Added** - New customizer section "Header Media" in the Header section to add an image or video (only in front page), to your header.
+* **Added** - New "Excerpt Length" field added in the Blog Entries section of the customizer to control the excerpt length of your posts.
+* **Added** - Swedish language, thank you very much to Christoffer Gisselfeldt.
+* **Added** - Center menu position.
+* **Added** - New options for the background image of the page header.
+* **Added** - Full Screen layout added in customizer.
+* **Updated** - Fonts list in the customizer typography section.
+* **Fixed** - Form (input-textarea) styling issue.
+* **Fixed** - Thumbnails images on WooCommerce variation products.
+* **Fixed** - Issue with retina logo in the Center header style.
+* **Fixed** - Links color hover option in the customizer.
+* **Fixed** - Cart icon removed on mobile if disabled.
+* **Fixed** - Issue with archive products ratings in list mode.
+* **Fixed** - Issue with Woocommerce if single product has no sidebar.
+* **Fixed** - JS error with YITH WooCommerce Quick View.
+
 ### *2017.02.15* - 1.1.5
 * **Fixed** - Sub menus blinking.
 * **Fixed** - Problem double lightbox with Beaver Builder.

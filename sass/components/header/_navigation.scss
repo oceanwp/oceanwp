@@ -91,6 +91,16 @@
 	padding-right: 20px;
 }
 
+// If center menu
+.center-menu #site-navigation-wrap {
+	position: absolute;
+    float: none;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
 /**
  * SuperFish
  */

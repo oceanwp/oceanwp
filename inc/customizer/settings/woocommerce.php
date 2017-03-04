@@ -359,9 +359,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'settings' 				=> 'ocean_woo_shop_layout',
 				'priority' 				=> 10,
 				'choices' 				=> array(
-					'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/2cr.png',
-					'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/2cl.png',
-					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/1c.png',
+					'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/rs.png',
+					'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/ls.png',
+					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
+					'full-screen'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
 				),
 			) ) );
 
@@ -536,9 +537,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'settings' 				=> 'ocean_woo_product_layout',
 				'priority' 				=> 10,
 				'choices' 				=> array(
-					'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/2cr.png',
-					'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/2cl.png',
-					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/1c.png',
+					'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/rs.png',
+					'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/ls.png',
+					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
+					'full-screen'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
 				),
 			) ) );
 

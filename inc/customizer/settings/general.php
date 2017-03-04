@@ -483,9 +483,10 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'settings' 				=> 'ocean_page_single_layout',
 				'priority' 				=> 10,
 				'choices' 				=> array(
-					'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/2cr.png',
-					'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/2cl.png',
-					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/1c.png',
+					'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/rs.png',
+					'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/ls.png',
+					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
+					'full-screen'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
 				),
 			) ) );
 
@@ -574,9 +575,10 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'settings' 				=> 'ocean_search_layout',
 				'priority' 				=> 10,
 				'choices' 				=> array(
-					'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/2cr.png',
-					'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/2cl.png',
-					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/1c.png',
+					'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/rs.png',
+					'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/ls.png',
+					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
+					'full-screen'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
 				),
 			) ) );
 
@@ -624,7 +626,109 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'section'  				=> 'ocean_general_page_header',
 				'settings' 				=> 'ocean_page_header_bg_image',
 				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_hasnt_bg_image_page_header',
+				'active_callback' 		=> 'oceanwp_cac_has_bg_image_page_header',
+			) ) );
+
+			/**
+			 * Page Title Background Image Position
+			 */
+			$wp_customize->add_setting( 'ocean_page_header_bg_image_position', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> 'top center',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_page_header_bg_image_position', array(
+				'label'	   				=> esc_html__( 'Position', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_general_page_header',
+				'settings' 				=> 'ocean_page_header_bg_image_position',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_bg_image_page_header',
+				'choices' 				=> array(
+					'initial' 			=> esc_html__( 'Default', 'oceanwp' ),
+					'top left' 			=> esc_html__( 'Top Left', 'oceanwp' ),
+					'top center' 		=> esc_html__( 'Top Center', 'oceanwp' ),
+					'top right'  		=> esc_html__( 'Top Right', 'oceanwp' ),
+					'center left' 		=> esc_html__( 'Center Left', 'oceanwp' ),
+					'center center' 	=> esc_html__( 'Center Center', 'oceanwp' ),
+					'center right' 		=> esc_html__( 'Center Right', 'oceanwp' ),
+					'bottom left' 		=> esc_html__( 'Bottom Left', 'oceanwp' ),
+					'bottom center' 	=> esc_html__( 'Bottom Center', 'oceanwp' ),
+					'bottom right' 		=> esc_html__( 'Bottom Right', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Page Title Background Image Attachment
+			 */
+			$wp_customize->add_setting( 'ocean_page_header_bg_image_attachment', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> 'initial',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_page_header_bg_image_attachment', array(
+				'label'	   				=> esc_html__( 'Attachment', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_general_page_header',
+				'settings' 				=> 'ocean_page_header_bg_image_attachment',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_bg_image_page_header',
+				'choices' 				=> array(
+					'initial' 	=> esc_html__( 'Default', 'oceanwp' ),
+					'scroll' 	=> esc_html__( 'Scroll', 'oceanwp' ),
+					'fixed' 	=> esc_html__( 'Fixed', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Page Title Background Image Repeat
+			 */
+			$wp_customize->add_setting( 'ocean_page_header_bg_image_repeat', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> 'no-repeat',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_page_header_bg_image_repeat', array(
+				'label'	   				=> esc_html__( 'Repeat', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_general_page_header',
+				'settings' 				=> 'ocean_page_header_bg_image_repeat',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_bg_image_page_header',
+				'choices' 				=> array(
+					'initial' => esc_html__( 'Default', 'oceanwp' ),
+					'no-repeat' => esc_html__( 'No-repeat', 'oceanwp' ),
+					'repeat' 	=> esc_html__( 'Repeat', 'oceanwp' ),
+					'repeat-x' 	=> esc_html__( 'Repeat-x', 'oceanwp' ),
+					'repeat-y' 	=> esc_html__( 'Repeat-y', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Page Title Background Image Size
+			 */
+			$wp_customize->add_setting( 'ocean_page_header_bg_image_size', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> 'cover',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_page_header_bg_image_size', array(
+				'label'	   				=> esc_html__( 'Size', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_general_page_header',
+				'settings' 				=> 'ocean_page_header_bg_image_size',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_bg_image_page_header',
+				'choices' 				=> array(
+					'initial' 	=> esc_html__( 'Default', 'oceanwp' ),
+					'auto' 		=> esc_html__( 'Auto', 'oceanwp' ),
+					'cover' 	=> esc_html__( 'Cover', 'oceanwp' ),
+					'contain' 	=> esc_html__( 'Contain', 'oceanwp' ),
+				),
 			) ) );
 
 			/**
@@ -646,7 +750,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			        'max'   => 800,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_hasnt_bg_image_page_header',
+				'active_callback' 		=> 'oceanwp_cac_has_bg_image_page_header',
 			) ) );
 
 			/**
@@ -668,7 +772,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			        'max'   => 1,
 			        'step'  => 0.1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_hasnt_bg_image_page_header',
+				'active_callback' 		=> 'oceanwp_cac_has_bg_image_page_header',
 			) ) );
 
 			/**
@@ -685,7 +789,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'section'  				=> 'ocean_general_page_header',
 				'settings' 				=> 'ocean_page_header_bg_image_overlay_color',
 				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_hasnt_bg_image_page_header',
+				'active_callback' 		=> 'oceanwp_cac_has_bg_image_page_header',
 			) ) );
 
 			/**
@@ -744,7 +848,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'section'  				=> 'ocean_general_page_header',
 				'settings' 				=> 'ocean_page_header_background',
 				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_bg_image_page_header',
+				'active_callback' 		=> 'oceanwp_cac_hasnt_bg_image_page_header',
 			) ) );
 
 			/**
@@ -761,7 +865,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'section'  				=> 'ocean_general_page_header',
 				'settings' 				=> 'ocean_page_header_title_color',
 				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_bg_image_page_header',
+				'active_callback' 		=> 'oceanwp_cac_hasnt_bg_image_page_header',
 			) ) );
 
 			/**
@@ -1886,7 +1990,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Links color hover
 			if ( ! empty( $links_color_hover ) && '#13aff0' != $links_color_hover ) {
-				$css .= 'a{color:'. $links_color_hover .';}';
+				$css .= 'a:hover{color:'. $links_color_hover .';}';
 			}
 
 			// Boxed width
@@ -2051,42 +2155,42 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Input padding
 			if ( ! empty( $input_padding ) ) {
-				$css .= '.site-content input[type="text"],.site-content input[type="password"],.site-content input[type="email"],.site-content input[type="tel"],.site-content input[type="url"],.site-content input[type="search"],.site-content textarea{padding:'. $input_padding .';}';
+				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{padding:'. $input_padding .';}';
 			}
 
 			// Input font size
 			if ( ! empty( $input_font_size ) && '14' != $input_font_size ) {
-				$css .= '.site-content input[type="text"],.site-content input[type="password"],.site-content input[type="email"],.site-content input[type="tel"],.site-content input[type="url"],.site-content input[type="search"],.site-content textarea{font-size:'. $input_font_size .'px;}';
+				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{font-size:'. $input_font_size .'px;}';
 			}
 
 			// Input border width
 			if ( ! empty( $input_border_width ) ) {
-				$css .= '.site-content input[type="text"],.site-content input[type="password"],.site-content input[type="email"],.site-content input[type="tel"],.site-content input[type="url"],.site-content input[type="search"],.site-content textarea{border-width:'. $input_border_width .';}';
+				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{border-width:'. $input_border_width .';}';
 			}
 
 			// Input border radius
 			if ( ! empty( $input_border_radius ) && '3' != $input_border_radius ) {
-				$css .= '.site-content input[type="text"],.site-content input[type="password"],.site-content input[type="email"],.site-content input[type="tel"],.site-content input[type="url"],.site-content input[type="search"],.site-content textarea{border-radius:'. $input_border_radius .'px;}';
+				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{border-radius:'. $input_border_radius .'px;}';
 			}
 
 			// Input border radius
-			if ( ! empty( $input_border_color ) && '3' != $input_border_color ) {
-				$css .= '.site-content input[type="text"],.site-content input[type="password"],.site-content input[type="email"],.site-content input[type="tel"],.site-content input[type="url"],.site-content input[type="search"],.site-content textarea,.select2-container .select2-choice{border-color:'. $input_border_color .';}';
+			if ( ! empty( $input_border_color ) && '#dddddd' != $input_border_color ) {
+				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea,.select2-container .select2-choice{border-color:'. $input_border_color .';}';
 			}
 
 			// Input border radius
-			if ( ! empty( $input_border_color_focus ) && '3' != $input_border_color_focus ) {
-				$css .= '.site-content input[type="text"]:focus,.site-content input[type="password"]:focus,.site-content input[type="email"]:focus,.site-content input[type="tel"]:focus,.site-content input[type="url"]:focus,.site-content input[type="search"]:focus,.site-content textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices{border-color:'. $input_border_color_focus .';}';
+			if ( ! empty( $input_border_color_focus ) && '#bbbbbb' != $input_border_color_focus ) {
+				$css .= 'form input[type="text"]:focus,form input[type="password"]:focus,form input[type="email"]:focus,form input[type="tel"]:focus,form input[type="url"]:focus,form input[type="search"]:focus,form textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices{border-color:'. $input_border_color_focus .';}';
 			}
 
 			// Input border radius
 			if ( ! empty( $input_background ) ) {
-				$css .= '.site-content input[type="text"],.site-content input[type="password"],.site-content input[type="email"],.site-content input[type="tel"],.site-content input[type="url"],.site-content input[type="search"],.site-content textarea{background-color:'. $input_background .';}';
+				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{background-color:'. $input_background .';}';
 			}
 
 			// Input border radius
 			if ( ! empty( $input_color ) && '#333333' != $input_color ) {
-				$css .= '.site-content input[type="text"],.site-content input[type="password"],.site-content input[type="email"],.site-content input[type="tel"],.site-content input[type="url"],.site-content input[type="search"],.site-content textarea{color:'. $input_color .';}';
+				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{color:'. $input_color .';}';
 			}
 
 			// Theme button padding

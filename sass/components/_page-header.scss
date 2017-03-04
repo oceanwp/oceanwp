@@ -101,6 +101,9 @@ body.breadcrumbs-position-default .page-header-title {
   width: 100%;
   background-color: #000;
   height: 400px;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .page-header-inner {
     display: table-cell;

@@ -22,6 +22,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			add_action( 'customize_register', 	array( $this, 'customizer_options' ) );
 			add_filter( 'ocean_head_css', 		array( $this, 'head_css' ) );
+			add_filter( 'ocean_head_css', 		array( $this, 'header_image_css' ) );
 
 		}
 
@@ -127,7 +128,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'active_callback' 		=> 'oceanwp_cac_hasnt_header_styles',
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
-			        'max'   => 300,
+			        'max'   => 1000,
 			        'step'  => 1,
 			    ),
 			) ) );
@@ -657,6 +658,113 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Section where header images options are automatically added
+			 */
+			$wp_customize->add_section( 'header_image' , array(
+				'title' 			=> esc_html__( 'Header Media', 'oceanwp' ),
+				'priority' 			=> 10,
+				'panel' 			=> $panel,
+			) );
+
+			/**
+			 * Site Background Image Position
+			 */
+			$wp_customize->add_setting( 'ocean_header_image_position', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> 'initial',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_header_image_position', array(
+				'label'	   				=> esc_html__( 'Position', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'header_image',
+				'settings' 				=> 'ocean_header_image_position',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'initial' 			=> esc_html__( 'Default', 'oceanwp' ),
+					'top left' 			=> esc_html__( 'Top Left', 'oceanwp' ),
+					'top center' 		=> esc_html__( 'Top Center', 'oceanwp' ),
+					'top right'  		=> esc_html__( 'Top Right', 'oceanwp' ),
+					'center left' 		=> esc_html__( 'Center Left', 'oceanwp' ),
+					'center center' 	=> esc_html__( 'Center Center', 'oceanwp' ),
+					'center right' 		=> esc_html__( 'Center Right', 'oceanwp' ),
+					'bottom left' 		=> esc_html__( 'Bottom Left', 'oceanwp' ),
+					'bottom center' 	=> esc_html__( 'Bottom Center', 'oceanwp' ),
+					'bottom right' 		=> esc_html__( 'Bottom Right', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Site Background Image Attachment
+			 */
+			$wp_customize->add_setting( 'ocean_header_image_attachment', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> 'initial',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_header_image_attachment', array(
+				'label'	   				=> esc_html__( 'Attachment', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'header_image',
+				'settings' 				=> 'ocean_header_image_attachment',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'initial' 	=> esc_html__( 'Default', 'oceanwp' ),
+					'scroll' 	=> esc_html__( 'Scroll', 'oceanwp' ),
+					'fixed' 	=> esc_html__( 'Fixed', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Site Background Image Repeat
+			 */
+			$wp_customize->add_setting( 'ocean_header_image_repeat', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> 'initial',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_header_image_repeat', array(
+				'label'	   				=> esc_html__( 'Repeat', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'header_image',
+				'settings' 				=> 'ocean_header_image_repeat',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'initial' 	=> esc_html__( 'Default', 'oceanwp' ),
+					'no-repeat' => esc_html__( 'No-repeat', 'oceanwp' ),
+					'repeat' 	=> esc_html__( 'Repeat', 'oceanwp' ),
+					'repeat-x' 	=> esc_html__( 'Repeat-x', 'oceanwp' ),
+					'repeat-y' 	=> esc_html__( 'Repeat-y', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Site Background Image Size
+			 */
+			$wp_customize->add_setting( 'ocean_header_image_size', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> 'initial',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_header_image_size', array(
+				'label'	   				=> esc_html__( 'Size', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'header_image',
+				'settings' 				=> 'ocean_header_image_size',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'initial' 	=> esc_html__( 'Default', 'oceanwp' ),
+					'auto' 		=> esc_html__( 'Auto', 'oceanwp' ),
+					'cover' 	=> esc_html__( 'Cover', 'oceanwp' ),
+					'contain' 	=> esc_html__( 'Contain', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
 			 * Section
 			 */
 			$wp_customize->add_section( 'ocean_header_logo' , array(
@@ -831,6 +939,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'priority' 				=> 10,
 				'choices' 				=> array(
 					'left-menu' 	=> esc_html__( 'Left', 'oceanwp' ),
+					'center-menu' 	=> esc_html__( 'Center', 'oceanwp' ),
 					'right-menu' 	=> esc_html__( 'Right', 'oceanwp' ),
 				),
 			) ) );
@@ -2280,6 +2389,58 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Return CSS
 			if ( ! empty( $css ) ) {
 				$output .= '/* Header CSS */'. $css;
+			}
+
+			// Return output css
+			return $output;
+
+		}
+
+		/**
+		 * Get header image CSS
+		 *
+		 * @since 1.0.0
+		 */
+		public static function header_image_css( $output ) {
+
+			// Global vars
+			$header_image 				= get_header_image();
+			$header_image_position 		= get_theme_mod( 'ocean_header_image_position' );
+			$header_image_attachment 	= get_theme_mod( 'ocean_header_image_attachment' );
+			$header_image_repeat 		= get_theme_mod( 'ocean_header_image_repeat' );
+			$header_image_size 			= get_theme_mod( 'ocean_header_image_size' );
+
+			// Define css var
+			$css = '';
+
+			// Get site background image
+			if ( ! empty( $header_image ) ) {
+				$css .= 'background-image:url('. $header_image .');';
+			}
+
+			// Get site background position
+			if ( ! empty( $header_image_position ) && 'initial' != $header_image_position ) {
+				$css .= 'background-position:'. $header_image_position .';';
+			}
+
+			// Get site background attachment
+			if ( ! empty( $header_image_attachment ) && 'initial' != $header_image_attachment ) {
+				$css .= 'background-attachment:'. $header_image_attachment .';';
+			}
+
+			// Get site background repeat
+			if ( ! empty( $header_image_repeat ) && 'initial' != $header_image_repeat ) {
+				$css .= 'background-repeat:'. $header_image_repeat .';';
+			}
+
+			// Get site background size
+			if ( ! empty( $header_image_size ) && 'initial' != $header_image_size ) {
+				$css .= 'background-size:'. $header_image_size .';';
+			}
+
+			// Return CSS
+			if ( has_header_image() && ! empty( $css ) ) {
+				$output .= '/* Header Image CSS */#site-header{'. $css .'}';
 			}
 
 			// Return output css

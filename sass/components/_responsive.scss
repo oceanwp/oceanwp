@@ -22,6 +22,10 @@
 	}
 }
 
+#site-navigation-wrap .dropdown-menu > li.middle-site-logo > a.retina-logo-link {
+	display: none;
+}
+
 #oceanwp-mobile-menu-icon {
 	display: none;
 	float: right;
@@ -78,6 +82,16 @@ only screen and (                min-resolution: 2dppx) {
 		}
 
 		.retina-logo-link {
+			display: block;
+		}
+	}
+
+	#site-navigation-wrap .dropdown-menu > li.middle-site-logo.has-retina-logo > a {
+		&.custom-logo-link {
+			display: none;
+		}
+
+		&.retina-logo-link {
 			display: block;
 		}
 	}
@@ -411,6 +425,16 @@ only screen and (                min-resolution: 2dppx) {
 			.retina-logo-link {
 				display: block;
 			}
+		}
+	}
+
+	#site-navigation-wrap .dropdown-menu > li.middle-site-logo.has-retina-logo > a {
+		&.custom-logo-link {
+			display: none;
+		}
+
+		&.retina-logo-link {
+			display: block;
 		}
 	}
 

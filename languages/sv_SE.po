@@ -1,0 +1,3802 @@
+# Copyright (C) 2016 Nick
+# This file is distributed under the GNU General Public License v2.0 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Theme 1.0.8\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2017-02-10 14:58+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-02-20 14:40+0100\n"
+"Language-Team: Ocean\n"
+"X-Generator: Poedit 1.8.12\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _esc_attr__;esc_attr_x;esc_attr_e;esc_html__;"
+"esc_html_e;esc_html_x;__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"Last-Translator: \n"
+"Language: sv_SE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: inc/classes/widgets/custom-links.php:131
+msgid "1"
+msgstr "1"
+
+#: inc/classes/widgets/custom-links.php:132
+msgid "2"
+msgstr "2"
+
+#: inc/classes/widgets/custom-links.php:133
+msgid "3"
+msgstr "3"
+
+#: inc/classes/widgets/custom-links.php:134
+msgid "4"
+msgstr "4"
+
+#: inc/classes/widgets/custom-links.php:135
+msgid "5"
+msgstr "5"
+
+#: inc/classes/widgets/custom-links.php:136
+msgid "6"
+msgstr "6"
+
+#: inc/classes/widgets/custom-links.php:137
+msgid "7"
+msgstr "7"
+
+#: inc/classes/widgets/custom-links.php:138
+msgid "8"
+msgstr "8"
+
+#: inc/classes/widgets/custom-links.php:139
+msgid "9"
+msgstr "9"
+
+#: inc/classes/widgets/custom-links.php:140
+msgid "10"
+msgstr "10"
+
+#: inc/classes/widgets/custom-links.php:141
+msgid "11"
+msgstr "11"
+
+#: inc/classes/widgets/custom-links.php:142
+msgid "12"
+msgstr "12"
+
+#: inc/classes/widgets/custom-links.php:143
+msgid "13"
+msgstr "13"
+
+#: inc/classes/widgets/custom-links.php:144
+msgid "14"
+msgstr "14"
+
+#: inc/classes/widgets/custom-links.php:145
+msgid "15"
+msgstr "15"
+
+#: 404.php:20
+msgid "This page could not be found!"
+msgstr "Sidan kan inte hittas!"
+
+#: 404.php:21
+msgid "We are sorry. But the page you are looking for is not available."
+msgstr "Tyvärr, men sidan du sökte är inte längre tillgänglig. "
+
+#: 404.php:21
+msgid "Perhaps you can try a new searching."
+msgstr "Testa att söka igen. "
+
+#: 404.php:23
+msgid "Back To Homepage"
+msgstr "Tillbaks till hemsidan"
+
+#: comments.php:76
+msgid "Comments are closed."
+msgstr "Kommentarer är stängda."
+
+#: comments.php:87
+msgid "Name (required)"
+msgstr "Namn (obligatorisk)"
+
+#: comments.php:89
+msgid "Email (required)"
+msgstr "E-post (obligatorisk)"
+
+#: comments.php:91
+msgid "Website"
+msgstr "Webbsida"
+
+#: comments.php:100
+msgid "You must be %slogged in%s to post a comment."
+msgstr "Du måste vara %sinloggad%s för att lägga en kommentar."
+
+#: comments.php:101
+msgid "Logged in as"
+msgstr "Inloggad som"
+
+#: comments.php:101
+msgid "Log out of this account"
+msgstr "Logga ut från detta konto"
+
+#: comments.php:101
+msgid "Log out &raquo;"
+msgstr "Logga ut &raquo;"
+
+#: comments.php:104
+msgid "Your Comment Here..."
+msgstr "Din kommentar här…"
+
+#: comments.php:106
+msgid "Post Comment"
+msgstr "Skriv kommentar"
+
+#: functions.php:272 inc/customizer/settings/topbar.php:40
+#: inc/customizer/settings/typography.php:73
+msgid "Top Bar"
+msgstr "Topprad"
+
+#: functions.php:273
+msgid "Main"
+msgstr "Huvud"
+
+#: functions.php:274
+msgid "Footer"
+msgstr "Sidfot"
+
+#: functions.php:548
+msgid "Sidebar"
+msgstr "Sidfält"
+
+#: functions.php:550
+msgid "Widgets in this area are used in the sidebar region."
+msgstr "Widgets i denna del används i sidfältet. "
+
+#: functions.php:560
+msgid "Search Results Sidebar"
+msgstr "Sökresultat Sidfält"
+
+#: functions.php:562
+msgid "Widgets in this area are used in the search result page."
+msgstr "Widgets i denna kolumn används till sökresultatssidan. "
+
+#: functions.php:572
+msgid "Footer 1"
+msgstr "Sidfot 1"
+
+#: functions.php:574
+msgid "Widgets in this area are used in the first footer region."
+msgstr "Widgets i denna kolumn används till den första sidfotsplaceringen"
+
+#: functions.php:583
+msgid "Footer 2"
+msgstr "Sidfot 2"
+
+#: functions.php:585
+msgid "Widgets in this area are used in the second footer region."
+msgstr "Widgets i denna kolumn används till den andra sidfotsplaceringen"
+
+#: functions.php:594
+msgid "Footer 3"
+msgstr "Sidfot 3"
+
+#: functions.php:596
+msgid "Widgets in this area are used in the third footer region."
+msgstr "Widgets i denna kolumn används till den tredje sidfotsplaceringen"
+
+#: functions.php:605
+msgid "Footer 4"
+msgstr "Sidfot 4"
+
+#: functions.php:607
+msgid "Widgets in this area are used in the fourth footer region."
+msgstr "Widgets i denna kolumn används till den fjärde sidfotsplaceringen"
+
+#: inc/arrays.php:89 inc/arrays.php:179
+msgid "RSS"
+msgstr "RSS"
+
+#: inc/arrays.php:93 inc/arrays.php:183
+msgid "Email"
+msgstr "E-post"
+
+#: inc/classes/breadcrumbs.php:260
+msgid "Home"
+msgstr "Hem"
+
+#: inc/classes/breadcrumbs.php:261
+msgid "404 Not Found"
+msgstr "404 Sidan kan inte hittas"
+
+#: inc/classes/breadcrumbs.php:262 inc/customizer/settings/woocommerce.php:342
+msgid "Archives"
+msgstr "Arkiv"
+
+#. Translators: %s is the search query. The HTML entities are opening and
+#. closing curly quotes.
+#: inc/classes/breadcrumbs.php:264
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Sökresultat efter &#8220;%s&#8221;"
+
+#. Translators: %s is the page number.
+#: inc/classes/breadcrumbs.php:266
+msgid "Page %s"
+msgstr "Sida %s"
+
+#. Translators: Minute archive title. %s is the minute time format.
+#: inc/classes/breadcrumbs.php:268
+msgid "Minute %s"
+msgstr "Minut %s"
+
+#. Translators: Weekly archive title. %s is the week date format.
+#: inc/classes/breadcrumbs.php:270
+msgid "Week %s"
+msgstr "Vecka %s"
+
+#: inc/classes/updater.php:112
+msgid ""
+"Enter your extension license keys here to receive updates for purchased "
+"extensions. If your license key has expired, please <a href=\"%s\" target="
+"\"_blank\" title=\"License renewal FAQ\">renew your license</a>."
+msgstr ""
+"Skriv in din licensnyckel här för att mottaga uppdateringar för köpta "
+"tillägg. Om din licensnyckel har gått ut, vänligen <a href=\"%s\" target="
+"\"_blank\" title=\"License renewal FAQ\">förnya din licens</a>."
+
+#: inc/classes/updater.php:135
+msgid "%s License Key"
+msgstr "%s Licensnyckel"
+
+#: inc/classes/updater.php:163
+msgid "Your license will expire after %s days."
+msgstr "Din licens går ut om %s dagar"
+
+#: inc/classes/updater.php:511
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+"Det finns en ny version av %1$s tillgänglig. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">Se versionens %3$s detaljer</a>."
+
+#: inc/classes/updater.php:518
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+"\">update now</a>."
+msgstr ""
+"Det finns en ny version av %1$s tillgänglig. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">Se versionens %3$s detaljer</a> eller <a href="
+"\"%4$s\">uppdatera nu</a>."
+
+#: inc/classes/updater.php:603
+msgid "You do not have permission to install plugin updates"
+msgstr "Du har inte rättigheter att installera pluginuppdateringar"
+
+#: inc/classes/updater.php:603
+msgid "Error"
+msgstr "Fel"
+
+#: inc/classes/updater.php:659 inc/classes/updater.php:701
+msgid "This license does not belong to the product you have entered it for."
+msgstr "Denna licensnyckel tillhör inte produkten du angett den för."
+
+#: inc/classes/updater.php:663 inc/classes/updater.php:705
+msgid "This license does not have any activations left"
+msgstr "Denna licensnyckel har inga aktiveringar kvar. "
+
+#: inc/classes/updater.php:667
+msgid "Your license key is expired. Please renew it."
+msgstr "Din licensnyckel har gått ut. Vänligen förnya den. "
+
+#: inc/classes/updater.php:671 inc/classes/updater.php:713
+msgid ""
+"There was a problem activating your license key, please try again or contact "
+"support. Error code: %s"
+msgstr ""
+"Det uppstod ett problem när din licensnyckel skulle aktiveras. Vänligen "
+"försök igen eller kontakta supporten. Felkod: %s"
+
+#: inc/classes/updater.php:709
+msgid "This license key is expired. Please renew it."
+msgstr "Din licensnyckel har gått ut. Vänligen förnya den. "
+
+#: inc/classes/widgets/about-me.php:59
+msgid "&raquo; About Me"
+msgstr "&raquo; Om mig"
+
+#: inc/classes/widgets/about-me.php:62
+msgid "Adds a about me widget."
+msgstr "Lägger till en Om Mig Widget. "
+
+#: inc/classes/widgets/about-me.php:200
+msgid "About Me"
+msgstr "Om mig"
+
+#: inc/classes/widgets/about-me.php:202
+msgid "John Doe"
+msgstr "John Doe"
+
+#: inc/classes/widgets/about-me.php:210
+#: inc/classes/widgets/contact-info.php:254
+#: inc/classes/widgets/contact-info.php:272
+#: inc/classes/widgets/contact-info.php:291
+#: inc/classes/widgets/contact-info.php:310
+#: inc/classes/widgets/contact-info.php:329
+#: inc/classes/widgets/contact-info.php:348
+#: inc/classes/widgets/contact-info.php:372
+#: inc/classes/widgets/custom-links.php:116
+#: inc/classes/widgets/facebook.php:163 inc/classes/widgets/flickr.php:104
+#: inc/classes/widgets/instagram.php:147 inc/classes/widgets/mailchimp.php:158
+#: inc/classes/widgets/recent-posts.php:204
+#: inc/classes/widgets/recent-posts.php:275 inc/classes/widgets/social.php:249
+#: inc/classes/widgets/video.php:113
+msgid "Title"
+msgstr "Titel"
+
+#: inc/classes/widgets/about-me.php:215
+msgid "Image URL"
+msgstr "Bild URL"
+
+#: inc/classes/widgets/about-me.php:217
+msgid "Upload Image"
+msgstr "Ladda upp bild"
+
+#: inc/classes/widgets/about-me.php:221
+msgid "Name:"
+msgstr "Namn: "
+
+#: inc/classes/widgets/about-me.php:226 inc/classes/widgets/instagram.php:289
+msgid "Description:"
+msgstr "Beskrivning: "
+
+#: inc/classes/widgets/about-me.php:231
+msgid "Social Style:"
+msgstr "Social stil: "
+
+#: inc/classes/widgets/about-me.php:234
+#: inc/customizer/settings/footer-bottom.php:123
+#: inc/customizer/settings/footer-widgets.php:146
+#: inc/customizer/settings/general.php:155
+#: inc/customizer/settings/general.php:863
+#: inc/customizer/settings/general.php:1001
+#: inc/customizer/settings/general.php:1213
+#: inc/customizer/settings/general.php:1308
+#: inc/customizer/settings/header.php:745
+msgid "Color"
+msgstr "Färg"
+
+#: inc/classes/widgets/about-me.php:235 inc/classes/widgets/facebook.php:187
+#: inc/classes/widgets/social.php:239 inc/classes/widgets/social.php:256
+msgid "Light"
+msgstr "Ljus"
+
+#: inc/classes/widgets/about-me.php:236 inc/classes/widgets/facebook.php:188
+#: inc/classes/widgets/social.php:257 inc/customizer/settings/header.php:194
+#: inc/customizer/settings/header.php:1450
+msgid "Dark"
+msgstr "Mörk"
+
+#: inc/classes/widgets/about-me.php:241
+msgid "Social Link Target:"
+msgstr "Sociala länkar mål:"
+
+#: inc/classes/widgets/about-me.php:244
+#: inc/classes/widgets/custom-links.php:105
+#: inc/classes/widgets/custom-links.php:123
+#: inc/classes/widgets/instagram.php:316 inc/classes/widgets/social.php:277
+msgid "Blank"
+msgstr "Blank"
+
+#: inc/classes/widgets/about-me.php:245
+#: inc/classes/widgets/custom-links.php:124
+#: inc/classes/widgets/instagram.php:317 inc/classes/widgets/social.php:278
+msgid "Self"
+msgstr "Self"
+
+#: inc/classes/widgets/about-me.php:252 inc/classes/widgets/social.php:303
+msgid "Social Links"
+msgstr "Sociala länkar"
+
+#: inc/classes/widgets/contact-info.php:24
+msgid "&raquo; Contact Info"
+msgstr "&raquo; Kontaktinformation"
+
+#: inc/classes/widgets/contact-info.php:27
+msgid "Adds support for contact info."
+msgstr "Lägger till stöd för kontaktinformation."
+
+#: inc/classes/widgets/contact-info.php:163
+msgid "Skype"
+msgstr "Skype"
+
+#: inc/classes/widgets/contact-info.php:227
+msgid "Contact Info"
+msgstr "Kontaktinformation"
+
+#: inc/classes/widgets/contact-info.php:229
+msgid "icon-location-pin"
+msgstr "icon-location-pin"
+
+#: inc/classes/widgets/contact-info.php:230
+#: inc/classes/widgets/contact-info.php:264
+msgid "Address:"
+msgstr "Adress:"
+
+#: inc/classes/widgets/contact-info.php:231
+msgid "Street Name, FL 54785"
+msgstr "Street Name, FL 54785"
+
+#: inc/classes/widgets/contact-info.php:232
+msgid "icon-phone"
+msgstr "icon-phone"
+
+#: inc/classes/widgets/contact-info.php:233
+#: inc/classes/widgets/contact-info.php:283
+msgid "Phone:"
+msgstr "Telefon: "
+
+#: inc/classes/widgets/contact-info.php:235
+msgid "icon-screen-smartphone"
+msgstr "icon-screen-smartphone"
+
+#: inc/classes/widgets/contact-info.php:236
+#: inc/classes/widgets/contact-info.php:302
+msgid "Mobile:"
+msgstr "Mobil: "
+
+#: inc/classes/widgets/contact-info.php:238
+msgid "icon-printer"
+msgstr "icon-printer"
+
+#: inc/classes/widgets/contact-info.php:239
+#: inc/classes/widgets/contact-info.php:321
+msgid "Fax:"
+msgstr "Fax: "
+
+#: inc/classes/widgets/contact-info.php:241
+msgid "icon-envelope"
+msgstr "icon-envelope"
+
+#: inc/classes/widgets/contact-info.php:242
+#: inc/classes/widgets/contact-info.php:340
+msgid "Email:"
+msgstr "E-post: "
+
+#: inc/classes/widgets/contact-info.php:245
+msgid "icon-link"
+msgstr "icon-link"
+
+#: inc/classes/widgets/contact-info.php:246
+#: inc/classes/widgets/contact-info.php:364
+msgid "Website:"
+msgstr "Webbsida: "
+
+#: inc/classes/widgets/contact-info.php:250
+msgid "Skype Call Us"
+msgstr "Skype Ring oss"
+
+#: inc/classes/widgets/contact-info.php:259
+#: inc/classes/widgets/contact-info.php:396
+#: inc/classes/widgets/mailchimp.php:164
+msgid "Text"
+msgstr "Text"
+
+#: inc/classes/widgets/contact-info.php:267
+#: inc/classes/widgets/contact-info.php:286
+#: inc/classes/widgets/contact-info.php:305
+#: inc/classes/widgets/contact-info.php:324
+#: inc/classes/widgets/contact-info.php:343
+#: inc/classes/widgets/contact-info.php:367
+msgid "Icon Class"
+msgstr "Ikon Klass"
+
+#: inc/classes/widgets/contact-info.php:277
+#: inc/classes/widgets/contact-info.php:296
+#: inc/classes/widgets/contact-info.php:315
+#: inc/classes/widgets/contact-info.php:334
+#: inc/customizer/settings/topbar.php:224
+#: inc/customizer/settings/topbar.php:239
+msgid "Content"
+msgstr "Innehåll"
+
+#: inc/classes/widgets/contact-info.php:353
+msgid "URL"
+msgstr "URL"
+
+#: inc/classes/widgets/contact-info.php:358
+#: inc/classes/widgets/contact-info.php:382
+msgid "URL Text"
+msgstr "URL Text"
+
+#: inc/classes/widgets/contact-info.php:377
+msgid "URL (with HTTP)"
+msgstr "URL (med HTTP)"
+
+#: inc/classes/widgets/contact-info.php:388
+msgid "Skype:"
+msgstr "Skype:"
+
+#: inc/classes/widgets/contact-info.php:391
+msgid "Username"
+msgstr "Användarnamn"
+
+#: inc/classes/widgets/custom-links.php:24
+msgid "&raquo; Custom Links"
+msgstr "&raquo; Anpassade Länkar"
+
+#: inc/classes/widgets/custom-links.php:27
+msgid "Displays custom links."
+msgstr "Visa anpassade länkar."
+
+#: inc/classes/widgets/custom-links.php:103
+msgid "Useful Links"
+msgstr "Användbara länkar"
+
+#: inc/classes/widgets/custom-links.php:121
+msgid "Link Target:"
+msgstr "Länkmål:"
+
+#: inc/classes/widgets/custom-links.php:129
+msgid "Number of Custom Links:"
+msgstr "Antal anpassade länkar: "
+
+#: inc/classes/widgets/facebook.php:35
+msgid "&raquo; Facebook Like Box"
+msgstr "&raquo; Facebook Like Box"
+
+#: inc/classes/widgets/facebook.php:38
+msgid "Display a Facebook Like Box to connect visitors to your Facebook Page."
+msgstr ""
+"Visar en Facebook Like Box för att koppla ihop dina besökare med din "
+"Facebooksida. "
+
+#: inc/classes/widgets/facebook.php:61
+msgid ""
+"It looks like your Facebook URL is incorrectly configured. Please check it "
+"in your <a href=\"%s\">widget settings</a>."
+msgstr ""
+"Det ser ut som din Facebook URL är felaktig. Vänligen kontrollera den i dina "
+"<a href=\"%s\">widget inställningar</a>."
+
+#: inc/classes/widgets/facebook.php:168
+msgid "Facebook Page URL"
+msgstr "Facebook Sid URL"
+
+#: inc/classes/widgets/facebook.php:171
+msgid "The Like Box only works with "
+msgstr "Facebook Like Box fungerar endast med "
+
+#: inc/classes/widgets/facebook.php:171
+msgid "Facebook Pages"
+msgstr "Facebook Sidor"
+
+#: inc/classes/widgets/facebook.php:175
+msgid "Width"
+msgstr "Bredd"
+
+#: inc/classes/widgets/facebook.php:180
+msgid "Height"
+msgstr "Höjd"
+
+#: inc/classes/widgets/facebook.php:185
+msgid "Color Scheme"
+msgstr "Färgschema"
+
+#: inc/classes/widgets/facebook.php:195
+msgid "Show Faces"
+msgstr "Visa ansikten"
+
+#: inc/classes/widgets/facebook.php:197
+msgid "Show profile photos in the plugin."
+msgstr "Visa profilbilder i plugin"
+
+#: inc/classes/widgets/facebook.php:204
+msgid "Show Stream"
+msgstr "Visa flöde"
+
+#: inc/classes/widgets/facebook.php:206
+msgid "Show the profile stream for the public profile."
+msgstr "Visa profilflöde för den publika profilen"
+
+#: inc/classes/widgets/facebook.php:213
+msgid "Show Border"
+msgstr "Visa kantlinje"
+
+#: inc/classes/widgets/facebook.php:215
+msgid "Show a border around the plugin."
+msgstr "Visa kantlinje runt plugin"
+
+#: inc/classes/widgets/facebook.php:222
+msgid "Show Wall"
+msgstr "Visa vägg"
+
+#: inc/classes/widgets/facebook.php:224
+msgid "Show the wall for a Places page rather than friend activity."
+msgstr "Visa vägg för en platssida istället för vänaktiviteter. "
+
+#: inc/classes/widgets/flickr.php:24
+msgid "&raquo; Flickr"
+msgstr "&raquo; Flickr"
+
+#: inc/classes/widgets/flickr.php:27
+msgid "Pulls in images from your flickr account."
+msgstr "Hämtar in bilder från ditt Flickrkonto"
+
+#: inc/classes/widgets/flickr.php:58
+msgid "View stream on flickr"
+msgstr "Visa flöde på Flickr"
+
+#: inc/classes/widgets/flickr.php:98
+msgid "Flickr Photos"
+msgstr "Flickr Bilder"
+
+#: inc/classes/widgets/flickr.php:109
+msgid "Flickr ID"
+msgstr "Flickr ID"
+
+#: inc/classes/widgets/flickr.php:111
+msgid "Enter the url of your Flickr page on this site: idgettr.com."
+msgstr "Skriv in URL till din Flickrsida på denna sida: idgettr.com."
+
+#: inc/classes/widgets/flickr.php:115
+msgid "Number:"
+msgstr "Antal:"
+
+#: inc/classes/widgets/flickr.php:117
+msgid "The maximum is 10 images."
+msgstr "Det maximala antalet är 10 bilder."
+
+#: inc/classes/widgets/instagram.php:25
+msgid "&raquo; Instagram"
+msgstr "&raquo; Instagram"
+
+#: inc/classes/widgets/instagram.php:28
+msgid "Displays Instagram photos."
+msgstr "Visa Instagram bilder."
+
+#: inc/classes/widgets/instagram.php:120
+msgid "Instagram"
+msgstr "Instagram"
+
+#: inc/classes/widgets/instagram.php:122
+msgid "adidas"
+msgstr "adidas"
+
+#: inc/classes/widgets/instagram.php:127 inc/classes/widgets/instagram.php:260
+#: inc/classes/widgets/instagram.php:270
+#: inc/classes/widgets/recent-posts.php:239
+msgid "No"
+msgstr "Nej"
+
+#: inc/classes/widgets/instagram.php:128 inc/classes/widgets/instagram.php:135
+#: inc/classes/widgets/instagram.php:261 inc/classes/widgets/instagram.php:269
+msgid "Yes"
+msgstr "Ja"
+
+#: inc/classes/widgets/instagram.php:129 inc/classes/widgets/instagram.php:277
+msgid "Rounded"
+msgstr "Rundad"
+
+#: inc/classes/widgets/instagram.php:132
+msgid "Before"
+msgstr "Före"
+
+#: inc/classes/widgets/instagram.php:133 inc/classes/widgets/instagram.php:304
+#: inc/customizer/settings/general.php:914
+#: inc/customizer/settings/header.php:841
+#: inc/customizer/settings/header.php:1550
+msgid "Left"
+msgstr "Vänster"
+
+#: inc/classes/widgets/instagram.php:141 inc/classes/widgets/social.php:238
+msgid "Follow Us"
+msgstr "Följ oss"
+
+#: inc/classes/widgets/instagram.php:152
+msgid "Search Instagram for:"
+msgstr "Sök på Instagram efter:"
+
+#: inc/classes/widgets/instagram.php:156
+msgid "Username:"
+msgstr "Användarnamn: "
+
+#: inc/classes/widgets/instagram.php:164
+msgid "Hashtag:"
+msgstr "Hashtag:"
+
+#: inc/classes/widgets/instagram.php:166
+msgid "without # sign"
+msgstr "utan # tecknet"
+
+#: inc/classes/widgets/instagram.php:171
+msgid "Block Users"
+msgstr "Blockera Användare"
+
+#: inc/classes/widgets/instagram.php:173
+msgid "Enter usernames separated by commas whose images you don't want to show"
+msgstr ""
+"Skriv in användarnamn separerade med kommatecken för de bilder du inte vill "
+"visa"
+
+#: inc/classes/widgets/instagram.php:177
+msgid "Number Images To Show:"
+msgstr "Antal bilder att visa"
+
+#: inc/classes/widgets/instagram.php:183
+msgid "Check New Images Every:"
+msgstr "Kolla efter nya bilder varje:"
+
+#: inc/classes/widgets/instagram.php:185
+msgid "hours"
+msgstr "timmar"
+
+#: inc/classes/widgets/instagram.php:190
+msgid "Images Style:"
+msgstr "Bildstil: "
+
+#: inc/classes/widgets/instagram.php:192
+msgid "Style 1"
+msgstr "Stil 1"
+
+#: inc/classes/widgets/instagram.php:193
+msgid "Style 2"
+msgstr "Stil 2"
+
+#: inc/classes/widgets/instagram.php:194
+msgid "Style 3"
+msgstr "Stil 3"
+
+#: inc/classes/widgets/instagram.php:195
+msgid "Style 4"
+msgstr "Stil 4"
+
+#: inc/classes/widgets/instagram.php:196
+msgid "2 Columns"
+msgstr "2 Kolumner"
+
+#: inc/classes/widgets/instagram.php:197
+msgid "3 Columns"
+msgstr "3 Kolumner"
+
+#: inc/classes/widgets/instagram.php:198
+msgid "4 Columns"
+msgstr "4 Kolumner"
+
+#: inc/classes/widgets/instagram.php:199
+msgid "5 Columns"
+msgstr "5 Kolumner"
+
+#: inc/classes/widgets/instagram.php:200
+msgid "6 Columns"
+msgstr "6 Kolumner"
+
+#: inc/classes/widgets/instagram.php:201
+msgid "7 Columns"
+msgstr "7 Kolumner"
+
+#: inc/classes/widgets/instagram.php:202
+msgid "8 Columns"
+msgstr "8 Kolumner"
+
+#: inc/classes/widgets/instagram.php:203
+msgid "9 Columns"
+msgstr "9 Kolumner"
+
+#: inc/classes/widgets/instagram.php:204
+msgid "10 Columns"
+msgstr "10 Kolumner"
+
+#: inc/classes/widgets/instagram.php:209
+msgid "Margin:"
+msgstr "Marginal:"
+
+#: inc/classes/widgets/instagram.php:211
+msgid "Margin"
+msgstr "Marginal"
+
+#: inc/classes/widgets/instagram.php:212
+msgid "No Margin"
+msgstr "Ingen Marginal"
+
+#: inc/classes/widgets/instagram.php:217
+msgid "Image format"
+msgstr "Bildformat"
+
+#: inc/classes/widgets/instagram.php:219
+msgid "Square - Cropped"
+msgstr "Fyrkantig - Beskuren"
+
+#: inc/classes/widgets/instagram.php:220
+msgid "Original - No Crop"
+msgstr "Original - Ej Beskuren"
+
+#: inc/classes/widgets/instagram.php:222
+msgid ""
+"<strong>Square - Cropped</strong> - images in 640x640 pixels. <br/"
+"><strong>Original - No Crop</strong> - original image size."
+msgstr ""
+"<strong>Fyrkantig - Beskuren</strong> - bilder i 640x640 pixels. <br/"
+"><strong>Original - Ingen beskärning</strong> - original bildstorlek."
+
+#: inc/classes/widgets/instagram.php:226
+msgid "Order by"
+msgstr "Lista efter"
+
+#: inc/classes/widgets/instagram.php:228
+msgid "Date - Ascending"
+msgstr "Datum - Stigande"
+
+#: inc/classes/widgets/instagram.php:229
+msgid "Date - Descending"
+msgstr "Datum - Fallande"
+
+#: inc/classes/widgets/instagram.php:230
+msgid "Popularity - Ascending"
+msgstr "Popularitet - Stigande"
+
+#: inc/classes/widgets/instagram.php:231
+msgid "Popularity - Descending"
+msgstr "Popularitet - Fallande"
+
+#: inc/classes/widgets/instagram.php:232
+#: inc/classes/widgets/recent-posts.php:278
+msgid "Random"
+msgstr "Slumpmässig"
+
+#: inc/classes/widgets/instagram.php:238
+msgid "Link To"
+msgstr "Länk till"
+
+#: inc/classes/widgets/instagram.php:240
+msgid "Instagram Image"
+msgstr "Instagrambild"
+
+#: inc/classes/widgets/instagram.php:241
+msgid "Instagram Profile"
+msgstr "Instagramprofil"
+
+#: inc/classes/widgets/instagram.php:242
+#: inc/customizer/settings/woocommerce.php:112
+msgid "Custom Link"
+msgstr "Anpassad länk"
+
+#: inc/classes/widgets/instagram.php:243 inc/classes/widgets/social.php:266
+msgid "None"
+msgstr "Ingen"
+
+#: inc/classes/widgets/instagram.php:249
+msgid "Custom Link:"
+msgstr "Anpassad Länk: "
+
+#: inc/classes/widgets/instagram.php:251
+msgid ""
+"Use this field only if the above option is set to <strong>Custom Link</"
+"strong>"
+msgstr ""
+"Använd detta fält endast om ovanstående inställning är satt till "
+"<strong>Anpassad Länk</strong>"
+
+#: inc/classes/widgets/instagram.php:256
+msgid "Header Options"
+msgstr "Sidhuvud Inställningar"
+
+#: inc/classes/widgets/instagram.php:258
+msgid "Display Header:"
+msgstr "Visa Sidhuvud:"
+
+#: inc/classes/widgets/instagram.php:267
+msgid "Display Profile Picture:"
+msgstr "Visa Profilbild: "
+
+#: inc/classes/widgets/instagram.php:275
+msgid "Picture Radius:"
+msgstr "Bild Radie:"
+
+#: inc/classes/widgets/instagram.php:278
+msgid "Square"
+msgstr "Fyrkant"
+
+#: inc/classes/widgets/instagram.php:283
+msgid "Display Name:"
+msgstr "Visa Namn:"
+
+#: inc/classes/widgets/instagram.php:284
+msgid "Default is username"
+msgstr "Standard är username"
+
+#: inc/classes/widgets/instagram.php:294
+msgid "Position:"
+msgstr "Placering:"
+
+#: inc/classes/widgets/instagram.php:296
+msgid "Before Images"
+msgstr "Före Bilder"
+
+#: inc/classes/widgets/instagram.php:297
+msgid "After Images"
+msgstr "Efter Bilder"
+
+#: inc/classes/widgets/instagram.php:302
+msgid "Align:"
+msgstr "Placering:"
+
+#: inc/classes/widgets/instagram.php:305
+#: inc/customizer/settings/general.php:912
+#: inc/customizer/settings/header.php:842
+#: inc/customizer/settings/header.php:1551
+msgid "Right"
+msgstr "Höger"
+
+#: inc/classes/widgets/instagram.php:306
+#: inc/customizer/settings/general.php:913
+#: inc/customizer/settings/header.php:72
+msgid "Center"
+msgstr "Center"
+
+#: inc/classes/widgets/instagram.php:314
+msgid "Button Target:"
+msgstr "Knapp Mål:"
+
+#: inc/classes/widgets/instagram.php:319
+msgid "Same or new window"
+msgstr "Samma eller Nytt fönster"
+
+#: inc/classes/widgets/instagram.php:323
+msgid "Button Text:"
+msgstr "Knapptext:"
+
+#: inc/classes/widgets/instagram.php:325
+msgid "Leave empty for no button"
+msgstr "Lämnas tomt för ingen knapp"
+
+#: inc/classes/widgets/instagram.php:534
+msgid "No images found! <br> Try some other hashtag or username"
+msgstr ""
+"Inga bilder hittade! <br> Försök med någon annan hashtag eller användarnamn"
+
+#: inc/classes/widgets/instagram.php:590
+msgid "Nothing to search for"
+msgstr "Ingenting att söka efter"
+
+#: inc/classes/widgets/instagram.php:650
+msgid "No images found"
+msgstr "Inga bilder hittade"
+
+#: inc/classes/widgets/mailchimp.php:24
+msgid "&raquo; MailChimp"
+msgstr "&raquo; MailChimp"
+
+#: inc/classes/widgets/mailchimp.php:27
+msgid "Displays mailchimp subscription form."
+msgstr "Visa Mailchimp formulär för prenumeration."
+
+#: inc/classes/widgets/mailchimp.php:148
+msgid "Newsletter"
+msgstr "Nyhetsbrev"
+
+#: inc/classes/widgets/mailchimp.php:149
+msgid ""
+"Get all latest content delivered to your email a few times a month. Updates "
+"and news about all categories will send to you."
+msgstr ""
+"Hämta senaste innehållet som levererats till din e-postadress några gånger i "
+"månaden. Uppdateringar och nyheter om alla kategorier kommer skickas till "
+"dig. "
+
+#: inc/classes/widgets/mailchimp.php:153
+msgid "Your Email"
+msgstr "Din E-postadress"
+
+#: inc/classes/widgets/mailchimp.php:154
+msgid "Go"
+msgstr "Kör"
+
+#: inc/classes/widgets/mailchimp.php:169
+msgid "MailChimp Form Action"
+msgstr "MailChimp Formuläråtgärd"
+
+#: inc/classes/widgets/mailchimp.php:174
+msgid "Input Width (px)"
+msgstr "Input bredd (px)"
+
+#: inc/classes/widgets/mailchimp.php:179
+msgid "Input Height (px)"
+msgstr "Input höjd (px)"
+
+#: inc/classes/widgets/mailchimp.php:184
+msgid "Placeholder"
+msgstr "Platshållare"
+
+#: inc/classes/widgets/mailchimp.php:189
+msgid "Submit Text"
+msgstr "Skicka Text"
+
+#: inc/classes/widgets/recent-posts.php:24
+msgid "&raquo; Recent Posts"
+msgstr "&raquo; Senaste inlägg"
+
+#: inc/classes/widgets/recent-posts.php:27
+msgid "Shows a listing of your recent or random posts."
+msgstr "Visar en lista av dina senaste eller slumpmässiga inlägg."
+
+#: inc/classes/widgets/recent-posts.php:32 inc/page-header.php:28
+msgid "Recent Posts"
+msgstr "Senaste inlägg"
+
+#: inc/classes/widgets/recent-posts.php:139 partials/entry/meta.php:42
+#: partials/single/meta.php:45
+msgid "0 Comments"
+msgstr "0 Kommentarer"
+
+#: inc/classes/widgets/recent-posts.php:139 partials/entry/meta.php:42
+#: partials/single/meta.php:45
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: inc/classes/widgets/recent-posts.php:139 partials/entry/meta.php:42
+#: partials/single/meta.php:45
+msgid "% Comments"
+msgstr "% Kommentarer"
+
+#: inc/classes/widgets/recent-posts.php:153
+msgid "No posts found."
+msgstr "Inga inlägg hittade."
+
+#: inc/classes/widgets/recent-posts.php:209
+msgid "Number"
+msgstr "Antal"
+
+#: inc/classes/widgets/recent-posts.php:214
+msgid "Post Type"
+msgstr "Post Type"
+
+#: inc/classes/widgets/recent-posts.php:217
+msgid "Post"
+msgstr "Inlägg"
+
+#: inc/classes/widgets/recent-posts.php:236
+msgid "Query By Taxonomy"
+msgstr "Fråga efter taxonomi"
+
+#: inc/classes/widgets/recent-posts.php:252
+msgid "Terms"
+msgstr "Villkor"
+
+#: inc/classes/widgets/recent-posts.php:255
+msgid "Enter the term slugs to query by seperated by a \"comma\""
+msgstr "Skriv in värden för fråga separerade med kommatecken"
+
+#: inc/classes/widgets/recent-posts.php:259
+msgid "Order"
+msgstr "Sortera efter"
+
+#: inc/classes/widgets/recent-posts.php:262
+msgid "Descending"
+msgstr "Fallande"
+
+#: inc/classes/widgets/recent-posts.php:263
+msgid "Ascending"
+msgstr "Stigande"
+
+#: inc/classes/widgets/recent-posts.php:268
+msgid "Order By"
+msgstr "Sortera efter"
+
+#: inc/classes/widgets/recent-posts.php:274
+#: inc/customizer/settings/blog.php:205 inc/customizer/settings/blog.php:340
+msgid "Date"
+msgstr "Datum"
+
+#: inc/classes/widgets/recent-posts.php:276
+msgid "Modified"
+msgstr "Ändrad"
+
+#: inc/classes/widgets/recent-posts.php:277
+#: inc/customizer/settings/blog.php:204 inc/customizer/settings/blog.php:339
+msgid "Author"
+msgstr "Författare"
+
+#: inc/classes/widgets/recent-posts.php:279
+msgid "Comment Count"
+msgstr "Antal kommentarer"
+
+#: inc/classes/widgets/social.php:110
+msgid "&raquo; Social Icons"
+msgstr "&raquo; Sociala Ikoner"
+
+#: inc/classes/widgets/social.php:113
+msgid "Display your social media icons."
+msgstr "Visa dina sociala medier-ikoner."
+
+#: inc/classes/widgets/social.php:240 inc/classes/widgets/social.php:268
+msgid "Rotate"
+msgstr "Rotera"
+
+#: inc/classes/widgets/social.php:254
+msgid "Style:"
+msgstr "Stil: "
+
+#: inc/classes/widgets/social.php:258 inc/customizer/settings/header.php:1448
+msgid "Colored"
+msgstr "Färgad"
+
+#: inc/classes/widgets/social.php:259 inc/customizer/settings/header.php:1447
+msgid "Simple"
+msgstr "Enkel"
+
+#: inc/classes/widgets/social.php:264
+msgid "Transition:"
+msgstr "Övergång"
+
+#: inc/classes/widgets/social.php:267
+msgid "Float"
+msgstr "Flytande"
+
+#: inc/classes/widgets/social.php:269
+msgid "Zoom Out"
+msgstr "Zooma ut"
+
+#: inc/classes/widgets/social.php:274
+msgid "Link Target"
+msgstr "Länkmål"
+
+#: inc/classes/widgets/social.php:283
+msgid "Dimensions"
+msgstr "Dimensioner"
+
+#: inc/classes/widgets/social.php:285 inc/classes/widgets/social.php:291
+#: inc/classes/widgets/social.php:297
+msgid "Example:"
+msgstr "Exempel:"
+
+#: inc/classes/widgets/social.php:289
+msgid "Font Size"
+msgstr "Teckensnittsstorlek"
+
+#: inc/classes/widgets/social.php:295
+msgid "Border Radius"
+msgstr "Kantradie"
+
+#: inc/classes/widgets/video.php:24
+msgid "&raquo; Video"
+msgstr "&raquo; Video"
+
+#: inc/classes/widgets/video.php:27
+msgid "Easily to display any type of video."
+msgstr "Visa alla typer av videos med enkelhet. "
+
+#: inc/classes/widgets/video.php:63
+msgid "You forgot to enter a video URL."
+msgstr "Du glömde fylla i en VideoURL. "
+
+#: inc/classes/widgets/video.php:107
+msgid "Video"
+msgstr "Video"
+
+#: inc/classes/widgets/video.php:119
+msgid "Video URL "
+msgstr "Video URL"
+
+#: inc/classes/widgets/video.php:121
+msgid ""
+"Enter in a video URL that is compatible with WordPress's built-in oEmbed "
+"feature."
+msgstr ""
+"Skriv in en video URL som är kompatibel med WordPress inbyggda oEmbed "
+"funktion. "
+
+#: inc/classes/widgets/video.php:121
+msgid "Learn More"
+msgstr "Läs mer"
+
+#: inc/classes/widgets/video.php:126
+msgid "Description"
+msgstr "Beskrivning"
+
+#: inc/comments-callback.php:28
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/comments-callback.php:28
+msgid "(Edit)"
+msgstr "(Redigera)"
+
+#: inc/comments-callback.php:46
+msgid "%s "
+msgstr "%s"
+
+#: inc/comments-callback.php:55
+msgid "edit"
+msgstr "Redigera"
+
+#: inc/comments-callback.php:67
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar inväntar granskning."
+
+#: inc/customizer/customizer-controls.php:110
+#: inc/customizer/customizer-controls.php:305
+#: inc/customizer/settings/general.php:494
+#: inc/customizer/settings/typography.php:315
+#: inc/customizer/settings/typography.php:346
+#: inc/customizer/settings/typography.php:373
+msgid "Default"
+msgstr "Standard"
+
+#: inc/customizer/customizer-controls.php:146
+msgid "Hex Value"
+msgstr "Hexadecimalt Värde"
+
+#: inc/customizer/customizer-controls.php:215
+msgid "Select"
+msgstr "Välj"
+
+#: inc/customizer/customizer-controls.php:311
+msgid "Custom Fonts"
+msgstr "Anpassade Teckensnitt"
+
+#: inc/customizer/customizer-controls.php:321
+msgid "Standard Fonts"
+msgstr "Standardteckensnitt"
+
+#: inc/customizer/customizer-controls.php:332
+msgid "Google Fonts"
+msgstr "Google Fonts"
+
+#: inc/customizer/settings/blog.php:39 inc/page-header.php:106
+msgid "Blog"
+msgstr "Blogg"
+
+#: inc/customizer/settings/blog.php:52
+msgid "Archives & Entries Layout"
+msgstr "Arkiv & Inlägg Layout"
+
+#: inc/customizer/settings/blog.php:58 inc/customizer/settings/blog.php:239
+#: inc/customizer/settings/general.php:371
+#: inc/customizer/settings/general.php:464
+#: inc/customizer/settings/woocommerce.php:383
+#: inc/customizer/settings/woocommerce.php:486
+msgid "Right Sidebar"
+msgstr "Höger Sidfält"
+
+#: inc/customizer/settings/blog.php:59 inc/customizer/settings/blog.php:240
+#: inc/customizer/settings/general.php:372
+#: inc/customizer/settings/general.php:465
+#: inc/customizer/settings/woocommerce.php:384
+#: inc/customizer/settings/woocommerce.php:487
+msgid "Left Sidebar"
+msgstr "Vänster Sidfält"
+
+#: inc/customizer/settings/blog.php:60 inc/customizer/settings/blog.php:241
+#: inc/customizer/settings/general.php:373
+#: inc/customizer/settings/general.php:466
+#: inc/customizer/settings/woocommerce.php:385
+#: inc/customizer/settings/woocommerce.php:488
+msgid "Full Width"
+msgstr "Fullbredd"
+
+#: inc/customizer/settings/blog.php:73
+msgid "Blog Style"
+msgstr "Bloggstil"
+
+#: inc/customizer/settings/blog.php:79
+msgid "Large Image"
+msgstr "Stor Bild"
+
+#: inc/customizer/settings/blog.php:80
+msgid "Grid"
+msgstr "Rutnät"
+
+#: inc/customizer/settings/blog.php:93
+msgid "Images Size"
+msgstr "Bildstorlek"
+
+#: inc/customizer/settings/blog.php:100
+msgid "Thumbnail"
+msgstr "Tumnagel"
+
+#: inc/customizer/settings/blog.php:101
+msgid "Medium"
+msgstr "Medium"
+
+#: inc/customizer/settings/blog.php:102
+msgid "Medium Large"
+msgstr "Medium Stor"
+
+#: inc/customizer/settings/blog.php:103
+msgid "Large"
+msgstr "Stor"
+
+#: inc/customizer/settings/blog.php:116
+msgid "Grid Columns"
+msgstr "Rutnät Kolumner"
+
+#: inc/customizer/settings/blog.php:140
+msgid "Grid Style"
+msgstr "Rutnätsstil"
+
+#: inc/customizer/settings/blog.php:147
+msgid "Fit Rows"
+msgstr "Anpassa rader"
+
+#: inc/customizer/settings/blog.php:148
+msgid "Masonry"
+msgstr "Murverk (Masonry)"
+
+#: inc/customizer/settings/blog.php:161
+msgid "Equal Heights"
+msgstr "Utjämna höjd"
+
+#: inc/customizer/settings/blog.php:178
+msgid "Blog Pagination Style"
+msgstr "Blogg pagineringsstil"
+
+#: inc/customizer/settings/blog.php:184
+msgid "Standard"
+msgstr "Standard"
+
+#: inc/customizer/settings/blog.php:185
+msgid "Infinite Scroll"
+msgstr "Oändlig Scroll"
+
+#: inc/customizer/settings/blog.php:186
+msgid "Next/Prev"
+msgstr "Nästa/Föregående"
+
+#: inc/customizer/settings/blog.php:199 inc/customizer/settings/blog.php:334
+msgid "Meta"
+msgstr "Meta"
+
+#: inc/customizer/settings/blog.php:206 inc/customizer/settings/blog.php:341
+msgid "Categories"
+msgstr "Kategorier"
+
+#: inc/customizer/settings/blog.php:207 inc/customizer/settings/blog.php:342
+msgid "Comments"
+msgstr "Kommentarer"
+
+#: inc/customizer/settings/blog.php:219
+msgid "Single Post"
+msgstr "Enskilt inlägg"
+
+#: inc/customizer/settings/blog.php:233 inc/customizer/settings/general.php:365
+#: inc/customizer/settings/general.php:458
+#: inc/customizer/settings/woocommerce.php:377
+#: inc/customizer/settings/woocommerce.php:480
+msgid "Layout"
+msgstr "Layout"
+
+#: inc/customizer/settings/blog.php:254
+msgid "Display Featured Image"
+msgstr "Visa utvald bild"
+
+#: inc/customizer/settings/blog.php:260 inc/customizer/settings/blog.php:280
+#: inc/customizer/settings/blog.php:300 inc/customizer/settings/blog.php:320
+msgid "Show"
+msgstr "Visa"
+
+#: inc/customizer/settings/blog.php:261 inc/customizer/settings/blog.php:281
+#: inc/customizer/settings/blog.php:301 inc/customizer/settings/blog.php:321
+msgid "Hide"
+msgstr "Dölj"
+
+#: inc/customizer/settings/blog.php:274
+msgid "Display Author Box"
+msgstr "Visa författarbox"
+
+#: inc/customizer/settings/blog.php:294
+msgid "Display Related Posts"
+msgstr "Visa relaterade inlägg"
+
+#: inc/customizer/settings/blog.php:314
+msgid "Display Comments"
+msgstr "Visa kommentarer"
+
+#: inc/customizer/settings/blog.php:355
+msgid "Related Posts Count"
+msgstr "Antalet relaterade inlägg"
+
+#: inc/customizer/settings/blog.php:375
+msgid "Related Posts Columns"
+msgstr "Antalet kolumner relaterade inlägg"
+
+#: inc/customizer/settings/footer-bottom.php:40
+msgid "Footer Bottom"
+msgstr "Sidfot botten"
+
+#: inc/customizer/settings/footer-bottom.php:53
+msgid "Enable Footer Bottom"
+msgstr "Aktivera sidfot botten"
+
+#: inc/customizer/settings/footer-bottom.php:70
+msgid "Copyright"
+msgstr "Copyright"
+
+#: inc/customizer/settings/footer-bottom.php:87
+#: inc/customizer/settings/footer-widgets.php:110
+msgid "Padding"
+msgstr "Padding"
+
+#: inc/customizer/settings/footer-bottom.php:88
+#: inc/customizer/settings/footer-widgets.php:111
+#: inc/customizer/settings/general.php:1090
+#: inc/customizer/settings/general.php:1128
+#: inc/customizer/settings/general.php:1238
+msgid "Format: top right bottom left."
+msgstr "Format: topp höger botten vänster."
+
+#: inc/customizer/settings/footer-bottom.php:106
+#: inc/customizer/settings/footer-widgets.php:129
+#: inc/customizer/settings/general.php:125
+#: inc/customizer/settings/general.php:553
+#: inc/customizer/settings/general.php:829
+#: inc/customizer/settings/general.php:969
+#: inc/customizer/settings/general.php:1197
+#: inc/customizer/settings/general.php:1276
+#: inc/customizer/settings/header.php:146
+#: inc/customizer/settings/header.php:498
+#: inc/customizer/settings/header.php:1196
+#: inc/customizer/settings/header.php:1626
+#: inc/customizer/settings/topbar.php:145
+msgid "Background Color"
+msgstr "Bakgrundsfärg"
+
+#: inc/customizer/settings/footer-bottom.php:140
+#: inc/customizer/settings/footer-widgets.php:180
+#: inc/customizer/settings/general.php:140
+#: inc/customizer/settings/header.php:186
+#: inc/customizer/settings/header.php:547
+#: inc/customizer/settings/header.php:1658
+msgid "Links Color"
+msgstr "Länkfärg"
+
+#: inc/customizer/settings/footer-bottom.php:157
+#: inc/customizer/settings/footer-widgets.php:197
+#: inc/customizer/settings/header.php:1674
+msgid "Links Color: Hover"
+msgstr "Länkfärg: Hover"
+
+#: inc/customizer/settings/footer-widgets.php:40
+msgid "Footer Widgets"
+msgstr "Sidfotswidgets"
+
+#: inc/customizer/settings/footer-widgets.php:53
+msgid "Enable Footer Widgets"
+msgstr "Aktivera Sidfotswidgets"
+
+#: inc/customizer/settings/footer-widgets.php:69
+msgid "Page ID"
+msgstr "Sid ID"
+
+#: inc/customizer/settings/footer-widgets.php:70
+msgid "Choose a page to replace the widgets by this page."
+msgstr "Välj en sida för att ersätta widgets i denna sida. "
+
+#: inc/customizer/settings/footer-widgets.php:87
+msgid "Columns"
+msgstr "Kolumner"
+
+#: inc/customizer/settings/footer-widgets.php:163
+#: inc/customizer/settings/header.php:1228
+#: inc/customizer/settings/header.php:1642
+#: inc/customizer/settings/woocommerce.php:1202
+#: inc/customizer/settings/woocommerce.php:1500
+msgid "Borders Color"
+msgstr "Kantlinje färg"
+
+#: inc/customizer/settings/general.php:40
+msgid "General Options"
+msgstr "Allmänna Inställningar"
+
+#: inc/customizer/settings/general.php:48
+msgid "General Styling"
+msgstr "Allmän styling"
+
+#: inc/customizer/settings/general.php:63
+msgid "Primary Color"
+msgstr "Primär Färg"
+
+#: inc/customizer/settings/general.php:79
+msgid "Hover Primary Color"
+msgstr "Primär Färg: Hover"
+
+#: inc/customizer/settings/general.php:95
+msgid "Main Border Color"
+msgstr "Huvudkantlinje Färg"
+
+#: inc/customizer/settings/general.php:109
+msgid "Site Background"
+msgstr "Sidans bakgrund"
+
+#: inc/customizer/settings/general.php:171
+#: inc/customizer/settings/general.php:880
+#: inc/customizer/settings/general.php:1017
+#: inc/customizer/settings/general.php:1324
+#: inc/customizer/settings/header.php:762
+msgid "Color: Hover"
+msgstr "Färg: Hover"
+
+#: inc/customizer/settings/general.php:181
+msgid "General Settings"
+msgstr "Allmänna Inställningar"
+
+#: inc/customizer/settings/general.php:195
+msgid "Layout Style"
+msgstr "Layoutstil"
+
+#: inc/customizer/settings/general.php:201
+msgid "Wide"
+msgstr "Bred"
+
+#: inc/customizer/settings/general.php:202
+msgid "Boxed"
+msgstr "Inboxad"
+
+#: inc/customizer/settings/general.php:216
+msgid "Boxed Layout Drop-Shadow"
+msgstr "Inboxad med skuggning"
+
+#: inc/customizer/settings/general.php:234
+msgid "Boxed Width (px)"
+msgstr "Inboxad bredd (px)"
+
+#: inc/customizer/settings/general.php:256
+msgid "Outside Background"
+msgstr "Bakgrund utanför"
+
+#: inc/customizer/settings/general.php:273
+msgid "Inner Background"
+msgstr "Bakgunrd innanför"
+
+#: inc/customizer/settings/general.php:290
+msgid "Main Container Width (px)"
+msgstr "Huvudinnehåll Bredd (px)"
+
+#: inc/customizer/settings/general.php:311
+msgid "Content Width (%)"
+msgstr "Innehållsbredd (%)"
+
+#: inc/customizer/settings/general.php:332
+msgid "Sidebar Width (%)"
+msgstr "Sidfältsbredd (%)"
+
+#: inc/customizer/settings/general.php:351
+msgid "Pages"
+msgstr "Sidor"
+
+#: inc/customizer/settings/general.php:374
+#: inc/customizer/settings/header.php:71
+msgid "Full Screen"
+msgstr "Fullskärm"
+
+#: inc/customizer/settings/general.php:388
+msgid "Content Top Padding (px)"
+msgstr "Innehåll Topp-padding (px)"
+
+#: inc/customizer/settings/general.php:409
+msgid "Content Bottom Padding (px)"
+msgstr "Innehåll Botten-padding (px)"
+
+#: inc/customizer/settings/general.php:428
+msgid "Search Result Page"
+msgstr "Sökresultat Sida"
+
+#: inc/customizer/settings/general.php:442 inc/welcome/welcome.php:140
+msgid "Custom Sidebar"
+msgstr "Anpassat Sidfält"
+
+#: inc/customizer/settings/general.php:474
+#: inc/customizer/settings/typography.php:111
+msgid "Page Title"
+msgstr "Sidtitel"
+
+#: inc/customizer/settings/general.php:488
+#: inc/customizer/settings/header.php:62 inc/customizer/settings/topbar.php:78
+msgid "Style"
+msgstr "Stil"
+
+#: inc/customizer/settings/general.php:495
+msgid "Centered"
+msgstr "Centrerad"
+
+#: inc/customizer/settings/general.php:496
+msgid "Centered Minimal"
+msgstr "Centrerad minimal"
+
+#: inc/customizer/settings/general.php:497
+msgid "Hidden"
+msgstr "Dold"
+
+#: inc/customizer/settings/general.php:511
+#: inc/customizer/settings/topbar.php:101
+msgid "Top Padding (px)"
+msgstr "Topp Padding (px)"
+
+#: inc/customizer/settings/general.php:532
+#: inc/customizer/settings/topbar.php:123
+msgid "Bottom Padding (px)"
+msgstr "Botten Padding (px)"
+
+#: inc/customizer/settings/general.php:569
+#: inc/customizer/settings/general.php:635
+#: inc/customizer/settings/topbar.php:179
+#: inc/customizer/settings/woocommerce.php:1218
+msgid "Text Color"
+msgstr "Textfärg"
+
+#: inc/customizer/settings/general.php:583
+#: inc/customizer/settings/general.php:597
+#: inc/customizer/settings/typography.php:131
+msgid "Breadcrumbs"
+msgstr "Brödsmulor"
+
+#: inc/customizer/settings/general.php:613
+#: inc/customizer/settings/header.php:836
+msgid "Position"
+msgstr "Position"
+
+#: inc/customizer/settings/general.php:620
+msgid "Absolute Right"
+msgstr "Absolut Höger"
+
+#: inc/customizer/settings/general.php:621
+msgid "Under Title"
+msgstr "Under titel"
+
+#: inc/customizer/settings/general.php:652
+#: inc/customizer/settings/general.php:669
+msgid "Separator Color"
+msgstr "Avdelare Färg"
+
+#: inc/customizer/settings/general.php:686
+#: inc/customizer/settings/header.php:1090
+#: inc/customizer/settings/header.php:1244
+#: inc/customizer/settings/topbar.php:196
+#: inc/customizer/settings/woocommerce.php:172
+msgid "Link Color"
+msgstr "Länkfärg"
+
+#: inc/customizer/settings/general.php:703
+#: inc/customizer/settings/header.php:1106
+#: inc/customizer/settings/header.php:1260
+#: inc/customizer/settings/topbar.php:213
+#: inc/customizer/settings/woocommerce.php:188
+msgid "Link Color: Hover"
+msgstr "Länkfärg: Hover"
+
+#: inc/customizer/settings/general.php:714
+msgid "Scroll To Top"
+msgstr "Till Toppen"
+
+#: inc/customizer/settings/general.php:728
+msgid "Scroll Up Button"
+msgstr "Till Toppen Knapp"
+
+#: inc/customizer/settings/general.php:745
+msgid "Arrow Icon"
+msgstr "Pil-ikoner"
+
+#: inc/customizer/settings/general.php:763
+msgid "Button Size (px)"
+msgstr "Knappstorlek (px)"
+
+#: inc/customizer/settings/general.php:785
+msgid "Icon Size (px)"
+msgstr "Ikonstorlek (px)"
+
+#: inc/customizer/settings/general.php:807
+#: inc/customizer/settings/general.php:1145
+#: inc/customizer/settings/general.php:1255
+msgid "Border Radius (px)"
+msgstr "Kantradie (px)"
+
+#: inc/customizer/settings/general.php:846
+#: inc/customizer/settings/general.php:985
+#: inc/customizer/settings/general.php:1292
+msgid "Background Color: Hover"
+msgstr "Bakgrundsfärg: Hover"
+
+#: inc/customizer/settings/general.php:891
+msgid "Pagination"
+msgstr "Paginering"
+
+#: inc/customizer/settings/general.php:906
+msgid "Align"
+msgstr ""
+
+#: inc/customizer/settings/general.php:928
+#: inc/customizer/settings/general.php:1107
+#: inc/customizer/settings/typography.php:398
+msgid "Font Size (px)"
+msgstr "Teckensnittsstorlek (px)"
+
+#: inc/customizer/settings/general.php:949
+#: inc/customizer/settings/general.php:1127
+msgid "Border Width (px)"
+msgstr "Kantlinjebredd (px)"
+
+#: inc/customizer/settings/general.php:1033
+#: inc/customizer/settings/general.php:1166
+#: inc/customizer/settings/topbar.php:162
+msgid "Border Color"
+msgstr "Kantlinje Färg"
+
+#: inc/customizer/settings/general.php:1049
+msgid "Border Color: Hover"
+msgstr "Kantlinje Färg: Hover"
+
+#: inc/customizer/settings/general.php:1059
+msgid "Forms (Input - Textarea)"
+msgstr "Formulär (Input - Textdel)"
+
+#: inc/customizer/settings/general.php:1074
+msgid "Label Color"
+msgstr "Etikettfärg"
+
+#: inc/customizer/settings/general.php:1089
+#: inc/customizer/settings/general.php:1237
+msgid "Padding (px)"
+msgstr "Padding (px)"
+
+#: inc/customizer/settings/general.php:1182
+msgid "Border Color: Focus"
+msgstr "Kantlinje Färg: Fokus"
+
+#: inc/customizer/settings/general.php:1223
+msgid "Theme Button"
+msgstr "Temaknapp"
+
+#: inc/customizer/settings/header.php:40
+msgid "Header"
+msgstr "Sidhuvud"
+
+#: inc/customizer/settings/header.php:48 inc/customizer/settings/topbar.php:48
+#: inc/customizer/settings/woocommerce.php:48
+msgid "General"
+msgstr "Allmän"
+
+#: inc/customizer/settings/header.php:68
+#: inc/customizer/settings/header.php:1449
+msgid "Minimal"
+msgstr "Minimal"
+
+#: inc/customizer/settings/header.php:69
+msgid "Transparent"
+msgstr "Transparent"
+
+#: inc/customizer/settings/header.php:70
+msgid "Top Menu"
+msgstr "Topp Meny"
+
+#: inc/customizer/settings/header.php:86 inc/customizer/settings/header.php:108
+#: inc/customizer/settings/header.php:241
+#: inc/customizer/settings/header.php:407
+#: inc/customizer/settings/header.php:703
+msgid "Height (px)"
+msgstr "Höjd (px)"
+
+#: inc/customizer/settings/header.php:130
+msgid "Header Border Bottom"
+msgstr "Sidhuvud Kantlinje Botten"
+
+#: inc/customizer/settings/header.php:162
+msgid "Border Bottom Color"
+msgstr "Kantlinje Botten Färg"
+
+#: inc/customizer/settings/header.php:172
+msgid "Transparent Header"
+msgstr "Transparent Sidhuvud"
+
+#: inc/customizer/settings/header.php:193
+msgid "White"
+msgstr "Vit"
+
+#: inc/customizer/settings/header.php:207
+#: inc/customizer/settings/header.php:390
+msgid "Image Logo"
+msgstr "Logobild"
+
+#: inc/customizer/settings/header.php:208
+msgid "Select a custom logo (optional) for the transparent header."
+msgstr "Välj anpassad logo (valfritt) för transparent sidhuvud."
+
+#: inc/customizer/settings/header.php:224
+#: inc/customizer/settings/header.php:688
+msgid "Retina Image Logo"
+msgstr "Retina Logobild"
+
+#: inc/customizer/settings/header.php:225
+msgid "Retina version for the transparent header custom logo."
+msgstr "Retina Version för det transparenta sidhuvudet."
+
+#: inc/customizer/settings/header.php:262
+#: inc/customizer/settings/header.php:428
+#: inc/customizer/settings/header.php:724
+msgid "Width (px)"
+msgstr "Bredd (px)"
+
+#: inc/customizer/settings/header.php:278
+msgid "Top Menu Header"
+msgstr "Toppmeny Sidhuvud"
+
+#: inc/customizer/settings/header.php:292
+msgid "Menu Position"
+msgstr "Menyposition"
+
+#: inc/customizer/settings/header.php:299
+msgid "Before The Logo"
+msgstr "Innan Logo"
+
+#: inc/customizer/settings/header.php:300
+msgid "After The Logo"
+msgstr "Efter Logo"
+
+#: inc/customizer/settings/header.php:314
+msgid "Menu Background Color"
+msgstr "Meny Bakgrundsfärg"
+
+#: inc/customizer/settings/header.php:331
+msgid "Search Button Border Color"
+msgstr "Sökknapp Kantlinjefärg"
+
+#: inc/customizer/settings/header.php:348
+msgid "Search Button Color"
+msgstr "Sökknapp Färg"
+
+#: inc/customizer/settings/header.php:365
+msgid "Search Button Color: Hover"
+msgstr "Sökknapp Färg: Hover"
+
+#: inc/customizer/settings/header.php:376
+msgid "Full Screen Header"
+msgstr "Sidhuvud i fullskärm"
+
+#: inc/customizer/settings/header.php:391
+msgid "Select a custom logo (optional) when the menu is opened."
+msgstr "Välj en anpassad logotyp (frivilligt) när menyn är öppnad."
+
+#: inc/customizer/settings/header.php:448
+msgid "Styling"
+msgstr "Styling"
+
+#: inc/customizer/settings/header.php:464
+msgid "Menu Bar Color"
+msgstr "Meny Färg"
+
+#: inc/customizer/settings/header.php:481
+msgid "Menu Bar Close Color"
+msgstr "Meny Stäng Färg"
+
+#: inc/customizer/settings/header.php:514
+msgid "Links Background Color"
+msgstr "Länkar bakgrundsfärg"
+
+#: inc/customizer/settings/header.php:530
+msgid "Links Hover Background Color"
+msgstr "Länkar: Hover bakgrundsfärg"
+
+#: inc/customizer/settings/header.php:564
+msgid "Links Hover Color"
+msgstr "Länkar: Hover färg"
+
+#: inc/customizer/settings/header.php:579
+msgid "Search Styling"
+msgstr "Sök styling"
+
+#: inc/customizer/settings/header.php:595
+#: inc/customizer/settings/header.php:907
+#: inc/customizer/settings/header.php:975
+msgid "Input Color"
+msgstr "Input Färg"
+
+#: inc/customizer/settings/header.php:612
+#: inc/customizer/settings/header.php:992
+msgid "Input Dashed Text Color"
+msgstr "Inmatningsfält: Streckad textfärg"
+
+#: inc/customizer/settings/header.php:629
+msgid "Input Border Bottom Color"
+msgstr "Inmatningsfält: Kantlinjefärg botten"
+
+#: inc/customizer/settings/header.php:646
+msgid "Input Hover Border Bottom Color"
+msgstr "Inmatningsfält: Kantlinjefärg botten: Hover"
+
+#: inc/customizer/settings/header.php:663
+msgid "Input Focus Border Bottom Color"
+msgstr "Inmatningsfält: Kantlinjefärg botten: Fokus"
+
+#: inc/customizer/settings/header.php:674
+#: inc/customizer/settings/typography.php:64
+msgid "Logo"
+msgstr "Logotyp"
+
+#: inc/customizer/settings/header.php:704
+msgid "Used for retina."
+msgstr "Används för retina"
+
+#: inc/customizer/settings/header.php:773 partials/header/mobile-icon.php:29
+msgid "Menu"
+msgstr "Meny"
+
+#: inc/customizer/settings/header.php:787
+msgid "Top Level Dropdown Icon"
+msgstr "Toppnivå Dropdown-Ikon"
+
+#: inc/customizer/settings/header.php:803
+msgid "Second+ Level Dropdown Icon"
+msgstr "Sekundär+ nivå Dropfown-ikon"
+
+#: inc/customizer/settings/header.php:819
+msgid "Dropdown Top Border"
+msgstr "Dropdown Kantlinje topp"
+
+#: inc/customizer/settings/header.php:854
+msgid "Search Icon"
+msgstr "Sökikon"
+
+#: inc/customizer/settings/header.php:868
+msgid "Search Icon Style"
+msgstr "Sökikon Stil"
+
+#: inc/customizer/settings/header.php:874
+#: inc/customizer/settings/woocommerce.php:86
+msgid "Disabled"
+msgstr "Inaktiverad"
+
+#: inc/customizer/settings/header.php:875
+msgid "Drop Down"
+msgstr "Drop Down"
+
+#: inc/customizer/settings/header.php:876
+msgid "Header Replace"
+msgstr "Ersätt sidhuvud"
+
+#: inc/customizer/settings/header.php:877
+msgid "Overlay"
+msgstr "Överlagring"
+
+#: inc/customizer/settings/header.php:890
+msgid "Input Background Color"
+msgstr "Inmatningsfält: Bakgrundsfärg"
+
+#: inc/customizer/settings/header.php:924
+#: inc/customizer/settings/header.php:1009
+msgid "Input Border Color"
+msgstr "Inmatningsfält: Kantlinjefärg"
+
+#: inc/customizer/settings/header.php:941
+#: inc/customizer/settings/header.php:1043
+msgid "Input Border Color: Focus"
+msgstr "Inmatningsfält: Kantlinjefärg: Fokus"
+
+#: inc/customizer/settings/header.php:958
+msgid "Overlay Background Color"
+msgstr "Överlagringsfärg Bakgrund"
+
+#: inc/customizer/settings/header.php:1026
+msgid "Input Border Color: Hover"
+msgstr "Inmatningsfält: Kantlinjefärg: Hover"
+
+#: inc/customizer/settings/header.php:1060
+msgid "Close Button Color"
+msgstr "Stängknapp Färg"
+
+#: inc/customizer/settings/header.php:1075
+msgid "Main Styling"
+msgstr "Huvudstil"
+
+#: inc/customizer/settings/header.php:1122
+#: inc/customizer/settings/header.php:1291
+msgid "Link Color: Current Menu Item"
+msgstr "Länkfärg: Nuvarande menypost"
+
+#: inc/customizer/settings/header.php:1137
+msgid "Link Background"
+msgstr "Länk bakgrund"
+
+#: inc/customizer/settings/header.php:1152
+#: inc/customizer/settings/header.php:1276
+msgid "Link Background: Hover"
+msgstr "Länk bakgrund: Hover"
+
+#: inc/customizer/settings/header.php:1167
+#: inc/customizer/settings/header.php:1306
+msgid "Link Background: Current Menu Item"
+msgstr "Länkbakgrund: Nuvarande menypost"
+
+#: inc/customizer/settings/header.php:1181
+msgid "Dropdowns Styling"
+msgstr "Dropdown: Stil"
+
+#: inc/customizer/settings/header.php:1212
+msgid "Top Border Color"
+msgstr "Kantlinje topp: färg"
+
+#: inc/customizer/settings/header.php:1320
+msgid "Dropdowns Categories Posts"
+msgstr "Dropdown: Kategorier Inlägg"
+
+#: inc/customizer/settings/header.php:1335
+msgid "Category Title: Background"
+msgstr "Kategori Rubrik: Bakgrund"
+
+#: inc/customizer/settings/header.php:1351
+msgid "Category Title: Color"
+msgstr "Kategori Rubrik: Färg"
+
+#: inc/customizer/settings/header.php:1367
+msgid "Posts Links: Color"
+msgstr "Inlägg Länkar: Färg"
+
+#: inc/customizer/settings/header.php:1383
+msgid "Posts Links Hover: Color"
+msgstr "Inlägg Länkar Hover: Färg"
+
+#: inc/customizer/settings/header.php:1399
+msgid "Posts Date: Color"
+msgstr "Inlägg Datum: Färg"
+
+#: inc/customizer/settings/header.php:1409
+msgid "Menu Social"
+msgstr "Social Meny"
+
+#: inc/customizer/settings/header.php:1423
+msgid "Enable Menu Social"
+msgstr "Aktivera Social Meny"
+
+#: inc/customizer/settings/header.php:1440
+msgid "Social Link Style"
+msgstr "Sociala Länkar: Stil"
+
+#: inc/customizer/settings/header.php:1464
+#: inc/customizer/settings/topbar.php:301
+msgid "Social Link Target"
+msgstr "Sociala Länkar: Mål"
+
+#: inc/customizer/settings/header.php:1471
+#: inc/customizer/settings/topbar.php:308
+msgid "New Window"
+msgstr "Nytt fönster"
+
+#: inc/customizer/settings/header.php:1472
+#: inc/customizer/settings/topbar.php:309
+msgid "Same Window"
+msgstr "Samma fönster"
+
+#: inc/customizer/settings/header.php:1485
+#: inc/customizer/settings/topbar.php:323
+msgid "Social Links Color"
+msgstr "Sociala Länkar: Färg"
+
+#: inc/customizer/settings/header.php:1501
+#: inc/customizer/settings/topbar.php:339
+msgid "Social Links Color: Hover"
+msgstr "Sociala Länkar Färg: Hover"
+
+#: inc/customizer/settings/header.php:1531
+msgid "Mobile Menu"
+msgstr "Mobil meny"
+
+#: inc/customizer/settings/header.php:1545
+msgid "Direction"
+msgstr "Riktning"
+
+#: inc/customizer/settings/header.php:1564
+msgid "Displace"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1580
+msgid "Mobile Menu Search"
+msgstr "Sökning mobil meny"
+
+#: inc/customizer/settings/header.php:1595
+msgid "Styling: Mobile Sidebar Menu"
+msgstr "Mobil Sidopanel: Menystil"
+
+#: inc/customizer/settings/header.php:1610
+msgid "Close Button Background"
+msgstr "Stäng-Knapp: Bakgrund"
+
+#: inc/customizer/settings/header.php:1690
+msgid "Dropdowns Menus: Background"
+msgstr "Dropdownmenyer: Bakgrund"
+
+#: inc/customizer/settings/header.php:1705
+msgid "Searchbar Background"
+msgstr "Sökruta Bakgrund"
+
+#: inc/customizer/settings/header.php:1721
+msgid "Searchbar Color"
+msgstr "Sökruta Färg"
+
+#: inc/customizer/settings/header.php:1737
+msgid "Searchbar Border Color"
+msgstr "Sökruta Kantlinjefärg"
+
+#: inc/customizer/settings/header.php:1753
+msgid "Searchbar Border Color: Focus"
+msgstr "Sökruta Kantlinjefärg: Fokus"
+
+#: inc/customizer/settings/header.php:1769
+msgid "Searchbar Button Color"
+msgstr "Sökruta Knappfärg"
+
+#: inc/customizer/settings/header.php:1785
+msgid "Searchbar Button Color: Hover"
+msgstr "Sökruta Knappfärg: Hover"
+
+#: inc/customizer/settings/topbar.php:62
+msgid "Enable Top Bar"
+msgstr "Aktivera Topprad"
+
+#: inc/customizer/settings/topbar.php:85
+msgid "Left Content & Right Social"
+msgstr "Vänster Innehåll & Höger Socialt"
+
+#: inc/customizer/settings/topbar.php:86
+msgid "Left Social & Right Content"
+msgstr "Vänster Socialt & Höger Innehåll"
+
+#: inc/customizer/settings/topbar.php:87
+msgid "Centered Content & Social"
+msgstr "Centrerat Innehåll & Socialt"
+
+#: inc/customizer/settings/topbar.php:251
+msgid "Social"
+msgstr "Socialt"
+
+#: inc/customizer/settings/topbar.php:265
+msgid "Enable Social"
+msgstr "Aktivera Socialt"
+
+#: inc/customizer/settings/topbar.php:282
+msgid "Social Alternative"
+msgstr "Socialt Alternativ"
+
+#: inc/customizer/settings/topbar.php:283
+msgid "Choose a page to display the content of such page."
+msgstr "Välj en sida för att visa sidinnehållet. "
+
+#: inc/customizer/settings/typography.php:46
+msgid "Body"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:55
+msgid "Headings"
+msgstr "Rubriker"
+
+#: inc/customizer/settings/typography.php:83
+msgid "Main Menu"
+msgstr "Huvudmeny"
+
+#: inc/customizer/settings/typography.php:92
+msgid "Main Menu: Dropdowns"
+msgstr "Huvudmeny: Dropdowns"
+
+#: inc/customizer/settings/typography.php:102
+msgid "Mobile Menu: Dropdowns"
+msgstr "Mobil Meny: Dropdowns"
+
+#: inc/customizer/settings/typography.php:121
+msgid "Page Title Subheading"
+msgstr "Sidtitel: Underrubrik"
+
+#: inc/customizer/settings/typography.php:140
+msgid "Blog Entry Title"
+msgstr "Blogginlägg Titel"
+
+#: inc/customizer/settings/typography.php:149
+msgid "Blog Post Title"
+msgstr "Blogginlägg Titel"
+
+#: inc/customizer/settings/typography.php:159
+msgid "Sidebar Widget Heading"
+msgstr "Sidfält Widget Rubriker"
+
+#: inc/customizer/settings/typography.php:170
+msgid "Footer Widget Heading"
+msgstr "Sidfot Widgets Rubriker"
+
+#: inc/customizer/settings/typography.php:181
+msgid "Footer Copyright"
+msgstr "Sidfot Copyright"
+
+#: inc/customizer/settings/typography.php:191
+msgid "Footer Menu"
+msgstr "Sidfotsmeny"
+
+#: inc/customizer/settings/typography.php:221
+msgid "Typography"
+msgstr "Typografi"
+
+#: inc/customizer/settings/typography.php:286
+msgid "Font Family"
+msgstr "Typsnittsfamilj"
+
+#: inc/customizer/settings/typography.php:307
+msgid "Font Weight"
+msgstr "Typsnittsvikt"
+
+#: inc/customizer/settings/typography.php:308
+msgid "Important: Not all fonts support every font-weight."
+msgstr "Viktigt: Alla teckensnitt stöder inte alla typsnittsvikter."
+
+#: inc/customizer/settings/typography.php:316
+msgid "Extra Light: 100"
+msgstr "Extra lätt: 100"
+
+#: inc/customizer/settings/typography.php:317
+msgid "Light: 200"
+msgstr "Lätt: 200"
+
+#: inc/customizer/settings/typography.php:318
+msgid "Book: 300"
+msgstr "Bok: 300"
+
+#: inc/customizer/settings/typography.php:319
+msgid "Normal: 400"
+msgstr "Normal: 400"
+
+#: inc/customizer/settings/typography.php:320
+msgid "Semibold: 600"
+msgstr "Halvfet: 600"
+
+#: inc/customizer/settings/typography.php:321
+msgid "Bold: 700"
+msgstr "Fet: 700"
+
+#: inc/customizer/settings/typography.php:322
+msgid "Extra Bold: 800"
+msgstr "Extra Fet: 800"
+
+#: inc/customizer/settings/typography.php:339
+msgid "Font Style"
+msgstr "Typsnittsstil"
+
+#: inc/customizer/settings/typography.php:347
+msgid "Normal"
+msgstr "Normal"
+
+#: inc/customizer/settings/typography.php:348
+msgid "Italic"
+msgstr "Kursiv"
+
+#: inc/customizer/settings/typography.php:366
+msgid "Text Transform"
+msgstr "Omforma text"
+
+#: inc/customizer/settings/typography.php:374
+msgid "Capitalize"
+msgstr "Versal"
+
+#: inc/customizer/settings/typography.php:375
+msgid "Lowercase"
+msgstr "Gemener"
+
+#: inc/customizer/settings/typography.php:376
+msgid "Uppercase"
+msgstr "Versaler"
+
+#: inc/customizer/settings/typography.php:428
+msgid "Font Color"
+msgstr "Typsnittsfärg"
+
+#: inc/customizer/settings/typography.php:453
+msgid "Line Height"
+msgstr "Linjehöjd"
+
+#: inc/customizer/settings/typography.php:483
+msgid "Letter Spacing"
+msgstr "Avstånd mellan bokstäver"
+
+#: inc/customizer/settings/woocommerce.php:40
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: inc/customizer/settings/woocommerce.php:49
+#: inc/customizer/settings/woocommerce.php:343
+msgid ""
+"For some options, you must save and refresh your live site to preview "
+"changes."
+msgstr ""
+"För vissa funktioner måste du spara och uppdatera din livesida för att "
+"förhandsgranska ändringar. "
+
+#: inc/customizer/settings/woocommerce.php:63
+msgid "Custom WooCommerce Sidebar"
+msgstr "Anpassat WooCommerce sidfält"
+
+#: inc/customizer/settings/woocommerce.php:80
+msgid "Menu Cart: Display"
+msgstr "Varukorg Meny: Visning"
+
+#: inc/customizer/settings/woocommerce.php:87
+msgid "Icon"
+msgstr "Ikon"
+
+#: inc/customizer/settings/woocommerce.php:88
+msgid "Icon And Cart Total"
+msgstr "Varukorg Totalt och Ikon"
+
+#: inc/customizer/settings/woocommerce.php:89
+msgid "Icon And Cart Count"
+msgstr "Varukorg Räkning och Ikon"
+
+#: inc/customizer/settings/woocommerce.php:103
+msgid "Menu Cart: Style"
+msgstr "Varukorg Meny: Stil"
+
+#: inc/customizer/settings/woocommerce.php:110
+msgid "Drop-Down"
+msgstr "Drop-down"
+
+#: inc/customizer/settings/woocommerce.php:111
+msgid "Go To Cart"
+msgstr "Gå till kundvagn"
+
+#: inc/customizer/settings/woocommerce.php:125
+msgid "Menu Cart: Custom Link"
+msgstr "Varukorg Meny: Anpassad länk"
+
+#: inc/customizer/settings/woocommerce.php:141
+msgid "Styling: Cart Dropdowns"
+msgstr "Varukorg Dropdowns: Stil"
+
+#: inc/customizer/settings/woocommerce.php:156
+msgid "Dropdown Borders Color"
+msgstr "Dropdowns Kantlinje: Färg"
+
+#: inc/customizer/settings/woocommerce.php:204
+msgid "Remove Link Color"
+msgstr "Radera länkfärg"
+
+#: inc/customizer/settings/woocommerce.php:220
+msgid "Remove Link Color: Hover"
+msgstr "Radera länkfärg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:236
+#: inc/customizer/settings/woocommerce.php:1032
+msgid "Quantity Color"
+msgstr "Kvantitet Färg"
+
+#: inc/customizer/settings/woocommerce.php:252
+#: inc/customizer/settings/woocommerce.php:827
+#: inc/customizer/settings/woocommerce.php:952
+msgid "Price Color"
+msgstr "Pris Färg"
+
+#: inc/customizer/settings/woocommerce.php:268
+msgid "Subtotal Color"
+msgstr "Delsumma: Färg"
+
+#: inc/customizer/settings/woocommerce.php:284
+msgid "Checkout Button Background"
+msgstr "Till Kassan-knapp: Bakgrund"
+
+#: inc/customizer/settings/woocommerce.php:300
+msgid "Checkout Button Background: Hover"
+msgstr "Till Kassan-knapp: Bakgrund: Hover"
+
+#: inc/customizer/settings/woocommerce.php:316
+msgid "Checkout Button Color"
+msgstr "Till Kassan-knapp: Färg"
+
+#: inc/customizer/settings/woocommerce.php:332
+msgid "Checkout Button Color: Hover"
+msgstr "Till Kassan-knapp: Färg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:357
+msgid "Shop Posts Per Page"
+msgstr "Shopartiklar per sida"
+
+#: inc/customizer/settings/woocommerce.php:398
+msgid "Shop Columns"
+msgstr "Shop kolumner"
+
+#: inc/customizer/settings/woocommerce.php:418
+msgid "Shop Sort"
+msgstr "Shop sortering"
+
+#: inc/customizer/settings/woocommerce.php:434
+msgid "Shop Result Count"
+msgstr "Shop resultaträknare"
+
+#: inc/customizer/settings/woocommerce.php:450
+msgid "Product Entry Media"
+msgstr "Produktinlägg: Media"
+
+#: inc/customizer/settings/woocommerce.php:456
+msgid "Featured Image"
+msgstr "Utvald bild"
+
+#: inc/customizer/settings/woocommerce.php:457
+msgid "Image Swap"
+msgstr "Bildbyte"
+
+#: inc/customizer/settings/woocommerce.php:458
+msgid "Gallery Slider"
+msgstr "Galleriväxlare"
+
+#: inc/customizer/settings/woocommerce.php:466
+msgid "Single"
+msgstr "Enskild"
+
+#: inc/customizer/settings/woocommerce.php:501
+msgid "Up-Sells Count"
+msgstr "Merförsäljning: Antal"
+
+#: inc/customizer/settings/woocommerce.php:521
+msgid "Up-Sells Columns"
+msgstr "Merförsäljning: Kolumner"
+
+#: inc/customizer/settings/woocommerce.php:541
+msgid "Related Items Count"
+msgstr "Relaterade Produkter: Antal"
+
+#: inc/customizer/settings/woocommerce.php:561
+msgid "Related Products Columns"
+msgstr "Relaterade Produkter: Kolumner"
+
+#: inc/customizer/settings/woocommerce.php:581
+msgid "Product Meta"
+msgstr "Produkt Meta"
+
+#: inc/customizer/settings/woocommerce.php:592
+#: inc/customizer/settings/woocommerce.php:1485
+#: inc/woocommerce/woocommerce-helpers.php:48
+msgid "Cart"
+msgstr "Kundvagn"
+
+#: inc/customizer/settings/woocommerce.php:606
+msgid "Cross-Sells Count"
+msgstr "Korsförsäljning: Antal"
+
+#: inc/customizer/settings/woocommerce.php:626
+msgid "Cross-Sells Columns"
+msgstr "Korsförsäljning: Kolumner"
+
+#: inc/customizer/settings/woocommerce.php:639
+msgid "Advanced Styling"
+msgstr "Avancerad styling"
+
+#: inc/customizer/settings/woocommerce.php:654
+msgid "On Sale Background"
+msgstr "Utförsäljning bakgrund"
+
+#: inc/customizer/settings/woocommerce.php:670
+msgid "On Sale Color"
+msgstr "Utförsäljning färg"
+
+#: inc/customizer/settings/woocommerce.php:686
+msgid "Out of Stock Background"
+msgstr "Slut i lager bakgrund"
+
+#: inc/customizer/settings/woocommerce.php:702
+msgid "Out of Stock Color"
+msgstr "Slut i lager färg"
+
+#: inc/customizer/settings/woocommerce.php:718
+msgid "Stars Color Before"
+msgstr "Stjärnor färg innan"
+
+#: inc/customizer/settings/woocommerce.php:734
+msgid "Stars Color"
+msgstr "Stjärnor färg"
+
+#: inc/customizer/settings/woocommerce.php:748
+msgid "Product Entry"
+msgstr "Produktinlägg"
+
+#: inc/customizer/settings/woocommerce.php:763
+msgid "Category Color"
+msgstr "Kategorifärg"
+
+#: inc/customizer/settings/woocommerce.php:779
+msgid "Category Color: Hover"
+msgstr "Kategorifärg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:795
+#: inc/customizer/settings/woocommerce.php:936
+msgid "Title Color"
+msgstr "Rubrikfärg"
+
+#: inc/customizer/settings/woocommerce.php:811
+msgid "Title Color: Hover"
+msgstr "Rubrikfärg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:843
+#: inc/customizer/settings/woocommerce.php:968
+msgid "Del Price Color"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:859
+msgid "Add To Cart Color"
+msgstr "Lägg till i kundvagn Färg"
+
+#: inc/customizer/settings/woocommerce.php:875
+msgid "Add To Cart Color: Hover"
+msgstr "Lägg till i kundvagn Färg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:891
+msgid "Add To Cart Border Color"
+msgstr "Lägg till i kundvagn kantlinjefärg"
+
+#: inc/customizer/settings/woocommerce.php:907
+msgid "Add To Cart Border Color: Hover"
+msgstr "Lägg till i kundvagn kantlinjefärg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:921
+msgid "Single Product"
+msgstr "Enskild Produkt"
+
+#: inc/customizer/settings/woocommerce.php:984
+msgid "Description Color"
+msgstr "Beskrivning Färg"
+
+#: inc/customizer/settings/woocommerce.php:1000
+msgid "Quantity Border Color"
+msgstr "Kvantitet: Kantlinjefärg"
+
+#: inc/customizer/settings/woocommerce.php:1016
+msgid "Quantity Border Color Focus"
+msgstr "Kvantitet: Kantlinjefärg: Fokus"
+
+#: inc/customizer/settings/woocommerce.php:1048
+msgid "Quantity Plus/Minus Color"
+msgstr "Kvantitet: Plus/Minusfärg"
+
+#: inc/customizer/settings/woocommerce.php:1064
+msgid "Quantity Plus/Minus Color: Hover"
+msgstr "Kvantitet: Plus/Minusfärg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1080
+msgid "Quantity Plus/Minus Border Color: Hover"
+msgstr "Kvantitet: Plus/Minus kantlinjefärg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1096
+msgid "Meta Title Color"
+msgstr "Metatitel: Färg"
+
+#: inc/customizer/settings/woocommerce.php:1112
+msgid "Meta Link Color"
+msgstr "Metalänk: Färg"
+
+#: inc/customizer/settings/woocommerce.php:1128
+msgid "Meta Link Color: Hover"
+msgstr "Metalänk: Färg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1142
+msgid "Single Product Thumbnails"
+msgstr "Enskild Produktminiatyr"
+
+#: inc/customizer/settings/woocommerce.php:1157
+msgid "Next/Prev Background: Hover"
+msgstr "Nästa/Föregående: Bakgrund: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1173
+msgid "Next/Prev Color"
+msgstr "Nästa/Föregående: Färg"
+
+#: inc/customizer/settings/woocommerce.php:1187
+msgid "Single Product Tabs"
+msgstr "Enskilda produkter flikar"
+
+#: inc/customizer/settings/woocommerce.php:1234
+msgid "Text Color: Hover"
+msgstr "Textfärg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1250
+msgid "Active Text Color"
+msgstr "Aktiv Textfärg"
+
+#: inc/customizer/settings/woocommerce.php:1266
+msgid "Active Text Borders Color"
+msgstr "Aktiv Text kantlinjefärg"
+
+#: inc/customizer/settings/woocommerce.php:1280
+msgid "Account"
+msgstr "Konto"
+
+#: inc/customizer/settings/woocommerce.php:1295
+msgid "Navigation: Borders Color"
+msgstr "Navigation: Kantlinjefärg"
+
+#: inc/customizer/settings/woocommerce.php:1311
+msgid "Navigation: Icons Color"
+msgstr "Navigation: Ikonfärg"
+
+#: inc/customizer/settings/woocommerce.php:1327
+msgid "Navigation: Links Color"
+msgstr "Navigation: Länkfärg"
+
+#: inc/customizer/settings/woocommerce.php:1343
+msgid "Navigation: Links Color: Hover"
+msgstr "Navigation: Länkfärg:Hover"
+
+#: inc/customizer/settings/woocommerce.php:1359
+msgid "Addresses: Box Background"
+msgstr "Adresser: Bakgrund"
+
+#: inc/customizer/settings/woocommerce.php:1375
+msgid "Addresses: Box Title Color"
+msgstr "Adresser: Rubrikfärg"
+
+#: inc/customizer/settings/woocommerce.php:1391
+msgid "Addresses: Box Title Border Bottom Color"
+msgstr "Adresser: Rubrik Kantlinje botten: Färg"
+
+#: inc/customizer/settings/woocommerce.php:1407
+msgid "Addresses: Box Content Color"
+msgstr "Adresser: Innehåll: Färg"
+
+#: inc/customizer/settings/woocommerce.php:1423
+msgid "Addresses: Box Button Background"
+msgstr "Adresser: Knapp: Bakgrund"
+
+#: inc/customizer/settings/woocommerce.php:1439
+msgid "Addresses: Box Button Background: Hover"
+msgstr "Adresser: Knapp: Bakgrund: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1455
+msgid "Addresses: Box Button color"
+msgstr "Adresser: Knapp: Färg"
+
+#: inc/customizer/settings/woocommerce.php:1471
+msgid "Addresses: Box Button color: Hover"
+msgstr "Adresser: Knapp: Färg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1516
+msgid "Head Background"
+msgstr "Huvudbakgrund"
+
+#: inc/customizer/settings/woocommerce.php:1532
+msgid "Head Titles Color"
+msgstr "Huvudrubriker: Färg"
+
+#: inc/customizer/settings/woocommerce.php:1548
+msgid "Cart Totals Table: Titles Color"
+msgstr "Varukorg Totalt Tabell: Rubrikfärg"
+
+#: inc/customizer/settings/woocommerce.php:1564
+msgid "Remove Button Color"
+msgstr "Ta bort knappfärg"
+
+#: inc/customizer/settings/woocommerce.php:1580
+msgid "Remove Button Color: Hover"
+msgstr "Ta bort knappfärg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1594
+msgid "Checkout"
+msgstr "Kassan"
+
+#: inc/customizer/settings/woocommerce.php:1609
+msgid "Notices: Borders Color"
+msgstr "Notiser: Kantlinjefärg"
+
+#: inc/customizer/settings/woocommerce.php:1625
+msgid "Notices: Icon Color"
+msgstr "Notiser: Ikonfärg"
+
+#: inc/customizer/settings/woocommerce.php:1641
+msgid "Notices: Color"
+msgstr "Notiser: Färg"
+
+#: inc/customizer/settings/woocommerce.php:1657
+msgid "Notices: Link Color"
+msgstr "Notiser: Länkfärg"
+
+#: inc/customizer/settings/woocommerce.php:1673
+msgid "Notices: Link Color: Hover"
+msgstr "Notiser: Länkfärg: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1689
+msgid "Notices Form: Border Color"
+msgstr "Notiser formulär: Kantlinjefärg"
+
+#: inc/customizer/settings/woocommerce.php:1705
+msgid "Titles Color"
+msgstr "Rubriker: Färg"
+
+#: inc/customizer/settings/woocommerce.php:1721
+msgid "Titles Border Bottom Color"
+msgstr "Rubriker: Kantlinjefärg Botten"
+
+#: inc/customizer/settings/woocommerce.php:1737
+msgid "Table Main Background"
+msgstr "Tabeller Huvudbakgrund"
+
+#: inc/customizer/settings/woocommerce.php:1753
+msgid "Table Titles Color"
+msgstr "Tabell: Rubrikfärg"
+
+#: inc/customizer/settings/woocommerce.php:1769
+msgid "Table Borders Color"
+msgstr "Tabell: Kantlinjefärg"
+
+#: inc/customizer/settings/woocommerce.php:1785
+msgid "Payment Methods Background"
+msgstr "Betalningsmetoder: Bakgrund"
+
+#: inc/customizer/settings/woocommerce.php:1801
+msgid "Payment Methods Borders Color"
+msgstr "Betalningsmetoder: Kantlinjefärg"
+
+#: inc/customizer/settings/woocommerce.php:1817
+msgid "Payment Box Background"
+msgstr "Betalning: Bakgrund"
+
+#: inc/customizer/settings/woocommerce.php:1833
+msgid "Payment Box Color"
+msgstr "Betalning: Färg"
+
+#: inc/helpers.php:904
+msgid "Type your search"
+msgstr "Skriv in ditt sökord"
+
+#: inc/helpers.php:909 partials/mobile-search.php:15 searchform.php:10
+msgid "Search"
+msgstr "Sök"
+
+#: inc/helpers.php:1065
+msgid "You searched for:"
+msgstr "Du sökte efter: "
+
+#: inc/helpers.php:1070
+msgid "This author has written"
+msgstr "Denna författare har skrivit"
+
+#: inc/helpers.php:1070
+msgid "articles"
+msgstr "artiklar"
+
+#: inc/helpers.php:1372 inc/helpers.php:1416
+msgid "Newer Posts"
+msgstr "Nyare inlägg"
+
+#: inc/helpers.php:1375 inc/helpers.php:1419
+msgid "Older Posts"
+msgstr "Äldre inlägg"
+
+#: inc/helpers.php:1409
+msgid "Loading..."
+msgstr "Laddar…"
+
+#: inc/page-header.php:41
+msgid "Search Results Found"
+msgstr "Sökresultat"
+
+#: inc/page-header.php:59
+msgid "Daily Archives: %s"
+msgstr "Dagliga arkiv: %s"
+
+#: inc/page-header.php:64
+msgid "Monthly Archives: %s"
+msgstr "Månadsarkiv: %s"
+
+#: inc/page-header.php:69
+msgid "Yearly Archives: %s"
+msgstr "Årliga arkiv: %s"
+
+#: inc/page-header.php:91
+msgid "404: Page Not Found"
+msgstr "404: Sidan kan inte hittas"
+
+#: inc/plugins/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr "Installera nödvändiga plugins"
+
+#: inc/plugins/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr "Installera Plugins"
+
+#. translators: %s: plugin name.
+#: inc/plugins/class-tgm-plugin-activation.php:330
+msgid "Installing Plugin: %s"
+msgstr "Installerar Plugin: %s"
+
+#. translators: %s: plugin name.
+#: inc/plugins/class-tgm-plugin-activation.php:332
+msgid "Updating Plugin: %s"
+msgstr "Uppdaterar Plugin: %s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr "Någonting gick fel med pluginets API. "
+
+#. translators: 1: plugin name(s).
+#: inc/plugins/class-tgm-plugin-activation.php:370
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Börja installera plugin"
+msgstr[1] "Börja installera plugins"
+
+#: inc/plugins/class-tgm-plugin-activation.php:375
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Börja uppdatera plugin"
+msgstr[1] "Börja uppdatera plugins"
+
+#: inc/plugins/class-tgm-plugin-activation.php:380
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Börja aktivera plugin"
+msgstr[1] "Börja aktivera plugins"
+
+#: inc/plugins/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr "Tillbaks till nödvändiga plugin-installeraren"
+
+#: inc/plugins/class-tgm-plugin-activation.php:386
+#: inc/plugins/class-tgm-plugin-activation.php:827
+#: inc/plugins/class-tgm-plugin-activation.php:2533
+#: inc/plugins/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr "Tillbaks till panelen"
+
+#: inc/plugins/class-tgm-plugin-activation.php:387
+#: inc/plugins/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr "Plugin aktiverades."
+
+#: inc/plugins/class-tgm-plugin-activation.php:388
+#: inc/plugins/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgstr "Följande plugin aktiverades: "
+
+#. translators: 1: plugin name.
+#: inc/plugins/class-tgm-plugin-activation.php:390
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Ingen åtgärd utfördes. Plugin %1$s är redan aktiverad. "
+
+#. translators: 1: plugin name.
+#: inc/plugins/class-tgm-plugin-activation.php:392
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Plugin är inte aktiverad. En senare version av %s behövs för detta tema. "
+"Vänligen uppdatera din plugin. "
+
+#. translators: 1: dashboard link.
+#: inc/plugins/class-tgm-plugin-activation.php:394
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Alla plugins är installerade och aktiverade. %1$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr "Stäng notis"
+
+#: inc/plugins/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+"Det finns en eller fler nödvändiga eller rekommendera plugins att "
+"installera, uppdatera eller aktivera."
+
+#: inc/plugins/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr "Vänligen kontakta administratören av denna sida för hjälp. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+"Denna plugin behöver uppdateras för att vara kompatibel med ditt tema. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr "Uppdatering Nödvändig"
+
+#: inc/plugins/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"Pluginpaketet innehåller inte en mapp med önskad information och att döpa om "
+"filen fungerade inte. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:934
+#: inc/plugins/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+"Vänligen kontakta pluginutvecklaren och be dom packetera sin plugin enligt "
+"WordPress riktlinjer. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"Pluginpaketet innehåller mer än en fil, men filerna är inte förpackade i en "
+"mapp. "
+
+#. translators: %s: version number
+#: inc/plugins/class-tgm-plugin-activation.php:1982
+msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/plugins/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr "Krävs"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr "Rekommenderad"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr "Wordpress-biblioteket"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr "Extern källa"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr "Förpacketerad"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr "Inte installerad"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr "Installerad men inte aktiverad"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr "Aktiv"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr "Nödvändig uppdatering är inte tillgänglig"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr "Nödvändig Uppdatering"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr "Uppdatering rekommenderad"
+
+#. translators: 1: number of plugins.
+#: inc/plugins/class-tgm-plugin-activation.php:2392
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "Att installera <span class=\"count\">(%s)</span>"
+msgstr[1] "Att installera <span class=\"count\">(%s)</span>"
+
+#. translators: 1: number of plugins.
+#: inc/plugins/class-tgm-plugin-activation.php:2396
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Uppdatering tillgänglig <span class=\"count\">(%s)</span>"
+msgstr[1] "Uppdatering tillgänglig <span class=\"count\">(%s)</span>"
+
+#. translators: 1: number of plugins.
+#: inc/plugins/class-tgm-plugin-activation.php:2400
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "För att aktivera <span class=\"count\">(%s)</span>"
+msgstr[1] "För att aktivera <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr "Installerad version:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr "Minimum nödvändig version: "
+
+#: inc/plugins/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr "Tillgänglig version:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr "Inga plugins att installera, uppdatera eller aktivera."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr "Plugin"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr "Källa"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr "Typ"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr "Version"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr "Status"
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/plugins/class-tgm-plugin-activation.php:2603
+msgid "Install %2$s"
+msgstr "Installera %2$s"
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/plugins/class-tgm-plugin-activation.php:2608
+msgid "Update %2$s"
+msgstr "Uppdatera %2$s"
+
+#. translators: %2$s: plugin name in screen reader markup
+#: inc/plugins/class-tgm-plugin-activation.php:2614
+msgid "Activate %2$s"
+msgstr "Aktivera %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr "Uppgraderingsmeddelande från pluginutvecklaren: "
+
+#: inc/plugins/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr "Installera"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr "Uppdatera"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr "Aktivera"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Inga plugins valda för installation. Ingen åtgärd utförd. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Inga plugins valda för uppdatering. Ingen åtgärd utförd. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr "Inga plugins tillgängliga för installation. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr "Inga plugins tillgängliga för uppdatering. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr "Inga plugins valda för aktivering. Ingen åtgärd utförd. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr "Inga plugins tillgängliga för aktivering."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr "Pluginaktivering kunde inte genomföras."
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/plugins/class-tgm-plugin-activation.php:3498
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Uppdaterar Plugin %1$s (%2$d/%3$d)"
+
+#. translators: 1: plugin name, 2: error message.
+#: inc/plugins/class-tgm-plugin-activation.php:3501
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+"Ett fel uppstod när följande installerades %1$s: <strong>%2$s</strong>."
+
+#. translators: 1: plugin name.
+#: inc/plugins/class-tgm-plugin-activation.php:3503
+msgid "The installation of %1$s failed."
+msgstr "Installationen för %1$s kunde inte genomföras."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Installationsprocessen startas. Denna process kan ta en stund hos vissa "
+"leverantörer, så var tålmodig. "
+
+#. translators: 1: plugin name.
+#: inc/plugins/class-tgm-plugin-activation.php:3509
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s installerad och aktiverad. "
+
+#: inc/plugins/class-tgm-plugin-activation.php:3509
+#: inc/plugins/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr "Visa detaljer"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3509
+#: inc/plugins/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr "Dölj detaljer"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr "Alla installationer och aktiveringar har slutförts. "
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/plugins/class-tgm-plugin-activation.php:3512
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installerar och Aktiverar plugin %1$s (%2$d/%3$d)"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Installationsprocessen startas. Denna process kan ta en stund hos vissa "
+"leverantörer, så var tålmodig. "
+
+#. translators: 1: plugin name.
+#: inc/plugins/class-tgm-plugin-activation.php:3517
+msgid "%1$s installed successfully."
+msgstr "%1$s har blivit installerad."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr "Alla installationer är slutförda."
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: inc/plugins/class-tgm-plugin-activation.php:3520
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Installerar plugin %1$s (%2$d/%3$d)"
+
+#: inc/walker/init.php:56
+msgid "Disable link"
+msgstr "Inaktivera länk"
+
+#: inc/walker/init.php:63
+msgid "Display Latest Posts"
+msgstr "Visa senaste inlägg"
+
+#: inc/walker/init.php:70
+msgid "Enable megamenu"
+msgstr "Aktivera mega meny?"
+
+#: inc/walker/init.php:76
+msgid "Megamenu auto width?"
+msgstr "Mega Meny autobredd?"
+
+#: inc/walker/init.php:81
+msgid "Megamenu columns (from 2 to 6)"
+msgstr "Megameny kolumner (från 2 till 6)"
+
+#: inc/walker/init.php:88
+msgid "Hide Mega menu heading?"
+msgstr "Följ Mega meny rubriker?"
+
+#: inc/walker/init.php:93
+msgid "Enter Icon Class"
+msgstr "Fyll i Ikonklass"
+
+#: inc/walker/init.php:99
+msgid "Mega Menu Widget Area"
+msgstr "Mega Menu Widgetområde"
+
+#: inc/walker/init.php:101
+msgid "Select Widget Area"
+msgstr "Välj Widgetområde"
+
+#: inc/welcome/welcome.php:58
+msgid ""
+"Thanks for choosing Ocean! You can read hints and tips on how get the most "
+"out of your new theme on the %swelcome screen%s."
+msgstr ""
+"Tack för att du valt Ocean! Du kan läsa tips och trix om hur du får ut det "
+"mesta av ditt nya tema på %svälkomstsidan%s. "
+
+#: inc/welcome/welcome.php:59
+msgid "Get started with OCean"
+msgstr "Kom igång med Ocean"
+
+#: inc/welcome/welcome.php:75 inc/welcome/welcome.php:76
+msgid "Theme"
+msgstr "Tema"
+
+#: inc/welcome/welcome.php:105
+msgid "Join us on Twitter"
+msgstr "Följ oss på Twitter"
+
+#: inc/welcome/welcome.php:106
+msgid "Join us on Facebook"
+msgstr "Följ oss på Facebook"
+
+#: inc/welcome/welcome.php:107
+msgid "Find us on GitHub"
+msgstr "Hitta oss på GitHub"
+
+#: inc/welcome/welcome.php:116
+msgid "Thank you to use Ocean"
+msgstr "Tack för att du använder Ocean"
+
+#: inc/welcome/welcome.php:118
+msgid ""
+"Ocean is the perfect theme for your project. Lightweight and highly "
+"extendible, it will enable you to create almost any type of site with a "
+"beautiful & professional design. There are several options to personalise "
+"your website, multiple widget regions, a responsive design and much more. "
+"Developers will love his extensible codebase making it a joy to customise "
+"and extend."
+msgstr ""
+"Ocean är det perfekta temat för ditt projekt. Det är lätt och utbyggbart. "
+"Det kommer tillåta dig att skapa nästan vilken typ av sida som helst med "
+"vacker och professionell design. Det finns flera inställningar för att göra "
+"din hemsida personlig. "
+
+#: inc/welcome/welcome.php:120
+msgid "The perfect theme to use with your favorite page builder!"
+msgstr "Det perfekta temat för att använda med din favorit-sidbyggare!"
+
+#: inc/welcome/welcome.php:126
+msgid "Extend his functionalities with our extensions"
+msgstr "Utöka funktionaliteten med våra tillägg"
+
+#: inc/welcome/welcome.php:128
+msgid ""
+"Check our free and premium extensions that extend Ocean&rsquo;s "
+"functionality and make it more powerful."
+msgstr ""
+"Kolla in våra gratis och premiumtillägg som utökar Ocean’s funktionalitet "
+"och gör det mer kraftfullt. "
+
+#: inc/welcome/welcome.php:132
+msgid "Ocean Extra"
+msgstr "Ocean Extra"
+
+#: inc/welcome/welcome.php:133
+msgid ""
+"Add extra features like metaboxes, custom CSS and a panel to activate the "
+"extensions."
+msgstr ""
+"Lägg till fler funktioner som metaboxar, anpassad CSS och en panel för att "
+"aktivera tillägg."
+
+#: inc/welcome/welcome.php:136
+msgid "Elementor Widgets"
+msgstr "Elementor Widgets"
+
+#: inc/welcome/welcome.php:137
+msgid ""
+"Add some awesome new widgets to the popular free page builder Elementor."
+msgstr ""
+"Lägg till nya fantastiska widgets till den populära sidbyggaren Elementor. "
+
+#: inc/welcome/welcome.php:141
+msgid ""
+"Generates an unlimited number of sidebars and place them on any page or post."
+msgstr ""
+"Genererar oändligt många sidopaneler och möjligheten att placera dessa på "
+"valfri sida eller inlägg. "
+
+#: inc/welcome/welcome.php:144
+msgid "Sticky Header"
+msgstr "Fäst sidhuvud"
+
+#: inc/welcome/welcome.php:145
+msgid ""
+"A simple extension to attach the header at the top of your screen with an "
+"animation."
+msgstr ""
+"Ett enkelt tillägg för att fästa sidhuvudet på toppen av din skärm med en "
+"animation"
+
+#: inc/welcome/welcome.php:148
+msgid "Footer Callout"
+msgstr "Sidfot Förklaringstext"
+
+#: inc/welcome/welcome.php:149
+msgid ""
+"Add some relevant/important information about your company or product in "
+"your footer."
+msgstr ""
+"Lägg till relevant/viktig information om ditt företag eller din produkt i "
+"sidfoten."
+
+#: inc/welcome/welcome.php:152
+msgid "Side Panel"
+msgstr "Sidopanel"
+
+#: inc/welcome/welcome.php:153
+msgid ""
+"Display a panel on the right or left with your favorite widgets by clicking "
+"on an icon in the menu."
+msgstr ""
+"Visa en panel till höger eller vänster med dina favoritwidgets genom att "
+"klicka på en ikon i menyn. "
+
+#: inc/welcome/welcome.php:156
+msgid "Demo Import"
+msgstr "Demo Import"
+
+#: inc/welcome/welcome.php:157
+msgid ""
+"Import the Ocean demo content, widgets and customizer settings with one "
+"click."
+msgstr ""
+"Importera Ocean demoinnehåll, widgets och anpassade inställningar med ett "
+"klick. "
+
+#: inc/welcome/welcome.php:160
+msgid "Social Sharing"
+msgstr "Social delning"
+
+#: inc/welcome/welcome.php:161
+msgid ""
+"A simple extension to add your prefered social sharing buttons to your "
+"single posts."
+msgstr ""
+"Ett enkelt tillägg för att skapa dina utvalda knappar för social delning "
+"till dina enskilda inlägg."
+
+#: inc/welcome/welcome.php:166
+msgid "View all Ocean extensions"
+msgstr "Visa alla tillägg till Ocean"
+
+#: inc/welcome/welcome.php:173
+msgid "Create your WordPress site quickly with Themecloud"
+msgstr "Skapa din Wordpress site snabbt med Themecloud"
+
+#: inc/welcome/welcome.php:175
+msgid "What is Themecloud?"
+msgstr "Vad är Themecloud?"
+
+#: inc/welcome/welcome.php:175
+msgid ""
+"It&rsquo;s a better way to build WordPress websites, instant setup, no "
+"coding required. They are removed all of the technical hurdles standing "
+"between you and your ideal site. Don’t worry about installations, "
+"configurations, migrations and maintenance. Focus on creating stellar "
+"content – and watch your business skyrocket! Not convinced yet?"
+msgstr "Ett bättre sätt att bygga Wordpress sidor. Di"
+
+#: inc/welcome/welcome.php:175
+msgid "Look at this great review from WPKube"
+msgstr "Titta på detta fantastiska betyg från WPKube"
+
+#: inc/welcome/welcome.php:177
+msgid "From $9.90/mo"
+msgstr "Från $9.90/mån"
+
+#: inc/welcome/welcome.php:177
+msgid "( 15-day free trial, no credit card required )"
+msgstr "( 15 dagars gratis provperiod. Inget kreditkort behövs )"
+
+#: inc/welcome/welcome.php:180
+msgid "Learn more about Themecloud"
+msgstr "Läs mer om Themecloud"
+
+#: inc/welcome/welcome.php:189
+msgid "Getting started with Ocean"
+msgstr "Komma igång med Ocean"
+
+#: inc/welcome/welcome.php:191
+msgid ""
+"Take a look in the options of the Customizer and see yourself how easy and "
+"quick to customize the theme as you wish."
+msgstr ""
+"Ta en titt i Inställningarna för Tema-Anpassaren och se själv hur snabbt och "
+"enkelt du kan anpassa temat efter egna önskemål. "
+
+#: inc/welcome/welcome.php:195
+msgid "Upload your logo"
+msgstr "Ladda upp din logotyp"
+
+#: inc/welcome/welcome.php:196
+msgid "Add your own logo and retina logo used for the mobile design."
+msgstr ""
+"Lägg till din egen standard/retina-logotyp som används för mobila enheter. "
+
+#: inc/welcome/welcome.php:197 inc/welcome/welcome.php:202
+#: inc/welcome/welcome.php:207 inc/welcome/welcome.php:212
+#: inc/welcome/welcome.php:217 inc/welcome/welcome.php:222
+#: inc/welcome/welcome.php:227 inc/welcome/welcome.php:232
+msgid "Go to the option"
+msgstr "Gå till inställningen"
+
+#: inc/welcome/welcome.php:200
+msgid "Add your favicon"
+msgstr "Lägg till din favicon"
+
+#: inc/welcome/welcome.php:201
+msgid "The favicon is used as a browser and app icon for your website."
+msgstr "Faviconen används som webbläsare och appikon för din webbsida. "
+
+#: inc/welcome/welcome.php:205
+msgid "Choose your primary color"
+msgstr "Välj din primära färg"
+
+#: inc/welcome/welcome.php:206
+msgid "Replace the default primary and hover color by your own colors."
+msgstr "Ändra primär- och hoverfärg efter ditt eget färgschema."
+
+#: inc/welcome/welcome.php:210
+msgid "Change the links color"
+msgstr "Ändra länkfärgen"
+
+#: inc/welcome/welcome.php:211
+msgid "Choose the color and hover color of your links for the entire site."
+msgstr ""
+"Välj färg och hoverfärg till dina länkar. Inställningen gäller för hela "
+"sajten. "
+
+#: inc/welcome/welcome.php:215
+msgid "Choose your typography"
+msgstr "Välj din typografi"
+
+#: inc/welcome/welcome.php:216
+msgid "Choose your own typography for any parts of your website."
+msgstr "Välj din egen typografi för olika delar av sajten. "
+
+#: inc/welcome/welcome.php:220
+msgid "Top bar options"
+msgstr "Topprad: Inställningar"
+
+#: inc/welcome/welcome.php:221
+msgid "Enable/Disable the top bar, add your own paddings and colors."
+msgstr "Aktivera/Inaktivera topprad. Lägg till dina egna paddings och färger. "
+
+#: inc/welcome/welcome.php:225
+msgid "Header options"
+msgstr "Inställningar: Sidhuvud"
+
+#: inc/welcome/welcome.php:226
+msgid "Choose the style, the height and the colors for your site header."
+msgstr "Välj stil, höjd och färger för ditt sidhuvud. "
+
+#: inc/welcome/welcome.php:230
+msgid "Footer bottom options"
+msgstr "Sidfot Botten Inställningar"
+
+#: inc/welcome/welcome.php:231
+msgid "Add your copyright, paddings and colors for the footer bottom."
+msgstr "Lägg till din copyright, padding och färger för "
+
+#: inc/welcome/welcome.php:245
+msgid "Customize Your Site"
+msgstr "Anpassa din sida"
+
+#: inc/welcome/welcome.php:254
+msgid "Contribute to Ocean"
+msgstr "Bidra till Ocean"
+
+#: inc/welcome/welcome.php:256
+msgid ""
+"You&rsquo;ve found a bug? Want to contribute a patch, create a new feature "
+"or extension?"
+msgstr ""
+"Har du hittat en bugg? Vill du delta i patchutveckling, skapa en ny funktion "
+"eller ett nytt tillägg?"
+
+#: inc/welcome/welcome.php:257
+msgid "GitHub is the place to go!"
+msgstr "GitHub är platsen att besöka!"
+
+#: inc/welcome/welcome.php:263
+msgid "Get support"
+msgstr "Få support"
+
+#: inc/welcome/welcome.php:265
+msgid ""
+"You can find a wide range of information on how to use and customise Ocean "
+"in our"
+msgstr ""
+"Du kan hitta mycket information om hur du använder och anpassar Ocean i vår"
+
+#: inc/welcome/welcome.php:265
+msgid "documentation"
+msgstr "dokumentation"
+
+#: inc/welcome/welcome.php:265
+msgid "If you need help?"
+msgstr "Om du behöver hjälp?"
+
+#: inc/welcome/welcome.php:265
+msgid "open a support ticket"
+msgstr "Öppna en supportbiljett"
+
+#: inc/welcome/welcome.php:271
+msgid "Recommended plugins"
+msgstr "Rekommenderade plugins"
+
+#: inc/welcome/welcome.php:273
+msgid ""
+"Below you will find links to plugins I personally like and recommend. None "
+"of these plugins are required for your theme to work, they simply add "
+"additional functionality."
+msgstr ""
+"Nedan finner du länkar till plugins som jag personligen gillar och "
+"rekommenderar. Ingen av dessa plugins krävs för att ditt tema ska fungera. "
+"De lägger helt enkelt till funktionalitet till din sida. "
+
+#: inc/welcome/welcome.php:277
+msgid ""
+"Manage multiple contact forms and customize the form and the mail contents "
+"with markups."
+msgstr "Hantera flera kontaktformulär och anpassa format och innehåll. "
+
+#: inc/welcome/welcome.php:279
+msgid ""
+"Gravity Forms is the easiest tool to create advanced forms for your "
+"WordPress powered website."
+msgstr ""
+"Gravity Forms är det enklaste verktyget för att skapa avancerade formulär "
+"för din WordPress sida. "
+
+#: inc/welcome/welcome.php:281
+msgid ""
+"The most advanced frontend drag & drop page builder. Create high-end, pixel "
+"perfect websites."
+msgstr ""
+"Den mest avancerade frontend drag-n-drop sidbyggaren. Skapa fantastiska, "
+"pixelperfekta webbsidor. "
+
+#: inc/welcome/welcome.php:283
+msgid ""
+"A drag and drop WordPress Page Builder. Create with ease beautiful & "
+"professional pages."
+msgstr ""
+"En drag-n-drop WordPress sidbyggare. Skapa enkelt snygga och professionella "
+"sidor. "
+
+#: inc/welcome/welcome.php:285
+msgid ""
+"Visual Composer is the ultimate plugin for building every WordPress site "
+"without coding."
+msgstr ""
+"Visual Composer är den ultimata pluginen för att bygga WordPress sidor utan "
+"att skriva kod. "
+
+#: inc/welcome/welcome.php:287
+msgid ""
+"It&rsquo;s not just a slider, build modern & mobile friendly presentations "
+"for your website in no time."
+msgstr ""
+"Det är inte bara en slider. Bygg moderna och mobilvänliga presentationer "
+"till sin webbsida på nolltid. "
+
+#: inc/welcome/welcome.php:289
+msgid ""
+"A powerful and flexible plugin that makes it a breeze for users to sign-up "
+"and become members."
+msgstr ""
+"En kraftfull och flexibel plugin som för det enkelt för användare att skapa "
+"konto och bli medlemmar."
+
+#: inc/welcome/welcome.php:291
+msgid ""
+"WooCommerce is a free eCommerce plugin that allows you to sell anything, "
+"beautifully."
+msgstr ""
+"WooCommerce är ett gratis e-handelsplugin som låter dig sälja vad som helst, "
+"på ett snyggt sätt. "
+
+#: inc/welcome/welcome.php:295
+msgid "More Recommended Plugins"
+msgstr "Fler rekommenderade plugins"
+
+#: inc/woocommerce/woocommerce-config.php:212
+msgid "WooCommerce Sidebar"
+msgstr "WooCommerce Sidfält"
+
+#: inc/woocommerce/woocommerce-config.php:298
+msgid "Sale!"
+msgstr "Utförsäljning!"
+
+#: inc/woocommerce/woocommerce-config.php:440
+msgid "Welcome!"
+msgstr "Välkommen!"
+
+#: inc/woocommerce/woocommerce-config.php:449
+msgid "Logout"
+msgstr "Logga ut"
+
+#: inc/woocommerce/woocommerce-config.php:474
+msgid "Out of Stock"
+msgstr "Slut i lager"
+
+#: inc/woocommerce/woocommerce-config.php:746
+msgid "Your cart"
+msgstr "Din kundvagn"
+
+#: inc/woocommerce/woocommerce-config.php:772
+msgid "WooCommerce Product Title"
+msgstr "WooCommerce Produkttitel"
+
+#: inc/woocommerce/woocommerce-helpers.php:73
+#: woocommerce/loop/thumbnail/featured-image.php:35
+msgid "Placeholder Image"
+msgstr "Platshållarbild"
+
+#: partials/entry/readmore.php:14
+msgid "Continue Reading"
+msgstr "Fortsätt läsa"
+
+#: partials/header/mobile-sidr-close.php:15
+msgid "Close Menu"
+msgstr "Stäng meny"
+
+#: partials/header/search-overlay.php:17
+msgid "Type your text and hit enter to search"
+msgstr "Skriv in din fras och tryck enter för att söka"
+
+#: partials/header/search-replace.php:15
+msgid "Type then hit enter to search..."
+msgstr "Skriv, sedan trycker du enter för att söka…"
+
+#: partials/none.php:11
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Redo att publicera ditt första inlägg? <a href=\"%1$s\">Börja här</a>."
+
+#: partials/none.php:13
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with "
+"different keywords."
+msgstr ""
+"Tyvärr, men ingenting matchade din sökning. Vänligen försök igen med andra "
+"sökord. "
+
+#: partials/none.php:15
+msgid "There aren't any posts currently published in this category."
+msgstr "Det finns för närvarande inga inlägg publicerade i denna kategori."
+
+#: partials/none.php:17
+msgid "There aren't any posts currently published under this taxonomy."
+msgstr ""
+"Det finns för närvarande inga inlägg publicerade under denna taxonomi. "
+
+#: partials/none.php:19
+msgid "There aren't any posts currently published under this tag."
+msgstr "Det finns för närvarande ingenting publicerat under denna tagg."
+
+#: partials/none.php:21
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+msgstr "Det verkar inte som vi kan hitta det du letar efter."
+
+#: partials/single/author-bio.php:35 partials/single/author-bio.php:48
+msgid "Visit Author Page"
+msgstr "Besök författarens sida"
+
+#: partials/single/next-prev.php:54
+msgid "Previous Post"
+msgstr "Föregående inlägg"
+
+#: partials/single/next-prev.php:60
+msgid "Next Post"
+msgstr "Nästa inlägg"
+
+#: partials/single/related-posts.php:14
+msgid "You Might Also Like"
+msgstr "Du kanske också gillar"
+
+#. Theme Name of the plugin/theme
+msgid "Ocean Theme"
+msgstr "Ocean Theme"
+
+#. Theme URI of the plugin/theme
+msgid "https://oceanwp.org/"
+msgstr "https://oceanwp.org/"
+
+#. Description of the plugin/theme
+msgid ""
+"Ocean is the perfect theme for your project. Lightweight and highly "
+"extendible, it will enable you to create almost any type of site with a "
+"beautiful & professional design. There are several options to personalise "
+"your website, multiple widget regions, a responsive design and much more. "
+"Developers will love his extensible codebase making it a joy to customise "
+"and extend. Looking for a Multi-Purpose theme? Look no further!"
+msgstr ""
+"Ocean är det perfekta temat för ditt projekt. Lättviktigt och extremt "
+"utbyggbart, du kommer kunna skapa nästan vilken typ av sida  som helst med "
+"vacker och professionell design."
+
+#. Author of the plugin/theme
+msgid "Nick"
+msgstr "Nick"
+
+#. Author URI of the plugin/theme
+msgid "https://oceanwp.org/about-me/"
+msgstr "https://oceanwp.org/about-me/"
+
+#. Template Name of the plugin/theme
+msgid "Landing Page"
+msgstr "Landningssida"
+
+#: comments.php:40
+msgctxt "comments title"
+msgid "This Post Has One Comment"
+msgid_plural "This Post Has %1$s Comments"
+msgstr[0] "Detta inlägg har en kommentar"
+msgstr[1] "Detta inlägg har %1$s kommentarer"
+
+#: inc/classes/breadcrumbs.php:259
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr "Brödsmulor"
+
+#: inc/classes/breadcrumbs.php:689
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr "A:i a"
+
+#: inc/classes/breadcrumbs.php:706
+msgctxt "minute archives time format"
+msgid "i"
+msgstr "i"
+
+#: inc/classes/breadcrumbs.php:723
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr "g a"
+
+#: inc/classes/breadcrumbs.php:739 inc/classes/breadcrumbs.php:768
+#: inc/classes/breadcrumbs.php:795 inc/classes/breadcrumbs.php:822
+#: inc/classes/breadcrumbs.php:1157
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/classes/breadcrumbs.php:740 inc/classes/breadcrumbs.php:796
+#: inc/classes/breadcrumbs.php:1161
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr "F"
+
+#: inc/classes/breadcrumbs.php:741 inc/classes/breadcrumbs.php:1165
+msgctxt "daily archives date format"
+msgid "j"
+msgstr "j"
+
+#: inc/classes/breadcrumbs.php:769
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr "W"
+
+#: inc/page-header.php:64
+msgctxt "Page title monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/page-header.php:69
+msgctxt "Page title yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/plugins/class-tgm-plugin-activation.php:1121
+#: inc/plugins/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr "and"
+
+#. translators: 1: install status, 2: update status
+#: inc/plugins/class-tgm-plugin-activation.php:2342
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#. translators: 1: number of plugins.
+#: inc/plugins/class-tgm-plugin-activation.php:2388
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Alla <span class=\"count\">(%s)</span>"
+msgstr[1] "Alla <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "okänt"

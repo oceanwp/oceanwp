@@ -46,14 +46,14 @@ class OceanWP_Customizer_Radio_Image_Control extends WP_Customize_Control {
 		parent::to_json();
 
 		if ( isset( $this->default ) ) {
-			$this->json['default'] = $this->default;
+			$this->json['default'] 	= $this->default;
 		} else {
-			$this->json['default'] = $this->setting->default;
+			$this->json['default'] 	= $this->setting->default;
 		}
-		$this->json['value']       = $this->value();
-		$this->json['choices']     = $this->choices;
-		$this->json['link']        = $this->get_link();
-		$this->json['id']          = $this->id;
+		$this->json['value']       	= $this->value();
+		$this->json['choices']     	= $this->choices;
+		$this->json['link']        	= $this->get_link();
+		$this->json['id']          	= $this->id;
 
 		$this->json['inputAttrs'] = '';
 		foreach ( $this->input_attrs as $attr => $value ) {

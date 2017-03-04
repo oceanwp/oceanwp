@@ -38,12 +38,20 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 	} ?>
 
 	<div id="oceanwp-mobile-menu-icon" class="clr">
+
 		<?php do_action( 'ocean_before_mobile_icon' ); ?>
-		<?php if ( OCEANWP_WOOCOMMERCE_ACTIVE ) { ?>
+
+		<?php
+		// Cart icon
+		if ( OCEANWP_WOOCOMMERCE_ACTIVE
+			&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) { ?>
 			<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="mobile-wcmenucart"><?php echo $cart_icon; ?></a>
 		<?php } ?>
+
 		<a href="#" class="mobile-menu"><?php echo $icon; ?><span class="oceanwp-text"><?php echo $text; ?></span></a>
+
 		<?php do_action( 'ocean_after_mobile_icon' ); ?>
+
 	</div><!-- #oceanwp-mobile-menu-navbar -->
 
 <?php endif; ?>

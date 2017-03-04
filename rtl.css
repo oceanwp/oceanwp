@@ -98,6 +98,9 @@ blockquote { padding-right: 20px; padding-left: 0; border-right-width: 3px; bord
 .minimal-header.left-menu #site-logo,
 .transparent-header.left-menu #site-logo { padding-left: 20px; padding-right: 0; }
 
+/* If center menu */
+.center-menu #site-navigation-wrap { right: -15px; }
+
 /* Social menu */
 #oceanwp-social-menu { float: left; }
 #oceanwp-social-menu.simple-social { right: auto; left: -8px; }

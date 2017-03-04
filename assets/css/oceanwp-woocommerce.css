@@ -939,7 +939,9 @@ Phone Portrait & Landscape
 	.col2-set .col-1, .woocommerce .form-row-first,
 	.col2-set .col-2, .woocommerce .form-row-last,
 	.woocommerce div.product div.images,
-	.woocommerce div.product div.summary { float: none; width: 100%; }
+	.woocommerce div.product div.summary,
+	.woocommerce.content-full-width div.product div.images,
+	.woocommerce.content-full-width div.product div.summary { float: none; width: 100%; }
 	
 	.col2-set > div:first-child { margin-bottom: 30px; }
 	

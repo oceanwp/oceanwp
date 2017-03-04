@@ -57,7 +57,8 @@ object {
 	clear: both;
 }
 
-img.aligncenter {
+img.aligncenter,
+.wp-caption.aligncenter {
 	display: block;
 	margin: 0 auto;
 }

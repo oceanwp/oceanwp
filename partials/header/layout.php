@@ -39,6 +39,14 @@ if ( 'transparent' == $header_style ) { ?>
 <header id="site-header" class="<?php echo oceanwp_header_classes(); ?>" itemscope="itemscope" itemtype="http://schema.org/WPHeader" data-height="<?php echo esc_attr( $header_height ); ?>">
 
 	<?php
+	// If header video
+	if ( has_header_video() ) { ?>
+		<div class="custom-header-media">
+			<?php the_custom_header_markup(); ?>
+		</div>
+	<?php
+	}
+
 	// If top header style
 	if ( 'top' == $header_style ) {
 		get_template_part( 'partials/header/style/top-header' );

@@ -8,7 +8,11 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-} ?>
+}
+
+// Excerpt length
+$excerpt = get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' );
+$excerpt = $excerpt ? $excerpt : '30'; ?>
 
 <div class="blog-entry-summary clr">
 
@@ -17,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     if ( get_theme_mod( 'ocean_blog_excerpt', true ) ) :
 
         // Display custom excerpt
-        oceanwp_excerpt( 30 );
+        oceanwp_excerpt( esc_attr( $excerpt ) );
 
     // If excerpts are disabled, display full content
     else :

@@ -1,8 +1,4 @@
 <?php
-
-// uncomment this line for testing
-//set_site_transient( 'update_plugins', null );
-
 /**
  * Allows plugins to use their own update API.
  * 
@@ -86,9 +82,6 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 			// Updater
 			add_action( 'admin_init', array( $this, 'oceanwp_auto_updater' ), 0 );
 
-			// admin notices
-			//add_action( 'admin_notices', array( $this, 'oceanwp_notices' ) );
-
 			// Show changelog
 			add_action( 'admin_init', array( $this, 'oceanwp_show_changelog' ) );
 		}
@@ -117,7 +110,26 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 			$has_ran = true;
 
 		}
-		
+
+		/**
+		 * Sanitize HTML Class Names
+		 *
+		 * @param  string|array $class HTML Class Name(s)
+		 * @return string $class
+		 */
+		public function sanitize_html_class( $class = '' ) {
+
+			if ( is_string( $class ) ) {
+				$class = sanitize_html_class( $class );
+			} else if ( is_array( $class ) ) {
+				$class = array_values( array_map( 'sanitize_html_class', $class ) );
+				$class = implode( ' ', array_unique( $class ) );
+			}
+
+			return $class;
+
+		}
+
 		/**
 		 * Add license field to settings
 		 *
@@ -127,62 +139,198 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 		 */
 		public function oceanwp_add_settings_fields() {
 			
-			//Get license details
-			$license_details	= get_option( 'edd_license_details' );
-			$current_date		= date_i18n( 'Y-m-d H:i:s', current_time('timestamp') );?>
-			<tr>
-				<th>
-					<label for="<?php echo $this->item_shortname; ?>_license_key">
-						<?php echo sprintf( __( '%s License Key', 'oceanwp' ), $this->item_name ); ?>
-					</label>
-				</th>
-				<td>
-					<input type="text" id="<?php echo $this->item_shortname; ?>_license_key" name="oceanwp_options[licenses][<?php echo $this->item_shortname; ?>_license_key]" class="regular-text" value="<?php echo $this->license_key; ?>" />
-					<?php if ( 'valid' == get_option( $this->item_shortname . '_license_active' ) ) { ?>
-					<input type="submit" class="button-secondary" name="oceanwp_<?php echo $this->item_shortname; ?>_license_key_deactivate" value="Deactivate License">
-					<?php }
+			$license_key 		= $this->license_key;
 
-					//Get needed details
-					$expire_date	= isset( $license_details[$this->item_shortname]->expires ) && trim( $license_details[$this->item_shortname]->expires ) != '' ? $license_details[$this->item_shortname]->expires : '';
-					$diff_days		= ceil( (strtotime($expire_date) - strtotime($current_date)) / 86400 );
+			$messages 			= array();
+			$license_details  	= get_option( 'edd_license_details' );
+			$expire_date		= isset( $license_details[$this->item_shortname]->expires ) && trim( $license_details[$this->item_shortname]->expires ) != '' ? $license_details[$this->item_shortname]->expires : '';
 
-					//Message for notice expiry
-					if( $expire_date != 'lifetime' && $expire_date != '' ) {
-						echo '<div class="oceanwp_msg">'. sprintf( 'Your license key expires on %s.', date_i18n( 'F j, Y', strtotime($expire_date) ), 'oceanwp' ) .'</div>';
+			if ( $license_key ) {
+				$value = $license_key;
+			} else {
+				$value = '';
+			}
+
+			if( ! empty( $license_details[ $this->item_shortname ] ) && is_object( $license_details[ $this->item_shortname ] ) ) {
+
+				// activate_license 'invalid' on anything other than valid, so if there was an error capture it
+				if ( false === $license_details[ $this->item_shortname ]->success ) {
+
+					switch( $license_details[ $this->item_shortname ]->error ) {
+
+						case 'expired' :
+
+							$class = 'expired-msg';
+							$messages[] = sprintf(
+								__( 'Your license key expired on %s. Please <a href="%s" target="_blank">renew your license key</a>.', 'oceanwp' ),
+								date_i18n( get_option( 'date_format' ), strtotime( $expire_date, current_time( 'timestamp' ) ) ),
+								'https://oceanwp.org/checkout/?edd_license_key=' . $value . ''
+							);
+
+							$license_status = 'license-' . $class . '-notice';
+
+							break;
+
+						case 'revoked' :
+
+							$class = 'error-msg';
+							$messages[] = sprintf(
+								__( 'Your license key has been disabled. Please <a href="%s" target="_blank">contact support</a> for more information.', 'oceanwp' ),
+								'https://oceanwp.org/support'
+							);
+
+							$license_status = 'license-' . $class . '-notice';
+
+							break;
+
+						case 'missing' :
+
+							$class = 'error-msg';
+							$messages[] = sprintf(
+								__( 'Invalid license. Please <a href="%s" target="_blank">visit your account page</a> and verify it.', 'oceanwp' ),
+								'https://oceanwp.org/your-account'
+							);
+
+							$license_status = 'license-' . $class . '-notice';
+
+							break;
+
+						case 'invalid' :
+						case 'site_inactive' :
+
+							$class = 'error-msg';
+							$messages[] = sprintf(
+								__( 'Your %s is not active for this URL. Please <a href="%s" target="_blank">visit your account page</a> to manage your license key URLs.', 'oceanwp' ),
+								$this->item_name,
+								'https://oceanwp.org/your-account'
+							);
+
+							$license_status = 'license-' . $class . '-notice';
+
+							break;
+
+						case 'item_name_mismatch' :
+
+							$class = 'error-msg';
+							$messages[] = sprintf( __( 'This appears to be an invalid license key for %s.', 'oceanwp' ), $this->item_name );
+
+							$license_status = 'license-' . $class . '-notice';
+
+							break;
+
+						case 'no_activations_left':
+
+							$class = 'error-msg';
+							$messages[] = sprintf( __( 'Your license key has reached its activation limit. <a href="%s">View possible upgrades</a> now.', 'oceanwp' ), 'https://oceanwp.org/your-account/' );
+
+							$license_status = 'license-' . $class . '-notice';
+
+							break;
+
+						case 'license_not_activable':
+
+							$class = 'error-msg';
+							$messages[] = __( 'The key you entered belongs to a bundle, please use the product specific license key.', 'oceanwp' );
+
+							$license_status = 'license-' . $class . '-notice';
+							break;
+
+						default :
+
+							$class = 'error-msg';
+							$error = ! empty(  $license_details[ $this->item_shortname ]->error ) ?  $license_details[ $this->item_shortname ]->error : __( 'unknown_error', 'oceanwp' );
+							$messages[] = sprintf( __( 'There was an error with this license key: %s. Please <a href="%s">contact our support team</a>.', 'oceanwp' ), $error, 'https://oceanwp.org/support' );
+
+							$license_status = 'license-' . $class . '-notice';
+							break;
 					}
 
-					//Message for errors
-					if ( !empty( $license_details[ $this->item_shortname ]->error ) ) {
+				} else {
 
-						//Get error message and dispay
-						$err_msg	= $this->oceanwp_error_messages( $license_details[$this->item_shortname] );
-						if( !empty( $err_msg ) ) {
-							echo '<div class="oceanwp_error">'. $err_msg .'</div>';						
-						}
+					switch( $license_details[ $this->item_shortname ]->license ) {
 
-					} elseif ( $diff_days <= 2 && $diff_days > 0 ) {//Check license expire in two days
-						echo '<div class="oceanwp_error">'. sprintf( __( 'Your license will expire after %s days.', 'oceanwp' ), $diff_days ) .'</div>';
+						case 'valid' :
+						default:
+
+							$class = 'valid-msg';
+
+							$now        = current_time( 'timestamp' );
+							$expiration = strtotime( $expire_date, current_time( 'timestamp' ) );
+
+							if( 'lifetime' === $expire_date ) {
+
+								$messages[] = __( 'License key never expires.', 'oceanwp' );
+
+								$license_status = 'license-lifetime-notice';
+
+							} elseif( $expiration > $now && $expiration - $now < ( DAY_IN_SECONDS * 30 ) ) {
+
+								$messages[] = sprintf(
+									__( 'Your license key expires soon! It expires on %s. <a href="%s" target="_blank">Renew your license key</a>.', 'oceanwp' ),
+									date_i18n( get_option( 'date_format' ), strtotime( $expire_date, current_time( 'timestamp' ) ) ),
+									'https://oceanwp.org/checkout/?edd_license_key=' . $value . ''
+								);
+
+								$license_status = 'license-expires-soon-notice';
+
+							} else {
+
+								$messages[] = sprintf(
+									__( 'Your license key expires on %s.', 'oceanwp' ),
+									date_i18n( get_option( 'date_format' ), strtotime( $expire_date, current_time( 'timestamp' ) ) )
+								);
+
+								$license_status = 'license-expiration-date-notice';
+
+							}
+
+							break;
+
 					}
-					?>
-					<style type="text/css">
-						.oceanwp_msg {
-						  color: #585e5e;
-						  font-size: 14px;
-						  font-weight: bold;
-						  padding: 10px 0 0;
+
+				}
+
+			} else {
+				$class = 'empty-msg';
+
+				$messages[] = sprintf(
+					__( 'To receive updates, please enter your valid %s license key.', 'oceanwp' ),
+					$this->item_name
+				);
+
+				$license_status = null;
+			}
+
+			$class .= ' ' . $this->sanitize_html_class( $class );
+
+			$html = '<tr>';
+				$html .= '<th>';
+					$html .= '<label for="'. $this->item_shortname .'_license_key">';
+						$html .= ''. sprintf( __( '%s License Key', 'oceanwp' ), $this->item_name ) .'';
+					$html .= '</label>';
+				$html .= '</th>';
+
+				$html .= '<td>';
+					$html .= '<input type="text" class="regular-text" id="' . $this->item_shortname . '_license_key" name="oceanwp_options[licenses][' . $this->item_shortname . '_license_key]" value="' . esc_attr( $value ) . '"/>';
+
+					if ( 'valid' == get_option( $this->item_shortname . '_license_active' ) ) {
+						$html .= '<input type="submit" class="button-secondary" name="oceanwp_' . $this->item_shortname . '_license_key_deactivate" value="' . __( 'Deactivate License',  'oceanwp' ) . '">';
+					}
+
+					if ( ! empty( $messages ) ) {
+						foreach( $messages as $message ) {
+
+							$html .= '<div class="oceanwp-license-data oceanwp-license-' . $class . ' ' . $license_status . '">';
+								$html .= '<p>' . $message . '</p>';
+							$html .= '</div>';
+
 						}
-						div.oceanwp_error {
-						  background: #f9e8e3 none repeat scroll 0 0;
-						  border-left: 4px solid #dc3232;
-						  color: #544d4d;
-						  font-size: 13px;
-						  font-weight: normal;
-						  margin: 5px 0 2px 1px;
-						  padding: 6px 12px;
-						}
-					</style>
-				</td>
-			</tr><?php
+					}
+
+				$html .= '</td>';
+			$html .= '</tr>';
+
+			echo $html;
 	    }
 	    
 	    /**
@@ -200,21 +348,6 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 			if ( !isset( $_POST['oceanwp_options']['licenses'][ $this->item_shortname . '_license_key'] ) ) {
 				return;
 			}
-			
-			/*foreach( $_POST as $key => $value ) {
-				if( false !== strpos( $key, 'license_key_deactivate' ) ) {
-					// Don't activate a key when deactivating a different key
-					return;
-				}
-			}*/
-			
-			/*if( ! wp_verify_nonce( $_REQUEST[ $this->item_shortname . '_license_key-nonce'], $this->item_shortname . '_license_key-nonce' ) ) {
-				wp_die( __( 'Nonce verification failed', 'oceanwp' ), __( 'Error', 'oceanwp' ), array( 'response' => 403 ) );
-			}*/
-			
-			/*if ( 'valid' === get_option( $this->item_shortname . '_license_active' ) ) {
-				return;
-			}*/
 			
 			$license = sanitize_text_field( $_POST['oceanwp_options']['licenses'][ $this->item_shortname . '_license_key'] );
 
@@ -283,10 +416,6 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 			if ( !isset( $_POST['oceanwp_options']['licenses'][ $this->item_shortname . '_license_key'] ) ) {
 				return;
 			}
-			
-			/*if( ! wp_verify_nonce( $_REQUEST[ $this->item_shortname . '_license_key-nonce'], $this->item_shortname . '_license_key-nonce' ) ) {
-				wp_die( __( 'Nonce verification failed', 'oceanwp' ), __( 'Error', 'oceanwp' ), array( 'response' => 403 ) );
-			}*/
 			
 			// Run on deactivate button press
 			if ( isset( $_POST[ 'oceanwp_'.$this->item_shortname.'_license_key_deactivate'] ) ) {
@@ -458,10 +587,6 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 	        if( ! is_multisite() ) {
 	            return;
 	        }
-
-	        /*if ( $this->name != $this->file ) {
-	            return;
-	        }*/
 
 	        // Remove our filter on the site transient
 	        remove_filter( 'pre_set_site_transient_update_plugins', array( $this, 'oceanwp_check_update' ), 10 );
@@ -642,87 +767,6 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 				unset( $license_details[$item_shortname] );
 				update_option( 'edd_license_details', $license_details );
 			}
-	    }
-
-	    /**
-		 * Get message of errors
-		 *
-		 * @access  public
-		 * @return  void
-		 */
-	    public function oceanwp_error_messages( $license_error ) {
-
-	    	$message	= '';
-			if( ! empty( $license_error->error ) ) {
-				switch( $license_error->error ) {
-
-					case 'item_name_mismatch' :
-						$message = __( 'This license does not belong to the product you have entered it for.', 'oceanwp' );
-						break;
-
-					case 'no_activations_left' :
-						$message = __( 'This license does not have any activations left', 'oceanwp' );
-						break;
-
-					case 'expired' :
-						$message = __( 'Your license key is expired. Please renew it.', 'oceanwp' );
-						break;
-
-					default :
-						$message = sprintf( __( 'There was a problem activating your license key, please try again or contact support. Error code: %s', 'oceanwp' ), $license_error->error );
-						break;
-				}
-			}
-
-			return $message;
-	    }
-
-	    /**
-		 * Admin notices for errors
-		 *
-		 * @access  public
-		 * @return  void
-		 */
-	    public function oceanwp_notices() {
-
-	    	if( ! isset( $_GET['page'] ) || 'oceanwp-panel' !== $_GET['page'] ) {
-				return;
-			}
-
-			$license_error = get_transient( 'edd_license_error' );
-
-			if( false === $license_error ) {
-				return;
-			}
-			
-			if( ! empty( $license_error->error ) ) {
-				switch( $license_error->error ) {
-					
-					case 'item_name_mismatch' :
-						$message = __( 'This license does not belong to the product you have entered it for.', 'oceanwp' );
-						break;
-						
-					case 'no_activations_left' :
-						$message = __( 'This license does not have any activations left', 'oceanwp' );
-						break;
-						
-					case 'expired' :
-						$message = __( 'This license key is expired. Please renew it.', 'oceanwp' );
-						break;
-						
-					default :
-						$message = sprintf( __( 'There was a problem activating your license key, please try again or contact support. Error code: %s', 'oceanwp' ), $license_error->error );
-						break;
-				}
-			}
-			
-			if( ! empty( $message ) ) {
-				echo '<div class="error">';
-					echo '<p>' . $message . '</p>';
-				echo '</div>';
-			}
-			
-			delete_transient( 'edd_license_error' );
 	    }
 	}
 }

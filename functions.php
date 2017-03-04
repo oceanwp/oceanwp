@@ -292,14 +292,24 @@ class OCEANWP_Theme_Class {
 		add_theme_support( 'post-thumbnails' );
 
 		/**
+		 * Enable support for header image
+		 */
+		add_theme_support( 'custom-header', apply_filters( 'ocean_custom_header_args', array(
+			'width'              => 2000,
+			'height'             => 1200,
+			'flex-height'        => true,
+			'video'              => true,
+		) ) );
+
+		/**
 		 * Enable support for site logo
 		 */
-		add_theme_support( 'custom-logo', array(
+		add_theme_support( 'custom-logo', apply_filters( 'ocean_custom_logo_args', array(
 			'height'      => 45,
 			'width'       => 164,
 			'flex-height' => true,
 			'flex-width'  => true,
-		) );
+		) ) );
 
 		/*
 		 * Switch default core markup for search form, comment form, comments, galleries, captions and widgets

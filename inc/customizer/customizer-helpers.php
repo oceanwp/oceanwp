@@ -200,7 +200,7 @@ function oceanwp_cac_has_menu_dropdown_top_border() {
 /*-------------------------------------------------------------------------------*/
 /* [ Page Header ]
 /*-------------------------------------------------------------------------------*/
-function oceanwp_cac_hasnt_bg_image_page_header() {
+function oceanwp_cac_has_bg_image_page_header() {
 	if ( 'background-image' == get_theme_mod( 'ocean_page_header_style' ) ) {
 		return true;
 	} else {
@@ -208,7 +208,7 @@ function oceanwp_cac_hasnt_bg_image_page_header() {
 	}
 }
 
-function oceanwp_cac_has_bg_image_page_header() {
+function oceanwp_cac_hasnt_bg_image_page_header() {
 	if ( 'background-image' == get_theme_mod( 'ocean_page_header_style' ) ) {
 		return false;
 	} else {

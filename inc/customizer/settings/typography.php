@@ -691,7 +691,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		}
 
 		/**
-		 * Loads Google fonts via wp_enqueue_style
+		 * Loads Google fonts
 		 *
 		 * @since 1.0.0
 		 */
