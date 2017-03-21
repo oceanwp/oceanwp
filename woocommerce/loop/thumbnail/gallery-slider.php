@@ -23,7 +23,11 @@ global $product;
 $thumbnail_id  = get_post_thumbnail_id();
 
 // Get gallery images
-$attachment_ids = $product->get_gallery_attachment_ids();
+if ( version_compare( OceanWP_WooCommerce_Config::get_wc_version(), '2.7', '>=' ) ) {
+	$attachment_ids   = $product->get_gallery_image_ids();
+} else {
+	$attachment_ids   = $product->get_gallery_attachment_ids();
+}
 
 // Get attachments count
 $attachments_count = count( $attachment_ids );

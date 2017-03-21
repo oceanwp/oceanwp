@@ -42,7 +42,7 @@ else { ?>
 
 	<div class="woo-entry-image clr">
 		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
-    		<?php echo '<img src="'. wc_placeholder_img_src() .'" alt="'. esc_html__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />'; ?>
+    		<?php echo '<img src="'. esc_url( wc_placeholder_img_src() ) .'" alt="'. esc_html__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />'; ?>
     	</a>
 	</div><!-- .woo-entry-image -->
 <?php } ?>

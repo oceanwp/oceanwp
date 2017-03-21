@@ -77,32 +77,32 @@ if ( ! class_exists( 'OceanWP_Custom_Menu_Widget' ) ) {
 						|| ( $letter_spacing && '0.6' != $letter_spacing )
 						|| ( $text_transform && 'default' != $text_transform ) ) {
 
-						echo '.' . $this->id . ' > ul > li > a, .custom-menu-widget .' . $this->id . ' .dropdown-menu .sub-menu li a.menu-link{';
+						echo '.' . esc_attr( $this->id ) . ' > ul > li > a, .custom-menu-widget .' . esc_attr( $this->id ) . ' .dropdown-menu .sub-menu li a.menu-link{';
 						if ( $nav_padding && '8px 0' != $nav_padding ) {
-							echo 'padding:' . $nav_padding . ';';
+							echo 'padding:' . esc_attr( $nav_padding ) . ';';
 						}
 						if ( $nav_link_color && '#555' != $nav_link_color ) {
-							echo 'color:' . $nav_link_color . ';';
+							echo 'color:' . esc_attr( $nav_link_color ) . ';';
 						}
 						if ( $font_size && '13' != $font_size ) {
-							echo 'font-size:' . $font_size . 'px;';
+							echo 'font-size:' . esc_attr( $font_size ) . 'px;';
 						}
 						if ( $line_height && '20' != $line_height ) {
-							echo 'line-height:' . $line_height . 'px;';
+							echo 'line-height:' . esc_attr( $line_height ) . 'px;';
 						}
 						if ( $letter_spacing && '0.6' != $letter_spacing ) {
-							echo 'letter-spacing:' . $letter_spacing . 'px;';
+							echo 'letter-spacing:' . esc_attr( $letter_spacing ) . 'px;';
 						}
 						if ( $text_transform && 'default' != $text_transform ) {
-							echo 'text-transform:' . $text_transform . ';';
+							echo 'text-transform:' . esc_attr( $text_transform ) . ';';
 						}
 						echo '}';
 
 					}
 
 					if ( $nav_link_hover_color && '#333' != $nav_link_hover_color ) {
-						echo '.' . $this->id . ' > ul > li > a:hover, .custom-menu-widget .' . $this->id . ' .dropdown-menu .sub-menu li a.menu-link:hover{';
-							echo 'color:' . $nav_link_hover_color . ';';
+						echo '.' . esc_attr( $this->id ) . ' > ul > li > a:hover, .custom-menu-widget .' . esc_attr( $this->id ) . ' .dropdown-menu .sub-menu li a.menu-link:hover{';
+							echo 'color:' . esc_attr( $nav_link_hover_color ) . ';';
 						echo '}';
 					}
 
@@ -112,7 +112,7 @@ if ( ! class_exists( 'OceanWP_Custom_Menu_Widget' ) ) {
 
 				// Show widget title
 				if ( $title ) {
-					echo $args['before_title'] . $title . $args['after_title'];
+					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				}
 
 				$nav_menu_args = array(
@@ -125,11 +125,11 @@ if ( ! class_exists( 'OceanWP_Custom_Menu_Widget' ) ) {
 
 				// Add classes
 				$classes 	= array( 'oceanwp-custom-menu', 'clr' );
-				$classes[] 	= $this->id;
-				$classes[] 	= $position;
+				$classes[] 	= esc_attr( $this->id );
+				$classes[] 	= esc_attr( $position );
 				$classes 	= implode( ' ', $classes );
 
-				echo '<div class="'. $classes .'">';
+				echo '<div class="'. esc_attr( $classes ) .'">';
 
 					wp_nav_menu( $nav_menu_args );
 
@@ -207,8 +207,8 @@ if ( ! class_exists( 'OceanWP_Custom_Menu_Widget' ) ) {
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'nav_menu' ); ?>"><?php esc_html_e( 'Select Menu:', 'oceanwp' ); ?></label>
-					<select class="widget-select widefat" id="<?php echo $this->get_field_id( 'nav_menu' ); ?>" name="<?php echo $this->get_field_name( 'nav_menu' ); ?>">
+					<label for="<?php echo esc_attr( $this->get_field_id( 'nav_menu' ) ); ?>"><?php esc_html_e( 'Select Menu:', 'oceanwp' ); ?></label>
+					<select class="widget-select widefat" id="<?php echo esc_attr( $this->get_field_id( 'nav_menu' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'nav_menu' ) ); ?>">
 						<option value="0"><?php esc_html_e( '&mdash; Select &mdash;', 'oceanwp' ); ?></option>
 						<?php foreach ( $menus as $menu ) : ?>
 							<option value="<?php echo esc_attr( $menu->term_id ); ?>" <?php selected( $instance['nav_menu'], $menu->term_id ); ?>>
@@ -219,8 +219,8 @@ if ( ! class_exists( 'OceanWP_Custom_Menu_Widget' ) ) {
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id('position'); ?>"><?php esc_html_e( 'Position:', 'oceanwp' ); ?></label>
-					<select class="widget-select widefat" name="<?php echo $this->get_field_name('position'); ?>" id="<?php echo $this->get_field_id('position'); ?>">
+					<label for="<?php echo esc_attr( $this->get_field_id('position') ); ?>"><?php esc_html_e( 'Position:', 'oceanwp' ); ?></label>
+					<select class="widget-select widefat" name="<?php echo esc_attr( $this->get_field_name('position') ); ?>" id="<?php echo esc_attr( $this->get_field_id('position') ); ?>">
 						<option value="left" <?php selected( $instance['position'], 'left' ) ?>><?php esc_html_e( 'Left', 'oceanwp' ); ?></option>
 						<option value="right" <?php selected( $instance['position'], 'right' ) ?>><?php esc_html_e( 'Right', 'oceanwp' ); ?></option>
 						<option value="center" <?php selected( $instance['position'], 'center' ) ?>><?php esc_html_e( 'Center', 'oceanwp' ); ?></option>
@@ -228,39 +228,39 @@ if ( ! class_exists( 'OceanWP_Custom_Menu_Widget' ) ) {
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'nav_padding' ); ?>"><?php esc_html_e( 'Menu Padding:', 'oceanwp' ); ?></label>
-					<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'nav_padding' ); ?>" name="<?php echo $this->get_field_name( 'nav_padding' ); ?>" value="<?php echo $instance['nav_padding']; ?>" />
+					<label for="<?php echo esc_attr( $this->get_field_id( 'nav_padding' ) ); ?>"><?php esc_html_e( 'Menu Padding:', 'oceanwp' ); ?></label>
+					<input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'nav_padding' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'nav_padding' ) ); ?>" value="<?php echo esc_attr( $instance['nav_padding'] ); ?>" />
 					<small style="color: #777;"><?php esc_html_e( 'top left bottom right, eg: 15px 8px 15px 25px', 'oceanwp' ); ?></small>
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'nav_link_color' ); ?>"><?php esc_html_e( 'Menu Link Color:', 'oceanwp' ); ?></label>
-					<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'nav_link_color' ); ?>" name="<?php echo $this->get_field_name( 'nav_link_color' ); ?>" value="<?php echo $instance['nav_link_color']; ?>" />
+					<label for="<?php echo esc_attr( $this->get_field_id( 'nav_link_color' ) ); ?>"><?php esc_html_e( 'Menu Link Color:', 'oceanwp' ); ?></label>
+					<input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'nav_link_color' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'nav_link_color' ) ); ?>" value="<?php echo esc_attr( $instance['nav_link_color'] ); ?>" />
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'nav_link_hover_color' ); ?>"><?php esc_html_e( 'Menu Link Hover Color:', 'oceanwp' ); ?></label>
-					<input class="widefat" type="text" id="<?php echo $this->get_field_id( 'nav_link_hover_color' ); ?>" name="<?php echo $this->get_field_name( 'nav_link_hover_color' ); ?>" value="<?php echo $instance['nav_link_hover_color']; ?>" />
+					<label for="<?php echo esc_attr( $this->get_field_id( 'nav_link_hover_color' ) ); ?>"><?php esc_html_e( 'Menu Link Hover Color:', 'oceanwp' ); ?></label>
+					<input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'nav_link_hover_color' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'nav_link_hover_color' ) ); ?>" value="<?php echo esc_attr( $instance['nav_link_hover_color'] ); ?>" />
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'font_size' ); ?>"><?php esc_html_e( 'Font Size (px):', 'oceanwp' ); ?></label>
-					<input class="widefat" type="number" min="5" max="50" step="1" id="<?php echo $this->get_field_id( 'font_size' ); ?>" name="<?php echo $this->get_field_name( 'font_size' ); ?>" value="<?php echo $instance['font_size']; ?>" />
+					<label for="<?php echo esc_attr( $this->get_field_id( 'font_size' ) ); ?>"><?php esc_html_e( 'Font Size (px):', 'oceanwp' ); ?></label>
+					<input class="widefat" type="number" min="5" max="50" step="1" id="<?php echo esc_attr( $this->get_field_id( 'font_size' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'font_size' ) ); ?>" value="<?php echo esc_attr( $instance['font_size'] ); ?>" />
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'line_height' ); ?>"><?php esc_html_e( 'Line Height (px):', 'oceanwp' ); ?></label>
-					<input class="widefat" type="number" min="5" max="200" step="1" id="<?php echo $this->get_field_id( 'line_height' ); ?>" name="<?php echo $this->get_field_name( 'line_height' ); ?>" value="<?php echo $instance['line_height']; ?>" />
+					<label for="<?php echo esc_attr( $this->get_field_id( 'line_height' ) ); ?>"><?php esc_html_e( 'Line Height (px):', 'oceanwp' ); ?></label>
+					<input class="widefat" type="number" min="5" max="200" step="1" id="<?php echo esc_attr( $this->get_field_id( 'line_height' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'line_height' ) ); ?>" value="<?php echo esc_attr( $instance['line_height'] ); ?>" />
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id( 'letter_spacing' ); ?>"><?php esc_html_e( 'Letter Spacing (px):', 'oceanwp' ); ?></label>
-					<input class="widefat" type="number" min="0" max="5" step="0.1" id="<?php echo $this->get_field_id( 'letter_spacing' ); ?>" name="<?php echo $this->get_field_name( 'letter_spacing' ); ?>" value="<?php echo $instance['letter_spacing']; ?>" />
+					<label for="<?php echo esc_attr( $this->get_field_id( 'letter_spacing' ) ); ?>"><?php esc_html_e( 'Letter Spacing (px):', 'oceanwp' ); ?></label>
+					<input class="widefat" type="number" min="0" max="5" step="0.1" id="<?php echo esc_attr( $this->get_field_id( 'letter_spacing' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'letter_spacing' ) ); ?>" value="<?php echo esc_attr( $instance['letter_spacing'] ); ?>" />
 				</p>
 
 				<p>
-					<label for="<?php echo $this->get_field_id('text_transform'); ?>"><?php esc_html_e( 'Text Transform:', 'oceanwp' ); ?></label>
-					<select class="widget-select widefat" name="<?php echo $this->get_field_name('text_transform'); ?>" id="<?php echo $this->get_field_id('position'); ?>">
+					<label for="<?php echo esc_attr( $this->get_field_id('text_transform') ); ?>"><?php esc_html_e( 'Text Transform:', 'oceanwp' ); ?></label>
+					<select class="widget-select widefat" name="<?php echo esc_attr( $this->get_field_name('text_transform') ); ?>" id="<?php echo esc_attr( $this->get_field_id('position') ); ?>">
 						<option value="default" <?php selected( $instance['text_transform'], 'default' ) ?>><?php esc_html_e( 'Default', 'oceanwp' ); ?></option>
 						<option value="capitalize" <?php selected( $instance['text_transform'], 'capitalize' ) ?>><?php esc_html_e( 'Capitalize', 'oceanwp' ); ?></option>
 						<option value="lowercase" <?php selected( $instance['text_transform'], 'lowercase' ) ?>><?php esc_html_e( 'Lowercase', 'oceanwp' ); ?></option>

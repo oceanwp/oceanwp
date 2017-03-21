@@ -25,7 +25,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		if ( 'custom_link' == $icon_style && $custom_link ) {
 			$url = esc_url( $custom_link );
 		} else {
-			$cart_id = woocommerce_get_page_id( 'cart' );
+			$cart_id = wc_get_page_id( 'cart' );
 			if ( function_exists( 'icl_object_id' ) ) {
 				$cart_id = icl_object_id( $cart_id, 'page' );
 			}
@@ -54,7 +54,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		ob_start(); ?>
 
 			<a href="<?php echo esc_url( $url ); ?>" class="wcmenucart">
-				<span class="wcmenucart-count"><?php echo $cart_icon; ?><?php echo $cart_extra; ?></span>
+				<span class="wcmenucart-count"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
 			</a>
 			
 		<?php
@@ -73,7 +73,7 @@ function oceanwp_woo_placeholder_img() {
 		$placeholder = '<img src="'. wc_placeholder_img_src() .'" alt="'. esc_attr__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />';
 		$placeholder = apply_filters( 'ocean_woo_placeholder_img_html', $placeholder );
 		if ( $placeholder ) {
-			echo $placeholder;
+			echo wp_kses_post( $placeholder );
 		}
 	}
 }
@@ -91,28 +91,5 @@ function oceanwp_woo_product_instock( $post_id = '' ) {
 		return true;
 	} else {
 		return false;
-	}
-}
-
-/**
- * Outputs product price
- *
- * @since 1.0.0
- */
-function oceanwp_woo_product_price( $post_id = '' ) {
-	echo oceanwp_get_woo_product_price( $post_id );
-}
-
-/**
- * Returns product price
- *
- * @since 1.0.0
- */
-function oceanwp_get_woo_product_price( $post_id = '' ) {
-	$post_id = $post_id ? $post_id : get_the_ID();
-	$product = get_product( $post_id );
-	$price   = $product->get_price_html();
-	if ( $price ) {
-		return $price;
 	}
 }

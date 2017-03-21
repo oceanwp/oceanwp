@@ -107,7 +107,7 @@ if ( ! class_exists( 'OceanWP_About_Me_Widget' ) ) {
 
 				// Show widget title
 				if ( $title ) {
-					echo $args['before_title'] . $title . $args['after_title'];
+					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				} ?>
 
 				<div class="oceanwp-about-me">
@@ -117,12 +117,12 @@ if ( ! class_exists( 'OceanWP_About_Me_Widget' ) ) {
 						<?php
 						// Display the avatar
 						if ( $avatar ) : ?>
-							<img src="<?php echo esc_url( $avatar ); ?>" alt="<?php echo esc_attr( $title ); ?>" />
+							<img src="<?php echo esc_url( $avatar ); ?>" alt="<?php echo esc_html( $title ); ?>" />
 						<?php endif;
 
 						// Display the name
 						if ( $name ) :?>
-							<h3 class="oceanwp-about-me-name"><?php echo esc_attr( $name ); ?></h3>
+							<h3 class="oceanwp-about-me-name"><?php echo esc_html( $name ); ?></h3>
 						<?php endif; ?>
 
 					</div><!-- .oceanwp-about-me-avatar -->
@@ -149,7 +149,7 @@ if ( ! class_exists( 'OceanWP_About_Me_Widget' ) ) {
 								if ( $link ) {
 									$icon = 'youtube' == $key ? 'youtube-play' : $key;
 									$icon = 'pinterest' == $key ? 'pinterest-p' : $icon;
-									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" title="'. esc_attr( $name ) .'"  target="_'.esc_attr( $target ).'""><i class="fa fa-'. esc_attr( $icon ) .'"></i></a></li>';
+									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" title="'. esc_html( $name ) .'"  target="_'.esc_attr( $target ).'""><i class="fa fa-'. esc_attr( $icon ) .'"></i></a></li>';
 								}
 							} ?>
 
@@ -219,19 +219,19 @@ if ( ! class_exists( 'OceanWP_About_Me_Widget' ) ) {
 			</p>
 
 			<p>
-			    <label for="<?php echo $this->get_field_id( 'name' ); ?>"><?php esc_html_e('Name:', 'oceanwp') ?></label>
-			    <input type="text" class="widefat" id="<?php echo $this->get_field_id( 'name' ); ?>" name="<?php echo $this->get_field_name( 'name' ); ?>" value="<?php echo esc_attr( $instance['name'] ); ?>" />
+			    <label for="<?php echo esc_attr( $this->get_field_id( 'name' ) ); ?>"><?php esc_html_e('Name:', 'oceanwp') ?></label>
+			    <input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'name' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'name' ) ); ?>" value="<?php echo esc_attr( $instance['name'] ); ?>" />
 			</p>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Description:','oceanwp' ); ?></label>
-				<textarea rows="15" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>" class="widefat" style="height: 100px;"><?php if( !empty( $instance['text'] ) ) { echo $instance['text']; } ?></textarea>
+				<textarea rows="15" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>" class="widefat" style="height: 100px;"><?php if( !empty( $instance['text'] ) ) { echo esc_textarea( $instance['text'] ); } ?></textarea>
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('social_style'); ?>"><?php esc_html_e('Social Style:', 'oceanwp'); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id('social_style') ); ?>"><?php esc_html_e('Social Style:', 'oceanwp'); ?></label>
 				<br />
-				<select class='widget-select widefat' name="<?php echo $this->get_field_name('social_style'); ?>" id="<?php echo $this->get_field_id('social_style'); ?>">
+				<select class='widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('social_style') ); ?>" id="<?php echo esc_attr( $this->get_field_id('social_style') ); ?>">
 					<option value="color" <?php selected( $instance['social_style'], 'color' ) ?>><?php esc_html_e( 'Color', 'oceanwp' ); ?></option>
 					<option value="light" <?php selected( $instance['social_style'], 'light' ) ?>><?php esc_html_e( 'Light', 'oceanwp' ); ?></option>
 					<option value="dark" <?php selected( $instance['social_style'], 'dark' ) ?>><?php esc_html_e( 'Dark', 'oceanwp' ); ?></option>
@@ -239,9 +239,9 @@ if ( ! class_exists( 'OceanWP_About_Me_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('target'); ?>"><?php esc_html_e( 'Social Link Target:', 'oceanwp' ); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id('target') ); ?>"><?php esc_html_e( 'Social Link Target:', 'oceanwp' ); ?></label>
 				<br />
-				<select class='widget-select widefat' name="<?php echo $this->get_field_name('target'); ?>" id="<?php echo $this->get_field_id('target'); ?>">
+				<select class='widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('target') ); ?>" id="<?php echo esc_attr( $this->get_field_id('target') ); ?>">
 					<option value="blank" <?php selected( $instance['target'], 'blank' ) ?>><?php esc_html_e( 'Blank', 'oceanwp' ); ?></option>
 					<option value="self" <?php selected( $instance['target'], 'self' ) ?>><?php esc_html_e( 'Self', 'oceanwp' ); ?></option>
 				</select>
@@ -265,7 +265,7 @@ if ( ! class_exists( 'OceanWP_About_Me_Widget' ) ) {
 					$name = $social_services_array[$key]['name']; ?>
 					<li id="<?php echo esc_attr( $field_id_services ); ?>_0<?php echo esc_attr( $key ); ?>">
 						<p>
-							<label for="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-name"><?php echo strip_tags( $name ); ?>:</label>
+							<label for="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-name"><?php echo esc_html( strip_tags( $name ) ); ?>:</label>
 							<input type="hidden" id="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-url" name="<?php echo esc_attr( $field_name_services .'['.$key.'][name]' ); ?>" value="<?php echo esc_attr( $name ); ?>">
 							<input type="url" class="widefat" id="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-url" name="<?php echo esc_attr( $field_name_services .'['.$key.'][url]' ); ?>" value="<?php echo esc_attr( $url ); ?>" />
 						</p>

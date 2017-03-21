@@ -342,7 +342,7 @@ class OCEANWP_Theme_Class {
 	public static function pingback_header() {
 
 		if ( is_singular() && pings_open() ) {
-			printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+			printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
 		}
 
 	}
@@ -354,9 +354,10 @@ class OCEANWP_Theme_Class {
 	 */
 	public static function meta_viewport() {
 
+		// Meta viewport
 		$viewport = '<meta name="viewport" content="width=device-width, initial-scale=1">';
-		
-		// Apply filters to the meta viewport for child theme tweaking
+
+		// Apply filters for child theme tweaking
 		echo apply_filters( 'ocean_meta_viewport', $viewport );
 
 	}
@@ -393,6 +394,11 @@ class OCEANWP_Theme_Class {
 		// Register simple line icons style
 		wp_enqueue_style( 'simple-line-icons', $dir .'devs/simple-line-icons.min.css', false, '2.2.2' );
 
+		// Lightbox style
+		if ( get_theme_mod( 'ocean_add_lightbox', true ) ) {
+			wp_enqueue_style( 'chocolat', $dir .'oceanwp-lightbox.min.css', false, $theme_version );
+		}
+
 		// Main Style.css File
 		wp_enqueue_style( 'oceanwp-style', get_stylesheet_uri(), false, $theme_version );
 
@@ -422,9 +428,15 @@ class OCEANWP_Theme_Class {
 		// Register nicescroll script to use it in some extensions
 		wp_register_script( 'nicescroll', $dir .'dynamic/nicescroll.min.js', array( 'jquery' ), $theme_version, true );
 
-		// WooCommerce quantity buttons
+		// WooCommerce scripts
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
-			wp_enqueue_script( 'wc-quantity-increment', $dir .'dynamic/wc-quantity-increment.js', array( 'jquery' ), $theme_version, true );
+			wp_enqueue_script( 'oceanwp-woocommerce', $dir .'dynamic/woo-scripts.min.js', array( 'jquery' ), $theme_version, true );
+		}
+
+		// Lightbox scripts
+		if ( get_theme_mod( 'ocean_add_lightbox', true ) ) {
+			wp_enqueue_script( 'chocolat', $dir .'dynamic/chocolat.min.js', array( 'jquery' ), $theme_version, true );
+			wp_enqueue_script( 'oceanwp-lightbox', $dir .'dynamic/lightbox.min.js', array( 'jquery' ), $theme_version, true );
 		}
 
 		// Load minified js
@@ -488,6 +500,10 @@ class OCEANWP_Theme_Class {
 	 */
 	public static function custom_widgets() {
 
+		if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
+			return;
+		}
+
 		// Define array of custom widgets for the theme
 		$widgets = apply_filters( 'ocean_custom_widgets', array(
 			'about-me',
@@ -495,7 +511,6 @@ class OCEANWP_Theme_Class {
 			'custom-links',
 			'custom-menu',
 			'facebook',
-			'flickr',
 			'instagram',
 			'mailchimp',
 			'recent-posts',

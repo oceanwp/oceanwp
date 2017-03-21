@@ -1,5 +1,26 @@
 # OceanWP Changelog
 
+### *2017.03.21* - 1.1.7
+IMPORTANT NOTICE: Some fields of the customizer are improved to be more user friendly, you must re-enter your values in the new dimensions controls for the following fields:
+- Padding in General Options > Forms (Input - Textarea)
+- Border Width in General Options > Forms (Input - Textarea)
+- Padding in Theme Button
+- The two Padding fields in Sidebar
+- Padding in Footer Widgets
+- Padding in Footer Bottom
+
+* **Added** - New checkbox field in the Top Bar section of the customizer to add the top bar in full width.
+* **Added** - New checkbox field in the Header section of the customizer to add the header in full width.
+* **Added** - Norwegian language, thank you very much to Tor-Arne Pettersen‎.
+* **Added** - Short codes in the description for the top bar content and the footer copyright in the customizer.
+* **Added** - New "Fixed Footer" option in the Footer Widgets section of the customizer to add a height to your content to keep your footer at the bottom of your page.
+* **Added** - New option in General Settings of the customizer to activate/desactivate the default lightbox scripts.
+* **Added** - New control for the customizer "Dimensions" to add your top/right/bottom/left dimensions like Elementor.
+* **Tweak** - Increased container max width in the customizer for 4K screens.
+* **Tweak** - Support for WooCommerce 3.0.
+* **Tweak** - Flickr widget moved to Ocean Extra because the script code is not allowed into the theme.
+* **Tweak** - CSS for sub lists improved.
+
 ### *2017.03.04* - 1.1.6
 * **Added** - New customizer section "Header Media" in the Header section to add an image or video (only in front page), to your header.
 * **Added** - New "Excerpt Length" field added in the Blog Entries section of the customizer to control the excerpt length of your posts.

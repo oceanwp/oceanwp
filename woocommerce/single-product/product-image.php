@@ -17,7 +17,11 @@ global $post, $woocommerce, $product;
 $thumbnail_id  = get_post_thumbnail_id();
 
 // Get gallery images
-$attachment_ids = $product->get_gallery_attachment_ids();
+if ( version_compare( OceanWP_WooCommerce_Config::get_wc_version(), '2.7', '>=' ) ) {
+	$attachment_ids   = $product->get_gallery_image_ids();
+} else {
+	$attachment_ids   = $product->get_gallery_attachment_ids();
+}
 
 // Get attachments count
 $attachments_count = count( $attachment_ids );
@@ -91,7 +95,7 @@ $image       = wp_get_attachment_image( $thumbnail_id, 'shop_single', '', array(
 
         	<div class="thumbnail-item first-thumbnail">
 
-        		<?php echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" title="%s" class="woo-thumbnail">%s</a>', $thumbnail_link, $thumbnail_title, $thumbnail ), $post->ID ); ?>
+        		<?php echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" title="%s" class="woo-thumbnail">%s</a>', esc_url( $thumbnail_link ), esc_html( $thumbnail_title ), $thumbnail ), $post->ID ); ?>
 
         	</div>
 
@@ -117,7 +121,7 @@ $image       = wp_get_attachment_image( $thumbnail_id, 'shop_single', '', array(
 
 	        	<div class="thumbnail-item">
 
-	        		<?php echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" title="%s" class="woo-thumbnail">%s</a>', $thumbnail_link, $thumbnail_title, $thumbnail ), $post->ID ); ?>
+	        		<?php echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" title="%s" class="woo-thumbnail">%s</a>', esc_url( $thumbnail_link ), esc_html( $thumbnail_title ), $thumbnail ), $post->ID ); ?>
 
 	        	</div>
 

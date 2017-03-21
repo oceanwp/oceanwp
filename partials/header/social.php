@@ -41,7 +41,6 @@ if ( ! $profiles = get_theme_mod( 'ocean_menu_social_profiles' ) ) {
 
 // Get theme mods
 $link_target = get_theme_mod( 'ocean_menu_social_target', 'blank' );
-$link_target = ( 'blank' == $link_target || '_blank' == $link_target ) ? ' target="_blank"' : '';
 
 // Only used on main menu
 if ( has_nav_menu( 'main_menu' ) ) { ?>
@@ -68,11 +67,11 @@ if ( has_nav_menu( 'main_menu' ) ) { ?>
 						}
 
 						// Display link
-						echo '<li class="oceanwp-'. $key .'">';
+						echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
 
-							echo '<a href="'. $url .'" '. $link_target .'>';
+							echo '<a href="'. $url .'" target="_'. esc_attr( $link_target ) .'">';
 
-								echo '<span class="'. $val['icon_class'] .'"></span>';
+								echo '<span class="'. esc_attr( $val['icon_class'] ) .'"></span>';
 
 							echo '</a>';
 

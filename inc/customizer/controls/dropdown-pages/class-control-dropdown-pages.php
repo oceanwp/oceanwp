@@ -47,11 +47,11 @@ class OceanWP_Customizer_Dropdown_Pages extends WP_Customize_Control {
 		<?php
 		$dropdown = wp_dropdown_pages(
 			array(
-				'name'              => '_customize-dropdown-pages-' . $this->id,
+				'name'              => '_customize-dropdown-pages-' . esc_attr( $this->id ),
 				'echo'              => 0,
 				'show_option_none'  => '&mdash; '. esc_html__( 'Select', 'oceanwp' ) .' &mdash;',
 				'option_none_value' => '',
-				'selected'          => $this->value(),
+				'selected'          => esc_attr( $this->value() ),
 			)
 		);
 

@@ -62,7 +62,7 @@ if ( ! class_exists( 'OceanWP_Recent_Posts_Thumbnails_Widget' ) ) {
 
 				// Show widget title
 				if ( $title ) {
-					echo $args['before_title'] . $title . $args['after_title'];
+					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				} ?>
 
 				<ul class="oceanwp-recent-posts clr">
@@ -227,7 +227,7 @@ if ( ! class_exists( 'OceanWP_Recent_Posts_Thumbnails_Widget' ) ) {
 					$operator = 'and';
 					foreach ( $get_post_types as $get_post_type ) : ?>
 						<?php if ( $get_post_type != 'post' ) { ?>
-							<option value="<?php echo esc_attr( $get_post_type ); ?>" <?php selected( $post_type, $get_post_type ); ?>><?php echo ucfirst( $get_post_type ); ?></option>
+							<option value="<?php echo esc_attr( $get_post_type ); ?>" <?php selected( $post_type, $get_post_type ); ?>><?php echo esc_html( ucfirst( $get_post_type ) ); ?></option>
 						<?php } ?>
 					<?php endforeach; ?>
 				</select>
@@ -244,7 +244,7 @@ if ( ! class_exists( 'OceanWP_Recent_Posts_Thumbnails_Widget' ) ) {
 						'public' => true,
 					), 'objects' ); ?>
 					<?php foreach ( $get_taxonomies as $get_taxonomy ) : ?>
-						<option value="<?php echo esc_attr( $get_taxonomy->name ); ?>" <?php selected( $taxonomy, $get_taxonomy->name ); ?>><?php echo ucfirst( $get_taxonomy->labels->singular_name ); ?></option>
+						<option value="<?php echo esc_attr( $get_taxonomy->name ); ?>" <?php selected( $taxonomy, $get_taxonomy->name ); ?>><?php echo esc_html( ucfirst( $get_taxonomy->labels->singular_name ) ); ?></option>
 					<?php endforeach; ?>
 				</select>
 			</p>
@@ -281,7 +281,7 @@ if ( ! class_exists( 'OceanWP_Recent_Posts_Thumbnails_Widget' ) ) {
 				);
 				foreach ( $orderby_array as $key => $value ) { ?>
 					<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $orderby, $key ); ?>>
-						<?php echo strip_tags( $value ); ?>
+						<?php echo esc_attr( strip_tags( $value ) ); ?>
 					</option>
 				<?php } ?>
 				</select>

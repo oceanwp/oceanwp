@@ -64,12 +64,54 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				'sanitize_callback' 	=> false,
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_sidebar_padding', array(
-				'label'	   				=> esc_html__( 'Padding', 'oceanwp' ),
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_sidebar_padding', array(
+				'label'	   				=> esc_html__( 'Padding (DECREPITATED)', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'This field will be removed in OceanWP 2.0, add your value(s) in the dimensions control below', 'oceanwp' ),
 				'type' 					=> 'text',
 				'section'  				=> $section,
 				'settings' 				=> 'ocean_sidebar_padding',
 				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Sidebar Padding
+			 */
+			$wp_customize->add_setting( 'ocean_sidebar_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '0',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_sidebar_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '0',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_sidebar_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '0',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_sidebar_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '30',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_sidebar_padding_dimensions', array(
+				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
+				'section'  				=> $section,				
+				'settings'   => array(
+					'top'    => 'ocean_sidebar_top_padding',
+					'right'  => 'ocean_sidebar_right_padding',
+					'bottom' => 'ocean_sidebar_bottom_padding',
+					'left'   => 'ocean_sidebar_left_padding',
+				),
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 500,
+			        'step'  => 1,
+			    ),
 			) ) );
 
 			/**
@@ -108,12 +150,54 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				'sanitize_callback' 	=> false,
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_widgets_padding', array(
-				'label'	   				=> esc_html__( 'Padding', 'oceanwp' ),
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_widgets_padding', array(
+				'label'	   				=> esc_html__( 'Padding (DECREPITATED)', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'This field will be removed in OceanWP 2.0, add your value(s) in the dimensions control below', 'oceanwp' ),
 				'type' 					=> 'text',
 				'section'  				=> $section,
 				'settings' 				=> 'ocean_widgets_padding',
 				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Widgets Padding
+			 */
+			$wp_customize->add_setting( 'ocean_widgets_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '0',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_widgets_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '0',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_widgets_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '0',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_widgets_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '0',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_widgets_padding_dimensions', array(
+				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
+				'section'  				=> $section,				
+				'settings'   => array(
+					'top'    => 'ocean_widgets_top_padding',
+					'right'  => 'ocean_widgets_right_padding',
+					'bottom' => 'ocean_widgets_bottom_padding',
+					'left'   => 'ocean_widgets_left_padding',
+				),
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 500,
+			        'step'  => 1,
+			    ),
 			) ) );
 
 			/**
@@ -169,23 +253,60 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 		
 			// Global vars
 			$sidebar_bg 					= get_theme_mod( 'ocean_sidebar_bg' );
-			$sidebar_padding 				= get_theme_mod( 'ocean_sidebar_padding' );
+			$sidebar_top_padding 			= get_theme_mod( 'ocean_sidebar_top_padding', '0' );
+			$sidebar_right_padding 			= get_theme_mod( 'ocean_sidebar_right_padding', '0' );
+			$sidebar_bottom_padding 		= get_theme_mod( 'ocean_sidebar_bottom_padding', '0' );
+			$sidebar_left_padding 			= get_theme_mod( 'ocean_sidebar_left_padding', '30' );
 			$widgets_bg 					= get_theme_mod( 'ocean_widgets_bg' );
-			$widgets_padding 				= get_theme_mod( 'ocean_widgets_padding' );
+			$widgets_top_padding 			= get_theme_mod( 'ocean_widgets_top_padding', '0' );
+			$widgets_right_padding 			= get_theme_mod( 'ocean_widgets_right_padding', '0' );
+			$widgets_bottom_padding 		= get_theme_mod( 'ocean_widgets_bottom_padding', '0' );
+			$widgets_left_padding 			= get_theme_mod( 'ocean_widgets_left_padding', '0' );
 			$widgets_margin_bottom 			= get_theme_mod( 'ocean_widgets_margin_bottom', '40' );
 			$widgets_titles_margin_bottom 	= get_theme_mod( 'ocean_widgets_titles_margin_bottom', '20' );
 
 			// Define css var
 			$css = '';
+			$sidebar_padding_css = '';
+			$widgets_padding_css = '';
 
 			// Sidebar background
 			if ( ! empty( $sidebar_bg ) ) {
 				$css .= '#sidebar{background-color:'. $sidebar_bg .';}';
 			}
 
-			// Sidebar padding
+			// DECREPITATED Sidebar padding
+			$sidebar_padding = get_theme_mod( 'ocean_sidebar_padding' );
 			if ( ! empty( $sidebar_padding ) ) {
 				$css .= '.widget-area{padding:'. $sidebar_padding .';}';
+			}
+
+			// Sidebar top padding
+			if ( ! empty( $sidebar_top_padding ) && '0' != $sidebar_top_padding ) {
+				$sidebar_padding_css .= 'padding-top:'. $sidebar_top_padding .'px;';
+			}
+
+			// Sidebar right padding
+			if ( ! empty( $sidebar_right_padding ) && '0' != $sidebar_right_padding ) {
+				$sidebar_padding_css .= 'padding-right:'. $sidebar_right_padding .'px;';
+			}
+
+			// Sidebar bottom padding
+			if ( ! empty( $sidebar_bottom_padding ) && '0' != $sidebar_bottom_padding ) {
+				$sidebar_padding_css .= 'padding-bottom:'. $sidebar_bottom_padding .'px;';
+			}
+
+			// Sidebar left padding
+			if ( ! empty( $sidebar_left_padding ) && '30' != $sidebar_left_padding ) {
+				$sidebar_padding_css .= 'padding-left:'. $sidebar_left_padding .'px;';
+			}
+
+			// Sidebar padding css
+			if ( ! empty( $sidebar_top_padding ) && '0' != $sidebar_top_padding
+				|| ! empty( $sidebar_right_padding ) && '0' != $sidebar_right_padding
+				|| ! empty( $sidebar_bottom_padding ) && '0' != $sidebar_bottom_padding
+				|| ! empty( $sidebar_left_padding ) && '30' != $sidebar_left_padding ) {
+				$css .= '.widget-area{'. $sidebar_padding_css .'}';
 			}
 
 			// Widgets background
@@ -196,6 +317,40 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			// Widgets padding
 			if ( ! empty( $widgets_padding ) ) {
 				$css .= '#sidebar .sidebar-box{padding:'. $widgets_padding .';}';
+			}
+
+			// DECREPITATED Widgets padding
+			$widgets_padding = get_theme_mod( 'ocean_widgets_padding' );
+			if ( ! empty( $widgets_padding ) ) {
+				$css .= '#sidebar .sidebar-box{padding:'. $widgets_padding .';}';
+			}
+
+			// Widgets top padding
+			if ( ! empty( $widgets_top_padding ) && '0' != $widgets_top_padding ) {
+				$widgets_padding_css .= 'padding-top:'. $widgets_top_padding .'px;';
+			}
+
+			// Widgets right padding
+			if ( ! empty( $widgets_right_padding ) && '0' != $widgets_right_padding ) {
+				$widgets_padding_css .= 'padding-right:'. $widgets_right_padding .'px;';
+			}
+
+			// Widgets bottom padding
+			if ( ! empty( $widgets_bottom_padding ) && '0' != $widgets_bottom_padding ) {
+				$widgets_padding_css .= 'padding-bottom:'. $widgets_bottom_padding .'px;';
+			}
+
+			// Widgets left padding
+			if ( ! empty( $widgets_left_padding ) && '0' != $widgets_left_padding ) {
+				$widgets_padding_css .= 'padding-left:'. $widgets_left_padding .'px;';
+			}
+
+			// Widgets padding css
+			if ( ! empty( $widgets_top_padding ) && '0' != $widgets_top_padding
+				|| ! empty( $widgets_right_padding ) && '0' != $widgets_right_padding
+				|| ! empty( $widgets_bottom_padding ) && '0' != $widgets_bottom_padding
+				|| ! empty( $widgets_left_padding ) && '0' != $widgets_left_padding ) {
+				$css .= '#sidebar .sidebar-box{'. $widgets_padding_css .'}';
 			}
 
 			// Widgets margin bottom

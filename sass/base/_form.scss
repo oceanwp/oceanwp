@@ -63,6 +63,45 @@ form textarea {
     resize: vertical;
 }
 
+input[type="checkbox"] {
+	display: inline-block;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	line-height: 0;
+	width: 16px;
+	min-width: 16px;
+	height: 16px;
+	margin: -3px 10px 0 0 !important;
+	outline: 0;
+	text-align: center;
+	vertical-align: middle;
+	clear: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	-webkit-transition: .05s border-color ease-in-out;
+	transition: .05s border-color ease-in-out;
+}
+
+input[type=radio]:checked:before,
+input[type=checkbox]:checked:before {
+	float: left;
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	font: 400 14px/1 FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+input[type=checkbox]:checked:before {
+	content: '\f00c';
+	margin-bottom: -1px;
+	color: #13aff0;
+}
+
 /*
 Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
 since IE8 won't execute CSS that contains a CSS3 selector.

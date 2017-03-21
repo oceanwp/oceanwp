@@ -142,7 +142,7 @@ class OceanWP_Nav_Walker {
 				$_POST['menu-item-'.$key][$menu_item_db_id] = '';
 			}
 
-			$value = $_POST['menu-item-'.$key][$menu_item_db_id];
+			$value = sanitize_text_field( wp_unslash( $_POST['menu-item-'.$key][$menu_item_db_id] ) );
 			update_post_meta( $menu_item_db_id, '_menu_item_'.$key, $value );
 		}
 

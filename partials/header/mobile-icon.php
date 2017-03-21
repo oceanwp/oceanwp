@@ -42,13 +42,25 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		<?php do_action( 'ocean_before_mobile_icon' ); ?>
 
 		<?php
+		// If big header style
+		if ( 'big' == oceanwp_header_style() ) { ?>
+			<div class="container clr">
+		<?php } ?>
+
+		<?php
 		// Cart icon
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
 			&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) { ?>
-			<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="mobile-wcmenucart"><?php echo $cart_icon; ?></a>
+			<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="mobile-wcmenucart"><?php echo wp_kses_post( $cart_icon ); ?></a>
 		<?php } ?>
 
-		<a href="#" class="mobile-menu"><?php echo $icon; ?><span class="oceanwp-text"><?php echo $text; ?></span></a>
+		<a href="#" class="mobile-menu"><?php echo wp_kses_post( $icon ); ?><span class="oceanwp-text"><?php echo esc_html( $text ); ?></span></a>
+
+		<?php
+		// If big header style
+		if ( 'big' == oceanwp_header_style() ) { ?>
+			</div>
+		<?php } ?>
 
 		<?php do_action( 'ocean_after_mobile_icon' ); ?>
 

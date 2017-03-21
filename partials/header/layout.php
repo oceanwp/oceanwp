@@ -28,6 +28,12 @@ if ( class_exists( 'Ocean_Sticky_Header' ) ) {
 
 }
 
+// Add container class if the header is not full width
+$class = '';
+if ( true != get_theme_mod( 'ocean_header_full_width', false ) )  {
+	$class = ' container';
+}
+
 do_action( 'ocean_before_header' );
 
 // If transparent header style
@@ -36,7 +42,7 @@ if ( 'transparent' == $header_style ) { ?>
 <?php
 } ?>
 
-<header id="site-header" class="<?php echo oceanwp_header_classes(); ?>" itemscope="itemscope" itemtype="http://schema.org/WPHeader" data-height="<?php echo esc_attr( $header_height ); ?>">
+<header id="site-header" class="<?php echo esc_attr( oceanwp_header_classes() ); ?>" itemscope="itemscope" itemtype="http://schema.org/WPHeader" data-height="<?php echo esc_attr( $header_height ); ?>">
 
 	<?php
 	// If header video
@@ -57,6 +63,11 @@ if ( 'transparent' == $header_style ) { ?>
 		get_template_part( 'partials/header/style/full-screen-header' );
 	}
 
+	// If medium header style
+	else if ( 'medium' == $header_style ) {
+		get_template_part( 'partials/header/style/medium-header' );
+	}
+
 	// If custom header style
 	else if ( 'custom' == $header_style ) {
 		get_template_part( 'partials/header/style/custom-header' );
@@ -67,7 +78,7 @@ if ( 'transparent' == $header_style ) { ?>
 
 		<?php do_action( 'ocean_before_header_inner' ); ?>
 
-		<div id="site-header-inner" class="container clr">
+		<div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
 
 			<?php get_template_part( 'partials/header/logo' ); ?>
 

@@ -1,4 +1,7 @@
-var $j = jQuery.noConflict();
+var $j 					= jQuery.noConflict(),
+	$window 			= $j( window ),
+	$lastWindowWidth 	= $window.width(),
+	$lastWindowHeight 	= $window.height();
 
 $j( document ).on( 'ready', function() {
 	"use strict";
@@ -8,12 +11,12 @@ $j( document ).on( 'ready', function() {
 	navNoClick();
 	// Full Screen header menu
 	fullScreenMenu();
+	// Header search form label
+	headerSearchForm();
 	// Mega menu
 	megaMenu();
 	// Menu search
 	menuSearch();
-	// Menu cart
-	menuCart();
 	// Mobile menu
 	mobileMenu();
     // Smooth comment scroll
@@ -22,16 +25,6 @@ $j( document ).on( 'ready', function() {
 	initCarousel();
 	// Custom select
 	customSelects();
-    // Woo catalog view
-    wooGridList();
-    // Woo reviews scroll
-    wooReviewsScroll();
-	// Woo categories widget
-	wooCategoriesWidget();
-    // Auto lightbox
-    autoLightbox();
-    // Lightbox
-    initLightbox();
 	// Masonry grids
 	masonryGrids();
     // Responsive Video
@@ -46,20 +39,33 @@ $j( document ).on( 'ready', function() {
 	scrollTop();
 } );
 
-$j( window ).on( 'load', function() {
+$window.on( 'load', function() {
 	"use strict";
 	if ( $j.fn.infinitescroll !== undefined && $j( 'div.infinite-scroll-nav' ).length ) {
 		// Infinite scroll
 		infiniteScrollInit();
 	}
-	// Variable image product
-	wooVariableImage();
+	// Fixed footer
+	fixedFooter();
 } );
 
-$j( window ).on( 'orientationchange', function() {
+$window.on( 'orientationchange', function() {
 	"use strict";
 	// Masonry grids
 	masonryGrids();
+} );
+
+$window.resize( function() {
+	"use strict";
+
+	var $windowWidth  = $window.width(),
+		$windowHeight = $window.height();
+
+    if ( $lastWindowWidth !== $windowWidth
+    	|| $lastWindowHeight !== $windowHeight ) {
+        fixedFooter();
+    }
+
 } );
 
 /* ==============================================
@@ -154,28 +160,36 @@ function fullScreenMenu() {
             return false;
         } );
 
-		// Add class when the search input is not empty
-		$j( '#site-header.full_screen-header .fs-dropdown-menu form.header-searchform' ).each( function() {
-
-			var form 		= $j( this ),
-				listener	= form.find( 'input' ),
-				$label 		= form.find( 'label' );
-
-			if ( listener.val().length ) {
-				form.addClass( 'search-filled' );
-			}
-
-			listener.on( 'keyup blur', function() {
-				if ( listener.val().length > 0 ) {
-				  form.addClass( 'search-filled' );
-				} else {
-				  form.removeClass( 'search-filled' );
-				}
-			} );
-
-	    } );
-
 	}
+
+}
+
+/* ==============================================
+HEADER SEARCH Form LABEL
+============================================== */
+function headerSearchForm() {
+	"use strict"
+
+	// Add class when the search input is not empty
+	$j( 'form.header-searchform' ).each( function() {
+
+		var form 		= $j( this ),
+			listener	= form.find( 'input' ),
+			$label 		= form.find( 'label' );
+
+		if ( listener.val().length ) {
+			form.addClass( 'search-filled' );
+		}
+
+		listener.on( 'keyup blur', function() {
+			if ( listener.val().length > 0 ) {
+			  form.addClass( 'search-filled' );
+			} else {
+			  form.removeClass( 'search-filled' );
+			}
+		} );
+
+    } );
 
 }
 
@@ -186,10 +200,19 @@ function megaMenu() {
 	"use strict"
 
     $j( '#site-navigation .megamenu-li.full-mega' ).hover( function() {
-        var menuWidth           = $j( '#site-header-inner' ).width(),
-            menuPosition        = $j( '#site-header-inner' ).offset(),     
+        var siteHeader          = $j( '#site-header-inner' ),
+            menuWidth        	= siteHeader.width(),     
+            menuPosition        = siteHeader.offset(),     
             menuItemPosition    = $j( this ).offset(),
             PositionLeft        = menuItemPosition.left-menuPosition.left+1;
+
+        if ( $j( '#site-header' ).hasClass( 'medium-header' ) ) {
+        	siteHeader          = $j( '#site-navigation-wrap > .container' ),
+        	menuWidth           = siteHeader.width(),
+        	menuPosition        = siteHeader.offset(),     
+            PositionLeft        = menuItemPosition.left-menuPosition.left+1;
+		}
+
         $j( this ).find( '.megamenu' ).css( { left: '-'+PositionLeft+'px', width: menuWidth } );
     } );
 
@@ -223,12 +246,12 @@ function megaMenu() {
             } );
         }
         
-        var dropdownRight = ( $j( window ).width() ) - ( liOffset - left + dropdownWidth + dropdowntMarginLeft );
+        var dropdownRight = ( $window.width() ) - ( liOffset - left + dropdownWidth + dropdowntMarginLeft );
         
         if ( dropdownRight < 0 ) {
             $j( this ).css( {
                 'left': 'auto',
-                'right': - ( $j( window ).width() - liOffset - liWidth - 10 )
+                'right': - ( $window.width() - liOffset - liWidth - 10 )
             } );
         }
         
@@ -412,62 +435,6 @@ function menuSearch() {
 			}
 		} );
 
-		// Add class when the search input is not empty
-		$j( '#searchform-overlay .header-searchform' ).each( function() {
-
-			var form 		= $j( this ),
-				listener	= form.find( 'input' ),
-				$label 		= form.find( 'label' );
-				
-			if ( listener.val().length ) {
-				form.addClass( 'search-filled' );
-			}
-
-			listener.on( 'keyup blur', function() {
-				if ( listener.val().length > 0 ) {
-				  form.addClass( 'search-filled' );
-				} else {
-				  form.removeClass( 'search-filled' );
-				}
-			} );
-
-	    } );
-
-	}
-
-}
-
-/* ==============================================
-MENU CART
-============================================== */
-function menuCart() {
-	"use strict"
-
-	if ( $j( 'a.wcmenucart' ).hasClass( 'go-to-shop' ) ) {
-		return;
-	}
-
-	// Drop-down
-	if ( 'drop_down' == oceanwpLocalize.wooCartStyle ) {
-
-		// Display cart dropdown
-		$j( '.toggle-cart-widget' ).click( function( event ) {
-			$j( '#searchform-dropdown' ).removeClass( 'show' );
-			$j( 'a.search-dropdown-toggle' ).parent( 'li' ).removeClass( 'active' );
-			$j( 'div#current-shop-items-dropdown' ).toggleClass( 'show' );
-			$j( this ).toggleClass( 'active' );
-			return false;
-		} );
-
-		// Hide cart dropdown
-		$j( 'div#current-shop-items-dropdown' ).click( function( event ) {
-			event.stopPropagation(); 
-		} );
-		$j( document ).click( function() {
-			$j( 'div#current-shop-items-dropdown' ).removeClass( 'show' );
-			$j( 'li.wcmenucart-toggle-dropdown' ).removeClass( 'active' );
-		} );
-
 	}
 
 }
@@ -543,8 +510,8 @@ function mobileMenu( event ) {
 				} );
 
 				// Close on resize
-				$j( window ).resize( function() {
-					if ( $j( window ).width() >= 960 ) {
+				$window.resize( function() {
+					if ( $window.width() >= 960 ) {
 						$j.sidr( 'close', 'sidr' );
 					}
 				} );
@@ -685,248 +652,6 @@ function customSelects() {
 }
 
 /* ==============================================
-WOOCOMMERCE GRID LIST VIEW
-============================================== */
-function wooGridList() {
-	"use strict"
-
-	if ( $j( 'body' ).hasClass( 'has-grid-list' ) ) {
-
-		$j( '#oceanwp-grid' ).on( 'click', function() {
-			$j( this ).addClass( 'active' );
-			$j( '#oceanwp-list' ).removeClass( 'active' );
-			Cookies.set( 'gridcookie', 'grid', { path: '' } );
-			$j( '.archive.woocommerce ul.products' ).fadeOut( 300, function() {
-				$j( this ).addClass( 'grid' ).removeClass( 'list' ).fadeIn( 300 );
-			} );
-			return false;
-		} );
-
-		$j( '#oceanwp-list' ).on( 'click', function() {
-			$j( this ).addClass( 'active' );
-			$j( '#oceanwp-grid' ).removeClass( 'active' );
-			Cookies.set( 'gridcookie', 'list', { path: '' } );
-			$j( '.archive.woocommerce ul.products' ).fadeOut( 300, function() {
-				$j( this ).addClass( 'list' ).removeClass( 'grid' ).fadeIn( 300 );
-			} );
-			return false;
-		} );
-
-		if ( Cookies.get( 'gridcookie' ) == 'grid' ) {
-	        $j( '.oceanwp-grid-list #oceanwp-grid' ).addClass( 'active' );
-	        $j( '.oceanwp-grid-list #oceanwp-list' ).removeClass( 'active' );
-	        $j( '.archive.woocommerce ul.products' ).addClass( 'grid' ).removeClass( 'list' );
-	    }
-
-	    if ( Cookies.get( 'gridcookie' ) == 'list' ) {
-	        $j( '.oceanwp-grid-list #oceanwp-list' ).addClass( 'active' );
-	        $j( '.oceanwp-grid-list #oceanwp-grid' ).removeClass( 'active' );
-	        $j( '.archive.woocommerce ul.products' ).addClass( 'list' ).removeClass( 'grid' );
-	    }
-
-	} else {
-
-		Cookies.remove( 'gridcookie', { path: '' } );
-
-	}
-
-}
-
-/* ==============================================
-WOOCOMMERCE REVIEWS SCROLL
-============================================== */
-function wooReviewsScroll() {
-	"use strict"
-
-	$j( '.woocommerce div.product .woocommerce-review-link' ).click( function( event ) {
-		$j( '.woocommerce-tabs .description_tab' ).removeClass( 'active' );
-      	$j( '.woocommerce-tabs .reviews_tab' ).addClass( 'active' );
-		$j( '.woocommerce-tabs #tab-description' ).css( 'display', 'none' );
-      	$j( '.woocommerce-tabs #tab-reviews' ).css( 'display', 'block' );
-
-		$j( 'html, body' ).stop(true,true).animate( {
-			scrollTop: $j( this.hash ).offset().top -120
-		}, 'normal' );
-		return false;
-	} );
-
-}
-
-/* ==============================================
-WOOCOMMERCE CATEGORIES WIDGET
-============================================== */
-function wooCategoriesWidget() {
-	"use strict"
-
-	$j( '.product-categories' ).each( function() {
-
-		var IconDown 	= '<i class="fa fa-angle-down"></i>';
-		var IconUp 		= '<i class="fa fa-angle-up"></i>';
-
-		$j( this ).find( 'li' ).has( '.children' ).has( 'li' ).prepend( '<div class="open-this">'+ IconDown +'</div>' );
-
-		$j( this ).find( '.open-this' ).on( 'click', function(){
-	        if ( $j( this ).parent().hasClass( 'opened' ) ) {
-	            $j( this ).html( IconDown ).parent().removeClass( 'opened' ).find( '> ul' ).slideUp( 200 );
-	        } else {
-	            $j( this ).html( IconUp ).parent().addClass( 'opened' ).find( '> ul' ).slideDown( 200 );
-	        }
-	    } );
-
-	} );
-	
-}
-
-/* ==============================================
-WOOCOMMERCE VARIABLE IMAGE PRODUCT
-============================================== */
-function wooVariableImage() {
-	"use strict"
-
-	/**
-	 * Stores a default attribute for an element so it can be reset later
-	 */
-	$j.fn.wc_set_variation_attr = function( attr, value ) {
-		if ( undefined === this.attr( 'data-o_' + attr ) ) {
-			this.attr( 'data-o_' + attr, ( ! this.attr( attr ) ) ? '' : this.attr( attr ) );
-		}
-		this.attr( attr, value );
-	};
-
-	/**
-	 * Reset a default attribute for an element so it can be reset later
-	 */
-	$j.fn.wc_reset_variation_attr = function( attr ) {
-		if ( undefined !== this.attr( 'data-o_' + attr ) ) {
-			this.attr( attr, this.attr( 'data-o_' + attr ) );
-		}
-	};
-
-	/**
-	 * Sets product images for the chosen variation
-	 */
-	$j.fn.wc_variations_image_update = function( variation ) {
-		var $form 			= this,
-			$product 		= $form.closest( '.product' ),
-			$product_img 	= $product.find( 'div.images .main-images img:eq(1), div.images .product-thumbnails .first-thumbnail:not(.slick-cloned) img' ),
-			$product_link 	= $product.find( 'div.images a.woocommerce-main-image:eq(1), div.images .first-thumbnail:not(.slick-cloned) a.woo-thumbnail:eq(3)' );
-
-		if ( variation && variation.image_src && variation.image_src.length > 1 ) {
-
-			// Image attrs
-			$product_img.wc_set_variation_attr( 'src', variation.image_src );
-			$product_img.wc_set_variation_attr( 'title', variation.image_title );
-			$product_img.wc_set_variation_attr( 'alt', variation.image_alt );
-			$product_img.wc_set_variation_attr( 'srcset', variation.image_srcset );
-			$product_img.wc_set_variation_attr( 'sizes', variation.image_sizes );
-			$product_link.wc_set_variation_attr( 'href', variation.image_link );
-			$product_link.wc_set_variation_attr( 'title', variation.image_title );
-
-			// Refresh slide
-			if ( $j( 'body' ).hasClass( 'single-product' ) ) {
-				$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
-
-				// Refresh lightbox
-				$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
-					loop           	: true,
-					imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
-	            } );
-	        }
-		} else {
-
-			// Reset image attrs
-			$product_img.wc_reset_variation_attr( 'src' );
-			$product_img.wc_reset_variation_attr( 'title' );
-			$product_img.wc_reset_variation_attr( 'alt' );
-			$product_img.wc_reset_variation_attr( 'srcset' );
-			$product_img.wc_reset_variation_attr( 'sizes' );
-			$product_link.wc_reset_variation_attr( 'href' );
-			$product_link.wc_reset_variation_attr( 'title' );
-
-			// Refresh slide
-			if ( $j( 'body' ).hasClass( 'single-product' ) ) {
-				$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
-
-				// Refresh lightbox
-				$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
-					loop           	: true,
-					imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
-	            } );
-	        }
-		}
-	};
-	
-}
-
-/* ==============================================
-AUTO LIGHTBOX
-============================================== */
-function autoLightbox() {
-	"use strict"
-
-	$j( 'body .entry-content a:has(img), body .entry a:has(img)' ).each( function() {
-
-		// Make sure the lightbox is only used for image links and not for links to external pages
-		var $image_formats = ['bmp', 'gif', 'jpeg', 'jpg', 'png', 'tiff', 'tif', 'jfif', 'jpe', 'svg', 'mp4', 'ogg', 'webm'],
-			$image_formats_mask = 0;
-
-		// Loop through the image extensions array to see if we have an image link
-		for ( var $i = 0; $i < $image_formats.length; $i++ ) {
-			$image_formats_mask += String( $j( this ).attr( 'href' ) ).indexOf( '.' + $image_formats[$i] );
-		}
-
-		// If no image extension was found add the no lightbox class
-		if ( $image_formats_mask == -13 ) {
-			$j( this ).addClass( 'no-lightbox' );
-		}
-
-		if ( ! $j( this ).hasClass( 'no-lightbox' )
-			&& ! $j( this ).hasClass( 'gallery-lightbox' )
-			&& ! $j( this ).parent().hasClass( 'gallery-icon' )
-			&& ! $j( this ).hasClass( 'woo-lightbox' )
-			&& ! $j( this ).hasClass( 'woo-thumbnail' ) ) {
-
-			$j( this ).addClass( 'oceanwp-lightbox' );
-		    
-		}
-
-		if ( ! $j( this ).hasClass( 'no-lightbox' )
-			&& $j( this ).parent().hasClass( 'gallery-icon' ) ) {
-
-			$j( this ).addClass( 'gallery-lightbox' );
-		    
-		}
-
-	} );
-
-}
-
-/* ==============================================
-LIGHTBOX
-============================================== */
-function initLightbox( $context ) {
-	"use strict"
-
-	// Lightbox
-	$j( 'body .site-content, body .entry' ).Chocolat( {
-        imageSelector   : '.oceanwp-lightbox'
-    } );
-
-    // Gallery lightbox
-	$j( '.gallery-format, .gallery', $context ).Chocolat( {
-        loop           	: true,
-        imageSelector   : '.gallery-lightbox:not(.slick-cloned)'
-    } );
-
-    // Product lightbox
-	$j( '.product-images-slider' ).Chocolat( {
-        loop           	: true,
-        imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
-    } );
-
-}
-
-/* ==============================================
 INFINITE SCROLL
 ============================================== */
 function infiniteScrollInit() {
@@ -970,7 +695,10 @@ function infiniteScrollInit() {
 
 			// Re-run functions
 			initCarousel( $newElems );
-			initLightbox( $newElems );
+
+			if ( $j( 'body' ).hasClass( 'has-lightbox' ) ) {
+				initLightbox( $newElems );
+			}
 
 			// Equal heights
 			if ( $j.fn.equalHeights !== undefined ) {
@@ -1107,6 +835,7 @@ function scrollEffect() {
 
 }
 
+// Admin bar height
 function getAdminbarHeight() {
 	"use strict"
 
@@ -1119,6 +848,7 @@ function getAdminbarHeight() {
 	return $adminbarHeight;
 }
 
+// Top bar height
 function getTopbarHeight() {
 	"use strict"
 
@@ -1132,6 +862,7 @@ function getTopbarHeight() {
 	return $topbarHeight;
 }
 
+// Header height
 function getStickyHeaderHeight() {
 	"use strict"
 
@@ -1142,7 +873,7 @@ function getStickyHeaderHeight() {
 		$stickyHeaderHeight = $j( '#site-header' ).attr( 'data-height' );
 	}
 
-	if ( $j( window ).width() <= 960
+	if ( $window.width() <= 960
 		&& ! $j( '#site-header' ).hasClass( 'has-sticky-mobile' )
 		&& $j( '#site-header' ).length ) {
 		$stickyHeaderHeight = 0;
@@ -1163,7 +894,7 @@ function scrollTop() {
 		slashTopLink 	: 'body.home a[href="/#go-top"]'
 	}
 
-	$j( window ).on( 'scroll', function() {
+	$window.on( 'scroll', function() {
 		if ( $j( this ).scrollTop() > 100 ) {
 			$j( '#scroll-top' ).fadeIn();
 		} else {
@@ -1178,5 +909,26 @@ function scrollTop() {
 			$j( this ).parent().removeClass( 'sfHover' );
 		});
 	});
+
+}
+
+/* ==============================================
+FIXED FOOTER
+============================================== */
+function fixedFooter() {
+	"use strict"
+
+    if ( ! $j( 'body' ).hasClass( 'has-fixed-footer' ) ) {
+        return;
+    }
+
+    // Set main vars
+    var $mainHeight 		= $j( '#main' ).outerHeight(),
+    	$htmlHeight 		= $j( 'html' ).height(),
+    	$adminbarHeight		= getAdminbarHeight(),
+    	$minHeight 			= $mainHeight + ( $window.height() - $htmlHeight - $adminbarHeight );
+
+    // Add min height
+    $j( '#main' ).css( 'min-height', $minHeight );
 
 }

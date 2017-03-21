@@ -35,7 +35,7 @@ if ( ! $author_description ) {
 			<a href="<?php echo esc_url( $author_url ); ?>" title="<?php esc_attr_e( 'Visit Author Page', 'oceanwp' ); ?>" rel="author" >
 				<?php
 				// Display author avatar
-				echo $author_avatar; ?>
+				echo wp_kses_post( $author_avatar ); ?>
 			</a>
 
 		</div><!-- .author-bio-avatar -->
@@ -46,7 +46,7 @@ if ( ! $author_description ) {
 
 		<h4 class="author-bio-title">
 			<a href="<?php echo esc_url( $author_url ); ?>" title="<?php esc_attr_e( 'Visit Author Page', 'oceanwp' ); ?>">
-				<?php echo strip_tags( $author ); ?>
+				<?php echo esc_html( strip_tags( $author ) ); ?>
 			</a>
 		</h4><!-- .author-bio-title -->
 

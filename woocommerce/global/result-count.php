@@ -16,7 +16,7 @@ if ( is_single() || ! have_posts() ) {
 
 $products_per_page = get_theme_mod( 'ocean_woo_shop_posts_per_page', '12' );
 
-$num_prod = ( isset( $_GET['products-per-page'] ) ) ? $_GET['products-per-page'] : $products_per_page;
+$num_prod = ( isset( $_GET['products-per-page'] ) ) ? sanitize_text_field( wp_unslash( $_GET['products-per-page'] ) ) : $products_per_page;
 
 $num_prod_x1 = $products_per_page;
 $num_prod_x2 = $num_prod_x1 * 2;
@@ -58,7 +58,7 @@ if( ! empty( $_GET ) ) {
 
 <ul class="result-count">
     <li class="view-title"><?php esc_html_e( 'View:', 'oceanwp' ) ?></li>
-    <li><a class="view-first<?php if ( $num_prod == $num_prod_x1 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x1, $link  ) ) ?>"><?php echo $num_prod_x1 ?></a></li>
-    <li><a class="view-second<?php if ( $num_prod == $num_prod_x2 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x2, $link  ) ) ?>"><?php echo $num_prod_x2 ?></a></li>
+    <li><a class="view-first<?php if ( $num_prod == $num_prod_x1 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x1, $link  ) ) ?>"><?php echo esc_attr( $num_prod_x1 ); ?></a></li>
+    <li><a class="view-second<?php if ( $num_prod == $num_prod_x2 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x2, $link  ) ) ?>"><?php echo esc_attr( $num_prod_x2 ); ?></a></li>
     <li><a class="view-all<?php if ( $num_prod == 'all' ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', 'all', $link  ) ) ?>"><?php esc_html_e( 'All', 'oceanwp' ) ?></a></li>
 </ul>

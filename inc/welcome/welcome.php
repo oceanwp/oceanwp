@@ -198,53 +198,55 @@ class OCEANWP_Welcome {
 							<li>
 								<span class="option-title"><?php esc_html_e( 'Upload your logo', 'oceanwp' ); ?></span>
 								<p><?php esc_html_e( 'Add your own logo and retina logo used for the mobile design.', 'oceanwp' ); ?></p>
-								<a class="option-link" href="<?php echo admin_url( 'customize.php?autofocus[control]=custom_logo' ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
+								<a class="option-link" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=custom_logo' ) ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
 							</li>
 							<li>
 								<span class="option-title"><?php esc_html_e( 'Add your favicon', 'oceanwp' ); ?></span>
 								<p><?php esc_html_e( 'The favicon is used as a browser and app icon for your website.', 'oceanwp' ); ?></p>
-								<a class="option-link" href="<?php echo admin_url( 'customize.php?autofocus[control]=site_icon' ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
+								<a class="option-link" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=site_icon' ) ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
 							</li>
 							<li>
 								<span class="option-title"><?php esc_html_e( 'Choose your primary color', 'oceanwp' ); ?></span>
 								<p><?php esc_html_e( 'Replace the default primary and hover color by your own colors.', 'oceanwp' ); ?></p>
-								<a class="option-link" href="<?php echo admin_url( 'customize.php?autofocus[control]=ocean_primary_color' ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
+								<a class="option-link" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=ocean_primary_color' ) ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
 							</li>
 							<li>
 								<span class="option-title"><?php esc_html_e( 'Change the links color', 'oceanwp' ); ?></span>
 								<p><?php esc_html_e( 'Choose the color and hover color of your links for the entire site.', 'oceanwp' ); ?></p>
-								<a class="option-link" href="<?php echo admin_url( 'customize.php?autofocus[control]=ocean_links_color' ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
+								<a class="option-link" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=ocean_links_color' ) ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
 							</li>
 							<li>
 								<span class="option-title"><?php esc_html_e( 'Choose your typography', 'oceanwp' ); ?></span>
 								<p><?php esc_html_e( 'Choose your own typography for any parts of your website.', 'oceanwp' ); ?></p>
-								<a class="option-link" href="<?php echo admin_url( 'customize.php?autofocus[panel]=ocean_typography_panel' ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
+								<a class="option-link" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[panel]=ocean_typography_panel' ) ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
 							</li>
 							<li>
 								<span class="option-title"><?php esc_html_e( 'Top bar options', 'oceanwp' ); ?></span>
 								<p><?php esc_html_e( 'Enable/Disable the top bar, add your own paddings and colors.', 'oceanwp' ); ?></p>
-								<a class="option-link" href="<?php echo admin_url( 'customize.php?autofocus[control]=ocean_top_bar' ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
+								<a class="option-link" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=ocean_top_bar' ) ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
 							</li>
 							<li>
 								<span class="option-title"><?php esc_html_e( 'Header options', 'oceanwp' ); ?></span>
 								<p><?php esc_html_e( 'Choose the style, the height and the colors for your site header.', 'oceanwp' ); ?></p>
-								<a class="option-link" href="<?php echo admin_url( 'customize.php?autofocus[control]=ocean_header_style' ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
+								<a class="option-link" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=ocean_header_style' ) ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
 							</li>
 							<li>
 								<span class="option-title"><?php esc_html_e( 'Footer bottom options', 'oceanwp' ); ?></span>
 								<p><?php esc_html_e( 'Add your copyright, paddings and colors for the footer bottom.', 'oceanwp' ); ?></p>
-								<a class="option-link" href="<?php echo admin_url( 'customize.php?autofocus[control]=ocean_footer_bottom' ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
+								<a class="option-link" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=ocean_footer_bottom' ) ); ?>" target="_blank"><?php esc_html_e( 'Go to the option', 'oceanwp' ); ?></a>
 							</li>
 						</ul>
 
 						<?php
 						// Customizer url
-						$customize_url = add_query_arg(
-							array(
-								'return' => urlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) ),
-							),
-							'customize.php'
-						); ?>
+						if ( isset( $_SERVER['REQUEST_URI'] ) ) {
+							$customize_url = add_query_arg(
+								array(
+									'return' => urlencode( esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ),
+								),
+								'customize.php'
+							);
+						} ?>
 						<div class="oceanwp-btn">
 							<a href="<?php echo esc_url( $customize_url ); ?>" class="oceanwp-button load-customize hide-if-no-customize"><?php esc_html_e( 'Customize Your Site', 'oceanwp' ); ?> &rarr;</a>
 						</div>

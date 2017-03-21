@@ -21,11 +21,11 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		public function __construct() {
 
 			add_action( 'customize_register', 		array( $this, 'customizer_options' ) );
-			add_action( 'customize_preview_init', 	array( $this, 'customize_preview_init' ) );
 			add_action( 'wp_enqueue_scripts', 		array( $this, 'load_fonts' ) );
 		
 			// CSS output
 			if ( is_customize_preview() ) {
+				add_action( 'customize_preview_init', array( $this, 'customize_preview_init' ) );
 				add_action( 'wp_head', 				array( $this, 'live_preview_styles' ), 999 );
 			} else {
 				add_filter( 'ocean_head_css', 		array( $this, 'head_css' ), 99 );
@@ -117,7 +117,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				),
 				'menu' 						=> array(
 					'label' 				=> esc_html__( 'Main Menu', 'oceanwp' ),
-					'target' 				=> '#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a',
+					'target' 				=> '#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a',
 					'exclude' 				=> array( 'font-color', 'line-height' ),
 					'defaults' 				=> array(
 						'font-size' 		=> '13',

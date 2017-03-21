@@ -57,10 +57,10 @@ if ( ! class_exists( 'OceanWP_MailChimp_Widget' ) ) {
 			$form_style = '';
 			$input_style = '';
 			if ( $width ) {
-				$form_style .= 'width:'. $width .';';
+				$form_style .= 'width:'. esc_attr( $width ) .';';
 			}
 			if ( $height ) {
-				$input_style .= 'height:'. $height .';';
+				$input_style .= 'height:'. esc_attr( $height ) .';';
 			}
 			if ( $form_style ) {
 				$form_style = ' style="' . esc_attr( $form_style ) . '"';
@@ -74,7 +74,7 @@ if ( ! class_exists( 'OceanWP_MailChimp_Widget' ) ) {
 
 				// Show widget title
 				if ( $title ) {
-					echo $args['before_title'] . $title . $args['after_title'];
+					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				} ?>
 
 				<div class="oceanwp-newsletter-form clr">
@@ -87,9 +87,9 @@ if ( ! class_exists( 'OceanWP_MailChimp_Widget' ) ) {
 							
 						<?php } ?>
 
-						<form action="<?php echo esc_url( $mailchimpaction ); ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate<?php echo $form_style; ?>>
+						<form action="<?php echo esc_url( $mailchimpaction ); ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate<?php echo wp_kses_post( $form_style ); ?>>
 
-							<input type="email" value="<?php echo esc_attr( $placeholder ); ?>" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" name="EMAIL" class="required email"<?php echo $input_style; ?>>
+							<input type="email" value="<?php echo esc_attr( $placeholder ); ?>" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" name="EMAIL" class="required email"<?php echo wp_kses_post( $input_style ); ?>>
 
 							<?php if ( $submit_text ) { ?>
 
@@ -163,32 +163,32 @@ if ( ! class_exists( 'OceanWP_MailChimp_Widget' ) ) {
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'subscribe_text' ) ); ?>">
 				<?php esc_html_e( 'Text', 'oceanwp' ); ?></label>
-				<textarea rows="15" id="<?php echo $this->get_field_id( 'subscribe_text' ); ?>" name="<?php echo $this->get_field_name( 'subscribe_text' ); ?>" class="widefat" style="height: 100px;"><?php if( !empty( $instance['subscribe_text'] ) ) { echo $instance['subscribe_text']; } ?></textarea>
+				<textarea rows="15" id="<?php echo esc_attr( $this->get_field_id( 'subscribe_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'subscribe_text' ) ); ?>" class="widefat" style="height: 100px;"><?php if( !empty( $instance['subscribe_text'] ) ) { echo esc_textarea( $instance['subscribe_text'] ); } ?></textarea>
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('mailchimpaction'); ?>"><?php esc_html_e('MailChimp Form Action', 'oceanwp'); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id('mailchimpaction'); ?>" name="<?php echo $this->get_field_name( 'mailchimpaction' ); ?>" type="text" value="<?php echo esc_url( $instance['mailchimpaction'] ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id('mailchimpaction') ); ?>"><?php esc_html_e('MailChimp Form Action', 'oceanwp'); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('mailchimpaction') ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'mailchimpaction' ) ); ?>" type="text" value="<?php echo esc_url( $instance['mailchimpaction'] ); ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('width'); ?>"><?php esc_html_e('Input Width (px)', 'oceanwp'); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id('width' ); ?>" name="<?php echo $this->get_field_name( 'width' ); ?>" type="text" value="<?php echo esc_attr( $instance['width'] ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id('width') ); ?>"><?php esc_html_e('Input Width (px)', 'oceanwp'); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('width' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'width' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['width'] ); ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('height'); ?>"><?php esc_html_e('Input Height (px)', 'oceanwp'); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id('height' ); ?>" name="<?php echo $this->get_field_name( 'height' ); ?>" type="text" value="<?php echo esc_attr( $instance['height'] ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id('height') ); ?>"><?php esc_html_e('Input Height (px)', 'oceanwp'); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('height' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'height' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['height'] ); ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('placeholder'); ?>"><?php esc_html_e('Placeholder', 'oceanwp'); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id('placeholder' ); ?>" name="<?php echo $this->get_field_name( 'placeholder' ); ?>" type="text" value="<?php echo esc_attr( $instance['placeholder'] ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id('placeholder') ); ?>"><?php esc_html_e('Placeholder', 'oceanwp'); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('placeholder' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'placeholder' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['placeholder'] ); ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('submit_text'); ?>"><?php esc_html_e('Submit Text', 'oceanwp'); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id('submit_text' ); ?>" name="<?php echo $this->get_field_name( 'submit_text' ); ?>" type="text" value="<?php echo esc_attr( $instance['submit_text'] ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id('submit_text') ); ?>"><?php esc_html_e('Submit Text', 'oceanwp'); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('submit_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'submit_text' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['submit_text'] ); ?>" />
 			</p>
 
 		<?php

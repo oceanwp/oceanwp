@@ -148,18 +148,17 @@ if ( ! class_exists( 'OceanWP_Social_Widget' ) ) {
 			$size          = $size ? $size : '';
 			$font_size     = $font_size ? $font_size : '';
 			$border_radius = $border_radius ? $border_radius  : '';
-			$target        = 'blank' == $target ? ' target="_blank"' : '';
 
 			// Inline style
 			$add_style = '';
 			if ( $size && 'simple' != $style ) {
-				$add_style .= 'height:'. $size .';width:'. $size .';line-height:'. $size .';';
+				$add_style .= 'height:'. esc_attr( $size ) .';width:'. esc_attr( $size ) .';line-height:'. esc_attr( $size ) .';';
 			}
 			if ( $font_size ) {
-				$add_style .= 'font-size:'. $font_size .';';
+				$add_style .= 'font-size:'. esc_attr( $font_size ) .';';
 			}
 			if ( $border_radius && 'simple' != $style ) {
-				$add_style .= 'border-radius:'. $border_radius .';';
+				$add_style .= 'border-radius:'. esc_attr( $border_radius ) .';';
 			}
 			if ( $add_style ) {
 				$add_style = ' style="' . esc_attr( $add_style ) . '"';
@@ -170,7 +169,7 @@ if ( ! class_exists( 'OceanWP_Social_Widget' ) ) {
 
 				// Display title
 				if ( $title ) {
-					echo $args['before_title'] . $title . $args['after_title'];
+					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				}
 
 				// Display the social icons. ?>
@@ -189,7 +188,7 @@ if ( ! class_exists( 'OceanWP_Social_Widget' ) ) {
 							$icon = 'pinterest' == $key ? 'pinterest-p' : $icon;
 							$icon = 'bloglovin' == $key ? 'heart' : $icon;
 							$icon = 'vimeo-square' == $key ? 'vimeo' : $icon;
-							echo '<li class="oceanwp-'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" title="'. esc_attr( $name ) .'" '. $add_style . $target .'><i class="fa fa-'. esc_attr( $icon ) .'"></i></a></li>';
+							echo '<li class="oceanwp-'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" title="'. esc_attr( $name ) .'" '. wp_kses_post( $add_style ) . ' target="_'. esc_attr( $target ) .'"><i class="fa fa-'. esc_attr( $icon ) .'"></i></a></li>';
 						}
 					} ?>
 				</ul>
@@ -252,8 +251,8 @@ if ( ! class_exists( 'OceanWP_Social_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'style' ); ?>"><?php esc_html_e( 'Style:', 'oceanwp' ); ?></label>
-				<select class='widefat' name="<?php echo $this->get_field_name( 'style' ); ?>" id="<?php echo $this->get_field_id( 'style' ); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'style' ) ); ?>"><?php esc_html_e( 'Style:', 'oceanwp' ); ?></label>
+				<select class='widefat' name="<?php echo esc_attr( $this->get_field_name( 'style' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'style' ) ); ?>">
 					<option value="light" <?php selected( $instance['style'], 'light' ) ?>><?php esc_html_e( 'Light', 'oceanwp' ); ?></option>
 					<option value="dark" <?php selected( $instance['style'], 'dark' ) ?>><?php esc_html_e( 'Dark', 'oceanwp' ); ?></option>
 					<option value="colored" <?php selected( $instance['style'], 'colored' ) ?>><?php esc_html_e( 'Colored', 'oceanwp' ); ?></option>
@@ -262,8 +261,8 @@ if ( ! class_exists( 'OceanWP_Social_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'transition' ); ?>"><?php esc_html_e( 'Transition:', 'oceanwp' ); ?></label>
-				<select class='widefat' name="<?php echo $this->get_field_name( 'transition' ); ?>" id="<?php echo $this->get_field_id( 'transition' ); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'transition' ) ); ?>"><?php esc_html_e( 'Transition:', 'oceanwp' ); ?></label>
+				<select class='widefat' name="<?php echo esc_attr( $this->get_field_name( 'transition' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'transition' ) ); ?>">
 					<option value="no-transition" <?php selected( $instance['transition'], 'no-transition' ) ?>><?php esc_html_e( 'None', 'oceanwp' ); ?></option>
 					<option value="float" <?php selected( $instance['transition'], 'float' ) ?>><?php esc_html_e( 'Float', 'oceanwp' ); ?></option>
 					<option value="rotate" <?php selected( $instance['transition'], 'rotate' ) ?>><?php esc_html_e( 'Rotate', 'oceanwp' ); ?></option>
@@ -316,7 +315,7 @@ if ( ! class_exists( 'OceanWP_Social_Widget' ) ) {
 					$name = $social_services_array[$key]['name']; ?>
 					<li id="<?php echo esc_attr( $field_id_services ); ?>_0<?php echo esc_attr( $key ); ?>">
 						<p>
-							<label for="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-name"><?php echo strip_tags( $name ); ?>:</label>
+							<label for="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-name"><?php echo esc_attr( strip_tags( $name ) ); ?>:</label>
 							<input type="hidden" id="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-url" name="<?php echo esc_attr( $field_name_services .'['.$key.'][name]' ); ?>" value="<?php echo esc_attr( $name ); ?>">
 							<input type="url" class="widefat" id="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-url" name="<?php echo esc_attr( $field_name_services .'['.$key.'][url]' ); ?>" value="<?php echo esc_attr( $url ); ?>" />
 						</p>

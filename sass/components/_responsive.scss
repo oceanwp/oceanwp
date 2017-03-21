@@ -64,6 +64,22 @@
 	}
 }
 
+/* Medium header */
+#site-header.medium-header #oceanwp-mobile-menu-icon {
+	float: none;
+	right: auto !important;
+	left: auto !important;
+
+	a {
+		float: none;
+		display: inline-block;
+		font-size: 12px;
+		line-height: 60px;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+	}
+}
+
 /*------------------------------------*
 	Retina Logo
 *------------------------------------*/
@@ -224,8 +240,8 @@ only screen and (                min-resolution: 2dppx) {
 		}
 	}
 
-	/* Hide social and search form in sidr for the top menu header style */
-	.top-header-style {
+	/* Hide social and search form in sidr for the medium header style */
+	.medium-header-style {
 		.sidr-class-social-menu-inner,
 		.sidr-class-mobile-searchform {
 			display: none;
@@ -412,6 +428,23 @@ only screen and (                min-resolution: 2dppx) {
 		text-align: right;
 	}
 
+	/* medium header style */
+	#site-header.medium-header {
+		#medium-searchform, #oceanwp-social-menu,
+		.top-col.col-1, .top-col.col-3 {
+			display: none;
+		}
+
+		.top-col {
+			width:100%;
+		}
+
+		.sidr-class-social-menu-inner, .sidr-class-mobile-searchform,
+		.header-top-inner {
+			display: block;
+		}
+	}
+
 	/* logo */
 	#site-logo {
 		margin-top: 0px !important;
@@ -594,6 +627,17 @@ only screen and (                min-resolution: 2dppx) {
 		.sidr-class-social-menu-inner,
 		.sidr-class-mobile-searchform {
 			display: block;
+		}
+	}
+
+	/* medium header style */
+	#site-header.medium-header {
+		.header-top-wrap {
+			padding: 20px 0;
+		}
+
+		#oceanwp-mobile-menu-icon a {
+			line-height: 40px;
 		}
 	}
 	

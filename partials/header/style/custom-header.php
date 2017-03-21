@@ -12,6 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+// If is not PHP version 5.2+
+if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
+    return;
+}
+
 // Get page
 $get_page 	= oceanwp_header_page_id();
 
@@ -21,22 +26,18 @@ $get_id 	= get_theme_mod( 'ocean_header_page_id' );
 // Check if page is Elementor page
 $elementor 	= get_post_meta( $get_id, '_elementor_edit_mode', true );
 
-// Add container class
-$container 	= get_theme_mod( 'ocean_add_custom_header_container', true );
-
-if ( $container ) {
-	$class 	= 'container ';
-} else {
-	$class 	= '';
+// Add container class if the header is not full width
+$class = '';
+if ( true == get_theme_mod( 'ocean_add_custom_header_container', true ) )  {
+    $class = ' container';
 }
-
 
 // Check if there is page for the header
 if ( $get_page ) : ?>
 
     <?php do_action( 'ocean_before_header_inner' ); ?>
 
-	<div id="site-header-inner" class="<?php echo esc_attr( $class ); ?>clr">
+	<div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
 
 	    <?php
 	    // If Elementor

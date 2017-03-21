@@ -54,7 +54,7 @@ if ( 'grid-entry' == oceanwp_blog_entry_style() ) {
 			if ( oceanwp_gallery_is_lightbox_enabled() == 'on' ) : ?>
 
 				<a href="<?php echo esc_url( wp_get_attachment_url( $attachment ) ); ?>" title="<?php echo esc_attr( $attachment_alt ); ?>" class="gallery-lightbox">
-					<?php echo $attachment_html; ?>
+					<?php echo wp_kses_post( $attachment_html ); ?>
 				</a>
 
 			<?php
@@ -62,7 +62,7 @@ if ( 'grid-entry' == oceanwp_blog_entry_style() ) {
 			else : ?>
  
 				<a href="<?php the_permalink(); ?>" class="thumbnail-link">
-					<?php echo $attachment_html; ?>
+					<?php echo wp_kses_post( $attachment_html ); ?>
 				</a>
 			
 			<?php endif;

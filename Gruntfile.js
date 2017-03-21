@@ -16,7 +16,9 @@ module.exports = function ( grunt ) {
 		uglify: {
 			dev: {
 				files: {
-					'assets/js/devs/chocolat.min.js': 'assets/js/devs/chocolat.js',
+					'assets/js/dynamic/chocolat.min.js': 'assets/js/dynamic/chocolat.js',
+					'assets/js/dynamic/lightbox.min.js': 'assets/js/dynamic/lightbox.js',
+					'assets/js/dynamic/woo-scripts.min.js': 'assets/js/dynamic/woo-scripts.js',
 					'assets/js/devs/cookie.min.js': 'assets/js/devs/cookie.js',
 					'assets/js/devs/customselect.min.js': 'assets/js/devs/customselect.js',
 					'assets/js/devs/equalHeights.min.js': 'assets/js/devs/equalHeights.js',
@@ -48,6 +50,7 @@ module.exports = function ( grunt ) {
 			prod: {
 				files: {
 					'assets/css/oceanwp-woocommerce.min.css': 'assets/css/oceanwp-woocommerce.css',
+					'assets/css/oceanwp-lightbox.min.css': 'assets/css/oceanwp-lightbox.css',
 					'inc/welcome/css/welcome.min.css': 'inc/welcome/css/welcome.css'
 				}
 			}

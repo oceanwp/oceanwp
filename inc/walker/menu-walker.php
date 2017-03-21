@@ -303,8 +303,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 								$output .= '</li>';
 							}
 
-							$post = $original_post;
-							wp_reset_query();
+							wp_reset_postdata();
 
 						}
 

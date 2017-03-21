@@ -62,7 +62,7 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 					if ( $fonts && is_array( $fonts ) ) { ?>
 						<optgroup label="<?php esc_html_e( 'Custom Fonts', 'oceanwp' ); ?>">
 							<?php foreach ( $fonts as $font ) { ?>
-								<option value="<?php echo $font; ?>" <?php if ( $font == $this_val ) echo 'selected="selected"'; ?>><?php echo $font; ?></option>
+								<option value="<?php echo esc_html( $font ); ?>" <?php if ( $font == $this_val ) echo 'selected="selected"'; ?>><?php echo esc_html( $font ); ?></option>
 							<?php } ?>
 						</optgroup>
 					<?php }
@@ -74,7 +74,7 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 						<?php
 						// Loop through font options and add to select
 						foreach ( $std_fonts as $font ) { ?>
-							<option value="<?php echo $font; ?>" <?php selected( $font, $this_val ); ?>><?php echo $font; ?></option>
+							<option value="<?php echo esc_html( $font ); ?>" <?php selected( $font, $this_val ); ?>><?php echo esc_html( $font ); ?></option>
 						<?php } ?>
 					</optgroup>
 				<?php }
@@ -85,7 +85,7 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 						<?php
 						// Loop through font options and add to select
 						foreach ( $google_fonts as $font ) { ?>
-							<option value="<?php echo $font; ?>" <?php selected( $font, $this_val ); ?>><?php echo $font; ?></option>
+							<option value="<?php echo esc_html( $font ); ?>" <?php selected( $font, $this_val ); ?>><?php echo esc_html( $font ); ?></option>
 						<?php } ?>
 					</optgroup>
 				<?php } ?>

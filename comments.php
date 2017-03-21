@@ -37,7 +37,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 	<?php if ( have_comments() ) : ?>
 
 		<h2 class="theme-heading comments-title">
-		<span class="text"><?php printf( esc_html( _n( 'This Post Has %d Comment', 'This Post Has %d Comments', get_comments_number(), 'oceanwp'  ) ), number_format_i18n( get_comments_number() ) ); ?></span>
+			<span class="text"><?php printf( esc_html( _n( 'This Post Has %d Comment', 'This Post Has %d Comments', get_comments_number(), 'oceanwp'  ) ), esc_html( number_format_i18n( get_comments_number() ) ) ); ?></span>
 		</h2>
 
 		<ol class="comment-list">
@@ -84,11 +84,11 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
 
-		$fields['author'] 	= '<div class="comment-form-author"><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_html__( 'Name (required)', 'oceanwp' ).'" size="22" tabindex="1"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
+		$fields['author'] 	= '<div class="comment-form-author"><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_html__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="1"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
 
-		$fields['email'] 	= '<div class="comment-form-email"><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_html__( 'Email (required)', 'oceanwp' ).'" size="22" tabindex="2"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
+		$fields['email'] 	= '<div class="comment-form-email"><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_html__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="2"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
 
-		$fields['url'] 		= '<div class="comment-form-url"><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_html__( 'Website', 'oceanwp' ).'" size="22" tabindex="3" class="input-website" /></div>';
+		$fields['url'] 		= '<div class="comment-form-url"><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_html__( 'Website', 'oceanwp' ) .'" size="22" tabindex="3" class="input-website" /></div>';
 
 		return $fields;
 

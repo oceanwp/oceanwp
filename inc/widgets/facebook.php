@@ -59,7 +59,7 @@ if ( ! class_exists( 'OceanWP_Facebook_Widget' ) ) {
 			if ( empty( $like_args['href'] ) || ! $this->is_valid_facebook_url( $like_args['href'] ) ) {
 				if ( current_user_can('edit_theme_options') ) {
 					echo $before_widget;
-					echo '<p>' . sprintf( __( 'It looks like your Facebook URL is incorrectly configured. Please check it in your <a href="%s">widget settings</a>.', 'oceanwp' ), admin_url( 'widgets.php' ) ) . '</p>';
+					echo '<p>' . sprintf( esc_html__( 'It looks like your Facebook URL is incorrectly configured. Please check it in your <a href="%s">widget settings</a>.', 'oceanwp' ), esc_url( admin_url( 'widgets.php' ) ) ) . '</p>';
 					echo $after_widget;
 				}
 				echo '<!-- Invalid Facebook Page URL -->';
@@ -161,38 +161,38 @@ if ( ! class_exists( 'OceanWP_Facebook_Widget' ) ) {
 			$like_args = $this->normalize_facebook_args( $instance['like_args'] ); ?>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title', 'oceanwp' ); ?></label>
-				<input type="text" name="<?php echo $this->get_field_name( 'title' ); ?>" id="<?php echo $this->get_field_id( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'oceanwp' ); ?></label>
+				<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'href' ); ?>"><?php esc_html_e( 'Facebook Page URL', 'oceanwp' ); ?></label>
-				<input type="text" name="<?php echo $this->get_field_name( 'href' ); ?>" id="<?php echo $this->get_field_id( 'href' ); ?>" value="<?php echo esc_url( $like_args['href'] ); ?>" class="widefat" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'href' ) ); ?>"><?php esc_html_e( 'Facebook Page URL', 'oceanwp' ); ?></label>
+				<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'href' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'href' ) ); ?>" value="<?php echo esc_url( $like_args['href'] ); ?>" class="widefat" />
 				<br />
 				<small><?php esc_html_e( 'The Like Box only works with ', 'oceanwp' ); ?><a href="http://www.facebook.com/help/?faq=174987089221178" target="_blank"><?php esc_html_e( 'Facebook Pages', 'oceanwp' ); ?></a></small>
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'width' ); ?>"><?php esc_html_e( 'Width', 'oceanwp' ); ?></label>
-				<input type="number" class="smalltext" min="1" max="999" maxlength="3" name="<?php echo $this->get_field_name( 'width' ); ?>" id="<?php echo $this->get_field_id( 'width' ); ?>" value="<?php echo esc_attr( $like_args['width'] ); ?>" style="text-align: center;" />px
+				<label for="<?php echo esc_attr( $this->get_field_id( 'width' ) ); ?>"><?php esc_html_e( 'Width', 'oceanwp' ); ?></label>
+				<input type="number" class="smalltext" min="1" max="999" maxlength="3" name="<?php echo esc_attr( $this->get_field_name( 'width' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'width' ) ); ?>" value="<?php echo esc_attr( $like_args['width'] ); ?>" style="text-align: center;" />px
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'height' ); ?>"><?php esc_html_e( 'Height', 'oceanwp' ); ?></label>
-				<input type="number" class="smalltext" min="1" max="999" maxlength="3" name="<?php echo $this->get_field_name( 'height' ); ?>" id="<?php echo $this->get_field_id( 'height' ); ?>" value="<?php echo esc_attr( $like_args['height'] ); ?>" style="text-align: center;" />px
+				<label for="<?php echo esc_attr( $this->get_field_id( 'height' ) ); ?>"><?php esc_html_e( 'Height', 'oceanwp' ); ?></label>
+				<input type="number" class="smalltext" min="1" max="999" maxlength="3" name="<?php echo esc_attr( $this->get_field_name( 'height' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'height' ) ); ?>" value="<?php echo esc_attr( $like_args['height'] ); ?>" style="text-align: center;" />px
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'colorscheme' ); ?>"><?php esc_html_e( 'Color Scheme', 'oceanwp' ); ?></label>
-				<select name="<?php echo $this->get_field_name( 'colorscheme' ); ?>" id="<?php echo $this->get_field_id( 'colorscheme' ); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'colorscheme' ) ); ?>"><?php esc_html_e( 'Color Scheme', 'oceanwp' ); ?></label>
+				<select name="<?php echo esc_attr( $this->get_field_name( 'colorscheme' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'colorscheme' ) ); ?>">
 					<option value="light" <?php selected( $like_args['colorscheme'], 'light' ); ?>><?php esc_html_e( 'Light', 'oceanwp' ); ?></option>
 					<option value="dark" <?php selected( $like_args['colorscheme'], 'dark' ); ?>><?php esc_html_e( 'Dark', 'oceanwp' ); ?></option>
 				</select>
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'show_faces' ); ?>">
-					<input type="checkbox" name="<?php echo $this->get_field_name( 'show_faces' ); ?>" id="<?php echo $this->get_field_id( 'show_faces' ); ?>" <?php checked( $like_args['show_faces'] ); ?> />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'show_faces' ) ); ?>">
+					<input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'show_faces' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'show_faces' ) ); ?>" <?php checked( $like_args['show_faces'] ); ?> />
 					<?php esc_html_e( 'Show Faces', 'oceanwp' ); ?>
 					<br />
 					<small><?php esc_html_e( 'Show profile photos in the plugin.', 'oceanwp' ); ?></small>
@@ -200,8 +200,8 @@ if ( ! class_exists( 'OceanWP_Facebook_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'stream' ); ?>">
-					<input type="checkbox" name="<?php echo $this->get_field_name( 'stream' ); ?>" id="<?php echo $this->get_field_id( 'stream' ); ?>" <?php checked( $like_args['stream'] ); ?> />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'stream' ) ); ?>">
+					<input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'stream' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'stream' ) ); ?>" <?php checked( $like_args['stream'] ); ?> />
 					<?php esc_html_e( 'Show Stream', 'oceanwp' ); ?>
 					<br />
 					<small><?php esc_html_e( 'Show the profile stream for the public profile.', 'oceanwp' ); ?></small>
@@ -209,8 +209,8 @@ if ( ! class_exists( 'OceanWP_Facebook_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'show_border' ); ?>">
-					<input type="checkbox" name="<?php echo $this->get_field_name( 'show_border' ); ?>" id="<?php echo $this->get_field_id( 'show_border' ); ?>" <?php checked( $like_args['show_border'] ); ?> />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'show_border' ) ); ?>">
+					<input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'show_border' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'show_border' ) ); ?>" <?php checked( $like_args['show_border'] ); ?> />
 					<?php esc_html_e( 'Show Border', 'oceanwp' ); ?>
 					<br />
 					<small><?php esc_html_e( 'Show a border around the plugin.', 'oceanwp' ); ?></small>
@@ -218,8 +218,8 @@ if ( ! class_exists( 'OceanWP_Facebook_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'force_wall' ); ?>">
-					<input type="checkbox" name="<?php echo $this->get_field_name( 'force_wall' ); ?>" id="<?php echo $this->get_field_id( 'force_wall' ); ?>" <?php checked( $like_args['force_wall'] ); ?> />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'force_wall' ) ); ?>">
+					<input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'force_wall' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'force_wall' ) ); ?>" <?php checked( $like_args['force_wall'] ); ?> />
 					<?php esc_html_e( 'Show Wall', 'oceanwp' ); ?>
 					<br />
 					<small><?php esc_html_e( 'Show the wall for a Places page rather than friend activity.', 'oceanwp' ); ?></small>

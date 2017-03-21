@@ -45,6 +45,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			// Add the controls
 			require_once( $dir . 'buttonset/class-control-buttonset.php' );
 			require_once( $dir . 'color/class-control-color.php' );
+			require_once( $dir . 'dimensions/class-control-dimensions.php' );
 			require_once( $dir . 'dropdown-pages/class-control-dropdown-pages.php' );
 			require_once( $dir . 'heading/class-control-heading.php' );
 			require_once( $dir . 'icon-select/class-control-icon-select.php' );
@@ -52,11 +53,13 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			require_once( $dir . 'radio-image/class-control-radio-image.php' );
 			require_once( $dir . 'range/class-control-range.php' );
 			require_once( $dir . 'sortable/class-control-sortable.php' );
+			require_once( $dir . 'textarea/class-control-textarea.php' );
 			require_once( $dir . 'typography/class-control-typography.php' );
 
 			// Register the controls
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Buttonset_Control' );
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Color_Control' );
+			$wp_customize->register_control_type( 'OceanWP_Customizer_Dimensions_Control' );
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Dropdown_Pages' );
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Heading_Control' );
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Icon_Select_Control' );
@@ -64,6 +67,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Range_Control' );
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Radio_Image_Control' );
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Sortable_Control' );
+			$wp_customize->register_control_type( 'OceanWP_Customizer_Textarea_Control' );
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Typography_Control' );
 
 		}

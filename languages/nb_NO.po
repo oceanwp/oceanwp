@@ -1,0 +1,3954 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OceanWP\n"
+"POT-Creation-Date: 2016-12-23 14:25+0100\n"
+"PO-Revision-Date: 2017-03-05 13:26+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:20
+msgid "This page could not be found!"
+msgstr "Det oppstod en feil. Siden ble ikke funnet!"
+
+#: 404.php:21
+msgid "We are sorry. But the page you are looking for is not available."
+msgstr "Vi er beklager. Men siden du leter etter er ikke tilgjengelig."
+
+#: 404.php:21
+msgid "Perhaps you can try a new searching."
+msgstr "Kanskje du kan prøve et nytt søk."
+
+#: 404.php:23
+msgid "Back To Homepage"
+msgstr "Tilbake til forsiden"
+
+#: comments.php:40
+#, php-format
+msgctxt "comments title"
+msgid "This Post Has One Comment"
+msgid_plural "This Post Has %1$s Comments"
+msgstr[0] "Dette innlegget har èn kommentar"
+msgstr[1] "Dieser Beitrag hat %1$s Kommentare"
+
+#: comments.php:76
+msgid "Comments are closed."
+msgstr "Kommentarfeltet er stengt"
+
+#: comments.php:87
+msgid "Name (required)"
+msgstr "Navn (påkrevd)"
+
+#: comments.php:89
+msgid "Email (required)"
+msgstr "E-post (påkrevd)"
+
+#: comments.php:91
+msgid "Website"
+msgstr "Nettside"
+
+#: comments.php:100
+#, php-format
+msgid "You must be %slogged in%s to post a comment."
+msgstr "Du må være %sinnlogget%s for å kommentere."
+
+#: comments.php:101
+msgid "Logged in as"
+msgstr "Innlogget som"
+
+#: comments.php:101
+msgid "Log out of this account"
+msgstr "Logg ut av denne kontoen"
+
+#: comments.php:101
+msgid "Log out &raquo;"
+msgstr "Logg ut &raquo;"
+
+#: comments.php:104
+msgid "Your Comment Here..."
+msgstr "Din kommentar her..."
+
+#: comments.php:106
+msgid "Post Comment"
+msgstr "Legg ut kommentar"
+
+#: functions.php:274 inc/customizer/settings/topbar.php:40
+#: inc/customizer/settings/typography.php:109
+msgid "Top Bar"
+msgstr "Topp-bar"
+
+#: functions.php:275
+msgid "Main"
+msgstr "Hoved"
+
+#: functions.php:276
+msgid "Footer"
+msgstr "Footer"
+
+#: functions.php:532
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: functions.php:534
+msgid "Widgets in this area are used in the sidebar region."
+msgstr "Widgeter i dette området vises på sidefeltet."
+
+#: functions.php:544
+msgid "Search Results Sidebar"
+msgstr "Søkeresultater sidefelt"
+
+#: functions.php:546
+msgid "Widgets in this area are used in the search result page."
+msgstr "Widgeter i dette området brukes i søkeresultatsiden."
+
+#: functions.php:556
+msgid "Footer 1"
+msgstr "Footer 1"
+
+#: functions.php:558
+msgid "Widgets in this area are used in the first footer region."
+msgstr "Widgeter i dette området brukes i første bunntekst regionen."
+
+#: functions.php:567
+msgid "Footer 2"
+msgstr "Footer 2 "
+
+#: functions.php:569
+msgid "Widgets in this area are used in the second footer region."
+msgstr "Widgeter i dette området er brukt i den andre bunntekst-regionen."
+
+#: functions.php:578
+msgid "Footer 3"
+msgstr "Footer 3 "
+
+#: functions.php:580
+msgid "Widgets in this area are used in the third footer region."
+msgstr "Widgets in diesem Bereich werden im dritten Footer Bereich verwendet."
+
+#: functions.php:589
+msgid "Footer 4"
+msgstr "Footer 4"
+
+#: functions.php:591
+msgid "Widgets in this area are used in the fourth footer region."
+msgstr "Widgeter i dette området brukes i fjerde bunntekst regionen."
+
+#: inc/breadcrumbs.php:259
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr "Breadcrumbs"
+
+#: inc/breadcrumbs.php:260
+msgid "Home"
+msgstr "Hjem"
+
+#: inc/breadcrumbs.php:261
+msgid "404 Not Found"
+msgstr "404 IKKE FUNNET"
+
+#: inc/breadcrumbs.php:262 inc/customizer/settings/woocommerce.php:342
+msgid "Archives"
+msgstr "Arkiver"
+
+#: inc/breadcrumbs.php:264
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Søkeresultat for &#8220;%s&#8221;"
+
+#: inc/breadcrumbs.php:266
+#, php-format
+msgid "Page %s"
+msgstr "Side %s"
+
+#: inc/breadcrumbs.php:268
+#, php-format
+msgid "Minute %s"
+msgstr "Minutt %s"
+
+#: inc/breadcrumbs.php:270
+#, php-format
+msgid "Week %s"
+msgstr "Uke %s"
+
+#: inc/breadcrumbs.php:689
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr "g:i a"
+
+#: inc/breadcrumbs.php:706
+msgctxt "minute archives time format"
+msgid "i"
+msgstr "i"
+
+#: inc/breadcrumbs.php:723
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr "g a"
+
+#: inc/breadcrumbs.php:739 inc/breadcrumbs.php:768 inc/breadcrumbs.php:795
+#: inc/breadcrumbs.php:822 inc/breadcrumbs.php:1157
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/breadcrumbs.php:740 inc/breadcrumbs.php:796 inc/breadcrumbs.php:1161
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr "F"
+
+#: inc/breadcrumbs.php:741 inc/breadcrumbs.php:1165
+msgctxt "daily archives date format"
+msgid "j"
+msgstr "j"
+
+#: inc/breadcrumbs.php:769
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr "W"
+
+#: inc/customizer/controls/dropdown-pages/class-control-dropdown-pages.php:52
+msgid "Select"
+msgstr "Velg"
+
+#: inc/customizer/controls/typography/class-control-typography.php:59
+#: inc/customizer/settings/general.php:163
+#: inc/customizer/settings/general.php:193
+#: inc/customizer/settings/general.php:216
+#: inc/customizer/settings/general.php:241
+#: inc/customizer/settings/general.php:606
+#: inc/customizer/settings/typography.php:352
+#: inc/customizer/settings/typography.php:383
+#: inc/customizer/settings/typography.php:410
+msgid "Default"
+msgstr "Standard"
+
+#: inc/customizer/controls/typography/class-control-typography.php:65
+msgid "Custom Fonts"
+msgstr "Selvvalgte Fonter"
+
+#: inc/customizer/controls/typography/class-control-typography.php:75
+msgid "Standard Fonts"
+msgstr "Standard fonter"
+
+#: inc/customizer/controls/typography/class-control-typography.php:86
+msgid "Google Fonts"
+msgstr "Google fonter"
+
+#: inc/customizer/settings/blog.php:39 inc/helpers.php:471
+msgid "Blog"
+msgstr "Blogg"
+
+#: inc/customizer/settings/blog.php:47
+msgid "Blog Entries"
+msgstr "Blogg innlegg"
+
+#: inc/customizer/settings/blog.php:61
+msgid "Archives & Entries Layout"
+msgstr "Arkiver & oppføringer oppsett"
+
+#: inc/customizer/settings/blog.php:81
+msgid "Blog Style"
+msgstr "Bloggstil"
+
+#: inc/customizer/settings/blog.php:87
+msgid "Large Image"
+msgstr "Stort bilde"
+
+#: inc/customizer/settings/blog.php:88
+msgid "Grid"
+msgstr "Rutenett"
+
+#: inc/customizer/settings/blog.php:101
+msgid "Images Size"
+msgstr "Bildestørrelser"
+
+#: inc/customizer/settings/blog.php:108
+msgid "Thumbnail"
+msgstr "Miniatyrbilde"
+
+#: inc/customizer/settings/blog.php:109
+msgid "Medium"
+msgstr "Medium"
+
+#: inc/customizer/settings/blog.php:110
+msgid "Medium Large"
+msgstr "Middels store"
+
+#: inc/customizer/settings/blog.php:111
+msgid "Large"
+msgstr "Stor"
+
+#: inc/customizer/settings/blog.php:124
+msgid "Grid Columns"
+msgstr "Kolonner i rutenett"
+
+#: inc/customizer/settings/blog.php:148
+msgid "Grid Style"
+msgstr "Rutenettstil"
+
+#: inc/customizer/settings/blog.php:155
+msgid "Fit Rows"
+msgstr "Tilpass rader"
+
+#: inc/customizer/settings/blog.php:156
+msgid "Masonry"
+msgstr "Fliser"
+
+#: inc/customizer/settings/blog.php:169
+msgid "Equal Heights"
+msgstr "Like høyder"
+
+#: inc/customizer/settings/blog.php:186
+msgid "Blog Pagination Style"
+msgstr "Blogg paginering stil"
+
+#: inc/customizer/settings/blog.php:192
+msgid "Standard"
+msgstr "Standard"
+
+#: inc/customizer/settings/blog.php:193
+msgid "Infinite Scroll"
+msgstr "Uendelig bla"
+
+#: inc/customizer/settings/blog.php:194
+msgid "Next/Prev"
+msgstr "Neste/forrige"
+
+#: inc/customizer/settings/blog.php:207 inc/customizer/settings/blog.php:279
+msgid "Elements Positioning"
+msgstr "Elementer posisjonering"
+
+#: inc/customizer/settings/blog.php:212 inc/customizer/settings/blog.php:284
+#: inc/customizer/settings/woocommerce.php:455
+msgid "Featured Image"
+msgstr "Beitragsbild"
+
+#: inc/customizer/settings/blog.php:213 inc/customizer/settings/blog.php:285
+#: inc/widgets/about-me.php:211 inc/widgets/contact-info.php:255
+#: inc/widgets/contact-info.php:273 inc/widgets/contact-info.php:292
+#: inc/widgets/contact-info.php:311 inc/widgets/contact-info.php:330
+#: inc/widgets/contact-info.php:349 inc/widgets/contact-info.php:373
+#: inc/widgets/custom-links.php:117 inc/widgets/facebook.php:164
+#: inc/widgets/flickr.php:105 inc/widgets/instagram.php:148
+#: inc/widgets/mailchimp.php:159 inc/widgets/recent-posts.php:205
+#: inc/widgets/recent-posts.php:276 inc/widgets/social.php:250
+#: inc/widgets/video.php:114
+msgid "Title"
+msgstr "Tittel"
+
+#: inc/customizer/settings/blog.php:214 inc/customizer/settings/blog.php:229
+#: inc/customizer/settings/blog.php:286 inc/customizer/settings/blog.php:306
+msgid "Meta"
+msgstr "Meta"
+
+#: inc/customizer/settings/blog.php:215 inc/customizer/settings/blog.php:287
+#: inc/customizer/settings/topbar.php:224
+#: inc/customizer/settings/topbar.php:239 inc/widgets/contact-info.php:278
+#: inc/widgets/contact-info.php:297 inc/widgets/contact-info.php:316
+#: inc/widgets/contact-info.php:335
+msgid "Content"
+msgstr "Innhold"
+
+#: inc/customizer/settings/blog.php:216
+msgid "Read More"
+msgstr "Les Mer"
+
+#: inc/customizer/settings/blog.php:234 inc/customizer/settings/blog.php:311
+#: inc/widgets/recent-posts.php:278
+msgid "Author"
+msgstr "Forfatter"
+
+#: inc/customizer/settings/blog.php:235 inc/customizer/settings/blog.php:312
+#: inc/widgets/recent-posts.php:275
+msgid "Date"
+msgstr "Dato"
+
+#: inc/customizer/settings/blog.php:236 inc/customizer/settings/blog.php:313
+msgid "Categories"
+msgstr "Kategorier"
+
+#: inc/customizer/settings/blog.php:237 inc/customizer/settings/blog.php:293
+#: inc/customizer/settings/blog.php:314
+msgid "Comments"
+msgstr "Kommentarer"
+
+#: inc/customizer/settings/blog.php:245
+msgid "Single Post"
+msgstr "Enkelt innlegg"
+
+#: inc/customizer/settings/blog.php:259 inc/customizer/settings/general.php:480
+#: inc/customizer/settings/general.php:571
+#: inc/customizer/settings/woocommerce.php:377
+#: inc/customizer/settings/woocommerce.php:479
+msgid "Layout"
+msgstr "Layout"
+
+#: inc/customizer/settings/blog.php:288
+msgid "Tags"
+msgstr "Merkelapper"
+
+#: inc/customizer/settings/blog.php:289
+msgid "Social Share"
+msgstr "Del på:"
+
+#: inc/customizer/settings/blog.php:290
+msgid "Next/Prev Links"
+msgstr "Neste/forrige lenker"
+
+#: inc/customizer/settings/blog.php:291
+msgid "Author Box"
+msgstr "Forfatterboks"
+
+#: inc/customizer/settings/blog.php:292
+msgid "Related Posts"
+msgstr "Relaterte poster"
+
+#: inc/customizer/settings/blog.php:327
+msgid "Related Posts Count"
+msgstr "Antall relaterte poster:"
+
+#: inc/customizer/settings/blog.php:347
+msgid "Related Posts Columns"
+msgstr "Antall Relaterte kolonner"
+
+#: inc/customizer/settings/custom-code.php:40
+msgid "Custom CSS/JS"
+msgstr "Egendefinert CSS, JS"
+
+#: inc/customizer/settings/custom-code.php:53
+msgid "Custom JS"
+msgstr "Egendefinert JS"
+
+#: inc/customizer/settings/custom-code.php:54
+msgid "You need to reload to see the changes."
+msgstr "Du må laste på nytt for å se endringene."
+
+#: inc/customizer/settings/footer-bottom.php:40
+msgid "Footer Bottom"
+msgstr "Bunntekst Bunn"
+
+#: inc/customizer/settings/footer-bottom.php:53
+msgid "Enable Footer Bottom"
+msgstr "Aktiver bunntekst nederst"
+
+#: inc/customizer/settings/footer-bottom.php:70
+msgid "Copyright"
+msgstr "Kopirett"
+
+#: inc/customizer/settings/footer-bottom.php:87
+#: inc/customizer/settings/footer-widgets.php:110
+msgid "Padding"
+msgstr "Fyll (Padding)"
+
+#: inc/customizer/settings/footer-bottom.php:88
+#: inc/customizer/settings/footer-widgets.php:111
+#: inc/customizer/settings/general.php:1202
+#: inc/customizer/settings/general.php:1240
+#: inc/customizer/settings/general.php:1350
+msgid "Format: top right bottom left."
+msgstr "Format: øverste høyre nederst venstre."
+
+#: inc/customizer/settings/footer-bottom.php:106
+#: inc/customizer/settings/footer-widgets.php:129
+#: inc/customizer/settings/general.php:125
+#: inc/customizer/settings/general.php:665
+#: inc/customizer/settings/general.php:941
+#: inc/customizer/settings/general.php:1081
+#: inc/customizer/settings/general.php:1309
+#: inc/customizer/settings/general.php:1388
+#: inc/customizer/settings/header.php:147
+#: inc/customizer/settings/header.php:229
+#: inc/customizer/settings/header.php:536
+#: inc/customizer/settings/header.php:1079
+#: inc/customizer/settings/header.php:1732
+#: inc/customizer/settings/topbar.php:145
+msgid "Background Color"
+msgstr "Bakgrunnsfarge"
+
+#: inc/customizer/settings/footer-bottom.php:123
+#: inc/customizer/settings/footer-widgets.php:146
+#: inc/customizer/settings/general.php:271
+#: inc/customizer/settings/general.php:975
+#: inc/customizer/settings/general.php:1113
+#: inc/customizer/settings/general.php:1325
+#: inc/customizer/settings/general.php:1420
+#: inc/customizer/settings/header.php:806 inc/widgets/about-me.php:235
+msgid "Color"
+msgstr "Farge"
+
+#: inc/customizer/settings/footer-bottom.php:140
+#: inc/customizer/settings/footer-widgets.php:180
+#: inc/customizer/settings/general.php:256
+#: inc/customizer/settings/header.php:585
+#: inc/customizer/settings/header.php:1764
+msgid "Links Color"
+msgstr "Lenkefarge"
+
+#: inc/customizer/settings/footer-bottom.php:157
+#: inc/customizer/settings/footer-widgets.php:197
+#: inc/customizer/settings/header.php:1780
+msgid "Links Color: Hover"
+msgstr "Koblinger farge: hover"
+
+#: inc/customizer/settings/footer-widgets.php:40
+msgid "Footer Widgets"
+msgstr "Widgeter i footer"
+
+#: inc/customizer/settings/footer-widgets.php:53
+msgid "Enable Footer Widgets"
+msgstr "Aktiver bunntekst Widgets"
+
+#: inc/customizer/settings/footer-widgets.php:69
+msgid "Page ID"
+msgstr "SideID"
+
+#: inc/customizer/settings/footer-widgets.php:70
+msgid "Choose a page to replace the widgets by this page."
+msgstr "Velg en side å erstatte widgets av denne siden."
+
+#: inc/customizer/settings/footer-widgets.php:87
+msgid "Columns"
+msgstr "Kolonner"
+
+#: inc/customizer/settings/footer-widgets.php:163
+#: inc/customizer/settings/header.php:1111
+#: inc/customizer/settings/header.php:1748
+#: inc/customizer/settings/woocommerce.php:1200
+#: inc/customizer/settings/woocommerce.php:1498
+msgid "Borders Color"
+msgstr "Kantlinjefarge"
+
+#: inc/customizer/settings/general.php:41
+msgid "General Options"
+msgstr "Generelle innstilliger"
+
+#: inc/customizer/settings/general.php:49
+msgid "General Styling"
+msgstr "Generelt Styling"
+
+#: inc/customizer/settings/general.php:64
+msgid "Primary Color"
+msgstr "Primærfarge"
+
+#: inc/customizer/settings/general.php:80
+msgid "Hover Primary Color"
+msgstr "Hover primærfarge"
+
+#: inc/customizer/settings/general.php:96
+msgid "Main Border Color"
+msgstr "Hovedrammefarge"
+
+#: inc/customizer/settings/general.php:110
+msgid "Site Background"
+msgstr "Bakgrunn side"
+
+#: inc/customizer/settings/general.php:140
+msgid "Background Image"
+msgstr "Bakgrunnsbilde"
+
+#: inc/customizer/settings/general.php:156
+#: inc/customizer/settings/general.php:725
+#: inc/customizer/settings/header.php:898
+msgid "Position"
+msgstr "Posisjon"
+
+#: inc/customizer/settings/general.php:164
+msgid "Top Left"
+msgstr "Topp venstre"
+
+#: inc/customizer/settings/general.php:165
+msgid "Top Center"
+msgstr "Topp sentrert"
+
+#: inc/customizer/settings/general.php:166
+msgid "Top Right"
+msgstr "Topp høyre"
+
+#: inc/customizer/settings/general.php:167
+msgid "Center Left"
+msgstr "Midten venstre"
+
+#: inc/customizer/settings/general.php:168
+msgid "Center Center"
+msgstr "Midten midten"
+
+#: inc/customizer/settings/general.php:169
+msgid "Center Right"
+msgstr "Midten høyre"
+
+#: inc/customizer/settings/general.php:170
+msgid "Bottom Left"
+msgstr "Bunn venstre"
+
+#: inc/customizer/settings/general.php:171
+msgid "Bottom Center"
+msgstr "Bunn sentrert"
+
+#: inc/customizer/settings/general.php:172
+msgid "Bottom Right"
+msgstr "Bunn høyre"
+
+#: inc/customizer/settings/general.php:186
+msgid "Attachment"
+msgstr "Vedlegg"
+
+#: inc/customizer/settings/general.php:194
+msgid "Scroll"
+msgstr "Scroll"
+
+#: inc/customizer/settings/general.php:195
+msgid "Fixed"
+msgstr "Låst"
+
+#: inc/customizer/settings/general.php:209
+#: inc/customizer/settings/general.php:218
+msgid "Repeat"
+msgstr "Gjenta"
+
+#: inc/customizer/settings/general.php:217
+msgid "No-repeat"
+msgstr "Ikke repeter"
+
+#: inc/customizer/settings/general.php:219
+msgid "Repeat-x"
+msgstr "Gjenta-x"
+
+#: inc/customizer/settings/general.php:220
+msgid "Repeat-y"
+msgstr "Gjenta-y"
+
+#: inc/customizer/settings/general.php:234
+msgid "Size"
+msgstr "Størrelse"
+
+#: inc/customizer/settings/general.php:242
+msgid "Auto"
+msgstr "Auto"
+
+#: inc/customizer/settings/general.php:243
+msgid "Cover"
+msgstr "Dekk"
+
+#: inc/customizer/settings/general.php:244
+msgid "Contain"
+msgstr "Innehold"
+
+#: inc/customizer/settings/general.php:287
+#: inc/customizer/settings/general.php:992
+#: inc/customizer/settings/general.php:1129
+#: inc/customizer/settings/general.php:1436
+#: inc/customizer/settings/header.php:823
+msgid "Color: Hover"
+msgstr "Farge - peker over"
+
+#: inc/customizer/settings/general.php:297
+msgid "General Settings"
+msgstr "Generelle instillinger"
+
+#: inc/customizer/settings/general.php:311
+msgid "Layout Style"
+msgstr "Layout Stil"
+
+#: inc/customizer/settings/general.php:316
+msgid "Wide"
+msgstr "Bred"
+
+#: inc/customizer/settings/general.php:317
+msgid "Boxed"
+msgstr "Bokset"
+
+#: inc/customizer/settings/general.php:331
+msgid "Boxed Layout Drop-Shadow"
+msgstr "Box Layout Drop-Shadow"
+
+#: inc/customizer/settings/general.php:349
+msgid "Boxed Width (px)"
+msgstr "Boks Bredde (px)"
+
+#: inc/customizer/settings/general.php:371
+msgid "Outside Background"
+msgstr "Ytre Bakgrunn"
+
+#: inc/customizer/settings/general.php:388
+msgid "Inner Background"
+msgstr "Indre Bakgrunn"
+
+#: inc/customizer/settings/general.php:405
+msgid "Main Container Width (px)"
+msgstr "Hoved Container Bredde (px)"
+
+#: inc/customizer/settings/general.php:426
+msgid "Content Width (%)"
+msgstr "Innholdsbredde (%)"
+
+#: inc/customizer/settings/general.php:447
+msgid "Sidebar Width (%)"
+msgstr "Bredde for sidekolonne (%)"
+
+#: inc/customizer/settings/general.php:466
+msgid "Pages"
+msgstr "Sider"
+
+#: inc/customizer/settings/general.php:501
+msgid "Content Top Padding (px)"
+msgstr "Innhold Topp Padding (px)"
+
+#: inc/customizer/settings/general.php:522
+msgid "Content Bottom Padding (px)"
+msgstr "Innhold Bunn Padding (px)"
+
+#: inc/customizer/settings/general.php:541
+msgid "Search Result Page"
+msgstr "Søkeresultat Side"
+
+#: inc/customizer/settings/general.php:555 inc/welcome/welcome.php:144
+msgid "Custom Sidebar"
+msgstr "Egendefinert sidekolonne"
+
+#: inc/customizer/settings/general.php:586
+#: inc/customizer/settings/typography.php:147
+msgid "Page Title"
+msgstr "Sidetittel"
+
+#: inc/customizer/settings/general.php:600
+#: inc/customizer/settings/header.php:62 inc/customizer/settings/topbar.php:78
+msgid "Style"
+msgstr "Stil"
+
+#: inc/customizer/settings/general.php:607
+msgid "Centered"
+msgstr "Midtstilt"
+
+#: inc/customizer/settings/general.php:608
+msgid "Centered Minimal"
+msgstr "sentrert Minimal"
+
+#: inc/customizer/settings/general.php:609
+msgid "Hidden"
+msgstr "Skjult"
+
+#: inc/customizer/settings/general.php:623
+#: inc/customizer/settings/header.php:179
+#: inc/customizer/settings/topbar.php:101
+msgid "Top Padding (px)"
+msgstr "Topp Luft - Padding (px)"
+
+#: inc/customizer/settings/general.php:644
+#: inc/customizer/settings/header.php:200
+#: inc/customizer/settings/topbar.php:123
+msgid "Bottom Padding (px)"
+msgstr "Bunn Luft - Padding (px)"
+
+#: inc/customizer/settings/general.php:681
+#: inc/customizer/settings/general.php:747
+#: inc/customizer/settings/topbar.php:179
+#: inc/customizer/settings/woocommerce.php:1216
+msgid "Text Color"
+msgstr "Tekstfarge"
+
+#: inc/customizer/settings/general.php:695
+#: inc/customizer/settings/general.php:709
+#: inc/customizer/settings/typography.php:167
+msgid "Breadcrumbs"
+msgstr "Brødsmuler"
+
+#: inc/customizer/settings/general.php:732
+msgid "Absolute Right"
+msgstr "Absolutt Høyre"
+
+#: inc/customizer/settings/general.php:733
+msgid "Under Title"
+msgstr "Under tittel"
+
+#: inc/customizer/settings/general.php:764
+#: inc/customizer/settings/general.php:781
+msgid "Separator Color"
+msgstr "Skillelinje Farge"
+
+#: inc/customizer/settings/general.php:798
+#: inc/customizer/settings/header.php:952
+#: inc/customizer/settings/header.php:1127
+#: inc/customizer/settings/topbar.php:196
+#: inc/customizer/settings/woocommerce.php:172
+msgid "Link Color"
+msgstr "Lenkefarge"
+
+#: inc/customizer/settings/general.php:815
+#: inc/customizer/settings/header.php:968
+#: inc/customizer/settings/header.php:1143
+#: inc/customizer/settings/topbar.php:213
+#: inc/customizer/settings/woocommerce.php:188
+msgid "Link Color: Hover"
+msgstr "Lenke Farge: Hover"
+
+#: inc/customizer/settings/general.php:826
+msgid "Scroll To Top"
+msgstr "Tilbake til toppen"
+
+#: inc/customizer/settings/general.php:840
+msgid "Scroll Up Button"
+msgstr "Bla Opp-knapp"
+
+#: inc/customizer/settings/general.php:857
+msgid "Arrow Icon"
+msgstr "Pil-ikon"
+
+#: inc/customizer/settings/general.php:875
+msgid "Button Size (px)"
+msgstr "Knappestørrelse (px)"
+
+#: inc/customizer/settings/general.php:897
+msgid "Icon Size (px)"
+msgstr "Ikonstørrelse (px)"
+
+#: inc/customizer/settings/general.php:919
+#: inc/customizer/settings/general.php:1257
+#: inc/customizer/settings/general.php:1367
+msgid "Border Radius (px)"
+msgstr "Kantlinjeradius (px)"
+
+#: inc/customizer/settings/general.php:958
+#: inc/customizer/settings/general.php:1097
+#: inc/customizer/settings/general.php:1404
+msgid "Background Color: Hover"
+msgstr "Bakgrunnsfarge: Hover"
+
+#: inc/customizer/settings/general.php:1003
+msgid "Pagination"
+msgstr "Paginering"
+
+#: inc/customizer/settings/general.php:1018
+msgid "Align"
+msgstr "Plasser"
+
+#: inc/customizer/settings/general.php:1024
+#: inc/customizer/settings/header.php:904
+#: inc/customizer/settings/header.php:1657 inc/widgets/instagram.php:306
+msgid "Right"
+msgstr "Til høyre"
+
+#: inc/customizer/settings/general.php:1025
+#: inc/customizer/settings/header.php:72 inc/widgets/instagram.php:307
+msgid "Center"
+msgstr "Senter"
+
+#: inc/customizer/settings/general.php:1026
+#: inc/customizer/settings/header.php:903
+#: inc/customizer/settings/header.php:1656 inc/widgets/instagram.php:134
+#: inc/widgets/instagram.php:305
+msgid "Left"
+msgstr "Venstre"
+
+#: inc/customizer/settings/general.php:1040
+#: inc/customizer/settings/general.php:1219
+#: inc/customizer/settings/typography.php:435
+msgid "Font Size (px)"
+msgstr "Skriftstørrelse (px)"
+
+#: inc/customizer/settings/general.php:1061
+#: inc/customizer/settings/general.php:1239
+msgid "Border Width (px)"
+msgstr "Kantlinjebredde (px)"
+
+#: inc/customizer/settings/general.php:1145
+#: inc/customizer/settings/general.php:1278
+#: inc/customizer/settings/topbar.php:162
+msgid "Border Color"
+msgstr "Kantlinjefarge"
+
+#: inc/customizer/settings/general.php:1161
+msgid "Border Color: Hover"
+msgstr "Farge på kantlinje - Hover"
+
+#: inc/customizer/settings/general.php:1171
+msgid "Forms (Input - Textarea)"
+msgstr "Skjemaer (Input - Tekstfelt)"
+
+#: inc/customizer/settings/general.php:1186
+msgid "Label Color"
+msgstr "Merkelappfarge"
+
+#: inc/customizer/settings/general.php:1201
+#: inc/customizer/settings/general.php:1349
+msgid "Padding (px)"
+msgstr "Topp Luft - Padding (px)"
+
+#: inc/customizer/settings/general.php:1294
+msgid "Border Color: Focus"
+msgstr "Kantlinjefarge - fokus"
+
+#: inc/customizer/settings/general.php:1335
+msgid "Theme Button"
+msgstr "Tema Knapp"
+
+#: inc/customizer/settings/header.php:40
+msgid "Header"
+msgstr "Header"
+
+#: inc/customizer/settings/header.php:48 inc/customizer/settings/topbar.php:48
+#: inc/customizer/settings/woocommerce.php:48
+msgid "General"
+msgstr "Generelt"
+
+#: inc/customizer/settings/header.php:68
+#: inc/customizer/settings/header.php:1555
+msgid "Minimal"
+msgstr "Minimal"
+
+#: inc/customizer/settings/header.php:69
+msgid "Transparent"
+msgstr "Gjennomsiktig"
+
+#: inc/customizer/settings/header.php:70
+msgid "Top Menu"
+msgstr "Toppmeny"
+
+#: inc/customizer/settings/header.php:71
+msgid "Full Screen"
+msgstr "Full skjerm"
+
+#: inc/customizer/settings/header.php:86 inc/customizer/settings/header.php:108
+#: inc/customizer/settings/header.php:279
+#: inc/customizer/settings/header.php:445
+#: inc/customizer/settings/header.php:741
+msgid "Height (px)"
+msgstr "Høyde (px)"
+
+#: inc/customizer/settings/header.php:130
+msgid "Header Border Bottom"
+msgstr "Header Ramme Bunn"
+
+#: inc/customizer/settings/header.php:163
+msgid "Border Bottom Color"
+msgstr "Kantlinjefarge - bunn"
+
+#: inc/customizer/settings/header.php:215
+msgid "Transparent Header"
+msgstr "Gjennomsiktig header"
+
+#: inc/customizer/settings/header.php:245
+#: inc/customizer/settings/header.php:428
+msgid "Image Logo"
+msgstr "Logobilde"
+
+#: inc/customizer/settings/header.php:246
+msgid "Select a custom logo (optional) for the transparent header."
+msgstr "Velg en tilpasset logo (valgfritt) for den gjennomsiktige headeren."
+
+#: inc/customizer/settings/header.php:262
+#: inc/customizer/settings/header.php:726
+msgid "Retina Image Logo"
+msgstr "Retina Skjerm Logo"
+
+#: inc/customizer/settings/header.php:263
+msgid "Retina version for the transparent header custom logo."
+msgstr "Retina-versjon for gjennomsiktig header valgfri logo."
+
+#: inc/customizer/settings/header.php:300
+#: inc/customizer/settings/header.php:466
+#: inc/customizer/settings/header.php:763
+#: inc/customizer/settings/header.php:1058
+msgid "Width (px)"
+msgstr "Breite (px)"
+
+#: inc/customizer/settings/header.php:316
+msgid "Top Menu Header"
+msgstr "Top Menü Header"
+
+#: inc/customizer/settings/header.php:330
+msgid "Menu Position"
+msgstr "Meny Posisjon"
+
+#: inc/customizer/settings/header.php:337
+msgid "Before The Logo"
+msgstr "Før logoen"
+
+#: inc/customizer/settings/header.php:338
+msgid "After The Logo"
+msgstr "Etter Logoen"
+
+#: inc/customizer/settings/header.php:352
+msgid "Menu Background Color"
+msgstr "Menybakgrunnsfarge"
+
+#: inc/customizer/settings/header.php:369
+msgid "Search Button Border Color"
+msgstr "Rammefarge På Søkeknapp"
+
+#: inc/customizer/settings/header.php:386
+msgid "Search Button Color"
+msgstr "Farge på søkeknapp"
+
+#: inc/customizer/settings/header.php:403
+msgid "Search Button Color: Hover"
+msgstr "Farge på Søkeknapp: Hover"
+
+#: inc/customizer/settings/header.php:414
+msgid "Full Screen Header"
+msgstr "Full skjerm Header"
+
+#: inc/customizer/settings/header.php:429
+msgid "Select a custom logo (optional) when the menu is opened."
+msgstr "Velg en tilpasset logo (valgfritt) når menyen åpnes."
+
+#: inc/customizer/settings/header.php:486
+msgid "Styling"
+msgstr "Styling"
+
+#: inc/customizer/settings/header.php:502
+msgid "Menu Bar Color"
+msgstr "Farge på menylinje"
+
+#: inc/customizer/settings/header.php:519
+msgid "Menu Bar Close Color"
+msgstr "Menylinje lukkefarge"
+
+#: inc/customizer/settings/header.php:552
+msgid "Links Background Color"
+msgstr "Linker bakgrunnsfarge"
+
+#: inc/customizer/settings/header.php:568
+msgid "Links Hover Background Color"
+msgstr "Lenker Hover bakgrunnsfarge"
+
+#: inc/customizer/settings/header.php:602
+msgid "Links Hover Color"
+msgstr "Linker Hover farge"
+
+#: inc/customizer/settings/header.php:617
+msgid "Search Styling"
+msgstr "Søk Styling"
+
+#: inc/customizer/settings/header.php:633
+#: inc/customizer/settings/header.php:1258
+#: inc/customizer/settings/header.php:1326
+msgid "Input Color"
+msgstr "Input Farge"
+
+#: inc/customizer/settings/header.php:650
+#: inc/customizer/settings/header.php:1343
+msgid "Input Dashed Text Color"
+msgstr "Input Stiplet Tekstfarge"
+
+#: inc/customizer/settings/header.php:667
+msgid "Input Border Bottom Color"
+msgstr "Input Bunnkantlinje Farge"
+
+#: inc/customizer/settings/header.php:684
+msgid "Input Hover Border Bottom Color"
+msgstr "Input Hover bunnkantlinje Farge"
+
+#: inc/customizer/settings/header.php:701
+msgid "Input Focus Border Bottom Color"
+msgstr "Input Fokus Bunnkantlinje Farge"
+
+#: inc/customizer/settings/header.php:712
+#: inc/customizer/settings/typography.php:100
+msgid "Logo"
+msgstr "Logo"
+
+#: inc/customizer/settings/header.php:742
+msgid "Used for retina."
+msgstr "Brukes til retina."
+
+#: inc/customizer/settings/header.php:784
+msgid "Max Width (px)"
+msgstr "Maksbredde (px)"
+
+#: inc/customizer/settings/header.php:834 partials/header/mobile-icon.php:29
+msgid "Menu"
+msgstr "Meny"
+
+#: inc/customizer/settings/header.php:848
+msgid "Top Level Dropdown Icon"
+msgstr "Toppnivå Dropdown Ikon"
+
+#: inc/customizer/settings/header.php:864
+msgid "Second+ Level Dropdown Icon"
+msgstr "Andre+ Nivå Dropdown Ikon"
+
+#: inc/customizer/settings/header.php:881
+msgid "Dropdown Top Border"
+msgstr "Dropdown Topplinje Ramme"
+
+#: inc/customizer/settings/header.php:916
+msgid "Main Styling"
+msgstr "Hoved Styling"
+
+#: inc/customizer/settings/header.php:931
+msgid "Left/Right Padding (px)"
+msgstr "Venstre / Høyre Padding (px)"
+
+#: inc/customizer/settings/header.php:984
+#: inc/customizer/settings/header.php:1174
+msgid "Link Color: Current Menu Item"
+msgstr "Link Farge: Gjeldende menypunkt"
+
+#: inc/customizer/settings/header.php:999
+msgid "Link Background"
+msgstr "Lenke Bakgrunn"
+
+#: inc/customizer/settings/header.php:1014
+#: inc/customizer/settings/header.php:1159
+msgid "Link Background: Hover"
+msgstr "Lenke Bakrunn: Hover"
+
+#: inc/customizer/settings/header.php:1029
+#: inc/customizer/settings/header.php:1189
+msgid "Link Background: Current Menu Item"
+msgstr "Lenke Bakgrunn: Gjeldende menypunkt"
+
+#: inc/customizer/settings/header.php:1043
+msgid "Dropdowns Styling"
+msgstr "Dropdown Styling"
+
+#: inc/customizer/settings/header.php:1095
+msgid "Top Border Color"
+msgstr "Topplinje Farge"
+
+#: inc/customizer/settings/header.php:1205
+msgid "Search Icon"
+msgstr "Søkeikon"
+
+#: inc/customizer/settings/header.php:1219
+msgid "Search Icon Style"
+msgstr "Søkikonstil"
+
+#: inc/customizer/settings/header.php:1225
+#: inc/customizer/settings/woocommerce.php:86
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#: inc/customizer/settings/header.php:1226
+msgid "Drop Down"
+msgstr "Dropdown"
+
+#: inc/customizer/settings/header.php:1227
+msgid "Header Replace"
+msgstr "Erstatt Header"
+
+#: inc/customizer/settings/header.php:1228
+msgid "Overlay"
+msgstr "Overlegg"
+
+#: inc/customizer/settings/header.php:1241
+msgid "Input Background Color"
+msgstr "Bakgrunnsfarge inputfelt"
+
+#: inc/customizer/settings/header.php:1275
+#: inc/customizer/settings/header.php:1360
+msgid "Input Border Color"
+msgstr "Input Bunnkantlinje Farge"
+
+#: inc/customizer/settings/header.php:1292
+#: inc/customizer/settings/header.php:1394
+msgid "Input Border Color: Focus"
+msgstr "Input Rammefarge: Focus"
+
+#: inc/customizer/settings/header.php:1309
+msgid "Overlay Background Color"
+msgstr "Overlegg bakgrunnsfarge"
+
+#: inc/customizer/settings/header.php:1377
+msgid "Input Border Color: Hover"
+msgstr "Farge på kantlinje Input - Hover"
+
+#: inc/customizer/settings/header.php:1411
+msgid "Close Button Color"
+msgstr "Farge på Lukk-knappen"
+
+#: inc/customizer/settings/header.php:1426
+msgid "Dropdowns Categories Posts"
+msgstr "Dropdown Kategorier Innlegg"
+
+#: inc/customizer/settings/header.php:1441
+msgid "Category Title: Background"
+msgstr "Kategori Tittel: Bakgrunn"
+
+#: inc/customizer/settings/header.php:1457
+msgid "Category Title: Color"
+msgstr "Kategori Tittel: Farge"
+
+#: inc/customizer/settings/header.php:1473
+msgid "Posts Links: Color"
+msgstr "Koblinger: Farge"
+
+#: inc/customizer/settings/header.php:1489
+msgid "Posts Links Hover: Color"
+msgstr "Innlegg farge: Hover"
+
+#: inc/customizer/settings/header.php:1505
+msgid "Posts Date: Color"
+msgstr "Farge Innlegg Dato"
+
+#: inc/customizer/settings/header.php:1515
+msgid "Menu Social"
+msgstr "Sosial Meny"
+
+#: inc/customizer/settings/header.php:1529
+msgid "Enable Menu Social"
+msgstr "Aktiver Sosial Meny"
+
+#: inc/customizer/settings/header.php:1546
+msgid "Social Link Style"
+msgstr "Sosial Lenke Stil"
+
+#: inc/customizer/settings/header.php:1553 inc/widgets/social.php:260
+msgid "Simple"
+msgstr "Enkel"
+
+#: inc/customizer/settings/header.php:1554 inc/widgets/social.php:259
+msgid "Colored"
+msgstr "farget"
+
+#: inc/customizer/settings/header.php:1556 inc/widgets/about-me.php:237
+#: inc/widgets/facebook.php:189 inc/widgets/social.php:258
+msgid "Dark"
+msgstr "Mørk"
+
+#: inc/customizer/settings/header.php:1570
+#: inc/customizer/settings/topbar.php:301
+msgid "Social Link Target"
+msgstr "Sosial Lenkemål"
+
+#: inc/customizer/settings/header.php:1577
+#: inc/customizer/settings/topbar.php:308
+msgid "New Window"
+msgstr "Nytt Vindu"
+
+#: inc/customizer/settings/header.php:1578
+#: inc/customizer/settings/topbar.php:309
+msgid "Same Window"
+msgstr "Samme Vindu"
+
+#: inc/customizer/settings/header.php:1591
+msgid "Simple Social Links Color"
+msgstr "Enkel Sosiale Lenker Farge"
+
+#: inc/customizer/settings/header.php:1607
+msgid "Simple Social Links Color: Hover"
+msgstr "Enkel Sosiale Lenker Farge: Hover"
+
+#: inc/customizer/settings/header.php:1637
+msgid "Mobile Menu"
+msgstr "Mobil Meny"
+
+#: inc/customizer/settings/header.php:1651
+msgid "Direction"
+msgstr "Retning"
+
+#: inc/customizer/settings/header.php:1670
+msgid "Displace"
+msgstr "Bytt ut"
+
+#: inc/customizer/settings/header.php:1686
+msgid "Mobile Menu Search"
+msgstr "Mobil Meny Søk"
+
+#: inc/customizer/settings/header.php:1701
+msgid "Styling: Mobile Sidebar Menu"
+msgstr "Styling: Mobil Sidemeny"
+
+#: inc/customizer/settings/header.php:1716
+msgid "Close Button Background"
+msgstr "Lukke Knapp Bakgrunn"
+
+#: inc/customizer/settings/header.php:1796
+msgid "Dropdowns Menus: Background"
+msgstr "Dropdown Meny Bakgrunn"
+
+#: inc/customizer/settings/header.php:1811
+msgid "Searchbar Background"
+msgstr "Farge, søkefelt bakgrunn"
+
+#: inc/customizer/settings/header.php:1827
+msgid "Searchbar Color"
+msgstr "Farge, søkefelt"
+
+#: inc/customizer/settings/header.php:1843
+msgid "Searchbar Border Color"
+msgstr "Søkefelt kantlinjefarge"
+
+#: inc/customizer/settings/header.php:1859
+msgid "Searchbar Border Color: Focus"
+msgstr "Søkefelt kantlinjefarge: Fokus"
+
+#: inc/customizer/settings/header.php:1875
+msgid "Searchbar Button Color"
+msgstr "Søkefelt Knapp Farge"
+
+#: inc/customizer/settings/header.php:1891
+msgid "Searchbar Button Color: Hover"
+msgstr "Søkefelt Knapp Farge: Hover"
+
+#: inc/customizer/settings/topbar.php:62
+msgid "Enable Top Bar"
+msgstr "Aktiver Topp Bar"
+
+#: inc/customizer/settings/topbar.php:85
+msgid "Left Content & Right Social"
+msgstr "Venstre Innhold & Høyre Sosialt"
+
+#: inc/customizer/settings/topbar.php:86
+msgid "Left Social & Right Content"
+msgstr "Venstre Sosialt & Høyre Innhold"
+
+#: inc/customizer/settings/topbar.php:87
+msgid "Centered Content & Social"
+msgstr "Sentrert innhold og sosialt"
+
+#: inc/customizer/settings/topbar.php:251
+msgid "Social"
+msgstr "Sosial"
+
+#: inc/customizer/settings/topbar.php:265
+msgid "Enable Social"
+msgstr "Aktiver Sosial Meny"
+
+#: inc/customizer/settings/topbar.php:282
+msgid "Social Alternative"
+msgstr "Sosialt Alternativer"
+
+#: inc/customizer/settings/topbar.php:283
+msgid "Choose a page to display the content of such page."
+msgstr "Velg en side for å vise innholdet i en slik side."
+
+#: inc/customizer/settings/topbar.php:323
+msgid "Social Links Color"
+msgstr "Farge på Sosiale Lenker"
+
+#: inc/customizer/settings/topbar.php:339
+msgid "Social Links Color: Hover"
+msgstr "Farge på Sosiale Lenker: Hover"
+
+#: inc/customizer/settings/typography.php:46
+msgid "Body"
+msgstr "Body"
+
+#: inc/customizer/settings/typography.php:55
+msgid "All Headings"
+msgstr "Alle Overskrifter"
+
+#: inc/customizer/settings/typography.php:64
+msgid "Heading 1 (H1)"
+msgstr "Overskrift 1 (H1)"
+
+#: inc/customizer/settings/typography.php:73
+msgid "Heading 2 (H2)"
+msgstr "Overskrift 2 (H2)"
+
+#: inc/customizer/settings/typography.php:82
+msgid "Heading 3 (H3)"
+msgstr "Overskrift 3 (H3)"
+
+#: inc/customizer/settings/typography.php:91
+msgid "Heading 4 (H4)"
+msgstr "Overskrift 4 (H4)"
+
+#: inc/customizer/settings/typography.php:119
+msgid "Main Menu"
+msgstr "Hovedmeny"
+
+#: inc/customizer/settings/typography.php:128
+msgid "Main Menu: Dropdowns"
+msgstr "Hovedmeny: nedfellsmenyen"
+
+#: inc/customizer/settings/typography.php:138
+msgid "Mobile Menu: Dropdowns"
+msgstr "Mobilmeny: nedfellsmeny"
+
+#: inc/customizer/settings/typography.php:157
+msgid "Page Title Subheading"
+msgstr "Side Udertittel"
+
+#: inc/customizer/settings/typography.php:176
+msgid "Blog Entry Title"
+msgstr "Blogginnlegg Tittel"
+
+#: inc/customizer/settings/typography.php:185
+msgid "Blog Post Title"
+msgstr "Tittel på blogg innlegg"
+
+#: inc/customizer/settings/typography.php:195
+msgid "Sidebar Widget Heading"
+msgstr "Sidefelt Widget Tittel"
+
+#: inc/customizer/settings/typography.php:206
+msgid "Footer Widget Heading"
+msgstr "Footer Widget Tittel"
+
+#: inc/customizer/settings/typography.php:217
+msgid "Footer Copyright"
+msgstr "Opphavsrettekst i bunnteksten"
+
+#: inc/customizer/settings/typography.php:227
+msgid "Footer Menu"
+msgstr "Footer Meny"
+
+#: inc/customizer/settings/typography.php:257
+msgid "Typography"
+msgstr "Typografi"
+
+#: inc/customizer/settings/typography.php:322
+msgid "Font Family"
+msgstr "Skriftfamilie"
+
+#: inc/customizer/settings/typography.php:344
+msgid "Font Weight"
+msgstr "Skriftvekt"
+
+#: inc/customizer/settings/typography.php:345
+msgid "Important: Not all fonts support every font-weight."
+msgstr "Viktig: Ikke alle skrifttyper støtter hver skriftvekt"
+
+#: inc/customizer/settings/typography.php:353
+msgid "Extra Light: 100"
+msgstr "Ekstra Liten: (100)"
+
+#: inc/customizer/settings/typography.php:354
+msgid "Light: 200"
+msgstr "Liten: 200"
+
+#: inc/customizer/settings/typography.php:355
+msgid "Book: 300"
+msgstr "Bok: 300"
+
+#: inc/customizer/settings/typography.php:356
+msgid "Normal: 400"
+msgstr "Normal: 400"
+
+#: inc/customizer/settings/typography.php:357
+msgid "Semibold: 600"
+msgstr "Halvfet: 600"
+
+#: inc/customizer/settings/typography.php:358
+msgid "Bold: 700"
+msgstr "Fett: 700"
+
+#: inc/customizer/settings/typography.php:359
+msgid "Extra Bold: 800"
+msgstr "Extra Fett: 800"
+
+#: inc/customizer/settings/typography.php:376
+msgid "Font Style"
+msgstr "Skriftstil"
+
+#: inc/customizer/settings/typography.php:384
+msgid "Normal"
+msgstr "Normal"
+
+#: inc/customizer/settings/typography.php:385
+msgid "Italic"
+msgstr "Italic"
+
+#: inc/customizer/settings/typography.php:403
+msgid "Text Transform"
+msgstr "Teksttransformasjon"
+
+#: inc/customizer/settings/typography.php:411
+msgid "Capitalize"
+msgstr "Stor Forbokstav"
+
+#: inc/customizer/settings/typography.php:412
+msgid "Lowercase"
+msgstr "små bokstaver"
+
+#: inc/customizer/settings/typography.php:413
+msgid "Uppercase"
+msgstr "Store Bokstaver"
+
+#: inc/customizer/settings/typography.php:465
+msgid "Font Color"
+msgstr "Skriftfarge"
+
+#: inc/customizer/settings/typography.php:490
+msgid "Line Height"
+msgstr "Linjehøyde"
+
+#: inc/customizer/settings/typography.php:520
+msgid "Letter Spacing"
+msgstr "Bokstavavstand"
+
+#: inc/customizer/settings/woocommerce.php:40
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: inc/customizer/settings/woocommerce.php:49
+#: inc/customizer/settings/woocommerce.php:343
+msgid ""
+"For some options, you must save and refresh your live site to preview "
+"changes."
+msgstr ""
+"For noen alternativer, må du lagre og oppdatere det aktive nettstedet for å "
+"forhåndsvise endringer."
+
+#: inc/customizer/settings/woocommerce.php:63
+msgid "Custom WooCommerce Sidebar"
+msgstr "Sidepanel for Woocommerce"
+
+#: inc/customizer/settings/woocommerce.php:80
+msgid "Menu Cart: Display"
+msgstr "Meny handlevogn: Vis"
+
+#: inc/customizer/settings/woocommerce.php:87
+msgid "Icon"
+msgstr "Symbol"
+
+#: inc/customizer/settings/woocommerce.php:88
+msgid "Icon And Cart Total"
+msgstr "Ikon Og Handlekurv Total"
+
+#: inc/customizer/settings/woocommerce.php:89
+msgid "Icon And Cart Count"
+msgstr "Ikon Og Handlekurv Telling"
+
+#: inc/customizer/settings/woocommerce.php:103
+msgid "Menu Cart: Style"
+msgstr "Handlekurv: Stil"
+
+#: inc/customizer/settings/woocommerce.php:110
+msgid "Drop-Down"
+msgstr "Dropdown"
+
+#: inc/customizer/settings/woocommerce.php:111
+msgid "Go To Cart"
+msgstr "Gå til handlekurven"
+
+#: inc/customizer/settings/woocommerce.php:112 inc/widgets/instagram.php:243
+msgid "Custom Link"
+msgstr "Egendefinert lenke"
+
+#: inc/customizer/settings/woocommerce.php:125
+msgid "Menu Cart: Custom Link"
+msgstr "Meny Handlekurv: Egendefinert Lenke"
+
+#: inc/customizer/settings/woocommerce.php:141
+msgid "Styling: Cart Dropdowns"
+msgstr "Styling: Handlevogn Dropdown"
+
+#: inc/customizer/settings/woocommerce.php:156
+msgid "Dropdown Borders Color"
+msgstr "Kantlinjefarge Dropdown"
+
+#: inc/customizer/settings/woocommerce.php:204
+msgid "Remove Link Color"
+msgstr "Fjern Lenkefarge"
+
+#: inc/customizer/settings/woocommerce.php:220
+msgid "Remove Link Color: Hover"
+msgstr "Fjern Lenkefarge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:236
+#: inc/customizer/settings/woocommerce.php:1030
+msgid "Quantity Color"
+msgstr "Antall Farge"
+
+#: inc/customizer/settings/woocommerce.php:252
+#: inc/customizer/settings/woocommerce.php:825
+#: inc/customizer/settings/woocommerce.php:950
+msgid "Price Color"
+msgstr "Pris Farge"
+
+#: inc/customizer/settings/woocommerce.php:268
+msgid "Subtotal Color"
+msgstr "Total Farge"
+
+#: inc/customizer/settings/woocommerce.php:284
+msgid "Checkout Button Background"
+msgstr "Sjekkut-Knapp Bakgrunn"
+
+#: inc/customizer/settings/woocommerce.php:300
+msgid "Checkout Button Background: Hover"
+msgstr "Sjekkut-Knapp Bakgrunn: Hover"
+
+#: inc/customizer/settings/woocommerce.php:316
+msgid "Checkout Button Color"
+msgstr "Sjekkut-Knapp Bakgrunn Farge"
+
+#: inc/customizer/settings/woocommerce.php:332
+msgid "Checkout Button Color: Hover"
+msgstr "Sjekkut-Knapp Bakgrunn Farge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:357
+msgid "Shop Posts Per Page"
+msgstr "Butikk Innlegg per Side"
+
+#: inc/customizer/settings/woocommerce.php:397
+msgid "Shop Columns"
+msgstr "Butikk kolonner"
+
+#: inc/customizer/settings/woocommerce.php:417
+msgid "Shop Sort"
+msgstr "Sorter Butikk"
+
+#: inc/customizer/settings/woocommerce.php:433
+msgid "Shop Result Count"
+msgstr "Butikk Resultat Antall"
+
+#: inc/customizer/settings/woocommerce.php:449
+msgid "Product Entry Media"
+msgstr "Produktoppføring Media"
+
+#: inc/customizer/settings/woocommerce.php:456
+msgid "Image Swap"
+msgstr "Bytt bilde"
+
+#: inc/customizer/settings/woocommerce.php:457
+msgid "Gallery Slider"
+msgstr "Karusellgalleri"
+
+#: inc/customizer/settings/woocommerce.php:465
+msgid "Single"
+msgstr "Enkel"
+
+#: inc/customizer/settings/woocommerce.php:499
+msgid "Up-Sells Count"
+msgstr "Up-Sells Antall"
+
+#: inc/customizer/settings/woocommerce.php:519
+msgid "Up-Sells Columns"
+msgstr "Up-Sells kolonner"
+
+#: inc/customizer/settings/woocommerce.php:539
+msgid "Related Items Count"
+msgstr "Antall Relaterte Element"
+
+#: inc/customizer/settings/woocommerce.php:559
+msgid "Related Products Columns"
+msgstr "Relaterte produkter Kolonner"
+
+#: inc/customizer/settings/woocommerce.php:579
+msgid "Product Meta"
+msgstr "produkt Meta"
+
+#: inc/customizer/settings/woocommerce.php:590
+#: inc/customizer/settings/woocommerce.php:1483
+#: inc/woocommerce/woocommerce-helpers.php:48
+msgid "Cart"
+msgstr "Handlekurv"
+
+#: inc/customizer/settings/woocommerce.php:604
+msgid "Cross-Sells Count"
+msgstr "Cross-Sells Antall"
+
+#: inc/customizer/settings/woocommerce.php:624
+msgid "Cross-Sells Columns"
+msgstr "Cross-Sells Kolonner"
+
+#: inc/customizer/settings/woocommerce.php:637
+msgid "Advanced Styling"
+msgstr "Avansert styling"
+
+#: inc/customizer/settings/woocommerce.php:652
+msgid "On Sale Background"
+msgstr "På Salg Bakgrunn"
+
+#: inc/customizer/settings/woocommerce.php:668
+msgid "On Sale Color"
+msgstr "På Salg Farge"
+
+#: inc/customizer/settings/woocommerce.php:684
+msgid "Out of Stock Background"
+msgstr "Utsolgt Bakgrunn"
+
+#: inc/customizer/settings/woocommerce.php:700
+msgid "Out of Stock Color"
+msgstr "Utsolgt Farge"
+
+#: inc/customizer/settings/woocommerce.php:716
+msgid "Stars Color Before"
+msgstr "Stjerner Farge Før"
+
+#: inc/customizer/settings/woocommerce.php:732
+msgid "Stars Color"
+msgstr "Stjerner farge"
+
+#: inc/customizer/settings/woocommerce.php:746
+msgid "Product Entry"
+msgstr "Produktoppføring"
+
+#: inc/customizer/settings/woocommerce.php:761
+msgid "Category Color"
+msgstr "Kategorifarge"
+
+#: inc/customizer/settings/woocommerce.php:777
+msgid "Category Color: Hover"
+msgstr "Kategorifarge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:793
+#: inc/customizer/settings/woocommerce.php:934
+msgid "Title Color"
+msgstr "Farge på tittel"
+
+#: inc/customizer/settings/woocommerce.php:809
+msgid "Title Color: Hover"
+msgstr "Tittel Farge: hover"
+
+#: inc/customizer/settings/woocommerce.php:841
+#: inc/customizer/settings/woocommerce.php:966
+msgid "Del Price Color"
+msgstr "Slett Pris Farge"
+
+#: inc/customizer/settings/woocommerce.php:857
+msgid "Add To Cart Color"
+msgstr "Legg i Handlekurv Farge"
+
+#: inc/customizer/settings/woocommerce.php:873
+msgid "Add To Cart Color: Hover"
+msgstr "Legg i Handlekurv Farge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:889
+msgid "Add To Cart Border Color"
+msgstr "Legg i Handlekurv Kantlinjefarge"
+
+#: inc/customizer/settings/woocommerce.php:905
+msgid "Add To Cart Border Color: Hover"
+msgstr "Legg i Handlekurv Kantlinjefarge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:919
+msgid "Single Product"
+msgstr "Enkelt produkt"
+
+#: inc/customizer/settings/woocommerce.php:982
+msgid "Description Color"
+msgstr "Beskrivelse Farge"
+
+#: inc/customizer/settings/woocommerce.php:998
+msgid "Quantity Border Color"
+msgstr "Antall Kantlinjefarge"
+
+#: inc/customizer/settings/woocommerce.php:1014
+msgid "Quantity Border Color Focus"
+msgstr "Antall Kantlinjefarge Fokus"
+
+#: inc/customizer/settings/woocommerce.php:1046
+msgid "Quantity Plus/Minus Color"
+msgstr "Mengde Plus/Minus Farge"
+
+#: inc/customizer/settings/woocommerce.php:1062
+msgid "Quantity Plus/Minus Color: Hover"
+msgstr "Menge Plus/Minus Farge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1078
+msgid "Quantity Plus/Minus Border Color: Hover"
+msgstr "Rammefarge Menge Plus/Minus: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1094
+msgid "Meta Title Color"
+msgstr "Meta Tittel Farge"
+
+#: inc/customizer/settings/woocommerce.php:1110
+msgid "Meta Link Color"
+msgstr "Meta Lenke Farge"
+
+#: inc/customizer/settings/woocommerce.php:1126
+msgid "Meta Link Color: Hover"
+msgstr "Meta Link Farge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1140
+msgid "Single Product Thumbnails"
+msgstr "Enkelt produkt Thumbnails"
+
+#: inc/customizer/settings/woocommerce.php:1155
+msgid "Next/Prev Background: Hover"
+msgstr "Neste/Forrige Bakgrunn: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1171
+msgid "Next/Prev Color"
+msgstr "Neste/Forrige Farge"
+
+#: inc/customizer/settings/woocommerce.php:1185
+msgid "Single Product Tabs"
+msgstr "Enkelt Produkt Faner"
+
+#: inc/customizer/settings/woocommerce.php:1232
+msgid "Text Color: Hover"
+msgstr "Tekst Farge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1248
+msgid "Active Text Color"
+msgstr "Farge Aktiv Tekst"
+
+#: inc/customizer/settings/woocommerce.php:1264
+msgid "Active Text Borders Color"
+msgstr "Aktiv Tekst Ramme Farge"
+
+#: inc/customizer/settings/woocommerce.php:1278
+msgid "Account"
+msgstr "Konto"
+
+#: inc/customizer/settings/woocommerce.php:1293
+msgid "Navigation: Borders Color"
+msgstr "Navigasjon: Ramme Farge"
+
+#: inc/customizer/settings/woocommerce.php:1309
+msgid "Navigation: Icons Color"
+msgstr "Navigasjon: Ikoner Farge"
+
+#: inc/customizer/settings/woocommerce.php:1325
+msgid "Navigation: Links Color"
+msgstr "Navigasjon: Farge Lenker"
+
+#: inc/customizer/settings/woocommerce.php:1341
+msgid "Navigation: Links Color: Hover"
+msgstr "Navigasjon: Lenker Farge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1357
+msgid "Addresses: Box Background"
+msgstr "Adresse Boks Bakrgunn"
+
+#: inc/customizer/settings/woocommerce.php:1373
+msgid "Addresses: Box Title Color"
+msgstr "Adresse: Boks Tittel Farge"
+
+#: inc/customizer/settings/woocommerce.php:1389
+msgid "Addresses: Box Title Border Bottom Color"
+msgstr "Adresse: Boks Ramme Bunn Farge"
+
+#: inc/customizer/settings/woocommerce.php:1405
+msgid "Addresses: Box Content Color"
+msgstr "Adresse: Boks innhold Farge"
+
+#: inc/customizer/settings/woocommerce.php:1421
+msgid "Addresses: Box Button Background"
+msgstr "Adresse: Boks Knapp Bakgrunn"
+
+#: inc/customizer/settings/woocommerce.php:1437
+msgid "Addresses: Box Button Background: Hover"
+msgstr "Adresse: Boks Knapp Bakgrunn: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1453
+msgid "Addresses: Box Button color"
+msgstr "Adresse: Boks Knapp Farge"
+
+#: inc/customizer/settings/woocommerce.php:1469
+msgid "Addresses: Box Button color: Hover"
+msgstr "Adresse: Boks Knapp Farge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1514
+msgid "Head Background"
+msgstr "Head-Bakgrunn"
+
+#: inc/customizer/settings/woocommerce.php:1530
+msgid "Head Titles Color"
+msgstr "Head-Tittel Farge"
+
+#: inc/customizer/settings/woocommerce.php:1546
+msgid "Cart Totals Table: Titles Color"
+msgstr "Handlekurv totalt tabeller: Titler Farge"
+
+#: inc/customizer/settings/woocommerce.php:1562
+msgid "Remove Button Color"
+msgstr "Fjern Knapp Farge"
+
+#: inc/customizer/settings/woocommerce.php:1578
+msgid "Remove Button Color: Hover"
+msgstr "Fjern Knapp Farge: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1592
+msgid "Checkout"
+msgstr "Til Kassen"
+
+#: inc/customizer/settings/woocommerce.php:1607
+msgid "Notices: Borders Color"
+msgstr "Merknader: Ramme Farge"
+
+#: inc/customizer/settings/woocommerce.php:1623
+msgid "Notices: Icon Color"
+msgstr "Merknader: Ikon Farge"
+
+#: inc/customizer/settings/woocommerce.php:1639
+msgid "Notices: Color"
+msgstr "Merknader: Farge"
+
+#: inc/customizer/settings/woocommerce.php:1655
+msgid "Notices: Link Color"
+msgstr "Merknader: Lenke Farge"
+
+#: inc/customizer/settings/woocommerce.php:1671
+msgid "Notices: Link Color: Hover"
+msgstr "Merknader: Lenke Farge: hover"
+
+#: inc/customizer/settings/woocommerce.php:1687
+msgid "Notices Form: Border Color"
+msgstr "Merknader Form: Rammefarge"
+
+#: inc/customizer/settings/woocommerce.php:1703
+msgid "Titles Color"
+msgstr "Farge Tittel"
+
+#: inc/customizer/settings/woocommerce.php:1719
+msgid "Titles Border Bottom Color"
+msgstr "Tittel Bunnramme Farge"
+
+#: inc/customizer/settings/woocommerce.php:1735
+msgid "Table Main Background"
+msgstr "Tabell Hoved Bakgunn"
+
+#: inc/customizer/settings/woocommerce.php:1751
+msgid "Table Titles Color"
+msgstr "Tabell Farge Tittel"
+
+#: inc/customizer/settings/woocommerce.php:1767
+msgid "Table Borders Color"
+msgstr "Tabell rammefarge"
+
+#: inc/customizer/settings/woocommerce.php:1783
+msgid "Payment Methods Background"
+msgstr "Betalingsmetoder Bakgrunn"
+
+#: inc/customizer/settings/woocommerce.php:1799
+msgid "Payment Methods Borders Color"
+msgstr "Betalingsmetoder Ramme Farge"
+
+#: inc/customizer/settings/woocommerce.php:1815
+msgid "Payment Box Background"
+msgstr "Betaling Boks Bakgrunn"
+
+#: inc/customizer/settings/woocommerce.php:1831
+msgid "Payment Box Color"
+msgstr "Betaling Boks Farge"
+
+#: inc/helpers.php:393 inc/widgets/recent-posts.php:33
+msgid "Recent Posts"
+msgstr "Seneste Innlegg"
+
+#: inc/helpers.php:406
+msgid "Search Results Found"
+msgstr "Søkeresultater Funnet For"
+
+#: inc/helpers.php:424
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Daglig Arkiver: %s"
+
+#: inc/helpers.php:429
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Månedlige Arkiver: %s"
+
+#: inc/helpers.php:429
+msgctxt "Page title monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/helpers.php:434
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Årlige Arkiver: %s"
+
+#: inc/helpers.php:434
+msgctxt "Page title yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/helpers.php:456
+msgid "404: Page Not Found"
+msgstr "404: Side ikke Funnet"
+
+#: inc/helpers.php:518
+msgid "You searched for:"
+msgstr "Du søkte etter:"
+
+#: inc/helpers.php:523
+msgid "This author has written"
+msgstr "Denne forfatteren har skrevet"
+
+#: inc/helpers.php:523
+msgid "articles"
+msgstr "Artikler"
+
+#: inc/helpers.php:1304
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/helpers.php:1304
+msgid "(Edit)"
+msgstr "(Rediger)"
+
+#: inc/helpers.php:1322
+#, php-format
+msgid "%s "
+msgstr "%s"
+
+#: inc/helpers.php:1331
+msgid "edit"
+msgstr "rediger"
+
+#: inc/helpers.php:1343
+msgid "Your comment is awaiting moderation."
+msgstr "Din kommentar avventer moderasjon."
+
+#: inc/helpers.php:1526 inc/helpers.php:1571
+msgid "Newer Posts"
+msgstr "Nyere innlegg"
+
+#: inc/helpers.php:1529 inc/helpers.php:1574
+msgid "Older Posts"
+msgstr "Tidligere innlegg"
+
+#: inc/helpers.php:1564
+msgid "Loading..."
+msgstr "Laster..."
+
+#: inc/helpers.php:2183
+msgid "Type your search"
+msgstr "Skriv ditt søk"
+
+#: inc/helpers.php:2188 partials/mobile-search.php:15 searchform.php:10
+msgid "Search"
+msgstr "Søk"
+
+#: inc/helpers.php:2523
+msgid "RSS"
+msgstr "RSS"
+
+#: inc/helpers.php:2527
+msgid "Email"
+msgstr "Epost"
+
+#: inc/plugins/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr "Installer påkrevde utvidelser"
+
+#: inc/plugins/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr "Installer utvidelser"
+
+#: inc/plugins/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Installerer utvidelse: %s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr "Oppdaterer utvidelse: %s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr "Noe gikk galt med utvidelses-API-en."
+
+#: inc/plugins/class-tgm-plugin-activation.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Dette temaet krever følgende utvidelse: %1$s."
+msgstr[1] "Dette temaet krever følgende utvidelser: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Dette temaet anbefaler følgende utvidelse: %1$s."
+msgstr[1] "Dette temaet anbefaler følgende utvidelser: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"Følgende utvidelse må oppdateres til sin nyeste versjon for å sikre maksimal "
+"kompatibilitet med dette temaet: %1$s."
+msgstr[1] ""
+"Følgende utvidelse må oppdateres til sin nyeste versjon for å sikre maksimal "
+"kompatibilitet med dette temaet: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "Det er en oppdatering tilgjengelig for:%1$s."
+msgstr[1] "Det er oppdateringer tilgjengelig for:%1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "Følgende nødvendige utvidelse er for øyeblikket inaktive: %1$s."
+msgstr[1] "Følgende nødvendige utvidelser er for øyeblikket inaktive: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "Følgende anbefalte utvidelse er for øyeblikket inaktiv: %1$s."
+msgstr[1] "Følgende anbefalte utvidelser er for øyeblikket inaktive: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Begynn innstallering av utvidelse"
+msgstr[1] "Begynn innstallering av utvidelser"
+
+#: inc/plugins/class-tgm-plugin-activation.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Begynn å oppdatere utvidelse"
+msgstr[1] "Begynn å oppdatere utvidelser"
+
+#: inc/plugins/class-tgm-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Begynn å aktivere utvidelse"
+msgstr[1] "Begynn å aktivere utvidelser"
+
+#: inc/plugins/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr "Returner til installasjonen av påkrevde utvidelser"
+
+#: inc/plugins/class-tgm-plugin-activation.php:386
+#: inc/plugins/class-tgm-plugin-activation.php:827
+#: inc/plugins/class-tgm-plugin-activation.php:2533
+#: inc/plugins/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr "Returner til kontrollpanelet"
+
+#: inc/plugins/class-tgm-plugin-activation.php:387
+#: inc/plugins/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr "Utvidelsen ble aktivert."
+
+#: inc/plugins/class-tgm-plugin-activation.php:388
+#: inc/plugins/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Følgende utvidelse ble aktivert: %s."
+msgstr[1] "Følgende utvidelser ble aktivert: %s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Intet utført. Utvidelse %1$s var allerede aktivt."
+
+#: inc/plugins/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"utvidelse er ikke aktivert. En nyere versjon av %s må installeres for dette "
+"temaet. Vennligst oppgrader utvidelse."
+
+#: inc/plugins/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Alle utvidelser ble installert og aktivert. %1$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr "Skjul dette varselet"
+
+#: inc/plugins/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+"Det finnes en eller flere påkrevde eller anbefalte utvidelser å installere, "
+"oppdatere eller aktivere."
+
+#: inc/plugins/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr "Vennligst kontakt administrator for nettstedet for bistand."
+
+#: inc/plugins/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+"Følgende utvidelse må oppdateres for å være kompatibel med dette temaet."
+
+#: inc/plugins/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr "Oppdatering er påkrevet."
+
+#: inc/plugins/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"Den eksterne utvidelse-pakken inneholder ikke en mappe med ønsket slug, og å "
+"gi nytt navn fungerte ikke."
+
+#: inc/plugins/class-tgm-plugin-activation.php:934
+#: inc/plugins/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+"Vennligst ta kontakt med leverandør av utvidelse og be dem om å pakke sin "
+"utvidelse i henhold til retningslinjene til WordPress."
+
+#: inc/plugins/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"Den eksterne utvidelse-pakken inneholder mer enn en fil, men filene er ikke "
+"pakket i en mappe."
+
+#: inc/plugins/class-tgm-plugin-activation.php:1121
+#: inc/plugins/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr "og"
+
+#: inc/plugins/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr "TGMPA v%s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr "Påkrevd"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr "Anbefalt"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr "WordPress-katalog"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr "Ekstern kilde"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr "Forhåndspakket"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr "Ikke installert"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr "Installert, men ikke aktivert"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr "Aktiv"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr "Nødvendig oppdatering ikke tilgjengelig"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr "Må oppdateres"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr "Oppdatering anbefalt"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Alle <span class=\"count\">(%s)</span>"
+msgstr[1] "Alle <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "Å installere <span class=\"count\">(%s)</span>"
+msgstr[1] "Å installere <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Oppdatering tilgjengelig <span class=\"count\">(%s)</span>"
+msgstr[1] "Oppdateringer tilgjengelig <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "For å aktivere <span class=\"count\">(%s)</span>"
+msgstr[1] "For å aktivere <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "ukjent"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr "Installert versjon"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr "Minste Påkrevde Versjon:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr "Tilgjengelig versjon:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr "Ingen utvidelse å installere, oppdatere eller aktivere."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr "Utvidelse"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr "Kilde"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr "Type"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr "Versjon"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr "Status"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr "Installer %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr "Oppdater %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr "Aktiver %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr "Oppdateringsbeskjed fra leverandør av utvidelse:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr "Installer"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr "Oppdatere"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr "Aktiver"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Ingen utvidelser ble valgt for installering. Ingenting skjedde."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Ingen utvidelser ble valgt for oppdatering. Ingenting skjedde."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr "Ingen utvidelser tilgjengelig for installering."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr "Ingen utvidelser tilgjengelig for oppdatering."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr "Ingen utvidelser ble valgt for oppdatering. Ingenting skjedde."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr "Ingen utvidelser er tilgjengelig for aktivering akkurat nå."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr "Aktivering av utvidelsen feilet."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Oppdaterer utvidelse %1$s (%2$d/%3$d)"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+"Während der Aktualisierung von %1$s: <strong>%2$s</strong> ist ein Fehler "
+"aufgetreten."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "Die Installation von %1$s ist fehlgeschlagen."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Installerings- og aktiveringsprosessen starter. Prosessen kan ta en stund på "
+"noen verter, så vennligst vær tålmodig."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s installert og aktivert."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3509
+#: inc/plugins/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr "Vis detaljer"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3509
+#: inc/plugins/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr "Skjul detaljer"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr "Alle installasjoner og aktiveringer er utført."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installerer og aktiverer utvidelser %1$s (%2$d/%3$d)"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Installasjonsprosessen starter. Prosessen kan ta en stund på noen verter, så "
+"vennligst vær tålmodig."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s er installert."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr "Alle installasjoner er utført."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Installerer utvidelse %1$s (%2$d/%3$d)"
+
+#: inc/updater.php:112
+#, php-format
+msgid ""
+"Enter your extension license keys here to receive updates for purchased "
+"extensions. If your license key has expired, please <a href=\"%s\" target="
+"\"_blank\" title=\"License renewal FAQ\">renew your license</a>."
+msgstr ""
+"Skriv inn dine skjøtelisensnøkler her for å motta oppdateringer for "
+"innkjøpte utvidelser. Hvis lisensnøkkelen er utløpt, må du <a href=\"%s\" "
+"target=\"_blank\" title=\"Fornyet lisens FAQ\">fornye lisensen</a> ."
+
+#: inc/updater.php:135
+#, php-format
+msgid "%s License Key"
+msgstr "%1$s Lisensnøkkel"
+
+#: inc/updater.php:163
+#, php-format
+msgid "Your license will expire after %s days."
+msgstr "Din lisens utløper etter%s dager."
+
+#: inc/updater.php:511
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+"Det finnes en nyere versjon av %1$s. <a target=\"_blank\" class=\"thickbox\" "
+"href=\"%2$s\">Se detaljer for versjon %3$s</a>."
+
+#: inc/updater.php:518
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+"\">update now</a>."
+msgstr ""
+"Det finnes en ny versjon av %1$s. <a target=\"_blank\" class=\"thickbox\" "
+"href=\"%2$s\">Se detaljer for versjon %3$s</a> eller <a href=\"%4$s"
+"\">oppdater nå</a>."
+
+#: inc/updater.php:603
+msgid "You do not have permission to install plugin updates"
+msgstr "Du har ikke tillatelse til å oppdatere utvidelse"
+
+#: inc/updater.php:603
+msgid "Error"
+msgstr "Feil"
+
+#: inc/updater.php:659 inc/updater.php:701
+msgid "This license does not belong to the product you have entered it for."
+msgstr "Denne lisensen tilhører ikke produktet du har skrevet den for."
+
+#: inc/updater.php:663 inc/updater.php:705
+msgid "This license does not have any activations left"
+msgstr "Denne lisensen har ingen aktiveringer igjen"
+
+#: inc/updater.php:667
+msgid "Your license key is expired. Please renew it."
+msgstr "Din lisensnøkkel har utløpt. Vennligst fory den."
+
+#: inc/updater.php:671 inc/updater.php:713
+#, php-format
+msgid ""
+"There was a problem activating your license key, please try again or contact "
+"support. Error code: %s"
+msgstr ""
+"Det var et problem med å aktivere lisensnøkkel, prøv igjen eller kontakt "
+"support. Feilkode:%s"
+
+#: inc/updater.php:709
+msgid "This license key is expired. Please renew it."
+msgstr "Dette lisensnøkkel er utløpt. Vennligst fornye den."
+
+#: inc/walker/init.php:69
+msgid "Disable link"
+msgstr "Deaktiver lenke"
+
+#: inc/walker/init.php:76
+msgid "Display Latest Posts"
+msgstr "Vis Siste Innlegg"
+
+#: inc/walker/init.php:83
+msgid "Enable megamenu"
+msgstr "aktiver megameny"
+
+#: inc/walker/init.php:89
+msgid "Megamenu auto width?"
+msgstr "Megameny auto bredde?"
+
+#: inc/walker/init.php:94
+msgid "Megamenu columns (from 2 to 6)"
+msgstr "Megameny kolonner (2-6)"
+
+#: inc/walker/init.php:101
+msgid "Hide Mega menu heading?"
+msgstr "Skjul Mega meny overskriften?"
+
+#: inc/walker/init.php:106
+msgid "Enter Icon Class"
+msgstr "Skriv inn Ikon klasse"
+
+#: inc/walker/init.php:112
+msgid "Mega Menu Widget Area"
+msgstr "Mega Meny Widget Område"
+
+#: inc/walker/init.php:114
+msgid "Select Widget Area"
+msgstr "Velg Widget Område"
+
+#: inc/welcome/welcome.php:58
+#, php-format
+msgid ""
+"Thanks for choosing OceanWP! You can read hints and tips on how get the most "
+"out of your new theme on the %swelcome screen%s."
+msgstr ""
+"Takk for at du valgte OceanWP! Du kan lese hint og tips om hvordan få mest "
+"ut av ditt nye tema på %swelcome screen%s."
+
+#: inc/welcome/welcome.php:59
+msgid "Get started with OCeanWP"
+msgstr "Kom i gang med OCeanWP"
+
+#: inc/welcome/welcome.php:75 inc/welcome/welcome.php:76
+msgid "Theme"
+msgstr "Tema"
+
+#: inc/welcome/welcome.php:109
+msgid "Join us on Twitter"
+msgstr "Følg oss på Twitter"
+
+#: inc/welcome/welcome.php:110
+msgid "Join us on Facebook"
+msgstr "Følg oss på Facebook"
+
+#: inc/welcome/welcome.php:111
+msgid "Find us on GitHub"
+msgstr "Finn oss på GitHub"
+
+#: inc/welcome/welcome.php:120
+msgid "Thank you to use OceanWP"
+msgstr "Takk for at du bruker OceanWP"
+
+#: inc/welcome/welcome.php:122
+msgid ""
+"OceanWP is the perfect theme for your project. Lightweight and highly "
+"extendible, it will enable you to create almost any type of site with a "
+"beautiful & professional design. There are several options to personalise "
+"your website, multiple widget regions, a responsive design and much more. "
+"Developers will love his extensible codebase making it a joy to customise "
+"and extend."
+msgstr ""
+"OceanWP er den perfekte temaet for prosjektet. Lett og svært utbyggbar, vil "
+"det gjøre deg i stand til å lage nesten alle typer nettsted med en vakker og "
+"profesjonell design. Det er flere muligheter til å tilpasse nettstedet ditt, "
+"flere widget regioner, et responsivt design og mye mer. Utviklere vil elske "
+"sin utvidbar kodebase gjør det til en fryd å tilpasse og utvide."
+
+#: inc/welcome/welcome.php:124
+msgid "The perfect theme to use with your favorite page builder!"
+msgstr "Den perfekte tema for å bruke sammen med din favoritt sidebygger!"
+
+#: inc/welcome/welcome.php:130
+msgid "Extend his functionalities with our extensions"
+msgstr "Utvid temaets funksjonalitet med våre utvidelser"
+
+#: inc/welcome/welcome.php:132
+msgid ""
+"Check our free and premium extensions that extend OceanWP&rsquo;s "
+"functionality and make it more powerful."
+msgstr ""
+"Sjekk våre gratis og premium utvidelser som utvider OceanWP`s "
+"funksjonalitet, og gjør det mer kraftfullt."
+
+#: inc/welcome/welcome.php:136
+msgid "Ocean Extra"
+msgstr "Ocean Extra"
+
+#: inc/welcome/welcome.php:137
+msgid ""
+"Add extra features like metaboxes, custom CSS and a panel to activate the "
+"extensions."
+msgstr ""
+"Legg ekstra funksjoner som Meta, tilpasset CSS og et panel for å aktivere "
+"utvidelser."
+
+#: inc/welcome/welcome.php:140
+msgid "Elementor Widgets"
+msgstr "Elementor Widgets"
+
+#: inc/welcome/welcome.php:141
+msgid ""
+"Add some awesome new widgets to the popular free page builder Elementor."
+msgstr ""
+"Legg til noen fantastiske nye widgets til den populære gratis sidebygger "
+"Elementor."
+
+#: inc/welcome/welcome.php:145
+msgid ""
+"Generates an unlimited number of sidebars and place them on any page or post."
+msgstr ""
+"Genererer et ubegrenset antall sidefelt og plassere dem på en side eller "
+"post."
+
+#: inc/welcome/welcome.php:148
+msgid "Sticky Header"
+msgstr "Sticky header"
+
+#: inc/welcome/welcome.php:149
+msgid ""
+"A simple extension to attach the header at the top of your screen with an "
+"animation."
+msgstr ""
+"En enkel utvidelse til å feste header på toppen av skjermen med en animasjon."
+
+#: inc/welcome/welcome.php:152
+msgid "Footer Callout"
+msgstr "Footer Callout"
+
+#: inc/welcome/welcome.php:153
+msgid ""
+"Add some relevant/important information about your company or product in "
+"your footer."
+msgstr ""
+"Legg litt relevant / viktig informasjon om din bedrift eller et produkt i "
+"bunnteksten."
+
+#: inc/welcome/welcome.php:156
+msgid "Side Panel"
+msgstr "Sidepanel"
+
+#: inc/welcome/welcome.php:157
+msgid ""
+"Display a panel on the right or left with your favorite widgets by clicking "
+"on an icon in the menu."
+msgstr ""
+"Vis et panel på høyre eller venstre med din favoritt widgets ved å klikke på "
+"et ikon i menyen."
+
+#: inc/welcome/welcome.php:160
+msgid "Demo Import"
+msgstr "Demo Import"
+
+#: inc/welcome/welcome.php:161
+msgid ""
+"Import the OceanWP demo content, widgets and customizer settings with one "
+"click."
+msgstr ""
+"Importer OceanWP demo innhold, widgets og tilpasningsinnstillinger med ett "
+"klikk."
+
+#: inc/welcome/welcome.php:164
+msgid "Social Sharing"
+msgstr "Sosial deling"
+
+#: inc/welcome/welcome.php:165
+msgid ""
+"A simple extension to add your prefered social sharing buttons to your "
+"single posts."
+msgstr ""
+"En enkel utvidelse til å legge din foretrukne sosiale deling knapper til "
+"dine single innlegg."
+
+#: inc/welcome/welcome.php:170
+msgid "View all OceanWP extensions"
+msgstr "Vis alle OceanWP utvidelser"
+
+#: inc/welcome/welcome.php:177
+msgid "Create your WordPress site quickly with Themecloud"
+msgstr "Lag din WordPress nettstedet raskt med Themecloud"
+
+#: inc/welcome/welcome.php:179
+msgid "What is Themecloud?"
+msgstr "Hva er Themecloud?"
+
+#: inc/welcome/welcome.php:179
+msgid ""
+"It&rsquo;s a better way to build WordPress websites, instant setup, no "
+"coding required. They are removed all of the technical hurdles standing "
+"between you and your ideal site. Don’t worry about installations, "
+"configurations, migrations and maintenance. Focus on creating stellar "
+"content – and watch your business skyrocket! Not convinced yet?"
+msgstr ""
+"It&rsquo; er en bedre måte å bygge WordPress nettsteder, instant oppsett, "
+"kreves ingen koding. De fjernet alle de tekniske hindrene som står mellom "
+"deg og din ideelle stedet. Ikke bekymre deg for installasjoner, "
+"konfigurasjoner, vandringer og vedlikehold. Fokuser på å skape fremragende "
+"innhold - og se din bedrift skyte i været! Ikke overbevist ennå?"
+
+#: inc/welcome/welcome.php:179
+msgid "Look at this great review from WPKube"
+msgstr "Se på denne flotte anmeldelsen fra WPKube"
+
+#: inc/welcome/welcome.php:181
+msgid "From $9.90/mo"
+msgstr "Fra $ 9,90 / mnd"
+
+#: inc/welcome/welcome.php:181
+msgid "( 15-day free trial, no credit card required )"
+msgstr "(15-dagers gratis prøveperiode, kreves ingen kredittkort)"
+
+#: inc/welcome/welcome.php:184
+msgid "Learn more about Themecloud"
+msgstr "Lær mer om Themecloud"
+
+#: inc/welcome/welcome.php:193
+msgid "Getting started with OceanWP"
+msgstr "Komme i gang med OceanWP"
+
+#: inc/welcome/welcome.php:195
+msgid ""
+"Take a look in the options of the Customizer and see yourself how easy and "
+"quick to customize the theme as you wish."
+msgstr ""
+"Ta en titt i valgene i tilpasseren og se selv hvor enkelt og raskt det er å "
+"tilpasse temaet som du ønsker."
+
+#: inc/welcome/welcome.php:199
+msgid "Upload your logo"
+msgstr "Last opp logo"
+
+#: inc/welcome/welcome.php:200
+msgid "Add your own logo and retina logo used for the mobile design."
+msgstr "Legg til din egen logo og retina-logoen brukes for mobildesign."
+
+#: inc/welcome/welcome.php:201 inc/welcome/welcome.php:206
+#: inc/welcome/welcome.php:211 inc/welcome/welcome.php:216
+#: inc/welcome/welcome.php:221 inc/welcome/welcome.php:226
+#: inc/welcome/welcome.php:231 inc/welcome/welcome.php:236
+msgid "Go to the option"
+msgstr "Gå til alternativet"
+
+#: inc/welcome/welcome.php:204
+msgid "Add your favicon"
+msgstr "Legg inn et favicon"
+
+#: inc/welcome/welcome.php:205
+msgid "The favicon is used as a browser and app icon for your website."
+msgstr "Den favicon brukes som nettleser og app ikonet for ditt nettsted."
+
+#: inc/welcome/welcome.php:209
+msgid "Choose your primary color"
+msgstr "Velg din primære farge"
+
+#: inc/welcome/welcome.php:210
+msgid "Replace the default primary and hover color by your own colors."
+msgstr "Erstatte standard primære og hover farge ved dine egne farger."
+
+#: inc/welcome/welcome.php:214
+msgid "Change the links color"
+msgstr "Endre lenker farge"
+
+#: inc/welcome/welcome.php:215
+msgid "Choose the color and hover color of your links for the entire site."
+msgstr "Velg farge og hover farge på linker for hele området."
+
+#: inc/welcome/welcome.php:219
+msgid "Choose your typography"
+msgstr "Velg ditt typografi"
+
+#: inc/welcome/welcome.php:220
+msgid "Choose your own typography for any parts of your website."
+msgstr "Velg din egen typografi for alle deler av nettstedet ditt."
+
+#: inc/welcome/welcome.php:224
+msgid "Top bar options"
+msgstr "Topp bar alternativer"
+
+#: inc/welcome/welcome.php:225
+msgid "Enable/Disable the top bar, add your own paddings and colors."
+msgstr ""
+"Aktiver / deaktiver top bar, legge til dine egne polstringer og farger."
+
+#: inc/welcome/welcome.php:229
+msgid "Header options"
+msgstr "Header Alternativer"
+
+#: inc/welcome/welcome.php:230
+msgid "Choose the style, the height and the colors for your site header."
+msgstr "Velg stil, høyde og fargene på nettstedet ditt spissen."
+
+#: inc/welcome/welcome.php:234
+msgid "Footer bottom options"
+msgstr "Bunntekst bunn alternativer"
+
+#: inc/welcome/welcome.php:235
+msgid "Add your copyright, paddings and colors for the footer bottom."
+msgstr "Legg til opphavsrett, polstring og farger for bunnteksten nederst."
+
+#: inc/welcome/welcome.php:249
+msgid "Customize Your Site"
+msgstr "Tilpass ditt nettsted"
+
+#: inc/welcome/welcome.php:258
+msgid "Contribute to OceanWP"
+msgstr "Bidra til OceanWP"
+
+#: inc/welcome/welcome.php:260
+msgid ""
+"You&rsquo;ve found a bug? Want to contribute a patch, create a new feature "
+"or extension?"
+msgstr ""
+"Du har funnet en bug? Ønsker du å bidra med en patch, opprette en ny "
+"funksjon eller forlengelse?"
+
+#: inc/welcome/welcome.php:261
+msgid "GitHub is the place to go!"
+msgstr "GitHub er stedet å gå!"
+
+#: inc/welcome/welcome.php:267
+msgid "Get support"
+msgstr "Få kundestøtte"
+
+#: inc/welcome/welcome.php:269
+msgid ""
+"You can find a wide range of information on how to use and customise OceanWP "
+"in our"
+msgstr ""
+"Du kan finne et bredt spekter av informasjon om hvordan du bruker og "
+"tilpasse OceanWP i vår"
+
+#: inc/welcome/welcome.php:269
+msgid "documentation"
+msgstr "dokumentasjon"
+
+#: inc/welcome/welcome.php:269
+msgid "If you need help?"
+msgstr "Hvis du trenger hjelp?"
+
+#: inc/welcome/welcome.php:269
+msgid "open a support ticket"
+msgstr "åpne en support billett"
+
+#: inc/welcome/welcome.php:275
+msgid "Recommended plugins"
+msgstr "Anbefalte Utvidelser"
+
+#: inc/welcome/welcome.php:277
+msgid ""
+"Below you will find links to plugins I personally like and recommend. None "
+"of these plugins are required for your theme to work, they simply add "
+"additional functionality."
+msgstr ""
+"Nedenfor finner du linker til utvidelser jeg personlig liker og anbefaler. "
+"Ingen av disse utvidelsene er nødvendige for at temaet skal virke, de bare "
+"legge til ekstra funksjonalitet."
+
+#: inc/welcome/welcome.php:281
+msgid ""
+"Manage multiple contact forms and customize the form and the mail contents "
+"with markups."
+msgstr ""
+"Administrere flere kontaktskjemaer og tilpass skjema og post innholdet med "
+"markeringer."
+
+#: inc/welcome/welcome.php:283
+msgid ""
+"Gravity Forms is the easiest tool to create advanced forms for your "
+"WordPress powered website."
+msgstr ""
+"Gravity Forms er den enkleste verktøy for å lage avanserte skjema for din "
+"WordPress drevet nettstedet."
+
+#: inc/welcome/welcome.php:285
+msgid ""
+"The most advanced frontend drag & drop page builder. Create high-end, pixel "
+"perfect websites."
+msgstr ""
+"Den mest avanserte frontend dra & slipp sidebygger. Lag high-end, pixel "
+"perfekte nettsteder."
+
+#: inc/welcome/welcome.php:287
+msgid ""
+"A drag and drop WordPress Page Builder. Create with ease beautiful & "
+"professional pages."
+msgstr ""
+"En dra og slipp WordPress Page Builder. Lag med letthet vakre og "
+"profesjonelle sider."
+
+#: inc/welcome/welcome.php:289
+msgid ""
+"Visual Composer is the ultimate plugin for building every WordPress site "
+"without coding."
+msgstr ""
+"Visual Composer er den ultimate plugin for å bygge hver WordPress nettstedet "
+"uten koding."
+
+#: inc/welcome/welcome.php:291
+msgid ""
+"It&rsquo;s not just a slider, build modern & mobile friendly presentations "
+"for your website in no time."
+msgstr ""
+"Det er ikke bare en slider, bygge moderne og mobilvennlige presentasjoner "
+"for nettstedet ditt på et blunk."
+
+#: inc/welcome/welcome.php:293
+msgid ""
+"A powerful and flexible plugin that makes it a breeze for users to sign-up "
+"and become members."
+msgstr ""
+"En kraftig og fleksibel plugin som gjør det til en lek for brukere å "
+"registrere seg og bli medlemmer."
+
+#: inc/welcome/welcome.php:295
+msgid ""
+"WooCommerce is a free eCommerce plugin that allows you to sell anything, "
+"beautifully."
+msgstr ""
+"WooCommerce er et gratis eCommerce plugin som lar deg selge noe, vakkert."
+
+#: inc/welcome/welcome.php:299
+msgid "More Recommended Plugins"
+msgstr "Flere Anbefalte Utvidelser"
+
+#: inc/widgets/about-me.php:59
+msgid "&raquo; About Me"
+msgstr "&raquo; Om Meg"
+
+#: inc/widgets/about-me.php:62
+msgid "Adds a about me widget."
+msgstr "Legger en om meg widget."
+
+#: inc/widgets/about-me.php:201
+msgid "About Me"
+msgstr "Om meg"
+
+#: inc/widgets/about-me.php:203
+msgid "John Doe"
+msgstr "Ola Nordmann"
+
+#: inc/widgets/about-me.php:216
+msgid "Image URL"
+msgstr "Bilde URL"
+
+#: inc/widgets/about-me.php:218
+msgid "Upload Image"
+msgstr "Last opp bilde"
+
+#: inc/widgets/about-me.php:222
+msgid "Name:"
+msgstr "Navn:"
+
+#: inc/widgets/about-me.php:227 inc/widgets/instagram.php:290
+msgid "Description:"
+msgstr "Beskrivelse:"
+
+#: inc/widgets/about-me.php:232
+msgid "Social Style:"
+msgstr "Social Stil:"
+
+#: inc/widgets/about-me.php:236 inc/widgets/facebook.php:188
+#: inc/widgets/social.php:240 inc/widgets/social.php:257
+msgid "Light"
+msgstr "Lys"
+
+#: inc/widgets/about-me.php:242
+msgid "Social Link Target:"
+msgstr "Sosial Lenkemål:"
+
+#: inc/widgets/about-me.php:245 inc/widgets/custom-links.php:106
+#: inc/widgets/custom-links.php:124 inc/widgets/instagram.php:317
+#: inc/widgets/social.php:278
+msgid "Blank"
+msgstr "Blank"
+
+#: inc/widgets/about-me.php:246 inc/widgets/custom-links.php:125
+#: inc/widgets/instagram.php:318 inc/widgets/social.php:279
+msgid "Self"
+msgstr "Seg selv"
+
+#: inc/widgets/about-me.php:253 inc/widgets/social.php:304
+msgid "Social Links"
+msgstr "Sosiale linker"
+
+#: inc/widgets/contact-info.php:24
+msgid "&raquo; Contact Info"
+msgstr "&raquo; Kontaktinfo"
+
+#: inc/widgets/contact-info.php:27
+msgid "Adds support for contact info."
+msgstr "Legger til støtte for kontaktinfo."
+
+#: inc/widgets/contact-info.php:164
+msgid "Skype"
+msgstr "Skype"
+
+#: inc/widgets/contact-info.php:228
+msgid "Contact Info"
+msgstr "Kontakt Info"
+
+#: inc/widgets/contact-info.php:230
+msgid "icon-location-pin"
+msgstr "Ikon-Plasserings-pinn"
+
+#: inc/widgets/contact-info.php:231 inc/widgets/contact-info.php:265
+msgid "Address:"
+msgstr "Adresse:"
+
+#: inc/widgets/contact-info.php:232
+msgid "Street Name, FL 54785"
+msgstr "Postnummer, gate, navn"
+
+#: inc/widgets/contact-info.php:233
+msgid "icon-phone"
+msgstr "Telefon Ikon"
+
+#: inc/widgets/contact-info.php:234 inc/widgets/contact-info.php:284
+msgid "Phone:"
+msgstr "Telefon:"
+
+#: inc/widgets/contact-info.php:236
+msgid "icon-screen-smartphone"
+msgstr "Ikon Skjerm Smarttelefon "
+
+#: inc/widgets/contact-info.php:237 inc/widgets/contact-info.php:303
+msgid "Mobile:"
+msgstr "Mobil:"
+
+#: inc/widgets/contact-info.php:239
+msgid "icon-printer"
+msgstr "Printer Ikon"
+
+#: inc/widgets/contact-info.php:240 inc/widgets/contact-info.php:322
+msgid "Fax:"
+msgstr "Fax:"
+
+#: inc/widgets/contact-info.php:242
+msgid "icon-envelope"
+msgstr "Ikon konvolutt"
+
+#: inc/widgets/contact-info.php:243 inc/widgets/contact-info.php:341
+msgid "Email:"
+msgstr "Epost:"
+
+#: inc/widgets/contact-info.php:246
+msgid "icon-link"
+msgstr "Lenke Ikon"
+
+#: inc/widgets/contact-info.php:247 inc/widgets/contact-info.php:365
+msgid "Website:"
+msgstr "Nettside:"
+
+#: inc/widgets/contact-info.php:251
+msgid "Skype Call Us"
+msgstr "Ring oss på Skype"
+
+#: inc/widgets/contact-info.php:260 inc/widgets/contact-info.php:397
+#: inc/widgets/mailchimp.php:165
+msgid "Text"
+msgstr "Tekst"
+
+#: inc/widgets/contact-info.php:268 inc/widgets/contact-info.php:287
+#: inc/widgets/contact-info.php:306 inc/widgets/contact-info.php:325
+#: inc/widgets/contact-info.php:344 inc/widgets/contact-info.php:368
+msgid "Icon Class"
+msgstr "Ikon Klasse"
+
+#: inc/widgets/contact-info.php:354
+msgid "URL"
+msgstr "URL"
+
+#: inc/widgets/contact-info.php:359 inc/widgets/contact-info.php:383
+msgid "URL Text"
+msgstr "URL Tekst"
+
+#: inc/widgets/contact-info.php:378
+msgid "URL (with HTTP)"
+msgstr "URL (Med HTTP)"
+
+#: inc/widgets/contact-info.php:389
+msgid "Skype:"
+msgstr "Skype:"
+
+#: inc/widgets/contact-info.php:392
+msgid "Username"
+msgstr "Brukernavn"
+
+#: inc/widgets/custom-links.php:24
+msgid "&raquo; Custom Links"
+msgstr "Egendefinerte lenker"
+
+#: inc/widgets/custom-links.php:27
+msgid "Displays custom links."
+msgstr "Viser egendefinerte koblinger."
+
+#: inc/widgets/custom-links.php:104
+msgid "Useful Links"
+msgstr "Nyttige Lenker"
+
+#: inc/widgets/custom-links.php:122
+msgid "Link Target:"
+msgstr "Lenke mål:"
+
+#: inc/widgets/custom-links.php:130
+msgid "Number of Custom Links:"
+msgstr "Antall tilpassede lenker:"
+
+#: inc/widgets/custom-links.php:132
+msgid "1"
+msgstr "1"
+
+#: inc/widgets/custom-links.php:133
+msgid "2"
+msgstr "2"
+
+#: inc/widgets/custom-links.php:134
+msgid "3"
+msgstr "3"
+
+#: inc/widgets/custom-links.php:135
+msgid "4"
+msgstr "4"
+
+#: inc/widgets/custom-links.php:136
+msgid "5"
+msgstr "5"
+
+#: inc/widgets/custom-links.php:137
+msgid "6"
+msgstr "6"
+
+#: inc/widgets/custom-links.php:138
+msgid "7"
+msgstr "7"
+
+#: inc/widgets/custom-links.php:139
+msgid "8"
+msgstr "8"
+
+#: inc/widgets/custom-links.php:140
+msgid "9"
+msgstr "9"
+
+#: inc/widgets/custom-links.php:141
+msgid "10"
+msgstr "10"
+
+#: inc/widgets/custom-links.php:142
+msgid "11"
+msgstr "11"
+
+#: inc/widgets/custom-links.php:143
+msgid "12"
+msgstr "12"
+
+#: inc/widgets/custom-links.php:144
+msgid "13"
+msgstr "13"
+
+#: inc/widgets/custom-links.php:145
+msgid "14"
+msgstr "14"
+
+#: inc/widgets/custom-links.php:146
+msgid "15"
+msgstr "15"
+
+#: inc/widgets/facebook.php:35
+msgid "&raquo; Facebook Like Box"
+msgstr "&raquo; Facebook Liker Box"
+
+#: inc/widgets/facebook.php:38
+msgid "Display a Facebook Like Box to connect visitors to your Facebook Page."
+msgstr ""
+"Vise en Facebook Liker Box for å koble besøkende til din Facebook-side."
+
+#: inc/widgets/facebook.php:62
+#, php-format
+msgid ""
+"It looks like your Facebook URL is incorrectly configured. Please check it "
+"in your <a href=\"%s\">widget settings</a>."
+msgstr ""
+"Det ser ut som din Facebook-nettadresse er feilkonfigurert. Vennligst sjekk "
+"den i <a href=\"%s\">widgetinnstillinger</a> ."
+
+#: inc/widgets/facebook.php:169
+msgid "Facebook Page URL"
+msgstr "Facebook side url"
+
+#: inc/widgets/facebook.php:172
+msgid "The Like Box only works with "
+msgstr "Likerboksen fungerer kun med"
+
+#: inc/widgets/facebook.php:172
+msgid "Facebook Pages"
+msgstr "Facebooksider."
+
+#: inc/widgets/facebook.php:176
+msgid "Width"
+msgstr "Bredde"
+
+#: inc/widgets/facebook.php:181
+msgid "Height"
+msgstr "Høyde"
+
+#: inc/widgets/facebook.php:186
+msgid "Color Scheme"
+msgstr "Fargetema"
+
+#: inc/widgets/facebook.php:196
+msgid "Show Faces"
+msgstr "Vis ansikter:"
+
+#: inc/widgets/facebook.php:198
+msgid "Show profile photos in the plugin."
+msgstr "Vis profil bilder i plugin."
+
+#: inc/widgets/facebook.php:205
+msgid "Show Stream"
+msgstr "Vis Strømm"
+
+#: inc/widgets/facebook.php:207
+msgid "Show the profile stream for the public profile."
+msgstr "Vis profil strømm for offentlig profil."
+
+#: inc/widgets/facebook.php:214
+msgid "Show Border"
+msgstr "Vis Ramme"
+
+#: inc/widgets/facebook.php:216
+msgid "Show a border around the plugin."
+msgstr "Vis en ramme rundt utvidelse."
+
+#: inc/widgets/facebook.php:223
+msgid "Show Wall"
+msgstr "Vis Vegg"
+
+#: inc/widgets/facebook.php:225
+msgid "Show the wall for a Places page rather than friend activity."
+msgstr "Vis veggen for en Steder side snarere enn venn aktivitet."
+
+#: inc/widgets/flickr.php:24
+msgid "&raquo; Flickr"
+msgstr "&raquo; Flickr"
+
+#: inc/widgets/flickr.php:27
+msgid "Pulls in images from your flickr account."
+msgstr "Trekker i bilder fra Flickr-kontoen din."
+
+#: inc/widgets/flickr.php:59
+msgid "View stream on flickr"
+msgstr "Vis strøm på Flickr"
+
+#: inc/widgets/flickr.php:99
+msgid "Flickr Photos"
+msgstr "Flickr bilder"
+
+#: inc/widgets/flickr.php:110
+msgid "Flickr ID"
+msgstr "Flickr-ID"
+
+#: inc/widgets/flickr.php:112
+msgid "Enter the url of your Flickr page on this site: idgettr.com."
+msgstr ""
+"Skriv inn nettadressen til Flickr-side på dette nettstedet: idgettr.com."
+
+#: inc/widgets/flickr.php:116
+msgid "Number:"
+msgstr "Nummer:"
+
+#: inc/widgets/flickr.php:118
+msgid "The maximum is 10 images."
+msgstr "Maksimalt 10 bilder."
+
+#: inc/widgets/instagram.php:25
+msgid "&raquo; Instagram"
+msgstr "&raquo; Instagram"
+
+#: inc/widgets/instagram.php:28
+msgid "Displays Instagram photos."
+msgstr "Viser Instagram bilder."
+
+#: inc/widgets/instagram.php:121
+msgid "Instagram"
+msgstr "Instagram"
+
+#: inc/widgets/instagram.php:123
+msgid "adidas"
+msgstr "adidas"
+
+#: inc/widgets/instagram.php:128 inc/widgets/instagram.php:261
+#: inc/widgets/instagram.php:271 inc/widgets/recent-posts.php:240
+msgid "No"
+msgstr "Nei"
+
+#: inc/widgets/instagram.php:129 inc/widgets/instagram.php:136
+#: inc/widgets/instagram.php:262 inc/widgets/instagram.php:270
+msgid "Yes"
+msgstr "Ja"
+
+#: inc/widgets/instagram.php:130 inc/widgets/instagram.php:278
+msgid "Rounded"
+msgstr "Avrundet"
+
+#: inc/widgets/instagram.php:133
+msgid "Before"
+msgstr "Før"
+
+#: inc/widgets/instagram.php:142 inc/widgets/social.php:239
+msgid "Follow Us"
+msgstr "Følg oss"
+
+#: inc/widgets/instagram.php:153
+msgid "Search Instagram for:"
+msgstr "Søk Instagram for:"
+
+#: inc/widgets/instagram.php:157
+msgid "Username:"
+msgstr "Brukernavn:"
+
+#: inc/widgets/instagram.php:165
+msgid "Hashtag:"
+msgstr "Hashtag:"
+
+#: inc/widgets/instagram.php:167
+msgid "without # sign"
+msgstr "uten # tegnet"
+
+#: inc/widgets/instagram.php:172
+msgid "Block Users"
+msgstr "Blokker brukere"
+
+#: inc/widgets/instagram.php:174
+msgid "Enter usernames separated by commas whose images you don't want to show"
+msgstr "Skriv inn brukernavn adskilt med komma hvis bildene du ikke vil vise"
+
+#: inc/widgets/instagram.php:178
+msgid "Number Images To Show:"
+msgstr "Antall bilder å vise:"
+
+#: inc/widgets/instagram.php:184
+msgid "Check New Images Every:"
+msgstr "Sjekk etter Nye bilder hver:"
+
+#: inc/widgets/instagram.php:186
+msgid "hours"
+msgstr "timer"
+
+#: inc/widgets/instagram.php:191
+msgid "Images Style:"
+msgstr "Bilder Stil:"
+
+#: inc/widgets/instagram.php:193
+msgid "Style 1"
+msgstr "Stil 1"
+
+#: inc/widgets/instagram.php:194
+msgid "Style 2"
+msgstr "Stil 2"
+
+#: inc/widgets/instagram.php:195
+msgid "Style 3"
+msgstr "Stil 3"
+
+#: inc/widgets/instagram.php:196
+msgid "Style 4"
+msgstr "Stil 4"
+
+#: inc/widgets/instagram.php:197
+msgid "2 Columns"
+msgstr "2 Kolonner"
+
+#: inc/widgets/instagram.php:198
+msgid "3 Columns"
+msgstr "3 Kolonner"
+
+#: inc/widgets/instagram.php:199
+msgid "4 Columns"
+msgstr "4 Kolonner"
+
+#: inc/widgets/instagram.php:200
+msgid "5 Columns"
+msgstr "5 kolonner"
+
+#: inc/widgets/instagram.php:201
+msgid "6 Columns"
+msgstr "6 kolonner"
+
+#: inc/widgets/instagram.php:202
+msgid "7 Columns"
+msgstr "7 kolonner"
+
+#: inc/widgets/instagram.php:203
+msgid "8 Columns"
+msgstr "8 kolonner"
+
+#: inc/widgets/instagram.php:204
+msgid "9 Columns"
+msgstr "9 kolonner"
+
+#: inc/widgets/instagram.php:205
+msgid "10 Columns"
+msgstr "10 kolonner"
+
+#: inc/widgets/instagram.php:210
+msgid "Margin:"
+msgstr "Avstand (Margin):"
+
+#: inc/widgets/instagram.php:212
+msgid "Margin"
+msgstr "Avstand (Margin)"
+
+#: inc/widgets/instagram.php:213
+msgid "No Margin"
+msgstr "Ingen Margin"
+
+#: inc/widgets/instagram.php:218
+msgid "Image format"
+msgstr "Bildformat"
+
+#: inc/widgets/instagram.php:220
+msgid "Square - Cropped"
+msgstr "Kvadratisk  - Klippet"
+
+#: inc/widgets/instagram.php:221
+msgid "Original - No Crop"
+msgstr "Original - Ingen Klipping"
+
+#: inc/widgets/instagram.php:223
+msgid ""
+"<strong>Square - Cropped</strong> - images in 640x640 pixels. <br/"
+"><strong>Original - No Crop</strong> - original image size."
+msgstr ""
+"<strong>Square - Kvadratisk</strong> - bilder i 640x640 piksler. <br/> "
+"<strong>Original - Ingen Klipping</strong> - størrelse på originalen."
+
+#: inc/widgets/instagram.php:227
+msgid "Order by"
+msgstr "Sorter etter"
+
+#: inc/widgets/instagram.php:229
+msgid "Date - Ascending"
+msgstr "Dato - Stigende"
+
+#: inc/widgets/instagram.php:230
+msgid "Date - Descending"
+msgstr "Dato - Synkende"
+
+#: inc/widgets/instagram.php:231
+msgid "Popularity - Ascending"
+msgstr "Popularitet - Stigende"
+
+#: inc/widgets/instagram.php:232
+msgid "Popularity - Descending"
+msgstr "Popularitet - Synkende"
+
+#: inc/widgets/instagram.php:233 inc/widgets/recent-posts.php:279
+msgid "Random"
+msgstr "Tilfeldig"
+
+#: inc/widgets/instagram.php:239
+msgid "Link To"
+msgstr "Lenke til"
+
+#: inc/widgets/instagram.php:241
+msgid "Instagram Image"
+msgstr "Instagram bilde"
+
+#: inc/widgets/instagram.php:242
+msgid "Instagram Profile"
+msgstr "Instagram profil:"
+
+#: inc/widgets/instagram.php:244 inc/widgets/social.php:267
+msgid "None"
+msgstr "Ingen"
+
+#: inc/widgets/instagram.php:250
+msgid "Custom Link:"
+msgstr "Egendefinert lenke"
+
+#: inc/widgets/instagram.php:252
+msgid ""
+"Use this field only if the above option is set to <strong>Custom Link</"
+"strong>"
+msgstr ""
+"Bruk dette feltet bare hvis alternativet ovenfor er satt til "
+"<strong>Tilpasset Link</strong>"
+
+#: inc/widgets/instagram.php:257
+msgid "Header Options"
+msgstr "Header Alternativer"
+
+#: inc/widgets/instagram.php:259
+msgid "Display Header:"
+msgstr "Vis header:"
+
+#: inc/widgets/instagram.php:268
+msgid "Display Profile Picture:"
+msgstr "Vise profilbilde:"
+
+#: inc/widgets/instagram.php:276
+msgid "Picture Radius:"
+msgstr "Bilde Radius:"
+
+#: inc/widgets/instagram.php:279
+msgid "Square"
+msgstr "Kvadratisk"
+
+#: inc/widgets/instagram.php:284
+msgid "Display Name:"
+msgstr "Navn som vises"
+
+#: inc/widgets/instagram.php:285
+msgid "Default is username"
+msgstr "Standard er brukernavn"
+
+#: inc/widgets/instagram.php:295
+msgid "Position:"
+msgstr "Plassering:"
+
+#: inc/widgets/instagram.php:297
+msgid "Before Images"
+msgstr "Før Bilder"
+
+#: inc/widgets/instagram.php:298
+msgid "After Images"
+msgstr "Etter Bilder"
+
+#: inc/widgets/instagram.php:303
+msgid "Align:"
+msgstr "Plasser"
+
+#: inc/widgets/instagram.php:315
+msgid "Button Target:"
+msgstr "Knapp mål:"
+
+#: inc/widgets/instagram.php:320
+msgid "Same or new window"
+msgstr "Samme eller nytt vindu"
+
+#: inc/widgets/instagram.php:324
+msgid "Button Text:"
+msgstr "Knappetekst:"
+
+#: inc/widgets/instagram.php:326
+msgid "Leave empty for no button"
+msgstr "La stå tomt for ingen knapp"
+
+#: inc/widgets/instagram.php:535
+msgid "No images found! <br> Try some other hashtag or username"
+msgstr "Ingen bilder funnet! <br> Prøv noen andre hashtag eller brukernavn"
+
+#: inc/widgets/instagram.php:591
+msgid "Nothing to search for"
+msgstr "Ingenting å søke etter"
+
+#: inc/widgets/instagram.php:651
+msgid "No images found"
+msgstr "Ingen bilder funnet"
+
+#: inc/widgets/mailchimp.php:24
+msgid "&raquo; MailChimp"
+msgstr "&raquo; MailChimp"
+
+#: inc/widgets/mailchimp.php:27
+msgid "Displays mailchimp subscription form."
+msgstr "Viser MailChimp abonnementskjema. "
+
+#: inc/widgets/mailchimp.php:149
+msgid "Newsletter"
+msgstr "Nyhetsbrev"
+
+#: inc/widgets/mailchimp.php:150
+msgid ""
+"Get all latest content delivered to your email a few times a month. Updates "
+"and news about all categories will send to you."
+msgstr ""
+"Få alle nyeste innhold levert til din e-post et par ganger i måneden. "
+"Oppdateringer og nyheter om alle kategoriene vil sende til deg."
+
+#: inc/widgets/mailchimp.php:154
+msgid "Your Email"
+msgstr "Din e-post"
+
+#: inc/widgets/mailchimp.php:155
+msgid "Go"
+msgstr "Gå"
+
+#: inc/widgets/mailchimp.php:170
+msgid "MailChimp Form Action"
+msgstr "MailChimp Skjema Handling"
+
+#: inc/widgets/mailchimp.php:175
+msgid "Input Width (px)"
+msgstr "Input Bredde (px)"
+
+#: inc/widgets/mailchimp.php:180
+msgid "Input Height (px)"
+msgstr "Eingabe Høyde (px)"
+
+#: inc/widgets/mailchimp.php:185
+msgid "Placeholder"
+msgstr "Plassholder"
+
+#: inc/widgets/mailchimp.php:190
+msgid "Submit Text"
+msgstr "Send inn tekst"
+
+#: inc/widgets/recent-posts.php:24
+msgid "&raquo; Recent Posts"
+msgstr "&raquo; Seneste Innlegg"
+
+#: inc/widgets/recent-posts.php:27
+msgid "Shows a listing of your recent or random posts."
+msgstr "Viser en liste over dine siste eller tilfeldige innlegg."
+
+#: inc/widgets/recent-posts.php:140 partials/entry/meta.php:42
+#: partials/single/meta.php:45
+msgid "0 Comments"
+msgstr "0 Kommentarer"
+
+#: inc/widgets/recent-posts.php:140 partials/entry/meta.php:42
+#: partials/single/meta.php:45
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: inc/widgets/recent-posts.php:140 partials/entry/meta.php:42
+#: partials/single/meta.php:45
+msgid "% Comments"
+msgstr "% kommentarer"
+
+#: inc/widgets/recent-posts.php:154
+msgid "No posts found."
+msgstr "Ingen innlegg funnet."
+
+#: inc/widgets/recent-posts.php:210
+msgid "Number"
+msgstr "Nummer"
+
+#: inc/widgets/recent-posts.php:215
+msgid "Post Type"
+msgstr "Innleggtype"
+
+#: inc/widgets/recent-posts.php:218
+msgid "Post"
+msgstr "Innlegg"
+
+#: inc/widgets/recent-posts.php:237
+msgid "Query By Taxonomy"
+msgstr "Etterspør etter kategori  "
+
+#: inc/widgets/recent-posts.php:253
+msgid "Terms"
+msgstr "Vilkår"
+
+#: inc/widgets/recent-posts.php:256
+msgid "Enter the term slugs to query by seperated by a \"comma\""
+msgstr "Skriv inn begrep slugs for å etterspørre adskilt med en \"komma\""
+
+#: inc/widgets/recent-posts.php:260
+msgid "Order"
+msgstr "Rekkefølge"
+
+#: inc/widgets/recent-posts.php:263
+msgid "Descending"
+msgstr "Synkende"
+
+#: inc/widgets/recent-posts.php:264
+msgid "Ascending"
+msgstr "Økende"
+
+#: inc/widgets/recent-posts.php:269
+msgid "Order By"
+msgstr "Sorter etter"
+
+#: inc/widgets/recent-posts.php:277
+msgid "Modified"
+msgstr "Endret"
+
+#: inc/widgets/recent-posts.php:280
+msgid "Comment Count"
+msgstr "Antall kommentarer"
+
+#: inc/widgets/social.php:110
+msgid "&raquo; Social Icons"
+msgstr "&raquo; Sosiale Ikoner"
+
+#: inc/widgets/social.php:113
+msgid "Display your social media icons."
+msgstr "Vis dine sosiale medier ikoner."
+
+#: inc/widgets/social.php:241 inc/widgets/social.php:269
+msgid "Rotate"
+msgstr "Roter"
+
+#: inc/widgets/social.php:255
+msgid "Style:"
+msgstr "Stil:"
+
+#: inc/widgets/social.php:265
+msgid "Transition:"
+msgstr "Overgang:"
+
+#: inc/widgets/social.php:268
+msgid "Float"
+msgstr "Flyt"
+
+#: inc/widgets/social.php:270
+msgid "Zoom Out"
+msgstr "Zoom ut"
+
+#: inc/widgets/social.php:275
+msgid "Link Target"
+msgstr "Lenke mål"
+
+#: inc/widgets/social.php:284
+msgid "Dimensions"
+msgstr "Dimensjoner"
+
+#: inc/widgets/social.php:286 inc/widgets/social.php:292
+#: inc/widgets/social.php:298
+msgid "Example:"
+msgstr "Eksempel:"
+
+#: inc/widgets/social.php:290
+msgid "Font Size"
+msgstr "Skriftstørrelse"
+
+#: inc/widgets/social.php:296
+msgid "Border Radius"
+msgstr "Kantlinje hjørneradius"
+
+#: inc/widgets/video.php:24
+msgid "&raquo; Video"
+msgstr "&raquo; Video"
+
+#: inc/widgets/video.php:27
+msgid "Easily to display any type of video."
+msgstr "Enkelt å vise noen form for video."
+
+#: inc/widgets/video.php:64
+msgid "You forgot to enter a video URL."
+msgstr "Du glemte å skrive inn en video URL."
+
+#: inc/widgets/video.php:108
+msgid "Video"
+msgstr "Video"
+
+#: inc/widgets/video.php:120
+msgid "Video URL "
+msgstr "Video URL"
+
+#: inc/widgets/video.php:122
+msgid ""
+"Enter in a video URL that is compatible with WordPress's built-in oEmbed "
+"feature."
+msgstr ""
+"Skriv inn i en video URL som er kompatibel med WordPress innebygde oEmbed "
+"funksjon."
+
+#: inc/widgets/video.php:122
+msgid "Learn More"
+msgstr "Lær mer"
+
+#: inc/widgets/video.php:127
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: inc/woocommerce/woocommerce-config.php:212
+msgid "WooCommerce Sidebar"
+msgstr "Sidepanel for Woocommerce"
+
+#: inc/woocommerce/woocommerce-config.php:298
+msgid "Sale!"
+msgstr "Salg!"
+
+#: inc/woocommerce/woocommerce-config.php:440
+msgid "Welcome!"
+msgstr "Velkommen!"
+
+#: inc/woocommerce/woocommerce-config.php:449
+msgid "Logout"
+msgstr "Logg av"
+
+#: inc/woocommerce/woocommerce-config.php:474
+msgid "Out of Stock"
+msgstr "Tomt på lager"
+
+#: inc/woocommerce/woocommerce-config.php:746
+msgid "Your cart"
+msgstr "Din handlekurv"
+
+#: inc/woocommerce/woocommerce-config.php:772
+msgid "WooCommerce Product Title"
+msgstr "WooCommerce Produkt tittel"
+
+#: inc/woocommerce/woocommerce-helpers.php:73
+#: woocommerce/loop/thumbnail/featured-image.php:35
+msgid "Placeholder Image"
+msgstr "Plassholder bilde"
+
+#: partials/entry/readmore.php:14
+msgid "Continue Reading"
+msgstr "Fortsett å lese"
+
+#: partials/header/mobile-sidr-close.php:15
+msgid "Close Menu"
+msgstr "Lukk meny"
+
+#: partials/header/search-overlay.php:17
+msgid "Type your text and hit enter to search"
+msgstr "Skriv inn tekst og trykk enter for å søke"
+
+#: partials/header/search-replace.php:15
+msgid "Type then hit enter to search..."
+msgstr "Skriv og trykk enter for å søke"
+
+#: partials/none.php:11
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Klar til å publisere ditt første innlegg? <a href=\"%s\">Get start her</a>."
+
+#: partials/none.php:13
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with "
+"different keywords."
+msgstr ""
+"Beklager. det var ingen ting som liknet på det du søker etter, vennligst "
+"bruk noen andre ord og prøv igjen."
+
+#: partials/none.php:15
+msgid "There aren't any posts currently published in this category."
+msgstr "Det finnes ingen artikler publisert i denne kategorien."
+
+#: partials/none.php:17
+msgid "There aren't any posts currently published under this taxonomy."
+msgstr "Det er forløpig ingen artikler under denne klassifikasjonen."
+
+#: partials/none.php:19
+msgid "There aren't any posts currently published under this tag."
+msgstr "Det finnes ingen poster under denne tagen."
+
+#: partials/none.php:21
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+msgstr "Det ser ut som vi ikke kan finne det du leter etter."
+
+#: partials/page/article.php:17 partials/single/content.php:17
+msgid "Pages:"
+msgstr "Sider:"
+
+#: partials/single/author-bio.php:35 partials/single/author-bio.php:48
+msgid "Visit Author Page"
+msgstr "Besøk siden til forfatteren"
+
+#: partials/single/next-prev.php:54
+msgid "Previous Post"
+msgstr "Forrige innlegg"
+
+#: partials/single/next-prev.php:60
+msgid "Next Post"
+msgstr "Neste innlegg"
+
+#: partials/single/related-posts.php:14
+msgid "You Might Also Like"
+msgstr "Du liker kanskje også"
+
+#. Theme Name of the plugin/theme
+msgid "OceanWP"
+msgstr "OceanWP"
+
+#. Theme URI of the plugin/theme
+msgid "https://oceanwp.org/"
+msgstr "https://oceanwp.org/"
+
+#. Description of the plugin/theme
+msgid ""
+"OceanWP is the perfect theme for your project. Lightweight and highly "
+"extendible, it will enable you to create almost any type of site with a "
+"beautiful & professional design. There are several options to personalise "
+"your website, multiple widget regions, a responsive design and much more. "
+"Developers will love his extensible codebase making it a joy to customise "
+"and extend. Looking for a Multi-Purpose theme? Look no further!"
+msgstr ""
+"OceanWP er den perfekte temaet for prosjektet. Lett og svært utbyggbar, vil "
+"det gjøre deg i stand til å lage nesten alle typer nettsted med en vakker og "
+"profesjonell design. Det er flere muligheter til å tilpasse nettstedet ditt, "
+"flere widget regioner, et responsivt design og mye mer. Utviklere vil elske "
+"sin utvidbar kodebase gjør det til en fryd å tilpasse og utvide. Leter du "
+"etter en Multi-Purpose tema? Look no further!"
+
+#. Author of the plugin/theme
+msgid "Nick"
+msgstr "Nick"
+
+#. Author URI of the plugin/theme
+msgid "https://oceanwp.org/about-me/"
+msgstr "https://oceanwp.org/about-me/"

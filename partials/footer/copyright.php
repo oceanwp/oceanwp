@@ -27,7 +27,7 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 
 <?php do_action( 'ocean_before_footer_bottom' ); ?>
 
-<div id="footer-bottom" class="<?php echo $wrap_classes; ?>">
+<div id="footer-bottom" class="<?php echo esc_attr( $wrap_classes ); ?>">
 
 	<?php do_action( 'ocean_before_footer_bottom_inner' ); ?>
 

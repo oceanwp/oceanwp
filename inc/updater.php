@@ -103,7 +103,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 			}
 
 			echo '<p>' . sprintf(
-				__( 'Enter your extension license keys here to receive updates for purchased extensions. If your license key has expired, please <a href="%s" target="_blank" title="License renewal FAQ">renew your license</a>.', 'oceanwp' ),
+				esc_html__( 'Enter your extension license keys here to receive updates for purchased extensions. If your license key has expired, please <a href="%1$s" target="_blank" title="License renewal FAQ">renew your license</a>.', 'oceanwp' ),
 				'http://docs.oceanwp.org/article/26-license-renewal'
 			) . '</p>';
 
@@ -162,7 +162,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 
 							$class = 'expired-msg';
 							$messages[] = sprintf(
-								__( 'Your license key expired on %s. Please <a href="%s" target="_blank">renew your license key</a>.', 'oceanwp' ),
+								esc_html__( 'Your license key expired on %1$s. Please <a href="%2$s" target="_blank">renew your license key</a>.', 'oceanwp' ),
 								date_i18n( get_option( 'date_format' ), strtotime( $expire_date, current_time( 'timestamp' ) ) ),
 								'https://oceanwp.org/checkout/?edd_license_key=' . $value . ''
 							);
@@ -175,7 +175,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 
 							$class = 'error-msg';
 							$messages[] = sprintf(
-								__( 'Your license key has been disabled. Please <a href="%s" target="_blank">contact support</a> for more information.', 'oceanwp' ),
+								esc_html__( 'Your license key has been disabled. Please <a href="%1$s" target="_blank">contact support</a> for more information.', 'oceanwp' ),
 								'https://oceanwp.org/support'
 							);
 
@@ -187,7 +187,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 
 							$class = 'error-msg';
 							$messages[] = sprintf(
-								__( 'Invalid license. Please <a href="%s" target="_blank">visit your account page</a> and verify it.', 'oceanwp' ),
+								esc_html__( 'Invalid license. Please <a href="%1$s" target="_blank">visit your account page</a> and verify it.', 'oceanwp' ),
 								'https://oceanwp.org/your-account'
 							);
 
@@ -200,7 +200,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 
 							$class = 'error-msg';
 							$messages[] = sprintf(
-								__( 'Your %s is not active for this URL. Please <a href="%s" target="_blank">visit your account page</a> to manage your license key URLs.', 'oceanwp' ),
+								esc_html__( 'Your %1$s is not active for this URL. Please <a href="%2$s" target="_blank">visit your account page</a> to manage your license key URLs.', 'oceanwp' ),
 								$this->item_name,
 								'https://oceanwp.org/your-account'
 							);
@@ -212,7 +212,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 						case 'item_name_mismatch' :
 
 							$class = 'error-msg';
-							$messages[] = sprintf( __( 'This appears to be an invalid license key for %s.', 'oceanwp' ), $this->item_name );
+							$messages[] = sprintf( esc_html__( 'This appears to be an invalid license key for %1$s.', 'oceanwp' ), $this->item_name );
 
 							$license_status = 'license-' . $class . '-notice';
 
@@ -221,7 +221,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 						case 'no_activations_left':
 
 							$class = 'error-msg';
-							$messages[] = sprintf( __( 'Your license key has reached its activation limit. <a href="%s">View possible upgrades</a> now.', 'oceanwp' ), 'https://oceanwp.org/your-account/' );
+							$messages[] = sprintf( esc_html__( 'Your license key has reached its activation limit. <a href="%1$s">View possible upgrades</a> now.', 'oceanwp' ), 'https://oceanwp.org/your-account/' );
 
 							$license_status = 'license-' . $class . '-notice';
 
@@ -230,7 +230,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 						case 'license_not_activable':
 
 							$class = 'error-msg';
-							$messages[] = __( 'The key you entered belongs to a bundle, please use the product specific license key.', 'oceanwp' );
+							$messages[] = esc_html__( 'The key you entered belongs to a bundle, please use the product specific license key.', 'oceanwp' );
 
 							$license_status = 'license-' . $class . '-notice';
 							break;
@@ -238,8 +238,8 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 						default :
 
 							$class = 'error-msg';
-							$error = ! empty(  $license_details[ $this->item_shortname ]->error ) ?  $license_details[ $this->item_shortname ]->error : __( 'unknown_error', 'oceanwp' );
-							$messages[] = sprintf( __( 'There was an error with this license key: %s. Please <a href="%s">contact our support team</a>.', 'oceanwp' ), $error, 'https://oceanwp.org/support' );
+							$error = ! empty(  $license_details[ $this->item_shortname ]->error ) ?  $license_details[ $this->item_shortname ]->error : esc_html__( 'unknown_error', 'oceanwp' );
+							$messages[] = sprintf( esc_html__( 'There was an error with this license key: %1$s. Please <a href="%2$s">contact our support team</a>.', 'oceanwp' ), $error, 'https://oceanwp.org/support' );
 
 							$license_status = 'license-' . $class . '-notice';
 							break;
@@ -259,14 +259,14 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 
 							if( 'lifetime' === $expire_date ) {
 
-								$messages[] = __( 'License key never expires.', 'oceanwp' );
+								$messages[] = esc_html__( 'License key never expires.', 'oceanwp' );
 
 								$license_status = 'license-lifetime-notice';
 
 							} elseif( $expiration > $now && $expiration - $now < ( DAY_IN_SECONDS * 30 ) ) {
 
 								$messages[] = sprintf(
-									__( 'Your license key expires soon! It expires on %s. <a href="%s" target="_blank">Renew your license key</a>.', 'oceanwp' ),
+									esc_html__( 'Your license key expires soon! It expires on %1$s. <a href="%2$s" target="_blank">Renew your license key</a>.', 'oceanwp' ),
 									date_i18n( get_option( 'date_format' ), strtotime( $expire_date, current_time( 'timestamp' ) ) ),
 									'https://oceanwp.org/checkout/?edd_license_key=' . $value . ''
 								);
@@ -276,7 +276,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 							} else {
 
 								$messages[] = sprintf(
-									__( 'Your license key expires on %s.', 'oceanwp' ),
+									esc_html__( 'Your license key expires on %1$s.', 'oceanwp' ),
 									date_i18n( get_option( 'date_format' ), strtotime( $expire_date, current_time( 'timestamp' ) ) )
 								);
 
@@ -294,7 +294,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 				$class = 'empty-msg';
 
 				$messages[] = sprintf(
-					__( 'To receive updates, please enter your valid %s license key.', 'oceanwp' ),
+					esc_html__( 'To receive updates, please enter your valid %1$s license key.', 'oceanwp' ),
 					$this->item_name
 				);
 
@@ -306,7 +306,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 			$html = '<tr>';
 				$html .= '<th>';
 					$html .= '<label for="'. $this->item_shortname .'_license_key">';
-						$html .= ''. sprintf( __( '%s License Key', 'oceanwp' ), $this->item_name ) .'';
+						$html .= ''. sprintf( esc_html__( '%1$s License Key', 'oceanwp' ), $this->item_name ) .'';
 					$html .= '</label>';
 				$html .= '</th>';
 
@@ -314,7 +314,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 					$html .= '<input type="text" class="regular-text" id="' . $this->item_shortname . '_license_key" name="oceanwp_options[licenses][' . $this->item_shortname . '_license_key]" value="' . esc_attr( $value ) . '"/>';
 
 					if ( 'valid' == get_option( $this->item_shortname . '_license_active' ) ) {
-						$html .= '<input type="submit" class="button-secondary" name="oceanwp_' . $this->item_shortname . '_license_key_deactivate" value="' . __( 'Deactivate License',  'oceanwp' ) . '">';
+						$html .= '<input type="submit" class="button-secondary" name="oceanwp_' . $this->item_shortname . '_license_key_deactivate" value="' . esc_html__( 'Deactivate License',  'oceanwp' ) . '">';
 					}
 
 					if ( ! empty( $messages ) ) {
@@ -349,7 +349,7 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 				return;
 			}
 			
-			$license = sanitize_text_field( $_POST['oceanwp_options']['licenses'][ $this->item_shortname . '_license_key'] );
+			$license = sanitize_text_field( wp_unslash( $_POST['oceanwp_options']['licenses'][ $this->item_shortname . '_license_key'] ) );
 
 			if( trim( $license ) == '' ) {
 
@@ -628,24 +628,24 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 
 	            // build a plugin list row, with update notification
 	            $wp_list_table = _get_list_table( 'WP_Plugins_List_Table' );
-	            echo '<tr class="plugin-update-tr"><td colspan="' . $wp_list_table->get_column_count() . '" class="plugin-update colspanchange"><div class="update-message">';
+	            echo '<tr class="plugin-update-tr"><td colspan="' . esc_attr( $wp_list_table->get_column_count() ) . '" class="plugin-update colspanchange"><div class="update-message">';
 
-	            $changelog_link = self_admin_url( 'index.php?edd_sl_action=view_plugin_changelog&plugin=' . $this->name . '&slug=' . $this->slug . '&TB_iframe=true&width=772&height=911' );
+	            $changelog_link = self_admin_url( 'index.php?edd_sl_action=view_plugin_changelog&plugin=' . esc_attr( $this->name ) . '&slug=' . esc_url( $this->slug ) . '&TB_iframe=true&width=772&height=911' );
 
 	            if ( empty( $version_info->download_link ) ) {
 	                printf(
-	                    __( 'There is a new version of %1$s available. <a target="_blank" class="thickbox" href="%2$s">View version %3$s details</a>.', 'oceanwp' ),
+	                    esc_html__( 'There is a new version of %1$s available. <a target="_blank" class="thickbox" href="%2$s">View version %3$s details</a>.', 'oceanwp' ),
 	                    esc_html( $version_info->name ),
 	                    esc_url( $changelog_link ),
 	                    esc_html( $version_info->new_version )
 	                );
 	            } else {
 	                printf(
-	                    __( 'There is a new version of %1$s available. <a target="_blank" class="thickbox" href="%2$s">View version %3$s details</a> or <a href="%4$s">update now</a>.', 'oceanwp' ),
+	                    esc_html__( 'There is a new version of %1$s available. <a target="_blank" class="thickbox" href="%2$s">View version %3$s details</a> or <a href="%4$s">update now</a>.', 'oceanwp' ),
 	                    esc_html( $version_info->name ),
 	                    esc_url( $changelog_link ),
 	                    esc_html( $version_info->new_version ),
-	                    esc_url( wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $this->name, 'upgrade-plugin_' . $this->name ) )
+	                    esc_url( wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . esc_attr( $this->name ), 'upgrade-plugin_' . esc_attr( $this->name ) ) )
 	                );
 	            }
 
@@ -726,13 +726,13 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 			}
 			
 			if( ! current_user_can( 'update_plugins' ) ) {
-				wp_die( __( 'You do not have permission to install plugin updates', 'oceanwp' ), __( 'Error', 'oceanwp' ), array( 'response' => 403 ) );
+				wp_die( esc_html__( 'You do not have permission to install plugin updates', 'oceanwp' ), esc_html__( 'Error', 'oceanwp' ), array( 'response' => 403 ) );
 			}
 			
-			$response = $this->api_request( 'plugin_latest_version', array( 'slug' => $_REQUEST['slug'] ) );
+			$response = $this->api_request( 'plugin_latest_version', array( 'slug' => esc_url_raw( wp_unslash( $_REQUEST['slug'] ) ) ) );
 			
 			if( $response && isset( $response->sections['changelog'] ) ) {
-				echo '<div style="background:#fff;padding:10px;">' . $response->sections['changelog'] . '</div>';
+				echo '<div style="background:#fff;padding:10px;">' . esc_attr( $response->sections['changelog'] ) . '</div>';
 			}
 			exit;
 	    }

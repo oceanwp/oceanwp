@@ -18,6 +18,7 @@
 	# Page Header
 	# Blog
 	# WooCommerce
+	# Footer
 
 /*-------------------------------------------------------------------------------*/
 /* [ Core ]
@@ -61,18 +62,6 @@ function oceanwp_cac_enabled_not_yoast() {
 	} else {
 		return oceanwp_cac_has_breadcrumbs();
 	}
-}
-
-function oceanwp_cac_has_scrolltop() {
-	return get_theme_mod( 'ocean_scroll_top', true );
-}
-
-function oceanwp_cac_has_footer_widgets() {
-	return get_theme_mod( 'ocean_footer_widgets', true );
-}
-
-function oceanwp_cac_has_footer_bottom() {
-	return get_theme_mod( 'ocean_footer_bottom', true );
 }
 
 /*-------------------------------------------------------------------------------*/
@@ -123,19 +112,27 @@ function oceanwp_cac_has_top_header_style() {
 	}
 }
 
-function oceanwp_cac_hasnt_header_styles() {
-	if ( 'top' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
-		return false;
-	} else {
-		return true;
-	}
-}
-
 function oceanwp_cac_has_full_screen_header_style() {
 	if ( 'full_screen' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
 		return true;
 	} else {
 		return false;
+	}
+}
+
+function oceanwp_cac_has_medium_header_style() {
+	if ( 'medium' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_hasnt_medium_header_style() {
+	if ( 'medium' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+		return false;
+	} else {
+		return true;
 	}
 }
 
@@ -152,6 +149,24 @@ function oceanwp_cac_has_custom_header() {
 		return true;
 	} else {
 		return false;
+	}
+}
+
+function oceanwp_cac_hasnt_header_styles() {
+	if ( 'top' == get_theme_mod( 'ocean_header_style', 'minimal' )
+		|| 'medium' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function oceanwp_cac_hasnt_medium_custom_header_styles() {
+	if ( 'medium' == get_theme_mod( 'ocean_header_style', 'minimal' )
+		|| 'custom' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+		return false;
+	} else {
+		return true;
 	}
 }
 
@@ -261,4 +276,28 @@ function oceanwp_cac_has_grid_list_buttons() {
 	} else {
 		return false;
 	}
+}
+
+/*-------------------------------------------------------------------------------*/
+/* [ Footer ]
+/*-------------------------------------------------------------------------------*/
+function oceanwp_cac_has_scrolltop() {
+	return get_theme_mod( 'ocean_scroll_top', true );
+}
+
+function oceanwp_cac_has_footer_widgets() {
+	return get_theme_mod( 'ocean_footer_widgets', true );
+}
+
+function oceanwp_cac_has_footer_widgets_and_no_page_id() {
+	if ( true == get_theme_mod( 'ocean_footer_widgets', true )
+		&& '' == get_theme_mod( 'ocean_footer_widgets_page_id' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_footer_bottom() {
+	return get_theme_mod( 'ocean_footer_bottom', true );
 }

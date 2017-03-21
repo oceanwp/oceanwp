@@ -51,13 +51,13 @@ if ( $has_terms ) {
 
             <?php if ( $prev_link ) : ?>
 
-                <li class="post-prev"><span class="title"><i class="fa fa-long-arrow-left"></i><?php esc_html_e( 'Previous Post', 'oceanwp' ); ?></span><?php echo $prev_link; ?></li>
+                <li class="post-prev"><span class="title"><i class="fa fa-long-arrow-left"></i><?php esc_html_e( 'Previous Post', 'oceanwp' ); ?></span><?php echo wp_kses_post( $prev_link ); ?></li>
 
             <?php endif; ?>
 
             <?php if ( $next_link ) : ?>
 
-                <li class="post-next"><span class="title"><i class="fa fa-long-arrow-right"></i><?php esc_html_e( 'Next Post', 'oceanwp' ); ?></span><?php echo $next_link; ?></li>
+                <li class="post-next"><span class="title"><i class="fa fa-long-arrow-right"></i><?php esc_html_e( 'Next Post', 'oceanwp' ); ?></span><?php echo wp_kses_post( $next_link ); ?></li>
 
             <?php endif; ?>
             

@@ -67,6 +67,24 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Top Bar Full Width
+			 */
+			$wp_customize->add_setting( 'ocean_top_bar_full_width', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> false,
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_top_bar_full_width', array(
+				'label'	   				=> esc_html__( 'Top Bar Full Width', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_topbar_general',
+				'settings' 				=> 'ocean_top_bar_full_width',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_topbar',
+			) ) );
+
+			/**
 			 * Top Bar Style
 			 */
 			$wp_customize->add_setting( 'ocean_top_bar_style', array(
@@ -89,40 +107,38 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Top Bar Top Padding
+			 * Top Bar Padding
 			 */
 			$wp_customize->add_setting( 'ocean_top_bar_top_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '8',
 				'sanitize_callback' 	=> false,
 			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_top_bar_top_padding', array(
-				'label'	   				=> esc_html__( 'Top Padding (px)', 'oceanwp' ),
-				'section'  				=> 'ocean_topbar_general',
-				'settings' 				=> 'ocean_top_bar_top_padding',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_topbar',
-			    'input_attrs' 			=> array(
-			        'min'   => 0,
-			        'max'   => 100,
-			        'step'  => 1,
-			    ),
-			) ) );
-
-			/**
-			 * Top Bar Bottom Padding
-			 */
+			$wp_customize->add_setting( 'ocean_top_bar_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '0',
+				'sanitize_callback' 	=> false,
+			) );
 			$wp_customize->add_setting( 'ocean_top_bar_bottom_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '8',
 				'sanitize_callback' 	=> false,
 			) );
+			$wp_customize->add_setting( 'ocean_top_bar_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '0',
+				'sanitize_callback' 	=> false,
+			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_top_bar_bottom_padding', array(
-				'label'	   				=> esc_html__( 'Bottom Padding (px)', 'oceanwp' ),
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_top_bar_padding', array(
+				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
 				'section'  				=> 'ocean_topbar_general',
-				'settings' 				=> 'ocean_top_bar_bottom_padding',
+				'settings'   => array(
+					'top'    => 'ocean_top_bar_top_padding',
+					'right'  => 'ocean_top_bar_right_padding',
+					'bottom' => 'ocean_top_bar_bottom_padding',
+					'left'   => 'ocean_top_bar_left_padding',
+				),
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_topbar',
 			    'input_attrs' 			=> array(
@@ -230,14 +246,14 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			 * Top Bar Content
 			 */
 			$wp_customize->add_setting( 'ocean_top_bar_content', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '<i class="icon-phone"></i> 1-555-645-324 <i class="icon-user"></i> <a href="#">sign in</a>',
+				'transport'           	=> 'postMessage',
+				'default'           	=> '<i class="icon-phone"></i> 1-555-645-324 <i class="icon-user"></i> [oceanwp_login]',
 				'sanitize_callback' 	=> 'wp_kses_post',
 			) );
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_top_bar_content', array(
+			$wp_customize->add_control( new OceanWP_Customizer_Textarea_Control( $wp_customize, 'ocean_top_bar_content', array(
 				'label'	   				=> esc_html__( 'Content', 'oceanwp' ),
-				'type' 					=> 'textarea',
+				'description'	   		=> sprintf( esc_html__( 'The following shortcodes can be added:%1$s %2$s[oceanwp_login]%3$s To add a login/logout link.%1$s %2$s[oceanwp_search]%3$s To show a search form.', 'oceanwp' ), '<br/>', '<strong>', '</strong>' ),
 				'section'  				=> 'ocean_topbar_content',
 				'settings' 				=> 'ocean_top_bar_content',
 				'priority' 				=> 10,
@@ -373,7 +389,9 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 		
 			// Global vars
 			$top_padding 				= get_theme_mod( 'ocean_top_bar_top_padding', '8' );
+			$right_padding 				= get_theme_mod( 'ocean_top_bar_right_padding', '0' );
 			$bottom_padding 			= get_theme_mod( 'ocean_top_bar_bottom_padding', '8' );
+			$left_padding 				= get_theme_mod( 'ocean_top_bar_left_padding', '0' );
 			$background 				= get_theme_mod( 'ocean_top_bar_bg', '#ffffff' );
 			$border_color 				= get_theme_mod( 'ocean_top_bar_border_color', '#f1f1f1' );
 			$text_color 				= get_theme_mod( 'ocean_top_bar_text_color', '#929292' );
@@ -384,15 +402,34 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 
 			// Define css var
 			$css = '';
+			$padding_css = '';
 
 			// Top bar top padding
 			if ( ! empty( $top_padding ) && '8' != $top_padding ) {
-				$css .= '#top-bar{padding-top:'. $top_padding .'px;}';
+				$padding_css .= 'padding-top:'. $top_padding .'px;';
+			}
+
+			// Top bar right padding
+			if ( ! empty( $right_padding ) && '0' != $right_padding ) {
+				$padding_css .= 'padding-right:'. $right_padding .'px;';
 			}
 
 			// Top bar bottom padding
 			if ( ! empty( $bottom_padding ) && '8' != $bottom_padding ) {
-				$css .= '#top-bar{padding-bottom:'. $bottom_padding .'px;}';
+				$padding_css .= 'padding-bottom:'. $bottom_padding .'px;';
+			}
+
+			// Top bar left padding
+			if ( ! empty( $left_padding ) && '0' != $left_padding ) {
+				$padding_css .= 'padding-left:'. $left_padding .'px;';
+			}
+
+			// Top bar padding css
+			if ( ! empty( $top_padding ) && '8' != $top_padding
+				|| ! empty( $right_padding ) && '0' != $right_padding
+				|| ! empty( $bottom_padding ) && '8' != $bottom_padding
+				|| ! empty( $left_padding ) && '0' != $left_padding ) {
+				$css .= '#top-bar{'. $padding_css .'}';
 			}
 
 			// Top bar background color

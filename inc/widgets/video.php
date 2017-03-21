@@ -50,7 +50,7 @@ if ( ! class_exists( 'OceanWP_Video_Widget' ) ) {
 
 				// Show widget title
 				if ( $title ) {
-					echo $args['before_title'] . $title . $args['after_title'];
+					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				}
 				
 				// Show video
@@ -123,9 +123,8 @@ if ( ! class_exists( 'OceanWP_Video_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'video_description' ) ); ?>">
-				<?php esc_html_e( 'Description', 'oceanwp' ); ?></label>
-				<textarea rows="15" id="<?php echo $this->get_field_id( 'video_description' ); ?>" name="<?php echo $this->get_field_name( 'video_description' ); ?>" class="widefat" style="height: 100px;"><?php if( !empty( $instance['video_description'] ) ) { echo $instance['video_description']; } ?></textarea>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'video_description' ) ); ?>"><?php esc_html_e( 'Description', 'oceanwp' ); ?></label>
+				<textarea rows="15" id="<?php echo esc_attr( $this->get_field_id( 'video_description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'video_description' ) ); ?>" class="widefat" style="height: 100px;"><?php if( !empty( $instance['video_description'] ) ) { echo esc_textarea( $instance['video_description'] ); } ?></textarea>
 			</p>
 
 		<?php

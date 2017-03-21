@@ -50,7 +50,7 @@ if ( ! class_exists( 'OceanWP_Custom_Links_Widget' ) ) {
 
 				// Show widget title
 				if ( $title ) {
-					echo $args['before_title'] . $title . $args['after_title'];
+					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				}
 
 				echo '<ul class="oceanwp-custom-links">';
@@ -119,16 +119,16 @@ if ( ! class_exists( 'OceanWP_Custom_Links_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('target'); ?>"><?php esc_html_e( 'Link Target:', 'oceanwp' ); ?></label>
-				<select class='widefat' name="<?php echo $this->get_field_name('target'); ?>" id="<?php echo $this->get_field_id('target'); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id('target') ); ?>"><?php esc_html_e( 'Link Target:', 'oceanwp' ); ?></label>
+				<select class='widefat' name="<?php echo esc_attr( $this->get_field_name('target') ); ?>" id="<?php echo esc_attr( $this->get_field_id('target') ); ?>">
 					<option value="blank" <?php selected( $target, 'blank' ) ?>><?php esc_html_e( 'Blank', 'oceanwp' ); ?></option>
 					<option value="self" <?php selected( $target, 'self' ) ?>><?php esc_html_e( 'Self', 'oceanwp' ); ?></option>
 				</select>
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('count'); ?>"><?php esc_html_e( 'Number of Custom Links:', 'oceanwp' ); ?></label>
-				<select class='widefat' name="<?php echo $this->get_field_name('count'); ?>" id="<?php echo $this->get_field_id('count'); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id('count') ); ?>"><?php esc_html_e( 'Number of Custom Links:', 'oceanwp' ); ?></label>
+				<select class='widefat' name="<?php echo esc_attr( $this->get_field_name('count') ); ?>" id="<?php echo esc_attr( $this->get_field_id('count') ); ?>">
 					<option value="1" <?php selected( $count, '1' ) ?>><?php esc_html_e( '1', 'oceanwp' ); ?></option>
 					<option value="2" <?php selected( $count, '2' ) ?>><?php esc_html_e( '2', 'oceanwp' ); ?></option>
 					<option value="3" <?php selected( $count, '3' ) ?>><?php esc_html_e( '3', 'oceanwp' ); ?></option>
@@ -149,19 +149,19 @@ if ( ! class_exists( 'OceanWP_Custom_Links_Widget' ) ) {
 
 			<div class="custom_links_wrap">
 				<?php for ( $i=1;$i<=15;$i++ ): $url = 'url_'.$i; $text = 'text_'.$i; ?>
-				<div class="custom_links_<?php echo $i;?>" <?php if ( $i>$count ):?>style="display:none;"<?php endif;?> style="padding-bottom:30px">
+				<div class="custom_links_<?php echo esc_attr( $i );?>" <?php if ( $i>$count ):?>style="display:none;"<?php endif;?> style="padding-bottom:30px">
 					<p>
-						<label for="<?php echo $this->get_field_id( $url ); ?>">
-							<?php printf( '#%s URL:', $i );?>
+						<label for="<?php echo esc_attr( $this->get_field_id( $url ) ); ?>">
+							<?php printf( '#%s URL:', esc_attr( $i ) );?>
 						</label>
-						<input class="widefat" id="<?php echo $this->get_field_id( $url ); ?>" name="<?php echo $this->get_field_name( $url ); ?>" type="text" value="<?php echo esc_attr( $$url ); ?>" />
+						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $url ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $url ) ); ?>" type="text" value="<?php echo esc_attr( $$url ); ?>" />
 					</p>
 
 					<p>
-						<label for="<?php echo $this->get_field_id( $text ); ?>">
-							<?php printf( '#%s Text:', $i );?>
+						<label for="<?php echo esc_attr( $this->get_field_id( $text ) ); ?>">
+							<?php printf( '#%s Text:', esc_attr( $i ) );?>
 						</label>
-						<input class="widefat" id="<?php echo $this->get_field_id( $text ); ?>" name="<?php echo $this->get_field_name( $text ); ?>" type="text" value="<?php echo esc_attr( $$text ); ?>" />
+						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $text ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $text ) ); ?>" type="text" value="<?php echo esc_attr( $$text ); ?>" />
 					</p>
 				</div>
 				<?php endfor;?>

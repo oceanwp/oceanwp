@@ -52,6 +52,11 @@ Globals
 .nobr { white-space: nowrap; }
 .form-row .required { color: #e42234; border: 0; }
 .woocommerce ul { list-style: none; margin: 0; padding: 0; }
+.woocommerce .cart-collaterals .shipping_calculator::after, .woocommerce form .form-row-wide,
+.woocommerce form .form-row::after, .woocommerce ul.cart_list li::after,
+.woocommerce ul.product_list_widget li::after, .woocommerce-page .cart-collaterals .shipping_calculator::after,
+.woocommerce-page form .form-row-wide, .woocommerce-page form .form-row::after,
+.woocommerce-page ul.cart_list li::after, .woocommerce-page ul.product_list_widget li::after { clear: both; }
 
 /* price color */
 .price,
@@ -242,18 +247,15 @@ Product Entries
 .woocommerce .products .product { overflow: hidden; padding-bottom: 20px; }
 .woocommerce .products .product-inner { position: relative; text-align: center; }
 
-/* product entry > featured image */
-.woocommerce ul.products li.product .woo-entry-image { margin-bottom: 20px; }
-
 /* product entry > image swap */
-.woo-entry-image-swap { position: relative; overflow: hidden; margin-bottom: 20px; }
+.woo-entry-image-swap { position: relative; overflow: hidden; }
 .woo-entry-image-swap img { -webkit-transition: opacity 0.25s ease-in-out; -moz-transition: opacity 0.25s ease-in-out; -o-transition: opacity 0.25s ease-in-out; transition: opacity 0.25s ease-in-out; width: 100%; overflow: hidden; }
 .woo-entry-image-swap .woo-entry-image-main { position: relative; margin-bottom: 0 !important; z-index: 2; }
 .woo-entry-image-swap .woo-entry-image-secondary { position: absolute; top: 0; left: 0; overflow: hidden; height: 100%; z-index: 1; }
 .woo-entry-image-swap:hover .woo-entry-image-main { opacity: 0; -moz-opacity: 0; -webkit-opacity: 0; }
 
 /* product entry > gallery slider */
-.woocommerce ul.products li.product .product-entry-slider { margin-bottom: 20px; display: none; }
+.woocommerce ul.products li.product .product-entry-slider { display: none; }
 .woocommerce ul.products li.product .product-entry-slider.slick-slider { display: block; }
 .woocommerce ul.products li.product .product-entry-slider .slick-arrow { position: absolute; top: 50%; display: block; visibility: hidden; width: 26px; height: 100px; margin: -50px 0 0; font-size: 22px; line-height: 100px; background-color: transparent; color: #333; padding: 0; text-align: center; opacity: 0; border-radius: 0; cursor: pointer; z-index: 999; -webkit-transition: all .3s ease; transition: all .3s ease; }
 .woocommerce ul.products li.product .product-entry-slider .slick-arrow:hover { background-color: rgba(0, 0, 0, .05); }
@@ -269,6 +271,9 @@ Product Entries
 
 /* product entry > out of stock */
 .woocommerce ul.products li.product.outofstock .outofstock-badge { background-color: rgba(0, 0, 0, .8); }
+
+/* product entry > inner */
+.woocommerce ul.products li.product .woo-entry-inner { margin-top: 20px; }
 
 /* product entry > category */
 .woocommerce ul.products li.product .category { display: block; font-size: 12px; font-weight: 300; line-height: 1; font-style: italic; margin: 0px 0 8px; text-overflow: ellipsis; white-space: nowrap; }
@@ -380,6 +385,7 @@ Single Product
 .woocommerce div.product form.cart .variations .reset_variations:before { display: inline-block; font-family: 'simple-line-icons'; content: '\e082'; margin-right: 5px; color: red; vertical-align: top; }
 .single_variation { display: block; float: left; margin-bottom: 10px; }
 .variations_button { clear: both }
+.woocommerce div.product .swatch-control .theme-select { display: none !important; }
 
 /* Single > In Stock */
 .woocommerce div.product div.summary p.in-stock { margin-bottom: 20px; color: #77a464; }
@@ -667,7 +673,7 @@ Checkout
 /* Checkout > Addresses */
 .woocommerce .woocommerce-checkout #customer_details h3,
 .woocommerce .woocommerce-checkout h3#order_review_heading { font-size: 14px; position: relative; margin: 0 0 20px; padding-bottom: 8px; border-bottom-width: 1px; border-bottom-style: solid; text-transform: uppercase; }
-.woocommerce .woocommerce-checkout #customer_details h3 input[type="checkbox"] { margin: 0 0 0 6px; }
+.woocommerce .woocommerce-checkout #customer_details h3 input[type="checkbox"] { margin: 0 6px 0 0; }
 .woocommerce .woocommerce-checkout #customer_details p.form-row label { margin: 0 0 5px; display: block; }
 .woocommerce .woocommerce-checkout #customer_details p.form-row label.checkbox { display: inline; display: inline-block; }
 

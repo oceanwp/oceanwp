@@ -4,7 +4,17 @@
  *
  * @package OceanWP WordPress theme
  */
-?><!DOCTYPE html>
+
+// Main schema markup
+if ( is_singular( 'post' ) ) {
+	$itemprop = '';
+	$itemtype = 'http://schema.org/Blog';
+} else {
+	$itemtype = 'http://schema.org/WebPageElement';
+	$itemprop = 'mainContentOfPage';
+} ?>
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -36,7 +46,7 @@
 
 			<?php do_action( 'ocean_before_main' ); ?>
 			
-			<main id="main" class="site-main clr" <?php echo oceanwp_main_schema_markup(); ?>>
+			<main id="main" class="site-main clr" itemprop="<?php echo esc_attr( $itemprop ); ?>" itemscope="itemscope" itemtype="<?php echo esc_attr( $itemtype ); ?>">
 
 				<?php
 				// Display shortcode if there is one

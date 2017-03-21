@@ -32,7 +32,7 @@ if ( 'one' == $topbar_style ) {
 // Display Social alternative
 if ( $social_alt = oceanwp_top_bar_social_alt() ) : ?>
 
-	<div id="top-bar-social-alt" class="clr <?php echo $classes; ?>">
+	<div id="top-bar-social-alt" class="clr <?php echo esc_attr( $classes ); ?>">
 		<?php echo do_shortcode( $social_alt ); ?>
 	</div><!-- #top-bar-social-alt -->
 
