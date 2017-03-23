@@ -133,12 +133,12 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_top_bar_padding', array(
 				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
 				'section'  				=> 'ocean_topbar_general',
-				'settings'   => array(
-					'top'    => 'ocean_top_bar_top_padding',
-					'right'  => 'ocean_top_bar_right_padding',
-					'bottom' => 'ocean_top_bar_bottom_padding',
-					'left'   => 'ocean_top_bar_left_padding',
-				),
+				'settings' => array(
+		            'top' 		=> 'ocean_top_bar_top_padding',
+		            'right' 	=> 'ocean_top_bar_right_padding',
+		            'bottom' 	=> 'ocean_top_bar_bottom_padding',
+		            'left' 		=> 'ocean_top_bar_left_padding',
+			    ),
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_topbar',
 			    'input_attrs' 			=> array(

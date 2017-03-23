@@ -28,38 +28,13 @@ class OceanWP_Customizer_Dimensions_Control extends WP_Customize_Control {
 	public $type = 'oceanwp-dimensions';
 
 	/**
-	 * Translation strings.
-	 */
-	public $l10n = array();
-
-	/**
-	 * Start things.
-	 *
-	 * @access public
-	 */
-	public function __construct( $manager, $id, $args = array() ) {
-		parent::__construct( $manager, $id, $args );
-
-		// Translation strings.
-		$this->l10n = wp_parse_args(
-			$this->l10n,
-			array(
-				'top' 		=> esc_attr__( 'Top', 'oceanwp' ),
-				'bottom' 	=> esc_attr__( 'Bottom', 'oceanwp' ),
-				'left' 		=> esc_attr__( 'Left', 'oceanwp' ),
-				'right' 	=> esc_attr__( 'Right', 'oceanwp' ),
-			)
-		);
-
-	}
-
-	/**
 	 * Enqueue control related scripts/styles.
 	 *
 	 * @access public
 	 */
 	public function enqueue() {
 		wp_enqueue_script( 'oceanwp-dimensions', OCEANWP_INC_DIR_URI . 'customizer/controls/dimensions/dimensions.js', array( 'jquery', 'customize-base' ), false, true );
+		wp_localize_script( 'oceanwp-dimensions', 'oceanwpL10n', $this->l10n() );
 		wp_enqueue_style( 'oceanwp-dimensions', OCEANWP_INC_DIR_URI . 'customizer/controls/dimensions/dimensions.css', null );
 	}
 
@@ -72,6 +47,7 @@ class OceanWP_Customizer_Dimensions_Control extends WP_Customize_Control {
 		parent::to_json();
 
 		$this->json['id'] 		= $this->id;
+		$this->json['l10n']    	= $this->l10n();
 		$this->json['title'] 	= esc_html__( 'Link values together', 'oceanwp' );
 
 		$this->json['inputAttrs'] = '';
@@ -79,11 +55,10 @@ class OceanWP_Customizer_Dimensions_Control extends WP_Customize_Control {
 			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 		}
 
-		foreach ( $this->settings as $setting_key => $setting_id ) {
-			$this->json[ $setting_key ] = array(
-				'link'  	=> $this->get_link( $setting_key ),
-				'value' 	=> $this->value( $setting_key ),
-				'label' 	=> isset( $this->l10n[ $setting_key ] ) ? $this->l10n[ $setting_key ] : ''
+		foreach ( $this->settings as $key => $val ) {
+			$this->json[ $key ] = array(
+				'link'  	=> $this->get_link( $key ),
+				'value' 	=> $this->value( $key ),
 			);
 		}
 
@@ -109,11 +84,11 @@ class OceanWP_Customizer_Dimensions_Control extends WP_Customize_Control {
 			<span class="description customize-control-description">{{{ data.description }}}</span>
 		<# } #>
 
-		<ul>
+		<ul class="desktop">
 			<# for ( key in data.settings ) { #>
 				<li class="dimension-wrap {{ key }}">
 					<input {{{ data.inputAttrs }}} type="number" class="dimension-{{ key }}" {{{ data[ key ].link }}} value="{{{ data[ key ].value }}}" />
-					<span class="dimension-label">{{ data[ key ].label }}</span>
+					<span class="dimension-label">{{ data.l10n[ key ] }}</span>
 				</li>
 			<# } #>
 
@@ -126,5 +101,26 @@ class OceanWP_Customizer_Dimensions_Control extends WP_Customize_Control {
 		</ul>
 
 		<?php
+	}
+
+	/**
+	 * Returns an array of translation strings.
+	 *
+	 * @access protected
+	 * @since 2.4.0
+	 * @param string|false $id The string-ID.
+	 * @return string
+	 */
+	protected function l10n( $id = false ) {
+		$translation_strings = array(
+			'top' 		=> esc_attr__( 'Top', 'oceanwp' ),
+			'right' 	=> esc_attr__( 'Bottom', 'oceanwp' ),
+			'bottom' 	=> esc_attr__( 'Left', 'oceanwp' ),
+			'left' 		=> esc_attr__( 'Right', 'oceanwp' ),
+		);
+		if ( false === $id ) {
+			return $translation_strings;
+		}
+		return $translation_strings[ $id ];
 	}
 }

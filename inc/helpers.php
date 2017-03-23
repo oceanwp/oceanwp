@@ -3358,9 +3358,14 @@ if ( ! function_exists( 'oceanwp_sidr_menu_source' ) ) {
 		// Add main navigation
 		$items['nav'] = '#site-navigation';
 
-		// Add social menu
-		if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
-			$items['social'] = '#oceanwp-social-menu';
+		if ( 'full_screen' != oceanwp_header_style()
+			& 'top' != oceanwp_header_style() ) {
+
+			// Add social menu
+			if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
+				$items['social'] = '#site-header #oceanwp-social-menu';
+			}
+
 		}
 
 		// Add search form

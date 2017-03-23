@@ -8,7 +8,7 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.6.1 for parent theme ocean for publication on WordPress.org
+ * @version   2.6.1 for parent theme OceanWP for publication on WordPress.org
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
@@ -709,7 +709,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			}
 
 			// All plugin information will be stored in an array for processing.
-			$slug = $this->sanitize_key( urldecode( esc_url_raw( wp_unslash( $_GET['plugin'] ) ) ) );
+			$slug = $this->sanitize_key( urldecode( $_GET['plugin'] ) );
 
 			if ( ! isset( $this->plugins[ $slug ] ) ) {
 				return false;
@@ -2136,8 +2136,8 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				)
 			);
 
-			if ( isset( $_REQUEST['plugin_status'] ) && in_array( wp_unslash( $_REQUEST['plugin_status'] ), array( 'install', 'update', 'activate' ), true ) ) {
-				$this->view_context = sanitize_key( wp_unslash( $_REQUEST['plugin_status'] ) );
+			if ( isset( $_REQUEST['plugin_status'] ) && in_array( $_REQUEST['plugin_status'], array( 'install', 'update', 'activate' ), true ) ) {
+				$this->view_context = sanitize_key( $_REQUEST['plugin_status'] );
 			}
 
 			add_filter( 'tgmpa_table_data_items', array( $this, 'sort_table_items' ) );
@@ -2765,10 +2765,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				if ( is_array( $_POST['plugin'] ) ) {
-					$plugins_to_install = (array) sanitize_text_field( wp_unslash( $_POST['plugin'] ) );
-				} elseif ( is_string( sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) ) ) {
+					$plugins_to_install = (array) $_POST['plugin'];
+				} elseif ( is_string( $_POST['plugin'] ) ) {
 					// Received via Filesystem page - un-flatten array (WP bug #19643).
-					$plugins_to_install = explode( ',', sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) );
+					$plugins_to_install = explode( ',', $_POST['plugin'] );
 				}
 
 				// Sanitize the received input.
@@ -2913,7 +2913,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// Grab plugin data from $_POST.
 				$plugins = array();
 				if ( isset( $_POST['plugin'] ) ) {
-					$plugins = array_map( 'urldecode', (array) sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) );
+					$plugins = array_map( 'urldecode', (array) $_POST['plugin'] );
 					$plugins = array_map( array( $this->tgmpa, 'sanitize_key' ), $plugins );
 				}
 

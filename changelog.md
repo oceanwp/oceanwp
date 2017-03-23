@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### *2017.03.23* - 1.1.7.2
+* **Fixed** - Issue with the dimensions control.
+
+### *2017.03.23* - 1.1.7.1
+* **Fixed** - TGM Plugin Activation problem.
+* **Fixed** - Double icons in mobile menu.
+
 ### *2017.03.21* - 1.1.7
 IMPORTANT NOTICE: Some fields of the customizer are improved to be more user friendly, you must re-enter your values in the new dimensions controls for the following fields:
 - Padding in General Options > Forms (Input - Textarea)
