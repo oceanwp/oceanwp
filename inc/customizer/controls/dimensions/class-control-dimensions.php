@@ -114,9 +114,9 @@ class OceanWP_Customizer_Dimensions_Control extends WP_Customize_Control {
 	protected function l10n( $id = false ) {
 		$translation_strings = array(
 			'top' 		=> esc_attr__( 'Top', 'oceanwp' ),
-			'right' 	=> esc_attr__( 'Bottom', 'oceanwp' ),
-			'bottom' 	=> esc_attr__( 'Left', 'oceanwp' ),
-			'left' 		=> esc_attr__( 'Right', 'oceanwp' ),
+			'right' 	=> esc_attr__( 'Right', 'oceanwp' ),
+			'bottom' 	=> esc_attr__( 'Bottom', 'oceanwp' ),
+			'left' 		=> esc_attr__( 'Left', 'oceanwp' ),
 		);
 		if ( false === $id ) {
 			return $translation_strings;
