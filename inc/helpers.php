@@ -3400,3 +3400,28 @@ if ( ! function_exists( 'is_autoptimize_activated' ) ) {
 	}
 
 }
+
+/**
+ * Main schema markup
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_main_schema_markup' ) ) {
+
+	function oceanwp_main_schema_markup() {
+
+		$itemtype = 'http://schema.org/WebPageElement';
+		$itemprop = 'mainContentOfPage';
+
+		if ( is_singular( 'post' ) ) {
+			$itemprop = '';
+			$itemtype = 'http://schema.org/Blog';
+		}
+
+		$schema = 'itemprop="'. $itemprop .'" itemscope="itemscope" itemtype="'. $itemtype .'"';
+
+		return $schema;
+
+	}
+
+}

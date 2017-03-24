@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.03.24* - 1.1.7.3
+* **Fixed** - Header issue with the oceanwp_main_schema_markup() function.
+
 ### *2017.03.23* - 1.1.7.2
 * **Fixed** - Issue with the dimensions control.
 
