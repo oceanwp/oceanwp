@@ -1260,7 +1260,6 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 
 		// Return if disabled
 		if ( 'top' != oceanwp_header_style()
-			|| 'medium' != oceanwp_header_style()
 			|| ! $search_style
 			|| 'disabled' == $search_style ) {
 			return;
