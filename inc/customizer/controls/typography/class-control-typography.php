@@ -32,9 +32,9 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 		wp_enqueue_script( 'oceanwp-select2', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/select2.min.js', array( 'jquery' ), false, true );
-		wp_enqueue_style( 'select2-css', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/select2.min.css', null );
-		wp_enqueue_script( 'oceanwp-typography-js', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/typography.js', array( 'jquery', 'oceanwp-select2' ), false, true );
-		wp_enqueue_style( 'oceanwp-typography', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/typography.css', null );
+		wp_enqueue_style( 'select2', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/select2.min.css', null );
+		wp_enqueue_script( 'oceanwp-typography-js', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/typography.min.js', array( 'jquery', 'oceanwp-select2' ), false, true );
+		wp_enqueue_style( 'oceanwp-typography', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/typography.min.css', null );
 	}
 
 	/**

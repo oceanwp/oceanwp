@@ -85,8 +85,7 @@ function oceanwp_cac_has_topbar() {
 
 function oceanwp_cac_has_topbar_social() {
 	if ( oceanwp_cac_has_topbar()
-		&& get_theme_mod( 'ocean_top_bar_social' )
-		&& ! get_theme_mod( 'ocean_top_bar_social_alt' ) ) {
+		&& get_theme_mod( 'ocean_top_bar_social' ) ) {
 		return true;
 	} else {
 		return false;

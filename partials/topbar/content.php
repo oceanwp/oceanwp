@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Get topbar content
-$content = get_theme_mod( 'ocean_top_bar_content', '<i class="icon-phone"></i> 1-555-645-324 <i class="icon-user"></i> <a href="#">Sign in</a>' );
+$content = get_theme_mod( 'ocean_top_bar_content', '<i class="icon-home"></i> Street Name <i class="icon-clock"></i> Since 2006' );
 $content = oceanwp_tm_translation( 'ocean_top_bar_content', $content );
 
 // Display topbar content

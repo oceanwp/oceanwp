@@ -183,32 +183,6 @@ span.required { margin-right: 3px; margin-left: 0; }
 *------------------------------------*/
 .widget-title { border-width: 0 3px 0 0; padding-right: 15px; padding-left: 0; }
 
-/* About me */
-.oceanwp-about-me .oceanwp-about-me-social li { margin-right: 6px; margin-left: 0; }
-.oceanwp-about-me .oceanwp-about-me-social li:first-child { margin-right: 0; }
-
-/* Contact info */
-.contact-info-widget i { float: right; margin-left: 15px; margin-right: 0; }
-
-/* Custom links */
-.custom-links-widget .oceanwp-custom-links li a::before { margin-left: 10px; margin-right: 0; }
-.custom-links-widget .oceanwp-custom-links li a:hover { margin-right: 8px; margin-left: 0; }
-
-/* Flickr */
-.flickr_badge_image { float: right; margin: 0 0 10px 4%; }
-.flickr_badge_image#flickr_badge_image3,
-.flickr_badge_image#flickr_badge_image6,
-.flickr_badge_image#flickr_badge_image9 { margin-left: 0; }
-p.flickr_stream_wrap a { background-position: right center; padding-right: 25px; padding-left: 0; }
-
-/* MailChimp */
-.oceanwp-newsletter-form-wrap button { left: 15px; right: auto; }
-
-/* Posts thumbnails */
-.oceanwp-recent-posts .recent-posts-thumbnail { float: right; margin-left: 10px; margin-right: 0; }
-.oceanwp-recent-posts .recent-posts-info .sep { padding-right: 3px; padding-left: 0; }
-.oceanwp-recent-posts .recent-posts-date { margin-left: 8px; margin-right: 0; }
-
 /*------------------------------------*
 	Pagination
 *------------------------------------*/

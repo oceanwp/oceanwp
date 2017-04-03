@@ -431,10 +431,24 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'default' 			=> $default,
 						) );
 
-						$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, $element .'_typography[font-size]', array(
+						$wp_customize->add_setting( $element .'_tablet_typography[font-size]', array(
+							'transport' 			=> $transport,
+							'sanitize_callback' 	=> false,
+						) );
+
+						$wp_customize->add_setting( $element .'_mobile_typography[font-size]', array(
+							'transport' 			=> $transport,
+							'sanitize_callback' 	=> false,
+						) );
+
+						$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, $element .'_typography[font-size]', array(
 							'label' 			=> esc_html__( 'Font Size (px)', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
-							'settings' 			=> $element .'_typography[font-size]',
+							'settings' 			=> array(
+					            'desktop' 	=> $element .'_typography[font-size]',
+					            'tablet' 	=> $element .'_tablet_typography[font-size]',
+					            'mobile' 	=> $element .'_mobile_typography[font-size]',
+						    ),
 							'priority' 			=> 5,
 							'active_callback' 	=> $active_callback,
 						    'input_attrs' 		=> array(
@@ -486,10 +500,24 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'default' 			=> $default,
 						) );
 
-						$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, $element .'_typography[line-height]', array(
+						$wp_customize->add_setting( $element .'_tablet_typography[line-height]', array(
+							'transport' 			=> $transport,
+							'sanitize_callback' 	=> false,
+						) );
+
+						$wp_customize->add_setting( $element .'_mobile_typography[line-height]', array(
+							'transport' 			=> $transport,
+							'sanitize_callback' 	=> false,
+						) );
+
+						$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, $element .'_typography[line-height]', array(
 							'label' 			=> esc_html__( 'Line Height', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
-							'settings' 			=> $element .'_typography[line-height]',
+							'settings' 			=> array(
+					            'desktop' 	=> $element .'_typography[line-height]',
+					            'tablet' 	=> $element .'_tablet_typography[line-height]',
+					            'mobile' 	=> $element .'_mobile_typography[line-height]',
+						    ),
 							'priority' 			=> 7,
 							'active_callback' 	=> $active_callback,
 						    'input_attrs' 		=> array(
@@ -508,7 +536,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 						// Get default
 						$default = ! empty( $array['defaults']['letter-spacing'] ) ? $array['defaults']['letter-spacing'] : NULL;
-
+						
 						$wp_customize->add_setting( $element .'_typography[letter-spacing]', array(
 							'type' 				=> 'theme_mod',
 							'sanitize_callback' => false,
@@ -516,12 +544,25 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'default' 			=> $default,
 						) );
 
-						$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $element .'_typography[letter-spacing]', array(
-							'label' 			=> esc_html__( 'Letter Spacing', 'oceanwp' ),
+						$wp_customize->add_setting( $element .'_tablet_typography[letter-spacing]', array(
+							'transport' 			=> $transport,
+							'sanitize_callback' 	=> false,
+						) );
+
+						$wp_customize->add_setting( $element .'_mobile_typography[letter-spacing]', array(
+							'transport' 			=> $transport,
+							'sanitize_callback' 	=> false,
+						) );
+
+						$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, $element .'_typography[letter-spacing]', array(
+							'label' 			=> esc_html__( 'Letter Spacing (px)', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
-							'settings' 			=> $element .'_typography[letter-spacing]',
+							'settings' 			=> array(
+					            'desktop' 	=> $element .'_typography[letter-spacing]',
+					            'tablet' 	=> $element .'_tablet_typography[letter-spacing]',
+					            'mobile' 	=> $element .'_mobile_typography[letter-spacing]',
+						    ),
 							'priority' 			=> 8,
-							'type' 				=> 'number',
 							'active_callback' 	=> $active_callback,
 						    'input_attrs' 		=> array(
 						        'min'   => 0,
@@ -542,7 +583,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public function customize_preview_init() {
-			wp_enqueue_script( 'oceanwp-typography-customize-preview', OCEANWP_THEME_URI . '/inc/customizer/assets/js/typography-customize-preview.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
+			wp_enqueue_script( 'oceanwp-typography-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/typography-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
 			wp_localize_script( 'oceanwp-typography-customize-preview', 'oceanwp', array(
 				'googleFontsUrl' => '//fonts.googleapis.com'
 			) );
@@ -565,11 +606,15 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 			foreach( $elements as $element => $array ) {
 
 				// Add empty css var
-				$add_css = '';
+				$add_css 	= '';
+				$tablet_css = '';
+				$mobile_css = '';
 
 				// Get target and current mod
-				$target  = isset( $array['target'] ) ? $array['target'] : '';
-				$get_mod = get_theme_mod( $element .'_typography' );
+				$target  		= isset( $array['target'] ) ? $array['target'] : '';
+				$get_mod 		= get_theme_mod( $element .'_typography' );
+				$tablet_get_mod = get_theme_mod( $element .'_tablet_typography' );
+				$mobile_get_mod = get_theme_mod( $element .'_mobile_typography' );
 
 				// Attributes to loop through
 				if ( ! empty( $array['attributes'] ) ) {
@@ -591,8 +636,10 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				foreach ( $attributes as $attribute ) {
 
 					// Define val
-					$default = isset( $array['defaults'][$attribute] ) ? $array['defaults'][$attribute] : NULL;
-					$val     = isset ( $get_mod[$attribute] ) ? $get_mod[$attribute] : $default;
+					$default 		= isset( $array['defaults'][$attribute] ) ? $array['defaults'][$attribute] : NULL;
+					$val     		= isset( $get_mod[$attribute] ) ? $get_mod[$attribute] : $default;
+					$tablet_val     = isset( $tablet_get_mod[$attribute] ) ? $tablet_get_mod[$attribute] : '';
+					$mobile_val     = isset( $mobile_get_mod[$attribute] ) ? $mobile_get_mod[$attribute] : '';
 
 					// If there is a value lets do something
 					if ( $val && $default != $val ) {
@@ -624,11 +671,75 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 					}
 
+					// If there is a value lets do something
+					if ( $tablet_val
+						&& ( 'font-size' == $attribute
+							|| 'line-height' == $attribute
+							|| 'letter-spacing' == $attribute ) ) {
+
+						// Sanitize
+						$tablet_val = str_replace( '"', '', $tablet_val );
+
+						// Add px if font size or letter spacing
+						$px = '';
+						if ( 'font-size' == $attribute || 'letter-spacing' == $attribute ) {
+							$px = 'px';
+						}
+
+						// Add to inline CSS
+						if ( 'css' == $return ) {
+							$tablet_css .= $attribute .':'. $tablet_val . $px .';';
+						}
+
+						// Customizer styles need to be added for each attribute
+						elseif ( 'preview_styles' == $return ) {
+							$preview_styles['customizer-typography-'. $element .'-tablet-'. $attribute] = '@media (max-width: 768px){'. $target .'{'. $attribute .':'. $tablet_val . $px .';}}';
+						}
+
+					}
+
+					// If there is a value lets do something
+					if ( $mobile_val
+						&& ( 'font-size' == $attribute
+							|| 'line-height' == $attribute
+							|| 'letter-spacing' == $attribute ) ) {
+
+						// Sanitize
+						$mobile_val = str_replace( '"', '', $mobile_val );
+
+						// Add px if font size or letter spacing
+						$px = '';
+						if ( 'font-size' == $attribute || 'letter-spacing' == $attribute ) {
+							$px = 'px';
+						}
+
+						// Add to inline CSS
+						if ( 'css' == $return ) {
+							$mobile_css .= $attribute .':'. $mobile_val . $px .';';
+						}
+
+						// Customizer styles need to be added for each attribute
+						elseif ( 'preview_styles' == $return ) {
+							$preview_styles['customizer-typography-'. $element .'-mobile-'. $attribute] = '@media (max-width: 480px){'. $target .'{'. $attribute .':'. $mobile_val . $px .';}}';
+						}
+
+					}
+
 				}
 
 				// Front-end inline CSS
 				if ( $add_css && 'css' == $return ) {
 					$css .= $target .'{'. $add_css .'}';
+				}
+
+				// Front-end inline tablet CSS
+				if ( $tablet_css && 'css' == $return ) {
+					$css .= '@media (max-width: 768px){'. $target .'{'. $tablet_css .'}}';
+				}
+
+				// Front-end inline mobile CSS
+				if ( $mobile_css && 'css' == $return ) {
+					$css .= '@media (max-width: 480px){'. $target .'{'. $mobile_css .'}}';
 				}
 
 			}

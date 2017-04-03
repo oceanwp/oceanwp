@@ -26,6 +26,12 @@ if ( $style ) {
 	$classes[$style .'-page-header'] = $style .'-page-header';
 }
 
+// Visibility
+$visibility = get_theme_mod( 'ocean_page_header_visibility', 'all-devices' );
+if ( 'all-devices' != $visibility ) {
+	$classes[] = $visibility;
+}
+
 // Turn into space seperated list
 $classes = implode( ' ', $classes ) ?>
 

@@ -18,10 +18,16 @@ $copy = oceanwp_tm_translation( 'ocean_footer_copyright_text', $copy );
 $menu_location = 'footer_menu';
 $menu_location = apply_filters( 'ocean_footer_menu_location', $menu_location);
 
+// Visibility
+$visibility = get_theme_mod( 'ocean_bottom_footer_visibility', 'all-devices' );
+
 // Inner classes
 $wrap_classes = array( 'clr' );
 if ( ! has_nav_menu( $menu_location ) ) {
 	$wrap_classes[] = 'no-footer-nav';
+}
+if ( 'all-devices' != $visibility ) {
+	$wrap_classes[] = $visibility;
 }
 $wrap_classes = implode( ' ', $wrap_classes ); ?>
 

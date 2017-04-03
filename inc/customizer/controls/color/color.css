@@ -21,8 +21,9 @@
 .alpha-color-picker-container .ui-slider-handle.show-opacity { font-size: 12px; }
 .alpha-color-picker-container .click-zone { width: 14px; height: 24px; display: block; position: absolute; left: 10px; }
 .alpha-color-picker-container .max-click-zone { right: 10px; left: auto; }
-.alpha-color-picker-container .transparency { height: 24px; width: 100%; background-color: #fff; background-image: url(transparency-grid.png); box-shadow: 0 0 5px rgba(0,0,0,0.4) inset; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; padding: 0; margin-top: -24px; }
+.alpha-color-picker-container .transparency { height: 24px; width: 100%; background-color: #fff; background-image: url(../../../controls/color/transparency-grid.png); box-shadow: 0 0 5px rgba(0,0,0,0.4) inset; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; padding: 0; margin-top: -24px; }
 
+/* Responsive */
 @media only screen and (max-width: 782px) {
 	.wp-picker-input-wrap input[type="text"].wp-color-picker.alpha-color-control { width: 184px; }
 }

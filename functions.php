@@ -74,9 +74,6 @@ class OCEANWP_Theme_Class {
 		// Setup theme => add_theme_support, register_nav_menus, load_theme_textdomain, etc
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'theme_setup' ), 10 );
 
-		// Load custom widgets
-		add_action( 'widgets_init', array( 'OCEANWP_Theme_Class', 'custom_widgets' ), 10 );
-
 		// register sidebar widget areas
 		add_action( 'widgets_init', array( 'OCEANWP_Theme_Class', 'register_sidebars' ) );
 
@@ -491,45 +488,6 @@ class OCEANWP_Theme_Class {
 		wp_register_script( 'html5shiv', OCEANWP_JS_DIR_URI . 'html5.js', array(), OCEANWP_THEME_VERSION, false );
 		wp_enqueue_script( 'html5shiv' );
 		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
-	}
-
-	/**
-	 * Include all custom widget classes
-	 *
-	 * @since   1.0.0
-	 */
-	public static function custom_widgets() {
-
-		if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
-			return;
-		}
-
-		// Define array of custom widgets for the theme
-		$widgets = apply_filters( 'ocean_custom_widgets', array(
-			'about-me',
-			'contact-info',
-			'custom-links',
-			'custom-menu',
-			'facebook',
-			'instagram',
-			'mailchimp',
-			'recent-posts',
-			'social',
-			'video',
-			'custom-header-logo',
-			'custom-header-nav',
-		) );
-
-		// Loop through widgets and load their files
-		if ( $widgets && is_array( $widgets ) ) {
-			foreach ( $widgets as $widget ) {
-				$file = OCEANWP_INC_DIR .'widgets/' . $widget .'.php';
-				if ( file_exists ( $file ) ) {
-					require_once( $file );
-				}
-			}
-		}
-
 	}
 
 	/**

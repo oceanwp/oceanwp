@@ -58,6 +58,30 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Footer Bottom Visibility
+			 */
+			$wp_customize->add_setting( 'ocean_bottom_footer_visibility', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> 'all-devices',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_bottom_footer_visibility', array(
+				'label'	   				=> esc_html__( 'Visibility', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> $section,
+				'settings' 				=> 'ocean_bottom_footer_visibility',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_footer_bottom',
+				'choices' 				=> array(
+					'all-devices' 			=> esc_html__( 'Show On All Devices', 'oceanwp' ),
+					'hide-tablet' 			=> esc_html__( 'Hide On Tablet', 'oceanwp' ),
+					'hide-mobile' 			=> esc_html__( 'Hide On Mobile', 'oceanwp' ),
+					'hide-tablet-mobile' 	=> esc_html__( 'Hide On Tablet & Mobile', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
 			 * Footer Bottom Copyright
 			 */
 			$wp_customize->add_setting( 'ocean_footer_copyright_text', array(
@@ -85,7 +109,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_bottom_footer_padding', array(
 				'label'	   				=> esc_html__( 'Padding (DECREPITATED)', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'This field will be removed in OceanWP 2.0, add your value(s) in the dimensions control below', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'This field will be removed in OceanWP 1.2.0, add your value(s) in the dimensions control below', 'oceanwp' ),
 				'type' 					=> 'text',
 				'section'  				=> $section,
 				'settings' 				=> 'ocean_bottom_footer_padding',
@@ -117,14 +141,56 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 				'sanitize_callback' 	=> false,
 			) );
 
+			$wp_customize->add_setting( 'ocean_bottom_footer_tablet_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_bottom_footer_tablet_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_bottom_footer_tablet_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_bottom_footer_tablet_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_bottom_footer_mobile_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_bottom_footer_mobile_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_bottom_footer_mobile_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_bottom_footer_mobile_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_bottom_footer_padding_dimensions', array(
 				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
 				'section'  				=> $section,				
 				'settings'   => array(
-					'top'    => 'ocean_bottom_footer_top_padding',
-					'right'  => 'ocean_bottom_footer_right_padding',
-					'bottom' => 'ocean_bottom_footer_bottom_padding',
-					'left'   => 'ocean_bottom_footer_left_padding',
+		            'desktop_top' 		=> 'ocean_bottom_footer_top_padding',
+		            'desktop_right' 	=> 'ocean_bottom_footer_right_padding',
+		            'desktop_bottom' 	=> 'ocean_bottom_footer_bottom_padding',
+		            'desktop_left' 		=> 'ocean_bottom_footer_left_padding',
+		            'tablet_top' 		=> 'ocean_bottom_footer_tablet_top_padding',
+		            'tablet_right' 		=> 'ocean_bottom_footer_tablet_right_padding',
+		            'tablet_bottom' 	=> 'ocean_bottom_footer_tablet_bottom_padding',
+		            'tablet_left' 		=> 'ocean_bottom_footer_tablet_left_padding',
+		            'mobile_top' 		=> 'ocean_bottom_footer_mobile_top_padding',
+		            'mobile_right' 		=> 'ocean_bottom_footer_mobile_right_padding',
+		            'mobile_bottom' 	=> 'ocean_bottom_footer_mobile_bottom_padding',
+		            'mobile_left' 		=> 'ocean_bottom_footer_mobile_left_padding',
 				),
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_footer_bottom',
@@ -217,6 +283,14 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			$bottom_right_padding 		= get_theme_mod( 'ocean_bottom_footer_right_padding', '0' );
 			$bottom_bottom_padding 		= get_theme_mod( 'ocean_bottom_footer_bottom_padding', '15' );
 			$bottom_left_padding 		= get_theme_mod( 'ocean_bottom_footer_left_padding', '0' );
+			$tablet_top_padding 		= get_theme_mod( 'ocean_bottom_footer_tablet_top_padding' );
+			$tablet_right_padding 		= get_theme_mod( 'ocean_bottom_footer_tablet_right_padding' );
+			$tablet_bottom_padding 		= get_theme_mod( 'ocean_bottom_footer_tablet_bottom_padding' );
+			$tablet_left_padding 		= get_theme_mod( 'ocean_bottom_footer_tablet_left_padding' );
+			$mobile_top_padding 		= get_theme_mod( 'ocean_bottom_footer_mobile_top_padding' );
+			$mobile_right_padding 		= get_theme_mod( 'ocean_bottom_footer_mobile_right_padding' );
+			$mobile_bottom_padding 		= get_theme_mod( 'ocean_bottom_footer_mobile_bottom_padding' );
+			$mobile_left_padding 		= get_theme_mod( 'ocean_bottom_footer_mobile_left_padding' );
 			$bottom_background 			= get_theme_mod( 'ocean_bottom_footer_background', '#1b1b1b' );
 			$bottom_color 				= get_theme_mod( 'ocean_bottom_footer_color', '#929292' );
 			$bottom_link_color 			= get_theme_mod( 'ocean_bottom_footer_link_color', '#ffffff' );
@@ -225,6 +299,8 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			// Define css var
 			$css = '';
 			$padding_css = '';
+			$tablet_padding_css = '';
+			$mobile_padding_css = '';
 
 			// DECREPITATED Footer bottom padding
 			$bottom_padding = get_theme_mod( 'ocean_bottom_footer_padding' );
@@ -258,6 +334,62 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 				|| ! empty( $bottom_bottom_padding ) && '15' != $bottom_bottom_padding
 				|| ! empty( $bottom_left_padding ) && '0' != $bottom_left_padding ) {
 				$css .= '#footer-bottom{'. $padding_css .'}';
+			}
+
+			// Tablet footer bottom top padding
+			if ( ! empty( $tablet_top_padding ) ) {
+				$tablet_padding_css .= 'padding-top:'. $tablet_top_padding .'px;';
+			}
+
+			// Tablet footer bottom right padding
+			if ( ! empty( $tablet_right_padding ) ) {
+				$tablet_padding_css .= 'padding-right:'. $tablet_right_padding .'px;';
+			}
+
+			// Tablet footer bottom bottom padding
+			if ( ! empty( $tablet_bottom_padding ) ) {
+				$tablet_padding_css .= 'padding-bottom:'. $tablet_bottom_padding .'px;';
+			}
+
+			// Tablet footer bottom left padding
+			if ( ! empty( $tablet_left_padding ) ) {
+				$tablet_padding_css .= 'padding-left:'. $tablet_left_padding .'px;';
+			}
+
+			// Tablet footer bottom padding css
+			if ( ! empty( $tablet_top_padding )
+				|| ! empty( $tablet_right_padding )
+				|| ! empty( $tablet_bottom_padding )
+				|| ! empty( $tablet_left_padding ) ) {
+				$css .= '@media (max-width: 768px){#footer-bottom{'. $tablet_padding_css .'}}';
+			}
+
+			// Mobile footer bottom top padding
+			if ( ! empty( $mobile_top_padding ) ) {
+				$mobile_padding_css .= 'padding-top:'. $mobile_top_padding .'px;';
+			}
+
+			// Mobile footer bottom right padding
+			if ( ! empty( $mobile_right_padding ) ) {
+				$mobile_padding_css .= 'padding-right:'. $mobile_right_padding .'px;';
+			}
+
+			// Mobile footer bottom bottom padding
+			if ( ! empty( $mobile_bottom_padding ) ) {
+				$mobile_padding_css .= 'padding-bottom:'. $mobile_bottom_padding .'px;';
+			}
+
+			// Mobile footer bottom left padding
+			if ( ! empty( $mobile_left_padding ) ) {
+				$mobile_padding_css .= 'padding-left:'. $mobile_left_padding .'px;';
+			}
+
+			// Mobile footer bottom padding css
+			if ( ! empty( $mobile_top_padding )
+				|| ! empty( $mobile_right_padding )
+				|| ! empty( $mobile_bottom_padding )
+				|| ! empty( $mobile_left_padding ) ) {
+				$css .= '@media (max-width: 480px){#footer-bottom{'. $mobile_padding_css .'}}';
 			}
 
 			// Footer bottom background

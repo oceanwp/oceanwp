@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.04.01* - 1.1.7.4
+* **Fixed** - Search button missing for the top header style.
+
 ### *2017.03.24* - 1.1.7.3
 * **Fixed** - Header issue with the oceanwp_main_schema_markup() function.
 

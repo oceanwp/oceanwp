@@ -30,10 +30,23 @@ $elementor 	= get_post_meta( $get_id, '_elementor_edit_mode', true );
 $columns    = get_theme_mod( 'ocean_footer_widgets_columns', '4' );
 $grid_class = oceanwp_grid_class( $columns );
 
+// Responsive columns
+$tablet_columns    = get_theme_mod( 'ocean_footer_widgets_tablet_columns' );
+$mobile_columns    = get_theme_mod( 'ocean_footer_widgets_mobile_columns' );
+
+// Visibility
+$visibility = get_theme_mod( 'ocean_footer_widgets_visibility', 'all-devices' );
+
 // Classes
 $wrap_classes = array( 'clr' );
-if ( '1' == $columns ) {
-	$wrap_classes[] = 'single-col-footer';
+if ( ! empty( $tablet_columns ) ) {
+	$wrap_classes[] = 'tablet-' . $tablet_columns . '-col';
+}
+if ( ! empty( $mobile_columns ) ) {
+	$wrap_classes[] = 'mobile-' . $mobile_columns . '-col';
+}
+if ( 'all-devices' != $visibility ) {
+	$wrap_classes[] = $visibility;
 }
 $wrap_classes = implode( ' ', $wrap_classes ); ?>
 

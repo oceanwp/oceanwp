@@ -16,46 +16,41 @@ if ( 'post' != get_post_type() ) {
 }
 
 // Get author data
-$author				= get_the_author();
-$author_description	= get_the_author_meta( 'description' );
-$author_url			= esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
-$author_avatar		= get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'ocean_author_bio_avatar_size', 100 ) );
+$author			= get_the_author();
+$description	= get_the_author_meta( 'description' );
+$url			= esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
 
 // Only display if author has a description
-if ( ! $author_description ) {
+if ( ! $description ) {
 	return;
 } ?>
 
 <section id="author-bio" class="clr">
 
-	<?php if ( $author_avatar ) : ?>
+	<div class="author-bio-avatar">
 
-		<div class="author-bio-avatar">
+		<a href="<?php echo esc_url( $url ); ?>" title="<?php esc_attr_e( 'Visit Author Page', 'oceanwp' ); ?>" rel="author" >
+			<?php
+			// Display author avatar
+			echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'ocean_author_bio_avatar_size', 100 ) ); ?>
+		</a>
 
-			<a href="<?php echo esc_url( $author_url ); ?>" title="<?php esc_attr_e( 'Visit Author Page', 'oceanwp' ); ?>" rel="author" >
-				<?php
-				// Display author avatar
-				echo wp_kses_post( $author_avatar ); ?>
-			</a>
-
-		</div><!-- .author-bio-avatar -->
-		
-	<?php endif; ?>
+	</div><!-- .author-bio-avatar -->
 
 	<div class="author-bio-content clr">
 
 		<h4 class="author-bio-title">
-			<a href="<?php echo esc_url( $author_url ); ?>" title="<?php esc_attr_e( 'Visit Author Page', 'oceanwp' ); ?>">
+			<a href="<?php echo esc_url( $url ); ?>" title="<?php esc_attr_e( 'Visit Author Page', 'oceanwp' ); ?>">
 				<?php echo esc_html( strip_tags( $author ) ); ?>
 			</a>
 		</h4><!-- .author-bio-title -->
 
 		<?php
 		// Outputs the author description if one exists
-		if ( $author_description ) : ?>
+		if ( $description ) : ?>
 
 			<div class="author-bio-description clr">
-				<?php echo wp_kses_post( $author_description ); ?>
+				<?php echo wp_kses_post( $description ); ?>
 			</div><!-- author-bio-description -->
 
 		<?php endif; ?>

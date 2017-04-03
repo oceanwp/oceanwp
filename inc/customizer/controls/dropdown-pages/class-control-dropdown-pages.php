@@ -28,23 +28,32 @@ class OceanWP_Customizer_Dropdown_Pages extends WP_Customize_Control {
 	public $type = 'oceanwp-dropdown-pages';
 
 	/**
-	 * Render the control's content.
-	 * Allows the content to be overriden without having to rewrite the wrapper in $this->render().
+	 * Enqueue control related scripts/styles.
 	 *
-	 * @access protected
+	 * @access public
 	 */
-	protected function render_content() {
-		?>
-		<label>
-			<?php if ( ! empty( $this->label ) ) : ?>
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<?php endif; ?>
-			<?php if ( ! empty( $this->description ) ) : ?>
-				<span class="description customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
-			<?php endif; ?>
-		</label>
+	public function enqueue() {
+		wp_enqueue_script( 'oceanwp-dropdown-pages', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/dropdown-pages.min.js', array( 'jquery', 'customize-base' ), false, true );
+	}
 
-		<?php
+	/**
+	 * Refresh the parameters passed to the JavaScript via JSON.
+	 *
+	 * @see WP_Customize_Control::to_json()
+	 */
+	public function to_json() {
+		parent::to_json();
+
+		if ( isset( $this->default ) ) {
+			$this->json['default'] = $this->default;
+		} else {
+			$this->json['default'] = $this->setting->default;
+		}
+		$this->json['value']       = $this->value();
+		$this->json['choices']     = $this->choices;
+		$this->json['link']        = $this->get_link();
+		$this->json['id']          = $this->id;
+
 		$dropdown = wp_dropdown_pages(
 			array(
 				'name'              => '_customize-dropdown-pages-' . esc_attr( $this->id ),
@@ -56,7 +65,38 @@ class OceanWP_Customizer_Dropdown_Pages extends WP_Customize_Control {
 		);
 
 		// Hackily add in the data link parameter.
-		echo str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
+		$dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
 
+		$this->json['dropdown'] = $dropdown;
+
+		$this->json['inputAttrs'] = '';
+		foreach ( $this->input_attrs as $attr => $value ) {
+			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+		}
+
+	}
+
+	/**
+	 * An Underscore (JS) template for this control's content (but not its container).
+	 *
+	 * Class variables for this control class are available in the `data` JS object;
+	 * export custom variables by overriding {@see WP_Customize_Control::to_json()}.
+	 *
+	 * @see WP_Customize_Control::print_template()
+	 *
+	 * @access protected
+	 */
+	protected function content_template() {
+		?>
+		<label>
+			<# if ( data.label ) { #>
+				<span class="customize-control-title">{{{ data.label }}}</span>
+			<# } #>
+			<# if ( data.description ) { #>
+				<span class="description customize-control-description">{{{ data.description }}}</span>
+			<# } #>
+			<div class="customize-control-content">{{{ data.dropdown }}}</div>
+		</label>
+		<?php
 	}
 }

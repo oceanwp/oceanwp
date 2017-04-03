@@ -133,7 +133,7 @@ class OCEANWP_Welcome {
 
 					<ul class="oceanwp-list clr">
 						<li>
-							<a href="https://oceanwp.org/extension/ocean-extra/<?php echo esc_attr( $aff_ref ); ?>" target="_blank"><?php esc_html_e( 'Ocean Extra', 'oceanwp' ); ?> - <span class="price">free</span></a>
+							<a href="https://oceanwp.org/extension/ocean-extra/<?php echo esc_attr( $aff_ref ); ?>" target="_blank"><?php esc_html_e( 'Ocean Extra', 'oceanwp' ); ?> - <span class="price"><?php esc_html_e( 'free', 'oceanwp' ); ?></span></a>
 							<p><?php esc_html_e( 'Add extra features like metaboxes, import/export and a panel to activate the extensions.', 'oceanwp' ); ?></p>
 						</li>
 						<li>
@@ -141,7 +141,7 @@ class OCEANWP_Welcome {
 							<p><?php esc_html_e( 'Add some awesome new widgets to the popular free page builder Elementor.', 'oceanwp' ); ?></p>
 						</li>
 						<li>
-							<a href="https://oceanwp.org/extension/ocean-custom-sidebar/<?php echo esc_attr( $aff_ref ); ?>" target="_blank"><?php esc_html_e( 'Custom Sidebar', 'oceanwp' ); ?> - <span class="price">free</span></a>
+							<a href="https://oceanwp.org/extension/ocean-custom-sidebar/<?php echo esc_attr( $aff_ref ); ?>" target="_blank"><?php esc_html_e( 'Custom Sidebar', 'oceanwp' ); ?> - <span class="price"><?php esc_html_e( 'free', 'oceanwp' ); ?></span></a>
 							<p><?php esc_html_e( 'Generates an unlimited number of sidebars and place them on any page or post.', 'oceanwp' ); ?></p>
 						</li>
 						<li>
@@ -157,11 +157,11 @@ class OCEANWP_Welcome {
 							<p><?php esc_html_e( 'Display a panel on the right or left with your favorite widgets by clicking on an icon in the menu.', 'oceanwp' ); ?></p>
 						</li>
 						<li>
-							<a href="https://oceanwp.org/extension/ocean-demo-import/<?php echo esc_attr( $aff_ref ); ?>" target="_blank"><?php esc_html_e( 'Demo Import', 'oceanwp' ); ?> - <span class="price">free</span></a>
+							<a href="https://oceanwp.org/extension/ocean-demo-import/<?php echo esc_attr( $aff_ref ); ?>" target="_blank"><?php esc_html_e( 'Demo Import', 'oceanwp' ); ?> - <span class="price"><?php esc_html_e( 'free', 'oceanwp' ); ?></span></a>
 							<p><?php esc_html_e( 'Import the OceanWP demo content, widgets and customizer settings with one click.', 'oceanwp' ); ?></p>
 						</li>
 						<li>
-							<a href="https://oceanwp.org/extension/ocean-social-sharing/<?php echo esc_attr( $aff_ref ); ?>" target="_blank"><?php esc_html_e( 'Social Sharing', 'oceanwp' ); ?> - <span class="price">free</span></a>
+							<a href="https://oceanwp.org/extension/ocean-social-sharing/<?php echo esc_attr( $aff_ref ); ?>" target="_blank"><?php esc_html_e( 'Social Sharing', 'oceanwp' ); ?> - <span class="price"><?php esc_html_e( 'free', 'oceanwp' ); ?></span></a>
 							<p><?php esc_html_e( 'A simple extension to add your prefered social sharing buttons to your single posts.', 'oceanwp' ); ?></p>
 						</li>
 					</ul>
@@ -279,21 +279,21 @@ class OCEANWP_Welcome {
 					<p><?php esc_html_e( 'Below you will find links to plugins I personally like and recommend. None of these plugins are required for your theme to work, they simply add additional functionality.', 'oceanwp' ); ?></p>
 
 					<ul class="oceanwp-list clr">
-						<li><a href="http://wordpress.org/plugins/contact-form-7/" target="_blank">Contact Form 7 - <span class="price">free</span></a>
+						<li><a href="http://wordpress.org/plugins/contact-form-7/" target="_blank">Contact Form 7 - <span class="price"><?php esc_html_e( 'free', 'oceanwp' ); ?></span></a>
 						<p><?php esc_html_e( 'Manage multiple contact forms and customize the form and the mail contents with markups.', 'oceanwp' ); ?></p></li>
 						<li><a href="http://www.gravityforms.com/" target="_blank">Gravity Forms - <span class="price">$39</span></a>
 						<p><?php esc_html_e( 'Gravity Forms is the easiest tool to create advanced forms for your WordPress powered website.', 'oceanwp' ); ?></p></li>
-						<li><a href="https://wordpress.org/plugins/elementor/" target="_blank">Elementor - <span class="price">free</span></a>
+						<li><a href="https://wordpress.org/plugins/elementor/" target="_blank">Elementor - <span class="price"><?php esc_html_e( 'free', 'oceanwp' ); ?></span></a>
 						<p><?php esc_html_e( 'The most advanced frontend drag & drop page builder. Create high-end, pixel perfect websites.', 'oceanwp' ); ?></p></li>
-						<li><a href="https://wordpress.org/plugins/beaver-builder-lite-version/" target="_blank">Beaver Builder - <span class="price">free</span></a>
+						<li><a href="https://wordpress.org/plugins/beaver-builder-lite-version/" target="_blank">Beaver Builder - <span class="price"><?php esc_html_e( 'free', 'oceanwp' ); ?></span></a>
 						<p><?php esc_html_e( 'A drag and drop WordPress Page Builder. Create with ease beautiful & professional pages.', 'oceanwp' ); ?></p></li>
 						<li><a href="https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431?ref=OceanWP" target="_blank">Visual Composer - <span class="price">$34</span></a>
 						<p><?php esc_html_e( 'Visual Composer is the ultimate plugin for building every WordPress site without coding.', 'oceanwp' ); ?></p></li>
 						<li><a href="https://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380?ref=OceanWP" target="_blank">Slider Revolution - <span class="price">$19</span></a>
 						<p><?php esc_html_e( 'It&rsquo;s not just a slider, build modern & mobile friendly presentations for your website in no time.', 'oceanwp' ); ?></p></li>
-						<li><a href="https://wordpress.org/plugins/ultimate-member/" target="_blank">Ultimate Member - <span class="price">free</span></a>
+						<li><a href="https://wordpress.org/plugins/ultimate-member/" target="_blank">Ultimate Member - <span class="price"><?php esc_html_e( 'free', 'oceanwp' ); ?></span></a>
 						<p><?php esc_html_e( 'A powerful and flexible plugin that makes it a breeze for users to sign-up and become members.', 'oceanwp' ); ?></p></li>
-						<li><a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce - <span class="price">free</span></a>
+						<li><a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce - <span class="price"><?php esc_html_e( 'free', 'oceanwp' ); ?></span></a>
 						<p><?php esc_html_e( 'WooCommerce is a free eCommerce plugin that allows you to sell anything, beautifully.', 'oceanwp' ); ?></p></li>
 					</ul>
 

@@ -33,7 +33,7 @@ class OceanWP_Customize_Multicheck_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-multicheck', OCEANWP_INC_DIR_URI . 'customizer/controls/multicheck/multicheck.js', array( 'jquery', 'customize-base' ), false, true );
+		wp_enqueue_script( 'oceanwp-multicheck', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/multicheck.min.js', array( 'jquery', 'customize-base' ), false, true );
 	}
 
 	/**

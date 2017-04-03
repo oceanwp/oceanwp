@@ -31,6 +31,22 @@ module.exports = function ( grunt ) {
 					'assets/js/devs/smoothscroll.min.js': 'assets/js/devs/smoothscroll.js',
 					'assets/js/devs/superfish.min.js': 'assets/js/devs/superfish.js',
 					'assets/js/plugins.min.js': [ 'assets/js/devs/**/*.min.js' ],
+
+					'inc/customizer/assets/js/customize-preview.min.js': 'inc/customizer/assets/js/customize-preview.js',
+					'inc/customizer/assets/js/typography-customize-preview.min.js': 'inc/customizer/assets/js/typography-customize-preview.js',
+					'inc/customizer/assets/min/js/general.min.js': 'inc/customizer/controls/general.js',
+					'inc/customizer/assets/min/js/buttonset.min.js': 'inc/customizer/controls/buttonset/buttonset.js',
+					'inc/customizer/assets/min/js/color.min.js': 'inc/customizer/controls/color/color.js',
+					'inc/customizer/assets/min/js/dimensions.min.js': 'inc/customizer/controls/dimensions/dimensions.js',
+					'inc/customizer/assets/min/js/dropdown-pages.min.js': 'inc/customizer/controls/dropdown-pages/dropdown-pages.js',
+					'inc/customizer/assets/min/js/icon-select.min.js': 'inc/customizer/controls/icon-select/icon-select.js',
+					'inc/customizer/assets/min/js/multicheck.min.js': 'inc/customizer/controls/multicheck/multicheck.js',
+					'inc/customizer/assets/min/js/radio-image.min.js': 'inc/customizer/controls/radio-image/radio-image.js',
+					'inc/customizer/assets/min/js/range.min.js': 'inc/customizer/controls/range/range.js',
+					'inc/customizer/assets/min/js/slider.min.js': 'inc/customizer/controls/slider/slider.js',
+					'inc/customizer/assets/min/js/sortable.min.js': 'inc/customizer/controls/sortable/sortable.js',
+					'inc/customizer/assets/min/js/textarea.min.js': 'inc/customizer/controls/textarea/textarea.js',
+					'inc/customizer/assets/min/js/typography.min.js': 'inc/customizer/controls/typography/typography.js'
 				}
 			},
 			prod: {
@@ -51,7 +67,20 @@ module.exports = function ( grunt ) {
 				files: {
 					'assets/css/oceanwp-woocommerce.min.css': 'assets/css/oceanwp-woocommerce.css',
 					'assets/css/oceanwp-lightbox.min.css': 'assets/css/oceanwp-lightbox.css',
-					'inc/welcome/css/welcome.min.css': 'inc/welcome/css/welcome.css'
+					'inc/welcome/css/welcome.min.css': 'inc/welcome/css/welcome.css',
+					'inc/customizer/assets/min/css/rtl.min.css': 'inc/customizer/controls/rtl.css',
+					'inc/customizer/assets/min/css/general.min.css': 'inc/customizer/controls/general.css',
+					'inc/customizer/assets/min/css/buttonset.min.css': 'inc/customizer/controls/buttonset/buttonset.css',
+					'inc/customizer/assets/min/css/color.min.css': 'inc/customizer/controls/color/color.css',
+					'inc/customizer/assets/min/css/dimensions.min.css': 'inc/customizer/controls/dimensions/dimensions.css',
+					'inc/customizer/assets/min/css/heading.min.css': 'inc/customizer/controls/heading/heading.css',
+					'inc/customizer/assets/min/css/icon-select.min.css': 'inc/customizer/controls/icon-select/icon-select.css',
+					'inc/customizer/assets/min/css/radio-image.min.css': 'inc/customizer/controls/radio-image/radio-image.css',
+					'inc/customizer/assets/min/css/range.min.css': 'inc/customizer/controls/range/range.css',
+					'inc/customizer/assets/min/css/slider.min.css': 'inc/customizer/controls/slider/slider.css',
+					'inc/customizer/assets/min/css/sortable.min.css': 'inc/customizer/controls/sortable/sortable.css',
+					'inc/customizer/assets/min/css/textarea.min.css': 'inc/customizer/controls/textarea/textarea.css',
+					'inc/customizer/assets/min/css/typography.min.css': 'inc/customizer/controls/typography/typography.css'
 				}
 			}
 		},
@@ -143,6 +172,7 @@ module.exports = function ( grunt ) {
 					'!.git/**',
 					'!Gruntfile.js',
 					'!package.json',
+					'!desktop.ini',
 					'!prepros.cfg',
 					'!CONTRIBUTING.md',
 					'!README.md',

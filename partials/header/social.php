@@ -61,15 +61,14 @@ if ( has_nav_menu( 'main_menu' ) ) { ?>
 					// Display if there is a value defined
 					if ( $url ) {
 
-						// Escape URL except for the following keys
-						if ( ! in_array( $key, array( 'skype', 'email' ) ) ) {
-							$url = esc_url( $url );
-						}
-
 						// Display link
 						echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
 
-							echo '<a href="'. $url .'" target="_'. esc_attr( $link_target ) .'">';
+							if ( in_array( $key, array( 'skype', 'email' ) ) ) {
+								echo '<a href="'. esc_attr( $url ) .'" target="_'. esc_attr( $link_target ) .'">';
+							} else {
+								echo '<a href="'. esc_url( $url ) .'" target="_'. esc_attr( $link_target ) .'">';
+							}
 
 								echo '<span class="'. esc_attr( $val['icon_class'] ) .'"></span>';
 

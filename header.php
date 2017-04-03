@@ -3,16 +3,7 @@
  * The Header for our theme.
  *
  * @package OceanWP WordPress theme
- */
-
-// Main schema markup
-if ( is_singular( 'post' ) ) {
-	$itemprop = '';
-	$itemtype = 'http://schema.org/Blog';
-} else {
-	$itemtype = 'http://schema.org/WebPageElement';
-	$itemprop = 'mainContentOfPage';
-} ?>
+ */ ?>
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -22,6 +13,16 @@ if ( is_singular( 'post' ) ) {
 
 <?php wp_head(); ?>
 </head>
+
+<?php
+// Main schema markup
+if ( is_singular( 'post' ) ) {
+	$itemprop = '';
+	$itemtype = 'http://schema.org/Blog';
+} else {
+	$itemtype = 'http://schema.org/WebPageElement';
+	$itemprop = 'mainContentOfPage';
+} ?>
 
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 

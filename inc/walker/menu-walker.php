@@ -169,12 +169,20 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 		    	$description = '<span class="nav-content">'. $item->description .'</span>';
 		    }
 
+		    // Text before and after
+		    $text_before = '';
+		    $text_after  = '';
+		    if ( $item->icon != '' ) {
+		    	$text_before = '<span class="menu-text">';
+		    	$text_after  = '</span>';
+		    }	    
+
 		    // Output
 		    $item_output = $args->before;
 
 			$item_output .= '<a'. $attributes .' class="menu-link">';
 
-			$item_output .= $icon . $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			$item_output .= $args->link_before . $icon . $text_before . apply_filters( 'the_title', $item->title, $item->ID ) . $text_after . $args->link_after;
 
 	    	if( $depth !== 0 ) {
 		    	$item_output .= $description;

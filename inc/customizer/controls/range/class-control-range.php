@@ -31,8 +31,8 @@ class OceanWP_Customizer_Range_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-range', OCEANWP_INC_DIR_URI . 'customizer/controls/range/range.js', array( 'jquery', 'customize-base' ), false, true );
-		wp_enqueue_style( 'oceanwp-range-css', OCEANWP_INC_DIR_URI . 'customizer/controls/range/range.css', null );
+		wp_enqueue_script( 'oceanwp-range', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/range.min.js', array( 'jquery', 'customize-base' ), false, true );
+		wp_enqueue_style( 'oceanwp-range', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/range.min.css', null );
 	}
 
 	/**
@@ -79,7 +79,7 @@ class OceanWP_Customizer_Range_Control extends WP_Customize_Control {
 			<# if ( data.description ) { #>
 				<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
-			<div class="wrapper">
+			<div class="control-wrap">
 				<input type="range" {{{ data.inputAttrs }}} value="{{ data.value }}" {{{ data.link }}} data-reset_value="{{ data.default }}" />
 				<input type="number" {{{ data.inputAttrs }}} class="oceanwp-range-input" value="{{ data.value }}" />
 				<span class="oceanwp-reset-slider"><span class="dashicons dashicons-image-rotate"></span></span>

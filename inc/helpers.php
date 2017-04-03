@@ -36,7 +36,7 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 		$post_id      = oceanwp_post_id();
 
 		// RTL
-		if ( is_RTL() ) {
+		if ( is_rtl() ) {
 			$classes[] = 'rtl';
 		}
 		
@@ -483,6 +483,12 @@ if ( ! function_exists( 'oceanwp_topbar_classes' ) ) {
 
 		// Clearfix class
 		$classes[] = 'clr';
+
+		// Visibility
+		$visibility = get_theme_mod( 'ocean_top_bar_visibility', 'all-devices' );
+		if ( 'all-devices' != $visibility ) {
+			$classes[] = $visibility;
+		}
 
 		// Set keys equal to vals
 		$classes = array_combine( $classes, $classes );
@@ -2501,7 +2507,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 		                    <h3 class="comment-link"><?php printf( esc_html__( '%s ', 'oceanwp' ), sprintf( '%s', get_comment_author_link() ) ); ?></h3>
 
 		                    <span class="comment-meta commentmetadata">
-		                    	<?php if ( ! is_RTL() ) { ?>
+		                    	<?php if ( ! is_rtl() ) { ?>
 		                        	<span class="comment-date"><?php comment_date('j M Y'); ?></span>
 		                        <?php } ?>
 
@@ -2509,7 +2515,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 
 		                        <?php edit_comment_link(__('edit', 'oceanwp' )); ?>
 
-		                    	<?php if ( is_RTL() ) { ?>
+		                    	<?php if ( is_rtl() ) { ?>
 		                        	<span class="comment-date"><?php comment_date('j M Y'); ?></span>
 		                        <?php } ?>
 		                    </span>
@@ -3065,7 +3071,7 @@ if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
 	function oceanwp_register_tm_strings() {
 
 		return apply_filters( 'ocean_register_tm_strings', array(
-			'ocean_top_bar_content' 			=> '<i class="icon-phone"></i> 1-555-645-324 <i class="icon-user"></i> [oceanwp_login]',
+			'ocean_top_bar_content' 			=> '<i class="icon-home"></i> Street Name <i class="icon-clock"></i> Since 2006',
 			'ocean_footer_copyright_text' 		=> 'Copyright [oceanwp_date] - OceanWP Theme by Nick Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>',
 			'ocean_woo_menu_icon_custom_link' 	=> '',
 		) );
@@ -3357,8 +3363,7 @@ if ( ! function_exists( 'oceanwp_sidr_menu_source' ) ) {
 		// Add main navigation
 		$items['nav'] = '#site-navigation';
 
-		if ( 'full_screen' != oceanwp_header_style()
-			& 'top' != oceanwp_header_style() ) {
+		if ( 'full_screen' != oceanwp_header_style() ) {
 
 			// Add social menu
 			if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
@@ -3401,7 +3406,7 @@ if ( ! function_exists( 'is_autoptimize_activated' ) ) {
 }
 
 /**
- * Main schema markup
+ * DECREPITATED main schema markup
  *
  * @since 1.0.0
  */

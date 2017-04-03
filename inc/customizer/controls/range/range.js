@@ -10,7 +10,8 @@ wp.customize.controlConstructor['oceanwp-range'] = wp.customize.Control.extend({
 			value,
 			this_input,
 			input_default,
-			changeAction;
+			changeAction,
+			oceanwp_range_input_number_timeout;
 
 		// Update the text value
 		jQuery( 'input[type=range]' ).on( 'mousedown', function() {
@@ -28,8 +29,7 @@ wp.customize.controlConstructor['oceanwp-range'] = wp.customize.Control.extend({
 
 		} );
 
-		var oceanwp_range_input_number_timeout;
-
+		// Auto correct the number input
 		function oceanwp_autocorrect_range_input_number( input_number, timeout ) {
 
 			var range_input 	= input_number,

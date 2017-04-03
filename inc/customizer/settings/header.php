@@ -86,7 +86,6 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			$wp_customize->add_control( new OceanWP_Customizer_Dropdown_Pages( $wp_customize, 'ocean_header_page_id', array(
 				'label'	   				=> esc_html__( 'Page ID', 'oceanwp' ),
 				'description'	   		=> esc_html__( 'Choose a page where the content will be displayed in the header.', 'oceanwp' ),
-				'type' 					=> 'select',
 				'section'  				=> 'ocean_header_general',
 				'settings' 				=> 'ocean_header_page_id',
 				'priority' 				=> 10,
@@ -247,14 +246,56 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'sanitize_callback' 	=> false,
 			) );
 
+			$wp_customize->add_setting( 'ocean_header_tablet_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_header_tablet_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_header_tablet_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_header_tablet_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_header_mobile_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_header_mobile_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_header_mobile_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_header_mobile_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_header_padding', array(
 				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
 				'section'  				=> 'ocean_header_general',				
-				'settings'   => array(
-					'top'    => 'ocean_header_top_padding',
-					'right'  => 'ocean_header_right_padding',
-					'bottom' => 'ocean_header_bottom_padding',
-					'left'   => 'ocean_header_left_padding',
+				'settings'   => array(					
+		            'desktop_top' 		=> 'ocean_header_top_padding',
+		            'desktop_right' 	=> 'ocean_header_right_padding',
+		            'desktop_bottom' 	=> 'ocean_header_bottom_padding',
+		            'desktop_left' 		=> 'ocean_header_left_padding',
+		            'tablet_top' 		=> 'ocean_header_tablet_top_padding',
+		            'tablet_right' 		=> 'ocean_header_tablet_right_padding',
+		            'tablet_bottom' 	=> 'ocean_header_tablet_bottom_padding',
+		            'tablet_left' 		=> 'ocean_header_tablet_left_padding',
+		            'mobile_top' 		=> 'ocean_header_mobile_top_padding',
+		            'mobile_right' 		=> 'ocean_header_mobile_right_padding',
+		            'mobile_bottom' 	=> 'ocean_header_mobile_bottom_padding',
+		            'mobile_left' 		=> 'ocean_header_mobile_left_padding',
 				),
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_hasnt_medium_header_style',
@@ -758,46 +799,106 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			/**
 			 * Medium Header Top Header Padding Top/Bottom
 			 */
-			$wp_customize->add_setting( 'ocean_medium_header_top_header_padding', array(
+			$wp_customize->add_setting( 'ocean_medium_header_top_header_top_padding', array(
 				'transport' 			=> 'postMessage',
-				'default'     			=> '30',
+				'default'           	=> '30',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_medium_header_top_header_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '30',
 				'sanitize_callback' 	=> false,
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_medium_header_top_header_padding', array(
-				'label'	   				=> esc_html__( 'Padding Top/Bottom (px)', 'oceanwp' ),
+			$wp_customize->add_setting( 'ocean_medium_header_top_header_tablet_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_medium_header_top_header_tablet_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_medium_header_top_header_mobile_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_medium_header_top_header_mobile_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_medium_header_top_header_padding', array(
+				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
 				'section'  				=> 'ocean_header_medium_style',
-				'settings' 				=> 'ocean_medium_header_top_header_padding',
+				'settings' => array(
+		            'desktop_top' 		=> 'ocean_medium_header_top_header_top_padding',
+		            'desktop_bottom' 	=> 'ocean_medium_header_top_header_bottom_padding',
+		            'tablet_top' 		=> 'ocean_medium_header_top_header_tablet_top_padding',
+		            'tablet_bottom' 	=> 'ocean_medium_header_top_header_tablet_bottom_padding',
+		            'mobile_top' 		=> 'ocean_medium_header_top_header_mobile_top_padding',
+		            'mobile_bottom' 	=> 'ocean_medium_header_top_header_mobile_bottom_padding',
+			    ),
 				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
 			) ) );
 
 			/**
 			 * Medium Header Sticky Top Header Padding Top/Bottom
 			 */
-			$wp_customize->add_setting( 'ocean_medium_header_sticky_top_header_padding', array(
+			$wp_customize->add_setting( 'ocean_medium_header_sticky_top_header_top_padding', array(
 				'transport' 			=> 'postMessage',
-				'default'     			=> '20',
+				'default'           	=> '20',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_medium_header_sticky_top_header_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '20',
 				'sanitize_callback' 	=> false,
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_medium_header_sticky_top_header_padding', array(
-				'label'	   				=> esc_html__( 'Sticky Padding Top/Bottom (px)', 'oceanwp' ),
+			$wp_customize->add_setting( 'ocean_medium_header_sticky_top_header_tablet_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_medium_header_sticky_top_header_tablet_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_medium_header_sticky_top_header_mobile_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_medium_header_sticky_top_header_mobile_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_medium_header_sticky_top_header_padding', array(
+				'label'	   				=> esc_html__( 'Sticky Padding (px)', 'oceanwp' ),
 				'description'	   		=> esc_html__( 'If you use the sticky header extension', 'oceanwp' ),
 				'section'  				=> 'ocean_header_medium_style',
-				'settings' 				=> 'ocean_medium_header_sticky_top_header_padding',
+				'settings' => array(
+		            'desktop_top' 		=> 'ocean_medium_header_sticky_top_header_top_padding',
+		            'desktop_bottom' 	=> 'ocean_medium_header_sticky_top_header_bottom_padding',
+		            'tablet_top' 		=> 'ocean_medium_header_sticky_top_header_tablet_top_padding',
+		            'tablet_bottom' 	=> 'ocean_medium_header_sticky_top_header_tablet_bottom_padding',
+		            'mobile_top' 		=> 'ocean_medium_header_sticky_top_header_mobile_top_padding',
+		            'mobile_bottom' 	=> 'ocean_medium_header_sticky_top_header_mobile_bottom_padding',
+			    ),
 				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
 			) ) );
 
 			/**
@@ -861,23 +962,53 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			/**
 			 * Medium Header Menu Items Padding
 			 */
-			$wp_customize->add_setting( 'ocean_medium_header_menu_items_padding', array(
+			$wp_customize->add_setting( 'ocean_medium_header_menu_items_right_padding', array(
 				'transport' 			=> 'postMessage',
-				'default'     			=> '22',
+				'default'           	=> '22',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_medium_header_menu_items_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '22',
 				'sanitize_callback' 	=> false,
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_medium_header_menu_items_padding', array(
-				'label'	   				=> esc_html__( 'Menu Items Left/Right Padding (px)', 'oceanwp' ),
+			$wp_customize->add_setting( 'ocean_medium_header_menu_items_tablet_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_medium_header_menu_items_tablet_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_medium_header_menu_items_mobile_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_medium_header_menu_items_mobile_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_medium_header_menu_items_padding', array(
+				'label'	   				=> esc_html__( 'Menu Items Padding (px)', 'oceanwp' ),
 				'section'  				=> 'ocean_header_medium_style',
-				'settings' 				=> 'ocean_medium_header_menu_items_padding',
+				'settings' => array(
+		            'desktop_right' 	=> 'ocean_medium_header_menu_items_right_padding',
+		            'desktop_left' 		=> 'ocean_medium_header_menu_items_left_padding',
+		            'tablet_right' 		=> 'ocean_medium_header_menu_items_tablet_right_padding',
+		            'tablet_left' 		=> 'ocean_medium_header_menu_items_tablet_left_padding',
+		            'mobile_right' 		=> 'ocean_medium_header_menu_items_mobile_right_padding',
+		            'mobile_left' 		=> 'ocean_medium_header_menu_items_mobile_left_padding',
+			    ),
 				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
-			        'max'   => 50,
+			        'max'   => 60,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
 			) ) );
 
 			/**
@@ -1156,17 +1287,30 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'transport' 			=> 'postMessage',
 				'sanitize_callback' 	=> false,
 			) );
+			$wp_customize->add_setting( 'ocean_logo_max_width_tablet', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_logo_max_width', array(
+			$wp_customize->add_setting( 'ocean_logo_max_width_mobile', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_logo_max_width', array(
 				'label'	   				=> esc_html__( 'Max Width (px)', 'oceanwp' ),
-				'type' 					=> 'number',
 				'section'  				=> 'ocean_header_logo',
-				'settings' 				=> 'ocean_logo_max_width',
+				'settings' => array(
+		            'desktop' 	=> 'ocean_logo_max_width',
+		            'tablet' 	=> 'ocean_logo_max_width_tablet',
+		            'mobile' 	=> 'ocean_logo_max_width_mobile',
+			    ),
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_custom_logo',
 			    'input_attrs' 			=> array(
 			        'min'   => 10,
 			        'max'   => 500,
+			        'step'  => 1,
 			    ),
 			) ) );
 
@@ -1960,6 +2104,91 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Menu Social Font Size
+			 */
+			$wp_customize->add_setting( 'ocean_menu_social_font_size', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_menu_social_tablet_font_size', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_menu_social_mobile_font_size', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_menu_social_font_size', array(
+				'label' 			=> esc_html__( 'Font Size (px)', 'oceanwp' ),
+				'section'  			=> 'ocean_header_menu_social',
+				'settings' => array(
+		            'desktop' 	=> 'ocean_menu_social_font_size',
+		            'tablet' 	=> 'ocean_menu_social_tablet_font_size',
+		            'mobile' 	=> 'ocean_menu_social_mobile_font_size',
+			    ),
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_menu_social',
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 100,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
+			 * Menu Social Padding
+			 */
+			$wp_customize->add_setting( 'ocean_menu_social_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_menu_social_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_menu_social_tablet_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_menu_social_tablet_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_menu_social_mobile_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_menu_social_mobile_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_menu_social_padding', array(
+				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_header_menu_social',
+				'settings' => array(
+		            'desktop_right' 	=> 'ocean_menu_social_right_padding',
+		            'desktop_left' 		=> 'ocean_menu_social_left_padding',
+		            'tablet_right' 		=> 'ocean_menu_social_tablet_right_padding',
+		            'tablet_left' 		=> 'ocean_menu_social_tablet_left_padding',
+		            'mobile_right' 		=> 'ocean_menu_social_mobile_right_padding',
+		            'mobile_left' 		=> 'ocean_menu_social_mobile_left_padding',
+			    ),
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_menu_social',
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 60,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
 			 * Menu Social Link Color
 			 */
 			$wp_customize->add_setting( 'ocean_menu_social_links_color', array(
@@ -2284,99 +2513,153 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 		public static function head_css( $output ) {
 
 			// Get header style
-			$header_style 									= get_theme_mod( 'ocean_header_style', 'minimal' );
+			$header_style 												= get_theme_mod( 'ocean_header_style', 'minimal' );
 		
 			// Global vars
-			$header_height 									= get_theme_mod( 'ocean_header_height', '74' );
-			$top_height 									= get_theme_mod( 'ocean_top_header_height', '40' );
-			$header_background 								= get_theme_mod( 'ocean_header_background', '#ffffff' );
-			$header_border_bottom 							= get_theme_mod( 'ocean_header_border_bottom', '#f1f1f1' );
-			$header_top_padding								= get_theme_mod( 'ocean_header_top_padding', '0' );
-			$header_right_padding							= get_theme_mod( 'ocean_header_right_padding', '0' );
-			$header_bottom_padding							= get_theme_mod( 'ocean_header_bottom_padding', '0' );
-			$header_left_padding							= get_theme_mod( 'ocean_header_left_padding', '0' );
-			$ransparent_header_bg							= get_theme_mod( 'ocean_transparent_header_bg' );
-			$top_header_menu_background 					= get_theme_mod( 'ocean_top_header_menu_background', '#ffffff' );
-			$top_header_search_button_border_color 			= get_theme_mod( 'ocean_top_header_search_button_border_color', '#f1f1f1' );
-			$top_header_search_button_color 				= get_theme_mod( 'ocean_top_header_search_button_color', '#333333' );
-			$top_header_search_button_hover_color 			= get_theme_mod( 'ocean_top_header_search_button_hover_color', '#13aff0' );
-			$full_screen_header_menu_bar_color 				= get_theme_mod( 'ocean_full_screen_header_menu_bar_color', '#333333' );
-			$full_screen_header_menu_bar_close_color 		= get_theme_mod( 'ocean_full_screen_header_menu_bar_close_color', '#ffffff' );
-			$full_screen_header_bg 							= get_theme_mod( 'ocean_full_screen_header_bg', 'rgba(0,0,0,0.9)' );
-			$full_screen_header_links_bg_color 				= get_theme_mod( 'ocean_full_screen_header_links_bg_color' );
-			$full_screen_header_links_hover_bg_color 		= get_theme_mod( 'ocean_full_screen_header_links_hover_bg_color' );
-			$full_screen_header_links_color 				= get_theme_mod( 'ocean_full_screen_header_links_color', '#ffffff' );
-			$full_screen_header_links_hover_color 			= get_theme_mod( 'ocean_full_screen_header_links_hover_color', '#929292' );
-			$full_screen_header_search_color 				= get_theme_mod( 'ocean_full_screen_header_search_color', '#ffffff' );
-			$full_screen_header_search_dashed_bg 			= get_theme_mod( 'ocean_full_screen_header_search_dashed_bg', '#ffffff' );
-			$full_screen_header_search_border_color 		= get_theme_mod( 'ocean_full_screen_header_search_border_color', '#666666' );
-			$full_screen_header_search_hover_border_color 	= get_theme_mod( 'ocean_full_screen_header_search_hover_border_color', '#ffffff' );
-			$full_screen_header_search_focus_border_color 	= get_theme_mod( 'ocean_full_screen_header_search_focus_border_color', '#ffffff' );
-			$medium_header_top_header_padding 				= get_theme_mod( 'ocean_medium_header_top_header_padding', '30' );
-			$medium_header_sticky_top_header_padding 		= get_theme_mod( 'ocean_medium_header_sticky_top_header_padding', '20' );
-			$medium_header_menu_height 						= get_theme_mod( 'ocean_medium_header_menu_height', '60' );
-			$medium_header_menu_position 					= get_theme_mod( 'ocean_medium_header_menu_position', 'center-menu' );
-			$medium_header_menu_items_padding 				= get_theme_mod( 'ocean_medium_header_menu_items_padding', '22' );
-			$medium_header_top_header_bg 					= get_theme_mod( 'ocean_medium_header_top_header_bg', '#ffffff' );
-			$medium_header_menu_bg 							= get_theme_mod( 'ocean_medium_header_menu_bg', '#f9f9f9' );
-			$medium_header_search_bg 						= get_theme_mod( 'ocean_medium_header_search_bg', '#f5f5f5' );
-			$medium_header_search_color 					= get_theme_mod( 'ocean_medium_header_search_color', '#333333' );
-			$medium_header_search_placeholder_color 		= get_theme_mod( 'ocean_medium_header_search_placeholder_color', '#333333' );
-			$medium_header_search_button_color 				= get_theme_mod( 'ocean_medium_header_search_button_color', '#333333' );
-			$medium_header_search_button_hover_color 		= get_theme_mod( 'ocean_medium_header_search_button_hover_color', '#13aff0' );
-			$logo_max_width									= get_theme_mod( 'ocean_logo_max_width' );
-			$logo_color 									= get_theme_mod( 'ocean_logo_color', '#333333' );
-			$logo_hover_color 								= get_theme_mod( 'ocean_logo_hover_color', '#13aff0' );
-			$search_dropdown_input_bg 						= get_theme_mod( 'ocean_search_dropdown_input_background' );
-			$search_dropdown_input_color 					= get_theme_mod( 'ocean_search_dropdown_input_color', '#333333' );
-			$search_dropdown_input_border 					= get_theme_mod( 'ocean_search_dropdown_input_border', '#dddddd' );
-			$search_dropdown_input_border_focus 			= get_theme_mod( 'ocean_search_dropdown_input_border_focus', '#bbbbbb' );
-			$search_overlay_bg 								= get_theme_mod( 'ocean_search_overlay_bg', 'rgba(0,0,0,0.9)' );
-			$search_overlay_input_color 					= get_theme_mod( 'ocean_search_overlay_input_color', '#ffffff' );
-			$search_overlay_input_dashed_bg 				= get_theme_mod( 'ocean_search_overlay_input_dashed_bg', '#ffffff' );
-			$search_overlay_input_border 					= get_theme_mod( 'ocean_search_overlay_input_border_color', '#444444' );
-			$search_overlay_input_border_hover 				= get_theme_mod( 'ocean_search_overlay_input_hover_border_color', '#777777' );
-			$search_overlay_input_border_focus 				= get_theme_mod( 'ocean_search_overlay_input_focus_border_color', '#ffffff' );
-			$search_overlay_close_button_color 				= get_theme_mod( 'ocean_search_overlay_close_button_color', '#ffffff' );
-			$menu_items_padding 							= get_theme_mod( 'ocean_menu_items_padding', '15' );
-			$menu_link_color 								= get_theme_mod( 'ocean_menu_link_color', '#555555' );
-			$menu_link_color_hover 							= get_theme_mod( 'ocean_menu_link_color_hover', '#13aff0' );
-			$menu_link_color_active 						= get_theme_mod( 'ocean_menu_link_color_active', '#555555' );
-			$menu_link_background 							= get_theme_mod( 'ocean_menu_link_background' );
-			$menu_link_hover_background 					= get_theme_mod( 'ocean_menu_link_hover_background' );
-			$menu_link_active_background 					= get_theme_mod( 'ocean_menu_link_active_background' );
-			$dropdown_width 								= get_theme_mod( 'ocean_dropdown_width', '180' );
-			$dropdown_menu_background 						= get_theme_mod( 'ocean_dropdown_menu_background', '#ffffff' );
-			$dropdown_menu_top_border 						= get_theme_mod( 'ocean_dropdown_menu_top_border', '#13aff0' );
-			$dropdown_menu_borders 							= get_theme_mod( 'ocean_dropdown_menu_borders', '#f1f1f1' );
-			$dropdown_menu_link_color 						= get_theme_mod( 'ocean_dropdown_menu_link_color', '#333333' );
-			$dropdown_menu_link_color_hover 				= get_theme_mod( 'ocean_dropdown_menu_link_color_hover', '#555555' );
-			$dropdown_menu_link_hover_bg 					= get_theme_mod( 'ocean_dropdown_menu_link_hover_bg', '#f8f8f8' );
-			$dropdown_menu_link_color_active 				= get_theme_mod( 'ocean_dropdown_menu_link_color_active' );
-			$dropdown_menu_link_bg_active 					= get_theme_mod( 'ocean_dropdown_menu_link_bg_active' );
-			$dropdown_category_title_bg 					= get_theme_mod( 'ocean_dropdown_category_title_bg', '#f8f8f8' );
-			$dropdown_category_title_color 					= get_theme_mod( 'ocean_dropdown_category_title_color', '#222222' );
-			$dropdown_category_links_color 					= get_theme_mod( 'ocean_dropdown_category_links_color', '#555555' );
-			$dropdown_category_links_hover_color 			= get_theme_mod( 'ocean_dropdown_category_links_hover_color', '#333333' );
-			$dropdown_category_date_color 					= get_theme_mod( 'ocean_dropdown_category_date_color', '#bbbbbb' );
-			$menu_social_links_color 						= get_theme_mod( 'ocean_menu_social_links_color' );
-			$menu_social_hover_links_color 					= get_theme_mod( 'ocean_menu_social_hover_links_color' );
-			$mobile_menu_sidr_close_button_bg 				= get_theme_mod( 'ocean_mobile_menu_sidr_close_button_background', '#f8f8f8' );
-			$mobile_menu_sidr_background 					= get_theme_mod( 'ocean_mobile_menu_sidr_background', '#ffffff' );
-			$mobile_menu_sidr_borders 						= get_theme_mod( 'ocean_mobile_menu_sidr_borders', 'rgba(0,0,0,0.035)' );
-			$mobile_menu_links 								= get_theme_mod( 'ocean_mobile_menu_links', '#555555' );
-			$mobile_menu_links_hover 						= get_theme_mod( 'ocean_mobile_menu_links_hover', '#13aff0' );
-			$mobile_menu_sidr_dropdowns_bg 					= get_theme_mod( 'ocean_mobile_menu_sidr_dropdowns_background', 'rgba(0,0,0,0.02)' );
-			$mobile_menu_sidr_search_bg 					= get_theme_mod( 'ocean_mobile_menu_sidr_search_bg' );
-			$mobile_menu_sidr_search_color 					= get_theme_mod( 'ocean_mobile_menu_sidr_search_color', '#333333' );
-			$mobile_menu_sidr_search_border_color 			= get_theme_mod( 'ocean_mobile_menu_sidr_search_border_color', '#dddddd' );
-			$mobile_menu_sidr_search_border_color_focus 	= get_theme_mod( 'ocean_mobile_menu_sidr_search_border_color_focus', '#bbbbbb' );
-			$mobile_menu_sidr_search_button_color 			= get_theme_mod( 'ocean_mobile_menu_sidr_search_button_color', '#555555' );
-			$mobile_menu_sidr_search_button_hover_color 	= get_theme_mod( 'ocean_mobile_menu_sidr_search_button_hover_color', '#222222' );
+			$header_height 												= get_theme_mod( 'ocean_header_height', '74' );
+			$top_height 												= get_theme_mod( 'ocean_top_header_height', '40' );
+			$header_background 											= get_theme_mod( 'ocean_header_background', '#ffffff' );
+			$header_border_bottom 										= get_theme_mod( 'ocean_header_border_bottom', '#f1f1f1' );
+			$header_top_padding											= get_theme_mod( 'ocean_header_top_padding', '0' );
+			$header_right_padding										= get_theme_mod( 'ocean_header_right_padding', '0' );
+			$header_bottom_padding										= get_theme_mod( 'ocean_header_bottom_padding', '0' );
+			$header_left_padding										= get_theme_mod( 'ocean_header_left_padding', '0' );
+			$tablet_header_top_padding 									= get_theme_mod( 'ocean_header_tablet_top_padding' );
+			$tablet_header_right_padding 								= get_theme_mod( 'ocean_header_tablet_right_padding' );
+			$tablet_header_bottom_padding 								= get_theme_mod( 'ocean_header_tablet_bottom_padding' );
+			$tablet_header_left_padding 								= get_theme_mod( 'ocean_header_tablet_left_padding' );
+			$mobile_header_top_padding 									= get_theme_mod( 'ocean_header_mobile_top_padding' );
+			$mobile_header_right_padding 								= get_theme_mod( 'ocean_header_mobile_right_padding' );
+			$mobile_header_bottom_padding 								= get_theme_mod( 'ocean_header_mobile_bottom_padding' );
+			$mobile_header_left_padding 								= get_theme_mod( 'ocean_header_mobile_left_padding' );
+			$ransparent_header_bg										= get_theme_mod( 'ocean_transparent_header_bg' );
+			$top_header_menu_background 								= get_theme_mod( 'ocean_top_header_menu_background', '#ffffff' );
+			$top_header_search_button_border_color 						= get_theme_mod( 'ocean_top_header_search_button_border_color', '#f1f1f1' );
+			$top_header_search_button_color 							= get_theme_mod( 'ocean_top_header_search_button_color', '#333333' );
+			$top_header_search_button_hover_color 						= get_theme_mod( 'ocean_top_header_search_button_hover_color', '#13aff0' );
+			$full_screen_header_menu_bar_color 							= get_theme_mod( 'ocean_full_screen_header_menu_bar_color', '#333333' );
+			$full_screen_header_menu_bar_close_color 					= get_theme_mod( 'ocean_full_screen_header_menu_bar_close_color', '#ffffff' );
+			$full_screen_header_bg 										= get_theme_mod( 'ocean_full_screen_header_bg', 'rgba(0,0,0,0.9)' );
+			$full_screen_header_links_bg_color 							= get_theme_mod( 'ocean_full_screen_header_links_bg_color' );
+			$full_screen_header_links_hover_bg_color 					= get_theme_mod( 'ocean_full_screen_header_links_hover_bg_color' );
+			$full_screen_header_links_color 							= get_theme_mod( 'ocean_full_screen_header_links_color', '#ffffff' );
+			$full_screen_header_links_hover_color 						= get_theme_mod( 'ocean_full_screen_header_links_hover_color', '#929292' );
+			$full_screen_header_search_color 							= get_theme_mod( 'ocean_full_screen_header_search_color', '#ffffff' );
+			$full_screen_header_search_dashed_bg 						= get_theme_mod( 'ocean_full_screen_header_search_dashed_bg', '#ffffff' );
+			$full_screen_header_search_border_color 					= get_theme_mod( 'ocean_full_screen_header_search_border_color', '#666666' );
+			$full_screen_header_search_hover_border_color 				= get_theme_mod( 'ocean_full_screen_header_search_hover_border_color', '#ffffff' );
+			$full_screen_header_search_focus_border_color 				= get_theme_mod( 'ocean_full_screen_header_search_focus_border_color', '#ffffff' );
+			$medium_header_top_header_top_padding 						= get_theme_mod( 'ocean_medium_header_top_header_top_padding', '30' );
+			$medium_header_top_header_bottom_padding 					= get_theme_mod( 'ocean_medium_header_top_header_bottom_padding', '30' );
+			$medium_header_top_header_tablet_top_padding 				= get_theme_mod( 'ocean_medium_header_top_header_tablet_top_padding' );
+			$medium_header_top_header_tablet_bottom_padding 			= get_theme_mod( 'ocean_medium_header_top_header_tablet_bottom_padding' );
+			$medium_header_top_header_mobile_top_padding 				= get_theme_mod( 'ocean_medium_header_top_header_mobile_top_padding' );
+			$medium_header_top_header_mobile_bottom_padding 			= get_theme_mod( 'ocean_medium_header_top_header_mobile_bottom_padding' );
+			$medium_header_sticky_top_header_top_padding 				= get_theme_mod( 'ocean_medium_header_sticky_top_header_top_padding', '20' );
+			$medium_header_sticky_top_header_bottom_padding 			= get_theme_mod( 'ocean_medium_header_sticky_top_header_bottom_padding', '20' );
+			$medium_header_sticky_top_header_tablet_top_padding 		= get_theme_mod( 'ocean_medium_header_sticky_top_header_tablet_top_padding' );
+			$medium_header_sticky_top_header_tablet_bottom_padding 		= get_theme_mod( 'ocean_medium_header_sticky_top_header_tablet_bottom_padding' );
+			$medium_header_sticky_top_header_mobile_top_padding 		= get_theme_mod( 'ocean_medium_header_sticky_top_header_mobile_top_padding' );
+			$medium_header_sticky_top_header_mobile_bottom_padding 		= get_theme_mod( 'ocean_medium_header_sticky_top_header_mobile_bottom_padding' );
+			$medium_header_menu_height 									= get_theme_mod( 'ocean_medium_header_menu_height', '60' );
+			$medium_header_menu_position 								= get_theme_mod( 'ocean_medium_header_menu_position', 'center-menu' );
+			$medium_header_menu_items_right_padding 					= get_theme_mod( 'ocean_medium_header_menu_items_right_padding', '22' );
+			$medium_header_menu_items_left_padding 						= get_theme_mod( 'ocean_medium_header_menu_items_left_padding', '22' );
+			$medium_header_menu_items_tablet_right_padding 				= get_theme_mod( 'ocean_medium_header_menu_items_tablet_right_padding' );
+			$medium_header_menu_items_tablet_left_padding 				= get_theme_mod( 'ocean_medium_header_menu_items_tablet_left_padding' );
+			$medium_header_menu_items_mobile_right_padding 				= get_theme_mod( 'ocean_medium_header_menu_items_mobile_right_padding' );
+			$medium_header_menu_items_mobile_left_padding 				= get_theme_mod( 'ocean_medium_header_menu_items_mobile_left_padding' );
+			$medium_header_top_header_bg 								= get_theme_mod( 'ocean_medium_header_top_header_bg', '#ffffff' );
+			$medium_header_menu_bg 										= get_theme_mod( 'ocean_medium_header_menu_bg', '#f9f9f9' );
+			$medium_header_search_bg 									= get_theme_mod( 'ocean_medium_header_search_bg', '#f5f5f5' );
+			$medium_header_search_color 								= get_theme_mod( 'ocean_medium_header_search_color', '#333333' );
+			$medium_header_search_placeholder_color 					= get_theme_mod( 'ocean_medium_header_search_placeholder_color', '#333333' );
+			$medium_header_search_button_color 							= get_theme_mod( 'ocean_medium_header_search_button_color', '#333333' );
+			$medium_header_search_button_hover_color 					= get_theme_mod( 'ocean_medium_header_search_button_hover_color', '#13aff0' );
+			$logo_max_width												= get_theme_mod( 'ocean_logo_max_width' );
+			$logo_max_width_tablet										= get_theme_mod( 'ocean_logo_max_width_tablet' );
+			$logo_max_width_mobile										= get_theme_mod( 'ocean_logo_max_width_mobile' );
+			$logo_color 												= get_theme_mod( 'ocean_logo_color', '#333333' );
+			$logo_hover_color 											= get_theme_mod( 'ocean_logo_hover_color', '#13aff0' );
+			$search_dropdown_input_bg 									= get_theme_mod( 'ocean_search_dropdown_input_background' );
+			$search_dropdown_input_color 								= get_theme_mod( 'ocean_search_dropdown_input_color', '#333333' );
+			$search_dropdown_input_border 								= get_theme_mod( 'ocean_search_dropdown_input_border', '#dddddd' );
+			$search_dropdown_input_border_focus 						= get_theme_mod( 'ocean_search_dropdown_input_border_focus', '#bbbbbb' );
+			$search_overlay_bg 											= get_theme_mod( 'ocean_search_overlay_bg', 'rgba(0,0,0,0.9)' );
+			$search_overlay_input_color 								= get_theme_mod( 'ocean_search_overlay_input_color', '#ffffff' );
+			$search_overlay_input_dashed_bg 							= get_theme_mod( 'ocean_search_overlay_input_dashed_bg', '#ffffff' );
+			$search_overlay_input_border 								= get_theme_mod( 'ocean_search_overlay_input_border_color', '#444444' );
+			$search_overlay_input_border_hover 							= get_theme_mod( 'ocean_search_overlay_input_hover_border_color', '#777777' );
+			$search_overlay_input_border_focus 							= get_theme_mod( 'ocean_search_overlay_input_focus_border_color', '#ffffff' );
+			$search_overlay_close_button_color 							= get_theme_mod( 'ocean_search_overlay_close_button_color', '#ffffff' );
+			$menu_items_padding 										= get_theme_mod( 'ocean_menu_items_padding', '15' );
+			$menu_link_color 											= get_theme_mod( 'ocean_menu_link_color', '#555555' );
+			$menu_link_color_hover 										= get_theme_mod( 'ocean_menu_link_color_hover', '#13aff0' );
+			$menu_link_color_active 									= get_theme_mod( 'ocean_menu_link_color_active', '#555555' );
+			$menu_link_background 										= get_theme_mod( 'ocean_menu_link_background' );
+			$menu_link_hover_background 								= get_theme_mod( 'ocean_menu_link_hover_background' );
+			$menu_link_active_background 								= get_theme_mod( 'ocean_menu_link_active_background' );
+			$dropdown_width 											= get_theme_mod( 'ocean_dropdown_width', '180' );
+			$dropdown_menu_background 									= get_theme_mod( 'ocean_dropdown_menu_background', '#ffffff' );
+			$dropdown_menu_top_border 									= get_theme_mod( 'ocean_dropdown_menu_top_border', '#13aff0' );
+			$dropdown_menu_borders 										= get_theme_mod( 'ocean_dropdown_menu_borders', '#f1f1f1' );
+			$dropdown_menu_link_color 									= get_theme_mod( 'ocean_dropdown_menu_link_color', '#333333' );
+			$dropdown_menu_link_color_hover 							= get_theme_mod( 'ocean_dropdown_menu_link_color_hover', '#555555' );
+			$dropdown_menu_link_hover_bg 								= get_theme_mod( 'ocean_dropdown_menu_link_hover_bg', '#f8f8f8' );
+			$dropdown_menu_link_color_active 							= get_theme_mod( 'ocean_dropdown_menu_link_color_active' );
+			$dropdown_menu_link_bg_active 								= get_theme_mod( 'ocean_dropdown_menu_link_bg_active' );
+			$dropdown_category_title_bg 								= get_theme_mod( 'ocean_dropdown_category_title_bg', '#f8f8f8' );
+			$dropdown_category_title_color 								= get_theme_mod( 'ocean_dropdown_category_title_color', '#222222' );
+			$dropdown_category_links_color 								= get_theme_mod( 'ocean_dropdown_category_links_color', '#555555' );
+			$dropdown_category_links_hover_color 						= get_theme_mod( 'ocean_dropdown_category_links_hover_color', '#333333' );
+			$dropdown_category_date_color 								= get_theme_mod( 'ocean_dropdown_category_date_color', '#bbbbbb' );
+			$menu_social_font_size 										= get_theme_mod( 'ocean_menu_social_font_size' );
+			$menu_social_tablet_font_size 								= get_theme_mod( 'ocean_menu_social_tablet_font_size' );
+			$menu_social_mobile_font_size 								= get_theme_mod( 'ocean_menu_social_mobile_font_size' );
+			$menu_social_right_padding 									= get_theme_mod( 'ocean_menu_social_right_padding' );
+			$menu_social_left_padding 									= get_theme_mod( 'ocean_menu_social_left_padding' );
+			$menu_social_tablet_right_padding 							= get_theme_mod( 'ocean_menu_social_tablet_right_padding' );
+			$menu_social_tablet_left_padding 							= get_theme_mod( 'ocean_menu_social_tablet_left_padding' );
+			$menu_social_mobile_right_padding 							= get_theme_mod( 'ocean_menu_social_mobile_right_padding' );
+			$menu_social_mobile_left_padding 							= get_theme_mod( 'ocean_menu_social_mobile_left_padding' );
+			$menu_social_links_color 									= get_theme_mod( 'ocean_menu_social_links_color' );
+			$menu_social_hover_links_color 								= get_theme_mod( 'ocean_menu_social_hover_links_color' );
+			$mobile_menu_sidr_close_button_bg 							= get_theme_mod( 'ocean_mobile_menu_sidr_close_button_background', '#f8f8f8' );
+			$mobile_menu_sidr_background 								= get_theme_mod( 'ocean_mobile_menu_sidr_background', '#ffffff' );
+			$mobile_menu_sidr_borders 									= get_theme_mod( 'ocean_mobile_menu_sidr_borders', 'rgba(0,0,0,0.035)' );
+			$mobile_menu_links 											= get_theme_mod( 'ocean_mobile_menu_links', '#555555' );
+			$mobile_menu_links_hover 									= get_theme_mod( 'ocean_mobile_menu_links_hover', '#13aff0' );
+			$mobile_menu_sidr_dropdowns_bg 								= get_theme_mod( 'ocean_mobile_menu_sidr_dropdowns_background', 'rgba(0,0,0,0.02)' );
+			$mobile_menu_sidr_search_bg 								= get_theme_mod( 'ocean_mobile_menu_sidr_search_bg' );
+			$mobile_menu_sidr_search_color 								= get_theme_mod( 'ocean_mobile_menu_sidr_search_color', '#333333' );
+			$mobile_menu_sidr_search_border_color 						= get_theme_mod( 'ocean_mobile_menu_sidr_search_border_color', '#dddddd' );
+			$mobile_menu_sidr_search_border_color_focus 				= get_theme_mod( 'ocean_mobile_menu_sidr_search_border_color_focus', '#bbbbbb' );
+			$mobile_menu_sidr_search_button_color 						= get_theme_mod( 'ocean_mobile_menu_sidr_search_button_color', '#555555' );
+			$mobile_menu_sidr_search_button_hover_color 				= get_theme_mod( 'ocean_mobile_menu_sidr_search_button_hover_color', '#222222' );
 
 			// Define css var
 			$css = '';
 			$padding_css = '';
+			$tablet_padding_css = '';
+			$mobile_padding_css = '';
+			$mh_top_header_padding_css = '';
+			$mh_top_header_tablet_padding_css = '';
+			$mh_top_header_mobile_padding_css = '';
+			$mh_sticky_top_header_padding_css = '';
+			$mh_sticky_top_header_tablet_padding_css = '';
+			$mh_sticky_top_header_mobile_padding_css = '';
+			$mh_menu_items_padding_css = '';
+			$mh_menu_items_tablet_padding_css = '';
+			$mh_menu_items_mobile_padding_css = '';
+			$mh_right_menu_padding_css = '';
+			$mh_right_menu_tablet_padding_css = '';
+			$mh_right_menu_mobile_padding_css = '';
+			$mh_left_menu_padding_css = '';
+			$mh_left_menu_tablet_padding_css = '';
+			$mh_left_menu_mobile_padding_css = '';
+			$menu_social_padding_css = '';
+			$menu_social_tablet_padding_css = '';
+			$menu_social_mobile_padding_css = '';
 
 			// Add header height
 			if ( ( 'top' != $header_style && 'medium' != $header_style ) && ! empty( $header_height ) && '74' != $header_height ) {
@@ -2430,6 +2713,62 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 					|| ! empty( $header_bottom_padding ) && '0' != $header_bottom_padding
 					|| ! empty( $header_left_padding ) && '0' != $header_left_padding ) {
 					$css .= '#site-header-inner{'. $padding_css .'}';
+				}
+
+				// Tablet header top padding
+				if ( ! empty( $tablet_header_top_padding ) ) {
+					$tablet_padding_css .= 'padding-top:'. $tablet_header_top_padding .'px;';
+				}
+
+				// Tablet header right padding
+				if ( ! empty( $tablet_header_right_padding ) ) {
+					$tablet_padding_css .= 'padding-right:'. $tablet_header_right_padding .'px;';
+				}
+
+				// Tablet header bottom padding
+				if ( ! empty( $tablet_header_bottom_padding ) ) {
+					$tablet_padding_css .= 'padding-bottom:'. $tablet_header_bottom_padding .'px;';
+				}
+
+				// Tablet header left padding
+				if ( ! empty( $tablet_header_left_padding ) ) {
+					$tablet_padding_css .= 'padding-left:'. $tablet_header_left_padding .'px;';
+				}
+
+				// Tablet header padding css
+				if ( ! empty( $tablet_header_top_padding )
+					|| ! empty( $tablet_header_right_padding )
+					|| ! empty( $tablet_header_bottom_padding )
+					|| ! empty( $tablet_header_left_padding ) ) {
+					$css .= '@media (max-width: 768px){#site-header-inner{'. $tablet_padding_css .'}}';
+				}
+
+				// Mobile header top padding
+				if ( ! empty( $mobile_header_top_padding ) ) {
+					$mobile_padding_css .= 'padding-top:'. $mobile_header_top_padding .'px;';
+				}
+
+				// Mobile header right padding
+				if ( ! empty( $mobile_header_right_padding ) ) {
+					$mobile_padding_css .= 'padding-right:'. $mobile_header_right_padding .'px;';
+				}
+
+				// Mobile header bottom padding
+				if ( ! empty( $mobile_header_bottom_padding ) ) {
+					$mobile_padding_css .= 'padding-bottom:'. $mobile_header_bottom_padding .'px;';
+				}
+
+				// Mobile header left padding
+				if ( ! empty( $mobile_header_left_padding ) ) {
+					$mobile_padding_css .= 'padding-left:'. $mobile_header_left_padding .'px;';
+				}
+
+				// Mobile header padding css
+				if ( ! empty( $mobile_header_top_padding )
+					|| ! empty( $mobile_header_right_padding )
+					|| ! empty( $mobile_header_bottom_padding )
+					|| ! empty( $mobile_header_left_padding ) ) {
+					$css .= '@media (max-width: 480px){#site-header-inner{'. $mobile_padding_css .'}}';
 				}
 
 			}
@@ -2524,14 +2863,100 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				$css .= '#site-header.medium-header .top-header-wrap,#searchform-header-replace{background-color:'. $medium_header_top_header_bg .';}';
 			}
 
-			// Add top top/bottom padding for medium header style
-			if ( 'medium' == $header_style && ! empty( $medium_header_top_header_padding ) && '30' != $medium_header_top_header_padding ) {
-				$css .= '#site-header.medium-header .top-header-wrap{padding:'. $medium_header_top_header_padding .'px 0;}';
+			// Add top header top padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_top_header_top_padding ) && '30' != $medium_header_top_header_top_padding ) {
+				$mh_top_header_padding_css .= 'padding-top:'. $medium_header_top_header_top_padding .'px;';
 			}
 
-			// Add top header top/bottom padding for medium header style when scrolling
-			if ( 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_padding ) && '20' != $medium_header_sticky_top_header_padding ) {
-				$css .= '.is-sticky #site-header.medium-header .top-header-wrap{padding:'. $medium_header_sticky_top_header_padding .'px 0;}';
+			// Add top header bottom padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_top_header_bottom_padding ) && '30' != $medium_header_top_header_bottom_padding ) {
+				$mh_top_header_padding_css .= 'padding-bottom:'. $medium_header_top_header_bottom_padding .'px;';
+			}
+
+			// Top header padding css
+			if ( 'medium' == $header_style && ! empty( $medium_header_top_header_top_padding ) && '30' != $medium_header_top_header_top_padding
+				|| 'medium' == $header_style && ! empty( $medium_header_top_header_bottom_padding ) && '30' != $medium_header_top_header_bottom_padding ) {
+				$css .= '#site-header.medium-header .top-header-wrap{'. $mh_top_header_padding_css .'}';
+			}
+
+			// Tablet top header top padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_top_header_tablet_top_padding ) ) {
+				$mh_top_header_tablet_padding_css .= 'padding-top:'. $medium_header_top_header_tablet_top_padding .'px;';
+			}
+
+			// Tablet top header bottom padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_top_header_tablet_bottom_padding ) ) {
+				$mh_top_header_tablet_padding_css .= 'padding-bottom:'. $medium_header_top_header_tablet_bottom_padding .'px;';
+			}
+
+			// Tablet top header padding css
+			if ( 'medium' == $header_style && ! empty( $medium_header_top_header_tablet_top_padding )
+				|| 'medium' == $header_style && ! empty( $medium_header_top_header_tablet_bottom_padding ) ) {
+				$css .= '@media (max-width: 768px){#site-header.medium-header .top-header-wrap{'. $mh_top_header_tablet_padding_css .'}}';
+			}
+
+			// Mobile top header top padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_top_header_mobile_top_padding ) ) {
+				$mh_top_header_mobile_padding_css .= 'padding-top:'. $medium_header_top_header_mobile_top_padding .'px;';
+			}
+
+			// Mobile top header bottom padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_top_header_mobile_bottom_padding ) ) {
+				$mh_top_header_mobile_padding_css .= 'padding-bottom:'. $medium_header_top_header_mobile_bottom_padding .'px;';
+			}
+
+			// Mobile top header padding css
+			if ( 'medium' == $header_style && ! empty( $medium_header_top_header_mobile_top_padding )
+				|| 'medium' == $header_style && ! empty( $medium_header_top_header_mobile_bottom_padding ) ) {
+				$css .= '@media (max-width: 480px){#site-header.medium-header .top-header-wrap{'. $mh_top_header_mobile_padding_css .'}}';
+			}
+
+			// Add sticky top header top padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_top_padding ) && '20' != $medium_header_sticky_top_header_top_padding ) {
+				$mh_sticky_top_header_padding_css .= 'padding-top:'. $medium_header_sticky_top_header_top_padding .'px;';
+			}
+
+			// Add sticky top header bottom padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_bottom_padding ) && '20' != $medium_header_sticky_top_header_bottom_padding ) {
+				$mh_sticky_top_header_padding_css .= 'padding-bottom:'. $medium_header_sticky_top_header_bottom_padding .'px;';
+			}
+
+			// Sticky top header padding css
+			if ( 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_top_padding ) && '20' != $medium_header_sticky_top_header_top_padding
+				|| 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_bottom_padding ) && '20' != $medium_header_sticky_top_header_bottom_padding ) {
+				$css .= '.is-sticky #site-header.medium-header .top-header-wrap{'. $mh_sticky_top_header_padding_css .'}';
+			}
+
+			// Tablet sticky top header top padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_tablet_top_padding ) ) {
+				$mh_sticky_top_header_tablet_padding_css .= 'padding-top:'. $medium_header_sticky_top_header_tablet_top_padding .'px;';
+			}
+
+			// Tablet sticky top header bottom padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_tablet_bottom_padding ) ) {
+				$mh_sticky_top_header_tablet_padding_css .= 'padding-bottom:'. $medium_header_sticky_top_header_tablet_bottom_padding .'px;';
+			}
+
+			// Tablet sticky top header padding css
+			if ( 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_tablet_top_padding )
+				|| 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_tablet_bottom_padding ) ) {
+				$css .= '@media (max-width: 768px){.is-sticky #site-header.medium-header .top-header-wrap{'. $mh_sticky_top_header_tablet_padding_css .'}}';
+			}
+
+			// Mobile sticky top header top padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_mobile_top_padding ) ) {
+				$mh_sticky_top_header_mobile_padding_css .= 'padding-top:'. $medium_header_sticky_top_header_mobile_top_padding .'px;';
+			}
+
+			// Mobile sticky top header bottom padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_mobile_bottom_padding ) ) {
+				$mh_sticky_top_header_mobile_padding_css .= 'padding-bottom:'. $medium_header_sticky_top_header_mobile_bottom_padding .'px;';
+			}
+
+			// Mobile sticky top header padding css
+			if ( 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_mobile_top_padding )
+				|| 'medium' == $header_style && ! empty( $medium_header_sticky_top_header_mobile_bottom_padding ) ) {
+				$css .= '@media (max-width: 480px){.is-sticky #site-header.medium-header .top-header-wrap{'. $mh_sticky_top_header_mobile_padding_css .'}}';
 			}
 
 			// Add height menu for medium header style
@@ -2539,19 +2964,86 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				$css .= '#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #oceanwp-mobile-menu-icon a{line-height:'. $medium_header_menu_height .'px;}';
 			}
 
-			// Add menu items left/right padding for medium header style
-			if ( 'medium' == $header_style && ! empty( $medium_header_menu_items_padding ) && '22' != $medium_header_menu_items_padding ) {
-				$css .= '#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a{padding:0 '. $medium_header_menu_items_padding .'px;}';
+			// Add menu items right padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_menu_items_right_padding ) && '22' != $medium_header_menu_items_right_padding ) {
+				$mh_menu_items_padding_css .= 'padding-right:'. $medium_header_menu_items_right_padding .'px;';
+			}
+
+			// Add menu items left padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_menu_items_left_padding ) && '22' != $medium_header_menu_items_left_padding ) {
+				$mh_menu_items_padding_css .= 'padding-left:'. $medium_header_menu_items_left_padding .'px;';
+			}
+
+			// Menu items padding css
+			if ( 'medium' == $header_style && ! empty( $medium_header_menu_items_right_padding ) && '22' != $medium_header_menu_items_right_padding
+				|| 'medium' == $header_style && ! empty( $medium_header_menu_items_left_padding ) && '22' != $medium_header_menu_items_left_padding ) {
+				$css .= '#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a{'. $mh_menu_items_padding_css .'}';
+			}
+
+			// Tablet menu items right padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_menu_items_tablet_right_padding ) ) {
+				$mh_menu_items_tablet_padding_css .= 'padding-right:'. $medium_header_menu_items_tablet_right_padding .'px;';
+			}
+
+			// Tablet menu items left padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_menu_items_tablet_left_padding ) ) {
+				$mh_menu_items_tablet_padding_css .= 'padding-left:'. $medium_header_menu_items_tablet_left_padding .'px;';
+			}
+
+			// Tablet menu items padding css
+			if ( 'medium' == $header_style && ! empty( $medium_header_menu_items_tablet_right_padding )
+				|| 'medium' == $header_style && ! empty( $medium_header_menu_items_tablet_left_padding ) ) {
+				$css .= '@media (max-width: 768px){#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #oceanwp-mobile-menu-icon a{'. $mh_menu_items_tablet_padding_css .'}}';
+			}
+
+			// Mobile menu items right padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_menu_items_mobile_right_padding ) ) {
+				$mh_menu_items_mobile_padding_css .= 'padding-right:'. $medium_header_menu_items_mobile_right_padding .'px;';
+			}
+
+			// Mobile menu items left padding for medium header style
+			if ( 'medium' == $header_style && ! empty( $medium_header_menu_items_mobile_left_padding ) ) {
+				$mh_menu_items_mobile_padding_css .= 'padding-left:'. $medium_header_menu_items_mobile_left_padding .'px;';
+			}
+
+			// Mobile menu items padding css
+			if ( 'medium' == $header_style && ! empty( $medium_header_menu_items_mobile_left_padding )
+				|| 'medium' == $header_style && ! empty( $medium_header_menu_items_mobile_left_padding ) ) {
+				$css .= '@media (max-width: 480px){#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #oceanwp-mobile-menu-icon a{'. $mh_menu_items_mobile_padding_css .'}}';
 			}
 
 			// Add left attr if left position for medium header style
-			if ( 'medium' == $header_style && 'left-menu' == $medium_header_menu_position && ! empty( $medium_header_menu_items_padding ) && '22' != $medium_header_menu_items_padding ) {
-				$css .= '#site-header.medium-header #site-navigation-wrap.left-menu #site-navigation{left:-'. $medium_header_menu_items_padding .'px;}';
+			if ( 'medium' == $header_style && 'left-menu' == $medium_header_menu_position ) {
+
+				if ( ! empty( $medium_header_menu_items_left_padding ) && '22' != $medium_header_menu_items_left_padding ) {
+					$css .= '#site-header.medium-header #site-navigation-wrap.left-menu #site-navigation{left:-'. $medium_header_menu_items_left_padding .'px}';
+				}
+
+				if ( ! empty( $medium_header_menu_items_tablet_left_padding ) ) {
+					$css .= '@media (max-width: 768px){#site-header.medium-header #site-navigation-wrap.left-menu #site-navigation{left:-'. $medium_header_menu_items_tablet_left_padding .'px}}';
+				}
+
+				if ( ! empty( $medium_header_menu_items_mobile_left_padding ) ) {
+					$css .= '@media (max-width: 480px){#site-header.medium-header #site-navigation-wrap.left-menu #site-navigation{left:-'. $medium_header_menu_items_mobile_left_padding .'px}}';
+				}
+
 			}
 
 			// Add right attr if right position for medium header style
-			if ( 'medium' == $header_style && 'right-menu' == $medium_header_menu_position && ! empty( $medium_header_menu_items_padding ) && '22' != $medium_header_menu_items_padding ) {
-				$css .= '#site-header.medium-header #site-navigation-wrap.right-menu #site-navigation{right:-'. $medium_header_menu_items_padding .'px;}';
+			if ( 'medium' == $header_style && 'right-menu' == $medium_header_menu_position ) {
+
+				if ( ! empty( $medium_header_menu_items_right_padding ) && '22' != $medium_header_menu_items_right_padding ) {
+					$css .= '#site-header.medium-header #site-navigation-wrap.left-menu #site-navigation{right:-'. $medium_header_menu_items_right_padding .'px}';
+				}
+
+				if ( ! empty( $medium_header_menu_items_tablet_right_padding ) ) {
+					$css .= '@media (max-width: 768px){#site-header.medium-header #site-navigation-wrap.left-menu #site-navigation{right:-'. $medium_header_menu_items_tablet_right_padding .'px}}';
+				}
+
+				if ( ! empty( $medium_header_menu_items_mobile_right_padding ) ) {
+					$css .= '@media (max-width: 480px){#site-header.medium-header #site-navigation-wrap.left-menu #site-navigation{right:-'. $medium_header_menu_items_mobile_right_padding .'px}}';
+				}
+
 			}
 
 			// Add menu background for medium header style
@@ -2587,6 +3079,16 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Header logo max width
 			if ( ! empty( $logo_max_width ) ) {
 				$css .= '#site-logo #site-logo-inner a img{max-width:'. $logo_max_width .'px;}';
+			}
+
+			// Header logo max width tablet
+			if ( ! empty( $logo_max_width_tablet ) ) {
+				$css .= '@media (max-width: 768px){#site-logo #site-logo-inner a img{max-width:'. $logo_max_width_tablet .'px;}}';
+			}
+
+			// Header logo max width mobile
+			if ( ! empty( $logo_max_width_mobile ) ) {
+				$css .= '@media (max-width: 480px){#site-logo #site-logo-inner a img{max-width:'. $logo_max_width_mobile .'px;}}';
 			}
 
 			// Header logo color
@@ -2757,6 +3259,69 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Dropdown menu link active background color
 			if ( ! empty( $dropdown_category_date_color ) && '#bbbbbb' != $dropdown_category_date_color ) {
 				$css .= '#site-navigation li.mega-cat ul li .mega-post-date{color:'. $dropdown_category_date_color .';}';
+			}
+
+			// Add menu social font size
+			if ( ! empty( $menu_social_font_size ) ) {
+				$css .= '#oceanwp-social-menu ul li a,#oceanwp-social-menu .colored ul li a,#oceanwp-social-menu .minimal ul li a,#oceanwp-social-menu .dark ul li a{font-size:'. $menu_social_font_size .'px;}';
+			}
+
+			// Add menu social tablet font size
+			if ( ! empty( $menu_social_tablet_font_size ) ) {
+				$css .= '@media (max-width: 768px){#oceanwp-social-menu ul li a,#oceanwp-social-menu .colored ul li a,#oceanwp-social-menu .minimal ul li a,#oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a{font-size:'. $menu_social_tablet_font_size .'px;}}';
+			}
+
+			// Add menu social mobile font size
+			if ( ! empty( $menu_social_mobile_font_size ) ) {
+				$css .= '@media (max-width: 480px){#oceanwp-social-menu ul li a,#oceanwp-social-menu .colored ul li a,#oceanwp-social-menu .minimal ul li a,#oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a{font-size:'. $menu_social_mobile_font_size .'px;}}';
+			}
+
+			// Add menu social right padding
+			if ( ! empty( $menu_social_right_padding ) ) {
+				$menu_social_padding_css .= 'padding-right:'. $menu_social_right_padding .'px;';
+			}
+
+			// Add menu social left padding
+			if ( ! empty( $menu_social_left_padding ) ) {
+				$menu_social_padding_css .= 'padding-left:'. $menu_social_left_padding .'px;';
+			}
+
+			// Menu social padding css
+			if ( ! empty( $menu_social_right_padding )
+				|| ! empty( $menu_social_left_padding ) ) {
+				$css .= '#oceanwp-social-menu ul li a,#oceanwp-social-menu .colored ul li,#oceanwp-social-menu .minimal ul li,#oceanwp-social-menu .dark ul li{'. $menu_social_padding_css .'}';
+			}
+
+			// Tablet menu social right padding
+			if ( ! empty( $menu_social_tablet_right_padding ) ) {
+				$menu_social_tablet_padding_css .= 'padding-right:'. $menu_social_tablet_right_padding .'px;';
+			}
+
+			// Tablet menu social left padding
+			if ( ! empty( $menu_social_tablet_left_padding ) ) {
+				$menu_social_tablet_padding_css .= 'padding-left:'. $menu_social_tablet_left_padding .'px;';
+			}
+
+			// Tablet menu social padding css
+			if ( ! empty( $menu_social_tablet_right_padding )
+				|| ! empty( $menu_social_tablet_left_padding ) ) {
+				$css .= '@media (max-width: 768px){#oceanwp-social-menu ul li a,#oceanwp-social-menu .colored ul li,#oceanwp-social-menu .minimal ul li,#oceanwp-social-menu .dark ul li{'. $menu_social_tablet_padding_css .'}}';
+			}
+
+			// Mobile menu social right padding
+			if ( ! empty( $menu_social_mobile_right_padding ) ) {
+				$menu_social_mobile_padding_css .= 'padding-right:'. $menu_social_mobile_right_padding .'px;';
+			}
+
+			// Mobile menu social left padding
+			if ( ! empty( $menu_social_mobile_left_padding ) ) {
+				$menu_social_mobile_padding_css .= 'padding-left:'. $menu_social_mobile_left_padding .'px;';
+			}
+
+			// Mobile menu social padding css
+			if ( ! empty( $menu_social_mobile_right_padding )
+				|| ! empty( $menu_social_mobile_left_padding ) ) {
+				$css .= '@media (max-width: 480px){#oceanwp-social-menu ul li a,#oceanwp-social-menu .colored ul li,#oceanwp-social-menu .minimal ul li,#oceanwp-social-menu .dark ul li{'. $menu_social_mobile_padding_css .'}}';
 			}
 
 			// Menu social links color

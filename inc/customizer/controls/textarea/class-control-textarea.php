@@ -31,8 +31,8 @@ class OceanWP_Customizer_Textarea_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-textarea', OCEANWP_INC_DIR_URI . 'customizer/controls/textarea/textarea.js', array( 'jquery', 'customize-base' ), false, true );
-		wp_enqueue_style( 'oceanwp-textarea-css', OCEANWP_INC_DIR_URI . 'customizer/controls/textarea/textarea.css', null );
+		wp_enqueue_script( 'oceanwp-textarea', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/textarea.min.js', array( 'jquery', 'customize-base' ), false, true );
+		wp_enqueue_style( 'oceanwp-textarea', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/textarea.min.css', null );
 	}
 
 	/**

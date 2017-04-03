@@ -74,8 +74,9 @@
 		float: none;
 		display: inline-block;
 		font-size: 12px;
+		padding: 0 22px;
 		line-height: 60px;
-		letter-spacing: 1.5px;
+		letter-spacing: 1px;
 		text-transform: uppercase;
 	}
 }
@@ -276,15 +277,10 @@ only screen and (                min-resolution: 2dppx) {
 		width: 100%;
 	}
 		
-	/* make footer columns 1 column */
+	/* margin footer columns */
 	#footer-widgets {
 		.col {
-			width: 100%;
 			margin-bottom: 30px;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
 		}
 	}
 
@@ -350,6 +346,9 @@ only screen and (                min-resolution: 2dppx) {
 	Phone Portrait and Landscape
 *------------------------------------*/
 @media only screen and (max-width: 767px) {
+
+	/* Visibility */
+	.hide-tablet-mobile { display: none !important; }
 		
 	/* grid & main  */
 	#wrap {
@@ -571,6 +570,9 @@ only screen and (                min-resolution: 2dppx) {
 *------------------------------------*/
 @media only screen and (max-width: 480px) {
 
+	/* Visibility */
+	.hide-mobile { display: none !important; }
+
 	/* boxed */
 	.boxed-main-layout #wrap .container {
 		padding-left: 20px;
@@ -578,9 +580,8 @@ only screen and (                min-resolution: 2dppx) {
 	}
 
 	/* Hide social and search in menu and show them in sidr for the top menu header style */
-	#site-header.top-header{
-		&.header-replace .right,
-		#searchform-header-replace {
+	#site-header.top-header {
+		.right {
 			display: none;
 		}
 
@@ -610,7 +611,7 @@ only screen and (                min-resolution: 2dppx) {
 			}
 		}
 
-		.right .inner {
+		.header-top .right .inner {
 			display: block;
 			padding-bottom: 10px;
 		}
@@ -756,5 +757,15 @@ only screen and (                min-resolution: 2dppx) {
 		line-height: 24px;
 		font-size: 14px;
 	}
+
+}
+
+/*------------------------------------*
+	Visibility
+*------------------------------------*/
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+
+	/* Visibility */
+	.hide-tablet { display: none !important; }
 
 }

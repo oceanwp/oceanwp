@@ -66,3 +66,66 @@
 		}
 	}
 }
+
+/* Responsive columns */
+@media only screen and (min-width: 481px) and (max-width: 768px) { 
+	#footer-widgets.tablet-1-col .footer-box {
+		width: 100%;
+	}
+
+	#footer-widgets.tablet-2-col .footer-box {
+		width: 50% !important;
+
+		&:nth-child(3n) {
+			clear: left;
+		}
+	}
+
+	#footer-widgets.tablet-3-col .footer-box {
+		width: 33.33% !important;
+		clear: none;
+
+		&:nth-child(4n) {
+			clear: left;
+		}
+	}
+
+	#footer-widgets.tablet-4-col .footer-box {
+		width: 25% !important;
+
+		&:nth-child(5n) {
+			clear: left;
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	#footer-widgets.mobile-1-col .footer-box {
+		width: 100%;
+	}
+
+	#footer-widgets.mobile-2-col .footer-box {
+		width: 50% !important;
+
+		&:nth-child(3n) {
+			clear: left;
+		}
+	}
+
+	#footer-widgets.mobile-3-col .footer-box {
+		width: 33.33% !important;
+		clear: none;
+
+		&:nth-child(4n) {
+			clear: left;
+		}
+	}
+
+	#footer-widgets.mobile-4-col .footer-box {
+		width: 25% !important;
+
+		&:nth-child(5n) {
+			clear: left;
+		}
+	}
+}
