@@ -80,13 +80,13 @@ function oceanwp_enqueue_google_font( $font ) {
 
 	// Add weights to URL
 	if ( ! empty( $weights ) ) {
-		$url .= implode( ',' , $weights );
+		$url .= implode( ',', $weights ) .',';
 		$italic_weights = array();
 		if ( $italics ) {
 			foreach ( $weights as $weight ) {
-				$italic_weights[] = $weight .'italic';
+				$italic_weights[] = $weight .'i';
 			}
-			$url .= implode( ',' , $italic_weights );
+			$url .= implode( ',', $italic_weights );
 		}
 	}
 
