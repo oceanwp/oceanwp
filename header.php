@@ -17,8 +17,8 @@
 <?php
 // Main schema markup
 if ( is_singular( 'post' ) ) {
-	$itemprop = '';
 	$itemtype = 'http://schema.org/Blog';
+	$itemprop = '';
 } else {
 	$itemtype = 'http://schema.org/WebPageElement';
 	$itemprop = 'mainContentOfPage';
@@ -47,7 +47,7 @@ if ( is_singular( 'post' ) ) {
 
 			<?php do_action( 'ocean_before_main' ); ?>
 			
-			<main id="main" class="site-main clr" itemprop="<?php echo esc_attr( $itemprop ); ?>" itemscope="itemscope" itemtype="<?php echo esc_attr( $itemtype ); ?>">
+			<main id="main" class="site-main clr" itemprop="<?php echo $itemprop; ?>" itemscope="itemscope" itemtype="<?php echo $itemtype; ?>">
 
 				<?php
 				// Display shortcode if there is one
