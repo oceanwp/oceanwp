@@ -2,7 +2,7 @@
 
 ### *2017.04.04* - 1.1.8
 * **Added** - New header style "Medium".
-* **Added** - New "Visibility" select field in the customizer to allow you to show/hide somme lements fon tablets and mobiles like the Top Bar, Page Header, Footer Widgets, Footer Bottom.
+* **Added** - New "Visibility" select field in the customizer to allow you to show/hide some elements on tablets and mobiles like the Top Bar, Page Header, Footer Widgets, Footer Bottom.
 * **Added** - Font Size field added to the Social Menu section.
 * **Added** - New customizer control "Slider", created for fields like font size, line height and letter spacing on the typography section.
 * **Added** - Responsive buttons in multiple fields of the customizer like the font size, line height, letter spacing, etc, to allow you to control your values for desktop, tablets and mobiles.
