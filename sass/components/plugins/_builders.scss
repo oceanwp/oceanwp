@@ -12,4 +12,9 @@ body.has-transparent-header.elementor-editor-active {
 	.elementor-section .elementor-container {
 		z-index: 12;
 	}
+
+	#elementor .elementor-section > .elementor-shape-top,
+	#elementor .elementor-section > .elementor-shape-bottom {
+		z-index: 13;
+	}
 }

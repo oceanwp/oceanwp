@@ -112,6 +112,15 @@ body .oceanwp-row {
 	}
 }
 
+.entry-content {
+	.responsive-video-wrap,
+	.responsive-audio-wrap {
+		iframe, object, embed {
+	    	min-height: 100%;
+		}
+	}
+}
+
 .wp-video-shortcode {
 	width: auto !important;
 	max-width: 100% !important;

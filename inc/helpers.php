@@ -63,6 +63,11 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			$classes[] = 'top-header-style';
 		}
 
+		// Medium header style to control the responsive
+		if ( 'medium' == oceanwp_header_style() ) {
+			$classes[] = 'medium-header-style';
+		}
+
 		// Sidebar enabled
 		if ( 'left-sidebar' == $post_layout || 'right-sidebar' == $post_layout ) {
 			$classes[] = 'has-sidebar';
@@ -3071,7 +3076,7 @@ if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
 	function oceanwp_register_tm_strings() {
 
 		return apply_filters( 'ocean_register_tm_strings', array(
-			'ocean_top_bar_content' 			=> '<i class="icon-home"></i> Street Name <i class="icon-clock"></i> Since 2006',
+			'ocean_top_bar_content' 			=> '',
 			'ocean_footer_copyright_text' 		=> 'Copyright [oceanwp_date] - OceanWP Theme by Nick Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>',
 			'ocean_woo_menu_icon_custom_link' 	=> '',
 		) );

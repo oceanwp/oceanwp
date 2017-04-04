@@ -66,12 +66,12 @@ blockquote { padding-right: 20px; padding-left: 0; border-right-width: 3px; bord
 #site-header.center-header.is-cart-icon #site-navigation { right: auto; left: -68px; }
 #site-header.center-header.is-both-icons #site-navigation { right: auto; left: -111px; }
 
-/* Big header */
-#site-header.big-header #oceanwp-social-menu { text-align: left; }
-#site-header.big-header #big-searchform { text-align: right; }
-#site-header.big-header #big-searchform input { padding: 6px 12px 6px 38px; }
-#site-header.big-header #big-searchform label { left: auto; right: 12px; }
-#site-header.big-header #big-searchform button { right: auto; left: 0; }
+/* Medium header */
+#site-header.medium-header #oceanwp-social-menu { text-align: left; }
+#site-header.medium-header #medium-searchform { text-align: right; }
+#site-header.medium-header #medium-searchform input { padding: 6px 12px 6px 38px; }
+#site-header.medium-header #medium-searchform label { left: auto; right: 12px; }
+#site-header.medium-header #medium-searchform button { right: auto; left: 0; }
 
 /*------------------------------------*
 	Navigation

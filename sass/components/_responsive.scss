@@ -438,8 +438,16 @@ only screen and (                min-resolution: 2dppx) {
 			width:100%;
 		}
 
-		.sidr-class-social-menu-inner, .sidr-class-mobile-searchform,
 		.header-top-inner {
+			display: block;
+		}
+	}
+
+
+	/* Show social and search form in sidr for the medium header style */
+	.medium-header-style {
+		.sidr-class-social-menu-inner,
+		.sidr-class-mobile-searchform {
 			display: block;
 		}
 	}
