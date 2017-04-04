@@ -350,13 +350,15 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'active_callback' 	=> $active_callback,
 							'choices' 			=> array(
 								'' => esc_html__( 'Default', 'oceanwp' ),
-								'100' => esc_html__( 'Extra Light: 100', 'oceanwp' ),
+								'100' => esc_html__( 'Thin: 100', 'oceanwp' ),
 								'200' => esc_html__( 'Light: 200', 'oceanwp' ),
 								'300' => esc_html__( 'Book: 300', 'oceanwp' ),
 								'400' => esc_html__( 'Normal: 400', 'oceanwp' ),
+								'500' => esc_html__( 'Medium: 500', 'oceanwp' ),
 								'600' => esc_html__( 'Semibold: 600', 'oceanwp' ),
 								'700' => esc_html__( 'Bold: 700', 'oceanwp' ),
 								'800' => esc_html__( 'Extra Bold: 800', 'oceanwp' ),
+								'900' => esc_html__( 'Black: 900', 'oceanwp' ),
 							),
 						) );
 					}
@@ -585,7 +587,8 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		public function customize_preview_init() {
 			wp_enqueue_script( 'oceanwp-typography-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/typography-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
 			wp_localize_script( 'oceanwp-typography-customize-preview', 'oceanwp', array(
-				'googleFontsUrl' => '//fonts.googleapis.com'
+				'googleFontsUrl' 	=> '//fonts.googleapis.com',
+				'googleFontsWeight' => '100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i',
 			) );
 		}
 
