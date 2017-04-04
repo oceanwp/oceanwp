@@ -71,6 +71,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 					'top'			=> esc_html__( 'Top Menu', 'oceanwp' ),
 					'full_screen'	=> esc_html__( 'Full Screen', 'oceanwp' ),
 					'center'		=> esc_html__( 'Center', 'oceanwp' ),
+					'medium'		=> esc_html__( 'Medium', 'oceanwp' ),
 					'custom'		=> esc_html__( 'Custom Header', 'oceanwp' ),
 				),
 			) ) );
