@@ -1,5 +1,19 @@
 # OceanWP Changelog
 
+### *2017.04.04* - 1.1.8
+* **Added** - New header style "Medium".
+* **Added** - New "Visibility" select field in the customizer to allow you to show/hide somme lements fon tablets and mobiles like the Top Bar, Page Header, Footer Widgets, Footer Bottom.
+* **Added** - Font Size field added to the Social Menu section.
+* **Added** - New customizer control "Slider", created for fields like font size, line height and letter spacing on the typography section.
+* **Added** - Responsive buttons in multiple fields of the customizer like the font size, line height, letter spacing, etc, to allow you to control your values for desktop, tablets and mobiles.
+* **Added** - Dimensions control in the Social Menu section of the customizer to allow you to add a left and right padding for the icons.
+* **Added** - Font weight 500 and 900 in the typography section of the customizer.
+* **Tweak** - Footer widgets columns, now you define a custom column for tablets and mobiles devices.
+* **Tweak** - Large improvement of the dimensions control of the customizer, now you can define your dimensions for tablets and mobiles screens thanks to Justin Tadlock et Steeve Lefebvre.
+* **Fixed** - Issue with avatar on the author box.
+* **Fixed** - Issue with iframe in responsive.
+* **Deleted** - All widgets have been added in the Ocean Extra extension because some things are not allowed in a theme.
+
 ### *2017.04.01* - 1.1.7.4
 * **Fixed** - Search button missing for the top header style.
 
