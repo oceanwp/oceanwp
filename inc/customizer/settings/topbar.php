@@ -313,7 +313,6 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_top_bar_content', array(
 				'transport'           	=> 'postMessage',
-				'default'           	=> '<i class="icon-home"></i> Street Name <i class="icon-clock"></i> Since 2006',
 				'sanitize_callback' 	=> 'wp_kses_post',
 			) );
 
