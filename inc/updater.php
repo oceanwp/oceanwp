@@ -103,8 +103,9 @@ if ( ! class_exists( 'OceanWP_Plugin_Updater' ) ) {
 			}
 
 			echo '<p>' . sprintf(
-				esc_html__( 'Enter your extension license keys here to receive updates for purchased extensions. If your license key has expired, please <a href="%1$s" target="_blank" title="License renewal FAQ">renew your license</a>.', 'oceanwp' ),
-				'http://docs.oceanwp.org/article/26-license-renewal'
+				esc_html__( 'Enter your extension license keys here to receive updates for purchased extensions. If your license key has expired, please %1$srenew your license%2$s.', 'oceanwp' ),
+				'<a href="http://docs.oceanwp.org/article/26-license-renewal" target="_blank" title="License renewal FAQ">',
+				'</a>'
 			) . '</p>';
 
 			$has_ran = true;
