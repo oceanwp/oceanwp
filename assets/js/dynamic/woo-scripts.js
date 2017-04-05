@@ -183,16 +183,22 @@ function wooVariableImage() {
 			$product_img 	= $product.find( 'div.images .main-images img:eq(1), div.images .product-thumbnails .first-thumbnail:not(.slick-cloned) img' ),
 			$product_link 	= $product.find( 'div.images a.woocommerce-main-image:eq(1), div.images .first-thumbnail:not(.slick-cloned) a.woo-thumbnail:eq(3)' );
 
-		if ( variation && variation.image_src && variation.image_src.length > 1 ) {
+		if ( variation && variation.image && variation.image.src && variation.image.src.length > 1 ) {
 
 			// Image attrs
-			$product_img.wc_set_variation_attr( 'src', variation.image_src );
-			$product_img.wc_set_variation_attr( 'title', variation.image_title );
-			$product_img.wc_set_variation_attr( 'alt', variation.image_alt );
-			$product_img.wc_set_variation_attr( 'srcset', variation.image_srcset );
-			$product_img.wc_set_variation_attr( 'sizes', variation.image_sizes );
-			$product_link.wc_set_variation_attr( 'href', variation.image_link );
-			$product_link.wc_set_variation_attr( 'title', variation.image_title );
+			$product_img.wc_set_variation_attr( 'src', variation.image.src );
+			$product_img.wc_set_variation_attr( 'height', variation.image.src_h );
+			$product_img.wc_set_variation_attr( 'width', variation.image.src_w );
+			$product_img.wc_set_variation_attr( 'srcset', variation.image.srcset );
+			$product_img.wc_set_variation_attr( 'sizes', variation.image.sizes );
+			$product_img.wc_set_variation_attr( 'title', variation.image.title );
+			$product_img.wc_set_variation_attr( 'alt', variation.image.alt );
+			$product_img.wc_set_variation_attr( 'data-src', variation.image.full_src );
+			$product_img.wc_set_variation_attr( 'data-large_image', variation.image.full_src );
+			$product_img.wc_set_variation_attr( 'data-large_image_width', variation.image.full_src_w );
+			$product_img.wc_set_variation_attr( 'data-large_image_height', variation.image.full_src_h );
+			$product_link.wc_set_variation_attr( 'href', variation.image.full_src );
+			$product_link.wc_set_variation_attr( 'title', variation.image.title );
 
 			// Refresh slide
 			if ( $j( 'body' ).hasClass( 'single-product' ) ) {
@@ -210,10 +216,16 @@ function wooVariableImage() {
 
 			// Reset image attrs
 			$product_img.wc_reset_variation_attr( 'src' );
-			$product_img.wc_reset_variation_attr( 'title' );
-			$product_img.wc_reset_variation_attr( 'alt' );
+			$product_img.wc_reset_variation_attr( 'width' );
+			$product_img.wc_reset_variation_attr( 'height' );
 			$product_img.wc_reset_variation_attr( 'srcset' );
 			$product_img.wc_reset_variation_attr( 'sizes' );
+			$product_img.wc_reset_variation_attr( 'title' );
+			$product_img.wc_reset_variation_attr( 'alt' );
+			$product_img.wc_reset_variation_attr( 'data-src' );
+			$product_img.wc_reset_variation_attr( 'data-large_image' );
+			$product_img.wc_reset_variation_attr( 'data-large_image_width' );
+			$product_img.wc_reset_variation_attr( 'data-large_image_height' );
 			$product_link.wc_reset_variation_attr( 'href' );
 			$product_link.wc_reset_variation_attr( 'title' );
 
