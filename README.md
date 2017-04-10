@@ -1,5 +1,14 @@
 # OceanWP [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
+**Contributors:** Nick  
+**Requires at least:** WordPress 4.4  
+**Tested up to:** WordPress 4.7  
+**Stable tag:** 1.1.8  
+**License:** GPLv2 or later  
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
+**Tags:** two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, rtl-language-support, sticky-post, editor-style, threaded-comments, translation-ready
+
+## Description
 *OceanWP* is a Multi-Purpose [WordPress](http://wordpress.org) theme, designed and built by [Nick](https://oceanwp.org/) to help you to create unique websites. It's available to download for free at the site [OceanWP](https://oceanwp.org/).
 
 For developers, OceanWP is the perfect starting point for your project. It's lean and extensible codebase will allow you to easily add functionality to your site via child theme and/or custom plugin(s).
