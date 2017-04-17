@@ -20,9 +20,9 @@ if ( true != get_theme_mod( 'ocean_top_bar_full_width', false ) )  {
 
 <div id="top-bar-wrap" class="<?php echo esc_attr( oceanwp_topbar_classes() ); ?>">
 
-	<?php do_action( 'ocean_before_top_bar_inner' ); ?>
-
 	<div id="top-bar" class="clr<?php echo esc_attr( $class ); ?>">
+
+		<?php do_action( 'ocean_before_top_bar_inner' ); ?>
 
 		<div id="top-bar-inner" class="clr">
 
@@ -37,9 +37,9 @@ if ( true != get_theme_mod( 'ocean_top_bar_full_width', false ) )  {
 
 		</div><!-- #top-bar-inner -->
 
-	</div><!-- #top-bar -->
+		<?php do_action( 'ocean_after_top_bar_inner' ); ?>
 
-	<?php do_action( 'ocean_after_top_bar_inner' ); ?>
+	</div><!-- #top-bar -->
 
 </div><!-- #top-bar-wrap -->
 

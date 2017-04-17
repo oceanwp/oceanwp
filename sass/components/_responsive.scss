@@ -147,7 +147,7 @@ only screen and (                min-resolution: 2dppx) {
 @media only screen and (min-width: 768px) and (max-width: 1280px) { 
 	
 	/* megamenu */
-	#site-navigation li.megamenu.auto-width.col-6 > .sub-menu {
+	.navigation li.megamenu.auto-width.col-6 > .sub-menu {
 		width: 980px;
 	}
 
@@ -225,7 +225,9 @@ only screen and (                min-resolution: 2dppx) {
 	}
 	
 	/* header > navbar */
-	#site-navigation-wrap, #oceanwp-social-menu {
+	#top-bar-nav,
+	#site-navigation-wrap,
+	#oceanwp-social-menu {
 		display: none;
 	}
 
@@ -260,18 +262,6 @@ only screen and (                min-resolution: 2dppx) {
 		width: 100%;
 	}
 
-	/* recent posts widget */
-	.oceanwp-recent-posts {
-		.recent-posts-thumbnail {
-			width: 15%;
-			margin-right: 3%;
-		}
-
-		.recent-posts-details {
-			width: 82%;
-		}
-	}
-	
 	/* 404 page */
 	.error404-content {
 		width: 100%;
@@ -409,12 +399,12 @@ only screen and (                min-resolution: 2dppx) {
 	}
 
 	#top-bar-social li,
-	#top-bar .top-bar-menu > li {
+	#top-bar #top-bar-nav > li {
 		float: none;
 		display: inline-block;
 	}
 
-	.top-bar-menu {
+	#top-bar-nav {
 		float: none;
 		text-align: center;
 	}
@@ -429,17 +419,17 @@ only screen and (                min-resolution: 2dppx) {
 
 	/* medium header style */
 	#site-header.medium-header {
-		#medium-searchform, #oceanwp-social-menu,
-		.top-col.col-1, .top-col.col-3 {
+		.top-header-inner {
+			display: block;
+		}
+
+		.top-col:not(.logo-col) {
 			display: none;
 		}
 
-		.top-col {
-			width:100%;
-		}
-
-		.header-top-inner {
-			display: block;
+		.top-col.logo-col {
+			display: inline-block;
+			text-align: center;
 		}
 	}
 
@@ -720,23 +710,6 @@ only screen and (                min-resolution: 2dppx) {
 		.comment-link,
 		.comment-meta {
 			float: none;
-		}
-	}
-
-	/* flickr widget */
-	.oceanwp-flickr-widget .flickr_badge_image {
-		width: 23%;
-	}
-
-	/* recent posts widget */
-	.oceanwp-recent-posts {
-		.recent-posts-thumbnail {
-			width: 25%;
-			margin-right: 4%;
-		}
-
-		.recent-posts-details {
-			width: 71%;
 		}
 	}
 

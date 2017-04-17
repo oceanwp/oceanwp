@@ -107,8 +107,8 @@ class OceanWP_Customizer_Radio_Image_Control extends WP_Customize_Control {
 		$translation_strings = array(
 			'right-sidebar' 	=> esc_attr__( 'Right Sidebar', 'oceanwp' ),
 			'left-sidebar' 		=> esc_attr__( 'Left Sidebar', 'oceanwp' ),
-			'full-width' 		=> esc_attr__( 'No Sidebar', 'oceanwp' ),
-			'full-screen' 		=> esc_attr__( 'Full Screen', 'oceanwp' ),
+			'full-width' 		=> esc_attr__( 'Full Width', 'oceanwp' ),
+			'full-screen' 		=> esc_attr__( '100% Full Width', 'oceanwp' ),
 		);
 		if ( false === $id ) {
 			return $translation_strings;

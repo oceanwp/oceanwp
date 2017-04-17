@@ -407,6 +407,19 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Toolbar Heading
+			 */
+			$wp_customize->add_setting( 'ocean_woocommerce_shop_toolbar_heading', array(
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_woocommerce_shop_toolbar_heading', array(
+				'label'    				=> esc_html__( 'Toolbar', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_archives',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
 			 * Grid/List Buttons
 			 */
 			$wp_customize->add_setting( 'ocean_woo_grid_list', array(
@@ -494,6 +507,42 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Products Heading
+			 */
+			$wp_customize->add_setting( 'ocean_woocommerce_shop_products_heading', array(
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_woocommerce_shop_products_heading', array(
+				'label'    				=> esc_html__( 'Products', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_archives',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Product Elements Positioning
+			 */
+			$wp_customize->add_setting( 'oceanwp_catalog_elements_positioning', array(
+				'default' 				=> array( 'image', 'category', 'title', 'price-rating', 'description' , 'button' ),
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Sortable_Control( $wp_customize, 'oceanwp_catalog_elements_positioning', array(
+				'label'	   				=> esc_html__( 'Elements Positioning', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_archives',
+				'settings' 				=> 'oceanwp_catalog_elements_positioning',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'image'    			=> esc_html__( 'Image', 'oceanwp' ),
+					'category'       	=> esc_html__( 'Category', 'oceanwp' ),
+					'title' 			=> esc_html__( 'Title', 'oceanwp' ),
+					'price-rating' 		=> esc_html__( 'Price/Rating', 'oceanwp' ),
+					'description' 		=> esc_html__( 'Description', 'oceanwp' ),
+					'button' 			=> esc_html__( 'Add To Cart Button', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
 			 * Product Entry Media
 			 */
 			$wp_customize->add_setting( 'ocean_woo_product_entry_style', array(
@@ -542,6 +591,43 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
 					'full-screen'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
 				),
+			) ) );
+
+			/**
+			 * Tabs Position
+			 */
+			$wp_customize->add_setting( 'ocean_woo_product_meta_tabs_position', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> 'center',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_woo_product_meta_tabs_position', array(
+				'label'	   				=> esc_html__( 'Tabs Position', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_single',
+				'settings' 				=> 'ocean_woo_product_meta_tabs_position',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'left' 		=> esc_html__( 'Left', 'oceanwp' ),
+					'center' 	=> esc_html__( 'Center', 'oceanwp' ),
+					'right' 	=> esc_html__( 'Right', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Product Meta
+			 */
+			$wp_customize->add_setting( 'ocean_woo_product_meta', array(
+				'default'           	=> true,
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_product_meta', array(
+				'label'	   				=> esc_html__( 'Product Meta', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_woocommerce_single',
+				'settings' 				=> 'ocean_woo_product_meta',
+				'priority' 				=> 10,
 			) ) );
 
 			/**
@@ -622,22 +708,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			        'max'   => 7,
 			        'step'  => 1,
 			    ),
-			) ) );
-
-			/**
-			 * Product Meta
-			 */
-			$wp_customize->add_setting( 'ocean_woo_product_meta', array(
-				'default'           	=> true,
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_product_meta', array(
-				'label'	   				=> esc_html__( 'Product Meta', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_woocommerce_single',
-				'settings' 				=> 'ocean_woo_product_meta',
-				'priority' 				=> 10,
 			) ) );
 
 			/**

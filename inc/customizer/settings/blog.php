@@ -242,7 +242,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			 * Blog Entries Meta
 			 */
 			$wp_customize->add_setting( 'ocean_blog_entry_meta', array(
-				'default'           	=> array( 'author', 'date', 'categories', 'comments' ),
+				'default'           	=> apply_filters( 'ocean_blog_meta_default', array( 'author', 'date', 'categories', 'comments' ) ),
 				'sanitize_callback' 	=> false,
 			) );
 
@@ -251,12 +251,12 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 				'section'  				=> 'ocean_blog_entries',
 				'settings' 				=> 'ocean_blog_entry_meta',
 				'priority' 				=> 10,
-				'choices' 				=> array(
+				'choices' 				=> apply_filters( 'ocean_blog_meta_choices', array(
 					'author'     		=> esc_html__( 'Author', 'oceanwp' ),
 					'date'       		=> esc_html__( 'Date', 'oceanwp' ),
 					'categories' 		=> esc_html__( 'Categories', 'oceanwp' ),
 					'comments'   		=> esc_html__( 'Comments', 'oceanwp' ),
-				),
+				) ),
 			) ) );
 
 			/**
@@ -528,12 +528,12 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 				'section'  				=> 'ocean_single_post',
 				'settings' 				=> 'ocean_blog_single_meta',
 				'priority' 				=> 10,
-				'choices' 				=> array(
+				'choices' 				=> apply_filters( 'ocean_blog_meta_choices', array(
 					'author'     		=> esc_html__( 'Author', 'oceanwp' ),
 					'date'       		=> esc_html__( 'Date', 'oceanwp' ),
 					'categories' 		=> esc_html__( 'Categories', 'oceanwp' ),
 					'comments'   		=> esc_html__( 'Comments', 'oceanwp' ),
-				),
+				) ),
 			) ) );
 
 			/**
@@ -573,6 +573,44 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			        'min'   => 1,
 			        'max'   => 6,
 			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
+			 * Related Posts Image Width
+			 */
+			$wp_customize->add_setting( 'ocean_blog_related_img_width', array(
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_blog_related_img_width', array(
+				'label'	   				=> esc_html__( 'Related Posts Image Width (px)', 'oceanwp' ),
+				'type' 					=> 'number',
+				'section'  				=> 'ocean_single_post',
+				'settings' 				=> 'ocean_blog_related_img_width',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 800,
+			    ),
+			) ) );
+
+			/**
+			 * Related Posts Image Height
+			 */
+			$wp_customize->add_setting( 'ocean_blog_related_img_height', array(
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_blog_related_img_height', array(
+				'label'	   				=> esc_html__( 'Related Posts Image Height (px)', 'oceanwp' ),
+				'type' 					=> 'number',
+				'section'  				=> 'ocean_single_post',
+				'settings' 				=> 'ocean_blog_related_img_height',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 800,
 			    ),
 			) ) );
 

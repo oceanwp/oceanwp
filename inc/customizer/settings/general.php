@@ -300,22 +300,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) );
 
 			/**
-			 * Add Lightbox
-			 */
-			$wp_customize->add_setting( 'ocean_add_lightbox', array(
-				'default'           	=> true,
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_add_lightbox', array(
-				'label'	   				=> esc_html__( 'Add Lightbox To Your Images', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_general_settings',
-				'settings' 				=> 'ocean_add_lightbox',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
 			 * Main Layout Style
 			 */
 			$wp_customize->add_setting( 'ocean_main_layout_style', array(
@@ -987,23 +971,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'label'	   				=> esc_html__( 'Text Color', 'oceanwp' ),
 				'section'  				=> 'ocean_general_page_header',
 				'settings' 				=> 'ocean_breadcrumbs_text_color',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_breadcrumbs',
-			) ) );
-
-			/**
-			 * Breadcrumbs Separator Color
-			 */
-			$wp_customize->add_setting( 'ocean_breadcrumbs_seperator_color', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '#c6c6c6',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_breadcrumbs_seperator_color', array(
-				'label'	   				=> esc_html__( 'Separator Color', 'oceanwp' ),
-				'section'  				=> 'ocean_general_page_header',
-				'settings' 				=> 'ocean_breadcrumbs_seperator_color',
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_breadcrumbs',
 			) ) );
@@ -1969,7 +1936,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'.sidr-class-dropdown-toggle:hover',
 				'.sidr-class-menu-item-has-children.active > a',
 				'.sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle',
-				'input[type=checkbox]:checked:before',
+				'input[type=checkbox]:checked:before'
 			) );
 
 			// Backgrounds
@@ -1981,7 +1948,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'#site-navigation-wrap .dropdown-menu > li.btn > a > span',
 				'.thumbnail:hover i',
 				'.post-quote-content',
-				'.omw-modal .omw-close-modal',
+				'.omw-modal .omw-close-modal'
 			) );
 
 			// Borders
@@ -1994,7 +1961,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'.oceanwp-newsletter-form-wrap input[type="email"]:focus',
 				'.social-widget li.oceanwp-email a:hover',
 				'#respond #cancel-comment-reply-link:hover',
-				'#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"]:focus',
+				'#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"]:focus'
 			) );
 
 			// Return array
@@ -2291,15 +2258,15 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$mobile_theme_button_padding_css = '';
 
 			// Get primary color arrays
-			$texts       	= $this->primary_color_arrays( 'texts' );
-			$backgrounds 	= $this->primary_color_arrays( 'backgrounds' );
-			$borders     	= $this->primary_color_arrays( 'borders' );
+			$texts       	= self::primary_color_arrays( 'texts' );
+			$backgrounds 	= self::primary_color_arrays( 'backgrounds' );
+			$borders     	= self::primary_color_arrays( 'borders' );
 
 			// Get hover primary color arrays
-			$hover_primary 	= $this->hover_primary_color_array( 'hover' );
+			$hover_primary 	= self::hover_primary_color_array( 'hover' );
 
 			// Get hover primary color arrays
-			$main_border 	= $this->main_border_array();
+			$main_border 	= self::main_border_array();
 
 			// Texts
 			if ( ! empty( $texts ) && '#13aff0' != $primary_color ) {
@@ -2499,7 +2466,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Breadcrumbs seperator color
 			if ( ! empty( $breadcrumbs_seperator_color ) && '#c6c6c6' != $breadcrumbs_seperator_color ) {
-				$css .= '.site-breadcrumbs .sep{color:'. $breadcrumbs_seperator_color .';}';
+				$css .= '.site-breadcrumbs ul li:after{color:'. $breadcrumbs_seperator_color .';}';
 			}
 
 			// Breadcrumbs link color

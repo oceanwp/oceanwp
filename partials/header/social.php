@@ -64,8 +64,10 @@ if ( has_nav_menu( 'main_menu' ) ) { ?>
 						// Display link
 						echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
 
-							if ( in_array( $key, array( 'skype', 'email' ) ) ) {
-								echo '<a href="'. esc_attr( $url ) .'" target="_'. esc_attr( $link_target ) .'">';
+							if ( in_array( $key, array( 'skype' ) ) ) {
+								echo '<a href="skype:'. esc_attr( $url ) .'?call" target="_self">';
+							} else if ( in_array( $key, array( 'email' ) ) ) {
+								echo '<a href="mailto:'. esc_attr( $url ) .'" target="_self">';
 							} else {
 								echo '<a href="'. esc_url( $url ) .'" target="_'. esc_attr( $link_target ) .'">';
 							}

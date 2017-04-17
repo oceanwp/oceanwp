@@ -55,10 +55,6 @@ customSelect, Copyright 2013 Adam Coulombe
 License: MIT
 Source: http://adam.co/lab/jquery/customselect/
 
-Equal Heights, Copyright (c) 2013 Matt Banks
-License: MIT/GPL
-Source: https://github.com/mattbanks/jQuery.equalHeights
-
 imagesLoaded, Copyright Desandro
 License: MIT
 Source: https://github.com/desandro/imagesloaded
@@ -67,13 +63,13 @@ Isotope, Copyright 2015 Metafizzy
 License: MIT/GPLv3
 Source: http://isotope.metafizzy.co
 
+Match Heights, Copyright (c) 2014 Liam Brummitt
+License: MIT
+Source: http://brm.io/jquery-match-height/
+
 Slick, Copyright (c) Ken Wheeler
 License: MIT
 Source: http://github.com/kenwheeler/slick/
-
-scrollTo, Copyright (c) 2007-2015 Ariel Flesler
-License: MIT
-Source: https://github.com/flesler/jquery.scrollTo
 
 Sidr, Copyright (c) 2013-2016 Alberto Varela
 License: MIT
@@ -108,6 +104,95 @@ License: CC0 Public Domain
 Source: https://pixabay.com/en/underwater-sunbeams-ocean-sea-698671/
 
 == Changelog ==
+
+### *2017.04.17* - 1.1.9
+* **Added** - Sortable control in the customizer for the catalog products, now you can reorder the elements.
+* **Added** - New menu area "Mobile" for the mobile menu.
+* **Added** - Font subsets in the typography section of the customizer.
+* **Added** - Minification for the Custom CSS output.
+* **Added** - Dutch translation, thank you to Verdi Heinz and its team.
+* **Added** - Now you can add a mega menu to the top bar menu.
+* **Added** - Filter for the meta in the customizer to add your own meta.
+* **Added** - Font size and padding fields for the top bar social in the customizer.
+* **Added** - Width and height fields in the customizer to add your own size for the related posts images.
+* **Added** - Tabs Position field in the WooCommerce customizer section to choose the positioning of your tabs on single product.
+* **Fixed** - Issue with WooCommerce cart dropdown on RTL.
+* **Fixed** - Skype and Email URL issue for the top bar and social menu.
+* **Fixed** - Hided logo if one column on responsive for the medium header style.
+* **Fixed** - Top bar content preview issue when it has no content.
+* **Tweak** - The top bar menu is automatically added to the mobile menu
+* **Deleted** - The "Add Lightbox To Your Images" field is deleted from the theme because it is directly incorporated into Theme Panel > Scripts Panel.
+
+### *2017.04.05* - 1.1.8
+* **Added** - New header style "Medium".
+* **Added** - New "Visibility" select field in the customizer to allow you to show/hide some elements on tablets and mobiles like the Top Bar, Page Header, Footer Widgets, Footer Bottom.
+* **Added** - Font Size field added to the Social Menu section.
+* **Added** - New customizer control "Slider", created for fields like font size, line height and letter spacing on the typography section.
+* **Added** - Responsive buttons in multiple fields of the customizer like the font size, line height, letter spacing, etc, to allow you to control your values for desktop, tablets and mobiles.
+* **Added** - Dimensions control in the Social Menu section of the customizer to allow you to add a left and right padding for the icons.
+* **Added** - Font weight 500 and 900 in the typography section of the customizer.
+* **Tweak** - Footer widgets columns, now you define a custom column for tablets and mobiles devices.
+* **Tweak** - Large improvement of the dimensions control of the customizer, now you can define your dimensions for tablets and mobiles screens thanks to Justin Tadlock et Steeve Lefebvre.
+* **Fixed** - Issue with avatar on the author box.
+* **Fixed** - Issue with iframe in responsive.
+* **Fixed** - Issue with WooCommerce 3.0 images variables.
+* **Deleted** - All widgets have been added in the Ocean Extra extension because some things are not allowed in a theme.
+
+### *2017.04.01* - 1.1.7.4
+* **Fixed** - Search button missing for the top header style.
+
+### *2017.03.24* - 1.1.7.3
+* **Fixed** - Header issue with the oceanwp_main_schema_markup() function.
+
+### *2017.03.23* - 1.1.7.2
+* **Fixed** - Issue with the dimensions control.
+
+### *2017.03.23* - 1.1.7.1
+* **Fixed** - TGM Plugin Activation problem.
+* **Fixed** - Double icons in mobile menu.
+
+### *2017.03.21* - 1.1.7
+IMPORTANT NOTICE: Some fields of the customizer are improved to be more user friendly, you must re-enter your values in the new dimensions controls for the following fields:
+- Padding in General Options > Forms (Input - Textarea)
+- Border Width in General Options > Forms (Input - Textarea)
+- Padding in Theme Button
+- The two Padding fields in Sidebar
+- Padding in Footer Widgets
+- Padding in Footer Bottom
+
+* **Added** - New checkbox field in the Top Bar section of the customizer to add the top bar in full width.
+* **Added** - New checkbox field in the Header section of the customizer to add the header in full width.
+* **Added** - Norwegian language, thank you very much to Tor-Arne Pettersen‎.
+* **Added** - Short codes in the description for the top bar content and the footer copyright in the customizer.
+* **Added** - New "Fixed Footer" option in the Footer Widgets section of the customizer to add a height to your content to keep your footer at the bottom of your page.
+* **Added** - New option in General Settings of the customizer to activate/desactivate the default lightbox scripts.
+* **Added** - New control for the customizer "Dimensions" to add your top/right/bottom/left dimensions like Elementor.
+* **Tweak** - Increased container max width in the customizer for 4K screens.
+* **Tweak** - Support for WooCommerce 3.0.
+* **Tweak** - Flickr widget moved to Ocean Extra because the script code is not allowed into the theme.
+* **Tweak** - CSS for sub lists improved.
+
+### *2017.03.04* - 1.1.6
+* **Added** - New customizer section "Header Media" in the Header section to add an image or video (only in front page), to your header.
+* **Added** - New "Excerpt Length" field added in the Blog Entries section of the customizer to control the excerpt length of your posts.
+* **Added** - Swedish language, thank you very much to Christoffer Gisselfeldt.
+* **Added** - Center menu position.
+* **Added** - New options for the background image of the page header.
+* **Added** - Full Screen layout added in customizer.
+* **Updated** - Fonts list in the customizer typography section.
+* **Fixed** - Form (input-textarea) styling issue.
+* **Fixed** - Thumbnails images on WooCommerce variation products.
+* **Fixed** - Issue with retina logo in the Center header style.
+* **Fixed** - Links color hover option in the customizer.
+* **Fixed** - Cart icon removed on mobile if disabled.
+* **Fixed** - Issue with archive products ratings in list mode.
+* **Fixed** - Issue with Woocommerce if single product has no sidebar.
+* **Fixed** - JS error with YITH WooCommerce Quick View.
+
+### *2017.02.15* - 1.1.5
+* **Fixed** - Sub menus blinking.
+* **Fixed** - Problem double lightbox with Beaver Builder.
+* **Fixed** - Problem with WooCommerce images variation products.
 
 ### *2017.02.06* - 1.1.4
 * **Added** - Register translation string.
@@ -196,68 +281,68 @@ Do not hesitate to contact me via facebook or trough the support page if you hav
 ### *2016.12.12* - 1.0.9.1
 * **Fixed** - Problem with the customizer.
 
-= 2016.12.07 - 1.0.9 =
-* Added - Support WordPress 4.7.
-* Fixed - Problem with the menu items in WordPress 4.7.
-* Tweak - Migrate the custom CSS of the Theme Panel into the new Additional CSS panel of the customizer.
+### *2016.12.07* - 1.0.9
+* **Added** - Support WordPress 4.7.
+* **Fixed** - Problem with the menu items in WordPress 4.7.
+* **Tweak** - Migrate the custom CSS of the Theme Panel into the new Additional CSS panel of the customizer.
 
-= 2016.12.01 - 1.0.8.1 =
-* Fixed - Small issue.
+### *2016.12.01* - 1.0.8.1
+* **Fixed** - Small issue.
 
-= 2016.12.01 - 1.0.8 =
-* Added - New fields in the customizer to add a background image.
-* Added - Option in the customizer to control the max width of the logo.
-* Added - New fields in the customizer to add a padding top and bottom at the header.
-* Added - Tagline in the Site Identity section of the customizer.
-* Added - Selective refresh to widgets.
-* Added - Option to add a color to the overlay page header.
-* Fixed - Problem with the overlay of the page header.
-* Fixed - Problem to change the font size of the menu items for the Top Menu header style.
-* Tweak - Moved Site Icon field to the Site Identity section of the customizer.
-* Tweak - Some files improvement.
+### *2016.12.01* - 1.0.8
+* **Added** - New fields in the customizer to add a background image.
+* **Added** - Option in the customizer to control the max width of the logo.
+* **Added** - New fields in the customizer to add a padding top and bottom at the header.
+* **Added** - Tagline in the Site Identity section of the customizer.
+* **Added** - Selective refresh to widgets.
+* **Added** - Option to add a color to the overlay page header.
+* **Fixed** - Problem with the overlay of the page header.
+* **Fixed** - Problem to change the font size of the menu items for the Top Menu header style.
+* **Tweak** - Moved Site Icon field to the Site Identity section of the customizer.
+* **Tweak** - Some files improvement.
 
-= 2016.11.26 - 1.0.7 =
-* Added - New fields in the Blog section of the customizer to show/hide elements in the single post.
-* Tweak - Icon search and cart replaced by text for the center header style.
-* Fixed - Problem categories posts in megamenu.
+### *2016.11.26* - 1.0.7
+* **Added** - New fields in the Blog section of the customizer to show/hide elements in the single post.
+* **Tweak** - Icon search and cart replaced by text for the center header style.
+* **Fixed** - Problem categories posts in megamenu.
 
-= 2016.11.21 - 1.0.6 =
-* Added - New header style "Center".
-* Fixed - Problem anchor links on mobile menu.
-* Fixed - Problem megamenu category posts on full screen header style.
+### *2016.11.21* - 1.0.6
+* **Added** - New header style "Center".
+* **Fixed** - Problem anchor links on mobile menu.
+* **Fixed** - Problem megamenu category posts on full screen header style.
 
-= 2016.11.12 - 1.0.5 =
-* Added - Boxed layout.
-* Added - Options in the Customizer to alter the meta in blog entries and single.
+### *2016.11.12* - 1.0.5
+* **Added** - Boxed layout.
+* **Added** - Options in the Customizer to alter the meta in blog entries and single.
 
-= 2016.11.11 - 1.0.4 =
-* Added - New header style "Full Screen".
-* Added - New posts style "Grid".
-* Added - New blog pagination "Infinite Scroll".
-* Added - Function to add an overlay color to the page header background image style.
-* Fixed - Problem breadcrumbs on the home page.
-* Fixed - Breadcrumbs position problem on centered page title.
-* Tweak - Redirection to the welcome page during the theme activation.
+### *2016.11.11* - 1.0.4
+* **Added** - New header style "Full Screen".
+* **Added** - New posts style "Grid".
+* **Added** - New blog pagination "Infinite Scroll".
+* **Added** - Function to add an overlay color to the page header background image style.
+* **Fixed** - Problem breadcrumbs on the home page.
+* **Fixed** - Breadcrumbs position problem on centered page title.
+* **Tweak** - Redirection to the welcome page during the theme activation.
 
-= 2016.11.05 - 1.0.3 =
-* Added - New fields in the Contact Info widget to add your own titles and icons.
-* Tweak - PHP files.
+### *2016.11.05* - 1.0.3
+* **Added** - New fields in the Contact Info widget to add your own titles and icons.
+* **Tweak** - PHP files.
 
-= 2016.11.02 - 1.0.2 =
-* Added - New header style "Top Menu".
-* Added - New widget "Recent Posts".
-* Added - New "Shortcode" field in the OceanWP Settings metabox to add your slider shortcode below the header.
-* Added - Function to add custom fonts.
-* Added - Function to delete term data when a term is deleted.
-* Added - Option to the categories menu items to add your latest posts in mega menu.
-* Tweak - Improvements of the newsletter widget.
-* Fixed - Lightbox images into the content.
-* Fixed - Problems of tabs in the editor mode of Elementor and Beaver Builder when you set the page in full screen.
-* Fixed - Problem posts and related posts image link.
-* Fixed - The top bar social alt work perfectly now.
+### *2016.11.02* - 1.0.2
+* **Added** - New header style "Top Menu".
+* **Added** - New widget "Recent Posts".
+* **Added** - New "Shortcode" field in the Ocean Settings metabox to add your slider shortcode below the header.
+* **Added** - Function to add custom fonts.
+* **Added** - Function to delete term data when a term is deleted.
+* **Added** - Option to the categories menu items to add your latest posts in mega menu.
+* **Tweak** - Improvements of the newsletter widget.
+* **Fixed** - Lightbox images into the content.
+* **Fixed** - Problems of tabs in the editor mode of Elementor and Beaver Builder when you set the page in full screen.
+* **Fixed** - Problem posts and related posts image link.
+* **Fixed** - The top bar social alt work perfectly now.
 
-= 2016.10.16 - 1.0.1 =
-* Added - Options in the customizer to change the colors of WooCommerce pages.
+### *2016.10.16* - 1.0.1
+* **Added** - Options in the customizer to change the colors of WooCommerce pages.
 
-= 2016.10.13 - 1.0.0 =
+### *2016.10.13* - 1.0.0
 * Initial release

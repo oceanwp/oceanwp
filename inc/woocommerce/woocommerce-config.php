@@ -83,7 +83,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			add_action( 'woocommerce_before_shop_loop_item', array( $this, 'add_shop_loop_item_inner_div' ) );
 			add_action( 'woocommerce_after_shop_loop_item', array( $this, 'archive_product_content' ), 10 );
 			add_action( 'woocommerce_after_shop_loop_item', array( $this, 'close_shop_loop_item_inner_div' ) );
-			add_action( 'woocommerce_before_shop_loop_item', array( $this, 'add_shop_loop_item_out_of_stock_badge' ) );
 			add_action( 'woocommerce_before_subcategory_title', array( $this, 'add_container_wrap_category' ), 8 );
 			add_action( 'woocommerce_before_subcategory_title', array( $this, 'add_div_before_category_thumbnail' ), 9 );
 			add_action( 'woocommerce_before_subcategory_title', array( $this, 'close_div_after_category_thumbnail' ), 11 );
@@ -500,31 +499,31 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		}
 
 		/**
-		 * Archive add to cart button.
+		 * Adds an out of stock tag to the products.
 		 *
-		 * @since 1.1.7
+		 * @since 1.0.0
 		 */
-		public static function archive_add_to_cart_btn( $args = array() ) {
-			global $product;
+		public static function add_out_of_stock_badge() {
+			if ( function_exists( 'oceanwp_woo_product_instock' ) && ! oceanwp_woo_product_instock() ) {
+				$label = esc_html__( 'Out of Stock', 'oceanwp' );  ?>
+				<div class="outofstock-badge">
+					<?php echo esc_html( apply_filters( 'ocean_woo_outofstock_text', $label ) ); ?>
+				</div><!-- .product-entry-out-of-stock-badge -->
+			<?php }
+		}
 
-			if ( $product && ( ( $product->is_purchasable() && $product->is_in_stock() ) || $product->is_type( 'external' ) ) ) {
-
-				if ( version_compare( self::get_wc_version(), '2.5', '>=' ) ) {
-
-					$defaults = array(
-						'quantity' => 1,
-						'class'    => implode( ' ', array_filter( array(
-							'button',
-							$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
-							$product->supports( 'ajax_add_to_cart' ) ? 'ajax_add_to_cart' : '',
-						) ) ),
-					);
-
-				}
-
-				$args = apply_filters( 'woocommerce_loop_add_to_cart_args', wp_parse_args( $args, $defaults ), $product );
-
-				wc_get_template( 'loop/add-to-cart.php' , $args );
+		/**
+		 * Returns our product thumbnail from our template parts based on selected style in theme mods.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function loop_product_thumbnail() {
+			if ( function_exists( 'wc_get_template' ) ) {
+				// Get entry product media style
+				$style = get_theme_mod( 'ocean_woo_product_entry_style' );
+				$style = $style ? $style : 'image-swap';
+				// Get entry product media template part
+				wc_get_template( 'loop/thumbnail/'. $style .'.php' );
 			}
 		}
 
@@ -536,56 +535,97 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function archive_product_content() {
 			global $product, $post;
 
-			echo '<div class="woo-entry-inner clr">';
+			echo '<ul class="woo-entry-inner clr">';
 
-				do_action( 'ocean_before_archive_product_categories' );
+				// Get elements
+				$elements = oceanwp_catalog_elements_positioning();
 
-				// Category
-				if ( version_compare( self::get_wc_version(), '2.7', '>=' ) ) {
-					echo wp_kses_post( wc_get_product_category_list( $product->get_id(), ', ', '<span class="category">', '</span>' ) );
-				} else {
-					echo wp_kses_post( $product->get_categories( ', ', '<span class="category">', '</span>' ) );
-				}
+				// Loop through elements
+				foreach ( $elements as $element ) {
 
-				do_action( 'ocean_before_archive_product_title' );
+					// Image
+					if ( 'image' == $element ) {
 
-				// Title
-				echo '<a href="'. esc_url( get_the_permalink() ) .'" class="title">'. get_the_title() .'</a>';
+						echo '<li class="image-wrap">';
+							do_action( 'ocean_before_archive_product_image' );
+							self::add_out_of_stock_badge();
+							self::loop_product_thumbnail();
+						echo '</li>';
 
-				do_action( 'ocean_before_archive_product_inner' );
+					}
 
-				// Price/Rating
-				echo '<div class="inner">';
-					do_action( 'ocean_before_archive_product_price' );
-					woocommerce_template_loop_price();
-					do_action( 'ocean_before_archive_product_rating' );
-					woocommerce_template_loop_rating();
-					do_action( 'ocean_after_archive_product_rating' );
-				echo '</div>';
+					// Category
+					if ( 'category' == $element ) {
 
-				do_action( 'ocean_before_archive_product_description' );
+						do_action( 'ocean_before_archive_product_categories' );
 
-				// Description
-				if ( ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() )
-					&& get_theme_mod( 'ocean_woo_grid_list', true ) ) {
-					$length = get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
-					echo '<div class="woo-desc">';
-						if ( ! $length ) {
-							echo wp_kses_post( strip_shortcodes( $post->post_excerpt ) );
+						if ( version_compare( self::get_wc_version(), '2.7', '>=' ) ) {
+							echo wp_kses_post( wc_get_product_category_list( $product->get_id(), ', ', '<li class="category">', '</li>' ) );
 						} else {
-							echo wp_kses_post( wp_trim_words( strip_shortcodes( $post->post_excerpt ), $length ) );
+							echo wp_kses_post( $product->get_categories( ', ', '<li class="category">', '</li>' ) );
 						}
-					echo '</div>';
+
+					}
+
+					// Title
+					if ( 'title' == $element ) {
+
+						do_action( 'ocean_before_archive_product_title' );
+
+						echo '<li class="title"><a href="'. esc_url( get_the_permalink() ) .'">'. get_the_title() .'</a></li>';
+
+					}
+
+					// Price/Rating
+					if ( 'price-rating' == $element ) {
+
+						do_action( 'ocean_before_archive_product_inner' );
+
+						echo '<li class="inner">';
+							do_action( 'ocean_before_archive_product_price' );
+							woocommerce_template_loop_price();
+							do_action( 'ocean_before_archive_product_rating' );
+							woocommerce_template_loop_rating();
+							do_action( 'ocean_after_archive_product_rating' );
+						echo '</li>';
+
+					}
+
+					// Description
+					if ( 'description' == $element ) {
+
+						do_action( 'ocean_before_archive_product_description' );
+
+						if ( ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() )
+							&& get_theme_mod( 'ocean_woo_grid_list', true ) ) {
+							$length = get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
+							echo '<li class="woo-desc">';
+								if ( ! $length ) {
+									echo wp_kses_post( strip_shortcodes( $post->post_excerpt ) );
+								} else {
+									echo wp_kses_post( wp_trim_words( strip_shortcodes( $post->post_excerpt ), $length ) );
+								}
+							echo '</li>';
+						}
+
+					}
+
+					// Add to cart button
+					if ( 'button' == $element ) {
+
+						do_action( 'ocean_before_archive_product_add_to_cart' );
+
+						echo '<li class="btn-wrap clr">';
+							woocommerce_template_loop_add_to_cart();
+						echo '</li>';
+
+						do_action( 'ocean_after_archive_product_add_to_cart' );
+
+					}
+
 				}
 
-				do_action( 'ocean_before_archive_product_add_to_cart' );
-
-				// Button add to cart
-				self::archive_add_to_cart_btn();
-
-				do_action( 'ocean_after_archive_product_add_to_cart' );
-
-			echo '</div>';
+			echo '</ul>';
 
 		}
 
@@ -642,20 +682,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function oceanwp_after_account_navigation() {
 			echo '</div>';
-		}
-
-		/**
-		 * Adds an out of stock tag to the products.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function add_shop_loop_item_out_of_stock_badge() {
-			if ( function_exists( 'oceanwp_woo_product_instock' ) && ! oceanwp_woo_product_instock() ) {
-				$label = esc_html__( 'Out of Stock', 'oceanwp' );  ?>
-				<div class="outofstock-badge">
-					<?php echo esc_html( apply_filters( 'ocean_woo_outofstock_text', $label ) ); ?>
-				</div><!-- .product-entry-out-of-stock-badge -->
-			<?php }
 		}
 
 		/**
@@ -753,21 +779,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function oceanwp_login_wrap_after() {
 			echo '</div>';
-		}
-
-		/**
-		 * Returns our product thumbnail from our template parts based on selected style in theme mods.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function loop_product_thumbnail() {
-			if ( function_exists( 'wc_get_template' ) ) {
-				// Get entry product media style
-				$style = get_theme_mod( 'ocean_woo_product_entry_style' );
-				$style = $style ? $style : 'image-swap';
-				// Get entry product media template part
-				wc_get_template( 'loop/thumbnail/'. $style .'.php' );
-			}
 		}
 
 		/**

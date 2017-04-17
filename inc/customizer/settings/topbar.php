@@ -391,6 +391,94 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Top Bar Social Font Size
+			 */
+			$wp_customize->add_setting( 'ocean_top_bar_social_font_size', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '14',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_top_bar_social_tablet_font_size', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_top_bar_social_mobile_font_size', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_top_bar_social_font_size', array(
+				'label' 			=> esc_html__( 'Font Size (px)', 'oceanwp' ),
+				'section'  			=> 'ocean_topbar_social',
+				'settings' => array(
+		            'desktop' 	=> 'ocean_top_bar_social_font_size',
+		            'tablet' 	=> 'ocean_top_bar_social_tablet_font_size',
+		            'mobile' 	=> 'ocean_top_bar_social_mobile_font_size',
+			    ),
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_topbar_social',
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 100,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
+			 * Top Bar Social Padding
+			 */
+			$wp_customize->add_setting( 'ocean_top_bar_social_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '6',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_top_bar_social_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '6',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_top_bar_social_tablet_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_top_bar_social_tablet_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_setting( 'ocean_top_bar_social_mobile_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_setting( 'ocean_top_bar_social_mobile_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_top_bar_social_padding', array(
+				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_topbar_social',
+				'settings' => array(
+		            'desktop_right' 	=> 'ocean_top_bar_social_right_padding',
+		            'desktop_left' 		=> 'ocean_top_bar_social_left_padding',
+		            'tablet_right' 		=> 'ocean_top_bar_social_tablet_right_padding',
+		            'tablet_left' 		=> 'ocean_top_bar_social_tablet_left_padding',
+		            'mobile_right' 		=> 'ocean_top_bar_social_mobile_right_padding',
+		            'mobile_left' 		=> 'ocean_top_bar_social_mobile_left_padding',
+			    ),
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_topbar_social',
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 60,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
 			 * Top Bar Social Link Color
 			 */
 			$wp_customize->add_setting( 'ocean_top_bar_social_links_color', array(
@@ -452,31 +540,43 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 		public static function head_css( $output ) {
 		
 			// Global vars
-			$top_padding 				= get_theme_mod( 'ocean_top_bar_top_padding', '8' );
-			$right_padding 				= get_theme_mod( 'ocean_top_bar_right_padding', '0' );
-			$bottom_padding 			= get_theme_mod( 'ocean_top_bar_bottom_padding', '8' );
-			$left_padding 				= get_theme_mod( 'ocean_top_bar_left_padding', '0' );
-			$tablet_top_padding 		= get_theme_mod( 'ocean_top_bar_tablet_top_padding' );
-			$tablet_right_padding 		= get_theme_mod( 'ocean_top_bar_tablet_right_padding' );
-			$tablet_bottom_padding 		= get_theme_mod( 'ocean_top_bar_tablet_bottom_padding' );
-			$tablet_left_padding 		= get_theme_mod( 'ocean_top_bar_tablet_left_padding' );
-			$mobile_top_padding 		= get_theme_mod( 'ocean_top_bar_mobile_top_padding' );
-			$mobile_right_padding 		= get_theme_mod( 'ocean_top_bar_mobile_right_padding' );
-			$mobile_bottom_padding 		= get_theme_mod( 'ocean_top_bar_mobile_bottom_padding' );
-			$mobile_left_padding 		= get_theme_mod( 'ocean_top_bar_mobile_left_padding' );
-			$background 				= get_theme_mod( 'ocean_top_bar_bg', '#ffffff' );
-			$border_color 				= get_theme_mod( 'ocean_top_bar_border_color', '#f1f1f1' );
-			$text_color 				= get_theme_mod( 'ocean_top_bar_text_color', '#929292' );
-			$link_color 				= get_theme_mod( 'ocean_top_bar_link_color', '#555555' );
-			$link_color_hover 			= get_theme_mod( 'ocean_top_bar_link_color_hover', '#13aff0' );
-			$social_links_color 		= get_theme_mod( 'ocean_top_bar_social_links_color', '#bbbbbb' );
-			$social_hover_links_color 	= get_theme_mod( 'ocean_top_bar_social_hover_links_color' );
+			$top_padding 					= get_theme_mod( 'ocean_top_bar_top_padding', '8' );
+			$right_padding 					= get_theme_mod( 'ocean_top_bar_right_padding', '0' );
+			$bottom_padding 				= get_theme_mod( 'ocean_top_bar_bottom_padding', '8' );
+			$left_padding 					= get_theme_mod( 'ocean_top_bar_left_padding', '0' );
+			$tablet_top_padding 			= get_theme_mod( 'ocean_top_bar_tablet_top_padding' );
+			$tablet_right_padding 			= get_theme_mod( 'ocean_top_bar_tablet_right_padding' );
+			$tablet_bottom_padding 			= get_theme_mod( 'ocean_top_bar_tablet_bottom_padding' );
+			$tablet_left_padding 			= get_theme_mod( 'ocean_top_bar_tablet_left_padding' );
+			$mobile_top_padding 			= get_theme_mod( 'ocean_top_bar_mobile_top_padding' );
+			$mobile_right_padding 			= get_theme_mod( 'ocean_top_bar_mobile_right_padding' );
+			$mobile_bottom_padding 			= get_theme_mod( 'ocean_top_bar_mobile_bottom_padding' );
+			$mobile_left_padding 			= get_theme_mod( 'ocean_top_bar_mobile_left_padding' );
+			$background 					= get_theme_mod( 'ocean_top_bar_bg', '#ffffff' );
+			$border_color 					= get_theme_mod( 'ocean_top_bar_border_color', '#f1f1f1' );
+			$text_color 					= get_theme_mod( 'ocean_top_bar_text_color', '#929292' );
+			$link_color 					= get_theme_mod( 'ocean_top_bar_link_color', '#555555' );
+			$link_color_hover 				= get_theme_mod( 'ocean_top_bar_link_color_hover', '#13aff0' );
+			$social_font_size 				= get_theme_mod( 'ocean_top_bar_social_font_size' );
+			$social_tablet_font_size 		= get_theme_mod( 'ocean_top_bar_social_tablet_font_size' );
+			$social_mobile_font_size 		= get_theme_mod( 'ocean_top_bar_social_mobile_font_size' );
+			$social_right_padding 			= get_theme_mod( 'ocean_top_bar_social_right_padding' );
+			$social_left_padding 			= get_theme_mod( 'ocean_top_bar_social_left_padding' );
+			$social_tablet_right_padding 	= get_theme_mod( 'ocean_top_bar_social_tablet_right_padding' );
+			$social_tablet_left_padding 	= get_theme_mod( 'ocean_top_bar_social_tablet_left_padding' );
+			$social_mobile_right_padding 	= get_theme_mod( 'ocean_top_bar_social_mobile_right_padding' );
+			$social_mobile_left_padding 	= get_theme_mod( 'ocean_top_bar_social_mobile_left_padding' );
+			$social_links_color 			= get_theme_mod( 'ocean_top_bar_social_links_color', '#bbbbbb' );
+			$social_hover_links_color 		= get_theme_mod( 'ocean_top_bar_social_hover_links_color' );
 
 			// Define css var
 			$css = '';
 			$padding_css = '';
 			$tablet_padding_css = '';
 			$mobile_padding_css = '';
+			$social_padding_css = '';
+			$social_tablet_padding_css = '';
+			$social_mobile_padding_css = '';
 
 			// Top bar top padding
 			if ( ! empty( $top_padding ) && '8' != $top_padding ) {
@@ -585,6 +685,69 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			// Top bar link color hover
 			if ( ! empty( $link_color_hover ) && '#13aff0' != $link_color_hover ) {
 				$css .= '#top-bar-content a:hover,#top-bar-social-alt a:hover{color:'. $link_color_hover .';}';
+			}
+
+			// Add top bar social font size
+			if ( ! empty( $social_font_size ) && '14' != $social_font_size ) {
+				$css .= '#top-bar-social li a{font-size:'. $social_font_size .'px;}';
+			}
+
+			// Add top bar social tablet font size
+			if ( ! empty( $social_tablet_font_size ) ) {
+				$css .= '@media (max-width: 768px){#top-bar-social li a{font-size:'. $social_tablet_font_size .'px;}}';
+			}
+
+			// Add top bar social mobile font size
+			if ( ! empty( $social_mobile_font_size ) ) {
+				$css .= '@media (max-width: 480px){#top-bar-social li a{font-size:'. $social_mobile_font_size .'px;}}';
+			}
+
+			// Add top bar social right padding
+			if ( ! empty( $social_right_padding ) && '6' != $social_right_padding ) {
+				$social_padding_css .= 'padding-right:'. $social_right_padding .'px;';
+			}
+
+			// Add top bar social left padding
+			if ( ! empty( $social_left_padding ) && '6' != $social_left_padding ) {
+				$social_padding_css .= 'padding-left:'. $social_left_padding .'px;';
+			}
+
+			// Top bar social padding css
+			if ( ! empty( $social_right_padding ) && '6' != $social_right_padding
+				|| ! empty( $social_left_padding ) && '6' != $social_left_padding ) {
+				$css .= '#top-bar-social li a{'. $social_padding_css .'}';
+			}
+
+			// Tablet top bar social right padding
+			if ( ! empty( $social_tablet_right_padding ) ) {
+				$social_tablet_padding_css .= 'padding-right:'. $social_tablet_right_padding .'px;';
+			}
+
+			// Tablet top bar social left padding
+			if ( ! empty( $social_tablet_left_padding ) ) {
+				$social_tablet_padding_css .= 'padding-left:'. $social_tablet_left_padding .'px;';
+			}
+
+			// Tablet top bar social padding css
+			if ( ! empty( $social_tablet_right_padding )
+				|| ! empty( $social_tablet_left_padding ) ) {
+				$css .= '@media (max-width: 768px){#top-bar-social li a{'. $social_tablet_padding_css .'}}';
+			}
+
+			// Mobile top bar social right padding
+			if ( ! empty( $social_mobile_right_padding ) ) {
+				$social_mobile_padding_css .= 'padding-right:'. $social_mobile_right_padding .'px;';
+			}
+
+			// Mobile top bar social left padding
+			if ( ! empty( $social_mobile_left_padding ) ) {
+				$social_mobile_padding_css .= 'padding-left:'. $social_mobile_left_padding .'px;';
+			}
+
+			// Mobile top bar social padding css
+			if ( ! empty( $social_mobile_right_padding )
+				|| ! empty( $social_mobile_left_padding ) ) {
+				$css .= '@media (max-width: 480px){#top-bar-social li a{'. $social_mobile_padding_css .'}}';
 			}
 
 			// Top bar social link color

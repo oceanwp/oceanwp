@@ -10,19 +10,25 @@
 
   li {
     float: left;
-    margin-right: 12px;
-
-    &:last-child {
-      margin-right: 0;
-    }
 
     a {
       display: block;
       float: left;
       font-size: 14px;
       color: $color-13;
+      padding: 0 6px;
     }
+  }
 
+  &.top-bar-left li:first-child a {
+    padding-left: 0;
+  }
+
+  &.top-bar-right li:last-child a {
+    padding-right: 0;
+  }
+
+  li a {
     &.oceanwp-twitter a:hover { color: #46d4fe; }
     &.oceanwp-facebook a:hover { color: #37589b; }
     &.oceanwp-googleplus a:hover { color: #de5a49; }

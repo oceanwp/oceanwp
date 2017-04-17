@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Header style
-$header_style = get_theme_mod( 'ocean_header_style', 'minimal' );
+$header_style = oceanwp_header_style();
 
 // Menu Location
 $menu_location = apply_filters( 'ocean_main_menu_location', 'main_menu' );

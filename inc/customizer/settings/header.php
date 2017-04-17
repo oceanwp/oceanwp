@@ -2514,7 +2514,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 		public static function head_css( $output ) {
 
 			// Get header style
-			$header_style 												= get_theme_mod( 'ocean_header_style', 'minimal' );
+			$header_style 												= oceanwp_header_style();
 		
 			// Global vars
 			$header_height 												= get_theme_mod( 'ocean_header_height', '74' );
@@ -3079,17 +3079,17 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Header logo max width
 			if ( ! empty( $logo_max_width ) ) {
-				$css .= '#site-logo #site-logo-inner a img{max-width:'. $logo_max_width .'px;}';
+				$css .= '#site-logo #site-logo-inner a img, #site-header.center-header #site-navigation .middle-site-logo a img{max-width:'. $logo_max_width .'px;}';
 			}
 
 			// Header logo max width tablet
 			if ( ! empty( $logo_max_width_tablet ) ) {
-				$css .= '@media (max-width: 768px){#site-logo #site-logo-inner a img{max-width:'. $logo_max_width_tablet .'px;}}';
+				$css .= '@media (max-width: 768px){#site-logo #site-logo-inner a img, #site-header.center-header #site-navigation .middle-site-logo a img{max-width:'. $logo_max_width_tablet .'px;}}';
 			}
 
 			// Header logo max width mobile
 			if ( ! empty( $logo_max_width_mobile ) ) {
-				$css .= '@media (max-width: 480px){#site-logo #site-logo-inner a img{max-width:'. $logo_max_width_mobile .'px;}}';
+				$css .= '@media (max-width: 480px){#site-logo #site-logo-inner a img, #site-header.center-header #site-navigation .middle-site-logo a img{max-width:'. $logo_max_width_mobile .'px;}}';
 			}
 
 			// Header logo color
@@ -3209,7 +3209,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Dropdown menu borders color
 			if ( ! empty( $dropdown_menu_borders ) && '#f1f1f1' != $dropdown_menu_borders ) {
-				$css .= '.dropdown-menu ul li.menu-item,#site-navigation .megamenu > li,#site-navigation .megamenu li ul.sub-menu{border-color:'. $dropdown_menu_borders .';}';
+				$css .= '.dropdown-menu ul li.menu-item,.navigation > ul > li > ul.megamenu.sub-menu > li,.navigation .megamenu li ul.sub-menu{border-color:'. $dropdown_menu_borders .';}';
 			}
 
 			// Dropdown menu link color
@@ -3239,27 +3239,27 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Dropdown menu link active background color
 			if ( ! empty( $dropdown_category_title_bg ) && '#f8f8f8' != $dropdown_category_title_bg ) {
-				$css .= '#site-navigation li.mega-cat .mega-cat-title{background-color:'. $dropdown_category_title_bg .';}';
+				$css .= '.navigation li.mega-cat .mega-cat-title{background-color:'. $dropdown_category_title_bg .';}';
 			}
 
 			// Dropdown menu link active background color
 			if ( ! empty( $dropdown_category_title_color ) && '#222222' != $dropdown_category_title_color ) {
-				$css .= '#site-navigation li.mega-cat .mega-cat-title{color:'. $dropdown_category_title_color .';}';
+				$css .= '.navigation li.mega-cat .mega-cat-title{color:'. $dropdown_category_title_color .';}';
 			}
 
 			// Dropdown menu link active background color
 			if ( ! empty( $dropdown_category_links_color ) && '#555555' != $dropdown_category_links_color ) {
-				$css .= '#site-navigation li.mega-cat ul li .mega-post-title a{color:'. $dropdown_category_links_color .';}';
+				$css .= '.navigation li.mega-cat ul li .mega-post-title a{color:'. $dropdown_category_links_color .';}';
 			}
 
 			// Dropdown menu link active background color
 			if ( ! empty( $dropdown_category_links_hover_color ) && '#333333' != $dropdown_category_links_hover_color ) {
-				$css .= '#site-navigation li.mega-cat ul li .mega-post-title a:hover{color:'. $dropdown_category_links_hover_color .';}';
+				$css .= '.navigation li.mega-cat ul li .mega-post-title a:hover{color:'. $dropdown_category_links_hover_color .';}';
 			}
 
 			// Dropdown menu link active background color
 			if ( ! empty( $dropdown_category_date_color ) && '#bbbbbb' != $dropdown_category_date_color ) {
-				$css .= '#site-navigation li.mega-cat ul li .mega-post-date{color:'. $dropdown_category_date_color .';}';
+				$css .= '.navigation li.mega-cat ul li .mega-post-date{color:'. $dropdown_category_date_color .';}';
 			}
 
 			// Add menu social font size
@@ -3362,7 +3362,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Mobile menu dropdowns background color
 			if ( ! empty( $mobile_menu_sidr_dropdowns_bg ) && 'rgba(0,0,0,0.02)' != $mobile_menu_sidr_dropdowns_bg ) {
-				$css .= '.sidr-class-main-menu ul{background-color:'. $mobile_menu_sidr_dropdowns_bg .';}';
+				$css .= '.sidr-class-dropdown-menu ul{background-color:'. $mobile_menu_sidr_dropdowns_bg .';}';
 			}
 
 			// Mobile menu search background color

@@ -258,6 +258,39 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				'priority' 			=> 210,
 			) );
 
+			/**
+			 * Section
+			 */
+			$wp_customize->add_section( 'ocean_typography_general' , array(
+				'title' 			=> esc_html__( 'General', 'oceanwp' ),
+				'priority' 			=> 1,
+				'panel' 			=> 'ocean_typography_panel',
+			) );
+
+			/**
+			 * Font Subsets
+			 */
+			$wp_customize->add_setting( 'ocean_google_font_subsets' , array(
+				'default' 			=> array( 'latin' ),
+				'sanitize_callback' => false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customize_Multicheck_Control( $wp_customize, 'ocean_google_font_subsets', array(
+				'label' 			=> esc_html__( 'Font Subsets', 'oceanwp' ),
+				'section' 			=> 'ocean_typography_general',
+				'settings' 			=> 'ocean_google_font_subsets',
+				'priority' 			=> 10,
+				'choices' 			=> array(
+					'latin' 		=> 'latin',
+					'latin-ext' 	=> 'latin-ext',
+					'cyrillic' 		=> 'cyrillic',
+					'cyrillic-ext' 	=> 'cyrillic-ext',
+					'greek' 		=> 'greek',
+					'greek-ext'	 	=> 'greek-ext',
+					'vietnamese' 	=> 'vietnamese',
+				),
+			) ) );
+
 			// Lopp through elements
 			$count = '1';
 			foreach( $elements as $element => $array ) {
@@ -322,7 +355,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 								'label' 			=> esc_html__( 'Font Family', 'oceanwp' ),
 								'section' 			=> 'ocean_typography_'. $element,
 								'settings' 			=> $element .'_typography[font-family]',
-								'priority' 			=> 1,
+								'priority' 			=> 10,
 								'type' 				=> 'select',
 								'active_callback' 	=> $active_callback,
 						) ) );
@@ -345,7 +378,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'description' 		=> esc_html__( 'Important: Not all fonts support every font-weight.', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
 							'settings' 			=> $element .'_typography[font-weight]',
-							'priority' 			=> 2,
+							'priority' 			=> 10,
 							'type' 				=> 'select',
 							'active_callback' 	=> $active_callback,
 							'choices' 			=> array(
@@ -378,7 +411,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'label' 			=> esc_html__( 'Font Style', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
 							'settings' 			=> $element .'_typography[font-style]',
-							'priority' 			=> 3,
+							'priority' 			=> 10,
 							'type' 				=> 'select',
 							'active_callback' 	=> $active_callback,
 							'choices' 			=> array(
@@ -405,14 +438,15 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'label' 			=> esc_html__( 'Text Transform', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
 							'settings' 			=> $element .'_typography[text-transform]',
-							'priority' 			=> 4,
+							'priority' 			=> 10,
 							'type' 				=> 'select',
 							'active_callback' 	=> $active_callback,
 							'choices' 			=> array(
-								'' => esc_html__( 'Default', 'oceanwp' ),
+								'' 			 => esc_html__( 'Default', 'oceanwp' ),
 								'capitalize' => esc_html__( 'Capitalize', 'oceanwp' ),
-								'lowercase' => esc_html__( 'Lowercase', 'oceanwp' ),
-								'uppercase' => esc_html__( 'Uppercase', 'oceanwp' ),
+								'lowercase'  => esc_html__( 'Lowercase', 'oceanwp' ),
+								'uppercase'  => esc_html__( 'Uppercase', 'oceanwp' ),
+								'none'  	 => esc_html__( 'None', 'oceanwp' ),
 							),
 						) );
 
@@ -451,7 +485,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					            'tablet' 	=> $element .'_tablet_typography[font-size]',
 					            'mobile' 	=> $element .'_mobile_typography[font-size]',
 						    ),
-							'priority' 			=> 5,
+							'priority' 			=> 10,
 							'active_callback' 	=> $active_callback,
 						    'input_attrs' 		=> array(
 						        'min'   => 0,
@@ -481,7 +515,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'label' 			=> esc_html__( 'Font Color', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
 							'settings' 			=> $element .'_typography[color]',
-							'priority' 			=> 6,
+							'priority' 			=> 10,
 							'active_callback' 	=> $active_callback,
 						) ) );
 
@@ -520,7 +554,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					            'tablet' 	=> $element .'_tablet_typography[line-height]',
 					            'mobile' 	=> $element .'_mobile_typography[line-height]',
 						    ),
-							'priority' 			=> 7,
+							'priority' 			=> 10,
 							'active_callback' 	=> $active_callback,
 						    'input_attrs' 		=> array(
 						        'min'   => 0,
@@ -564,7 +598,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					            'tablet' 	=> $element .'_tablet_typography[letter-spacing]',
 					            'mobile' 	=> $element .'_mobile_typography[letter-spacing]',
 						    ),
-							'priority' 			=> 8,
+							'priority' 			=> 10,
 							'active_callback' 	=> $active_callback,
 						    'input_attrs' 		=> array(
 						        'min'   => 0,

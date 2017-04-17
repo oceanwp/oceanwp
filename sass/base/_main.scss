@@ -108,16 +108,6 @@ body .oceanwp-row {
 .responsive-audio-wrap {
 	iframe, object, embed {
 		display: block;
-    	min-height: 400px;
-	}
-}
-
-.entry-content {
-	.responsive-video-wrap,
-	.responsive-audio-wrap {
-		iframe, object, embed {
-	    	min-height: 100%;
-		}
 	}
 }
 

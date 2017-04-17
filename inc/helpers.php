@@ -132,15 +132,21 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			$classes[] = 'has-fixed-footer';
 		}
 
-		// If has lightbox
-		if ( get_theme_mod( 'ocean_add_lightbox', true ) ) {
-			$classes[] = 'has-lightbox';
-		}
+		// If WooCommerce is active
+		if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 
-		// If WooCommerce grid/list buttons
-		if ( OCEANWP_WOOCOMMERCE_ACTIVE
-			&& get_theme_mod( 'ocean_woo_grid_list', true ) ) {
-			$classes[] = 'has-grid-list';
+			// If grid/list buttons
+			if ( get_theme_mod( 'ocean_woo_grid_list', true ) ) {
+				$classes[] = 'has-grid-list';
+			}
+
+			// Tabs position
+			$woo_tabs = get_theme_mod( 'ocean_woo_product_meta_tabs_position', 'center' );
+			if ( oceanwp_is_woo_single()
+				&& 'center' != $woo_tabs ) {
+				$classes[] = 'woo-'. $woo_tabs .'-tabs';
+			}
+
 		}
 		
 		// Return classes
@@ -1044,7 +1050,7 @@ if ( ! function_exists( 'oceanwp_header_menu_classes' ) ) {
 	function oceanwp_header_menu_classes( $return ) {
 
 		// Header style
-		$header_style = get_theme_mod( 'ocean_header_style', 'minimal' );
+		$header_style = oceanwp_header_style();
 
 		// Medium header style menu position
 		$menu_position = get_theme_mod( 'ocean_medium_header_menu_position', 'center-menu' );
@@ -1235,7 +1241,11 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 			if ( 'full_screen' == $header_style ) {
 				$items .= '<form method="get" action="'. esc_url( home_url( '/' ) ) .'" class="header-searchform">';
 					$items .= '<input type="search" name="s" value="" autocomplete="off" />';
-					$items .= '<label>'. esc_html__( 'Type your search', 'oceanwp' ) .'<span><i></i><i></i><i></i></span></label>';
+					// If the headerSearchForm script is not disable
+					if ( OCEAN_EXTRA_ACTIVE
+						&& OceanWP_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
+						$items .= '<label>'. esc_html__( 'Type your search', 'oceanwp' ) .'<span><i></i><i></i><i></i></span></label>';
+					}
 				$items .= '</form>';
 			} else {
 				$items .= '<a href="#" class="site-search-toggle'. $class .'">';
@@ -2727,13 +2737,7 @@ if ( ! function_exists( 'oceanwp_infinite_scroll' ) ) {
 	function oceanwp_infinite_scroll( $type = 'standard' ) {
 
 		// Load infinite scroll script
-		wp_enqueue_script(
-			'oceanwp-infinitescroll',
-			OCEANWP_JS_DIR_URI .'dynamic/infinitescroll.min.js',
-			array( 'jquery' ),
-			1.0,
-			true
-		);
+		wp_enqueue_script( 'oceanwp-infinitescroll', OCEANWP_JS_DIR_URI .'dynamic/infinitescroll.min.js', array( 'jquery' ), 1.0, true );
 		
 		// Localize loading text
 		$is_params = array( 'msgText' => esc_html__( 'Loading...', 'oceanwp' ) );
@@ -3252,43 +3256,52 @@ if ( ! function_exists( 'oceanwp_minify_js' ) ) {
 		// Return if no JS
 		if ( ! $js ) return;
 
-		$replace = array(
-			'#\'([^\n\']*?)/\*([^\n\']*)\'#' 	=> "'\1/'+\'\'+'*\2'", 	// remove comments from ' strings
-			'#\"([^\n\"]*?)/\*([^\n\"]*)\"#' 	=> '"\1/"+\'\'+"*\2"', 	// remove comments from " strings
-			'#/\*.*?\*/#s'            			=> "",      			// strip C style comments
-			'#[\r\n]+#'               			=> "\n",    			// remove blank lines and \r's
-			'#\n([ \t]*//.*?\n)*#s'   			=> "\n",    			// strip line comments (whole line only)
-			'#([^\\])//([^\'"\n]*)\n#s' 		=> "\\1\n", 			// strip line comments
-			'#\n\s+#'                 			=> "\n",    			// strip excess whitespace
-			'#\s+\n#'                 			=> "\n",    			// strip excess whitespace
-			'#(//[^\n]*\n)#s'         			=> "\\1\n", 			// extra line feed after any comments left
-			'#/([\'"])\+\'\'\+([\'"])\*#' 		=> "/*" 				// restore comments in strings
-		);
+		if ( OCEAN_EXTRA_ACTIVE
+			&& class_exists( 'Ocean_Extra_JSMin' ) ) {
 
-		$search = array_keys( $replace );
-		$script = preg_replace( $search, $replace, $js );
+			$script = Ocean_Extra_JSMin::minify( $js );
 
-		$replace = array(
-			"&&\n" => "&&",
-			"||\n" => "||",
-			"(\n"  => "(",
-			")\n"  => ")",
-			"[\n"  => "[",
-			"]\n"  => "]",
-			"+\n"  => "+",
-			",\n"  => ",",
-			"?\n"  => "?",
-			":\n"  => ":",
-			";\n"  => ";",
-			"{\n"  => "{",
-			"\n]"  => "]",
-			"\n)"  => ")",
-			"\n}"  => "}",
-			"\n\n" => "\n"
-		);
+		} else {
 
-		$search = array_keys( $replace );
-		$script = str_replace( $search, $replace, $script );
+			$replace = array(
+				'#\'([^\n\']*?)/\*([^\n\']*)\'#' 	=> "'\1/'+\'\'+'*\2'", 	// remove comments from ' strings
+				'#\"([^\n\"]*?)/\*([^\n\"]*)\"#' 	=> '"\1/"+\'\'+"*\2"', 	// remove comments from " strings
+				'#/\*.*?\*/#s'            			=> "",      			// strip C style comments
+				'#[\r\n]+#'               			=> "\n",    			// remove blank lines and \r's
+				'#\n([ \t]*//.*?\n)*#s'   			=> "\n",    			// strip line comments (whole line only)
+				'#([^\\])//([^\'"\n]*)\n#s' 		=> "\\1\n", 			// strip line comments
+				'#\n\s+#'                 			=> "\n",    			// strip excess whitespace
+				'#\s+\n#'                 			=> "\n",    			// strip excess whitespace
+				'#(//[^\n]*\n)#s'         			=> "\\1\n", 			// extra line feed after any comments left
+				'#/([\'"])\+\'\'\+([\'"])\*#' 		=> "/*" 				// restore comments in strings
+			);
+
+			$search = array_keys( $replace );
+			$script = preg_replace( $search, $replace, $js );
+
+			$replace = array(
+				"&&\n" => "&&",
+				"||\n" => "||",
+				"(\n"  => "(",
+				")\n"  => ")",
+				"[\n"  => "[",
+				"]\n"  => "]",
+				"+\n"  => "+",
+				",\n"  => ",",
+				"?\n"  => "?",
+				":\n"  => ":",
+				";\n"  => ";",
+				"{\n"  => "{",
+				"\n]"  => "]",
+				"\n)"  => ")",
+				"\n}"  => "}",
+				"\n\n" => "\n"
+			);
+
+			$search = array_keys( $replace );
+			$script = str_replace( $search, $replace, $script );
+
+		}
 
 		// Return minified JS
 		return trim( $script );
@@ -3365,8 +3378,20 @@ if ( ! function_exists( 'oceanwp_sidr_menu_source' ) ) {
 		// Add close button
 		$items['sidrclose'] = '#sidr-close';
 
+		// If has mobile menu
+		if ( has_nav_menu( 'mobile_menu' ) ) {
+			$items['mobile-nav'] = '#mobile-nav';
+		}
+
 		// Add main navigation
-		$items['nav'] = '#site-navigation';
+		else {
+			$items['nav'] = '#site-navigation';
+		}
+
+		// Add top bar menu
+		if ( has_nav_menu( 'topbar_menu' ) ) {
+			$items['top-nav'] = '#top-bar-nav';
+		}
 
 		if ( 'full_screen' != oceanwp_header_style() ) {
 

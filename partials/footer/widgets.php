@@ -27,7 +27,7 @@ $get_id 	= get_theme_mod( 'ocean_footer_widgets_page_id' );
 $elementor 	= get_post_meta( $get_id, '_elementor_edit_mode', true );
 
 // Get footer widgets columns
-$columns    = get_theme_mod( 'ocean_footer_widgets_columns', '4' );
+$columns    = apply_filters( 'ocean_footer_widgets_columns', get_theme_mod( 'ocean_footer_widgets_columns', '4' ) );
 $grid_class = oceanwp_grid_class( $columns );
 
 // Responsive columns
@@ -98,23 +98,25 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 				<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col col-2">
 					<?php dynamic_sidebar( 'footer-two' ); ?>
 				</div><!-- .footer-one-box -->
-			<?php endif;
+			<?php endif; ?>
 			
+			<?php
 			// Footer box 3
 			if ( $columns > '2' ) : ?>
 				<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col col-3 ">
 					<?php dynamic_sidebar( 'footer-three' ); ?>
 				</div><!-- .footer-one-box -->
-			<?php endif;
+			<?php endif; ?>
 
+			<?php
 			// Footer box 4
 			if ( $columns > '3' ) : ?>
 				<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col col-4">
 					<?php dynamic_sidebar( 'footer-four' ); ?>
 				</div><!-- .footer-box -->
-			<?php endif;
+			<?php endif; ?>
 
-		endif; ?>
+		<?php endif; ?>
 
 	</div><!-- .container -->
 

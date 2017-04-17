@@ -62,7 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		// Social Share
 		if ( 'social_share' == $element
-			&& class_exists( 'Ocean_Extra' ) ) {
+			&& OCEAN_EXTRA_ACTIVE ) {
 
 			do_action( 'ocean_social_share' );
 

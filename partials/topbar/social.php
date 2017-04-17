@@ -50,7 +50,7 @@ $link_target = $link_target ? $link_target : 'blank'; ?>
 
 <div id="top-bar-social" class="clr <?php echo esc_attr( $classes ); ?>">
 
-	<ul>
+	<ul class="clr">
 
 		<?php
 		// Loop through social options
@@ -65,8 +65,10 @@ $link_target = $link_target ? $link_target : 'blank'; ?>
 				// Display link
 				echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
 
-					if ( in_array( $key, array( 'skype', 'email' ) ) ) {
-						echo '<a href="'. esc_attr( $url ) .'" title="'. esc_attr( $val['label'] ) .'" target="_'. esc_attr( $link_target ) .'">';
+					if ( in_array( $key, array( 'skype' ) ) ) {
+						echo '<a href="skype:'. esc_attr( $url ) .'?call" title="'. esc_attr( $val['label'] ) .'" target="_self">';
+					} else if ( in_array( $key, array( 'email' ) ) ) {
+						echo '<a href="mailto:'. esc_attr( $url ) .'" title="'. esc_attr( $val['label'] ) .'" target="_self">';
 					} else {
 						echo '<a href="'. esc_url( $url ) .'" title="'. esc_attr( $val['label'] ) .'" target="_'. esc_attr( $link_target ) .'">';
 					}

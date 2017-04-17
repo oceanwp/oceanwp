@@ -91,9 +91,9 @@ blockquote { padding-right: 20px; padding-left: 0; border-right-width: 3px; bord
 .dropdown-menu ul li a i { margin-left: 3px; margin-right: 0; }
 .dropdown-menu li a i { padding-left: 5px; padding-right: 0; }
 
-#site-navigation .megamenu { right: auto; }
-#site-navigation .megamenu > li { float: right; border-right-width: 1px; border-left-width: 0; }
-#site-navigation .megamenu > li:first-child { border-right: none; }
+.navigation .megamenu { right: auto; }
+.navigation > ul > li > ul.megamenu.sub-menu > li { float: right; border-right-width: 1px; border-left-width: 0; }
+.navigation > ul > li > ul.megamenu.sub-menu > li:first-child { border-right: none; }
 
 /* If social */
 .has-social #site-navigation-wrap { left: 0; right: auto; }
@@ -395,7 +395,7 @@ p.stars span a:after { right: 0; left: auto; }
 .woocommerce .oceanwp-loginform-wrap .lost_password { float: left; }
 
 /* Header shop widget dropdown */
-#current-shop-items-dropdown { left: 0; right: auto; }
+#current-shop-items-dropdown { left: 0; right: auto; text-align: right; }
 .boxed-main-layout #current-shop-items-dropdown { left: 30px; right: auto; }
 
 /*------------------------------------*

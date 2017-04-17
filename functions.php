@@ -26,22 +26,6 @@ function oceanwp_get_theme_info() {
 	);
 }
 
-// Migrate the custom CSS of the Theme Panel into the Additional CSS panel of the customizer
-function oceanwp_custom_css_migrate() {
-	if ( function_exists( 'wp_update_custom_css_post' ) ) {
-		$custom_css = get_theme_mod( 'custom_css' );
-		if ( $custom_css ) {
-			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
-			$return = wp_update_custom_css_post( $core_css . $custom_css );
-			if ( ! is_wp_error( $return ) ) {
-				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
-				remove_theme_mod( 'custom_css' );
-			}
-		}
-	}
-}
-add_action( 'after_setup_theme', 'oceanwp_custom_css_migrate' );
-
 // Core Constants
 define( 'OCEANWP_THEME_DIR', get_template_directory() );
 define( 'OCEANWP_THEME_URI', get_template_directory_uri() );
@@ -120,6 +104,9 @@ class OCEANWP_Theme_Class {
 			// Outputs custom CSS to the head
 			add_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'custom_css' ), 9999 );
 
+			// Minify the WP custom CSS because WordPress doesn't do it by default
+			add_filter( 'wp_get_custom_css', array( 'OCEANWP_Theme_Class', 'minify_custom_css' ) );
+
 			// Outputs custom JS to the footer
 			add_action( 'wp_footer', array( 'OCEANWP_Theme_Class', 'custom_js' ), 9999 );
 
@@ -166,6 +153,7 @@ class OCEANWP_Theme_Class {
 		define( 'OCEANWP_INC_DIR_URI', OCEANWP_THEME_URI .'/inc/' );
 
 		// Check if plugins are active
+		define( 'OCEAN_EXTRA_ACTIVE', class_exists( 'Ocean_Extra' ) );
 		define( 'OCEANWP_WOOCOMMERCE_ACTIVE', class_exists( 'WooCommerce' ) );
 
 	}
@@ -273,7 +261,8 @@ class OCEANWP_Theme_Class {
 		register_nav_menus( array(
 			'topbar_menu'     => esc_html__( 'Top Bar', 'oceanwp' ),
 			'main_menu'       => esc_html__( 'Main', 'oceanwp' ),
-			'footer_menu'     => esc_html__( 'Footer', 'oceanwp' )
+			'footer_menu'     => esc_html__( 'Footer', 'oceanwp' ),
+			'mobile_menu'     => esc_html__( 'Mobile (optional)', 'oceanwp' )
 		) );
 
 		// Enable support for Post Formats
@@ -391,11 +380,6 @@ class OCEANWP_Theme_Class {
 		// Register simple line icons style
 		wp_enqueue_style( 'simple-line-icons', $dir .'devs/simple-line-icons.min.css', false, '2.2.2' );
 
-		// Lightbox style
-		if ( get_theme_mod( 'ocean_add_lightbox', true ) ) {
-			wp_enqueue_style( 'chocolat', $dir .'oceanwp-lightbox.min.css', false, $theme_version );
-		}
-
 		// Main Style.css File
 		wp_enqueue_style( 'oceanwp-style', get_stylesheet_uri(), false, $theme_version );
 
@@ -415,7 +399,7 @@ class OCEANWP_Theme_Class {
 		$theme_version = OCEANWP_THEME_VERSION;
 
 		// Get localized array
-		$localize_array = OCEANWP_Theme_Class::localize_array();
+		$localize_array = self::localize_array();
 
 		// Comment reply
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -430,14 +414,10 @@ class OCEANWP_Theme_Class {
 			wp_enqueue_script( 'oceanwp-woocommerce', $dir .'dynamic/woo-scripts.min.js', array( 'jquery' ), $theme_version, true );
 		}
 
-		// Lightbox scripts
-		if ( get_theme_mod( 'ocean_add_lightbox', true ) ) {
-			wp_enqueue_script( 'chocolat', $dir .'dynamic/chocolat.min.js', array( 'jquery' ), $theme_version, true );
-			wp_enqueue_script( 'oceanwp-lightbox', $dir .'dynamic/lightbox.min.js', array( 'jquery' ), $theme_version, true );
-		}
-
 		// Load minified js
 		wp_enqueue_script( 'oceanwp-main', $dir .'main.min.js', array( 'jquery' ), $theme_version, true );
+
+		// Localize array
 		wp_localize_script( 'oceanwp-main', 'oceanwpLocalize', $localize_array );
 
 	}
@@ -611,6 +591,17 @@ class OCEANWP_Theme_Class {
 		if ( ! empty( $output ) ) {
 			echo "<!-- OceanWP CSS -->\n<style type=\"text/css\">\n" . wp_strip_all_tags( oceanwp_minify_css( $output ) ) . "\n</style>";
 		}
+
+	}
+
+	/**
+	 * Minify the WP custom CSS because WordPress doesn't do it by default.
+	 *
+	 * @since 1.1.9
+	 */
+	public static function minify_custom_css( $css ) {
+
+		return oceanwp_minify_css( $css );
 
 	}
 

@@ -28,7 +28,7 @@ foreach( $cats as $oceanwp_related_cat ) {
 
 // Query args
 $args = array(
-	'posts_per_page' => get_theme_mod( 'ocean_blog_related_count', '3' ),
+	'posts_per_page' => apply_filters( 'ocean_related_blog_posts_count', get_theme_mod( 'ocean_blog_related_count', '3' ) ),
 	'orderby'        => 'rand',
 	'category__in'   => $cats_ids,
 	'post__not_in'   => array( get_the_ID() ),
@@ -80,15 +80,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 				// Add classes
 				$classes	= array( 'related-post', 'clr', 'col' );
 				$classes[]	= oceanwp_grid_class( $oceanwp_columns );
-				$classes[]	= 'col-'. $oceanwp_count;
-
-				// Images size
-				if ( 'full-width' == oceanwp_post_layout()
-					|| 'full-screen' == oceanwp_post_layout() ) {
-					$size = 'medium_large';
-				} else {
-					$size = 'medium';
-				} ?>
+				$classes[]	= 'col-'. $oceanwp_count; ?>
 
 				<article <?php post_class( $classes ); ?>>
 
@@ -115,12 +107,41 @@ if ( $oceanwp_related_query->have_posts() ) :
 						<figure class="related-post-media clr">
 
 							<a href="<?php the_permalink(); ?>" class="related-thumb">
+
 								<?php
-								// Display post thumbnail
-								the_post_thumbnail( $size, array(
-									'alt'		=> get_the_title(),
-									'itemprop' 	=> 'image',
-								) ); ?>
+								// Image width
+								$img_width  = apply_filters( 'ocean_related_blog_posts_img_width', get_theme_mod( 'ocean_blog_related_img_width' ) );
+								$img_height = apply_filters( 'ocean_related_blog_posts_img_height', get_theme_mod( 'ocean_blog_related_img_height' ) );
+
+			                	// Images attr
+								$img_id 	= get_post_thumbnail_id( get_the_ID(), 'full' );
+								$img_url 	= wp_get_attachment_image_src( $img_id, 'full', true );
+								$img_atts 	= ocean_extra_image_attributes( $img_url[1], $img_url[2], $img_width, $img_height );
+
+								// If Ocean Extra is active and has a custom size
+								if ( OCEAN_EXTRA_ACTIVE
+									&& ! empty( $img_atts ) ) { ?>
+
+									<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts[ 'width' ], $img_atts[ 'height' ], $img_atts[ 'crop' ], true, $img_atts[ 'upscale' ] ); ?>" alt="<?php esc_attr( the_title() ); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>" itemprop="image" />
+
+								<?php
+								} else {
+
+									// Images size
+									if ( 'full-width' == oceanwp_post_layout()
+										|| 'full-screen' == oceanwp_post_layout() ) {
+										$size = 'medium_large';
+									} else {
+										$size = 'medium';
+									}
+
+									// Display post thumbnail
+									the_post_thumbnail( $size, array(
+										'alt'		=> get_the_title(),
+										'itemprop' 	=> 'image',
+									) );
+
+								} ?>
 							</a>
 
 						</figure>

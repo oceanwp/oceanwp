@@ -97,7 +97,7 @@ if ( 'transparent' == $header_style ) { ?>
 	<?php
 	} ?>
 
-</header><!-- #header -->
+</header><!-- #site-header -->
 
 <?php
 // If transparent header style

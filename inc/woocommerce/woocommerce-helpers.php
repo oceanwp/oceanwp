@@ -68,14 +68,18 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
  *
  * @since 1.0.0
  */
-function oceanwp_woo_placeholder_img() {
-	if ( function_exists( 'wc_placeholder_img_src' ) && wc_placeholder_img_src() ) {
-		$placeholder = '<img src="'. wc_placeholder_img_src() .'" alt="'. esc_attr__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />';
-		$placeholder = apply_filters( 'ocean_woo_placeholder_img_html', $placeholder );
-		if ( $placeholder ) {
-			echo wp_kses_post( $placeholder );
+if ( ! function_exists( 'oceanwp_woo_placeholder_img' ) ) {
+
+	function oceanwp_woo_placeholder_img() {
+		if ( function_exists( 'wc_placeholder_img_src' ) && wc_placeholder_img_src() ) {
+			$placeholder = '<img src="'. wc_placeholder_img_src() .'" alt="'. esc_attr__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />';
+			$placeholder = apply_filters( 'ocean_woo_placeholder_img_html', $placeholder );
+			if ( $placeholder ) {
+				echo wp_kses_post( $placeholder );
+			}
 		}
 	}
+
 }
 
 /**
@@ -83,13 +87,47 @@ function oceanwp_woo_placeholder_img() {
  *
  * @since 1.0.0
  */
-function oceanwp_woo_product_instock( $post_id = '' ) {
-	global $post;
-	$post_id      = $post_id ? $post_id : $post->ID;
-	$stock_status = get_post_meta( $post_id, '_stock_status', true );
-	if ( 'instock' == $stock_status ) {
-		return true;
-	} else {
-		return false;
+if ( ! function_exists( 'oceanwp_woo_product_instock' ) ) {
+
+	function oceanwp_woo_product_instock( $post_id = '' ) {
+		global $post;
+		$post_id      = $post_id ? $post_id : $post->ID;
+		$stock_status = get_post_meta( $post_id, '_stock_status', true );
+		if ( 'instock' == $stock_status ) {
+			return true;
+		} else {
+			return false;
+		}
 	}
+
+}
+
+/**
+ * Returns catalog elements positioning
+ *
+ * @since 1.1.9
+ */
+if ( ! function_exists( 'oceanwp_catalog_elements_positioning' ) ) {
+
+	function oceanwp_catalog_elements_positioning() {
+
+		// Default sections
+		$sections = array( 'image', 'category', 'title', 'price-rating', 'description' , 'button' );
+
+		// Get sections from Customizer
+		$sections = get_theme_mod( 'oceanwp_catalog_elements_positioning', $sections );
+
+		// Turn into array if string
+		if ( $sections && ! is_array( $sections ) ) {
+			$sections = explode( ',', $sections );
+		}
+
+		// Apply filters for easy modification
+		$sections = apply_filters( 'oceanwp_catalog_elements_positioning', $sections );
+
+		// Return sections
+		return $sections;
+
+	}
+
 }

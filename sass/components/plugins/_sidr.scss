@@ -1,4 +1,5 @@
-#sidr-close {
+#sidr-close,
+#mobile-nav {
   display: none;
 }
 
@@ -107,6 +108,10 @@ a.sidr-class-toggle-sidr-close {
   ul li:last-child {
     border: none;
   }
+}
+
+.sidr-class-top-bar-menu > li:first-child {
+  border-top: none;
 }
 
 .sidr-class-menu-item-has-children {

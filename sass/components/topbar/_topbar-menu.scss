@@ -1,26 +1,26 @@
 /**
  * Top Bar Menu
  */
-.top-bar-left.has-content .top-bar-menu,
-.top-bar-right.has-content .top-bar-menu {
+.top-bar-left.has-content #top-bar-nav,
+.top-bar-right.has-content #top-bar-nav {
   margin: 0;
   margin-right: 20px;
   padding: 0;
 }
 
-.top-bar-menu,
-.top-bar-menu li {
+#top-bar-nav,
+#top-bar-nav > li {
   display: block;
   float: left;
 }
 
-#top-bar-content.top-bar-centered .top-bar-menu,
-#top-bar-content.top-bar-centered .top-bar-menu li {
+#top-bar-content.top-bar-centered #top-bar-nav,
+#top-bar-content.top-bar-centered #top-bar-nav > li {
   display: inline-block;
   float: none;
 }
 
-.top-bar-menu > li {
+#top-bar-nav > ul > li {
   margin-right: 15px;
 
   &:last-child {

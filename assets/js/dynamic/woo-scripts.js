@@ -205,7 +205,7 @@ function wooVariableImage() {
 				$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
 
 				// Refresh lightbox
-				if ( $j( 'body' ).hasClass( 'has-lightbox' ) ) {
+				if ( ! $j( 'body' ).hasClass( 'no-lightbox' ) ) {
 					$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
 						loop           	: true,
 						imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
@@ -234,7 +234,7 @@ function wooVariableImage() {
 				$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
 
 				// Refresh lightbox
-				if ( $j( 'body' ).hasClass( 'has-lightbox' ) ) {
+				if ( ! $j( 'body' ).hasClass( 'no-lightbox' ) ) {
 					$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
 						loop           	: true,
 						imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'

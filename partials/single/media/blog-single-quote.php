@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Return if Ocean Extra is not active
-if ( ! class_exists( 'Ocean_Extra' ) ) {
+if ( ! OCEAN_EXTRA_ACTIVE ) {
 	return;
 } ?>
 

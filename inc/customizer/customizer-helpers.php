@@ -96,7 +96,7 @@ function oceanwp_cac_has_topbar_social() {
 /* [ Header ]
 /*-------------------------------------------------------------------------------*/
 function oceanwp_cac_has_transparent_header_style() {
-	if ( 'transparent' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+	if ( 'transparent' == oceanwp_header_style() ) {
 		return true;
 	} else {
 		return false;
@@ -104,7 +104,7 @@ function oceanwp_cac_has_transparent_header_style() {
 }
 
 function oceanwp_cac_has_top_header_style() {
-	if ( 'top' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+	if ( 'top' == oceanwp_header_style() ) {
 		return true;
 	} else {
 		return false;
@@ -112,7 +112,7 @@ function oceanwp_cac_has_top_header_style() {
 }
 
 function oceanwp_cac_has_full_screen_header_style() {
-	if ( 'full_screen' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+	if ( 'full_screen' == oceanwp_header_style() ) {
 		return true;
 	} else {
 		return false;
@@ -120,7 +120,7 @@ function oceanwp_cac_has_full_screen_header_style() {
 }
 
 function oceanwp_cac_has_medium_header_style() {
-	if ( 'medium' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+	if ( 'medium' == oceanwp_header_style() ) {
 		return true;
 	} else {
 		return false;
@@ -128,7 +128,7 @@ function oceanwp_cac_has_medium_header_style() {
 }
 
 function oceanwp_cac_hasnt_medium_header_style() {
-	if ( 'medium' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+	if ( 'medium' == oceanwp_header_style() ) {
 		return false;
 	} else {
 		return true;
@@ -144,7 +144,7 @@ function oceanwp_cac_has_menu_social() {
 }
 
 function oceanwp_cac_has_custom_header() {
-	if ( 'custom' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+	if ( 'custom' == oceanwp_header_style() ) {
 		return true;
 	} else {
 		return false;
@@ -152,8 +152,8 @@ function oceanwp_cac_has_custom_header() {
 }
 
 function oceanwp_cac_hasnt_header_styles() {
-	if ( 'top' == get_theme_mod( 'ocean_header_style', 'minimal' )
-		|| 'medium' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+	if ( 'top' == oceanwp_header_style()
+		|| 'medium' == oceanwp_header_style() ) {
 		return false;
 	} else {
 		return true;
@@ -161,8 +161,8 @@ function oceanwp_cac_hasnt_header_styles() {
 }
 
 function oceanwp_cac_hasnt_medium_custom_header_styles() {
-	if ( 'medium' == get_theme_mod( 'ocean_header_style', 'minimal' )
-		|| 'custom' == get_theme_mod( 'ocean_header_style', 'minimal' ) ) {
+	if ( 'medium' == oceanwp_header_style()
+		|| 'custom' == oceanwp_header_style() ) {
 		return false;
 	} else {
 		return true;

@@ -5,7 +5,7 @@
  * @package OceanWP WordPress theme
  */ ?>
 
-        </main><!-- #main-content -->
+        </main><!-- #main -->
 
         <?php do_action( 'ocean_after_main' ); ?>
 
@@ -24,11 +24,9 @@
 
     <?php do_action( 'ocean_after_wrap' ); ?>
 
-</div><!-- .outer-wrap -->
+</div><!-- #outer-wrap -->
 
 <?php do_action( 'ocean_after_outer_wrap' ); ?>
-
-<?php get_template_part( 'partials/mobile-search' ); ?>
 
 <?php
 // If is not sticky footer
@@ -36,7 +34,17 @@ if ( ! class_exists( 'Ocean_Sticky_Footer' ) ) {
     get_template_part( 'partials/scroll-top' );
 } ?>
 
-<?php get_template_part( 'partials/header/mobile-sidr-close' ); ?>
+<?php
+// Mobile panel close button
+get_template_part( 'partials/mobile/mobile-sidr-close' ); ?>
+
+<?php
+// Mobile Menu (if defined)
+get_template_part( 'partials/mobile/mobile-nav' ); ?>
+
+<?php
+// Mobile search form
+get_template_part( 'partials/mobile/mobile-search' ); ?>
 
 <?php wp_footer(); ?>
 </body>

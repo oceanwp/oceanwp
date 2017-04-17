@@ -56,7 +56,7 @@ class OCEANWP_Welcome {
 		?>
 			<div class="updated notice is-dismissible">
 				<p><?php echo sprintf( esc_html__( 'Thanks for choosing OceanWP! You can read hints and tips on how get the most out of your new theme on the %1$swelcome screen%2$s.', 'oceanwp' ), '<a href="' . esc_url( admin_url( 'themes.php?page=oceanwp-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=oceanwp-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_attr_e( 'Get started with OCeanWP', 'oceanwp' ); ?></a></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=oceanwp-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_attr_e( 'Get started with OceanWP', 'oceanwp' ); ?></a></p>
 			</div>
 		<?php
 	}

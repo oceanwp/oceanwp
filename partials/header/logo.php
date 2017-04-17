@@ -57,7 +57,7 @@ $full_screen_logo 	= get_theme_mod( 'ocean_full_screen_header_logo' ); ?>
 
 	<?php
 	// Site description
-	if ( 'top' == get_theme_mod( 'ocean_header_style', 'minimal' )
+	if ( 'top' == oceanwp_header_style()
 		&& '' != get_bloginfo( 'description' ) ) { ?>
 		<div id="site-description"><h2><?php echo bloginfo( 'description' ); ?></h2></div><!-- #site-logo-inner -->
 	<?php } ?>

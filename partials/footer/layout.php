@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         	get_template_part( 'partials/footer/copyright' );
         } ?>
         
-    </div><!-- #footer-widgets -->
+    </div><!-- #footer-inner -->
 
     <?php do_action( 'ocean_after_footer_inner' ); ?>
 

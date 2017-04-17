@@ -68,7 +68,18 @@ function oceanwp_enqueue_google_font( $font ) {
 	$font = str_replace( ' ', '+', $font );
 
 	// Subset
-	$subset = '&amp;subset=latin';
+	$get_subsets 	= get_theme_mod( 'ocean_google_font_subsets', array( 'latin' ) );
+	$subsets 		= '';
+	if ( ! empty( $get_subsets ) ) {
+		$font_subsets = array();
+		foreach ( $get_subsets as $get_subset ) {
+			$font_subsets[] = $get_subset;
+		}
+		$subsets .= implode( ',', $font_subsets );
+	} else {
+		$subsets = 'latin';
+	}
+	$subset = '&amp;subset='. $subsets;
 
 	// Weights
 	$weights = array( '100', '200', '300', '400', '500', '600', '700', '800', '900' );

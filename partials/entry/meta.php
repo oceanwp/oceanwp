@@ -28,21 +28,21 @@ if ( 'post' == get_post_type() ) { ?>
 
 			<?php if ( 'author' == $section ) { ?>
 				<li class="meta-author" itemprop="name"><i class="icon-user"></i><?php echo the_author_posts_link(); ?></li>
-			<?php }
+			<?php } ?>
 
-			if ( 'date' == $section ) { ?>
+			<?php if ( 'date' == $section ) { ?>
 				<li class="meta-date" itemprop="datePublished" pubdate><i class="icon-clock"></i><?php echo get_the_date(); ?></li>
-			<?php }
+			<?php } ?>
 
-			if ( 'categories' == $section ) { ?>
+			<?php if ( 'categories' == $section ) { ?>
 				<li class="meta-cat"><i class="icon-folder"></i><?php the_category( ' / ', get_the_ID() ); ?></li>
-			<?php }
+			<?php } ?>
 
-			if ( 'comments' == $section && comments_open() && ! post_password_required() ) { ?>
+			<?php if ( 'comments' == $section && comments_open() && ! post_password_required() ) { ?>
 				<li class="meta-comments"><i class="icon-bubble"></i><?php comments_popup_link( esc_html__( '0 Comments', 'oceanwp' ), esc_html__( '1 Comment',  'oceanwp' ), esc_html__( '% Comments', 'oceanwp' ), 'comments-link' ); ?></li>
-			<?php }
+			<?php } ?>
 
-		} ?>
+		<?php } ?>
 		
 	</ul>
 	

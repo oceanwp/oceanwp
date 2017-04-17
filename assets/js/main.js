@@ -19,20 +19,20 @@ $j( document ).on( 'ready', function() {
 	menuSearch();
 	// Mobile menu
 	mobileMenu();
-    // Smooth comment scroll
-    smoothCommentScroll();
 	// Carousel
 	initCarousel();
+    // Auto lightbox
+    autoLightbox();
+    // Lightbox
+    initLightbox();
 	// Custom select
 	customSelects();
 	// Masonry grids
 	masonryGrids();
     // Responsive Video
 	initFitVids();
-    // Equal height elements
-	initEqualHeight();
-	// Recent posts widget
-	postsWidget();
+    // Match height elements
+	initMatchHeight();
 	// Scroll effect
 	scrollEffect();
 	// Scroll top
@@ -199,6 +199,18 @@ MEGA MENU
 function megaMenu() {
 	"use strict"
 
+    // Mega menu in top bar menu
+    $j( '#top-bar-nav .megamenu-li.full-mega' ).hover( function() {
+        var topBar          	= $j( '#top-bar' ),
+            menuWidth        	= topBar.width(),     
+            menuPosition        = topBar.offset(),     
+            menuItemPosition    = $j( this ).offset(),
+            PositionLeft        = menuItemPosition.left-menuPosition.left+1;
+
+        $j( this ).find( '.megamenu' ).css( { left: '-'+PositionLeft+'px', width: menuWidth } );
+    } );
+
+    // Mega menu in principal menu
     $j( '#site-navigation .megamenu-li.full-mega' ).hover( function() {
         var siteHeader          = $j( '#site-header-inner' ),
             menuWidth        	= siteHeader.width(),     
@@ -217,7 +229,7 @@ function megaMenu() {
     } );
 
     // Megamenu auto width
-    $j( '#site-navigation .megamenu-li.auto-mega .megamenu' ).each( function() {
+    $j( '.navigation .megamenu-li.auto-mega .megamenu' ).each( function() {
         var li                  = $j( this ).parent();
         var liOffset            = li.offset().left;
         var liOffsetTop         = li.offset().top;
@@ -555,21 +567,6 @@ function mobileMenu( event ) {
 }
 
 /* ==============================================
-SMOOTH COMMENT SCROLL
-============================================== */
-function smoothCommentScroll() {
-	"use strict"
-
-	$j( '.single a.comments-link' ).click( function( event ) {
-		$j( 'html, body' ).stop(true,true).animate( {
-			scrollTop: $j( this.hash ).offset().top -120
-		}, 'normal' );
-		return false;
-	} );
-
-}
-
-/* ==============================================
 CAROUSEL
 ============================================== */
 function initCarousel( $context ) {
@@ -640,6 +637,74 @@ function initCarousel( $context ) {
 }
 
 /* ==============================================
+AUTO LIGHTBOX
+============================================== */
+function autoLightbox() {
+    "use strict"
+
+    $j( 'body .entry-content a:has(img), body .entry a:has(img)' ).each( function() {
+
+        // Make sure the lightbox is only used for image links and not for links to external pages
+        var $image_formats = ['bmp', 'gif', 'jpeg', 'jpg', 'png', 'tiff', 'tif', 'jfif', 'jpe', 'svg', 'mp4', 'ogg', 'webm'],
+            $image_formats_mask = 0;
+
+        // Loop through the image extensions array to see if we have an image link
+        for ( var $i = 0; $i < $image_formats.length; $i++ ) {
+            $image_formats_mask += String( $j( this ).attr( 'href' ) ).indexOf( '.' + $image_formats[$i] );
+        }
+
+        // If no image extension was found add the no lightbox class
+        if ( $image_formats_mask == -13 ) {
+            $j( this ).addClass( 'no-lightbox' );
+        }
+
+        if ( ! $j( this ).hasClass( 'no-lightbox' )
+            && ! $j( this ).hasClass( 'gallery-lightbox' )
+            && ! $j( this ).parent().hasClass( 'gallery-icon' )
+            && ! $j( this ).hasClass( 'woo-lightbox' )
+            && ! $j( this ).hasClass( 'woo-thumbnail' ) ) {
+
+            $j( this ).addClass( 'oceanwp-lightbox' );
+            
+        }
+
+        if ( ! $j( this ).hasClass( 'no-lightbox' )
+            && $j( this ).parent().hasClass( 'gallery-icon' ) ) {
+
+            $j( this ).addClass( 'gallery-lightbox' );
+            
+        }
+
+    } );
+
+}
+
+/* ==============================================
+LIGHTBOX
+============================================== */
+function initLightbox( $context ) {
+    "use strict"
+
+    // Lightbox
+    $j( 'body .site-content, body .entry' ).Chocolat( {
+        imageSelector   : '.oceanwp-lightbox'
+    } );
+
+    // Gallery lightbox
+    $j( '.gallery-format, .gallery', $context ).Chocolat( {
+        loop            : true,
+        imageSelector   : '.gallery-lightbox:not(.slick-cloned)'
+    } );
+
+    // Product lightbox
+    $j( '.product-images-slider' ).Chocolat( {
+        loop            : true,
+        imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
+    } );
+
+}
+
+/* ==============================================
 CUSTOM SELECT
 ============================================== */
 function customSelects() {
@@ -695,17 +760,10 @@ function infiniteScrollInit() {
 
 			// Re-run functions
 			initCarousel( $newElems );
+			initLightbox( $newElems );
 
-			if ( $j( 'body' ).hasClass( 'has-lightbox' ) ) {
-				initLightbox( $newElems );
-			}
-
-			// Equal heights
-			if ( $j.fn.equalHeights !== undefined ) {
-				$j( '.blog-equal-heights' ).equalHeights( {
-					children : '.blog-entry-inner'
-				} );
-			}
+			// Match heights
+			$j( '.blog-equal-heights .blog-entry-inner' ).matchHeight({ property: 'min-height' });
 
 		    // Gallery posts
 		    if ( $j( '.gallery-format' ).parent( '.thumbnail' ) && $j( '.blog-masonry-grid' ).length ) {
@@ -757,38 +815,16 @@ function initFitVids() {
 }
 
 /* ==============================================
-EQUAL HEIGHTS
+MATCH HEIGHTS
 ============================================== */
-function initEqualHeight() {
+function initMatchHeight() {
 	"use strict"
 
-	if ( $j.fn.equalHeights != undefined ) {
+	// Add match heights grid
+	$j( '.match-height-grid .match-height-content' ).matchHeight({ property: 'min-height' });
 
-		// Add equal heights grid
-		$j( '.match-height-grid .match-height-content' ).equalHeights();
-
-		// Blog entries
-		$j( '.blog-equal-heights .blog-entry-inner' ).equalHeights();
-
-	}
-
-}
-
-/* ==============================================
-RECENT POSTS WIDGET
-============================================== */
-function postsWidget() {
-	"use strict"
-
-	$j( '.oceanwp-recent-posts li' ).each( function() {
-
-		var $this = $j( this );
-
-		$this.imagesLoaded( function() {
-			$this.find( '.recent-posts-details-inner' ).css( { 'height': $this.height() } );
-		} );
-
-	} );
+	// Blog entries
+	$j( '.blog-equal-heights .blog-entry-inner' ).matchHeight({ property: 'min-height' });
 
 }
 
