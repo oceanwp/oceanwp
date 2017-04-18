@@ -31,7 +31,7 @@ if ( 'post' == get_post_type() ) { ?>
 			<?php } ?>
 
 			<?php if ( 'date' == $section ) { ?>
-				<li class="meta-date" itemprop="datePublished" pubdate><i class="icon-clock"></i><?php echo get_the_date(); ?></li>
+				<li class="meta-date" itemprop="datePublished"><i class="icon-clock"></i><?php echo get_the_date(); ?></li>
 			<?php } ?>
 
 			<?php if ( 'categories' == $section ) { ?>

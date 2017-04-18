@@ -311,6 +311,7 @@ class OCEANWP_Theme_Class {
 
 		// Declare WooCommerce support.
 		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
 
 		// Add editor style
 		add_editor_style( 'editor-style.css' );
@@ -758,7 +759,7 @@ class OCEANWP_Theme_Class {
 		// Add schema markup
 		$schema = 'itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"';
 		if ( $schema ) {
-			$link = str_replace( 'rel="author"', 'rel="author"'. $schema, $link );
+			$link = str_replace( 'rel="author"', 'rel="author" '. $schema, $link );
 		}
 
 		// Return link

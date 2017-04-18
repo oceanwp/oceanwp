@@ -282,6 +282,7 @@ ul.page-numbers { text-align: left; }
 /* Single product */
 .woocommerce div.product div.summary { float: left; }
 .woocommerce div.product div.images { float: right; }
+.woocommerce div.product div.images .open-image { left: 16px; right: auto; }
 .woocommerce div.product form.cart .button { float: right; }
 .woocommerce div.product form.cart div.quantity { float: right; margin-right: 0; margin-left: 10px; }
 .woocommerce div.product div.images .main-images .slick-arrow.slick-prev { left: auto; right: 0; }
@@ -372,17 +373,16 @@ p.stars span a:after { right: 0; left: auto; }
 .woocommerce-checkout form.checkout_coupon .form-row-first { float: right; }
 .woocommerce-checkout form.checkout_coupon .form-row-last { float: left; }
 
-/* Checkout addresses */
-.woocommerce .woocommerce-checkout #customer_details h3 input[type="checkbox"] { margin: 0 6px 0 0; }
+/* Checkout > Col */
+.woocommerce-checkout > .col2-set { float: right; }
+.woocommerce-checkout h3#order_review_heading,
+.woocommerce-checkout #order_review { float: left; }
 
 /* Checkout your order */
-.woocommerce table.shop_table.woocommerce-checkout-review-order-table { float: right; }
-.woocommerce-checkout-payment { float: left; }
-.woocommerce-checkout-review-order-table tfoot th { border-left: 1px solid; border-right: 0; }
-.woocommerce-checkout #payment ul.payment_methods { text-align: right; }
+.woocommerce-checkout #payment ul.payment_methods .wc_payment_method > label:before { margin-left: 10px; margin-right: 0; }
 .woocommerce-checkout #payment ul.payment_methods li { text-align: right; }
-.woocommerce-checkout #payment ul.payment_methods li img { margin: -2px .5em 0 0; }
-.woocommerce-checkout #payment .payment_method_paypal .about_paypal { float: left; }
+.woocommerce-checkout #payment ul.payment_methods li img { float: left; }
+.woocommerce-checkout #payment .payment_method_paypal .about_paypal { margin-right: 6px; margin-left: 0; }
 
 /* Checkout returning customer form */
 .woocommerce form.login .lost_password { margin: 0 }

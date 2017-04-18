@@ -1920,7 +1920,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'.dropcap',
 				'.single-post .post-pagination-wrap ul li .title',
 				'.related-post-title a:hover',
-				'.woocommerce-MyAccount-navigation ul li a:before',
 				'#wp-calendar caption',
 				'.contact-info-widget i',
 				'.custom-links-widget .oceanwp-custom-links li a:hover',

@@ -844,7 +844,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function primary_texts( $texts ) {
 			return array_merge( array(
+				'.woocommerce-MyAccount-navigation ul li a:before',
 				'.woocommerce-checkout .woocommerce-info a',
+				'.woocommerce-checkout #payment ul.payment_methods .wc_payment_method>input[type=radio]:first-child:checked+label:before',
+				'.woocommerce-checkout #payment .payment_method_paypal .about_paypal',
 				'.woocommerce ul.products li.product .category a:hover',
 				'.woocommerce ul.products li.product .button:hover',
 				'.woocommerce ul.products li.product .product-inner .added_to_cart:hover',
@@ -882,6 +885,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function primary_backgrounds( $backgrounds ) {
 			return array_merge( array(
+				'.woocommerce div.product div.images .open-image',
 				'.wcmenucart-details.count',
 				'.woocommerce-message a',
 				'.woocommerce-error a',
@@ -898,6 +902,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function hover_primary_backgrounds( $hover ) {
 			return array_merge( array(
+				'.woocommerce div.product div.images .open-image:hover',
 				'.woocommerce-error a:hover',
 				'.woocommerce-info a:hover',
 				'.woocommerce-message a:hover',
