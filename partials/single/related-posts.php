@@ -116,10 +116,14 @@ if ( $oceanwp_related_query->have_posts() ) :
 			                	// Images attr
 								$img_id 	= get_post_thumbnail_id( get_the_ID(), 'full' );
 								$img_url 	= wp_get_attachment_image_src( $img_id, 'full', true );
-								$img_atts 	= ocean_extra_image_attributes( $img_url[1], $img_url[2], $img_width, $img_height );
+								if ( OCEAN_EXTRA_ACTIVE
+									&& function_exists( 'ocean_extra_image_attributes' ) ) {
+									$img_atts 	= ocean_extra_image_attributes( $img_url[1], $img_url[2], $img_width, $img_height );
+								}
 
 								// If Ocean Extra is active and has a custom size
 								if ( OCEAN_EXTRA_ACTIVE
+									&& function_exists( 'ocean_extra_resize' )
 									&& ! empty( $img_atts ) ) { ?>
 
 									<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts[ 'width' ], $img_atts[ 'height' ], $img_atts[ 'crop' ], true, $img_atts[ 'upscale' ] ); ?>" alt="<?php esc_attr( the_title() ); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>" itemprop="image" />

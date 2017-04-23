@@ -1238,6 +1238,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 					$items .= '<input type="search" name="s" value="" autocomplete="off" />';
 					// If the headerSearchForm script is not disable
 					if ( OCEAN_EXTRA_ACTIVE
+						&& class_exists( 'Ocean_Extra_Scripts_Panel' )
 						&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
 						$items .= '<label>'. esc_html__( 'Type your search', 'oceanwp' ) .'<span><i></i><i></i><i></i></span></label>';
 					}
