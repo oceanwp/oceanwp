@@ -18,13 +18,13 @@ if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
 }
 
 // Get page
-$get_page 	= oceanwp_header_page_id();
+$get_page   = oceanwp_header_page_id();
 
 // Get page ID
-$get_id 	= get_theme_mod( 'ocean_header_page_id' );
+$get_id     = get_theme_mod( 'ocean_header_page_id' );
 
 // Check if page is Elementor page
-$elementor 	= get_post_meta( $get_id, '_elementor_edit_mode', true );
+$elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
 
 // Add container class if the header is not full width
 $class = '';
@@ -37,28 +37,28 @@ if ( $get_page ) : ?>
 
     <?php do_action( 'ocean_before_header_inner' ); ?>
 
-	<div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
+    <div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
 
-	    <?php
-	    // If Elementor
-	    if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+        <?php
+        // If Elementor
+        if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
 
-			echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
+            echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
 
-    	}
+        }
 
-    	// If Beaver Builder
-	    else if ( class_exists( 'FLBuilder' ) ) {
+        // If Beaver Builder
+        else if ( class_exists( 'FLBuilder' ) && ! empty( $get_id ) ) {
 
-			echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
+            echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
-    	}
+        }
 
-    	// Else
-    	else {
+        // Else
+        else {
 
-        	// Display page content
-        	echo do_shortcode( $get_page );
+            // Display page content
+            echo do_shortcode( $get_page );
 
         } ?>
 

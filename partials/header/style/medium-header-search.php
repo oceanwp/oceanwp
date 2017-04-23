@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php
 		// If the headerSearchForm script is not disable
 		if ( OCEAN_EXTRA_ACTIVE
-			&& OceanWP_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) { ?>
+			&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) { ?>
 			<label><?php echo esc_html_e( 'Search...', 'oceanwp' ); ?></label>
 		<?php } ?>
 		<button class="search-submit"><i class="icon-magnifier"></i></button>

@@ -2039,7 +2039,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 				'.blog-entry.grid-entry .blog-entry-inner',
 
-				'.single-post h1.entry-title',
+				'.single-post h2.entry-title',
 
 				'.single-post .entry-share',
 				'.single-post .entry-share ul li a',

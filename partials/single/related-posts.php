@@ -59,9 +59,9 @@ if ( $oceanwp_related_query->have_posts() ) :
 
 	<div id="related-posts" class="<?php echo esc_attr( $classes ); ?>">
 
-		<h2 class="theme-heading related-posts-title">
+		<h3 class="theme-heading related-posts-title">
 			<span class="text"><?php echo esc_html( $text ); ?></span>
-		</h2>
+		</h3>
 
 		<div class="oceanwp-row clr">
 

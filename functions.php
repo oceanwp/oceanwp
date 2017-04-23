@@ -18,14 +18,6 @@
  * @package OceanWP WordPress theme
  */
 
-// Theme info for the welcome page
-function oceanwp_get_theme_info() {
-	return array(
-		'name'        => 'OceanWP',
-		'dir'         => get_template_directory_uri() .'/inc/',
-	);
-}
-
 // Core Constants
 define( 'OCEANWP_THEME_DIR', get_template_directory() );
 define( 'OCEANWP_THEME_URI', get_template_directory_uri() );
@@ -169,11 +161,6 @@ class OCEANWP_Theme_Class {
 		require_once ( $dir .'customizer/controls/typography/webfonts.php' );
 		require_once ( $dir .'walker/init.php' );
 		require_once ( $dir .'walker/menu-walker.php' );
-
-		// Welcome page
-		if ( ! defined( 'OCEANWP_DISABLE_THEME_ABOUT_PAGE' ) ) {
-			require_once( $dir .'welcome/welcome.php' );
-		}
 	}
 
 	/**
@@ -354,9 +341,10 @@ class OCEANWP_Theme_Class {
 	 *
 	 * @since 1.0.0
 	 */
-	public static function admin_scripts( $hook ) {
-		if ( $hook == 'nav-menus.php' ) {
-			wp_enqueue_style( 'oceanwp-nav-menus', OCEANWP_INC_DIR_URI .'walker/assets/nav-menus.css' );
+	public static function admin_scripts() {
+		global $pagenow;
+		if ( 'nav-menus.php' == $pagenow ) {
+			wp_enqueue_style( 'oceanwp-menus', OCEANWP_INC_DIR_URI .'walker/assets/menus.css' );
 		}
 	}
 
@@ -382,7 +370,7 @@ class OCEANWP_Theme_Class {
 		wp_enqueue_style( 'simple-line-icons', $dir .'devs/simple-line-icons.min.css', false, '2.2.2' );
 
 		// Main Style.css File
-		wp_enqueue_style( 'oceanwp-style', get_stylesheet_uri(), false, $theme_version );
+		wp_enqueue_style( 'oceanwp-style', $dir .'style.css', false, $theme_version );
 
 	}
 
@@ -485,8 +473,8 @@ class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area are used in the sidebar region.', 'oceanwp' ),
 			'before_widget'	=> '<div class="sidebar-box %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h5 class="widget-title">',
-			'after_title'	=> '</h5>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
 		) );
 
 		// Search Results Sidebar
@@ -497,8 +485,8 @@ class OCEANWP_Theme_Class {
 				'description'	=> esc_html__( 'Widgets in this area are used in the search result page.', 'oceanwp' ),
 				'before_widget'	=> '<div class="sidebar-box %2$s clr">',
 				'after_widget'	=> '</div>',
-				'before_title'	=> '<h5 class="widget-title">',
-				'after_title'	=> '</h5>',
+				'before_title'	=> '<h4 class="widget-title">',
+				'after_title'	=> '</h4>',
 			) );
 		}
 
@@ -509,8 +497,8 @@ class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area are used in the first footer region.', 'oceanwp' ),
 			'before_widget'	=> '<div class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h6 class="widget-title">',
-			'after_title'	=> '</h6>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
 		) );
 
 		// Footer 2
@@ -520,8 +508,8 @@ class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area are used in the second footer region.', 'oceanwp' ),
 			'before_widget'	=> '<div class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h6 class="widget-title">',
-			'after_title'	=> '</h6>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
 		) );
 
 		// Footer 3
@@ -531,8 +519,8 @@ class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area are used in the third footer region.', 'oceanwp' ),
 			'before_widget'	=> '<div class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h6 class="widget-title">',
-			'after_title'	=> '</h6>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
 		) );
 
 		// Footer 4
@@ -542,8 +530,8 @@ class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area are used in the fourth footer region.', 'oceanwp' ),
 			'before_widget'	=> '<div class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h6 class="widget-title">',
-			'after_title'	=> '</h6>',
+			'before_title'	=> '<h4 class="widget-title">',
+			'after_title'	=> '</h4>',
 		) );
 
 	}

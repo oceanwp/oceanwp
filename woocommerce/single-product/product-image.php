@@ -45,10 +45,11 @@ $image_title 		= get_the_title( $thumbnail_id ); ?>
 
 		if ( has_post_thumbnail() ) {
 			$html  = '<div class="product-image woocommerce-product-gallery__image">';
-			$html .= '<a href="' . esc_url( $full_size_image[0] ) . '" class="open-image woo-lightbox"><i class="icon-magnifier-add"></i></a>';
 			$html .= '<a href="' . esc_url( $full_size_image[0] ) . '" class="woocommerce-main-image no-lightbox">';
 			$html .= get_the_post_thumbnail( $post->ID, 'shop_single', $attributes );
-	 		$html .= '</a></div>';
+	 		$html .= '</a>';
+			$html .= '<a href="' . esc_url( $full_size_image[0] ) . '" class="oceanwp-lightbox-trigger woo-lightbox"></a>';
+	 		$html .= '</div>';
 		} else {
 			// Display placeholder image
 			oceanwp_woo_placeholder_img();
@@ -72,10 +73,11 @@ $image_title 		= get_the_title( $thumbnail_id ); ?>
 				);
 
 				$html  = '<div class="product-image woocommerce-product-gallery__image">';
-				$html .= '<a href="' . esc_url( $full_size_image[0] ) . '" class="open-image woo-lightbox"><i class="icon-magnifier-add"></i></a>';
 				$html .= '<a href="' . esc_url( $full_size_image[0] ) . '" class="woocommerce-main-image no-lightbox">';
 				$html .= wp_get_attachment_image( $attachment_id, 'shop_single', false, $attributes );
-		 		$html .= '</a></div>';
+		 		$html .= '</a>';
+				$html .= '<a href="' . esc_url( $full_size_image[0] ) . '" class="oceanwp-lightbox-trigger woo-lightbox"></a>';
+		 		$html .= '</div>';
 
 				echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $attachment_id );
 

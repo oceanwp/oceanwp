@@ -76,14 +76,37 @@ ul.page-numbers {
 /* infinite scroll */
 .infinite-scroll-loader {
     position: absolute;
-    bottom: -20px;
+    bottom: -35px;
     left: 50%;
-    margin-left: -8px;
-    height: 16px;
-    line-height: 16px;
-    width: 30px;
-    background: url('./assets/img/loader.gif') center center no-repeat;
-    text-indent: -9999px;
+    height: 18px;
+    width: 18px;
+    margin-left: -9px;
+    border-left: 2px solid rgba(0, 0, 0, 0.15);
+    border-right: 2px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+    border-top: 2px solid rgba(0, 0, 0, 0.8);
+    border-radius: 100%;
+    -webkit-animation: rotation .6s infinite linear;
+    -moz-animation: rotation .6s infinite linear;
+    -o-animation: rotation .6s infinite linear;
+    animation: rotation .6s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+   from {-moz-transform: rotate(0deg);}
+   to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+   from {-o-transform: rotate(0deg);}
+   to {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+   from {transform: rotate(0deg);}
+   to {transform: rotate(359deg);}
 }
 
 #infscr-loading img {

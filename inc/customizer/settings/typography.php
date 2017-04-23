@@ -183,7 +183,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				),
 				'blog_post_title' 			=> array(
 					'label' 				=> esc_html__( 'Blog Post Title', 'oceanwp' ),
-					'target' 				=> '.single-post h1.entry-title',
+					'target' 				=> '.single-post h2.entry-title',
 					'defaults' 				=> array(
 						'font-size' 		=> '34',
 						'color' 			=> '#333333',

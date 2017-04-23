@@ -1,22 +1,30 @@
 # OceanWP Changelog
 
-### *2017.04.17* - 1.1.9
+### *2017.04.23* - 1.1.9
 * **Added** - Sortable control in the customizer for the catalog products, now you can reorder the elements.
-* **Added** - New menu area "Mobile" for the mobile menu.
+* **Added** - Mega menu 1 column.
+* **Added** - New menu location"Mobile" for the mobile menu.
 * **Added** - Font subsets in the typography section of the customizer.
 * **Added** - Minification for the Custom CSS output.
 * **Added** - Dutch translation, thank you to Verdi Heinz and its team.
 * **Added** - Now you can add a mega menu to the top bar menu.
-* **Added** - Filter for the meta in the customizer to add your own meta.
+* **Added** - Filter for the meta in the customizer to add your own meta, see this [article](http://docs.oceanwp.org/article/430-add-your-own-meta).
 * **Added** - Font size and padding fields for the top bar social in the customizer.
 * **Added** - Width and height fields in the customizer to add your own size for the related posts images.
+* **Added** - Support for the WooCommerce single product gallery zoom.
 * **Added** - Tabs Position field in the WooCommerce customizer section to choose the positioning of your tabs on single product.
+* **Added** - Color control in the customizer for the placeholder text of the overlay search style.
+* **Added** - Color control for the border widgets titles.
 * **Fixed** - Issue with WooCommerce cart dropdown on RTL.
 * **Fixed** - Skype and Email URL issue for the top bar and social menu.
 * **Fixed** - Hided logo if one column on responsive for the medium header style.
 * **Fixed** - Top bar content preview issue when it has no content.
-* **Tweak** - The top bar menu is automatically added to the mobile menu
-* **Deleted** - The "Add Lightbox To Your Images" field is deleted from the theme because it is directly incorporated into Theme Panel > Scripts Panel.
+* **Fixed** - Title of latest posts in megamenu does not break to second line.
+* **Tweak** - The top bar menu is automatically added to the mobile menu.
+* **Tweak** - The top bar menu is automatically centered horizontally.
+* **Tweak** - Style enhancement for the WooCommerce checkout page.
+* **Tweak** - The next/prev post is entirely clickable.
+* **Deleted** - The "Add Lightbox To Your Images" field is deleted from the theme because it is directly incorporated into Theme Panel > Scripts & Styles.
 
 ### *2017.04.05* - 1.1.8
 * **Added** - New header style "Medium".

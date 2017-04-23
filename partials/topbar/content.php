@@ -23,7 +23,9 @@ if ( $content
 
         <?php
         // Get topbar menu
-        get_template_part( 'partials/topbar/nav' ); ?>
+        if ( has_nav_menu( 'topbar_menu' ) )  {
+            get_template_part( 'partials/topbar/nav' );
+        } ?>
 
         <?php
         // Check if there is content for the topbar

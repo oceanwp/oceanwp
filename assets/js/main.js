@@ -730,7 +730,7 @@ function infiniteScrollInit() {
 		loading : {
 			msg         : null,
 			finishedMsg : null,
-			msgText     : '<div class="infinite-scroll-loader">'+ oceanwpInfiniteScroll.msgText +'</div>',
+			msgText     : '<div class="infinite-scroll-loader"></div>',
 		},
 		navSelector  : 'div.infinite-scroll-nav',
 		nextSelector : 'div.infinite-scroll-nav div.older-posts a',

@@ -1091,11 +1091,6 @@ if ( ! function_exists( 'oceanwp_header_menu_classes' ) ) {
 			$classes[] = 'main-navigation';
 			$classes[] = 'clr';
 
-			// Add class if current link has background
-			if ( '' != get_theme_mod( 'ocean_menu_link_active_background' ) ) {
-				$classes[] = 'has-current-style';
-			}
-
 			// Set keys equal to vals
 			$classes = array_combine( $classes, $classes );
 
@@ -1243,7 +1238,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 					$items .= '<input type="search" name="s" value="" autocomplete="off" />';
 					// If the headerSearchForm script is not disable
 					if ( OCEAN_EXTRA_ACTIVE
-						&& OceanWP_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
+						&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
 						$items .= '<label>'. esc_html__( 'Type your search', 'oceanwp' ) .'<span><i></i><i></i><i></i></span></label>';
 					}
 				$items .= '</form>';
@@ -2738,10 +2733,6 @@ if ( ! function_exists( 'oceanwp_infinite_scroll' ) ) {
 
 		// Load infinite scroll script
 		wp_enqueue_script( 'oceanwp-infinitescroll', OCEANWP_JS_DIR_URI .'dynamic/infinitescroll.min.js', array( 'jquery' ), 1.0, true );
-		
-		// Localize loading text
-		$is_params = array( 'msgText' => esc_html__( 'Loading...', 'oceanwp' ) );
-		wp_localize_script( 'oceanwp-infinitescroll', 'oceanwpInfiniteScroll', $is_params );  
 		
 		// Output pagination HTML
 		$output = '';

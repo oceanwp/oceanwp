@@ -1856,6 +1856,23 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Search Overlay Input Placeholder Color
+			 */
+			$wp_customize->add_setting( 'ocean_search_overlay_placeholder_color', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> '#ffffff',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_search_overlay_placeholder_color', array(
+				'label'	   				=> esc_html__( 'Input Placeholder Color', 'oceanwp' ),
+				'section'  				=> 'ocean_header_menu',
+				'settings' 				=> 'ocean_search_overlay_placeholder_color',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_menu_search_overlay',
+			) ) );
+
+			/**
 			 * Search Overlay Input Dashed Text Color
 			 */
 			$wp_customize->add_setting( 'ocean_search_overlay_input_dashed_bg', array(
@@ -2588,6 +2605,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			$search_dropdown_input_border_focus 						= get_theme_mod( 'ocean_search_dropdown_input_border_focus', '#bbbbbb' );
 			$search_overlay_bg 											= get_theme_mod( 'ocean_search_overlay_bg', 'rgba(0,0,0,0.9)' );
 			$search_overlay_input_color 								= get_theme_mod( 'ocean_search_overlay_input_color', '#ffffff' );
+			$search_overlay_placeholder_color 							= get_theme_mod( 'ocean_search_overlay_placeholder_color', '#ffffff' );
 			$search_overlay_input_dashed_bg 							= get_theme_mod( 'ocean_search_overlay_input_dashed_bg', '#ffffff' );
 			$search_overlay_input_border 								= get_theme_mod( 'ocean_search_overlay_input_border_color', '#444444' );
 			$search_overlay_input_border_hover 							= get_theme_mod( 'ocean_search_overlay_input_hover_border_color', '#777777' );
@@ -3132,9 +3150,14 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				$css .= '#searchform-overlay form input, #searchform-overlay form label{color:'. $search_overlay_input_color .';}';
 			}
 
+			// Search overlay input placeholder color
+			if ( ! empty( $search_overlay_placeholder_color ) && '#ffffff' != $search_overlay_placeholder_color ) {
+				$css .= '#searchform-overlay form label{color:'. $search_overlay_placeholder_color .';}';
+			}
+
 			// Search overlay input dashed background
 			if ( ! empty( $search_overlay_input_dashed_bg ) && '#ffffff' != $search_overlay_input_dashed_bg ) {
-				$css .= '#searchform-overlay form label i{color:'. $search_overlay_input_dashed_bg .';}';
+				$css .= '#searchform-overlay form label i{background-color:'. $search_overlay_input_dashed_bg .';}';
 			}
 
 			// Search overlay input border color
@@ -3174,7 +3197,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Menu link active color
 			if ( ! empty( $menu_link_color_active ) && '#555555' != $menu_link_color_active ) {
-				$css .= '#site-navigation-wrap .dropdown-menu > .current-menu-item > a > span,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a > span,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover > span,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a:hover > span{color:'. $menu_link_color_active .';}';
+				$css .= '#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a:hover{color:'. $menu_link_color_active .';}';
 			}
 
 			// Menu link background color
@@ -3189,7 +3212,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Menu link active background color
 			if ( ! empty( $menu_link_active_background ) ) {
-				$css .= '#site-navigation-wrap .dropdown-menu > .current-menu-item > a > span,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a > span,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover > span,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a:hover > span{background-color:'. $menu_link_active_background .';}';
+				$css .= '#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a:hover{background-color:'. $menu_link_active_background .';}';
 			}
 
 			// Dropdown menu width

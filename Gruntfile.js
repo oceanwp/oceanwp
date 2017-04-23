@@ -54,7 +54,6 @@ module.exports = function ( grunt ) {
 			prod: {
 				files: {
 					'assets/css/oceanwp-woocommerce.min.css': 'assets/css/oceanwp-woocommerce.css',
-					'inc/welcome/css/welcome.min.css': 'inc/welcome/css/welcome.css',
 
 					'inc/customizer/assets/min/css/rtl.min.css': 'inc/customizer/controls/rtl.css',
 					'inc/customizer/assets/min/css/general.min.css': 'inc/customizer/controls/general.css',
@@ -82,6 +81,7 @@ module.exports = function ( grunt ) {
 				},
 				files: {
 					'style.css': 'sass/style.scss',
+					'assets/css/style.css': 'sass/stylesheet.scss',
 				}
 			}
 		},
@@ -95,7 +95,7 @@ module.exports = function ( grunt ) {
 			},
 			main: {
 				files: {
-					'style.css': 'style.css',
+					'assets/css/style.css': 'assets/css/style.css',
 				}
 			}
 		},

@@ -27,11 +27,11 @@ if ( $same_cat ) {
 $excluded_terms = '';
 
 // Previous post link title
-$prev_post_link_title = '%title';
+$prev_post_link_title = '<span class="title"><i class="fa fa-long-arrow-left"></i>'. esc_html__( 'Previous Post', 'oceanwp' ) .'</span><span class="post-title">%title</span>';
 $prev_post_link_title = apply_filters( 'ocean_prev_post_link_title', $prev_post_link_title );
 
 // Next post link title
-$next_post_link_title = '%title';
+$next_post_link_title = '<span class="title"><i class="fa fa-long-arrow-right"></i>'. esc_html__( 'Next Post', 'oceanwp' ) .'</span><span class="post-title">%title</span>';
 $next_post_link_title = apply_filters( 'ocean_next_post_link_title', $next_post_link_title );
 
 // Get post links
@@ -43,21 +43,23 @@ if ( $has_terms ) {
     $next_link  = get_next_post_link( '%link', $next_post_link_title, false );
 } ?>
 
-<?php if ( $prev_link || $next_link ) : ?>
+<?php
+if ( ! empty( $prev_link )
+    || ! empty( $next_link ) ) : ?>
 
     <div class="post-pagination-wrap clr">
 
         <ul class="post-pagination clr">
 
-            <?php if ( $prev_link ) : ?>
+            <?php if ( ! empty( $prev_link ) ) : ?>
 
-                <li class="post-prev"><span class="title"><i class="fa fa-long-arrow-left"></i><?php esc_html_e( 'Previous Post', 'oceanwp' ); ?></span><?php echo wp_kses_post( $prev_link ); ?></li>
+                <li class="post-prev"><?php echo wp_kses_post( $prev_link ); ?></a></li>
 
             <?php endif; ?>
 
-            <?php if ( $next_link ) : ?>
+            <?php if ( ! empty( $next_link ) ) : ?>
 
-                <li class="post-next"><span class="title"><i class="fa fa-long-arrow-right"></i><?php esc_html_e( 'Next Post', 'oceanwp' ); ?></span><?php echo wp_kses_post( $next_link ); ?></li>
+                <li class="post-next"><?php echo wp_kses_post( $next_link ); ?></a></li>
 
             <?php endif; ?>
             

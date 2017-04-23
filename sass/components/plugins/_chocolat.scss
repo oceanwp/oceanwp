@@ -28,16 +28,41 @@
     cursor : zoom-in;
 }
 .chocolat-loader{
-    height:32px;
-    width:32px;
-    position:absolute;
-    left:50%;
-    top:50% ;
-    margin-left:-16px;
-    margin-top:-16px;
-    z-index:11;
-    background:url(./assets/img/ajax-loader.gif);
     display:none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 32px;
+    width: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    border-left: 3px solid rgba(255, 255, 255, 0.15);
+    border-right: 3px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.15);
+    border-top: 3px solid rgba(255, 255, 255, 0.8);
+    border-radius: 100%;
+    -webkit-animation: rotation .6s infinite linear;
+    -moz-animation: rotation .6s infinite linear;
+    -o-animation: rotation .6s infinite linear;
+    animation: rotation .6s infinite linear;
+    z-index: 11;
+}
+
+@-webkit-keyframes rotation {
+   from {-webkit-transform: rotate(0deg);}
+   to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+   from {-moz-transform: rotate(0deg);}
+   to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+   from {-o-transform: rotate(0deg);}
+   to {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+   from {transform: rotate(0deg);}
+   to {transform: rotate(359deg);}
 }
 .chocolat-content{
     position:fixed;
@@ -62,7 +87,7 @@
     top: 50%;
     margin-top: -50px;
     cursor:pointer;
-    background:url(./assets/img/left.png) 50% 50% no-repeat;
+    background:url(../img/left.png) 50% 50% no-repeat;
     z-index: 17;
     display: none;
 
@@ -75,7 +100,7 @@
     top: 50%;
     margin-top: -50px;
     cursor:pointer;
-    background:url(./assets/img/right.png)  50% 50% no-repeat;
+    background:url(../img/right.png)  50% 50% no-repeat;
     z-index: 17;
     display: none;
 }
@@ -103,7 +128,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    background:url(./assets/img/close.png) 50% 50% no-repeat;
+    background:url(../img/close.png) 50% 50% no-repeat;
 }
 .chocolat-wrapper .chocolat-bottom{
     position:absolute;
@@ -137,7 +162,7 @@
 .chocolat-wrapper .chocolat-fullscreen{
     width: 16px;
     height: 40px;
-    background: url(./assets/img/fullscreen.png) 50% 50% no-repeat;
+    background: url(../img/fullscreen.png) 50% 50% no-repeat;
     display: block;
     margin:auto;
     cursor: pointer;

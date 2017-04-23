@@ -270,13 +270,13 @@ function wooVariableImage() {
 	 * Sets product images for the chosen variation
 	 */
 	$j.fn.wc_variations_image_update = function( variation ) {
-		var $form 			= this,
-			$product 		= $form.closest( '.product' ),
-			$product_img 	= $product.find( 'div.images .main-images img:eq(1), div.images .product-thumbnails .first-thumbnail:not(.slick-cloned) img' ),
-			$product_link 	= $product.find( 'div.images a.woocommerce-main-image:eq(1), div.images .first-thumbnail:not(.slick-cloned) a.woo-thumbnail:eq(3)' );
+		var $form 				= this,
+			$product 			= $form.closest( '.product' ),
+			$product_gallery  	= $product.find( '.images' ),
+			$product_img 		= $product.find( 'div.images .main-images img:eq(0), div.images .main-images img:eq(1), div.images .product-thumbnails .first-thumbnail:not(.slick-cloned) img' ),
+			$product_link 		= $product.find( 'div.images a.woocommerce-main-image:eq(0), div.images a.woocommerce-main-image:eq(1), div.images a.oceanwp-lightbox-trigger:eq(0), div.images a.oceanwp-lightbox-trigger:eq(1), div.images .first-thumbnail:not(.slick-cloned) a.woo-thumbnail:eq(3)' );
 
 		if ( variation && variation.image && variation.image.src && variation.image.src.length > 1 ) {
-
 			// Image attrs
 			$product_img.wc_set_variation_attr( 'src', variation.image.src );
 			$product_img.wc_set_variation_attr( 'height', variation.image.src_h );
@@ -291,21 +291,7 @@ function wooVariableImage() {
 			$product_img.wc_set_variation_attr( 'data-large_image_height', variation.image.full_src_h );
 			$product_link.wc_set_variation_attr( 'href', variation.image.full_src );
 			$product_link.wc_set_variation_attr( 'title', variation.image.title );
-
-			// Refresh slide
-			if ( $j( 'body' ).hasClass( 'single-product' ) ) {
-				$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
-
-				// Refresh lightbox
-				if ( ! $j( 'body' ).hasClass( 'no-lightbox' ) ) {
-					$j( '.product-images-slider' ).removeData( 'chocolat' ).Chocolat( {
-						loop           	: true,
-						imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
-		            } );
-				}
-	        }
 		} else {
-
 			// Reset image attrs
 			$product_img.wc_reset_variation_attr( 'src' );
 			$product_img.wc_reset_variation_attr( 'width' );
@@ -320,7 +306,11 @@ function wooVariableImage() {
 			$product_img.wc_reset_variation_attr( 'data-large_image_height' );
 			$product_link.wc_reset_variation_attr( 'href' );
 			$product_link.wc_reset_variation_attr( 'title' );
+		}
 
+		window.setTimeout( function() {
+			$product_gallery.trigger( 'woocommerce_gallery_init_zoom' );
+			
 			// Refresh slide
 			if ( $j( 'body' ).hasClass( 'single-product' ) ) {
 				$j( '.product .main-images, .product .product-thumbnails' ).slick( 'refresh' );
@@ -333,7 +323,9 @@ function wooVariableImage() {
 		            } );
 		        }
 	        }
-		}
+	        
+			$j( window ).trigger( 'resize' );
+		}, 10 );
 	};
 	
 }

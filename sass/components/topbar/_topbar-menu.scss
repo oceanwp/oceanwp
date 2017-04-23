@@ -10,8 +10,7 @@
 
 #top-bar-nav,
 #top-bar-nav > li {
-  display: block;
-  float: left;
+  display: inline-block;
 }
 
 #top-bar-content.top-bar-centered #top-bar-nav,
@@ -21,6 +20,8 @@
 }
 
 #top-bar-nav > ul > li {
+  display: inline-block;
+  float: none;
   margin-right: 15px;
 
   &:last-child {

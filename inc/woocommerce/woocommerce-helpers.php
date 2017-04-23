@@ -107,15 +107,15 @@ if ( ! function_exists( 'oceanwp_woo_product_instock' ) ) {
  *
  * @since 1.1.9
  */
-if ( ! function_exists( 'oceanwp_catalog_elements_positioning' ) ) {
+if ( ! function_exists( 'oceanwp_woo_product_elements_positioning' ) ) {
 
-	function oceanwp_catalog_elements_positioning() {
+	function oceanwp_woo_product_elements_positioning() {
 
 		// Default sections
 		$sections = array( 'image', 'category', 'title', 'price-rating', 'description' , 'button' );
 
 		// Get sections from Customizer
-		$sections = get_theme_mod( 'oceanwp_catalog_elements_positioning', $sections );
+		$sections = get_theme_mod( 'oceanwp_woo_product_elements_positioning', $sections );
 
 		// Turn into array if string
 		if ( $sections && ! is_array( $sections ) ) {
@@ -123,7 +123,37 @@ if ( ! function_exists( 'oceanwp_catalog_elements_positioning' ) ) {
 		}
 
 		// Apply filters for easy modification
-		$sections = apply_filters( 'oceanwp_catalog_elements_positioning', $sections );
+		$sections = apply_filters( 'oceanwp_woo_product_elements_positioning', $sections );
+
+		// Return sections
+		return $sections;
+
+	}
+
+}
+
+/**
+ * Returns single product summary elements positioning
+ *
+ * @since 1.1.9
+ */
+if ( ! function_exists( 'oceanwp_woo_summary_elements_positioning' ) ) {
+
+	function oceanwp_woo_summary_elements_positioning() {
+
+		// Default sections
+		$sections = array( 'title', 'rating', 'price', 'excerpt', 'quantity-button', 'meta' );
+
+		// Get sections from Customizer
+		$sections = get_theme_mod( 'oceanwp_woo_summary_elements_positioning', $sections );
+
+		// Turn into array if string
+		if ( $sections && ! is_array( $sections ) ) {
+			$sections = explode( ',', $sections );
+		}
+
+		// Apply filters for easy modification
+		$sections = apply_filters( 'oceanwp_woo_summary_elements_positioning', $sections );
 
 		// Return sections
 		return $sections;

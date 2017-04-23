@@ -49,8 +49,8 @@ class OceanWP_Nav_Walker {
 		$menu_item->megamenu_auto_width 	= get_post_meta( $menu_item->ID, '_menu_item_megamenu_auto_width', true );
 		$menu_item->megamenu_col 			= get_post_meta( $menu_item->ID, '_menu_item_megamenu_col', true );
 		$menu_item->megamenu_heading 		= get_post_meta( $menu_item->ID, '_menu_item_megamenu_heading', true );
-		$menu_item->icon 					= get_post_meta( $menu_item->ID, '_menu_item_icon', true );
 		$menu_item->megamenu_widgetarea 	= get_post_meta( $menu_item->ID, '_menu_item_megamenu_widgetarea', true );
+		$menu_item->icon 					= get_post_meta( $menu_item->ID, '_menu_item_icon', true );
 
 		return $menu_item;
 	}
@@ -91,20 +91,14 @@ class OceanWP_Nav_Walker {
 	    </p>
 	    <p class="field-megamenu-columns description description-wide">
 	        <label for="edit-menu-item-megamenu_col-<?php echo esc_attr( $item->ID ); ?>">
-	            <?php esc_html_e( 'Megamenu columns (from 2 to 6)', 'oceanwp' ); ?><br />
-	            <input type="number" id="edit-menu-item-megamenu_col-<?php echo esc_attr( $item->ID ); ?>" class="widefat code edit-menu-item-custom" name="menu-item-megamenu_col[<?php echo esc_attr( $item->ID ); ?>]" min="2" max="6" value="<?php echo esc_attr( $item->megamenu_col ); ?>" />
+	            <?php esc_html_e( 'Megamenu columns (from 1 to 6)', 'oceanwp' ); ?><br />
+	            <input type="number" id="edit-menu-item-megamenu_col-<?php echo esc_attr( $item->ID ); ?>" class="widefat code edit-menu-item-custom" name="menu-item-megamenu_col[<?php echo esc_attr( $item->ID ); ?>]" min="1" max="6" value="<?php echo esc_attr( $item->megamenu_col ); ?>" />
 	        </label>
 	    </p>                   
 	    <p class="field-megamenu-heading description description-wide">
 	        <label for="edit-menu-item-megamenu_heading-<?php echo esc_attr( $item->ID ); ?>">
 		        <input type="checkbox" id="edit-menu-item-megamenu_heading-<?php echo esc_attr( $item->ID ); ?>" value="megamenu_heading" name="menu-item-megamenu_heading[<?php echo esc_attr( $item->ID ); ?>]"<?php checked( $item->megamenu_heading, 'megamenu_heading' ); ?> />
 		        <?php esc_html_e( 'Hide Mega menu heading?', 'oceanwp' ); ?>
-	        </label>
-	    </p>
-		<p class="field-icon description description-wide">
-	        <label for="edit-menu-item-icon-<?php echo esc_attr( $item->ID ); ?>">
-	            <?php esc_html_e( 'Enter Icon Class', 'oceanwp' ); ?> Font Awesome - Simple Line Icons<br />
-	            <input type="text" id="edit-menu-item-icon-<?php echo esc_attr( $item->ID ); ?>" class="widefat edit-menu-item-icon" name="menu-item-icon[<?php echo esc_attr( $item->ID ); ?>]" value="<?php echo esc_attr( $item->icon ); ?>" />
 	        </label>
 	    </p>
 	    <p class="field-megamenu-widgetarea description description-wide">
@@ -121,6 +115,12 @@ class OceanWP_Nav_Walker {
 				</select>
 			</label>
 		</p>
+		<p class="field-icon description description-wide">
+	        <label for="edit-menu-item-icon-<?php echo esc_attr( $item->ID ); ?>">
+	            <?php esc_html_e( 'Enter Icon Class', 'oceanwp' ); ?> Font Awesome - Simple Line Icons<br />
+	            <input type="text" id="edit-menu-item-icon-<?php echo esc_attr( $item->ID ); ?>" class="widefat edit-menu-item-icon" name="menu-item-icon[<?php echo esc_attr( $item->ID ); ?>]" value="<?php echo esc_attr( $item->icon ); ?>" />
+	        </label>
+	    </p>
 	<?php
 	}
 
@@ -135,7 +135,7 @@ class OceanWP_Nav_Walker {
 	 */
 	public function update_custom_nav_fields( $menu_id, $menu_item_db_id, $args ) {
 
-		$check = array( 'nolink', 'category_post', 'megamenu', 'megamenu_auto_width', 'megamenu_col', 'megamenu_heading', 'icon', 'megamenu_widgetarea' );
+		$check = array( 'nolink', 'category_post', 'megamenu', 'megamenu_auto_width', 'megamenu_col', 'megamenu_heading', 'megamenu_widgetarea', 'icon' );
 
 		foreach ( $check as $key ) {
 			if(!isset($_POST['menu-item-'.$key][$menu_item_db_id])) {

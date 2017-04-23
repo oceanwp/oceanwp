@@ -14,17 +14,22 @@
 	    	.title {
 			    display: block;
 			    color: $color-5;
+			    line-height: 20px;
 			}
 
 			a {
 				display: block;
-			    font-size: 16px;
-			    margin: 5px 0 0;
 			}
 
 		    i {
 		    	font-size: 20px;
-		    	line-height: 25px;
+		    	line-height: 20px;
+		    }
+
+		    .post-title {
+		    	display: block;
+		    	font-size: 16px;
+		    	margin: 5px 0 0;
 		    }
 	    }
 

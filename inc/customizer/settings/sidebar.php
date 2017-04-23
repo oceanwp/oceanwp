@@ -306,6 +306,22 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Widgets Title Border Color
+			 */
+			$wp_customize->add_setting( 'ocean_widgets_titles_border_color', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> '#13aff0',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_widgets_titles_border_color', array(
+				'label'	   				=> esc_html__( 'Titles Border Color', 'oceanwp' ),
+				'section'  				=> $section,
+				'settings' 				=> 'ocean_widgets_titles_border_color',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
 			 * Widgets Titles Margin Bottom
 			 */
 			$wp_customize->add_setting( 'ocean_widgets_titles_margin_bottom', array(
@@ -363,6 +379,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			$mobile_widgets_bottom_padding 			= get_theme_mod( 'ocean_widgets_mobile_bottom_padding' );
 			$mobile_widgets_left_padding 			= get_theme_mod( 'ocean_widgets_mobile_left_padding' );
 			$widgets_margin_bottom 					= get_theme_mod( 'ocean_widgets_margin_bottom', '40' );
+			$widgets_titles_border_color 			= get_theme_mod( 'ocean_widgets_titles_border_color', '#13aff0' );
 			$widgets_titles_margin_bottom 			= get_theme_mod( 'ocean_widgets_titles_margin_bottom', '20' );
 
 			// Define css var
@@ -572,6 +589,11 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			// Widgets margin bottom
 			if ( ! empty( $widgets_margin_bottom ) && '40' != $widgets_margin_bottom ) {
 				$css .= '#sidebar .sidebar-box{margin-bottom:'. $widgets_margin_bottom .'px;}';
+			}
+
+			// Widgets titles border color
+			if ( ! empty( $widgets_titles_border_color ) && '#13aff0' != $widgets_titles_border_color ) {
+				$css .= '.widget-title{border-color:'. $widgets_titles_border_color .';}';
 			}
 
 			// Widgets titles margin bottom
