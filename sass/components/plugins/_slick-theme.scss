@@ -7,7 +7,7 @@
 // "\2192" outputs ascii character "→"
 // "\2022" outputs ascii character "•"
 
-$slick-font-path: "./assets/fonts/slick/" !default;
+$slick-font-path: "../fonts/slick/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "../img/" !default;
 $slick-arrow-color: white !default;
@@ -37,47 +37,6 @@ $slick-opacity-not-active: 0.25 !default;
     @else {
         @return url($slick-font-path + $url);
     }
-}
-
-/* Slider */
-
-.slick-list {
-    .slick-loading & {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        height: 32px;
-        width: 32px;
-        margin-left: -16px;
-        margin-top: -16px;
-        border-left: 3px solid rgba(0, 0, 0, 0.15);
-        border-right: 3px solid rgba(0, 0, 0, 0.15);
-        border-bottom: 3px solid rgba(0, 0, 0, 0.15);
-        border-top: 3px solid rgba(0, 0, 0, 0.8);
-        border-radius: 100%;
-        -webkit-animation: rotation .6s infinite linear;
-        -moz-animation: rotation .6s infinite linear;
-        -o-animation: rotation .6s infinite linear;
-        animation: rotation .6s infinite linear;
-        z-index: 11;
-    }
-}
-
-@-webkit-keyframes rotation {
-   from {-webkit-transform: rotate(0deg);}
-   to {-webkit-transform: rotate(359deg);}
-}
-@-moz-keyframes rotation {
-   from {-moz-transform: rotate(0deg);}
-   to {-moz-transform: rotate(359deg);}
-}
-@-o-keyframes rotation {
-   from {-o-transform: rotate(0deg);}
-   to {-o-transform: rotate(359deg);}
-}
-@keyframes rotation {
-   from {transform: rotate(0deg);}
-   to {transform: rotate(359deg);}
 }
 
 /* Icons */
