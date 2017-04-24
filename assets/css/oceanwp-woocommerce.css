@@ -260,6 +260,9 @@ Product Entries
 .woocommerce ul.products li.product .woo-entry-inner li.image-wrap .woo-entry-image { display: block; }
 .woocommerce ul.products li.product .woo-entry-image { display: none; }
 
+/* Fix for the categories images */
+.woocommerce ul.products li.product-category.product .woo-entry-image { display: block; }
+
 /* product entry > image swap */
 .woocommerce ul.products li.product .woo-entry-image-swap { position: relative; overflow: hidden; }
 .woocommerce ul.products li.product .woo-entry-image-swap img { -webkit-transition: opacity 0.25s ease-in-out; -moz-transition: opacity 0.25s ease-in-out; -o-transition: opacity 0.25s ease-in-out; transition: opacity 0.25s ease-in-out; width: 100%; overflow: hidden; }

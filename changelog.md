@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.04.24* - 1.1.9.1
+* **Fixed** - Small issue with the category products images.
+
 ### *2017.04.23* - 1.1.9
 * **Added** - Sortable control in the customizer for the catalog products, now you can reorder the elements.
 * **Added** - Mega menu 1 column.
