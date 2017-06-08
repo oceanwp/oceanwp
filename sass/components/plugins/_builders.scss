@@ -18,3 +18,16 @@ body.has-transparent-header.elementor-editor-active {
 		z-index: 13;
 	}
 }
+
+body.elementor-editor-active .elementor-inner {
+    margin-top: 0;
+}
+
+body.elementor_library-template-elementor_canvas .elementor-inner {
+    margin-top: 27px;
+}
+
+/* Fix image alignment with acption issue */
+.elementor-widget-image .elementor-image img {
+    display: inline-block;
+}

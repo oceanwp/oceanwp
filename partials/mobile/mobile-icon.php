@@ -23,16 +23,28 @@ $ms_global_menu = apply_filters( 'ocean_ms_global_menu', false );
 if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 	// Get menu icon
-	$icon = apply_filters( 'ocean_mobile_menu_navbar_open_icon', '<i class="fa fa-bars"></i>' );
+	$icon = get_theme_mod( 'ocean_mobile_menu_open_icon', 'fa fa-bars' );
+	$icon = apply_filters( 'ocean_mobile_menu_navbar_open_icon', $icon );
 
 	// Get menu text
-	$text = esc_html__( 'Menu', 'oceanwp' );
-	$text = apply_filters( 'ocean_mobile_menu_text', $text );
+	$text = get_theme_mod( 'ocean_mobile_menu_text' );
+	$text = oceanwp_tm_translation( 'ocean_mobile_menu_text', $text );
+	$text = $text ? $text: esc_html__( 'Menu', 'oceanwp' );
 
 	if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 
-		// Cart icon
-		$cart_icon = '<i class="icon-handbag"></i>';
+		// Get cart icon
+		$woo_icon = get_theme_mod( 'ocean_woo_menu_icon', 'icon-handbag' );
+		$woo_icon = $woo_icon ? $woo_icon : 'icon-handbag';
+
+		// If has custom cart icon
+		$custom_icon = get_theme_mod( 'ocean_woo_menu_custom_icon' );
+		if ( '' != $custom_icon ) {
+			$woo_icon = $custom_icon;
+		}
+
+		// Cart Icon
+		$cart_icon = '<i class="'. esc_attr( $woo_icon ) .'"></i>';
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
 	} ?>
@@ -54,7 +66,13 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 			<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="mobile-wcmenucart"><?php echo wp_kses_post( $cart_icon ); ?></a>
 		<?php } ?>
 
-		<a href="#" class="mobile-menu"><?php echo wp_kses_post( $icon ); ?><span class="oceanwp-text"><?php echo esc_html( $text ); ?></span></a>
+		<a href="#" class="mobile-menu">
+			<i class="<?php echo esc_attr( $icon ); ?>"></i>
+			<?php
+			if ( get_theme_mod( 'ocean_mobile_menu_display_opening_text', true ) ) { ?>
+				<span class="oceanwp-text"><?php echo do_shortcode( $text ); ?></span>
+			<?php } ?>
+		</a>
 
 		<?php
 		// If big header style

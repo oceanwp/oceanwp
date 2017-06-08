@@ -10,7 +10,7 @@ body { direction: rtl; unicode-bidi: embed; }
 
 /* Float right */
 .col,
-.oceanwp-row .col,
+body .oceanwp-row .col,
 .top-bar-left { float: right }
 
 /* Float left */
@@ -52,7 +52,6 @@ blockquote { padding-right: 20px; padding-left: 0; border-right-width: 3px; bord
 #site-header.top-header .header-top .left { float: right; }
 #site-header.top-header .header-top .right { float: left; }
 #site-header.top-header #site-navigation-wrap { right: -15px !important; left: auto !important; }
-#site-header.top-header #oceanwp-mobile-menu-icon { right: -15px; left: auto; }
 
 /* Full Screen header */
 #site-header.full_screen-header #site-navigation-wrap { right: auto; left: 0; }
@@ -106,7 +105,13 @@ blockquote { padding-right: 20px; padding-left: 0; border-right-width: 3px; bord
 .transparent-header.left-menu #site-logo { padding-left: 20px; padding-right: 0; }
 
 /* If center menu */
-.center-menu #site-navigation-wrap { right: -15px; }
+.center-menu #site-navigation-wrap { right: 50%; left: auto; }
+
+/* menu icons */
+.rtl .dropdown-menu li a.menu-link i.after { margin-right: 6px; margin-left: 0; }
+.rtl .dropdown-menu li a.menu-link i.before { margin-left: 6px; margin-right: 0; }
+.rtl .dropdown-menu li a.menu-link img.after { margin-right: 6px; }
+.rtl .dropdown-menu li a.menu-link img.before { margin-left: 6px; }
 
 /* Social menu */
 #oceanwp-social-menu { float: left; }
@@ -118,7 +123,9 @@ blockquote { padding-right: 20px; padding-left: 0; border-right-width: 3px; bord
 	Mobile Navigation
 *------------------------------------*/
 a.sidr-class-toggle-sidr-close i { padding-left: 8px; padding-right: 0; }
-.sidr-class-dropdown-menu a i { margin-left: 10px; margin-right: 0; }
+.sidr-class-dropdown-menu a i.before,
+.sidr-class-dropdown-menu a i.below { margin-left: 10px; margin-right: 0; }
+.sidr-class-dropdown-menu a i.after { margin-right: 10px; margin-left: 0; }
 .sidr-class-dropdown-toggle { left: 0; right: auto; }
 .sidr-class-dropdown-menu li.sidr-class-menu-item-has-children > a { padding-right: 20px; padding-left: 60px; }
 .sidr-class-dropdown-menu ul a:before { content: '\f104'; }
@@ -145,12 +152,12 @@ ul.meta li i { padding-left: 5px; padding-right: 0; }
 .dropcap { float: right; margin-left: 10px; margin-right: 0; }
 
 /* Next & Prev */
-.single-post .post-pagination-wrap ul li.post-prev { float: right; padding-left: 20px; padding-right: 0; text-align: right; border-left-width: 1px; border-right-width: 0; }
-.single-post .post-pagination-wrap ul li.post-prev i { float: right; margin-left: 20px; margin-right: 0; }
-.single-post .post-pagination-wrap ul li.post-prev i:before { content: '\f178'; }
-.single-post .post-pagination-wrap ul li.post-next { float: left; padding-right: 20px; padding-left: 0; text-align: left; }
-.single-post .post-pagination-wrap ul li.post-next i { float: left; margin-right: 20px; margin-left: 0; }
-.single-post .post-pagination-wrap ul li.post-next i:before { content: '\f177'; }
+.single-post nav.post-navigation .nav-links .nav-previous { float: right; padding-left: 20px; padding-right: 0; text-align: right; border-left-width: 1px; border-right-width: 0; }
+.single-post nav.post-navigation .nav-links .nav-previous i { float: right; margin-left: 20px; margin-right: 0; }
+.single-post nav.post-navigation .nav-links .nav-previous i:before { content: '\f178'; }
+.single-post nav.post-navigation .nav-links .nav-next { float: left; padding-right: 20px; padding-left: 0; text-align: left; }
+.single-post nav.post-navigation .nav-links .nav-next i { float: left; margin-right: 20px; margin-left: 0; }
+.single-post nav.post-navigation .nav-links .nav-next i:before { content: '\f177'; }
 
 /* Author bio */
 #author-bio { padding: 30px 130px 0 0; }
@@ -177,6 +184,10 @@ ul.meta li i { padding-left: 5px; padding-right: 0; }
 span.required { margin-right: 3px; margin-left: 0; }
 .no-comments { text-align: left; }
 .no-comments i { margin-left: 8px; margin-right: 0; }
+.comment-navigation .nav-links .nav-previous { float: right; margin-left: 1.5em; margin-right: 0; }
+.comment-navigation .nav-links .nav-previous i { margin-left: 5px; margin-right: 0; }
+.comment-navigation .nav-links .nav-next { float: left; margin-left: 1.5em; margin-right: 0; }
+.comment-navigation .nav-links .nav-next i { margin-right: 5px; margin-left: 0; }
 
 /*------------------------------------*
 	Widgets
@@ -271,9 +282,9 @@ ul.page-numbers { text-align: left; }
 .woocommerce ul.products li.product .onsale { right: 20px; left: auto; }
 
 /* product entry > list view */
-.woocommerce .products.list .product-inner { text-align: right; }
-.woocommerce .products.list .product .woo-entry-image-swap { float: right; margin: 0 0 0 3%; }
-.woocommerce .products.list .product .woo-entry-inner { float: right; }
+.woocommerce ul.products.list .product-inner { text-align: right; }
+.woocommerce ul.products.list li.product .woo-entry-image { float: right; margin: 0 0 0 3%; }
+.woocommerce ul.products.list li.product .woo-entry-inner { float: right; }
 
 /* Product entry slider */
 .woocommerce ul.products li.product .product-entry-slider .slick-arrow.slick-prev { left: auto; right: 0; }
@@ -371,7 +382,7 @@ p.stars span a:after { right: 0; left: auto; }
 /* Checkout login/register/coupon forms */
 .woocommerce-checkout form.login .lost_password { float: left; }
 .woocommerce-checkout form.checkout_coupon .form-row-first { float: right; }
-.woocommerce-checkout form.checkout_coupon .form-row-last { float: left; }
+.woocommerce-checkout form.checkout_coupon .form-row-last { float: left; margin-right: 15px; margin-left: 0; }
 
 /* Checkout > Col */
 .woocommerce-checkout > .col2-set { float: right; }
@@ -401,7 +412,9 @@ p.stars span a:after { right: 0; left: auto; }
 /*------------------------------------*
 	Responsive
 *------------------------------------*/
-#oceanwp-mobile-menu-icon { float: left; left: -15px; right: auto !important; }
+#oceanwp-mobile-menu-icon { float: left; }
+#oceanwp-mobile-menu-icon a { padding-right: 15px; padding-left: 0; }
+#oceanwp-mobile-menu-icon a:first-child { padding-right: 0; }
 #oceanwp-mobile-menu-icon a i { padding-left: 6px; padding-right: 0 !important; }
 
 /*--------------------------------------------------------------

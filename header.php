@@ -8,10 +8,10 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
 
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
 
 <?php
@@ -48,11 +48,5 @@ if ( is_singular( 'post' ) ) {
 			<?php do_action( 'ocean_before_main' ); ?>
 			
 			<main id="main" class="site-main clr" itemprop="<?php echo $itemprop; ?>" itemscope="itemscope" itemtype="<?php echo $itemtype; ?>">
-
-				<?php
-				// Display shortcode if there is one
-				if ( $shortcode = oceanwp_has_shortcode() ) :
-					echo do_shortcode( $shortcode );
-				endif; ?>
 
 				<?php get_template_part( 'partials/page-header' ); ?>

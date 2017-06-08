@@ -157,24 +157,6 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			/**
 			 * Footer Widgets Padding
 			 */
-			$wp_customize->add_setting( 'ocean_footer_padding', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_footer_padding', array(
-				'label'	   				=> esc_html__( 'Padding (DECREPITATED)', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'This field will be removed in OceanWP 1.2.0, add your value(s) in the dimensions control below', 'oceanwp' ),
-				'type' 					=> 'text',
-				'section'  				=> $section,
-				'settings' 				=> 'ocean_footer_padding',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_footer_widgets',
-			) ) );
-
-			/**
-			 * Footer Widgets Padding
-			 */
 			$wp_customize->add_setting( 'ocean_footer_top_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '30',

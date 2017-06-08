@@ -318,7 +318,7 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Textarea_Control( $wp_customize, 'ocean_top_bar_content', array(
 				'label'	   				=> esc_html__( 'Content', 'oceanwp' ),
-				'description'	   		=> sprintf( esc_html__( 'The following shortcodes can be added:%1$s %2$s[oceanwp_login]%3$s To add a login/logout link.%2$s[oceanwp_current_user]%3$s To display the current user info.%1$s %2$s[oceanwp_search]%3$s To show a search form.', 'oceanwp' ), '<br/>', '<strong>', '</strong>' ),
+				'description'	   		=> sprintf( esc_html__( 'Shortcodes allowed, %1$ssee the list%2$s.', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
 				'section'  				=> 'ocean_topbar_content',
 				'settings' 				=> 'ocean_top_bar_content',
 				'priority' 				=> 10,

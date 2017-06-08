@@ -6,53 +6,53 @@ var $j 					= jQuery.noConflict(),
 $j( document ).on( 'ready', function() {
 	"use strict";
 	// Superfish menus
-	superFish();
+	oceanwpSuperFish();
 	// Nav no click
-	navNoClick();
+	oceanwpNavNoClick();
 	// Full Screen header menu
-	fullScreenMenu();
+	oceanwpFullScreenMenu();
 	// Header search form label
-	headerSearchForm();
+	oceanwpHeaderSearchForm();
 	// Mega menu
-	megaMenu();
+	oceanwpMegaMenu();
 	// Menu search
-	menuSearch();
+	oceanwpMenuSearch();
 	// Mobile menu
-	mobileMenu();
+	oceanwpMobileMenu();
 	// Carousel
-	initCarousel();
+	oceanwpInitCarousel();
     // Auto lightbox
-    autoLightbox();
+    oceanwpAutoLightbox();
     // Lightbox
-    initLightbox();
+    oceanwpInitLightbox();
 	// Custom select
-	customSelects();
+	oceanwpCustomSelects();
 	// Masonry grids
-	masonryGrids();
+	oceanwpMasonryGrids();
     // Responsive Video
-	initFitVids();
+	oceanwpInitFitVids();
     // Match height elements
-	initMatchHeight();
+	oceanwpInitMatchHeight();
 	// Scroll effect
-	scrollEffect();
+	oceanwpScrollEffect();
 	// Scroll top
-	scrollTop();
+	oceanwpScrollTop();
 } );
 
 $window.on( 'load', function() {
 	"use strict";
 	if ( $j.fn.infinitescroll !== undefined && $j( 'div.infinite-scroll-nav' ).length ) {
 		// Infinite scroll
-		infiniteScrollInit();
+		oceanwpInfiniteScrollInit();
 	}
 	// Fixed footer
-	fixedFooter();
+	oceanwpFixedFooter();
 } );
 
 $window.on( 'orientationchange', function() {
 	"use strict";
 	// Masonry grids
-	masonryGrids();
+	oceanwpMasonryGrids();
 } );
 
 $window.resize( function() {
@@ -63,7 +63,7 @@ $window.resize( function() {
 
     if ( $lastWindowWidth !== $windowWidth
     	|| $lastWindowHeight !== $windowHeight ) {
-        fixedFooter();
+        oceanwpFixedFooter();
     }
 
 } );
@@ -71,7 +71,7 @@ $window.resize( function() {
 /* ==============================================
 SUPERFISH MENUS
 ============================================== */
-function superFish() {
+function oceanwpSuperFish() {
 	"use strict"
 
 	$j( 'ul.sf-menu' ).superfish( {
@@ -93,7 +93,7 @@ function superFish() {
 /* ==============================================
 NAV NO CLICK
 ============================================== */
-function navNoClick() {
+function oceanwpNavNoClick() {
 	"use strict"
 
 	$j( 'li.nav-no-click > a, li.sidr-class-nav-no-click > a' ).on( 'click', function() {
@@ -105,7 +105,7 @@ function navNoClick() {
 /* ==============================================
 FULL SCREEN MENU
 ============================================== */
-function fullScreenMenu() {
+function oceanwpFullScreenMenu() {
 	"use strict"
 
 	var $menuWrap 		= $j( '#site-header.full_screen-header #full-screen-menu' ),
@@ -167,7 +167,7 @@ function fullScreenMenu() {
 /* ==============================================
 HEADER SEARCH Form LABEL
 ============================================== */
-function headerSearchForm() {
+function oceanwpHeaderSearchForm() {
 	"use strict"
 
 	// Add class when the search input is not empty
@@ -196,7 +196,7 @@ function headerSearchForm() {
 /* ==============================================
 MEGA MENU
 ============================================== */
-function megaMenu() {
+function oceanwpMegaMenu() {
 	"use strict"
 
     // Mega menu in top bar menu
@@ -274,7 +274,7 @@ function megaMenu() {
 /* ==============================================
 MENU SEARCH
 ============================================== */
-function menuSearch() {
+function oceanwpMenuSearch() {
 	"use strict"
 
 	/* Menu Search > Dropdown */
@@ -293,7 +293,7 @@ function menuSearch() {
 			$transitionDuration = $transitionDuration.replace( 's', '' ) * 1000;
 			if ( $transitionDuration ) {
 				setTimeout( function() {
-					$searchDropdownForm.find( 'input[type="search"]' ).focus();
+					$searchDropdownForm.find( 'input[type="text"]' ).focus();
 				}, $transitionDuration );
 			}
 			// Hide other things
@@ -408,6 +408,7 @@ function menuSearch() {
 	else if ( 'overlay' == oceanwpLocalize.menuSearchStyle ) {
 
 		var $searchOverlayToggle 	= $j( 'a.search-overlay-toggle' ),
+			$searchOverlayClose 	= $j( 'a.search-overlay-close' ),
 			$searchOverlay 			= $j( '#searchform-overlay' );
 
 		if ( $searchOverlayToggle.length ) {
@@ -415,36 +416,28 @@ function menuSearch() {
 			$searchOverlayToggle.on( 'click', function( e ) {
 				e.preventDefault();
 
-				if ( ! $j( this ).hasClass( 'exit' ) ) {
+				$searchOverlay.addClass( 'active' );
+				$searchOverlay.fadeIn( 200 );
 
-					$j( this ).addClass( 'exit' );
-					$searchOverlay.addClass( 'active' );
-					$searchOverlay.fadeIn( 200 );
-
-	                setTimeout( function() {
-						$j( 'html' ).css( 'overflow', 'hidden' );
-	                }, 400);
-
-		        } else {
-
-					$j( this ).removeClass( 'exit' );
-					$searchOverlay.removeClass( 'active' );
-					$searchOverlay.fadeOut( 200 );
-
-	                setTimeout( function() {
-						$j( 'html' ).css( 'overflow', 'visible' );
-	                }, 400);
-
-		        }
+                setTimeout( function() {
+					$j( 'html' ).css( 'overflow', 'hidden' );
+                }, 400);
 
 			} );
 
 		}
 
 		$searchOverlayToggle.on( 'click', function() {
-			if ( $j( this ).hasClass( 'exit' ) ) {
-				$j( '#searchform-overlay input' ).focus();
-			}
+			$j( '#searchform-overlay input' ).focus();
+		} );
+
+		$searchOverlayClose.on( 'click', function() {
+			$searchOverlay.removeClass( 'active' );
+			$searchOverlay.fadeOut( 200 );
+
+            setTimeout( function() {
+				$j( 'html' ).css( 'overflow', 'visible' );
+            }, 400);
 		} );
 
 	}
@@ -454,7 +447,7 @@ function menuSearch() {
 /* ==============================================
 MOBILE SCRIPT
 ============================================== */
-function mobileMenu( event ) {
+function oceanwpMobileMenu( event ) {
 	"use strict"
 
 	if ( typeof oceanwpLocalize.sidrSource !== 'undefined' ) {
@@ -469,7 +462,7 @@ function mobileMenu( event ) {
 			renaming : true,							// The ids and classes will be prepended with a prefix when loading existent content
 			onOpen   : function() {
 
-				// Declare useful vars
+				// Vars
 				var $hasChildren = $j( '.sidr-class-menu-item-has-children' );
 
 				// Add dropdown toggle (plus)
@@ -479,24 +472,27 @@ function mobileMenu( event ) {
 				var $sidrDropdownTarget = $j( '.sidr-class-dropdown-toggle' );
 
 				// Check localization
-				if ( oceanwpLocalize.sidrDropdownTarget == 'li' ) {
+				if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
 					$sidrDropdownTarget = $j( '.sidr-class-sf-with-ul' );
 				}
 
 				// Add toggle click event
 				$sidrDropdownTarget.on( 'click', function( event ) {
 
-					// Define toggle vars
-					if ( oceanwpLocalize.sidrDropdownTarget == 'li' ) {
+					var $toggleParentLi,
+						$allParentLis,
+						$dropdown;
+
+					// Var
+					if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
 						var $toggleParentLi = $j( this ).parent( 'li' );
 					} else {
-						var $toggleParentLink = $j( this ).parent( 'a' ),
-							$toggleParentLi   = $toggleParentLink.parent( 'li' );
+						var $toggleParentLi = $j( this ).parent( 'a' ).parent( 'li' );
 					}
 
 					// Get parent items and dropdown
-					var $allParentLis = $toggleParentLi.parents( 'li' ),
-						$dropdown     = $toggleParentLi.children( 'ul' );
+					$allParentLis = $toggleParentLi.parents( 'li' ),
+					$dropdown     = $toggleParentLi.children( 'ul' );
 
 					// Toogle items
 					if ( ! $toggleParentLi.hasClass( 'active' ) ) {
@@ -558,7 +554,7 @@ function mobileMenu( event ) {
 		// Close when clicking local scroll link
 		$j( 'li.sidr-class-local-scroll > a' ).on( 'click', function() {
 			$j.sidr( 'close', 'sidr' );
-			scrollEffect();
+			oceanwpScrollEffect();
 			return false;
 		} );
 
@@ -569,7 +565,7 @@ function mobileMenu( event ) {
 /* ==============================================
 CAROUSEL
 ============================================== */
-function initCarousel( $context ) {
+function oceanwpInitCarousel( $context ) {
 	"use strict"
 
 	var $carousel = $j( '.gallery-format, .product-entry-slider', $context );
@@ -639,7 +635,7 @@ function initCarousel( $context ) {
 /* ==============================================
 AUTO LIGHTBOX
 ============================================== */
-function autoLightbox() {
+function oceanwpAutoLightbox() {
     "use strict"
 
     $j( 'body .entry-content a:has(img), body .entry a:has(img)' ).each( function() {
@@ -682,7 +678,7 @@ function autoLightbox() {
 /* ==============================================
 LIGHTBOX
 ============================================== */
-function initLightbox( $context ) {
+function oceanwpInitLightbox( $context ) {
     "use strict"
 
     // Lightbox
@@ -707,7 +703,7 @@ function initLightbox( $context ) {
 /* ==============================================
 CUSTOM SELECT
 ============================================== */
-function customSelects() {
+function oceanwpCustomSelects() {
 	"use strict"
 
 	$j( oceanwpLocalize.customSelects ).customSelect( {
@@ -719,7 +715,7 @@ function customSelects() {
 /* ==============================================
 INFINITE SCROLL
 ============================================== */
-function infiniteScrollInit() {
+function oceanwpInfiniteScrollInit() {
 	"use strict"
 
 	// Get infinite scroll container
@@ -759,8 +755,8 @@ function infiniteScrollInit() {
 			$container.trigger( 'oceanwpinfiniteScrollLoaded' );
 
 			// Re-run functions
-			initCarousel( $newElems );
-			initLightbox( $newElems );
+			oceanwpInitCarousel( $newElems );
+			oceanwpInitLightbox( $newElems );
 
 			// Match heights
 			$j( '.blog-equal-heights .blog-entry-inner' ).matchHeight({ property: 'min-height' });
@@ -781,7 +777,7 @@ function infiniteScrollInit() {
 /* ==============================================
 MASONRY
 ============================================== */
-function masonryGrids() {
+function oceanwpMasonryGrids() {
 	"use strict"
 
 	$j( '.blog-masonry-grid' ).each( function() {
@@ -807,7 +803,7 @@ function masonryGrids() {
 /* ==============================================
 RESPONSIVE VIDEOS
 ============================================== */
-function initFitVids() {
+function oceanwpInitFitVids() {
 	"use strict"
 
 	$j( '.responsive-video-wrap, .responsive-audio-wrap' ).fitVids();
@@ -817,7 +813,7 @@ function initFitVids() {
 /* ==============================================
 MATCH HEIGHTS
 ============================================== */
-function initMatchHeight() {
+function oceanwpInitMatchHeight() {
 	"use strict"
 
 	// Add match heights grid
@@ -831,7 +827,7 @@ function initMatchHeight() {
 /* ==============================================
 SCROLL EFFECT
 ============================================== */
-function scrollEffect() {
+function oceanwpScrollEffect() {
 	"use strict"
 
 	if ( ! $j( 'body' ).hasClass( 'single-product' )
@@ -841,6 +837,7 @@ function scrollEffect() {
 
 	        if ( ! $j( this ).hasClass( 'no-effect' )
 	        	&& ! $j( this ).hasClass( 'page-numbers' )
+	        	&& ! $j( this ).parent().parent().parent().hasClass( 'comment-navigation' )
 	        	&& ! $j( this ).hasClass( 'omw-open-modal' )
 	        	&& ! $j( this ).parent().hasClass( 'omw-open-modal' )
 	        	&& ! $j( this ).parent().parent().parent().hasClass( 'omw-open-modal' ) ) {
@@ -848,9 +845,9 @@ function scrollEffect() {
 	        	var $href     				= $j( this ).attr( 'href' ),
 				    $hrefHash 				= $href.substr( $href.indexOf( '#' ) ).slice( 1 ),
 				    $target   				= $j( '#' + $hrefHash ),
-					$adminbarHeight        	= getAdminbarHeight(),
-					$topbarHeight        	= getTopbarHeight(),
-					$stickyHeaderHeight    	= getStickyHeaderHeight(),
+					$adminbarHeight        	= oceanwpGetAdminbarHeight(),
+					$topbarHeight        	= oceanwpGetTopbarHeight(),
+					$stickyHeaderHeight    	= oceanwpGetStickyHeaderHeight(),
 				    $scrollPosition;
 
 				if ( $target.length && '' !== $hrefHash ) {
@@ -872,7 +869,7 @@ function scrollEffect() {
 }
 
 // Admin bar height
-function getAdminbarHeight() {
+function oceanwpGetAdminbarHeight() {
 	"use strict"
 
 	var $adminbarHeight = 0;
@@ -885,7 +882,7 @@ function getAdminbarHeight() {
 }
 
 // Top bar height
-function getTopbarHeight() {
+function oceanwpGetTopbarHeight() {
 	"use strict"
 
 	var $topbarHeight = 0;
@@ -899,7 +896,7 @@ function getTopbarHeight() {
 }
 
 // Header height
-function getStickyHeaderHeight() {
+function oceanwpGetStickyHeaderHeight() {
 	"use strict"
 
 	var $stickyHeaderHeight = 0;
@@ -921,7 +918,7 @@ function getStickyHeaderHeight() {
 /* ==============================================
 SCROLL TOP
 ============================================== */
-function scrollTop() {
+function oceanwpScrollTop() {
 	"use strict"
 
 	var selectors  = {
@@ -951,7 +948,7 @@ function scrollTop() {
 /* ==============================================
 FIXED FOOTER
 ============================================== */
-function fixedFooter() {
+function oceanwpFixedFooter() {
 	"use strict"
 
     if ( ! $j( 'body' ).hasClass( 'has-fixed-footer' ) ) {
@@ -961,7 +958,7 @@ function fixedFooter() {
     // Set main vars
     var $mainHeight 		= $j( '#main' ).outerHeight(),
     	$htmlHeight 		= $j( 'html' ).height(),
-    	$adminbarHeight		= getAdminbarHeight(),
+    	$adminbarHeight		= oceanwpGetAdminbarHeight(),
     	$minHeight 			= $mainHeight + ( $window.height() - $htmlHeight - $adminbarHeight );
 
     // Add min height

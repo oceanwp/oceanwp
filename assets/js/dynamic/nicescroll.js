@@ -1,13 +1,11 @@
-/* jquery.nicescroll
--- version 3.6.8
--- copyright 2016-02-29 InuYaksa*2016
--- licensed under the MIT
---
--- http://nicescroll.areaaperta.com/
--- https://github.com/inuyaksa/jquery.nicescroll
---
-*/
-
+/*!
+ * Javascript nicescroll version 3.6.8
+ * http://nicescroll.areaaperta.com/
+ * https://github.com/inuyaksa/jquery.nicescroll
+ *
+ * copyright 2016-02-29 InuYaksa*2016
+ * Released under the MIT license
+ */
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as anonymous module.

@@ -34,7 +34,7 @@
 function oceanwp_breadcrumb_trail( $args = array() ) {
 
 	// Return if breadcrumbs are disabled
-	if ( ! get_theme_mod( 'ocean_breadcrumbs', true )
+	if ( ! oceanwp_has_breadcrumbs()
 		|| is_front_page() ) {
 		return;
 	}

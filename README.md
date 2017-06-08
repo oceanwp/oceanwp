@@ -2,8 +2,8 @@
 
 **Contributors:** Nick  
 **Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 4.7  
-**Stable tag:** 1.1.9  
+**Tested up to:** WordPress 4.8  
+**Stable tag:** 1.2.0 
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 **Tags:** two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, rtl-language-support, sticky-post, editor-style, threaded-comments, translation-ready

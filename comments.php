@@ -34,11 +34,20 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 
 	<?php // You can start editing here -- including this comment! ?>
 
-	<?php if ( have_comments() ) : ?>
+	<?php if ( have_comments() ) :
 
-		<h2 class="theme-heading comments-title">
-			<span class="text"><?php printf( esc_html( _n( 'This Post Has %d Comment', 'This Post Has %d Comments', get_comments_number(), 'oceanwp'  ) ), esc_html( number_format_i18n( get_comments_number() ) ) ); ?></span>
-		</h2>
+		// Get comments title
+		$comments_number = number_format_i18n( get_comments_number() );
+		if ( '1' == $comments_number ) {
+			$comments_title = esc_html__( 'This Post Has One Comment', 'oceanwp' );
+		} else {
+			$comments_title = sprintf( esc_html__( 'This Post Has %s Comments', 'oceanwp' ), $comments_number );
+		}
+		$comments_title = apply_filters( 'ocean_comments_title', $comments_title ); ?>
+
+		<h3 class="theme-heading comments-title">
+			<span class="text"><?php echo esc_html( $comments_title ); ?></span>
+		</h3>
 
 		<ol class="comment-list">
 			<?php
@@ -55,16 +64,16 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 		if ( function_exists( 'the_comments_navigation' ) ) :
 
 			the_comments_navigation( array(
-				'prev_text' => '<span class="fa fa-angle-left"></span>',
-				'next_text' => '<span class="fa fa-angle-right"></span>',
+				'prev_text' => '<i class="fa fa-angle-left"></i>'. esc_html__( 'Previous', 'oceanwp' ),
+				'next_text' => esc_html__( 'Next', 'oceanwp' ) .'<i class="fa fa-angle-right"></i>',
 			) );
 
 		elseif ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 
 			<div class="comment-navigation clr">
 				<?php paginate_comments_links( array(
-					'prev_text' => '<span class="fa fa-angle-left"></span>',
-					'next_text' => '<span class="fa fa-angle-right"></span>',
+					'prev_text' => '<i class="fa fa-angle-left"></i>'. esc_html__( 'Previous', 'oceanwp' ),
+					'next_text' => esc_html__( 'Next', 'oceanwp' ) .'<i class="fa fa-angle-right"></i>',
 				) ); ?>
 			</div>
 
@@ -84,11 +93,11 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
 
-		$fields['author'] 	= '<div class="comment-form-author"><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_html__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="1"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
+		$fields['author'] 	= '<div class="comment-form-author"><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_attr__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="1"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
 
-		$fields['email'] 	= '<div class="comment-form-email"><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_html__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="2"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
+		$fields['email'] 	= '<div class="comment-form-email"><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_attr__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="2"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
 
-		$fields['url'] 		= '<div class="comment-form-url"><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_html__( 'Website', 'oceanwp' ) .'" size="22" tabindex="3" class="input-website" /></div>';
+		$fields['url'] 		= '<div class="comment-form-url"><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_attr__( 'Website', 'oceanwp' ) .'" size="22" tabindex="3" class="input-website" /></div>';
 
 		return $fields;
 
@@ -101,7 +110,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 			'logged_in_as'			=> '<p class="logged-in-as">'. esc_html__( 'Logged in as', 'oceanwp' ) .' <a href="'. admin_url( 'profile.php' ) .'">'. $user_identity .'</a>. <a href="' . wp_logout_url( get_permalink() ) .'" title="'. esc_html__( 'Log out of this account', 'oceanwp' ) .'">'. esc_html__( 'Log out &raquo;', 'oceanwp' ) .'</a></p>',
 			'comment_notes_before'	=> false,
 			'comment_notes_after'	=> false,
-			'comment_field'			=> '<div class="comment-textarea"><textarea name="comment" id="comment" cols="39" rows="4" tabindex="4" class="textarea-comment" placeholder="'. esc_html__( 'Your Comment Here...', 'oceanwp' ) .'"></textarea></div>',
+			'comment_field'			=> '<div class="comment-textarea"><textarea name="comment" id="comment" cols="39" rows="4" tabindex="4" class="textarea-comment" placeholder="'. esc_attr__( 'Your Comment Here...', 'oceanwp' ) .'"></textarea></div>',
 			'id_submit'				=> 'comment-submit',
 			'label_submit'			=> esc_html__( 'Post Comment', 'oceanwp' ),
 		)

@@ -18,6 +18,7 @@ module.exports = function ( grunt ) {
 				files: {
 					'assets/js/plugins.min.js': [ 'assets/js/devs/**/*.js' ],
 
+					'assets/js/dynamic/html5.min.js': 'assets/js/dynamic/html5.js',
 					'assets/js/dynamic/woo-scripts.min.js': 'assets/js/dynamic/woo-scripts.js',
 
 					'inc/customizer/assets/js/customize-preview.min.js': 'inc/customizer/assets/js/customize-preview.js',
@@ -55,6 +56,7 @@ module.exports = function ( grunt ) {
 				files: {
 					'assets/css/oceanwp-woocommerce.min.css': 'assets/css/oceanwp-woocommerce.css',
 
+					'inc/customizer/assets/css/customizer-simple-line-icons.min.css': 'inc/customizer/assets/css/customizer-simple-line-icons.css',
 					'inc/customizer/assets/min/css/rtl.min.css': 'inc/customizer/controls/rtl.css',
 					'inc/customizer/assets/min/css/general.min.css': 'inc/customizer/controls/general.css',
 					'inc/customizer/assets/min/css/buttonset.min.css': 'inc/customizer/controls/buttonset/buttonset.css',
@@ -74,16 +76,25 @@ module.exports = function ( grunt ) {
 
 		// Compile our sass.
 		sass: {
-			dist: {
-				options: {
-					outputStyle: 'compressed',
-					sourceMap: false,
-				},
-				files: {
-					'style.css': 'sass/style.scss',
+			dev: { // This outputs the expanded css file
+                options: {
+                    outputStyle: 'expanded', // Minify output
+                    sourceMap: false,
+                },
+                files: {
 					'assets/css/style.css': 'sass/stylesheet.scss',
-				}
-			}
+                }
+            },
+            prod: { // This outputs the compressed css file
+                options: {
+                    outputStyle: 'compressed', // Minify output
+                    sourceMap: false,
+                },
+                files: {
+					'style.css': 'sass/style.scss',
+					'assets/css/style.min.css': 'sass/stylesheet.scss',
+                }
+            }
 		},
 
 		// Autoprefixer.
@@ -122,7 +133,8 @@ module.exports = function ( grunt ) {
 			scss: {
 				files: [ 'sass/**/*.scss' ],
 				tasks: [
-					'newer:sass:dist',
+					'newer:sass:dev',
+					'newer:sass:prod',
 					'newer:autoprefixer:main',
 				]
 			},
@@ -239,14 +251,16 @@ module.exports = function ( grunt ) {
 	grunt.registerTask( 'default', [
 		'uglify:dev',
 		'cssmin:prod',
-		'sass:dist'
+		'sass:dev',
+		'sass:prod'
 	] );
 
 	// Production task
 	grunt.registerTask( 'build', [
 		'newer:uglify:prod',
 		'newer:imagemin',
-		'sass:dist',
+		'sass:dev',
+		'sass:prod',
 		'autoprefixer:main',
 		'copy'
 	] );

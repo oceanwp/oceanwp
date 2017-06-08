@@ -58,11 +58,6 @@ class OCEANWP_Theme_Class {
 			add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'polylang_register_string' ) );
 		}
 
-		// Registers theme_mod strings into WPML
-		if ( class_exists( 'icl_object_id' ) ) {
-			add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'wpml_register_string' ) );
-		}
-
 		/** Admin only actions **/
 		if ( is_admin() ) {
 
@@ -158,6 +153,7 @@ class OCEANWP_Theme_Class {
 	public static function include_functions() {
 		$dir = OCEANWP_INC_DIR;
 		require_once ( $dir .'helpers.php' );
+		require_once ( $dir .'deprecated.php' );
 		require_once ( $dir .'customizer/controls/typography/webfonts.php' );
 		require_once ( $dir .'walker/init.php' );
 		require_once ( $dir .'walker/menu-walker.php' );
@@ -220,9 +216,6 @@ class OCEANWP_Theme_Class {
 
 		// Customizer class
 		require_once( OCEANWP_INC_DIR .'customizer/customizer.php' );
-
-		// Load the Updater class for oceanwp extensions
-		require_once( OCEANWP_INC_DIR .'updater.php' );
 
 	}
 
@@ -367,10 +360,10 @@ class OCEANWP_Theme_Class {
 		wp_enqueue_style( 'font-awesome', $dir .'devs/font-awesome.min.css', false, '4.7.0' );
 
 		// Register simple line icons style
-		wp_enqueue_style( 'simple-line-icons', $dir .'devs/simple-line-icons.min.css', false, '2.2.2' );
+		wp_enqueue_style( 'simple-line-icons', $dir .'devs/simple-line-icons.min.css', false, '2.4.0' );
 
 		// Main Style.css File
-		wp_enqueue_style( 'oceanwp-style', $dir .'style.css', false, $theme_version );
+		wp_enqueue_style( 'oceanwp-style', $dir .'style.min.css', false, $theme_version );
 
 	}
 
@@ -419,13 +412,15 @@ class OCEANWP_Theme_Class {
 	public static function localize_array() {
 
 		// Create array
+		$sidr_side = get_theme_mod( 'ocean_mobile_menu_sidr_direction', 'left' );
+		$sidr_side = $sidr_side ? $sidr_side : 'left';
 		$array = array(
 			'isRTL'                 => is_rtl(),
 			'menuSearchStyle'       => oceanwp_menu_search_style(),
 			'sidrSource'       		=> oceanwp_sidr_menu_source(),
 			'sidrDisplace'       	=> get_theme_mod( 'ocean_mobile_menu_sidr_displace', true ) ?  true : false,
-			'sidrSide'       		=> get_theme_mod( 'ocean_mobile_menu_sidr_direction', 'left' ),
-			'sidrDropdownTarget'    => 'arrow',
+			'sidrSide'       		=> $sidr_side,
+			'sidrDropdownTarget'    => get_theme_mod( 'ocean_mobile_menu_sidr_dropdown_target', 'icon' ),
 			'customSelects'         => '.woocommerce-ordering .orderby, .cart-collaterals .cart_totals table select, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select',
 		);
 
@@ -454,7 +449,7 @@ class OCEANWP_Theme_Class {
 	 * @since 1.0.0
 	 */
 	public static function html5_shiv() {
-		wp_register_script( 'html5shiv', OCEANWP_JS_DIR_URI . 'html5.js', array(), OCEANWP_THEME_VERSION, false );
+		wp_register_script( 'html5shiv', OCEANWP_JS_DIR_URI . '/dynamic/html5.min.js', array(), OCEANWP_THEME_VERSION, false );
 		wp_enqueue_script( 'html5shiv' );
 		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 	}
@@ -546,21 +541,6 @@ class OCEANWP_Theme_Class {
 		if ( function_exists( 'pll_register_string' ) && $strings = oceanwp_register_tm_strings() ) {
 			foreach( $strings as $string => $default ) {
 				pll_register_string( $string, get_theme_mod( $string, $default ), 'Theme Mod', true );
-			}
-		}
-
-	}
-
-	/**
-	 * Registers theme_mod strings into WPML.
-	 *
-	 * @since 1.1.4
-	 */
-	public static function wpml_register_string() {
-
-		if ( function_exists( 'icl_register_string' ) && $strings = oceanwp_register_tm_strings() ) {
-			foreach( $strings as $string => $default ) {
-				icl_register_string( 'Theme Mod', $string, get_theme_mod( $string, $default ) );
 			}
 		}
 

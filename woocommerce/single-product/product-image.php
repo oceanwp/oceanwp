@@ -35,6 +35,9 @@ $image_title 		= get_the_title( $thumbnail_id ); ?>
 	<div class="product-images-slider main-images woocommerce-product-gallery__wrapper">
 
 		<?php
+		// Var
+		$html = '';
+		
 		$attributes = array(
 			'title'                   => $image_title,
 			'data-src'                => $full_size_image[0],
@@ -44,7 +47,7 @@ $image_title 		= get_the_title( $thumbnail_id ); ?>
 		);
 
 		if ( has_post_thumbnail() ) {
-			$html  = '<div class="product-image woocommerce-product-gallery__image">';
+			$html .= '<div class="product-image woocommerce-product-gallery__image">';
 			$html .= '<a href="' . esc_url( $full_size_image[0] ) . '" class="woocommerce-main-image no-lightbox">';
 			$html .= get_the_post_thumbnail( $post->ID, 'shop_single', $attributes );
 	 		$html .= '</a>';
@@ -90,6 +93,9 @@ $image_title 		= get_the_title( $thumbnail_id ); ?>
 	<div class="product-thumbnails">
 
 		<?php
+		// Var
+		$html = '';
+
 		// Get image data
 		$thumbnail = wp_get_attachment_image_src( $thumbnail_id, 'shop_thumbnail' );
 
@@ -102,7 +108,7 @@ $image_title 		= get_the_title( $thumbnail_id ); ?>
 		);
 
 		if ( has_post_thumbnail() ) {
-			$html  = '<div class="thumbnail-item first-thumbnail"><a href="' . esc_url( $thumbnail[0] ) . '" class="woo-thumbnail">';
+			$html .= '<div class="thumbnail-item first-thumbnail"><a href="' . esc_url( $thumbnail[0] ) . '" class="woo-thumbnail">';
 			$html .= get_the_post_thumbnail( $post->ID, 'shop_thumbnail', $attributes );
 			$html .= '</a></div>';
 		} else {

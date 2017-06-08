@@ -86,33 +86,15 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_footer_copyright_text', array(
 				'transport'           	=> 'postMessage',
-				'default'           	=> 'Copyright [oceanwp_date] - OceanWP Theme by Nick Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>',
+				'default'           	=> 'Copyright [oceanwp_date] - OceanWP Theme by Nick',
 				'sanitize_callback' 	=> false,
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Textarea_Control( $wp_customize, 'ocean_footer_copyright_text', array(
 				'label'	   				=> esc_html__( 'Copyright', 'oceanwp' ),
-				'description'	   		=> sprintf( esc_html__( 'The following shortcodes can be added:%1$s %2$s[oceanwp_date]%3$s To show a dynamic date.%1$s %2$s[oceanwp_site_url]%3$s To add a homepage link.', 'oceanwp' ), '<br/>', '<strong>', '</strong>' ),
+				'description'	   		=> sprintf( esc_html__( 'Shortcodes allowed, %1$ssee the list%2$s.', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
 				'section'  				=> $section,
 				'settings' 				=> 'ocean_footer_copyright_text',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_footer_bottom',
-			) ) );
-
-			/**
-			 * Footer Bottom Padding
-			 */
-			$wp_customize->add_setting( 'ocean_bottom_footer_padding', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_bottom_footer_padding', array(
-				'label'	   				=> esc_html__( 'Padding (DECREPITATED)', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'This field will be removed in OceanWP 1.2.0, add your value(s) in the dimensions control below', 'oceanwp' ),
-				'type' 					=> 'text',
-				'section'  				=> $section,
-				'settings' 				=> 'ocean_bottom_footer_padding',
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_footer_bottom',
 			) ) );

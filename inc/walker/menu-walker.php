@@ -167,14 +167,6 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 		    $description = '';
 		    if ( $item->description != '' ) {
 		    	$description = '<span class="nav-content">'. $item->description .'</span>';
-		    }
-
-		    // Text before and after
-		    $text_before = '';
-		    $text_after  = '';
-		    if ( $item->icon != '' ) {
-		    	$text_before = '<span class="menu-text">';
-		    	$text_after  = '</span>';
 		    }	    
 
 		    // Output
@@ -182,7 +174,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			$item_output .= '<a'. $attributes .' class="menu-link">';
 
-			$item_output .= $args->link_before . $icon . $text_before . apply_filters( 'the_title', $item->title, $item->ID ) . $text_after . $args->link_after;
+			$item_output .= $args->link_before . $icon . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 
 	    	if( $depth !== 0 ) {
 		    	$item_output .= $description;
@@ -190,7 +182,15 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			$item_output .= '</a>';
 
-			if ( $item->megamenu_widgetarea && $this->megamenu != '' ){
+			if ( $item->template && $this->megamenu != '' ) {
+				ob_start();
+					include( OCEANWP_INC_DIR . 'walker/template.php' );
+					$template_content = ob_get_contents();
+				ob_end_clean();
+				$item_output .= $template_content;
+			}
+
+			if ( $item->megamenu_widgetarea && $this->megamenu != '' ) {
 				ob_start();
 					dynamic_sidebar( $item->megamenu_widgetarea );
 					$sidebar_content = ob_get_contents();

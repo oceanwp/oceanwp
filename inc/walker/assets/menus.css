@@ -2,7 +2,8 @@
 .field-megamenu-auto-width,
 .field-megamenu-columns,
 .field-megamenu-heading,
-.field-megamenu-widgetarea {
+.field-megamenu-widgetarea,
+.field-template {
 	display: none;
 }
 
@@ -10,6 +11,7 @@
 .menu-item-depth-0 .field-megamenu-auto-width,
 .menu-item-depth-0 .field-megamenu-columns,
 .menu-item-depth-0 .field-megamenu-heading,
-.menu-item-depth-1 .field-megamenu-widgetarea {
+.menu-item-depth-1 .field-megamenu-widgetarea,
+.menu-item-depth-1 .field-template {
 	display: block;
 }

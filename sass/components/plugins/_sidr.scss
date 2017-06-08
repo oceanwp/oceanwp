@@ -69,11 +69,13 @@ a.sidr-class-toggle-sidr-close {
   text-transform: uppercase;
 
   i {
+    display: inline-block;
     padding-right: 8px;
     margin: 0;
     width: auto;
     height: auto;
-    line-height: 18px;
+    line-height: 1;
+    vertical-align: bottom;
   }
 }
 
@@ -170,10 +172,6 @@ a.sidr-class-toggle-sidr-close {
   ul ul ul a:before {
     margin-left: 40px;
   }
-
-  a i {
-    margin-right: 10px;
-  }
 }
 
 .sidr-class-middle-site-logo,
@@ -182,12 +180,34 @@ a.sidr-class-toggle-sidr-close {
 .sidr .nav-arrow,
 .sidr-class-sidebar-box,
 .sidr-class-mega-cat .sidr-class-dropdown-toggle,
-.sidr-class-mega-cat .sidr-class-megamenu {
+.sidr-class-mega-cat .sidr-class-megamenu,
+.sidr-class-elementor {
   display: none !important;
 }
 
 .sidr-class-dropdown-menu li.sidr-class-menu-item-has-children.sidr-class-mega-cat > a {
     padding-right: 20px;
+}
+
+/* Icons */
+.sidr-class-dropdown-menu a i {
+  font-size: inherit !important;
+  vertical-align: initial !important;
+
+  &.before,
+  &.below {
+    margin-right: 10px;
+  }
+
+  &.after {
+    margin-left: 10px;
+  }
+}
+
+/* WPML img */
+.sidr-class-wpml-ls-flag {
+  margin-right: 10px;
+  vertical-align: baseline;
 }
 
 /* Overlay */

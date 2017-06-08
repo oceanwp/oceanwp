@@ -23,4 +23,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<button class="search-submit"><i class="icon-magnifier"></i></button>
 		<div class="search-bg"></div>
 	</form>
-</div><!-- #searchform-overlay -->
+</div><!-- #medium-searchform -->

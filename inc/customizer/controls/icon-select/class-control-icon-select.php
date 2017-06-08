@@ -79,7 +79,7 @@ class OceanWP_Customizer_Icon_Select_Control extends WP_Customize_Control {
 			<# for ( key in data.choices ) { #>
 				<label>
 					<input class="icon-select-input" type="radio" value="{{ key }}" name="_customize-icon-select-{{ data.id }}" {{{ data.link }}}<# if ( data.value === key ) { #> checked<# } #> />
-					<span class="icon-select-label"><i class="fa fa-{{ key }}"></i></span>
+					<span class="icon-select-label"><i class="{{ key }}"></i></span>
 				</label>
 			<# } #>
 		</div>

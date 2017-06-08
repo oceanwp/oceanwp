@@ -326,6 +326,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_transparent_header_logo', array(
 				'label'	   				=> esc_html__( 'Logo', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'If you want to display a different logo for this style (optional)', 'oceanwp' ),
 				'section'  				=> 'ocean_header_transparent_style',
 				'settings' 				=> 'ocean_transparent_header_logo',
 				'priority' 				=> 10,
@@ -2267,6 +2268,68 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) );
 
 			/**
+			 * Display Menu Text
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_display_opening_text', array(
+				'default'           	=> true,
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_display_opening_text', array(
+				'label'	   				=> esc_html__( 'Display Menu Text', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_display_opening_text',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Menu Text
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_text', array(
+				'default'           	=> esc_html__( 'Menu', 'oceanwp' ),
+				'transport'           	=> 'postMessage',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_text', array(
+				'label'	   				=> esc_html__( 'Menu Text', 'oceanwp' ),
+				'type' 					=> 'text',
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_text',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Hamburger Icon Class
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_open_icon', array(
+				'default'           	=> 'fa fa-bars',
+				'transport'           	=> 'postMessage',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_open_icon', array(
+				'label'	   				=> esc_html__( 'Hamburger Icon Class', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Enter the full icon class', 'oceanwp' ),
+				'type' 					=> 'text',
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_open_icon',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Mobile Menu Panel
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_heading', array(
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_mobile_menu_heading', array(
+				'label'    				=> esc_html__( 'Mobile Sidebar Menu', 'oceanwp' ),
+				'section'  				=> 'ocean_header_mobile_menu',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
 			 * Mobile Menu Direction
 			 */
 			$wp_customize->add_setting( 'ocean_mobile_menu_sidr_direction', array(
@@ -2302,6 +2365,22 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Close Menu Button
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_close_btn', array(
+				'default'           	=> true,
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_close_btn', array(
+				'label'	   				=> esc_html__( 'Close Menu Button', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_close_btn',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
 			 * Mobile Menu Search
 			 */
 			$wp_customize->add_setting( 'ocean_mobile_menu_search', array(
@@ -2315,6 +2394,59 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'section'  				=> 'ocean_header_mobile_menu',
 				'settings' 				=> 'ocean_mobile_menu_search',
 				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Close Menu Button Icon Class
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_close_btn_icon', array(
+				'default'           	=> 'icon-close',
+				'transport'           	=> 'postMessage',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_close_btn_icon', array(
+				'label'	   				=> esc_html__( 'Close Menu Button Icon Class', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Enter the full icon class', 'oceanwp' ),
+				'type' 					=> 'text',
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_close_btn_icon',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Close Menu Button Text
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_close_btn_text', array(
+				'default'           	=> esc_html__( 'Close Menu', 'oceanwp' ),
+				'transport'           	=> 'postMessage',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_close_btn_text', array(
+				'label'	   				=> esc_html__( 'Close Menu Button Text', 'oceanwp' ),
+				'type' 					=> 'text',
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_close_btn_text',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Mobile Menu Dropdown Target
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_sidr_dropdown_target', array(
+				'default'           	=> 'icon',
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_mobile_menu_sidr_dropdown_target', array(
+				'label'	   				=> esc_html__( 'Dropdown Target', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose your opening target for your submenus', 'oceanwp' ),
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_sidr_dropdown_target',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'icon' 	=> esc_html__( 'Icon', 'oceanwp' ),
+					'link' 	=> esc_html__( 'Link', 'oceanwp' ),
+				),
 			) ) );
 
 			/**
@@ -3252,7 +3384,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Dropdown menu link active color
 			if ( ! empty( $dropdown_menu_link_color_active ) ) {
-				$css .= '.dropdown-menu ul > .current-menu-item > a > span{color:'. $dropdown_menu_link_color_active .';}';
+				$css .= '.dropdown-menu ul > .current-menu-item > a.menu-link{color:'. $dropdown_menu_link_color_active .';}';
 			}
 
 			// Dropdown menu link active background color

@@ -1,3 +1,10 @@
+/*!
+ * Javascript Chocolat
+ * https://github.com/nicolas-t/Chocolat
+ *
+ * Copyright (c) Nicolas Turlais
+ * Released under the MIT license
+ */
 (function (factory) {
     if(typeof module === "object" && typeof module.exports === "object") {
         module.exports = factory(require("jquery"), window, document);

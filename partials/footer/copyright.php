@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Get copyright text
-$copy = get_theme_mod( 'ocean_footer_copyright_text', 'Copyright - OceanWP Theme by Nick Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>' );
+$copy = get_theme_mod( 'ocean_footer_copyright_text', 'Copyright - OceanWP Theme by Nick' );
 $copy = oceanwp_tm_translation( 'ocean_footer_copyright_text', $copy );
 
 // Get footer menu location and apply filters for child theming
@@ -43,7 +43,7 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 		// Display footer bottom menu if location is defined
 		if ( has_nav_menu( $menu_location ) ) : ?>
 
-			<div id="footer-bottom-menu" class="clr">
+			<div id="footer-bottom-menu" class="navigation clr">
 				<?php
 				// Display footer menu
 				wp_nav_menu( array(

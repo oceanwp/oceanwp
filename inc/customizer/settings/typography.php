@@ -497,31 +497,6 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					}
 
 					/**
-					 * Font Color
-					 */
-					if ( in_array( 'font-color', $attributes ) ) {
-
-						// Get default
-						$default = ! empty( $array['defaults']['color'] ) ? $array['defaults']['color'] : NULL;
-						
-						$wp_customize->add_setting( $element .'_typography[color]', array(
-							'type' 				=> 'theme_mod',
-							'default' 			=> '',
-							'sanitize_callback' => false,
-							'transport' 		=> $transport,
-							'default' 			=> $default,
-						) );
-						$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, $element .'_typography[color]', array(
-							'label' 			=> esc_html__( 'Font Color', 'oceanwp' ),
-							'section' 			=> 'ocean_typography_'. $element,
-							'settings' 			=> $element .'_typography[color]',
-							'priority' 			=> 10,
-							'active_callback' 	=> $active_callback,
-						) ) );
-
-					}
-
-					/**
 					 * Line Height
 					 */
 					if ( in_array( 'line-height', $attributes ) ) {
@@ -605,6 +580,31 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						        'max'   => 10,
 						        'step'  => 0.1,
 						    ),
+						) ) );
+
+					}
+
+					/**
+					 * Font Color
+					 */
+					if ( in_array( 'font-color', $attributes ) ) {
+
+						// Get default
+						$default = ! empty( $array['defaults']['color'] ) ? $array['defaults']['color'] : NULL;
+						
+						$wp_customize->add_setting( $element .'_typography[color]', array(
+							'type' 				=> 'theme_mod',
+							'default' 			=> '',
+							'sanitize_callback' => false,
+							'transport' 		=> $transport,
+							'default' 			=> $default,
+						) );
+						$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, $element .'_typography[color]', array(
+							'label' 			=> esc_html__( 'Font Color', 'oceanwp' ),
+							'section' 			=> 'ocean_typography_'. $element,
+							'settings' 			=> $element .'_typography[color]',
+							'priority' 			=> 10,
+							'active_callback' 	=> $active_callback,
 						) ) );
 
 					}

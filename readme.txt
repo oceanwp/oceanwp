@@ -1,10 +1,10 @@
 === OceanWP ===
 Contributors: oceanwp
 Requires at least: WordPress 4.5
-Tested up to: WordPress 4.7
-Version: 1.1.4
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: WordPress 4.8
+Version: 1.2.0
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, sticky-post, editor-style, threaded-comments, translation-ready
 
 == Description ==
@@ -29,7 +29,7 @@ OceanWP is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
+the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
@@ -66,6 +66,10 @@ Source: http://isotope.metafizzy.co
 Match Heights, Copyright (c) 2014 Liam Brummitt
 License: MIT
 Source: http://brm.io/jquery-match-height/
+
+NiceScroll, copyright 2016-02-29 InuYaksa*2016
+License: MIT
+Source: https://github.com/inuyaksa/jquery.nicescroll
 
 Slick, Copyright (c) Ken Wheeler
 License: MIT
@@ -104,6 +108,40 @@ License: CC0 Public Domain
 Source: https://pixabay.com/en/underwater-sunbeams-ocean-sea-698671/
 
 == Changelog ==
+
+### *2017.06.08* - 1.2.0
+* **Added** - New menu field "Elementor Template" to allow you to add an Elementor template in your mega menu.
+* **Added** - New select field to choose an elementor template (or a page if you use another page builder) to replace the 404 error page content in General Options > General Settings of the customizer.
+* **Added** - Checkbox field in the Menu Cart customizer section to hide the menu cart if empty.
+* **Added** - New display style in the Menu Cart customizer section for the WooCommerce cart icon, now you can display the count and the cart total at the same time.
+* **Added** - Control in the Menu Cart customizer section to select a different cart icon.
+* **Added** - Text control in the Menu Cart customizer section to add your own cart icon.
+* **Added** - Slider control in the Menu Cart customizer section to allow you to add your own cart icon size, even for the responsive.
+* **Added** - Width field in the WooCommerce customizer section to control the cart dropdown width.
+* **Added** - Slider control for the WooCommerce archives columns field, now you can add a custom column for tablet and mobile.
+* **Added** - Checkbox field in the Mobile Menu customizer section to show/hide the mobile menu opening button text.
+* **Added** - Text field in the Mobile Menu customizer section to add your own text for the mobile menu opening button.
+* **Added** - Text field in the Mobile Menu customizer section to add your own icon class for the mobile menu opening button.
+* **Added** - Checkbox field in the Mobile Menu customizer section to show/hide the mobile menu close button.
+* **Added** - Switch field in the Mobile Menu customizer section to allow you to open your dropdowns with the parent link.
+* **Added** - Text field in the Mobile Menu customizer section to add your own text for the mobile menu close button.
+* **Added** - Text field in the Mobile Menu customizer section to add your own icon class for the mobile menu close button.
+* **Added** - Checkbox field in the Blog Entries customizer section to show/hide the overlay on the image hover on the blog.
+* **Added** - Filter for the blog entries headings, now you can add your own heading tag through this filter.
+* **Fixed** - Search input focus on the icon click.
+* **Fixed** - Comments pagination issue.
+* **Fixed** - Issue with WPML string translation.
+* **Fixed** - Issue with the Apply Coupon button on the checkout page.
+* **Fixed** - Phone and Email input issue on the checkout page.
+* **Fixed** - Textarea height issue with the forms widget of Elementor.
+* **Fixed** - Issue with the search overlay and the center menu, now the close button is directly into the overlay.
+* **Fixed** - Quantity buttons issue in the WooCommerce Cart page.
+* **Fixed** - Avatar issue in the WooCommerce My Account page.
+* **Fixed** - Page header overlay opacity issue for the background image style.
+* **Fixed** - RTL lighbox style issue.
+
+### *2017.04.24* - 1.1.9.1
+* **Fixed** - Small issue with the category products images.
 
 ### *2017.04.17* - 1.1.9
 * **Added** - Sortable control in the customizer for the catalog products, now you can reorder the elements.

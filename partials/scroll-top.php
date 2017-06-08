@@ -17,6 +17,6 @@ if ( true != get_theme_mod( 'ocean_scroll_top', true ) ) {
 
 // Get arrow
 $arrow = get_theme_mod( 'ocean_scroll_top_arrow' );
-$arrow = $arrow ? $arrow : 'angle-up'; ?>
+$arrow = $arrow ? $arrow : 'fa fa-angle-up'; ?>
 
-<a id="scroll-top" href="#"><span class="fa fa-<?php echo esc_attr( $arrow ); ?>"></span></a>
+<a id="scroll-top" href="#"><span class="<?php echo esc_attr( $arrow ); ?>"></span></a>

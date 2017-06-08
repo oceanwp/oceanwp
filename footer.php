@@ -35,8 +35,16 @@ if ( ! class_exists( 'Ocean_Sticky_Footer' ) ) {
 } ?>
 
 <?php
+// Search overlay style
+if ( 'overlay' == oceanwp_menu_search_style() ) {
+    get_template_part( 'partials/header/search-overlay' );
+} ?>
+
+<?php
 // Mobile panel close button
-get_template_part( 'partials/mobile/mobile-sidr-close' ); ?>
+if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
+    get_template_part( 'partials/mobile/mobile-sidr-close' );
+} ?>
 
 <?php
 // Mobile Menu (if defined)
@@ -44,7 +52,9 @@ get_template_part( 'partials/mobile/mobile-nav' ); ?>
 
 <?php
 // Mobile search form
-get_template_part( 'partials/mobile/mobile-search' ); ?>
+if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
+    get_template_part( 'partials/mobile/mobile-search' );
+} ?>
 
 <?php wp_footer(); ?>
 </body>

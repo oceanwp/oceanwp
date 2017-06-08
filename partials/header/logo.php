@@ -27,23 +27,27 @@ $full_screen_logo 	= get_theme_mod( 'ocean_full_screen_header_logo' ); ?>
 		// Custom site-wide image logo
 		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 
+			do_action( 'ocean_before_logo_img' );
+
 			// Default logo
 			the_custom_logo();
 
 			// Retina logo
 			if ( $retina_logo ) {
-				the_custom_retina_logo();
+				oceanwp_custom_retina_logo();
 			}
 
 			// Transparent logo
 			if ( $transparent_logo ) {
-				the_custom_transparent_logo();
+				oceanwp_custom_transparent_logo();
 			}
 
 			// Full screen logo
 			if ( $full_screen_logo ) {
-				the_custom_full_screen_logo();
+				oceanwp_custom_full_screen_logo();
 			}
+
+			do_action( 'ocean_after_logo_img' );
 
 		} else { ?>
 

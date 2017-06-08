@@ -117,7 +117,7 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 		}
 
 		// Breadcrumbs
-		if ( get_theme_mod( 'ocean_breadcrumbs', true ) ) {
+		if ( oceanwp_has_breadcrumbs() ) {
 			$classes[] = 'has-breadcrumbs';
 		}
 
@@ -189,7 +189,7 @@ if ( ! function_exists( 'oceanwp_post_id' ) ) {
 		}
 
 		// Apply filters
-		$id = apply_filters( 'oceanwp_post_id', $id );
+		$id = apply_filters( 'ocean_post_id', $id );
 
 		// Sanitize
 		$id = $id ? $id : '';
@@ -684,7 +684,7 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 			$classes[] = 'search-overlay';
 		}
 
-		// Add class if social menu is enabled
+		// Add class if social menu is enabled to remove the negative right on the navigation
 		if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
 			$classes[] = 'has-social';
 		}
@@ -830,9 +830,9 @@ if ( ! function_exists( 'oceanwp_header_retina_logo' ) ) {
  *
  * @since 1.1.1
  */
-if ( ! function_exists( 'the_custom_retina_logo' ) ) {
+if ( ! function_exists( 'oceanwp_custom_retina_logo' ) ) {
 
-	function the_custom_retina_logo() {
+	function oceanwp_custom_retina_logo() {
 		echo wp_kses_post( oceanwp_header_retina_logo() );
 	}
 
@@ -908,14 +908,16 @@ if ( ! function_exists( 'oceanwp_header_transparent_logo' ) ) {
 			);
 
 			// Output retina image
-			$html .= sprintf( '<a href="%1$s" class="transparent-retina-logo-link" rel="home" itemprop="url"><img src="%2$s" class="transparent-retina-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" style="max-height: %6$spx" /></a>',
-				esc_url( home_url( '/' ) ),
-				esc_url( $retina_data['url'] ),
-				esc_attr( $retina_data['width'] ),
-				esc_attr( $retina_data['height'] ),
-				esc_attr( $retina_data['alt'] ),
-				esc_attr( $logo_data['height'] )
-			);
+			if ( $retina_url ) {
+				$html .= sprintf( '<a href="%1$s" class="transparent-retina-logo-link" rel="home" itemprop="url"><img src="%2$s" class="transparent-retina-logo" width="%3$s" height="%4$s" alt="%5$s" itemprop="url" style="max-height: %6$spx" /></a>',
+					esc_url( home_url( '/' ) ),
+					esc_url( $retina_data['url'] ),
+					esc_attr( $retina_data['width'] ),
+					esc_attr( $retina_data['height'] ),
+					esc_attr( $retina_data['alt'] ),
+					esc_attr( $logo_data['height'] )
+				);
+			}
 
 		}
 
@@ -931,9 +933,9 @@ if ( ! function_exists( 'oceanwp_header_transparent_logo' ) ) {
  *
  * @since 1.1.1
  */
-if ( ! function_exists( 'the_custom_transparent_logo' ) ) {
+if ( ! function_exists( 'oceanwp_custom_transparent_logo' ) ) {
 
-	function the_custom_transparent_logo() {
+	function oceanwp_custom_transparent_logo() {
 		echo wp_kses_post( oceanwp_header_transparent_logo() );
 	}
 
@@ -1004,9 +1006,9 @@ if ( ! function_exists( 'oceanwp_header_full_screen_logo' ) ) {
  *
  * @since 1.1.1
  */
-if ( ! function_exists( 'the_custom_full_screen_logo' ) ) {
+if ( ! function_exists( 'oceanwp_custom_full_screen_logo' ) ) {
 
-	function the_custom_full_screen_logo() {
+	function oceanwp_custom_full_screen_logo() {
 		echo wp_kses_post( oceanwp_header_full_screen_logo() );
 	}
 
@@ -1063,7 +1065,7 @@ if ( ! function_exists( 'oceanwp_header_menu_classes' ) ) {
 
 			// Add special class if the dropdown top border option in the admin is disabled
 			if ( true != get_theme_mod( 'ocean_menu_dropdown_top_border', true ) ) {
-				$classes[] = 'oceanwp-dropdown-top-border';
+				$classes[] = 'no-top-border';
 			}
 
 			// Add clearfix
@@ -1314,7 +1316,8 @@ if ( ! function_exists( 'oceanwp_menu_cart_style' ) ) {
 	function oceanwp_menu_cart_style() {
 
 		// Return if WooCommerce isn't enabled or icon is disabled
-		if ( ! OCEANWP_WOOCOMMERCE_ACTIVE || 'disabled' == get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) {
+		if ( ! OCEANWP_WOOCOMMERCE_ACTIVE
+			|| 'disabled' == get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) {
 			return;
 		}
 
@@ -1322,7 +1325,8 @@ if ( ! function_exists( 'oceanwp_menu_cart_style' ) ) {
 		$style = get_theme_mod( 'ocean_woo_menu_icon_style', 'drop_down' );
 
 		// Return click style for these pages
-		if ( is_cart() || is_checkout() ) {
+		if ( is_cart()
+			|| is_checkout() ) {
 			$style = 'custom_link';
 		}
 
@@ -1330,7 +1334,8 @@ if ( ! function_exists( 'oceanwp_menu_cart_style' ) ) {
 		$style = apply_filters( 'ocean_menu_cart_style', $style );
 
 		// Sanitize output so it's not empty
-		if ( 'drop_down' == $style || ! $style ) {
+		if ( 'drop_down' == $style
+			|| ! $style ) {
 			$style = 'drop_down';
 		}
 
@@ -1546,6 +1551,40 @@ if ( ! function_exists( 'oceanwp_title' ) ) {
 }
 
 /**
+ * Display breadcrumbs
+ *
+ * @since 1.1.2
+ */
+if ( ! function_exists( 'oceanwp_has_breadcrumbs' ) ) {
+
+	function oceanwp_has_breadcrumbs() {
+
+		// Return true by default
+		$return = true;
+
+		// Return false if disabled via Customizer
+		if ( true != get_theme_mod( 'ocean_breadcrumbs', true ) ) {
+			$return = false;
+		}
+
+		// Check meta
+		$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_disable_breadcrumbs', true ) : '';
+
+		// Check if disabled via meta option
+		if ( 'on' == $meta ) {
+			$return = true;
+		} elseif ( 'off' == $meta ) {
+			$return = false;
+		}
+
+		// Apply filters and return
+		return apply_filters( 'ocean_display_breadcrumbs', $return );
+
+	}
+
+}
+
+/**
  * Returns page subheading
  *
  * @since 1.0.0
@@ -1606,46 +1645,8 @@ if ( ! function_exists( 'oceanwp_page_header_overlay' ) ) {
 			return;
 		}
 
-		// Get options
-		$overlay 			= get_theme_mod( 'ocean_page_header_bg_image_overlay_opacity', '0.5' );
-		$overlay_color 		= get_theme_mod( 'ocean_page_header_bg_image_overlay_color', '#000000' );
-
-		if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
-			&& is_singular( 'post' ) ) {
-			$overlay 		= get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_opacity', '0.5' );
-			$overlay_color 	= get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_color', '#000000' );
-		}
-
-		if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-
-			if ( $meta_overlay = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay', true ) ) {
-				$overlay 		= $meta_overlay;
-			}
-			if ( $meta_overlay_color = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay_color', true ) ) {
-				$overlay_color 	= $meta_overlay_color;
-			}
-
-		}
-
-		// Check if overlay
-		if ( $overlay ) {
-
-			// Inline style
-			$add_style = '';
-			if ( '0.5' != $overlay ) {
-				$add_style .= 'opacity:'. $overlay .';';
-			}
-			if ( $overlay_color && '#000000' != $overlay_color ) {
-				$add_style .= 'background-color:'. $overlay_color .';';
-			}
-			if ( $add_style ) {
-				$add_style = ' style="' . esc_attr( $add_style ) . '"';
-			}
-
-			// Return overlay element
-			$return = '<span class="background-image-page-header-overlay" '. $add_style .'></span>';
-			
-		}
+		// Return overlay element
+		$return = '<span class="background-image-page-header-overlay"></span>';
 
 		// Apply filters for child theming
 		$return = apply_filters( 'ocean_page_header_overlay', $return );
@@ -1938,7 +1939,7 @@ if ( ! function_exists( 'oceanwp_post_entry_classes' ) ) {
 }
 
 /**
- * Returns correct style for the blog entry based on theme options or category options
+ * Returns correct style for the blog entry based on the customizer
  *
  * @since 1.0.4
  */
@@ -2320,6 +2321,31 @@ if ( ! function_exists( 'oceanwp_get_post_audio_html' ) ) {
 }
 
 /**
+ * Returns blog entry elements for the customizer
+ *
+ * @since 1.1.0
+ */
+if ( ! function_exists( 'oceanwp_blog_entry_elements' ) ) {
+
+	function oceanwp_blog_entry_elements() {
+
+		// Default elements
+		$elements = apply_filters( 'ocean_blog_entry_elements', array(
+			'featured_image'    => esc_html__( 'Featured Image', 'oceanwp' ),
+			'title'       		=> esc_html__( 'Title', 'oceanwp' ),
+			'meta' 				=> esc_html__( 'Meta', 'oceanwp' ),
+			'content' 			=> esc_html__( 'Content', 'oceanwp' ),
+			'read_more'   		=> esc_html__( 'Read More', 'oceanwp' ),
+		) );
+
+		// Return elements
+		return $elements;
+
+	}
+
+}
+
+/**
  * Returns blog entry elements positioning
  *
  * @since 1.1.0
@@ -2374,6 +2400,36 @@ if ( ! function_exists( 'oceanwp_blog_entry_meta' ) ) {
 
 		// Return sections
 		return $sections;
+
+	}
+
+}
+
+/**
+ * Returns blog single elements for the customizer
+ *
+ * @since 1.1.0
+ */
+if ( ! function_exists( 'oceanwp_blog_single_elements' ) ) {
+
+	function oceanwp_blog_single_elements() {
+
+		// Default elements
+		$elements = apply_filters( 'ocean_blog_single_elements', array(
+			'featured_image'    => esc_html__( 'Featured Image', 'oceanwp' ),
+			'title'       		=> esc_html__( 'Title', 'oceanwp' ),
+			'meta' 				=> esc_html__( 'Meta', 'oceanwp' ),
+			'content' 			=> esc_html__( 'Content', 'oceanwp' ),
+			'tags' 				=> esc_html__( 'Tags', 'oceanwp' ),
+			'social_share'   	=> esc_html__( 'Social Share', 'oceanwp' ),
+			'next_prev'     	=> esc_html__( 'Next/Prev Links', 'oceanwp' ),
+			'author_box'       	=> esc_html__( 'Author Box', 'oceanwp' ),
+			'related_posts' 	=> esc_html__( 'Related Posts', 'oceanwp' ),
+			'single_comments'   => esc_html__( 'Comments', 'oceanwp' ),
+		) );
+
+		// Return elements
+		return $elements;
 
 	}
 
@@ -2440,42 +2496,22 @@ if ( ! function_exists( 'oceanwp_blog_single_meta' ) ) {
 }
 
 /**
- * Custom excerpts based on wp_trim_words
+ * Custom excerpts
  *
  * @since	1.0.0
- * @link	http://codex.wordpress.org/Function_Reference/wp_trim_words
  */
-if ( ! function_exists( 'oceanwp_excerpt' ) ) {
+if ( ! function_exists( 'oceanwp_custom_excerpt_length' ) ) {
 
-	function oceanwp_excerpt( $length = 30 ) {
+	function oceanwp_custom_excerpt_length( $length ) {
+		// Excerpt length
+		$excerpt = get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' );
+		$excerpt = $excerpt ? $excerpt : '30';
 
-		// Get global post
-		global $post;
-
-		// Get post data
-		$id			= $post->ID;
-		$excerpt	= $post->post_excerpt;
-		$content 	= $post->post_content;
-
-		// Display custom excerpt
-		if ( $excerpt ) {
-			$output = $excerpt;
-		}
-
-		// Check for more tag
-		elseif ( strpos( $content, '<!--more-->' ) ) {
-			$output = get_the_content( $excerpt );
-		}
-
-		// Generate auto excerpt
-		else {
-			$output = wp_trim_words( strip_shortcodes( get_the_content( $id ) ), $length );
-		}
-
-		// Echo output
-		echo wp_kses_post( $output );
-
+		// Return
+		return $excerpt;
 	}
+
+	add_filter( 'excerpt_length', 'oceanwp_custom_excerpt_length', 999 );
 
 }
 
@@ -2555,66 +2591,6 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 }
 
 /**
- * Check if a post has terms/categories
- *
- * This function is used for the next and previous posts so if a post is in a category it
- * will display next and previous posts from the same category.
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_post_has_terms' ) ) {
-
-	function oceanwp_post_has_terms( $post_id = '', $post_type = '' ) {
-
-		// Post data
-		$post_id    = $post_id ? $post_id : get_the_ID();
-		$post_type  = $post_type ? $post_type : get_post_type( $post_id );
-
-		// Standard Posts
-		if ( $post_type == 'post' ) {
-			$terms = get_the_terms( $post_id, 'category');
-			if ( $terms ) {
-				return true;
-			}
-		}
-
-	}
-
-}
-
-/**
- * Returns the "category" taxonomy for a given post type
- *
- * @since 1.0.0
- */
-if ( ! function_exists( 'oceanwp_get_post_type_cat_tax' ) ) {
-
-	function oceanwp_get_post_type_cat_tax( $post_type = '' ) {
-
-		// Get the post type
-		$post_type = $post_type ? $post_type : get_post_type();
-
-		// Return taxonomy
-		if ( 'post' == $post_type ) {
-			$tax = 'category';
-		} elseif ( 'product' == $post_type ) {
-			$tax = 'product_cat';
-		} elseif ( 'tribe_events' == $post_type ) {
-			$tax = 'tribe_events_cat';
-		} elseif ( 'download' == $post_type ) {
-			$tax = 'download_category';
-		} else {
-			$tax = false;
-		}
-
-		// Apply filters & return
-		return apply_filters( 'ocean_get_post_type_cat_tax', $tax );
-
-	}
-
-}
-
-/**
  * Numbered Pagination
  *
  * @since	1.0.0
@@ -2639,7 +2615,7 @@ if ( ! function_exists( 'oceanwp_pagination') ) {
 		$big    = 999999999;
 
 		// Display pagination if total var is greater then 1 ( current query is paginated )
-		if ( $total > 1 )  {
+		if ( $total > 1 ) {
 
 			// Get current page
 			if ( $current_page = get_query_var( 'paged' ) ) {
@@ -3043,11 +3019,6 @@ if ( ! function_exists( 'oceanwp_tm_translation' ) ) {
 		// Translate theme mod val
 		if ( $val ) {
 
-			// WPML translation
-			if ( function_exists( 'icl_t' ) && $id ) {
-				$val = icl_t( 'Theme Mod', $id, $val );
-			}
-
 			// Polylang Translation
 			if ( function_exists( 'pll__' ) && $id ) {
 				$val = pll__( $val );
@@ -3073,7 +3044,9 @@ if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
 
 		return apply_filters( 'ocean_register_tm_strings', array(
 			'ocean_top_bar_content' 			=> '',
-			'ocean_footer_copyright_text' 		=> 'Copyright [oceanwp_date] - OceanWP Theme by Nick Powered by <a href="https://wordpress.org/" title="WordPress" target="_blank">WordPress</a>',
+			'ocean_mobile_menu_text' 			=> 'Menu',
+			'ocean_mobile_menu_close_btn_text' 	=> 'Close Menu',
+			'ocean_footer_copyright_text' 		=> 'Copyright [oceanwp_date] - OceanWP Theme by Nick',
 			'ocean_woo_menu_icon_custom_link' 	=> '',
 		) );
 
@@ -3091,75 +3064,75 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 	function oceanwp_social_options() {
 		return apply_filters( 'ocean_social_options', array(
 			'twitter' => array(
-				'label' => 'Twitter',
+				'label' => esc_html__( 'Twitter', 'oceanwp' ),
 				'icon_class' => 'fa fa-twitter',
 			),
 			'facebook' => array(
-				'label' => 'Facebook',
+				'label' => esc_html__( 'Facebook', 'oceanwp' ),
 				'icon_class' => 'fa fa-facebook',
 			),
 			'googleplus' => array(
-				'label' => 'Google Plus',
+				'label' => esc_html__( 'Google Plus', 'oceanwp' ),
 				'icon_class' => 'fa fa-google-plus',
 			),
 			'pinterest'  => array(
-				'label' => 'Pinterest',
+				'label' => esc_html__( 'Pinterest', 'oceanwp' ),
 				'icon_class' => 'fa fa-pinterest-p',
 			),
 			'dribbble' => array(
-				'label' => 'Dribbble',
+				'label' => esc_html__( 'Dribbble', 'oceanwp' ),
 				'icon_class' => 'fa fa-dribbble',
 			),
 			'vk' => array(
-				'label' => 'VK',
+				'label' => esc_html__( 'VK', 'oceanwp' ),
 				'icon_class' => 'fa fa-vk',
 			),
 			'instagram'  => array(
-				'label' => 'Instagram',
+				'label' => esc_html__( 'Instagram', 'oceanwp' ),
 				'icon_class' => 'fa fa-instagram',
 			),
 			'linkedin' => array(
-				'label' => 'LinkedIn',
+				'label' => esc_html__( 'LinkedIn', 'oceanwp' ),
 				'icon_class' => 'fa fa-linkedin',
 			),
 			'tumblr'  => array(
-				'label' => 'Tumblr',
+				'label' => esc_html__( 'Tumblr', 'oceanwp' ),
 				'icon_class' => 'fa fa-tumblr',
 			),
 			'github'  => array(
-				'label' => 'Github',
+				'label' => esc_html__( 'Github', 'oceanwp' ),
 				'icon_class' => 'fa fa-github-alt',
 			),
 			'flickr'  => array(
-				'label' => 'Flickr',
+				'label' => esc_html__( 'Flickr', 'oceanwp' ),
 				'icon_class' => 'fa fa-flickr',
 			),
 			'skype' => array(
-				'label' => 'Skype',
+				'label' => esc_html__( 'Skype', 'oceanwp' ),
 				'icon_class' => 'fa fa-skype',
 			),
 			'youtube' => array(
-				'label' => 'Youtube',
+				'label' => esc_html__( 'Youtube', 'oceanwp' ),
 				'icon_class' => 'fa fa-youtube',
 			),
 			'vimeo' => array(
-				'label' => 'Vimeo',
+				'label' => esc_html__( 'Vimeo', 'oceanwp' ),
 				'icon_class' => 'fa fa-vimeo-square',
 			),
 			'vine' => array(
-				'label' => 'Vine',
+				'label' => esc_html__( 'Vine', 'oceanwp' ),
 				'icon_class' => 'fa fa-vine',
 			),
 			'xing' => array(
-				'label' => 'Xing',
+				'label' => esc_html__( 'Xing', 'oceanwp' ),
 				'icon_class' => 'fa fa-xing',
 			),
 			'yelp' => array(
-				'label' => 'Yelp',
+				'label' => esc_html__( 'Yelp', 'oceanwp' ),
 				'icon_class' => 'fa fa-yelp',
 			),
 			'tripadvisor' => array(
-				'label' => 'Tripadvisor',
+				'label' => esc_html__( 'Tripadvisor', 'oceanwp' ),
 				'icon_class' => 'fa fa-tripadvisor',
 			),
 			'rss'  => array(
@@ -3321,7 +3294,7 @@ if ( ! function_exists( 'oceanwp_get_awesome_icons' ) ) {
 
 		// Returns up arrows only
 		if ( 'up_arrows' == $return ) {
-			$return_icons = array('chevron-up','caret-up','angle-up','angle-double-up','long-arrow-up','arrow-circle-o-up','arrow-up','level-up','toggle-up');
+			$return_icons = array('fa fa-chevron-up','fa fa-caret-up','fa fa-angle-up','fa fa-angle-double-up','fa fa-long-arrow-up','fa fa-arrow-circle-o-up','fa fa-arrow-up','fa fa-level-up','fa fa-toggle-up');
 			$return_icons = array_combine($return_icons, $return_icons);
 		}
 		
@@ -3332,25 +3305,20 @@ if ( ! function_exists( 'oceanwp_get_awesome_icons' ) ) {
 }
 
 /**
- * Returns shortcode
+ * Array of Icons for the WooCommerce cart
  *
  * @since 1.0.0
  */
-if ( ! function_exists( 'oceanwp_has_shortcode' ) ) {
+if ( ! function_exists( 'oceanwp_get_cart_icons' ) ) {
 
-	function oceanwp_has_shortcode() {
+	function oceanwp_get_cart_icons( $default = 'icon-handbag' ) {
 
-		// Shortcode is NULL by default
-		$shortcode = NULL;
-
-		// Posts & Pages
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_has_shortcode', true ) ) {
-			$shortcode = $meta;
-		}
-
-		// Apply filters and return
-		return apply_filters( 'ocean_has_shortcode', $shortcode );
-
+		// Returns icons
+		$return_icons = array('icon-basket','icon-handbag','fa fa-shopping-basket','fa fa-shopping-bag','fa fa-shopping-cart');
+		$return_icons = array_combine($return_icons, $return_icons);
+		
+		return apply_filters( 'ocean_get_cart_icons', array_merge( $return_icons ) );
+		
 	}
 
 }
@@ -3368,7 +3336,9 @@ if ( ! function_exists( 'oceanwp_sidr_menu_source' ) ) {
 		$items = array();
 
 		// Add close button
-		$items['sidrclose'] = '#sidr-close';
+		if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
+			$items['sidrclose'] = '#sidr-close';
+		}
 
 		// If has mobile menu
 		if ( has_nav_menu( 'mobile_menu' ) ) {
@@ -3417,9 +3387,9 @@ if ( ! function_exists( 'oceanwp_sidr_menu_source' ) ) {
  *
  * @since 1.1.1
  */
-if ( ! function_exists( 'is_autoptimize_activated' ) ) {
+if ( ! function_exists( 'oceanwp_is_autoptimize_activated' ) ) {
 
-	function is_autoptimize_activated() {
+	function oceanwp_is_autoptimize_activated() {
 
 		return class_exists( 'autoptimizeBase' ) ? true : false;
 
@@ -3428,25 +3398,30 @@ if ( ! function_exists( 'is_autoptimize_activated' ) ) {
 }
 
 /**
- * DECREPITATED main schema markup
+ * Returns page content from ID for the 404 page
  *
- * @since 1.0.0
+ * @since 1.2.0
  */
-if ( ! function_exists( 'oceanwp_main_schema_markup' ) ) {
+if ( ! function_exists( 'oceanwp_error_page_content' ) ) {
 
-	function oceanwp_main_schema_markup() {
+	function oceanwp_error_page_content() {
 
-		$itemtype = 'http://schema.org/WebPageElement';
-		$itemprop = 'mainContentOfPage';
+		// Get page ID from Customizer
+		$page_id = get_theme_mod( 'ocean_error_page_id' );
 
-		if ( is_singular( 'post' ) ) {
-			$itemprop = '';
-			$itemtype = 'http://schema.org/Blog';
+		// Get page content
+		if ( ! empty( $page_id ) ) {
+
+			$page = get_post( $page_id );
+
+			if ( $page && ! is_wp_error( $page ) ) {
+				$page_id = $page->post_content;
+			}
+
 		}
 
-		$schema = 'itemprop="'. $itemprop .'" itemscope="itemscope" itemtype="'. $itemtype .'"';
-
-		return $schema;
+		// Apply filters and return content
+		return apply_filters( 'ocean_error_page_id', $page_id );
 
 	}
 

@@ -38,7 +38,7 @@ if ( true != get_theme_mod( 'ocean_header_full_width', false ) )  {
 
 	</div><!-- #site-header-wrap -->
 
-	<?php get_template_part( 'partials/header/mobile-icon' ); ?>
+	<?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
 
 </div><!-- #site-header-inner -->
 

@@ -57,14 +57,6 @@
 	margin: 0;
 }
 
-#site-logo-fa-icon {
-	margin-right: 10px;
-
-	&.fa-oceanwp-hidden {
-		margin-right: 0;
-	}
-}
-
 /**
  * Video header
  */
@@ -334,7 +326,8 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 			display: none;
 		}
 
-		&.opened .custom-logo-link {
+		&.opened .custom-logo-link,
+		&.opened .retina-logo-link {
 			display: none;
 		}
 
@@ -707,6 +700,7 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 		display: inline-block;
 		
 		.middle-site-logo {
+			display: inline-block;
 			margin: 15px 25px;	
 
 			a {
@@ -729,6 +723,11 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 			}
 		}
 	}
+}
+
+/* Hide if is not in main menu */
+#top-bar-nav > ul > li.middle-site-logo {
+	display: none;
 }
 
 /**

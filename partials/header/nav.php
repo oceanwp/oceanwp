@@ -45,7 +45,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		'menu_class'     => $menu_classes,
 		'container'      => false,
 		'fallback_cb'    => false,
-		'link_before'    => '<span>',
+		'link_before'    => '<span class="text-wrap">',
 		'link_after'     => '</span>',
 		'walker'         => new OceanWP_Custom_Nav_Walker(),
 	);
@@ -97,8 +97,6 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 					get_template_part( 'partials/header/search-dropdown' );
 				} else if ( 'header_replace' == oceanwp_menu_search_style() ) {
 					get_template_part( 'partials/header/search-replace' );
-				} else if ( 'overlay' == oceanwp_menu_search_style() ) {
-					get_template_part( 'partials/header/search-overlay' );
 				}
 
 			}

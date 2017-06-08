@@ -18,7 +18,7 @@ ul.page-numbers {
 }
 
 .page-numbers a,
-.page-numbers span,
+.page-numbers span:not(.elementor-screen-only),
 .page-links span {
     position: relative;
     display: inline-block;
@@ -39,7 +39,7 @@ ul.page-numbers {
     box-sizing: content-box;
 }
 
-.page-numbers a span {
+.page-numbers a span:not(.elementor-screen-only) {
     padding: 0;
 }
 
@@ -49,6 +49,11 @@ ul.page-numbers {
 .page-numbers.current:hover {
     background-color: $color-8;
     color: $color-2;
+}
+
+.elementor-pagination .page-numbers.current,
+.elementor-pagination .page-numbers.current:hover {
+    background-color: transparent;
 }
 
 .oceanwp-pagination {

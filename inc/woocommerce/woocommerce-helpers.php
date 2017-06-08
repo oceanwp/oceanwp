@@ -17,7 +17,6 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 	function oceanwp_wcmenucart_menu_item() {
 		
 		// Vars
-		global $woocommerce;
 		$icon_style   = get_theme_mod( 'ocean_woo_menu_icon_style', 'drop_down' );
 		$custom_link  = get_theme_mod( 'ocean_woo_menu_icon_custom_link' );
 
@@ -39,15 +38,29 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 			$cart_extra = str_replace( 'amount', 'wcmenucart-details', $cart_extra );
 		} elseif ( 'icon_count' == $display ) {
 			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->cart_contents_count .'</span>';
+		} elseif ( 'icon_count_total' == $display ) {
+			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->cart_contents_count .'</span>';
+			$cart_total = WC()->cart->get_cart_total();
+			$cart_extra .= str_replace( 'amount', 'wcmenucart-details', $cart_total );
 		} else {
 			$cart_extra = '';
+		}
+
+		// Get cart icon
+		$icon = get_theme_mod( 'ocean_woo_menu_icon', 'icon-handbag' );
+		$icon = $icon ? $icon : 'icon-handbag';
+
+		// If has custom cart icon
+		$custom_icon = get_theme_mod( 'ocean_woo_menu_custom_icon' );
+		if ( '' != $custom_icon ) {
+			$icon = $custom_icon;
 		}
 
 		// Cart Icon
 		if ( 'center' == oceanwp_header_style() ) {
 			$cart_icon = esc_html__( 'Cart', 'oceanwp' );
 		} else {
-			$cart_icon = '<i class="icon-handbag"></i>';
+			$cart_icon = '<i class="'. esc_attr( $icon ) .'"></i>';
 		}
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
@@ -72,7 +85,7 @@ if ( ! function_exists( 'oceanwp_woo_placeholder_img' ) ) {
 
 	function oceanwp_woo_placeholder_img() {
 		if ( function_exists( 'wc_placeholder_img_src' ) && wc_placeholder_img_src() ) {
-			$placeholder = '<img src="'. wc_placeholder_img_src() .'" alt="'. esc_attr__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />';
+			$placeholder = '<div class="woo-entry-image clr"><img src="'. wc_placeholder_img_src() .'" alt="'. esc_html__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" /></div>';
 			$placeholder = apply_filters( 'ocean_woo_placeholder_img_html', $placeholder );
 			if ( $placeholder ) {
 				echo wp_kses_post( $placeholder );
@@ -123,7 +136,7 @@ if ( ! function_exists( 'oceanwp_woo_product_elements_positioning' ) ) {
 		}
 
 		// Apply filters for easy modification
-		$sections = apply_filters( 'oceanwp_woo_product_elements_positioning', $sections );
+		$sections = apply_filters( 'ocean_woo_product_elements_positioning', $sections );
 
 		// Return sections
 		return $sections;
@@ -153,7 +166,7 @@ if ( ! function_exists( 'oceanwp_woo_summary_elements_positioning' ) ) {
 		}
 
 		// Apply filters for easy modification
-		$sections = apply_filters( 'oceanwp_woo_summary_elements_positioning', $sections );
+		$sections = apply_filters( 'ocean_woo_summary_elements_positioning', $sections );
 
 		// Return sections
 		return $sections;

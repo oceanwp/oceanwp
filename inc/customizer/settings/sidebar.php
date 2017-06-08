@@ -59,23 +59,6 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			/**
 			 * Sidebar Padding
 			 */
-			$wp_customize->add_setting( 'ocean_sidebar_padding', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_sidebar_padding', array(
-				'label'	   				=> esc_html__( 'Padding (DECREPITATED)', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'This field will be removed in OceanWP 1.2.0, add your value(s) in the dimensions control below', 'oceanwp' ),
-				'type' 					=> 'text',
-				'section'  				=> $section,
-				'settings' 				=> 'ocean_sidebar_padding',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Sidebar Padding
-			 */
 			$wp_customize->add_setting( 'ocean_sidebar_top_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '0',
@@ -181,23 +164,6 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				'label'	   				=> esc_html__( 'Background Color', 'oceanwp' ),
 				'section'  				=> $section,
 				'settings' 				=> 'ocean_widgets_bg',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Widgets Padding
-			 */
-			$wp_customize->add_setting( 'ocean_widgets_padding', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_widgets_padding', array(
-				'label'	   				=> esc_html__( 'Padding (DECREPITATED)', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'This field will be removed in OceanWP 1.2.0, add your value(s) in the dimensions control below', 'oceanwp' ),
-				'type' 					=> 'text',
-				'section'  				=> $section,
-				'settings' 				=> 'ocean_widgets_padding',
 				'priority' 				=> 10,
 			) ) );
 
@@ -396,12 +362,6 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				$css .= '#sidebar{background-color:'. $sidebar_bg .';}';
 			}
 
-			// DECREPITATED Sidebar padding
-			$sidebar_padding = get_theme_mod( 'ocean_sidebar_padding' );
-			if ( ! empty( $sidebar_padding ) ) {
-				$css .= '.widget-area{padding:'. $sidebar_padding .';}';
-			}
-
 			// Sidebar top padding
 			if ( ! empty( $sidebar_top_padding ) && '0' != $sidebar_top_padding ) {
 				$sidebar_padding_css .= 'padding-top:'. $sidebar_top_padding .'px;';
@@ -492,12 +452,6 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			}
 
 			// Widgets padding
-			if ( ! empty( $widgets_padding ) ) {
-				$css .= '#sidebar .sidebar-box{padding:'. $widgets_padding .';}';
-			}
-
-			// DECREPITATED Widgets padding
-			$widgets_padding = get_theme_mod( 'ocean_widgets_padding' );
 			if ( ! empty( $widgets_padding ) ) {
 				$css .= '#sidebar .sidebar-box{padding:'. $widgets_padding .';}';
 			}

@@ -88,7 +88,7 @@ if ( 'transparent' == $header_style ) { ?>
 
 			<?php get_template_part( 'partials/header/nav' ); ?>
 
-			<?php get_template_part( 'partials/header/mobile-icon' ); ?>
+			<?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
 
 		</div><!-- #site-header-inner -->
 

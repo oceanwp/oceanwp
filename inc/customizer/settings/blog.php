@@ -71,6 +71,23 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Blog Image Overlay
+			 */
+			$wp_customize->add_setting( 'ocean_blog_image_overlay', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> true,
+				'sanitize_callback' 	=> false,
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_blog_image_overlay', array(
+				'label'	   				=> esc_html__( 'Add Overlay On image Hover', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_blog_entries',
+				'settings' 				=> 'ocean_blog_image_overlay',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
 			 * Blog Style
 			 */
 			$wp_customize->add_setting( 'ocean_blog_style', array(
@@ -229,13 +246,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 				'section'  				=> 'ocean_blog_entries',
 				'settings' 				=> 'ocean_blog_entry_elements_positioning',
 				'priority' 				=> 10,
-				'choices' 				=> array(
-					'featured_image'    => esc_html__( 'Featured Image', 'oceanwp' ),
-					'title'       		=> esc_html__( 'Title', 'oceanwp' ),
-					'meta' 				=> esc_html__( 'Meta', 'oceanwp' ),
-					'content' 			=> esc_html__( 'Content', 'oceanwp' ),
-					'read_more'   		=> esc_html__( 'Read More', 'oceanwp' ),
-				),
+				'choices' 				=> oceanwp_blog_entry_elements(),
 			) ) );
 
 			/**
@@ -501,18 +512,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 				'section'  				=> 'ocean_single_post',
 				'settings' 				=> 'ocean_blog_single_elements_positioning',
 				'priority' 				=> 10,
-				'choices' 				=> array(
-					'featured_image'    => esc_html__( 'Featured Image', 'oceanwp' ),
-					'title'       		=> esc_html__( 'Title', 'oceanwp' ),
-					'meta' 				=> esc_html__( 'Meta', 'oceanwp' ),
-					'content' 			=> esc_html__( 'Content', 'oceanwp' ),
-					'tags' 				=> esc_html__( 'Tags', 'oceanwp' ),
-					'social_share'   	=> esc_html__( 'Social Share', 'oceanwp' ),
-					'next_prev'     	=> esc_html__( 'Next/Prev Links', 'oceanwp' ),
-					'author_box'       	=> esc_html__( 'Author Box', 'oceanwp' ),
-					'related_posts' 	=> esc_html__( 'Related Posts', 'oceanwp' ),
-					'single_comments'   => esc_html__( 'Comments', 'oceanwp' ),
-				),
+				'choices' 				=> oceanwp_blog_single_elements(),
 			) ) );
 
 			/**

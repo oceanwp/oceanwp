@@ -58,7 +58,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 form textarea {
-	height: 150px;
+	min-height: 150px;
     line-height: 1.5;
     resize: vertical;
 }
@@ -214,13 +214,15 @@ form input[type="radio"]:focus:invalid:focus,
 form input[type="checkbox"]:focus:invalid:focus {
 	outline-color: #e9322d;
 }
-form select {
+select {
+	width: 100%;
 	/* Normalizes the height; padding is not sufficient. */
 	height: 2.25em;
 	min-height: auto;
 	border: 1px solid #ddd;
 	background-color: white;
 	cursor: pointer;
+	padding: 0 15px;
 	margin: 0;
 }
 form select[multiple] {

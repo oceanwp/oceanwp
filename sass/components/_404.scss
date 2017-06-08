@@ -1,6 +1,5 @@
 .error404-content {
     position: relative;
-    width: 65%;
     margin: 0 auto;
     text-align: center;
 
@@ -17,7 +16,7 @@
     }
 
     .searchform {
-        width: 50%;
+        max-width: 390px;
         margin: 0 auto;
     }
 

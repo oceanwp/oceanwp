@@ -126,7 +126,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 									&& function_exists( 'ocean_extra_resize' )
 									&& ! empty( $img_atts ) ) { ?>
 
-									<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts[ 'width' ], $img_atts[ 'height' ], $img_atts[ 'crop' ], true, $img_atts[ 'upscale' ] ); ?>" alt="<?php esc_attr( the_title() ); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>" itemprop="image" />
+									<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts[ 'width' ], $img_atts[ 'height' ], $img_atts[ 'crop' ], true, $img_atts[ 'upscale' ] ); ?>" alt="<?php esc_attr( the_title_attribute() ); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>" itemprop="image" />
 
 								<?php
 								} else {
@@ -152,9 +152,9 @@ if ( $oceanwp_related_query->have_posts() ) :
 
 					<?php endif; ?>
 
-					<h2 class="related-post-title">
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a>
-					</h2><!-- .related-post-title -->
+					<h3 class="related-post-title">
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
+					</h3><!-- .related-post-title -->
 									
 					<time class="published" datetime="<?php echo esc_html( get_the_date( 'c' ) ); ?>"><i class="icon-clock"></i><?php echo esc_html( get_the_date() ); ?></time>
 

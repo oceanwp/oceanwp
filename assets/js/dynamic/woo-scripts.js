@@ -13,14 +13,20 @@ $j( document ).on( 'ready', function() {
 	wooCategoriesWidget();
 	// Woo image zoom
 	wooImageZoom();
-	// Woo quantity buttons
-	wooQuantityButtons();
 } );
 
 $window.on( 'load', function() {
 	"use strict";
 	// Variable image product
 	wooVariableImage();
+	// Woo quantity buttons
+	wooQuantityButtons();
+} );
+
+$j( document ).ajaxComplete( function() {
+	"use strict";
+	// Woo quantity buttons
+	wooQuantityButtons();
 } );
 
 /* ==============================================
@@ -333,49 +339,78 @@ function wooVariableImage() {
 /* ==============================================
 WOOCOMMERCE QUANTITY BUTTONS
 ============================================== */
-function wooQuantityButtons() {
-	"use strict"
+function wooQuantityButtons( $quantitySelector ) {
 
-	// Quantity buttons
-	$j( 'div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)' ).addClass( 'buttons_added' ).append('<div class="qty-changer"><a href="javascript:void(0)" class="plus"><i class="fa fa-angle-up"></i></a><a href="javascript:void(0)" class="minus"><i class="fa fa-angle-down"></i></a></div>');
+	var $quantityBoxes;
 
-	$j( document ).on( 'click', '.plus, .minus', function() {
+	if ( ! $quantitySelector ) {
+		$quantitySelector = '.qty';
+	}
 
-		// Get values
-		var $qty		= $j( this ).closest( '.quantity' ).find( '.qty' ),
-			currentVal	= parseFloat( $qty.val() ),
-			max			= parseFloat( $qty.attr( 'max' ) ),
-			min			= parseFloat( $qty.attr( 'min' ) ),
-			step		= $qty.attr( 'step' );
+	$quantityBoxes = $j( 'div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)' ).find( $quantitySelector );
 
-		// Format values
-		if ( ! currentVal || currentVal === '' || currentVal === 'NaN' ) currentVal = 0;
-		if ( max === '' || max === 'NaN' ) max = '';
-		if ( min === '' || min === 'NaN' ) min = 0;
-		if ( step === 'any' || step === '' || step === undefined || parseFloat( step ) === 'NaN' ) step = 1;
+	if ( $quantityBoxes && 'date' !== $quantityBoxes.prop( 'type' ) && 'hidden' !== $quantityBoxes.prop( 'type' ) ) {
 
-		// Change the value
-		if ( $j( this ).is( '.plus' ) ) {
+		// Add plus and minus icons
+		$quantityBoxes.parent().addClass( 'buttons_added' ).append('<div class="qty-changer"><a href="javascript:void(0)" class="plus"><i class="fa fa-angle-up"></i></a><a href="javascript:void(0)" class="minus"><i class="fa fa-angle-down"></i></a></div>');
 
-			if ( max && ( max == currentVal || currentVal > max ) ) {
-				$qty.val( max );
-			} else {
-				$qty.val( currentVal + parseFloat( step ) );
+		// Target quantity inputs on product pages
+		$j( 'input' + $quantitySelector + ':not(.product-quantity input' + $quantitySelector + ')' ).each( function() {
+				var $min = parseFloat( $j( this ).attr( 'min' ) );
+
+				if ( $min && $min > 0 && parseFloat( $j( this ).val() ) < $min ) {
+					$j( this ).val( $min );
+				}
+		});
+
+		$j( '.plus, .minus' ).unbind( 'click' );
+
+		$j( '.plus, .minus' ).on( 'click', function() {
+
+				// Get values
+				var $quantityBox     = $j( this ).closest( '.quantity' ).find( $quantitySelector ),
+				    $currentQuantity = parseFloat( $quantityBox.val() ),
+				    $maxQuantity     = parseFloat( $quantityBox.attr( 'max' ) ),
+				    $minQuantity     = parseFloat( $quantityBox.attr( 'min' ) ),
+				    $step            = $quantityBox.attr( 'step' );
+
+				// Fallback default values
+				if ( ! $currentQuantity || '' === $currentQuantity  || 'NaN' === $currentQuantity ) {
+					$currentQuantity = 0;
+				}
+				if ( '' === $maxQuantity || 'NaN' === $maxQuantity ) {
+					$maxQuantity = '';
+				}
+
+				if ( '' === $minQuantity || 'NaN' === $minQuantity ) {
+					$minQuantity = 0;
+				}
+				if ( 'any' === $step || '' === $step  || undefined === $step || 'NaN' === parseFloat( $step )  ) {
+					$step = 1;
+				}
+
+				// Change the value
+				if ( $j( this ).is( '.plus' ) ) {
+
+					if ( $maxQuantity && ( $maxQuantity == $currentQuantity || $currentQuantity > $maxQuantity ) ) {
+						$quantityBox.val( $maxQuantity );
+					} else {
+						$quantityBox.val( $currentQuantity + parseFloat( $step ) );
+					}
+
+				} else {
+
+					if ( $minQuantity && ( $minQuantity == $currentQuantity || $currentQuantity < $minQuantity ) ) {
+						$quantityBox.val( $minQuantity );
+					} else if ( $currentQuantity > 0 ) {
+						$quantityBox.val( $currentQuantity - parseFloat( $step ) );
+					}
+
+				}
+
+				// Trigger change event
+				$quantityBox.trigger( 'change' );
 			}
-
-		} else {
-
-			if ( min && ( min == currentVal || currentVal < min ) ) {
-				$qty.val( min );
-			} else if ( currentVal > 0 ) {
-				$qty.val( currentVal - parseFloat( step ) );
-			}
-
-		}
-
-		// Trigger change event
-		$qty.trigger( 'change' );
-
-	} );
-
+		);
+	}
 }

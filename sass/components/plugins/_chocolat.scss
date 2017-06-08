@@ -193,3 +193,17 @@ body.chocolat-open>.chocolat-content{
 .chocolat-in-container{
     position: relative;
 }
+
+/* RTL */
+body.rtl .chocolat-overlay { right: 0; left: auto; }
+body.rtl .chocolat-wrapper { right: 0; left: auto; }
+body.rtl .chocolat-loader { right: 50%; left: auto; margin-right: -16px; margin-left: 0; }
+body.rtl .chocolat-content { text-align: right; }
+body.rtl .chocolat-wrapper .chocolat-left { right: 0; left: auto; }
+body.rtl .chocolat-wrapper .chocolat-right { left: 0; right: auto; }
+body.rtl .chocolat-wrapper .chocolat-close { left: 0; right: auto; }
+body.rtl .chocolat-wrapper .chocolat-bottom { text-align: left; }
+body.rtl .chocolat-wrapper .chocolat-set-title { padding-left: 15px; padding-right: 0; border-left: 1px solid rgba(255, 255, 255, 0.3); border-right: none; }
+body.rtl .chocolat-wrapper .chocolat-pagination { float: left; margin-left: 15px; margin-right: 0; }
+body.rtl .chocolat-wrapper .chocolat-fullscreen { float: left; }
+body.rtl .chocolat-wrapper .chocolat-description { float: right; }

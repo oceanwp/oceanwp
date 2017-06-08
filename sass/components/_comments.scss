@@ -151,3 +151,38 @@ span.required {
 		margin-right: 8px;
 	}
 }
+
+.comment-navigation {
+	display: inline-block;
+    width: 100%;
+
+	.nav-links {
+
+		a {
+			display: inline-block;
+		    font-size: 12px;
+		    line-height: 1.2;
+		    padding-bottom: 3px;
+		    border-bottom: 1px solid;
+		    text-transform: uppercase;
+		}
+
+		.nav-previous {
+			float: left;
+	    	margin-right: 1.5em;
+
+		    i {
+				margin-right: 5px;
+			}
+		}
+
+		.nav-next {
+			float: right;
+	    	margin-left: 1.5em;
+
+			i {
+				margin-left: 5px;
+			}
+		}
+	}
+}
