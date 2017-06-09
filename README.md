@@ -11,7 +11,7 @@
 ## Description
 *OceanWP* is a Multi-Purpose [WordPress](http://wordpress.org) theme, designed and built by [Nick](https://oceanwp.org/) to help you to create unique websites. It's available to download for free at the site [OceanWP](https://oceanwp.org/).
 
-For developers, OceanWP is the perfect starting point for your project. It's lean and extensible codebase will allow you to easily add functionality to your site via child theme and/or custom plugin(s).
+For developers, OceanWP is the perfect starting point for your project. Its clean and extensible codebase will allow you to easily add functionality to your site via child theme and/or custom plugin(s).
 
 ## OceanWP extensions
 Looking to make your website to the next level? Be sure to checkout the premium [OceanWP extensions](https://oceanwp.org/extensions/).
