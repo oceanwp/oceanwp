@@ -46,7 +46,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_footer_bottom', array(
 				'default'           	=> true,
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_footer_bottom', array(
@@ -63,7 +63,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_bottom_footer_visibility', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> 'all-devices',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_bottom_footer_visibility', array(
@@ -87,7 +87,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_footer_copyright_text', array(
 				'transport'           	=> 'postMessage',
 				'default'           	=> 'Copyright [oceanwp_date] - OceanWP Theme by Nick',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'wp_filter_post_kses',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Textarea_Control( $wp_customize, 'ocean_footer_copyright_text', array(
@@ -105,56 +105,56 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_bottom_footer_top_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '15',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 			$wp_customize->add_setting( 'ocean_bottom_footer_right_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '0',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 			$wp_customize->add_setting( 'ocean_bottom_footer_bottom_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '15',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 			$wp_customize->add_setting( 'ocean_bottom_footer_left_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '0',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 
 			$wp_customize->add_setting( 'ocean_bottom_footer_tablet_top_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 			$wp_customize->add_setting( 'ocean_bottom_footer_tablet_right_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 			$wp_customize->add_setting( 'ocean_bottom_footer_tablet_bottom_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 			$wp_customize->add_setting( 'ocean_bottom_footer_tablet_left_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 
 			$wp_customize->add_setting( 'ocean_bottom_footer_mobile_top_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 			$wp_customize->add_setting( 'ocean_bottom_footer_mobile_right_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 			$wp_customize->add_setting( 'ocean_bottom_footer_mobile_bottom_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 			$wp_customize->add_setting( 'ocean_bottom_footer_mobile_left_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_bottom_footer_padding_dimensions', array(
@@ -189,7 +189,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_bottom_footer_background', array(
 				'transport' 			=> 'postMessage',
 				'default' 				=> '#1b1b1b',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_bottom_footer_background', array(
@@ -206,7 +206,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_bottom_footer_color', array(
 				'transport' 			=> 'postMessage',
 				'default' 				=> '#929292',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_bottom_footer_color', array(
@@ -223,7 +223,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_bottom_footer_link_color', array(
 				'transport' 			=> 'postMessage',
 				'default' 				=> '#ffffff',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_bottom_footer_link_color', array(
@@ -240,7 +240,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_bottom_footer_link_color_hover', array(
 				'transport' 			=> 'postMessage',
 				'default' 				=> '#13aff0',
-				'sanitize_callback' 	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_bottom_footer_link_color_hover', array(

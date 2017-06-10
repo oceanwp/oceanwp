@@ -3919,7 +3919,7 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 /**
  * Elementor Template
  */
-.navigation .elementor {
+.navigation > ul > li > ul.megamenu.sub-menu > li .elementor {
   white-space: normal;
   line-height: initial;
 }
@@ -4066,7 +4066,7 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   text-align: center;
 }
 
-.navigation li a span.icon-wrap i, .navigation li a span.icon-wrap img {
+.navigation li a span.icon-wrap i.below, .navigation li a span.icon-wrap img {
   display: block;
   margin: 0 0 8px;
 }
@@ -4093,7 +4093,7 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 }
 
 .navigation li a .hidden {
-  display: none;
+  display: none !important;
 }
 
 /*------------------------------------*
@@ -6943,13 +6943,13 @@ body.elementor_library-template-elementor_canvas .elementor-inner {
   blockquote {
     margin: 20px 0;
   }
-  .single-post nav.post-navigation .nav-links .nav-previous,
-  .single-post nav.post-navigation .nav-links .nav-next {
+  .single nav.post-navigation .nav-links .nav-previous,
+  .single nav.post-navigation .nav-links .nav-next {
     float: none;
     width: 100%;
     padding: 0;
   }
-  .single-post nav.post-navigation .nav-links .nav-previous {
+  .single nav.post-navigation .nav-links .nav-previous {
     border-right-width: 0;
     border-left-width: 0;
   }

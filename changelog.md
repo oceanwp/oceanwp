@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2017.06.10* - 1.2.0.1
+* **Added** - All sanitize_callback for the customizer options.
+* **Fixed** - Hiding menu text did not work.
+
 ### *2017.06.08* - 1.2.0
 * **Added** - New menu field "Elementor Template" to allow you to add an Elementor template in your mega menu.
 * **Added** - New select field to choose an elementor template (or a page if you use another page builder) to replace the 404 error page content in General Options > General Settings of the customizer.

@@ -81,6 +81,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 */
 		public function controls_helpers() {
 			require_once( OCEANWP_INC_DIR .'customizer/customizer-helpers.php' );
+			require_once( OCEANWP_INC_DIR .'customizer/sanitization-callbacks.php' );
 		}
 
 		/**

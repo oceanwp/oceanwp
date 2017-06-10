@@ -2,7 +2,7 @@
 Contributors: oceanwp
 Requires at least: WordPress 4.5
 Tested up to: WordPress 4.8
-Version: 1.2.0
+Version: 1.2.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, sticky-post, editor-style, threaded-comments, translation-ready
@@ -108,6 +108,10 @@ License: CC0 Public Domain
 Source: https://pixabay.com/en/underwater-sunbeams-ocean-sea-698671/
 
 == Changelog ==
+
+### *2017.06.10* - 1.2.0.1
+* **Added** - All sanitize_callback for the customizer options.
+* **Fixed** - Hiding menu text did not work.
 
 ### *2017.06.08* - 1.2.0
 * **Added** - New menu field "Elementor Template" to allow you to add an Elementor template in your mega menu.

@@ -51,7 +51,7 @@ if ( ! class_exists( 'OceanWP_Custom_Code_Customizer' ) ) :
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_custom_js', array(
 				'label'	   				=> esc_html__( 'Custom JS', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'You need to reload to see the changes.', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'You need to reload to see the changes. No need to add the <script> tags.', 'oceanwp' ),
 				'type' 					=> 'textarea',
 				'section'  				=> $section,
 				'settings' 				=> 'ocean_custom_js',

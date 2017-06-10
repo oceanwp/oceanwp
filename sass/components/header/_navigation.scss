@@ -800,7 +800,7 @@
 /**
  * Elementor Template
  */
-.navigation .elementor {
+.navigation > ul > li > ul.megamenu.sub-menu > li .elementor {
 	white-space: normal;
     line-height: initial;
 }
@@ -951,7 +951,7 @@
 	span.icon-wrap {
 		text-align: center;
 
-		i, img {
+		i.below, img {
     		display: block;
     		margin: 0 0 8px;
     	}
@@ -981,6 +981,6 @@
 	}
 
 	.hidden {
-		display: none;
+		display: none !important;
 	}
 }

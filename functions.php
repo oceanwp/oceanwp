@@ -388,6 +388,9 @@ class OCEANWP_Theme_Class {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
+		// Add images loaded
+		wp_enqueue_script( 'imagesloaded' );
+
 		// Register nicescroll script to use it in some extensions
 		wp_register_script( 'nicescroll', $dir .'dynamic/nicescroll.min.js', array( 'jquery' ), $theme_version, true );
 
