@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.06.11* - 1.2.0.2
+* **Fixed** - Issue with top bar content.
+
 ### *2017.06.10* - 1.2.0.1
 * **Added** - All sanitize_callback for the customizer options.
 * **Fixed** - Hiding menu text did not work.

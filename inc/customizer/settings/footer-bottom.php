@@ -87,7 +87,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_footer_copyright_text', array(
 				'transport'           	=> 'postMessage',
 				'default'           	=> 'Copyright [oceanwp_date] - OceanWP Theme by Nick',
-				'sanitize_callback' 	=> 'wp_filter_post_kses',
+				'sanitize_callback' 	=> 'wp_kses_post',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Textarea_Control( $wp_customize, 'ocean_footer_copyright_text', array(
