@@ -85,7 +85,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woocommerce_cross_sells_count', array(
 				'default'           	=> '2',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woocommerce_cross_sells_count', array(
@@ -105,7 +105,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woocommerce_cross_sells_columns', array(
 				'default'           	=> '2',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woocommerce_cross_sells_columns', array(
@@ -247,16 +247,16 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woo_menu_icon_size', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_woo_menu_icon_size_tablet', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_setting( 'ocean_woo_menu_icon_size_mobile', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_woo_menu_icon_size', array(
@@ -280,16 +280,16 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woo_menu_icon_center_vertically', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_woo_menu_icon_center_vertically_tablet', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_setting( 'ocean_woo_menu_icon_center_vertically_mobile', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_woo_menu_icon_center_vertically', array(
@@ -328,7 +328,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_woo_cart_dropdown_width', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '260',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woo_cart_dropdown_width', array(
@@ -571,7 +571,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woo_shop_posts_per_page', array(
 				'default'           	=> '12',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woo_shop_posts_per_page', array(
@@ -591,7 +591,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woocommerce_shop_columns', array(
 				'default'           	=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woocommerce_shop_columns', array(
@@ -612,17 +612,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_woocommerce_shop_columns', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_setting( 'ocean_woocommerce_tablet_shop_columns', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_setting( 'ocean_woocommerce_mobile_shop_columns', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_woocommerce_shop_columns', array(
@@ -696,7 +696,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woo_list_excerpt_length', array(
 				'default'           	=> '60',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woo_list_excerpt_length', array(
@@ -881,7 +881,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woocommerce_upsells_count', array(
 				'default'           	=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woocommerce_upsells_count', array(
@@ -901,7 +901,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woocommerce_upsells_columns', array(
 				'default'           	=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woocommerce_upsells_columns', array(
@@ -921,7 +921,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woocommerce_related_count', array(
 				'default'           	=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woocommerce_related_count', array(
@@ -941,7 +941,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_woocommerce_related_columns', array(
 				'default'           	=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woocommerce_related_columns', array(

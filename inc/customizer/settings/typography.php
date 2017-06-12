@@ -462,19 +462,19 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 						$wp_customize->add_setting( $element .'_typography[font-size]', array(
 							'type' 				=> 'theme_mod',
-							'sanitize_callback' => 'oceanwp_sanitize_number_absint',
+							'sanitize_callback' => 'oceanwp_sanitize_number',
 							'transport' 		=> $transport,
 							'default' 			=> $default,
 						) );
 
 						$wp_customize->add_setting( $element .'_tablet_typography[font-size]', array(
 							'transport' 			=> $transport,
-							'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+							'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 						) );
 
 						$wp_customize->add_setting( $element .'_mobile_typography[font-size]', array(
 							'transport' 			=> $transport,
-							'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+							'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 						) );
 
 						$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, $element .'_typography[font-size]', array(
@@ -506,19 +506,19 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						
 						$wp_customize->add_setting( $element .'_typography[line-height]', array(
 							'type' 				=> 'theme_mod',
-							'sanitize_callback' => 'oceanwp_sanitize_number_absint',
+							'sanitize_callback' => 'oceanwp_sanitize_number',
 							'transport' 		=> $transport,
 							'default' 			=> $default,
 						) );
 
 						$wp_customize->add_setting( $element .'_tablet_typography[line-height]', array(
 							'transport' 			=> $transport,
-							'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+							'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 						) );
 
 						$wp_customize->add_setting( $element .'_mobile_typography[line-height]', array(
 							'transport' 			=> $transport,
-							'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+							'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 						) );
 
 						$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, $element .'_typography[line-height]', array(
@@ -550,19 +550,19 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						
 						$wp_customize->add_setting( $element .'_typography[letter-spacing]', array(
 							'type' 				=> 'theme_mod',
-							'sanitize_callback' => 'oceanwp_sanitize_number_absint',
+							'sanitize_callback' => 'oceanwp_sanitize_number',
 							'transport' 		=> $transport,
 							'default' 			=> $default,
 						) );
 
 						$wp_customize->add_setting( $element .'_tablet_typography[letter-spacing]', array(
 							'transport' 			=> $transport,
-							'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+							'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 						) );
 
 						$wp_customize->add_setting( $element .'_mobile_typography[letter-spacing]', array(
 							'transport' 			=> $transport,
-							'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+							'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 						) );
 
 						$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, $element .'_typography[letter-spacing]', array(

@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2017.06.12* - 1.2.4
+* **Added** - French translation, thank you very much to Jean Lagarrigue.
+* **Fixed** - Number options input issue in the customizer.
+
 ### *2017.06.12* - 1.2.3
 * **Fixed** - Excerpt issue.
 

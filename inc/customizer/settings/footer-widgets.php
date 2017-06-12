@@ -124,17 +124,17 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_footer_widgets_columns', array(
 				'default'           	=> '4',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_setting( 'ocean_footer_widgets_tablet_columns', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_setting( 'ocean_footer_widgets_mobile_columns', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_footer_widgets_columns', array(
@@ -160,56 +160,56 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_footer_top_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '30',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_right_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '0',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_bottom_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '30',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_left_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '0',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_setting( 'ocean_footer_tablet_top_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_tablet_right_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_tablet_bottom_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_tablet_left_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_setting( 'ocean_footer_mobile_top_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_mobile_right_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_mobile_bottom_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_mobile_left_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_footer_padding_dimensions', array(

@@ -444,7 +444,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_blog_single_title_bg_image_height', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '400',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_blog_single_title_bg_image_height', array(
@@ -541,7 +541,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_blog_related_count', array(
 				'default' 				=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_blog_related_count', array(
@@ -561,7 +561,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_blog_related_columns', array(
 				'default' 				=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_blog_related_columns', array(
@@ -580,7 +580,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			 * Related Posts Image Width
 			 */
 			$wp_customize->add_setting( 'ocean_blog_related_img_width', array(
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_blog_related_img_width', array(
@@ -599,7 +599,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			 * Related Posts Image Height
 			 */
 			$wp_customize->add_setting( 'ocean_blog_related_img_height', array(
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_blog_related_img_height', array(

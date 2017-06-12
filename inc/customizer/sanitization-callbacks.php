@@ -121,41 +121,12 @@ function oceanwp_sanitize_number( $val ) {
 }
 
 /**
- * Number sanitization callback
+ * Number with blank value sanitization callback
  *
  * @since 1.2.1
  */
-function oceanwp_sanitize_number_absint( $number, $setting ) {
-	// Ensure $number is an absolute integer (whole number, zero or greater).
-	$number = absint( $number );
-	
-	// If the input is an absolute integer, return it; otherwise, return the default
-	return ( $number ? $number : $setting->default );
-}
-
-/**
- * Number Range sanitization callback
- *
- * @since 1.2.1
- */
-function oceanwp_sanitize_number_range( $number, $setting ) {
-	// Ensure input is an absolute integer.
-	$number = absint( $number );
-	
-	// Get the input attributes associated with the setting.
-	$atts = $setting->manager->get_control( $setting->id )->input_attrs;
-	
-	// Get minimum number in the range.
-	$min = ( isset( $atts['min'] ) ? $atts['min'] : $number );
-	
-	// Get maximum number in the range.
-	$max = ( isset( $atts['max'] ) ? $atts['max'] : $number );
-	
-	// Get step.
-	$step = ( isset( $atts['step'] ) ? $atts['step'] : 1 );
-	
-	// If the number is within the valid range, return it; otherwise, return the default
-	return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
+function oceanwp_sanitize_number_blank( $val ) {
+	return is_numeric( $val ) ? $val : '';
 }
 
 /**

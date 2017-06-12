@@ -63,6 +63,7 @@ html {
 
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -247,11 +248,6 @@ body .oceanwp-row .span_1_of_7 {
 /**
  * Selection Color.
  */
-::-moz-selection {
-  color: #fff;
-  background: #333;
-  text-shadow: none;
-}
 ::selection {
   color: #fff;
   background: #333;
@@ -443,8 +439,7 @@ svg:not(:root) {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
 }
 
@@ -560,8 +555,7 @@ input {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -736,6 +730,7 @@ body.content-full-screen #content-wrap {
 
 .boxed-main-layout.wrap-boxshadow #wrap {
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
@@ -922,6 +917,7 @@ table tr td:last-child {
   background-color: #f1f1f1;
   border-radius: 3px;
   -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   color: #21759b;
@@ -1255,6 +1251,7 @@ hr.whiteborder {
     color: #000 !important;
     background: transparent !important;
     -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -1335,6 +1332,9 @@ form textarea {
   border: 1px solid #ddd;
   border-radius: 3px;
   -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
   transition: all .3s ease;
 }
 
@@ -1414,6 +1414,7 @@ form input:not([type]) {
   border: 1px solid #ccc;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 3px #ddd;
+  -moz-box-shadow: inset 0 1px 3px #ddd;
   box-shadow: inset 0 1px 3px #ddd;
 }
 
@@ -1573,6 +1574,9 @@ input[type="submit"],
   letter-spacing: 0.1em;
   line-height: 1;
   -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
   transition: all .3s ease;
 }
 
@@ -1605,6 +1609,7 @@ button:focus,
   border: none;
   background-image: none;
   -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   filter: alpha(opacity=40);
@@ -1935,6 +1940,8 @@ a.pure-button-selected {
   width: auto;
   vertical-align: middle;
   -webkit-transition: opacity .3s ease-out;
+  -moz-transition: opacity .3s ease-out;
+  -o-transition: opacity .3s ease-out;
   transition: opacity .3s ease-out;
 }
 
@@ -1969,9 +1976,8 @@ a.pure-button-selected {
   display: block;
   height: 100%;
   z-index: 2;
+  background: -moz-linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
   background: -webkit-linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(75%, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3)));
-  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
   background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0);
 }
@@ -1987,6 +1993,7 @@ a.pure-button-selected {
   width: auto;
   top: 50%;
   -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
@@ -2045,6 +2052,7 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 #site-header.top-header .header-top {
   background-color: #fff;
   -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
@@ -2251,6 +2259,8 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   vertical-align: middle;
   white-space: nowrap;
   -webkit-transition: all ease .3s;
+  -moz-transition: all ease .3s;
+  -o-transition: all ease .3s;
   transition: all ease .3s;
 }
 
@@ -2264,6 +2274,8 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   background-color: #333;
   outline: 1px solid transparent;
   -webkit-transition: all ease .3s;
+  -moz-transition: all ease .3s;
+  -o-transition: all ease .3s;
   transition: all ease .3s;
 }
 
@@ -2285,13 +2297,17 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 
 #site-header.full_screen-header .menu-bar.exit .ham:before {
   -webkit-transform: translateY(8px) rotateZ(-45deg);
+  -moz-transform: translateY(8px) rotateZ(-45deg);
   -ms-transform: translateY(8px) rotateZ(-45deg);
+  -o-transform: translateY(8px) rotateZ(-45deg);
   transform: translateY(8px) rotateZ(-45deg);
 }
 
 #site-header.full_screen-header .menu-bar.exit .ham:after {
   -webkit-transform: translateY(-8px) rotateZ(45deg);
+  -moz-transform: translateY(-8px) rotateZ(45deg);
   -ms-transform: translateY(-8px) rotateZ(45deg);
+  -o-transform: translateY(-8px) rotateZ(45deg);
   transform: translateY(-8px) rotateZ(45deg);
 }
 
@@ -2421,22 +2437,30 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   height: 3px;
   margin-left: 3px;
   -webkit-animation: blink 1s linear infinite;
+  -moz-animation: blink 1s linear infinite;
+  -o-animation: blink 1s linear infinite;
   animation: blink 1s linear infinite;
 }
 
 #site-header.full_screen-header .fs-dropdown-menu > li.search-toggle-li label i + i {
   -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -o-animation-delay: .2s;
   animation-delay: .2s;
 }
 
 #site-header.full_screen-header .fs-dropdown-menu > li.search-toggle-li label i + i + i {
   -webkit-animation-delay: .4s;
+  -moz-animation-delay: .4s;
+  -o-animation-delay: .4s;
   animation-delay: .4s;
 }
 
 #site-header.full_screen-header .fs-dropdown-menu > li.search-toggle-li form.search-filled label {
   opacity: 0;
   -webkit-transition-duration: 150ms;
+  -moz-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
   transition-duration: 150ms;
 }
 
@@ -2484,6 +2508,30 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 }
 
 @-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes blink {
   0% {
     opacity: 1;
   }
@@ -2552,6 +2600,8 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   width: auto;
   vertical-align: middle;
   -webkit-transition: opacity .3s ease-out;
+  -moz-transition: opacity .3s ease-out;
+  -o-transition: opacity .3s ease-out;
   transition: opacity .3s ease-out;
 }
 
@@ -2577,44 +2627,37 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   background-color: #fff;
   padding: 30px 0;
   -webkit-transition: padding .4s ease-in-out;
+  -moz-transition: padding .4s ease-in-out;
+  -o-transition: padding .4s ease-in-out;
+  -ms-transition: padding .4s ease-in-out;
   transition: padding .4s ease-in-out;
   z-index: 10;
 }
 
 #site-header.medium-header .top-header-inner {
   display: -webkit-box;
+  display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   -webkit-align-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   -webkit-justify-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 100%;
   margin: 0;
 }
 
 #site-header.medium-header .top-col {
   -webkit-flex: 1 0 0;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 0;
-          flex: 1 0 0;
+  flex: 1 0 0;
 }
 
 #site-header.medium-header .top-col.logo-col {
   -webkit-flex: auto 0 0;
-  -webkit-box-flex: 1;
-      -ms-flex: auto 0 0;
-          flex: auto 0 0;
+  flex: auto 0 0;
 }
 
 #site-header.medium-header .top-col.col-1 {
@@ -2637,6 +2680,8 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 #site-header.medium-header #medium-searchform form.search-filled label {
   opacity: 0;
   -webkit-transition-duration: 150ms;
+  -moz-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
   transition-duration: 150ms;
 }
 
@@ -2770,6 +2815,9 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 #site-header.medium-header.hidden-menu #oceanwp-mobile-menu-icon {
   max-height: 150px;
   -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 }
 
@@ -2976,8 +3024,7 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 
 .sf-menu li:hover,
 .sf-menu li.sfHover {
-  -webkit-transition: none;
-          transition: none;
+  transition: none;
 }
 
 .sf-menu ul.sub-menu {
@@ -3020,11 +3067,11 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   padding: 15px;
   width: 260px;
   -webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
   z-index: 10000;
 }
 
@@ -3096,8 +3143,7 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   font-size: 26px;
   color: #bbb;
   cursor: pointer;
-  -webkit-transition: all .3s ease;
-          transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 #searchform-header-replace-close:hover {
@@ -3166,13 +3212,17 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 
 #searchform-overlay a.search-overlay-close span:before {
   -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
 #searchform-overlay a.search-overlay-close span:after {
   -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
@@ -3237,22 +3287,30 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   height: 3px;
   margin-left: 3px;
   -webkit-animation: blink 1s linear infinite;
+  -moz-animation: blink 1s linear infinite;
+  -o-animation: blink 1s linear infinite;
   animation: blink 1s linear infinite;
 }
 
 #searchform-overlay form label i + i {
   -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -o-animation-delay: .2s;
   animation-delay: .2s;
 }
 
 #searchform-overlay form label i + i + i {
   -webkit-animation-delay: .4s;
+  -moz-animation-delay: .4s;
+  -o-animation-delay: .4s;
   animation-delay: .4s;
 }
 
 #searchform-overlay form.search-filled label {
   opacity: 0;
   -webkit-transition-duration: 150ms;
+  -moz-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
   transition-duration: 150ms;
 }
 
@@ -3402,6 +3460,8 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   border-radius: 50%;
   vertical-align: middle;
   -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
 
@@ -3589,6 +3649,8 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   border-radius: 50%;
   vertical-align: middle;
   -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
 
@@ -3712,6 +3774,8 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   border-radius: 50%;
   vertical-align: middle;
   -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
   transition: all .3s ease-out;
 }
 
@@ -3746,6 +3810,7 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   text-align: left;
   z-index: 999;
   -webkit-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -3862,6 +3927,7 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   position: static;
   background: transparent;
   -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
 }
 
@@ -4562,8 +4628,7 @@ ul.meta li i {
   color: #fff;
   text-align: center;
   border-radius: 50%;
-  -webkit-transition: all .3s ease;
-          transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .thumbnail:hover i {
@@ -4818,8 +4883,7 @@ ul.meta li i {
 .related-thumb img {
   display: block;
   width: 100%;
-  -webkit-transition: opacity .3s;
-          transition: opacity .3s;
+  transition: opacity .3s;
 }
 
 .related-thumb:hover img {
@@ -4974,9 +5038,9 @@ ul.page-numbers li {
   cursor: pointer;
   white-space: nowrap;
   border-radius: 2px;
-  -webkit-transition: all .3s ease-in-out;
-          transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
   -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -5031,6 +5095,8 @@ ul.page-numbers li {
   border-top: 2px solid rgba(0, 0, 0, 0.8);
   border-radius: 100%;
   -webkit-animation: rotation .6s infinite linear;
+  -moz-animation: rotation .6s infinite linear;
+  -o-animation: rotation .6s infinite linear;
   animation: rotation .6s infinite linear;
 }
 
@@ -5043,14 +5109,30 @@ ul.page-numbers li {
   }
 }
 
-@keyframes rotation {
+@-moz-keyframes rotation {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+  }
+}
+
+@-o-keyframes rotation {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }
 
@@ -5527,6 +5609,7 @@ form.oceanwp-searchform button {
   text-align: center;
   z-index: 10;
   -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -5582,8 +5665,7 @@ form.oceanwp-searchform button {
 .slick-slider {
   position: relative;
   display: block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -5615,7 +5697,9 @@ form.oceanwp-searchform button {
 .slick-slider .slick-track,
 .slick-slider .slick-list {
   -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -5684,7 +5768,6 @@ form.oceanwp-searchform button {
 	$CHOCOLAT
 *------------------------------------*/
 .chocolat-zoomable.chocolat-zoomed .chocolat-img {
-  cursor: -webkit-zoom-out;
   cursor: zoom-out;
 }
 
@@ -5715,7 +5798,6 @@ form.oceanwp-searchform button {
 }
 
 .chocolat-zoomable .chocolat-img {
-  cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
 
@@ -5734,6 +5816,8 @@ form.oceanwp-searchform button {
   border-top: 3px solid rgba(255, 255, 255, 0.8);
   border-radius: 100%;
   -webkit-animation: rotation .6s infinite linear;
+  -moz-animation: rotation .6s infinite linear;
+  -o-animation: rotation .6s infinite linear;
   animation: rotation .6s infinite linear;
   z-index: 11;
 }
@@ -5747,14 +5831,30 @@ form.oceanwp-searchform button {
   }
 }
 
-@keyframes rotation {
+@-moz-keyframes rotation {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(359deg);
-            transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+  }
+}
+
+@-o-keyframes rotation {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }
 
@@ -5986,10 +6086,7 @@ body.rtl .chocolat-wrapper .chocolat-description {
   background-color: #fff;
   color: #555;
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -6109,8 +6206,7 @@ a.sidr-class-toggle-sidr-close i {
   text-align: right;
   padding-right: 20px;
   text-align: center;
-  -webkit-transition: all .3s ease;
-          transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .sidr-class-dropdown-toggle:before {
@@ -6228,8 +6324,7 @@ a.sidr-class-toggle-sidr-close i {
   background: none;
   color: #555;
   border: 0;
-  -webkit-transition: all .3s ease;
-          transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .sidr-class-mobile-searchform button:hover {
@@ -6517,7 +6612,7 @@ body.elementor_library-template-elementor_canvas .elementor-inner {
 /*------------------------------------*
 	Retina Logo
 *------------------------------------*/
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   /* logo */
   #site-logo.has-retina-logo .custom-logo-link {
     display: none;
