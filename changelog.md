@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.06.12* - 1.2.1
+* **Fixed** - Issue with page header opacity options in the customizer.
+
 ### *2017.06.11* - 1.2.0.2
 * **Fixed** - Issue with top bar content.
 

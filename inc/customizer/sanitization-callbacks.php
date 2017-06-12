@@ -116,6 +116,15 @@ function oceanwp_sanitize_image( $image, $setting ) {
  *
  * @since 1.2.1
  */
+function oceanwp_sanitize_number( $val ) {
+	return is_numeric( $val ) ? $val : 0;
+}
+
+/**
+ * Number sanitization callback
+ *
+ * @since 1.2.1
+ */
 function oceanwp_sanitize_number_absint( $number, $setting ) {
 	// Ensure $number is an absolute integer (whole number, zero or greater).
 	$number = absint( $number );

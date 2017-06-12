@@ -592,14 +592,14 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Heading 404 Eror Page
+			 * Heading 404 Error Page
 			 */
 			$wp_customize->add_setting( 'ocean_error_page_heading', array(
 				'sanitize_callback' 	=> 'wp_kses',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_error_page_heading', array(
-				'label'    	=> esc_html__( '404 Eror Page', 'oceanwp' ),
+				'label'    	=> esc_html__( '404 Error Page', 'oceanwp' ),
 				'section'  	=> 'ocean_general_settings',
 				'priority' 	=> 10,
 			) ) );
@@ -845,7 +845,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_page_header_bg_image_overlay_opacity', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '0.5',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_page_header_bg_image_overlay_opacity', array(

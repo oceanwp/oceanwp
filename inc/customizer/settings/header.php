@@ -2297,7 +2297,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_mobile_menu_text', array(
 				'default'           	=> esc_html__( 'Menu', 'oceanwp' ),
 				'transport'           	=> 'postMessage',
-				'sanitize_callback' 	=> 'wp_filter_post_kses',
+				'sanitize_callback' 	=> 'wp_kses_post',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_text', array(
@@ -2430,7 +2430,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			$wp_customize->add_setting( 'ocean_mobile_menu_close_btn_text', array(
 				'default'           	=> esc_html__( 'Close Menu', 'oceanwp' ),
 				'transport'           	=> 'postMessage',
-				'sanitize_callback' 	=> 'wp_filter_post_kses',
+				'sanitize_callback' 	=> 'wp_kses_post',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_close_btn_text', array(
