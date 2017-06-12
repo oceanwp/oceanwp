@@ -17,7 +17,7 @@ $text = esc_html__( 'You Might Also Like', 'oceanwp' );
 $text = apply_filters( 'ocean_related_posts_title', $text );
 
 // Number of columns for entries
-$oceanwp_columns = apply_filters( 'ocean_related_blog_posts_columns', get_theme_mod( 'ocean_blog_related_columns', '3' ) );
+$oceanwp_columns = apply_filters( 'ocean_related_blog_posts_columns', absint( get_theme_mod( 'ocean_blog_related_columns', '3' ) ) );
 
 // Create an array of current category ID's
 $cats     = wp_get_post_terms( get_the_ID(), 'category' );
@@ -28,7 +28,7 @@ foreach( $cats as $oceanwp_related_cat ) {
 
 // Query args
 $args = array(
-	'posts_per_page' => apply_filters( 'ocean_related_blog_posts_count', get_theme_mod( 'ocean_blog_related_count', '3' ) ),
+	'posts_per_page' => apply_filters( 'ocean_related_blog_posts_count', absint( get_theme_mod( 'ocean_blog_related_count', '3' ) ) ),
 	'orderby'        => 'rand',
 	'category__in'   => $cats_ids,
 	'post__not_in'   => array( get_the_ID() ),
@@ -110,8 +110,8 @@ if ( $oceanwp_related_query->have_posts() ) :
 
 								<?php
 								// Image width
-								$img_width  = apply_filters( 'ocean_related_blog_posts_img_width', get_theme_mod( 'ocean_blog_related_img_width' ) );
-								$img_height = apply_filters( 'ocean_related_blog_posts_img_height', get_theme_mod( 'ocean_blog_related_img_height' ) );
+								$img_width  = apply_filters( 'ocean_related_blog_posts_img_width', absint( get_theme_mod( 'ocean_blog_related_img_width' ) ) );
+								$img_height = apply_filters( 'ocean_related_blog_posts_img_height', absint( get_theme_mod( 'ocean_blog_related_img_height' ) ) );
 
 			                	// Images attr
 								$img_id 	= get_post_thumbnail_id( get_the_ID(), 'full' );
@@ -126,7 +126,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 									&& function_exists( 'ocean_extra_resize' )
 									&& ! empty( $img_atts ) ) { ?>
 
-									<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts[ 'width' ], $img_atts[ 'height' ], $img_atts[ 'crop' ], true, $img_atts[ 'upscale' ] ); ?>" alt="<?php esc_attr( the_title_attribute() ); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>" itemprop="image" />
+									<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts[ 'width' ], $img_atts[ 'height' ], $img_atts[ 'crop' ], true, $img_atts[ 'upscale' ] ); ?>" alt="<?php the_title_attribute(); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>" itemprop="image" />
 
 								<?php
 								} else {

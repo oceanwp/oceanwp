@@ -197,7 +197,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_blog_entry_excerpt_length', array(
 				'default'           	=> '30',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_range',
+				'sanitize_callback' 	=> false,
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_blog_entry_excerpt_length', array(

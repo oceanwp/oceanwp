@@ -22,10 +22,6 @@
 define( 'OCEANWP_THEME_DIR', get_template_directory() );
 define( 'OCEANWP_THEME_URI', get_template_directory_uri() );
 
-// Auto update
-require_once( OCEANWP_THEME_DIR .'/inc/wp-updates.php' );
-new WPUpdatesThemeUpdater_1916( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
-
 class OCEANWP_Theme_Class {
 
 	/**
@@ -154,6 +150,7 @@ class OCEANWP_Theme_Class {
 		$dir = OCEANWP_INC_DIR;
 		require_once ( $dir .'helpers.php' );
 		require_once ( $dir .'deprecated.php' );
+		require_once ( $dir .'excerpt.php' );
 		require_once ( $dir .'customizer/controls/typography/webfonts.php' );
 		require_once ( $dir .'walker/init.php' );
 		require_once ( $dir .'walker/menu-walker.php' );
@@ -415,15 +412,17 @@ class OCEANWP_Theme_Class {
 	public static function localize_array() {
 
 		// Create array
-		$sidr_side = get_theme_mod( 'ocean_mobile_menu_sidr_direction', 'left' );
-		$sidr_side = $sidr_side ? $sidr_side : 'left';
+		$sidr_side 		= get_theme_mod( 'ocean_mobile_menu_sidr_direction', 'left' );
+		$sidr_side 		= $sidr_side ? $sidr_side : 'left';
+		$sidr_target 	= get_theme_mod( 'ocean_mobile_menu_sidr_dropdown_target', 'icon' );
+		$sidr_target 	= $sidr_target ? $sidr_target : 'icon';
 		$array = array(
 			'isRTL'                 => is_rtl(),
 			'menuSearchStyle'       => oceanwp_menu_search_style(),
 			'sidrSource'       		=> oceanwp_sidr_menu_source(),
 			'sidrDisplace'       	=> get_theme_mod( 'ocean_mobile_menu_sidr_displace', true ) ?  true : false,
 			'sidrSide'       		=> $sidr_side,
-			'sidrDropdownTarget'    => get_theme_mod( 'ocean_mobile_menu_sidr_dropdown_target', 'icon' ),
+			'sidrDropdownTarget'    => $sidr_target,
 			'customSelects'         => '.woocommerce-ordering .orderby, .cart-collaterals .cart_totals table select, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select',
 		);
 

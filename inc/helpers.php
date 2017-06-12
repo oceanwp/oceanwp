@@ -2496,26 +2496,6 @@ if ( ! function_exists( 'oceanwp_blog_single_meta' ) ) {
 }
 
 /**
- * Custom excerpts
- *
- * @since	1.0.0
- */
-if ( ! function_exists( 'oceanwp_custom_excerpt_length' ) ) {
-
-	function oceanwp_custom_excerpt_length( $length ) {
-		// Excerpt length
-		$excerpt = get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' );
-		$excerpt = $excerpt ? $excerpt : '30';
-
-		// Return
-		return $excerpt;
-	}
-
-	add_filter( 'excerpt_length', 'oceanwp_custom_excerpt_length', 999 );
-
-}
-
-/**
  * Comments and pingbacks
  *
  * @since 1.0.0
@@ -3044,9 +3024,9 @@ if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
 
 		return apply_filters( 'ocean_register_tm_strings', array(
 			'ocean_top_bar_content' 			=> '',
-			'ocean_mobile_menu_text' 			=> 'Menu',
-			'ocean_mobile_menu_close_btn_text' 	=> 'Close Menu',
-			'ocean_footer_copyright_text' 		=> 'Copyright [oceanwp_date] - OceanWP Theme by Nick',
+			'ocean_mobile_menu_text' 			=> esc_html__( 'Menu', 'oceanwp' ),
+			'ocean_mobile_menu_close_btn_text' 	=> esc_html__( 'Close Menu', 'oceanwp' ),
+			'ocean_footer_copyright_text' 		=> esc_html__( 'Copyright [oceanwp_date] - OceanWP Theme by Nick', 'oceanwp' ),
 			'ocean_woo_menu_icon_custom_link' 	=> '',
 		) );
 
