@@ -22,8 +22,8 @@ ul.page-numbers {
 .page-links span {
     position: relative;
     display: inline-block;
-    width: 38px;
-    height: 38px;
+    min-width: 38px;
+    min-width: 38px;
     line-height: 38px;
     margin: 0 8px 0 0;
     text-align: center;

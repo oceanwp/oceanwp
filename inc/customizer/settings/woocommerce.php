@@ -590,26 +590,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 * Shop Columns
 			 */
 			$wp_customize->add_setting( 'ocean_woocommerce_shop_columns', array(
-				'default'           	=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woocommerce_shop_columns', array(
-				'label'	   				=> esc_html__( 'Shop Columns', 'oceanwp' ),
-				'section'  				=> 'ocean_woocommerce_archives',
-				'settings' 				=> 'ocean_woocommerce_shop_columns',
-				'priority' 				=> 10,
-			    'input_attrs' 			=> array(
-			        'min'   => 1,
-			        'max'   => 7,
-			        'step'  => 1,
-			    ),
-			) ) );
-
-			/**
-			 * Shop Columns
-			 */
-			$wp_customize->add_setting( 'ocean_woocommerce_shop_columns', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '3',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_number',

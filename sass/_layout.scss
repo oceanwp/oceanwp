@@ -29,7 +29,9 @@
 	position: relative;
 	width: 72%;
 	padding-right: 30px;
-	border-right: 1px solid $color-9;
+	border-right-width: 1px;
+	border-style: solid;
+	border-color: $color-9;
 }
 
 .widget-area {
@@ -68,9 +70,11 @@ body.content-full-screen #content-wrap {
 	position: relative;
 	width: 72%;
 	padding-right: 0;
-	border-right: 0;
-	padding-left: 30px;
-	border-left: 1px solid $color-9;
+	border-right-width: 0;
+	padding-left: 30px;	
+	border-left-width: 1px;
+	border-style: solid;
+	border-color: $color-9;
 }
 
 .content-left-sidebar .widget-area {

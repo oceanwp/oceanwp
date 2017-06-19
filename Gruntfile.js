@@ -16,31 +16,31 @@ module.exports = function ( grunt ) {
 		uglify: {
 			dev: {
 				files: {
-					'assets/js/plugins.min.js': [ 'assets/js/devs/**/*.js' ],
+					'assets/js/plugins.min.js'										: [ 'assets/js/devs/**/*.js' ],
 
-					'assets/js/dynamic/html5.min.js': 'assets/js/dynamic/html5.js',
-					'assets/js/dynamic/woo-scripts.min.js': 'assets/js/dynamic/woo-scripts.js',
+					'assets/js/dynamic/html5.min.js'								: 'assets/js/dynamic/html5.js',
+					'assets/js/dynamic/woo-scripts.min.js'							: 'assets/js/dynamic/woo-scripts.js',
 
-					'inc/customizer/assets/js/customize-preview.min.js': 'inc/customizer/assets/js/customize-preview.js',
-					'inc/customizer/assets/js/typography-customize-preview.min.js': 'inc/customizer/assets/js/typography-customize-preview.js',
-					'inc/customizer/assets/min/js/general.min.js': 'inc/customizer/controls/general.js',
-					'inc/customizer/assets/min/js/buttonset.min.js': 'inc/customizer/controls/buttonset/buttonset.js',
-					'inc/customizer/assets/min/js/color.min.js': 'inc/customizer/controls/color/color.js',
-					'inc/customizer/assets/min/js/dimensions.min.js': 'inc/customizer/controls/dimensions/dimensions.js',
-					'inc/customizer/assets/min/js/dropdown-pages.min.js': 'inc/customizer/controls/dropdown-pages/dropdown-pages.js',
-					'inc/customizer/assets/min/js/icon-select.min.js': 'inc/customizer/controls/icon-select/icon-select.js',
-					'inc/customizer/assets/min/js/multicheck.min.js': 'inc/customizer/controls/multicheck/multicheck.js',
-					'inc/customizer/assets/min/js/radio-image.min.js': 'inc/customizer/controls/radio-image/radio-image.js',
-					'inc/customizer/assets/min/js/range.min.js': 'inc/customizer/controls/range/range.js',
-					'inc/customizer/assets/min/js/slider.min.js': 'inc/customizer/controls/slider/slider.js',
-					'inc/customizer/assets/min/js/sortable.min.js': 'inc/customizer/controls/sortable/sortable.js',
-					'inc/customizer/assets/min/js/textarea.min.js': 'inc/customizer/controls/textarea/textarea.js',
-					'inc/customizer/assets/min/js/typography.min.js': 'inc/customizer/controls/typography/typography.js'
+					'inc/customizer/assets/js/customize-preview.min.js'				: 'inc/customizer/assets/js/customize-preview.js',
+					'inc/customizer/assets/js/typography-customize-preview.min.js'	: 'inc/customizer/assets/js/typography-customize-preview.js',
+					'inc/customizer/assets/min/js/general.min.js'					: 'inc/customizer/controls/general.js',
+					'inc/customizer/assets/min/js/buttonset.min.js'					: 'inc/customizer/controls/buttonset/buttonset.js',
+					'inc/customizer/assets/min/js/color.min.js'						: 'inc/customizer/controls/color/color.js',
+					'inc/customizer/assets/min/js/dimensions.min.js'				: 'inc/customizer/controls/dimensions/dimensions.js',
+					'inc/customizer/assets/min/js/dropdown-pages.min.js'			: 'inc/customizer/controls/dropdown-pages/dropdown-pages.js',
+					'inc/customizer/assets/min/js/icon-select.min.js'				: 'inc/customizer/controls/icon-select/icon-select.js',
+					'inc/customizer/assets/min/js/multicheck.min.js'				: 'inc/customizer/controls/multicheck/multicheck.js',
+					'inc/customizer/assets/min/js/radio-image.min.js'				: 'inc/customizer/controls/radio-image/radio-image.js',
+					'inc/customizer/assets/min/js/range.min.js'						: 'inc/customizer/controls/range/range.js',
+					'inc/customizer/assets/min/js/slider.min.js'					: 'inc/customizer/controls/slider/slider.js',
+					'inc/customizer/assets/min/js/sortable.min.js'					: 'inc/customizer/controls/sortable/sortable.js',
+					'inc/customizer/assets/min/js/textarea.min.js'					: 'inc/customizer/controls/textarea/textarea.js',
+					'inc/customizer/assets/min/js/typography.min.js'				: 'inc/customizer/controls/typography/typography.js'
 				}
 			},
 			prod: {
 				files: {
-					'assets/js/main.min.js': [ 'assets/js/plugins.min.js', 'assets/js/main.js' ]
+					'assets/js/main.min.js'											: [ 'assets/js/plugins.min.js', 'assets/js/main.js' ]
 				}
 			}
 		},
@@ -54,22 +54,23 @@ module.exports = function ( grunt ) {
 			},
 			prod: {
 				files: {
-					'assets/css/oceanwp-woocommerce.min.css': 'assets/css/oceanwp-woocommerce.css',
+					'assets/css/woocommerce.min.css'								: 'assets/css/woocommerce.css',
+					'assets/css/editor-style.min.css'								: 'assets/css/editor-style.css',
 
 					'inc/customizer/assets/css/customizer-simple-line-icons.min.css': 'inc/customizer/assets/css/customizer-simple-line-icons.css',
-					'inc/customizer/assets/min/css/rtl.min.css': 'inc/customizer/controls/rtl.css',
-					'inc/customizer/assets/min/css/general.min.css': 'inc/customizer/controls/general.css',
-					'inc/customizer/assets/min/css/buttonset.min.css': 'inc/customizer/controls/buttonset/buttonset.css',
-					'inc/customizer/assets/min/css/color.min.css': 'inc/customizer/controls/color/color.css',
-					'inc/customizer/assets/min/css/dimensions.min.css': 'inc/customizer/controls/dimensions/dimensions.css',
-					'inc/customizer/assets/min/css/heading.min.css': 'inc/customizer/controls/heading/heading.css',
-					'inc/customizer/assets/min/css/icon-select.min.css': 'inc/customizer/controls/icon-select/icon-select.css',
-					'inc/customizer/assets/min/css/radio-image.min.css': 'inc/customizer/controls/radio-image/radio-image.css',
-					'inc/customizer/assets/min/css/range.min.css': 'inc/customizer/controls/range/range.css',
-					'inc/customizer/assets/min/css/slider.min.css': 'inc/customizer/controls/slider/slider.css',
-					'inc/customizer/assets/min/css/sortable.min.css': 'inc/customizer/controls/sortable/sortable.css',
-					'inc/customizer/assets/min/css/textarea.min.css': 'inc/customizer/controls/textarea/textarea.css',
-					'inc/customizer/assets/min/css/typography.min.css': 'inc/customizer/controls/typography/typography.css'
+					'inc/customizer/assets/min/css/rtl.min.css'						: 'inc/customizer/controls/rtl.css',
+					'inc/customizer/assets/min/css/general.min.css'					: 'inc/customizer/controls/general.css',
+					'inc/customizer/assets/min/css/buttonset.min.css'				: 'inc/customizer/controls/buttonset/buttonset.css',
+					'inc/customizer/assets/min/css/color.min.css'					: 'inc/customizer/controls/color/color.css',
+					'inc/customizer/assets/min/css/dimensions.min.css'				: 'inc/customizer/controls/dimensions/dimensions.css',
+					'inc/customizer/assets/min/css/heading.min.css'					: 'inc/customizer/controls/heading/heading.css',
+					'inc/customizer/assets/min/css/icon-select.min.css'				: 'inc/customizer/controls/icon-select/icon-select.css',
+					'inc/customizer/assets/min/css/radio-image.min.css'				: 'inc/customizer/controls/radio-image/radio-image.css',
+					'inc/customizer/assets/min/css/range.min.css'					: 'inc/customizer/controls/range/range.css',
+					'inc/customizer/assets/min/css/slider.min.css'					: 'inc/customizer/controls/slider/slider.css',
+					'inc/customizer/assets/min/css/sortable.min.css'				: 'inc/customizer/controls/sortable/sortable.css',
+					'inc/customizer/assets/min/css/textarea.min.css'				: 'inc/customizer/controls/textarea/textarea.css',
+					'inc/customizer/assets/min/css/typography.min.css'				: 'inc/customizer/controls/typography/typography.css'
 				}
 			}
 		},
@@ -78,7 +79,7 @@ module.exports = function ( grunt ) {
 		sass: {
 			dev: { // This outputs the expanded css file
                 options: {
-                    outputStyle: 'expanded', // Minify output
+                    outputStyle: 'expanded',
                     sourceMap: false,
                 },
                 files: {
@@ -87,7 +88,7 @@ module.exports = function ( grunt ) {
             },
             prod: { // This outputs the compressed css file
                 options: {
-                    outputStyle: 'compressed', // Minify output
+                    outputStyle: 'compressed',
                     sourceMap: false,
                 },
                 files: {
@@ -229,16 +230,16 @@ module.exports = function ( grunt ) {
 					type: 'wp-theme', // Type of project (wp-plugin or wp-theme).
 					updateTimestamp: true, // Whether the POT-Creation-Date should be updated without other changes.
 					processPot: function ( pot, options ) {
-						pot.headers[ 'plural-forms' ] = 'nplurals=2; plural=n != 1;';
-						pot.headers[ 'last-translator' ] = 'OceanWP\n';
-						pot.headers[ 'language-team' ] = 'OceanWP\n';
-						pot.headers[ 'x-poedit-basepath' ] = '..\n';
-						pot.headers[ 'x-poedit-language' ] = 'English\n';
-						pot.headers[ 'x-poedit-country' ] = 'UNITED STATES\n';
-						pot.headers[ 'x-poedit-sourcecharset' ] = 'utf-8\n';
-						pot.headers[ 'x-poedit-searchpath-0' ] = '.\n';
-						pot.headers[ 'x-poedit-keywordslist' ] = '_esc_attr__;esc_attr_x;esc_attr_e;esc_html__;esc_html_e;esc_html_x;__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n';
-						pot.headers[ 'x-textdomain-support' ] = 'yes\n';
+						pot.headers[ 'plural-forms' ] 				= 'nplurals=2; plural=n != 1;';
+						pot.headers[ 'last-translator' ] 			= 'OceanWP\n';
+						pot.headers[ 'language-team' ] 				= 'OceanWP\n';
+						pot.headers[ 'x-poedit-basepath' ] 			= '..\n';
+						pot.headers[ 'x-poedit-language' ] 			= 'English\n';
+						pot.headers[ 'x-poedit-country' ] 			= 'UNITED STATES\n';
+						pot.headers[ 'x-poedit-sourcecharset' ] 	= 'utf-8\n';
+						pot.headers[ 'x-poedit-searchpath-0' ] 		= '.\n';
+						pot.headers[ 'x-poedit-keywordslist' ] 		= '_esc_attr__;esc_attr_x;esc_attr_e;esc_html__;esc_html_e;esc_html_x;__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n';
+						pot.headers[ 'x-textdomain-support' ] 		= 'yes\n';
 						return pot;
 					}
 				}

@@ -44,7 +44,7 @@
 			'mobile-3-col',
 			'mobile-4-col'
 		],
-		wooProductsCol 	= [
+		wooProductsCol 		= [
 			'1',
 			'2',
 			'3',

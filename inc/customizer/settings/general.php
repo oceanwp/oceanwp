@@ -21,7 +21,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 		public function __construct() {
 
 			add_action( 'customize_register', 	array( $this, 'customizer_options' ) );
-			add_filter( 'ocean_head_css', 		array( $this, 'page_header_overlay' ) );
 			add_filter( 'ocean_head_css', 		array( $this, 'head_css' ) );
 
 		}
@@ -2103,62 +2102,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'.tagcloud a'
 
 			) );
-
-		}
-
-		/**
-		 * Get Page Header Overlay CSS
-		 *
-		 * @since 1.0.0
-		 */
-		public function page_header_overlay( $output ) {
-
-			// Only needed for the background-image style so return otherwise
-			if ( 'background-image' != oceanwp_page_header_style() ) {
-				return;
-			}
-
-			// Global vars
-			$opacity 			= get_theme_mod( 'ocean_page_header_bg_image_overlay_opacity', '0.5' );
-			$overlay_color 		= get_theme_mod( 'ocean_page_header_bg_image_overlay_color', '#000000' );
-
-			if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
-				&& is_singular( 'post' ) ) {
-				$opacity 		= get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_opacity', '0.5' );
-				$overlay_color 	= get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_color', '#000000' );
-			}
-
-			if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-
-				if ( $meta_opacity = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay', true ) ) {
-					$opacity 		= $meta_opacity;
-				}
-				if ( $meta_overlay_color = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay_color', true ) ) {
-					$overlay_color 	= $meta_overlay_color;
-				}
-
-			}
-
-			// Define css var
-			$css = '';
-
-			// Get page header overlayopacity
-			if ( ! empty( $opacity ) && '0.5' != $opacity ) {
-				$css .= 'opacity:'. $opacity .';';
-			}
-
-			// Get page header overlay color
-			if ( ! empty( $overlay_color ) && '#000000' != $overlay_color ) {
-				$css .= 'background-color:'. $overlay_color .';';
-			}
-
-			// Return CSS
-			if ( ! empty( $css ) ) {
-				$output .= '/* Page Header Overlay CSS */.background-image-page-header-overlay{'. $css .'}';
-			}
-
-			// Return output css
-			return $output;
 
 		}
 

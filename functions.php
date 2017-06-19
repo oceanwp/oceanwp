@@ -154,6 +154,7 @@ class OCEANWP_Theme_Class {
 		require_once ( $dir .'customizer/controls/typography/webfonts.php' );
 		require_once ( $dir .'walker/init.php' );
 		require_once ( $dir .'walker/menu-walker.php' );
+		require_once ( $dir .'third/beaver-themer.php' );
 	}
 
 	/**
@@ -289,9 +290,11 @@ class OCEANWP_Theme_Class {
 		// Declare WooCommerce support.
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 
 		// Add editor style
-		add_editor_style( 'editor-style.css' );
+		add_editor_style( 'assets/css/editor-style.min.css' );
 
 		// Declare support for selective refreshing of widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );

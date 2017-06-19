@@ -119,6 +119,9 @@ function oceanwp_sanitize_image( $image, $setting ) {
 function oceanwp_sanitize_number( $val ) {
 	return is_numeric( $val ) ? $val : 0;
 }
+function oceanwp_sanitize_number_ttttttttttttttttttttttt( $val ) {
+	return $top_padding ? absint( $top_padding ) : 0;
+}
 
 /**
  * Number with blank value sanitization callback

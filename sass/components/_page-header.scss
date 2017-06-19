@@ -97,7 +97,13 @@ body.breadcrumbs-position-default .page-header-title {
  * Page Header Background Image
  */
 .background-image-page-header {
-  display: table;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
   background-color: #000;
   height: 400px;
@@ -106,11 +112,6 @@ body.breadcrumbs-position-default .page-header-title {
   background-size: cover;
 
   .page-header-inner {
-    display: table-cell;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 30px;
-    vertical-align: middle;
     text-align: center;
   }
 

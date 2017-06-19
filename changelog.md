@@ -1,5 +1,14 @@
 # OceanWP Changelog
 
+### *2017.06.19* - 1.2.6
+* **Fixed** - Double lighbox icon on the single product images.
+
+### *2017.06.19* - 1.2.5
+* **Added** - Fully compatible with Beaver Themer.
+* **Tweak** - Page header background image style CSS improved.
+* **Fixed** - Issue with WooCommerce products in list view when you add custom columns in responsive.
+* **Deleted** - Custom scripts for the WooCommerce single products images, too many issues.
+
 ### *2017.06.12* - 1.2.4
 * **Added** - French translation, thank you very much to Jean Lagarrigue.
 * **Fixed** - Number options input issue in the customizer.

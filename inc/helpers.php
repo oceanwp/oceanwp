@@ -481,6 +481,29 @@ if ( ! function_exists( 'oceanwp_display_topbar' ) ) {
 }
 
 /**
+ * Top bar template
+ * I make a function to be able to remove it for the Beaver Themer plugin
+ *
+ * @since 1.2.5
+ */
+if ( ! function_exists( 'oceanwp_top_bar_template' ) ) {
+
+	function oceanwp_top_bar_template() {
+
+		// Return if no top bar
+		if ( ! oceanwp_display_topbar() ) {
+			return;
+		}
+
+		get_template_part( 'partials/topbar/layout' );
+
+	}
+
+	add_action( 'ocean_top_bar', 'oceanwp_top_bar_template' );
+
+}
+
+/**
  * Add classes to the top bar wrap
  *
  * @since 1.0.0
@@ -636,6 +659,29 @@ if ( ! function_exists( 'oceanwp_display_header' ) ) {
 		return apply_filters( 'ocean_display_header', $return );
 
 	}
+
+}
+
+/**
+ * Header template
+ * I make a function to be able to remove it for the Beaver Themer plugin
+ *
+ * @since 1.2.5
+ */
+if ( ! function_exists( 'oceanwp_header_template' ) ) {
+
+	function oceanwp_header_template() {
+
+		// Return if no header
+		if ( ! oceanwp_display_header() ) {
+			return;
+		}
+
+		get_template_part( 'partials/header/layout' );
+
+	}
+
+	add_action( 'ocean_header', 'oceanwp_header_template' );
 
 }
 
@@ -1351,6 +1397,24 @@ if ( ! function_exists( 'oceanwp_menu_cart_style' ) ) {
 /*-------------------------------------------------------------------------------*/
 
 /**
+ * Page header template
+ * I make a function to be able to remove it for the Beaver Themer plugin
+ *
+ * @since 1.2.5
+ */
+if ( ! function_exists( 'oceanwp_page_header_template' ) ) {
+
+	function oceanwp_page_header_template() {
+
+		get_template_part( 'partials/page-header' );
+
+	}
+
+	add_action( 'ocean_page_header', 'oceanwp_page_header_template' );
+
+}
+
+/**
  * Checks if the page header is enabled
  *
  * @since 1.0.0
@@ -1747,6 +1811,15 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 					$bg_img_size = $meta_bg_img_size;
 				}
 
+				$bg_img_position 	= $bg_img_position ? $bg_img_position : 'top center';
+				$bg_img_position 	= apply_filters( 'ocean_post_title_bg_image_position', $bg_img_position );
+				$bg_img_attachment 	= $bg_img_attachment ? $bg_img_attachment : 'initial';
+				$bg_img_attachment 	= apply_filters( 'ocean_post_title_bg_image_attachment', $bg_img_attachment );
+				$bg_img_repeat 		= $bg_img_repeat ? $bg_img_repeat : 'no-repeat';
+				$bg_img_repeat 		= apply_filters( 'ocean_post_title_bg_image_repeat', $bg_img_repeat );
+				$bg_img_size 		= $bg_img_size ? $bg_img_size : 'cover';
+				$bg_img_size 		= apply_filters( 'ocean_post_title_bg_image_size', $bg_img_size );
+
 
 				if ( $bg_img ) {
 
@@ -1774,7 +1847,7 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 					}
 
 					// Custom height
-					$title_height 		= get_theme_mod( 'ocean_page_header_bg_image_height', '400' );
+					$title_height = get_theme_mod( 'ocean_page_header_bg_image_height', '400' );
 
 					if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
 						&& is_singular( 'post' ) ) {
@@ -1784,7 +1857,7 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 					if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
 
 						if ( $meta_title_height = get_post_meta( oceanwp_post_id(), 'ocean_post_title_height', true ) ) {
-							$title_height 	= $meta_title_height;
+							$title_height = $meta_title_height;
 						}
 						
 					}
@@ -1818,6 +1891,73 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 	}
 
 	add_filter( 'ocean_head_css', 'oceanwp_page_header_css' );
+
+}
+
+/**
+ * Outputs Custom CSS for the page title overlay
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_page_header_overlay_css' ) ) {
+
+	function oceanwp_page_header_overlay_css( $output ) {
+
+		// Only needed for the background-image style so return otherwise
+		if ( 'background-image' != oceanwp_page_header_style() ) {
+			return;
+		}
+
+		// Global vars
+		$opacity 			= get_theme_mod( 'ocean_page_header_bg_image_overlay_opacity', '0.5' );
+		$overlay_color 		= get_theme_mod( 'ocean_page_header_bg_image_overlay_color', '#000000' );
+
+		if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+			&& is_singular( 'post' ) ) {
+			$opacity 		= get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_opacity', '0.5' );
+			$overlay_color 	= get_theme_mod( 'ocean_blog_single_title_bg_image_overlay_color', '#000000' );
+		}
+
+		if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
+
+			if ( $meta_opacity = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay', true ) ) {
+				$opacity 		= $meta_opacity;
+			}
+			if ( $meta_overlay_color = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay_color', true ) ) {
+				$overlay_color 	= $meta_overlay_color;
+			}
+
+		}
+
+		$opacity 		= $opacity ? $opacity : '0.5';
+		$opacity 		= apply_filters( 'ocean_post_title_bg_overlay', $opacity );
+		$overlay_color 	= $overlay_color ? $overlay_color : '#000000';
+		$overlay_color 	= apply_filters( 'ocean_post_title_bg_overlay_color', $overlay_color );
+
+		// Define css var
+		$css = '';
+
+		// Get page header overlayopacity
+		if ( ! empty( $opacity ) && '0.5' != $opacity ) {
+			$css .= 'opacity:'. $opacity .';';
+		}
+
+		// Get page header overlay color
+		if ( ! empty( $overlay_color ) && '#000000' != $overlay_color ) {
+			$css .= 'background-color:'. $overlay_color .';';
+		}
+
+		// Return CSS
+		if ( ! empty( $css ) ) {
+			$output .= '.background-image-page-header-overlay{'. $css .'}';
+		}
+
+		// Return output css
+		return $output;
+
+	}
+
+	add_filter( 'ocean_head_css', 'oceanwp_page_header_overlay_css' );
 
 }
 
@@ -2855,6 +2995,27 @@ if ( ! function_exists( 'oceanwp_display_footer_bottom' ) ) {
 		return apply_filters( 'ocean_display_footer_bottom', $return );
 
 	}
+
+}
+
+/**
+ * Footer template
+ * I make a function to be able to remove it for the Beaver Themer plugin
+ *
+ * @since 1.2.5
+ */
+if ( ! function_exists( 'oceanwp_footer_template' ) ) {
+
+	function oceanwp_footer_template() {
+
+		if ( oceanwp_display_footer_widgets()
+        	|| oceanwp_display_footer_bottom() ) {
+        	get_template_part( 'partials/footer/layout' );
+        }
+
+	}
+
+	add_action( 'ocean_footer', 'oceanwp_footer_template' );
 
 }
 

@@ -11,12 +11,7 @@
 
         <?php do_action( 'ocean_before_footer' ); ?>
 
-        <?php
-        // Display the footer if the footer widgets and bottom are enabled
-        if ( oceanwp_display_footer_widgets()
-        	|| oceanwp_display_footer_bottom() ) {
-        	get_template_part( 'partials/footer/layout' );
-        } ?>
+        <?php do_action( 'ocean_footer' ); ?>
 
         <?php do_action( 'ocean_after_footer' ); ?>
                 

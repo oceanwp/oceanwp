@@ -500,18 +500,19 @@ only screen and (                min-resolution: 2dppx) {
 
 	.centered-page-header .page-header-title,
 	.centered-minimal-page-header .page-header-title,
-	.background-image-page-header .page-header-title {
+	.page-header.background-image-page-header .page-header-title {
 		font-size: 24px;
 	}
 
 	.centered-page-header .page-subheading,
 	.centered-minimal-page-header .page-header-subheading,
-	.background-image-page-header .page-subheading {
+	.page-header.background-image-page-header .page-subheading {
 		font-size: 14px;
 	}
 
 	.background-image-page-header {
-		max-height: 200px;
+		display: block;
+    	height: auto !important;
 	}
 	
 	/* breadcrumbs */

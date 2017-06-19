@@ -324,8 +324,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function add_custom_css() {
 
-			// General WooCommerce Custom CSS
-			wp_enqueue_style( 'oceanwp-woocommerce', OCEANWP_CSS_DIR_URI .'oceanwp-woocommerce.min.css' );
+			// Register WooCommerce style
+			wp_enqueue_style( 'oceanwp-woocommerce', OCEANWP_CSS_DIR_URI .'woocommerce.min.css' );
+
+			// If rtl
+			if ( is_RTL() ) {
+				wp_enqueue_style( 'oceanwp-woocommerce-rtl', OCEANWP_CSS_DIR_URI .'woocommerce-rtl.css' );
+			}
 
 		}
 
