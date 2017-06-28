@@ -5,26 +5,15 @@
  * @package OceanWP WordPress theme
  */
 
-namespace Elementor;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// If is not PHP version 5.2+
-if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
-    return;
-}
-
-// Get page
-$get_page 	= oceanwp_footer_page_id();
+$footer_query = false;
 
 // Get page ID
 $get_id 	= get_theme_mod( 'ocean_footer_widgets_page_id' );
-
-// Check if page is Elementor page
-$elementor 	= get_post_meta( $get_id, '_elementor_edit_mode', true );
 
 // Get footer widgets columns
 $columns    = apply_filters( 'ocean_footer_widgets_columns', get_theme_mod( 'ocean_footer_widgets_columns', '4' ) );
@@ -48,7 +37,11 @@ if ( ! empty( $mobile_columns ) ) {
 if ( 'all-devices' != $visibility ) {
 	$wrap_classes[] = $visibility;
 }
-$wrap_classes = implode( ' ', $wrap_classes ); ?>
+$wrap_classes = implode( ' ', $wrap_classes );
+
+if ( ! empty( $get_id ) ) {
+    $footer_query = new WP_Query( array( 'p' => $get_id, 'post_type' => 'any' ) );
+} ?>
 
 <?php do_action( 'ocean_before_footer_widgets' ); ?>
 
@@ -60,32 +53,26 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 
         <?php
         // Check if there is page for the footer
-        if ( $get_page ) :
+        if ( ! empty( $get_id ) ) {
 
-		    // If Elementor
-		    if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+		    // If Beaver Builder
+		    if ( class_exists( 'FLBuilder' ) ) {
 
-				echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
+		        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
-	    	}
+		    }
 
-	    	// If Beaver Builder
-		    else if ( class_exists( 'FLBuilder' ) ) {
+		    // If page has content
+		    else if ( ! empty( $footer_query ) && $footer_query->have_posts() ) {
 
-				echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
+		        $footer_query->the_post();
+		        the_content();
+		        wp_reset_postdata();
 
-	    	}
-
-	    	// Else
-	    	else {
-
-	        	// Display page content
-	        	echo do_shortcode( $get_page );
-
-	        }
+		    }
 
 		// Display widgets
-		else :
+		} else {
 
 			// Footer box 1 ?>
 			<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col col-1">
@@ -116,7 +103,8 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 				</div><!-- .footer-box -->
 			<?php endif; ?>
 
-		<?php endif; ?>
+		<?php
+		} ?>
 
 	</div><!-- .container -->
 

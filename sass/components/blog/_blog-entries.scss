@@ -17,11 +17,11 @@
 		    background-color: rgba(0, 0, 0, 0.2);
 			opacity: 0;
 		    text-align: center;
-		    transition: all .3s ease-in-out;
-            -webkit-transition: all .3s ease-in-out;
-            -moz-transition: all .3s ease-in-out;
-            -o-transition: all .3s ease-in-out;
-            -ms-transition: all .3s ease-in-out;
+		    -webkit-transition: all .3s ease;
+		    -moz-transition: all .3s ease;
+		    -o-transition: all .3s ease;
+		    -ms-transition: all .3s ease;
+		    transition: all .3s ease;
 	    }
 
 		&:hover .overlay {

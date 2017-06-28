@@ -5,8 +5,9 @@
  * @package OceanWP WordPress theme
  */
 
-// If Beaver Themer plugin doesn't exist then return.
-if ( ! class_exists( 'FLThemeBuilderLoader' ) ) {
+// If Beaver Builder or Beaver Themer plugins doesn't exist then return.
+if ( ! class_exists( 'FLBuilder' )
+	|| ! class_exists( 'FLThemeBuilderLoader' ) ) {
 	return;
 }
 

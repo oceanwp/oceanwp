@@ -201,6 +201,10 @@ Store
 .woocommerce .products ul,
 .woocommerce ul.products { margin: 0 -10px }
 
+/* category featured image */
+.woocommerce .category-image { margin: 0 0 20px; }
+.woocommerce .category-image img { width: 100%; }
+
 /* store > toolbar */
 .woocommerce .oceanwp-toolbar { display: block; padding: 10px 0; border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea; margin-bottom: 20px; }
 .woocommerce .oceanwp-grid-list { float: left; margin: 0 20px 0 0; }

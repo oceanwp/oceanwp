@@ -30,11 +30,13 @@ module.exports = function ( grunt ) {
 					'inc/customizer/assets/min/js/dropdown-pages.min.js'			: 'inc/customizer/controls/dropdown-pages/dropdown-pages.js',
 					'inc/customizer/assets/min/js/icon-select.min.js'				: 'inc/customizer/controls/icon-select/icon-select.js',
 					'inc/customizer/assets/min/js/multicheck.min.js'				: 'inc/customizer/controls/multicheck/multicheck.js',
+					'inc/customizer/assets/min/js/multiple-select.min.js'			: 'inc/customizer/controls/multiple-select/multiple-select.js',
 					'inc/customizer/assets/min/js/radio-image.min.js'				: 'inc/customizer/controls/radio-image/radio-image.js',
 					'inc/customizer/assets/min/js/range.min.js'						: 'inc/customizer/controls/range/range.js',
 					'inc/customizer/assets/min/js/slider.min.js'					: 'inc/customizer/controls/slider/slider.js',
 					'inc/customizer/assets/min/js/sortable.min.js'					: 'inc/customizer/controls/sortable/sortable.js',
 					'inc/customizer/assets/min/js/textarea.min.js'					: 'inc/customizer/controls/textarea/textarea.js',
+					'inc/customizer/assets/min/js/typo.min.js'						: 'inc/customizer/controls/typo/typo.js',
 					'inc/customizer/assets/min/js/typography.min.js'				: 'inc/customizer/controls/typography/typography.js'
 				}
 			},
@@ -65,11 +67,13 @@ module.exports = function ( grunt ) {
 					'inc/customizer/assets/min/css/dimensions.min.css'				: 'inc/customizer/controls/dimensions/dimensions.css',
 					'inc/customizer/assets/min/css/heading.min.css'					: 'inc/customizer/controls/heading/heading.css',
 					'inc/customizer/assets/min/css/icon-select.min.css'				: 'inc/customizer/controls/icon-select/icon-select.css',
+					'inc/customizer/assets/min/css/multiple-select.min.css'			: 'inc/customizer/controls/multiple-select/multiple-select.css',
 					'inc/customizer/assets/min/css/radio-image.min.css'				: 'inc/customizer/controls/radio-image/radio-image.css',
 					'inc/customizer/assets/min/css/range.min.css'					: 'inc/customizer/controls/range/range.css',
 					'inc/customizer/assets/min/css/slider.min.css'					: 'inc/customizer/controls/slider/slider.css',
 					'inc/customizer/assets/min/css/sortable.min.css'				: 'inc/customizer/controls/sortable/sortable.css',
 					'inc/customizer/assets/min/css/textarea.min.css'				: 'inc/customizer/controls/textarea/textarea.css',
+					'inc/customizer/assets/min/css/typo.min.css'					: 'inc/customizer/controls/typo/typo.css',
 					'inc/customizer/assets/min/css/typography.min.css'				: 'inc/customizer/controls/typography/typography.css'
 				}
 			}

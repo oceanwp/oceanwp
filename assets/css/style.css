@@ -1054,11 +1054,8 @@ a.light:hover {
 
 a, a:hover, a:focus {
   text-decoration: none;
-  transition: all .3s ease;
   -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  -ms-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 /**
@@ -2681,11 +2678,8 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   border: 0;
   padding: 0;
   z-index: 2;
-  transition: all .3s ease;
   -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  -ms-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 #site-header.medium-header #medium-searchform button:hover {
@@ -2921,11 +2915,8 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
   border-radius: 4px;
   cursor: pointer;
   text-align: center;
-  transition: background-color .3s ease;
   -webkit-transition: background-color .3s ease;
-  -moz-transition: background-color .3s ease;
-  -o-transition: background-color .3s ease;
-  -ms-transition: background-color .3s ease;
+  transition: background-color .3s ease;
 }
 
 #site-navigation-wrap .dropdown-menu > li.btn > a:hover > span {
@@ -4361,11 +4352,8 @@ body.breadcrumbs-position-default .page-header-title {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 0;
   text-align: center;
-  transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  -ms-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .blog-entry.post .thumbnail:hover .overlay {
@@ -4576,7 +4564,7 @@ ul.meta li i {
   text-align: center;
   border-radius: 50%;
   -webkit-transition: all .3s ease;
-          transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .thumbnail:hover i {
@@ -4832,7 +4820,7 @@ ul.meta li i {
   display: block;
   width: 100%;
   -webkit-transition: opacity .3s;
-          transition: opacity .3s;
+  transition: opacity .3s;
 }
 
 .related-thumb:hover img {
@@ -4987,8 +4975,8 @@ ul.page-numbers li {
   cursor: pointer;
   white-space: nowrap;
   border-radius: 2px;
-  -webkit-transition: all .3s ease-in-out;
-          transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
@@ -6409,31 +6397,6 @@ a.sidr-class-toggle-sidr-close i {
 /* Fix for the tabs under the header in the edit mode */
 body.elementor-editor-active #main, .fl-builder-edit #main {
   z-index: 11;
-}
-
-body.has-transparent-header.elementor-editor-active #main {
-  z-index: inherit;
-}
-
-body.has-transparent-header.elementor-editor-active #site-header.transparent-header {
-  z-index: 10;
-}
-
-body.has-transparent-header.elementor-editor-active .elementor-section .elementor-container {
-  z-index: 12;
-}
-
-body.has-transparent-header.elementor-editor-active #elementor .elementor-section > .elementor-shape-top,
-body.has-transparent-header.elementor-editor-active #elementor .elementor-section > .elementor-shape-bottom {
-  z-index: 13;
-}
-
-body.elementor-editor-active .elementor-inner {
-  margin-top: 0;
-}
-
-body.elementor_library-template-elementor_canvas .elementor-inner {
-  margin-top: 27px;
 }
 
 /* Fix image alignment with acption issue */

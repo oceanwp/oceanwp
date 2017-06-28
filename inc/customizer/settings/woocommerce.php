@@ -68,6 +68,39 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Heading Category Page
+			 */
+			$wp_customize->add_setting( 'ocean_woo_category_page_heading', array(
+				'sanitize_callback' 	=> 'wp_kses',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_woo_category_page_heading', array(
+				'label'    	=> esc_html__( 'Category Page', 'oceanwp' ),
+				'section'  	=> 'ocean_woocommerce_general',
+				'priority' 	=> 10,
+			) ) );
+
+			/**
+			 * Display Featured Image
+			 */
+			$wp_customize->add_setting( 'ocean_woo_category_image', array(
+				'default'           	=> 'no',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_woo_category_image', array(
+				'label'	   				=> esc_html__( 'Display Featured Image', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Display the categories featured images before the product archives.', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_general',
+				'settings' 				=> 'ocean_woo_category_image',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'yes' 	=> esc_html__( 'Yes', 'oceanwp' ),
+					'no' 	=> esc_html__( 'No', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
 			 * Heading Cart Page
 			 */
 			$wp_customize->add_setting( 'ocean_woo_cart_page_heading', array(
@@ -894,6 +927,25 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			        'max'   => 7,
 			        'step'  => 1,
 			    ),
+			) ) );
+
+			/**
+			 * Display Related Items
+			 */
+			$wp_customize->add_setting( 'ocean_woocommerce_display_related_items', array(
+				'default'           	=> 'on',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_woocommerce_display_related_items', array(
+				'label'	   				=> esc_html__( 'Display Related Items', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_single',
+				'settings' 				=> 'ocean_woocommerce_display_related_items',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'on' 	=> esc_html__( 'Yes', 'oceanwp' ),
+					'off' 	=> esc_html__( 'No', 'oceanwp' ),
+				),
 			) ) );
 
 			/**

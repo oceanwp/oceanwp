@@ -98,6 +98,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action('woocommerce_before_customer_login_form', array( $this, 'oceanwp_login_wrap_before' ) );
 				add_action('woocommerce_after_customer_login_form', array( $this, 'oceanwp_login_wrap_after' ) );
 			}
+			if ( get_theme_mod( 'ocean_woo_category_image', 'no' ) == 'yes' ) {
+				add_action('woocommerce_archive_description', array( $this, 'woocommerce_category_image' ), 2 );
+			}
 
 			// Remove the single product summary content to add the sortable control
 			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
@@ -160,8 +163,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 			add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'loop_product_thumbnail' ), 10 );
 
-			// Remove related products if count is set to 0
-			if ( '0' == get_theme_mod( 'ocean_woocommerce_related_count', '3' ) ) {
+			// Remove related products if is set to no
+			if ( 'on' != get_theme_mod( 'ocean_woocommerce_display_related_items', 'on' ) ) {
 				remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 			}
 
@@ -829,6 +832,24 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function oceanwp_login_wrap_after() {
 			echo '</div>';
+		}
+
+		/**
+		 * Display the categories featured images.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function woocommerce_category_image() {
+			if ( is_product_category() ) {
+			    global $wp_query;
+			    $cat 			= $wp_query->get_queried_object();
+			    $thumbnail_id 	= get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+			    $image 			= wp_get_attachment_url( $thumbnail_id );
+
+			    if ( $image ) {
+				    echo '<div class="category-image"><img src="' . $image . '" alt="' . $cat->name . '" /></div>';
+				}
+			}
 		}
 
 		/**

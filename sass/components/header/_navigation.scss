@@ -42,11 +42,11 @@
 			    border-radius: 4px;
 			    cursor: pointer;
 			    text-align: center;
-			    transition: background-color .3s ease;
 			    -webkit-transition: background-color .3s ease;
 			    -moz-transition: background-color .3s ease;
 			    -o-transition: background-color .3s ease;
 			    -ms-transition: background-color .3s ease;
+			    transition: background-color .3s ease;
 			}
 
 		    &.btn > a:hover > span {

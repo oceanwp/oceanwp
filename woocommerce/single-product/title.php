@@ -8,6 +8,6 @@
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
-}
-?>
+} ?>
+
 <h2 itemprop="name" class="single-post-title product_title entry-title"><?php the_title(); ?></h2>

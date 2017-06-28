@@ -838,11 +838,11 @@ body.has-transparent-header .oceanwp-sticky-header-holder {
 		    border: 0;
 		    padding: 0;
 		    z-index: 2;
-		    transition: all .3s ease;
 		    -webkit-transition: all .3s ease;
 		    -moz-transition: all .3s ease;
 		    -o-transition: all .3s ease;
 		    -ms-transition: all .3s ease;
+		    transition: all .3s ease;
 
 		    &:hover {
 		    	color: $color-5;

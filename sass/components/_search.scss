@@ -42,6 +42,9 @@ form.oceanwp-searchform {
 	    text-align: center;
 	    line-height: 1;
 	    -webkit-transition: all .3s ease;
+	    -moz-transition: all .3s ease;
+	    -o-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
 	    transition: all .3s ease;
 	    -ms-transform: translateY(-50%);
 	    -webkit-transform: translateY(-50%);

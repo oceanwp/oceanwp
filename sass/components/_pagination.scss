@@ -33,7 +33,11 @@ ul.page-numbers {
     cursor: pointer;
     white-space: nowrap;
     border-radius: 2px;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;

@@ -1,5 +1,11 @@
 # OceanWP Changelog
 
+### *2017.06.19* - 1.2.7
+* **Added** - New option in WooCommerce > General section of the customizer to allow you to display the categories featured image before the products archives on the categories pages.
+* **Added** - New option in WooCommerce > Single of the customizer to allow you to hide the related products.
+* **Fixed** - Issue with custom header and custom footer when no Elementor widgets were added, thanks to KingYes from the Elementor team.
+* **Fixed** - Issue with Elementor sections links in the editor mode when you have the transparent header style.
+
 ### *2017.06.19* - 1.2.6
 * **Fixed** - Double lighbox icon on the single product images.
 
