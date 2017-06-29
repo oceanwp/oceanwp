@@ -1,6 +1,9 @@
 # OceanWP Changelog
 
-### *2017.06.19* - 1.2.7
+### *2017.06.29* - 1.2.8
+* **Fixed** - WooCommerce section disappear when Beaver Themer is enabled.
+
+### *2017.06.29* - 1.2.7
 * **Added** - New option in WooCommerce > General section of the customizer to allow you to display the categories featured image before the products archives on the categories pages.
 * **Added** - New option in WooCommerce > Single of the customizer to allow you to hide the related products.
 * **Fixed** - Issue with custom header and custom footer when no Elementor widgets were added, thanks to KingYes from the Elementor team.

@@ -11,9 +11,9 @@ if ( ! class_exists( 'FLBuilder' )
 	return;
 }
 
-if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
+if ( ! class_exists( 'OceanWP_Beaver_Themer' ) ) :
 
-	class OceanWP_WooCommerce_Customizer {
+	class OceanWP_Beaver_Themer {
 
 		/**
 		 * Setup class.
@@ -157,4 +157,4 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 endif;
 
-return new OceanWP_WooCommerce_Customizer();
+return new OceanWP_Beaver_Themer();
