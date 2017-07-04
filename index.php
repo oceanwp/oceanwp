@@ -48,7 +48,7 @@ get_header(); ?>
 
 							<?php
 							// Get post entry content
-							get_template_part( 'partials/entry/layout' ); ?>
+							get_template_part( 'partials/entry/layout', get_post_type() ); ?>
 
 							<?php
 							// Reset counter to clear floats
