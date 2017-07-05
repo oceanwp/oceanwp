@@ -39,7 +39,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 				// Set correct post layouts
 				add_filter( 'ocean_post_layout_class', array( $this, 'layouts' ) );
-				
+
 				// Disable WooCommerce main page title
 				add_filter( 'woocommerce_show_page_title', '__return_false' );
 
@@ -60,7 +60,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 				// Border colors
 				add_filter( 'ocean_border_color_elements', array( $this, 'border_color_elements' ) );
-			
+
 			}
 
 			// Main Woo Actions
@@ -126,7 +126,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Add new typography settings
 			add_filter( 'ocean_typography_settings', array( $this, 'typography_settings' ) );
-			
+
+			// WooCommerce Match Box extension single product layout support.
+			add_action( 'woocommerce_match_box_single_product_layout', array( $this, 'remove_wc_match_box_single_product_summary' ), 10 );
 		} // End __construct
 
 		/*-------------------------------------------------------------------------------*/
@@ -149,7 +151,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			if ( '0' != get_theme_mod( 'ocean_woocommerce_upsells_count', '3' ) ) {
 				add_action( 'woocommerce_after_single_product_summary', array( $this, 'upsell_display' ), 15 );
 			}
-			
+
 			// Alter cross-sells display
 			remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 			if ( '0' != get_theme_mod( 'ocean_woocommerce_cross_sells_count', '2' ) ) {
@@ -1084,7 +1086,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Define classes to add to li element
 			$classes = array( 'woo-menu-icon' );
-			
+
 			// Add style class
 			$classes[] = 'wcmenucart-toggle-'. $style;
 
@@ -1107,7 +1109,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			} else {
 				$items .= '<li class="'. $classes .'">'. oceanwp_wcmenucart_menu_item() .'</li>';
 			}
-			
+
 			// Return menu items
 			return $items;
 		}
@@ -1141,6 +1143,27 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			return $settings;
 		}
 
+		/**
+		 * Supports WooCommerce Match Box extension by removing
+		 * duplicate single product summary features on the
+		 * product page.
+		 *
+		 * WooCommerce Match Box can be purchased from
+		 * https://sebastiendumont.com/products/woocommerce-match-box/
+		 *
+		 * @since 1.2.1
+		 * @static
+		 * @author Sébastien Dumont.
+		 * @global object WC_Product $product
+		 */
+		public static function remove_wc_match_box_single_product_summary() {
+			global $product;
+
+			if ( $product->is_type( 'mix-and-match' ) ) {
+				remove_action( 'woocommerce_single_product_summary', array( $this, 'single_product_content' ), 10 );
+				add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+			}
+		}
 	}
 
 }
