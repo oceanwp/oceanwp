@@ -45,7 +45,7 @@ get_header(); ?>
 					// All other post types.
 					else {
 
-    					get_template_part( 'partials/single/layout' );
+    					get_template_part( 'partials/single/layout', get_post_type() );
 
   					}
 

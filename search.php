@@ -27,7 +27,7 @@ get_header(); ?>
 
 						<?php while ( have_posts() ) : the_post(); ?>
 
-							<?php get_template_part( 'partials/entry/layout' ); ?>
+							<?php get_template_part( 'partials/entry/layout', get_post_type() ); ?>
 
 						<?php endwhile; ?>
 
