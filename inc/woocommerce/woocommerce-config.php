@@ -1148,9 +1148,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * duplicate single product summary features on the
 		 * product page.
 		 *
+<<<<<<< HEAD
 		 * @since 1.2.9
 		 * @static
 		 * @author Sébastien Dumont
+=======
+		 * WooCommerce Match Box can be purchased from
+		 * https://sebastiendumont.com/products/woocommerce-match-box/
+		 *
+		 * @since 1.2.1
+		 * @static
+		 * @author Sébastien Dumont.
+>>>>>>> origin/master
 		 * @global object WC_Product $product
 		 */
 		public static function remove_wc_match_box_single_product_summary() {
