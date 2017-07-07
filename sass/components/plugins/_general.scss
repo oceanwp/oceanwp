@@ -1,0 +1,13 @@
+/* Fix for the tabs under the header in the edit mode */
+body.elementor-editor-active #site-header.transparent-header,
+.fl-builder-edit #site-header.transparent-header { z-index: 1; }
+
+/* Fix image alignment with caption issue */
+.elementor-widget-image .elementor-image img {
+    display: inline-block;
+}
+
+/* Fix background hover color on the photoswipe buttons */
+.pswp__button:hover {
+    background-color: transparent;
+}

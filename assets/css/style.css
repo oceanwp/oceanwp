@@ -26,10 +26,10 @@
  * - 404 PAGE
  *
  * PLUGINS
+ * - GENERAL
  * - CHOCOLAT
  * - SLICK
  * - SIDR
- * - PAGE BUILDERS
  *
  * RESPONSIVE
  */
@@ -5577,6 +5577,25 @@ form.oceanwp-searchform button {
 }
 
 /*------------------------------------*
+	$GENERAL
+*------------------------------------*/
+/* Fix for the tabs under the header in the edit mode */
+body.elementor-editor-active #site-header.transparent-header,
+.fl-builder-edit #site-header.transparent-header {
+  z-index: 1;
+}
+
+/* Fix image alignment with caption issue */
+.elementor-widget-image .elementor-image img {
+  display: inline-block;
+}
+
+/* Fix background hover color on the photoswipe buttons */
+.pswp__button:hover {
+  background-color: transparent;
+}
+
+/*------------------------------------*
 	$SLICK
 *------------------------------------*/
 /* Slider */
@@ -6226,7 +6245,7 @@ a.sidr-class-toggle-sidr-close i {
   text-align: center;
   top: 50%;
   margin-top: -15px;
-  background: none;
+  background-color: transparent !important;
   color: #555;
   border: 0;
   -webkit-transition: all .3s ease;
@@ -6389,19 +6408,6 @@ a.sidr-class-toggle-sidr-close i {
 .slick-dots li.slick-active button:before {
   color: black;
   opacity: 0.75;
-}
-
-/*------------------------------------*
-	$PAGE BUILDERS
-*------------------------------------*/
-/* Fix for the tabs under the header in the edit mode */
-body.elementor-editor-active #main, .fl-builder-edit #main {
-  z-index: 11;
-}
-
-/* Fix image alignment with acption issue */
-.elementor-widget-image .elementor-image img {
-  display: inline-block;
 }
 
 /*------------------------------------*

@@ -30,10 +30,10 @@
  * - 404 PAGE
  *
  * PLUGINS
+ * - GENERAL
  * - CHOCOLAT
  * - SLICK
  * - SIDR
- * - PAGE BUILDERS
  *
  * RESPONSIVE
  */
@@ -146,6 +146,11 @@
 @import "components/404";
 
 /*------------------------------------*
+	$GENERAL
+*------------------------------------*/
+@import "components/plugins/general";
+
+/*------------------------------------*
 	$SLICK
 *------------------------------------*/
 @import "components/plugins/slick";
@@ -160,11 +165,6 @@
 *------------------------------------*/
 @import "components/plugins/sidr";
 @import "components/plugins/slick-theme";
-
-/*------------------------------------*
-	$PAGE BUILDERS
-*------------------------------------*/
-@import "components/plugins/builders";
 
 /*------------------------------------*
 	$RESPONSIVE

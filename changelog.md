@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### *2017.07.07* - 1.2.9
+* **Added** - New filter in the breadcrumb for the Ocean Porffolio extension.
+* **Added** - Supports WooCommerce Match Box extension, thanks to Sébastien Dumont.
+* **Added** - Supports WooCommerce Match Box extension, thanks to Sébastien Dumont.
+* **Fixed** - Tabs under the header in the edit mode with the transparent header style.
+* **Updated** - Isotope script.
+
 ### *2017.06.29* - 1.2.8
 * **Fixed** - WooCommerce section disappear when Beaver Themer is enabled.
 

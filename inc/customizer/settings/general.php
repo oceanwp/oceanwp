@@ -1944,7 +1944,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'.blog-entry.post .blog-entry-readmore a:hover',
 				'ul.meta li a:hover',
 				'.dropcap',
-				'.single-post nav.post-navigation .nav-links .title',
+				'.single nav.post-navigation .nav-links .title',
 				'.related-post-title a:hover',
 				'#wp-calendar caption',
 				'.contact-info-widget i',

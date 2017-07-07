@@ -253,7 +253,7 @@ a.sidr-class-toggle-sidr-close {
     text-align: center;
     top: 50%;
     margin-top: -15px;
-    background: none;
+    background-color: transparent !important;
     color: $color-11;
     border: 0;
     transition: all .3s ease;
