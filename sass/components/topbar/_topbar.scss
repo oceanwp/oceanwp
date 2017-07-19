@@ -1,26 +1,28 @@
 #top-bar-wrap {
-  background-color: #fff;
-  font-size: 12px;
-  border-bottom: 1px solid $color-9;
+	position: relative;
+	background-color: #fff;
+	font-size: 12px;
+	border-bottom: 1px solid $color-9;
+	z-index: 10;
 }
 
 #top-bar {
-  padding: 8px 0;
+	padding: 8px 0;
 }
 
 #top-bar-inner {
-  position: relative;
+	position: relative;
 }
 
 .top-bar-left {
-  float: left;
+	float: left;
 }
 
 .top-bar-right {
-  float: right;
+	float: right;
 }
 
 .top-bar-centered {
-  float: none;
-  text-align: center;
+	float: none;
+	text-align: center;
 }

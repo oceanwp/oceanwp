@@ -28,12 +28,8 @@ form textarea {
 	background-color: transparent;
 	color: $color-2;
 	border: 1px solid $color-10;
-	border-radius: 3px;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
+	@include border-radius( 3px );
+    @include transition( all .3s ease );
 }
 
 form input[type="number"] {
@@ -78,10 +74,8 @@ input[type="checkbox"] {
 	clear: none;
 	cursor: pointer;
 	-webkit-appearance: none;
-	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-	box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-	-webkit-transition: .05s border-color ease-in-out;
-	transition: .05s border-color ease-in-out;
+	@include box-shadow( inset 0 1px 2px rgba(0,0,0,.1) );
+	@include transition( .05s border-color ease-in-out );
 }
 
 input[type=radio]:checked:before,
@@ -110,10 +104,8 @@ form input:not([type]) {
 	display: inline-block;
 	padding: 5px 10px;
 	border: 1px solid #ccc;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 3px #ddd;
-	-moz-box-shadow: inset 0 1px 3px #ddd;
-	box-shadow: inset 0 1px 3px #ddd;
+	@include border-radius( 4px );
+	@include box-shadow( inset 0 1px 3px #ddd );
 }
 
 
@@ -265,11 +257,7 @@ input[type="submit"],
     text-align: center;
     letter-spacing: 0.1em;
     line-height: 1;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
+    @include transition( all .3s ease );
 }
 
 input[type="button"]:hover,
@@ -297,17 +285,13 @@ button:focus,
 .pure-button-disabled:focus,
 .pure-button-disabled:active {
 	cursor: not-allowed;
-	opacity: .40;
+	@include opacity( .40 );
 	border: none;
 	background-image: none;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+	@include box-shadow( none );
 
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	filter: alpha(opacity=40);
-	-khtml-opacity: .40;
-	-moz-opacity: .40;
 }
 
 /* Firefox: Get rid of the inner focus border */

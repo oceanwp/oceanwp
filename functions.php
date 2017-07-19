@@ -154,7 +154,8 @@ class OCEANWP_Theme_Class {
 		require_once ( $dir .'customizer/controls/typography/webfonts.php' );
 		require_once ( $dir .'walker/init.php' );
 		require_once ( $dir .'walker/menu-walker.php' );
-		require_once ( $dir .'third/beaver-themer.php' );
+		require_once ( $dir .'third/class-beaver-themer.php' );
+		require_once ( $dir .'third/class-lifter-lms.php' );
 	}
 
 	/**
@@ -396,7 +397,7 @@ class OCEANWP_Theme_Class {
 
 		// WooCommerce scripts
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
-			wp_enqueue_script( 'oceanwp-woocommerce', $dir .'dynamic/woo-scripts.min.js', array( 'jquery' ), $theme_version, true );
+			wp_enqueue_script( 'oceanwp-woocommerce', $dir .'dynamic/woo/woo-scripts.min.js', array( 'jquery' ), $theme_version, true );
 		}
 
 		// Load minified js
@@ -730,7 +731,7 @@ class OCEANWP_Theme_Class {
 	public static function the_author_posts_link( $link ) {
 
 		// Add schema markup
-		$schema = 'itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"';
+		$schema = oceanwp_get_schema_markup( 'author_link' );
 		if ( $schema ) {
 			$link = str_replace( 'rel="author"', 'rel="author" '. $schema, $link );
 		}

@@ -29,11 +29,16 @@ if ( $content
 
         <?php
         // Check if there is content for the topbar
-        if ( $content ) : ?>
+        if ( $content
+            || is_customize_preview() ) : ?>
 
-            <?php
-            // Display top bar content
-            echo do_shortcode( $content ); ?>
+            <span class="topbar-content">
+
+                <?php
+                // Display top bar content
+                echo do_shortcode( $content ); ?>
+
+            </span>
 
         <?php endif; ?>
 

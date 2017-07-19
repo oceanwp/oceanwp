@@ -329,12 +329,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function add_custom_css() {
 
-			// Register WooCommerce style
-			wp_enqueue_style( 'oceanwp-woocommerce', OCEANWP_CSS_DIR_URI .'woocommerce.min.css' );
+			// Register WooCommerce styles
+			wp_enqueue_style( 'oceanwp-woocommerce', OCEANWP_CSS_DIR_URI .'woo/woocommerce.min.css' );
+			wp_enqueue_style( 'oceanwp-woo-star-font', OCEANWP_CSS_DIR_URI .'woo/woo-star-font.min.css' );
 
 			// If rtl
 			if ( is_RTL() ) {
-				wp_enqueue_style( 'oceanwp-woocommerce-rtl', OCEANWP_CSS_DIR_URI .'woocommerce-rtl.css' );
+				wp_enqueue_style( 'oceanwp-woocommerce-rtl', OCEANWP_CSS_DIR_URI .'woo/woocommerce-rtl.css' );
 			}
 
 		}

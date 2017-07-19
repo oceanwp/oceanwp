@@ -7,17 +7,26 @@
 
 namespace Elementor;
 
-// Get elementor template
-$get_template 	= get_theme_mod( 'ocean_error_page_elementor_templates' );
+// Get ID
+$get_id = get_theme_mod( 'ocean_error_page_id' );
+
+// Get the elementor template
+$e_template = get_theme_mod( 'ocean_error_page_elementor_templates' );
+if ( ! empty( $e_template ) ) {
+    $get_id = $e_template;
+}
+
+// Get the template
+$template = get_theme_mod( 'ocean_error_page_template' );
+if ( ! empty( $template ) ) {
+    $get_id = $template;
+}
 
 // Check if page is Elementor page
-$elementor 		= get_post_meta( $get_template, '_elementor_edit_mode', true );
+$elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
 
-// Get page
-$get_page    	= oceanwp_error_page_content();
-
-// Get page ID
-$get_page_id   	= get_theme_mod( 'ocean_error_page_id' );
+// Get content
+$get_content = oceanwp_error_page_template_content();
 
 get_header(); ?>
 
@@ -38,24 +47,32 @@ get_header(); ?>
 				<article class="entry clr">
 
 					<?php
-					// If Elementor
-				    if ( class_exists( 'Elementor\Plugin' )
-				    	&& $get_template
-				    	&& $elementor) {
-						echo Plugin::instance()->frontend->get_builder_content_for_display( $get_template );
-			    	}
+					// Check if there is a template
+			        if ( ! empty( $get_id ) ) {
 
-			        // If page
-			        else if ( ! empty( $get_page_id ) ) {
+					    // If Elementor
+					    if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
 
-			            // If Beaver Builder
-			            if ( class_exists( 'FLBuilder' ) ) {
-				            echo do_shortcode( '[fl_builder_insert_layout id="' . $get_page_id . '"]' );
-			        	} else {
-				            echo do_shortcode( $get_page );
-				        }
+					        echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
 
-			        }
+					    }
+
+					    // If Beaver Builder
+					    else if ( class_exists( 'FLBuilder' ) && ! empty( $get_id ) ) {
+
+					        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
+
+					    }
+
+					    // Else
+					    else {
+
+					        // Display template content
+					        echo do_shortcode( $get_content );
+
+					    }
+
+					}
 
 				    // Else
 				    else { ?>

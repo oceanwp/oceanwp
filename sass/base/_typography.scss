@@ -19,11 +19,7 @@ a.light {
 
 a, a:hover, a:focus {
 	text-decoration: none;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
+    @include transition( all .3s ease );
 }
 
 /**
@@ -219,9 +215,7 @@ hr {
 	* {
 		color: #000 !important;
 		background: transparent !important;
-		-webkit-box-shadow: none !important;
-		-moz-box-shadow: none !important;
-		box-shadow: none !important;
+		@include box-shadow( none !important );
 		text-shadow: none !important;
 	}
 

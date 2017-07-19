@@ -11,7 +11,7 @@ if ( in_array( oceanwp_post_layout(), array( 'full-screen', 'full-width' ) ) ) {
 
 <?php do_action( 'ocean_before_sidebar' ); ?>
 
-<aside id="sidebar" class="sidebar-container widget-area sidebar-primary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+<aside id="sidebar" class="sidebar-container widget-area sidebar-primary"<?php oceanwp_schema_markup( 'sidebar' ); ?>>
 
 	<?php do_action( 'ocean_before_sidebar_inner' ); ?>
 

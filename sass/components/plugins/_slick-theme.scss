@@ -67,13 +67,9 @@ $slick-opacity-not-active: 0.25 !default;
     text-align: center;
     cursor: pointer;
     padding: 0;
-    border-radius: 0;
+    @include border-radius( 0 );
     z-index: 10;
-    transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
+    @include transition( all .3s ease-in-out );
     &:hover, &:focus {
         background-color: rgba(0,0,0,0.9);
         color: $color-1;
@@ -144,7 +140,7 @@ $slick-opacity-not-active: 0.25 !default;
             &:hover, &:focus {
                 outline: none;
                 &:before {
-                    opacity: $slick-opacity-on-hover;
+                    @include opacity( $slick-opacity-on-hover );
                 }
             }
             &:before {
@@ -159,14 +155,14 @@ $slick-opacity-not-active: 0.25 !default;
                 line-height: 20px;
                 text-align: center;
                 color: $slick-dot-color;
-                opacity: $slick-opacity-not-active;
+                @include opacity( $slick-opacity-not-active );
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
             }
         }
         &.slick-active button:before {
             color: $slick-dot-color-active;
-            opacity: $slick-opacity-default;
+            @include opacity( $slick-opacity-default );
         }
     }
 }

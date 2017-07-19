@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } ?>
 
-<div class="entry-content clr" itemprop="text">
+<div class="entry-content clr"<?php oceanwp_schema_markup( 'entry_content' ); ?>>
 	<?php the_content();
 
 	wp_link_pages( array(

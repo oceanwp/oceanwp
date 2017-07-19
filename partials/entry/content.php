@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } ?>
 
-<div class="blog-entry-summary clr">
+<div class="blog-entry-summary clr"<?php oceanwp_schema_markup( 'entry_content' ); ?>>
 
     <?php
     // Display excerpt if auto excerpts are enabled in the admin

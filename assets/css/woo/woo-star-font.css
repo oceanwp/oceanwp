@@ -1,0 +1,42 @@
+/*------------------------------------------------------------------
+Woo Star Font
+-------------------------------------------------------------------*/
+@font-face { font-family: 'star'; src: url('../../fonts/star/star.eot'); src: url('../../fonts/star/star.eot?#iefix') format('embedded-opentype'), url('../../fonts/star/star.woff') format('woff'), url('../../fonts/star/star.ttf') format('truetype'), url('../../fonts/star/star.svg#star') format('svg'); font-weight: normal; font-style: normal; }
+.woocommerce p.stars a,
+.woocommerce .star-rating { overflow: hidden; position: relative; height: 1em; line-height: 1em; font-size: 14px; width: 5.4em; font-family: 'star'; }
+.woocommerce .star-rating:before { content: "\73\73\73\73\73"; color: #dfdbdf; float: left; top: 0; left: 0; position: absolute; }
+.woocommerce .star-rating span { overflow: hidden; float: left; top: 0; left: 0; position: absolute; padding-top: 1.5em; color: #f9ca63; }
+.woocommerce .star-rating span:before { content: "\53\53\53\53\53"; top: 0; position: absolute; left: 0; }
+
+/* Single > Reviews > Stars */
+p.stars:after { content: ''; display: block; clear: both; }
+p.stars span a { display: inline-block; font-size: 14px; font-weight: 700; color: #ddd; border-right: 1px solid; margin-right: 1em; text-indent: -9999px; position: relative; }
+p.stars span a:after { font-family: 'star'; text-indent: 0; position: absolute; top: 0; left: 0; }
+p.stars span a:hover,
+p.stars span a:focus,
+p.stars span a.active { color: #f1c40f; }
+p.stars span a.star-1 { width: 2em; }
+p.stars span a.star-1:after { content: '\73'; }
+p.stars span a.star-1:hover:after,
+p.stars span a.star-1:focus:after,
+p.stars span a.star-1.active:after { content: '\53'; }
+p.stars span a.star-2 { width: 3em; }
+p.stars span a.star-2:after { content: '\73\73'; }
+p.stars span a.star-2:hover:after,
+p.stars span a.star-2:focus:after,
+p.stars span a.star-2.active:after { content: '\53\53'; }
+p.stars span a.star-3 { width: 4em; }
+p.stars span a.star-3:after { content: '\73\73\73'; }
+p.stars span a.star-3:hover:after,
+p.stars span a.star-3:focus:after,
+p.stars span a.star-3.active:after { content: '\53\53\53'; }
+p.stars span a.star-4 { width: 5em; }
+p.stars span a.star-4:after { content: '\73\73\73\73'; }
+p.stars span a.star-4:hover:after,
+p.stars span a.star-4:focus:after,
+p.stars span a.star-4.active:after { content: '\53\53\53\53'; }
+p.stars span a.star-5 { width: 6em; border: 0; }
+p.stars span a.star-5:after { content: '\73\73\73\73\73'; }
+p.stars span a.star-5:hover:after,
+p.stars span a.star-5:focus:after,
+p.stars span a.star-5.active:after { content: '\53\53\53\53\53'; }

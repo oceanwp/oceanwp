@@ -456,6 +456,22 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Schema Markup
+			 */
+			$wp_customize->add_setting( 'ocean_schema_markup', array(
+				'default'           	=> true,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_schema_markup', array(
+				'label'	   				=> esc_html__( 'Enable Schema Markup', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_general_settings',
+				'settings' 				=> 'ocean_schema_markup',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
 			 * Heading Pages
 			 */
 			$wp_customize->add_setting( 'ocean_pages_heading', array(
@@ -615,7 +631,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 				$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_error_page_elementor_templates', array(
 					'label'	   				=> esc_html__( 'Elementor Templates', 'oceanwp' ),
-				    'description' 			=> esc_html__( 'Select your template created in Elementor > My Library.', 'oceanwp' ),
+				    'description' 			=> esc_html__( 'Deprecated, this field is no longer supported. Please use the Select Template field below instead.', 'oceanwp' ),
 					'type' 					=> 'select',
 					'section'  				=> 'ocean_general_settings',
 					'settings' 				=> 'ocean_error_page_elementor_templates',
@@ -636,14 +652,32 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				) );
 
 				$wp_customize->add_control( new OceanWP_Customizer_Dropdown_Pages( $wp_customize, 'ocean_error_page_id', array(
-					'label'	   				=> esc_html__( 'Page ID', 'oceanwp' ),
-					'description'	   		=> esc_html__( 'Choose a page where the content will be displayed in the popup.', 'oceanwp' ),
+					'label'	   				=> '<span style="color: red;">' . esc_html__( 'Page ID', 'oceanwp' ) . '</span>',
+					'description'	   		=> esc_html__( 'Deprecated, this field is no longer supported. Please use the Select Template field below instead.', 'oceanwp' ),
 					'section'  				=> 'ocean_general_settings',
 					'settings' 				=> 'ocean_error_page_id',
 					'priority' 				=> 10,
 				) ) );
 
 			}
+
+			/**
+			 * Template
+			 */
+			$wp_customize->add_setting( 'ocean_error_page_template', array(
+				'default'           	=> '0',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_error_page_template', array(
+				'label'	   				=> esc_html__( 'Select Template', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose a template created in Theme Panel > My Library.', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_general_settings',
+				'settings' 				=> 'ocean_error_page_template',
+				'priority' 				=> 10,
+				'choices' 				=> oceanwp_customizer_helpers( 'library' ),
+			) ) );
 
 			/**
 			 * Section
@@ -2142,7 +2176,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$tablet_ph_bottom_padding 		= get_theme_mod( 'ocean_page_header_tablet_bottom_padding' );
 			$mobile_ph_top_padding 			= get_theme_mod( 'ocean_page_header_mobile_top_padding' );
 			$mobile_ph_bottom_padding 		= get_theme_mod( 'ocean_page_header_mobile_bottom_padding' );
-			$page_header_bg 				= get_theme_mod( 'ocean_page_header_background', '#f5f5f5' );
 			$page_header_title_color 		= get_theme_mod( 'ocean_page_header_title_color', '#333333' );
 			$breadcrumbs_text_color 		= get_theme_mod( 'ocean_breadcrumbs_text_color', '#c6c6c6' );
 			$breadcrumbs_seperator_color 	= get_theme_mod( 'ocean_breadcrumbs_seperator_color', '#c6c6c6' );
@@ -2456,11 +2489,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			if ( ! empty( $mobile_ph_top_padding )
 				|| ! empty( $mobile_ph_bottom_padding ) ) {
 				$css .= '@media (max-width: 480px){.page-header, .has-transparent-header .page-header{'. $mobile_page_header_padding_css .'}}';
-			}
-
-			// Page header background
-			if ( ! empty( $page_header_bg ) && '#f5f5f5' != $page_header_bg ) {
-				$css .= '.page-header{background-color:'. $page_header_bg .';}';
 			}
 
 			// Page header color

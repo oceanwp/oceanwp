@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <article class="single-library-article clr">
 
-	<div class="entry clr" itemprop="text">
+	<div class="entry clr"<?php oceanwp_schema_markup( 'entry_content' ); ?>>
 		<?php the_content(); ?>
 	</div>
 

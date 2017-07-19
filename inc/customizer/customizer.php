@@ -43,21 +43,21 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			$dir = OCEANWP_INC_DIR . 'customizer/controls/';
 
 			// Load customize control classes
-			require_once( $dir . 'buttonset/class-control-buttonset.php' 				);
-			require_once( $dir . 'color/class-control-color.php' 						);		
-			require_once( $dir . 'dimensions/class-control-dimensions.php' 				);
-			require_once( $dir . 'dropdown-pages/class-control-dropdown-pages.php' 		);
-			require_once( $dir . 'heading/class-control-heading.php' 					);
-			require_once( $dir . 'icon-select/class-control-icon-select.php' 			);
-			require_once( $dir . 'multicheck/class-control-multicheck.php' 				);
-			require_once( $dir . 'multiple-select/class-control-multiple-select.php' 	);
-			require_once( $dir . 'radio-image/class-control-radio-image.php' 			);
-			require_once( $dir . 'range/class-control-range.php' 						);
-			require_once( $dir . 'slider/class-control-slider.php' 						);
-			require_once( $dir . 'sortable/class-control-sortable.php' 					);
-			require_once( $dir . 'textarea/class-control-textarea.php' 					);
-			require_once( $dir . 'typo/class-control-typo.php' 							);
-			require_once( $dir . 'typography/class-control-typography.php' 				);
+			require_once( $dir . 'buttonset/class-control-buttonset.php' 					);
+			require_once( $dir . 'color/class-control-color.php' 							);		
+			require_once( $dir . 'dimensions/class-control-dimensions.php' 					);
+			require_once( $dir . 'dropdown-pages/class-control-dropdown-pages.php' 			);
+			require_once( $dir . 'heading/class-control-heading.php' 						);
+			require_once( $dir . 'icon-select/class-control-icon-select.php' 				);
+			require_once( $dir . 'multicheck/class-control-multicheck.php' 					);
+			require_once( $dir . 'multiple-select/class-control-multiple-select.php' 		);
+			require_once( $dir . 'radio-image/class-control-radio-image.php' 				);
+			require_once( $dir . 'range/class-control-range.php' 							);
+			require_once( $dir . 'slider/class-control-slider.php' 							);
+			require_once( $dir . 'sortable/class-control-sortable.php' 						);
+			require_once( $dir . 'textarea/class-control-textarea.php' 						);
+			require_once( $dir . 'typo/class-control-typo.php' 								);
+			require_once( $dir . 'typography/class-control-typography.php' 					);
 
 			// Register JS control types
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Buttonset_Control' 		);

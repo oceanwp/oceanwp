@@ -14,7 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 $sections = oceanwp_blog_single_meta();
 
 // Return if sections are empty
-if ( empty( $sections ) ) {
+if ( empty( $sections )
+	|| 'post' != get_post_type() ) {
 	return;
 }
 
@@ -30,11 +31,11 @@ if ( 'quote' == get_post_format() ) {
 	foreach ( $sections as $section ) { ?>
 
 		<?php if ( 'author' == $section ) { ?>
-			<li class="meta-author" itemprop="name"><i class="icon-user"></i><?php echo the_author_posts_link(); ?></li>
+			<li class="meta-author"<?php oceanwp_schema_markup( 'author_name' ); ?>><i class="icon-user"></i><?php echo the_author_posts_link(); ?></li>
 		<?php } ?>
 
 		<?php if ( 'date' == $section ) { ?>
-			<li class="meta-date" itemprop="datePublished"><i class="icon-clock"></i><?php echo get_the_date(); ?></li>
+			<li class="meta-date"<?php oceanwp_schema_markup( 'publish_date' ); ?>><i class="icon-clock"></i><?php echo get_the_date(); ?></li>
 		<?php } ?>
 
 		<?php if ( 'categories' == $section ) { ?>

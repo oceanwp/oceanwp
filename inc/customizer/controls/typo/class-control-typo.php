@@ -70,9 +70,9 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-select2', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/select2.min.js', array( 'jquery' ), false, true );
-		wp_enqueue_style( 'select2', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/select2.min.css', null );
-		wp_enqueue_script( 'oceanwp-typo-js', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/typo.min.js', array( 'jquery', 'customize-base', 'oceanwp-select2' ), false, true );
+		wp_enqueue_script( 'oceanwp-select2', OCEANWP_INC_DIR_URI . 'customizer/controls/select2.min.js', array( 'jquery' ), false, true );
+		wp_enqueue_style( 'select2', OCEANWP_INC_DIR_URI . 'customizer/controls/select2.min.css', null );
+		wp_enqueue_script( 'oceanwp-typo-js', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/typo.min.js', array( 'jquery', 'customize-base', 'select2' ), false, true );
 		wp_enqueue_style( 'oceanwp-typo', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/typo.min.css', null );
 	}
 

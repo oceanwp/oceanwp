@@ -142,7 +142,7 @@ body.breadcrumbs-position-default .page-header-title {
   width: 100%;
   background-color: #000;
   z-index: 1;
-  opacity: 0.5;
+  @include opacity( 0.5 );
 }
 
 /**

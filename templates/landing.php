@@ -3,30 +3,19 @@
  * Template Name: Landing Page
  *
  * @package OceanWP WordPress theme
- */
-
-// Main schema markup
-if ( is_singular( 'post' ) ) {
-	$itemprop = '';
-	$itemtype = 'http://schema.org/Blog';
-} else {
-	$itemtype = 'http://schema.org/WebPageElement';
-	$itemprop = 'mainContentOfPage';
-} ?>
+ */ ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?><?php oceanwp_schema_markup( 'html' ); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
 
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
 
 <!-- Begin Body -->
-<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<body <?php body_class(); ?><?php oceanwp_schema_markup( 'body' ); ?>>
 
 <?php do_action( 'ocean_before_outer_wrap' ); ?>
 
@@ -38,7 +27,7 @@ if ( is_singular( 'post' ) ) {
 
 		<?php do_action( 'ocean_before_main' ); ?>
 
-		<main id="main" class="site-main clr" itemprop="<?php echo esc_attr( $itemprop ); ?>" itemscope="itemscope" itemtype="<?php echo esc_attr( $itemtype ); ?>">
+		<main id="main" class="site-main clr"<?php oceanwp_schema_markup( 'main' ); ?>>
 
 			<?php do_action( 'ocean_before_content_wrap' ); ?>
 

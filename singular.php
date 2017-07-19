@@ -35,10 +35,11 @@ get_header(); ?>
 
 					}
 
-					// Elementor library posts
-    				elseif ( is_singular( 'elementor_library' ) ) {
+					// Library post types
+    				elseif ( is_singular( 'oceanwp_library' )
+    						|| is_singular( 'elementor_library' ) ) {
 
-    					get_template_part( 'partials/elementor/layout' );
+    					get_template_part( 'partials/library/layout' );
 
     				}
 

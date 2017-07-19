@@ -5,15 +5,27 @@
  * @package OceanWP WordPress theme
  */
 
+namespace Elementor;
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$footer_query = false;
+// Get ID
+$get_id = get_theme_mod( 'ocean_footer_widgets_page_id' );
 
-// Get page ID
-$get_id 	= get_theme_mod( 'ocean_footer_widgets_page_id' );
+// Get the template
+$template = get_theme_mod( 'ocean_footer_widgets_template' );
+if ( ! empty( $template ) ) {
+    $get_id = $template;
+}
+
+// Check if page is Elementor page
+$elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
+
+// Get content
+$get_content = oceanwp_footer_template_content();
 
 // Get footer widgets columns
 $columns    = apply_filters( 'ocean_footer_widgets_columns', get_theme_mod( 'ocean_footer_widgets_columns', '4' ) );
@@ -37,11 +49,7 @@ if ( ! empty( $mobile_columns ) ) {
 if ( 'all-devices' != $visibility ) {
 	$wrap_classes[] = $visibility;
 }
-$wrap_classes = implode( ' ', $wrap_classes );
-
-if ( ! empty( $get_id ) ) {
-    $footer_query = new WP_Query( array( 'p' => $get_id, 'post_type' => 'any' ) );
-} ?>
+$wrap_classes = implode( ' ', $wrap_classes ); ?>
 
 <?php do_action( 'ocean_before_footer_widgets' ); ?>
 
@@ -52,22 +60,28 @@ if ( ! empty( $get_id ) ) {
 	<div class="container">
 
         <?php
-        // Check if there is page for the footer
+        // Check if there is a template for the footer
         if ( ! empty( $get_id ) ) {
 
+			// If Elementor
+		    if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+
+		        echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
+
+		    }
+
 		    // If Beaver Builder
-		    if ( class_exists( 'FLBuilder' ) ) {
+		    else if ( class_exists( 'FLBuilder' ) && ! empty( $get_id ) ) {
 
 		        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
 		    }
 
-		    // If page has content
-		    else if ( ! empty( $footer_query ) && $footer_query->have_posts() ) {
+		    // Else
+		    else {
 
-		        $footer_query->the_post();
-		        the_content();
-		        wp_reset_postdata();
+		        // Display template content
+		        echo do_shortcode( $get_content );
 
 		    }
 

@@ -6,7 +6,7 @@
  */ ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?><?php oceanwp_schema_markup( 'html' ); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -14,17 +14,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<?php
-// Main schema markup
-if ( is_singular( 'post' ) ) {
-	$itemtype = 'http://schema.org/Blog';
-	$itemprop = '';
-} else {
-	$itemtype = 'http://schema.org/WebPageElement';
-	$itemprop = 'mainContentOfPage';
-} ?>
-
-<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<body <?php body_class(); ?>>
 
 	<?php do_action( 'ocean_before_outer_wrap' ); ?>
 
@@ -40,6 +30,6 @@ if ( is_singular( 'post' ) ) {
 
 			<?php do_action( 'ocean_before_main' ); ?>
 			
-			<main id="main" class="site-main clr" itemprop="<?php echo $itemprop; ?>" itemscope="itemscope" itemtype="<?php echo $itemtype; ?>">
+			<main id="main" class="site-main clr"<?php oceanwp_schema_markup( 'main' ); ?>>
 
 				<?php do_action( 'ocean_page_header' ); ?>

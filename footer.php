@@ -47,7 +47,7 @@ get_template_part( 'partials/mobile/mobile-nav' ); ?>
 
 <?php
 // Mobile search form
-if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
+if ( get_theme_mod( 'ocean_mobile_menu_search', true ) ) {
     get_template_part( 'partials/mobile/mobile-search' );
 } ?>
 

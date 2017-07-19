@@ -71,7 +71,7 @@
 		width: 80px;
 		height: 80px;
 		margin-right: 30px;
-		border-radius: 50%;
+		@include border-radius( 50% );
 	}
 
 	.comment-content {
@@ -122,7 +122,7 @@
     float: right;
     border: 2px solid $color-9;
     padding: 3px 10px;
-    border-radius: 3px;
+    @include border-radius( 3px );
     text-transform: uppercase;
     letter-spacing: 0.1em;
 

@@ -1,0 +1,54 @@
+#site-header.center-header {
+	#site-logo {
+		display: none;
+	}
+
+	#site-navigation-wrap {
+		float: none;
+		right: auto;
+		text-align: center;
+
+		.dropdown-menu > li {
+		    float: none;
+		    display: inline-block;
+
+		    > a {
+		    	font-size: 12px;
+			    font-weight: 600;
+			    padding: 0 18px;
+			    text-transform: uppercase;
+		    }
+		}
+	}
+
+	#site-navigation {
+		position: relative;
+		display: inline-block;
+		
+		.middle-site-logo {
+			display: inline-block;
+			margin: 15px 25px;	
+
+			a {
+				background-color: transparent !important;
+				padding: 0 !important;
+				line-height: 1 !important;
+
+				img {
+					width: auto;
+					vertical-align: middle;
+				    @include transition( opacity .3s ease-out );
+				}
+
+				&:hover img {
+				   	@include opacity( 0.6 );
+				}
+			}
+		}
+	}
+}
+
+/* Hide if is not in main menu */
+#top-bar-nav > ul > li.middle-site-logo {
+	display: none;
+}

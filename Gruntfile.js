@@ -16,10 +16,8 @@ module.exports = function ( grunt ) {
 		uglify: {
 			dev: {
 				files: {
-					'assets/js/plugins.min.js'										: [ 'assets/js/devs/**/*.js' ],
-
 					'assets/js/dynamic/html5.min.js'								: 'assets/js/dynamic/html5.js',
-					'assets/js/dynamic/woo-scripts.min.js'							: 'assets/js/dynamic/woo-scripts.js',
+					'assets/js/dynamic/woo/woo-scripts.min.js'						: [ 'assets/js/dynamic/woo/devs/**/*.js' ],
 
 					'inc/customizer/assets/js/customize-preview.min.js'				: 'inc/customizer/assets/js/customize-preview.js',
 					'inc/customizer/assets/js/typography-customize-preview.min.js'	: 'inc/customizer/assets/js/typography-customize-preview.js',
@@ -42,7 +40,7 @@ module.exports = function ( grunt ) {
 			},
 			prod: {
 				files: {
-					'assets/js/main.min.js'											: [ 'assets/js/plugins.min.js', 'assets/js/main.js' ]
+					'assets/js/main.min.js'											: [ 'assets/js/devs/**/*.js', 'assets/js/core/**/*.js' ]
 				}
 			}
 		},
@@ -56,7 +54,7 @@ module.exports = function ( grunt ) {
 			},
 			prod: {
 				files: {
-					'assets/css/woocommerce.min.css'								: 'assets/css/woocommerce.css',
+					'assets/css/woo/woo-star-font.min.css'							: 'assets/css/woo/woo-star-font.css',
 					'assets/css/editor-style.min.css'								: 'assets/css/editor-style.css',
 
 					'inc/customizer/assets/css/customizer-simple-line-icons.min.css': 'inc/customizer/assets/css/customizer-simple-line-icons.css',
@@ -87,6 +85,7 @@ module.exports = function ( grunt ) {
                     sourceMap: false,
                 },
                 files: {
+					'assets/css/woo/woocommerce.css': 'sass/woocommerce.scss',
 					'assets/css/style.css': 'sass/stylesheet.scss',
                 }
             },
@@ -97,6 +96,7 @@ module.exports = function ( grunt ) {
                 },
                 files: {
 					'style.css': 'sass/style.scss',
+					'assets/css/woo/woocommerce.min.css': 'sass/woocommerce.scss',
 					'assets/css/style.min.css': 'sass/stylesheet.scss',
                 }
             }

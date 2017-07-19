@@ -229,14 +229,16 @@ only screen and (                min-resolution: 2dppx) {
 	}
 	
 	/* header > navbar */
-	#top-bar-nav,
-	#site-navigation-wrap,
-	#oceanwp-social-menu {
-		display: none;
-	}
+	body.default-breakpoint {
+		#top-bar-nav,
+		#site-navigation-wrap,
+		#oceanwp-social-menu {
+			display: none;
+		}
 
-	#oceanwp-mobile-menu-icon {
-		display: block;
+		#oceanwp-mobile-menu-icon {
+			display: block;
+		}
 	}
 
 	/* Hide social and search form in sidr for the top menu header style */
@@ -587,7 +589,7 @@ only screen and (                min-resolution: 2dppx) {
 			.left.hide,
 			.right.hide {
 				visibility: visible;
-				opacity: 1;
+				@include opacity( 1 );
 			}
 		}
 

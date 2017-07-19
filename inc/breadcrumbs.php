@@ -178,7 +178,7 @@ class OceanWP_Breadcrumb_Trail {
 		if ( 0 < $item_count ) {
 
 			// Open the unordered list.
-			$breadcrumb .= '<ul class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">';
+			$breadcrumb .= '<ul class="trail-items"'. oceanwp_get_schema_markup( 'breadcrumb' ) .'>';
 
 			// Add the number of items and item list order schema.
 			$breadcrumb .= sprintf( '<meta name="numberOfItems" content="%d" />', absint( $item_count ) );
@@ -194,7 +194,7 @@ class OceanWP_Breadcrumb_Trail {
 				preg_match( '/(<a.*?>)(.*?)(<\/a>)/i', $item, $matches );
 
 				// Wrap the item text with appropriate itemprop.
-				$item = !empty( $matches ) ? sprintf( '%s<span itemprop="name">%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span itemprop="name">%s</span>', $item );
+				$item = !empty( $matches ) ? sprintf( '%s<span'. oceanwp_get_schema_markup( 'author_name' ) .'>%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span'. oceanwp_get_schema_markup( 'author_name' ) .'>%s</span>', $item );
 
 				// Add list item classes.
 				$item_class = 'trail-item';
@@ -206,10 +206,10 @@ class OceanWP_Breadcrumb_Trail {
 					$item_class .= ' trail-end';
 
 				// Create list item attributes.
-				$attributes = 'itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="' . $item_class . '"';
+				$attributes = 'class="' . $item_class . '"'. oceanwp_get_schema_markup( 'breadcrumb_list' ) .'';
 
 				// Build the meta position HTML.
-				$meta = sprintf( '<meta itemprop="position" content="%s" />', absint( $item_position ) );
+				$meta = sprintf( '<meta content="%s"'. oceanwp_get_schema_markup( 'position' ) .' />', absint( $item_position ) );
 
 				// Build the list item.
 				$breadcrumb .= sprintf( '<li %s>%s%s</li>', $attributes, $item, $meta );
@@ -226,7 +226,7 @@ class OceanWP_Breadcrumb_Trail {
 
 			// Wrap the breadcrumb trail.
 			$breadcrumb = sprintf(
-				'<%1$s role="navigation" aria-label="%2$s" class="site-breadcrumbs clr'. $p_class .'" itemprop="breadcrumb">%3$s%4$s%5$s</%1$s>',
+				'<%1$s role="navigation" aria-label="%2$s" class="site-breadcrumbs clr'. $p_class .'"'. oceanwp_get_schema_markup( 'breadcrumb_itemprop' ) .'>%3$s%4$s%5$s</%1$s>',
 				tag_escape( $this->args['container'] ),
 				esc_attr( $this->labels['aria_label'] ),
 				$this->args['before'],

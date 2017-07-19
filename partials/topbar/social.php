@@ -5,6 +5,8 @@
  * @package OceanWP WordPress theme
  */
 
+namespace Elementor;
+
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -29,11 +31,47 @@ if ( 'one' == $topbar_style ) {
 	$classes = 'top-bar-centered';
 }
 
+// Get ID
+$get_id = get_theme_mod( 'ocean_top_bar_social_alt' );
+
+// Get the template
+$template = get_theme_mod( 'ocean_top_bar_social_alt_template' );
+if ( ! empty( $template ) ) {
+    $get_id = $template;
+}
+
+// Check if page is Elementor page
+$elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
+
+// Get content
+$get_content = oceanwp_top_bar_social_alt_content();
+
 // Display Social alternative
-if ( $social_alt = oceanwp_top_bar_social_alt() ) : ?>
+if ( $get_id ) : ?>
 
 	<div id="top-bar-social-alt" class="clr <?php echo esc_attr( $classes ); ?>">
-		<?php echo do_shortcode( $social_alt ); ?>
+		<?php
+	    // If Elementor
+	    if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+
+	        echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
+
+	    }
+
+	    // If Beaver Builder
+	    else if ( class_exists( 'FLBuilder' ) && ! empty( $get_id ) ) {
+
+	        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
+
+	    }
+
+	    // Else
+	    else {
+
+	        // Display template content
+	        echo do_shortcode( $get_content );
+
+	    } ?>
 	</div><!-- #top-bar-social-alt -->
 
 <?php return; endif; ?>

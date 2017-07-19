@@ -97,9 +97,7 @@ body.content-full-screen #content-wrap {
 
 
 	&.wrap-boxshadow #wrap {
-		-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
-		-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
-		box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
+		@include box-shadow( 0 1px 4px rgba(0, 0, 0, .15) );
 	}
 
 	#wrap .container {

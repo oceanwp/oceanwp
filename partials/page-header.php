@@ -43,7 +43,7 @@ $classes = implode( ' ', $classes ) ?>
 
 	<div class="container clr page-header-inner">
 
-		<h1 class="page-header-title clr" itemprop="headline"><?php echo wp_kses_post( oceanwp_title() ); ?></h1>
+		<h1 class="page-header-title clr"<?php oceanwp_schema_markup( 'headline' ); ?>><?php echo wp_kses_post( oceanwp_title() ); ?></h1>
 
 		<?php get_template_part( 'partials/page-header-subheading' ); ?>
 

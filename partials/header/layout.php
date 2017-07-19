@@ -42,7 +42,7 @@ if ( 'transparent' == $header_style ) { ?>
 <?php
 } ?>
 
-<header id="site-header" class="<?php echo esc_attr( oceanwp_header_classes() ); ?>" itemscope="itemscope" itemtype="http://schema.org/WPHeader" data-height="<?php echo esc_attr( $header_height ); ?>">
+<header id="site-header" class="<?php echo esc_attr( oceanwp_header_classes() ); ?>" data-height="<?php echo esc_attr( $header_height ); ?>"<?php oceanwp_schema_markup( 'header' ); ?>>
 
 	<?php
 	// If header video

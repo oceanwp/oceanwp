@@ -17,7 +17,7 @@ $full_screen_logo 	= get_theme_mod( 'ocean_full_screen_header_logo' ); ?>
 
 <?php do_action( 'ocean_before_logo' ); ?>
 
-<div id="site-logo" class="<?php echo esc_attr( oceanwp_header_logo_classes() ); ?>" itemscope itemtype="http://schema.org/Brand">
+<div id="site-logo" class="<?php echo esc_attr( oceanwp_header_logo_classes() ); ?>"<?php oceanwp_schema_markup( 'logo' ); ?>>
 
 	<?php do_action( 'ocean_before_logo_inner' ); ?>
 

@@ -1,0 +1,250 @@
+/*------------------------------------------------------------------
+Woo Responsive
+-------------------------------------------------------------------*/
+.sidr-class-woo-menu-icon {
+	display: none;
+}
+.sidr-class-woocommerce {
+	display: none;
+}
+@media only screen and(max-width: 1280px) {
+	.woocommerce div.product .product-thumbnails {
+		width: 275px;
+	}
+}
+@media only screen and(max-width: 992px) {
+	.woocommerce {
+		#customer_login {
+			.lost_password {
+				float: none;
+				margin-top: 10px !important;
+				line-height: 1;
+			}
+			.form-row label[for="rememberme"] {
+				margin: 0 0 0 4px;
+			}
+		}
+		.oceanwp-loginform-wrap {
+			.lost_password {
+				float: none;
+				margin-top: 10px !important;
+				line-height: 1;
+			}
+			.form-row label[for="rememberme"] {
+				margin: 0 0 0 4px;
+			}
+		}
+	}
+}
+@media only screen and(max-width: 959px) {
+	.woocommerce-checkout {
+		#order_review {
+			float: none;
+			width: 100%;
+		}
+		> .col2-set {
+			float: none;
+			width: 100%;
+		}
+		h3#order_review_heading {
+			float: none;
+			width: 100%;
+		}
+		form.checkout_coupon {
+			.checkout-coupon-inner {
+				display: block;
+			}
+			.form-row-first {
+				float: none;
+				width: 100%;
+				margin: 0;
+			}
+			.form-row-last {
+				float: none;
+				width: 100%;
+				margin: 0;
+				margin-top: 10px;
+			}
+		}
+	}
+}
+@media only screen and(max-width: 767px) {
+	.woocommerce {
+		ul {
+			&.products.list li.product {
+				.woo-entry-image {
+					float: none;
+					width: 100%;
+					margin: 0 0 20px;
+				}
+				.woo-entry-inner {
+					float: none;
+					width: 100%;
+				}
+			}
+			&.order_details li {
+				float: none;
+				width: 100%;
+				margin-bottom: 10px;
+				padding-bottom: 10px;
+				border: 0;
+				border-bottom: 1px solid #e9e9e9;
+			}
+		}
+		.form-row-first {
+			float: none;
+			width: 100%;
+		}
+		.form-row-last {
+			float: none;
+			width: 100%;
+		}
+		.cart-collaterals {
+			.cross-sells {
+				display: none;
+			}
+			.cart_totals {
+				float: none;
+				width: 100%;
+				margin-bottom: 20px;
+			}
+		}
+		div.product {
+			div {
+				&.images {
+					float: none;
+					width: 100%;
+					text-align: center;
+				}
+				&.summary {
+					float: none;
+					width: 100%;
+				}
+			}
+			.woocommerce-tabs ul.tabs li {
+				display: block;
+			}
+		}
+		&.content-full-width div.product div {
+			&.images {
+				float: none;
+				width: 100%;
+			}
+			&.summary {
+				float: none;
+				width: 100%;
+			}
+		}
+		#customer_login .form-row label[for="rememberme"] {
+			margin: 0 0 0 4px;
+		}
+		.order_details li:last-of-type {
+			padding: 0;
+			margin: 0;
+		}
+	}
+	.col2-set {
+		.col-1 {
+			float: none;
+			width: 100%;
+		}
+		.col-2 {
+			float: none;
+			width: 100%;
+		}
+		> div:first-child {
+			margin-bottom: 30px;
+		}
+	}
+	.woocommerce-page {
+		.cart-collaterals .cart_totals {
+			float: none;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		table.shop_table td.product-price {
+			display: none !important;
+		}
+	}
+	.woocommerce-cart {
+		.cart-collaterals .cart_totals table td {
+			text-align: right;
+		}
+		table.cart td.actions .coupon .input-text {
+			max-width: 150px;
+		}
+	}
+	.shop_table {
+		.product-thumbnail {
+			display: none !important;
+		}
+		th.product-price {
+			display: none !important;
+		}
+	}
+}
+@media only screen and(max-width: 480px) {
+	.woocommerce {
+		.result-count {
+			display: none;
+		}
+		.oceanwp-grid-list {
+			margin: 0 10px 0 0;
+		}
+		.woocommerce-ordering .orderby {
+			width: 194px !important;
+			span {
+				width: 194px !important;
+			}
+		}
+	}
+	.woocommerce-cart table.cart td.actions {
+		.coupon {
+			float: none;
+			width: 100%;
+			text-align: center;
+		}
+		input[name='update_cart'] {
+			display: inline-block;
+			float: none;
+			width: 100%;
+			margin-top: 15px;
+		}
+	}
+	.woocommerce-checkout form.login .lost_password {
+		float: none;
+		line-height: 1;
+		margin: 10px 0 0;
+	}
+}
+@media only screen and(max-width: 320px) {
+	.woocommerce {
+		.woocommerce-ordering .orderby {
+			width: 175px !important;
+			span {
+				width: 175px !important;
+			}
+		}
+		div.product .product-thumbnails {
+			width: 215px;
+		}
+		#reviews #comments ol.commentlist li {
+			.comment_container {
+				padding: 0;
+			}
+			img.avatar {
+				display: none;
+			}
+		}
+	}
+	.woocommerce-cart table.cart td.actions {
+		input {
+			width: 100%;
+		}
+		.coupon .input-text {
+			width: 100%;
+			max-width: 100%;
+			margin: 0 0 10px !important;
+		}
+	}
+}

@@ -22,7 +22,9 @@
 #customize-control-osp_side_panel_responsive.customize-control,
 #customize-control-external_header_video.customize-control,
 #customize-control-ocean_blog_image_overlay.customize-control,
-#customize-control-op_portfolio_single_featured_image_title { margin-top: 20px; }
+#customize-control-op_portfolio_single_featured_image_title,
+#customize-control-ocean_mobile_menu_display_opening_text,
+#customize-control-ocean_schema_markup { margin-top: 20px; }
 #customize-control-ocean_header_full_width.customize-control { margin-bottom: -21px; }
 
 /* General tweaks */
@@ -71,8 +73,7 @@ input, select { margin: 0; padding: 5px 10px; }
 .customize-control-checkbox input[type=checkbox]:checked:before { font-size: 22px; }
 
 /* Select */
-body .selectize-input { height: 36px; line-height: 36px; padding: 0 8px; }
-body .selectize-dropdown { position: absolute; top: 36px !important; }
+.select2-container { z-index: 999999; }
 
 /* Responsive buttons switchers */
 .customize-control.has-switchers .customize-control-title { display: -webkit-box; display: -ms-flexbox; display: flex; line-height: 1; margin-top: 20px; margin-bottom: 10px; }

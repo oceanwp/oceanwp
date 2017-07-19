@@ -13,7 +13,7 @@
     z-index:10;
     background-color:#000;
     display:none;
-    opacity: 0.85;
+    @include opacity( 0.85 );
 }
 .chocolat-wrapper{
     height:100%;
@@ -40,11 +40,8 @@
     border-right: 3px solid rgba(255, 255, 255, 0.15);
     border-bottom: 3px solid rgba(255, 255, 255, 0.15);
     border-top: 3px solid rgba(255, 255, 255, 0.8);
-    border-radius: 100%;
-    -webkit-animation: rotation .6s infinite linear;
-    -moz-animation: rotation .6s infinite linear;
-    -o-animation: rotation .6s infinite linear;
-    animation: rotation .6s infinite linear;
+    @include border-radius( 50% );
+    @include animation( rotation .6s infinite linear );
     z-index: 11;
 }
 

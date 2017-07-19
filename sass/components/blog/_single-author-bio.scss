@@ -11,7 +11,7 @@
 
 	.author-bio-avatar,
 	.author-bio-avatar img {
-	    border-radius: 50%;
+	    @include border-radius( 50% );
 	}
 
 	.author-bio-avatar {

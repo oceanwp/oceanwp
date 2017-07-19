@@ -136,7 +136,7 @@ a.sidr-class-toggle-sidr-close {
   text-align: right;
   padding-right: 20px;
   text-align: center;
-  transition: all .3s ease;
+  @include transition( all .3s ease );
 
   &:before {
     font-family: 'FontAwesome';
@@ -237,9 +237,7 @@ a.sidr-class-toggle-sidr-close {
   input {
     padding: 6px 45px 6px 12px !important;
     margin-top: 0 !important;
-    border-radius: 0 !important;
-    -webkit-box-sizing: inherit;
-    box-sizing: inherit;
+    @include box-sizing( inherit );
   }
 
   button {
@@ -256,7 +254,7 @@ a.sidr-class-toggle-sidr-close {
     background-color: transparent !important;
     color: $color-11;
     border: 0;
-    transition: all .3s ease;
+    @include transition( all .3s ease-in-out );
 
     &:hover {
       color: $color-3;

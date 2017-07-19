@@ -70,7 +70,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 			<div class="container clr">
 		<?php } ?>
 
-		<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+		<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?>>
 
 			<?php
 			// Display global multisite menu

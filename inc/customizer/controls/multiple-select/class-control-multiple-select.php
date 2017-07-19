@@ -33,9 +33,9 @@ class OceanWP_Customize_Multiple_Select_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-select2', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/select2.min.js', array( 'jquery' ), false, true );
-		wp_enqueue_style( 'select2', OCEANWP_INC_DIR_URI . 'customizer/controls/typography/select2.min.css', null );
-		wp_enqueue_script( 'oceanwp-multiple-select', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/multiple-select.min.js', array( 'jquery', 'customize-base', 'oceanwp-select2' ), false, true );
+		wp_enqueue_script( 'select2', OCEANWP_INC_DIR_URI . 'customizer/controls/select2.min.js', array( 'jquery' ), false, true );
+		wp_enqueue_style( 'select2', OCEANWP_INC_DIR_URI . 'customizer/controls/select2.min.css', null );
+		wp_enqueue_script( 'oceanwp-multiple-select', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/multiple-select.min.js', array( 'jquery', 'customize-base', 'select2' ), false, true );
 		wp_enqueue_style( 'oceanwp-multiple-select', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/multiple-select.min.css', null );
 	}
 

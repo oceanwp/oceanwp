@@ -192,7 +192,7 @@ svg:not(:root) {
  */
 
 hr {
-  box-sizing: content-box;
+  @include box-sizing( content-box );
   height: 0;
 }
 
@@ -315,7 +315,7 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box; /* 1 */
+  @include box-sizing( border-box ); /* 1 */
   padding: 0; /* 2 */
 }
 

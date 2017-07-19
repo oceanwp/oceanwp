@@ -111,12 +111,31 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dropdown_Pages( $wp_customize, 'ocean_footer_widgets_page_id', array(
-				'label'	   				=> esc_html__( 'Page ID', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'Choose a page to replace the widgets by this page.', 'oceanwp' ),
+				'label'	   				=> '<span style="color: red;">' . esc_html__( 'Page ID', 'oceanwp' ) . '</span>',
+				'description'	   		=> esc_html__( 'Deprecated, this field is no longer supported. Please use the Select Template field below instead.', 'oceanwp' ),
 				'section'  				=> $section,
 				'settings' 				=> 'ocean_footer_widgets_page_id',
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_footer_widgets',
+			) ) );
+
+			/**
+			 * Footer Widgets Template
+			 */
+			$wp_customize->add_setting( 'ocean_footer_widgets_template', array(
+				'default'           	=> '0',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_footer_widgets_template', array(
+				'label'	   				=> esc_html__( 'Select Template', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose a template created in Theme Panel > My Library.', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> $section,
+				'settings' 				=> 'ocean_footer_widgets_template',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_footer_widgets',
+				'choices' 				=> oceanwp_customizer_helpers( 'library' ),
 			) ) );
 
 			/**

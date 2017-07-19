@@ -182,7 +182,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			$item_output .= '</a>';
 
-			if ( $item->template && $this->megamenu != '' ) {
+			if ( ( $item->template || $item->mega_template ) && $this->megamenu != '' ) {
 				ob_start();
 					include( OCEANWP_INC_DIR . 'walker/template.php' );
 					$template_content = ob_get_contents();

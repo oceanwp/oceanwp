@@ -15,6 +15,7 @@
 	# Header
 	# Logo
 	# Menu
+	# Mobile
 	# Page Header
 	# Blog
 	# WooCommerce
@@ -23,6 +24,22 @@
 /*-------------------------------------------------------------------------------*/
 /* [ Core ]
 /*-------------------------------------------------------------------------------*/
+function oceanwp_customizer_helpers( $return = NULL ) {
+	// Return library templates array
+	if ( 'library' == $return ) {
+		$templates 		= array( '&mdash; '. esc_html__( 'Select', 'oceanwp' ) .' &mdash;' );
+		$get_templates 	= get_posts( array( 'post_type' => 'oceanwp_library', 'numberposts' => -1, 'post_status' => 'publish' ) );
+
+	    if ( ! empty ( $get_templates ) ) {
+	    	foreach ( $get_templates as $template ) {
+				$templates[ $template->ID ] = $template->post_title;
+		    }
+		}
+
+		return $templates;
+	}
+}
+
 function oceanwp_cac_has_boxed_layout() {
 	if ( 'boxed' == get_theme_mod( 'ocean_main_layout_style', 'wide' ) ) {
 		return true;
@@ -209,6 +226,17 @@ function oceanwp_cac_has_menu_search_overlay() {
 
 function oceanwp_cac_has_menu_dropdown_top_border() {
 	return get_theme_mod( 'ocean_menu_dropdown_top_border', false );
+}
+
+/*-------------------------------------------------------------------------------*/
+/* [ Mobile ]
+/*-------------------------------------------------------------------------------*/
+function ocean_mobile_menu_cac_has_custom_breakpoint() {
+	if ( 'custom' == get_theme_mod( 'ocean_mobile_menu_breakpoints', '959' ) ) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 /*-------------------------------------------------------------------------------*/

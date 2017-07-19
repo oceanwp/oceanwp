@@ -85,12 +85,31 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dropdown_Pages( $wp_customize, 'ocean_header_page_id', array(
-				'label'	   				=> esc_html__( 'Page ID', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'Choose a page where the content will be displayed in the header.', 'oceanwp' ),
+				'label'	   				=> '<span style="color: red;">' . esc_html__( 'Page ID', 'oceanwp' ) . '</span>',
+				'description'	   		=> esc_html__( 'Deprecated, this field is no longer supported. Please use the Select Template field below instead.', 'oceanwp' ),
 				'section'  				=> 'ocean_header_general',
 				'settings' 				=> 'ocean_header_page_id',
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_custom_header',
+			) ) );
+
+			/**
+			 * Custom Header Template
+			 */
+			$wp_customize->add_setting( 'ocean_header_template', array(
+				'default'           	=> '0',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_header_template', array(
+				'label'	   				=> esc_html__( 'Select Template', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose a template created in Theme Panel > My Library.', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_header_general',
+				'settings' 				=> 'ocean_header_template',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_custom_header',
+				'choices' 				=> oceanwp_customizer_helpers( 'library' ),
 			) ) );
 
 			/**
@@ -1270,7 +1289,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_logo_height', array(
 				'label'	   				=> esc_html__( 'Height (px)', 'oceanwp' ),
-				'description' 			=> esc_html__( 'Used for retina.', 'oceanwp' ),
+				'description' 			=> esc_html__( 'Enter the height of your normal logo, used for retina.', 'oceanwp' ),
 				'type' 					=> 'number',
 				'section'  				=> 'ocean_header_logo',
 				'settings' 				=> 'ocean_logo_height',
@@ -1306,6 +1325,40 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 		            'desktop' 	=> 'ocean_logo_max_width',
 		            'tablet' 	=> 'ocean_logo_max_width_tablet',
 		            'mobile' 	=> 'ocean_logo_max_width_mobile',
+			    ),
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_custom_logo',
+			    'input_attrs' 			=> array(
+			        'min'   => 10,
+			        'max'   => 500,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
+			 * Header Logo Max Height
+			 */
+			$wp_customize->add_setting( 'ocean_logo_max_height', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_logo_max_height_tablet', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_setting( 'ocean_logo_max_height_mobile', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_logo_max_height', array(
+				'label'	   				=> esc_html__( 'Max Height (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_header_logo',
+				'settings' => array(
+		            'desktop' 	=> 'ocean_logo_max_height',
+		            'tablet' 	=> 'ocean_logo_max_height_tablet',
+		            'mobile' 	=> 'ocean_logo_max_height_mobile',
 			    ),
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_custom_logo',
@@ -2276,6 +2329,53 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) );
 
 			/**
+			 * Breakpoints
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_breakpoints', array(
+				'default' 				=> '959',
+				'sanitize_callback' 	=> 'sanitize_key',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_breakpoints', array(
+				'label'	   				=> esc_html__( 'Breakpoints', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose the media query where you want to display the mobile menu.', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_breakpoints',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'1280' 		=> esc_html__( 'From 1280px', 'oceanwp' ),
+					'1080' 		=> esc_html__( 'From 1080px', 'oceanwp' ),
+					'959' 		=> esc_html__( 'From 959px', 'oceanwp' ),
+					'767' 		=> esc_html__( 'From 767px', 'oceanwp' ),
+					'480' 		=> esc_html__( 'From 480px', 'oceanwp' ),
+					'320' 		=> esc_html__( 'From 320px', 'oceanwp' ),
+					'custom' 	=> esc_html__( 'Custom media query', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Custom Media Query
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_custom_breakpoint', array(
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_custom_breakpoint', array(
+				'label'	   				=> esc_html__( 'Custom Media Query', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Enter your custom media query where you want to display the mobile menu.', 'oceanwp' ),
+				'type' 					=> 'number',
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_custom_breakpoint',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'ocean_mobile_menu_cac_has_custom_breakpoint',
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
 			 * Display Menu Text
 			 */
 			$wp_customize->add_setting( 'ocean_mobile_menu_display_opening_text', array(
@@ -2741,6 +2841,9 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			$logo_max_width												= get_theme_mod( 'ocean_logo_max_width' );
 			$logo_max_width_tablet										= get_theme_mod( 'ocean_logo_max_width_tablet' );
 			$logo_max_width_mobile										= get_theme_mod( 'ocean_logo_max_width_mobile' );
+			$logo_max_height											= get_theme_mod( 'ocean_logo_max_height' );
+			$logo_max_height_tablet										= get_theme_mod( 'ocean_logo_max_height_tablet' );
+			$logo_max_height_mobile										= get_theme_mod( 'ocean_logo_max_height_mobile' );
 			$logo_color 												= get_theme_mod( 'ocean_logo_color', '#333333' );
 			$logo_hover_color 											= get_theme_mod( 'ocean_logo_hover_color', '#13aff0' );
 			$search_dropdown_input_bg 									= get_theme_mod( 'ocean_search_dropdown_input_background' );
@@ -2787,6 +2890,8 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			$menu_social_mobile_left_padding 							= get_theme_mod( 'ocean_menu_social_mobile_left_padding' );
 			$menu_social_links_color 									= get_theme_mod( 'ocean_menu_social_links_color' );
 			$menu_social_hover_links_color 								= get_theme_mod( 'ocean_menu_social_hover_links_color' );
+			$mobile_menu_breakpoint 									= get_theme_mod( 'ocean_mobile_menu_breakpoints', '959' );
+			$mobile_menu_custom_breakpoint 								= get_theme_mod( 'ocean_mobile_menu_custom_breakpoint' );
 			$mobile_menu_sidr_close_button_bg 							= get_theme_mod( 'ocean_mobile_menu_sidr_close_button_background', '#f8f8f8' );
 			$mobile_menu_sidr_background 								= get_theme_mod( 'ocean_mobile_menu_sidr_background', '#ffffff' );
 			$mobile_menu_sidr_borders 									= get_theme_mod( 'ocean_mobile_menu_sidr_borders', 'rgba(0,0,0,0.035)' );
@@ -3254,6 +3359,21 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				$css .= '@media (max-width: 480px){#site-logo #site-logo-inner a img, #site-header.center-header #site-navigation .middle-site-logo a img{max-width:'. $logo_max_width_mobile .'px;}}';
 			}
 
+			// Header logo max height
+			if ( ! empty( $logo_max_height ) ) {
+				$css .= '#site-logo #site-logo-inner a img, #site-header.center-header #site-navigation .middle-site-logo a img{max-height:'. $logo_max_height .'px !important;}';
+			}
+
+			// Header logo max height tablet
+			if ( ! empty( $logo_max_height_tablet ) ) {
+				$css .= '@media (max-width: 768px){#site-logo #site-logo-inner a img, #site-header.center-header #site-navigation .middle-site-logo a img{max-height:'. $logo_max_height_tablet .'px !important;}}';
+			}
+
+			// Header logo max height mobile
+			if ( ! empty( $logo_max_height_mobile ) ) {
+				$css .= '@media (max-width: 480px){#site-logo #site-logo-inner a img, #site-header.center-header #site-navigation .middle-site-logo a img{max-height:'. $logo_max_height_mobile .'px !important;}}';
+			}
+
 			// Header logo color
 			if ( ! empty( $logo_color ) && '#333333' != $logo_color ) {
 				$css .= '#site-logo a.site-logo-text{color:'. $logo_color .';}';
@@ -3500,6 +3620,16 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Menu social links hover color
 			if ( ! empty( $menu_social_hover_links_color ) ) {
 				$css .= '#oceanwp-social-menu ul li a:hover,#site-header.full_screen-header #oceanwp-social-menu.simple-social ul li a:hover{color:'. $menu_social_hover_links_color .'!important;}';
+			}
+
+			// Mobile menu breakpoint
+			if ( ! empty( $mobile_menu_breakpoint ) ) {
+
+				if ( 'custom' == $mobile_menu_breakpoint && ! empty( $mobile_menu_custom_breakpoint ) && '959' != $mobile_menu_custom_breakpoint ) {
+					$mobile_menu_breakpoint = $mobile_menu_custom_breakpoint;
+				}
+
+				$css .= '@media (max-width: '. $mobile_menu_breakpoint .'px) {#top-bar-nav, #site-navigation-wrap, #oceanwp-social-menu {display: none;}#oceanwp-mobile-menu-icon {display: block;}}';
 			}
 
 			// Mobile menu sidr close button background

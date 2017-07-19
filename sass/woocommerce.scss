@@ -1,0 +1,17 @@
+/*!
+ * Project   : OceanWP WordPress Theme
+ * Purpose   : WooCommerce Tweaks
+ * Author    : Nick
+ */
+
+// Configuration
+@import "config";
+
+// Mixins
+@import "mixins";
+
+@import "woo/woocommerce";
+@import "woo/woo-cart";
+@import "woo/woo-cat-widget";
+@import "woo/woo-quantity";
+@import "woo/woo-responsive";

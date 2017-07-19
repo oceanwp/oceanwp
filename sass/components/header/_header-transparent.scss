@@ -1,0 +1,36 @@
+#transparent-header-wrap {
+	position: relative;
+}
+
+#site-header.transparent-header {
+	position: absolute;
+	top: 0;
+	background-color: transparent;
+	height: auto;
+	z-index: 9999;
+
+	#site-logo.has-transparent-logo {
+		.custom-logo-link {
+			display: none;
+		}
+
+		.transparent-logo-link {
+			display: block;
+		}
+	}
+}
+
+.is-sticky #site-header.transparent-header #site-logo.has-transparent-logo {
+	.custom-logo-link {
+		display: block;
+	}
+
+	.transparent-logo-link {
+		display: none;
+	}
+}
+
+body.has-transparent-header .oceanwp-sticky-header-holder {
+	height: auto !important;
+	background: none !important;
+}
