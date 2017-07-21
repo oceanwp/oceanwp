@@ -174,7 +174,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				),
 				'blog_entry_title' 			=> array(
 					'label' 				=> esc_html__( 'Blog Entry Title', 'oceanwp' ),
-					'target' 				=> '.blog-entry.post .blog-entry-header h2 a',
+					'target' 				=> '.blog-entry.post .blog-entry-header .entry-title a',
 					'defaults' 				=> array(
 						'font-size' 		=> '24',
 						'color' 			=> '#333333',
@@ -183,7 +183,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				),
 				'blog_post_title' 			=> array(
 					'label' 				=> esc_html__( 'Blog Post Title', 'oceanwp' ),
-					'target' 				=> '.single-post h2.entry-title',
+					'target' 				=> '.single-post .entry-title',
 					'defaults' 				=> array(
 						'font-size' 		=> '34',
 						'color' 			=> '#333333',

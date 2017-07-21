@@ -4554,12 +4554,12 @@ body.breadcrumbs-position-default .page-header-title {
   margin-bottom: 20px;
 }
 
-.blog-entry.post .blog-entry-header h2 {
+.blog-entry.post .blog-entry-header .entry-title {
   font-size: 24px;
   margin: 0;
 }
 
-.blog-entry.post .blog-entry-header h2 a {
+.blog-entry.post .blog-entry-header .entry-title a {
   font-weight: 600;
   letter-spacing: 0.6px;
 }
@@ -4626,7 +4626,7 @@ body.breadcrumbs-position-default .page-header-title {
   margin: 20px 0 12px;
 }
 
-.blog-entry.grid-entry .blog-entry-header h2 {
+.blog-entry.grid-entry .blog-entry-header .entry-title {
   font-size: 18px;
 }
 
@@ -4811,7 +4811,7 @@ ul.meta li i {
   width: 100%;
 }
 
-.single h2.entry-title {
+.single .entry-title {
   font-size: 34px;
   padding: 0 0 20px;
   margin: 0 0 15px;
@@ -7198,7 +7198,7 @@ a.sidr-class-toggle-sidr-close i {
   .single-post.media-above-content .thumbnail {
     margin-bottom: 20px;
   }
-  .single-post h2.entry-title {
+  .single-post .entry-title {
     font-size: 26px;
   }
   ul.meta {

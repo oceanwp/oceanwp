@@ -32,6 +32,9 @@ table th, table td, caption, th, td { text-align: right; }
 #searchform-dropdown,
 #current-shop-items-dropdown { right: auto; left: 0; }
 
+/* Search form input */
+form.oceanwp-searchform input { padding: 0 15px 0 40px; }
+
 /* Change left position to right position*/
 #top-bar-social.top-bar-left { left: auto; right: 0; }
 
