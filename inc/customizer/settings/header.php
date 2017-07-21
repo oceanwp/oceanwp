@@ -3461,7 +3461,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Menu link active color
 			if ( ! empty( $menu_link_color_active ) && '#555555' != $menu_link_color_active ) {
-				$css .= '#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a:hover{color:'. $menu_link_color_active .';}';
+				$css .= '#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover{color:'. $menu_link_color_active .';}';
 			}
 
 			// Menu link background color
@@ -3476,7 +3476,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Menu link active background color
 			if ( ! empty( $menu_link_active_background ) ) {
-				$css .= '#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-parent > a:hover{background-color:'. $menu_link_active_background .';}';
+				$css .= '#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover{background-color:'. $menu_link_active_background .';}';
 			}
 
 			// Dropdown menu width
