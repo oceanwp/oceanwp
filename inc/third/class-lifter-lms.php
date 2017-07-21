@@ -1,6 +1,6 @@
 <?php
 /**
- * Beaver Themer class
+ * LifterLMS class
  *
  * @package OceanWP WordPress theme
  */
@@ -10,9 +10,9 @@ if ( ! class_exists( 'LifterLMS' ) ) {
 	return;
 }
 
-if ( ! class_exists( 'OceanWP_Beaver_Themer' ) ) :
+if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 
-	class OceanWP_Beaver_Themer {
+	class OceanWP_LifterLMS {
 
 		/**
 		 * Setup class.
@@ -77,4 +77,4 @@ if ( ! class_exists( 'OceanWP_Beaver_Themer' ) ) :
 
 endif;
 
-return new OceanWP_Beaver_Themer();
+return new OceanWP_LifterLMS();
