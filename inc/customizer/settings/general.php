@@ -1974,7 +1974,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'#site-navigation-wrap .dropdown-menu > li > a:hover',
 				'#site-header.medium-header #medium-searchform button:hover',
 				'#oceanwp-mobile-menu-icon a:hover',
-				'.blog-entry.post .blog-entry-header h2 a:hover',
+				'.blog-entry.post .blog-entry-header .entry-title a:hover',
 				'.blog-entry.post .blog-entry-readmore a:hover',
 				'ul.meta li a:hover',
 				'.dropcap',
@@ -2099,7 +2099,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 				'.blog-entry.grid-entry .blog-entry-inner',
 
-				'.single-post h2.entry-title',
+				'.single-post .entry-title',
 
 				'.single-post .entry-share',
 				'.single-post .entry-share ul li a',
