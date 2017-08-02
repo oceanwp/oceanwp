@@ -13,8 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="blog-entry-summary clr"<?php oceanwp_schema_markup( 'entry_content' ); ?>>
 
     <?php
-    // Display excerpt if auto excerpts are enabled in the admin
-    if ( get_theme_mod( 'ocean_blog_excerpt', true ) ) :
+    // Display excerpt
+    if ( '500' != get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' ) ) :
 
         // Display custom excerpt
         oceanwp_excerpt( absint( get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' ) ) );

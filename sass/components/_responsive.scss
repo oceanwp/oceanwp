@@ -52,38 +52,6 @@
 	}
 }
 
-/* Top Menu header*/
-#site-header.top-header #oceanwp-mobile-menu-icon {
-	float: none;
-	left: -15px;
-	right: auto;
-
-	a {
-		font-size: 10px;
-		line-height: 40px;
-		font-weight: 600;
-		letter-spacing: 2px;
-		text-transform: uppercase;
-	}
-}
-
-/* Medium header */
-#site-header.medium-header #oceanwp-mobile-menu-icon {
-	float: none;
-	right: auto !important;
-	left: auto !important;
-
-	a {
-		float: none;
-		display: inline-block;
-		font-size: 12px;
-		padding: 0 22px;
-		line-height: 60px;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-	}
-}
-
 /*------------------------------------*
 	Retina Logo
 *------------------------------------*/
@@ -238,6 +206,26 @@ only screen and (                min-resolution: 2dppx) {
 
 		#oceanwp-mobile-menu-icon {
 			display: block;
+		}
+
+		#top-bar.has-no-content #top-bar-social {
+			text-align: center;
+
+			&.top-bar-left,
+			&.top-bar-right {
+				position: inherit;
+				left: auto;
+				right: auto;
+				float: none;
+				height: auto;
+				line-height: 1.5em;
+				margin-top: 0;
+			}
+
+			li {
+				float: none;
+    			display: inline-block;
+			}
 		}
 	}
 

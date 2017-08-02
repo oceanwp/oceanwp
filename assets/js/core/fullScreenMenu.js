@@ -18,39 +18,45 @@ function oceanwpFullScreenMenu() {
 
 	if ( $menuBar.length ) {
 
+		// Open menu function
+		function oceanwpFullScreenMenuOpen() {
+			$menuBar.addClass( 'exit' );
+			$customLogo.addClass( 'opened' );
+			$menuWrap.addClass( 'active' );
+			$menuWrap.fadeIn( 200 );
+
+            setTimeout( function() {
+				$j( 'html' ).css( 'overflow', 'hidden' );
+            }, 400);
+        }
+
+		// Close menu function
+		function oceanwpFullScreenMenuClose() {
+			$menuBar.removeClass( 'exit' );
+			$customLogo.removeClass( 'opened' );
+			$menuWrap.removeClass( 'active' );
+			$menuWrap.fadeOut( 200 );
+
+            setTimeout( function() {
+				$j( 'html' ).css( 'overflow', 'visible' );
+            	$j( '#full-screen-menu #site-navigation ul > li.dropdown' ).removeClass( 'open-sub' );
+                $j( '#full-screen-menu #site-navigation ul.sub-menu' ).slideUp( 200 );
+            }, 400);
+        }
+
 		$menuBar.on( 'click', function( e ) {
 			e.preventDefault();
 
 			if ( ! $j( this ).hasClass( 'exit' ) ) {
-
-				$j( this ).addClass( 'exit' );
-				$customLogo.addClass( 'opened' );
-				$menuWrap.addClass( 'active' );
-				$menuWrap.fadeIn( 200 );
-
-                setTimeout( function() {
-					$j( 'html' ).css( 'overflow', 'hidden' );
-                }, 400);
-
+				oceanwpFullScreenMenuOpen();
 	        } else {
-
-				$j( this ).removeClass( 'exit' );
-				$customLogo.removeClass( 'opened' );
-				$menuWrap.removeClass( 'active' );
-				$menuWrap.fadeOut( 200 );
-
-                setTimeout( function() {
-					$j( 'html' ).css( 'overflow', 'visible' );
-                	$j( '#full-screen-menu #site-navigation ul > li.dropdown' ).removeClass( 'open-sub' );
-                    $j( '#full-screen-menu #site-navigation ul.sub-menu' ).slideUp( 200 );
-                }, 400);
-
+	        	oceanwpFullScreenMenuClose();
 	        }
 
 		} );
 
 		// Logic for open sub menus
-        $j( '#full-screen-menu #site-navigation ul > li.dropdown > a' ).on( 'tap click', function ( e ) {
+        $j( '#full-screen-menu #site-navigation ul > li.dropdown > a' ).on( 'tap click', function( e ) {
             e.preventDefault();
 
             if ( $j( this ).closest( 'li.dropdown' ).find( '> ul.sub-menu' ).is( ':visible' ) ) {
@@ -63,6 +69,11 @@ function oceanwpFullScreenMenu() {
 
             return false;
         } );
+
+        // Close menu if anchor link
+        $j( '#full-screen-menu #site-navigation a.menu-link[href*="#"]:not([href="#"])' ).on( 'click', function() {
+        	oceanwpFullScreenMenuClose();
+	    } );
 
 	}
 

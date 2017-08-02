@@ -92,6 +92,8 @@ if ( 'transparent' == $header_style ) { ?>
 
 		</div><!-- #site-header-inner -->
 
+		<?php get_template_part( 'partials/mobile/mobile-dropdown' ); ?>
+
 		<?php do_action( 'ocean_after_header_inner' ); ?>
 
 	<?php

@@ -24,7 +24,8 @@
 #customize-control-ocean_blog_image_overlay.customize-control,
 #customize-control-op_portfolio_single_featured_image_title,
 #customize-control-ocean_mobile_menu_display_opening_text,
-#customize-control-ocean_schema_markup { margin-top: 20px; }
+#customize-control-ocean_schema_markup,
+#customize-control-ocean_mobile_menu_search { margin-top: 20px; }
 #customize-control-ocean_header_full_width.customize-control { margin-bottom: -21px; }
 
 /* General tweaks */

@@ -19,6 +19,15 @@ if ( ! has_post_thumbnail() ) {
 // Get featured image
 $attachment = get_post_thumbnail_id();
 
+// Image args
+$img_args = array(
+	'class' => 'woo-entry-image-main',
+    'alt' 	=> get_the_title(),
+);
+if ( oceanwp_get_schema_markup( 'image' ) ) {
+	$img_args['itemprop'] = 'image';
+}
+
 // Display featured image if defined
 if ( $attachment ) { ?>
 
@@ -26,11 +35,7 @@ if ( $attachment ) { ?>
 		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
 			<?php
 			// Single Image
-			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
-		        'class'         => 'woo-entry-image-main',
-		        'alt'           => get_the_title(),
-		        'itemprop'      => 'image',
-		    ) ); ?>
+			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $img_args ); ?>
 	    </a>
 	</div><!-- .woo-entry-image -->
 

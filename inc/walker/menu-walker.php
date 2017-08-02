@@ -297,9 +297,17 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 								if ( has_post_thumbnail() ) {
 
+									// Image args
+									$img_args = array(
+									    'alt' => get_the_title(),
+									);
+									if ( oceanwp_get_schema_markup( 'image' ) ) {
+										$img_args['itemprop'] = 'image';
+									}
+
 									$output .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="mega-post-link">';
 
-										$output .= get_the_post_thumbnail( get_the_ID(), 'medium', array( 'alt' => get_the_title(), 'itemprop' => 'image', ) );
+										$output .= get_the_post_thumbnail( get_the_ID(), 'medium', $img_args );
 
 										$output .= '<span class="overlay"></span>';
 									$output .= '</a>';

@@ -36,19 +36,30 @@ if ( 'overlay' == oceanwp_menu_search_style() ) {
 } ?>
 
 <?php
-// Mobile panel close button
-if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
-    get_template_part( 'partials/mobile/mobile-sidr-close' );
+// If sidebar mobile menu style
+if ( 'sidebar' == oceanwp_mobile_menu_style() ) {
+    
+    // Mobile panel close button
+    if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
+        get_template_part( 'partials/mobile/mobile-sidr-close' );
+    } ?>
+
+    <?php
+    // Mobile Menu (if defined)
+    get_template_part( 'partials/mobile/mobile-nav' ); ?>
+
+    <?php
+    // Mobile search form
+    if ( get_theme_mod( 'ocean_mobile_menu_search', true ) ) {
+        get_template_part( 'partials/mobile/mobile-search' );
+    }
+
 } ?>
 
 <?php
-// Mobile Menu (if defined)
-get_template_part( 'partials/mobile/mobile-nav' ); ?>
-
-<?php
-// Mobile search form
-if ( get_theme_mod( 'ocean_mobile_menu_search', true ) ) {
-    get_template_part( 'partials/mobile/mobile-search' );
+// If full screen mobile menu style
+if ( 'fullscreen' == oceanwp_mobile_menu_style() ) {
+    get_template_part( 'partials/mobile/mobile-fullscreen' );
 } ?>
 
 <?php wp_footer(); ?>

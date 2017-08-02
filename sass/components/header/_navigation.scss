@@ -230,8 +230,9 @@
 .nav-content {
     display: block;
     font-size: 11px;
-    line-height: 1em;
+    line-height: $base-line-height;
     padding: 5px 0;
+    white-space: normal;
     @include opacity( 0.7 );
 }
 
@@ -246,13 +247,17 @@
 
 	i {
 		&.icon {
-			margin-top: -.265em;
 			width: auto;
 			height: auto;
 			font-size: 1.2em;
 			font-weight: 400;
 			line-height: 1;
 			padding: 0 !important;
+		}
+
+		&.before,
+		&.after {
+			margin-top: -.265em;
 		}
 
 		&.before {

@@ -135,8 +135,8 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					),
 				),
 				'mobile_menu_dropdown' 		=> array(
-					'label' 				=> esc_html__( 'Mobile Menu: Dropdowns', 'oceanwp' ),
-					'target' 				=> '.sidr-class-dropdown-menu li a, a.sidr-class-toggle-sidr-close',
+					'label' 				=> esc_html__( 'Mobile Menu', 'oceanwp' ),
+					'target' 				=> '.sidr-class-dropdown-menu li a, a.sidr-class-toggle-sidr-close, #mobile-dropdown ul li a, body #mobile-fullscreen .fs-dropdown-menu li a',
 					'exclude' 				=> array( 'font-color' ),
 					'defaults' 				=> array(
 						'font-size' 		=> '15',
@@ -245,7 +245,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		public function customizer_options( $wp_customize ) {
 
 			// Get elements
-			$elements = $this->elements();
+			$elements = self::elements();
 
 			// Return if elements are empty
 			if ( empty( $elements ) ) {
@@ -636,8 +636,8 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 			// Define Vars
 			$css            = '';
 			$fonts          = array();
-			$elements       = $this->elements();
-			$preview_styles = '';
+			$elements       = self::elements();
+			$preview_styles = array();
 
 			// Loop through each elements that need typography styling applied to them
 			foreach( $elements as $element => $array ) {
@@ -807,7 +807,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		public function head_css( $output ) {
 
 			// Get CSS
-			$typography_css = $this->loop( 'css' );
+			$typography_css = self::loop( 'css' );
 
 			// Loop css
 			if ( $typography_css ) {
@@ -826,7 +826,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		 */
 		public function live_preview_styles() {
 
-			$live_preview_styles = $this->loop( 'preview_styles' );
+			$live_preview_styles = self::loop( 'preview_styles' );
 
 			if ( $live_preview_styles ) {
 				foreach ( $live_preview_styles as $key => $val ) {
@@ -846,7 +846,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		public function load_fonts() {
 
 			// Get fonts
-			$fonts = $this->loop( 'fonts' );
+			$fonts = self::loop( 'fonts' );
 
 			// Loop through and enqueue fonts
 			if ( ! empty( $fonts ) && is_array( $fonts ) ) {

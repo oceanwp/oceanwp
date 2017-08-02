@@ -1,8 +1,33 @@
 # OceanWP Changelog
 
+### *2017.08.02* - 1.3.0
+* **Added** - Full support for PHP 7.1.
+* **Added** - Drop down mobile menu style.
+* **Added** - Full Screen mobile menu style.
+* **Added** - Breakpoint for the mobile menu, now you can add your own breakpoint to display the mobile menu link.
+* **Added** - Max Height field in the Header > Logo section of the customizer to allow you to add a max height if your logo is too big.
+* **Added** - Top Bar Social Alt. field supports templates created with your page builder.
+* **Added** - Overlay with spinner on the checkout page when the order button is clicked.
+* **Added** - Next/Prev Taxonomy field, now you will be able to display the next/prev single post links by category or tag.
+* **Added** - Related Posts Taxonomy field, now you will be able to display your related post by category or tag.
+* **Added** - Turkish language, partially translated by Selçuk Akkaş.
+* **Added** - New checkbox field in General Options > General Settings to allow you to disable the theme schema markup.
+* **Added** - LifterLMS support.
+* **Added** - Filter in the single post heading to allow you to change the heading tab via your child theme.
+* **Added** - Ability to display blog entry full content.
+* **Added** - New option to only stick the navigation when scrolling for the Medium header style.
+* **Tweak** - Anchor link doesn't have automatically scrolling effect anymore, you will need to add the "local" class to your link to have this effect. This is for avoid any plugins conflict.
+* **Tweak** - WooCommerce error message style improved.
+* **Tweak** - Anchor link in the mobile menu, no need anymore to add the "local-scroll" class.
+* **Fixed** - Anchor menu on the Full Screen header style, now the menu close after the click on the anchor link.
+* **Fixed** - Custom Header and Custom Footer issue in the Elementor edit mode.
+* **Fixed** - Top Bar style when there is no social.
+* **Fixed** - Beaver Builder tabs under the header.
+* **Fixed** - Page header color setting per page.
+* **Fixed** - Current menu color in child child menu.
+
 ### *2017.07.07* - 1.2.9
 * **Added** - New filter in the breadcrumb for the Ocean Porffolio extension.
-* **Added** - Supports WooCommerce Match Box extension, thanks to Sébastien Dumont.
 * **Added** - Supports WooCommerce Match Box extension, thanks to Sébastien Dumont.
 * **Fixed** - Tabs under the header in the edit mode with the transparent header style.
 * **Updated** - Isotope script.

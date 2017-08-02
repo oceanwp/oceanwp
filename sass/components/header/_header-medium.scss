@@ -221,3 +221,20 @@
 		}
 	}
 }
+
+#site-header.medium-header #oceanwp-mobile-menu-icon {
+	float: none;
+	background-color: #f9f9f9;
+	right: auto !important;
+	left: auto !important;
+
+	a {
+		float: none;
+		display: inline-block;
+		font-size: 12px;
+		padding: 0 22px;
+		line-height: 60px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+}

@@ -13,15 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Return if there isn't a thumbnail defined
 if ( ! has_post_thumbnail() ) {
 	return;
+}
+
+// Image args
+$img_args = array(
+    'alt' => get_the_title(),
+);
+if ( oceanwp_get_schema_markup( 'image' ) ) {
+	$img_args['itemprop'] = 'image';
 } ?>
 
 <div class="thumbnail">
 
 	<?php
 	// Display post thumbnail
-	the_post_thumbnail( 'full', array(
-		'alt'		=> get_the_title(),
-		'itemprop' 	=> 'image',
-	) ); ?>
+	the_post_thumbnail( 'full', $img_args ); ?>
 
 </div><!-- .thumbnail -->

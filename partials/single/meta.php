@@ -43,7 +43,7 @@ if ( 'quote' == get_post_format() ) {
 		<?php } ?>
 
 		<?php if ( 'comments' == $section && comments_open() && ! post_password_required() ) { ?>
-			<li class="meta-comments"><i class="icon-bubble"></i><?php comments_popup_link( esc_html__( '0 Comments', 'oceanwp' ), esc_html__( '1 Comment',  'oceanwp' ), esc_html__( '% Comments', 'oceanwp' ), 'comments-link' ); ?></li>
+			<li class="meta-comments"><i class="icon-bubble"></i><?php comments_popup_link( esc_html__( '0 Comments', 'oceanwp' ), esc_html__( '1 Comment',  'oceanwp' ), esc_html__( '% Comments', 'oceanwp' ), 'comments-link local' ); ?></li>
 		<?php } ?>
 
 	<?php } ?>

@@ -1,4 +1,5 @@
-var $j = jQuery.noConflict();
+var $j 		= jQuery.noConflict(),
+	$window = $j( window );
 
 $j( document ).on( 'ready', function() {
 	"use strict";
@@ -12,7 +13,8 @@ MOBILE SCRIPT
 function oceanwpMobileMenu( event ) {
 	"use strict"
 
-	if ( typeof oceanwpLocalize.sidrSource !== 'undefined' ) {
+	if ( typeof oceanwpLocalize.sidrSource !== 'undefined'
+		&& $j( 'body' ).hasClass( 'sidebar-mobile' ) ) {
 
 		// Add sidr
 		$j( '.mobile-menu' ).sidr( {
@@ -35,7 +37,7 @@ function oceanwpMobileMenu( event ) {
 
 				// Check localization
 				if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
-					$sidrDropdownTarget = $j( '.sidr-class-sf-with-ul' );
+					$sidrDropdownTarget = $j( 'li.sidr-class-menu-item-has-children > a.sidr-class-menu-link' );
 				}
 
 				// Add toggle click event
@@ -111,10 +113,8 @@ function oceanwpMobileMenu( event ) {
 		} );
 
 		// Close when clicking local scroll link
-		$j( 'li.sidr-class-local-scroll > a' ).on( 'click', function() {
+		$j( 'a.sidr-class-menu-link[href*="#"]:not([href="#"])' ).on( 'click', function() {
 			$j.sidr( 'close', 'sidr' );
-			oceanwpScrollEffect();
-			return false;
 		} );
 
 	}

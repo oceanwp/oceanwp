@@ -193,13 +193,10 @@ a.sidr-class-toggle-sidr-close {
 .sidr-class-dropdown-menu a i {
   font-size: inherit !important;
   vertical-align: initial !important;
-
-  &.before,
-  &.below {
-    margin-right: 10px;
-  }
+  margin-right: 10px;
 
   &.after {
+    margin-right: 0;
     margin-left: 10px;
   }
 }

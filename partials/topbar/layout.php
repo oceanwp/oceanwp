@@ -10,17 +10,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Classes
+$classes = array( 'clr' );
+
 // Add container class if the top bar is not full width
-$class = '';
 if ( true != get_theme_mod( 'ocean_top_bar_full_width', false ) )  {
-	$class = ' container';
-} ?>
+	$classes[] = 'container';
+}
+
+// If no content
+if ( ! get_theme_mod( 'ocean_top_bar_content' ) )  {
+	$classes[] = 'has-no-content';
+}
+
+// Turn classes into space seperated string
+$classes = implode( ' ', $classes ); ?>
 
 <?php do_action( 'ocean_before_top_bar' ); ?>
 
 <div id="top-bar-wrap" class="<?php echo esc_attr( oceanwp_topbar_classes() ); ?>">
 
-	<div id="top-bar" class="clr<?php echo esc_attr( $class ); ?>">
+	<div id="top-bar" class="<?php echo esc_attr( $classes ); ?>">
 
 		<?php do_action( 'ocean_before_top_bar_inner' ); ?>
 

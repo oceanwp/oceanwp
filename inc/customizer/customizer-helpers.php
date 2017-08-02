@@ -239,6 +239,38 @@ function ocean_mobile_menu_cac_has_custom_breakpoint() {
 	}
 }
 
+function oceanwp_cac_has_sidebar_mobile_menu() {
+	if ( 'sidebar' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_dropdown_mobile_menu() {
+	if ( 'dropdown' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_fullscreen_mobile_menu() {
+	if ( 'fullscreen' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_hasnt_fullscreen_mobile_menu() {
+	if ( 'fullscreen' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
 /*-------------------------------------------------------------------------------*/
 /* [ Page Header ]
 /*-------------------------------------------------------------------------------*/

@@ -16,33 +16,26 @@ function oceanwpScrollEffect() {
 	if ( ! $j( 'body' ).hasClass( 'single-product' )
 		&& ! $j( 'body' ).hasClass( 'no-local-scroll' ) ) {
 
-	    $j( 'a[href*="#"]:not([href="#"])' ).on( 'click', function() {
+	    $j( 'a.local[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"]), a.sidr-class-menu-link[href*="#"]:not([href="#"])' ).on( 'click', function() {
 
-	        if ( ! $j( this ).hasClass( 'no-effect' )
-	        	&& ! $j( this ).hasClass( 'page-numbers' )
-	        	&& ! $j( this ).hasClass( 'omw-open-modal' )
-	        	&& ! $j( this ).parent().hasClass( 'omw-open-modal' )
-	        	&& ! $j( this ).parent().parent().parent().hasClass( 'omw-open-modal' ) ) {
+        	var $href     				= $j( this ).attr( 'href' ),
+			    $hrefHash 				= $href.substr( $href.indexOf( '#' ) ).slice( 1 ),
+			    $target   				= $j( '#' + $hrefHash ),
+				$adminbarHeight        	= oceanwpGetAdminbarHeight(),
+				$topbarHeight        	= oceanwpGetTopbarHeight(),
+				$stickyHeaderHeight    	= oceanwpGetStickyHeaderHeight(),
+			    $scrollPosition;
 
-	        	var $href     				= $j( this ).attr( 'href' ),
-				    $hrefHash 				= $href.substr( $href.indexOf( '#' ) ).slice( 1 ),
-				    $target   				= $j( '#' + $hrefHash ),
-					$adminbarHeight        	= oceanwpGetAdminbarHeight(),
-					$topbarHeight        	= oceanwpGetTopbarHeight(),
-					$stickyHeaderHeight    	= oceanwpGetStickyHeaderHeight(),
-				    $scrollPosition;
+			if ( $target.length && '' !== $hrefHash ) {
+				$scrollPosition     	= $target.offset().top - $adminbarHeight - $topbarHeight - $stickyHeaderHeight;
 
-				if ( $target.length && '' !== $hrefHash ) {
-					$scrollPosition     	= $target.offset().top - $adminbarHeight - $topbarHeight - $stickyHeaderHeight;
+                $j( 'html, body' ).stop().animate( {
+					 scrollTop: Math.round( $scrollPosition )
+				}, 1000 );
 
-	                $j( 'html, body' ).stop().animate( {
-						 scrollTop: Math.round( $scrollPosition )
-					}, 1000 );
+				return false;
 
-					return false;
-
-	            }
-	        }
+            }
 
 	    } );
 

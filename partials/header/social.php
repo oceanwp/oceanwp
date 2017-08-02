@@ -18,17 +18,19 @@ if ( empty( $social_options ) ) {
 	return;
 }
 
+// Style
+$style = get_theme_mod( 'ocean_menu_social_style', 'simple' );
+$style = $style ? $style : 'simple';
+
 // Classes
-$style = get_theme_mod( 'ocean_menu_social_style' );
 $classes = 'social-menu-inner clr';
 if ( 'simple' != $style ) {
 	$classes .= ' '. $style;
 }
 
 // Add class if social menu has class
-$social_style = get_theme_mod( 'ocean_menu_social_style' );
 $has_social = '';
-if ( 'simple' != $social_style ) {
+if ( 'simple' != $style ) {
 	$has_social .= 'social-with-style';
 } else {
 	$has_social .= 'simple-social';

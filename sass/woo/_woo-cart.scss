@@ -27,6 +27,9 @@ Woo Cart
 	li:first-child {
 		border-top: none;
 	}
+	p.woocommerce-mini-cart__empty-message {
+		margin: 0;
+	}
 }
 .boxed-main-layout #current-shop-items-dropdown {
 	right: 30px;

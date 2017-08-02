@@ -132,12 +132,28 @@ blockquote { padding-right: 20px; padding-left: 0; border-right-width: 3px; bord
 	Mobile Navigation
 *------------------------------------*/
 a.sidr-class-toggle-sidr-close i { padding-left: 8px; padding-right: 0; }
-.sidr-class-dropdown-menu a i.before,
-.sidr-class-dropdown-menu a i.below { margin-left: 10px; margin-right: 0; }
-.sidr-class-dropdown-menu a i.after { margin-right: 10px; margin-left: 0; }
 .sidr-class-dropdown-toggle { left: 0; right: auto; }
 .sidr-class-dropdown-menu li.sidr-class-menu-item-has-children > a { padding-right: 20px; padding-left: 60px; }
 .sidr-class-dropdown-menu ul a:before { content: '\f104'; }
+
+/*------------------------------------*
+	Drop Down Mobile Menu Style
+*------------------------------------*/
+#mobile-dropdown { right: 0; left: auto; }
+#mobile-dropdown ul li a { text-align: right; }
+#mobile-dropdown ul li a .dropdown-toggle { left: 0; right: auto; padding-left: 40px; padding-right: 0; }
+#mobile-dropdown ul li a .dropdown-toggle:before { right: 50%; left: auto; margin-right: -15px; margin-left: 0; }
+#mobile-dropdown ul li ul { margin-right: 0; }
+#mobile-dropdown #mobile-menu-search form input { padding: 6px 12px 6px 45px !important; }
+#mobile-dropdown #mobile-menu-search form button { left: 10px; right: auto; }
+
+/*------------------------------------*
+	Full Screen Mobile Menu Style
+*------------------------------------*/
+#mobile-fullscreen { right: 0; left: auto; }
+#mobile-fullscreen a.close { left: 14px; right: auto; }
+#mobile-fullscreen .fs-dropdown-menu li .dropdown-toggle { padding-right: 5px; padding-left: 0; }
+#mobile-fullscreen #mobile-search label i { margin-right: 3px; margin-left: 0; }
 
 /*------------------------------------*
 	Breadcrumbs

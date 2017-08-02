@@ -159,11 +159,16 @@ if ( $oceanwp_related_query->have_posts() ) :
 										$size = 'medium';
 									}
 
+									// Image args
+									$img_args = array(
+									    'alt' => get_the_title(),
+									);
+									if ( oceanwp_get_schema_markup( 'image' ) ) {
+										$img_args['itemprop'] = 'image';
+									}
+
 									// Display post thumbnail
-									the_post_thumbnail( $size, array(
-										'alt'		=> get_the_title(),
-										'itemprop' 	=> 'image',
-									) );
+									the_post_thumbnail( $size, $img_args );
 
 								} ?>
 							</a>

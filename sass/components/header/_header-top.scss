@@ -2,6 +2,7 @@
 	border-bottom: 0 !important;
 
 	.header-top {
+		position: relative;
 		background-color: $color-1;
 		@include box-shadow( 0 1px 5px 0 rgba(0,0,0,0.1) );
 		z-index: 100;
@@ -143,4 +144,18 @@
 		}
 	}
 
+}
+
+#site-header.top-header #oceanwp-mobile-menu-icon {
+	float: none;
+	left: -15px;
+	right: auto;
+
+	a {
+		font-size: 10px;
+		line-height: 40px;
+		font-weight: 600;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
 }

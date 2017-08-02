@@ -202,6 +202,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_blog_entry_excerpt_length', array(
 				'label'	   				=> esc_html__( 'Excerpt Length', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Add 500 to display full content', 'oceanwp' ),
 				'section'  				=> 'ocean_blog_entries',
 				'settings' 				=> 'ocean_blog_entry_excerpt_length',
 				'priority' 				=> 10,

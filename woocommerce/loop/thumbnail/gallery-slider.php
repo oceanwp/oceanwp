@@ -32,6 +32,14 @@ if ( version_compare( OceanWP_WooCommerce_Config::get_wc_version(), '2.7', '>=' 
 // Get attachments count
 $attachments_count = count( $attachment_ids );
 
+// Image args
+$img_args = array(
+    'alt' => get_the_title(),
+);
+if ( oceanwp_get_schema_markup( 'image' ) ) {
+	$img_args['itemprop'] = 'image';
+}
+
 // If there are attachments display slider
 if ( $attachment_ids ) : ?>
 
@@ -46,10 +54,7 @@ if ( $attachment_ids ) : ?>
 			<div class="oceanwp-slider-slide">
 				<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
 					<?php
-					echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', array(
-				        'alt'           => get_the_title(),
-				        'itemprop'      => 'image',
-				    ) ); ?>
+					echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', $img_args ); ?>
 			    </a>
 			</div>
 
@@ -70,10 +75,7 @@ if ( $attachment_ids ) : ?>
 					<div class="oceanwp-slider-slide">
 						<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
 							<?php
-							echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', array(
-						        'alt'           => get_the_title(),
-						        'itemprop'      => 'image',
-						    ) ); ?>
+							echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', $img_args ); ?>
 					    </a>
 					</div>
 

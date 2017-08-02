@@ -24,6 +24,8 @@
  * - NAVIGATIONS
  * - MEGA MENU
  * - SEARCH ICON
+ * - DROP DOWN MOBILE
+ * - FULL SCREEN MOBILE
  * - PAGE HEADER
  * - BLOG
  * - SIDEBAR
@@ -109,6 +111,16 @@
 @import "components/header/search-dropdown";
 @import "components/header/search-replace";
 @import "components/header/search-overlay";
+
+/*------------------------------------*
+	$DROP DOWN MOBILE
+*------------------------------------*/
+@import "components/mobile/dropdown-mobile";
+
+/*------------------------------------*
+	$FULL SCREEN MOBILE
+*------------------------------------*/
+@import "components/mobile/fullscreen-mobile";
 
 /*------------------------------------*
 	$PAGE HEADER

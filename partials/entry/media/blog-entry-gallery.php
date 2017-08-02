@@ -44,11 +44,16 @@ if ( 'grid-entry' == oceanwp_blog_entry_style() ) {
 			$attachment_alt 	= get_post_meta( $attachment, '_wp_attachment_image_alt', true );
 			$attachment_alt 	= $attachment_alt ? $attachment_alt : $attachment_title;
 
+			// Image args
+			$img_args = array(
+			    'alt' => $attachment_alt,
+			);
+			if ( oceanwp_get_schema_markup( 'image' ) ) {
+				$img_args['itemprop'] = 'image';
+			}
+
 			// Get image output
-			$attachment_html = wp_get_attachment_image( $attachment, $size, '', array(
-		        'alt'           => $attachment_alt,
-		        'itemprop'      => 'image',
-		    ) );
+			$attachment_html = wp_get_attachment_image( $attachment, $size, '', $img_args );
 
 			// Display with lightbox
 			if ( oceanwp_gallery_is_lightbox_enabled() == 'on' ) : ?>

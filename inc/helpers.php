@@ -31,9 +31,10 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 
 	function oceanwp_body_classes( $classes ) {
 
-		// Save some vars
+		// Vars
 		$post_layout  = oceanwp_post_layout();
 		$post_id      = oceanwp_post_id();
+		$mobile_style = oceanwp_mobile_menu_style();
 
 		// RTL
 		if ( is_rtl() ) {
@@ -42,6 +43,9 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 		
 		// Main class
 		$classes[] = 'oceanwp-theme';
+
+		// Mobile menu style
+		$classes[] = $mobile_style . '-mobile';
 
 		// If video header
 		if (function_exists( 'has_header_video' )
@@ -692,7 +696,8 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 
 		// Medium header style menu hidden
 		if ( 'medium' == $header_style
-			&& true == get_theme_mod( 'ocean_medium_header_hidden_menu', true ) ) {
+			&& true == get_theme_mod( 'ocean_medium_header_hidden_menu', true )
+			&& true != get_theme_mod( 'ocean_medium_header_stick_menu', false ) ) {
 
 			// Add hidden menu class
 			$classes[] = 'hidden-menu';
@@ -1297,6 +1302,28 @@ if ( ! function_exists( 'oceanwp_menu_cart_style' ) ) {
 
 		// Return style
 		return $style;
+
+	}
+
+}
+
+/**
+ * Mobile menu style
+ *
+ * @since 1.3.0
+ */
+if ( ! function_exists( 'oceanwp_mobile_menu_style' ) ) {
+
+	function oceanwp_mobile_menu_style() {
+
+		// Get style from customizer setting
+		$style = get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' );
+
+		// Sanitize style to make sure it isn't empty
+		$style = $style ? $style : 'sidebar';
+
+		// Apply filters and return
+		return apply_filters( 'ocean_mobile_menu_style', $style );
 
 	}
 
@@ -3248,6 +3275,11 @@ if ( ! function_exists( 'oceanwp_get_cart_icons' ) ) {
 if ( ! function_exists( 'oceanwp_sidr_menu_source' ) ) {
 	
 	function oceanwp_sidr_menu_source() {
+
+		// Return if is not sidebar mobile style
+		if ( 'sidebar' != oceanwp_mobile_menu_style() ) {
+			return;
+		}
 
 		// Define array of items
 		$items = array();

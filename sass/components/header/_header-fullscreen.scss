@@ -150,6 +150,10 @@
 			&.open-sub > a .nav-arrow:before {
 				content: '-';
 			}
+
+			.sidebar-box {
+				display: none;
+			}
 		}
 
 		ul.sub-menu {
