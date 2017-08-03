@@ -10,9 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Global woo
-global $woocommerce;
-
 // Menu Location
 $menu_location = apply_filters( 'ocean_main_menu_location', 'main_menu' );
 
@@ -63,7 +60,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		// Cart icon
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
 			&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) { ?>
-			<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="mobile-wcmenucart"><?php echo wp_kses_post( $cart_icon ); ?></a>
+			<a href="<?php echo esc_url( WC_Cart::get_cart_url() ); ?>" class="mobile-wcmenucart"><?php echo wp_kses_post( $cart_icon ); ?></a>
 		<?php } ?>
 
 		<a href="#" class="mobile-menu">
