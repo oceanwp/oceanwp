@@ -1668,7 +1668,7 @@ a.pure-button-selected {
   background-color: #fff;
   font-size: 12px;
   border-bottom: 1px solid #f1f1f1;
-  z-index: 10;
+  z-index: 11;
 }
 
 #top-bar {
@@ -1928,7 +1928,7 @@ a.pure-button-selected {
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #f1f1f1;
-  z-index: 10;
+  z-index: 5;
 }
 
 .no-header-border #site-header {

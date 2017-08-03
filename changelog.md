@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### *2017.08.03* - 1.3.1
+* **Fixed** - Anchor link in the Full Screen mobile menu style.
+* **Fixed** - Issue with the Navigation widget of Ocean Elementor Widgets.
+* **Fixed** - JS error "$left is not defined".
+
 ### *2017.08.02* - 1.3.0
 * **Added** - Full support for PHP 7.1.
 * **Added** - Drop down mobile menu style.
