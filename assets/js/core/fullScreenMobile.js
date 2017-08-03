@@ -65,7 +65,7 @@ function oceanwpFullScreenMobile() {
 		} );
 
 		// Close menu if anchor link
-        $j( '#mobile-fullscreen nav a.menu-link[href*="#"]:not([href="#"])' ).on( 'click', function() {
+        $j( '#mobile-fullscreen .fs-dropdown-menu li a[href*="#"]:not([href="#"])' ).on( 'click', function() {
         	oceanwpFullScreenMobileClose();
 	    } );
 
