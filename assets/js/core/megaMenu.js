@@ -53,10 +53,10 @@ function oceanwpMegaMenu() {
             $dropdowntLeft       = $liOffset - $dropdownWidth/2;
         
         if ( $dropdowntLeft < 0 ) {
-            var left            = $liOffset - 10;
+            var $left            = $liOffset - 10;
             $dropdowntMarginLeft = 0;
         } else {
-            var left            = $dropdownWidth/2;
+            var $left            = $dropdownWidth/2;
             
         }
         
