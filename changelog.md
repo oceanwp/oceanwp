@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.08.04* - 1.3.2
+* **Fixed** - Fatal issue with the WooCommerce icon in the navigation.
+
 ### *2017.08.03* - 1.3.1
 * **Fixed** - Anchor link in the Full Screen mobile menu style.
 * **Fixed** - Issue with the Navigation widget of Ocean Elementor Widgets.
