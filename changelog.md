@@ -1,5 +1,14 @@
 # OceanWP Changelog
 
+### *2017.08.16* - 1.3.4
+* **Fixed** - Values of the OceanWP Settings metabox not saved in the LifterLMS Courses post type.
+* **Fixed** - No menu on the Drop down and Full Screen mobile menu styles when you add a custom mobile menu.
+* **Fixed** - Issue with Divi builder when you select the tablet or mobile view.
+* **Fixed** - Small scroll effect issue with the Modal Window extension.
+
+### *2017.08.04* - 1.3.3
+* **Fixed** - Issue with the mobile menu breakpoint code.
+
 ### *2017.08.04* - 1.3.2
 * **Fixed** - Fatal issue with the WooCommerce icon in the navigation.
 

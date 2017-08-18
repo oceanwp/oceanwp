@@ -16,26 +16,32 @@ function oceanwpScrollEffect() {
 	if ( ! $j( 'body' ).hasClass( 'single-product' )
 		&& ! $j( 'body' ).hasClass( 'no-local-scroll' ) ) {
 
-	    $j( 'a.local[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"]), a.sidr-class-menu-link[href*="#"]:not([href="#"])' ).on( 'click', function() {
+	    $j( 'a.local[href*="#"]:not([href="#"]), .local a[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"]), a.sidr-class-menu-link[href*="#"]:not([href="#"])' ).on( 'click', function() {
 
-        	var $href     				= $j( this ).attr( 'href' ),
-			    $hrefHash 				= $href.substr( $href.indexOf( '#' ) ).slice( 1 ),
-			    $target   				= $j( '#' + $hrefHash ),
-				$adminbarHeight        	= oceanwpGetAdminbarHeight(),
-				$topbarHeight        	= oceanwpGetTopbarHeight(),
-				$stickyHeaderHeight    	= oceanwpGetStickyHeaderHeight(),
-			    $scrollPosition;
+	    	if ( ! $j( this ).hasClass( 'omw-open-modal' )
+	        	&& ! $j( this ).parent().hasClass( 'omw-open-modal' )
+	        	&& ! $j( this ).parent().parent().parent().hasClass( 'omw-open-modal' ) ) {
 
-			if ( $target.length && '' !== $hrefHash ) {
-				$scrollPosition     	= $target.offset().top - $adminbarHeight - $topbarHeight - $stickyHeaderHeight;
+	        	var $href     				= $j( this ).attr( 'href' ),
+				    $hrefHash 				= $href.substr( $href.indexOf( '#' ) ).slice( 1 ),
+				    $target   				= $j( '#' + $hrefHash ),
+					$adminbarHeight        	= oceanwpGetAdminbarHeight(),
+					$topbarHeight        	= oceanwpGetTopbarHeight(),
+					$stickyHeaderHeight    	= oceanwpGetStickyHeaderHeight(),
+				    $scrollPosition;
 
-                $j( 'html, body' ).stop().animate( {
-					 scrollTop: Math.round( $scrollPosition )
-				}, 1000 );
+				if ( $target.length && '' !== $hrefHash ) {
+					$scrollPosition     	= $target.offset().top - $adminbarHeight - $topbarHeight - $stickyHeaderHeight;
 
-				return false;
+	                $j( 'html, body' ).stop().animate( {
+						 scrollTop: Math.round( $scrollPosition )
+					}, 1000 );
 
-            }
+					return false;
+
+	            }
+
+	        }
 
 	    } );
 

@@ -3775,7 +3775,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 					$mobile_menu_breakpoint = $mobile_menu_custom_breakpoint;
 				}
 
-				$css .= '@media (max-width: '. $mobile_menu_breakpoint .'px) {#top-bar-nav, #site-navigation-wrap, #oceanwp-social-menu {display: none;}#oceanwp-mobile-menu-icon {display: block;}#top-bar.has-no-content #top-bar-social.top-bar-left, #top-bar.has-no-content #top-bar-social.top-bar-right {position: inherit; left: auto; right: auto; float: none; height: auto; line-height: 1.5em; margin-top: 0; text-align: center;}#top-bar.has-no-content #top-bar-social li {float: none; display: inline-block;}';
+				$css .= '@media (max-width: '. $mobile_menu_breakpoint .'px) {#top-bar-nav, #site-navigation-wrap, #oceanwp-social-menu {display: none;}#oceanwp-mobile-menu-icon {display: block;}#top-bar.has-no-content #top-bar-social.top-bar-left, #top-bar.has-no-content #top-bar-social.top-bar-right {position: inherit; left: auto; right: auto; float: none; height: auto; line-height: 1.5em; margin-top: 0; text-align: center;}#top-bar.has-no-content #top-bar-social li {float: none; display: inline-block;}}';
 			}
 
 			// Drop down mobile menu max height

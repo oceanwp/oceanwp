@@ -612,7 +612,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 								if ( ! $length ) {
 									echo wp_kses_post( strip_shortcodes( $post->post_excerpt ) );
 								} else {
-									echo wp_kses_post( wp_trim_words( strip_shortcodes( $post->post_excerpt ), $length ) );
+									echo wp_trim_words( strip_shortcodes( $post->post_excerpt ), $length );
 								}
 							echo '</li>';
 						}

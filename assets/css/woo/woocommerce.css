@@ -1944,53 +1944,7 @@
 
 .woocommerce nav.woocommerce-pagination ul {
   border: none;
-  list-style: none;
-  margin: 0;
-  padding: 0;
   text-align: right;
-}
-
-.woocommerce nav.woocommerce-pagination ul li {
-  display: inline-block;
-  float: none;
-  border-right: none;
-}
-
-.woocommerce nav.woocommerce-pagination ul li a {
-  display: inline-block;
-  font-size: 18px;
-  line-height: 38px;
-  margin: 0 8px 0 0;
-  padding: 0;
-}
-
-.woocommerce nav.woocommerce-pagination ul li a:focus {
-  background-color: #f8f8f8;
-  color: #333;
-  line-height: 38px;
-  padding: 0;
-}
-
-.woocommerce nav.woocommerce-pagination ul li a:hover {
-  background-color: #f8f8f8;
-  color: #333;
-  line-height: 38px;
-  padding: 0;
-}
-
-.woocommerce nav.woocommerce-pagination ul li span {
-  display: inline-block;
-  font-size: 18px;
-  line-height: 38px;
-  margin: 0 8px 0 0;
-  padding: 0;
-}
-
-.woocommerce nav.woocommerce-pagination ul li span.current {
-  background-color: #f8f8f8;
-  color: #333;
-  line-height: 38px;
-  padding: 0;
 }
 
 .woocommerce span.onsale {

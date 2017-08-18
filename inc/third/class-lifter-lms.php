@@ -24,6 +24,13 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			add_action( 'after_setup_theme', array( $this, 'theme_support' ) );
 			add_filter( 'llms_get_theme_default_sidebar', array( $this, 'llms_sidebar' ) );
 			add_filter( 'ocean_post_layout_class', array( $this, 'layouts' ) );
+
+			// Fix for the OceanWP Settings values not saved
+			if ( OCEAN_EXTRA_ACTIVE ) {
+				add_action( 'llms_metabox_after_save_lifterlms-course-options', function( $post_id ) {
+					butterbean()->update( $post_id );
+				} );
+			}
 		}
 
 		/**
