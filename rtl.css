@@ -45,9 +45,7 @@ form.oceanwp-searchform input { padding: 0 15px 0 40px; }
 .content-left-sidebar .widget-area { float: right; padding-left: 30px; padding-right: 0; }
 
 /* Boxed layout */
-.boxed-main-layout .site-breadcrumbs,
-.boxed-main-layout #top-bar-social.top-bar-right { right: auto; left: 30px; }
-.boxed-main-layout #top-bar-social.top-bar-left { left: auto; right: 30px; }
+.boxed-main-layout .site-breadcrumbs { right: auto; left: 30px; }
 
 /* Blockquote */
 blockquote { padding-right: 20px; padding-left: 0; border-right-width: 3px; border-left-width: 0; }

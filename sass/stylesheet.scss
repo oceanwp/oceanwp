@@ -22,6 +22,7 @@
  * - TOP BAR
  * - HEADER
  * - NAVIGATIONS
+ * - LINKS EFFECT
  * - MEGA MENU
  * - SEARCH ICON
  * - DROP DOWN MOBILE
@@ -99,6 +100,11 @@
 *------------------------------------*/
 @import "components/header/navigation";
 @import "components/header/socialmenu";
+
+/*------------------------------------*
+	$LINKS EFFECT
+*------------------------------------*/
+@import "components/header/links_effect";
 
 /*------------------------------------*
 	$MEGA MENU

@@ -709,6 +709,12 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 			$classes[] = 'header-replace';
 		}
 
+		// If menu links effect
+		$link_effect = get_theme_mod( 'ocean_menu_links_effect', 'no' );
+		if ( 'no' != $link_effect ) {
+			$classes[] = 'effect-' . $link_effect;
+		}
+
 		// Clearfix class
 		$classes[] = 'clr';
 

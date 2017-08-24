@@ -118,13 +118,6 @@ body.content-full-screen #content-wrap {
 }
 
 /* Boxed Layout > Move absolute items */
-.boxed-main-layout {
-	.site-breadcrumbs,
-	#top-bar-social.top-bar-right {
-		right: 30px;
-	}
-
-	#top-bar-social.top-bar-left {
-		left: 30px;
-	}
+.boxed-main-layout .site-breadcrumbs {
+	right: 30px;
 }

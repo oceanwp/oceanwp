@@ -1995,7 +1995,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'.sidr-class-dropdown-toggle:hover',
 				'.sidr-class-menu-item-has-children.active > a',
 				'.sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle',
-				'input[type=checkbox]:checked:before'
+				'input[type=checkbox]:checked:before',
 			) );
 
 			// Backgrounds
@@ -2007,7 +2007,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'#site-navigation-wrap .dropdown-menu > li.btn > a > span',
 				'.thumbnail:hover i',
 				'.post-quote-content',
-				'.omw-modal .omw-close-modal'
+				'.omw-modal .omw-close-modal',
 			) );
 
 			// Borders

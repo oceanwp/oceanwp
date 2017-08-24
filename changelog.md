@@ -1,5 +1,13 @@
 # OceanWP Changelog
 
+### *2017.08.24* - 1.3.5
+* **Added** - 10 menu links effects, go to Header > Menu.
+* **Added** - Brazil Portuguese translation, thanks a lot to Camilla Ribeiro.
+* **Tweak** - Some CSS codes.
+* **Fixed** - "add_to_cart_fragments" replaced by "woocommerce_add_to_cart_fragments".
+* **Fixed** - Text "Type then hit enter to search..." not translatable.
+* **Fixed** - Conflicts between the Transparent header style and the Elementor top section, now the header is hided in the Elementor edit mode.
+
 ### *2017.08.16* - 1.3.4
 * **Fixed** - Values of the OceanWP Settings metabox not saved in the LifterLMS Courses post type.
 * **Fixed** - No menu on the Drop down and Full Screen mobile menu styles when you add a custom mobile menu.

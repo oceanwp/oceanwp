@@ -1502,6 +1502,69 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Links Effect
+			 */
+			$wp_customize->add_setting( 'ocean_menu_links_effect', array(
+				'default'           	=> 'no',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_menu_links_effect', array(
+				'label'	   				=> esc_html__( 'Links Effect', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_header_menu',
+				'settings' 				=> 'ocean_menu_links_effect',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'no' 		=> esc_html__( 'No Effect', 'oceanwp' ),
+					'one' 		=> esc_html__( 'Effect 1', 'oceanwp' ),
+					'two' 		=> esc_html__( 'Effect 2', 'oceanwp' ),
+					'three' 	=> esc_html__( 'Effect 3', 'oceanwp' ),
+					'four' 		=> esc_html__( 'Effect 4', 'oceanwp' ),
+					'five' 		=> esc_html__( 'Effect 5', 'oceanwp' ),
+					'six' 		=> esc_html__( 'Effect 6', 'oceanwp' ),
+					'seven' 	=> esc_html__( 'Effect 7', 'oceanwp' ),
+					'eight' 	=> esc_html__( 'Effect 8', 'oceanwp' ),
+					'nine' 		=> esc_html__( 'Effect 9', 'oceanwp' ),
+					'ten' 		=> esc_html__( 'Effect 10', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Links Effect Blue Color
+			 */
+			$wp_customize->add_setting( 'ocean_menu_links_effect_blue_color', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> '#13aff0',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_menu_links_effect_blue_color', array(
+				'label'	   				=> esc_html__( 'Links Effect: Color', 'oceanwp' ),
+				'section'  				=> 'ocean_header_menu',
+				'settings' 				=> 'ocean_menu_links_effect_blue_color',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_menu_links_effect_blue',
+			) ) );
+
+			/**
+			 * Links Effect Dark Color
+			 */
+			$wp_customize->add_setting( 'ocean_menu_links_effect_dark_color', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> 'rgba(0,0,0,0.1)',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_menu_links_effect_dark_color', array(
+				'label'	   				=> esc_html__( 'Links Effect: Color', 'oceanwp' ),
+				'section'  				=> 'ocean_header_menu',
+				'settings' 				=> 'ocean_menu_links_effect_dark_color',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_menu_links_effect_dark',
+			) ) );
+
+			/**
 			 * Main Styling Heading
 			 */
 			$wp_customize->add_setting( 'ocean_menu_main_styling_heading', array(
@@ -2386,7 +2449,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'section'  				=> 'ocean_header_mobile_menu',
 				'settings' 				=> 'ocean_mobile_menu_custom_breakpoint',
 				'priority' 				=> 10,
-				'active_callback' 		=> 'ocean_mobile_menu_cac_has_custom_breakpoint',
+				'active_callback' 		=> 'oceanwp_mobile_menu_cac_has_custom_breakpoint',
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
 			        'step'  => 1,
@@ -2999,6 +3062,8 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			$search_overlay_input_border_hover 							= get_theme_mod( 'ocean_search_overlay_input_hover_border_color', '#777777' );
 			$search_overlay_input_border_focus 							= get_theme_mod( 'ocean_search_overlay_input_focus_border_color', '#ffffff' );
 			$search_overlay_close_button_color 							= get_theme_mod( 'ocean_search_overlay_close_button_color', '#ffffff' );
+			$links_effect_blue_color 									= get_theme_mod( 'ocean_menu_links_effect_blue_color', '#13aff0' );
+			$links_effect_dark_color 									= get_theme_mod( 'ocean_menu_links_effect_dark_color', 'rgba(0,0,0,0.1)' );
 			$menu_items_padding 										= get_theme_mod( 'ocean_menu_items_padding', '15' );
 			$menu_link_color 											= get_theme_mod( 'ocean_menu_link_color', '#555555' );
 			$menu_link_color_hover 										= get_theme_mod( 'ocean_menu_link_color_hover', '#13aff0' );
@@ -3588,6 +3653,20 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Search overlay close button color
 			if ( ! empty( $search_overlay_close_button_color ) && '#ffffff' != $search_overlay_close_button_color ) {
 				$css .= '.search-overlay .search-toggle-li .search-overlay-toggle.exit > span:before{color:'. $search_overlay_close_button_color .';}';
+			}
+
+			// Links effect blue color
+			if ( ! empty( $links_effect_blue_color ) && '#13aff0' != $links_effect_blue_color ) {
+				$css .= '.effect-one #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-three #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-five #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-five #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-nine #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-nine #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after{background-color: '. $links_effect_blue_color .';}';
+				$css .= '.effect-four #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-four #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-seven #site-navigation-wrap .dropdown-menu > li > a.menu-link:hover > span:after, .effect-seven #site-navigation-wrap .dropdown-menu > li.sfHover > a.menu-link > span:after{color: '. $links_effect_blue_color .';}';
+				$css .= '.effect-seven #site-navigation-wrap .dropdown-menu > li > a.menu-link:hover > span:after, .effect-seven #site-navigation-wrap .dropdown-menu > li.sfHover > a.menu-link > span:after{text-shadow: 10px 0 '. $links_effect_blue_color .', -10px 0 '. $links_effect_blue_color .';}';
+			}
+
+			// Links effect dark color
+			if ( ! empty( $links_effect_dark_color ) && 'rgba(0,0,0,0.1)' != $links_effect_dark_color ) {
+				$css .= '.effect-two #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-eight #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-eight #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after{background-color: '. $links_effect_dark_color .';}';
+				$css .= '.effect-six #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-six #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after{border-color: '. $links_effect_dark_color .';}';
+				$css .= '.effect-ten #site-navigation-wrap .dropdown-menu > li > a.menu-link:hover > span, .effect-ten #site-navigation-wrap .dropdown-menu > li.sfHover > a.menu-link > span{-webkit-box-shadow: 0 0 10px 4px '. $links_effect_dark_color .'; -moz-box-shadow: 0 0 10px 4px '. $links_effect_dark_color .'; box-shadow: 0 0 10px 4px '. $links_effect_dark_color .';}';
 			}
 
 			// Menu items padding

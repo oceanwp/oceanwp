@@ -43,6 +43,11 @@
 			    cursor: pointer;
 			    text-align: center;
 		    	@include transition( background-color .3s ease );
+
+		    	&:before,
+		    	&:after {
+		    		display: none !important;
+		    	}
 			}
 
 		    &.btn > a:hover > span {

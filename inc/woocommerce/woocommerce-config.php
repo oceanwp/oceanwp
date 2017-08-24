@@ -113,7 +113,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Main Woo Filters
 			add_filter( 'wp_nav_menu_items', array( $this, 'menu_cart_icon' ) , 10, 2 );
-			add_filter( 'add_to_cart_fragments', array( $this, 'menu_cart_icon_fragments' ) );
+			add_filter( 'woocommerce_add_to_cart_fragments', array( $this, 'menu_cart_icon_fragments' ) );
 			add_filter( 'woocommerce_general_settings', array( $this, 'remove_general_settings' ) );
 			add_filter( 'woocommerce_product_settings', array( $this, 'remove_product_settings' ) );
 			add_filter( 'loop_shop_per_page', array( $this, 'loop_shop_per_page' ), 20 );
