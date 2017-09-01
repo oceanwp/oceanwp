@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.08.25* - 1.3.6
+* **Fixed** - Issue with the search overlay style.
+
 ### *2017.08.24* - 1.3.5
 * **Added** - 10 menu links effects, go to Header > Menu.
 * **Added** - Brazil Portuguese translation, thanks a lot to Camilla Ribeiro.
