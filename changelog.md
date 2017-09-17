@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.09.17* - 1.3.8
+* **Fixed** - Undefined $get_content variable error in the header.
+
 ### *2017.09.17* - 1.3.7
 NOTE: After the theme update, if you have disabled any scripts or styles, go to Theme Panel > Scripts & Styles, and click on Save Changes to update the JS and CSS files.
 
