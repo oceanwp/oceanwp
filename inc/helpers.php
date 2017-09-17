@@ -3541,13 +3541,13 @@ if ( ! function_exists( 'oceanwp_topbar_template_content' ) ) {
 			$content = get_post( $template );
 
 			if ( $content && ! is_wp_error( $content ) ) {
-				$get_content = $content->post_content;
+				$content = $content->post_content;
 			}
 
 		}
 
 		// Apply filters and return content
-		return apply_filters( 'oceanwp_topbar_template_content', $get_content );
+		return apply_filters( 'oceanwp_topbar_template_content', $content );
 
 	}
 
