@@ -14,7 +14,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 $elements = oceanwp_medium_header_elements();
 
 // Define counter
-$count = ''; ?>
+$count = '';
+
+// Bottom header class
+$classes = array( 'bottom-header-wrap', 'clr' );
+
+// Add the fixed class if only sticky menu
+if ( true == get_theme_mod( 'ocean_medium_header_stick_menu', false ) ) {
+	$classes[] = 'fixed-scroll';
+}
+
+// Turn classes into space seperated string
+$classes = implode( ' ', $classes ); ?>
 
 <?php do_action( 'ocean_before_header_inner' ); ?>
 
@@ -76,12 +87,16 @@ $count = ''; ?>
 	<?php
 	} ?>
 
-	<?php get_template_part( 'partials/header/nav' ); ?>
+	<div class="<?php echo esc_attr( $classes ); ?>">
 
-	<?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
+		<?php get_template_part( 'partials/header/nav' ); ?>
+
+		<?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
+
+		<?php get_template_part( 'partials/mobile/mobile-dropdown' ); ?>
+
+	</div>
 
 </div><!-- #site-header-inner -->
-
-<?php get_template_part( 'partials/mobile/mobile-dropdown' ); ?>
 
 <?php do_action( 'ocean_after_header_inner' ); ?>

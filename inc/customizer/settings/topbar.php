@@ -309,6 +309,25 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			) );
 
 			/**
+			 * Top Bar Template
+			 */
+			$wp_customize->add_setting( 'ocean_top_bar_template', array(
+				'default'           	=> '0',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_top_bar_template', array(
+				'label'	   				=> esc_html__( 'Select Template', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose a template created in Theme Panel > My Library to replace the content.', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_topbar_content',
+				'settings' 				=> 'ocean_top_bar_template',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_topbar',
+				'choices' 				=> oceanwp_customizer_helpers( 'library' ),
+			) ) );
+
+			/**
 			 * Top Bar Content
 			 */
 			$wp_customize->add_setting( 'ocean_top_bar_content', array(

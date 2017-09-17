@@ -248,6 +248,15 @@ if ( ! function_exists( 'oceanwp_post_layout' ) ) {
 
 		}
 
+		// Home
+		elseif ( is_home()
+			|| is_category()
+			|| is_tag()
+			|| is_date()
+			|| is_author() ) {
+			$class = get_theme_mod( 'ocean_blog_archives_layout', 'right-sidebar' );
+		}
+
 		// Singular Post
 		elseif ( is_singular( 'post' ) ) {
 			$class = get_theme_mod( 'ocean_blog_single_layout', 'right-sidebar' );
@@ -259,31 +268,14 @@ if ( ! function_exists( 'oceanwp_post_layout' ) ) {
 			$class = 'full-width';
 		}
 
-		// Home
-		elseif ( is_home() ) {
-			$class = get_theme_mod( 'ocean_blog_archives_layout', 'right-sidebar' );
-		}
-
 		// Search
 		elseif ( is_search() ) {
 			$class = get_theme_mod( 'ocean_search_layout', 'right-sidebar' );
 		}
-
-		// Standard Categories
-		elseif ( is_category() ) {
-			$class     = get_theme_mod( 'ocean_blog_archives_layout', 'right-sidebar' );
-			$term      = get_query_var( 'cat' );
-			$term_data = get_option( "category_$term" );
-			if ( $term_data ) {
-				if( ! empty( $term_data['oceanwp_term_layout'] ) ) {
-					$class = $term_data['oceanwp_term_layout'];
-				}
-			}
-		}
 		
 		// 404 page
 		elseif ( is_404() ) {
-			$class = 'full-width';
+			$class = get_theme_mod( 'ocean_error_page_layout', 'full-width' );
 		}
 
 		// All else
@@ -723,6 +715,48 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 		
 		// Apply filters for child theming
 		$classes = apply_filters( 'ocean_header_classes', $classes );
+
+		// Turn classes into space seperated string
+		$classes = implode( ' ', $classes );
+
+		// return classes
+		return $classes;
+
+	}
+
+}
+
+/**
+ * Add classes to the top header style wrap
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_top_header_classes' ) ) {
+
+	function oceanwp_top_header_classes() {
+
+		// Header style
+		$header_style = oceanwp_header_style();
+
+		// Return if is not the top header style
+		if ( 'top' != $header_style ) {
+			return;
+		}
+
+		// Setup classes array
+		$classes = array();
+
+		// Add classes
+		$classes[] = 'header-top';
+
+		// Clearfix class
+		$classes[] = 'clr';
+
+		// Set keys equal to vals
+		$classes = array_combine( $classes, $classes );
+		
+		// Apply filters for child theming
+		$classes = apply_filters( 'ocean_top_header_classes', $classes );
 
 		// Turn classes into space seperated string
 		$classes = implode( ' ', $classes );
@@ -2960,6 +2994,59 @@ if ( ! function_exists( 'oceanwp_is_woo_single' ) ) {
 /**
  * Translation support
  *
+ * @since 1.3.7
+ */
+if ( ! function_exists( 'oceanwp_hamburgers_styles' ) ) {
+
+	function oceanwp_hamburgers_styles() {
+
+		// Styles
+		$style = array(
+			'default'	   	=> esc_html__( 'Default Icon', 'oceanwp' ),
+			'3dx'	   		=> esc_html__( '3D X', 'oceanwp' ),
+			'3dx-r'	   		=> esc_html__( '3D X Reverse', 'oceanwp' ),
+			'3dy'	   		=> esc_html__( '3D Y', 'oceanwp' ),
+			'3dy-r'	   		=> esc_html__( '3D Y Reverse', 'oceanwp' ),
+			'3dxy'	   		=> esc_html__( '3D XY', 'oceanwp' ),
+			'3dxy-r'	   	=> esc_html__( '3D XY Reverse', 'oceanwp' ),
+			'arrow'	   		=> esc_html__( 'Arrow', 'oceanwp' ),
+			'arrow-r'	   	=> esc_html__( 'Arrow Reverse', 'oceanwp' ),
+			'arrowalt'	   	=> esc_html__( 'Arrowalt', 'oceanwp' ),
+			'arrowalt-r'	=> esc_html__( 'Arrowalt Reverse', 'oceanwp' ),
+			'arrowturn'	   	=> esc_html__( 'Arrowturn', 'oceanwp' ),
+			'arrowturn-r'	=> esc_html__( 'Arrowturn Reverse', 'oceanwp' ),
+			'boring'	   	=> esc_html__( 'Boring', 'oceanwp' ),
+			'collapse'	   	=> esc_html__( 'Collapse', 'oceanwp' ),
+			'collapse-r'	=> esc_html__( 'Collapse Reverse', 'oceanwp' ),
+			'elastic'	   	=> esc_html__( 'Elastic', 'oceanwp' ),
+			'elastic-r'	   	=> esc_html__( 'Elastic Reverse', 'oceanwp' ),
+			'minus'	   		=> esc_html__( 'Minus', 'oceanwp' ),
+			'slider'	   	=> esc_html__( 'Slider', 'oceanwp' ),
+			'slider-r'	   	=> esc_html__( 'Slider Reverse', 'oceanwp' ),
+			'spin'	   		=> esc_html__( 'Spin', 'oceanwp' ),
+			'spin-r'	   	=> esc_html__( 'Spin Reverse', 'oceanwp' ),
+			'spring'	   	=> esc_html__( 'Spring', 'oceanwp' ),
+			'spring-r'	   	=> esc_html__( 'Spring Reverse', 'oceanwp' ),
+			'stand'	   		=> esc_html__( 'Stand', 'oceanwp' ),
+			'stand-r'	   	=> esc_html__( 'Stand Reverse', 'oceanwp' ),
+			'squeeze'	   	=> esc_html__( 'Squeeze', 'oceanwp' ),
+			'vortex'	   	=> esc_html__( 'Vortex', 'oceanwp' ),
+			'vortex-r'	   	=> esc_html__( 'Vortex Reverse', 'oceanwp' ),
+		);
+		
+		// Apply filters for child theming
+		$style = apply_filters( 'ocean_hamburgers_styles', $style );
+
+		// Return
+		return $style;
+
+	}
+
+}
+
+/**
+ * Translation support
+ *
  * @since 1.1.4
  */
 if ( ! function_exists( 'oceanwp_tm_translation' ) ) {
@@ -2995,6 +3082,7 @@ if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
 		return apply_filters( 'ocean_register_tm_strings', array(
 			'ocean_top_bar_content' 			=> '',
 			'ocean_mobile_menu_text' 			=> esc_html__( 'Menu', 'oceanwp' ),
+			'ocean_mobile_menu_close_text' 		=> esc_html__( 'Close', 'oceanwp' ),
 			'ocean_mobile_menu_close_btn_text' 	=> esc_html__( 'Close Menu', 'oceanwp' ),
 			'ocean_footer_copyright_text' 		=> esc_html__( 'Copyright [oceanwp_date] - OceanWP Theme by Nick', 'oceanwp' ),
 			'ocean_woo_menu_icon_custom_link' 	=> '',
@@ -3303,11 +3391,11 @@ if ( ! function_exists( 'oceanwp_sidr_menu_source' ) ) {
 		// Add main navigation
 		else {
 			$items['nav'] = '#site-navigation';
-		}
 
-		// Add top bar menu
-		if ( has_nav_menu( 'topbar_menu' ) ) {
-			$items['top-nav'] = '#top-bar-nav';
+			// Add top bar menu
+			if ( has_nav_menu( 'topbar_menu' ) ) {
+				$items['top-nav'] = '#top-bar-nav';
+			}
 		}
 
 		if ( 'full_screen' != oceanwp_header_style() ) {
@@ -3430,6 +3518,36 @@ if ( ! function_exists( 'oceanwp_footer_template_content' ) ) {
 
 		// Apply filters and return content
 		return apply_filters( 'ocean_footer_template_content', $content );
+
+	}
+
+}
+
+/**
+ * Returns topbar template content
+ *
+ * @since 1.1.1
+ */
+if ( ! function_exists( 'oceanwp_topbar_template_content' ) ) {
+
+	function oceanwp_topbar_template_content() {
+
+		// Get the template ID
+		$template = get_theme_mod( 'ocean_top_bar_template' );
+
+		// Get template content
+		if ( ! empty( $template ) ) {
+
+			$content = get_post( $template );
+
+			if ( $content && ! is_wp_error( $content ) ) {
+				$get_content = $content->post_content;
+			}
+
+		}
+
+		// Apply filters and return content
+		return apply_filters( 'oceanwp_topbar_template_content', $get_content );
 
 	}
 

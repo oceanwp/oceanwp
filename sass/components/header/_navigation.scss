@@ -34,6 +34,10 @@
 				}
 			}
 
+			&.btn > a {
+				background-color: transparent !important;
+			}
+
 			&.btn > a > span {
 			    background-color: $color-5;
 			    color: $color-1;

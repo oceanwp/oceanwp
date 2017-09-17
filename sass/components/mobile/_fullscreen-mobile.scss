@@ -20,12 +20,36 @@
 		position: absolute;
 		top: 14px;
 	    right: 14px;
-	    font-size: 24px;
-	    line-height: 1;
-		color: $color-1;
+	    
+	    .close-icon-wrap {
+		    display: inline-block;
+		    position: relative;
+	    	width: 40px;
+		    height: 40px;
+		    @include transition( opacity .15s linear );
 
-		&:hover {
-	    	color: $color-4;
+		    &:hover {
+			    opacity: .7;
+			}
+	    }
+	    
+	    .close-icon-inner,
+	    .close-icon-inner::after {
+		    display: inline-block;
+		    width: 40px;
+		    height: 3px;
+		    background-color: #fff;
+		    border-radius: 3px;
+	    }
+	    
+	    .close-icon-inner {
+	    	@include transform( rotate(45deg) );
+	    }
+
+	    .close-icon-inner::after {
+		    content: '';
+    		display: block;
+    		@include transform( rotate(-90deg) );
 	    }
 	}
 
@@ -101,6 +125,7 @@
 
 	    .woo-menu-icon,
 	    .search-toggle-li,
+	    .side-panel-li,
 	    .sidebar-box {
 	    	display: none;
 	    }

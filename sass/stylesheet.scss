@@ -42,6 +42,7 @@
  * - CHOCOLAT
  * - SLICK
  * - SIDR
+ * - HAMBURGERS
  *
  * RESPONSIVE
  */
@@ -208,6 +209,40 @@
 *------------------------------------*/
 @import "components/plugins/sidr";
 @import "components/plugins/slick-theme";
+
+/*------------------------------------*
+	$HAMBURGERS
+*------------------------------------*/
+@import "components/plugins/hamburgers/base";
+@import "components/plugins/hamburgers/types/3dx";
+@import "components/plugins/hamburgers/types/3dx-r";
+@import "components/plugins/hamburgers/types/3dy";
+@import "components/plugins/hamburgers/types/3dy-r";
+@import "components/plugins/hamburgers/types/3dxy";
+@import "components/plugins/hamburgers/types/3dxy-r";
+@import "components/plugins/hamburgers/types/arrow";
+@import "components/plugins/hamburgers/types/arrow-r";
+@import "components/plugins/hamburgers/types/arrowalt";
+@import "components/plugins/hamburgers/types/arrowalt-r";
+@import "components/plugins/hamburgers/types/arrowturn";
+@import "components/plugins/hamburgers/types/arrowturn-r";
+@import "components/plugins/hamburgers/types/boring";
+@import "components/plugins/hamburgers/types/collapse";
+@import "components/plugins/hamburgers/types/collapse-r";
+@import "components/plugins/hamburgers/types/elastic";
+@import "components/plugins/hamburgers/types/elastic-r";
+@import "components/plugins/hamburgers/types/minus";
+@import "components/plugins/hamburgers/types/slider";
+@import "components/plugins/hamburgers/types/slider-r";
+@import "components/plugins/hamburgers/types/spin";
+@import "components/plugins/hamburgers/types/spin-r";
+@import "components/plugins/hamburgers/types/spring";
+@import "components/plugins/hamburgers/types/spring-r";
+@import "components/plugins/hamburgers/types/stand";
+@import "components/plugins/hamburgers/types/stand-r";
+@import "components/plugins/hamburgers/types/squeeze";
+@import "components/plugins/hamburgers/types/vortex";
+@import "components/plugins/hamburgers/types/vortex-r";
 
 /*------------------------------------*
 	$RESPONSIVE

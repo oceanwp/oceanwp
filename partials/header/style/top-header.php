@@ -32,7 +32,7 @@ if ( 'after' == $position ) { ?>
 <?php
 } ?>
 
-<div class="header-top clr">
+<div class="<?php echo esc_attr( oceanwp_top_header_classes() ); ?>">
 
 	<?php do_action( 'ocean_before_header_inner' ); ?>
 

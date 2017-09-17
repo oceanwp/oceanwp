@@ -23,7 +23,6 @@ form textarea {
     font-size: 14px;
     line-height: 1.8;
 	padding: 6px 12px;
-	margin-top: 3px;
 	vertical-align: middle;
 	background-color: transparent;
 	color: $color-2;
@@ -221,7 +220,8 @@ form select[multiple] {
 	height: auto;
 }
 form label {
-	margin: .5em 0 .2em;
+	display: block;
+    margin-bottom: 3px;
 }
 form fieldset {
 	margin: 0;

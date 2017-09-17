@@ -1062,6 +1062,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function menu_cart_icon( $items, $args ) {
 
+			// Return items if is in the Elementor edit mode, to avoid error
+			if ( class_exists( 'Elementor\Plugin' )
+				&& \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+				return $items;
+			}
+
 			// Only used for the main menu
 			if ( 'main_menu' != $args->theme_location ) {
 				return $items;
@@ -1076,7 +1082,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				return $items;
 			}
 
-			// Return items if "hide if empty cart" is checked
+			// Return items if "hide if empty cart" is checked or is in the Elementor edit mode (to avoid error)
 			if ( true == get_theme_mod( 'ocean_woo_menu_icon_hide_if_empty', false )
 				&& ! WC()->cart->cart_contents_count > 0 ) {
 				return $items;

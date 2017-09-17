@@ -1,4 +1,5 @@
 #site-header.full_screen-header {
+	z-index: 11;
 
 	#site-header-inner {
 		overflow: visible !important;
@@ -95,6 +96,10 @@
 			    @include transform( translateY(-8px) rotateZ(45deg) );
 			}
 		}
+	}
+
+	&.nav-open {
+		@include transform( none !important );
 	}
 
 	#full-screen-menu {

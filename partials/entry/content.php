@@ -14,11 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <?php
     // Display excerpt
-    if ( '500' != get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' ) ) :
+    if ( '500' != get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' ) ) : ?>
 
-        // Display custom excerpt
-        oceanwp_excerpt( absint( get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' ) ) );
+        <p>
+            <?php
+            // Display custom excerpt
+            oceanwp_excerpt( absint( get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' ) ) ); ?>
+        </p>
 
+    <?php
     // If excerpts are disabled, display full content
     else :
 

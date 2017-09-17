@@ -115,6 +115,42 @@ body .oceanwp-row {
 }
 
 /**
+ * Search form shortcode
+ */
+form.oceanwp-searchform {
+	display: inline-block;
+	position: relative;
+	height: 35px;
+
+	input {
+		margin: 0;
+		padding: 0 40px 0 15px;
+		height: 100%;
+    	min-height: 100%;
+	}
+
+	button {
+		display: block;
+	    position: absolute;
+	    top: 50%;
+	    right: 0;
+	    min-width: 40px;
+	    height: 60%;
+	    height: 100%;
+	    font-size: 12px;
+	    font-weight: 600;
+	    background-color: transparent;
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+	    text-align: center;
+	    line-height: 1;
+	    @include transition( all .3s ease );
+	    @include transform( translateY(-50%) );
+	}
+}
+
+/**
  * Language Switches.
  */
 .polylang-switcher-shortcode {

@@ -60,11 +60,11 @@ $top_menu_args = array(
 			get_template_part( 'partials/mobile/mobile-nav' );
 		} else {
 			wp_nav_menu( $menu_args );
-		}
 
-		// If has top bar menu
-		if ( has_nav_menu( $top_menu_location ) ) {
-			wp_nav_menu( $top_menu_args );
+			// If has top bar menu
+			if ( has_nav_menu( $top_menu_location ) ) {
+				wp_nav_menu( $top_menu_args );
+			}
 		}
 
 		// Social

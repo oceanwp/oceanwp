@@ -12,7 +12,8 @@ FULL SCREEN MENU
 function oceanwpFullScreenMenu() {
 	"use strict"
 
-	var $menuWrap 		= $j( '#site-header.full_screen-header #full-screen-menu' ),
+	var $siteHeader 	= $j( '#site-header.full_screen-header' ),
+		$menuWrap 		= $j( '#site-header.full_screen-header #full-screen-menu' ),
 		$menuBar 		= $j( '#site-header.full_screen-header .menu-bar' ),
 		$customLogo 	= $j( '#site-logo.has-full-screen-logo' );
 
@@ -20,6 +21,7 @@ function oceanwpFullScreenMenu() {
 
 		// Open menu function
 		function oceanwpFullScreenMenuOpen() {
+			$siteHeader.addClass( 'nav-open' );
 			$menuBar.addClass( 'exit' );
 			$customLogo.addClass( 'opened' );
 			$menuWrap.addClass( 'active' );
@@ -32,6 +34,7 @@ function oceanwpFullScreenMenu() {
 
 		// Close menu function
 		function oceanwpFullScreenMenuClose() {
+			$siteHeader.removeClass( 'nav-open' );
 			$menuBar.removeClass( 'exit' );
 			$customLogo.removeClass( 'opened' );
 			$menuWrap.removeClass( 'active' );

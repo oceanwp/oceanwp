@@ -93,9 +93,9 @@ blockquote { padding-right: 20px; padding-left: 0; border-right-width: 3px; bord
 
 .dropdown-menu .sub-menu { right: 0; left: auto; text-align: right; }
 .dropdown-menu ul .sub-menu { right: 100%; left: auto; }
-.dropdown-menu ul li a .nav-arrow { left: 15px; right: auto; }
-.dropdown-menu ul li a i { margin-left: 3px; margin-right: 0; }
-.dropdown-menu li a i { padding-left: 5px; padding-right: 0; }
+.dropdown-menu ul li a.menu-link .nav-arrow { left: 15px; right: auto; }
+.dropdown-menu ul li a.menu-link i { margin-left: 3px; margin-right: 0; }
+.dropdown-menu li a.menu-link i { padding-left: 5px; padding-right: 0; }
 
 .navigation .megamenu { right: auto; }
 .navigation > ul > li > ul.megamenu.sub-menu > li { float: right; border-right-width: 1px; border-left-width: 0; }
@@ -244,4 +244,5 @@ ul.page-numbers { text-align: left; }
 #oceanwp-mobile-menu-icon { float: left; }
 #oceanwp-mobile-menu-icon a { padding-right: 15px; padding-left: 0; }
 #oceanwp-mobile-menu-icon a:first-child { padding-right: 0; }
-#oceanwp-mobile-menu-icon a i { padding-left: 6px; padding-right: 0 !important; }
+#oceanwp-mobile-menu-icon a.mobile-menu i { padding-left: 6px; padding-right: 0 !important; }
+#oceanwp-mobile-menu-icon a.mobile-menu .hamburger { padding-left: 4px; padding-right: 0 !important; }

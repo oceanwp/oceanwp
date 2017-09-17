@@ -46,8 +46,23 @@
 			color: #13aff0;
 		}
 
-		&.mobile-menu i {
-			padding-right: 6px;
+		&.mobile-menu {
+			i {
+				padding-right: 6px;
+			}
+			
+			.hamburger {
+				padding-right: 4px;
+			}
+
+			.oceanwp-close-text,
+			&.opened .oceanwp-text {
+				display: none;
+			}
+
+			&.opened .oceanwp-close-text {
+				display: inline-block;
+			}
 		}
 	}
 }
@@ -501,7 +516,6 @@ only screen and (                min-resolution: 2dppx) {
 	}
 
 	.background-image-page-header {
-		display: block;
     	height: auto !important;
 	}
 	
@@ -693,6 +707,11 @@ only screen and (                min-resolution: 2dppx) {
 		.comment-meta {
 			float: none;
 		}
+	}
+
+	/* Search results page */
+	.search-results article .thumbnail {
+		display: none;
 	}
 
 	/* 404 page */

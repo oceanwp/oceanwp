@@ -27,9 +27,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 
 			// Fix for the OceanWP Settings values not saved
 			if ( OCEAN_EXTRA_ACTIVE ) {
-				add_action( 'llms_metabox_after_save_lifterlms-course-options', function( $post_id ) {
-					butterbean()->update( $post_id );
-				} );
+				add_action( 'llms_metabox_after_save_lifterlms-course-options', 'butterbean_fix' );
 			}
 		}
 
@@ -78,6 +76,15 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 				$class = 'full-width';
 			}
 			return $class;
+		}
+
+		/**
+		 * Fix for the OceanWP Settings values not saved
+		 *
+		 * @since 1.2.10
+		 */
+		public static function butterbean_fix( $post_id ) {
+			butterbean()->update( $post_id );
 		}
 
 	}

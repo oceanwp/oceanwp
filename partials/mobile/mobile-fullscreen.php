@@ -56,7 +56,11 @@ $top_menu_args = array(
 
 	<div id="mobile-fullscreen-inner" class="clr">
 
-		<a href="#" class="close"><i class="icon-close"></i></a>
+		<a href="#" class="close">
+			<div class="close-icon-wrap">
+				<div class="close-icon-inner"></div>
+			</div>
+		</a>
 
 		<nav class="<?php echo esc_attr( $classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?>>
 
@@ -66,11 +70,11 @@ $top_menu_args = array(
 				get_template_part( 'partials/mobile/mobile-nav' );
 			} else {
 				wp_nav_menu( $menu_args );
-			}
 
-			// If has top bar menu
-			if ( has_nav_menu( $top_menu_location ) ) {
-				wp_nav_menu( $top_menu_args );
+				// If has top bar menu
+				if ( has_nav_menu( $top_menu_location ) ) {
+					wp_nav_menu( $top_menu_args );
+				}
 			}
 
 			// Mobile search form

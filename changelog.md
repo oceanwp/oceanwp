@@ -1,5 +1,29 @@
 # OceanWP Changelog
 
+### *2017.09.17* - 1.3.7
+NOTE: After the theme update, if you have disabled any scripts or styles, go to Theme Panel > Scripts & Styles, and click on Save Changes to update the JS and CSS files.
+
+* **Added** - New field to select a template created in Theme Panel > My Library for the top bar content.
+* **Added** - New section "404 Error Page" in General Options with two new options, "layout" to select between full width and full screen layout and "Blank Page", if enable this option will remove all the elements (top bar, header, title, footer) to give you full control to create your error page with your page builder.
+* **Added** - New field in Header > Menu to select a post type for the search.
+* **Added** - New field in General Options > General Settings to control the posts per page on the search results page.
+* **Added** - Close mobile menu text for the drop down mobile menu style.
+* **Added** - Custom hamburgers button with effects for the mobile menu.
+* **Added** - Spanish language, thank you to Angel Julian Mena.
+* **Tweak** - All header styles settings added into the Header > General section of the customizer.
+* **Tweak** - Better styling for the search result page.
+* **Tweak** - Names added for the menu links effects, thanks to Verdi.
+* **Fixed** - Error in the Elementor edit mode when WooCommerce was enabled, the cart icon is removed in the edit mode to avoid error.
+* **Fixed** - Issue with the sticky mobile when the "Stick only the menu" is enable on the Medium Header style.
+* **Fixed** - Issue with the first row on the edit mode on Beaver Builder.
+* **Fixed** - Color link in the button of the principal menu.
+* **Fixed** - Comments words not translated.
+* **Fixed** - Side panel button displayed in the drop down and full screen mobile menu styles.
+* **Fixed** - Issue with the cart page url in the cart icon on mobile.
+* **Fixed** - Issue with emoticons in the comments.
+* **Fixed** - Blog archives layout on the tag, date and author pages.
+* **Fixed** - Issue with the close button of the Full Screen mobile menu style.
+
 ### *2017.08.25* - 1.3.6
 * **Fixed** - Issue with the search overlay style.
 

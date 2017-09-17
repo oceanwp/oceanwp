@@ -18,6 +18,7 @@ function oceanwpOverlaySearch() {
 	}
 
 	var $searchOverlayToggle 	= $j( 'a.search-overlay-toggle' ),
+		$searchOverlayClose 	= $j( 'a.search-overlay-close' ),
 		$searchOverlay 			= $j( '#searchform-overlay' );
 
 	if ( $searchOverlayToggle.length ) {
@@ -25,36 +26,31 @@ function oceanwpOverlaySearch() {
 		$searchOverlayToggle.on( 'click', function( e ) {
 			e.preventDefault();
 
-			if ( ! $j( this ).hasClass( 'exit' ) ) {
+			$searchOverlay.addClass( 'active' );
+			$searchOverlay.fadeIn( 200 );
 
-				$j( this ).addClass( 'exit' );
-				$searchOverlay.addClass( 'active' );
-				$searchOverlay.fadeIn( 200 );
-
-                setTimeout( function() {
-					$j( 'html' ).css( 'overflow', 'hidden' );
-                }, 400);
-
-	        } else {
-
-				$j( this ).removeClass( 'exit' );
-				$searchOverlay.removeClass( 'active' );
-				$searchOverlay.fadeOut( 200 );
-
-                setTimeout( function() {
-					$j( 'html' ).css( 'overflow', 'visible' );
-                }, 400);
-
-	        }
+            setTimeout( function() {
+				$j( 'html' ).css( 'overflow', 'hidden' );
+            }, 400);
 
 		} );
 
 	}
 
+	$searchOverlayClose.on( 'click', function( e ) {
+		e.preventDefault();
+
+		$searchOverlay.removeClass( 'active' );
+		$searchOverlay.fadeOut( 200 );
+
+        setTimeout( function() {
+			$j( 'html' ).css( 'overflow', 'visible' );
+        }, 400);
+
+	} );
+
 	$searchOverlayToggle.on( 'click', function() {
-		if ( $j( this ).hasClass( 'exit' ) ) {
-			$j( '#searchform-overlay input' ).focus();
-		}
+		$j( '#searchform-overlay input' ).focus();
 	} );
 
 }

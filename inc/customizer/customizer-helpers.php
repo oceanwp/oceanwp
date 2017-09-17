@@ -263,6 +263,14 @@ function oceanwp_mobile_menu_cac_has_custom_breakpoint() {
 	}
 }
 
+function oceanwp_cac_has_custom_hamburger_btn() {
+	if ( 'default' != get_theme_mod( 'ocean_mobile_menu_open_hamburger', 'default' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function oceanwp_cac_has_sidebar_mobile_menu() {
 	if ( 'sidebar' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
 		return true;

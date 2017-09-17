@@ -21,13 +21,11 @@ get_header(); ?>
 
 				<?php do_action( 'ocean_before_content_inner' ); ?>
 
-				<?php get_template_part( 'partials/archive', 'header' ); ?>
-
 				<?php if ( have_posts() ) : ?>
 
 						<?php while ( have_posts() ) : the_post(); ?>
 
-							<?php get_template_part( 'partials/entry/layout', get_post_type() ); ?>
+							<?php get_template_part( 'partials/search/layout' ); ?>
 
 						<?php endwhile; ?>
 

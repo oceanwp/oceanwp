@@ -93,6 +93,9 @@ class OCEANWP_Theme_Class {
 			// Outputs custom JS to the footer
 			add_action( 'wp_footer', array( 'OCEANWP_Theme_Class', 'custom_js' ), 9999 );
 
+			// Alter the search posts per page
+			add_action( 'pre_get_posts', array( 'OCEANWP_Theme_Class', 'search_posts_per_page' ) );
+
 			// Alter tagcloud widget to display all tags with 1em font size
 			add_filter( 'widget_tag_cloud_args', array( 'OCEANWP_Theme_Class', 'widget_tag_cloud_args' ) );
 
@@ -612,6 +615,21 @@ class OCEANWP_Theme_Class {
 	 */
 	public static function admin_inline_css() {
 		echo '<style>div#setting-error-tgmpa{display:block;}</style>';
+	}
+
+
+	/**
+	 * Alter the search posts per page
+	 *
+	 * @since 1.3.7
+	 */
+	public static function search_posts_per_page( $query ) {
+		$posts_per_page = get_theme_mod( 'ocean_search_post_per_page', '8' );
+		$posts_per_page = $posts_per_page ? $posts_per_page : '8';
+
+		if ( $query->is_main_query() && is_search() ) {
+			$query->set( 'posts_per_page', $posts_per_page );
+		}
 	}
 
 	/**

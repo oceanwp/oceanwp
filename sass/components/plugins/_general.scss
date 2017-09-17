@@ -1,11 +1,16 @@
 /* Fix for the tabs under the header in the edit mode */
-body.elementor-editor-active #site-header.transparent-header,
+.fl-builder-edit #site-header,
 .fl-builder-edit #site-header.transparent-header { z-index: 1; }
 .fl-builder-edit #main,
 .et_fb_preview_active #main { z-index: inherit; }
 
 /* Hide the transparent heade in the Elementor edit mode to avoid conflicts */
 body.elementor-editor-active #site-header.transparent-header { display: none; }
+
+/* Fix the height automatically in the custom header style */
+#site-header .elementor-section-wrap {
+    height: auto !important;
+}
 
 /* Fix image alignment with caption issue */
 .elementor-widget-image .elementor-image img {

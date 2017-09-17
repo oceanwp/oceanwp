@@ -46,7 +46,7 @@ if ( 'transparent' == $header_style ) { ?>
 
 	<?php
 	// If header video
-	if ( has_header_video() ) { ?>
+	if ( function_exists( 'has_header_video' ) && has_header_video() ) { ?>
 		<div class="custom-header-media">
 			<?php the_custom_header_markup(); ?>
 		</div>

@@ -30,7 +30,7 @@ function oceanwpDropDownSearch() {
 		$transitionDuration = $transitionDuration.replace( 's', '' ) * 1000;
 		if ( $transitionDuration ) {
 			setTimeout( function() {
-				$searchDropdownForm.find( 'input[type="search"]' ).focus();
+				$searchDropdownForm.find( 'input.field' ).focus();
 			}, $transitionDuration );
 		}
 		// Hide other things

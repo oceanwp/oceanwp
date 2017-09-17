@@ -27,6 +27,7 @@ function oceanwpFullScreenMobile() {
 				$j( 'html' ).css( 'overflow', 'visible' );
             	$j( '#mobile-fullscreen nav ul > li.dropdown' ).removeClass( 'open-sub' );
                 $j( '#mobile-fullscreen nav ul.sub-menu' ).slideUp( 200 );
+                $j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
             }, 400 );
         }
 
@@ -34,6 +35,7 @@ function oceanwpFullScreenMobile() {
 		$mobileLink.on( 'click', function() {
 			$j( this ).addClass( 'exit' );
 			$mobileMenu.addClass( 'active' ).fadeIn( 200 );
+			$j( '.mobile-menu > .hamburger' ).addClass( 'is-active' );
 
             setTimeout( function() {
 				$j( 'html' ).css( 'overflow', 'hidden' );
@@ -60,7 +62,7 @@ function oceanwpFullScreenMobile() {
 
 		// Close menu
 		$j( '#mobile-fullscreen a.close' ).on( 'click', function( e ) {
-			e.stopPropagation();
+			e.preventDefault();
 			oceanwpFullScreenMobileClose();
 		} );
 

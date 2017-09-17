@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ocean Theme 1.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-07-24 20:04+0200\n"
-"PO-Revision-Date: 2017-08-18 22:17+0200\n"
+"POT-Creation-Date: 2017-08-30 16:33+0200\n"
+"PO-Revision-Date: 2017-08-30 16:34+0200\n"
 "Last-Translator: FreePixel <contact@freepixel.net>\n"
 "Language-Team: Ocean\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -38,50 +38,66 @@ msgstr "Peut-être vous pouvez essayer une nouvelle recherche."
 msgid "Back To Homepage"
 msgstr "Revenir à l’accueil"
 
-#: comments.php:42 comments.php:54
+#: comments.php:42
 msgid "This Post Has One Comment"
 msgstr "Cet article a %d commentaire"
 
-#: comments.php:44 comments.php:56
+#: comments.php:44
 #, php-format
 msgid "This Post Has %s Comments"
 msgstr "Cet article a %s commentaires"
 
-#: comments.php:76 comments.php:84
+#: comments.php:67 comments.php:75
 msgid "Previous"
 msgstr "Article précédent"
 
-#: comments.php:77 comments.php:85
+#: comments.php:68 comments.php:76
 msgid "Next"
 msgstr "Suiv."
 
-#: comments.php:94
+#: comments.php:85
 msgid "Comments are closed."
 msgstr "Les commentaires sont fermés."
 
-#: comments.php:118
+#: comments.php:96
+msgid "Name (required)"
+msgstr "Nom (requis)"
+
+#: comments.php:98
+msgid "Email (required)"
+msgstr "Courriel (requis)"
+
+#: comments.php:100
+msgid "Website"
+msgstr "Site Web"
+
+#: comments.php:109
 #, php-format
 msgid "You must be %1$slogged in%2$s to post a comment."
 msgstr "Vous devez être %1$sidentifié%2$s pour poster un commentaire."
 
-#: comments.php:119
+#: comments.php:110
 msgid "Logged in as"
 msgstr "Connecté en tant que"
 
-#: comments.php:119
+#: comments.php:110
 msgid "Log out of this account"
 msgstr "Se déconnecter de ce compte"
 
-#: comments.php:119
+#: comments.php:110
 msgid "Log out &raquo;"
 msgstr "Déconnexion &raquo;"
 
-#: comments.php:124
+#: comments.php:113
+msgid "Your Comment Here..."
+msgstr "Votre Commentaire Ici…"
+
+#: comments.php:115
 msgid "Post Comment"
 msgstr "Poster le commentaire"
 
 #: functions.php:241 inc/customizer/settings/topbar.php:40
-#: inc/customizer/settings/typography.php:109 inc/third/beaver-themer.php:100
+#: inc/customizer/settings/typography.php:109
 #: inc/third/class-beaver-themer.php:100
 msgid "Top Bar"
 msgstr "Barre du haut"
@@ -90,8 +106,7 @@ msgstr "Barre du haut"
 msgid "Main"
 msgstr "Principal"
 
-#: functions.php:243 inc/third/beaver-themer.php:145
-#: inc/third/class-beaver-themer.php:145
+#: functions.php:243 inc/third/class-beaver-themer.php:145
 msgid "Footer"
 msgstr "Pied de page"
 
@@ -99,8 +114,8 @@ msgstr "Pied de page"
 msgid "Mobile (optional)"
 msgstr "Mobile (optionnel)"
 
-#: functions.php:472 inc/customizer/settings/sidebar.php:40
-#: inc/third/beaver-themer.php:136 inc/third/class-beaver-themer.php:136
+#: functions.php:472 inc/customizer/settings/header.php:2525
+#: inc/customizer/settings/sidebar.php:40 inc/third/class-beaver-themer.php:136
 msgid "Sidebar"
 msgstr "Barre latérale"
 
@@ -211,7 +226,7 @@ msgid "g a"
 msgstr "g a"
 
 #: inc/breadcrumbs.php:758 inc/breadcrumbs.php:787 inc/breadcrumbs.php:814
-#: inc/breadcrumbs.php:841 inc/breadcrumbs.php:1181 inc/helpers.php:1443
+#: inc/breadcrumbs.php:841 inc/breadcrumbs.php:1181 inc/helpers.php:1476
 msgid "Y"
 msgstr "Y"
 
@@ -232,7 +247,6 @@ msgid "Link values together"
 msgstr "Valeurs de lien globales"
 
 #: inc/customizer/controls/dropdown-pages/class-control-dropdown-pages.php:61
-#: inc/customizer/controls/dropdown-templates/class-control-dropdown-templates.php:62
 #: inc/customizer/customizer-helpers.php:30
 msgid "Select"
 msgstr "Sélectionner"
@@ -281,8 +295,8 @@ msgstr "px - em - rem"
 #: inc/customizer/controls/typo/class-control-typo.php:319
 #: inc/customizer/controls/typo/class-control-typo.php:335
 #: inc/customizer/controls/typography/class-control-typography.php:57
-#: inc/customizer/settings/blog.php:356 inc/customizer/settings/blog.php:386
-#: inc/customizer/settings/blog.php:409 inc/customizer/settings/blog.php:434
+#: inc/customizer/settings/blog.php:357 inc/customizer/settings/blog.php:387
+#: inc/customizer/settings/blog.php:410 inc/customizer/settings/blog.php:435
 #: inc/customizer/settings/general.php:162
 #: inc/customizer/settings/general.php:192
 #: inc/customizer/settings/general.php:215
@@ -293,10 +307,10 @@ msgstr "px - em - rem"
 #: inc/customizer/settings/general.php:821
 #: inc/customizer/settings/general.php:846
 #: inc/customizer/settings/general.php:1946
-#: inc/customizer/settings/header.php:1176
-#: inc/customizer/settings/header.php:1205
-#: inc/customizer/settings/header.php:1227
-#: inc/customizer/settings/header.php:1251
+#: inc/customizer/settings/header.php:1194
+#: inc/customizer/settings/header.php:1223
+#: inc/customizer/settings/header.php:1245
+#: inc/customizer/settings/header.php:1269
 #: inc/customizer/settings/typography.php:385
 #: inc/customizer/settings/typography.php:418
 #: inc/customizer/settings/typography.php:445
@@ -385,8 +399,8 @@ msgstr "Polices standards"
 msgid "Google Fonts"
 msgstr "Polices Google"
 
-#: inc/customizer/settings/blog.php:39 inc/customizer/settings/blog.php:318
-#: inc/helpers.php:1483
+#: inc/customizer/settings/blog.php:39 inc/customizer/settings/blog.php:319
+#: inc/helpers.php:1516
 msgid "Blog"
 msgstr "Blog"
 
@@ -459,248 +473,252 @@ msgstr "Hauteurs égales"
 msgid "Excerpt Length"
 msgstr "Longueur de l’extrait"
 
-#: inc/customizer/settings/blog.php:224
+#: inc/customizer/settings/blog.php:205
+msgid "Add 500 to display full content"
+msgstr "Ajouter 500 pour afficher le contenu complet"
+
+#: inc/customizer/settings/blog.php:225
 msgid "Blog Pagination Style"
 msgstr "Style de pagination du blog"
 
-#: inc/customizer/settings/blog.php:230
+#: inc/customizer/settings/blog.php:231
 msgid "Standard"
 msgstr "Standard"
 
-#: inc/customizer/settings/blog.php:231
+#: inc/customizer/settings/blog.php:232
 msgid "Infinite Scroll"
 msgstr "Défilement infini"
 
-#: inc/customizer/settings/blog.php:232
+#: inc/customizer/settings/blog.php:233
 msgid "Next/Prev"
 msgstr "Suiv./Préc."
 
-#: inc/customizer/settings/blog.php:245 inc/customizer/settings/blog.php:511
-#: inc/customizer/settings/header.php:808
+#: inc/customizer/settings/blog.php:246 inc/customizer/settings/blog.php:512
+#: inc/customizer/settings/header.php:826
 #: inc/customizer/settings/woocommerce.php:783
 msgid "Elements Positioning"
 msgstr "Position des éléments"
 
-#: inc/customizer/settings/blog.php:261 inc/customizer/settings/blog.php:527
-#: inc/helpers.php:2307 inc/helpers.php:2392
+#: inc/customizer/settings/blog.php:262 inc/customizer/settings/blog.php:528
+#: inc/helpers.php:2340 inc/helpers.php:2425
 msgid "Meta"
 msgstr "Métadonnées"
 
-#: inc/customizer/settings/blog.php:266 inc/customizer/settings/blog.php:532
+#: inc/customizer/settings/blog.php:267 inc/customizer/settings/blog.php:533
 msgid "Author"
 msgstr "Auteur"
 
-#: inc/customizer/settings/blog.php:267 inc/customizer/settings/blog.php:533
+#: inc/customizer/settings/blog.php:268 inc/customizer/settings/blog.php:534
 msgid "Date"
 msgstr "Date"
 
-#: inc/customizer/settings/blog.php:268 inc/customizer/settings/blog.php:534
+#: inc/customizer/settings/blog.php:269 inc/customizer/settings/blog.php:535
 msgid "Categories"
 msgstr "Catégories"
 
-#: inc/customizer/settings/blog.php:269 inc/customizer/settings/blog.php:535
-#: inc/helpers.php:2399
+#: inc/customizer/settings/blog.php:270 inc/customizer/settings/blog.php:536
+#: inc/helpers.php:2432
 msgid "Comments"
 msgstr "Commentaires"
 
-#: inc/customizer/settings/blog.php:277
+#: inc/customizer/settings/blog.php:278
 msgid "Single Post"
 msgstr "Article individuel"
 
-#: inc/customizer/settings/blog.php:291 inc/customizer/settings/general.php:496
+#: inc/customizer/settings/blog.php:292 inc/customizer/settings/general.php:496
 #: inc/customizer/settings/general.php:597
 #: inc/customizer/settings/woocommerce.php:590
 #: inc/customizer/settings/woocommerce.php:836
 msgid "Layout"
 msgstr "Mise en page"
 
-#: inc/customizer/settings/blog.php:312
+#: inc/customizer/settings/blog.php:313
 msgid "Page Header Title"
 msgstr "Titre de l’entête"
 
-#: inc/customizer/settings/blog.php:319
+#: inc/customizer/settings/blog.php:320
 msgid "Post Title"
 msgstr "Titre de l’article"
 
-#: inc/customizer/settings/blog.php:332
+#: inc/customizer/settings/blog.php:333
 msgid "Featured Image In Page Header"
 msgstr "Image à la une dans l'entête de la page"
 
-#: inc/customizer/settings/blog.php:349 inc/customizer/settings/general.php:155
+#: inc/customizer/settings/blog.php:350 inc/customizer/settings/general.php:155
 #: inc/customizer/settings/general.php:761
 #: inc/customizer/settings/general.php:1037
-#: inc/customizer/settings/header.php:949
-#: inc/customizer/settings/header.php:1170
-#: inc/customizer/settings/header.php:1474
+#: inc/customizer/settings/header.php:967
+#: inc/customizer/settings/header.php:1188
+#: inc/customizer/settings/header.php:1492
 msgid "Position"
 msgstr "Position"
 
-#: inc/customizer/settings/blog.php:357 inc/customizer/settings/general.php:163
+#: inc/customizer/settings/blog.php:358 inc/customizer/settings/general.php:163
 #: inc/customizer/settings/general.php:769
-#: inc/customizer/settings/header.php:1177
+#: inc/customizer/settings/header.php:1195
 msgid "Top Left"
 msgstr "En haut à gauche"
 
-#: inc/customizer/settings/blog.php:358 inc/customizer/settings/general.php:164
+#: inc/customizer/settings/blog.php:359 inc/customizer/settings/general.php:164
 #: inc/customizer/settings/general.php:770
-#: inc/customizer/settings/header.php:1178
+#: inc/customizer/settings/header.php:1196
 msgid "Top Center"
 msgstr "En haut centré"
 
-#: inc/customizer/settings/blog.php:359 inc/customizer/settings/general.php:165
+#: inc/customizer/settings/blog.php:360 inc/customizer/settings/general.php:165
 #: inc/customizer/settings/general.php:771
-#: inc/customizer/settings/header.php:1179
+#: inc/customizer/settings/header.php:1197
 msgid "Top Right"
 msgstr "En haut à droite"
 
-#: inc/customizer/settings/blog.php:360 inc/customizer/settings/general.php:166
+#: inc/customizer/settings/blog.php:361 inc/customizer/settings/general.php:166
 #: inc/customizer/settings/general.php:772
-#: inc/customizer/settings/header.php:1180
+#: inc/customizer/settings/header.php:1198
 msgid "Center Left"
 msgstr "Centré à gauche "
 
-#: inc/customizer/settings/blog.php:361 inc/customizer/settings/general.php:167
+#: inc/customizer/settings/blog.php:362 inc/customizer/settings/general.php:167
 #: inc/customizer/settings/general.php:773
-#: inc/customizer/settings/header.php:1181
+#: inc/customizer/settings/header.php:1199
 msgid "Center Center"
 msgstr "Centré centré"
 
-#: inc/customizer/settings/blog.php:362 inc/customizer/settings/general.php:168
+#: inc/customizer/settings/blog.php:363 inc/customizer/settings/general.php:168
 #: inc/customizer/settings/general.php:774
-#: inc/customizer/settings/header.php:1182
+#: inc/customizer/settings/header.php:1200
 msgid "Center Right"
 msgstr "Centrer à droite"
 
-#: inc/customizer/settings/blog.php:363 inc/customizer/settings/general.php:169
+#: inc/customizer/settings/blog.php:364 inc/customizer/settings/general.php:169
 #: inc/customizer/settings/general.php:775
-#: inc/customizer/settings/header.php:1183
+#: inc/customizer/settings/header.php:1201
 msgid "Bottom Left"
 msgstr "En bas à gauche"
 
-#: inc/customizer/settings/blog.php:364 inc/customizer/settings/general.php:170
+#: inc/customizer/settings/blog.php:365 inc/customizer/settings/general.php:170
 #: inc/customizer/settings/general.php:776
-#: inc/customizer/settings/header.php:1184
+#: inc/customizer/settings/header.php:1202
 msgid "Bottom Center"
 msgstr "En bas centré"
 
-#: inc/customizer/settings/blog.php:365 inc/customizer/settings/general.php:171
+#: inc/customizer/settings/blog.php:366 inc/customizer/settings/general.php:171
 #: inc/customizer/settings/general.php:777
-#: inc/customizer/settings/header.php:1185
+#: inc/customizer/settings/header.php:1203
 msgid "Bottom Right"
 msgstr "En bas à droite"
 
-#: inc/customizer/settings/blog.php:379 inc/customizer/settings/general.php:185
+#: inc/customizer/settings/blog.php:380 inc/customizer/settings/general.php:185
 #: inc/customizer/settings/general.php:791
-#: inc/customizer/settings/header.php:1199
+#: inc/customizer/settings/header.php:1217
 msgid "Attachment"
 msgstr "Comportement"
 
-#: inc/customizer/settings/blog.php:387 inc/customizer/settings/general.php:193
+#: inc/customizer/settings/blog.php:388 inc/customizer/settings/general.php:193
 #: inc/customizer/settings/general.php:799
-#: inc/customizer/settings/header.php:1206
+#: inc/customizer/settings/header.php:1224
 msgid "Scroll"
 msgstr "Fond défilant"
 
-#: inc/customizer/settings/blog.php:388 inc/customizer/settings/general.php:194
+#: inc/customizer/settings/blog.php:389 inc/customizer/settings/general.php:194
 #: inc/customizer/settings/general.php:800
-#: inc/customizer/settings/header.php:1207
+#: inc/customizer/settings/header.php:1225
 msgid "Fixed"
 msgstr "Fond fixe"
 
-#: inc/customizer/settings/blog.php:402 inc/customizer/settings/blog.php:411
+#: inc/customizer/settings/blog.php:403 inc/customizer/settings/blog.php:412
 #: inc/customizer/settings/general.php:208
 #: inc/customizer/settings/general.php:217
 #: inc/customizer/settings/general.php:814
 #: inc/customizer/settings/general.php:823
-#: inc/customizer/settings/header.php:1221
-#: inc/customizer/settings/header.php:1229
+#: inc/customizer/settings/header.php:1239
+#: inc/customizer/settings/header.php:1247
 msgid "Repeat"
 msgstr "Répéter"
 
-#: inc/customizer/settings/blog.php:410 inc/customizer/settings/general.php:216
+#: inc/customizer/settings/blog.php:411 inc/customizer/settings/general.php:216
 #: inc/customizer/settings/general.php:822
-#: inc/customizer/settings/header.php:1228
+#: inc/customizer/settings/header.php:1246
 msgid "No-repeat"
 msgstr "Ne pas répéter"
 
-#: inc/customizer/settings/blog.php:412 inc/customizer/settings/general.php:218
+#: inc/customizer/settings/blog.php:413 inc/customizer/settings/general.php:218
 #: inc/customizer/settings/general.php:824
-#: inc/customizer/settings/header.php:1230
+#: inc/customizer/settings/header.php:1248
 msgid "Repeat-x"
 msgstr "Répéter sur X"
 
-#: inc/customizer/settings/blog.php:413 inc/customizer/settings/general.php:219
+#: inc/customizer/settings/blog.php:414 inc/customizer/settings/general.php:219
 #: inc/customizer/settings/general.php:825
-#: inc/customizer/settings/header.php:1231
+#: inc/customizer/settings/header.php:1249
 msgid "Repeat-y"
 msgstr "Répéter sur Y"
 
-#: inc/customizer/settings/blog.php:427 inc/customizer/settings/general.php:233
+#: inc/customizer/settings/blog.php:428 inc/customizer/settings/general.php:233
 #: inc/customizer/settings/general.php:839
-#: inc/customizer/settings/header.php:1245
+#: inc/customizer/settings/header.php:1263
 msgid "Size"
 msgstr "Taille"
 
-#: inc/customizer/settings/blog.php:435 inc/customizer/settings/general.php:241
+#: inc/customizer/settings/blog.php:436 inc/customizer/settings/general.php:241
 #: inc/customizer/settings/general.php:847
-#: inc/customizer/settings/header.php:1252
+#: inc/customizer/settings/header.php:1270
 msgid "Auto"
 msgstr "Auto"
 
-#: inc/customizer/settings/blog.php:436 inc/customizer/settings/general.php:242
+#: inc/customizer/settings/blog.php:437 inc/customizer/settings/general.php:242
 #: inc/customizer/settings/general.php:848
-#: inc/customizer/settings/header.php:1253
+#: inc/customizer/settings/header.php:1271
 msgid "Cover"
 msgstr "Recouvrir"
 
-#: inc/customizer/settings/blog.php:437 inc/customizer/settings/general.php:243
+#: inc/customizer/settings/blog.php:438 inc/customizer/settings/general.php:243
 #: inc/customizer/settings/general.php:849
-#: inc/customizer/settings/header.php:1254
+#: inc/customizer/settings/header.php:1272
 msgid "Contain"
 msgstr "Contient"
 
-#: inc/customizer/settings/blog.php:451
+#: inc/customizer/settings/blog.php:452
 msgid "Page Header Height (px)"
 msgstr "Hauteur de l’entête (en px)"
 
-#: inc/customizer/settings/blog.php:473 inc/customizer/settings/general.php:885
+#: inc/customizer/settings/blog.php:474 inc/customizer/settings/general.php:885
 msgid "Overlay Opacity"
 msgstr "Opacité de la superposition"
 
-#: inc/customizer/settings/blog.php:495 inc/customizer/settings/general.php:907
+#: inc/customizer/settings/blog.php:496 inc/customizer/settings/general.php:907
 msgid "Overlay Color"
 msgstr "Couleur de la superposition"
 
-#: inc/customizer/settings/blog.php:548
+#: inc/customizer/settings/blog.php:549
 msgid "Next/Prev Taxonomy"
 msgstr "Taxonomie Préc./Suiv."
 
-#: inc/customizer/settings/blog.php:553 inc/customizer/settings/blog.php:612
+#: inc/customizer/settings/blog.php:554 inc/customizer/settings/blog.php:613
 #: inc/customizer/settings/woocommerce.php:789
 msgid "Category"
 msgstr "Catégorie"
 
-#: inc/customizer/settings/blog.php:554 inc/customizer/settings/blog.php:613
+#: inc/customizer/settings/blog.php:555 inc/customizer/settings/blog.php:614
 msgid "Tag"
 msgstr "Étiquette"
 
-#: inc/customizer/settings/blog.php:567
+#: inc/customizer/settings/blog.php:568
 msgid "Related Posts Count"
 msgstr "Colonnes d’articles en relation"
 
-#: inc/customizer/settings/blog.php:587
+#: inc/customizer/settings/blog.php:588
 msgid "Related Posts Columns"
 msgstr "Colonnes d’articles en relation"
 
-#: inc/customizer/settings/blog.php:607
+#: inc/customizer/settings/blog.php:608
 msgid "Related Posts Taxonomy"
 msgstr "Colonnes d’articles en relation"
 
-#: inc/customizer/settings/blog.php:625
+#: inc/customizer/settings/blog.php:626
 msgid "Related Posts Image Width (px)"
 msgstr "Largeur de l’image des articles en relation (px)"
 
-#: inc/customizer/settings/blog.php:644
+#: inc/customizer/settings/blog.php:645
 msgid "Related Posts Image Height (px)"
 msgstr "Hauteur de l’image des articles en relation (px)"
 
@@ -778,8 +796,8 @@ msgstr "Codes courts autorisés, %1$svoir la liste%2$s."
 #: inc/customizer/settings/general.php:1546
 #: inc/customizer/settings/general.php:1826
 #: inc/customizer/settings/header.php:304
-#: inc/customizer/settings/header.php:853
-#: inc/customizer/settings/header.php:2244
+#: inc/customizer/settings/header.php:871
+#: inc/customizer/settings/header.php:2325
 #: inc/customizer/settings/sidebar.php:118
 #: inc/customizer/settings/sidebar.php:229
 #: inc/customizer/settings/topbar.php:192
@@ -796,12 +814,13 @@ msgstr "Marge interne (px)"
 #: inc/customizer/settings/general.php:1736
 #: inc/customizer/settings/general.php:1881
 #: inc/customizer/settings/header.php:222
-#: inc/customizer/settings/header.php:380
-#: inc/customizer/settings/header.php:569
-#: inc/customizer/settings/header.php:792
-#: inc/customizer/settings/header.php:1045
-#: inc/customizer/settings/header.php:1658
-#: inc/customizer/settings/header.php:2603
+#: inc/customizer/settings/header.php:381
+#: inc/customizer/settings/header.php:570
+#: inc/customizer/settings/header.php:810
+#: inc/customizer/settings/header.php:1063
+#: inc/customizer/settings/header.php:1739
+#: inc/customizer/settings/header.php:2735
+#: inc/customizer/settings/header.php:2752
 #: inc/customizer/settings/sidebar.php:53
 #: inc/customizer/settings/sidebar.php:164
 #: inc/customizer/settings/topbar.php:227
@@ -820,14 +839,14 @@ msgstr "Couleur du texte "
 #: inc/customizer/settings/footer-bottom.php:230
 #: inc/customizer/settings/footer-widgets.php:321
 #: inc/customizer/settings/general.php:255
-#: inc/customizer/settings/header.php:618
-#: inc/customizer/settings/header.php:2635
+#: inc/customizer/settings/header.php:619
+#: inc/customizer/settings/header.php:2786
 msgid "Links Color"
 msgstr "Couleur des liens"
 
 #: inc/customizer/settings/footer-bottom.php:247
 #: inc/customizer/settings/footer-widgets.php:338
-#: inc/customizer/settings/header.php:2651
+#: inc/customizer/settings/header.php:2802
 msgid "Links Color: Hover"
 msgstr "Couleur des liens au survol"
 
@@ -894,8 +913,8 @@ msgid "Columns"
 msgstr "Colonnes"
 
 #: inc/customizer/settings/footer-widgets.php:304
-#: inc/customizer/settings/header.php:1690
-#: inc/customizer/settings/header.php:2619
+#: inc/customizer/settings/header.php:1771
+#: inc/customizer/settings/header.php:2769
 #: inc/customizer/settings/woocommerce.php:1731
 #: inc/customizer/settings/woocommerce.php:2061
 msgid "Borders Color"
@@ -935,7 +954,7 @@ msgstr "Image d’arrière-plan"
 #: inc/customizer/settings/general.php:1408
 #: inc/customizer/settings/general.php:1752
 #: inc/customizer/settings/general.php:1913
-#: inc/customizer/settings/header.php:1382
+#: inc/customizer/settings/header.php:1400
 msgid "Color"
 msgstr "Couleur"
 
@@ -943,7 +962,7 @@ msgstr "Couleur"
 #: inc/customizer/settings/general.php:1287
 #: inc/customizer/settings/general.php:1424
 #: inc/customizer/settings/general.php:1929
-#: inc/customizer/settings/header.php:1399
+#: inc/customizer/settings/header.php:1417
 msgid "Color: Hover"
 msgstr "Couleur au survol"
 
@@ -1050,8 +1069,8 @@ msgstr "Image"
 #: inc/customizer/settings/general.php:863
 #: inc/customizer/settings/header.php:143
 #: inc/customizer/settings/header.php:165
-#: inc/customizer/settings/header.php:971
-#: inc/customizer/settings/header.php:1291
+#: inc/customizer/settings/header.php:989
+#: inc/customizer/settings/header.php:1309
 msgid "Height (px)"
 msgstr "Hauteur (px)"
 
@@ -1068,16 +1087,16 @@ msgid "Separator Color"
 msgstr "Couleur du séparateur"
 
 #: inc/customizer/settings/general.php:1093
-#: inc/customizer/settings/header.php:1531
-#: inc/customizer/settings/header.php:1706
+#: inc/customizer/settings/header.php:1612
+#: inc/customizer/settings/header.php:1787
 #: inc/customizer/settings/topbar.php:278
 #: inc/customizer/settings/woocommerce.php:405
 msgid "Link Color"
 msgstr "Couleur du lien"
 
 #: inc/customizer/settings/general.php:1110
-#: inc/customizer/settings/header.php:1547
-#: inc/customizer/settings/header.php:1722
+#: inc/customizer/settings/header.php:1628
+#: inc/customizer/settings/header.php:1803
 #: inc/customizer/settings/topbar.php:295
 #: inc/customizer/settings/woocommerce.php:421
 msgid "Link Color: Hover"
@@ -1125,31 +1144,31 @@ msgid "Align"
 msgstr "Aligner"
 
 #: inc/customizer/settings/general.php:1319
-#: inc/customizer/settings/header.php:956
-#: inc/customizer/settings/header.php:1481
-#: inc/customizer/settings/header.php:2457
+#: inc/customizer/settings/header.php:974
+#: inc/customizer/settings/header.php:1499
+#: inc/customizer/settings/header.php:2559
 #: inc/customizer/settings/woocommerce.php:888
 msgid "Right"
 msgstr "À droite"
 
 #: inc/customizer/settings/general.php:1320
-#: inc/customizer/settings/header.php:73 inc/customizer/settings/header.php:955
-#: inc/customizer/settings/header.php:1480
+#: inc/customizer/settings/header.php:73 inc/customizer/settings/header.php:973
+#: inc/customizer/settings/header.php:1498
 #: inc/customizer/settings/woocommerce.php:887
 msgid "Center"
 msgstr "Centré"
 
 #: inc/customizer/settings/general.php:1321
-#: inc/customizer/settings/header.php:954
-#: inc/customizer/settings/header.php:1479
-#: inc/customizer/settings/header.php:2456
+#: inc/customizer/settings/header.php:972
+#: inc/customizer/settings/header.php:1497
+#: inc/customizer/settings/header.php:2558
 #: inc/customizer/settings/woocommerce.php:886
 msgid "Left"
 msgstr "À gauche"
 
 #: inc/customizer/settings/general.php:1335
 #: inc/customizer/settings/general.php:1580
-#: inc/customizer/settings/header.php:2197
+#: inc/customizer/settings/header.php:2278
 #: inc/customizer/settings/topbar.php:432
 #: inc/customizer/settings/typography.php:481
 msgid "Font Size (px)"
@@ -1186,8 +1205,7 @@ msgstr "Couleur de la bordure au Focus"
 msgid "Theme Button"
 msgstr "Thème des boutons"
 
-#: inc/customizer/settings/header.php:41 inc/third/beaver-themer.php:109
-#: inc/third/class-beaver-themer.php:109
+#: inc/customizer/settings/header.php:41 inc/third/class-beaver-themer.php:109
 msgid "Header"
 msgstr "Entête"
 
@@ -1198,7 +1216,7 @@ msgid "General"
 msgstr "Général"
 
 #: inc/customizer/settings/header.php:69
-#: inc/customizer/settings/header.php:2151
+#: inc/customizer/settings/header.php:2232
 msgid "Minimal"
 msgstr "Minimal"
 
@@ -1211,6 +1229,7 @@ msgid "Top Menu"
 msgstr "Menu haut"
 
 #: inc/customizer/settings/header.php:72
+#: inc/customizer/settings/header.php:2527
 msgid "Full Screen"
 msgstr "Plein écran"
 
@@ -1239,514 +1258,610 @@ msgid "Transparent Header"
 msgstr "Entête transparente"
 
 #: inc/customizer/settings/header.php:347
-#: inc/customizer/settings/header.php:814
-#: inc/customizer/settings/header.php:1262
+#: inc/customizer/settings/header.php:832
+#: inc/customizer/settings/header.php:1280
 #: inc/customizer/settings/typography.php:100
 msgid "Logo"
 msgstr "Logo"
 
 #: inc/customizer/settings/header.php:348
-msgid "If you want to display a different logo for this style (optional)"
-msgstr "Si vous souhaitez afficher un logo différent pour ce style (optionnel)"
+msgid ""
+"Deprecated, this field is no longer supported. If you want a different logo "
+"when scrolling, go to Sticky Header > Logo."
+msgstr ""
+"Déconseillé, ce champ n'est plus pris en charge. Si vous voulez un logo "
+"différent lors du défilement, allez à Entête collante > Logo."
 
 #: inc/customizer/settings/header.php:364
-#: inc/customizer/settings/header.php:1276
+#: inc/customizer/settings/header.php:1294
 msgid "Retina Logo"
 msgstr "Logo rétina"
 
-#: inc/customizer/settings/header.php:391
+#: inc/customizer/settings/header.php:365
+msgid ""
+"Deprecated, this field is no longer supported. If you want a different "
+"retina logo when scrolling, go to Sticky Header > Retina Logo."
+msgstr ""
+"Déconseillé, ce champ n'est plus pris en charge. Si vous voulez un logo de "
+"rétina différent lors du défilement, allez à Entête collante > Logo rétina."
+
+#: inc/customizer/settings/header.php:392
 msgid "Top Menu Header"
 msgstr "Menu de barre haute d’entête"
 
-#: inc/customizer/settings/header.php:405
+#: inc/customizer/settings/header.php:406
 msgid "Menu Position"
 msgstr "Position du menu"
 
-#: inc/customizer/settings/header.php:412
+#: inc/customizer/settings/header.php:413
 msgid "Before The Logo"
 msgstr "Avant le logo"
 
-#: inc/customizer/settings/header.php:413
+#: inc/customizer/settings/header.php:414
 msgid "After The Logo"
 msgstr "Après le logo"
 
-#: inc/customizer/settings/header.php:427
+#: inc/customizer/settings/header.php:428
 msgid "Menu Background Color"
 msgstr "Couleur d’arrière-plan du menu"
 
-#: inc/customizer/settings/header.php:444
+#: inc/customizer/settings/header.php:445
 msgid "Search Button Border Color"
 msgstr "Couleur de bordure du bouton de recherche"
 
-#: inc/customizer/settings/header.php:461
+#: inc/customizer/settings/header.php:462
 msgid "Search Button Color"
 msgstr "Couleur du bouton de recherche"
 
-#: inc/customizer/settings/header.php:478
+#: inc/customizer/settings/header.php:479
 msgid "Search Button Color: Hover"
 msgstr "Couleur au survol du bouton de recherche"
 
-#: inc/customizer/settings/header.php:489
+#: inc/customizer/settings/header.php:490
 msgid "Full Screen Header"
 msgstr "Entête plein écran"
 
-#: inc/customizer/settings/header.php:503
+#: inc/customizer/settings/header.php:504
 msgid "Logo (optional)"
 msgstr "Logo (optionnel)"
 
-#: inc/customizer/settings/header.php:504
+#: inc/customizer/settings/header.php:505
 msgid "Select a custom logo when the menu is opened."
 msgstr "Sélectionnez un logo personnalisé lorsque le menu est ouvert."
 
-#: inc/customizer/settings/header.php:519
+#: inc/customizer/settings/header.php:520
 msgid "Styling"
 msgstr "Style"
 
-#: inc/customizer/settings/header.php:535
+#: inc/customizer/settings/header.php:536
 msgid "Menu Bar Color"
 msgstr "Couleur de la barre du menu"
 
-#: inc/customizer/settings/header.php:552
+#: inc/customizer/settings/header.php:553
 msgid "Menu Bar Close Color"
 msgstr "Couleur de la fermeture du menu"
 
-#: inc/customizer/settings/header.php:585
+#: inc/customizer/settings/header.php:586
+#: inc/customizer/settings/header.php:2817
 msgid "Links Background Color"
 msgstr "Couleur d’arrière-plan des liens"
 
-#: inc/customizer/settings/header.php:601
+#: inc/customizer/settings/header.php:602
 msgid "Links Hover Background Color"
 msgstr "Couleur d'arrière-plan du lien au survol"
 
-#: inc/customizer/settings/header.php:635
+#: inc/customizer/settings/header.php:636
 msgid "Links Hover Color"
 msgstr "Couleur des liens au survol"
 
-#: inc/customizer/settings/header.php:650
+#: inc/customizer/settings/header.php:651
 msgid "Search Styling"
 msgstr "Style de la recherche"
 
-#: inc/customizer/settings/header.php:666
-#: inc/customizer/settings/header.php:1093
-#: inc/customizer/settings/header.php:1837
-#: inc/customizer/settings/header.php:1905
+#: inc/customizer/settings/header.php:667
+#: inc/customizer/settings/header.php:1111
+#: inc/customizer/settings/header.php:1918
+#: inc/customizer/settings/header.php:1986
 msgid "Input Color"
 msgstr "Couleur du texte de champ"
 
-#: inc/customizer/settings/header.php:683
-#: inc/customizer/settings/header.php:1939
+#: inc/customizer/settings/header.php:684
+#: inc/customizer/settings/header.php:2020
 msgid "Input Dashed Text Color"
 msgstr "Couleur du texte factice"
 
-#: inc/customizer/settings/header.php:700
+#: inc/customizer/settings/header.php:701
 msgid "Input Border Bottom Color"
 msgstr "Couleur de bordure inférieure de champ"
 
-#: inc/customizer/settings/header.php:717
+#: inc/customizer/settings/header.php:718
 msgid "Input Hover Border Bottom Color"
 msgstr "Couleur de bordure inférieure de champ : survol"
 
-#: inc/customizer/settings/header.php:734
+#: inc/customizer/settings/header.php:735
 msgid "Input Focus Border Bottom Color"
 msgstr "Couleur de bordure inférieure de champ : focus"
 
-#: inc/customizer/settings/header.php:745
+#: inc/customizer/settings/header.php:746
 msgid "Medium Header"
 msgstr "Entête moyenne"
 
-#: inc/customizer/settings/header.php:760
+#: inc/customizer/settings/header.php:761
 msgid "Hide Menu When Scrolling"
 msgstr "Masquer le menu lors du défilement"
 
-#: inc/customizer/settings/header.php:776
+#: inc/customizer/settings/header.php:778
+msgid "Stick Only The Menu"
+msgstr "Coller seulement le menu"
+
+#: inc/customizer/settings/header.php:794
 msgid "Top Header"
 msgstr "Entête supérieure"
 
-#: inc/customizer/settings/header.php:813
-#: inc/customizer/settings/header.php:1060
+#: inc/customizer/settings/header.php:831
+#: inc/customizer/settings/header.php:1078
 msgid "Search Form"
 msgstr "Formulaire de recherche"
 
-#: inc/customizer/settings/header.php:815
+#: inc/customizer/settings/header.php:833
 msgid "Social Buttons"
 msgstr "Boutons sociaux"
 
-#: inc/customizer/settings/header.php:905
+#: inc/customizer/settings/header.php:923
 msgid "Sticky Padding (px)"
 msgstr "Marge interne collante (px)"
 
-#: inc/customizer/settings/header.php:906
+#: inc/customizer/settings/header.php:924
 msgid "If you use the sticky header extension"
 msgstr "Si vous utilisez l’extension de menu collant"
 
-#: inc/customizer/settings/header.php:933
-#: inc/customizer/settings/header.php:1410
-#: inc/customizer/settings/header.php:2398 inc/helpers.php:2964
-#: partials/mobile/mobile-icon.php:32
+#: inc/customizer/settings/header.php:951
+#: inc/customizer/settings/header.php:1428
+#: inc/customizer/settings/header.php:2479 inc/helpers.php:2997
+#: partials/mobile/mobile-icon.php:29
 msgid "Menu"
 msgstr "Menu"
 
-#: inc/customizer/settings/header.php:1016
+#: inc/customizer/settings/header.php:1034
 msgid "Menu Items Padding (px)"
 msgstr "Marge interne des éléments de menu (px)"
 
-#: inc/customizer/settings/header.php:1076
-#: inc/customizer/settings/header.php:1820
+#: inc/customizer/settings/header.php:1094
+#: inc/customizer/settings/header.php:1901
 msgid "Input Background Color"
 msgstr "Couleur d’arrière-plan de champ"
 
-#: inc/customizer/settings/header.php:1110
+#: inc/customizer/settings/header.php:1128
 msgid "Placeholder Color"
 msgstr "Couleur du terme générique"
 
-#: inc/customizer/settings/header.php:1127
+#: inc/customizer/settings/header.php:1145
 msgid "Button Color"
 msgstr "Couleur du bouton"
 
-#: inc/customizer/settings/header.php:1144
+#: inc/customizer/settings/header.php:1162
 msgid "Button Hover Color"
 msgstr "Couleur du bouton au survol"
 
-#: inc/customizer/settings/header.php:1155
+#: inc/customizer/settings/header.php:1173
 msgid "Header Media"
 msgstr "Média d’entête"
 
-#: inc/customizer/settings/header.php:1292
+#: inc/customizer/settings/header.php:1310
 msgid "Enter the height of your normal logo, used for retina."
 msgstr "Saisir la hauteur de votre logo normal, utilisé pour le rétina."
 
-#: inc/customizer/settings/header.php:1322
+#: inc/customizer/settings/header.php:1340
 msgid "Max Width (px)"
 msgstr "Largeur maxi (px)"
 
-#: inc/customizer/settings/header.php:1356
+#: inc/customizer/settings/header.php:1374
 msgid "Max Height (px)"
 msgstr "Hauteur maxi (px)"
 
-#: inc/customizer/settings/header.php:1424
+#: inc/customizer/settings/header.php:1442
 msgid "Top Level Dropdown Icon"
 msgstr "Icône menu déroulant haut de page"
 
-#: inc/customizer/settings/header.php:1440
+#: inc/customizer/settings/header.php:1458
 msgid "Second+ Level Dropdown Icon"
 msgstr "Icône menu déroulant de deuxième niveau"
 
-#: inc/customizer/settings/header.php:1457
+#: inc/customizer/settings/header.php:1475
 msgid "Dropdown Top Border"
 msgstr "Bordure supérieure du menu déroulant"
 
-#: inc/customizer/settings/header.php:1494
+#: inc/customizer/settings/header.php:1513
+msgid "Links Effect"
+msgstr "Effet de lien du menu"
+
+#: inc/customizer/settings/header.php:1519
+msgid "No Effect"
+msgstr "Pas d'effet"
+
+#: inc/customizer/settings/header.php:1520
+#, fuzzy
+#| msgid "Center Left"
+msgid "Underline From Left"
+msgstr "Centré à gauche "
+
+#: inc/customizer/settings/header.php:1521
+#, fuzzy
+#| msgid "Under Title"
+msgid "Underline Up"
+msgstr "Sous titre"
+
+#: inc/customizer/settings/header.php:1522
+msgid "Underline Down"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1523
+msgid "Brackets"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1524
+msgid "Overline & Fixed Underline"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1525
+msgid "Circular Reveal"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1526
+msgid "Tripple Dot Under"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1527
+msgid "X Marks The Spot"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1528
+msgid "Underline & Overline"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1529
+msgid "Backlighting"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1543
+#: inc/customizer/settings/header.php:1560
+msgid "Links Effect: Color"
+msgstr "Couleur des liens"
+
+#: inc/customizer/settings/header.php:1575
 msgid "Main Styling"
 msgstr "Style principal"
 
-#: inc/customizer/settings/header.php:1509
+#: inc/customizer/settings/header.php:1590
 msgid "Left/Right Padding (px)"
 msgstr "Marge interne gauche/droite (px)"
 
-#: inc/customizer/settings/header.php:1563
-#: inc/customizer/settings/header.php:1753
+#: inc/customizer/settings/header.php:1644
+#: inc/customizer/settings/header.php:1834
 msgid "Link Color: Current Menu Item"
 msgstr "Couleur texte du lien : menu actif"
 
-#: inc/customizer/settings/header.php:1578
+#: inc/customizer/settings/header.php:1659
 msgid "Link Background"
 msgstr "Arrière-plan du lien"
 
-#: inc/customizer/settings/header.php:1593
-#: inc/customizer/settings/header.php:1738
+#: inc/customizer/settings/header.php:1674
+#: inc/customizer/settings/header.php:1819
 msgid "Link Background: Hover"
 msgstr "Arrière-plan du lien au survol"
 
-#: inc/customizer/settings/header.php:1608
-#: inc/customizer/settings/header.php:1768
+#: inc/customizer/settings/header.php:1689
+#: inc/customizer/settings/header.php:1849
 msgid "Link Background: Current Menu Item"
 msgstr "Arrière-plan du lien : menu actif"
 
-#: inc/customizer/settings/header.php:1622
+#: inc/customizer/settings/header.php:1703
 msgid "Dropdowns Styling"
 msgstr "Style du menu déroulant"
 
-#: inc/customizer/settings/header.php:1637
+#: inc/customizer/settings/header.php:1718
 msgid "Width (px)"
 msgstr "Largeur (px)"
 
-#: inc/customizer/settings/header.php:1674
+#: inc/customizer/settings/header.php:1755
 msgid "Top Border Color"
 msgstr "Couleur de la bordure supérieure"
 
-#: inc/customizer/settings/header.php:1784
+#: inc/customizer/settings/header.php:1865
 msgid "Search Icon"
 msgstr "Icône de recherche"
 
-#: inc/customizer/settings/header.php:1798
+#: inc/customizer/settings/header.php:1879
 msgid "Search Icon Style"
 msgstr "Style de l’icône de recherche"
 
-#: inc/customizer/settings/header.php:1804
+#: inc/customizer/settings/header.php:1885
 #: inc/customizer/settings/woocommerce.php:197
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: inc/customizer/settings/header.php:1805
+#: inc/customizer/settings/header.php:1886
+#: inc/customizer/settings/header.php:2526
 msgid "Drop Down"
 msgstr "Menu déroulant"
 
-#: inc/customizer/settings/header.php:1806
+#: inc/customizer/settings/header.php:1887
 msgid "Header Replace"
 msgstr "Remplacer l’entête"
 
-#: inc/customizer/settings/header.php:1807
+#: inc/customizer/settings/header.php:1888
 msgid "Overlay"
 msgstr "Superposition"
 
-#: inc/customizer/settings/header.php:1854
-#: inc/customizer/settings/header.php:1956
+#: inc/customizer/settings/header.php:1935
+#: inc/customizer/settings/header.php:2037
 msgid "Input Border Color"
 msgstr "Couleur de bordure de champ"
 
-#: inc/customizer/settings/header.php:1871
-#: inc/customizer/settings/header.php:1990
+#: inc/customizer/settings/header.php:1952
+#: inc/customizer/settings/header.php:2071
 msgid "Input Border Color: Focus"
 msgstr "Couleur de bordure de champ : focus"
 
-#: inc/customizer/settings/header.php:1888
+#: inc/customizer/settings/header.php:1969
 msgid "Overlay Background Color"
 msgstr "Couleur d’arrière-plan de la superposition"
 
-#: inc/customizer/settings/header.php:1922
+#: inc/customizer/settings/header.php:2003
 msgid "Input Placeholder Color"
 msgstr "Couleur du terme factice"
 
-#: inc/customizer/settings/header.php:1973
+#: inc/customizer/settings/header.php:2054
 msgid "Input Border Color: Hover"
 msgstr "Couleur de bordure de champ : survol"
 
-#: inc/customizer/settings/header.php:2007
+#: inc/customizer/settings/header.php:2088
 msgid "Close Button Color"
 msgstr "Couleur du texte du bouton de fermeture"
 
-#: inc/customizer/settings/header.php:2022
+#: inc/customizer/settings/header.php:2103
 msgid "Dropdowns Categories Posts"
 msgstr "Menus déroulants de catégories d’articles"
 
-#: inc/customizer/settings/header.php:2037
+#: inc/customizer/settings/header.php:2118
 msgid "Category Title: Background"
 msgstr "Titre de catégorie : arrière-plan"
 
-#: inc/customizer/settings/header.php:2053
+#: inc/customizer/settings/header.php:2134
 msgid "Category Title: Color"
 msgstr "Titre de catégorie : couleur"
 
-#: inc/customizer/settings/header.php:2069
+#: inc/customizer/settings/header.php:2150
 msgid "Posts Links: Color"
 msgstr "Couleur des liens d’article"
 
-#: inc/customizer/settings/header.php:2085
+#: inc/customizer/settings/header.php:2166
 msgid "Posts Links Hover: Color"
 msgstr "Couleur des liens d’article au survol"
 
-#: inc/customizer/settings/header.php:2101
+#: inc/customizer/settings/header.php:2182
 msgid "Posts Date: Color"
 msgstr "Date d’article : couleur"
 
-#: inc/customizer/settings/header.php:2111
+#: inc/customizer/settings/header.php:2192
 msgid "Menu Social"
 msgstr "Menu Social"
 
-#: inc/customizer/settings/header.php:2125
+#: inc/customizer/settings/header.php:2206
 msgid "Enable Menu Social"
 msgstr "Activer le menu réseaux sociaux"
 
-#: inc/customizer/settings/header.php:2142
+#: inc/customizer/settings/header.php:2223
 msgid "Social Link Style"
 msgstr "Style des liens sociaux"
 
-#: inc/customizer/settings/header.php:2149
+#: inc/customizer/settings/header.php:2230
 msgid "Simple"
 msgstr "Simple"
 
-#: inc/customizer/settings/header.php:2150
+#: inc/customizer/settings/header.php:2231
 msgid "Colored"
 msgstr "Coloré"
 
-#: inc/customizer/settings/header.php:2152
+#: inc/customizer/settings/header.php:2233
 msgid "Dark"
 msgstr "Sombre"
 
-#: inc/customizer/settings/header.php:2166
+#: inc/customizer/settings/header.php:2247
 #: inc/customizer/settings/topbar.php:400
 msgid "Social Link Target"
 msgstr "Cible des liens sociaux"
 
-#: inc/customizer/settings/header.php:2173
+#: inc/customizer/settings/header.php:2254
 #: inc/customizer/settings/topbar.php:407
 msgid "New Window"
 msgstr "Nouvelle fenêtre"
 
-#: inc/customizer/settings/header.php:2174
+#: inc/customizer/settings/header.php:2255
 #: inc/customizer/settings/topbar.php:408
 msgid "Same Window"
 msgstr "Même fenêtre"
 
-#: inc/customizer/settings/header.php:2272
+#: inc/customizer/settings/header.php:2353
 msgid "Simple Social Links Color"
 msgstr "Couleur des liens sociaux individuels"
 
-#: inc/customizer/settings/header.php:2288
+#: inc/customizer/settings/header.php:2369
 msgid "Simple Social Links Color: Hover"
 msgstr "Couleur des liens sociaux individuels au survol"
 
-#: inc/customizer/settings/header.php:2326
+#: inc/customizer/settings/header.php:2407
+#: inc/customizer/settings/header.php:2539
+#: inc/customizer/settings/typography.php:138
 msgid "Mobile Menu"
 msgstr "Menu Mobile"
 
-#: inc/customizer/settings/header.php:2340
+#: inc/customizer/settings/header.php:2421
 msgid "Breakpoints"
 msgstr "Points de rupture"
 
-#: inc/customizer/settings/header.php:2341
+#: inc/customizer/settings/header.php:2422
 msgid "Choose the media query where you want to display the mobile menu."
 msgstr ""
 "Choisissez la règle responsive à partir de laquelle s'affiche le menu mobile."
 
-#: inc/customizer/settings/header.php:2347
+#: inc/customizer/settings/header.php:2428
 msgid "From 1280px"
 msgstr "Depuis 1280px"
 
-#: inc/customizer/settings/header.php:2348
+#: inc/customizer/settings/header.php:2429
 msgid "From 1080px"
 msgstr "Depuis 1080px"
 
-#: inc/customizer/settings/header.php:2349
+#: inc/customizer/settings/header.php:2430
 msgid "From 959px"
 msgstr "Depuis 959px"
 
-#: inc/customizer/settings/header.php:2350
+#: inc/customizer/settings/header.php:2431
 msgid "From 767px"
 msgstr "Depuis 767px"
 
-#: inc/customizer/settings/header.php:2351
+#: inc/customizer/settings/header.php:2432
 msgid "From 480px"
 msgstr "Depuis 480px"
 
-#: inc/customizer/settings/header.php:2352
+#: inc/customizer/settings/header.php:2433
 msgid "From 320px"
 msgstr "Depuis 320px"
 
-#: inc/customizer/settings/header.php:2353
+#: inc/customizer/settings/header.php:2434
 msgid "Custom media query"
 msgstr "Règle responsive personnalisée"
 
-#: inc/customizer/settings/header.php:2365
+#: inc/customizer/settings/header.php:2446
 msgid "Custom Media Query"
 msgstr "Règle responsive personnalisée."
 
-#: inc/customizer/settings/header.php:2366
+#: inc/customizer/settings/header.php:2447
 msgid ""
 "Enter your custom media query where you want to display the mobile menu."
 msgstr ""
 "Entrez votre règle responsive à partir de laquelle s'affiche le menu mobile."
 
-#: inc/customizer/settings/header.php:2387
+#: inc/customizer/settings/header.php:2468
 msgid "Display Menu Text"
 msgstr "Afficher le texte du menu"
 
-#: inc/customizer/settings/header.php:2404
+#: inc/customizer/settings/header.php:2485
 msgid "Menu Text"
 msgstr "Texte du menu"
 
-#: inc/customizer/settings/header.php:2421
+#: inc/customizer/settings/header.php:2502
 msgid "Hamburger Icon Class"
 msgstr "Classe de l’icône du menu hamburger"
 
-#: inc/customizer/settings/header.php:2422
-#: inc/customizer/settings/header.php:2520
+#: inc/customizer/settings/header.php:2503
+#: inc/customizer/settings/header.php:2632
 msgid "Enter the full icon class"
 msgstr "Entrez la classe complète de l’icône"
 
-#: inc/customizer/settings/header.php:2437
-msgid "Mobile Sidebar Menu"
-msgstr "Menu de la barre latérale mobile"
+#: inc/customizer/settings/header.php:2519
+msgid "Mobile Menu Style"
+msgstr "Style de menu Mobile"
 
-#: inc/customizer/settings/header.php:2451
+#: inc/customizer/settings/header.php:2553
 msgid "Direction"
 msgstr "Direction"
 
-#: inc/customizer/settings/header.php:2470
+#: inc/customizer/settings/header.php:2574
+msgid "Drop Down Max Height (px)"
+msgstr "Hauteur maxi du menu déroulant (px)"
+
+#: inc/customizer/settings/header.php:2575
+msgid ""
+"Add the height from which you want to display the scrollbar in the drop down"
+msgstr ""
+"Ajoutez la hauteur à partir de laquelle vous souhaitez afficher la barre de "
+"défilement dans la liste déroulante"
+
+#: inc/customizer/settings/header.php:2596
 msgid "Displace"
 msgstr "Déplacer"
 
-#: inc/customizer/settings/header.php:2486
+#: inc/customizer/settings/header.php:2613
 msgid "Close Menu Button"
 msgstr "Bouton de fermeture menu"
 
-#: inc/customizer/settings/header.php:2502
-msgid "Mobile Menu Search"
-msgstr "Menu de recherche Mobile"
-
-#: inc/customizer/settings/header.php:2519
+#: inc/customizer/settings/header.php:2631
 msgid "Close Menu Button Icon Class"
 msgstr "Classe de l’icône du bouton de fermeture"
 
-#: inc/customizer/settings/header.php:2531 inc/helpers.php:2965
+#: inc/customizer/settings/header.php:2644 inc/helpers.php:2998
 #: partials/mobile/mobile-sidr-close.php:20
 msgid "Close Menu"
 msgstr "Fermer le menu"
 
-#: inc/customizer/settings/header.php:2537
+#: inc/customizer/settings/header.php:2650
 msgid "Close Menu Button Text"
 msgstr "Texte du bouton de fermeture"
 
-#: inc/customizer/settings/header.php:2553
+#: inc/customizer/settings/header.php:2667
 msgid "Dropdown Target"
 msgstr "Cible du menu déroulant"
 
-#: inc/customizer/settings/header.php:2554
+#: inc/customizer/settings/header.php:2668
 msgid "Choose your opening target for your submenus"
 msgstr "Choisissez votre cible d'ouverture pour vos sous-menus"
 
-#: inc/customizer/settings/header.php:2559
+#: inc/customizer/settings/header.php:2673
 #: inc/customizer/settings/woocommerce.php:198
 msgid "Icon"
 msgstr "Icône"
 
-#: inc/customizer/settings/header.php:2560
+#: inc/customizer/settings/header.php:2674
 msgid "Link"
 msgstr "Lien"
 
-#: inc/customizer/settings/header.php:2572
-msgid "Styling: Mobile Sidebar Menu"
-msgstr "Style du menu mobile barre latérale"
+#: inc/customizer/settings/header.php:2688
+msgid "Mobile Menu Search"
+msgstr "Menu de recherche Mobile"
 
-#: inc/customizer/settings/header.php:2587
+#: inc/customizer/settings/header.php:2703
+msgid "Styling: Mobile Menu"
+msgstr "Style du menu Mobile"
+
+#: inc/customizer/settings/header.php:2718
 msgid "Close Button Background"
 msgstr "Couleur d’arrière-plan du bouton de fermeture"
 
-#: inc/customizer/settings/header.php:2667
+#: inc/customizer/settings/header.php:2833
+msgid "Links Background Color: Hover"
+msgstr "Couleur d'arrière-plan au survol des liens"
+
+#: inc/customizer/settings/header.php:2850
 msgid "Dropdowns Menus: Background"
 msgstr "Menus déroulants : arrière-plan"
 
-#: inc/customizer/settings/header.php:2682
+#: inc/customizer/settings/header.php:2865
 msgid "Searchbar Background"
 msgstr "Arrière plan de la barre de recherche"
 
-#: inc/customizer/settings/header.php:2698
+#: inc/customizer/settings/header.php:2882
 msgid "Searchbar Color"
 msgstr "Couleur de la barre de recherche"
 
-#: inc/customizer/settings/header.php:2714
+#: inc/customizer/settings/header.php:2898
 msgid "Searchbar Border Color"
 msgstr "Couleur de bordure de la barre de recherche"
 
-#: inc/customizer/settings/header.php:2730
+#: inc/customizer/settings/header.php:2914
+msgid "Searchbar Border Color: Hover"
+msgstr "Couleur de la bordure au survol de la barre de recherche"
+
+#: inc/customizer/settings/header.php:2931
 msgid "Searchbar Border Color: Focus"
 msgstr "Couleur de bordure de la barre de recherche : focus"
 
-#: inc/customizer/settings/header.php:2746
+#: inc/customizer/settings/header.php:2947
 msgid "Searchbar Button Color"
 msgstr "Couleur du bouton de barre de recherche"
 
-#: inc/customizer/settings/header.php:2762
+#: inc/customizer/settings/header.php:2964
 msgid "Searchbar Button Color: Hover"
 msgstr "Couleur du bouton de barre de recherche au survol"
 
@@ -1787,9 +1902,8 @@ msgid "Centered Content & Social"
 msgstr "Contenu et social centrés"
 
 #: inc/customizer/settings/topbar.php:306
-#: inc/customizer/settings/topbar.php:320 inc/helpers.php:2308
-#: inc/helpers.php:2393 inc/third/beaver-themer.php:127
-#: inc/third/class-beaver-themer.php:127
+#: inc/customizer/settings/topbar.php:320 inc/helpers.php:2341
+#: inc/helpers.php:2426 inc/third/class-beaver-themer.php:127
 msgid "Content"
 msgstr "Contenu"
 
@@ -1853,10 +1967,6 @@ msgstr "Menu principal"
 #: inc/customizer/settings/typography.php:128
 msgid "Main Menu: Dropdowns"
 msgstr "Sous-menu déroulant"
-
-#: inc/customizer/settings/typography.php:138
-msgid "Mobile Menu: Dropdowns"
-msgstr "Menu mobile déroulant"
 
 #: inc/customizer/settings/typography.php:157
 msgid "Page Title Subheading"
@@ -2122,8 +2232,8 @@ msgid "Products"
 msgstr "Produits"
 
 #: inc/customizer/settings/woocommerce.php:790
-#: inc/customizer/settings/woocommerce.php:862 inc/helpers.php:2306
-#: inc/helpers.php:2391
+#: inc/customizer/settings/woocommerce.php:862 inc/helpers.php:2339
+#: inc/helpers.php:2424
 msgid "Title"
 msgstr "Titre"
 
@@ -2143,8 +2253,8 @@ msgstr "Bouton ajouter au panier"
 msgid "Product Entry Media"
 msgstr "Media d’entrée de produit"
 
-#: inc/customizer/settings/woocommerce.php:812 inc/helpers.php:2305
-#: inc/helpers.php:2390
+#: inc/customizer/settings/woocommerce.php:812 inc/helpers.php:2338
+#: inc/helpers.php:2423
 msgid "Featured Image"
 msgstr "Image à la Une"
 
@@ -2539,191 +2649,191 @@ msgstr "Arrière-plan de la boîte de paiement"
 msgid "Payment Box Color"
 msgstr "Couleur de la boîte de paiement"
 
-#: inc/helpers.php:1201
+#: inc/helpers.php:1212 partials/mobile/mobile-fullscreen-search.php:25
 msgid "Type your search"
 msgstr "Saisissez votre recherche"
 
-#: inc/helpers.php:1207 partials/mobile/mobile-search.php:15 searchform.php:10
+#: inc/helpers.php:1218 partials/mobile/mobile-search.php:15 searchform.php:10
 msgid "Search"
 msgstr "Rechercher"
 
-#: inc/helpers.php:1402
+#: inc/helpers.php:1435
 msgid "Recent Posts"
 msgstr "Articles récents"
 
-#: inc/helpers.php:1415
+#: inc/helpers.php:1448
 msgid "Search Results Found"
 msgstr "Résultats trouvés pour la recherche"
 
-#: inc/helpers.php:1433
+#: inc/helpers.php:1466
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "Archives quotidiennes : %s"
 
-#: inc/helpers.php:1438
+#: inc/helpers.php:1471
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "Archives mensuelles : %s"
 
-#: inc/helpers.php:1438
+#: inc/helpers.php:1471
 msgid "F Y"
 msgstr "F Y"
 
-#: inc/helpers.php:1443
+#: inc/helpers.php:1476
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "Archives annuelles : %s"
 
-#: inc/helpers.php:1465
+#: inc/helpers.php:1498
 msgid "404: Page Not Found"
 msgstr "404 : page introuvable"
 
-#: inc/helpers.php:1521
+#: inc/helpers.php:1554
 msgid "You searched for:"
 msgstr "Votre recherche pour : "
 
-#: inc/helpers.php:1526
+#: inc/helpers.php:1559
 msgid "This author has written"
 msgstr "Cet auteur a écrit"
 
-#: inc/helpers.php:1526
+#: inc/helpers.php:1559
 msgid "articles"
 msgstr "articles"
 
-#: inc/helpers.php:2309
+#: inc/helpers.php:2342
 msgid "Read More"
 msgstr "Lire la suite"
 
-#: inc/helpers.php:2394
+#: inc/helpers.php:2427
 msgid "Tags"
 msgstr "Étiquettes"
 
-#: inc/helpers.php:2395
+#: inc/helpers.php:2428
 msgid "Social Share"
 msgstr "Partage réseaux sociaux"
 
-#: inc/helpers.php:2396
+#: inc/helpers.php:2429
 msgid "Next/Prev Links"
 msgstr "Liens Préc./Suiv."
 
-#: inc/helpers.php:2397
+#: inc/helpers.php:2430
 msgid "Author Box"
 msgstr "Encart sur l’auteur"
 
-#: inc/helpers.php:2398
+#: inc/helpers.php:2431
 msgid "Related Posts"
 msgstr "Articles similaires"
 
-#: inc/helpers.php:2487
+#: inc/helpers.php:2520
 msgid "Pingback:"
 msgstr "Pingback : "
 
-#: inc/helpers.php:2487
+#: inc/helpers.php:2520
 msgid "(Edit)"
 msgstr "(Éditer)"
 
-#: inc/helpers.php:2505
+#: inc/helpers.php:2538
 #, php-format
 msgid "%s "
 msgstr "%s "
 
-#: inc/helpers.php:2514
+#: inc/helpers.php:2547
 msgid "edit"
 msgstr "éditer"
 
-#: inc/helpers.php:2526
+#: inc/helpers.php:2559
 msgid "Your comment is awaiting moderation."
 msgstr "Votre commentaire est en attente de modération."
 
-#: inc/helpers.php:2634 inc/helpers.php:2669
+#: inc/helpers.php:2667 inc/helpers.php:2702
 msgid "Newer Posts"
 msgstr "Nouveaux articles"
 
-#: inc/helpers.php:2637 inc/helpers.php:2672
+#: inc/helpers.php:2670 inc/helpers.php:2705
 msgid "Older Posts"
 msgstr "Anciens articles"
 
-#: inc/helpers.php:2966
+#: inc/helpers.php:2999
 msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
 msgstr "© [oceanwp_date] - OceanWP thème par Nick"
 
-#: inc/helpers.php:2984
+#: inc/helpers.php:3017
 msgid "Twitter"
 msgstr "Twitter"
 
-#: inc/helpers.php:2988
+#: inc/helpers.php:3021
 msgid "Facebook"
 msgstr "Facebook"
 
-#: inc/helpers.php:2992
+#: inc/helpers.php:3025
 msgid "Google Plus"
 msgstr "Google +"
 
-#: inc/helpers.php:2996
+#: inc/helpers.php:3029
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: inc/helpers.php:3000
+#: inc/helpers.php:3033
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: inc/helpers.php:3004
+#: inc/helpers.php:3037
 msgid "VK"
 msgstr "VK"
 
-#: inc/helpers.php:3008
+#: inc/helpers.php:3041
 msgid "Instagram"
 msgstr "Instagram"
 
-#: inc/helpers.php:3012
+#: inc/helpers.php:3045
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: inc/helpers.php:3016
+#: inc/helpers.php:3049
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: inc/helpers.php:3020
+#: inc/helpers.php:3053
 msgid "Github"
 msgstr "Github"
 
-#: inc/helpers.php:3024
+#: inc/helpers.php:3057
 msgid "Flickr"
 msgstr "Flickr"
 
-#: inc/helpers.php:3028
+#: inc/helpers.php:3061
 msgid "Skype"
 msgstr "Skype"
 
-#: inc/helpers.php:3032
+#: inc/helpers.php:3065
 msgid "Youtube"
 msgstr "YouTube"
 
-#: inc/helpers.php:3036
+#: inc/helpers.php:3069
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: inc/helpers.php:3040
+#: inc/helpers.php:3073
 msgid "Vine"
 msgstr "Vine"
 
-#: inc/helpers.php:3044
+#: inc/helpers.php:3077
 msgid "Xing"
 msgstr "Xing"
 
-#: inc/helpers.php:3048
+#: inc/helpers.php:3081
 msgid "Yelp"
 msgstr "Yelp"
 
-#: inc/helpers.php:3052
+#: inc/helpers.php:3085
 msgid "Tripadvisor"
 msgstr "Tripadvisor"
 
-#: inc/helpers.php:3056
+#: inc/helpers.php:3089
 msgid "RSS"
 msgstr "RSS"
 
-#: inc/helpers.php:3060
+#: inc/helpers.php:3093
 msgid "Email"
 msgstr "Courriel "
 
@@ -3173,115 +3283,115 @@ msgstr "Toutes les installations sont terminées."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Installation de l’extension %1$s (%2$d/%3$d)"
 
-#: inc/third/beaver-themer.php:93 inc/third/class-beaver-themer.php:93
+#: inc/third/class-beaver-themer.php:93
 msgid "Page"
 msgstr "Page"
 
-#: inc/third/beaver-themer.php:95 inc/third/class-beaver-themer.php:95
+#: inc/third/class-beaver-themer.php:95
 msgid "Before Page"
 msgstr "Avant la page"
 
-#: inc/third/beaver-themer.php:96 inc/third/class-beaver-themer.php:96
+#: inc/third/class-beaver-themer.php:96
 msgid "After Page"
 msgstr "Après la page"
 
-#: inc/third/beaver-themer.php:102 inc/third/class-beaver-themer.php:102
+#: inc/third/class-beaver-themer.php:102
 msgid "Before Top Bar"
 msgstr "Avant la barre supérieure"
 
-#: inc/third/beaver-themer.php:103 inc/third/class-beaver-themer.php:103
+#: inc/third/class-beaver-themer.php:103
 msgid "Before Top Bar Inner"
 msgstr "Avant l’intérieur de la barre supérieure"
 
-#: inc/third/beaver-themer.php:104 inc/third/class-beaver-themer.php:104
+#: inc/third/class-beaver-themer.php:104
 msgid "After Top Bar Inner"
 msgstr "Après l’intérieur de la barre supérieure"
 
-#: inc/third/beaver-themer.php:105 inc/third/class-beaver-themer.php:105
+#: inc/third/class-beaver-themer.php:105
 msgid "After Top Bar"
 msgstr "Après la barre supérieure"
 
-#: inc/third/beaver-themer.php:111 inc/third/class-beaver-themer.php:111
+#: inc/third/class-beaver-themer.php:111
 msgid "Before Header"
 msgstr "Avant l’entête"
 
-#: inc/third/beaver-themer.php:112 inc/third/class-beaver-themer.php:112
+#: inc/third/class-beaver-themer.php:112
 msgid "Before Header Inner"
 msgstr "Avant l’intérieur de l’entête de page"
 
-#: inc/third/beaver-themer.php:113 inc/third/class-beaver-themer.php:113
+#: inc/third/class-beaver-themer.php:113
 msgid "After Header Inner"
 msgstr "Après l’intérieur de l’entête"
 
-#: inc/third/beaver-themer.php:114 inc/third/class-beaver-themer.php:114
+#: inc/third/class-beaver-themer.php:114
 msgid "After Header"
 msgstr "Après l’entête"
 
-#: inc/third/beaver-themer.php:118 inc/third/class-beaver-themer.php:118
+#: inc/third/class-beaver-themer.php:118
 msgid "Page Header"
 msgstr "Entête de page"
 
-#: inc/third/beaver-themer.php:120 inc/third/class-beaver-themer.php:120
+#: inc/third/class-beaver-themer.php:120
 msgid "Before Page Header"
 msgstr "Avant l'entête de la page"
 
-#: inc/third/beaver-themer.php:121 inc/third/class-beaver-themer.php:121
+#: inc/third/class-beaver-themer.php:121
 msgid "Before Page Header Inner"
 msgstr "Avant l’intérieur du titre de page"
 
-#: inc/third/beaver-themer.php:122 inc/third/class-beaver-themer.php:122
+#: inc/third/class-beaver-themer.php:122
 msgid "After Page Header Inner"
 msgstr "Après l’intérieur du titre de page"
 
-#: inc/third/beaver-themer.php:123 inc/third/class-beaver-themer.php:123
+#: inc/third/class-beaver-themer.php:123
 msgid "After Page Header"
 msgstr "Après le titre de page"
 
-#: inc/third/beaver-themer.php:129 inc/third/class-beaver-themer.php:129
+#: inc/third/class-beaver-themer.php:129
 msgid "Before Content"
 msgstr "Avant le contenu"
 
-#: inc/third/beaver-themer.php:130 inc/third/class-beaver-themer.php:130
+#: inc/third/class-beaver-themer.php:130
 msgid "Before Content Inner"
 msgstr "Avant l’intérieur du contenu"
 
-#: inc/third/beaver-themer.php:131 inc/third/class-beaver-themer.php:131
+#: inc/third/class-beaver-themer.php:131
 msgid "After Content Inner"
 msgstr "Après l’intérieur du contenu"
 
-#: inc/third/beaver-themer.php:132 inc/third/class-beaver-themer.php:132
+#: inc/third/class-beaver-themer.php:132
 msgid "After Content"
 msgstr "Après le contenu"
 
-#: inc/third/beaver-themer.php:138 inc/third/class-beaver-themer.php:138
+#: inc/third/class-beaver-themer.php:138
 msgid "Before Sidebar"
 msgstr "Avant la barre latérale"
 
-#: inc/third/beaver-themer.php:139 inc/third/class-beaver-themer.php:139
+#: inc/third/class-beaver-themer.php:139
 msgid "Before Sidebar Inner"
 msgstr "Avant l’intérieur de la barre latérale"
 
-#: inc/third/beaver-themer.php:140 inc/third/class-beaver-themer.php:140
+#: inc/third/class-beaver-themer.php:140
 msgid "After Sidebar Inner"
 msgstr "Après l’intérieur de la barre latérale"
 
-#: inc/third/beaver-themer.php:141 inc/third/class-beaver-themer.php:141
+#: inc/third/class-beaver-themer.php:141
 msgid "After Sidebar"
 msgstr "Après la barre latérale"
 
-#: inc/third/beaver-themer.php:147 inc/third/class-beaver-themer.php:147
+#: inc/third/class-beaver-themer.php:147
 msgid "Before Footer"
 msgstr "Avant le pied de page"
 
-#: inc/third/beaver-themer.php:148 inc/third/class-beaver-themer.php:148
+#: inc/third/class-beaver-themer.php:148
 msgid "Before Footer Inner"
 msgstr "Avant l’intérieur du pied de page"
 
-#: inc/third/beaver-themer.php:149 inc/third/class-beaver-themer.php:149
+#: inc/third/class-beaver-themer.php:149
 msgid "After Footer Inner"
 msgstr "Après l’intérieur du pied de page"
 
-#: inc/third/beaver-themer.php:150 inc/third/class-beaver-themer.php:150
+#: inc/third/class-beaver-themer.php:150
 msgid "After Footer"
 msgstr "Après le pied de page"
 
@@ -3378,7 +3488,7 @@ msgid "WooCommerce Product Title"
 msgstr "Titre produit Woocommerce"
 
 #: inc/woocommerce/woocommerce-helpers.php:88
-#: woocommerce/loop/thumbnail/featured-image.php:45
+#: woocommerce/loop/thumbnail/featured-image.php:50
 msgid "Placeholder Image"
 msgstr "Image générique"
 
@@ -3402,16 +3512,18 @@ msgstr "Continuer la lecture"
 msgid "Type your text and hit enter to search"
 msgstr "Saisir votre texte et appuyer sur Entrée pour rechercher…"
 
+#: partials/header/search-replace.php:15
+msgid "Type then hit enter to search..."
+msgstr "Saisir et appuyer sur Entrée pour rechercher…"
+
 #: partials/header/style/medium-header-search.php:21
 msgid "Search..."
 msgstr "Rechercher…"
 
 #: partials/none.php:11
 #, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-"Prêt à publier votre premier article ? <a href=\"%1$s\">Commencez ici</a>."
+msgid "Ready to publish your first post? %1$sGet started here%2$s."
+msgstr "Prêt à publier votre premier article ? %1$sCommencez ici%2$s."
 
 #: partials/none.php:13
 msgid ""
@@ -3481,17 +3593,45 @@ msgstr "Visualiser : "
 msgid "All"
 msgstr "Tous"
 
-#~ msgid "Name (required)"
-#~ msgstr "Nom (requis)"
+#~ msgid "Effect 1"
+#~ msgstr "Filet bas progressif"
 
-#~ msgid "Email (required)"
-#~ msgstr "Courriel (requis)"
+#~ msgid "Effect 2"
+#~ msgstr "Filet bas montant"
 
-#~ msgid "Website"
-#~ msgstr "Site Web"
+#~ msgid "Effect 3"
+#~ msgstr "Filet bas descendant"
 
-#~ msgid "Your Comment Here..."
-#~ msgstr "Votre Commentaire Ici…"
+#~ msgid "Effect 4"
+#~ msgstr "Parenthèses ouvrantes"
+
+#~ msgid "Effect 5"
+#~ msgstr "Souligné filet montant"
+
+#~ msgid "Effect 6"
+#~ msgstr "Double cercle filet"
+
+#~ msgid "Effect 7"
+#~ msgstr "3 points centrés"
+
+#~ msgid "Effect 8"
+#~ msgstr "Double filet en croix"
+
+#~ msgid "Effect 9"
+#~ msgstr "Double filet fermant"
+
+#~ msgid "Effect 10"
+#~ msgstr "Bloc ombré"
+
+#~ msgid "If you want to display a different logo for this style (optional)"
+#~ msgstr ""
+#~ "Si vous souhaitez afficher un logo différent pour ce style (optionnel)"
+
+#~ msgid "Mobile Sidebar Menu"
+#~ msgstr "Menu de la barre latérale mobile"
+
+#~ msgid "Mobile Menu: Dropdowns"
+#~ msgstr "Menu mobile déroulant"
 
 #~ msgid ""
 #~ "The following shortcodes can be added:%1$s %2$s[oceanwp_date]%3$s To show "
@@ -4004,6 +4144,3 @@ msgstr "Tous"
 
 #~ msgid "Sale!"
 #~ msgstr "Promo !"
-
-#~ msgid "Type then hit enter to search..."
-#~ msgstr "Saisir et appuyer sur Entrée pour rechercher…"

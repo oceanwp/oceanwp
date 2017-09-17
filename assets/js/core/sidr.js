@@ -26,6 +26,9 @@ function oceanwpMobileMenu( event ) {
 			renaming : true,							// The ids and classes will be prepended with a prefix when loading existent content
 			onOpen   : function() {
 
+				// Class of the custom opening button
+				$j( '.mobile-menu > .hamburger' ).addClass( 'is-active' );
+
 				// Declare useful vars
 				var $hasChildren = $j( '.sidr-class-menu-item-has-children' );
 
@@ -82,11 +85,15 @@ function oceanwpMobileMenu( event ) {
 				$window.resize( function() {
 					if ( $window.width() >= 960 ) {
 						$j.sidr( 'close', 'sidr' );
+						$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
 					}
 				} );
 
 			},
 			onClose : function() {
+
+				// Remove class of the custom opening button
+				$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
 
 				// Remove active dropdowns
 				$j( '.sidr-class-menu-item-has-children.active' ).removeClass( 'active' ).children( 'ul' ).hide();
@@ -109,12 +116,14 @@ function oceanwpMobileMenu( event ) {
 		// Close sidr when clicking on close button
 		$j( 'a.sidr-class-toggle-sidr-close' ).on( 'click', function() {
 			$j.sidr( 'close', 'sidr' );
+			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
 			return false;
 		} );
 
 		// Close when clicking local scroll link
 		$j( 'a.sidr-class-menu-link[href*="#"]:not([href="#"])' ).on( 'click', function() {
 			$j.sidr( 'close', 'sidr' );
+			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
 		} );
 
 	}

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ocean Theme 1.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-08-21 16:26+0200\n"
+"POT-Creation-Date: 2017-08-30 16:33+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -58,6 +58,18 @@ msgstr ""
 
 #: comments.php:85
 msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:96
+msgid "Name (required)"
+msgstr ""
+
+#: comments.php:98
+msgid "Email (required)"
+msgstr ""
+
+#: comments.php:100
+msgid "Website"
 msgstr ""
 
 #: comments.php:109
@@ -1434,43 +1446,43 @@ msgid "No Effect"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1520
-msgid "Effect 1"
+msgid "Underline From Left"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1521
-msgid "Effect 2"
+msgid "Underline Up"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1522
-msgid "Effect 3"
+msgid "Underline Down"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1523
-msgid "Effect 4"
+msgid "Brackets"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1524
-msgid "Effect 5"
+msgid "Overline & Fixed Underline"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1525
-msgid "Effect 6"
+msgid "Circular Reveal"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1526
-msgid "Effect 7"
+msgid "Tripple Dot Under"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1527
-msgid "Effect 8"
+msgid "X Marks The Spot"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1528
-msgid "Effect 9"
+msgid "Underline & Overline"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1529
-msgid "Effect 10"
+msgid "Backlighting"
 msgstr ""
 
 #: inc/customizer/settings/header.php:1543

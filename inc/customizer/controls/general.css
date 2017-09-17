@@ -19,14 +19,18 @@
 #customize-control-ocean_boxed_dropdshadow.customize-control,
 #customize-control-ocean_add_custom_header_container.customize-control,
 #customize-control-ocean_blog_single_featured_image_title.customize-control,
-#customize-control-osp_side_panel_responsive.customize-control,
+#customize-control-osp_side_panel_close_btn.customize-control,
 #customize-control-external_header_video.customize-control,
 #customize-control-ocean_blog_image_overlay.customize-control,
 #customize-control-op_portfolio_single_featured_image_title,
 #customize-control-ocean_mobile_menu_display_opening_text,
 #customize-control-ocean_schema_markup,
-#customize-control-ocean_mobile_menu_search { margin-top: 20px; }
+#customize-control-ocean_mobile_menu_search,
+#customize-control-osh_has_sticky_topbar,
+#customize-control-ocean_medium_header_hidden_menu { margin-top: 20px; }
 #customize-control-ocean_header_full_width.customize-control { margin-bottom: -21px; }
+#customize-control-ocean_header_full_width.customize-control { margin-bottom: -21px; }
+#customize-control-osh_sticky_choose .customize-control-title { margin-top: 0; }
 
 /* General tweaks */
 .wp-full-overlay-sidebar-content::-webkit-scrollbar, .accordion-section-content::-webkit-scrollbar { width: 5px !important; }

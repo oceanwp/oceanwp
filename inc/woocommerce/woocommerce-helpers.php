@@ -37,9 +37,9 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 			$cart_extra = WC()->cart->get_cart_total();
 			$cart_extra = str_replace( 'amount', 'wcmenucart-details', $cart_extra );
 		} elseif ( 'icon_count' == $display ) {
-			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->cart_contents_count .'</span>';
+			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
 		} elseif ( 'icon_count_total' == $display ) {
-			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->cart_contents_count .'</span>';
+			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
 			$cart_total = WC()->cart->get_cart_total();
 			$cart_extra .= str_replace( 'amount', 'wcmenucart-details', $cart_total );
 		} else {

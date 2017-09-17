@@ -23,10 +23,18 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 	$icon = get_theme_mod( 'ocean_mobile_menu_open_icon', 'fa fa-bars' );
 	$icon = apply_filters( 'ocean_mobile_menu_navbar_open_icon', $icon );
 
+	// Custom hamburger button
+	$btn = get_theme_mod( 'ocean_mobile_menu_open_hamburger', 'default' );
+
 	// Get menu text
 	$text = get_theme_mod( 'ocean_mobile_menu_text' );
 	$text = oceanwp_tm_translation( 'ocean_mobile_menu_text', $text );
 	$text = $text ? $text: esc_html__( 'Menu', 'oceanwp' );
+
+	// Get close menu text
+	$close_text = get_theme_mod( 'ocean_mobile_menu_close_text' );
+	$close_text = oceanwp_tm_translation( 'ocean_mobile_menu_close_text', $close_text );
+	$close_text = $close_text ? $close_text: esc_html__( 'Close', 'oceanwp' );
 
 	if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 
@@ -60,15 +68,34 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		// Cart icon
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
 			&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) { ?>
-			<a href="<?php echo esc_url( WC_Cart::get_cart_url() ); ?>" class="mobile-wcmenucart"><?php echo wp_kses_post( $cart_icon ); ?></a>
+			<a href="<?php echo esc_url( get_permalink( wc_get_page_id( 'cart' ) ) ); ?>" class="mobile-wcmenucart"><?php echo wp_kses_post( $cart_icon ); ?></a>
 		<?php } ?>
 
 		<a href="#" class="mobile-menu">
-			<i class="<?php echo esc_attr( $icon ); ?>"></i>
 			<?php
+			if ( 'default' != $btn ) { ?>
+				<div class="hamburger hamburger--<?php echo esc_attr( $btn ); ?>">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			<?php
+			} else { ?>
+				<i class="<?php echo esc_attr( $icon ); ?>"></i>
+			<?php
+			}
+
+			// Mobile menu text
 			if ( get_theme_mod( 'ocean_mobile_menu_display_opening_text', true ) ) { ?>
 				<span class="oceanwp-text"><?php echo do_shortcode( $text ); ?></span>
-			<?php } ?>
+
+				<?php
+				// Display close text if drop down mobile style
+				if ( 'dropdown' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) { ?>
+					<span class="oceanwp-close-text"><?php echo do_shortcode( $close_text ); ?></span>
+				<?php
+				}
+			} ?>
 		</a>
 
 		<?php

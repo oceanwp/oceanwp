@@ -18,6 +18,8 @@ function oceanwpDropDownMobile() {
 		// Open drop down menu
 		$j( '.mobile-menu' ).on( 'click', function() {
 			$j( '#mobile-dropdown' ).slideToggle( 500 );
+			$j( this ).toggleClass( 'opened' );
+			$j( '.mobile-menu > .hamburger' ).toggleClass( 'is-active' );
 			return false;
 		} );
 
@@ -66,6 +68,8 @@ function oceanwpDropDownMobile() {
 		// Close menu
 		$j( document ).on( 'click', function() {
 			$j( '#mobile-dropdown' ).slideUp( 200 );
+			$j( '.mobile-menu' ).removeClass( 'opened' );
+			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
 		} ).on( 'click', '#mobile-dropdown', function( e ) {
 		    e.stopPropagation();
 		} );
@@ -74,6 +78,8 @@ function oceanwpDropDownMobile() {
 		$window.resize( function() {
 			if ( $window.width() >= 960 ) {
 				$j( '#mobile-dropdown' ).slideUp( 200 );
+				$j( '.mobile-menu' ).removeClass( 'opened' );
+				$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
 			}
 		} );
 

@@ -570,6 +570,24 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Search Posts Per Page
+			 */
+			$wp_customize->add_setting( 'ocean_search_post_per_page', array(
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_search_post_per_page', array(
+				'label'	   				=> esc_html__( 'Search Posts Per Page', 'oceanwp' ),
+				'type' 					=> 'number',
+				'section'  				=> 'ocean_general_settings',
+				'settings' 				=> 'ocean_search_post_per_page',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			    ),
+			) ) );
+
+			/**
 			 * Search Page
 			 */
 			$wp_customize->add_setting( 'ocean_search_custom_sidebar', array(
@@ -604,79 +622,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
 					'full-screen'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
 				),
-			) ) );
-
-			/**
-			 * Heading 404 Error Page
-			 */
-			$wp_customize->add_setting( 'ocean_error_page_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_error_page_heading', array(
-				'label'    	=> esc_html__( '404 Error Page', 'oceanwp' ),
-				'section'  	=> 'ocean_general_settings',
-				'priority' 	=> 10,
-			) ) );
-
-			/**
-			 * Elementor Templates
-			 */
-		    if ( class_exists( 'Elementor\Plugin' ) ) {
-
-				$wp_customize->add_setting( 'ocean_error_page_elementor_templates', array(
-					'default'           	=> '0',
-					'sanitize_callback' 	=> 'oceanwp_sanitize_dropdown_pages',
-				) );
-
-				$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_error_page_elementor_templates', array(
-					'label'	   				=> esc_html__( 'Elementor Templates', 'oceanwp' ),
-				    'description' 			=> esc_html__( 'Deprecated, this field is no longer supported. Please use the Select Template field below instead.', 'oceanwp' ),
-					'type' 					=> 'select',
-					'section'  				=> 'ocean_general_settings',
-					'settings' 				=> 'ocean_error_page_elementor_templates',
-					'priority' 				=> 10,
-					'choices' 				=> $this->helpers( 'elementor' ),
-				) ) );
-
-			}
-
-			/**
-			 * Page ID
-			 */
-			else {
-
-				$wp_customize->add_setting( 'ocean_error_page_id', array(
-					'default' 				=> '',
-					'sanitize_callback' 	=> 'oceanwp_sanitize_dropdown_pages',
-				) );
-
-				$wp_customize->add_control( new OceanWP_Customizer_Dropdown_Pages( $wp_customize, 'ocean_error_page_id', array(
-					'label'	   				=> '<span style="color: red;">' . esc_html__( 'Page ID', 'oceanwp' ) . '</span>',
-					'description'	   		=> esc_html__( 'Deprecated, this field is no longer supported. Please use the Select Template field below instead.', 'oceanwp' ),
-					'section'  				=> 'ocean_general_settings',
-					'settings' 				=> 'ocean_error_page_id',
-					'priority' 				=> 10,
-				) ) );
-
-			}
-
-			/**
-			 * Template
-			 */
-			$wp_customize->add_setting( 'ocean_error_page_template', array(
-				'default'           	=> '0',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_error_page_template', array(
-				'label'	   				=> esc_html__( 'Select Template', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'Choose a template created in Theme Panel > My Library.', 'oceanwp' ),
-				'type' 					=> 'select',
-				'section'  				=> 'ocean_general_settings',
-				'settings' 				=> 'ocean_error_page_template',
-				'priority' 				=> 10,
-				'choices' 				=> oceanwp_customizer_helpers( 'library' ),
 			) ) );
 
 			/**
@@ -1932,6 +1877,114 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'priority' 				=> 10,
 			) ) );
 
+			/**
+			 * Section
+			 */
+			$wp_customize->add_section( 'ocean_general_error_page' , array(
+				'title' 			=> esc_html__( '404 Error Page', 'oceanwp' ),
+				'priority' 			=> 10,
+				'panel' 			=> $panel,
+			) );
+
+			/**
+			 * Blank Page
+			 */
+			$wp_customize->add_setting( 'ocean_error_page_blank', array(
+				'default'           	=> 'off',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_error_page_blank', array(
+				'label'	   				=> esc_html__( 'Blank Page', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Enable this option to remove all the elements and have full control of the 404 error page.', 'oceanwp' ),
+				'section'  				=> 'ocean_general_error_page',
+				'settings' 				=> 'ocean_error_page_blank',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'on'  			=> esc_html__( 'On', 'oceanwp' ),
+					'off' 			=> esc_html__( 'Off', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Layout
+			 */
+			$wp_customize->add_setting( 'ocean_error_page_layout', array(
+				'default'           	=> 'full-width',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Radio_Image_Control( $wp_customize, 'ocean_error_page_layout', array(
+				'label'	   				=> esc_html__( 'Layout', 'oceanwp' ),
+				'section'  				=> 'ocean_general_error_page',
+				'settings' 				=> 'ocean_error_page_layout',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
+					'full-screen'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
+				),
+			) ) );
+
+			/**
+			 * Elementor Templates
+			 */
+		    if ( class_exists( 'Elementor\Plugin' ) ) {
+
+				$wp_customize->add_setting( 'ocean_error_page_elementor_templates', array(
+					'default'           	=> '0',
+					'sanitize_callback' 	=> 'oceanwp_sanitize_dropdown_pages',
+				) );
+
+				$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_error_page_elementor_templates', array(
+					'label'	   				=> esc_html__( 'Elementor Templates', 'oceanwp' ),
+				    'description' 			=> esc_html__( 'Deprecated, this field is no longer supported. Please use the Select Template field below instead.', 'oceanwp' ),
+					'type' 					=> 'select',
+					'section'  				=> 'ocean_general_error_page',
+					'settings' 				=> 'ocean_error_page_elementor_templates',
+					'priority' 				=> 10,
+					'choices' 				=> $this->helpers( 'elementor' ),
+				) ) );
+
+			}
+
+			/**
+			 * Page ID
+			 */
+			else {
+
+				$wp_customize->add_setting( 'ocean_error_page_id', array(
+					'default' 				=> '',
+					'sanitize_callback' 	=> 'oceanwp_sanitize_dropdown_pages',
+				) );
+
+				$wp_customize->add_control( new OceanWP_Customizer_Dropdown_Pages( $wp_customize, 'ocean_error_page_id', array(
+					'label'	   				=> '<span style="color: red;">' . esc_html__( 'Page ID', 'oceanwp' ) . '</span>',
+					'description'	   		=> esc_html__( 'Deprecated, this field is no longer supported. Please use the Select Template field below instead.', 'oceanwp' ),
+					'section'  				=> 'ocean_general_error_page',
+					'settings' 				=> 'ocean_error_page_id',
+					'priority' 				=> 10,
+				) ) );
+
+			}
+
+			/**
+			 * Template
+			 */
+			$wp_customize->add_setting( 'ocean_error_page_template', array(
+				'default'           	=> '0',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_error_page_template', array(
+				'label'	   				=> esc_html__( 'Select Template', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose a template created in Theme Panel > My Library.', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_general_error_page',
+				'settings' 				=> 'ocean_error_page_template',
+				'priority' 				=> 10,
+				'choices' 				=> oceanwp_customizer_helpers( 'library' ),
+			) ) );
+
 		}
 
 		/**
@@ -2431,16 +2484,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			if ( ! empty( $mobile_content_top_padding )
 				|| ! empty( $mobile_content_bottom_padding ) ) {
 				$css .= '@media (max-width: 480px){#main #content-wrap{'. $mobile_content_padding_css .'}}';
-			}
-
-			// Page header top padding
-			if ( ! empty( $page_header_top_padding ) && '34' != $page_header_top_padding ) {
-				$css .= '.page-header, .has-transparent-header .page-header{padding-top:'. $page_header_top_padding .'px;}';
-			}
-
-			// Page header bottom padding
-			if ( ! empty( $page_header_bottom_padding ) && '34' != $page_header_bottom_padding ) {
-				$css .= '.page-header, .has-transparent-header .page-header{padding-bottom:'. $page_header_bottom_padding .'px;}';
 			}
 
 			// Page header top padding
