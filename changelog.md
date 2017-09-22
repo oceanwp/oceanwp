@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.09.18* - 1.3.9
+* **Fixed** - Undefined $content variable error in the top bar content.
+
 ### *2017.09.17* - 1.3.8
 * **Fixed** - Undefined $get_content variable error in the header.
 
