@@ -59,84 +59,78 @@ if ( ! $profiles = get_theme_mod( 'ocean_menu_social_profiles' ) ) {
 }
 
 // Get theme mods
-$link_target = get_theme_mod( 'ocean_menu_social_target', 'blank' );
+$link_target = get_theme_mod( 'ocean_menu_social_target', 'blank' ); ?>
 
-// Only used on main menu
-if ( has_nav_menu( 'main_menu' ) ) { ?>
+<div class="<?php echo esc_attr( $classes ); ?>">
 
-	<div class="<?php echo esc_attr( $classes ); ?>">
+	<div class="<?php echo esc_attr( $inner_classes ); ?>">
 
-		<div class="<?php echo esc_attr( $inner_classes ); ?>">
+		<?php
+        // Check if there is a template for the footer
+        if ( ! empty( $get_id ) ) {
 
-			<?php
-	        // Check if there is a template for the footer
-	        if ( ! empty( $get_id ) ) {
+			// If Elementor
+		    if ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) {
 
-				// If Elementor
-			    if ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) {
+		        OceanWP_Elementor::get_social_menu_content();
 
-			        OceanWP_Elementor::get_social_menu_content();
+		    }
 
-			    }
+		    // If Beaver Builder
+		    else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 
-			    // If Beaver Builder
-			    else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
+		        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
-			        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
+		    }
 
-			    }
+		    // Else
+		    else {
 
-			    // Else
-			    else {
+		        // Display template content
+		        echo do_shortcode( $get_content );
 
-			        // Display template content
-			        echo do_shortcode( $get_content );
+		    }
 
-			    }
+		// Display social
+		} else { ?>
 
-			// Display social
-			} else { ?>
+			<ul>
 
-				<ul>
+				<?php
+				// Loop through social options
+				foreach ( $social_options as $key => $val ) {
 
-					<?php
-					// Loop through social options
-					foreach ( $social_options as $key => $val ) {
+					// Get URL from the theme mods
+					$url = isset( $profiles[$key] ) ? $profiles[$key] : '';
 
-						// Get URL from the theme mods
-						$url = isset( $profiles[$key] ) ? $profiles[$key] : '';
+					// Display if there is a value defined
+					if ( $url ) {
 
-						// Display if there is a value defined
-						if ( $url ) {
+						// Display link
+						echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
 
-							// Display link
-							echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
+							if ( in_array( $key, array( 'skype' ) ) ) {
+								echo '<a href="skype:'. esc_attr( $url ) .'?call" target="_self">';
+							} else if ( in_array( $key, array( 'email' ) ) ) {
+								echo '<a href="mailto:'. esc_attr( $url ) .'" target="_self">';
+							} else {
+								echo '<a href="'. esc_url( $url ) .'" target="_'. esc_attr( $link_target ) .'">';
+							}
 
-								if ( in_array( $key, array( 'skype' ) ) ) {
-									echo '<a href="skype:'. esc_attr( $url ) .'?call" target="_self">';
-								} else if ( in_array( $key, array( 'email' ) ) ) {
-									echo '<a href="mailto:'. esc_attr( $url ) .'" target="_self">';
-								} else {
-									echo '<a href="'. esc_url( $url ) .'" target="_'. esc_attr( $link_target ) .'">';
-								}
+								echo '<span class="'. esc_attr( $val['icon_class'] ) .'"></span>';
 
-									echo '<span class="'. esc_attr( $val['icon_class'] ) .'"></span>';
+							echo '</a>';
 
-								echo '</a>';
+						echo '</li>';
 
-							echo '</li>';
+					} // End url check
 
-						} // End url check
+				} // End loop ?>
 
-					} // End loop ?>
+			</ul>
 
-				</ul>
-
-			<?php } ?>
-
-		</div>
+		<?php } ?>
 
 	</div>
 
-<?php
-}
+</div>
