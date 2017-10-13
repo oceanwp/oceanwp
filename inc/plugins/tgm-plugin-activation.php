@@ -17,6 +17,13 @@ function oceanwp_tgmpa_register() {
 			'force_activation'	=> false,
 		),
 		
+		array(
+			'name'				=> 'Elementor',
+			'slug'				=> 'elementor', 
+			'required'			=> false,
+			'force_activation'	=> false,
+		),
+		
 	);
 
 	// Register notice

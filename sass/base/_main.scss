@@ -182,3 +182,38 @@ form.oceanwp-searchform {
 	background: $selection-bg-color;
 	text-shadow: none;
 }
+
+/*------------------------------------*
+	Tablet Portrait
+*------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	
+	/* turn 4 column masonry grids into 2 columns */
+	body .oceanwp-row {
+		.span_1_of_4.col-3.col,
+		.span_1_of_4.col.product:nth-child(2n+3) {
+			margin-left: 0;
+			clear: both;
+		}
+	}
+
+	body .oceanwp-row .span_1_of_4.col,
+	body .oceanwp-isotope-grid .span_1_of_4.col {
+		width: 50%;
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	.col {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 30px;
+	}
+
+}

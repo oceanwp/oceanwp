@@ -1,5 +1,35 @@
 # OceanWP Changelog
 
+### *2017.10.13* - 1.4.0
+* **Added** - New Header Style "Vertical" with many options. You can also put the header transparent with a background when scrolling if you use Ocean Sticky Header.
+* **Added** - New Layout Style "Separate" in General Options > General Settings.
+* **Added** - New layout style "Both Sidebars" with options to choose between "Sidebar / Sidebar / Content - Sidebar / Content / Sidebar - Content / Sidebar / Sidebar" and options to add your own content and sidebars width.
+* **Added** - Parallax Footer effect, you just need to activate it via the Footer Widgets section of the customizer.
+* **Added** - New checkbox field to add the Full Screen, Center and Medium header styles transparent.
+* **Added** - New blog entries style "Thumbnail".
+* **Added** - New field to select a template to replace the header social menu.
+* **Added** - New logo field in Header > Mobile Menu to display a different logo in responsive. You can also choose the media query where you want to display the logo
+* **Added** - New fields in WooCommerce > Advanced Styling to control the background, color, border color, border width and border radius of the Add to Cart button of the shop page and for the Typography in Typography > WooCommerce Product Add To Cart.
+* **Added** - WooCommerce Sensei support.
+* **Added** - Two new options to allow you to add a custom with and height for the blog entries images.
+* **Added** - New select fields to allow you to choose your heading tag your the page title, blog entries title and single post title.
+* **Added** - New field to choose the title and breadcrumb position if you use the Background Image style for the page header.
+* **Added** - Overlay color field in Header > Header Media, now you can add an overlay color when you add a media in the header.
+* **Tweak** - IMPORTANT, big improvement on the Center header style, if you use this header style, read this article: http://docs.oceanwp.org/article/467-improvement-on-the-center-header-style
+* **Tweak** - The lightbox scripts and style are now in seperate files to easily disable them if you can't use the Scripts & Styles panel.
+* **Tweak** - CSS improvement for the WooCommerce cart page in responsive.
+* **Tweak** - Search Source field moved to General Options > General Settings.
+* **Tweak** - Better approach for the retina logo.
+* **Tweak** - Better approach to call the custom hamburgers button, now just the selected style is called.
+* **Updated** - Infinite Scroll script.
+* **Fixed** - Issue with the CSS file for the custom parts of the theme created via Elementor (custom header, custom footer, etc ...).
+* **Fixed** - Issue with the lightbox images when you disable a script or style in Theme Panel > Scripts & Styles.
+* **Fixed** - Issue with the search mobile if you select a search post type.
+* **Fixed** - Disaable link on Sidebar mobile menu style.
+* **Fixed** - Z-index issue with Divi builder.
+* **Fixed** - Bug with overlay in Chrome.
+* **Deleted** - All Deprecated fields.
+
 ### *2017.09.18* - 1.3.9
 * **Fixed** - Undefined $content variable error in the top bar content.
 

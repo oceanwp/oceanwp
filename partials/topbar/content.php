@@ -5,8 +5,6 @@
  * @package OceanWP WordPress theme
  */
 
-namespace Elementor;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -47,14 +45,14 @@ if ( ! empty( $template )
 
                <?php
                // If Elementor
-                if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+                if ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) {
 
-                    echo Plugin::instance()->frontend->get_builder_content_for_display( $template );
+                    OceanWP_Elementor::get_topbar_content();
 
                 }
 
                 // If Beaver Builder
-                else if ( class_exists( 'FLBuilder' ) && ! empty( $template ) ) {
+                else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $template ) ) {
 
                     echo do_shortcode( '[fl_builder_insert_layout id="' . $template . '"]' );
 

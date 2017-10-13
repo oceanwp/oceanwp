@@ -10,6 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } ?>
 
+<?php do_action( 'ocean_before_blog_entry_content' ); ?>
+
 <div class="blog-entry-summary clr"<?php oceanwp_schema_markup( 'entry_content' ); ?>>
 
     <?php
@@ -31,3 +33,5 @@ if ( ! defined( 'ABSPATH' ) ) {
     endif; ?>
 
 </div><!-- .blog-entry-summary -->
+
+<?php do_action( 'ocean_after_blog_entry_content' ); ?>

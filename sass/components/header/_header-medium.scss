@@ -11,17 +11,10 @@
 	}
 
 	.top-header-inner {
-		display: -webkit-box;
-	    display: -moz-box;
-	    display: -ms-flexbox;
-	    display: -webkit-flex;
-	    display: flex;
-	    -webkit-flex-direction: row;
-	    flex-direction: row;
-	    -webkit-align-items: center;
-	    align-items: center;
-	    -webkit-justify-content: center;
-	    justify-content: center;
+		@include display();
+		@include flex-direction( row );
+		@include align-items( center );
+		@include justify-content( center );
 		width: 100%;
 		margin: 0;
 	}
@@ -123,7 +116,7 @@
 		}
 	}
 
-	#oceanwp-social-menu {
+	.oceanwp-social-menu {
 		float: none;
 		display: block;
 		right: auto !important;
@@ -196,7 +189,7 @@
 	.top-header-wrap {
 		padding: 20px 0;
 
-		#oceanwp-social-menu .social-menu-inner {
+		.oceanwp-social-menu .social-menu-inner {
 		    height: auto;
 		}
 	}
@@ -237,4 +230,76 @@
 		letter-spacing: 1px;
 		text-transform: uppercase;
 	}
+}
+
+#site-header.medium-header.is-transparent {
+	.top-header-wrap,
+	#site-navigation-wrap,
+	#oceanwp-mobile-menu-icon {
+	 	background-color: transparent;
+	 	@include transition( all .3s );
+	}
+}
+
+/*------------------------------------*
+	All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+			
+	/* Hide social and search form in sidr for the medium header style */
+	.medium-header-style {
+		.sidr-class-social-menu-inner,
+		.sidr-class-mobile-searchform {
+			display: none;
+		}
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	#site-header.medium-header {
+		.top-header-inner {
+			display: block;
+		}
+
+		.top-col:not(.logo-col) {
+			display: none;
+		}
+
+		.top-col.logo-col {
+			display: inline-block;
+			text-align: center;
+		}
+	}
+
+	/* Show social and search form in sidr for the medium header style */
+	.medium-header-style {
+		.sidr-class-social-menu-inner,
+		.sidr-class-mobile-searchform {
+			display: block;
+		}
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	/* medium header style */
+	#site-header.medium-header {
+		.header-top-wrap {
+			padding: 20px 0;
+		}
+
+		#oceanwp-mobile-menu-icon a {
+			line-height: 40px;
+		}
+	}
+
 }

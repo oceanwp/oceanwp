@@ -10,6 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } ?>
 
+<?php do_action( 'ocean_before_single_post_content' ); ?>
+
 <div class="entry-content clr"<?php oceanwp_schema_markup( 'entry_content' ); ?>>
 	<?php the_content();
 
@@ -20,3 +22,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 		'link_after'  => '</span>',
 	) ); ?>
 </div><!-- .entry -->
+
+<?php do_action( 'ocean_after_single_post_content' ); ?>

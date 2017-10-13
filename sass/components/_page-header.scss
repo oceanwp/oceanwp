@@ -97,13 +97,8 @@ body.breadcrumbs-position-default .page-header-title {
  * Page Header Background Image
  */
 .background-image-page-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
+  @include display();
+  @include align-items( center );
   width: 100%;
   background-color: #000;
   height: 400px;
@@ -202,13 +197,23 @@ body.breadcrumbs-position-default .page-header-title {
   max-width: 100%;
 }
 
+.oceanwp-breadcrumb .site-breadcrumbs {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  max-width: 100%;
+  margin-top: 0;
+}
+
 /**
  * Breadcrumbs Hide
  */
 .background-image-page-header .site-breadcrumbs {
   display: block;
   position: inherit;
-  margin: 20px auto 0 auto;
+  max-width: 100%;
+  margin-top: 20px;
   top: auto;
   right: auto;
   color: #fff;
@@ -222,4 +227,71 @@ body.breadcrumbs-position-default .page-header-title {
       color: #ddd;
     }
   }
+}
+
+/*------------------------------------*
+  All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+      
+  /* page title */
+  body.has-breadcrumbs .page-header-title {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+}
+
+/*------------------------------------*
+  Tablet Portrait
+*------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  
+  /* page header */
+  .site-breadcrumbs {
+    position: inherit;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin-top: 0;
+  }
+  
+}
+
+/*------------------------------------*
+  Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+  /* page header */
+  .page-header-with-background .page-header-title {
+    font-size: 36px;
+  }
+
+  .centered-page-header .page-header-title,
+  .centered-minimal-page-header .page-header-title,
+  .page-header.background-image-page-header .page-header-title {
+    font-size: 24px;
+  }
+
+  .centered-page-header .page-subheading,
+  .centered-minimal-page-header .page-header-subheading,
+  .page-header.background-image-page-header .page-subheading {
+    font-size: 14px;
+  }
+
+  .background-image-page-header {
+      height: auto !important;
+  }
+  
+  /* breadcrumbs */
+  body.has-breadcrumbs .page-header-title {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .site-breadcrumbs {
+    display: none;
+  }
+  
 }

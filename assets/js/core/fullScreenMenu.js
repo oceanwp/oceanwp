@@ -59,8 +59,7 @@ function oceanwpFullScreenMenu() {
 		} );
 
 		// Logic for open sub menus
-        $j( '#full-screen-menu #site-navigation ul > li.dropdown > a' ).on( 'tap click', function( e ) {
-            e.preventDefault();
+        $j( '#full-screen-menu #site-navigation ul > li.dropdown > a' ).on( 'tap click', function() {
 
             if ( $j( this ).closest( 'li.dropdown' ).find( '> ul.sub-menu' ).is( ':visible' ) ) {
                 $j( this ).closest( 'li.dropdown' ).removeClass( 'open-sub' );
@@ -71,6 +70,7 @@ function oceanwpFullScreenMenu() {
             }
 
             return false;
+
         } );
 
         // Close menu if anchor link

@@ -8,7 +8,10 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-} ?>
+}
+
+// Post type
+$post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
 
 <div id="mobile-menu-search" class="clr">
 	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="mobile-searchform">
@@ -16,5 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<button type="submit" class="searchform-submit">
 			<span class="icon icon-magnifier"></span>
 		</button>
+		<?php if ( 'any' != $post_type ) { ?>
+			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
+		<?php } ?>
 	</form>
 </div><!-- .mobile-menu-search -->

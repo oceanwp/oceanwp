@@ -40,6 +40,18 @@ if ( $menu = oceanwp_header_custom_menu() ) {
 	$menu_args['menu']  = $menu;
 }
 
+// Left menu for the Center header style
+$left_menu = get_theme_mod( 'ocean_center_header_left_menu' );
+$left_menu = '0' != $left_menu ? $left_menu : '';
+$left_menu = apply_filters( 'ocean_center_header_left_menu', $left_menu );
+
+// Menu arguments
+$left_menu_args = array(
+	'menu' 			 => $left_menu,
+	'container'      => false,
+	'fallback_cb'    => false,
+);
+
 // Top bar menu Location
 $top_menu_location = 'topbar_menu';
 
@@ -59,6 +71,14 @@ $top_menu_args = array(
 		if ( has_nav_menu( 'mobile_menu' ) ) {
 			get_template_part( 'partials/mobile/mobile-nav' );
 		} else {
+
+			// If has center header style and left menu
+			if ( 'center' == oceanwp_header_style()
+				&& $left_menu ) {
+				wp_nav_menu( $left_menu_args );
+			}
+
+			// Navigation
 			wp_nav_menu( $menu_args );
 
 			// If has top bar menu

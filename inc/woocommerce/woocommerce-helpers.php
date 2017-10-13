@@ -57,11 +57,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		}
 
 		// Cart Icon
-		if ( 'center' == oceanwp_header_style() ) {
-			$cart_icon = esc_html__( 'Cart', 'oceanwp' );
-		} else {
-			$cart_icon = '<i class="'. esc_attr( $icon ) .'"></i>';
-		}
+		$cart_icon = '<i class="'. esc_attr( $icon ) .'"></i>';
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
 		ob_start(); ?>

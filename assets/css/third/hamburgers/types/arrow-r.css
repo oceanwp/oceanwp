@@ -1,0 +1,10 @@
+/*
+ * Arrow Right
+ */
+.hamburger--arrow-r.is-active .hamburger-inner::before {
+  transform: translate3d(4px, 2px, 0) rotate(45deg) scale(0.7, 1);
+}
+
+.hamburger--arrow-r.is-active .hamburger-inner::after {
+  transform: translate3d(4px, -2px, 0) rotate(-45deg) scale(0.7, 1);
+}

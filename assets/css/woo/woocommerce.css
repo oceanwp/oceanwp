@@ -3,6 +3,22 @@
  * Purpose   : WooCommerce Tweaks
  * Author    : Nick
  */
+.woocommerce .added_to_cart.disabled,
+.woocommerce .added_to_cart:disabled,
+.woocommerce .button.disabled,
+.woocommerce .button:disabled,
+.woocommerce button.disabled,
+.woocommerce button:disabled,
+.woocommerce input[type=button].disabled,
+.woocommerce input[type=button]:disabled,
+.woocommerce input[type=reset].disabled,
+.woocommerce input[type=reset]:disabled,
+.woocommerce input[type=submit].disabled,
+.woocommerce input[type=submit]:disabled {
+  opacity: .5 !important;
+  cursor: not-allowed;
+}
+
 .woocommerce button.button {
   padding: 12px 20px;
 }
@@ -2468,14 +2484,13 @@
 .woocommerce-message {
   display: inline-block;
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   color: #777;
   border: 1px solid #ddd;
   margin: 0 0 30px;
   padding: 10px 15px;
   text-align: left;
-  text-transform: uppercase;
 }
 
 .woocommerce-message a {
@@ -3207,7 +3222,6 @@ ul.order_details li strong {
 
 .product-quantity {
   font-weight: normal;
-  color: #bcbcbc;
 }
 
 .woocommerce-MyAccount-content h2 {
@@ -3709,7 +3723,7 @@ Woo Cart
   margin: 0;
 }
 
-.boxed-main-layout #current-shop-items-dropdown {
+.boxed-layout #current-shop-items-dropdown {
   right: 30px;
 }
 
@@ -3768,11 +3782,14 @@ Woo Quantity Buttons
   zoom: 1;
 }
 
-.quantity .qty {
+.quantity .qty,
+.quantity .minus,
+.quantity .plus {
   display: block;
   float: left;
   width: 36px;
   min-height: 36px;
+  background-color: transparent !important;
   border: 1px solid #e4e4e4;
   margin: 0;
   padding: 0;
@@ -3780,35 +3797,24 @@ Woo Quantity Buttons
   vertical-align: middle;
   font-size: 12px;
   color: #777;
-  cursor: pointer;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
 }
 
-.quantity .qty-changer {
-  float: left;
-  margin-left: 6px;
+.quantity .minus,
+.quantity .plus {
+  font-size: 13px;
+  line-height: 34px;
 }
 
-.quantity .qty-changer a {
-  display: block;
-  width: 16px;
-  height: 16px;
-  font-size: 8px;
-  line-height: 14px;
-  border: 1px solid #e1e1e1;
-  color: #ccc;
-  text-align: center;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
+.quantity .minus {
+  border-right-width: 0;
 }
 
-.quantity .qty-changer a.plus {
-  margin-bottom: 4px;
-}
-
-.quantity .qty-changer a:hover {
-  border-color: #e1e1e1;
+.quantity .plus {
+  border-left-width: 0;
 }
 
 .quantity input::-webkit-outer-spin-button {
@@ -3975,11 +3981,47 @@ Woo Responsive
   .woocommerce-cart table.cart td.actions .coupon .input-text {
     max-width: 150px;
   }
-  .shop_table .product-thumbnail {
-    display: none !important;
+  .woocommerce-message:before {
+    display: none;
   }
-  .shop_table th.product-price {
-    display: none !important;
+  .woocommerce table.shop_table thead {
+    display: none;
+  }
+  .woocommerce table.shop_table tbody th {
+    display: none;
+  }
+  .woocommerce table.shop_table tr td {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    clear: both;
+  }
+  .woocommerce table.shop_table tr td:before {
+    content: attr(data-title) ": ";
+    font-weight: 600;
+    float: left;
+  }
+  .woocommerce table.shop_table tr td.product-remove:before, .woocommerce table.shop_table tr td.product-thumbnail:before {
+    display: none;
+  }
+  .woocommerce table.shop_table tr td.product-thumbnail {
+    text-align: center;
+  }
+  .woocommerce table.shop_table tr td.product-quantity .quantity {
+    float: right;
+  }
+  .woocommerce table.shop_table tr td.actions:before, .woocommerce table.shop_table tr td.download-actions:before {
+    display: none;
+  }
+  .woocommerce table.shop_table tr td.download-actions .button {
+    display: block;
+    text-align: center;
+  }
+  .woocommerce table.shop_table.my_account_orders .order-actions {
+    text-align: right;
+  }
+  .woocommerce table.shop_table.my_account_orders .order-actions:before {
+    display: none;
   }
 }
 
@@ -4000,6 +4042,16 @@ Woo Responsive
     float: none;
     width: 100%;
     text-align: center;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .woocommerce-cart table.cart td.actions .coupon .input-text {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 10px;
+  }
+  .woocommerce-cart table.cart td.actions .coupon input {
+    width: 100%;
   }
   .woocommerce-cart table.cart td.actions input[name='update_cart'] {
     display: inline-block;

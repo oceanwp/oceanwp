@@ -24,6 +24,8 @@ if ( 'quote' == get_post_format() ) {
 	return;
 } ?>
 
+<?php do_action( 'ocean_before_single_post_meta' ); ?>
+
 <ul class="meta clr">
 
 	<?php
@@ -49,3 +51,5 @@ if ( 'quote' == get_post_format() ) {
 	<?php } ?>
 	
 </ul>
+
+<?php do_action( 'ocean_after_single_post_meta' ); ?>

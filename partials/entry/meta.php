@@ -20,6 +20,8 @@ if ( empty( $sections ) ) {
 
 if ( 'post' == get_post_type() ) { ?>
 
+	<?php do_action( 'ocean_before_blog_entry_meta' ); ?>
+
 	<ul class="meta clr">
 
 		<?php
@@ -45,5 +47,7 @@ if ( 'post' == get_post_type() ) { ?>
 		<?php } ?>
 		
 	</ul>
+
+	<?php do_action( 'ocean_after_blog_entry_meta' ); ?>
 	
 <?php } ?>

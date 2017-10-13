@@ -5,8 +5,6 @@
  * @package OceanWP WordPress theme
  */
 
-namespace Elementor;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -32,16 +30,10 @@ if ( 'one' == $topbar_style ) {
 }
 
 // Get ID
-$get_id = get_theme_mod( 'ocean_top_bar_social_alt' );
-
-// Get the template
-$template = get_theme_mod( 'ocean_top_bar_social_alt_template' );
-if ( ! empty( $template ) ) {
-    $get_id = $template;
-}
+$get_id = get_theme_mod( 'ocean_top_bar_social_alt_template' );
 
 // Check if page is Elementor page
-$elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
+$elementor = get_post_meta( $get_id, '_elementor_edit_mode', true );
 
 // Get content
 $get_content = oceanwp_top_bar_social_alt_content();
@@ -52,14 +44,14 @@ if ( $get_id ) : ?>
 	<div id="top-bar-social-alt" class="clr <?php echo esc_attr( $classes ); ?>">
 		<?php
 	    // If Elementor
-	    if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+	    if ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) {
 
-	        echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
+	        OceanWP_Elementor::get_topbar_social_alt_content();
 
 	    }
 
 	    // If Beaver Builder
-	    else if ( class_exists( 'FLBuilder' ) && ! empty( $get_id ) ) {
+	    else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 
 	        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 

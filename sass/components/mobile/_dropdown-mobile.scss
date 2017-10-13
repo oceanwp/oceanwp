@@ -44,7 +44,6 @@
                     @include transition( all 0.3s ease );
 
                     &:before {
-                        font-family: 'FontAwesome';
                         content: '+';
                         font-size: 20px;
                         position: absolute;
@@ -79,14 +78,14 @@
         }
     }
 
-    #oceanwp-social-menu {
+    .oceanwp-social-menu {
         display: block !important;
         float: none;
         width: 100%;
         right: auto !important;
         left: auto !important;
-        padding: 0 30px !important;
-        margin: 0 !important;
+        padding: 0 40px !important;
+        margin: 10px 0 !important;
 
         .social-menu-inner {
             height: auto;

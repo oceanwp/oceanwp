@@ -4,14 +4,32 @@
 	background-color: $color-1;
     border-bottom: 1px solid $color-9;
     z-index: 5;
+
+    &.is-transparent {
+    	position: absolute;
+		top: 0;
+		background-color: transparent;
+		height: auto;
+		z-index: 9999;
+    }
+}
+
+#transparent-header-wrap {
+	position: relative;
+}
+
+.has-transparent-header {
+	.oceanwp-sticky-header-holder {
+		height: auto !important;
+	}
+
+	.is-sticky #site-header {
+		background-color: $color-1;
+	}
 }
 
 .no-header-border #site-header {
     border-bottom: none;
-}
-
-.is-sticky #site-header.transparent-header {
-	background-color: $color-1;
 }
 
 #site-header-inner {
@@ -23,10 +41,6 @@
 	float: left;
 	height: 100%;
     display: table;
-
-    &.has-transparent-logo .transparent-logo-link {
-		display: none;
-	}
 }
 
 #site-logo #site-logo-inner {
@@ -52,6 +66,31 @@
 #site-logo a.site-logo-text {
     font-size: 24px;
 	margin: 0;
+}
+
+/* Responsive logo */
+#site-logo.has-responsive-logo .responsive-logo-link {
+	display: none;
+}
+
+/**
+ * Header media
+ */
+#site-header.has-header-media {
+	> *:not(.overlay-header-media) {
+	    z-index: 2;
+	}
+
+	.overlay-header-media {
+		display: block;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    height: 100%;
+	    width: 100%;
+	    background-color: rgba(0, 0, 0, 0.3);
+	    z-index: 1;
+    }
 }
 
 /**
@@ -101,4 +140,28 @@
 
 .has-header-video #site-header-inner {
 	z-index: 10;
+}
+
+/*------------------------------------*
+	All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+		
+	.has-left-menu #site-logo {
+		padding: 0 !important;
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	/* logo */
+	#site-logo {
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+	}
+	
 }

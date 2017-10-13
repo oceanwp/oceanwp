@@ -1,7 +1,3 @@
-#transparent-header-wrap {
-	position: relative;
-}
-
 #site-header.transparent-header {
 	position: absolute;
 	top: 0;
@@ -28,9 +24,4 @@
 	.transparent-logo-link {
 		display: none;
 	}
-}
-
-body.has-transparent-header .oceanwp-sticky-header-holder {
-	height: auto !important;
-	background: none !important;
 }

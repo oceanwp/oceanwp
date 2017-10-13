@@ -16,8 +16,10 @@ module.exports = function ( grunt ) {
 		uglify: {
 			dev: {
 				files: {
-					'assets/js/dynamic/html5.min.js'								: 'assets/js/dynamic/html5.js',
-					'assets/js/dynamic/woo/woo-scripts.min.js'						: [ 'assets/js/dynamic/woo/devs/**/*.js' ],
+					'assets/js/third/html5.min.js'									: 'assets/js/third/html5.js',
+					'assets/js/third/chocolat.min.js'								: 'assets/js/third/chocolat.js',
+					'assets/js/third/lightbox.min.js'								: 'assets/js/third/lightbox.js',
+					'assets/js/third/woo/woo-scripts.min.js'						: [ 'assets/js/third/woo/devs/**/*.js' ],
 
 					'inc/customizer/assets/js/customize-preview.min.js'				: 'inc/customizer/assets/js/customize-preview.js',
 					'inc/customizer/assets/js/typography-customize-preview.min.js'	: 'inc/customizer/assets/js/typography-customize-preview.js',
@@ -54,6 +56,9 @@ module.exports = function ( grunt ) {
 			},
 			prod: {
 				files: {
+					'assets/css/third/hamburgers/hamburgers.min.css'				: 'assets/css/third/hamburgers/hamburgers.css',
+					'assets/css/third/chocolat.min.css'								: 'assets/css/third/chocolat.css',
+					'assets/css/third/sensei.min.css'								: 'assets/css/third/sensei.css',
 					'assets/css/woo/woo-star-font.min.css'							: 'assets/css/woo/woo-star-font.css',
 					'assets/css/editor-style.min.css'								: 'assets/css/editor-style.css',
 

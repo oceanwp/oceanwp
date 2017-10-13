@@ -6,14 +6,8 @@
     border-bottom: 1px solid $border-color;
 
     .search-entry-inner {
-    	display: -webkit-box;
-	    display: -webkit-flex;
-	    display: -ms-flexbox;
-	    display: flex;
-	    -webkit-box-align: center;
-	    -webkit-align-items: center;
-	    -ms-flex-align: center;
-	    align-items: center;
+    	@include display();
+        @include align-items( center );
     }
 
     .thumbnail {
@@ -49,4 +43,15 @@
     ul {
     	list-style: none;
     }
+}
+
+/*------------------------------------*
+    Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+    .search-results article .thumbnail {
+        display: none;
+    }
+
 }

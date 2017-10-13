@@ -95,9 +95,9 @@ Superfish, Copyright (c) 2013 Joel Birch
 License: MIT/GPL
 Source: https://github.com/joeldbirch/superfish
 
-Infinite Scroll, Copyright 2011/12 Paul Irish & Luke Shumard
-License: MIT
-Source: https://github.com/paulirish/infinite-scroll
+Infinite Scroll, Copyright 2017 Metafizzy
+License: GPLv3
+Source: https://github.com/metafizzy/infinite-scroll
 
 normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
 License: MIT

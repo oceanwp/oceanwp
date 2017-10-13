@@ -29,6 +29,10 @@ $args = array(
 );
 
 // Args
-$args = apply_filters( 'ocean_single_post_next_prev_args', $args );
+$args = apply_filters( 'ocean_single_post_next_prev_args', $args ); ?>
 
-the_post_navigation( $args ); ?>
+<?php do_action( 'ocean_before_single_post_next_prev' ); ?>
+
+<?php the_post_navigation( $args ); ?>
+
+<?php do_action( 'ocean_after_single_post_next_prev' ); ?>

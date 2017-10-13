@@ -48,7 +48,7 @@ function oceanwpMobileMenu( event ) {
 
 					// Define toggle vars
 					if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
-						var $toggleParentLi = $j( this ).parent( 'li' );
+						var $toggleParentLi   = $j( this ).parent( 'li' );
 					} else {
 						var $toggleParentLink = $j( this ).parent( 'a' ),
 							$toggleParentLi   = $toggleParentLink.parent( 'li' );
@@ -124,6 +124,11 @@ function oceanwpMobileMenu( event ) {
 		$j( 'a.sidr-class-menu-link[href*="#"]:not([href="#"])' ).on( 'click', function() {
 			$j.sidr( 'close', 'sidr' );
 			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
+		} );
+
+		// If disable link
+		$j( 'li.sidr-class-nav-no-click > a.sidr-class-menu-link' ).on( 'click', function() {
+			return false;
 		} );
 
 	}

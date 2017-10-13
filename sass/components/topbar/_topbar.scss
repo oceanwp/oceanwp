@@ -26,3 +26,62 @@
 	float: none;
 	text-align: center;
 }
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	#top-bar {
+		padding: 20px 0;
+
+		> div:nth-child(2) {
+			padding-top: 20px;
+		}
+	}
+
+	#top-bar-content, #top-bar-social-alt {
+		float: none;
+		text-align: center;
+	}
+
+	#top-bar-social {
+		text-align: center;
+
+		&.top-bar-left,
+		&.top-bar-right {
+			position: inherit;
+			left: auto;
+			right: auto;
+			float: none;
+			height: auto;
+			line-height: 1.5em;
+			margin-top: 0;
+		}
+	}
+
+	.top-bar-right {
+		float: none;
+		text-align: center;
+	}
+
+	#top-bar-social li,
+	#top-bar #top-bar-nav > li {
+		float: none;
+		display: inline-block;
+	}
+
+	#top-bar-nav {
+		float: none;
+		text-align: center;
+	}
+
+	#top-bar #lang_sel {
+		text-align: left;
+	}
+
+	body.rtl #top-bar #lang_sel {
+		text-align: right;
+	}
+	
+}

@@ -50,7 +50,7 @@
 	    text-transform: uppercase;
 	}
 
-	#oceanwp-social-menu,
+	.oceanwp-social-menu,
 	#search-toggle {
 		float: none;
 	    display: table-cell;
@@ -58,12 +58,12 @@
 		height: 40px;
 	}
 
-	#oceanwp-social-menu .social-menu-inner {
+	.oceanwp-social-menu .social-menu-inner {
 		display: block;
     	height: auto;
 	}
 
-	#oceanwp-social-menu {
+	.oceanwp-social-menu {
 		right: 0;
 	    padding: 0 10px;
 
@@ -158,4 +158,78 @@
 		letter-spacing: 2px;
 		text-transform: uppercase;
 	}
+}
+
+/*------------------------------------*
+	All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+			
+	/* Hide social and search form in sidr for the top menu header style */
+	.top-header-style {
+		.sidr-class-social-menu-inner,
+		.sidr-class-mobile-searchform {
+			display: none;
+		}
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	/* Hide social and search in menu and show them in sidr for the top menu header style */
+	#site-header.top-header {
+		.right {
+			display: none;
+		}
+
+		&.header-replace {
+			.left.hide,
+			.right.hide {
+				visibility: visible;
+				@include opacity( 1 );
+			}
+		}
+
+		.header-top {
+			.left,
+			.right {
+				float: none !important;
+				text-align: center;
+			}
+		}
+
+		#oceanwp-mobile-menu-icon {
+			float: none;
+			left: auto !important;
+			right: auto !important;
+
+			a {
+				float: none;
+			}
+		}
+
+		.header-top .right .inner {
+			display: block;
+			padding-bottom: 10px;
+		}
+
+		.oceanwp-social-menu,
+		#search-toggle {
+			float: none;
+			display: inline-block;
+			height: auto;
+		}
+	}
+	
+	.top-header-style {
+		.sidr-class-social-menu-inner,
+		.sidr-class-mobile-searchform {
+			display: block;
+		}
+	}
+
 }

@@ -12,7 +12,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( 'fullscreen' != oceanwp_mobile_menu_style() ) {
 	return;
-} ?>
+}
+
+// Post type
+$post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
 
 <div id="mobile-search" class="clr">
 	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform">
@@ -25,5 +28,8 @@ if ( 'fullscreen' != oceanwp_mobile_menu_style() ) {
 			<label><?php esc_html_e( 'Type your search', 'oceanwp' ); ?><span><i></i><i></i><i></i></span></label>
 		<?php
 		} ?>
+		<?php if ( 'any' != $post_type ) { ?>
+			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
+		<?php } ?>
 	</form>
 </div>

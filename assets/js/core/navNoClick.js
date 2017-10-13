@@ -12,7 +12,7 @@ NAV NO CLICK
 function oceanwpNavNoClick() {
 	"use strict"
 
-	$j( 'li.nav-no-click > a, li.sidr-class-nav-no-click > a' ).on( 'click', function() {
+	$j( 'li.nav-no-click > a' ).on( 'click', function() {
 		return false;
 	} );
 

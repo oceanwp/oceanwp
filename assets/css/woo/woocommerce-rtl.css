@@ -22,8 +22,10 @@
 /* Quantity */
 .quantity,
 .quantity .qty,
-.quantity .qty-changer { float: right; }
-.quantity .qty-changer { margin-right: 6px; margin-left: 0; }
+.quantity .minus,
+.quantity .plus { float: right; }
+.quantity .minus { border-left-width: 0; border-right-width: 1px; }
+.quantity .plus { border-right-width: 0; border-left-width: 1px; }
 
 /* Button loading*/
 .woocommerce #respond input#submit.loading,
@@ -195,7 +197,7 @@ p.stars span a:after { right: 0; left: auto; }
 
 /* Header shop widget dropdown */
 #current-shop-items-dropdown { left: 0; right: auto; text-align: right; }
-.boxed-main-layout #current-shop-items-dropdown { left: 30px; right: auto; }
+.boxed-layout #current-shop-items-dropdown { left: 30px; right: auto; }
 
 /*--------------------------------------------------------------
 All Devices Under 992px
@@ -218,6 +220,12 @@ Phone Portrait & Landscape
 
 	/* account page */
 	.woocommerce #customer_login .form-row label[for="rememberme"] { margin: 0 4px 0 0; }
+
+	/* table cart page */
+	.woocommerce table.shop_table tr td { text-align: left; }
+	.woocommerce table.shop_table tr td:before { float: right; }
+	.woocommerce table.shop_table tr td.product-quantity .quantity { float: left; }
+	.woocommerce table.shop_table.my_account_orders .order-actions { text-align: left; }
 
     /* cart collaterals */
     .woocommerce-cart .cart-collaterals .cart_totals table td { text-align: left; }

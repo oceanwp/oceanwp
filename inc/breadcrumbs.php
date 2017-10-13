@@ -167,7 +167,7 @@ class OceanWP_Breadcrumb_Trail {
 	 * @access public
 	 * @return string
 	 */
-	public function trail() {
+	public function get_trail() {
 
 		// Set up variables that we'll need.
 		$breadcrumb    = '';
@@ -238,10 +238,19 @@ class OceanWP_Breadcrumb_Trail {
 		// Allow developers to filter the breadcrumb trail HTML.
 		$breadcrumb = apply_filters( 'breadcrumb_trail', $breadcrumb, $this->args );
 
-		if ( false === $this->args['echo'] )
-			return $breadcrumb;
+		return $breadcrumb;
+	}
 
-		echo $breadcrumb;
+	/**
+	 * Echo the breadcrumb trail.
+	 *
+	 * @since  0.6.0
+	 * @access public
+	 * @return string
+	 */
+	public function trail() {
+
+		echo $this->get_trail();
 	}
 
 	/* ====== Protected Methods ====== */

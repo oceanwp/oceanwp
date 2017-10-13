@@ -1,4 +1,4 @@
-#sidebar {
+.widget-area {
 	font-size: 13px;
 }
 
@@ -44,4 +44,15 @@
 	&:first-child {
 		border-top: 1px solid $color-7;
 	}
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	#main .widget_nav_menu li a:before {
+		display: none;
+	}
+	
 }

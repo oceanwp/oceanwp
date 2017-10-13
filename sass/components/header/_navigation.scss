@@ -156,6 +156,7 @@
 
 .dropdown-menu {
 	.sub-menu {
+		display: none;
 		position: absolute;
 		top: 100%;
 		left: 0;
@@ -316,5 +317,49 @@
 
 	.hidden {
 		display: none !important;
+	}
+}
+
+/*------------------------------------*
+	Mobile Menu
+*------------------------------------*/
+#oceanwp-mobile-menu-icon {
+	display: none;
+	float: right;
+	position: relative;
+
+	a {
+		font-size: 13px;
+		line-height: 74px;
+		color: #555;
+		padding-left: 15px;
+		letter-spacing: 0.6px;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:hover {
+			color: #13aff0;
+		}
+
+		&.mobile-menu {
+			i {
+				padding-right: 6px;
+			}
+			
+			.hamburger {
+				padding-right: 4px;
+			}
+
+			.oceanwp-close-text,
+			&.opened .oceanwp-text {
+				display: none;
+			}
+
+			&.opened .oceanwp-close-text {
+				display: inline-block;
+			}
+		}
 	}
 }

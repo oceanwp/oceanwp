@@ -3,7 +3,7 @@ var $j 		= jQuery.noConflict(),
 
 $window.on( 'load', function() {
 	"use strict";
-	if ( $j.fn.infinitescroll !== undefined && $j( 'div.infinite-scroll-nav' ).length ) {
+	if ( $j.fn.infiniteScroll !== undefined && $j( 'div.infinite-scroll-nav' ).length ) {
 		// Infinite scroll
 		oceanwpInfiniteScrollInit();
 	}
@@ -16,48 +16,41 @@ function oceanwpInfiniteScrollInit() {
 	"use strict"
 
 	// Get infinite scroll container
-	var $container = $j( '#blog-entries' );
+	var $container = $j( '.infinite-scroll-wrap' );
 
 	// Start infinite sccroll
-	$container.infinitescroll( {
-		loading : {
-			msg         : null,
-			finishedMsg : null,
-			msgText     : '<div class="infinite-scroll-loader"></div>',
-		},
-		navSelector  : 'div.infinite-scroll-nav',
-		nextSelector : 'div.infinite-scroll-nav div.older-posts a',
-		itemSelector : '.blog-entry',
-	},
+	$container.infiniteScroll( {
+		path 	: '.older-posts a',
+		append 	: '.item-entry',
+		status 	: '.scroller-status',
+		hideNav : '.infinite-scroll-nav',
+		history : false,
+	} );
 
-	// Callback function
-	function( newElements ) {
+	$container.on( 'load.infiniteScroll', function( event, response, path, items ) {
 
-		var $newElems = $j( newElements ).css( 'opacity', 0 );
+		var $items = $j( response ).find( '.item-entry' );
 
-		$newElems.imagesLoaded( function() {
+		$items.imagesLoaded( function() {
 
 			// Isotope
 			if ( $container.hasClass( 'blog-masonry-grid' ) ) {
-				$container.isotope( 'appended', $newElems );
-				$newElems.css( 'opacity', 0 );
+				$container.isotope( 'appended', $items );
+				$items.css( 'opacity', 0 );
 			}
 
 			// Animate new Items
-			$newElems.animate( {
+			$items.animate( {
 				opacity : 1
 			} );
 
-			// Add trigger
-			$container.trigger( 'oceanwpinfiniteScrollLoaded' );
-
 			// Re-run functions
 			if ( ! $j( 'body' ).hasClass( 'no-carousel' ) ) {
-				oceanwpInitCarousel( $newElems );
+				oceanwpInitCarousel( $items );
 			}
 
 			if ( ! $j( 'body' ).hasClass( 'no-lightbox' ) ) {
-				oceanwpInitLightbox( $newElems );
+				oceanwpInitLightbox( $items );
 			}
 
 			// Match heights

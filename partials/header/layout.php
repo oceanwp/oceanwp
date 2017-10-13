@@ -18,14 +18,15 @@ $header_height = get_theme_mod( 'ocean_header_height', '74' );
 
 if ( class_exists( 'Ocean_Sticky_Header' ) ) {
 
-	$sticky_style = get_theme_mod( 'osh_sticky_header_style', 'shrink' );
-
-	if ( 'shrink' == $sticky_style ) {
+	if ( 'shrink' == get_theme_mod( 'osh_sticky_header_style', 'shrink' ) ) {
 		$header_height = get_theme_mod( 'osh_shrink_header_height', '54' );
-	} else if ( 'fixed' == $sticky_style ) {
-		$header_height = get_theme_mod( 'osh_fixed_header_height', '54' );
 	}
 
+}
+
+// If vertical header style
+if ( 'vertical' == $header_style ) {
+	$header_height = 0;
 }
 
 // Add container class if the header is not full width
@@ -37,7 +38,10 @@ if ( true != get_theme_mod( 'ocean_header_full_width', false ) )  {
 do_action( 'ocean_before_header' );
 
 // If transparent header style
-if ( 'transparent' == $header_style ) { ?>
+if ( 'transparent' == $header_style
+	|| ( 'full_screen' == $header_style && true == get_theme_mod( 'ocean_full_screen_header_transparent', false ) )
+		|| ( 'center' == $header_style && true == get_theme_mod( 'ocean_center_header_transparent', false ) )
+		|| ( 'medium' == $header_style && true == get_theme_mod( 'ocean_medium_header_transparent', false ) ) ) { ?>
 	<div id="transparent-header-wrap" class="clr">
 <?php
 } ?>
@@ -63,9 +67,19 @@ if ( 'transparent' == $header_style ) { ?>
 		get_template_part( 'partials/header/style/full-screen-header' );
 	}
 
+	// If center header style
+	else if ( 'center' == $header_style ) {
+		get_template_part( 'partials/header/style/center-header' );
+	}
+
 	// If medium header style
 	else if ( 'medium' == $header_style ) {
 		get_template_part( 'partials/header/style/medium-header' );
+	}
+
+	// If vertical header style
+	else if ( 'vertical' == $header_style ) {
+		get_template_part( 'partials/header/style/vertical-header' );
 	}
 
 	// If custom header style
@@ -82,7 +96,9 @@ if ( 'transparent' == $header_style ) { ?>
 
 			<?php get_template_part( 'partials/header/logo' ); ?>
 
-			<?php if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
+			<?php
+			// Social
+			if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
 				get_template_part( 'partials/header/social' );
 			} ?>
 
@@ -99,11 +115,21 @@ if ( 'transparent' == $header_style ) { ?>
 	<?php
 	} ?>
 
+	<?php
+	// If header media
+	if ( has_header_image() ) { ?>
+		<div class="overlay-header-media"></div>
+	<?php
+	} ?>
+
 </header><!-- #site-header -->
 
 <?php
 // If transparent header style
-if ( 'transparent' == $header_style ) { ?>
+if ( 'transparent' == $header_style
+	|| ( 'full_screen' == $header_style && true == get_theme_mod( 'ocean_full_screen_header_transparent', false ) )
+		|| ( 'center' == $header_style && true == get_theme_mod( 'ocean_center_header_transparent', false ) )
+		|| ( 'medium' == $header_style && true == get_theme_mod( 'ocean_medium_header_transparent', false ) ) ) { ?>
 	</div>
 <?php
 }

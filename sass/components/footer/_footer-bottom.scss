@@ -71,3 +71,42 @@
 		}
 	}
 }
+
+/*------------------------------------*
+	All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+			
+	/* center footer bottom */
+	#footer-bottom {
+		#copyright,
+		#footer-bottom-menu {
+			float: none;
+			width: 100%;
+			padding-right: 0;
+			padding-left: 0;
+			text-align: center;
+		}
+
+		#footer-bottom-menu {
+			margin-bottom: 15px;
+
+			li {
+				float: none;
+				display: inline-block;
+			}
+		}
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	#footer-bottom #footer-bottom-menu li {
+		margin-bottom: 8px;
+	}
+
+}

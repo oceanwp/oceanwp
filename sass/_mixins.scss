@@ -5,6 +5,32 @@
     box-sizing: $args;
 }
 
+// Display Flex
+@mixin display() {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+// Flex Direction
+@mixin flex-direction( $args ) {
+    -webkit-flex-direction: $args;
+    flex-direction: $args;
+}
+
+// Align Items
+@mixin align-items( $args ) {
+    -webkit-align-items: $args;
+    align-items: $args;
+}
+
+// Justify Content
+@mixin justify-content( $args ) {
+    -webkit-justify-content: $args;
+    justify-content: $args;
+}
+
 // Animation
 @mixin animation( $args ) {
     -ms-animation: $args;

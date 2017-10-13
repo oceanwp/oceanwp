@@ -93,6 +93,10 @@ a.sidr-class-toggle-sidr-close {
     border-bottom: 1px solid rgba(0, 0, 0, 0.035);
   }
 
+  &.sidr-class-left-menu li:last-child {
+    border-bottom: none;
+  }
+
   > li:first-child {
     border-top: 1px solid rgba(0, 0, 0, 0.035);
   }

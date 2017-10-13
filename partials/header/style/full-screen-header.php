@@ -10,15 +10,20 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// Add container class if the header is not full width
-$class = '';
-if ( true != get_theme_mod( 'ocean_header_full_width', false ) )  {
-	$class = ' container';
-} ?>
+// Get classes
+$classes = array( 'clr' );
+
+// Add container class
+if ( true != get_theme_mod( 'ocean_header_full_width', false ) ) {
+    $classes[] = 'container';
+}
+
+// Turn classes into space seperated string
+$classes = implode( ' ', $classes ); ?>
 
 <?php do_action( 'ocean_before_header_inner' ); ?>
 
-<div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
+<div id="site-header-inner" class="<?php echo esc_attr( $classes ); ?>">
 
 	<?php get_template_part( 'partials/header/logo' ); ?>
 

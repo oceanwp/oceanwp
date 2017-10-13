@@ -255,12 +255,12 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_widgets_margin_bottom', array(
 				'transport' 			=> 'postMessage',
-				'default'           	=> '40',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_widgets_margin_bottom', array(
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_widgets_margin_bottom', array(
 				'label'	   				=> esc_html__( 'Margin Bottom (px)', 'oceanwp' ),
+				'type' 					=> 'number',
 				'section'  				=> $section,
 				'settings' 				=> 'ocean_widgets_margin_bottom',
 				'priority' 				=> 10,
@@ -344,7 +344,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			$mobile_widgets_right_padding 			= get_theme_mod( 'ocean_widgets_mobile_right_padding' );
 			$mobile_widgets_bottom_padding 			= get_theme_mod( 'ocean_widgets_mobile_bottom_padding' );
 			$mobile_widgets_left_padding 			= get_theme_mod( 'ocean_widgets_mobile_left_padding' );
-			$widgets_margin_bottom 					= get_theme_mod( 'ocean_widgets_margin_bottom', '40' );
+			$widgets_margin_bottom 					= get_theme_mod( 'ocean_widgets_margin_bottom' );
 			$widgets_titles_border_color 			= get_theme_mod( 'ocean_widgets_titles_border_color', '#13aff0' );
 			$widgets_titles_margin_bottom 			= get_theme_mod( 'ocean_widgets_titles_margin_bottom', '20' );
 
@@ -359,7 +359,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 
 			// Sidebar background
 			if ( ! empty( $sidebar_bg ) ) {
-				$css .= '#sidebar{background-color:'. $sidebar_bg .';}';
+				$css .= '.widget-area{background-color:'. $sidebar_bg .';}';
 			}
 
 			// Sidebar top padding
@@ -448,12 +448,12 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 
 			// Widgets background
 			if ( ! empty( $widgets_bg ) ) {
-				$css .= '#sidebar .sidebar-box{background-color:'. $widgets_bg .';}';
+				$css .= '.widget-area .sidebar-box{background-color:'. $widgets_bg .';}';
 			}
 
 			// Widgets padding
 			if ( ! empty( $widgets_padding ) ) {
-				$css .= '#sidebar .sidebar-box{padding:'. $widgets_padding .';}';
+				$css .= '.widget-area .sidebar-box{padding:'. $widgets_padding .';}';
 			}
 
 			// Widgets top padding
@@ -481,7 +481,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				|| ! empty( $widgets_right_padding ) && '0' != $widgets_right_padding
 				|| ! empty( $widgets_bottom_padding ) && '0' != $widgets_bottom_padding
 				|| ! empty( $widgets_left_padding ) && '0' != $widgets_left_padding ) {
-				$css .= '#sidebar .sidebar-box{'. $widgets_padding_css .'}';
+				$css .= '.widget-area .sidebar-box{'. $widgets_padding_css .'}';
 			}
 
 			// Tablet sidebar top padding
@@ -509,7 +509,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				|| ! empty( $tablet_widgets_right_padding )
 				|| ! empty( $tablet_widgets_bottom_padding )
 				|| ! empty( $tablet_widgets_left_padding ) ) {
-				$css .= '@media (max-width: 768px){#sidebar .sidebar-box{'. $tablet_widgets_padding_css .'}}';
+				$css .= '@media (max-width: 768px){.widget-area .sidebar-box{'. $tablet_widgets_padding_css .'}}';
 			}
 
 			// Mobile sidebar top padding
@@ -537,12 +537,12 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				|| ! empty( $mobile_widgets_right_padding )
 				|| ! empty( $mobile_widgets_bottom_padding )
 				|| ! empty( $mobile_widgets_left_padding ) ) {
-				$css .= '@media (max-width: 480px){#sidebar .sidebar-box{'. $mobile_widgets_padding_css .'}}';
+				$css .= '@media (max-width: 480px){.widget-area .sidebar-box{'. $mobile_widgets_padding_css .'}}';
 			}
 
 			// Widgets margin bottom
-			if ( ! empty( $widgets_margin_bottom ) && '40' != $widgets_margin_bottom ) {
-				$css .= '#sidebar .sidebar-box{margin-bottom:'. $widgets_margin_bottom .'px;}';
+			if ( ! empty( $widgets_margin_bottom ) ) {
+				$css .= '.widget-area .sidebar-box, .separate-layout .sidebar-box{margin-bottom:'. $widgets_margin_bottom .'px;}';
 			}
 
 			// Widgets titles border color

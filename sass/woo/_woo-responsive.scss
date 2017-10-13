@@ -174,14 +174,73 @@ Woo Responsive
 			max-width: 150px;
 		}
 	}
-	.shop_table {
-		.product-thumbnail {
-			display: none !important;
+	.woocommerce-message:before {
+		display: none;
+	}
+	.woocommerce table.shop_table {
+		thead {
+			display: none;
 		}
-		th.product-price {
-			display: none !important;
+
+		tbody {
+			th {
+				display: none;
+			}
+		}
+
+		tr {
+			td {
+				display: inline-block;
+				width: 100%;
+				text-align: right;
+				clear: both;
+
+				&:before {
+					content: attr(data-title) ': ';
+					font-weight: 600;
+					float: left;
+				}
+
+				&.product-remove:before,
+				&.product-thumbnail:before {
+					display: none;
+				}
+
+				&.product-thumbnail {
+					text-align: center;
+				}
+
+				&.product-quantity .quantity {
+					float: right;
+				}
+
+				&.actions,
+				&.download-actions {
+					&:before {
+						display: none;
+					}
+				}
+
+				&.download-actions {
+					.button {
+						display: block;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		&.my_account_orders {
+			.order-actions {
+				text-align: right;
+
+				&:before {
+					display: none;
+				}
+			}
 		}
 	}
+
 }
 @media only screen and(max-width: 480px) {
 	.woocommerce {
@@ -203,6 +262,18 @@ Woo Responsive
 			float: none;
 			width: 100%;
 			text-align: center;
+			padding-bottom: 1em;
+			border-bottom: 1px solid rgba(0,0,0,.05);
+
+			.input-text {
+				width: 100%;
+			    max-width: 100%;
+			    margin: 0 0 10px;
+			}
+
+			input {
+				width: 100%;
+			}
 		}
 		input[name='update_cart'] {
 			display: inline-block;

@@ -64,27 +64,7 @@ class OceanWP_Nav_Walker {
 	 * @param object $menu_item A single menu item.
 	 * @return object The menu item.
 	 */
-	public function add_custom_fields( $id, $item, $depth, $args ) {
-		// If Elementor is activated
-	    if ( class_exists( 'Elementor\Plugin' ) ) { ?>
-		    <p class="field-template description description-wide">
-				<label for="edit-menu-item-template-<?php echo esc_attr( $item->ID ); ?>">
-					<span style="color: red;"><?php esc_html_e( 'Elementor Template', 'oceanwp' ); ?></span>
-					<small style="display: block;"><?php esc_html_e( 'Deprecated, this field is no longer supported. Please use the Select A Template field below instead.', 'oceanwp' ); ?></small>
-					<select id="edit-menu-item-template-<?php echo esc_attr( $item->ID ); ?>" class="widefat code edit-menu-item-custom" name="menu-item-template[<?php echo esc_attr( $item->ID ); ?>]">
-						<option value="0"><?php esc_html_e( 'Select A Template', 'oceanwp' ); ?></option>
-						<?php $get_templates 	= get_posts( array( 'post_type' => 'elementor_library', 'numberposts' => -1, 'post_status' => 'publish' ) );
-					    if ( ! empty ( $get_templates ) ) {
-					    	foreach ( $get_templates as $template ) {
-								$templates[ $template->ID ] = $template->post_title; ?>
-								<option value="<?php echo esc_attr( $template->ID ); ?>" <?php selected( $item->template, $template->ID ); ?>><?php echo esc_html( $template->post_title ); ?>
-								</option>
-						    <?php }
-						} ?>
-					</select>
-				</label>
-			</p>
-		<?php } ?>
+	public function add_custom_fields( $id, $item, $depth, $args ) { ?>
 		<p class="field-mega_template description description-wide">
 			<label for="edit-menu-item-mega_template-<?php echo esc_attr( $item->ID ); ?>">
 				<?php esc_html_e( 'Template', 'oceanwp' ); ?> | <small><?php esc_html_e( 'Theme Panel > My Library', 'oceanwp' ); ?></small>
@@ -153,12 +133,6 @@ class OceanWP_Nav_Walker {
 				</select>
 			</label>
 		</p>
-		<p class="field-icon description description-wide">
-	        <label for="edit-menu-item-icon-<?php echo esc_attr( $item->ID ); ?>">
-	            <?php esc_html_e( 'Enter Icon Class (Deprecated)', 'oceanwp' ); ?><br />
-	            <input type="text" id="edit-menu-item-icon-<?php echo esc_attr( $item->ID ); ?>" class="widefat edit-menu-item-icon" name="menu-item-icon[<?php echo esc_attr( $item->ID ); ?>]" value="<?php echo esc_attr( $item->icon ); ?>" />
-	        </label>
-	    </p>
 	<?php
 	}
 

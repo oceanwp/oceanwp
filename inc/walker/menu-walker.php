@@ -37,7 +37,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 	        // Megamenu columns
 	        $col = ! empty( $this->megamenu_col ) ? ( 'col-'. $this->megamenu_col .'' ) : 'col-2';
 
-	        if( $depth === 0 && $this->megamenu != '' && 'full_screen' != oceanwp_header_style() ) {
+	        if( $depth === 0 && $this->megamenu != '' && 'full_screen' != oceanwp_header_style() && 'vertical' != oceanwp_header_style() ) {
 	        	$output .= "\n$indent<ul class=\"megamenu ". $col ." sub-menu\">\n";
 	         } else {
 	         	$output .= "\n$indent<ul class=\"sub-menu\">\n";
@@ -57,40 +57,6 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			global $wp_query;
 			$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-			if ( 'center' == oceanwp_header_style() ) {
-				if ( ! isset( $this->break_point ) ) {
-
-					$menu_elements 		= wp_get_nav_menu_items( $args->menu );
-		      		$top_level_elements = 0;
-		      		$is_search_icon 	= oceanwp_menu_search_style();
-					$is_cart_icon 		= oceanwp_menu_cart_style();
-
-					foreach ( $menu_elements as $menu_element ) {
-						if ( '0' === $menu_element->menu_item_parent ) {
-							$top_level_elements++;
-						}
-					}
-
-					if ( $is_search_icon
-						&& 'disabled' != $is_search_icon ) {
-						$top_level_elements++;
-					}
-
-					if ( $is_cart_icon ) {
-						$top_level_elements++;
-					}
-
-					$top_level_menu_items_count = count( $top_level_elements );
-
-					if ( 0 === $top_level_menu_items_count ) {
-						$this->break_point = $top_level_elements / 2;
-					} else {
-						$this->break_point = ceil( $top_level_elements / 2 );
-					}
-
-				}
-			}
-
 			// Set some vars
 			if ( $depth === 0 ) {
 				$this->megamenu 			= get_post_meta( $item->ID, '_menu_item_megamenu', true );
@@ -106,7 +72,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			$classes[] = 'menu-item-' . $item->ID;
 
 			// Mega menu and Hide headings
-		    if( $depth === 0 && $args->has_children ) {
+		    if( $depth === 0 && $args->has_children && 'vertical' != oceanwp_header_style() ) {
 				if ( $this->megamenu != '' && $this->megamenu_auto_width == '' ) {
 					$classes[] = 'megamenu-li full-mega';
 				} else if ( $this->megamenu != '' && $this->megamenu_auto_width != '' ) {
@@ -119,7 +85,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			}
 
 			// Latest post for menu item categories
-			if( $item->category_post != '' && $item->object == 'category' ) {
+			if( $item->category_post != '' && $item->object == 'category' && 'vertical' != oceanwp_header_style() ) {
 				$classes[] = 'menu-item-has-children megamenu-li full-mega mega-cat';
 			}
 
@@ -157,12 +123,6 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 			$attributes .= ! empty( $item->url )        ? ' href="'   . esc_url( $item->url        ) .'"' : '';
 
-			// Icon.
-			$icon = '';
-		    if ( $item->icon != '' ) {
-		    	$icon = '<i class="'. $item->icon .'"></i>';
-		    }
-
 		    // Description
 		    $description = '';
 		    if ( $item->description != '' ) {
@@ -174,7 +134,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			$item_output .= '<a'. $attributes .' class="menu-link">';
 
-			$item_output .= $args->link_before . $icon . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 
 	    	if( $depth !== 0 ) {
 		    	$item_output .= $description;
@@ -182,7 +142,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			$item_output .= '</a>';
 
-			if ( ( $item->template || $item->mega_template ) && $this->megamenu != '' ) {
+			if ( ( $item->template || $item->mega_template ) && $this->megamenu != '' && 'vertical' != oceanwp_header_style() ) {
 				ob_start();
 					include( OCEANWP_INC_DIR . 'walker/template.php' );
 					$template_content = ob_get_contents();
@@ -190,7 +150,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 				$item_output .= $template_content;
 			}
 
-			if ( $item->megamenu_widgetarea && $this->megamenu != '' ) {
+			if ( $item->megamenu_widgetarea && $this->megamenu != '' && 'vertical' != oceanwp_header_style() ) {
 				ob_start();
 					dynamic_sidebar( $item->megamenu_widgetarea );
 					$sidebar_content = ob_get_contents();
@@ -218,27 +178,8 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			// Header style
 			$header_style = oceanwp_header_style();
 
-			// If is center header
-			if ( 'center' == $header_style ) {
-
-				// </li> output.
-				$output .= '</li>';
-
-				if ( '0' === $item->menu_item_parent ) {
-					$this->displayed++;
-				}
-
-				// Logo center header style
-				if ( $this->break_point == $this->displayed && '0' === $item->menu_item_parent ) {
-					ob_start();
-					get_template_part( 'partials/header/style/logo-center-header' );
-					$output .= ob_get_clean();
-				}
-
-			}
-
 			if ( $depth === 0 && $item->category_post != ''
-				&& 'full_screen' != $header_style && 'center' != $header_style ) {
+				&& 'full_screen' != $header_style && 'vertical' != $header_style ) {
 				global $post;
 
 				$output .= "\n<ul class=\"megamenu col-4 sub-menu\">\n";
@@ -327,14 +268,8 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 				}
 			}
 
-			// If is not center header
-			if ( 'center' != $header_style ) {
-
-				// </li> output.
-				$output .= '</li>';
-
-
-			}
+			// </li> output.
+			$output .= '</li>';
 
 		}
 
@@ -365,7 +300,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			// Down Arrows
 			if ( ! empty( $children_elements[$element->$id_field] ) && ( $depth == 0 )
 				|| $element->category_post != '' && $element->object == 'category'
-				&& 'full_screen' != $header_style && 'center' != $header_style ) {
+				&& 'full_screen' != $header_style ) {
 				$element->classes[] = 'dropdown';
 				if ( true == get_theme_mod( 'ocean_menu_arrow_down', true ) ) {
 					$element->title .= ' <span class="nav-arrow fa fa-angle-down"></span>';

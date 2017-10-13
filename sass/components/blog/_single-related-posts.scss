@@ -66,3 +66,22 @@ time.published {
 		padding-right: 5px;
 	}
 }
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	#related-posts {
+		.col {
+			float: none;
+			width: 100%;
+			margin-bottom: 30px;
+		}
+
+		.col:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+}

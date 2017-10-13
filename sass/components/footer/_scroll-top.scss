@@ -27,3 +27,19 @@
 		background-color: rgba(0, 0, 0, 0.8);
 	}
 }
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	#scroll-top {
+		right: 10px;
+		bottom: 10px;
+		width: 26px;
+		height: 26px;
+		line-height: 24px;
+		font-size: 14px;
+	}
+
+}

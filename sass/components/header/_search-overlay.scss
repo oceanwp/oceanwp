@@ -130,3 +130,15 @@
 		}
     }
 }
+
+/*------------------------------------*
+	All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+			
+	/* header > search overlay */
+	#searchform-overlay {
+		display: none !important;
+	}
+	
+}

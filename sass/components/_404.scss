@@ -29,3 +29,20 @@
         }
     }
 }
+
+/*------------------------------------*
+    Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+    .error404-content {
+        .searchform {
+            width: 100%;
+        }
+
+        .error-btn {
+            margin-top: 40px;
+        }
+    }
+    
+}

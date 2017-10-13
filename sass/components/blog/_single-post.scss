@@ -19,3 +19,30 @@
 	    letter-spacing: 0.6px;
 	}
 }
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	.single-post.media-above-content .thumbnail {
+		margin-bottom: 20px;
+	}
+
+	.single-post .entry-title {
+		font-size: 26px;
+	}
+
+	ul.meta {
+		margin-bottom: 12px;
+
+		li {
+			margin-bottom: 8px;
+		}
+	}
+
+	blockquote {
+		margin: 20px 0;
+	}
+
+}

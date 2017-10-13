@@ -1,6 +1,5 @@
-#oceanwp-social-menu {
+.oceanwp-social-menu {
 	float: right;
-    display: table;
     position: relative;
     z-index: 10;
 
@@ -13,8 +12,8 @@
 	}
 
     .social-menu-inner {
-    	display: table-cell;
-    	vertical-align: middle;
+    	@include display();
+		@include align-items( center );
     	height: 74px;
     }
 
@@ -32,16 +31,27 @@
 			    background-color: transparent;
 			    color: $color-4;
 			    padding: 0 8px;
+			    line-height: 1;
 			    text-align: center;
 			    letter-spacing: 0;
 
 			    span {
+			    	width: 1em;
+   					height: 1em;
 			    	text-align: center;
 			    }
 
 			    &:hover {
 			    	background-color: transparent;
 			    }
+    		}
+
+    		&:first-child a {
+    			margin-left: 0;
+    		}
+
+    		&:last-child a {
+    			margin-right: 0;
     		}
 
 		    &.oceanwp-twitter a:hover { color: #46d4fe; }
@@ -68,8 +78,6 @@
 	}
 
 	.colored ul li {
-		padding: 0 2px;
-
 		a {
 	    	position: relative;
 		    display: inline-block;
@@ -83,11 +91,6 @@
 
 		    &:hover {
 		    	color: $color-1;
-		    }
-
-		    span {
-		    	width: 1em;
-    			height: 1em;
 		    }
 		}
 
@@ -134,12 +137,11 @@
 	}
 	
 	.minimal ul li {
-		padding: 0 2px;
-
 		a {
 	    	position: relative;
 		    display: inline-block;
 		    font-size: 12px;
+		    background-color: transparent;
 		    color: #bbb;
 		    border: 1px solid #ccc;
 		    line-height: 1;
@@ -148,9 +150,8 @@
 		    vertical-align: middle;
 		    @include transition( all .3s ease-out );
 
-		    span {
-		    	width: 1em;
-    			height: 1em;
+		    &:hover {
+		    	background-color: transparent;
 		    }
 		}
 
@@ -176,30 +177,21 @@
 	    &.oceanwp-email a:hover { color: #13aff0; border-color: #13aff0; }
 	}
 	
-	.dark ul li {
-		padding: 0 2px;
+	.dark ul li a {
+    	position: relative;
+	    display: inline-block;
+	    font-size: 12px;
+	    background-color: $color-2;
+	    color: $color-1;
+	    line-height: 1;
+		padding: 1em;
+	    @include border-radius( 50% );
+	    vertical-align: middle;
+	    @include transition( all .3s ease-out );
 
-		a {
-	    	position: relative;
-		    display: inline-block;
-		    font-size: 12px;
-		    background-color: $color-2;
-		    color: $color-1;
-		    line-height: 1;
-    		padding: 1em;
-		    @include border-radius( 50% );
-		    vertical-align: middle;
-		    @include transition( all .3s ease-out );
-
-		    &:hover {
-		    	background-color: #000;
-		    	color: $color-1;
-		    }
-
-		    span {
-		    	width: 1em;
-    			height: 1em;
-		    }
-		}
+	    &:hover {
+	    	background-color: #000;
+	    	color: $color-1;
+	    }
 	}
 }

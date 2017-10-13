@@ -6,6 +6,9 @@
             <key name="ocean_mobile_menu_text" />
             <key name="ocean_mobile_menu_close_text" />
             <key name="ocean_mobile_menu_close_btn_text" />
+            <key name="ocean_woo_menu_icon_custom_link" />
+            <key name="ocean_blog_infinite_scroll_last_text" />
+            <key name="ocean_blog_infinite_scroll_error_text" />
             <key name="oss_social_share_heading" />
             <key name="owp_popup_title_text" />
             <key name="owp_popup_content" />

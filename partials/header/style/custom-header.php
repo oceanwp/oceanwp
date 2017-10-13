@@ -5,21 +5,13 @@
  * @package OceanWP WordPress theme
  */
 
-namespace Elementor;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
 // Get ID
-$get_id = get_theme_mod( 'ocean_header_page_id' );
-
-// Get the template
-$template = get_theme_mod( 'ocean_header_template' );
-if ( ! empty( $template ) ) {
-    $get_id = $template;
-}
+$get_id = oceanwp_custom_header_template();
 
 // Check if page is Elementor page
 $elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
@@ -27,26 +19,31 @@ $elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
 // Get content
 $get_content = oceanwp_header_template_content();
 
-// Add container class if the header is not full width
-$class = '';
-if ( true == get_theme_mod( 'ocean_add_custom_header_container', true ) )  {
-    $class = ' container';
-} ?>
+// Get classes
+$classes = array( 'clr' );
+
+// Add container class
+if ( true == get_theme_mod( 'ocean_add_custom_header_container', true ) ) {
+    $classes[] = 'container';
+}
+
+// Turn classes into space seperated string
+$classes = implode( ' ', $classes ); ?>
 
 <?php do_action( 'ocean_before_header_inner' ); ?>
 
-<div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
+<div id="site-header-inner" class="<?php echo esc_attr( $classes ); ?>">
 
     <?php
     // If Elementor
-    if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+    if ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) {
 
-        echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
+        OceanWP_Elementor::get_header_content();
 
     }
 
     // If Beaver Builder
-    else if ( class_exists( 'FLBuilder' ) && ! empty( $get_id ) ) {
+    else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 
         echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 

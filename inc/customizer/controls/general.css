@@ -5,31 +5,28 @@
  */
 
 /* Margin checkbox */
-#customize-control-display_header_text.customize-control,
-#customize-control-ocean_header_full_width.customize-control,
-#customize-control-ocean_has_header_border_bottom.customize-control,
-#customize-control-ocean_search_custom_sidebar.customize-control,
-#customize-control-ocean_mobile_menu_sidr_displace.customize-control,
-#customize-control-ocean_breadcrumbs.customize-control,
-#customize-control-ocean_woo_grid_list.customize-control,
-#customize-control-ocean_woo_shop_sort.customize-control,
-#customize-control-ocean_woo_product_meta.customize-control,
-#customize-control-ofc_callout_button.customize-control,
-#customize-control-ocean_blog_grid_equal_heights.customize-control,
-#customize-control-ocean_boxed_dropdshadow.customize-control,
-#customize-control-ocean_add_custom_header_container.customize-control,
-#customize-control-ocean_blog_single_featured_image_title.customize-control,
-#customize-control-osp_side_panel_close_btn.customize-control,
-#customize-control-external_header_video.customize-control,
-#customize-control-ocean_blog_image_overlay.customize-control,
-#customize-control-op_portfolio_single_featured_image_title,
-#customize-control-ocean_mobile_menu_display_opening_text,
-#customize-control-ocean_schema_markup,
-#customize-control-ocean_mobile_menu_search,
-#customize-control-osh_has_sticky_topbar,
-#customize-control-ocean_medium_header_hidden_menu { margin-top: 20px; }
-#customize-control-ocean_header_full_width.customize-control { margin-bottom: -21px; }
-#customize-control-ocean_header_full_width.customize-control { margin-bottom: -21px; }
+#customize-control-ocean_top_bar,
+#customize-control-ocean_top_bar_full_width,
+#customize-control-ocean_top_bar_social,
+#customize-control-ocean_has_header_border_bottom,
+#customize-control-ocean_medium_header_hidden_menu,
+#customize-control-ocean_medium_header_stick_menu,
+#customize-control-ocean_vertical_header_shadow,
+#customize-control-ocean_vertical_header_closed,
+#customize-control-ocean_menu_arrow_down,
+#customize-control-ocean_menu_arrow_side,
+#customize-control-ocean_menu_dropdown_top_border,
+#customize-control-ocean_menu_social,
+#customize-control-ocean_mobile_menu_close_btn,
+#customize-control-ocean_footer_bottom,
+#customize-control-ocean_footer_widgets,
+#customize-control-ocean_scroll_top,
+#customize-control-ocean_woo_custom_sidebar,
+#customize-control-ocean_woo_menu_icon_hide_if_empty,
+#customize-control-ocean_woo_shop_result_count,
+#customize-control-osh_has_sticky_mobile,
+#customize-control-osh_has_full_width_header,
+#customize-control-osh_no_shadow,
 #customize-control-osh_sticky_choose .customize-control-title { margin-top: 0; }
 
 /* General tweaks */
@@ -67,7 +64,7 @@ input, select { margin: 0; padding: 5px 10px; }
 .customize-control select { height: 33px; line-height: 1; }
 
 /* Checkbox */
-.customize-control-checkbox { position: relative; border: 1px solid #ccc; font-size: 11px; font-weight: 600; text-transform: uppercase; padding: 8px 10px; border-radius: 2px; margin-bottom: -1px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.customize-control-checkbox { position: relative; border: 1px solid #ccc; font-size: 11px; font-weight: 600; text-transform: uppercase; padding: 8px 10px; border-radius: 2px; margin-top:  20px; margin-bottom: -1px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .customize-control-checkbox label { padding: 0; margin: 0; }
 .customize-control-checkbox input[type=checkbox] { position: relative; width: 20px; height: 20px; margin: 0 6px 0 0; vertical-align: top; }
 .customize-control-ocean-multi-check input[type="checkbox"] { position: relative; margin: 0 5px 4px 0; border-color: #c8c8c8; width: 18px; height: 18px; cursor: pointer; -webkit-border-radius: 2px; border-radius: 2px; -webkit-box-shadow: none !important; box-shadow: none !important; }

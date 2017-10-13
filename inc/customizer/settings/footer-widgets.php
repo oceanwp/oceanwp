@@ -103,19 +103,23 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Footer Widgets Page ID
+			 * Parallax Footer Effect
 			 */
-			$wp_customize->add_setting( 'ocean_footer_widgets_page_id', array(
-				'default' 				=> '',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_dropdown_pages',
+			$wp_customize->add_setting( 'ocean_parallax_footer', array(
+				'default'           	=> 'off',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Dropdown_Pages( $wp_customize, 'ocean_footer_widgets_page_id', array(
-				'label'	   				=> '<span style="color: red;">' . esc_html__( 'Page ID', 'oceanwp' ) . '</span>',
-				'description'	   		=> esc_html__( 'Deprecated, this field is no longer supported. Please use the Select Template field below instead.', 'oceanwp' ),
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_parallax_footer', array(
+				'label'	   				=> esc_html__( 'Parallax Footer Effect', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Add a parallax effect to your footer.', 'oceanwp' ),
 				'section'  				=> $section,
-				'settings' 				=> 'ocean_footer_widgets_page_id',
+				'settings' 				=> 'ocean_parallax_footer',
 				'priority' 				=> 10,
+				'choices' 				=> array(
+					'on' 	=> esc_html__( 'On', 'oceanwp' ),
+					'off' 	=> esc_html__( 'Off', 'oceanwp' ),
+				),
 				'active_callback' 		=> 'oceanwp_cac_has_footer_widgets',
 			) ) );
 

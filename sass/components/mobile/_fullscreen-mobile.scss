@@ -196,7 +196,7 @@
 		}
     }
 
-    #oceanwp-social-menu {
+    .oceanwp-social-menu {
     	display: block;
 	    float: none;
 	    margin-top: 30px;
@@ -217,6 +217,8 @@
 			color: $color-1;
 			font-size: 24px;
     		padding: 0 16px;
+    		margin: 0;
+    		background-color: transparent !important;
 
 			&:hover {
 				color: $color-4;

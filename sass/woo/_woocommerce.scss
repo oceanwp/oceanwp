@@ -1,4 +1,20 @@
 .woocommerce {
+	.added_to_cart.disabled,
+	.added_to_cart:disabled,
+	.button.disabled,
+	.button:disabled,
+	button.disabled,
+	button:disabled,
+	input[type=button].disabled,
+	input[type=button]:disabled,
+	input[type=reset].disabled,
+	input[type=reset]:disabled,
+	input[type=submit].disabled,
+	input[type=submit]:disabled {
+	    opacity: .5 !important;
+	    cursor: not-allowed;
+	}
+
 	button {
 		&.button {
 			padding: 12px 20px;
@@ -2044,14 +2060,13 @@
 .woocommerce-message {
 	display: inline-block;
 	width: 100%;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 400;
 	color: #777;
 	border: 1px solid #ddd;
 	margin: 0 0 30px;
 	padding: 10px 15px;
 	text-align: left;
-	text-transform: uppercase;
 	a {
 		float: right;
 		min-height: 10%;
@@ -2657,7 +2672,6 @@ ul {
 }
 .product-quantity {
 	font-weight: normal;
-	color: #bcbcbc;
 }
 .woocommerce-MyAccount-content {
 	h2 {

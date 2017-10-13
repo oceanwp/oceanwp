@@ -1,0 +1,159 @@
+.blog-entry.thumbnail-entry {
+	border-bottom: 1px solid $color-9;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+
+	.blog-entry-inner {
+		@include display();
+		@include flex-direction( row );
+	}
+
+	.thumbnail,
+	.blog-entry-content {
+		@include display();
+		@include flex-direction( column );
+	}
+
+	.center {
+		.thumbnail,
+		.blog-entry-content {
+			@include justify-content( center );
+		}
+	}
+
+	.bottom {
+		.thumbnail,
+		.blog-entry-content {
+			@include justify-content( flex-end );
+		}
+	}
+
+	.thumbnail {
+		width: 45%;
+
+		a {
+			position: relative;
+		}
+
+		.link-entry {
+			position: absolute;
+		    top: 0;
+		}
+
+	    .left-position .link-entry {
+		    right: 0;
+	    }
+
+	    .right-position .link-entry {
+		    left: 0;
+	    }
+	}
+
+	.blog-entry-content {
+		width: 55%;
+	}
+
+	.blog-entry-content {
+		padding: 6px 0;
+	}
+
+    .left-position .blog-entry-content {
+    	padding-left: 3em;
+    }
+
+    .right-position .blog-entry-content {
+    	padding-right: 3em;
+    }
+
+    .blog-entry-category {
+    	display: block;
+	    font-size: 12px;
+	    font-weight: 600;
+	    letter-spacing: 0.6px;
+	    line-height: 1.2em;
+	    text-transform: uppercase;
+	    margin-bottom: 10px;
+
+	    a {
+	    	color: $color-5;
+
+	    	&:hover {
+	    		color: $color-2;
+	    	}
+	    }
+    }
+
+	.blog-entry-summary {
+		margin-bottom: 15px;
+	}
+
+	.blog-entry-bottom {
+		display: block;
+	    border-top: 1px solid $color-7;
+	    padding-top: 15px;
+	    font-size: 11px;
+	    font-weight: 600;
+	    letter-spacing: 0.6px;
+	    line-height: 1.2em;
+	    text-transform: uppercase;
+	}
+
+	.blog-entry-comments,
+	.blog-entry-comments a,
+	.blog-entry-date {
+		color: #ababab;
+	}
+
+	.blog-entry-comments {
+		float: left;
+
+		i {
+			padding-right: 6px;
+		}
+
+		a:hover {
+			color: #333;
+		}
+	}
+
+	.blog-entry-date {
+		float: right;
+	}
+
+	&.no-featured-image {
+		.blog-entry-content {
+			width: 100%;
+		}
+
+		.left-position .blog-entry-content {
+			padding-left: 0;
+		}
+
+		.right-position .blog-entry-content {
+			padding-right: 0;
+		}
+	}
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	.blog-entry.thumbnail-entry {
+		.blog-entry-inner {
+			@include flex-direction( column );
+		}
+
+		.thumbnail,
+		.blog-entry-content {
+			width: 100%;
+		}
+
+		.blog-entry-content {
+			margin-top: 15px;
+    		padding: 0 !important;
+		}
+	}
+	
+}

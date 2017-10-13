@@ -6,7 +6,7 @@
  */
 
 // If Beaver Builder or Beaver Themer plugins doesn't exist then return.
-if ( ! class_exists( 'FLBuilder' )
+if ( ! OCEANWP_BEAVER_BUILDER_ACTIVE
 	|| ! class_exists( 'FLThemeBuilderLoader' ) ) {
 	return;
 }

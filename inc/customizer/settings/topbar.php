@@ -373,23 +373,6 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			/**
 			 * Top Bar Social Alternative
 			 */
-			$wp_customize->add_setting( 'ocean_top_bar_social_alt', array(
-				'default' 				=> '',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_dropdown_pages',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Dropdown_Pages( $wp_customize, 'ocean_top_bar_social_alt', array(
-				'label'	   				=> '<span style="color: red;">' . esc_html__( 'Social Alternative', 'oceanwp' ) . '</span>',
-				'description'	   		=> esc_html__( 'Deprecated, this field is no longer supported. Please use the Social Alternative field below instead.', 'oceanwp' ),
-				'section'  				=> 'ocean_topbar_social',
-				'settings' 				=> 'ocean_top_bar_social_alt',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_topbar_social',
-			) ) );
-
-			/**
-			 * Top Bar Social Alternative
-			 */
 			$wp_customize->add_setting( 'ocean_top_bar_social_alt_template', array(
 				'default'           	=> '0',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_select',

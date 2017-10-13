@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Get post format
 $format = get_post_format();
 
+// Blog style
+$style = get_theme_mod( 'ocean_blog_style', 'large-entry' );
+
 // Quote format is completely different
 if ( 'quote' == $format ) {
 
@@ -23,57 +26,65 @@ if ( 'quote' == $format ) {
 
 }
 
-// Add classes to the blog entry post class
-$classes = oceanwp_post_entry_classes(); ?>
+// If thumbnail style
+if ( 'thumbnail-entry' == $style ) {
+	get_template_part( 'partials/entry/thumbnail-style/layout' );
+} else {
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?>>
+	// Add classes to the blog entry post class
+	$classes = oceanwp_post_entry_classes(); ?>
 
-	<div class="blog-entry-inner clr">
+	<article id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?>>
 
-		<?php
-		// Get elements
-		$elements = oceanwp_blog_entry_elements_positioning();
+		<div class="blog-entry-inner clr">
 
-		// Loop through elements
-		foreach ( $elements as $element ) {
+			<?php
+			// Get elements
+			$elements = oceanwp_blog_entry_elements_positioning();
 
-			// Featured Image
-			if ( 'featured_image' == $element ) {
+			// Loop through elements
+			foreach ( $elements as $element ) {
 
-				get_template_part( 'partials/entry/media/blog-entry', $format );
+				// Featured Image
+				if ( 'featured_image' == $element ) {
 
-			}
+					get_template_part( 'partials/entry/media/blog-entry', $format );
 
-			// Title
-			if ( 'title' == $element ) {
+				}
 
-				get_template_part( 'partials/entry/header' );
+				// Title
+				if ( 'title' == $element ) {
 
-			}
+					get_template_part( 'partials/entry/header' );
 
-			// Meta
-			if ( 'meta' == $element ) {
+				}
 
-				get_template_part( 'partials/entry/meta' );
+				// Meta
+				if ( 'meta' == $element ) {
 
-			}
+					get_template_part( 'partials/entry/meta' );
 
-			// Content
-			if ( 'content' == $element ) {
+				}
 
-				get_template_part( 'partials/entry/content' );
+				// Content
+				if ( 'content' == $element ) {
 
-			}
+					get_template_part( 'partials/entry/content' );
 
-			// Read more button
-			if ( 'read_more' == $element ) {
+				}
 
-				get_template_part( 'partials/entry/readmore' );
+				// Read more button
+				if ( 'read_more' == $element ) {
 
-			}
+					get_template_part( 'partials/entry/readmore' );
 
-		} ?>
+				}
 
-	</div><!-- .blog-entry-inner -->
+			} ?>
 
-</article><!-- #post-## -->
+		</div><!-- .blog-entry-inner -->
+
+	</article><!-- #post-## -->
+
+<?php
+} ?>

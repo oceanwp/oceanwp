@@ -3,21 +3,13 @@
  * Template content
  */
 
-namespace Elementor;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 // Get ID
-$get_id = $item->template;
-
-// Get the template
-$template = $item->mega_template;
-if ( ! empty( $template ) ) {
-    $get_id = $template;
-}
+$get_id = $item->mega_template;
 
 // Check if page is Elementor page
 $elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
@@ -34,14 +26,14 @@ if ( ! empty( $get_id ) ) {
 }
 	
 // If Elementor
-if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+if ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) {
 
-    echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
+    echo Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
 
 }
 
 // If Beaver Builder
-else if ( class_exists( 'FLBuilder' ) && ! empty( $get_id ) ) {
+else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 
     echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 

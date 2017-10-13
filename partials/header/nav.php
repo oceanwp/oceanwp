@@ -33,7 +33,13 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 	if ( 'full_screen' == $header_style ) {
 		$menu_classes[] = 'fs-dropdown-menu';
 	} else {
-		$menu_classes[] = 'dropdown-menu sf-menu';
+		$menu_classes[] = 'dropdown-menu';
+	}
+
+	// If is not full screen or vertical header style
+	if ( 'full_screen' != $header_style
+		&& 'vertical' != $header_style ) {
+		$menu_classes[] = 'sf-menu';
 	}
 
 	// Turn menu classes into space seperated string
@@ -90,7 +96,8 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 			// If is not top menu header style
 			if ( 'top' != $header_style
 				&& 'full_screen' != $header_style
-				&& 'medium' != $header_style ) {
+				&& 'medium' != $header_style
+				&& 'vertical' != $header_style ) {
 
 				// Header search
 				if ( 'drop_down' == oceanwp_menu_search_style() ) {
@@ -103,7 +110,8 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 			// WooCommerce cart
 			if ( 'drop_down' == oceanwp_menu_cart_style()
-				&& 'full_screen' != $header_style ) {
+				&& 'full_screen' != $header_style
+				&& 'vertical' != $header_style ) {
 				get_template_part( 'partials/cart/cart-dropdown' );
 			}
 

@@ -5,22 +5,8 @@
  * @package OceanWP WordPress theme
  */
 
-namespace Elementor;
-
 // Get ID
-$get_id = get_theme_mod( 'ocean_error_page_id' );
-
-// Get the elementor template
-$e_template = get_theme_mod( 'ocean_error_page_elementor_templates' );
-if ( ! empty( $e_template ) ) {
-    $get_id = $e_template;
-}
-
-// Get the template
-$template = get_theme_mod( 'ocean_error_page_template' );
-if ( ! empty( $template ) ) {
-    $get_id = $template;
-}
+$get_id = get_theme_mod( 'ocean_error_page_template' );
 
 // Check if page is Elementor page
 $elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
@@ -83,14 +69,14 @@ if ( 'on' == get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 								        if ( ! empty( $get_id ) ) {
 
 										    // If Elementor
-										    if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+										    if ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) {
 
-										        echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
+										        OceanWP_Elementor::get_error_page_content();
 
 										    }
 
 										    // If Beaver Builder
-										    else if ( class_exists( 'FLBuilder' ) && ! empty( $get_id ) ) {
+										    else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 
 										        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 

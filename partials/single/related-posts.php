@@ -77,7 +77,9 @@ if ( $oceanwp_related_query->have_posts() ) :
 		$classes .= ' container';
 	} ?>
 
-	<div id="related-posts" class="<?php echo esc_attr( $classes ); ?>">
+	<?php do_action( 'ocean_before_single_post_related_posts' ); ?>
+
+	<section id="related-posts" class="<?php echo esc_attr( $classes ); ?>">
 
 		<h3 class="theme-heading related-posts-title">
 			<span class="text"><?php echo esc_html( $text ); ?></span>
@@ -191,7 +193,9 @@ if ( $oceanwp_related_query->have_posts() ) :
 
 		</div><!-- .oceanwp-row -->
 
-	</div><!-- .related-posts -->
+	</section><!-- .related-posts -->
+
+	<?php do_action( 'ocean_after_single_post_related_posts' ); ?>
 
 <?php endif; ?>
 
