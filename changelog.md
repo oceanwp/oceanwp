@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2017.10.14* - 1.4.1
+* **Tweak** - Social menu is now displayed even if there is no main menu.
+* **Fixed** - Responsive top bar social issue.
+
 ### *2017.10.13* - 1.4.0
 * **Added** - New Header Style "Vertical" with many options. You can also put the header transparent with a background when scrolling if you use Ocean Sticky Header.
 * **Added** - New Layout Style "Separate" in General Options > General Settings.

@@ -2690,12 +2690,12 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Content top padding
 			if ( ! empty( $left_container_width ) && '72' != $left_container_width ) {
-				$css .= '@media only screen and (min-width: 960px){ .content-area{width:'. $left_container_width .'%;} }';
+				$css .= '@media only screen and (min-width: 960px){ .content-area, .content-left-sidebar .content-area{width:'. $left_container_width .'%;} }';
 			}
 
 			// Content top padding
 			if ( ! empty( $sidebar_width ) && '28' != $sidebar_width ) {
-				$css .= '@media only screen and (min-width: 960px){ .widget-area{width:'. $sidebar_width .'%;} }';
+				$css .= '@media only screen and (min-width: 960px){ .widget-area, .content-left-sidebar .widget-area{width:'. $sidebar_width .'%;} }';
 			}
 
 			// Content top padding

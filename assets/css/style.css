@@ -1740,6 +1740,15 @@ hr.whiteborder {
 }
 
 /*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+  blockquote {
+    margin: 20px 0;
+  }
+}
+
+/*------------------------------------*
 	$FORMS
 *------------------------------------*/
 form input[type="text"],
@@ -2107,40 +2116,9 @@ a.pure-button-selected {
   #top-bar > div:nth-child(2) {
     padding-top: 20px;
   }
-  #top-bar-content, #top-bar-social-alt {
-    float: none;
-    text-align: center;
-  }
-  #top-bar-social {
-    text-align: center;
-  }
-  #top-bar-social.top-bar-left, #top-bar-social.top-bar-right {
-    position: inherit;
-    left: auto;
-    right: auto;
-    float: none;
-    height: auto;
-    line-height: 1.5em;
-    margin-top: 0;
-  }
   .top-bar-right {
     float: none;
     text-align: center;
-  }
-  #top-bar-social li,
-  #top-bar #top-bar-nav > li {
-    float: none;
-    display: inline-block;
-  }
-  #top-bar-nav {
-    float: none;
-    text-align: center;
-  }
-  #top-bar #lang_sel {
-    text-align: left;
-  }
-  body.rtl #top-bar #lang_sel {
-    text-align: right;
   }
 }
 
@@ -2195,6 +2173,22 @@ a.pure-button-selected {
   margin-right: 20px;
 }
 
+/*------------------------------------*
+  Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+  #top-bar-content, #top-bar-social-alt {
+    float: none;
+    text-align: center;
+  }
+  #top-bar #lang_sel {
+    text-align: left;
+  }
+  body.rtl #top-bar #lang_sel {
+    text-align: right;
+  }
+}
+
 /**
  * Top Bar Menu
  */
@@ -2229,6 +2223,20 @@ a.pure-button-selected {
 #top-bar-nav > ul > li a .nav-arrow {
   margin-left: 4px;
   margin-right: 0;
+}
+
+/*------------------------------------*
+  Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+  #top-bar #top-bar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+  #top-bar-nav {
+    float: none;
+    text-align: center;
+  }
 }
 
 /**
@@ -2374,6 +2382,28 @@ a.pure-button-selected {
 #top-bar-social.top-bar-centered li {
   display: inline-block;
   float: none;
+}
+
+/*------------------------------------*
+  Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+  #top-bar-social {
+    text-align: center;
+  }
+  #top-bar-social.top-bar-left, #top-bar-social.top-bar-right {
+    position: inherit;
+    left: auto;
+    right: auto;
+    float: none;
+    height: auto;
+    line-height: 1.5em;
+    margin-top: 0;
+  }
+  #top-bar-social li {
+    float: none;
+    display: inline-block;
+  }
 }
 
 /*------------------------------------*
@@ -6758,6 +6788,18 @@ ul.meta li i {
   padding-right: 5px;
 }
 
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+  ul.meta {
+    margin-bottom: 12px;
+  }
+  ul.meta li {
+    margin-bottom: 8px;
+  }
+}
+
 /**
  *  Gallery Format
  */
@@ -6888,15 +6930,6 @@ ul.meta li i {
   }
   .single-post .entry-title {
     font-size: 26px;
-  }
-  ul.meta {
-    margin-bottom: 12px;
-  }
-  ul.meta li {
-    margin-bottom: 8px;
-  }
-  blockquote {
-    margin: 20px 0;
   }
 }
 

@@ -274,3 +274,14 @@ hr {
 		page-break-after: avoid;
 	}
 }
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	blockquote {
+		margin: 20px 0;
+	}
+
+}

@@ -33,3 +33,20 @@
     margin-right: 0;
   }
 }
+
+/*------------------------------------*
+  Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+  #top-bar #top-bar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+
+  #top-bar-nav {
+    float: none;
+    text-align: center;
+  }
+  
+}
