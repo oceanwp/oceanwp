@@ -136,7 +136,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				),
 				'mobile_menu_dropdown' 		=> array(
 					'label' 				=> esc_html__( 'Mobile Menu', 'oceanwp' ),
-					'target' 				=> '.sidr-class-dropdown-menu li a, a.sidr-class-toggle-sidr-close, #mobile-dropdown ul li a, body #mobile-fullscreen .fs-dropdown-menu li a',
+					'target' 				=> '.sidr-class-dropdown-menu li a, a.sidr-class-toggle-sidr-close, #mobile-dropdown ul li a, body #mobile-fullscreen ul li a',
 					'exclude' 				=> array( 'font-color' ),
 					'defaults' 				=> array(
 						'font-size' 		=> '15',

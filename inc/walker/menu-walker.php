@@ -219,7 +219,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 							$cat_query = new WP_Query( $args );
 
 							// Title
-							$output .= '<h3 class="mega-cat-title">Latest in '.get_cat_name( $cat_id ).'</h3>';
+							$output .= '<h3 class="mega-cat-title">'. esc_html__( 'Latest in', 'oceanwp' ) .' '. get_cat_name( $cat_id ) .'</h3>';
 
 							while ( $cat_query->have_posts() ) {
 

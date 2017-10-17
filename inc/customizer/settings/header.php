@@ -478,7 +478,6 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_full_screen_header_logo', array(
 				'default'           	=> '',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_image',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_full_screen_header_logo', array(
@@ -495,7 +494,6 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_full_screen_header_retina_logo', array(
 				'default'           	=> '',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_image',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_full_screen_header_retina_logo', array(
@@ -1994,7 +1992,6 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_retina_logo', array(
 				'default'           	=> '',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_image',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_retina_logo', array(
@@ -3247,7 +3244,6 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_responsive_logo', array(
 				'default'           	=> '',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_image',
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_responsive_logo', array(
@@ -5230,7 +5226,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Drop down mobile menu max height
 			if ( 'dropdown' == $mobile_style && ! empty( $dropdown_mobile_menu_max_height ) && '400' != $dropdown_mobile_menu_max_height ) {
-				$css .= '#mobile-dropdown{max-height:'. $dropdown_mobile_menu_max_height .'px;}';
+				$css .= '#mobile-dropdown > nav{max-height:'. $dropdown_mobile_menu_max_height .'px;}';
 			}
 
 			// Mobile menu sidr close button background
@@ -5255,27 +5251,27 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Mobile menu links color
 			if ( ! empty( $mobile_menu_links ) && '#555555' != $mobile_menu_links ) {
-				$css .= 'body .sidr a, body .sidr-class-dropdown-toggle, #mobile-dropdown ul li a, #mobile-dropdown ul li a .dropdown-toggle, #mobile-fullscreen .fs-dropdown-menu li a, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a, #mobile-fullscreen a.close{color:'. $mobile_menu_links .';}';
+				$css .= 'body .sidr a, body .sidr-class-dropdown-toggle, #mobile-dropdown ul li a, #mobile-dropdown ul li a .dropdown-toggle, #mobile-fullscreen ul li a, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a, #mobile-fullscreen a.close{color:'. $mobile_menu_links .';}';
 			}
 
 			// Mobile menu links hover color
 			if ( ! empty( $mobile_menu_links_hover ) && '#13aff0' != $mobile_menu_links_hover ) {
-				$css .= 'body .sidr a:hover, body .sidr-class-dropdown-toggle:hover, body .sidr-class-dropdown-toggle .fa, body .sidr-class-menu-item-has-children.active > a, body .sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle, #mobile-dropdown ul li a:hover, #mobile-dropdown ul li a .dropdown-toggle:hover, #mobile-dropdown .menu-item-has-children.active > a, #mobile-dropdown .menu-item-has-children.active > a > .dropdown-toggle, #mobile-fullscreen .fs-dropdown-menu li a:hover, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover, #mobile-fullscreen a.close:hover{color:'. $mobile_menu_links_hover .';}';
+				$css .= 'body .sidr a:hover, body .sidr-class-dropdown-toggle:hover, body .sidr-class-dropdown-toggle .fa, body .sidr-class-menu-item-has-children.active > a, body .sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle, #mobile-dropdown ul li a:hover, #mobile-dropdown ul li a .dropdown-toggle:hover, #mobile-dropdown .menu-item-has-children.active > a, #mobile-dropdown .menu-item-has-children.active > a > .dropdown-toggle, #mobile-fullscreen ul li a:hover, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover, #mobile-fullscreen a.close:hover{color:'. $mobile_menu_links_hover .';}';
 			}
 
 			// Mobile menu links background color
 			if ( 'fullscreen' == $mobile_style && ! empty( $full_screen_mobile_menu_links_bg ) ) {
-				$css .= '#mobile-fullscreen .fs-dropdown-menu > li > a{background-color:'. $full_screen_mobile_menu_links_bg .';}';
+				$css .= '#mobile-fullscreen ul > li > a{background-color:'. $full_screen_mobile_menu_links_bg .';}';
 			}
 
 			// Mobile menu links hover background color
 			if ( 'fullscreen' == $mobile_style && ! empty( $full_screen_mobile_menu_links_hover_bg ) ) {
-				$css .= '#mobile-fullscreen .fs-dropdown-menu > li > a:hover{background-color:'. $full_screen_mobile_menu_links_hover_bg .';}';
+				$css .= '#mobile-fullscreen ul > li > a:hover{background-color:'. $full_screen_mobile_menu_links_hover_bg .';}';
 			}
 
 			// Mobile menu dropdowns background color
 			if ( ! empty( $mobile_menu_sidr_dropdowns_bg ) && 'rgba(0,0,0,0.02)' != $mobile_menu_sidr_dropdowns_bg ) {
-				$css .= '.sidr-class-dropdown-menu ul, #mobile-dropdown ul li ul, #mobile-fullscreen .fs-dropdown-menu ul.sub-menu{background-color:'. $mobile_menu_sidr_dropdowns_bg .';}';
+				$css .= '.sidr-class-dropdown-menu ul, #mobile-dropdown ul li ul, #mobile-fullscreen ul ul.sub-menu{background-color:'. $mobile_menu_sidr_dropdowns_bg .';}';
 			}
 
 			// Mobile menu search background color

@@ -611,7 +611,7 @@
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_dropdown_mobile_menu_max_height' );
 				if ( to ) {
-					var style = '<style class="customizer-ocean_dropdown_mobile_menu_max_height">#mobile-dropdown { max-height: ' + to + 'px; }</style>';
+					var style = '<style class="customizer-ocean_dropdown_mobile_menu_max_height">#mobile-dropdown > nav { max-height: ' + to + 'px; }</style>';
 					if ( $child.length ) {
 						$child.replaceWith( style );
 					} else {
@@ -6067,7 +6067,7 @@
 				var $child = $(".customizer-ocean_mobile_menu_sidr_dropdowns_background");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_mobile_menu_sidr_dropdowns_background">.sidr-class-dropdown-menu ul, #mobile-dropdown ul li ul, #mobile-fullscreen .fs-dropdown-menu ul.sub-menu { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_mobile_menu_sidr_dropdowns_background">.sidr-class-dropdown-menu ul, #mobile-dropdown ul li ul, #mobile-fullscreen ul ul.sub-menu { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -6097,7 +6097,7 @@
 				var $child = $(".customizer-ocean_mobile_menu_links");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_mobile_menu_links">body .sidr a, body .sidr-class-dropdown-toggle, #mobile-dropdown ul li a, #mobile-dropdown ul li a .dropdown-toggle, #mobile-fullscreen .fs-dropdown-menu li a, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a, #mobile-fullscreen a.close { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_mobile_menu_links">body .sidr a, body .sidr-class-dropdown-toggle, #mobile-dropdown ul li a, #mobile-dropdown ul li a .dropdown-toggle, #mobile-fullscreen ul li a, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a, #mobile-fullscreen a.close { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -6112,7 +6112,7 @@
 				var $child = $(".customizer-ocean_mobile_menu_links_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_mobile_menu_links_hover">body .sidr a:hover, body .sidr-class-dropdown-toggle:hover, body .sidr-class-dropdown-toggle .fa, body .sidr-class-menu-item-has-children.active > a, body .sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle, #mobile-dropdown ul li a:hover, #mobile-dropdown ul li a .dropdown-toggle:hover, #mobile-dropdown .menu-item-has-children.active > a, #mobile-dropdown .menu-item-has-children.active > a > .dropdown-toggle, #mobile-fullscreen .fs-dropdown-menu li a:hover, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover, #mobile-fullscreen a.close:hover { color: ' +
+					var img = '<style class="customizer-ocean_mobile_menu_links_hover">body .sidr a:hover, body .sidr-class-dropdown-toggle:hover, body .sidr-class-dropdown-toggle .fa, body .sidr-class-menu-item-has-children.active > a, body .sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle, #mobile-dropdown ul li a:hover, #mobile-dropdown ul li a .dropdown-toggle:hover, #mobile-dropdown .menu-item-has-children.active > a, #mobile-dropdown .menu-item-has-children.active > a > .dropdown-toggle, #mobile-fullscreen ul li a:hover, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover, #mobile-fullscreen a.close:hover { color: ' +
 						to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
@@ -6128,7 +6128,7 @@
 				var $child = $(".customizer-ocean_full_screen_mobile_menu_links_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_full_screen_mobile_menu_links_bg">#mobile-fullscreen .fs-dropdown-menu > li > a { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_full_screen_mobile_menu_links_bg">#mobile-fullscreen ul > li > a { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -6143,7 +6143,7 @@
 				var $child = $(".customizer-ocean_full_screen_mobile_menu_links_hover_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_full_screen_mobile_menu_links_hover_bg">#mobile-fullscreen .fs-dropdown-menu > li > a:hover { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_full_screen_mobile_menu_links_hover_bg">#mobile-fullscreen ul > li > a:hover { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
