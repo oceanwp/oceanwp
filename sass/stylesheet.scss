@@ -39,6 +39,7 @@
  *
  * PLUGINS
  * - GENERAL
+ * - MAGNIFIC POPUP
  * - SLICK
  * - SIDR
  *
@@ -193,6 +194,11 @@
 	$GENERAL
 *------------------------------------*/
 @import "components/plugins/general";
+
+/*------------------------------------*
+	$MAGNIFIC POPUP
+*------------------------------------*/
+@import "components/plugins/magnific-popup";
 
 /*------------------------------------*
 	$SLICK

@@ -371,7 +371,7 @@ class OCEANWP_Theme_Class {
 		wp_enqueue_style( 'oceanwp-simple-line-icons', $dir .'third/simple-line-icons.min.css', false, '2.4.0' );
 
 		// Register the lightbox style
-		wp_enqueue_style( 'oceanwp-lightbox', $dir .'third/chocolat.min.css', false, '1.0.0' );
+		wp_enqueue_style( 'magnific-popup', $dir .'third/magnific-popup.min.css', false, '1.0.0' );
 
 		// Main Style.css File
 		wp_enqueue_style( 'oceanwp-style', $dir .'style.min.css', false, $theme_version );
@@ -443,12 +443,12 @@ class OCEANWP_Theme_Class {
 		}
 
 		// Load the lightbox scripts
-		wp_enqueue_script( 'oceanwp-chocolat', $dir .'third/chocolat.min.js', array( 'jquery' ), $theme_version, true );
+		wp_enqueue_script( 'magnific-popup', $dir .'third/magnific-popup.min.js', array( 'jquery' ), $theme_version, true );
 		wp_enqueue_script( 'oceanwp-lightbox', $dir .'third/lightbox.min.js', array( 'jquery' ), $theme_version, true );
 
 		// Load minified js
 		wp_enqueue_script( 'oceanwp-main', $dir .'main.min.js', array( 'jquery' ), $theme_version, true );
-
+		
 		// Localize array
 		wp_localize_script( 'oceanwp-main', 'oceanwpLocalize', $localize_array );
 

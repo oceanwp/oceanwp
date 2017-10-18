@@ -17,7 +17,7 @@ module.exports = function ( grunt ) {
 			dev: {
 				files: {
 					'assets/js/third/html5.min.js'									: 'assets/js/third/html5.js',
-					'assets/js/third/chocolat.min.js'								: 'assets/js/third/chocolat.js',
+					'assets/js/third/magnific-popup.min.js'							: 'assets/js/third/magnific-popup.js',
 					'assets/js/third/lightbox.min.js'								: 'assets/js/third/lightbox.js',
 					'assets/js/third/woo/woo-scripts.min.js'						: [ 'assets/js/third/woo/devs/**/*.js' ],
 
@@ -57,7 +57,7 @@ module.exports = function ( grunt ) {
 			prod: {
 				files: {
 					'assets/css/third/hamburgers/hamburgers.min.css'				: 'assets/css/third/hamburgers/hamburgers.css',
-					'assets/css/third/chocolat.min.css'								: 'assets/css/third/chocolat.css',
+					'assets/css/third/magnific-popup.min.css'						: 'assets/css/third/magnific-popup.css',
 					'assets/css/third/sensei.min.css'								: 'assets/css/third/sensei.css',
 					'assets/css/woo/woo-star-font.min.css'							: 'assets/css/woo/woo-star-font.css',
 					'assets/css/editor-style.min.css'								: 'assets/css/editor-style.css',

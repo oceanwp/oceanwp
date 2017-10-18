@@ -1651,6 +1651,7 @@
 			td {
 				border: none;
 				padding: 16px 20px;
+				text-align: right;
 			}
 			tfoot {
 				td {
@@ -1672,7 +1673,12 @@
 				background-color: #fdfdfd;
 				&.product-name {
 					max-width: 376px;
+					text-align: left;
 				}
+			}
+
+			label {
+			    display: inline-block;
 			}
 		}
 		tfoot th {

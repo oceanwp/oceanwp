@@ -2047,6 +2047,7 @@
 .woocommerce #order_review table.shop_table td {
   border: none;
   padding: 16px 20px;
+  text-align: right;
 }
 
 .woocommerce #order_review table.shop_table tfoot td {
@@ -2072,6 +2073,11 @@
 
 .woocommerce #order_review table.shop_table tbody td.product-name {
   max-width: 376px;
+  text-align: left;
+}
+
+.woocommerce #order_review table.shop_table label {
+  display: inline-block;
 }
 
 .woocommerce #order_review table tfoot th {

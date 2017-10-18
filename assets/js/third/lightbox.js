@@ -58,20 +58,37 @@ function oceanwpInitLightbox( $context ) {
     "use strict"
 
     // Lightbox
-    $j( 'body .site-content, body .entry' ).Chocolat( {
-        imageSelector   : '.oceanwp-lightbox'
+    $j( '.oceanwp-lightbox' ).magnificPopup( {
+        type: 'image',
+        mainClass: 'mfp-with-zoom',
+
+        zoom: {
+            enabled: true,
+            duration: 300,
+            easing: 'ease-in-out',
+            opener: function(openerElement) {
+                return openerElement.is('img') ? openerElement : openerElement.find('img');
+            }
+        }
     } );
 
     // Gallery lightbox
-    $j( '.gallery-format, .gallery', $context ).Chocolat( {
-        loop            : true,
-        imageSelector   : '.gallery-lightbox:not(.slick-cloned)'
-    } );
+    $j( '.gallery-format', $context ).magnificPopup( {
+        delegate: '.gallery-lightbox:not(.slick-cloned)',
+        type: 'image',
+        mainClass: 'mfp-with-zoom',
+        gallery: {
+            enabled:true
+        },
 
-    // Product lightbox
-    $j( '.product-images-slider' ).Chocolat( {
-        loop            : true,
-        imageSelector   : '.product-image:not(.slick-cloned) .woo-lightbox'
+        zoom: {
+            enabled: true,
+            duration: 300,
+            easing: 'ease-in-out',
+            opener: function(openerElement) {
+                return openerElement.is('img') ? openerElement : openerElement.find('img');
+            }
+        }
     } );
 
 }

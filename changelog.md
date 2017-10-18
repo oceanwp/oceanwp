@@ -1,5 +1,11 @@
 # OceanWP Changelog
 
+### *2017.10.19* - 1.4.2
+* **Added** - Magnific Popup script instead of Chocolat, better lightbox script.
+* **Fixed** - Styling issue with the Full Screen mobile menu style.
+* **Fixed** - "Latest In" in posts megamenu not translatable.
+* **Updated** - Theme screenshot.
+
 ### *2017.10.14* - 1.4.1
 * **Tweak** - Social menu is now displayed even if there is no main menu.
 * **Fixed** - Responsive top bar social issue.
