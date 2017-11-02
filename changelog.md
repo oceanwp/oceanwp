@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.11.02* - 1.4.4
+* **Fixed** - is_plugin_active fatal error for WordPress Social Login
+
 ### *2017.11.02* - 1.4.3
 * **Added** - Translation with WPML for the custom theme's parts, see this article: http://docs.oceanwp.org/article/474-translate-custom-parts-of-the-theme-with-wpml
 * **Added** - Compatibility with WooCommerce Enhanced Layered Navigation.

@@ -6,7 +6,7 @@
  */
 
 // Return if the plugins doesn't exist or if logged in.
-if ( ! is_plugin_active( 'wordpress-social-login/wp-social-login.php' )
+if ( ! function_exists( 'wsl_install' )
 	|| is_user_logged_in() ) {
 	return;
 }
