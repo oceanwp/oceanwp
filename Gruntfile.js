@@ -58,7 +58,10 @@ module.exports = function ( grunt ) {
 				files: {
 					'assets/css/third/hamburgers/hamburgers.min.css'				: 'assets/css/third/hamburgers/hamburgers.css',
 					'assets/css/third/magnific-popup.min.css'						: 'assets/css/third/magnific-popup.css',
+					'assets/css/third/bbpress.min.css'								: 'assets/css/third/bbpress.css',
+					'assets/css/third/buddypress.min.css'							: 'assets/css/third/buddypress.css',
 					'assets/css/third/sensei.min.css'								: 'assets/css/third/sensei.css',
+					'assets/css/third/social-login.min.css'							: 'assets/css/third/social-login.css',
 					'assets/css/woo/woo-star-font.min.css'							: 'assets/css/woo/woo-star-font.css',
 					'assets/css/editor-style.min.css'								: 'assets/css/editor-style.css',
 

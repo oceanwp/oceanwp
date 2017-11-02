@@ -2,11 +2,14 @@
  * Boring
  */
 .hamburger--boring .hamburger-inner, .hamburger--boring .hamburger-inner::before, .hamburger--boring .hamburger-inner::after {
-  transition-property: none;
+  -webkit-transition-property: none;
+          transition-property: none;
 }
 
 .hamburger--boring.is-active .hamburger-inner {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .hamburger--boring.is-active .hamburger-inner::before {
@@ -16,5 +19,7 @@
 
 .hamburger--boring.is-active .hamburger-inner::after {
   bottom: 0;
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }

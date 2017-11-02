@@ -2977,7 +2977,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add product entry price color
 			if ( ! empty( $product_entry_price_color ) && '#57bf6d' != $product_entry_price_color ) {
-				$css .= '.woocommerce ul.products li.product .price .amount{color:'. $product_entry_price_color .';}';
+				$css .= '.woocommerce ul.products li.product .price, .woocommerce ul.products li.product .price .amount{color:'. $product_entry_price_color .';}';
 			}
 
 			// Add product entry del price color

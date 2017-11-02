@@ -22,6 +22,8 @@ Woo Quantity Buttons
 		vertical-align: middle;
 		font-size: 12px;
 		color: #777;
+		-moz-appearance: textfield; /* hack firefox */
+		-webkit-appearance: none;
 		@include border-radius(0);
 	}
 

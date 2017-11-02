@@ -7219,7 +7219,7 @@
 			});
 		}), api("ocean_product_entry_price_color", function($swipe) {
 			$swipe.bind(function(size) {
-				$(".woocommerce ul.products li.product .price .amount").css("color", size);
+				$(".woocommerce ul.products li.product .price, .woocommerce ul.products li.product .price .amount").css("color", size);
 			});
 		}), api("ocean_product_entry_del_price_color", function($swipe) {
 			$swipe.bind(function(size) {
@@ -7234,7 +7234,7 @@
 				var $child = $(".customizer-ocean_product_entry_addtocart_bg_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_product_entry_addtocart_bg_color_hover">.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover{ color: ' + to + "!important; }</style>";
+					var img = '<style class="customizer-ocean_product_entry_addtocart_bg_color_hover">.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover{ background-color: ' + to + "!important; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

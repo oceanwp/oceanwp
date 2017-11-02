@@ -1,5 +1,21 @@
 # OceanWP Changelog
 
+### *2017.11.02* - 1.4.3
+* **Added** - Translation with WPML for the custom theme's parts, see this article: http://docs.oceanwp.org/article/474-translate-custom-parts-of-the-theme-with-wpml
+* **Added** - Compatibility with WooCommerce Enhanced Layered Navigation.
+* **Added** - Compatibility with WordPress Social Login.
+* **Added** - Some CSS fixes for Gutenberg.
+* **Added** - bbPress compatibility.
+* **Added** - BuddyPress compatibility.
+* **Tweak** - Parallax footer code improved.
+* **Updated** - French translation, thanks to freepixel.net.
+* **Fixed** - Mobile menu drop down behind the sale and zoom icon of the single product page.
+* **Fixed** - Add to cart background color hover in the customizer.
+* **Fixed** - Product variables price color.
+* **Fixed** - Product quantity number input on Firefox.
+* **Fixed** - Gallery lightbox issue.
+* **Fixed** - Sidebar issue if full width or full screen layout selected.
+
 ### *2017.10.19* - 1.4.2
 * **Added** - Magnific Popup script instead of Chocolat, better lightbox script.
 * **Fixed** - Styling issue with the Full Screen mobile menu style.

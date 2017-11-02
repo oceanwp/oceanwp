@@ -500,7 +500,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_full_screen_header_retina_logo', array(
 				'label'	   				=> esc_html__( 'Retina Logo (optional)', 'oceanwp' ),
-				'description'	 		=> esc_html__( 'Select a custom retina logo when the menu is opened.', 'oceanwp' ),
+				'description'	 		=> esc_html__( 'Select a custom retina logo (twice the logo size) when the menu is opened.', 'oceanwp' ),
 				'section'  				=> 'ocean_header_general',
 				'settings' 				=> 'ocean_full_screen_header_retina_logo',
 				'priority' 				=> 10,
@@ -1999,6 +1999,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_retina_logo', array(
 				'label'	   				=> esc_html__( 'Retina Logo', 'oceanwp' ),
+				'description'	 		=> esc_html__( 'Select a retina logo twice the normal logo size.', 'oceanwp' ),
 				'section'  				=> 'ocean_header_logo',
 				'settings' 				=> 'ocean_retina_logo',
 				'priority' 				=> 10,

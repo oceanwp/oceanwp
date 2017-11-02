@@ -18,6 +18,37 @@
 	    border-bottom: 1px solid $color-9;
 	    letter-spacing: 0.6px;
 	}
+
+	.entry-content h2,
+	.entry-content h3 {
+		padding: 1.5em 0 0;
+	}
+}
+
+.wp-block-cover-image,
+.wp-block-image {
+	margin-bottom: 20px;
+}
+
+.wp-block-button a:hover {
+    color: inherit;
+}
+
+.wp-block-quote.blocks-quote-style-2 {
+    border: 0;
+}
+
+.wp-block-pullquote {
+    border-left-width: 0;
+    margin: 0;
+}
+
+.wp-block-separator {
+    margin: 30px auto;
+}
+
+.wp-block-table {
+	display: table;
 }
 
 /*------------------------------------*

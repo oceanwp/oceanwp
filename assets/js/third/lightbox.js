@@ -73,22 +73,13 @@ function oceanwpInitLightbox( $context ) {
     } );
 
     // Gallery lightbox
-    $j( '.gallery-format', $context ).magnificPopup( {
+    $j( '.gallery-format, .gallery', $context ).magnificPopup( {
         delegate: '.gallery-lightbox:not(.slick-cloned)',
         type: 'image',
-        mainClass: 'mfp-with-zoom',
+        mainClass: 'mfp-fade',
         gallery: {
-            enabled:true
-        },
-
-        zoom: {
             enabled: true,
-            duration: 300,
-            easing: 'ease-in-out',
-            opener: function(openerElement) {
-                return openerElement.is('img') ? openerElement : openerElement.find('img');
-            }
-        }
+        },
     } );
 
 }

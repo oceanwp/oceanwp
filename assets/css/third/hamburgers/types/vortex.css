@@ -2,31 +2,42 @@
  * Vortex
  */
 .hamburger--vortex .hamburger-inner {
-  transition-duration: 0.2s;
-  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .hamburger--vortex .hamburger-inner::before, .hamburger--vortex .hamburger-inner::after {
-  transition-duration: 0s;
-  transition-delay: 0.1s;
-  transition-timing-function: linear;
+  -webkit-transition-duration: 0s;
+          transition-duration: 0s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
 }
 
 .hamburger--vortex .hamburger-inner::before {
-  transition-property: top, opacity;
+  -webkit-transition-property: top, opacity;
+          transition-property: top, opacity;
 }
 
 .hamburger--vortex .hamburger-inner::after {
-  transition-property: bottom, transform;
+  -webkit-transition-property: bottom, -webkit-transform;
+          transition-property: bottom, transform;
 }
 
 .hamburger--vortex.is-active .hamburger-inner {
-  transform: rotate(765deg);
-  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transform: rotate(765deg);
+      -ms-transform: rotate(765deg);
+          transform: rotate(765deg);
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .hamburger--vortex.is-active .hamburger-inner::before, .hamburger--vortex.is-active .hamburger-inner::after {
-  transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 
 .hamburger--vortex.is-active .hamburger-inner::before {
@@ -36,5 +47,7 @@
 
 .hamburger--vortex.is-active .hamburger-inner::after {
   bottom: 0;
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
 }

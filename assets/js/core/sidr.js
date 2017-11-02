@@ -24,7 +24,7 @@ function oceanwpMobileMenu( event ) {
 			displace : oceanwpLocalize.sidrDisplace, 	// Displace the body content or not
 			speed    : 300,            					// Accepts standard jQuery effects speeds (i.e. fast, normal or milliseconds)
 			renaming : true,							// The ids and classes will be prepended with a prefix when loading existent content
-			onOpen   : function() {
+			onOpen   : function onOpen() {
 
 				// Class of the custom opening button
 				$j( '.mobile-menu > .hamburger' ).addClass( 'is-active' );
@@ -90,7 +90,7 @@ function oceanwpMobileMenu( event ) {
 				} );
 
 			},
-			onClose : function() {
+			onClose : function onClose() {
 
 				// Remove class of the custom opening button
 				$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );

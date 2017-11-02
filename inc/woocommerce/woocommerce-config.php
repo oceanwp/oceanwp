@@ -257,7 +257,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			register_sidebar( array (
 				'name'          => esc_html__( 'WooCommerce Sidebar', 'oceanwp' ),
 				'id'            => 'woo_sidebar',
-				'before_widget' => '<div class="sidebar-box %2$s clr">',
+				'before_widget' => '<div id="%1$s" class="sidebar-box %2$s clr">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h4 class="widget-title">',
 				'after_title'   => '</h4>',
@@ -273,7 +273,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function display_woo_sidebar( $sidebar ) {
 
 			// Alter sidebar display to show woo_sidebar where needed
-			if ( get_theme_mod( 'ocean_woo_custom_sidebar', true ) && is_woocommerce() && is_active_sidebar( 'woo_sidebar' ) ) {
+			if ( get_theme_mod( 'ocean_woo_custom_sidebar', true )
+				&& is_active_sidebar( 'woo_sidebar' )
+				&& is_woocommerce() ) {
 				$sidebar = 'woo_sidebar';
 			}
 

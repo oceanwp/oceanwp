@@ -20,7 +20,8 @@ function oceanwpScrollEffect() {
 
 	    	if ( ! $j( this ).hasClass( 'omw-open-modal' )
 	        	&& ! $j( this ).parent().hasClass( 'omw-open-modal' )
-	        	&& ! $j( this ).parent().parent().parent().hasClass( 'omw-open-modal' ) ) {
+	        	&& ! $j( this ).parent().parent().parent().hasClass( 'omw-open-modal' )
+	        	&& ! $j( this ).parent().hasClass( 'opl-link' ) ) {
 
 	        	var $href     				= $j( this ).attr( 'href' ),
 				    $hrefHash 				= $href.substr( $href.indexOf( '#' ) ).slice( 1 ),

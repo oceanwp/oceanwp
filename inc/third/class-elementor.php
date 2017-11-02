@@ -203,49 +203,49 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 
 				// Enqueue top bar content css file
 				if ( false != $topbar_id ) {
-					$topbar_css = new \Elementor\Post_CSS_File( $topbar_id );
+					$topbar_css = new Elementor\Post_CSS_File( $topbar_id );
 					$topbar_css->enqueue();
 				}
 
 				// Enqueue top bar social alternative css file
 				if ( false != $topbar_social_alt_id ) {
-					$topbar_social_alt_css = new \Elementor\Post_CSS_File( $topbar_social_alt_id );
+					$topbar_social_alt_css = new Elementor\Post_CSS_File( $topbar_social_alt_id );
 					$topbar_social_alt_css->enqueue();
 				}
 
 				// Enqueue vertical header css file
 				if ( false != $vertical_header_id ) {
-					$vertical_header_css = new \Elementor\Post_CSS_File( $vertical_header_id );
+					$vertical_header_css = new Elementor\Post_CSS_File( $vertical_header_id );
 					$vertical_header_css->enqueue();
 				}
 
 				// Enqueue vertical header bottom css file
 				if ( false != $vertical_header_bottom_id ) {
-					$vertical_header_bottom_css = new \Elementor\Post_CSS_File( $vertical_header_bottom_id );
+					$vertical_header_bottom_css = new Elementor\Post_CSS_File( $vertical_header_bottom_id );
 					$vertical_header_bottom_css->enqueue();
 				}
 
 				// Enqueue header css file
 				if ( false != $header_id ) {
-					$header_css = new \Elementor\Post_CSS_File( $header_id );
+					$header_css = new Elementor\Post_CSS_File( $header_id );
 					$header_css->enqueue();
 				}
 
 				// Enqueue social menu css file
 				if ( false != $social_menu_id ) {
-					$social_menu_css = new \Elementor\Post_CSS_File( $social_menu_id );
+					$social_menu_css = new Elementor\Post_CSS_File( $social_menu_id );
 					$social_menu_css->enqueue();
 				}
 
 				// Enqueue footer css file
 				if ( false != $footer_id ) {
-					$footer_css = new \Elementor\Post_CSS_File( $footer_id );
+					$footer_css = new Elementor\Post_CSS_File( $footer_id );
 					$footer_css->enqueue();
 				}
 
 				// Enqueue 404 error page css file
 				if ( false != $error_id ) {
-					$error_css = new \Elementor\Post_CSS_File( $error_id );
+					$error_css = new Elementor\Post_CSS_File( $error_id );
 					$error_css->enqueue();
 				}
 
