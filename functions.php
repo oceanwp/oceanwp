@@ -745,11 +745,11 @@ class OCEANWP_Theme_Class {
 	        '#https://youtu\.be/.*#i',
 	        '#https?://(.+\.)?vimeo\.com/.*#i',
 	        '#https?://(www\.)?dailymotion\.com/.*#i',
-	        '#https?://dai.ly/*#i',
+	        '#https?://dai\.ly/*#i',
 	        '#https?://(www\.)?hulu\.com/watch/.*#i',
-	        '#https?://wordpress.tv/.*#i',
+	        '#https?://wordpress\.tv/.*#i',
 	        '#https?://(www\.)?funnyordie\.com/videos/.*#i',
-	        '#https?://vine.co/v/.*#i',
+	        '#https?://vine\.co/v/.*#i',
 	        '#https?://(www\.)?collegehumor\.com/video/.*#i',
 	        '#https?://(www\.|embed\.)?ted\.com/talks/.*#i'
 		) );
