@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.11.03* - 1.4.6
+* **Fixed** - Icon issue with the Sidebar mobile menu style.
+
 ### *2017.11.03* - 1.4.5
 * **Fixed** - Issue with the Sidebar mobile menu style.
 

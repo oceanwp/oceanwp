@@ -107,7 +107,7 @@ function oceanwpMobileMenu( event ) {
 		} );
 
         // Replace sidr class in the icons classes
-		$j( '#sidr li.sidr-class-menu-item a i[class*="sidr-class-icon"]' ).each( function() {
+		$j( '#sidr i[class*="sidr-class-icon"]' ).each( function() {
 			var old_class = $j( this ).attr( 'class' ),
 				old_class = old_class.replace( 'sidr-class-icon-', 'icon-' );
 			$j( this ).attr( 'class', old_class );
