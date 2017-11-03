@@ -1,7 +1,10 @@
 # OceanWP Changelog
 
+### *2017.11.03* - 1.4.5
+* **Fixed** - Issue with the Sidebar mobile menu style.
+
 ### *2017.11.02* - 1.4.4
-* **Fixed** - is_plugin_active fatal error for WordPress Social Login
+* **Fixed** - is_plugin_active fatal error for WordPress Social Login.
 
 ### *2017.11.02* - 1.4.3
 * **Added** - Translation with WPML for the custom theme's parts, see this article: http://docs.oceanwp.org/article/474-translate-custom-parts-of-the-theme-with-wpml
