@@ -475,6 +475,7 @@
 	.form-row-first {
 		float: left;
 		width: 48%;
+		margin-right: 4%;
 	}
 	.form-row-last {
 		float: right;
@@ -482,7 +483,6 @@
 	}
 	form {
 		.form-row {
-			position: relative;
 			padding: 3px 0;
 			label {
 				display: inline-block;
@@ -1756,9 +1756,6 @@
 			border-color: #13aff0;
 		}
 	}
-}
-.mobile-wcmenucart {
-	position: relative;
 }
 .col2-set {
 	width: 100%;

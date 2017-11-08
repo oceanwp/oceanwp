@@ -608,6 +608,7 @@
 .woocommerce .form-row-first {
   float: left;
   width: 48%;
+  margin-right: 4%;
 }
 
 .woocommerce .form-row-last {
@@ -616,7 +617,6 @@
 }
 
 .woocommerce form .form-row {
-  position: relative;
   padding: 3px 0;
 }
 
@@ -2165,10 +2165,6 @@
   border-top-color: transparent !important;
   border-bottom-color: transparent !important;
   border-color: #13aff0;
-}
-
-.mobile-wcmenucart {
-  position: relative;
 }
 
 .col2-set {
@@ -3925,6 +3921,8 @@ Woo Responsive
   .woocommerce .form-row-first {
     float: none;
     width: 100%;
+    margin-right: 0;
+    margin-left: 0 !important;
   }
   .woocommerce .form-row-last {
     float: none;

@@ -9,7 +9,7 @@
 
 /* General */
 .col2-set .col-1,
-.woocommerce .form-row-first { float: right; }
+.woocommerce .form-row-first { float: right; margin-left: 4%; margin-right: 0; }
 
 .col2-set .col-2,
 .woocommerce .form-row-last { float: left; }

@@ -78,6 +78,7 @@
  */
 #site-header.has-header-media {
 	> *:not(.overlay-header-media) {
+		position: relative;
 	    z-index: 2;
 	}
 

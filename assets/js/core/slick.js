@@ -22,7 +22,7 @@ function oceanwpInitCarousel( $context ) {
 	}
 
 	// Return autoplay to false if woo slider
-	if ( $j( 'body' ).hasClass( 'woocommerce' ) ) {
+	if ( $carousel.hasClass( 'woo-entry-image' ) ) {
 		var autoplay = false;
 	} else {
 		var autoplay = true;
