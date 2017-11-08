@@ -930,7 +930,7 @@
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_woo_menu_icon_size_tablet' );
 				if ( to ) {
-					var style = '<style class="customizer-ocean_woo_menu_icon_size_tablet">@media (max-width: 768px){#oceanwp-mobile-menu-icon a.mobile-wcmenucart { font-size: ' + to + 'px; }}</style>';
+					var style = '<style class="customizer-ocean_woo_menu_icon_size_tablet">@media (max-width: 768px){#oceanwp-mobile-menu-icon a.wcmenucart { font-size: ' + to + 'px; }}</style>';
 					if ( $child.length ) {
 						$child.replaceWith( style );
 					} else {
@@ -947,7 +947,7 @@
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_woo_menu_icon_size_mobile' );
 				if ( to ) {
-					var style = '<style class="customizer-ocean_woo_menu_icon_size_mobile">@media (max-width: 480px){#oceanwp-mobile-menu-icon a.mobile-wcmenucart { font-size: ' + to + 'px; }}</style>';
+					var style = '<style class="customizer-ocean_woo_menu_icon_size_mobile">@media (max-width: 480px){#oceanwp-mobile-menu-icon a.wcmenucart { font-size: ' + to + 'px; }}</style>';
 					if ( $child.length ) {
 						$child.replaceWith( style );
 					} else {
@@ -981,7 +981,7 @@
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_woo_menu_icon_center_vertically_tablet' );
 				if ( to ) {
-					var style = '<style class="customizer-ocean_woo_menu_icon_center_vertically_tablet">@media (max-width: 768px){#oceanwp-mobile-menu-icon a.mobile-wcmenucart { top: ' + to + 'px; }}</style>';
+					var style = '<style class="customizer-ocean_woo_menu_icon_center_vertically_tablet">@media (max-width: 768px){#oceanwp-mobile-menu-icon a.wcmenucart { top: ' + to + 'px; }}</style>';
 					if ( $child.length ) {
 						$child.replaceWith( style );
 					} else {
@@ -998,7 +998,7 @@
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_woo_menu_icon_center_vertically_mobile' );
 				if ( to ) {
-					var style = '<style class="customizer-ocean_woo_menu_icon_center_vertically_mobile">@media (max-width: 480px){#oceanwp-mobile-menu-icon a.mobile-wcmenucart { top: ' + to + 'px; }}</style>';
+					var style = '<style class="customizer-ocean_woo_menu_icon_center_vertically_mobile">@media (max-width: 480px){#oceanwp-mobile-menu-icon a.wcmenucart { top: ' + to + 'px; }}</style>';
 					if ( $child.length ) {
 						$child.replaceWith( style );
 					} else {

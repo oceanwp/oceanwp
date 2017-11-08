@@ -332,6 +332,7 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_top_bar_content', array(
 				'transport'           	=> 'postMessage',
+				'default'           	=> esc_html__( 'Place your content here', 'oceanwp' ),
 				'sanitize_callback' 	=> 'wp_kses_post',
 			) );
 

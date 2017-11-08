@@ -2757,12 +2757,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Menu cart icon size tablet
 			if ( ! empty( $menu_icon_size_tablet ) ) {
-				$css .= '@media (max-width: 768px){#oceanwp-mobile-menu-icon a.mobile-wcmenucart{font-size:'. $menu_icon_size_tablet .'px;}}';
+				$css .= '@media (max-width: 768px){#oceanwp-mobile-menu-icon a.wcmenucart{font-size:'. $menu_icon_size_tablet .'px;}}';
 			}
 
 			// Menu cart icon size mobile
 			if ( ! empty( $menu_icon_size_mobile ) ) {
-				$css .= '@media (max-width: 480px){#oceanwp-mobile-menu-icon a.mobile-wcmenucart{font-size:'. $menu_icon_size_mobile .'px;}}';
+				$css .= '@media (max-width: 480px){#oceanwp-mobile-menu-icon a.wcmenucart{font-size:'. $menu_icon_size_mobile .'px;}}';
 			}
 
 			// Menu cart icon center vertically
@@ -2772,12 +2772,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Menu cart icon center vertically tablet
 			if ( ! empty( $menu_icon_center_vertically_tablet ) ) {
-				$css .= '@media (max-width: 768px){#oceanwp-mobile-menu-icon a.mobile-wcmenucart{top:'. $menu_icon_center_vertically_tablet .'px;}}';
+				$css .= '@media (max-width: 768px){#oceanwp-mobile-menu-icon a.wcmenucart{top:'. $menu_icon_center_vertically_tablet .'px;}}';
 			}
 
 			// Menu cart icon center vertically mobile
 			if ( ! empty( $menu_icon_center_vertically_mobile ) ) {
-				$css .= '@media (max-width: 480px){#oceanwp-mobile-menu-icon a.mobile-wcmenucart{top:'. $menu_icon_center_vertically_mobile .'px;}}';
+				$css .= '@media (max-width: 480px){#oceanwp-mobile-menu-icon a.wcmenucart{top:'. $menu_icon_center_vertically_mobile .'px;}}';
 			}
 
 			// Cart dropdown width
