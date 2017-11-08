@@ -15,6 +15,12 @@
 if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 
 	function oceanwp_wcmenucart_menu_item() {
+
+		// Return items if "hide if empty cart" is checked (for mobile)
+		if ( true == get_theme_mod( 'ocean_woo_menu_icon_hide_if_empty', false )
+			&& ! WC()->cart->cart_contents_count > 0 ) {
+			return;
+		}
 		
 		// Vars
 		$icon_style   = get_theme_mod( 'ocean_woo_menu_icon_style', 'drop_down' );
