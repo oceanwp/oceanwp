@@ -34,7 +34,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			/*-------------------------------------------------------------------------------*/
 			if ( ! is_admin() ) {
 
+				// Remove default wrappers and add new ones
+				remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+				remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+				add_action( 'woocommerce_before_main_content', array( $this, 'content_wrapper' ), 10 );
+				add_action( 'woocommerce_after_main_content', array( $this, 'content_wrapper_end' ), 10 );
+
 				// Display correct sidebar for products
+				remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 				add_filter( 'ocean_get_sidebar', array( $this, 'display_woo_sidebar' ) );
 
 				// Set correct post layouts
@@ -49,8 +56,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				// Disable WooCommerce css
 				add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
-				// Show/hide category description
-				add_filter( 'ocean_has_term_description_above_loop', array( $this, 'term_description_above_loop' ) );
+				// Remove the category description under the page title on taxonomy
+				add_filter( 'ocean_post_subheading', array( $this, 'post_subheading' ) );
 
 				// Show/hide next/prev on products
 				add_filter( 'ocean_has_next_prev', array( $this, 'next_prev' ) );
@@ -144,8 +151,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public function init() {
 
-			// Remove category descriptions, these are added already by the theme
-			remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 10 );
+			// Remove WooCommerce breadcrumbs
+			remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 
 			// Alter upsells display
 			remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
@@ -239,6 +246,24 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				}
 			}
 			return $settings;
+		}
+
+		/**
+		 * Content wrapper.
+		 *
+		 * @since 1.4.7
+		 */
+		public static function content_wrapper() {
+			get_template_part( 'woocommerce/wc-content-wrapper' );
+		}
+
+		/**
+		 * Content wrapper end.
+		 *
+		 * @since 1.4.7
+		 */
+		public static function content_wrapper_end() {
+			get_template_part( 'woocommerce/wc-content-wrapper-end' );
 		}
 
 		/**
@@ -578,7 +603,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 						do_action( 'ocean_before_archive_product_title' );
 
-						echo '<li class="title"><a href="'. esc_url( get_the_permalink() ) .'">'. get_the_title() .'</a></li>';
+						echo '<li class="title">';
+							do_action( 'ocean_before_archive_product_title_inner' );
+							echo '<a href="'. esc_url( get_the_permalink() ) .'">'. get_the_title() .'</a>';
+							do_action( 'ocean_after_archive_product_title_inner' );
+						echo '</li>';
 
 						do_action( 'ocean_after_archive_product_title' );
 
@@ -905,6 +934,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		}
 
 		/**
+		 * Remove the category description under the page title on taxonomy.
+		 *
+		 * @since 1.4.7
+		 */
+		public static function post_subheading( $return ) {
+			if ( is_woocommerce() && is_product_taxonomy() ) {
+				$return = false;
+			}
+			return $return;
+		}
+
+		/**
 		 * Disables the next/previous links if disabled via the customizer.
 		 *
 		 * @since 1.0.0
@@ -1087,7 +1128,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				return $items;
 			}
 
-			// Return items if "hide if empty cart" is checked or is in the Elementor edit mode (to avoid error)
+			// Return items if "hide if empty cart" is checked
 			if ( true == get_theme_mod( 'ocean_woo_menu_icon_hide_if_empty', false )
 				&& ! WC()->cart->cart_contents_count > 0 ) {
 				return $items;
