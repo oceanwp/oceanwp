@@ -1,5 +1,20 @@
 # OceanWP Changelog
 
+### *2017.11.16* - 1.4.7
+* **Added** - New select template field in Header > Menu to allow you to select a template created in Theme Panel > My Library to replace the navigation. Perfect to use the Nav Menu widget of Elementor Pro with any header styles.
+* **Added** - OceanWP is now 100% WooCommerce compatible, so you can use external plugins as WC Vendors without problems.
+* **Added** - Polish translation, thank you very much to Rafał Stępień.
+* **Tweak** - The product taxonomy description are now above the products instead of under the page title.
+* **Tweak** - Cart icon on mobile view, now the cart will be exactly the same as desktop view.
+* **Fixed** - Top bar menu under header.
+* **Fixed** - Issue on the Checkout if third party plugins add new fields.
+* **Fixed** - WooCommerce gallery images if not shop page.
+* **Fixed** - WooCommerce select issue on the cart page.
+* **Fixed** - WooCommerce table issue on the checkout page.
+* **Fixed** - Social icons on the sidebar mobile menu style.
+* **Fixed** - Color control issue with WordPress 4.9.
+* **Deleted** - Custom JS textarea, moved in Ocean Extra.
+
 ### *2017.11.03* - 1.4.6
 * **Fixed** - Icon issue with the Sidebar mobile menu style.
 

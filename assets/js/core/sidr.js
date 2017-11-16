@@ -106,11 +106,17 @@ function oceanwpMobileMenu( event ) {
 
 		} );
 
-        // Replace sidr class in the icons classes
-		$j( '#sidr i[class*="sidr-class-icon"]' ).each( function() {
-			var old_class = $j( this ).attr( 'class' ),
-				old_class = old_class.replace( 'sidr-class-icon-', 'icon-' );
-			$j( this ).attr( 'class', old_class );
+        // Replace Font Awesome icons class
+		$j( '#sidr [class*="sidr-class-fa"]' ).attr( 'class', function( i, c ) {
+			c = c.replace( 'sidr-class-fa', 'fa' );
+			c = c.replace( 'sidr-class-fa-', 'fa-' );
+			return c;
+		} );
+
+        // Replace Simple Line Icons class
+		$j( '#sidr [class*="sidr-class-icon"]' ).attr( 'class', function( i, c ) {
+			c = c.replace( 'sidr-class-icon-', 'icon-' );
+			return c;
 		} );
 
 		// Close sidr when clicking on close button

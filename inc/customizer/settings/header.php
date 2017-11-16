@@ -130,6 +130,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'priority' 				=> 10,
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
+			        'max'   => 200,
 			        'step'  => 1,
 			    ),
 				'active_callback' 		=> 'oceanwp_cac_hasnt_header_styles',
@@ -2115,6 +2116,24 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'priority' 			=> 10,
 				'panel' 			=> $panel,
 			) );
+
+			/**
+			 * Custom Nav Template
+			 */
+			$wp_customize->add_setting( 'ocean_custom_nav_template', array(
+				'default'           	=> '0',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_custom_nav_template', array(
+				'label'	   				=> esc_html__( 'Select Template', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose a template created in Theme Panel > My Library to replace the navigation.', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_header_menu',
+				'settings' 				=> 'ocean_custom_nav_template',
+				'priority' 				=> 10,
+				'choices' 				=> oceanwp_customizer_helpers( 'library' ),
+			) ) );
 
 			/**
 			 * Menu Top Level Dropdown Icon

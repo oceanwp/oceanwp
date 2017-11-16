@@ -124,6 +124,26 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 		}
 
 		/**
+		 * Get the nav ID.
+		 *
+		 * @since 1.4.7
+		 */
+		public static function get_nav_id() {
+
+			// Template
+			$id = oceanwp_custom_nav_template();
+
+			// If template is selected
+			if ( ! empty( $id ) ) {
+				return $id;
+			}
+
+			// Return
+			return false;
+			
+		}
+
+		/**
 		 * Get the social menu ID.
 		 *
 		 * @since 1.4.0
@@ -197,55 +217,62 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 				$vertical_header_id 		= self::get_vertical_header_id();
 				$vertical_header_bottom_id 	= self::get_vertical_header_bottom_id();
 				$header_id 					= self::get_header_id();
+				$nav_id 					= self::get_nav_id();
 				$social_menu_id 			= self::get_social_menu_id();
 				$footer_id 					= self::get_footer_id();
 				$error_id 					= self::get_error_page_id();
 
 				// Enqueue top bar content css file
 				if ( false != $topbar_id ) {
-					$topbar_css = new Elementor\Post_CSS_File( $topbar_id );
+					$topbar_css = new \Elementor\Post_CSS_File( $topbar_id );
 					$topbar_css->enqueue();
 				}
 
 				// Enqueue top bar social alternative css file
 				if ( false != $topbar_social_alt_id ) {
-					$topbar_social_alt_css = new Elementor\Post_CSS_File( $topbar_social_alt_id );
+					$topbar_social_alt_css = new \Elementor\Post_CSS_File( $topbar_social_alt_id );
 					$topbar_social_alt_css->enqueue();
 				}
 
 				// Enqueue vertical header css file
 				if ( false != $vertical_header_id ) {
-					$vertical_header_css = new Elementor\Post_CSS_File( $vertical_header_id );
+					$vertical_header_css = new \Elementor\Post_CSS_File( $vertical_header_id );
 					$vertical_header_css->enqueue();
 				}
 
 				// Enqueue vertical header bottom css file
 				if ( false != $vertical_header_bottom_id ) {
-					$vertical_header_bottom_css = new Elementor\Post_CSS_File( $vertical_header_bottom_id );
+					$vertical_header_bottom_css = new \Elementor\Post_CSS_File( $vertical_header_bottom_id );
 					$vertical_header_bottom_css->enqueue();
 				}
 
 				// Enqueue header css file
 				if ( false != $header_id ) {
-					$header_css = new Elementor\Post_CSS_File( $header_id );
+					$header_css = new \Elementor\Post_CSS_File( $header_id );
 					$header_css->enqueue();
+				}
+
+				// Enqueue nav css file
+				if ( false != $nav_id ) {
+					$nav_css = new \Elementor\Post_CSS_File( $nav_id );
+					$nav_css->enqueue();
 				}
 
 				// Enqueue social menu css file
 				if ( false != $social_menu_id ) {
-					$social_menu_css = new Elementor\Post_CSS_File( $social_menu_id );
+					$social_menu_css = new \Elementor\Post_CSS_File( $social_menu_id );
 					$social_menu_css->enqueue();
 				}
 
 				// Enqueue footer css file
 				if ( false != $footer_id ) {
-					$footer_css = new Elementor\Post_CSS_File( $footer_id );
+					$footer_css = new \Elementor\Post_CSS_File( $footer_id );
 					$footer_css->enqueue();
 				}
 
 				// Enqueue 404 error page css file
 				if ( false != $error_id ) {
-					$error_css = new Elementor\Post_CSS_File( $error_id );
+					$error_css = new \Elementor\Post_CSS_File( $error_id );
 					$error_css->enqueue();
 				}
 
@@ -296,6 +323,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 		 */
 		public static function get_header_content() {
 			echo Elementor\Plugin::instance()->frontend->get_builder_content_for_display( self::get_header_id() );
+		}
+
+		/**
+		 * Prints the nav content.
+		 *
+		 * @since 1.4.7
+		 */
+		public static function get_nav_content() {
+			echo Elementor\Plugin::instance()->frontend->get_builder_content_for_display( self::get_nav_id() );
 		}
 
 		/**

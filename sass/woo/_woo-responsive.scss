@@ -164,7 +164,7 @@ Woo Responsive
 			width: 100%;
 			margin-bottom: 20px;
 		}
-		table.shop_table td.product-price {
+		&.woocommerce-cart table.shop_table td.product-price {
 			display: none !important;
 		}
 	}
@@ -179,7 +179,7 @@ Woo Responsive
 	.woocommerce-message:before {
 		display: none;
 	}
-	.woocommerce table.shop_table {
+	.woocommerce-cart .woocommerce table.shop_table {
 		thead {
 			display: none;
 		}

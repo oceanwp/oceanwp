@@ -242,3 +242,69 @@ if ( ! function_exists( 'oceanwp_error_page_content' ) ) {
 	}
 
 }
+
+/**
+ * Minify JS
+ *
+ * @since 1.1.0
+ */
+if ( ! function_exists( 'oceanwp_minify_js' ) ) {
+
+	function oceanwp_minify_js( $js = '' ) {
+
+		// Return if no JS
+		if ( ! $js ) return;
+
+		if ( OCEAN_EXTRA_ACTIVE
+			&& class_exists( 'Ocean_Extra_JSMin' ) ) {
+
+			$script = Ocean_Extra_JSMin::minify( $js );
+
+		} else {
+
+			$replace = array(
+				'#\'([^\n\']*?)/\*([^\n\']*)\'#' 	=> "'\1/'+\'\'+'*\2'", 	// remove comments from ' strings
+				'#\"([^\n\"]*?)/\*([^\n\"]*)\"#' 	=> '"\1/"+\'\'+"*\2"', 	// remove comments from " strings
+				'#/\*.*?\*/#s'            			=> "",      			// strip C style comments
+				'#[\r\n]+#'               			=> "\n",    			// remove blank lines and \r's
+				'#\n([ \t]*//.*?\n)*#s'   			=> "\n",    			// strip line comments (whole line only)
+				'#([^\\])//([^\'"\n]*)\n#s' 		=> "\\1\n", 			// strip line comments
+				'#\n\s+#'                 			=> "\n",    			// strip excess whitespace
+				'#\s+\n#'                 			=> "\n",    			// strip excess whitespace
+				'#(//[^\n]*\n)#s'         			=> "\\1\n", 			// extra line feed after any comments left
+				'#/([\'"])\+\'\'\+([\'"])\*#' 		=> "/*" 				// restore comments in strings
+			);
+
+			$search = array_keys( $replace );
+			$script = preg_replace( $search, $replace, $js );
+
+			$replace = array(
+				"&&\n" => "&&",
+				"||\n" => "||",
+				"(\n"  => "(",
+				")\n"  => ")",
+				"[\n"  => "[",
+				"]\n"  => "]",
+				"+\n"  => "+",
+				",\n"  => ",",
+				"?\n"  => "?",
+				":\n"  => ":",
+				";\n"  => ";",
+				"{\n"  => "{",
+				"\n]"  => "]",
+				"\n)"  => ")",
+				"\n}"  => "}",
+				"\n\n" => "\n"
+			);
+
+			$search = array_keys( $replace );
+			$script = str_replace( $search, $replace, $script );
+
+		}
+
+		// Return minified JS
+		return trim( $script );
+
+	}
+
+}

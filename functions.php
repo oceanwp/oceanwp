@@ -90,9 +90,6 @@ class OCEANWP_Theme_Class {
 			// Minify the WP custom CSS because WordPress doesn't do it by default
 			add_filter( 'wp_get_custom_css', array( 'OCEANWP_Theme_Class', 'minify_custom_css' ) );
 
-			// Outputs custom JS to the footer
-			add_action( 'wp_footer', array( 'OCEANWP_Theme_Class', 'custom_js' ), 9999 );
-
 			// Alter the search posts per page
 			add_action( 'pre_get_posts', array( 'OCEANWP_Theme_Class', 'search_posts_per_page' ) );
 
@@ -479,7 +476,7 @@ class OCEANWP_Theme_Class {
 			'sidrSide'       		=> $sidr_side,
 			'sidrDropdownTarget'    => $sidr_target,
 			'verticalHeaderTarget'  => $vh_target,
-			'customSelects'         => '.woocommerce-ordering .orderby, .cart-collaterals .cart_totals table select, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select',
+			'customSelects'         => '.woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select',
 		);
 
 		// WooCart
@@ -640,31 +637,6 @@ class OCEANWP_Theme_Class {
 	public static function minify_custom_css( $css ) {
 
 		return oceanwp_minify_css( $css );
-
-	}
-
-	/**
-	 * All theme functions hook into the oceanwp_footer_js filter for this function.
-	 *
-	 * @since 1.1.0
-	 */
-	public static function custom_js( $output = NULL ) {
-
-		// Add filter for adding custom js via other functions
-		$output = apply_filters( 'ocean_footer_js', $output );
-
-		// Minify and output JS in the wp_footer
-		if ( ! empty( $output ) ) { ?>
-
-			<script type="text/javascript">
-
-				/* OceanWP JS */
-				<?php echo oceanwp_minify_js( $output ); ?>
-
-			</script>
-
-		<?php
-		}
 
 	}
 

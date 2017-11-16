@@ -13,7 +13,6 @@
 #customize-control-ocean_medium_header_stick_menu,
 #customize-control-ocean_vertical_header_shadow,
 #customize-control-ocean_vertical_header_closed,
-#customize-control-ocean_menu_arrow_down,
 #customize-control-ocean_menu_arrow_side,
 #customize-control-ocean_menu_dropdown_top_border,
 #customize-control-ocean_menu_social,
@@ -64,6 +63,7 @@ input, select { margin: 0; padding: 5px 10px; }
 .customize-control select { height: 33px; line-height: 1; }
 
 /* Checkbox */
+.customize-control.customize-control-checkbox .customize-inside-control-row { margin-left: 0; padding-top: 0; padding-bottom: 0; }
 .customize-control-checkbox { position: relative; border: 1px solid #ccc; font-size: 11px; font-weight: 600; text-transform: uppercase; padding: 8px 10px; border-radius: 2px; margin-top:  20px; margin-bottom: -1px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .customize-control-checkbox label { padding: 0; margin: 0; }
 .customize-control-checkbox input[type=checkbox] { position: relative; width: 20px; height: 20px; margin: 0 6px 0 0; vertical-align: top; }

@@ -973,7 +973,7 @@
 }
 
 .woocommerce table.shop_table .product-remove {
-  text-align: center;
+  text-align: center !important;
 }
 
 .woocommerce table.shop_table tfoot td {
@@ -3979,7 +3979,7 @@ Woo Responsive
     width: 100%;
     margin-bottom: 20px;
   }
-  .woocommerce-page table.shop_table td.product-price {
+  .woocommerce-page.woocommerce-cart table.shop_table td.product-price {
     display: none !important;
   }
   .woocommerce-cart .cart-collaterals .cart_totals table td {
@@ -3991,43 +3991,43 @@ Woo Responsive
   .woocommerce-message:before {
     display: none;
   }
-  .woocommerce table.shop_table thead {
+  .woocommerce-cart .woocommerce table.shop_table thead {
     display: none;
   }
-  .woocommerce table.shop_table tbody th {
+  .woocommerce-cart .woocommerce table.shop_table tbody th {
     display: none;
   }
-  .woocommerce table.shop_table tr td {
+  .woocommerce-cart .woocommerce table.shop_table tr td {
     display: inline-block;
     width: 100%;
     text-align: right;
     clear: both;
   }
-  .woocommerce table.shop_table tr td:before {
+  .woocommerce-cart .woocommerce table.shop_table tr td:before {
     content: attr(data-title) ": ";
     font-weight: 600;
     float: left;
   }
-  .woocommerce table.shop_table tr td.product-remove:before, .woocommerce table.shop_table tr td.product-thumbnail:before {
+  .woocommerce-cart .woocommerce table.shop_table tr td.product-remove:before, .woocommerce-cart .woocommerce table.shop_table tr td.product-thumbnail:before {
     display: none;
   }
-  .woocommerce table.shop_table tr td.product-thumbnail {
+  .woocommerce-cart .woocommerce table.shop_table tr td.product-thumbnail {
     text-align: center;
   }
-  .woocommerce table.shop_table tr td.product-quantity .quantity {
+  .woocommerce-cart .woocommerce table.shop_table tr td.product-quantity .quantity {
     float: right;
   }
-  .woocommerce table.shop_table tr td.actions:before, .woocommerce table.shop_table tr td.download-actions:before {
+  .woocommerce-cart .woocommerce table.shop_table tr td.actions:before, .woocommerce-cart .woocommerce table.shop_table tr td.download-actions:before {
     display: none;
   }
-  .woocommerce table.shop_table tr td.download-actions .button {
+  .woocommerce-cart .woocommerce table.shop_table tr td.download-actions .button {
     display: block;
     text-align: center;
   }
-  .woocommerce table.shop_table.my_account_orders .order-actions {
+  .woocommerce-cart .woocommerce table.shop_table.my_account_orders .order-actions {
     text-align: right;
   }
-  .woocommerce table.shop_table.my_account_orders .order-actions:before {
+  .woocommerce-cart .woocommerce table.shop_table.my_account_orders .order-actions:before {
     display: none;
   }
 }

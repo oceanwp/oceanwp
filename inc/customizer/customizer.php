@@ -102,9 +102,6 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			// Move custom logo setting
 			$wp_customize->get_control( 'custom_logo' )->section 		= 'ocean_header_logo';
 
-			// Move custom css setting
-			$wp_customize->get_control( 'custom_css' )->section 		= 'ocean_custom_code_panel';
-
 		}
 
 		/**
@@ -127,7 +124,6 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 				'sidebar',
 				'footer-widgets',
 				'footer-bottom',
-				'custom-code',
 			);
 
 			foreach ( $files as $key ) {
