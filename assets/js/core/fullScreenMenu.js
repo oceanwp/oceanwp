@@ -20,7 +20,7 @@ function oceanwpFullScreenMenu() {
 	if ( $menuBar.length ) {
 
 		// Open menu function
-		function oceanwpFullScreenMenuOpen() {
+		var oceanwpFullScreenMenuOpen = function() {
 			$siteHeader.addClass( 'nav-open' );
 			$menuBar.addClass( 'exit' );
 			$customLogo.addClass( 'opened' );
@@ -33,7 +33,7 @@ function oceanwpFullScreenMenu() {
         }
 
 		// Close menu function
-		function oceanwpFullScreenMenuClose() {
+		var oceanwpFullScreenMenuClose = function() {
 			$siteHeader.removeClass( 'nav-open' );
 			$menuBar.removeClass( 'exit' );
 			$customLogo.removeClass( 'opened' );

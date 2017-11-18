@@ -10,19 +10,30 @@
 			    bottom: -30%;
 			    left: 0;
 			    content: '';
-			    width: 0;
+			    width: 100%;
 			    height: 2px;
+			    visibility: hidden;
+			    -moz-transform: scaleX(0);
+			    -webkit-transform: scaleX(0);
+			    transform: scaleX(0);
+			    transform-origin: bottom left;
 				@include transition( all .25s ease-out );
 			}
 		}
 
 		&:hover > span:after {
-			width: 100%;
+		    visibility: visible;
+		    -moz-transform: scaleX(1);
+		    -webkit-transform: scaleX(1);
+		    transform: scaleX(1);
 		}
 	}
 
 	&.sfHover > a.menu-link > span:after {
-		width: 100%;
+		visibility: visible;
+	    -moz-transform: scaleX(1);
+	    -webkit-transform: scaleX(1);
+	    transform: scaleX(1);
 	}
 
 }

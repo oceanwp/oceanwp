@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2017.11.18* - 1.4.8
+* **Fixed** - Issue with the mobile menu link on IOS 9.
+* **Fixed** - Issue on IOS with the Underline Form Left menu item effect.
+
 ### *2017.11.16* - 1.4.7
 * **Added** - New select template field in Header > Menu to allow you to select a template created in Theme Panel > My Library to replace the navigation. Perfect to use the Nav Menu widget of Elementor Pro with any header styles.
 * **Added** - OceanWP is now 100% WooCommerce compatible, so you can use external plugins as WC Vendors without problems.

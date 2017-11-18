@@ -4306,6 +4306,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   color: #555;
   padding-left: 15px;
   letter-spacing: 0.6px;
+  cursor: pointer;
 }
 
 #oceanwp-mobile-menu-icon a:first-child {
@@ -4807,18 +4808,31 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   bottom: -30%;
   left: 0;
   content: '';
-  width: 0;
+  width: 100%;
   height: 2px;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+      transform: scaleX(0);
+  -webkit-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+          transform-origin: bottom left;
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
 }
 
 .effect-one #site-navigation-wrap .dropdown-menu > li > a.menu-link:hover > span:after {
-  width: 100%;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+      transform: scaleX(1);
 }
 
 .effect-one #site-navigation-wrap .dropdown-menu > li.sfHover > a.menu-link > span:after {
-  width: 100%;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+      transform: scaleX(1);
 }
 
 .effect-two #site-navigation-wrap .dropdown-menu > li > a.menu-link > span {
@@ -8588,7 +8602,7 @@ a.sidr-class-toggle-sidr-close i {
 .sidr-class-middle-site-logo,
 .sidr #searchform-header-replace-close,
 .sidr #sidr-id-searchform-overlay,
-.sidr .nav-arrow,
+.sidr .sidr-class-nav-arrow,
 .sidr-class-sidebar-box,
 .sidr-class-mega-cat .sidr-class-dropdown-toggle,
 .sidr-class-mega-cat .sidr-class-megamenu,

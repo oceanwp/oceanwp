@@ -18,12 +18,14 @@ function oceanwpMobileMenu( event ) {
 
 		// Add sidr
 		$j( '.mobile-menu' ).sidr( {
-			name     : 'sidr',							// Name for the 'sidr'
-			source   : oceanwpLocalize.sidrSource,		// Override the source of the content
-			side     : oceanwpLocalize.sidrSide,     	// Accepts 'left' or 'right'
-			displace : oceanwpLocalize.sidrDisplace, 	// Displace the body content or not
-			speed    : 300,            					// Accepts standard jQuery effects speeds (i.e. fast, normal or milliseconds)
-			renaming : true,							// The ids and classes will be prepended with a prefix when loading existent content
+			name     : 'sidr',
+			source   : oceanwpLocalize.sidrSource,
+			side     : oceanwpLocalize.sidrSide,
+			displace : oceanwpLocalize.sidrDisplace,
+			speed    : 300,
+			renaming : true,
+			bind     : 'click',
+			
 			onOpen   : function onOpen() {
 
 				// Class of the custom opening button
