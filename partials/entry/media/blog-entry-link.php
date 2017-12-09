@@ -36,7 +36,10 @@ $img_args = array(
 );
 if ( oceanwp_get_schema_markup( 'image' ) ) {
 	$img_args['itemprop'] = 'image';
-} ?>
+}
+
+// Caption
+$caption = get_post( get_post_thumbnail_id() )->post_excerpt; ?>
 
 <div class="thumbnail">
 
@@ -69,9 +72,8 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 			// Display post thumbnail
 			the_post_thumbnail( $size, $img_args );
 
-		} ?>
+		}
 
-		<?php
 		// If overlay
 		if ( is_customize_preview()
 			|| true == get_theme_mod( 'ocean_blog_image_overlay', true ) ) { ?>
@@ -79,6 +81,15 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 		<?php } ?>
 
 	</a>
+
+	<?php
+	// Caption
+	if ( $caption ) { ?>
+		<div class="thumbnail-caption">
+			<?php echo esc_attr( $caption ); ?>
+		</div>
+	<?php
+	} ?>
 
 	<div class="link-entry clr">
 

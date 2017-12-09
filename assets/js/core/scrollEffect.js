@@ -29,10 +29,11 @@ function oceanwpScrollEffect() {
 					$adminbarHeight        	= oceanwpGetAdminbarHeight(),
 					$topbarHeight        	= oceanwpGetTopbarHeight(),
 					$stickyHeaderHeight    	= oceanwpGetStickyHeaderHeight(),
+					$offset    				= $adminbarHeight + $topbarHeight + $stickyHeaderHeight,
 				    $scrollPosition;
 
 				if ( $target.length && '' !== $hrefHash ) {
-					$scrollPosition     	= $target.offset().top - $adminbarHeight - $topbarHeight - $stickyHeaderHeight;
+					$scrollPosition     	= $target.offset().top - $offset;
 
 	                $j( 'html, body' ).stop().animate( {
 						 scrollTop: Math.round( $scrollPosition )
@@ -54,45 +55,62 @@ function oceanwpScrollEffect() {
 function oceanwpGetAdminbarHeight() {
 	"use strict"
 
-	var $adminbarHeight = 0;
+	var $offset 		= 0,
+	    $adminBar 		= $j( '#wpadminbar' );
 
-	if ( $j( '#wpadminbar' ).length ) {
-		$adminbarHeight = parseInt( $j( '#wpadminbar' ).outerHeight() );
+	if ( $adminBar.length ) {
+		$offset = $adminBar.outerHeight();
 	}
 
-	return $adminbarHeight;
+	return $offset;
 }
 
 // Top bar height
 function oceanwpGetTopbarHeight() {
 	"use strict"
 
-	var $topbarHeight = 0;
+	var $offset 		= 0,
+	    $stickyTopBar 	= $j( '#top-bar-wrap' );
 
-	if ( $j( '#top-bar-wrap' ).hasClass( 'oceanwp-top-bar-sticky' )
-		&& $j( '#top-bar-wrap' ).length ) {
-		$topbarHeight = parseInt( $j( '#top-bar-wrap' ).outerHeight() );
+	if ( $stickyTopBar.hasClass( 'top-bar-sticky' )
+		&& $stickyTopBar.length ) {
+		$offset = $stickyTopBar.outerHeight();
 	}
 
-	return $topbarHeight;
+	return $offset;
 }
 
 // Header height
 function oceanwpGetStickyHeaderHeight() {
 	"use strict"
 
-	var $stickyHeaderHeight = 0;
+	var $offset 		= 0,
+	    $stickyHeader 	= $j( '#site-header' );
 
-	if ( $j( '#site-header' ).hasClass( 'fixed-scroll' )
-		&& $j( '#site-header' ).length ) {
-		$stickyHeaderHeight = $j( '#site-header' ).attr( 'data-height' );
+	if ( ! $stickyHeader.length ) {
+		return;
+	}
+
+	if ( $stickyHeader.hasClass( 'fixed-scroll' ) ) {
+		$offset = $stickyHeader.data( 'height' );
 	}
 
 	if ( $window.width() <= 960
-		&& ! $j( '#site-header' ).hasClass( 'has-sticky-mobile' )
-		&& $j( '#site-header' ).length ) {
-		$stickyHeaderHeight = 0;
+		&& ! $stickyHeader.hasClass( 'has-sticky-mobile' ) ) {
+		$offset = $offset;
 	}
 
-	return $stickyHeaderHeight;
+	if ( $stickyHeader.hasClass( 'medium-header' ) ) {
+		if ( $j( '#site-header .bottom-header-wrap' ).hasClass( 'fixed-scroll' ) ) {
+			$offset = $j( '#site-header .bottom-header-wrap' ).outerHeight();
+		} else {
+			$offset = $j( '.is-sticky #site-header-inner' ).outerHeight();
+		}
+	}
+
+	if ( $stickyHeader.hasClass( 'vertical-header' ) ) {
+		$offset = $offset;
+	}
+
+	return $offset;
 }

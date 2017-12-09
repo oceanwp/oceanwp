@@ -107,6 +107,19 @@
 			}
 	    }
 	}
+
+	.alignleft,
+	.alignright,
+	.single-post.content-max-width .wp-block-image.alignleft,
+	.single-post.content-max-width .wp-block-image.alignright {
+		float: none;
+		margin: 0 auto;
+		padding: 0;
+
+		img {
+			margin: 0 auto;
+		}
+	}
 	
 }
 

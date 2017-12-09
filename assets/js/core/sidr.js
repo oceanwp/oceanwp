@@ -129,7 +129,7 @@ function oceanwpMobileMenu( event ) {
 		} );
 
 		// Close when clicking local scroll link
-		$j( 'a.sidr-class-menu-link[href*="#"]:not([href="#"])' ).on( 'click', function() {
+		$j( 'a.sidr-class-menu-link[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])' ).on( 'click', function() {
 			$j.sidr( 'close', 'sidr' );
 			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
 		} );

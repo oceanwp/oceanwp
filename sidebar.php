@@ -5,7 +5,7 @@
  * @package OceanWP WordPress theme
  */
 
- // Retunr if full width or full screen
+// Retunr if full width or full screen
 if ( in_array( oceanwp_post_layout(), array( 'full-screen', 'full-width' ) ) ) {
 	return;
 } ?>

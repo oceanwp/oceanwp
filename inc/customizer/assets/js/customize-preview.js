@@ -544,6 +544,23 @@
 			});
 		});
 
+		// Mobile Header Height
+		api( 'ocean_mobile_header_height', function( value ) {
+			value.bind( function( to ) {
+				var $child = $( '.customizer-ocean_mobile_header_height' );
+				if ( to ) {
+					var style = '<style class="customizer-ocean_mobile_header_height">@media only screen and (max-width: 959px) {#site-logo #site-logo-inner{height: ' + to + 'px;}#oceanwp-mobile-menu-icon a { line-height: ' + to + 'px; }</style>';
+					if ( $child.length ) {
+						$child.replaceWith( style );
+					} else {
+						$( 'head' ).append( style );
+					}
+				} else {
+					$child.remove();
+				}
+			} );
+		} );
+
 	    // Mobile menu icon
 		api('ocean_mobile_menu_open_icon', function( value ) {
 			value.bind( function( newval ) {
@@ -882,6 +899,23 @@
 			});
 		});
 
+		// Full width content max width
+		api( 'ocean_blog_single_content_width', function( value ) {
+			value.bind( function( to ) {
+				var $child = $( '.customizer-ocean_blog_single_content_width' );
+				if ( to ) {
+					var style = '<style class="customizer-ocean_blog_single_content_width">.single-post.content-max-width .thumbnail, .single-post.content-max-width .entry-header, .single-post.content-max-width ul.meta, .single-post.content-max-width .entry-content p, .single-post.content-max-width .entry-content h1, .single-post.content-max-width .entry-content h2, .single-post.content-max-width .entry-content h3, .single-post.content-max-width .entry-content h4, .single-post.content-max-width .entry-content h5, .single-post.content-max-width .entry-content h6, .single-post.content-max-width .wp-block-image, .single-post.content-max-width .wp-block-gallery, .single-post.content-max-width .wp-block-video, .single-post.content-max-width .wp-block-quote, .single-post.content-max-width .wp-block-text-columns, .single-post.content-max-width .entry-content ul, .single-post.content-max-width .entry-content ol, .single-post.content-max-width .wp-block-cover-text, .single-post.content-max-width .post-tags, .single-post.content-max-width .comments-area{max-width:' + to + 'px;} .single-post.content-max-width .wp-block-image.alignleft, .single-post.content-max-width .wp-block-image.alignright{max-width:'+ to / 2 +'px;} .single-post.content-max-width .wp-block-image.alignleft{margin-left: calc( 50% - '+ to / 2 +'px);} .single-post.content-max-width .wp-block-image.alignright{margin-right: calc( 50% - '+ to / 2 +'px);}</style>';
+					if ( $child.length ) {
+						$child.replaceWith( style );
+					} else {
+						$( 'head' ).append( style );
+					}
+				} else {
+					$child.remove();
+				}
+			} );
+		} );
+
 	/******** WooCommerce *********/
 
 		// Cart icon
@@ -1053,6 +1087,37 @@
 			});
 		});
 
+		// Infinite scroll spinners color
+		api( 'ocean_woo_infinite_scroll_spinners_color', function( value ) {
+			value.bind( function( to ) {
+				var $child = $( '.customizer-ocean_woo_infinite_scroll_spinners_color' );
+				if ( to ) {
+					var style = '<style class="customizer-ocean_woo_infinite_scroll_spinners_color">.woocommerce .loader-ellips__dot {background-color: ' + to + ';}</style>';
+					if ( $child.length ) {
+						$child.replaceWith( style );
+					} else {
+						$( 'head' ).append( style );
+					}
+				} else {
+					$child.remove();
+				}
+			} );
+		} );
+
+		// Infinite scroll last text
+		api('ocean_woo_infinite_scroll_last_text', function( value ) {
+			value.bind( function( newval ) {
+				$( '.woocommerce .infinite-scroll-last' ).text( newval );
+			});
+		});
+
+		// Infinite scroll error text
+		api('ocean_woo_infinite_scroll_error_text', function( value ) {
+			value.bind( function( newval ) {
+				$( '.woocommerce .infinite-scroll-error' ).text( newval );
+			});
+		});
+
 		// Tabs Position
 		api('ocean_woo_product_meta_tabs_position', function( value ) {
 			value.bind( function( newval ) {
@@ -1157,6 +1222,18 @@
 						mobileWidgets.removeClass( v );
 					});
 					mobileWidgets.addClass( 'mobile-'+ newval +'-col' );
+				}
+			});
+		});
+
+		// Add container class
+		api('ocean_add_footer_container', function( value ) {
+			value.bind( function( newval ) {
+				var $inner = $( '#footer-widgets .footer-widgets-inner' );
+				if ( false == newval ) {
+					$inner.removeClass( 'container' );
+				} else {
+					$inner.addClass( 'container' );
 				}
 			});
 		});

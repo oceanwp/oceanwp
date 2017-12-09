@@ -2260,13 +2260,14 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'ul.meta li a:hover',
 				'.dropcap',
 				'.single nav.post-navigation .nav-links .title',
-				'.related-post-title a:hover',
-				'#wp-calendar caption',
-				'.contact-info-widget i',
-				'.custom-links-widget .oceanwp-custom-links li a:hover',
-				'.custom-links-widget .oceanwp-custom-links li a:hover:before',
-				'.posts-thumbnails-widget li a:hover',
-				'.social-widget li.oceanwp-email a:hover',
+				'body .related-post-title a:hover',
+				'body #wp-calendar caption',
+				'body .contact-info-widget.default i',
+				'body .contact-info-widget.big-icons i',
+				'body .custom-links-widget .oceanwp-custom-links li a:hover',
+				'body .custom-links-widget .oceanwp-custom-links li a:hover:before',
+				'body .posts-thumbnails-widget li a:hover',
+				'body .social-widget li.oceanwp-email a:hover',
 				'.comment-author .comment-meta .comment-reply-link',
 				'#respond #cancel-comment-reply-link:hover',
 				'#footer-widgets .footer-box a:hover',
@@ -2289,6 +2290,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'.thumbnail:hover i',
 				'.post-quote-content',
 				'.omw-modal .omw-close-modal',
+				'body .contact-info-widget.big-icons li:hover i',
 			) );
 
 			// Borders
@@ -2301,6 +2303,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'.oceanwp-newsletter-form-wrap input[type="email"]:focus',
 				'.social-widget li.oceanwp-email a:hover',
 				'#respond #cancel-comment-reply-link:hover',
+				'body .contact-info-widget.big-icons li:hover i',
 				'#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"]:focus'
 			) );
 
@@ -2384,11 +2387,12 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 				'.single-post .entry-title',
 
-				'.single-post .entry-share',
-				'.single-post .entry-share ul li a',
+				'.single .entry-share-wrap .entry-share',
+				'.single .entry-share',
+				'.single .entry-share ul li a',
 
-				'.single-post nav.post-navigation',
-				'.single-post nav.post-navigation .nav-links .nav-previous',
+				'.single nav.post-navigation',
+				'.single nav.post-navigation .nav-links .nav-previous',
 
 				'#author-bio',
 				'#author-bio .author-bio-avatar',
@@ -2408,15 +2412,16 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				.page-links span',
 
 				// Widgets
-				'#wp-calendar caption,
-				#wp-calendar th,
-				#wp-calendar tbody',
+				'body #wp-calendar caption,
+				body #wp-calendar th,
+				body #wp-calendar tbody',
 
-				'.contact-info-widget i',
+				'body .contact-info-widget.default i,
+				body .contact-info-widget.big-icons i',
 
-				'.posts-thumbnails-widget li',
+				'body .posts-thumbnails-widget li',
 
-				'.tagcloud a'
+				'body .tagcloud a'
 
 			) );
 
@@ -2551,21 +2556,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Define css var
 			$css = '';
-			$content_padding_css = '';
-			$tablet_content_padding_css = '';
-			$mobile_content_padding_css = '';
-			$page_header_padding_css = '';
-			$tablet_page_header_padding_css = '';
-			$mobile_page_header_padding_css = '';
-			$input_padding_css = '';
-			$tablet_input_padding_css = '';
-			$mobile_input_padding_css = '';
-			$input_border_width_css = '';
-			$tablet_input_border_width_css = '';
-			$mobile_input_border_width_css = '';
-			$theme_button_padding_css = '';
-			$tablet_theme_button_padding_css = '';
-			$mobile_theme_button_padding_css = '';
 
 			// Get primary color arrays
 			$texts       	= self::primary_color_arrays( 'texts' );
@@ -2615,7 +2605,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Get site background color
 			if ( ! empty( $background_color ) && '#ffffff' != $background_color ) {
-				$css .= 'body, .has-parallax-footer #main{background-color:'. $background_color .';}';
+				$css .= 'body, .has-parallax-footer:not(.separate-layout) #main{background-color:'. $background_color .';}';
 			}
 
 			// Get site background image
@@ -2698,52 +2688,22 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				$css .= '@media only screen and (min-width: 960px){ .widget-area, .content-left-sidebar .widget-area{width:'. $sidebar_width .'%;} }';
 			}
 
-			// Content top padding
-			if ( ! empty( $content_top_padding ) ) {
-				$content_padding_css .= 'padding-top:'. $content_top_padding .'px;';
+			// Content padding
+			if ( isset( $content_top_padding ) && '' != $content_top_padding
+				|| isset( $content_bottom_padding ) && '' != $content_bottom_padding ) {
+				$css .= '#main #content-wrap, .separate-layout #main #content-wrap{padding:'. oceanwp_spacing_css( $content_top_padding, '', $content_bottom_padding, '' ) .'}';
 			}
 
-			// Content bottom padding
-			if ( ! empty( $content_bottom_padding ) ) {
-				$content_padding_css .= 'padding-bottom:'. $content_bottom_padding .'px;';
+			// Tablet content padding
+			if ( isset( $tablet_content_top_padding ) && '' != $tablet_content_top_padding
+				|| isset( $tablet_content_bottom_padding ) && '' != $tablet_content_bottom_padding ) {
+				$css .= '@media (max-width: 768px){#main #content-wrap, .separate-layout #main #content-wrap{padding:'. oceanwp_spacing_css( $tablet_content_top_padding, '', $tablet_content_bottom_padding, '' ) .'}}';
 			}
 
-			// Content padding css
-			if ( ! empty( $content_top_padding )
-				|| ! empty( $content_bottom_padding ) ) {
-				$css .= '#main #content-wrap, .separate-layout #main #content-wrap{'. $content_padding_css .'}';
-			}
-
-			// Tablet content top padding
-			if ( ! empty( $tablet_content_top_padding ) ) {
-				$tablet_content_padding_css .= 'padding-top:'. $tablet_content_top_padding .'px;';
-			}
-
-			// Tablet content bottom padding
-			if ( ! empty( $tablet_content_bottom_padding ) ) {
-				$tablet_content_padding_css .= 'padding-bottom:'. $tablet_content_bottom_padding .'px;';
-			}
-
-			// Tablet content padding css
-			if ( ! empty( $tablet_content_top_padding )
-				|| ! empty( $tablet_content_bottom_padding ) ) {
-				$css .= '@media (max-width: 768px){#main #content-wrap, .separate-layout #main #content-wrap{'. $tablet_content_padding_css .'}}';
-			}
-
-			// Mobile content top padding
-			if ( ! empty( $mobile_content_top_padding ) ) {
-				$mobile_content_padding_css .= 'padding-top:'. $mobile_content_top_padding .'px;';
-			}
-
-			// Mobile content bottom padding
-			if ( ! empty( $mobile_content_bottom_padding ) ) {
-				$mobile_content_padding_css .= 'padding-bottom:'. $mobile_content_bottom_padding .'px;';
-			}
-
-			// Mobile content padding css
-			if ( ! empty( $mobile_content_top_padding )
-				|| ! empty( $mobile_content_bottom_padding ) ) {
-				$css .= '@media (max-width: 480px){#main #content-wrap, .separate-layout #main #content-wrap{'. $mobile_content_padding_css .'}}';
+			// Mobile content padding
+			if ( isset( $mobile_content_top_padding ) && '' != $mobile_content_top_padding
+				|| isset( $mobile_content_bottom_padding ) && '' != $mobile_content_bottom_padding ) {
+				$css .= '@media (max-width: 480px){#main #content-wrap, .separate-layout #main #content-wrap{padding:'. oceanwp_spacing_css( $mobile_content_top_padding, '', $mobile_content_bottom_padding, '' ) .'}}';
 			}
 
 			// Title/breadcrumb position
@@ -2751,52 +2711,22 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				$css .= '.background-image-page-header .page-header-inner, .background-image-page-header .site-breadcrumbs{text-align: '. $title_breadcrumb_position .'}';
 			}
 
-			// Page header top padding
-			if ( ! empty( $page_header_top_padding ) && '34' != $page_header_top_padding ) {
-				$page_header_padding_css .= 'padding-top:'. $page_header_top_padding .'px;';
+			// Page header padding
+			if ( isset( $page_header_top_padding ) && '34' != $page_header_top_padding && '' != $page_header_top_padding
+				|| isset( $page_header_bottom_padding ) && '34' != $page_header_bottom_padding && '' != $page_header_bottom_padding ) {
+				$css .= '.page-header, .has-transparent-header .page-header{padding:'. oceanwp_spacing_css( $page_header_top_padding, '', $page_header_bottom_padding, '' ) .'}';
 			}
 
-			// Page header bottom padding
-			if ( ! empty( $page_header_bottom_padding ) && '34' != $page_header_bottom_padding ) {
-				$page_header_padding_css .= 'padding-bottom:'. $page_header_bottom_padding .'px;';
+			// Tablet page header padding
+			if ( isset( $tablet_ph_top_padding ) && '' != $tablet_ph_top_padding
+				|| isset( $tablet_ph_bottom_padding ) && '' != $tablet_ph_bottom_padding ) {
+				$css .= '@media (max-width: 768px){.page-header, .has-transparent-header .page-header{padding:'. oceanwp_spacing_css( $tablet_ph_top_padding, '', $tablet_ph_bottom_padding, '' ) .'}}';
 			}
 
-			// Page header padding css
-			if ( ! empty( $page_header_top_padding ) && '34' != $page_header_top_padding
-				|| ! empty( $page_header_bottom_padding ) && '34' != $page_header_bottom_padding ) {
-				$css .= '.page-header, .has-transparent-header .page-header{'. $page_header_padding_css .'}';
-			}
-
-			// Tablet page header top padding
-			if ( ! empty( $tablet_ph_top_padding ) ) {
-				$tablet_page_header_padding_css .= 'padding-top:'. $tablet_ph_top_padding .'px;';
-			}
-
-			// Tablet page header bottom padding
-			if ( ! empty( $tablet_ph_bottom_padding ) ) {
-				$tablet_page_header_padding_css .= 'padding-bottom:'. $tablet_ph_bottom_padding .'px;';
-			}
-
-			// Tablet page header padding css
-			if ( ! empty( $tablet_ph_top_padding )
-				|| ! empty( $tablet_ph_bottom_padding ) ) {
-				$css .= '@media (max-width: 768px){.page-header, .has-transparent-header .page-header{'. $tablet_page_header_padding_css .'}}';
-			}
-
-			// Mobile page header top padding
-			if ( ! empty( $mobile_ph_top_padding ) ) {
-				$mobile_page_header_padding_css .= 'padding-top:'. $mobile_ph_top_padding .'px;';
-			}
-
-			// Mobile page header bottom padding
-			if ( ! empty( $mobile_ph_bottom_padding ) ) {
-				$mobile_page_header_padding_css .= 'padding-bottom:'. $mobile_ph_bottom_padding .'px;';
-			}
-
-			// Mobile page header padding css
-			if ( ! empty( $mobile_ph_top_padding )
-				|| ! empty( $mobile_ph_bottom_padding ) ) {
-				$css .= '@media (max-width: 480px){.page-header, .has-transparent-header .page-header{'. $mobile_page_header_padding_css .'}}';
+			// Mobile page header padding
+			if ( isset( $mobile_ph_top_padding ) && '' != $mobile_ph_top_padding
+				|| isset( $mobile_ph_bottom_padding ) && '' != $mobile_ph_bottom_padding ) {
+				$css .= '@media (max-width: 480px){.page-header, .has-transparent-header .page-header{padding:'. oceanwp_spacing_css( $mobile_ph_top_padding, '', $mobile_ph_bottom_padding, '' ) .'}}';
 			}
 
 			// Page header color
@@ -2924,88 +2854,28 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				$css .= 'label{color:'. $label_color .';}';
 			}
 
-			// Input top padding
-			if ( ! empty( $input_top_padding ) && '6' != $input_top_padding ) {
-				$input_padding_css .= 'padding-top:'. $input_top_padding .'px;';
+			// Input padding
+			if ( isset( $input_top_padding ) && '6' != $input_top_padding && '' != $input_top_padding
+				|| isset( $input_right_padding ) && '12' != $input_right_padding && '' != $input_right_padding
+				|| isset( $input_bottom_padding ) && '6' != $input_bottom_padding && '' != $input_bottom_padding
+				|| isset( $input_left_padding ) && '12' != $input_left_padding && '' != $input_left_padding ) {
+				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{padding:'. oceanwp_spacing_css( $input_top_padding, $input_right_padding, $input_bottom_padding, $input_left_padding ) .'}';
 			}
 
-			// Input right padding
-			if ( ! empty( $input_right_padding ) && '12' != $input_right_padding ) {
-				$input_padding_css .= 'padding-right:'. $input_right_padding .'px;';
+			// Tablet input padding
+			if ( isset( $tablet_input_top_padding ) && '' != $tablet_input_top_padding
+				|| isset( $tablet_input_right_padding ) && '' != $tablet_input_right_padding
+				|| isset( $tablet_input_bottom_padding ) && '' != $tablet_input_bottom_padding
+				|| isset( $tablet_input_left_padding ) && '' != $tablet_input_left_padding ) {
+				$css .= '@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{padding:'. oceanwp_spacing_css( $tablet_input_top_padding, $tablet_input_right_padding, $tablet_input_bottom_padding, $tablet_input_left_padding ) .'}}';
 			}
 
-			// Input bottom padding
-			if ( ! empty( $input_bottom_padding ) && '6' != $input_bottom_padding ) {
-				$input_padding_css .= 'padding-bottom:'. $input_bottom_padding .'px;';
-			}
-
-			// Input left padding
-			if ( ! empty( $input_left_padding ) && '12' != $input_left_padding ) {
-				$input_padding_css .= 'padding-left:'. $input_left_padding .'px;';
-			}
-
-			// Input padding css
-			if ( ! empty( $input_top_padding ) && '6' != $input_top_padding
-				|| ! empty( $input_right_padding ) && '12' != $input_right_padding
-				|| ! empty( $input_bottom_padding ) && '6' != $input_bottom_padding
-				|| ! empty( $input_left_padding ) && '12' != $input_left_padding ) {
-				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{'. $input_padding_css .'}';
-			}
-
-			// Tablet input top padding
-			if ( ! empty( $tablet_input_top_padding ) ) {
-				$tablet_input_padding_css .= 'padding-top:'. $tablet_input_top_padding .'px;';
-			}
-
-			// Tablet input right padding
-			if ( ! empty( $tablet_input_right_padding ) ) {
-				$tablet_input_padding_css .= 'padding-right:'. $tablet_input_right_padding .'px;';
-			}
-
-			// Tablet input bottom padding
-			if ( ! empty( $tablet_input_bottom_padding ) ) {
-				$tablet_input_padding_css .= 'padding-bottom:'. $tablet_input_bottom_padding .'px;';
-			}
-
-			// Tablet input left padding
-			if ( ! empty( $tablet_input_left_padding ) ) {
-				$tablet_input_padding_css .= 'padding-left:'. $tablet_input_left_padding .'px;';
-			}
-
-			// Tablet input padding css
-			if ( ! empty( $tablet_input_top_padding )
-				|| ! empty( $tablet_input_right_padding )
-				|| ! empty( $tablet_input_bottom_padding )
-				|| ! empty( $tablet_input_left_padding ) ) {
-				$css .= '@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{'. $tablet_input_padding_css .'}}';
-			}
-
-			// Mobile input top padding
-			if ( ! empty( $mobile_input_top_padding ) ) {
-				$mobile_input_padding_css .= 'padding-top:'. $mobile_input_top_padding .'px;';
-			}
-
-			// Mobile input right padding
-			if ( ! empty( $mobile_input_right_padding ) ) {
-				$mobile_input_padding_css .= 'padding-right:'. $mobile_input_right_padding .'px;';
-			}
-
-			// Mobile input bottom padding
-			if ( ! empty( $mobile_input_bottom_padding ) ) {
-				$mobile_input_padding_css .= 'padding-bottom:'. $mobile_input_bottom_padding .'px;';
-			}
-
-			// Mobile input left padding
-			if ( ! empty( $mobile_input_left_padding ) ) {
-				$mobile_input_padding_css .= 'padding-left:'. $mobile_input_left_padding .'px;';
-			}
-
-			// Mobile input padding css
-			if ( ! empty( $mobile_input_top_padding )
-				|| ! empty( $mobile_input_right_padding )
-				|| ! empty( $mobile_input_bottom_padding )
-				|| ! empty( $mobile_input_left_padding ) ) {
-				$css .= '@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{'. $mobile_input_padding_css .'}}';
+			// Mobile input padding
+			if ( isset( $mobile_input_top_padding ) && '' != $mobile_input_top_padding
+				|| isset( $mobile_input_right_padding ) && '' != $mobile_input_right_padding
+				|| isset( $mobile_input_bottom_padding ) && '' != $mobile_input_bottom_padding
+				|| isset( $mobile_input_left_padding ) && '' != $mobile_input_left_padding ) {
+				$css .= '@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{padding:'. oceanwp_spacing_css( $mobile_input_top_padding, $mobile_input_right_padding, $mobile_input_bottom_padding, $mobile_input_left_padding ) .'}}';
 			}
 
 			// Input font size
@@ -3013,88 +2883,28 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{font-size:'. $input_font_size .'px;}';
 			}
 
-			// Input top border width
-			if ( ! empty( $input_top_border_width ) && '1' != $input_top_border_width ) {
-				$input_border_width_css .= 'border-top-width:'. $input_top_border_width .'px;';
+			// Input border width border width
+			if ( isset( $input_top_border_width ) && '1' != $input_top_border_width && '' != $input_top_border_width
+				|| isset( $input_right_border_width ) && '1' != $input_right_border_width && '' != $input_right_border_width
+				|| isset( $input_bottom_border_width ) && '1' != $input_bottom_border_width && '' != $input_bottom_border_width
+				|| isset( $input_left_border_width ) && '1' != $input_left_border_width && '' != $input_left_border_width ) {
+				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{border-width:'. oceanwp_spacing_css( $input_top_border_width, $input_right_border_width, $input_bottom_border_width, $input_left_border_width ) .'}';
 			}
 
-			// Input right border width
-			if ( ! empty( $input_right_border_width ) && '1' != $input_right_border_width ) {
-				$input_border_width_css .= 'border-right-width:'. $input_right_border_width .'px;';
+			// Tablet input border width border width
+			if ( isset( $tablet_input_top_bw ) && '' != $tablet_input_top_bw
+				|| isset( $tablet_input_right_bw ) && '' != $tablet_input_right_bw
+				|| isset( $tablet_input_bottom_bw ) && '' != $tablet_input_bottom_bw
+				|| isset( $tablet_input_left_bw ) && '' != $tablet_input_left_bw ) {
+				$css .= '@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{border-width:'. oceanwp_spacing_css( $tablet_input_top_bw, $tablet_input_right_bw, $tablet_input_bottom_bw, $tablet_input_left_bw ) .'}}';
 			}
 
-			// Input bottom border width
-			if ( ! empty( $input_bottom_border_width ) && '1' != $input_bottom_border_width ) {
-				$input_border_width_css .= 'border-bottom-width:'. $input_bottom_border_width .'px;';
-			}
-
-			// Input left border width
-			if ( ! empty( $input_left_border_width ) && '1' != $input_left_border_width ) {
-				$input_border_width_css .= 'border-left-width:'. $input_left_border_width .'px;';
-			}
-
-			// Input border width css
-			if ( ! empty( $input_top_border_width ) && '1' != $input_top_border_width
-				|| ! empty( $input_right_border_width ) && '1' != $input_right_border_width
-				|| ! empty( $input_bottom_border_width ) && '1' != $input_bottom_border_width
-				|| ! empty( $input_left_border_width ) && '1' != $input_left_border_width ) {
-				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{'. $input_border_width_css .'}';
-			}
-
-			// Tablet input top border width
-			if ( ! empty( $tablet_input_top_bw ) ) {
-				$tablet_input_border_width_css .= 'border-top-width:'. $tablet_input_top_bw .'px;';
-			}
-
-			// Tablet input right border width
-			if ( ! empty( $tablet_input_right_bw ) ) {
-				$tablet_input_border_width_css .= 'border-right-width:'. $tablet_input_right_bw .'px;';
-			}
-
-			// Tablet input bottom border width
-			if ( ! empty( $tablet_input_bottom_bw ) ) {
-				$tablet_input_border_width_css .= 'border-bottom-width:'. $tablet_input_bottom_bw .'px;';
-			}
-
-			// Tablet input left border width
-			if ( ! empty( $tablet_input_left_bw ) ) {
-				$tablet_input_border_width_css .= 'border-left-width:'. $tablet_input_left_bw .'px;';
-			}
-
-			// Tablet input border width css
-			if ( ! empty( $tablet_input_top_bw )
-				|| ! empty( $tablet_input_right_bw )
-				|| ! empty( $tablet_input_bottom_bw )
-				|| ! empty( $tablet_input_left_bw ) ) {
-				$css .= '@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{'. $tablet_input_border_width_css .'}}';
-			}
-
-			// Mobile input top border width
-			if ( ! empty( $mobile_input_top_bw ) ) {
-				$mobile_input_border_width_css .= 'border-top-width:'. $mobile_input_top_bw .'px;';
-			}
-
-			// Mobile input right border width
-			if ( ! empty( $mobile_input_right_bw ) ) {
-				$mobile_input_border_width_css .= 'border-right-width:'. $mobile_input_right_bw .'px;';
-			}
-
-			// Mobile input bottom border width
-			if ( ! empty( $mobile_input_bottom_bw ) ) {
-				$mobile_input_border_width_css .= 'border-bottom-width:'. $mobile_input_bottom_bw .'px;';
-			}
-
-			// Mobile input left border width
-			if ( ! empty( $mobile_input_left_bw ) ) {
-				$mobile_input_border_width_css .= 'border-left-width:'. $mobile_input_left_bw .'px;';
-			}
-
-			// Mobile input border width css
-			if ( ! empty( $mobile_input_top_bw )
-				|| ! empty( $mobile_input_right_bw )
-				|| ! empty( $mobile_input_bottom_bw )
-				|| ! empty( $mobile_input_left_bw ) ) {
-				$css .= '@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{'. $mobile_input_border_width_css .'}}';
+			// Mobile input border width border width
+			if ( isset( $mobile_input_top_bw ) && '' != $mobile_input_top_bw
+				|| isset( $mobile_input_right_bw ) && '' != $mobile_input_right_bw
+				|| isset( $mobile_input_bottom_bw ) && '' != $mobile_input_bottom_bw
+				|| isset( $mobile_input_left_bw ) && '' != $mobile_input_left_bw ) {
+				$css .= '@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{border-width:'. oceanwp_spacing_css( $mobile_input_top_bw, $mobile_input_right_bw, $mobile_input_bottom_bw, $mobile_input_left_bw ) .'}}';
 			}
 
 			// Input border radius
@@ -3122,88 +2932,28 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{color:'. $input_color .';}';
 			}
 
-			// Theme buttons top padding
-			if ( ! empty( $theme_button_top_padding ) && '14' != $theme_button_top_padding ) {
-				$theme_button_padding_css .= 'padding-top:'. $theme_button_top_padding .'px;';
+			// Theme buttons padding
+			if ( isset( $theme_button_top_padding ) && '14' != $theme_button_top_padding && '' != $theme_button_top_padding
+				|| isset( $theme_button_right_padding ) && '20' != $theme_button_right_padding && '' != $theme_button_right_padding
+				|| isset( $theme_button_bottom_padding ) && '14' != $theme_button_bottom_padding && '' != $theme_button_bottom_padding
+				|| isset( $theme_button_left_padding ) && '20' != $theme_button_left_padding && '' != $theme_button_left_padding ) {
+				$css .= '.theme-button,input[type="submit"],button{padding:'. oceanwp_spacing_css( $theme_button_top_padding, $theme_button_right_padding, $theme_button_bottom_padding, $theme_button_left_padding ) .'}';
 			}
 
-			// Theme buttons right padding
-			if ( ! empty( $theme_button_right_padding ) && '20' != $theme_button_right_padding ) {
-				$theme_button_padding_css .= 'padding-right:'. $theme_button_right_padding .'px;';
+			// Tablet theme buttons padding
+			if ( isset( $tablet_tb_top_padding ) && '' != $tablet_tb_top_padding
+				|| isset( $tablet_tb_right_padding ) && '' != $tablet_tb_right_padding
+				|| isset( $tablet_tb_bottom_padding ) && '' != $tablet_tb_bottom_padding
+				|| isset( $tablet_tb_left_padding ) && '' != $tablet_tb_left_padding ) {
+				$css .= '@media (max-width: 768px){.theme-button,input[type="submit"],button{padding:'. oceanwp_spacing_css( $tablet_tb_top_padding, $tablet_tb_right_padding, $tablet_tb_bottom_padding, $tablet_tb_left_padding ) .'}}';
 			}
 
-			// Theme buttons bottom padding
-			if ( ! empty( $theme_button_bottom_padding ) && '14' != $theme_button_bottom_padding ) {
-				$theme_button_padding_css .= 'padding-bottom:'. $theme_button_bottom_padding .'px;';
-			}
-
-			// Theme buttons left padding
-			if ( ! empty( $theme_button_left_padding ) && '20' != $theme_button_left_padding ) {
-				$theme_button_padding_css .= 'padding-left:'. $theme_button_left_padding .'px;';
-			}
-
-			// Theme buttons padding css
-			if ( ! empty( $theme_button_top_padding ) && '14' != $theme_button_top_padding
-				|| ! empty( $theme_button_right_padding ) && '20' != $theme_button_right_padding
-				|| ! empty( $theme_button_bottom_padding ) && '14' != $theme_button_bottom_padding
-				|| ! empty( $theme_button_left_padding ) && '20' != $theme_button_left_padding ) {
-				$css .= '.theme-button,input[type="submit"],button{'. $theme_button_padding_css .'}';
-			}
-
-			// Tablet Theme buttons top padding
-			if ( ! empty( $tablet_tb_top_padding ) ) {
-				$tablet_theme_button_padding_css .= 'padding-top:'. $tablet_tb_top_padding .'px;';
-			}
-
-			// Tablet Theme buttons right padding
-			if ( ! empty( $tablet_tb_right_padding ) ) {
-				$tablet_theme_button_padding_css .= 'padding-right:'. $tablet_tb_right_padding .'px;';
-			}
-
-			// Tablet Theme buttons bottom padding
-			if ( ! empty( $tablet_tb_bottom_padding ) ) {
-				$tablet_theme_button_padding_css .= 'padding-bottom:'. $tablet_tb_bottom_padding .'px;';
-			}
-
-			// Tablet Theme buttons left padding
-			if ( ! empty( $tablet_tb_left_padding ) ) {
-				$tablet_theme_button_padding_css .= 'padding-left:'. $tablet_tb_left_padding .'px;';
-			}
-
-			// Tablet Theme buttons padding css
-			if ( ! empty( $tablet_tb_top_padding )
-				|| ! empty( $tablet_tb_right_padding )
-				|| ! empty( $tablet_tb_bottom_padding )
-				|| ! empty( $tablet_tb_left_padding ) ) {
-				$css .= '@media (max-width: 768px){.theme-button,input[type="submit"],button{'. $tablet_theme_button_padding_css .'}}';
-			}
-
-			// Mobile Theme buttons top padding
-			if ( ! empty( $mobile_tb_top_padding ) ) {
-				$mobile_theme_button_padding_css .= 'padding-top:'. $mobile_tb_top_padding .'px;';
-			}
-
-			// Mobile Theme buttons right padding
-			if ( ! empty( $mobile_tb_right_padding ) ) {
-				$mobile_theme_button_padding_css .= 'padding-right:'. $mobile_tb_right_padding .'px;';
-			}
-
-			// Mobile Theme buttons bottom padding
-			if ( ! empty( $mobile_tb_bottom_padding ) ) {
-				$mobile_theme_button_padding_css .= 'padding-bottom:'. $mobile_tb_bottom_padding .'px;';
-			}
-
-			// Mobile Theme buttons left padding
-			if ( ! empty( $mobile_tb_left_padding ) ) {
-				$mobile_theme_button_padding_css .= 'padding-left:'. $mobile_tb_left_padding .'px;';
-			}
-
-			// Mobile Theme buttons padding css
-			if ( ! empty( $mobile_tb_top_padding )
-				|| ! empty( $mobile_tb_right_padding )
-				|| ! empty( $mobile_tb_bottom_padding )
-				|| ! empty( $mobile_tb_left_padding ) ) {
-				$css .= '@media (max-width: 480px){.theme-button,input[type="submit"],button{'. $mobile_theme_button_padding_css .'}}';
+			// Mobile theme buttons padding
+			if ( isset( $mobile_tb_top_padding ) && '' != $mobile_tb_top_padding
+				|| isset( $mobile_tb_right_padding ) && '' != $mobile_tb_right_padding
+				|| isset( $mobile_tb_bottom_padding ) && '' != $mobile_tb_bottom_padding
+				|| isset( $mobile_tb_left_padding ) && '' != $mobile_tb_left_padding ) {
+				$css .= '@media (max-width: 480px){.theme-button,input[type="submit"],button{padding:'. oceanwp_spacing_css( $mobile_tb_top_padding, $mobile_tb_right_padding, $mobile_tb_bottom_padding, $mobile_tb_left_padding ) .'}}';
 			}
 
 			// Theme buttons border radius

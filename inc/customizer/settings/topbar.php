@@ -601,95 +601,29 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 
 			// Define css var
 			$css = '';
-			$padding_css = '';
-			$tablet_padding_css = '';
-			$mobile_padding_css = '';
-			$social_padding_css = '';
-			$social_tablet_padding_css = '';
-			$social_mobile_padding_css = '';
 
-			// Top bar top padding
-			if ( ! empty( $top_padding ) && '8' != $top_padding ) {
-				$padding_css .= 'padding-top:'. $top_padding .'px;';
+			// Top bar padding
+			if ( isset( $top_padding ) && '8' != $top_padding && '' != $top_padding
+				|| isset( $right_padding ) && '0' != $right_padding && '' != $right_padding
+				|| isset( $bottom_padding ) && '8' != $bottom_padding && '' != $bottom_padding
+				|| isset( $left_padding ) && '0' != $left_padding && '' != $left_padding ) {
+				$css .= '#top-bar{padding:'. oceanwp_spacing_css( $top_padding, $right_padding, $bottom_padding, $left_padding ) .'}';
 			}
 
-			// Top bar right padding
-			if ( ! empty( $right_padding ) && '0' != $right_padding ) {
-				$padding_css .= 'padding-right:'. $right_padding .'px;';
+			// Tablet top bar padding
+			if ( isset( $tablet_top_padding ) && '' != $tablet_top_padding
+				|| isset( $tablet_right_padding ) && '' != $tablet_right_padding
+				|| isset( $tablet_bottom_padding ) && '' != $tablet_bottom_padding
+				|| isset( $tablet_left_padding ) && '' != $tablet_left_padding ) {
+				$css .= '@media (max-width: 768px){#top-bar{padding:'. oceanwp_spacing_css( $tablet_top_padding, $tablet_right_padding, $tablet_bottom_padding, $tablet_left_padding ) .'}}';
 			}
 
-			// Top bar bottom padding
-			if ( ! empty( $bottom_padding ) && '8' != $bottom_padding ) {
-				$padding_css .= 'padding-bottom:'. $bottom_padding .'px;';
-			}
-
-			// Top bar left padding
-			if ( ! empty( $left_padding ) && '0' != $left_padding ) {
-				$padding_css .= 'padding-left:'. $left_padding .'px;';
-			}
-
-			// Top bar padding css
-			if ( ! empty( $top_padding ) && '8' != $top_padding
-				|| ! empty( $right_padding ) && '0' != $right_padding
-				|| ! empty( $bottom_padding ) && '8' != $bottom_padding
-				|| ! empty( $left_padding ) && '0' != $left_padding ) {
-				$css .= '#top-bar{'. $padding_css .'}';
-			}
-
-			// Tablet top bar top padding
-			if ( ! empty( $tablet_top_padding ) ) {
-				$tablet_padding_css .= 'padding-top:'. $tablet_top_padding .'px;';
-			}
-
-			// Tablet top bar right padding
-			if ( ! empty( $tablet_right_padding ) ) {
-				$tablet_padding_css .= 'padding-right:'. $tablet_right_padding .'px;';
-			}
-
-			// Tablet top bar bottom padding
-			if ( ! empty( $tablet_bottom_padding ) ) {
-				$tablet_padding_css .= 'padding-bottom:'. $tablet_bottom_padding .'px;';
-			}
-
-			// Tablet top bar left padding
-			if ( ! empty( $tablet_left_padding ) ) {
-				$tablet_padding_css .= 'padding-left:'. $tablet_left_padding .'px;';
-			}
-
-			// Tablet top bar padding css
-			if ( ! empty( $tablet_top_padding )
-				|| ! empty( $tablet_right_padding )
-				|| ! empty( $tablet_bottom_padding )
-				|| ! empty( $tablet_left_padding ) ) {
-				$css .= '@media (max-width: 768px){#top-bar{'. $tablet_padding_css .'}}';
-			}
-
-			// Mobile top bar top padding
-			if ( ! empty( $mobile_top_padding ) ) {
-				$mobile_padding_css .= 'padding-top:'. $mobile_top_padding .'px;';
-			}
-
-			// Mobile top bar right padding
-			if ( ! empty( $mobile_right_padding ) ) {
-				$mobile_padding_css .= 'padding-right:'. $mobile_right_padding .'px;';
-			}
-
-			// Mobile top bar bottom padding
-			if ( ! empty( $mobile_bottom_padding ) ) {
-				$mobile_padding_css .= 'padding-bottom:'. $mobile_bottom_padding .'px;';
-			}
-
-			// Mobile top bar left padding
-			if ( ! empty( $mobile_left_padding ) ) {
-				$mobile_padding_css .= 'padding-left:'. $mobile_left_padding .'px;';
-			}
-
-			// Mobile top bar padding css
-			if ( ! empty( $mobile_top_padding )
-				|| ! empty( $mobile_right_padding )
-				|| ! empty( $mobile_bottom_padding )
-				|| ! empty( $mobile_left_padding ) ) {
-				$css .= '@media (max-width: 480px){#top-bar{'. $mobile_padding_css .'}}';
+			// Mobile top bar padding
+			if ( isset( $mobile_top_padding ) && '' != $mobile_top_padding
+				|| isset( $mobile_right_padding ) && '' != $mobile_right_padding
+				|| isset( $mobile_bottom_padding ) && '' != $mobile_bottom_padding
+				|| isset( $mobile_left_padding ) && '' != $mobile_left_padding ) {
+				$css .= '@media (max-width: 480px){#top-bar{padding:'. oceanwp_spacing_css( $mobile_top_padding, $mobile_right_padding, $mobile_bottom_padding, $mobile_left_padding ) .'}}';
 			}
 
 			// Top bar background color
@@ -732,52 +666,22 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 				$css .= '@media (max-width: 480px){#top-bar-social li a{font-size:'. $social_mobile_font_size .'px;}}';
 			}
 
-			// Add top bar social right padding
-			if ( ! empty( $social_right_padding ) && '6' != $social_right_padding ) {
-				$social_padding_css .= 'padding-right:'. $social_right_padding .'px;';
+			// Top bar padding
+			if ( isset( $social_right_padding ) && '6' != $social_right_padding && '' != $social_right_padding
+				|| isset( $social_left_padding ) && '6' != $social_left_padding && '' != $social_left_padding ) {
+				$css .= '#top-bar-social li a{padding:'. oceanwp_spacing_css( '', $social_right_padding, '', $social_left_padding ) .'}';
 			}
 
-			// Add top bar social left padding
-			if ( ! empty( $social_left_padding ) && '6' != $social_left_padding ) {
-				$social_padding_css .= 'padding-left:'. $social_left_padding .'px;';
+			// Tablet top bar padding
+			if ( isset( $social_tablet_right_padding ) && '' != $social_tablet_right_padding
+				|| isset( $social_tablet_left_padding ) && '' != $social_tablet_left_padding ) {
+				$css .= '@media (max-width: 768px){#top-bar-social li a{padding:'. oceanwp_spacing_css( '', $social_tablet_right_padding, '', $social_tablet_left_padding ) .'}}';
 			}
 
-			// Top bar social padding css
-			if ( ! empty( $social_right_padding ) && '6' != $social_right_padding
-				|| ! empty( $social_left_padding ) && '6' != $social_left_padding ) {
-				$css .= '#top-bar-social li a{'. $social_padding_css .'}';
-			}
-
-			// Tablet top bar social right padding
-			if ( ! empty( $social_tablet_right_padding ) ) {
-				$social_tablet_padding_css .= 'padding-right:'. $social_tablet_right_padding .'px;';
-			}
-
-			// Tablet top bar social left padding
-			if ( ! empty( $social_tablet_left_padding ) ) {
-				$social_tablet_padding_css .= 'padding-left:'. $social_tablet_left_padding .'px;';
-			}
-
-			// Tablet top bar social padding css
-			if ( ! empty( $social_tablet_right_padding )
-				|| ! empty( $social_tablet_left_padding ) ) {
-				$css .= '@media (max-width: 768px){#top-bar-social li a{'. $social_tablet_padding_css .'}}';
-			}
-
-			// Mobile top bar social right padding
-			if ( ! empty( $social_mobile_right_padding ) ) {
-				$social_mobile_padding_css .= 'padding-right:'. $social_mobile_right_padding .'px;';
-			}
-
-			// Mobile top bar social left padding
-			if ( ! empty( $social_mobile_left_padding ) ) {
-				$social_mobile_padding_css .= 'padding-left:'. $social_mobile_left_padding .'px;';
-			}
-
-			// Mobile top bar social padding css
-			if ( ! empty( $social_mobile_right_padding )
-				|| ! empty( $social_mobile_left_padding ) ) {
-				$css .= '@media (max-width: 480px){#top-bar-social li a{'. $social_mobile_padding_css .'}}';
+			// Mobile top bar padding
+			if ( isset( $social_mobile_right_padding ) && '' != $social_mobile_right_padding
+				|| isset( $social_mobile_left_padding ) && '' != $social_mobile_left_padding ) {
+				$css .= '@media (max-width: 480px){#top-bar-social li a{padding:'. oceanwp_spacing_css( '', $social_mobile_right_padding, '', $social_mobile_left_padding ) .'}}';
 			}
 
 			// Top bar social link color

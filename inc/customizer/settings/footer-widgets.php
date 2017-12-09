@@ -178,6 +178,24 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Footer Widgets Add Container
+			 */
+			$wp_customize->add_setting( 'ocean_add_footer_container', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> true,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_add_footer_container', array(
+				'label'	   				=> esc_html__( 'Add Container', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> $section,
+				'settings' 				=> 'ocean_add_footer_container',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_footer_widgets',
+			) ) );
+
+			/**
 			 * Footer Widgets Padding
 			 */
 			$wp_customize->add_setting( 'ocean_footer_top_padding', array(
@@ -376,98 +394,29 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 
 			// Define css var
 			$css = '';
-			$padding_css = '';
-			$tablet_padding_css = '';
-			$mobile_padding_css = '';
-
-			// DECREPITATED Footer padding
-			$footer_padding = get_theme_mod( 'ocean_footer_padding' );
-			if ( ! empty( $footer_padding ) ) {
-				$css .= '#footer-widgets{padding:'. $footer_padding .';}';
+			
+			// Footer padding
+			if ( isset( $footer_top_padding ) && '30' != $footer_top_padding && '' != $footer_top_padding
+				|| isset( $footer_right_padding ) && '0' != $footer_right_padding && '' != $footer_right_padding
+				|| isset( $footer_bottom_padding ) && '30' != $footer_bottom_padding && '' != $footer_bottom_padding
+				|| isset( $footer_left_padding ) && '0' != $footer_left_padding && '' != $footer_left_padding ) {
+				$css .= '#footer-widgets{padding:'. oceanwp_spacing_css( $footer_top_padding, $footer_right_padding, $footer_bottom_padding, $footer_left_padding ) .'}';
 			}
 
-			// Footer top padding
-			if ( ! empty( $footer_top_padding ) && '30' != $footer_top_padding ) {
-				$padding_css .= 'padding-top:'. $footer_top_padding .'px;';
+			// Tablet footer padding
+			if ( isset( $tablet_footer_top_padding ) && '' != $tablet_footer_top_padding
+				|| isset( $tablet_footer_right_padding ) && '' != $tablet_footer_right_padding
+				|| isset( $tablet_footer_bottom_padding ) && '' != $tablet_footer_bottom_padding
+				|| isset( $tablet_footer_left_padding ) && '' != $tablet_footer_left_padding ) {
+				$css .= '@media (max-width: 768px){#footer-widgets{padding:'. oceanwp_spacing_css( $tablet_footer_top_padding, $tablet_footer_right_padding, $tablet_footer_bottom_padding, $tablet_footer_left_padding ) .'}}';
 			}
 
-			// Footer right padding
-			if ( ! empty( $footer_right_padding ) && '0' != $footer_right_padding ) {
-				$padding_css .= 'padding-right:'. $footer_right_padding .'px;';
-			}
-
-			// Footer bottom padding
-			if ( ! empty( $footer_bottom_padding ) && '30' != $footer_bottom_padding ) {
-				$padding_css .= 'padding-bottom:'. $footer_bottom_padding .'px;';
-			}
-
-			// Footer left padding
-			if ( ! empty( $footer_left_padding ) && '0' != $footer_left_padding ) {
-				$padding_css .= 'padding-left:'. $footer_left_padding .'px;';
-			}
-
-			// Footer padding css
-			if ( ! empty( $footer_top_padding ) && '30' != $footer_top_padding
-				|| ! empty( $footer_right_padding ) && '0' != $footer_right_padding
-				|| ! empty( $footer_bottom_padding ) && '30' != $footer_bottom_padding
-				|| ! empty( $footer_left_padding ) && '0' != $footer_left_padding ) {
-				$css .= '#footer-widgets{'. $padding_css .'}';
-			}
-
-			// Tablet footer top padding
-			if ( ! empty( $tablet_footer_top_padding ) ) {
-				$tablet_padding_css .= 'padding-top:'. $tablet_footer_top_padding .'px;';
-			}
-
-			// Tablet footer right padding
-			if ( ! empty( $tablet_footer_right_padding ) ) {
-				$tablet_padding_css .= 'padding-right:'. $tablet_footer_right_padding .'px;';
-			}
-
-			// Tablet footer bottom padding
-			if ( ! empty( $tablet_footer_bottom_padding ) ) {
-				$tablet_padding_css .= 'padding-bottom:'. $tablet_footer_bottom_padding .'px;';
-			}
-
-			// Tablet footer left padding
-			if ( ! empty( $tablet_footer_left_padding ) ) {
-				$tablet_padding_css .= 'padding-left:'. $tablet_footer_left_padding .'px;';
-			}
-
-			// Tablet footer padding css
-			if ( ! empty( $tablet_footer_top_padding )
-				|| ! empty( $tablet_footer_right_padding )
-				|| ! empty( $tablet_footer_bottom_padding )
-				|| ! empty( $tablet_footer_left_padding ) ) {
-				$css .= '@media (max-width: 768px){#footer-widgets{'. $tablet_padding_css .'}}';
-			}
-
-			// Mobile footer top padding
-			if ( ! empty( $mobile_footer_top_padding ) ) {
-				$mobile_padding_css .= 'padding-top:'. $mobile_footer_top_padding .'px;';
-			}
-
-			// Mobile footer right padding
-			if ( ! empty( $mobile_footer_right_padding ) ) {
-				$mobile_padding_css .= 'padding-right:'. $mobile_footer_right_padding .'px;';
-			}
-
-			// Mobile footer bottom padding
-			if ( ! empty( $mobile_footer_bottom_padding ) ) {
-				$mobile_padding_css .= 'padding-bottom:'. $mobile_footer_bottom_padding .'px;';
-			}
-
-			// Mobile footer left padding
-			if ( ! empty( $mobile_footer_left_padding ) ) {
-				$mobile_padding_css .= 'padding-left:'. $mobile_footer_left_padding .'px;';
-			}
-
-			// Mobile footer padding css
-			if ( ! empty( $mobile_footer_top_padding )
-				|| ! empty( $mobile_footer_right_padding )
-				|| ! empty( $mobile_footer_bottom_padding )
-				|| ! empty( $mobile_footer_left_padding ) ) {
-				$css .= '@media (max-width: 480px){#footer-widgets{'. $mobile_padding_css .'}}';
+			// Mobile footer padding
+			if ( isset( $mobile_footer_top_padding ) && '' != $mobile_footer_top_padding
+				|| isset( $mobile_footer_right_padding ) && '' != $mobile_footer_right_padding
+				|| isset( $mobile_footer_bottom_padding ) && '' != $mobile_footer_bottom_padding
+				|| isset( $mobile_footer_left_padding ) && '' != $mobile_footer_left_padding ) {
+				$css .= '@media (max-width: 480px){#footer-widgets{padding:'. oceanwp_spacing_css( $mobile_footer_top_padding, $mobile_footer_right_padding, $mobile_footer_bottom_padding, $mobile_footer_left_padding ) .'}}';
 			}
 
 			// Footer background

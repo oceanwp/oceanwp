@@ -115,6 +115,12 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			$classes[] = 'content-'. $post_layout;
 		}
 
+		// If full width and has content width
+		if ( 'full-width' == $post_layout
+			&& '0' != get_theme_mod( 'ocean_blog_single_content_width', '700' ) ) {
+			$classes[] = 'content-max-width';
+		}
+
 		// Both sidebars layout style
 		if ( 'both-sidebars' == $post_layout ) {
 			$classes[] = oceanwp_both_sidebars_style();
@@ -3286,6 +3292,34 @@ if ( ! function_exists( 'oceanwp_theme_branding' ) ) {
 }
 
 /**
+ * Return padding/margin values for customizer
+ *
+ * @since 1.4.9
+ */
+if ( ! function_exists( 'oceanwp_spacing_css' ) ) {
+
+	function oceanwp_spacing_css( $top, $right, $bottom, $left ) {
+
+		// Add px and 0 if no value
+		$s_top 		= ( isset( $top ) && '' !== $top ) ? absint( $top ) . 'px ' : '0px ';
+		$s_right	= ( isset( $right ) && '' !== $right ) ? absint( $right ) . 'px ' : '0px ';
+		$s_bottom 	= ( isset( $bottom ) && '' !== $bottom ) ? absint( $bottom ) . 'px ' : '0px ';
+		$s_left 	= ( isset( $left ) && '' !== $left ) ? absint( $left ) . 'px' : '0px';
+		
+		// Return one value if it is the same on every inputs
+		if ( ( absint( $s_top ) === absint( $s_right ) )
+			&& ( absint( $s_right ) === absint( $s_bottom ) )
+			&& ( absint( $s_bottom ) === absint( $s_left ) ) ) {
+			return $s_left;
+		}
+		
+		// Return
+		return $s_top . $s_right . $s_bottom . $s_left;
+	}
+
+}
+
+/**
  * Translation support
  *
  * @since 1.3.7
@@ -3382,6 +3416,8 @@ if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
 			'ocean_woo_menu_icon_custom_link' 		=> '',
 			'ocean_blog_infinite_scroll_last_text' 	=> '',
 			'ocean_blog_infinite_scroll_error_text' => '',
+			'ocean_woo_infinite_scroll_last_text' 	=> '',
+			'ocean_woo_infinite_scroll_error_text' 	=> '',
 		) );
 
 	}
@@ -4002,6 +4038,33 @@ if ( ! function_exists( 'oceanwp_error_page_template_content' ) ) {
 
 		// Apply filters and return content
 		return apply_filters( 'ocean_error_page_template_content', $content );
+
+	}
+
+}
+
+/**
+ * Default color picker palettes
+ *
+ * @since 1.4.9
+ */
+if ( ! function_exists( 'oceanwp_default_color_palettes' ) ) {
+
+	function oceanwp_default_color_palettes() {
+
+		$palettes = array(
+			'#000000',
+			'#ffffff',
+			'#dd3333',
+			'#dd9933',
+			'#eeee22',
+			'#81d742',
+			'#1e73be',
+			'#8224e3',
+		);
+
+		// Apply filters and return
+		return apply_filters( 'ocean_default_color_palettes', $palettes );
 
 	}
 

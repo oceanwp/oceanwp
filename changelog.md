@@ -1,5 +1,23 @@
 # OceanWP Changelog
 
+### *2017.12.09* - 1.4.9
+* **Added** - New field in the Mobile Menu section of the customizer to allow you to add a custom header height in tablet and mobile view.
+* **Added** - Ability to add caption for the featured posts images.
+* **Added** - Filter "ocean_default_color_palettes", to allow you to change the default color palettes of the color options in the customizer.
+* **Added** - New checkbox field "Add container" in the Footer Widget section of the customizer to allow you to remove the footer container.
+* **Added** - Compatibility with the new Gutenberg alignment: Align Wide and Align Full.
+* **Added** - New option in the Single Post section of the customizer to control or disable the content max width in full width layout for the new single post style.
+* **Added** - Infinite scrolling for the Shop and taxonomies pages, you just need to select it via the WooCommerce > Archives section of the customizer.
+* **Added** - New section in the Typography section of the customizer to allow you to change the product price typography.
+* **Tweak** - Better styling of the single post when you use the full width layout (same design as Gutenberg).
+* **Fixed** - Issue with the 0 number which is not taken into account in the customizer fields.
+* **Fixed** - Z-index issue with the Full Screen header style.
+* **Fixed** - Issue with the Max Width and Max Height fields in Header > Logo.
+* **Fixed** - Anchor links issue if a custom mobile menu is used.
+* **Fixed** - Mobile logo issue if you use a custom breakpoint.
+* **Fixed** - Issue with a custom background color when using the parallax footer effect.
+* **Fixed** - Issue with anchor links and the medium header style.
+
 ### *2017.11.18* - 1.4.8
 * **Fixed** - Issue with the mobile menu link on IOS 9.
 * **Fixed** - Issue on IOS with the Underline Form Left menu item effect.

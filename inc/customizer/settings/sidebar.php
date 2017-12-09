@@ -350,100 +350,29 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 
 			// Define css var
 			$css = '';
-			$sidebar_padding_css = '';
-			$tablet_sidebar_padding_css = '';
-			$mobile_sidebar_padding_css = '';
-			$widgets_padding_css = '';
-			$tablet_widgets_padding_css = '';
-			$mobile_widgets_padding_css = '';
 
-			// Sidebar background
-			if ( ! empty( $sidebar_bg ) ) {
-				$css .= '.widget-area{background-color:'. $sidebar_bg .';}';
+			// Sidebar padding
+			if ( isset( $sidebar_top_padding ) && '0' != $sidebar_top_padding && '' != $sidebar_top_padding
+				|| isset( $sidebar_right_padding ) && '0' != $sidebar_right_padding && '' != $sidebar_right_padding
+				|| isset( $sidebar_bottom_padding ) && '0' != $sidebar_bottom_padding && '' != $sidebar_bottom_padding
+				|| isset( $sidebar_left_padding ) && '30' != $sidebar_left_padding && '' != $sidebar_left_padding ) {
+				$css .= '.widget-area{padding:'. oceanwp_spacing_css( $sidebar_top_padding, $sidebar_right_padding, $sidebar_bottom_padding, $sidebar_left_padding ) .'}';
 			}
 
-			// Sidebar top padding
-			if ( ! empty( $sidebar_top_padding ) && '0' != $sidebar_top_padding ) {
-				$sidebar_padding_css .= 'padding-top:'. $sidebar_top_padding .'px;';
+			// Tablet sidebar padding
+			if ( isset( $tablet_sidebar_top_padding ) && '' != $tablet_sidebar_top_padding
+				|| isset( $tablet_sidebar_right_padding ) && '' != $tablet_sidebar_right_padding
+				|| isset( $tablet_sidebar_bottom_padding ) && '' != $tablet_sidebar_bottom_padding
+				|| isset( $tablet_sidebar_left_padding ) && '' != $tablet_sidebar_left_padding ) {
+				$css .= '@media (max-width: 768px){.widget-area{padding:'. oceanwp_spacing_css( $tablet_sidebar_top_padding, $tablet_sidebar_right_padding, $tablet_sidebar_bottom_padding, $tablet_sidebar_left_padding ) .'}}';
 			}
 
-			// Sidebar right padding
-			if ( ! empty( $sidebar_right_padding ) && '0' != $sidebar_right_padding ) {
-				$sidebar_padding_css .= 'padding-right:'. $sidebar_right_padding .'px;';
-			}
-
-			// Sidebar bottom padding
-			if ( ! empty( $sidebar_bottom_padding ) && '0' != $sidebar_bottom_padding ) {
-				$sidebar_padding_css .= 'padding-bottom:'. $sidebar_bottom_padding .'px;';
-			}
-
-			// Sidebar left padding
-			if ( ! empty( $sidebar_left_padding ) && '30' != $sidebar_left_padding ) {
-				$sidebar_padding_css .= 'padding-left:'. $sidebar_left_padding .'px;';
-			}
-
-			// Sidebar padding css
-			if ( ! empty( $sidebar_top_padding ) && '0' != $sidebar_top_padding
-				|| ! empty( $sidebar_right_padding ) && '0' != $sidebar_right_padding
-				|| ! empty( $sidebar_bottom_padding ) && '0' != $sidebar_bottom_padding
-				|| ! empty( $sidebar_left_padding ) && '30' != $sidebar_left_padding ) {
-				$css .= '.widget-area{'. $sidebar_padding_css .'}';
-			}
-
-			// Tablet sidebar top padding
-			if ( ! empty( $tablet_sidebar_top_padding ) ) {
-				$tablet_sidebar_padding_css .= 'padding-top:'. $tablet_sidebar_top_padding .'px;';
-			}
-
-			// Tablet sidebar right padding
-			if ( ! empty( $tablet_sidebar_right_padding ) ) {
-				$tablet_sidebar_padding_css .= 'padding-right:'. $tablet_sidebar_right_padding .'px;';
-			}
-
-			// Tablet sidebar bottom padding
-			if ( ! empty( $tablet_sidebar_bottom_padding ) ) {
-				$tablet_sidebar_padding_css .= 'padding-bottom:'. $tablet_sidebar_bottom_padding .'px;';
-			}
-
-			// Tablet sidebar left padding
-			if ( ! empty( $tablet_sidebar_left_padding ) ) {
-				$tablet_sidebar_padding_css .= 'padding-left:'. $tablet_sidebar_left_padding .'px;';
-			}
-
-			// Tablet sidebar padding css
-			if ( ! empty( $tablet_sidebar_top_padding )
-				|| ! empty( $tablet_sidebar_right_padding )
-				|| ! empty( $tablet_sidebar_bottom_padding )
-				|| ! empty( $tablet_sidebar_left_padding ) ) {
-				$css .= '@media (max-width: 768px){.widget-area{'. $tablet_sidebar_padding_css .'}}';
-			}
-
-			// Mobile sidebar top padding
-			if ( ! empty( $mobile_sidebar_top_padding ) ) {
-				$mobile_sidebar_padding_css .= 'padding-top:'. $mobile_sidebar_top_padding .'px;';
-			}
-
-			// Mobile sidebar right padding
-			if ( ! empty( $mobile_sidebar_right_padding ) ) {
-				$mobile_sidebar_padding_css .= 'padding-right:'. $mobile_sidebar_right_padding .'px;';
-			}
-
-			// Mobile sidebar bottom padding
-			if ( ! empty( $mobile_sidebar_bottom_padding ) ) {
-				$mobile_sidebar_padding_css .= 'padding-bottom:'. $mobile_sidebar_bottom_padding .'px;';
-			}
-
-			// Mobile sidebar left padding
-			if ( ! empty( $mobile_sidebar_left_padding ) ) {
-				$mobile_sidebar_padding_css .= 'padding-left:'. $mobile_sidebar_left_padding .'px;';
-			}
-
-			// Mobile sidebar padding css
-			if ( ! empty( $mobile_sidebar_top_padding )
-				|| ! empty( $mobile_sidebar_right_padding )
-				|| ! empty( $mobile_sidebar_bottom_padding )
-				|| ! empty( $mobile_sidebar_left_padding ) ) {
-				$css .= '@media (max-width: 480px){.widget-area{'. $mobile_sidebar_padding_css .'}}';
+			// Mobile sidebar padding
+			if ( isset( $mobile_sidebar_top_padding ) && '' != $mobile_sidebar_top_padding
+				|| isset( $mobile_sidebar_right_padding ) && '' != $mobile_sidebar_right_padding
+				|| isset( $mobile_sidebar_bottom_padding ) && '' != $mobile_sidebar_bottom_padding
+				|| isset( $mobile_sidebar_left_padding ) && '' != $mobile_sidebar_left_padding ) {
+				$css .= '@media (max-width: 480px){.widget-area{padding:'. oceanwp_spacing_css( $mobile_sidebar_top_padding, $mobile_sidebar_right_padding, $mobile_sidebar_bottom_padding, $mobile_sidebar_left_padding ) .'}}';
 			}
 
 			// Widgets background
@@ -456,88 +385,28 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				$css .= '.widget-area .sidebar-box{padding:'. $widgets_padding .';}';
 			}
 
-			// Widgets top padding
-			if ( ! empty( $widgets_top_padding ) && '0' != $widgets_top_padding ) {
-				$widgets_padding_css .= 'padding-top:'. $widgets_top_padding .'px;';
+			// Widget padding
+			if ( isset( $widgets_top_padding ) && '0' != $widgets_top_padding && '' != $widgets_top_padding
+				|| isset( $widgets_right_padding ) && '0' != $widgets_right_padding && '' != $widgets_right_padding
+				|| isset( $widgets_bottom_padding ) && '0' != $widgets_bottom_padding && '' != $widgets_bottom_padding
+				|| isset( $widgets_left_padding ) && '0' != $widgets_left_padding && '' != $widgets_left_padding ) {
+				$css .= '.widget-area .sidebar-box{padding:'. oceanwp_spacing_css( $widgets_top_padding, $widgets_right_padding, $widgets_bottom_padding, $widgets_left_padding ) .'}';
 			}
 
-			// Widgets right padding
-			if ( ! empty( $widgets_right_padding ) && '0' != $widgets_right_padding ) {
-				$widgets_padding_css .= 'padding-right:'. $widgets_right_padding .'px;';
+			// Tablet widget padding
+			if ( isset( $tablet_widgets_top_padding ) && '' != $tablet_widgets_top_padding
+				|| isset( $tablet_widgets_right_padding ) && '' != $tablet_widgets_right_padding
+				|| isset( $tablet_widgets_bottom_padding ) && '' != $tablet_widgets_bottom_padding
+				|| isset( $tablet_widgets_left_padding ) && '' != $tablet_widgets_left_padding ) {
+				$css .= '@media (max-width: 768px){.widget-area .sidebar-box{padding:'. oceanwp_spacing_css( $tablet_widgets_top_padding, $tablet_widgets_right_padding, $tablet_widgets_bottom_padding, $tablet_widgets_left_padding ) .'}}';
 			}
 
-			// Widgets bottom padding
-			if ( ! empty( $widgets_bottom_padding ) && '0' != $widgets_bottom_padding ) {
-				$widgets_padding_css .= 'padding-bottom:'. $widgets_bottom_padding .'px;';
-			}
-
-			// Widgets left padding
-			if ( ! empty( $widgets_left_padding ) && '0' != $widgets_left_padding ) {
-				$widgets_padding_css .= 'padding-left:'. $widgets_left_padding .'px;';
-			}
-
-			// Widgets padding css
-			if ( ! empty( $widgets_top_padding ) && '0' != $widgets_top_padding
-				|| ! empty( $widgets_right_padding ) && '0' != $widgets_right_padding
-				|| ! empty( $widgets_bottom_padding ) && '0' != $widgets_bottom_padding
-				|| ! empty( $widgets_left_padding ) && '0' != $widgets_left_padding ) {
-				$css .= '.widget-area .sidebar-box{'. $widgets_padding_css .'}';
-			}
-
-			// Tablet sidebar top padding
-			if ( ! empty( $tablet_widgets_top_padding ) ) {
-				$tablet_widgets_padding_css .= 'padding-top:'. $tablet_widgets_top_padding .'px;';
-			}
-
-			// Tablet sidebar right padding
-			if ( ! empty( $tablet_widgets_right_padding ) ) {
-				$tablet_widgets_padding_css .= 'padding-right:'. $tablet_widgets_right_padding .'px;';
-			}
-
-			// Tablet sidebar bottom padding
-			if ( ! empty( $tablet_widgets_bottom_padding ) ) {
-				$tablet_widgets_padding_css .= 'padding-bottom:'. $tablet_widgets_bottom_padding .'px;';
-			}
-
-			// Tablet sidebar left padding
-			if ( ! empty( $tablet_widgets_left_padding ) ) {
-				$tablet_widgets_padding_css .= 'padding-left:'. $tablet_widgets_left_padding .'px;';
-			}
-
-			// Tablet sidebar padding css
-			if ( ! empty( $tablet_widgets_top_padding )
-				|| ! empty( $tablet_widgets_right_padding )
-				|| ! empty( $tablet_widgets_bottom_padding )
-				|| ! empty( $tablet_widgets_left_padding ) ) {
-				$css .= '@media (max-width: 768px){.widget-area .sidebar-box{'. $tablet_widgets_padding_css .'}}';
-			}
-
-			// Mobile sidebar top padding
-			if ( ! empty( $mobile_widgets_top_padding ) ) {
-				$mobile_widgets_padding_css .= 'padding-top:'. $mobile_widgets_top_padding .'px;';
-			}
-
-			// Mobile sidebar right padding
-			if ( ! empty( $mobile_widgets_right_padding ) ) {
-				$mobile_widgets_padding_css .= 'padding-right:'. $mobile_widgets_right_padding .'px;';
-			}
-
-			// Mobile sidebar bottom padding
-			if ( ! empty( $mobile_widgets_bottom_padding ) ) {
-				$mobile_widgets_padding_css .= 'padding-bottom:'. $mobile_widgets_bottom_padding .'px;';
-			}
-
-			// Mobile sidebar left padding
-			if ( ! empty( $mobile_widgets_left_padding ) ) {
-				$mobile_widgets_padding_css .= 'padding-left:'. $mobile_widgets_left_padding .'px;';
-			}
-
-			// Mobile sidebar padding css
-			if ( ! empty( $mobile_widgets_top_padding )
-				|| ! empty( $mobile_widgets_right_padding )
-				|| ! empty( $mobile_widgets_bottom_padding )
-				|| ! empty( $mobile_widgets_left_padding ) ) {
-				$css .= '@media (max-width: 480px){.widget-area .sidebar-box{'. $mobile_widgets_padding_css .'}}';
+			// Mobile widget padding
+			if ( isset( $mobile_widgets_top_padding ) && '' != $mobile_widgets_top_padding
+				|| isset( $mobile_widgets_right_padding ) && '' != $mobile_widgets_right_padding
+				|| isset( $mobile_widgets_bottom_padding ) && '' != $mobile_widgets_bottom_padding
+				|| isset( $mobile_widgets_left_padding ) && '' != $mobile_widgets_left_padding ) {
+				$css .= '@media (max-width: 480px){.widget-area .sidebar-box{padding:'. oceanwp_spacing_css( $mobile_widgets_top_padding, $mobile_widgets_right_padding, $mobile_widgets_bottom_padding, $mobile_widgets_left_padding ) .'}}';
 			}
 
 			// Widgets margin bottom

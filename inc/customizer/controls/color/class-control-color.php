@@ -41,6 +41,7 @@ class OceanWP_Customizer_Color_Control extends WP_Customize_Control {
 	public function enqueue() {
 		wp_enqueue_script( 'oceanwp-color', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/color.min.js', array( 'jquery', 'customize-base', 'wp-color-picker' ), false, true );
 		wp_enqueue_style( 'oceanwp-color', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/color.min.css', array( 'wp-color-picker' ), '1.0.0' );
+		wp_localize_script( 'oceanwp-color', 'oceanwpLocalize', array( 'colorPalettes' => oceanwp_default_color_palettes() ) );
 	}
 
 	/**
@@ -52,11 +53,6 @@ class OceanWP_Customizer_Color_Control extends WP_Customize_Control {
 		parent::to_json();
 
 		$this->json['default'] = $this->setting->default;
-		if ( is_array( $this->palette ) ) {
-			$this->json['palette'] = implode( '|', $this->palette );
-		} else {
-			$this->json['palette'] = ( false === $this->palette || 'false' === $this->palette ) ? 'false' : 'true';
-		}
 		$this->json['show_opacity'] = ( false === $this->show_opacity || 'false' === $this->show_opacity ) ? 'false' : 'true';
 		$this->json['value']       = $this->value();
 		$this->json['link']        = $this->get_link();
@@ -84,7 +80,7 @@ class OceanWP_Customizer_Color_Control extends WP_Customize_Control {
 				<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
 			<div>
-				<input class="alpha-color-control" type="text"  value="{{ data.value }}" data-show-opacity="{{ data.show_opacity }}" data-palette="{{ data.palette }}" data-default-color="{{ data.default }}" {{{ data.link }}} />
+				<input class="alpha-color-control" type="text"  value="{{ data.value }}" data-show-opacity="{{ data.show_opacity }}" data-default-color="{{ data.default }}" {{{ data.link }}} />
 			</div>
 		</label>
 		<?php

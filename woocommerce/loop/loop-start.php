@@ -32,6 +32,11 @@ if ( ! empty( $mobile_columns ) ) {
 	$wrap_classes[] = 'mobile-' . $mobile_columns . '-col';
 }
 
+// If infinite scroll
+if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+	$wrap_classes[] = 'infinite-scroll-wrap';
+}
+
 $wrap_classes = implode( ' ', $wrap_classes ); ?>
 
 <ul class="<?php echo esc_attr( $wrap_classes ); ?>">

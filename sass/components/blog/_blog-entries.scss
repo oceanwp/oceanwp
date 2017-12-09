@@ -8,6 +8,11 @@
 	.thumbnail {
 		position: relative;
 
+		a {
+			display: inline-block;
+			position: relative;
+		}
+
 		.overlay {
 		    position: absolute;
 		    top: 0;
@@ -54,4 +59,11 @@
 			margin-bottom: 0;
 		}
 	}
+}
+
+// Caption
+.thumbnail-caption {
+    font-size: 13px;
+	margin-top: 0.5em;
+    text-align: center;
 }
