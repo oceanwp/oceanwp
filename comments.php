@@ -88,22 +88,6 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 	<?php endif; // have_comments() ?>
 
 	<?php
-	function ocean_modify_comment_form_fields( $fields ){
-
-		$commenter = wp_get_current_commenter();
-		$req       = get_option( 'require_name_email' );
-
-		$fields['author'] 	= '<div class="comment-form-author"><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_html__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="101"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
-
-		$fields['email'] 	= '<div class="comment-form-email"><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_html__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="102"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
-
-		$fields['url'] 		= '<div class="comment-form-url"><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_html__( 'Website', 'oceanwp' ) .'" size="22" tabindex="103" class="input-website" /></div>';
-
-		return $fields;
-
-	}
-	add_filter( 'comment_form_default_fields', 'ocean_modify_comment_form_fields' );
-
 	comment_form(
 		array(
 			'must_log_in'			=> '<p class="must-log-in">'.  sprintf( esc_html__( 'You must be %1$slogged in%2$s to post a comment.', 'oceanwp' ), '<a href="'. wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) .'">', '</a>' ) .'</p>',
