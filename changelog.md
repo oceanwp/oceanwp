@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2017.12.10* - 1.4.10
+* **Fixed** - Boxed layout issue.
+
 ### *2017.12.09* - 1.4.9
 * **Added** - New field in the Mobile Menu section of the customizer to allow you to add a custom header height in tablet and mobile view.
 * **Added** - Ability to add caption for the featured posts images.
