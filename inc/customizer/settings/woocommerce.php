@@ -877,6 +877,79 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Shop Pagination Style
+			 */
+			$wp_customize->add_setting( 'ocean_woo_pagination_style', array(
+				'default'           	=> 'standard',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_pagination_style', array(
+				'label'	   				=> esc_html__( 'Pagination Style', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_woocommerce_archives',
+				'settings' 				=> 'ocean_woo_pagination_style',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'standard' 			=> esc_html__( 'Standard', 'oceanwp' ),
+					'infinite_scroll' 	=> esc_html__( 'Infinite Scroll', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Infinite Scroll: Spinners Color
+			 */
+			$wp_customize->add_setting( 'ocean_woo_infinite_scroll_spinners_color', array(
+				'default'           	=> '#333333',
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_woo_infinite_scroll_spinners_color', array(
+				'label'	   				=> esc_html__( 'Infinite Scroll: Spinners Color', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_archives',
+				'settings' 				=> 'ocean_woo_infinite_scroll_spinners_color',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_infinite_scroll',
+			) ) );
+
+			/**
+			 * Infinite Scroll: Last Text
+			 */
+			$wp_customize->add_setting( 'ocean_woo_infinite_scroll_last_text', array(
+				'default'           	=> esc_html__( 'End of content', 'oceanwp' ),
+				'transport'           	=> 'postMessage',
+				'sanitize_callback' 	=> 'wp_kses_post',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_infinite_scroll_last_text', array(
+				'label'	   				=> esc_html__( 'Infinite Scroll: Last Text', 'oceanwp' ),
+				'type' 					=> 'text',
+				'section'  				=> 'ocean_woocommerce_archives',
+				'settings' 				=> 'ocean_woo_infinite_scroll_last_text',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_infinite_scroll',
+			) ) );
+
+			/**
+			 * Infinite Scroll: Error Text
+			 */
+			$wp_customize->add_setting( 'ocean_woo_infinite_scroll_error_text', array(
+				'default'           	=> esc_html__( 'No more pages to load', 'oceanwp' ),
+				'transport'           	=> 'postMessage',
+				'sanitize_callback' 	=> 'wp_kses_post',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_infinite_scroll_error_text', array(
+				'label'	   				=> esc_html__( 'Infinite Scroll: Error Text', 'oceanwp' ),
+				'type' 					=> 'text',
+				'section'  				=> 'ocean_woocommerce_archives',
+				'settings' 				=> 'ocean_woo_infinite_scroll_error_text',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_infinite_scroll',
+			) ) );
+
+			/**
 			 * Section
 			 */
 			$wp_customize->add_section( 'ocean_woocommerce_single' , array(
@@ -2650,6 +2723,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$cart_dropdown_checkout_button_hover_color			= get_theme_mod( 'ocean_woo_cart_dropdown_checkout_button_hover_color', '#333333' );
 		
 			// Styling vars
+			$infinite_scroll_spinners_color 					= get_theme_mod( 'ocean_woo_infinite_scroll_spinners_color', '#333333' );
 			$onsale_bg 											= get_theme_mod( 'ocean_onsale_bg', '#3FC387' );
 			$onsale_color 										= get_theme_mod( 'ocean_onsale_color', '#ffffff' );
 			$outofstock_bg 										= get_theme_mod( 'ocean_outofstock_bg', '#000000' );
@@ -2843,6 +2917,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Cart dropdown checkout button hover color
 			if ( ! empty( $cart_dropdown_checkout_button_hover_color ) && '#333333' != $cart_dropdown_checkout_button_hover_color ) {
 				$css .= '#site-navigation .woocommerce .widget_shopping_cart_content .buttons .checkout:hover{color:'. $cart_dropdown_checkout_button_hover_color .';}';
+			}
+
+			// Infinite scroll spinners color
+			if ( ! empty( $infinite_scroll_spinners_color ) && '#333333' != $infinite_scroll_spinners_color ) {
+				$css .= '.woocommerce .loader-ellips__dot{background-color:'. $infinite_scroll_spinners_color .';}';
 			}
 
 			// Add onsale bg

@@ -101,8 +101,8 @@ jQuery( document ).ready( function( $ ) {
 	$( '.alpha-color-control' ).each( function() {
 
 		// Scope the vars.
-		var $control, startingColor, paletteInput, showOpacity, defaultColor, palette,
-			colorPickerOptions, $container, $alphaSlider, alphaVal, sliderOptions;
+		var $control, startingColor, showOpacity, defaultColor, colorPickerOptions,
+			$container, $alphaSlider, alphaVal, sliderOptions;
 
 		// Store the control instance.
 		$control = $( this );
@@ -111,18 +111,8 @@ jQuery( document ).ready( function( $ ) {
 		startingColor = $control.val().replace( /\s+/g, '' );
 
 		// Get some data off the control.
-		paletteInput = $control.attr( 'data-palette' );
 		showOpacity  = $control.attr( 'data-show-opacity' );
 		defaultColor = $control.attr( 'data-default-color' );
-
-		// Process the palette.
-		if ( paletteInput.indexOf( '|' ) !== -1 ) {
-			palette = paletteInput.split( '|' );
-		} else if ( 'false' == paletteInput ) {
-			palette = false;
-		} else {
-			palette = true;
-		}
 
 		// Set up the options that we'll pass to wpColorPicker().
 		colorPickerOptions = {
@@ -148,7 +138,7 @@ jQuery( document ).ready( function( $ ) {
 				// Always show the background color of the opacity slider at 100% opacity.
 				$transparency.css( 'background-color', ui.color.toString( 'no-alpha' ) );
 			},
-			palettes: palette // Use the passed in palette.
+			palettes: oceanwpLocalize.colorPalettes // Use the passed in palette.
 		};
 
 		// Create the colorpicker.

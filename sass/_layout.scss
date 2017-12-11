@@ -478,7 +478,8 @@ body.separate-blog.separate-layout {
 		margin-bottom: 0;
 	}
 
-	.widget-area,
+	.widget-area.sidebar-primary,
+	.widget-area.sidebar-secondary,
 	.content-left-sidebar .widget-area {
 		float: none;
 		width: 100%;

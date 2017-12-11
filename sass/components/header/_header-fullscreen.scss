@@ -1,4 +1,6 @@
 #site-header.full_screen-header {
+	z-index: 9999;
+	
 	#site-header-inner {
 		overflow: visible !important;
 	}

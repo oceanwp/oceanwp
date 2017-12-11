@@ -153,6 +153,10 @@ module.exports = function ( grunt ) {
 			},
 			js: {
 				files: [ 'assets/js/**/*.js' ],
+				tasks: [
+					'newer:uglify:dev',
+					'newer:uglify:prod',
+				]
 			}
 		},
 

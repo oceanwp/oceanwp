@@ -31,7 +31,7 @@ $mobile_columns    = get_theme_mod( 'ocean_footer_widgets_mobile_columns' );
 $visibility = get_theme_mod( 'ocean_footer_widgets_visibility', 'all-devices' );
 
 // Classes
-$wrap_classes = array( 'clr' );
+$wrap_classes = array( 'oceanwp-row', 'clr' );
 if ( ! empty( $tablet_columns ) ) {
 	$wrap_classes[] = 'tablet-' . $tablet_columns . '-col';
 }
@@ -41,15 +41,26 @@ if ( ! empty( $mobile_columns ) ) {
 if ( 'all-devices' != $visibility ) {
 	$wrap_classes[] = $visibility;
 }
-$wrap_classes = implode( ' ', $wrap_classes ); ?>
+$wrap_classes = implode( ' ', $wrap_classes );
+
+// Get inner classes
+$inner_classes = array( 'footer-widgets-inner' );
+
+// Add container class
+if ( true == get_theme_mod( 'ocean_add_footer_container', true ) ) {
+    $inner_classes[] = 'container';
+}
+
+// Turn inner classes into space seperated string
+$inner_classes = implode( ' ', $inner_classes ); ?>
 
 <?php do_action( 'ocean_before_footer_widgets' ); ?>
 
-<div id="footer-widgets" class="oceanwp-row <?php echo esc_attr( $wrap_classes ); ?>">
+<div id="footer-widgets" class="<?php echo esc_attr( $wrap_classes ); ?>">
 
 	<?php do_action( 'ocean_before_footer_widgets_inner' ); ?>
 
-	<div class="container">
+	<div class="<?php echo esc_attr( $inner_classes ); ?>">
 
         <?php
         // Check if there is a template for the footer

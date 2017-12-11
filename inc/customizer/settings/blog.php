@@ -919,6 +919,28 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Full Width Content Max Width
+			 */
+			$wp_customize->add_setting( 'ocean_blog_single_content_width', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> '700',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_blog_single_content_width', array(
+				'label'	   				=> esc_html__( 'Full Width Content', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Enter the max width your the content with the full width layout. Add 0 to disable the max width.', 'oceanwp' ),
+				'type' 					=> 'number',
+				'section'  				=> 'ocean_single_post',
+				'settings' 				=> 'ocean_blog_single_content_width',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
 			 * Blog Single Elements Positioning
 			 */
 			$wp_customize->add_setting( 'ocean_blog_single_elements_positioning', array(
@@ -1096,6 +1118,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			$thumbnail_date_color 				= get_theme_mod( 'ocean_blog_thumbnail_date_color', '#ababab' );
 			$infinite_scroll_spinners_color 	= get_theme_mod( 'ocean_blog_infinite_scroll_spinners_color', '#333333' );
 			$title_breadcrumb_position 			= get_theme_mod( 'ocean_blog_single_title_breadcrumb_position', 'center' );
+			$single_content_width 				= get_theme_mod( 'ocean_blog_single_content_width', '700' );
 
 			// Define css var
 			$css = '';
@@ -1183,6 +1206,12 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			// Title/breadcrumb position
 			if ( ! empty( $title_breadcrumb_position ) && 'center' != $title_breadcrumb_position ) {
 				$css .= '.single-post .background-image-page-header .page-header-inner, .single-post .background-image-page-header .site-breadcrumbs{text-align:'. $title_breadcrumb_position .';}';
+			}
+
+			// Single content width
+			if ( ! empty( $single_content_width ) && '700' != $single_content_width ) {
+				$css .= '.single-post.content-max-width .thumbnail, .single-post.content-max-width .entry-header, .single-post.content-max-width ul.meta, .single-post.content-max-width .entry-content p, .single-post.content-max-width .entry-content h1, .single-post.content-max-width .entry-content h2, .single-post.content-max-width .entry-content h3, .single-post.content-max-width .entry-content h4, .single-post.content-max-width .entry-content h5, .single-post.content-max-width .entry-content h6, .single-post.content-max-width .wp-block-image, .single-post.content-max-width .wp-block-gallery, .single-post.content-max-width .wp-block-video, .single-post.content-max-width .wp-block-quote, .single-post.content-max-width .wp-block-text-columns, .single-post.content-max-width .entry-content ul, .single-post.content-max-width .entry-content ol, .single-post.content-max-width .wp-block-cover-text, .single-post.content-max-width .post-tags, .single-post.content-max-width .comments-area{max-width:' . $single_content_width . 'px;} .single-post.content-max-width .wp-block-image.alignleft, .single-post.content-max-width .wp-block-image.alignright{max-width:'. $single_content_width / 2 .'px;} .single-post.content-max-width .wp-block-image.alignleft{margin-left: calc( 50% - '. $single_content_width / 2 .'px);} .single-post.content-max-width .wp-block-image.alignright{margin-right: calc( 50% - '. $single_content_width / 2 .'px);}';
+
 			}
 				
 			// Return CSS

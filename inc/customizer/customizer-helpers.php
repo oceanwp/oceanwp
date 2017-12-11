@@ -525,6 +525,14 @@ function oceanwp_cac_has_woo_product_bs_layout() {
 	}
 }
 
+function oceanwp_cac_has_woo_infinite_scroll() {
+	if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 /*-------------------------------------------------------------------------------*/
 /* [ Footer ]
 /*-------------------------------------------------------------------------------*/

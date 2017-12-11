@@ -252,7 +252,7 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 	 */
 	public function get_font_families() {
 
-		$fonts 	= array( esc_html__( 'Default', 'oceanwp' ) );
+		$fonts 	= array( '' => esc_html__( 'Default', 'oceanwp' ) );
 		$id 	= '';
 
 		// Add custom fonts from child themes

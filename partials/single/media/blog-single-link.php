@@ -21,13 +21,24 @@ $img_args = array(
 );
 if ( oceanwp_get_schema_markup( 'image' ) ) {
 	$img_args['itemprop'] = 'image';
-} ?>
+}
+
+// Caption
+$caption = get_post( get_post_thumbnail_id() )->post_excerpt; ?>
 
 <div class="thumbnail">
 
 	<?php
 	// Display post thumbnail
-	the_post_thumbnail( 'full', $img_args ); ?>
+	the_post_thumbnail( 'full', $img_args );
+
+	// Caption
+	if ( $caption ) { ?>
+		<div class="thumbnail-caption">
+			<?php echo esc_attr( $caption ); ?>
+		</div>
+	<?php
+	} ?>
 
 	<div class="link-entry clr">
 
