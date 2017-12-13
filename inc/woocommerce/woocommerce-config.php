@@ -204,6 +204,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'woocommerce_after_shop_loop_item', 'woostore_output_product_excerpt', 21 );
 			}
 
+			// Quick view plugin
+			add_filter( 'body_class', array( $this, 'quick_view_plugin_class' ) );
+			add_filter( 'yith_add_quick_view_button_html', array( $this, 'quick_view_plugin' ), 10, 2 );
+
 		}
 
 		/**
@@ -1239,6 +1243,33 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 			}
 		}
+
+		/**
+		 * Supports YITH Quick View plugin class
+		 *
+		 * @since 1.4.10
+		 * @static
+		 */
+		public static function quick_view_plugin_class( $classes ) {
+
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			// Check if the plugin is activated
+			if ( is_plugin_active( 'yith-woocommerce-quick-view/init.php' ) ) {
+				$classes[] = 'quick-view-plugin-active';
+			}
+
+ 			return $classes;
+ 		}
+
+		/**
+		 * Supports YITH Quick View plugin
+		 *
+		 * @since 1.4.10
+		 * @static
+		 */
+		public static function quick_view_plugin( $button, $label ) {
+ 			return str_replace( $label, '<i class="fa fa-eye" aria-hidden="true"></i>', $button );
+ 		}
 	}
 
 }

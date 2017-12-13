@@ -3015,3 +3015,21 @@ form.checkout {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+/**
+ * YITH Quick View
+ */
+.quick-view-plugin-active {
+
+	.products {
+		.product {
+			position: relative;
+
+			.yith-wcqv-button {
+				position: absolute;
+				bottom: 20px;
+			}
+		}
+	}
+
+}

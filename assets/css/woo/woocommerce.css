@@ -3677,6 +3677,18 @@ form.checkout > .blockUI {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/**
+ * YITH Quick View
+ */
+.quick-view-plugin-active .products .product {
+  position: relative;
+}
+
+.quick-view-plugin-active .products .product .yith-wcqv-button {
+  position: absolute;
+  bottom: 20px;
+}
+
 /*------------------------------------------------------------------
 Woo Cart
 -------------------------------------------------------------------*/
