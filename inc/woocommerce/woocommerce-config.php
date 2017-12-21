@@ -205,8 +205,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// Quick view plugin
-			add_filter( 'body_class', array( $this, 'quick_view_plugin_class' ) );
+			add_filter( 'body_class', array( $this, 'custom_yith_plugin_classes' ) );
 			add_filter( 'yith_add_quick_view_button_html', array( $this, 'quick_view_plugin' ), 10, 2 );
+
+			// Wishlist
+			add_action( 'woocommerce_after_shop_loop_item', create_function( '', 'echo do_shortcode( "[yith_wcwl_add_to_wishlist]" );' ), 12 );
+			add_filter( 'yith_wcwl_button_label', array( $this, 'wishlist_label' ) );
 
 		}
 
@@ -1250,12 +1254,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.4.10
 		 * @static
 		 */
-		public static function quick_view_plugin_class( $classes ) {
+		public static function custom_yith_plugin_classes( $classes ) {
 
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 			// Check if the plugin is activated
 			if ( is_plugin_active( 'yith-woocommerce-quick-view/init.php' ) ) {
 				$classes[] = 'quick-view-plugin-active';
+			}
+
+			// Check if the plugin is activated
+			if ( is_plugin_active( 'yith-woocommerce-wishlist/init.php' ) ) {
+				$classes[] = 'wishlist-plugin-active';
 			}
 
  			return $classes;
@@ -1269,6 +1278,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function quick_view_plugin( $button, $label ) {
  			return str_replace( $label, '<i class="fa fa-eye" aria-hidden="true"></i>', $button );
+ 		}
+
+ 		public static function wishlist_label( $label ) {
+ 			return '<i class="fa fa-heart" aria-hidden="true"></i>';
  		}
 	}
 
