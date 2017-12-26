@@ -3027,7 +3027,7 @@ form.checkout {
 
 			.yith-wcqv-button {
 				position: absolute;
-				bottom: 20px;
+				bottom: 0;
 			}
 		}
 	}
@@ -3045,7 +3045,7 @@ form.checkout {
 
 			.yith-wcwl-add-to-wishlist {
 				position: absolute;
-				bottom: 20px;
+				bottom: 0;
 				right: 0;
 				margin-top: 0;
 
@@ -3089,4 +3089,12 @@ form.checkout {
 		}
 	}
 
+}
+
+.quick-view-plugin-active,
+.wishlist-plugin-active {
+	.products .product {
+		padding-bottom: 0;
+		margin-bottom: 40px;
+	}
 }
