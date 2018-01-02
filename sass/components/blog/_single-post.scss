@@ -35,9 +35,11 @@
 	.entry-content h4,
 	.entry-content h5,
 	.entry-content h6,
+	.entry-content blockquote,
 	.entry-content p,
 	.post-tags,
 	.entry-share,
+	nav.post-navigation,
 	#related-posts,
 	.comments-area {
 	    padding-left: 20px;
@@ -46,13 +48,14 @@
 
 	.entry-header,
 	ul.meta,
-	.entry-content p,
 	.entry-content h1,
 	.entry-content h2,
 	.entry-content h3,
 	.entry-content h4,
 	.entry-content h5,
 	.entry-content h6,
+	.entry-content blockquote,
+	.entry-content p,
 	.wp-block-image,
 	.wp-block-gallery,
 	.wp-block-video,
@@ -83,12 +86,19 @@
 		padding: 0;
 	}
 
+	.entry-content blockquote p {
+		max-width: 100%;
+	    margin: 0;
+	    padding: 0;
+	}
+
 	.thumbnail,
 	.wp-block-cover-text.alignwide,
 	.wp-block-image.alignwide,
 	.wp-block-gallery.alignwide,
 	.wp-block-text-columns.alignwide,
 	.entry-share,
+	nav.post-navigation,
 	#related-posts {
 	    margin: 1.5em auto;
 	    max-width: 1100px;

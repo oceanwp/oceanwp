@@ -676,6 +676,7 @@ class OCEANWP_Theme_Class {
 
 		// Get all the customier css
 	    $output = apply_filters( 'ocean_head_css', $output );
+	    $output .= apply_filters( 'ocean_head_css_typo', $CSS );
 
 	    // Get Custom Panel CSS
 	    $output_custom_css .= wp_get_custom_css();
@@ -729,13 +730,13 @@ class OCEANWP_Theme_Class {
 		global $wp_customize;
 		$upload_dir = wp_upload_dir();
 
-		// If custom CSS file exists and NOT in customizer screen
-		if ( ! isset( $wp_customize ) && file_exists( $upload_dir['basedir'] .'/oceanwp/custom-style.css' ) ) {
-			
-			// Disable Custom CSS in the frontend head
-			remove_action( 'wp_head', 'wp_custom_css_cb', 11 );
-			remove_action( 'wp_head', 'wp_custom_css_cb', 101 );
+		// Disable Custom CSS in the frontend head
+		remove_action( 'wp_head', 'wp_custom_css_cb', 11 );
+		remove_action( 'wp_head', 'wp_custom_css_cb', 101 );
 
+		// If custom CSS file exists and NOT in customizer screen
+		if ( isset( $wp_customize ) ) {
+			add_action( 'wp_footer', 'wp_custom_css_cb', 9999 );
 		}
 	}
 

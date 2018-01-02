@@ -15,14 +15,12 @@
 			}
 		}
 
-		.is-sticky #site-logo.has-responsive-logo {
-			.responsive-logo-link {
-				display: none;
-			}
+		.is-sticky #site-logo.has-responsive-logo .sticky-logo-link {
+			display: block;
+		}
 
-			.sticky-logo-link {
-				display: block;
-			}
+		.is-sticky #site-logo.has-sticky-logo .responsive-logo-link {
+			display: none;
 		}
 
 		#site-header.center-header #site-logo {

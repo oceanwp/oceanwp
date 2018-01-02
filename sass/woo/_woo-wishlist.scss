@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------
+Woo Wishlist
+-------------------------------------------------------------------*/
+.wishlist-plugin-active {
+	.products .product {
+		.yith-wcwl-add-to-wishlist {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin-top: 0;
+
+			.feedback {
+				display: none;
+			}
+
+			.yith-wcwl-wishlistaddedbrowse,
+			.yith-wcwl-wishlistexistsbrowse {
+				a {
+					display: inline-block;
+				    background-color: transparent;
+				    color: red;
+				    padding: 5px 12px;
+				    border: 3px double #e4e4e4;
+				    font-size: 12px;
+				    line-height: 1.5;
+				}
+			}
+		}
+
+		.yith-wcwl-add-button {
+			position: relative;
+
+			i {
+				margin-right: 0;
+			}
+
+			.ajax-loading {
+				position: absolute;
+				top: 50%;
+			    left: 50%;
+			    margin: -8px 0 0 -8px;
+			}
+		}
+	}
+}
+
+.wishlist_table tr td a.yith-wcqv-button {
+	padding: 8px 15px;
+    margin-left: 5px;
+}

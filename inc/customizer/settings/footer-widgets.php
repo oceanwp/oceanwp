@@ -385,7 +385,7 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			$mobile_footer_top_padding 			= get_theme_mod( 'ocean_footer_mobile_top_padding' );
 			$mobile_footer_right_padding 		= get_theme_mod( 'ocean_footer_mobile_right_padding' );
 			$mobile_footer_bottom_padding 		= get_theme_mod( 'ocean_footer_mobile_bottom_padding' );
-			$mobile_lfooter_eft_padding 		= get_theme_mod( 'ocean_footer_mobile_left_padding' );
+			$mobile_footer_left_padding 		= get_theme_mod( 'ocean_footer_mobile_left_padding' );
 			$footer_background 					= get_theme_mod( 'ocean_footer_background', '#222222' );
 			$footer_color 						= get_theme_mod( 'ocean_footer_color', '#929292' );
 			$footer_borders 					= get_theme_mod( 'ocean_footer_borders', '#555555' );

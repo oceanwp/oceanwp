@@ -313,7 +313,7 @@ body.vertical-header-style {
 *------------------------------------*/
 @media only screen and (max-width: 1280px) {
 
-	body.vertical-header-style {
+	body.vertical-header-style.default-collapse {
 	    &.left-header {
 	    	#site-header.vertical-header {
 	    		left: -266px;
@@ -353,7 +353,7 @@ body.vertical-header-style {
 	    }
 	}
 
-	#site-header.vertical-header {
+	body.default-collapse #site-header.vertical-header {
 		.vertical-toggle {
 			display: block;
 		}

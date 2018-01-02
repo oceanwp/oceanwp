@@ -1383,6 +1383,29 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Vertical Header Collapse Width
+			 */
+			$wp_customize->add_setting( 'ocean_vertical_header_collapse_width', array(
+				'transport' 			=> 'postMessage',
+				'default'     			=> '1280',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_vertical_header_collapse_width', array(
+				'label'	   				=> esc_html__( 'Collapse Width (px)', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'This field is to control the width where you want to collapse the header.', 'oceanwp' ),
+				'type' 					=> 'number',
+				'section'  				=> 'ocean_header_general',
+				'settings' 				=> 'ocean_vertical_header_collapse_width',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 959,
+			        'step'  => 1,
+			    ),
+				'active_callback' 		=> 'oceanwp_cac_has_vertical_header_style',
+			) ) );
+
+			/**
 			 * Vertical Header Width
 			 */
 			$wp_customize->add_setting( 'ocean_vertical_header_width', array(
@@ -4033,6 +4056,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			$medium_header_search_placeholder_color 					= get_theme_mod( 'ocean_medium_header_search_placeholder_color', '#333333' );
 			$medium_header_search_button_color 							= get_theme_mod( 'ocean_medium_header_search_button_color', '#333333' );
 			$medium_header_search_button_hover_color 					= get_theme_mod( 'ocean_medium_header_search_button_hover_color', '#13aff0' );
+			$vertical_header_collapse_width 							= get_theme_mod( 'ocean_vertical_header_collapse_width', '1280' );
 			$vertical_header_width 										= get_theme_mod( 'ocean_vertical_header_width', '300' );
 			$vertical_header_inner_top_padding							= get_theme_mod( 'ocean_vertical_header_inner_top_padding', '30' );
 			$vertical_header_inner_right_padding						= get_theme_mod( 'ocean_vertical_header_inner_right_padding', '30' );
@@ -4341,9 +4365,9 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				}
 
 				// Top header padding
-				if ( isset( $medium_header_top_header_top_padding ) && '30' != $medium_header_top_header_top_padding && '' != $medium_header_sticky_top_header_top_padding
+				if ( isset( $medium_header_top_header_top_padding ) && '30' != $medium_header_top_header_top_padding && '' != $medium_header_top_header_top_padding
 					|| isset( $medium_header_top_header_bottom_padding ) && '30' != $medium_header_top_header_bottom_padding && '' != $medium_header_sticky_top_header_bottom_padding ) {
-					$css .= '#site-header.medium-header .top-header-wrap{padding:'. oceanwp_spacing_css( $medium_header_sticky_top_header_top_padding, '', $medium_header_sticky_top_header_bottom_padding, '' ) .'}';
+					$css .= '#site-header.medium-header .top-header-wrap{padding:'. oceanwp_spacing_css( $medium_header_top_header_top_padding, '', $medium_header_sticky_top_header_bottom_padding, '' ) .'}';
 				}
 
 				// Tablet top header padding
@@ -4468,6 +4492,21 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Vertical header padding
 			if ( 'vertical' == $header_style ) {
 
+				// Collapse width
+				if ( ! empty( $vertical_header_collapse_width ) && '1280' != $vertical_header_collapse_width ) {
+					$css .= '@media only screen and (max-width: '. $vertical_header_collapse_width .'px) {
+						body.vertical-header-style.left-header #site-header.vertical-header {left: -266px;}
+						body.vertical-header-style.left-header #outer-wrap {margin-left: 34px;}
+						body.vertical-header-style.right-header #site-header.vertical-header {right: -266px;}
+						body.vertical-header-style.right-header #outer-wrap {margin-right: 34px;}
+						body.vertical-header-style.vh-opened.left-header #site-header.vertical-header {left: 0;}
+						body.vertical-header-style.vh-opened.right-header #site-header.vertical-header {right: 0;}
+						body.vertical-header-style.vh-opened #site-header.vertical-header #site-navigation-wrap {padding-right: 0;}
+						#site-header.vertical-header .vertical-toggle { display: block; }
+						#site-header.vertical-header #site-navigation-wrap { padding-right: 34px; }
+					}';
+				}
+
 				// Width
 				if ( ! empty( $vertical_header_width ) && '300' != $vertical_header_width ) {
 					$css .= '#site-header.vertical-header{width:'. $vertical_header_width .'px;}';
@@ -4491,7 +4530,12 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 					// For small screens
 					$vh_width_minus = $vertical_header_width - 34;
-					$css .= '@media only screen and (max-width: 1280px) {
+					if ( ! empty( $vertical_header_collapse_width ) ) {
+						$media_width = $vertical_header_collapse_width;
+					} else {
+						$media_width = '1280';
+					}
+					$css .= '@media only screen and (max-width: '. $media_width .'px) {
 						body.vertical-header-style.left-header #site-header.vertical-header {left: -'. $vh_width_minus .'px;}
 						body.vertical-header-style.left-header #outer-wrap {margin-left: 34px;}
 						body.vertical-header-style.right-header #site-header.vertical-header {right: -'. $vh_width_minus .'px;}
@@ -4948,7 +4992,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 					#site-header.vertical-header .vertical-toggle, body.vertical-header-style.vh-closed #site-header.vertical-header .vertical-toggle { display: none; }
 					#site-logo.has-responsive-logo .custom-logo-link { display: none; }
 					#site-logo.has-responsive-logo .responsive-logo-link { display: block; }
-					.is-sticky #site-logo.has-responsive-logo .responsive-logo-link { display: none; }
+					.is-sticky #site-logo.has-sticky-logo .responsive-logo-link { display: none; }
 					.is-sticky #site-logo.has-responsive-logo .sticky-logo-link { display: block; }
 					#top-bar.has-no-content #top-bar-social.top-bar-left, #top-bar.has-no-content #top-bar-social.top-bar-right {position: inherit; left: auto; right: auto; float: none; height: auto; line-height: 1.5em; margin-top: 0; text-align: center;}
 					#top-bar.has-no-content #top-bar-social li {float: none; display: inline-block;}

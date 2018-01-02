@@ -2081,8 +2081,10 @@
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		background-color: #13aff0;
+
 		&:hover {
 			background-color: #0b7cac;
+			color: #fff;
 		}
 	}
 	&:before {
@@ -2117,6 +2119,7 @@
 		background-color: #13aff0;
 		&:hover {
 			background-color: #0b7cac;
+			color: #fff;
 		}
 	}
 	&:before {
@@ -2151,6 +2154,7 @@
 		background-color: #13aff0;
 		&:hover {
 			background-color: #0b7cac;
+			color: #fff;
 		}
 	}
 	&:before {
@@ -3014,4 +3018,11 @@ form.checkout {
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.quick-view-plugin-active,
+.wishlist-plugin-active {
+	ul.products li.product li.btn-wrap {
+		position: relative;
+	}
 }

@@ -88,18 +88,23 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			$classes[] = 'medium-header-style';
 		}
 
-		// Vertical header style to control the wrap margin left
-		if ( 'vertical' == oceanwp_header_style() ) {
-			$classes[] = 'vertical-header-style';
-		}
-
 		// Vertical header style
 		if ( 'vertical' == oceanwp_header_style() ) {
+
+			// Vertical header style to control the wrap margin left
+			$classes[] = 'vertical-header-style';
 
 			// Header position
 			$position  = get_theme_mod( 'ocean_vertical_header_position', 'left-header' );
 			$position  = $position ? $position : 'left-header';
 			$classes[] = $position;
+
+			// If default collapse
+			$vh_collapse_width = get_theme_mod( 'ocean_vertical_header_collapse_width', '1280' );
+			if ( empty( $vh_collapse_width )
+				|| '1280' == $vh_collapse_width ) {
+				$classes[] = 'default-collapse';
+			}
 
 		}
 
@@ -1856,7 +1861,7 @@ if ( ! function_exists( 'oceanwp_get_page_subheading' ) ) {
 		}
 
 		// All other Taxonomies
-		elseif ( is_tax() ) {
+		elseif ( is_category() || is_tax() ) {
 			$subheading = term_description();
 		}
 

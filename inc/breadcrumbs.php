@@ -40,7 +40,7 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 	}
 	
 	// Yoast breadcrumbs
-	if ( function_exists( 'yoast_breadcrumb' ) && current_theme_supports( 'yoast-seo-breadcrumbs' ) ) {
+	if ( function_exists( 'yoast_breadcrumb' ) ) {
 		$classes = 'site-breadcrumbs clr';
 		if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
 			$classes .= ' position-'. $breadcrumbs_position;

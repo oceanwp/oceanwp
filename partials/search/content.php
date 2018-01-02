@@ -18,7 +18,14 @@ $length = apply_filters( 'ocean_search_results_excerpt_length', '30' ); ?>
 <div class="search-entry-summary clr"<?php oceanwp_schema_markup( 'entry_content' ); ?>>
     <p>
 	    <?php
-	    // Display custom excerpt
-	    echo wp_trim_words( strip_shortcodes( $post->post_content ), $length ); ?>
+	    // Display excerpt
+	    if ( has_excerpt( $post->ID ) ) {
+		    the_excerpt();
+		}
+
+		// Display custom excerpt
+		else {
+		    echo wp_trim_words( strip_shortcodes( $post->post_content ), $length );
+		} ?>
     </p>
 </div><!-- .search-entry-summary -->

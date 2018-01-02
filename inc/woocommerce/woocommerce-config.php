@@ -29,6 +29,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Register Woo sidebar
 			add_filter( 'widgets_init', array( $this, 'register_woo_sidebar' ) );
 
+			// Define accents
+			add_filter( 'ocean_primary_texts', array( $this, 'primary_texts' ) );
+			add_filter( 'ocean_primary_borders', array( $this, 'primary_borders' ) );
+			add_filter( 'ocean_primary_backgrounds', array( $this, 'primary_backgrounds' ) );
+			add_filter( 'ocean_hover_primary_backgrounds', array( $this, 'hover_primary_backgrounds' ) );
+
 			/*-------------------------------------------------------------------------------*/
 			/* -  Front-End only actions/filters
 			/*-------------------------------------------------------------------------------*/
@@ -61,12 +67,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 				// Show/hide next/prev on products
 				add_filter( 'ocean_has_next_prev', array( $this, 'next_prev' ) );
-
-				// Define accents
-				add_filter( 'ocean_primary_texts', array( $this, 'primary_texts' ) );
-				add_filter( 'ocean_primary_borders', array( $this, 'primary_borders' ) );
-				add_filter( 'ocean_primary_backgrounds', array( $this, 'primary_backgrounds' ) );
-				add_filter( 'ocean_hover_primary_backgrounds', array( $this, 'hover_primary_backgrounds' ) );
 
 				// Border colors
 				add_filter( 'ocean_border_color_elements', array( $this, 'border_color_elements' ) );
@@ -203,6 +203,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				remove_action( 'woocommerce_after_shop_loop_item_title', 'woostore_output_product_excerpt', 35 );
 				add_action( 'woocommerce_after_shop_loop_item', 'woostore_output_product_excerpt', 21 );
 			}
+
+			// Quick view and Wishlist buttons
+			add_filter( 'body_class', array( $this, 'yith_plugin_classes' ) );
+
+			// Quick view button
+			add_action( 'ocean_before_archive_product_add_to_cart_inner', array( $this, 'quick_view_btn' ), 12 );
+
+			// Wishlist button
+			add_action( 'ocean_after_archive_product_add_to_cart_inner', array( $this, 'wishlist_btn' ), 12 );
+			add_filter( 'yith_wcwl_add_to_wishlist_button_classes', array( $this, 'wishlist_btn_classes' ) );
+			add_filter( 'yith_wcwl_button_label', array( $this, 'wishlist_label' ) );
+			add_filter( 'yith-wcwl-browse-wishlist-label', array( $this, 'wishlist_label' ) );
 
 		}
 
@@ -657,7 +669,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 						do_action( 'ocean_before_archive_product_add_to_cart' );
 
 						echo '<li class="btn-wrap clr">';
+
+							do_action( 'ocean_before_archive_product_add_to_cart_inner' );
+
 							woocommerce_template_loop_add_to_cart();
+
+
+							do_action( 'ocean_after_archive_product_add_to_cart_inner' );
+
 						echo '</li>';
 
 						do_action( 'ocean_after_archive_product_add_to_cart' );
@@ -967,19 +986,19 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function primary_texts( $texts ) {
 			return array_merge( array(
-				'body .woocommerce-MyAccount-navigation ul li a:before',
-				'body .woocommerce-checkout .woocommerce-info a',
-				'body .woocommerce-checkout #payment ul.payment_methods .wc_payment_method>input[type=radio]:first-child:checked+label:before',
-				'body .woocommerce-checkout #payment .payment_method_paypal .about_paypal',
-				'body .woocommerce ul.products li.product .category a:hover',
-				'body .woocommerce ul.products li.product .button:hover',
-				'body .woocommerce ul.products li.product .product-inner .added_to_cart:hover',
-				'body .product_meta .posted_in a:hover',
-				'body .product_meta .tagged_as a:hover',
-				'body .woocommerce div.product .woocommerce-tabs ul.tabs li a:hover',
-				'body .woocommerce div.product .woocommerce-tabs ul.tabs li.active a',
-				'body .woocommerce .oceanwp-grid-list a.active',
-				'body .woocommerce .oceanwp-grid-list a:hover',
+				'.woocommerce-MyAccount-navigation ul li a:before',
+				'.woocommerce-checkout .woocommerce-info a',
+				'.woocommerce-checkout #payment ul.payment_methods .wc_payment_method>input[type=radio]:first-child:checked+label:before',
+				'.woocommerce-checkout #payment .payment_method_paypal .about_paypal',
+				'.woocommerce ul.products li.product .category a:hover',
+				'.woocommerce ul.products li.product .button:hover',
+				'.woocommerce ul.products li.product .product-inner .added_to_cart:hover',
+				'.product_meta .posted_in a:hover',
+				'.product_meta .tagged_as a:hover',
+				'.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover',
+				'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a',
+				'.woocommerce .oceanwp-grid-list a.active',
+				'.woocommerce .oceanwp-grid-list a:hover',
 			), $texts );
 		}
 
@@ -990,14 +1009,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function primary_borders( $borders ) {
 			return array_merge( array(
-				'body #current-shop-items-dropdown' => array( 'top' ),
-				'body .woocommerce div.product .woocommerce-tabs ul.tabs li.active a' => array( 'bottom' ),
-				'body .wcmenucart-details.count:before',
-				'body .woocommerce ul.products li.product .button:hover',
-				'body .woocommerce ul.products li.product .product-inner .added_to_cart:hover',
-				'body .woocommerce div.product .woocommerce-tabs ul.tabs li.active a',
-				'body .woocommerce .oceanwp-grid-list a.active',
-				'body .woocommerce .oceanwp-grid-list a:hover',
+				'#current-shop-items-dropdown' => array( 'top' ),
+				'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a' => array( 'bottom' ),
+				'.wcmenucart-details.count:before',
+				'.woocommerce ul.products li.product .button:hover',
+				'.woocommerce ul.products li.product .product-inner .added_to_cart:hover',
+				'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a',
+				'.woocommerce .oceanwp-grid-list a.active',
+				'.woocommerce .oceanwp-grid-list a:hover',
 			), $borders );
 		}
 
@@ -1008,13 +1027,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function primary_backgrounds( $backgrounds ) {
 			return array_merge( array(
-				'body .woocommerce div.product div.images .open-image',
-				'body .wcmenucart-details.count',
-				'body .woocommerce-message a',
-				'body .woocommerce-error a',
-				'body .woocommerce-info a',
-				'body .woocommerce .widget_price_filter .ui-slider .ui-slider-handle',
-				'body .woocommerce .widget_price_filter .ui-slider .ui-slider-range',
+				'.woocommerce div.product div.images .open-image',
+				'.wcmenucart-details.count',
+				'.woocommerce-message a',
+				'.woocommerce-error a',
+				'.woocommerce-info a',
+				'.woocommerce .widget_price_filter .ui-slider .ui-slider-handle',
+				'.woocommerce .widget_price_filter .ui-slider .ui-slider-range',
 			), $backgrounds );
 		}
 
@@ -1025,10 +1044,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function hover_primary_backgrounds( $hover ) {
 			return array_merge( array(
-				'body .woocommerce div.product div.images .open-image:hover',
-				'body .woocommerce-error a:hover',
-				'body .woocommerce-info a:hover',
-				'body .woocommerce-message a:hover',
+				'.woocommerce div.product div.images .open-image:hover',
+				'.woocommerce-error a:hover',
+				'.woocommerce-info a:hover',
+				'.woocommerce-message a:hover',
 			), $hover );
 		}
 
@@ -1039,56 +1058,56 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function border_color_elements( $elements ) {
 			return array_merge( array(
-				'body .woocommerce table.shop_table',
-				'body .woocommerce table.shop_table td',
-				'body .woocommerce-cart .cart-collaterals .cart_totals tr td',
-				'body .woocommerce-cart .cart-collaterals .cart_totals tr th',
-				'body .woocommerce table.shop_table tbody th',
-				'body .woocommerce table.shop_table tfoot td',
-				'body .woocommerce table.shop_table tfoot th',
-				'body .woocommerce .order_details',
-				'body .woocommerce .shop_table.order_details tfoot th',
-				'body .woocommerce .shop_table.customer_details th',
-				'body .woocommerce .cart-collaterals .cross-sells',
-				'body .woocommerce-page .cart-collaterals .cross-sells',
-				'body .woocommerce .cart-collaterals .cart_totals',
-				'body .woocommerce-page .cart-collaterals .cart_totals',
-				'body .woocommerce .cart-collaterals h2',
-				'body .woocommerce .cart-collaterals h2',
-				'body .woocommerce .cart-collaterals h2',
-				'body .woocommerce-cart .cart-collaterals .cart_totals .order-total th',
-				'body .woocommerce-cart .cart-collaterals .cart_totals .order-total td',
-				'body .woocommerce ul.order_details',
-				'body .woocommerce .shop_table.order_details tfoot th',
-				'body .woocommerce .shop_table.customer_details th',
-				'body .woocommerce .woocommerce-checkout #customer_details h3',
-				'body .woocommerce .woocommerce-checkout h3#order_review_heading',
-				'body .woocommerce-checkout #payment ul.payment_methods',
-				'body .woocommerce-checkout form.login',
-				'body .woocommerce-checkout form.checkout_coupon .checkout-coupon-inner',
-				'body .woocommerce-checkout-review-order-table tfoot th',
-				'body .woocommerce-checkout #payment',
-				'body .woocommerce ul.order_details',
-				'body .woocommerce #customer_login > div',
-				'body .woocommerce .oceanwp-loginform-wrap',
-				'body .woocommerce .lost_reset_password',
-				'body .woocommerce .col-1.address',
-				'body .woocommerce .col-2.address',
-				'body .woocommerce-checkout .woocommerce-info',
-				'body .woocommerce div.product form.cart',
-				'body .product_meta',
-				'body .woocommerce div.product .woocommerce-tabs ul.tabs',
-				'body .woocommerce #reviews #comments ol.commentlist li .comment_container',
-				'body p.stars span a',
-				'body .woocommerce ul.product_list_widget li',
-				'body .woocommerce .widget_shopping_cart .cart_list li',
-				'body .woocommerce.widget_shopping_cart .cart_list li',
-				'body .woocommerce ul.product_list_widget li:first-child',
-				'body .woocommerce .widget_shopping_cart .cart_list li:first-child',
-				'body .woocommerce.widget_shopping_cart .cart_list li:first-child',
-				'body .widget_product_categories li a',
-				'body .woocommerce .oceanwp-toolbar',
-				'body .woocommerce .products.list .product',
+				'.woocommerce table.shop_table',
+				'.woocommerce table.shop_table td',
+				'.woocommerce-cart .cart-collaterals .cart_totals tr td',
+				'.woocommerce-cart .cart-collaterals .cart_totals tr th',
+				'.woocommerce table.shop_table tth',
+				'.woocommerce table.shop_table tfoot td',
+				'.woocommerce table.shop_table tfoot th',
+				'.woocommerce .order_details',
+				'.woocommerce .shop_table.order_details tfoot th',
+				'.woocommerce .shop_table.customer_details th',
+				'.woocommerce .cart-collaterals .cross-sells',
+				'.woocommerce-page .cart-collaterals .cross-sells',
+				'.woocommerce .cart-collaterals .cart_totals',
+				'.woocommerce-page .cart-collaterals .cart_totals',
+				'.woocommerce .cart-collaterals h2',
+				'.woocommerce .cart-collaterals h2',
+				'.woocommerce .cart-collaterals h2',
+				'.woocommerce-cart .cart-collaterals .cart_totals .order-total th',
+				'.woocommerce-cart .cart-collaterals .cart_totals .order-total td',
+				'.woocommerce ul.order_details',
+				'.woocommerce .shop_table.order_details tfoot th',
+				'.woocommerce .shop_table.customer_details th',
+				'.woocommerce .woocommerce-checkout #customer_details h3',
+				'.woocommerce .woocommerce-checkout h3#order_review_heading',
+				'.woocommerce-checkout #payment ul.payment_methods',
+				'.woocommerce-checkout form.login',
+				'.woocommerce-checkout form.checkout_coupon .checkout-coupon-inner',
+				'.woocommerce-checkout-review-order-table tfoot th',
+				'.woocommerce-checkout #payment',
+				'.woocommerce ul.order_details',
+				'.woocommerce #customer_login > div',
+				'.woocommerce .oceanwp-loginform-wrap',
+				'.woocommerce .lost_reset_password',
+				'.woocommerce .col-1.address',
+				'.woocommerce .col-2.address',
+				'.woocommerce-checkout .woocommerce-info',
+				'.woocommerce div.product form.cart',
+				'.product_meta',
+				'.woocommerce div.product .woocommerce-tabs ul.tabs',
+				'.woocommerce #reviews #comments ol.commentlist li .comment_container',
+				'p.stars span a',
+				'.woocommerce ul.product_list_widget li',
+				'.woocommerce .widget_shopping_cart .cart_list li',
+				'.woocommerce.widget_shopping_cart .cart_list li',
+				'.woocommerce ul.product_list_widget li:first-child',
+				'.woocommerce .widget_shopping_cart .cart_list li:first-child',
+				'.woocommerce.widget_shopping_cart .cart_list li:first-child',
+				'.widget_product_categories li a',
+				'.woocommerce .oceanwp-toolbar',
+				'.woocommerce .products.list .product',
 			), $elements );
 		}
 
@@ -1239,6 +1258,101 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 			}
 		}
+
+
+		/**
+		 * Supports YITH Quick View and Wishlist plugin classes
+		 *
+		 * @since 1.4.11
+		 * @static
+		 */
+		public static function yith_plugin_classes( $classes ) {
+
+			// Quick View
+			if ( class_exists( 'YITH_WCQV' ) ) {
+				$classes[] = 'quick-view-plugin-active';
+			}
+
+			// Wishlist
+			if ( class_exists( 'YITH_WCWL' ) ) {
+				$classes[] = 'wishlist-plugin-active';
+			}
+
+			// Return
+ 			return $classes;
+ 		}
+
+		/**
+		 * Add Quick View button
+		 *
+		 * @since 1.4.11
+		 * @static
+		 */
+		public static function quick_view_btn( $product_id = 0, $label = '', $return = false ) {
+			if ( ! class_exists( 'YITH_WCQV' ) ) {
+				return;
+			}
+
+			global $product;
+
+			// get product id
+			! $product_id && $product_id = yit_get_prop( $product, 'id', true );
+			// get label
+			! $label && $label = '<i class="fa fa-eye" aria-hidden="true"></i>';
+
+			$button = '<a href="#" class="button yith-wcqv-button" data-product_id="' . $product_id . '">' . $label . '</a>';
+            $button = apply_filters( 'yith_add_quick_view_button_html', $button, $label, $product );
+
+			if( $return ) {
+				return $button;
+			}
+
+			echo $button;
+ 		}
+
+		/**
+		 * Add Wishlist button
+		 *
+		 * @since 1.4.11
+		 * @static
+		 */
+		public static function wishlist_btn() {
+			if ( ! class_exists( 'YITH_WCWL' ) ) {
+				return;
+			}
+
+ 			echo do_shortcode( '[yith_wcwl_add_to_wishlist]' );
+ 		}
+
+		/**
+		 * Add Wishlist button classes
+		 *
+		 * @since 1.4.11
+		 * @static
+		 */
+		public static function wishlist_btn_classes() {
+			$classes = array( 'add_to_wishlist' );
+
+			// If archive products
+			if ( ! oceanwp_is_woo_single() ) {
+				$classes[] = 'button';
+			}
+
+			// Turn classes into space seperated string
+			$classes = implode( ' ', $classes );
+
+			return $classes;
+ 		}
+
+		/**
+		 * Supports YITH Wishlist plugin
+		 *
+		 * @since 1.4.11
+		 * @static
+		 */
+		public static function wishlist_label( $label ) {
+ 			return '<i class="fa fa-heart-o" aria-hidden="true"></i>';
+ 		}
 	}
 
 }
