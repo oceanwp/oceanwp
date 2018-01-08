@@ -40,14 +40,14 @@ form.oceanwp-searchform input { padding: 0 15px 0 40px; }
 
 /* Layout */
 .content-area { float: right; padding-left: 30px; padding-right: 0; border-left-width: 1px; border-right-width: 0; }
-.widget-area { float: left; padding-right: 30px; padding-left: 0; }
+.widget-area.sidebar-primary { float: left; padding-right: 30px; padding-left: 0; }
 .content-left-sidebar .content-area { float: left; padding-right: 30px; padding-left: 0; border-right-width: 1px; border-left-width: 0; }
-.content-left-sidebar .widget-area { float: right; padding-left: 30px; padding-right: 0; }
+.content-left-sidebar .widget-area.sidebar-primary { float: right; padding-left: 30px; padding-right: 0; }
 
 /* Both sidebars */
 .content-both-sidebars .content-area { float: left; padding-right: 30px; }
 .content-both-sidebars .content-area { border-right-width: 1px; }
-.widget-area.sidebar-primary { padding-right: 0; }
+.content-both-sidebars .widget-area.sidebar-primary { padding-right: 0; }
 
 /* Boxed layout */
 .boxed-layout .site-breadcrumbs { right: auto; left: 30px; }
@@ -55,8 +55,8 @@ form.oceanwp-searchform input { padding: 0 15px 0 40px; }
 /* Separate layout */
 .separate-layout .content-area { border-left-width: 0; border-right-width: 0; }
 .separate-layout.content-left-sidebar .content-area { border-right-width: 0; border-left-width: 0; }
-.separate-layout .widget-area { padding-right: 20px; padding-left: 0; }
-.separate-layout.content-left-sidebar .widget-area { padding-left: 20px; padding-right: 0; }
+.separate-layout .widget-area.sidebar-primary { padding-right: 20px; padding-left: 0; }
+.separate-layout.content-left-sidebar .widget-area.sidebar-primary { padding-left: 20px; padding-right: 0; }
 body.separate-blog.separate-layout .oceanwp-row { margin-left: -20px; margin-right: 0; }
 body.separate-blog.separate-layout #blog-entries.blog-grid > * { padding: 0 0 0 20px; }
 
@@ -282,7 +282,6 @@ ul.page-numbers { text-align: left; }
 #footer-bottom #copyright { text-align: right; padding-left: 15px; padding-right: 0; }
 #footer-bottom #footer-bottom-menu { text-align: left; padding-right: 15px; padding-left: 0; }
 #footer-bottom #footer-bottom-menu li { float: right; }
-
 #scroll-top { left: 20px; right: auto; }
 
 /*------------------------------------*
@@ -314,6 +313,6 @@ ul.page-numbers { text-align: left; }
 @media only screen and (max-width: 959px) {
 	
 	/* Separate layout */
-	.separate-layout .widget-area { padding-right: 0; }
+	.separate-layout .widget-area.sidebar-primary { padding-right: 0; }
 	
 }

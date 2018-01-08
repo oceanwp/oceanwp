@@ -2081,8 +2081,10 @@
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		background-color: #13aff0;
+
 		&:hover {
 			background-color: #0b7cac;
+			color: #fff;
 		}
 	}
 	&:before {
@@ -2117,6 +2119,7 @@
 		background-color: #13aff0;
 		&:hover {
 			background-color: #0b7cac;
+			color: #fff;
 		}
 	}
 	&:before {
@@ -2151,6 +2154,7 @@
 		background-color: #13aff0;
 		&:hover {
 			background-color: #0b7cac;
+			color: #fff;
 		}
 	}
 	&:before {
@@ -3016,85 +3020,9 @@ form.checkout {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/**
- * YITH Quick View
- */
-.quick-view-plugin-active {
-
-	.products {
-		.product {
-			position: relative;
-
-			.yith-wcqv-button {
-				position: absolute;
-				bottom: 0;
-			}
-		}
-	}
-
-}
-
-/**
- * YITH Wishlist
- */
-.wishlist-plugin-active {
-
-	.products {
-		.product {
-			position: relative;
-
-			.yith-wcwl-add-to-wishlist {
-				position: absolute;
-				bottom: 0;
-				right: 0;
-				margin-top: 0;
-
-				.ajax-loading {
-					position: absolute;
-				}
-			}
-
-			.yith-wcwl-add-button {
-				float: none;
-				display: inline-block;
-				background-color: transparent;
-				color: #848494;
-				padding: 5px 12px;
-				border: 3px double #e4e4e4;
-				font-size: 12px;
-				line-height: 1.5;
-				-webkit-border-radius: 0;
-				-moz-border-radius: 0;
-				-ms-border-radius: 0;
-				border-radius: 0;
-				text-transform: none;
-
-				i {
-					margin-right: 0;
-				}
-
-				&.hide {
-					display: block !important;
-
-					a {
-						color: red;
-					}
-				}
-			}
-
-			.yith-wcwl-wishlistaddedbrowse,
-			.yith-wcwl-wishlistexistsbrowse {
-				display: none !important;
-			}
-		}
-	}
-
-}
-
 .quick-view-plugin-active,
 .wishlist-plugin-active {
-	.products .product {
-		padding-bottom: 0;
-		margin-bottom: 40px;
+	ul.products li.product li.btn-wrap {
+		position: relative;
 	}
 }

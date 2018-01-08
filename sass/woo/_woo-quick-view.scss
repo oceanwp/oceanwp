@@ -1,0 +1,17 @@
+/*------------------------------------------------------------------
+Woo Quick View
+-------------------------------------------------------------------*/
+.quick-view-plugin-active {
+	ul.products li.product li.btn-wrap {
+		.yith-wcqv-button {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&.woocommerce .products .product .yith-wcqv-button {
+		display: none;
+	}
+}

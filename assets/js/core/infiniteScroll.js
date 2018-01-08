@@ -33,6 +33,13 @@ function oceanwpInfiniteScrollInit() {
 
 		$items.imagesLoaded( function() {
 
+			// Take image width & height to fix Safari issue
+			var $image = $items.find( 'img' );
+			$image.css( {
+				width 	: $image.attr( 'width' ),
+				height 	: $image.attr( 'height' )
+			} );
+
 			// Isotope
 			if ( $container.hasClass( 'blog-masonry-grid' ) ) {
 				$container.isotope( 'appended', $items );

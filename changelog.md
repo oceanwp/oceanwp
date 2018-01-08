@@ -1,5 +1,17 @@
 # OceanWP Changelog
 
+### *2018.01.02* - 1.4.11
+* **Added** - New field for the Vertical header style to choose when you want to collapse it.
+* **Added** - Category description as subheading.
+* **Added** - Ability to display a custom excerpt for the search result page.
+* **Fixed** - Infinite Scroll image issue on Safari.
+* **Fixed** - Issue with Yoast Breadcrumb.
+* **Fixed** - Blog entries image issue.
+* **Fixed** - Some WooCommerce styling issues.
+* **Fixed** - Undefined mobile_footer_left_padding variable.
+* **Fixed** - Medium header "sticky header" padding issue.
+* **Fixed** - Issue with the Mobile logo if the header is fixed on mobile view.
+
 ### *2017.12.10* - 1.4.10
 * **Fixed** - Boxed layout issue.
 

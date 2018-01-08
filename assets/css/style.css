@@ -3993,31 +3993,31 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 	All Devices under 1280px
 *------------------------------------*/
 @media only screen and (max-width: 1280px) {
-  body.vertical-header-style.left-header #site-header.vertical-header {
+  body.vertical-header-style.default-collapse.left-header #site-header.vertical-header {
     left: -266px;
   }
-  body.vertical-header-style.left-header #outer-wrap {
+  body.vertical-header-style.default-collapse.left-header #outer-wrap {
     margin-left: 34px;
   }
-  body.vertical-header-style.right-header #site-header.vertical-header {
+  body.vertical-header-style.default-collapse.right-header #site-header.vertical-header {
     right: -266px;
   }
-  body.vertical-header-style.right-header #outer-wrap {
+  body.vertical-header-style.default-collapse.right-header #outer-wrap {
     margin-right: 34px;
   }
-  body.vertical-header-style.vh-opened.left-header #site-header.vertical-header {
+  body.vertical-header-style.default-collapse.vh-opened.left-header #site-header.vertical-header {
     left: 0;
   }
-  body.vertical-header-style.vh-opened.right-header #site-header.vertical-header {
+  body.vertical-header-style.default-collapse.vh-opened.right-header #site-header.vertical-header {
     right: 0;
   }
-  body.vertical-header-style.vh-opened #site-header.vertical-header #site-navigation-wrap {
+  body.vertical-header-style.default-collapse.vh-opened #site-header.vertical-header #site-navigation-wrap {
     padding-right: 0;
   }
-  #site-header.vertical-header .vertical-toggle {
+  body.default-collapse #site-header.vertical-header .vertical-toggle {
     display: block;
   }
-  #site-header.vertical-header #site-navigation-wrap {
+  body.default-collapse #site-header.vertical-header #site-navigation-wrap {
     padding-right: 34px;
   }
 }
@@ -6808,6 +6808,7 @@ body.breadcrumbs-position-default .page-header-title {
 .blog-entry.post .thumbnail a {
   display: inline-block;
   position: relative;
+  width: 100%;
 }
 
 .blog-entry.post .thumbnail .overlay {
@@ -7302,9 +7303,11 @@ ul.meta li i {
 .single-post.content-max-width .entry-content h4,
 .single-post.content-max-width .entry-content h5,
 .single-post.content-max-width .entry-content h6,
+.single-post.content-max-width .entry-content blockquote,
 .single-post.content-max-width .entry-content p,
 .single-post.content-max-width .post-tags,
 .single-post.content-max-width .entry-share,
+.single-post.content-max-width nav.post-navigation,
 .single-post.content-max-width #related-posts,
 .single-post.content-max-width .comments-area {
   padding-left: 20px;
@@ -7313,13 +7316,14 @@ ul.meta li i {
 
 .single-post.content-max-width .entry-header,
 .single-post.content-max-width ul.meta,
-.single-post.content-max-width .entry-content p,
 .single-post.content-max-width .entry-content h1,
 .single-post.content-max-width .entry-content h2,
 .single-post.content-max-width .entry-content h3,
 .single-post.content-max-width .entry-content h4,
 .single-post.content-max-width .entry-content h5,
 .single-post.content-max-width .entry-content h6,
+.single-post.content-max-width .entry-content blockquote,
+.single-post.content-max-width .entry-content p,
 .single-post.content-max-width .wp-block-image,
 .single-post.content-max-width .wp-block-gallery,
 .single-post.content-max-width .wp-block-video,
@@ -7350,12 +7354,19 @@ ul.meta li i {
   padding: 0;
 }
 
+.single-post.content-max-width .entry-content blockquote p {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .single-post.content-max-width .thumbnail,
 .single-post.content-max-width .wp-block-cover-text.alignwide,
 .single-post.content-max-width .wp-block-image.alignwide,
 .single-post.content-max-width .wp-block-gallery.alignwide,
 .single-post.content-max-width .wp-block-text-columns.alignwide,
 .single-post.content-max-width .entry-share,
+.single-post.content-max-width nav.post-navigation,
 .single-post.content-max-width #related-posts {
   margin: 1.5em auto;
   max-width: 1100px;
@@ -9335,11 +9346,11 @@ a.sidr-class-toggle-sidr-close i {
   body.default-breakpoint #site-logo.has-responsive-logo .responsive-logo-link {
     display: block;
   }
-  body.default-breakpoint .is-sticky #site-logo.has-responsive-logo .responsive-logo-link {
-    display: none;
-  }
   body.default-breakpoint .is-sticky #site-logo.has-responsive-logo .sticky-logo-link {
     display: block;
+  }
+  body.default-breakpoint .is-sticky #site-logo.has-sticky-logo .responsive-logo-link {
+    display: none;
   }
   body.default-breakpoint #site-header.center-header #site-logo {
     display: block;
