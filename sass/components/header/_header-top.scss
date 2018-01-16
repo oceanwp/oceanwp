@@ -160,6 +160,13 @@
 	}
 }
 
+#site-header.top-header.has-header-media {
+    #site-header-sticky-wrapper,
+	.header-top {
+	    z-index: 101;
+	}
+}
+
 /*------------------------------------*
 	All Devices under 960px
 *------------------------------------*/

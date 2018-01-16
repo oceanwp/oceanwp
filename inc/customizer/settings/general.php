@@ -51,6 +51,28 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) );
 
 			/**
+			 * Styling
+			 */
+			$wp_customize->add_setting( 'ocean_customzer_styling', array(
+				'transport'           	=> 'postMessage',
+				'default'           	=> 'head',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( 'ocean_customzer_styling', array(
+				'label'	   				=> esc_html__( 'Styling Options Location', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'If you choose Custom File, a CSS file will be created in your uploads folder.', 'oceanwp' ),
+				'type'              	=> 'radio',
+				'section'  				=> 'ocean_general_styling',
+				'settings' 				=> 'ocean_customzer_styling',
+				'priority'          	=> 10,
+				'choices'           	=> array(
+					'head' 		=> esc_html__( 'WP Head', 'oceanwp' ),
+					'file' 		=> esc_html__( 'Custom File', 'oceanwp' ),
+				)
+			) );
+
+			/**
 			 * Primary Color
 			 */
 			$wp_customize->add_setting( 'ocean_primary_color', array(

@@ -1011,7 +1011,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 				'priority' 				=> 10,
 			    'input_attrs' 			=> array(
 			        'min'   => 2,
-			        'max'   => 12,
+			        'max'   => 50,
 			        'step'  => 1,
 			    ),
 			) ) );

@@ -33,11 +33,14 @@ function oceanwpInfiniteScrollInit() {
 
 		$items.imagesLoaded( function() {
 
-			// Take image width & height to fix Safari issue
-			var $image = $items.find( 'img' );
-			$image.css( {
-				width 	: $image.attr( 'width' ),
-				height 	: $image.attr( 'height' )
+			// Animate new Items
+			$items.animate( {
+				opacity : 1
+			} );
+
+			// Force the images to be parsed to fix Safari issue
+			$items.find( 'img' ).each( function( index, img ) {
+				img.outerHTML = img.outerHTML;
 			} );
 
 			// Isotope
@@ -45,11 +48,6 @@ function oceanwpInfiniteScrollInit() {
 				$container.isotope( 'appended', $items );
 				$items.css( 'opacity', 0 );
 			}
-
-			// Animate new Items
-			$items.animate( {
-				opacity : 1
-			} );
 
 			// Re-run functions
 			if ( ! $j( 'body' ).hasClass( 'no-carousel' ) ) {

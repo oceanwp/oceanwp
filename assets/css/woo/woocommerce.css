@@ -1605,7 +1605,7 @@
 
 .woocommerce div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger:before {
   display: inline-block;
-  font: normal normal normal 16px/1 FontAwesome;
+  font-family: 'FontAwesome';
   font-size: inherit;
   text-rendering: auto;
   display: block;
@@ -2860,7 +2860,7 @@ ul.order_details li strong {
 }
 
 .woocommerce-checkout #payment ul.payment_methods .wc_payment_method > label:before {
-  font: normal normal normal 1em/1 FontAwesome;
+  font-family: 'FontAwesome';
   text-rendering: auto;
   display: inline-block;
   font-size: inherit;

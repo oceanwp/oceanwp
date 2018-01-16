@@ -83,7 +83,7 @@ input[type=checkbox]:checked:before {
 	display: inline-block;
 	vertical-align: middle;
 	width: 16px;
-	font: 400 14px/1 FontAwesome;
+	font-family: 'FontAwesome';
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

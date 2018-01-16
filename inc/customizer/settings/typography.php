@@ -22,7 +22,6 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 			add_action( 'customize_register', 		array( $this, 'customizer_options' ) );
 			add_action( 'wp_enqueue_scripts', 		array( $this, 'load_fonts' ) );
-			add_filter( 'ocean_head_css_typo', 		array( $this, 'head_css' ) );
 		
 			// CSS output
 			if ( is_customize_preview() ) {

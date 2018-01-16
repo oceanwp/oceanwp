@@ -1,5 +1,11 @@
 # OceanWP Changelog
 
+### *2018.01.16* - 1.4.12
+* **Added** - New option in General Options > General Styling to choose to add all the customizer styling options in a custom CSS file or in the WP Head.
+* **Tweak** - Better approch to fix the image issue on Safari when Infinite Scroll is enabled.
+* **Fixed** - Sub menu issue with the Top header style when a media is added to the header.
+* **Fixed** - RTL issue on the WooCommerce my account page.
+
 ### *2018.01.02* - 1.4.11
 * **Added** - New field for the Vertical header style to choose when you want to collapse it.
 * **Added** - Category description as subheading.

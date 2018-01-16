@@ -169,8 +169,9 @@ body.breadcrumbs-position-default .page-header-title {
         content: '\f105';
         margin: 0 6px;
         display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
+        font-family: FontAwesome;
         font-size: inherit;
+        font-weight: 900;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

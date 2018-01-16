@@ -46,6 +46,9 @@ class OCEANWP_Theme_Class {
 		// Setup theme => add_theme_support, register_nav_menus, load_theme_textdomain, etc
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'theme_setup' ), 10 );
 
+		// Setup theme => Generate the custom CSS file
+		add_action( 'admin_bar_init', array( 'OCEANWP_Theme_Class', 'save_customizer_css_in_file' ), 9999 );
+
 		// register sidebar widget areas
 		add_action( 'widgets_init', array( 'OCEANWP_Theme_Class', 'register_sidebars' ) );
 
@@ -63,9 +66,6 @@ class OCEANWP_Theme_Class {
 			// Outputs custom CSS for the admin
 			add_action( 'admin_head', array( 'OCEANWP_Theme_Class', 'admin_inline_css' ) );
 
-			// Save custom CSS in the file
-			//add_action( 'customize_save_after', array( 'OCEANWP_Theme_Class', 'save_customizer_css_in_file' ), 9999 );
-
 		/** Non Admin actions **/
 		} else {
 
@@ -73,10 +73,10 @@ class OCEANWP_Theme_Class {
 			add_action( 'wp_enqueue_scripts', array( 'OCEANWP_Theme_Class', 'theme_css' ) );
 
 			// Load his file in last
-			//add_action( 'wp_enqueue_scripts', array( 'OCEANWP_Theme_Class', 'custom_style_css' ), 9999 );
+			add_action( 'wp_enqueue_scripts', array( 'OCEANWP_Theme_Class', 'custom_style_css' ), 9999 );
 
 			// Remove Customizer CSS script from Front-end
-			//add_action( 'init', array( 'OCEANWP_Theme_Class', 'remove_customizer_custom_css' ) );
+			add_action( 'init', array( 'OCEANWP_Theme_Class', 'remove_customizer_custom_css' ) );
 
 			// Load theme js
 			add_action( 'wp_enqueue_scripts', array( 'OCEANWP_Theme_Class', 'theme_js' ) );
@@ -630,28 +630,35 @@ class OCEANWP_Theme_Class {
 	 * @since 1.0.0
 	 */
 	public static function custom_css( $output = NULL ) {
-		/*global $wp_customize;
-		$upload_dir = wp_upload_dir();
 
-		// Render CSS in the head
-		if ( isset( $wp_customize ) || ! file_exists( $upload_dir['basedir'] .'/oceanwp/custom-style.css' ) ) { 
-		    
-		    // Add filter for adding custom css via other functions
+		// If Custom File is selected
+		if ( 'file' == get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {
+
+			global $wp_customize;
+			$upload_dir = wp_upload_dir();
+
+			// Render CSS in the head
+			if ( isset( $wp_customize ) || ! file_exists( $upload_dir['basedir'] .'/oceanwp/custom-style.css' ) ) { 
+			    
+			    // Add filter for adding custom css via other functions
+				$output = apply_filters( 'ocean_head_css', $output );
+
+				 // Minify and output CSS in the wp_head
+				if ( ! empty( $output ) ) {
+					echo "<!-- OceanWP CSS -->\n<style type=\"text/css\">\n" . wp_strip_all_tags( oceanwp_minify_css( $output ) ) . "\n</style>";
+				}
+			}
+
+		} else {
+
+			// Add filter for adding custom css via other functions
 			$output = apply_filters( 'ocean_head_css', $output );
 
-			 // Minify and output CSS in the wp_head
+			// Minify and output CSS in the wp_head
 			if ( ! empty( $output ) ) {
 				echo "<!-- OceanWP CSS -->\n<style type=\"text/css\">\n" . wp_strip_all_tags( oceanwp_minify_css( $output ) ) . "\n</style>";
 			}
-		}*/
 
-
-		// Add filter for adding custom css via other functions
-		$output = apply_filters( 'ocean_head_css', $output );
-
-		 // Minify and output CSS in the wp_head
-		if ( ! empty( $output ) ) {
-			echo "<!-- OceanWP CSS -->\n<style type=\"text/css\">\n" . wp_strip_all_tags( oceanwp_minify_css( $output ) ) . "\n</style>";
 		}
 
 	}
@@ -670,13 +677,17 @@ class OCEANWP_Theme_Class {
 	/**
 	 * Save Customizer CSS in a file
 	 *
-	 * @since 1.4.9
+	 * @since 1.4.12
 	 */
-	public static function save_customizer_css_in_file() {
+	public static function save_customizer_css_in_file( $output = NULL ) {
+
+		// If Custom File is not selected
+		if ( 'file' != get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {
+			return;
+		}
 
 		// Get all the customier css
 	    $output = apply_filters( 'ocean_head_css', $output );
-	    $output .= apply_filters( 'ocean_head_css_typo', $CSS );
 
 	    // Get Custom Panel CSS
 	    $output_custom_css .= wp_get_custom_css();
@@ -700,9 +711,15 @@ class OCEANWP_Theme_Class {
 	/**
 	 * Include Custom CSS file if present.
 	 *
-	 * @since 1.4.9
+	 * @since 1.4.12
 	 */
 	public static function custom_style_css() {
+
+		// If Custom File is not selected
+		if ( 'file' != get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {
+			return;
+		}
+
 		global $wp_customize;
 		$upload_dir = wp_upload_dir();
 
@@ -724,9 +741,15 @@ class OCEANWP_Theme_Class {
 	/**
 	 * Remove Customizer style script from front-end
 	 *
-	 * @since 1.4.9
+	 * @since 1.4.12
 	 */
 	public static function remove_customizer_custom_css() {
+
+		// If Custom File is not selected
+		if ( 'file' != get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {
+			return;
+		}
+		
 		global $wp_customize;
 		$upload_dir = wp_upload_dir();
 
