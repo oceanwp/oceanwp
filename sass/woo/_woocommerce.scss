@@ -1302,7 +1302,7 @@
 				overflow: hidden;
 				&:before {
 					display: inline-block;
-					font: normal normal normal 16px/1 FontAwesome;
+					font-family: 'FontAwesome';
 					font-size: inherit;
 					text-rendering: auto;
 					display: block;
@@ -2358,7 +2358,7 @@ ul {
 					margin: 0;
 					letter-spacing: 0.4px;
 					&:before {
-						font: normal normal normal 1em/1 FontAwesome;
+						font-family: 'FontAwesome';
 						text-rendering: auto;
 						display: inline-block;
 						font-size: inherit;

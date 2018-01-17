@@ -37,7 +37,9 @@ if ( ! class_exists( 'OceanWP_Social_Login' ) ) :
 			$provider_icon = strtolower( $provider_id );
 
 			// Custom icons
-			if ( 'vkontakte' == strtolower( $provider_id ) ) {
+			if ( 'facebook' == strtolower( $provider_id ) ) {
+				$provider_icon = 'facebook-f';
+			} else if ( 'vkontakte' == strtolower( $provider_id ) ) {
 				$provider_icon = 'vk';
 			} else if ( 'stackoverflow' == strtolower( $provider_id ) ) {
 				$provider_icon = 'stack-overflow';

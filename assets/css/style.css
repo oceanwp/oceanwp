@@ -1554,7 +1554,7 @@ h6 {
 
 .theme-heading .text::before {
   content: '\f105';
-  font: normal normal normal 14px/1 FontAwesome;
+  font-family: 'FontAwesome';
   font-size: 18px;
   font-weight: 600;
   color: #13aff0;
@@ -1860,7 +1860,7 @@ input[type=checkbox]:checked:before {
   display: inline-block;
   vertical-align: middle;
   width: 16px;
-  font: 400 14px/1 FontAwesome;
+  font-family: 'FontAwesome';
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2803,6 +2803,11 @@ a.pure-button-selected {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+#site-header.top-header.has-header-media #site-header-sticky-wrapper,
+#site-header.top-header.has-header-media .header-top {
+  z-index: 101;
 }
 
 /*------------------------------------*
@@ -4371,7 +4376,6 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   width: auto;
   height: auto;
   font-size: 1.2em;
-  font-weight: 400;
   line-height: 1;
   padding: 0 !important;
 }
@@ -6677,8 +6681,9 @@ body.breadcrumbs-position-default .page-header-title {
   content: '\f105';
   margin: 0 6px;
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font-family: FontAwesome;
   font-size: inherit;
+  font-weight: 900;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7308,6 +7313,7 @@ ul.meta li i {
 .single-post.content-max-width .post-tags,
 .single-post.content-max-width .entry-share,
 .single-post.content-max-width nav.post-navigation,
+.single-post.content-max-width #author-bio,
 .single-post.content-max-width #related-posts,
 .single-post.content-max-width .comments-area {
   padding-left: 20px;
@@ -7367,6 +7373,7 @@ ul.meta li i {
 .single-post.content-max-width .wp-block-text-columns.alignwide,
 .single-post.content-max-width .entry-share,
 .single-post.content-max-width nav.post-navigation,
+.single-post.content-max-width #author-bio,
 .single-post.content-max-width #related-posts {
   margin: 1.5em auto;
   max-width: 1100px;
