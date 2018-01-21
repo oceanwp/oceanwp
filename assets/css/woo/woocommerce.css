@@ -1771,7 +1771,7 @@
   margin: 1.5em 0 0;
 }
 
-.woocommerce div.product .woocommerce-tabs .panel h2 {
+.woocommerce div.product .woocommerce-tabs .panel > h2:first-child {
   margin: 20px 0;
   font-size: 18px;
   font-weight: normal;
