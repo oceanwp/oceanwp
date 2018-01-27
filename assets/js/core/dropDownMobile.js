@@ -23,6 +23,13 @@ function oceanwpDropDownMobile() {
 			return false;
 		} );
 
+		// Close menu function
+		var oceanwpDropDownMobileClose = function( e ) {
+			$j( '#mobile-dropdown' ).slideUp( 200 );
+			$j( '.mobile-menu' ).removeClass( 'opened' );
+			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
+        }
+
 		// Declare useful vars
 		var $hasChildren = $j( '#mobile-dropdown .menu-item-has-children' );
 
@@ -67,9 +74,7 @@ function oceanwpDropDownMobile() {
 
 		// Close menu
 		$j( document ).on( 'click', function() {
-			$j( '#mobile-dropdown' ).slideUp( 200 );
-			$j( '.mobile-menu' ).removeClass( 'opened' );
-			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
+			oceanwpDropDownMobileClose();
 		} ).on( 'click', '#mobile-dropdown', function( e ) {
 		    e.stopPropagation();
 		} );
@@ -77,11 +82,14 @@ function oceanwpDropDownMobile() {
 		// Close on resize
 		$window.resize( function() {
 			if ( $window.width() >= 960 ) {
-				$j( '#mobile-dropdown' ).slideUp( 200 );
-				$j( '.mobile-menu' ).removeClass( 'opened' );
-				$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
+				oceanwpDropDownMobileClose();
 			}
 		} );
+
+		// Close menu if anchor link
+        $j( '#mobile-dropdown li a[href*="#"]:not([href="#"])' ).on( 'click', function() {
+        	oceanwpDropDownMobileClose();
+	    } );
 
 	}
 

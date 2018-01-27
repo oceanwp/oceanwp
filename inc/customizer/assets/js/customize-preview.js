@@ -7256,6 +7256,554 @@
 					$child.remove();
 				}
 			});
+		}), api("ocean_product_top_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_top_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_top_padding">.woocommerce .products .product-inner { padding-top: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_right_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_right_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_right_padding">.woocommerce .products .product-inner { padding-right: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_bottom_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_bottom_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_bottom_padding">.woocommerce .products .product-inner { padding-bottom: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_left_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_left_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_left_padding">.woocommerce .products .product-inner { padding-left: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_top_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_top_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_top_padding">@media (max-width: 768px){.woocommerce .products .product-inner { padding-top: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_right_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_right_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_right_padding">@media (max-width: 768px){.woocommerce .products .product-inner { padding-right: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_bottom_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_bottom_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_bottom_padding">@media (max-width: 768px){.woocommerce .products .product-inner { padding-bottom: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_left_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_left_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_left_padding">@media (max-width: 768px){.woocommerce .products .product-inner { padding-left: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_top_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_top_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_top_padding">@media (max-width: 480px){.woocommerce .products .product-inner { padding-top: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_right_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_right_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_right_padding">@media (max-width: 480px){.woocommerce .products .product-inner { padding-right: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_bottom_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_bottom_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_bottom_padding">@media (max-width: 480px){.woocommerce .products .product-inner { padding-bottom: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_left_padding", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_left_padding");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_left_padding">@media (max-width: 480px){.woocommerce .products .product-inner { padding-left: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_top_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_top_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_top_border_width">.woocommerce .products .product-inner { border-top-width: ' + to + "px; border-style: solid; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_right_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_right_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_right_border_width">.woocommerce .products .product-inner { border-right-width: ' + to + "px; border-style: solid; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_bottom_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_bottom_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_bottom_border_width">.woocommerce .products .product-inner { border-bottom-width: ' + to + "px; border-style: solid; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_left_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_left_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_left_border_width">.woocommerce .products .product-inner { border-left-width: ' + to + "px; border-style: solid; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_top_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_top_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_top_border_width">@media (max-width: 768px){.woocommerce .products .product-inner { border-top-width: ' + to + "px; border-style: solid; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_right_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_right_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_right_border_width">@media (max-width: 768px){.woocommerce .products .product-inner { border-right-width: ' + to + "px; border-style: solid; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_bottom_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_bottom_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_bottom_border_width">@media (max-width: 768px){.woocommerce .products .product-inner { border-bottom-width: ' + to + "px; border-style: solid; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_left_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_left_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_left_border_width">@media (max-width: 768px){.woocommerce .products .product-inner { border-left-width: ' + to + "px; border-style: solid; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_top_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_top_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_top_border_width">@media (max-width: 480px){.woocommerce .products .product-inner { border-top-width: ' + to + "px; border-style: solid; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_right_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_right_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_right_border_width">@media (max-width: 480px){.woocommerce .products .product-inner { border-right-width: ' + to + "px; border-style: solid; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_bottom_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_bottom_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_bottom_border_width">@media (max-width: 480px){.woocommerce .products .product-inner { border-bottom-width: ' + to + "px; border-style: solid; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_left_border_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_left_border_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_left_border_width">@media (max-width: 480px){.woocommerce .products .product-inner { border-left-width: ' + to + "px; border-style: solid; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_top_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_top_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_top_border_radius">.woocommerce .products .product-inner { border-top-left-radius: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_right_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_right_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_right_border_radius">.woocommerce .products .product-inner { border-top-right-radius: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_bottom_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_bottom_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_bottom_border_radius">.woocommerce .products .product-inner { border-bottom-right-radius: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_left_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_left_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_left_border_radius">.woocommerce .products .product-inner { border-bottom-left-radius: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_top_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_top_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_top_border_radius">@media (max-width: 768px){.woocommerce .products .product-inner { border-top-left-radius: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_right_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_right_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_right_border_radius">@media (max-width: 768px){.woocommerce .products .product-inner { border-top-right-radius: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_bottom_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_bottom_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_bottom_border_radius">@media (max-width: 768px){.woocommerce .products .product-inner { border-bottom-right-radius: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_tablet_left_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_tablet_left_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_tablet_left_border_radius">@media (max-width: 768px){.woocommerce .products .product-inner { border-bottom-left-radius: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_top_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_top_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_top_border_radius">@media (max-width: 480px){.woocommerce .products .product-inner { border-top-left-radius: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_right_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_right_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_right_border_radius">@media (max-width: 480px){.woocommerce .products .product-inner { border-top-right-radius: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_bottom_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_bottom_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_bottom_border_radius">@media (max-width: 480px){.woocommerce .products .product-inner { border-bottom-right-radius: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_mobile_left_border_radius", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_product_mobile_left_border_radius");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_product_mobile_left_border_radius">@media (max-width: 480px){.woocommerce .products .product-inner { border-bottom-left-radius: ' + to + "px; }}</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_product_background_color", function($swipe) {
+			$swipe.bind(function(size) {
+				$(".woocommerce .products .product-inner").css("background-color", size);
+			});
+		}), api("ocean_product_border_color", function($swipe) {
+			$swipe.bind(function(size) {
+				$(".woocommerce .products .product-inner").css("border-color", size);
+			});
 		}), api("ocean_category_color", function($swipe) {
 			$swipe.bind(function(size) {
 				$(".woocommerce ul.products li.product .category a").css("color", size);

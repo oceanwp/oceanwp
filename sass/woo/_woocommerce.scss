@@ -1429,7 +1429,7 @@
 			clear: both;
 			.panel {
 				margin: 1.5em 0 0;
-				h2 {
+				h2:first-child {
 					margin: 20px 0;
 					font-size: 18px;
 					font-weight: normal;
@@ -1668,6 +1668,10 @@
 				font-size: 15px;
 				letter-spacing: 1px;
 				padding: 20px;
+
+				&.product-total {
+					text-align: right;
+				}
 			}
 			tbody td {
 				background-color: #fdfdfd;
@@ -3024,5 +3028,50 @@ form.checkout {
 .wishlist-plugin-active {
 	ul.products li.product li.btn-wrap {
 		position: relative;
+	}
+}
+
+.demo_store {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	padding: 15px 20px;
+	background-color: #3d9cd2;
+	color: #fff;
+	z-index: 999;
+
+	a {
+		color: #fff;
+		font-weight: 400;
+		text-decoration: underline;
+		display: block;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&:before {
+		@include font-awesome();
+		margin-right: 10px;
+		content: '\f05a';
+	}
+}
+
+@media (min-width: 768px) {
+	.demo_store a {
+	    background: rgba(0,0,0,.1);
+	    float: right;
+	    display: inline-block;
+	    margin: -15px -20px -15px 0;
+	    padding: 15px 20px;
+
+	    &:before {
+			@include font-awesome();
+			content: '\f057';
+			margin-right: 10px;
+		}
 	}
 }

@@ -181,6 +181,7 @@ p.stars span a:after { right: 0; left: auto; }
 
 /* Checkout your order */
 .woocommerce #order_review table.shop_table tbody td.product-name { text-align: right; }
+.woocommerce #order_review table.shop_table thead th.product-total { text-align: left; }
 .woocommerce-checkout #payment ul.payment_methods .wc_payment_method > label:before { margin-left: 10px; margin-right: 0; }
 .woocommerce-checkout #payment ul.payment_methods li { text-align: right; }
 .woocommerce-checkout #payment ul.payment_methods li img { float: left; }

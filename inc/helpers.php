@@ -287,12 +287,6 @@ if ( ! function_exists( 'oceanwp_post_layout' ) ) {
 
 	function oceanwp_post_layout() {
 
-		// Check URL
-		if ( ! empty( $_GET['post_layout'] )
-			&& isset( $_GET['post_layout'] ) ) {
-			return sanitize_text_field( wp_unslash( $_GET['post_layout'] ) );
-		}
-
 		// Define variables
 		$class  = 'right-sidebar';
 		$meta   = get_post_meta( oceanwp_post_id(), 'ocean_post_layout', true );
@@ -465,7 +459,8 @@ if ( ! function_exists( 'oceanwp_get_sidebar' ) ) {
 	function oceanwp_get_sidebar( $sidebar = 'sidebar' ) {
 
 		// Search
-		if ( is_search() ) {
+		if ( is_search()
+			&& true == get_theme_mod( 'ocean_search_custom_sidebar', true ) ) {
 			$sidebar = 'search_sidebar';
 		}
 		

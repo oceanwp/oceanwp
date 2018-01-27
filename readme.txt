@@ -10,7 +10,8 @@ Email: support@oceanwp.org
 -------------------------------------------------------
 Description
 -------------------------------------------------------
-OceanWP is the perfect theme for your project. Lightweight and highly extendible, it will enable you to create almost any type of site with a beautiful & professional design. There are several options to personalise your website, multiple widget regions, a responsive design and much more. Developers will love his extensible codebase making it a joy to customise and extend. Looking for a Multi-Purpose theme? Look no further!
+OceanWP is the perfect theme for your project. Lightweight and highly extendable, it will enable you to create almost any type of site with a beautiful & professional design. There are several options to personalize your website, multiple widget regions, a responsive design and much more. You can even edit the settings on tablet & mobile so your site looks good on every device. Developers will love his extensible codebase making it a joy to customize and extend. Best friend of Elementor page builder and WooCommerce. Looking for a Multi-Purpose theme? Look no further!
+Check the demos to realize that it's the only theme you will ever need: https://oceanwp.org/demos/
 
 == Blog Pagination ==
 The blog pagination has three styles, number, next/prev and infinite scrolling.

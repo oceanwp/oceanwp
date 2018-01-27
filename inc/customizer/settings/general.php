@@ -2914,7 +2914,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				|| isset( $input_right_padding ) && '12' != $input_right_padding && '' != $input_right_padding
 				|| isset( $input_bottom_padding ) && '6' != $input_bottom_padding && '' != $input_bottom_padding
 				|| isset( $input_left_padding ) && '12' != $input_left_padding && '' != $input_left_padding ) {
-				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{padding:'. oceanwp_spacing_css( $input_top_padding, $input_right_padding, $input_bottom_padding, $input_left_padding ) .'}';
+				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{padding:'. oceanwp_spacing_css( $input_top_padding, $input_right_padding, $input_bottom_padding, $input_left_padding ) .'}';
 			}
 
 			// Tablet input padding
@@ -2922,7 +2922,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				|| isset( $tablet_input_right_padding ) && '' != $tablet_input_right_padding
 				|| isset( $tablet_input_bottom_padding ) && '' != $tablet_input_bottom_padding
 				|| isset( $tablet_input_left_padding ) && '' != $tablet_input_left_padding ) {
-				$css .= '@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{padding:'. oceanwp_spacing_css( $tablet_input_top_padding, $tablet_input_right_padding, $tablet_input_bottom_padding, $tablet_input_left_padding ) .'}}';
+				$css .= '@media (max-width: 768px){form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{padding:'. oceanwp_spacing_css( $tablet_input_top_padding, $tablet_input_right_padding, $tablet_input_bottom_padding, $tablet_input_left_padding ) .'}}';
 			}
 
 			// Mobile input padding
@@ -2930,12 +2930,12 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				|| isset( $mobile_input_right_padding ) && '' != $mobile_input_right_padding
 				|| isset( $mobile_input_bottom_padding ) && '' != $mobile_input_bottom_padding
 				|| isset( $mobile_input_left_padding ) && '' != $mobile_input_left_padding ) {
-				$css .= '@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{padding:'. oceanwp_spacing_css( $mobile_input_top_padding, $mobile_input_right_padding, $mobile_input_bottom_padding, $mobile_input_left_padding ) .'}}';
+				$css .= '@media (max-width: 480px){form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{padding:'. oceanwp_spacing_css( $mobile_input_top_padding, $mobile_input_right_padding, $mobile_input_bottom_padding, $mobile_input_left_padding ) .'}}';
 			}
 
 			// Input font size
 			if ( ! empty( $input_font_size ) && '14' != $input_font_size ) {
-				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{font-size:'. $input_font_size .'px;}';
+				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{font-size:'. $input_font_size .'px;}';
 			}
 
 			// Input border width border width
@@ -2943,7 +2943,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				|| isset( $input_right_border_width ) && '1' != $input_right_border_width && '' != $input_right_border_width
 				|| isset( $input_bottom_border_width ) && '1' != $input_bottom_border_width && '' != $input_bottom_border_width
 				|| isset( $input_left_border_width ) && '1' != $input_left_border_width && '' != $input_left_border_width ) {
-				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{border-width:'. oceanwp_spacing_css( $input_top_border_width, $input_right_border_width, $input_bottom_border_width, $input_left_border_width ) .'}';
+				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{border-width:'. oceanwp_spacing_css( $input_top_border_width, $input_right_border_width, $input_bottom_border_width, $input_left_border_width ) .'}';
 			}
 
 			// Tablet input border width border width
@@ -2951,7 +2951,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				|| isset( $tablet_input_right_bw ) && '' != $tablet_input_right_bw
 				|| isset( $tablet_input_bottom_bw ) && '' != $tablet_input_bottom_bw
 				|| isset( $tablet_input_left_bw ) && '' != $tablet_input_left_bw ) {
-				$css .= '@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{border-width:'. oceanwp_spacing_css( $tablet_input_top_bw, $tablet_input_right_bw, $tablet_input_bottom_bw, $tablet_input_left_bw ) .'}}';
+				$css .= '@media (max-width: 768px){form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{border-width:'. oceanwp_spacing_css( $tablet_input_top_bw, $tablet_input_right_bw, $tablet_input_bottom_bw, $tablet_input_left_bw ) .'}}';
 			}
 
 			// Mobile input border width border width
@@ -2959,17 +2959,17 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				|| isset( $mobile_input_right_bw ) && '' != $mobile_input_right_bw
 				|| isset( $mobile_input_bottom_bw ) && '' != $mobile_input_bottom_bw
 				|| isset( $mobile_input_left_bw ) && '' != $mobile_input_left_bw ) {
-				$css .= '@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{border-width:'. oceanwp_spacing_css( $mobile_input_top_bw, $mobile_input_right_bw, $mobile_input_bottom_bw, $mobile_input_left_bw ) .'}}';
+				$css .= '@media (max-width: 480px){form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{border-width:'. oceanwp_spacing_css( $mobile_input_top_bw, $mobile_input_right_bw, $mobile_input_bottom_bw, $mobile_input_left_bw ) .'}}';
 			}
 
 			// Input border radius
 			if ( ! empty( $input_border_radius ) && '3' != $input_border_radius ) {
-				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{border-radius:'. $input_border_radius .'px;}';
+				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{border-radius:'. $input_border_radius .'px;}';
 			}
 
 			// Input border radius
 			if ( ! empty( $input_border_color ) && '#dddddd' != $input_border_color ) {
-				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea,.select2-container .select2-choice{border-color:'. $input_border_color .';}';
+				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea,.select2-container .select2-choice{border-color:'. $input_border_color .';}';
 			}
 
 			// Input border radius
@@ -2979,12 +2979,12 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Input border radius
 			if ( ! empty( $input_background ) ) {
-				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{background-color:'. $input_background .';}';
+				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{background-color:'. $input_background .';}';
 			}
 
 			// Input border radius
 			if ( ! empty( $input_color ) && '#333333' != $input_color ) {
-				$css .= 'form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea{color:'. $input_color .';}';
+				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{color:'. $input_color .';}';
 			}
 
 			// Theme buttons padding
@@ -3013,17 +3013,17 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Theme buttons border radius
 			if ( ! empty( $theme_button_border_radius ) && '0' != $theme_button_border_radius ) {
-				$css .= '.theme-button,input[type="submit"],button{border-radius:'. $theme_button_border_radius .'px;}';
+				$css .= '.theme-button,input[type="submit"],button,.button{border-radius:'. $theme_button_border_radius .'px;}';
 			}
 
 			// Theme buttons background color
 			if ( ! empty( $theme_button_bg ) && '#13aff0' != $theme_button_bg ) {
-				$css .= '.theme-button,input[type="submit"],button{background-color:'. $theme_button_bg .';}';
+				$css .= '.theme-button,input[type="submit"],button,.button{background-color:'. $theme_button_bg .';}';
 			}
 
 			// Theme buttons background color
 			if ( ! empty( $theme_button_hover_bg ) && '#0b7cac' != $theme_button_hover_bg ) {
-				$css .= '.theme-button:hover,input[type="submit"]:hover,button:hover{background-color:'. $theme_button_hover_bg .';}';
+				$css .= '.theme-button:hover,input[type="submit"]:hover,button:hover,.button:hover{background-color:'. $theme_button_hover_bg .';}';
 			}
 
 			// Theme buttons background color

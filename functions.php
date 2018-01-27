@@ -690,7 +690,7 @@ class OCEANWP_Theme_Class {
 	    $output = apply_filters( 'ocean_head_css', $output );
 
 	    // Get Custom Panel CSS
-	    $output_custom_css .= wp_get_custom_css();
+	    $output_custom_css = wp_get_custom_css();
 
 	    // Minified the Custom CSS
 		$output .= oceanwp_minify_css( $output_custom_css );
@@ -727,7 +727,7 @@ class OCEANWP_Theme_Class {
 	    $output = apply_filters( 'ocean_head_css', $output );
 
 	    // Get Custom Panel CSS
-	    $output_custom_css .= wp_get_custom_css();
+	    $output_custom_css = wp_get_custom_css();
 
 	    // Minified the Custom CSS
 		$output .= oceanwp_minify_css( $output_custom_css );

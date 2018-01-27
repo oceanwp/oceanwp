@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### *2018.01.28* - 1.4.13
+* **Added** - New options in the WooCommerce > Advanced Styling section of the customizer to add a padding, border width, border radius, background color and border color for the products entries.
+* **Fixed** - Search sidebar issue if Custom Sidebar is not selected on the customizer.
+* **Fixed** - Dropdown mobile menu when click on anchor link.
+
 ### *2018.01.16* - 1.4.12
 * **Added** - New option in General Options > General Styling to choose to add all the customizer styling options in a custom CSS file or in the WP Head.
 * **Tweak** - Better approch to fix the image issue on Safari when Infinite Scroll is enabled.

@@ -1475,6 +1475,273 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Product Padding
+			 */
+			$wp_customize->add_setting( 'ocean_product_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+			$wp_customize->add_setting( 'ocean_product_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+			$wp_customize->add_setting( 'ocean_product_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+			$wp_customize->add_setting( 'ocean_product_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+
+			$wp_customize->add_setting( 'ocean_product_tablet_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_tablet_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_tablet_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_tablet_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_setting( 'ocean_product_mobile_top_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_mobile_right_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_mobile_bottom_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_mobile_left_padding', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_product_padding', array(
+				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_styling',				
+				'settings'   => array(
+		            'desktop_top' 		=> 'ocean_product_top_padding',
+		            'desktop_right' 	=> 'ocean_product_right_padding',
+		            'desktop_bottom' 	=> 'ocean_product_bottom_padding',
+		            'desktop_left' 		=> 'ocean_product_left_padding',
+		            'tablet_top' 		=> 'ocean_product_tablet_top_padding',
+		            'tablet_right' 		=> 'ocean_product_tablet_right_padding',
+		            'tablet_bottom' 	=> 'ocean_product_tablet_bottom_padding',
+		            'tablet_left' 		=> 'ocean_product_tablet_left_padding',
+		            'mobile_top' 		=> 'ocean_product_mobile_top_padding',
+		            'mobile_right' 		=> 'ocean_product_mobile_right_padding',
+		            'mobile_bottom' 	=> 'ocean_product_mobile_bottom_padding',
+		            'mobile_left' 		=> 'ocean_product_mobile_left_padding',
+				),
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 100,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
+			 * Product Border Width
+			 */
+			$wp_customize->add_setting( 'ocean_product_top_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+			$wp_customize->add_setting( 'ocean_product_right_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+			$wp_customize->add_setting( 'ocean_product_bottom_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+			$wp_customize->add_setting( 'ocean_product_left_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+
+			$wp_customize->add_setting( 'ocean_product_tablet_top_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_tablet_right_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_tablet_bottom_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_tablet_left_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_setting( 'ocean_product_mobile_top_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_mobile_right_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_mobile_bottom_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_mobile_left_border_width', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_product_border_width', array(
+				'label'	   				=> esc_html__( 'Border Width (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_styling',				
+				'settings'   => array(
+		            'desktop_top' 		=> 'ocean_product_top_border_width',
+		            'desktop_right' 	=> 'ocean_product_right_border_width',
+		            'desktop_bottom' 	=> 'ocean_product_bottom_border_width',
+		            'desktop_left' 		=> 'ocean_product_left_border_width',
+		            'tablet_top' 		=> 'ocean_product_tablet_top_border_width',
+		            'tablet_right' 		=> 'ocean_product_tablet_right_border_width',
+		            'tablet_bottom' 	=> 'ocean_product_tablet_bottom_border_width',
+		            'tablet_left' 		=> 'ocean_product_tablet_left_border_width',
+		            'mobile_top' 		=> 'ocean_product_mobile_top_border_width',
+		            'mobile_right' 		=> 'ocean_product_mobile_right_border_width',
+		            'mobile_bottom' 	=> 'ocean_product_mobile_bottom_border_width',
+		            'mobile_left' 		=> 'ocean_product_mobile_left_border_width',
+				),
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 100,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
+			 * Product Border Radius
+			 */
+			$wp_customize->add_setting( 'ocean_product_top_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+			$wp_customize->add_setting( 'ocean_product_right_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+			$wp_customize->add_setting( 'ocean_product_bottom_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+			$wp_customize->add_setting( 'ocean_product_left_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+
+			$wp_customize->add_setting( 'ocean_product_tablet_top_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_tablet_right_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_tablet_bottom_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_tablet_left_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_setting( 'ocean_product_mobile_top_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_mobile_right_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_mobile_bottom_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_setting( 'ocean_product_mobile_left_border_radius', array(
+				'transport' 			=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_product_border_radius', array(
+				'label'	   				=> esc_html__( 'Border Radius (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_styling',				
+				'settings'   => array(
+		            'desktop_top' 		=> 'ocean_product_top_border_radius',
+		            'desktop_right' 	=> 'ocean_product_right_border_radius',
+		            'desktop_bottom' 	=> 'ocean_product_bottom_border_radius',
+		            'desktop_left' 		=> 'ocean_product_left_border_radius',
+		            'tablet_top' 		=> 'ocean_product_tablet_top_border_radius',
+		            'tablet_right' 		=> 'ocean_product_tablet_right_border_radius',
+		            'tablet_bottom' 	=> 'ocean_product_tablet_bottom_border_radius',
+		            'tablet_left' 		=> 'ocean_product_tablet_left_border_radius',
+		            'mobile_top' 		=> 'ocean_product_mobile_top_border_radius',
+		            'mobile_right' 		=> 'ocean_product_mobile_right_border_radius',
+		            'mobile_bottom' 	=> 'ocean_product_mobile_bottom_border_radius',
+		            'mobile_left' 		=> 'ocean_product_mobile_left_border_radius',
+				),
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 200,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
+		     * Background Color
+		     */
+	        $wp_customize->add_setting( 'ocean_product_background_color', array(
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_background_color', array(
+				'label'					=> esc_html__( 'Background Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_background_color',
+				'priority'				=> 10
+			) ) );
+
+			/**
+		     * Border Color
+		     */
+	        $wp_customize->add_setting( 'ocean_product_border_color', array(
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_border_color', array(
+				'label'					=> esc_html__( 'Border Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_border_color',
+				'priority'				=> 10
+			) ) );
+
+			/**
 		     * Category Color
 		     */
 	        $wp_customize->add_setting( 'ocean_category_color', array(
@@ -2746,6 +3013,44 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$toolbar_number_of_products_color 					= get_theme_mod( 'ocean_toolbar_number_of_products_color', '#555555' );
 			$toolbar_number_of_products_inactive_color 			= get_theme_mod( 'ocean_toolbar_number_of_products_inactive_color', '#999999' );
 			$toolbar_number_of_products_border_color 			= get_theme_mod( 'ocean_toolbar_number_of_products_border_color', '#999999' );
+			$product_top_padding 								= get_theme_mod( 'ocean_product_top_padding' );
+			$product_right_padding 								= get_theme_mod( 'ocean_product_right_padding' );
+			$product_bottom_padding 							= get_theme_mod( 'ocean_product_bottom_padding' );
+			$product_left_padding 								= get_theme_mod( 'ocean_product_left_padding' );
+			$tablet_product_top_padding 						= get_theme_mod( 'ocean_product_tablet_top_padding' );
+			$tablet_product_right_padding 						= get_theme_mod( 'ocean_product_tablet_right_padding' );
+			$tablet_product_bottom_padding 						= get_theme_mod( 'ocean_product_tablet_bottom_padding' );
+			$tablet_product_left_padding 						= get_theme_mod( 'ocean_product_tablet_left_padding' );
+			$mobile_product_top_padding 						= get_theme_mod( 'ocean_product_mobile_top_padding' );
+			$mobile_product_right_padding 						= get_theme_mod( 'ocean_product_mobile_right_padding' );
+			$mobile_product_bottom_padding 						= get_theme_mod( 'ocean_product_mobile_bottom_padding' );
+			$mobile_product_left_padding 						= get_theme_mod( 'ocean_product_mobile_left_padding' );
+			$product_top_border_width 							= get_theme_mod( 'ocean_product_top_border_width' );
+			$product_right_border_width 						= get_theme_mod( 'ocean_product_right_border_width' );
+			$product_bottom_border_width 						= get_theme_mod( 'ocean_product_bottom_border_width' );
+			$product_left_border_width 							= get_theme_mod( 'ocean_product_left_border_width' );
+			$tablet_product_top_border_width 					= get_theme_mod( 'ocean_product_tablet_top_border_width' );
+			$tablet_product_right_border_width 					= get_theme_mod( 'ocean_product_tablet_right_border_width' );
+			$tablet_product_bottom_border_width 				= get_theme_mod( 'ocean_product_tablet_bottom_border_width' );
+			$tablet_product_left_border_width 					= get_theme_mod( 'ocean_product_tablet_left_border_width' );
+			$mobile_product_top_border_width 					= get_theme_mod( 'ocean_product_mobile_top_border_width' );
+			$mobile_product_right_border_width 					= get_theme_mod( 'ocean_product_mobile_right_border_width' );
+			$mobile_product_bottom_border_width 				= get_theme_mod( 'ocean_product_mobile_bottom_border_width' );
+			$mobile_product_left_border_width 					= get_theme_mod( 'ocean_product_mobile_left_border_width' );
+			$product_top_border_radius 							= get_theme_mod( 'ocean_product_top_border_radius' );
+			$product_right_border_radius 						= get_theme_mod( 'ocean_product_right_border_radius' );
+			$product_bottom_border_radius 						= get_theme_mod( 'ocean_product_bottom_border_radius' );
+			$product_left_border_radius 						= get_theme_mod( 'ocean_product_left_border_radius' );
+			$tablet_product_top_border_radius 					= get_theme_mod( 'ocean_product_tablet_top_border_radius' );
+			$tablet_product_right_border_radius 				= get_theme_mod( 'ocean_product_tablet_right_border_radius' );
+			$tablet_product_bottom_border_radius 				= get_theme_mod( 'ocean_product_tablet_bottom_border_radius' );
+			$tablet_product_left_border_radius 					= get_theme_mod( 'ocean_product_tablet_left_border_radius' );
+			$mobile_product_top_border_radius 					= get_theme_mod( 'ocean_product_mobile_top_border_radius' );
+			$mobile_product_right_border_radius 				= get_theme_mod( 'ocean_product_mobile_right_border_radius' );
+			$mobile_product_bottom_border_radius 				= get_theme_mod( 'ocean_product_mobile_bottom_border_radius' );
+			$mobile_product_left_border_radius 					= get_theme_mod( 'ocean_product_mobile_left_border_radius' );
+			$product_background_color 							= get_theme_mod( 'ocean_product_background_color' );
+			$product_border_color 								= get_theme_mod( 'ocean_product_border_color' );
 			$category_color 									= get_theme_mod( 'ocean_category_color', '#999999' );
 			$category_color_hover 								= get_theme_mod( 'ocean_category_color_hover', '#13aff0' );
 			$product_title_color 								= get_theme_mod( 'ocean_product_title_color', '#333333' );
@@ -3032,6 +3337,104 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Add toolbar number of products border color
 			if ( ! empty( $toolbar_number_of_products_border_color ) && '#999999' != $toolbar_number_of_products_border_color ) {
 				$css .= '.woocommerce .result-count li:after{color:'. $toolbar_number_of_products_border_color .';}';
+			}
+
+			// Product padding
+			if ( isset( $product_top_padding ) && '' != $product_top_padding
+				|| isset( $product_right_padding ) && '' != $product_right_padding
+				|| isset( $product_bottom_padding ) && '' != $product_bottom_padding
+				|| isset( $product_left_padding ) && '' != $product_left_padding ) {
+				$css .= '.woocommerce .products .product-inner{padding:'. oceanwp_spacing_css( $product_top_padding, $product_right_padding, $product_bottom_padding, $product_left_padding ) .'}';
+			}
+
+			// Tablet product padding
+			if ( isset( $tablet_product_top_padding ) && '' != $tablet_product_top_padding
+				|| isset( $tablet_product_right_padding ) && '' != $tablet_product_right_padding
+				|| isset( $tablet_product_bottom_padding ) && '' != $tablet_product_bottom_padding
+				|| isset( $tablet_product_left_padding ) && '' != $tablet_product_left_padding ) {
+				$css .= '@media (max-width: 768px){.woocommerce .products .product-inner{padding:'. oceanwp_spacing_css( $tablet_product_top_padding, $tablet_product_right_padding, $tablet_product_bottom_padding, $tablet_product_left_padding ) .'}}';
+			}
+
+			// Mobile product padding
+			if ( isset( $mobile_product_top_padding ) && '' != $mobile_product_top_padding
+				|| isset( $mobile_product_right_padding ) && '' != $mobile_product_right_padding
+				|| isset( $mobile_product_bottom_padding ) && '' != $mobile_product_bottom_padding
+				|| isset( $mobile_product_left_padding ) && '' != $mobile_product_left_padding ) {
+				$css .= '@media (max-width: 480px){.woocommerce .products .product-inner{padding:'. oceanwp_spacing_css( $mobile_product_top_padding, $mobile_product_right_padding, $mobile_product_bottom_padding, $mobile_product_left_padding ) .'}}';
+			}
+
+			// Product border style if border width
+			if ( isset( $product_top_border_width ) && '' != $product_top_border_width
+				|| isset( $product_right_border_width ) && '' != $product_right_border_width
+				|| isset( $product_bottom_border_width ) && '' != $product_bottom_border_width
+				|| isset( $product_left_border_width ) && '' != $product_left_border_width
+				|| isset( $tablet_product_top_border_width ) && '' != $tablet_product_top_border_width
+				|| isset( $tablet_product_right_border_width ) && '' != $tablet_product_right_border_width
+				|| isset( $tablet_product_bottom_border_width ) && '' != $tablet_product_bottom_border_width
+				|| isset( $tablet_product_left_border_width ) && '' != $tablet_product_left_border_width
+				|| isset( $mobile_product_top_border_width ) && '' != $mobile_product_top_border_width
+				|| isset( $mobile_product_right_border_width ) && '' != $mobile_product_right_border_width
+				|| isset( $mobile_product_bottom_border_width ) && '' != $mobile_product_bottom_border_width
+				|| isset( $mobile_product_left_border_width ) && '' != $mobile_product_left_border_width ) {
+				$css .= '.woocommerce .products .product-inner{border-style: solid}';
+			}
+
+			// Product border width
+			if ( isset( $product_top_border_width ) && '' != $product_top_border_width
+				|| isset( $product_right_border_width ) && '' != $product_right_border_width
+				|| isset( $product_bottom_border_width ) && '' != $product_bottom_border_width
+				|| isset( $product_left_border_width ) && '' != $product_left_border_width ) {
+				$css .= '.woocommerce .products .product-inner{border-width:'. oceanwp_spacing_css( $product_top_border_width, $product_right_border_width, $product_bottom_border_width, $product_left_border_width ) .'}';
+			}
+
+			// Tablet product border width
+			if ( isset( $tablet_product_top_border_width ) && '' != $tablet_product_top_border_width
+				|| isset( $tablet_product_right_border_width ) && '' != $tablet_product_right_border_width
+				|| isset( $tablet_product_bottom_border_width ) && '' != $tablet_product_bottom_border_width
+				|| isset( $tablet_product_left_border_width ) && '' != $tablet_product_left_border_width ) {
+				$css .= '@media (max-width: 768px){.woocommerce .products .product-inner{border-width:'. oceanwp_spacing_css( $tablet_product_top_border_width, $tablet_product_right_border_width, $tablet_product_bottom_border_width, $tablet_product_left_border_width ) .'}}';
+			}
+
+			// Mobile product border width
+			if ( isset( $mobile_product_top_border_width ) && '' != $mobile_product_top_border_width
+				|| isset( $mobile_product_right_border_width ) && '' != $mobile_product_right_border_width
+				|| isset( $mobile_product_bottom_border_width ) && '' != $mobile_product_bottom_border_width
+				|| isset( $mobile_product_left_border_width ) && '' != $mobile_product_left_border_width ) {
+				$css .= '@media (max-width: 480px){.woocommerce .products .product-inner{border-width:'. oceanwp_spacing_css( $mobile_product_top_border_width, $mobile_product_right_border_width, $mobile_product_bottom_border_width, $mobile_product_left_border_width ) .'}}';
+			}
+
+			// Product border radius
+			if ( isset( $product_top_border_radius ) && '' != $product_top_border_radius
+				|| isset( $product_right_border_radius ) && '' != $product_right_border_radius
+				|| isset( $product_bottom_border_radius ) && '' != $product_bottom_border_radius
+				|| isset( $product_left_border_radius ) && '' != $product_left_border_radius ) {
+				$css .= '.woocommerce .products .product-inner{border-radius:'. oceanwp_spacing_css( $product_top_border_radius, $product_right_border_radius, $product_bottom_border_radius, $product_left_border_radius ) .'}';
+			}
+
+			// Tablet product border radius
+			if ( isset( $tablet_product_top_border_radius ) && '' != $tablet_product_top_border_radius
+				|| isset( $tablet_product_right_border_radius ) && '' != $tablet_product_right_border_radius
+				|| isset( $tablet_product_bottom_border_radius ) && '' != $tablet_product_bottom_border_radius
+				|| isset( $tablet_product_left_border_radius ) && '' != $tablet_product_left_border_radius ) {
+				$css .= '@media (max-width: 768px){.woocommerce .products .product-inner{border-radius:'. oceanwp_spacing_css( $tablet_product_top_border_radius, $tablet_product_right_border_radius, $tablet_product_bottom_border_radius, $tablet_product_left_border_radius ) .'}}';
+			}
+
+			// Mobile product border radius
+			if ( isset( $mobile_product_top_border_radius ) && '' != $mobile_product_top_border_radius
+				|| isset( $mobile_product_right_border_radius ) && '' != $mobile_product_right_border_radius
+				|| isset( $mobile_product_bottom_border_radius ) && '' != $mobile_product_bottom_border_radius
+				|| isset( $mobile_product_left_border_radius ) && '' != $mobile_product_left_border_radius ) {
+				$css .= '@media (max-width: 480px){.woocommerce .products .product-inner{border-radius:'. oceanwp_spacing_css( $mobile_product_top_border_radius, $mobile_product_right_border_radius, $mobile_product_bottom_border_radius, $mobile_product_left_border_radius ) .'}}';
+			}
+
+			// Add background color
+			if ( ! empty( $product_background_color ) ) {
+				$css .= '.woocommerce .products .product-inner{background-color:'. $product_background_color .';}';
+			}
+
+			// Add border color
+			if ( ! empty( $product_border_color ) ) {
+				$css .= '.woocommerce .products .product-inner{border-color:'. $product_border_color .';}';
 			}
 
 			// Add category color
