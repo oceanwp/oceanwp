@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.01.28* - 1.4.14
+* **Fixed** - Little issue in the customizer.
+
 ### *2018.01.28* - 1.4.13
 * **Added** - New options in the WooCommerce > Advanced Styling section of the customizer to add a padding, border width, border radius, background color and border color for the products entries.
 * **Fixed** - Search sidebar issue if Custom Sidebar is not selected on the customizer.
