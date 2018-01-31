@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.01.31* - 1.4.15
+* **Updated** - WooCommerce templates.
+
 ### *2018.01.28* - 1.4.14
 * **Fixed** - Little issue in the customizer.
 
