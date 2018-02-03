@@ -27,9 +27,10 @@ function oceanwpFullScreenMenu() {
 			$menuWrap.addClass( 'active' );
 			$menuWrap.fadeIn( 200 );
 
-            setTimeout( function() {
-				$j( 'html' ).css( 'overflow', 'hidden' );
-            }, 400);
+			var innerWidth = $j( 'html' ).innerWidth();
+			$j( 'html' ).css( 'overflow', 'hidden' );
+			var hiddenInnerWidth = $j( 'html' ).innerWidth();
+			$j( 'html' ).css( 'margin-right', hiddenInnerWidth - innerWidth );
         }
 
 		// Close menu function
@@ -40,11 +41,12 @@ function oceanwpFullScreenMenu() {
 			$menuWrap.removeClass( 'active' );
 			$menuWrap.fadeOut( 200 );
 
-            setTimeout( function() {
-				$j( 'html' ).css( 'overflow', 'visible' );
-            	$j( '#full-screen-menu #site-navigation ul > li.dropdown' ).removeClass( 'open-sub' );
-                $j( '#full-screen-menu #site-navigation ul.sub-menu' ).slideUp( 200 );
-            }, 400);
+			$j( 'html' ).css( {
+				'overflow': '',
+				'margin-right': '' 
+			} );
+        	$j( '#full-screen-menu #site-navigation ul > li.dropdown' ).removeClass( 'open-sub' );
+            $j( '#full-screen-menu #site-navigation ul.sub-menu' ).slideUp( 200 );
         }
 
 		$menuBar.on( 'click', function( e ) {

@@ -2003,6 +2003,7 @@ form legend {
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
+button[type="submit"],
 .button {
   display: inline-block;
   font-family: inherit;
@@ -2025,9 +2026,11 @@ input[type="submit"],
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
+button[type="submit"]:hover,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
+button[type="submit"]:focus,
 .button:hover {
   background-color: #0b7cac;
   color: #fff;
@@ -2036,6 +2039,7 @@ input[type="submit"]:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
+button[type="submit"]:focus,
 button:focus,
 .button:focus {
   outline: 0;
@@ -3310,13 +3314,6 @@ a.pure-button-selected {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 0;
           flex: 1 0 0;
-}
-
-#site-header.medium-header .top-col.logo-col {
-  -webkit-flex: auto 0 0;
-  -webkit-box-flex: 1;
-      -ms-flex: auto 0 0;
-          flex: auto 0 0;
 }
 
 #site-header.medium-header .top-col.col-1 {
@@ -7411,7 +7408,6 @@ time.published i {
 .widget_recent_entries li,
 .widget_archive li,
 .widget_recent_comments li,
-.widget_layered_nav li,
 .widget-recent-posts-icons li,
 .site-footer .widget_nav_menu li {
   padding: 6px 0;
@@ -7423,7 +7419,6 @@ time.published i {
 .widget_recent_entries li:first-child,
 .widget_archive li:first-child,
 .widget_recent_comments li:first-child,
-.widget_layered_nav li:first-child,
 .widget-recent-posts-icons li:first-child,
 .site-footer .widget_nav_menu li:first-child {
   border-top: 1px solid #e9e9e9;
@@ -8356,6 +8351,12 @@ body.elementor-editor-active.has-transparent-header #site-header {
   display: inline-block;
 }
 
+/* Fix carousel next/prev bug in Elementor */
+.elementor-slick-slider .slick-prev,
+.elementor-slick-slider .slick-next {
+  height: auto;
+}
+
 /* Fix background hover color on the photoswipe buttons */
 .pswp__button:hover {
   background-color: transparent;
@@ -9069,6 +9070,9 @@ a.sidr-class-toggle-sidr-close i {
   }
   body.default-breakpoint.vh-closed .vertical-toggle {
     display: none;
+  }
+  body.default-breakpoint .owp-cart-overlay {
+    display: none !important;
   }
   .alignleft,
   .alignright,

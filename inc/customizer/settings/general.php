@@ -2307,6 +2307,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'input[type="button"]',
 				'input[type="reset"]',
 				'input[type="submit"]',
+				'button[type="submit"]',
 				'.button',
 				'#site-navigation-wrap .dropdown-menu > li.btn > a > span',
 				'.thumbnail:hover i',
@@ -2352,9 +2353,11 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'input[type="button"]:hover',
 				'input[type="reset"]:hover',
 				'input[type="submit"]:hover',
+				'button[type="submit"]:hover',
 				'input[type="button"]:focus',
 				'input[type="reset"]:focus',
 				'input[type="submit"]:focus',
+				'button[type="submit"]:focus',
 				'.button:hover',
 				'#site-navigation-wrap .dropdown-menu > li.btn > a:hover > span',
 				'.post-quote-author',
@@ -2992,7 +2995,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				|| isset( $theme_button_right_padding ) && '20' != $theme_button_right_padding && '' != $theme_button_right_padding
 				|| isset( $theme_button_bottom_padding ) && '14' != $theme_button_bottom_padding && '' != $theme_button_bottom_padding
 				|| isset( $theme_button_left_padding ) && '20' != $theme_button_left_padding && '' != $theme_button_left_padding ) {
-				$css .= '.theme-button,input[type="submit"],button{padding:'. oceanwp_spacing_css( $theme_button_top_padding, $theme_button_right_padding, $theme_button_bottom_padding, $theme_button_left_padding ) .'}';
+				$css .= '.theme-button,input[type="submit"],button[type="submit"],button{padding:'. oceanwp_spacing_css( $theme_button_top_padding, $theme_button_right_padding, $theme_button_bottom_padding, $theme_button_left_padding ) .'}';
 			}
 
 			// Tablet theme buttons padding
@@ -3000,7 +3003,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				|| isset( $tablet_tb_right_padding ) && '' != $tablet_tb_right_padding
 				|| isset( $tablet_tb_bottom_padding ) && '' != $tablet_tb_bottom_padding
 				|| isset( $tablet_tb_left_padding ) && '' != $tablet_tb_left_padding ) {
-				$css .= '@media (max-width: 768px){.theme-button,input[type="submit"],button{padding:'. oceanwp_spacing_css( $tablet_tb_top_padding, $tablet_tb_right_padding, $tablet_tb_bottom_padding, $tablet_tb_left_padding ) .'}}';
+				$css .= '@media (max-width: 768px){.theme-button,input[type="submit"],button[type="submit"],button{padding:'. oceanwp_spacing_css( $tablet_tb_top_padding, $tablet_tb_right_padding, $tablet_tb_bottom_padding, $tablet_tb_left_padding ) .'}}';
 			}
 
 			// Mobile theme buttons padding
@@ -3008,17 +3011,17 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				|| isset( $mobile_tb_right_padding ) && '' != $mobile_tb_right_padding
 				|| isset( $mobile_tb_bottom_padding ) && '' != $mobile_tb_bottom_padding
 				|| isset( $mobile_tb_left_padding ) && '' != $mobile_tb_left_padding ) {
-				$css .= '@media (max-width: 480px){.theme-button,input[type="submit"],button{padding:'. oceanwp_spacing_css( $mobile_tb_top_padding, $mobile_tb_right_padding, $mobile_tb_bottom_padding, $mobile_tb_left_padding ) .'}}';
+				$css .= '@media (max-width: 480px){.theme-button,input[type="submit"],button[type="submit"],button{padding:'. oceanwp_spacing_css( $mobile_tb_top_padding, $mobile_tb_right_padding, $mobile_tb_bottom_padding, $mobile_tb_left_padding ) .'}}';
 			}
 
 			// Theme buttons border radius
 			if ( ! empty( $theme_button_border_radius ) && '0' != $theme_button_border_radius ) {
-				$css .= '.theme-button,input[type="submit"],button,.button{border-radius:'. $theme_button_border_radius .'px;}';
+				$css .= '.theme-button,input[type="submit"],button[type="submit"],button,.button{border-radius:'. $theme_button_border_radius .'px;}';
 			}
 
 			// Theme buttons background color
 			if ( ! empty( $theme_button_bg ) && '#13aff0' != $theme_button_bg ) {
-				$css .= '.theme-button,input[type="submit"],button,.button{background-color:'. $theme_button_bg .';}';
+				$css .= '.theme-button,input[type="submit"],button[type="submit"],button,.button{background-color:'. $theme_button_bg .';}';
 			}
 
 			// Theme buttons background color
@@ -3028,7 +3031,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Theme buttons background color
 			if ( ! empty( $theme_button_color ) && '#ffffff' != $theme_button_color ) {
-				$css .= '.theme-button,input[type="submit"],button,.button{color:'. $theme_button_color .';}';
+				$css .= '.theme-button,input[type="submit"],button[type="submit"],button,.button{color:'. $theme_button_color .';}';
 			}
 
 			// Theme buttons background color

@@ -166,13 +166,6 @@ else {
 
 				}
 
-				// WooCommerce cart
-				if ( 'drop_down' == oceanwp_menu_cart_style()
-					&& 'full_screen' != $header_style
-					&& 'vertical' != $header_style ) {
-					get_template_part( 'partials/cart/cart-dropdown' );
-				}
-
 				// Social links if full screen header style
 				if ( 'full_screen' == $header_style
 					&& true == get_theme_mod( 'ocean_menu_social', false ) ) {

@@ -6,7 +6,7 @@
 **Stable tag:** 1.4.14  
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
-**Tags:** two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, rtl-language-support, sticky-post, editor-style, threaded-comments, translation-ready
+**Tags:** two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, rtl-language-support, sticky-post, editor-style, threaded-comments, translation-ready, buddypress, custom-colors, featured-images, full-width-template, theme-options, e-commerce
 
 ## Description
 *OceanWP* is a Multi-Purpose [WordPress](http://wordpress.org) theme, designed and built by [Nick](https://oceanwp.org/) to help you to create unique websites. It's available to download for free at the site [OceanWP](https://oceanwp.org/).

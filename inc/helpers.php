@@ -1273,6 +1273,11 @@ if ( ! function_exists( 'oceanwp_nav_template_content' ) ) {
 		// Get the template ID
 		$content = oceanwp_custom_nav_template();
 
+		// Get Polylang Translation of template
+		if ( function_exists( 'pll_get_post' ) ) {
+			$content = pll_get_post( $content, pll_current_language() );
+		}
+
 		// Get template content
 		if ( ! empty( $content ) ) {
 
@@ -3442,6 +3447,7 @@ if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
 			'ocean_woo_menu_icon_custom_link' 		=> '',
 			'ocean_blog_infinite_scroll_last_text' 	=> '',
 			'ocean_blog_infinite_scroll_error_text' => '',
+			'ocean_woo_off_canvas_filter_text' 		=> esc_html__( 'Filter', 'oceanwp' ),
 			'ocean_woo_infinite_scroll_last_text' 	=> '',
 			'ocean_woo_infinite_scroll_error_text' 	=> '',
 		) );
@@ -3753,6 +3759,11 @@ if ( ! function_exists( 'oceanwp_header_template_content' ) ) {
 		// Get the template ID
 		$content = oceanwp_custom_header_template();
 
+		// Get Polylang Translation of template
+		if ( function_exists( 'pll_get_post' ) ) {
+			$content = pll_get_post( $content, pll_current_language() );
+		}
+
 		// Get template content
 		if ( ! empty( $content ) ) {
 
@@ -3782,6 +3793,11 @@ if ( ! function_exists( 'oceanwp_social_menu_content' ) ) {
 
 		// Get template ID from Customizer
 		$content = get_theme_mod( 'ocean_menu_social_template' );
+
+		// Get Polylang Translation of template
+		if ( function_exists( 'pll_get_post' ) ) {
+			$content = pll_get_post( $content, pll_current_language() );
+		}
 
 		// Get template content
 		if ( ! empty( $content ) ) {
@@ -3818,6 +3834,11 @@ if ( ! function_exists( 'oceanwp_footer_template_content' ) ) {
 		// Get template ID from Customizer
 		$content = get_theme_mod( 'ocean_footer_widgets_template' );
 
+		// Get Polylang Translation of template
+		if ( function_exists( 'pll_get_post' ) ) {
+			$content = pll_get_post( $content, pll_current_language() );
+		}
+
 		// Get template content
 		if ( ! empty( $content ) ) {
 
@@ -3847,6 +3868,11 @@ if ( ! function_exists( 'oceanwp_topbar_template_content' ) ) {
 
 		// Get the template ID
 		$content = get_theme_mod( 'ocean_top_bar_template' );
+
+		// Get Polylang Translation of template
+		if ( function_exists( 'pll_get_post' ) ) {
+			$content = pll_get_post( $content, pll_current_language() );
+		}
 
 		// Get template content
 		if ( ! empty( $content ) ) {
@@ -3882,6 +3908,11 @@ if ( ! function_exists( 'oceanwp_top_bar_social_alt_content' ) ) {
 		$template = get_theme_mod( 'ocean_top_bar_social_alt_template' );
 		if ( ! empty( $template ) ) {
 		    $content = $template;
+		}
+
+		// Get Polylang Translation of template
+		if ( function_exists( 'pll_get_post' ) ) {
+			$content = pll_get_post( $content, pll_current_language() );
 		}
 
 		// Get page content
@@ -4050,6 +4081,11 @@ if ( ! function_exists( 'oceanwp_error_page_template_content' ) ) {
 
 		// Get template ID from Customizer
 		$content = get_theme_mod( 'ocean_error_page_template' );
+
+		// Get Polylang Translation of template
+		if ( function_exists( 'pll_get_post' ) ) {
+			$content = pll_get_post( $content, pll_current_language() );
+		}
 
 		// Get template content
 		if ( ! empty( $content ) ) {

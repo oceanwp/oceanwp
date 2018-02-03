@@ -4824,12 +4824,12 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Dropdown menu background color
 			if ( ! empty( $dropdown_menu_background ) && '#ffffff' != $dropdown_menu_background ) {
-				$css .= '.dropdown-menu .sub-menu,#searchform-dropdown,#current-shop-items-dropdown{background-color:'. $dropdown_menu_background .';}';
+				$css .= '.dropdown-menu .sub-menu,#searchform-dropdown,.current-shop-items-dropdown{background-color:'. $dropdown_menu_background .';}';
 			}
 
 			// Dropdown menu top border color
 			if ( ! empty( $dropdown_menu_top_border ) && '#13aff0' != $dropdown_menu_top_border ) {
-				$css .= '.dropdown-menu .sub-menu,#searchform-dropdown,#current-shop-items-dropdown{border-color:'. $dropdown_menu_top_border .';}';
+				$css .= '.dropdown-menu .sub-menu,#searchform-dropdown,.current-shop-items-dropdown{border-color:'. $dropdown_menu_top_border .';}';
 			}
 
 			// Dropdown menu borders color
@@ -4978,7 +4978,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 				$css .= '@media (max-width: '. $mobile_menu_breakpoint .'px) {
 					#top-bar-nav, #site-navigation-wrap, .oceanwp-social-menu {display: none;}
-					#site-header.center-header #site-logo, #oceanwp-mobile-menu-icon {display: block;}
+					#site-header.center-header #site-logo, #oceanwp-mobile-menu-icon, #oceanwp-cart-sidebar-wrap {display: block;}
 					body.vertical-header-style #outer-wrap {margin: 0 !important;}
 					#site-header.vertical-header { position: relative; width: 100%; left: 0 !important; right: 0 !important; }
 					#site-header.vertical-header #site-header-inner { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center;
@@ -4996,7 +4996,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 					.is-sticky #site-logo.has-responsive-logo .sticky-logo-link { display: block; }
 					#top-bar.has-no-content #top-bar-social.top-bar-left, #top-bar.has-no-content #top-bar-social.top-bar-right {position: inherit; left: auto; right: auto; float: none; height: auto; line-height: 1.5em; margin-top: 0; text-align: center;}
 					#top-bar.has-no-content #top-bar-social li {float: none; display: inline-block;}
-					#side-panel-wrap a.side-panel-btn { display: none !important; }
+					.owp-cart-overlay, #side-panel-wrap a.side-panel-btn { display: none !important; }
 				}';
 
 				// Add mobile header height
@@ -5015,7 +5015,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Drop down mobile menu max height
 			if ( 'dropdown' == $mobile_style && ! empty( $dropdown_mobile_menu_max_height ) && '400' != $dropdown_mobile_menu_max_height ) {
-				$css .= '#mobile-dropdown > nav{max-height:'. $dropdown_mobile_menu_max_height .'px;}';
+				$css .= '#mobile-dropdown{max-height:'. $dropdown_mobile_menu_max_height .'px;}';
 			}
 
 			// Mobile menu sidr close button background

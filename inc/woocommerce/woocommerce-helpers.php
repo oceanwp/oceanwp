@@ -64,16 +64,13 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 
 		// Cart Icon
 		$cart_icon = '<i class="'. esc_attr( $icon ) .'"></i>';
-		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
+		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon ); ?>
 
-		ob_start(); ?>
+		<a href="<?php echo esc_url( $url ); ?>" class="wcmenucart">
+			<span class="wcmenucart-count"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
+		</a>
 
-			<a href="<?php echo esc_url( $url ); ?>" class="wcmenucart">
-				<span class="wcmenucart-count"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
-			</a>
-			
-		<?php
-		return ob_get_clean();
+	<?php
 	}
 
 }

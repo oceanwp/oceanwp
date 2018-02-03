@@ -33,9 +33,6 @@ function oceanwpDropDownSearch() {
 				$searchDropdownForm.find( 'input.field' ).focus();
 			}, $transitionDuration );
 		}
-		// Hide other things
-		$j( 'div#current-shop-items-dropdown' ).removeClass( 'show' );
-		$j( 'li.wcmenucart-toggle-drop_down' ).removeClass( 'active' );
 		// Return false
 		return false;
 	} );

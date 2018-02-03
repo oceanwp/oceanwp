@@ -13,6 +13,13 @@
     display: flex;
 }
 
+// Flex Wrap
+@mixin flex-wrap( $args ) {
+    -ms-flex-wrap: $args;
+    -webkit-flex-wrap: $args;
+    flex-wrap: $args;
+}
+
 // Flex Direction
 @mixin flex-direction( $args ) {
     -webkit-flex-direction: $args;

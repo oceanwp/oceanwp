@@ -20,6 +20,10 @@ module.exports = function ( grunt ) {
 					'assets/js/third/magnific-popup.min.js'							: 'assets/js/third/magnific-popup.js',
 					'assets/js/third/lightbox.min.js'								: 'assets/js/third/lightbox.js',
 					'assets/js/third/woo/woo-scripts.min.js'						: [ 'assets/js/third/woo/devs/**/*.js' ],
+					'assets/js/third/woo/woo-ajax-add-to-cart.min.js'				: 'assets/js/third/woo/woo-ajax-add-to-cart.js',
+					'assets/js/third/woo/woo-display-cart.min.js'					: 'assets/js/third/woo/woo-display-cart.js',
+					'assets/js/third/woo/woo-off-canvas.min.js'						: 'assets/js/third/woo/woo-off-canvas.js',
+					'assets/js/third/woo/woo-mini-cart.min.js'						: 'assets/js/third/woo/woo-mini-cart.js',
 
 					'inc/customizer/assets/js/customize-preview.min.js'				: 'inc/customizer/assets/js/customize-preview.js',
 					'inc/customizer/assets/js/typography-customize-preview.min.js'	: 'inc/customizer/assets/js/typography-customize-preview.js',
@@ -94,6 +98,7 @@ module.exports = function ( grunt ) {
                 },
                 files: {
 					'assets/css/woo/woocommerce.css': 'sass/woocommerce.scss',
+					'assets/css/woo/wishlist.css': 'sass/wishlist.scss',
 					'assets/css/style.css': 'sass/stylesheet.scss',
                 }
             },
@@ -105,6 +110,7 @@ module.exports = function ( grunt ) {
                 files: {
 					'style.css': 'sass/style.scss',
 					'assets/css/woo/woocommerce.min.css': 'sass/woocommerce.scss',
+					'assets/css/woo/wishlist.min.css': 'sass/wishlist.scss',
 					'assets/css/style.min.css': 'sass/stylesheet.scss',
                 }
             }
