@@ -1868,7 +1868,8 @@ input[type=checkbox]:checked:before {
 
 input[type=checkbox]:checked:before {
   content: '\f00c';
-  margin-bottom: -1px;
+  margin-top: 6px;
+  margin-left: -1px;
   color: #13aff0;
 }
 
