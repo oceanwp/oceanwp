@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.02.07* - 1.4.16
+* **Fixed** - WooCommerce pagination template.
+
 ### *2018.01.31* - 1.4.15
 * **Updated** - WooCommerce templates.
 
