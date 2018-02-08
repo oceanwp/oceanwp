@@ -10,6 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Retunr if disabled
+if ( ! oceanwp_display_navigation() ) {
+	return;
+}
+
 // Header style
 $header_style = oceanwp_header_style();
 

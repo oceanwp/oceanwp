@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // If no scroll top button
-if ( true != get_theme_mod( 'ocean_scroll_top', true ) ) {
+if ( ! oceanwp_display_scroll_up_button() ) {
 	return;
 }
 

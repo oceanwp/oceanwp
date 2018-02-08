@@ -31,6 +31,11 @@ form textarea {
     @include transition( all .3s ease );
 }
 
+form select {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 form input[type="number"] {
 	max-width: 50px;
     padding: 0 0 0 8px;
@@ -83,6 +88,7 @@ input[type=checkbox]:checked:before {
 	display: inline-block;
 	vertical-align: middle;
 	width: 16px;
+	line-height: 14px;
 	font-family: 'FontAwesome';
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;

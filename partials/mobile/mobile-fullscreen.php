@@ -10,7 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( 'fullscreen' != oceanwp_mobile_menu_style() ) {
+if ( 'fullscreen' != oceanwp_mobile_menu_style()
+	|| ! oceanwp_display_navigation() ) {
 	return;
 }
 

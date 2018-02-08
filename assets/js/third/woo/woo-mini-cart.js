@@ -37,7 +37,9 @@ function oceanwpWooMobileCart() {
 		$j( 'body' ).addClass( 'show-cart-sidebar' );
 	} );
 
-	$j( '.oceanwp-cart-sidebar-overlay, .oceanwp-cart-close').on( 'click', function() {
+	$j( '.oceanwp-cart-sidebar-overlay, .oceanwp-cart-close').on( 'click', function( e ) {
+		e.preventDefault();
+		
 		oceanwp_cart_filter_close();
 
 		// Remove show-cart here to let the header mini cart working

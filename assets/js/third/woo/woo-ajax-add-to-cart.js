@@ -1,6 +1,6 @@
 jQuery( function( $ ) {
 
-	if ( typeof owpWoo === 'undefined' ) {
+	if ( typeof oceanwpLocalize === 'undefined' ) {
 		return false;
 	}
 
@@ -30,7 +30,7 @@ jQuery( function( $ ) {
 		// Ajax action.
 		if ( variation_id != '' ) {
 			$.ajax ({
-				url: owpWoo.ajax_url,
+				url: oceanwpLocalize.ajax_url,
 				type:'POST',
 				data:'action=oceanwp_add_cart_single_product&product_id=' + product_id + '&variation_id=' + variation_id + '&quantity=' + quantity,
 
@@ -41,7 +41,7 @@ jQuery( function( $ ) {
 			});
 		} else {
 			$.ajax ({
-				url: owpWoo.ajax_url,  
+				url: oceanwpLocalize.ajax_url,  
 				type:'POST',
 				data:'action=oceanwp_add_cart_single_product&product_id=' + product_id + '&quantity=' + quantity,
 
@@ -64,9 +64,9 @@ jQuery( function( $ ) {
 			$button.addClass( 'added' );
 
 			// View cart text.
-			if ( ! owpWoo.is_cart && $button.parent().find( '.added_to_cart' ).length === 0 ) {
-				$button.after( ' <a href="' + owpWoo.cart_url + '" class="added_to_cart wc-forward" title="' +
-					owpWoo.view_cart + '">' + owpWoo.view_cart + '</a>' );
+			if ( ! oceanwpLocalize.is_cart && $button.parent().find( '.added_to_cart' ).length === 0 ) {
+				$button.after( ' <a href="' + oceanwpLocalize.cart_url + '" class="added_to_cart wc-forward" title="' +
+					oceanwpLocalize.view_cart + '">' + oceanwpLocalize.view_cart + '</a>' );
 			}
 		}
 	};

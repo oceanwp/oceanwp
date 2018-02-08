@@ -55,40 +55,23 @@ Woo Mobile Mini Cart Sidebar
 	}
 
 	.oceanwp-cart-close {
-		position: absolute;
-	    right: 10px;
-	    top: 10px;
-	    cursor: pointer;
-	    z-index: 1;
+    	position: absolute;
+	    top: 0;
+	    right: 0;
+	    color: #333;
+	    opacity: .5;
+	    font-weight: 300;
+	    font-size: 40px;
+	    width: 40px;
+	    height: 40px;
+	    line-height: 40px;
+	    text-align: center;
+	    z-index: 1001;
 
-	    .close-wrap {
-		    display: inline-block;
-		    position: relative;
-			width: 20px;
-		    height: 16px;
-
-		    > div {
-				@include transform( translate3d(0, 7px, 0) rotate(135deg) );
-
-		    	&,
-		    	&:before {
-				    position: absolute;
-		    		width: 20px;
-				    height: 2px;
-				    background-color: #000;
-				    border-radius: 3px;
-		    	}
-
-		    	&:before {
-		    		content: '';
-    				display: block;
-    				top: 14px;
-    				bottom: -7px;
-    				@include transform( translate3d(0, -14px, 0) rotate(-270deg) );
-		    	}
-		    }
-		}
-	}
+	    &:hover {
+	    	opacity: 1;
+	    }
+    }
 
 	.widget_shopping_cart ul.cart_list li:first-child {
 		border-top-width: 1px;

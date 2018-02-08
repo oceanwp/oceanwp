@@ -533,6 +533,22 @@ function oceanwp_cac_has_woo_infinite_scroll() {
 	}
 }
 
+function oceanwp_cac_has_woo_filter_button() {
+	if ( true == get_theme_mod( 'ocean_woo_off_canvas_filter', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_woo_multistep_checkout() {
+	if ( true == get_theme_mod( 'ocean_woo_multi_step_checkout', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 /*-------------------------------------------------------------------------------*/
 /* [ Footer ]
 /*-------------------------------------------------------------------------------*/

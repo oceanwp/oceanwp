@@ -10,7 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( 'dropdown' != oceanwp_mobile_menu_style() ) {
+if ( 'dropdown' != oceanwp_mobile_menu_style()
+	|| ! oceanwp_display_navigation() ) {
 	return;
 }
 

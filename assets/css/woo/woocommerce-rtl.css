@@ -81,6 +81,16 @@
 .woocommerce ul.products li.product .product-entry-slider .slick-arrow.slick-prev { left: auto; right: 0; }
 .woocommerce ul.products li.product .product-entry-slider .slick-arrow.slick-next { right: auto; left: 0; }
 
+/* Product entry quick view */
+body .owp-quick-view i { margin-left: 6px; margin-right: 0; }
+body #owp-qv-wrap .flex-direction-nav a.flex-prev { right: -50px; left: auto; text-align: left; }
+body #owp-qv-wrap .flex-direction-nav a.flex-prev:before { content: '\f105'; }
+body #owp-qv-wrap .flex-direction-nav a.flex-next { left: -50px; right: auto; }
+body #owp-qv-wrap .flex-direction-nav a.flex-next:before { content: '\f104'; }
+body #owp-qv-wrap .owp-qv-image:hover .flex-direction-nav a.flex-prev { right: 10px; left: auto; }
+body #owp-qv-wrap .owp-qv-image:hover .flex-direction-nav a.flex-next { left: 10px; right: auto; }
+body .owp-qv-content-inner .owp-qv-close { left: 0; right: auto; }
+
 /* Single product navigation */
 @media (min-width: 1080px) {
 	.owp-product-nav-wrap { left: 0; right: auto; }
@@ -213,7 +223,7 @@ p.stars span a:after { right: 0; left: auto; }
 /* Checkout login/register/coupon forms */
 .woocommerce-checkout form.login .lost_password { float: left; }
 .woocommerce-checkout form.checkout_coupon .form-row-first { float: right; }
-.woocommerce-checkout form.checkout_coupon .form-row-last { float: left; margin-right: 15px; margin-left: 0; }
+.woocommerce-checkout form.checkout_coupon .form-row-last { float: left; }
 
 /* Checkout > Col */
 .woocommerce-checkout > .col2-set { float: right; }
@@ -231,6 +241,19 @@ p.stars span a:after { right: 0; left: auto; }
 /* Checkout returning customer form */
 .woocommerce form.login .lost_password { margin: 0 }
 .woocommerce-checkout form.login label.inline { padding-right: 10px; padding-left: 0; }
+
+/* Multi-step checkout */
+body #owp-checkout-timeline li { float: right; }
+body #owp-checkout-timeline .timeline-step { margin-left: 8px; margin-right: 0; }
+body #owp-checkout-timeline.arrow li { padding-left: 50px; padding-right: 0; }
+body #owp-checkout-timeline.arrow .timeline-wrapper:before { right: -20px; left: auto; border-right: 20px solid transparent; border-left-width: 0; }
+body #owp-checkout-timeline.arrow .timeline-wrapper:after { left: -20px; right: auto; border-right-width: 20px; border-right-style: solid; border-left-width: 0; }
+body #checkout-wrapper form.checkout #billing_phone_field { float: right; }
+body #checkout-wrapper form.checkout #billing_email_field { float: left; }
+body #checkout-wrapper #form_actions a { float: right; }
+body #checkout-wrapper #form_actions a i { margin-left: 5px; margin-right: 0; }
+body #checkout-wrapper #form_actions .buttons { float: left; }
+body #checkout-wrapper #form_actions .buttons input.next { margin-right: 10px; margin-left: 0; }
 
 /* Account page */
 @media(min-width: 768px) {

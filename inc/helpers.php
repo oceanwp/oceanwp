@@ -1243,6 +1243,25 @@ if ( ! function_exists( 'oceanwp_medium_header_elements' ) ) {
 }
 
 /**
+ * Display navigation
+ *
+ * @since 1.5.0
+ */
+if ( ! function_exists( 'oceanwp_display_navigation' ) ) {
+
+	function oceanwp_display_navigation() {
+
+		// Return true by default
+		$return = true;
+
+		// Apply filters and return
+		return apply_filters( 'ocean_display_navigation', $return );
+
+	}
+
+}
+
+/**
  * Custom nav template
  *
  * @since 1.4.7
@@ -3180,6 +3199,30 @@ if ( ! function_exists( 'oceanwp_display_footer_bottom' ) ) {
 
 		// Apply filters and return
 		return apply_filters( 'ocean_display_footer_bottom', $return );
+
+	}
+
+}
+
+/**
+ * Display scrool up button
+ *
+ * @since 1.5.0
+ */
+if ( ! function_exists( 'oceanwp_display_scroll_up_button' ) ) {
+
+	function oceanwp_display_scroll_up_button() {
+
+		// Return true by default
+		$return = true;
+
+		// Return false if disabled via Customizer
+		if ( true != get_theme_mod( 'ocean_scroll_top', true ) ) {
+			$return = false;
+		}
+
+		// Apply filters and return
+		return apply_filters( 'ocean_display_scroll_up_button', $return );
 
 	}
 

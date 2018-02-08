@@ -51,20 +51,20 @@ Woo Responsive
 			width: 100%;
 		}
 		form.checkout_coupon {
-			.checkout-coupon-inner {
-				display: block;
-			}
-			.form-row-first {
+			width: 100%;
+			margin-bottom: 20px;
+			.form-row-first,
+			.form-row-last {
 				float: none;
 				width: 100%;
 				margin: 0;
 			}
 			.form-row-last {
-				float: none;
-				width: 100%;
-				margin: 0;
 				margin-top: 10px;
 			}
+		}
+		form.checkout {
+			margin-top: 10px;
 		}
 	}
 }
@@ -277,7 +277,7 @@ Woo Responsive
 				width: 100%;
 			}
 		}
-		input[name='update_cart'] {
+		button[name='update_cart'] {
 			display: inline-block;
 			float: none;
 			width: 100%;

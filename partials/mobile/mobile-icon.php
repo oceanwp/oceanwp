@@ -10,6 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Retunr if disabled
+if ( ! oceanwp_display_navigation() ) {
+	return;
+}
+
 // Menu Location
 $menu_location = apply_filters( 'ocean_main_menu_location', 'main_menu' );
 

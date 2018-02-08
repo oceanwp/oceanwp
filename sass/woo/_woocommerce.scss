@@ -993,7 +993,6 @@
 				margin: 0 0 5px;
 				display: block;
 				&.checkbox {
-					display: inline;
 					display: inline-block;
 				}
 			}
@@ -1015,6 +1014,16 @@
 				cursor: pointer;
 				margin: 0;
 			}
+		}
+		.select2-container--default .select2-selection--single {
+			height: 40px;
+		    padding: 6px 12px 2px 6px;
+		    background-color: transparent;
+		    border-color: #ddd;
+			@include border-radius( 3px );
+		}
+		.select2-container--default .select2-selection--single .select2-selection__arrow {
+		    height: 40px;
 		}
 	}
 	.shop_table {
@@ -2229,16 +2238,11 @@ ul {
 		}
 		&.checkout_coupon {
 			display: block;
-			margin: 0 0 30px;
-			line-height: 1;
-			text-align: center;
-			.checkout-coupon-inner {
-				display: inline-block;
-				margin: 0 auto 30px auto;
-				padding: 20px;
-				border: 1px solid;
-				border-color: #eaeaea;
-			}
+		    border: 3px dashed rgba(84,84,84,0.15);
+		    padding: 28px;
+		    width: 695px;
+		    margin: 0 auto 30px;
+		    text-align: center;
 			p {
 				margin: 0;
 				&:last-child {
@@ -2247,13 +2251,11 @@ ul {
 			}
 			.form-row-first {
 				float: left;
-				width: 380px;
+				width: 74%;
 			}
 			.form-row-last {
 				float: right;
-				width: auto;
-				min-width: 155px;
-				margin-left: 15px;
+				width: 25%;
 			}
 			input {
 				line-height: 36px;
@@ -2265,6 +2267,12 @@ ul {
 				padding-bottom: 0;
 				margin: 0;
 			}
+		}
+
+		&.checkout {
+		    display: inline-block;
+		    width: 100%;
+			margin-top: 30px;
 		}
 	}
 	#order_review {
@@ -2979,6 +2987,12 @@ form.checkout {
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.distraction-free #site-logo {
+	float: none;
+    width: 100%;
+    text-align: center;
 }
 
 .quick-view-plugin-active ul.products li.product li.btn-wrap {
