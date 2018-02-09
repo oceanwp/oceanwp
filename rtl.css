@@ -145,6 +145,8 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .navigation > ul > li > ul.megamenu.sub-menu > li { float: right; border-right-width: 1px; border-left-width: 0; }
 .navigation > ul > li > ul.megamenu.sub-menu > li:first-child { border-right: none; }
 
+.after-header-content { float: left; }
+
 /* If social */
 .has-social #site-navigation-wrap { left: 0; right: auto; }
 

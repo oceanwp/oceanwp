@@ -3,6 +3,7 @@
         <key name="theme_mods_oceanwp">
             <key name="ocean_footer_copyright_text" />
             <key name="ocean_top_bar_content" />
+            <key name="ocean_after_header_content" />
             <key name="ocean_mobile_menu_text" />
             <key name="ocean_mobile_menu_close_text" />
             <key name="ocean_mobile_menu_close_btn_text" />

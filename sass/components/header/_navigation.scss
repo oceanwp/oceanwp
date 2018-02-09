@@ -319,6 +319,27 @@
 	}
 }
 
+/**
+ * After header content
+ */
+.after-header-content {
+	float: right;
+	height: 100%;
+    display: table;
+
+    .after-header-content-inner {
+		display: table-cell;
+	    vertical-align: middle;
+	    height: 74px;
+
+	    > a,
+	    > div > a {
+	    	display: inline-block;
+    		line-height: 74px;
+	    }
+	}
+}
+
 /*------------------------------------*
 	Mobile Menu
 *------------------------------------*/

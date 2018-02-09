@@ -54,15 +54,23 @@ ul.page-numbers {
     background-color: transparent;
 }
 
-.oceanwp-pagination {
-    &.oceanwp-center ul.page-numbers,
-    &.oceanwp-center .page-links {
-        text-align: center;
+.pagination-center {
+    .oceanwp-pagination,
+    .woocommerce-pagination {
+        ul.page-numbers,
+        .page-links {
+            text-align: center;
+        }
     }
+}
 
-    &.oceanwp-left ul.page-numbers,
-    &.oceanwp-left .page-links {
-        text-align: left;
+.pagination-left {
+    .oceanwp-pagination,
+    .woocommerce-pagination {
+        ul.page-numbers,
+        .page-links {
+            text-align: left;
+        }
     }
 }
 

@@ -1044,16 +1044,71 @@
 			border-color: #eaeaea;
 		}
 	}
+	.owp-account-links {
+		margin-bottom: 35px;
+    	text-align: center;
+
+    	li {
+    		display: inline-block;
+
+    		.owp-account-link {
+	    		font-size: 50px;
+			    color: #333;
+			    line-height: 1;
+			    font-weight: bold;
+				@include opacity( .6 );
+
+			    &.current,
+			    &:hover {
+			    	opacity: 1;
+					@include opacity( 1 );
+			    }
+    		}
+
+    		&.or {
+			    display: inline-block;
+			    width: 36px;
+			    height: 36px;
+			    line-height: 32px;
+			    color: #333;
+			    border: 2px solid;
+			    font-size: 14px;
+			    font-weight: 600;
+			    text-transform: uppercase;
+			    margin: 0 16px;
+				@include opacity( .5 );
+				@include border-radius( 50% );
+			    vertical-align: text-bottom;
+    		}
+    	}
+	}
 	#customer_login {
 		h2 {
-			font-size: 14px;
-			position: relative;
-			margin: 0 0 20px;
-			padding-bottom: 8px;
-			text-transform: uppercase;
-			border-bottom: 1px solid #ddd;
+			display: none;
 		}
-		p {
+		> div {
+			float: none;
+		    width: 560px;
+		    max-width: 100%;
+		    margin: 0 auto;
+		    padding: 20px;
+		    border-width: 2px;
+		    border-style: solid;
+		    border-color: #eaeaea;
+		}
+		.col-2 {
+			display: none;
+
+			button {
+				width: 100%;
+			    padding-top: 16px;
+			    padding-bottom: 16px;
+			}
+		}
+		label {
+			cursor: pointer;
+		}
+		.col-1 p {
 			&:nth-last-child(2) {
 				margin: 0;
 			}
@@ -1061,38 +1116,35 @@
 				margin: 0;
 			}
 		}
-		.form-row {
+		.col-1 .form-row {
 			display: inline-block;
 			&.form-row-wide {
 				width: 100%;
 			}
-			label.woocommerce-form__label {
-				margin: 0 0 0 15px;
-			}
+		}
+		.form-row label.woocommerce-form__label {
+			margin: 0 0 0 15px;
 		}
 		.lost_password {
 			float: right;
 			line-height: 42px;
 		}
-		> div {
-			padding: 20px;
-			border-width: 2px;
-			border-style: solid;
-			border-color: #eaeaea;
+		form.register p:last-child {
+			margin: 0;
 		}
 	}
 	.oceanwp-loginform-wrap {
-		padding: 20px;
-		border-width: 2px;
-		border-style: solid;
-		border-color: #eaeaea;
 		h2 {
-			font-size: 14px;
-			position: relative;
-			margin: 0 0 20px;
-			padding-bottom: 8px;
-			text-transform: uppercase;
-			border-bottom: 1px solid #ddd;
+			display: none;
+		}
+		form {
+		    width: 560px;
+		    max-width: 100%;
+		    margin: 0 auto;
+		    padding: 20px;
+		    border-width: 2px;
+		    border-style: solid;
+		    border-color: #eaeaea;
 		}
 		p {
 			&:nth-last-child(2) {
@@ -1117,23 +1169,18 @@
 		}
 	}
 	.lost_reset_password {
-		max-width: 600px;
+		width: 480px;
+		max-width: 100%;
 		margin: 0 auto;
-		padding: 20px;
-		border-width: 2px;
-		border-style: solid;
-		text-align: center;
-		border-color: #eaeaea;
-		p {
-			&:first-child {
-				font-style: italic;
-			}
-			&:nth-last-child(3) {
-				margin: 0;
-			}
-		}
 		.form-row-first {
 			width: 100%;
+			margin-right: 0;
+			margin-left: 0;
+		}
+		button {
+			width: 100%;
+			padding-top: 16px;
+    		padding-bottom: 16px;
 		}
 	}
 	.order_details {

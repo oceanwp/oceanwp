@@ -8,6 +8,12 @@ Woo Wishlist
 // Mixins
 @import "mixins";
 
+/* Wishlist icon */
+.woo-wishlist-link i {
+	margin-right: 3px;
+}
+
+/* Wishlist button */
 .wishlist-plugin-active {
 	.products .product {
 		.yith-wcwl-add-to-wishlist {
@@ -187,4 +193,9 @@ Woo Wishlist
     min-width: 130px;
     margin-bottom: 0;
     border-radius: 0;
+}
+
+/* Wishlist shortcode */
+.wishlist-shortcode {
+    display: inline-block;
 }

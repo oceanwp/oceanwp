@@ -209,6 +209,12 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			$classes[] = 'has-parallax-footer';
 		}
 
+		// Pagination
+		$pagination_align = get_theme_mod( 'ocean_pagination_align', 'right' );
+		if ( 'right' != $pagination_align ) {
+			$classes[] = 'pagination-'. $pagination_align;
+		}
+
 		// If WooCommerce is active
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 
@@ -1239,6 +1245,45 @@ if ( ! function_exists( 'oceanwp_medium_header_elements' ) ) {
 		return $array;
 
 	}
+
+}
+
+/**
+ * Display content after header
+ *
+ * @since 1.5.0
+ */
+if ( ! function_exists( 'oceanwp_display_after_header_content' ) ) {
+
+	function oceanwp_display_after_header_content() {
+
+		// Return false by default
+		$return = false;
+
+		// Get after header content
+		$content = get_theme_mod( 'ocean_after_header_content' );
+		$content = oceanwp_tm_translation( 'ocean_after_header_content', $content );
+
+		// Display header content
+		if ( $content
+		    || is_customize_preview() ) {
+		    $return = true; ?>
+		    <div class="after-header-content">
+			    <div class="after-header-content-inner">
+			    	<?php
+	                // Display top bar content
+	                echo do_shortcode( $content ); ?>
+			    </div>
+		    </div>
+		<?php
+		}
+
+		// Apply filters and return
+		return apply_filters( 'ocean_display_after_header_content', $return );
+
+	}
+
+	add_action( 'ocean_before_nav', 'oceanwp_display_after_header_content', 999 );
 
 }
 
@@ -2978,14 +3023,11 @@ if ( ! function_exists( 'oceanwp_pagination') ) {
 				'next_text' => '<i class="'. $next_arrow .'"></i>',
 			) );
 
-			$align = get_theme_mod( 'ocean_pagination_align' );
-			$align = $align ? $align : 'right';
-
 			// Output pagination
 			if ( $echo ) {
-				echo '<div class="oceanwp-pagination clr oceanwp-'. esc_attr( $align ) .'">'. wp_kses_post( paginate_links( $args ) ) .'</div>';
+				echo '<div class="oceanwp-pagination clr">'. wp_kses_post( paginate_links( $args ) ) .'</div>';
 			} else {
-				return '<div class="oceanwp-pagination clr oceanwp-'. esc_attr( $align ) .'">'. wp_kses_post( paginate_links( $args ) ) .'</div>';
+				return '<div class="oceanwp-pagination clr">'. wp_kses_post( paginate_links( $args ) ) .'</div>';
 			}
 		}
 	}
@@ -3318,8 +3360,8 @@ if ( ! function_exists( 'oceanwp_is_woo_tax' ) ) {
 			return false;
 		} elseif ( ! is_tax() ) {
 			return false;
-		} elseif ( function_exists( 'is_product_category' ) && function_exists( 'is_product_tag' ) ) {
-			if ( is_product_category() || is_product_tag() ) {
+		} elseif ( function_exists( 'is_product_taxonomy' ) ) {
+			if ( is_product_taxonomy() ) {
 				return true;
 			}
 		}
@@ -3483,6 +3525,7 @@ if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
 
 		return apply_filters( 'ocean_register_tm_strings', array(
 			'ocean_top_bar_content' 				=> '',
+			'ocean_after_header_content' 			=> '',
 			'ocean_mobile_menu_text' 				=> esc_html__( 'Menu', 'oceanwp' ),
 			'ocean_mobile_menu_close_text' 			=> esc_html__( 'Close', 'oceanwp' ),
 			'ocean_mobile_menu_close_btn_text' 		=> esc_html__( 'Close Menu', 'oceanwp' ),

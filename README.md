@@ -2,7 +2,7 @@
 
 **Contributors:** Nick  
 **Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 4.9.3  
+**Tested up to:** WordPress 4.9.4  
 **Stable tag:** 1.4.16  
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  

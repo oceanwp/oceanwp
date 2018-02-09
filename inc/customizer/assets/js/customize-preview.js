@@ -194,11 +194,9 @@
 
 		api('ocean_pagination_align', function( value ) {
 			value.bind( function( newval ) {
-				var $pagination = $( '.oceanwp-pagination' );
-
-				if ( $pagination.length ) {
-					$pagination.removeClass( 'oceanwp-center oceanwp-left oceanwp-right' );
-					$pagination.addClass( 'oceanwp-'+ newval );
+				if ( body.length ) {
+					body.removeClass( 'pagination-center pagination-left pagination-right' );
+					body.addClass( 'pagination-'+ newval );
 				}
 			});
 		});
@@ -390,7 +388,7 @@
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_header_height' );
 				if ( to ) {
-					var style = '<style class="customizer-ocean_header_height">#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner { height: ' + to + 'px; }#site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a { line-height: ' + to + 'px; }</style>';
+					var style = '<style class="customizer-ocean_header_height">#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner, .after-header-content-inner { height: ' + to + 'px; }#site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a, .after-header-content-inner > a { line-height: ' + to + 'px; }</style>';
 					if ( $child.length ) {
 						$child.replaceWith( style );
 					} else {
@@ -450,6 +448,13 @@
 				}
 			});
 		});
+
+	    // Content
+	    api('ocean_after_header_content', function( value ) {
+	      value.bind( function( newval ) {
+	        $( '#site-header .after-header-content-inner' ).html( newval );
+	      });
+	    });
 
 	    api('ocean_header_image_position', function( value ) {
 			value.bind( function( newval ) {
@@ -8378,6 +8383,112 @@
 				} else {
 					$child.remove();
 				}
+			});
+		}), api('ocean_woo_quick_view_button_bg', function(value) {
+			value.bind(function(to) {
+				var $child = $('.customizer-ocean_woo_quick_view_button_bg');
+				if (to) {
+					var style = '<style class="customizer-ocean_woo_quick_view_button_bg">.owp-quick-view{background-color:' + to + ';}</style>';
+					if ($child.length) {
+						$child.replaceWith(style);
+					} else {
+						$('head').append(style);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api('ocean_woo_quick_view_button_hover_bg', function(value) {
+			value.bind(function(to) {
+				var $child = $('.customizer-ocean_woo_quick_view_button_hover_bg');
+				if (to) {
+					var style = '<style class="customizer-ocean_woo_quick_view_button_hover_bg">.owp-quick-view:hover{background-color:' + to + ';}</style>';
+					if ($child.length) {
+						$child.replaceWith(style);
+					} else {
+						$('head').append(style);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api('ocean_woo_quick_view_button_color', function(value) {
+			value.bind(function(to) {
+				var $child = $('.customizer-ocean_woo_quick_view_button_color');
+				if (to) {
+					var style = '<style class="customizer-ocean_woo_quick_view_button_color">.owp-quick-view{color:' + to + ';}</style>';
+					if ($child.length) {
+						$child.replaceWith(style);
+					} else {
+						$('head').append(style);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api('ocean_woo_quick_view_button_hover_color', function(value) {
+			value.bind(function(to) {
+				var $child = $('.customizer-ocean_woo_quick_view_button_hover_color');
+				if (to) {
+					var style = '<style class="customizer-ocean_woo_quick_view_button_hover_color">.owp-quick-view:hover{color:' + to + ';}</style>';
+					if ($child.length) {
+						$child.replaceWith(style);
+					} else {
+						$('head').append(style);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api('ocean_woo_quick_view_overlay_bg', function(value) {
+			value.bind(function(to) {
+				var $child = $('.customizer-ocean_woo_quick_view_overlay_bg');
+				if (to) {
+					var style = '<style class="customizer-ocean_woo_quick_view_overlay_bg">.image-wrap.loading:after{background-color:' + to + ';}</style>';
+					if ($child.length) {
+						$child.replaceWith(style);
+					} else {
+						$('head').append(style);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api('ocean_woo_quick_view_overlay_spinner_outside_color', function(value) {
+			value.bind(function(to) {
+				var $child = $('.customizer-ocean_woo_quick_view_overlay_spinner_outside_color');
+				if (to) {
+					var style = '<style class="customizer-ocean_woo_quick_view_overlay_spinner_outside_color">.image-wrap.loading:before{border-color:' + to + ';}</style>';
+					if ($child.length) {
+						$child.replaceWith(style);
+					} else {
+						$('head').append(style);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api('ocean_woo_quick_view_overlay_spinner_inner_color', function(value) {
+			value.bind(function(to) {
+				var $child = $('.customizer-ocean_woo_quick_view_overlay_spinner_inner_color');
+				if (to) {
+					var style = '<style class="customizer-ocean_woo_quick_view_overlay_spinner_inner_color">.image-wrap.loading:before{border-left-color:' + to + ';}</style>';
+					if ($child.length) {
+						$child.replaceWith(style);
+					} else {
+						$('head').append(style);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_woo_quick_view_modal_bg", function($swipe) {
+			$swipe.bind(function(size) {
+				$(".owp-qv-content-inner").css("background-color", size);
+			});
+		}), api("ocean_woo_quick_view_modal_close_color", function($swipe) {
+			$swipe.bind(function(size) {
+				$(".owp-qv-content-inner .owp-qv-close").css("color", size);
 			});
 		}), api("ocean_woo_off_canvas_sidebar_bg", function($swipe) {
 			$swipe.bind(function(size) {

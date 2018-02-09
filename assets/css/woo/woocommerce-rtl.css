@@ -261,6 +261,17 @@ body #checkout-wrapper #form_actions .buttons input.next { margin-right: 10px; m
 	.woocommerce-MyAccount-content { float: left; }
 }
 
+/* Wishlist */
+body .woo-wishlist-link i { margin-left: 3px; margin-right: 0; }
+body .wishlist-plugin-active .products .product .yith-wcwl-add-to-wishlist { left: 10px; right: auto; }
+body .wishlist-plugin-active .products .product .yith-wcwl-add-button .ajax-loading { right: 10px; left: auto; margin: -8px -8px 0 0; }
+body .single .yith-wcwl-add-to-wishlist a.add_to_wishlist:before { padding-left: 6px; padding-right: 0; }
+body .single .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse:before,
+body .single .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse:before { padding-left: 6px; padding-right: 0; }
+body .single .yith-wcwl-add-to-wishlist .feedback { margin-left: 6px; margin-right: 0; }
+body .yith-wcwl-share li { margin-left: 20px; margin-right: 0; }
+body .yith-wcwl-share li:last-child { margin-left: 0; }
+
 /* Off Canvas sidebar */
 #oceanwp-off-canvas-sidebar-wrap { right: 0; left: auto; }
 #oceanwp-off-canvas-sidebar-wrap .oceanwp-off-canvas-sidebar { right: -100%; left: auto; }
@@ -269,6 +280,9 @@ body #checkout-wrapper #form_actions .buttons input.next { margin-right: 10px; m
 /* Mobile menu cart sidebar */
 #oceanwp-cart-sidebar-wrap .oceanwp-cart-sidebar { left: -100%; right: auto; }
 .cart-enabled #oceanwp-cart-sidebar-wrap .oceanwp-cart-sidebar { left: 0; right: auto; }
+
+/* Cart shortcode */
+.wcmenucart-total { margin-left: 7px; margin-right: 0; }
 
 /*------------------------------------------------------------------
 Phone Portrait & Landscape
