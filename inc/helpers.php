@@ -1257,6 +1257,9 @@ if ( ! function_exists( 'oceanwp_display_after_header_content' ) ) {
 
 	function oceanwp_display_after_header_content() {
 
+		// Header style
+		$style = oceanwp_header_style();
+
 		// Return false by default
 		$return = false;
 
@@ -1265,8 +1268,12 @@ if ( ! function_exists( 'oceanwp_display_after_header_content' ) ) {
 		$content = oceanwp_tm_translation( 'ocean_after_header_content', $content );
 
 		// Display header content
-		if ( $content
-		    || is_customize_preview() ) {
+		if ( ( 'minimal' == $style
+				|| 'transparent' == $style )
+			&& $content
+		    || ( 'minimal' == $style
+				|| 'transparent' == $style )
+		    && is_customize_preview() ) {
 		    $return = true; ?>
 		    <div class="after-header-content">
 			    <div class="after-header-content-inner">
@@ -1336,11 +1343,6 @@ if ( ! function_exists( 'oceanwp_nav_template_content' ) ) {
 
 		// Get the template ID
 		$content = oceanwp_custom_nav_template();
-
-		// Get Polylang Translation of template
-		if ( function_exists( 'pll_get_post' ) ) {
-			$content = pll_get_post( $content, pll_current_language() );
-		}
 
 		// Get template content
 		if ( ! empty( $content ) ) {
@@ -3417,15 +3419,15 @@ if ( ! function_exists( 'oceanwp_spacing_css' ) ) {
 	function oceanwp_spacing_css( $top, $right, $bottom, $left ) {
 
 		// Add px and 0 if no value
-		$s_top 		= ( isset( $top ) && '' !== $top ) ? absint( $top ) . 'px ' : '0px ';
-		$s_right	= ( isset( $right ) && '' !== $right ) ? absint( $right ) . 'px ' : '0px ';
-		$s_bottom 	= ( isset( $bottom ) && '' !== $bottom ) ? absint( $bottom ) . 'px ' : '0px ';
-		$s_left 	= ( isset( $left ) && '' !== $left ) ? absint( $left ) . 'px' : '0px';
+		$s_top 		= ( isset( $top ) && '' !== $top ) ? intval( $top ) . 'px ' : '0px ';
+		$s_right	= ( isset( $right ) && '' !== $right ) ? intval( $right ) . 'px ' : '0px ';
+		$s_bottom 	= ( isset( $bottom ) && '' !== $bottom ) ? intval( $bottom ) . 'px ' : '0px ';
+		$s_left 	= ( isset( $left ) && '' !== $left ) ? intval( $left ) . 'px' : '0px';
 		
 		// Return one value if it is the same on every inputs
-		if ( ( absint( $s_top ) === absint( $s_right ) )
-			&& ( absint( $s_right ) === absint( $s_bottom ) )
-			&& ( absint( $s_bottom ) === absint( $s_left ) ) ) {
+		if ( ( intval( $s_top ) === intval( $s_right ) )
+			&& ( intval( $s_right ) === intval( $s_bottom ) )
+			&& ( intval( $s_bottom ) === intval( $s_left ) ) ) {
 			return $s_left;
 		}
 		
@@ -3844,11 +3846,6 @@ if ( ! function_exists( 'oceanwp_header_template_content' ) ) {
 
 		// Get the template ID
 		$content = oceanwp_custom_header_template();
-
-		// Get Polylang Translation of template
-		if ( function_exists( 'pll_get_post' ) ) {
-			$content = pll_get_post( $content, pll_current_language() );
-		}
 
 		// Get template content
 		if ( ! empty( $content ) ) {

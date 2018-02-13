@@ -35,6 +35,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 
 			// If template is selected
 			if ( ! empty( $id ) ) {
+
+				// Get Polylang Translation of template
+				if ( function_exists( 'pll_get_post' )) {
+					$id_polylang = pll_get_post( $id, pll_current_language() );
+					if ( ! empty( $id_polylang ) ) {
+						$id = $id_polylang;
+					}
+				}
+
 				return $id;
 			}
 
@@ -55,6 +64,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 
 			// If template is selected
 			if ( ! empty( $id ) ) {
+
+				// Get Polylang Translation of template
+				if ( function_exists( 'pll_get_post' )) {
+					$id_polylang = pll_get_post( $id, pll_current_language() );
+					if ( ! empty( $id_polylang ) ) {
+						$id = $id_polylang;
+					}
+				}
+				
 				return $id;
 			}
 
@@ -75,6 +93,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 
 			// If template is selected
 			if ( ! empty( $id ) ) {
+
+				// Get Polylang Translation of template
+				if ( function_exists( 'pll_get_post' )) {
+					$id_polylang = pll_get_post( $id, pll_current_language() );
+					if ( ! empty( $id_polylang ) ) {
+						$id = $id_polylang;
+					}
+				}
+				
 				return $id;
 			}
 
@@ -95,6 +122,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 
 			// If template is selected
 			if ( ! empty( $id ) ) {
+
+				// Get Polylang Translation of template
+				if ( function_exists( 'pll_get_post' )) {
+					$id_polylang = pll_get_post( $id, pll_current_language() );
+					if ( ! empty( $id_polylang ) ) {
+						$id = $id_polylang;
+					}
+				}
+				
 				return $id;
 			}
 
@@ -115,6 +151,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 
 			// If template is selected
 			if ( ! empty( $id ) ) {
+
+				// Get Polylang Translation of template
+				if ( function_exists( 'pll_get_post' )) {
+					$id_polylang = pll_get_post( $id, pll_current_language() );
+					if ( ! empty( $id_polylang ) ) {
+						$id = $id_polylang;
+					}
+				}
+				
 				return $id;
 			}
 
@@ -135,6 +180,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 
 			// If template is selected
 			if ( ! empty( $id ) ) {
+
+				// Get Polylang Translation of template
+				if ( function_exists( 'pll_get_post' )) {
+					$id_polylang = pll_get_post( $id, pll_current_language() );
+					if ( ! empty( $id_polylang ) ) {
+						$id = $id_polylang;
+					}
+				}
+				
 				return $id;
 			}
 
@@ -155,6 +209,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 
 			// If template is selected
 			if ( ! empty( $id ) ) {
+
+				// Get Polylang Translation of template
+				if ( function_exists( 'pll_get_post' )) {
+					$id_polylang = pll_get_post( $id, pll_current_language() );
+					if ( ! empty( $id_polylang ) ) {
+						$id = $id_polylang;
+					}
+				}
+				
 				return $id;
 			}
 
@@ -175,6 +238,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 
 			// If template is selected
 			if ( ! empty( $id ) ) {
+
+				// Get Polylang Translation of template
+				if ( function_exists( 'pll_get_post' )) {
+					$id_polylang = pll_get_post( $id, pll_current_language() );
+					if ( ! empty( $id_polylang ) ) {
+						$id = $id_polylang;
+					}
+				}
+				
 				return $id;
 			}
 
@@ -195,6 +267,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 
 			// If template is selected
 			if ( ! empty( $id ) ) {
+
+				// Get Polylang Translation of template
+				if ( function_exists( 'pll_get_post' )) {
+					$id_polylang = pll_get_post( $id, pll_current_language() );
+					if ( ! empty( $id_polylang ) ) {
+						$id = $id_polylang;
+					}
+				}
+				
 				return $id;
 			}
 
