@@ -45,6 +45,8 @@ if ( $attachment_ids ) : ?>
 
 	<div class="product-entry-slider woo-entry-image clr">
 
+		<?php do_action( 'ocean_before_product_entry_image' ); ?>
+
 		<?php
 		// Define counter variable
 		$count=0;
@@ -85,6 +87,8 @@ if ( $attachment_ids ) : ?>
 			endforeach;
 
 		endif; ?>
+
+		<?php do_action( 'ocean_after_product_entry_image' ); ?>
 
 	</div>
 

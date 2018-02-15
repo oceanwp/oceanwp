@@ -1,5 +1,37 @@
 # OceanWP Changelog
 
+### *2018.02.15* - 1.5.0
+* **Added** - Multi-step checkout.
+* **Added** - Floating bar on the single product pages to always have the add to cart button to increase conversion.
+* **Added** - Quick view button on the products that will display a quick view modal.
+* **Added** - Mini cart on mobile view when you click the cart icon.
+* **Added** - Off Canvas filtering, you can enable it via WooCommerce > Archives.
+* **Added** - New option to add ajax to the single product add to cart button so the Ocean Woo Popup extension can work on the single product page too.
+* **Added** - New option to display your cart when a product will be added to it.
+* **Added** - New option to display the single product thumbnails vertically.
+* **Added** - New option to display the single product tabs vertically.
+* **Added** - New option to add a product navigation in single product.
+* **Added** - New option to align the product entries content (left-center-right).
+* **Added** - New option to choose between square or circle for the Sale badge.
+* **Added** - New option to display a sale text or a percentage for the sale badge.
+* **Added** - New option "Distraction Free" for the Cart and Checkout pages to only display your logo and footer bottom to increase conversion.
+* **Added** - New option in WooCommerce > General to display a wishlist icon in the header if the YITH WooCommerce Wishlist plugin is used.
+* **Added** - New textarea option in Header > General to allow you to add what you want after the header so you will be able to add you menu to the left or center and add something to the right side of the header like the cart icon.
+* **Added** - New option to disable the menu cart icon on all devices or only on desktop, so if you use the cart icon shortcode you still can display the cart icon on mobile view.
+* **Added** - New option Image Margin in the Advanced Styling setting for the product entries so you can add a padding with a negative margin in the image.
+* **Added** - Polylang in all template to be able to translate them.
+* **Tweak** - Now, the cart is displayed on the cart icon hover not click.
+* **Tweak** - Better styling for the cart widget.
+* **Tweak** - Better styling for the wishlist button.
+* **Tweak** - Better styling for the categories widget.
+* **Tweak** - Better styling for the filter widget.
+* **Tweak** - Moved default customizer WooCommerce section to the theme WooCommerce section.
+* **Fixed** - Max height for the mobile drop down style.
+* **Fixed** - Toolbar for custom taxonomy.
+* **Fixed** - Pagination positionning issue for WooCommerce pagination.
+* **Fixed** - Page title height if no background image.
+* **Fixed** - Page title fixed become initial to fix the IOS bug.
+
 ### *2018.02.07* - 1.4.16
 * **Fixed** - WooCommerce pagination template.
 

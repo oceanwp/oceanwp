@@ -264,6 +264,11 @@ body.breadcrumbs-position-default .page-header-title {
 *------------------------------------*/
 @media only screen and (max-width: 767px) {
 
+  /* Remove fixed background to fix the IOS bug */
+  .page-header {
+    background-attachment: initial !important;
+  }
+
   /* page header */
   .page-header-with-background .page-header-title {
     font-size: 36px;

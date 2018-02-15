@@ -34,7 +34,8 @@ function oceanwpAutoLightbox() {
             && ! $j( this ).hasClass( 'gallery-lightbox' )
             && ! $j( this ).parent().hasClass( 'gallery-icon' )
             && ! $j( this ).hasClass( 'woo-lightbox' )
-            && ! $j( this ).hasClass( 'woo-thumbnail' ) ) {
+            && ! $j( this ).hasClass( 'woo-thumbnail' )
+            && ! $j( this ).parent().hasClass( 'woocommerce-product-gallery__image' ) ) {
 
             $j( this ).addClass( 'oceanwp-lightbox' );
             

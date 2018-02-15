@@ -14,71 +14,80 @@ Woo Wishlist
 }
 
 /* Wishlist button */
-.wishlist-plugin-active {
-	.products .product {
-		.yith-wcwl-add-to-wishlist {
+.products .product {
+	.yith-wcwl-add-to-wishlist {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		margin-top: 0;
+		visibility: hidden;
+		@include opacity( 0 );
+		@include transition( all 0.25s ease-in-out );
+		z-index: 10;
+
+		.feedback {
+			display: none;
+		}
+
+		.yith-wcwl-add-button a,
+		.yith-wcwl-wishlistaddedbrowse a,
+		.yith-wcwl-wishlistexistsbrowse a {
+			display: inline-block;
+		    width: 30px;
+		    height: 30px;
+		    border-radius: 50%;
+		    font-size: 0;
+		    line-height: 0;
+		    background-color: #fe5252;
+		    color: #fff;
+		    border: 2px solid #fe5252;
+		    text-align: center;
+
+		    &:before {
+		    	content: '\f004';
+			    font-size: 12px;
+			    line-height: 28px;
+			    display: inline-block;
+			    font-family: FontAwesome;
+			    text-rendering: auto;
+			    -webkit-font-smoothing: antialiased;
+			    -moz-osx-font-smoothing: grayscale;
+		    }
+		}
+
+		.yith-wcwl-add-button a {
+			background-color: transparent;
+			color: #fe5252;
+
+			&:hover {
+				background-color: #fe5252;
+				color: #fff;
+			}
+		}
+	}
+
+	.yith-wcwl-add-button {
+		position: relative;
+
+		i {
+			margin-right: 0;
+		}
+
+		.ajax-loading {
 			position: absolute;
-			top: 10px;
-			right: 10px;
-			margin-top: 0;
-			visibility: hidden;
-			@include opacity( 0 );
-			@include transition( all 0.25s ease-in-out );
-			z-index: 10;
-
-			.feedback {
-				display: none;
-			}
-
-			.wishlist-entry,
-			.yith-wcwl-wishlistaddedbrowse a,
-			.yith-wcwl-wishlistexistsbrowse a {
-				display: inline-block;
-			    width: 30px;
-			    height: 30px;
-			    line-height: 26px;
-			    border-radius: 50%;
-			    font-size: .8em;
-			    background-color: #fe5252;
-			    color: #fff;
-			    border: 2px solid #fe5252;
-			    text-align: center;
-			}
-
-			.wishlist-entry {
-				background-color: transparent;
-				color: #fe5252;
-
-				&:hover {
-					background-color: #fe5252;
-					color: #fff;
-				}
-			}
+			top: 50%;
+		    left: 50%;
+		    margin: -8px 0 0 -8px;
 		}
+	}
 
-		.yith-wcwl-add-button {
-			position: relative;
-
-			i {
-				margin-right: 0;
-			}
-
-			.ajax-loading {
-				position: absolute;
-				top: 50%;
-			    left: 50%;
-			    margin: -8px 0 0 -8px;
-			}
-		}
-
-		.product-inner:hover .yith-wcwl-add-to-wishlist {
-		    visibility: visible;
-			@include opacity( 1 );
-		}
+	.product-inner:hover .yith-wcwl-add-to-wishlist {
+	    visibility: visible;
+		@include opacity( 1 );
 	}
 }
 
-.single .yith-wcwl-add-to-wishlist {
+.single .summary .yith-wcwl-add-to-wishlist {
     display: inline-block;
 	position: relative;
     font-size: 13px;
@@ -143,7 +152,7 @@ Woo Wishlist
 	a.remove {
 	    width: 32px;
 	    height: 32px;
-	    line-height: 30px;
+	    line-height: 32px;
 	    border: 1px solid #e6e6e6;
 	}
 

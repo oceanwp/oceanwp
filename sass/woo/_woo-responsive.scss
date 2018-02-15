@@ -248,16 +248,29 @@ Woo Responsive
 		.result-count {
 			display: none;
 		}
+		.oceanwp-toolbar {
+		    text-align: center;
+		}
 		.oceanwp-off-canvas-filter,
 		.oceanwp-grid-list {
-			margin: 0 10px 0 0;
-		}
-		.woocommerce-ordering .orderby {
-			width: 194px !important;
-			span {
-				width: 194px !important;
+		    display: inline-block;
+		    float: none;
+	    }
+		.oceanwp-grid-list {
+		    margin: 0;
+	    }
+		.woocommerce-ordering {
+		    float: none;
+		    margin-top: 14px;
+		    text-align: left;
+			
+			.orderby {
+				width: 100% !important;
+				span {
+					width: 100% !important;
+				}
 			}
-		}
+	    }
 	}
 	.woocommerce-cart table.cart td.actions {
 		.coupon {

@@ -46,7 +46,7 @@ Woo Quick View
     visibility: visible;
 }
 
-.image-wrap.loading {
+.woo-entry-image.loading {
 	&:before {
 		content: '';
 		position: absolute;
@@ -74,6 +74,8 @@ Woo Quick View
 	    left: 0;
 	    right: 0;
 	    bottom: 0;
+    	height: 100%;
+	    visibility: visible;
 	    z-index: 11;
 	}
 }

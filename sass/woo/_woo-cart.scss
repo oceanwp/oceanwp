@@ -236,16 +236,17 @@ Woo Cart
 .wcmenucart-cart-icon {
 	display: inline-block;
 
-	.wcmenucart-count {
+	.wcmenucart-number {
 		position: relative;
 	    display: inline-block;
-	    width: 2em;
+	    min-width: 2em;
 	    height: 2em;
 	    font-size: 1em;
 	    line-height: 1.7em;
 	    font-weight: bold;
 	    border: 2px solid $color-2;
 	    color: $color-2;
+	    padding: 0 3px;
 	    vertical-align: middle;
 	    text-align: center;
 		@include transition( all .2s ease-in-out );
@@ -268,7 +269,8 @@ Woo Cart
 	}
 }
 
-.woo-cart-shortcode:hover .wcmenucart-cart-icon .wcmenucart-count {
+.woo-cart-shortcode:hover .wcmenucart-cart-icon .wcmenucart-number,
+.show-cart .wcmenucart-cart-icon .wcmenucart-number {
 	background-color: $color-5;
     color: $color-1;
 	border-color: $color-5;

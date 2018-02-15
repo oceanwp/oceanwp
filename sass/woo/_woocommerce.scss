@@ -20,7 +20,6 @@
 			padding: 12px 20px;
 			&.loading {
 				@include opacity( 1 );
-				padding-right: 1em;
 				&:after {
 					display: inline-block;
 					@include font-awesome();
@@ -308,6 +307,9 @@
 					display: none;
 				}
 				.product-inner {
+					@include display();
+					@include flex-wrap( wrap );
+					@include align-items( center );
 					text-align: left;
 				}
 				li.product {
@@ -316,7 +318,6 @@
 					width: 100% !important;
 					border-bottom: 1px solid #eaeaea;
 					.woo-entry-inner {
-						float: left;
 						width: 65%;
 						li.image-wrap {
 							display: none;
@@ -324,7 +325,6 @@
 					}
 					.woo-entry-image {
 						display: block;
-						float: left;
 						width: 32%;
 						margin: 0 3% 0 0;
 					}
@@ -1188,7 +1188,6 @@
 	}
 	a.button.loading {
 		@include opacity( 1 );
-		padding-right: 1em;
 		&:after {
 			display: inline-block;
 			@include font-awesome();
@@ -1208,7 +1207,6 @@
 		padding: 12px 20px;
 		&.loading {
 			@include opacity( 1 );
-			padding-right: 1em;
 			&:after {
 				display: inline-block;
 				@include font-awesome();
@@ -1561,7 +1559,6 @@
 		padding: 12px 20px;
 		&.loading {
 			@include opacity( 1 );
-			padding-right: 1em;
 			&:after {
 				display: inline-block;
 				@include font-awesome();
@@ -2381,6 +2378,10 @@ ul {
 					max-height: 28px;
 				}
 			}
+			.woocommerce_error li {
+			    background-color: transparent;
+			    color: #fff;
+			}
 		}
 		div.payment_box {
 			position: relative;
@@ -3066,7 +3067,6 @@ form.checkout {
 				.flex-control-thumbs {
 					float: left;
 				    width: calc(25% - 1em);
-				    max-height: 400px;
 				    overflow-x: hidden;
 
 				    li {

@@ -72,7 +72,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		<?php
 		// Cart icon
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
-			&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' )
+			&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_visibility', 'default' )
 			&& ( OCEANWP_ELEMENTOR_ACTIVE
 				&& ! \Elementor\Plugin::$instance->editor->is_edit_mode() ) ) {
 			echo oceanwp_wcmenucart_menu_item();

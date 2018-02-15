@@ -39,7 +39,7 @@ Woo Quick View
   visibility: visible;
 }
 
-.image-wrap.loading:before {
+.woo-entry-image.loading:before {
   content: '';
   position: absolute;
   top: 50%;
@@ -65,7 +65,7 @@ Woo Quick View
   animation: qv-spin 0.6s infinite linear;
 }
 
-.image-wrap.loading:after {
+.woo-entry-image.loading:after {
   content: '';
   background-color: rgba(0, 0, 0, 0.15);
   position: absolute;
@@ -73,6 +73,8 @@ Woo Quick View
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100%;
+  visibility: visible;
   z-index: 11;
 }
 

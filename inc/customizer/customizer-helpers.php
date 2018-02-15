@@ -162,6 +162,15 @@ function oceanwp_cac_has_topbar_social() {
 /*-------------------------------------------------------------------------------*/
 /* [ Header ]
 /*-------------------------------------------------------------------------------*/
+function oceanwp_cac_has_minimal_or_transparent_header_styles() {
+	if ( 'minimal' == oceanwp_header_style()
+		|| 'transparent' == oceanwp_header_style() ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function oceanwp_cac_has_transparent_header_style() {
 	if ( 'transparent' == oceanwp_header_style() ) {
 		return true;
@@ -210,7 +219,7 @@ function oceanwp_cac_hasnt_medium_header_style() {
 	}
 }
 
-function oceanwp_cac_hasnt_medium_or_vertical_header_style() {
+function oceanwp_cac_hasnt_medium_or_vertical_header_styles() {
 	if ( 'medium' == oceanwp_header_style()
 		|| 'vertical' == oceanwp_header_style() ) {
 		return false;
@@ -493,14 +502,6 @@ function oceanwp_cac_has_blog_infinite_scroll() {
 /*-------------------------------------------------------------------------------*/
 /* [ WooCommerce ]
 /*-------------------------------------------------------------------------------*/
-function oceanwp_cac_has_menu_cart() {
-	if ( 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
 function oceanwp_cac_has_grid_list_buttons() {
 	if ( true == get_theme_mod( 'ocean_woo_grid_list', true ) ) {
 		return true;
@@ -535,6 +536,14 @@ function oceanwp_cac_has_woo_infinite_scroll() {
 
 function oceanwp_cac_has_woo_filter_button() {
 	if ( true == get_theme_mod( 'ocean_woo_off_canvas_filter', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_woo_floating_bar() {
+	if ( 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'off' ) ) {
 		return true;
 	} else {
 		return false;

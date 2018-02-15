@@ -1627,6 +1627,8 @@ if ( ! function_exists( 'oceanwp_menu_cart_style' ) ) {
 
 		// Return if WooCommerce isn't enabled or icon is disabled
 		if ( ! OCEANWP_WOOCOMMERCE_ACTIVE
+			|| 'disabled' == get_theme_mod( 'ocean_woo_menu_icon_visibility', 'default' )
+			|| 'disabled_desktop' == get_theme_mod( 'ocean_woo_menu_icon_visibility', 'default' )
 			|| 'disabled' == get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) {
 			return;
 		}
@@ -2149,21 +2151,21 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 					$css .= 'background-size:'. $bg_img_size .';';
 				}
 
-				// Custom height
-				$title_height = get_theme_mod( 'ocean_page_header_bg_image_height', '400' );
+			}
 
-				if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
-					&& is_singular( 'post' ) ) {
-					$title_height 	= get_theme_mod( 'ocean_blog_single_title_bg_image_height', '400' );
-				}
+			// Custom height
+			$title_height = get_theme_mod( 'ocean_page_header_bg_image_height', '400' );
 
-				$title_height 		= $title_height ? $title_height : '400';
-				$title_height 		= apply_filters( 'ocean_post_title_height', $title_height );
+			if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+				&& is_singular( 'post' ) ) {
+				$title_height 	= get_theme_mod( 'ocean_blog_single_title_bg_image_height', '400' );
+			}
 
-				if ( ! empty( $title_height ) && '400' != $title_height ) {
-					$css .= 'height:'. $title_height .'px;';
-				}
+			$title_height 		= $title_height ? $title_height : '400';
+			$title_height 		= apply_filters( 'ocean_post_title_height', $title_height );
 
+			if ( ! empty( $title_height ) && '400' != $title_height ) {
+				$css .= 'height:'. $title_height .'px;';
 			}
 
 		}

@@ -302,7 +302,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 		            'mobile_left' 		=> 'ocean_header_mobile_left_padding',
 				),
 				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_hasnt_medium_or_vertical_header_style',
+				'active_callback' 		=> 'oceanwp_cac_hasnt_medium_or_vertical_header_styles',
 			    'input_attrs' 			=> array(
 			        'min'   => 0,
 			        'max'   => 100,
@@ -324,6 +324,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'section'  				=> 'ocean_header_general',
 				'settings' 				=> 'ocean_after_header_content',
 				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_minimal_or_transparent_header_styles',
 			) ) );
 
 			/**

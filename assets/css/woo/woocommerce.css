@@ -27,7 +27,6 @@
   -moz-opacity: 1;
   -webkit-opacity: 1;
   opacity: 1;
-  padding-right: 1em;
 }
 
 .woocommerce button.button.loading:after {
@@ -412,6 +411,15 @@
 }
 
 .woocommerce ul.products.list .product-inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
   text-align: left;
 }
 
@@ -423,7 +431,6 @@
 }
 
 .woocommerce ul.products.list li.product .woo-entry-inner {
-  float: left;
   width: 65%;
 }
 
@@ -433,7 +440,6 @@
 
 .woocommerce ul.products.list li.product .woo-entry-image {
   display: block;
-  float: left;
   width: 32%;
   margin: 0 3% 0 0;
 }
@@ -1457,7 +1463,6 @@
   -moz-opacity: 1;
   -webkit-opacity: 1;
   opacity: 1;
-  padding-right: 1em;
 }
 
 .woocommerce a.button.loading:after {
@@ -1495,7 +1500,6 @@
   -moz-opacity: 1;
   -webkit-opacity: 1;
   opacity: 1;
-  padding-right: 1em;
 }
 
 .woocommerce input.button.loading:after {
@@ -1940,7 +1944,6 @@
   -moz-opacity: 1;
   -webkit-opacity: 1;
   opacity: 1;
-  padding-right: 1em;
 }
 
 .woocommerce #respond input#submit.loading:after {
@@ -2901,6 +2904,11 @@ ul.order_details li strong {
   max-height: 28px;
 }
 
+.woocommerce-checkout #payment ul.payment_methods .woocommerce_error li {
+  background-color: transparent;
+  color: #fff;
+}
+
 .woocommerce-checkout #payment div.payment_box {
   position: relative;
   width: 100%;
@@ -3729,7 +3737,6 @@ form.checkout > .blockUI {
   .woocommerce div.product.owp-thumbs-layout-vertical div.images .flex-control-thumbs {
     float: left;
     width: calc(25% - 1em);
-    max-height: 400px;
     overflow-x: hidden;
   }
   .woocommerce div.product.owp-thumbs-layout-vertical div.images .flex-control-thumbs li {
@@ -4112,16 +4119,17 @@ Woo Cart
   display: inline-block;
 }
 
-.wcmenucart-cart-icon .wcmenucart-count {
+.wcmenucart-cart-icon .wcmenucart-number {
   position: relative;
   display: inline-block;
-  width: 2em;
+  min-width: 2em;
   height: 2em;
   font-size: 1em;
   line-height: 1.7em;
   font-weight: bold;
   border: 2px solid #333;
   color: #333;
+  padding: 0 3px;
   vertical-align: middle;
   text-align: center;
   -webkit-transition: all 0.2s ease-in-out;
@@ -4131,7 +4139,7 @@ Woo Cart
   transition: all 0.2s ease-in-out;
 }
 
-.wcmenucart-cart-icon .wcmenucart-count:after {
+.wcmenucart-cart-icon .wcmenucart-number:after {
   content: '';
   position: absolute;
   bottom: 100%;
@@ -4151,13 +4159,15 @@ Woo Cart
   transition: all 0.2s ease-in-out;
 }
 
-.woo-cart-shortcode:hover .wcmenucart-cart-icon .wcmenucart-count {
+.woo-cart-shortcode:hover .wcmenucart-cart-icon .wcmenucart-number,
+.show-cart .wcmenucart-cart-icon .wcmenucart-number {
   background-color: #13aff0;
   color: #fff;
   border-color: #13aff0;
 }
 
-.woo-cart-shortcode:hover .wcmenucart-cart-icon .wcmenucart-count:after {
+.woo-cart-shortcode:hover .wcmenucart-cart-icon .wcmenucart-number:after,
+.show-cart .wcmenucart-cart-icon .wcmenucart-number:after {
   border-color: #13aff0;
   height: 10px;
 }
@@ -4583,7 +4593,7 @@ Woo Quantity Buttons
   float: left;
   width: 36px;
   min-height: 36px;
-  background-color: transparent !important;
+  background-color: transparent;
   border: 1px solid #e4e4e4;
   margin: 0;
   padding: 0;
@@ -4904,15 +4914,27 @@ Woo Responsive
   .woocommerce .result-count {
     display: none;
   }
+  .woocommerce .oceanwp-toolbar {
+    text-align: center;
+  }
   .woocommerce .oceanwp-off-canvas-filter,
   .woocommerce .oceanwp-grid-list {
-    margin: 0 10px 0 0;
+    display: inline-block;
+    float: none;
+  }
+  .woocommerce .oceanwp-grid-list {
+    margin: 0;
+  }
+  .woocommerce .woocommerce-ordering {
+    float: none;
+    margin-top: 14px;
+    text-align: left;
   }
   .woocommerce .woocommerce-ordering .orderby {
-    width: 194px !important;
+    width: 100% !important;
   }
   .woocommerce .woocommerce-ordering .orderby span {
-    width: 194px !important;
+    width: 100% !important;
   }
   .woocommerce-cart table.cart td.actions .coupon {
     float: none;

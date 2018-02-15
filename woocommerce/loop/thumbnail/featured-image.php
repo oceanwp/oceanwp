@@ -32,11 +32,13 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 if ( $attachment ) { ?>
 
 	<div class="woo-entry-image clr">
+		<?php do_action( 'ocean_before_product_entry_image' ); ?>
 		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
 			<?php
 			// Single Image
 			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $img_args ); ?>
 	    </a>
+		<?php do_action( 'ocean_after_product_entry_image' ); ?>
 	</div><!-- .woo-entry-image -->
 
 <?php
@@ -46,8 +48,10 @@ if ( $attachment ) { ?>
 else { ?>
 
 	<div class="woo-entry-image clr">
+		<?php do_action( 'ocean_before_product_entry_image' ); ?>
 		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
     		<?php echo '<img src="'. esc_url( wc_placeholder_img_src() ) .'" alt="'. esc_html__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" />'; ?>
     	</a>
+		<?php do_action( 'ocean_after_product_entry_image' ); ?>
 	</div><!-- .woo-entry-image -->
 <?php } ?>

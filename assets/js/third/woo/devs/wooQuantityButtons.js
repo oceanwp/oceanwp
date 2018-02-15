@@ -33,61 +33,61 @@ function oceanwpWooQuantityButtons( $quantitySelector ) {
 
 		// Target quantity inputs on product pages
 		$j( 'input' + $quantitySelector + ':not(.product-quantity input' + $quantitySelector + ')' ).each( function() {
-				var $min = parseFloat( $j( this ).attr( 'min' ) );
+			var $min = parseFloat( $j( this ).attr( 'min' ) );
 
-				if ( $min && $min > 0 && parseFloat( $j( this ).val() ) < $min ) {
-					$j( this ).val( $min );
-				}
+			if ( $min && $min > 0 && parseFloat( $j( this ).val() ) < $min ) {
+				$j( this ).val( $min );
+			}
 		});
 
 		$j( '.plus, .minus' ).unbind( 'click' );
 
 		$j( '.plus, .minus' ).on( 'click', function() {
 
-				// Get values
-				var $quantityBox     = $j( this ).closest( '.quantity' ).find( $quantitySelector ),
-				    $currentQuantity = parseFloat( $quantityBox.val() ),
-				    $maxQuantity     = parseFloat( $quantityBox.attr( 'max' ) ),
-				    $minQuantity     = parseFloat( $quantityBox.attr( 'min' ) ),
-				    $step            = $quantityBox.attr( 'step' );
+			// Get values
+			var $quantityBox     = $j( this ).closest( '.quantity' ).find( $quantitySelector ),
+			    $currentQuantity = parseFloat( $quantityBox.val() ),
+			    $maxQuantity     = parseFloat( $quantityBox.attr( 'max' ) ),
+			    $minQuantity     = parseFloat( $quantityBox.attr( 'min' ) ),
+			    $step            = $quantityBox.attr( 'step' );
 
-				// Fallback default values
-				if ( ! $currentQuantity || '' === $currentQuantity  || 'NaN' === $currentQuantity ) {
-					$currentQuantity = 0;
-				}
-				if ( '' === $maxQuantity || 'NaN' === $maxQuantity ) {
-					$maxQuantity = '';
-				}
-
-				if ( '' === $minQuantity || 'NaN' === $minQuantity ) {
-					$minQuantity = 0;
-				}
-				if ( 'any' === $step || '' === $step  || undefined === $step || 'NaN' === parseFloat( $step )  ) {
-					$step = 1;
-				}
-
-				// Change the value
-				if ( $j( this ).is( '.plus' ) ) {
-
-					if ( $maxQuantity && ( $maxQuantity == $currentQuantity || $currentQuantity > $maxQuantity ) ) {
-						$quantityBox.val( $maxQuantity );
-					} else {
-						$quantityBox.val( $currentQuantity + parseFloat( $step ) );
-					}
-
-				} else {
-
-					if ( $minQuantity && ( $minQuantity == $currentQuantity || $currentQuantity < $minQuantity ) ) {
-						$quantityBox.val( $minQuantity );
-					} else if ( $currentQuantity > 0 ) {
-						$quantityBox.val( $currentQuantity - parseFloat( $step ) );
-					}
-
-				}
-
-				// Trigger change event
-				$quantityBox.trigger( 'change' );
+			// Fallback default values
+			if ( ! $currentQuantity || '' === $currentQuantity  || 'NaN' === $currentQuantity ) {
+				$currentQuantity = 0;
 			}
-		);
+			if ( '' === $maxQuantity || 'NaN' === $maxQuantity ) {
+				$maxQuantity = '';
+			}
+
+			if ( '' === $minQuantity || 'NaN' === $minQuantity ) {
+				$minQuantity = 0;
+			}
+			if ( 'any' === $step || '' === $step  || undefined === $step || 'NaN' === parseFloat( $step )  ) {
+				$step = 1;
+			}
+
+			// Change the value
+			if ( $j( this ).is( '.plus' ) ) {
+
+				if ( $maxQuantity && ( $maxQuantity == $currentQuantity || $currentQuantity > $maxQuantity ) ) {
+					$quantityBox.val( $maxQuantity );
+				} else {
+					$quantityBox.val( $currentQuantity + parseFloat( $step ) );
+				}
+
+			} else {
+
+				if ( $minQuantity && ( $minQuantity == $currentQuantity || $currentQuantity < $minQuantity ) ) {
+					$quantityBox.val( $minQuantity );
+				} else if ( $currentQuantity > 0 ) {
+					$quantityBox.val( $currentQuantity - parseFloat( $step ) );
+				}
+
+			}
+
+			// Trigger change event
+			$quantityBox.trigger( 'change' );
+			
+		} );
 	}
 }

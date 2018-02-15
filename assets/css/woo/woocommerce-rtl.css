@@ -28,10 +28,6 @@
 .quantity .plus { border-right-width: 0; border-left-width: 1px; }
 
 /* Button loading*/
-.woocommerce #respond input#submit.loading,
-.woocommerce a.button.loading,
-.woocommerce button.button.loading,
-.woocommerce input.button.loading { padding-left: 1em; padding-right: 0; }
 .woocommerce #respond input#submit.loading:after,
 .woocommerce a.button.loading:after,
 .woocommerce button.button.loading:after,
@@ -169,6 +165,12 @@ body .owp-qv-content-inner .owp-qv-close { left: 0; right: auto; }
 /* Single product reviews stars */
 p.stars span a:after { right: 0; left: auto; }
 
+/* Floating bar */
+body .owp-floating-bar .right { text-align: left; }
+body .owp-floating-bar p.selected { margin-left: 12px; margin-right: 0; }
+body .owp-floating-bar .product_price p { margin-left: 30px; margin-right: 0; }
+body .owp-floating-bar form.cart .quantity { margin-left: 15px; margin-right: 0; }
+
 /* Widget filter */
 .woocommerce .widget_price_filter .ui-slider { text-align: right; }
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle { margin-right: -6px; margin-left: 0; }
@@ -262,6 +264,7 @@ body #checkout-wrapper #form_actions .buttons input.next { margin-right: 10px; m
 }
 
 /* Wishlist */
+body .products .product .yith-wcwl-add-to-wishlist { left: 10px; right: auto; }
 body .woo-wishlist-link i { margin-left: 3px; margin-right: 0; }
 body .wishlist-plugin-active .products .product .yith-wcwl-add-to-wishlist { left: 10px; right: auto; }
 body .wishlist-plugin-active .products .product .yith-wcwl-add-button .ajax-loading { right: 10px; left: auto; margin: -8px -8px 0 0; }
@@ -309,7 +312,6 @@ Phone Portrait
 @media only screen and (max-width: 480px) {
 
 	/* shop toolbar */
-	.woocommerce .oceanwp-off-canvas-filter,
-	.woocommerce .oceanwp-grid-list { margin: 0 0 0 10px; }
+	.woocommerce .woocommerce-ordering { text-align: right; }
 
 }

@@ -7,7 +7,7 @@ Woo Wishlist
 }
 
 /* Wishlist button */
-.wishlist-plugin-active .products .product .yith-wcwl-add-to-wishlist {
+.products .product .yith-wcwl-add-to-wishlist {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -24,58 +24,71 @@ Woo Wishlist
   z-index: 10;
 }
 
-.wishlist-plugin-active .products .product .yith-wcwl-add-to-wishlist .feedback {
+.products .product .yith-wcwl-add-to-wishlist .feedback {
   display: none;
 }
 
-.wishlist-plugin-active .products .product .yith-wcwl-add-to-wishlist .wishlist-entry,
-.wishlist-plugin-active .products .product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a,
-.wishlist-plugin-active .products .product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a {
+.products .product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button a,
+.products .product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a,
+.products .product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a {
   display: inline-block;
   width: 30px;
   height: 30px;
-  line-height: 26px;
   border-radius: 50%;
-  font-size: .8em;
+  font-size: 0;
+  line-height: 0;
   background-color: #fe5252;
   color: #fff;
   border: 2px solid #fe5252;
   text-align: center;
 }
 
-.wishlist-plugin-active .products .product .yith-wcwl-add-to-wishlist .wishlist-entry {
+.products .product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button a:before,
+.products .product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse a:before,
+.products .product .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse a:before {
+  content: '\f004';
+  font-size: 12px;
+  line-height: 28px;
+  display: inline-block;
+  font-family: FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.products .product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button a {
   background-color: transparent;
   color: #fe5252;
 }
 
-.wishlist-plugin-active .products .product .yith-wcwl-add-to-wishlist .wishlist-entry:hover {
+.products .product .yith-wcwl-add-to-wishlist .yith-wcwl-add-button a:hover {
   background-color: #fe5252;
   color: #fff;
 }
 
-.wishlist-plugin-active .products .product .yith-wcwl-add-button {
+.products .product .yith-wcwl-add-button {
   position: relative;
 }
 
-.wishlist-plugin-active .products .product .yith-wcwl-add-button i {
+.products .product .yith-wcwl-add-button i {
   margin-right: 0;
 }
 
-.wishlist-plugin-active .products .product .yith-wcwl-add-button .ajax-loading {
+.products .product .yith-wcwl-add-button .ajax-loading {
   position: absolute;
   top: 50%;
   left: 50%;
   margin: -8px 0 0 -8px;
 }
 
-.wishlist-plugin-active .products .product .product-inner:hover .yith-wcwl-add-to-wishlist {
+.products .product .product-inner:hover .yith-wcwl-add-to-wishlist {
   visibility: visible;
   -moz-opacity: 1;
   -webkit-opacity: 1;
   opacity: 1;
 }
 
-.single .yith-wcwl-add-to-wishlist {
+.single .summary .yith-wcwl-add-to-wishlist {
   display: inline-block;
   position: relative;
   font-size: 13px;
@@ -85,11 +98,11 @@ Woo Wishlist
   margin-top: 15px;
 }
 
-.single .yith-wcwl-add-to-wishlist a {
+.single .summary .yith-wcwl-add-to-wishlist a {
   position: relative;
 }
 
-.single .yith-wcwl-add-to-wishlist a.add_to_wishlist:before {
+.single .summary .yith-wcwl-add-to-wishlist a.add_to_wishlist:before {
   content: '\f08a';
   padding-right: 6px;
   vertical-align: top;
@@ -101,8 +114,8 @@ Woo Wishlist
   -moz-osx-font-smoothing: grayscale;
 }
 
-.single .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse:before,
-.single .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse:before {
+.single .summary .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistaddedbrowse:before,
+.single .summary .yith-wcwl-add-to-wishlist .yith-wcwl-wishlistexistsbrowse:before {
   content: '\f004';
   color: #fe5252;
   padding-right: 6px;
@@ -115,7 +128,7 @@ Woo Wishlist
   -moz-osx-font-smoothing: grayscale;
 }
 
-.single .yith-wcwl-add-to-wishlist .feedback {
+.single .summary .yith-wcwl-add-to-wishlist .feedback {
   text-transform: none;
   font-weight: normal;
   margin-right: 6px;
@@ -139,7 +152,7 @@ Woo Wishlist
 .woocommerce table.wishlist_table a.remove {
   width: 32px;
   height: 32px;
-  line-height: 30px;
+  line-height: 32px;
   border: 1px solid #e6e6e6;
 }
 
