@@ -1531,7 +1531,6 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 		if ( ! $search_style
 			|| 'disabled' == $search_style
 			|| 'top' == $header_style
-			|| 'medium' == $header_style
 			|| 'vertical' == $header_style ) {
 			return $items;
 		}
