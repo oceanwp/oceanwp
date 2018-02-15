@@ -44,9 +44,18 @@ function oceanwpWooQuantityButtons( $quantitySelector ) {
 
 		$j( '.plus, .minus' ).on( 'click', function() {
 
+			// Quantity
+			var $quantityBox;
+
+			// If floating bar is enabled
+			if ( 'on' == oceanwpLocalize.floating_bar ) {
+				$quantityBox = $j( '.quantity .qty' );
+			} else {
+				$quantityBox = $j( this ).closest( '.quantity' ).find( $quantitySelector )
+			}
+
 			// Get values
-			var $quantityBox     = $j( this ).closest( '.quantity' ).find( $quantitySelector ),
-			    $currentQuantity = parseFloat( $quantityBox.val() ),
+			var $currentQuantity = parseFloat( $quantityBox.val() ),
 			    $maxQuantity     = parseFloat( $quantityBox.attr( 'max' ) ),
 			    $minQuantity     = parseFloat( $quantityBox.attr( 'min' ) ),
 			    $step            = $quantityBox.attr( 'step' );

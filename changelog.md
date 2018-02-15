@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.02.15* - 1.5.1
+* **Fixed** - Quantity button issue if the floating bar is enabled.
+
 ### *2018.02.15* - 1.5.0
 * **Added** - Multi-step checkout.
 * **Added** - Floating bar on the single product pages to always have the add to cart button to increase conversion.

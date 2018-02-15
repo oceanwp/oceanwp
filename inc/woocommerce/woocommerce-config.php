@@ -635,6 +635,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$array['ajax_url'] = admin_url( 'admin-ajax.php' );
 			}
 
+			// Check if the floating bar is enabled for the quantity button
+			$array['floating_bar'] = get_theme_mod( 'ocean_woo_display_floating_bar', 'off' );
+
 			return $array;
 
 		}
