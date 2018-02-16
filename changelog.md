@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2018.02.16* - 1.5.2
+* **Fixed** - Issue to disable the Off Canvas filter button.
+* **Fixed** - Error, using $this when not in object context.
+
 ### *2018.02.15* - 1.5.1
 * **Fixed** - Quantity button issue if the floating bar is enabled.
 

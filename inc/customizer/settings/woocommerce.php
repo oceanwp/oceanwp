@@ -77,7 +77,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_woo_display_cart_product_added', array(
 				'label'	   				=> esc_html__( 'Display Cart When Product Added', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'Display the cart when a product is added, work in the shop and the single product pages is ajax is enabled.', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Display the cart when a product is added, work in the shop and the single product pages if ajax is enabled.', 'oceanwp' ),
 				'section'  				=> 'ocean_woocommerce_general',
 				'settings' 				=> 'ocean_woo_display_cart_product_added',
 				'priority' 				=> 10,
@@ -118,20 +118,20 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Heading Sale Badge
+			 * Heading On Sale Badge
 			 */
 			$wp_customize->add_setting( 'ocean_woo_sale_badge_heading', array(
 				'sanitize_callback' 	=> 'wp_kses',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_woo_sale_badge_heading', array(
-				'label'    	=> esc_html__( 'Sale Badge', 'oceanwp' ),
+				'label'    	=> esc_html__( 'On Sale Badge', 'oceanwp' ),
 				'section'  	=> 'ocean_woocommerce_general',
 				'priority' 	=> 10,
 			) ) );
 
 			/**
-			 * Sale Badge Style
+			 * On Sale Badge Style
 			 */
 			$wp_customize->add_setting( 'ocean_woo_sale_badge_style', array(
 				'transport'           	=> 'postMessage',
@@ -140,7 +140,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_sale_badge_style', array(
-				'label'	   				=> esc_html__( 'Sale Badge Style', 'oceanwp' ),
+				'label'	   				=> esc_html__( 'On Sale Badge Style', 'oceanwp' ),
 				'type' 					=> 'select',
 				'section'  				=> 'ocean_woocommerce_general',
 				'settings' 				=> 'ocean_woo_sale_badge_style',
@@ -152,7 +152,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Sale Badge Conetnt
+			 * On Sale Badge Content
 			 */
 			$wp_customize->add_setting( 'ocean_woo_sale_badge_content', array(
 				'default'           	=> 'sale',
@@ -160,13 +160,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_sale_badge_content', array(
-				'label'	   				=> esc_html__( 'Sale Badge Conetnt', 'oceanwp' ),
+				'label'	   				=> esc_html__( 'On Sale Badge Content', 'oceanwp' ),
 				'type' 					=> 'select',
 				'section'  				=> 'ocean_woocommerce_general',
 				'settings' 				=> 'ocean_woo_sale_badge_content',
 				'priority' 				=> 10,
 				'choices' 				=> array(
-					'sale' 		=> esc_html__( 'Sale Text', 'oceanwp' ),
+					'sale' 		=> esc_html__( 'On Sale Text', 'oceanwp' ),
 					'percent' 	=> esc_html__( 'Percentage', 'oceanwp' ),
 				),
 			) ) );
