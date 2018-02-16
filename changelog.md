@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.02.16* - 1.5.3
+* **Fixed** - Issue "Invalid payment method" with the muti-step checkout.
+
 ### *2018.02.16* - 1.5.2
 * **Fixed** - Issue to disable the Off Canvas filter button.
 * **Fixed** - Error, using $this when not in object context.

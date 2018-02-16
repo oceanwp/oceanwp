@@ -630,6 +630,9 @@ class OCEANWP_Theme_Class {
 	 * @since 1.0.0
 	 */
 	public static function custom_css( $output = NULL ) {
+			    
+	    // Add filter for adding custom css via other functions
+		$output = apply_filters( 'ocean_head_css', $output );
 
 		// If Custom File is selected
 		if ( 'file' == get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {
@@ -638,10 +641,7 @@ class OCEANWP_Theme_Class {
 			$upload_dir = wp_upload_dir();
 
 			// Render CSS in the head
-			if ( isset( $wp_customize ) || ! file_exists( $upload_dir['basedir'] .'/oceanwp/custom-style.css' ) ) { 
-			    
-			    // Add filter for adding custom css via other functions
-				$output = apply_filters( 'ocean_head_css', $output );
+			if ( isset( $wp_customize ) || ! file_exists( $upload_dir['basedir'] .'/oceanwp/custom-style.css' ) ) {
 
 				 // Minify and output CSS in the wp_head
 				if ( ! empty( $output ) ) {
@@ -650,9 +650,6 @@ class OCEANWP_Theme_Class {
 			}
 
 		} else {
-
-			// Add filter for adding custom css via other functions
-			$output = apply_filters( 'ocean_head_css', $output );
 
 			// Minify and output CSS in the wp_head
 			if ( ! empty( $output ) ) {
@@ -713,7 +710,7 @@ class OCEANWP_Theme_Class {
 	 *
 	 * @since 1.4.12
 	 */
-	public static function custom_style_css() {
+	public static function custom_style_css( $output = NULL ) {
 
 		// If Custom File is not selected
 		if ( 'file' != get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {
@@ -734,7 +731,7 @@ class OCEANWP_Theme_Class {
 
 		// Render CSS from the custom file
 		if ( ! isset( $wp_customize ) && file_exists( $upload_dir['basedir'] .'/oceanwp/custom-style.css' ) && ! empty( $output ) ) { 
-		    wp_enqueue_style( 'oceanwp-custom',  get_site_url() .'/wp-content/uploads/oceanwp/custom-style.css', false, null );	    			
+		    wp_enqueue_style( 'oceanwp-custom', trailingslashit( $upload_dir['baseurl'] ) . 'oceanwp/custom-style.css', false, null );	    			
 		}		
 	}
 
@@ -751,7 +748,6 @@ class OCEANWP_Theme_Class {
 		}
 		
 		global $wp_customize;
-		$upload_dir = wp_upload_dir();
 
 		// Disable Custom CSS in the frontend head
 		remove_action( 'wp_head', 'wp_custom_css_cb', 11 );

@@ -75,7 +75,14 @@ do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
         <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
         <div id="order_review" class="woocommerce-checkout-review-order">
-            <?php do_action( 'woocommerce_checkout_order_review' ); ?>
+            <div id="order_info" class="woocommerce-checkout-review-order">
+                <?php do_action( 'woocommerce_checkout_order_review' ); ?>
+                <?php do_action( 'ocean_woocommerce_checkout_order_review' ); ?>
+            </div>
+
+            <div id="order_checkout_payment" class="yith-woocommerce-checkout-payment">
+                <?php do_action( 'ocean_woocommerce_checkout_payment' ); ?>
+            </div>
         </div>
 
         <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
@@ -92,4 +99,4 @@ do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
     </div>
 </div>
 
-<?php do_action( 'woocommerce_after_checkout_form', $checkout );
+<?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>

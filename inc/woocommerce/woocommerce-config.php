@@ -215,8 +215,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 	            add_filter( 'woocommerce_locate_template', array( $this, 'multistep_checkout' ), 10, 3 );
 
 	            // Checkout hack
+	            remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
+            	remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 	            remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
 	            remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+	            add_action( 'ocean_woocommerce_checkout_order_review', 'woocommerce_order_review', 20 );
+            	add_action( 'ocean_woocommerce_checkout_payment', 'woocommerce_checkout_payment', 10 );
 	            add_action( 'ocean_checkout_login_form', array( $this, 'checkout_login_form' ), 10 );
 	            add_action( 'ocean_woocommerce_checkout_coupon', 'woocommerce_checkout_coupon_form', 10 );
 

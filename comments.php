@@ -64,7 +64,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 		if ( function_exists( 'the_comments_navigation' ) ) :
 
 			the_comments_navigation( array(
-				'prev_text' => '<i class="fas fa-angle-left"></i>'. esc_html__( 'Previous', 'oceanwp' ),
+				'prev_text' => '<i class="fa fa-angle-left"></i>'. esc_html__( 'Previous', 'oceanwp' ),
 				'next_text' => esc_html__( 'Next', 'oceanwp' ) .'<i class="fa fa-angle-right"></i>',
 			) );
 
@@ -72,7 +72,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 
 			<div class="comment-navigation clr">
 				<?php paginate_comments_links( array(
-					'prev_text' => '<i class="fas fa-angle-left"></i>'. esc_html__( 'Previous', 'oceanwp' ),
+					'prev_text' => '<i class="fa fa-angle-left"></i>'. esc_html__( 'Previous', 'oceanwp' ),
 					'next_text' => esc_html__( 'Next', 'oceanwp' ) .'<i class="fa fa-angle-right"></i>',
 				) ); ?>
 			</div>

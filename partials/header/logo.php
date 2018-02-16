@@ -68,7 +68,7 @@ $responsive_logo 	= get_theme_mod( 'ocean_responsive_logo' ); ?>
 	// Site description
 	if ( 'top' == oceanwp_header_style()
 		&& '' != get_bloginfo( 'description' ) ) { ?>
-		<div id="site-description"><h2><?php echo bloginfo( 'description' ); ?></h2></div><!-- #site-logo-inner -->
+		<div id="site-description"><h2><?php echo bloginfo( 'description' ); ?></h2></div>
 	<?php } ?>
 
 </div><!-- #site-logo -->
