@@ -80,7 +80,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
                 <?php do_action( 'ocean_woocommerce_checkout_order_review' ); ?>
             </div>
 
-            <div id="order_checkout_payment" class="yith-woocommerce-checkout-payment">
+            <div id="order_checkout_payment" class="owp-woocommerce-checkout-payment">
                 <?php do_action( 'ocean_woocommerce_checkout_payment' ); ?>
             </div>
         </div>
