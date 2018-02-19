@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.02.19* - 1.5.4
+* **Fixed** - Issue "Invalid payment method" with the muti-step checkout.
+
 ### *2018.02.16* - 1.5.3
 * **Fixed** - Issue "Invalid payment method" with the muti-step checkout.
 

@@ -5,6 +5,7 @@
     	margin-bottom: 10px;
 
 		a {
+			position: relative;
 			display: block;
 			font-size: 13px;
 			line-height: 1.6;
@@ -73,7 +74,7 @@
 
 		ul {
 			&.children {
-				margin: 5px 0 0 16px;
+				margin: 8px 0 0 30px;
 
 				li {
 					font-size: 12px;

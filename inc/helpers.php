@@ -1090,6 +1090,7 @@ if ( ! function_exists( 'oceanwp_header_full_screen_logo' ) ) {
 		// Get logo
 		$logo_url 		= get_theme_mod( 'ocean_full_screen_header_logo' );
 		$retina_url 	= get_theme_mod( 'ocean_full_screen_header_retina_logo' );
+		$srcset 		= '';
 
 		// Logo data
 		$logo_data = array(

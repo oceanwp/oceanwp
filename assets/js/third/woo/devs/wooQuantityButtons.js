@@ -48,7 +48,8 @@ function oceanwpWooQuantityButtons( $quantitySelector ) {
 			var $quantityBox;
 
 			// If floating bar is enabled
-			if ( 'on' == oceanwpLocalize.floating_bar ) {
+			if ( $j( 'body' ).hasClass( 'single-product' )
+				&& 'on' == oceanwpLocalize.floating_bar ) {
 				$quantityBox = $j( '.quantity .qty' );
 			} else {
 				$quantityBox = $j( this ).closest( '.quantity' ).find( $quantitySelector )

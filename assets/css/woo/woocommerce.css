@@ -3693,10 +3693,6 @@ form.checkout > .blockUI {
   border-top: none;
 }
 
-.widget_product_categories li a {
-  border-color: #eaeaea;
-}
-
 .woocommerce a.button.loading:after,
 .woocommerce button.button.loading:after,
 .woocommerce input.button.loading:after,
@@ -4180,6 +4176,7 @@ Woo Cart
 
 .widget_product_categories li a,
 .widget_layered_nav li a {
+  position: relative;
   display: block;
   font-size: 13px;
   line-height: 1.6;
@@ -4249,7 +4246,7 @@ Woo Cart
 }
 
 .woocommerce .widget_product_categories li ul.children {
-  margin: 5px 0 0 16px;
+  margin: 8px 0 0 30px;
 }
 
 .woocommerce .widget_product_categories li ul.children li {
