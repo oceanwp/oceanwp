@@ -159,7 +159,6 @@ else {
 				// If is not top menu header style
 				if ( 'top' != $header_style
 					&& 'full_screen' != $header_style
-					&& 'medium' != $header_style
 					&& 'vertical' != $header_style ) {
 
 					// Header search

@@ -127,16 +127,17 @@ class OceanWP_Customizer_Slider_Control extends WP_Customize_Control {
 			<div class="desktop control-wrap active">
 				<div class="oceanwp-slider desktop-slider"></div>
 				<div class="oceanwp-slider-input">
-					<input  {{{ data.inputAttrs }}} type="number" class="slider-input desktop-input" value="{{ data.desktop.value }}" {{{ data.desktop.link }}} />
+					<input {{{ data.inputAttrs }}} type="number" class="slider-input desktop-input" value="{{ data.desktop.value }}" {{{ data.desktop.link }}} />
 				</div>
 	    	</div>
+				
 	    <# } #>
 
 		<# if ( data.tablet ) { #>
 			<div class="tablet control-wrap">
 				<div class="oceanwp-slider tablet-slider"></div>
 				<div class="oceanwp-slider-input">
-					<input  {{{ data.inputAttrs }}} type="number" class="slider-input tablet-input" value="{{ data.tablet.value }}" {{{ data.tablet.link }}} />
+					<input {{{ data.inputAttrs }}} type="number" class="slider-input tablet-input" value="{{ data.tablet.value }}" {{{ data.tablet.link }}} />
 				</div>
 	    	</div>
 	    <# } #>
@@ -145,7 +146,7 @@ class OceanWP_Customizer_Slider_Control extends WP_Customize_Control {
 			<div class="mobile control-wrap">
 				<div class="oceanwp-slider mobile-slider"></div>
 				<div class="oceanwp-slider-input">
-					<input  {{{ data.inputAttrs }}} type="number" class="slider-input mobile-input" value="{{ data.mobile.value }}" {{{ data.mobile.link }}} />
+					<input {{{ data.inputAttrs }}} type="number" class="slider-input mobile-input" value="{{ data.mobile.value }}" {{{ data.mobile.link }}} />
 				</div>
 	    	</div>
 	    <# } #>

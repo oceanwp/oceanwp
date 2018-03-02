@@ -25,7 +25,8 @@ global $post, $product, $woocommerce; ?>
 			);
 			echo
 				sprintf(
-					'<li>%s</li>',
+					'<li class="%s">%s</li>',
+					'woocommerce-product-gallery__image',
 					$image
 				);
 
@@ -42,7 +43,8 @@ global $post, $product, $woocommerce; ?>
 
 					echo
 						sprintf(
-							'<li>%s</li>',
+							'<li class="%s">%s</li>',
+							'woocommerce-product-gallery__image',
 							wp_get_attachment_image( $attachment_id, 'shop_single', 0, $props )
 						);
 

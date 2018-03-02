@@ -9,7 +9,6 @@
 body { direction: rtl; unicode-bidi: embed; }
 
 /* Float right */
-.col,
 body .oceanwp-row .col,
 .top-bar-left { float: right }
 
@@ -203,6 +202,7 @@ a.sidr-class-toggle-sidr-close i { padding-left: 8px; padding-right: 0; }
 	Breadcrumbs
 *------------------------------------*/
 .site-breadcrumbs ul li:after { content: '\f104'; }
+
 /*------------------------------------*
 	Posts
 *------------------------------------*/
@@ -270,6 +270,11 @@ span.required { margin-right: 3px; margin-left: 0; }
 	Pagination
 *------------------------------------*/
 ul.page-numbers { text-align: left; }
+
+/*------------------------------------*
+	Search Results
+*------------------------------------*/
+.search-results article .thumbnail { margin-left: 20px; margin-right: 0; }
 
 /*------------------------------------*
 	Modal

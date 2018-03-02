@@ -88,6 +88,28 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Categories Widget Style
+			 */
+			$wp_customize->add_setting( 'ocean_woo_cat_widget_style', array(
+				'transport'           	=> 'postMessage',
+				'default'           	=> 'default',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_cat_widget_style', array(
+				'label'	   				=> esc_html__( 'Categories Widget Style', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose the WooCommerce Categories widget style.', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_woocommerce_general',
+				'settings' 				=> 'ocean_woo_cat_widget_style',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'default' 	=> esc_html__( 'Default', 'oceanwp' ),
+					'dropdown' 	=> esc_html__( 'Dropdown', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
 			 * Heading Wishlist
 			 */
 			$wp_customize->add_setting( 'ocean_woo_wishlist_heading', array(
@@ -96,7 +118,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_woo_wishlist_heading', array(
 				'label'    	=> esc_html__( 'Wishlist', 'oceanwp' ),
-				'description' => esc_html__( 'You need to activate the YITH WooCommerce Wishlist to add a wishlist button and icon', 'oceanwp' ),
+				'description' => sprintf( esc_html__( 'You need to activate the %1$sTI WooCommerce Wishlist%2$s plugin to add a wishlist button and icon', 'oceanwp' ), '<a href="https://wordpress.org/plugins/ti-woocommerce-wishlist/" target="_blank">', '</a>' ),
 				'section'  	=> 'ocean_woocommerce_general',
 				'priority' 	=> 10,
 			) ) );
@@ -2370,7 +2392,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_off_canvas_filter_hover_color', array(
 				'label'					=> esc_html__( 'Off Canvas Filter Hover Color', 'oceanwp' ),
 				'section'				=> 'ocean_woocommerce_styling',
-				'settings'				=> 'ocean_toolbar_off_canvas_filter_color',
+				'settings'				=> 'ocean_toolbar_off_canvas_filter_hover_color',
 				'priority'				=> 10
 			) ) );
 

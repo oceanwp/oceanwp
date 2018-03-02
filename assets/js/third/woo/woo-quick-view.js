@@ -57,9 +57,7 @@ $j( document ).on( 'ready', function() {
   				var image_slider_wrap = qv_content.find( '.owp-qv-image' );
 
   				if ( image_slider_wrap.find( 'li' ).length > 1 ) {
-	  				image_slider_wrap.flexslider( {
-	    				animation: 'slide'
-	  				} );
+	  				image_slider_wrap.flexslider();
   				}
 
 			}
@@ -123,17 +121,52 @@ $j( document ).on( 'ready', function() {
 		var button 					= $j( this ),
 			product_id 				= $j( this ).val(),
 			variation_id 			= $j('input[name="variation_id"]').val(),
-			quantity 				= $j('input[name="quantity"]').val();
+			quantity 				= $j('input[name="quantity"]').val(),
+			variation_form 			= $j( this ).closest( '.variations_form' ),
+			variations 				= variation_form.find( 'select[name^=attribute]' ),
+			item 					= {};
 
 		button.removeClass( 'added' );
 		button.addClass( 'loading' );
+
+		if ( ! variations.length ) {
+			variations = variation_form.find( '[name^=attribute]:checked' );
+		}
+
+		if ( ! variations.length ) {
+			variations = variation_form.find( 'input[name^=attribute]' );
+		}
+
+		variations.each( function() {
+			var $this 			= $j( this ),
+				attributeName 	= $this.attr( 'name' ),
+				attributevalue 	= $this.val(),
+				index,
+				attributeTaxName;
+
+			$this.removeClass( 'error' );
+
+			if ( attributevalue.length === 0 ) {
+				index = attributeName.lastIndexOf( '_' );
+				attributeTaxName = attributeName.substring( index + 1 );
+				$this.addClass( 'required error' ).before( 'Please select ' + attributeTaxName + '' );
+			} else {
+				item[attributeName] = attributevalue;
+			}
+		} );
 
 		// Ajax action.
 		if ( variation_id != '' ) {
 			$j.ajax ({
 				url: oceanwpLocalize.ajax_url,
 				type:'POST',
-				data:'action=oceanwp_add_cart_single_product&product_id=' + product_id + '&variation_id=' + variation_id + '&quantity=' + quantity,
+				data : {
+			        action : 'oceanwp_add_cart_single_product',
+			        product_id : product_id,
+			        variation_id: variation_id,
+			        variation: item,
+			        quantity: quantity
+			    },
 
 				success:function(results) {
 					$j( document.body ).trigger( 'wc_fragment_refresh' );
@@ -144,7 +177,11 @@ $j( document ).on( 'ready', function() {
 			$j.ajax ({
 				url: oceanwpLocalize.ajax_url,  
 				type:'POST',
-				data:'action=oceanwp_add_cart_single_product&product_id=' + product_id + '&quantity=' + quantity,
+				data : {
+			        action : 'oceanwp_add_cart_single_product',
+			        product_id : product_id,
+			        quantity: quantity
+			    },
 
 				success:function(results) {
 					$j( document.body ).trigger( 'wc_fragment_refresh' );

@@ -44,40 +44,47 @@ $classes = implode( ' ', $classes ); ?>
 					foreach ( $elements as $element ) :
 
 						// Counter
-						$count++; ?>
+						$count++;
 
-						<?php
-						// Search form
-						if ( 'searchfrom' == $element ) { ?>
+						// Classes
+						$e_classes = array( 'top-col', 'clr' );
 
-							<div class="top-col col-<?php echo esc_attr( $count ); ?> clr">
-								<?php if ( 'disabled' != get_theme_mod( 'ocean_menu_search_style', 'drop_down' ) ) {
+						// Count
+						$e_classes[] = 'col-'. $count;
+
+						// If logo
+						if ( 'logo' == $element ) {
+							$e_classes[] = 'logo-col';
+						}
+
+						// Turn classes into space seperated string
+						$e_classes = implode( ' ', $e_classes ); ?>
+
+						<div class="<?php echo esc_attr( $e_classes ); ?>">
+
+							<?php
+							// Search form
+							if ( 'searchfrom' == $element ) {
+								if ( 'disabled' != get_theme_mod( 'ocean_menu_search_style', 'drop_down' ) ) {
 									get_template_part( 'partials/header/style/medium-header-search' );
-								} ?>
-							</div>
+								}
+							}
 
-						<?php }
-
-						// Logo
-						else if ( 'logo' == $element ) { ?>
-
-							<div class="top-col logo-col col-<?php echo esc_attr( $count ); ?> clr">
-								<?php get_template_part( 'partials/header/logo' ); ?>
-							</div>
-
-						<?php }
-						
-						// Social buttons
-						else if ( 'social' == $element ) { ?>
-
-							<div class="top-col col-<?php echo esc_attr( $count ); ?> clr">
-								<?php if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
+							// Logo
+							else if ( 'logo' == $element ) {
+								get_template_part( 'partials/header/logo' );
+							}
+							
+							// Social buttons
+							else if ( 'social' == $element ) {
+								if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
 									get_template_part( 'partials/header/social' );
-								} ?>
-							</div>
+								}
+							} ?>
 
-						<?php }
+						</div>
 
+					<?php
 					endforeach; ?>
 
 				</div>

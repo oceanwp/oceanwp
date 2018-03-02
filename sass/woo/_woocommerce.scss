@@ -768,6 +768,13 @@
 				text-transform: capitalize;
 				border-color: #eaeaea;
 			}
+			dl {
+				margin: 10px 0 0;
+
+				p {
+					margin: 0 0 8px;
+				}
+			}
 			thead {
 				background-color: #f7f7f7;
 				th {
@@ -1490,16 +1497,21 @@
 				}
 				td {
 					&.label {
-						padding: 0 0 15px;
+						padding: 15px 0 15px;
 						width: 20%;
 					}
 					&.value {
 						position: relative;
-						padding: 0 0 15px;
+						padding: 15px 0 15px;
 					}
 				}
-				tr:last-child td {
-					padding-top: 15px;
+				tr:first-child td {
+					&.label {
+						padding-top: 0;
+					}
+					&.value {
+						padding-top: 0;
+					}
 				}
 			}
 			&:after {
@@ -2272,12 +2284,20 @@ ul {
 				float: right;
 				margin: 0;
 			}
-			p:nth-last-child(3) {
+			p.form-row {
 				display: inline-block;
 				margin: 0;
 			}
+			p.form-row.form-row-first,
+			p.form-row.form-row-last {
+				margin: 0 0 20px;
+			}
 			label.inline {
 				padding-left: 10px;
+			}
+			.wc-social-login {
+			    display: block !important;
+    			margin-top: 20px;
 			}
 		}
 		&.checkout_coupon {
@@ -2715,10 +2735,6 @@ ul {
 	}
 }
 p {
-	&.order-again .button:after {
-		content: '\e098';
-		margin-left: 8px;
-	}
 	&.stars span a {
 		border-color: #eaeaea;
 	}

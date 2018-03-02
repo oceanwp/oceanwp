@@ -22,17 +22,52 @@ jQuery( function( $ ) {
 		var button 					= $( this ),
 			product_id 				= $( this ).val(),
 			variation_id 			= $('input[name="variation_id"]').val(),
-			quantity 				= $('input[name="quantity"]').val();
+			quantity 				= $('input[name="quantity"]').val(),
+			variation_form 			= $( this ).closest( '.variations_form' ),
+			variations 				= variation_form.find( 'select[name^=attribute]' ),
+			item 					= {};
 
 		button.removeClass( 'added' );
 		button.addClass( 'loading' );
+
+		if ( ! variations.length ) {
+			variations = variation_form.find( '[name^=attribute]:checked' );
+		}
+
+		if ( ! variations.length ) {
+			variations = variation_form.find( 'input[name^=attribute]' );
+		}
+
+		variations.each( function() {
+			var $this 			= $( this ),
+				attributeName 	= $this.attr( 'name' ),
+				attributevalue 	= $this.val(),
+				index,
+				attributeTaxName;
+
+			$this.removeClass( 'error' );
+
+			if ( attributevalue.length === 0 ) {
+				index = attributeName.lastIndexOf( '_' );
+				attributeTaxName = attributeName.substring( index + 1 );
+				$this.addClass( 'required error' ).before( 'Please select ' + attributeTaxName + '' );
+			} else {
+				item[attributeName] = attributevalue;
+			}
+		} );
 
 		// Ajax action.
 		if ( variation_id != '' ) {
 			$.ajax ({
 				url: oceanwpLocalize.ajax_url,
-				type:'POST',
-				data:'action=oceanwp_add_cart_single_product&product_id=' + product_id + '&variation_id=' + variation_id + '&quantity=' + quantity,
+				type: 'POST',
+				data : {
+			        action : 'oceanwp_add_cart_single_product',
+			        product_id : product_id,
+			        variation_id: variation_id,
+			        variation: item,
+			        quantity: quantity
+			    },
 
 				success:function(results) {
 					$( document.body ).trigger( 'wc_fragment_refresh' );
@@ -42,8 +77,12 @@ jQuery( function( $ ) {
 		} else {
 			$.ajax ({
 				url: oceanwpLocalize.ajax_url,  
-				type:'POST',
-				data:'action=oceanwp_add_cart_single_product&product_id=' + product_id + '&quantity=' + quantity,
+				type: 'POST',
+				data : {
+			        action : 'oceanwp_add_cart_single_product',
+			        product_id : product_id,
+			        quantity: quantity
+			    },
 
 				success:function(results) {
 					$( document.body ).trigger( 'wc_fragment_refresh' );

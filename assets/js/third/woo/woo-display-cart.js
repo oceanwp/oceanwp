@@ -13,11 +13,6 @@ function oceanwpWooDisplayCart() {
 	"use strict"
 
 	var $overlay = $j( '.owp-cart-overlay' );
-	
-	var oceanwp_cart_overlay_close = function() {
-		$j( this ).fadeOut();
-		$j( 'body' ).removeClass( 'show-cart' );
-	};
 
 	$j( 'body' ).on( 'added_to_cart', function() {
 		$overlay.fadeIn();

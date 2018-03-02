@@ -26,6 +26,17 @@ function oceanwp_tgmpa_register() {
 		
 	);
 
+	// WooCommerce Wishlist plugin will be recommended in case WooCommerce activated.
+	if ( class_exists( 'WooCommerce' ) ) {
+		// Because of free and premium version have different slugs we need to switch dynamically to avoid both version recommendation.
+		$wishlist_name = ( defined( 'TINVWL_LOAD_PREMIUM' ) ) ? 'ti-woocommerce-wishlist-premium' : 'ti-woocommerce-wishlist';
+		$plugins[]     = array(
+			'name'     => 'WooCommerce Wishlist',
+			'slug'     => $wishlist_name,
+			'required' => false,
+		);
+	}
+
 	// Register notice
 	tgmpa( $plugins, array(
 		'id'           => 'oceanwp_theme',

@@ -242,12 +242,13 @@
 
 	    	&:after {
 				position: absolute;
-			    top: -80%;
+			    bottom: -80%;
 			    left: 50%;
 			    color: transparent;
 			    content: '•';
 			    text-shadow: 0 0 transparent;
 			    font-size: 1.2em;
+			    line-height: 1;
 				@include transition( all .25s ease-out );
 				@include transform( translateX(-50%) );
 			    pointer-events: none;

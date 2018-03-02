@@ -27,8 +27,8 @@ module.exports = function ( grunt ) {
 					'assets/js/third/woo/woo-quick-view.min.js'						: 'assets/js/third/woo/woo-quick-view.js',
 					'assets/js/third/woo/woo-multistep-checkout.min.js'				: 'assets/js/third/woo/woo-multistep-checkout.js',
 					'assets/js/third/woo/woo-thumbnails.min.js'						: 'assets/js/third/woo/woo-thumbnails.js',
-					'assets/js/third/woo/woo-wishlist.min.js'						: 'assets/js/third/woo/woo-wishlist.js',
 					'assets/js/third/woo/woo-floating-bar.min.js'					: 'assets/js/third/woo/woo-floating-bar.js',
+					'assets/js/third/woo/woo-cat-widget.min.js'						: 'assets/js/third/woo/woo-cat-widget.js',
 
 					'inc/customizer/assets/js/customize-preview.min.js'				: 'inc/customizer/assets/js/customize-preview.js',
 					'inc/customizer/assets/js/typography-customize-preview.min.js'	: 'inc/customizer/assets/js/typography-customize-preview.js',

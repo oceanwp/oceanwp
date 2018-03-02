@@ -57,6 +57,10 @@
 			'center',
 			'bottom'
 		],
+		wooCatStyle 		= [
+			'woo-default-cat',
+			'woo-dropdown-cat'
+		],
 		wooSaleStyle 		= [
 			'square-sale',
 			'circle-sale'
@@ -388,7 +392,7 @@
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_header_height' );
 				if ( to ) {
-					var style = '<style class="customizer-ocean_header_height">#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner, .after-header-content-inner { height: ' + to + 'px; }#site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a, .after-header-content-inner > a { line-height: ' + to + 'px; }</style>';
+					var style = '<style class="customizer-ocean_header_height">#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner, .after-header-content .after-header-content-inner { height: ' + to + 'px; }#site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a, .after-header-content-inner > a { line-height: ' + to + 'px; }</style>';
 					if ( $child.length ) {
 						$child.replaceWith( style );
 					} else {
@@ -947,6 +951,18 @@
 		} );
 
 	/******** WooCommerce *********/
+
+		// Categories widget style
+		api('ocean_woo_cat_widget_style', function( value ) {
+			value.bind( function( newval ) {
+				if ( body.length ) {
+					$.each( wooCatStyle, function( i, v ) {
+						body.removeClass( v );
+					});
+					body.addClass( 'woo-'+ newval +'-cat' );
+				}
+			});
+		});
 
 		// Sale badge style
 		api('ocean_woo_sale_badge_style', function( value ) {
