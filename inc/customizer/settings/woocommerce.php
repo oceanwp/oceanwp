@@ -645,7 +645,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Subtotal Color
+			 * Total Price Color
 			 */
 			$wp_customize->add_setting( 'ocean_woo_cart_dropdown_total_price_color', array(
 				'transport' 			=> 'postMessage',
@@ -654,7 +654,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_woo_cart_dropdown_total_price_color', array(
-				'label'	   				=> esc_html__( 'Subtotal Color', 'oceanwp' ),
+				'label'	   				=> esc_html__( 'Total Price Color', 'oceanwp' ),
 				'section'  				=> 'ocean_woocommerce_menu_cart',
 				'settings' 				=> 'ocean_woo_cart_dropdown_total_price_color',
 				'priority' 				=> 10,
