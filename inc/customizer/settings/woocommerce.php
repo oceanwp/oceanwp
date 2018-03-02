@@ -5199,12 +5199,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add product entry title color
 			if ( ! empty( $product_title_color ) && '#333333' != $product_title_color ) {
-				$css .= '.woocommerce ul.products li.product a.title{color:'. $product_title_color .';}';
+				$css .= '.woocommerce ul.products li.product .title a{color:'. $product_title_color .';}';
 			}
 
 			// Add product entry title color hover
 			if ( ! empty( $product_title_color_hover ) && '#13aff0' != $product_title_color_hover ) {
-				$css .= '.woocommerce ul.products li.product a.title:hover{color:'. $product_title_color_hover .';}';
+				$css .= '.woocommerce ul.products li.product .title a:hover{color:'. $product_title_color_hover .';}';
 			}
 
 			// Add product entry price color
