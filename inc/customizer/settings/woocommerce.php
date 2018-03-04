@@ -660,7 +660,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_woo_cart_dropdown_subtotal_color', array(
-				'label'	   				=> esc_html__( 'Subtotal Color', 'oceanwp' ),
+				'label'	   				=> esc_html__( 'Total Price Color', 'oceanwp' ),
 				'section'  				=> 'ocean_woocommerce_menu_cart',
 				'settings' 				=> 'ocean_woo_cart_dropdown_subtotal_color',
 				'priority' 				=> 10,
@@ -5199,12 +5199,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add product entry title color
 			if ( ! empty( $product_title_color ) && '#333333' != $product_title_color ) {
-				$css .= '.woocommerce ul.products li.product a.title{color:'. $product_title_color .';}';
+				$css .= '.woocommerce ul.products li.product li.title a{color:'. $product_title_color .';}';
 			}
 
 			// Add product entry title color hover
 			if ( ! empty( $product_title_color_hover ) && '#13aff0' != $product_title_color_hover ) {
-				$css .= '.woocommerce ul.products li.product a.title:hover{color:'. $product_title_color_hover .';}';
+				$css .= '.woocommerce ul.products li.product li.title a:hover{color:'. $product_title_color_hover .';}';
 			}
 
 			// Add product entry price color

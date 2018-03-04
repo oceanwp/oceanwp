@@ -1,5 +1,17 @@
 # OceanWP Changelog
 
+### *2018.03.04* - 1.5.5
+* **Added** - Integration with TI WooCommerce Wishlist instead of the YITH Wishlist plugin, because the YITH plugin have error woth PHP 7.2 and the new Wishlist plugin is much better.
+* **Added** - Compatibility with WooCommerce Social Login for the multi-step checkout.
+* **Added** - New setting in the WooCommerce General section of the customizer to choose between the default or dropdown style for the WooCommerce categories widget.
+* **Tweak** - The archive_product_content() and single_product_content() functions are now in two files in the woocommerce folder so you can easily edit them via a child theme.
+* **Tweak** - The search icon in the navigation can now be added for the Medium header style too.
+* **Fixed** - Off Canvas filter button color in the customizer.
+* **Fixed** - RTL issue on the search results page.
+* **Fixed** - Variations not taken into account if Ajax on single product is enabled.
+* **Fixed** - Variations not taken into account in the WooCommerce quick view form.
+* **Fixed** - Variations images not taken into account in the WooCommerce quick view form.
+
 ### *2018.02.19* - 1.5.4
 * **Fixed** - Issue "Invalid payment method" with the muti-step checkout.
 

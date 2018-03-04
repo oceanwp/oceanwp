@@ -8574,14 +8574,14 @@
 			});
 		}), api("ocean_product_title_color", function($swipe) {
 			$swipe.bind(function(size) {
-				$(".woocommerce ul.products li.product a.title").css("color", size);
+				$(".woocommerce ul.products li.product li.title a").css("color", size);
 			});
 		}), api("ocean_product_title_color_hover", function($swipe) {
 			$swipe.bind(function(to) {
 				var $child = $(".customizer-ocean_product_title_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_product_title_color_hover">.woocommerce ul.products li.product a.title:hover{ color: ' + to + "!important; }</style>";
+					var img = '<style class="customizer-ocean_product_title_color_hover">.woocommerce ul.products li.product li.title a:hover{ color: ' + to + "!important; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

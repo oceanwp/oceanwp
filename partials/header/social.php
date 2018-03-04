@@ -54,12 +54,8 @@ if ( 'simple' != $style ) {
 $inner_classes = implode( ' ', $inner_classes );
 
 // Return if there aren't any profiles defined and define var
-<<<<<<< HEAD
 if ( ( ! $profiles = get_theme_mod( 'ocean_menu_social_profiles' ) )
 	&& empty( $get_content ) ) {
-=======
-if ( ( ! $profiles = get_theme_mod( 'ocean_menu_social_profiles' ) ) && empty( $get_content ) ) {
->>>>>>> fca507b405a2c13908a300482fbdebfdec34ba30
 	return;
 }
 
