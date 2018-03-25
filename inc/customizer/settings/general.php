@@ -847,8 +847,8 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_opengraph_heading', array(
-				'label'    				=> esc_html__( 'OpenGraph', 'ocean-social-sharing' ),
-				'description'    		=> esc_html__( 'This is information taken by social media when a link is shared', 'ocean-social-sharing' ),
+				'label'    				=> esc_html__( 'OpenGraph', 'oceanwp' ),
+				'description'    		=> esc_html__( 'This is information taken by social media when a link is shared', 'oceanwp' ),
 				'section'  				=> 'ocean_general_settings',
 				'priority' 				=> 10,
 			) ) );
@@ -878,7 +878,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_twitter_handle', array(
-				'label'			=> esc_html__( 'Twitter Username', 'ocean-social-sharing' ),
+				'label'			=> esc_html__( 'Twitter Username', 'oceanwp' ),
 				'section'		=> 'ocean_general_settings',
 				'settings'		=> 'ocean_twitter_handle',
 				'type'			=> 'text',
@@ -894,7 +894,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_facebook_page_url', array(
-				'label'			=> esc_html__( 'Facebook Page URL', 'ocean-social-sharing' ),
+				'label'			=> esc_html__( 'Facebook Page URL', 'oceanwp' ),
 				'section'		=> 'ocean_general_settings',
 				'settings'		=> 'ocean_facebook_page_url',
 				'type'			=> 'text',
@@ -910,7 +910,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_facebook_appid', array(
-				'label'			=> esc_html__( 'Facebook App ID', 'ocean-social-sharing' ),
+				'label'			=> esc_html__( 'Facebook App ID', 'oceanwp' ),
 				'section'		=> 'ocean_general_settings',
 				'settings'		=> 'ocean_facebook_appid',
 				'type'			=> 'text',
