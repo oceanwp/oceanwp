@@ -46,7 +46,13 @@ foreach ( $elements as $element ) {
 	if ( 'meta' == $element ) {
 		woocommerce_template_single_meta();
 	}
+	
+	do_action( 'ocean_after_single_product_'.$element );
 
+<<<<<<< HEAD
 	do_action( 'ocean_after_single_product_' . $element );
 
 }
+=======
+}
+>>>>>>> 4aa39af1d1cb025b4090c3ba98e340e71e55122f
