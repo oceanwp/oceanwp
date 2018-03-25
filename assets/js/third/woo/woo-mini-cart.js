@@ -26,7 +26,7 @@ function oceanwpWooMobileCart() {
 		$j( 'body' ).removeClass( 'show-cart-sidebar' );
 	};
 
-	$j( document ).on( 'click', '#oceanwp-mobile-menu-icon a.wcmenucart', function( e ) {
+	$j( document ).on( 'click', '.oceanwp-mobile-menu-icon a.wcmenucart', function( e ) {
 		e.preventDefault();
 
 		var innerWidth = $j( 'html' ).innerWidth();

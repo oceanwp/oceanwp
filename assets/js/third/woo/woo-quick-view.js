@@ -108,7 +108,7 @@ $j( document ).on( 'ready', function() {
 	 */
 	var owpQVAddToCartHandler = function() {
 		$j( document.body )
-			.on( 'click', '#owp-qv-content .single_add_to_cart_button', this.onAddToCart )
+			.on( 'click', '#owp-qv-content .product:not(.product-type-external) .single_add_to_cart_button', this.onAddToCart )
 			.on( 'added_to_cart', this.updateButton );
 	};
 

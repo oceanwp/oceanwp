@@ -193,7 +193,9 @@ jQuery( document ).ready( function( $ ) {
 		});
 
 		// Bind event handler for clicking on a palette color.
-		$container.find( '.iris-palette' ).on( 'click', function() {
+		$container.find( '.iris-palette' ).on( 'click', function(e) {
+			e.preventDefault();
+
 			var color, alpha;
 
 			color = $( this ).css( 'background-color' );
@@ -213,7 +215,9 @@ jQuery( document ).ready( function( $ ) {
 		});
 
 		// Bind event handler for clicking on the 'Clear' button.
-		$container.find( '.button.wp-picker-clear' ).on( 'click', function() {
+		$container.find( '.button.wp-picker-clear' ).on( 'click', function(e) {
+			e.preventDefault();
+
 			var key = $control.attr( 'data-customize-setting-link' );
 
 			// The #fff color is delibrate here. This sets the color picker to white instead of the
@@ -229,14 +233,18 @@ jQuery( document ).ready( function( $ ) {
 		});
 
 		// Bind event handler for clicking on the 'Default' button.
-		$container.find( '.button.wp-picker-default' ).on( 'click', function() {
+		$container.find( '.button.wp-picker-default' ).on( 'click', function(e) {
+			e.preventDefault();
+
 			var alpha = acp_get_alpha_value_from_color( defaultColor );
 
 			acp_update_alpha_value_on_alpha_slider( alpha, $alphaSlider );
 		});
 
 		// Bind event handler for typing or pasting into the input.
-		$control.on( 'input', function() {
+		$control.on( 'input', function(e) {
+			e.preventDefault();
+
 			var value = $( this ).val();
 			var alpha = acp_get_alpha_value_from_color( value );
 
@@ -251,6 +259,11 @@ jQuery( document ).ready( function( $ ) {
 
 			// Change value shown on slider handle.
 			$( this ).find( '.ui-slider-handle' ).text( ui.value );
+		});
+
+		// Fix Safari issue on input click
+		$( '.iris-picker' ).on( 'click', function(e) {
+			e.preventDefault();
 		});
 
 	});

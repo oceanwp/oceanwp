@@ -21,6 +21,12 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 			&& ! WC()->cart->cart_contents_count > 0 ) {
 			return;
 		}
+
+		// Return if is in the Elementor edit mode, to avoid error
+		if ( OCEANWP_ELEMENTOR_ACTIVE
+			&& \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+			return;
+		}
 		
 		// Vars
 		$icon_style   = get_theme_mod( 'ocean_woo_menu_icon_style', 'drop_down' );
@@ -64,13 +70,30 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 
 		// Cart Icon
 		$cart_icon = '<i class="'. esc_attr( $icon ) .'"></i>';
-		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon ); ?>
+		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
-		<a href="<?php echo esc_url( $url ); ?>" class="wcmenucart">
-			<span class="wcmenucart-count"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
-		</a>
+		// If bag style
+		if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) { ?>
 
-	<?php
+			<a href="<?php echo esc_url( $url ); ?>" class="wcmenucart">
+				<?php
+				if ( true == get_theme_mod( 'ocean_woo_menu_bag_style_total', false ) ) { ?>
+					<span class="wcmenucart-total"><?php echo WC()->cart->get_cart_total(); ?></span>
+				<?php } ?>
+				<span class="wcmenucart-cart-icon">
+					<span class="wcmenucart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+				</span>
+			</a>
+
+		<?php } else { ?>
+
+			<a href="<?php echo esc_url( $url ); ?>" class="wcmenucart">
+				<span class="wcmenucart-count"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
+			</a>
+
+		<?php
+		}
+
 	}
 
 }
@@ -154,7 +177,7 @@ if ( ! function_exists( 'oceanwp_woo_summary_elements_positioning' ) ) {
 	function oceanwp_woo_summary_elements_positioning() {
 
 		// Default sections
-		$sections = array( 'title', 'rating', 'price', 'excerpt', 'quantity-button', 'meta' );
+		$sections = array( 'title', 'rating', 'price', 'excerpt', 'quantity_button', 'meta' );
 
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'oceanwp_woo_summary_elements_positioning', $sections );

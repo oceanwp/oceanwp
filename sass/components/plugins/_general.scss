@@ -34,3 +34,9 @@ body.elementor-editor-active.has-transparent-header #site-header { display: none
 .background-image-page-header-overlay {
 	-webkit-transform: translateZ(0);
 }
+
+/* Fix bug with MotoPress */
+div.motopress-bootstrap-dropdown .dropdown-menu {
+	display: block !important;
+	position: static !important;
+}

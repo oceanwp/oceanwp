@@ -325,6 +325,7 @@
 					}
 					.woo-entry-image {
 						display: block;
+						position: relative;
 						width: 32%;
 						margin: 0 3% 0 0;
 					}
@@ -1179,7 +1180,8 @@
 		width: 480px;
 		max-width: 100%;
 		margin: 0 auto;
-		.form-row-first {
+		.form-row-first,
+		.form-row-last {
 			width: 100%;
 			margin-right: 0;
 			margin-left: 0;
@@ -1425,7 +1427,6 @@
 				h2:first-child {
 					margin: 20px 0;
 					font-size: 18px;
-					font-weight: normal;
 					font-weight: 400;
 				}
 			}
@@ -3154,6 +3155,39 @@ form.checkout {
 	}
 }
 
+.woocommerce div.product.owp-tabs-layout-section {
+	.woocommerce-tabs ul.tabs {
+		display: none;
+	}
+
+	.panel {
+		display: block !important;
+		margin-top: 80px;
+
+		&#tab-description {
+			margin-top: 0;
+		}
+
+		h2:first-child {
+			font-size: 28px;
+			margin-top: 0;
+		}
+	}
+}
+
+.woocommerce {
+	.owp-btn-big .summary form button.button {
+		width: 55%;
+	}
+
+	.owp-btn-very-big .summary form button.button {
+		font-size: 16px;
+	    min-height: 50px;
+	    width: 100%;
+	    margin-top: 15px;
+	}
+}
+
 .demo_store {
 	position: fixed;
 	left: 0;
@@ -3209,4 +3243,13 @@ form.checkout {
     right: 0;
     z-index: 99;
     cursor: pointer;
+}
+
+.product p.wc-gzd-additional-info {
+	display: inline-block;
+	margin: 0 0 5px;
+}
+
+.woocommerce.single-product .legal-price-info {
+	margin-top: 10px;
 }

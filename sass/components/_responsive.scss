@@ -34,7 +34,16 @@
 			display: none;
 		}
 
-		#oceanwp-mobile-menu-icon {
+		.center-logo:not(.vertical-header) #site-logo {
+		    float: none;
+		    position: absolute;
+		    left: 50%;
+		    padding: 0;
+		    -webkit-transform: translateX(-50%);
+		    transform: translateX(-50%);
+		}
+
+		.oceanwp-mobile-menu-icon {
 			display: block;
 		}
 
@@ -74,7 +83,7 @@
 		    	padding: 0;
 		    	max-width: 90%;
 
-			    > *:not(#oceanwp-mobile-menu-icon) {
+			    > *:not(.oceanwp-mobile-menu-icon) {
 				    display: none;
 				}
 
@@ -89,7 +98,7 @@
 					text-align: left;
 				}
 
-				#oceanwp-mobile-menu-icon {
+				.oceanwp-mobile-menu-icon {
 					width: 50%;
 					text-align: right;
 				}

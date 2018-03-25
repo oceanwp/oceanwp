@@ -42,7 +42,7 @@ $retina_logo = oceanwp_header_retina_logo_setting(); ?>
 
 <div id="site-header-inner" class="<?php echo esc_attr( $classes ); ?>">
 
-	<?php get_template_part( 'partials/header/logo' ); ?>
+	<?php do_action( 'ocean_header_inner_left_content' ); ?>
 
 	<?php
 	// If social
@@ -177,7 +177,7 @@ $retina_logo = oceanwp_header_retina_logo_setting(); ?>
 
 	</div><!-- #site-navigation-wrap -->
 
-	<?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
+	<?php do_action( 'ocean_header_inner_right_content' ); ?>
 
 </div><!-- #site-header-inner -->
 

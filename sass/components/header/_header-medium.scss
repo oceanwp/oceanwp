@@ -173,7 +173,7 @@
 	&.hidden-menu {
 		#site-navigation-wrap,
 		#site-navigation,
-		#oceanwp-mobile-menu-icon {
+		.oceanwp-mobile-menu-icon {
 			max-height: 150px;
 		    @include transition( all .4s ease-in-out );
 		}
@@ -193,7 +193,7 @@
 	&.hidden-menu {
 		#site-navigation-wrap,
 		#site-navigation,
-		#oceanwp-mobile-menu-icon {
+		.oceanwp-mobile-menu-icon {
 			max-height: 0;
 			@include opacity( 0 );
 			visibility: hidden;
@@ -202,7 +202,7 @@
 		&:hover {
 			#site-navigation-wrap,
 			#site-navigation,
-			#oceanwp-mobile-menu-icon {
+			.oceanwp-mobile-menu-icon {
 				max-height: 150px;
 				@include opacity( 1 );
 				visibility: visible;
@@ -211,7 +211,7 @@
 	}
 }
 
-#site-header.medium-header #oceanwp-mobile-menu-icon {
+#site-header.medium-header .oceanwp-mobile-menu-icon {
 	float: none;
 	background-color: #f9f9f9;
 	right: auto !important;
@@ -231,7 +231,7 @@
 #site-header.medium-header.is-transparent {
 	.top-header-wrap,
 	#site-navigation-wrap,
-	#oceanwp-mobile-menu-icon {
+	.oceanwp-mobile-menu-icon {
 	 	background-color: transparent;
 	 	@include transition( all .3s );
 	}
@@ -293,7 +293,7 @@
 			padding: 20px 0;
 		}
 
-		#oceanwp-mobile-menu-icon a {
+		.oceanwp-mobile-menu-icon a {
 			line-height: 40px;
 		}
 	}

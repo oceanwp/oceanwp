@@ -39,7 +39,9 @@ class OceanWP_Customizer_Color_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
+		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_script( 'oceanwp-color', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/color.min.js', array( 'jquery', 'customize-base', 'wp-color-picker' ), false, true );
+		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_style( 'oceanwp-color', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/color.min.css', array( 'wp-color-picker' ), '1.0.0' );
 		wp_localize_script( 'oceanwp-color', 'oceanwpLocalize', array( 'colorPalettes' => oceanwp_default_color_palettes() ) );
 	}

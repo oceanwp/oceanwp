@@ -6,7 +6,8 @@
  */
 
 // If Elementor plugins doesn't exist then return.
-if ( ! OCEANWP_ELEMENTOR_ACTIVE) {
+if ( ! OCEANWP_ELEMENTOR_ACTIVE
+	&& version_compare( PHP_VERSION, '5.6', '>=' ) ) {
 	return;
 }
 

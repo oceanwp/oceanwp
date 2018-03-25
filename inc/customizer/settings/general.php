@@ -840,6 +840,84 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Heading Sitewide Identity
+			 */
+			$wp_customize->add_setting( 'ocean_opengraph_heading', array(
+				'sanitize_callback' 	=> 'wp_kses',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_opengraph_heading', array(
+				'label'    				=> esc_html__( 'OpenGraph', 'ocean-social-sharing' ),
+				'description'    		=> esc_html__( 'This is information taken by social media when a link is shared', 'ocean-social-sharing' ),
+				'section'  				=> 'ocean_general_settings',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Enable OpenGraph
+			 */
+			$wp_customize->add_setting( 'ocean_opengraph', array(
+				'default'           	=> true,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_opengraph', array(
+				'label'	   				=> esc_html__( 'Enable OpenGraph', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_general_settings',
+				'settings' 				=> 'ocean_opengraph',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+		     * Twitter Handle
+		     */
+	        $wp_customize->add_setting( 'ocean_twitter_handle', array(
+				'default'			=> '',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_twitter_handle', array(
+				'label'			=> esc_html__( 'Twitter Username', 'ocean-social-sharing' ),
+				'section'		=> 'ocean_general_settings',
+				'settings'		=> 'ocean_twitter_handle',
+				'type'			=> 'text',
+				'priority'		=> 10,
+			) ) );
+
+			/**
+		     * Facebook Page URL
+		     */
+	        $wp_customize->add_setting( 'ocean_facebook_page_url', array(
+				'default'			=> '',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_facebook_page_url', array(
+				'label'			=> esc_html__( 'Facebook Page URL', 'ocean-social-sharing' ),
+				'section'		=> 'ocean_general_settings',
+				'settings'		=> 'ocean_facebook_page_url',
+				'type'			=> 'text',
+				'priority'		=> 10,
+			) ) );
+
+			/**
+		     * Facebook App ID
+		     */
+	        $wp_customize->add_setting( 'ocean_facebook_appid', array(
+				'default'			=> '',
+				'sanitize_callback' => 'wp_filter_nohtml_kses',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_facebook_appid', array(
+				'label'			=> esc_html__( 'Facebook App ID', 'ocean-social-sharing' ),
+				'section'		=> 'ocean_general_settings',
+				'settings'		=> 'ocean_facebook_appid',
+				'type'			=> 'text',
+				'priority'		=> 10,
+			) ) );
+
+			/**
 			 * Section
 			 */
 			$wp_customize->add_section( 'ocean_general_page_header' , array(
@@ -2275,7 +2353,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'#top-bar-social li.oceanwp-email a:hover',
 				'#site-navigation-wrap .dropdown-menu > li > a:hover',
 				'#site-header.medium-header #medium-searchform button:hover',
-				'#oceanwp-mobile-menu-icon a:hover',
+				'.oceanwp-mobile-menu-icon a:hover',
 				'.blog-entry.post .blog-entry-header .entry-title a:hover',
 				'.blog-entry.post .blog-entry-readmore a:hover',
 				'.blog-entry.thumbnail-entry .blog-entry-category a',

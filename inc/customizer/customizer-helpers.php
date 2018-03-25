@@ -279,6 +279,16 @@ function oceanwp_cac_hasnt_medium_custom_header_styles() {
 	}
 }
 
+function oceanwp_cac_mobile_header_position() {
+	if ( 'medium' == oceanwp_header_style()
+		|| 'vertical' == oceanwp_header_style()
+		|| 'custom' == oceanwp_header_style() ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
 /*-------------------------------------------------------------------------------*/
 /* [ Logo ]
 /*-------------------------------------------------------------------------------*/
@@ -502,6 +512,22 @@ function oceanwp_cac_has_blog_infinite_scroll() {
 /*-------------------------------------------------------------------------------*/
 /* [ WooCommerce ]
 /*-------------------------------------------------------------------------------*/
+function oceanwp_cac_has_woo_bag_style() {
+	if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_hasnt_woo_bag_style() {
+	if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
 function oceanwp_cac_has_grid_list_buttons() {
 	if ( true == get_theme_mod( 'ocean_woo_grid_list', true ) ) {
 		return true;

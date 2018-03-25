@@ -94,17 +94,11 @@ if ( 'transparent' == $header_style
 
 		<div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
 
-			<?php get_template_part( 'partials/header/logo' ); ?>
+			<?php do_action( 'ocean_header_inner_left_content' ); ?>
 
-			<?php
-			// Social
-			if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
-				get_template_part( 'partials/header/social' );
-			} ?>
+			<?php do_action( 'ocean_header_inner_middle_content' ); ?>
 
-			<?php get_template_part( 'partials/header/nav' ); ?>
-
-			<?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
+			<?php do_action( 'ocean_header_inner_right_content' ); ?>
 
 		</div><!-- #site-header-inner -->
 

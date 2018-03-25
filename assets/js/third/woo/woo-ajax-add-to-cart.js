@@ -9,7 +9,7 @@ jQuery( function( $ ) {
 	 */
 	var owpAddToCartHandler = function() {
 		$( document.body )
-			.on( 'click', '.single_add_to_cart_button', this.onAddToCart )
+			.on( 'click', '.product:not(.product-type-external) .single_add_to_cart_button', this.onAddToCart )
 			.on( 'added_to_cart', this.updateButton );
 	};
 

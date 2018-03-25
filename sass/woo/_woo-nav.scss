@@ -47,6 +47,7 @@ Woo Product Navigation
 
 		.owp-nav-thumb {
 			position: absolute;
+			top: 100%;
 		    left: -99999px;
 		    display: inline-block;
 		    width: 90px;
@@ -58,7 +59,9 @@ Woo Product Navigation
 
 		&:hover > .owp-nav-thumb {
 			opacity: 1;
-		    left: -15px;
+		    left: 50%;
+		    -webkit-transform: translateX(-50%);
+		    transform: translateX(-50%);
 		}
     }
 }

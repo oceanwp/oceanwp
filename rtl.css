@@ -294,11 +294,12 @@ ul.page-numbers { text-align: left; }
 /*------------------------------------*
 	Responsive
 *------------------------------------*/
-#oceanwp-mobile-menu-icon { float: left; }
-#oceanwp-mobile-menu-icon a { padding-right: 15px; padding-left: 0; }
-#oceanwp-mobile-menu-icon a:first-child { padding-right: 0; }
-#oceanwp-mobile-menu-icon a.mobile-menu i { padding-left: 6px; padding-right: 0 !important; }
-#oceanwp-mobile-menu-icon a.mobile-menu .hamburger { padding-left: 4px; padding-right: 0 !important; }
+.oceanwp-mobile-menu-icon.right { float: left; }
+.oceanwp-mobile-menu-icon.left { float: right; }
+.oceanwp-mobile-menu-icon a { padding-right: 15px; padding-left: 0; }
+.oceanwp-mobile-menu-icon a:first-child { padding-right: 0; }
+.oceanwp-mobile-menu-icon a.mobile-menu .oceanwp-text,
+.oceanwp-mobile-menu-icon a.mobile-menu .oceanwp-close-text { padding-right: 6px; padding-left: 0 !important; }
 
 /*------------------------------------*
 	All Devices under 1280px

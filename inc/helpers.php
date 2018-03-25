@@ -152,8 +152,8 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 		// Add transparent class for header styles
 		if ( 'transparent' == oceanwp_header_style()
 			|| ( 'full_screen' == oceanwp_header_style() && true == get_theme_mod( 'ocean_full_screen_header_transparent', false ) )
-				|| ( 'center' == oceanwp_header_style() && true == get_theme_mod( 'ocean_center_header_transparent', false ) )
-				|| ( 'medium' == oceanwp_header_style() && true == get_theme_mod( 'ocean_medium_header_transparent', false ) ) ) {
+			|| ( 'center' == oceanwp_header_style() && true == get_theme_mod( 'ocean_center_header_transparent', false ) )
+			|| ( 'medium' == oceanwp_header_style() && true == get_theme_mod( 'ocean_medium_header_transparent', false ) ) ) {
 			$classes[] = 'has-transparent-header';
 		}
 
@@ -937,6 +937,13 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 		// If has header media
 		if ( has_header_image() ) {
 			$classes[] = 'has-header-media';
+		}
+
+		// Mobile elements positionning
+		if ( ( 'medium' != $header_style
+				|| 'vertical' != $header_style )
+			&& 'one' != get_theme_mod( 'ocean_mobile_elements_positioning', 'one' ) ) {
+			$classes[] = 'center-logo';
 		}
 
 		// Clearfix class
@@ -3194,6 +3201,42 @@ if ( ! function_exists( 'oceanwp_blog_pagination_style' ) ) {
 
 		// Return style
 		return $style;
+	}
+
+}
+
+/**
+ * Get excerpt
+ *
+ * @since 1.5.6
+ */
+if ( ! function_exists( 'oceanwp_excerpt' ) ) {
+
+	function oceanwp_excerpt( $length = 30 ) {
+		global $post;
+
+		// Check for custom excerpt
+		if ( has_excerpt( $post->ID ) ) {
+			$output = $post->post_excerpt;
+		}
+
+		// No custom excerpt
+		else {
+
+			// Check for more tag and return content if it exists
+			if ( strpos( $post->post_content, '<!--more-->' ) ) {
+				$output = apply_filters( 'the_content', get_the_content() );
+			}
+
+			// No more tag defined
+			else {
+				$output = wp_trim_words( strip_shortcodes( $post->post_content ), $length );
+			}
+
+		}
+
+		return $output;
+
 	}
 
 }

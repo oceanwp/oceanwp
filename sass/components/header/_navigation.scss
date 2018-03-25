@@ -343,10 +343,17 @@
 /*------------------------------------*
 	Mobile Menu
 *------------------------------------*/
-#oceanwp-mobile-menu-icon {
+.oceanwp-mobile-menu-icon {
 	display: none;
-	float: right;
 	position: relative;
+
+	&.right {
+		float: right;
+	}
+
+	&.left {
+		float: left;
+	}
 
 	a {
 		font-size: 13px;
@@ -365,12 +372,9 @@
 		}
 
 		&.mobile-menu {
-			i {
-				padding-right: 6px;
-			}
-			
-			.hamburger {
-				padding-right: 4px;
+			.oceanwp-text,
+			.oceanwp-close-text {
+				padding-left: 6px;
 			}
 
 			.oceanwp-close-text,

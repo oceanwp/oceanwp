@@ -1812,7 +1812,7 @@
 			var $child = $( ".customizer-typography-menu-font-family" );
 			if ( pair ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-font-family">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{font-family: ' + pair + ";}</style>";
+				var img = '<style class="customizer-typography-menu-font-family">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{font-family: ' + pair + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1827,7 +1827,7 @@
 			var $child = $( ".customizer-typography-menu-font-weight" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-font-weight">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{font-weight: ' + dataAndEvents + ";}</style>";
+				var img = '<style class="customizer-typography-menu-font-weight">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{font-weight: ' + dataAndEvents + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1842,7 +1842,7 @@
 			var $child = $( ".customizer-typography-menu-font-style" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-font-style">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{font-style: ' + dataAndEvents + ";}</style>";
+				var img = '<style class="customizer-typography-menu-font-style">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{font-style: ' + dataAndEvents + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1857,7 +1857,7 @@
 			var $child = $( ".customizer-typography-menu-font-size" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-font-size">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{font-size: ' + dataAndEvents + "px;}</style>";
+				var img = '<style class="customizer-typography-menu-font-size">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{font-size: ' + dataAndEvents + "px;}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1872,7 +1872,7 @@
 			var $child = $( ".customizer-typography-menu-tablet-font-size" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-tablet-font-size">@media (max-width: 768px){#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{font-size: ' + dataAndEvents + "px;}}</style>";
+				var img = '<style class="customizer-typography-menu-tablet-font-size">@media (max-width: 768px){#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{font-size: ' + dataAndEvents + "px;}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1887,7 +1887,7 @@
 			var $child = $( ".customizer-typography-menu-mobile-font-size" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-mobile-font-size">@media (max-width: 480px){#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{font-size: ' + dataAndEvents + "px;}}</style>";
+				var img = '<style class="customizer-typography-menu-mobile-font-size">@media (max-width: 480px){#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{font-size: ' + dataAndEvents + "px;}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1902,7 +1902,7 @@
 			var $child = $( ".customizer-typography-menu-color" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-color">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{color: ' + dataAndEvents + ";}</style>";
+				var img = '<style class="customizer-typography-menu-color">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{color: ' + dataAndEvents + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1917,7 +1917,7 @@
 			var $child = $( ".customizer-typography-menu-letter-spacing" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-letter-spacing">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{letter-spacing: ' + dataAndEvents + "px;}</style>";
+				var img = '<style class="customizer-typography-menu-letter-spacing">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{letter-spacing: ' + dataAndEvents + "px;}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1932,7 +1932,7 @@
 			var $child = $( ".customizer-typography-menu-tablet-letter-spacing" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-tablet-letter-spacing">@media (max-width: 768px){#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
+				var img = '<style class="customizer-typography-menu-tablet-letter-spacing">@media (max-width: 768px){#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1947,7 +1947,7 @@
 			var $child = $( ".customizer-typography-menu-mobile-letter-spacing" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-mobile-letter-spacing">@media (max-width: 480px){#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
+				var img = '<style class="customizer-typography-menu-mobile-letter-spacing">@media (max-width: 480px){#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1962,7 +1962,7 @@
 			var $child = $( ".customizer-typography-menu-text-transform" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-menu-text-transform">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a{text-transform: ' + dataAndEvents + ";}</style>";
+				var img = '<style class="customizer-typography-menu-text-transform">#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a{text-transform: ' + dataAndEvents + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {

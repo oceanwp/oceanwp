@@ -65,9 +65,7 @@ $classes = implode( ' ', $classes ); ?>
 							<?php
 							// Search form
 							if ( 'searchfrom' == $element ) {
-								if ( 'disabled' != get_theme_mod( 'ocean_menu_search_style', 'drop_down' ) ) {
-									get_template_part( 'partials/header/style/medium-header-search' );
-								}
+								get_template_part( 'partials/header/style/medium-header-search' );
 							}
 
 							// Logo

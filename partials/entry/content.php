@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <p>
             <?php
             // Display custom excerpt
-            oceanwp_excerpt( absint( get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' ) ) ); ?>
+            echo oceanwp_excerpt( get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' ) ); ?>
         </p>
 
     <?php

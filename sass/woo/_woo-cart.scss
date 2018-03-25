@@ -219,8 +219,8 @@ Woo Cart
 	}
 }
 
-/* Cart shortcode */
-.woo-cart-shortcode {
+/* Cart bag style */
+.bag-style {
 	position: relative;
     display: inline-block;
 }
@@ -236,7 +236,7 @@ Woo Cart
 .wcmenucart-cart-icon {
 	display: inline-block;
 
-	.wcmenucart-number {
+	.wcmenucart-count {
 		position: relative;
 	    display: inline-block;
 	    min-width: 2em;
@@ -269,8 +269,8 @@ Woo Cart
 	}
 }
 
-.woo-cart-shortcode:hover .wcmenucart-cart-icon .wcmenucart-number,
-.show-cart .wcmenucart-cart-icon .wcmenucart-number {
+.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count,
+.show-cart .wcmenucart-cart-icon .wcmenucart-count {
 	background-color: $color-5;
     color: $color-1;
 	border-color: $color-5;

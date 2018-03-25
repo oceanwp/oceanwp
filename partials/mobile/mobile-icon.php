@@ -57,9 +57,22 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		$cart_icon = '<i class="'. esc_attr( $woo_icon ) .'"></i>';
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
-	} ?>
+	}
 
-	<div id="oceanwp-mobile-menu-icon" class="clr">
+	// Classes
+	$classes = array( 'oceanwp-mobile-menu-icon', 'clr' );
+
+	// Position
+	if ( 'three' == get_theme_mod( 'ocean_mobile_elements_positioning', 'one' ) ) {
+		$classes[] = 'left';
+	} else {
+		$classes[] = 'right';
+	}
+
+	// Turn classes into space seperated string
+	$classes = implode( ' ', $classes ); ?>
+
+	<div class="<?php echo esc_attr( $classes ); ?>">
 
 		<?php do_action( 'ocean_before_mobile_icon' ); ?>
 
@@ -69,12 +82,13 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 			<div class="container clr">
 		<?php } ?>
 
+		<?php do_action( 'ocean_before_mobile_icon_inner' ); ?>
+
 		<?php
 		// Cart icon
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
 			&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_visibility', 'default' )
-			&& ( OCEANWP_ELEMENTOR_ACTIVE
-				&& ! \Elementor\Plugin::$instance->editor->is_edit_mode() ) ) {
+			&& 'one' == get_theme_mod( 'ocean_mobile_elements_positioning', 'one' ) ) {
 			echo oceanwp_wcmenucart_menu_item();
 		} ?>
 
@@ -104,6 +118,8 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 				}
 			} ?>
 		</a>
+
+		<?php do_action( 'ocean_after_mobile_icon_inner' ); ?>
 
 		<?php
 		// If big header style

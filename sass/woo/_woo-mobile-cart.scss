@@ -14,7 +14,7 @@ Woo Mobile Mini Cart Sidebar
 	    left: 0;
 	    width: 100%;
 	    height: 100%;
-    	z-index: 999;
+    	z-index: 9999;
 	}
 
 	.oceanwp-cart-sidebar-overlay {
@@ -31,7 +31,7 @@ Woo Mobile Mini Cart Sidebar
 	    height: 100%;
 	    padding: 20px 0 0;
 	    overflow: auto;
-    	z-index: 1000;
+    	z-index: 10000;
 		@include box-shadow( 0 0 12px 0 rgba(0,0,0,.4) );
 		@include transition( all 0.3s ease-in-out );
 	}

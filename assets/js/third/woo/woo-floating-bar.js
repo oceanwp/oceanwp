@@ -69,7 +69,7 @@
         $( '.owp-floating-bar button.button.top' ).on( 'click', function( e ) {
         	e.preventDefault();
 
-        	var $target = $( '.woocommerce div.product form.cart' ),
+        	var $target = $( '.woocommerce div.product .cart' ),
         		$scrollPosition;
 			
 			if ( $target.length ) {

@@ -1,5 +1,27 @@
 # OceanWP Changelog
 
+### *2018.03.25* - 1.5.6 (note: after the update don't forget to clear your cache and if you have disabled scripts, go to Theme Panel > Scripts & Styles, click Save Changes, then clear your cache):
+* **Added** - New setting the Header > Mobile Menu section of the customizer to choose where you want to place the logo / cart and mobile link, so now, you will be able to add your cart icon to the left, the logo centered and the mobile icon to the right.
+* **Added** - New cart icon style "Bag Style", it is the same style as the cart icon shortcode.
+* **Added** - New setting in WooCommerce > Single Product to control the image and summary width.
+* **Added** - New setting in WooCommerce > Single Product to put the Add To Cart button bigger to increase conversion.
+* **Added** - New WooCommerce tab layout "Section" to put the description, additionalt information and reviews as sections.
+* **Added** - Meta tags, so when you will share a link of your site on your social medias, the meta tags will tell them exactly what to take.
+* **Added** - New settings for OpenGraph in the General Options > General Settings section of the customizer.
+* **Added** - Full compatibility for Elementor Pro 2.0.
+* **Added** - Compatibility with WooCommerce Germanized.
+* **Added** - Hooks for single product elements.
+* **Added** - New setting in Typography > General to disable the Google Fonts.
+* **Fixed** - Issue with the customizer color picket on Safari.
+* **Fixed** - Ajax issue on the single product if external product.
+* **Fixed** - Ajax issue on the single product of the quick view if external product.
+* **Fixed** - Quick view button full width on list view.
+* **Fixed** - Double logo on the cart/checkout pages is distraction free is enabled and has sticky logo.
+* **Fixed** - Both Sidebars layout width not taken into account on the categories pages.
+* **Fixed** - Product navigation issue with the thumbnails above the navigation.
+* **Fixed** - Lost password page CSS issue.
+* **Fixed** - Search form in the Medium header style if no search icon in the navigation.
+
 ### *2018.03.04* - 1.5.5
 * **Added** - Integration with TI WooCommerce Wishlist instead of the YITH Wishlist plugin, because the YITH plugin have error woth PHP 7.2 and the new Wishlist plugin is much better.
 * **Added** - Compatibility with WooCommerce Social Login for the multi-step checkout.

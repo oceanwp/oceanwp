@@ -44,7 +44,8 @@ ul.page-numbers {
 .page-numbers a:hover,
 .page-links a:hover span,
 .page-numbers.current,
-.page-numbers.current:hover {
+.page-numbers.current:hover,
+.page-links > span {
     background-color: $color-8;
     color: $color-2;
 }

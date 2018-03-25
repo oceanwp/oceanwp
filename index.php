@@ -30,39 +30,44 @@ get_header(); ?>
 
 				<?php
 				// Check if posts exist
-				if ( have_posts() ) : ?>
+				if ( have_posts() ) :
 
-					<div id="blog-entries" class="<?php oceanwp_blog_wrap_classes(); ?>">
+					// Elementor `archive` location
+					if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'archive' ) ) { ?>
+
+						<div id="blog-entries" class="<?php oceanwp_blog_wrap_classes(); ?>">
+
+							<?php
+							// Define counter for clearing floats
+							$oceanwp_count = 0; ?>
+
+							<?php
+							// Loop through posts
+							while ( have_posts() ) : the_post(); ?>
+
+								<?php
+								// Add to counter
+								$oceanwp_count++; ?>
+
+								<?php
+								// Get post entry content
+								get_template_part( 'partials/entry/layout', get_post_type() ); ?>
+
+								<?php
+								// Reset counter to clear floats
+								if ( oceanwp_blog_entry_columns() == $oceanwp_count ) {
+									$oceanwp_count=0;
+								} ?>
+
+							<?php endwhile; ?>
+
+						</div><!-- #blog-entries -->
 
 						<?php
-						// Define counter for clearing floats
-						$oceanwp_count = 0; ?>
+						// Display post pagination
+						oceanwp_blog_pagination();
 
-						<?php
-						// Loop through posts
-						while ( have_posts() ) : the_post(); ?>
-
-							<?php
-							// Add to counter
-							$oceanwp_count++; ?>
-
-							<?php
-							// Get post entry content
-							get_template_part( 'partials/entry/layout', get_post_type() ); ?>
-
-							<?php
-							// Reset counter to clear floats
-							if ( oceanwp_blog_entry_columns() == $oceanwp_count ) {
-								$oceanwp_count=0;
-							} ?>
-
-						<?php endwhile; ?>
-
-					</div><!-- #blog-entries -->
-
-					<?php
-					// Display post pagination
-					oceanwp_blog_pagination(); ?>
+					} ?>
 
 				<?php
 				// No posts found

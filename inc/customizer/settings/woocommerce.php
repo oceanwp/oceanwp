@@ -290,6 +290,111 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Bag Style
+			 */
+			$wp_customize->add_setting( 'ocean_woo_menu_bag_style', array(
+				'default'           	=> 'no',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_woo_menu_bag_style', array(
+				'label'	   				=> esc_html__( 'Bag Style', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'This setting rep^lace the cart icon by a bag with the items count in it.', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_menu_cart',
+				'settings' 				=> 'ocean_woo_menu_bag_style',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'yes' 	=> esc_html__( 'Yes', 'oceanwp' ),
+					'no' 	=> esc_html__( 'No', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Bag Style Total
+			 */
+			$wp_customize->add_setting( 'ocean_woo_menu_bag_style_total', array(
+				'default'           	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_menu_bag_style_total', array(
+				'label'	   				=> esc_html__( 'Bag Icon Display Total', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_woocommerce_menu_cart',
+				'settings' 				=> 'ocean_woo_menu_bag_style_total',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_bag_style',
+			) ) );
+
+			/**
+			 * Bag Icon Color
+			 */
+			$wp_customize->add_setting( 'ocean_woo_menu_bag_icon_color', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> '#333333',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_woo_menu_bag_icon_color', array(
+				'label'	   				=> esc_html__( 'Bag Icon Color', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_menu_cart',
+				'settings' 				=> 'ocean_woo_menu_bag_icon_color',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_bag_style',
+			) ) );
+
+			/**
+			 * Bag Icon Hover Color
+			 */
+			$wp_customize->add_setting( 'ocean_woo_menu_bag_icon_hover_color', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> '#13aff0',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_woo_menu_bag_icon_hover_color', array(
+				'label'	   				=> esc_html__( 'Bag Icon Hover Color', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_menu_cart',
+				'settings' 				=> 'ocean_woo_menu_bag_icon_hover_color',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_bag_style',
+			) ) );
+
+			/**
+			 * Bag Icon Count Color
+			 */
+			$wp_customize->add_setting( 'ocean_woo_menu_bag_icon_count_color', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> '#333333',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_woo_menu_bag_icon_count_color', array(
+				'label'	   				=> esc_html__( 'Bag Icon Count Color', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_menu_cart',
+				'settings' 				=> 'ocean_woo_menu_bag_icon_count_color',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_bag_style',
+			) ) );
+
+			/**
+			 * Bag Icon Hover Count Color
+			 */
+			$wp_customize->add_setting( 'ocean_woo_menu_bag_icon_hover_count_color', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> '#ffffff',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_woo_menu_bag_icon_hover_count_color', array(
+				'label'	   				=> esc_html__( 'Bag Icon Hover Count Color', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_menu_cart',
+				'settings' 				=> 'ocean_woo_menu_bag_icon_hover_count_color',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_bag_style',
+			) ) );
+
+			/**
 			 * Display
 			 */
 			$wp_customize->add_setting( 'ocean_woo_menu_icon_display', array(
@@ -309,6 +414,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'icon_count' 		=> esc_html__( 'Icon And Cart Count', 'oceanwp' ),
 					'icon_count_total' 	=> esc_html__( 'Icon And Cart Count + Total', 'oceanwp' ),
 				),
+				'active_callback' 		=> 'oceanwp_cac_hasnt_woo_bag_style',
 			) ) );
 
 			/**
@@ -365,6 +471,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'settings' 				=> 'ocean_woo_menu_icon',
 				'priority' 				=> 10,
 			    'choices' 				=> oceanwp_get_cart_icons(),
+				'active_callback' 		=> 'oceanwp_cac_hasnt_woo_bag_style',
 			) ) );
 
 			/**
@@ -382,6 +489,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'section'  				=> 'ocean_woocommerce_menu_cart',
 				'settings' 				=> 'ocean_woo_menu_custom_icon',
 				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_hasnt_woo_bag_style',
 			) ) );
 
 			/**
@@ -415,6 +523,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
+				'active_callback' 		=> 'oceanwp_cac_hasnt_woo_bag_style',
 			) ) );
 
 			/**
@@ -449,6 +558,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
+				'active_callback' 		=> 'oceanwp_cac_hasnt_woo_bag_style',
 			) ) );
 
 			/**
@@ -1468,7 +1578,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 * Elements Positioning
 			 */
 			$wp_customize->add_setting( 'oceanwp_woo_summary_elements_positioning', array(
-				'default' 				=> array( 'title', 'rating', 'price', 'excerpt', 'quantity-button', 'meta' ),
+				'default' 				=> array( 'title', 'rating', 'price', 'excerpt', 'quantity_button', 'meta' ),
 				'sanitize_callback' 	=> 'oceanwp_sanitize_multi_choices',
 			) );
 
@@ -1482,7 +1592,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'rating'       		=> esc_html__( 'Rating', 'oceanwp' ),
 					'price' 			=> esc_html__( 'Price', 'oceanwp' ),
 					'excerpt' 			=> esc_html__( 'Excerpt', 'oceanwp' ),
-					'quantity-button' 	=> esc_html__( 'Quantity & Add To Cart', 'oceanwp' ),
+					'quantity_button' 	=> esc_html__( 'Quantity & Add To Cart', 'oceanwp' ),
 					'meta' 				=> esc_html__( 'Product Meta', 'oceanwp' ),
 				),
 			) ) );
@@ -1520,6 +1630,48 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Image Width
+			 */
+			$wp_customize->add_setting( 'ocean_woo_product_image_width', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '52',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woo_product_image_width', array(
+				'label'	   				=> esc_html__( 'Image Width (%)', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_single',
+				'settings' 				=> 'ocean_woo_product_image_width',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 100,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
+			 * Summary Width
+			 */
+			$wp_customize->add_setting( 'ocean_woo_product_summary_width', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '44',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_woo_product_summary_width', array(
+				'label'	   				=> esc_html__( 'Summary Width (%)', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_single',
+				'settings' 				=> 'ocean_woo_product_summary_width',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 100,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
 			 * Thumbnails Layout
 			 */
 			$wp_customize->add_setting( 'ocean_woo_product_thumbs_layout', array(
@@ -1537,6 +1689,28 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'choices' 				=> array(
 					'horizontal' 		=> esc_html__( 'Horizontal', 'oceanwp' ),
 					'vertical' 			=> esc_html__( 'Vertical', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Add To Cart Button Style
+			 */
+			$wp_customize->add_setting( 'ocean_woo_product_addtocart_style', array(
+				'transport' 			=> 'postMessage',
+				'default' 				=> 'normal',
+				'sanitize_callback' 	=> 'sanitize_text_field',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_product_addtocart_style', array(
+				'label'	   				=> esc_html__( 'Add To Cart Button Style', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_woocommerce_single',
+				'settings' 				=> 'ocean_woo_product_addtocart_style',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'normal' 		=> esc_html__( 'Normal', 'oceanwp' ),
+					'big' 			=> esc_html__( 'Big', 'oceanwp' ),
+					'very-big' 		=> esc_html__( 'Very Big', 'oceanwp' ),
 				),
 			) ) );
 
@@ -1571,6 +1745,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'choices' 				=> array(
 					'horizontal' 		=> esc_html__( 'Horizontal', 'oceanwp' ),
 					'vertical' 			=> esc_html__( 'Vertical', 'oceanwp' ),
+					'section' 			=> esc_html__( 'Section', 'oceanwp' ),
 				),
 			) ) );
 
@@ -4451,6 +4626,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$menu_icon_center_vertically_tablet					= get_theme_mod( 'ocean_woo_menu_icon_center_vertically_tablet' );
 			$menu_icon_center_vertically_mobile					= get_theme_mod( 'ocean_woo_menu_icon_center_vertically_mobile' );
 			$cart_dropdown_width 								= get_theme_mod( 'ocean_woo_cart_dropdown_width', '350' );
+			$woo_menu_bag_icon_color 							= get_theme_mod( 'ocean_woo_menu_bag_icon_color', '#333333' );
+			$woo_menu_bag_icon_hover_color 						= get_theme_mod( 'ocean_woo_menu_bag_icon_hover_color', '#13aff0' );
+			$woo_menu_bag_icon_count_color 						= get_theme_mod( 'ocean_woo_menu_bag_icon_count_color', '#333333' );
+			$woo_menu_bag_icon_hover_count_color 				= get_theme_mod( 'ocean_woo_menu_bag_icon_hover_count_color', '#ffffff' );
 			$cart_dropdown_bg 									= get_theme_mod( 'ocean_woo_cart_dropdown_bg', '#ffffff' );
 			$cart_dropdown_borders 								= get_theme_mod( 'ocean_woo_cart_dropdown_borders', '#e6e6e6' );
 			$cart_dropdown_link_color 							= get_theme_mod( 'ocean_woo_cart_dropdown_link_color', '#333333' );
@@ -4479,6 +4658,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 		
 			// Styling vars
 			$infinite_scroll_spinners_color 					= get_theme_mod( 'ocean_woo_infinite_scroll_spinners_color', '#333333' );
+			$woo_product_image_width 							= get_theme_mod( 'ocean_woo_product_image_width', '52' );
+			$woo_product_summary_width 							= get_theme_mod( 'ocean_woo_product_summary_width', '44' );
 			$floating_bar_bg 									= get_theme_mod( 'ocean_woo_floating_bar_bg', '#2c2c2c' );
 			$floating_bar_title_color 							= get_theme_mod( 'ocean_woo_floating_bar_title_color', '#ffffff' );
 			$floating_bar_price_color 							= get_theme_mod( 'ocean_woo_floating_bar_price_color', '#ffffff' );
@@ -4677,12 +4858,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Menu cart icon size tablet
 			if ( ! empty( $menu_icon_size_tablet ) ) {
-				$css .= '@media (max-width: 768px){#oceanwp-mobile-menu-icon a.wcmenucart{font-size:'. $menu_icon_size_tablet .'px;}}';
+				$css .= '@media (max-width: 768px){.oceanwp-mobile-menu-icon a.wcmenucart{font-size:'. $menu_icon_size_tablet .'px;}}';
 			}
 
 			// Menu cart icon size mobile
 			if ( ! empty( $menu_icon_size_mobile ) ) {
-				$css .= '@media (max-width: 480px){#oceanwp-mobile-menu-icon a.wcmenucart{font-size:'. $menu_icon_size_mobile .'px;}}';
+				$css .= '@media (max-width: 480px){.oceanwp-mobile-menu-icon a.wcmenucart{font-size:'. $menu_icon_size_mobile .'px;}}';
 			}
 
 			// Menu cart icon center vertically
@@ -4692,17 +4873,39 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Menu cart icon center vertically tablet
 			if ( ! empty( $menu_icon_center_vertically_tablet ) ) {
-				$css .= '@media (max-width: 768px){#oceanwp-mobile-menu-icon a.wcmenucart{top:'. $menu_icon_center_vertically_tablet .'px;}}';
+				$css .= '@media (max-width: 768px){.oceanwp-mobile-menu-icon a.wcmenucart{top:'. $menu_icon_center_vertically_tablet .'px;}}';
 			}
 
 			// Menu cart icon center vertically mobile
 			if ( ! empty( $menu_icon_center_vertically_mobile ) ) {
-				$css .= '@media (max-width: 480px){#oceanwp-mobile-menu-icon a.wcmenucart{top:'. $menu_icon_center_vertically_mobile .'px;}}';
+				$css .= '@media (max-width: 480px){.oceanwp-mobile-menu-icon a.wcmenucart{top:'. $menu_icon_center_vertically_mobile .'px;}}';
 			}
 
 			// Cart dropdown width
 			if ( ! empty( $cart_dropdown_width ) && '350' != $cart_dropdown_width ) {
 				$css .= '.current-shop-items-dropdown{width:'. $cart_dropdown_width .'px;}';
+			}
+
+			// Bag icon style color
+			if ( ! empty( $woo_menu_bag_icon_color ) && '#333333' != $woo_menu_bag_icon_color ) {
+				$css .= '.wcmenucart-cart-icon .wcmenucart-count{border-color:'. $woo_menu_bag_icon_color .';}';
+				$css .= '.wcmenucart-cart-icon .wcmenucart-count:after{border-color:'. $woo_menu_bag_icon_color .';}';
+			}
+
+			// Bag icon style hover color
+			if ( ! empty( $woo_menu_bag_icon_hover_color ) && '#13aff0' != $woo_menu_bag_icon_hover_color ) {
+				$css .= '.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count, .show-cart .wcmenucart-cart-icon .wcmenucart-count{background-color:'. $woo_menu_bag_icon_hover_color .'; border-color:'. $woo_menu_bag_icon_hover_color .';}';
+				$css .= '.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count:after, .show-cart .wcmenucart-cart-icon .wcmenucart-count:after{border-color:'. $woo_menu_bag_icon_hover_color .';}';
+			}
+
+			// Bag icon style count color
+			if ( ! empty( $woo_menu_bag_icon_count_color ) && '#333333' != $woo_menu_bag_icon_count_color ) {
+				$css .= '.wcmenucart-cart-icon .wcmenucart-count, .woo-menu-icon .wcmenucart-total span{color:'. $woo_menu_bag_icon_count_color .';}';
+			}
+
+			// Bag icon style hover count color
+			if ( ! empty( $woo_menu_bag_icon_hover_count_color ) && '#ffffff' != $woo_menu_bag_icon_hover_count_color ) {
+				$css .= '.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count, .show-cart .wcmenucart-cart-icon .wcmenucart-count{color:'. $woo_menu_bag_icon_hover_count_color .';}';
 			}
 
 			// Cart dropdown background
@@ -4833,6 +5036,16 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Infinite scroll spinners color
 			if ( ! empty( $infinite_scroll_spinners_color ) && '#333333' != $infinite_scroll_spinners_color ) {
 				$css .= '.woocommerce .loader-ellips__dot{background-color:'. $infinite_scroll_spinners_color .';}';
+			}
+
+			// Product image width
+			if ( ! empty( $woo_product_image_width ) && '52' != $woo_product_image_width ) {
+				$css .= '.woocommerce div.product div.images, .woocommerce.content-full-width div.product div.images{width:'. $woo_product_image_width .'%;}';
+			}
+
+			// Product summary width
+			if ( ! empty( $woo_product_summary_width ) && '44' != $woo_product_summary_width ) {
+				$css .= '.woocommerce div.product div.summary, .woocommerce.content-full-width div.product div.summary{width:'. $woo_product_summary_width .'%;}';
 			}
 
 			// Add floating bar background

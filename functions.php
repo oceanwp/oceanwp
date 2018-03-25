@@ -117,8 +117,14 @@ class OCEANWP_Theme_Class {
 			// Add schema markup to the authors post link
 			add_filter( 'the_author_posts_link', array( 'OCEANWP_Theme_Class', 'the_author_posts_link' ) );
 
+			// Add support for Elementor Pro locations
+			add_action( 'elementor/theme/register_locations', array( 'OCEANWP_Theme_Class', 'register_elementor_locations' ) );
+
 			// Remove the default lightbox script for the beaver builder plugin
 			add_filter( 'fl_builder_override_lightbox', array( 'OCEANWP_Theme_Class', 'remove_bb_lightbox' ) );
+
+			// Add meta tags
+			add_filter( 'wp_head', array( 'OCEANWP_Theme_Class', 'meta_tags' ), 1 );
 
 		}
 
@@ -160,8 +166,7 @@ class OCEANWP_Theme_Class {
 	public static function include_functions() {
 		$dir = OCEANWP_INC_DIR;
 		require_once ( $dir .'helpers.php' );
-		require_once ( $dir .'deprecated.php' );
-		require_once ( $dir .'excerpt.php' );
+		require_once ( $dir .'header-content.php' );
 		require_once ( $dir .'customizer/controls/typography/webfonts.php' );
 		require_once ( $dir .'walker/init.php' );
 		require_once ( $dir .'walker/menu-walker.php' );
@@ -911,13 +916,189 @@ class OCEANWP_Theme_Class {
 	}
 
 	/**
+	 * Add support for Elementor Pro locations
+	 *
+	 * @since 1.5.6
+	 */
+	public static function register_elementor_locations( $elementor_theme_manager ) {
+		$elementor_theme_manager->register_all_core_location();
+	}
+
+	/**
 	 * Add schema markup to the authors post link
 	 *
 	 * @since 1.1.5
 	 */
 	public static function remove_bb_lightbox() {
-
 		return true;
+	}
+
+	/**
+	 * Get meta tags
+	 *
+	 * @since 1.5.6
+	 */
+	public static function opengraph_tag( $attr, $property, $content ) {
+		echo '<meta ', esc_attr( $attr ), '="', esc_attr( $property ), '" content="', esc_attr( $content ), '" />', "\n";
+	}
+
+	/**
+	 * Add meta tags
+	 *
+	 * @since 1.5.6
+	 */
+	public static function meta_tags() {
+
+		// Return if disabled or if Yoast SEO enabled as they have their own meta tags
+		if ( false == get_theme_mod( 'ocean_opengraph', true )
+			|| defined( 'WPSEO_VERSION' ) ) {
+			return;
+		}
+
+		// Facebook URL
+		$facebook_url = get_theme_mod( 'ocean_facebook_page_url' );
+
+		// Disable Jetpack's Open Graph tags
+		add_filter( 'jetpack_enable_opengraph', '__return_false', 99 );
+		add_filter( 'jetpack_enable_open_graph', '__return_false', 99 );
+		add_filter( 'jetpack_disable_twitter_cards', '__return_true', 99 );
+
+		// Type
+		if ( is_front_page() || is_home() ) {
+			$type = 'website';
+		} else if ( is_singular() ) {
+			$type = 'article';
+		} else {
+			// We use "object" for archives etc. as article doesn't apply there.
+			$type = 'object';
+		}
+
+		// Title
+		if ( is_singular() ) {
+			$title = get_the_title();
+		} else {
+			$title = oceanwp_title();
+		}
+
+		// Description
+		if ( is_category() || is_tag() || is_tax() ) {
+			$description = strip_shortcodes( wp_strip_all_tags( term_description() ) );
+		} else {
+			$description = html_entity_decode( htmlspecialchars_decode( oceanwp_excerpt( 40 ) ) );
+		}
+
+		// Image
+		$image = '';
+		$has_img = false;
+		if ( OCEANWP_WOOCOMMERCE_ACTIVE
+			&& is_product_category() ) {
+		    global $wp_query;
+		    $cat = $wp_query->get_queried_object();
+		    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+		    $get_image = wp_get_attachment_url( $thumbnail_id );
+		    if ( $get_image ) {
+				$image = $get_image;
+				$has_img = true;
+			}
+		} else {
+			$get_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+			$image = $get_image[0];
+			$has_img = true;
+		}
+
+		// Post author
+		if ( $facebook_url ) {
+			$author = $facebook_url;
+		}
+
+		// Facebook publisher URL
+		if ( ! empty( $facebook_url ) ) {
+			$publisher = $facebook_url;
+		}
+
+		// Facebook APP ID
+		$facebook_appid = get_theme_mod( 'ocean_facebook_appid' );
+		if ( ! empty( $facebook_appid ) ) {
+			$fb_app_id = $facebook_appid;
+		}
+
+		// Twiiter handle
+		$twitter_handle = '@' . str_replace( '@' , '' , get_theme_mod( 'ocean_twitter_handle' ) );
+
+		// Output
+		$output = self::opengraph_tag( 'property', 'og:type', trim( $type ) );
+		$output .= self::opengraph_tag( 'property', 'og:title', trim( $title ) );
+
+		if ( isset( $description ) && ! empty( $description ) ) {
+			$output .= self::opengraph_tag( 'property', 'og:description', trim( $description ) );
+		}
+
+		if ( has_post_thumbnail( oceanwp_post_id() ) && true == $has_img ) {
+			$output .= self::opengraph_tag( 'property', 'og:image', trim( $image ) );
+			$output .= self::opengraph_tag( 'property', 'og:image:width', absint( $get_image[1] ) );
+			$output .= self::opengraph_tag( 'property', 'og:image:height', absint( $get_image[2] ) );
+		}
+
+		$output .= self::opengraph_tag( 'property', 'og:url', trim( get_permalink() ) );
+		$output .= self::opengraph_tag( 'property', 'og:site_name', trim( get_bloginfo( 'name' ) ) );
+
+		if ( is_singular() && ! is_front_page() ) {
+
+			if ( isset( $author ) && ! empty( $author ) ) {
+				$output .= self::opengraph_tag( 'property', 'article:author', trim( $author ) );
+			}
+
+			if ( is_singular( 'post' ) ) {
+				$output .= self::opengraph_tag( 'property', 'article:published_time', trim( get_post_time( 'c' ) ) );
+				$output .= self::opengraph_tag( 'property', 'article:modified_time', trim( get_post_modified_time( 'c' ) ) );
+				$output .= self::opengraph_tag( 'property', 'og:updated_time', trim( get_post_modified_time( 'c' ) ) );
+			}
+
+		}
+
+		if ( is_singular() ) {
+
+			$tags = get_the_tags();
+			if ( ! is_wp_error( $tags ) && ( is_array( $tags ) && $tags !== array() ) ) {
+				foreach ( $tags as $tag ) {
+					$output .= self::opengraph_tag( 'property', 'article:tag', trim( $tag->name ) );
+				}
+			}
+
+			$terms = get_the_category();
+			if ( ! is_wp_error( $terms ) && ( is_array( $terms ) && $terms !== array() ) ) {
+				// We can only show one section here, so we take the first one.
+				$output .= self::opengraph_tag( 'property', 'article:section', trim( $terms[0]->name ) );
+			}
+
+		}
+
+		if ( isset( $publisher ) && ! empty( $publisher ) ) {
+			$output .= self::opengraph_tag( 'property', 'article:publisher', trim( $publisher ) );
+		}
+
+		if ( isset( $fb_app_id ) && ! empty( $fb_app_id ) ) {
+			$output .= self::opengraph_tag( 'property', 'fb:app_id', trim( $fb_app_id ) );
+		}
+
+		// Twitter
+		$output .= self::opengraph_tag( 'name', 'twitter:card', 'summary_large_image' );
+		$output .= self::opengraph_tag( 'name', 'twitter:title', trim( $title ) );
+
+		if ( isset( $description ) && ! empty( $description ) ) {
+			$output .= self::opengraph_tag( 'name', 'twitter:description', trim( $description ) );
+		}
+
+		if ( has_post_thumbnail( get_the_ID() ) && true == $has_img ) {
+			$output .= self::opengraph_tag( 'name', 'twitter:image', trim( $image ) );
+		}
+
+		if ( isset( $twitter_handle ) && ! empty( $twitter_handle ) ) {
+			$output .= self::opengraph_tag( 'name', 'twitter:site', trim( $twitter_handle ) );
+			$output .= self::opengraph_tag( 'name', 'twitter:creator', trim( $twitter_handle ) );
+		}
+
+		echo $output;
 
 	}
 

@@ -117,7 +117,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				),
 				'menu' 						=> array(
 					'label' 				=> esc_html__( 'Main Menu', 'oceanwp' ),
-					'target' 				=> '#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#oceanwp-mobile-menu-icon a',
+					'target' 				=> '#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a',
 					'exclude' 				=> array( 'font-color', 'line-height' ),
 					'defaults' 				=> array(
 						'font-size' 		=> '13',
@@ -266,6 +266,23 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				'priority' 			=> 1,
 				'panel' 			=> 'ocean_typography_panel',
 			) );
+
+			/**
+			 * Disable Google Fonts
+			 */
+			$wp_customize->add_setting( 'ocean_disable_google_font', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_disable_google_font', array(
+				'label'	   				=> esc_html__( 'Disable Google Fonts', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_typography_general',
+				'settings' 				=> 'ocean_disable_google_font',
+				'priority' 				=> 10,
+			) ) );
 
 			/**
 			 * Font Subsets

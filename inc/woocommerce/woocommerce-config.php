@@ -201,8 +201,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			add_filter( 'osp_display_side_panel', array( $this, 'distraction_free' ), 11 );
 			add_filter( 'ocean_display_page_header', array( $this, 'distraction_free' ), 11 );
 			add_filter( 'ocean_display_footer_widgets', array( $this, 'distraction_free' ), 11 );
-			add_filter( 'ofc_display_footer_callout', array( $this, 'distraction_free' ), 11 );
 			add_filter( 'ocean_display_scroll_up_button', array( $this, 'distraction_free' ), 11 );
+			add_filter( 'osh_header_sticky_logo', array( $this, 'distraction_free' ), 11 );
+			add_filter( 'ofc_display_footer_callout', array( $this, 'distraction_free' ), 11 );
 
 			// Multi-step checkout
 			if ( true == get_theme_mod( 'ocean_woo_multi_step_checkout', false ) ) {
@@ -306,6 +307,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			if ( defined( 'ELEMENTOR_WOOSTORE__FILE__' ) ) {
 				remove_action( 'woocommerce_after_shop_loop_item_title', 'woostore_output_product_excerpt', 35 );
 				add_action( 'woocommerce_after_shop_loop_item', 'woostore_output_product_excerpt', 21 );
+			}
+
+			if ( class_exists( 'WooCommerce_Germanized' ) ) {
+				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_single_shipping_costs_info', 7 );
+				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_single_tax_info', 6 );
+				remove_action( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_legal_info', 12 );
+				add_action( 'ocean_after_archive_product_inner', array( $this, 'woocommerce_germanized' ) );
+				add_action( 'ocean_after_single_product_price', 'woocommerce_gzd_template_single_legal_info' );
 			}
 
 		}
@@ -1393,12 +1402,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			global $product, $woocommerce_loop;
 
 			// Vars
-			$content_alignment = get_theme_mod( 'ocean_woo_product_entry_content_alignment', 'center' );
-			$content_alignment = $content_alignment ? $content_alignment : 'center';
-			$thumbs_layout = get_theme_mod( 'ocean_woo_product_thumbs_layout', 'horizontal' );
-			$thumbs_layout = $thumbs_layout ? $thumbs_layout : 'horizontal';
-			$tabs_layout = get_theme_mod( 'ocean_woo_product_tabs_layout', 'horizontal' );
-			$tabs_layout = $tabs_layout ? $tabs_layout : 'horizontal';
+			$content_alignment 	= get_theme_mod( 'ocean_woo_product_entry_content_alignment', 'center' );
+			$content_alignment 	= $content_alignment ? $content_alignment : 'center';
+			$thumbs_layout 		= get_theme_mod( 'ocean_woo_product_thumbs_layout', 'horizontal' );
+			$thumbs_layout 		= $thumbs_layout ? $thumbs_layout : 'horizontal';
+			$tabs_layout 		= get_theme_mod( 'ocean_woo_product_tabs_layout', 'horizontal' );
+			$tabs_layout 		= $tabs_layout ? $tabs_layout : 'horizontal';
+			$btn_style 			= get_theme_mod( 'ocean_woo_product_addtocart_style', 'normal' );
+			$btn_style 			= $btn_style ? $btn_style : 'normal';
 
 			// Product entries
 			if ( $product && ! empty( $woocommerce_loop['columns'] ) ) {
@@ -1424,6 +1435,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 				// Thumbnails layout
 				$classes[] = 'owp-thumbs-layout-' . $thumbs_layout;
+
+				// Add to cart button style
+				$classes[] = 'owp-btn-' . $btn_style;
 
 				// Tabs layout
 				$classes[] = 'owp-tabs-layout-' . $tabs_layout;
@@ -1523,10 +1537,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				'.woocommerce .widget_layered_nav li.chosen a:before',
 				'#owp-checkout-timeline.arrow .active .timeline-wrapper:before' => array( 'top', 'bottom' ),
 				'#owp-checkout-timeline.arrow .active .timeline-wrapper:after' => array( 'left', 'right' ),
-				'.woo-cart-shortcode:hover .wcmenucart-cart-icon .wcmenucart-number',
-				'.woo-cart-shortcode:hover .wcmenucart-cart-icon .wcmenucart-number:after',
-				'.show-cart .wcmenucart-cart-icon .wcmenucart-number',
-				'.show-cart .wcmenucart-cart-icon .wcmenucart-number:after',
+				'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count',
+				'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count:after',
+				'.show-cart .wcmenucart-cart-icon .wcmenucart-count',
+				'.show-cart .wcmenucart-cart-icon .wcmenucart-count:after',
 			), $borders );
 		}
 
@@ -1551,8 +1565,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				'.woocommerce .widget_layered_nav li.chosen a ~ .count',
 				'.woocommerce .widget_layered_nav li.chosen a:before',
 				'#owp-checkout-timeline .active .timeline-wrapper',
-				'.woo-cart-shortcode:hover .wcmenucart-cart-icon .wcmenucart-number',
-				'.show-cart .wcmenucart-cart-icon .wcmenucart-number',
+				'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count',
+				'.show-cart .wcmenucart-cart-icon .wcmenucart-count',
 			), $backgrounds );
 		}
 
@@ -1732,6 +1746,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Add style class
 			$classes[] = 'wcmenucart-toggle-'. $style;
 
+			// If bag style
+			if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) {
+				$classes[] = 'bag-style';
+			}
+
 			// Cart style
 			if ( 'compact' != $cart_style ) {
 				$classes[] = $cart_style;
@@ -1779,7 +1798,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function menu_cart_icon_fragments( $fragments ) {
 			ob_start();
 			oceanwp_wcmenucart_menu_item();
-			$fragments['a.wcmenucart'] = ob_get_clean();
+			$fragments['li.woo-menu-icon a.wcmenucart, .oceanwp-mobile-menu-icon a.wcmenucart'] = ob_get_clean();
 
 			return $fragments;
 		}
@@ -1984,6 +2003,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				remove_action( 'woocommerce_single_product_summary', array( $this, 'single_product_content' ), 10 );
 				add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 			}
+		}
+
+		/**
+		 * Compatibility with WooCommerce Germanized.
+		 *
+		 * @since 1.5.6
+		 */
+		public function woocommerce_germanized() {
+			echo '<li class="wc-gzd">';
+				wc_get_template( 'single-product/tax-info.php' );
+				wc_get_template( 'single-product/shipping-costs-info.php' );
+			echo '</li>';
 		}
 	}
 
