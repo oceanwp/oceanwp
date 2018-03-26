@@ -68,8 +68,8 @@ blockquote { padding-right: 20px; padding-left: 0; border-right-width: 3px; bord
 #site-logo { float: right; }
 
 /* Top Menu header */
-#site-header.top-header .header-top .left { float: right; }
-#site-header.top-header .header-top .right { float: left; }
+#site-header.top-header .header-top .left:not(.oceanwp-mobile-menu-icon) { float: right; }
+#site-header.top-header .header-top .right:not(.oceanwp-mobile-menu-icon) { float: left; }
 #site-header.top-header #site-navigation-wrap { right: -15px !important; left: auto !important; }
 
 /* Full Screen header */

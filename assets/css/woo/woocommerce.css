@@ -4929,12 +4929,12 @@ Woo Responsive
   }
   .woocommerce div.product div.images {
     float: none;
-    width: 100%;
+    width: 100% !important;
     text-align: center;
   }
   .woocommerce div.product div.summary {
     float: none;
-    width: 100%;
+    width: 100% !important;
   }
   .woocommerce div.product .woocommerce-tabs ul.tabs li {
     display: block;

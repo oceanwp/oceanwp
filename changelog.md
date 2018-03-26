@@ -1,5 +1,14 @@
 # OceanWP Changelog
 
+### *2018.03.26* - 1.5.8:
+* **Fixed** - Add to cart button missing.
+* **Fixed** - Mobile menu with Top header style.
+* **Fixed** - Double cart icon with the Medium header style.
+
+### *2018.03.26* - 1.5.7:
+* **Fixed** - Blank page on the Medium header style.
+* **Fixed** - Single product image and summary width on mobile view.
+
 ### *2018.03.25* - 1.5.6 (note: after the update don't forget to clear your cache and if you have disabled scripts, go to Theme Panel > Scripts & Styles, click Save Changes, then clear your cache):
 * **Added** - New setting the Header > Mobile Menu section of the customizer to choose where you want to place the logo / cart and mobile link, so now, you will be able to add your cart icon to the left, the logo centered and the mobile icon to the right.
 * **Added** - New cart icon style "Bag Style", it is the same style as the cart icon shortcode.

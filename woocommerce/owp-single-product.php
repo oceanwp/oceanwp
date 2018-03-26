@@ -38,7 +38,8 @@ foreach ( $elements as $element ) {
 	}
 
 	// Quantity & Add to cart button
-	if ( 'quantity_button' == $element ) {
+	if ( 'quantity-button' == $element
+		|| 'quantity_button' == $element ) {
 		woocommerce_template_single_add_to_cart();
 	}
 

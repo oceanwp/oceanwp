@@ -177,7 +177,7 @@ if ( ! function_exists( 'oceanwp_woo_summary_elements_positioning' ) ) {
 	function oceanwp_woo_summary_elements_positioning() {
 
 		// Default sections
-		$sections = array( 'title', 'rating', 'price', 'excerpt', 'quantity_button', 'meta' );
+		$sections = array( 'title', 'rating', 'price', 'excerpt', 'quantity-button', 'meta' );
 
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'oceanwp_woo_summary_elements_positioning', $sections );

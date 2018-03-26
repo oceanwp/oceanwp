@@ -1578,7 +1578,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 * Elements Positioning
 			 */
 			$wp_customize->add_setting( 'oceanwp_woo_summary_elements_positioning', array(
-				'default' 				=> array( 'title', 'rating', 'price', 'excerpt', 'quantity_button', 'meta' ),
+				'default' 				=> array( 'title', 'rating', 'price', 'excerpt', 'quantity-button', 'meta' ),
 				'sanitize_callback' 	=> 'oceanwp_sanitize_multi_choices',
 			) );
 
@@ -1592,7 +1592,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'rating'       		=> esc_html__( 'Rating', 'oceanwp' ),
 					'price' 			=> esc_html__( 'Price', 'oceanwp' ),
 					'excerpt' 			=> esc_html__( 'Excerpt', 'oceanwp' ),
-					'quantity_button' 	=> esc_html__( 'Quantity & Add To Cart', 'oceanwp' ),
+					'quantity-button' 	=> esc_html__( 'Quantity & Add To Cart', 'oceanwp' ),
 					'meta' 				=> esc_html__( 'Product Meta', 'oceanwp' ),
 				),
 			) ) );

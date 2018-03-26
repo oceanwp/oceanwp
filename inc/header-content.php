@@ -43,8 +43,9 @@ if ( OCEANWP_WOOCOMMERCE_ACTIVE
 	add_action( 'ocean_header_inner_right_content', 'oceanwp_mobile_cart_icon', 99 );
 }
 
-if ( 'medium' == $header_style
-	|| 'vertical' == $header_style ) {
+if ( OCEANWP_WOOCOMMERCE_ACTIVE
+	&& ( 'medium' == $header_style
+		|| 'vertical' == $header_style ) ) {
 	add_action( 'ocean_before_mobile_icon_inner', 'oceanwp_mobile_cart_icon_medium_header', 10 );
 }
 

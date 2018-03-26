@@ -115,12 +115,12 @@ Woo Responsive
 			div {
 				&.images {
 					float: none;
-					width: 100%;
+					width: 100% !important;
 					text-align: center;
 				}
 				&.summary {
 					float: none;
-					width: 100%;
+					width: 100% !important;
 				}
 			}
 			.woocommerce-tabs ul.tabs li {

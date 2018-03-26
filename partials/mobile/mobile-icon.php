@@ -88,7 +88,9 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		// Cart icon
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
 			&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_visibility', 'default' )
-			&& 'one' == get_theme_mod( 'ocean_mobile_elements_positioning', 'one' ) ) {
+			&& 'one' == get_theme_mod( 'ocean_mobile_elements_positioning', 'one' )
+			&& ( 'medium' != oceanwp_header_style()
+				|| 'vertical' != oceanwp_header_style() ) ) {
 			echo oceanwp_wcmenucart_menu_item();
 		} ?>
 
