@@ -1,5 +1,11 @@
 # OceanWP Changelog
 
+### *2018.03.27* - 1.5.9:
+* **Fixed** - Logo issue on the Medium and Vertical header style if custom mobile header.
+* **Fixed** - Hamburger icon missing on the Vertical header style if a template is used.
+* **Fixed** - Logo and mobile icon missing on the Vertical header style if a template is used.
+* **Fixed** - Hover button background that was not taken into account when general styling hover color was set.
+
 ### *2018.03.26* - 1.5.8:
 * **Fixed** - Add to cart button missing.
 * **Fixed** - Mobile menu with Top header style.

@@ -43,10 +43,14 @@ if ( OCEANWP_WOOCOMMERCE_ACTIVE
 	add_action( 'ocean_header_inner_right_content', 'oceanwp_mobile_cart_icon', 99 );
 }
 
-if ( OCEANWP_WOOCOMMERCE_ACTIVE
-	&& ( 'medium' == $header_style
-		|| 'vertical' == $header_style ) ) {
+if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 	add_action( 'ocean_before_mobile_icon_inner', 'oceanwp_mobile_cart_icon_medium_header', 10 );
+}
+
+if ( OCEANWP_WOOCOMMERCE_ACTIVE
+	&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_visibility', 'default' )
+	&& 'one' == get_theme_mod( 'ocean_mobile_elements_positioning', 'one' ) ) {
+	add_action( 'ocean_before_mobile_icon_inner', 'oceanwp_mobile_cart_icon_not_medium_header', 10 );
 }
 
 /**
@@ -67,9 +71,9 @@ if ( ! function_exists( 'oceanwp_mobile_cart_icon' ) ) {
 		// Position
 		$position = get_theme_mod( 'ocean_mobile_elements_positioning', 'one' );
 		if ( 'two' == $position ) {
-			$classes[] = 'left';
+			$classes[] = 'mobile-left';
 		} else if ( 'three' == $position ) {
-			$classes[] = 'right';
+			$classes[] = 'mobile-right';
 		}
 
 		// Turn classes into space seperated string
@@ -157,6 +161,35 @@ if ( ! function_exists( 'oceanwp_mobile_icon' ) ) {
 if ( ! function_exists( 'oceanwp_mobile_cart_icon_medium_header' ) ) {
 
 	function oceanwp_mobile_cart_icon_medium_header() {
+		$header_style = oceanwp_header_style();
+
+		// Return if it is not medium or vertical header styles
+		if ( 'medium' != $header_style
+			&& 'vertical' != $header_style ) {
+			return;
+		}
+
+		echo oceanwp_wcmenucart_menu_item();
+
+	}
+
+}
+
+/**
+ * Mobile cart icon if it is not the Medium header style
+ *
+ * @since 1.5.6
+ */
+if ( ! function_exists( 'oceanwp_mobile_cart_icon_not_medium_header' ) ) {
+
+	function oceanwp_mobile_cart_icon_not_medium_header() {
+		$header_style = oceanwp_header_style();
+
+		// Return if medium or vertical header styles
+		if ( 'medium' == $header_style
+			|| 'vertical' == $header_style ) {
+			return;
+		}
 
 		echo oceanwp_wcmenucart_menu_item();
 

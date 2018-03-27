@@ -64,9 +64,9 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 	// Position
 	if ( 'three' == get_theme_mod( 'ocean_mobile_elements_positioning', 'one' ) ) {
-		$classes[] = 'left';
+		$classes[] = 'mobile-left';
 	} else {
-		$classes[] = 'right';
+		$classes[] = 'mobile-right';
 	}
 
 	// Turn classes into space seperated string
@@ -83,16 +83,6 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		<?php } ?>
 
 		<?php do_action( 'ocean_before_mobile_icon_inner' ); ?>
-
-		<?php
-		// Cart icon
-		if ( OCEANWP_WOOCOMMERCE_ACTIVE
-			&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_visibility', 'default' )
-			&& 'one' == get_theme_mod( 'ocean_mobile_elements_positioning', 'one' )
-			&& ( 'medium' != oceanwp_header_style()
-				|| 'vertical' != oceanwp_header_style() ) ) {
-			echo oceanwp_wcmenucart_menu_item();
-		} ?>
 
 		<a href="#" class="mobile-menu">
 			<?php

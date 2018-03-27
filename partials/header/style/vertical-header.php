@@ -47,6 +47,11 @@ if ( ! empty( $bottom_template ) ) {
 // Get classes
 $classes = array( 'clr' );
 
+// If template
+if ( ! empty( $template ) ) {
+    $classes[] = 'has-template';
+}
+
 // Add container class
 if ( true != get_theme_mod( 'ocean_header_full_width', false ) ) {
     $classes[] = 'container';
@@ -58,6 +63,8 @@ $classes = implode( ' ', $classes ); ?>
 <?php do_action( 'ocean_before_header_inner' ); ?>
 
 <div id="site-header-inner" class="<?php echo esc_attr( $classes ); ?>">
+
+    <?php get_template_part( 'partials/header/logo' ); ?>
 
     <?php
     // If template
@@ -86,8 +93,6 @@ $classes = implode( ' ', $classes ); ?>
         }
 
     } else { ?>
-
-        <?php get_template_part( 'partials/header/logo' ); ?>
 
         <?php get_template_part( 'partials/header/nav' ); ?>
 
@@ -131,12 +136,12 @@ $classes = implode( ' ', $classes ); ?>
 
         } ?>
 
-        <?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
-
-        <?php get_template_part( 'partials/header/style/vertical-header-toggle' ); ?>
-
     <?php
     } ?>
+
+    <?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
+
+    <?php get_template_part( 'partials/header/style/vertical-header-toggle' ); ?>
 
 </div>
 

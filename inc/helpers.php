@@ -918,8 +918,8 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 
 			// Logo position
 			$logo_position  = get_theme_mod( 'ocean_vertical_header_logo_position', 'center-logo' );
-			$logo_position  = $logo_position ? $logo_position : 'center-logo';
-			$classes[] 		= $logo_position;
+			$logo_position  = $logo_position ? $logo_position : 'vh-center-logo';
+			$classes[] 		= 'vh-'. $logo_position;
 
 		}
 
@@ -941,7 +941,8 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 
 		// Mobile elements positionning
 		if ( ( 'medium' != $header_style
-				|| 'vertical' != $header_style )
+				&& 'vertical' != $header_style
+				&& 'top' != $header_style )
 			&& 'one' != get_theme_mod( 'ocean_mobile_elements_positioning', 'one' ) ) {
 			$classes[] = 'center-logo';
 		}

@@ -5017,10 +5017,11 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 				$css .= '@media (max-width: '. $mobile_menu_breakpoint .'px) {
 					#top-bar-nav, #site-navigation-wrap, .oceanwp-social-menu, .after-header-content {display: none;}
-					.center-logo:not(.vertical-header) #site-logo { float: none; position: absolute; left: 50%; padding: 0; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+					.center-logo #site-logo { float: none; position: absolute; left: 50%; padding: 0; -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 					#site-header.center-header #site-logo, .oceanwp-mobile-menu-icon, #oceanwp-cart-sidebar-wrap {display: block;}
 					body.vertical-header-style #outer-wrap {margin: 0 !important;}
 					#site-header.vertical-header { position: relative; width: 100%; left: 0 !important; right: 0 !important; }
+					#site-header.vertical-header .has-template > #site-logo { display: block; }
 					#site-header.vertical-header #site-header-inner { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center;
 					align-items: center; padding: 0; max-width: 90%; }
 					#site-header.vertical-header #site-header-inner > *:not(.oceanwp-mobile-menu-icon) { display: none; }

@@ -3099,22 +3099,22 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Theme buttons background color
 			if ( ! empty( $theme_button_bg ) && '#13aff0' != $theme_button_bg ) {
-				$css .= '.theme-button,input[type="submit"],button[type="submit"],button,.button{background-color:'. $theme_button_bg .';}';
+				$css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button{background-color:'. $theme_button_bg .';}';
 			}
 
 			// Theme buttons background color
 			if ( ! empty( $theme_button_hover_bg ) && '#0b7cac' != $theme_button_hover_bg ) {
-				$css .= '.theme-button:hover,input[type="submit"]:hover,button:hover,.button:hover{background-color:'. $theme_button_hover_bg .';}';
+				$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button:hover,body .button:hover{background-color:'. $theme_button_hover_bg .';}';
 			}
 
 			// Theme buttons background color
 			if ( ! empty( $theme_button_color ) && '#ffffff' != $theme_button_color ) {
-				$css .= '.theme-button,input[type="submit"],button[type="submit"],button,.button{color:'. $theme_button_color .';}';
+				$css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button{color:'. $theme_button_color .';}';
 			}
 
 			// Theme buttons background color
 			if ( ! empty( $theme_button_hover_color ) && '#ffffff' != $theme_button_hover_color ) {
-				$css .= '.theme-button:hover,input[type="submit"]:hover,button:hover,.button:hover{color:'. $theme_button_hover_color .';}';
+				$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button:hover,body .button:hover{color:'. $theme_button_hover_color .';}';
 			}
 
 			// If page Both Sidebars layout

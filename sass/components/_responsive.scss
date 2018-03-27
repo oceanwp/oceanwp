@@ -34,7 +34,7 @@
 			display: none;
 		}
 
-		.center-logo:not(.vertical-header) #site-logo {
+		.center-logo #site-logo {
 		    float: none;
 		    position: absolute;
 		    left: 50%;
@@ -76,6 +76,10 @@
 		    width: 100%;
 		    left: 0 !important;
 		    right: 0 !important;
+
+		    .has-template > #site-logo {
+		    	display: block;
+		    }
 
 		    #site-header-inner {
 		    	@include display();

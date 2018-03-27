@@ -2764,7 +2764,7 @@
 				var $child = $(".customizer-ocean_theme_button_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_color">.theme-button,input[type="submit"],button,.button { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_color">body .theme-button,body input[type="submit"],body button,body .button { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2779,7 +2779,7 @@
 				var $child = $(".customizer-ocean_theme_button_hover_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_hover_color">.theme-button:hover,input[type="submit"]:hover,button:hover,.button:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_hover_color">body .theme-button:hover,body input[type="submit"]:hover,body button:hover,body .button:hover { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2794,7 +2794,7 @@
 				var $child = $(".customizer-ocean_theme_button_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_bg">input[type="button"], input[type="reset"], input[type="submit"], .button { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_bg">body input[type="button"], body input[type="reset"], body input[type="submit"], body .button { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2809,7 +2809,7 @@
 				var $child = $(".customizer-ocean_theme_button_hover_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_hover_bg">input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .button:hover { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_hover_bg">body input[type="button"]:hover, body input[type="reset"]:hover, body input[type="submit"]:hover, body .button:hover { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

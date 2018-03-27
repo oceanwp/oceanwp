@@ -16,6 +16,10 @@
     	@include box-shadow( 0 0 20px 0 rgba(0,0,0,0.10) );
     }
 
+    .has-template > #site-logo {
+    	display: none;
+    }
+
     #site-header-inner {
 	    max-width: 100%;
     	padding: 30px 0;
@@ -26,15 +30,15 @@
     	}
 	}
 
-    &.left-logo #site-logo {
+    &.vh-left-logo #site-logo {
     	text-align: left;
     }
 
-    &.center-logo #site-logo {
+    &.vh-center-logo #site-logo {
     	text-align: center;
     }
 
-    &.right-logo #site-logo {
+    &.vh-right-logo #site-logo {
     	text-align: right;
     }
 
