@@ -856,16 +856,16 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			/**
 			 * Enable OpenGraph
 			 */
-			$wp_customize->add_setting( 'ocean_opengraph', array(
-				'default'           	=> true,
+			$wp_customize->add_setting( 'ocean_open_graph', array(
+				'default'           	=> false,
 				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
 			) );
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_opengraph', array(
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_open_graph', array(
 				'label'	   				=> esc_html__( 'Enable OpenGraph', 'oceanwp' ),
 				'type' 					=> 'checkbox',
 				'section'  				=> 'ocean_general_settings',
-				'settings' 				=> 'ocean_opengraph',
+				'settings' 				=> 'ocean_open_graph',
 				'priority' 				=> 10,
 			) ) );
 

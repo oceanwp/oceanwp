@@ -479,23 +479,23 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 						$wp_customize->add_setting( $element .'_typography[font-size]', array(
 							'type' 				=> 'theme_mod',
-							'sanitize_callback' => 'oceanwp_sanitize_number',
+							'sanitize_callback' => 'sanitize_text_field',
 							'transport' 		=> $transport,
 							'default' 			=> $default,
 						) );
 
 						$wp_customize->add_setting( $element .'_tablet_typography[font-size]', array(
 							'transport' 			=> $transport,
-							'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+							'sanitize_callback' 	=> 'sanitize_text_field',
 						) );
 
 						$wp_customize->add_setting( $element .'_mobile_typography[font-size]', array(
 							'transport' 			=> $transport,
-							'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+							'sanitize_callback' 	=> 'sanitize_text_field',
 						) );
 
-						$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, $element .'_typography[font-size]', array(
-							'label' 			=> esc_html__( 'Font Size (px)', 'oceanwp' ),
+						$wp_customize->add_control( new OceanWP_Customizer_Text_Control( $wp_customize, $element .'_typography[font-size]', array(
+							'label' 			=> esc_html__( 'Font Size', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
 							'settings' 			=> array(
 					            'desktop' 	=> $element .'_typography[font-size]',
@@ -504,11 +504,6 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						    ),
 							'priority' 			=> 10,
 							'active_callback' 	=> $active_callback,
-						    'input_attrs' 		=> array(
-						        'min'   => 0,
-						        'max'   => 100,
-						        'step'  => 1,
-						    ),
 						) ) );
 
 					}
@@ -703,7 +698,9 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 						// Add px if font size or letter spacing
 						$px = '';
-						if ( 'font-size' == $attribute || 'letter-spacing' == $attribute ) {
+						if ( ( 'font-size' == $attribute
+								&& is_numeric( $val ) )
+							|| 'letter-spacing' == $attribute ) {
 							$px = 'px';
 						}
 
@@ -736,7 +733,9 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 						// Add px if font size or letter spacing
 						$px = '';
-						if ( 'font-size' == $attribute || 'letter-spacing' == $attribute ) {
+						if ( ( 'font-size' == $attribute
+								&& is_numeric( $tablet_val ) )
+							|| 'letter-spacing' == $attribute ) {
 							$px = 'px';
 						}
 
@@ -763,7 +762,9 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 						// Add px if font size or letter spacing
 						$px = '';
-						if ( 'font-size' == $attribute || 'letter-spacing' == $attribute ) {
+						if ( ( 'font-size' == $attribute
+								&& is_numeric( $mobile_val ) )
+							|| 'letter-spacing' == $attribute ) {
 							$px = 'px';
 						}
 

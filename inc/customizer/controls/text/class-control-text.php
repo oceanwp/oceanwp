@@ -1,11 +1,9 @@
 <?php
 /**
- * Customizer Control: oceanwp-slider.
+ * Customizer Control: oceanwp-text.
  *
  * @package     OceanWP WordPress theme
  * @subpackage  Controls
- * @see   		https://github.com/aristath/kirki
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
  * @since       1.0
  */
 
@@ -15,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Buttonset control
+ * Typography control
  */
-class OceanWP_Customizer_Slider_Control extends WP_Customize_Control {
+class OceanWP_Customizer_Text_Control extends WP_Customize_Control {
 
 	/**
 	 * The control type.
@@ -25,7 +23,7 @@ class OceanWP_Customizer_Slider_Control extends WP_Customize_Control {
 	 * @access public
 	 * @var string
 	 */
-	public $type = 'oceanwp-slider';
+	public $type = 'oceanwp-text';
 
 	/**
 	 * Enqueue control related scripts/styles.
@@ -33,8 +31,7 @@ class OceanWP_Customizer_Slider_Control extends WP_Customize_Control {
 	 * @access public
 	 */
 	public function enqueue() {
-		wp_enqueue_script( 'oceanwp-slider', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/slider.min.js', array( 'jquery', 'customize-base', 'jquery-ui-slider' ), false, true );
-		wp_enqueue_style( 'oceanwp-slider', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/slider.min.css', null );
+		wp_enqueue_script( 'oceanwp-text-js', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/text.min.js', array( 'jquery', 'customize-base' ), false, true );
 	}
 
 	/**
@@ -59,12 +56,7 @@ class OceanWP_Customizer_Slider_Control extends WP_Customize_Control {
 	public function to_json() {
 		parent::to_json();
 
-		$this->json['id'] 		= $this->id;
-
-		$this->json['inputAttrs'] = '';
-		foreach ( $this->input_attrs as $attr => $value ) {
-			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
-		}
+		$this->json['id'] = $this->id;
 
 		$this->json['desktop'] = array();
 	    $this->json['tablet']  = array();
@@ -91,8 +83,8 @@ class OceanWP_Customizer_Slider_Control extends WP_Customize_Control {
 	 *
 	 * @access protected
 	 */
-	protected function content_template() {
-		?>
+	protected function content_template() { ?>
+		
 		<# if ( data.label ) { #>
 			<span class="customize-control-title">
 				<span>{{{ data.label }}}</span>
@@ -124,31 +116,21 @@ class OceanWP_Customizer_Slider_Control extends WP_Customize_Control {
 
 		<# if ( data.desktop ) { #>
 			<div class="desktop control-wrap active">
-				<div class="oceanwp-slider desktop-slider"></div>
-				<div class="oceanwp-slider-input">
-					<input {{{ data.inputAttrs }}} type="number" class="slider-input desktop-input" value="{{ data.desktop.value }}" {{{ data.desktop.link }}} />
-				</div>
+				<input type="text" value="{{ data.desktop.value }}" placeholder="<?php esc_html_e( 'px - em - rem', 'oceanwp' ); ?>" {{{ data.desktop.link }}} />
 	    	</div>
 	    <# } #>
 
 		<# if ( data.tablet ) { #>
 			<div class="tablet control-wrap">
-				<div class="oceanwp-slider tablet-slider"></div>
-				<div class="oceanwp-slider-input">
-					<input {{{ data.inputAttrs }}} type="number" class="slider-input tablet-input" value="{{ data.tablet.value }}" {{{ data.tablet.link }}} />
-				</div>
+				<input type="text" value="{{ data.tablet.value }}" placeholder="<?php esc_html_e( 'px - em - rem', 'oceanwp' ); ?>" {{{ data.tablet.link }}} />
 	    	</div>
 	    <# } #>
 
 		<# if ( data.mobile ) { #>
 			<div class="mobile control-wrap">
-				<div class="oceanwp-slider mobile-slider"></div>
-				<div class="oceanwp-slider-input">
-					<input {{{ data.inputAttrs }}} type="number" class="slider-input mobile-input" value="{{ data.mobile.value }}" {{{ data.mobile.link }}} />
-				</div>
+				<input type="text" value="{{ data.mobile.value }}" placeholder="<?php esc_html_e( 'px - em - rem', 'oceanwp' ); ?>" {{{ data.mobile.link }}} />
 	    	</div>
 	    <# } #>
-
 	<?php
 	}
 }

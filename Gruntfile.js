@@ -44,6 +44,7 @@ module.exports = function ( grunt ) {
 					'inc/customizer/assets/min/js/range.min.js'						: 'inc/customizer/controls/range/range.js',
 					'inc/customizer/assets/min/js/slider.min.js'					: 'inc/customizer/controls/slider/slider.js',
 					'inc/customizer/assets/min/js/sortable.min.js'					: 'inc/customizer/controls/sortable/sortable.js',
+					'inc/customizer/assets/min/js/text.min.js'						: 'inc/customizer/controls/text/text.js',
 					'inc/customizer/assets/min/js/textarea.min.js'					: 'inc/customizer/controls/textarea/textarea.js',
 					'inc/customizer/assets/min/js/typo.min.js'						: 'inc/customizer/controls/typo/typo.js',
 					'inc/customizer/assets/min/js/typography.min.js'				: 'inc/customizer/controls/typography/typography.js'

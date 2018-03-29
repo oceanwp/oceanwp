@@ -55,6 +55,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			require_once( $dir . 'range/class-control-range.php' 							);
 			require_once( $dir . 'slider/class-control-slider.php' 							);
 			require_once( $dir . 'sortable/class-control-sortable.php' 						);
+			require_once( $dir . 'text/class-control-text.php' 								);
 			require_once( $dir . 'textarea/class-control-textarea.php' 						);
 			require_once( $dir . 'typo/class-control-typo.php' 								);
 			require_once( $dir . 'typography/class-control-typography.php' 					);
@@ -72,6 +73,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Slider_Control' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Radio_Image_Control' 		);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Sortable_Control' 		);
+			$wp_customize->register_control_type( 'OceanWP_Customizer_Text_Control' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Textarea_Control' 		);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Typo_Control' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Typography_Control' 		);

@@ -37,8 +37,10 @@ class Walker_Nav_Menu_Edit_Custom extends Walker_Nav_Menu_Edit {
 	protected function get_fields( $item, $depth, $args = array(), $id = 0 ) {
 		ob_start();
 
+		$item_id = intval( $item->ID );
+
 		// conform to https://core.trac.wordpress.org/attachment/ticket/14414/nav_menu_custom_fields.patch
-		do_action( 'wp_nav_menu_item_custom_fields', $id, $item, $depth, $args );
+		do_action( 'wp_nav_menu_item_custom_fields', $item_id, $item, $depth, $args );
 
 		return ob_get_clean();
 	}

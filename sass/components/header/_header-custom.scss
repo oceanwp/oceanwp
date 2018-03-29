@@ -71,7 +71,8 @@
 	}
 
 	.oceanwp-mobile-menu-icon {
-		float: none;
+		float: none !important;
+		text-align: center;
 
 		a {
 			display: inline-block;

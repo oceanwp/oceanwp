@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2018.03.29* - 1.5.10:
+* **Tweak** - Slider control replaced by a text control for the Font Size settings, you can now add a px-em-rem-%.
+* **Fixed** - OpenGraph is disabled by default to avoid any plugin conflict.
+
 ### *2018.03.27* - 1.5.9:
 * **Fixed** - Logo issue on the Medium and Vertical header style if custom mobile header.
 * **Fixed** - Hamburger icon missing on the Vertical header style if a template is used.

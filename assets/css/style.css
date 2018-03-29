@@ -3986,7 +3986,8 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 }
 
 .custom-header-nav .oceanwp-mobile-menu-icon {
-  float: none;
+  float: none !important;
+  text-align: center;
 }
 
 .custom-header-nav .oceanwp-mobile-menu-icon a {
