@@ -155,6 +155,7 @@ class OCEANWP_Theme_Class {
 		define( 'OCEANWP_ELEMENTOR_ACTIVE', class_exists( 'Elementor\Plugin' ) );
 		define( 'OCEANWP_BEAVER_BUILDER_ACTIVE', class_exists( 'FLBuilder' ) );
 		define( 'OCEANWP_WOOCOMMERCE_ACTIVE', class_exists( 'WooCommerce' ) );
+		define( 'OCEANWP_EDD_ACTIVE', class_exists( 'Easy_Digital_Downloads' ) );
 
 	}
 
@@ -191,6 +192,11 @@ class OCEANWP_Theme_Class {
 		// WooCommerce
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 			require_once ( $dir .'woocommerce/woocommerce-config.php' );
+		}
+
+		// Easy Digital Downloads
+		if ( OCEANWP_EDD_ACTIVE ) {
+			require_once ( $dir .'edd/edd-config.php' );
 		}
 
 	}
