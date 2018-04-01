@@ -70,4 +70,4 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 	}
 endif;
 
-return new OceanWP_WooCommerce_Customizer();
+return new OceanWP_EDD_Customizer();
