@@ -1244,27 +1244,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Product Entry Media
-			 */
-			$wp_customize->add_setting( 'ocean_edd_product_entry_style', array(
-				'default'           	=> 'image-swap',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_product_entry_style', array(
-				'label'	   				=> esc_html__( 'Product Entry Media', 'oceanwp' ),
-				'type' 					=> 'select',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_product_entry_style',
-				'priority' 				=> 10,
-				'choices' 				=> array(
-					'featured-image'  	=> esc_html__( 'Featured Image', 'oceanwp' ),
-					'image-swap' 		=> esc_html__( 'Image Swap', 'oceanwp' ),
-					'gallery-slider'  	=> esc_html__( 'Gallery Slider', 'oceanwp' ),
-				),
-			) ) );
-
-			/**
 			 * Display Quick View Button
 			 */
 			$wp_customize->add_setting( 'ocean_edd_quick_view', array(
@@ -1608,111 +1587,14 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			/**
 			 * Heading Woo Tabs
 			 */
-			$wp_customize->add_setting( 'ocean_edd_product_tabs_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_edd_product_tabs_heading', array(
-				'label'    				=> esc_html__( 'Tabs', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_single',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Tabs Layout
-			 */
-			$wp_customize->add_setting( 'ocean_edd_product_tabs_layout', array(
-				'transport' 			=> 'postMessage',
-				'default' 				=> 'horizontal',
-				'sanitize_callback' 	=> 'sanitize_text_field',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_product_tabs_layout', array(
-				'label'	   				=> esc_html__( 'Tabs Layout', 'oceanwp' ),
-				'type' 					=> 'select',
-				'section'  				=> 'ocean_edd_single',
-				'settings' 				=> 'ocean_edd_product_tabs_layout',
-				'priority' 				=> 10,
-				'choices' 				=> array(
-					'horizontal' 		=> esc_html__( 'Horizontal', 'oceanwp' ),
-					'vertical' 			=> esc_html__( 'Vertical', 'oceanwp' ),
-					'section' 			=> esc_html__( 'Section', 'oceanwp' ),
-				),
-			) ) );
-
-			/**
-			 * Tabs Position
-			 */
-			$wp_customize->add_setting( 'ocean_edd_product_meta_tabs_position', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> 'center',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_edd_product_meta_tabs_position', array(
-				'label'	   				=> esc_html__( 'Tabs Position', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'Only work for the horizontal tabs layout', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_single',
-				'settings' 				=> 'ocean_edd_product_meta_tabs_position',
-				'priority' 				=> 10,
-				'choices' 				=> array(
-					'left' 		=> esc_html__( 'Left', 'oceanwp' ),
-					'center' 	=> esc_html__( 'Center', 'oceanwp' ),
-					'right' 	=> esc_html__( 'Right', 'oceanwp' ),
-				),
-			) ) );
-
-			/**
-			 * Heading Woo Tabs
-			 */
 			$wp_customize->add_setting( 'ocean_edd_upsells_related_items_heading', array(
 				'sanitize_callback' 	=> 'wp_kses',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_edd_upsells_related_items_heading', array(
-				'label'    				=> esc_html__( 'Up-Sells & Related Items', 'oceanwp' ),
+				'label'    				=> esc_html__( 'Related Items', 'oceanwp' ),
 				'section'  				=> 'ocean_edd_single',
 				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Up-Sells Count
-			 */
-			$wp_customize->add_setting( 'ocean_edd_upsells_count', array(
-				'default'           	=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_edd_upsells_count', array(
-				'label'	   				=> esc_html__( 'Up-Sells Count', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_single',
-				'settings' 				=> 'ocean_edd_upsells_count',
-				'priority' 				=> 10,
-			    'input_attrs' 			=> array(
-			        'min'   => 1,
-			        'max'   => 100,
-			        'step'  => 1,
-			    ),
-			) ) );
-
-			/**
-			 * Up-Sells Columns
-			 */
-			$wp_customize->add_setting( 'ocean_edd_upsells_columns', array(
-				'default'           	=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_edd_upsells_columns', array(
-				'label'	   				=> esc_html__( 'Up-Sells Columns', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_single',
-				'settings' 				=> 'ocean_edd_upsells_columns',
-				'priority' 				=> 10,
-			    'input_attrs' 			=> array(
-			        'min'   => 1,
-			        'max'   => 7,
-			        'step'  => 1,
-			    ),
 			) ) );
 
 			/**

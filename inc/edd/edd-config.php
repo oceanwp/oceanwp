@@ -269,13 +269,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				add_action( 'edd_cart_collaterals', array( $this, 'cross_sell_display' ) );
 			}
 
-			// Remove loop product sale badge
-			remove_action( 'edd_before_shop_loop_item_title', 'edd_show_product_loop_sale_flash', 10 );
-
-			// Remove loop product thumbnail function and add our own that pulls from template parts
-			remove_action( 'edd_before_shop_loop_item_title', 'edd_template_loop_product_thumbnail', 10 );
-			add_action( 'edd_before_shop_loop_item_title', array( $this, 'loop_product_thumbnail' ), 10 );
-
 			// Remove related products if is set to no
 			if ( 'on' != get_theme_mod( 'ocean_edd_display_related_items', 'on' ) ) {
 				remove_action( 'edd_after_single_product_summary', 'edd_output_related_products', 20 );
@@ -967,21 +960,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		}
 
 		/**
-		 * Returns our product thumbnail from our template parts based on selected style in theme mods.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function loop_product_thumbnail() {
-			if ( function_exists( 'wc_get_template' ) ) {
-				// Get entry product media style
-				$style = get_theme_mod( 'ocean_edd_product_entry_style' );
-				$style = $style ? $style : 'image-swap';
-				// Get entry product media template part
-				wc_get_template( 'loop/thumbnail/'. $style .'.php' );
-			}
-		}
-
-		/**
 		 * Archive product content.
 		 *
 		 * @since 1.1.4
@@ -1084,8 +1062,8 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function product_next_prev_nav() {
 			global $post;
 
-			$next_post = get_next_post( true, '', 'product_cat' );
-			$prev_post = get_previous_post( true, '', 'product_cat' ); ?>
+			$next_post = get_next_post( true, '', 'download_category' );
+			$prev_post = get_previous_post( true, '', 'download_category' ); ?>
 
 			<div class="owp-product-nav-wrap">
 				<ul class="owp-product-nav">
