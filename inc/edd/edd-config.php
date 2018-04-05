@@ -1669,7 +1669,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 
 			// Add cart link to menu items
 			if ( 'full_screen' == $header_style ) {
-				$items .= '<li class="edd-cart-link"><a href="'. get_permalink( edd_get_option( 'purchase_page' ) ) .'">'. esc_html__( 'Your cart', 'oceanwp' ) .'</a></li>';
+				$items .= '<li class="edd-cart-link"><a href="'. edd_get_checkout_uri() .'">'. esc_html__( 'Your cart', 'oceanwp' ) .'</a></li>';
 			} else {
 				$items .= self::get_cart_icon();
 			}

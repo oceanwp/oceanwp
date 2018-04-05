@@ -90,7 +90,7 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 		if ( 'custom_link' == $icon_style && $custom_link ) {
 			$url = esc_url( $custom_link );
 		} else {
-			$url = get_permalink( edd_get_option( 'purchase_page' ) );
+			$url = edd_get_checkout_uri();
 		}
 		
 		// Cart total
@@ -99,9 +99,9 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 			$cart_extra = EDD()->cart->total( false );
 			$cart_extra = str_replace( 'amount', 'eddmenucart-details', $cart_extra );
 		} elseif ( 'icon_count' == $display ) {
-			$cart_extra = '<span class="edd-cart-quantity count">'. EDD()->cart->get_quantity() .'</span>';
+			$cart_extra = '<span class="edd-cart-quantity count">'. edd_get_cart_quantity() .'</span>';
 		} elseif ( 'icon_count_total' == $display ) {
-			$cart_extra = '<span class="edd-cart-quantity count">'. EDD()->cart->get_quantity() .'</span>';
+			$cart_extra = '<span class="edd-cart-quantity count">'. edd_get_cart_quantity() .'</span>';
 			$cart_total = '<span class="cart-total">' . EDD()->cart->total( false ) . '</span>';
 			$cart_extra .= str_replace( 'amount', 'eddmenucart-details', $cart_total );
 		} else {
@@ -131,7 +131,7 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 					<span class="eddmenucart-total"><?php echo EDD()->cart->total( false ); ?></span>
 				<?php } ?>
 				<span class="eddmenucart-cart-icon">
-					<span class="eddmenucart-count"><?php echo EDD()->cart->get_quantity(); ?></span>
+					<span class="eddmenucart-count"><?php echo edd_get_cart_quantity(); ?></span>
 				</span>
 			</a>
 
@@ -145,5 +145,82 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 		}
 
 	}
+
+}
+
+/**
+ * Returns catalog elements positioning
+ *
+ * @since 1.1.9
+ */
+if ( ! function_exists( 'oceanwp_edd_archive_elements_positioning' ) ) {
+
+	function oceanwp_edd_archive_elements_positioning() {
+
+		// Default sections
+		$sections = array( 'image', 'category', 'title', 'price', 'description' , 'button' );
+
+		// Get sections from Customizer
+		$sections = get_theme_mod( 'oceanwp_edd_archive_elements_positioning', $sections );
+
+		// Turn into array if string
+		if ( $sections && ! is_array( $sections ) ) {
+			$sections = explode( ',', $sections );
+		}
+
+		// Apply filters for easy modification
+		$sections = apply_filters( 'oceanwp_edd_archive_elements_positioning', $sections );
+
+		// Return sections
+		return $sections;
+
+	}
+
+}
+
+/**
+ * Returns single product summary elements positioning
+ *
+ * @since 1.1.9
+ */
+if ( ! function_exists( 'oceanwp_woo_summary_elements_positioning' ) ) {
+
+	function oceanwp_woo_summary_elements_positioning() {
+
+		// Default sections
+		$sections = array( 'title', 'rating', 'price', 'excerpt', 'quantity-button', 'meta' );
+
+		// Get sections from Customizer
+		$sections = get_theme_mod( 'oceanwp_woo_summary_elements_positioning', $sections );
+
+		// Turn into array if string
+		if ( $sections && ! is_array( $sections ) ) {
+			$sections = explode( ',', $sections );
+		}
+
+		// Apply filters for easy modification
+		$sections = apply_filters( 'ocean_woo_summary_elements_positioning', $sections );
+
+		// Return sections
+		return $sections;
+
+	}
+
+}
+
+/**
+ * Returns list of Easy Digital Downloads Terms
+ *
+ * @since 1.1.9
+ */
+if ( ! function_exists( 'oceanwp_edd_terms_list' ) ) {
+	
+	function oceanwp_edd_terms_list( $taxonomy_name ) { 
+		$terms = get_terms( $taxonomy_name );
+	?>
+	<?php foreach ( $terms as $term ) : ?>
+		<a href="<?php echo esc_attr( get_term_link( $term, $taxonomy_name ) ); ?>" title="<?php echo $term->name; ?>"><?php echo $term->name; ?></a>
+	<?php endforeach; ?>
+	<?php }
 
 }

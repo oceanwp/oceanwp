@@ -1002,26 +1002,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Shop Posts Per Page
-			 */
-			$wp_customize->add_setting( 'ocean_edd_archive_posts_per_page', array(
-				'default'           	=> '12',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_edd_archive_posts_per_page', array(
-				'label'	   				=> esc_html__( 'Shop Posts Per Page', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_archive_posts_per_page',
-				'priority' 				=> 10,
-			    'input_attrs' 			=> array(
-			        'min'   => 1,
-			        'max'   => 100,
-			        'step'  => 1,
-			    ),
-			) ) );
-
-			/**
 			 * Shop Columns
 			 */
 			$wp_customize->add_setting( 'ocean_edd_archive_columns', array(
@@ -1051,7 +1031,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				'priority' 				=> 10,
 			    'input_attrs' 			=> array(
 			        'min'   => 1,
-			        'max'   => 7,
+			        'max'   => 4,
 			        'step'  => 1,
 			    ),
 			) ) );
@@ -1161,53 +1141,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Off Canvas Filtering Heading
-			 */
-			$wp_customize->add_setting( 'ocean_edd_archive_off_canvas_filter_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_edd_archive_off_canvas_filter_heading', array(
-				'label'    				=> esc_html__( 'Off Canvas Filtering', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_archives',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Off Canvas Filter Button
-			 */
-			$wp_customize->add_setting( 'ocean_edd_off_canvas_filter', array(
-				'default'           	=> false,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_off_canvas_filter', array(
-				'label'	   				=> esc_html__( 'Display Filter Button', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_off_canvas_filter',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Off Canvas Filter Text
-			 */
-			$wp_customize->add_setting( 'ocean_edd_off_canvas_filter_text', array(
-				'default'           	=> esc_html__( 'Filter', 'oceanwp' ),
-				'transport'           	=> 'postMessage',
-				'sanitize_callback' 	=> 'wp_kses_post',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_off_canvas_filter_text', array(
-				'label'	   				=> esc_html__( 'Filter Button Text', 'oceanwp' ),
-				'type' 					=> 'text',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_off_canvas_filter_text',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_edd_filter_button',
-			) ) );
-
-			/**
 			 * Products Heading
 			 */
 			$wp_customize->add_setting( 'ocean_edd_archive_products_heading', array(
@@ -1223,21 +1156,21 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			/**
 			 * Product Elements Positioning
 			 */
-			$wp_customize->add_setting( 'oceanwp_edd_product_elements_positioning', array(
-				'default' 				=> array( 'image', 'category', 'title', 'price-rating', 'description' , 'button' ),
+			$wp_customize->add_setting( 'oceanwp_edd_archive_elements_positioning', array(
+				'default' 				=> array( 'image', 'category', 'title', 'price', 'description' , 'button' ),
 				'sanitize_callback' 	=> 'oceanwp_sanitize_multi_choices',
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Sortable_Control( $wp_customize, 'oceanwp_edd_product_elements_positioning', array(
+			$wp_customize->add_control( new OceanWP_Customizer_Sortable_Control( $wp_customize, 'oceanwp_edd_archive_elements_positioning', array(
 				'label'	   				=> esc_html__( 'Elements Positioning', 'oceanwp' ),
 				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'oceanwp_edd_product_elements_positioning',
+				'settings' 				=> 'oceanwp_edd_archive_elements_positioning',
 				'priority' 				=> 10,
 				'choices' 				=> array(
 					'image'    			=> esc_html__( 'Image', 'oceanwp' ),
 					'category'       	=> esc_html__( 'Category', 'oceanwp' ),
 					'title' 			=> esc_html__( 'Title', 'oceanwp' ),
-					'price-rating' 		=> esc_html__( 'Price/Rating', 'oceanwp' ),
+					'price' 		    => esc_html__( 'Price', 'oceanwp' ),
 					'description' 		=> esc_html__( 'Description', 'oceanwp' ),
 					'button' 			=> esc_html__( 'Add To Cart Button', 'oceanwp' ),
 				),
