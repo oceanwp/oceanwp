@@ -10,6 +10,7 @@ do_action( 'ocean_before_single_product_item' );
 ?>
 
 <div class="oceanwp-row">
+
 	<div class="col span_1_of_2 image-wrap">
 	<?php 
 		do_action( 'ocean_before_single_product_image' );
@@ -57,6 +58,7 @@ do_action( 'ocean_before_single_product_item' );
 				echo '<li class="title">';
 					do_action( 'ocean_before_single_product_title_inner' );
 					echo get_the_title();
+					echo oceanwp_edd_download_navigation();
 					do_action( 'ocean_after_single_product_title_inner' );
 				echo '</li>';
 
@@ -101,7 +103,11 @@ do_action( 'ocean_before_single_product_item' );
 		}
 
 	echo '</ul>';
-
-	do_action( 'ocean_after_single_product_item' );
-	?>
+?>
 </div>
+
+<div class="oceanwp-row downloads-content"> 
+	<?php echo get_the_content(); ?>
+</div>
+
+<?php do_action( 'ocean_after_single_product_item' ); ?>
