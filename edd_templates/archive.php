@@ -13,8 +13,6 @@ echo '<ul class="edd-entry-inner clr">';
 	// Get elements
 	$elements = oceanwp_edd_archive_elements_positioning();
 
-	print_r($elements);
-
 	// Loop through elements
 	foreach ( $elements as $element ) {
 
@@ -100,7 +98,7 @@ echo '<ul class="edd-entry-inner clr">';
 
 				do_action( 'ocean_before_archive_product_add_to_cart_inner' );
 				
-				echo edd_get_purchase_link( array( 'download_id' => get_the_ID(), 'price_id' => false ) );
+				echo oceanwp_edd_add_to_cart_link();
 				
 				do_action( 'ocean_after_archive_product_add_to_cart_inner' );
 

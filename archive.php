@@ -23,13 +23,34 @@ get_header(); ?>
 				<?php do_action( 'ocean_before_content_inner' ); ?>
 
 				<?php
-				// Start loop
-				while ( have_posts() ) : the_post();
+				if( have_posts() ) {
 
-					get_template_part( 'edd_templates/archive' );
+					if( is_post_type_archive( 'download' ) || is_tax( array( 'download_category', 'download_tag' ) ) ) {
+						
+						do_action( 'ocean_before_archive_product' );
 
-				endwhile; ?>
+						while ( have_posts() ) : the_post();
 
+							get_template_part( 'edd_templates/archive' );
+
+						endwhile;
+
+						do_action( 'ocean_after_archive_product' );
+
+					} else {
+
+						while ( have_posts() ) : the_post();
+
+							get_template_part( 'partials/entry/layout', get_post_type() );
+
+						endwhile;
+
+					}
+				}
+				else {
+					get_template_part( 'partials/none' );
+				}
+				?>
 				<?php do_action( 'ocean_after_content_inner' ); ?>
 
 			</div><!-- #content -->

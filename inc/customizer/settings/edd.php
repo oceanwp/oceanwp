@@ -88,36 +88,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Heading Wishlist
-			 */
-			$wp_customize->add_setting( 'ocean_edd_wishlist_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_edd_wishlist_heading', array(
-				'label'    	=> esc_html__( 'Wishlist', 'oceanwp' ),
-				'description' => sprintf( esc_html__( 'You need to activate the %1$sTI EDD Wishlist%2$s plugin to add a wishlist button and icon', 'oceanwp' ), '<a href="https://wordpress.org/plugins/ti-edd-wishlist/" target="_blank">', '</a>' ),
-				'section'  	=> 'ocean_edd_general',
-				'priority' 	=> 10,
-			) ) );
-
-			/**
-			 * Add Wishlist Icon In Header
-			 */
-			$wp_customize->add_setting( 'ocean_edd_wishlist_icon', array(
-				'default'           	=> false,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_wishlist_icon', array(
-				'label'	   				=> esc_html__( 'Add Wishlist Icon In Header', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_edd_general',
-				'settings' 				=> 'ocean_edd_wishlist_icon',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
 			 * Section
 			 */
 			$wp_customize->add_section( 'ocean_edd_menu_cart' , array(
@@ -140,22 +110,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				'type' 					=> 'checkbox',
 				'section'  				=> 'ocean_edd_menu_cart',
 				'settings' 				=> 'ocean_edd_menu_icon_hide_if_empty',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Display Mini Cart On Mobile
-			 */
-			$wp_customize->add_setting( 'ocean_edd_add_mobile_mini_cart', array(
-				'default'           	=> true,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_add_mobile_mini_cart', array(
-				'label'	   				=> esc_html__( 'Display Mini Cart On Mobile', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_edd_menu_cart',
-				'settings' 				=> 'ocean_edd_add_mobile_mini_cart',
 				'priority' 				=> 10,
 			) ) );
 
@@ -834,83 +788,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Heading Styling
-			 */
-			$wp_customize->add_setting( 'ocean_edd_mobile_cart_styling_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_edd_mobile_cart_styling_heading', array(
-				'label'    	=> esc_html__( 'Mobile Cart Sidebar Styling', 'oceanwp' ),
-				'section'  	=> 'ocean_edd_menu_cart',
-				'priority' 	=> 10,
-			) ) );
-
-			/**
-			 * Mobile Cart Sidebar Background Color
-			 */
-			$wp_customize->add_setting( 'ocean_edd_mobile_cart_sidebar_bg', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '#ffffff',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_edd_mobile_cart_sidebar_bg', array(
-				'label'	   				=> esc_html__( 'Background Color', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_menu_cart',
-				'settings' 				=> 'ocean_edd_mobile_cart_sidebar_bg',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-		     * Mobile Cart Sidebar Close Button Color
-		     */
-	        $wp_customize->add_setting( 'ocean_edd_mobile_cart_sidebar_close_button_color', array(
-				'default'				=> '#000000',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_edd_mobile_cart_sidebar_close_button_color', array(
-				'label'					=> esc_html__( 'Close Button Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_menu_cart',
-				'settings'				=> 'ocean_edd_mobile_cart_sidebar_close_button_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Mobile Cart Sidebar Title Color
-		     */
-	        $wp_customize->add_setting( 'ocean_edd_mobile_cart_sidebar_title_color', array(
-				'default'				=> '#555555',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_edd_mobile_cart_sidebar_title_color', array(
-				'label'					=> esc_html__( 'Title Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_menu_cart',
-				'settings'				=> 'ocean_edd_mobile_cart_sidebar_title_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Mobile Cart Sidebar Divider Color
-		     */
-	        $wp_customize->add_setting( 'ocean_edd_mobile_cart_sidebar_divider_color', array(
-				'default'				=> 'rgba(0,0,0,0.1)',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_edd_mobile_cart_sidebar_divider_color', array(
-				'label'					=> esc_html__( 'Divider Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_menu_cart',
-				'settings'				=> 'ocean_edd_mobile_cart_sidebar_divider_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
 			 * Section
 			 */
 			$wp_customize->add_section( 'ocean_edd_archives' , array(
@@ -1010,12 +887,12 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
-			$wp_customize->add_setting( 'ocean_edd_tablet_shop_columns', array(
+			$wp_customize->add_setting( 'ocean_edd_tablet_archive_columns', array(
 				'transport' 			=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
-			$wp_customize->add_setting( 'ocean_edd_mobile_shop_columns', array(
+			$wp_customize->add_setting( 'ocean_edd_mobile_archive_columns', array(
 				'transport' 			=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
@@ -1025,8 +902,8 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				'section'  			=> 'ocean_edd_archives',
 				'settings' => array(
 		            'desktop' 	=> 'ocean_edd_archive_columns',
-		            'tablet' 	=> 'ocean_edd_tablet_shop_columns',
-		            'mobile' 	=> 'ocean_edd_mobile_shop_columns',
+		            'tablet' 	=> 'ocean_edd_tablet_archive_columns',
+		            'mobile' 	=> 'ocean_edd_mobile_archive_columns',
 			    ),
 				'priority' 				=> 10,
 			    'input_attrs' 			=> array(
@@ -1034,110 +911,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			        'max'   => 4,
 			        'step'  => 1,
 			    ),
-			) ) );
-
-			/**
-			 * Toolbar Heading
-			 */
-			$wp_customize->add_setting( 'ocean_edd_archive_toolbar_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_edd_archive_toolbar_heading', array(
-				'label'    				=> esc_html__( 'Toolbar', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_archives',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Grid/List Buttons
-			 */
-			$wp_customize->add_setting( 'ocean_edd_grid_list', array(
-				'default'           	=> true,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_grid_list', array(
-				'label'	   				=> esc_html__( 'Grid/List Buttons', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_grid_list',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Catalog View
-			 */
-			$wp_customize->add_setting( 'ocean_edd_catalog_view', array(
-				'default'           	=> 'grid',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_catalog_view', array(
-				'label'	   				=> esc_html__( 'Default Catalog View', 'oceanwp' ),
-				'type' 					=> 'select',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_catalog_view',
-				'priority' 				=> 10,
-				'choices' 				=> array(
-					'grid'  	=> esc_html__( 'Grid View', 'oceanwp' ),
-					'list' 		=> esc_html__( 'List View', 'oceanwp' ),
-				),
-				'active_callback' 		=> 'oceanwp_cac_has_grid_list_buttons',
-			) ) );
-
-			/**
-			 * List View Excerpt Length
-			 */
-			$wp_customize->add_setting( 'ocean_edd_list_excerpt_length', array(
-				'default'           	=> '60',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_edd_list_excerpt_length', array(
-				'label'	   				=> esc_html__( 'Excerpt Length', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'Length of the short description of the list view.', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_list_excerpt_length',
-				'priority' 				=> 10,
-			    'input_attrs' 			=> array(
-			        'min'   => 0,
-			        'max'   => 500,
-			        'step'  => 1,
-			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_grid_list_buttons',
-			) ) );
-
-			/**
-			 * Shop Sort
-			 */
-			$wp_customize->add_setting( 'ocean_edd_archive_sort', array(
-				'default'           	=> true,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_archive_sort', array(
-				'label'	   				=> esc_html__( 'Shop Sort', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_archive_sort',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Shop Result Count
-			 */
-			$wp_customize->add_setting( 'ocean_edd_archive_result_count', array(
-				'default'           	=> true,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_archive_result_count', array(
-				'label'	   				=> esc_html__( 'Shop Result Count', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_archive_result_count',
-				'priority' 				=> 10,
 			) ) );
 
 			/**
@@ -1177,22 +950,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Display Quick View Button
-			 */
-			$wp_customize->add_setting( 'ocean_edd_quick_view', array(
-				'default'           	=> true,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_quick_view', array(
-				'label'	   				=> esc_html__( 'Display Quick View Button', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_quick_view',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
 			 * Product Entry Content Alignment
 			 */
 			$wp_customize->add_setting( 'ocean_edd_product_entry_content_alignment', array(
@@ -1211,79 +968,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 					'center' 	=> esc_html__( 'Center', 'oceanwp' ),
 					'right' 	=> esc_html__( 'Right', 'oceanwp' ),
 				),
-			) ) );
-
-			/**
-			 * Shop Pagination Style
-			 */
-			$wp_customize->add_setting( 'ocean_edd_pagination_style', array(
-				'default'           	=> 'standard',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_pagination_style', array(
-				'label'	   				=> esc_html__( 'Pagination Style', 'oceanwp' ),
-				'type' 					=> 'select',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_pagination_style',
-				'priority' 				=> 10,
-				'choices' 				=> array(
-					'standard' 			=> esc_html__( 'Standard', 'oceanwp' ),
-					'infinite_scroll' 	=> esc_html__( 'Infinite Scroll', 'oceanwp' ),
-				),
-			) ) );
-
-			/**
-			 * Infinite Scroll: Spinners Color
-			 */
-			$wp_customize->add_setting( 'ocean_edd_infinite_scroll_spinners_color', array(
-				'default'           	=> '#333333',
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_edd_infinite_scroll_spinners_color', array(
-				'label'	   				=> esc_html__( 'Infinite Scroll: Spinners Color', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_infinite_scroll_spinners_color',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_edd_infinite_scroll',
-			) ) );
-
-			/**
-			 * Infinite Scroll: Last Text
-			 */
-			$wp_customize->add_setting( 'ocean_edd_infinite_scroll_last_text', array(
-				'default'           	=> esc_html__( 'End of content', 'oceanwp' ),
-				'transport'           	=> 'postMessage',
-				'sanitize_callback' 	=> 'wp_kses_post',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_infinite_scroll_last_text', array(
-				'label'	   				=> esc_html__( 'Infinite Scroll: Last Text', 'oceanwp' ),
-				'type' 					=> 'text',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_infinite_scroll_last_text',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_edd_infinite_scroll',
-			) ) );
-
-			/**
-			 * Infinite Scroll: Error Text
-			 */
-			$wp_customize->add_setting( 'ocean_edd_infinite_scroll_error_text', array(
-				'default'           	=> esc_html__( 'No more pages to load', 'oceanwp' ),
-				'transport'           	=> 'postMessage',
-				'sanitize_callback' 	=> 'wp_kses_post',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_infinite_scroll_error_text', array(
-				'label'	   				=> esc_html__( 'Infinite Scroll: Error Text', 'oceanwp' ),
-				'type' 					=> 'text',
-				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_infinite_scroll_error_text',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_edd_infinite_scroll',
 			) ) );
 
 			/**
@@ -1380,23 +1064,22 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			/**
 			 * Elements Positioning
 			 */
-			$wp_customize->add_setting( 'oceanwp_edd_summary_elements_positioning', array(
-				'default' 				=> array( 'title', 'rating', 'price', 'excerpt', 'quantity-button', 'meta' ),
+			$wp_customize->add_setting( 'oceanwp_edd_single_elements_positioning', array(
+				'default' 				=> array( 'title', 'price', 'button', 'category', 'tag' ),
 				'sanitize_callback' 	=> 'oceanwp_sanitize_multi_choices',
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Sortable_Control( $wp_customize, 'oceanwp_edd_summary_elements_positioning', array(
-				'label'	   				=> esc_html__( 'Summary Elements Positioning', 'oceanwp' ),
+			$wp_customize->add_control( new OceanWP_Customizer_Sortable_Control( $wp_customize, 'oceanwp_edd_single_elements_positioning', array(
+				'label'	   				=> esc_html__( 'Elements Positioning', 'oceanwp' ),
 				'section'  				=> 'ocean_edd_single',
-				'settings' 				=> 'oceanwp_edd_summary_elements_positioning',
+				'settings' 				=> 'oceanwp_edd_single_elements_positioning',
 				'priority' 				=> 10,
 				'choices' 				=> array(
-					'title'    			=> esc_html__( 'Title', 'oceanwp' ),
-					'rating'       		=> esc_html__( 'Rating', 'oceanwp' ),
-					'price' 			=> esc_html__( 'Price', 'oceanwp' ),
-					'excerpt' 			=> esc_html__( 'Excerpt', 'oceanwp' ),
-					'quantity-button' 	=> esc_html__( 'Quantity & Add To Cart', 'oceanwp' ),
-					'meta' 				=> esc_html__( 'Product Meta', 'oceanwp' ),
+					'title'             => esc_html__( 'Title', 'oceanwp' ),
+					'price'             => esc_html__( 'Price', 'oceanwp' ),
+					'button' 	        => esc_html__( 'Add To Cart', 'oceanwp' ),
+					'category'          => esc_html__( 'Category', 'oceanwp' ),
+					'tag'               => esc_html__( 'Tag', 'oceanwp' )
 				),
 			) ) );
 
@@ -1413,22 +1096,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				'type' 					=> 'checkbox',
 				'section'  				=> 'ocean_edd_single',
 				'settings' 				=> 'ocean_edd_display_navigation',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-			 * Enable Ajax Add To Cart
-			 */
-			$wp_customize->add_setting( 'ocean_edd_product_ajax_add_to_cart', array(
-				'default'           	=> false,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_product_ajax_add_to_cart', array(
-				'label'	   				=> esc_html__( 'Enable Ajax Add To Cart', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_edd_single',
-				'settings' 				=> 'ocean_edd_product_ajax_add_to_cart',
 				'priority' 				=> 10,
 			) ) );
 

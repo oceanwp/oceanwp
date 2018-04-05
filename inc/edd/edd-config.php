@@ -1719,8 +1719,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				$classes[] = $toggle_class;
 			}
 
-			print_r($style);
-
 			// Turn classes into string
 			$classes = implode( ' ', $classes );
 
