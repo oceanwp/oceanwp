@@ -41,6 +41,9 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			add_filter( 'ocean_primary_backgrounds', array( $this, 'primary_backgrounds' ) );
 			add_filter( 'ocean_hover_primary_backgrounds', array( $this, 'hover_primary_backgrounds' ) );
 
+			add_action( 'ocean_main_metaboxes_post_types', array( $this, 'add_metabox' ), 20 );
+
+
 			/*-------------------------------------------------------------------------------*/
 			/* -  Front-End only actions/filters
 			/*-------------------------------------------------------------------------------*/
@@ -1413,6 +1416,16 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		}
 
 		/**
+		 * Add the OceanWP Settings metabox into the custom post types
+		 *
+		 * @since 1.0.0
+		 */
+		public static function add_metabox( $types ) {
+			$types[] = 'download';
+			return $types;
+		}
+
+		/**
 		 * Remove the category description under the page title on taxonomy.
 		 *
 		 * @since 1.4.7
@@ -1648,22 +1661,22 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			}
 
 			// Only used for the main menu
-			// if ( 'main_menu' != $args->theme_location ) {
-			// 	return $items;
-			// }
+			if ( 'main_menu' != $args->theme_location ) {
+				return $items;
+			}
 
 			// Get style
 			$style 			= oceanwp_edd_menu_cart_style();
 			$header_style 	= oceanwp_header_style();
 
 			// Return items if no style
-			// if ( ! $style ) {
-			// 	return $items;
-			// }
+			if ( ! $style ) {
+				return $items;
+			}
 
 			// Return items if "hide if empty cart" is checked
 			if ( true == get_theme_mod( 'ocean_edd_menu_icon_hide_if_empty', false )
-				&& ! count( EDD()->cart->get_contents() ) > 0 ) {
+				&& ! count( edd_get_cart_quantity() ) > 0 ) {
 				return $items;
 			}
 
