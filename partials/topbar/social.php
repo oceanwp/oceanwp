@@ -98,7 +98,7 @@ $link_target = $link_target ? $link_target : 'blank'; ?>
 					if ( in_array( $key, array( 'skype' ) ) ) {
 						echo '<a href="skype:'. esc_attr( $url ) .'?call" title="'. esc_attr( $val['label'] ) .'" target="_self">';
 					} else if ( in_array( $key, array( 'email' ) ) ) {
-						echo '<a href="mailto:'. esc_attr( $url ) .'" title="'. esc_attr( $val['label'] ) .'" target="_self">';
+						echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" title="'. esc_attr( $val['label'] ) .'" target="_self">';
 					} else {
 						echo '<a href="'. esc_url( $url ) .'" title="'. esc_attr( $val['label'] ) .'" target="_'. esc_attr( $link_target ) .'">';
 					}
