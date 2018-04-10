@@ -96,13 +96,12 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 		// Cart total
 		$display = get_theme_mod( 'ocean_edd_menu_icon_display', 'icon_count' );
 		if ( 'icon_total' == $display ) {
-			$cart_extra = EDD()->cart->total( false );
-			$cart_extra = str_replace( 'amount', 'eddmenucart-details', $cart_extra );
+			$cart_extra = '<span class="eddmenucart-details cart-total">' . edd_cart_subtotal() . '</span>';
 		} elseif ( 'icon_count' == $display ) {
-			$cart_extra = '<span class="edd-cart-quantity count">'. edd_get_cart_quantity() .'</span>';
+			$cart_extra = '<span class="eddmenucart-details edd-cart-quantity count">'. edd_get_cart_quantity() .'</span>';
 		} elseif ( 'icon_count_total' == $display ) {
-			$cart_extra = '<span class="edd-cart-quantity count">'. edd_get_cart_quantity() .'</span>';
-			$cart_total = '<span class="cart-total">' . EDD()->cart->total( false ) . '</span>';
+			$cart_extra = '<span class="eddmenucart-details edd-cart-quantity count">'. edd_get_cart_quantity() .'</span>';
+			$cart_total = '<span class="cart-total">' . edd_cart_subtotal() . '</span>';
 			$cart_extra .= str_replace( 'amount', 'eddmenucart-details', $cart_total );
 		} else {
 			$cart_extra = '';
@@ -128,7 +127,7 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 			<a href="<?php echo esc_url( $url ); ?>" class="eddmenucart">
 				<?php
 				if ( true == get_theme_mod( 'ocean_edd_menu_bag_style_total', false ) ) { ?>
-					<span class="eddmenucart-total"><?php echo EDD()->cart->total( false ); ?></span>
+					<span class="eddmenucart-total"><?php echo edd_cart_subtotal(); ?></span>
 				<?php } ?>
 				<span class="eddmenucart-cart-icon">
 					<span class="eddmenucart-count"><?php echo edd_get_cart_quantity(); ?></span>

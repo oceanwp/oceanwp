@@ -547,68 +547,18 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 */
 		public static function add_custom_scripts() {
 
-			// If rtl
-			// if ( is_RTL() ) {
-			// 	wp_enqueue_style( 'oceanwp-edd-rtl', OCEANWP_CSS_DIR_URI .'edd/edd-rtl.css' );
-			// }
-
-			// If vertical thumbnails style
-			if ( 'vertical' == get_theme_mod( 'ocean_edd_product_thumbs_layout', 'horizontal' ) ) {
-				wp_enqueue_script( 'oceanwp-edd-thumbnails', OCEANWP_JS_DIR_URI .'third/edd/edd-thumbnails.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
-			}
+			wp_enqueue_style( 'oceanwp-edd', OCEANWP_CSS_DIR_URI .'edd/edd.min.css' );
 
 			// If quick view
 			if ( get_theme_mod( 'ocean_edd_quick_view', true ) ) {
 				wp_enqueue_script( 'oceanwp-edd-quick-view', OCEANWP_JS_DIR_URI .'third/edd/edd-quick-view.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
 				wp_enqueue_style( 'oceanwp-edd-quick-view', OCEANWP_CSS_DIR_URI .'edd/edd-quick-view.min.css' );
-				wp_enqueue_script( 'wc-add-to-cart-variation' );
-				wp_enqueue_script( 'flexslider' );
 			}
-
-			// If single product ajax add to cart
-			// if ( true == get_theme_mod( 'ocean_edd_product_ajax_add_to_cart', false )
-			// 	&& oceanwp_is_edd_single() ) {
-			// 	wp_enqueue_script( 'oceanwp-edd-ajax-addtocart', OCEANWP_JS_DIR_URI .'third/edd/edd-ajax-add-to-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
-			// }
-
-			// If floating bar
-			// if ( 'on' == get_theme_mod( 'ocean_edd_display_floating_bar', 'off' )
-			// 	&& oceanwp_is_edd_single() ) {
-			// 	wp_enqueue_style( 'oceanwp-edd-floating-bar', OCEANWP_CSS_DIR_URI .'edd/edd-floating-bar.min.css' );
-			// 	wp_enqueue_script( 'oceanwp-edd-floating-bar', OCEANWP_JS_DIR_URI .'third/edd/edd-floating-bar.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
-			// }
 
 			// If display cart when product added
 			if ( 'yes' == get_theme_mod( 'ocean_edd_display_cart_product_added', 'no' ) ) {
 				wp_enqueue_script( 'oceanwp-edd-display-cart', OCEANWP_JS_DIR_URI .'third/edd/edd-display-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
 			}
-
-			// If off canvas filter
-			// if ( true == get_theme_mod( 'ocean_edd_off_canvas_filter', false )
-			// 	&& ( oceanwp_is_edd_shop()
-			// 		|| oceanwp_is_edd_tax() ) ) {
-			// 	wp_enqueue_script( 'oceanwp-edd-off-canvas', OCEANWP_JS_DIR_URI .'third/edd/edd-off-canvas.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
-			// }
-
-			// If mobile menu mini cart
-			if ( get_theme_mod( 'ocean_edd_add_mobile_mini_cart', true ) ) {
-				wp_enqueue_script( 'oceanwp-edd-mini-cart', OCEANWP_JS_DIR_URI .'third/edd/edd-mini-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
-			}
-
-			// If multi step checkout
-			if ( true == get_theme_mod( 'ocean_edd_multi_step_checkout', false )
-				&& is_checkout() ) {
-				wp_enqueue_style( 'oceanwp-edd-multistep-checkout', OCEANWP_CSS_DIR_URI .'edd/edd-multistep-checkout.min.css' );
-
-	            $edd_deps = array( 'jquery', 'wc-checkout', 'wc-country-select' );
-
-	            if ( class_exists( 'WC_Ship_Multiple' ) ){
-	                $edd_deps[] = 'wcms-country-select';
-	            }
-
-				wp_enqueue_script( 'oceanwp-edd-multistep-checkout', OCEANWP_JS_DIR_URI .'third/edd/edd-multistep-checkout.min.js', $edd_deps, OCEANWP_THEME_VERSION, true );
-			}
-
 		}
 
 		/**
