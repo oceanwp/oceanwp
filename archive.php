@@ -27,15 +27,21 @@ get_header(); ?>
 
 					if( is_post_type_archive( 'download' ) || is_tax( array( 'download_category', 'download_tag' ) ) ) {
 						
-						do_action( 'ocean_before_archive_product' );
-
+						do_action( 'ocean_before_archive_download' );
+						?>
+						<div class="oceanwp-row <?php echo esc_attr( oceanwp_edd_loop_classes() ); ?>">
+						
+						<?php 
 						while ( have_posts() ) : the_post();
 
 							get_template_part( 'edd_templates/archive' );
 
 						endwhile;
-
-						do_action( 'ocean_after_archive_product' );
+						?>
+						</div>
+						
+						<?php
+						do_action( 'ocean_after_archive_download' );
 
 					} else {
 

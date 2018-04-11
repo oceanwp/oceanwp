@@ -245,17 +245,14 @@ if( ! function_exists( 'oceanwp_edd_add_to_cart_link') ) {
  * Return div for start of loop
  *
  */
-if( ! function_exists( 'oceanwp_edd_loop_start') ) {
+if( ! function_exists( 'oceanwp_edd_loop_classes') ) {
 
-	function oceanwp_edd_loop_start(){
+	function oceanwp_edd_loop_classes(){
 
 		$wrap_classes = array();
 
-		// Content Alignment
-		$content_alignment 	= get_theme_mod( 'ocean_edd_product_entry_content_alignment', 'center' );
-		$wrap_classes[]     = 'eddalign-' .$content_alignment.'';
 		// Columns
-		$desktop_columns   = get_theme_mod( 'ocean_edd_archive_columns' );
+		$desktop_columns   = get_theme_mod( 'ocean_edd_archive_columns', 3 );
 		$wrap_classes[]    = 'desktop-col';
 		$wrap_classes[]    = 'desktop-' . $desktop_columns .'-col';
 
@@ -273,13 +270,9 @@ if( ! function_exists( 'oceanwp_edd_loop_start') ) {
 
 		$wrap_classes = implode( ' ', $wrap_classes );
 
-		echo '<div class="oceanwp-row">
-					<div class="'. $wrap_classes .'">
-				';
+		return $wrap_classes;
 	}
 }
-
-	add_action( 'ocean_before_archive_product', 'oceanwp_edd_loop_start' );
 
 
 /**

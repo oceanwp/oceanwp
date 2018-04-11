@@ -71,9 +71,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				// Disable EDD css
 				add_filter( 'edd_enqueue_styles', '__return_false' );
 
-				// Remove the category description under the page title on taxonomy
-				add_filter( 'ocean_post_subheading', array( $this, 'post_subheading' ) );
-
 				// Show/hide next/prev on products
 				add_filter( 'ocean_has_next_prev', array( $this, 'next_prev' ) );
 
@@ -184,7 +181,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			add_filter( 'edd_output_related_products_args', array( $this, 'related_product_args' ) );
 			add_filter( 'edd_pagination_args', array( $this, 'pagination_args' ) );
 			add_filter( 'edd_continue_shopping_redirect', array( $this, 'continue_shopping_redirect' ) );
-			add_filter( 'post_class', array( $this, 'add_product_classes' ), 40, 3 );
+			add_filter( 'post_class', array( $this, 'add_download_classes' ), 40, 3 );
 			add_filter( 'product_cat_class', array( $this, 'product_cat_class' ) );
 
 			// Sale badge content
@@ -1304,63 +1301,26 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public static function add_product_classes( $classes ) {
-			global $product, $edd_loop;
+		public static function add_download_classes( $classes ) {
+			if (
+				! is_singular( 'download' ) &&
+				! is_post_type_archive( 'download' ) &&
+				! is_tax( 'download_category' ) &&
+				! is_tax( 'download_tag' )
+			) {
+				return $classes;
+			}
 
 			// Vars
 			$content_alignment 	= get_theme_mod( 'ocean_edd_product_entry_content_alignment', 'center' );
 			$content_alignment 	= $content_alignment ? $content_alignment : 'center';
-			$thumbs_layout 		= get_theme_mod( 'ocean_edd_product_thumbs_layout', 'horizontal' );
-			$thumbs_layout 		= $thumbs_layout ? $thumbs_layout : 'horizontal';
-			$tabs_layout 		= get_theme_mod( 'ocean_edd_product_tabs_layout', 'horizontal' );
-			$tabs_layout 		= $tabs_layout ? $tabs_layout : 'horizontal';
-			$btn_style 			= get_theme_mod( 'ocean_edd_product_addtocart_style', 'normal' );
-			$btn_style 			= $btn_style ? $btn_style : 'normal';
+			// $btn_style 			= get_theme_mod( 'ocean_edd_product_addtocart_style', 'normal' );
+			// $btn_style 			= $btn_style ? $btn_style : 'normal';
 
-			// Product entries
-			if ( $product && ! empty( $edd_loop['columns'] ) ) {
-
-				// If has rating
-				if ( $product->get_rating_count() ) {
-					$classes[] = 'has-rating';
-				}
-
-				$classes[] = 'col';
-				$classes[] = oceanwp_grid_class( $edd_loop['columns'] );
-				$classes[] = 'owp-content-'. $content_alignment;
-
-				// If infinite scroll
-				if ( 'infinite_scroll' == get_theme_mod( 'ocean_edd_pagination_style', 'standard' ) ) {
-					$classes[] = 'item-entry';
-				}
-
-			}
-
-			// Single product
-			if ( post_type_exists( 'product' ) ) {
-
-				// Thumbnails layout
-				$classes[] = 'owp-thumbs-layout-' . $thumbs_layout;
-
-				// Add to cart button style
-				$classes[] = 'owp-btn-' . $btn_style;
-
-				// Tabs layout
-				$classes[] = 'owp-tabs-layout-' . $tabs_layout;
-
-				// If no thumbnails
-				$thumbnails = get_post_meta( get_the_ID(), '_product_image_gallery', true );
-				if ( empty( $thumbnails ) ) {
-					$classes[] = 'has-no-thumbnails';
-				}
-
-			}
-
-			// Sale badge style
-			$sale_style = get_theme_mod( 'ocean_edd_sale_badge_style', 'square' );
-			if ( 'circle' == $sale_style ) {
-				$classes[] = $sale_style . '-sale';
-			}
+			$classes[] = 'col';
+			$classes[] = oceanwp_grid_class( get_theme_mod( 'ocean_edd_archive_columns', 3 ) );
+			$classes[] = 'owp-content-'. $content_alignment;
+			// $classes[] = 'owp-btn-' . $btn_style;
 
 			return $classes;
 		}
@@ -1373,18 +1333,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function add_metabox( $types ) {
 			$types[] = 'download';
 			return $types;
-		}
-
-		/**
-		 * Remove the category description under the page title on taxonomy.
-		 *
-		 * @since 1.4.7
-		 */
-		public static function post_subheading( $return ) {
-			// if ( is_edd() && is_product_taxonomy() ) {
-			// 	$return = false;
-			// }
-			return $return;
 		}
 
 		/**

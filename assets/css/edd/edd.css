@@ -3967,39 +3967,47 @@ Easy Digital Downloads Cart
   right: 0;
 }
 
-.widget_edd_cart_widget li {
-  padding: 0;
+.current-shop-items-dropdown {
+  /* Cart spacious style */
+}
+
+.current-shop-items-dropdown .widget_edd_cart_widget {
+  padding: 10px;
+}
+
+.current-shop-items-dropdown .widget_edd_cart_widget li {
+  padding: 7px 10px;
   border-bottom-width: 1px;
   border-style: solid;
   border-color: #e6e6e6;
   min-height: 100%;
 }
 
-.widget_edd_cart_widget li:first-child {
+.current-shop-items-dropdown .widget_edd_cart_widget li:first-child {
   border-top: none;
 }
 
-.widget_edd_cart_widget li:last-child {
+.current-shop-items-dropdown .widget_edd_cart_widget li:last-child {
   border-bottom: none;
 }
 
-.widget_edd_cart_widget li:first-child, .widget_edd_cart_widget li:last-child {
+.current-shop-items-dropdown .widget_edd_cart_widget li:first-child, .current-shop-items-dropdown .widget_edd_cart_widget li:last-child {
   min-height: 100%;
 }
 
-.widget_edd_cart_widget li .edd-cart-item-title {
+.current-shop-items-dropdown .widget_edd_cart_widget li .edd-cart-item-title {
   display: block;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
 }
 
-.widget_edd_cart_widget li .edd-cart-item-price {
+.current-shop-items-dropdown .widget_edd_cart_widget li .edd-cart-item-price {
   color: #b2b2b2;
   font-weight: normal;
 }
 
-.widget_edd_cart_widget li a.remove {
+.current-shop-items-dropdown .widget_edd_cart_widget li a.remove {
   right: 20px;
   margin-top: -17px;
   width: 32px;
@@ -4009,15 +4017,13 @@ Easy Digital Downloads Cart
   border: 1px solid #e6e6e6;
 }
 
-.widget_edd_cart_widget li a.remove:hover {
+.current-shop-items-dropdown .widget_edd_cart_widget li a.remove:hover {
   color: #13aff0;
   border-color: #13aff0;
 }
 
-.widget_edd_cart_widget .edd_total {
-  background-color: #fafafa;
+.current-shop-items-dropdown .widget_edd_cart_widget .edd_total {
   border-top-width: 0;
-  padding: 20px;
   margin: 0;
   font-size: 12px;
   font-weight: normal;
@@ -4027,7 +4033,7 @@ Easy Digital Downloads Cart
   border-bottom: none;
 }
 
-.widget_edd_cart_widget .edd_total .cart-total {
+.current-shop-items-dropdown .widget_edd_cart_widget .edd_total .cart-total {
   float: right;
   font-size: 16px;
   line-height: 1.3;
@@ -4035,38 +4041,40 @@ Easy Digital Downloads Cart
   letter-spacing: 1px;
 }
 
-.widget_edd_cart_widget .edd_total:after {
+.current-shop-items-dropdown .widget_edd_cart_widget .edd_total:after {
   content: '';
   display: table;
   clear: both;
 }
 
-.widget_edd_cart_widget .edd_checkout {
+.current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout {
   margin: 0;
   padding: 20px;
 }
 
-.widget_edd_cart_widget .edd_checkout a {
+.current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout a {
   display: block;
-  padding: 14px 8px;
+  padding: 7px 8px;
   text-align: center;
   letter-spacing: 2px;
   background-color: transparent;
-  border: 1px solid #e6e6e6;
   color: #666;
 }
 
-.widget_edd_cart_widget .edd_checkout a:hover {
-  border-color: #13aff0;
-}
-
-/* Cart spacious style */
-.spacious .owp-mini-cart {
+.current-shop-items-dropdown .spacious .owp-mini-cart {
   padding: 20px;
 }
 
-.spacious .owp-mini-cart .widget_edd_cart_widget ul li {
+.current-shop-items-dropdown .spacious .owp-mini-cart .widget_edd_cart_widget ul li {
   padding: 14px 20px;
+}
+
+.current-shop-items-dropdown .spacious .owp-mini-cart .edd_total {
+  padding: 20px;
+}
+
+.current-shop-items-dropdown .spacious .owp-mini-cart .edd_checkout a {
+  padding: 14px 8px;
 }
 
 /* Cart bag style */
