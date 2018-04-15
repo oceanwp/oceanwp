@@ -49,6 +49,10 @@ Easy Digital Downloads Cart
 			border-color: #e6e6e6;
 			min-height: 100%;
 
+			&.cart_item.empty{
+				border: none;
+			}
+
 			&:first-child{
 				border-top: none;
 			}

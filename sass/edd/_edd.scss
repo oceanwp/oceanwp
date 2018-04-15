@@ -323,7 +323,7 @@
 		text-align: right;
 	}
 
-	> div{
+	> div, form{
 		margin-bottom: 12px;
 	}
 
@@ -366,6 +366,13 @@
 /* =Single Page Styling
 -------------------------------------------------------------- */
 .single-download {
+	
+	.edd-download{
+		div, h2, form{
+			margin-bottom: 12px;
+		}
+	}
+
 	.edd_download_image{
 		position: relative;
 		float: left;
@@ -392,7 +399,7 @@
 	    letter-spacing: 0.6px;
 	}
 
-	div.edd_price{
+	.edd_price{
 		font-size: 36px;
 		line-height: 30px;
 		font-weight: 400;

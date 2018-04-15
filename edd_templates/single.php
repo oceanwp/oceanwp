@@ -52,7 +52,7 @@ do_action( 'ocean_before_single_download_item' );
 
 					$tag_list =  get_the_terms( get_the_ID(), 'download_tag' );
 
-					echo get_the_term_list( get_the_ID(), 'download_tag', '<div class="edd_download_categories">' . _n( 'Tag: ', 'Tags: ', count( $tag_list ), 'oceanwp' ), ', ', '</div>' );
+					echo get_the_term_list( get_the_ID(), 'download_tag', '<div class="edd_download_tags">' . _n( 'Tag: ', 'Tags: ', count( $tag_list ), 'oceanwp' ), ', ', '</div>' );
 						
 					do_action( 'ocean_after_single_download_tags' );
 				}
@@ -81,7 +81,7 @@ do_action( 'ocean_before_single_download_item' );
 				
 					$item_props = edd_add_schema_microdata() ? ' itemprop="offers" itemscope itemtype="http://schema.org/Offer"' : ''; ?>
 					<div<?php echo $item_props; ?>>
-						<div itemprop="price" class="edd_price">
+						<span itemprop="price" class="edd_price">
 							<?php
 							if ( ! edd_has_variable_prices( get_the_ID() ) ) : 
 								echo edd_price( get_the_ID() );
@@ -89,7 +89,7 @@ do_action( 'ocean_before_single_download_item' );
 								echo edd_price_range( get_the_ID() );
 							endif;
 							?>
-						</div>
+						</span>
 					</div>
 					
 					<?php
