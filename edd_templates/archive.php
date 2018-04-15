@@ -8,8 +8,8 @@ global $post;
 
 do_action( 'ocean_before_archive_download_item' );
 ?>
-<li <?php post_class(); ?>>
-	<div class="download-item-inner">
+<div <?php post_class(); ?>>
+	<div class="edd_download_inner">
 	<?php
 	// Get elements
 	$elements = oceanwp_edd_archive_elements_positioning();
@@ -19,37 +19,52 @@ do_action( 'ocean_before_archive_download_item' );
 
 		// Image
 		if ( 'image' == $element ) {
+			do_action( 'ocean_before_archive_download_image' );
 
-			echo '<div class="image-wrap">';
-				do_action( 'ocean_before_archive_download_image' );
-				the_post_thumbnail();
-				do_action( 'ocean_after_archive_download_image' );
-			echo '</div>';
+			if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ) : ?>
+				<div class="edd_download_image">
+					<a href="<?php the_permalink(); ?>">
+						<?php echo get_the_post_thumbnail( get_the_ID(), 'full' ); ?>
+					</a>
+				</div>
+			<?php else: ?>
+				<div class="edd_download_image">
+					<a href="<?php the_permalink(); ?>">
+						<?php echo '<img src="' . get_template_directory_uri() . '/assets/img/placeholder.png' . '">'; ?>
+					</a>
+				</div>
+			<?php endif;
 
+			do_action( 'ocean_after_archive_download_image' );
 		}
 
 		// Category
 		if ( 'category' == $element ) {
 
-			echo '<div class="category">';
 			do_action( 'ocean_before_archive_download_categories' );
-			echo oceanwp_edd_terms_list( 'download_category' );
-			do_action( 'ocean_after_archive_download_categories' );
-			echo '</div>';
 
+			echo '<div class="edd_download_categories">';
+
+			echo oceanwp_edd_terms_list( 'download_category' );
+			
+			echo '</div>';
+				
+			do_action( 'ocean_after_archive_download_categories' );
 		}
 
 		// Title
 		if ( 'title' == $element ) {
 
 			do_action( 'ocean_before_archive_download_title' );
+			?>
 
-			echo '<div class="title">';
-				do_action( 'ocean_before_archive_download_title_inner' );
-				echo '<a href="'. esc_url( get_the_permalink() ) .'">'. get_the_title() .'</a>';
-				do_action( 'ocean_after_archive_download_title_inner' );
-			echo '</div>';
+			<?php $item_prop = edd_add_schema_microdata() ? ' itemprop="name"' : ''; ?>
+			<div<?php echo $item_prop; ?> class="edd_download_title">
+				<a itemprop="url" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			</div>
 
+
+			<?php
 			do_action( 'ocean_after_archive_download_title' );
 
 		}
@@ -57,15 +72,18 @@ do_action( 'ocean_before_archive_download_item' );
 		// Price
 		if ( 'price' == $element ) {
 
-			do_action( 'ocean_before_archive_download_inner' );
-
-			echo '<div class="inner">';
-				do_action( 'ocean_before_archive_download_price' );
-				edd_price();
-				do_action( 'ocean_before_archive_download_price' );
-			echo '</div>';
-
-			do_action( 'ocean_after_archive_download_inner' );
+			do_action( 'ocean_before_archive_download_price' );
+			
+			if ( ! edd_has_variable_prices( get_the_ID() ) ) : ?>
+				<?php $item_props = edd_add_schema_microdata() ? ' itemprop="offers" itemscope itemtype="http://schema.org/Offer"' : ''; ?>
+				<div<?php echo $item_props; ?>>
+					<div itemprop="price" class="edd_price">
+						<?php edd_price( get_the_ID() ); ?>
+					</div>
+				</div>
+			<?php endif;
+			
+			do_action( 'ocean_before_archive_download_price' );
 
 		}
 
@@ -74,17 +92,15 @@ do_action( 'ocean_before_archive_download_item' );
 
 			do_action( 'ocean_before_archive_download_description' );
 
-			if ( ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() )
-				&& get_theme_mod( 'ocean_woo_grid_list', true ) ) {
-				$length = get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
-				echo '<div class="woo-desc">';
-					if ( ! $length ) {
-						echo wp_kses_post( strip_shortcodes( $post->post_excerpt ) );
-					} else {
-						echo wp_trim_words( strip_shortcodes( $post->post_excerpt ), $length );
-					}
-				echo '</div>';
-			}
+			if ( has_excerpt() ) : ?>
+				<div<?php echo $item_prop; ?> class="edd_download_excerpt">
+					<?php echo apply_filters( 'edd_downloads_excerpt', wp_trim_words( get_post_field( 'post_excerpt', get_the_ID() ), 30 ) ); ?>
+				</div>
+			<?php elseif ( get_the_content() ) : ?>
+				<div<?php echo $item_prop; ?> class="edd_download_excerpt">
+					<?php echo apply_filters( 'edd_downloads_excerpt', wp_trim_words( get_post_field( 'post_content', get_the_ID() ), 30 ) ); ?>
+				</div>
+			<?php endif;
 
 			do_action( 'ocean_after_archive_download_description' );
 
@@ -94,16 +110,8 @@ do_action( 'ocean_before_archive_download_item' );
 		if ( 'button' == $element ) {
 
 			do_action( 'ocean_before_archive_download_add_to_cart' );
-
-			echo '<div class="btn-wrap clr">';
-
-				do_action( 'ocean_before_archive_download_add_to_cart_inner' );
 				
-				echo oceanwp_edd_add_to_cart_link();
-				
-				do_action( 'ocean_after_archive_download_add_to_cart_inner' );
-
-			echo '</div>';
+			echo oceanwp_edd_add_to_cart_link();
 
 			do_action( 'ocean_after_archive_download_add_to_cart' );
 
@@ -112,6 +120,6 @@ do_action( 'ocean_before_archive_download_item' );
 	}
 	?>
 	</div>
-</li>
+</div>
 <?php 
 do_action( 'ocean_after_archive_download_item' );

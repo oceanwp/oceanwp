@@ -232,7 +232,7 @@ if( ! function_exists( 'oceanwp_edd_add_to_cart_link') ) {
 	
 	function oceanwp_edd_add_to_cart_link(){
 		if( edd_has_variable_prices( get_the_ID() ) ) {
-			$output = '<a href="'. get_permalink().'">'.esc_html__( 'View Details', 'oceanwp' ) .'</a>';
+			$output = '<a class="edd-add-to-cart button" href="'. get_permalink().'">'. esc_html__( 'View Details', 'oceanwp' ) .'</a>';
 		} else {
 			$output = edd_get_purchase_link( array('price' => false, 'text' => esc_html__( 'Add to Cart', 'oceanwp') ) );
 		}
@@ -251,6 +251,7 @@ if( ! function_exists( 'oceanwp_edd_loop_classes') ) {
 
 		$wrap_classes = array();
 
+		$wrap_classes[]    = 'edd_downloads_list';
 		// Columns
 		$desktop_columns   = get_theme_mod( 'ocean_edd_archive_columns', 3 );
 		$wrap_classes[]    = 'desktop-col';
@@ -273,36 +274,6 @@ if( ! function_exists( 'oceanwp_edd_loop_classes') ) {
 		return $wrap_classes;
 	}
 }
-
-
-/**
- * Return div for end of loop
- *
- */
-if( ! function_exists( 'oceanwp_edd_loop_end') ) {
-
-	function oceanwp_edd_loop_end(){
-		echo '</div></div>';
-	}
-
-	add_action( 'ocean_after_archive_product', 'oceanwp_edd_loop_end' );
-}
-
-/**
- * Return image for single downloads post type
- */
-
- if( ! function_exists( 'oceanwp_edd_featured_image') ) {
-
- 	function oceanwp_edd_featured_image(){
- 		if( has_post_thumbnail() ) {
- 			return get_the_post_thumbnail();
- 		} else {
- 			return '<img src="' . get_template_directory_uri() . '/assets/img/placeholder.png' . '">';
- 		}
- 	}
-
- } 
 
  /** 
   * Return product navigation for single downloads
