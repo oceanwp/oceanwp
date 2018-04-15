@@ -3,12 +3,16 @@
 .edd_purchase_submit_wrapper {
 	position: relative;
 
+	li{
+		list-style-type: none;
+	}
+
 	.edd-cart-ajax-alert{
 		display: none;
 	}
 
 	.edd-add-to-cart{
-
+		position: relative;
 		a{
 			text-decoration: none;
 			display: none;
@@ -36,6 +40,7 @@
 	}
 
 	.edd-add-to-cart{
+		position: relative;
 
 		.edd-add-to-cart-label {
 			opacity: 1;
@@ -47,16 +52,6 @@
 			transition: .1s opacity !important;
 		}
 
-	}
-
-	.button:after,
-	.button:before{	
-		font-weight: normal;
-		font-style: normal;
-		letter-spacing: normal;
-		text-rendering: auto;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 	}
 
 	.edd_go_to_checkout {
@@ -78,6 +73,16 @@
 		display: block;
 		width: 1.5em;
 		height: 1.5em;
+	}
+
+	.button:after,
+	.button:before{	
+		font-weight: normal;
+		font-style: normal;
+		letter-spacing: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
 	.edd-loading {
@@ -164,6 +169,30 @@
 	color: #567622;
 	display: block;
 	position: absolute;
+}
+
+.edd_downloads_list{
+	.button{
+		float: none;
+		display: inline-block;
+		background-color: transparent;
+		color: #848494;
+		padding: 5px 12px;
+		border: 3px double #e4e4e4;
+		font-size: 12px;
+		line-height: 1.5;
+		@include border-radius( 0 );
+		text-transform: none;
+		&:hover {
+			background-color: transparent;
+			color: #13aff0;
+			border-color: #13aff0;
+
+			.edd-loading{
+				border-color: #13aff0;
+			}
+		}
+	}
 }
 
 /* =Downloads Shortcode

@@ -9,8 +9,16 @@
   position: relative;
 }
 
+.edd_purchase_submit_wrapper li {
+  list-style-type: none;
+}
+
 .edd_purchase_submit_wrapper .edd-cart-ajax-alert {
   display: none;
+}
+
+.edd_purchase_submit_wrapper .edd-add-to-cart {
+  position: relative;
 }
 
 .edd_purchase_submit_wrapper .edd-add-to-cart a {
@@ -34,6 +42,10 @@
   padding-right: 30px;
 }
 
+.edd_purchase_submit_wrapper .edd-add-to-cart {
+  position: relative;
+}
+
 .edd_purchase_submit_wrapper .edd-add-to-cart .edd-add-to-cart-label {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -42,16 +54,6 @@
   -ms-transition: .1s opacity !important;
   -o-transition: .1s opacity !important;
   transition: .1s opacity !important;
-}
-
-.edd_purchase_submit_wrapper .button:after,
-.edd_purchase_submit_wrapper .button:before {
-  font-weight: normal;
-  font-style: normal;
-  letter-spacing: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .edd_purchase_submit_wrapper .edd_go_to_checkout:after {
@@ -71,6 +73,16 @@
   display: block;
   width: 1.5em;
   height: 1.5em;
+}
+
+.edd_purchase_submit_wrapper .button:after,
+.edd_purchase_submit_wrapper .button:before {
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .edd_purchase_submit_wrapper .edd-loading {
@@ -158,6 +170,32 @@
   color: #567622;
   display: block;
   position: absolute;
+}
+
+.edd_downloads_list .button {
+  float: none;
+  display: inline-block;
+  background-color: transparent;
+  color: #848494;
+  padding: 5px 12px;
+  border: 3px double #e4e4e4;
+  font-size: 12px;
+  line-height: 1.5;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  text-transform: none;
+}
+
+.edd_downloads_list .button:hover {
+  background-color: transparent;
+  color: #13aff0;
+  border-color: #13aff0;
+}
+
+.edd_downloads_list .button:hover .edd-loading {
+  border-color: #13aff0;
 }
 
 /* =Downloads Shortcode

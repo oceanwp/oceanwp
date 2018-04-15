@@ -232,7 +232,7 @@ if( ! function_exists( 'oceanwp_edd_add_to_cart_link') ) {
 	
 	function oceanwp_edd_add_to_cart_link(){
 		if( edd_has_variable_prices( get_the_ID() ) ) {
-			$output = '<a class="edd-add-to-cart button" href="'. get_permalink().'">'. esc_html__( 'View Details', 'oceanwp' ) .'</a>';
+			$output = '<a class="button" href="'. get_permalink().'">'. esc_html__( 'View Details', 'oceanwp' ) .'</a>';
 		} else {
 			$output = edd_get_purchase_link( array('price' => false, 'text' => esc_html__( 'Add to Cart', 'oceanwp') ) );
 		}

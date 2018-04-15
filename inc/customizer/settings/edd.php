@@ -1182,275 +1182,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) );
 
 			/**
-		     * Stars Color Before
-		     */
-	        $wp_customize->add_setting( 'ocean_stars_color_before', array(
-				'default'				=> '#dfdbdf',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_stars_color_before', array(
-				'label'					=> esc_html__( 'Stars Color Before', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_stars_color_before',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Stars Color
-		     */
-	        $wp_customize->add_setting( 'ocean_stars_color', array(
-				'default'				=> '#f9ca63',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_stars_color', array(
-				'label'					=> esc_html__( 'Stars Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_stars_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-			 * Heading Product Entry Toolbar
-			 */
-			$wp_customize->add_setting( 'ocean_product_entry_toolbar_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_product_entry_toolbar_heading', array(
-				'label'    				=> esc_html__( 'Product Entry: Toolbar', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_styling',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-		     * Tootlbar Border Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_border_color', array(
-				'default'				=> '#eaeaea',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_border_color', array(
-				'label'					=> esc_html__( 'Border Top/Bottom Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_border_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Off Canvas Filter Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_off_canvas_filter_color', array(
-				'default'				=> '#999999',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_off_canvas_filter_color', array(
-				'label'					=> esc_html__( 'Off Canvas Filter Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_off_canvas_filter_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Off Canvas Filter Border Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_off_canvas_filter_border_color', array(
-				'default'				=> '#eaeaea',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_off_canvas_filter_border_color', array(
-				'label'					=> esc_html__( 'Off Canvas Filter Border Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_off_canvas_filter_border_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Off Canvas Filter Hover Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_off_canvas_filter_hover_color', array(
-				'default'				=> '#13aff0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_off_canvas_filter_hover_color', array(
-				'label'					=> esc_html__( 'Off Canvas Filter Hover Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_off_canvas_filter_hover_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Off Canvas Filter Hover Border Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_off_canvas_filter_hover_border_color', array(
-				'default'				=> '#13aff0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_off_canvas_filter_hover_border_color', array(
-				'label'					=> esc_html__( 'Off Canvas Filter Hover Border Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_off_canvas_filter_hover_border_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Grid/List Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_grid_list_color', array(
-				'default'				=> '#999999',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_grid_list_color', array(
-				'label'					=> esc_html__( 'Grid/List Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_grid_list_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Grid/List Border Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_grid_list_border_color', array(
-				'default'				=> '#eaeaea',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_grid_list_border_color', array(
-				'label'					=> esc_html__( 'Grid/List Border Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_grid_list_border_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Grid/List Hover Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_grid_list_hover_color', array(
-				'default'				=> '#13aff0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_grid_list_hover_color', array(
-				'label'					=> esc_html__( 'Grid/List Hover Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_grid_list_hover_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Grid/List Active Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_grid_list_active_color', array(
-				'default'				=> '#13aff0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_grid_list_active_color', array(
-				'label'					=> esc_html__( 'Grid/List Active Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_grid_list_active_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Select Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_select_color', array(
-				'default'				=> '#999999',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_select_color', array(
-				'label'					=> esc_html__( 'Select Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_select_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Select Border Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_select_border_color', array(
-				'default'				=> '#dddddd',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_select_border_color', array(
-				'label'					=> esc_html__( 'Select Border Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_select_border_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Number of Products Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_number_of_products_color', array(
-				'default'				=> '#555555',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_number_of_products_color', array(
-				'label'					=> esc_html__( 'Number of Products Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_number_of_products_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Number of Products Inactive Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_number_of_products_inactive_color', array(
-				'default'				=> '#999999',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_number_of_products_inactive_color', array(
-				'label'					=> esc_html__( 'Number of Products Inactive Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_number_of_products_inactive_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
-		     * Number of Products Border Color
-		     */
-	        $wp_customize->add_setting( 'ocean_toolbar_number_of_products_border_color', array(
-				'default'				=> '#999999',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_toolbar_number_of_products_border_color', array(
-				'label'					=> esc_html__( 'Number of Products Border Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_toolbar_number_of_products_border_color',
-				'priority'				=> 10
-			) ) );
-
-			/**
 			 * Heading Product Entry
 			 */
 			$wp_customize->add_setting( 'ocean_product_entry_heading', array(
@@ -1889,22 +1620,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-		     * Product Entry Del Price Color
-		     */
-	        $wp_customize->add_setting( 'ocean_product_entry_del_price_color', array(
-				'default'				=> '#666666',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_entry_del_price_color', array(
-				'label'					=> esc_html__( 'Del Price Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_product_entry_del_price_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
 			 * Heading Product Entry Add To Cart
 			 */
 			$wp_customize->add_setting( 'ocean_product_entry_addtocart_heading', array(
@@ -2227,51 +1942,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Heading Off Canvas Sidebar
-			 */
-			$wp_customize->add_setting( 'ocean_edd_off_canvas_sidebar_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_edd_off_canvas_sidebar_heading', array(
-				'label'    				=> esc_html__( 'Off Canvas Sidebar', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_styling',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-		     * Off Canvas Sidebar Background Color
-		     */
-	        $wp_customize->add_setting( 'ocean_edd_off_canvas_sidebar_bg', array(
-				'default'				=> '#ffffff',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_edd_off_canvas_sidebar_bg', array(
-				'label'					=> esc_html__( 'Background Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_edd_off_canvas_sidebar_bg',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Off Canvas Sidebar Widgets Border Color
-		     */
-	        $wp_customize->add_setting( 'ocean_edd_off_canvas_sidebar_widgets_border', array(
-				'default'				=> 'rgba(84,84,84,0.15)',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_edd_off_canvas_sidebar_widgets_border', array(
-				'label'					=> esc_html__( 'Widgets Border Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_edd_off_canvas_sidebar_widgets_border',
-				'priority'				=> 10,
-			) ) );
-
-			/**
 			 * Heading Single Product
 			 */
 			$wp_customize->add_setting( 'ocean_single_product_heading', array(
@@ -2317,22 +1987,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-		     * Single Product Del Price Color
-		     */
-	        $wp_customize->add_setting( 'ocean_single_product_del_price_color', array(
-				'default'				=> '#555555',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_del_price_color', array(
-				'label'					=> esc_html__( 'Del Price Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_product_del_price_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
 		     * Single Product Description Color
 		     */
 	        $wp_customize->add_setting( 'ocean_single_product_description_color', array(
@@ -2345,102 +1999,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				'label'					=> esc_html__( 'Description Color', 'oceanwp' ),
 				'section'				=> 'ocean_edd_styling',
 				'settings'				=> 'ocean_single_product_description_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Quantity Border Color
-		     */
-	        $wp_customize->add_setting( 'ocean_quantity_border_color', array(
-				'default'				=> '#e4e4e4',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_quantity_border_color', array(
-				'label'					=> esc_html__( 'Quantity Border Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_quantity_border_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Quantity Border Color Focus
-		     */
-	        $wp_customize->add_setting( 'ocean_quantity_border_color_focus', array(
-				'default'				=> '#bbbbbb',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_quantity_border_color_focus', array(
-				'label'					=> esc_html__( 'Quantity Border Color Focus', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_quantity_border_color_focus',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Quantity Color
-		     */
-	        $wp_customize->add_setting( 'ocean_quantity_color', array(
-				'default'				=> '#777777',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_quantity_color', array(
-				'label'					=> esc_html__( 'Quantity Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_quantity_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Quantity Plus/Minus Color
-		     */
-	        $wp_customize->add_setting( 'ocean_quantity_plus_minus_color', array(
-				'default'				=> '#cccccc',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_quantity_plus_minus_color', array(
-				'label'					=> esc_html__( 'Quantity Plus/Minus Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_quantity_plus_minus_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Quantity Plus/Minus Color Hover
-		     */
-	        $wp_customize->add_setting( 'ocean_quantity_plus_minus_color_hover', array(
-				'default'				=> '#cccccc',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_quantity_plus_minus_color_hover', array(
-				'label'					=> esc_html__( 'Quantity Plus/Minus Color: Hover', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_quantity_plus_minus_color_hover',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Quantity Plus/Minus Border Color Hover
-		     */
-	        $wp_customize->add_setting( 'ocean_quantity_plus_minus_border_color_hover', array(
-				'default'				=> '#e0e0e0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_quantity_plus_minus_border_color_hover', array(
-				'label'					=> esc_html__( 'Quantity Plus/Minus Border Color: Hover', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_quantity_plus_minus_border_color_hover',
 				'priority'				=> 10,
 			) ) );
 
@@ -2618,131 +2176,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				'label'					=> esc_html__( 'Border Color: Hover', 'oceanwp' ),
 				'section'				=> 'ocean_edd_styling',
 				'settings'				=> 'ocean_single_product_navigation_hover_border_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-			 * Heading Product Tabs
-			 */
-			$wp_customize->add_setting( 'ocean_single_product_tabs_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_single_product_tabs_heading', array(
-				'label'    				=> esc_html__( 'Single Product: Tabs', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_styling',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-		     * Single Product Tabs Borders Color
-		     */
-	        $wp_customize->add_setting( 'ocean_single_product_tabs_borders_color', array(
-				'default'				=> '#e9e9e9',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_tabs_borders_color', array(
-				'label'					=> esc_html__( 'Borders Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_product_tabs_borders_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Single Product Tabs Text Color
-		     */
-	        $wp_customize->add_setting( 'ocean_single_product_tabs_text_color', array(
-				'default'				=> '#999999',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_tabs_text_color', array(
-				'label'					=> esc_html__( 'Text Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_product_tabs_text_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Single Product Tabs Text Color Hover
-		     */
-	        $wp_customize->add_setting( 'ocean_single_product_tabs_text_color_hover', array(
-				'default'				=> '#13aff0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_tabs_text_color_hover', array(
-				'label'					=> esc_html__( 'Text Color: Hover', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_product_tabs_text_color_hover',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Single Product Tabs Active Text Color
-		     */
-	        $wp_customize->add_setting( 'ocean_single_product_tabs_active_text_color', array(
-				'default'				=> '#13aff0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_tabs_active_text_color', array(
-				'label'					=> esc_html__( 'Active Text Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_product_tabs_active_text_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Single Product Tabs Active Text Borders Color
-		     */
-	        $wp_customize->add_setting( 'ocean_single_product_tabs_active_text_borders_color', array(
-				'default'				=> '#13aff0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_tabs_active_text_borders_color', array(
-				'label'					=> esc_html__( 'Active Text Borders Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_product_tabs_active_text_borders_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Single Product Tabs Product Description Color
-		     */
-	        $wp_customize->add_setting( 'ocean_single_product_tabs_product_description_title_color', array(
-				'default'				=> '#333333',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_tabs_product_description_title_color', array(
-				'label'					=> esc_html__( 'Product Description: Title Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_product_tabs_product_description_title_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Single Product Tabs Product Description Color
-		     */
-	        $wp_customize->add_setting( 'ocean_single_product_tabs_product_description_color', array(
-				'default'				=> '#929292',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_tabs_product_description_color', array(
-				'label'					=> esc_html__( 'Product Description: Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_product_tabs_product_description_color',
 				'priority'				=> 10,
 			) ) );
 
@@ -3389,28 +2822,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			$checkout_timeline_number_border_color 				= get_theme_mod( 'ocean_edd_checkout_timeline_number_border_color', '#cccccc' );
 			$checkout_timeline_active_bg 						= get_theme_mod( 'ocean_edd_checkout_timeline_active_bg', '#13aff0' );
 			$checkout_timeline_active_color 					= get_theme_mod( 'ocean_edd_checkout_timeline_active_color', '#ffffff' );
-			$stars_color_before 								= get_theme_mod( 'ocean_stars_color_before', '#dfdbdf' );
-			$stars_color 										= get_theme_mod( 'ocean_stars_color', '#f9ca63' );
-			$quantity_border_color 								= get_theme_mod( 'ocean_quantity_border_color', '#e4e4e4' );
-			$quantity_border_color_focus 						= get_theme_mod( 'ocean_quantity_border_color_focus', '#bbbbbb' );
-			$quantity_color 									= get_theme_mod( 'ocean_quantity_color', '#777777' );
-			$quantity_plus_minus_color 							= get_theme_mod( 'ocean_quantity_plus_minus_color', '#cccccc' );
-			$quantity_plus_minus_color_hover 					= get_theme_mod( 'ocean_quantity_plus_minus_color_hover', '#cccccc' );
-			$quantity_plus_minus_border_color_hover 			= get_theme_mod( 'ocean_quantity_plus_minus_border_color_hover', '#e0e0e0' );
-			$toolbar_border_color 								= get_theme_mod( 'ocean_toolbar_border_color', '#eaeaea' );
-			$toolbar_off_canvas_filter_color 					= get_theme_mod( 'ocean_toolbar_off_canvas_filter_color', '#999999' );
-			$toolbar_off_canvas_filter_border_color 			= get_theme_mod( 'ocean_toolbar_off_canvas_filter_border_color', '#eaeaea' );
-			$toolbar_off_canvas_filter_hover_color 				= get_theme_mod( 'ocean_toolbar_off_canvas_filter_hover_color', '#13aff0' );
-			$toolbar_off_canvas_filter_hover_border_color 		= get_theme_mod( 'ocean_toolbar_off_canvas_filter_hover_border_color', '#13aff0' );
-			$toolbar_grid_list_color 							= get_theme_mod( 'ocean_toolbar_grid_list_color', '#999999' );
-			$toolbar_grid_list_border_color 					= get_theme_mod( 'ocean_toolbar_grid_list_border_color', '#eaeaea' );
-			$toolbar_grid_list_hover_color 						= get_theme_mod( 'ocean_toolbar_grid_list_hover_color', '#13aff0' );
-			$toolbar_grid_list_active_color 					= get_theme_mod( 'ocean_toolbar_grid_list_active_color', '#13aff0' );
-			$toolbar_select_color 								= get_theme_mod( 'ocean_toolbar_select_color', '#999999' );
-			$toolbar_select_border_color 						= get_theme_mod( 'ocean_toolbar_select_border_color', '#dddddd' );
-			$toolbar_number_of_products_color 					= get_theme_mod( 'ocean_toolbar_number_of_products_color', '#555555' );
-			$toolbar_number_of_products_inactive_color 			= get_theme_mod( 'ocean_toolbar_number_of_products_inactive_color', '#999999' );
-			$toolbar_number_of_products_border_color 			= get_theme_mod( 'ocean_toolbar_number_of_products_border_color', '#999999' );
 			$product_top_padding 								= get_theme_mod( 'ocean_product_top_padding' );
 			$product_right_padding 								= get_theme_mod( 'ocean_product_right_padding' );
 			$product_bottom_padding 							= get_theme_mod( 'ocean_product_bottom_padding' );
@@ -3466,7 +2877,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			$product_title_color 								= get_theme_mod( 'ocean_product_title_color', '#333333' );
 			$product_title_color_hover 							= get_theme_mod( 'ocean_product_title_color_hover', '#13aff0' );
 			$product_entry_price_color 							= get_theme_mod( 'ocean_product_entry_price_color', '#57bf6d' );
-			$product_entry_del_price_color 						= get_theme_mod( 'ocean_product_entry_del_price_color', '#666666' );
 			$product_entry_addtocart_bg_color 					= get_theme_mod( 'ocean_product_entry_addtocart_bg_color' );
 			$product_entry_addtocart_bg_color_hover 			= get_theme_mod( 'ocean_product_entry_addtocart_bg_color_hover' );
 			$product_entry_addtocart_color 						= get_theme_mod( 'ocean_product_entry_addtocart_color', '#848494' );
@@ -3485,11 +2895,8 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			$quick_view_overlay_spinner_inner_color 			= get_theme_mod( 'ocean_edd_quick_view_overlay_spinner_inner_color', '#ffffff' );
 			$quick_view_modal_bg 								= get_theme_mod( 'ocean_edd_quick_view_modal_bg', '#ffffff' );
 			$quick_view_modal_close_color 						= get_theme_mod( 'ocean_edd_quick_view_modal_close_color', '#333333' );
-			$off_canvas_sidebar_bg 								= get_theme_mod( 'ocean_edd_off_canvas_sidebar_bg', '#ffffff' );
-			$off_canvas_sidebar_widgets_border 					= get_theme_mod( 'ocean_edd_off_canvas_sidebar_widgets_border', 'rgba(84,84,84,0.15)' );
 			$single_product_title_color 						= get_theme_mod( 'ocean_single_product_title_color', '#333333' );
 			$single_product_price_color 						= get_theme_mod( 'ocean_single_product_price_color', '#57bf6d' );
-			$single_product_del_price_color 					= get_theme_mod( 'ocean_single_product_del_price_color', '#555555' );
 			$single_product_description_color 					= get_theme_mod( 'ocean_single_product_description_color', '#aaaaaa' );
 			$single_product_meta_title_color 					= get_theme_mod( 'ocean_single_product_meta_title_color', '#333333' );
 			$single_product_meta_link_color 					= get_theme_mod( 'ocean_single_product_meta_link_color', '#aaaaaa' );
@@ -3501,13 +2908,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			$single_product_navigation_hover_color 				= get_theme_mod( 'ocean_single_product_navigation_hover_color', '#ffffff' );
 			$single_product_navigation_border_color 			= get_theme_mod( 'ocean_single_product_navigation_border_color', '#e9e9e9' );
 			$single_product_navigation_hover_border_color 		= get_theme_mod( 'ocean_single_product_navigation_hover_border_color', '#13aff0' );
-			$single_product_tabs_borders_color 					= get_theme_mod( 'ocean_single_product_tabs_borders_color', '#e9e9e9' );
-			$single_product_tabs_text_color 					= get_theme_mod( 'ocean_single_product_tabs_text_color', '#999999' );
-			$single_product_tabs_text_color_hover 				= get_theme_mod( 'ocean_single_product_tabs_text_color_hover', '#13aff0' );
-			$single_product_tabs_active_text_color 				= get_theme_mod( 'ocean_single_product_tabs_active_text_color', '#13aff0' );
-			$single_product_tabs_active_text_borders_color 		= get_theme_mod( 'ocean_single_product_tabs_active_text_borders_color', '#13aff0' );
-			$single_product_tabs_product_desc_title_color 		= get_theme_mod( 'ocean_single_product_tabs_product_description_title_color', '#333333' );
-			$single_product_tabs_product_desc_color 			= get_theme_mod( 'ocean_single_product_tabs_product_description_color', '#929292' );
 			$account_login_register_color 						= get_theme_mod( 'ocean_account_login_register_color', '#333333' );
 			$account_nav_borders_color 							= get_theme_mod( 'ocean_account_navigation_borders_color', '#e9e9e9' );
 			$account_nav_icons_color 							= get_theme_mod( 'ocean_account_navigation_icons_color', '#13aff0' );
@@ -3803,46 +3203,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				$css .= '#owp-checkout-timeline .active .timeline-wrapper{color:'. $checkout_timeline_active_color .';}';
 			}
 
-			// Add stars color before
-			if ( ! empty( $stars_color_before ) && '#dfdbdf' != $stars_color_before ) {
-				$css .= '.edd .star-rating:before{color:'. $stars_color_before .';}';
-			}
-
-			// Add stars color
-			if ( ! empty( $stars_color ) && '#f9ca63' != $stars_color ) {
-				$css .= '.edd .star-rating span{color:'. $stars_color .';}';
-			}
-
-			// Add quantity border color
-			if ( ! empty( $quantity_border_color ) && '#e4e4e4' != $quantity_border_color ) {
-				$css .= '.quantity .qty,.quantity .qty-changer a{border-color:'. $quantity_border_color .';}';
-			}
-
-			// Add quantity border color focus
-			if ( ! empty( $quantity_border_color_focus ) && '#bbbbbb' != $quantity_border_color_focus ) {
-				$css .= 'body .quantity .qty:focus{border-color:'. $quantity_border_color_focus .';}';
-			}
-
-			// Add quantity color
-			if ( ! empty( $quantity_color ) && '#777777' != $quantity_color ) {
-				$css .= '.quantity .qty{color:'. $quantity_color .';}';
-			}
-
-			// Add quantity plus/minus color
-			if ( ! empty( $quantity_plus_minus_color ) && '#cccccc' != $quantity_plus_minus_color ) {
-				$css .= '.quantity .qty-changer a{color:'. $quantity_plus_minus_color .';}';
-			}
-
-			// Add quantity plus/minus color hover
-			if ( ! empty( $quantity_plus_minus_color_hover ) && '#cccccc' != $quantity_plus_minus_color_hover ) {
-				$css .= '.quantity .qty-changer a:hover{color:'. $quantity_plus_minus_color_hover .';}';
-			}
-
-			// Add quantity plus/minus border color hover
-			if ( ! empty( $quantity_plus_minus_border_color_hover ) && '#e0e0e0' != $quantity_plus_minus_border_color_hover ) {
-				$css .= '.quantity .qty-changer a:hover{border-color:'. $quantity_plus_minus_border_color_hover .';}';
-			}
-
 			// Add toolbar border color
 			if ( ! empty( $toolbar_border_color ) && '#eaeaea' != $toolbar_border_color ) {
 				$css .= '.edd .oceanwp-toolbar{border-color:'. $toolbar_border_color .';}';
@@ -3918,7 +3278,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $product_right_padding ) && '' != $product_right_padding
 				|| isset( $product_bottom_padding ) && '' != $product_bottom_padding
 				|| isset( $product_left_padding ) && '' != $product_left_padding ) {
-				$css .= '.edd .products .product-inner{padding:'. oceanwp_spacing_css( $product_top_padding, $product_right_padding, $product_bottom_padding, $product_left_padding ) .'}';
+				$css .= '.edd_downloads_list .edd_download_inner{padding:'. oceanwp_spacing_css( $product_top_padding, $product_right_padding, $product_bottom_padding, $product_left_padding ) .'}';
 			}
 
 			// Tablet product padding
@@ -3926,7 +3286,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $tablet_product_right_padding ) && '' != $tablet_product_right_padding
 				|| isset( $tablet_product_bottom_padding ) && '' != $tablet_product_bottom_padding
 				|| isset( $tablet_product_left_padding ) && '' != $tablet_product_left_padding ) {
-				$css .= '@media (max-width: 768px){.edd .products .product-inner{padding:'. oceanwp_spacing_css( $tablet_product_top_padding, $tablet_product_right_padding, $tablet_product_bottom_padding, $tablet_product_left_padding ) .'}}';
+				$css .= '@media (max-width: 768px){.edd_downloads_list .edd_download_inner{padding:'. oceanwp_spacing_css( $tablet_product_top_padding, $tablet_product_right_padding, $tablet_product_bottom_padding, $tablet_product_left_padding ) .'}}';
 			}
 
 			// Mobile product padding
@@ -3934,7 +3294,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $mobile_product_right_padding ) && '' != $mobile_product_right_padding
 				|| isset( $mobile_product_bottom_padding ) && '' != $mobile_product_bottom_padding
 				|| isset( $mobile_product_left_padding ) && '' != $mobile_product_left_padding ) {
-				$css .= '@media (max-width: 480px){.edd .products .product-inner{padding:'. oceanwp_spacing_css( $mobile_product_top_padding, $mobile_product_right_padding, $mobile_product_bottom_padding, $mobile_product_left_padding ) .'}}';
+				$css .= '@media (max-width: 480px){.edd_downloads_list .edd_download_inner{padding:'. oceanwp_spacing_css( $mobile_product_top_padding, $mobile_product_right_padding, $mobile_product_bottom_padding, $mobile_product_left_padding ) .'}}';
 			}
 
 			// Product image margin
@@ -3942,7 +3302,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $product_image_right_margin ) && '' != $product_image_right_margin
 				|| isset( $product_image_bottom_margin ) && '' != $product_image_bottom_margin
 				|| isset( $product_image_left_margin ) && '' != $product_image_left_margin ) {
-				$css .= '.edd ul.products li.product .edd-entry-inner li.image-wrap{margin:'. oceanwp_spacing_css( $product_image_top_margin, $product_image_right_margin, $product_image_bottom_margin, $product_image_left_margin ) .'}';
+				$css .= '.edd_downloads_list .edd_download_inner .edd_download_image{margin:'. oceanwp_spacing_css( $product_image_top_margin, $product_image_right_margin, $product_image_bottom_margin, $product_image_left_margin ) .'}';
 			}
 
 			// Tablet product image margin
@@ -3950,7 +3310,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $tablet_product_image_right_margin ) && '' != $tablet_product_image_right_margin
 				|| isset( $tablet_product_image_bottom_margin ) && '' != $tablet_product_image_bottom_margin
 				|| isset( $tablet_product_image_left_margin ) && '' != $tablet_product_image_left_margin ) {
-				$css .= '@media (max-width: 768px){.edd ul.products li.product .edd-entry-inner li.image-wrap{margin:'. oceanwp_spacing_css( $tablet_product_image_top_margin, $tablet_product_image_right_margin, $tablet_product_image_bottom_margin, $tablet_product_image_left_margin ) .'}}';
+				$css .= '@media (max-width: 768px){.edd_downloads_list .edd_download_inner .edd_download_image{margin:'. oceanwp_spacing_css( $tablet_product_image_top_margin, $tablet_product_image_right_margin, $tablet_product_image_bottom_margin, $tablet_product_image_left_margin ) .'}}';
 			}
 
 			// Mobile product image margin
@@ -3958,7 +3318,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $mobile_product_image_right_margin ) && '' != $mobile_product_image_right_margin
 				|| isset( $mobile_product_image_bottom_margin ) && '' != $mobile_product_image_bottom_margin
 				|| isset( $mobile_product_image_left_margin ) && '' != $mobile_product_image_left_margin ) {
-				$css .= '@media (max-width: 480px){.edd ul.products li.product .edd-entry-inner li.image-wrap{margin:'. oceanwp_spacing_css( $mobile_product_image_top_margin, $mobile_product_image_right_margin, $mobile_product_image_bottom_margin, $mobile_product_image_left_margin ) .'}}';
+				$css .= '@media (max-width: 480px){.edd_downloads_list .edd_download_inner .edd_download_image{margin:'. oceanwp_spacing_css( $mobile_product_image_top_margin, $mobile_product_image_right_margin, $mobile_product_image_bottom_margin, $mobile_product_image_left_margin ) .'}}';
 			}
 
 			// Product border style if border width
@@ -3974,7 +3334,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $mobile_product_right_border_width ) && '' != $mobile_product_right_border_width
 				|| isset( $mobile_product_bottom_border_width ) && '' != $mobile_product_bottom_border_width
 				|| isset( $mobile_product_left_border_width ) && '' != $mobile_product_left_border_width ) {
-				$css .= '.edd .products .product-inner{border-style: solid}';
+				$css .= '.edd_downloads_list .edd_download_inner{border-style: solid}';
 			}
 
 			// Product border width
@@ -3982,7 +3342,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $product_right_border_width ) && '' != $product_right_border_width
 				|| isset( $product_bottom_border_width ) && '' != $product_bottom_border_width
 				|| isset( $product_left_border_width ) && '' != $product_left_border_width ) {
-				$css .= '.edd .products .product-inner{border-width:'. oceanwp_spacing_css( $product_top_border_width, $product_right_border_width, $product_bottom_border_width, $product_left_border_width ) .'}';
+				$css .= '.edd_downloads_list .edd_download_inner{border-width:'. oceanwp_spacing_css( $product_top_border_width, $product_right_border_width, $product_bottom_border_width, $product_left_border_width ) .'}';
 			}
 
 			// Tablet product border width
@@ -3990,7 +3350,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $tablet_product_right_border_width ) && '' != $tablet_product_right_border_width
 				|| isset( $tablet_product_bottom_border_width ) && '' != $tablet_product_bottom_border_width
 				|| isset( $tablet_product_left_border_width ) && '' != $tablet_product_left_border_width ) {
-				$css .= '@media (max-width: 768px){.edd .products .product-inner{border-width:'. oceanwp_spacing_css( $tablet_product_top_border_width, $tablet_product_right_border_width, $tablet_product_bottom_border_width, $tablet_product_left_border_width ) .'}}';
+				$css .= '@media (max-width: 768px){.edd_downloads_list .edd_download_inner{border-width:'. oceanwp_spacing_css( $tablet_product_top_border_width, $tablet_product_right_border_width, $tablet_product_bottom_border_width, $tablet_product_left_border_width ) .'}}';
 			}
 
 			// Mobile product border width
@@ -3998,7 +3358,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $mobile_product_right_border_width ) && '' != $mobile_product_right_border_width
 				|| isset( $mobile_product_bottom_border_width ) && '' != $mobile_product_bottom_border_width
 				|| isset( $mobile_product_left_border_width ) && '' != $mobile_product_left_border_width ) {
-				$css .= '@media (max-width: 480px){.edd .products .product-inner{border-width:'. oceanwp_spacing_css( $mobile_product_top_border_width, $mobile_product_right_border_width, $mobile_product_bottom_border_width, $mobile_product_left_border_width ) .'}}';
+				$css .= '@media (max-width: 480px){.edd_downloads_list .edd_download_inner{border-width:'. oceanwp_spacing_css( $mobile_product_top_border_width, $mobile_product_right_border_width, $mobile_product_bottom_border_width, $mobile_product_left_border_width ) .'}}';
 			}
 
 			// Product border radius
@@ -4006,7 +3366,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $product_right_border_radius ) && '' != $product_right_border_radius
 				|| isset( $product_bottom_border_radius ) && '' != $product_bottom_border_radius
 				|| isset( $product_left_border_radius ) && '' != $product_left_border_radius ) {
-				$css .= '.edd .products .product-inner{border-radius:'. oceanwp_spacing_css( $product_top_border_radius, $product_right_border_radius, $product_bottom_border_radius, $product_left_border_radius ) .'}';
+				$css .= '.edd_downloads_list .edd_download_inner{border-radius:'. oceanwp_spacing_css( $product_top_border_radius, $product_right_border_radius, $product_bottom_border_radius, $product_left_border_radius ) .'}';
 			}
 
 			// Tablet product border radius
@@ -4014,7 +3374,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $tablet_product_right_border_radius ) && '' != $tablet_product_right_border_radius
 				|| isset( $tablet_product_bottom_border_radius ) && '' != $tablet_product_bottom_border_radius
 				|| isset( $tablet_product_left_border_radius ) && '' != $tablet_product_left_border_radius ) {
-				$css .= '@media (max-width: 768px){.edd .products .product-inner{border-radius:'. oceanwp_spacing_css( $tablet_product_top_border_radius, $tablet_product_right_border_radius, $tablet_product_bottom_border_radius, $tablet_product_left_border_radius ) .'}}';
+				$css .= '@media (max-width: 768px){.edd_downloads_list .edd_download_inner{border-radius:'. oceanwp_spacing_css( $tablet_product_top_border_radius, $tablet_product_right_border_radius, $tablet_product_bottom_border_radius, $tablet_product_left_border_radius ) .'}}';
 			}
 
 			// Mobile product border radius
@@ -4022,92 +3382,87 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				|| isset( $mobile_product_right_border_radius ) && '' != $mobile_product_right_border_radius
 				|| isset( $mobile_product_bottom_border_radius ) && '' != $mobile_product_bottom_border_radius
 				|| isset( $mobile_product_left_border_radius ) && '' != $mobile_product_left_border_radius ) {
-				$css .= '@media (max-width: 480px){.edd .products .product-inner{border-radius:'. oceanwp_spacing_css( $mobile_product_top_border_radius, $mobile_product_right_border_radius, $mobile_product_bottom_border_radius, $mobile_product_left_border_radius ) .'}}';
+				$css .= '@media (max-width: 480px){.edd_downloads_list .edd_download_inner{border-radius:'. oceanwp_spacing_css( $mobile_product_top_border_radius, $mobile_product_right_border_radius, $mobile_product_bottom_border_radius, $mobile_product_left_border_radius ) .'}}';
 			}
 
 			// Add background color
 			if ( ! empty( $product_background_color ) ) {
-				$css .= '.edd .products .product-inner{background-color:'. $product_background_color .';}';
+				$css .= '.edd_downloads_list .edd_download_inner{background-color:'. $product_background_color .';}';
 			}
 
 			// Add border color
 			if ( ! empty( $product_border_color ) ) {
-				$css .= '.edd .products .product-inner{border-color:'. $product_border_color .';}';
+				$css .= '.edd_downloads_list .edd_download_inner{border-color:'. $product_border_color .';}';
 			}
 
 			// Add category color
 			if ( ! empty( $category_color ) && '#999999' != $category_color ) {
-				$css .= '.edd ul.products li.product .category a{color:'. $category_color .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .edd_download_categories a{color:'. $category_color .';}';
 			}
 
 			// Add category color hover
 			if ( ! empty( $category_color_hover ) && '#13aff0' != $category_color_hover ) {
-				$css .= '.edd ul.products li.product .category a:hover{color:'. $category_color_hover .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .edd_download_categories a:hover{color:'. $category_color_hover .';}';
 			}
 
 			// Add product entry title color
 			if ( ! empty( $product_title_color ) && '#333333' != $product_title_color ) {
-				$css .= '.edd ul.products li.product li.title a{color:'. $product_title_color .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .edd_download_title a{color:'. $product_title_color .';}';
 			}
 
 			// Add product entry title color hover
 			if ( ! empty( $product_title_color_hover ) && '#13aff0' != $product_title_color_hover ) {
-				$css .= '.edd ul.products li.product li.title a:hover{color:'. $product_title_color_hover .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .edd_download_title a:hover{color:'. $product_title_color_hover .';}';
 			}
 
 			// Add product entry price color
 			if ( ! empty( $product_entry_price_color ) && '#57bf6d' != $product_entry_price_color ) {
-				$css .= '.edd ul.products li.product .price, .edd ul.products li.product .price .amount{color:'. $product_entry_price_color .';}';
-			}
-
-			// Add product entry del price color
-			if ( ! empty( $product_entry_del_price_color ) && '#666666' != $product_entry_del_price_color ) {
-				$css .= '.edd ul.products li.product .price del .amount{color:'. $product_entry_del_price_color .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .edd_download_title span.edd_price{color:'. $product_entry_price_color .';}';
 			}
 
 			// Add product entry add to cart background color
 			if ( ! empty( $product_entry_addtocart_bg_color ) ) {
-				$css .= '.edd ul.products li.product .button,.edd ul.products li.product .product-inner .added_to_cart{background-color:'. $product_entry_addtocart_bg_color .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .button{background-color:'. $product_entry_addtocart_bg_color .';}';
 			}
 
 			// Add product entry add to cart background color hover
 			if ( ! empty( $product_entry_addtocart_bg_color_hover ) ) {
-				$css .= '.edd ul.products li.product .button:hover,.edd ul.products li.product .product-inner .added_to_cart:hover{background-color:'. $product_entry_addtocart_bg_color_hover .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .button:hover{background-color:'. $product_entry_addtocart_bg_color_hover .';}';
 			}
 
 			// Add product entry add to cart color
 			if ( ! empty( $product_entry_addtocart_color ) && '#848494' != $product_entry_addtocart_color ) {
-				$css .= '.edd ul.products li.product .button,.edd ul.products li.product .product-inner .added_to_cart{color:'. $product_entry_addtocart_color .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .button{color:'. $product_entry_addtocart_color .';}';
 			}
 
 			// Add product entry add to cart color hover
 			if ( ! empty( $product_entry_addtocart_color_hover ) && '#13aff0' != $product_entry_addtocart_color_hover ) {
-				$css .= '.edd ul.products li.product .button:hover,.edd ul.products li.product .product-inner .added_to_cart:hover{color:'. $product_entry_addtocart_color_hover .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .button:hover{color:'. $product_entry_addtocart_color_hover .';}';
 			}
 
 			// Add product entry add to cart border color
 			if ( ! empty( $product_entry_addtocart_border_color ) && '#e4e4e4' != $product_entry_addtocart_border_color ) {
-				$css .= '.edd ul.products li.product .button,.edd ul.products li.product .product-inner .added_to_cart{border-color:'. $product_entry_addtocart_border_color .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .button{border-color:'. $product_entry_addtocart_border_color .';}';
 			}
 
 			// Add product entry add to cart border color hover
 			if ( ! empty( $product_entry_addtocart_border_color_hover ) && '#13aff0' != $product_entry_addtocart_border_color_hover ) {
-				$css .= '.edd ul.products li.product .button:hover,.edd ul.products li.product .product-inner .added_to_cart:hover{border-color:'. $product_entry_addtocart_border_color_hover .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .button:hover{border-color:'. $product_entry_addtocart_border_color_hover .';}';
 			}
 
 			// Add product entry add to cart border style
 			if ( ! empty( $product_entry_addtocart_border_style ) && 'double' != $product_entry_addtocart_border_style ) {
-				$css .= '.edd ul.products li.product .button,.edd ul.products li.product .product-inner .added_to_cart{border-style:'. $product_entry_addtocart_border_style .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .button{border-style:'. $product_entry_addtocart_border_style .';}';
 			}
 
 			// Add product entry add to cart border size
 			if ( ! empty( $product_entry_addtocart_border_size ) && '3' != $product_entry_addtocart_border_size ) {
-				$css .= '.edd ul.products li.product .button,.edd ul.products li.product .product-inner .added_to_cart{border-width:'. $product_entry_addtocart_border_size .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .button{border-width:'. $product_entry_addtocart_border_size .';}';
 			}
 
 			// Add product entry add to cart border radius
 			if ( ! empty( $product_entry_addtocart_border_radius ) ) {
-				$css .= '.edd ul.products li.product .button,.edd ul.products li.product .product-inner .added_to_cart{border-radius:'. $product_entry_addtocart_border_radius .';}';
+				$css .= '.edd_downloads_list .edd_download_inner .button{border-radius:'. $product_entry_addtocart_border_radius .';}';
 			}
 
 			// Add quick view button background
@@ -4167,37 +3522,32 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 
 			// Add single product title color
 			if ( ! empty( $single_product_title_color ) && '#333333' != $single_product_title_color ) {
-				$css .= '.edd div.product .product_title{color:'. $single_product_title_color .';}';
+				$css .= '.single-download .edd-download .edd_download_title{color:'. $single_product_title_color .';}';
 			}
 
 			// Add single product price color
 			if ( ! empty( $single_product_price_color ) && '#57bf6d' != $single_product_price_color ) {
-				$css .= '.price,.amount{color:'. $single_product_price_color .';}';
-			}
-
-			// Add single product del price color
-			if ( ! empty( $single_product_del_price_color ) && '#555555' != $single_product_del_price_color ) {
-				$css .= '.price del,del .amount{color:'. $single_product_del_price_color .';}';
+				$css .= 'span.edd_price{color:'. $single_product_price_color .';}';
 			}
 
 			// Add single product description color
 			if ( ! empty( $single_product_description_color ) && '#aaaaaa' != $single_product_description_color ) {
-				$css .= '.edd div.product div[itemprop="description"]{color:'. $single_product_description_color .';}';
+				$css .= '.single-download .edd-download .edd_download_content{color:'. $single_product_description_color .';}';
 			}
 
 			// Add single product meta title color
 			if ( ! empty( $single_product_meta_title_color ) && '#333333' != $single_product_meta_title_color ) {
-				$css .= '.product_meta .posted_in,.product_meta .tagged_as{color:'. $single_product_meta_title_color .';}';
+				$css .= '.single-download .edd_download_categories, .single-download .edd_download_tags{color:'. $single_product_meta_title_color .';}';
 			}
 
 			// Add single product meta link color
 			if ( ! empty( $single_product_meta_link_color ) && '#aaaaaa' != $single_product_meta_link_color ) {
-				$css .= '.product_meta .posted_in a,.product_meta .tagged_as a{color:'. $single_product_meta_link_color .';}';
+				$css .= '..single-download .edd_download_categories a, .single-download .edd_download_tags a{color:'. $single_product_meta_link_color .';}';
 			}
 
 			// Add single product meta link color hover
 			if ( ! empty( $single_product_meta_link_color_hover ) && '#13aff0' != $single_product_meta_link_color_hover ) {
-				$css .= '.product_meta .posted_in a:hover,.product_meta .tagged_as a:hover{color:'. $single_product_meta_link_color_hover .';}';
+				$css .= '.single-download .edd_download_categories a:hover, .single-download .edd_download_tags a:hover{color:'. $single_product_meta_link_color_hover .';}';
 			}
 
 			// Add single product navigation border radius
