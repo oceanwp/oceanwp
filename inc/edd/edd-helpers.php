@@ -96,12 +96,12 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 		// Cart total
 		$display = get_theme_mod( 'ocean_edd_menu_icon_display', 'icon_count' );
 		if ( 'icon_total' == $display ) {
-			$cart_extra = '<span class="eddmenucart-details cart-total">' . edd_cart_subtotal() . '</span>';
+			$cart_extra = '<span class="eddmenucart-details cart-total">' . edd_currency_filter( edd_format_amount( edd_get_cart_total() ) ) . '</span>';
 		} elseif ( 'icon_count' == $display ) {
 			$cart_extra = '<span class="eddmenucart-details edd-cart-quantity count">'. edd_get_cart_quantity() .'</span>';
 		} elseif ( 'icon_count_total' == $display ) {
 			$cart_extra = '<span class="eddmenucart-details edd-cart-quantity count">'. edd_get_cart_quantity() .'</span>';
-			$cart_total = '<span class="cart-total">' . edd_cart_subtotal() . '</span>';
+			$cart_total = '<span class="cart-total">' . edd_currency_filter( edd_format_amount( edd_get_cart_total() ) ) . '</span>';
 			$cart_extra .= str_replace( 'amount', 'eddmenucart-details', $cart_total );
 		} else {
 			$cart_extra = '';
@@ -127,7 +127,7 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 			<a href="<?php echo esc_url( $url ); ?>" class="eddmenucart">
 				<?php
 				if ( true == get_theme_mod( 'ocean_edd_menu_bag_style_total', false ) ) { ?>
-					<span class="eddmenucart-total"><?php echo edd_cart_subtotal(); ?></span>
+					<span class="eddmenucart-total"><?php echo edd_currency_filter( edd_format_amount( edd_get_cart_total() ) ); ?></span>
 				<?php } ?>
 				<span class="eddmenucart-cart-icon">
 					<span class="eddmenucart-count"><?php echo edd_get_cart_quantity(); ?></span>
@@ -320,3 +320,14 @@ if( ! function_exists( 'oceanwp_edd_loop_classes') ) {
 	<?php
 	}
 }
+
+/**
+ * Remove the purchase button on single download pages
+ *
+ */
+function oceanwp_remove_edd_purchase_button() {
+	if ( is_singular( 'download' ) ) {
+		remove_action( 'edd_after_download_content', 'edd_append_purchase_link' );
+	}
+}
+add_action( 'template_redirect', 'oceanwp_remove_edd_purchase_button' );

@@ -6,108 +6,117 @@
 
 global $post;
 
-do_action( 'ocean_before_single_product_item' );
+do_action( 'ocean_before_single_download_item' );
 ?>
+<div <?php post_class(); ?>>
+	<div class="edd_download_inner">
 
-<div class="oceanwp-row">
+		<?php do_action( 'ocean_before_single_download_image' ); ?>
 
-	<div class="col span_1_of_2 image-wrap">
-	<?php 
-		do_action( 'ocean_before_single_product_image' );
-		the_post_thumbnail();
-		do_action( 'ocean_after_single_product_image' );
-	?>
-	</div>
+		<div class="edd_download_image">
+		<?php
+			if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ) :
+				echo get_the_post_thumbnail( get_the_ID(), 'full' );
+			else:
+				echo '<img src="' . get_template_directory_uri() . '/assets/img/placeholder.png' . '">';
+			endif;
+		?>
+		</div>
 
-	<?php
-	echo '<ul class="col span_1_of_2 clr">';
+		<?php do_action( 'ocean_after_single_download_image' ); ?>
 
-		// Get elements
-		$elements = oceanwp_edd_single_elements_positioning();
+		<div class="edd_download_summary">
+			<?php
+			// Get elements
+			$elements = oceanwp_edd_single_elements_positioning();
 
-		// Loop through elements
-		foreach ( $elements as $element ) {
+			// Loop through elements
+			foreach ( $elements as $element ) {
 
-			// Category
-			if ( 'category' == $element ) {
+				// Category
+				if ( 'category' == $element ) {
 
-				echo '<li class="category">';
-				do_action( 'ocean_before_single_product_categories' );
-				echo oceanwp_edd_terms_list( 'download_category' );
-				do_action( 'ocean_after_single_product_categories' );
-				echo '</li>';
+					do_action( 'ocean_before_single_download_categories' );
 
-			}
+					$category_list =  get_the_terms( get_the_ID(), 'download_category' );
 
-			// Tag
-			if ( 'tag' == $element ) {
+					echo get_the_term_list( get_the_ID(), 'download_category', '<div class="edd_download_categories">' . _n( 'Category: ', 'Categories: ', count( $category_list ), 'oceanwp' ), ', ', '</div>' );
+											
+					do_action( 'ocean_after_single_download_categories' );
+				}
 
-				echo '<li class="tag">';
-				do_action( 'ocean_before_single_product_tags' );
-				echo oceanwp_edd_terms_list( 'download_tag' );
-				do_action( 'ocean_before_single_product_tags' );
-				echo '</li>';
+				// Tag
+				if ( 'tag' == $element ) {
 
-			}
+					do_action( 'ocean_before_single_download_tags' );
 
-			// Title
-			if ( 'title' == $element ) {
+					$tag_list =  get_the_terms( get_the_ID(), 'download_tag' );
 
-				do_action( 'ocean_before_single_product_title' );
+					echo get_the_term_list( get_the_ID(), 'download_tag', '<div class="edd_download_categories">' . _n( 'Tag: ', 'Tags: ', count( $tag_list ), 'oceanwp' ), ', ', '</div>' );
+						
+					do_action( 'ocean_after_single_download_tags' );
+				}
 
-				echo '<li class="title">';
-					do_action( 'ocean_before_single_product_title_inner' );
-					echo get_the_title();
-					echo oceanwp_edd_download_navigation();
-					do_action( 'ocean_after_single_product_title_inner' );
-				echo '</li>';
+				// Title
+				if ( 'title' == $element ) {
 
-				do_action( 'ocean_after_single_product_title' );
+					do_action( 'ocean_before_single_download_title' );
+					?>
 
-			}
+					<?php $item_prop = edd_add_schema_microdata() ? ' itemprop="name"' : ''; ?>
+					<h2<?php echo $item_prop; ?> class="edd_download_title">
+						<?php the_title(); ?>
+					</h2>
 
-			// Price
-			if ( 'price' == $element ) {
 
-				do_action( 'ocean_before_single_product_inner' );
+					<?php
+					do_action( 'ocean_after_single_download_title' );
 
-				echo '<li class="inner">';
-					do_action( 'ocean_before_single_product_price' );
-					edd_price();
-					do_action( 'ocean_before_single_product_price' );
-				echo '</li>';
+				}
 
-				do_action( 'ocean_after_single_product_inner' );
+				// Price
+				if ( 'price' == $element ) {
 
-			}
-
-			// Add to cart button
-			if ( 'button' == $element ) {
-
-				do_action( 'ocean_before_single_product_add_to_cart' );
-
-				echo '<li class="btn-wrap clr">';
-
-					do_action( 'ocean_before_single_product_add_to_cart_inner' );
+					do_action( 'ocean_before_single_download_price' );
+				
+					$item_props = edd_add_schema_microdata() ? ' itemprop="offers" itemscope itemtype="http://schema.org/Offer"' : ''; ?>
+					<div<?php echo $item_props; ?>>
+						<div itemprop="price" class="edd_price">
+							<?php
+							if ( ! edd_has_variable_prices( get_the_ID() ) ) : 
+								echo edd_price( get_the_ID() );
+							else:
+								echo edd_price_range( get_the_ID() );
+							endif;
+							?>
+						</div>
+					</div>
 					
+					<?php
+					do_action( 'ocean_before_single_download_price' );
+
+				}
+
+				// Add to cart button
+				if ( 'button' == $element ) {
+
+					do_action( 'ocean_before_single_download_add_to_cart' );
+						
 					echo edd_get_purchase_link( array('price' => false, 'text' => esc_html__( 'Add to Cart', 'oceanwp') ) );
-					
-					do_action( 'ocean_after_single_product_add_to_cart_inner' );
 
-				echo '</li>';
+					do_action( 'ocean_after_single_download_add_to_cart' );
 
-				do_action( 'ocean_after_single_product_add_to_cart' );
+				}
 
 			}
+			?>
+		</div>
 
-		}
+		<div class="edd_download_content">
+			<?php the_content( __( 'Read More', 'checkout' ) ); ?>
+		</div>
 
-	echo '</ul>';
-?>
+	</div>
 </div>
-
-<div class="oceanwp-row downloads-content"> 
-	<?php echo get_the_content(); ?>
-</div>
-
-<?php do_action( 'ocean_after_single_product_item' ); ?>
+<?php 
+do_action( 'ocean_after_single_download_item' );

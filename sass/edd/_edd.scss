@@ -362,3 +362,62 @@
 		color: #3fc387;
 	}
 }
+
+/* =Single Page Styling
+-------------------------------------------------------------- */
+.single-download {
+	.edd_download_image{
+		position: relative;
+		float: left;
+		width: 52%;
+		margin-bottom: 0;
+	}
+
+	.edd_download_summary{
+		float: right;
+		width: 44%;
+		margin-bottom: 36px;
+	}
+
+	.edd_download_content{
+		padding-top: 30px;
+		clear: both;
+	}
+
+	.edd_download_title{
+		font-size: 24px;
+	    padding: 0 0 20px;
+	    margin: 0 0 10px;
+	    border-bottom: 1px solid #f1f1f1;
+	    letter-spacing: 0.6px;
+	}
+
+	div.edd_price{
+		font-size: 36px;
+		line-height: 30px;
+		font-weight: 400;
+		margin: 20px 0 0;
+		color: #0b7cac;
+	}
+
+	.edd_download_purchase_form {
+		padding-bottom: 20px;
+		border-bottom: 1px solid #eaeaea;
+		margin-top: 20px;
+
+		ul{
+			margin-left: 0;
+			li{
+				list-style-type: none;
+			}
+		}
+	}
+
+	.edd_download_categories,
+	.edd_download_tags {
+		font-size: 13px;
+		border-bottom: 1px solid #eaeaea;
+		padding: 10px 0;
+		color: #787878;
+	}
+}

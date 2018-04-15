@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for displaying single layout for easy digital downloads 
+ * Template for displaying archive layout for easy digital downloads 
  *
  */
 
@@ -74,15 +74,20 @@ do_action( 'ocean_before_archive_download_item' );
 
 			do_action( 'ocean_before_archive_download_price' );
 			
-			if ( ! edd_has_variable_prices( get_the_ID() ) ) : ?>
-				<?php $item_props = edd_add_schema_microdata() ? ' itemprop="offers" itemscope itemtype="http://schema.org/Offer"' : ''; ?>
-				<div<?php echo $item_props; ?>>
-					<div itemprop="price" class="edd_price">
-						<?php edd_price( get_the_ID() ); ?>
-					</div>
+			$item_props = edd_add_schema_microdata() ? ' itemprop="offers" itemscope itemtype="http://schema.org/Offer"' : ''; ?>
+			<div<?php echo $item_props; ?>>
+				<div itemprop="price" class="edd_price">
+					<?php
+					if ( ! edd_has_variable_prices( get_the_ID() ) ) : 
+						echo edd_price( get_the_ID() );
+					else:
+						echo edd_price_range( get_the_ID() );
+					endif;
+					?>
 				</div>
-			<?php endif;
+			</div>
 			
+			<?php
 			do_action( 'ocean_before_archive_download_price' );
 
 		}
