@@ -140,6 +140,11 @@ Woo Floating Bar
   font-weight: 600;
 }
 
+.boxed-layout .owp-floating-bar {
+  width: 1280px;
+  max-width: 100%;
+}
+
 /* Responsive */
 @media screen and (max-width: 1024px) {
   body {

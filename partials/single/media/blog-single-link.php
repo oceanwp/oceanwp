@@ -24,7 +24,7 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 }
 
 // Caption
-$caption = get_post( get_post_thumbnail_id() )->post_excerpt; ?>
+$caption = get_the_post_thumbnail_caption(); ?>
 
 <div class="thumbnail">
 

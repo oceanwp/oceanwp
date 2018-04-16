@@ -2751,7 +2751,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Boxed width
 			if ( ! empty( $boxed_width ) && '1280' != $boxed_width ) {
-				$css .= '.boxed-layout #wrap, .boxed-layout .parallax-footer{width:'. $boxed_width .'px;}';
+				$css .= '.boxed-layout #wrap, .boxed-layout .parallax-footer, .boxed-layout .owp-floating-bar{width:'. $boxed_width .'px;}';
 			}
 
 			// Boxed outside background
@@ -3104,7 +3104,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Theme buttons background color
 			if ( ! empty( $theme_button_hover_bg ) && '#0b7cac' != $theme_button_hover_bg ) {
-				$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button:hover,body .button:hover{background-color:'. $theme_button_hover_bg .';}';
+				$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover{background-color:'. $theme_button_hover_bg .';}';
 			}
 
 			// Theme buttons background color
@@ -3114,7 +3114,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Theme buttons background color
 			if ( ! empty( $theme_button_hover_color ) && '#ffffff' != $theme_button_hover_color ) {
-				$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button:hover,body .button:hover{color:'. $theme_button_hover_color .';}';
+				$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover{color:'. $theme_button_hover_color .';}';
 			}
 
 			// If page Both Sidebars layout

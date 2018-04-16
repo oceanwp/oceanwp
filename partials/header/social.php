@@ -113,7 +113,7 @@ $link_target = get_theme_mod( 'ocean_menu_social_target', 'blank' ); ?>
 							if ( in_array( $key, array( 'skype' ) ) ) {
 								echo '<a href="skype:'. esc_attr( $url ) .'?call" target="_self">';
 							} else if ( in_array( $key, array( 'email' ) ) ) {
-								echo '<a href="mailto:'. esc_attr( $url ) .'" target="_self">';
+								echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" target="_self">';
 							} else {
 								echo '<a href="'. esc_url( $url ) .'" target="_'. esc_attr( $link_target ) .'">';
 							}

@@ -496,6 +496,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 
 						$wp_customize->add_control( new OceanWP_Customizer_Text_Control( $wp_customize, $element .'_typography[font-size]', array(
 							'label' 			=> esc_html__( 'Font Size', 'oceanwp' ),
+							'description' 		=> esc_html__( 'You can add: px-em-%', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
 							'settings' 			=> array(
 					            'desktop' 	=> $element .'_typography[font-size]',

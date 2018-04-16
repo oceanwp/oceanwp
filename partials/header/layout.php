@@ -49,70 +49,77 @@ if ( 'transparent' == $header_style
 <header id="site-header" class="<?php echo esc_attr( oceanwp_header_classes() ); ?>" data-height="<?php echo esc_attr( $header_height ); ?>"<?php oceanwp_schema_markup( 'header' ); ?>>
 
 	<?php
-	// If header video
-	if ( function_exists( 'has_header_video' ) && has_header_video() ) { ?>
-		<div class="custom-header-media">
-			<?php the_custom_header_markup(); ?>
-		</div>
-	<?php
-	}
+	// Elementor `header` location
+	if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) { ?>
 
-	// If top header style
-	if ( 'top' == $header_style ) {
-		get_template_part( 'partials/header/style/top-header' );
-	}
+		<?php
+		// If header video
+		if ( function_exists( 'has_header_video' ) && has_header_video() ) { ?>
+			<div class="custom-header-media">
+				<?php the_custom_header_markup(); ?>
+			</div>
+		<?php
+		}
 
-	// If full screen header style
-	else if ( 'full_screen' == $header_style ) {
-		get_template_part( 'partials/header/style/full-screen-header' );
-	}
+		// If top header style
+		if ( 'top' == $header_style ) {
+			get_template_part( 'partials/header/style/top-header' );
+		}
 
-	// If center header style
-	else if ( 'center' == $header_style ) {
-		get_template_part( 'partials/header/style/center-header' );
-	}
+		// If full screen header style
+		else if ( 'full_screen' == $header_style ) {
+			get_template_part( 'partials/header/style/full-screen-header' );
+		}
 
-	// If medium header style
-	else if ( 'medium' == $header_style ) {
-		get_template_part( 'partials/header/style/medium-header' );
-	}
+		// If center header style
+		else if ( 'center' == $header_style ) {
+			get_template_part( 'partials/header/style/center-header' );
+		}
 
-	// If vertical header style
-	else if ( 'vertical' == $header_style ) {
-		get_template_part( 'partials/header/style/vertical-header' );
-	}
+		// If medium header style
+		else if ( 'medium' == $header_style ) {
+			get_template_part( 'partials/header/style/medium-header' );
+		}
 
-	// If custom header style
-	else if ( 'custom' == $header_style ) {
-		get_template_part( 'partials/header/style/custom-header' );
-	}
+		// If vertical header style
+		else if ( 'vertical' == $header_style ) {
+			get_template_part( 'partials/header/style/vertical-header' );
+		}
 
-	// Default header style
-	else { ?>
+		// If custom header style
+		else if ( 'custom' == $header_style ) {
+			get_template_part( 'partials/header/style/custom-header' );
+		}
 
-		<?php do_action( 'ocean_before_header_inner' ); ?>
+		// Default header style
+		else { ?>
 
-		<div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
+			<?php do_action( 'ocean_before_header_inner' ); ?>
 
-			<?php do_action( 'ocean_header_inner_left_content' ); ?>
+			<div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
 
-			<?php do_action( 'ocean_header_inner_middle_content' ); ?>
+				<?php do_action( 'ocean_header_inner_left_content' ); ?>
 
-			<?php do_action( 'ocean_header_inner_right_content' ); ?>
+				<?php do_action( 'ocean_header_inner_middle_content' ); ?>
 
-		</div><!-- #site-header-inner -->
+				<?php do_action( 'ocean_header_inner_right_content' ); ?>
 
-		<?php get_template_part( 'partials/mobile/mobile-dropdown' ); ?>
+			</div><!-- #site-header-inner -->
 
-		<?php do_action( 'ocean_after_header_inner' ); ?>
+			<?php get_template_part( 'partials/mobile/mobile-dropdown' ); ?>
 
-	<?php
-	} ?>
+			<?php do_action( 'ocean_after_header_inner' ); ?>
 
-	<?php
-	// If header media
-	if ( has_header_image() ) { ?>
-		<div class="overlay-header-media"></div>
+		<?php
+		} ?>
+
+		<?php
+		// If header media
+		if ( has_header_image() ) { ?>
+			<div class="overlay-header-media"></div>
+		<?php
+		} ?>
+		
 	<?php
 	} ?>
 

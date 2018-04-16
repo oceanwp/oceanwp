@@ -2,10 +2,12 @@
  * Link Format
  */
 .link-entry {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
 	i {
-	    position: absolute;
-	    top: 20px;
-	    right: 20px;
+		display: inline-block;
 	    width: 60px;
 	    height: 60px;
 	    font-size: 22px;

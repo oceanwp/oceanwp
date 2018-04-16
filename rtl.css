@@ -284,10 +284,8 @@ ul.page-numbers { text-align: left; }
 /*------------------------------------*
 	Footer
 *------------------------------------*/
-#footer-bottom #copyright,
-#footer-bottom #footer-bottom-menu { float: right; }
-#footer-bottom #copyright { text-align: right; padding-left: 15px; padding-right: 0; }
-#footer-bottom #footer-bottom-menu { text-align: left; padding-right: 15px; padding-left: 0; }
+#footer-bottom #copyright { float: right; text-align: right; padding-left: 15px; padding-right: 0; }
+#footer-bottom #footer-bottom-menu { float: left; text-align: left; padding-right: 15px; padding-left: 0; }
 #footer-bottom #footer-bottom-menu li { float: right; }
 #scroll-top { left: 20px; right: auto; }
 

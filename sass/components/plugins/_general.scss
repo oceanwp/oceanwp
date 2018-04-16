@@ -40,3 +40,8 @@ div.motopress-bootstrap-dropdown .dropdown-menu {
 	display: block !important;
 	position: static !important;
 }
+
+/* Fix problem with Geolocation addon of Caldera form in the Ocean Modal Window */
+.pac-container {
+    z-index: 100003;
+}

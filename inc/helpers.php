@@ -78,34 +78,69 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			$classes[] = 'separate-blog';
 		}
 
-		// Top menu header style to control the responsive
-		if ( 'top' == oceanwp_header_style() ) {
-			$classes[] = 'top-header-style';
-		}
+		// If is not custom header created with Elementor Pro 2.0
+		if ( ! function_exists( 'elementor_location_exits' ) || ! elementor_location_exits( 'header', true ) ) {
 
-		// Medium header style to control the responsive
-		if ( 'medium' == oceanwp_header_style() ) {
-			$classes[] = 'medium-header-style';
-		}
-
-		// Vertical header style
-		if ( 'vertical' == oceanwp_header_style() ) {
-
-			// Vertical header style to control the wrap margin left
-			$classes[] = 'vertical-header-style';
-
-			// Header position
-			$position  = get_theme_mod( 'ocean_vertical_header_position', 'left-header' );
-			$position  = $position ? $position : 'left-header';
-			$classes[] = $position;
-
-			// If default collapse
-			$vh_collapse_width = get_theme_mod( 'ocean_vertical_header_collapse_width', '1280' );
-			if ( empty( $vh_collapse_width )
-				|| '1280' == $vh_collapse_width ) {
-				$classes[] = 'default-collapse';
+			// Top menu header style to control the responsive
+			if ( 'top' == oceanwp_header_style() ) {
+				$classes[] = 'top-header-style';
 			}
 
+			// Medium header style to control the responsive
+			if ( 'medium' == oceanwp_header_style() ) {
+				$classes[] = 'medium-header-style';
+			}
+
+			// Vertical header style
+			if ( 'vertical' == oceanwp_header_style() ) {
+
+				// Vertical header style to control the wrap margin left
+				$classes[] = 'vertical-header-style';
+
+				// Header position
+				$position  = get_theme_mod( 'ocean_vertical_header_position', 'left-header' );
+				$position  = $position ? $position : 'left-header';
+				$classes[] = $position;
+
+				// If default collapse
+				$vh_collapse_width = get_theme_mod( 'ocean_vertical_header_collapse_width', '1280' );
+				if ( empty( $vh_collapse_width )
+					|| '1280' == $vh_collapse_width ) {
+					$classes[] = 'default-collapse';
+				}
+
+			}
+
+			// Add transparent class for header styles
+			if ( 'transparent' == oceanwp_header_style()
+				|| ( 'full_screen' == oceanwp_header_style() && true == get_theme_mod( 'ocean_full_screen_header_transparent', false ) )
+				|| ( 'center' == oceanwp_header_style() && true == get_theme_mod( 'ocean_center_header_transparent', false ) )
+				|| ( 'medium' == oceanwp_header_style() && true == get_theme_mod( 'ocean_medium_header_transparent', false ) ) ) {
+				$classes[] = 'has-transparent-header';
+			}
+
+			// Add transparent class for the vertical header style
+			if ( 'vertical' == oceanwp_header_style()
+				&& true == get_theme_mod( 'ocean_vertical_header_transparent', false ) ) {
+				$classes[] = 'has-vh-transparent';
+			}
+
+			// If vertical header closed
+			if ( 'vertical' == oceanwp_header_style()
+				&& true == get_theme_mod( 'ocean_vertical_header_closed', false ) ) {
+				$classes[] = 'vh-closed';
+			}
+
+		}
+
+		// If no header border bottom
+		if ( true != get_theme_mod( 'ocean_has_header_border_bottom', true ) ) {
+			$classes[] = 'no-header-border';
+		}
+
+		// If no custom mobile breakpoint
+		if ( '959' == get_theme_mod( 'ocean_mobile_menu_breakpoints', '959' ) ) {
+			$classes[] = 'default-breakpoint';
 		}
 
 		// Sidebar enabled
@@ -147,36 +182,6 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 		// Topbar
 		if ( oceanwp_display_topbar() ) {
 			$classes[] = 'has-topbar';
-		}
-
-		// Add transparent class for header styles
-		if ( 'transparent' == oceanwp_header_style()
-			|| ( 'full_screen' == oceanwp_header_style() && true == get_theme_mod( 'ocean_full_screen_header_transparent', false ) )
-			|| ( 'center' == oceanwp_header_style() && true == get_theme_mod( 'ocean_center_header_transparent', false ) )
-			|| ( 'medium' == oceanwp_header_style() && true == get_theme_mod( 'ocean_medium_header_transparent', false ) ) ) {
-			$classes[] = 'has-transparent-header';
-		}
-
-		// Add transparent class for the vertical header style
-		if ( 'vertical' == oceanwp_header_style()
-			&& true == get_theme_mod( 'ocean_vertical_header_transparent', false ) ) {
-			$classes[] = 'has-vh-transparent';
-		}
-
-		// If vertical header closed
-		if ( 'vertical' == oceanwp_header_style()
-			&& true == get_theme_mod( 'ocean_vertical_header_closed', false ) ) {
-			$classes[] = 'vh-closed';
-		}
-
-		// If no header border bottom
-		if ( true != get_theme_mod( 'ocean_has_header_border_bottom', true ) ) {
-			$classes[] = 'no-header-border';
-		}
-
-		// If no custom mobile breakpoint
-		if ( '959' == get_theme_mod( 'ocean_mobile_menu_breakpoints', '959' ) ) {
-			$classes[] = 'default-breakpoint';
 		}
 
 		// Title with Background Image
@@ -868,83 +873,88 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 		// Setup classes array
 		$classes = array();
 
-		// Add header style class
-		$classes[] = $header_style . '-header';
+		// If is not custom header created with Elementor Pro 2.0
+		if ( ! function_exists( 'elementor_location_exits' ) || ! elementor_location_exits( 'header', true ) ) {
 
-		// Add transparent class for header styles
-		if ( ( 'full_screen' == $header_style && true == get_theme_mod( 'ocean_full_screen_header_transparent', false ) )
-			|| ( 'center' == $header_style && true == get_theme_mod( 'ocean_center_header_transparent', false ) )
-			|| ( 'medium' == $header_style && true == get_theme_mod( 'ocean_medium_header_transparent', false ) )
-			|| ( 'vertical' == $header_style && true == get_theme_mod( 'ocean_vertical_header_transparent', false ) ) ) {
-			$classes[] = 'is-transparent';
-		}
+			// Add header style class
+			$classes[] = $header_style . '-header';
 
-		// Search overlay
-		if ( 'overlay' == oceanwp_menu_search_style() ) {
-			$classes[] = 'search-overlay';
-		}
-
-		// Add class if social menu is enabled to remove the negative right on the navigation
-		if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
-			$classes[] = 'has-social';
-		}
-
-		// Menu position
-		if ( 'minimal' == $header_style || 'transparent' == $header_style ) {
-			if ( 'left-menu' == get_theme_mod( 'ocean_menu_position', 'right-menu' ) ) {
-				$classes[] = 'left-menu';
-			} elseif ( 'center-menu' == get_theme_mod( 'ocean_menu_position', 'right-menu' ) ) {
-				$classes[] = 'center-menu';
-			}
-		}
-
-		// Medium header style menu hidden
-		if ( 'medium' == $header_style
-			&& true == get_theme_mod( 'ocean_medium_header_hidden_menu', true )
-			&& true != get_theme_mod( 'ocean_medium_header_stick_menu', false ) ) {
-
-			// Add hidden menu class
-			$classes[] = 'hidden-menu';
-
-		}
-
-		// Vertical header style
-		if ( 'vertical' == $header_style ) {
-
-			// Header shadow
-			if ( true == get_theme_mod( 'ocean_vertical_header_shadow', true ) ) {
-				$classes[] = 'has-shadow';
+			// Add transparent class for header styles
+			if ( ( 'full_screen' == $header_style && true == get_theme_mod( 'ocean_full_screen_header_transparent', false ) )
+				|| ( 'center' == $header_style && true == get_theme_mod( 'ocean_center_header_transparent', false ) )
+				|| ( 'medium' == $header_style && true == get_theme_mod( 'ocean_medium_header_transparent', false ) )
+				|| ( 'vertical' == $header_style && true == get_theme_mod( 'ocean_vertical_header_transparent', false ) ) ) {
+				$classes[] = 'is-transparent';
 			}
 
-			// Logo position
-			$logo_position  = get_theme_mod( 'ocean_vertical_header_logo_position', 'center-logo' );
-			$logo_position  = $logo_position ? $logo_position : 'vh-center-logo';
-			$classes[] 		= 'vh-'. $logo_position;
+			// Search overlay
+			if ( 'overlay' == oceanwp_menu_search_style() ) {
+				$classes[] = 'search-overlay';
+			}
 
-		}
+			// Add class if social menu is enabled to remove the negative right on the navigation
+			if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
+				$classes[] = 'has-social';
+			}
 
-		// If the search header replace
-		if ( 'header_replace' == oceanwp_menu_search_style() ) {
-			$classes[] = 'header-replace';
+			// Menu position
+			if ( 'minimal' == $header_style || 'transparent' == $header_style ) {
+				if ( 'left-menu' == get_theme_mod( 'ocean_menu_position', 'right-menu' ) ) {
+					$classes[] = 'left-menu';
+				} elseif ( 'center-menu' == get_theme_mod( 'ocean_menu_position', 'right-menu' ) ) {
+					$classes[] = 'center-menu';
+				}
+			}
+
+			// Medium header style menu hidden
+			if ( 'medium' == $header_style
+				&& true == get_theme_mod( 'ocean_medium_header_hidden_menu', true )
+				&& true != get_theme_mod( 'ocean_medium_header_stick_menu', false ) ) {
+
+				// Add hidden menu class
+				$classes[] = 'hidden-menu';
+
+			}
+
+			// Vertical header style
+			if ( 'vertical' == $header_style ) {
+
+				// Header shadow
+				if ( true == get_theme_mod( 'ocean_vertical_header_shadow', true ) ) {
+					$classes[] = 'has-shadow';
+				}
+
+				// Logo position
+				$logo_position  = get_theme_mod( 'ocean_vertical_header_logo_position', 'center-logo' );
+				$logo_position  = $logo_position ? $logo_position : 'vh-center-logo';
+				$classes[] 		= 'vh-'. $logo_position;
+
+			}
+
+			// If the search header replace
+			if ( 'header_replace' == oceanwp_menu_search_style() ) {
+				$classes[] = 'header-replace';
+			}
+
+			// If has header media
+			if ( has_header_image() ) {
+				$classes[] = 'has-header-media';
+			}
+
+			// Mobile elements positionning
+			if ( ( 'medium' != $header_style
+					&& 'vertical' != $header_style
+					&& 'top' != $header_style )
+				&& 'one' != get_theme_mod( 'ocean_mobile_elements_positioning', 'one' ) ) {
+				$classes[] = 'center-logo';
+			}
+
 		}
 
 		// If menu links effect
 		$link_effect = get_theme_mod( 'ocean_menu_links_effect', 'no' );
 		if ( 'no' != $link_effect ) {
 			$classes[] = 'effect-' . $link_effect;
-		}
-
-		// If has header media
-		if ( has_header_image() ) {
-			$classes[] = 'has-header-media';
-		}
-
-		// Mobile elements positionning
-		if ( ( 'medium' != $header_style
-				&& 'vertical' != $header_style
-				&& 'top' != $header_style )
-			&& 'one' != get_theme_mod( 'ocean_mobile_elements_positioning', 'one' ) ) {
-			$classes[] = 'center-logo';
 		}
 
 		// Clearfix class

@@ -24,15 +24,9 @@
 
 		<div id="wrap" class="clr">
 
-			<?php
-			// Elementor `header` location
-			if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'header' ) ) { ?>
-			
-				<?php do_action( 'ocean_top_bar' ); ?>
+			<?php do_action( 'ocean_top_bar' ); ?>
 
-				<?php do_action( 'ocean_header' ); ?>
-
-			<?php } ?>
+			<?php do_action( 'ocean_header' ); ?>
 
 			<?php do_action( 'ocean_before_main' ); ?>
 			
