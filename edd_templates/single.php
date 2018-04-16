@@ -11,12 +11,14 @@ do_action( 'ocean_before_single_download_item' );
 <div <?php post_class(); ?>>
 	<div class="edd_download_inner">
 
+		<?php echo oceanwp_edd_download_navigation(); ?>
+		
 		<?php do_action( 'ocean_before_single_download_image' ); ?>
 
 		<div class="edd_download_image">
 		<?php
 			if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ) :
-				echo get_the_post_thumbnail( get_the_ID(), 'full' );
+				echo get_the_post_thumbnail( get_the_ID(), 'large' );
 			else:
 				echo '<img src="' . get_template_directory_uri() . '/assets/img/placeholder.png' . '">';
 			endif;

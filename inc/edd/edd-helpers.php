@@ -96,13 +96,12 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 		// Cart total
 		$display = get_theme_mod( 'ocean_edd_menu_icon_display', 'icon_count' );
 		if ( 'icon_total' == $display ) {
-			$cart_extra = '<span class="eddmenucart-details cart-total">' . edd_currency_filter( edd_format_amount( edd_get_cart_total() ) ) . '</span>';
+			$cart_extra = '<span class="eddmenucart-details total">' . edd_currency_filter( edd_format_amount( edd_get_cart_total() ) ) . '</span>';
 		} elseif ( 'icon_count' == $display ) {
 			$cart_extra = '<span class="eddmenucart-details edd-cart-quantity count">'. edd_get_cart_quantity() .'</span>';
 		} elseif ( 'icon_count_total' == $display ) {
 			$cart_extra = '<span class="eddmenucart-details edd-cart-quantity count">'. edd_get_cart_quantity() .'</span>';
-			$cart_total = '<span class="cart-total">' . edd_currency_filter( edd_format_amount( edd_get_cart_total() ) ) . '</span>';
-			$cart_extra .= str_replace( 'amount', 'eddmenucart-details', $cart_total );
+			$cart_extra .= '<span class="eddmenucart-details total">' . edd_currency_filter( edd_format_amount( edd_get_cart_total() ) ) . '</span>';
 		} else {
 			$cart_extra = '';
 		}
@@ -124,20 +123,20 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 		// If bag style
 		if ( 'yes' == get_theme_mod( 'ocean_edd_menu_bag_style', 'no' ) ) { ?>
 
-			<a href="<?php echo esc_url( $url ); ?>" class="eddmenucart">
+			<a href="<?php echo esc_url( $url ); ?>" class="bag-style eddmenucart">
 				<?php
 				if ( true == get_theme_mod( 'ocean_edd_menu_bag_style_total', false ) ) { ?>
 					<span class="eddmenucart-total"><?php echo edd_currency_filter( edd_format_amount( edd_get_cart_total() ) ); ?></span>
 				<?php } ?>
 				<span class="eddmenucart-cart-icon">
-					<span class="eddmenucart-count"><?php echo edd_get_cart_quantity(); ?></span>
+					<span class="eddmenucart-container"><?php echo edd_get_cart_quantity(); ?></span>
 				</span>
 			</a>
 
 		<?php } else { ?>
 
-			<a href="<?php echo esc_url( $url ); ?>" class="eddmenucart">
-				<span class="eddmenucart-count"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
+			<a href="<?php echo esc_url( $url ); ?>" class="simple-style eddmenucart">
+				<span class="eddmenucart-container"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
 			</a>
 
 		<?php
@@ -299,7 +298,7 @@ if( ! function_exists( 'oceanwp_edd_loop_classes') ) {
 					<li>
 						<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="fa fa-angle-left"></i></a>
 						<div class="owp-nav-thumb">
-							<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
+							<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'thumbnail' ) ); ?></a>
 						</div>
 					</li>
 				<?php
@@ -309,7 +308,7 @@ if( ! function_exists( 'oceanwp_edd_loop_classes') ) {
 					<li>
 						<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="fa fa-angle-right"></i></a>
 						<div class="owp-nav-thumb">
-							<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
+							<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'thumbnail' ) ); ?></a>
 						</div>
 					</li>
 				<?php

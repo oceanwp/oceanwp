@@ -2180,227 +2180,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Heading Account
-			 */
-			$wp_customize->add_setting( 'ocean_account_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_account_heading', array(
-				'label'    				=> esc_html__( 'Account', 'oceanwp' ),
-				'section'  				=> 'ocean_edd_styling',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-		     * Account Login/Register Links Color
-		     */
-	        $wp_customize->add_setting( 'ocean_account_login_register_color', array(
-				'default'				=> '#333333',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_login_register_color', array(
-				'label'					=> esc_html__( 'Login/Register Links: Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_login_register_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Navigation Borders Color
-		     */
-	        $wp_customize->add_setting( 'ocean_account_navigation_borders_color', array(
-				'default'				=> '#e9e9e9',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_navigation_borders_color', array(
-				'label'					=> esc_html__( 'Navigation: Borders Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_navigation_borders_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Navigation Icons Color
-		     */
-	        $wp_customize->add_setting( 'ocean_account_navigation_icons_color', array(
-				'default'				=> '#13aff0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_navigation_icons_color', array(
-				'label'					=> esc_html__( 'Navigation: Icons Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_navigation_icons_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Navigation Links Color
-		     */
-	        $wp_customize->add_setting( 'ocean_account_navigation_links_color', array(
-				'default'				=> '#333333',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_navigation_links_color', array(
-				'label'					=> esc_html__( 'Navigation: Links Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_navigation_links_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Navigation Links Color Hover
-		     */
-	        $wp_customize->add_setting( 'ocean_account_navigation_links_color_hover', array(
-				'default'				=> '#13aff0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_navigation_links_color_hover', array(
-				'label'					=> esc_html__( 'Navigation: Links Color: Hover', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_navigation_links_color_hover',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Addresses Box Background
-		     */
-	        $wp_customize->add_setting( 'ocean_account_addresses_bg', array(
-				'default'				=> '#f6f6f6',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_addresses_bg', array(
-				'label'					=> esc_html__( 'Addresses: Box Background', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_addresses_bg',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Addresses Box Title Color
-		     */
-	        $wp_customize->add_setting( 'ocean_account_addresses_title_color', array(
-				'default'				=> '#333333',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_addresses_title_color', array(
-				'label'					=> esc_html__( 'Addresses: Box Title Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_addresses_title_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Addresses Box Title Border Bottom Color
-		     */
-	        $wp_customize->add_setting( 'ocean_account_addresses_title_border_color', array(
-				'default'				=> '#ffffff',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_addresses_title_border_color', array(
-				'label'					=> esc_html__( 'Addresses: Box Title Border Bottom Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_addresses_title_border_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Addresses Box Content Color
-		     */
-	        $wp_customize->add_setting( 'ocean_account_addresses_content_color', array(
-				'default'				=> '#898989',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_addresses_content_color', array(
-				'label'					=> esc_html__( 'Addresses: Box Content Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_addresses_content_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Addresses Box Button Background Color
-		     */
-	        $wp_customize->add_setting( 'ocean_account_addresses_button_bg', array(
-				'default'				=> '#ffffff',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_addresses_button_bg', array(
-				'label'					=> esc_html__( 'Addresses: Box Button Background', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_addresses_button_bg',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Addresses Box Button Background Color Hover
-		     */
-	        $wp_customize->add_setting( 'ocean_account_addresses_button_bg_hover', array(
-				'default'				=> '#f8f8f8',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_addresses_button_bg_hover', array(
-				'label'					=> esc_html__( 'Addresses: Box Button Background: Hover', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_addresses_button_bg_hover',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Addresses Box Button Color
-		     */
-	        $wp_customize->add_setting( 'ocean_account_addresses_button_color', array(
-				'default'				=> '#898989',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_addresses_button_color', array(
-				'label'					=> esc_html__( 'Addresses: Box Button color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_addresses_button_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Addresses Box Button Color Hover
-		     */
-	        $wp_customize->add_setting( 'ocean_account_addresses_button_color_hover', array(
-				'default'				=> '#555555',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_account_addresses_button_color_hover', array(
-				'label'					=> esc_html__( 'Addresses: Box Button color: Hover', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_account_addresses_button_color_hover',
-				'priority'				=> 10,
-			) ) );
-
-			/**
 			 * Heading Cart
 			 */
 			$wp_customize->add_setting( 'ocean_cart_heading', array(
@@ -2908,19 +2687,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			$single_product_navigation_hover_color 				= get_theme_mod( 'ocean_single_product_navigation_hover_color', '#ffffff' );
 			$single_product_navigation_border_color 			= get_theme_mod( 'ocean_single_product_navigation_border_color', '#e9e9e9' );
 			$single_product_navigation_hover_border_color 		= get_theme_mod( 'ocean_single_product_navigation_hover_border_color', '#13aff0' );
-			$account_login_register_color 						= get_theme_mod( 'ocean_account_login_register_color', '#333333' );
-			$account_nav_borders_color 							= get_theme_mod( 'ocean_account_navigation_borders_color', '#e9e9e9' );
-			$account_nav_icons_color 							= get_theme_mod( 'ocean_account_navigation_icons_color', '#13aff0' );
-			$account_nav_links_color 							= get_theme_mod( 'ocean_account_navigation_links_color', '#333333' );
-			$account_nav_links_color_hover 						= get_theme_mod( 'ocean_account_navigation_links_color_hover', '#13aff0' );
-			$account_addresses_bg 								= get_theme_mod( 'ocean_account_addresses_bg', '#f6f6f6' );
-			$account_addresses_title_color 						= get_theme_mod( 'ocean_account_addresses_title_color', '#333333' );
-			$account_addresses_title_border_color 				= get_theme_mod( 'ocean_account_addresses_title_border_color', '#ffffff' );
-			$account_addresses_content_color 					= get_theme_mod( 'ocean_account_addresses_content_color', '#898989' );
-			$account_addresses_button_bg 						= get_theme_mod( 'ocean_account_addresses_button_bg', '#ffffff' );
-			$account_addresses_button_bg_hover 					= get_theme_mod( 'ocean_account_addresses_button_bg_hover', '#f8f8f8' );
-			$account_addresses_button_color 					= get_theme_mod( 'ocean_account_addresses_button_color', '#898989' );
-			$account_addresses_button_color_hover 				= get_theme_mod( 'ocean_account_addresses_button_color_hover', '#555555' );
 			$cart_borders_color 								= get_theme_mod( 'ocean_cart_borders_color', '#e9e9e9' );
 			$cart_head_bg 										= get_theme_mod( 'ocean_cart_head_bg', '#f7f7f7' );
 			$cart_head_titles_color 							= get_theme_mod( 'ocean_cart_head_titles_color', '#444444' );
@@ -3095,12 +2861,12 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 
 			// Product image width
 			if ( ! empty( $edd_product_image_width ) && '52' != $edd_product_image_width ) {
-				$css .= '.edd div.product div.images, .edd.content-full-width div.product div.images{width:'. $edd_product_image_width .'%;}';
+				$css .= '.single-download .edd-download .edd_download_image{width:'. $edd_product_image_width .'%;}';
 			}
 
 			// Product summary width
 			if ( ! empty( $edd_product_summary_width ) && '44' != $edd_product_summary_width ) {
-				$css .= '.edd div.product div.summary, .edd.content-full-width div.product div.summary{width:'. $edd_product_summary_width .'%;}';
+				$css .= '.single-download .edd-download .edd_download_summary{width:'. $edd_product_summary_width .'%;}';
 			}
 
 			// Add floating bar background
@@ -3618,71 +3384,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			// Add single product tabs product description color
 			if ( ! empty( $single_product_tabs_product_desc_color ) && '#929292' != $single_product_tabs_product_desc_color ) {
 				$css .= '.edd div.product .edd-tabs .panel p{color:'. $single_product_tabs_product_desc_color .';}';
-			}
-
-			// Add account Login/Register color
-			if ( ! empty( $account_login_register_color ) && '#333333' != $account_login_register_color ) {
-				$css .= '.edd .owp-account-links li .owp-account-link, .edd .owp-account-links li.orDisplay Related Items{color:'. $account_login_register_color .';}';
-			}
-
-			// Add account navigation borders color
-			if ( ! empty( $account_nav_borders_color ) && '#e9e9e9' != $account_nav_borders_color ) {
-				$css .= '.edd-MyAccount-navigation ul,.edd-MyAccount-navigation ul li{border-color:'. $account_nav_borders_color .';}';
-			}
-
-			// Add account navigation icons color
-			if ( ! empty( $account_nav_icons_color ) && '#13aff0' != $account_nav_icons_color ) {
-				$css .= '.edd-MyAccount-navigation ul li a:before{color:'. $account_nav_icons_color .';}';
-			}
-
-			// Add account navigation links color
-			if ( ! empty( $account_nav_links_color ) && '#333333' != $account_nav_links_color ) {
-				$css .= '.edd-MyAccount-navigation ul li a{color:'. $account_nav_links_color .';}';
-			}
-
-			// Add account navigation links color hover
-			if ( ! empty( $account_nav_links_color_hover ) && '#13aff0' != $account_nav_links_color_hover ) {
-				$css .= '.edd-MyAccount-navigation ul li a:hover{color:'. $account_nav_links_color_hover .';}';
-			}
-
-			// Add account addresses background color
-			if ( ! empty( $account_addresses_bg ) && '#f6f6f6' != $account_addresses_bg ) {
-				$css .= '.edd-MyAccount-content .addresses .edd-Address .title, .edd-MyAccount-content .addresses .edd-Address address{background-color:'. $account_addresses_bg .';}';
-			}
-
-			// Add account addresses title color
-			if ( ! empty( $account_addresses_title_color ) && '#333333' != $account_addresses_title_color ) {
-				$css .= '.edd-MyAccount-content .addresses .edd-Address .title h3{color:'. $account_addresses_title_color .';}';
-			}
-
-			// Add account addresses title border color
-			if ( ! empty( $account_addresses_title_border_color ) && '#ffffff' != $account_addresses_title_border_color ) {
-				$css .= '.edd-MyAccount-content .addresses .edd-Address .title{border-color:'. $account_addresses_title_border_color .';}';
-			}
-
-			// Add account addresses content color
-			if ( ! empty( $account_addresses_content_color ) && '#898989' != $account_addresses_content_color ) {
-				$css .= '.edd-MyAccount-content .addresses .edd-Address address{color:'. $account_addresses_content_color .';}';
-			}
-
-			// Add account addresses button background color
-			if ( ! empty( $account_addresses_button_bg ) && '#ffffff' != $account_addresses_button_bg ) {
-				$css .= '.edd-MyAccount-content .addresses .edd-Address .title a{background-color:'. $account_addresses_button_bg .';}';
-			}
-
-			// Add account addresses button background color hover
-			if ( ! empty( $account_addresses_button_bg_hover ) && '#f8f8f8' != $account_addresses_button_bg_hover ) {
-				$css .= '.edd-MyAccount-content .addresses .edd-Address .title a:hover{background-color:'. $account_addresses_button_bg_hover .';}';
-			}
-
-			// Add account addresses button color
-			if ( ! empty( $account_addresses_button_color ) && '#898989' != $account_addresses_button_color ) {
-				$css .= '.edd-MyAccount-content .addresses .edd-Address .title a{color:'. $account_addresses_button_color .';}';
-			}
-
-			// Add account addresses button color hover
-			if ( ! empty( $account_addresses_button_color_hover ) && '#555555' != $account_addresses_button_color_hover ) {
-				$css .= '.edd-MyAccount-content .addresses .edd-Address .title a:hover{color:'. $account_addresses_button_color_hover .';}';
 			}
 
 			// Add cart borders color

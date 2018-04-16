@@ -457,3 +457,194 @@
 		color: #787878;
 	}
 }
+
+/* =Checkout Form
+-------------------------------------------------------------- */
+
+.edd_clearfix:after {
+	display: block;
+	visibility: hidden;
+	float: none;
+	clear: both;
+	text-indent: -9999px;
+	content: ".";
+}
+
+.edd_discount_remove{
+	float: right;
+	width: 32px;
+	height: 32px;
+	line-height: 30px;
+}
+.edd_discount_remove:after {
+	font-family: 'simple-line-icons';
+	font-weight: normal;
+	font-style: normal;
+	letter-spacing: normal;
+	text-rendering: auto;
+	content: '\e082';
+	margin-left: 6px;
+	vertical-align: bottom;
+}
+
+
+#edd_checkout_cart br {
+	display: none;
+}
+
+/* =Misc
+-------------------------------------------------------------- */
+.edd-hide-on-empty.cart-empty {
+	display: none;
+}
+.edd-hide-on-empty.cart-not.empty {
+	display: block;
+}
+
+/* =EDD Product Navigation
+-------------------------------------------------------------- */
+@media (min-width: 1080px) {
+	.owp-product-nav-wrap {
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	}
+}
+
+.owp-product-nav-wrap {
+	margin-bottom: 0 !important;
+    text-align: right;
+    z-index: 1;
+}
+
+.owp-product-nav {
+	position: relative;
+	display: inline-block;
+
+    li {
+		display: inline-block;
+		margin-left: 3px;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		a.owp-nav-link {
+			display: inline-block;
+			min-width: 2em;
+			line-height: 24px;
+			border: 2px solid $color-7;
+			@include border-radius( 50% );
+			text-align: center;
+
+			i {
+				line-height: 1.2;
+			}
+
+			&:hover {
+				background-color: $color-5;
+				color: #fff;
+				border-color: $color-5;
+			}
+		}
+
+		.owp-nav-thumb {
+			position: absolute;
+			top: 100%;
+		    left: -99999px;
+		    display: inline-block;
+		    width: 90px;
+		    opacity: 0;
+		    @include transition( opacity 0.25s ease-in-out );
+		    @include box-shadow( 1px 1px 15px rgba(0,0,0,0.15) );
+		    z-index: 100;
+		}
+
+		&:hover > .owp-nav-thumb {
+			opacity: 1;
+		    left: 50%;
+		    -webkit-transform: translateX(-50%);
+		    transform: translateX(-50%);
+		}
+    }
+}
+
+/** Old Error Styles */
+/* =Error styles
+-------------------------------------------------------------- */
+.edd_errors:not(.edd-alert) {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #E6DB55;
+	margin: 0 0 21px;
+	background: #FFFFE0;
+	color: #333;
+}
+.edd_error {
+	padding: 10px;
+}
+p.edd_error {
+	margin: 0 !important;
+}
+
+
+/* =Success Message styles
+-------------------------------------------------------------- */
+.edd_success:not(.edd-alert) {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #b3ce89;
+	margin: 20px 0;
+	background: #d5eab3;
+	color: #567622;
+	padding: 6px 8px;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/** End old Error */
+
+/** Usage Is as Follows */
+/* <div class="edd-alert edd-alert-error">This is your error message</div> */
+/* Replace edd-error with the class of your choice */
+
+/* Alert Styles */
+.edd-alert {
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 1px solid transparent;
+	vertical-align: middle;
+}
+.edd-alert p {
+	padding: 0;
+}
+.edd-alert p:not(:last-child) {
+	margin-bottom: 5px;
+}
+.edd-alert p:last-child {
+	margin-bottom: 0;
+}
+.edd-alert-error {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+.edd-alert-success {
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	color:#3c763d;
+}
+.edd-alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+.edd-alert-warn {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}

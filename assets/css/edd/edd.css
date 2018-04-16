@@ -472,6 +472,212 @@
   color: #787878;
 }
 
+/* =Checkout Form
+-------------------------------------------------------------- */
+.edd_clearfix:after {
+  display: block;
+  visibility: hidden;
+  float: none;
+  clear: both;
+  text-indent: -9999px;
+  content: ".";
+}
+
+.edd_discount_remove {
+  float: right;
+  width: 32px;
+  height: 32px;
+  line-height: 30px;
+}
+
+.edd_discount_remove:after {
+  font-family: 'simple-line-icons';
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-rendering: auto;
+  content: '\e082';
+  margin-left: 6px;
+  vertical-align: bottom;
+}
+
+#edd_checkout_cart br {
+  display: none;
+}
+
+/* =Misc
+-------------------------------------------------------------- */
+.edd-hide-on-empty.cart-empty {
+  display: none;
+}
+
+.edd-hide-on-empty.cart-not.empty {
+  display: block;
+}
+
+/* =EDD Product Navigation
+-------------------------------------------------------------- */
+@media (min-width: 1080px) {
+  .owp-product-nav-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.owp-product-nav-wrap {
+  margin-bottom: 0 !important;
+  text-align: right;
+  z-index: 1;
+}
+
+.owp-product-nav {
+  position: relative;
+  display: inline-block;
+}
+
+.owp-product-nav li {
+  display: inline-block;
+  margin-left: 3px;
+}
+
+.owp-product-nav li:first-child {
+  margin-left: 0;
+}
+
+.owp-product-nav li a.owp-nav-link {
+  display: inline-block;
+  min-width: 2em;
+  line-height: 24px;
+  border: 2px solid #e9e9e9;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.owp-product-nav li a.owp-nav-link i {
+  line-height: 1.2;
+}
+
+.owp-product-nav li a.owp-nav-link:hover {
+  background-color: #13aff0;
+  color: #fff;
+  border-color: #13aff0;
+}
+
+.owp-product-nav li .owp-nav-thumb {
+  position: absolute;
+  top: 100%;
+  left: -99999px;
+  display: inline-block;
+  width: 90px;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -ms-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+  -webkit-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.owp-product-nav li:hover > .owp-nav-thumb {
+  opacity: 1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+/** Old Error Styles */
+/* =Error styles
+-------------------------------------------------------------- */
+.edd_errors:not(.edd-alert) {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #E6DB55;
+  margin: 0 0 21px;
+  background: #FFFFE0;
+  color: #333;
+}
+
+.edd_error {
+  padding: 10px;
+}
+
+p.edd_error {
+  margin: 0 !important;
+}
+
+/* =Success Message styles
+-------------------------------------------------------------- */
+.edd_success:not(.edd-alert) {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #b3ce89;
+  margin: 20px 0;
+  background: #d5eab3;
+  color: #567622;
+  padding: 6px 8px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/** End old Error */
+/** Usage Is as Follows */
+/* <div class="edd-alert edd-alert-error">This is your error message</div> */
+/* Replace edd-error with the class of your choice */
+/* Alert Styles */
+.edd-alert {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid transparent;
+  vertical-align: middle;
+}
+
+.edd-alert p {
+  padding: 0;
+}
+
+.edd-alert p:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.edd-alert p:last-child {
+  margin-bottom: 0;
+}
+
+.edd-alert-error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.edd-alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+.edd-alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.edd-alert-warn {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
 /*------------------------------------------------------------------
 Easy Digital Downloads Cart
 -------------------------------------------------------------------*/
@@ -632,6 +838,10 @@ Easy Digital Downloads Cart
   padding: 14px 8px;
 }
 
+.eddmenucart-details {
+  margin-left: 8px;
+}
+
 /* Cart bag style */
 .bag-style {
   position: relative;
@@ -650,7 +860,7 @@ Easy Digital Downloads Cart
   display: inline-block;
 }
 
-.eddmenucart-cart-icon .eddmenucart-count {
+.eddmenucart-cart-icon .eddmenucart-container {
   position: relative;
   display: inline-block;
   min-width: 2em;
@@ -670,7 +880,7 @@ Easy Digital Downloads Cart
   transition: all 0.2s ease-in-out;
 }
 
-.eddmenucart-cart-icon .eddmenucart-count:after {
+.eddmenucart-cart-icon .eddmenucart-container:after {
   content: '';
   position: absolute;
   bottom: 100%;
@@ -690,15 +900,45 @@ Easy Digital Downloads Cart
   transition: all 0.2s ease-in-out;
 }
 
-.bag-style:hover .eddmenucart-cart-icon .eddmenucart-count,
-.show-cart .eddmenucart-cart-icon .eddmenucart-count {
+.simple-style.eddmenucart .edd-cart-quantity.count {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  padding: 3px 5px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #13aff0;
+}
+
+.simple-style.eddmenucart .edd-cart-quantity.count:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -3px;
+  width: 0;
+  height: 0;
+  margin-top: 4px;
+  border-style: solid solid solid none;
+  border-width: 5px 5px 5px medium;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-color: #13aff0;
+}
+
+.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container,
+.show-cart .eddmenucart-cart-icon .eddmenucart-container {
   background-color: #13aff0;
   color: #fff;
   border-color: #13aff0;
 }
 
-.bag-style:hover .eddmenucart-cart-icon .eddmenucart-count:after,
-.show-cart .eddmenucart-cart-icon .eddmenucart-count:after {
+.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container:after,
+.show-cart .eddmenucart-cart-icon .eddmenucart-container:after {
   border-color: #13aff0;
   height: 10px;
 }

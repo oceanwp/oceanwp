@@ -153,6 +153,10 @@ Easy Digital Downloads Cart
 	}
 }
 
+.eddmenucart-details{
+	margin-left: 8px;
+}
+
 /* Cart bag style */
 .bag-style {
 	position: relative;
@@ -170,7 +174,7 @@ Easy Digital Downloads Cart
 .eddmenucart-cart-icon {
 	display: inline-block;
 
-	.eddmenucart-count {
+	.eddmenucart-container {
 		position: relative;
 	    display: inline-block;
 	    min-width: 2em;
@@ -203,8 +207,40 @@ Easy Digital Downloads Cart
 	}
 }
 
-.bag-style:hover .eddmenucart-cart-icon .eddmenucart-count,
-.show-cart .eddmenucart-cart-icon .eddmenucart-count {
+.simple-style.eddmenucart{
+	.edd-cart-quantity.count{
+		display: inline-block;
+	    position: relative;
+	    color: #fff;
+	    font-size: 12px;
+	    line-height: 1;
+	    font-weight: 600;
+	    padding: 3px 5px;
+	    -webkit-border-radius: 2px;
+	    -moz-border-radius: 2px;
+	    -ms-border-radius: 2px;
+	    border-radius: 2px;
+	    background-color: #13aff0;
+
+	    &:after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -3px;
+			width: 0;
+			height: 0;
+			margin-top: 4px;
+			border-style: solid solid solid none;
+			border-width: 5px 5px 5px medium;
+			border-top-color: transparent !important;
+			border-bottom-color: transparent !important;
+			border-color: #13aff0;
+	    }
+	}
+}
+
+.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container,
+.show-cart .eddmenucart-cart-icon .eddmenucart-container {
 	background-color: $color-5;
     color: $color-1;
 	border-color: $color-5;
