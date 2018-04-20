@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2018.04.20* - 1.5.12:
+* **Fixed** - Issue with Elmentor Themer Builder if a page is selected as condition.
+* **Updated** - Isotope script.
+
 ### *2018.04.16* - 1.5.11:
 * **Added** - Chinese translation, thanks to Liu Liu.
 * **Tweak** - Better approch for the header if you create a custom header with Elementor Pro 2.0, now the sticky will automatically work and the top bar too.
