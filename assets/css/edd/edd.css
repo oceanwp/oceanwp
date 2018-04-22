@@ -472,6 +472,75 @@
   color: #787878;
 }
 
+/* =Cart Widget
+-------------------------------------------------------------- */
+.content-area ul.edd-cart,
+.widget-area ul.edd-cart {
+  margin: 0;
+  background-color: #f7f7f7;
+}
+
+.content-area ul.edd-cart li,
+.widget-area ul.edd-cart li {
+  list-style-type: none;
+  padding: 20px 15px;
+}
+
+.content-area ul.edd-cart li .edd-cart-item-price,
+.widget-area ul.edd-cart li .edd-cart-item-price {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  padding: 3px 5px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #13aff0;
+}
+
+.content-area ul.edd-cart li .edd-cart-item-separator,
+.widget-area ul.edd-cart li .edd-cart-item-separator {
+  display: none;
+}
+
+.content-area ul.edd-cart li .edd-remove-from-cart,
+.widget-area ul.edd-cart li .edd-remove-from-cart {
+  float: right;
+  text-transform: capitalize;
+}
+
+.content-area ul.edd-cart li.edd_total .cart-total,
+.widget-area ul.edd-cart li.edd_total .cart-total {
+  float: right;
+}
+
+.content-area ul.edd-cart li.edd_checkout a,
+.widget-area ul.edd-cart li.edd_checkout a {
+  display: inline-block;
+  font-family: inherit;
+  background-color: #13aff0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 14px 20px;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 /* =Checkout Form
 -------------------------------------------------------------- */
 .edd_clearfix:after {
@@ -484,7 +553,6 @@
 }
 
 .edd_discount_remove {
-  float: right;
   width: 32px;
   height: 32px;
   line-height: 30px;
@@ -501,8 +569,356 @@
   vertical-align: bottom;
 }
 
+/* Cart Contents */
+#edd_checkout_cart th,
+#edd_checkout_cart td {
+  text-align: left;
+  border: 1px solid #eee;
+  color: #666;
+  padding: 15px 30px;
+}
+
+#edd_checkout_cart .edd_cart_header_row th {
+  background: #fafafa;
+  font-weight: bold;
+}
+
+#edd_checkout_cart .edd_cart_tax_row th,
+#edd_checkout_cart .edd_cart_discount_row th {
+  background: none;
+}
+
+#edd_checkout_cart th.edd_cart_actions,
+#edd_checkout_cart td.edd_cart_actions,
+#edd_checkout_cart th:last-child,
+#edd_checkout_cart td:last-child,
+#edd_checkout_cart th.edd_cart_total {
+  text-align: right;
+}
+
+#edd_checkout_cart td img {
+  float: left;
+  margin: 0 8px 0 0;
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+#edd_checkout_cart input.edd-item-quantity {
+  padding: 2px;
+}
+
+#edd_checkout_cart .edd_discount {
+  display: inline-block;
+  margin-left: 5px;
+}
+
 #edd_checkout_cart br {
   display: none;
+}
+
+#edd_checkout_cart a.edd-cart-saving-button {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/* Checkout Fields */
+#edd_checkout_form_wrap fieldset {
+  border: 2px solid #f4f4f4;
+  background: #fcfcfc;
+  position: relative;
+}
+
+#edd_checkout_form_wrap legend {
+  font-size: 24px;
+  float: left;
+  margin-bottom: 16px;
+  color: #222;
+  width: 100%;
+}
+
+#edd_checkout_form_wrap label {
+  font-weight: bold;
+  display: block;
+  position: relative;
+  margin: 0 0 5px;
+}
+
+#edd_checkout_form_wrap label:after {
+  display: block;
+  visibility: hidden;
+  float: none;
+  clear: both;
+  height: 0;
+  text-indent: -9999px;
+  content: ".";
+}
+
+#edd_checkout_form_wrap span.edd-description {
+  color: #666;
+  display: block;
+  margin: 0 0 5px;
+}
+
+#edd_checkout_form_wrap select.edd-select.edd-select-small {
+  display: inline;
+  width: auto;
+}
+
+#edd_checkout_form_wrap input.edd-input.error,
+#edd_checkout_form_wrap textarea.edd-input.error {
+  border-color: #c4554e;
+}
+
+#edd_checkout_form_wrap > p {
+  margin: 0 0 21px;
+}
+
+#edd_checkout_form_wrap span.edd-required-indicator {
+  color: #b94a48;
+  display: inline;
+}
+
+#edd_checkout_form_wrap textarea,
+#edd_checkout_form_wrap input[type="text"],
+#edd_checkout_form_wrap input[type="email"],
+#edd_checkout_form_wrap input[type="password"],
+#edd_checkout_form_wrap input[type="tel"] {
+  padding: 4px 6px;
+}
+
+#edd_checkout_form_wrap input[type="radio"] {
+  border: none;
+  margin-right: 5px;
+}
+
+#edd_checkout_form_wrap input[type="checkbox"] {
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+#edd_checkout_form_wrap input[type="checkbox"] + label,
+#edd_checkout_form_wrap input[type="checkbox"] + label:after {
+  display: inline;
+}
+
+#edd_checkout_form_wrap .edd-payment-icons {
+  height: 32px;
+  display: block;
+  margin: 0 0 8px;
+}
+
+#edd_checkout_form_wrap .edd-payment-icons img.payment-icon {
+  max-height: 32px;
+  width: auto;
+  margin: 0 3px 0 0;
+  float: left;
+  background: none;
+  padding: 0;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+#edd_checkout_form_wrap #edd-payment-mode-wrap label {
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+
+#edd_checkout_form_wrap #edd-payment-mode-wrap .edd-payment-mode-label {
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+#edd_checkout_form_wrap fieldset {
+  border: 1px solid #eee;
+  padding: 1.387em;
+  margin: 0 0 21px;
+}
+
+#edd_checkout_form_wrap #edd_purchase_submit,
+#edd_checkout_form_wrap #edd_discount_code,
+#edd_checkout_form_wrap #edd_register_account_fields {
+  padding: 0;
+  border: none;
+}
+
+#edd_checkout_form_wrap fieldset fieldset {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+#edd_checkout_form_wrap #edd-login-account-wrap,
+#edd_checkout_form_wrap #edd-new-account-wrap,
+#edd_checkout_form_wrap #edd_show_discount,
+#edd_checkout_form_wrap .edd-cart-adjustment,
+#edd_checkout_form_wrap #edd_final_total_wrap {
+  background: #fafafa;
+  color: #666;
+  padding: 0.5em 1.387em;
+}
+
+#edd_checkout_form_wrap #edd-discount-code-wrap,
+#edd_checkout_form_wrap #edd_final_total_wrap,
+#edd_checkout_form_wrap #edd_show_discount {
+  border: 1px solid #eee;
+}
+
+#edd_checkout_form_wrap .edd-cart-adjustment {
+  padding: 1.387em;
+}
+
+#edd_checkout_form_wrap .edd-cart-adjustment input.edd-input,
+#edd_checkout_form_wrap .edd-cart-adjustment input.edd-submit {
+  display: inline-block;
+}
+
+#edd_checkout_form_wrap #edd-discount-error-wrap {
+  width: 100%;
+  display: inline-block;
+  margin: 1em 0 0;
+}
+
+#edd_checkout_form_wrap #edd-new-account-wrap,
+#edd_checkout_form_wrap #edd-login-account-wrap {
+  margin: -1.387em -1.387em 21px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+#edd_checkout_form_wrap #edd_payment_mode_select {
+  margin-bottom: 21px;
+}
+
+#edd_checkout_form_wrap fieldset#edd_register_fields #edd_checkout_user_info {
+  margin-bottom: 21px;
+}
+
+#edd_checkout_form_wrap fieldset#edd_register_account_fields legend {
+  padding-top: 11px;
+}
+
+#edd_checkout_form_wrap fieldset#edd_register_account_fields p.edd_register_password,
+#edd_checkout_form_wrap fieldset#edd_register_account_fields p.edd_login_password {
+  margin: 0;
+}
+
+#edd_checkout_form_wrap fieldset#edd_cc_fields {
+  border: 1px solid #f0f0f0;
+  background: #f9f9f9;
+  position: relative;
+}
+
+#edd_checkout_form_wrap fieldset#edd_cc_fields legend {
+  border: none;
+  padding: 0;
+}
+
+#edd_checkout_form_wrap fieldset p:last-child {
+  margin-bottom: 0;
+}
+
+#edd_checkout_form_wrap fieldset#edd_cc_fields #edd-card-number-wrap {
+  margin-top: 5px;
+}
+
+#edd_checkout_form_wrap #edd_purchase_final_total {
+  margin: 21px 0;
+}
+
+#edd_checkout_form_wrap #edd_purchase_final_total p {
+  margin: 0;
+}
+
+#edd_secure_site_wrapper {
+  padding: 4px 4px 4px 0;
+  font-weight: bold;
+}
+
+#edd_checkout_form_wrap input.edd-input.card-number.valid {
+  background-image: url(images/tick.png);
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+}
+
+#edd_checkout_form_wrap span.exp-divider {
+  display: inline;
+}
+
+#edd_checkout_form_wrap span.card-type {
+  position: absolute;
+  top: -2px;
+  right: 0;
+  width: 43px;
+  height: 32px;
+  background-size: 43px 32px !important;
+}
+
+#edd_checkout_form_wrap span.card-type.off {
+  display: none;
+}
+
+#edd_checkout_form_wrap span.card-type.visa {
+  background: url(images/icons/visa.png) no-repeat;
+}
+
+#edd_checkout_form_wrap span.card-type.mastercard {
+  background: url(images/icons/mastercard.png) no-repeat;
+}
+
+#edd_checkout_form_wrap span.card-type.discover {
+  background: url(images/icons/discover.png) no-repeat;
+}
+
+#edd_checkout_form_wrap span.card-type.amex {
+  background: url(images/icons/americanexpress.png) no-repeat;
+}
+
+#edd_checkout_form_wrap .edd-cart-ajax {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.edd-amazon-profile-wrapper {
+  font-size: 12px;
+}
+
+.edd-amazon-profile-name {
+  font-weight: 600;
+}
+
+.edd-amazon-logout {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.edd-amazon-logout a {
+  cursor: pointer;
+}
+
+#edd-amazon-wallet-box,
+#edd-amazon-address-box {
+  height: 228px;
+  width: 350px;
+}
+
+#edd-amazon-address-box {
+  margin-bottom: 15px;
+}
+
+/* Desktop and tablet */
+@media only screen and (min-width: 768px) {
+  #edd-amazon-address-box,
+  #edd-amazon-wallet-box {
+    width: 100%;
+    height: 228px;
+  }
 }
 
 /* =Misc

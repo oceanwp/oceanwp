@@ -23,9 +23,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			// These filters/actions must run on init
 			add_action( 'init', array( $this, 'init' ) );
 
-			// Pagination.
-			add_action( 'wp', array( $this, 'shop_pagination' ), 999 );
-
 			// Move default EDD customizer sections to the theme section
 			add_action( 'customize_register', array( $this, 'edd_section' ), 11 );
 
@@ -71,9 +68,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				// Disable EDD css
 				add_filter( 'edd_enqueue_styles', '__return_false' );
 
-				// Show/hide next/prev on products
-				add_filter( 'ocean_has_next_prev', array( $this, 'next_prev' ) );
-
 				// Border colors
 				add_filter( 'ocean_border_color_elements', array( $this, 'border_color_elements' ) );
 
@@ -82,115 +76,20 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			// Main Woo Actions
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ) );
 			add_filter( 'ocean_localize_array', array( $this, 'localize_array' ) );
-			if ( get_theme_mod( 'ocean_edd_archive_result_count', true )
-				|| get_theme_mod( 'ocean_edd_archive_sort', true )
-				|| get_theme_mod( 'ocean_edd_grid_list', true )
-				|| true == get_theme_mod( 'ocean_edd_off_canvas_filter', false ) ) {
-				add_action( 'edd_before_shop_loop', array( $this, 'add_shop_loop_div' ) );
-			}
-			if ( true == get_theme_mod( 'ocean_edd_off_canvas_filter', false ) ) {
-				add_filter( 'widgets_init', array( $this, 'register_off_canvas_sidebar' ) );
-				add_action( 'wp_footer', array( $this, 'get_off_canvas_sidebar' ) );
-				add_action( 'edd_before_shop_loop', array( $this, 'off_canvas_filter_button' ), 10 );
-			}
-			if ( get_theme_mod( 'ocean_edd_grid_list', true ) ) {
-				add_action( 'edd_before_shop_loop', array( $this, 'grid_list_buttons' ), 10 );
-			}
-			if ( get_theme_mod( 'ocean_edd_archive_result_count', true )
-				|| get_theme_mod( 'ocean_edd_archive_sort', true )
-				|| get_theme_mod( 'ocean_edd_grid_list', true )
-				|| true == get_theme_mod( 'ocean_edd_off_canvas_filter', false ) ) {
-				add_action( 'edd_before_shop_loop', array( $this, 'close_shop_loop_div' ), 40 );
-			}
-
-			add_action( 'edd_after_shop_loop_item', array( $this, 'archive_product_content' ), 10 );
-			add_action( 'edd_after_shop_loop_item', array( $this, 'close_shop_loop_item_inner_div' ) );
-			add_action( 'edd_before_subcategory_title', array( $this, 'add_container_wrap_category' ), 8 );
-			add_action( 'edd_before_subcategory_title', array( $this, 'add_div_before_category_thumbnail' ), 9 );
-			add_action( 'edd_before_subcategory_title', array( $this, 'close_div_after_category_thumbnail' ), 11 );
-			add_action( 'edd_shop_loop_subcategory_title', array( $this, 'add_div_before_category_title' ), 9 );
-			add_action( 'edd_shop_loop_subcategory_title', array( $this, 'add_category_description' ), 11 );
-			add_action( 'edd_shop_loop_subcategory_title', array( $this, 'close_div_after_category_title' ), 12 );
-			add_action( 'edd_shop_loop_subcategory_title', array( $this, 'close_container_wrap_category' ), 13 );
-
-			add_action( 'edd_after_single_product_summary', array( $this, 'clear_summary_floats' ), 1 );
-			add_action( 'edd_before_account_navigation', array( $this, 'oceanwp_before_account_navigation' ) );
-			add_action( 'edd_after_account_navigation', array( $this, 'oceanwp_after_account_navigation' ) );
-			if ( get_option( 'edd_enable_myaccount_registration' ) !== 'yes' ) {
-				add_action('edd_before_customer_login_form', array( $this, 'oceanwp_login_wrap_before' ) );
-				add_action('edd_after_customer_login_form', array( $this, 'oceanwp_login_wrap_after' ) );
-			}
-			if ( get_theme_mod( 'ocean_edd_category_image', 'no' ) == 'yes' ) {
-				add_action('edd_archive_description', array( $this, 'edd_category_image' ), 2 );
-			}
-
-			// Quick view
-			if ( get_theme_mod( 'ocean_edd_quick_view', true ) ) {
-				add_action( 'ocean_after_product_entry_image', array( $this, 'quick_view_button' ) );
-				add_action( 'wp_ajax_oceanwp_product_quick_view', array( $this, 'product_quick_view_ajax' ) );
-				add_action( 'wp_ajax_nopriv_oceanwp_product_quick_view', array( $this, 'product_quick_view_ajax' ) );
-				add_action( 'wp_footer', array( $this, 'quick_view_template' ) );
-				add_action( 'ocean_edd_quick_view_product_image', 'edd_show_product_sale_flash', 10 );
-				add_action( 'ocean_edd_quick_view_product_image', array( $this, 'quick_view_image' ), 20 );
-				add_action( 'ocean_edd_quick_view_product_content', array( $this, 'single_product_content' ), 10 );
-			}
-
-			// Ajax single product add to cart
-			add_action( 'wp_ajax_oceanwp_add_cart_single_product', array( $this, 'add_cart_single_product_ajax' ) );
-			add_action( 'wp_ajax_nopriv_oceanwp_add_cart_single_product', array( $this, 'add_cart_single_product_ajax' ) );
 
 			// Add cart overlay
 			if ( 'yes' == get_theme_mod( 'ocean_edd_display_cart_product_added', 'no' ) ) {
 				add_action( 'ocean_after_footer', array( $this, 'cart_overlay' ), 99 );
 			}
 
-			// Add mobile menu mini cart
-			if ( get_theme_mod( 'ocean_edd_add_mobile_mini_cart', true ) ) {
-				add_action( 'wp_footer', array( $this, 'get_mini_cart_sidebar' ) );
-			}
-
-			// Remove the single product summary content to add the sortable control
-			remove_action( 'edd_single_product_summary', 'edd_template_single_title', 5 );
-			remove_action( 'edd_single_product_summary', 'edd_template_single_rating', 10 );
-			remove_action( 'edd_single_product_summary', 'edd_template_single_price', 10 );
-			remove_action( 'edd_single_product_summary', 'edd_template_single_excerpt', 20 );
-			remove_action( 'edd_single_product_summary', 'edd_template_single_add_to_cart', 30 );
-			remove_action( 'edd_single_product_summary', 'edd_template_single_meta', 40 );
-			add_action( 'edd_single_product_summary', array( $this, 'single_product_content' ), 10 );
-
 			// Add product navigation
 			if ( true == get_theme_mod( 'ocean_edd_display_navigation', true ) ) {
 				add_action( 'edd_before_single_product_summary', array( $this, 'product_next_prev_nav' ), 10 );
 			}
 
-			// Add floating bar
-			if ( 'on' == get_theme_mod( 'ocean_edd_display_floating_bar', 'off' ) ) {
-				add_action( 'ocean_before_main', array( $this, 'floating_bar' ) );
-
-				// Ajax add to cart
-				add_action( 'wp_ajax_oceanwp_add_cart_floating_bar', array( $this, 'add_cart_floating_bar_ajax' ) );
-				add_action( 'wp_ajax_nopriv_oceanwp_add_cart_floating_bar', array( $this, 'add_cart_floating_bar_ajax' ) );
-			}
-
 			// Main Woo Filters
 			add_filter( 'wp_nav_menu_items', array( $this, 'menu_cart_icon' ) , 10, 2 );
-			add_filter( 'edd_general_settings', array( $this, 'remove_general_settings' ) );
-			add_filter( 'edd_product_settings', array( $this, 'remove_product_settings' ) );
-			add_filter( 'loop_shop_per_page', array( $this, 'loop_shop_per_page' ), 20 );
-			add_filter( 'loop_shop_columns', array( $this, 'loop_shop_columns' ) );
-			add_filter( 'edd_output_related_products_args', array( $this, 'related_product_args' ) );
-			add_filter( 'edd_pagination_args', array( $this, 'pagination_args' ) );
-			add_filter( 'edd_continue_shopping_redirect', array( $this, 'continue_shopping_redirect' ) );
 			add_filter( 'post_class', array( $this, 'add_download_classes' ), 40, 3 );
-			add_filter( 'product_cat_class', array( $this, 'product_cat_class' ) );
-
-			// Sale badge content
-			if ( 'percent' == get_theme_mod( 'ocean_edd_sale_badge_content', 'sale' ) ) {
-				add_filter( 'edd_sale_flash', array( $this, 'sale_flash' ), 10, 3 );
-			}
-
-			// Add links Login/Register on the my account page
-			add_action( 'edd_before_customer_login_form', array( $this, 'login_register_links' ) );
 
 			// Distraction free cart/checkout
 			add_filter( 'ocean_display_top_bar', array( $this, 'distraction_free' ), 11 );
@@ -225,14 +124,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 	            // Prevent empty shipping tab
 	            add_filter( 'edd_enable_order_notes_field', '__return_true' );
 
-	            // Support to EDD secure submit gateway
-	            if ( class_exists( 'WC_Gateway_SecureSubmit' ) ) {
-	                $secure_submit_options = get_option( 'edd_securesubmit_settings' );
-	                if( ! empty( $secure_submit_options['use_iframes'] ) && 'yes' == $secure_submit_options['use_iframes'] ) {
-	                    add_filter( 'option_edd_securesubmit_settings', array( $this, 'edd_securesubmit_support' ), 10, 2 );
-	                }
-	            }
-
 	        }
 
 			// Add new typography settings
@@ -257,18 +148,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			// Remove EDD breadcrumbs
 			remove_action( 'edd_before_main_content', 'edd_breadcrumb', 20, 0 );
 
-			// Alter upsells display
-			remove_action( 'edd_after_single_product_summary', 'edd_upsell_display', 15 );
-			if ( '0' != get_theme_mod( 'ocean_edd_upsells_count', '3' ) ) {
-				add_action( 'edd_after_single_product_summary', array( $this, 'upsell_display' ), 15 );
-			}
-
-			// Alter cross-sells display
-			remove_action( 'edd_cart_collaterals', 'edd_cross_sell_display' );
-			if ( '0' != get_theme_mod( 'ocean_edd_cross_sells_count', '2' ) ) {
-				add_action( 'edd_cart_collaterals', array( $this, 'cross_sell_display' ) );
-			}
-
 			// Remove related products if is set to no
 			if ( 'on' != get_theme_mod( 'ocean_edd_display_related_items', 'on' ) ) {
 				remove_action( 'edd_after_single_product_summary', 'edd_output_related_products', 20 );
@@ -278,165 +157,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			if ( ! get_theme_mod( 'ocean_edd_archive_sort', true ) ) {
 				remove_action( 'edd_before_shop_loop', 'edd_catalog_ordering', 30 );
 			}
-
-			// Add result count if not disabled
-			if ( get_theme_mod( 'ocean_edd_archive_result_count', true ) ) {
-				add_action( 'edd_before_shop_loop', array( $this, 'result_count' ), 31 );
-			}
-
-			// Remove default elements
-			remove_action( 'edd_before_shop_loop', 'edd_result_count', 20 );
-			remove_action( 'edd_before_shop_loop_item', 'edd_template_loop_product_link_open', 10 );
-			remove_action( 'edd_after_shop_loop_item', 'edd_template_loop_product_link_close', 5 );
-			remove_action( 'edd_before_subcategory', 'edd_template_loop_category_link_open', 10 );
-			remove_action( 'edd_after_subcategory', 'edd_template_loop_category_link_close', 10 );
-			remove_action( 'edd_shop_loop_item_title', 'edd_template_loop_product_title', 10 );
-			remove_action( 'edd_after_shop_loop_item_title', 'edd_template_loop_rating', 5 );
-			remove_action( 'edd_after_shop_loop_item_title', 'edd_template_loop_price', 10 );
-			remove_action( 'edd_after_shop_loop_item', 'edd_template_loop_add_to_cart', 10 );
-
-			if ( defined( 'ELEMENTOR_WOOSTORE__FILE__' ) ) {
-				remove_action( 'edd_after_shop_loop_item_title', 'eddstore_output_product_excerpt', 35 );
-				add_action( 'edd_after_shop_loop_item', 'eddstore_output_product_excerpt', 21 );
-			}
-
-			if ( class_exists( 'EDD_Germanized' ) ) {
-				remove_action( 'edd_after_shop_loop_item', 'edd_gzd_template_single_shipping_costs_info', 7 );
-				remove_action( 'edd_after_shop_loop_item', 'edd_gzd_template_single_tax_info', 6 );
-				remove_action( 'edd_single_product_summary', 'edd_gzd_template_single_legal_info', 12 );
-				add_action( 'ocean_after_archive_product_inner', array( $this, 'edd_germanized' ) );
-				add_action( 'ocean_after_single_product_price', 'edd_gzd_template_single_legal_info' );
-			}
-
-		}
-
-		/**
-		 * Pagination.
-		 *
-		 * @since 1.4.16
-		 */
-		public function shop_pagination() {
-			if ( 'infinite_scroll' == get_theme_mod( 'ocean_edd_pagination_style', 'standard' ) ) {
-				remove_action( 'edd_after_shop_loop', 'edd_pagination', 10 );
-				add_action( 'edd_after_shop_loop', array( $this, 'infinite_pagination' ), 10 );
-			}
-		}
-
-		/**
-		 * Infinite scroll pagination.
-		 *
-		 * @since 1.4.16
-		 */
-		public static function infinite_pagination() {
-			global $wp_query;
-
-			if ( $wp_query->max_num_pages <= 1 ) {
-				return;
-			}
-
-			// Load infinite scroll script
-			wp_enqueue_script( 'infinitescroll' );
-
-			// Last text
-			$last = get_theme_mod( 'ocean_edd_infinite_scroll_last_text' );
-			$last = oceanwp_tm_translation( 'ocean_edd_infinite_scroll_last_text', $last );
-			$last = $last ? $last: esc_html__( 'End of content', 'oceanwp' );
-
-			// Error text
-			$error = get_theme_mod( 'ocean_edd_infinite_scroll_error_text' );
-			$error = oceanwp_tm_translation( 'ocean_edd_infinite_scroll_error_text', $error );
-			$error = $error ? $error: esc_html__( 'No more pages to load', 'oceanwp' );
-			
-			// Output pagination HTML ?>
-			<div class="scroller-status">
-				<div class="loader-ellips infinite-scroll-request">
-					<span class="loader-ellips__dot"></span>
-					<span class="loader-ellips__dot"></span>
-					<span class="loader-ellips__dot"></span>
-					<span class="loader-ellips__dot"></span>
-				</div>
-				<p class="scroller-status__message infinite-scroll-last"><?php echo esc_attr( $last ); ?></p>
-				<p class="scroller-status__message infinite-scroll-error"><?php echo esc_attr( $error ); ?></p>
-			</div>
-			<div class="infinite-scroll-nav clr">
-				<div class="alignleft newer-posts"><?php echo get_previous_posts_link('&larr; '. esc_html__( 'Newer Posts', 'oceanwp' ) ); ?></div>
-				<div class="alignright older-posts"><?php echo get_next_posts_link( esc_html__( 'Older Posts', 'oceanwp' ) .' &rarr;', $wp_query->max_num_pages ); ?></div>
-			</div>
-		<?php
-		}
-
-		/**
-		 * Move default EDD customizer sections to the theme section.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function edd_section( $wp_customize ) {
-			$wp_customize->get_section( 'edd_store_notice' )->panel = 'ocean_edd_panel';
-			$wp_customize->get_section( 'edd_product_images' )->panel = 'ocean_edd_panel';
-			$wp_customize->get_section( 'edd_product_images' )->priority = 999;
-			$wp_customize->get_control( 'edd_shop_page_display' )->section = 'ocean_edd_archives';
-			$wp_customize->get_control( 'edd_category_archive_display' )->section = 'ocean_edd_archives';
-			$wp_customize->get_control( 'edd_default_catalog_orderby' )->section = 'ocean_edd_archives';
-		}
-
-		/**
-		 * Helper method to get the version of the currently installed EDD.
-		 *
-		 * @since 1.1.7
-		 * @return string edd version number or null.
-		 */
-		public static function get_wc_version() {
-			return defined( 'WC_VERSION' ) && WC_VERSION ? WC_VERSION : null;
-		}
-
-		/**
-		 * Remove general settings from Woo Admin panel.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function remove_general_settings( $settings ) {
-			$remove = array( 'edd_enable_lightbox' );
-			foreach( $settings as $key => $val ) {
-				if ( isset( $val['id'] ) && in_array( $val['id'], $remove ) ) {
-					unset( $settings[$key] );
-				}
-			}
-			return $settings;
-		}
-
-		/**
-		 * Remove product settings from Woo Admin panel.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function remove_product_settings( $settings ) {
-			$remove = array(
-				'edd_enable_lightbox'
-			);
-			foreach( $settings as $key => $val ) {
-				if ( isset( $val['id'] ) && in_array( $val['id'], $remove ) ) {
-					unset( $settings[$key] );
-				}
-			}
-			return $settings;
-		}
-
-		/**
-		 * Content wrapper.
-		 *
-		 * @since 1.4.7
-		 */
-		public static function content_wrapper() {
-			get_template_part( 'edd/wc-content-wrapper' );
-		}
-
-		/**
-		 * Content wrapper end.
-		 *
-		 * @since 1.4.7
-		 */
-		public static function content_wrapper_end() {
-			get_template_part( 'edd/wc-content-wrapper-end' );
 		}
 
 		/**
@@ -546,12 +266,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 
 			wp_enqueue_style( 'oceanwp-edd', OCEANWP_CSS_DIR_URI .'edd/edd.min.css' );
 
-			// If quick view
-			if ( get_theme_mod( 'ocean_edd_quick_view', true ) ) {
-				wp_enqueue_script( 'oceanwp-edd-quick-view', OCEANWP_JS_DIR_URI .'third/edd/edd-quick-view.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
-				wp_enqueue_style( 'oceanwp-edd-quick-view', OCEANWP_CSS_DIR_URI .'edd/edd-quick-view.min.css' );
-			}
-
 			// If display cart when product added
 			if ( 'yes' == get_theme_mod( 'ocean_edd_display_cart_product_added', 'no' ) ) {
 				wp_enqueue_script( 'oceanwp-edd-display-cart', OCEANWP_JS_DIR_URI .'third/edd/edd-display-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
@@ -586,14 +300,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				$array['next'] 		 			 = esc_html__( 'Next', 'oceanwp' );
 			}
 
-			// If floating bar
-			if ( 'on' == get_theme_mod( 'ocean_edd_display_floating_bar', 'off' ) ) {
-				$array['ajax_url'] = admin_url( 'admin-ajax.php' );
-			}
-
-			// Check if the floating bar is enabled for the quantity button
-			$array['floating_bar'] = get_theme_mod( 'ocean_edd_display_floating_bar', 'off' );
-
 			return $array;
 
 		}
@@ -608,27 +314,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		}
 
 		/**
-		 * Single Product add to cart ajax request.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function add_cart_single_product_ajax() {
-
-			$product_id   	= sanitize_text_field( $_POST['product_id'] );
-			$variation_id 	= sanitize_text_field( $_POST['variation_id'] );
-			$variation 		= $_POST['variation'];
-			$quantity     	= sanitize_text_field( $_POST['quantity'] );
-
-			if ( $variation_id ) {
-				WC()->cart->add_to_cart( $product_id, $quantity, $variation_id, $variation );
-			} else {
-				WC()->cart->add_to_cart( $product_id, $quantity );
-			}
-			die();
-
-		}
-
-		/**
 		 * Add cart overlay.
 		 *
 		 * @since 1.5.0
@@ -636,49 +321,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function cart_overlay() { ?>
 			<div class="owp-cart-overlay"></div>
 		<?php
-		}
-
-		/**
-		 * Get mini cart sidebar.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function get_mini_cart_sidebar() {
-
-			// Style
-			$cart_style = get_theme_mod( 'ocean_edd_cart_dropdown_style', 'compact' );
-
-			// Define classes
-			$classes = array( 'oceanwp-cart-sidebar' );
-
-			// Cart style
-			if ( 'compact' != $cart_style ) {
-				$classes[] = $cart_style;
-			}
-
-			// Turn classes into string
-			$classes = implode( ' ', $classes );
-
-			echo '<div id="oceanwp-cart-sidebar-wrap">';
-				echo '<div class="'. $classes .'">';
-					echo '<a href="#" class="oceanwp-cart-close">×</a>';
-					echo '<h4>'. esc_html__( 'Cart', 'oceanwp' ) .'</h4><div class="divider"></div>';
-					echo '<div class="owp-mini-cart">';
-						the_widget( 'WC_Widget_Cart', 'title=' );
-					echo '</div>';
-				echo '</div>';
-				echo '<div class="oceanwp-cart-sidebar-overlay"></div>';
-			echo '</div>';
-
-		}
-
-		/**
-		 * Adds an opening div "oceanwp-toolbar" around top elements.
-		 *
-		 * @since 1.1.1
-		 */
-		public static function add_shop_loop_div() {
-			echo '<div class="oceanwp-toolbar clr">';
 		}
 
 		/**
@@ -698,310 +340,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				'after_title'   => '</h4>',
 			) );
 
-		}
-
-		/**
-		 * Get Off Canvas Sidebar.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function get_off_canvas_sidebar() {
-
-			// Return if is not in shop page
-			// if ( ! oceanwp_is_edd_shop()
-			// 	&& ! oceanwp_is_edd_tax() ) {
-			// 	return;
-			// }
-
-			if ( function_exists( 'wc_get_template' ) ) {
-				wc_get_template( 'owp-off-canvas-sidebar.php' );
-			}
-
-		}
-
-		/**
-		 * Add off canvas filter button.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function off_canvas_filter_button() {
-
-			// Return if is not in shop page
-			// if ( ! oceanwp_is_edd_shop()
-			// 	&& ! oceanwp_is_edd_tax() ) {
-			// 	return;
-			// }
-
-			// Get filter text
-			$text = get_theme_mod( 'ocean_edd_off_canvas_filter_text' );
-			$text = oceanwp_tm_translation( 'ocean_edd_off_canvas_filter_text', $text );
-			$text = $text ? $text: esc_html__( 'Filter', 'oceanwp' );
-
-			$output = '<a href="#" class="oceanwp-off-canvas-filter"><i class="icon-menu"></i><span class="off-canvas-filter-text">'. esc_html( $text ) .'</span></a>';
-
-			echo apply_filters( 'oceanwp_off_canvas_filter_button_output', $output );
-		}
-
-		/**
-		 * Add grid/list buttons.
-		 *
-		 * @since 1.1.1
-		 */
-		public static function grid_list_buttons() {
-
-			// Return if is not in shop page
-			// if ( ! oceanwp_is_edd_shop()
-			// 	&& ! oceanwp_is_edd_tax() ) {
-			// 	return;
-			// }
-
-			// Titles
-			$grid_view = esc_html__( 'Grid view', 'oceanwp' );
-			$list_view = esc_html__( 'List view', 'oceanwp' );
-
-			// Active class
-			if ( 'list' == get_theme_mod( 'ocean_edd_catalog_view', 'grid' ) ) {
-				$list = 'active ';
-				$grid = '';
-			} else {
-				$grid = 'active ';
-				$list = '';
-			}
-
-			$output = sprintf( '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="%1$s" class="%2$sgrid-btn"><span class="icon-grid"></span></a><a href="#" id="oceanwp-list" title="%3$s" class="%4$slist-btn"><span class="icon-list"></span></a></nav>', esc_html( $grid_view ), esc_attr( $grid ), esc_html( $list_view ), esc_attr( $list ) );
-
-			echo wp_kses_post( apply_filters( 'oceanwp_grid_list_buttons_output', $output ) );
-		}
-
-		/**
-		 * Closes the opening div "oceanwp-toolbar" around top elements.
-		 *
-		 * @since 1.1.1
-		 */
-		public static function close_shop_loop_div() {
-			echo '</div>';
-		}
-
-		/**
-		 * Add result count.
-		 *
-		 * @since 1.1.1
-		 */
-		public static function result_count() {
-
-			// Return if is not in shop page
-			// if ( ! oceanwp_is_edd_shop()
-			// 	&& ! is_product_category()
-			// 	&& ! is_product_tag() ) {
-			// 	return;
-			// }
-
-			get_template_part( 'edd/result-count' );
-		}
-
-		/**
-		 * Returns correct posts per page for the shop
-		 *
-		 * @since 1.0.0
-		 */
-		public static function loop_shop_per_page() {
-			if ( get_theme_mod( 'ocean_edd_archive_result_count', true ) ) {
-				$posts_per_page = ( isset( $_GET['products-per-page'] ) ) ? sanitize_text_field( wp_unslash( $_GET['products-per-page'] ) ) : get_theme_mod( 'ocean_edd_archive_posts_per_page', '12' );
-
-			    if ( $posts_per_page == 'all' ) {
-			        $posts_per_page = wp_count_posts( 'product' )->publish;
-			    }
-			} else {
-				$posts_per_page = get_theme_mod( 'ocean_edd_archive_posts_per_page' );
-				$posts_per_page = $posts_per_page ? $posts_per_page : '12';
-			}
-			return $posts_per_page;
-		}
-
-		/**
-		 * Change products per row for the main shop.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function loop_shop_columns() {
-			$columns = get_theme_mod( 'ocean_edd_archive_columns', '3' );
-			$columns = $columns ? $columns : '3';
-			return $columns;
-		}
-
-		/**
-		 * Change products per row for upsells.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function upsell_display() {
-
-			// Get count
-			$count = get_theme_mod( 'ocean_edd_upsells_count', '3' );
-			$count = $count ? $count : '3';
-
-			// Get columns
-			$columns = get_theme_mod( 'ocean_edd_upsells_columns', '3' );
-			$columns = $columns ? $columns : '3';
-
-			// Alter upsell display
-			edd_upsell_display( $count, $columns );
-
-		}
-
-		/**
-		 * Change products per row for crossells.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function cross_sell_display() {
-
-			// Get count
-			$count = get_theme_mod( 'ocean_edd_cross_sells_count', '2' );
-			$count = $count ? $count : '2';
-
-			// Get columns
-			$columns = get_theme_mod( 'ocean_edd_cross_sells_columns', '2' );
-			$columns = $columns ? $columns : '2';
-
-			// Alter cross-sell display
-			edd_cross_sell_display( $count, $columns );
-
-		}
-
-		/**
-		 * Alter the related product arguments.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function related_product_args() {
-
-			// Get global vars
-			global $product, $orderby, $related;
-
-			// Get posts per page
-			$posts_per_page = get_theme_mod( 'ocean_edd_related_count', '3' );
-			$posts_per_page = $posts_per_page ? $posts_per_page : '3';
-
-			// Get columns
-			$columns = get_theme_mod( 'ocean_edd_related_columns', '3' );
-			$columns = $columns ? $columns : '3';
-
-			// Return array
-			return array(
-				'posts_per_page' => $posts_per_page,
-				'columns'        => $columns,
-			);
-
-		}
-
-		/**
-		 * Adds an out of stock tag to the products.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function add_out_of_stock_badge() {
-			if ( function_exists( 'oceanwp_edd_product_instock' ) && ! oceanwp_edd_product_instock() ) {
-				$label = esc_html__( 'Out of Stock', 'oceanwp' );  ?>
-				<div class="outofstock-badge">
-					<?php echo esc_html( apply_filters( 'ocean_edd_outofstock_text', $label ) ); ?>
-				</div><!-- .product-entry-out-of-stock-badge -->
-			<?php }
-		}
-
-		/**
-		 * Archive product content.
-		 *
-		 * @since 1.1.4
-		 */
-		public static function archive_product_content() {
-			if ( function_exists( 'wc_get_template' ) ) {
-				wc_get_template( 'owp-archive-product.php' );
-			}
-		}
-
-		/**
-		 * Closes the "product-inner" div around product entries.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function close_shop_loop_item_inner_div() {
-			echo '</div><!-- .product-inner .clr -->';
-		}
-
-		/**
-		 * Quick view button.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function quick_view_button() {
-			global $product;
-
-			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '"><i class="icon-eye"></i>' . esc_html__( 'Quick View', 'oceanwp' ) . '</a>';
-
-			echo apply_filters( 'ocean_edd_quick_view_button_html', $button );
-		}
-
-		/**
-		 * Quick view ajax.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function product_quick_view_ajax() {
-			if ( ! isset( $_REQUEST['product_id'] ) ) {
-				die();
-			}
-
-			$product_id = intval( $_REQUEST['product_id'] );
-
-			// wp_query for the product.
-			wp( 'p=' . $product_id . '&post_type=product' );
-
-			ob_start();
-
-			get_template_part( 'edd/quick-view-content' );
-
-			echo ob_get_clean();
-
-			die();
-		}
-
-		/**
-		 * Quick view template.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function quick_view_template() {
-			get_template_part( 'edd/quick-view' );
-		}
-
-		/**
-		 * Quick view image.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function quick_view_image() {
-			get_template_part( 'edd/quick-view-image' );
-		}
-
-		/**
-		 * Clear floats after single product summary.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function clear_summary_floats() {
-			echo '<div class="clear-after-summary clr"></div>';
-		}
-
-		/**
-		 * Single product content.
-		 *
-		 * @since 1.1.9
-		 */
-		public static function single_product_content() {
-			if ( function_exists( 'wc_get_template' ) ) {
-				wc_get_template( 'owp-single-product.php' );
-			}
 		}
 
 		/**
@@ -1044,259 +382,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		}
 
 		/**
-		 * Add floating bar.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function floating_bar() {
-
-			// Return if is not single product
-			// if ( ! oceanwp_is_edd_single() ) {
-			// 	return;
-			// }
-
-			// Get product object
-			$product = wc_get_product( get_the_ID() ); ?>
-
-			<div class="owp-floating-bar">
-				<div class="container clr">
-					<div class="left">
-				        <p class="selected"><?php esc_html_e( 'Selected:', 'oceanwp' ); ?></p>
-				        <h2 class="entry-title" itemprop="name"><?php echo $product->get_title(); ?></h2>
-				    </div>
-					<div class="right">
-				        <div class="product_price">
-				        	<p class="price"><?php echo $product->get_price_html(); ?></p>
-		                </div>
-		                <?php
-		                // If out of stock
-		                if ( 'outofstock' == $product->get_stock_status() ) { ?>
-		                	<p class="stock out-of-stock"><?php esc_html_e( 'Out of stock', 'oceanwp' ); ?></p>
-		            	<?php
-		            	} else if ( $product && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually() ) {
-		                	echo self::floating_bar_add_to_cart( $product );
-		            	} else { ?>
-		                	<button type="submit" class="button top"><?php esc_html_e( 'Select Options', 'oceanwp' ); ?></button>
-		                <?php
-		            	} ?>
-				    </div>
-		        </div>
-		    </div>
-
-		<?php
-		}
-
-		/**
-		 * Floating bar add to cart button.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function floating_bar_add_to_cart( $product ) {
-
-			$html = '<form action="' . esc_url( $product->add_to_cart_url() ) . '" class="cart" method="post" enctype="multipart/form-data">';
-			$html .= edd_quantity_input( array(), $product, false );
-			$html .= '<button type="submit" name="add-to-cart" value="' . get_the_ID() . '" class="floating_add_to_cart_button button alt">' . esc_html( $product->add_to_cart_text() ) . '</button>';
-			$html .= '</form>';
-
-			return $html;
-		}
-
-		/**
-		 * Floating bar add to cart ajax request.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function add_cart_floating_bar_ajax() {
-
-			$product_id   = sanitize_text_field( $_POST['product_id'] );
-			$quantity     = sanitize_text_field( $_POST['quantity'] );
-
-			WC()->cart->add_to_cart( $product_id, $quantity );
-
-			die();
-
-		}
-
-		/**
-		 * Add wrap and user info to the account navigation.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function oceanwp_before_account_navigation() {
-
-			// Name to display
-			$current_user = wp_get_current_user();
-
-			if ( $current_user->display_name ) {
-				$name = $current_user->display_name;
-			} else {
-				$name = esc_html__( 'Welcome!', 'oceanwp' );
-			}
-			$name = apply_filters( 'ocean_user_profile_name_text', $name );
-
-			echo '<div class="edd-MyAccount-tabs clr">';
-				echo '<div class="oceanwp-user-profile clr">';
-					echo '<div class="image">'. get_avatar( $current_user->user_email, 128 ) .'</div>';
-					echo '<div class="user-info">';
-						echo '<p class="name">'. esc_attr( $name ) .'</p>';
-						echo '<a class="logout" href="'. esc_url( wp_logout_url( get_permalink() ) ) .'">'. esc_html__( 'Logout', 'oceanwp' ) .'</a>';
-					echo '</div>';
-				echo '</div>';
-
-		}
-
-		/**
-		 * Add wrap to the account navigation.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function oceanwp_after_account_navigation() {
-			echo '</div>';
-		}
-
-		/**
-		 * Adds container wrap for the thumbnail and title of the categories products.
-		 *
-		 * @since 1.1.1.1
-		 */
-		public static function add_container_wrap_category() {
-			echo '<div class="product-inner clr">';
-		}
-
-		/**
-		 * Adds a container div before the thumbnail for the categories products.
-		 *
-		 * @since 1.1.1.1
-		 */
-		public static function add_div_before_category_thumbnail( $category ) {
-			echo '<div class="edd-entry-image clr">';
-				echo '<a href="' . esc_url( get_term_link( $category, 'product_cat' ) ) . '">';
-		}
-
-		/**
-		 * Close a container div before the thumbnail for the categories products.
-		 *
-		 * @since 1.1.1.1
-		 */
-		public static function close_div_after_category_thumbnail() {
-				echo '</a>';
-			echo '</div>';
-		}
-
-		/**
-		 * Adds a container div before the thumbnail for the categories products.
-		 *
-		 * @since 1.1.1.1
-		 */
-		public static function add_div_before_category_title( $category ) {
-			echo '<div class="edd-entry-inner clr">';
-				echo '<a href="' . esc_url( get_term_link( $category, 'product_cat' ) ) . '">';
-		}
-
-		/**
-		 * Add description if list view for the categories products.
-		 *
-		 * @since 1.1.1.1
-		 */
-		public static function add_category_description( $category ) {
-				// Close category link openend in add_div_before_category_title()
-				echo '</a>';
-
-			// Var
-			$term 			= get_term( $category->term_id, 'product_cat' );
-			$description 	= $term->description;
-
-			// Description
-			if ( get_theme_mod( 'ocean_edd_grid_list', true )
-				&& $description ) {
-				echo '<div class="edd-desc">';
-					echo '<div class="description">' . wp_kses_post( $description ) . '</div>';
-				echo '</div>';
-			}
-		}
-
-		/**
-		 * Close a container div before the thumbnail for the categories products.
-		 *
-		 * @since 1.1.1.1
-		 */
-		public static function close_div_after_category_title() {
-			echo '</div>';
-		}
-
-		/**
-		 * Close container wrap for the thumbnail and title of the categories products.
-		 *
-		 * @since 1.1.1.1
-		 */
-		public static function close_container_wrap_category() {
-			echo '</div>';
-		}
-
-		/**
-		 * Before my account login.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function oceanwp_login_wrap_before() {
-			echo '<div class="oceanwp-loginform-wrap">';
-		}
-
-		/**
-		 * After my account login.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function oceanwp_login_wrap_after() {
-			echo '</div>';
-		}
-
-		/**
-		 * Display the categories featured images.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function edd_category_image() {
-			if ( is_product_category() ) {
-			    global $wp_query;
-			    $cat 			= $wp_query->get_queried_object();
-			    $thumbnail_id 	= get_edd_term_meta( $cat->term_id, 'thumbnail_id', true );
-			    $image 			= wp_get_attachment_url( $thumbnail_id );
-
-			    if ( $image ) {
-				    echo '<div class="category-image"><img src="' . $image . '" alt="' . $cat->name . '" /></div>';
-				}
-			}
-		}
-
-		/**
-		 * Tweaks pagination arguments.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function pagination_args( $args ) {
-			$args['prev_text'] = '<i class="fa fa-angle-left"></i>';
-			$args['next_text'] = '<i class="fa fa-angle-right"></i>';
-			return $args;
-		}
-
-		/**
-		 * Alter continue shoping URL.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function continue_shopping_redirect( $return_to ) {
-			$shop_id = wc_get_page_id( 'shop' );
-			if ( function_exists( 'icl_object_id' ) ) {
-				$shop_id = icl_object_id( $shop_id, 'page' );
-			}
-			if ( $shop_id ) {
-				$return_to = get_permalink( $shop_id );
-			}
-			return $return_to;
-		}
-
-		/**
 		 * Add classes to EDD product entries.
 		 *
 		 * @since 1.0.0
@@ -1314,13 +399,10 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			// Vars
 			$content_alignment 	= get_theme_mod( 'ocean_edd_product_entry_content_alignment', 'center' );
 			$content_alignment 	= $content_alignment ? $content_alignment : 'center';
-			// $btn_style 			= get_theme_mod( 'ocean_edd_product_addtocart_style', 'normal' );
-			// $btn_style 			= $btn_style ? $btn_style : 'normal';
 
 			$classes[] = 'col';
 			$classes[] = oceanwp_grid_class( get_theme_mod( 'ocean_edd_archive_columns', 3 ) );
 			$classes[] = 'owp-content-'. $content_alignment;
-			// $classes[] = 'owp-btn-' . $btn_style;
 
 			return $classes;
 		}
@@ -1333,18 +415,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function add_metabox( $types ) {
 			$types[] = 'download';
 			return $types;
-		}
-
-		/**
-		 * Disables the next/previous links.
-		 *
-		 * @since 1.0.0
-		 */
-		public static function next_prev( $return ) {
-			if ( is_edd() && is_singular( 'product' ) ) {
-				$return = false;
-			}
-			return $return;
 		}
 
 		/**
@@ -1507,45 +577,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		}
 
 		/**
-		 * Alter EDD category classes
-		 *
-		 * @since 1.0.0
-		 */
-		public static function product_cat_class( $classes ) {
-			global $edd_loop;
-			$classes[] = 'col';
-			$classes[] = oceanwp_grid_class( $edd_loop['columns'] );
-			return $classes;
-		}
-
-		/**
-		 * Adds wishlist icon to menu
-		 *
-		 * @since 1.5.0
-		 */
-		public static function menu_wishlist_icon( $items, $args ) {
-
-			// Return items if is in the Elementor edit mode, to avoid error
-			if ( OCEANWP_ELEMENTOR_ACTIVE
-				&& \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-				return $items;
-			}
-
-			// Return
-			if ( ! class_exists( 'TInvWL_Wishlist' )
-				|| true != get_theme_mod( 'ocean_edd_wishlist_icon', false )
-				|| 'main_menu' != $args->theme_location ) {
-				return $items;
-			}
-
-			// Add wishlist link to menu items
-			$items .= '<li class="edd-wishlist-link">'. do_shortcode( '[ti_wishlist_products_counter]' ) .'</li>';
-
-			// Return menu items
-			return $items;
-		}
-
-		/**
 		 * Adds cart icon to menu
 		 *
 		 * @since 1.0.0
@@ -1655,74 +686,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		}
 
 		/**
-		 * Sale badge content
-		 *
-		 * @since 1.5.0
-		 */
-		public static function sale_flash() {
-			global $product;
-
-			// Value
-			if ( 'grouped' == $product->get_type() ) {
-				$value = esc_html__( 'Sale', 'oceanwp' );
-			} else {
-				$s_price = $product->get_sale_price();
-				$r_price = $product->get_regular_price();
-				$percent = round( ( ( ( $r_price - $s_price ) / $r_price ) * 100 ), 0 );
-				$value 	 = '-' . esc_html( $percent ) . '%';
-			}
-
-			// Sale flash
-			return '<span class="onsale">' . esc_html( $value ) . '</span>';
-		}
-
-		/**
-		 * Add links Login/Register on the my account page
-		 *
-		 * @since 1.5.0
-		 */
-		public static function login_register_links() {
-
-			// Var
-			$registration = get_option( 'edd_enable_myaccount_registration' );
-
-			// Define classes
-			$classes = array( 'owp-account-links' );
-
-			// If registration disabled
-			if ( 'yes' != $registration ) {
-				$classes[] = 'registration-disabled';
-			}
-
-			// Turn classes into string
-			$classes = implode( ' ', $classes );
-
-			// Login text
-			$text = esc_html__( 'Login', 'oceanwp' );
-
-			$html = '<ul class="'. $classes .'">';
-				$html .= '<li class="login">';
-					if ( 'yes' == $registration ) {
-					    $html .= '<a href="#" class="owp-account-link current">'. $text .'</a>';
-					} else {
-					    $html .= '<span class="owp-account-link current">'. $text .'</span>';
-					}
-				$html .= '</li>';
-
-				// If registration
-				if ( 'yes' == $registration ) {
-					$html .= '<li class="or">'. esc_html__( 'Or', 'oceanwp' ) .'</li>';
-					$html .= '<li class="register">';
-						$html .= '<a href="#" class="owp-account-link">'. esc_html__( 'Register', 'oceanwp' ) .'</a>';
-					$html .= '</li>';
-				}
-
-			$html .= '</ul>';
-
-			echo $html;
-		}
-
-		/**
 		 * Distraction free on cart/checkout
 		 *
 		 * @since 1.5.0
@@ -1787,16 +750,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		}
 
 		/**
-		 * Support to EDD secure submit gateway
-		 *
-		 * @since 1.5.0
-		 */
-		public static function edd_securesubmit_support( $value, $options ) {
-            $value['use_iframes'] = 'no';
-            return $value;
-        }
-
-		/**
 		 * Add typography options for the EDD product title
 		 *
 		 * @since 1.0.0
@@ -1835,37 +788,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			);
 
 			return $settings;
-		}
-
-		/**
-		 * Supports EDD Match Box extension by removing
-		 * duplicate single product summary features on the
-		 * product page.
-		 *
-		 * @since 1.2.9
-		 * @static
-		 * @author Sébastien Dumont
-		 * @global object WC_Product $product
-		 */
-		public static function remove_wc_match_box_single_product_summary() {
-			global $product;
-
-			if ( $product->is_type( 'mix-and-match' ) ) {
-				remove_action( 'edd_single_product_summary', array( $this, 'single_product_content' ), 10 );
-				add_action( 'edd_single_product_summary', 'edd_template_single_add_to_cart', 30 );
-			}
-		}
-
-		/**
-		 * Compatibility with EDD Germanized.
-		 *
-		 * @since 1.5.6
-		 */
-		public function edd_germanized() {
-			echo '<li class="wc-gzd">';
-				wc_get_template( 'single-product/tax-info.php' );
-				wc_get_template( 'single-product/shipping-costs-info.php' );
-			echo '</li>';
 		}
 	}
 
