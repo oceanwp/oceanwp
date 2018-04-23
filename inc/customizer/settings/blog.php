@@ -1131,11 +1131,11 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					$css .=
 						'@media only screen and (min-width: 960px){
 							body.blog.content-both-sidebars .content-area,
-							body.archive.category.content-both-sidebars .content-area {width: '. $bs_archives_content_width .'%;}
+							body.archive.content-both-sidebars .content-area {width: '. $bs_archives_content_width .'%;}
 							body.blog.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
 							body.blog.content-both-sidebars.ssc-style .widget-area,
-							body.archive.category.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
-							body.archive.category.content-both-sidebars.ssc-style .widget-area {left: -'. $bs_archives_content_width .'%;}
+							body.archive.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
+							body.archive.content-both-sidebars.ssc-style .widget-area {left: -'. $bs_archives_content_width .'%;}
 						}';
 				}
 
@@ -1144,11 +1144,11 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					$css .=
 						'@media only screen and (min-width: 960px){
 							body.blog.content-both-sidebars .widget-area,
-							body.archive.category.content-both-sidebars .widget-area{width:'. $bs_archives_sidebars_width .'%;}
+							body.archive.content-both-sidebars .widget-area{width:'. $bs_archives_sidebars_width .'%;}
 							body.blog.content-both-sidebars.scs-style .content-area,
-							body.archive.category.content-both-sidebars.scs-style .content-area{left:'. $bs_archives_sidebars_width .'%;}
+							body.archive.content-both-sidebars.scs-style .content-area{left:'. $bs_archives_sidebars_width .'%;}
 							body.blog.content-both-sidebars.ssc-style .content-area,
-							body.archive.category.content-both-sidebars.ssc-style .content-area{left:'. $bs_archives_sidebars_width * 2 .'%;}
+							body.archive.content-both-sidebars.ssc-style .content-area{left:'. $bs_archives_sidebars_width * 2 .'%;}
 						}';
 				}
 

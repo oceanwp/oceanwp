@@ -3013,6 +3013,10 @@ form.checkout {
 		}
 	}
 }
+.my_account_orders .button.view:after,
+.woocommerce-MyAccount-downloads .button:after {
+	font-family: 'simple-line-icons';
+}
 .my_account_orders .button {
 	padding: .618em .857em;
 	font-size: .857em;
