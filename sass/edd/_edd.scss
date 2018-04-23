@@ -463,9 +463,14 @@
 -------------------------------------------------------------- */
 .content-area,
 .widget-area{
+
+	.edd-cart-number-of-items{
+		padding-left: 15px;
+		margin-bottom: 0;
+	}
+	
 	ul.edd-cart{
-		margin: 0;
-		background-color: #f7f7f7;
+		margin:0;
 
 		li{
 			list-style-type: none;
@@ -496,6 +501,11 @@
 			}
 
 			&.edd_total{
+				background-color: #fafafa;
+				border-width: 1px 0;
+				border-style: solid;
+				border-color: #e6e6e6;
+
 				.cart-total{
 					float: right;
 				}
@@ -521,6 +531,12 @@
 				}
 			}
 		}
+	}
+}
+
+.widget-area {
+	.edd-cart-item-title{
+		display: block;
 	}
 }
 
@@ -854,6 +870,18 @@
 }
 .edd-hide-on-empty.cart-not.empty {
 	display: block;
+}
+
+.owp-cart-overlay {
+    display: none;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    cursor: pointer;
 }
 
 /* =EDD Product Navigation

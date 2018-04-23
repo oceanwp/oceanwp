@@ -474,10 +474,15 @@
 
 /* =Cart Widget
 -------------------------------------------------------------- */
+.content-area .edd-cart-number-of-items,
+.widget-area .edd-cart-number-of-items {
+  padding-left: 15px;
+  margin-bottom: 0;
+}
+
 .content-area ul.edd-cart,
 .widget-area ul.edd-cart {
   margin: 0;
-  background-color: #f7f7f7;
 }
 
 .content-area ul.edd-cart li,
@@ -513,6 +518,14 @@
   text-transform: capitalize;
 }
 
+.content-area ul.edd-cart li.edd_total,
+.widget-area ul.edd-cart li.edd_total {
+  background-color: #fafafa;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #e6e6e6;
+}
+
 .content-area ul.edd-cart li.edd_total .cart-total,
 .widget-area ul.edd-cart li.edd_total .cart-total {
   float: right;
@@ -539,6 +552,10 @@
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.widget-area .edd-cart-item-title {
+  display: block;
 }
 
 /* =Checkout Form
@@ -931,6 +948,18 @@
   display: block;
 }
 
+.owp-cart-overlay {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  cursor: pointer;
+}
+
 /* =EDD Product Navigation
 -------------------------------------------------------------- */
 @media (min-width: 1080px) {
@@ -1184,17 +1213,18 @@ Easy Digital Downloads Cart
   font-weight: normal;
 }
 
-.current-shop-items-dropdown .widget_edd_cart_widget li a.remove {
-  right: 20px;
-  margin-top: -17px;
-  width: 32px;
-  height: 32px;
-  line-height: 30px;
-  color: #b3b3b3;
-  border: 1px solid #e6e6e6;
+.current-shop-items-dropdown .widget_edd_cart_widget li .edd-cart-item-separator {
+  display: none;
 }
 
-.current-shop-items-dropdown .widget_edd_cart_widget li a.remove:hover {
+.current-shop-items-dropdown .widget_edd_cart_widget li a.edd-remove-from-cart {
+  line-height: 30px;
+  color: #b3b3b3;
+  float: right;
+  text-transform: capitalize;
+}
+
+.current-shop-items-dropdown .widget_edd_cart_widget li a.edd-remove-from-cart:hover {
   color: #13aff0;
   border-color: #13aff0;
 }
@@ -1226,7 +1256,6 @@ Easy Digital Downloads Cart
 
 .current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout {
   margin: 0;
-  padding: 20px;
 }
 
 .current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout a {

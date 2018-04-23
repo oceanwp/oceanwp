@@ -23,9 +23,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			// These filters/actions must run on init
 			add_action( 'init', array( $this, 'init' ) );
 
-			// Move default EDD customizer sections to the theme section
-			add_action( 'customize_register', array( $this, 'edd_section' ), 11 );
-
 			// Body classes
 			add_filter( 'body_class', array( $this, 'body_class' ) );
 

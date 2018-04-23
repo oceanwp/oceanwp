@@ -78,14 +78,15 @@ Easy Digital Downloads Cart
 				font-weight: normal;
 			}
 
-			a.remove {
-			    right: 20px;
-			    margin-top: -17px;
-			    width: 32px;
-			    height: 32px;
+			.edd-cart-item-separator{
+				display: none;
+			}
+
+			a.edd-remove-from-cart {
 			    line-height: 30px;
 			    color: #b3b3b3;
-			    border: 1px solid #e6e6e6;
+			    float: right;
+				text-transform: capitalize;
 
 				&:hover {
 					color: $color-5;
@@ -121,7 +122,6 @@ Easy Digital Downloads Cart
 
 		.edd_checkout{
 			margin: 0;
-			padding: 20px;
 
 			a {
 				display: block;
