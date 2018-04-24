@@ -3055,7 +3055,10 @@ a.pure-button-selected {
 }
 
 #site-header.full_screen-header .fs-dropdown-menu li > a .nav-arrow {
+  display: inline-block;
+  width: 26px;
   padding-left: 5px;
+  text-align: center;
 }
 
 #site-header.full_screen-header .fs-dropdown-menu li > a .nav-arrow:before {
@@ -6324,7 +6327,10 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 }
 
 #mobile-fullscreen ul li .dropdown-toggle {
+  display: inline-block;
+  width: 26px;
   padding-left: 5px;
+  text-align: center;
 }
 
 #mobile-fullscreen ul li .dropdown-toggle:before {
