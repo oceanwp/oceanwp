@@ -49,7 +49,7 @@ function oceanwpFullScreenMobile() {
 		$j( '#mobile-fullscreen .menu-item-has-children' ).children( 'a' ).append( '<span class="dropdown-toggle"></span>' );
 
 		// Add toggle click event
-		$j( '#mobile-fullscreen nav ul > li.menu-item-has-children > a' ).on( 'tap click', function() {
+		$j( '#mobile-fullscreen nav ul > li.menu-item-has-children > a > span.dropdown-toggle, #mobile-fullscreen nav ul > li.menu-item-has-children > a[href="#"]' ).on( 'tap click', function() {
 
             if ( $j( this ).closest( 'li.menu-item-has-children' ).find( '> ul.sub-menu' ).is( ':visible' ) ) {
                 $j( this ).closest( 'li.menu-item-has-children' ).removeClass( 'open-sub' );

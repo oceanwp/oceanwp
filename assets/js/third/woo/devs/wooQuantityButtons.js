@@ -40,6 +40,13 @@ function oceanwpWooQuantityButtons( $quantitySelector ) {
 			}
 		});
 
+		// Quantity input
+		var $quantityInput = $j( '.woocommerce form input[type=number].qty' );
+		$quantityInput.on( 'keyup', function() { 
+			var qty_val = $j( this ).val();
+			$quantityInput.val( qty_val ); 
+		});
+
 		$j( '.plus, .minus' ).unbind( 'click' );
 
 		$j( '.plus, .minus' ).on( 'click', function() {

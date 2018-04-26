@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2018.04.24* - 1.5.13:
+* **Fixed** - Quantity input issue with WooCommerce when the floating bar is enabled.
+* **Tweak** - Now the links works if you have sub menu for the Full Screen header style and Full Screen mobile menu style.
+
 ### *2018.04.20* - 1.5.12:
 * **Fixed** - Issue with Elmentor Themer Builder if a page is selected as condition.
 * **Updated** - Isotope script.
