@@ -152,10 +152,6 @@
 	}
 }
 
-#edd_checkout_form_wrap .edd-cart-adjustment .edd-apply-discount.edd-submit {
-	display: inline-block;
-}
-
 .edd-add-to-cart[data-edd-loading] .edd-add-to-cart-label {
 	opacity: 0;
 	filter: alpha(opacity=0);
@@ -395,30 +391,21 @@
 /* =Single Page Styling
 -------------------------------------------------------------- */
 .single-download {
-	
-	.edd-download{
-		div, h2, form{
-			margin-bottom: 12px;
-		}
-	}
 
-	.edd_download_image{
-		position: relative;
-		float: left;
-		width: 52%;
-		margin-bottom: 0;
-	}
-
+	.edd_download_image,
 	.edd_download_summary{
-		float: right;
-		width: 44%;
-		margin-bottom: 36px;
+		margin-bottom: 10px;
 	}
 
 	.edd_download_content{
 		padding-top: 30px;
 		clear: both;
 	}
+}
+
+/* =Download Details Widget
+-------------------------------------------------------------- */
+.widget_edd_product_details{
 
 	.edd_download_title{
 		font-size: 24px;
@@ -457,7 +444,6 @@
 		color: #787878;
 	}
 }
-
 
 /* =Cart Widget
 -------------------------------------------------------------- */
@@ -538,6 +524,12 @@
 	.edd-cart-item-title{
 		display: block;
 	}
+	.edd-cart-number-of-items{
+		padding-left: 0;
+	}
+	ul.edd-cart li{
+		padding: 10px 0 10px;
+	}
 }
 
 /* =Checkout Form
@@ -567,6 +559,13 @@
 	content: '\e082';
 	margin-left: 6px;
 	vertical-align: bottom;
+}
+
+@media only screen and (min-width: 768px) {
+	.edd-discount-code-field-wrap .edd-apply-discount {
+	    width: auto;
+	    margin-left: 10px;
+	}
 }
 
 /* Cart Contents */
@@ -685,7 +684,7 @@
 #edd_checkout_form_wrap .edd-payment-icons {
 	height: 32px;
 	display: block;
-	margin: 0 0 8px;
+	margin: 0 0 30px;
 }
 #edd_checkout_form_wrap .edd-payment-icons img.payment-icon {
 	max-height: 32px;
@@ -711,8 +710,8 @@
 }
 #edd_checkout_form_wrap fieldset {
 	border: 1px solid #eee;
-	padding: 1.387em;
-	margin: 0 0 21px;
+	padding: 20px;
+	margin: 0 0 20px;
 }
 #edd_checkout_form_wrap #edd_purchase_submit,
 #edd_checkout_form_wrap #edd_discount_code,
@@ -732,7 +731,7 @@
 #edd_checkout_form_wrap #edd_final_total_wrap {
 	background: #fafafa;
 	color: #666;
-	padding: 0.5em 1.387em;
+	padding: 10px 20px;
 }
 #edd_checkout_form_wrap #edd-discount-code-wrap,
 #edd_checkout_form_wrap #edd_final_total_wrap,
