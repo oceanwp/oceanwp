@@ -177,36 +177,6 @@ if ( ! function_exists( 'oceanwp_edd_archive_elements_positioning' ) ) {
 }
 
 /**
- * Returns single downloads elements positioning
- *
- * @since 1.1.9
- */
-if ( ! function_exists( 'oceanwp_edd_single_elements_positioning' ) ) {
-
-	function oceanwp_edd_single_elements_positioning() {
-
-		// Default sections
-		$sections = array( 'title', 'price', 'button', 'meta' );
-
-		// Get sections from Customizer
-		$sections = get_theme_mod( 'oceanwp_edd_single_elements_positioning', $sections );
-
-		// Turn into array if string
-		if ( $sections && ! is_array( $sections ) ) {
-			$sections = explode( ',', $sections );
-		}
-
-		// Apply filters for easy modification
-		$sections = apply_filters( 'oceanwp_edd_single_elements_positioning', $sections );
-
-		// Return sections
-		return $sections;
-
-	}
-
-}
-
-/**
  * Returns list of Easy Digital Downloads Terms
  *
  * @since 1.1.9
@@ -325,8 +295,11 @@ if( ! function_exists( 'oceanwp_edd_loop_classes') ) {
  *
  */
 function oceanwp_remove_edd_purchase_button() {
-	if ( is_singular( 'download' ) ) {
-		remove_action( 'edd_after_download_content', 'edd_append_purchase_link' );
+	if( false == get_theme_mod( 'ocean_edd_display_add_to_cart', true )  ) {
+		if ( is_singular( 'download' ) ) {
+			remove_action( 'edd_after_download_content', 'edd_append_purchase_link' );
+		}
 	}
 }
+
 add_action( 'template_redirect', 'oceanwp_remove_edd_purchase_button' );

@@ -20,9 +20,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			// Include helper functions
 			require_once( OCEANWP_INC_DIR .'edd/edd-helpers.php' );
 
-			// These filters/actions must run on init
-			add_action( 'init', array( $this, 'init' ) );
-
 			// Body classes
 			add_filter( 'body_class', array( $this, 'body_class' ) );
 
@@ -43,12 +40,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			/*-------------------------------------------------------------------------------*/
 			if ( ! is_admin() ) {
 
-				// Remove default wrappers and add new ones
-				remove_action( 'edd_before_main_content', 'edd_output_content_wrapper', 10 );
-				remove_action( 'edd_after_main_content', 'edd_output_content_wrapper_end', 10 );
-				add_action( 'edd_before_main_content', array( $this, 'content_wrapper' ), 10 );
-				add_action( 'edd_after_main_content', array( $this, 'content_wrapper_end' ), 10 );
-
 				// Display correct sidebar for products
 				remove_action( 'edd_sidebar', 'edd_get_sidebar', 10 );
 				add_filter( 'ocean_get_sidebar', array( $this, 'display_edd_sidebar' ) );
@@ -59,12 +50,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				// Set correct both sidebars layout style
 				add_filter( 'ocean_both_sidebars_style', array( $this, 'bs_class' ) );
 
-				// Disable EDD main page title
-				add_filter( 'edd_show_page_title', '__return_false' );
-
-				// Disable EDD css
-				add_filter( 'edd_enqueue_styles', '__return_false' );
-
 				// Border colors
 				add_filter( 'ocean_border_color_elements', array( $this, 'border_color_elements' ) );
 
@@ -72,7 +57,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 
 			// Main Woo Actions
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ) );
-			add_filter( 'ocean_localize_array', array( $this, 'localize_array' ) );
 
 			// Add cart overlay
 			if ( 'yes' == get_theme_mod( 'ocean_edd_display_cart_product_added', 'no' ) ) {
@@ -99,62 +83,13 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			add_filter( 'osh_header_sticky_logo', array( $this, 'distraction_free' ), 11 );
 			add_filter( 'ofc_display_footer_callout', array( $this, 'distraction_free' ), 11 );
 
-			// Multi-step checkout
-			if ( true == get_theme_mod( 'ocean_edd_multi_step_checkout', false ) ) {
-
-				// Add checkout timeline template
-	            add_action( 'edd_before_checkout_form', array( $this, 'checkout_timeline' ), 10 );
-
-				// Change checkout template
-	            add_filter( 'edd_locate_template', array( $this, 'multistep_checkout' ), 10, 3 );
-
-	            // Checkout hack
-	            remove_action( 'edd_checkout_order_review', 'edd_order_review', 10 );
-            	remove_action( 'edd_checkout_order_review', 'edd_checkout_payment', 20 );
-	            remove_action( 'edd_before_checkout_form', 'edd_checkout_login_form', 10 );
-	            remove_action( 'edd_before_checkout_form', 'edd_checkout_coupon_form', 10 );
-	            add_action( 'ocean_edd_checkout_order_review', 'edd_order_review', 20 );
-            	add_action( 'ocean_edd_checkout_payment', 'edd_checkout_payment', 10 );
-	            add_action( 'ocean_checkout_login_form', array( $this, 'checkout_login_form' ), 10 );
-	            add_action( 'ocean_edd_checkout_coupon', 'edd_checkout_coupon_form', 10 );
-
-	            // Prevent empty shipping tab
-	            add_filter( 'edd_enable_order_notes_field', '__return_true' );
-
-	        }
-
 			// Add new typography settings
 			add_filter( 'ocean_typography_settings', array( $this, 'typography_settings' ) );
-
-			// EDD Match Box extension single product layout support.
-			add_action( 'edd_match_box_single_product_layout', array( $this, 'remove_wc_match_box_single_product_summary' ), 10 );
 		} // End __construct
 
 		/*-------------------------------------------------------------------------------*/
 		/* -  Start Class Functions
 		/*-------------------------------------------------------------------------------*/
-
-		/**
-		 * Runs on Init.
-		 * You can't remove certain actions in the constructor because it's too early.
-		 *
-		 * @since 1.0.0
-		 */
-		public function init() {
-
-			// Remove EDD breadcrumbs
-			remove_action( 'edd_before_main_content', 'edd_breadcrumb', 20, 0 );
-
-			// Remove related products if is set to no
-			if ( 'on' != get_theme_mod( 'ocean_edd_display_related_items', 'on' ) ) {
-				remove_action( 'edd_after_single_product_summary', 'edd_output_related_products', 20 );
-			}
-
-			// Remove orderby if disabled
-			if ( ! get_theme_mod( 'ocean_edd_archive_sort', true ) ) {
-				remove_action( 'edd_before_shop_loop', 'edd_catalog_ordering', 30 );
-			}
-		}
 
 		/**
 		 * Body classes
@@ -164,12 +99,10 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function body_class( $classes ) {
 
 			// Distraction free class
-			// if ( ( is_cart()
-			// 		&& true == get_theme_mod( 'ocean_edd_distraction_free_cart', false ) )
-			// 	|| ( is_checkout()
-			// 		&& true == get_theme_mod( 'ocean_edd_distraction_free_checkout', false ) ) ) {
-			// 	$classes[] = 'distraction-free';
-			// }
+			if ( edd_is_checkout()
+					&& true == get_theme_mod( 'ocean_edd_distraction_free_checkout', false ) ) {
+				$classes[] = 'edd-distraction-free';
+			}
 
 			// Return
  			return $classes;
@@ -208,7 +141,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function display_edd_sidebar( $sidebar ) {
 
 			// Alter sidebar display to show edd_sidebar where needed
-			// @todo check if the page is EDD
 			if ( get_theme_mod( 'ocean_edd_custom_sidebar', true )
 				&& is_active_sidebar( 'edd_sidebar' )
 				&& oceanwp_is_edd_page() ) {
@@ -270,47 +202,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		}
 
 		/**
-		 * Localize array.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function localize_array( $array ) {
-
-			// If quick view
-			if ( get_theme_mod( 'ocean_edd_quick_view', true ) ) {
-				$array['ajax_url'] = admin_url( 'admin-ajax.php' );
-			}
-
-			// If single product ajax add to cart
-			if ( true == get_theme_mod( 'ocean_edd_product_ajax_add_to_cart', false ) ) {
-				$array['ajax_url'] 			= admin_url( 'admin-ajax.php' );
-				$array['is_cart'] 			= is_cart();
-				$array['cart_url'] 			= apply_filters( 'ocean_edd_add_to_cart_redirect', wc_get_cart_url() );
-				$array['view_cart'] 		= esc_attr__( 'View cart', 'oceanwp' );
-			}
-
-			// If multi step checkout
-			if ( true == get_theme_mod( 'ocean_edd_multi_step_checkout', false ) ) {
-				$array['login_reminder_enabled'] = 'yes' == get_option( 'edd_enable_checkout_login_reminder', 'yes' ) ? true : false;
-				$array['is_logged_in'] 		 	 = is_user_logged_in();
-				$array['no_account_btn'] 		 = esc_html__( 'I don&rsquo;t have an account', 'oceanwp' );
-				$array['next'] 		 			 = esc_html__( 'Next', 'oceanwp' );
-			}
-
-			return $array;
-
-		}
-
-		/**
-		 * Get current user ID.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function isAuthorizedUser() {
-			return get_current_user_id();
-		}
-
-		/**
 		 * Add cart overlay.
 		 *
 		 * @since 1.5.0
@@ -318,25 +209,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function cart_overlay() { ?>
 			<div class="owp-cart-overlay"></div>
 		<?php
-		}
-
-		/**
-		 * Register off canvas filter sidebar.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function register_off_canvas_sidebar() {
-
-			register_sidebar( array (
-				'name'          => esc_html__( 'Off-Canvas Filters', 'oceanwp' ),
-				'description'   => esc_html__( 'Widgets in this area are used in the off canvas sidebar. To enable the Off Canvas filter, go to the EDD > Archives section of the customizer and enable the Display Filter Button option.', 'oceanwp' ),
-				'id'            => 'owp_off_canvas_sidebar',
-				'before_widget' => '<div id="%1$s" class="sidebar-box %2$s clr">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<h4 class="widget-title">',
-				'after_title'   => '</h4>',
-			) );
-
 		}
 
 		/**
@@ -689,61 +561,14 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 */
 		public static function distraction_free( $return ) {
 
-			// if ( ( is_cart()
-			// 		&& true == get_theme_mod( 'ocean_edd_distraction_free_cart', false ) )
-			// 	|| ( is_checkout()
-			// 		&& true == get_theme_mod( 'ocean_edd_distraction_free_checkout', false ) ) ) {
-			// 	$return = false;
-			// }
+			if ( edd_is_checkout()
+					&& true == get_theme_mod( 'ocean_edd_distraction_free_checkout', false ) ) {
+				$return = false;
+			}
 
 			// Return
 			return $return;
 			
-		}
-
-		/**
-		 * Checkout timeline template.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function checkout_timeline() {
-			//get_template_part( 'edd/checkout/checkout-timeline' );
-		}
-
-		/**
-		 * Change checkout template
-		 *
-		 * @since 1.5.0
-		 */
-		public static function multistep_checkout( $template, $template_name, $template_path ) {
-
-			if ( 'checkout/form-checkout.php' == $template_name ) {
-                $template = OCEANWP_THEME_DIR . '/edd/checkout/form-multistep-checkout.php';
-            }
-
-			// Return
-			return $template;
-			
-		}
-
-		/**
-		 * Checkout login form.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function checkout_login_form( $login_message ) {
-			edd_login_form(
-				array(
-					'message'  => $login_message,
-					'redirect' => wc_get_page_permalink( 'checkout' ),
-					'hidden'   => false
-				)
-			);
-
-			// If EDD social login
-			if ( class_exists( 'WC_Social_Login' ) ) {
-                do_shortcode( '[edd_social_login_buttons]' );
-            }
 		}
 
 		/**

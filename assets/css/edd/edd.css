@@ -413,11 +413,6 @@
   margin-bottom: 10px;
 }
 
-.single-download .edd_download_content {
-  padding-top: 30px;
-  clear: both;
-}
-
 /* =Download Details Widget
 -------------------------------------------------------------- */
 .widget_edd_product_details .edd_download_title {
@@ -1122,6 +1117,12 @@ p.edd_error {
   color: #8a6d3b;
   background-color: #fcf8e3;
   border-color: #faebcc;
+}
+
+.edd-distraction-free #site-logo {
+  float: none;
+  width: 100%;
+  text-align: center;
 }
 
 /*------------------------------------------------------------------

@@ -398,8 +398,7 @@
 	}
 
 	.edd_download_content{
-		padding-top: 30px;
-		clear: both;
+		
 	}
 }
 
@@ -1029,4 +1028,10 @@ p.edd_error {
 	color: #8a6d3b;
 	background-color: #fcf8e3;
 	border-color: #faebcc;
+}
+
+.edd-distraction-free #site-logo {
+	float: none;
+    width: 100%;
+    text-align: center;
 }
