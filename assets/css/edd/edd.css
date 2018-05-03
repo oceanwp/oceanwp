@@ -437,20 +437,26 @@
   margin-top: 20px;
 }
 
-.widget_edd_product_details .edd_download_purchase_form ul {
-  margin-left: 0;
+.widget_edd_product_details .edd_download_purchase_form .edd_purchase_submit_wrapper {
+  padding-top: 20px;
 }
 
-.widget_edd_product_details .edd_download_purchase_form ul li {
-  list-style-type: none;
-}
-
-.widget_edd_product_details .edd_download_categories,
-.widget_edd_product_details .edd_download_tags {
-  font-size: 13px;
+.widget_edd_product_details .edd-meta {
   border-bottom: 1px solid #eaeaea;
-  padding: 10px 0;
+  padding: 20px 0;
   color: #787878;
+}
+
+.widget_edd_product_details .edd-meta .categories,
+.widget_edd_product_details .edd-meta .tags {
+  color: #333;
+  font-weight: 600;
+}
+
+.widget_edd_product_details .edd-meta .categories a,
+.widget_edd_product_details .edd-meta .tags a {
+  color: #ababab;
+  font-weight: 400;
 }
 
 /* =Cart Widget
@@ -667,7 +673,7 @@
   content: ".";
 }
 
-#edd_checkout_form_wrap span.edd-description {
+#edd_checkout_form_wrap .edd-description {
   color: #666;
   display: block;
   margin: 0 0 5px;
@@ -956,6 +962,11 @@
   cursor: pointer;
 }
 
+.edd_price_options.edd_single_mode ul {
+  list-style-type: none;
+  margin-left: 0;
+}
+
 /* =EDD Product Navigation
 -------------------------------------------------------------- */
 @media (min-width: 1080px) {
@@ -1232,6 +1243,7 @@ Easy Digital Downloads Cart
 }
 
 .current-shop-items-dropdown .widget_edd_cart_widget .edd_total {
+  background-color: #fafafa;
   border-top-width: 0;
   margin: 0;
   font-size: 12px;
@@ -1239,7 +1251,6 @@ Easy Digital Downloads Cart
   color: #797979;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border-bottom: none;
 }
 
 .current-shop-items-dropdown .widget_edd_cart_widget .edd_total .cart-total {

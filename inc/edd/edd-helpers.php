@@ -244,52 +244,6 @@ if( ! function_exists( 'oceanwp_edd_loop_classes') ) {
 	}
 }
 
- /** 
-  * Return product navigation for single downloads
-  */
-
- if( ! function_exists( 'oceanwp_edd_download_navigation') ) {
-
- 	function oceanwp_edd_download_navigation() {
-
- 		if ( true != get_theme_mod( 'ocean_edd_display_navigation', true ) ) {
- 			return;
- 		}
- 		
-		global $post;
-
-		$next_post = get_next_post( true, '', 'download_category' );
-		$prev_post = get_previous_post( true, '', 'download_category' ); ?>
-
-		<div class="owp-product-nav-wrap">
-			<ul class="owp-product-nav">
-		        <?php
-		        if ( is_a( $next_post , 'WP_Post' ) ) { ?>
-					<li>
-						<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="fa fa-angle-left"></i></a>
-						<div class="owp-nav-thumb">
-							<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'thumbnail' ) ); ?></a>
-						</div>
-					</li>
-				<?php
-				}
-
-				if ( is_a( $prev_post , 'WP_Post' ) ) { ?>
-					<li>
-						<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="fa fa-angle-right"></i></a>
-						<div class="owp-nav-thumb">
-							<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'thumbnail' ) ); ?></a>
-						</div>
-					</li>
-				<?php
-				} ?>
-	        </ul>
-	    </div>
-
-	<?php
-	}
-}
-
 /**
  * Remove the purchase button on single download pages
  *

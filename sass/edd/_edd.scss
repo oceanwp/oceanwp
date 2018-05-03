@@ -427,20 +427,26 @@
 		border-bottom: 1px solid #eaeaea;
 		margin-top: 20px;
 
-		ul{
-			margin-left: 0;
-			li{
-				list-style-type: none;
-			}
+		.edd_purchase_submit_wrapper{
+			padding-top: 20px;
 		}
 	}
 
-	.edd_download_categories,
-	.edd_download_tags {
-		font-size: 13px;
+	.edd-meta{
 		border-bottom: 1px solid #eaeaea;
-		padding: 10px 0;
+		padding: 20px 0;
 		color: #787878;
+
+		.categories,
+		.tags{
+			color: #333;
+			font-weight: 600;
+
+			a{
+				color: #ababab;
+				font-weight: 400;
+			}
+		}
 	}
 }
 
@@ -641,7 +647,7 @@
 	text-indent: -9999px;
 	content: ".";
 }
-#edd_checkout_form_wrap span.edd-description {
+#edd_checkout_form_wrap .edd-description {
 	color: #666;
 	display: block;
 	margin: 0 0 5px;
@@ -880,6 +886,11 @@
     right: 0;
     z-index: 99;
     cursor: pointer;
+}
+
+.edd_price_options.edd_single_mode ul{
+	list-style-type: none;
+	margin-left: 0;
 }
 
 /* =EDD Product Navigation

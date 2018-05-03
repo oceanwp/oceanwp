@@ -63,11 +63,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				add_action( 'ocean_after_footer', array( $this, 'cart_overlay' ), 99 );
 			}
 
-			// Add product navigation
-			if ( true == get_theme_mod( 'ocean_edd_display_navigation', true ) ) {
-				add_action( 'edd_before_single_product_summary', array( $this, 'product_next_prev_nav' ), 10 );
-			}
-
 			// Main Woo Filters
 			add_filter( 'wp_nav_menu_items', array( $this, 'menu_cart_icon' ) , 10, 2 );
 			add_filter( 'post_class', array( $this, 'add_download_classes' ), 40, 3 );
@@ -208,45 +203,6 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 */
 		public static function cart_overlay() { ?>
 			<div class="owp-cart-overlay"></div>
-		<?php
-		}
-
-		/**
-		 * Add product navigation.
-		 *
-		 * @since 1.5.0
-		 */
-		public static function product_next_prev_nav() {
-			global $post;
-
-			$next_post = get_next_post( true, '', 'download_category' );
-			$prev_post = get_previous_post( true, '', 'download_category' ); ?>
-
-			<div class="owp-product-nav-wrap">
-				<ul class="owp-product-nav">
-			        <?php
-			        if ( is_a( $next_post , 'WP_Post' ) ) { ?>
-						<li>
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="fa fa-angle-left"></i></a>
-							<div class="owp-nav-thumb">
-								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
-							</div>
-						</li>
-					<?php
-					}
-
-					if ( is_a( $prev_post , 'WP_Post' ) ) { ?>
-						<li>
-							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="fa fa-angle-right"></i></a>
-							<div class="owp-nav-thumb">
-								<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
-							</div>
-						</li>
-					<?php
-					} ?>
-		        </ul>
-		    </div>
-
 		<?php
 		}
 
