@@ -603,7 +603,7 @@ function oceanwp_cac_hasnt_edd_bag_style() {
 	}
 }
 
-function oceanwp_cac_has_edd_shop_bs_layout() {
+function oceanwp_cac_has_edd_archive_bs_layout() {
 	if ( 'both-sidebars' == get_theme_mod( 'ocean_edd_archive_layout', 'left-sidebar' ) ) {
 		return true;
 	} else {
@@ -611,8 +611,8 @@ function oceanwp_cac_has_edd_shop_bs_layout() {
 	}
 }
 
-function oceanwp_cac_has_edd_product_bs_layout() {
-	if ( 'both-sidebars' == get_theme_mod( 'ocean_edd_product_layout', 'left-sidebar' ) ) {
+function oceanwp_cac_has_edd_download_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_edd_download_layout', 'left-sidebar' ) ) {
 		return true;
 	} else {
 		return false;
