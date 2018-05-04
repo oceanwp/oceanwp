@@ -535,7 +535,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function typography_settings( $settings ) {
 			$settings['edd_product_title'] = array(
 				'label' 				=> esc_html__( 'EDD Product Title', 'oceanwp' ),
-				'target' 				=> '.edd div.product .product_title',
+				'target' 				=> '.edd_download_title, .widget_edd_product_details h4',
 				'defaults' 				=> array(
 					'font-size' 		=> '24',
 					'color' 			=> '#333333',
@@ -546,7 +546,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 
 			$settings['edd_product_price'] = array(
 				'label' 				=> esc_html__( 'EDD Product Price', 'oceanwp' ),
-				'target' 				=> '.edd div.product p.price',
+				'target' 				=> '.edd_price, .edd_single_mode',
 				'defaults' 				=> array(
 					'font-size' 		=> '36',
 					'line-height' 		=> '1',
@@ -556,7 +556,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 
 			$settings['edd_product_add_to_cart'] = array(
 				'label'                 => esc_html__( 'EDD Product Add To Cart', 'oceanwp' ),
-				'target'                => '.edd ul.products li.product .button, .edd ul.products li.product .product-inner .added_to_cart',
+				'target'                => '.edd_downloads_list .button, .edd-add-to-cart',
 				'exclude' 				=> array( 'font-color' ),
 				'defaults'              => array(
 					'font-size'         => '12',

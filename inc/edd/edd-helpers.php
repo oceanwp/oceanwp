@@ -257,3 +257,6 @@ function oceanwp_remove_edd_purchase_button() {
 }
 
 add_action( 'template_redirect', 'oceanwp_remove_edd_purchase_button' );
+
+
+add_filter( 'edd_get_option_disable_styles', '__return_true' );
