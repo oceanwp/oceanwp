@@ -797,16 +797,16 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			/**
 			 * Product Entry Content Alignment
 			 */
-			$wp_customize->add_setting( 'ocean_edd_edd_entry_content_alignment', array(
+			$wp_customize->add_setting( 'ocean_edd_product_entry_content_alignment', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> 'center',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_edd_edd_entry_content_alignment', array(
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_edd_product_entry_content_alignment', array(
 				'label'	   				=> esc_html__( 'Content Alignment', 'oceanwp' ),
 				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_edd_entry_content_alignment',
+				'settings' 				=> 'ocean_edd_product_entry_content_alignment',
 				'priority' 				=> 10,
 				'choices' 				=> array(
 					'left' 		=> esc_html__( 'Left', 'oceanwp' ),
