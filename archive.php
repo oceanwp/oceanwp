@@ -34,7 +34,7 @@ get_header(); ?>
 						<?php 
 						while ( have_posts() ) : the_post();
 
-							get_template_part( 'edd_templates/archive' );
+							get_template_part( 'partials/edd/archive' );
 
 						endwhile;
 						?>
