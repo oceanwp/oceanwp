@@ -222,7 +222,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			}
 
 			// Vars
-			$content_alignment 	= get_theme_mod( 'ocean_edd_product_entry_content_alignment', 'center' );
+			$content_alignment 	= get_theme_mod( 'ocean_edd_archive_entry_content_alignment', 'center' );
 			$content_alignment 	= $content_alignment ? $content_alignment : 'center';
 
 			$classes[] = 'col';

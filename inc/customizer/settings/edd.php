@@ -797,16 +797,16 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			/**
 			 * Product Entry Content Alignment
 			 */
-			$wp_customize->add_setting( 'ocean_edd_product_entry_content_alignment', array(
+			$wp_customize->add_setting( 'ocean_edd_archive_entry_content_alignment', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> 'center',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_edd_product_entry_content_alignment', array(
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_edd_archive_entry_content_alignment', array(
 				'label'	   				=> esc_html__( 'Content Alignment', 'oceanwp' ),
 				'section'  				=> 'ocean_edd_archives',
-				'settings' 				=> 'ocean_edd_product_entry_content_alignment',
+				'settings' 				=> 'ocean_edd_archive_entry_content_alignment',
 				'priority' 				=> 10,
 				'choices' 				=> array(
 					'left' 		=> esc_html__( 'Left', 'oceanwp' ),
@@ -852,7 +852,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				'label'	   				=> esc_html__( 'Both Sidebars: Style', 'oceanwp' ),
 				'type' 					=> 'select',
 				'section'  				=> 'ocean_edd_single',
-				'settings' 				=> 'ocean_edd_edd_both_sidebars_style',
+				'settings' 				=> 'ocean_edd_download_both_sidebars_style',
 				'priority' 				=> 10,
 				'choices' 				=> array(
 					'ssc-style' 		=> esc_html__( 'Sidebar / Sidebar / Content', 'oceanwp' ),
@@ -865,16 +865,16 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			/**
 			 * Both Sidebars Content Width
 			 */
-			$wp_customize->add_setting( 'ocean_edd_edd_both_sidebars_content_width', array(
+			$wp_customize->add_setting( 'ocean_edd_download_both_sidebars_content_width', array(
 				'transport' 			=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_edd_both_sidebars_content_width', array(
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_download_both_sidebars_content_width', array(
 				'label'	   				=> esc_html__( 'Both Sidebars: Content Width (%)', 'oceanwp' ),
 				'type' 					=> 'number',
 				'section'  				=> 'ocean_edd_single',
-				'settings' 				=> 'ocean_edd_edd_both_sidebars_content_width',
+				'settings' 				=> 'ocean_edd_download_both_sidebars_content_width',
 				'priority' 				=> 10,
 			    'input_attrs' 			=> array(
 			        'min'   => 0,

@@ -1551,7 +1551,7 @@
 		});
 
 		// Content Alignment
-		api('ocean_edd_product_entry_content_alignment', function( value ) {
+		api('ocean_edd_archive_entry_content_alignment', function( value ) {
 			value.bind( function( newval ) {
 				var content_alignment = $( '.oceanwp-row .edd_downloads_list .edd-download' );
 				if ( content_alignment.length ) {
