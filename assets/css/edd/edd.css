@@ -1174,6 +1174,10 @@ Easy Digital Downloads Cart
   opacity: 1;
 }
 
+.owp-qv-open {
+  overflow: hidden;
+}
+
 .boxed-layout .current-shop-items-dropdown {
   right: 0;
 }

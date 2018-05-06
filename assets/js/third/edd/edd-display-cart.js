@@ -14,7 +14,7 @@ function oceanwpEddDisplayCart() {
 
 	var $overlay = $j( '.owp-cart-overlay' );
 
-	$j( 'body' ).on( 'edd_quantity_updated', function() {
+	$j( 'body' ).on( 'edd_cart_item_added', function() {
 		$overlay.fadeIn();
 		$j( 'body' ).addClass( 'show-cart' );
 

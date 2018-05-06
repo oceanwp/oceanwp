@@ -70,16 +70,16 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			/**
 			 * Display Cart When Product Added
 			 */
-			$wp_customize->add_setting( 'ocean_edd_display_cart_edd_added', array(
+			$wp_customize->add_setting( 'ocean_edd_display_cart_download_added', array(
 				'default'           	=> 'no',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_edd_display_cart_edd_added', array(
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_edd_display_cart_download_added', array(
 				'label'	   				=> esc_html__( 'Display Cart When Product Added', 'oceanwp' ),
 				'description'	   		=> esc_html__( 'Display the cart when a edd is added, work in the shop and the single edd pages if ajax is enabled.', 'oceanwp' ),
 				'section'  				=> 'ocean_edd_general',
-				'settings' 				=> 'ocean_edd_display_cart_edd_added',
+				'settings' 				=> 'ocean_edd_display_cart_download_added',
 				'priority' 				=> 10,
 				'choices' 				=> array(
 					'yes' 	=> esc_html__( 'Yes', 'oceanwp' ),
