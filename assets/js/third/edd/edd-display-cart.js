@@ -39,6 +39,7 @@ function oceanwpEddDisplayCart() {
     } );
 
     $overlay.on( 'click', function() {
+    	console.log("clicked");
 		$j( this ).fadeOut();
 		$j( 'body' ).removeClass( 'show-cart' );
 	} );

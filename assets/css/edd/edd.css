@@ -232,8 +232,8 @@
 }
 
 .edd_download_inner {
-  padding: 0 8px 8px;
-  margin: 0 0 10px;
+  background-color: #fcfcfc;
+  padding: 10px 10px 20px;
 }
 
 .edd_download_columns_2 .edd_download:nth-child(2n+1),
@@ -242,10 +242,6 @@
 .edd_download_columns_5 .edd_download:nth-child(5n+1),
 .edd_download_columns_6 .edd_download:nth-child(6n+1) {
   clear: left;
-}
-
-.edd_download_image {
-  max-width: 100%;
 }
 
 .edd_download .edd_price {
@@ -373,7 +369,7 @@
 }
 
 .edd_downloads_list .edd_download_image {
-  margin-bottom: 20px;
+  margin: -10px -10px 20px;
 }
 
 .edd_downloads_list .edd_download_categories {
@@ -395,10 +391,10 @@
   color: #13aff0;
 }
 
-.edd_downloads_list .edd_download_title a {
+.edd_downloads_list .edd_download_title {
   display: inline-block;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 18px;
+  margin: 0 0 10px;
 }
 
 .edd_downloads_list div.edd_price {
