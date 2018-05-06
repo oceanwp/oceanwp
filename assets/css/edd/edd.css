@@ -1182,10 +1182,6 @@ Easy Digital Downloads Cart
   right: 0;
 }
 
-.current-shop-items-dropdown {
-  /* Cart spacious style */
-}
-
 .current-shop-items-dropdown .widget_edd_cart_widget {
   padding: 10px;
 }
@@ -1280,19 +1276,20 @@ Easy Digital Downloads Cart
   color: #666;
 }
 
-.current-shop-items-dropdown .spacious .owp-mini-cart {
+/* Cart spacious style */
+.eddmenucart-toggle-drop_down.spacious .owp-mini-cart {
   padding: 20px;
 }
 
-.current-shop-items-dropdown .spacious .owp-mini-cart .widget_edd_cart_widget ul li {
+.eddmenucart-toggle-drop_down.spacious .owp-mini-cart .widget_edd_cart_widget ul li {
   padding: 14px 20px;
 }
 
-.current-shop-items-dropdown .spacious .owp-mini-cart .edd_total {
+.eddmenucart-toggle-drop_down.spacious .owp-mini-cart .edd_total {
   padding: 20px;
 }
 
-.current-shop-items-dropdown .spacious .owp-mini-cart .edd_checkout a {
+.eddmenucart-toggle-drop_down.spacious .owp-mini-cart .edd_checkout a {
   padding: 14px 8px;
 }
 
