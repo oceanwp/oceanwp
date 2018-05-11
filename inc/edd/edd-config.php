@@ -251,23 +251,12 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 */
 		public static function primary_texts( $texts ) {
 			return array_merge( array(
-				'.edd-MyAccount-navigation ul li a:before',
-				'.edd-checkout .edd-info a',
-				'.edd-checkout #payment ul.payment_methods .wc_payment_method>input[type=radio]:first-child:checked+label:before',
-				'.edd-checkout #payment .payment_method_paypal .about_paypal',
-				'.edd ul.products li.product .category a:hover',
-				'.edd ul.products li.product .button:hover',
-				'.edd ul.products li.product .product-inner .added_to_cart:hover',
-				'.product_meta .posted_in a:hover',
-				'.product_meta .tagged_as a:hover',
-				'.edd div.product .edd-tabs ul.tabs li a:hover',
-				'.edd div.product .edd-tabs ul.tabs li.active a',
-				'.edd .oceanwp-grid-list a.active',
-				'.edd .oceanwp-grid-list a:hover',
-				'.edd .oceanwp-off-canvas-filter:hover',
-				'.edd .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid a.remove:hover',
-				'.widget_product_categories li a:hover ~ .count',
-				'.widget_layered_nav li a:hover ~ .count',
+				'.edd_downloads_list .edd_download_categories a:hover',
+				'.edd_downloads_list .button:hover',
+				'.edd-meta a:hover',
+				'.widget_edd_categories_tags_widget li a:hover',
+				'.widget_edd_cart_widget li a.edd-remove-from-cart:hover',
+				'.current-shop-items-dropdown .widget_edd_cart_widget li a.edd-remove-from-cart:hover',
 			), $texts );
 		}
 
@@ -279,29 +268,12 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function primary_borders( $borders ) {
 			return array_merge( array(
 				'.current-shop-items-dropdown' => array( 'top' ),
-				'.edd div.product .edd-tabs ul.tabs li.active a' => array( 'bottom' ),
-				'.wcmenucart-details.count:before',
-				'.edd ul.products li.product .button:hover',
-				'.edd ul.products li.product .product-inner .added_to_cart:hover',
-				'.edd div.product .edd-tabs ul.tabs li.active a',
-				'.edd .oceanwp-grid-list a.active',
-				'.edd .oceanwp-grid-list a:hover',
-				'.edd .oceanwp-off-canvas-filter:hover',
-				'.owp-product-nav li a.owp-nav-link:hover',
-				'.widget_shopping_cart_content .buttons .button:first-child:hover',
-				'.edd .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid a.remove:hover',
-				'.widget_product_categories li a:hover ~ .count',
-				'.edd .widget_product_categories li.current-cat a ~ .count',
-				'.edd .widget_product_categories li.current-cat a:before',
-				'.widget_layered_nav li a:hover ~ .count',
-				'.edd .widget_layered_nav li.chosen a ~ .count',
-				'.edd .widget_layered_nav li.chosen a:before',
-				'#owp-checkout-timeline.arrow .active .timeline-wrapper:before' => array( 'top', 'bottom' ),
-				'#owp-checkout-timeline.arrow .active .timeline-wrapper:after' => array( 'left', 'right' ),
-				'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count',
-				'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count:after',
-				'.show-cart .wcmenucart-cart-icon .wcmenucart-count',
-				'.show-cart .wcmenucart-cart-icon .wcmenucart-count:after',
+				'.simple-style.eddmenucart .edd-cart-quantity.count:after',
+				'.edd_downloads_list .button:hover',
+				'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container:after', 
+				'.show-cart .eddmenucart-cart-icon .eddmenucart-container:after',
+				'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container',
+				'.show-cart .eddmenucart-cart-icon .eddmenucart-container',
 			), $borders );
 		}
 
@@ -312,22 +284,14 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 */
 		public static function primary_backgrounds( $backgrounds ) {
 			return array_merge( array(
-				'.edd div.product div.images .open-image',
-				'.wcmenucart-details.count',
-				'.edd-message a',
-				'.edd-error a',
-				'.edd-info a',
-				'.edd .widget_price_filter .ui-slider .ui-slider-handle',
-				'.edd .widget_price_filter .ui-slider .ui-slider-range',
-				'.owp-product-nav li a.owp-nav-link:hover',
-				'.edd div.product.owp-tabs-layout-vertical .edd-tabs ul.tabs li a:after',
-				'.edd .widget_product_categories li.current-cat a ~ .count',
-				'.edd .widget_product_categories li.current-cat a:before',
-				'.edd .widget_layered_nav li.chosen a ~ .count',
-				'.edd .widget_layered_nav li.chosen a:before',
-				'#owp-checkout-timeline .active .timeline-wrapper',
-				'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count',
-				'.show-cart .wcmenucart-cart-icon .wcmenucart-count',
+				'.content-area ul.edd-cart li .edd-cart-item-price',
+				'.widget-area ul.edd-cart li .edd-cart-item-price',
+				'.eddmenucart .edd-cart-quantity.count',
+				'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container',
+				'.show-cart .eddmenucart-cart-icon .eddmenucart-container',
+				'.content-area ul.edd-cart li.edd_checkout a', 
+				'.widget-area ul.edd-cart li.edd_checkout a',
+				'.current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout a',
 			), $backgrounds );
 		}
 
@@ -338,10 +302,9 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 */
 		public static function hover_primary_backgrounds( $hover ) {
 			return array_merge( array(
-				'.edd div.product div.images .open-image:hover',
-				'.edd-error a:hover',
-				'.edd-info a:hover',
-				'.edd-message a:hover',
+				'.content-area ul.edd-cart li.edd_checkout a:hover', 
+				'.widget-area ul.edd-cart li.edd_checkout a:hover',
+				'.current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout a:hover'
 			), $hover );
 		}
 
@@ -352,54 +315,12 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 */
 		public static function border_color_elements( $elements ) {
 			return array_merge( array(
-				'.edd table.shop_table',
-				'.edd table.shop_table td',
-				'.edd-cart .cart-collaterals .cart_totals tr td',
-				'.edd-cart .cart-collaterals .cart_totals tr th',
-				'.edd table.shop_table tth',
-				'.edd table.shop_table tfoot td',
-				'.edd table.shop_table tfoot th',
-				'.edd .order_details',
-				'.edd .shop_table.order_details tfoot th',
-				'.edd .shop_table.customer_details th',
-				'.edd .cart-collaterals .cross-sells',
-				'.edd-page .cart-collaterals .cross-sells',
-				'.edd .cart-collaterals .cart_totals',
-				'.edd-page .cart-collaterals .cart_totals',
-				'.edd .cart-collaterals h2',
-				'.edd .cart-collaterals h2',
-				'.edd .cart-collaterals h2',
-				'.edd-cart .cart-collaterals .cart_totals .order-total th',
-				'.edd-cart .cart-collaterals .cart_totals .order-total td',
-				'.edd ul.order_details',
-				'.edd .shop_table.order_details tfoot th',
-				'.edd .shop_table.customer_details th',
-				'.edd .edd-checkout #customer_details h3',
-				'.edd .edd-checkout h3#order_review_heading',
-				'.edd-checkout #payment ul.payment_methods',
-				'.edd-checkout form.login',
-				'.edd-checkout form.checkout_coupon',
-				'.edd-checkout-review-order-table tfoot th',
-				'.edd-checkout #payment',
-				'.edd ul.order_details',
-				'.edd #customer_login > div',
-				'.edd .col-1.address',
-				'.edd .col-2.address',
-				'.edd-checkout .edd-info',
-				'.edd div.product form.cart',
-				'.product_meta',
-				'.edd div.product .edd-tabs ul.tabs',
-				'.edd #reviews #comments ol.commentlist li .comment_container',
-				'p.stars span a',
-				'.edd ul.product_list_widget li',
-				'.edd .widget_shopping_cart .cart_list li',
-				'.edd.widget_shopping_cart .cart_list li',
-				'.edd ul.product_list_widget li:first-child',
-				'.edd .widget_shopping_cart .cart_list li:first-child',
-				'.edd.widget_shopping_cart .cart_list li:first-child',
-				'.widget_product_categories li a',
-				'.edd .oceanwp-toolbar',
-				'.edd .products.list .product',
+				'#edd_checkout_user_info',
+				'#edd_checkout_form_wrap legend',
+				'#edd_checkout_form_wrap #edd-discount-code-wrap', 
+				'#edd_checkout_form_wrap #edd_final_total_wrap', 
+				'#edd_checkout_form_wrap #edd_show_discount',
+				'#edd_checkout_form_wrap fieldset'
 			), $elements );
 		}
 
