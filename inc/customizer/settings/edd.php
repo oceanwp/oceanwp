@@ -964,22 +964,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Display Product Navigation
-			 */
-			$wp_customize->add_setting( 'ocean_edd_display_navigation', array(
-				'default'           	=> true,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
-
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_display_navigation', array(
-				'label'	   				=> esc_html__( 'Display Product Navigation', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_edd_single',
-				'settings' 				=> 'ocean_edd_display_navigation',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
 			 * Display Purchase Button
 			 */
 			$wp_customize->add_setting( 'ocean_edd_display_add_to_cart', array(
@@ -992,6 +976,22 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				'type' 					=> 'checkbox',
 				'section'  				=> 'ocean_edd_single',
 				'settings' 				=> 'ocean_edd_display_add_to_cart',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Display Next/Prev Downloads
+			 */
+			$wp_customize->add_setting( 'ocean_edd_display_navigation', array(
+				'default'           	=> true,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_display_navigation', array(
+				'label'	   				=> esc_html__( 'Display Next/Prev Downloads', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_edd_single',
+				'settings' 				=> 'ocean_edd_display_navigation',
 				'priority' 				=> 10,
 			) ) );
 
@@ -1012,6 +1012,9 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 					'download_category' => esc_html__( 'Category', 'oceanwp' ),
 					'download_tag'      => esc_html__( 'Tag', 'oceanwp' ),
 				),
+				'active_callback'       => function(){
+					return get_theme_mod( 'ocean_edd_display_navigation', false );
+				},
 			) ) );
 
 			/**

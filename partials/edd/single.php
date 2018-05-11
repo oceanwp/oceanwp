@@ -35,6 +35,8 @@ do_action( 'ocean_before_single_download_item' );
 
 		</div>
 
+		<?php
+		if ( get_theme_mod( 'ocean_edd_display_navigation', true ) ) : ?>
 		<div class="edd_download_navigation">
 			<?php
 			// Term
@@ -59,7 +61,7 @@ do_action( 'ocean_before_single_download_item' );
 
 			<?php do_action( 'ocean_after_single_post_next_prev' ); ?>
 		</div>
-
+		<?php endif; ?>
 	</div>
 </div>
 <?php 
