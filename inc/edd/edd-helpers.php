@@ -68,13 +68,7 @@ if ( ! function_exists( 'oceanwp_edd_menu_cart_style' ) ) {
  */
 if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 
-	function oceanwp_eddmenucart_menu_item() {
-
-		// Return items if "hide if empty cart" is checked (for mobile)
-		if ( true == get_theme_mod( 'ocean_edd_menu_icon_hide_if_empty', false )
-			&& ! edd_get_cart_quantity() > 0 ) {
-			return;
-		}
+	function oceanwp_eddmenucart_menu_item() {		
 
 		// Return if is in the Elementor edit mode, to avoid error
 		if ( OCEANWP_ELEMENTOR_ACTIVE

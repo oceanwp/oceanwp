@@ -10,6 +10,11 @@ do_action( 'ocean_before_single_download_item' );
 ?>
 <div <?php post_class(); ?>>
 	<div class="edd_download_inner">
+
+		<?php $item_prop = edd_add_schema_microdata() ? ' itemprop="name"' : ''; ?>
+		<h1<?php echo $item_prop; ?> class="edd_download_title">
+			<?php the_title(); ?>
+		</h1>
 			
 		<?php
 		if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ) :

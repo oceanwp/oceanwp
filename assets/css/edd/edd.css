@@ -368,6 +368,10 @@
   margin-bottom: 12px;
 }
 
+.edd_downloads_list .edd_download_image {
+  margin-bottom: 15px;
+}
+
 .edd_downloads_list .edd_download_categories {
   display: block;
   font-size: 12px;
@@ -1176,6 +1180,10 @@ Easy Digital Downloads Cart
 
 .boxed-layout .current-shop-items-dropdown {
   right: 0;
+}
+
+.edd-cart-empty {
+  display: none;
 }
 
 .current-shop-items-dropdown .widget_edd_cart_widget {

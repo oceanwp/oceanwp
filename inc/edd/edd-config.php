@@ -189,6 +189,8 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function add_custom_scripts() {
 
 			wp_enqueue_style( 'oceanwp-edd', OCEANWP_CSS_DIR_URI .'edd/edd.min.css' );
+			wp_enqueue_script( 'oceanwp-edd-ajax', OCEANWP_JS_DIR_URI .'third/edd/edd-cart-ajax.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+
 
 			// If display cart when product added
 			if ( 'yes' == get_theme_mod( 'ocean_edd_display_cart_download_added', 'no' ) ) {
@@ -479,6 +481,11 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			// Prevent clicking on cart and checkout
 			if ( 'custom_link' != $style ) {
 				$classes[] = 'nav-no-click';
+			}
+
+			if ( true == get_theme_mod( 'ocean_edd_menu_icon_hide_if_empty', false )
+			&& ! edd_get_cart_quantity() > 0 ) {
+				$classes[] = 'edd-cart-empty';
 			}
 
 			// Add toggle class
