@@ -31,10 +31,19 @@ get_header(); ?>
 						?>
 						<div class="oceanwp-row <?php echo esc_attr( oceanwp_edd_loop_classes() ); ?>">
 						
-						<?php 
+						<?php
+						// Archive Post Count for clearing float
+						$oceanwp_count = 0;
+
 						while ( have_posts() ) : the_post();
 
+							$oceanwp_count++;
+
 							get_template_part( 'partials/edd/archive' );
+
+							if ( oceanwp_edd_entry_columns() == $oceanwp_count ) {
+								$oceanwp_count=0;
+							}
 
 						endwhile;
 						?>
@@ -44,13 +53,27 @@ get_header(); ?>
 						do_action( 'ocean_after_archive_download' );
 
 					} else {
+						?>
+						<div id="blog-entries" class="entries clr oceanwp-row blog-grid">
+						<?php
+
+						// Archive Post Count for clearing float
+						$oceanwp_count = 0;
 
 						while ( have_posts() ) : the_post();
 
+							$oceanwp_count++;
+
 							get_template_part( 'partials/entry/layout', get_post_type() );
 
-						endwhile;
+							if ( oceanwp_blog_entry_columns() == $oceanwp_count ) {
+								$oceanwp_count = 0;
+							}
 
+						endwhile;
+						?>
+						</div>
+						<?php
 					}
 				}
 				else {

@@ -252,5 +252,31 @@ function oceanwp_remove_edd_purchase_button() {
 
 add_action( 'template_redirect', 'oceanwp_remove_edd_purchase_button' );
 
+/**
+ * Returns correct columns for the EDD archive entries
+ * Used to clear floats
+ *
+ * @since 1.0.4
+ */
+if ( ! function_exists( 'oceanwp_edd_entry_columns' ) ) {
 
+	function oceanwp_edd_entry_columns() {
+
+		// Get columns from customizer setting
+		$columns = get_theme_mod( 'ocean_edd_archive_columns', '3' );
+
+		// Sanitize
+		$columns = $columns ? $columns : '3';
+
+		// Apply filters for child theming
+		$columns = apply_filters( 'oceanwp_edd_entry_columns', $columns );
+
+		// Return columns
+		return $columns;
+
+	}
+
+}
+
+// Disable EDD Styles
 add_filter( 'edd_get_option_disable_styles', '__return_true' );

@@ -231,6 +231,12 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			$classes[] = oceanwp_grid_class( get_theme_mod( 'ocean_edd_archive_columns', 3 ) );
 			$classes[] = 'owp-content-'. $content_alignment;
 
+			// Counter
+			global $oceanwp_count;
+			if ( $oceanwp_count ) {
+				$classes[] = 'col-'. $oceanwp_count;
+			}
+
 			return $classes;
 		}
 
