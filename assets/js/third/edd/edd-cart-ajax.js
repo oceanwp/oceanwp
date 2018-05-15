@@ -4,8 +4,6 @@ $j( document ).on( 'ready', function() {
 	"use strict";
     // Edd display cart
     oceanwpEDDCartDetails();
-
-    console.log("this is owkring");
 } );
 
 /* ==============================================
