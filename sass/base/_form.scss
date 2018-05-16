@@ -320,3 +320,13 @@ a.pure-button-selected {
 	color: #fff;
 	background-color: rgb(0, 120, 231);
 }
+
+/* Comment checkbox */
+.comment-form-cookies-consent {
+	display: inline-block;
+    width: 100%;
+
+    label {
+    	display: inline-block;
+    }
+}

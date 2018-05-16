@@ -33,39 +33,58 @@ get_header(); ?>
 				if ( have_posts() ) :
 
 					// Elementor `archive` location
-					if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'archive' ) ) { ?>
+					if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'archive' ) ) {
 
-						<div id="blog-entries" class="<?php oceanwp_blog_wrap_classes(); ?>">
-
+						if( is_post_type_archive( 'download' ) || is_tax( array( 'download_category', 'download_tag' ) ) ) {
+							
+							do_action( 'ocean_before_archive_download' );
+							?>
+							<div class="oceanwp-row <?php echo esc_attr( oceanwp_edd_loop_classes() ); ?>">
+							
 							<?php
-							// Define counter for clearing floats
-							$oceanwp_count = 0; ?>
+							// Archive Post Count for clearing float
+							$oceanwp_count = 0;
 
-							<?php
-							// Loop through posts
-							while ( have_posts() ) : the_post(); ?>
+							while ( have_posts() ) : the_post();
 
-								<?php
-								// Add to counter
-								$oceanwp_count++; ?>
+								$oceanwp_count++;
 
-								<?php
-								// Get post entry content
-								get_template_part( 'partials/entry/layout', get_post_type() ); ?>
+								get_template_part( 'partials/edd/archive' );
 
-								<?php
-								// Reset counter to clear floats
-								if ( oceanwp_blog_entry_columns() == $oceanwp_count ) {
+								if ( oceanwp_edd_entry_columns() == $oceanwp_count ) {
 									$oceanwp_count=0;
-								} ?>
+								}
 
-							<?php endwhile; ?>
+							endwhile;
+							?>
+							</div>
+							
+							<?php
+							do_action( 'ocean_after_archive_download' );
 
-						</div><!-- #blog-entries -->
+						} else {
+							?>
+							<div id="blog-entries" class="entries clr oceanwp-row blog-grid">
+							<?php
 
-						<?php
-						// Display post pagination
-						oceanwp_blog_pagination();
+							// Archive Post Count for clearing float
+							$oceanwp_count = 0;
+
+							while ( have_posts() ) : the_post();
+
+								$oceanwp_count++;
+
+								get_template_part( 'partials/entry/layout', get_post_type() );
+
+								if ( oceanwp_blog_entry_columns() == $oceanwp_count ) {
+									$oceanwp_count = 0;
+								}
+
+							endwhile;
+							?>
+							</div>
+							<?php
+						}
 
 					} ?>
 

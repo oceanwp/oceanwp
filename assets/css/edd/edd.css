@@ -232,8 +232,8 @@
 }
 
 .edd_download_inner {
-  padding: 0 8px 8px;
-  margin: 0 0 10px;
+  background-color: #fcfcfc;
+  padding: 10px 10px 20px;
 }
 
 .edd_download_columns_2 .edd_download:nth-child(2n+1),
@@ -242,10 +242,6 @@
 .edd_download_columns_5 .edd_download:nth-child(5n+1),
 .edd_download_columns_6 .edd_download:nth-child(6n+1) {
   clear: left;
-}
-
-.edd_download_image {
-  max-width: 100%;
 }
 
 .edd_download .edd_price {
@@ -373,7 +369,7 @@
 }
 
 .edd_downloads_list .edd_download_image {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .edd_downloads_list .edd_download_categories {
@@ -395,10 +391,10 @@
   color: #13aff0;
 }
 
-.edd_downloads_list .edd_download_title a {
+.edd_downloads_list .edd_download_title {
   display: inline-block;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 18px;
+  margin: 0 0 10px;
 }
 
 .edd_downloads_list div.edd_price {
@@ -1178,12 +1174,16 @@ Easy Digital Downloads Cart
   opacity: 1;
 }
 
+.owp-qv-open {
+  overflow: hidden;
+}
+
 .boxed-layout .current-shop-items-dropdown {
   right: 0;
 }
 
-.current-shop-items-dropdown {
-  /* Cart spacious style */
+.edd-cart-empty {
+  display: none;
 }
 
 .current-shop-items-dropdown .widget_edd_cart_widget {
@@ -1273,26 +1273,40 @@ Easy Digital Downloads Cart
 
 .current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout a {
   display: block;
-  padding: 7px 8px;
+  font-family: inherit;
+  background-color: #13aff0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 14px 20px;
+  border: 0;
+  cursor: pointer;
   text-align: center;
-  letter-spacing: 2px;
-  background-color: transparent;
-  color: #666;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.current-shop-items-dropdown .spacious .owp-mini-cart {
+/* Cart spacious style */
+.eddmenucart-toggle-drop_down.spacious .owp-mini-cart {
   padding: 20px;
 }
 
-.current-shop-items-dropdown .spacious .owp-mini-cart .widget_edd_cart_widget ul li {
+.eddmenucart-toggle-drop_down.spacious .owp-mini-cart .widget_edd_cart_widget ul li {
   padding: 14px 20px;
 }
 
-.current-shop-items-dropdown .spacious .owp-mini-cart .edd_total {
+.eddmenucart-toggle-drop_down.spacious .owp-mini-cart .edd_total {
   padding: 20px;
 }
 
-.current-shop-items-dropdown .spacious .owp-mini-cart .edd_checkout a {
+.eddmenucart-toggle-drop_down.spacious .owp-mini-cart .edd_checkout a {
   padding: 14px 8px;
 }
 

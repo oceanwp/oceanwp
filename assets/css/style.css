@@ -1120,10 +1120,10 @@ body.separate-blog.separate-layout .blog-entry.grid-entry .thumbnail {
   /* full width content and sidebar */
   .content-area,
   .content-left-sidebar .content-area {
-    float: none;
+    float: none !important;
     width: 100%;
     margin-bottom: 40px;
-    padding: 0;
+    padding: 0 !important;
     border: 0;
   }
   .no-margins .content-area,
@@ -1133,9 +1133,9 @@ body.separate-blog.separate-layout .blog-entry.grid-entry .thumbnail {
   .widget-area.sidebar-primary,
   .widget-area.sidebar-secondary,
   .content-left-sidebar .widget-area {
-    float: none;
+    float: none !important;
     width: 100%;
-    padding: 0;
+    padding: 0 !important;
     border: 0;
   }
   body.has-composer.has-sidebar #primary {
@@ -1226,6 +1226,7 @@ body.separate-blog.separate-layout .blog-entry.grid-entry .thumbnail {
 *------------------------------------*/
 figure > img {
   display: block;
+  margin: 0 auto;
 }
 
 img {
