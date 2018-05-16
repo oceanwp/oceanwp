@@ -2129,6 +2129,16 @@ a.pure-button-selected {
   background-color: #0078e7;
 }
 
+/* Comment checkbox */
+.comment-form-cookies-consent {
+  display: inline-block;
+  width: 100%;
+}
+
+.comment-form-cookies-consent label {
+  display: inline-block;
+}
+
 /*------------------------------------*
 	$TOP BAR
 *------------------------------------*/
