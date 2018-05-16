@@ -104,6 +104,7 @@ module.exports = function ( grunt ) {
                 },
                 files: {
 					'assets/css/woo/woocommerce.css': 'sass/woocommerce.scss',
+					'assets/css/edd/edd.css': 'sass/edd.scss',
 					'assets/css/woo/woo-floating-bar.css': 'sass/woo-floating-bar.scss',
 					'assets/css/woo/woo-quick-view.css': 'sass/woo-quick-view.scss',
 					'assets/css/woo/woo-multistep-checkout.css': 'sass/woo-multistep-checkout.scss',
@@ -119,6 +120,7 @@ module.exports = function ( grunt ) {
                 files: {
 					'style.css': 'sass/style.scss',
 					'assets/css/woo/woocommerce.min.css': 'sass/woocommerce.scss',
+					'assets/css/edd/edd.min.css': 'sass/edd.scss',
 					'assets/css/woo/woo-floating-bar.min.css': 'sass/woo-floating-bar.scss',
 					'assets/css/woo/woo-quick-view.min.css': 'sass/woo-quick-view.scss',
 					'assets/css/woo/woo-multistep-checkout.min.css': 'sass/woo-multistep-checkout.scss',

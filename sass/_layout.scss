@@ -466,10 +466,10 @@ body.separate-blog.separate-layout {
 	/* full width content and sidebar */
 	.content-area,
 	.content-left-sidebar .content-area {
-		float: none;
+		float: none !important;
 		width: 100%;
 		margin-bottom: 40px;
-		padding: 0;
+		padding: 0 !important;
 		border: 0;
 	}
 
@@ -481,9 +481,9 @@ body.separate-blog.separate-layout {
 	.widget-area.sidebar-primary,
 	.widget-area.sidebar-secondary,
 	.content-left-sidebar .widget-area {
-		float: none;
+		float: none !important;
 		width: 100%;
-		padding: 0;
+		padding: 0 !important;
 		border: 0;
 	}
 
