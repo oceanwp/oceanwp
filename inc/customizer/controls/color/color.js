@@ -262,7 +262,7 @@ jQuery( document ).ready( function( $ ) {
 		});
 
 		// Fix Safari issue on input click
-		$( '.iris-picker' ).on( 'click', function(e) {
+		$( '.iris-picker, .alpha-color-control' ).on( 'click', function(e) {
 			e.preventDefault();
 		});
 

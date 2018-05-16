@@ -1907,7 +1907,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function multistep_checkout( $template, $template_name, $template_path ) {
 
 			if ( 'checkout/form-checkout.php' == $template_name ) {
-                $template = OCEANWP_THEME_DIR . '/woocommerce/checkout/form-multistep-checkout.php';
+                $template 	= OCEANWP_THEME_DIR . '/woocommerce/checkout/form-multistep-checkout.php';
+				$theme_file = get_stylesheet_directory() . '/woocommerce/checkout/form-multistep-checkout.php';
+
+				if ( file_exists( $theme_file ) ) {
+					$template = $theme_file;
+				}
             }
 
 			// Return

@@ -1861,7 +1861,7 @@
 				var $child = $(".customizer-ocean_page_header_title_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_page_header_title_color">.page-header .page-header-title { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_page_header_title_color">.page-header .page-header-title, .page-header.background-image-page-header .page-header-title { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
