@@ -30,6 +30,9 @@ module.exports = function ( grunt ) {
 					'assets/js/third/woo/woo-floating-bar.min.js'					: 'assets/js/third/woo/woo-floating-bar.js',
 					'assets/js/third/woo/woo-cat-widget.min.js'						: 'assets/js/third/woo/woo-cat-widget.js',
 
+					'assets/js/third/edd/edd-display-cart.min.js'					: 'assets/js/third/edd/edd-display-cart.js',
+					'assets/js/third/edd/edd-cart-ajax.min.js'						: 'assets/js/third/edd/edd-cart-ajax.js',
+
 					'inc/customizer/assets/js/customize-preview.min.js'				: 'inc/customizer/assets/js/customize-preview.js',
 					'inc/customizer/assets/js/typography-customize-preview.min.js'	: 'inc/customizer/assets/js/typography-customize-preview.js',
 					'inc/customizer/assets/min/js/general.min.js'					: 'inc/customizer/controls/general.js',

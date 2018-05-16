@@ -585,6 +585,41 @@ function oceanwp_cac_has_woo_multistep_checkout() {
 }
 
 /*-------------------------------------------------------------------------------*/
+/* [ Easy Digital Downloads ]
+/*-------------------------------------------------------------------------------*/
+function oceanwp_cac_has_edd_bag_style() {
+	if ( 'yes' == get_theme_mod( 'ocean_edd_menu_bag_style', 'no' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_hasnt_edd_bag_style() {
+	if ( 'yes' == get_theme_mod( 'ocean_edd_menu_bag_style', 'no' ) ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function oceanwp_cac_has_edd_archive_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_edd_archive_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_edd_download_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_edd_download_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/*-------------------------------------------------------------------------------*/
 /* [ Footer ]
 /*-------------------------------------------------------------------------------*/
 function oceanwp_cac_has_scrolltop() {

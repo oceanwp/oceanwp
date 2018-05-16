@@ -153,6 +153,11 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 				require_once( $dir .'woocommerce.php' );
 			}
 
+			// If EDD is activated
+			if ( OCEANWP_EDD_ACTIVE ) {
+				require_once( $dir .'edd.php' );
+			}
+
 		}
 
 		/**
