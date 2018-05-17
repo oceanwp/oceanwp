@@ -590,15 +590,15 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			/**
 			 * Checkout Button Hover: Background Color
 			 */
-			$wp_customize->add_setting( 'ocean_edd_cart_dropdown_checkout_button_hover_bg', array(
+			$wp_customize->add_setting( 'ocean_edd_cart_dropdown_checkout_button_bg_hover', array(
 				'transport' 			=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_edd_cart_dropdown_checkout_button_hover_bg', array(
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_edd_cart_dropdown_checkout_button_bg_hover', array(
 				'label'	   				=> esc_html__( 'Checkout Button Background: Hover', 'oceanwp' ),
 				'section'  				=> 'ocean_edd_menu_cart',
-				'settings' 				=> 'ocean_edd_cart_dropdown_checkout_button_hover_bg',
+				'settings' 				=> 'ocean_edd_cart_dropdown_checkout_button_bg_hover',
 				'priority' 				=> 10,
 			) ) );
 
@@ -1652,54 +1652,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
-		     * Single Product Meta Title Color
-		     */
-	        $wp_customize->add_setting( 'ocean_single_edd_meta_title_color', array(
-				'default'				=> '#333333',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_edd_meta_title_color', array(
-				'label'					=> esc_html__( 'Meta Title Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_edd_meta_title_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Single Product Meta Link Color
-		     */
-	        $wp_customize->add_setting( 'ocean_single_edd_meta_link_color', array(
-				'default'				=> '#aaaaaa',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_edd_meta_link_color', array(
-				'label'					=> esc_html__( 'Meta Link Color', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_edd_meta_link_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Single Product Meta Link Color Hover
-		     */
-	        $wp_customize->add_setting( 'ocean_single_edd_meta_link_color_hover', array(
-				'default'				=> '#13aff0',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_edd_meta_link_color_hover', array(
-				'label'					=> esc_html__( 'Meta Link Color: Hover', 'oceanwp' ),
-				'section'				=> 'ocean_edd_styling',
-				'settings'				=> 'ocean_single_edd_meta_link_color_hover',
-				'priority'				=> 10,
-			) ) );
-
-			/**
 			 * Heading Checkout
 			 */
 			$wp_customize->add_setting( 'ocean_checkout_heading', array(
@@ -1900,13 +1852,9 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			$cart_dropdown_subtotal_color						= get_theme_mod( 'ocean_edd_cart_dropdown_subtotal_color', '#797979' );
 			$cart_dropdown_total_price_color					= get_theme_mod( 'ocean_edd_cart_dropdown_total_price_color', '#57bf6d' );
 			$cart_dropdown_checkout_button_bg					= get_theme_mod( 'ocean_edd_cart_dropdown_checkout_button_bg' );
-			$cart_dropdown_checkout_button_hover_bg				= get_theme_mod( 'ocean_edd_cart_dropdown_checkout_button_hover_bg' );
+			$cart_dropdown_checkout_button_hover_bg				= get_theme_mod( 'ocean_edd_cart_dropdown_checkout_button_bg_hover' );
 			$cart_dropdown_checkout_button_color				= get_theme_mod( 'ocean_edd_cart_dropdown_checkout_button_color' );
 			$cart_dropdown_checkout_button_hover_color			= get_theme_mod( 'ocean_edd_cart_dropdown_checkout_button_hover_color' );
-			$edd_mobile_cart_sidebar_bg							= get_theme_mod( 'ocean_edd_mobile_cart_sidebar_bg', '#ffffff' );
-			$edd_mobile_cart_sidebar_close_button_color			= get_theme_mod( 'ocean_edd_mobile_cart_sidebar_close_button_color', '#000000' );
-			$edd_mobile_cart_sidebar_title_color				= get_theme_mod( 'ocean_edd_mobile_cart_sidebar_title_color', '#555555' );
-			$edd_mobile_cart_sidebar_divider_color				= get_theme_mod( 'ocean_edd_mobile_cart_sidebar_divider_color', 'rgba(0,0,0,0.1)' );
 		
 			// Styling vars
 			$edd_top_padding 								= get_theme_mod( 'ocean_edd_top_padding' );
@@ -1975,9 +1923,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			$edd_entry_addtocart_border_radius 				= get_theme_mod( 'ocean_edd_entry_addtocart_border_radius' );
 			$single_edd_title_color 						= get_theme_mod( 'ocean_single_edd_title_color', '#333333' );
 			$single_edd_description_color 					= get_theme_mod( 'ocean_single_edd_description_color', '#aaaaaa' );
-			$single_edd_meta_title_color 					= get_theme_mod( 'ocean_single_edd_meta_title_color', '#333333' );
-			$single_edd_meta_link_color 					= get_theme_mod( 'ocean_single_edd_meta_link_color', '#aaaaaa' );
-			$single_edd_meta_link_color_hover 				= get_theme_mod( 'ocean_single_edd_meta_link_color_hover', '#13aff0' );
+
 			// Checkout
 			$checkout_titles_color 								= get_theme_mod( 'ocean_edd_checkout_titles_color', '#222' );
 			$checkout_titles_border_bottom_color 				= get_theme_mod( 'ocean_edd_checkout_titles_border_bottom_color', '#e5e5e5' );
@@ -2113,96 +2059,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			// Cart dropdown checkout button hover color
 			if ( ! empty( $cart_dropdown_checkout_button_hover_color ) ) {
 				$css .= '.current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout a:hover{color:'. $cart_dropdown_checkout_button_hover_color .';}';
-			}
-
-			// Mobile cart sidebar background color
-			if ( ! empty( $edd_mobile_cart_sidebar_bg ) && '#ffffff' != $edd_mobile_cart_sidebar_bg ) {
-				$css .= '#oceanwp-cart-sidebar-wrap .oceanwp-cart-sidebar{background-color:'. $edd_mobile_cart_sidebar_bg .';}';
-			}
-
-			// Mobile cart sidebar background color
-			if ( ! empty( $edd_mobile_cart_sidebar_close_button_color ) && '#000000' != $edd_mobile_cart_sidebar_close_button_color ) {
-				$css .= '#oceanwp-cart-sidebar-wrap .oceanwp-cart-close .close-wrap>div, #oceanwp-cart-sidebar-wrap .oceanwp-cart-close .close-wrap>div:before{background-color:'. $edd_mobile_cart_sidebar_close_button_color .';}';
-			}
-
-			// Mobile cart sidebar background color
-			if ( ! empty( $edd_mobile_cart_sidebar_title_color ) && '#555555' != $edd_mobile_cart_sidebar_title_color ) {
-				$css .= '#oceanwp-cart-sidebar-wrap h4{color:'. $edd_mobile_cart_sidebar_title_color .';}';
-			}
-
-			// Mobile cart sidebar background color
-			if ( ! empty( $edd_mobile_cart_sidebar_divider_color ) && 'rgba(0,0,0,0.1)' != $edd_mobile_cart_sidebar_divider_color ) {
-				$css .= '#oceanwp-cart-sidebar-wrap .divider{background-color:'. $edd_mobile_cart_sidebar_divider_color .';}';
-			}
-
-			// Add toolbar border color
-			if ( ! empty( $toolbar_border_color ) && '#eaeaea' != $toolbar_border_color ) {
-				$css .= '.edd .oceanwp-toolbar{border-color:'. $toolbar_border_color .';}';
-			}
-
-			// Add toolbar off canvas filter color
-			if ( ! empty( $toolbar_off_canvas_filter_color ) && '#999999' != $toolbar_off_canvas_filter_color ) {
-				$css .= '.edd .oceanwp-off-canvas-filter{color:'. $toolbar_off_canvas_filter_color .';}';
-			}
-
-			// Add toolbar off canvas filter border color
-			if ( ! empty( $toolbar_off_canvas_filter_border_color ) && '#eaeaea' != $toolbar_off_canvas_filter_border_color ) {
-				$css .= '.edd .oceanwp-off-canvas-filter{border-color:'. $toolbar_off_canvas_filter_border_color .';}';
-			}
-
-			// Add toolbar off canvas filter hover color
-			if ( ! empty( $toolbar_off_canvas_filter_hover_color ) && '#13aff0' != $toolbar_off_canvas_filter_hover_color ) {
-				$css .= '.edd .oceanwp-off-canvas-filter:hover{color:'. $toolbar_off_canvas_filter_hover_color .';}';
-			}
-
-			// Add toolbar off canvas filter hover border color
-			if ( ! empty( $toolbar_off_canvas_filter_hover_border_color ) && '#13aff0' != $toolbar_off_canvas_filter_hover_border_color ) {
-				$css .= '.edd .oceanwp-off-canvas-filter:hover{border-color:'. $toolbar_off_canvas_filter_hover_border_color .';}';
-			}
-
-			// Add toolbar grid/list color
-			if ( ! empty( $toolbar_grid_list_color ) && '#999999' != $toolbar_grid_list_color ) {
-				$css .= '.edd .oceanwp-grid-list a{color:'. $toolbar_grid_list_color .';}';
-			}
-
-			// Add toolbar grid/list border color
-			if ( ! empty( $toolbar_grid_list_border_color ) && '#eaeaea' != $toolbar_grid_list_border_color ) {
-				$css .= '.edd .oceanwp-grid-list a{border-color:'. $toolbar_grid_list_border_color .';}';
-			}
-
-			// Add toolbar grid/list hover color
-			if ( ! empty( $toolbar_grid_list_hover_color ) && '#13aff0' != $toolbar_grid_list_hover_color ) {
-				$css .= '.edd .oceanwp-grid-list a:hover{color:'. $toolbar_grid_list_hover_color .';border-color:'. $toolbar_grid_list_hover_color .';}';
-			}
-
-			// Add toolbar grid/list active color
-			if ( ! empty( $toolbar_grid_list_active_color ) && '#13aff0' != $toolbar_grid_list_active_color ) {
-				$css .= '.edd .oceanwp-grid-list a.active{color:'. $toolbar_grid_list_active_color .';border-color:'. $toolbar_grid_list_active_color .';}';
-			}
-
-			// Add toolbar select color
-			if ( ! empty( $toolbar_select_color ) && '#999999' != $toolbar_select_color ) {
-				$css .= '.edd .edd-ordering .theme-select,.edd .edd-ordering .theme-select:after{color:'. $toolbar_select_color .';}';
-			}
-
-			// Add toolbar select border color
-			if ( ! empty( $toolbar_select_border_color ) && '#dddddd' != $toolbar_select_border_color ) {
-				$css .= '.edd .edd-ordering .theme-select,.edd .edd-ordering .theme-select:after{border-color:'. $toolbar_select_border_color .';}';
-			}
-
-			// Add toolbar number of edds color
-			if ( ! empty( $toolbar_number_of_edds_color ) && '#555555' != $toolbar_number_of_edds_color ) {
-				$css .= '.edd .result-count li.view-title,.edd .result-count li a.active, .edd .result-count li a:hover{color:'. $toolbar_number_of_edds_color .';}';
-			}
-
-			// Add toolbar number of edds inactive color
-			if ( ! empty( $toolbar_number_of_edds_inactive_color ) && '#999999' != $toolbar_number_of_edds_inactive_color ) {
-				$css .= '.edd .result-count li a{color:'. $toolbar_number_of_edds_inactive_color .';}';
-			}
-
-			// Add toolbar number of edds border color
-			if ( ! empty( $toolbar_number_of_edds_border_color ) && '#999999' != $toolbar_number_of_edds_border_color ) {
-				$css .= '.edd .result-count li:after{color:'. $toolbar_number_of_edds_border_color .';}';
 			}
 
 			// Product padding
@@ -2349,7 +2205,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 
 			// Add edd entry price color
 			if ( ! empty( $edd_entry_price_color ) && '#57bf6d' != $edd_entry_price_color ) {
-				$css .= '.edd_downloads_list .edd_download_inner .edd_download_title span.edd_price{color:'. $edd_entry_price_color .';}';
+				$css .= '.edd_downloads_list .edd_download_inner span.edd_price{color:'. $edd_entry_price_color .';}';
 			}
 
 			// Add edd entry add to cart background color
@@ -2397,16 +2253,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 				$css .= '.edd_downloads_list .edd_download_inner .button{border-radius:'. $edd_entry_addtocart_border_radius .';}';
 			}
 
-			// Add off canvas background
-			if ( ! empty( $off_canvas_sidebar_bg ) && '#ffffff' != $off_canvas_sidebar_bg ) {
-				$css .= '#oceanwp-off-canvas-sidebar-wrap .oceanwp-off-canvas-sidebar{background-color:'. $off_canvas_sidebar_bg .';}';
-			}
-
-			// Add off canvas border color
-			if ( ! empty( $off_canvas_sidebar_widgets_border ) && 'rgba(84,84,84,0.15)' != $off_canvas_sidebar_widgets_border ) {
-				$css .= '#oceanwp-off-canvas-sidebar-wrap .sidebar-box{border-color:'. $off_canvas_sidebar_widgets_border .';}';
-			}
-
 			// Add single edd title color
 			if ( ! empty( $single_edd_title_color ) && '#333333' != $single_edd_title_color ) {
 				$css .= '.single-download .edd-download .edd_download_title{color:'. $single_edd_title_color .';}';
@@ -2415,56 +2261,6 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			// Add single edd description color
 			if ( ! empty( $single_edd_description_color ) && '#aaaaaa' != $single_edd_description_color ) {
 				$css .= '.single-download .edd-download .edd_download_content{color:'. $single_edd_description_color .';}';
-			}
-
-			// Add single edd meta title color
-			if ( ! empty( $single_edd_meta_title_color ) && '#333333' != $single_edd_meta_title_color ) {
-				$css .= '.single-download .edd_download_categories, .single-download .edd_download_tags{color:'. $single_edd_meta_title_color .';}';
-			}
-
-			// Add single edd meta link color
-			if ( ! empty( $single_edd_meta_link_color ) && '#aaaaaa' != $single_edd_meta_link_color ) {
-				$css .= '..single-download .edd_download_categories a, .single-download .edd_download_tags a{color:'. $single_edd_meta_link_color .';}';
-			}
-
-			// Add single edd meta link color hover
-			if ( ! empty( $single_edd_meta_link_color_hover ) && '#13aff0' != $single_edd_meta_link_color_hover ) {
-				$css .= '.single-download .edd_download_categories a:hover, .single-download .edd_download_tags a:hover{color:'. $single_edd_meta_link_color_hover .';}';
-			}
-
-			// Add single edd tabs borders color
-			if ( ! empty( $single_edd_tabs_borders_color ) && '#e9e9e9' != $single_edd_tabs_borders_color ) {
-				$css .= '.edd div.edd .edd-tabs ul.tabs{border-color:'. $single_edd_tabs_borders_color .';}';
-			}
-
-			// Add single edd tabs text color
-			if ( ! empty( $single_edd_tabs_text_color ) && '#999999' != $single_edd_tabs_text_color ) {
-				$css .= '.edd div.edd .edd-tabs ul.tabs li a{color:'. $single_edd_tabs_text_color .';}';
-			}
-
-			// Add single edd tabs text color hover
-			if ( ! empty( $single_edd_tabs_text_color_hover ) && '#13aff0' != $single_edd_tabs_text_color_hover ) {
-				$css .= '.edd div.edd .edd-tabs ul.tabs li a:hover{color:'. $single_edd_tabs_text_color_hover .';}';
-			}
-
-			// Add single edd tabs active text color
-			if ( ! empty( $single_edd_tabs_active_text_color ) && '#13aff0' != $single_edd_tabs_active_text_color ) {
-				$css .= '.edd div.edd .edd-tabs ul.tabs li.active a{color:'. $single_edd_tabs_active_text_color .';}';
-			}
-
-			// Add single edd tabs active text borders color
-			if ( ! empty( $single_edd_tabs_active_text_borders_color ) && '#13aff0' != $single_edd_tabs_active_text_borders_color ) {
-				$css .= '.edd div.edd .edd-tabs ul.tabs li.active a{border-color:'. $single_edd_tabs_active_text_borders_color .';}';
-			}
-
-			// Add single edd tabs edd description title color
-			if ( ! empty( $single_edd_tabs_edd_desc_title_color ) && '#333333' != $single_edd_tabs_edd_desc_title_color ) {
-				$css .= '.edd div.edd .edd-tabs .panel h2{color:'. $single_edd_tabs_edd_desc_title_color .';}';
-			}
-
-			// Add single edd tabs edd description color
-			if ( ! empty( $single_edd_tabs_edd_desc_color ) && '#929292' != $single_edd_tabs_edd_desc_color ) {
-				$css .= '.edd div.edd .edd-tabs .panel p{color:'. $single_edd_tabs_edd_desc_color .';}';
 			}
 
 			// Add checkout titles color
@@ -2479,7 +2275,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 
 			// Add checkout borders color
 			if ( ! empty( $checkout_borders_color ) && '#eee' != $checkout_borders_color ) {
-				$css .= '#edd_checkout_cart th, #edd_checkout_cart td{border-color:'. $checkout_borders_color .';}';
+				$css .= '#edd_checkout_cart th, #edd_checkout_cart td, #edd_checkout_form_wrap #edd-discount-code-wrap, #edd_checkout_form_wrap #edd_final_total_wrap, #edd_checkout_form_wrap #edd_show_discount, #edd_checkout_form_wrap fieldset{border-color:'. $checkout_borders_color .';}';
 			}
 
 			// Add checkout label color

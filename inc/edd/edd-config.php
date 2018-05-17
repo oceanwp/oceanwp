@@ -292,7 +292,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			return array_merge( array(
 				'.content-area ul.edd-cart li .edd-cart-item-price',
 				'.widget-area ul.edd-cart li .edd-cart-item-price',
-				'.eddmenucart .edd-cart-quantity.count',
+				'.simple-style.eddmenucart .edd-cart-quantity.count',
 				'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container',
 				'.show-cart .eddmenucart-cart-icon .eddmenucart-container',
 				'.content-area ul.edd-cart li.edd_checkout a', 
