@@ -1,5 +1,11 @@
 # OceanWP Changelog
 
+### *2018.05.17* - 1.5.14:
+* **Added** - Text Color setting for the page tittle if the background image style is selected.
+* **Fixed** - Checkbox styling issue for the GDPR consent in the comments form.
+* **Fixed** - Color settings in the customizer that close on input click on the Safari browser.
+* **Fixed** - Quantity input issue on the cart page.
+
 ### *2018.04.24* - 1.5.13:
 * **Fixed** - Quantity input issue with WooCommerce when the floating bar is enabled.
 * **Tweak** - Now the links works if you have sub menu for the Full Screen header style and Full Screen mobile menu style.
