@@ -816,6 +816,59 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Image Width
+			 */
+			$wp_customize->add_setting( 'ocean_edd_archive_image_width', array(
+				'default'               => 450,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_archive_image_width', array(
+				'label'	   				=> esc_html__( 'Custom Image Width (px)', 'oceanwp' ),
+				'type' 					=> 'number',
+				'section'  				=> 'ocean_edd_archives',
+				'settings' 				=> 'ocean_edd_archive_image_width',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min' => 0,
+			    ),
+			) ) );
+			/**
+			 * Image Height
+			 */
+			$wp_customize->add_setting( 'ocean_edd_archive_image_height', array(
+				'default'               => 450,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
+			) );
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_archive_image_height', array(
+				'label'	   				=> esc_html__( 'Custom Image Height (px)', 'oceanwp' ),
+				'type' 					=> 'number',
+				'section'  				=> 'ocean_edd_archives',
+				'settings' 				=> 'ocean_edd_archive_image_height',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min' => 0,
+			    ),
+			) ) );
+			/**
+			 * Download Excerpt Length
+			 */
+			$wp_customize->add_setting( 'ocean_edd_archive_excerpt_length', array(
+				'default'           	=> 5,
+				'sanitize_callback' 	=> false,
+			) );
+			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_edd_archive_excerpt_length', array(
+				'label'	   				=> esc_html__( 'Excerpt Length', 'oceanwp' ),
+				'section'  				=> 'ocean_edd_archives',
+				'settings' 				=> 'ocean_edd_archive_excerpt_length',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 500,
+			        'step'  => 1,
+			    ),
+			) ) );
+
+			/**
 			 * Section
 			 */
 			$wp_customize->add_section( 'ocean_edd_single' , array(
@@ -2205,7 +2258,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 
 			// Add edd entry price color
 			if ( ! empty( $edd_entry_price_color ) && '#57bf6d' != $edd_entry_price_color ) {
-				$css .= '.edd_downloads_list .edd_download_inner span.edd_price{color:'. $edd_entry_price_color .';}';
+				$css .= '.edd_downloads_list .edd_download_inner span.edd_price, .edd_price_range_sep{color:'. $edd_entry_price_color .';}';
 			}
 
 			// Add edd entry add to cart background color

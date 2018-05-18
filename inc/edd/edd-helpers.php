@@ -118,13 +118,13 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 		if ( 'yes' == get_theme_mod( 'ocean_edd_menu_bag_style', 'no' ) ) { ?>
 
 			<a href="<?php echo esc_url( $url ); ?>" class="bag-style eddmenucart">
+				<span class="eddmenucart-cart-icon">
+					<span class="eddmenucart-container edd-cart-quantity count"><?php echo edd_get_cart_quantity(); ?></span>
+				</span>
 				<?php
 				if ( true == get_theme_mod( 'ocean_edd_menu_bag_style_total', false ) ) { ?>
-					<span class="eddmenucart-total"><?php echo edd_currency_filter( edd_format_amount( edd_get_cart_total() ) ); ?></span>
+					<span class="eddmenucart-total eddmenucart-details total"><?php echo edd_currency_filter( edd_format_amount( edd_get_cart_total() ) ); ?></span>
 				<?php } ?>
-				<span class="eddmenucart-cart-icon">
-					<span class="eddmenucart-container"><?php echo edd_get_cart_quantity(); ?></span>
-				</span>
 			</a>
 
 		<?php } else { ?>
@@ -195,7 +195,7 @@ if( ! function_exists( 'oceanwp_edd_add_to_cart_link') ) {
 	
 	function oceanwp_edd_add_to_cart_link(){
 		if( edd_has_variable_prices( get_the_ID() ) ) {
-			$output = '<a class="button" href="'. get_permalink().'">'. esc_html__( 'View Details', 'oceanwp' ) .'</a>';
+			$output = '<a class="button" href="'. esc_url( get_permalink() ) .'">'. esc_html__( 'View Details', 'oceanwp' ) .'</a>';
 		} else {
 			$output = edd_get_purchase_link( array('price' => false, 'text' => esc_html__( 'Add to Cart', 'oceanwp') ) );
 		}
@@ -280,3 +280,14 @@ if ( ! function_exists( 'oceanwp_edd_entry_columns' ) ) {
 
 // Disable EDD Styles
 add_filter( 'edd_get_option_disable_styles', '__return_true' );
+
+/**
+ * Change EDD Templates Folder
+ *
+ * @since 1.0.4
+ */
+function oceanwp_edd_template_dir(){
+	return 'partials/edd';
+}
+
+add_filter( 'edd_templates_dir', 'oceanwp_edd_template_dir' );
