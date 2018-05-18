@@ -194,11 +194,6 @@ class OCEANWP_Theme_Class {
 			require_once ( $dir .'woocommerce/woocommerce-config.php' );
 		}
 
-		// Easy Digital Downloads
-		if ( OCEANWP_EDD_ACTIVE ) {
-			require_once ( $dir .'edd/edd-config.php' );
-		}
-
 	}
 
 	/**
@@ -554,7 +549,7 @@ class OCEANWP_Theme_Class {
 		register_sidebar( array(
 			'name'			=> esc_html__( 'Left Sidebar', 'oceanwp' ),
 			'id'			=> 'sidebar-2',
-			'description'	=> esc_html__( 'Widgets in this area are used in the left sidebar region.', 'oceanwp' ),
+			'description'	=> esc_html__( 'Widgets in this area are used in the left sidebar region if you use the Both Sidebars layout.', 'oceanwp' ),
 			'before_widget'	=> '<div id="%1$s" class="sidebar-box %2$s clr">',
 			'after_widget'	=> '</div>',
 			'before_title'	=> '<h4 class="widget-title">',
