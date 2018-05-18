@@ -263,6 +263,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				'.widget_edd_categories_tags_widget li a:hover',
 				'.widget_edd_cart_widget li a.edd-remove-from-cart:hover',
 				'.current-shop-items-dropdown .widget_edd_cart_widget li a.edd-remove-from-cart:hover',
+				'edd_price_range_sep',
 			), $texts );
 		}
 
