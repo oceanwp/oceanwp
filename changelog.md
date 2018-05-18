@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.05.19* - 1.5.15:
+* **Fixed** - Blog layout and pagination issue.
+
 ### *2018.05.17* - 1.5.14:
 * **Added** - Text Color setting for the page tittle if the background image style is selected.
 * **Fixed** - Checkbox styling issue for the GDPR consent in the comments form.
