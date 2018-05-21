@@ -205,6 +205,7 @@
 	padding: 0 10px;
 	text-align: center;
 }
+
 .edd_download_columns_1 .edd_download { width: 100%; }
 .edd_download_columns_2 .edd_download { width: 50%; }
 .edd_download_columns_0 .edd_download,
@@ -212,6 +213,29 @@
 .edd_download_columns_4 .edd_download { width: 25%; }
 .edd_download_columns_5 .edd_download { width: 20%; }
 .edd_download_columns_6 .edd_download { width: 16.6%; }
+
+/** Tablet View **/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.edd_downloads_list .edd_download {
+		width: 100%;
+	}
+	.edd_downloads_list.edd_download_columns_4 .edd_download {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.edd_downloads_list .edd_download {
+		width: 100%;
+	}
+}
+
+/** Mobile View **/
+@media only screen and (max-width: 480px){
+	.edd_downloads_list .edd_download {
+		width: 100%;
+	}
+}
 
 .edd_download_inner {
 	background-color: #fcfcfc;
@@ -395,6 +419,11 @@
 /* =Archive Page Styling
 -------------------------------------------------------------- */
 .edd_downloads_list{
+
+	.edd_download_inner{
+		position: relative;
+	}
+
 	.owp-content-left .edd_download_inner {
 		text-align: left;
 	}
@@ -436,6 +465,20 @@
 	div.edd_price{
 		font-size: 18px;
 		color: #3fc387;
+	}
+
+	.edd-variable-download-container{
+		.edd_download_purchase_form{
+			background-color: #eeee22;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 70px;
+			padding: 5px 25px 5px;
+		}
+		.edd_price_options {
+			text-align: left;
+		}
 	}
 }
 

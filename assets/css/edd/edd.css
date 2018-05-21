@@ -234,6 +234,29 @@
   width: 16.6%;
 }
 
+/** Tablet View **/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .edd_downloads_list .edd_download {
+    width: 100%;
+  }
+  .edd_downloads_list.edd_download_columns_4 .edd_download {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .edd_downloads_list .edd_download {
+    width: 100%;
+  }
+}
+
+/** Mobile View **/
+@media only screen and (max-width: 480px) {
+  .edd_downloads_list .edd_download {
+    width: 100%;
+  }
+}
+
 .edd_download_inner {
   background-color: #fcfcfc;
   padding: 10px 10px 20px;
@@ -408,6 +431,10 @@
 
 /* =Archive Page Styling
 -------------------------------------------------------------- */
+.edd_downloads_list .edd_download_inner {
+  position: relative;
+}
+
 .edd_downloads_list .owp-content-left .edd_download_inner {
   text-align: left;
 }
@@ -452,6 +479,19 @@
 .edd_downloads_list div.edd_price {
   font-size: 18px;
   color: #3fc387;
+}
+
+.edd_downloads_list .edd-variable-download-container .edd_download_purchase_form {
+  background-color: #eeee22;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  padding: 5px 25px 5px;
+}
+
+.edd_downloads_list .edd-variable-download-container .edd_price_options {
+  text-align: left;
 }
 
 /* =Single Page Styling

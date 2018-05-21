@@ -215,6 +215,7 @@ if( ! function_exists( 'oceanwp_edd_loop_classes') ) {
 		$wrap_classes = array();
 
 		$wrap_classes[]    = 'edd_downloads_list';
+		$wrap_classes[]    = 'oceanwp-row';
 		// Columns
 		$desktop_columns   = get_theme_mod( 'ocean_edd_archive_columns', 3 );
 		$wrap_classes[]    = 'desktop-col';
