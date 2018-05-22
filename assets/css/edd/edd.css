@@ -494,6 +494,10 @@
   text-align: left;
 }
 
+.edd_downloads_list input.edd-add-to-cart {
+  display: none;
+}
+
 /* =Single Page Styling
 -------------------------------------------------------------- */
 .single-download .edd_download_image,

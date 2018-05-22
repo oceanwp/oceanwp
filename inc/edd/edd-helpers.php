@@ -194,8 +194,10 @@ if ( ! function_exists( 'oceanwp_edd_terms_list' ) ) {
 if( ! function_exists( 'oceanwp_edd_add_to_cart_link') ) {
 	
 	function oceanwp_edd_add_to_cart_link(){
-		if( edd_has_variable_prices( get_the_ID() ) ) {
-			$output = '<a class="button" href="'. esc_url( get_permalink() ) .'">'. esc_html__( 'View Details', 'oceanwp' ) .'</a>';
+		if( edd_has_variable_prices( get_the_ID() ) && 'button' == get_theme_mod( 'ocean_edd_archive_variable_button', 'button' ) ) {
+			$output  = '<div class="edd-variable-download-button-wrapper">';
+			$output .= '<a class="button" href="'. esc_url( get_permalink() ) .'">'. esc_html__( 'View Details', 'oceanwp' ) .'</a>';
+			$output .= '</div>';
 		} else {
 			$output = edd_get_purchase_link( array('price' => false, 'text' => esc_html__( 'Add to Cart', 'oceanwp') ) );
 		}
