@@ -676,7 +676,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 					'scs-style' 		=> esc_html__( 'Sidebar / Content / Sidebar', 'oceanwp' ),
 					'css-style' 		=> esc_html__( 'Content / Sidebar / Sidebar', 'oceanwp' ),
 				),
-				'active_callback' 		=> 'oceanwp_cac_has_edd_shop_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_edd_archive_bs_layout',
 			) ) );
 
 			/**
@@ -698,7 +698,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_edd_shop_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_edd_archive_bs_layout',
 			) ) );
 
 			/**
@@ -720,7 +720,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_edd_shop_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_edd_archive_bs_layout',
 			) ) );
 
 			/**
@@ -932,7 +932,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 					'scs-style' 		=> esc_html__( 'Sidebar / Content / Sidebar', 'oceanwp' ),
 					'css-style' 		=> esc_html__( 'Content / Sidebar / Sidebar', 'oceanwp' ),
 				),
-				'active_callback' 		=> 'oceanwp_cac_has_edd_edd_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_edd_download_bs_layout',
 			) ) );
 
 			/**
@@ -954,7 +954,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_edd_edd_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_edd_download_bs_layout',
 			) ) );
 
 			/**
@@ -976,7 +976,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_edd_edd_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_edd_download_bs_layout',
 			) ) );
 
 			/**
