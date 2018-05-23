@@ -642,3 +642,23 @@ function oceanwp_cac_has_footer_widgets_and_no_page_id() {
 function oceanwp_cac_has_footer_bottom() {
 	return get_theme_mod( 'ocean_footer_bottom', true );
 }
+
+/*-------------------------------------------------------------------------------*/
+/* [ LifterLMS ]
+/*-------------------------------------------------------------------------------*/
+
+function oceanwp_cac_has_lifterlms_course_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_lifterlms_course_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_lifterlms_lesson_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_lifterlms_lesson_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}

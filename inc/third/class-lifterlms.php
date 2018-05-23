@@ -23,7 +23,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			add_action( 'ocean_main_metaboxes_post_types', array( $this, 'add_metabox' ), 20 );
 			add_action( 'after_setup_theme', array( $this, 'theme_support' ) );
 			add_filter( 'llms_get_theme_default_sidebar', array( $this, 'llms_sidebar' ) );
-			add_filter( 'ocean_post_layout_class', array( $this, 'layouts' ) );
+			// add_filter( 'ocean_post_layout_class', array( $this, 'layouts' ) );
 
 			// Fix for the OceanWP Settings values not saved
 			if ( OCEAN_EXTRA_ACTIVE ) {
@@ -52,6 +52,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 */
 		public static function theme_support() {
 			add_theme_support( 'lifterlms-sidebars' );
+			add_theme_support( 'lifterlms-quizzes' );
 		}
 
 		/**
@@ -66,17 +67,17 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			return $id;
 		}
 
-		/**
-		 * Tweaks the post layouts for LifterLMS Course and Lesson
-		 *
-		 * @since 1.0.0
-		 */
-		public static function layouts( $class ) {
-			if ( is_singular( 'course' ) || is_singular( 'lesson' ) ) {
-				$class = 'full-width';
-			}
-			return $class;
-		}
+		// /**
+		//  * Tweaks the post layouts for LifterLMS Course and Lesson
+		//  *
+		//  * @since 1.0.0
+		//  */
+		// public static function layouts( $class ) {
+		// 	if ( is_singular( 'course' ) || is_singular( 'lesson' ) ) {
+		// 		$class = 'full-width';
+		// 	}
+		// 	return $class;
+		// }
 
 		/**
 		 * Fix for the OceanWP Settings values not saved
