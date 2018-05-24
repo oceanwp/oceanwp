@@ -35,6 +35,8 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			add_action( 'lifterlms_before_main_content', array( $this, 'before_main_content_start' ) );
 			add_action( 'lifterlms_after_main_content', array( $this, 'before_main_content_end' ) );
 
+			add_filter( 'llms_get_quiz_theme_settings', array( $this, 'quiz_settings' ) );
+
 			// Fix for the OceanWP Settings values not saved
 			if ( OCEAN_EXTRA_ACTIVE ) {
 				add_action( 'llms_metabox_after_save_lifterlms-course-options', array( $this, 'butterbean_fix' ) );
@@ -136,6 +138,28 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			</div><!-- #content-wrap -->
 
 			<?php do_action( 'ocean_after_content_wrap' );
+		}
+
+		/**
+		 * Add quiz custom fields
+		 *
+		 * @since 1.1.15
+		 * @return void
+		 */
+		function quiz_settings( $fields ) {
+			$settings['layout'] = array(
+				'id'      => 'ocean_post_layout',
+				'name'    => esc_html__( 'Layout', 'my-text-domain' ),
+				'options' => array(
+					'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/rs.png',
+					'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/ls.png',
+					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
+					'full-screen'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
+					'both-sidebars'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/bs.png',
+				),
+				'type'    => 'image_select',
+			);
+			return $settings;
 		}
 
 		/**
