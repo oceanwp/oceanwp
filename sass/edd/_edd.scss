@@ -504,10 +504,10 @@
 -------------------------------------------------------------- */
 .widget_edd_product_details{
 
-	.edd_download_title{
+	h3{
 		font-size: 24px;
 	    padding: 0 0 20px;
-	    margin: 0 0 10px;
+	    margin: 0;
 	    border-bottom: 1px solid #f1f1f1;
 	    letter-spacing: 0.6px;
 	}
@@ -523,11 +523,14 @@
 	.edd_download_purchase_form {
 		padding-bottom: 20px;
 		border-bottom: 1px solid #eaeaea;
-		margin-top: 20px;
 
 		.edd_purchase_submit_wrapper{
 			padding-top: 20px;
 		}
+	}
+
+	input.edd-add-to-cart{
+		display: none;
 	}
 
 	.edd-meta{

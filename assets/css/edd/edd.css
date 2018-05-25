@@ -507,10 +507,10 @@
 
 /* =Download Details Widget
 -------------------------------------------------------------- */
-.widget_edd_product_details .edd_download_title {
+.widget_edd_product_details h3 {
   font-size: 24px;
   padding: 0 0 20px;
-  margin: 0 0 10px;
+  margin: 0;
   border-bottom: 1px solid #f1f1f1;
   letter-spacing: 0.6px;
 }
@@ -526,11 +526,14 @@
 .widget_edd_product_details .edd_download_purchase_form {
   padding-bottom: 20px;
   border-bottom: 1px solid #eaeaea;
-  margin-top: 20px;
 }
 
 .widget_edd_product_details .edd_download_purchase_form .edd_purchase_submit_wrapper {
   padding-top: 20px;
+}
+
+.widget_edd_product_details input.edd-add-to-cart {
+  display: none;
 }
 
 .widget_edd_product_details .edd-meta {

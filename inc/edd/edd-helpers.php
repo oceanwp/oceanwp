@@ -294,3 +294,34 @@ function oceanwp_edd_template_dir(){
 }
 
 add_filter( 'edd_templates_dir', 'oceanwp_edd_template_dir' );
+
+/**
+ * Remove Price from purchase button in widget
+ *
+ * @since 1.5.15
+ */
+function oceanwp_edd_product_details_purchase_button(){
+	return edd_get_purchase_link( array( 'download_id' => get_the_ID(), 'price' => false ) );
+}
+
+add_filter( 'edd_product_details_widget_purchase_button', 'oceanwp_edd_product_details_purchase_button', 10, 1 );
+
+/**
+ * Add Price in widget
+ *
+ * @since 1.5.15
+ */
+
+function oceanwp_edd_product_details_price(){
+	$output = '<div itemprop="price" class="edd_price">';
+	if ( ! edd_has_variable_prices( get_the_ID() ) ) :
+	$output .= edd_price( get_the_ID() );
+	else:
+	$output .= edd_price_range( get_the_ID() );
+	endif;
+	$output .= '</div>';
+
+	return $output;
+}
+
+add_action( 'edd_product_details_widget_before_purchase_button', 'oceanwp_edd_product_details_price' );
