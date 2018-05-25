@@ -159,7 +159,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				is_tax( 'download_tag' ) ) {
 				$class = get_theme_mod( 'ocean_edd_archive_layout', 'left-sidebar' );
 			} elseif ( is_singular( 'download' ) ) {
-				$class = get_theme_mod( 'ocean_edd_product_layout', 'left-sidebar' );
+				$class = get_theme_mod( 'ocean_edd_download_layout', 'left-sidebar' );
 			}
 			return $class;
 		}
