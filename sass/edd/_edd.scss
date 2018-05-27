@@ -189,6 +189,9 @@
 			}
 		}
 	}
+	.edd_download_inner{
+		background-color: #fcfcfc;
+	}
 }
 
 /* =Downloads Shortcode
@@ -238,7 +241,6 @@
 }
 
 .edd_download_inner {
-	background-color: #fcfcfc;
     padding: 10px 10px 20px;
 }
 .edd_download_columns_2 .edd_download:nth-child(2n+1),

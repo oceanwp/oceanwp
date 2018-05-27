@@ -194,6 +194,10 @@
   border-color: #13aff0;
 }
 
+.edd_downloads_list .edd_download_inner {
+  background-color: #fcfcfc;
+}
+
 /* =Downloads Shortcode
 -------------------------------------------------------------- */
 .edd_downloads_list:after {
@@ -258,7 +262,6 @@
 }
 
 .edd_download_inner {
-  background-color: #fcfcfc;
   padding: 10px 10px 20px;
 }
 
