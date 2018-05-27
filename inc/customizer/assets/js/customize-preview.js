@@ -10504,11 +10504,11 @@
 			});
 		}), api("ocean_edd_checkout_head_bg", function($swipe) {
 			$swipe.bind(function(size) {
-				$('#edd_checkout_cart .edd_cart_header_row th').css("background-color", size);
+				$('#edd_checkout_cart .edd_cart_header_row th, .edd-table tr th').css("background-color", size);
 			});
 		}), api("ocean_edd_checkout_head_titles_color", function($swipe) {
 			$swipe.bind(function(size) {
-				$('#edd_checkout_cart .edd_cart_header_row th').css("color", size);
+				$('#edd_checkout_cart .edd_cart_header_row th, .edd-table tr th').css("color", size);
 			});
 		}), api("ocean_edd_checkout_totals_table_titles_color", function($swipe) {
 			$swipe.bind(function(size) {

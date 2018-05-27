@@ -686,6 +686,24 @@
   }
 }
 
+/* EDD Table **/
+.edd-table th, .edd-table td {
+  text-align: left;
+  border: 1px solid #eee;
+  color: #666;
+  padding: 15px 30px;
+}
+
+.edd-table tr th:first-child,
+.edd-table tr td:first-child {
+  padding: 15px 30px;
+}
+
+.edd-table th {
+  background: #fafafa;
+  font-weight: bold;
+}
+
 /* Cart Contents */
 #edd_checkout_cart th,
 #edd_checkout_cart td {

@@ -2363,12 +2363,12 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 
 			// Add checkout head background
 			if ( ! empty( $checkout_head_bg ) && '#fafafa' != $checkout_head_bg ) {
-				$css .= '#edd_checkout_cart .edd_cart_header_row th{background-color:'. $checkout_head_bg .';}';
+				$css .= '#edd_checkout_cart .edd_cart_header_row th, .edd-table tr th{background-color:'. $checkout_head_bg .';}';
 			}
 
 			// Add checkout head titles color
 			if ( ! empty( $checkout_head_titles_color ) && '#666' != $checkout_head_titles_color ) {
-				$css .= '#edd_checkout_cart .edd_cart_header_row th{color:'. $checkout_head_titles_color .';}';
+				$css .= '#edd_checkout_cart .edd_cart_header_row th, .edd-table tr th{color:'. $checkout_head_titles_color .';}';
 			}
 
 			// Add checkout totals table titles color

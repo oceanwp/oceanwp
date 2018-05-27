@@ -282,6 +282,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				'.show-cart .eddmenucart-cart-icon .eddmenucart-container:after',
 				'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container',
 				'.show-cart .eddmenucart-cart-icon .eddmenucart-container',
+				'.edd_downloads_list .button:hover .edd-loading',
 			), $borders );
 		}
 
@@ -328,7 +329,8 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				'#edd_checkout_form_wrap #edd-discount-code-wrap', 
 				'#edd_checkout_form_wrap #edd_final_total_wrap', 
 				'#edd_checkout_form_wrap #edd_show_discount',
-				'#edd_checkout_form_wrap fieldset'
+				'#edd_checkout_form_wrap fieldset',
+				'.edd-table th, .edd-table td',
 			), $elements );
 		}
 
