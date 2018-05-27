@@ -273,3 +273,55 @@ Easy Digital Downloads Cart
     	height: 10px;
     }
 }
+/** Mobile Fixes **/
+#mobile-fullscreen,
+#mobile-dropdown{
+	.owp-mini-cart{
+		display: none;
+	}
+}
+
+#mobile-dropdown{
+	.edd-menu-icon{
+		text-align: left;
+		display: block;
+	}
+}
+
+#sidr{
+	.sidr-class-edd-cart-number-of-items{
+		display: none;
+	}
+
+	.sidr-class-eddmenucart-container {
+		position: relative;
+	    display: inline-block;
+	    min-width: 2em;
+	    height: 2em;
+	    font-size: 1em;
+	    line-height: 1.7em;
+	    font-weight: bold;
+	    border: 2px solid $color-2;
+	    color: $color-2;
+	    padding: 0 3px;
+	    vertical-align: middle;
+	    text-align: center;
+		@include transition( all .2s ease-in-out );
+
+	    &:after {
+		    content: '';
+		    position: absolute;
+		    bottom: 100%;
+		    left: 50%;
+		    width: 14px;
+		    height: 8px;
+		    margin-left: -7px;
+		    margin-bottom: 0;
+		    border: 2px solid $color-2;
+		    border-top-left-radius: 100px;
+		    border-top-right-radius: 100px;
+		    border-bottom: 0;
+			@include transition( all .2s ease-in-out );
+	    }
+	}
+}
