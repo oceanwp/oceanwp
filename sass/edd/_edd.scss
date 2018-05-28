@@ -198,12 +198,8 @@
 	display: table;
 	clear: both;
 }
-
 .edd_download {
 	float: left;
-	margin: 0 0 20px;
-	padding: 0 10px;
-	text-align: center;
 }
 .edd_download_columns_1 .edd_download { width: 100%; }
 .edd_download_columns_2 .edd_download { width: 50%; }
@@ -230,60 +226,6 @@
 }
 #edd_download_pagination {
 	clear: both;
-	float: right;
-
-	.page-numbers{
-		position: relative;
-		display: inline-block;
-		min-width: 38px;
-		min-width: 38px;
-		line-height: 38px;
-		margin: 0 8px 0 0;
-		text-align: center;
-		color: #555;
-		border: 1px solid #e9e9e9;
-		font-size: 18px;
-		cursor: pointer;
-		white-space: nowrap;
-
-		&:hover{
-			background-color: #f8f8f8;
-		}
-
-		&.next,
-		&.prev{
-			/* Hide text from view */
-			text-indent: -9999px;
-
-			&:after{
-				display: inline-block;
-				font: normal normal normal 14px/1 FontAwesome;
-				text-rendering: auto;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				line-height: 38px;
-				text-indent: 0;
-				text-align: center;
-			}
-		}
-
-		&.next:after{
-			content: "\f105";
-		}
-
-		&.prev:after{
-			content: "\f104";
-		}
-
-		&.current{
-			background-color: #f8f8f8;
-		}
-	}
 }
 
 /* =Grid
@@ -403,6 +345,10 @@
 	}
 	.owp-content-right .edd_download_inner {
 		text-align: right;
+	}
+
+	> div, form{
+		margin-bottom: 12px;
 	}
 
 	.edd_download_image{

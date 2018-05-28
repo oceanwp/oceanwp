@@ -97,6 +97,9 @@ input, select { margin: 0; padding: 5px 10px; }
 
 .customize-control.has-switchers > .control-wrap:not(.active) { display: none; width: 100%; }
 
+/* Height Custom CSS textarea */
+.customize-control-code_editor .CodeMirror { height: calc(100vh - 185px); }
+
 /* RTL */
 body.rtl .customize-control-checkbox input[type=checkbox] { margin: 0 0 0 6px; }
 body.rtl .customize-control-checkbox input[type="checkbox"]:checked:before,

@@ -72,7 +72,8 @@ Woo Responsive
 	.woocommerce {
 		ul {
 			&.products.list li.product {
-				.woo-entry-image {
+				.woo-entry-image,
+				.product-entry-slider-wrap {
 					float: none;
 					width: 100%;
 					margin: 0 0 20px;

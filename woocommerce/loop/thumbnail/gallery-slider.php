@@ -43,52 +43,60 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 // If there are attachments display slider
 if ( $attachment_ids ) : ?>
 
-	<div class="product-entry-slider woo-entry-image clr">
+	<div class="product-entry-slider-wrap">
 
-		<?php do_action( 'ocean_before_product_entry_image' ); ?>
+		<?php do_action( 'ocean_before_product_entry_slider' ); ?>
 
-		<?php
-		// Define counter variable
-		$count=0;
+		<div class="product-entry-slider woo-entry-image clr">
 
-		if ( has_post_thumbnail() ) : ?>
+			<?php do_action( 'ocean_before_product_entry_image' ); ?>
 
-			<div class="oceanwp-slider-slide">
-				<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
+			<?php
+			// Define counter variable
+			$count=0;
+
+			if ( has_post_thumbnail() ) : ?>
+
+				<div class="oceanwp-slider-slide">
+					<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
+						<?php
+						echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', $img_args ); ?>
+				    </a>
+				</div>
+
+			<?php
+			endif;
+
+			if ( $attachments_count > 0 ) :
+
+				// Loop through images
+				foreach ( $attachment_ids as $attachment_id ) :
+
+					// Add to counter
+					$count++;
+
+					// Only display the first 5 images
+					if ( $count < 5 ) : ?>
+
+						<div class="oceanwp-slider-slide">
+							<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
+								<?php
+								echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', $img_args ); ?>
+						    </a>
+						</div>
+
 					<?php
-					echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', $img_args ); ?>
-			    </a>
-			</div>
+					endif;
 
-		<?php
-		endif;
+				endforeach;
 
-		if ( $attachments_count > 0 ) :
+			endif; ?>
 
-			// Loop through images
-			foreach ( $attachment_ids as $attachment_id ) :
+			<?php do_action( 'ocean_after_product_entry_image' ); ?>
 
-				// Add to counter
-				$count++;
+		</div>
 
-				// Only display the first 5 images
-				if ( $count < 5 ) : ?>
-
-					<div class="oceanwp-slider-slide">
-						<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
-							<?php
-							echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', $img_args ); ?>
-					    </a>
-					</div>
-
-				<?php
-				endif;
-
-			endforeach;
-
-		endif; ?>
-
-		<?php do_action( 'ocean_after_product_entry_image' ); ?>
+		<?php do_action( 'ocean_after_product_entry_slider' ); ?>
 
 	</div>
 

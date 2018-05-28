@@ -194,6 +194,11 @@ class OCEANWP_Theme_Class {
 			require_once ( $dir .'woocommerce/woocommerce-config.php' );
 		}
 
+		// Easy Digital Downloads
+		if ( OCEANWP_EDD_ACTIVE ) {
+			require_once ( $dir .'edd/edd-config.php' );
+		}
+
 	}
 
 	/**
@@ -534,11 +539,11 @@ class OCEANWP_Theme_Class {
 	 */
 	public static function register_sidebars() {
 
-		// Right Sidebar
+		// Default Sidebar
 		register_sidebar( array(
-			'name'			=> esc_html__( 'Right Sidebar', 'oceanwp' ),
+			'name'			=> esc_html__( 'Default Sidebar', 'oceanwp' ),
 			'id'			=> 'sidebar',
-			'description'	=> esc_html__( 'Widgets in this area are used in the right sidebar region.', 'oceanwp' ),
+			'description'	=> esc_html__( 'Widgets in this area will be displayed in the left or right sidebar area if you choose the Left or Right Sidebar layout.', 'oceanwp' ),
 			'before_widget'	=> '<div id="%1$s" class="sidebar-box %2$s clr">',
 			'after_widget'	=> '</div>',
 			'before_title'	=> '<h4 class="widget-title">',

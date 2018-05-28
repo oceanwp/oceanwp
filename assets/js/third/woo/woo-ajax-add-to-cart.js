@@ -72,6 +72,12 @@ jQuery( function( $ ) {
 				success:function(results) {
 					$( document.body ).trigger( 'wc_fragment_refresh' );
 					$( document.body ).trigger( 'added_to_cart', [ results.fragments, results.cart_hash, button ] );
+
+					// Redirect to cart option
+					if ( oceanwpLocalize.cart_redirect_after_add === 'yes' ) {
+						window.location = oceanwpLocalize.cart_url;
+						return;
+					}
 				}
 			});
 		} else {
@@ -87,6 +93,12 @@ jQuery( function( $ ) {
 				success:function(results) {
 					$( document.body ).trigger( 'wc_fragment_refresh' );
 					$( document.body ).trigger( 'added_to_cart', [ results.fragments, results.cart_hash, button ] );
+
+					// Redirect to cart option
+					if ( wc_add_to_cart_params.cart_redirect_after_add === 'yes' ) {
+						window.location = wc_add_to_cart_params.cart_url;
+						return;
+					}
 				}
 			});
 		}
