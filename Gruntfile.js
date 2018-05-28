@@ -29,6 +29,8 @@ module.exports = function ( grunt ) {
 					'assets/js/third/woo/woo-thumbnails.min.js'						: 'assets/js/third/woo/woo-thumbnails.js',
 					'assets/js/third/woo/woo-floating-bar.min.js'					: 'assets/js/third/woo/woo-floating-bar.js',
 					'assets/js/third/woo/woo-cat-widget.min.js'						: 'assets/js/third/woo/woo-cat-widget.js',
+					'assets/js/third/edd/edd-display-cart.min.js'					: 'assets/js/third/edd/edd-display-cart.js',
+					'assets/js/third/edd/edd-cart-ajax.min.js'						: 'assets/js/third/edd/edd-cart-ajax.js',
 
 					'inc/customizer/assets/js/customize-preview.min.js'				: 'inc/customizer/assets/js/customize-preview.js',
 					'inc/customizer/assets/js/typography-customize-preview.min.js'	: 'inc/customizer/assets/js/typography-customize-preview.js',
@@ -110,6 +112,7 @@ module.exports = function ( grunt ) {
 					'assets/css/woo/woo-quick-view.css': 'sass/woo-quick-view.scss',
 					'assets/css/woo/woo-multistep-checkout.css': 'sass/woo-multistep-checkout.scss',
 					'assets/css/woo/wishlist.css': 'sass/wishlist.scss',
+					'assets/css/edd/edd.css': 'sass/edd.scss',
 					'assets/css/style.css': 'sass/stylesheet.scss',
                 }
             },
@@ -125,6 +128,7 @@ module.exports = function ( grunt ) {
 					'assets/css/woo/woo-quick-view.min.css': 'sass/woo-quick-view.scss',
 					'assets/css/woo/woo-multistep-checkout.min.css': 'sass/woo-multistep-checkout.scss',
 					'assets/css/woo/wishlist.min.css': 'sass/wishlist.scss',
+					'assets/css/edd/edd.min.css': 'sass/edd.scss',
 					'assets/css/style.min.css': 'sass/stylesheet.scss',
                 }
             }

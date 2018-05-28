@@ -9605,8 +9605,6 @@
 			$swipe.bind(function(size) {
 				$(".woocommerce-checkout #payment div.payment_box").css("color", size);
 			});
-<<<<<<< HEAD
-=======
 		}), api("ocean_edd_top_padding", function($swipe) {
 			$swipe.bind(function(to) {
 				var $child = $(".customizer-ocean_edd_top_padding");
@@ -10783,7 +10781,6 @@
 					$child.remove();
 				}
 			});
->>>>>>> 7f6b396de94cb0c15e3965597418d2762e6f78a1
 		});
 
 } )( jQuery );
