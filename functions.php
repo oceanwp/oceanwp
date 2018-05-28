@@ -194,6 +194,11 @@ class OCEANWP_Theme_Class {
 			require_once ( $dir .'woocommerce/woocommerce-config.php' );
 		}
 
+		// Easy Digital Downloads
+		if ( OCEANWP_EDD_ACTIVE ) {
+			require_once ( $dir .'edd/edd-config.php' );
+		}
+
 	}
 
 	/**

@@ -159,7 +159,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				is_tax( 'download_tag' ) ) {
 				$class = get_theme_mod( 'ocean_edd_archive_layout', 'left-sidebar' );
 			} elseif ( is_singular( 'download' ) ) {
-				$class = get_theme_mod( 'ocean_edd_product_layout', 'left-sidebar' );
+				$class = get_theme_mod( 'ocean_edd_download_layout', 'left-sidebar' );
 			}
 			return $class;
 		}
@@ -263,7 +263,8 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				'.widget_edd_categories_tags_widget li a:hover',
 				'.widget_edd_cart_widget li a.edd-remove-from-cart:hover',
 				'.current-shop-items-dropdown .widget_edd_cart_widget li a.edd-remove-from-cart:hover',
-				'edd_price_range_sep',
+				'.edd_price_range_sep',
+				'.widget_edd_product_details .edd_price'
 			), $texts );
 		}
 
@@ -281,6 +282,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				'.show-cart .eddmenucart-cart-icon .eddmenucart-container:after',
 				'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container',
 				'.show-cart .eddmenucart-cart-icon .eddmenucart-container',
+				'.edd_downloads_list .button:hover .edd-loading',
 			), $borders );
 		}
 
@@ -327,7 +329,8 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				'#edd_checkout_form_wrap #edd-discount-code-wrap', 
 				'#edd_checkout_form_wrap #edd_final_total_wrap', 
 				'#edd_checkout_form_wrap #edd_show_discount',
-				'#edd_checkout_form_wrap fieldset'
+				'#edd_checkout_form_wrap fieldset',
+				'.edd-table th, .edd-table td',
 			), $elements );
 		}
 
