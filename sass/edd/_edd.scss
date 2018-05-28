@@ -189,6 +189,9 @@
 			}
 		}
 	}
+	.edd_download_inner{
+		background-color: #fcfcfc;
+	}
 }
 
 /* =Downloads Shortcode
@@ -201,6 +204,7 @@
 .edd_download {
 	float: left;
 }
+
 .edd_download_columns_1 .edd_download { width: 100%; }
 .edd_download_columns_2 .edd_download { width: 50%; }
 .edd_download_columns_0 .edd_download,
@@ -209,8 +213,30 @@
 .edd_download_columns_5 .edd_download { width: 20%; }
 .edd_download_columns_6 .edd_download { width: 16.6%; }
 
+/** Tablet View **/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.edd_downloads_list .edd_download {
+		width: 100%;
+	}
+	.edd_downloads_list.edd_download_columns_4 .edd_download {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.edd_downloads_list .edd_download {
+		width: 100%;
+	}
+}
+
+/** Mobile View **/
+@media only screen and (max-width: 480px){
+	.edd_downloads_list .edd_download {
+		width: 100%;
+	}
+}
+
 .edd_download_inner {
-	background-color: #fcfcfc;
     padding: 10px 10px 20px;
 }
 .edd_download_columns_2 .edd_download:nth-child(2n+1),
@@ -337,6 +363,11 @@
 /* =Archive Page Styling
 -------------------------------------------------------------- */
 .edd_downloads_list{
+
+	.edd_download_inner{
+		position: relative;
+	}
+
 	.owp-content-left .edd_download_inner {
 		text-align: left;
 	}
@@ -383,6 +414,24 @@
 		font-size: 18px;
 		color: #3fc387;
 	}
+
+	.edd-variable-download-container{
+		.edd_download_purchase_form{
+			background-color: #eeee22;
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 70px;
+			padding: 5px 25px 5px;
+		}
+		.edd_price_options {
+			text-align: left;
+		}
+	}
+
+	input.edd-add-to-cart{
+		display: none;
+	}
 }
 
 /* =Single Page Styling
@@ -403,10 +452,10 @@
 -------------------------------------------------------------- */
 .widget_edd_product_details{
 
-	.edd_download_title{
+	h3{
 		font-size: 24px;
 	    padding: 0 0 20px;
-	    margin: 0 0 10px;
+	    margin: 0;
 	    border-bottom: 1px solid #f1f1f1;
 	    letter-spacing: 0.6px;
 	}
@@ -422,11 +471,14 @@
 	.edd_download_purchase_form {
 		padding-bottom: 20px;
 		border-bottom: 1px solid #eaeaea;
-		margin-top: 20px;
 
 		.edd_purchase_submit_wrapper{
 			padding-top: 20px;
 		}
+	}
+
+	input.edd-add-to-cart{
+		display: none;
 	}
 
 	.edd-meta{
@@ -567,6 +619,26 @@
 	.edd-discount-code-field-wrap .edd-apply-discount {
 	    width: auto;
 	    margin-left: 10px;
+	}
+}
+
+/* EDD Table **/
+.edd-table{
+	th, td{
+		text-align: left;
+	    border: 1px solid #eee;
+	    color: #666;
+	    padding: 15px 30px;
+	}
+
+	tr th:first-child,
+	tr td:first-child {
+		padding: 15px 30px;
+	}
+
+	th{
+		background: #fafafa;
+		font-weight: bold;
 	}
 }
 

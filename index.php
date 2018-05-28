@@ -33,8 +33,33 @@ get_header(); ?>
 				if ( have_posts() ) :
 
 					// Elementor `archive` location
-					if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'archive' ) ) { ?>
+					if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'archive' ) ) {
 
+						// Add Support For EDD Archive Pages
+						if( is_post_type_archive( 'download' ) || is_tax( array( 'download_category', 'download_tag' ) ) ) { 
+
+							do_action( 'ocean_before_archive_download' );
+							?>
+							<div class="oceanwp-row <?php echo esc_attr( oceanwp_edd_loop_classes() ); ?>">
+							
+							<?php
+							// Archive Post Count for clearing float
+							$oceanwp_count = 0;
+							while ( have_posts() ) : the_post();
+								$oceanwp_count++;
+								get_template_part( 'partials/edd/archive' );
+								if ( oceanwp_edd_entry_columns() == $oceanwp_count ) {
+									$oceanwp_count=0;
+								}
+							endwhile;
+							?>
+							</div>
+							
+							<?php
+							do_action( 'ocean_after_archive_download' );
+						} 
+						else {
+						?>
 						<div id="blog-entries" class="<?php oceanwp_blog_wrap_classes(); ?>">
 
 							<?php
@@ -66,7 +91,7 @@ get_header(); ?>
 						<?php
 						// Display post pagination
 						oceanwp_blog_pagination();
-
+						}
 					} ?>
 
 				<?php
