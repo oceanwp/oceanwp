@@ -1,6 +1,6 @@
 /*!
  * Project   : OceanWP WordPress Theme
- * Purpose   : Easy Digital Downloads Tweaks
+ * Purpose   : EDD Tweaks
  * Author    : Nick
  */
 /* =Ajax Add To Cart Button
@@ -208,9 +208,6 @@
 
 .edd_download {
   float: left;
-  margin: 0 0 20px;
-  padding: 0 10px;
-  text-align: center;
 }
 
 .edd_download_columns_1 .edd_download {
@@ -279,59 +276,6 @@
 
 #edd_download_pagination {
   clear: both;
-  float: right;
-}
-
-#edd_download_pagination .page-numbers {
-  position: relative;
-  display: inline-block;
-  min-width: 38px;
-  min-width: 38px;
-  line-height: 38px;
-  margin: 0 8px 0 0;
-  text-align: center;
-  color: #555;
-  border: 1px solid #e9e9e9;
-  font-size: 18px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-#edd_download_pagination .page-numbers:hover {
-  background-color: #f8f8f8;
-}
-
-#edd_download_pagination .page-numbers.next, #edd_download_pagination .page-numbers.prev {
-  /* Hide text from view */
-  text-indent: -9999px;
-}
-
-#edd_download_pagination .page-numbers.next:after, #edd_download_pagination .page-numbers.prev:after {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  line-height: 38px;
-  text-indent: 0;
-  text-align: center;
-}
-
-#edd_download_pagination .page-numbers.next:after {
-  content: "\f105";
-}
-
-#edd_download_pagination .page-numbers.prev:after {
-  content: "\f104";
-}
-
-#edd_download_pagination .page-numbers.current {
-  background-color: #f8f8f8;
 }
 
 /* =Grid
@@ -448,6 +392,10 @@
 
 .edd_downloads_list .owp-content-right .edd_download_inner {
   text-align: right;
+}
+
+.edd_downloads_list > div, .edd_downloads_list form {
+  margin-bottom: 12px;
 }
 
 .edd_downloads_list .edd_download_image {
@@ -1312,22 +1260,14 @@ Easy Digital Downloads Cart
 
 .current-shop-items-dropdown .widget_edd_cart_widget li {
   padding: 7px 10px;
-  border-bottom-width: 1px;
-  border-style: solid;
-  border-color: #e6e6e6;
   min-height: 100%;
 }
 
-.current-shop-items-dropdown .widget_edd_cart_widget li.cart_item.empty {
-  border: none;
-}
-
-.current-shop-items-dropdown .widget_edd_cart_widget li:first-child {
-  border-top: none;
-}
-
-.current-shop-items-dropdown .widget_edd_cart_widget li:last-child {
-  border-bottom: none;
+.current-shop-items-dropdown .widget_edd_cart_widget li.edd_total {
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #e6e6e6;
+  margin: 10px 0;
 }
 
 .current-shop-items-dropdown .widget_edd_cart_widget li:first-child, .current-shop-items-dropdown .widget_edd_cart_widget li:last-child {
