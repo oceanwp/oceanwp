@@ -52,21 +52,13 @@ Easy Digital Downloads Cart
 
 		li {
 			padding: 7px 10px;
-			border-bottom-width: 1px;
-			border-style: solid;
-			border-color: #e6e6e6;
 			min-height: 100%;
 
-			&.cart_item.empty{
-				border: none;
-			}
-
-			&:first-child{
-				border-top: none;
-			}
-
-			&:last-child{
-				border-bottom: none;
+			&.edd_total {
+				border-width: 1px 0;
+			    border-style: solid;
+			    border-color: #e6e6e6;
+			    margin: 10px 0;
 			}
 
 			&:first-child,
@@ -86,7 +78,7 @@ Easy Digital Downloads Cart
 				font-weight: normal;
 			}
 
-			.edd-cart-item-separator{
+			.edd-cart-item-separator {
 				display: none;
 			}
 

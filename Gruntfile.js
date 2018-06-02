@@ -29,7 +29,6 @@ module.exports = function ( grunt ) {
 					'assets/js/third/woo/woo-thumbnails.min.js'						: 'assets/js/third/woo/woo-thumbnails.js',
 					'assets/js/third/woo/woo-floating-bar.min.js'					: 'assets/js/third/woo/woo-floating-bar.js',
 					'assets/js/third/woo/woo-cat-widget.min.js'						: 'assets/js/third/woo/woo-cat-widget.js',
-
 					'assets/js/third/edd/edd-display-cart.min.js'					: 'assets/js/third/edd/edd-display-cart.js',
 					'assets/js/third/edd/edd-cart-ajax.min.js'						: 'assets/js/third/edd/edd-cart-ajax.js',
 
@@ -50,7 +49,8 @@ module.exports = function ( grunt ) {
 					'inc/customizer/assets/min/js/text.min.js'						: 'inc/customizer/controls/text/text.js',
 					'inc/customizer/assets/min/js/textarea.min.js'					: 'inc/customizer/controls/textarea/textarea.js',
 					'inc/customizer/assets/min/js/typo.min.js'						: 'inc/customizer/controls/typo/typo.js',
-					'inc/customizer/assets/min/js/typography.min.js'				: 'inc/customizer/controls/typography/typography.js'
+					'inc/customizer/assets/min/js/typography.min.js'				: 'inc/customizer/controls/typography/typography.js',
+					'inc/customizer/assets/min/js/upsell.min.js'					: 'inc/customizer/controls/upsell/upsell.js'
 				}
 			},
 			prod: {
@@ -93,7 +93,8 @@ module.exports = function ( grunt ) {
 					'inc/customizer/assets/min/css/sortable.min.css'				: 'inc/customizer/controls/sortable/sortable.css',
 					'inc/customizer/assets/min/css/textarea.min.css'				: 'inc/customizer/controls/textarea/textarea.css',
 					'inc/customizer/assets/min/css/typo.min.css'					: 'inc/customizer/controls/typo/typo.css',
-					'inc/customizer/assets/min/css/typography.min.css'				: 'inc/customizer/controls/typography/typography.css'
+					'inc/customizer/assets/min/css/typography.min.css'				: 'inc/customizer/controls/typography/typography.css',
+					'inc/customizer/assets/min/css/upsell.min.css'					: 'inc/customizer/controls/upsell/upsell.css'
 				}
 			}
 		},
@@ -107,11 +108,11 @@ module.exports = function ( grunt ) {
                 },
                 files: {
 					'assets/css/woo/woocommerce.css': 'sass/woocommerce.scss',
-					'assets/css/edd/edd.css': 'sass/edd.scss',
 					'assets/css/woo/woo-floating-bar.css': 'sass/woo-floating-bar.scss',
 					'assets/css/woo/woo-quick-view.css': 'sass/woo-quick-view.scss',
 					'assets/css/woo/woo-multistep-checkout.css': 'sass/woo-multistep-checkout.scss',
 					'assets/css/woo/wishlist.css': 'sass/wishlist.scss',
+					'assets/css/edd/edd.css': 'sass/edd.scss',
 					'assets/css/style.css': 'sass/stylesheet.scss',
                 }
             },
@@ -123,11 +124,11 @@ module.exports = function ( grunt ) {
                 files: {
 					'style.css': 'sass/style.scss',
 					'assets/css/woo/woocommerce.min.css': 'sass/woocommerce.scss',
-					'assets/css/edd/edd.min.css': 'sass/edd.scss',
 					'assets/css/woo/woo-floating-bar.min.css': 'sass/woo-floating-bar.scss',
 					'assets/css/woo/woo-quick-view.min.css': 'sass/woo-quick-view.scss',
 					'assets/css/woo/woo-multistep-checkout.min.css': 'sass/woo-multistep-checkout.scss',
 					'assets/css/woo/wishlist.min.css': 'sass/wishlist.scss',
+					'assets/css/edd/edd.min.css': 'sass/edd.scss',
 					'assets/css/style.min.css': 'sass/stylesheet.scss',
                 }
             }

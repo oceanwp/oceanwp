@@ -31,10 +31,10 @@ get_header(); ?>
 					// Start loop
 					while ( have_posts() ) : the_post();
 
-							// Easy Digital Downloads 
 							if( is_singular( 'download') ){
 								get_template_part( 'partials/edd/single' );
 							}
+
 							// Single Page
 							elseif ( is_singular( 'page' ) ) {
 

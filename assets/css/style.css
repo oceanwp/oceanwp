@@ -2026,7 +2026,6 @@ form select[multiple] {
 }
 
 form label {
-  display: block;
   margin-bottom: 3px;
 }
 

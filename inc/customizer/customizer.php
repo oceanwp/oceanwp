@@ -78,6 +78,11 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Typo_Control' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Typography_Control' 		);
 
+			if ( true != apply_filters( 'oceanwp_licence_tab_enable', false ) ) {
+				require_once( $dir . 'upsell/class-control-upsell.php' 								);
+				$wp_customize->register_section_type( 'OceanWP_Customizer_Upsell_Section_Control' 	);
+			}
+
 		}
 
 		/**
@@ -103,6 +108,34 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 
 			// Move custom logo setting
 			$wp_customize->get_control( 'custom_logo' )->section 		= 'ocean_header_logo';
+
+			// Add our upsell section
+			if ( true != apply_filters( 'oceanwp_licence_tab_enable', false ) ) {
+
+				// Get link
+				$url = 'https://oceanwp.org/core-extensions-bundle/';
+
+				// If affiliate ref
+				$ref_url = '';
+				$aff_ref = apply_filters( 'ocean_affiliate_ref', $ref_url );
+
+				// Add & is has referal link
+				if ( $aff_ref ) {
+					$if_ref = '&';
+				} else {
+					$if_ref = '?';
+				}
+
+				// Add source
+				$utm = $if_ref . 'utm_source=customizer&utm_campaign=bundle&utm_medium=wp-dash';
+
+				$wp_customize->add_section( new OceanWP_Customizer_Upsell_Section_Control( $wp_customize, 'oceanwp_upsell_section', array(
+					'title'	   				=> esc_html__( 'Premium Addons Available', 'oceanwp' ),
+					'url' 					=> $url . $aff_ref . $utm,
+					'priority' 				=> 0,
+				) ) );
+
+			}
 
 		}
 
@@ -153,7 +186,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 				require_once( $dir .'woocommerce.php' );
 			}
 
-			// If EDD is activated
+			// Easy Digital Downloads Settings
 			if ( OCEANWP_EDD_ACTIVE ) {
 				require_once( $dir .'edd.php' );
 			}
