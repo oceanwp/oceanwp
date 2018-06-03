@@ -3,8 +3,7 @@
  * Purpose   : EDD Tweaks
  * Author    : Nick
  */
-/* =Ajax Add To Cart Button
--------------------------------------------------------------- */
+/* Ajax Add To Cart Button */
 .edd_purchase_submit_wrapper {
   position: relative;
 }
@@ -198,8 +197,7 @@
   background-color: #fcfcfc;
 }
 
-/* =Downloads Shortcode
--------------------------------------------------------------- */
+/* Downloads Shortcode */
 .edd_downloads_list:after {
   content: "";
   display: table;
@@ -334,8 +332,7 @@
   background-color: #f8f8f8;
 }
 
-/* =Grid
--------------------------------------------------------------- */
+/* Grid */
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .edd_downloads_list.oceanwp-row.tablet-col .col {
     clear: none;
@@ -432,8 +429,7 @@
   }
 }
 
-/* =Archive Page Styling
--------------------------------------------------------------- */
+/* Archive Page Styling */
 .edd_downloads_list .edd_download_inner {
   position: relative;
 }
@@ -501,15 +497,13 @@
   display: none;
 }
 
-/* =Single Page Styling
--------------------------------------------------------------- */
+/* Single Page Styling */
 .single-download .edd_download_image,
 .single-download .edd_download_summary {
   margin-bottom: 10px;
 }
 
-/* =Download Details Widget
--------------------------------------------------------------- */
+/* Download Details Widget */
 .widget_edd_product_details h3 {
   font-size: 24px;
   padding: 0 0 20px;
@@ -557,8 +551,7 @@
   font-weight: 400;
 }
 
-/* =Cart Widget
--------------------------------------------------------------- */
+/* Cart Widget */
 .content-area .edd-cart-number-of-items,
 .widget-area .edd-cart-number-of-items {
   padding-left: 15px;
@@ -651,8 +644,7 @@
   padding: 10px 0 10px;
 }
 
-/* =Checkout Form
--------------------------------------------------------------- */
+/* Checkout Form */
 .edd_clearfix:after {
   display: block;
   visibility: hidden;
@@ -1056,8 +1048,7 @@
   }
 }
 
-/* =Misc
--------------------------------------------------------------- */
+/* Misc */
 .edd-hide-on-empty.cart-empty {
   display: none;
 }
@@ -1083,8 +1074,7 @@
   margin-left: 0;
 }
 
-/* =EDD Product Navigation
--------------------------------------------------------------- */
+/* EDD Product Navigation */
 @media (min-width: 1080px) {
   .owp-product-nav-wrap {
     position: absolute;
@@ -1160,9 +1150,7 @@
   transform: translateX(-50%);
 }
 
-/** Old Error Styles */
-/* =Error styles
--------------------------------------------------------------- */
+/* Error styles */
 .edd_errors:not(.edd-alert) {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -1181,8 +1169,7 @@ p.edd_error {
   margin: 0 !important;
 }
 
-/* =Success Message styles
--------------------------------------------------------------- */
+/* Success Message styles */
 .edd_success:not(.edd-alert) {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;

@@ -1,5 +1,4 @@
-/* =Ajax Add To Cart Button
--------------------------------------------------------------- */
+/* Ajax Add To Cart Button */
 .edd_purchase_submit_wrapper {
 	position: relative;
 
@@ -194,8 +193,7 @@
 	}
 }
 
-/* =Downloads Shortcode
--------------------------------------------------------------- */
+/* Downloads Shortcode */
 .edd_downloads_list:after {
 	content: "";
 	display: table;
@@ -312,8 +310,7 @@
 	}
 }
 
-/* =Grid
--------------------------------------------------------------- */
+/* Grid */
 
 @media only screen and(min-width: 481px) and(max-width: 768px) {
 	.edd_downloads_list.oceanwp-row {
@@ -418,8 +415,7 @@
 	}
 }
 
-/* =Archive Page Styling
--------------------------------------------------------------- */
+/* Archive Page Styling */
 .edd_downloads_list{
 
 	.edd_download_inner{
@@ -488,8 +484,7 @@
 	}
 }
 
-/* =Single Page Styling
--------------------------------------------------------------- */
+/* Single Page Styling */
 .single-download {
 
 	.edd_download_image,
@@ -502,8 +497,7 @@
 	}
 }
 
-/* =Download Details Widget
--------------------------------------------------------------- */
+/* Download Details Widget */
 .widget_edd_product_details{
 
 	h3{
@@ -553,8 +547,7 @@
 	}
 }
 
-/* =Cart Widget
--------------------------------------------------------------- */
+/* Cart Widget */
 .content-area,
 .widget-area{
 
@@ -640,8 +633,7 @@
 	}
 }
 
-/* =Checkout Form
--------------------------------------------------------------- */
+/* Checkout Form */
 
 .edd_clearfix:after {
 	display: block;
@@ -990,8 +982,7 @@
 	}
 }
 
-/* =Misc
--------------------------------------------------------------- */
+/* Misc */
 .edd-hide-on-empty.cart-empty {
 	display: none;
 }
@@ -1016,8 +1007,7 @@
 	margin-left: 0;
 }
 
-/* =EDD Product Navigation
--------------------------------------------------------------- */
+/* EDD Product Navigation */
 @media (min-width: 1080px) {
 	.owp-product-nav-wrap {
 	    position: absolute;
@@ -1084,9 +1074,7 @@
     }
 }
 
-/** Old Error Styles */
-/* =Error styles
--------------------------------------------------------------- */
+/* Error styles */
 .edd_errors:not(.edd-alert) {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -1104,8 +1092,7 @@ p.edd_error {
 }
 
 
-/* =Success Message styles
--------------------------------------------------------------- */
+/* Success Message styles */
 .edd_success:not(.edd-alert) {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
