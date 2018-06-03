@@ -37,10 +37,19 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 
 			add_filter( 'llms_get_quiz_theme_settings', array( $this, 'quiz_settings' ) );
 
+			add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ) );
+
 			// Fix for the OceanWP Settings values not saved
 			if ( OCEAN_EXTRA_ACTIVE ) {
 				add_action( 'llms_metabox_after_save_lifterlms-course-options', array( $this, 'butterbean_fix' ) );
 			}
+
+			// Define accents
+			add_filter( 'ocean_primary_texts', array( $this, 'primary_texts' ) );
+			add_filter( 'ocean_primary_borders', array( $this, 'primary_borders' ) );
+			add_filter( 'ocean_primary_backgrounds', array( $this, 'primary_backgrounds' ) );
+			add_filter( 'ocean_hover_primary_backgrounds', array( $this, 'hover_primary_backgrounds' ) );
+			add_filter( 'ocean_border_color_elements', array( $this, 'border_color_elements' ) );
 
 			// Add new typography settings
 			add_filter( 'ocean_typography_settings', array( $this, 'typography_settings' ) );
@@ -93,6 +102,17 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		// 	}
 		// 	return $class;
 		// }
+
+
+		/**
+		 * Add Custom LLMS scripts.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function add_custom_scripts() {
+
+			wp_enqueue_style( 'oceanwp-llms', OCEANWP_CSS_DIR_URI .'llms/llms.min.css' );
+		}
 
 		/**
 		 * Add start of wrapper
@@ -210,6 +230,85 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			);
 
 			return $settings;
+		}
+
+		/**
+		 * Adds color accents for LLMS styles.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function primary_texts( $texts ) {
+			return array_merge( array(
+				'.llms-course-navigation .llms-pre-text',
+				'.llms-loop-item-content .llms-loop-title:hover',
+				'.llms-lesson-preview.is-free .llms-lesson-complete', 
+				'.llms-lesson-preview.is-complete .llms-lesson-complete',
+			), $texts );
+		}
+
+		/**
+		 * Adds border accents for LLMS styles.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function primary_borders( $borders ) {
+			return array_merge( array(
+				'.llms-instructor-info .llms-instructors .llms-author' => array( 'top' ),
+				'.llms-notification' => array( 'top' ),
+				'.llms-instructor-info .llms-instructors .llms-author .avatar',
+			), $borders );
+		}
+
+		/**
+		 * Adds background accents for LLMS styles.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function primary_backgrounds( $backgrounds ) {
+			return array_merge( array(
+				'.llms-button-action',
+				'.llms-button-secondary',
+				'.llms-field-button',
+				'.llms-button-primary',
+				'.llms-progress .progress-bar-complete',
+				'.llms-instructor-info .llms-instructors .llms-author .avatar',
+				'.llms-syllabus-wrapper .llms-section-title',
+				'.llms-access-plan-title',
+				'.llms-access-plan .stamp',
+				'.llms-lesson-preview .llms-icon-free',
+				'.llms-student-dashboard .llms-status.llms-active', 
+				'.llms-student-dashboard .llms-status.llms-completed', 
+				'.llms-student-dashboard .llms-status.llms-txn-succeeded',
+			), $backgrounds );
+		}
+
+		/**
+		 * Adds background hover accents for LLMS styles.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function hover_primary_backgrounds( $hover ) {
+			return array_merge( array(
+				'.llms-button-action:hover',
+				'.llms-button-secondary:hover',
+				'.llms-field-button:hover',
+				'.llms-button-primary:hover',
+				'.llms-button-action:focus',
+				'.llms-button-secondary:focus',
+				'.llms-field-button:focus',
+				'.llms-button-primary:focus',
+			), $hover );
+		}
+
+		/**
+		 * Adds border color elements for LLMS styles.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function border_color_elements( $elements ) {
+			return array_merge( array(
+				'.llms-sd-notification-center .llms-notification',
+			), $elements );
 		}
 
 	}
