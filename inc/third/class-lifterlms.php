@@ -55,6 +55,10 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			add_filter( 'osh_header_sticky_logo', array( $this, 'distraction_free' ), 11 );
 			add_filter( 'ofc_display_footer_callout', array( $this, 'distraction_free' ), 11 );
 
+			// Grid.
+			add_filter( 'lifterlms_loop_columns', array( $this, 'archive_columns' ) );
+			add_filter( 'llms_get_loop_list_classes', array( $this, 'archive_responsive_columns' ), 999 );
+
 			// Define accents
 			add_filter( 'ocean_primary_texts', array( $this, 'primary_texts' ) );
 			add_filter( 'ocean_primary_borders', array( $this, 'primary_borders' ) );
@@ -213,6 +217,65 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			// }
 			return true;
 		}
+
+		/**
+		 * LLMS Courses and Membership Page Columns.
+		 *
+		 * @since 1.0.0
+		 * @param  number $columns default number of columns (3).
+		 * @return number
+		 */
+		function archive_columns( $columns ) {
+			if ( is_post_type_archive( 'course' ) ) {
+				$columns = get_theme_mod( 'ocean_llms_courses_columns', 3 );
+				$columns = $columns ? $columns : '3';
+				return $columns;
+			} elseif ( is_post_type_archive( 'llms_membership' ) ) {
+				$columns = get_theme_mod( 'ocean_llms_membership_columns', 3 );
+				$columns = $columns ? $columns : '3';
+				return $columns;
+			}
+		}
+
+		/**
+		 * LLMS Courses and Membership Page Responsive Columns.
+		 *
+		 * @since 1.0.0
+		 * @param  number $columns default number of columns (3).
+		 * @return number
+		 */
+		function archive_responsive_columns( $classes ) {
+			if ( is_post_type_archive( 'course' ) ) {
+				// Responsive columns
+				$tablet_columns    = get_theme_mod( 'ocean_llms_tablet_courses_columns' );
+				$mobile_columns    = get_theme_mod( 'ocean_llms_mobile_courses_columns' );
+
+				if ( ! empty( $tablet_columns ) ) {
+					$classes[] = 'tablet-col';
+					$classes[] = 'tablet-' . $tablet_columns . '-col';
+				}
+				if ( ! empty( $mobile_columns ) ) {
+					$classes[] = 'mobile-col';
+					$classes[] = 'mobile-' . $mobile_columns . '-col';
+				}
+			} elseif ( is_post_type_archive( 'llms_membership' ) ) {
+				// Responsive columns
+				$tablet_columns    = get_theme_mod( 'ocean_llms_tablet_membership_columns' );
+				$mobile_columns    = get_theme_mod( 'ocean_llms_mobile_membership_columns' );
+
+				if ( ! empty( $tablet_columns ) ) {
+					$classes[] = 'tablet-col';
+					$classes[] = 'tablet-' . $tablet_columns . '-col';
+				}
+				if ( ! empty( $mobile_columns ) ) {
+					$classes[] = 'mobile-col';
+					$classes[] = 'mobile-' . $mobile_columns . '-col';
+				}
+			}
+
+			return $classes;
+		}
+
 
 		/**
 		 * Fix for the OceanWP Settings values not saved

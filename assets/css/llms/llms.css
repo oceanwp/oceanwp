@@ -166,3 +166,46 @@
 .billing-information .llms-form-field label {
   font-weight: 700;
 }
+
+/** Grid **/
+@media all and (max-width: 768px) {
+  .llms-loop-list.tablet-1-col .llms-loop-item {
+    width: 100%;
+  }
+  .llms-loop-list.tablet-2-col .llms-loop-item {
+    width: 50%;
+  }
+  .llms-loop-list.tablet-3-col .llms-loop-item {
+    width: 33.3333333333%;
+  }
+  .llms-loop-list.tablet-4-col .llms-loop-item {
+    width: 25%;
+  }
+  .llms-loop-list.tablet-5-col .llms-loop-item {
+    width: 20%;
+  }
+  .llms-loop-list.tablet-6-col .llms-loop-item {
+    width: 16.6666666667%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .llms-loop-list.mobile-1-col .llms-loop-item {
+    width: 100%;
+  }
+  .llms-loop-list.mobile-2-col .llms-loop-item {
+    width: 50%;
+  }
+  .llms-loop-list.mobile-3-col .llms-loop-item {
+    width: 33.3333333333%;
+  }
+  .llms-loop-list.mobile-4-col .llms-loop-item {
+    width: 25%;
+  }
+  .llms-loop-list.mobile-5-col .llms-loop-item {
+    width: 20%;
+  }
+  .llms-loop-list.mobile-6-col .llms-loop-item {
+    width: 16.6666666667%;
+  }
+}

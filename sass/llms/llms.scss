@@ -166,3 +166,25 @@
 .billing-information .llms-form-field label{
 	font-weight: 700;
 }
+
+/** Grid **/
+.llms-loop-list {
+	@media all and (max-width: 768px) {
+		$cols: 1;
+		@while $cols <= 6 {
+			&.tablet-#{$cols}-col .llms-loop-item {
+				width: 100% / $cols;
+			}
+			$cols: $cols + 1;
+		}
+	}
+	@media all and (max-width: 480px) {
+		$cols: 1;
+		@while $cols <= 6 {
+			&.mobile-#{$cols}-col .llms-loop-item {
+				width: 100% / $cols;
+			}
+			$cols: $cols + 1;
+		}
+	}
+}
