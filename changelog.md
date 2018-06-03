@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### *2018.06.03* - 1.5.16:
+* **Added** - Easy Digital Downloads integration, check the new demo: https://book.oceanwp.org/ 
+* **Tweak** - Moved the WooCommerce Checkout settings in the OceanWP WooCommerce section in the customizer. 
+* **Tweak** - The "Redirect to the cart page after successful addition" WooCommerce setting work now on the single product Ajax add to cart, the quick view and the floating bar. 
+* **Fixed** - Ordered list in the product summary. 
+* **Fixed** - Quick view button on the product image entry slider style.
+
 ### *2018.05.19* - 1.5.15:
 * **Fixed** - Blog layout and pagination issue.
 

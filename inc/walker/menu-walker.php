@@ -184,12 +184,6 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			 */
 			$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-		    // Description
-		    $description = '';
-		    if ( $item->description != '' ) {
-		    	$description = '<span class="nav-content">'. $item->description .'</span>';
-		    }
-
 		    // Output
 		    $item_output = $args->before;
 
@@ -197,8 +191,9 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			$item_output .= $args->link_before . $title . $args->link_after;
 
-	    	if( $depth !== 0 ) {
-		    	$item_output .= $description;
+	    	// Description
+		    if ( $item->description && 0 === $depth ) {
+		    	$item_output .= '<span class="nav-content">'. $item->description .'</span>';
 		    }
 
 			$item_output .= '</a>';
