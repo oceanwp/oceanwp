@@ -1795,7 +1795,7 @@
 	.tablet-col .col.first {
 		clear: none;
 	}
-	body.woocommerce .products.oceanwp-row {
+	.woocommerce .products.oceanwp-row {
 		&.tablet-col .col {
 			clear: none;
 		}
@@ -1849,7 +1849,7 @@
 	.mobile-col .col.first {
 		clear: none;
 	}
-	body.woocommerce .products.oceanwp-row {
+	.woocommerce .products.oceanwp-row {
 		&.mobile-col .col {
 			clear: none;
 		}
@@ -3271,4 +3271,83 @@ form.checkout {
 
 .woocommerce.single-product .legal-price-info {
 	margin-top: 10px;
+}
+
+/* WooCommerce My Account -> Add Payment Method */
+.woocommerce-MyAccount-content {
+	#payment {
+		ul.payment_methods {
+			> li {
+				background-color: #fafafa;
+			}
+
+			.woocommerce-PaymentMethod {
+				>input[type=radio]:first-child {
+					position: absolute!important;
+					clip: rect(1px,1px,1px,1px);
+				}
+
+				> label {
+					display: block;
+					font-size: 16px;
+					font-weight: 600;
+					padding: 20px;
+					cursor: pointer;
+					margin: 0;
+					letter-spacing: .4px;
+						
+					&:before {
+						font-family: fontawesome;
+						text-rendering: auto;
+						display: inline-block;
+						font-size: inherit;
+						content: '\f10c';
+						color: #333;
+						margin-right: 10px;
+						-webkit-transition: color .2s ease;
+						-moz-transition: color .2s ease;
+						-ms-transition: color .2s ease;
+						-o-transition: color .2s ease;
+						transition: color .2s ease;
+					}
+
+					&:after {
+						content: "";
+						clear: both;
+						display: table;
+					}
+				}
+
+				> input[type=radio]:first-child:checked+label:before {
+					content: '\f192';
+					color: #13aff0;
+				}
+			}
+		}
+
+		#payment div.woocommerce-PaymentBox {
+			position: relative;
+			width: 100%;
+			padding: 1.4em;
+			font-size: .92em;
+			line-height: 1.5;
+			background-color: #fff;
+			color: #555;
+
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	#add_payment_method .woocommerce-PaymentMethod label {
+		margin-left: 0;
+	}
+
+	#place_order {
+		width: 100%;
+		font-size: 15px;
+		line-height: 1.6;
+		padding: 16px 20px;
+	}
 }
