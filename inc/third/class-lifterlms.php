@@ -44,6 +44,17 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 				add_action( 'llms_metabox_after_save_lifterlms-course-options', array( $this, 'butterbean_fix' ) );
 			}
 
+			// Distraction free checkout
+			add_filter( 'ocean_display_top_bar', array( $this, 'distraction_free' ), 11 );
+			add_filter( 'ocean_display_navigation', array( $this, 'distraction_free' ), 11 );
+			add_filter( 'osh_enable_sticky_header', array( $this, 'distraction_free' ), 11 );
+			add_filter( 'osp_display_side_panel', array( $this, 'distraction_free' ), 11 );
+			add_filter( 'ocean_display_page_header', array( $this, 'distraction_free' ), 11 );
+			add_filter( 'ocean_display_footer_widgets', array( $this, 'distraction_free' ), 11 );
+			add_filter( 'ocean_display_scroll_up_button', array( $this, 'distraction_free' ), 11 );
+			add_filter( 'osh_header_sticky_logo', array( $this, 'distraction_free' ), 11 );
+			add_filter( 'ofc_display_footer_callout', array( $this, 'distraction_free' ), 11 );
+
 			// Define accents
 			add_filter( 'ocean_primary_texts', array( $this, 'primary_texts' ) );
 			add_filter( 'ocean_primary_borders', array( $this, 'primary_borders' ) );
@@ -187,6 +198,22 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 				),
 			);
 			return $fields;
+		}
+
+		/**
+		 * Distraction free on cart/checkout
+		 *
+		 * @since 1.5.0
+		 */
+		public static function distraction_free( $return ) {
+
+			// if ( is_llms_checkout()
+			// 		&& true == get_theme_mod( 'ocean_llms_distraction_free_checkout', false ) ) {
+			// 	$return = false;
+			// }
+
+			// Return
+			return false;
 		}
 
 		/**

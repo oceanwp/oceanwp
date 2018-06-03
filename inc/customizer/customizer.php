@@ -191,7 +191,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 				require_once( $dir .'edd.php' );
 			}
 
-			// If EDD is activated
+			// If LifterLMS is activated
 			if ( OCEANWP_LIFTERLMS_ACTIVE ) {
 				require_once( $dir .'lifterlms.php' );
 			}
