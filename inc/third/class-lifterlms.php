@@ -256,6 +256,8 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 				'.llms-instructor-info .llms-instructors .llms-author' => array( 'top' ),
 				'.llms-notification' => array( 'top' ),
 				'.llms-instructor-info .llms-instructors .llms-author .avatar',
+				'.llms-checkout-section',
+				'.llms-notice',
 			), $borders );
 		}
 
@@ -279,6 +281,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 				'.llms-student-dashboard .llms-status.llms-active', 
 				'.llms-student-dashboard .llms-status.llms-completed', 
 				'.llms-student-dashboard .llms-status.llms-txn-succeeded',
+				'.llms-checkout-wrapper .llms-form-heading',
 			), $backgrounds );
 		}
 
