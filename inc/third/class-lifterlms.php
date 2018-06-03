@@ -35,7 +35,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			add_action( 'lifterlms_before_main_content', array( $this, 'before_main_content_start' ) );
 			add_action( 'lifterlms_after_main_content', array( $this, 'before_main_content_end' ) );
 
-			add_filter( 'llms_get_quiz_theme_settings', array( $this, 'quiz_settings' ) );
+			add_filter( 'llms_builder_register_custom_fields', array( $this, 'quiz_settings' ) );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ) );
 
@@ -76,7 +76,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 */
 		public static function theme_support() {
 			add_theme_support( 'lifterlms-sidebars' );
-			add_theme_support( 'lifterlms-quizzes' );
 		}
 
 		/**
@@ -167,19 +166,28 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 * @return void
 		 */
 		function quiz_settings( $fields ) {
-			$settings['layout'] = array(
-				'id'      => 'ocean_post_layout',
-				'name'    => esc_html__( 'Layout', 'my-text-domain' ),
-				'options' => array(
-					'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/rs.png',
-					'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/ls.png',
-					'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
-					'full-screen'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
-					'both-sidebars'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/bs.png',
+			$fields['quiz']['layout'] = array(
+				'title' => esc_html__( 'OceanWP Theme Setting', 'oceanwp' ),
+				'toggleable' => true,
+				'fields' => array(
+					array(
+						array(
+							'attribute' => 'ocean_post_layout',
+							'label'     => esc_html__( 'Layout', 'oceanwp' ),
+							'type'      => 'select',
+							'options' => array(
+								''              => esc_html__( 'Default', 'oceanwp' ),
+								'right-sidebar' => esc_html__( 'Right Sidebar', 'oceanwp' ),
+								'left-sidebar'  => esc_html__( 'Left Sidebar', 'oceanwp' ),
+								'full-width'    => esc_html__( 'Full Width', 'oceanwp' ),
+								'full-screen'   => esc_html__( 'Full Screen', 'oceanwp' ),
+								'both-sidebars' => esc_html__( 'Both Sidebar', 'oceanwp' ),
+							),
+						),
+					),
 				),
-				'type'    => 'image_select',
 			);
-			return $settings;
+			return $fields;
 		}
 
 		/**
