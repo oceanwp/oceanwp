@@ -63,7 +63,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		public static function add_metabox( $types ) {
 			$types[] = 'course';
 			$types[] = 'lesson';
-			$types[] = 'llms_quiz';
 			$types[] = 'llms_question';
 			$types[] = 'llms_review';
 			return $types;
