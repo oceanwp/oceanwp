@@ -176,7 +176,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			 * Layout
 			 */
 			$wp_customize->add_setting( 'ocean_llms_global_layout', array(
-				'default'           	=> 'left-sidebar',
+				'default'           	=> 'full-screen',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 
