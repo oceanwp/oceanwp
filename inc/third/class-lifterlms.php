@@ -211,10 +211,10 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 */
 		public static function distraction_free( $return ) {
 
-			// if ( is_llms_checkout()
-			// 		&& true == get_theme_mod( 'ocean_llms_distraction_free_checkout', false ) ) {
-			// 	$return = false;
-			// }
+			if ( is_llms_checkout()
+					&& true == get_theme_mod( 'ocean_llms_distraction_free_checkout', false ) ) {
+				$return = false;
+			}
 			return true;
 		}
 

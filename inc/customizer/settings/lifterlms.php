@@ -59,7 +59,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_llms_courses_heading', array(
-				'label'    	=> esc_html__( 'Courses', 'oceanwp' ),
+				'label'    	=> esc_html__( 'Grid', 'oceanwp' ),
 				'section'  	=> 'ocean_llms_general',
 				'priority' 	=> 10,
 			) ) );
@@ -132,6 +132,22 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			        'max'   => 7,
 			        'step'  => 1,
 			    ),
+			) ) );
+
+			/**
+			 * Distraction Free Checkout
+			 */
+			$wp_customize->add_setting( 'ocean_llms_distraction_free_checkout', array(
+				'default'           	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_llms_distraction_free_checkout', array(
+				'label'	   				=> esc_html__( 'Distraction Free Checkout', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_llms_general',
+				'settings' 				=> 'ocean_llms_distraction_free_checkout',
+				'priority' 				=> 10,
 			) ) );
 
 			/**
