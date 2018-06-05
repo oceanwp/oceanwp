@@ -128,7 +128,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 * @since 1.0.0
 		 */
 		public static function layouts( $class ) {
-			if ( is_llms_account_page() || is_membership() || is_memberships() || is_courses() || is_tax( array( 'course_cat', 'course_tag', 'course_difficulty', 'course_track', 'membership_tag', 'membership_cat' ) ) ) {
+			if ( is_llms_account_page() || is_membership() || is_memberships() || is_quiz() || is_courses() || is_tax( array( 'course_cat', 'course_tag', 'course_difficulty', 'course_track', 'membership_tag', 'membership_cat' ) ) ) {
 				$class = get_theme_mod( 'ocean_llms_global_layout', 'full-screen' );
 			}
 			elseif ( is_lesson() ) {
@@ -145,7 +145,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 * @since 1.4.0
 		 */
 		public static function bs_class( $class ) {
-			if ( is_llms_account_page() || is_membership() || is_memberships() || is_courses() || is_tax( array( 'course_cat', 'course_tag', 'course_difficulty', 'course_track', 'membership_tag', 'membership_cat' ) ) ) {
+			if ( is_llms_account_page() || is_membership() || is_memberships() || is_quiz() || is_courses() || is_tax( array( 'course_cat', 'course_tag', 'course_difficulty', 'course_track', 'membership_tag', 'membership_cat' ) ) ) {
 				$class = get_theme_mod( 'ocean_llms_global_both_sidebars_style', 'scs-style' );
 			}
 			elseif ( is_lesson() ) {
