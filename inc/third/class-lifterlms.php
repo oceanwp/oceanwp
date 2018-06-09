@@ -45,6 +45,8 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ) );
 
+			add_action( 'wp', array( $this, 'course_details' ) );
+
 			// Fix for the OceanWP Settings values not saved
 			if ( OCEAN_EXTRA_ACTIVE ) {
 				add_action( 'llms_metabox_after_save_lifterlms-course-options', array( $this, 'butterbean_fix' ) );
@@ -220,6 +222,50 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			</div><!-- #content-wrap -->
 
 			<?php do_action( 'ocean_after_content_wrap' );
+		}
+
+		/**
+		 * Course Details
+		 *
+		 * @since 1.2.0
+		 * @return void
+		 */
+		function course_details(){
+			$details = get_theme_mod( 'ocean_llms_course_details', array( 'image', 'description', 'meta', 'author', 'progress', 'syllabus' ) );
+
+			if( in_array( 'image', $details) ) {
+
+			}
+
+			if( ! in_array( 'description', $details ) ) {
+				add_filter( 'the_excerpt', '__return_empty_string', 9 );
+				add_filter( 'the_content', '__return_empty_string', 9 );
+			}
+
+			if( ! in_array( 'meta', $details) ) {
+				remove_action( 'lifterlms_single_course_after_summary', 'lifterlms_template_single_length', 10 );
+				remove_action( 'lifterlms_single_course_after_summary', 'lifterlms_template_single_difficulty', 20 );
+				remove_action( 'lifterlms_single_course_after_summary', 'lifterlms_template_single_course_tracks', 25 );
+				remove_action( 'lifterlms_single_course_after_summary', 'lifterlms_template_single_course_categories', 30 );
+				remove_action( 'lifterlms_single_course_after_summary', 'lifterlms_template_single_course_tags', 35 );
+			}
+
+			if( ! in_array( 'author', $details) ) {
+				remove_action( 'lifterlms_single_course_after_summary', 'lifterlms_template_course_author', 40 );
+			}
+
+			if( ! ( in_array( 'meta', $details ) && in_array( 'author', $details ) ) ){
+				remove_action( 'lifterlms_single_course_after_summary', 'lifterlms_template_single_meta_wrapper_start', 5 );
+				remove_action( 'lifterlms_single_course_after_summary', 'lifterlms_template_single_meta_wrapper_end', 50 );
+			}
+
+			if( ! in_array( 'progress', $details) ) {
+				remove_action( 'lifterlms_single_course_after_summary', 'lifterlms_template_single_course_progress', 60 );
+			}
+
+			if( ! in_array( 'syllabus', $details) ) {
+				remove_action( 'lifterlms_single_course_after_summary', 'lifterlms_template_single_syllabus', 90 );
+			}
 		}
 
 		/**
