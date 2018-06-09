@@ -11706,6 +11706,104 @@
 			$swipe.bind(function(size) {
 				$(".single-lesson .entry-content").css("color", size);
 			});
+		}), 
+		// Both Sidebars - LLMS Global
+		api( 'ocean_llms_global_both_sidebars_content_width', function( value ) {
+			value.bind( function( to ) {
+				var $child = $( '.customizer-ocean_llms_global_both_sidebars_content_width' );
+				if ( to ) {
+					var style = '<style class="customizer-ocean_llms_global_both_sidebars_content_width">@media only screen and (min-width: 960px){ body.llms-global-layout.content-both-sidebars .content-area { width: ' + to + '%; } body.llms-global-layout.content-both-sidebars.scs-style .widget-area.sidebar-secondary, body.llms-global-layout.content-both-sidebars.ssc-style .widget-area {left: -' + to + '%;} }</style>';
+					if ( $child.length ) {
+						$child.replaceWith( style );
+					} else {
+						$( 'head' ).append( style );
+					}
+				} else {
+					$child.remove();
+				}
+			} );
+		}),
+
+		api( 'ocean_llms_global_both_sidebars_sidebars_width', function( value ) {
+			value.bind( function( to ) {
+				var $child = $( '.customizer-ocean_llms_global_both_sidebars_sidebars_width' );
+				if ( to ) {
+					var style = '<style class="customizer-ocean_llms_global_both_sidebars_sidebars_width">@media only screen and (min-width: 960px){ body.llms-global-layout.content-both-sidebars .widget-area{width:' + to + '%;} body.llms-global-layout.content-both-sidebars.scs-style .content-area{left:' + to + '%;} body.llms-global-layout.content-both-sidebars.ssc-style .content-area{left:'+ to * 2 +'%;} }</style>';
+					if ( $child.length ) {
+						$child.replaceWith( style );
+					} else {
+						$( 'head' ).append( style );
+					}
+				} else {
+					$child.remove();
+				}
+			} );
+		}),
+
+		// Both Sidebars - LLMS Course
+		api( 'ocean_llms_course_both_sidebars_content_width', function( value ) {
+			value.bind( function( to ) {
+				var $child = $( '.customizer-ocean_llms_course_both_sidebars_content_width' );
+				if ( to ) {
+					var style = '<style class="customizer-ocean_llms_course_both_sidebars_content_width">@media only screen and (min-width: 960px){ body.single-course.content-both-sidebars .content-area { width: ' + to + '%; } body.single-course.content-both-sidebars.scs-style .widget-area.sidebar-secondary, body.single-course.content-both-sidebars.ssc-style .widget-area {left: -' + to + '%;} }</style>';
+					if ( $child.length ) {
+						$child.replaceWith( style );
+					} else {
+						$( 'head' ).append( style );
+					}
+				} else {
+					$child.remove();
+				}
+			} );
+		}),
+
+		api( 'ocean_llms_course_both_sidebars_sidebars_width', function( value ) {
+			value.bind( function( to ) {
+				var $child = $( '.customizer-ocean_llms_course_both_sidebars_sidebars_width' );
+				if ( to ) {
+					var style = '<style class="customizer-ocean_llms_course_both_sidebars_sidebars_width">@media only screen and (min-width: 960px){ body.single-course.content-both-sidebars .widget-area{width:' + to + '%;} body.single-course.content-both-sidebars.scs-style .content-area{left:' + to + '%;} body.single-course.content-both-sidebars.ssc-style .content-area{left:'+ to * 2 +'%;} }</style>';
+					if ( $child.length ) {
+						$child.replaceWith( style );
+					} else {
+						$( 'head' ).append( style );
+					}
+				} else {
+					$child.remove();
+				}
+			} );
+		}),
+
+		// Both Sidebars - LLMS Lesson
+		api( 'ocean_llms_lesson_both_sidebars_content_width', function( value ) {
+			value.bind( function( to ) {
+				var $child = $( '.customizer-ocean_llms_lesson_both_sidebars_content_width' );
+				if ( to ) {
+					var style = '<style class="customizer-ocean_llms_lesson_both_sidebars_content_width">@media only screen and (min-width: 960px){ body.single-lesson.content-both-sidebars .content-area { width: ' + to + '%; } body.single-lesson.content-both-sidebars.scs-style .widget-area.sidebar-secondary, body.single-lesson.content-both-sidebars.ssc-style .widget-area {left: -' + to + '%;} }</style>';
+					if ( $child.length ) {
+						$child.replaceWith( style );
+					} else {
+						$( 'head' ).append( style );
+					}
+				} else {
+					$child.remove();
+				}
+			} );
+		}),
+
+		api( 'ocean_llms_lesson_both_sidebars_sidebars_width', function( value ) {
+			value.bind( function( to ) {
+				var $child = $( '.customizer-ocean_llms_lesson_both_sidebars_sidebars_width' );
+				if ( to ) {
+					var style = '<style class="customizer-ocean_llms_lesson_both_sidebars_sidebars_width">@media only screen and (min-width: 960px){ body.single-lesson.content-both-sidebars .widget-area{width:' + to + '%;} body.single-lesson.content-both-sidebars.scs-style .content-area{left:' + to + '%;} body.single-lesson.content-both-sidebars.ssc-style .content-area{left:'+ to * 2 +'%;} }</style>';
+					if ( $child.length ) {
+						$child.replaceWith( style );
+					} else {
+						$( 'head' ).append( style );
+					}
+				} else {
+					$child.remove();
+				}
+			} );
 		});
 
 } )( jQuery );

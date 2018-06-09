@@ -273,7 +273,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 					'scs-style' 		=> esc_html__( 'Sidebar / Content / Sidebar', 'oceanwp' ),
 					'css-style' 		=> esc_html__( 'Content / Sidebar / Sidebar', 'oceanwp' ),
 				),
-				'active_callback' 		=> 'oceanwp_cac_has_lifterlms_global_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_llms_global_bs_layout',
 			) ) );
 
 			/**
@@ -295,7 +295,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_lifterlms_global_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_llms_global_bs_layout',
 			) ) );
 
 			/**
@@ -317,7 +317,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_lifterlms_global_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_llms_global_bs_layout',
 			) ) );
 
 			/**
@@ -368,7 +368,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 					'scs-style' 		=> esc_html__( 'Sidebar / Content / Sidebar', 'oceanwp' ),
 					'css-style' 		=> esc_html__( 'Content / Sidebar / Sidebar', 'oceanwp' ),
 				),
-				'active_callback' 		=> 'oceanwp_cac_has_lifterlms_course_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_llms_course_bs_layout',
 			) ) );
 
 			/**
@@ -390,7 +390,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_lifterlms_course_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_llms_course_bs_layout',
 			) ) );
 
 			/**
@@ -412,7 +412,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_lifterlms_course_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_llms_course_bs_layout',
 			) ) );
 
 			/**
@@ -463,7 +463,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 					'scs-style' 		=> esc_html__( 'Sidebar / Content / Sidebar', 'oceanwp' ),
 					'css-style' 		=> esc_html__( 'Content / Sidebar / Sidebar', 'oceanwp' ),
 				),
-				'active_callback' 		=> 'oceanwp_cac_has_lifterlms_lesson_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_llms_lesson_bs_layout',
 			) ) );
 
 			/**
@@ -485,7 +485,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_lifterlms_lesson_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_llms_lesson_bs_layout',
 			) ) );
 
 			/**
@@ -507,7 +507,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			        'max'   => 100,
 			        'step'  => 1,
 			    ),
-				'active_callback' 		=> 'oceanwp_cac_has_lifterlms_lesson_bs_layout',
+				'active_callback' 		=> 'oceanwp_cac_has_llms_lesson_bs_layout',
 			) ) );
 
 			/**
@@ -1219,6 +1219,21 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			$lesson_title_color								= get_theme_mod( 'ocean_llms_lesson_title_color' );
 			$lesson_description_color						= get_theme_mod( 'ocean_llms_lesson_description_color' );
 
+			// Both Sidebars - Global
+			$llms_global_layout 							= get_theme_mod( 'ocean_llms_global_layout', 'full-width' );
+			$bs_global_content_width 						= get_theme_mod( 'ocean_llms_global_both_sidebars_content_width' );
+			$bs_global_sidebars_width 						= get_theme_mod( 'ocean_llms_global_both_sidebars_sidebars_width' );
+
+			// Both Sidebars - Course
+			$llms_course_layout 							= get_theme_mod( 'ocean_llms_course_layout', 'left-sidebar' );
+			$bs_course_content_width 						= get_theme_mod( 'ocean_llms_course_both_sidebars_content_width' );
+			$bs_course_sidebars_width 						= get_theme_mod( 'ocean_llms_course_both_sidebars_sidebars_width' );
+
+			// Both Sidebars - Lesson
+			$llms_lesson_layout 							= get_theme_mod( 'ocean_llms_lesson_layout', 'left-sidebar' );
+			$bs_lesson_content_width 						= get_theme_mod( 'ocean_llms_lesson_both_sidebars_content_width' );
+			$bs_lesson_sidebars_width 						= get_theme_mod( 'ocean_llms_lesson_both_sidebars_sidebars_width' );
+
 			// Define css var
 			$css = '';
 
@@ -1417,6 +1432,81 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			// Course Progress Color
 			if ( ! empty( $lesson_description_color ) ) {
 				$css .= '.single-lesson .entry-content{color:'. $lesson_description_color .';}';
+			}
+
+			// LifterLMS Both Sidebars - Global
+			if ( 'both-sidebars' == $llms_global_layout ) {
+
+				// Both Sidebars layout LLMS Global page content width
+				if ( ! empty( $bs_global_content_width ) ) {
+					$css .=
+						'@media only screen and (min-width: 960px){
+							body.llms-global-layout.content-both-sidebars .content-area {width: '. $bs_global_content_width .'%;}
+							body.llms-global-layout.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
+							body.llms-global-layout.content-both-sidebars.ssc-style .widget-area {left: -'. $bs_global_content_width .'%;}
+						}';
+				}
+
+				// Both Sidebars layout LLMS Global sidebars width
+				if ( ! empty( $bs_global_sidebars_width ) ) {
+					$css .=
+						'@media only screen and (min-width: 960px){
+							body.llms-global-layout.content-both-sidebars .widget-area{width:'. $bs_global_sidebars_width .'%;}
+							body.llms-global-layout.content-both-sidebars.scs-style .content-area{left:'. $bs_global_sidebars_width .'%;}
+							body.llms-global-layout.content-both-sidebars.ssc-style .content-area{left:'. $bs_global_sidebars_width * 2 .'%;}
+						}';
+				}
+
+			}
+
+			// LifterLMS Both Sidebars - Course
+			if ( 'both-sidebars' == $llms_course_layout ) {
+
+				// Both Sidebars layout LLMS Course page content width
+				if ( ! empty( $bs_course_content_width ) ) {
+					$css .=
+						'@media only screen and (min-width: 960px){
+							body.single-course.content-both-sidebars .content-area {width: '. $bs_course_content_width .'%;}
+							body.single-course.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
+							body.single-course.content-both-sidebars.ssc-style .widget-area {left: -'. $bs_course_content_width .'%;}
+						}';
+				}
+
+				// Both Sidebars layout LLMS Course sidebars width
+				if ( ! empty( $bs_course_sidebars_width ) ) {
+					$css .=
+						'@media only screen and (min-width: 960px){
+							body.single-course.content-both-sidebars .widget-area{width:'. $bs_course_sidebars_width .'%;}
+							body.single-course.content-both-sidebars.scs-style .content-area{left:'. $bs_course_sidebars_width .'%;}
+							body.single-course.content-both-sidebars.ssc-style .content-area{left:'. $bs_course_sidebars_width * 2 .'%;}
+						}';
+				}
+
+			}
+
+			// LifterLMS Both Sidebars  - Lesson
+			if ( 'both-sidebars' == $llms_lesson_layout ) {
+
+				// Both Sidebars layout LLMS Lesson page content width
+				if ( ! empty( $bs_lesson_content_width ) ) {
+					$css .=
+						'@media only screen and (min-width: 960px){
+							body.single-lesson.content-both-sidebars .content-area {width: '. $bs_lesson_content_width .'%;}
+							body.single-lesson.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
+							body.single-lesson.content-both-sidebars.ssc-style .widget-area {left: -'. $bs_lesson_content_width .'%;}
+						}';
+				}
+
+				// Both Sidebars layout LLMS Lesson sidebars width
+				if ( ! empty( $bs_lesson_sidebars_width ) ) {
+					$css .=
+						'@media only screen and (min-width: 960px){
+							body.single-lesson.content-both-sidebars .widget-area{width:'. $bs_lesson_sidebars_width .'%;}
+							body.single-lesson.content-both-sidebars.scs-style .content-area{left:'. $bs_lesson_sidebars_width .'%;}
+							body.single-lesson.content-both-sidebars.ssc-style .content-area{left:'. $bs_lesson_sidebars_width * 2 .'%;}
+						}';
+				}
+
 			}
 
 			// Return CSS

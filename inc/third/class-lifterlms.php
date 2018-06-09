@@ -130,6 +130,9 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 				$classes[] = 'llms-distraction-free';	
 			}
 
+			if( is_llms_account_page() || is_membership() || is_memberships() || is_quiz() || is_courses() || is_tax( array( 'course_cat', 'course_tag', 'course_difficulty', 'course_track', 'membership_tag', 'membership_cat' ) ) ) {
+				$classes[] = 'llms-global-layout';
+			}
 			return $classes;
 
 		}

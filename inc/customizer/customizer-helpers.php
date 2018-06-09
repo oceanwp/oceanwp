@@ -647,24 +647,24 @@ function oceanwp_cac_has_footer_bottom() {
 /* [ LifterLMS ]
 /*-------------------------------------------------------------------------------*/
 
-function oceanwp_cac_has_lifterlms_global_bs_layout() {
-	if ( 'both-sidebars' == get_theme_mod( 'ocean_lifterlms_global_layout', 'left-sidebar' ) ) {
+function oceanwp_cac_has_llms_global_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_llms_global_layout', 'full-width' ) ) {
 		return true;
 	} else {
 		return false;
 	}
 }
 
-function oceanwp_cac_has_lifterlms_course_bs_layout() {
-	if ( 'both-sidebars' == get_theme_mod( 'ocean_lifterlms_course_layout', 'left-sidebar' ) ) {
+function oceanwp_cac_has_llms_course_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_llms_course_layout', 'left-sidebar' ) ) {
 		return true;
 	} else {
 		return false;
 	}
 }
 
-function oceanwp_cac_has_lifterlms_lesson_bs_layout() {
-	if ( 'both-sidebars' == get_theme_mod( 'ocean_lifterlms_lesson_layout', 'left-sidebar' ) ) {
+function oceanwp_cac_has_llms_lesson_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_llms_lesson_layout', 'left-sidebar' ) ) {
 		return true;
 	} else {
 		return false;
