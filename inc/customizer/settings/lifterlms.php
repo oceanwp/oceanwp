@@ -139,7 +139,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 				'priority' 				=> 10,
 			    'input_attrs' 			=> array(
 			        'min'   => 1,
-			        'max'   => 7,
+			        'max'   => 6,
 			        'step'  => 1,
 			    ),
 			) ) );
@@ -174,7 +174,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 				'priority' 				=> 10,
 			    'input_attrs' 			=> array(
 			        'min'   => 1,
-			        'max'   => 7,
+			        'max'   => 6,
 			        'step'  => 1,
 			    ),
 			) ) );
@@ -508,41 +508,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			        'step'  => 1,
 			    ),
 				'active_callback' 		=> 'oceanwp_cac_has_lifterlms_lesson_bs_layout',
-			) ) );
-
-			/**
-			 * Shop Columns
-			 */
-			$wp_customize->add_setting( 'ocean_llms_archive_columns', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '3',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
-			) );
-
-			$wp_customize->add_setting( 'ocean_llms_tablet_archive_columns', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
-			) );
-
-			$wp_customize->add_setting( 'ocean_llms_mobile_archive_columns', array(
-				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_llms_archive_columns', array(
-				'label' 			=> esc_html__( 'Shop Columns', 'oceanwp' ),
-				'section'  			=> 'ocean_llms_archives',
-				'settings' => array(
-		            'desktop' 	=> 'ocean_llms_archive_columns',
-		            'tablet' 	=> 'ocean_llms_tablet_archive_columns',
-		            'mobile' 	=> 'ocean_llms_mobile_archive_columns',
-			    ),
-				'priority' 				=> 10,
-			    'input_attrs' 			=> array(
-			        'min'   => 1,
-			        'max'   => 4,
-			        'step'  => 1,
-			    ),
 			) ) );
 
 			/**
@@ -1234,10 +1199,10 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			$mobile_llms_left_border_radius 				= get_theme_mod( 'ocean_llms_mobile_left_border_radius' );
 			$llms_background_color 							= get_theme_mod( 'ocean_llms_background_color', '#f1f1f1' );
 			$llms_border_color 								= get_theme_mod( 'ocean_llms_border_color' );
-			$author_color 									= get_theme_mod( 'ocean_llms_author_color', '#444' );
-			$meta_color 									= get_theme_mod( 'ocean_llms_meta_color', '#444' );
 			$llms_title_color 								= get_theme_mod( 'ocean_llms_title_color' );
 			$llms_title_color_hover 						= get_theme_mod( 'ocean_llms_title_color_hover' );
+			$author_color 									= get_theme_mod( 'ocean_llms_author_color', '#444' );
+			$meta_color 									= get_theme_mod( 'ocean_llms_meta_color', '#444' );
 
 			// Course
 			$course_title_color 							= get_theme_mod( 'ocean_llms_course_title_color' );
@@ -1379,16 +1344,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 				$css .= '.llms-loop-item .llms-loop-item-content{border-color:'. $llms_border_color .';}';
 			}
 
-			// Add author color
-			if ( ! empty( $author_color ) && '#444' != $author_color ) {
-				$css .= '.llms-loop-item-content .llms-author{color:'. $author_color .';}';
-			}
-
-			// Add meta color
-			if ( ! empty( $meta_color ) && '#444' != $meta_color ) {
-				$css .= '.llms-loop-item-content .llms-meta{color:'. $meta_color .';}';
-			}
-
 			// Add llms entry title color
 			if ( ! empty( $llms_title_color ) ) {
 				$css .= '.llms-loop-item-content .llms-loop-title{color:'. $llms_title_color .';}';
@@ -1397,6 +1352,16 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			// Add llms entry title color hover
 			if ( ! empty( $llms_title_color_hover ) && '#13aff0' != $llms_title_color_hover ) {
 				$css .= '.llms-loop-item-content .llms-loop-title:hover{color:'. $llms_title_color_hover .';}';
+			}
+
+			// Add author color
+			if ( ! empty( $author_color ) && '#444' != $author_color ) {
+				$css .= '.llms-loop-item-content .llms-author{color:'. $author_color .';}';
+			}
+
+			// Add meta color
+			if ( ! empty( $meta_color ) && '#444' != $meta_color ) {
+				$css .= '.llms-loop-item-content .llms-meta{color:'. $meta_color .';}';
 			}
 
 			// Course Title Color
@@ -1426,22 +1391,32 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 
 			// Course Author Color
 			if ( ! empty( $course_author_color ) ) {
-				$css .= '.llms-instructor-info .llms-instructors .llms-author{color:'. $course_meta_title_color .';}';
+				$css .= '.llms-instructor-info .llms-instructors .llms-author{color:'. $course_author_color .';}';
 			}
 
 			// Course Progress Color
 			if ( ! empty( $course_progress_color ) ) {
-				$css .= '.llms-meta-info .llms-meta p{color:'. $course_meta_title_color .';}';
+				$css .= '.llms-progress .progress-bar-complete{color:'. $course_progress_color .';}';
 			}
 
 			// Course Section Title Color
 			if ( ! empty( $course_section_title_color ) && '#fff' != $course_section_title_color ) {
-				$css .= '.llms-syllabus-wrapper .llms-section-title{color:'. $course_section_title_color .';}';
+				$css .= '.llms-syllabus-wrapper .llms-section-title, .llms-access-plan-title{color:'. $course_section_title_color .';}';
 			}
 
 			// Course Section Title Color
 			if ( ! empty( $course_section_title_background ) ) {
-				$css .= '.llms-syllabus-wrapper .llms-section-title{background-color:'. $course_section_title_color .';}';
+				$css .= '.llms-syllabus-wrapper .llms-section-title, .llms-access-plan-title{background-color:'. $course_section_title_background .';}';
+			}
+
+			// Lesson Title Color
+			if ( ! empty( $lesson_title_color ) ) {
+				$css .= '.single-lesson .entry-title{color:'. $lesson_title_color .';}';
+			}
+
+			// Course Progress Color
+			if ( ! empty( $lesson_description_color ) ) {
+				$css .= '.single-lesson .entry-content{color:'. $lesson_description_color .';}';
 			}
 
 			// Return CSS
