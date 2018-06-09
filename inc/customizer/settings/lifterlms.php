@@ -177,7 +177,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			 * Layout
 			 */
 			$wp_customize->add_setting( 'ocean_llms_global_layout', array(
-				'default'           	=> 'full-screen',
+				'default'           	=> 'full-width',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 
@@ -267,6 +267,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 				'section'  	=> 'ocean_llms_layout',
 				'priority' 	=> 10,
 			) ) );
+
 			/**
 			 * Layout
 			 */
@@ -822,6 +823,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 		     * Background Color
 		     */
 	        $wp_customize->add_setting( 'ocean_llms_background_color', array(
+	        	'default'				=> '#f1f1f1',
 				'transport'				=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
@@ -927,7 +929,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 		     * Course Title Color
 		     */
 	        $wp_customize->add_setting( 'ocean_llms_course_title_color', array(
-				'default'				=> '',
 				'transport'				=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
@@ -959,7 +960,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 		     * Course Meta Title Color
 		     */
 	        $wp_customize->add_setting( 'ocean_llms_course_meta_title_color', array(
-				'default'				=> '#aaaaaa',
+				'default'				=> '#333',
 				'transport'				=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
@@ -975,7 +976,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 		     * Course Meta Link Color
 		     */
 	        $wp_customize->add_setting( 'ocean_llms_course_meta_link_color', array(
-				'default'				=> '#aaaaaa',
+				'default'				=> '#929292',
 				'transport'				=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
@@ -991,7 +992,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 		     * Course Meta Link Color Hover
 		     */
 	        $wp_customize->add_setting( 'ocean_llms_course_meta_link_color_hover', array(
-				'default'				=> '#aaaaaa',
 				'transport'				=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
@@ -1007,7 +1007,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 		     * Author Color
 		     */
 	        $wp_customize->add_setting( 'ocean_llms_course_author_color', array(
-				'default'				=> '#444',
 				'transport'				=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
@@ -1023,7 +1022,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 		     * Course Progress Bar Color
 		     */
 	        $wp_customize->add_setting( 'ocean_llms_course_progress_color', array(
-				'default'				=> '#aaaaaa',
 				'transport'				=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
@@ -1039,7 +1037,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 		     * Course Section Title Color
 		     */
 	        $wp_customize->add_setting( 'ocean_llms_course_section_title_color', array(
-				'default'				=> '#aaaaaa',
+				'default'				=> '#fff',
 				'transport'				=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
@@ -1055,7 +1053,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 		     * Course Section Title Background
 		     */
 	        $wp_customize->add_setting( 'ocean_llms_course_section_title_background', array(
-				'default'				=> '#aaaaaa',
 				'transport'				=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
@@ -1180,8 +1177,8 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			// Course
 			$course_title_color 							= get_theme_mod( 'ocean_llms_course_title_color' );
 			$course_subtitle_color 							= get_theme_mod( 'ocean_llms_course_subtitle_color' );
-			$course_meta_title_color 						= get_theme_mod( 'ocean_llms_course_meta_title_color', '' );
-			$course_meta_link_color 						= get_theme_mod( 'ocean_llms_course_meta_link_color', '' );
+			$course_meta_title_color 						= get_theme_mod( 'ocean_llms_course_meta_title_color', '#333' );
+			$course_meta_link_color 						= get_theme_mod( 'ocean_llms_course_meta_link_color', '#929292' );
 			$course_meta_link_color_hover 					= get_theme_mod( 'ocean_llms_course_meta_link_color_hover', '' );
 			$course_author_color 							= get_theme_mod( 'ocean_llms_course_author_color' );
 			$course_progress_color							= get_theme_mod( 'ocean_llms_course_progress_color' );
@@ -1191,47 +1188,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			// Lesson 
 			$lesson_title_color								= get_theme_mod( 'ocean_llms_lesson_title_color' );
 			$lesson_description_color						= get_theme_mod( 'ocean_llms_lesson_description_color' );
-
-			// Course Title Color
-			if ( ! empty( $course_title_color ) && '#333333' != $course_title_color ) {
-				$css .= '.single-course .entry-title{color:'. $course_title_color .';}';
-			}
-
-			// Course Sub Title Color
-			if ( ! empty( $course_subtitle_color ) && '#333333' != $course_subtitle_color ) {
-				$css .= '.single-course .llms-meta-title{color:'. $course_subtitle_color .';}';
-			}
-
-			// Course Meta Title Color
-			if ( ! empty( $course_meta_title_color ) && '#333333' != $course_meta_title_color ) {
-				$css .= '.llms-meta-info .llms-meta p{color:'. $course_meta_title_color .';}';
-			}
-
-			// Course Meta Link Color
-			if ( ! empty( $course_meta_link_color ) && '#333333' != $course_meta_link_color ) {
-				$css .= '.llms-meta-info .llms-meta span, .llms-meta-info .llms-meta a{color:'. $course_meta_link_color .';}';
-			}
-
-			// Course Meta Link Color Hover
-			if ( ! empty( $course_meta_link_color_hover ) && '#333333' != $course_meta_link_color_hover ) {
-				$css .= '.llms-meta-info .llms-meta a:hover{color:'. $course_meta_link_color_hover .';}';
-			}
-
-			// Course Author Color
-			if ( ! empty( $course_meta_title_color ) && '#333333' != $course_meta_title_color ) {
-				$css .= '.llms-meta-info .llms-meta p{color:'. $course_meta_title_color .';}';
-			}
-
-			// Course Progress Color
-			if ( ! empty( $course_meta_title_color ) && '#333333' != $course_meta_title_color ) {
-				$css .= '.llms-meta-info .llms-meta p{color:'. $course_meta_title_color .';}';
-			}
-
-			// Course Section Title Color
-			if ( ! empty( $course_meta_title_color ) && '#333333' != $course_meta_title_color ) {
-				$css .= '.llms-meta-info .llms-meta p{color:'. $course_meta_title_color .';}';
-			}
-
 
 			// Define css var
 			$css = '';
@@ -1369,13 +1325,58 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			}
 
 			// Add llms entry title color
-			if ( ! empty( $llms_title_color ) && '#333333' != $llms_title_color ) {
+			if ( ! empty( $llms_title_color ) ) {
 				$css .= '.llms-loop-item-content .llms-loop-title{color:'. $llms_title_color .';}';
 			}
 
 			// Add llms entry title color hover
 			if ( ! empty( $llms_title_color_hover ) && '#13aff0' != $llms_title_color_hover ) {
 				$css .= '.llms-loop-item-content .llms-loop-title:hover{color:'. $llms_title_color_hover .';}';
+			}
+
+			// Course Title Color
+			if ( ! empty( $course_title_color ) ) {
+				$css .= '.single-course .entry-title{color:'. $course_title_color .';}';
+			}
+
+			// Course Sub Title Color
+			if ( ! empty( $course_subtitle_color ) ) {
+				$css .= '.single-course .llms-meta-title{color:'. $course_subtitle_color .';}';
+			}
+
+			// Course Meta Title Color
+			if ( ! empty( $course_meta_title_color ) && '#333' != $course_meta_title_color ) {
+				$css .= '.llms-meta-info .llms-meta p{color:'. $course_meta_title_color .';}';
+			}
+
+			// Course Meta Link Color
+			if ( ! empty( $course_meta_link_color ) && '#929292' != $course_meta_link_color ) {
+				$css .= '.llms-meta-info .llms-meta span, .llms-meta-info .llms-meta a{color:'. $course_meta_link_color .';}';
+			}
+
+			// Course Meta Link Color Hover
+			if ( ! empty( $course_meta_link_color_hover ) ) {
+				$css .= '.llms-meta-info .llms-meta a:hover{color:'. $course_meta_link_color_hover .';}';
+			}
+
+			// Course Author Color
+			if ( ! empty( $course_author_color ) ) {
+				$css .= '.llms-instructor-info .llms-instructors .llms-author{color:'. $course_meta_title_color .';}';
+			}
+
+			// Course Progress Color
+			if ( ! empty( $course_progress_color ) ) {
+				$css .= '.llms-meta-info .llms-meta p{color:'. $course_meta_title_color .';}';
+			}
+
+			// Course Section Title Color
+			if ( ! empty( $course_section_title_color ) && '#fff' != $course_section_title_color ) {
+				$css .= '.llms-syllabus-wrapper .llms-section-title{color:'. $course_section_title_color .';}';
+			}
+
+			// Course Section Title Color
+			if ( ! empty( $course_section_title_background ) ) {
+				$css .= '.llms-syllabus-wrapper .llms-section-title{background-color:'. $course_section_title_color .';}';
 			}
 
 			// Return CSS

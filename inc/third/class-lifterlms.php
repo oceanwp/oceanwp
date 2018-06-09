@@ -134,7 +134,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 */
 		public static function layouts( $class ) {
 			if ( is_llms_account_page() || is_membership() || is_memberships() || is_quiz() || is_courses() || is_tax( array( 'course_cat', 'course_tag', 'course_difficulty', 'course_track', 'membership_tag', 'membership_cat' ) ) ) {
-				$class = get_theme_mod( 'ocean_llms_global_layout', 'full-screen' );
+				$class = get_theme_mod( 'ocean_llms_global_layout', 'full-width' );
 			}
 			elseif ( is_lesson() ) {
 				$class = get_theme_mod( 'ocean_llms_lesson_layout', 'left-sidebar' );
@@ -337,8 +337,8 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 */
 		public static function typography_settings( $settings ) {
 			$settings['lifterlms_course_title'] = array(
-				'label' 				=> esc_html__( 'LifterLMS Course Title', 'oceanwp' ),
-				'target' 				=> '.single-course .entry-title',
+				'label' 				=> esc_html__( 'LifterLMS Course/Lesson Title', 'oceanwp' ),
+				'target' 				=> '.single-course .entry-title, .single-lesson .entry-title',
 				'defaults' 				=> array(
 					'font-size' 		=> '34',
 					'color' 			=> '#333',
