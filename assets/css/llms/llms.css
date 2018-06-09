@@ -67,6 +67,10 @@
 }
 
 /** Course Page **/
+.llms-syllabus-wrapper {
+  margin: 15px 0;
+}
+
 .llms-syllabus-wrapper .llms-section-title {
   background: #2295ff;
   color: #fff;
@@ -88,6 +92,68 @@
 
 .llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-complete {
   font-size: 16px;
+}
+
+.llms-meta-info .llms-meta p {
+  color: #333;
+}
+
+.llms-meta-info .llms-meta span, .llms-meta-info .llms-meta a {
+  color: #929292;
+}
+
+.llms-meta-info .llms-meta a:hover {
+  color: #13aff0;
+}
+
+.single-course .llms_review h5 {
+  color: #333 !important;
+  margin-bottom: 5px;
+}
+
+.single-course .llms_review h6 {
+  margin-bottom: 10px;
+}
+
+.single-course .llms_review p {
+  color: #303030 !important;
+}
+
+.single-course .llms_review p:last-child {
+  margin-bottom: 0;
+}
+
+.single-course .review_box input[type="text"],
+.single-course .review_box textarea {
+  display: inline-block;
+  min-height: 40px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 6px 12px;
+  vertical-align: middle;
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.single-course .review_box textarea {
+  line-height: 1.5;
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+#thank_you_box h2 {
+  font-size: 24px;
 }
 
 /** Lesson **/
@@ -143,6 +209,15 @@
   margin-right: 10px;
 }
 
+/** Dashboard **/
+.llms-student-dashboard.edit-account .llms-form-field {
+  padding: 0 20px 10px 0;
+}
+
+.llms-student-dashboard.edit-account .llms-form-field > label {
+  font-weight: 700;
+}
+
 /** Checkout **/
 .llms-checkout-section {
   border: none;
@@ -165,6 +240,12 @@
 
 .billing-information .llms-form-field label {
   font-weight: 700;
+}
+
+.llms-distraction-free #site-logo {
+  float: none;
+  width: 100%;
+  text-align: center;
 }
 
 /** Grid **/

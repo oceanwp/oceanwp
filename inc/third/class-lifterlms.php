@@ -21,6 +21,9 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 */
 		public function __construct() {
 
+			// Body classes
+			add_filter( 'body_class', array( $this, 'body_class' ) );
+
 			add_action( 'ocean_main_metaboxes_post_types', array( $this, 'add_metabox' ), 20 );
 			add_action( 'after_setup_theme', array( $this, 'theme_support' ) );
 			add_filter( 'llms_get_theme_default_sidebar', array( $this, 'llms_sidebar' ) );
@@ -119,6 +122,8 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 					&& true == get_theme_mod( 'ocean_llms_distraction_free_checkout', false ) ) {
 				$classes[] = 'llms-distraction-free';
 			}
+
+			return $classes;
 
 		}
 
@@ -332,34 +337,45 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 */
 		public static function typography_settings( $settings ) {
 			$settings['lifterlms_course_title'] = array(
-				'label' 				=> esc_html__( 'LifterLMS Title', 'oceanwp' ),
-				'target' 				=> '.llms-loop-title',
+				'label' 				=> esc_html__( 'LifterLMS Course Title', 'oceanwp' ),
+				'target' 				=> '.single-course .entry-title',
 				'defaults' 				=> array(
-					'font-size' 		=> '24',
-					'color' 			=> '#333333',
+					'font-size' 		=> '34',
+					'color' 			=> '#333',
 					'line-height' 		=> '1.4',
 					'letter-spacing' 	=> '0.6',
 				),
 			);
 
-			$settings['lifterlms_course_price'] = array(
-				'label' 				=> esc_html__( 'LifterLMS Price', 'oceanwp' ),
-				'target' 				=> '.llms-access-plan-pricing .lifterlms-price',
+			$settings['lifterlms_section_title'] = array(
+				'label' 				=> esc_html__( 'LifterLMS Section Title', 'oceanwp' ),
+				'target' 				=> '.llms-syllabus-wrapper .llms-section-title',
 				'defaults' 				=> array(
-					'font-size' 		=> '36',
-					'line-height' 		=> '1',
-					'letter-spacing' 	=> '0',
+					'font-size' 		=> '18',
+					'color' 			=> '#fff',
+					'line-height' 		=> '1.4',
+					'letter-spacing' 	=> '0.6',
 				),
 			);
 
-			$settings['lifterlms_product_add_to_cart'] = array(
-				'label'                 => esc_html__( 'LifterLMS Product Add To Cart', 'oceanwp' ),
-				'target'                => '.lifterlms_downloads_list .button, .lifterlms-add-to-cart',
+			$settings['lifterlms_lesson_title'] = array(
+				'label' 				=> esc_html__( 'LifterLMS Lesson Title', 'oceanwp' ),
+				'target' 				=> '.single-lesson .entry-title',
+				'defaults' 				=> array(
+					'font-size' 		=> '34',
+					'color' 			=> '#333',
+					'line-height' 		=> '1.4',
+					'letter-spacing' 	=> '0.6',
+				),
+			);
+
+			$settings['lifterlms_buy_button'] = array(
+				'label'                 => esc_html__( 'LifterLMS Buy Button', 'oceanwp' ),
+				'target'                => '.llms-access-plan-footer .llms-button-action',
 				'exclude' 				=> array( 'font-color' ),
 				'defaults'              => array(
 					'font-size'         => '12',
-					'line-height'       => '1.5',
-					'letter-spacing'    => '1',
+					'line-height'       => '1',
 				),
 			);
 
@@ -374,9 +390,10 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		public static function primary_texts( $texts ) {
 			return array_merge( array(
 				'.llms-course-navigation .llms-pre-text',
-				'.llms-loop-item-content .llms-loop-title:hover',
 				'.llms-lesson-preview.is-free .llms-lesson-complete', 
 				'.llms-lesson-preview.is-complete .llms-lesson-complete',
+				'.llms-loop-item-content .llms-loop-title:hover',
+				'.llms-meta-info .llms-meta a:hover',
 			), $texts );
 		}
 
