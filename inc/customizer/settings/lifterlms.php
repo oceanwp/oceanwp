@@ -151,6 +151,22 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Distraction Free Learning
+			 */
+			$wp_customize->add_setting( 'ocean_llms_distraction_free_learning', array(
+				'default'           	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_llms_distraction_free_learning', array(
+				'label'	   				=> esc_html__( 'Distraction Free Learning', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_llms_general',
+				'settings' 				=> 'ocean_llms_distraction_free_learning',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
 			 * Section
 			 */
 			$wp_customize->add_section( 'ocean_llms_layout' , array(
