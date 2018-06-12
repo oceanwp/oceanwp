@@ -42,7 +42,7 @@ function oceanwpMobileMenu( event ) {
 
 				// Check localization
 				if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
-					$sidrDropdownTarget = $j( 'li.sidr-class-menu-item-has-children > a.sidr-class-menu-link' );
+					$sidrDropdownTarget = $j( 'li.sidr-class-menu-item-has-children > a' );
 				}
 
 				// Add toggle click event
@@ -129,13 +129,13 @@ function oceanwpMobileMenu( event ) {
 		} );
 
 		// Close when clicking local scroll link
-		$j( 'a.sidr-class-menu-link[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])' ).on( 'click', function() {
+		$j( '.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])' ).on( 'click', function() {
 			$j.sidr( 'close', 'sidr' );
 			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
 		} );
 
 		// If disable link
-		$j( 'li.sidr-class-nav-no-click > a.sidr-class-menu-link' ).on( 'click', function() {
+		$j( 'li.sidr-class-nav-no-click > a' ).on( 'click', function() {
 			return false;
 		} );
 

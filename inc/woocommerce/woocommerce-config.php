@@ -212,6 +212,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Multi-step checkout
 			if ( true == get_theme_mod( 'ocean_woo_multi_step_checkout', false ) ) {
 
+				// Checkout validation
+				add_action( 'wp_ajax_oceanwp_validate_checkout', array( $this, 'validate_checkout_callback' ) );
+            	add_action( 'wp_ajax_nopriv_oceanwp_validate_checkout', array( $this, 'validate_checkout_callback' ) );
+
 	            // Add checkout timeline template
 	            add_action( 'woocommerce_before_checkout_form', array( $this, 'checkout_timeline' ), 10 );
 
@@ -660,6 +664,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// If multi step checkout
 			if ( true == get_theme_mod( 'ocean_woo_multi_step_checkout', false ) ) {
+				$array['ajax_url'] 				 = admin_url( 'admin-ajax.php' );
 				$array['login_reminder_enabled'] = 'yes' == get_option( 'woocommerce_enable_checkout_login_reminder', 'yes' ) ? true : false;
 				$array['is_logged_in'] 		 	 = is_user_logged_in();
 				$array['no_account_btn'] 		 = esc_html__( 'I don&rsquo;t have an account', 'oceanwp' );
@@ -1891,6 +1896,178 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			return $return;
 			
 		}
+
+		/**
+		 * Validate multi-step checkout fields.
+		 *
+		 * @since 1.5.17
+		 */
+		public static function validate_checkout_callback() {
+			$posted_data = isset($_POST['posted_data'])?$_POST['posted_data']:array();
+
+            $WC_Checkout = new WC_Checkout();
+            $errors = new WP_Error();
+
+
+            ////////////////////////////////////////
+            $skipped = array();
+            $data = array(
+                'terms' => (int) isset($posted_data['terms']),
+                'createaccount' => (int) !empty($posted_data['createaccount']),
+                'payment_method' => isset($posted_data['payment_method']) ? wc_clean($posted_data['payment_method']) : '',
+                'shipping_method' => isset($posted_data['shipping_method']) ? wc_clean($posted_data['shipping_method']) : '',
+                'ship_to_different_address' => !empty($posted_data['ship_to_different_address']) && !wc_ship_to_billing_address_only(),
+                'woocommerce_checkout_update_totals' => isset($posted_data['woocommerce_checkout_update_totals']),
+            );
+            
+            foreach ($WC_Checkout->get_checkout_fields() as $fieldset_key => $fieldset) {
+                if (isset($data['ship_to_different_address'])) {
+                    if ('shipping' === $fieldset_key && (!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address() )) {
+                        continue;
+                    }
+                }
+
+                if (isset($data['createaccount'])) {
+                    if ('account' === $fieldset_key && ( is_user_logged_in() || (!$WC_Checkout->is_registration_required() && empty($data['createaccount']) ) )) {
+                        continue;
+                    }
+                }
+                foreach ($fieldset as $key => $field) {
+                    $type = sanitize_title(isset($field['type']) ? $field['type'] : 'text' );
+
+                    switch ($type) {
+                        case 'checkbox' :
+                            $value = isset($posted_data[$key]) ? 1 : '';
+                            break;
+                        case 'multiselect' :
+                            $value = isset($posted_data[$key]) ? implode(', ', wc_clean($posted_data[$key])) : '';
+                            break;
+                        case 'textarea' :
+                            $value = isset($posted_data[$key]) ? wc_sanitize_textarea($posted_data[$key]) : '';
+                            break;
+                        default :
+                            $value = isset($posted_data[$key]) ? wc_clean($posted_data[$key]) : '';
+                            break;
+                    }
+
+                    $data[$key] = apply_filters('woocommerce_process_checkout_' . $type . '_field', apply_filters('woocommerce_process_checkout_field_' . $key, $value));
+                }
+            }
+
+            if (in_array('shipping', $skipped) && ( WC()->cart->needs_shipping_address() || wc_ship_to_billing_address_only() )) {
+                foreach ($this->get_checkout_fields('shipping') as $key => $field) {
+                    $data[$key] = isset($data['billing_' . substr($key, 9)]) ? $data['billing_' . substr($key, 9)] : '';
+                }
+            }
+
+
+            //////////////////////////////////////////////////
+            foreach ($WC_Checkout->get_checkout_fields() as $fieldset_key => $fieldset) {
+
+                if($fieldset_key!=$_POST['type'])
+                     continue;
+                
+                
+                if (isset($data['ship_to_different_address'])) {
+                    if ('shipping' === $fieldset_key && (!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address() )) {
+                        continue;
+                    }
+                }
+
+                if (isset($data['createaccount'])) {
+                    if ('account' === $fieldset_key && ( is_user_logged_in() || (!$WC_Checkout->is_registration_required() && empty($data['createaccount']) ) )) {
+                        continue;
+                    }
+                }
+
+                foreach ($fieldset as $key => $field) {
+                    if (!isset($data[$key])) {
+                        continue;
+                    }
+                    $required = !empty($field['required']);
+                    $format = array_filter(isset($field['validate']) ? (array) $field['validate'] : array() );
+                    $field_label = isset($field['label']) ? $field['label'] : '';
+
+                    switch ($fieldset_key) {
+                        case 'shipping' :
+                            /* translators: %s: field name */
+                            $field_label = sprintf(__('Shipping %s', 'woocommerce'), $field_label);
+                            break;
+                        case 'billing' :
+                            /* translators: %s: field name */
+                            $field_label = sprintf(__('Billing %s', 'woocommerce'), $field_label);
+                            break;
+                    }
+
+                    if (in_array('postcode', $format)) {
+                        $country = isset($data[$fieldset_key . '_country']) ? $data[$fieldset_key . '_country'] : WC()->customer->{"get_{$fieldset_key}_country"}();
+                        $data[$key] = wc_format_postcode($data[$key], $country);
+
+                        if ('' !== $data[$key] && !WC_Validation::is_postcode($data[$key], $country)) {
+                            $errors->add('validation', sprintf(__('%s is not a valid postcode / ZIP.', 'woocommerce'), '<strong>' . esc_html($field_label) . '</strong>'));
+                        }
+                    }
+
+                    if (in_array('phone', $format)) {
+                        $data[$key] = wc_format_phone_number($data[$key]);
+
+                        if ('' !== $data[$key] && !WC_Validation::is_phone($data[$key])) {
+                            /* translators: %s: phone number */
+                            $errors->add('validation', sprintf(__('%s is not a valid phone number.', 'woocommerce'), '<strong>' . esc_html($field_label) . '</strong>'));
+                        }
+                    }
+
+                    if (in_array('email', $format) && '' !== $data[$key]) {
+                        $data[$key] = sanitize_email($data[$key]);
+
+                        if (!is_email($data[$key])) {
+                            /* translators: %s: email address */
+                            $errors->add('validation', sprintf(__('%s is not a valid email address.', 'woocommerce'), '<strong>' . esc_html($field_label) . '</strong>'));
+                            continue;
+                        }
+                    }
+
+                    if ('' !== $data[$key] && in_array('state', $format)) {
+                        $country = isset($data[$fieldset_key . '_country']) ? $data[$fieldset_key . '_country'] : WC()->customer->{"get_{$fieldset_key}_country"}();
+                        $valid_states = WC()->countries->get_states($country);
+
+                        if (!empty($valid_states) && is_array($valid_states) && sizeof($valid_states) > 0) {
+                            $valid_state_values = array_map('wc_strtoupper', array_flip(array_map('wc_strtoupper', $valid_states)));
+                            $data[$key] = wc_strtoupper($data[$key]);
+
+                            if (isset($valid_state_values[$data[$key]])) {
+                                // With this part we consider state value to be valid as well, convert it to the state key for the valid_states check below.
+                                $data[$key] = $valid_state_values[$data[$key]];
+                            }
+
+                            if (!in_array($data[$key], $valid_state_values)) {
+                                /* translators: 1: state field 2: valid states */
+                                $errors->add('validation', sprintf(__('%1$s is not valid. Please enter one of the following: %2$s', 'woocommerce'), '<strong>' . esc_html($field_label) . '</strong>', implode(', ', $valid_states)));
+                            }
+                        }
+                    }
+
+                    if ($required && '' === $data[$key]) {
+                        /* translators: %s: field name */
+                        $errors->add('required-field', apply_filters('woocommerce_checkout_required_field_notice', sprintf(__('%s is a required field.', 'woocommerce'), '<strong>' . esc_html($field_label) . '</strong>'), $field_label));
+                    }
+                }
+            }
+
+            $html = '';
+            $valid = TRUE;
+            if ($errors->get_error_messages()) {
+                $valid = FALSE;
+                $html = '<div class="woocommerce-NoticeGroup woocommerce-NoticeGroup-checkout"><ul class="woocommerce-error" role="alert">';
+                foreach ($errors->get_error_messages() as $message) {
+                    $html.='<li>' . $message . '</li>';
+                }
+                $html.='</ul></div>';
+            }
+            
+            wp_send_json(array("valid"=>$valid,"html"=>$html));
+            wp_die();
+        }
 
 		/**
 		 * Checkout timeline template.

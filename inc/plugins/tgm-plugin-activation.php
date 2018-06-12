@@ -18,13 +18,6 @@ function oceanwp_tgmpa_register() {
 		),
 		
 		array(
-			'name'				=> 'Ocean Demo Import',
-			'slug'				=> 'ocean-demo-import', 
-			'required'			=> false,
-			'force_activation'	=> false,
-		),
-		
-		array(
 			'name'				=> 'Elementor',
 			'slug'				=> 'elementor', 
 			'required'			=> false,
@@ -32,6 +25,17 @@ function oceanwp_tgmpa_register() {
 		),
 		
 	);
+
+	// If OCean Pro Demos is not installed
+	if ( ! class_exists( 'Ocean_Pro_Demos' ) ) {
+
+		$plugins[]     = array(
+			'name'     => 'Ocean Demo Import',
+			'slug'     => 'ocean-demo-import',
+			'required' => false,
+		);
+
+	}
 
 	// If WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
