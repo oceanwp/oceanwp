@@ -330,11 +330,11 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 * @return number
 		 */
 		function archive_columns( $columns ) {
-			if ( is_post_type_archive( 'course' ) ) {
+			if ( is_post_type_archive( 'course' ) || is_tax( array( 'course_cat', 'course_tag', 'course_difficulty', 'course_track' ) ) ) {
 				$columns = get_theme_mod( 'ocean_llms_courses_columns', 3 );
 				$columns = $columns ? $columns : '3';
 				return $columns;
-			} elseif ( is_post_type_archive( 'llms_membership' ) ) {
+			} elseif ( is_post_type_archive( 'llms_membership' ) || is_tax( array( 'membership_tag', 'membership_cat' ) ) ) {
 				$columns = get_theme_mod( 'ocean_llms_membership_columns', 3 );
 				$columns = $columns ? $columns : '3';
 				return $columns;
@@ -349,7 +349,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		 * @return number
 		 */
 		function archive_responsive_columns( $classes ) {
-			if ( is_post_type_archive( 'course' ) ) {
+			if ( is_post_type_archive( 'course' ) || is_tax( array( 'course_cat', 'course_tag', 'course_difficulty', 'course_track' ) ) ) {
 				// Responsive columns
 				$tablet_columns    = get_theme_mod( 'ocean_llms_tablet_courses_columns' );
 				$mobile_columns    = get_theme_mod( 'ocean_llms_mobile_courses_columns' );
@@ -362,7 +362,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 					$classes[] = 'mobile-col';
 					$classes[] = 'mobile-' . $mobile_columns . '-col';
 				}
-			} elseif ( is_post_type_archive( 'llms_membership' ) ) {
+			} elseif ( is_post_type_archive( 'llms_membership' ) || is_tax( array( 'membership_tag', 'membership_cat' ) ) ) {
 				// Responsive columns
 				$tablet_columns    = get_theme_mod( 'ocean_llms_tablet_membership_columns' );
 				$mobile_columns    = get_theme_mod( 'ocean_llms_mobile_membership_columns' );
