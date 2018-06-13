@@ -15,6 +15,13 @@ function oceanwpWooGridList() {
 	if ( $j( 'body' ).hasClass( 'has-grid-list' ) ) {
 
 		$j( '#oceanwp-grid' ).on( 'click', function() {
+			if ( $j( '.woo-entry-image.product-entry-slider' ).length) {
+                setTimeout( function() {
+                    $j( '.woo-entry-image.product-entry-slider' ).slick( 'unslick' );
+                    oceanwpInitCarousel();
+                }, 350 );
+            }
+
 			$j( this ).addClass( 'active' );
 			$j( '#oceanwp-list' ).removeClass( 'active' );
 			Cookies.set( 'gridcookie', 'grid', { path: '' } );
@@ -25,6 +32,13 @@ function oceanwpWooGridList() {
 		} );
 
 		$j( '#oceanwp-list' ).on( 'click', function() {
+			if ( $j( '.woo-entry-image.product-entry-slider' ).length) {
+                setTimeout( function() {
+                    $j( '.woo-entry-image.product-entry-slider' ).slick( 'unslick' );
+                    oceanwpInitCarousel();
+                }, 350 );
+            }
+            
 			$j( this ).addClass( 'active' );
 			$j( '#oceanwp-grid' ).removeClass( 'active' );
 			Cookies.set( 'gridcookie', 'list', { path: '' } );

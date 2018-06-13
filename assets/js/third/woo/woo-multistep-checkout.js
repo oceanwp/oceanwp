@@ -78,353 +78,121 @@ function oceanwpWooMultiStepCheckout() {
             next 			= form_actions.find( '.button.next' ),
             checkout_form 	= $j( 'form.woocommerce-checkout' ),
             is_logged_in    = oceanwpLocalize.is_logged_in,
-            button_title;
+            button_title,
+            valid           = false,
+            current_step_item = steps[current_step],
+            selector        = current_step_item.selector,
+            posted_data     = {},
+            type            = '';
 
-        timeline.find( '.active' ).removeClass( 'active' );
+        $j( 'form.woocommerce-checkout .woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout' ).remove();
 
-        if ( action == 'next' ) {
-            form_actions.data( 'step', next_step );
-            steps[current_step].fadeOut( 120, function() {
-                steps[next_step].fadeIn( 120 );
+        type = (selector.indexOf( 'billing' ) >= 0) ? 'billing' : type;
+        type = (selector.indexOf( 'shipping' ) >= 0) ? 'shipping' : type;
+
+        if ( type == 'billing' || type == 'shipping' ) {
+
+            $j( selector ).find( '.validate-required input' ).each( function() {
+                posted_data[ $j( this ).attr( 'name' ) ] = $j( this ).val();
             } );
 
-            $j( '#timeline-' + next_step ).toggleClass( 'active' );
-        } else if ( action == 'prev' ) {
-            form_actions.data( 'step', prev_step );
-            steps[current_step].fadeOut( 120, function() {
-                steps[prev_step].fadeIn( 120 );
+            $j( selector ).find( '.validate-required select' ).each( function() {
+                posted_data[ $j( this ).attr( 'name' ) ] = $j( this ).val();
             } );
 
-            $j( '#timeline-' + prev_step ).toggleClass( 'active' );
-        }
-
-        current_step = form_actions.data( 'step' );
-
-        if ( ( current_step == 1
-        		&& is_logged_in == true ) ||
-            ( is_logged_in == false
-            	&& ( ( current_step == 0
-            		&& oceanwpLocalize.login_reminder_enabled == 1 )
-            	||  ( current_step == 1
-            		&& oceanwpLocalize.login_reminder_enabled == 0 ) ) ) ) {
-            prev.fadeOut( 120 );
-        } else {
-            prev.fadeIn( 120 );
-        }
-
-        // Next title
-        if ( is_logged_in == false
-            && ( ( current_step == 0
-                    && oceanwpLocalize.login_reminder_enabled == 1 )
-                ||  ( current_step == 1
-                    && oceanwpLocalize.login_reminder_enabled == 0 ) )  ) {
-            next.val( oceanwpLocalize.no_account_btn );
-        } else {
-            next.val( oceanwpLocalize.next );
-        }
-
-        // Last step
-        if ( current_step == 3 ) {
-            checkout_form.removeClass( 'processing' );
-            coupon.fadeIn( 80 );
-            next.fadeOut( 120 );
-        } else {
-            checkout_form.addClass( 'processing' );
-            coupon.fadeOut( 80 );
-            next.fadeIn( 120 );
-        }
-
-    } );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*form_actions.find( '.button.next' ).on( 'click', function() {
-        return owpValidateCheckoutForm();
-    } );
-
-    $j( 'form.checkout .validate-required :input' ).attr( 'required', 'required' );
-
-    body.on( 'change', '#billing_country', function() {
-        if ( $j( '#billing_country' ).is( ':visible' ) ) {
-            owpCheckPostCode( 'billing' );
-        }
-    } );
-
-    body.on( 'blur', '#billing_postcode', function() {
-        if ( $j( '#billing_postcode' ).is( ':visible' ) ) {
-            owpCheckPostCode( 'billing' );
-        }
-    } );
-
-
-    body.on( 'change', '#shipping_country', function() {
-        if ( $j( '#shipping_country' ).is( ':visible' ) ) {
-            owpCheckPostCode( 'shipping' );
-        }
-    } );
-
-    body.on( 'blur', '#shipping_postcode', function() {
-        if ( $j( '#shipping_postcode' ).is( ':visible' ) ) {
-            owpCheckPostCode( 'shipping' );
-        }
-    } );
-
-    /**
-     * Check post code class.
-     */
-    /*var owpCheckPostCode = function( type ) {
-
-        var result = $j( '.form-row#' + type + '_postcode_field' ).length > 0 && $j( '#' + type + '_postcode' ).val() != false
-                && $j( '#' + type + '_country' ).length > 0 && $j( '#' + type + '_country' ).val() != false;
-
-        if ( result ) {
+            $j( selector ).find( '.input-checkbox' ).each( function() {
+                if ( $j( this ).is( ':checked' ) ) {
+                    posted_data[ $j( this ).attr( 'name' ) ] = $j( this ).val();
+                }
+            } );
 
             var data = {
-                action: 'oceanwp_valid_postcode',
-                country: $j( '#' + type + '_country' ).val(),
-                postCode: $j( '#' + type + '_postcode' ).val()
+                action: 'oceanwp_validate_checkout',
+                type: type,
+                posted_data: posted_data
             };
 
-            $j.post( oceanwpLocalize.ajax_url, data, function( response ) {
-                if ( response == false ) {
-                    $j( '#' + type + '_postcode' ).parent().removeClass( 'woocommerce-validated' ).addClass( 'woocommerce-invalid woocommerce-invalid-required-field' );
-                    return false;
-                } else {
-                    return true;
+            $j.ajax( {
+                type: 'POST',
+                url: oceanwpLocalize.ajax_url,
+                data: data,
+                async: false,
+                success: function( response ) {
+                    valid = response.valid;
+
+                    if ( ! response.valid ) {
+                        $j( 'form.woocommerce-checkout' ).prepend( response.html );
+                        $j( 'html,body' ).animate( {
+                            scrollTop: $j( 'form.woocommerce-checkout' ).offset().top - 50 },
+                        'slow' );
+                    }
+                },
+                complete: function () {
                 }
             } );
 
+        } else {
+            valid = true;
         }
 
-    };*/
+        if ( valid ) {
 
-    /**
-     * Validate checkout form.
-     */
-    /*var owpValidateCheckoutForm = function() {
+            timeline.find( '.active' ).removeClass( 'active' );
 
-        // True by default
-        //var form_valid = true;
-        var form_valid;
+            if ( action == 'next' ) {
+                form_actions.data( 'step', next_step );
+                steps[current_step].fadeOut( 120, function() {
+                    steps[next_step].fadeIn( 120 );
+                } );
 
-        if ( $j( '#billing_state_field' ).is( ':visible' ) ) {
+                $j( '#timeline-' + next_step ).toggleClass( 'active' );
+            } else if ( action == 'prev' ) {
+                form_actions.data( 'step', prev_step );
+                steps[current_step].fadeOut( 120, function() {
+                    steps[prev_step].fadeIn( 120 );
+                } );
 
-            if ( $j( '#billing_state' ).is( ['required'] ) ) {
-
-                if ( $j.trim( $j( '#billing_state' ).val() ) == '' ) {
-
-                    $j( '#s2id_billing_state' ).addClass( 'invalid-state' );
-
-                    if ( ! $j( '#billing_state_field' ).has( '.error-class' ).length ) {
-
-                        if ( ! $j( '#billing_state_field' ).has( 'label.error' ).length
-                            && ! $j( '#billing_state_field label.error' ).is( ':visible' ) ) {
-                            $j( '#billing_state_field' ).append( '<label class="error-class">' + oceanwpLocalize.error_msg + '</label>' );
-                        }
-
-                    }
-
-                    form_valid = false;
-
-                } else {
-
-                    $j( '#billing_state_field' ).find( 'label.error-class' ).remove();
-                    $j( '#s2id_billing_state' ).removeClass( 'invalid-state' );
-
-                }
+                $j( '#timeline-' + prev_step ).toggleClass( 'active' );
             }
 
-        }
+            current_step = form_actions.data( 'step' );
 
-        if ( $j( '#billing_state_field' ).is( ':visible' ) ) {
-
-            if ( $j( '#billing_state' ).is( ['required'] ) ) {
-
-                if ( ! $j( '#billing_state_field' ).hasClass( 'woocommerce-validated' ) ) {
-
-                    if ( ! $j( '#billing_state_field' ).has( 'label.error-class' ).length ) {
-
-                        $j( '#s2id_billing_state' ).addClass( 'invalid-state' );
-                        $j( '#billing_state_field' ).append( '<label class="error-class">' + oceanwpLocalize.error_msg + '</label>' );
-                    }
-
-                    form_valid = false;
-
-                } else {
-
-                    $j( '#billing_state_field' ).find( 'label.error-class' ).remove();
-                    $j( '#s2id_billing_state' ).removeClass( 'invalid-state' );
-
-                }
-
-            }
-
-        }
-
-        if ( $j( '#shipping_state_field' ).is( ':visible' ) ) {
-
-            if ( $j( '#shipping_state' ).is( ['required'] ) ) {
-
-                if ( ! $j( '#shipping_state_field' ).hasClass( 'woocommerce-validated' ) ) {
-
-                    if ( ! $j( '#shipping_state_field' ).has( 'label.error-class' ).length ) {
-
-                        $j( '#s2id_shipping_state' ).addClass( 'invalid-state' );
-                        $j( '#shipping_state_field' ).append( '<label class="error-class">' + oceanwpLocalize.error_msg + '</label>' );
-
-                    }
-
-                    form_valid = false;
-
-                } else {
-
-                    $j( '#shipping_state_field' ).find( 'label.error-class' ).remove();
-                    $j( '#s2id_shipping_state' ).removeClass( 'invalid-state' );
-
-                }
-
-            }
-
-        }
-
-        if ( $j( '#shipping_state_field' ).is( ':visible' ) ) {
-
-            if ( $j( '#shipping_state' ).is( ['required'] ) ) {
-
-                if ( $j.trim( $j( '#shipping_state' ).val() ) == '' ) {
-
-                    $j( '#s2id_shipping_state' ).addClass( 'invalid-state' );
-
-                    if ( ! $j( '#shipping_state_field' ).has( 'label.error' ).length
-                        && ! $j( '#shipping_state_field label.error' ).is( ':visible' ) ) {
-                        $j( '#shipping_state_field' ).append( '<label class="error-class">' + oceanwpLocalize.error_msg + '</label>' );
-                    }
-
-                    form_valid = false;
-
-                }
-
+            if ( ( current_step == 1
+            		&& is_logged_in == true ) ||
+                ( is_logged_in == false
+                	&& ( ( current_step == 0
+                		&& oceanwpLocalize.login_reminder_enabled == 1 )
+                	||  ( current_step == 1
+                		&& oceanwpLocalize.login_reminder_enabled == 0 ) ) ) ) {
+                prev.fadeOut( 120 );
             } else {
-
-                $j( '#shipping_state_field' ).find( 'label.error-class' ).remove();
-                $j( '#s2id_shipping_state' ).removeClass( 'invalid-state' );
-
+                prev.fadeIn( 120 );
             }
 
-        }
-
-        if ( $j( '#billing_postcode' ).closest( '#billing_postcode_field' ).hasClass( 'woocommerce-invalid' ) ) {
-            form_valid = false;
-        }
-
-        // Validate billing phone
-        if ( $j( '#billing_phone' ).length ) {
-            var phone = $j( '#billing_phone' ).val();
-                phone = phone.replace( /[\s\#0-9_\-\+\(\)]/g, '' );
-                phone = $j.trim( phone );
-
-            if ( phone.length > 0 ) {
-                form_valid = false;
-
-                $j( '#billing_phone_field' ).removeClass( 'woocommerce-validated' ).addClass( 'woocommerce-invalid woocommerce-invalid-required-field' );
-
-                if ( ! $j( '#billing_phone_field' ).has( 'label.error-class' ).length ) {
-                    $j( '#billing_phone_field' ).append( '<label class="error-class">invalid phone number</label>' );
-                }
-            }
-        }
-
-        if ( $j( '#ship-to-different-address-checkbox' ).is( ':checked' )
-            && $j( '#ship-to-different-address-checkbox' ).is( ':visible' ) ) {
-
-            if ( ! $j( '#shipping_postcode' ).closest( '#shipping_postcode_field' ).hasClass( 'woocommerce-validated' ) ) {
-                form_valid = false;
-            }
-
-        }
-
-        // Validate terms and conditions
-        if ( ! owpValidateTerms() ) {
-            form_valid = false;
-        }
-        
-        return form_valid;
-
-    };*/
-
-    /**
-     * Validate terms & conditions.
-     */
-    /*var owpValidateTerms = function() {
-
-        // True by default
-        var validate_form = true;
-
-        if ( $j( 'input[name="legal"]' ).length
-            && $j( 'input[name="legal"]' ).is( ':visible' ) ) {
-
-            if ( $j( 'input[name="legal"]' ).is( ':checked' ) ) {
-
-                $j( 'input[name="legal"]' ).parent().removeAttr( 'style' );
-                $j( '.terms-error' ).remove();
-
-                validate_form = true;
-
+            // Next title
+            if ( is_logged_in == false
+                && ( ( current_step == 0
+                        && oceanwpLocalize.login_reminder_enabled == 1 )
+                    ||  ( current_step == 1
+                        && oceanwpLocalize.login_reminder_enabled == 0 ) )  ) {
+                next.val( oceanwpLocalize.no_account_btn );
             } else {
-
-                $j( 'input[name="legal"]' ).attr( 'required', 'required' );
-                $j( '.terms' ).css( 'border', '1px solid #8a1f11' );
-
-                if ( ! $j( '.terms-error' ).length ) {
-                    $j( '<p class="terms-error">' + oceanwpLocalize.terms_error + '</p>' ).insertAfter( '.wc-terms-and-conditions' );
-                }
-
-                validate_form = false;
+                next.val( oceanwpLocalize.next );
             }
 
-        }
-
-        if ( $j( 'input[name="terms"]' ).length
-            && $j( 'input[name="terms"]' ).is( ':visible' ) ) {
-
-            if ( $j( 'input[name="terms"]' ).is( ':checked' ) ) {
-
-                $j( 'input[name="terms"]' ).parent().removeAttr( 'style' );
-                $j( '.terms-error' ).remove();
-
-                validate_form = true;
-
+            // Last step
+            if ( current_step == 3 ) {
+                checkout_form.removeClass( 'processing' );
+                coupon.fadeIn( 80 );
+                next.fadeOut( 120 );
             } else {
-
-                $j( 'input[name="terms"]' ).attr( 'required', 'required' );
-                $j( 'input[name="terms"]' ).parent().css( 'border', '1px solid #8a1f11' );
-
-                if ( ! $j( '.terms-error' ).length ) {
-                    $j( '<p class="terms-error">' + oceanwpLocalize.terms_error + '</p>' ).insertAfter( '.wc-terms-and-conditions' );
-                }
-
-                validate_form = false;
-
+                checkout_form.addClass( 'processing' );
+                coupon.fadeOut( 80 );
+                next.fadeIn( 120 );
             }
 
         }
 
-        return validate_form;
-
-    };*/
+    } );
 
 }

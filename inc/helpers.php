@@ -1080,6 +1080,9 @@ if ( ! function_exists( 'oceanwp_header_retina_logo' ) ) {
 
 			$attr['srcset'] = $cutom_logo_url . ' 1x, ' . $retina_logo . ' 2x';
 
+			// Remove the size attr
+			unset( $attr['sizes'] );
+
 		}
 
 		// Return attr
@@ -4160,7 +4163,7 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 
 		// Publish date
 		elseif ( 'publish_date' == $location ) {
-			$schema = 'itemprop="datePublished" pubdate';
+			$schema = 'itemprop="datePublished"';
 		}
 
 		// Author name

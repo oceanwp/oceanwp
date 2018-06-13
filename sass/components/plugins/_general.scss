@@ -45,3 +45,8 @@ div.motopress-bootstrap-dropdown .dropdown-menu {
 .pac-container {
     z-index: 100003;
 }
+
+/* Remove the Elementor section min height if the no-height class is added */
+.no-height .elementor-column {
+    min-height: 0;
+}

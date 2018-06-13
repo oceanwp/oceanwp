@@ -46,7 +46,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'label' 				=> esc_html__( 'Body', 'oceanwp' ),
 					'target' 				=> 'body',
 					'defaults' 				=> array(
-						'font-size' 		=> '14',
+						'font-size' 		=> '14px',
 						'color' 			=> '#929292',
 						'line-height' 		=> '1.8',
 					),
@@ -64,7 +64,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'label' 				=> esc_html__( 'Heading 1 (H1)', 'oceanwp' ),
 					'target' 				=> 'h1',
 					'defaults' 				=> array(
-						'font-size' 		=> '23',
+						'font-size' 		=> '23px',
 						'color' 			=> '#333333',
 						'line-height' 		=> '1.4',
 					),
@@ -73,7 +73,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'label' 				=> esc_html__( 'Heading 2 (H2)', 'oceanwp' ),
 					'target' 				=> 'h2',
 					'defaults' 				=> array(
-						'font-size' 		=> '20',
+						'font-size' 		=> '20px',
 						'color' 			=> '#333333',
 						'line-height' 		=> '1.4',
 					),
@@ -82,7 +82,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'label' 				=> esc_html__( 'Heading 3 (H3)', 'oceanwp' ),
 					'target' 				=> 'h3',
 					'defaults' 				=> array(
-						'font-size' 		=> '18',
+						'font-size' 		=> '18px',
 						'color' 			=> '#333333',
 						'line-height' 		=> '1.4',
 					),
@@ -91,7 +91,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'label' 				=> esc_html__( 'Heading 4 (H4)', 'oceanwp' ),
 					'target' 				=> 'h4',
 					'defaults' 				=> array(
-						'font-size' 		=> '17',
+						'font-size' 		=> '17px',
 						'color' 			=> '#333333',
 						'line-height' 		=> '1.4',
 					),
@@ -101,7 +101,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'target' 				=> '#site-logo a.site-logo-text',
 					'exclude' 				=> array( 'font-color' ),
 					'defaults' 				=> array(
-						'font-size' 		=> '24',
+						'font-size' 		=> '24px',
 						'line-height'	 	=> '1.8',
 					),
 				),
@@ -110,7 +110,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'target' 				=> '#top-bar-content,#top-bar-social-alt',
 					'exclude' 				=> array( 'font-color' ),
 					'defaults' 				=> array(
-						'font-size' 		=> '12',
+						'font-size' 		=> '12px',
 						'line-height' 		=> '1.8',
 					),
 					'active_callback' 		=> 'oceanwp_cac_has_topbar',
@@ -120,7 +120,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'target' 				=> '#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a',
 					'exclude' 				=> array( 'font-color', 'line-height' ),
 					'defaults' 				=> array(
-						'font-size' 		=> '13',
+						'font-size' 		=> '13px',
 						'letter-spacing' 	=> '0.6',
 					),
 				),
@@ -129,7 +129,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'target' 				=> '.dropdown-menu ul li a.menu-link,#site-header.full_screen-header .fs-dropdown-menu ul.sub-menu li a',
 					'exclude' 				=> array( 'font-color' ),
 					'defaults' 				=> array(
-						'font-size' 		=> '12',
+						'font-size' 		=> '12px',
 						'line-height' 		=> '1.2',
 						'letter-spacing' 	=> '0.6',
 					),
@@ -139,7 +139,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'target' 				=> '.sidr-class-dropdown-menu li a, a.sidr-class-toggle-sidr-close, #mobile-dropdown ul li a, body #mobile-fullscreen ul li a',
 					'exclude' 				=> array( 'font-color' ),
 					'defaults' 				=> array(
-						'font-size' 		=> '15',
+						'font-size' 		=> '15px',
 						'line-height' 		=> '1.8',
 					),
 				),
@@ -148,7 +148,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'target' 				=> '.page-header .page-header-title, .page-header.background-image-page-header .page-header-title',
 					'exclude' 				=> array( 'font-color' ),
 					'defaults' 				=> array(
-						'font-size' 		=> '32',
+						'font-size' 		=> '32px',
 						'line-height' 		=> '1.4',
 					),
 					'active_callback' 		=> 'oceanwp_cac_has_page_header',
@@ -157,7 +157,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'label' 				=> esc_html__( 'Page Title Subheading', 'oceanwp' ),
 					'target' 				=> '.page-header .page-subheading',
 					'defaults' 				=> array(
-						'font-size' 		=> '15',
+						'font-size' 		=> '15px',
 						'color' 			=> '#929292',
 						'line-height' 		=> '1.8',
 					),
@@ -168,7 +168,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'target' 				=> '.site-breadcrumbs',
 					'exclude' 				=> array( 'font-color', 'line-height' ),
 					'defaults' 				=> array(
-						'font-size' 		=> '13',
+						'font-size' 		=> '13px',
 					),
 					'active_callback' 		=> 'oceanwp_cac_has_breadcrumbs',
 				),
@@ -176,7 +176,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'label' 				=> esc_html__( 'Blog Entry Title', 'oceanwp' ),
 					'target' 				=> '.blog-entry.post .blog-entry-header .entry-title a',
 					'defaults' 				=> array(
-						'font-size' 		=> '24',
+						'font-size' 		=> '24px',
 						'color' 			=> '#333333',
 						'line-height' 		=> '1.4',
 					),
@@ -185,7 +185,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'label' 				=> esc_html__( 'Blog Post Title', 'oceanwp' ),
 					'target' 				=> '.single-post .entry-title',
 					'defaults' 				=> array(
-						'font-size' 		=> '34',
+						'font-size' 		=> '34px',
 						'color' 			=> '#333333',
 						'line-height' 		=> '1.4',
 						'letter-spacing' 	=> '0.6',
@@ -195,7 +195,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'label' 				=> esc_html__( 'Sidebar Widget Heading', 'oceanwp' ),
 					'target' 				=> '.sidebar-box .widget-title',
 					'defaults' 				=> array(
-						'font-size' 		=> '13',
+						'font-size' 		=> '13px',
 						'color' 			=> '#333333',
 						'line-height' 		=> '1',
 						'letter-spacing' 	=> '1',
@@ -206,7 +206,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'label' 				=> esc_html__( 'Footer Widget Heading', 'oceanwp' ),
 					'target' 				=> '#footer-widgets .footer-box .widget-title',
 					'defaults' 				=> array(
-						'font-size' 		=> '13',
+						'font-size' 		=> '13px',
 						'color' 			=> '#ffffff',
 						'line-height' 		=> '1',
 						'letter-spacing' 	=> '1',
@@ -218,7 +218,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'target' 				=> '#footer-bottom #copyright',
 					'exclude' 				=> array( 'font-color' ),
 					'defaults' 				=> array(
-						'font-size' 		=> '12',
+						'font-size' 		=> '12px',
 						'line-height' 		=> '1',
 					),
 					'active_callback' 		=> 'oceanwp_cac_has_footer_bottom',
@@ -228,7 +228,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					'target' 				=> '#footer-bottom #footer-bottom-menu',
 					'exclude' 				=> array( 'font-color' ),
 					'defaults' 				=> array(
-						'font-size' 		=> '12',
+						'font-size' 		=> '12px',
 						'line-height'		=> '1',
 					),
 					'active_callback' 		=> 'oceanwp_cac_has_footer_bottom',
@@ -708,7 +708,9 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						// Add quotes around font-family && font family to scripts array
 						if ( 'font-family' == $attribute ) {
 							$fonts[] = $val;
-							$val = $val;
+
+							// add brackets to make all fonts valid
+							$val = '"'.$val.'"';
 						}
 
 						// Add to inline CSS
