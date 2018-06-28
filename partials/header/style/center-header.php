@@ -44,6 +44,8 @@ $retina_logo = oceanwp_header_retina_logo_setting(); ?>
 
 	<?php do_action( 'ocean_header_inner_left_content' ); ?>
 
+	<?php get_template_part( 'partials/header/logo' ); ?>
+
 	<?php
 	// If social
 	if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {

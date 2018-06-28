@@ -4893,6 +4893,19 @@ Woo Product Navigation
   border-color: #13aff0;
 }
 
+.owp-product-nav li a.owp-nav-text {
+  display: none;
+  font-size: 12px;
+}
+
+.owp-product-nav li a.owp-nav-text.next-text {
+  padding-left: 3px;
+}
+
+.owp-product-nav li a.owp-nav-text.prev-text {
+  padding-right: 3px;
+}
+
 .owp-product-nav li .owp-nav-thumb {
   position: absolute;
   top: 100%;
@@ -4916,6 +4929,27 @@ Woo Product Navigation
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 767px) {
+  .owp-product-nav-wrap {
+    margin-bottom: 15px;
+  }
+  .owp-product-nav {
+    display: block;
+  }
+  .owp-product-nav li.next-li {
+    float: left;
+  }
+  .owp-product-nav li.prev-li {
+    float: right;
+  }
+  .owp-product-nav li {
+    position: relative;
+  }
+  .owp-product-nav li a.owp-nav-text {
+    display: inline-block;
+  }
 }
 
 /*------------------------------------------------------------------

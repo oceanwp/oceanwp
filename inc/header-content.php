@@ -20,11 +20,6 @@ if ( 'three' == $position ) {
 	add_action( 'ocean_header_inner_left_content', 'oceanwp_mobile_icon', 1 );
 }
 
-if ( 'full_screen' == $header_style
-	|| 'center' == $header_style ) {
-	add_action( 'ocean_header_inner_left_content', 'oceanwp_header_logo', 10 );
-}
-
 add_action( 'ocean_header_inner_middle_content', 'oceanwp_header_logo', 10 );
 
 if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {

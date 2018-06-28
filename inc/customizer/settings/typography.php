@@ -200,7 +200,10 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						'line-height' 		=> '1',
 						'letter-spacing' 	=> '1',
 					),
-					'margin' => true,
+				),
+				'widgets' 		=> array(
+					'label' 				=> esc_html__( 'Widgets', 'oceanwp' ),
+					'target' 				=> '.sidebar-box, .footer-box',
 				),
 				'footer_widget_title' 		=> array(
 					'label' 				=> esc_html__( 'Footer Widget Heading', 'oceanwp' ),

@@ -58,6 +58,10 @@ function oceanwpInfiniteScrollInit() {
 				oceanwpInitLightbox( $items );
 			}
 
+			if ( ! $j( 'body' ).hasClass( 'no-fitvids' ) ) {
+				oceanwpInitFitVids( $items );
+			}
+
 			// Match heights
 			if ( ! $j( 'body' ).hasClass( 'no-matchheight' ) ) {
 				$j( '.blog-equal-heights .blog-entry-inner' ).matchHeight({ property: 'min-height' });

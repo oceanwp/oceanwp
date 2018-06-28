@@ -98,8 +98,10 @@ body .owp-qv-content-inner .owp-qv-close { left: 0; right: auto; }
 .owp-product-nav li:first-child { margin-right: 0; }
 .owp-product-nav li .next i:before { content: '\f105'; }
 .owp-product-nav li .prev i:before { content: '\f104'; }
+.owp-product-nav li a.owp-nav-text.next-text { padding-right: 3px; padding-left: 0; }
+.owp-product-nav li a.owp-nav-text.prev-text { padding-left: 3px; padding-right: 0; }
 .owp-product-nav li .owp-nav-thumb { right: -99999px; left: auto; }
-.owp-product-nav li:hover > .owp-nav-thumb { right: -15px; left: auto; }
+.owp-product-nav li:hover > .owp-nav-thumb { right: 50%; left: auto; -webkit-transform: translateX(50%); transform: translateX(50%); }
 
 /* Single product */
 .woocommerce div.product div.summary { float: left; }
@@ -299,6 +301,10 @@ Phone Portrait & Landscape
 
     /* cart collaterals */
     .woocommerce-cart .cart-collaterals .cart_totals table td { text-align: left; }
+
+    /* Single product navigation */
+	.owp-product-nav li.next-li { float: right; }
+	.owp-product-nav li.prev-li { float: left; }
 
 }
 

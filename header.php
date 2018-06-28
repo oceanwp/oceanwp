@@ -6,7 +6,7 @@
  */ ?>
 
 <!DOCTYPE html>
-<html <?php language_attributes(); ?><?php oceanwp_schema_markup( 'html' ); ?>>
+<html class="<?php echo esc_attr( oceanwp_html_classes() ); ?>" <?php language_attributes(); ?><?php oceanwp_schema_markup( 'html' ); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
