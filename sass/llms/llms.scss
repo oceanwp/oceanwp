@@ -277,3 +277,20 @@
 		}
 	}
 }
+
+/** Pagination **/
+.llms-pagination{
+	float: right;
+}
+
+.pagination-center .llms-pagination{
+	text-align: center;
+
+	ul li{
+		float: none;
+	}
+}
+
+.pagination-left .llms-pagination{
+	float: left;
+}

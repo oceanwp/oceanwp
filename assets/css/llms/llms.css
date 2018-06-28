@@ -290,3 +290,20 @@
     width: 16.6666666667%;
   }
 }
+
+/** Pagination **/
+.llms-pagination {
+  float: right;
+}
+
+.pagination-center .llms-pagination {
+  text-align: center;
+}
+
+.pagination-center .llms-pagination ul li {
+  float: none;
+}
+
+.pagination-left .llms-pagination {
+  float: left;
+}
