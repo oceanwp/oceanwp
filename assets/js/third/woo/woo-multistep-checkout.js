@@ -40,8 +40,6 @@ function oceanwpWooMultiStepCheckout() {
             steps[4] = $j( '#order_checkout_payment' );
         }
 
-        payment_method();
-
         $j( '#order_checkout_payment' ).find( 'input[name=payment_method]' ).on( 'click', function() {
 
             if ( $j( '.payment_methods input.input-radio' ).length > 1 ) {
@@ -83,7 +81,28 @@ function oceanwpWooMultiStepCheckout() {
             current_step_item = steps[current_step],
             selector        = current_step_item.selector,
             posted_data     = {},
-            type            = '';
+            type            = '',
+            $offset         = 30,
+            $adminBar       = $j( '#wpadminbar' ),
+            $stickyTopBar   = $j( '#top-bar-wrap' ),
+            $stickyHeader   = $j( '#site-header' );
+
+        // Offset adminbar
+        if ( $adminBar.length
+            && $j( window ).width() > 600 ) {
+            $offset = $offset + $adminBar.outerHeight();
+        }
+
+        // Offset sticky topbar
+        if ( true == oceanwpLocalize.hasStickyTopBar ) {
+            $offset = $offset + $stickyTopBar.outerHeight();
+        }
+
+        // Offset sticky header
+        if ( $j( '#site-header' ).hasClass( 'fixed-scroll' )
+            && ! $j( '#site-header' ).hasClass( 'vertical-header' ) ) {
+            $offset = $offset + $stickyHeader.outerHeight();
+        }
 
         $j( 'form.woocommerce-checkout .woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout' ).remove();
 
@@ -123,12 +142,11 @@ function oceanwpWooMultiStepCheckout() {
                     if ( ! response.valid ) {
                         $j( 'form.woocommerce-checkout' ).prepend( response.html );
                         $j( 'html,body' ).animate( {
-                            scrollTop: $j( 'form.woocommerce-checkout' ).offset().top - 50 },
+                            scrollTop: $j( 'form.woocommerce-checkout' ).offset().top - $offset },
                         'slow' );
                     }
                 },
-                complete: function () {
-                }
+                complete: function() {}
             } );
 
         } else {

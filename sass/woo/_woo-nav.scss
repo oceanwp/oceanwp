@@ -45,6 +45,19 @@ Woo Product Navigation
 			}
 		}
 
+		a.owp-nav-text {
+			display: none;
+		    font-size: 12px;
+
+		    &.next-text {
+			    padding-left: 3px;
+			}
+
+		    &.prev-text {
+			    padding-right: 3px;
+			}
+		}
+
 		.owp-nav-thumb {
 			position: absolute;
 			top: 100%;
@@ -64,4 +77,30 @@ Woo Product Navigation
 		    transform: translateX(-50%);
 		}
     }
+}
+
+@media only screen and (max-width: 767px) {
+	.owp-product-nav-wrap {
+	    margin-bottom: 15px;
+	}
+
+	.owp-product-nav {
+		display: block;
+
+		li.next-li {
+			float: left;
+		}
+
+		li.prev-li {
+			float: right;
+		}
+
+		li {
+			position: relative;
+			
+			a.owp-nav-text {
+				display: inline-block;
+			}
+		}
+	}
 }

@@ -1,21 +1,21 @@
 #customize-theme-controls #accordion-section-oceanwp_upsell_section {
 	display: block !important;
-	border-top: 1px solid #fe5252;
-	border-bottom: 1px solid #fe5252;
+	border-top: 1px solid #5277fe;
+	border-bottom: 1px solid #5277fe;
 }
 
 #accordion-section-oceanwp_upsell_section h3 {
-    background-color: #fe5252;
+    background-color: #5277fe;
     padding: 0;
     margin: 0;
-    border-left: 4px solid #fe5252;
+    border-left: 4px solid #5277fe;
     transition: .15s background-color ease-in-out,.15s border-color ease-in-out;
     outline: none;
 }
 
 #accordion-section-oceanwp_upsell_section h3:hover {
-    background-color: #ea4b4b;
-    border-left-color: #960000;
+    background-color: #3d5ac3;
+    border-left-color: #000c65;
 }
 
 #accordion-section-oceanwp_upsell_section h3 a {
@@ -45,11 +45,11 @@
 
 .rtl #accordion-section-oceanwp_upsell_section h3 {
     border-left: none;
-    border-right: 4px solid #fe5252;
+    border-right: 4px solid #5277fe;
 }
 
 .rtl #accordion-section-oceanwp_upsell_section h3:hover {
-    border-right-color: #960000;
+    border-right-color: #000c65;
 }
 
 .rtl #accordion-section-oceanwp_upsell_section h3 a:after {

@@ -23,6 +23,37 @@
 /*-------------------------------------------------------------------------------*/
 
 /**
+ * Adds classes to the html tag
+ *
+ * @since 1.0.0
+ */
+if ( ! function_exists( 'oceanwp_html_classes' ) ) {
+
+	function oceanwp_html_classes() {
+
+		// Setup classes array
+		$classes = array();
+
+		// Main class
+		$classes[] = 'html';
+
+		// Set keys equal to vals
+		$classes = array_combine( $classes, $classes );
+		
+		// Apply filters for child theming
+		$classes = apply_filters( 'ocean_html_classes', $classes );
+
+		// Turn classes into space seperated string
+		$classes = implode( ' ', $classes );
+
+		// Return classes
+		return $classes;
+
+	}
+
+}
+
+/**
  * Adds classes to the body tag
  *
  * @since 1.0.0
@@ -1950,7 +1981,7 @@ if ( ! function_exists( 'oceanwp_get_page_subheading' ) ) {
 		}
 
 		// All other Taxonomies
-		elseif ( is_category() || is_tax() ) {
+		elseif ( is_category() || is_tag() ) {
 			$subheading = term_description();
 		}
 

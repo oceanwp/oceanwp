@@ -227,8 +227,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
             	remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 	            remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
 	            remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
-	            add_action( 'ocean_woocommerce_checkout_order_review', 'woocommerce_order_review', 20 );
-            	add_action( 'ocean_woocommerce_checkout_payment', 'woocommerce_checkout_payment', 10 );
+	            add_action( 'ocean_woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
+            	add_action( 'ocean_woocommerce_checkout_payment', 'woocommerce_checkout_payment', 20 );
 	            add_action( 'ocean_checkout_login_form', array( $this, 'checkout_login_form' ), 10 );
 	            add_action( 'ocean_woocommerce_checkout_coupon', 'woocommerce_checkout_coupon_form', 10 );
 
@@ -1117,14 +1117,23 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			global $post;
 
 			$next_post = get_next_post( true, '', 'product_cat' );
-			$prev_post = get_previous_post( true, '', 'product_cat' ); ?>
+			$prev_post = get_previous_post( true, '', 'product_cat' );
 
-			<div class="owp-product-nav-wrap">
+			// Next text
+			$next_text = esc_html__( 'Next Product', 'oceanwp' );
+			$next_text = apply_filters( 'ocean_woo_nav_next_text', $next_text );
+
+			// Prev text
+			$prev_text = esc_html__( 'Previous Product', 'oceanwp' );
+			$prev_text = apply_filters( 'ocean_woo_nav_prev_text', $prev_text ); ?>
+
+			<div class="owp-product-nav-wrap clr">
 				<ul class="owp-product-nav">
 			        <?php
 			        if ( is_a( $next_post , 'WP_Post' ) ) { ?>
-						<li>
+						<li class="next-li">
 							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="fa fa-angle-left"></i></a>
+							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php echo esc_attr( $next_text ); ?></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 							</div>
@@ -1133,7 +1142,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					}
 
 					if ( is_a( $prev_post , 'WP_Post' ) ) { ?>
-						<li>
+						<li class="prev-li">
+							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php echo esc_attr( $prev_text ); ?></a>
 							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="fa fa-angle-right"></i></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
@@ -1160,7 +1170,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// Get product object
-			$product = wc_get_product( get_the_ID() ); ?>
+			$product = wc_get_product( get_the_ID() );
+
+			// Select options text
+			$text = esc_html__( 'Select Options', 'oceanwp' );
+			$text = apply_filters( 'ocean_floating_bar_select_text', $text ); ?>
 
 			<div class="owp-floating-bar">
 				<div class="container clr">
@@ -1180,7 +1194,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		            	} else if ( $product && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually() ) {
 		                	echo self::floating_bar_add_to_cart( $product );
 		            	} else { ?>
-		                	<button type="submit" class="button top"><?php esc_html_e( 'Select Options', 'oceanwp' ); ?></button>
+		                	<button type="submit" class="button top"><?php echo esc_attr( $text ); ?></button>
 		                <?php
 		            	} ?>
 				    </div>
@@ -2083,7 +2097,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 *
 		 * @since 1.5.0
 		 */
-		public static function multistep_checkout( $template, $template_name, $template_path ) {
+		public function multistep_checkout( $template, $template_name, $template_path ) {
 
 			if ( 'checkout/form-checkout.php' == $template_name ) {
                 $template 	= OCEANWP_THEME_DIR . '/woocommerce/checkout/form-multistep-checkout.php';

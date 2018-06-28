@@ -9,9 +9,9 @@ $j( document ).on( 'ready', function() {
 /* ==============================================
 RESPONSIVE VIDEOS
 ============================================== */
-function oceanwpInitFitVids() {
+function oceanwpInitFitVids( $context ) {
 	"use strict"
 
-	$j( '.responsive-video-wrap, .responsive-audio-wrap' ).fitVids();
+	$j( '.responsive-video-wrap, .responsive-audio-wrap', $context ).fitVids();
 
 }

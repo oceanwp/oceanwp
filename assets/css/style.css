@@ -4486,6 +4486,10 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   line-height: 74px;
 }
 
+.after-header-content .elementor {
+  display: inline-block;
+}
+
 /*------------------------------------*
 	Mobile Menu
 *------------------------------------*/
@@ -8665,7 +8669,7 @@ span.required {
   -ms-border-radius: 2px;
   border-radius: 2px;
   text-align: center;
-  z-index: 10;
+  z-index: 100;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;

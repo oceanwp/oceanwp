@@ -27,6 +27,8 @@ $classes = implode( ' ', $classes ); ?>
 
 	<?php do_action( 'ocean_header_inner_left_content' ); ?>
 
+	<?php get_template_part( 'partials/header/logo' ); ?>
+
 	<div id="site-navigation-wrap" class="clr">
 				
 		<div class="menu-bar-wrap clr">
