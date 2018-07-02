@@ -213,7 +213,36 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 					'progress' 			=> esc_html__( 'Progress', 'oceanwp' ),
 					'syllabus' 			=> esc_html__( 'Syllabus', 'oceanwp' ),
 				),
-			) ) );		
+			) ) );
+
+			/**
+			 * Membership Details
+			 */
+			$wp_customize->add_setting( 'ocean_llms_membership_image_heading', array(
+				'sanitize_callback' 	=> 'wp_kses',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_llms_membership_image_heading', array(
+				'label'    	=> esc_html__( 'Membership Details', 'oceanwp' ),
+				'section'  	=> 'ocean_llms_general',
+				'priority' 	=> 10,
+			) ) );
+
+			/**
+			 * Membership Image
+			 **/
+			$wp_customize->add_setting( 'ocean_llms_membership_image', array(
+				'default'           	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_llms_membership_image', array(
+				'label'	   				=> esc_html__( 'Featured Image', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_llms_general',
+				'settings' 				=> 'ocean_llms_membership_image',
+				'priority' 				=> 10,
+			) ) );	
 
 			/**
 			 * Section
