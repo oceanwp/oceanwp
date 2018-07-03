@@ -1,5 +1,22 @@
 # OceanWP Changelog
 
+### *2018.07.04* - 1.5.17:
+* **Added** - Ajax for the Multi-Step checkout fields, so when a required field is not filled in step one or two, it is not possible to go to the next step.
+* **Added** - New Widgets section in the Typography section of the customizer to allow you to change widgets typography.
+* **Tweak** - Better style for the single product reviews stars.
+* **Tweak** - Brackets added in font so no font errors.
+* **Tweak** - Next/Prev text added for the product navigation in responsive to better understanding.
+* **Fixed** - Product image issue with the grid/list view if image slider selected for the shop page.
+* **Fixed** - Quick View issue on mobile.
+* **Fixed** - Mobile menu target link if mobile menu selected.
+* **Fixed** - Ocean Demo Import plugin notice removed if Ocean Pro Demos is activated.
+* **Fixed** - Menu item description.
+* **Fixed** - Issue with the font family select in the customizer wehn The Event Calendar plugin is active.
+* **Fixed** - Tag description not displayed as subheading.
+* **Fixed** - FitVids doesn't work on infinite scroll.
+* **Fixed** - Issue with WooCommerce Stripe Payment Gateway plugin on the multi-step checkout.
+* **Fixed** - Issue with logo if Center or Full Screen header style and if you choose a different header style per page.
+
 ### *2018.06.03* - 1.5.16:
 * **Added** - Easy Digital Downloads integration, check the new demo: https://book.oceanwp.org/ 
 * **Tweak** - Moved the WooCommerce Checkout settings in the OceanWP WooCommerce section in the customizer. 

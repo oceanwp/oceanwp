@@ -113,6 +113,7 @@ module.exports = function ( grunt ) {
 					'assets/css/woo/woo-multistep-checkout.css': 'sass/woo-multistep-checkout.scss',
 					'assets/css/woo/wishlist.css': 'sass/wishlist.scss',
 					'assets/css/edd/edd.css': 'sass/edd.scss',
+					'assets/css/llms/llms.css': 'sass/llms.scss',
 					'assets/css/style.css': 'sass/stylesheet.scss',
                 }
             },
@@ -129,6 +130,7 @@ module.exports = function ( grunt ) {
 					'assets/css/woo/woo-multistep-checkout.min.css': 'sass/woo-multistep-checkout.scss',
 					'assets/css/woo/wishlist.min.css': 'sass/wishlist.scss',
 					'assets/css/edd/edd.min.css': 'sass/edd.scss',
+					'assets/css/llms/llms.min.css': 'sass/llms.scss',
 					'assets/css/style.min.css': 'sass/stylesheet.scss',
                 }
             }
