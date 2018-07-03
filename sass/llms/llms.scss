@@ -1,0 +1,296 @@
+/** Buttons **/
+.llms-button-action,
+.llms-button-secondary,
+.llms-field-button,
+.llms-button-primary {
+	display: inline-block;
+    font-family: inherit;
+    background-color: $color-5;
+    color: $color-1;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 14px 20px;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    @include transition( all .3s ease );
+}
+.llms-button-action:hover,
+.llms-button-secondary:hover,
+.llms-field-button:hover,
+.llms-button-primary:hover {
+	background-color: $color-6;
+	color: $color-1;
+}
+
+.llms-button-action:focus,
+.llms-button-secondary:focus,
+.llms-field-button:focus,
+.llms-button-primary:focus {
+	background-color: $color-6;
+	color: #fff;
+}
+
+/** Tables **/
+.lifterlms {
+	thead td,
+	th {
+		border: 1px solid #eee;
+		color: #000;
+		font-weight: 700;   
+	}
+	thead td{
+		background: #fafafa;
+	}
+}
+
+/** Courses Page **/
+.llms-student-dashboard{
+	
+	.llms-sd-nav{
+		.llms-sep{
+			display: none;
+		}
+	}
+
+	.llms-sd-item{
+		padding: 0 15px 15px 0;
+	}
+}
+
+/** Course Page **/
+.llms-syllabus-wrapper{
+
+	margin: 15px 0;
+	
+	.llms-section-title{
+		background: #2295ff;
+		color: #fff;
+		margin-bottom: 0;
+		padding: 10px;
+	}
+
+	.llms-lesson-preview{
+		width: auto;
+		display: block;
+		margin-top: 1px;
+
+		.llms-lesson-counter,
+		.llms-lesson-complete{
+			display: inline-block;
+			margin-bottom: 0;
+		}
+
+		.llms-lesson-complete{
+			font-size: 16px;
+		}
+	}
+}
+
+.llms-meta-info{
+
+	.llms-meta p{
+		color: #333;
+	}
+
+	.llms-meta {
+		span, a{
+			color: #929292;
+		}
+
+		a:hover{
+			color: $color-5;
+		}
+	}
+}
+
+.single-course .llms_review{
+	
+	h5{
+		color: #333 !important;
+		margin-bottom: 5px;
+	}
+
+	h6{
+		margin-bottom: 10px;
+	}
+
+	p{
+		color: #303030 !important;
+	}
+
+	p:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.single-course .review_box{
+	input[type="text"],
+	textarea{
+		display: inline-block;
+		min-height: 40px;
+	    width: 100%;
+	    font-size: 14px;
+	    line-height: 1.8;
+		padding: 6px 12px;
+		vertical-align: middle;
+		background-color: transparent;
+		color: $color-2;
+		border: 1px solid $color-10;
+		@include border-radius( 3px );
+	    @include transition( all .3s ease );
+	}
+
+	textarea {
+		line-height: 1.5;
+		resize: vertical;
+		margin-bottom: 15px;
+	}
+}
+
+#thank_you_box h2{
+	font-size: 24px;
+}
+
+/** Lesson **/
+.llms-course-navigation{
+
+	margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f1f1;
+
+	.llms-pre-text{
+		color: $color-5;
+		font-weight: 300;
+	}
+
+	.llms-prev-lesson .llms-pre-text::before,
+	.llms-next-lesson .llms-pre-text::after{
+		display: inline-block;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.llms-prev-lesson .llms-pre-text::before{
+		content: "\f177";
+		margin-right: 10px;
+	}
+
+	.llms-next-lesson .llms-pre-text::after{
+		content: "\f178";
+		margin-left: 10px;
+	}
+}
+
+.llms-lesson-button-wrapper{
+	color: #191818;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+#llms_mark_complete::before,
+.llms-lesson-button-wrapper::before{
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#llms_mark_complete::before{
+	content: "\f00c";
+	margin-right: 10px;
+
+}
+
+/** Dashboard **/
+.llms-student-dashboard{
+	&.edit-account{
+
+		.llms-form-field{
+			padding: 0 20px 10px 0;
+
+			> label{
+				font-weight: 700;
+			}
+		}
+
+	}
+}
+
+/** Checkout **/
+.llms-checkout-section{
+	border: none;
+}
+
+.llms-notice{
+	border: none;
+	background: none;
+}
+
+.llms-checkout-wrapper .llms-form-heading{
+	margin-bottom: 15px;
+}
+
+.llms-checkout-section-content .llms-label{
+	font-variant: normal;
+	text-transform: none;
+	font-weight: 700;
+}
+
+.billing-information .llms-form-field label{
+	font-weight: 700;
+}
+
+.llms-distraction-free #site-logo {
+	float: none;
+    width: 100%;
+    text-align: center;
+}
+
+/** Grid **/
+.llms-loop-list {
+	@media all and (max-width: 768px) {
+		$cols: 1;
+		@while $cols <= 6 {
+			&.tablet-#{$cols}-col .llms-loop-item {
+				width: 100% / $cols;
+			}
+			$cols: $cols + 1;
+		}
+	}
+	@media all and (max-width: 480px) {
+		$cols: 1;
+		@while $cols <= 6 {
+			&.mobile-#{$cols}-col .llms-loop-item {
+				width: 100% / $cols;
+			}
+			$cols: $cols + 1;
+		}
+	}
+}
+
+/** Pagination **/
+.llms-pagination{
+	float: right;
+}
+
+.pagination-center .llms-pagination{
+	text-align: center;
+
+	ul li{
+		float: none;
+	}
+}
+
+.pagination-left .llms-pagination{
+	float: left;
+}

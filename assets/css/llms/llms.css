@@ -1,0 +1,309 @@
+/*!
+ * Project   : OceanWP WordPress Theme
+ * Purpose   : LifterLMS Tweaks
+ * Author    : Nick
+ */
+/** Buttons **/
+.llms-button-action,
+.llms-button-secondary,
+.llms-field-button,
+.llms-button-primary {
+  display: inline-block;
+  font-family: inherit;
+  background-color: #13aff0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 14px 20px;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.llms-button-action:hover,
+.llms-button-secondary:hover,
+.llms-field-button:hover,
+.llms-button-primary:hover {
+  background-color: #0b7cac;
+  color: #fff;
+}
+
+.llms-button-action:focus,
+.llms-button-secondary:focus,
+.llms-field-button:focus,
+.llms-button-primary:focus {
+  background-color: #0b7cac;
+  color: #fff;
+}
+
+/** Tables **/
+.lifterlms thead td,
+.lifterlms th {
+  border: 1px solid #eee;
+  color: #000;
+  font-weight: 700;
+}
+
+.lifterlms thead td {
+  background: #fafafa;
+}
+
+/** Courses Page **/
+.llms-student-dashboard .llms-sd-nav .llms-sep {
+  display: none;
+}
+
+.llms-student-dashboard .llms-sd-item {
+  padding: 0 15px 15px 0;
+}
+
+/** Course Page **/
+.llms-syllabus-wrapper {
+  margin: 15px 0;
+}
+
+.llms-syllabus-wrapper .llms-section-title {
+  background: #2295ff;
+  color: #fff;
+  margin-bottom: 0;
+  padding: 10px;
+}
+
+.llms-syllabus-wrapper .llms-lesson-preview {
+  width: auto;
+  display: block;
+  margin-top: 1px;
+}
+
+.llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-counter,
+.llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-complete {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-complete {
+  font-size: 16px;
+}
+
+.llms-meta-info .llms-meta p {
+  color: #333;
+}
+
+.llms-meta-info .llms-meta span, .llms-meta-info .llms-meta a {
+  color: #929292;
+}
+
+.llms-meta-info .llms-meta a:hover {
+  color: #13aff0;
+}
+
+.single-course .llms_review h5 {
+  color: #333 !important;
+  margin-bottom: 5px;
+}
+
+.single-course .llms_review h6 {
+  margin-bottom: 10px;
+}
+
+.single-course .llms_review p {
+  color: #303030 !important;
+}
+
+.single-course .llms_review p:last-child {
+  margin-bottom: 0;
+}
+
+.single-course .review_box input[type="text"],
+.single-course .review_box textarea {
+  display: inline-block;
+  min-height: 40px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 6px 12px;
+  vertical-align: middle;
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.single-course .review_box textarea {
+  line-height: 1.5;
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+#thank_you_box h2 {
+  font-size: 24px;
+}
+
+/** Lesson **/
+.llms-course-navigation {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f1f1;
+}
+
+.llms-course-navigation .llms-pre-text {
+  color: #13aff0;
+  font-weight: 300;
+}
+
+.llms-course-navigation .llms-prev-lesson .llms-pre-text::before,
+.llms-course-navigation .llms-next-lesson .llms-pre-text::after {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.llms-course-navigation .llms-prev-lesson .llms-pre-text::before {
+  content: "\f177";
+  margin-right: 10px;
+}
+
+.llms-course-navigation .llms-next-lesson .llms-pre-text::after {
+  content: "\f178";
+  margin-left: 10px;
+}
+
+.llms-lesson-button-wrapper {
+  color: #191818;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#llms_mark_complete::before,
+.llms-lesson-button-wrapper::before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#llms_mark_complete::before {
+  content: "\f00c";
+  margin-right: 10px;
+}
+
+/** Dashboard **/
+.llms-student-dashboard.edit-account .llms-form-field {
+  padding: 0 20px 10px 0;
+}
+
+.llms-student-dashboard.edit-account .llms-form-field > label {
+  font-weight: 700;
+}
+
+/** Checkout **/
+.llms-checkout-section {
+  border: none;
+}
+
+.llms-notice {
+  border: none;
+  background: none;
+}
+
+.llms-checkout-wrapper .llms-form-heading {
+  margin-bottom: 15px;
+}
+
+.llms-checkout-section-content .llms-label {
+  font-variant: normal;
+  text-transform: none;
+  font-weight: 700;
+}
+
+.billing-information .llms-form-field label {
+  font-weight: 700;
+}
+
+.llms-distraction-free #site-logo {
+  float: none;
+  width: 100%;
+  text-align: center;
+}
+
+/** Grid **/
+@media all and (max-width: 768px) {
+  .llms-loop-list.tablet-1-col .llms-loop-item {
+    width: 100%;
+  }
+  .llms-loop-list.tablet-2-col .llms-loop-item {
+    width: 50%;
+  }
+  .llms-loop-list.tablet-3-col .llms-loop-item {
+    width: 33.3333333333%;
+  }
+  .llms-loop-list.tablet-4-col .llms-loop-item {
+    width: 25%;
+  }
+  .llms-loop-list.tablet-5-col .llms-loop-item {
+    width: 20%;
+  }
+  .llms-loop-list.tablet-6-col .llms-loop-item {
+    width: 16.6666666667%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .llms-loop-list.mobile-1-col .llms-loop-item {
+    width: 100%;
+  }
+  .llms-loop-list.mobile-2-col .llms-loop-item {
+    width: 50%;
+  }
+  .llms-loop-list.mobile-3-col .llms-loop-item {
+    width: 33.3333333333%;
+  }
+  .llms-loop-list.mobile-4-col .llms-loop-item {
+    width: 25%;
+  }
+  .llms-loop-list.mobile-5-col .llms-loop-item {
+    width: 20%;
+  }
+  .llms-loop-list.mobile-6-col .llms-loop-item {
+    width: 16.6666666667%;
+  }
+}
+
+/** Pagination **/
+.llms-pagination {
+  float: right;
+}
+
+.pagination-center .llms-pagination {
+  text-align: center;
+}
+
+.pagination-center .llms-pagination ul li {
+  float: none;
+}
+
+.pagination-left .llms-pagination {
+  float: left;
+}
