@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.07.04* - 1.5.18:
+* **Fixed** - Issue with sans serif fonts.
+
 ### *2018.07.04* - 1.5.17:
 * **Added** - Full integration with LifterLMS.
 * **Added** - Ajax for the Multi-Step checkout fields, so when a required field is not filled in step one or two, it is not possible to go to the next step.
