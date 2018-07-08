@@ -157,6 +157,7 @@ class OCEANWP_Theme_Class {
 		define( 'OCEANWP_WOOCOMMERCE_ACTIVE', class_exists( 'WooCommerce' ) );
 		define( 'OCEANWP_EDD_ACTIVE', class_exists( 'Easy_Digital_Downloads' ) );
 		define( 'OCEANWP_LIFTERLMS_ACTIVE', class_exists( 'LifterLMS' ) );
+		define( 'OCEANWP_LEARNDASH_ACTIVE', class_exists( 'SFWD_LMS' ) );
 
 	}
 
@@ -177,6 +178,7 @@ class OCEANWP_Theme_Class {
 		require_once ( $dir .'third/class-bbpress.php' );
 		require_once ( $dir .'third/class-buddypress.php' );
 		require_once ( $dir .'third/class-lifterlms.php' );
+		require_once ( $dir .'third/class-learndash.php' );
 		require_once ( $dir .'third/class-sensei.php' );
 		require_once ( $dir .'third/class-social-login.php' );
 	}
