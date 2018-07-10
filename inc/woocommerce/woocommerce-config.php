@@ -153,6 +153,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'wp_footer', array( $this, 'get_mini_cart_sidebar' ) );
 			}
 
+			// Remove default elements
+			add_action( 'woocommerce_before_template_part', array( $this, 'before_template_part' ), 10, 4 );
+			remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+			remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+			remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
+			remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
+			remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
 			// Remove the single product summary content to add the sortable control
 			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
@@ -188,6 +200,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			add_filter( 'woocommerce_pagination_args', array( $this, 'pagination_args' ) );
 			add_filter( 'woocommerce_continue_shopping_redirect', array( $this, 'continue_shopping_redirect' ) );
 			add_filter( 'post_class', array( $this, 'add_product_classes' ), 40, 3 );
+			add_filter( 'post_class', array( $this, 'add_product_class_for_elementor' ) );
 			add_filter( 'product_cat_class', array( $this, 'product_cat_class' ) );
 
 			// Sale badge content
@@ -301,17 +314,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'woocommerce_before_shop_loop', array( $this, 'result_count' ), 31 );
 			}
 
-			// Remove default elements
-			remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-			remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
-			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
-			remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
-			remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
-			remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
-			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-
 			if ( defined( 'ELEMENTOR_WOOSTORE__FILE__' ) ) {
 				remove_action( 'woocommerce_after_shop_loop_item_title', 'woostore_output_product_excerpt', 35 );
 				add_action( 'woocommerce_after_shop_loop_item', 'woostore_output_product_excerpt', 21 );
@@ -325,6 +327,24 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'ocean_after_single_product_price', 'woocommerce_gzd_template_single_legal_info' );
 			}
 
+		}
+
+		/**
+		 * Fix the issue in the Elementor Pro editor.
+		 *
+		 * @since 1.5.19
+		 */
+		public function before_template_part( $template_name, $template_path, $located, $args ) {
+			if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+				remove_action( 'woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10);
+				remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5);
+				remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
+				remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+				remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+				remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+				remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+			}
 		}
 
 		/**
@@ -1120,11 +1140,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$prev_post = get_previous_post( true, '', 'product_cat' );
 
 			// Next text
-			$next_text = esc_html__( 'Next Product', 'oceanwp' );
+			$next_text = esc_html__( 'Previous Product', 'oceanwp' );
 			$next_text = apply_filters( 'ocean_woo_nav_next_text', $next_text );
 
 			// Prev text
-			$prev_text = esc_html__( 'Previous Product', 'oceanwp' );
+			$prev_text = esc_html__( 'Next Product', 'oceanwp' );
 			$prev_text = apply_filters( 'ocean_woo_nav_prev_text', $prev_text ); ?>
 
 			<div class="owp-product-nav-wrap clr">
@@ -1481,6 +1501,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		}
 
 		/**
+		 * Add the product class to the Elementor editor to fix the product display issue.
+		 *
+		 * @since 1.5.18
+		 */
+		public static function add_product_class_for_elementor( $classes ) {
+			if ( in_array( 'type-product', $classes ) ) {
+	            $classes[] = 'product';
+	        }
+			return $classes;
+		}
+
+		/**
 		 * Remove the category description under the page title on taxonomy.
 		 *
 		 * @since 1.4.7
@@ -1729,12 +1761,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				return $items;
 			}
 
-			// Return items if "hide if empty cart" is checked
-			if ( true == get_theme_mod( 'ocean_woo_menu_icon_hide_if_empty', false )
-				&& ! WC()->cart->cart_contents_count > 0 ) {
-				return $items;
-			}
-
 			// Add cart link to menu items
 			if ( 'full_screen' == $header_style ) {
 				$items .= '<li class="woo-cart-link"><a href="'. esc_url( wc_get_cart_url() ) .'">'. esc_html__( 'Your cart', 'oceanwp' ) .'</a></li>';
@@ -1832,17 +1858,45 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function sale_flash() {
 			global $product;
 
-			// Value
-			if ( 'grouped' == $product->get_type() ) {
-				$value = esc_html__( 'Sale', 'oceanwp' );
+			if ( $product->is_type( 'simple' ) || $product->is_type( 'external' ) ) {
+
+				$r_price 	= $product->get_regular_price();
+				$s_price 	= $product->get_sale_price();
+				$percent 	= round( ( ( floatval( $r_price ) - floatval( $s_price ) ) / floatval( $r_price ) ) * 100 );
+
+			} else if ( $product->is_type( 'variable' ) ) {
+
+				$available_variations = $product->get_available_variations();
+				$maximumper           = 0;
+
+				for ( $i = 0; $i < count( $available_variations ); ++ $i ) {
+					$variation_id     = $available_variations[ $i ]['variation_id'];
+					$variable_product = new WC_Product_Variation( $variation_id );
+
+					if ( ! $variable_product->is_on_sale() ) {
+						continue;
+					}
+
+					$r_price 	= $variable_product->get_regular_price();
+					$s_price    = $variable_product->get_sale_price();
+					$percent 	= round( ( ( floatval( $r_price ) - floatval( $s_price ) ) / floatval( $r_price ) ) * 100 );
+
+					if ( $percent > $maximumper ) {
+						$maximumper = $percent;
+					}
+				}
+
+				$percent = sprintf( __( '%s', 'woocommerce' ), $maximumper );
+
 			} else {
-				$s_price = $product->get_sale_price();
-				$r_price = $product->get_regular_price();
-				$percent = round( ( ( ( $r_price - $s_price ) / $r_price ) * 100 ), 0 );
-				$value 	 = '-' . esc_html( $percent ) . '%';
+
+				$percent = '<span class="onsale">' . __( 'Sale!', 'woocommerce' ) . '</span>';
+				return $percent;
+
 			}
 
-			// Sale flash
+			$value = '-' . esc_html( $percent ) . '%';
+
 			return '<span class="onsale">' . esc_html( $value ) . '</span>';
 		}
 

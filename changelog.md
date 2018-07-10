@@ -1,5 +1,13 @@
 # OceanWP Changelog
 
+### *2018.07.10* - 1.5.19:
+* **Tweak** - The Hide cart if empty feature is improved now it is directly displayed instead of reloading the page.
+* **Tweak** - Scroll to timeline on the multi-step checkout when the next/prev button is clicked.
+* **Fixed** - Ajax issue if single product button disabled.
+* **Fixed** - Percentage issue on WooCommerce.
+* **Fixed** - Next/Previous product text in the wrong arrow for the product navigation.
+* **Fixed** - Issue with WooCommerce shortcodes in the Elementor editor, thanks to Josh Marom from the Elementor team.
+
 ### *2018.07.04* - 1.5.18:
 * **Fixed** - Issue with sans serif fonts.
 

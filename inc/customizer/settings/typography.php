@@ -711,6 +711,8 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						// Add quotes around font-family && font family to scripts array
 						if ( 'font-family' == $attribute ) {
 							$fonts[] = $val;
+
+							// No brackets can be added as it cause issue with sans serif fonts
 							$val = $val;
 						}
 

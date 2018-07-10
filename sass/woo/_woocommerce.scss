@@ -1771,6 +1771,11 @@
 		}
 	}
 }
+#site-navigation-wrap .dropdown-menu > li > a.wcmenucart-hide,
+#mobile-fullscreen ul li a.wcmenucart-hide,
+.wcmenucart-hide {
+	display: none;
+}
 .col2-set {
 	width: 100%;
 	width: 100%;
@@ -3350,4 +3355,8 @@ form.checkout {
 		line-height: 1.6;
 		padding: 16px 20px;
 	}
+}
+
+.woocommerce.woo-variation-swatches-stylesheet-enabled .variable-items-wrapper {
+    margin: 0;
 }
