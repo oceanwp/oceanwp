@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.07.10* - 1.5.20:
+* **Fixed** - Class 'Elementor\Plugin' not found in the woocommerce-config.php file.
+
 ### *2018.07.10* - 1.5.19:
 * **Tweak** - The Hide cart if empty feature is improved now it is directly displayed instead of reloading the page.
 * **Tweak** - Scroll to timeline on the multi-step checkout when the next/prev button is clicked.
