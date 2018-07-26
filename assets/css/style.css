@@ -1200,7 +1200,7 @@ body.separate-blog.separate-layout .blog-entry.grid-entry .thumbnail {
   .boxed-layout #top-bar-social.top-bar-left {
     left: auto;
   }
-  .col, .blog-entry {
+  .col:not(.slick-slide), .blog-entry {
     width: 100% !important;
     margin-bottom: 25px;
   }
@@ -3341,10 +3341,10 @@ a.pure-button-selected {
 }
 
 #site-header.medium-header .top-col {
-  -webkit-flex: 1 0 0;
+  -webkit-flex: 1 0 0%;
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 0;
-          flex: 1 0 0;
+      -ms-flex: 1 0 0%;
+          flex: 1 0 0%;
 }
 
 #site-header.medium-header .top-col.col-1 {
@@ -6441,9 +6441,6 @@ body.breadcrumbs-position-default .page-header-title {
   margin-top: 0;
 }
 
-/**
- * Breadcrumbs Hide
- */
 .background-image-page-header .site-breadcrumbs {
   display: block;
   position: inherit;
@@ -6464,6 +6461,12 @@ body.breadcrumbs-position-default .page-header-title {
   color: #ddd;
 }
 
+/* compatibility with SEOPress */
+.site-breadcrumbs nav,
+.site-breadcrumbs ol {
+  margin: 0;
+}
+
 /*------------------------------------*
   All Devices under 960px
 *------------------------------------*/
@@ -6478,13 +6481,14 @@ body.breadcrumbs-position-default .page-header-title {
 /*------------------------------------*
   Tablet Portrait
 *------------------------------------*/
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+@media only screen and (max-width: 959px) {
   /* page header */
   .site-breadcrumbs {
     position: inherit;
     top: auto;
     left: auto;
     right: auto;
+    max-width: 100%;
     margin-top: 0;
   }
 }
@@ -6518,9 +6522,6 @@ body.breadcrumbs-position-default .page-header-title {
   body.has-breadcrumbs .page-header-title {
     max-width: 100%;
     width: 100%;
-  }
-  .site-breadcrumbs {
-    display: none;
   }
 }
 
@@ -8346,6 +8347,11 @@ span.required {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+#scroll-top.scroll-top-left {
+  left: 20px;
+  right: auto;
+}
+
 /*------------------------------------*
 	Phone Landscape
 *------------------------------------*/
@@ -8420,11 +8426,6 @@ span.required {
 .et_fb_desktop_mode #main,
 .et_fb_preview_active #main {
   z-index: inherit !important;
-}
-
-/* Hide the transparent heade in the Elementor edit mode to avoid conflicts */
-body.elementor-editor-active.has-transparent-header #site-header {
-  display: none;
 }
 
 /* Fix the height automatically in the custom header style */

@@ -65,6 +65,8 @@ if ( 'post_tag' == $term_tax ) {
 // Args
 $args = apply_filters( 'ocean_blog_post_related_query_args', $args );
 
+do_action( 'ocean_before_single_post_related_posts' );
+
 // Related query arguments
 $oceanwp_related_query = new WP_Query( $args );
 
@@ -76,8 +78,6 @@ if ( $oceanwp_related_query->have_posts() ) :
 	if ( 'full-screen' == oceanwp_post_layout() ) {
 		$classes .= ' container';
 	} ?>
-
-	<?php do_action( 'ocean_before_single_post_related_posts' ); ?>
 
 	<section id="related-posts" class="<?php echo esc_attr( $classes ); ?>">
 
@@ -195,8 +195,8 @@ if ( $oceanwp_related_query->have_posts() ) :
 
 	</section><!-- .related-posts -->
 
-	<?php do_action( 'ocean_after_single_post_related_posts' ); ?>
-
 <?php endif; ?>
 
 <?php wp_reset_postdata(); ?>
+
+<?php do_action( 'ocean_after_single_post_related_posts' ); ?>

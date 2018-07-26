@@ -5,9 +5,6 @@
 .et_fb_desktop_mode #main,
 .et_fb_preview_active #main { z-index: inherit !important; }
 
-/* Hide the transparent heade in the Elementor edit mode to avoid conflicts */
-body.elementor-editor-active.has-transparent-header #site-header { display: none; }
-
 /* Fix the height automatically in the custom header style */
 #site-header .elementor-section-wrap {
     height: auto !important;

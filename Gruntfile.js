@@ -69,6 +69,7 @@ module.exports = function ( grunt ) {
 			},
 			prod: {
 				files: {
+					'assets/css/third/elementor-editor.min.css'						: 'assets/css/third/elementor-editor.css',
 					'assets/css/third/hamburgers/hamburgers.min.css'				: 'assets/css/third/hamburgers/hamburgers.css',
 					'assets/css/third/magnific-popup.min.css'						: 'assets/css/third/magnific-popup.css',
 					'assets/css/third/bbpress.min.css'								: 'assets/css/third/bbpress.css',

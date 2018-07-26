@@ -18,11 +18,16 @@
  * @package OceanWP WordPress theme
  */
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // Core Constants
 define( 'OCEANWP_THEME_DIR', get_template_directory() );
 define( 'OCEANWP_THEME_URI', get_template_directory_uri() );
 
-class OCEANWP_Theme_Class {
+final class OCEANWP_Theme_Class {
 
 	/**
 	 * Main Theme Class Constructor
@@ -1110,4 +1115,4 @@ class OCEANWP_Theme_Class {
 	}
 
 }
-$oceanwp_theme_class = new OCEANWP_Theme_Class;
+new OCEANWP_Theme_Class;

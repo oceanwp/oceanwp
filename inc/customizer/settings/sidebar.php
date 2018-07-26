@@ -351,6 +351,11 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			// Define css var
 			$css = '';
 
+			// Sidebar background
+			if ( ! empty( $sidebar_bg ) ) {
+				$css .= '.widget-area{background-color:'. $sidebar_bg .';}';
+			}
+
 			// Sidebar padding
 			if ( isset( $sidebar_top_padding ) && '0' != $sidebar_top_padding && '' != $sidebar_top_padding
 				|| isset( $sidebar_right_padding ) && '0' != $sidebar_right_padding && '' != $sidebar_right_padding

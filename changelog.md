@@ -1,5 +1,15 @@
 # OceanWP Changelog
 
+### *2018.07.26* - 1.5.21:
+* **Added** - SEOPRess breadcrumb if enabled.
+* **Added** - New setting for the scroll up button to allow you to place it in left or right.
+* **Added** - New setting to allow you to add the My Account login/register side by side.
+* **Tweak** - Improved style for the rating filter widget of WooCommerce.
+* **Tweak** - Product category description removed from the archive categories.
+* **Tweak** - Breadcrumb displayed on all screens.
+* **Fixed** - Sale badge if product navigation in responsive.
+* **Fixed** - Megamenu issue if the boxed layout is used.
+
 ### *2018.07.10* - 1.5.20:
 * **Fixed** - Class 'Elementor\Plugin' not found in the woocommerce-config.php file.
 

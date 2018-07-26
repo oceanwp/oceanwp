@@ -589,7 +589,7 @@ body.separate-blog.separate-layout {
 		}
 	}
 
-	.col, .blog-entry {
+	.col:not(.slick-slide), .blog-entry {
 		width: 100% !important;
 		margin-bottom: 25px;
 	}

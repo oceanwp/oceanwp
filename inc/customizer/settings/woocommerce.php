@@ -25,7 +25,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 		}
 
-		/**
+		/**Display Featured Image
 		 * Customizer options
 		 *
 		 * @since 1.0.0
@@ -190,6 +190,40 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'choices' 				=> array(
 					'sale' 		=> esc_html__( 'On Sale Text', 'oceanwp' ),
 					'percent' 	=> esc_html__( 'Percentage', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Heading My Account Page
+			 */
+			$wp_customize->add_setting( 'ocean_woo_account_page_heading', array(
+				'sanitize_callback' 	=> 'wp_kses',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_woo_account_page_heading', array(
+				'label'    	=> esc_html__( 'My Account Page', 'oceanwp' ),
+				'section'  	=> 'ocean_woocommerce_general',
+				'priority' 	=> 10,
+			) ) );
+
+			/**
+			 * My Account Page Style
+			 */
+			$wp_customize->add_setting( 'ocean_woo_account_page_style', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> 'original',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_account_page_style', array(
+				'label'	   				=> esc_html__( 'Login/Register Style', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_woocommerce_general',
+				'settings' 				=> 'ocean_woo_account_page_style',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'original' 			=> esc_html__( 'Original', 'oceanwp' ),
+					'side' 				=> esc_html__( 'Side by Side', 'oceanwp' ),
 				),
 			) ) );
 

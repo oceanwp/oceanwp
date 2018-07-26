@@ -109,7 +109,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			add_action( 'woocommerce_before_subcategory_title', array( $this, 'add_div_before_category_thumbnail' ), 9 );
 			add_action( 'woocommerce_before_subcategory_title', array( $this, 'close_div_after_category_thumbnail' ), 11 );
 			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'add_div_before_category_title' ), 9 );
-			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'add_category_description' ), 11 );
 			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'close_div_after_category_title' ), 12 );
 			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'close_container_wrap_category' ), 13 );
 
@@ -154,16 +153,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// Remove default elements
-			add_action( 'woocommerce_before_template_part', array( $this, 'before_template_part' ), 10, 4 );
 			remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-			remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
-			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
-			remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
-			remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
-			remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
-			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+			add_action( 'woocommerce_before_template_part', array( $this, 'before_template_part' ), 10, 4 );
+			self::remove_elements();
 
 			// Remove the single product summary content to add the sortable control
 			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
@@ -330,6 +322,22 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		}
 
 		/**
+		 * Remove elemnts.
+		 *
+		 * @since 1.0.0
+		 */
+		public function remove_elements() {
+			remove_action( 'woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5 );
+			remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+			remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+			remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+		}
+
+		/**
 		 * Fix the issue in the Elementor Pro editor.
 		 *
 		 * @since 1.5.19
@@ -337,14 +345,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public function before_template_part( $template_name, $template_path, $located, $args ) {
 			if ( class_exists( 'Elementor\Plugin' )
 				&& \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-				remove_action( 'woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10);
-				remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5);
-				remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
-				remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
-				remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
-				remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-				remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+				self::remove_elements();
 			}
 		}
 
@@ -504,6 +505,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				|| ( is_checkout()
 					&& true == get_theme_mod( 'ocean_woo_distraction_free_checkout', false ) ) ) {
 				$classes[] = 'distraction-free';
+			}
+
+			// My Account page style
+			$style = get_theme_mod( 'ocean_woo_account_page_style', 'original' );
+			if ( 'side' == $style ) {
+				$classes[] = 'account-side-style';
+			} else {
+				$classes[] = 'account-original-style';
 			}
 
 			// Return
@@ -1333,33 +1342,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		}
 
 		/**
-		 * Add description if list view for the categories products.
-		 *
-		 * @since 1.1.1.1
-		 */
-		public static function add_category_description( $category ) {
-				// Close category link openend in add_div_before_category_title()
-				echo '</a>';
-
-			// Var
-			$term 			= get_term( $category->term_id, 'product_cat' );
-			$description 	= $term->description;
-
-			// Description
-			if ( get_theme_mod( 'ocean_woo_grid_list', true )
-				&& $description ) {
-				echo '<div class="woo-desc">';
-					echo '<div class="description">' . wp_kses_post( $description ) . '</div>';
-				echo '</div>';
-			}
-		}
-
-		/**
 		 * Close a container div before the thumbnail for the categories products.
 		 *
 		 * @since 1.1.1.1
 		 */
 		public static function close_div_after_category_title() {
+				echo '</a>';
 			echo '</div>';
 		}
 
@@ -1459,6 +1447,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				// If has rating
 				if ( $product->get_rating_count() ) {
 					$classes[] = 'has-rating';
+				}
+
+				// If product navigation
+				if ( true == get_theme_mod( 'ocean_woocommerce_display_navigation', true ) ) {
+					$classes[] = 'has-product-nav';
 				}
 
 				$classes[] = 'col';
@@ -1907,6 +1900,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.0
 		 */
 		public static function login_register_links() {
+
+			// Return if not Original style
+			if ( 'original' != get_theme_mod( 'ocean_woo_account_page_style', 'original' ) ) {
+				return;
+			}
 
 			// Var
 			$registration = get_option( 'woocommerce_enable_myaccount_registration' );

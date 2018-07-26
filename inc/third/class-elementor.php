@@ -21,6 +21,7 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 		 * @since 1.4.0
 		 */
 		public function __construct() {
+			add_action( 'elementor/preview/enqueue_styles', array( $this, 'preview_styles' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		}
 
@@ -283,6 +284,15 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 			// Return
 			return false;
 			
+		}
+
+		/**
+		 * Preview styles
+		 *
+		 * @since 1.5.21
+		 */
+		public static function preview_styles() {
+			wp_enqueue_style( 'oceanwp-elementor-preview', OCEANWP_CSS_DIR_URI .'third/elementor-editor.min.css' );
 		}
 
 		/**

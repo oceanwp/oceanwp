@@ -61,6 +61,10 @@
 			'woo-default-cat',
 			'woo-dropdown-cat'
 		],
+		wooAccountStyle 	= [
+			'account-side-style',
+			'account-original-style'
+		],
 		wooSaleStyle 		= [
 			'square-sale',
 			'circle-sale'
@@ -240,6 +244,17 @@
 				if ( $arrow.length ) {
 					$arrow.removeClass();
 					$arrow.addClass( newval );
+				}
+			});
+		});
+
+		api('ocean_scroll_top_position', function( value ) {
+			value.bind( function( newval ) {
+				var $position = $( '#scroll-top' );
+
+				if ( $position.length ) {
+					$position.removeClass();
+					$position.addClass( 'scroll-top-' + newval );
 				}
 			});
 		});
