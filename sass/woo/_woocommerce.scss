@@ -303,12 +303,18 @@
 				&.product-category.product {
 					.woo-entry-image {
 						display: block;
+					    margin-bottom: 20px;
 					}
 					.woo-entry-inner a {
 					    padding-top: 10px;
 					}
 					.woo-entry-inner a .woocommerce-loop-category__title {
 						@include transition( all .3s ease );
+					}
+					.woo-desc {
+					    display: none;
+					    line-height: 1.6;
+					    margin-bottom: 20px;
 					}
 				}
 			}
@@ -365,6 +371,9 @@
 						left: auto;
 						right: auto;
 					}
+				}
+				li.product-category.product .woo-desc {
+					display: block;
 				}
 			}
 		}

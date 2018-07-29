@@ -406,6 +406,7 @@
 
 .woocommerce ul.products li.product-category.product .woo-entry-image {
   display: block;
+  margin-bottom: 20px;
 }
 
 .woocommerce ul.products li.product-category.product .woo-entry-inner a {
@@ -418,6 +419,12 @@
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.woocommerce ul.products li.product-category.product .woo-desc {
+  display: none;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .woocommerce ul.products.list .woostore-product-excerpt {
@@ -488,6 +495,10 @@
 .woocommerce ul.products.list li.product.has-rating li.inner .star-rating {
   left: auto;
   right: auto;
+}
+
+.woocommerce ul.products.list li.product-category.product .woo-desc {
+  display: block;
 }
 
 .woocommerce ul.cart_list li::after {

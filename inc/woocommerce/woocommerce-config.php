@@ -109,6 +109,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			add_action( 'woocommerce_before_subcategory_title', array( $this, 'add_div_before_category_thumbnail' ), 9 );
 			add_action( 'woocommerce_before_subcategory_title', array( $this, 'close_div_after_category_thumbnail' ), 11 );
 			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'add_div_before_category_title' ), 9 );
+			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'add_category_description' ), 11 );
 			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'close_div_after_category_title' ), 12 );
 			add_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'close_container_wrap_category' ), 13 );
 
@@ -120,7 +121,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action('woocommerce_after_customer_login_form', array( $this, 'oceanwp_login_wrap_after' ) );
 			}
 			if ( get_theme_mod( 'ocean_woo_category_image', 'no' ) == 'yes' ) {
-				add_action('woocommerce_archive_description', array( $this, 'woocommerce_category_image' ), 2 );
+				add_action( 'woocommerce_archive_description', array( $this, 'woocommerce_category_image' ), 2 );
 			}
 
 			// Quick view
@@ -1342,12 +1343,40 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		}
 
 		/**
+		 * Add description if list view for the categories products.
+		 *
+		 * @since 1.1.1.1
+		 */
+		public static function add_category_description( $category ) {
+			// Close category link openend in add_div_before_category_title()
+			echo '</a>';
+
+			 // Var
+			$term           = get_term( $category->term_id, 'product_cat' );
+			$description    = $term->description;
+			$length 		= get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
+
+			// Description
+			if ( get_theme_mod( 'ocean_woo_grid_list', true )
+				&& $description ) {
+				echo '<div class="woo-desc">';
+					echo '<div class="description">';
+						if ( ! $length ) {
+							echo wp_kses_post( strip_shortcodes( $description ) );
+						} else {
+							echo wp_trim_words( strip_shortcodes( $description ), $length );
+						}
+					echo '</div>';
+				echo '</div>';
+			}
+		}
+
+		/**
 		 * Close a container div before the thumbnail for the categories products.
 		 *
 		 * @since 1.1.1.1
 		 */
 		public static function close_div_after_category_title() {
-				echo '</a>';
 			echo '</div>';
 		}
 
