@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Get ID
-$get_id = get_theme_mod( 'ocean_footer_widgets_template' );
+$get_id = oceanwp_custom_footer_template();
 
 // Check if page is Elementor page
 $elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );

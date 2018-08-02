@@ -3991,6 +3991,25 @@ if ( ! function_exists( 'oceanwp_social_menu_content' ) ) {
 }
 
 /**
+ * Custom footer style template
+ *
+ * @since 1.5.22
+ */
+if ( ! function_exists( 'oceanwp_custom_footer_template' ) ) {
+
+	function oceanwp_custom_footer_template() {
+
+		// Get template from customizer setting
+		$template = get_theme_mod( 'ocean_footer_widgets_template' );
+
+		// Apply filters and return
+		return apply_filters( 'ocean_custom_footer_template', $template );
+
+	}
+
+}
+
+/**
  * Returns footer template content
  *
  * @since 1.0.0
@@ -4005,7 +4024,7 @@ if ( ! function_exists( 'oceanwp_footer_template_content' ) ) {
 		}
 
 		// Get template ID from Customizer
-		$content = get_theme_mod( 'ocean_footer_widgets_template' );
+		$content = oceanwp_custom_footer_template();
 
 		// Get Polylang Translation of template
 		if ( function_exists( 'pll_get_post' ) ) {

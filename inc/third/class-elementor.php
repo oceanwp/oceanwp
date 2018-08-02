@@ -236,7 +236,7 @@ if ( ! class_exists( 'OceanWP_Elementor' ) ) :
 		public static function get_footer_id() {
 
 			// Template
-			$id = get_theme_mod( 'ocean_footer_widgets_template' );
+			$id = oceanwp_custom_footer_template();
 
 			// If template is selected
 			if ( ! empty( $id ) ) {
