@@ -1934,7 +1934,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 * Display Floating Bar
 			 */
 			$wp_customize->add_setting( 'ocean_woo_display_floating_bar', array(
-				'default'           	=> 'off',
+				'default'           	=> 'on',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 

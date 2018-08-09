@@ -26,12 +26,6 @@
     background-color: transparent;
 }
 
-/* Fix bug with overlay in Chrome */
-.elementor-background-overlay,
-.background-image-page-header-overlay {
-	-webkit-transform: translateZ(0);
-}
-
 /* Fix bug with MotoPress */
 div.motopress-bootstrap-dropdown .dropdown-menu {
 	display: block !important;

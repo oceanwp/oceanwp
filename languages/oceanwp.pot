@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP Theme\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2018-07-27 11:30+0200\n"
+"POT-Creation-Date: 2018-08-07 18:49+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,7 +52,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: comments.php:68 comments.php:76 inc/woocommerce/woocommerce-config.php:705
+#: comments.php:68 comments.php:76 inc/woocommerce/woocommerce-config.php:708
 #: partials/edd/single.php:51
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "Next"
@@ -706,7 +706,7 @@ msgstr ""
 
 #: inc/customizer/settings/blog.php:511
 #: inc/customizer/settings/woocommerce.php:1488 inc/helpers.php:3145
-#: inc/woocommerce/woocommerce-config.php:386
+#: inc/woocommerce/woocommerce-config.php:389
 msgid "End of content"
 msgstr ""
 
@@ -717,7 +717,7 @@ msgstr ""
 
 #: inc/customizer/settings/blog.php:529
 #: inc/customizer/settings/woocommerce.php:1506 inc/helpers.php:3150
-#: inc/woocommerce/woocommerce-config.php:391
+#: inc/woocommerce/woocommerce-config.php:394
 msgid "No more pages to load"
 msgstr ""
 
@@ -3344,7 +3344,7 @@ msgid "Display Filter Button"
 msgstr ""
 
 #: inc/customizer/settings/woocommerce.php:1339 inc/helpers.php:3628
-#: inc/woocommerce/woocommerce-config.php:852
+#: inc/woocommerce/woocommerce-config.php:855
 msgid "Filter"
 msgstr ""
 
@@ -3529,7 +3529,7 @@ msgstr ""
 
 #: inc/customizer/settings/woocommerce.php:2178
 #: inc/customizer/settings/woocommerce.php:4289
-#: inc/woocommerce/woocommerce-config.php:779
+#: inc/woocommerce/woocommerce-config.php:782
 msgid "Cart"
 msgstr ""
 
@@ -3675,7 +3675,7 @@ msgid "Del Price Color"
 msgstr ""
 
 #: inc/customizer/settings/woocommerce.php:3391
-#: inc/woocommerce/woocommerce-config.php:1078
+#: inc/woocommerce/woocommerce-config.php:1081
 msgid "Quick View"
 msgstr ""
 
@@ -3887,7 +3887,7 @@ msgstr ""
 msgid "EDD Sidebar"
 msgstr ""
 
-#: inc/edd/edd-config.php:372 inc/woocommerce/woocommerce-config.php:1764
+#: inc/edd/edd-config.php:372 inc/woocommerce/woocommerce-config.php:1795
 msgid "Your cart"
 msgstr ""
 
@@ -4016,12 +4016,12 @@ msgid "Website"
 msgstr ""
 
 #: inc/helpers.php:3111 inc/helpers.php:3165
-#: inc/woocommerce/woocommerce-config.php:405
+#: inc/woocommerce/woocommerce-config.php:408
 msgid "Newer Posts"
 msgstr ""
 
 #: inc/helpers.php:3114 inc/helpers.php:3166
-#: inc/woocommerce/woocommerce-config.php:406
+#: inc/woocommerce/woocommerce-config.php:409
 msgid "Older Posts"
 msgstr ""
 
@@ -4834,132 +4834,132 @@ msgstr ""
 msgid "Latest in"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:541
+#: inc/woocommerce/woocommerce-config.php:544
 msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:704
+#: inc/woocommerce/woocommerce-config.php:707
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "I don&rsquo;t have an account"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:806
+#: inc/woocommerce/woocommerce-config.php:809
 msgid "Off-Canvas Filters"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:807
+#: inc/woocommerce/woocommerce-config.php:810
 msgid ""
 "Widgets in this area are used in the off canvas sidebar. To enable the Off "
 "Canvas filter, go to the WooCommerce > Archives section of the customizer and "
 "enable the Display Filter Button option."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:873
+#: inc/woocommerce/woocommerce-config.php:876
 msgid "Grid view"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:874
+#: inc/woocommerce/woocommerce-config.php:877
 msgid "List view"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1028
+#: inc/woocommerce/woocommerce-config.php:1031
 msgid "Out of Stock"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1157
+#: inc/woocommerce/woocommerce-config.php:1160
 msgid "Previous Product"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1161
+#: inc/woocommerce/woocommerce-config.php:1164
 msgid "Next Product"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1210
+#: inc/woocommerce/woocommerce-config.php:1213
 msgid "Select Options"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1216
+#: inc/woocommerce/woocommerce-config.php:1219
 msgid "Selected:"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1226
+#: inc/woocommerce/woocommerce-config.php:1229
 msgid "Out of stock"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1285
+#: inc/woocommerce/woocommerce-config.php:1288
 msgid "Welcome!"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1294
+#: inc/woocommerce/woocommerce-config.php:1297
 msgid "Logout"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1887
+#: inc/woocommerce/woocommerce-config.php:1918
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1891
+#: inc/woocommerce/woocommerce-config.php:1922
 msgid "Sale!"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1928
+#: inc/woocommerce/woocommerce-config.php:1959
 #: woocommerce/checkout/checkout-timeline.php:42
 msgid "Login"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1941
+#: inc/woocommerce/woocommerce-config.php:1972
 msgid "Or"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1943
+#: inc/woocommerce/woocommerce-config.php:1974
 msgid "Register"
-msgstr ""
-
-#: inc/woocommerce/woocommerce-config.php:2065
-#, php-format
-msgid "Shipping %s"
-msgstr ""
-
-#: inc/woocommerce/woocommerce-config.php:2069
-#, php-format
-msgid "Billing %s"
-msgstr ""
-
-#: inc/woocommerce/woocommerce-config.php:2078
-#, php-format
-msgid "%s is not a valid postcode / ZIP."
-msgstr ""
-
-#: inc/woocommerce/woocommerce-config.php:2087
-#, php-format
-msgid "%s is not a valid phone number."
 msgstr ""
 
 #: inc/woocommerce/woocommerce-config.php:2096
 #, php-format
+msgid "Shipping %s"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:2100
+#, php-format
+msgid "Billing %s"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:2109
+#, php-format
+msgid "%s is not a valid postcode / ZIP."
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:2118
+#, php-format
+msgid "%s is not a valid phone number."
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:2127
+#, php-format
 msgid "%s is not a valid email address."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2116
+#: inc/woocommerce/woocommerce-config.php:2147
 #, php-format
 msgid "%1$s is not valid. Please enter one of the following: %2$s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2123
+#: inc/woocommerce/woocommerce-config.php:2154
 #, php-format
 msgid "%s is a required field."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2210
+#: inc/woocommerce/woocommerce-config.php:2241
 msgid "WooCommerce Product Title"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2221
+#: inc/woocommerce/woocommerce-config.php:2252
 msgid "WooCommerce Product Price"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2231
+#: inc/woocommerce/woocommerce-config.php:2262
 msgid "WooCommerce Product Add To Cart"
 msgstr ""
 

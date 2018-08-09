@@ -569,7 +569,7 @@ function oceanwp_cac_has_woo_filter_button() {
 }
 
 function oceanwp_cac_has_woo_floating_bar() {
-	if ( 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'off' ) ) {
+	if ( 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'on' ) ) {
 		return true;
 	} else {
 		return false;

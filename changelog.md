@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### *2018.08.09* - 1.5.23:
+* **Added** - Compatibility with YITH WooCommerce Badge Management Premium.
+* **Fixed** - Padding issue on mobile for the Separate layout style.
+* **Fixed** - Sidebar padding issue for the customizer setting.
+
 ### *2018.08.02* - 1.5.22:
 * **Added** - Description for the product categories in List view.
 * **Tweak** - Better theme screenshot added.
