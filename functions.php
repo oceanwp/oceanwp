@@ -402,6 +402,9 @@ final class OCEANWP_Theme_Class {
 		// Register the lightbox style
 		wp_enqueue_style( 'magnific-popup', $dir .'third/magnific-popup.min.css', false, '1.0.0' );
 
+		// Register the slick style
+		wp_enqueue_style( 'slick', $dir .'third/slick.min.css', false, '1.6.0' );
+
 		// Main Style.css File
 		wp_enqueue_style( 'oceanwp-style', $dir .'style.min.css', false, $theme_version );
 

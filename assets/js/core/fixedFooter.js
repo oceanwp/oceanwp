@@ -33,10 +33,16 @@ function oceanwpFixedFooter() {
     }
 
     // Set main vars
-    var $mainHeight 		= $j( '#main' ).outerHeight(),
-    	$htmlHeight 		= $j( 'html' ).height(),
-    	$adminbarHeight		= oceanwpGetAdminbarHeight(),
-    	$minHeight 			= $mainHeight + ( $window.height() - $htmlHeight - $adminbarHeight );
+    var $mainHeight 	= $j( '#main' ).outerHeight(),
+    	$htmlHeight 	= $j( 'html' ).height(),
+        $offset         = 0,
+        $adminBar       = $j( '#wpadminbar' );
+
+    if ( $adminBar.length ) {
+        $offset         = $adminBar.outerHeight();
+    }
+
+    var $minHeight 		= $mainHeight + ( $window.height() - $htmlHeight - $offset );
 
     // Add min height
     $j( '#main' ).css( 'min-height', $minHeight );

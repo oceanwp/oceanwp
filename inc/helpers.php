@@ -4226,6 +4226,11 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 			$schema = 'itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"';
 		}
 
+		// Item
+		elseif ( 'item' == $location ) {
+			$schema = 'itemprop="item"';
+		}
+
 		// Url
 		elseif ( 'url' == $location ) {
 			$schema = 'itemprop="url"';

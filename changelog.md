@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2018.08.27* - 1.5.24:
+* **Added** - Danish translation, thanks to Henrik Leth.
+* **Fixed** - Slick icons missing when a script or style disabled.
+
 ### *2018.08.09* - 1.5.23:
 * **Added** - Compatibility with YITH WooCommerce Badge Management Premium.
 * **Fixed** - Padding issue on mobile for the Separate layout style.
