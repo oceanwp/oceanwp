@@ -41,6 +41,7 @@
  * - GENERAL
  * - MAGNIFIC POPUP
  * - SIDR
+ * - SLICK
  *
  * RESPONSIVE
  */
@@ -203,6 +204,11 @@
 	$SIDR
 *------------------------------------*/
 @import "components/plugins/sidr";
+
+/*------------------------------------*
+	$SLICK
+*------------------------------------*/
+@import "components/plugins/slick";
 
 /*------------------------------------*
 	$RESPONSIVE

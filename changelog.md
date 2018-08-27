@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.08.27* - 1.5.25:
+* **Fixed** - Slick css issue when Elementor is used.
+
 ### *2018.08.27* - 1.5.24:
 * **Added** - Danish translation, thanks to Henrik Leth.
 * **Fixed** - Slick icons missing when a script or style disabled.
