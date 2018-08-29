@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.08.30* - 1.5.26:
+* **Fixed** - Breadcrumb issue with the shortcode who was causing a fatal error.
+
 ### *2018.08.27* - 1.5.25:
 * **Fixed** - Slick css issue when Elementor is used.
 
