@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### *2018.09.04* - 1.5.27:
+* **Tweak** - Taxonomy description added before the content instead as subheading.
+* **Fixed** - Little issue in the elementor editor to make the text bold, italic, add a link, etc.. who was not selectable.
+* **Fixed** - WooCommerce grouped product issue with the quantity buttons when the floating bar is activated.
+* **Fixed** - WooCommerce grouped product issue with the add to cart button if ajax is activated.
+* **Fixed** - WooCommerce grouped product issue in the quick view.
+
 ### *2018.08.30* - 1.5.26:
 * **Fixed** - Breadcrumb issue with the shortcode who was causing a fatal error.
 
