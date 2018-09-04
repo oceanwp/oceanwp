@@ -60,6 +60,14 @@ $j( document ).on( 'ready', function() {
 	  				image_slider_wrap.flexslider();
   				}
 
+  				// If grouped product
+  				var grouped = qv_content.find( 'form.grouped_form' );
+  				if ( grouped ) {
+  					var grouped_product_url = qv_content.find( 'form.grouped_form' ).attr( 'action' );
+					grouped.find( '.group_table, button.single_add_to_cart_button' ).hide();
+					grouped.append( ' <a href="' + grouped_product_url + '" class="button">' + oceanwpLocalize.grouped_text + '</a>' );
+				}
+
 			}
 
 		} ).done( function() {

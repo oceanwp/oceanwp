@@ -720,6 +720,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Check if the floating bar is enabled for the quantity button
 			$array['floating_bar'] = get_theme_mod( 'ocean_woo_display_floating_bar', 'on' );
 
+			// Grouped product button text in the quick view
+			$array['grouped_text'] = esc_attr__( 'View products', 'oceanwp' );
+
 			return $array;
 
 		}

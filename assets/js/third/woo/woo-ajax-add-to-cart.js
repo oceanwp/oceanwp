@@ -1,6 +1,7 @@
 jQuery( function( $ ) {
 
-	if ( typeof oceanwpLocalize === 'undefined' ) {
+	if ( typeof oceanwpLocalize === 'undefined'
+		|| $( '.woocommerce div.product' ).hasClass( 'product-type-grouped' ) ) {
 		return false;
 	}
 

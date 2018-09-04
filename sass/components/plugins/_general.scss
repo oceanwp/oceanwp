@@ -1,9 +1,9 @@
 /* Fix for the tabs under the header in the edit mode */
 .fl-builder-edit #site-header,
-.fl-builder-edit.has-transparent-header #site-header { z-index: 1; }
+.fl-builder-edit.has-transparent-header #site-header,
+.elementor-editor-active #site-header { z-index: 1; }
 .fl-builder-edit #main,
-.et_fb_desktop_mode #main,
-.et_fb_preview_active #main { z-index: inherit !important; }
+.elementor-editor-active #main { z-index: inherit !important; }
 
 /* Fix the height automatically in the custom header style */
 #site-header .elementor-section-wrap {

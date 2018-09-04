@@ -213,7 +213,6 @@ hr {
  */
 @media print {
 	* {
-		color: #000 !important;
 		background: transparent !important;
 		@include box-shadow( none !important );
 		text-shadow: none !important;
