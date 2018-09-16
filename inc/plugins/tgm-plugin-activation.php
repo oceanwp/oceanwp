@@ -30,7 +30,14 @@ function oceanwp_tgmpa_register() {
 			'required'			=> false,
 			'force_activation'	=> false,
 		),
-		
+
+		array(
+			'name'				=> 'Auto Load Next Post',
+			'slug'				=> 'auto-load-next-post', 
+			'required'			=> false,
+			'force_activation'	=> false,
+		),
+
 	);
 
 	// If WooCommerce

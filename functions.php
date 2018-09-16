@@ -162,6 +162,7 @@ final class OCEANWP_Theme_Class {
 		define( 'OCEANWP_WOOCOMMERCE_ACTIVE', class_exists( 'WooCommerce' ) );
 		define( 'OCEANWP_EDD_ACTIVE', class_exists( 'Easy_Digital_Downloads' ) );
 		define( 'OCEANWP_LIFTERLMS_ACTIVE', class_exists( 'LifterLMS' ) );
+		define( 'OCEANWP_ALNP_ACTIVE', class_exists( 'Auto_Load_Next_Post' ) );
 
 	}
 
@@ -205,6 +206,10 @@ final class OCEANWP_Theme_Class {
 			require_once ( $dir .'edd/edd-config.php' );
 		}
 
+		// Auto Load Next Post
+		if ( OCEANWP_ALNP_ACTIVE ) {
+			require_once( $dir . 'auto-load-next-post/auto-load-next-post.php' );
+		}
 	}
 
 	/**
