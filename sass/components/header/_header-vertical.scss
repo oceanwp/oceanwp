@@ -1,0 +1,370 @@
+#site-header.vertical-header {
+	position: fixed;
+    top: 0;
+    width: 300px;
+    max-width: 100%;
+    height: 100%;
+    border-bottom: none;
+    z-index: 3000;
+    @include transition( all .3s ease-in-out );
+
+    &.has-scrolled {
+    	background-color: $color-1;
+    }
+
+    &.has-shadow {
+    	@include box-shadow( 0 0 20px 0 rgba(0,0,0,0.10) );
+    }
+
+    .has-template > #site-logo {
+    	display: none;
+    }
+
+    #site-header-inner {
+	    max-width: 100%;
+    	padding: 30px 0;
+    	overflow: hidden;
+
+    	> *:not(#site-navigation-wrap) {
+    		padding: 0 30px;
+    	}
+	}
+
+    &.vh-left-logo #site-logo {
+    	text-align: left;
+    }
+
+    &.vh-center-logo #site-logo {
+    	text-align: center;
+    }
+
+    &.vh-right-logo #site-logo {
+    	text-align: right;
+    }
+
+    #site-logo,
+    #site-logo #site-logo-inner {
+	    display: block;
+    	float: none;
+	    height: auto;
+    }
+
+    #site-logo {
+	    margin: 20px 0 45px;
+    }
+
+    .has-social #site-navigation-wrap {
+	    right: auto;
+	}
+
+	#site-navigation-wrap {
+	    float: none;
+	    right: auto;
+    	@include transition( all .3s ease-in-out );
+
+		.dropdown-menu li {
+			display: block;
+		    float: none;
+		    position: relative;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+		    > a {
+		    	position: relative;
+			    line-height: 1;
+			    padding: 17px 30px;
+
+				.dropdown-toggle {
+                    position: absolute;
+				    right: 0;
+				    top: 0;
+				    width: 50px;
+				    height: 100%;
+				    line-height: 1;
+				    cursor: pointer;
+				    text-align: center;
+
+                    &:before {
+                        content: '+';
+                        font-size: 20px;
+					    position: absolute;
+					    top: 50%;
+					    left: 50%;
+					    line-height: 1;
+					    margin-top: -10px;
+					    margin-left: -10px;
+                    }
+                }
+			}
+
+            &.active > a > .dropdown-toggle:before {
+                content: '-';
+            }
+		}
+
+		.dropdown-menu .sub-menu {
+			display: none;
+		    position: relative;
+		    top: 100%;
+		    left: 0;
+		    background-color: rgba(0, 0, 0, 0.03);
+		    border: none;
+		    border-top: 1px solid rgba(0,0,0,0.05);
+		    @include box-shadow( none );
+		}
+
+	    .nav-arrow,
+	    .sidebar-box {
+		    display: none;
+		}
+	}
+
+	#vertical-searchform {
+		margin-top: 40px;
+
+		form {
+			position: relative;
+
+    		&.search-filled label {
+				@include opacity( 0 );
+			    @include transition-duration( 150ms );
+			}
+
+			input {
+				position: relative;
+				font-size: 14px;
+			    border-width: 0 0 2px;
+			    background-color: transparent !important;
+			    border-color: rgba(0, 0, 0, 0.04);
+			    padding: 10px 12px;
+			    z-index: 2;
+			}
+
+			label, button {
+				position: absolute;
+			    top: 50%;
+			    margin: 0;
+			    @include transform( translateY(-50%) );
+			}
+
+			label {
+			    left: 12px;
+			    cursor: text;
+			    @include opacity( .5 );
+			    z-index: 1;
+			}
+
+			button {
+			    right: 0;
+			    width: 50px;
+			    height: 100%;
+			    line-height: 1;
+			    padding: 0;
+			    background-color: transparent;
+			    color: #777;
+			    border: none;
+			    z-index: 2;
+			    @include transition( all .3s ease );
+
+			    &:hover {
+			    	color: #333;
+			    }
+			}
+
+			.search-bg {
+				position: absolute;
+			    top: 0;
+			    bottom: 0;
+			    left: 0;
+			    right: 0;
+				background-color: rgba(0, 0, 0, 0.03);
+			}
+		}
+	}
+
+	.oceanwp-social-menu {
+	    float: none;
+	    display: block;
+	    margin-top: 40px;
+
+	    &.simple-social {
+		    right: auto;
+		}
+
+		.social-menu-inner {
+		    display: block;
+		    height: auto;
+		}
+	}
+
+	.custom-header-nav #site-navigation-wrap #site-navigation {
+		display: block;
+
+		.dropdown-menu > li > a {
+			padding-left: 0;
+    		padding-right: 0;
+		}
+	}
+
+	.vertical-toggle {
+		display: none;
+		position: absolute;
+	    top: 10px;
+	    width: 34px;
+	    height: 34px;
+	    font-size: 22px;
+	    line-height: 34px;
+	    padding: 0 !important;
+	    text-align: center;
+	}
+}
+
+.has-vh-transparent .is-sticky #site-header.vertical-header {
+    background-color: $color-1;
+}
+
+body.vertical-header-style {
+    &.left-header {
+    	#site-header.vertical-header {
+    		left: 0;
+
+			.vertical-toggle {
+			    right: 0;
+			}
+    	}
+
+    	#outer-wrap {
+    		margin-left: 300px;
+    	}
+    }
+
+    &.right-header {
+    	#site-header.vertical-header {
+    		right: 0;
+
+			.vertical-toggle {
+			    left: 0;
+			}
+    	}
+
+    	#outer-wrap {
+    		margin-right: 300px;
+    	}
+    }
+
+    &.has-vh-transparent {
+	    &.left-header #outer-wrap {
+	    	margin-left: 0;
+	    }
+
+	    &.right-header #outer-wrap {
+	    	margin-right: 0;
+	    }
+    }
+
+    &.vh-closed {
+		&.left-header #site-header.vertical-header {
+			left: -266px;
+		}
+
+		&.left-header #outer-wrap {
+			margin-left: 34px;
+		}
+
+		&.right-header #site-header.vertical-header {
+			right: -266px;
+		}
+
+		&.right-header #outer-wrap {
+			margin-right: 34px;
+		}
+
+	    &.vh-opened {
+		    &.left-header {
+		    	#site-header.vertical-header {
+		    		left: 0;
+		    	}
+		    }
+
+		    &.right-header {
+		    	#site-header.vertical-header {
+		    		right: 0;
+		    	}
+		    }
+
+		    #site-header.vertical-header #site-navigation-wrap {
+		    	padding-right: 0;
+			}
+	    }
+
+		#site-header.vertical-header {
+			.vertical-toggle {
+				display: block;
+			}
+
+			#site-navigation-wrap {
+			    padding-right: 34px;
+			}
+		}
+    }
+}
+
+/*------------------------------------*
+	All Devices under 1280px
+*------------------------------------*/
+@media only screen and (max-width: 1280px) {
+
+	body.vertical-header-style.default-collapse {
+	    &.left-header {
+	    	#site-header.vertical-header {
+	    		left: -266px;
+	    	}
+
+	    	#outer-wrap {
+	    		margin-left: 34px;
+	    	}
+	    }
+
+	    &.right-header {
+	    	#site-header.vertical-header {
+	    		right: -266px;
+	    	}
+
+	    	#outer-wrap {
+	    		margin-right: 34px;
+	    	}
+	    }
+
+	    &.vh-opened {
+		    &.left-header {
+		    	#site-header.vertical-header {
+		    		left: 0;
+		    	}
+		    }
+
+		    &.right-header {
+		    	#site-header.vertical-header {
+		    		right: 0;
+		    	}
+		    }
+
+		    #site-header.vertical-header #site-navigation-wrap {
+		    	padding-right: 0;
+			}
+	    }
+	}
+
+	body.default-collapse #site-header.vertical-header {
+		.vertical-toggle {
+			display: block;
+		}
+
+		#site-navigation-wrap {
+		    padding-right: 34px;
+		}
+	}
+
+}

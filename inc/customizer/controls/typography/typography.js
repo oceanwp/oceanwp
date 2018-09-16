@@ -2,7 +2,7 @@
 
 	$( document ).ready(function () {
 
-		$( '.oceanwp-typography-select' ).oceanwpSelect2();
+		$( '.oceanwp-typography-select' ).select2();
 
 	} );
 

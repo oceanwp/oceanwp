@@ -33,7 +33,12 @@ if ( 'all-devices' != $visibility ) {
 }
 
 // Turn into space seperated list
-$classes = implode( ' ', $classes ) ?>
+$classes = implode( ' ', $classes );
+
+// Heading tag
+$heading = get_theme_mod( 'ocean_page_header_heading_tag', 'h1' );
+$heading = $heading ? $heading : 'h1';
+$heading = apply_filters( 'ocean_page_header_heading', $heading ); ?>
 
 <?php do_action( 'ocean_before_page_header' ); ?>
 
@@ -43,9 +48,15 @@ $classes = implode( ' ', $classes ) ?>
 
 	<div class="container clr page-header-inner">
 
-		<h1 class="page-header-title clr" itemprop="headline"><?php echo wp_kses_post( oceanwp_title() ); ?></h1>
+		<?php
+		// Return if page header is disabled
+		if ( oceanwp_has_page_header_heading() ) { ?>
 
-		<?php get_template_part( 'partials/page-header-subheading' ); ?>
+			<<?php echo esc_attr( $heading ); ?> class="page-header-title clr"<?php oceanwp_schema_markup( 'headline' ); ?>><?php echo wp_kses_post( oceanwp_title() ); ?></<?php echo esc_attr( $heading ); ?>>
+
+			<?php get_template_part( 'partials/page-header-subheading' ); ?>
+
+		<?php } ?>
 
 		<?php if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) {
 			oceanwp_breadcrumb_trail();

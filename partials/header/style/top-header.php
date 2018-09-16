@@ -13,14 +13,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Menu position
 $position 	= get_theme_mod( 'ocean_top_header_menu_position', 'before' );
 
-// Add container class if the header is not full width
-$class = '';
-if ( true != get_theme_mod( 'ocean_header_full_width', false ) )  {
-	$class = ' container';
+// Get classes
+$classes = array( 'clr' );
+
+// Add container class
+if ( true != get_theme_mod( 'ocean_header_full_width', false ) ) {
+    $classes[] = 'container';
 }
 
+// Turn classes into space seperated string
+$classes = implode( ' ', $classes );
+
 // Search style
-$search 	= oceanwp_menu_search_style(); ?>
+$search = oceanwp_menu_search_style(); ?>
 
 <?php
 if ( 'after' == $position ) { ?>
@@ -32,11 +37,11 @@ if ( 'after' == $position ) { ?>
 <?php
 } ?>
 
-<div class="header-top clr">
+<div class="<?php echo esc_attr( oceanwp_top_header_classes() ); ?>">
 
 	<?php do_action( 'ocean_before_header_inner' ); ?>
 
-	<div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
+	<div id="site-header-inner" class="<?php echo esc_attr( $classes ); ?>">
 
 		<?php
 		// Search header replace
@@ -78,6 +83,8 @@ if ( 'after' == $position ) { ?>
 		</div>
 
 	</div><!-- #site-header-inner -->
+
+	<?php get_template_part( 'partials/mobile/mobile-dropdown' ); ?>
 
 	<?php do_action( 'ocean_after_header_inner' ); ?>
 

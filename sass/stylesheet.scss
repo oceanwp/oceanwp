@@ -3,6 +3,9 @@
 // Configuration
 @import "config";
 
+// Mixins
+@import "mixins";
+
 /*------------------------------------*
     $CONTENTS
 *------------------------------------*/
@@ -19,6 +22,11 @@
  * - TOP BAR
  * - HEADER
  * - NAVIGATIONS
+ * - LINKS EFFECT
+ * - MEGA MENU
+ * - SEARCH ICON
+ * - DROP DOWN MOBILE
+ * - FULL SCREEN MOBILE
  * - PAGE HEADER
  * - BLOG
  * - SIDEBAR
@@ -30,10 +38,10 @@
  * - 404 PAGE
  *
  * PLUGINS
- * - CHOCOLAT
- * - SLICK
+ * - GENERAL
+ * - MAGNIFIC POPUP
  * - SIDR
- * - PAGE BUILDERS
+ * - SLICK
  *
  * RESPONSIVE
  */
@@ -57,7 +65,6 @@
 	$COMPONENTS
 *------------------------------------*/
 @import "base/shared";
-@import "helpers/placeholder";
 
 /*------------------------------------*
 	$TYPOGRAPHY
@@ -81,11 +88,46 @@
 	$HEADER
 *------------------------------------*/
 @import "components/header/header";
+@import "components/header/header-transparent";
+@import "components/header/header-top";
+@import "components/header/header-fullscreen";
+@import "components/header/header-center";
+@import "components/header/header-medium";
+@import "components/header/header-vertical";
+@import "components/header/header-custom";
 
 /*------------------------------------*
 	$NAVIGATIONS
 *------------------------------------*/
 @import "components/header/navigation";
+@import "components/header/socialmenu";
+
+/*------------------------------------*
+	$LINKS EFFECT
+*------------------------------------*/
+@import "components/header/links_effect";
+
+/*------------------------------------*
+	$MEGA MENU
+*------------------------------------*/
+@import "components/header/megamenu";
+
+/*------------------------------------*
+	$SEARCH ICON
+*------------------------------------*/
+@import "components/header/search-dropdown";
+@import "components/header/search-replace";
+@import "components/header/search-overlay";
+
+/*------------------------------------*
+	$DROP DOWN MOBILE
+*------------------------------------*/
+@import "components/mobile/dropdown-mobile";
+
+/*------------------------------------*
+	$FULL SCREEN MOBILE
+*------------------------------------*/
+@import "components/mobile/fullscreen-mobile";
 
 /*------------------------------------*
 	$PAGE HEADER
@@ -96,6 +138,9 @@
 	$BLOG
 *------------------------------------*/
 @import "components/blog/blog-entries";
+@import "components/blog/blog-large";
+@import "components/blog/blog-grid";
+@import "components/blog/blog-thumbnail";
 @import "components/blog/blog-meta";
 @import "components/blog/gallery-format";
 @import "components/blog/video-audio-formats";
@@ -146,25 +191,24 @@
 @import "components/404";
 
 /*------------------------------------*
-	$SLICK
+	$GENERAL
 *------------------------------------*/
-@import "components/plugins/slick";
+@import "components/plugins/general";
 
 /*------------------------------------*
-	$CHOCOLAT
+	$MAGNIFIC POPUP
 *------------------------------------*/
-@import "components/plugins/chocolat";
+@import "components/plugins/magnific-popup";
 
 /*------------------------------------*
 	$SIDR
 *------------------------------------*/
 @import "components/plugins/sidr";
-@import "components/plugins/slick-theme";
 
 /*------------------------------------*
-	$PAGE BUILDERS
+	$SLICK
 *------------------------------------*/
-@import "components/plugins/builders";
+@import "components/plugins/slick";
 
 /*------------------------------------*
 	$RESPONSIVE

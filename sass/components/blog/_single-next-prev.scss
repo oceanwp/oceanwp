@@ -65,3 +65,24 @@
 	    }
 	}
 }
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+	
+	.single nav.post-navigation .nav-links {
+		.nav-previous,
+		.nav-next {
+			float: none;
+			width: 100%;
+			padding: 0;
+		}
+
+		.nav-previous {
+			border-right-width: 0;
+			border-left-width: 0;
+		}
+	}
+
+}

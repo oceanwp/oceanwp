@@ -62,21 +62,21 @@
 }
 
 .comment-body {
+	@include display();
 	margin-bottom: 30px;
 	padding-bottom: 30px;
 	border-bottom: 1px solid $color-9;
 
-	img {
-		float: left;
+	img.avatar {
 		width: 80px;
 		height: 80px;
 		margin-right: 30px;
-		border-radius: 50%;
+		@include border-radius( 50% );
 	}
 
 	.comment-content {
 		position: relative;
-		overflow: hidden;
+		width: 100%;
 	}
 }
 
@@ -122,7 +122,7 @@
     float: right;
     border: 2px solid $color-9;
     padding: 3px 10px;
-    border-radius: 3px;
+    @include border-radius( 3px );
     text-transform: uppercase;
     letter-spacing: 0.1em;
 
@@ -185,4 +185,48 @@ span.required {
 			}
 		}
 	}
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	#comments ol.children {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	
+	#respond {
+		.comment-form-author,
+		.comment-form-email,
+		.comment-form-url {
+			float: none;
+			width: 100%;
+			padding-right: 0;
+			padding: 0;
+			padding-left: 0;
+		}
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	.comment-body img {
+		display: none;
+	}
+
+	.comment-author {
+		margin-bottom: 16px;
+
+		.comment-link,
+		.comment-meta {
+			float: none;
+		}
+	}
+
 }

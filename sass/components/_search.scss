@@ -1,50 +1,57 @@
-#blog-entries .type-page {
+.search-results article {
     position: relative;
     width: 100%;
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid $border-color;
 
-    .entry-summary p:last-child {
+    .search-entry-inner {
+    	@include display();
+        @include align-items( center );
+    }
+
+    .thumbnail {
+    	min-width: 120px;
+    	margin-right: 20px;
+
+    	img {
+    		@include border-radius( 5px );
+    		@include box-shadow( 0 0 5px rgba(0,0,0,0.3) );
+    	}
+    }
+
+    .search-entry-title {
+    	font-size: 24px;
+    	margin: 0 0 6px;
+    }
+
+    .search-entry-summary p:last-child {
         margin-bottom: 0;
+    }
+
+    .search-entry-readmore a {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1;
+        padding-bottom: 3px;
+        border-bottom: 1px solid;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+    }
+
+    ul {
+    	list-style: none;
     }
 }
 
-/**
- * Search form shortcode
- */
-form.oceanwp-searchform {
-	display: inline-block;
-	position: relative;
-	height: 35px;
+/*------------------------------------*
+    Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
 
-	input {
-		margin: 0;
-		padding: 0 40px 0 15px;
-		height: 100%;
-    	min-height: 100%;
-	}
+    .search-results article .thumbnail {
+        display: none;
+    }
 
-	button {
-		display: block;
-	    position: absolute;
-	    top: 50%;
-	    right: 0;
-	    min-width: 40px;
-	    height: 60%;
-	    height: 100%;
-	    font-size: 12px;
-	    font-weight: 600;
-	    background-color: transparent;
-	    margin: 0;
-	    padding: 0;
-	    border: 0;
-	    text-align: center;
-	    line-height: 1;
-	    -webkit-transition: all .3s ease;
-	    transition: all .3s ease;
-	    -ms-transform: translateY(-50%);
-	    -webkit-transform: translateY(-50%);
-	    transform: translateY(-50%);
-	}
 }

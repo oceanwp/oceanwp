@@ -1,0 +1,192 @@
+.navigation .megamenu {
+    a .nav-arrow {
+        display: none;
+    }
+
+    > li > a.menu-link {
+	    font-size: 13px;
+        font-weight: 600;
+    }
+
+    li ul.sub-menu {
+        border-top: 1px solid $color-9; 
+    }
+
+    li a.menu-link {
+    	padding: 12px 20px;
+    }
+
+    .sidebar-box {
+        padding: 20px;
+        margin-bottom: 0;
+        line-height: $base-line-height;
+        white-space: normal;
+    }
+}
+
+.navigation > ul > li > ul.megamenu.sub-menu > li {
+    float: left;
+    border-bottom: 0;
+    border-left-width: 1px;
+    border-style: solid;
+    border-color: $color-9;
+
+    &:first-child {
+        border-left: none;
+    }
+}
+
+.navigation li.megamenu-li.hide-headings > .megamenu > li > a,
+.navigation li.megamenu-li > .megamenu > li.hide-heading > a {
+    display: none;
+}
+
+.navigation .megamenu .sub-menu {
+    display: block !important;
+    @include opacity( 1 !important );
+    min-width: 100%;
+    position: static;
+    background: transparent;
+    @include box-shadow( none );
+}
+
+/**
+ * Megamenu columns
+ */
+.navigation li.megamenu-li .megamenu {
+    &.col-1 > li { width: 100%; }
+    &.col-2 > li { width: 50%; }
+    &.col-3 > li { width: 33.33333333%; }
+    &.col-4 > li { width: 25%; }
+    &.col-5 > li { width: 20%; }
+    &.col-6 > li { width: 16.66666667%; }
+}
+
+/**
+ * Megamenu auto width
+ */
+@media only screen and (min-width: 959px) {
+    .navigation li.megamenu-li.auto-mega .megamenu {
+        &.col-1 { width: 320px; }
+        &.col-2 { width: 440px; }
+        &.col-3 { width: 660px; }
+        &.col-4 { width: 780px; }
+        &.col-5 { width: 980px; }
+        &.col-6 { width: 1080px; }
+    }
+}
+
+/**
+ * Elementor Template
+ */
+.navigation > ul > li > ul.megamenu.sub-menu > li .elementor {
+	white-space: normal;
+    line-height: initial;
+}
+
+/**
+ * Latest Posts Categories
+ */
+.navigation li.mega-cat {
+    .megamenu {
+	    padding: 30px 20px;
+	}
+
+	.mega-cat-title {
+		position: relative;
+	    font-size: 14px;
+	    line-height: 1;
+	    font-weight: 400;
+	    background-color: #f8f8f8;
+	    color: $color-3;
+	    letter-spacing: 2px;
+	    margin: 0 -20px 30px;
+	    padding: 15px 35px;
+	    text-transform: uppercase;
+	}
+
+	> ul > li {
+		padding: 0 15px;
+	}
+
+	ul li a {
+		padding: 0;
+	}
+
+	ul li a.mega-post-link {
+		display: block;
+		position: relative;
+	    background-color: #000;
+
+	    img {
+			display: block;
+		    width: 100%;
+		}
+
+		.overlay {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			@include border-radius( 3px );
+			background-color: rgba(0,0,0,0.2);
+			@include opacity( 0 );
+			text-align: center;
+			@include transition( all .3s ease );
+		}
+
+		&:hover .overlay {
+			@include opacity( 1 );
+		}
+	}
+
+	ul li .mega-post-title {
+		display: block;
+	    margin: 15px 0 8px;
+	    white-space: initial;
+
+	    a {
+			color: $color-11;
+		    font-size: 14px;
+		    font-weight: 400;
+		    line-height: 1.3;
+		    letter-spacing: 0.6px;
+		    text-transform: none;
+
+		    &:hover {
+				background-color: transparent;
+				color: $color-2;
+			}
+		}
+	}
+
+	ul li .mega-post-date {
+		display: block;
+	    font-size: 10px;
+	    color: $color-13;
+	    text-transform: uppercase;
+
+	    i {
+			font-size: 9px;
+			padding-right: 5px;
+		}
+	}
+}
+
+.navigation > ul > li.mega-cat > ul.megamenu.sub-menu > li.first {
+	border-left: 0;
+}
+
+/*------------------------------------*
+	Tablet & Small Desktop Widths
+*------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 1280px) { 
+	
+	/* megamenu */
+	.navigation li.megamenu.auto-width.col-6 > .sub-menu {
+		width: 980px;
+	}
+
+}

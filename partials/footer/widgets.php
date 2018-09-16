@@ -5,26 +5,19 @@
  * @package OceanWP WordPress theme
  */
 
-namespace Elementor;
-
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// If is not PHP version 5.2+
-if ( ! version_compare( PHP_VERSION, '5.2', '>=' ) ) {
-    return;
-}
-
-// Get page
-$get_page 	= oceanwp_footer_page_id();
-
-// Get page ID
-$get_id 	= get_theme_mod( 'ocean_footer_widgets_page_id' );
+// Get ID
+$get_id = oceanwp_custom_footer_template();
 
 // Check if page is Elementor page
-$elementor 	= get_post_meta( $get_id, '_elementor_edit_mode', true );
+$elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
+
+// Get content
+$get_content = oceanwp_footer_template_content();
 
 // Get footer widgets columns
 $columns    = apply_filters( 'ocean_footer_widgets_columns', get_theme_mod( 'ocean_footer_widgets_columns', '4' ) );
@@ -38,7 +31,7 @@ $mobile_columns    = get_theme_mod( 'ocean_footer_widgets_mobile_columns' );
 $visibility = get_theme_mod( 'ocean_footer_widgets_visibility', 'all-devices' );
 
 // Classes
-$wrap_classes = array( 'clr' );
+$wrap_classes = array( 'oceanwp-row', 'clr' );
 if ( ! empty( $tablet_columns ) ) {
 	$wrap_classes[] = 'tablet-' . $tablet_columns . '-col';
 }
@@ -48,44 +41,55 @@ if ( ! empty( $mobile_columns ) ) {
 if ( 'all-devices' != $visibility ) {
 	$wrap_classes[] = $visibility;
 }
-$wrap_classes = implode( ' ', $wrap_classes ); ?>
+$wrap_classes = implode( ' ', $wrap_classes );
+
+// Get inner classes
+$inner_classes = array( 'footer-widgets-inner' );
+
+// Add container class
+if ( true == get_theme_mod( 'ocean_add_footer_container', true ) ) {
+    $inner_classes[] = 'container';
+}
+
+// Turn inner classes into space seperated string
+$inner_classes = implode( ' ', $inner_classes ); ?>
 
 <?php do_action( 'ocean_before_footer_widgets' ); ?>
 
-<div id="footer-widgets" class="oceanwp-row <?php echo esc_attr( $wrap_classes ); ?>">
+<div id="footer-widgets" class="<?php echo esc_attr( $wrap_classes ); ?>">
 
 	<?php do_action( 'ocean_before_footer_widgets_inner' ); ?>
 
-	<div class="container">
+	<div class="<?php echo esc_attr( $inner_classes ); ?>">
 
         <?php
-        // Check if there is page for the footer
-        if ( $get_page ) :
+        // Check if there is a template for the footer
+        if ( ! empty( $get_id ) ) {
 
-		    // If Elementor
-		    if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+			// If Elementor
+		    if ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) {
 
-				echo Plugin::instance()->frontend->get_builder_content_for_display( $get_id );
+		        OceanWP_Elementor::get_footer_content();
 
-	    	}
+		    }
 
-	    	// If Beaver Builder
-		    else if ( class_exists( 'FLBuilder' ) ) {
+		    // If Beaver Builder
+		    else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 
-				echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
+		        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
-	    	}
+		    }
 
-	    	// Else
-	    	else {
+		    // Else
+		    else {
 
-	        	// Display page content
-	        	echo do_shortcode( $get_page );
+		        // Display template content
+		        echo do_shortcode( $get_content );
 
-	        }
+		    }
 
 		// Display widgets
-		else :
+		} else {
 
 			// Footer box 1 ?>
 			<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col col-1">
@@ -116,7 +120,8 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 				</div><!-- .footer-box -->
 			<?php endif; ?>
 
-		<?php endif; ?>
+		<?php
+		} ?>
 
 	</div><!-- .container -->
 

@@ -47,6 +47,7 @@ class OceanWP_Customizer_Heading_Control extends WP_Customize_Control {
 	protected function content_template() {
 		?>
 		<h4 class="oceanwp-customizer-heading">{{{ data.label }}}</h4>
+		<div class="description">{{{ data.description }}}</div>
 		<?php
 	}
 }

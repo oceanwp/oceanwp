@@ -12,11 +12,12 @@
         <?php do_action( 'ocean_before_footer' ); ?>
 
         <?php
-        // Display the footer if the footer widgets and bottom are enabled
-        if ( oceanwp_display_footer_widgets()
-        	|| oceanwp_display_footer_bottom() ) {
-        	get_template_part( 'partials/footer/layout' );
-        } ?>
+        // Elementor `footer` location
+        if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'footer' ) ) { ?>
+
+            <?php do_action( 'ocean_footer' ); ?>
+            
+        <?php } ?>
 
         <?php do_action( 'ocean_after_footer' ); ?>
                 
@@ -41,19 +42,30 @@ if ( 'overlay' == oceanwp_menu_search_style() ) {
 } ?>
 
 <?php
-// Mobile panel close button
-if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
-    get_template_part( 'partials/mobile/mobile-sidr-close' );
+// If sidebar mobile menu style
+if ( 'sidebar' == oceanwp_mobile_menu_style() ) {
+    
+    // Mobile panel close button
+    if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
+        get_template_part( 'partials/mobile/mobile-sidr-close' );
+    } ?>
+
+    <?php
+    // Mobile Menu (if defined)
+    get_template_part( 'partials/mobile/mobile-nav' ); ?>
+
+    <?php
+    // Mobile search form
+    if ( get_theme_mod( 'ocean_mobile_menu_search', true ) ) {
+        get_template_part( 'partials/mobile/mobile-search' );
+    }
+
 } ?>
 
 <?php
-// Mobile Menu (if defined)
-get_template_part( 'partials/mobile/mobile-nav' ); ?>
-
-<?php
-// Mobile search form
-if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
-    get_template_part( 'partials/mobile/mobile-search' );
+// If full screen mobile menu style
+if ( 'fullscreen' == oceanwp_mobile_menu_style() ) {
+    get_template_part( 'partials/mobile/mobile-fullscreen' );
 } ?>
 
 <?php wp_footer(); ?>

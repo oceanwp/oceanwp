@@ -31,6 +31,10 @@
   }
 }
 
+#topbar-template {
+  display: inline-block;
+}
+
 #top-bar-wrap #lang_sel ul ul {
   z-index: 99999;
 }
@@ -45,4 +49,24 @@
   float: left;
   margin: 0;
   margin-right: 20px;
+}
+
+/*------------------------------------*
+  Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+  #top-bar-content, #top-bar-social-alt {
+    float: none;
+    text-align: center;
+  }
+
+  #top-bar #lang_sel {
+    text-align: left;
+  }
+
+  body.rtl #top-bar #lang_sel {
+    text-align: right;
+  }
+  
 }

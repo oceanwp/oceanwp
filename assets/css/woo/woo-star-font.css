@@ -1,0 +1,152 @@
+/*------------------------------------------------------------------
+Woo Star Font
+-------------------------------------------------------------------*/
+@font-face { font-family: 'star'; src: url('../../fonts/star/star.eot'); src: url('../../fonts/star/star.eot?#iefix') format('embedded-opentype'), url('../../fonts/star/star.woff') format('woff'), url('../../fonts/star/star.ttf') format('truetype'), url('../../fonts/star/star.svg#star') format('svg'); font-weight: normal; font-style: normal; }
+
+#reviews .comment-reply-title {
+    display: none;
+}
+
+#reviews .comment-form-rating label {
+    display: block;
+    margin: 10px 0 0;
+    line-height: 1;
+}
+
+.star-rating {
+    overflow: hidden;
+    position: relative;
+    height: 1.618em;
+    line-height: 1.618;
+    font-size: 1em;
+    width: 5.3em;
+    font-family: star;
+    font-weight: 400
+}
+
+.star-rating::before {
+    content: '\53\53\53\53\53';
+    opacity: .25;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute
+}
+
+.star-rating span {
+    overflow: hidden;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: 1.5em
+}
+
+.star-rating span::before {
+    content: '\53\53\53\53\53';
+    top: 0;
+    position: absolute;
+    left: 0;
+    color: #f9ca63
+}
+
+p.stars {
+    display: inline-block;
+    margin: 0 0 20px;
+    line-height: 1;
+}
+
+p.stars a {
+    position: relative;
+    height: 1em;
+    width: 1em;
+    text-indent: -999em;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 1px;
+    font-weight: 400
+}
+
+p.stars a::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    font-family: star;
+    content: '\53';
+    color: #43454b;
+    text-indent: 0;
+    opacity: .25
+}
+
+p.stars a:hover~a::before {
+    content: '\53';
+    color: #43454b;
+    opacity: .25
+}
+
+p.stars:hover a::before {
+    content: '\53';
+    color: #f9ca63;
+    opacity: 1
+}
+
+p.stars.selected a.active::before {
+    content: '\53';
+    color: #f9ca63;
+    opacity: 1
+}
+
+p.stars.selected a.active~a::before {
+    content: '\53';
+    color: #43454b;
+    opacity: .25
+}
+
+p.stars.selected a:not(.active)::before {
+    content: '\53';
+    color: #f9ca63;
+    opacity: 1
+}
+
+/* Filter rating widget */
+.widget_rating_filter .wc-layered-nav-rating {
+    margin-bottom: 10px;
+}
+
+.widget_rating_filter .wc-layered-nav-rating .star-rating {
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+}
+
+/* RTL */
+.rtl .star-rating::before {
+    float: right;
+    right: 0;
+    left: auto;
+}
+
+.rtl .star-rating span {
+    float: right;
+    right: 0;
+    left: auto;
+}
+
+.rtl .star-rating span::before {
+    right: 0;
+    left: auto;
+}
+
+.rtl p.stars a {
+    margin-left: 1px;
+    margin-right: 0;
+}
+
+.rtl p.stars a::before {
+    right: 0;
+    left: auto;
+}

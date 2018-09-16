@@ -15,6 +15,24 @@
 if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 
 	function oceanwp_wcmenucart_menu_item() {
+
+		// Classes
+		$classes = array( 'wcmenucart' );
+
+		// Hide items if "hide if empty cart" is checked
+		if ( true == get_theme_mod( 'ocean_woo_menu_icon_hide_if_empty', false )
+			&& ! WC()->cart->cart_contents_count > 0 ) {
+			$classes[] = 'wcmenucart-hide';
+		}
+
+		// Turn classes into space seperated string
+		$classes = implode( ' ', $classes );
+
+		// Return if is in the Elementor edit mode, to avoid error
+		if ( OCEANWP_ELEMENTOR_ACTIVE
+			&& \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+			return;
+		}
 		
 		// Vars
 		$icon_style   = get_theme_mod( 'ocean_woo_menu_icon_style', 'drop_down' );
@@ -37,9 +55,9 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 			$cart_extra = WC()->cart->get_cart_total();
 			$cart_extra = str_replace( 'amount', 'wcmenucart-details', $cart_extra );
 		} elseif ( 'icon_count' == $display ) {
-			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->cart_contents_count .'</span>';
+			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
 		} elseif ( 'icon_count_total' == $display ) {
-			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->cart_contents_count .'</span>';
+			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
 			$cart_total = WC()->cart->get_cart_total();
 			$cart_extra .= str_replace( 'amount', 'wcmenucart-details', $cart_total );
 		} else {
@@ -57,21 +75,31 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		}
 
 		// Cart Icon
-		if ( 'center' == oceanwp_header_style() ) {
-			$cart_icon = esc_html__( 'Cart', 'oceanwp' );
-		} else {
-			$cart_icon = '<i class="'. esc_attr( $icon ) .'"></i>';
-		}
+		$cart_icon = '<i class="'. esc_attr( $icon ) .'"></i>';
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
-		ob_start(); ?>
+		// If bag style
+		if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) { ?>
 
-			<a href="<?php echo esc_url( $url ); ?>" class="wcmenucart">
+			<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $classes ); ?>">
+				<?php
+				if ( true == get_theme_mod( 'ocean_woo_menu_bag_style_total', false ) ) { ?>
+					<span class="wcmenucart-total"><?php echo WC()->cart->get_cart_total(); ?></span>
+				<?php } ?>
+				<span class="wcmenucart-cart-icon">
+					<span class="wcmenucart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+				</span>
+			</a>
+
+		<?php } else { ?>
+
+			<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $classes ); ?>">
 				<span class="wcmenucart-count"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
 			</a>
-			
+
 		<?php
-		return ob_get_clean();
+		}
+
 	}
 
 }

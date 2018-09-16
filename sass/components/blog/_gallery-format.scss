@@ -15,13 +15,13 @@
 
 	.slick-prev,
 	.slick-next {
-	    opacity: 0;
+	    @include opacity( 0 );
 	    visibility: hidden;
 	}
 
 	&:hover .slick-prev,
 	&:hover .slick-next {
-	    opacity: 1;
+	    @include opacity( 1 );
 	    visibility: visible;
 	}
 }

@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.0.0
+ * @version     9999
  */
 
 // Classes
@@ -30,6 +30,11 @@ if ( ! empty( $tablet_columns ) ) {
 if ( ! empty( $mobile_columns ) ) {
 	$wrap_classes[] = 'mobile-col';
 	$wrap_classes[] = 'mobile-' . $mobile_columns . '-col';
+}
+
+// If infinite scroll
+if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+	$wrap_classes[] = 'infinite-scroll-wrap';
 }
 
 $wrap_classes = implode( ' ', $wrap_classes ); ?>

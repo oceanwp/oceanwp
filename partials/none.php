@@ -8,7 +8,7 @@
 
 <div class="page-content">
 	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) { ?>
-		<p><?php printf( esc_html__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'oceanwp' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+		<p><?php echo sprintf( esc_html__( 'Ready to publish your first post? %1$sGet started here%2$s.', 'oceanwp' ), '<a href="'. esc_url( admin_url( 'post-new.php' ) ) .'" target="_blank">', '</a>' ); ?></p>
 	<?php } elseif ( is_search() ) { ?>
 		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with different keywords.', 'oceanwp' ); ?></p>
 	<?php } elseif ( is_category() ) { ?>

@@ -1,4 +1,4 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;font:inherit;vertical-align:baseline;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html{font-size:62.5%;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}article,aside,details,figcaption,figure,footer,header,main,nav,section{display:block}table{border-collapse:collapse;border-spacing:0;}caption,th,td{font-weight:normal;text-align:left;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}blockquote,q{quotes:none}a:focus{outline:none}a:hover,a:active{outline:0}a img{border:0}img{max-width:100%;height:auto;}select{max-width:100%}em{font-style: italic;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;font:inherit;vertical-align:baseline;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html{font-size:62.5%;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}*,*:before,*:after{@include box-sizing( border-box );}article,aside,details,figcaption,figure,footer,header,main,nav,section{display:block}table{border-collapse:collapse;border-spacing:0;}caption,th,td{font-weight:normal;text-align:left;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}blockquote,q{quotes:none}a:focus{outline:none}a:hover,a:active{outline:0}a img{border:0}img{max-width:100%;height:auto;}select{max-width:100%}em{font-style: italic;}
 
 * html {
 	font-size: 100% * ( $font-size / $browser-font-size );
@@ -68,6 +68,18 @@ body .oceanwp-row {
 	.span_1_of_7 {
 		width: 14.28%;
 	}
+
+	.span_1_of_8 {
+		width: 12.5%;
+	}
+
+	.span_1_of_9 {
+		width: 11.11%;
+	}
+
+	.span_1_of_10 {
+		width: 10%;
+	}
 }
 
 /**
@@ -106,12 +118,47 @@ body .oceanwp-row {
 }
 
 .wp-video-shortcode {
-	width: auto !important;
 	max-width: 100% !important;
 }
 
 .responsive-video-wrap p {
 	margin: 0;
+}
+
+/**
+ * Search form shortcode
+ */
+form.oceanwp-searchform {
+	display: inline-block;
+	position: relative;
+	height: 35px;
+
+	input {
+		margin: 0;
+		padding: 0 40px 0 15px;
+		height: 100%;
+    	min-height: 100%;
+	}
+
+	button {
+		display: block;
+	    position: absolute;
+	    top: 50%;
+	    right: 0;
+	    min-width: 40px;
+	    height: 60%;
+	    height: 100%;
+	    font-size: 12px;
+	    font-weight: 600;
+	    background-color: transparent !important;
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+	    text-align: center;
+	    line-height: 1;
+	    @include transition( all .3s ease );
+	    @include transform( translateY(-50%) );
+	}
 }
 
 /**
@@ -145,4 +192,39 @@ body .oceanwp-row {
 	color: $selection-font-color;
 	background: $selection-bg-color;
 	text-shadow: none;
+}
+
+/*------------------------------------*
+	Tablet Portrait
+*------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	
+	/* turn 4 column masonry grids into 2 columns */
+	body .oceanwp-row {
+		.span_1_of_4.col-3.col,
+		.span_1_of_4.col.product:nth-child(2n+3) {
+			margin-left: 0;
+			clear: both;
+		}
+	}
+
+	body .oceanwp-row .span_1_of_4.col,
+	body .oceanwp-isotope-grid .span_1_of_4.col {
+		width: 50%;
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	.col {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 30px;
+	}
+
 }

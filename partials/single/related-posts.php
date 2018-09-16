@@ -10,6 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Only display for standard posts
+if ( 'post' != get_post_type() ) {
+	return;
+}
+
 // Text
 $text = esc_html__( 'You Might Also Like', 'oceanwp' );
 
@@ -17,20 +22,23 @@ $text = esc_html__( 'You Might Also Like', 'oceanwp' );
 $text = apply_filters( 'ocean_related_posts_title', $text );
 
 // Number of columns for entries
-$oceanwp_columns = apply_filters( 'ocean_related_blog_posts_columns', get_theme_mod( 'ocean_blog_related_columns', '3' ) );
+$oceanwp_columns = apply_filters( 'ocean_related_blog_posts_columns', absint( get_theme_mod( 'ocean_blog_related_columns', '3' ) ) );
 
-// Create an array of current category ID's
-$cats     = wp_get_post_terms( get_the_ID(), 'category' );
-$cats_ids = array();
-foreach( $cats as $oceanwp_related_cat ) {
-	$cats_ids[] = $oceanwp_related_cat->term_id;
+// Term
+$term_tax = get_theme_mod( 'ocean_blog_related_taxonomy', 'category' );
+$term_tax = $term_tax ? $term_tax : 'category';
+
+// Create an array of current term ID's
+$terms     = wp_get_post_terms( get_the_ID(), $term_tax );
+$terms_ids = array();
+foreach( $terms as $term ) {
+	$terms_ids[] = $term->term_id;
 }
 
 // Query args
 $args = array(
-	'posts_per_page' => apply_filters( 'ocean_related_blog_posts_count', get_theme_mod( 'ocean_blog_related_count', '3' ) ),
+	'posts_per_page' => apply_filters( 'ocean_related_blog_posts_count', absint( get_theme_mod( 'ocean_blog_related_count', '3' ) ) ),
 	'orderby'        => 'rand',
-	'category__in'   => $cats_ids,
 	'post__not_in'   => array( get_the_ID() ),
 	'no_found_rows'  => true,
 	'tax_query'      => array (
@@ -43,7 +51,21 @@ $args = array(
 		),
 	),
 );
+
+// If category
+if ( 'category' == $term_tax ) {
+	$args['category__in'] = $terms_ids;
+}
+
+// If tags
+if ( 'post_tag' == $term_tax ) {
+	$args['tag__in'] = $terms_ids;
+}
+
+// Args
 $args = apply_filters( 'ocean_blog_post_related_query_args', $args );
+
+do_action( 'ocean_before_single_post_related_posts' );
 
 // Related query arguments
 $oceanwp_related_query = new WP_Query( $args );
@@ -57,7 +79,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 		$classes .= ' container';
 	} ?>
 
-	<div id="related-posts" class="<?php echo esc_attr( $classes ); ?>">
+	<section id="related-posts" class="<?php echo esc_attr( $classes ); ?>">
 
 		<h3 class="theme-heading related-posts-title">
 			<span class="text"><?php echo esc_html( $text ); ?></span>
@@ -110,8 +132,8 @@ if ( $oceanwp_related_query->have_posts() ) :
 
 								<?php
 								// Image width
-								$img_width  = apply_filters( 'ocean_related_blog_posts_img_width', get_theme_mod( 'ocean_blog_related_img_width' ) );
-								$img_height = apply_filters( 'ocean_related_blog_posts_img_height', get_theme_mod( 'ocean_blog_related_img_height' ) );
+								$img_width  = apply_filters( 'ocean_related_blog_posts_img_width', absint( get_theme_mod( 'ocean_blog_related_img_width' ) ) );
+								$img_height = apply_filters( 'ocean_related_blog_posts_img_height', absint( get_theme_mod( 'ocean_blog_related_img_height' ) ) );
 
 			                	// Images attr
 								$img_id 	= get_post_thumbnail_id( get_the_ID(), 'full' );
@@ -126,7 +148,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 									&& function_exists( 'ocean_extra_resize' )
 									&& ! empty( $img_atts ) ) { ?>
 
-									<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts[ 'width' ], $img_atts[ 'height' ], $img_atts[ 'crop' ], true, $img_atts[ 'upscale' ] ); ?>" alt="<?php esc_attr( the_title_attribute() ); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>" itemprop="image" />
+									<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts[ 'width' ], $img_atts[ 'height' ], $img_atts[ 'crop' ], true, $img_atts[ 'upscale' ] ); ?>" alt="<?php the_title_attribute(); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>"<?php oceanwp_schema_markup( 'image' ); ?> />
 
 								<?php
 								} else {
@@ -139,11 +161,16 @@ if ( $oceanwp_related_query->have_posts() ) :
 										$size = 'medium';
 									}
 
+									// Image args
+									$img_args = array(
+									    'alt' => get_the_title(),
+									);
+									if ( oceanwp_get_schema_markup( 'image' ) ) {
+										$img_args['itemprop'] = 'image';
+									}
+
 									// Display post thumbnail
-									the_post_thumbnail( $size, array(
-										'alt'		=> get_the_title(),
-										'itemprop' 	=> 'image',
-									) );
+									the_post_thumbnail( $size, $img_args );
 
 								} ?>
 							</a>
@@ -166,8 +193,10 @@ if ( $oceanwp_related_query->have_posts() ) :
 
 		</div><!-- .oceanwp-row -->
 
-	</div><!-- .related-posts -->
+	</section><!-- .related-posts -->
 
 <?php endif; ?>
 
 <?php wp_reset_postdata(); ?>
+
+<?php do_action( 'ocean_after_single_post_related_posts' ); ?>

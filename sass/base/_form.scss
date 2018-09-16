@@ -23,17 +23,17 @@ form textarea {
     font-size: 14px;
     line-height: 1.8;
 	padding: 6px 12px;
-	margin-top: 3px;
 	vertical-align: middle;
 	background-color: transparent;
 	color: $color-2;
 	border: 1px solid $color-10;
-	border-radius: 3px;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
+	@include border-radius( 3px );
+    @include transition( all .3s ease );
+}
+
+form select {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 form input[type="number"] {
@@ -78,10 +78,8 @@ input[type="checkbox"] {
 	clear: none;
 	cursor: pointer;
 	-webkit-appearance: none;
-	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-	box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
-	-webkit-transition: .05s border-color ease-in-out;
-	transition: .05s border-color ease-in-out;
+	@include box-shadow( inset 0 1px 2px rgba(0,0,0,.1) );
+	@include transition( .05s border-color ease-in-out );
 }
 
 input[type=radio]:checked:before,
@@ -90,7 +88,8 @@ input[type=checkbox]:checked:before {
 	display: inline-block;
 	vertical-align: middle;
 	width: 16px;
-	font: 400 14px/1 FontAwesome;
+	line-height: 14px;
+	font-family: 'FontAwesome';
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -110,10 +109,8 @@ form input:not([type]) {
 	display: inline-block;
 	padding: 5px 10px;
 	border: 1px solid #ccc;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 3px #ddd;
-	-moz-box-shadow: inset 0 1px 3px #ddd;
-	box-shadow: inset 0 1px 3px #ddd;
+	@include border-radius( 4px );
+	@include box-shadow( inset 0 1px 3px #ddd );
 }
 
 
@@ -229,7 +226,7 @@ form select[multiple] {
 	height: auto;
 }
 form label {
-	margin: .5em 0 .2em;
+    margin-bottom: 3px;
 }
 form fieldset {
 	margin: 0;
@@ -250,6 +247,7 @@ form legend {
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
+button[type="submit"],
 .button {
 	display: inline-block;
     font-family: inherit;
@@ -265,19 +263,17 @@ input[type="submit"],
     text-align: center;
     letter-spacing: 0.1em;
     line-height: 1;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
+    @include transition( all .3s ease );
 }
 
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
+button[type="submit"]:hover,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
+button[type="submit"]:focus,
 .button:hover {
 	background-color: $color-6;
 	color: $color-1;
@@ -286,6 +282,7 @@ input[type="submit"]:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
+button[type="submit"]:focus,
 button:focus,
 .button:focus {
 	outline: 0;
@@ -297,17 +294,13 @@ button:focus,
 .pure-button-disabled:focus,
 .pure-button-disabled:active {
 	cursor: not-allowed;
-	opacity: .40;
+	@include opacity( .40 );
 	border: none;
 	background-image: none;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+	@include box-shadow( none );
 
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	filter: alpha(opacity=40);
-	-khtml-opacity: .40;
-	-moz-opacity: .40;
 }
 
 /* Firefox: Get rid of the inner focus border */
@@ -325,4 +318,14 @@ a.pure-button-primary,
 a.pure-button-selected {
 	color: #fff;
 	background-color: rgb(0, 120, 231);
+}
+
+/* Comment checkbox */
+.comment-form-cookies-consent {
+	display: inline-block;
+    width: 100%;
+
+    label {
+    	display: inline-block;
+    }
 }

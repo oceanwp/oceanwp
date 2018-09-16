@@ -25,31 +25,42 @@ get_header(); ?>
 				<?php do_action( 'ocean_before_content_inner' ); ?>
 
 				<?php
-				// Start loop
-				while ( have_posts() ) : the_post();
+				// Elementor `single` location
+				if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'single' ) ) {
+					
+					// Start loop
+					while ( have_posts() ) : the_post();
 
-					// Single Page
-					if ( is_singular( 'page' ) ) {
+							// EDD Page
+							if ( is_singular( 'download') ) {
+								get_template_part( 'partials/edd/single' );
+							}
 
-						get_template_part( 'partials/page/layout' );
+							// Single Page
+							elseif ( is_singular( 'page' ) ) {
 
-					}
+								get_template_part( 'partials/page/layout' );
 
-					// Elementor library posts
-    				elseif ( is_singular( 'elementor_library' ) ) {
+							}
 
-    					get_template_part( 'partials/elementor/layout' );
+							// Library post types
+		    				elseif ( is_singular( 'oceanwp_library' )
+		    						|| is_singular( 'elementor_library' ) ) {
 
-    				}
+		    					get_template_part( 'partials/library/layout' );
 
-					// All other post types.
-					else {
+		    				}
 
-    					get_template_part( 'partials/single/layout' );
+							// All other post types.
+							else {
 
-  					}
+		    					get_template_part( 'partials/single/layout', get_post_type() );
 
-				endwhile; ?>
+		  					}
+
+					endwhile;
+
+				} ?>
 
 				<?php do_action( 'ocean_after_content_inner' ); ?>
 
@@ -61,7 +72,7 @@ get_header(); ?>
 
 		<?php do_action( 'ocean_after_primary' ); ?>
 
-		<?php get_sidebar(); ?>
+		<?php do_action( 'ocean_display_sidebar' ); ?>
 
 	</div><!-- #content-wrap -->
 

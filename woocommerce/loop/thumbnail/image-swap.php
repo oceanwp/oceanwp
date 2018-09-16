@@ -41,41 +41,51 @@ if ( ! empty( $attachment_ids ) ) {
 		}
 	}
 }
-			
+
+// Image args
+$first_img = array(
+    'class'         => 'woo-entry-image-main',
+    'alt'           => get_the_title(),
+);
+if ( oceanwp_get_schema_markup( 'image' ) ) {
+	$first_img['itemprop'] = 'image';
+}
+
+$second_img = array(
+    'class'         => 'woo-entry-image-secondary',
+    'alt'           => get_the_title(),
+);
+if ( oceanwp_get_schema_markup( 'image' ) ) {
+	$second_img['itemprop'] = 'image';
+}
+
+
 // Return thumbnail
 if ( $secondary_img_id ) : ?>
 
 	<div class="woo-entry-image-swap woo-entry-image clr">
+		<?php do_action( 'ocean_before_product_entry_image' ); ?>
 		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
 			<?php
 			// Main Image
-			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
-		        'class'         => 'woo-entry-image-main',
-		        'alt'           => get_the_title(),
-		        'itemprop'      => 'image',
-		    ) ); ?>
+			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $first_img ); ?>
 			<?php
 			// Secondary Image
-			echo wp_get_attachment_image( $secondary_img_id, 'shop_catalog', '', array(
-		        'class'         => 'woo-entry-image-secondary',
-		        'alt'           => get_the_title(),
-		        'itemprop'      => 'image',
-		    ) ); ?>
+			echo wp_get_attachment_image( $secondary_img_id, 'shop_catalog', '', $second_img ); ?>
 		</a>
+		<?php do_action( 'ocean_after_product_entry_image' ); ?>
 	</div><!-- .woo-entry-image-swap -->
 
 <?php else : ?>
 
 	<div class="woo-entry-image clr">
+		<?php do_action( 'ocean_before_product_entry_image' ); ?>
 		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
 			<?php
 			// Single Image
-			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', array(
-		        'class'         => 'woo-entry-image-main',
-		        'alt'           => get_the_title(),
-		        'itemprop'      => 'image',
-		    ) ); ?>
+			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $first_img ); ?>
 		</a>
+		<?php do_action( 'ocean_after_product_entry_image' ); ?>
 	</div><!-- .woo-entry-image -->
 
 <?php endif; ?>

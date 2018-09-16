@@ -44,6 +44,7 @@ class OceanWP_Nav_Walker {
 	 */
 	public function add_custom_fields_meta( $menu_item ) {
 		$menu_item->template 				= get_post_meta( $menu_item->ID, '_menu_item_template', true );
+		$menu_item->mega_template 			= get_post_meta( $menu_item->ID, '_menu_item_mega_template', true );
 		$menu_item->nolink 					= get_post_meta( $menu_item->ID, '_menu_item_nolink', true );
 		$menu_item->category_post 			= get_post_meta( $menu_item->ID, '_menu_item_category_post', true );
 		$menu_item->megamenu 				= get_post_meta( $menu_item->ID, '_menu_item_megamenu', true );
@@ -63,26 +64,23 @@ class OceanWP_Nav_Walker {
 	 * @param object $menu_item A single menu item.
 	 * @return object The menu item.
 	 */
-	public function add_custom_fields( $id, $item, $depth, $args ) {
-		// If Elementor is activated
-	    if ( class_exists( 'Elementor\Plugin' ) ) { ?>
-		    <p class="field-template description description-wide">
-				<label for="edit-menu-item-template-<?php echo esc_attr( $item->ID ); ?>">
-					<?php esc_html_e( 'Elementor Template', 'oceanwp' ); ?>
-					<select id="edit-menu-item-template-<?php echo esc_attr( $item->ID ); ?>" class="widefat code edit-menu-item-custom" name="menu-item-template[<?php echo esc_attr( $item->ID ); ?>]">
-						<option value="0"><?php esc_html_e( 'Select A Template', 'oceanwp' ); ?></option>
-						<?php $get_templates 	= get_posts( array( 'post_type' => 'elementor_library', 'numberposts' => -1, 'post_status' => 'publish' ) );
-					    if ( ! empty ( $get_templates ) ) {
-					    	foreach ( $get_templates as $template ) { ?>
-								$templates[ $template->ID ] = $template->post_title;
-								<option value="<?php echo esc_attr( $template->ID ); ?>" <?php selected( $item->template, $template->ID ); ?>><?php echo esc_html( $template->post_title ); ?>
-								</option>
-						    <?php }
-						} ?>
-					</select>
-				</label>
-			</p>
-		<?php } ?>
+	public function add_custom_fields( $id, $item, $depth, $args ) { ?>
+		<p class="field-mega_template description description-wide">
+			<label for="edit-menu-item-mega_template-<?php echo esc_attr( $item->ID ); ?>">
+				<?php esc_html_e( 'Template', 'oceanwp' ); ?> | <small><?php esc_html_e( 'Theme Panel > My Library', 'oceanwp' ); ?></small>
+				<select id="edit-menu-item-mega_template-<?php echo esc_attr( $item->ID ); ?>" class="widefat code edit-menu-item-custom" name="menu-item-mega_template[<?php echo esc_attr( $item->ID ); ?>]">
+					<option value="0"><?php esc_html_e( 'Select A Template', 'oceanwp' ); ?></option>
+					<?php $templates_list 	= get_posts( array( 'post_type' => 'oceanwp_library', 'numberposts' => -1, 'post_status' => 'publish' ) );
+				    if ( ! empty ( $templates_list ) ) {
+				    	foreach ( $templates_list as $template ) {
+							$templates[ $template->ID ] = $template->post_title; ?>
+							<option value="<?php echo esc_attr( $template->ID ); ?>" <?php selected( $item->mega_template, $template->ID ); ?>><?php echo esc_html( $template->post_title ); ?>
+							</option>
+					    <?php }
+					} ?>
+				</select>
+			</label>
+		</p>
 	    <p class="field-nolink description description-wide">
 	    	<label for="edit-menu-item-nolink-<?php echo esc_attr( $item->ID ); ?>">
 	    	<input type="checkbox" id="edit-menu-item-nolink-<?php echo esc_attr( $item->ID ); ?>" class="code edit-menu-item-nolink" value="nolink" name="menu-item-nolink[<?php echo esc_attr( $item->ID ); ?>]"<?php checked( $item->nolink, 'nolink' ); ?> />
@@ -135,12 +133,6 @@ class OceanWP_Nav_Walker {
 				</select>
 			</label>
 		</p>
-		<p class="field-icon description description-wide">
-	        <label for="edit-menu-item-icon-<?php echo esc_attr( $item->ID ); ?>">
-	            <?php esc_html_e( 'Enter Icon Class (Deprecated)', 'oceanwp' ); ?><br />
-	            <input type="text" id="edit-menu-item-icon-<?php echo esc_attr( $item->ID ); ?>" class="widefat edit-menu-item-icon" name="menu-item-icon[<?php echo esc_attr( $item->ID ); ?>]" value="<?php echo esc_attr( $item->icon ); ?>" />
-	        </label>
-	    </p>
 	<?php
 	}
 
@@ -155,7 +147,7 @@ class OceanWP_Nav_Walker {
 	 */
 	public function update_custom_nav_fields( $menu_id, $menu_item_db_id, $args ) {
 
-		$check = array( 'template', 'nolink', 'category_post', 'megamenu', 'megamenu_auto_width', 'megamenu_col', 'megamenu_heading', 'megamenu_widgetarea', 'icon' );
+		$check = array( 'template', 'mega_template', 'nolink', 'category_post', 'megamenu', 'megamenu_auto_width', 'megamenu_col', 'megamenu_heading', 'megamenu_widgetarea', 'icon' );
 
 		foreach ( $check as $key ) {
 			if(!isset($_POST['menu-item-'.$key][$menu_item_db_id])) {

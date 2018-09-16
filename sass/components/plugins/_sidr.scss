@@ -1,10 +1,10 @@
 #sidr-close,
-#mobile-nav {
+.sidebar-mobile #mobile-nav {
   display: none;
 }
 
 #sidr {
-  display: none;
+  display: block;
   position: fixed;
   top: 0;
   height: 100%;
@@ -93,6 +93,10 @@ a.sidr-class-toggle-sidr-close {
     border-bottom: 1px solid rgba(0, 0, 0, 0.035);
   }
 
+  &.sidr-class-left-menu li:last-child {
+    border-bottom: none;
+  }
+
   > li:first-child {
     border-top: 1px solid rgba(0, 0, 0, 0.035);
   }
@@ -136,7 +140,7 @@ a.sidr-class-toggle-sidr-close {
   text-align: right;
   padding-right: 20px;
   text-align: center;
-  transition: all .3s ease;
+  @include transition( all .3s ease );
 
   &:before {
     font-family: 'FontAwesome';
@@ -177,7 +181,7 @@ a.sidr-class-toggle-sidr-close {
 .sidr-class-middle-site-logo,
 .sidr #searchform-header-replace-close,
 .sidr #sidr-id-searchform-overlay,
-.sidr .nav-arrow,
+.sidr .sidr-class-nav-arrow,
 .sidr-class-sidebar-box,
 .sidr-class-mega-cat .sidr-class-dropdown-toggle,
 .sidr-class-mega-cat .sidr-class-megamenu,
@@ -193,13 +197,10 @@ a.sidr-class-toggle-sidr-close {
 .sidr-class-dropdown-menu a i {
   font-size: inherit !important;
   vertical-align: initial !important;
-
-  &.before,
-  &.below {
-    margin-right: 10px;
-  }
+  margin-right: 10px;
 
   &.after {
+    margin-right: 0;
     margin-left: 10px;
   }
 }
@@ -237,9 +238,7 @@ a.sidr-class-toggle-sidr-close {
   input {
     padding: 6px 45px 6px 12px !important;
     margin-top: 0 !important;
-    border-radius: 0 !important;
-    -webkit-box-sizing: inherit;
-    box-sizing: inherit;
+    @include box-sizing( inherit );
   }
 
   button {
@@ -253,10 +252,10 @@ a.sidr-class-toggle-sidr-close {
     text-align: center;
     top: 50%;
     margin-top: -15px;
-    background: none;
+    background-color: transparent !important;
     color: $color-11;
     border: 0;
-    transition: all .3s ease;
+    @include transition( all .3s ease-in-out );
 
     &:hover {
       color: $color-3;

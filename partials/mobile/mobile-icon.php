@@ -10,8 +10,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Global woo
-global $woocommerce;
+// Retunr if disabled
+if ( ! oceanwp_display_navigation() ) {
+	return;
+}
 
 // Menu Location
 $menu_location = apply_filters( 'ocean_main_menu_location', 'main_menu' );
@@ -26,10 +28,18 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 	$icon = get_theme_mod( 'ocean_mobile_menu_open_icon', 'fa fa-bars' );
 	$icon = apply_filters( 'ocean_mobile_menu_navbar_open_icon', $icon );
 
+	// Custom hamburger button
+	$btn = get_theme_mod( 'ocean_mobile_menu_open_hamburger', 'default' );
+
 	// Get menu text
 	$text = get_theme_mod( 'ocean_mobile_menu_text' );
 	$text = oceanwp_tm_translation( 'ocean_mobile_menu_text', $text );
 	$text = $text ? $text: esc_html__( 'Menu', 'oceanwp' );
+
+	// Get close menu text
+	$close_text = get_theme_mod( 'ocean_mobile_menu_close_text' );
+	$close_text = oceanwp_tm_translation( 'ocean_mobile_menu_close_text', $close_text );
+	$close_text = $close_text ? $close_text: esc_html__( 'Close', 'oceanwp' );
 
 	if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 
@@ -47,9 +57,22 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		$cart_icon = '<i class="'. esc_attr( $woo_icon ) .'"></i>';
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
-	} ?>
+	}
 
-	<div id="oceanwp-mobile-menu-icon" class="clr">
+	// Classes
+	$classes = array( 'oceanwp-mobile-menu-icon', 'clr' );
+
+	// Position
+	if ( 'three' == get_theme_mod( 'ocean_mobile_elements_positioning', 'one' ) ) {
+		$classes[] = 'mobile-left';
+	} else {
+		$classes[] = 'mobile-right';
+	}
+
+	// Turn classes into space seperated string
+	$classes = implode( ' ', $classes ); ?>
+
+	<div class="<?php echo esc_attr( $classes ); ?>">
 
 		<?php do_action( 'ocean_before_mobile_icon' ); ?>
 
@@ -59,20 +82,36 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 			<div class="container clr">
 		<?php } ?>
 
-		<?php
-		// Cart icon
-		if ( OCEANWP_WOOCOMMERCE_ACTIVE
-			&& 'disabled' != get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' ) ) { ?>
-			<a href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="mobile-wcmenucart"><?php echo wp_kses_post( $cart_icon ); ?></a>
-		<?php } ?>
+		<?php do_action( 'ocean_before_mobile_icon_inner' ); ?>
 
 		<a href="#" class="mobile-menu">
-			<i class="<?php echo esc_attr( $icon ); ?>"></i>
 			<?php
+			if ( 'default' != $btn ) { ?>
+				<div class="hamburger hamburger--<?php echo esc_attr( $btn ); ?>">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			<?php
+			} else { ?>
+				<i class="<?php echo esc_attr( $icon ); ?>"></i>
+			<?php
+			}
+
+			// Mobile menu text
 			if ( get_theme_mod( 'ocean_mobile_menu_display_opening_text', true ) ) { ?>
 				<span class="oceanwp-text"><?php echo do_shortcode( $text ); ?></span>
-			<?php } ?>
+
+				<?php
+				// Display close text if drop down mobile style
+				if ( 'dropdown' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) { ?>
+					<span class="oceanwp-close-text"><?php echo do_shortcode( $close_text ); ?></span>
+				<?php
+				}
+			} ?>
 		</a>
+
+		<?php do_action( 'ocean_after_mobile_icon_inner' ); ?>
 
 		<?php
 		// If big header style

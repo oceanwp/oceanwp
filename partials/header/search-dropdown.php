@@ -11,5 +11,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 } ?>
 
 <div id="searchform-dropdown" class="header-searchform-wrap clr">
-	<?php get_search_form( true ); ?>
+	<?php get_search_form(); ?>
 </div><!-- #searchform-dropdown -->

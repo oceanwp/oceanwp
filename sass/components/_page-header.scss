@@ -97,7 +97,8 @@ body.breadcrumbs-position-default .page-header-title {
  * Page Header Background Image
  */
 .background-image-page-header {
-  display: table;
+  @include display();
+  @include align-items( center );
   width: 100%;
   background-color: #000;
   height: 400px;
@@ -106,11 +107,6 @@ body.breadcrumbs-position-default .page-header-title {
   background-size: cover;
 
   .page-header-inner {
-    display: table-cell;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 30px;
-    vertical-align: middle;
     text-align: center;
   }
 
@@ -141,7 +137,7 @@ body.breadcrumbs-position-default .page-header-title {
   width: 100%;
   background-color: #000;
   z-index: 1;
-  opacity: 0.5;
+  @include opacity( 0.5 );
 }
 
 /**
@@ -173,8 +169,9 @@ body.breadcrumbs-position-default .page-header-title {
         content: '\f105';
         margin: 0 6px;
         display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
+        font-family: FontAwesome;
         font-size: inherit;
+        font-weight: 900;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -201,13 +198,20 @@ body.breadcrumbs-position-default .page-header-title {
   max-width: 100%;
 }
 
-/**
- * Breadcrumbs Hide
- */
+.oceanwp-breadcrumb .site-breadcrumbs {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  max-width: 100%;
+  margin-top: 0;
+}
+
 .background-image-page-header .site-breadcrumbs {
   display: block;
   position: inherit;
-  margin: 20px auto 0 auto;
+  max-width: 100%;
+  margin-top: 20px;
   top: auto;
   right: auto;
   color: #fff;
@@ -221,4 +225,79 @@ body.breadcrumbs-position-default .page-header-title {
       color: #ddd;
     }
   }
+}
+
+/* compatibility with SEOPress */
+.site-breadcrumbs nav,
+.site-breadcrumbs ol {
+  margin: 0;
+}
+
+/*------------------------------------*
+  All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+      
+  /* page title */
+  body.has-breadcrumbs .page-header-title {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+}
+
+/*------------------------------------*
+  Tablet Portrait
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+  
+  /* page header */
+  .site-breadcrumbs {
+    position: inherit;
+    top: auto;
+    left: auto;
+    right: auto;
+    max-width: 100%;
+    margin-top: 0;
+  }
+  
+}
+
+/*------------------------------------*
+  Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+  /* Remove fixed background to fix the IOS bug */
+  .page-header {
+    background-attachment: initial !important;
+  }
+
+  /* page header */
+  .page-header-with-background .page-header-title {
+    font-size: 36px;
+  }
+
+  .centered-page-header .page-header-title,
+  .centered-minimal-page-header .page-header-title,
+  .page-header.background-image-page-header .page-header-title {
+    font-size: 24px;
+  }
+
+  .centered-page-header .page-subheading,
+  .centered-minimal-page-header .page-header-subheading,
+  .page-header.background-image-page-header .page-subheading {
+    font-size: 14px;
+  }
+
+  .background-image-page-header {
+      height: auto !important;
+  }
+  
+  /* breadcrumbs */
+  body.has-breadcrumbs .page-header-title {
+    max-width: 100%;
+    width: 100%;
+  }
+  
 }

@@ -14,7 +14,7 @@
             font-size: 20px;
             color: $color-11;
             border: 2px solid $color-9;
-            border-radius: 50%;
+            @include border-radius( 50% );
             text-align: center;
             z-index: 100;
 

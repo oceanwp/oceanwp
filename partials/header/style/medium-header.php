@@ -14,7 +14,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 $elements = oceanwp_medium_header_elements();
 
 // Define counter
-$count = ''; ?>
+$count = '';
+
+// Bottom header class
+$classes = array( 'bottom-header-wrap', 'clr' );
+
+// Add the fixed class if only sticky menu
+if ( true == get_theme_mod( 'ocean_medium_header_stick_menu', false ) ) {
+	$classes[] = 'fixed-scroll';
+}
+
+// Turn classes into space seperated string
+$classes = implode( ' ', $classes ); ?>
 
 <?php do_action( 'ocean_before_header_inner' ); ?>
 
@@ -33,40 +44,45 @@ $count = ''; ?>
 					foreach ( $elements as $element ) :
 
 						// Counter
-						$count++; ?>
+						$count++;
 
-						<?php
-						// Search form
-						if ( 'searchfrom' == $element ) { ?>
+						// Classes
+						$e_classes = array( 'top-col', 'clr' );
 
-							<div class="top-col col-<?php echo esc_attr( $count ); ?> clr">
-								<?php if ( 'disabled' != get_theme_mod( 'ocean_menu_search_style', 'drop_down' ) ) {
-									get_template_part( 'partials/header/style/medium-header-search' );
-								} ?>
-							</div>
+						// Count
+						$e_classes[] = 'col-'. $count;
 
-						<?php }
+						// If logo
+						if ( 'logo' == $element ) {
+							$e_classes[] = 'logo-col';
+						}
 
-						// Logo
-						else if ( 'logo' == $element ) { ?>
+						// Turn classes into space seperated string
+						$e_classes = implode( ' ', $e_classes ); ?>
 
-							<div class="top-col logo-col col-<?php echo esc_attr( $count ); ?> clr">
-								<?php get_template_part( 'partials/header/logo' ); ?>
-							</div>
+						<div class="<?php echo esc_attr( $e_classes ); ?>">
 
-						<?php }
-						
-						// Social buttons
-						else if ( 'social' == $element ) { ?>
+							<?php
+							// Search form
+							if ( 'searchfrom' == $element ) {
+								get_template_part( 'partials/header/style/medium-header-search' );
+							}
 
-							<div class="top-col col-<?php echo esc_attr( $count ); ?> clr">
-								<?php if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
+							// Logo
+							else if ( 'logo' == $element ) {
+								get_template_part( 'partials/header/logo' );
+							}
+							
+							// Social buttons
+							else if ( 'social' == $element ) {
+								if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
 									get_template_part( 'partials/header/social' );
-								} ?>
-							</div>
+								}
+							} ?>
 
-						<?php }
+						</div>
 
+					<?php
 					endforeach; ?>
 
 				</div>
@@ -76,9 +92,15 @@ $count = ''; ?>
 	<?php
 	} ?>
 
-	<?php get_template_part( 'partials/header/nav' ); ?>
+	<div class="<?php echo esc_attr( $classes ); ?>">
 
-	<?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
+		<?php get_template_part( 'partials/header/nav' ); ?>
+
+		<?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
+
+		<?php get_template_part( 'partials/mobile/mobile-dropdown' ); ?>
+
+	</div>
 
 </div><!-- #site-header-inner -->
 

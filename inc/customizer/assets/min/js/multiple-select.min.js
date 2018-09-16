@@ -1,0 +1,1 @@
+wp.customize.controlConstructor["oceanwp-multiple-select"]=wp.customize.Control.extend({ready:function(){"use strict";var t,e=this,n=this.container.find("select"),s={escapeMarkup:function(t){return t}};jQuery(n).select2(s).on("change",function(){t=jQuery(this).val(),e.setting.set(t),null===t?e.setting.set(""):e.setting.set(t)})}});

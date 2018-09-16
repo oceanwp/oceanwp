@@ -10,7 +10,7 @@ Email: support@oceanwp.org
 -------------------------------------------------------
 Description
 -------------------------------------------------------
-OceanWP is the perfect theme for your project. Lightweight and highly extendible, it will enable you to create almost any type of site with a beautiful & professional design. There are several options to personalise your website, multiple widget regions, a responsive design and much more. Developers will love his extensible codebase making it a joy to customise and extend. Looking for a Multi-Purpose theme? Look no further!
+OceanWP is the perfect theme for your project. Lightweight and highly extendable, it will enable you to create almost any type of website such a blog, portfolio, business website and WooCommerce storefront with a beautiful & professional design. Very fast, responsive, RTL & translation ready, best SEO practices, unique WooCommerce features to increase conversion and much more. You can even edit the settings on tablet & mobile so your site looks good on every device. Work with the most popular page builders as Elementor, Beaver Builder, Visual Composer, Divi, SiteOrigin, etc... Developers will love his extensible codebase making it a joy to customize and extend. Best friend of Elementor & WooCommerce. Looking for a Multi-Purpose theme? Look no further! Check the demos to realize that it's the only theme you will ever need: https://oceanwp.org/demos/
 
 == Blog Pagination ==
 The blog pagination has three styles, number, next/prev and infinite scrolling.
@@ -95,9 +95,9 @@ Superfish, Copyright (c) 2013 Joel Birch
 License: MIT/GPL
 Source: https://github.com/joeldbirch/superfish
 
-Infinite Scroll, Copyright 2011/12 Paul Irish & Luke Shumard
-License: MIT
-Source: https://github.com/paulirish/infinite-scroll
+Infinite Scroll, Copyright 2017 Metafizzy
+License: GPLv3
+Source: https://github.com/metafizzy/infinite-scroll
 
 normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
 License: MIT

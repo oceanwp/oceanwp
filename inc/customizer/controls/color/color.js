@@ -101,8 +101,8 @@ jQuery( document ).ready( function( $ ) {
 	$( '.alpha-color-control' ).each( function() {
 
 		// Scope the vars.
-		var $control, startingColor, paletteInput, showOpacity, defaultColor, palette,
-			colorPickerOptions, $container, $alphaSlider, alphaVal, sliderOptions;
+		var $control, startingColor, showOpacity, defaultColor, colorPickerOptions,
+			$container, $alphaSlider, alphaVal, sliderOptions;
 
 		// Store the control instance.
 		$control = $( this );
@@ -111,18 +111,8 @@ jQuery( document ).ready( function( $ ) {
 		startingColor = $control.val().replace( /\s+/g, '' );
 
 		// Get some data off the control.
-		paletteInput = $control.attr( 'data-palette' );
 		showOpacity  = $control.attr( 'data-show-opacity' );
 		defaultColor = $control.attr( 'data-default-color' );
-
-		// Process the palette.
-		if ( paletteInput.indexOf( '|' ) !== -1 ) {
-			palette = paletteInput.split( '|' );
-		} else if ( 'false' == paletteInput ) {
-			palette = false;
-		} else {
-			palette = true;
-		}
 
 		// Set up the options that we'll pass to wpColorPicker().
 		colorPickerOptions = {
@@ -148,7 +138,7 @@ jQuery( document ).ready( function( $ ) {
 				// Always show the background color of the opacity slider at 100% opacity.
 				$transparency.css( 'background-color', ui.color.toString( 'no-alpha' ) );
 			},
-			palettes: palette // Use the passed in palette.
+			palettes: oceanwpLocalize.colorPalettes // Use the passed in palette.
 		};
 
 		// Create the colorpicker.
@@ -203,7 +193,9 @@ jQuery( document ).ready( function( $ ) {
 		});
 
 		// Bind event handler for clicking on a palette color.
-		$container.find( '.iris-palette' ).on( 'click', function() {
+		$container.find( '.iris-palette' ).on( 'click', function(e) {
+			e.preventDefault();
+
 			var color, alpha;
 
 			color = $( this ).css( 'background-color' );
@@ -223,7 +215,9 @@ jQuery( document ).ready( function( $ ) {
 		});
 
 		// Bind event handler for clicking on the 'Clear' button.
-		$container.find( '.button.wp-picker-clear' ).on( 'click', function() {
+		$container.find( '.button.wp-picker-clear' ).on( 'click', function(e) {
+			e.preventDefault();
+
 			var key = $control.attr( 'data-customize-setting-link' );
 
 			// The #fff color is delibrate here. This sets the color picker to white instead of the
@@ -239,14 +233,18 @@ jQuery( document ).ready( function( $ ) {
 		});
 
 		// Bind event handler for clicking on the 'Default' button.
-		$container.find( '.button.wp-picker-default' ).on( 'click', function() {
+		$container.find( '.button.wp-picker-default' ).on( 'click', function(e) {
+			e.preventDefault();
+
 			var alpha = acp_get_alpha_value_from_color( defaultColor );
 
 			acp_update_alpha_value_on_alpha_slider( alpha, $alphaSlider );
 		});
 
 		// Bind event handler for typing or pasting into the input.
-		$control.on( 'input', function() {
+		$control.on( 'input', function(e) {
+			e.preventDefault();
+
 			var value = $( this ).val();
 			var alpha = acp_get_alpha_value_from_color( value );
 
@@ -261,6 +259,11 @@ jQuery( document ).ready( function( $ ) {
 
 			// Change value shown on slider handle.
 			$( this ).find( '.ui-slider-handle' ).text( ui.value );
+		});
+
+		// Fix Safari issue on input click
+		$( '.iris-picker, .alpha-color-control' ).on( 'click', function(e) {
+			e.preventDefault();
 		});
 
 	});

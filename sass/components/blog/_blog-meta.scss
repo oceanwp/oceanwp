@@ -37,3 +37,18 @@ ul.meta {
 		}
 	}
 }
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	ul.meta {
+		margin-bottom: 12px;
+
+		li {
+			margin-bottom: 8px;
+		}
+	}
+
+}

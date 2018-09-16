@@ -1,0 +1,334 @@
+/*------------------------------------------------------------------
+Woo Quick View
+-------------------------------------------------------------------*/
+.owp-quick-view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 12;
+}
+
+.owp-quick-view:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+.owp-quick-view i {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 6px;
+  line-height: 1;
+  vertical-align: middle;
+  margin-top: -3px;
+}
+
+.woocommerce .products .product-inner:hover .owp-quick-view {
+  opacity: 1;
+  visibility: visible;
+}
+
+.woo-entry-image.loading:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  width: 30px;
+  height: 30px;
+  opacity: .8;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-left-color: #fff;
+  z-index: 99;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  -ms-animation: qv-spin 0.6s infinite linear;
+  -webkit-animation: qv-spin 0.6s infinite linear;
+  -o-animation: qv-spin 0.6s infinite linear;
+  -moz-animation: qv-spin 0.6s infinite linear;
+  animation: qv-spin 0.6s infinite linear;
+}
+
+.woo-entry-image.loading:after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  visibility: visible;
+  z-index: 11;
+}
+
+@-webkit-keyframes qv-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes qv-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#owp-qv-wrap {
+  display: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#owp-qv-wrap,
+#owp-qv-wrap .owp-qv-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+#owp-qv-wrap .owp-qv-image,
+#owp-qv-wrap .summary {
+  width: 50%;
+}
+
+#owp-qv-wrap .owp-qv-slides,
+#owp-qv-wrap .flex-control-nav,
+#owp-qv-wrap .flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#owp-qv-wrap .owp-qv-slides {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#owp-qv-wrap .summary {
+  padding: 30px;
+  margin: 0;
+}
+
+#owp-qv-wrap .flex-viewport {
+  float: none;
+  width: 100%;
+}
+
+#owp-qv-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#owp-qv-wrap .flex-control-nav {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+#owp-qv-wrap .flex-control-nav li {
+  display: inline-block;
+  position: relative;
+  margin: 0 5px;
+  line-height: 1;
+  z-index: 10;
+}
+
+#owp-qv-wrap .flex-control-nav li a {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #111;
+  opacity: 0.4;
+  text-indent: -9999px;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#owp-qv-wrap .flex-control-nav li a:hover {
+  opacity: 0.7;
+}
+
+#owp-qv-wrap .flex-control-nav li a.flex-active {
+  background: rgba(0, 0, 0, 0.9);
+  cursor: default;
+}
+
+#owp-qv-wrap .flex-direction-nav a {
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#owp-qv-wrap .flex-direction-nav a:before {
+  display: inline-block;
+  font: normal normal normal 30px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#owp-qv-wrap .flex-direction-nav a.flex-prev {
+  left: -50px;
+  text-align: right;
+}
+
+#owp-qv-wrap .flex-direction-nav a.flex-prev:before {
+  content: '\f104';
+}
+
+#owp-qv-wrap .flex-direction-nav a.flex-next {
+  right: -50px;
+}
+
+#owp-qv-wrap .flex-direction-nav a.flex-next:before {
+  content: '\f105';
+}
+
+#owp-qv-wrap .owp-qv-image:hover .flex-direction-nav a.flex-prev {
+  opacity: .8;
+  left: 10px;
+}
+
+#owp-qv-wrap .owp-qv-image:hover .flex-direction-nav a.flex-next {
+  opacity: .8;
+  right: 10px;
+}
+
+.owp-qv-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  padding: 30px;
+}
+
+.owp-qv-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.owp-qv-open {
+  overflow: hidden;
+}
+
+.owp-qv-content-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  max-width: 100%;
+  z-index: 1045;
+  opacity: 0;
+  -webkit-transform: translateY(-30px);
+  -moz-transform: translateY(-30px);
+  -ms-transform: translateY(-30px);
+  -o-transform: translateY(-30px);
+  transform: translateY(-30px);
+  -webkit-transition: transform .5s, opacity .3s;
+  -moz-transition: transform .5s, opacity .3s;
+  transition: transform .5s, opacity .3s;
+}
+
+.is-visible .owp-qv-content-wrap {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.owp-qv-content-inner {
+  position: relative;
+  background-color: #fff;
+  max-width: 875px;
+  margin: 0 auto;
+  z-index: 1000;
+  -webkit-box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.owp-qv-content-inner .owp-qv-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #333;
+  opacity: .5;
+  font-weight: 300;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  z-index: 1001;
+}
+
+.owp-qv-content-inner .owp-qv-close:hover {
+  opacity: 1;
+}
+
+.owp-qv-content-inner .product {
+  margin: 0;
+}
+
+.owp-qv-content-inner select {
+  padding: 0 12px;
+}
+
+.owp-qv-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+  #owp-qv-wrap .owp-qv-image,
+  #owp-qv-wrap .summary {
+    width: 100%;
+  }
+  .owp-qv-container:before {
+    display: none;
+  }
+}

@@ -1,0 +1,31 @@
+.blog-entry.large-entry {
+	border-bottom: 1px solid $color-9;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+
+	.thumbnail {
+		margin-bottom: 20px;
+	}
+
+	.blog-entry-readmore {
+		a {
+			display: inline-block;
+		    font-size: 11px;
+		    line-height: 1;
+		    border: 1px solid $color-10;
+		    padding: 10px 16px;
+		    @include border-radius( 2px );
+		    text-transform: uppercase;
+		    letter-spacing: 1px;
+
+		    &:hover {
+			    color: $color-5;
+			    border-color: $color-5;
+			}
+
+			i {
+				margin-left: 8px;
+			}
+		}
+	}
+}

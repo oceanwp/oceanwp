@@ -1,0 +1,9 @@
+/* Elementor editor */
+#main {
+    z-index: 999;
+}
+
+/* Hide the transparent heade in the Elementor edit mode to avoid conflicts */
+body.has-transparent-header #site-header {
+    display: none;
+}

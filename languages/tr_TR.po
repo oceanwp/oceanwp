@@ -1,0 +1,5055 @@
+# Copyright (C) 2016 Nick
+# This file is distributed under the GNU General Public License v2.0 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Ocean Theme 1.0.8\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2018-01-28 21:26+0100\n"
+"PO-Revision-Date: 2018-01-28 21:26+0100\n"
+"Last-Translator: \n"
+"Language-Team: Ocean\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _esc_attr__;esc_attr_x;esc_attr_e;esc_html__;"
+"esc_html_e;esc_html_x;__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:100
+msgid "This page could not be found!"
+msgstr "Üzgünüz, Aradığınız Sayfa Bulunamadı!"
+
+#: 404.php:101
+msgid "We are sorry. But the page you are looking for is not available."
+msgstr "Özür dileriz. Ama Aradığınız sayfa mevcut değildir."
+
+#: 404.php:101
+msgid "Perhaps you can try a new searching."
+msgstr "Yeni bir arama deneyebilirsiniz."
+
+#: 404.php:103
+msgid "Back To Homepage"
+msgstr "Ana sayfaya geri dön"
+
+#: comments.php:42
+#, fuzzy
+#| msgid "This Post Has %d Comment"
+#| msgid_plural "This Post Has %d Comments"
+msgid "This Post Has One Comment"
+msgstr "Bu yazıda %d yorum var"
+
+#: comments.php:44
+#, fuzzy, php-format
+#| msgid "This Post Has %d Comment"
+#| msgid_plural "This Post Has %d Comments"
+msgid "This Post Has %s Comments"
+msgstr "Bu yazıda %d yorum var"
+
+#: comments.php:67 comments.php:75
+#, fuzzy
+#| msgid "Previous Post"
+msgid "Previous"
+msgstr "Önceki Yazı"
+
+#: comments.php:68 comments.php:76
+#, fuzzy
+#| msgid "Next/Prev"
+msgid "Next"
+msgstr "Sonraki / Önceki"
+
+#: comments.php:85
+msgid "Comments are closed."
+msgstr "Yoruma kapalı."
+
+#: comments.php:93
+#, php-format
+msgid "You must be %1$slogged in%2$s to post a comment."
+msgstr "Yorum yapmak için %1$sgiriş%2$s yapmalısınız."
+
+#: comments.php:94
+msgid "Logged in as"
+msgstr "Giriş Yapan"
+
+#: comments.php:94
+msgid "Log out of this account"
+msgstr "Bu hesaptan çıkış yapın"
+
+#: comments.php:94
+msgid "Log out &raquo;"
+msgstr "Çıkış Yap;"
+
+#: comments.php:97
+msgid "Your Comment Here..."
+msgstr "Yorumunuzu Buraya Yazabilirsiniz..."
+
+#: comments.php:99
+msgid "Post Comment"
+msgstr "Yorum Gönder"
+
+#: functions.php:257 inc/customizer/settings/topbar.php:40
+#: inc/customizer/settings/typography.php:109
+#: inc/third/class-beaver-themer.php:100
+msgid "Top Bar"
+msgstr "Üst Çubuk"
+
+#: functions.php:258
+msgid "Main"
+msgstr "Ana"
+
+#: functions.php:259 inc/third/class-beaver-themer.php:145
+msgid "Footer"
+msgstr "Altbilgi"
+
+#: functions.php:260
+#, fuzzy
+#| msgid "Logo (optional)"
+msgid "Mobile (optional)"
+msgstr "Logo (isteğe bağlı)"
+
+#: functions.php:533
+#, fuzzy
+#| msgid "Sidebar"
+msgid "Right Sidebar"
+msgstr "Yansütün"
+
+#: functions.php:535
+#, fuzzy
+#| msgid "Widgets in this area are used in the sidebar region."
+msgid "Widgets in this area are used in the right sidebar region."
+msgstr "Widgetler kenar çubuğu alanın da kullanılabilir."
+
+#: functions.php:544
+#, fuzzy
+#| msgid "Sidebar"
+msgid "Left Sidebar"
+msgstr "Yansütün"
+
+#: functions.php:546
+#, fuzzy
+#| msgid "Widgets in this area are used in the sidebar region."
+msgid "Widgets in this area are used in the left sidebar region."
+msgstr "Widgetler kenar çubuğu alanın da kullanılabilir."
+
+#: functions.php:556
+msgid "Search Results Sidebar"
+msgstr "Arama Sonuçları Sidebar"
+
+#: functions.php:558
+msgid "Widgets in this area are used in the search result page."
+msgstr "Bu alandaki widget'lar arama sonucu sayfasında gösterilecektir."
+
+#: functions.php:568
+msgid "Footer 1"
+msgstr "Altbilgi 1"
+
+#: functions.php:570
+msgid "Widgets in this area are used in the first footer region."
+msgstr "Buradaki bileşenler birinci alt bilgi alanında görüntülenecektir."
+
+#: functions.php:579
+msgid "Footer 2"
+msgstr "Altbilgi 2"
+
+#: functions.php:581
+msgid "Widgets in this area are used in the second footer region."
+msgstr "Buradaki bileşenler ikinci alt bilgi alanında görüntülenecektir."
+
+#: functions.php:590
+msgid "Footer 3"
+msgstr "Altbilgi 3"
+
+#: functions.php:592
+msgid "Widgets in this area are used in the third footer region."
+msgstr "Buradaki bileşenler üçüncü alt bilgi alanında görüntülenecektir."
+
+#: functions.php:601
+msgid "Footer 4"
+msgstr "Altbilgi 4"
+
+#: functions.php:603
+msgid "Widgets in this area are used in the fourth footer region."
+msgstr "Buradaki bileşenler dördüncü alt bilgi alanında görüntülenecektir."
+
+#: inc/breadcrumbs.php:268 inc/customizer/settings/general.php:1217
+#: inc/customizer/settings/general.php:1231
+#: inc/customizer/settings/typography.php:167
+msgid "Breadcrumbs"
+msgstr "Ekmek Ufakları"
+
+#: inc/breadcrumbs.php:269
+msgid "Home"
+msgstr "Anasayfa"
+
+#: inc/breadcrumbs.php:270
+msgid "404 Not Found"
+msgstr "404 Bulunamadı"
+
+#: inc/breadcrumbs.php:271 inc/customizer/settings/woocommerce.php:575
+msgid "Archives"
+msgstr "Arşivler"
+
+#: inc/breadcrumbs.php:273
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "İçin sonuçlar &#8220;%s&#8221;"
+
+#: inc/breadcrumbs.php:275
+#, php-format
+msgid "Page %s"
+msgstr "Sayfa %s"
+
+#: inc/breadcrumbs.php:277
+#, php-format
+msgid "Minute %s"
+msgstr "Dakika %s"
+
+#: inc/breadcrumbs.php:279
+#, php-format
+msgid "Week %s"
+msgstr "Hafta %s"
+
+#: inc/breadcrumbs.php:717
+msgid "g:i a"
+msgstr "g:i a"
+
+#: inc/breadcrumbs.php:734
+msgid "i"
+msgstr "i"
+
+#: inc/breadcrumbs.php:751
+msgid "g a"
+msgstr "g a"
+
+#: inc/breadcrumbs.php:767 inc/breadcrumbs.php:796 inc/breadcrumbs.php:823
+#: inc/breadcrumbs.php:850 inc/breadcrumbs.php:1190 inc/helpers.php:1767
+msgid "Y"
+msgstr "Y"
+
+#: inc/breadcrumbs.php:768 inc/breadcrumbs.php:824 inc/breadcrumbs.php:1194
+msgid "F"
+msgstr "F"
+
+#: inc/breadcrumbs.php:769 inc/breadcrumbs.php:1198
+msgid "j"
+msgstr "j"
+
+#: inc/breadcrumbs.php:797
+msgid "W"
+msgstr "W"
+
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:65
+msgid "Link values together"
+msgstr "Değerleri birbirine bağlayın"
+
+#: inc/customizer/controls/dropdown-pages/class-control-dropdown-pages.php:61
+#: inc/customizer/customizer-helpers.php:45
+msgid "Select"
+msgstr "Seçin"
+
+#: inc/customizer/controls/typo/class-control-typo.php:56
+#: inc/customizer/settings/typography.php:355
+msgid "Font Family"
+msgstr "Font Ailesi"
+
+#: inc/customizer/controls/typo/class-control-typo.php:57
+#, fuzzy
+#| msgid "Font Size (px)"
+msgid "Font Size"
+msgstr "Yazı tipi Boyutu (px)"
+
+#: inc/customizer/controls/typo/class-control-typo.php:58
+#: inc/customizer/settings/typography.php:377
+msgid "Font Weight"
+msgstr "Yazı tipi ağırlığı"
+
+#: inc/customizer/controls/typo/class-control-typo.php:59
+#: inc/customizer/settings/typography.php:411
+msgid "Font Style"
+msgstr "Yazı stili"
+
+#: inc/customizer/controls/typo/class-control-typo.php:60
+#: inc/customizer/settings/typography.php:438
+msgid "Text Transform"
+msgstr "Metin Dönüşümü"
+
+#: inc/customizer/controls/typo/class-control-typo.php:61
+#: inc/customizer/settings/typography.php:525
+msgid "Line Height"
+msgstr "Satır yüksekliği"
+
+#: inc/customizer/controls/typo/class-control-typo.php:62
+#, fuzzy
+#| msgid "Letter Spacing (px)"
+msgid "Letter Spacing"
+msgstr "Harf Aralığı (px)"
+
+#: inc/customizer/controls/typo/class-control-typo.php:156
+#: inc/customizer/controls/typo/class-control-typo.php:225
+#: inc/customizer/controls/typo/class-control-typo.php:237
+msgid "px - em - rem"
+msgstr ""
+
+#: inc/customizer/controls/typo/class-control-typo.php:255
+#: inc/customizer/controls/typo/class-control-typo.php:296
+#: inc/customizer/controls/typo/class-control-typo.php:319
+#: inc/customizer/controls/typo/class-control-typo.php:335
+#: inc/customizer/controls/typography/class-control-typography.php:57
+#: inc/customizer/settings/blog.php:775 inc/customizer/settings/blog.php:805
+#: inc/customizer/settings/blog.php:828 inc/customizer/settings/blog.php:853
+#: inc/customizer/settings/general.php:184
+#: inc/customizer/settings/general.php:214
+#: inc/customizer/settings/general.php:237
+#: inc/customizer/settings/general.php:262
+#: inc/customizer/settings/general.php:916
+#: inc/customizer/settings/general.php:978
+#: inc/customizer/settings/general.php:1008
+#: inc/customizer/settings/general.php:1031
+#: inc/customizer/settings/general.php:1056
+#: inc/customizer/settings/general.php:2222
+#: inc/customizer/settings/header.php:1925
+#: inc/customizer/settings/header.php:1954
+#: inc/customizer/settings/header.php:1976
+#: inc/customizer/settings/header.php:2000
+#: inc/customizer/settings/typography.php:385
+#: inc/customizer/settings/typography.php:418
+#: inc/customizer/settings/typography.php:445
+msgid "Default"
+msgstr "Varsayılan"
+
+#: inc/customizer/controls/typo/class-control-typo.php:297
+#: inc/customizer/settings/typography.php:386
+msgid "Thin: 100"
+msgstr "Thin: 100"
+
+#: inc/customizer/controls/typo/class-control-typo.php:298
+#: inc/customizer/settings/typography.php:387
+msgid "Light: 200"
+msgstr "Light: 200"
+
+#: inc/customizer/controls/typo/class-control-typo.php:299
+#: inc/customizer/settings/typography.php:388
+msgid "Book: 300"
+msgstr "Book: 300"
+
+#: inc/customizer/controls/typo/class-control-typo.php:300
+#: inc/customizer/settings/typography.php:389
+msgid "Normal: 400"
+msgstr "Normal: 400"
+
+#: inc/customizer/controls/typo/class-control-typo.php:301
+#: inc/customizer/settings/typography.php:390
+msgid "Medium: 500"
+msgstr "Medium: 500"
+
+#: inc/customizer/controls/typo/class-control-typo.php:302
+#: inc/customizer/settings/typography.php:391
+msgid "Semibold: 600"
+msgstr "Semibold: 600"
+
+#: inc/customizer/controls/typo/class-control-typo.php:303
+#: inc/customizer/settings/typography.php:392
+msgid "Bold: 700"
+msgstr "Bold: 700"
+
+#: inc/customizer/controls/typo/class-control-typo.php:304
+#: inc/customizer/settings/typography.php:393
+msgid "Extra Bold: 800"
+msgstr "Extra Bold: 800"
+
+#: inc/customizer/controls/typo/class-control-typo.php:305
+#: inc/customizer/settings/typography.php:394
+msgid "Black: 900"
+msgstr "Black: 900"
+
+#: inc/customizer/controls/typo/class-control-typo.php:320
+#: inc/customizer/settings/typography.php:419
+msgid "Normal"
+msgstr "Normal"
+
+#: inc/customizer/controls/typo/class-control-typo.php:321
+#: inc/customizer/settings/typography.php:420
+msgid "Italic"
+msgstr "İtalik"
+
+#: inc/customizer/controls/typo/class-control-typo.php:336
+#: inc/customizer/settings/typography.php:446
+msgid "Capitalize"
+msgstr "Büyük harfle başla"
+
+#: inc/customizer/controls/typo/class-control-typo.php:337
+#: inc/customizer/settings/typography.php:447
+msgid "Lowercase"
+msgstr "Küçük harf"
+
+#: inc/customizer/controls/typo/class-control-typo.php:338
+#: inc/customizer/settings/typography.php:448
+msgid "Uppercase"
+msgstr "Büyük harf"
+
+#: inc/customizer/controls/typography/class-control-typography.php:63
+msgid "Custom Fonts"
+msgstr "Özel yazı tipleri"
+
+#: inc/customizer/controls/typography/class-control-typography.php:73
+msgid "Standard Fonts"
+msgstr "Standart yazı tipleri"
+
+#: inc/customizer/controls/typography/class-control-typography.php:84
+msgid "Google Fonts"
+msgstr "Google yazı tipleri"
+
+#: inc/customizer/settings/blog.php:40 inc/customizer/settings/blog.php:715
+#: inc/helpers.php:1807
+msgid "Blog"
+msgstr "Blog"
+
+#: inc/customizer/settings/blog.php:48
+msgid "Blog Entries"
+msgstr "Blog girişleri"
+
+#: inc/customizer/settings/blog.php:62
+msgid "Archives & Entries Layout"
+msgstr "Arşivler ve Girişler Düzeni"
+
+#: inc/customizer/settings/blog.php:78 inc/customizer/settings/blog.php:616
+#: inc/customizer/settings/general.php:590
+#: inc/customizer/settings/general.php:785
+#: inc/customizer/settings/woocommerce.php:606
+#: inc/customizer/settings/woocommerce.php:986
+msgid "Both Sidebars: Style"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:84 inc/customizer/settings/blog.php:622
+#: inc/customizer/settings/general.php:596
+#: inc/customizer/settings/general.php:791
+#: inc/customizer/settings/woocommerce.php:612
+#: inc/customizer/settings/woocommerce.php:992
+msgid "Sidebar / Sidebar / Content"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:85 inc/customizer/settings/blog.php:623
+#: inc/customizer/settings/general.php:597
+#: inc/customizer/settings/general.php:792
+#: inc/customizer/settings/woocommerce.php:613
+#: inc/customizer/settings/woocommerce.php:993
+#, fuzzy
+#| msgid "Search Results Sidebar"
+msgid "Sidebar / Content / Sidebar"
+msgstr "Arama Sonuçları Sidebar"
+
+#: inc/customizer/settings/blog.php:86 inc/customizer/settings/blog.php:624
+#: inc/customizer/settings/general.php:598
+#: inc/customizer/settings/general.php:793
+#: inc/customizer/settings/woocommerce.php:614
+#: inc/customizer/settings/woocommerce.php:994
+msgid "Content / Sidebar / Sidebar"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:100 inc/customizer/settings/blog.php:638
+#: inc/customizer/settings/general.php:612
+#: inc/customizer/settings/general.php:807
+#: inc/customizer/settings/woocommerce.php:628
+#: inc/customizer/settings/woocommerce.php:1008
+#, fuzzy
+#| msgid "Content Width (%)"
+msgid "Both Sidebars: Content Width (%)"
+msgstr "İçerik Genişliği (%)"
+
+#: inc/customizer/settings/blog.php:122 inc/customizer/settings/blog.php:660
+#: inc/customizer/settings/general.php:634
+#: inc/customizer/settings/general.php:829
+#: inc/customizer/settings/woocommerce.php:650
+#: inc/customizer/settings/woocommerce.php:1030
+#, fuzzy
+#| msgid "Sidebar Width (%)"
+msgid "Both Sidebars: Sidebars Width (%)"
+msgstr "Kenar Çubuğu Genişliği (%)"
+
+#: inc/customizer/settings/blog.php:144 inc/customizer/settings/blog.php:682
+#: inc/customizer/settings/general.php:883
+#, fuzzy
+#| msgid "Heading 1 (H1)"
+msgid "Heading Tag"
+msgstr "Başlık 1 (H1)"
+
+#: inc/customizer/settings/blog.php:150 inc/customizer/settings/blog.php:688
+#: inc/customizer/settings/general.php:889
+msgid "H1"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:151 inc/customizer/settings/blog.php:689
+#: inc/customizer/settings/general.php:890
+msgid "H2"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:152 inc/customizer/settings/blog.php:690
+#: inc/customizer/settings/general.php:891
+msgid "H3"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:153 inc/customizer/settings/blog.php:691
+#: inc/customizer/settings/general.php:892
+msgid "H4"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:154 inc/customizer/settings/blog.php:692
+#: inc/customizer/settings/general.php:893
+msgid "H5"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:155 inc/customizer/settings/blog.php:693
+#: inc/customizer/settings/general.php:894
+msgid "H6"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:156 inc/customizer/settings/blog.php:694
+#: inc/customizer/settings/general.php:895
+msgid "div"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:157 inc/customizer/settings/blog.php:695
+#: inc/customizer/settings/general.php:896
+msgid "span"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:158 inc/customizer/settings/blog.php:696
+#: inc/customizer/settings/general.php:897
+msgid "p"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:172
+msgid "Add Overlay On image Hover"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:188
+msgid "Blog Style"
+msgstr "Blog Stili"
+
+#: inc/customizer/settings/blog.php:194
+msgid "Large Image"
+msgstr "Büyük Resim"
+
+#: inc/customizer/settings/blog.php:195
+msgid "Grid"
+msgstr "Kafes"
+
+#: inc/customizer/settings/blog.php:196 inc/customizer/settings/blog.php:216
+msgid "Thumbnail"
+msgstr "Küçük Resim"
+
+#: inc/customizer/settings/blog.php:209
+msgid "Images Size"
+msgstr "Resimler Boyutu"
+
+#: inc/customizer/settings/blog.php:217 inc/customizer/settings/header.php:74
+msgid "Medium"
+msgstr "Orta"
+
+#: inc/customizer/settings/blog.php:218
+msgid "Medium Large"
+msgstr "Orta Büyük"
+
+#: inc/customizer/settings/blog.php:219
+msgid "Large"
+msgstr "Büyük"
+
+#: inc/customizer/settings/blog.php:232
+msgid "Grid Columns"
+msgstr "Izgara Sütunları"
+
+#: inc/customizer/settings/blog.php:256
+msgid "Grid Style"
+msgstr "Izgara Stili"
+
+#: inc/customizer/settings/blog.php:263
+msgid "Fit Rows"
+msgstr "Satırlara Sığdır"
+
+#: inc/customizer/settings/blog.php:264
+msgid "Masonry"
+msgstr "Duvarcılık"
+
+#: inc/customizer/settings/blog.php:277
+msgid "Equal Heights"
+msgstr "Eşit Yükseklikler"
+
+#: inc/customizer/settings/blog.php:294
+#, fuzzy
+#| msgid "Menu Position"
+msgid "Image Position"
+msgstr "Menu Pozisyon"
+
+#: inc/customizer/settings/blog.php:299 inc/customizer/settings/blog.php:751
+#: inc/customizer/settings/general.php:954
+#: inc/customizer/settings/general.php:1531
+#: inc/customizer/settings/header.php:1065
+#: inc/customizer/settings/header.php:1528
+#: inc/customizer/settings/header.php:1549
+#: inc/customizer/settings/header.php:2225
+#: inc/customizer/settings/header.php:3557
+#: inc/customizer/settings/woocommerce.php:1081
+msgid "Left"
+msgstr "Sol"
+
+#: inc/customizer/settings/blog.php:300 inc/customizer/settings/blog.php:753
+#: inc/customizer/settings/general.php:956
+#: inc/customizer/settings/general.php:1529
+#: inc/customizer/settings/header.php:1067
+#: inc/customizer/settings/header.php:1529
+#: inc/customizer/settings/header.php:1551
+#: inc/customizer/settings/header.php:2227
+#: inc/customizer/settings/header.php:3558
+#: inc/customizer/settings/woocommerce.php:1083
+msgid "Right"
+msgstr "Sağ"
+
+#: inc/customizer/settings/blog.php:315
+#, fuzzy
+#| msgid "Menu Position"
+msgid "Vertical Position"
+msgstr "Menu Pozisyon"
+
+#: inc/customizer/settings/blog.php:320
+#, fuzzy
+#| msgid "Top Bar"
+msgid "Top"
+msgstr "Üst Çubuk"
+
+#: inc/customizer/settings/blog.php:321 inc/customizer/settings/blog.php:752
+#: inc/customizer/settings/general.php:955
+#: inc/customizer/settings/general.php:1530
+#: inc/customizer/settings/header.php:73
+#: inc/customizer/settings/header.php:1066
+#: inc/customizer/settings/header.php:1550
+#: inc/customizer/settings/header.php:2226
+#: inc/customizer/settings/woocommerce.php:1082
+msgid "Center"
+msgstr "Merkez"
+
+#: inc/customizer/settings/blog.php:322
+#, fuzzy
+#| msgid "Bottom Left"
+msgid "Bottom"
+msgstr "At Sol"
+
+#: inc/customizer/settings/blog.php:335
+#, fuzzy
+#| msgid "Boxed Width (px)"
+msgid "Custom Image Width (px)"
+msgstr "Kutulu Genişlik (px)"
+
+#: inc/customizer/settings/blog.php:353
+#, fuzzy
+#| msgid "Page Header Height (px)"
+msgid "Custom Image Height (px)"
+msgstr "Sayfa Üstbilgi Yüksekliği (px)"
+
+#: inc/customizer/settings/blog.php:373
+#: inc/customizer/settings/woocommerce.php:1754
+msgid "Category Color"
+msgstr "Kategori Renk"
+
+#: inc/customizer/settings/blog.php:390 inc/customizer/settings/blog.php:441
+#, fuzzy
+#| msgid "Category Color"
+msgid "Category Hover Color"
+msgstr "Kategori Renk"
+
+#: inc/customizer/settings/blog.php:407
+#, fuzzy
+#| msgid "Font Color"
+msgid "Comments Color"
+msgstr "Yazı rengi"
+
+#: inc/customizer/settings/blog.php:424
+#, fuzzy
+#| msgid "Links Hover Color"
+msgid "Comments Hover Color"
+msgstr "Bağlantılar Rengi: Hover"
+
+#: inc/customizer/settings/blog.php:457
+#: inc/customizer/settings/woocommerce.php:777
+msgid "Excerpt Length"
+msgstr "Alıntı Uzunluğu"
+
+#: inc/customizer/settings/blog.php:458
+msgid "Add 500 to display full content"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:478
+msgid "Blog Pagination Style"
+msgstr "Blog Sayfalandırma Stili"
+
+#: inc/customizer/settings/blog.php:484
+#: inc/customizer/settings/woocommerce.php:894
+msgid "Standard"
+msgstr "Standart"
+
+#: inc/customizer/settings/blog.php:485
+#: inc/customizer/settings/woocommerce.php:895
+msgid "Infinite Scroll"
+msgstr "Sonsuz kaydırma"
+
+#: inc/customizer/settings/blog.php:486
+msgid "Next/Prev"
+msgstr "Sonraki / Önceki"
+
+#: inc/customizer/settings/blog.php:500
+#: inc/customizer/settings/woocommerce.php:909
+#, fuzzy
+#| msgid "Infinite Scroll"
+msgid "Infinite Scroll: Spinners Color"
+msgstr "Sonsuz kaydırma"
+
+#: inc/customizer/settings/blog.php:511
+#: inc/customizer/settings/woocommerce.php:920 inc/helpers.php:3023
+#: woocommerce/loop/pagination.php:38
+msgid "End of content"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:517
+#: inc/customizer/settings/woocommerce.php:926
+#, fuzzy
+#| msgid "Infinite Scroll"
+msgid "Infinite Scroll: Last Text"
+msgstr "Sonsuz kaydırma"
+
+#: inc/customizer/settings/blog.php:529
+#: inc/customizer/settings/woocommerce.php:938 inc/helpers.php:3028
+#: woocommerce/loop/pagination.php:43
+msgid "No more pages to load"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:535
+#: inc/customizer/settings/woocommerce.php:944
+#, fuzzy
+#| msgid "Infinite Scroll"
+msgid "Infinite Scroll: Error Text"
+msgstr "Sonsuz kaydırma"
+
+#: inc/customizer/settings/blog.php:552 inc/customizer/settings/blog.php:952
+#: inc/customizer/settings/header.php:919
+#: inc/customizer/settings/woocommerce.php:844
+msgid "Elements Positioning"
+msgstr "Elemanlar Konumlandırma"
+
+#: inc/customizer/settings/blog.php:569 inc/customizer/settings/blog.php:968
+#: inc/helpers.php:2636 inc/helpers.php:2721
+msgid "Meta"
+msgstr "Sonra gelen"
+
+#: inc/customizer/settings/blog.php:574 inc/customizer/settings/blog.php:973
+msgid "Author"
+msgstr "Yazar"
+
+#: inc/customizer/settings/blog.php:575 inc/customizer/settings/blog.php:974
+msgid "Date"
+msgstr "Tarih"
+
+#: inc/customizer/settings/blog.php:576 inc/customizer/settings/blog.php:975
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: inc/customizer/settings/blog.php:577 inc/customizer/settings/blog.php:976
+#: inc/helpers.php:2728
+msgid "Comments"
+msgstr "Yorumlar"
+
+#: inc/customizer/settings/blog.php:586
+msgid "Single Post"
+msgstr "Tekli yazı"
+
+#: inc/customizer/settings/blog.php:600 inc/customizer/settings/general.php:574
+#: inc/customizer/settings/general.php:769
+#: inc/customizer/settings/general.php:2183
+#: inc/customizer/settings/woocommerce.php:590
+#: inc/customizer/settings/woocommerce.php:970
+msgid "Layout"
+msgstr "Düzen"
+
+#: inc/customizer/settings/blog.php:709
+msgid "Page Header Title"
+msgstr "Sayfa Başlığı Başlığı"
+
+#: inc/customizer/settings/blog.php:716
+msgid "Post Title"
+msgstr "Yazı başlığı"
+
+#: inc/customizer/settings/blog.php:729
+msgid "Featured Image In Page Header"
+msgstr "Öne Çıkan Resim Sayfa Başlığı İçinde"
+
+#: inc/customizer/settings/blog.php:746 inc/customizer/settings/general.php:949
+#, fuzzy
+#| msgid "Breadcrumbs"
+msgid "Title/Breadcrumb Position"
+msgstr "Ekmek Ufakları"
+
+#: inc/customizer/settings/blog.php:768 inc/customizer/settings/general.php:177
+#: inc/customizer/settings/general.php:971
+#: inc/customizer/settings/general.php:1247
+#: inc/customizer/settings/header.php:1060
+#: inc/customizer/settings/header.php:1523
+#: inc/customizer/settings/header.php:1919
+#: inc/customizer/settings/header.php:2220
+msgid "Position"
+msgstr "Pozisyon"
+
+#: inc/customizer/settings/blog.php:776 inc/customizer/settings/general.php:185
+#: inc/customizer/settings/general.php:979
+#: inc/customizer/settings/header.php:1926
+msgid "Top Left"
+msgstr "Sol Üst"
+
+#: inc/customizer/settings/blog.php:777 inc/customizer/settings/general.php:186
+#: inc/customizer/settings/general.php:980
+#: inc/customizer/settings/header.php:1927
+msgid "Top Center"
+msgstr "Üst Orta"
+
+#: inc/customizer/settings/blog.php:778 inc/customizer/settings/general.php:187
+#: inc/customizer/settings/general.php:981
+#: inc/customizer/settings/header.php:1928
+msgid "Top Right"
+msgstr "Sağ Üst"
+
+#: inc/customizer/settings/blog.php:779 inc/customizer/settings/general.php:188
+#: inc/customizer/settings/general.php:982
+#: inc/customizer/settings/header.php:1929
+msgid "Center Left"
+msgstr "Orta Sol"
+
+#: inc/customizer/settings/blog.php:780 inc/customizer/settings/general.php:189
+#: inc/customizer/settings/general.php:983
+#: inc/customizer/settings/header.php:1930
+msgid "Center Center"
+msgstr "Orta Orta"
+
+#: inc/customizer/settings/blog.php:781 inc/customizer/settings/general.php:190
+#: inc/customizer/settings/general.php:984
+#: inc/customizer/settings/header.php:1931
+msgid "Center Right"
+msgstr "Orta Sağ"
+
+#: inc/customizer/settings/blog.php:782 inc/customizer/settings/general.php:191
+#: inc/customizer/settings/general.php:985
+#: inc/customizer/settings/header.php:1932
+msgid "Bottom Left"
+msgstr "At Sol"
+
+#: inc/customizer/settings/blog.php:783 inc/customizer/settings/general.php:192
+#: inc/customizer/settings/general.php:986
+#: inc/customizer/settings/header.php:1933
+msgid "Bottom Center"
+msgstr "Alt Orta"
+
+#: inc/customizer/settings/blog.php:784 inc/customizer/settings/general.php:193
+#: inc/customizer/settings/general.php:987
+#: inc/customizer/settings/header.php:1934
+msgid "Bottom Right"
+msgstr "Alt Sağ"
+
+#: inc/customizer/settings/blog.php:798 inc/customizer/settings/general.php:207
+#: inc/customizer/settings/general.php:1001
+#: inc/customizer/settings/header.php:1948
+msgid "Attachment"
+msgstr "Ek dosyaosya"
+
+#: inc/customizer/settings/blog.php:806 inc/customizer/settings/general.php:215
+#: inc/customizer/settings/general.php:1009
+#: inc/customizer/settings/header.php:1955
+msgid "Scroll"
+msgstr "Kaydır"
+
+#: inc/customizer/settings/blog.php:807 inc/customizer/settings/general.php:216
+#: inc/customizer/settings/general.php:1010
+#: inc/customizer/settings/header.php:1956
+msgid "Fixed"
+msgstr "Sabit"
+
+#: inc/customizer/settings/blog.php:821 inc/customizer/settings/blog.php:830
+#: inc/customizer/settings/general.php:230
+#: inc/customizer/settings/general.php:239
+#: inc/customizer/settings/general.php:1024
+#: inc/customizer/settings/general.php:1033
+#: inc/customizer/settings/header.php:1970
+#: inc/customizer/settings/header.php:1978
+msgid "Repeat"
+msgstr "Tekrar et"
+
+#: inc/customizer/settings/blog.php:829 inc/customizer/settings/general.php:238
+#: inc/customizer/settings/general.php:1032
+#: inc/customizer/settings/header.php:1977
+msgid "No-repeat"
+msgstr "Tekrar etme"
+
+#: inc/customizer/settings/blog.php:831 inc/customizer/settings/general.php:240
+#: inc/customizer/settings/general.php:1034
+#: inc/customizer/settings/header.php:1979
+msgid "Repeat-x"
+msgstr "Tekrar et-x"
+
+#: inc/customizer/settings/blog.php:832 inc/customizer/settings/general.php:241
+#: inc/customizer/settings/general.php:1035
+#: inc/customizer/settings/header.php:1980
+msgid "Repeat-y"
+msgstr "Tekrar et-y"
+
+#: inc/customizer/settings/blog.php:846 inc/customizer/settings/general.php:255
+#: inc/customizer/settings/general.php:1049
+#: inc/customizer/settings/header.php:1994
+msgid "Size"
+msgstr "Boyut"
+
+#: inc/customizer/settings/blog.php:854 inc/customizer/settings/general.php:263
+#: inc/customizer/settings/general.php:1057
+#: inc/customizer/settings/header.php:2001
+msgid "Auto"
+msgstr "Oto"
+
+#: inc/customizer/settings/blog.php:855 inc/customizer/settings/general.php:264
+#: inc/customizer/settings/general.php:1058
+#: inc/customizer/settings/header.php:2002
+msgid "Cover"
+msgstr "Kapak"
+
+#: inc/customizer/settings/blog.php:856 inc/customizer/settings/general.php:265
+#: inc/customizer/settings/general.php:1059
+#: inc/customizer/settings/header.php:2003
+msgid "Contain"
+msgstr "İçermek"
+
+#: inc/customizer/settings/blog.php:870
+msgid "Page Header Height (px)"
+msgstr "Sayfa Üstbilgi Yüksekliği (px)"
+
+#: inc/customizer/settings/blog.php:892
+#: inc/customizer/settings/general.php:1095
+msgid "Overlay Opacity"
+msgstr "Kaplama Opaklığı"
+
+#: inc/customizer/settings/blog.php:914
+#: inc/customizer/settings/general.php:1117
+#: inc/customizer/settings/header.php:1903
+msgid "Overlay Color"
+msgstr "Kaplama Rengi"
+
+#: inc/customizer/settings/blog.php:931
+msgid "Full Width Content"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:932
+msgid ""
+"Enter the max width your the content with the full width layout. Add 0 to "
+"disable the max width."
+msgstr ""
+
+#: inc/customizer/settings/blog.php:989
+#, fuzzy
+#| msgid "Next/Prev Color"
+msgid "Next/Prev Taxonomy"
+msgstr "Sonraki / Önceki Renk"
+
+#: inc/customizer/settings/blog.php:994 inc/customizer/settings/blog.php:1053
+#: inc/customizer/settings/woocommerce.php:850
+#, fuzzy
+#| msgid "Categories"
+msgid "Category"
+msgstr "Kategoriler"
+
+#: inc/customizer/settings/blog.php:995 inc/customizer/settings/blog.php:1054
+#, fuzzy
+#| msgid "Tags"
+msgid "Tag"
+msgstr "Etiketler"
+
+#: inc/customizer/settings/blog.php:1008
+msgid "Related Posts Count"
+msgstr "İlgili Yazı Sayısı"
+
+#: inc/customizer/settings/blog.php:1028
+msgid "Related Posts Columns"
+msgstr "İlgili Yazı Kolonları"
+
+#: inc/customizer/settings/blog.php:1048
+#, fuzzy
+#| msgid "Related Posts Count"
+msgid "Related Posts Taxonomy"
+msgstr "İlgili Yazı Sayısı"
+
+#: inc/customizer/settings/blog.php:1066
+#, fuzzy
+#| msgid "Main Container Width (px)"
+msgid "Related Posts Image Width (px)"
+msgstr "Ana Konteyner Genişliği (px)"
+
+#: inc/customizer/settings/blog.php:1085
+#, fuzzy
+#| msgid "Page Header Height (px)"
+msgid "Related Posts Image Height (px)"
+msgstr "Sayfa Üstbilgi Yüksekliği (px)"
+
+#: inc/customizer/settings/footer-bottom.php:40
+msgid "Footer Bottom"
+msgstr "Altbilgi Alt"
+
+#: inc/customizer/settings/footer-bottom.php:53
+msgid "Enable Footer Bottom"
+msgstr "Altbilgi Altını Etkinleştir"
+
+#: inc/customizer/settings/footer-bottom.php:70
+#: inc/customizer/settings/footer-widgets.php:70
+#: inc/customizer/settings/general.php:861
+#: inc/customizer/settings/topbar.php:97
+msgid "Visibility"
+msgstr "Görünürlük"
+
+#: inc/customizer/settings/footer-bottom.php:77
+#: inc/customizer/settings/footer-widgets.php:77
+#: inc/customizer/settings/general.php:867
+#: inc/customizer/settings/topbar.php:104
+msgid "Show On All Devices"
+msgstr "Tüm Cihazlarda Göster"
+
+#: inc/customizer/settings/footer-bottom.php:78
+#: inc/customizer/settings/footer-widgets.php:78
+#: inc/customizer/settings/general.php:868
+#: inc/customizer/settings/topbar.php:105
+msgid "Hide On Tablet"
+msgstr "Tablette Gizle"
+
+#: inc/customizer/settings/footer-bottom.php:79
+#: inc/customizer/settings/footer-widgets.php:79
+#: inc/customizer/settings/general.php:869
+#: inc/customizer/settings/topbar.php:106
+msgid "Hide On Mobile"
+msgstr "Mobil Cihazda Gizle"
+
+#: inc/customizer/settings/footer-bottom.php:80
+#: inc/customizer/settings/footer-widgets.php:80
+#: inc/customizer/settings/general.php:870
+#: inc/customizer/settings/topbar.php:107
+msgid "Hide On Tablet & Mobile"
+msgstr "Tablet ve Mobil'de Gizle"
+
+#: inc/customizer/settings/footer-bottom.php:94
+msgid "Copyright"
+msgstr "Telif hakkı"
+
+#: inc/customizer/settings/footer-bottom.php:95
+#: inc/customizer/settings/topbar.php:341
+#, php-format
+msgid "Shortcodes allowed, %1$ssee the list%2$s."
+msgstr ""
+
+#: inc/customizer/settings/footer-bottom.php:161
+#: inc/customizer/settings/footer-widgets.php:257
+#: inc/customizer/settings/general.php:1157
+#: inc/customizer/settings/general.php:1756
+#: inc/customizer/settings/general.php:2036
+#: inc/customizer/settings/header.php:288
+#: inc/customizer/settings/header.php:964
+#: inc/customizer/settings/header.php:3095
+#: inc/customizer/settings/sidebar.php:118
+#: inc/customizer/settings/sidebar.php:229
+#: inc/customizer/settings/topbar.php:192
+#: inc/customizer/settings/topbar.php:484
+#: inc/customizer/settings/woocommerce.php:1532
+msgid "Padding (px)"
+msgstr "Dolgu (px)"
+
+#: inc/customizer/settings/footer-bottom.php:196
+#: inc/customizer/settings/footer-widgets.php:292
+#: inc/customizer/settings/general.php:146
+#: inc/customizer/settings/general.php:1185
+#: inc/customizer/settings/general.php:1446
+#: inc/customizer/settings/general.php:1586
+#: inc/customizer/settings/general.php:1946
+#: inc/customizer/settings/general.php:2091
+#: inc/customizer/settings/header.php:206
+#: inc/customizer/settings/header.php:336
+#: inc/customizer/settings/header.php:569
+#: inc/customizer/settings/header.php:903
+#: inc/customizer/settings/header.php:1156
+#: inc/customizer/settings/header.php:1777
+#: inc/customizer/settings/header.php:2467
+#: inc/customizer/settings/header.php:3734
+#: inc/customizer/settings/header.php:3751
+#: inc/customizer/settings/sidebar.php:53
+#: inc/customizer/settings/sidebar.php:164
+#: inc/customizer/settings/topbar.php:227
+#: inc/customizer/settings/woocommerce.php:1723
+msgid "Background Color"
+msgstr "Arka plan rengi"
+
+#: inc/customizer/settings/footer-bottom.php:213
+#: inc/customizer/settings/footer-widgets.php:309
+#: inc/customizer/settings/general.php:1202
+#: inc/customizer/settings/general.php:1269
+#: inc/customizer/settings/topbar.php:261
+#: inc/customizer/settings/woocommerce.php:2310
+msgid "Text Color"
+msgstr "Metin Rengi"
+
+#: inc/customizer/settings/footer-bottom.php:230
+#: inc/customizer/settings/footer-widgets.php:343
+#: inc/customizer/settings/general.php:277
+#: inc/customizer/settings/header.php:618
+#: inc/customizer/settings/header.php:3785
+msgid "Links Color"
+msgstr "Bağlantılar Renk"
+
+#: inc/customizer/settings/footer-bottom.php:247
+#: inc/customizer/settings/footer-widgets.php:360
+#: inc/customizer/settings/header.php:3801
+msgid "Links Color: Hover"
+msgstr "Bağlantılar Renk: Hover"
+
+#: inc/customizer/settings/footer-widgets.php:40
+msgid "Footer Widgets"
+msgstr "Altbilgi Widget'ları"
+
+#: inc/customizer/settings/footer-widgets.php:53
+msgid "Enable Footer Widgets"
+msgstr "Altbilgi Widget'larını Etkinleştir"
+
+#: inc/customizer/settings/footer-widgets.php:93
+msgid "Fixed Footer"
+msgstr "Sabit Altbilgi"
+
+#: inc/customizer/settings/footer-widgets.php:94
+msgid ""
+"This option add a height to your content to keep your footer at the bottom "
+"of your page."
+msgstr ""
+"Bu seçenek, altbilgi, sayfanın altındaki tutmak için içerik için bir "
+"yükseklik ekleyin."
+
+#: inc/customizer/settings/footer-widgets.php:99
+#: inc/customizer/settings/footer-widgets.php:120
+#: inc/customizer/settings/general.php:2169
+msgid "On"
+msgstr "Açık"
+
+#: inc/customizer/settings/footer-widgets.php:100
+#: inc/customizer/settings/footer-widgets.php:121
+#: inc/customizer/settings/general.php:2170
+msgid "Off"
+msgstr "Kapalı"
+
+#: inc/customizer/settings/footer-widgets.php:114
+msgid "Parallax Footer Effect"
+msgstr ""
+
+#: inc/customizer/settings/footer-widgets.php:115
+msgid "Add a parallax effect to your footer."
+msgstr ""
+
+#: inc/customizer/settings/footer-widgets.php:135
+#: inc/customizer/settings/general.php:2202
+#: inc/customizer/settings/header.php:89
+#: inc/customizer/settings/header.php:1285
+#: inc/customizer/settings/header.php:2152
+#: inc/customizer/settings/header.php:2950
+#: inc/customizer/settings/topbar.php:320
+#, fuzzy
+#| msgid "Select Widget Area"
+msgid "Select Template"
+msgstr "Widget Alanı'nı seçin"
+
+#: inc/customizer/settings/footer-widgets.php:136
+#: inc/customizer/settings/general.php:2203
+#: inc/customizer/settings/header.php:90
+#: inc/customizer/settings/header.php:2951
+#: inc/customizer/settings/topbar.php:384
+msgid "Choose a template created in Theme Panel > My Library."
+msgstr ""
+
+#: inc/customizer/settings/footer-widgets.php:164
+msgid "Columns"
+msgstr "Sütünlar"
+
+#: inc/customizer/settings/footer-widgets.php:190
+#: inc/customizer/settings/header.php:109
+msgid "Add Container"
+msgstr "Konteyner ekle"
+
+#: inc/customizer/settings/footer-widgets.php:326
+#: inc/customizer/settings/header.php:2499
+#: inc/customizer/settings/header.php:3768
+#: inc/customizer/settings/woocommerce.php:2294
+#: inc/customizer/settings/woocommerce.php:2624
+msgid "Borders Color"
+msgstr "Kenarlıklar Rengi"
+
+#: inc/customizer/settings/general.php:40
+msgid "General Options"
+msgstr "Genel seçenekler"
+
+#: inc/customizer/settings/general.php:48
+msgid "General Styling"
+msgstr "Genel Şekillendirme"
+
+#: inc/customizer/settings/general.php:63
+msgid "Styling Options Location"
+msgstr ""
+
+#: inc/customizer/settings/general.php:64
+msgid ""
+"If you choose Custom File, a CSS file will be created in your uploads folder."
+msgstr ""
+
+#: inc/customizer/settings/general.php:70
+#, fuzzy
+#| msgid "Header"
+msgid "WP Head"
+msgstr "Başlık"
+
+#: inc/customizer/settings/general.php:71
+#, fuzzy
+#| msgid "Custom Link"
+msgid "Custom File"
+msgstr "Özel Bağlantı"
+
+#: inc/customizer/settings/general.php:85
+msgid "Primary Color"
+msgstr "Ana renk"
+
+#: inc/customizer/settings/general.php:101
+msgid "Hover Primary Color"
+msgstr "Birincil Renk Hover"
+
+#: inc/customizer/settings/general.php:117
+msgid "Main Border Color"
+msgstr "Ana Sınır Rengi"
+
+#: inc/customizer/settings/general.php:131
+msgid "Site Background"
+msgstr "Site Arka Planı"
+
+#: inc/customizer/settings/general.php:161
+#: inc/customizer/settings/general.php:919
+msgid "Background Image"
+msgstr "Arka plan görüntüsü"
+
+#: inc/customizer/settings/general.php:292
+#: inc/customizer/settings/general.php:1480
+#: inc/customizer/settings/general.php:1618
+#: inc/customizer/settings/general.php:1962
+#: inc/customizer/settings/general.php:2123
+#: inc/customizer/settings/header.php:1794
+#: inc/customizer/settings/header.php:2110
+msgid "Color"
+msgstr "Renk"
+
+#: inc/customizer/settings/general.php:308
+#: inc/customizer/settings/general.php:1497
+#: inc/customizer/settings/general.php:1634
+#: inc/customizer/settings/general.php:2139
+#: inc/customizer/settings/header.php:2127
+msgid "Color: Hover"
+msgstr "Renk: Hover"
+
+#: inc/customizer/settings/general.php:318
+#: inc/customizer/settings/header.php:3380
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: inc/customizer/settings/general.php:332
+msgid "Layout Style"
+msgstr "Düzen Stili"
+
+#: inc/customizer/settings/general.php:337
+msgid "Wide"
+msgstr "Geniş"
+
+#: inc/customizer/settings/general.php:338
+msgid "Boxed"
+msgstr "Kutulu"
+
+#: inc/customizer/settings/general.php:339
+#, fuzzy
+#| msgid "Separator Color"
+msgid "Separate"
+msgstr "Ayırıcı Rengi"
+
+#: inc/customizer/settings/general.php:353
+msgid "Boxed Layout Drop-Shadow"
+msgstr "Kutulu Düzen Drop-Shadow"
+
+#: inc/customizer/settings/general.php:371
+msgid "Boxed Width (px)"
+msgstr "Kutulu Genişlik (px)"
+
+#: inc/customizer/settings/general.php:393
+#: inc/customizer/settings/general.php:410
+msgid "Outside Background"
+msgstr "Dış Arka Plan"
+
+#: inc/customizer/settings/general.php:427
+msgid "Inner Background"
+msgstr "İç Arka Plan"
+
+#: inc/customizer/settings/general.php:444
+#, fuzzy
+#| msgid "Content Padding (px)"
+msgid "Content Padding"
+msgstr "İçerik Dolgusu (px)"
+
+#: inc/customizer/settings/general.php:445
+msgid "Add a custom content padding. px - em - %."
+msgstr ""
+
+#: inc/customizer/settings/general.php:463
+#, fuzzy
+#| msgid "Footer Widget Heading"
+msgid "Widgets Padding"
+msgstr "Altbilgi Widget Başlıkları"
+
+#: inc/customizer/settings/general.php:464
+msgid "Add a custom widgets padding. px - em - %."
+msgstr ""
+
+#: inc/customizer/settings/general.php:482
+msgid "Main Container Width (px)"
+msgstr "Ana Konteyner Genişliği (px)"
+
+#: inc/customizer/settings/general.php:504
+msgid "Content Width (%)"
+msgstr "İçerik Genişliği (%)"
+
+#: inc/customizer/settings/general.php:525
+msgid "Sidebar Width (%)"
+msgstr "Kenar Çubuğu Genişliği (%)"
+
+#: inc/customizer/settings/general.php:545
+#, fuzzy
+#| msgid "Enable Social"
+msgid "Enable Schema Markup"
+msgstr "Sosyal Medyayı etkinleştir"
+
+#: inc/customizer/settings/general.php:560
+msgid "Pages"
+msgstr "Sayfalar"
+
+#: inc/customizer/settings/general.php:678
+msgid "Content Padding (px)"
+msgstr "İçerik Dolgusu (px)"
+
+#: inc/customizer/settings/general.php:704
+msgid "Search Result Page"
+msgstr "Arama Sonuçları"
+
+#: inc/customizer/settings/general.php:718
+#: inc/plugins/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr "Kaynak"
+
+#: inc/customizer/settings/general.php:734
+#, fuzzy
+#| msgid "Shop Posts Per Page"
+msgid "Search Posts Per Page"
+msgstr "Sayfa Başına Mağaza Gönderi Sayısı"
+
+#: inc/customizer/settings/general.php:753
+msgid "Custom Sidebar"
+msgstr "Özel Kenar Çubuğu"
+
+#: inc/customizer/settings/general.php:846
+#: inc/customizer/settings/typography.php:147
+msgid "Page Title"
+msgstr "Sayfa başlığı"
+
+#: inc/customizer/settings/general.php:910
+#: inc/customizer/settings/header.php:63 inc/customizer/settings/topbar.php:120
+#: inc/customizer/settings/woocommerce.php:215
+msgid "Style"
+msgstr "Stil"
+
+#: inc/customizer/settings/general.php:917
+msgid "Centered"
+msgstr "Ortala"
+
+#: inc/customizer/settings/general.php:918
+msgid "Centered Minimal"
+msgstr "Ortalanmış Minima"
+
+#: inc/customizer/settings/general.php:920
+msgid "Hidden"
+msgstr "Gizli"
+
+#: inc/customizer/settings/general.php:932
+#: inc/customizer/settings/woocommerce.php:849
+msgid "Image"
+msgstr "Resim"
+
+#: inc/customizer/settings/general.php:1073
+#: inc/customizer/settings/header.php:127
+#: inc/customizer/settings/header.php:149
+#: inc/customizer/settings/header.php:1082
+#: inc/customizer/settings/header.php:3323
+msgid "Height (px)"
+msgstr "Yükseklik (px)"
+
+#: inc/customizer/settings/general.php:1254
+msgid "Absolute Right"
+msgstr "Tam Sağ"
+
+#: inc/customizer/settings/general.php:1255
+msgid "Under Title"
+msgstr "Başlık Altına"
+
+#: inc/customizer/settings/general.php:1286
+msgid "Separator Color"
+msgstr "Ayırıcı Rengi"
+
+#: inc/customizer/settings/general.php:1303
+#: inc/customizer/settings/header.php:2340
+#: inc/customizer/settings/header.php:2515
+#: inc/customizer/settings/topbar.php:278
+#: inc/customizer/settings/woocommerce.php:405
+msgid "Link Color"
+msgstr "Bağlantı Rengi"
+
+#: inc/customizer/settings/general.php:1320
+#: inc/customizer/settings/header.php:2356
+#: inc/customizer/settings/header.php:2531
+#: inc/customizer/settings/topbar.php:295
+#: inc/customizer/settings/woocommerce.php:421
+msgid "Link Color: Hover"
+msgstr "Bağlantı rengi: Hover"
+
+#: inc/customizer/settings/general.php:1331
+msgid "Scroll To Top"
+msgstr "Yukarı kaydır"
+
+#: inc/customizer/settings/general.php:1345
+msgid "Scroll Up Button"
+msgstr "Yukarı Kaydır Düğmesi"
+
+#: inc/customizer/settings/general.php:1362
+msgid "Arrow Icon"
+msgstr "Ok Simgesi"
+
+#: inc/customizer/settings/general.php:1380
+msgid "Button Size (px)"
+msgstr "Düğme Boyutu (px)"
+
+#: inc/customizer/settings/general.php:1402
+#: inc/customizer/settings/woocommerce.php:296
+msgid "Icon Size (px)"
+msgstr "Simge Boyutu (px)"
+
+#: inc/customizer/settings/general.php:1424
+#: inc/customizer/settings/general.php:1894
+#: inc/customizer/settings/general.php:2070
+#: inc/customizer/settings/woocommerce.php:1690
+msgid "Border Radius (px)"
+msgstr "Sınır Yarıçapı (px)"
+
+#: inc/customizer/settings/general.php:1463
+#: inc/customizer/settings/general.php:1602
+#: inc/customizer/settings/general.php:2107
+msgid "Background Color: Hover"
+msgstr "Arka plan rengi: Hover"
+
+#: inc/customizer/settings/general.php:1508
+msgid "Pagination"
+msgstr "Sayfalandırma"
+
+#: inc/customizer/settings/general.php:1523
+msgid "Align"
+msgstr "Hizalama"
+
+#: inc/customizer/settings/general.php:1545
+#: inc/customizer/settings/general.php:1790
+#: inc/customizer/settings/header.php:3024
+#: inc/customizer/settings/topbar.php:435
+#: inc/customizer/settings/typography.php:481
+msgid "Font Size (px)"
+msgstr "Yazı tipi Boyutu (px)"
+
+#: inc/customizer/settings/general.php:1566
+#: inc/customizer/settings/general.php:1860
+#: inc/customizer/settings/woocommerce.php:1611
+msgid "Border Width (px)"
+msgstr "Sınır Genişliği (px)"
+
+#: inc/customizer/settings/general.php:1650
+#: inc/customizer/settings/general.php:1915
+#: inc/customizer/settings/header.php:1811
+#: inc/customizer/settings/topbar.php:244
+#: inc/customizer/settings/woocommerce.php:1738
+msgid "Border Color"
+msgstr "Sınır Rengi"
+
+#: inc/customizer/settings/general.php:1666
+#: inc/customizer/settings/header.php:1827
+msgid "Border Color: Hover"
+msgstr "Sınır Rengi: Hover"
+
+#: inc/customizer/settings/general.php:1676
+msgid "Forms (Input - Textarea)"
+msgstr "Formlar (Giriş - Metin Alanı)"
+
+#: inc/customizer/settings/general.php:1691
+msgid "Label Color"
+msgstr "Etiket Rengi"
+
+#: inc/customizer/settings/general.php:1931
+#: inc/customizer/settings/header.php:1843
+msgid "Border Color: Focus"
+msgstr "Kenarlık Rengi: Odaklanma"
+
+#: inc/customizer/settings/general.php:1972
+#, fuzzy
+#| msgid "Theme Button"
+msgid "Theme Buttons"
+msgstr "Tema Düğmesi"
+
+#: inc/customizer/settings/general.php:2149
+msgid "404 Error Page"
+msgstr ""
+
+#: inc/customizer/settings/general.php:2163
+msgid "Blank Page"
+msgstr ""
+
+#: inc/customizer/settings/general.php:2164
+msgid ""
+"Enable this option to remove all the elements and have full control of the "
+"404 error page."
+msgstr ""
+
+#: inc/customizer/settings/general.php:2253
+#, fuzzy
+#| msgid "Blog Post Title"
+msgid "All Post Types"
+msgstr "Blog Yazı Başlığı"
+
+#: inc/customizer/settings/header.php:41 inc/third/class-beaver-themer.php:109
+msgid "Header"
+msgstr "Başlık"
+
+#: inc/customizer/settings/header.php:49 inc/customizer/settings/topbar.php:48
+#: inc/customizer/settings/typography.php:265
+#: inc/customizer/settings/woocommerce.php:48
+msgid "General"
+msgstr "Genel"
+
+#: inc/customizer/settings/header.php:69
+#: inc/customizer/settings/header.php:2978
+msgid "Minimal"
+msgstr "En az"
+
+#: inc/customizer/settings/header.php:70
+msgid "Transparent"
+msgstr "Şeffaf"
+
+#: inc/customizer/settings/header.php:71
+msgid "Top Menu"
+msgstr "Üst Menu"
+
+#: inc/customizer/settings/header.php:72
+#: inc/customizer/settings/header.php:3423
+msgid "Full Screen"
+msgstr "Tam Ekran"
+
+#: inc/customizer/settings/header.php:75
+#, fuzzy
+#| msgid "articles"
+msgid "Vertical"
+msgstr "haberler"
+
+#: inc/customizer/settings/header.php:76
+msgid "Custom Header"
+msgstr "Özel Başlık"
+
+#: inc/customizer/settings/header.php:171
+msgid "Header Full Width"
+msgstr "Başlık Tam Genişlik"
+
+#: inc/customizer/settings/header.php:189
+msgid "Header Border Bottom"
+msgstr "Üstbilgi Kenarlık Alt"
+
+#: inc/customizer/settings/header.php:223
+msgid "Border Bottom Color"
+msgstr "Kenarlık Alt Renk"
+
+#: inc/customizer/settings/header.php:321
+#, fuzzy
+#| msgid "Transparent Header"
+msgid "Transparent Header Settings"
+msgstr "Şeffaf Başlık"
+
+#: inc/customizer/settings/header.php:351
+#, fuzzy
+#| msgid "Top Menu Header"
+msgid "Top Menu Header Settings"
+msgstr "Üst Menu Başlık"
+
+#: inc/customizer/settings/header.php:366
+msgid "Menu Position"
+msgstr "Menu Pozisyon"
+
+#: inc/customizer/settings/header.php:373
+msgid "Before The Logo"
+msgstr "Logodan Önce"
+
+#: inc/customizer/settings/header.php:374
+msgid "After The Logo"
+msgstr "Logodan Sonra"
+
+#: inc/customizer/settings/header.php:388
+msgid "Menu Background Color"
+msgstr "Menü Arka Plan Rengi"
+
+#: inc/customizer/settings/header.php:405
+msgid "Search Button Border Color"
+msgstr "Arama Düğmesi Kenarlık Rengi"
+
+#: inc/customizer/settings/header.php:422
+msgid "Search Button Color"
+msgstr "Arama Düğmesi Rengi"
+
+#: inc/customizer/settings/header.php:439
+msgid "Search Button Color: Hover"
+msgstr "Arama Düğmesi Rengi: Hover"
+
+#: inc/customizer/settings/header.php:454
+#, fuzzy
+#| msgid "Full Screen Header"
+msgid "Full Screen Header Settings"
+msgstr "Tam Ekran Başlık"
+
+#: inc/customizer/settings/header.php:469
+#: inc/customizer/settings/header.php:805
+#: inc/customizer/settings/header.php:836
+#: inc/customizer/settings/header.php:1323
+#, fuzzy
+#| msgid "Transparent Header"
+msgid "Add Transparent Header"
+msgstr "Şeffaf Başlık"
+
+#: inc/customizer/settings/header.php:486
+#: inc/customizer/settings/header.php:3344
+msgid "Logo (optional)"
+msgstr "Logo (isteğe bağlı)"
+
+#: inc/customizer/settings/header.php:487
+msgid "Select a custom logo when the menu is opened."
+msgstr "Menü açıldığında özel bir logo seçin."
+
+#: inc/customizer/settings/header.php:503
+#, fuzzy
+#| msgid "Logo (optional)"
+msgid "Retina Logo (optional)"
+msgstr "Logo (isteğe bağlı)"
+
+#: inc/customizer/settings/header.php:504
+#, fuzzy
+#| msgid "Select a custom logo when the menu is opened."
+msgid ""
+"Select a custom retina logo (twice the logo size) when the menu is opened."
+msgstr "Menü açıldığında özel bir logo seçin."
+
+#: inc/customizer/settings/header.php:519
+msgid "Styling"
+msgstr "Şekillendirme"
+
+#: inc/customizer/settings/header.php:535
+msgid "Menu Bar Color"
+msgstr "Menü Çubuğu Rengi"
+
+#: inc/customizer/settings/header.php:552
+msgid "Menu Bar Close Color"
+msgstr "Menü Çubuğu Close Color"
+
+#: inc/customizer/settings/header.php:585
+#: inc/customizer/settings/header.php:3816
+msgid "Links Background Color"
+msgstr "Bağlantılar Arka Plan Rengi"
+
+#: inc/customizer/settings/header.php:601
+msgid "Links Hover Background Color"
+msgstr "Bağlantılar Arka Plan Rengi: Hover"
+
+#: inc/customizer/settings/header.php:635
+msgid "Links Hover Color"
+msgstr "Bağlantılar Rengi: Hover"
+
+#: inc/customizer/settings/header.php:650
+msgid "Search Styling"
+msgstr "Arama Şekli"
+
+#: inc/customizer/settings/header.php:666
+#: inc/customizer/settings/header.php:1204
+#: inc/customizer/settings/header.php:2646
+#: inc/customizer/settings/header.php:2714
+msgid "Input Color"
+msgstr "Girilen Renk"
+
+#: inc/customizer/settings/header.php:683
+#: inc/customizer/settings/header.php:2748
+msgid "Input Dashed Text Color"
+msgstr "Kesikli Metin Rengini Gir"
+
+#: inc/customizer/settings/header.php:700
+msgid "Input Border Bottom Color"
+msgstr "Giriş Kenarlık Alt Renk"
+
+#: inc/customizer/settings/header.php:717
+msgid "Input Hover Border Bottom Color"
+msgstr "Giriş Hover Sınır Alt Renk"
+
+#: inc/customizer/settings/header.php:734
+msgid "Input Focus Border Bottom Color"
+msgstr "Girilen Odak Çerçevesi Alt Renk"
+
+#: inc/customizer/settings/header.php:749
+#, fuzzy
+#| msgid "General Settings"
+msgid "Center Header Settings"
+msgstr "Genel Ayarlar"
+
+#: inc/customizer/settings/header.php:764
+#, fuzzy
+#| msgid "Close Menu"
+msgid "Left Menu"
+msgstr "KAPAT"
+
+#: inc/customizer/settings/header.php:783
+#, fuzzy
+#| msgid "Menu Position"
+msgid "Menus Position"
+msgstr "Menu Pozisyon"
+
+#: inc/customizer/settings/header.php:789
+#, fuzzy
+#| msgid "Letter Spacing (px)"
+msgid "Wider Spacing"
+msgstr "Harf Aralığı (px)"
+
+#: inc/customizer/settings/header.php:790
+#, fuzzy
+#| msgid "Centered Minimal"
+msgid "Centered Menus"
+msgstr "Ortalanmış Minima"
+
+#: inc/customizer/settings/header.php:791
+#, fuzzy
+#| msgid "Letter Spacing (px)"
+msgid "Closer Spacing"
+msgstr "Harf Aralığı (px)"
+
+#: inc/customizer/settings/header.php:821
+#, fuzzy
+#| msgid "Medium Header"
+msgid "Medium Header Settings"
+msgstr "Orta Başlık"
+
+#: inc/customizer/settings/header.php:854
+msgid "Hide Menu When Scrolling"
+msgstr "Kaydırma Sırasında Menü Gizle"
+
+#: inc/customizer/settings/header.php:871
+msgid "Stick Only The Menu"
+msgstr ""
+
+#: inc/customizer/settings/header.php:887
+msgid "Top Header"
+msgstr "Üst Başlık"
+
+#: inc/customizer/settings/header.php:924
+#: inc/customizer/settings/header.php:1171
+#: inc/customizer/settings/header.php:1708
+msgid "Search Form"
+msgstr "Arama Formu"
+
+#: inc/customizer/settings/header.php:925
+#: inc/customizer/settings/header.php:2011
+#: inc/customizer/settings/typography.php:100
+msgid "Logo"
+msgstr "Logo"
+
+#: inc/customizer/settings/header.php:926
+msgid "Social Buttons"
+msgstr "Sosyal Düğmeler"
+
+#: inc/customizer/settings/header.php:1016
+msgid "Sticky Padding (px)"
+msgstr "Yapışkan Dolgu (px)"
+
+#: inc/customizer/settings/header.php:1017
+msgid "If you use the sticky header extension"
+msgstr "Yapışkan üstbilgi uzantısını kullanırsanız"
+
+#: inc/customizer/settings/header.php:1044
+#: inc/customizer/settings/header.php:2138
+#: inc/customizer/settings/header.php:3447 inc/helpers.php:3438
+#: partials/mobile/mobile-icon.php:32
+msgid "Menu"
+msgstr "Menu"
+
+#: inc/customizer/settings/header.php:1127
+msgid "Menu Items Padding (px)"
+msgstr "Menü Öğeleri Dolgu (px)"
+
+#: inc/customizer/settings/header.php:1187
+#: inc/customizer/settings/header.php:2629
+msgid "Input Background Color"
+msgstr "Giriş Arkalan Rengi"
+
+#: inc/customizer/settings/header.php:1221
+msgid "Placeholder Color"
+msgstr "Yer Tutucu Rengi"
+
+#: inc/customizer/settings/header.php:1238
+#: inc/customizer/settings/header.php:1860
+msgid "Button Color"
+msgstr "Düğme rengi"
+
+#: inc/customizer/settings/header.php:1255
+msgid "Button Hover Color"
+msgstr "Düğme rengi: Hover"
+
+#: inc/customizer/settings/header.php:1270
+#, fuzzy
+#| msgid "General Settings"
+msgid "Vertical Header Settings"
+msgstr "Genel Ayarlar"
+
+#: inc/customizer/settings/header.php:1286
+msgid ""
+"Choose a template created in Theme Panel > My Library to replace the header "
+"content."
+msgstr ""
+
+#: inc/customizer/settings/header.php:1304
+msgid "Select Bottom Template"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1305
+msgid ""
+"Choose a template created in Theme Panel > My Library to add at the header "
+"bottom."
+msgstr ""
+
+#: inc/customizer/settings/header.php:1341
+msgid "Add Header Shadow"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1359
+#, fuzzy
+#| msgid "Top Header"
+msgid "Closed Header"
+msgstr "Üst Başlık"
+
+#: inc/customizer/settings/header.php:1377
+#, fuzzy
+#| msgid "Close Button Color"
+msgid "Custom Hamburger Button Color"
+msgstr "Düğme Kapat Rengi"
+
+#: inc/customizer/settings/header.php:1378
+msgid ""
+"Used for the hamburger menu to open the header in small screens and if "
+"closed header."
+msgstr ""
+
+#: inc/customizer/settings/header.php:1395
+#, fuzzy
+#| msgid "Boxed Width (px)"
+msgid "Collapse Width (px)"
+msgstr "Kutulu Genişlik (px)"
+
+#: inc/customizer/settings/header.php:1396
+msgid ""
+"This field is to control the width where you want to collapse the header."
+msgstr ""
+
+#: inc/customizer/settings/header.php:1418
+#: inc/customizer/settings/header.php:2446
+msgid "Width (px)"
+msgstr "Genişlik (px)"
+
+#: inc/customizer/settings/header.php:1489
+#, fuzzy
+#| msgid "Padding (px)"
+msgid "Inner Padding (px)"
+msgstr "Dolgu (px)"
+
+#: inc/customizer/settings/header.php:1544
+#, fuzzy
+#| msgid "Position"
+msgid "Logo Position"
+msgstr "Pozisyon"
+
+#: inc/customizer/settings/header.php:1566
+#, fuzzy
+#| msgid "Menu Items Padding (px)"
+msgid "Menu Items Top/Bottom Padding (px)"
+msgstr "Menü Öğeleri Dolgu (px)"
+
+#: inc/customizer/settings/header.php:1587
+#: inc/customizer/settings/header.php:3666
+#, fuzzy
+#| msgid "Dropdown Top Border"
+msgid "Dropdown Target"
+msgstr "Açılır Kapanır Üst Sınır"
+
+#: inc/customizer/settings/header.php:1588
+#: inc/customizer/settings/header.php:3667
+msgid "Choose your opening target for your submenus"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1593
+#: inc/customizer/settings/header.php:3672
+#: inc/customizer/settings/woocommerce.php:198
+msgid "Icon"
+msgstr "Simge"
+
+#: inc/customizer/settings/header.php:1594
+#: inc/customizer/settings/header.php:3673
+msgid "Link"
+msgstr ""
+
+#: inc/customizer/settings/header.php:1609
+#, fuzzy
+#| msgid "Input Border Color"
+msgid "Menu Items Border Color"
+msgstr "Kenarlık Rengi Girin"
+
+#: inc/customizer/settings/header.php:1626
+#, fuzzy
+#| msgid "Menu Background Color"
+msgid "Sub Menu Background Color"
+msgstr "Menü Arka Plan Rengi"
+
+#: inc/customizer/settings/header.php:1643
+#, fuzzy
+#| msgid "Meta Link Color"
+msgid "Sub Menu Links Color"
+msgstr "Meta Bağlantı Rengi"
+
+#: inc/customizer/settings/header.php:1660
+#, fuzzy
+#| msgid "Meta Link Color: Hover"
+msgid "Sub Menu Links Color: Hover"
+msgstr "Meta Bağlantı Rengi: Hover"
+
+#: inc/customizer/settings/header.php:1676
+#, fuzzy
+#| msgid "Links Background Color"
+msgid "Sub Menu Links Background Color"
+msgstr "Bağlantılar Arka Plan Rengi"
+
+#: inc/customizer/settings/header.php:1693
+#, fuzzy
+#| msgid "Background Color: Hover"
+msgid "Sub Menu Links Background Color: Hover"
+msgstr "Arka plan rengi: Hover"
+
+#: inc/customizer/settings/header.php:1723
+#, fuzzy
+#| msgid "Search Form"
+msgid "Display Search Form"
+msgstr "Arama Formu"
+
+#: inc/customizer/settings/header.php:1740
+#, fuzzy
+#| msgid "Border Width (px)"
+msgid "Border Width"
+msgstr "Sınır Genişliği (px)"
+
+#: inc/customizer/settings/header.php:1741
+#: inc/customizer/settings/header.php:1759
+#: inc/customizer/settings/header.php:3180
+#: inc/customizer/settings/woocommerce.php:1998
+msgid "Add a custom border radius. px - em - %."
+msgstr ""
+
+#: inc/customizer/settings/header.php:1758
+#: inc/customizer/settings/header.php:3179
+#, fuzzy
+#| msgid "Border Radius (px)"
+msgid "Border Radius"
+msgstr "Sınır Yarıçapı (px)"
+
+#: inc/customizer/settings/header.php:1877
+#, fuzzy
+#| msgid "Search Button Color: Hover"
+msgid "Button Color: Hover"
+msgstr "Arama Düğmesi Rengi: Hover"
+
+#: inc/customizer/settings/header.php:1888
+msgid "Header Media"
+msgstr "Başlık Ortamı"
+
+#: inc/customizer/settings/header.php:2025
+msgid "Retina Logo"
+msgstr "Retina Logo"
+
+#: inc/customizer/settings/header.php:2026
+#, fuzzy
+#| msgid "Select a custom logo when the menu is opened."
+msgid "Select a retina logo twice the normal logo size."
+msgstr "Menü açıldığında özel bir logo seçin."
+
+#: inc/customizer/settings/header.php:2050
+msgid "Max Width (px)"
+msgstr "Maksimum Genişlik (px)"
+
+#: inc/customizer/settings/header.php:2084
+#, fuzzy
+#| msgid "Height (px)"
+msgid "Max Height (px)"
+msgstr "Yükseklik (px)"
+
+#: inc/customizer/settings/header.php:2153
+msgid ""
+"Choose a template created in Theme Panel > My Library to replace the "
+"navigation."
+msgstr ""
+
+#: inc/customizer/settings/header.php:2170
+msgid "Top Level Dropdown Icon"
+msgstr "Üst Düzey Açılır Simge"
+
+#: inc/customizer/settings/header.php:2186
+msgid "Second+ Level Dropdown Icon"
+msgstr "İkinci + Seviye Açılır Kutu İkonu"
+
+#: inc/customizer/settings/header.php:2203
+msgid "Dropdown Top Border"
+msgstr "Açılır Kapanır Üst Sınır"
+
+#: inc/customizer/settings/header.php:2241
+msgid "Links Effect"
+msgstr ""
+
+#: inc/customizer/settings/header.php:2247
+msgid "No Effect"
+msgstr ""
+
+#: inc/customizer/settings/header.php:2248
+#, fuzzy
+#| msgid "Center Left"
+msgid "Underline From Left"
+msgstr "Orta Sol"
+
+#: inc/customizer/settings/header.php:2249
+#, fuzzy
+#| msgid "Under Title"
+msgid "Underline Up"
+msgstr "Başlık Altına"
+
+#: inc/customizer/settings/header.php:2250
+msgid "Underline Down"
+msgstr ""
+
+#: inc/customizer/settings/header.php:2251
+msgid "Brackets"
+msgstr ""
+
+#: inc/customizer/settings/header.php:2252
+msgid "Overline & Fixed Underline"
+msgstr ""
+
+#: inc/customizer/settings/header.php:2253
+msgid "Circular Reveal"
+msgstr ""
+
+#: inc/customizer/settings/header.php:2254
+msgid "Tripple Dot Under"
+msgstr ""
+
+#: inc/customizer/settings/header.php:2255
+msgid "X Marks The Spot"
+msgstr ""
+
+#: inc/customizer/settings/header.php:2256
+msgid "Underline & Overline"
+msgstr ""
+
+#: inc/customizer/settings/header.php:2257
+msgid "Backlighting"
+msgstr ""
+
+#: inc/customizer/settings/header.php:2271
+#: inc/customizer/settings/header.php:2288
+#, fuzzy
+#| msgid "Links Color"
+msgid "Links Effect: Color"
+msgstr "Bağlantılar Renk"
+
+#: inc/customizer/settings/header.php:2303
+msgid "Main Styling"
+msgstr "Ana Şekillendirme"
+
+#: inc/customizer/settings/header.php:2318
+msgid "Left/Right Padding (px)"
+msgstr "Sol / Sağ Dolgu (px)"
+
+#: inc/customizer/settings/header.php:2372
+#: inc/customizer/settings/header.php:2562
+msgid "Link Color: Current Menu Item"
+msgstr "Bağlantı Rengi: Geçerli Menü Öğesi"
+
+#: inc/customizer/settings/header.php:2387
+msgid "Link Background"
+msgstr "Bağlantı Arka Planı"
+
+#: inc/customizer/settings/header.php:2402
+#: inc/customizer/settings/header.php:2547
+msgid "Link Background: Hover"
+msgstr "Bağlantı Arka Planı: Hover"
+
+#: inc/customizer/settings/header.php:2417
+#: inc/customizer/settings/header.php:2577
+msgid "Link Background: Current Menu Item"
+msgstr "Bağlantı Arka Planı: Geçerli Menü Öğesi"
+
+#: inc/customizer/settings/header.php:2431
+msgid "Dropdowns Styling"
+msgstr "Açılır Kalıp Şekillendirme"
+
+#: inc/customizer/settings/header.php:2483
+msgid "Top Border Color"
+msgstr "Üst Sınır Rengi"
+
+#: inc/customizer/settings/header.php:2593
+msgid "Search Icon"
+msgstr "Ara Simge"
+
+#: inc/customizer/settings/header.php:2607
+msgid "Search Icon Style"
+msgstr "Ara Simge Stili"
+
+#: inc/customizer/settings/header.php:2613
+#: inc/customizer/settings/woocommerce.php:197
+msgid "Disabled"
+msgstr "Engellendi"
+
+#: inc/customizer/settings/header.php:2614
+#: inc/customizer/settings/header.php:3422
+msgid "Drop Down"
+msgstr "Açılır Liste"
+
+#: inc/customizer/settings/header.php:2615
+msgid "Header Replace"
+msgstr "Üstbilgi Değiştir"
+
+#: inc/customizer/settings/header.php:2616
+msgid "Overlay"
+msgstr "Kaplama"
+
+#: inc/customizer/settings/header.php:2663
+#: inc/customizer/settings/header.php:2765
+msgid "Input Border Color"
+msgstr "Kenarlık Rengi Girin"
+
+#: inc/customizer/settings/header.php:2680
+#: inc/customizer/settings/header.php:2799
+msgid "Input Border Color: Focus"
+msgstr "Giriş Kenarlık Rengi: Odak"
+
+#: inc/customizer/settings/header.php:2697
+msgid "Overlay Background Color"
+msgstr "Kaplama Arka Plan Rengi"
+
+#: inc/customizer/settings/header.php:2731
+#, fuzzy
+#| msgid "Placeholder Color"
+msgid "Input Placeholder Color"
+msgstr "Yer Tutucu Rengi"
+
+#: inc/customizer/settings/header.php:2782
+msgid "Input Border Color: Hover"
+msgstr "Giriş Kenarlık Rengi: Hover"
+
+#: inc/customizer/settings/header.php:2816
+msgid "Close Button Color"
+msgstr "Düğme Kapat Rengi"
+
+#: inc/customizer/settings/header.php:2831
+msgid "Dropdowns Categories Posts"
+msgstr "Açılır Liste Kategoriler Mesajlar"
+
+#: inc/customizer/settings/header.php:2846
+msgid "Category Title: Background"
+msgstr "Kategori Başlığı: Arka Plan"
+
+#: inc/customizer/settings/header.php:2862
+msgid "Category Title: Color"
+msgstr "Kategori Başlığı: Renk"
+
+#: inc/customizer/settings/header.php:2878
+msgid "Posts Links: Color"
+msgstr "Yazı Bağlantılar: Renk"
+
+#: inc/customizer/settings/header.php:2894
+msgid "Posts Links Hover: Color"
+msgstr "Yazı Bağlantılar Hover: Renk"
+
+#: inc/customizer/settings/header.php:2910
+msgid "Posts Date: Color"
+msgstr "Yazı Tarih: Renk"
+
+#: inc/customizer/settings/header.php:2920
+#, fuzzy
+#| msgid "Mobile Menu"
+msgid "Social Menu"
+msgstr "Mobil Menu"
+
+#: inc/customizer/settings/header.php:2934
+#, fuzzy
+#| msgid "Enable Social"
+msgid "Enable Social Menu"
+msgstr "Sosyal Medyayı etkinleştir"
+
+#: inc/customizer/settings/header.php:2969
+msgid "Social Link Style"
+msgstr "Sosyal Bağlantı Stili"
+
+#: inc/customizer/settings/header.php:2976
+msgid "Simple"
+msgstr "Basit"
+
+#: inc/customizer/settings/header.php:2977
+msgid "Colored"
+msgstr "Renkli"
+
+#: inc/customizer/settings/header.php:2979
+msgid "Dark"
+msgstr "Karanlık"
+
+#: inc/customizer/settings/header.php:2993
+#: inc/customizer/settings/topbar.php:403
+msgid "Social Link Target"
+msgstr "Sosyal Bağlantı Hedefi"
+
+#: inc/customizer/settings/header.php:3000
+#: inc/customizer/settings/topbar.php:410
+msgid "New Window"
+msgstr "Yeni Pencere"
+
+#: inc/customizer/settings/header.php:3001
+#: inc/customizer/settings/topbar.php:411
+msgid "Same Window"
+msgstr "Aynı Pencere"
+
+#: inc/customizer/settings/header.php:3151
+#, fuzzy
+#| msgid "Margin Bottom (px)"
+msgid "Margin (px)"
+msgstr "Kenar Boşluğu Alt kısmı (px)"
+
+#: inc/customizer/settings/header.php:3197
+#, fuzzy
+#| msgid "Background Color"
+msgid "Social: Background Color"
+msgstr "Arka plan rengi"
+
+#: inc/customizer/settings/header.php:3213
+#, fuzzy
+#| msgid "Links Hover Background Color"
+msgid "Social Hover: Background Color"
+msgstr "Bağlantılar Arka Plan Rengi: Hover"
+
+#: inc/customizer/settings/header.php:3229
+#, fuzzy
+#| msgid "Social Links Color"
+msgid "Social: Color"
+msgstr "Sosyal Bağlantılar Rengi"
+
+#: inc/customizer/settings/header.php:3245
+#, fuzzy
+#| msgid "Links Hover Color"
+msgid "Social Hover: Color"
+msgstr "Bağlantılar Rengi: Hover"
+
+#: inc/customizer/settings/header.php:3283
+#: inc/customizer/settings/header.php:3538
+#: inc/customizer/settings/typography.php:138
+msgid "Mobile Menu"
+msgstr "Mobil Menu"
+
+#: inc/customizer/settings/header.php:3297
+msgid "Breakpoints"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3298
+msgid "Choose the media query where you want to display the mobile menu."
+msgstr ""
+
+#: inc/customizer/settings/header.php:3304
+msgid "From 1280px"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3305
+msgid "From 1080px"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3306
+#, fuzzy
+#| msgid "From $9.90/mo"
+msgid "From 959px"
+msgstr "Aylık 9,90 $ 'dan itibaren"
+
+#: inc/customizer/settings/header.php:3307
+msgid "From 767px"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3308
+msgid "From 480px"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3309
+msgid "From 320px"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3310
+#, fuzzy
+#| msgid "Custom Header"
+msgid "Custom media query"
+msgstr "Özel Başlık"
+
+#: inc/customizer/settings/header.php:3345
+#, fuzzy
+#| msgid "Select a custom logo when the menu is opened."
+msgid "Select a custom responsive logo for tablet and mobile."
+msgstr "Menü açıldığında özel bir logo seçin."
+
+#: inc/customizer/settings/header.php:3360
+#, fuzzy
+#| msgid "Height (px)"
+msgid "Logo Max Height (px)"
+msgstr "Yükseklik (px)"
+
+#: inc/customizer/settings/header.php:3361
+msgid "Enter a max height for your responsive logo."
+msgstr ""
+
+#: inc/customizer/settings/header.php:3393
+#, fuzzy
+#| msgid "Custom Header"
+msgid "Custom Media Query"
+msgstr "Özel Başlık"
+
+#: inc/customizer/settings/header.php:3394
+msgid ""
+"Enter your custom media query where you want to display the mobile menu."
+msgstr ""
+
+#: inc/customizer/settings/header.php:3415
+#, fuzzy
+#| msgid "Mobile Menu Search"
+msgid "Mobile Menu Style"
+msgstr "Mobil Menu Arama"
+
+#: inc/customizer/settings/header.php:3421
+#: inc/customizer/settings/sidebar.php:40 inc/third/class-beaver-themer.php:136
+msgid "Sidebar"
+msgstr "Yansütün"
+
+#: inc/customizer/settings/header.php:3436
+msgid "Display Menu Text"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3453
+#, fuzzy
+#| msgid "Menu"
+msgid "Menu Text"
+msgstr "Menu"
+
+#: inc/customizer/settings/header.php:3464 inc/helpers.php:3439
+#: partials/mobile/mobile-icon.php:37
+#, fuzzy
+#| msgid "Close Menu"
+msgid "Close"
+msgstr "KAPAT"
+
+#: inc/customizer/settings/header.php:3470
+#, fuzzy
+#| msgid "Close Menu"
+msgid "Close Menu Text"
+msgstr "KAPAT"
+
+#: inc/customizer/settings/header.php:3488
+#, fuzzy
+#| msgid "Enter Icon Class"
+msgid "Hamburger Icon Class"
+msgstr "Simge Sınıfını Girin"
+
+#: inc/customizer/settings/header.php:3489
+#: inc/customizer/settings/header.php:3631
+#, fuzzy
+#| msgid "Enter Icon Class"
+msgid "Enter the full icon class"
+msgstr "Simge Sınıfını Girin"
+
+#: inc/customizer/settings/header.php:3505
+#, fuzzy
+#| msgid "Custom Header"
+msgid "Custom Hamburger Button"
+msgstr "Özel Başlık"
+
+#: inc/customizer/settings/header.php:3523
+#, fuzzy
+#| msgid "Close Button Color"
+msgid "Custom Hamburger Button: Color"
+msgstr "Düğme Kapat Rengi"
+
+#: inc/customizer/settings/header.php:3552
+msgid "Direction"
+msgstr "Yön"
+
+#: inc/customizer/settings/header.php:3573
+#, fuzzy
+#| msgid "Height (px)"
+msgid "Drop Down Max Height (px)"
+msgstr "Yükseklik (px)"
+
+#: inc/customizer/settings/header.php:3574
+msgid ""
+"Add the height from which you want to display the scrollbar in the drop down"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3595
+msgid "Displace"
+msgstr "Yerinden Çıkarın"
+
+#: inc/customizer/settings/header.php:3612
+#, fuzzy
+#| msgid "Close Menu"
+msgid "Close Menu Button"
+msgstr "KAPAT"
+
+#: inc/customizer/settings/header.php:3630
+#, fuzzy
+#| msgid "Close Button Color"
+msgid "Close Menu Button Icon Class"
+msgstr "Düğme Kapat Rengi"
+
+#: inc/customizer/settings/header.php:3643 inc/helpers.php:3440
+#: partials/mobile/mobile-sidr-close.php:20
+msgid "Close Menu"
+msgstr "KAPAT"
+
+#: inc/customizer/settings/header.php:3649
+#, fuzzy
+#| msgid "Close Button Color"
+msgid "Close Menu Button Text"
+msgstr "Düğme Kapat Rengi"
+
+#: inc/customizer/settings/header.php:3687
+msgid "Mobile Menu Search"
+msgstr "Mobil Menu Arama"
+
+#: inc/customizer/settings/header.php:3702
+#, fuzzy
+#| msgid "Styling: Mobile Sidebar Menu"
+msgid "Styling: Mobile Menu"
+msgstr "Şekillendirme: Mobil Kenar Çubuğu Menüsü"
+
+#: inc/customizer/settings/header.php:3717
+msgid "Close Button Background"
+msgstr "Kapat Düğmesi Arka Planı"
+
+#: inc/customizer/settings/header.php:3832
+#, fuzzy
+#| msgid "Background Color: Hover"
+msgid "Links Background Color: Hover"
+msgstr "Arka plan rengi: Hover"
+
+#: inc/customizer/settings/header.php:3849
+msgid "Dropdowns Menus: Background"
+msgstr "Açılır Menüler Menüler: Arka plan"
+
+#: inc/customizer/settings/header.php:3864
+msgid "Searchbar Background"
+msgstr "Arama çubuğu Arka Planı"
+
+#: inc/customizer/settings/header.php:3881
+msgid "Searchbar Color"
+msgstr "Arama çubuğu rengi"
+
+#: inc/customizer/settings/header.php:3897
+msgid "Searchbar Border Color"
+msgstr "Arama çubuğu Kenarlık Rengi"
+
+#: inc/customizer/settings/header.php:3913
+#, fuzzy
+#| msgid "Searchbar Border Color"
+msgid "Searchbar Border Color: Hover"
+msgstr "Arama çubuğu Kenarlık Rengi"
+
+#: inc/customizer/settings/header.php:3930
+msgid "Searchbar Border Color: Focus"
+msgstr "Arama çubuğu Kenarlık Rengi: Odaklanma"
+
+#: inc/customizer/settings/header.php:3946
+msgid "Searchbar Button Color"
+msgstr "Arama Çubuğu Düğmesi Rengi"
+
+#: inc/customizer/settings/header.php:3963
+msgid "Searchbar Button Color: Hover"
+msgstr "Arama Çubuğu Düğmesi Rengi: Hover"
+
+#: inc/customizer/settings/header.php:3978
+#, fuzzy
+#| msgid "Select Color"
+msgid "Select Your Menu"
+msgstr "Renk Seçin"
+
+#: inc/customizer/settings/sidebar.php:150
+msgid "Widgets"
+msgstr "Widgets"
+
+#: inc/customizer/settings/sidebar.php:262
+msgid "Margin Bottom (px)"
+msgstr "Kenar Boşluğu Alt kısmı (px)"
+
+#: inc/customizer/settings/sidebar.php:284
+#, fuzzy
+#| msgid "Titles Border Bottom Color"
+msgid "Titles Border Color"
+msgstr "Başlıklar Kenarlık Alt Renk"
+
+#: inc/customizer/settings/sidebar.php:300
+msgid "Titles Margin Bottom (px)"
+msgstr "Başlıklar Kenar Boşluğu Alt (px)"
+
+#: inc/customizer/settings/topbar.php:62
+msgid "Enable Top Bar"
+msgstr "Üst Çubuğu Etkinleştir"
+
+#: inc/customizer/settings/topbar.php:79
+msgid "Top Bar Full Width"
+msgstr "Üst Bar Tam Genişlik"
+
+#: inc/customizer/settings/topbar.php:127
+msgid "Left Content & Right Social"
+msgstr "İçerik solda ve Sosyal Medya sağda"
+
+#: inc/customizer/settings/topbar.php:128
+msgid "Left Social & Right Content"
+msgstr "İçerik sağda ve Sosyal Medya solda"
+
+#: inc/customizer/settings/topbar.php:129
+msgid "Centered Content & Social"
+msgstr "Ortalanmış İçerik ve Sosyal"
+
+#: inc/customizer/settings/topbar.php:306
+#: inc/customizer/settings/topbar.php:340 inc/helpers.php:2637
+#: inc/helpers.php:2722 inc/third/class-beaver-themer.php:127
+msgid "Content"
+msgstr "İçerik"
+
+#: inc/customizer/settings/topbar.php:321
+msgid ""
+"Choose a template created in Theme Panel > My Library to replace the content."
+msgstr ""
+
+#: inc/customizer/settings/topbar.php:335
+msgid "Place your content here"
+msgstr ""
+
+#: inc/customizer/settings/topbar.php:352
+msgid "Social"
+msgstr "Sosyal"
+
+#: inc/customizer/settings/topbar.php:366
+msgid "Enable Social"
+msgstr "Sosyal Medyayı etkinleştir"
+
+#: inc/customizer/settings/topbar.php:383
+msgid "Social Alternative"
+msgstr "Sosyal Alternatif"
+
+#: inc/customizer/settings/topbar.php:513
+msgid "Social Links Color"
+msgstr "Sosyal Bağlantılar Rengi"
+
+#: inc/customizer/settings/topbar.php:529
+msgid "Social Links Color: Hover"
+msgstr "Sosyal Bağlantılar Rengi Hover"
+
+#: inc/customizer/settings/typography.php:46
+msgid "Body"
+msgstr "Gövde"
+
+#: inc/customizer/settings/typography.php:55
+msgid "All Headings"
+msgstr "Tüm Başlıklar"
+
+#: inc/customizer/settings/typography.php:64
+msgid "Heading 1 (H1)"
+msgstr "Başlık 1 (H1)"
+
+#: inc/customizer/settings/typography.php:73
+msgid "Heading 2 (H2)"
+msgstr "Başlık 2 (H2)"
+
+#: inc/customizer/settings/typography.php:82
+msgid "Heading 3 (H3)"
+msgstr "Başlık 3 (H3)"
+
+#: inc/customizer/settings/typography.php:91
+msgid "Heading 4 (H4)"
+msgstr "Başlık 4 (H4)"
+
+#: inc/customizer/settings/typography.php:119
+msgid "Main Menu"
+msgstr "Ana Menu"
+
+#: inc/customizer/settings/typography.php:128
+msgid "Main Menu: Dropdowns"
+msgstr "Ana Menü: Açılır Menüler"
+
+#: inc/customizer/settings/typography.php:157
+msgid "Page Title Subheading"
+msgstr "Sayfa Başlığı Alt Başlık"
+
+#: inc/customizer/settings/typography.php:176
+msgid "Blog Entry Title"
+msgstr "Blog Başlık Başlığı"
+
+#: inc/customizer/settings/typography.php:185
+msgid "Blog Post Title"
+msgstr "Blog Yazı Başlığı"
+
+#: inc/customizer/settings/typography.php:195
+msgid "Sidebar Widget Heading"
+msgstr "Kenar Çubuğu Widget Başlıkları"
+
+#: inc/customizer/settings/typography.php:206
+msgid "Footer Widget Heading"
+msgstr "Altbilgi Widget Başlıkları"
+
+#: inc/customizer/settings/typography.php:217
+msgid "Footer Copyright"
+msgstr "Altbilgi Telif Hakkı"
+
+#: inc/customizer/settings/typography.php:227
+msgid "Footer Menu"
+msgstr "Altbilgi Menu"
+
+#: inc/customizer/settings/typography.php:257
+msgid "Typography"
+msgstr "Yazı Karakterleri"
+
+#: inc/customizer/settings/typography.php:279
+msgid "Font Subsets"
+msgstr "Yazı tipi Alt Ayarları"
+
+#: inc/customizer/settings/typography.php:378
+msgid "Important: Not all fonts support every font-weight."
+msgstr "Önemli: Tüm yazı tipi her yazı tipi ağırlığını desteklemez."
+
+#: inc/customizer/settings/typography.php:449
+#: inc/customizer/settings/woocommerce.php:1963
+msgid "None"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:569
+msgid "Letter Spacing (px)"
+msgstr "Harf Aralığı (px)"
+
+#: inc/customizer/settings/typography.php:603
+msgid "Font Color"
+msgstr "Yazı rengi"
+
+#: inc/customizer/settings/woocommerce.php:40
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: inc/customizer/settings/woocommerce.php:49
+#: inc/customizer/settings/woocommerce.php:161
+#: inc/customizer/settings/woocommerce.php:576
+msgid ""
+"For some options, you must save and refresh your live site to preview "
+"changes."
+msgstr ""
+"Bazı seçenekler için kaydetmek ve değişiklikleri önizlemek için canlı "
+"sitenizi yenilemek gerekir."
+
+#: inc/customizer/settings/woocommerce.php:63
+msgid "Custom WooCommerce Sidebar"
+msgstr "Özel WooCommerce Kenar Çubuğu"
+
+#: inc/customizer/settings/woocommerce.php:78
+#, fuzzy
+#| msgid "Categories"
+msgid "Category Page"
+msgstr "Kategoriler"
+
+#: inc/customizer/settings/woocommerce.php:92
+#, fuzzy
+#| msgid "Featured Image"
+msgid "Display Featured Image"
+msgstr "Özellikli resim"
+
+#: inc/customizer/settings/woocommerce.php:93
+msgid "Display the categories featured images before the product archives."
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:98
+#: inc/customizer/settings/woocommerce.php:1141
+msgid "Yes"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:99
+#: inc/customizer/settings/woocommerce.php:1142
+msgid "No"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:111
+#, fuzzy
+#| msgid "Cart"
+msgid "Cart Page"
+msgstr "Sepet"
+
+#: inc/customizer/settings/woocommerce.php:125
+msgid "Cross-Sells Count"
+msgstr "Çapraz Satış Sayısı"
+
+#: inc/customizer/settings/woocommerce.php:145
+msgid "Cross-Sells Columns"
+msgstr "Çapraz Satış Kolonu"
+
+#: inc/customizer/settings/woocommerce.php:160
+#, fuzzy
+#| msgid "Menu Cart: Style"
+msgid "Menu Cart"
+msgstr "Menü Sepeti: Stil"
+
+#: inc/customizer/settings/woocommerce.php:175
+msgid "Hide If Empty Cart"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:191
+#, fuzzy
+#| msgid "Displace"
+msgid "Display"
+msgstr "Yerinden Çıkarın"
+
+#: inc/customizer/settings/woocommerce.php:199
+msgid "Icon And Cart Total"
+msgstr "Simge ve Sepet Toplam"
+
+#: inc/customizer/settings/woocommerce.php:200
+msgid "Icon And Cart Count"
+msgstr "Simge ve Sepet Sayısı"
+
+#: inc/customizer/settings/woocommerce.php:201
+#, fuzzy
+#| msgid "Icon And Cart Count"
+msgid "Icon And Cart Count + Total"
+msgstr "Simge ve Sepet Sayısı"
+
+#: inc/customizer/settings/woocommerce.php:221
+msgid "Drop-Down"
+msgstr "Açılır"
+
+#: inc/customizer/settings/woocommerce.php:222
+msgid "Go To Cart"
+msgstr "Sepetinize Git"
+
+#: inc/customizer/settings/woocommerce.php:223
+#: inc/customizer/settings/woocommerce.php:236
+msgid "Custom Link"
+msgstr "Özel Bağlantı"
+
+#: inc/customizer/settings/woocommerce.php:237
+msgid "The Custom Link style need to be selected"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:254
+#, fuzzy
+#| msgid "Search Icon"
+msgid "Cart Icon"
+msgstr "Ara Simge"
+
+#: inc/customizer/settings/woocommerce.php:270
+#, fuzzy
+#| msgid "Custom Fonts"
+msgid "Custom Icon"
+msgstr "Özel yazı tipleri"
+
+#: inc/customizer/settings/woocommerce.php:271
+#, fuzzy
+#| msgid "Enter Icon Class"
+msgid "Enter your full icon class"
+msgstr "Simge Sınıfını Girin"
+
+#: inc/customizer/settings/woocommerce.php:329
+#, fuzzy
+#| msgid "Center Left"
+msgid "Center Vertically"
+msgstr "Orta Sol"
+
+#: inc/customizer/settings/woocommerce.php:330
+msgid "Use this field to center your icon vertically"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:353
+#, fuzzy
+#| msgid "Dropdowns Styling"
+msgid "Cart Dropdown Styling"
+msgstr "Açılır Kalıp Şekillendirme"
+
+#: inc/customizer/settings/woocommerce.php:368
+#, fuzzy
+#| msgid "Boxed Width (px)"
+msgid "Cart Dropdowns Width (px)"
+msgstr "Kutulu Genişlik (px)"
+
+#: inc/customizer/settings/woocommerce.php:389
+msgid "Dropdown Borders Color"
+msgstr "Açılır Kenarlıklar Renk"
+
+#: inc/customizer/settings/woocommerce.php:437
+msgid "Remove Link Color"
+msgstr "Bağlantı Rengini Kaldır"
+
+#: inc/customizer/settings/woocommerce.php:453
+msgid "Remove Link Color: Hover"
+msgstr "Bağlantı Rengini Kaldır: Hover"
+
+#: inc/customizer/settings/woocommerce.php:469
+#: inc/customizer/settings/woocommerce.php:2124
+msgid "Quantity Color"
+msgstr "Miktar Rengi"
+
+#: inc/customizer/settings/woocommerce.php:485
+#: inc/customizer/settings/woocommerce.php:1818
+#: inc/customizer/settings/woocommerce.php:2044
+msgid "Price Color"
+msgstr "Fiyat Rengi"
+
+#: inc/customizer/settings/woocommerce.php:501
+msgid "Subtotal Color"
+msgstr "Alt toplam Renk"
+
+#: inc/customizer/settings/woocommerce.php:517
+msgid "Checkout Button Background"
+msgstr "Ödeme Düğmesi Arka Planı"
+
+#: inc/customizer/settings/woocommerce.php:533
+msgid "Checkout Button Background: Hover"
+msgstr "Ödeme Düğmesi Arka Planı: Hover"
+
+#: inc/customizer/settings/woocommerce.php:549
+msgid "Checkout Button Color"
+msgstr "Ödeme Düğmesi Rengi"
+
+#: inc/customizer/settings/woocommerce.php:565
+msgid "Checkout Button Color: Hover"
+msgstr "Ödeme Düğmesi Rengi: Hover"
+
+#: inc/customizer/settings/woocommerce.php:672
+msgid "Shop Posts Per Page"
+msgstr "Sayfa Başına Mağaza Gönderi Sayısı"
+
+#: inc/customizer/settings/woocommerce.php:703
+msgid "Shop Columns"
+msgstr "Mağaza Sütunları"
+
+#: inc/customizer/settings/woocommerce.php:726
+msgid "Toolbar"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:740
+msgid "Grid/List Buttons"
+msgstr "Izgara / Liste Düğmeleri"
+
+#: inc/customizer/settings/woocommerce.php:756
+msgid "Default Catalog View"
+msgstr "Varsayılan Katalog Görünümü"
+
+#: inc/customizer/settings/woocommerce.php:762
+msgid "Grid View"
+msgstr "Izgara Görünümü"
+
+#: inc/customizer/settings/woocommerce.php:763
+msgid "List View"
+msgstr "Liste görünümü"
+
+#: inc/customizer/settings/woocommerce.php:778
+#, fuzzy
+#| msgid ""
+#| "Length of the short description of the list view, leave empty for full "
+#| "content"
+msgid "Length of the short description of the list view."
+msgstr "Liste görünümü, kısa açıklama uzunluğu tam içerik için boş bırakın"
+
+#: inc/customizer/settings/woocommerce.php:799
+msgid "Shop Sort"
+msgstr "Mağaza Sırala"
+
+#: inc/customizer/settings/woocommerce.php:815
+msgid "Shop Result Count"
+msgstr "Mağaza Sonuç Sayısı"
+
+#: inc/customizer/settings/woocommerce.php:830
+#, fuzzy
+#| msgid "Product Meta"
+msgid "Products"
+msgstr "Ürün Bilgileri"
+
+#: inc/customizer/settings/woocommerce.php:851
+#: inc/customizer/settings/woocommerce.php:1057 inc/helpers.php:2635
+#: inc/helpers.php:2720
+msgid "Title"
+msgstr "Başlık"
+
+#: inc/customizer/settings/woocommerce.php:852
+msgid "Price/Rating"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:853
+#, fuzzy
+#| msgid "Description Color"
+msgid "Description"
+msgstr "Açıklama Renk"
+
+#: inc/customizer/settings/woocommerce.php:854
+#, fuzzy
+#| msgid "Add To Cart Color"
+msgid "Add To Cart Button"
+msgstr "Sepete Ekle Renk"
+
+#: inc/customizer/settings/woocommerce.php:867
+msgid "Product Entry Media"
+msgstr "Ürün Giriş Ortamı"
+
+#: inc/customizer/settings/woocommerce.php:873 inc/helpers.php:2634
+#: inc/helpers.php:2719
+msgid "Featured Image"
+msgstr "Özellikli resim"
+
+#: inc/customizer/settings/woocommerce.php:874
+msgid "Image Swap"
+msgstr "Görüntü Değiştirme"
+
+#: inc/customizer/settings/woocommerce.php:875
+msgid "Gallery Slider"
+msgstr "Galeri Kaydırıcı"
+
+#: inc/customizer/settings/woocommerce.php:888
+#, fuzzy
+#| msgid "Blog Pagination Style"
+msgid "Pagination Style"
+msgstr "Blog Sayfalandırma Stili"
+
+#: inc/customizer/settings/woocommerce.php:956
+msgid "Single"
+msgstr "Tek"
+
+#: inc/customizer/settings/woocommerce.php:1052
+#, fuzzy
+#| msgid "Elements Positioning"
+msgid "Summary Elements Positioning"
+msgstr "Elemanlar Konumlandırma"
+
+#: inc/customizer/settings/woocommerce.php:1058
+msgid "Rating"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:1059
+#, fuzzy
+#| msgid "Price Color"
+msgid "Price"
+msgstr "Fiyat Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1060
+#, fuzzy
+#| msgid "Excerpt Length"
+msgid "Excerpt"
+msgstr "Alıntı Uzunluğu"
+
+#: inc/customizer/settings/woocommerce.php:1061
+#, fuzzy
+#| msgid "Quantity Color"
+msgid "Quantity & Add To Cart"
+msgstr "Miktar Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1062
+msgid "Product Meta"
+msgstr "Ürün Bilgileri"
+
+#: inc/customizer/settings/woocommerce.php:1076
+#, fuzzy
+#| msgid "Position"
+msgid "Tabs Position"
+msgstr "Pozisyon"
+
+#: inc/customizer/settings/woocommerce.php:1096
+msgid "Up-Sells Count"
+msgstr "Artış Satış Sayısı"
+
+#: inc/customizer/settings/woocommerce.php:1116
+msgid "Up-Sells Columns"
+msgstr "Artış Satış Kolonu"
+
+#: inc/customizer/settings/woocommerce.php:1136
+#, fuzzy
+#| msgid "Display Latest Posts"
+msgid "Display Related Items"
+msgstr "Son Mesajları Göster"
+
+#: inc/customizer/settings/woocommerce.php:1155
+msgid "Related Items Count"
+msgstr "İlgili Öğeler Sayısı"
+
+#: inc/customizer/settings/woocommerce.php:1175
+msgid "Related Products Columns"
+msgstr "İlgili Ürünler Kolonları"
+
+#: inc/customizer/settings/woocommerce.php:1190
+msgid "Advanced Styling"
+msgstr "Gelişmiş Şekillendirme"
+
+#: inc/customizer/settings/woocommerce.php:1205
+msgid "On Sale Background"
+msgstr "İndirim Arka Plan"
+
+#: inc/customizer/settings/woocommerce.php:1221
+msgid "On Sale Color"
+msgstr "İndirim Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1237
+msgid "Out of Stock Background"
+msgstr "Stokta Mevcut Değil Arka Plan"
+
+#: inc/customizer/settings/woocommerce.php:1253
+msgid "Out of Stock Color"
+msgstr "Stokta Mevcut Değil Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1269
+msgid "Stars Color Before"
+msgstr "Yıldızlar Rengi Önce"
+
+#: inc/customizer/settings/woocommerce.php:1285
+msgid "Stars Color"
+msgstr "Yıldızlar Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1299
+msgid "Product Entry: Toolbar"
+msgstr "Ürün Girişi: Araç Çubuğu"
+
+#: inc/customizer/settings/woocommerce.php:1314
+msgid "Border Top/Bottom Color"
+msgstr "Kenarlık Üstü / Alt Renk"
+
+#: inc/customizer/settings/woocommerce.php:1330
+msgid "Grid/List Color"
+msgstr "Izgara / Liste Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1346
+msgid "Grid/List Border Color"
+msgstr "Izgara / Liste Kenarlık Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1362
+msgid "Grid/List Hover Color"
+msgstr "Izgara / Liste Hover Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1378
+msgid "Grid/List Active Color"
+msgstr "Izgara / Liste Aktif Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1394
+msgid "Select Color"
+msgstr "Renk Seçin"
+
+#: inc/customizer/settings/woocommerce.php:1410
+msgid "Select Border Color"
+msgstr "Kenarlık Rengini seçin"
+
+#: inc/customizer/settings/woocommerce.php:1426
+msgid "Number of Products Color"
+msgstr "Ürün Sayısı Renk"
+
+#: inc/customizer/settings/woocommerce.php:1442
+msgid "Number of Products Inactive Color"
+msgstr "Ürün Sayısı Aktif Olmayan Renk"
+
+#: inc/customizer/settings/woocommerce.php:1458
+msgid "Number of Products Border Color"
+msgstr "Ürün Sayısı Kenarlık Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1472
+msgid "Product Entry"
+msgstr "Ürün Girişi"
+
+#: inc/customizer/settings/woocommerce.php:1770
+msgid "Category Color: Hover"
+msgstr "Kategori Renk: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1786
+#: inc/customizer/settings/woocommerce.php:2028
+msgid "Title Color"
+msgstr "Başlık Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1802
+msgid "Title Color: Hover"
+msgstr "Başlık Rengi: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1834
+#: inc/customizer/settings/woocommerce.php:2060
+msgid "Del Price Color"
+msgstr "Del Fiyatı Renk"
+
+#: inc/customizer/settings/woocommerce.php:1848
+#, fuzzy
+#| msgid "Product Entry: Toolbar"
+msgid "Product Entry: Add To Cart"
+msgstr "Ürün Girişi: Araç Çubuğu"
+
+#: inc/customizer/settings/woocommerce.php:1862
+#, fuzzy
+#| msgid "Add To Cart Border Color"
+msgid "Add To Cart Background Color"
+msgstr "Sepete Ekle Kenarlık Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1877
+#, fuzzy
+#| msgid "Add To Cart Border Color: Hover"
+msgid "Add To Cart Background Color: Hover"
+msgstr "Sepete Ekle Kenarlık Rengi: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1893
+msgid "Add To Cart Color"
+msgstr "Sepete Ekle Renk"
+
+#: inc/customizer/settings/woocommerce.php:1909
+msgid "Add To Cart Color: Hover"
+msgstr "Sepete Ekle Renk: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1925
+msgid "Add To Cart Border Color"
+msgstr "Sepete Ekle Kenarlık Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1941
+msgid "Add To Cart Border Color: Hover"
+msgstr "Sepete Ekle Kenarlık Rengi: Hover"
+
+#: inc/customizer/settings/woocommerce.php:1957
+#, fuzzy
+#| msgid "Add To Cart Border Color"
+msgid "Add To Cart Border: Style"
+msgstr "Sepete Ekle Kenarlık Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1964
+msgid "Solid"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:1965
+msgid "Double"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:1966
+msgid "Dashed"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:1967
+msgid "Dotted"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:1980
+#, fuzzy
+#| msgid "Add To Cart Border Color"
+msgid "Add To Cart Border: Size"
+msgstr "Sepete Ekle Kenarlık Rengi"
+
+#: inc/customizer/settings/woocommerce.php:1981
+msgid "Add a custom border size. px - em - %."
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:1997
+#, fuzzy
+#| msgid "Add To Cart Border Color"
+msgid "Add To Cart Border: Radius"
+msgstr "Sepete Ekle Kenarlık Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2013
+msgid "Single Product"
+msgstr "Tek Ürün"
+
+#: inc/customizer/settings/woocommerce.php:2076
+msgid "Description Color"
+msgstr "Açıklama Renk"
+
+#: inc/customizer/settings/woocommerce.php:2092
+msgid "Quantity Border Color"
+msgstr "Miktar Sınır Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2108
+msgid "Quantity Border Color Focus"
+msgstr "Miktar Sınır Rengi Kokus"
+
+#: inc/customizer/settings/woocommerce.php:2140
+msgid "Quantity Plus/Minus Color"
+msgstr "Artan Miktar / Eksi Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2156
+msgid "Quantity Plus/Minus Color: Hover"
+msgstr "Artan Miktar / Eksi Rengi: Hover"
+
+#: inc/customizer/settings/woocommerce.php:2172
+msgid "Quantity Plus/Minus Border Color: Hover"
+msgstr "Artan Miktar / Eksi Kenarlık Rengi: Hover"
+
+#: inc/customizer/settings/woocommerce.php:2188
+msgid "Meta Title Color"
+msgstr "Meta Başlığı Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2204
+msgid "Meta Link Color"
+msgstr "Meta Bağlantı Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2220
+msgid "Meta Link Color: Hover"
+msgstr "Meta Bağlantı Rengi: Hover"
+
+#: inc/customizer/settings/woocommerce.php:2234
+msgid "Single Product: Thumbnails"
+msgstr "Tek Ürün: Küçük resimler"
+
+#: inc/customizer/settings/woocommerce.php:2249
+msgid "Next/Prev Background: Hover"
+msgstr "Sonraki / Önceki Arka Plan: Hover"
+
+#: inc/customizer/settings/woocommerce.php:2265
+msgid "Next/Prev Color"
+msgstr "Sonraki / Önceki Renk"
+
+#: inc/customizer/settings/woocommerce.php:2279
+msgid "Single Product: Tabs"
+msgstr "Tek Ürün: Sekmeler"
+
+#: inc/customizer/settings/woocommerce.php:2326
+msgid "Text Color: Hover"
+msgstr "Metin Rengi: Hover"
+
+#: inc/customizer/settings/woocommerce.php:2342
+msgid "Active Text Color"
+msgstr "Aktif Metin Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2358
+msgid "Active Text Borders Color"
+msgstr "Etkin Metin Kenarlıkları Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2374
+msgid "Product Description: Title Color"
+msgstr "Ürün Açıklaması: Başlık Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2390
+msgid "Product Description: Color"
+msgstr "Ürün Açıklaması: Renk"
+
+#: inc/customizer/settings/woocommerce.php:2404
+msgid "Account"
+msgstr "Hesap"
+
+#: inc/customizer/settings/woocommerce.php:2419
+msgid "Navigation: Borders Color"
+msgstr "Gezinme: Kenarlıklar Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2435
+msgid "Navigation: Icons Color"
+msgstr "Gezinme: Simgeler Renk"
+
+#: inc/customizer/settings/woocommerce.php:2451
+msgid "Navigation: Links Color"
+msgstr "Gezinme: Bağlantılar Renk"
+
+#: inc/customizer/settings/woocommerce.php:2467
+msgid "Navigation: Links Color: Hover"
+msgstr "Gezinme: Bağlantılar Renk: Hover"
+
+#: inc/customizer/settings/woocommerce.php:2483
+msgid "Addresses: Box Background"
+msgstr "Adresler: Kutu Arka Planı"
+
+#: inc/customizer/settings/woocommerce.php:2499
+msgid "Addresses: Box Title Color"
+msgstr "Adresler: Kutu Başlığı Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2515
+msgid "Addresses: Box Title Border Bottom Color"
+msgstr "Adresler: Kutu Başlığı Kenarlık Alt Renk"
+
+#: inc/customizer/settings/woocommerce.php:2531
+msgid "Addresses: Box Content Color"
+msgstr "Adresler: Kutu İçeriği Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2547
+msgid "Addresses: Box Button Background"
+msgstr "Adresler: Kutu Düğmesi Arka Planı"
+
+#: inc/customizer/settings/woocommerce.php:2563
+msgid "Addresses: Box Button Background: Hover"
+msgstr "Adresler: Kutu Düğmesi Arka Plan: Üzerine gelin"
+
+#: inc/customizer/settings/woocommerce.php:2579
+msgid "Addresses: Box Button color"
+msgstr "Adresler: Kutu Düğmesi rengi"
+
+#: inc/customizer/settings/woocommerce.php:2595
+msgid "Addresses: Box Button color: Hover"
+msgstr "Adresler: Kutu Düğme rengi: Bekletme"
+
+#: inc/customizer/settings/woocommerce.php:2609
+msgid "Cart"
+msgstr "Sepet"
+
+#: inc/customizer/settings/woocommerce.php:2640
+msgid "Head Background"
+msgstr "Başlık Arka Planı"
+
+#: inc/customizer/settings/woocommerce.php:2656
+msgid "Head Titles Color"
+msgstr "Başlık Başlıkları Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2672
+msgid "Cart Totals Table: Titles Color"
+msgstr "Sepet Toplamları Tablo: Başlık Renk"
+
+#: inc/customizer/settings/woocommerce.php:2687
+msgid "Remove Button Color"
+msgstr "Düğme Rengini Kaldır"
+
+#: inc/customizer/settings/woocommerce.php:2703
+msgid "Remove Button Color: Hover"
+msgstr "Düğme Rengini Kaldır: Hover"
+
+#: inc/customizer/settings/woocommerce.php:2717
+msgid "Checkout"
+msgstr "Ödeme Yapın"
+
+#: inc/customizer/settings/woocommerce.php:2732
+msgid "Notices: Borders Color"
+msgstr "Bildirimler: Kenarlıklar Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2748
+msgid "Notices: Icon Color"
+msgstr "Bildirimler: Simge Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2764
+msgid "Notices: Color"
+msgstr "Bildirimler: Renk"
+
+#: inc/customizer/settings/woocommerce.php:2780
+msgid "Notices: Link Color"
+msgstr "Bildirimler: Bağlantı Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2796
+msgid "Notices: Link Color: Hover"
+msgstr "Bildirimler: Bağlantı Rengi: Hover"
+
+#: inc/customizer/settings/woocommerce.php:2812
+msgid "Notices Form: Border Color"
+msgstr "Bildirimler Form: Sınır Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2828
+msgid "Titles Color"
+msgstr "Başlıklar Renk"
+
+#: inc/customizer/settings/woocommerce.php:2844
+msgid "Titles Border Bottom Color"
+msgstr "Başlıklar Kenarlık Alt Renk"
+
+#: inc/customizer/settings/woocommerce.php:2860
+msgid "Table Main Background"
+msgstr "Tablo Ana Arka Plan"
+
+#: inc/customizer/settings/woocommerce.php:2876
+msgid "Table Titles Color"
+msgstr "Tablo Başlıkları Renk"
+
+#: inc/customizer/settings/woocommerce.php:2892
+msgid "Table Borders Color"
+msgstr "Tablo Kenarlıkları Rengi"
+
+#: inc/customizer/settings/woocommerce.php:2908
+msgid "Payment Methods Background"
+msgstr "Ödeme Yöntemleri Arka Plan"
+
+#: inc/customizer/settings/woocommerce.php:2924
+msgid "Payment Methods Borders Color"
+msgstr "Ödeme Yöntemleri Sınırlar Renk"
+
+#: inc/customizer/settings/woocommerce.php:2940
+msgid "Payment Box Background"
+msgstr "Ödeme Kutusu Arka Planı"
+
+#: inc/customizer/settings/woocommerce.php:2956
+msgid "Payment Box Color"
+msgstr "Ödeme Kutusu Rengi"
+
+#: inc/helpers.php:1488 partials/mobile/mobile-fullscreen-search.php:28
+msgid "Type your search"
+msgstr "Buradan Arayın"
+
+#: inc/helpers.php:1726
+msgid "Recent Posts"
+msgstr "Son Yazılan Yazılar"
+
+#: inc/helpers.php:1739
+msgid "Search Results Found"
+msgstr "Sonuç Bulundu"
+
+#: inc/helpers.php:1757
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Günlük Arşivler: %s"
+
+#: inc/helpers.php:1762
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Aylık Arşivler: %s"
+
+#: inc/helpers.php:1762
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/helpers.php:1767
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Yıllık Arşivler: %s"
+
+#: inc/helpers.php:1789
+msgid "404: Page Not Found"
+msgstr "404: Sayfa Bulunamadı"
+
+#: inc/helpers.php:1845
+msgid "You searched for:"
+msgstr "Şunun için aradınız:"
+
+#: inc/helpers.php:1850
+msgid "This author has written"
+msgstr "Bu yazar yazdı"
+
+#: inc/helpers.php:1850
+msgid "articles"
+msgstr "haberler"
+
+#: inc/helpers.php:2638
+msgid "Read More"
+msgstr "Daha fazla okuyun"
+
+#: inc/helpers.php:2723
+msgid "Tags"
+msgstr "Etiketler"
+
+#: inc/helpers.php:2724
+msgid "Social Share"
+msgstr "Sosyal Paylaşma"
+
+#: inc/helpers.php:2725
+msgid "Next/Prev Links"
+msgstr "Sonraki/Önceki Linkler"
+
+#: inc/helpers.php:2726
+msgid "Author Box"
+msgstr "Yazar Kutusu"
+
+#: inc/helpers.php:2727
+msgid "Related Posts"
+msgstr "İlgili Yazılar"
+
+#: inc/helpers.php:2816
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: inc/helpers.php:2816
+msgid "(Edit)"
+msgstr "(Düzenle)"
+
+#: inc/helpers.php:2834
+#, php-format
+msgid "%s "
+msgstr "%s "
+
+#: inc/helpers.php:2843
+msgid "edit"
+msgstr "düzenle"
+
+#: inc/helpers.php:2855
+msgid "Your comment is awaiting moderation."
+msgstr "Yorumunuz değerleme bekliyor."
+
+#: inc/helpers.php:2885
+msgid "Name (required)"
+msgstr "İsim (gerekli)"
+
+#: inc/helpers.php:2887
+msgid "Email (required)"
+msgstr "E-postanız (gerekli)"
+
+#: inc/helpers.php:2889
+msgid "Website"
+msgstr "İnternet Siteniz"
+
+#: inc/helpers.php:2989 inc/helpers.php:3043 woocommerce/loop/pagination.php:57
+msgid "Newer Posts"
+msgstr "Yeni Yazılar"
+
+#: inc/helpers.php:2992 inc/helpers.php:3044 woocommerce/loop/pagination.php:58
+msgid "Older Posts"
+msgstr "Eski Yazılar"
+
+#: inc/helpers.php:3312
+msgid "OceanWP"
+msgstr ""
+
+#: inc/helpers.php:3359
+#, fuzzy
+#| msgid "Default"
+msgid "Default Icon"
+msgstr "Varsayılan"
+
+#: inc/helpers.php:3360
+msgid "3D X"
+msgstr ""
+
+#: inc/helpers.php:3361
+msgid "3D X Reverse"
+msgstr ""
+
+#: inc/helpers.php:3362
+msgid "3D Y"
+msgstr ""
+
+#: inc/helpers.php:3363
+msgid "3D Y Reverse"
+msgstr ""
+
+#: inc/helpers.php:3364
+msgid "3D XY"
+msgstr ""
+
+#: inc/helpers.php:3365
+msgid "3D XY Reverse"
+msgstr ""
+
+#: inc/helpers.php:3366
+#, fuzzy
+#| msgid "Arrow Icon"
+msgid "Arrow"
+msgstr "Ok Simgesi"
+
+#: inc/helpers.php:3367
+msgid "Arrow Reverse"
+msgstr ""
+
+#: inc/helpers.php:3368
+msgid "Arrowalt"
+msgstr ""
+
+#: inc/helpers.php:3369
+msgid "Arrowalt Reverse"
+msgstr ""
+
+#: inc/helpers.php:3370
+#, fuzzy
+#| msgid "Arrow Icon"
+msgid "Arrowturn"
+msgstr "Ok Simgesi"
+
+#: inc/helpers.php:3371
+msgid "Arrowturn Reverse"
+msgstr ""
+
+#: inc/helpers.php:3372
+msgid "Boring"
+msgstr ""
+
+#: inc/helpers.php:3373
+msgid "Collapse"
+msgstr ""
+
+#: inc/helpers.php:3374
+msgid "Collapse Reverse"
+msgstr ""
+
+#: inc/helpers.php:3375
+msgid "Elastic"
+msgstr ""
+
+#: inc/helpers.php:3376
+msgid "Elastic Reverse"
+msgstr ""
+
+#: inc/helpers.php:3377
+#, fuzzy
+#| msgid "Minute %s"
+msgid "Minus"
+msgstr "Dakika %s"
+
+#: inc/helpers.php:3378
+#, fuzzy
+#| msgid "Gallery Slider"
+msgid "Slider"
+msgstr "Galeri Kaydırıcı"
+
+#: inc/helpers.php:3379
+msgid "Slider Reverse"
+msgstr ""
+
+#: inc/helpers.php:3380
+msgid "Spin"
+msgstr ""
+
+#: inc/helpers.php:3381
+msgid "Spin Reverse"
+msgstr ""
+
+#: inc/helpers.php:3382
+msgid "Spring"
+msgstr ""
+
+#: inc/helpers.php:3383
+msgid "Spring Reverse"
+msgstr ""
+
+#: inc/helpers.php:3384
+#, fuzzy
+#| msgid "Standard"
+msgid "Stand"
+msgstr "Standart"
+
+#: inc/helpers.php:3385
+msgid "Stand Reverse"
+msgstr ""
+
+#: inc/helpers.php:3386
+msgid "Squeeze"
+msgstr ""
+
+#: inc/helpers.php:3387
+msgid "Vortex"
+msgstr ""
+
+#: inc/helpers.php:3388
+msgid "Vortex Reverse"
+msgstr ""
+
+#: inc/helpers.php:3441
+msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
+msgstr ""
+
+#: inc/helpers.php:3463
+msgid "Twitter"
+msgstr ""
+
+#: inc/helpers.php:3467
+msgid "Facebook"
+msgstr ""
+
+#: inc/helpers.php:3471
+#, fuzzy
+#| msgid "Google Fonts"
+msgid "Google Plus"
+msgstr "Google yazı tipleri"
+
+#: inc/helpers.php:3475
+#, fuzzy
+#| msgid "Center Left"
+msgid "Pinterest"
+msgstr "Orta Sol"
+
+#: inc/helpers.php:3479
+msgid "Dribbble"
+msgstr ""
+
+#: inc/helpers.php:3483
+msgid "VK"
+msgstr ""
+
+#: inc/helpers.php:3487
+#, fuzzy
+#| msgid "Install"
+msgid "Instagram"
+msgstr "Kurun"
+
+#: inc/helpers.php:3491
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/helpers.php:3495
+msgid "Tumblr"
+msgstr ""
+
+#: inc/helpers.php:3499
+msgid "Github"
+msgstr ""
+
+#: inc/helpers.php:3503
+msgid "Flickr"
+msgstr ""
+
+#: inc/helpers.php:3507
+msgid "Skype"
+msgstr ""
+
+#: inc/helpers.php:3511
+msgid "Youtube"
+msgstr ""
+
+#: inc/helpers.php:3515
+msgid "Vimeo"
+msgstr ""
+
+#: inc/helpers.php:3519
+msgid "Vine"
+msgstr ""
+
+#: inc/helpers.php:3523
+msgid "Xing"
+msgstr ""
+
+#: inc/helpers.php:3527
+msgid "Yelp"
+msgstr ""
+
+#: inc/helpers.php:3531
+msgid "Tripadvisor"
+msgstr ""
+
+#: inc/helpers.php:3535
+msgid "RSS"
+msgstr "RSS"
+
+#: inc/helpers.php:3539
+msgid "Email"
+msgstr "E-Posta"
+
+#: inc/plugins/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr "Gerekli Eklentileri yükleyin"
+
+#: inc/plugins/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr "Eklentileri yükleyin"
+
+#: inc/plugins/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Eklenti Yükleme: %s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr "Eklenti Güncelleme: %s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr "Eklenti API sında bir sorun oluştu."
+
+#: inc/plugins/class-tgm-plugin-activation.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Bu tema aşağıdaki eklentiyi gerektiriyor: %1$s."
+msgstr[1] "Bu tema aşağıdaki eklentileri gerektiriyor: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Bu tema aşağıdaki eklentiyi önerir: %1$s."
+msgstr[1] "Bu tema aşağıdaki eklentileri önerir: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"Bu temayla maksimum uyumluluk sağlamak için aşağıdaki eklentinin en son "
+"sürüme geçirilmesi gerekiyor: %1$s."
+msgstr[1] ""
+"Bu temayla maksimum uyumluluk sağlamak için aşağıdaki eklentilerin en yeni "
+"sürüme güncellenmesi gerekir: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "Şu an için kullanılabilir bir güncelleme var: %1$s."
+msgstr[1] "Aşağıdaki eklentiler için mevcut güncellemeler var: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "Şu gerekli eklenti şu anda etkin değil: %1$s."
+msgstr[1] "Şu gerekli eklentiler şu anda etkin değil: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "Şu önerilen eklenti şu anda etkin değil: %1$s."
+msgstr[1] "Şu önerilen eklentiler şu anda etkin değil: %1$s."
+
+#: inc/plugins/class-tgm-plugin-activation.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Eklenti kurmaya başlayın"
+msgstr[1] "Eklentileri kurmaya başlayın"
+
+#: inc/plugins/class-tgm-plugin-activation.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Eklentiyi güncellemeye başlayın"
+msgstr[1] "Eklentileri güncellemeye başlayın"
+
+#: inc/plugins/class-tgm-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Eklentiyi etkinleştirmeye başlayın"
+msgstr[1] "Eklentileri etkinleştirmeye başlayın"
+
+#: inc/plugins/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr "Gerekli Eklentilere Dön Installer'a Dön"
+
+#: inc/plugins/class-tgm-plugin-activation.php:386
+#: inc/plugins/class-tgm-plugin-activation.php:827
+#: inc/plugins/class-tgm-plugin-activation.php:2533
+#: inc/plugins/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr "Gösterge Tablosuna Geri Dön"
+
+#: inc/plugins/class-tgm-plugin-activation.php:387
+#: inc/plugins/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr "Eklenti başarıyla etkinleştirildi."
+
+#: inc/plugins/class-tgm-plugin-activation.php:388
+#: inc/plugins/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Aşağıdaki eklenti başarıyla etkinleştirildi:"
+msgstr[1] "Aşağıdaki eklentiler başarıyla etkinleştirildi:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Hiçbir işlem yapılmadı. Eklenti %1$s zaten etkin."
+
+#: inc/plugins/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Eklenti etkinleştirilmedi. Bu tema için %s daha yüksek bir sürümü gerekiyor. "
+"Lütfen eklentiyi güncelleyin."
+
+#: inc/plugins/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Tüm eklentiler başarıyla yüklendi ve etkinleştirildi. %1$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr "Bu uyarıyı kapat"
+
+#: inc/plugins/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+"Yüklemek, güncellemek veya etkinleştirmek için gereken bir veya daha fazla "
+"gerekli veya önerilen eklenti vardır."
+
+#: inc/plugins/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr "Lütfen yardım için bu sitenin yöneticisiyle iletişime geçin."
+
+#: inc/plugins/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr "Güncelleştirme gerekli"
+
+#: inc/plugins/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"Uzaktaki eklenti paketi istenen sümüklü bir klasörü içermiyor ve yeniden "
+"adlandırma çalışmadı."
+
+#: inc/plugins/class-tgm-plugin-activation.php:934
+#: inc/plugins/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+"Lütfen eklenti sağlayıcısına başvurun ve eklentilerini WordPress "
+"yönergelerine göre paketlemelerini isteyin."
+
+#: inc/plugins/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"Uzaktan eklenti paketi birden fazla dosyadan oluşur, ancak dosyalar bir "
+"klasöre paketlenmez."
+
+#: inc/plugins/class-tgm-plugin-activation.php:1121
+#: inc/plugins/class-tgm-plugin-activation.php:2948
+msgid "and"
+msgstr "ve"
+
+#: inc/plugins/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr "TGMPA v%s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr "Gerekli"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr "Tavsiye edilen"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr "WordPress Deposu"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr "Dış kaynak"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr "Ön Paketlenmiş"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr "Yüklü değil"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr "Yüklü, ancak Aktifleştirilmemiş"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr "Aktif"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr "Gerekli Güncelleme Kullanılmıyor"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr "Güncelleme Gerekiyor"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr "Tavsiye edilen güncelleme"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "Tüm <span class=\"count\">(%s)</span>"
+msgstr[1] "Tüm <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "Kurun <span class=\"count\">(%s)</span>"
+msgstr[1] "Kurun <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Güncelleme var <span class=\"count\">(%s)</span>"
+msgstr[1] "Güncelleme var <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "Aktivasyon yapmak için <span class=\"count\">(%s)</span>"
+msgstr[1] "Aktivasyon yapmak için <span class=\"count\">(%s)</span>"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "bilinmiyor"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr "Kurulu sürüm:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr "Minimum gerekli sürüm:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr "Mevcut sürüm:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr "Yüklemek, güncellemek veya etkinleştirmek için hiçbir eklenti yok."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr "Eklenti"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr "Tip"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr "Versiyon"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr "Durum"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr "Yükleyin %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr "Güncelleyin %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr "Aktivasyon yapın %2$s"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr "Eklenti yazarından mesajı yeni sürüme geçir:"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr "Kurun"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr "Güncelleyin"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr "Aktivasyon yapın"
+
+#: inc/plugins/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Kurulacak herhangi bir eklenti seçilmedi. Hiçbir işlem yapılmadı."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Güncellenecek hiçbir eklenti seçilmedi. Hiçbir işlem yapılmadı."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr "Şu anda kurulacak herhangi bir eklenti yok."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr "Şu anda güncellenecek hiçbir eklenti yok."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr "Etkinleştirilecek eklenti seçilmedi. Hiçbir işlem yapılmadı."
+
+#: inc/plugins/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr "Şu anda etkinleştirilecek eklentiler yok."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr "Eklenti etkinleştirmesi başarısız oldu."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Eklenti güncelleniyor %1$s (%2$d/%3$d)"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "Yüklenirken bir hata oluştu %1$s: <strong>%2$s</strong>."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "Kurulumun %1$s başarısız oldu."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Kurulum ve etkinleştirme işlemi başlıyor. Bu işlem biraz zaman alabilir, bu "
+"yüzden lütfen sabırlı olun."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s yüklendi ve başarıyla etkinleştirildi."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3509
+#: inc/plugins/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr "Detayları göster"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3509
+#: inc/plugins/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr "Detayları gizle"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr "Tüm kurulumlar ve etkinleştirmeler tamamlandı."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Eklentiyi Kurma ve Etkinleştirme %1$s (%2$d/%3$d)"
+
+#: inc/plugins/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Kurulum işlemi başlıyor. Bu işlem bazı konut sunucuları üzerinde biraz zaman "
+"alabilir, bu yüzden lütfen sabırlı olun."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s başarıyla yüklendi."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr "Tüm kurulumlar tamamlandı."
+
+#: inc/plugins/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Eklenti Yükleme %1$s (%2$d/%3$d)"
+
+#: inc/third/class-beaver-themer.php:93
+#, fuzzy
+#| msgid "Pages"
+msgid "Page"
+msgstr "Sayfalar"
+
+#: inc/third/class-beaver-themer.php:95
+#, fuzzy
+#| msgid "Before The Logo"
+msgid "Before Page"
+msgstr "Logodan Önce"
+
+#: inc/third/class-beaver-themer.php:96
+msgid "After Page"
+msgstr ""
+
+#: inc/third/class-beaver-themer.php:102
+#, fuzzy
+#| msgid "Top Bar"
+msgid "Before Top Bar"
+msgstr "Üst Çubuk"
+
+#: inc/third/class-beaver-themer.php:103
+msgid "Before Top Bar Inner"
+msgstr ""
+
+#: inc/third/class-beaver-themer.php:104
+msgid "After Top Bar Inner"
+msgstr ""
+
+#: inc/third/class-beaver-themer.php:105
+#, fuzzy
+#| msgid "Top Bar"
+msgid "After Top Bar"
+msgstr "Üst Çubuk"
+
+#: inc/third/class-beaver-themer.php:111
+#, fuzzy
+#| msgid "Top Header"
+msgid "Before Header"
+msgstr "Üst Başlık"
+
+#: inc/third/class-beaver-themer.php:112
+msgid "Before Header Inner"
+msgstr ""
+
+#: inc/third/class-beaver-themer.php:113
+msgid "After Header Inner"
+msgstr ""
+
+#: inc/third/class-beaver-themer.php:114
+#, fuzzy
+#| msgid "Header"
+msgid "After Header"
+msgstr "Başlık"
+
+#: inc/third/class-beaver-themer.php:118
+#, fuzzy
+#| msgid "Page Header Title"
+msgid "Page Header"
+msgstr "Sayfa Başlığı Başlığı"
+
+#: inc/third/class-beaver-themer.php:120
+#, fuzzy
+#| msgid "Featured Image In Page Header"
+msgid "Before Page Header"
+msgstr "Öne Çıkan Resim Sayfa Başlığı İçinde"
+
+#: inc/third/class-beaver-themer.php:121
+#, fuzzy
+#| msgid "Page Header Title"
+msgid "Before Page Header Inner"
+msgstr "Sayfa Başlığı Başlığı"
+
+#: inc/third/class-beaver-themer.php:122
+#, fuzzy
+#| msgid "Page Header Title"
+msgid "After Page Header Inner"
+msgstr "Sayfa Başlığı Başlığı"
+
+#: inc/third/class-beaver-themer.php:123
+#, fuzzy
+#| msgid "Page Header Title"
+msgid "After Page Header"
+msgstr "Sayfa Başlığı Başlığı"
+
+#: inc/third/class-beaver-themer.php:129
+#, fuzzy
+#| msgid "Content"
+msgid "Before Content"
+msgstr "İçerik"
+
+#: inc/third/class-beaver-themer.php:130
+msgid "Before Content Inner"
+msgstr ""
+
+#: inc/third/class-beaver-themer.php:131
+#, fuzzy
+#| msgid "Center Center"
+msgid "After Content Inner"
+msgstr "Orta Orta"
+
+#: inc/third/class-beaver-themer.php:132
+#, fuzzy
+#| msgid "Content"
+msgid "After Content"
+msgstr "İçerik"
+
+#: inc/third/class-beaver-themer.php:138
+#, fuzzy
+#| msgid "WooCommerce Sidebar"
+msgid "Before Sidebar"
+msgstr "WooCommerce Yansütün"
+
+#: inc/third/class-beaver-themer.php:139
+msgid "Before Sidebar Inner"
+msgstr ""
+
+#: inc/third/class-beaver-themer.php:140
+msgid "After Sidebar Inner"
+msgstr ""
+
+#: inc/third/class-beaver-themer.php:141
+#, fuzzy
+#| msgid "Sidebar"
+msgid "After Sidebar"
+msgstr "Yansütün"
+
+#: inc/third/class-beaver-themer.php:147
+#, fuzzy
+#| msgid "Before The Logo"
+msgid "Before Footer"
+msgstr "Logodan Önce"
+
+#: inc/third/class-beaver-themer.php:148
+msgid "Before Footer Inner"
+msgstr ""
+
+#: inc/third/class-beaver-themer.php:149
+msgid "After Footer Inner"
+msgstr ""
+
+#: inc/third/class-beaver-themer.php:150
+#, fuzzy
+#| msgid "Fixed Footer"
+msgid "After Footer"
+msgstr "Sabit Altbilgi"
+
+#: inc/walker/init.php:70
+msgid "Template"
+msgstr ""
+
+#: inc/walker/init.php:70
+msgid "Theme Panel > My Library"
+msgstr ""
+
+#: inc/walker/init.php:72
+msgid "Select A Template"
+msgstr ""
+
+#: inc/walker/init.php:87
+msgid "Disable link"
+msgstr "Bağlantıyı devre dışı bırak"
+
+#: inc/walker/init.php:94
+msgid "Display Latest Posts"
+msgstr "Son Mesajları Göster"
+
+#: inc/walker/init.php:101
+msgid "Enable megamenu"
+msgstr "Megamenu etkinleştir"
+
+#: inc/walker/init.php:107
+msgid "Megamenu auto width?"
+msgstr "Megamenu otomatik genişliği?"
+
+#: inc/walker/init.php:112
+#, fuzzy
+#| msgid "Megamenu columns (from 2 to 6)"
+msgid "Megamenu columns (from 1 to 6)"
+msgstr "Megamenu sütunları (2'den 6'ya kadar)"
+
+#: inc/walker/init.php:119
+msgid "Hide Mega menu heading?"
+msgstr "Mega menü başlığını gizle?"
+
+#: inc/walker/init.php:124
+msgid "Mega Menu Widget Area"
+msgstr "Mega Menü Widget Alanı"
+
+#: inc/walker/init.php:126
+msgid "Select Widget Area"
+msgstr "Widget Alanı'nı seçin"
+
+#: inc/walker/menu-walker.php:222
+msgid "Latest in"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:295
+msgid "WooCommerce Sidebar"
+msgstr "WooCommerce Yansütün"
+
+#: inc/woocommerce/woocommerce-config.php:395
+msgid "Grid view"
+msgstr "Kafes görünümü"
+
+#: inc/woocommerce/woocommerce-config.php:396
+msgid "List view"
+msgstr "Liste görünümü"
+
+#: inc/woocommerce/woocommerce-config.php:545
+msgid "Out of Stock"
+msgstr "Tükendi"
+
+#: inc/woocommerce/woocommerce-config.php:772
+msgid "Welcome!"
+msgstr "Hoşgeldiniz!"
+
+#: inc/woocommerce/woocommerce-config.php:781
+msgid "Logout"
+msgstr "Çıkış Yapın"
+
+#: inc/woocommerce/woocommerce-config.php:1183
+msgid "Your cart"
+msgstr "Sepetiniz"
+
+#: inc/woocommerce/woocommerce-config.php:1209
+msgid "WooCommerce Product Title"
+msgstr "WooCommerce Ürün Adı"
+
+#: inc/woocommerce/woocommerce-config.php:1220
+#, fuzzy
+#| msgid "WooCommerce Product Title"
+msgid "WooCommerce Product Price"
+msgstr "WooCommerce Ürün Adı"
+
+#: inc/woocommerce/woocommerce-config.php:1230
+#, fuzzy
+#| msgid "WooCommerce Product Title"
+msgid "WooCommerce Product Add To Cart"
+msgstr "WooCommerce Ürün Adı"
+
+#: inc/woocommerce/woocommerce-helpers.php:90
+#: woocommerce/loop/thumbnail/featured-image.php:50
+msgid "Placeholder Image"
+msgstr "Yer Tutucu Resim"
+
+#: partials/entry/meta.php:42 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:48
+msgid "0 Comments"
+msgstr "0 Yorum"
+
+#: partials/entry/meta.php:42 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:48
+msgid "1 Comment"
+msgstr "1 Yorum"
+
+#: partials/entry/meta.php:42 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:48
+msgid "% Comments"
+msgstr "% Yorumlar"
+
+#: partials/entry/readmore.php:14 partials/search/readmore.php:14
+#: partials/single/next-prev.php:28
+msgid "Continue Reading"
+msgstr "Okumaya devam edin"
+
+#: partials/header/search-overlay.php:21
+msgid "Type your text and hit enter to search"
+msgstr "Aradığınızı yazın ve Enter'a basın"
+
+#: partials/header/search-replace.php:18
+msgid "Type then hit enter to search..."
+msgstr "Aradığınızı yazın ve Enter'a basın..."
+
+#: partials/header/style/medium-header-search.php:24
+#: partials/header/style/vertical-header-search.php:24
+msgid "Search..."
+msgstr "Ara..."
+
+#: partials/mobile/mobile-search.php:18 searchform.php:17
+msgid "Search"
+msgstr "Ara"
+
+#: partials/none.php:11
+#, fuzzy, php-format
+#| msgid ""
+#| "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? %1$sGet started here%2$s."
+msgstr ""
+"İlk yazınızı yayınlamaya hazır mısınız? <a href=\"%1$s\">Buradan başlayın</"
+"a>."
+
+#: partials/none.php:13
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with "
+"different keywords."
+msgstr "Üzgünüz aradığınız bulunamadı. Lütfen başka bir kelime ile arayınız."
+
+#: partials/none.php:15
+msgid "There aren't any posts currently published in this category."
+msgstr "Bu kategoride henüz yayınlanmış yazı yok."
+
+#: partials/none.php:17
+msgid "There aren't any posts currently published under this taxonomy."
+msgstr "Bu kategoride henüz yayınlanmış yazı yok."
+
+#: partials/none.php:19
+msgid "There aren't any posts currently published under this tag."
+msgstr "Bu etiketi taşıyan henüz yayınlanmış yazı yok."
+
+#: partials/none.php:21
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+msgstr "Üzgünüz, aradığınızı bulamadık."
+
+#: partials/page/article.php:18 partials/single/content.php:19
+msgid "Pages:"
+msgstr "Sayfalar:"
+
+#: partials/single/author-bio.php:36 partials/single/author-bio.php:47
+msgid "Visit Author Page"
+msgstr "Yazarın Sayfasını Ziyaret Edin"
+
+#: partials/single/next-prev.php:24
+msgid "Previous Post"
+msgstr "Önceki Yazı"
+
+#: partials/single/next-prev.php:25
+msgid "Next Post"
+msgstr "Sonraki Yazı"
+
+#: partials/single/related-posts.php:19
+msgid "You Might Also Like"
+msgstr "Benzer Yazılar"
+
+#: woocommerce/checkout/form-coupon.php:28
+msgid "Have a coupon?"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:28
+msgid "Click here to enter your code"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:37
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:41
+msgid "Apply coupon"
+msgstr ""
+
+#: woocommerce/global/result-count.php:60
+msgid "View:"
+msgstr "Bakın:"
+
+#: woocommerce/global/result-count.php:63
+msgid "All"
+msgstr "Hepsi"
+
+#~ msgid "Custom CSS/JS"
+#~ msgstr "Özel CSS/JS"
+
+#~ msgid "Custom JS"
+#~ msgstr "Özel JS"
+
+#~ msgid "You need to reload to see the changes."
+#~ msgstr "Değişiklikleri görmek için tekrar yükleyin."
+
+#~ msgid ""
+#~ "The following shortcodes can be added:%1$s %2$s[oceanwp_date]%3$s To show "
+#~ "a dynamic date.%1$s %2$s[oceanwp_site_url]%3$s To add a homepage link."
+#~ msgstr ""
+#~ "Aşağıdaki kısayollar eklenebilir:%1$s %2$s[oceanwp_date]%3$s Dinamik bir "
+#~ "tarih göstermek için%1$s %2$s [oceanwp_site_url]%3$s Ana sayfa bağlantısı "
+#~ "eklemek için."
+
+#~ msgid "Padding (DECREPITATED)"
+#~ msgstr "Dolgu (DECREPITATED)"
+
+#~ msgid ""
+#~ "This field will be removed in OceanWP 1.2.0, add your value(s) in the "
+#~ "dimensions control below"
+#~ msgstr ""
+#~ "Bu alan OceanWP 1.2.0'da kaldırılacak, değerlerinizi aşağıdaki boyut "
+#~ "kontrollerine ekleyeceksiniz"
+
+#~ msgid "Page ID"
+#~ msgstr "Sayfa ID"
+
+#~ msgid "Choose a page to replace the widgets by this page."
+#~ msgstr "Widgets tarafından Bu sayfa yerine bir sayfa seçin."
+
+#~ msgid "Border Width (DECREPITATED)"
+#~ msgstr "Sınır Genişliği (DECREPITATED)"
+
+#~ msgid "Choose a page where the content will be displayed in the header."
+#~ msgstr "İçeriği üstbilgide gösterilecek bir sayfa seçin."
+
+#~ msgid "Used for retina."
+#~ msgstr "Retinada kullanılır."
+
+#~ msgid "Menu Social"
+#~ msgstr "Menu Sosyal"
+
+#~ msgid "Enable Menu Social"
+#~ msgstr "Sosyal Menuyu Etkinleştirin"
+
+#~ msgid "Simple Social Links Color"
+#~ msgstr "Basit Sosyal Bağlantılar Rengi"
+
+#~ msgid "Simple Social Links Color: Hover"
+#~ msgstr "Basit Sosyal Bağlantılar Rengi: Hover"
+
+#~ msgid ""
+#~ "The following shortcodes can be added:%1$s %2$s[oceanwp_login]%3$s To add "
+#~ "a login/logout link.%1$s %2$s[oceanwp_search]%3$s To show a search form."
+#~ msgstr ""
+#~ "Aşağıdaki kısa kodlar eklenebilir:%1$s %2$s[oceanwp_login]%3$s Bir oturum "
+#~ "açma / çıkış bağlantısı eklemek için.%1$s %2$s[oceanwp_search]%3$s Bir "
+#~ "arama formunu göstermek için."
+
+#~ msgid "Choose a page to display the content of such page."
+#~ msgstr "Böyle bir sayfanın içeriğini görüntülemek için bir sayfa seçin."
+
+#~ msgid "Mobile Menu: Dropdowns"
+#~ msgstr "Mobil Menü: Açılır Menüler"
+
+#~ msgid "Menu Cart: Display"
+#~ msgstr "Menü Sepeti: Göster"
+
+#~ msgid "Menu Cart: Custom Link"
+#~ msgstr "Menü Sepeti: Özel Bağlantı"
+
+#~ msgid "Styling: Cart Dropdowns"
+#~ msgstr "Şekillendirme: Sepet Açılır Kutu"
+
+#~ msgid "Loading..."
+#~ msgstr "Yükleniyor..."
+
+#~ msgid ""
+#~ "Enter your extension license keys here to receive updates for purchased "
+#~ "extensions. If your license key has expired, please %1$srenew your license"
+#~ "%2$s."
+#~ msgstr ""
+#~ "Satın alınan uzantıların güncellemelerini almak için uzantı lisans "
+#~ "anahtarlarınızı buraya girin. Lisans anahtarınız dolduysa, lütfen "
+#~ "%1$slisansınızı yenileyin%2$s."
+
+#~ msgid ""
+#~ "Your license key expired on %1$s. Please <a href=\"%2$s\" target=\"_blank"
+#~ "\">renew your license key</a>."
+#~ msgstr ""
+#~ "Lisans anahtarınızın süresi doldu %1$s. Lütfen <a href=\"%2$s\" target="
+#~ "\"_blank\">lisans anahtarınızı yenileyin</a>."
+
+#~ msgid ""
+#~ "Your license key has been disabled. Please <a href=\"%1$s\" target="
+#~ "\"_blank\">contact support</a> for more information."
+#~ msgstr ""
+#~ "Lisans anahtarı devre dışı bırakıldı. Lütfen <a href=\"%1$s\" target="
+#~ "\"_blank\">desteğe başvurun</a> daha fazla bilgi için."
+
+#~ msgid ""
+#~ "Invalid license. Please <a href=\"%1$s\" target=\"_blank\">visit your "
+#~ "account page</a> and verify it."
+#~ msgstr ""
+#~ "Geçersiz lisans. Lütfen <a href=\"%1$s\" target=\"_blank\">hesap "
+#~ "sayfanızı ziyaret edin</a> ve doğrulayın."
+
+#~ msgid ""
+#~ "Your %1$s is not active for this URL. Please <a href=\"%2$s\" target="
+#~ "\"_blank\">visit your account page</a> to manage your license key URLs."
+#~ msgstr ""
+#~ "Bu URL için %1$s etkin değil. Lisans anahtarı URL'lerinizi yönetmek için "
+#~ "lütfen <a href=\"%2$s\" target=\"_blank\">hesap sayfanızı</a>ziyaret edin."
+
+#~ msgid "This appears to be an invalid license key for %1$s."
+#~ msgstr "Bu, %1$s için geçersiz bir lisans anahtarı gibi görünüyor."
+
+#~ msgid ""
+#~ "Your license key has reached its activation limit. <a href=\"%1$s\">View "
+#~ "possible upgrades</a> now."
+#~ msgstr ""
+#~ "Lisans anahtarınız aktivasyon yapma sınırına ulaştı. <a href=\"%s\" "
+#~ "target=\"_blank\">Olası yükseltmeleri görün</a> şimdi."
+
+#~ msgid ""
+#~ "The key you entered belongs to a bundle, please use the product specific "
+#~ "license key."
+#~ msgstr ""
+#~ "Girdiğiniz anahtar bir paket için, lütfen ürün için geçerli lisans "
+#~ "anahtarı kullanın."
+
+#~ msgid "unknown_error"
+#~ msgstr "bilinmeyen hata"
+
+#~ msgid ""
+#~ "There was an error with this license key: %1$s. Please <a href=\"%2$s"
+#~ "\">contact our support team</a>."
+#~ msgstr ""
+#~ "Bu lisans anahtarı ile bir hata oluştu: %1$s. <a href=\"%2$s\">Destek "
+#~ "ekibimize ulaşın</a>lütfen."
+
+#~ msgid "License key never expires."
+#~ msgstr "Lisans anahtarı hiçbir zaman sona ermez."
+
+#~ msgid ""
+#~ "Your license key expires soon! It expires on %1$s. <a href=\"%2$s\" "
+#~ "target=\"_blank\">Renew your license key</a>."
+#~ msgstr ""
+#~ "Lisans anahtarınız kısa süre içerisinde tükeniyor! Üzerinde sona eriyor "
+#~ "%1$s. <a href=\"%2$s\" target=\"_blank\">Lisans anahtarınızı yenileyin</"
+#~ "a>."
+
+#~ msgid "Your license key expires on %1$s."
+#~ msgstr "Lisans anahtarınızın süresi doluyor %1$s."
+
+#~ msgid "To receive updates, please enter your valid %1$s license key."
+#~ msgstr "Güncellemeleri almak için, lütfen geçerli %1$s lisans anahtarı."
+
+#~ msgid "%1$s License Key"
+#~ msgstr "%1$s lisans anahtarı"
+
+#~ msgid "Deactivate License"
+#~ msgstr "Lisansı Devre Dışı Bırak"
+
+#~ msgid ""
+#~ "There is a new version of %1$s available. <a target=\"_blank\" class="
+#~ "\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+#~ msgstr ""
+#~ "Yeni bir sürümü %1$s var. <a target=\"_blank\" class=\"thickbox\" href="
+#~ "\"%2$s\">Sürüm detaylarını %3$s görün</a>."
+
+#~ msgid ""
+#~ "There is a new version of %1$s available. <a target=\"_blank\" class="
+#~ "\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+#~ "\">update now</a>."
+#~ msgstr ""
+#~ "Yeni bir sürümü %1$s var. <a target=\"_blank\" class=\"thickbox\" href="
+#~ "\"%2$s\">Sürüm detaylarını %3$s görün</a> veya <a href=\"%4$s\">şimdi "
+#~ "güncelleyin</a>."
+
+#~ msgid "You do not have permission to install plugin updates"
+#~ msgstr "Eklenti güncellemelerini yüklemek için izniniz yok"
+
+#~ msgid "Error"
+#~ msgstr "Hata"
+
+#~ msgid ""
+#~ "Thanks for choosing OceanWP! You can read hints and tips on how get the "
+#~ "most out of your new theme on the %1$swelcome screen%2$s."
+#~ msgstr ""
+#~ "OceanWP'yi seçtiğiniz için teşekkür ederiz! İpuçları ve kullanım "
+#~ "ipuçlarını yeni temanızın %shoşgeldiniz%s ekranda bulabilirsiniz."
+
+#~ msgid "Get started with OceanWP"
+#~ msgstr "OceanWP ile başlayın"
+
+#~ msgid "Theme"
+#~ msgstr "Tema"
+
+#~ msgid "Join us on Twitter"
+#~ msgstr "Twitter'da bize katılın"
+
+#~ msgid "Join us on Facebook"
+#~ msgstr "Facebook'da bize katılın"
+
+#~ msgid "Find us on GitHub"
+#~ msgstr "GitHub'da bizi bulun"
+
+#~ msgid "Thank you for using OceanWP"
+#~ msgstr "OceanWP'yi kullandığınız için teşekkür ederiz"
+
+#~ msgid ""
+#~ "OceanWP is the perfect theme for your project. Lightweight and highly "
+#~ "extendible, it will enable you to create almost any type of site with a "
+#~ "beautiful & professional design. There are several options to personalise "
+#~ "your website, multiple widget regions, a responsive design and much more. "
+#~ "Developers will love his extensible codebase making it a joy to customise "
+#~ "and extend."
+#~ msgstr ""
+#~ "OceanWP, projeniz için mükemmel bir temadır. Hafif ve son derece "
+#~ "genişletilebilir, güzel ve profesyonel bir tasarıma sahip hemen hemen her "
+#~ "tür site oluşturmanıza olanak tanır. Web sitenizi, birden fazla widget "
+#~ "bölgenizi, duyarlı bir tasarım ve çok daha fazlasını kişiselleştirmek "
+#~ "için çeşitli seçenekler bulunmaktadır. Geliştiriciler, genişletilebilir "
+#~ "kod tabanını sevecek ve özelleştirecek ve genişletecek bir sevinç haline "
+#~ "gelecektir."
+
+#~ msgid "The perfect theme to use with your favorite page builder!"
+#~ msgstr "En sevdiğiniz sayfa oluşturucunuzla kullanmak için mükemmel tema!"
+
+#~ msgid "Extend his functionalities with our extensions"
+#~ msgstr "Onun işlevlerini uzantılarımızla genişletin"
+
+#~ msgid ""
+#~ "Check our free and premium extensions that extend OceanWP&rsquo;s "
+#~ "functionality and make it more powerful."
+#~ msgstr ""
+#~ "OceanWP'nin işlevselliğini genişleten ücretsiz ve premium uzantılarımıza "
+#~ "göz atın ve daha güçlü olmasını sağlayın."
+
+#~ msgid "Ocean Extra"
+#~ msgstr "Ocean Extra"
+
+#~ msgid "free"
+#~ msgstr "ücretsiz"
+
+#~ msgid ""
+#~ "Add extra features like metaboxes, import/export and a panel to activate "
+#~ "the extensions."
+#~ msgstr ""
+#~ "Metabox'lar, alma / verme ve uzantıları etkinleştirmek için bir panel "
+#~ "gibi ek özellikler ekleyin."
+
+#~ msgid "Elementor Widgets"
+#~ msgstr "Elementor Widgets"
+
+#~ msgid ""
+#~ "Add some awesome new widgets to the popular free page builder Elementor."
+#~ msgstr ""
+#~ "Popüler ücretsiz sayfa oluşturucu Elementor'a harika yeni widget ekleyin."
+
+#~ msgid ""
+#~ "Generates an unlimited number of sidebars and place them on any page or "
+#~ "post."
+#~ msgstr ""
+#~ "Sınırsız sayıda yan çubuk oluşturur ve herhangi bir sayfaya veya yayına "
+#~ "yerleştirir."
+
+#~ msgid "Sticky Header"
+#~ msgstr "Yapışkan üstbilgi"
+
+#~ msgid ""
+#~ "A simple extension to attach the header at the top of your screen with an "
+#~ "animation."
+#~ msgstr ""
+#~ "Başlıkları bir animasyonla ekranınızın üst kısmına eklemek için basit bir "
+#~ "uzantı."
+
+#~ msgid "Footer Callout"
+#~ msgstr "Altbilgi  Çağırması"
+
+#~ msgid ""
+#~ "Add some relevant/important information about your company or product in "
+#~ "your footer."
+#~ msgstr ""
+#~ "Altbilginize şirketiniz veya ürününüz hakkında bazı önemli / önemli "
+#~ "bilgiler ekleyin."
+
+#~ msgid "Side Panel"
+#~ msgstr "Yan panel"
+
+#~ msgid ""
+#~ "Display a panel on the right or left with your favorite widgets by "
+#~ "clicking on an icon in the menu."
+#~ msgstr ""
+#~ "Menüde bir simgeye tıklayarak sağda veya solda favori widget'larınızla "
+#~ "birlikte bir panel görüntüleyin."
+
+#~ msgid "Demo Import"
+#~ msgstr "Demo İçe Aktarma"
+
+#~ msgid ""
+#~ "Import the OceanWP demo content, widgets and customizer settings with one "
+#~ "click."
+#~ msgstr ""
+#~ "Tek bir tıklama ile OceanWP demo içeriğini, widget'lerini ve "
+#~ "özelleştirici ayarlarını içe aktarın."
+
+#~ msgid "Social Sharing"
+#~ msgstr "Sosyal Paylaşım"
+
+#~ msgid ""
+#~ "A simple extension to add your prefered social sharing buttons to your "
+#~ "single posts."
+#~ msgstr ""
+#~ "Tercih edilen sosyal paylaşım düğmelerinizi tekli yayınlarınıza eklemek "
+#~ "için basit bir uzantı."
+
+#~ msgid "View all OceanWP extensions"
+#~ msgstr "Tüm OceanWP uzantılarını görüntüle"
+
+#~ msgid "Create your WordPress site quickly with Themecloud"
+#~ msgstr "Themecloud ile WordPress sitenizi hızlı bir şekilde oluşturun"
+
+#~ msgid "What is Themecloud?"
+#~ msgstr "Themecloud nedir?"
+
+#~ msgid ""
+#~ "It&rsquo;s a better way to build WordPress websites, instant setup, no "
+#~ "coding required. They are removed all of the technical hurdles standing "
+#~ "between you and your ideal site. Don’t worry about installations, "
+#~ "configurations, migrations and maintenance. Focus on creating stellar "
+#~ "content – and watch your business skyrocket! Not convinced yet?"
+#~ msgstr ""
+#~ "WordPress web sitelerini oluşturmak için daha iyi bir yol, anında "
+#~ "kurulum, kodlamanın gerekli olmaması. Sizinle ideal siteniz arasında "
+#~ "kalan tüm teknik engeller kaldırılırlar. Yüklemeler, yapılandırmalar, "
+#~ "geçişler ve bakım konusunda endişelenmeyin. Yıldız içeriği yaratmaya "
+#~ "odaklanın - ve işinizin fırtınasını izleyin! Henüz ikna olmadın mı?"
+
+#~ msgid "Look at this great review from WPKube"
+#~ msgstr "WPKube'dan bu harika yoruma göz atın"
+
+#~ msgid "( 15-day free trial, no credit card required )"
+#~ msgstr "(15 günlük ücretsiz deneme, kredi kartı gerekmez)"
+
+#~ msgid "Learn more about Themecloud"
+#~ msgstr "Themecloud hakkında daha fazla bilgi edinin"
+
+#~ msgid "Getting started with OceanWP"
+#~ msgstr "OceanWP'ye başlarken"
+
+#~ msgid ""
+#~ "Take a look in the options of the Customizer and see yourself how easy "
+#~ "and quick to customize the theme as you wish."
+#~ msgstr ""
+#~ "Özelleştirici seçeneklerine bir göz atın ve temayı istediğiniz gibi nasıl "
+#~ "kolay ve hızlı bir şekilde özelleştirebileceğinizi görün."
+
+#~ msgid "Upload your logo"
+#~ msgstr "Logonuzu yükleyin"
+
+#~ msgid "Add your own logo and retina logo used for the mobile design."
+#~ msgstr "Add your own logo and retina logo used for the mobile design."
+
+#~ msgid "Go to the option"
+#~ msgstr "Seçeneğe git"
+
+#~ msgid "Add your favicon"
+#~ msgstr "Favicon'unuzu ekleyin"
+
+#~ msgid "The favicon is used as a browser and app icon for your website."
+#~ msgstr ""
+#~ "Favicon web siteniz için bir tarayıcı ve uygulama simgesi olarak "
+#~ "kullanılır."
+
+#~ msgid "Choose your primary color"
+#~ msgstr "Birincil renginizi seçin"
+
+#~ msgid "Replace the default primary and hover color by your own colors."
+#~ msgstr ""
+#~ "Varsayılan birincil ve fareyle rengini kendi renklerinizle değiştirin."
+
+#~ msgid "Change the links color"
+#~ msgstr "Change the links color"
+
+#~ msgid "Choose the color and hover color of your links for the entire site."
+#~ msgstr "Tüm site için bağlantının rengini ve fareyle rengini seçin."
+
+#~ msgid "Choose your typography"
+#~ msgstr "Tipografinizi seçin"
+
+#~ msgid "Choose your own typography for any parts of your website."
+#~ msgstr "Web sitenizin herhangi bir bölümü için kendi tipografinizi seçin."
+
+#~ msgid "Top bar options"
+#~ msgstr "Üst çubuk seçenekleri"
+
+#~ msgid "Enable/Disable the top bar, add your own paddings and colors."
+#~ msgstr ""
+#~ "Üst çubuğu etkinleştir / devre dışı bırak, kendi paddings'lerini ve "
+#~ "renklerini ekleyin."
+
+#~ msgid "Header options"
+#~ msgstr "Başlık seçenekleri"
+
+#~ msgid "Choose the style, the height and the colors for your site header."
+#~ msgstr "Site başlığınızın stilini, yüksekliğini ve renklerini seçin."
+
+#~ msgid "Footer bottom options"
+#~ msgstr "Altbilgi alt seçenekleri"
+
+#~ msgid "Add your copyright, paddings and colors for the footer bottom."
+#~ msgstr ""
+#~ "Altbilgi tabanı için telif hakkınızı, palet ve renklerinizi ekleyin."
+
+#~ msgid "Customize Your Site"
+#~ msgstr "Sitenizi Özelleştirin"
+
+#~ msgid "Contribute to OceanWP"
+#~ msgstr "OceanWP'ye katkıda bulunun"
+
+#~ msgid ""
+#~ "You&rsquo;ve found a bug? Want to contribute a patch, create a new "
+#~ "feature or extension?"
+#~ msgstr ""
+#~ "Bir hata mı buldun? Bir yamaya katkıda bulunmak, yeni bir özellik veya "
+#~ "uzantı oluşturmak ister misiniz?"
+
+#~ msgid "GitHub is the place to go!"
+#~ msgstr "GitHub gitmek için yer!"
+
+#~ msgid "Get support"
+#~ msgstr "Yardım alın"
+
+#~ msgid ""
+#~ "You can find a wide range of information on how to use and customise "
+#~ "OceanWP in our"
+#~ msgstr ""
+#~ "OceanWP'yi nasıl kullanacağınız ve özelleştireceğiniz hakkında bir çok "
+#~ "bilgiyi bulabilirsiniz"
+
+#~ msgid "documentation"
+#~ msgstr "belgeler"
+
+#~ msgid "If you need help?"
+#~ msgstr "Yardıma ihtiyacınız olursa?"
+
+#~ msgid "open a support ticket"
+#~ msgstr "yardım için etiket oluşturun"
+
+#~ msgid "Recommended plugins"
+#~ msgstr "Tavsiye edilen eklentiler"
+
+#~ msgid ""
+#~ "Below you will find links to plugins I personally like and recommend. "
+#~ "None of these plugins are required for your theme to work, they simply "
+#~ "add additional functionality."
+#~ msgstr ""
+#~ "Aşağıda, kişisel olarak beğendiğim ve tavsiye ettiğim eklentilere "
+#~ "bağlantılar bulabilirsiniz. Bu eklentilerin hiçbiri temanızın çalışması "
+#~ "için gerekli değildir, sadece ek işlevsellik ekler."
+
+#~ msgid ""
+#~ "Manage multiple contact forms and customize the form and the mail "
+#~ "contents with markups."
+#~ msgstr ""
+#~ "Birden fazla kişi formunu yönetin ve form ve posta içeriğini "
+#~ "biçimlendirmelerle özelleştirin."
+
+#~ msgid ""
+#~ "Gravity Forms is the easiest tool to create advanced forms for your "
+#~ "WordPress powered website."
+#~ msgstr ""
+#~ "Gravity Forms, WordPress web siteniz için gelişmiş formlar oluşturmak "
+#~ "için en kolay araçtır."
+
+#~ msgid ""
+#~ "The most advanced frontend drag & drop page builder. Create high-end, "
+#~ "pixel perfect websites."
+#~ msgstr ""
+#~ "En gelişmiş ön uç sürükleme ve bırakma sayfası oluşturucu. Üst düzey, "
+#~ "piksel mükemmel web siteleri oluşturun."
+
+#~ msgid ""
+#~ "A drag and drop WordPress Page Builder. Create with ease beautiful & "
+#~ "professional pages."
+#~ msgstr ""
+#~ "Sürükle bırak WordPress Sayfa Oluşturucu. Kolaylıkla güzel ve profesyonel "
+#~ "sayfalar oluşturun."
+
+#~ msgid ""
+#~ "Visual Composer is the ultimate plugin for building every WordPress site "
+#~ "without coding."
+#~ msgstr ""
+#~ "Visual Composer, her WordPress sitesini kodlamadan oluşturmak için "
+#~ "mükemmel eklentidir."
+
+#~ msgid ""
+#~ "It&rsquo;s not just a slider, build modern & mobile friendly "
+#~ "presentations for your website in no time."
+#~ msgstr ""
+#~ "Bu sadece bir kaydırıcı değil, hiçbir zaman web siteniz için modern ve "
+#~ "mobil uyumlu sunumlar oluşturun."
+
+#~ msgid ""
+#~ "A powerful and flexible plugin that makes it a breeze for users to sign-"
+#~ "up and become members."
+#~ msgstr ""
+#~ "Kullanıcıların kaydolması ve üye olması için bir esinti haline getiren "
+#~ "güçlü ve esnek bir eklentidir."
+
+#~ msgid ""
+#~ "WooCommerce is a free eCommerce plugin that allows you to sell anything, "
+#~ "beautifully."
+#~ msgstr ""
+#~ "WooCommerce ücretsiz e-ticaret eklentisidir, her şeyi en güzel bir "
+#~ "biçimde satmanızı sağlar."
+
+#~ msgid "More Recommended Plugins"
+#~ msgstr "Daha fazla tavsiye edilen eklentiler"
+
+#~ msgid "Sale!"
+#~ msgstr "İndirim!"

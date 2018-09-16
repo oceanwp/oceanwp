@@ -1,0 +1,404 @@
+.effect-one #site-navigation-wrap .dropdown-menu > li {
+	> a.menu-link {
+	    > span {
+	    	position: relative;
+
+	    	&:after {
+			    display: block;
+			    background-color: #13aff0;
+			    position: absolute;
+			    bottom: -30%;
+			    left: 0;
+			    content: '';
+			    width: 100%;
+			    height: 2px;
+			    visibility: hidden;
+			    -moz-transform: scaleX(0);
+			    -webkit-transform: scaleX(0);
+			    transform: scaleX(0);
+			    transform-origin: bottom left;
+				@include transition( all .25s ease-out );
+			}
+		}
+
+		&:hover > span:after {
+		    visibility: visible;
+		    -moz-transform: scaleX(1);
+		    -webkit-transform: scaleX(1);
+		    transform: scaleX(1);
+		}
+	}
+
+	&.sfHover > a.menu-link > span:after {
+		visibility: visible;
+	    -moz-transform: scaleX(1);
+	    -webkit-transform: scaleX(1);
+	    transform: scaleX(1);
+	}
+
+}
+
+.effect-two #site-navigation-wrap .dropdown-menu > li {
+	> a.menu-link {
+	    > span {
+	    	position: relative;
+
+	    	&:after {
+			    position: absolute;
+			    bottom: -30%;
+			    left: 0;
+			    width: 100%;
+			    height: 3px;
+			    background-color: rgba(0,0,0,0.1);
+			    content: '';
+			    opacity: 0;
+				@include transition( all .25s ease-out );
+				@include transform( translateY(10px) );
+			}
+		}
+
+		&:hover > span:after {
+			opacity: 1;
+			@include transform( translateY(0) );
+		}
+	}
+
+	&.sfHover > a.menu-link > span:after {
+		opacity: 1;
+		@include transform( translateY(0) );
+	}
+
+}
+
+.effect-three #site-navigation-wrap .dropdown-menu > li {
+	> a.menu-link {
+	    > span {
+	    	position: relative;
+
+	    	&:after {
+			    position: absolute;
+			    bottom: -30%;
+			    left: 0;
+			    width: 100%;
+			    height: 1px;
+			    background-color: #13aff0;
+			    content: '';
+			    opacity: 0;
+				@include transition( all .25s ease-out );
+				@include transform( translateY(-10px) );
+			}
+		}
+
+		&:hover > span:after {
+			height: 2px;
+			opacity: 1;
+			@include transform( translateY(0) );
+		}
+	}
+
+	&.sfHover > a.menu-link > span:after {
+		height: 2px;
+		opacity: 1;
+		@include transform( translateY(0) );
+	}
+
+}
+
+.effect-four #site-navigation-wrap .dropdown-menu > li {
+	> a.menu-link {
+	    > span {
+	    	position: relative;
+
+	    	&:before,
+	    	&:after {
+			    display: inline-block;
+			    color: #13aff0;
+			    opacity: 0;
+			    @include transition( all .25s ease-out );
+			}
+
+	    	&:before {
+			    margin-right: 6px;
+			    content: '[';
+			    @include transform( translateX(20px) );
+			}
+
+	    	&:after {
+			    margin-left: 6px;
+			    content: ']';
+			    @include transform( translateX(-20px) );
+			}
+		}
+
+		&:hover > span:before,
+		&:hover > span:after {
+			opacity: 1;
+			@include transform( translateX(0) );
+		}
+	}
+
+	&.sfHover > a.menu-link > span:before,
+	&.sfHover > a.menu-link > span:after {
+		opacity: 1;
+		@include transform( translateX(0) );
+	}
+
+}
+
+.effect-five #site-navigation-wrap .dropdown-menu > li {
+	> a.menu-link {
+	    > span {
+	    	position: relative;
+
+	    	&:before,
+	    	&:after {
+			    position: absolute;
+			    top: 130%;
+			    left: 0;
+			    width: 100%;
+			    height: 2px;
+			    background-color: #13aff0;
+			    content: '';
+				@include transition( all .25s ease-out );
+				@include transform( scale(0.85) );
+			}
+
+	    	&:after {
+			    opacity: 0;
+				@include transition( all .25s ease-out );
+			}
+		}
+
+		&:hover > span:before,
+		&:hover > span:after {
+			@include transform( scale(1) );
+		}
+
+		&:hover > span:after {
+			top: -30%;
+	    	opacity: 1;
+		}
+	}
+
+	&.sfHover > a.menu-link > span:before,
+	&.sfHover > a.menu-link > span:after {
+		@include transform( scale(1) );
+	}
+
+	&.sfHover > a.menu-link > span:after {
+		top: -30%;
+    	opacity: 1;
+	}
+
+}
+
+.effect-six #site-navigation-wrap .dropdown-menu > li {
+	> a.menu-link {
+	    > span {
+	    	position: relative;
+
+	    	&:before,
+	    	&:after {
+				position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    width: 50px;
+			    height: 50px;
+			    border: 2px solid rgba(0,0,0,0.1);
+			    border-radius: 50%;
+			    content: '';
+			    opacity: 0;
+				@include transition( all .25s ease-out );
+				@include transform( translateX(-50%) translateY(-50%) scale(0.2) );
+			}
+
+	    	&:after {
+			    width: 40px;
+			    height: 40px;
+			    border-width: 4px;
+				@include transform( translateX(-50%) translateY(-50%) scale(0.8) );
+			}
+		}
+
+		&:hover > span:before,
+		&:hover > span:after {
+			opacity: 1;
+			@include transform( translateX(-50%) translateY(-50%) scale(1) );
+		}
+	}
+
+	&.sfHover > a.menu-link > span:before,
+	&.sfHover > a.menu-link > span:after {
+		opacity: 1;
+		@include transform( translateX(-50%) translateY(-50%) scale(1) );
+	}
+
+}
+
+.effect-seven #site-navigation-wrap .dropdown-menu > li {
+	> a.menu-link {
+	    > span {
+	    	position: relative;
+
+	    	&:after {
+				position: absolute;
+			    bottom: -80%;
+			    left: 50%;
+			    color: transparent;
+			    content: '•';
+			    text-shadow: 0 0 transparent;
+			    font-size: 1.2em;
+			    line-height: 1;
+				@include transition( all .25s ease-out );
+				@include transform( translateX(-50%) );
+			    pointer-events: none;
+			}
+		}
+
+		&:hover > span:after {
+			color: #13aff0;
+    		text-shadow: 10px 0 #13aff0, -10px 0 #13aff0;
+		}
+	}
+
+	&.sfHover > a.menu-link > span:after {
+		color: #13aff0;
+    	text-shadow: 10px 0 #13aff0, -10px 0 #13aff0;
+	}
+
+}
+
+.effect-eight #site-navigation-wrap .dropdown-menu > li {
+	> a.menu-link {
+	    > span {
+	    	position: relative;
+	    	padding: 0 8px;
+
+	    	&:before,
+	    	&:after {
+				position: absolute;
+			    width: 100%;
+			    top: 50%;
+			    left: 0;
+			    height: 2px;
+			    margin-top: -1px;
+			    background-color: rgba(0,0,0,0.1);
+			    content: '';
+			    z-index: -1;
+				@include transition( all .25s ease-out );
+			    pointer-events: none;
+			}
+
+	    	&:before {
+				@include transform( translateY(-13px) );
+			}
+
+	    	&:after {
+				@include transform( translateY(15px) );
+			}
+		}
+
+		&:hover > span:before,
+		&:hover > span:after {
+			opacity: 0.8;
+		}
+
+		&:hover > span:before {
+			@include transform( rotate(45deg) );
+		}
+
+		&:hover > span:after {
+			@include transform( rotate(-45deg) );
+		}
+	}
+
+	&.sfHover > a.menu-link > span:before,
+	&.sfHover > a.menu-link > span:after {
+		opacity: 0.8;
+	}
+
+	&.sfHover > a.menu-link > span:before {
+		@include transform( rotate(45deg) );
+	}
+
+	&.sfHover > a.menu-link > span:after {
+		@include transform( rotate(-45deg) );
+	}
+
+}
+
+.effect-nine #site-navigation-wrap .dropdown-menu > li {
+	> a.menu-link {
+	    > span {
+	    	position: relative;
+
+	    	&:before,
+	    	&:after {
+				position: absolute;
+			    left: 0;
+			    width: 100%;
+			    height: 2px;
+			    background-color: #13aff0;
+			    content: '';
+			    opacity: 0;
+				@include transition( all .25s ease-out );
+				@include transform( translateY(-10px) );
+			}
+
+	    	&:before {
+	    		top: 0;
+				@include transform( translateY(-10px) );
+			}
+
+	    	&:after {
+	    		bottom: 0;
+				@include transform( translateY(10px) );
+			}
+		}
+
+		&:hover > span:before,
+		&:hover > span:after {
+			opacity: 1;
+		}
+
+		&:hover > span:before {
+			@include transform( translateY(-3px) );
+		}
+
+		&:hover > span:after {
+			@include transform( translateY(5px) );
+		}
+	}
+
+	&.sfHover > a.menu-link > span:before,
+	&.sfHover > a.menu-link > span:after {
+		opacity: 1;
+	}
+
+	&.sfHover > a.menu-link > span:before {
+		@include transform( translateY(-3px) );
+	}
+
+	&.sfHover > a.menu-link > span:after {
+		@include transform( translateY(5px) );
+	}
+
+}
+
+.effect-ten #site-navigation-wrap .dropdown-menu > li {
+	> a.menu-link {
+	    > span {
+	    	padding: 8px;
+	    	@include transition( box-shadow .25s ease-out );
+		}
+
+		&:hover > span {
+			@include box-shadow( 0 0 10px 4px rgba(0,0,0,0.1) );
+		}
+	}
+
+	&.sfHover > a.menu-link > span {
+		@include box-shadow( 0 0 10px 4px rgba(0,0,0,0.1) );
+	}
+
+}

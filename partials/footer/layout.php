@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 } ?>
 
-<footer id="footer" class="<?php echo esc_attr( oceanwp_footer_classes() ); ?>" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+<footer id="footer" class="<?php echo esc_attr( oceanwp_footer_classes() ); ?>"<?php oceanwp_schema_markup( 'footer' ); ?>>
 
     <?php do_action( 'ocean_before_footer_inner' ); ?>
 

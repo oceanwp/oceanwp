@@ -103,20 +103,43 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Footer Widgets Page ID
+			 * Parallax Footer Effect
 			 */
-			$wp_customize->add_setting( 'ocean_footer_widgets_page_id', array(
-				'default' 				=> '',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_dropdown_pages',
+			$wp_customize->add_setting( 'ocean_parallax_footer', array(
+				'default'           	=> 'off',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Dropdown_Pages( $wp_customize, 'ocean_footer_widgets_page_id', array(
-				'label'	   				=> esc_html__( 'Page ID', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'Choose a page to replace the widgets by this page.', 'oceanwp' ),
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_parallax_footer', array(
+				'label'	   				=> esc_html__( 'Parallax Footer Effect', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Add a parallax effect to your footer.', 'oceanwp' ),
 				'section'  				=> $section,
-				'settings' 				=> 'ocean_footer_widgets_page_id',
+				'settings' 				=> 'ocean_parallax_footer',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'on' 	=> esc_html__( 'On', 'oceanwp' ),
+					'off' 	=> esc_html__( 'Off', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_footer_widgets',
+			) ) );
+
+			/**
+			 * Footer Widgets Template
+			 */
+			$wp_customize->add_setting( 'ocean_footer_widgets_template', array(
+				'default'           	=> '0',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_footer_widgets_template', array(
+				'label'	   				=> esc_html__( 'Select Template', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Choose a template created in Theme Panel > My Library.', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> $section,
+				'settings' 				=> 'ocean_footer_widgets_template',
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_has_footer_widgets',
+				'choices' 				=> oceanwp_customizer_helpers( 'library' ),
 			) ) );
 
 			/**
@@ -124,17 +147,17 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			 */
 			$wp_customize->add_setting( 'ocean_footer_widgets_columns', array(
 				'default'           	=> '4',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_setting( 'ocean_footer_widgets_tablet_columns', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_setting( 'ocean_footer_widgets_mobile_columns', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_footer_widgets_columns', array(
@@ -155,61 +178,79 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Footer Widgets Add Container
+			 */
+			$wp_customize->add_setting( 'ocean_add_footer_container', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> true,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_add_footer_container', array(
+				'label'	   				=> esc_html__( 'Add Container', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> $section,
+				'settings' 				=> 'ocean_add_footer_container',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_footer_widgets',
+			) ) );
+
+			/**
 			 * Footer Widgets Padding
 			 */
 			$wp_customize->add_setting( 'ocean_footer_top_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '30',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_right_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '0',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_bottom_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '30',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_left_padding', array(
 				'transport' 			=> 'postMessage',
 				'default'           	=> '0',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
 			) );
 
 			$wp_customize->add_setting( 'ocean_footer_tablet_top_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_tablet_right_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_tablet_bottom_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_tablet_left_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_setting( 'ocean_footer_mobile_top_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_mobile_right_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_mobile_bottom_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 			$wp_customize->add_setting( 'ocean_footer_mobile_left_padding', array(
 				'transport' 			=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_number_absint',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number_blank',
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_footer_padding_dimensions', array(
@@ -344,7 +385,7 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			$mobile_footer_top_padding 			= get_theme_mod( 'ocean_footer_mobile_top_padding' );
 			$mobile_footer_right_padding 		= get_theme_mod( 'ocean_footer_mobile_right_padding' );
 			$mobile_footer_bottom_padding 		= get_theme_mod( 'ocean_footer_mobile_bottom_padding' );
-			$mobile_lfooter_eft_padding 		= get_theme_mod( 'ocean_footer_mobile_left_padding' );
+			$mobile_footer_left_padding 		= get_theme_mod( 'ocean_footer_mobile_left_padding' );
 			$footer_background 					= get_theme_mod( 'ocean_footer_background', '#222222' );
 			$footer_color 						= get_theme_mod( 'ocean_footer_color', '#929292' );
 			$footer_borders 					= get_theme_mod( 'ocean_footer_borders', '#555555' );
@@ -353,98 +394,29 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 
 			// Define css var
 			$css = '';
-			$padding_css = '';
-			$tablet_padding_css = '';
-			$mobile_padding_css = '';
-
-			// DECREPITATED Footer padding
-			$footer_padding = get_theme_mod( 'ocean_footer_padding' );
-			if ( ! empty( $footer_padding ) ) {
-				$css .= '#footer-widgets{padding:'. $footer_padding .';}';
+			
+			// Footer padding
+			if ( isset( $footer_top_padding ) && '30' != $footer_top_padding && '' != $footer_top_padding
+				|| isset( $footer_right_padding ) && '0' != $footer_right_padding && '' != $footer_right_padding
+				|| isset( $footer_bottom_padding ) && '30' != $footer_bottom_padding && '' != $footer_bottom_padding
+				|| isset( $footer_left_padding ) && '0' != $footer_left_padding && '' != $footer_left_padding ) {
+				$css .= '#footer-widgets{padding:'. oceanwp_spacing_css( $footer_top_padding, $footer_right_padding, $footer_bottom_padding, $footer_left_padding ) .'}';
 			}
 
-			// Footer top padding
-			if ( ! empty( $footer_top_padding ) && '30' != $footer_top_padding ) {
-				$padding_css .= 'padding-top:'. $footer_top_padding .'px;';
+			// Tablet footer padding
+			if ( isset( $tablet_footer_top_padding ) && '' != $tablet_footer_top_padding
+				|| isset( $tablet_footer_right_padding ) && '' != $tablet_footer_right_padding
+				|| isset( $tablet_footer_bottom_padding ) && '' != $tablet_footer_bottom_padding
+				|| isset( $tablet_footer_left_padding ) && '' != $tablet_footer_left_padding ) {
+				$css .= '@media (max-width: 768px){#footer-widgets{padding:'. oceanwp_spacing_css( $tablet_footer_top_padding, $tablet_footer_right_padding, $tablet_footer_bottom_padding, $tablet_footer_left_padding ) .'}}';
 			}
 
-			// Footer right padding
-			if ( ! empty( $footer_right_padding ) && '0' != $footer_right_padding ) {
-				$padding_css .= 'padding-right:'. $footer_right_padding .'px;';
-			}
-
-			// Footer bottom padding
-			if ( ! empty( $footer_bottom_padding ) && '30' != $footer_bottom_padding ) {
-				$padding_css .= 'padding-bottom:'. $footer_bottom_padding .'px;';
-			}
-
-			// Footer left padding
-			if ( ! empty( $footer_left_padding ) && '0' != $footer_left_padding ) {
-				$padding_css .= 'padding-left:'. $footer_left_padding .'px;';
-			}
-
-			// Footer padding css
-			if ( ! empty( $footer_top_padding ) && '30' != $footer_top_padding
-				|| ! empty( $footer_right_padding ) && '0' != $footer_right_padding
-				|| ! empty( $footer_bottom_padding ) && '30' != $footer_bottom_padding
-				|| ! empty( $footer_left_padding ) && '0' != $footer_left_padding ) {
-				$css .= '#footer-widgets{'. $padding_css .'}';
-			}
-
-			// Tablet footer top padding
-			if ( ! empty( $tablet_footer_top_padding ) ) {
-				$tablet_padding_css .= 'padding-top:'. $tablet_footer_top_padding .'px;';
-			}
-
-			// Tablet footer right padding
-			if ( ! empty( $tablet_footer_right_padding ) ) {
-				$tablet_padding_css .= 'padding-right:'. $tablet_footer_right_padding .'px;';
-			}
-
-			// Tablet footer bottom padding
-			if ( ! empty( $tablet_footer_bottom_padding ) ) {
-				$tablet_padding_css .= 'padding-bottom:'. $tablet_footer_bottom_padding .'px;';
-			}
-
-			// Tablet footer left padding
-			if ( ! empty( $tablet_footer_left_padding ) ) {
-				$tablet_padding_css .= 'padding-left:'. $tablet_footer_left_padding .'px;';
-			}
-
-			// Tablet footer padding css
-			if ( ! empty( $tablet_footer_top_padding )
-				|| ! empty( $tablet_footer_right_padding )
-				|| ! empty( $tablet_footer_bottom_padding )
-				|| ! empty( $tablet_footer_left_padding ) ) {
-				$css .= '@media (max-width: 768px){#footer-widgets{'. $tablet_padding_css .'}}';
-			}
-
-			// Mobile footer top padding
-			if ( ! empty( $mobile_footer_top_padding ) ) {
-				$mobile_padding_css .= 'padding-top:'. $mobile_footer_top_padding .'px;';
-			}
-
-			// Mobile footer right padding
-			if ( ! empty( $mobile_footer_right_padding ) ) {
-				$mobile_padding_css .= 'padding-right:'. $mobile_footer_right_padding .'px;';
-			}
-
-			// Mobile footer bottom padding
-			if ( ! empty( $mobile_footer_bottom_padding ) ) {
-				$mobile_padding_css .= 'padding-bottom:'. $mobile_footer_bottom_padding .'px;';
-			}
-
-			// Mobile footer left padding
-			if ( ! empty( $mobile_footer_left_padding ) ) {
-				$mobile_padding_css .= 'padding-left:'. $mobile_footer_left_padding .'px;';
-			}
-
-			// Mobile footer padding css
-			if ( ! empty( $mobile_footer_top_padding )
-				|| ! empty( $mobile_footer_right_padding )
-				|| ! empty( $mobile_footer_bottom_padding )
-				|| ! empty( $mobile_footer_left_padding ) ) {
-				$css .= '@media (max-width: 480px){#footer-widgets{'. $mobile_padding_css .'}}';
+			// Mobile footer padding
+			if ( isset( $mobile_footer_top_padding ) && '' != $mobile_footer_top_padding
+				|| isset( $mobile_footer_right_padding ) && '' != $mobile_footer_right_padding
+				|| isset( $mobile_footer_bottom_padding ) && '' != $mobile_footer_bottom_padding
+				|| isset( $mobile_footer_left_padding ) && '' != $mobile_footer_left_padding ) {
+				$css .= '@media (max-width: 480px){#footer-widgets{padding:'. oceanwp_spacing_css( $mobile_footer_top_padding, $mobile_footer_right_padding, $mobile_footer_bottom_padding, $mobile_footer_left_padding ) .'}}';
 			}
 
 			// Footer background
