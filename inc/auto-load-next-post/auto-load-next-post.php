@@ -17,7 +17,7 @@ if ( ! class_exists( 'OceanWP_ALNP' ) ) {
 		 * @return OceanWP_ALNP
 		 */
 		public function __construct() {
-			// Add theme support and preset the theme selectors and if the JavaScript should load in the footer.
+			// Add theme support and preset the theme selectors.
 			add_action( 'after_setup_theme', array( $this, 'add_theme_support' ) );
 
 			// Filters the location of the repeater template.
@@ -32,10 +32,8 @@ if ( ! class_exists( 'OceanWP_ALNP' ) ) {
 
 		/***
 		 * Add theme support for Auto Load Next Post by setting the 
-		 * theme selectors, if the theme requires the JavaScript
-		 * to load in the footer and only in the footer.
-		 *
-		 * These settings will be applied once the plugin is activated. 
+		 * theme selectors. These settings will be applied once the 
+		 * plugin is activated. 
 		 *
 		 * @access public
 		 */
