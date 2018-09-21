@@ -141,7 +141,7 @@ function oceanwpWooMultiStepCheckout() {
 
                     if ( ! response.valid ) {
                         $j( 'form.woocommerce-checkout' ).prepend( response.html );
-                        $j( 'html,body' ).animate( {
+                        $j( 'html, body' ).animate( {
                             scrollTop: $j( 'form.woocommerce-checkout' ).offset().top - $offset },
                         'slow' );
                     }
@@ -164,6 +164,9 @@ function oceanwpWooMultiStepCheckout() {
                 } );
 
                 $j( '#timeline-' + next_step ).toggleClass( 'active' );
+                $j( 'html, body' ).animate( {
+                    scrollTop: $j( '#owp-checkout-timeline' ).offset().top - $offset },
+                'slow' );
             } else if ( action == 'prev' ) {
                 form_actions.data( 'step', prev_step );
                 steps[current_step].fadeOut( 120, function() {
@@ -171,6 +174,9 @@ function oceanwpWooMultiStepCheckout() {
                 } );
 
                 $j( '#timeline-' + prev_step ).toggleClass( 'active' );
+                $j( 'html, body' ).animate( {
+                    scrollTop: $j( '#owp-checkout-timeline' ).offset().top - $offset },
+                'slow' );
             }
 
             current_step = form_actions.data( 'step' );

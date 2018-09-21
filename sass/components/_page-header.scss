@@ -207,9 +207,6 @@ body.breadcrumbs-position-default .page-header-title {
   margin-top: 0;
 }
 
-/**
- * Breadcrumbs Hide
- */
 .background-image-page-header .site-breadcrumbs {
   display: block;
   position: inherit;
@@ -230,6 +227,12 @@ body.breadcrumbs-position-default .page-header-title {
   }
 }
 
+/* compatibility with SEOPress */
+.site-breadcrumbs nav,
+.site-breadcrumbs ol {
+  margin: 0;
+}
+
 /*------------------------------------*
   All Devices under 960px
 *------------------------------------*/
@@ -246,7 +249,7 @@ body.breadcrumbs-position-default .page-header-title {
 /*------------------------------------*
   Tablet Portrait
 *------------------------------------*/
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+@media only screen and (max-width: 959px) {
   
   /* page header */
   .site-breadcrumbs {
@@ -254,6 +257,7 @@ body.breadcrumbs-position-default .page-header-title {
     top: auto;
     left: auto;
     right: auto;
+    max-width: 100%;
     margin-top: 0;
   }
   
@@ -294,10 +298,6 @@ body.breadcrumbs-position-default .page-header-title {
   body.has-breadcrumbs .page-header-title {
     max-width: 100%;
     width: 100%;
-  }
-
-  .site-breadcrumbs {
-    display: none;
   }
   
 }

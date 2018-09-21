@@ -1,6 +1,7 @@
 jQuery( function( $ ) {
 
-	if ( typeof oceanwpLocalize === 'undefined' ) {
+	if ( typeof oceanwpLocalize === 'undefined'
+		|| $( '.woocommerce div.product' ).hasClass( 'product-type-grouped' ) ) {
 		return false;
 	}
 
@@ -9,7 +10,7 @@ jQuery( function( $ ) {
 	 */
 	var owpAddToCartHandler = function() {
 		$( document.body )
-			.on( 'click', '.product:not(.product-type-external) .single_add_to_cart_button', this.onAddToCart )
+			.on( 'click', '.product:not(.product-type-external) .single_add_to_cart_button:not(.disabled)', this.onAddToCart )
 			.on( 'added_to_cart', this.updateButton );
 	};
 

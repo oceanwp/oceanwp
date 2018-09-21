@@ -212,12 +212,12 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 				'settings' 				=> 'ocean_blog_grid_images_size',
 				'priority' 				=> 10,
 				'active_callback' 		=> 'oceanwp_cac_grid_blog_style',
-				'choices' 				=> array(
+				'choices' 				=> apply_filters( 'ocean_blog_grid_images_size', array(
 					'thumbnail' 		=> esc_html__( 'Thumbnail', 'oceanwp' ),
 					'medium' 			=> esc_html__( 'Medium', 'oceanwp' ),
 					'medium_large' 		=> esc_html__( 'Medium Large', 'oceanwp' ),
 					'large' 			=> esc_html__( 'Large', 'oceanwp' ),
-				),
+				) ),
 			) ) );
 
 			/**

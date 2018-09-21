@@ -1444,6 +1444,26 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Scroll Top Position
+			 */
+			$wp_customize->add_setting( 'ocean_scroll_top_position', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> 'right',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_scroll_top_position', array(
+				'label'	   				=> esc_html__( 'Position', 'oceanwp' ),
+				'section'  				=> 'ocean_general_scroll_top',
+				'settings' 				=> 'ocean_scroll_top_position',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'left'  			=> esc_html__( 'Left', 'oceanwp' ),
+					'right' 			=> esc_html__( 'Right', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
 			 * Scroll Top Size
 			 */
 			$wp_customize->add_setting( 'ocean_scroll_top_size', array(

@@ -173,6 +173,11 @@
 			z-index: 10;
 		}
 
+		&.cat-parent .open-this {
+			left: auto;
+    		right: 0;
+		}
+
 		ul.children {
 			display: none;
 			margin: 0 0 0 16px;

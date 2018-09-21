@@ -4406,7 +4406,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				// Top header padding
 				if ( isset( $medium_header_top_header_top_padding ) && '30' != $medium_header_top_header_top_padding && '' != $medium_header_top_header_top_padding
 					|| isset( $medium_header_top_header_bottom_padding ) && '30' != $medium_header_top_header_bottom_padding && '' != $medium_header_sticky_top_header_bottom_padding ) {
-					$css .= '#site-header.medium-header .top-header-wrap{padding:'. oceanwp_spacing_css( $medium_header_top_header_top_padding, '', $medium_header_sticky_top_header_bottom_padding, '' ) .'}';
+					$css .= '#site-header.medium-header .top-header-wrap{padding:'. oceanwp_spacing_css( $medium_header_top_header_top_padding, '', $medium_header_top_header_bottom_padding, '' ) .'}';
 				}
 
 				// Tablet top header padding

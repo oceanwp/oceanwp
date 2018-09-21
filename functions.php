@@ -18,11 +18,16 @@
  * @package OceanWP WordPress theme
  */
 
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // Core Constants
 define( 'OCEANWP_THEME_DIR', get_template_directory() );
 define( 'OCEANWP_THEME_URI', get_template_directory_uri() );
 
-class OCEANWP_Theme_Class {
+final class OCEANWP_Theme_Class {
 
 	/**
 	 * Main Theme Class Constructor
@@ -398,6 +403,9 @@ class OCEANWP_Theme_Class {
 
 		// Register the lightbox style
 		wp_enqueue_style( 'magnific-popup', $dir .'third/magnific-popup.min.css', false, '1.0.0' );
+
+		// Register the slick style
+		wp_enqueue_style( 'slick', $dir .'third/slick.min.css', false, '1.6.0' );
 
 		// Main Style.css File
 		wp_enqueue_style( 'oceanwp-style', $dir .'style.min.css', false, $theme_version );
@@ -1112,4 +1120,4 @@ class OCEANWP_Theme_Class {
 	}
 
 }
-$oceanwp_theme_class = new OCEANWP_Theme_Class;
+new OCEANWP_Theme_Class;

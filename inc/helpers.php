@@ -1980,15 +1980,57 @@ if ( ! function_exists( 'oceanwp_get_page_subheading' ) ) {
 			$subheading = get_the_archive_description();
 		}
 
-		// All other Taxonomies
-		elseif ( is_category() || is_tag() ) {
-			$subheading = term_description();
-		}
-
 		// Apply filters and return
 		return apply_filters( 'ocean_post_subheading', $subheading );
 
 	}
+
+}
+
+/**
+ * Get taxonomy description
+ *
+ * @since 1.5.27
+ */
+if ( ! function_exists( 'oceanwp_get_tax_description' ) ) {
+
+	function oceanwp_get_tax_description() {
+
+		// Subheading is NULL by default
+		$desc = NULL;
+
+		// All other Taxonomies
+		if ( is_category() || is_tag() ) {
+			$desc = term_description();
+		}
+
+		// Apply filters and return
+		return apply_filters( 'ocean_tax_description', $desc );
+
+	}
+
+}
+
+/**
+ * Add taxonomy description
+ *
+ * @since 1.5.27
+ */
+if ( ! function_exists( 'oceanwp_tax_description' ) ) {
+
+	function oceanwp_tax_description() {
+
+		if ( $desc = oceanwp_get_tax_description() ) : ?>
+
+			<div class="clr tax-desc">
+				<?php echo do_shortcode( $desc ); ?>
+			</div>
+
+		<?php endif;
+
+	}
+
+	add_action( 'ocean_before_content_inner', 'oceanwp_tax_description' );
 
 }
 
@@ -3991,6 +4033,25 @@ if ( ! function_exists( 'oceanwp_social_menu_content' ) ) {
 }
 
 /**
+ * Custom footer style template
+ *
+ * @since 1.5.22
+ */
+if ( ! function_exists( 'oceanwp_custom_footer_template' ) ) {
+
+	function oceanwp_custom_footer_template() {
+
+		// Get template from customizer setting
+		$template = get_theme_mod( 'ocean_footer_widgets_template' );
+
+		// Apply filters and return
+		return apply_filters( 'ocean_custom_footer_template', $template );
+
+	}
+
+}
+
+/**
  * Returns footer template content
  *
  * @since 1.0.0
@@ -4005,7 +4066,7 @@ if ( ! function_exists( 'oceanwp_footer_template_content' ) ) {
 		}
 
 		// Get template ID from Customizer
-		$content = get_theme_mod( 'ocean_footer_widgets_template' );
+		$content = oceanwp_custom_footer_template();
 
 		// Get Polylang Translation of template
 		if ( function_exists( 'pll_get_post' ) ) {
@@ -4207,6 +4268,11 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 			$schema = 'itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"';
 		}
 
+		// Item
+		elseif ( 'item' == $location ) {
+			$schema = 'itemprop="item"';
+		}
+
 		// Url
 		elseif ( 'url' == $location ) {
 			$schema = 'itemprop="url"';
@@ -4222,7 +4288,7 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 			$schema = 'itemprop="image"';
 		}
 
-		return ' ' . apply_filters( 'ocean_schema_markup', $schema );
+		return ' ' . apply_filters( 'ocean_schema_markup', $schema, $location );
 
 	}
 

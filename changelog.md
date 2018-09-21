@@ -1,5 +1,52 @@
 # OceanWP Changelog
 
+### *2018.09.04* - 1.5.27:
+* **Tweak** - Taxonomy description added before the content instead as subheading.
+* **Fixed** - Little issue in the elementor editor to make the text bold, italic, add a link, etc.. who was not selectable.
+* **Fixed** - WooCommerce grouped product issue with the quantity buttons when the floating bar is activated.
+* **Fixed** - WooCommerce grouped product issue with the add to cart button if ajax is activated.
+* **Fixed** - WooCommerce grouped product issue in the quick view.
+
+### *2018.08.30* - 1.5.26:
+* **Fixed** - Breadcrumb issue with the shortcode who was causing a fatal error.
+
+### *2018.08.27* - 1.5.25:
+* **Fixed** - Slick css issue when Elementor is used.
+
+### *2018.08.27* - 1.5.24:
+* **Added** - Danish translation, thanks to Henrik Leth.
+* **Fixed** - Slick icons missing when a script or style disabled.
+
+### *2018.08.09* - 1.5.23:
+* **Added** - Compatibility with YITH WooCommerce Badge Management Premium.
+* **Fixed** - Padding issue on mobile for the Separate layout style.
+* **Fixed** - Sidebar padding issue for the customizer setting.
+
+### *2018.08.02* - 1.5.22:
+* **Added** - Description for the product categories in List view.
+* **Tweak** - Better theme screenshot added.
+
+### *2018.07.26* - 1.5.21:
+* **Added** - SEOPRess breadcrumb if enabled.
+* **Added** - New setting for the scroll up button to allow you to place it in left or right.
+* **Added** - New setting to allow you to add the My Account login/register side by side.
+* **Tweak** - Improved style for the rating filter widget of WooCommerce.
+* **Tweak** - Product category description removed from the archive categories.
+* **Tweak** - Breadcrumb displayed on all screens.
+* **Fixed** - Sale badge if product navigation in responsive.
+* **Fixed** - Megamenu issue if the boxed layout is used.
+
+### *2018.07.10* - 1.5.20:
+* **Fixed** - Class 'Elementor\Plugin' not found in the woocommerce-config.php file.
+
+### *2018.07.10* - 1.5.19:
+* **Tweak** - The Hide cart if empty feature is improved now it is directly displayed instead of reloading the page.
+* **Tweak** - Scroll to timeline on the multi-step checkout when the next/prev button is clicked.
+* **Fixed** - Ajax issue if single product button disabled.
+* **Fixed** - Percentage issue on WooCommerce.
+* **Fixed** - Next/Previous product text in the wrong arrow for the product navigation.
+* **Fixed** - Issue with WooCommerce shortcodes in the Elementor editor, thanks to Josh Marom from the Elementor team.
+
 ### *2018.07.04* - 1.5.18:
 * **Fixed** - Issue with sans serif fonts.
 

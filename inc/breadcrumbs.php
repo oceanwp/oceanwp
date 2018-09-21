@@ -47,6 +47,11 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 		}
 		return yoast_breadcrumb( '<nav class="'. $classes .'">', '</nav>' );
 	}
+	
+	// SEOPress breadcrumbs
+	if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
+		return seopress_display_breadcrumbs();
+    }
 
 	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
 
@@ -55,6 +60,31 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 
 	return $breadcrumb->trail();
 }
+
+/**
+ * Add container to SEOPRess breadcrumbs.
+ *
+ * @since  1.5.21
+ */
+function sp_breadcrumbs_before() {
+	$classes = 'site-breadcrumbs clr';
+	if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
+		$classes .= ' position-'. $breadcrumbs_position;
+	}
+
+	echo '<div class="'. $classes .'">';
+}
+add_action( 'seopress_breadcrumbs_before_html', 'sp_breadcrumbs_before' );
+
+function sp_breadcrumbs_after() {
+	echo '</div>';
+}
+add_action( 'seopress_breadcrumbs_after_html', 'sp_breadcrumbs_after' );
+
+function sp_pro_breadcrumbs_sep() {
+	return ' > ';
+}
+add_action( 'seopress_pro_breadcrumbs_sep', 'sp_pro_breadcrumbs_sep' );
 
 /**
  * Creates a breadcrumbs menu for the site based on the current page that's being viewed by the user.

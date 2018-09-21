@@ -351,12 +351,17 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			// Define css var
 			$css = '';
 
+			// Sidebar background
+			if ( ! empty( $sidebar_bg ) ) {
+				$css .= '.widget-area{background-color:'. $sidebar_bg .';}';
+			}
+
 			// Sidebar padding
 			if ( isset( $sidebar_top_padding ) && '0' != $sidebar_top_padding && '' != $sidebar_top_padding
 				|| isset( $sidebar_right_padding ) && '0' != $sidebar_right_padding && '' != $sidebar_right_padding
 				|| isset( $sidebar_bottom_padding ) && '0' != $sidebar_bottom_padding && '' != $sidebar_bottom_padding
 				|| isset( $sidebar_left_padding ) && '30' != $sidebar_left_padding && '' != $sidebar_left_padding ) {
-				$css .= '.widget-area{padding:'. oceanwp_spacing_css( $sidebar_top_padding, $sidebar_right_padding, $sidebar_bottom_padding, $sidebar_left_padding ) .'}';
+				$css .= '.widget-area{padding:'. oceanwp_spacing_css( $sidebar_top_padding, $sidebar_right_padding, $sidebar_bottom_padding, $sidebar_left_padding ) .'!important}';
 			}
 
 			// Tablet sidebar padding
@@ -364,7 +369,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				|| isset( $tablet_sidebar_right_padding ) && '' != $tablet_sidebar_right_padding
 				|| isset( $tablet_sidebar_bottom_padding ) && '' != $tablet_sidebar_bottom_padding
 				|| isset( $tablet_sidebar_left_padding ) && '' != $tablet_sidebar_left_padding ) {
-				$css .= '@media (max-width: 768px){.widget-area{padding:'. oceanwp_spacing_css( $tablet_sidebar_top_padding, $tablet_sidebar_right_padding, $tablet_sidebar_bottom_padding, $tablet_sidebar_left_padding ) .'}}';
+				$css .= '@media (max-width: 768px){.widget-area{padding:'. oceanwp_spacing_css( $tablet_sidebar_top_padding, $tablet_sidebar_right_padding, $tablet_sidebar_bottom_padding, $tablet_sidebar_left_padding ) .'!important}}';
 			}
 
 			// Mobile sidebar padding
@@ -372,7 +377,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				|| isset( $mobile_sidebar_right_padding ) && '' != $mobile_sidebar_right_padding
 				|| isset( $mobile_sidebar_bottom_padding ) && '' != $mobile_sidebar_bottom_padding
 				|| isset( $mobile_sidebar_left_padding ) && '' != $mobile_sidebar_left_padding ) {
-				$css .= '@media (max-width: 480px){.widget-area{padding:'. oceanwp_spacing_css( $mobile_sidebar_top_padding, $mobile_sidebar_right_padding, $mobile_sidebar_bottom_padding, $mobile_sidebar_left_padding ) .'}}';
+				$css .= '@media (max-width: 480px){.widget-area{padding:'. oceanwp_spacing_css( $mobile_sidebar_top_padding, $mobile_sidebar_right_padding, $mobile_sidebar_bottom_padding, $mobile_sidebar_left_padding ) .'!important}}';
 			}
 
 			// Widgets background

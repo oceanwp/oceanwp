@@ -19,9 +19,14 @@ function oceanwpMegaMenu() {
             $menuWidth           = $topBar.width(),     
             $menuPosition        = $topBar.offset(),     
             $menuItemPosition    = $j( this ).offset(),
-            $PositionLeft        = $menuItemPosition.left-$menuPosition.left+1;
+            $positionLeft        = $menuItemPosition.left-$menuPosition.left+1;
 
-        $j( this ).find( '.megamenu' ).css( { 'left': '-'+$PositionLeft+'px', 'width': $menuWidth } );
+        if ( $j( 'body' ).hasClass( 'boxed-layout' ) ) {
+            $positionLeft        = $menuItemPosition.left-$menuPosition.left+1;
+            $positionLeft        = $positionLeft-30;
+        }
+
+        $j( this ).find( '.megamenu' ).css( { 'left': '-'+$positionLeft+'px', 'width': $menuWidth } );
     } );
 
     // Mega menu in principal menu
@@ -30,16 +35,21 @@ function oceanwpMegaMenu() {
             $menuWidth           = $siteHeader.width(),     
             $menuPosition        = $siteHeader.offset(),     
             $menuItemPosition    = $j( this ).offset(),
-            $PositionLeft        = $menuItemPosition.left-$menuPosition.left+1;
+            $positionLeft        = $menuItemPosition.left-$menuPosition.left+1;
 
         if ( $j( '#site-header' ).hasClass( 'medium-header' ) ) {
             $siteHeader          = $j( '#site-navigation-wrap > .container' ),
             $menuWidth           = $siteHeader.width(),
             $menuPosition        = $siteHeader.offset(),
-            $PositionLeft        = $menuItemPosition.left-$menuPosition.left+1;
+            $positionLeft        = $menuItemPosition.left-$menuPosition.left+1;
         }
 
-        $j( this ).find( '.megamenu' ).css( { 'left': '-'+$PositionLeft+'px', 'width': $menuWidth } );
+        if ( $j( 'body' ).hasClass( 'boxed-layout' ) ) {
+            $positionLeft        = $menuItemPosition.left-$menuPosition.left+1;
+            $positionLeft        = $positionLeft-30;
+        }
+
+        $j( this ).find( '.megamenu' ).css( { 'left': '-'+$positionLeft+'px', 'width': $menuWidth } );
     } );
 
     // Megamenu auto width

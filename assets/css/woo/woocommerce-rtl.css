@@ -14,6 +14,11 @@
 .col2-set .col-2,
 .woocommerce .form-row-last { float: left; }
 
+/* Account page */
+.account-side-style .woocommerce #customer_login > div { float: right; }
+.account-side-style .woocommerce #customer_login .col-2 { float: left; }
+.account-side-style .woocommerce #customer_login .woocommerce-form__label .woocommerce-form__input { margin: -3px 15px 0 6px !important; }
+
 /* Stars */
 .woocommerce .star-rating:before { float: right; right: 0; left: auto; }
 .woocommerce .star-rating span { float: right; right: 0; left: auto; }

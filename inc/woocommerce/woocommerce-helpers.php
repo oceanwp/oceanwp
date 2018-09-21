@@ -16,11 +16,17 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 
 	function oceanwp_wcmenucart_menu_item() {
 
-		// Return items if "hide if empty cart" is checked (for mobile)
+		// Classes
+		$classes = array( 'wcmenucart' );
+
+		// Hide items if "hide if empty cart" is checked
 		if ( true == get_theme_mod( 'ocean_woo_menu_icon_hide_if_empty', false )
 			&& ! WC()->cart->cart_contents_count > 0 ) {
-			return;
+			$classes[] = 'wcmenucart-hide';
 		}
+
+		// Turn classes into space seperated string
+		$classes = implode( ' ', $classes );
 
 		// Return if is in the Elementor edit mode, to avoid error
 		if ( OCEANWP_ELEMENTOR_ACTIVE
@@ -75,7 +81,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		// If bag style
 		if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) { ?>
 
-			<a href="<?php echo esc_url( $url ); ?>" class="wcmenucart">
+			<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $classes ); ?>">
 				<?php
 				if ( true == get_theme_mod( 'ocean_woo_menu_bag_style_total', false ) ) { ?>
 					<span class="wcmenucart-total"><?php echo WC()->cart->get_cart_total(); ?></span>
@@ -87,7 +93,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 
 		<?php } else { ?>
 
-			<a href="<?php echo esc_url( $url ); ?>" class="wcmenucart">
+			<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $classes ); ?>">
 				<span class="wcmenucart-count"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
 			</a>
 

@@ -40,8 +40,8 @@
  * PLUGINS
  * - GENERAL
  * - MAGNIFIC POPUP
- * - SLICK
  * - SIDR
+ * - SLICK
  *
  * RESPONSIVE
  */
@@ -201,15 +201,14 @@
 @import "components/plugins/magnific-popup";
 
 /*------------------------------------*
-	$SLICK
-*------------------------------------*/
-@import "components/plugins/slick";
-
-/*------------------------------------*
 	$SIDR
 *------------------------------------*/
 @import "components/plugins/sidr";
-@import "components/plugins/slick-theme";
+
+/*------------------------------------*
+	$SLICK
+*------------------------------------*/
+@import "components/plugins/slick";
 
 /*------------------------------------*
 	$RESPONSIVE

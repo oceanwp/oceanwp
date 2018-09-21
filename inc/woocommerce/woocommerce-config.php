@@ -121,7 +121,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action('woocommerce_after_customer_login_form', array( $this, 'oceanwp_login_wrap_after' ) );
 			}
 			if ( get_theme_mod( 'ocean_woo_category_image', 'no' ) == 'yes' ) {
-				add_action('woocommerce_archive_description', array( $this, 'woocommerce_category_image' ), 2 );
+				add_action( 'woocommerce_archive_description', array( $this, 'woocommerce_category_image' ), 2 );
 			}
 
 			// Quick view
@@ -153,6 +153,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'wp_footer', array( $this, 'get_mini_cart_sidebar' ) );
 			}
 
+			// Remove default elements
+			remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+			add_action( 'woocommerce_before_template_part', array( $this, 'before_template_part' ), 10, 4 );
+			self::remove_elements();
+
 			// Remove the single product summary content to add the sortable control
 			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
@@ -168,7 +173,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// Add floating bar
-			if ( 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'off' ) ) {
+			if ( 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'on' ) ) {
 				add_action( 'ocean_before_main', array( $this, 'floating_bar' ) );
 
 				// Ajax add to cart
@@ -177,8 +182,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// Main Woo Filters
-			add_filter( 'wp_nav_menu_items', array( $this, 'menu_wishlist_icon' ) , 10, 2 );
-			add_filter( 'wp_nav_menu_items', array( $this, 'menu_cart_icon' ) , 10, 2 );
+			add_filter( 'wp_nav_menu_items', array( $this, 'menu_wishlist_icon' ), 10, 2 );
+			add_filter( 'wp_nav_menu_items', array( $this, 'menu_cart_icon' ), 10, 2 );
 			add_filter( 'woocommerce_add_to_cart_fragments', array( $this, 'menu_cart_icon_fragments' ) );
 			add_filter( 'woocommerce_general_settings', array( $this, 'remove_general_settings' ) );
 			add_filter( 'woocommerce_product_settings', array( $this, 'remove_product_settings' ) );
@@ -188,6 +193,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			add_filter( 'woocommerce_pagination_args', array( $this, 'pagination_args' ) );
 			add_filter( 'woocommerce_continue_shopping_redirect', array( $this, 'continue_shopping_redirect' ) );
 			add_filter( 'post_class', array( $this, 'add_product_classes' ), 40, 3 );
+			add_filter( 'post_class', array( $this, 'add_product_class_for_elementor' ) );
 			add_filter( 'product_cat_class', array( $this, 'product_cat_class' ) );
 
 			// Sale badge content
@@ -301,20 +307,15 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'woocommerce_before_shop_loop', array( $this, 'result_count' ), 31 );
 			}
 
-			// Remove default elements
-			remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-			remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
-			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
-			remove_action( 'woocommerce_before_subcategory', 'woocommerce_template_loop_category_link_open', 10 );
-			remove_action( 'woocommerce_after_subcategory', 'woocommerce_template_loop_category_link_close', 10 );
-			remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
-			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-
 			if ( defined( 'ELEMENTOR_WOOSTORE__FILE__' ) ) {
 				remove_action( 'woocommerce_after_shop_loop_item_title', 'woostore_output_product_excerpt', 35 );
 				add_action( 'woocommerce_after_shop_loop_item', 'woostore_output_product_excerpt', 21 );
+			}
+
+			if ( ! function_exists( 'yith_wcbm_shop_badge_container_start' )
+				&& ! function_exists( 'yith_wcbm_shop_badge_container_end' ) ) {
+				add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'yith_wcbm_shop_badge_container_start' ), 9 );
+				add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'yith_wcbm_shop_badge_container_end' ), 20 );
 			}
 
 			if ( class_exists( 'WooCommerce_Germanized' ) ) {
@@ -325,6 +326,34 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'ocean_after_single_product_price', 'woocommerce_gzd_template_single_legal_info' );
 			}
 
+		}
+
+		/**
+		 * Remove elemnts.
+		 *
+		 * @since 1.0.0
+		 */
+		public function remove_elements() {
+			remove_action( 'woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5 );
+			remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
+			remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+			remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+		}
+
+		/**
+		 * Fix the issue in the Elementor Pro editor.
+		 *
+		 * @since 1.5.19
+		 */
+		public function before_template_part( $template_name, $template_path, $located, $args ) {
+			if ( class_exists( 'Elementor\Plugin' )
+				&& \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+				self::remove_elements();
+			}
 		}
 
 		/**
@@ -485,6 +514,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$classes[] = 'distraction-free';
 			}
 
+			// My Account page style
+			$style = get_theme_mod( 'ocean_woo_account_page_style', 'original' );
+			if ( 'side' == $style ) {
+				$classes[] = 'account-side-style';
+			} else {
+				$classes[] = 'account-original-style';
+			}
+
 			// Return
  			return $classes;
 			
@@ -609,7 +646,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// If floating bar
-			if ( 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'off' )
+			if ( 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'on' )
 				&& oceanwp_is_woo_single() ) {
 				wp_enqueue_style( 'oceanwp-woo-floating-bar', OCEANWP_CSS_DIR_URI .'woo/woo-floating-bar.min.css' );
 				wp_enqueue_script( 'oceanwp-woo-floating-bar', OCEANWP_JS_DIR_URI .'third/woo/woo-floating-bar.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
@@ -674,14 +711,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// If quick view, ajax add to cart or floating bar
 			if ( get_theme_mod( 'ocean_woo_quick_view', true )
 				|| true == get_theme_mod( 'ocean_woo_product_ajax_add_to_cart', false )
-				|| 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'off' ) ) {
+				|| 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'on' ) ) {
 				$array['ajax_url'] = admin_url( 'admin-ajax.php' );
 				$array['cart_url'] = apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url() );
 				$array['cart_redirect_after_add'] = get_option( 'woocommerce_cart_redirect_after_add' );
 			}
 
 			// Check if the floating bar is enabled for the quantity button
-			$array['floating_bar'] = get_theme_mod( 'ocean_woo_display_floating_bar', 'off' );
+			$array['floating_bar'] = get_theme_mod( 'ocean_woo_display_floating_bar', 'on' );
+
+			// Grouped product button text in the quick view
+			$array['grouped_text'] = esc_attr__( 'View products', 'oceanwp' );
 
 			return $array;
 
@@ -1120,11 +1160,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$prev_post = get_previous_post( true, '', 'product_cat' );
 
 			// Next text
-			$next_text = esc_html__( 'Next Product', 'oceanwp' );
+			$next_text = esc_html__( 'Previous Product', 'oceanwp' );
 			$next_text = apply_filters( 'ocean_woo_nav_next_text', $next_text );
 
 			// Prev text
-			$prev_text = esc_html__( 'Previous Product', 'oceanwp' );
+			$prev_text = esc_html__( 'Next Product', 'oceanwp' );
 			$prev_text = apply_filters( 'ocean_woo_nav_prev_text', $prev_text ); ?>
 
 			<div class="owp-product-nav-wrap clr">
@@ -1317,18 +1357,25 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.1.1.1
 		 */
 		public static function add_category_description( $category ) {
-				// Close category link openend in add_div_before_category_title()
-				echo '</a>';
+			// Close category link openend in add_div_before_category_title()
+			echo '</a>';
 
-			// Var
-			$term 			= get_term( $category->term_id, 'product_cat' );
-			$description 	= $term->description;
+			 // Var
+			$term           = get_term( $category->term_id, 'product_cat' );
+			$description    = $term->description;
+			$length 		= get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
 
 			// Description
 			if ( get_theme_mod( 'ocean_woo_grid_list', true )
 				&& $description ) {
 				echo '<div class="woo-desc">';
-					echo '<div class="description">' . wp_kses_post( $description ) . '</div>';
+					echo '<div class="description">';
+						if ( ! $length ) {
+							echo wp_kses_post( strip_shortcodes( $description ) );
+						} else {
+							echo wp_trim_words( strip_shortcodes( $description ), $length );
+						}
+					echo '</div>';
 				echo '</div>';
 			}
 		}
@@ -1440,6 +1487,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					$classes[] = 'has-rating';
 				}
 
+				// If product navigation
+				if ( true == get_theme_mod( 'ocean_woocommerce_display_navigation', true ) ) {
+					$classes[] = 'has-product-nav';
+				}
+
 				$classes[] = 'col';
 				$classes[] = oceanwp_grid_class( $woocommerce_loop['columns'] );
 				$classes[] = 'owp-content-'. $content_alignment;
@@ -1477,6 +1529,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$classes[] = $sale_style . '-sale';
 			}
 
+			return $classes;
+		}
+
+		/**
+		 * Add the product class to the Elementor editor to fix the product display issue.
+		 *
+		 * @since 1.5.18
+		 */
+		public static function add_product_class_for_elementor( $classes ) {
+			if ( in_array( 'type-product', $classes ) ) {
+	            $classes[] = 'product';
+	        }
 			return $classes;
 		}
 
@@ -1729,12 +1793,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				return $items;
 			}
 
-			// Return items if "hide if empty cart" is checked
-			if ( true == get_theme_mod( 'ocean_woo_menu_icon_hide_if_empty', false )
-				&& ! WC()->cart->cart_contents_count > 0 ) {
-				return $items;
-			}
-
 			// Add cart link to menu items
 			if ( 'full_screen' == $header_style ) {
 				$items .= '<li class="woo-cart-link"><a href="'. esc_url( wc_get_cart_url() ) .'">'. esc_html__( 'Your cart', 'oceanwp' ) .'</a></li>';
@@ -1832,17 +1890,45 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function sale_flash() {
 			global $product;
 
-			// Value
-			if ( 'grouped' == $product->get_type() ) {
-				$value = esc_html__( 'Sale', 'oceanwp' );
+			if ( $product->is_type( 'simple' ) || $product->is_type( 'external' ) ) {
+
+				$r_price 	= $product->get_regular_price();
+				$s_price 	= $product->get_sale_price();
+				$percent 	= round( ( ( floatval( $r_price ) - floatval( $s_price ) ) / floatval( $r_price ) ) * 100 );
+
+			} else if ( $product->is_type( 'variable' ) ) {
+
+				$available_variations = $product->get_available_variations();
+				$maximumper           = 0;
+
+				for ( $i = 0; $i < count( $available_variations ); ++ $i ) {
+					$variation_id     = $available_variations[ $i ]['variation_id'];
+					$variable_product = new WC_Product_Variation( $variation_id );
+
+					if ( ! $variable_product->is_on_sale() ) {
+						continue;
+					}
+
+					$r_price 	= $variable_product->get_regular_price();
+					$s_price    = $variable_product->get_sale_price();
+					$percent 	= round( ( ( floatval( $r_price ) - floatval( $s_price ) ) / floatval( $r_price ) ) * 100 );
+
+					if ( $percent > $maximumper ) {
+						$maximumper = $percent;
+					}
+				}
+
+				$percent = sprintf( __( '%s', 'woocommerce' ), $maximumper );
+
 			} else {
-				$s_price = $product->get_sale_price();
-				$r_price = $product->get_regular_price();
-				$percent = round( ( ( ( $r_price - $s_price ) / $r_price ) * 100 ), 0 );
-				$value 	 = '-' . esc_html( $percent ) . '%';
+
+				$percent = '<span class="onsale">' . __( 'Sale!', 'woocommerce' ) . '</span>';
+				return $percent;
+
 			}
 
-			// Sale flash
+			$value = '-' . esc_html( $percent ) . '%';
+
 			return '<span class="onsale">' . esc_html( $value ) . '</span>';
 		}
 
@@ -1852,6 +1938,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.0
 		 */
 		public static function login_register_links() {
+
+			// Return if not Original style
+			if ( 'original' != get_theme_mod( 'ocean_woo_account_page_style', 'original' ) ) {
+				return;
+			}
 
 			// Var
 			$registration = get_option( 'woocommerce_enable_myaccount_registration' );
@@ -2201,6 +2292,24 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				remove_action( 'woocommerce_single_product_summary', array( $this, 'single_product_content' ), 10 );
 				add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 			}
+		}
+
+		/**
+		 * Compatibility with YITH WooCommerce Badge.
+		 *
+		 * @since 1.5.23
+		 */
+		public function yith_wcbm_shop_badge_container_start() {
+			do_action( 'yith_wcbm_theme_badge_container_start' );
+		}
+
+		/**
+		 * Compatibility with YITH WooCommerce Badge.
+		 *
+		 * @since 1.5.23
+		 */
+		public function yith_wcbm_shop_badge_container_end() {
+			do_action( 'yith_wcbm_theme_badge_container_end' );
 		}
 
 		/**

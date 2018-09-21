@@ -112,6 +112,17 @@ p.stars.selected a:not(.active)::before {
     opacity: 1
 }
 
+/* Filter rating widget */
+.widget_rating_filter .wc-layered-nav-rating {
+    margin-bottom: 10px;
+}
+
+.widget_rating_filter .wc-layered-nav-rating .star-rating {
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+}
+
 /* RTL */
 .rtl .star-rating::before {
     float: right;

@@ -61,6 +61,10 @@
 			'woo-default-cat',
 			'woo-dropdown-cat'
 		],
+		wooAccountStyle 	= [
+			'account-side-style',
+			'account-original-style'
+		],
 		wooSaleStyle 		= [
 			'square-sale',
 			'circle-sale'
@@ -240,6 +244,17 @@
 				if ( $arrow.length ) {
 					$arrow.removeClass();
 					$arrow.addClass( newval );
+				}
+			});
+		});
+
+		api('ocean_scroll_top_position', function( value ) {
+			value.bind( function( newval ) {
+				var $position = $( '#scroll-top' );
+
+				if ( $position.length ) {
+					$position.removeClass();
+					$position.addClass( 'scroll-top-' + newval );
 				}
 			});
 		});
@@ -1592,7 +1607,7 @@
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_edd_archive_both_sidebars_content_width' );
 				if ( to ) {
-					var style = '<style class="customizer-ocean_edd_archive_both_sidebars_content_width">@media only screen and (min-width: 960px){ body.edd.archive.content-both-sidebars .content-area { width: ' + to + '%; }				body.edd.archive.content-both-sidebars.scs-style .widget-area.sidebar-secondary, 			body.edd.archive.content-both-sidebars.ssc-style .widget-area {left: -' + to + '%;} }</style>';
+					var style = '<style class="customizer-ocean_edd_archive_both_sidebars_content_width">@media only screen and (min-width: 960px){ body.edd.archive.content-both-sidebars .content-area { width: ' + to + '%; } body.edd.archive.content-both-sidebars.scs-style .widget-area.sidebar-secondary, body.edd.archive.content-both-sidebars.ssc-style .widget-area {left: -' + to + '%;} }</style>';
 					if ( $child.length ) {
 						$child.replaceWith( style );
 					} else {
@@ -3431,7 +3446,7 @@
 				var $child = $(".customizer-ocean_sidebar_top_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_top_padding">.widget-area { padding-top: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_sidebar_top_padding">.widget-area { padding-top: ' + to + "px !important; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3446,7 +3461,7 @@
 				var $child = $(".customizer-ocean_sidebar_right_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_right_padding">.widget-area { padding-right: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_sidebar_right_padding">.widget-area { padding-right: ' + to + "px !important; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3461,7 +3476,7 @@
 				var $child = $(".customizer-ocean_sidebar_bottom_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_bottom_padding">.widget-area { padding-bottom: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_sidebar_bottom_padding">.widget-area { padding-bottom: ' + to + "px !important; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3476,7 +3491,7 @@
 				var $child = $(".customizer-ocean_sidebar_left_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_left_padding">.widget-area { padding-left: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_sidebar_left_padding">.widget-area { padding-left: ' + to + "px !important; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3491,7 +3506,7 @@
 				var $child = $(".customizer-ocean_sidebar_tablet_top_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_tablet_top_padding">@media (max-width: 768px){.widget-area { padding-top: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_sidebar_tablet_top_padding">@media (max-width: 768px){.widget-area { padding-top: ' + to + "px !important; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3506,7 +3521,7 @@
 				var $child = $(".customizer-ocean_sidebar_tablet_right_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_tablet_right_padding">@media (max-width: 768px){.widget-area { padding-right: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_sidebar_tablet_right_padding">@media (max-width: 768px){.widget-area { padding-right: ' + to + "px !important; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3521,7 +3536,7 @@
 				var $child = $(".customizer-ocean_sidebar_tablet_bottom_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_tablet_bottom_padding">@media (max-width: 768px){.widget-area { padding-bottom: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_sidebar_tablet_bottom_padding">@media (max-width: 768px){.widget-area { padding-bottom: ' + to + "px !important; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3536,7 +3551,7 @@
 				var $child = $(".customizer-ocean_sidebar_tablet_left_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_tablet_left_padding">@media (max-width: 768px){.widget-area { padding-left: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_sidebar_tablet_left_padding">@media (max-width: 768px){.widget-area { padding-left: ' + to + "px !important; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3551,7 +3566,7 @@
 				var $child = $(".customizer-ocean_sidebar_mobile_top_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_mobile_top_padding">@media (max-width: 480px){.widget-area { padding-top: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_sidebar_mobile_top_padding">@media (max-width: 480px){.widget-area { padding-top: ' + to + "px !important; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3566,7 +3581,7 @@
 				var $child = $(".customizer-ocean_sidebar_mobile_right_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_mobile_right_padding">@media (max-width: 480px){.widget-area { padding-right: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_sidebar_mobile_right_padding">@media (max-width: 480px){.widget-area { padding-right: ' + to + "px !important; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3581,7 +3596,7 @@
 				var $child = $(".customizer-ocean_sidebar_mobile_bottom_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_mobile_bottom_padding">@media (max-width: 480px){.widget-area { padding-bottom: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_sidebar_mobile_bottom_padding">@media (max-width: 480px){.widget-area { padding-bottom: ' + to + "px !important; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3596,7 +3611,7 @@
 				var $child = $(".customizer-ocean_sidebar_mobile_left_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_sidebar_mobile_left_padding">@media (max-width: 480px){.widget-area { padding-left: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_sidebar_mobile_left_padding">@media (max-width: 480px){.widget-area { padding-left: ' + to + "px !important; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

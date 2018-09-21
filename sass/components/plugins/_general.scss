@@ -1,12 +1,9 @@
 /* Fix for the tabs under the header in the edit mode */
 .fl-builder-edit #site-header,
-.fl-builder-edit.has-transparent-header #site-header { z-index: 1; }
+.fl-builder-edit.has-transparent-header #site-header,
+.elementor-editor-active #site-header { z-index: 1; }
 .fl-builder-edit #main,
-.et_fb_desktop_mode #main,
-.et_fb_preview_active #main { z-index: inherit !important; }
-
-/* Hide the transparent heade in the Elementor edit mode to avoid conflicts */
-body.elementor-editor-active.has-transparent-header #site-header { display: none; }
+.elementor-editor-active #main { z-index: inherit !important; }
 
 /* Fix the height automatically in the custom header style */
 #site-header .elementor-section-wrap {
@@ -29,12 +26,6 @@ body.elementor-editor-active.has-transparent-header #site-header { display: none
     background-color: transparent;
 }
 
-/* Fix bug with overlay in Chrome */
-.elementor-background-overlay,
-.background-image-page-header-overlay {
-	-webkit-transform: translateZ(0);
-}
-
 /* Fix bug with MotoPress */
 div.motopress-bootstrap-dropdown .dropdown-menu {
 	display: block !important;
@@ -49,4 +40,19 @@ div.motopress-bootstrap-dropdown .dropdown-menu {
 /* Remove the Elementor section min height if the no-height class is added */
 .no-height .elementor-column {
     min-height: 0;
+}
+
+/* WooCommerce issues with Elementor Pro */
+body .elementor-element.elementor-wc-products ul.products li.product .onsale {
+    padding: 8px 12px;
+}
+
+body .elementor-element.elementor-wc-products ul.products li.product.circle-sale .onsale {
+    padding: 0;
+}
+
+@media only screen and (max-width: 959px) {
+    .elementor-element.elementor-wc-products ul.products li.product {
+        width: auto !important;
+    }
 }

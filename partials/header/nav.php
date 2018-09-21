@@ -27,6 +27,10 @@ $elementor  = get_post_meta( $template, '_elementor_edit_mode', true );
 // Get content
 $get_content = oceanwp_nav_template_content();
 
+// Get classes for the header menu
+$wrap_classes  = oceanwp_header_menu_classes( 'wrapper' );
+$inner_classes = oceanwp_header_menu_classes( 'inner' );
+
 if ( ! empty( $template ) ) {
 
 	do_action( 'ocean_before_nav' );
@@ -83,11 +87,7 @@ else {
 	$ms_global_menu = apply_filters( 'ocean_ms_global_menu', false );
 
 	// Display menu if defined
-	if ( has_nav_menu( $menu_location ) || $ms_global_menu ) : 
-
-		// Get classes for the header menu
-		$wrap_classes  = oceanwp_header_menu_classes( 'wrapper' );
-		$inner_classes = oceanwp_header_menu_classes( 'inner' );
+	if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 		// Get menu classes
 		$menu_classes = array( 'main-menu' );
