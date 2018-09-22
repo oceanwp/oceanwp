@@ -1192,10 +1192,10 @@
 				var archivesCol = $( '.woocommerce .products .product' );
 				if ( archivesCol.length ) {
 					$.each( wooProductsCol, function( i, v ) {
-						archivesCol.parent().removeClass( 'archives-col-'+ v );
+						archivesCol.parent().removeClass( 'archives-owp-col-'+ v );
 						archivesCol.removeClass( 'span_1_of_'+ v );
 					});
-					archivesCol.parent().addClass( 'custom-col archives-col-'+ newval );
+					archivesCol.parent().addClass( 'custom-col archives-owp-col-'+ newval );
 					archivesCol.addClass( 'span_1_of_'+ newval );
 				}
 			});
@@ -1552,10 +1552,10 @@
 				var archivesCol = $( '.oceanwp-row .edd_downloads_list' );
 				if ( archivesCol.length ) {
 					$.each( eddProductsCol, function( i, v ) {
-						archivesCol.parent().removeClass( 'desktop-col-'+ v );
+						archivesCol.parent().removeClass( 'desktop-owp-col-'+ v );
 						archivesCol.removeClass( 'span_1_of_'+ v );
 					});
-					archivesCol.parent().addClass( 'custom-col desktop-col-'+ newval );
+					archivesCol.parent().addClass( 'custom-col desktop-owp-col-'+ newval );
 					archivesCol.addClass( 'span_1_of_'+ newval );
 				}
 			});

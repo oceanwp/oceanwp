@@ -35,7 +35,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 	        $indent = str_repeat("\t", $depth);
 
 	        // Megamenu columns
-	        $col = ! empty( $this->megamenu_col ) ? ( 'col-'. $this->megamenu_col .'' ) : 'col-2';
+	        $col = ! empty( $this->megamenu_col ) ? ( 'owp-col-'. $this->megamenu_col .'' ) : 'owp-col-2';
 
 	        if( $depth === 0 && $this->megamenu != '' && 'full_screen' != oceanwp_header_style() && 'vertical' != oceanwp_header_style() ) {
 	        	$output .= "\n$indent<ul class=\"megamenu ". $col ." sub-menu\">\n";
@@ -251,7 +251,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 				&& 'full_screen' != $header_style && 'vertical' != $header_style ) {
 				global $post;
 
-				$output .= "\n<ul class=\"megamenu col-4 sub-menu\">\n";
+				$output .= "\n<ul class=\"megamenu owp-col-4 sub-menu\">\n";
 
 					// Sub Categories ===============================================================
 					if ( $item->category_post != '' && $item->object == 'category' ) {

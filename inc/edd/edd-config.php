@@ -234,7 +234,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			// Counter
 			global $oceanwp_count;
 			if ( $oceanwp_count ) {
-				$classes[] = 'col-'. $oceanwp_count;
+				$classes[] = 'owp-col-'. $oceanwp_count;
 			}
 
 			return $classes;

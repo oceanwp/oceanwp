@@ -92,14 +92,14 @@ $inner_classes = implode( ' ', $inner_classes ); ?>
 		} else {
 
 			// Footer box 1 ?>
-			<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col col-1">
+			<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col owp-col-1">
 				<?php dynamic_sidebar( 'footer-one' ); ?>
 			</div><!-- .footer-one-box -->
 
 			<?php
 			// Footer box 2
 			if ( $columns > '1' ) : ?>
-				<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col col-2">
+				<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col owp-col-2">
 					<?php dynamic_sidebar( 'footer-two' ); ?>
 				</div><!-- .footer-one-box -->
 			<?php endif; ?>
@@ -107,7 +107,7 @@ $inner_classes = implode( ' ', $inner_classes ); ?>
 			<?php
 			// Footer box 3
 			if ( $columns > '2' ) : ?>
-				<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col col-3 ">
+				<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col owp-col-3 ">
 					<?php dynamic_sidebar( 'footer-three' ); ?>
 				</div><!-- .footer-one-box -->
 			<?php endif; ?>
@@ -115,7 +115,7 @@ $inner_classes = implode( ' ', $inner_classes ); ?>
 			<?php
 			// Footer box 4
 			if ( $columns > '3' ) : ?>
-				<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col col-4">
+				<div class="footer-box <?php echo esc_attr( $grid_class ); ?> col owp-col-4">
 					<?php dynamic_sidebar( 'footer-four' ); ?>
 				</div><!-- .footer-box -->
 			<?php endif; ?>

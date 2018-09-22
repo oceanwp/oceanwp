@@ -39,11 +39,11 @@ Woo Responsive
 @media only screen and(max-width: 959px) {
 	body.account-side-style .woocommerce #customer_login {
 		> div,
-		.col-2 {
+		.owp-col-2 {
 		    float: none;
 			width: 100%;
 		}
-		.col-2 {
+		.owp-col-2 {
 		    margin-top: 20px;
 		}
 	}
@@ -157,11 +157,11 @@ Woo Responsive
 		}
 	}
 	.col2-set {
-		.col-1 {
+		.owp-col-1 {
 			float: none;
 			width: 100%;
 		}
-		.col-2 {
+		.owp-col-2 {
 			float: none;
 			width: 100%;
 		}
