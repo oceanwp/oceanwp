@@ -108,9 +108,9 @@ class OceanWP_Nav_Walker {
 	        </label>
 	    </p>
 	    <p class="field-megamenu-columns description description-wide">
-	        <label for="edit-menu-item-megamenu_col-<?php echo esc_attr( $item->ID ); ?>">
+	        <label for="edit-menu-item-megamenu_owp-col-<?php echo esc_attr( $item->ID ); ?>">
 	            <?php esc_html_e( 'Megamenu columns (from 1 to 6)', 'oceanwp' ); ?><br />
-	            <input type="number" id="edit-menu-item-megamenu_col-<?php echo esc_attr( $item->ID ); ?>" class="widefat code edit-menu-item-custom" name="menu-item-megamenu_col[<?php echo esc_attr( $item->ID ); ?>]" min="1" max="6" value="<?php echo esc_attr( $item->megamenu_col ); ?>" />
+	            <input type="number" id="edit-menu-item-megamenu_owp-col-<?php echo esc_attr( $item->ID ); ?>" class="widefat code edit-menu-item-custom" name="menu-item-megamenu_col[<?php echo esc_attr( $item->ID ); ?>]" min="1" max="6" value="<?php echo esc_attr( $item->megamenu_col ); ?>" />
 	        </label>
 	    </p>                   
 	    <p class="field-megamenu-heading description description-wide">

@@ -550,25 +550,25 @@
 		.owp-content-right .product-inner {
 			text-align: right;
 		}
-		&.archives-col-1 .product {
+		&.archives-owp-col-1 .product {
 			clear: both;
 		}
-		&.archives-col-2 .product:nth-child(2n + 1) {
+		&.archives-owp-col-2 .product:nth-child(2n + 1) {
 			clear: both;
 		}
-		&.archives-col-3 .product:nth-child(3n + 1) {
+		&.archives-owp-col-3 .product:nth-child(3n + 1) {
 			clear: both;
 		}
-		&.archives-col-4 .product:nth-child(4n + 1) {
+		&.archives-owp-col-4 .product:nth-child(4n + 1) {
 			clear: both;
 		}
-		&.archives-col-5 .product:nth-child(5n + 1) {
+		&.archives-owp-col-5 .product:nth-child(5n + 1) {
 			clear: both;
 		}
-		&.archives-col-6 .product:nth-child(6n + 1) {
+		&.archives-owp-col-6 .product:nth-child(6n + 1) {
 			clear: both;
 		}
-		&.archives-col-7 .product:nth-child(7n + 1) {
+		&.archives-owp-col-7 .product:nth-child(7n + 1) {
 			clear: both;
 		}
 	}
@@ -615,10 +615,10 @@
 				display: table;
 			}
 			.col2-set {
-				.col-1 {
+				.owp-col-1 {
 					width: 47%;
 				}
-				.col-2 {
+				.owp-col-2 {
 					width: 47%;
 				}
 			}
@@ -1576,7 +1576,7 @@
 			text-transform: capitalize;
 		}
 	}
-	.col-1.address {
+	.owp-col-1.address {
 		padding: 20px;
 		border-width: 2px;
 		border-style: solid;
@@ -1593,7 +1593,7 @@
 			margin: 0;
 		}
 	}
-	.col-2.address {
+	.owp-col-2.address {
 		padding: 20px;
 		border-width: 2px;
 		border-style: solid;
@@ -1671,7 +1671,7 @@
 	    max-width: 100%;
 	    margin: 0 auto;
 	}
-	.col-2 {
+	.owp-col-2 {
 		display: none;
 
 		button {
@@ -1680,7 +1680,7 @@
 		    padding-bottom: 16px;
 		}
 	}
-	.col-1 p {
+	.owp-col-1 p {
 		&:nth-last-child(2) {
 			margin: 0;
 		}
@@ -1688,7 +1688,7 @@
 			margin: 0;
 		}
 	}
-	.col-1 .form-row {
+	.owp-col-1 .form-row {
 		display: inline-block;
 		&.form-row-wide {
 			width: 100%;
@@ -1721,7 +1721,7 @@
 	    float: left;
 	    width: 48%;
 	}
-	.col-2 {
+	.owp-col-2 {
 	    display: block;
 	    float: right;
 	}
@@ -1833,11 +1833,11 @@
 		visibility: hidden;
 		zoom: 1;
 	}
-	.col-1 {
+	.owp-col-1 {
 		float: left;
 		width: 48%;
 	}
-	.col-2 {
+	.owp-col-2 {
 		float: right;
 		width: 48%;
 	}
@@ -1997,10 +1997,10 @@
 				display: table;
 			}
 			.col2-set {
-				.col-1 {
+				.owp-col-1 {
 					width: 47%;
 				}
-				.col-2 {
+				.owp-col-2 {
 					width: 47%;
 				}
 			}
@@ -2508,7 +2508,7 @@ ul {
 		float: left;
 		width: 48%;
 		> {
-			.col-1 {
+			.owp-col-1 {
 				float: none;
 				width: 100%;
 				margin-bottom: 30px;
@@ -2521,7 +2521,7 @@ ul {
 					height: 0;
 				}
 			}
-			.col-2 {
+			.owp-col-2 {
 				float: none;
 				width: 100%;
 				&:after {

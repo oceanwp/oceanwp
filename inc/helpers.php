@@ -2392,7 +2392,7 @@ if ( ! function_exists( 'oceanwp_post_entry_classes' ) ) {
 		// Counter
 		global $oceanwp_count;
 		if ( $oceanwp_count ) {
-			$classes[] = 'col-'. $oceanwp_count;
+			$classes[] = 'owp-col-'. $oceanwp_count;
 		}
 
 		// Apply filters to entry post class for child theming

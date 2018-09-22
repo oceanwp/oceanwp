@@ -8,15 +8,15 @@
 .wcmenucart-details.count:before { right: -3px; left: auto; border-style: solid none solid solid; border-width: 5px medium 5px 5px; }
 
 /* General */
-.col2-set .col-1,
+.col2-set .owp-col-1,
 .woocommerce .form-row-first { float: right; margin-left: 4%; margin-right: 0; }
 
-.col2-set .col-2,
+.col2-set .owp-col-2,
 .woocommerce .form-row-last { float: left; }
 
 /* Account page */
 .account-side-style .woocommerce #customer_login > div { float: right; }
-.account-side-style .woocommerce #customer_login .col-2 { float: left; }
+.account-side-style .woocommerce #customer_login .owp-col-2 { float: left; }
 .account-side-style .woocommerce #customer_login .woocommerce-form__label .woocommerce-form__input { margin: -3px 15px 0 6px !important; }
 
 /* Stars */

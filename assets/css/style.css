@@ -205,7 +205,7 @@ body .oceanwp-row .span_1_of_10 {
  * Grid > Clear Floats.
  */
 .count-1,
-.col-1,
+.owp-col-1,
 .col.first {
   clear: both;
   margin-left: 0;
@@ -324,7 +324,7 @@ form.oceanwp-searchform button {
 *------------------------------------*/
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   /* turn 4 column masonry grids into 2 columns */
-  body .oceanwp-row .span_1_of_4.col-3.col,
+  body .oceanwp-row .span_1_of_4.owp-col-3.col,
   body .oceanwp-row .span_1_of_4.col.product:nth-child(2n+3) {
     margin-left: 0;
     clear: both;
@@ -3349,15 +3349,15 @@ a.pure-button-selected {
           flex: 1 0 0%;
 }
 
-#site-header.medium-header .top-col.col-1 {
+#site-header.medium-header .top-col.owp-col-1 {
   text-align: left;
 }
 
-#site-header.medium-header .top-col.col-2, #site-header.medium-header .top-col.logo-col {
+#site-header.medium-header .top-col.owp-col-2, #site-header.medium-header .top-col.logo-col {
   text-align: center;
 }
 
-#site-header.medium-header .top-col.col-3 {
+#site-header.medium-header .top-col.owp-col-3 {
   text-align: right;
 }
 
@@ -5355,27 +5355,27 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 /**
  * Megamenu columns
  */
-.navigation li.megamenu-li .megamenu.col-1 > li {
+.navigation li.megamenu-li .megamenu.owp-col-1 > li {
   width: 100%;
 }
 
-.navigation li.megamenu-li .megamenu.col-2 > li {
+.navigation li.megamenu-li .megamenu.owp-col-2 > li {
   width: 50%;
 }
 
-.navigation li.megamenu-li .megamenu.col-3 > li {
+.navigation li.megamenu-li .megamenu.owp-col-3 > li {
   width: 33.33333333%;
 }
 
-.navigation li.megamenu-li .megamenu.col-4 > li {
+.navigation li.megamenu-li .megamenu.owp-col-4 > li {
   width: 25%;
 }
 
-.navigation li.megamenu-li .megamenu.col-5 > li {
+.navigation li.megamenu-li .megamenu.owp-col-5 > li {
   width: 20%;
 }
 
-.navigation li.megamenu-li .megamenu.col-6 > li {
+.navigation li.megamenu-li .megamenu.owp-col-6 > li {
   width: 16.66666667%;
 }
 
@@ -5383,22 +5383,22 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
  * Megamenu auto width
  */
 @media only screen and (min-width: 959px) {
-  .navigation li.megamenu-li.auto-mega .megamenu.col-1 {
+  .navigation li.megamenu-li.auto-mega .megamenu.owp-col-1 {
     width: 320px;
   }
-  .navigation li.megamenu-li.auto-mega .megamenu.col-2 {
+  .navigation li.megamenu-li.auto-mega .megamenu.owp-col-2 {
     width: 440px;
   }
-  .navigation li.megamenu-li.auto-mega .megamenu.col-3 {
+  .navigation li.megamenu-li.auto-mega .megamenu.owp-col-3 {
     width: 660px;
   }
-  .navigation li.megamenu-li.auto-mega .megamenu.col-4 {
+  .navigation li.megamenu-li.auto-mega .megamenu.owp-col-4 {
     width: 780px;
   }
-  .navigation li.megamenu-li.auto-mega .megamenu.col-5 {
+  .navigation li.megamenu-li.auto-mega .megamenu.owp-col-5 {
     width: 980px;
   }
-  .navigation li.megamenu-li.auto-mega .megamenu.col-6 {
+  .navigation li.megamenu-li.auto-mega .megamenu.owp-col-6 {
     width: 1080px;
   }
 }
@@ -5514,7 +5514,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 *------------------------------------*/
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
   /* megamenu */
-  .navigation li.megamenu.auto-width.col-6 > .sub-menu {
+  .navigation li.megamenu.auto-width.owp-col-6 > .sub-menu {
     width: 980px;
   }
 }

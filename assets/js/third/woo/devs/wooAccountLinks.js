@@ -20,8 +20,8 @@ function oceanwpWooAccountLinks() {
 	// Vars
 	var $login 		= $j( '.owp-account-links .login a' ),
 		$register 	= $j( '.owp-account-links .register a' ),
-		$col_1 		= $j( '#customer_login .col-1' ),
-		$col_2 		= $j( '#customer_login .col-2' );
+		$col_1 		= $j( '#customer_login .owp-col-1' ),
+		$col_2 		= $j( '#customer_login .owp-col-2' );
 
 	// Display login form
 	$login.on( 'click', function() {
