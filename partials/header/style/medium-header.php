@@ -50,7 +50,7 @@ $classes = implode( ' ', $classes ); ?>
 						$e_classes = array( 'top-col', 'clr' );
 
 						// Count
-						$e_classes[] = 'col-'. $count;
+						$e_classes[] = 'owp-col-'. $count;
 
 						// If logo
 						if ( 'logo' == $element ) {

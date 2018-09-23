@@ -511,6 +511,7 @@
 	form {
 		.form-row {
 			padding: 3px 0;
+			display: block;
 			label {
 				display: inline-block;
 				margin: 0 0 5px;
@@ -1836,10 +1837,12 @@
 	.col-1 {
 		float: left;
 		width: 48%;
+		max-width: unset;
 	}
 	.col-2 {
 		float: right;
 		width: 48%;
+		max-width: unset;
 	}
 }
 @media only screen and(min-width: 481px) and(max-width: 768px) {

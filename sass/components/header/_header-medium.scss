@@ -23,16 +23,16 @@
 		-webkit-flex: 1 0 0%;
     	flex: 1 0 0%;
 
-		&.col-1 {
+		&.owp-col-1 {
 			text-align: left;
 		}
 
-		&.col-2,
+		&.owp-col-2,
 		&.logo-col {
 			text-align: center;
 		}
 
-		&.col-3 {
+		&.owp-col-3 {
 			text-align: right;
 		}
 	}

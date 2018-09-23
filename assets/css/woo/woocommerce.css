@@ -659,6 +659,7 @@
 
 .woocommerce form .form-row {
   padding: 3px 0;
+  display: block;
 }
 
 .woocommerce form .form-row label {
@@ -2273,11 +2274,13 @@
 .col2-set .col-1 {
   float: left;
   width: 48%;
+  max-width: unset;
 }
 
 .col2-set .col-2 {
   float: right;
   width: 48%;
+  max-width: unset;
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {

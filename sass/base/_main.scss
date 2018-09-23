@@ -86,7 +86,7 @@ body .oceanwp-row {
  * Grid > Clear Floats.
  */
 .count-1,
-.col-1,
+.owp-col-1,
 .col.first {
 	clear: both;
 	margin-left: 0;
@@ -201,7 +201,7 @@ form.oceanwp-searchform {
 	
 	/* turn 4 column masonry grids into 2 columns */
 	body .oceanwp-row {
-		.span_1_of_4.col-3.col,
+		.span_1_of_4.owp-col-3.col,
 		.span_1_of_4.col.product:nth-child(2n+3) {
 			margin-left: 0;
 			clear: both;

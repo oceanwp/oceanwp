@@ -102,7 +102,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 				// Add classes
 				$classes	= array( 'related-post', 'clr', 'col' );
 				$classes[]	= oceanwp_grid_class( $oceanwp_columns );
-				$classes[]	= 'col-'. $oceanwp_count; ?>
+				$classes[]	= 'owp-col-'. $oceanwp_count; ?>
 
 				<article <?php post_class( $classes ); ?>>
 
