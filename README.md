@@ -3,7 +3,7 @@
 **Contributors:** Nick  
 **Requires at least:** WordPress 4.4  
 **Tested up to:** WordPress 4.9.8  
-**Stable tag:** 1.5.27  
+**Stable tag:** 1.5.28  
 **License:** GPLv3 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 **Tags:** two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, rtl-language-support, sticky-post, editor-style, threaded-comments, translation-ready, buddypress, custom-colors, featured-images, full-width-template, theme-options, e-commerce

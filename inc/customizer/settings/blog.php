@@ -438,7 +438,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_blog_thumbnail_date_color', array(
-				'label'	   				=> esc_html__( 'Category Hover Color', 'oceanwp' ),
+				'label'	   				=> esc_html__( 'Date Color', 'oceanwp' ),
 				'section'  				=> 'ocean_blog_entries',
 				'settings' 				=> 'ocean_blog_thumbnail_date_color',
 				'priority' 				=> 10,

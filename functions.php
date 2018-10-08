@@ -548,6 +548,9 @@ final class OCEANWP_Theme_Class {
 	 */
 	public static function register_sidebars() {
 
+		$heading = 'h4';
+		$heading = apply_filters( 'ocean_sidebar_heading', $heading );
+
 		// Default Sidebar
 		register_sidebar( array(
 			'name'			=> esc_html__( 'Default Sidebar', 'oceanwp' ),
@@ -555,8 +558,8 @@ final class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area will be displayed in the left or right sidebar area if you choose the Left or Right Sidebar layout.', 'oceanwp' ),
 			'before_widget'	=> '<div id="%1$s" class="sidebar-box %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
+			'before_title'	=> '<'. $heading .' class="widget-title">',
+			'after_title'	=> '</'. $heading .'>',
 		) );
 
 		// Left Sidebar
@@ -566,8 +569,8 @@ final class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area are used in the left sidebar region if you use the Both Sidebars layout.', 'oceanwp' ),
 			'before_widget'	=> '<div id="%1$s" class="sidebar-box %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
+			'before_title'	=> '<'. $heading .' class="widget-title">',
+			'after_title'	=> '</'. $heading .'>',
 		) );
 
 		// Search Results Sidebar
@@ -578,8 +581,8 @@ final class OCEANWP_Theme_Class {
 				'description'	=> esc_html__( 'Widgets in this area are used in the search result page.', 'oceanwp' ),
 				'before_widget'	=> '<div id="%1$s" class="sidebar-box %2$s clr">',
 				'after_widget'	=> '</div>',
-				'before_title'	=> '<h4 class="widget-title">',
-				'after_title'	=> '</h4>',
+				'before_title'	=> '<'. $heading .' class="widget-title">',
+				'after_title'	=> '</'. $heading .'>',
 			) );
 		}
 
@@ -590,8 +593,8 @@ final class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area are used in the first footer region.', 'oceanwp' ),
 			'before_widget'	=> '<div id="%1$s" class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
+			'before_title'	=> '<'. $heading .' class="widget-title">',
+			'after_title'	=> '</'. $heading .'>',
 		) );
 
 		// Footer 2
@@ -601,8 +604,8 @@ final class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area are used in the second footer region.', 'oceanwp' ),
 			'before_widget'	=> '<div id="%1$s" class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
+			'before_title'	=> '<'. $heading .' class="widget-title">',
+			'after_title'	=> '</'. $heading .'>',
 		) );
 
 		// Footer 3
@@ -612,8 +615,8 @@ final class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area are used in the third footer region.', 'oceanwp' ),
 			'before_widget'	=> '<div id="%1$s" class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
+			'before_title'	=> '<'. $heading .' class="widget-title">',
+			'after_title'	=> '</'. $heading .'>',
 		) );
 
 		// Footer 4
@@ -623,8 +626,8 @@ final class OCEANWP_Theme_Class {
 			'description'	=> esc_html__( 'Widgets in this area are used in the fourth footer region.', 'oceanwp' ),
 			'before_widget'	=> '<div id="%1$s" class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
-			'before_title'	=> '<h4 class="widget-title">',
-			'after_title'	=> '</h4>',
+			'before_title'	=> '<'. $heading .' class="widget-title">',
+			'after_title'	=> '</'. $heading .'>',
 		) );
 
 	}
