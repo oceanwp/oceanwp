@@ -31,6 +31,8 @@ if ( ! class_exists( 'OceanWP_Sensei' ) ) :
 			add_action( 'ocean_main_metaboxes_post_types', array( $this, 'add_metabox' ), 20 );
 			add_filter( 'ocean_primary_backgrounds', array( $this, 'primary_backgrounds' ) );
 			add_filter( 'ocean_hover_primary_backgrounds', array( $this, 'hover_primary_backgrounds' ) );
+			// Fix Styling Issue with Sensei Course Progress Extension
+			add_filter('dynamic_sidebar_params', array( $this, 'add_class_sensei_cp_widget' ) );
 		}
 
 		/**
@@ -117,6 +119,20 @@ if ( ! class_exists( 'OceanWP_Sensei' ) ) :
 			$types[] = 'lesson';
 			$types[] = 'question';
 			return $types;
+		}
+
+		/**
+		 * Add class to Sensei Course Progress Extension Widget
+		 *
+		 * @since 1.5.28
+		 **/
+		public static function add_class_sensei_cp_widget( $params ){
+			if ($params[0]['widget_name'] == "Sensei - Course Progress") {
+				$widget_class = 'widget ';
+				$widget_class = 'class="'.$widget_class;
+				$params[0]['before_widget'] = str_replace( 'class="',$widget_class, $params[0]['before_widget'] );
+			}
+			return $params;
 		}
 
 		/**
