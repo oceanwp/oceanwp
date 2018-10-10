@@ -4288,7 +4288,7 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 			$schema = 'itemprop="image"';
 		}
 
-		return ' ' . apply_filters( 'ocean_schema_markup', $schema, $location );
+		return ' ' . apply_filters( 'ocean_schema_markup', $schema );
 
 	}
 

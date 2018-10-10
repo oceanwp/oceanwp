@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * The template for displaying all pages, single posts and attachments
  *
