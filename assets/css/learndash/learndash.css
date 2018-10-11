@@ -157,8 +157,13 @@ a#quiz_continue_link:focus {
   font-size: 14px;
 }
 
-.expand_collapse a, 
-#learndash_profile .expand_collapse a{
+#learndash_lessons a,
+#learndash_quizzes a,
+.expand_collapse a,
+#learndash_profile .expand_collapse a,
+.learndash_topic_dots a,
+.learndash_topic_dots a > span,
+#learndash_lesson_topics_list span a{
   color: inherit;
 }
 

@@ -157,8 +157,8 @@ if ( ! class_exists( 'OceanWP_LearnDash' ) ) :
 				),
 			);
 
-			$settings['learndash_section_title'] = array(
-				'label' 				=> esc_html__( 'LearnDash Section Title', 'oceanwp' ),
+			$settings['learndash_table_heading'] = array(
+				'label' 				=> esc_html__( 'LearnDash Table Heading', 'oceanwp' ),
 				'target' 				=> '#learndash_lessons #lesson_heading, #learndash_profile .learndash_profile_heading, #learndash_quizzes #quiz_heading, #learndash_lesson_topics_list div>strong',
 				'defaults' 				=> array(
 					'font-size' 		=> '18',
@@ -168,8 +168,8 @@ if ( ! class_exists( 'OceanWP_LearnDash' ) ) :
 				),
 			);
 
-			$settings['learndash_item_title'] = array(
-				'label' 				=> esc_html__( 'LearnDash Section Item Title', 'oceanwp' ),
+			$settings['learndash_table_item'] = array(
+				'label' 				=> esc_html__( 'LearnDash Table Item', 'oceanwp' ),
 				'target' 				=> '#lessons_list>div h4>a, #course_list>div h4>a, #quiz_list>div h4>a',
 				'defaults' 				=> array(
 					'font-size' 		=> '34',
@@ -200,6 +200,16 @@ if ( ! class_exists( 'OceanWP_LearnDash' ) ) :
 		public static function primary_texts( $texts ) {
 			return array_merge( array(
 				'.learndash a:hover',
+				'#learndash_lessons a:hover', 
+				'#learndash_quizzes a:hover', 
+				'.expand_collapse a:hover', 
+				'.learndash_topic_dots a:hover', 
+				'.learndash_topic_dots a:hover > span', 
+				'#learndash_lesson_topics_list span a:hover',
+				'.learndash .completed:before', 
+				'.learndash .notcompleted:before', 
+				'#learndash_profile .completed:before', 
+				'#learndash_profile .notcompleted:before',
 			), $texts );
 		}
 
@@ -224,6 +234,10 @@ if ( ! class_exists( 'OceanWP_LearnDash' ) ) :
 		public static function primary_backgrounds( $backgrounds ) {
 			return array_merge( array(
 				'.learndash-button-action',
+				'#learndash_lessons #lesson_heading', 
+				'#learndash_profile .learndash_profile_heading', 
+				'#learndash_quizzes #quiz_heading', 
+				'#learndash_lesson_topics_list div>strong',
 			), $backgrounds );
 		}
 
