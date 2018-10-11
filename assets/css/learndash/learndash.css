@@ -157,6 +157,11 @@ a#quiz_continue_link:focus {
   font-size: 14px;
 }
 
+.expand_collapse a, 
+#learndash_profile .expand_collapse a{
+  color: inherit;
+}
+
 #lessons_list > div > div,
 #course_list > div > div,
 #quiz_list > div > div,
@@ -260,4 +265,11 @@ body #ld_course_list .open .dropdown-toggle.btn-primary {
   background-color: #0b7cac;
   color: #fff;
   border: 0;
+}
+
+/** Distraction Free Learning */
+.ld-distraction-free #site-logo {
+  float: none;
+  width: 100%;
+  text-align: center;
 }
