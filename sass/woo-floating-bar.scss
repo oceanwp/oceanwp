@@ -160,8 +160,12 @@ Woo Floating Bar
 			text-align: center;
 		}
 
-		form.cart .quantity {
-		    margin-top: 0;
+		form.cart {
+			vertical-align: bottom;
+			
+			.quantity {
+			    margin-top: 0;
+			}
 		}
 
 		button.button {

@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### *2018.10.08* - 1.5.28:
+* **Added** - Filter to allow you to change the heading for the sidebar titles.
+* **Fixed** - Floating bar issue on IOS.
+* **Fixed** - Styling issue with WPForms.
+
 ### *2018.09.04* - 1.5.27:
 * **Tweak** - Taxonomy description added before the content instead as subheading.
 * **Fixed** - Little issue in the elementor editor to make the text bold, italic, add a link, etc.. who was not selectable.

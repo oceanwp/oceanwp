@@ -2380,7 +2380,7 @@
 				var $child = $(".customizer-ocean_input_top_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_top_padding">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-top: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_input_top_padding">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-top: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2395,7 +2395,7 @@
 				var $child = $(".customizer-ocean_input_right_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_right_padding">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-right: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_input_right_padding">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-right: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2410,7 +2410,7 @@
 				var $child = $(".customizer-ocean_input_bottom_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_bottom_padding">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-bottom: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_input_bottom_padding">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-bottom: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2425,7 +2425,7 @@
 				var $child = $(".customizer-ocean_input_left_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_left_padding">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-left: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_input_left_padding">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-left: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2440,7 +2440,7 @@
 				var $child = $(".customizer-ocean_input_tablet_top_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_tablet_top_padding">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-top: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_tablet_top_padding">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-top: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2455,7 +2455,7 @@
 				var $child = $(".customizer-ocean_input_tablet_right_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_tablet_right_padding">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-right: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_tablet_right_padding">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-right: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2470,7 +2470,7 @@
 				var $child = $(".customizer-ocean_input_tablet_bottom_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_tablet_bottom_padding">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-bottom: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_tablet_bottom_padding">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-bottom: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2485,7 +2485,7 @@
 				var $child = $(".customizer-ocean_input_tablet_left_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_tablet_left_padding">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-left: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_tablet_left_padding">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-left: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2500,7 +2500,7 @@
 				var $child = $(".customizer-ocean_input_mobile_top_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_mobile_top_padding">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-top: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_mobile_top_padding">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-top: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2515,7 +2515,7 @@
 				var $child = $(".customizer-ocean_input_mobile_right_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_mobile_right_padding">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-right: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_mobile_right_padding">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-right: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2530,7 +2530,7 @@
 				var $child = $(".customizer-ocean_input_mobile_bottom_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_mobile_bottom_padding">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-bottom: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_mobile_bottom_padding">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-bottom: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2545,7 +2545,7 @@
 				var $child = $(".customizer-ocean_input_mobile_left_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_mobile_left_padding">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { padding-left: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_mobile_left_padding">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { padding-left: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2560,7 +2560,7 @@
 				var $child = $(".customizer-ocean_input_border_radius");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_border_radius">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-radius: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_input_border_radius">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-radius: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2575,7 +2575,7 @@
 				var $child = $(".customizer-ocean_input_font_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_font_size">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { font-size: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_input_font_size">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { font-size: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2590,7 +2590,7 @@
 				var $child = $(".customizer-ocean_input_background");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_background">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_input_background">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2605,7 +2605,7 @@
 				var $child = $(".customizer-ocean_input_border_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_border_color">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea,.select2-container .select2-choice { border-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_input_border_color">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea,.select2-container .select2-choice, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2620,7 +2620,7 @@
 				var $child = $(".customizer-ocean_input_border_color_focus");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_border_color_focus">form input[type="text"]:focus,form input[type="password"]:focus,form input[type="email"]:focus,form input[type="tel"]:focus,form input[type="url"]:focus,form input[type="search"]:focus,form textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices { border-color: ' +
+					var img = '<style class="customizer-ocean_input_border_color_focus">form input[type="text"]:focus,form input[type="password"]:focus,form input[type="email"]:focus,form input[type="tel"]:focus,form input[type="url"]:focus,form input[type="search"]:focus,form textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices, body div.wpforms-container-full .wpforms-form input:focus, body div.wpforms-container-full .wpforms-form textarea:focus, body div.wpforms-container-full .wpforms-form select:focus { border-color: ' +
 						to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
@@ -2636,7 +2636,7 @@
 				var $child = $(".customizer-ocean_input_top_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_top_border_width">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-top-width: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_input_top_border_width">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-top-width: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2651,7 +2651,7 @@
 				var $child = $(".customizer-ocean_input_right_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_right_border_width">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-right-width: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_input_right_border_width">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-right-width: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2666,7 +2666,7 @@
 				var $child = $(".customizer-ocean_input_bottom_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_bottom_border_width">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-bottom-width: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_input_bottom_border_width">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-bottom-width: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2681,7 +2681,7 @@
 				var $child = $(".customizer-ocean_input_left_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_left_border_width">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-left-width: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_input_left_border_width">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-left-width: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2696,7 +2696,7 @@
 				var $child = $(".customizer-ocean_input_tablet_top_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_tablet_top_border_width">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-top-width: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_tablet_top_border_width">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-top-width: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2711,7 +2711,7 @@
 				var $child = $(".customizer-ocean_input_tablet_right_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_tablet_right_border_width">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-right-width: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_tablet_right_border_width">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-right-width: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2726,7 +2726,7 @@
 				var $child = $(".customizer-ocean_input_tablet_bottom_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_tablet_bottom_border_width">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-bottom-width: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_tablet_bottom_border_width">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-bottom-width: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2741,7 +2741,7 @@
 				var $child = $(".customizer-ocean_input_tablet_left_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_tablet_left_border_width">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-left-width: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_tablet_left_border_width">@media (max-width: 768px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-left-width: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2756,7 +2756,7 @@
 				var $child = $(".customizer-ocean_input_mobile_top_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_mobile_top_border_width">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-top-width: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_mobile_top_border_width">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-top-width: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2771,7 +2771,7 @@
 				var $child = $(".customizer-ocean_input_mobile_right_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_mobile_right_border_width">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-right-width: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_mobile_right_border_width">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-right-width: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2786,7 +2786,7 @@
 				var $child = $(".customizer-ocean_input_mobile_bottom_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_mobile_bottom_border_width">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-bottom-width: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_mobile_bottom_border_width">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-bottom-width: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2801,7 +2801,7 @@
 				var $child = $(".customizer-ocean_input_mobile_left_border_width");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_mobile_left_border_width">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { border-left-width: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_input_mobile_left_border_width">@media (max-width: 480px){form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { border-left-width: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2816,7 +2816,7 @@
 				var $child = $(".customizer-ocean_input_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_input_color">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_input_color">form input[type="text"],form input[type="password"],form input[type="email"],form input[type="tel"],form input[type="url"],form input[type="search"],form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2891,7 +2891,7 @@
 				var $child = $(".customizer-ocean_theme_button_top_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_top_padding">.theme-button,input[type="submit"],button { padding-top: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_top_padding">.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-top: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2906,7 +2906,7 @@
 				var $child = $(".customizer-ocean_theme_button_right_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_right_padding">.theme-button,input[type="submit"],button { padding-right: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_right_padding">.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-right: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2921,7 +2921,7 @@
 				var $child = $(".customizer-ocean_theme_button_bottom_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_bottom_padding">.theme-button,input[type="submit"],button { padding-bottom: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_bottom_padding">.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-bottom: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2936,7 +2936,7 @@
 				var $child = $(".customizer-ocean_theme_button_left_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_left_padding">.theme-button,input[type="submit"],button { padding-left: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_left_padding">.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-left: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2951,7 +2951,7 @@
 				var $child = $(".customizer-ocean_theme_button_tablet_top_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_tablet_top_padding">@media (max-width: 768px){.theme-button,input[type="submit"],button { padding-top: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_theme_button_tablet_top_padding">@media (max-width: 768px){.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-top: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2966,7 +2966,7 @@
 				var $child = $(".customizer-ocean_theme_button_tablet_right_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_tablet_right_padding">@media (max-width: 768px){.theme-button,input[type="submit"],button { padding-right: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_theme_button_tablet_right_padding">@media (max-width: 768px){.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-right: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2981,7 +2981,7 @@
 				var $child = $(".customizer-ocean_theme_button_tablet_bottom_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_tablet_bottom_padding">@media (max-width: 768px){.theme-button,input[type="submit"],button { padding-bottom: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_theme_button_tablet_bottom_padding">@media (max-width: 768px){.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-bottom: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2996,7 +2996,7 @@
 				var $child = $(".customizer-ocean_theme_button_tablet_left_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_tablet_left_padding">@media (max-width: 768px){.theme-button,input[type="submit"],button { padding-left: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_theme_button_tablet_left_padding">@media (max-width: 768px){.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-left: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3011,7 +3011,7 @@
 				var $child = $(".customizer-ocean_theme_button_mobile_top_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_mobile_top_padding">@media (max-width: 480px){.theme-button,input[type="submit"],button { padding-top: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_theme_button_mobile_top_padding">@media (max-width: 480px){.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-top: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3026,7 +3026,7 @@
 				var $child = $(".customizer-ocean_theme_button_mobile_right_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_mobile_right_padding">@media (max-width: 480px){.theme-button,input[type="submit"],button { padding-right: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_theme_button_mobile_right_padding">@media (max-width: 480px){.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-right: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3041,7 +3041,7 @@
 				var $child = $(".customizer-ocean_theme_button_mobile_bottom_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_mobile_bottom_padding">@media (max-width: 480px){.theme-button,input[type="submit"],button { padding-bottom: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_theme_button_mobile_bottom_padding">@media (max-width: 480px){.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-bottom: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3056,7 +3056,7 @@
 				var $child = $(".customizer-ocean_theme_button_mobile_left_padding");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_mobile_left_padding">@media (max-width: 480px){.theme-button,input[type="submit"],button { padding-left: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_theme_button_mobile_left_padding">@media (max-width: 480px){.theme-button,input[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { padding-left: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3071,7 +3071,7 @@
 				var $child = $(".customizer-ocean_theme_button_border_radius");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_border_radius">input[type="button"], input[type="reset"], input[type="submit"], .button { border-radius: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_border_radius">input[type="button"], input[type="reset"], input[type="submit"], .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { border-radius: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3086,7 +3086,7 @@
 				var $child = $(".customizer-ocean_theme_button_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_color">body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_color">body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3101,7 +3101,7 @@
 				var $child = $(".customizer-ocean_theme_button_hover_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_hover_color">body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_hover_color">body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3116,7 +3116,7 @@
 				var $child = $(".customizer-ocean_theme_button_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_bg">body input[type="button"],body button[type="submit"], body input[type="reset"], body input[type="submit"], body .button { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_bg">body input[type="button"],body button[type="submit"], body input[type="reset"], body input[type="submit"], body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3131,7 +3131,7 @@
 				var $child = $(".customizer-ocean_theme_button_hover_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_button_hover_bg">body input[type="button"]:hover,body button[type="submit"]:hover, body input[type="reset"]:hover, body input[type="submit"]:hover, body .button:hover { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_button_hover_bg">body input[type="button"]:hover,body button[type="submit"]:hover, body input[type="reset"]:hover, body input[type="submit"]:hover, body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

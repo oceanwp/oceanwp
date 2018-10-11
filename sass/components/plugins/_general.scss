@@ -56,3 +56,6 @@ body .elementor-element.elementor-wc-products ul.products li.product.circle-sale
         width: auto !important;
     }
 }
+
+/* Fix parallax footer issue in the Elementor editor */
+.elementor-editor-active .parallax-footer { z-index: -1; }

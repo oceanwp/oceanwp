@@ -52,13 +52,13 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		// Cart total
 		$display = get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' );
 		if ( 'icon_total' == $display ) {
-			$cart_extra = WC()->cart->get_cart_total();
+			$cart_extra = WC()->cart->get_total();
 			$cart_extra = str_replace( 'amount', 'wcmenucart-details', $cart_extra );
 		} elseif ( 'icon_count' == $display ) {
 			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
 		} elseif ( 'icon_count_total' == $display ) {
 			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
-			$cart_total = WC()->cart->get_cart_total();
+			$cart_total = WC()->cart->get_total();
 			$cart_extra .= str_replace( 'amount', 'wcmenucart-details', $cart_total );
 		} else {
 			$cart_extra = '';
@@ -84,7 +84,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 			<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $classes ); ?>">
 				<?php
 				if ( true == get_theme_mod( 'ocean_woo_menu_bag_style_total', false ) ) { ?>
-					<span class="wcmenucart-total"><?php echo WC()->cart->get_cart_total(); ?></span>
+					<span class="wcmenucart-total"><?php echo WC()->cart->get_total(); ?></span>
 				<?php } ?>
 				<span class="wcmenucart-cart-icon">
 					<span class="wcmenucart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
