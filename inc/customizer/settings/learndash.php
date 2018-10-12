@@ -288,7 +288,7 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_ld_lesson_heading', array(
-				'label'    	=> esc_html__( 'Lesson', 'oceanwp' ),
+				'label'    	=> esc_html__( 'Lesson/Topic', 'oceanwp' ),
 				'section'  	=> 'ocean_ld_layout',
 				'priority' 	=> 10,
 			) ) );
@@ -492,47 +492,17 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 			) ) );
 
 			/**
-			 * Lesson
-			 */
-			$wp_customize->add_setting( 'ocean_lld_styling_lesson', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_lld_styling_lesson', array(
-				'label'    				=> esc_html__( 'Lesson', 'oceanwp' ),
-				'section'  				=> 'ocean_ld_styling',
-				'priority' 				=> 10,
-			) ) );
-
-			/**
-		     * Lesson Title Color
+		     * Progress Bar Color
 		     */
-	        $wp_customize->add_setting( 'ocean_ld_lesson_title_color', array(
-				'default'				=> '#333333',
+	        $wp_customize->add_setting( 'ocean_ld_progressbar_color', array(
 				'transport'				=> 'postMessage',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
 			) );
 
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_ld_lesson_title_color', array(
-				'label'					=> esc_html__( 'Title Color', 'oceanwp' ),
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_ld_progressbar_color', array(
+				'label'					=> esc_html__( 'Progress Bar Color', 'oceanwp' ),
 				'section'				=> 'ocean_ld_styling',
-				'settings'				=> 'ocean_ld_lesson_title_color',
-				'priority'				=> 10,
-			) ) );
-
-			/**
-		     * Lesson Description Color
-		     */
-	        $wp_customize->add_setting( 'ocean_ld_lesson_description_color', array(
-				'default'				=> '',
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_ld_lesson_description_color', array(
-				'label'					=> esc_html__( 'Description Color', 'oceanwp' ),
-				'section'				=> 'ocean_ld_styling',
-				'settings'				=> 'ocean_ld_lesson_description_color',
+				'settings'				=> 'ocean_ld_progressbar_color',
 				'priority'				=> 10,
 			) ) );
 		}
@@ -551,6 +521,7 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 			$item_hover_color 								= get_theme_mod( 'ocean_ld_item_hover_color' );
 			$complete_color 								= get_theme_mod( 'ocean_ld_complete_color' );
 			$incomplete_color								= get_theme_mod( 'ocean_ld_incomplete_color' );
+			$progressbar_color								= get_theme_mod( 'ocean_ld_progressbar_color' );
 
 			// Lesson 
 			$lesson_title_color								= get_theme_mod( 'ocean_ld_lesson_title_color' );
@@ -562,12 +533,12 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 			$bs_global_sidebars_width 						= get_theme_mod( 'ocean_ld_global_both_sidebars_sidebars_width' );
 
 			// Both Sidebars - Course
-			$ld_course_layout 							= get_theme_mod( 'ocean_ld_course_layout', 'left-sidebar' );
+			$ld_course_layout 								= get_theme_mod( 'ocean_ld_course_layout', 'left-sidebar' );
 			$bs_course_content_width 						= get_theme_mod( 'ocean_ld_course_both_sidebars_content_width' );
 			$bs_course_sidebars_width 						= get_theme_mod( 'ocean_ld_course_both_sidebars_sidebars_width' );
 
 			// Both Sidebars - Lesson
-			$ld_lesson_layout 							= get_theme_mod( 'ocean_ld_lesson_layout', 'left-sidebar' );
+			$ld_lesson_layout 								= get_theme_mod( 'ocean_ld_lesson_layout', 'left-sidebar' );
 			$bs_lesson_content_width 						= get_theme_mod( 'ocean_ld_lesson_both_sidebars_content_width' );
 			$bs_lesson_sidebars_width 						= get_theme_mod( 'ocean_ld_lesson_both_sidebars_sidebars_width' );
 
@@ -582,6 +553,31 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 			// Add Heading Background color
 			if ( ! empty( $heading_bg_color ) ) {
 				$css .= '#learndash_lessons #lesson_heading, #learndash_profile .learndash_profile_heading, #learndash_quizzes #quiz_heading, #learndash_lesson_topics_list div > strong{background-color:'. $heading_bg_color .';}';
+			}
+
+			// Add Item color
+			if ( ! empty( $item_color ) ) {
+				$css .= '#lessons_list > div h4 a, #course_list > div h4 a, #quiz_list > div h4 a, .learndash_topic_dots a, .learndash_topic_dots a > span, #learndash_lesson_topics_list span a{color:'. $item_color .';}';
+			}
+
+			// Add Item Hover color
+			if ( ! empty( $item_hover_color ) ) {
+				$css .= '#lessons_list > div h4 a:hover, #lessons_list > div h4 a:hover > span, #course_list > div h4 a:hover, #course_list > div h4 a:hover > span, #quiz_list > div h4 a:hover, #quiz_list > div h4 a:hover > span, .learndash_topic_dots a:hover, .learndash_topic_dots a:hover span, #learndash_lesson_topics_list span a:hover{color:'. $item_hover_color .';}';
+			}
+
+			// Add Complete Icon color
+			if ( ! empty( $complete_color ) ) {
+				$css .= '.learndash_navigation_lesson_topics_list .topic-completed span:before, .learndash_navigation_lesson_topics_list ul .topic-completed span:before, .learndash_topic_dots .topic-completed span:before, .learndash_topic_dots ul .topic-completed span:before, .learndash .completed:before, #learndash_profile .completed:before{color:'. $complete_color .';}';
+			}
+
+			// Add Incomplete Icon color
+			if ( ! empty( $incomplete_color ) ) {
+				$css .= '.learndash_navigation_lesson_topics_list .topic-notcompleted span:before, .learndash_navigation_lesson_topics_list ul .topic-notcompleted span:before, .learndash_topic_dots .topic-notcompleted span:before, .learndash_topic_dots ul .topic-notcompleted span:before, .learndash .notcompleted:before, #learndash_profile .notcompleted:before{color:'. $incomplete_color .';}';
+			}
+
+			// Add Progress Bar color
+			if ( ! empty( $progressbar_color ) ) {
+				$css .= '#learndash_lessons #lesson_heading, #learndash_profile .learndash_profile_heading, #learndash_quizzes #quiz_heading, #learndash_lesson_topics_list div > strong{color:'. $progressbar_color .';}';
 			}
 
 			// LearnDash Both Sidebars - Global
@@ -616,9 +612,9 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 				if ( ! empty( $bs_course_content_width ) ) {
 					$css .=
 						'@media only screen and (min-width: 960px){
-							body.single-course.content-both-sidebars .content-area {width: '. $bs_course_content_width .'%;}
-							body.single-course.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
-							body.single-course.content-both-sidebars.ssc-style .widget-area {left: -'. $bs_course_content_width .'%;}
+							body.single-sfwd-courses.content-both-sidebars .content-area {width: '. $bs_course_content_width .'%;}
+							body.single-sfwd-courses.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
+							body.single-sfwd-courses.content-both-sidebars.ssc-style .widget-area {left: -'. $bs_course_content_width .'%;}
 						}';
 				}
 
@@ -626,9 +622,9 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 				if ( ! empty( $bs_course_sidebars_width ) ) {
 					$css .=
 						'@media only screen and (min-width: 960px){
-							body.single-course.content-both-sidebars .widget-area{width:'. $bs_course_sidebars_width .'%;}
-							body.single-course.content-both-sidebars.scs-style .content-area{left:'. $bs_course_sidebars_width .'%;}
-							body.single-course.content-both-sidebars.ssc-style .content-area{left:'. $bs_course_sidebars_width * 2 .'%;}
+							body.single-sfwd-courses.content-both-sidebars .widget-area{width:'. $bs_course_sidebars_width .'%;}
+							body.single-sfwd-courses.content-both-sidebars.scs-style .content-area{left:'. $bs_course_sidebars_width .'%;}
+							body.single-sfwd-courses.content-both-sidebars.ssc-style .content-area{left:'. $bs_course_sidebars_width * 2 .'%;}
 						}';
 				}
 
@@ -641,9 +637,10 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 				if ( ! empty( $bs_lesson_content_width ) ) {
 					$css .=
 						'@media only screen and (min-width: 960px){
-							body.single-lesson.content-both-sidebars .content-area {width: '. $bs_lesson_content_width .'%;}
-							body.single-lesson.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
-							body.single-lesson.content-both-sidebars.ssc-style .widget-area {left: -'. $bs_lesson_content_width .'%;}
+							body.single-sfwd-lessons.content-both-sidebars .content-area, body.single-sfwd-topic.content-both-sidebars .content-area {width: '. $bs_lesson_content_width .'%;}
+							body.single-sfwd-lessons.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
+							body.single-sfwd-lessons.content-both-sidebars.ssc-style .widget-area, body.single-sfwd-topic.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
+							body.single-sfwd-topic.content-both-sidebars.ssc-style .widget-area {left: -'. $bs_lesson_content_width .'%;}
 						}';
 				}
 
@@ -651,9 +648,11 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 				if ( ! empty( $bs_lesson_sidebars_width ) ) {
 					$css .=
 						'@media only screen and (min-width: 960px){
-							body.single-lesson.content-both-sidebars .widget-area{width:'. $bs_lesson_sidebars_width .'%;}
-							body.single-lesson.content-both-sidebars.scs-style .content-area{left:'. $bs_lesson_sidebars_width .'%;}
-							body.single-lesson.content-both-sidebars.ssc-style .content-area{left:'. $bs_lesson_sidebars_width * 2 .'%;}
+							body.single-sfwd-lessons.content-both-sidebars .widget-area, body.single-sfwd-topic.content-both-sidebars .widget-area{width:'. $bs_lesson_sidebars_width .'%;}
+							body.single-sfwd-lessons.content-both-sidebars.scs-style .content-area,
+							body.single-sfwd-topic.content-both-sidebars.scs-style .content-area{left:'. $bs_lesson_sidebars_width .'%;}
+							body.single-sfwd-lessons.content-both-sidebars.ssc-style .content-area,
+							body.single-sfwd-topic.content-both-sidebars.ssc-style .content-area{left:'. $bs_lesson_sidebars_width * 2 .'%;}
 						}';
 				}
 

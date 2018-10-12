@@ -91,7 +91,7 @@ a#quiz_continue_link:focus {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\f05d";
+  content: "\f058";
   text-indent: 0;
   color: #068806;
 }
@@ -126,15 +126,16 @@ a#quiz_continue_link:focus {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\f05d";
+  content: "\f058";
   margin-right: 7px;
   vertical-align: middle;
 }
 
-#learndash_course_content .learndash_topic_dots ul > li,
-#learndash_course_content .learndash_topic_dots ul > li.nth-of-type-odd,
-#learndash_course_content .learndash_topic_dots ul > li:hover {
-  background: 0 0;
+.learndash_navigation_lesson_topics_list .topic-notcompleted span:before,
+.learndash_navigation_lesson_topics_list ul .topic-notcompleted span:before,
+.learndash_topic_dots .topic-notcompleted span:before,
+.learndash_topic_dots ul .topic-notcompleted span:before {
+  content: "\f10c";
 }
 
 .learndash_topic_dots ul .topic-completed span, 
