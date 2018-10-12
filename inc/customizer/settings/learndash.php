@@ -490,21 +490,6 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 				'settings'				=> 'ocean_ld_incomplete_color',
 				'priority'				=> 10,
 			) ) );
-
-			/**
-		     * Progress Bar Color
-		     */
-	        $wp_customize->add_setting( 'ocean_ld_progressbar_color', array(
-				'transport'				=> 'postMessage',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
-
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_ld_progressbar_color', array(
-				'label'					=> esc_html__( 'Progress Bar Color', 'oceanwp' ),
-				'section'				=> 'ocean_ld_styling',
-				'settings'				=> 'ocean_ld_progressbar_color',
-				'priority'				=> 10,
-			) ) );
 		}
 
 		/**
@@ -521,11 +506,6 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 			$item_hover_color 								= get_theme_mod( 'ocean_ld_item_hover_color' );
 			$complete_color 								= get_theme_mod( 'ocean_ld_complete_color' );
 			$incomplete_color								= get_theme_mod( 'ocean_ld_incomplete_color' );
-			$progressbar_color								= get_theme_mod( 'ocean_ld_progressbar_color' );
-
-			// Lesson 
-			$lesson_title_color								= get_theme_mod( 'ocean_ld_lesson_title_color' );
-			$lesson_description_color						= get_theme_mod( 'ocean_ld_lesson_description_color' );
 
 			// Both Sidebars - Global
 			$ld_global_layout 								= get_theme_mod( 'ocean_ld_global_layout', 'full-width' );
@@ -573,11 +553,6 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 			// Add Incomplete Icon color
 			if ( ! empty( $incomplete_color ) ) {
 				$css .= '.learndash_navigation_lesson_topics_list .topic-notcompleted span:before, .learndash_navigation_lesson_topics_list ul .topic-notcompleted span:before, .learndash_topic_dots .topic-notcompleted span:before, .learndash_topic_dots ul .topic-notcompleted span:before, .learndash .notcompleted:before, #learndash_profile .notcompleted:before{color:'. $incomplete_color .';}';
-			}
-
-			// Add Progress Bar color
-			if ( ! empty( $progressbar_color ) ) {
-				$css .= '#learndash_lessons #lesson_heading, #learndash_profile .learndash_profile_heading, #learndash_quizzes #quiz_heading, #learndash_lesson_topics_list div > strong{color:'. $progressbar_color .';}';
 			}
 
 			// LearnDash Both Sidebars - Global
