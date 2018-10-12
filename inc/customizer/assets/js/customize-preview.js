@@ -11952,6 +11952,10 @@
 			$swipe.bind(function(size) {
 				$(".learndash_navigation_lesson_topics_list .topic-notcompleted span:before, .learndash_navigation_lesson_topics_list ul .topic-notcompleted span:before, .learndash_topic_dots .topic-notcompleted span:before, .learndash_topic_dots ul .topic-notcompleted span:before, .learndash .notcompleted:before, #learndash_profile .notcompleted:before").css("color", size);
 			});
+		}), api("ocean_ld_progressbar_color", function($swipe) {
+			$swipe.bind(function(size) {
+				$("dd.course_progress div.course_progress_blue").css("color", size);
+			});
 		}); 
 
 } )( jQuery );
