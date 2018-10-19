@@ -467,7 +467,7 @@ class OceanWP_Breadcrumb_Trail {
 	protected function add_network_home_link() {
 
 		if ( is_multisite() && !is_main_site() && true === $this->args['network'] )
-			$this->items[] = sprintf( '<a href="%s" rel="home"><span class="icon-home"></span><span style="display: none;">%s</span></a>', esc_url( network_home_url() ), $this->labels['home'] );
+			$this->items[] = sprintf( '<a href="%s" rel="home" aria-label="' .$this->labels['home']. '"><span class="icon-home"></span><span style="display: none;">%s</span></a>', esc_url( network_home_url() ), $this->labels['home'] );
 	}
 
 	/**
@@ -483,7 +483,7 @@ class OceanWP_Breadcrumb_Trail {
 		$label   = $network ? get_bloginfo( 'name' ) : $this->labels['home'];
 		$rel     = $network ? '' : ' rel="home"';
 
-		$this->items[] = sprintf( '<a href="%s"%s><span class="icon-home"></span><span style="display: none;">%s</span></a>', esc_url( home_url() ), $rel, $label );
+		$this->items[] = sprintf( '<a href="%s"%s aria-label="' .$label. '"><span class="icon-home"></span><span style="display: none;">%s</span></a>', esc_url( home_url() ), $rel, $label );
 	}
 
 	/**
