@@ -670,3 +670,31 @@ function oceanwp_cac_has_llms_lesson_bs_layout() {
 		return false;
 	}
 }
+
+/*-------------------------------------------------------------------------------*/
+/* [ LearnDash ]
+/*-------------------------------------------------------------------------------*/
+
+function oceanwp_cac_has_ld_global_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_ld_global_layout', 'full-width' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_ld_course_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_ld_course_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_ld_lesson_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_ld_lesson_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
