@@ -196,6 +196,11 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 				require_once( $dir .'lifterlms.php' );
 			}
 
+			// If LearnDash is activated
+			if ( OCEANWP_LEARNDASH_ACTIVE ) {
+				require_once( $dir .'learndash.php' );
+			}
+
 		}
 
 		/**
