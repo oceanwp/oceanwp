@@ -1579,7 +1579,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				'.woocommerce-checkout .woocommerce-info a',
 				'.woocommerce-checkout #payment ul.payment_methods .wc_payment_method>input[type=radio]:first-child:checked+label:before',
 				'.woocommerce-checkout #payment .payment_method_paypal .about_paypal',
-				'.woocommerce ul.products li.product .category a:hover',
+				'.woocommerce ul.products li.product li.category a:hover',
 				'.woocommerce ul.products li.product .button:hover',
 				'.woocommerce ul.products li.product .product-inner .added_to_cart:hover',
 				'.product_meta .posted_in a:hover',
