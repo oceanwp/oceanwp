@@ -400,7 +400,7 @@
   border-color: #13aff0;
 }
 
-.woocommerce ul.products li.product .category a:hover {
+.woocommerce ul.products li.product li.category a:hover {
   color: #13aff0;
 }
 

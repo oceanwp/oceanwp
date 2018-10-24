@@ -62,8 +62,9 @@ function oceanwpWooQuantityButtons( $quantitySelector ) {
 			// If floating bar is enabled
 			if ( $j( 'body' ).hasClass( 'single-product' )
 				&& 'on' == oceanwpLocalize.floating_bar
-				&& ! $cart.hasClass( 'grouped_form' ) ) {
-				$quantityBox = $j( '.plus, .minus' ).closest( '.quantity' ).find( $quantitySelector );
+				&& ! $cart.hasClass( 'grouped_form' )
+				&& ! $cart.hasClass( 'cart_group' ) ) {
+				$quantityBox = $j( '.plus, .minus' ).closest( '.quantity' ).find( $quantitySelector ).first();
 			} else {
 				$quantityBox = $j( this ).closest( '.quantity' ).find( $quantitySelector );
 			}

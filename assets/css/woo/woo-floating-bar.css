@@ -165,6 +165,9 @@ Woo Floating Bar
     width: 100%;
     text-align: center;
   }
+  .owp-floating-bar form.cart {
+    vertical-align: bottom;
+  }
   .owp-floating-bar form.cart .quantity {
     margin-top: 0;
   }

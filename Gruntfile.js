@@ -116,6 +116,7 @@ module.exports = function ( grunt ) {
 					'assets/css/woo/wishlist.css': 'sass/wishlist.scss',
 					'assets/css/edd/edd.css': 'sass/edd.scss',
 					'assets/css/llms/llms.css': 'sass/llms.scss',
+					'assets/css/learndash/learndash.css': 'sass/learndash.scss',
 					'assets/css/style.css': 'sass/stylesheet.scss',
                 }
             },
@@ -133,6 +134,7 @@ module.exports = function ( grunt ) {
 					'assets/css/woo/wishlist.min.css': 'sass/wishlist.scss',
 					'assets/css/edd/edd.min.css': 'sass/edd.scss',
 					'assets/css/llms/llms.min.css': 'sass/llms.scss',
+					'assets/css/learndash/learndash.min.css': 'sass/learndash.scss',
 					'assets/css/style.min.css': 'sass/stylesheet.scss',
                 }
             }
