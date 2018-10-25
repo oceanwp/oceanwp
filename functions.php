@@ -178,6 +178,7 @@ final class OCEANWP_Theme_Class {
 		require_once ( $dir .'customizer/controls/typography/webfonts.php' );
 		require_once ( $dir .'walker/init.php' );
 		require_once ( $dir .'walker/menu-walker.php' );
+		require_once ( $dir .'third/class-alnp.php' );
 		require_once ( $dir .'third/class-elementor.php' );
 		require_once ( $dir .'third/class-beaver-themer.php' );
 		require_once ( $dir .'third/class-bbpress.php' );
@@ -205,11 +206,6 @@ final class OCEANWP_Theme_Class {
 		// Easy Digital Downloads
 		if ( OCEANWP_EDD_ACTIVE ) {
 			require_once ( $dir .'edd/edd-config.php' );
-		}
-
-		// Auto Load Next Post
-		if ( OCEANWP_ALNP_ACTIVE ) {
-			require_once( $dir . 'auto-load-next-post/auto-load-next-post.php' );
 		}
 	}
 
