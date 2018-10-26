@@ -33,8 +33,8 @@ function oceanwp_tgmpa_register() {
 			'slug'				=> 'wpforms-lite', 
 			'required'			=> false,
 			'force_activation'	=> false,
-		),
-	);
+		);
+	}
 
 	// Register notice
 	tgmpa( $plugins, array(
