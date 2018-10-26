@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2018.10.26* - 1.5.30:
+* **Fixed** - Customizer preview issue.
+* **Tweak** - Don't recommend WPForms if WPForms Pro is activated.
+
 ### *2018.10.23* - 1.5.29:
 * **Added** - LearnDash integration.
 * **Tweak** - Updated WooCommerce mini cart template.
