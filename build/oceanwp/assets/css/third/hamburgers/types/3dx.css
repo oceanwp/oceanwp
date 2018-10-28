@@ -1,0 +1,33 @@
+/*
+ * 3DX
+*/
+.hamburger--3dx .hamburger-box {
+	-webkit-perspective: 40px;
+	        perspective: 40px;
+}
+
+.hamburger--3dx .hamburger-inner {
+	-webkit-transition: -webkit-transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+	      transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx .hamburger-inner::before, .hamburger--3dx .hamburger-inner::after {
+	-webkit-transition: -webkit-transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+	      transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx.is-active .hamburger-inner {
+	background-color: transparent;
+	-webkit-transform: rotateY(180deg);
+	      transform: rotateY(180deg);
+}
+
+.hamburger--3dx.is-active .hamburger-inner::before {
+	-webkit-transform: translate3d(0, 7px, 0) rotate(45deg);
+	      transform: translate3d(0, 7px, 0) rotate(45deg);
+}
+
+.hamburger--3dx.is-active .hamburger-inner::after {
+	-webkit-transform: translate3d(0, -7px, 0) rotate(-45deg);
+	      transform: translate3d(0, -7px, 0) rotate(-45deg);
+}

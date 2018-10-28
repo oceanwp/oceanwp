@@ -1,0 +1,1 @@
+wp.customize.controlConstructor["oceanwp-multi-check"]=wp.customize.Control.extend({ready:function(){"use strict";var n=this;n.container.on("change","input",function(){var t=[],c=0;jQuery.each(n.params.choices,function(e,i){n.container.find('input[value="'+e+'"]').is(":checked")&&(t[c]=e,c++)}),n.setting.set(t)})}});

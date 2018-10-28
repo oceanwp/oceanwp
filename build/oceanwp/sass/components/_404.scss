@@ -1,0 +1,48 @@
+.error404-content {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+
+    .error-title {
+        font-size: 46px;
+        margin: 0 0 25px;
+    }
+
+    .error-text {
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 35px;
+    }
+
+    .searchform {
+        max-width: 390px;
+        margin: 0 auto;
+    }
+
+    .error-btn {
+        font-size: 13px;
+        padding: 14px 26px;
+        margin-top: 60px;
+
+        &:hover {
+            color: $color-1;
+        }
+    }
+}
+
+/*------------------------------------*
+    Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+    .error404-content {
+        .searchform {
+            width: 100%;
+        }
+
+        .error-btn {
+            margin-top: 40px;
+        }
+    }
+    
+}

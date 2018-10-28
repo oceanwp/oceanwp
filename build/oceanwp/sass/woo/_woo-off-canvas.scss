@@ -1,0 +1,105 @@
+/*------------------------------------------------------------------
+Woo Off Canvas Filter
+-------------------------------------------------------------------*/
+.woocommerce .oceanwp-off-canvas-filter {
+	float: left;
+    height: 34px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 34px;
+    padding: 0 14px;
+    color: #999;
+    border: 1px solid #eaeaea;
+    margin: 0 20px 0 0;
+    text-align: center;
+
+	&:hover {
+		color: #13aff0;
+		border-color: #13aff0;
+	}
+
+	i {
+		margin-right: 6px;
+	}
+}
+
+#oceanwp-off-canvas-sidebar-wrap {
+	visibility: hidden;
+	@include opacity( 0 );
+	@include transition( all 0.25s ease-in-out );
+
+	&,
+	.oceanwp-off-canvas-overlay {
+		position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+    	z-index: 999;
+	}
+
+	.oceanwp-off-canvas-overlay {
+	    background-color: rgba(0,0,0,.5);
+	    cursor: pointer;
+	}
+
+	.oceanwp-off-canvas-sidebar {
+		position: absolute;
+	    top: 0;
+	    left: -100%;
+	    background-color: $color-1;
+	    width: 325px;
+	    height: 100%;
+	    padding: 35px;
+	    overflow: auto;
+    	z-index: 9999;
+		@include box-shadow( 0 0 12px 0 rgba(0,0,0,.4) );
+		@include transition( all 0.3s ease-in-out );
+	}
+
+	.sidebar-box {
+	    border-bottom: 1px solid rgba(84,84,84,0.15);
+	    margin-bottom: 0;
+	    padding-top: 50px;
+	    padding-bottom: 50px;
+
+	    &:first-child {
+	    	padding-top: 0;
+	    }
+
+	    &:last-child {
+	    	border-bottom: 0;
+	    	padding-bottom: 0;
+	    }
+	}
+}
+
+.admin-bar #oceanwp-off-canvas-sidebar-wrap .oceanwp-off-canvas-sidebar {
+    top: 32px;
+    height: -webkit-calc(100% - 32px);
+    height: calc(100% - 32px);
+}
+
+@media screen and (max-width: 782px) {
+	.admin-bar #oceanwp-off-canvas-sidebar-wrap .oceanwp-off-canvas-sidebar {
+	    top: 46px;
+	    height: -webkit-calc(100% - 46px);
+	    height: calc(100% - 46px);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.admin-bar #oceanwp-off-canvas-sidebar-wrap .oceanwp-off-canvas-sidebar {
+	    top: 0;
+	    height: 100%;
+	}
+}
+
+.off-canvas-enabled #oceanwp-off-canvas-sidebar-wrap {
+    visibility: visible;
+	@include opacity( 1 );
+
+	.oceanwp-off-canvas-sidebar {
+	    left: 0;
+	}
+}

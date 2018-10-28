@@ -1,0 +1,148 @@
+#mobile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    max-height: 400px;
+    overflow-y: auto;
+    @include box-shadow( 0 2px 6px rgba(0,0,0,0.1) );
+
+    ul {
+        margin: 0;
+        list-style: none;
+
+        li {
+            border-bottom: 1px solid rgba(0,0,0,0.035);
+
+            a {
+                display: block;
+                position: relative;
+                padding: 12px 40px;
+                text-align: left;
+
+                i,
+                img {
+                    margin-right: 10px;
+                }
+
+                i.after {
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+
+                .dropdown-toggle {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 60px;
+                    cursor: pointer;
+                    color: #555;
+                    padding-right: 40px;
+                    text-align: center;
+                    @include transition( all 0.3s ease );
+
+                    &:before {
+                        content: '+';
+                        font-size: 20px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        line-height: 30px;
+                        margin-top: -15px;
+                        margin-left: -15px;
+                    }
+                }
+            }
+
+            &.active > a > .dropdown-toggle:before {
+                content: '-';
+            }
+
+            ul {
+                display: none;
+                border-top: 1px solid rgba(0,0,0,0.035);
+                margin-left: 0;
+                background-color: rgba(0,0,0,0.02);
+            }
+        }
+
+        li.woo-menu-icon,
+        li.search-toggle-li,
+        li.side-panel-li,
+        li a .nav-arrow,
+        .sidebar-box,
+        .widget {
+            display: none;
+        }
+    }
+
+    .oceanwp-social-menu {
+        display: block !important;
+        float: none;
+        width: 100%;
+        right: auto !important;
+        left: auto !important;
+        padding: 0 40px !important;
+        margin: 10px 0 !important;
+
+        .social-menu-inner {
+            height: auto;
+        }
+
+        li {
+            display: inline-block;
+            float: none;
+            border: 0;
+
+            a {
+                display: block;
+                padding: 12px 10px;
+            }
+        }
+    }
+
+    #mobile-menu-search {
+        display: block;
+        padding: 20px 40px;
+
+        form {
+            position: relative;
+
+             input {
+                padding: 6px 45px 6px 12px !important;
+                margin-top: 0 !important;
+                -webkit-box-sizing: inherit;
+                -moz-box-sizing: inherit;
+                box-sizing: inherit;
+            }
+
+            button {
+                display: block;
+                position: absolute;
+                right: 10px;
+                height: 30px;
+                line-height: 30px;
+                width: 30px;
+                padding: 0;
+                text-align: center;
+                top: 50%;
+                margin-top: -15px;
+                background-color: transparent !important;
+                color: #555;
+                border: 0;
+                @include transition( all 0.3s ease-in-out );
+
+                &:hover {
+                    color: #222;
+                }
+            }
+        }
+    }
+
+    .has-social #mobile-menu-search {
+        padding-top: 0;
+    }
+}

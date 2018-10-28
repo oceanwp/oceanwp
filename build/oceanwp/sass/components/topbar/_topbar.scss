@@ -1,0 +1,48 @@
+#top-bar-wrap {
+	position: relative;
+	background-color: #fff;
+	font-size: 12px;
+	border-bottom: 1px solid $color-9;
+	z-index: 101;
+}
+
+#top-bar {
+	padding: 8px 0;
+}
+
+#top-bar-inner {
+	position: relative;
+}
+
+.top-bar-left {
+	float: left;
+}
+
+.top-bar-right {
+	float: right;
+}
+
+.top-bar-centered {
+	float: none;
+	text-align: center;
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	#top-bar {
+		padding: 20px 0;
+
+		> div:nth-child(2) {
+			padding-top: 20px;
+		}
+	}
+
+	.top-bar-right {
+		float: none;
+		text-align: center;
+	}
+	
+}

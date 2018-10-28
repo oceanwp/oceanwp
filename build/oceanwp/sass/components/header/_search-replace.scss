@@ -1,0 +1,64 @@
+#site-header.header-replace {
+	#site-navigation {
+		.dropdown-menu {
+			@include transition( opacity 0.25s ease-in-out );
+		}
+
+		&.hide .dropdown-menu {
+			visibility: hidden;
+			@include opacity( 0 );
+		}
+	}
+}
+
+#searchform-header-replace {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	visibility: hidden;
+	@include opacity( 0 );
+	@include transition( opacity 0.25s ease-in-out );
+
+	form {
+		height: 100%;
+		width: 100%;
+	}
+
+	input {
+		height: 100%;
+		width: 94%;
+		font-size: 22px;
+		background-color: transparent;
+		color: $color-13;
+		padding: 0;
+		outline: 0;
+		border: 0;
+		margin: 0;
+		@include border-radius( 0 );
+	}
+}
+
+#searchform-header-replace-close {
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	margin-top: -20px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 26px;
+	color: $color-13;
+	cursor: pointer;
+	@include transition( all .3s ease );
+
+	&:hover {
+		color: $color-3;
+	}
+}
+
+/* display search on click */
+#searchform-header-replace.show {
+	visibility: visible;
+	@include opacity( 1 );
+}

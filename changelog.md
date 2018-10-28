@@ -1,7 +1,8 @@
 # OceanWP Changelog
 
 ### *2018.10.28* - 1.5.31:
-* **Fixed** - Product quantity on sigle product issue if the floating bar was activated.
+* **Fixed** - Product quantity on single product issue if the floating bar was activated.
+* **Fixed** - UL and OL lists CSS issue in single post.
 
 ### *2018.10.26* - 1.5.30:
 * **Fixed** - Customizer preview issue.

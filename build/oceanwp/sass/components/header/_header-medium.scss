@@ -1,0 +1,301 @@
+#site-header.medium-header {
+	background-color: transparent;
+	text-align: center;
+
+	.top-header-wrap {
+		position: relative;
+		background-color: #fff;
+		padding: 30px 0;
+	    @include transition( padding .4s ease-in-out );
+	    z-index: 10;
+	}
+
+	.top-header-inner {
+		@include display();
+		@include flex-direction( row );
+		@include align-items( center );
+		@include justify-content( center );
+		width: 100%;
+		margin: 0;
+	}
+
+	.top-col {
+		-webkit-flex: 1 0 0%;
+    	flex: 1 0 0%;
+
+		&.col-1 {
+			text-align: left;
+		}
+
+		&.col-2,
+		&.logo-col {
+			text-align: center;
+		}
+
+		&.col-3 {
+			text-align: right;
+		}
+	}
+
+	#medium-searchform {
+		form {
+			display: inline-block;
+    		position: relative;
+
+    		&.search-filled label {
+				@include opacity( 0 );
+			    @include transition-duration( 150ms );
+			}
+		}
+
+		input {
+			position: relative;
+			background-color: transparent !important;
+    		border: 0;
+			margin: 0;
+			padding: 6px 38px 6px 12px;
+    		max-width: 178px;
+			z-index: 2;
+
+			&:focus {
+    			max-width: 220px;
+			}
+		}
+
+		label, button {
+			position: absolute;
+		    top: 0;
+		    line-height: 40px;
+		    margin: 0;
+		}
+
+		label {
+		    left: 12px;
+		    color: $color-2;
+		    cursor: text;
+		    @include opacity( .5 );
+		    z-index: 1;
+		}
+
+		button {
+		    right: 0;
+		    width: 38px;
+		    background-color: transparent;
+		    color: $color-11;
+		    border: 0;
+		    padding: 0;
+		    z-index: 2;
+		    @include transition( all .3s ease );
+
+		    &:hover {
+		    	color: $color-5;
+		    }
+		}
+
+		.search-bg {
+			position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+			background-color: $color-16;
+		}
+	}
+	
+	#site-logo {
+    	float: none;
+    	display: block;
+
+	    #site-logo-inner {
+		    display: block;
+		    height: auto !important;
+		}
+	}
+
+	.oceanwp-social-menu {
+		float: none;
+		display: block;
+		right: auto !important;
+    	left: auto !important;
+
+		.social-menu-inner {
+			display: block;
+			height: auto !important;
+		}
+
+		ul li {
+		    float: none;
+		    display: inline-block;
+		}
+	}
+
+	#site-navigation-wrap {
+		position: relative;
+		background-color: #f9f9f9;
+		float: none;
+		position: relative;
+	    right: auto !important;
+	    left: auto !important;
+	    @include transform( none );
+	    z-index: 9;
+
+	    &.left-menu #site-navigation {
+		    float: left;
+		    left: -22px;
+		}
+
+	    &.center-menu #site-navigation {
+	    	.dropdown-menu > li {
+	    		float: none;
+	    		display: inline-block;
+	    	}
+		}
+
+	    &.right-menu #site-navigation {
+		    float: right;
+		    right: -22px;
+		}
+
+    	#site-navigation {
+    		display: inline-block;
+    		position: relative;
+    	}
+
+    	.dropdown-menu > li > a {
+		    font-size: 12px;
+		    line-height: 60px;
+		    padding: 0 22px;
+		    text-transform: uppercase;
+		    letter-spacing: 1px;
+    	}
+	}
+
+	&.hidden-menu {
+		#site-navigation-wrap,
+		#site-navigation,
+		.oceanwp-mobile-menu-icon {
+			max-height: 150px;
+		    @include transition( all .4s ease-in-out );
+		}
+	}
+}
+
+.is-sticky #site-header.medium-header {
+
+	.top-header-wrap {
+		padding: 20px 0;
+
+		.oceanwp-social-menu .social-menu-inner {
+		    height: auto;
+		}
+	}
+
+	&.hidden-menu {
+		#site-navigation-wrap,
+		#site-navigation,
+		.oceanwp-mobile-menu-icon {
+			max-height: 0;
+			@include opacity( 0 );
+			visibility: hidden;
+		}
+
+		&:hover {
+			#site-navigation-wrap,
+			#site-navigation,
+			.oceanwp-mobile-menu-icon {
+				max-height: 150px;
+				@include opacity( 1 );
+				visibility: visible;
+			}
+		}
+	}
+}
+
+#site-header.medium-header .oceanwp-mobile-menu-icon {
+	float: none;
+	background-color: #f9f9f9;
+	right: auto !important;
+	left: auto !important;
+
+	a {
+		float: none;
+		display: inline-block;
+		font-size: 12px;
+		padding: 0 22px;
+		line-height: 60px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+}
+
+#site-header.medium-header.is-transparent {
+	.top-header-wrap,
+	#site-navigation-wrap,
+	.oceanwp-mobile-menu-icon {
+	 	background-color: transparent;
+	 	@include transition( all .3s );
+	}
+}
+
+/*------------------------------------*
+	All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+			
+	/* Hide social and search form in sidr for the medium header style */
+	.medium-header-style {
+		.sidr-class-social-menu-inner,
+		.sidr-class-mobile-searchform {
+			display: none;
+		}
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	#site-header.medium-header {
+		.top-header-inner {
+			display: block;
+		}
+
+		.top-col:not(.logo-col) {
+			display: none;
+		}
+
+		.top-col.logo-col {
+			display: inline-block;
+			text-align: center;
+		}
+	}
+
+	/* Show social and search form in sidr for the medium header style */
+	.medium-header-style {
+		.sidr-class-social-menu-inner,
+		.sidr-class-mobile-searchform {
+			display: block;
+		}
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	/* medium header style */
+	#site-header.medium-header {
+		.header-top-wrap {
+			padding: 20px 0;
+		}
+
+		.oceanwp-mobile-menu-icon a {
+			line-height: 40px;
+		}
+	}
+
+}

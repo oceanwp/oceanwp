@@ -1,0 +1,54 @@
+ul.meta {
+	display: inline-block;
+	width: 100%;
+	color: $color-15;
+    font-size: 12px;
+    line-height: 1;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+
+	li {
+		float: left;
+		line-height: 1.3;
+
+	    &:after {
+	    	content: '-';
+	    	padding: 0 6px;
+		}
+
+	    &:last-child:after {
+	    	display: none;
+	    	padding: 0;
+		}
+
+		a {
+			color: $color-15;
+
+		    &:hover {
+				color: $color-5;
+			}
+		}
+
+		i {
+			display: inline-block;
+			color: $color-4;
+			padding-right: 5px;
+		}
+	}
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	ul.meta {
+		margin-bottom: 12px;
+
+		li {
+			margin-bottom: 8px;
+		}
+	}
+
+}

@@ -1,0 +1,52 @@
+/**
+ * Top Bar Menu
+ */
+.top-bar-left.has-content #top-bar-nav,
+.top-bar-right.has-content #top-bar-nav {
+  margin: 0;
+  margin-right: 20px;
+  padding: 0;
+}
+
+#top-bar-nav,
+#top-bar-nav > li {
+  display: inline-block;
+}
+
+#top-bar-content.top-bar-centered #top-bar-nav,
+#top-bar-content.top-bar-centered #top-bar-nav > li {
+  display: inline-block;
+  float: none;
+}
+
+#top-bar-nav > ul > li {
+  display: inline-block;
+  float: none;
+  margin-right: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  a .nav-arrow {
+    margin-left: 4px;
+    margin-right: 0;
+  }
+}
+
+/*------------------------------------*
+  Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+  #top-bar #top-bar-nav > li {
+    float: none;
+    display: inline-block;
+  }
+
+  #top-bar-nav {
+    float: none;
+    text-align: center;
+  }
+  
+}

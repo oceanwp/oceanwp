@@ -1,0 +1,194 @@
+/* WordPress Social Login */
+.wp-social-login-widget {
+	margin-bottom: 20px;
+}
+
+.wp-social-login-connect-with {
+    margin-bottom: 6px;
+}
+
+.wp-social-login-provider-list {
+    padding: 0;
+}
+
+.wp-social-login-provider-list a {
+    position: relative;
+    display: inline-block;
+    min-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 6px;
+    padding: 7px 10px 7px 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    text-transform: none;
+    -webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-social-login-provider-list a:hover {
+    color: #fff;
+    -moz-opacity: 0.7;
+    -webkit-opacity: 0.7;
+    opacity: 0.7;
+}
+
+.wp-social-login-provider-list a i {
+	position: absolute;
+    top: 50%;
+    left: 12px;
+    margin-top: -10px;
+    font-size: 20px;
+    width: 1em;
+    height: 1em;
+}
+
+.wp-social-login-provider-list a.opl-facebook {
+	background-color: #3e68c0;
+}
+
+.wp-social-login-provider-list a.opl-twitter {
+	background-color: #23abff;
+}
+
+.wp-social-login-provider-list a.opl-google {
+	background-color: #f63329;
+}
+
+.wp-social-login-provider-list a.opl-yahoo {
+	background-color: #4101af;
+}
+
+.wp-social-login-provider-list a.opl-linkedin {
+	background-color: #15ace5;
+}
+
+.wp-social-login-provider-list a.opl-disqus {
+	background-color: #3ca2ef;
+}
+
+.wp-social-login-provider-list a.opl-instagram {
+	background-color: #447397;
+	background-image: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+.wp-social-login-provider-list a.opl-reddit {
+	background-color: #ff5c1f;
+}
+
+.wp-social-login-provider-list a.opl-foursquare {
+	background-color: #ff3b6f;
+}
+
+.wp-social-login-provider-list a.opl-lastfm {
+	background-color: #ea3939;
+}
+
+.wp-social-login-provider-list a.opl-tumblr {
+	background-color: #35465c;
+}
+
+.wp-social-login-provider-list a.opl-goodreads {
+	background-color: #7c5931;
+}
+
+.wp-social-login-provider-list a.opl-stackoverflow {
+	background-color: #ff780d;
+}
+
+.wp-social-login-provider-list a.opl-github {
+	background-color: #222;
+}
+
+.wp-social-login-provider-list a.opl-dribbble {
+	background-color: #fa488c;
+}
+
+.wp-social-login-provider-list a.opl-500px {
+	background-color: #0099e5;
+}
+
+.wp-social-login-provider-list a.opl-skyrock {
+	background-color: #0099f7;
+}
+
+.wp-social-login-provider-list a.opl-mixi {
+	background-color: #ffaa01;
+}
+
+.wp-social-login-provider-list a.opl-steam {
+	background-color: #000000;
+}
+
+.wp-social-login-provider-list a.opl-twitchtv {
+	background-color: #6441a5;
+}
+
+.wp-social-login-provider-list a.opl-vkontakte {
+	background-color: #3673be;
+}
+
+.wp-social-login-provider-list a.opl-mailru {
+	background-color: #007ffe;
+}
+
+.wp-social-login-provider-list a.opl-yandex {
+	background-color: #f00;
+}
+
+.wp-social-login-provider-list a.opl-odnoklassniki {
+	background-color: #f2720c;
+}
+
+.wp-social-login-provider-list a.opl-aol {
+	background-color: #000;
+}
+
+.wp-social-login-provider-list a.opl-live {
+	background-color: #00ccff;
+}
+
+.wp-social-login-provider-list a.opl-pixelpin {
+	background-color: #000;
+}
+
+.wp-social-login-widget-clearing {
+	clear: both;
+}
+
+/* If login/register forms */
+body.login .wp-social-login-provider-list a {
+	float: left;
+	width: 48%;
+    max-width: 48%;
+    min-width: 48%;
+    margin: 0 0 10px;
+    padding: 7px 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+body.login .wp-social-login-provider-list a:nth-child(2n) {
+	float: right;
+}
+
+body.login .wp-social-login-provider-list a i {
+    display: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+	body.login .wp-social-login-provider-list a {
+		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
+	}
+}

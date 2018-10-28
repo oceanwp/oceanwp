@@ -1,0 +1,295 @@
+#mobile-fullscreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    overflow-y: scroll;
+    z-index: 100000;
+
+    #mobile-fullscreen-inner {
+    	display: table;
+	    width: 100%;
+	    height: 100%;
+	    padding: 0 40px;
+	}
+
+	a.close {
+		position: absolute;
+		top: 14px;
+	    right: 14px;
+	    
+	    .close-icon-wrap {
+		    display: inline-block;
+		    position: relative;
+	    	width: 40px;
+		    height: 40px;
+		    @include transition( opacity .15s linear );
+
+		    &:hover {
+			    opacity: .7;
+			}
+	    }
+	    
+	    .close-icon-inner,
+	    .close-icon-inner::after {
+		    display: inline-block;
+		    width: 40px;
+		    height: 3px;
+		    background-color: #fff;
+		    border-radius: 3px;
+	    }
+	    
+	    .close-icon-inner {
+	    	@include transform( rotate(45deg) );
+	    }
+
+	    .close-icon-inner::after {
+		    content: '';
+    		display: block;
+    		@include transform( rotate(-90deg) );
+	    }
+	}
+
+    nav {
+    	display: table-cell;
+	    vertical-align: middle;
+	    padding: 50px 0;
+    	text-align: center;
+	}
+
+    ul {
+	    list-style: none;
+		margin: 0;
+
+		li {
+			a {
+				display: block;
+                position: relative;
+			    color: $color-1;
+			    letter-spacing: 1px;
+			    text-transform: uppercase;
+			    text-align: center;
+
+			    &:hover {
+			    	color: $color-4;
+			    }
+
+                i,
+                img {
+                    margin-right: 10px;
+                }
+
+                i.after {
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+			}
+
+			.dropdown-toggle {
+                display: inline-block;
+			    width: 26px;
+			    padding-left: 5px;
+			    text-align: center;
+
+                &:before {
+                    font-family: 'FontAwesome';
+                    content: '+';
+                }
+            }
+
+			&.open-sub > a > .dropdown-toggle:before {
+	            content: '-';
+	        }
+		}
+
+		ul.sub-menu {
+			display: none;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li a {
+			    font-size: 13px;
+			    padding: 3px 0;
+			}
+		}
+
+    	> li {
+    		display: block;
+
+			> a {
+			    font-size: 18px;
+			    line-height: 1.2;
+			    padding: 12px 0;
+			}	    			
+		}
+
+	    .woo-menu-icon,
+	    .search-toggle-li,
+	    .side-panel-li,
+	    .sidebar-box {
+	    	display: none;
+	    }
+    }
+
+    #mobile-search {
+	    max-width: 220px;
+		margin: 10px auto 0;
+
+		form {
+			position: relative;
+		}
+
+		input, label {
+			font-size: 20px;
+		    padding: 4px 0;
+		    color: $color-1;
+		    margin: 0;
+		    text-align: center;
+		    text-transform: uppercase;
+		}
+
+		input {
+			position: relative;
+		    border: 0;
+		    background-color: transparent;
+		    border-bottom: 1px solid $color-17;
+		    @include border-radius( 0 );
+		    z-index: 2;
+
+		    &:hover, &:focus {
+		    	border-color: $color-1;
+		    }
+		}
+
+		label {
+		    display: block;
+			position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    cursor: text;
+		    @include opacity( .5 );
+		    z-index: 1;
+
+		    i {
+		    	display: inline-block;
+			    background-color: $color-1;
+			    width: 3px;
+			    height: 3px;
+			    margin-left: 3px;
+			    @include animation( blink 1s linear infinite );
+		    }
+
+		    i+i {
+			    @include animation-delay( .2s );
+			}
+
+			i+i+i {
+			    @include animation-delay( .4s );
+			}
+		}
+
+		form.search-filled label {
+			@include opacity( 0 );
+			@include transition-duration( 150ms );
+		}
+    }
+
+    .oceanwp-social-menu {
+    	display: block;
+	    float: none;
+	    margin-top: 30px;
+	    text-align: center;
+	    right: auto;
+
+	    .social-menu-inner {
+		    display: block;
+		    height: auto !important;
+		}
+
+		ul li {
+		    float: none;
+		    display: inline-block;
+		}
+
+		&.simple-social ul li a {
+			color: $color-1;
+			font-size: 24px;
+    		padding: 0 16px;
+    		margin: 0;
+    		background-color: transparent !important;
+
+			&:hover {
+				color: $color-4;
+			}
+		}
+
+		.colored ul li a,
+		.minimal ul li a,
+		.dark ul li a {
+		    padding: 0 4px;
+		}
+
+		.colored ul li a span,
+		.minimal ul li a span,
+		.dark ul li a span {
+		    font-size: 16px;
+		    width: 60px;
+		    height: 60px;
+		    line-height: 60px;
+		}
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        -webkit-opacity: 1;
+    }
+    50% {
+        -webkit-opacity: 0;
+    }
+    100% {
+        -webkit-opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        -moz-opacity: 1;
+    }
+    50% {
+        -moz-opacity: 0;
+    }
+    100% {
+        -moz-opacity: 1;
+    }
+}
+
+@-o-keyframes blink {
+    0% {
+        -o-opacity: 1;
+    }
+    50% {
+        -o-opacity: 0;
+    }
+    100% {
+        -o-opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,33 @@
+<wpml-config>
+    <admin-texts>
+        <key name="theme_mods_oceanwp">
+            <key name="ocean_footer_copyright_text" />
+            <key name="ocean_top_bar_content" />
+            <key name="ocean_after_header_content" />
+            <key name="ocean_mobile_menu_text" />
+            <key name="ocean_mobile_menu_close_text" />
+            <key name="ocean_mobile_menu_close_btn_text" />
+            <key name="ocean_woo_menu_icon_custom_link" />
+            <key name="ocean_blog_infinite_scroll_last_text" />
+            <key name="ocean_blog_infinite_scroll_error_text" />
+            <key name="ocean_woo_off_canvas_filter_text" />
+            <key name="ocean_woo_infinite_scroll_last_text" />
+            <key name="ocean_woo_infinite_scroll_error_text" />
+            <key name="oss_social_share_heading" />
+            <key name="osf_text" />
+            <key name="owp_popup_title_text" />
+            <key name="owp_popup_content" />
+            <key name="owp_popup_continue_btn_text" />
+            <key name="owp_popup_cart_btn_text" />
+            <key name="owp_popup_bottom_text" />
+            <key name="ocean_top_bar_template" />
+            <key name="ocean_top_bar_social_alt_template" />
+            <key name="ocean_vertical_header_template" />
+            <key name="ocean_vertical_header_bottom_template" />
+            <key name="ocean_header_template" />
+            <key name="ocean_menu_social_template" />
+            <key name="ocean_footer_widgets_template" />
+            <key name="ocean_error_page_template" />
+        </key>
+    </admin-texts>   
+</wpml-config>

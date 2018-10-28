@@ -1,0 +1,230 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;font:inherit;vertical-align:baseline;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html{font-size:62.5%;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}*,*:before,*:after{@include box-sizing( border-box );}article,aside,details,figcaption,figure,footer,header,main,nav,section{display:block}table{border-collapse:collapse;border-spacing:0;}caption,th,td{font-weight:normal;text-align:left;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}blockquote,q{quotes:none}a:focus{outline:none}a:hover,a:active{outline:0}a img{border:0}img{max-width:100%;height:auto;}select{max-width:100%}em{font-style: italic;}
+
+* html {
+	font-size: 100% * ( $font-size / $browser-font-size );
+}
+
+html {
+	-ms-overflow-x: hidden;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: $body-font-family;
+	font-size: $font-size;
+	line-height: $base-line-height;
+	color: $body-font-color;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+body {
+	background-color: $body-bg-color;
+}
+
+.mejs-container {
+    margin-bottom: 20px;
+}
+
+/**
+ * Grid > Main Classes.
+ */
+body .oceanwp-row {
+	margin: 0 -10px;
+
+	.col {
+		float: left;
+		margin: 0 0 20px;
+		padding: 0 10px;
+	}
+
+	.span_1_of_1 {
+		float: none;
+		width: 100%;
+	}
+
+	.span_1_of_2 {
+		width: 50%;
+	}
+
+	.span_1_of_3 {
+		width: 33.33%;
+	}
+
+	.span_1_of_4 {
+		width: 25%;
+	}
+
+	.span_1_of_5 {
+		width: 20%;
+	}
+
+	.span_1_of_6 {
+		width: 16.66666667%;
+	}
+
+	.span_1_of_7 {
+		width: 14.28%;
+	}
+
+	.span_1_of_8 {
+		width: 12.5%;
+	}
+
+	.span_1_of_9 {
+		width: 11.11%;
+	}
+
+	.span_1_of_10 {
+		width: 10%;
+	}
+}
+
+/**
+ * Grid > Clear Floats.
+ */
+.count-1,
+.col-1,
+.col.first {
+	clear: both;
+	margin-left: 0;
+}
+
+.isotope-entry {
+	clear: none;
+}
+
+/**
+ * No margin or padding class.
+ */
+.no-margin {
+	margin: 0 !important;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+/**
+ * Responsive Videos.
+ */
+.responsive-video-wrap,
+.responsive-audio-wrap {
+	iframe, object, embed {
+		display: block;
+	}
+}
+
+.wp-video-shortcode {
+	max-width: 100% !important;
+}
+
+.responsive-video-wrap p {
+	margin: 0;
+}
+
+/**
+ * Search form shortcode
+ */
+form.oceanwp-searchform {
+	display: inline-block;
+	position: relative;
+	height: 35px;
+
+	input {
+		margin: 0;
+		padding: 0 40px 0 15px;
+		height: 100%;
+    	min-height: 100%;
+	}
+
+	button {
+		display: block;
+	    position: absolute;
+	    top: 50%;
+	    right: 0;
+	    min-width: 40px;
+	    height: 60%;
+	    height: 100%;
+	    font-size: 12px;
+	    font-weight: 600;
+	    background-color: transparent !important;
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+	    text-align: center;
+	    line-height: 1;
+	    @include transition( all .3s ease );
+	    @include transform( translateY(-50%) );
+	}
+}
+
+/**
+ * Language Switches.
+ */
+.polylang-switcher-shortcode {
+	li {
+		float: left;
+		margin-right: 5px;
+	}
+
+	&.flags-and-names li {
+		margin-right: 15px;
+	}
+
+	li:last-child {
+		margin-right: 0;
+	}
+}
+
+/**
+ * Selection Color.
+ */
+::selection {
+	color: $selection-font-color;
+	background: $selection-bg-color;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	color: $selection-font-color;
+	background: $selection-bg-color;
+	text-shadow: none;
+}
+
+/*------------------------------------*
+	Tablet Portrait
+*------------------------------------*/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	
+	/* turn 4 column masonry grids into 2 columns */
+	body .oceanwp-row {
+		.span_1_of_4.col-3.col,
+		.span_1_of_4.col.product:nth-child(2n+3) {
+			margin-left: 0;
+			clear: both;
+		}
+	}
+
+	body .oceanwp-row .span_1_of_4.col,
+	body .oceanwp-isotope-grid .span_1_of_4.col {
+		width: 50%;
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	.col {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 30px;
+	}
+
+}

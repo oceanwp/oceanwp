@@ -1,0 +1,112 @@
+/**
+ * Footer bottom
+ */
+#footer-bottom {
+	background-color: $color-12;
+	padding: 15px 0;
+	font-size: 12px;
+	line-height: 1;
+
+	#footer-bottom-menu, #copyright {
+		width: 50%;
+	}
+
+	#footer-bottom-menu {
+		float: right;
+		text-align: right;
+		padding-left: 15px;
+
+		ul {
+			display: inline-block;
+			margin: 0;
+			list-style: none;
+		    margin: 0;
+		    padding: 0;
+		}
+
+		li {
+			float: left;
+
+			&:after {
+				content: '|';
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+
+			&:last-child:after {
+				content: '';
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+
+		a {
+			color: $color-1;
+
+			&:hover {
+				color: $color-5;
+			}
+		}
+	}
+
+	&.no-footer-nav #copyright {
+		float: none;
+		width: 100%;
+		text-align: center;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	#copyright {
+		float: left;
+		text-align: left;
+		padding-right: 15px;
+	}
+
+	a {
+		color: $color-1;
+
+		&:hover {
+			color: $color-5;
+		}
+	}
+}
+
+/*------------------------------------*
+	All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+			
+	/* center footer bottom */
+	#footer-bottom {
+		#copyright,
+		#footer-bottom-menu {
+			float: none;
+			width: 100%;
+			padding-right: 0;
+			padding-left: 0;
+			text-align: center;
+		}
+
+		#footer-bottom-menu {
+			margin-bottom: 15px;
+
+			li {
+				float: none;
+				display: inline-block;
+			}
+		}
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	#footer-bottom #footer-bottom-menu li {
+		margin-bottom: 8px;
+	}
+
+}

@@ -1,0 +1,336 @@
+// Based of Pure forms style
+// https://github.com/yahoo/pure/blob/master/src/forms/css/forms.css
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="url"],
+form input[type="date"],
+form input[type="month"],
+form input[type="time"],
+form input[type="datetime"],
+form input[type="datetime-local"],
+form input[type="week"],
+form input[type="number"],
+form input[type="search"],
+form input[type="tel"],
+form input[type="color"],
+form select,
+form textarea {
+	display: inline-block;
+	min-height: 40px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.8;
+	padding: 6px 12px;
+	vertical-align: middle;
+	background-color: transparent;
+	color: $color-2;
+	border: 1px solid $color-10;
+	@include border-radius( 3px );
+    @include transition( all .3s ease );
+}
+
+form select {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+form input[type="number"] {
+	max-width: 50px;
+    padding: 0 0 0 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+textarea {
+    -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+form textarea {
+	min-height: 150px;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+input[type="checkbox"] {
+	display: inline-block;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	line-height: 0;
+	width: 16px;
+	min-width: 16px;
+	height: 16px;
+	margin: -3px 10px 0 0;
+	outline: 0;
+	text-align: center;
+	vertical-align: middle;
+	clear: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+	@include box-shadow( inset 0 1px 2px rgba(0,0,0,.1) );
+	@include transition( .05s border-color ease-in-out );
+}
+
+input[type=radio]:checked:before,
+input[type=checkbox]:checked:before {
+	float: left;
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	line-height: 14px;
+	font-family: 'FontAwesome';
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+input[type=checkbox]:checked:before {
+	content: '\f00c';
+	margin-bottom: -1px;
+	color: #13aff0;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+form input:not([type]) {
+	display: inline-block;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	@include border-radius( 4px );
+	@include box-shadow( inset 0 1px 3px #ddd );
+}
+
+
+/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
+/* May be able to remove this tweak as color inputs become more standardized across browsers. */
+form input[type="color"] {
+	padding: 5px 10px;
+}
+
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="email"]:focus,
+form input[type="url"]:focus,
+form input[type="date"]:focus,
+form input[type="month"]:focus,
+form input[type="time"]:focus,
+form input[type="datetime"]:focus,
+form input[type="datetime-local"]:focus,
+form input[type="week"]:focus,
+form input[type="number"]:focus,
+form input[type="search"]:focus,
+form input[type="tel"]:focus,
+form input[type="color"]:focus,
+form select:focus,
+form textarea:focus {
+	border-color: $color-13;
+	outline: 0;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+form input:not([type]):focus {
+	border-color: $color-13;
+	outline: 0;
+}
+
+form input[type="file"]:focus,
+form input[type="radio"]:focus,
+form input[type="checkbox"]:focus {
+	outline: 0;
+}
+
+form input[type="checkbox"],
+form input[type="radio"] {
+	display: inline-block;
+}
+
+form input[type="text"][disabled],
+form input[type="password"][disabled],
+form input[type="email"][disabled],
+form input[type="url"][disabled],
+form input[type="date"][disabled],
+form input[type="month"][disabled],
+form input[type="time"][disabled],
+form input[type="datetime"][disabled],
+form input[type="datetime-local"][disabled],
+form input[type="week"][disabled],
+form input[type="number"][disabled],
+form input[type="search"][disabled],
+form input[type="tel"][disabled],
+form input[type="color"][disabled],
+form select[disabled],
+form textarea[disabled] {
+	cursor: not-allowed;
+	color: #cad2d3;
+	background-color: #eaeded;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+form input:not([type])[disabled] {
+	cursor: not-allowed;
+	color: #cad2d3;
+	background-color: #eaeded;
+}
+form input[readonly],
+form select[readonly],
+form textarea[readonly] {
+	color: #777; /* menu text color */
+	border-color: #ccc;
+	background-color: #eee; /* menu hover bg color */
+}
+
+form input:focus:invalid,
+form textarea:focus:invalid,
+form select:focus:invalid {
+	color: #b94a48;
+	border-color: #e9322d;
+}
+form input[type="file"]:focus:invalid:focus,
+form input[type="radio"]:focus:invalid:focus,
+form input[type="checkbox"]:focus:invalid:focus {
+	outline-color: #e9322d;
+}
+select {
+	width: 100%;
+	/* Normalizes the height; padding is not sufficient. */
+	height: 2.25em;
+	min-height: auto;
+	border: 1px solid #ddd;
+	background-color: white;
+	cursor: pointer;
+	padding: 0 15px;
+	margin: 0;
+}
+form select[multiple] {
+	height: auto;
+}
+form label {
+    margin-bottom: 3px;
+}
+form fieldset {
+	margin: 0;
+	padding: .35em 0 .75em;
+	border: 0;
+}
+form legend {
+	display: block;
+	width: 100%;
+	margin-bottom: .3em;
+	padding: .3em 0;
+	color: #333;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+/*csslint outline-none:false*/
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+button[type="submit"],
+.button,
+body div.wpforms-container-full .wpforms-form input[type=submit],
+body div.wpforms-container-full .wpforms-form button[type=submit],
+body div.wpforms-container-full .wpforms-form .wpforms-page-button {
+	display: inline-block;
+    font-family: inherit;
+    background-color: $color-5;
+    color: $color-1;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 14px 20px;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    @include transition( all .3s ease );
+}
+
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button[type="submit"]:focus,
+.button:hover,
+body div.wpforms-container-full .wpforms-form input[type=submit]:hover,
+body div.wpforms-container-full .wpforms-form button[type=submit]:hover,
+body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
+	background-color: $color-6;
+	color: $color-1;
+}
+
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button[type="submit"]:focus,
+button:focus,
+.button:focus {
+	outline: 0;
+}
+
+.pure-button[disabled],
+.pure-button-disabled,
+.pure-button-disabled:hover,
+.pure-button-disabled:focus,
+.pure-button-disabled:active {
+	cursor: not-allowed;
+	@include opacity( .40 );
+	border: none;
+	background-image: none;
+	@include box-shadow( none );
+
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	filter: alpha(opacity=40);
+}
+
+/* Firefox: Get rid of the inner focus border */
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+	color: #fff;
+	background-color: rgb(0, 120, 231);
+}
+
+/* Comment checkbox */
+.comment-form-cookies-consent {
+	display: inline-block;
+    width: 100%;
+
+    label {
+    	display: inline-block;
+    }
+}

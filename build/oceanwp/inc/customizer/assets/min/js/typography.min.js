@@ -1,0 +1,1 @@
+!function(e){e(document).ready(function(){e(".oceanwp-typography-select").select2()})}(jQuery);

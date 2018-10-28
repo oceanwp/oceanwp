@@ -1,0 +1,87 @@
+/**
+ * Single Post Related posts
+ */
+#related-posts {
+	margin-top: 30px;
+	padding-top: 30px;
+	border-top: 1px solid $color-9;
+
+	.title-wrap {
+		display: block;
+		color: $color-2;
+	    font-size: 20px;
+	    font-weight: 600;
+	    letter-spacing: 0.6px;
+	    margin-bottom: 18px;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	.col {
+		float: left;
+		position: relative;
+		min-height: 100px;
+		margin: 0;
+		text-align: center;
+	}
+
+	.span_1_of_3 {
+		width: 33.3333333333%;
+	}
+}
+
+.related-thumb {
+    display: block;
+    background-color: $color-3;
+
+	img {
+	    display: block;
+	    width: 100%;
+	    @include transition( opacity .3s );
+
+	}
+
+	&:hover img {
+	    @include opacity( 0.7 );
+	}
+}
+
+.related-post-title {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 12px 12px 3px 12px;
+
+	a {
+		display: block;
+	}
+}
+
+time.published {
+	font-size: 12px;
+
+	i {
+		padding-right: 5px;
+	}
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	#related-posts {
+		.col {
+			float: none;
+			width: 100%;
+			margin-bottom: 30px;
+		}
+
+		.col:last-child {
+			margin-bottom: 0;
+		}
+	}
+	
+}

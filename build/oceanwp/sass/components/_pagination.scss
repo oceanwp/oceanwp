@@ -1,0 +1,163 @@
+ul.page-numbers {
+	display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0 0;
+    list-style: none;
+    text-align: right;
+    clear: both;
+
+    li {
+	    display: inline-block;
+	}
+}
+
+.page-links {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.page-numbers a,
+.page-numbers span:not(.elementor-screen-only),
+.page-links span {
+    position: relative;
+    display: inline-block;
+    min-width: 38px;
+    min-width: 38px;
+    line-height: 38px;
+    margin: 0 8px 0 0;
+    text-align: center;
+    color: $color-11;
+    border: 1px solid $border-color;
+    font-size: 18px;
+    cursor: pointer;
+    white-space: nowrap;
+    @include border-radius( 2px );
+    @include transition( all .3s ease );
+    @include box-sizing( content-box );
+}
+
+.page-numbers a span:not(.elementor-screen-only) {
+    padding: 0;
+}
+
+.page-numbers a:hover,
+.page-links a:hover span,
+.page-numbers.current,
+.page-numbers.current:hover,
+.page-links > span {
+    background-color: $color-8;
+    color: $color-2;
+}
+
+.elementor-pagination .page-numbers.current,
+.elementor-pagination .page-numbers.current:hover {
+    background-color: transparent;
+}
+
+.pagination-center {
+    .oceanwp-pagination,
+    .woocommerce-pagination {
+        ul.page-numbers,
+        .page-links {
+            text-align: center;
+        }
+    }
+}
+
+.pagination-left {
+    .oceanwp-pagination,
+    .woocommerce-pagination {
+        ul.page-numbers,
+        .page-links {
+            text-align: left;
+        }
+    }
+}
+
+/* next/prev */
+.page-jump a {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.2;
+    padding-bottom: 3px;
+    border-bottom: 1px solid;
+    text-transform: uppercase;
+}
+
+/* infinite scroll */
+.scroller-status,
+.infinite-scroll-last,
+.infinite-scroll-error {
+    display: none;
+}
+
+.scroller-status {
+    margin-top: 20px;
+    text-align: center;
+    clear: both;
+
+    p {
+        margin: 0;
+    }
+}
+
+.loader-ellips {
+    font-size: 12px;
+    position: relative;
+    width: 3.5em;
+    height: 1em;
+    margin: 0 auto;
+}
+
+.loader-ellips__dot {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 0.5em;
+    background-color: #333;
+    position: absolute;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      left: 0;
+    }
+
+    &:nth-child(3) {
+        left: 1.3em;
+    }
+
+    &:nth-child(4) {
+        left: 2.6em;
+    }
+
+    &:nth-child(1) {
+        animation-name: reveal;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+        animation-name: slide;
+    }
+
+    &:nth-child(4) {
+        animation-name: reveal;
+        animation-direction: reverse;
+    }
+}
+
+@keyframes reveal {
+    from { transform: scale(0.001); }
+    to { transform: scale(1); }
+}
+
+@keyframes slide {
+    to { transform: translateX(1.3em) }
+}
+
+.infinite-scroll-nav {
+    display: none;
+}

@@ -1,0 +1,286 @@
+/**
+ * Set link colors.
+ */
+a {
+	color: $link-color;
+
+	&:hover {
+		color: $link-hover-color;
+	}
+}
+
+a.light {
+	color: $color-1;
+
+	&:hover {
+		color: $link-hover-color;
+	}
+}
+
+a, a:hover, a:focus {
+	text-decoration: none;
+    @include transition( all .3s ease );
+}
+
+/**
+ * Headings.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: $heading-font-weight;
+	margin: 0 0 20px;
+	color: $heading-font-color;
+	line-height: 1.4;
+}
+
+h1 {
+	font-size: 23px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 17px;
+}
+
+h5 {
+	font-size: 15px;
+}
+
+h6 {
+	font-size: 14px;
+}
+
+.theme-heading {
+	font-size: 14px;
+    letter-spacing: 1.3px;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+
+    .text::before {
+    	content: '\f105';
+    	font-family: 'FontAwesome';
+    	font-size: 18px;
+    	font-weight: 600;
+    	color: $color-5;
+    	padding-right: 6px;
+    }
+}
+
+/**
+ * Text elements.
+ */
+p {
+	margin: 0 0 20px;
+}
+
+abbr[title],
+dfn[title] {
+	cursor: help;
+}
+
+del {
+	vertical-align: baseline;
+	text-decoration: line-through;
+	color: #aaa;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-size: 16px;
+}
+
+pre {
+	margin: 20px 0;
+	padding: 20px;
+	color: #2080ad;
+	background-color: #fafafa;
+}
+
+code {
+	color: #2080ad;
+}
+
+blockquote {
+	font-style: italic;
+	margin: 20px 40px;
+	padding-left: 20px;
+	border-left-width: 3px;
+	border-style: solid;
+	border-color: $color-5;
+
+	cite {
+		position: relative;
+		display: block;
+		padding: 10px 0 0 20px;
+		color: #555;
+		&:before {
+			position: absolute;
+			left: 0;
+			content: "\2014";
+		}
+	}
+}
+
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+	content: "";
+}
+
+address {
+	display: block;
+	margin: 0 0 20px;
+}
+
+ul,
+ol {
+	margin: 15px 0 15px 20px;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ol ol {
+	list-style: upper-alpha;
+}
+
+ol ol ol {
+	list-style: lower-roman;
+}
+
+ol ol ol ol {
+	list-style: lower-alpha;
+}
+
+li ul,
+li ol {
+	margin: 0 0 0 25px;
+}
+
+dl {
+	margin: 20px;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin-bottom: 20px;
+}
+
+hr {
+	clear: both;
+	height: 1px;
+	min-height: 0;
+	margin: 20px 0;
+	border-top: 1px solid $border-color;
+	border-right: 0;
+	border-bottom: 0;
+	border-left: 0;
+
+	&.dotted {
+		border-style: dotted;
+	}
+	&.dashed {
+		border-style: dashed;
+	}
+	&.blackborder {
+		border-color: #000;
+	}
+	&.whiteborder {
+		border-color: #fff;
+	}
+}
+
+/**
+ * Print styles.
+ */
+@media print {
+	* {
+		background: transparent !important;
+		@include box-shadow( none !important );
+		text-shadow: none !important;
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	.ir a:after,
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+
+		page-break-inside: avoid;
+	}
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	img {
+		max-width: 100% !important;
+	}
+
+	@page {
+		margin: .5cm;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+
+	blockquote {
+		margin: 20px 0;
+	}
+
+}

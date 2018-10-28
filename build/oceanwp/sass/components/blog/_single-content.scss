@@ -1,0 +1,20 @@
+/**
+ * Single Post Content
+ */
+.single .entry-content {
+    margin-bottom: 20px;
+}
+
+.dropcap {
+	float: left;
+	color: $color-5;
+    font-size: 120px;
+    line-height: 80px;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+.entry-footer {
+	display: inline-block;
+	width: 100%;
+}

@@ -1,0 +1,57 @@
+.widget-area {
+	font-size: 13px;
+}
+
+.sidebar-box {
+	margin-bottom: 40px;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+.widget-title {
+    display: block;
+    line-height: 1;
+    font-size: 13px;
+    font-weight: 400;
+    color: $color-2;
+    border-width: 0 0 0 3px;
+    border-style: solid;
+    border-color: $color-5;
+    letter-spacing: 1px;
+    padding-left: 15px;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+/**
+ * Widgets > Borders
+ */
+.oceanwp-widget-recent-posts-li,
+.widget_categories li,
+.widget_recent_entries li,
+.widget_archive li,
+.widget_recent_comments li,
+.widget-recent-posts-icons li,
+.site-footer .widget_nav_menu li {
+	padding: 6px 0;
+	border-bottom: 1px solid $color-7;
+
+	&:first-child {
+		border-top: 1px solid $color-7;
+	}
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	#main .widget_nav_menu li a:before {
+		display: none;
+	}
+	
+}

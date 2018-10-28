@@ -1,0 +1,27 @@
+/**
+ *  Gallery Format
+ */
+.gallery-format {
+	display: none;
+    position: relative;
+    overflow: hidden;
+
+	img {
+		display: block;
+	    position: relative;
+	    width: 100%;
+	    margin-bottom: 0;
+	}
+
+	.slick-prev,
+	.slick-next {
+	    @include opacity( 0 );
+	    visibility: hidden;
+	}
+
+	&:hover .slick-prev,
+	&:hover .slick-next {
+	    @include opacity( 1 );
+	    visibility: visible;
+	}
+}

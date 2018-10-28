@@ -1,0 +1,146 @@
+/*------------------------------------*
+	All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+			
+	/* default breakpoint */
+	body.default-breakpoint {
+		#site-logo.has-responsive-logo {
+			.custom-logo-link {
+				display: none;
+			}
+
+			.responsive-logo-link {
+				display: block;
+			}
+		}
+
+		.is-sticky #site-logo.has-responsive-logo .sticky-logo-link {
+			display: block;
+		}
+
+		.is-sticky #site-logo.has-sticky-logo .responsive-logo-link {
+			display: none;
+		}
+
+		#site-header.center-header #site-logo {
+	    	display: block;
+	    }
+
+		#top-bar-nav,
+		#site-navigation-wrap,
+		.oceanwp-social-menu,
+		.after-header-content {
+			display: none;
+		}
+
+		.center-logo #site-logo {
+		    float: none;
+		    position: absolute;
+		    left: 50%;
+		    padding: 0;
+		    -webkit-transform: translateX(-50%);
+		    transform: translateX(-50%);
+		}
+
+		.oceanwp-mobile-menu-icon {
+			display: block;
+		}
+
+		#top-bar.has-no-content #top-bar-social {
+			text-align: center;
+
+			&.top-bar-left,
+			&.top-bar-right {
+				position: inherit;
+				left: auto;
+				right: auto;
+				float: none;
+				height: auto;
+				line-height: 1.5em;
+				margin-top: 0;
+			}
+
+			li {
+				float: none;
+    			display: inline-block;
+			}
+		}
+
+		&.vertical-header-style #outer-wrap {
+		    margin: 0 !important;
+		}
+
+		#site-header.vertical-header {
+			position: relative;
+		    width: 100%;
+		    left: 0 !important;
+		    right: 0 !important;
+
+		    .has-template > #site-logo {
+		    	display: block;
+		    }
+
+		    #site-header-inner {
+		    	@include display();
+				@include align-items( center );
+		    	padding: 0;
+		    	max-width: 90%;
+
+			    > *:not(.oceanwp-mobile-menu-icon) {
+				    display: none;
+				}
+
+			    > * {
+				    padding: 0 !important;
+				}
+
+				#site-logo {
+					display: block;
+					margin: 0;
+					width: 50%;
+					text-align: left;
+				}
+
+				.oceanwp-mobile-menu-icon {
+					width: 50%;
+					text-align: right;
+				}
+			}
+
+			.vertical-toggle {
+				display: none;
+			}
+		}
+
+		&.vh-closed {
+	    	.vertical-toggle {
+				display: none;
+			}
+	    }
+
+	    .owp-cart-overlay { display: none !important; }
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+	.hide-tablet-mobile { display: none !important; }
+}
+
+/*------------------------------------*
+	Phone Landscape
+*------------------------------------*/
+@media only screen and (max-width: 480px) {
+	.hide-mobile { display: none !important; }
+}
+
+/*------------------------------------*
+	Visibility
+*------------------------------------*/
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+	.hide-tablet { display: none !important; }
+}

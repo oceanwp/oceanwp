@@ -1,0 +1,168 @@
+#site-header {
+	position: relative;
+    width: 100%;
+	background-color: $color-1;
+    border-bottom: 1px solid $color-9;
+    z-index: 100;
+
+    &.is-transparent {
+    	position: absolute;
+		top: 0;
+		background-color: transparent;
+		height: auto;
+		z-index: 9999;
+    }
+}
+
+#transparent-header-wrap {
+	position: relative;
+}
+
+.has-transparent-header {
+	.oceanwp-sticky-header-holder {
+		height: auto !important;
+	}
+
+	.is-sticky #site-header {
+		background-color: $color-1;
+	}
+}
+
+.no-header-border #site-header {
+    border-bottom: none;
+}
+
+#site-header-inner {
+	position: relative;
+    height: 100%;
+}
+
+#site-logo {
+	float: left;
+	height: 100%;
+    display: table;
+}
+
+#site-logo #site-logo-inner {
+	display: table-cell;
+    vertical-align: middle;
+    height: 74px;
+
+    a {
+    	background-color: transparent !important;
+
+		img {
+			width: auto;
+			vertical-align: middle;
+		    @include transition( all .3s ease-in-out );
+		}
+
+		&:hover img {
+		    @include opacity( 0.6 );
+		}
+    }
+}
+
+#site-logo a.site-logo-text {
+    font-size: 24px;
+	margin: 0;
+}
+
+/* Responsive logo */
+#site-logo.has-responsive-logo .responsive-logo-link {
+	display: none;
+}
+
+/**
+ * Header media
+ */
+#site-header.has-header-media {
+	> *:not(.overlay-header-media) {
+		position: relative;
+	    z-index: 2;
+	}
+
+	.overlay-header-media {
+		display: block;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    height: 100%;
+	    width: 100%;
+	    background-color: rgba(0, 0, 0, 0.3);
+	    z-index: 1;
+    }
+}
+
+/**
+ * Video header
+ */
+#site-header .custom-header-media {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	width: 100%;
+
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: block;
+		height: 100%;
+		z-index: 2;
+		background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
+		background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0);
+	}
+
+	video, iframe {
+		position: absolute;
+		height: auto;
+		left: 50%;
+		max-width: 1000%;
+		min-height: 100%;
+		min-width: 100%;
+		min-width: 100vw;
+		width: auto;
+		top: 50%;
+		@include transform( translateX(-50%) translateY(-50%) );
+	}
+
+	.wp-custom-header-video-button {
+		display: none;
+	}
+}
+
+.has-header-video #site-header-inner {
+	z-index: 10;
+}
+
+/*------------------------------------*
+	All Devices under 960px
+*------------------------------------*/
+@media only screen and (max-width: 959px) {
+		
+	.has-left-menu #site-logo {
+		padding: 0 !important;
+	}
+	
+}
+
+/*------------------------------------*
+	Phone Portrait and Landscape
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+
+	/* logo */
+	#site-logo {
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+	}
+	
+}

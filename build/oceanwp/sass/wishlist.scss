@@ -1,0 +1,56 @@
+/*------------------------------------------------------------------
+Woo Wishlist
+-------------------------------------------------------------------*/
+
+// Configuration
+@import "config";
+
+// Mixins
+@import "mixins";
+
+.products .product {
+    .tinv-wraper.tinv-wishlist {
+	    position: absolute;
+	    top: 10px;
+	    right: 10px;
+	    visibility: hidden;
+		@include opacity( 0 );
+		@include transition( all 0.25s ease-in-out );
+	    z-index: 10;
+    }
+
+	&:hover .tinv-wraper.tinv-wishlist {
+	    visibility: visible;
+	    -moz-opacity: 1;
+	    -webkit-opacity: 1;
+	    opacity: 1;
+	}
+}
+
+.woocommerce ul.products li.product .button.tinvwl_add_to_wishlist_button {
+	border: 0;
+    padding: 0;
+}
+
+.tinv-wishlist.tinvwl-after-add-to-cart .tinvwl_add_to_wishlist_button.no-txt {
+    margin-left: 0;
+}
+
+ul.products li.product .tinvwl_add_to_wishlist_button {
+    margin-top: 0;
+}
+
+.tinv-wishlist table input[type="checkbox"] {
+    margin-right: 0 !important;
+}
+
+.tinv-wishlist .product-action .button {
+    padding: 12px 0;
+}
+
+a.wishlist_products_counter {
+    &.top_wishlist-heart-plus:before,
+	&.top_wishlist-heart:before {
+	    margin-right: 2px;
+	}
+}

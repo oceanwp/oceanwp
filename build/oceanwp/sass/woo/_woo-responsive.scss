@@ -1,0 +1,347 @@
+/*------------------------------------------------------------------
+Woo Responsive
+-------------------------------------------------------------------*/
+.sidr-class-woo-menu-icon {
+	display: none;
+}
+.sidr-class-woocommerce {
+	display: none;
+}
+@media only screen and(max-width: 1280px) {
+	.woocommerce div.product .product-thumbnails {
+		width: 275px;
+	}
+}
+@media only screen and(max-width: 992px) {
+	.woocommerce {
+		#customer_login {
+			.lost_password {
+				float: none;
+				margin-top: 10px !important;
+				line-height: 1;
+			}
+			.form-row label[for="rememberme"] {
+				margin: 0 0 0 4px;
+			}
+		}
+		.oceanwp-loginform-wrap {
+			.lost_password {
+				float: none;
+				margin-top: 10px !important;
+				line-height: 1;
+			}
+			.form-row label[for="rememberme"] {
+				margin: 0 0 0 4px;
+			}
+		}
+	}
+}
+@media only screen and(max-width: 959px) {
+	body.account-side-style .woocommerce #customer_login {
+		> div,
+		.col-2 {
+		    float: none;
+			width: 100%;
+		}
+		.col-2 {
+		    margin-top: 20px;
+		}
+	}
+	.woocommerce-checkout {
+		#order_review {
+			float: none;
+			width: 100%;
+		}
+		> .col2-set {
+			float: none;
+			width: 100%;
+		}
+		h3#order_review_heading {
+			float: none;
+			width: 100%;
+		}
+		form.checkout_coupon {
+			width: 100%;
+			margin-bottom: 20px;
+			.form-row-first,
+			.form-row-last {
+				float: none;
+				width: 100%;
+				margin: 0;
+			}
+			.form-row-last {
+				margin-top: 10px;
+			}
+		}
+		form.checkout {
+			margin-top: 10px;
+		}
+	}
+}
+@media only screen and(max-width: 767px) {
+	.woocommerce {
+		ul {
+			&.products.list li.product {
+				.woo-entry-image,
+				.product-entry-slider-wrap {
+					float: none;
+					width: 100%;
+					margin: 0 0 20px;
+				}
+				.woo-entry-inner {
+					float: none;
+					width: 100%;
+				}
+			}
+			&.order_details li {
+				float: none;
+				width: 100%;
+				margin-bottom: 10px;
+				padding-bottom: 10px;
+				border: 0;
+				border-bottom: 1px solid #e9e9e9;
+			}
+		}
+		.form-row-first {
+			float: none;
+			width: 100%;
+			margin-right: 0;
+			margin-left: 0 !important;
+		}
+		.form-row-last {
+			float: none;
+			width: 100%;
+		}
+		.cart-collaterals {
+			.cross-sells {
+				display: none;
+			}
+			.cart_totals {
+				float: none;
+				width: 100%;
+				margin-bottom: 20px;
+			}
+		}
+		div.product {
+			div {
+				&.images {
+					float: none;
+					width: 100% !important;
+					text-align: center;
+				}
+				&.summary {
+					float: none;
+					width: 100% !important;
+				}
+			}
+			.woocommerce-tabs ul.tabs li {
+				display: block;
+			}
+		}
+		&.content-full-width div.product div {
+			&.images {
+				float: none;
+				width: 100%;
+			}
+			&.summary {
+				float: none;
+				width: 100%;
+			}
+		}
+		#customer_login .form-row label[for="rememberme"] {
+			margin: 0 0 0 4px;
+		}
+		.order_details li:last-of-type {
+			padding: 0;
+			margin: 0;
+		}
+	}
+	.col2-set {
+		.col-1 {
+			float: none;
+			width: 100%;
+		}
+		.col-2 {
+			float: none;
+			width: 100%;
+		}
+		> div:first-child {
+			margin-bottom: 30px;
+		}
+	}
+	.woocommerce-page {
+		.cart-collaterals .cart_totals {
+			float: none;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		&.woocommerce-cart table.shop_table td.product-price {
+			display: none !important;
+		}
+	}
+	.woocommerce-cart {
+		.cart-collaterals .cart_totals table td {
+			text-align: right;
+		}
+		table.cart td.actions .coupon .input-text {
+			max-width: 150px;
+		}
+	}
+	.woocommerce-message:before {
+		display: none;
+	}
+	.woocommerce-cart .woocommerce table.shop_table {
+		thead {
+			display: none;
+		}
+
+		tbody {
+			th {
+				display: none;
+			}
+		}
+
+		tr {
+			td {
+				display: inline-block;
+				width: 100%;
+				text-align: right;
+				clear: both;
+
+				&:before {
+					content: attr(data-title) ': ';
+					font-weight: 600;
+					float: left;
+				}
+
+				&.product-remove:before,
+				&.product-thumbnail:before {
+					display: none;
+				}
+
+				&.product-thumbnail {
+					text-align: center;
+				}
+
+				&.product-quantity .quantity {
+					float: right;
+				}
+
+				&.actions,
+				&.download-actions {
+					&:before {
+						display: none;
+					}
+				}
+
+				&.download-actions {
+					.button {
+						display: block;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		&.my_account_orders {
+			.order-actions {
+				text-align: right;
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+}
+@media only screen and(max-width: 480px) {
+	.woocommerce {
+		.result-count {
+			display: none;
+		}
+		.oceanwp-toolbar {
+		    text-align: center;
+		}
+		.oceanwp-off-canvas-filter,
+		.oceanwp-grid-list {
+		    display: inline-block;
+		    float: none;
+	    }
+		.oceanwp-grid-list {
+		    margin: 0;
+	    }
+		.woocommerce-ordering {
+		    float: none;
+		    margin-top: 14px;
+		    text-align: left;
+			
+			.orderby {
+				width: 100% !important;
+				span {
+					width: 100% !important;
+				}
+			}
+	    }
+	}
+	.woocommerce-cart table.cart td.actions {
+		.coupon {
+			float: none;
+			width: 100%;
+			text-align: center;
+			padding-bottom: 1em;
+			border-bottom: 1px solid rgba(0,0,0,.05);
+
+			.input-text {
+				width: 100%;
+			    max-width: 100%;
+			    margin: 0 0 10px;
+			}
+
+			input {
+				width: 100%;
+			}
+		}
+		button[name='update_cart'] {
+			display: inline-block;
+			float: none;
+			width: 100%;
+			margin-top: 15px;
+		}
+	}
+	.woocommerce-checkout form.login .lost_password {
+		float: none;
+		line-height: 1;
+		margin: 10px 0 0;
+	}
+}
+@media only screen and(max-width: 320px) {
+	.woocommerce {
+		.woocommerce-ordering .orderby {
+			width: 175px !important;
+			span {
+				width: 175px !important;
+			}
+		}
+		div.product .product-thumbnails {
+			width: 215px;
+		}
+		#reviews #comments ol.commentlist li {
+			.comment_container {
+				padding: 0;
+			}
+			img.avatar {
+				display: none;
+			}
+		}
+	}
+	.woocommerce-cart table.cart td.actions {
+		input {
+			width: 100%;
+		}
+		.coupon .input-text {
+			width: 100%;
+			max-width: 100%;
+			margin: 0 0 10px !important;
+		}
+	}
+}
