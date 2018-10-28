@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2018.10.28* - 1.5.31:
+* **Fixed** - Product quantity on sigle product issue if the floating bar was activated.
+
 ### *2018.10.26* - 1.5.30:
 * **Fixed** - Customizer preview issue.
 * **Tweak** - Don't recommend WPForms if WPForms Pro is activated.
