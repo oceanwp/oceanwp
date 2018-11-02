@@ -162,8 +162,8 @@ final class OCEANWP_Theme_Class {
 		define( 'OCEANWP_WOOCOMMERCE_ACTIVE', class_exists( 'WooCommerce' ) );
 		define( 'OCEANWP_EDD_ACTIVE', class_exists( 'Easy_Digital_Downloads' ) );
 		define( 'OCEANWP_LIFTERLMS_ACTIVE', class_exists( 'LifterLMS' ) );
+		define( 'OCEANWP_ALNP_ACTIVE', class_exists( 'Auto_Load_Next_Post' ) );
 		define( 'OCEANWP_LEARNDASH_ACTIVE', class_exists( 'SFWD_LMS' ) );
-
 	}
 
 	/**
@@ -206,7 +206,6 @@ final class OCEANWP_Theme_Class {
 		if ( OCEANWP_EDD_ACTIVE ) {
 			require_once ( $dir .'edd/edd-config.php' );
 		}
-
 	}
 
 	/**

@@ -23,15 +23,18 @@ function oceanwp_tgmpa_register() {
 			'required'			=> false,
 			'force_activation'	=> false,
 		),
-		
-		array(
+
+	);
+
+	// If WPForms Pro is not active, recommend WPForms
+	if ( ! class_exists( 'WPForms_Pro' ) ) {
+		$plugins[] = array(
 			'name'				=> 'WPForms',
 			'slug'				=> 'wpforms-lite', 
 			'required'			=> false,
 			'force_activation'	=> false,
-		),
-		
-	);
+		);
+	}
 
 	// Register notice
 	tgmpa( $plugins, array(

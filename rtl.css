@@ -322,3 +322,15 @@ ul.page-numbers { text-align: left; }
 	.separate-layout .widget-area.sidebar-primary { padding-right: 0; }
 	
 }
+
+/*------------------------------------*
+	All Devices under 767px
+*------------------------------------*/
+@media only screen and (max-width: 767px) {
+	#respond .comment-form-author,
+	#respond .comment-form-email,
+	#respond .comment-form-url {
+	    float: none;
+	    padding: 0;
+	}
+}

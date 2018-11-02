@@ -27,9 +27,9 @@ do_action( 'woocommerce_before_single_product' );
 if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
-}
-?>
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class(); ?>>
+} ?>
+
+<div id="product-<?php the_ID(); ?>" <?php if ( function_exists( 'wc_product_class' ) ) { wc_product_class(); } else { post_class(); } ?>>
 
 	<?php
 	// Elementor `single` location
