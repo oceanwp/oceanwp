@@ -1467,9 +1467,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function add_product_classes( $classes ) {
-			global $product, $woocommerce_loop;
+			global $woocommerce_loop;
 
 			// Vars
+			$product 			= wc_get_product( get_the_ID() );
 			$content_alignment 	= get_theme_mod( 'ocean_woo_product_entry_content_alignment', 'center' );
 			$content_alignment 	= $content_alignment ? $content_alignment : 'center';
 			$thumbs_layout 		= get_theme_mod( 'ocean_woo_product_thumbs_layout', 'horizontal' );
@@ -2007,7 +2008,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 *
 		 * @since 1.5.17
 		 */
-		public static function validate_checkout_callback() {
+		public function validate_checkout_callback() {
 			$posted_data = isset($_POST['posted_data'])?$_POST['posted_data']:array();
 
             $WC_Checkout = new WC_Checkout();
@@ -2285,7 +2286,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @author Sébastien Dumont
 		 * @global object WC_Product $product
 		 */
-		public static function remove_wc_match_box_single_product_summary() {
+		public function remove_wc_match_box_single_product_summary() {
 			global $product;
 
 			if ( $product->is_type( 'mix-and-match' ) ) {
