@@ -53,6 +53,11 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 		return seopress_display_breadcrumbs();
     }
 
+  // Rank Math breadcrumbs
+	if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+		return rank_math_the_breadcrumbs();
+  }
+
 	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
 
 	if ( !is_object( $breadcrumb ) )
@@ -86,6 +91,21 @@ function sp_pro_breadcrumbs_sep() {
 }
 add_action( 'seopress_pro_breadcrumbs_sep', 'sp_pro_breadcrumbs_sep' );
 
+/**
+ * Add container to Rank Math breadcrumbs.
+ *
+ * @since  1.5.22
+ */
+add_action( 'rank_math/frontend/breadcrumb/args', function( $args ) {
+	$classes = 'site-breadcrumbs clr';
+	if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
+		$classes .= ' position-'. $breadcrumbs_position;
+	}
+	$args['wrap_before'] = '<div class="' . $classes . '">';
+	$args['wrap_after']  = '</div>';
+
+	return $args;
+});
 /**
  * Creates a breadcrumbs menu for the site based on the current page that's being viewed by the user.
  *
