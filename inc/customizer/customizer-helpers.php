@@ -115,7 +115,7 @@ function oceanwp_cac_has_page_header() {
 }
 
 function oceanwp_cac_has_breadcrumbs() {
-	if ( function_exists( 'yoast_breadcrumb' ) ) {
+	if ( function_exists( 'yoast_breadcrumb' ) || function_exists( 'rank_math_the_breadcrumbs' ) ) {
 		return true;
 	} else {
 		return get_theme_mod( 'ocean_breadcrumbs', true );
