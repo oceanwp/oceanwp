@@ -968,11 +968,11 @@ final class OCEANWP_Theme_Class {
 	 */
 	public static function meta_tags() {
 
-		// Return if disabled or if Yoast SEO enabled as they have their own meta tags
+		// Return if disabled or if Yoast SEO or Rank Math SEO enabled as they have their own meta tags
 		if ( false == get_theme_mod( 'ocean_open_graph', false )
-			|| defined( 'WPSEO_VERSION' ) ) {
-			return;
-		}
+            || defined( 'WPSEO_VERSION' ) || defined( 'RANK_MATH_FILE' ) ) {
+            return;
+        }
 
 		// Facebook URL
 		$facebook_url = get_theme_mod( 'ocean_facebook_page_url' );
