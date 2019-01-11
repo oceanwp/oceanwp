@@ -69,11 +69,11 @@
 .woocommerce ul.products li.product.outofstock .outofstock-badge,
 .woocommerce ul.products li.product .onsale { right: 20px; left: auto; }
 
-/* product entry */
+/* Product entry */
 .woocommerce ul.products.owp-content-left .product-inner { text-align: right; }
 .woocommerce ul.products.owp-content-right .product-inner { text-align: left; }
 
-/* product entry > list view */
+/* Product entry > list view */
 .woocommerce ul.products.list .product-inner { text-align: right; }
 .woocommerce ul.products.list li.product .woo-entry-image { float: right; margin: 0 0 0 3%; }
 .woocommerce ul.products.list li.product .woo-entry-inner { float: right; }
@@ -185,18 +185,6 @@ body .owp-floating-bar form.cart .quantity { margin-left: 15px; margin-right: 0;
 .woocommerce .widget_price_filter .price_slider_amount .button { float: left; }
 .woocommerce .widget_price_filter .price_slider_amount { text-align: right; }
 
-/* Widget cart & products */
-.current-shop-items-dropdown { left: -20px; right: auto; text-align: right; }
-.boxed-layout .current-shop-items-dropdown { left: 0; right: auto; }
-.woocommerce .widget_shopping_cart .total strong { float: right; }
-.woocommerce .widget_shopping_cart .total .amount { float: left; }
-.woocommerce .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid.thumbnail { border-left-width: 1px; border-right-width: 0; }
-.woocommerce .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid.content { padding-right: 10px; padding-left: 0; }
-.woocommerce .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid.content > div { padding-left: 60px; padding-right: 0; }
-.woocommerce .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid.content a.remove { left: 20px; right: auto; }
-.widget_shopping_cart_content .buttons .button { float: right; }
-.widget_shopping_cart_content .buttons .checkout { float: left; }
-
 /* Widget search */
 .woocommerce-product-search input[type='submit'] { float: left; }
 
@@ -282,6 +270,7 @@ body a.wishlist_products_counter.top_wishlist-heart:before { margin-left: 2px; m
 #oceanwp-off-canvas-sidebar-wrap { right: 0; left: auto; }
 #oceanwp-off-canvas-sidebar-wrap .oceanwp-off-canvas-sidebar { right: -100%; left: auto; }
 .off-canvas-enabled #oceanwp-off-canvas-sidebar-wrap .oceanwp-off-canvas-sidebar { right: 0; left: auto; }
+.oceanwp-off-canvas-close { left: 15px; right: auto; }
 
 /* Mobile menu cart sidebar */
 #oceanwp-cart-sidebar-wrap .oceanwp-cart-sidebar { left: -100%; right: auto; }

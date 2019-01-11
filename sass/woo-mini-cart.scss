@@ -1,6 +1,13 @@
 /*------------------------------------------------------------------
-Woo Cart
+Woo Mini Cart
 -------------------------------------------------------------------*/
+
+// Configuration
+@import "config";
+
+// Mixins
+@import "mixins";
+
 .current-shop-items-dropdown {
 	position: absolute;
 	top: 100%;
@@ -279,4 +286,19 @@ Woo Cart
 		border-color: $color-5;
     	height: 10px;
     }
+}
+
+/* Fix for some conflict with default Woo css if custom features are disabled */
+.woocommerce .widget_shopping_cart .cart_list li, .woocommerce.widget_shopping_cart .cart_list li {
+    padding: 0;
+}
+
+.woocommerce .widget_shopping_cart .cart_list li a.remove, .woocommerce.widget_shopping_cart .cart_list li a.remove {
+    top: 50%;
+    left: auto;
+    right: 0;
+}
+
+.woocommerce .widget_shopping_cart .total, .woocommerce.widget_shopping_cart .total {
+    padding: 20px;
 }

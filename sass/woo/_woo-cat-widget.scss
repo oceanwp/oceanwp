@@ -55,7 +55,7 @@
 		    @include border-radius( 50% );
 		}
 
-		&.current-cat {
+		&.current-cat > {
 			a {
 				font-weight: bold;
 
@@ -153,8 +153,8 @@
 			line-height: 1.6;
 			font-weight: 600;
 			text-transform: uppercase;
-			padding: 10px 22px 10px 40px;
-			border-bottom: 1px dotted;
+			padding: 10px 22px 10px 0;
+			border-bottom: 1px solid #eaeaea;
 
 			&:before {
 				display: none;
@@ -183,6 +183,10 @@
 			margin: 0 0 0 16px;
 		}
 
+		&.current-cat-parent > ul.children {
+			display: block;
+		}
+
 		ul a {
 			font-weight: 400;
 			text-transform: none;
@@ -193,14 +197,14 @@
 	.count {
 		position: absolute;
 		top: 0;
-		right: 0;
+    	right: 40px;
 		border: 0;
-		padding: 10px 20px 0 0;
+		padding: 10px 0 0;
 		z-index: 10;
 	}
 
 	.count,
-	li.current-cat a ~ .count {
+	li.current-cat > a ~ .count {
 		background-color: transparent !important;
 		color: #999;
 	}

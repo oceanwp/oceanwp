@@ -23,7 +23,7 @@ function oceanwpWooOffCanvas() {
 		$j( 'body' ).addClass( 'off-canvas-enabled' );
 	} );
 
-	$j( '.oceanwp-off-canvas-overlay' ).on( 'click', function() {
+	$j( '.oceanwp-off-canvas-overlay, .oceanwp-off-canvas-close' ).on( 'click', function() {
 		$j( 'html' ).css( {
 			'overflow': '',
 			'margin-right': '' 

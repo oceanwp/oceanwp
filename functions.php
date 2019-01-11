@@ -107,9 +107,6 @@ final class OCEANWP_Theme_Class {
 			// Alter the search posts per page
 			add_action( 'pre_get_posts', array( 'OCEANWP_Theme_Class', 'search_posts_per_page' ) );
 
-			// Alter tagcloud widget to display all tags with 1em font size
-			add_filter( 'widget_tag_cloud_args', array( 'OCEANWP_Theme_Class', 'widget_tag_cloud_args' ) );
-
 			// Alter WP categories widget to display count inside a span
 			add_filter( 'wp_list_categories', array( 'OCEANWP_Theme_Class', 'wp_list_categories_args' ) );
 
@@ -178,6 +175,7 @@ final class OCEANWP_Theme_Class {
 		require_once ( $dir .'customizer/controls/typography/webfonts.php' );
 		require_once ( $dir .'walker/init.php' );
 		require_once ( $dir .'walker/menu-walker.php' );
+		require_once ( $dir .'third/class-gutenberg.php' );
 		require_once ( $dir .'third/class-elementor.php' );
 		require_once ( $dir .'third/class-beaver-themer.php' );
 		require_once ( $dir .'third/class-bbpress.php' );
@@ -277,9 +275,6 @@ final class OCEANWP_Theme_Class {
 			'footer_menu'     => esc_html__( 'Footer', 'oceanwp' ),
 			'mobile_menu'     => esc_html__( 'Mobile (optional)', 'oceanwp' )
 		) );
-
-		// Adding Gutenberg support
-		add_theme_support( 'gutenberg', array( 'wide-images' => true ) );
 
 		// Enable support for Post Formats
 		add_theme_support( 'post-formats', array( 'video', 'gallery', 'audio', 'quote', 'link' ) );
@@ -471,7 +466,8 @@ final class OCEANWP_Theme_Class {
 		wp_register_script( 'infinitescroll', $dir .'third/infinitescroll.min.js', array( 'jquery' ), $theme_version, true );
 
 		// WooCommerce scripts
-		if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
+		if ( OCEANWP_WOOCOMMERCE_ACTIVE
+			&& 'yes' != get_theme_mod( 'ocean_woo_remove_custom_features', 'no' ) ) {
 			wp_enqueue_script( 'oceanwp-woocommerce', $dir .'third/woo/woo-scripts.min.js', array( 'jquery' ), $theme_version, true );
 		}
 
@@ -805,19 +801,6 @@ final class OCEANWP_Theme_Class {
 		if ( $query->is_main_query() && is_search() ) {
 			$query->set( 'posts_per_page', $posts_per_page );
 		}
-	}
-
-	/**
-	 * Alters the default WordPress tag cloud widget arguments.
-	 * Makes sure all font sizes for the cloud widget are set to 1em.
-	 *
-	 * @since 1.0.0 
-	 */
-	public static function widget_tag_cloud_args( $args ) {
-		$args['largest']  = '0.923em';
-		$args['smallest'] = '0.923em';
-		$args['unit']     = 'em';
-		return $args;
 	}
 
 	/**

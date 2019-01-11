@@ -181,6 +181,11 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			$classes[] = 'has-sidebar';
 		}
 
+		// Mobile sidebar order
+		if ( 'sidebar-content' == oceanwp_sidebar_order() ) {
+			$classes[] = 'sidebar-content';
+		}
+
 		// Content layout
 		if ( $post_layout ) {
 			$classes[] = 'content-'. $post_layout;
@@ -464,7 +469,66 @@ if ( ! function_exists( 'oceanwp_both_sidebars_style' ) ) {
 }
 
 /**
- * Returns the sidebar
+ * Mobile sidebar order
+ *
+ * @since 1.6
+ */
+if ( ! function_exists( 'oceanwp_sidebar_order' ) ) {
+
+	function oceanwp_sidebar_order() {
+
+		// Define variables
+		$order  = 'content-sidebar';
+		/*$meta   = get_post_meta( oceanwp_post_id(), 'ocean_post_layout', true );
+
+		// Check meta first to override and return (prevents filters from overriding meta)
+		if ( $meta ) {
+			return $meta;
+		}*/
+
+		// Singular Page
+		if ( is_page() ) {
+			$order = get_theme_mod( 'ocean_page_single_sidebar_order', 'content-sidebar' );
+		}
+
+		// Home
+		elseif ( is_home()
+			|| is_category()
+			|| is_tag()
+			|| is_date()
+			|| is_author() ) {
+			$order = get_theme_mod( 'ocean_blog_archives_sidebar_order', 'content-sidebar' );
+		}
+
+		// Singular Post
+		elseif ( is_singular( 'post' ) ) {
+			$order = get_theme_mod( 'ocean_single_post_sidebar_order', 'content-sidebar' );
+		}
+
+		// Search
+		elseif ( is_search() ) {
+			$order = get_theme_mod( 'ocean_search_sidebar_order', 'content-sidebar' );
+		}
+
+		// All else
+		else {
+			$order = 'content-sidebar';
+		}
+
+		// The order should never be empty
+		if ( empty( $order ) ) {
+			$order = 'content-sidebar';
+		}
+
+		// Apply filters and return
+		return apply_filters( 'ocean_sidebar_order', $order );
+
+	}
+
+}
+
+/**
+ * Get the sidebar
  *
  * @since  1.4.0
  */
@@ -487,7 +551,29 @@ if ( ! function_exists( 'oceanwp_display_sidebar' ) ) {
 		
 	}
 
-	add_action( 'ocean_display_sidebar', 'oceanwp_display_sidebar' );
+}
+
+/**
+ * Returns the sidebar
+ *
+ * @since  1.6
+ */
+if ( ! function_exists( 'oceanwp_sidebar_action' ) ) {
+
+	function oceanwp_sidebar_action() {
+
+		if ( 'sidebar-content' == oceanwp_sidebar_order()
+			&& 'both-sidebars' != oceanwp_post_layout() ) {
+			$action = 'ocean_before_primary';
+		} else {
+			$action = 'ocean_after_primary';
+		}
+
+		add_action( $action, 'oceanwp_display_sidebar' );
+		
+	}
+
+	add_action( 'wp', 'oceanwp_sidebar_action', 20 );
 
 }
 

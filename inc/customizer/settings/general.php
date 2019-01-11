@@ -645,6 +645,27 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_page_single_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_page_single_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_general_settings',
+				'settings' 				=> 'ocean_page_single_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_page_single_rl_layout',
+			) ) );
+
+			/**
 			 * Content Padding
 			 */
 			$wp_customize->add_setting( 'ocean_page_content_top_padding', array(
@@ -837,6 +858,27 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			        'step'  => 1,
 			    ),
 				'active_callback' 		=> 'oceanwp_cac_has_search_bs_layout',
+			) ) );
+
+			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_search_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_search_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_general_settings',
+				'settings' 				=> 'ocean_search_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_search_rl_layout',
 			) ) );
 
 			/**
@@ -1304,7 +1346,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_breadcrumbs', array(
-				'label'	   				=> esc_html__( 'Breadcrumbs', 'oceanwp' ),
+				'label'	   				=> esc_html__( 'Enable Breadcrumbs', 'oceanwp' ),
 				'type' 					=> 'checkbox',
 				'section'  				=> 'ocean_general_page_header',
 				'settings' 				=> 'ocean_breadcrumbs',
@@ -1331,6 +1373,165 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 					'under-title' 		=> esc_html__( 'Under Title', 'oceanwp' ),
 				),
 			) ) );
+
+			/**
+		     * Breadcrumb Separator
+		     */
+	        $wp_customize->add_setting( 'ocean_breadcrumb_separator', array(
+				'transport' 			=> 'postMessage',
+				'default'				=> '>',
+				'sanitize_callback' 	=> 'wp_filter_nohtml_kses',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_breadcrumb_separator', array(
+				'label'					=> esc_html__( 'Breadcrumb Separator', 'oceanwp' ),
+				'section'				=> 'ocean_general_page_header',
+				'settings'				=> 'ocean_breadcrumb_separator',
+				'type'					=> 'text',
+				'priority'				=> 10,
+			) ) );
+
+			/**
+			 * Home Item
+			 */
+			$wp_customize->add_setting( 'ocean_breadcrumb_home_item', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> 'icon',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_breadcrumb_home_item', array(
+				'label'	   				=> esc_html__( 'Home Item', 'oceanwp' ),
+				'section'  				=> 'ocean_general_page_header',
+				'settings' 				=> 'ocean_breadcrumb_home_item',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'icon'  			=> esc_html__( 'Icon', 'oceanwp' ),
+					'text' 				=> esc_html__( 'Text', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+		     * Translation for Homepage
+		     */
+	        $wp_customize->add_setting( 'ocean_breadcrumb_translation_home', array(
+				'transport' 			=> 'postMessage',
+				'default'				=> esc_html__( 'Home', 'oceanwp' ),
+				'sanitize_callback' 	=> 'wp_filter_nohtml_kses',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_breadcrumb_translation_home', array(
+				'label'					=> esc_html__( 'Translation for Homepage', 'oceanwp' ),
+				'section'				=> 'ocean_general_page_header',
+				'settings'				=> 'ocean_breadcrumb_translation_home',
+				'type'					=> 'text',
+				'priority'				=> 10,
+			) ) );
+
+			/**
+		     * Translation for "404 Not Found"
+		     */
+	        $wp_customize->add_setting( 'ocean_breadcrumb_translation_error', array(
+				'transport' 			=> 'postMessage',
+				'default'				=> esc_html__( '404 Not Found', 'oceanwp' ),
+				'sanitize_callback' 	=> 'wp_filter_nohtml_kses',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_breadcrumb_translation_error', array(
+				'label'					=> esc_html__( 'Translation for "404 Not Found"', 'oceanwp' ),
+				'section'				=> 'ocean_general_page_header',
+				'settings'				=> 'ocean_breadcrumb_translation_error',
+				'type'					=> 'text',
+				'priority'				=> 10,
+			) ) );
+
+			/**
+		     * Translation for "Search results for"
+		     */
+	        $wp_customize->add_setting( 'ocean_breadcrumb_translation_search', array(
+				'transport' 			=> 'postMessage',
+				'default'				=> esc_html__( 'Search results for', 'oceanwp' ),
+				'sanitize_callback' 	=> 'wp_filter_nohtml_kses',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_breadcrumb_translation_search', array(
+				'label'					=> esc_html__( 'Translation for "Search results for"', 'oceanwp' ),
+				'section'				=> 'ocean_general_page_header',
+				'settings'				=> 'ocean_breadcrumb_translation_search',
+				'type'					=> 'text',
+				'priority'				=> 10,
+			) ) );
+
+			/**
+			 * Posts Taxonomy
+			 */
+			$wp_customize->add_setting( 'ocean_breadcrumb_posts_taxonomy', array(
+				'default'           	=> 'category',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_breadcrumb_posts_taxonomy', array(
+				'label'	   				=> esc_html__( 'Posts Taxonomy', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_general_page_header',
+				'settings' 				=> 'ocean_breadcrumb_posts_taxonomy',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'none' 		=> esc_html__( 'None', 'oceanwp' ),
+					'category' 	=> esc_html__( 'Category', 'oceanwp' ),
+					'post_tag' 	=> esc_html__( 'Tag', 'oceanwp' ),
+					'blog' 		=> esc_html__( 'Blog Page', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+			 * Products Taxonomy
+			 */
+			$wp_customize->add_setting( 'ocean_breadcrumb_products_taxonomy', array(
+				'default'           	=> 'shop',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_breadcrumb_products_taxonomy', array(
+				'label'	   				=> esc_html__( 'Products Taxonomy', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_general_page_header',
+				'settings' 				=> 'ocean_breadcrumb_products_taxonomy',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'none' 				=> esc_html__( 'None', 'oceanwp' ),
+					'product_cat' 		=> esc_html__( 'Category', 'oceanwp' ),
+					'product_tag' 		=> esc_html__( 'Tag', 'oceanwp' ),
+					'shop' 				=> esc_html__( 'Shop Page', 'oceanwp' ),
+				),
+			) ) );
+
+			// If Ocean Portfolio plugin is activated
+			if ( class_exists( 'Ocean_Portfolio' ) ) {
+
+				/**
+				 * Portfolio Taxonomy
+				 */
+				$wp_customize->add_setting( 'ocean_breadcrumb_portfolio_taxonomy', array(
+					'default'           	=> 'ocean_portfolio_category',
+					'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+				) );
+
+				$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_breadcrumb_portfolio_taxonomy', array(
+					'label'	   				=> esc_html__( 'Portfolio Taxonomy', 'oceanwp' ),
+					'type' 					=> 'select',
+					'section'  				=> 'ocean_general_page_header',
+					'settings' 				=> 'ocean_breadcrumb_portfolio_taxonomy',
+					'priority' 				=> 10,
+					'choices' 				=> array(
+						'none' 						=> esc_html__( 'None', 'oceanwp' ),
+						'ocean_portfolio_category' 	=> esc_html__( 'Category', 'oceanwp' ),
+						'ocean_portfolio_tag' 		=> esc_html__( 'Tag', 'oceanwp' ),
+						'portfolio' 				=> esc_html__( 'Portfolio Page', 'oceanwp' ),
+					),
+				) ) );
+
+			}
 
 			/**
 			 * Breadcrumbs Text Color
@@ -1457,10 +1658,33 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'section'  				=> 'ocean_general_scroll_top',
 				'settings' 				=> 'ocean_scroll_top_position',
 				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_scrolltop',
 				'choices' 				=> array(
 					'left'  			=> esc_html__( 'Left', 'oceanwp' ),
 					'right' 			=> esc_html__( 'Right', 'oceanwp' ),
 				),
+			) ) );
+
+			/**
+			 * Scroll Top Bottom Position
+			 */
+			$wp_customize->add_setting( 'ocean_scroll_top_bottom_position', array(
+				'transport' 			=> 'postMessage',
+				'default'           	=> '20',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_scroll_top_bottom_position', array(
+				'label'	   				=> esc_html__( 'Bottom Position (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_general_scroll_top',
+				'settings' 				=> 'ocean_scroll_top_bottom_position',
+				'priority' 				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_scrolltop',
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 200,
+			        'step'  => 1,
+			    ),
 			) ) );
 
 			/**
@@ -2600,6 +2824,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$breadcrumbs_seperator_color 	= get_theme_mod( 'ocean_breadcrumbs_seperator_color', '#c6c6c6' );
 			$breadcrumbs_link_color 		= get_theme_mod( 'ocean_breadcrumbs_link_color', '#333333' );
 			$breadcrumbs_link_color_hover 	= get_theme_mod( 'ocean_breadcrumbs_link_color_hover', '#13aff0' );
+			$scroll_top_bottom_position 	= get_theme_mod( 'ocean_scroll_top_bottom_position', '20' );
 			$scroll_top_size 				= get_theme_mod( 'ocean_scroll_top_size', '40' );
 			$scroll_top_icon_size 			= get_theme_mod( 'ocean_scroll_top_icon_size', '18' );
 			$scroll_top_border_radius 		= get_theme_mod( 'ocean_scroll_top_border_radius', '2' );
@@ -2901,7 +3126,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Breadcrumbs seperator color
 			if ( ! empty( $breadcrumbs_seperator_color ) && '#c6c6c6' != $breadcrumbs_seperator_color ) {
-				$css .= '.site-breadcrumbs ul li:after{color:'. $breadcrumbs_seperator_color .';}';
+				$css .= '.site-breadcrumbs ul li .breadcrumb-sep{color:'. $breadcrumbs_seperator_color .';}';
 			}
 
 			// Breadcrumbs link color
@@ -2921,7 +3146,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Meta breadcrumbs seperator color
 			if ( ! empty( $meta_breadcrumbs_seperator_color ) ) {
-				$css .= '.site-breadcrumbs ul li:after{color:'. $meta_breadcrumbs_seperator_color .';}';
+				$css .= '.site-breadcrumbs ul li .breadcrumb-sep{color:'. $meta_breadcrumbs_seperator_color .';}';
 			}
 
 			// Meta breadcrumbs link color
@@ -2932,6 +3157,11 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Meta breadcrumbs link hover color
 			if ( ! empty( $meta_breadcrumbs_link_color_hover ) ) {
 				$css .= '.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover{color:'. $meta_breadcrumbs_link_color_hover .';}';
+			}
+
+			// Scroll top button bottom position
+			if ( ! empty( $scroll_top_bottom_position ) && '20' != $scroll_top_bottom_position ) {
+				$css .= '#scroll-top{bottom:'. $scroll_top_bottom_position .'px;}';
 			}
 
 			// Scroll top button size

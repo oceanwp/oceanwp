@@ -303,9 +303,6 @@ button:focus,
 	border: none;
 	background-image: none;
 	@include box-shadow( none );
-
-	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-	filter: alpha(opacity=40);
 }
 
 /* Firefox: Get rid of the inner focus border */

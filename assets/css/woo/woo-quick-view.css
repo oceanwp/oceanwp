@@ -323,6 +323,10 @@ Woo Quick View
   cursor: pointer;
 }
 
+#owp-qv-content a.woocommerce-review-link {
+  display: none;
+}
+
 @media screen and (max-width: 850px) {
   #owp-qv-wrap .owp-qv-image,
   #owp-qv-wrap .summary {

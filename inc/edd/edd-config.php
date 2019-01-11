@@ -50,6 +50,9 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				// Set correct both sidebars layout style
 				add_filter( 'ocean_both_sidebars_style', array( $this, 'bs_class' ) );
 
+				// Set correct mobile sidebar order
+				add_filter( 'ocean_sidebar_order', array( $this, 'sidebar_order' ) );
+
 				// Border colors
 				add_filter( 'ocean_border_color_elements', array( $this, 'border_color_elements' ) );
 
@@ -179,6 +182,23 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 				$class = get_theme_mod( 'ocean_edd_product_both_sidebars_style', 'scs-style' );
 			}
 			return $class;
+		}
+
+		/**
+		 * Set correct mobile sidebar order.
+		 *
+		 * @since 1.6
+		 */
+		public static function sidebar_order( $order ) {
+			if ( 
+				is_post_type_archive( 'download' ) ||
+				is_tax( 'download_category' ) ||
+				is_tax( 'download_tag' ) ) {
+				$order = get_theme_mod( 'ocean_edd_archive_sidebar_order', 'content-sidebar' );
+			} elseif ( is_singular( 'download' ) ) {
+				$order = get_theme_mod( 'ocean_edd_download_sidebar_order', 'content-sidebar' );
+			}
+			return $order;
 		}
 
 		/**

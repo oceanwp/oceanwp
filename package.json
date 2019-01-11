@@ -18,9 +18,10 @@
     "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-newer": "^1.1.1",
-    "grunt-sass": "^1.1.0",
+    "grunt-sass": "^1.2.1",
     "grunt-wp-i18n": "^0.5.3",
     "jit-grunt": "^0.9.1",
+    "node-sass": "^4.11.0",
     "time-grunt": "^1.2.2"
   }
 }

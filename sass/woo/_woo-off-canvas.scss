@@ -103,3 +103,26 @@ Woo Off Canvas Filter
 	    left: 0;
 	}
 }
+
+.oceanwp-off-canvas-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    z-index: 1000;
+
+    svg {
+        fill: #333;
+        @include transition( all .3s ease-in-out );
+    }
+
+    &:hover svg {
+        fill: #777;
+    }
+}

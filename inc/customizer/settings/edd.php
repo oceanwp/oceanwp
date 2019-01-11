@@ -771,6 +771,27 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_edd_archive_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_archive_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_edd_archives',
+				'settings' 				=> 'ocean_edd_archive_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_edd_archive_rl_layout',
+			) ) );
+
+			/**
 			 * Shop Columns
 			 */
 			$wp_customize->add_setting( 'ocean_edd_archive_columns', array(
@@ -1024,6 +1045,27 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			        'step'  => 1,
 			    ),
 				'active_callback' 		=> 'oceanwp_cac_has_edd_download_bs_layout',
+			) ) );
+
+			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_edd_download_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_edd_download_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_edd_single',
+				'settings' 				=> 'ocean_edd_download_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_edd_download_rl_layout',
 			) ) );
 
 			/**

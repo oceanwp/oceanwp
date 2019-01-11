@@ -237,3 +237,36 @@ body{
 		border: 0;
 	}
 }
+
+/* RTL */
+body.rtl {
+	.learndash,
+	#learndash_profile {
+		.completed:before,
+		.notcompleted:before {
+			left: 20px;
+			right: auto;
+		}
+	}
+
+	.learndash_navigation_lesson_topics_list .topic-completed span, 
+	.learndash_navigation_lesson_topics_list .topic-notcompleted span, 
+	.learndash_navigation_lesson_topics_list ul .topic-completed span, 
+	.learndash_navigation_lesson_topics_list ul .topic-notcompleted span, 
+	.learndash_topic_dots .topic-completed span, 
+	.learndash_topic_dots .topic-notcompleted span, 
+	.learndash_topic_dots ul .topic-completed span, 
+	.learndash_topic_dots ul .topic-notcompleted span{
+		&:before{
+			margin-left: 10px;
+			margin-right: 0;
+		}
+	}
+
+	/** Shortcodes **/
+	body{
+		dd.course_progress{
+			margin-right: 0;
+		}
+	}
+}

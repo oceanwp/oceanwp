@@ -81,11 +81,6 @@ function sp_breadcrumbs_after() {
 }
 add_action( 'seopress_breadcrumbs_after_html', 'sp_breadcrumbs_after' );
 
-function sp_pro_breadcrumbs_sep() {
-	return ' > ';
-}
-add_action( 'seopress_pro_breadcrumbs_sep', 'sp_pro_breadcrumbs_sep' );
-
 /**
  * Creates a breadcrumbs menu for the site based on the current page that's being viewed by the user.
  *
@@ -200,9 +195,11 @@ class OceanWP_Breadcrumb_Trail {
 	public function get_trail() {
 
 		// Set up variables that we'll need.
-		$breadcrumb    = '';
-		$item_count    = count( $this->items );
-		$item_position = 0;
+		$breadcrumb    	= '';
+		$separator      = apply_filters( 'oceanwp_breadcrumb_separator', get_theme_mod( 'ocean_breadcrumb_separator', '>' ) );
+		$separator      = '<span class="breadcrumb-sep">' . $separator . '</span>';
+		$item_count    	= count( $this->items );
+		$item_position 	= 0;
 
 		// Connect the breadcrumb trail if there are items in the trail.
 		if ( 0 < $item_count ) {
@@ -229,20 +226,27 @@ class OceanWP_Breadcrumb_Trail {
 				// Add list item classes.
 				$item_class = 'trail-item';
 
-				if ( 1 === $item_position && 1 < $item_count )
+				if ( 1 === $item_position && 1 < $item_count ) {
 					$item_class .= ' trail-begin';
-
-				elseif ( $item_count === $item_position )
+				} else if ( $item_count === $item_position ) {
 					$item_class .= ' trail-end';
+				}
 
 				// Create list item attributes.
 				$attributes = 'class="' . $item_class . '"'. oceanwp_get_schema_markup( 'breadcrumb_list' ) .'';
+
+				// Separator
+				if ( $item_count === $item_position ) {
+					$sep = '';
+				} else {
+					$sep = $separator;
+				}
 
 				// Build the meta position HTML.
 				$meta = sprintf( '<meta content="%s"'. oceanwp_get_schema_markup( 'position' ) .' />', absint( $item_position ) );
 
 				// Build the list item.
-				$breadcrumb .= sprintf( '<li %s>%s%s</li>', $attributes, $item, $meta );
+				$breadcrumb .= sprintf( '<li %s>%s%s%s</li>', $attributes, $item, $sep, $meta );
 			}
 
 			// Close the unordered list.
@@ -295,25 +299,25 @@ class OceanWP_Breadcrumb_Trail {
 	protected function set_labels() {
 
 		$defaults = array(
-			'aria_label'          => esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'oceanwp' ),
-			'home'                => esc_html__( 'Home',                                  'oceanwp' ),
-			'error_404'           => esc_html__( '404 Not Found',                         'oceanwp' ),
-			'archives'            => esc_html__( 'Archives',                              'oceanwp' ),
+			'aria_label'          	=> esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'oceanwp' ),
+			'home'           		=> get_theme_mod( 'ocean_breadcrumb_translation_home', esc_html__( 'Home', 'oceanwp' ) ),
+			'error_404'           	=> get_theme_mod( 'ocean_breadcrumb_translation_error', esc_html__( '404 Not Found', 'oceanwp' ) ),
+			'archives'            	=> esc_html__( 'Archives',                              'oceanwp' ),
 			// Translators: %s is the search query. The HTML entities are opening and closing curly quotes.
-			'search'              => esc_html__( 'Search results for &#8220;%s&#8221;',   'oceanwp' ),
+			'search'           		=> get_theme_mod( 'ocean_breadcrumb_translation_search', esc_html__( 'Search results for', 'oceanwp' ) ),
 			// Translators: %s is the page number.
-			'paged'               => esc_html__( 'Page %s',                               'oceanwp' ),
+			'paged'               	=> esc_html__( 'Page %s',                               'oceanwp' ),
 			// Translators: Minute archive title. %s is the minute time format.
-			'archive_minute'      => esc_html__( 'Minute %s',                             'oceanwp' ),
+			'archive_minute'      	=> esc_html__( 'Minute %s',                             'oceanwp' ),
 			// Translators: Weekly archive title. %s is the week date format.
-			'archive_week'        => esc_html__( 'Week %s',                               'oceanwp' ),
+			'archive_week'        	=> esc_html__( 'Week %s',                               'oceanwp' ),
 
 			// "%s" is replaced with the translated date/time format.
-			'archive_minute_hour' => '%s',
-			'archive_hour'        => '%s',
-			'archive_day'         => '%s',
-			'archive_month'       => '%s',
-			'archive_year'        => '%s',
+			'archive_minute_hour' 	=> '%s',
+			'archive_hour'        	=> '%s',
+			'archive_day'         	=> '%s',
+			'archive_month'       	=> '%s',
+			'archive_year'        	=> '%s',
 		);
 
 		$this->labels = apply_filters( 'breadcrumb_trail_labels', wp_parse_args( $this->args['labels'], $defaults ) );
@@ -332,8 +336,9 @@ class OceanWP_Breadcrumb_Trail {
 		$defaults = array();
 
 		// If post permalink is set to `%postname%`, use the `category` taxonomy.
-		if ( '%postname%' === trim( get_option( 'permalink_structure' ), '/' ) )
-			$defaults['post'] = 'category';
+		if ( '%postname%' === trim( get_option( 'permalink_structure' ), '/' ) ) {
+			$defaults['post'] = 'tag';
+		}
 
 		$this->post_taxonomy = apply_filters( 'breadcrumb_trail_post_taxonomy', wp_parse_args( $this->args['post_taxonomy'], $defaults ) );
 	}
@@ -466,8 +471,30 @@ class OceanWP_Breadcrumb_Trail {
 	 */
 	protected function add_network_home_link() {
 
-		if ( is_multisite() && !is_main_site() && true === $this->args['network'] )
-			$this->items[] = sprintf( '<a href="%s" rel="home" aria-label="' .$this->labels['home']. '"><span class="icon-home"></span><span style="display: none;">%s</span></a>', esc_url( network_home_url() ), $this->labels['home'] );
+		// Home item
+		$setting = get_theme_mod( 'ocean_breadcrumb_home_item', 'icon' );
+
+		// Icon
+		$icon_class = '';
+		if ( 'text' == $setting ) {
+			$icon_class = ' has-text';
+		}
+
+		$icon = '';
+		if ( is_customize_preview()
+			|| 'icon' == $setting ) {
+			$icon = '<span class="icon-home'. $icon_class .'"></span>';
+		}
+
+		// Text
+		$text_class = '';
+		if ( 'icon' == $setting ) {
+			$text_class = ' has-icon';
+		}
+		$text = '<span class="breadcrumb-home'. $text_class .'">'. $this->labels['home'] .'</span>';
+
+		if ( is_multisite() && ! is_main_site() && true === $this->args['network'] )
+			$this->items[] = sprintf( '<a href="%s" rel="home" aria-label="' .$this->labels['home']. '">%s</a>', esc_url( network_home_url() ), $icon, $text );
 	}
 
 	/**
@@ -479,11 +506,34 @@ class OceanWP_Breadcrumb_Trail {
 	 */
 	protected function add_site_home_link() {
 
-		$network = is_multisite() && !is_main_site() && true === $this->args['network'];
-		$label   = $network ? get_bloginfo( 'name' ) : $this->labels['home'];
+		// Home item
+		$setting = get_theme_mod( 'ocean_breadcrumb_home_item', 'icon' );
+
+		// Icon
+		$icon_class = '';
+		if ( 'text' == $setting ) {
+			$icon_class = ' has-text';
+		}
+
+		$icon = '';
+		if ( is_customize_preview()
+			|| 'icon' == $setting ) {
+			$icon = '<span class="icon-home'. $icon_class .'"></span>';
+		}
+
+		// Text
+		$text_class = '';
+		if ( 'icon' == $setting ) {
+			$text_class = ' has-icon';
+		}
+		$text = '<span class="breadcrumb-home'. $text_class .'">'. $this->labels['home'] .'</span>';
+
+		// Vars
+		$network = is_multisite() && ! is_main_site() && true === $this->args['network'];
+		$label   = $network ? get_bloginfo( 'name' ) : $text;
 		$rel     = $network ? '' : ' rel="home"';
 
-		$this->items[] = sprintf( '<a href="%s"%s aria-label="' .$label. '"><span class="icon-home"></span><span style="display: none;">%s</span></a>', esc_url( home_url() ), $rel, $label );
+		$this->items[] = sprintf( '<a href="%s"%s aria-label="' .$this->labels['home']. '">%s%s</a>', esc_url( home_url() ), $rel, $icon, $label );
 	}
 
 	/**
@@ -534,20 +584,77 @@ class OceanWP_Breadcrumb_Trail {
 	protected function add_singular_items() {
 
 		// Get the queried post.
-		$post    = get_queried_object();
-		$post_id = get_queried_object_id();
+		$post    	= get_queried_object();
+		$post_id 	= get_queried_object_id();
 
-		// If the post has a parent, follow the parent trail.
-		if ( 0 < $post->post_parent )
-			$this->add_post_parents( $post->post_parent );
+		// Post type taxonomy
+		$posts_tax 		= get_theme_mod( 'ocean_breadcrumb_posts_taxonomy', 'category' );
+		$products_tax 	= get_theme_mod( 'ocean_breadcrumb_products_taxonomy', 'shop' );
+		$portfolio_tax 	= get_theme_mod( 'ocean_breadcrumb_portfolio_taxonomy', 'ocean_portfolio_category' );
 
-		// If the post doesn't have a parent, get its hierarchy based off the post type.
-		else
-			$this->add_post_hierarchy( $post_id );
+		if ( 'product' != $post->post_type ) {
 
-		// Display terms for specific post type taxonomy if requested.
-		if ( !empty( $this->post_taxonomy[ $post->post_type ] ) )
-			$this->add_post_terms( $post_id, $this->post_taxonomy[ $post->post_type ] );
+			// If the post has a parent, follow the parent trail.
+			if ( 0 < $post->post_parent ) {
+				$this->add_post_parents( $post->post_parent );
+			}
+
+			// If the post doesn't have a parent, get its hierarchy based off the post type.
+			else {
+				$this->add_post_hierarchy( $post_id );
+			}
+
+		}
+
+		// If the post type is 'post'.
+		if ( 'post' === $post->post_type
+			&& 'none' != $posts_tax ) {
+
+			if ( 'blog' == $posts_tax
+				&& ( 'posts' !== get_option( 'show_on_front' ) && 0 < $post_id ) ) {
+				$page_id = get_option( 'page_for_posts');
+				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $page_id ) ), get_the_title( $page_id ) );
+			} else {
+				$this->add_post_terms( $post_id, $posts_tax );
+			}
+
+		}
+
+		// If the post type is 'product'.
+		else if ( 'product' === $post->post_type
+			&& 'none' != $products_tax ) {
+
+			if ( 'shop' == $products_tax ) {
+				$shop_id = wc_get_page_id( 'shop' );
+				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $shop_id ) ), get_the_title( $shop_id ) );
+			} else {
+				$this->add_post_terms( $post_id, $products_tax );
+			}
+
+		}
+
+		// If the post type is 'ocean_portfolio'.
+		else if ( class_exists( 'Ocean_Portfolio' )
+			&& 'ocean_portfolio' === $post->post_type
+			&& 'none' != $portfolio_tax ) {
+
+			$portfolio_id = get_theme_mod( 'op_portfolio_page' );
+
+			if ( 'portfolio' == $portfolio_tax
+				&& ! empty( $portfolio_id ) ) {
+				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $portfolio_id ) ), get_the_title( $portfolio_id ) );
+			} else {
+				$this->add_post_terms( $post_id, $portfolio_tax );
+			}
+
+		}
+
+		// Other posts types
+		else {
+			if ( ! empty( $this->post_taxonomy[ $post->post_type ] ) ) {
+				$this->add_post_terms( $post_id, $this->post_taxonomy[ $post->post_type ] );
+			}
+		}
 
 		// End with the post title.
 		if ( $post_title = single_post_title( '', false ) ) {
@@ -915,10 +1022,10 @@ class OceanWP_Breadcrumb_Trail {
 	protected function add_search_items() {
 
 		if ( is_paged() )
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_search_link() ), sprintf( $this->labels['search'], get_search_query() ) );
+			$this->items[] = sprintf( '<a href="%s">%s%s</a>', esc_url( get_search_link() ), '<span class="breadcrumb-search">'. $this->labels['search'] .'</span>', ' &#8220;'. get_search_query() .'&#8221;' );
 
 		elseif ( true === $this->args['show_title'] )
-			$this->items[] = sprintf( $this->labels['search'], get_search_query() );
+			$this->items[] = '<span class="breadcrumb-search">'. $this->labels['search'] .'</span>' . ' &#8220;'. get_search_query() .'&#8221;';
 	}
 
 	/**
@@ -931,7 +1038,7 @@ class OceanWP_Breadcrumb_Trail {
 	protected function add_404_items() {
 
 		if ( true === $this->args['show_title'] )
-			$this->items[] = $this->labels['error_404'];
+			$this->items[] = '<span class="breadcrumb-error">'. $this->labels['error_404'] .'</span>';
 	}
 
 	/**
@@ -977,7 +1084,7 @@ class OceanWP_Breadcrumb_Trail {
 	}
 
 	/**
-	 * Adds a specific post's hierarchy to the items array.  The hierarchy is determined by post type's
+	 * Adds a specific post's hierarchy to the items array. The hierarchy is determined by post type's
 	 * rewrite arguments and whether it has an archive page.
 	 *
 	 * @since  1.0.0

@@ -52,6 +52,26 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) );
 
 			/**
+			 * Remove Custom WooCommerce Features
+			 */
+			$wp_customize->add_setting( 'ocean_woo_remove_custom_features', array(
+				'default'           	=> 'no',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_woo_remove_custom_features', array(
+				'label'	   				=> esc_html__( 'Remove Custom WooCommerce Features', 'oceanwp' ),
+				'description'	   		=> esc_html__( 'Remove all the custom WooCommerce features added for OceanWP, you will have the default plugin features.', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_general',
+				'settings' 				=> 'ocean_woo_remove_custom_features',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'yes' 	=> esc_html__( 'Yes', 'oceanwp' ),
+					'no' 	=> esc_html__( 'No', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
 			 * Custom WooCommerce Sidebar
 			 */
 			$wp_customize->add_setting( 'ocean_woo_custom_sidebar', array(
@@ -1145,6 +1165,27 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_woo_shop_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_shop_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_woocommerce_archives',
+				'settings' 				=> 'ocean_woo_shop_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_woo_shop_rl_layout',
+			) ) );
+
+			/**
 			 * Shop Posts Per Page
 			 */
 			$wp_customize->add_setting( 'ocean_woo_shop_posts_per_page', array(
@@ -1351,6 +1392,56 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Off Canvas Close Button
+			 */
+			$wp_customize->add_setting( 'ocean_woo_off_canvas_close_button', array(
+				'default'           	=> false,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_off_canvas_close_button', array(
+				'label'	   				=> esc_html__( 'Add Close Button', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_woocommerce_archives',
+				'settings' 				=> 'ocean_woo_off_canvas_close_button',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+		     * Off Canvas Close Button Color
+		     */
+	        $wp_customize->add_setting( 'ocean_woo_off_canvas_close_button_color', array(
+				'default'				=> '#333333',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_woo_off_canvas_close_button_color', array(
+				'label'					=> esc_html__( 'Close Button Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_archives',
+				'settings'				=> 'ocean_woo_off_canvas_close_button_color',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_filter_close_button',
+			) ) );
+
+			/**
+		     * Off Canvas Close Button Color
+		     */
+	        $wp_customize->add_setting( 'ocean_woo_off_canvas_close_button_hover_color', array(
+				'default'				=> '#777777',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_woo_off_canvas_close_button_hover_color', array(
+				'label'					=> esc_html__( 'Close Button Color: Hover', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_archives',
+				'settings'				=> 'ocean_woo_off_canvas_close_button_hover_color',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_filter_close_button',
+			) ) );
+
+			/**
 			 * Products Heading
 			 */
 			$wp_customize->add_setting( 'ocean_woocommerce_shop_products_heading', array(
@@ -1361,6 +1452,26 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'label'    				=> esc_html__( 'Products', 'oceanwp' ),
 				'section'  				=> 'ocean_woocommerce_archives',
 				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Products Style
+			 */
+			$wp_customize->add_setting( 'ocean_woo_products_style', array(
+				'default'           	=> 'default',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_products_style', array(
+				'label'	   				=> esc_html__( 'Products Style', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_woocommerce_archives',
+				'settings' 				=> 'ocean_woo_products_style',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'default'  	=> esc_html__( 'Default Style', 'oceanwp' ),
+					'hover' 	=> esc_html__( 'Hover Style', 'oceanwp' ),
+				),
 			) ) );
 
 			/**
@@ -1384,6 +1495,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'description' 		=> esc_html__( 'Description', 'oceanwp' ),
 					'button' 			=> esc_html__( 'Add To Cart Button', 'oceanwp' ),
 				),
+				'active_callback' 		=> 'oceanwp_cac_has_woo_default_products_style',
 			) ) );
 
 			/**
@@ -1405,6 +1517,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'image-swap' 		=> esc_html__( 'Image Swap', 'oceanwp' ),
 					'gallery-slider'  	=> esc_html__( 'Gallery Slider', 'oceanwp' ),
 				),
+				'active_callback' 		=> 'oceanwp_cac_has_woo_default_products_style',
 			) ) );
 
 			/**
@@ -1442,6 +1555,19 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'center' 	=> esc_html__( 'Center', 'oceanwp' ),
 					'right' 	=> esc_html__( 'Right', 'oceanwp' ),
 				),
+			) ) );
+
+			/**
+			 * Pagination Heading
+			 */
+			$wp_customize->add_setting( 'ocean_woocommerce_shop_pagination_heading', array(
+				'sanitize_callback' 	=> 'wp_kses',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_woocommerce_shop_pagination_heading', array(
+				'label'    				=> esc_html__( 'Pagination', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_archives',
+				'priority' 				=> 10,
 			) ) );
 
 			/**
@@ -1606,6 +1732,27 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			        'step'  => 1,
 			    ),
 				'active_callback' 		=> 'oceanwp_cac_has_woo_product_bs_layout',
+			) ) );
+
+			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_woo_product_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_product_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_woocommerce_single',
+				'settings' 				=> 'ocean_woo_product_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_woo_product_rl_layout',
 			) ) );
 
 			/**
@@ -3216,6 +3363,159 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+		     * Product Entry Hover Thumbnails Border Color
+		     */
+	        $wp_customize->add_setting( 'ocean_product_entry_hover_thumbnails_border_color', array(
+				'default'				=> '#13aff0',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_entry_hover_thumbnails_border_color', array(
+				'label'					=> esc_html__( 'Hover: Thumbnails Border Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_entry_hover_thumbnails_border_color',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_hover_products_style',
+			) ) );
+
+			/**
+		     * Product Entry Hover Quick View Background
+		     */
+	        $wp_customize->add_setting( 'ocean_product_entry_hover_quickview_background', array(
+				'default'				=> '#ffffff',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_entry_hover_quickview_background', array(
+				'label'					=> esc_html__( 'Hover: Quick View Background', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_entry_hover_quickview_background',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_hover_products_style',
+			) ) );
+
+			/**
+		     * Product Entry Hover Quick View Hover Background
+		     */
+	        $wp_customize->add_setting( 'ocean_product_entry_hover_quickview_hover_background', array(
+				'default'				=> '#ffffff',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_entry_hover_quickview_hover_background', array(
+				'label'					=> esc_html__( 'Hover: Quick View Hover Background', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_entry_hover_quickview_hover_background',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_hover_products_style',
+			) ) );
+
+			/**
+		     * Product Entry Hover Quick View Color
+		     */
+	        $wp_customize->add_setting( 'ocean_product_entry_hover_quickview_color', array(
+				'default'				=> '#444444',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_entry_hover_quickview_color', array(
+				'label'					=> esc_html__( 'Hover: Quick View Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_entry_hover_quickview_color',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_hover_products_style',
+			) ) );
+
+			/**
+		     * Product Entry Hover Quick View Hover Color
+		     */
+	        $wp_customize->add_setting( 'ocean_product_entry_hover_quickview_hover_color', array(
+				'default'				=> '#13aff0',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_entry_hover_quickview_hover_color', array(
+				'label'					=> esc_html__( 'Hover: Quick View Hover Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_entry_hover_quickview_hover_color',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_hover_products_style',
+			) ) );
+
+			/**
+		     * Product Entry Hover Wishlist Background
+		     */
+	        $wp_customize->add_setting( 'ocean_product_entry_hover_wishlist_background', array(
+				'default'				=> '#ffffff',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_entry_hover_wishlist_background', array(
+				'label'					=> esc_html__( 'Hover: Wishlist Background', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_entry_hover_wishlist_background',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_hover_products_style',
+			) ) );
+
+			/**
+		     * Product Entry Hover Wishlist Hover Background
+		     */
+	        $wp_customize->add_setting( 'ocean_product_entry_hover_wishlist_hover_background', array(
+				'default'				=> '#ffffff',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_entry_hover_wishlist_hover_background', array(
+				'label'					=> esc_html__( 'Hover: Wishlist Hover Background', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_entry_hover_wishlist_hover_background',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_hover_products_style',
+			) ) );
+
+			/**
+		     * Product Entry Hover Wishlist Color
+		     */
+	        $wp_customize->add_setting( 'ocean_product_entry_hover_wishlist_color', array(
+				'default'				=> '#444444',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_entry_hover_wishlist_color', array(
+				'label'					=> esc_html__( 'Hover: Wishlist Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_entry_hover_wishlist_color',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_hover_products_style',
+			) ) );
+
+			/**
+		     * Product Entry Hover Wishlist Hover Color
+		     */
+	        $wp_customize->add_setting( 'ocean_product_entry_hover_wishlist_hover_color', array(
+				'default'				=> '#13aff0',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_product_entry_hover_wishlist_hover_color', array(
+				'label'					=> esc_html__( 'Hover: Wishlist Hover Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_product_entry_hover_wishlist_hover_color',
+				'priority'				=> 10,
+				'active_callback' 		=> 'oceanwp_cac_has_woo_hover_products_style',
+			) ) );
+
+			/**
 			 * Heading Product Entry Add To Cart
 			 */
 			$wp_customize->add_setting( 'ocean_product_entry_addtocart_heading', array(
@@ -3930,6 +4230,167 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'section'				=> 'ocean_woocommerce_styling',
 				'settings'				=> 'ocean_single_product_navigation_hover_border_color',
 				'priority'				=> 10,
+			) ) );
+
+			/**
+			 * Heading Product Entry Add To Cart
+			 */
+			$wp_customize->add_setting( 'ocean_single_product_addtocart_heading', array(
+				'sanitize_callback' 	=> 'wp_kses',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_single_product_addtocart_heading', array(
+				'label'    				=> esc_html__( 'Single Product: Add To Cart', 'oceanwp' ),
+				'section'  				=> 'ocean_woocommerce_styling',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+		     * Product Entry Add To Cart Background Color
+		     */
+	        $wp_customize->add_setting( 'ocean_single_product_addtocart_bg_color', array(
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_addtocart_bg_color', array(
+				'label'					=> esc_html__( 'Add To Cart Background Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_single_product_addtocart_bg_color',
+				'priority'				=> 10,
+			) ) );
+
+			/**
+		     * Product Entry Add To Cart Background Color Hover
+		     */
+	        $wp_customize->add_setting( 'ocean_single_product_addtocart_bg_color_hover', array(
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_addtocart_bg_color_hover', array(
+				'label'					=> esc_html__( 'Add To Cart Background Color: Hover', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_single_product_addtocart_bg_color_hover',
+				'priority'				=> 10,
+			) ) );
+
+			/**
+		     * Product Entry Add To Cart Color
+		     */
+	        $wp_customize->add_setting( 'ocean_single_product_addtocart_color', array(
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_addtocart_color', array(
+				'label'					=> esc_html__( 'Add To Cart Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_single_product_addtocart_color',
+				'priority'				=> 10,
+			) ) );
+
+			/**
+		     * Product Entry Add To Cart Color Hover
+		     */
+	        $wp_customize->add_setting( 'ocean_single_product_addtocart_color_hover', array(
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_addtocart_color_hover', array(
+				'label'					=> esc_html__( 'Add To Cart Color: Hover', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_single_product_addtocart_color_hover',
+				'priority'				=> 10,
+			) ) );
+
+			/**
+		     * Product Entry Add To Cart Border Color
+		     */
+	        $wp_customize->add_setting( 'ocean_single_product_addtocart_border_color', array(
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_addtocart_border_color', array(
+				'label'					=> esc_html__( 'Add To Cart Border Color', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_single_product_addtocart_border_color',
+				'priority'				=> 10,
+			) ) );
+
+			/**
+		     * Product Entry Add To Cart Border Color Hover
+		     */
+	        $wp_customize->add_setting( 'ocean_single_product_addtocart_border_color_hover', array(
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_single_product_addtocart_border_color_hover', array(
+				'label'					=> esc_html__( 'Add To Cart Border Color: Hover', 'oceanwp' ),
+				'section'				=> 'ocean_woocommerce_styling',
+				'settings'				=> 'ocean_single_product_addtocart_border_color_hover',
+				'priority'				=> 10,
+			) ) );
+
+			/**
+			 * Product Entry Add To Cart Border Style
+			 */
+			$wp_customize->add_setting( 'ocean_single_product_addtocart_border_style', array(
+				'default'				=> 'none',
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_single_product_addtocart_border_style', array(
+				'label'	   				=> esc_html__( 'Add To Cart Border: Style', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_woocommerce_styling',
+				'settings' 				=> 'ocean_single_product_addtocart_border_style',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'none' 			=> esc_html__( 'None', 'oceanwp' ),
+					'solid' 		=> esc_html__( 'Solid', 'oceanwp' ),
+					'double' 		=> esc_html__( 'Double', 'oceanwp' ),
+					'dashed' 		=> esc_html__( 'Dashed', 'oceanwp' ),
+					'dotted' 		=> esc_html__( 'Dotted', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
+		     * Product Entry Add To Cart Border Size
+		     */
+			$wp_customize->add_setting( 'ocean_single_product_addtocart_border_size', array(
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'wp_kses_post',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_single_product_addtocart_border_size', array(
+				'label'	   				=> esc_html__( 'Add To Cart Border: Size', 'oceanwp' ),
+				'description' 			=> esc_html__( 'Add a custom border size. px - em - %.', 'oceanwp' ),
+				'type' 					=> 'text',
+				'section'  				=> 'ocean_woocommerce_styling',
+				'settings' 				=> 'ocean_single_product_addtocart_border_size',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+		     * Product Entry Add To Cart Border Radius
+		     */
+			$wp_customize->add_setting( 'ocean_single_product_addtocart_border_radius', array(
+				'transport'				=> 'postMessage',
+				'sanitize_callback' 	=> 'wp_kses_post',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_single_product_addtocart_border_radius', array(
+				'label'	   				=> esc_html__( 'Add To Cart Border: Radius', 'oceanwp' ),
+				'description' 			=> esc_html__( 'Add a custom border radius. px - em - %.', 'oceanwp' ),
+				'type' 					=> 'text',
+				'section'  				=> 'ocean_woocommerce_styling',
+				'settings' 				=> 'ocean_single_product_addtocart_border_radius',
+				'priority' 				=> 10,
 			) ) );
 
 			/**
@@ -4687,6 +5148,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$woo_mobile_cart_sidebar_divider_color				= get_theme_mod( 'ocean_woo_mobile_cart_sidebar_divider_color', 'rgba(0,0,0,0.1)' );
 		
 			// Styling vars
+			$off_canvas_close_button_color 						= get_theme_mod( 'ocean_woo_off_canvas_close_button_color', '#333333' );
+			$off_canvas_close_button_hover_color 				= get_theme_mod( 'ocean_woo_off_canvas_close_button_hover_color', '#777777' );
 			$infinite_scroll_spinners_color 					= get_theme_mod( 'ocean_woo_infinite_scroll_spinners_color', '#333333' );
 			$woo_product_image_width 							= get_theme_mod( 'ocean_woo_product_image_width', '52' );
 			$woo_product_summary_width 							= get_theme_mod( 'ocean_woo_product_summary_width', '44' );
@@ -4792,6 +5255,15 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$product_title_color_hover 							= get_theme_mod( 'ocean_product_title_color_hover', '#13aff0' );
 			$product_entry_price_color 							= get_theme_mod( 'ocean_product_entry_price_color', '#57bf6d' );
 			$product_entry_del_price_color 						= get_theme_mod( 'ocean_product_entry_del_price_color', '#666666' );
+			$product_entry_hover_thumbnails_border_color 		= get_theme_mod( 'ocean_product_entry_hover_thumbnails_border_color', '#13aff0' );
+			$product_entry_hover_quickview_background 			= get_theme_mod( 'ocean_product_entry_hover_quickview_background', '#ffffff' );
+			$product_entry_hover_quickview_hover_background 	= get_theme_mod( 'ocean_product_entry_hover_quickview_hover_background', '#ffffff' );
+			$product_entry_hover_quickview_color 				= get_theme_mod( 'ocean_product_entry_hover_quickview_color', '#444444' );
+			$product_entry_hover_quickview_hover_color 			= get_theme_mod( 'ocean_product_entry_hover_quickview_hover_color', '#13aff0' );
+			$product_entry_hover_wishlist_background 			= get_theme_mod( 'ocean_product_entry_hover_wishlist_background', '#ffffff' );
+			$product_entry_hover_wishlist_hover_background 		= get_theme_mod( 'ocean_product_entry_hover_wishlist_hover_background', '#ffffff' );
+			$product_entry_hover_wishlist_color 				= get_theme_mod( 'ocean_product_entry_hover_wishlist_color', '#444444' );
+			$product_entry_hover_wishlist_hover_color 			= get_theme_mod( 'ocean_product_entry_hover_wishlist_hover_color', '#13aff0' );
 			$product_entry_addtocart_bg_color 					= get_theme_mod( 'ocean_product_entry_addtocart_bg_color' );
 			$product_entry_addtocart_bg_color_hover 			= get_theme_mod( 'ocean_product_entry_addtocart_bg_color_hover' );
 			$product_entry_addtocart_color 						= get_theme_mod( 'ocean_product_entry_addtocart_color', '#848494' );
@@ -4826,6 +5298,15 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$single_product_navigation_hover_color 				= get_theme_mod( 'ocean_single_product_navigation_hover_color', '#ffffff' );
 			$single_product_navigation_border_color 			= get_theme_mod( 'ocean_single_product_navigation_border_color', '#e9e9e9' );
 			$single_product_navigation_hover_border_color 		= get_theme_mod( 'ocean_single_product_navigation_hover_border_color', '#13aff0' );
+			$single_product_addtocart_bg_color 					= get_theme_mod( 'ocean_single_product_addtocart_bg_color' );
+			$single_product_addtocart_bg_color_hover 			= get_theme_mod( 'ocean_single_product_addtocart_bg_color_hover' );
+			$single_product_addtocart_color 					= get_theme_mod( 'ocean_single_product_addtocart_color' );
+			$single_product_addtocart_color_hover 				= get_theme_mod( 'ocean_single_product_addtocart_color_hover' );
+			$single_product_addtocart_border_color 				= get_theme_mod( 'ocean_single_product_addtocart_border_color' );
+			$single_product_addtocart_border_color_hover 		= get_theme_mod( 'ocean_single_product_addtocart_border_color_hover' );
+			$single_product_addtocart_border_style 				= get_theme_mod( 'ocean_single_product_addtocart_border_style' );
+			$single_product_addtocart_border_size 				= get_theme_mod( 'ocean_single_product_addtocart_border_size' );
+			$single_product_addtocart_border_radius 			= get_theme_mod( 'ocean_single_product_addtocart_border_radius' );
 			$single_product_tabs_borders_color 					= get_theme_mod( 'ocean_single_product_tabs_borders_color', '#e9e9e9' );
 			$single_product_tabs_text_color 					= get_theme_mod( 'ocean_single_product_tabs_text_color', '#999999' );
 			$single_product_tabs_text_color_hover 				= get_theme_mod( 'ocean_single_product_tabs_text_color_hover', '#13aff0' );
@@ -5061,6 +5542,16 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Mobile cart sidebar background color
 			if ( ! empty( $woo_mobile_cart_sidebar_divider_color ) && 'rgba(0,0,0,0.1)' != $woo_mobile_cart_sidebar_divider_color ) {
 				$css .= '#oceanwp-cart-sidebar-wrap .divider{background-color:'. $woo_mobile_cart_sidebar_divider_color .';}';
+			}
+
+			// Off canvas close button color
+			if ( ! empty( $off_canvas_close_button_color ) && '#333333' != $off_canvas_close_button_color ) {
+				$css .= '.oceanwp-off-canvas-close svg{fill:'. $off_canvas_close_button_color .';}';
+			}
+
+			// Off canvas close button hover color
+			if ( ! empty( $off_canvas_close_button_hover_color ) && '#777777' != $off_canvas_close_button_hover_color ) {
+				$css .= '.oceanwp-off-canvas-close:hover svg{fill:'. $off_canvas_close_button_hover_color .';}';
 			}
 
 			// Infinite scroll spinners color
@@ -5422,7 +5913,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add background color
 			if ( ! empty( $product_background_color ) ) {
-				$css .= '.woocommerce .products .product-inner{background-color:'. $product_background_color .';}';
+				$css .= '.woocommerce .products .product-inner, .woocommerce ul.products li.product .woo-product-info, .woocommerce ul.products li.product .woo-product-gallery{background-color:'. $product_background_color .';}';
 			}
 
 			// Add border color
@@ -5458,6 +5949,51 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Add product entry del price color
 			if ( ! empty( $product_entry_del_price_color ) && '#666666' != $product_entry_del_price_color ) {
 				$css .= '.woocommerce ul.products li.product .price del .amount{color:'. $product_entry_del_price_color .';}';
+			}
+
+			// Add product hover thumbnails border color
+			if ( ! empty( $product_entry_hover_thumbnails_border_color ) && '#13aff0' != $product_entry_hover_thumbnails_border_color ) {
+				$css .= '.woocommerce ul.products li.product .woo-product-gallery .active a, .woocommerce ul.products li.product .woo-product-gallery a:hover{border-color:'. $product_entry_hover_thumbnails_border_color .';}';
+			}
+
+			// Add product hover quick view background
+			if ( ! empty( $product_entry_hover_quickview_background ) && '#ffffff' != $product_entry_hover_quickview_background ) {
+				$css .= '.woocommerce ul.products li.product .woo-entry-buttons li a.owp-quick-view{background-color:'. $product_entry_hover_quickview_background .';}';
+			}
+
+			// Add product hover quick view hover background
+			if ( ! empty( $product_entry_hover_quickview_hover_background ) && '#ffffff' != $product_entry_hover_quickview_hover_background ) {
+				$css .= '.woocommerce ul.products li.product .woo-entry-buttons li a.owp-quick-view:hover{background-color:'. $product_entry_hover_quickview_hover_background .';}';
+			}
+
+			// Add product hover quick view color
+			if ( ! empty( $product_entry_hover_quickview_color ) && '#444444' != $product_entry_hover_quickview_color ) {
+				$css .= '.woocommerce ul.products li.product .woo-entry-buttons li a.owp-quick-view{color:'. $product_entry_hover_quickview_color .';}';
+			}
+
+			// Add product hover quick view hover color
+			if ( ! empty( $product_entry_hover_quickview_hover_color ) && '#13aff0' != $product_entry_hover_quickview_hover_color ) {
+				$css .= '.woocommerce ul.products li.product .woo-entry-buttons li a.owp-quick-view:hover{color:'. $product_entry_hover_quickview_hover_color .';}';
+			}
+
+			// Add product hover wishlist background
+			if ( ! empty( $product_entry_hover_wishlist_background ) && '#ffffff' != $product_entry_hover_wishlist_background ) {
+				$css .= '.woocommerce ul.products li.product .woo-entry-buttons li a.tinvwl_add_to_wishlist_button{background-color:'. $product_entry_hover_wishlist_background .';}';
+			}
+
+			// Add product hover wishlist hover background
+			if ( ! empty( $product_entry_hover_wishlist_hover_background ) && '#ffffff' != $product_entry_hover_wishlist_hover_background ) {
+				$css .= '.woocommerce ul.products li.product .woo-entry-buttons li a.tinvwl_add_to_wishlist_button:hover{background-color:'. $product_entry_hover_wishlist_hover_background .';}';
+			}
+
+			// Add product hover wishlist color
+			if ( ! empty( $product_entry_hover_wishlist_color ) && '#444444' != $product_entry_hover_wishlist_color ) {
+				$css .= '.woocommerce ul.products li.product .woo-entry-buttons li a.tinvwl_add_to_wishlist_button{color:'. $product_entry_hover_wishlist_color .';}';
+			}
+
+			// Add product hover wishlist hover color
+			if ( ! empty( $product_entry_hover_wishlist_hover_color ) && '#13aff0' != $product_entry_hover_wishlist_hover_color ) {
+				$css .= '.woocommerce ul.products li.product .woo-entry-buttons li a.tinvwl_add_to_wishlist_button:hover{color:'. $product_entry_hover_wishlist_hover_color .';}';
 			}
 
 			// Add product entry add to cart background color
@@ -5628,6 +6164,51 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Add single product navigation border color
 			if ( ! empty( $single_product_navigation_hover_border_color ) && '#13aff0' != $single_product_navigation_hover_border_color ) {
 				$css .= '.owp-product-nav li a.owp-nav-link:hover{border-color:'. $single_product_navigation_hover_border_color .';}';
+			}
+
+			// Add product entry add to cart background color
+			if ( ! empty( $single_product_addtocart_bg_color ) ) {
+				$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button{background-color:'. $single_product_addtocart_bg_color .';}';
+			}
+
+			// Add product entry add to cart background color hover
+			if ( ! empty( $single_product_addtocart_bg_color_hover ) ) {
+				$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button:hover{background-color:'. $single_product_addtocart_bg_color_hover .';}';
+			}
+
+			// Add product entry add to cart color
+			if ( ! empty( $single_product_addtocart_color ) ) {
+				$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button{color:'. $single_product_addtocart_color .';}';
+			}
+
+			// Add product entry add to cart color hover
+			if ( ! empty( $single_product_addtocart_color_hover ) ) {
+				$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button:hover{color:'. $single_product_addtocart_color_hover .';}';
+			}
+
+			// Add product entry add to cart border color
+			if ( ! empty( $single_product_addtocart_border_color ) ) {
+				$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button{border-color:'. $single_product_addtocart_border_color .';}';
+			}
+
+			// Add product entry add to cart border color hover
+			if ( ! empty( $single_product_addtocart_border_color_hover ) ) {
+				$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button:hover{border-color:'. $single_product_addtocart_border_color_hover .';}';
+			}
+
+			// Add product entry add to cart border style
+			if ( ! empty( $single_product_addtocart_border_style ) ) {
+				$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button{border-style:'. $single_product_addtocart_border_style .';}';
+			}
+
+			// Add product entry add to cart border size
+			if ( ! empty( $single_product_addtocart_border_size ) ) {
+				$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button{border-width:'. $single_product_addtocart_border_size .';}';
+			}
+
+			// Add product entry add to cart border radius
+			if ( ! empty( $single_product_addtocart_border_radius ) ) {
+				$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button{border-radius:'. $single_product_addtocart_border_radius .';}';
 			}
 
 			// Add single product tabs borders color

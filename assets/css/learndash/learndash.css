@@ -261,3 +261,32 @@ body #ld_course_list .open .dropdown-toggle.btn-primary {
   color: #fff;
   border: 0;
 }
+
+/* RTL */
+body.rtl {
+  /** Shortcodes **/
+}
+
+body.rtl .learndash .completed:before,
+body.rtl .learndash .notcompleted:before,
+body.rtl #learndash_profile .completed:before,
+body.rtl #learndash_profile .notcompleted:before {
+  left: 20px;
+  right: auto;
+}
+
+body.rtl .learndash_navigation_lesson_topics_list .topic-completed span:before,
+body.rtl .learndash_navigation_lesson_topics_list .topic-notcompleted span:before,
+body.rtl .learndash_navigation_lesson_topics_list ul .topic-completed span:before,
+body.rtl .learndash_navigation_lesson_topics_list ul .topic-notcompleted span:before,
+body.rtl .learndash_topic_dots .topic-completed span:before,
+body.rtl .learndash_topic_dots .topic-notcompleted span:before,
+body.rtl .learndash_topic_dots ul .topic-completed span:before,
+body.rtl .learndash_topic_dots ul .topic-notcompleted span:before {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+body.rtl body dd.course_progress {
+  margin-right: 0;
+}

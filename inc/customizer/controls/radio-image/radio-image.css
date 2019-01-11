@@ -4,3 +4,4 @@
 .customize-control-oceanwp-radio-image label img { border: 2px solid transparent; }
 .customize-control-oceanwp-radio-image input:checked + label img { border-color: #3498DB; }
 .customize-control-oceanwp-radio-image input + label .image-clickable { position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; }
+.customize-control-oceanwp-radio-image .radio-label { display: block; font-size: 9px; font-weight: 600; margin-top: 5px; text-transform: uppercase; letter-spacing: 0.4px; text-align: center; }

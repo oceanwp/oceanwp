@@ -144,6 +144,20 @@
 	figure img {
 		margin: 0 auto;
 	}
+
+	.entry-content {
+	    ul.alignfull,
+		ol.alignfull {
+		    padding-left: 0;
+		    padding-right: 0;
+		}
+
+		ul.alignwide,
+		ol.alignwide {
+		    padding-left: 0;
+		    padding-right: 0;
+		}
+	}
 }
 
 .wp-block-cover-image,
@@ -166,6 +180,10 @@
 
 .wp-block-separator {
     margin: 30px auto;
+
+    &.is-style-wide {
+    	max-width: 700px;
+    }
 }
 
 .wp-block-table {

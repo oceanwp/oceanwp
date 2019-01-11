@@ -1,5 +1,18 @@
 # OceanWP Changelog
 
+### *2019.01.11* - 1.6.0:
+* **Added** - New style for the WooCommerce products.
+* **Added** - New settings Mobile Sidebar Order that allow you to add your sidebar before the content on tablet and mobile view.
+* **Added** - New settings to customize the single product Add To Cart button.
+* **Added** - New setting in the WooCommerce section of the customizer to allow you to remove all custom features added in the theme for WooCommerce, so you will be able to add your custom features or to make all WooCommerce plugins compatible with OceanWP.
+* **Added** - New setting for the Scroll Up button to position it.
+* **Added** - Close button for the Off Canvas sidebar feature of Woocommerce.
+* **Tweak** - The breadcrumb has been greatly improved. You can now add your own separator, choose to display a home text instead of the home icon, you can choose to display an item category, tag or parent page for your posts, products and portfolio pages, and more.
+* **Tweak** - WooCommerce categories widget improved, when a sub category is selected, the parent dropdown category is opened.
+* **Fixed** - Reviews link on the Quick View popup.
+* **Fixed** - Issue with the tag cloud widget.
+* **Fixed** - Issue with the position on tablet and mobile for the Custom Header Nav widget.
+
 ### *2018.11.21* - 1.5.32:
 * **Fixed** - White screen on a single product created with Elementor Pro.
 

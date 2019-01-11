@@ -83,6 +83,15 @@
     transition-duration: $args;
 }
 
+// Transition Delay
+@mixin transition-delay( $args ) {
+    -webkit-transition-delay: $args;
+    -moz-transition-delay: $args;
+    -ms-transition-delay: $args;
+    -o-transition-delay: $args;
+    transition-delay: $args;
+}
+
 // Opacity
 @mixin opacity( $args ) {
     -moz-opacity: $args;

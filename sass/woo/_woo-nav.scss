@@ -28,7 +28,8 @@ Woo Product Navigation
 
 		a.owp-nav-link {
 			display: inline-block;
-			min-width: 2em;
+			width: 28px;
+    		height: 28px;
 			line-height: 24px;
 			border: 2px solid $color-7;
 			@include border-radius( 50% );

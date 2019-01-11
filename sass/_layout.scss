@@ -472,6 +472,10 @@ body.separate-blog.separate-layout {
 		border: 0;
 	}
 
+	body.sidebar-content .content-area {
+		margin-bottom: 0;
+	}
+
 	body:not(.separate-layout) .content-area,
 	.content-left-sidebar:not(.separate-layout) .content-area {
 		padding: 0 !important;

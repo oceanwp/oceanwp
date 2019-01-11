@@ -88,6 +88,7 @@ class OceanWP_Customizer_Radio_Image_Control extends WP_Customize_Control {
 					<label for="{{ data.id }}{{ key }}" title="{{ data.l10n[ key ] }}">
 						<img src="{{ data.choices[ key ] }}">
 						<span class="image-clickable"></span>
+						<span class="radio-label">{{ data.l10n[ key ] }}</span>
 					</label>
 				</input>
 			<# } #>
@@ -109,6 +110,7 @@ class OceanWP_Customizer_Radio_Image_Control extends WP_Customize_Control {
 			'left-sidebar' 		=> esc_attr__( 'Left Sidebar', 'oceanwp' ),
 			'full-width' 		=> esc_attr__( 'Full Width', 'oceanwp' ),
 			'full-screen' 		=> esc_attr__( '100% Full Width', 'oceanwp' ),
+			'both-sidebars' 	=> esc_attr__( 'Both Sidebars', 'oceanwp' ),
 		);
 		if ( false === $id ) {
 			return $translation_strings;

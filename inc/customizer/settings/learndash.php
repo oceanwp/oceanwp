@@ -186,6 +186,27 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_ld_global_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_ld_global_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_ld_layout',
+				'settings' 				=> 'ocean_ld_global_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_ld_global_rl_layout',
+			) ) );
+
+			/**
 			 * Course Page Header
 			 */
 			$wp_customize->add_setting( 'ocean_ld_course_heading', array(
@@ -281,6 +302,27 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_ld_course_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_ld_course_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_ld_layout',
+				'settings' 				=> 'ocean_ld_course_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_ld_course_rl_layout',
+			) ) );
+
+			/**
 			 * Lesson Page Header
 			 */
 			$wp_customize->add_setting( 'ocean_ld_lesson_heading', array(
@@ -373,6 +415,27 @@ if ( ! class_exists( 'OceanWP_LearnDash_Customizer' ) ) :
 			        'step'  => 1,
 			    ),
 				'active_callback' 		=> 'oceanwp_cac_has_ld_lesson_bs_layout',
+			) ) );
+
+			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_ld_lesson_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_ld_lesson_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_ld_layout',
+				'settings' 				=> 'ocean_ld_lesson_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_ld_lesson_rl_layout',
 			) ) );
 
 			/**

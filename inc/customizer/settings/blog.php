@@ -133,6 +133,27 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_blog_archives_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_blog_archives_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_blog_entries',
+				'settings' 				=> 'ocean_blog_archives_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_blog_entries_rl_layout',
+			) ) );
+
+			/**
 			 * Blog Title Heading Tag
 			 */
 			$wp_customize->add_setting( 'ocean_blog_entries_heading_tag', array(
@@ -668,6 +689,27 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			        'step'  => 1,
 			    ),
 				'active_callback' 		=> 'oceanwp_cac_has_single_post_bs_layout',
+			) ) );
+
+			/**
+			 * Mobile Sidebar Order
+			 */
+			$wp_customize->add_setting( 'ocean_single_post_sidebar_order', array(
+				'default'           	=> 'content-sidebar',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_single_post_sidebar_order', array(
+				'label'	   				=> esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_single_post',
+				'settings' 				=> 'ocean_single_post_sidebar_order',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'content-sidebar' 	=> esc_html__( 'Content / Sidebar', 'oceanwp' ),
+					'sidebar-content' 	=> esc_html__( 'Sidebar / Content', 'oceanwp' ),
+				),
+				'active_callback' 		=> 'oceanwp_cac_has_single_post_rl_layout',
 			) ) );
 
 			/**
@@ -1216,7 +1258,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 
 			// Single content width
 			if ( ! empty( $single_content_width ) && '700' != $single_content_width ) {
-				$css .= '.single-post.content-max-width .thumbnail, .single-post.content-max-width .entry-header, .single-post.content-max-width ul.meta, .single-post.content-max-width .entry-content p, .single-post.content-max-width .entry-content h1, .single-post.content-max-width .entry-content h2, .single-post.content-max-width .entry-content h3, .single-post.content-max-width .entry-content h4, .single-post.content-max-width .entry-content h5, .single-post.content-max-width .entry-content h6, .single-post.content-max-width .wp-block-image, .single-post.content-max-width .wp-block-gallery, .single-post.content-max-width .wp-block-video, .single-post.content-max-width .wp-block-quote, .single-post.content-max-width .wp-block-text-columns, .single-post.content-max-width .entry-content ul, .single-post.content-max-width .entry-content ol, .single-post.content-max-width .wp-block-cover-text, .single-post.content-max-width .post-tags, .single-post.content-max-width .comments-area{max-width:' . $single_content_width . 'px;} .single-post.content-max-width .wp-block-image.alignleft, .single-post.content-max-width .wp-block-image.alignright{max-width:'. $single_content_width / 2 .'px;} .single-post.content-max-width .wp-block-image.alignleft{margin-left: calc( 50% - '. $single_content_width / 2 .'px);} .single-post.content-max-width .wp-block-image.alignright{margin-right: calc( 50% - '. $single_content_width / 2 .'px);}';
+				$css .= '.single-post.content-max-width .thumbnail, .single-post.content-max-width .entry-header, .single-post.content-max-width ul.meta, .single-post.content-max-width .entry-content p, .single-post.content-max-width .entry-content h1, .single-post.content-max-width .entry-content h2, .single-post.content-max-width .entry-content h3, .single-post.content-max-width .entry-content h4, .single-post.content-max-width .entry-content h5, .single-post.content-max-width .entry-content h6, .single-post.content-max-width .wp-block-image, .single-post.content-max-width .wp-block-gallery, .single-post.content-max-width .wp-block-video, .single-post.content-max-width .wp-block-quote, .single-post.content-max-width .wp-block-text-columns, .single-post.content-max-width .entry-content ul, .single-post.content-max-width .entry-content ol, .single-post.content-max-width .wp-block-cover-text, .single-post.content-max-width .post-tags, .single-post.content-max-width .comments-area, .wp-block-separator.is-style-wide{max-width:' . $single_content_width . 'px;} .single-post.content-max-width .wp-block-image.alignleft, .single-post.content-max-width .wp-block-image.alignright{max-width:'. $single_content_width / 2 .'px;} .single-post.content-max-width .wp-block-image.alignleft{margin-left: calc( 50% - '. $single_content_width / 2 .'px);} .single-post.content-max-width .wp-block-image.alignright{margin-right: calc( 50% - '. $single_content_width / 2 .'px);}';
 
 			}
 				

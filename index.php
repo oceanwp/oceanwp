@@ -110,8 +110,6 @@ get_header(); ?>
 
 		<?php do_action( 'ocean_after_primary' ); ?>
 
-		<?php do_action( 'ocean_display_sidebar' ); ?>
-
 	</div><!-- #content-wrap -->
 
 	<?php do_action( 'ocean_after_content_wrap' ); ?>

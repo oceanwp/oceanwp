@@ -165,22 +165,15 @@ body.breadcrumbs-position-default .page-header-title {
     li {
       display: inline-block;
 
-      &:after {
-        content: '\f105';
+      .breadcrumb-sep {
         margin: 0 6px;
-        display: inline-block;
-        font-family: FontAwesome;
-        font-size: inherit;
-        font-weight: 900;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      &:last-child:after {
-        display: none;
       }
     }
+  }
+
+  .icon-home.has-text,
+  .breadcrumb-home.has-icon {
+    display: none;
   }
 
   .breadcrumb-title {

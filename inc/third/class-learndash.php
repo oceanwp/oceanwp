@@ -29,6 +29,8 @@ if ( ! class_exists( 'OceanWP_LearnDash' ) ) :
 			add_filter( 'ocean_post_layout_class', array( $this, 'layouts' ) );
 			// Set correct both sidebars layout style
 			add_filter( 'ocean_both_sidebars_style', array( $this, 'bs_class' ) );
+			// Set correct mobile sidebar order
+			add_filter( 'ocean_sidebar_order', array( $this, 'sidebar_order' ) );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ) );
 
@@ -124,6 +126,23 @@ if ( ! class_exists( 'OceanWP_LearnDash' ) ) :
 				$class = get_theme_mod( 'ocean_ld_course_both_sidebars_style', 'scs-style' );
 			}
 			return $class;
+		}
+
+		/**
+		 * Set correct mobile sidebar order.
+		 *
+		 * @since 1.6
+		 */
+		public static function sidebar_order( $order ) {
+			if ( is_singular( array( 'sfwd-quiz' ) ) || is_tax( array( 'ld_course_category', 'ld_course_tag', 'ld_lesson_category', 'ld_lesson_tag', 'ld_topic_category', 'ld_topic_tag' ) ) ) {
+				$order = get_theme_mod( 'ocean_ld_global_sidebar_order', 'content-sidebar' );
+			}
+			elseif ( is_singular( array( 'sfwd-lessons', 'sfwd-topic' ) ) ) {
+				$order = get_theme_mod( 'ocean_ld_lesson_sidebar_order', 'content-sidebar' );
+			} elseif ( is_singular( 'sfwd-courses' ) ) {
+				$order = get_theme_mod( 'ocean_ld_course_sidebar_order', 'content-sidebar' );
+			}
+			return $order;
 		}
 
 		/**

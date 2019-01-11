@@ -31,6 +31,8 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			add_filter( 'ocean_post_layout_class', array( $this, 'layouts' ) );
 			// Set correct both sidebars layout style
 			add_filter( 'ocean_both_sidebars_style', array( $this, 'bs_class' ) );
+			// Set correct mobile sidebar order
+			add_filter( 'ocean_sidebar_order', array( $this, 'sidebar_order' ) );
 			add_filter( 'lifterlms_show_page_title', '__return_false' );
 
 			// Remove Content Wrappers
@@ -172,6 +174,23 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		}
 
 		/**
+		 * Set correct mobile sidebar order.
+		 *
+		 * @since 1.6
+		 */
+		public static function sidebar_order( $order ) {
+			if ( is_llms_account_page() || is_membership() || is_memberships() || is_quiz() || is_courses() || is_tax( array( 'course_cat', 'course_tag', 'course_difficulty', 'course_track', 'membership_tag', 'membership_cat' ) ) ) {
+				$order = get_theme_mod( 'ocean_llms_global_sidebar_order', 'content-sidebar' );
+			}
+			elseif ( is_lesson() ) {
+				$order = get_theme_mod( 'ocean_llms_lesson_sidebar_order', 'content-sidebar' );
+			} elseif ( is_course() ) {
+				$order = get_theme_mod( 'ocean_llms_course_sidebar_order', 'content-sidebar' );
+			}
+			return $order;
+		}
+
+		/**
 		 * Add Custom LLMS scripts.
 		 *
 		 * @since 1.0.0
@@ -219,8 +238,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 				</div><!-- #primary -->
 
 				<?php do_action( 'ocean_after_primary' ); ?>
-
-				<?php do_action( 'ocean_display_sidebar' ); ?>
 
 			</div><!-- #content-wrap -->
 

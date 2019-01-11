@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * The template for displaying all pages, single posts and attachments
  *
@@ -71,8 +71,6 @@ get_header(); ?>
 		</div><!-- #primary -->
 
 		<?php do_action( 'ocean_after_primary' ); ?>
-
-		<?php do_action( 'ocean_display_sidebar' ); ?>
 
 	</div><!-- #content-wrap -->
 
