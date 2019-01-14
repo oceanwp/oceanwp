@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2019.01.14* - 1.6.1:
+* **Fixed** - Issue with Elementor.
+
 ### *2019.01.11* - 1.6.0:
 * **Added** - New style for the WooCommerce products.
 * **Added** - New settings Mobile Sidebar Order that allow you to add your sidebar before the content on tablet and mobile view.
