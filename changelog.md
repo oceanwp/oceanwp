@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2019.01.30* - 1.6.2:
+* **Removed** - Meta tags function, directly added into Ocean Extra.
+
 ### *2019.01.14* - 1.6.1:
 * **Fixed** - Issue with Elementor.
 
