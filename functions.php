@@ -932,14 +932,5 @@ final class OCEANWP_Theme_Class {
 		return true;
 	}
 
-	/**
-	 * Get meta tags
-	 *
-	 * @since 1.5.6
-	 */
-	public static function opengraph_tag( $attr, $property, $content ) {
-		echo '<meta ', esc_attr( $attr ), '="', esc_attr( $property ), '" content="', esc_attr( $content ), '" />', "\n";
-	}
-
 }
 new OCEANWP_Theme_Class;
