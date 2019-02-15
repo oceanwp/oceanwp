@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2019.02.15* - 1.6.4:
+* **Fixed** - Elementor header and footer CSS issue.
+
 ### *2019.01.30* - 1.6.3:
 * **Fixed** - Elementor issue.
 
