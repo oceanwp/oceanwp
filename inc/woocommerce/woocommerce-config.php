@@ -750,7 +750,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			if ( true == get_theme_mod( 'ocean_woo_product_ajax_add_to_cart', false ) ) {
 				$array['is_cart'] 			= is_cart();
 				$array['cart_url'] 			= apply_filters( 'ocean_woocommerce_add_to_cart_redirect', wc_get_cart_url() );
-				$array['view_cart'] 		= esc_attr__( 'View cart', 'oceanwp' );
 			}
 
 			// If multi step checkout
@@ -770,6 +769,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$array['cart_url'] = apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url() );
 				$array['cart_redirect_after_add'] = get_option( 'woocommerce_cart_redirect_after_add' );
 			}
+
+			// Add the View Cart here to avoid the undefined word on the related products
+			$array['view_cart'] = esc_html__( 'View cart', 'oceanwp' );
 
 			// Check if the floating bar is enabled for the quantity button
 			$array['floating_bar'] = get_theme_mod( 'ocean_woo_display_floating_bar', 'on' );
@@ -836,7 +838,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			echo '<div id="oceanwp-cart-sidebar-wrap">';
 				echo '<div class="'. $classes .'">';
 					echo '<a href="#" class="oceanwp-cart-close">×</a>';
-					echo '<h4>'. esc_html__( 'Cart', 'oceanwp' ) .'</h4><div class="divider"></div>';
+					echo '<p class="owp-cart-title">'. esc_html__( 'Cart', 'oceanwp' ) .'</p><div class="divider"></div>';
 					echo '<div class="owp-mini-cart">';
 						the_widget( 'WC_Widget_Cart', 'title=' );
 					echo '</div>';

@@ -1756,6 +1756,33 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Title HTML Tag
+			 */
+			$wp_customize->add_setting( 'ocean_woo_product_title_tag', array(
+				'default' 				=> 'h2',
+				'sanitize_callback' 	=> 'sanitize_key',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_woo_product_title_tag', array(
+				'label'	   				=> esc_html__( 'Title HTML Tag', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_woocommerce_single',
+				'settings' 				=> 'ocean_woo_product_title_tag',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'h1' 		=> esc_html__( 'H1', 'oceanwp' ),
+					'h2' 		=> esc_html__( 'H2', 'oceanwp' ),
+					'h3' 		=> esc_html__( 'H3', 'oceanwp' ),
+					'h4' 		=> esc_html__( 'H4', 'oceanwp' ),
+					'h5' 		=> esc_html__( 'H5', 'oceanwp' ),
+					'h6' 		=> esc_html__( 'H6', 'oceanwp' ),
+					'div' 		=> esc_html__( 'div', 'oceanwp' ),
+					'span' 		=> esc_html__( 'span', 'oceanwp' ),
+					'p' 		=> esc_html__( 'p', 'oceanwp' ),
+				),
+			) ) );
+
+			/**
 			 * Elements Positioning
 			 */
 			$wp_customize->add_setting( 'oceanwp_woo_summary_elements_positioning', array(
@@ -6388,7 +6415,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add checkout table titles color
 			if ( ! empty( $checkout_table_titles_color ) && '#444444' != $checkout_table_titles_color ) {
-				$css .= '.woocommerce-checkout table.shop_table thead th,.woocommerce-checkout table.shop_table tfoot th{color:'. $checkout_table_titles_color .';}';
+				$css .= '.woocommerce-checkout table.shop_table thead th,.woocommerce #order_review table.shop_table tfoot th{color:'. $checkout_table_titles_color .';}';
 			}
 
 			// Add checkout table borders color

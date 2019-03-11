@@ -1,12 +1,12 @@
 .editor-post-title__block .editor-post-title__input {
   font-size: 30px;
   font-size: 2rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: normal;
 }
 
 .editor-block-list__block {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   line-height: 1.8;
   color: #929292;
@@ -189,11 +189,11 @@
 
 .mce-content-body a, .mce-content-body a:hover, .mce-content-body a:focus {
   text-decoration: none;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .editor-writing-flow {

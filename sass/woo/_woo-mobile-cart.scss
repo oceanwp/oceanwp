@@ -26,7 +26,7 @@ Woo Mobile Mini Cart Sidebar
 		position: absolute;
 	    top: 0;
 	    right: -100%;
-	    background-color: $color-1;
+	    background-color: #fff;
 	    width: 325px;
 	    height: 100%;
 	    padding: 20px 0 0;
@@ -36,8 +36,9 @@ Woo Mobile Mini Cart Sidebar
 		@include transition( all 0.3s ease-in-out );
 	}
 
-	h4 {
+	.owp-cart-title {
 		font-size: 18px;
+		font-weight: 600;
 	    color: #555;
 	    line-height: 1.2;
 	    text-transform: uppercase;

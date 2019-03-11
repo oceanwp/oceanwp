@@ -2,11 +2,69 @@
 Woo Hover Style
 -------------------------------------------------------------------*/
 
-// Configuration
-@import "config";
+// Display Flex
+@mixin display() {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
 
-// Mixins
-@import "mixins";
+// Flex Wrap
+@mixin flex-wrap( $args ) {
+    -ms-flex-wrap: $args;
+    -webkit-flex-wrap: $args;
+    flex-wrap: $args;
+}
+
+// Align Items
+@mixin align-items( $args ) {
+    -webkit-align-items: $args;
+    align-items: $args;
+}
+
+// Animation
+@mixin animation( $args ) {
+    -ms-animation: $args;
+    -webkit-animation: $args;
+	-o-animation: $args;
+	-moz-animation: $args;
+	animation: $args;
+}
+
+// Transform
+@mixin transform( $args ) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+// Transition
+@mixin transition( $args ) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+// Transition Delay
+@mixin transition-delay( $args ) {
+    -webkit-transition-delay: $args;
+    -moz-transition-delay: $args;
+    -ms-transition-delay: $args;
+    -o-transition-delay: $args;
+    transition-delay: $args;
+}
+
+// Box Shadow
+@mixin box-shadow( $args ) {
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+}
 
 .woocommerce ul.products {
 	li.owp-content-left.product.has-rating .woo-entry-inner .star-rating {

@@ -2,11 +2,22 @@
 Woo Multi-Step Checkout
 -------------------------------------------------------------------*/
 
-// Configuration
-@import "config";
+// Transition
+@mixin transition( $args ) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
 
-// Mixins
-@import "mixins";
+// Border radius
+@mixin border-radius( $args ) {
+   -webkit-border-radius: $args;
+   -moz-border-radius: $args;
+   -ms-border-radius: $args;
+    border-radius: $args;
+}
 
 #owp-checkout-timeline {
 	margin-bottom: 40px;
@@ -32,8 +43,8 @@ Woo Multi-Step Checkout
 	}
 
 	.active .timeline-wrapper {
-	    background-color: $color-5;
-	    color: $color-1;
+	    background-color: #13aff0;
+	    color: #fff;
 	}
 
 	.timeline-step {
@@ -44,7 +55,7 @@ Woo Multi-Step Checkout
 	    height: 26px;
 	    line-height: 22px;
 	    margin-right: 8px;
-	    background-color: $color-1;
+	    background-color: #fff;
 	    color: #ccc;
 	    border: 2px solid #ccc;
 	    border-radius: 20px;
@@ -88,13 +99,13 @@ Woo Multi-Step Checkout
 
 		.active .timeline-wrapper {
 		    &:before {
-			    border-top-color: $color-5;
-			    border-bottom-color: $color-5;
+			    border-top-color: #13aff0;
+			    border-bottom-color: #13aff0;
 			}
 
 		    &:after {
-			    border-left-color: $color-5;
-			    border-right-color: $color-5;
+			    border-left-color: #13aff0;
+			    border-right-color: #13aff0;
 			}
 		}
 	}

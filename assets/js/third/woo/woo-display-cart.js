@@ -20,9 +20,10 @@ function oceanwpWooDisplayCart() {
 
 		// Close quick view modal if enabled
 		var qv_modal 		= $j( '#owp-qv-wrap' ),
-			qv_content 		= $j( '#owp-qv-content' );
+			qv_content 		= $j( '#owp-qv-content' ),
+			header 			= $j( '#site-header' );
 
-		if ( qv_modal.length ) {	
+		if ( qv_modal.length ) {
 			$j( 'html' ).css( {
 				'overflow': '',
 				'margin-right': '' 
@@ -35,6 +36,11 @@ function oceanwpWooDisplayCart() {
 			setTimeout( function() {
 				qv_content.html( '' );
 			}, 600);
+		}
+
+		if ( header.length
+			&& ! header.hasClass( 'fixed-scroll' ) ) {
+			$j( 'html, body' ).animate( { scrollTop: 0 }, 400 );
 		}
     } );
 

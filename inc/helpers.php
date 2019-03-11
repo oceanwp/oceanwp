@@ -2457,7 +2457,13 @@ if ( ! function_exists( 'oceanwp_post_entry_classes' ) ) {
 		// Add columns for grid style entries
 		if ( $entry_style == 'grid-entry' ) {
 			$classes[] = 'col';
-			$classes[] = oceanwp_grid_class( oceanwp_blog_entry_columns() );
+				$classes[] = oceanwp_grid_class( oceanwp_blog_entry_columns() );
+
+			// Counter
+			global $oceanwp_count;
+			if ( $oceanwp_count ) {
+				$classes[] = 'col-'. $oceanwp_count;
+			}
 		}
 
 		// No Featured Image Class, don't add if oembed or self hosted meta are defined
@@ -2474,12 +2480,6 @@ if ( ! function_exists( 'oceanwp_post_entry_classes' ) ) {
 
 		// Blog entry style
 		$classes[] = $entry_style;
-
-		// Counter
-		global $oceanwp_count;
-		if ( $oceanwp_count ) {
-			$classes[] = 'col-'. $oceanwp_count;
-		}
 
 		// Apply filters to entry post class for child theming
 		$classes = apply_filters( 'ocean_blog_entry_classes', $classes );
@@ -4272,11 +4272,7 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 
 		// HTML
 		if ( 'html' == $location ) {
-			if ( is_singular() ) {
-				$schema = 'itemscope itemtype="http://schema.org/WebPage"';
-			} else {
-				$schema = 'itemscope itemtype="http://schema.org/Article"';
-			}
+			$schema = 'itemscope itemtype="http://schema.org/WebPage"';
 		}
 
 		// Header
@@ -4302,21 +4298,6 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 				$itemprop = '';
 				$itemtype = 'http://schema.org/Blog';
 			}
-		}
-
-		// Breadcrumb
-		elseif ( 'breadcrumb' == $location ) {
-			$schema = 'itemscope itemtype="http://schema.org/BreadcrumbList"';
-		}
-
-		// Breadcrumb list
-		elseif ( 'breadcrumb_list' == $location ) {
-			$schema = 'itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"';
-		}
-
-		// Breadcrumb itemprop
-		elseif ( 'breadcrumb_itemprop' == $location ) {
-			$schema = 'itemprop="breadcrumb"';
 		}
 
 		// Sidebar

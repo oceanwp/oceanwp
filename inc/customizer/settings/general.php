@@ -1354,6 +1354,22 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Breadcrumbs Item Title
+			 */
+			$wp_customize->add_setting( 'ocean_breadcrumb_show_title', array(
+				'default'           	=> true,
+				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_breadcrumb_show_title', array(
+				'label'	   				=> esc_html__( 'Show Item Title', 'oceanwp' ),
+				'type' 					=> 'checkbox',
+				'section'  				=> 'ocean_general_page_header',
+				'settings' 				=> 'ocean_breadcrumb_show_title',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
 			 * Breadcrumbs Position
 			 */
 			$wp_customize->add_setting( 'ocean_breadcrumbs_position', array(

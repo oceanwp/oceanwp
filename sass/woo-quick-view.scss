@@ -2,11 +2,38 @@
 Woo Quick View
 -------------------------------------------------------------------*/
 
-// Configuration
-@import "config";
+// Border radius
+@mixin border-radius( $args ) {
+   -webkit-border-radius: $args;
+   -moz-border-radius: $args;
+   -ms-border-radius: $args;
+    border-radius: $args;
+}
 
-// Mixins
-@import "mixins";
+// Animation
+@mixin animation( $args ) {
+    -ms-animation: $args;
+    -webkit-animation: $args;
+	-o-animation: $args;
+	-moz-animation: $args;
+	animation: $args;
+}
+
+// Transform
+@mixin transform( $args ) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+// Box Shadow
+@mixin box-shadow( $args ) {
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+}
 
 .owp-quick-view {
 	position: absolute;
@@ -16,7 +43,7 @@ Woo Quick View
     padding: 10px 0;
     text-align: center;
     background-color: rgba(0, 0, 0, .6);
-    color: $color-1;
+    color: #fff;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -27,7 +54,7 @@ Woo Quick View
 
     &:hover {
     	background-color: rgba(0, 0, 0, .9);
-    	color: $color-1;
+    	color: #fff;
     }
 
 	i {

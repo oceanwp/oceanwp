@@ -4360,8 +4360,9 @@ Woo Mobile Mini Cart Sidebar
   transition: all 0.3s ease-in-out;
 }
 
-#oceanwp-cart-sidebar-wrap h4 {
+#oceanwp-cart-sidebar-wrap .owp-cart-title {
   font-size: 18px;
+  font-weight: 600;
   color: #555;
   line-height: 1.2;
   text-transform: uppercase;
@@ -4609,6 +4610,7 @@ Woo Quantity Buttons
   float: left;
   overflow: hidden;
   zoom: 1;
+  min-width: 110px;
 }
 
 .quantity .qty,

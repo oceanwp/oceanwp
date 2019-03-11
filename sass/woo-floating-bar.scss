@@ -2,11 +2,42 @@
 Woo Floating Bar
 -------------------------------------------------------------------*/
 
-// Configuration
-@import "config";
+// Opacity
+@mixin opacity( $args ) {
+    -moz-opacity: $args;
+    -webkit-opacity: $args;
+    opacity: $args;
+}
 
-// Mixins
-@import "mixins";
+// Transition
+@mixin transition( $args ) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+// Display Flex
+@mixin display() {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+// Flex Wrap
+@mixin flex-wrap( $args ) {
+    -ms-flex-wrap: $args;
+    -webkit-flex-wrap: $args;
+    flex-wrap: $args;
+}
+
+// Align Items
+@mixin align-items( $args ) {
+    -webkit-align-items: $args;
+    align-items: $args;
+}
 
 .owp-floating-bar {
 	position: fixed;
@@ -45,14 +76,14 @@ Woo Floating Bar
 		display: inline-block;
     	margin-bottom: 0;
 	    margin-right: 12px;
-	    color: $color-1;
+	    color: #fff;
 	    font-size: 16px;
 	    font-weight: 600;
 	}
 
 	h2.entry-title {
 		display: inline-block;
-	    color: $color-1;
+	    color: #fff;
 	    font-size: 16px;
 	    font-weight: 300;
 	    margin: 0;
@@ -75,7 +106,7 @@ Woo Floating Bar
 
 		del .amount,
 		.amount {
-			color: $color-1;
+			color: #fff;
 		}
 	}
 
@@ -88,7 +119,7 @@ Woo Floating Bar
 			.minus,
 			.plus {
 				background-color: rgba(255,255,255,.1);
-			    color: $color-1;
+			    color: #fff;
 			    font-size: 20px;
 			    border: 0;
 
@@ -106,7 +137,7 @@ Woo Floating Bar
 	}
 
 	button.button {
-		background-color: $color-1;
+		background-color: #fff;
 	    color: #000;
 	    font-size: 14px;
 	    height: 46px;

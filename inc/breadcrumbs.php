@@ -18,7 +18,7 @@
  * @version   1.0.0
  * @author    Justin Tadlock <justin@justintadlock.com>
  * @copyright Copyright (c) 2008 - 2015, Justin Tadlock
- * @link      http://themehybrid.com/plugins/breadcrumb-trail
+ * @link      https://themehybrid.com/plugins/breadcrumb-trail
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
@@ -40,7 +40,8 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 	}
 	
 	// Yoast breadcrumbs
-	if ( function_exists( 'yoast_breadcrumb' ) ) {
+	if ( function_exists( 'yoast_breadcrumb' )
+		&& true === WPSEO_Options::get( 'breadcrumbs-enable', false ) ) {
 		$classes = 'site-breadcrumbs clr';
 		if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
 			$classes .= ' position-'. $breadcrumbs_position;
@@ -51,6 +52,11 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 	// SEOPress breadcrumbs
 	if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
 		return seopress_display_breadcrumbs();
+    }
+	
+	// Rank Math breadcrumbs
+	if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+		return rank_math_the_breadcrumbs();
     }
 
 	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
@@ -80,6 +86,22 @@ function sp_breadcrumbs_after() {
 	echo '</div>';
 }
 add_action( 'seopress_breadcrumbs_after_html', 'sp_breadcrumbs_after' );
+
+/**
+ * Add container to Rank Math breadcrumbs.
+ *
+ * @since  1.6.5
+ */
+function rm_breadcrumbs() {
+	$classes = 'site-breadcrumbs clr';
+	if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
+		$classes .= ' position-'. $breadcrumbs_position;
+	}
+	$args['wrap_before'] = '<div class="' . $classes . '">';
+	$args['wrap_after']  = '</div>';
+	return $args;
+}
+add_action( 'rank_math/frontend/breadcrumb/args', 'rm_breadcrumbs' );
 
 /**
  * Creates a breadcrumbs menu for the site based on the current page that's being viewed by the user.
@@ -205,7 +227,7 @@ class OceanWP_Breadcrumb_Trail {
 		if ( 0 < $item_count ) {
 
 			// Open the unordered list.
-			$breadcrumb .= '<ul class="trail-items"'. oceanwp_get_schema_markup( 'breadcrumb' ) .'>';
+			$breadcrumb .= '<ol class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">';
 
 			// Add the number of items and item list order schema.
 			$breadcrumb .= sprintf( '<meta name="numberOfItems" content="%d" />', absint( $item_count ) );
@@ -221,7 +243,12 @@ class OceanWP_Breadcrumb_Trail {
 				preg_match( '/(<a.*?>)(.*?)(<\/a>)/i', $item, $matches );
 
 				// Wrap the item text with appropriate itemprop.
-				$item = !empty( $matches ) ? sprintf( '%s<span'. oceanwp_get_schema_markup( 'author_name' ) .'>%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span'. oceanwp_get_schema_markup( 'author_name' ) .'>%s</span>', $item );
+				$item = !empty( $matches ) ? sprintf( '%s<span itemprop="name">%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span itemprop="name">%s</span>', $item );
+
+				// Wrap the item with its itemprop.
+				$item = ! empty( $matches )
+					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemtype="http://schema.org/Thing" itemprop=$2item$2>', $item )
+					: sprintf( '<span itemprop="item">%s</span>', $item );
 
 				// Add list item classes.
 				$item_class = 'trail-item';
@@ -233,7 +260,7 @@ class OceanWP_Breadcrumb_Trail {
 				}
 
 				// Create list item attributes.
-				$attributes = 'class="' . $item_class . '"'. oceanwp_get_schema_markup( 'breadcrumb_list' ) .'';
+				$attributes = 'class="' . $item_class . '" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"';
 
 				// Separator
 				if ( $item_count === $item_position ) {
@@ -243,14 +270,14 @@ class OceanWP_Breadcrumb_Trail {
 				}
 
 				// Build the meta position HTML.
-				$meta = sprintf( '<meta content="%s"'. oceanwp_get_schema_markup( 'position' ) .' />', absint( $item_position ) );
+				$meta = sprintf( '<meta content="%s" itemprop="position" />', absint( $item_position ) );
 
 				// Build the list item.
 				$breadcrumb .= sprintf( '<li %s>%s%s%s</li>', $attributes, $item, $sep, $meta );
 			}
 
 			// Close the unordered list.
-			$breadcrumb .= '</ul>';
+			$breadcrumb .= '</ol>';
 
 			// Postion class
 			$p_class = '';
@@ -260,7 +287,7 @@ class OceanWP_Breadcrumb_Trail {
 
 			// Wrap the breadcrumb trail.
 			$breadcrumb = sprintf(
-				'<%1$s role="navigation" aria-label="%2$s" class="site-breadcrumbs clr'. $p_class .'"'. oceanwp_get_schema_markup( 'breadcrumb_itemprop' ) .'>%3$s%4$s%5$s</%1$s>',
+				'<%1$s aria-label="%2$s" class="site-breadcrumbs clr'. $p_class .'" itemprop="breadcrumb">%3$s%4$s%5$s</%1$s>',
 				tag_escape( $this->args['container'] ),
 				esc_attr( $this->labels['aria_label'] ),
 				$this->args['before'],
@@ -571,7 +598,7 @@ class OceanWP_Breadcrumb_Trail {
 	protected function add_home_items() {
 
 		if ( true === $this->args['show_title'] )
-			$this->items[] = get_the_title( get_option( 'page_for_posts', true ) );
+			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_the_permalink( get_option( 'page_for_posts' ) ) ), get_the_title( get_option( 'page_for_posts', true ) ) );
 	}
 
 	/**
@@ -657,13 +684,11 @@ class OceanWP_Breadcrumb_Trail {
 		}
 
 		// End with the post title.
-		if ( $post_title = single_post_title( '', false ) ) {
+		if ( true == get_theme_mod( 'ocean_breadcrumb_show_title', true )
+			&& $post_title = single_post_title( '', false ) ) {
 
-			if ( 1 < get_query_var( 'page' ) || is_paged() )
+			if ( 1 < get_query_var( 'page' ) || is_paged() || true === $this->args['show_title'] )
 				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), $post_title );
-
-			elseif ( true === $this->args['show_title'] )
-				$this->items[] = $post_title;
 		}
 	}
 
@@ -770,11 +795,8 @@ class OceanWP_Breadcrumb_Trail {
 			$this->add_term_parents( $term->parent, $term->taxonomy );
 
 		// Add the term name to the trail end.
-		if ( is_paged() )
+		if ( is_paged() || true === $this->args['show_title'] )
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $term->taxonomy ) ), single_term_title( '', false ) );
-
-		elseif ( true === $this->args['show_title'] )
-			$this->items[] = single_term_title( '', false );
 	}
 
 	/**
@@ -801,11 +823,8 @@ class OceanWP_Breadcrumb_Trail {
 		}
 
 		// Add the post type [plural] name to the trail end.
-		if ( is_paged() )
+		if ( is_paged() || true === $this->args['show_title'] )
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), post_type_archive_title( '', false ) );
-
-		elseif ( true === $this->args['show_title'] )
-			$this->items[] = post_type_archive_title( '', false );
 	}
 
 	/**
@@ -830,11 +849,8 @@ class OceanWP_Breadcrumb_Trail {
 			$this->add_path_parents( $wp_rewrite->author_base );
 
 		// Add the author's display name to the trail end.
-		if ( is_paged() )
+		if ( is_paged() || true === $this->args['show_title'] )
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_author_posts_url( $user_id ) ), get_the_author_meta( 'display_name', $user_id ) );
-
-		elseif ( true === $this->args['show_title'] )
-			$this->items[] = get_the_author_meta( 'display_name', $user_id );
 	}
 
 	/**
@@ -910,11 +926,8 @@ class OceanWP_Breadcrumb_Trail {
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ), $month );
 
 		// Add the day item.
-		if ( is_paged() )
+		if ( is_paged() || true === $this->args['show_title'] )
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y' ) ), get_the_time( 'm' ), get_the_time( 'd' ) ), $day );
-
-		elseif ( true === $this->args['show_title'] )
-			$this->items[] = $day;
 	}
 
 	/**
@@ -937,11 +950,8 @@ class OceanWP_Breadcrumb_Trail {
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
 
 		// Add the week item.
-		if ( is_paged() )
+		if ( is_paged() || true === $this->args['show_title'] )
 			$this->items[] = esc_url( get_archives_link( add_query_arg( array( 'm' => get_the_time( 'Y' ), 'w' => get_the_time( 'W' ) ), home_url() ), $week, false ) );
-
-		elseif ( true === $this->args['show_title'] )
-			$this->items[] = $week;
 	}
 
 	/**
@@ -964,11 +974,8 @@ class OceanWP_Breadcrumb_Trail {
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
 
 		// Add the month item.
-		if ( is_paged() )
+		if ( is_paged() || true === $this->args['show_title'] )
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ), $month );
-
-		elseif ( true === $this->args['show_title'] )
-			$this->items[] = $month;
 	}
 
 	/**
@@ -987,11 +994,8 @@ class OceanWP_Breadcrumb_Trail {
 		$year  = sprintf( $this->labels['archive_year'],  get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'oceanwp' ) ) );
 
 		// Add the year item.
-		if ( is_paged() )
+		if ( is_paged() || true === $this->args['show_title'] )
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
-
-		elseif ( true === $this->args['show_title'] )
-			$this->items[] = $year;
 	}
 
 	/**
@@ -1021,11 +1025,8 @@ class OceanWP_Breadcrumb_Trail {
 	 */
 	protected function add_search_items() {
 
-		if ( is_paged() )
+		if ( is_paged() || true === $this->args['show_title'] )
 			$this->items[] = sprintf( '<a href="%s">%s%s</a>', esc_url( get_search_link() ), '<span class="breadcrumb-search">'. $this->labels['search'] .'</span>', ' &#8220;'. get_search_query() .'&#8221;' );
-
-		elseif ( true === $this->args['show_title'] )
-			$this->items[] = '<span class="breadcrumb-search">'. $this->labels['search'] .'</span>' . ' &#8220;'. get_search_query() .'&#8221;';
 	}
 
 	/**

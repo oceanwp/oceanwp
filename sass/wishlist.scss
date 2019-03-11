@@ -2,11 +2,21 @@
 Woo Wishlist
 -------------------------------------------------------------------*/
 
-// Configuration
-@import "config";
+// Opacity
+@mixin opacity( $args ) {
+    -moz-opacity: $args;
+    -webkit-opacity: $args;
+    opacity: $args;
+}
 
-// Mixins
-@import "mixins";
+// Transition
+@mixin transition( $args ) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
 
 .products .product {
     .tinv-wraper.tinv-wishlist {

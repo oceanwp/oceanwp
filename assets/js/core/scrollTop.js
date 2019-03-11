@@ -30,7 +30,7 @@ function oceanwpScrollTop() {
 	$j.each( selectors, function( key, value ){
 		$j( value ).on( 'click', function(e){
 			e.preventDefault();
-			$j( 'html, body' ).animate( { scrollTop:0 }, 400 );
+			$j( 'html, body' ).animate( { scrollTop: 0 }, 400 );
 			$j( this ).parent().removeClass( 'sfHover' );
 		});
 	});

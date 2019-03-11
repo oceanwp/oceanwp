@@ -1,7 +1,7 @@
 var $j = jQuery.noConflict();
 
 $j( document ).on( 'ready', function() {
-	"use strict";
+    "use strict";
     // Woo multi-step checkout
     oceanwpWooMultiStepCheckout();
 } );
@@ -10,23 +10,23 @@ $j( document ).on( 'ready', function() {
 WOOCOMMERCE MULTI-STEP CHECKOUT
 ============================================== */
 function oceanwpWooMultiStepCheckout() {
-	"use strict"
+    "use strict"
 
-	var body 				= $j( 'body' ),
-        login 				= $j( '#checkout_login' ),
-        billing 			= $j( '#customer_billing_details' ),
-        shipping 			= $j( '#customer_shipping_details' ),
-        order 				= $j( '#order_review' ),
-        payment 			= $j( '#order_checkout_payment' ),
-        form_actions 		= $j( '#form_actions' ),
-        coupon 				= $j( '#checkout_coupon' ),
-        steps 				= new Array( login, billing, shipping, order, payment ),
-        payment_method 		= function () {
+    var body                = $j( 'body' ),
+        login               = $j( '#checkout_login' ),
+        billing             = $j( '#customer_billing_details' ),
+        shipping            = $j( '#customer_shipping_details' ),
+        order               = $j( '#order_review' ),
+        payment             = $j( '#order_checkout_payment' ),
+        form_actions        = $j( '#form_actions' ),
+        coupon              = $j( '#checkout_coupon' ),
+        steps               = new Array( login, billing, shipping, order, payment ),
+        payment_method      = function () {
 
             $j( '#place_order' ).on( 'click', function () {
-                var $this 				= $j( '#order_checkout_payment' ).find( 'input[name=payment_method]:checked' ),
-                    current_gateway 	= $this.val(),
-                    order_button_text 	= $this.data( 'order_button_text' );
+                var $this               = $j( '#order_checkout_payment' ).find( 'input[name=payment_method]:checked' ),
+                    current_gateway     = $this.val(),
+                    order_button_text   = $this.data( 'order_button_text' );
 
                 order.find( 'input[name="payment_method"]' ).val( current_gateway ).data( 'order_button_text', order_button_text ).attr( 'checked', 'checked' );
             } );
@@ -66,15 +66,15 @@ function oceanwpWooMultiStepCheckout() {
     } );
 
     form_actions.find( '.button.prev' ).add( '.button.next' ).on( 'click', function( e ) {
-        var $this 			= $j( this ),
-            timeline 		= $j( '#owp-checkout-timeline' ),
-            action 			= $this.data( 'action' ),
-            current_step 	= form_actions.data( 'step' ),
-            next_step 		= current_step + 1,
-            prev_step 		= current_step - 1,
-            prev 			= form_actions.find( '.button.prev' ),
-            next 			= form_actions.find( '.button.next' ),
-            checkout_form 	= $j( 'form.woocommerce-checkout' ),
+        var $this           = $j( this ),
+            timeline        = $j( '#owp-checkout-timeline' ),
+            action          = $this.data( 'action' ),
+            current_step    = form_actions.data( 'step' ),
+            next_step       = current_step + 1,
+            prev_step       = current_step - 1,
+            prev            = form_actions.find( '.button.prev' ),
+            next            = form_actions.find( '.button.next' ),
+            checkout_form   = $j( 'form.woocommerce-checkout' ),
             is_logged_in    = oceanwpLocalize.is_logged_in,
             button_title,
             valid           = false,
@@ -135,7 +135,6 @@ function oceanwpWooMultiStepCheckout() {
                 type: 'POST',
                 url: oceanwpLocalize.ajax_url,
                 data: data,
-                async: false,
                 success: function( response ) {
                     valid = response.valid;
 
@@ -145,17 +144,24 @@ function oceanwpWooMultiStepCheckout() {
                             scrollTop: $j( 'form.woocommerce-checkout' ).offset().top - $offset },
                         'slow' );
                     }
+                    else{
+                        after_validation(timeline,form_actions,checkout_form,checkout_form,steps,action,next_step,current_step,prev_step,prev,next,$offset,is_logged_in,coupon);                    }
                 },
                 complete: function() {}
             } );
 
         } else {
             valid = true;
-        }
+            after_validation(timeline,form_actions,checkout_form,checkout_form,steps,action,next_step,current_step,prev_step,prev,next,$offset,is_logged_in,coupon);        }
 
-        if ( valid ) {
 
-            timeline.find( '.active' ).removeClass( 'active' );
+
+    } );
+
+}
+function after_validation(timeline,form_actions,checkout_form,checkout_form,steps,action,next_step,current_step,prev_step,prev,next,$offset,is_logged_in,coupon)
+{
+               timeline.find( '.active' ).removeClass( 'active' );
 
             if ( action == 'next' ) {
                 form_actions.data( 'step', next_step );
@@ -182,12 +188,12 @@ function oceanwpWooMultiStepCheckout() {
             current_step = form_actions.data( 'step' );
 
             if ( ( current_step == 1
-            		&& is_logged_in == true ) ||
+                    && is_logged_in == true ) ||
                 ( is_logged_in == false
-                	&& ( ( current_step == 0
-                		&& oceanwpLocalize.login_reminder_enabled == 1 )
-                	||  ( current_step == 1
-                		&& oceanwpLocalize.login_reminder_enabled == 0 ) ) ) ) {
+                    && ( ( current_step == 0
+                        && oceanwpLocalize.login_reminder_enabled == 1 )
+                    ||  ( current_step == 1
+                        && oceanwpLocalize.login_reminder_enabled == 0 ) ) ) ) {
                 prev.fadeOut( 120 );
             } else {
                 prev.fadeIn( 120 );
@@ -214,9 +220,4 @@ function oceanwpWooMultiStepCheckout() {
                 coupon.fadeOut( 80 );
                 next.fadeIn( 120 );
             }
-
-        }
-
-    } );
-
 }

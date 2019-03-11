@@ -2,11 +2,55 @@
 Woo Mini Cart
 -------------------------------------------------------------------*/
 
-// Configuration
-@import "config";
+// Box Shadow
+@mixin box-shadow( $args ) {
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+}
 
-// Mixins
-@import "mixins";
+// Opacity
+@mixin opacity( $args ) {
+    -moz-opacity: $args;
+    -webkit-opacity: $args;
+    opacity: $args;
+}
+
+// Transition
+@mixin transition( $args ) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+// Display Flex
+@mixin display() {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+// Flex Wrap
+@mixin flex-wrap( $args ) {
+    -ms-flex-wrap: $args;
+    -webkit-flex-wrap: $args;
+    flex-wrap: $args;
+}
+
+// Flex Direction
+@mixin flex-direction( $args ) {
+    -webkit-flex-direction: $args;
+    flex-direction: $args;
+}
+
+// Align Items
+@mixin align-items( $args ) {
+    -webkit-align-items: $args;
+    align-items: $args;
+}
 
 .current-shop-items-dropdown {
 	position: absolute;
@@ -125,8 +169,8 @@ Woo Mini Cart
 				    border: 1px solid #e6e6e6;
 
 					&:hover {
-						color: $color-5;
-						border-color: $color-5;
+						color: #13aff0;
+						border-color: #13aff0;
 					}
 				}
     		}
@@ -183,7 +227,7 @@ Woo Mini Cart
 			color: #666;
 
 			&:hover {
-				border-color: $color-5;
+				border-color: #13aff0;
 			}
 		}
 	}
@@ -236,7 +280,7 @@ Woo Mini Cart
 	margin-right: 7px;
 
 	span {
-		color: $color-2;
+		color: #333;
 	}
 }
 
@@ -251,8 +295,8 @@ Woo Mini Cart
 	    font-size: 1em;
 	    line-height: 1.7em;
 	    font-weight: bold;
-	    border: 2px solid $color-2;
-	    color: $color-2;
+	    border: 2px solid #333;
+	    color: #333;
 	    padding: 0 3px;
 	    vertical-align: middle;
 	    text-align: center;
@@ -267,7 +311,7 @@ Woo Mini Cart
 		    height: 8px;
 		    margin-left: -7px;
 		    margin-bottom: 0;
-		    border: 2px solid $color-2;
+		    border: 2px solid #333;
 		    border-top-left-radius: 100px;
 		    border-top-right-radius: 100px;
 		    border-bottom: 0;
@@ -278,12 +322,12 @@ Woo Mini Cart
 
 .bag-style:hover .wcmenucart-cart-icon .wcmenucart-count,
 .show-cart .wcmenucart-cart-icon .wcmenucart-count {
-	background-color: $color-5;
-    color: $color-1;
-	border-color: $color-5;
+	background-color: #13aff0;
+    color: #fff;
+	border-color: #13aff0;
 
     &:after {
-		border-color: $color-5;
+		border-color: #13aff0;
     	height: 10px;
     }
 }

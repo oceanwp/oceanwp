@@ -1,22 +1,16 @@
-// Configuration
-@import "config";
-
-// Mixins
-@import "mixins";
-
 .editor-post-title__block .editor-post-title__input {
     font-size: 30px;
     font-size: 2rem;
-    font-family: $body-font-family;
+    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
   }
 
 .editor-block-list__block {
 
-    font-family: $body-font-family;
-	font-size: $font-size;
-	line-height: $base-line-height;
-	color: $body-font-color;
+    font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	line-height: 1.8;
+	color: #929292;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
@@ -26,9 +20,9 @@
     h4,
     h5,
     h6 {
-        font-weight: $heading-font-weight;
+        font-weight: 600;
         margin: 0 0 20px;
-        color: $heading-font-color;
+        color: #333;
         line-height: 1.4;
     }
 
@@ -67,7 +61,7 @@
             font-family: 'FontAwesome';
             font-size: 18px;
             font-weight: 600;
-            color: $color-5;
+            color: #13aff0;
             padding-right: 6px;
         }
     }
@@ -111,7 +105,7 @@
         padding-left: 20px;
         border-left-width: 3px;
         border-style: solid;
-        border-color: $color-5;
+        border-color: #13aff0;
 
         cite {
             position: relative;
@@ -179,24 +173,28 @@
 
 .mce-content-body {
     a {
-        color: $link-color;
+        color: #333;
 
         &:hover {
-            color: $link-hover-color;
+            color: #13aff0;
         }
     }
 
     a.light {
-        color: $color-1;
+        color: #fff;
 
         &:hover {
-            color: $link-hover-color;
+            color: #13aff0;
         }
     }
 
     a, a:hover, a:focus {
         text-decoration: none;
-        @include transition( all .3s ease );
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
     }
 }
 
