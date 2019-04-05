@@ -24,6 +24,13 @@ function oceanwp_tgmpa_register() {
 			'force_activation'	=> false,
 		),
 
+		array(
+			'name'				=> 'Rank Math',
+			'slug'				=> 'seo-by-rank-math', 
+			'required'			=> false,
+			'force_activation'	=> false,
+		),
+
 	);
 
 	// If WPForms Pro is not active, recommend WPForms
