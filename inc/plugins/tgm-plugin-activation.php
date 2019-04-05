@@ -25,7 +25,7 @@ function oceanwp_tgmpa_register() {
 		),
 
 		array(
-			'name'				=> 'Rank Math',
+			'name'				=> 'Rank Math SEO',
 			'slug'				=> 'seo-by-rank-math', 
 			'required'			=> false,
 			'force_activation'	=> false,
