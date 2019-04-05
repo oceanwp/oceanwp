@@ -12,5 +12,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Display tags ?>
 <div class="post-tags clr">
-	<?php the_tags(); ?>
+	<?php the_tags( '<span class="owp-tag-text">' . esc_attr( 'Tags: ', 'oceanwp' ) . '</span>', '<span class="owp-sep">,</span> ', '' ); ?>
 </div>

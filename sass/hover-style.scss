@@ -75,7 +75,7 @@ Woo Hover Style
 		margin-left: auto;
 	}
 
-	li.product {
+	li.product:not(.product-category) {
 		overflow: inherit;
 		padding-bottom: 0;
 
@@ -410,7 +410,7 @@ Woo Hover Style
 body.rtl {
 	&.woocommerce,
 	.woocommerce {
-		ul.products li.product {
+		ul.products li.product:not(.product-category) {
 			.product-inner:hover {
 			    z-index: 2;
 
@@ -469,7 +469,7 @@ body.rtl {
 
 /* Responsive */
 @media only screen and (max-width: 1500px) {
-	.woocommerce ul.products li.product .product-inner:hover {
+	.woocommerce ul.products li.product:not(.product-category) .product-inner:hover {
 	    .woo-product-gallery {
 		    display: none;
 		}

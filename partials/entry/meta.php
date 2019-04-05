@@ -35,7 +35,7 @@ if ( empty( $sections ) ) {
 		<?php } ?>
 
 		<?php if ( 'categories' == $section ) { ?>
-			<li class="meta-cat"><i class="icon-folder"></i><?php the_category( ' / ', get_the_ID() ); ?></li>
+			<li class="meta-cat"><i class="icon-folder"></i><?php the_category( ' <span class="owp-sep">/</span> ', get_the_ID() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'comments' == $section && comments_open() && ! post_password_required() ) { ?>
