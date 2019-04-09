@@ -56,8 +56,11 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 	
 	// Rank Math breadcrumbs
 	if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+		if ( ! isset( rank_math()->breadcrumbs ) ) {
+			rank_math()->breadcrumbs = new RankMath\Frontend\Breadcrumbs;
+		}
 		return rank_math_the_breadcrumbs();
-    }
+	}
 
 	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
 
@@ -92,7 +95,7 @@ add_action( 'seopress_breadcrumbs_after_html', 'sp_breadcrumbs_after' );
  *
  * @since  1.6.5
  */
-function rm_breadcrumbs() {
+function rm_breadcrumbs( $args ) {
 	$classes = 'site-breadcrumbs clr';
 	if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
 		$classes .= ' position-'. $breadcrumbs_position;
