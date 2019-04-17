@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2019.04.17* - 1.6.6:
+* **Updated** - WooCommerce file.
+
 ### *2019.04.17* - 1.6.5:
 * **Added** - Rank Math breadcrumbs support.
 * **Added** - New Title Tag setting in the Single Product section of the customizer to allow you to choose which title tag you want for the single product titles.
