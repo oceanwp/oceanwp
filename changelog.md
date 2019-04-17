@@ -1,5 +1,17 @@
 # OceanWP Changelog
 
+### *2019.04.17* - 1.6.5:
+* **Added** - Rank Math breadcrumbs support.
+* **Added** - New Title Tag setting in the Single Product section of the customizer to allow you to choose which title tag you want for the single product titles.
+* **Added** - Farsi language, thanks a lot to Hossein Abedzadeh, from HamyarWP.com.
+* **Tweak** - Now if the Yoast SEO Breadcrumb is not enabled, the default theme breadcrumb is used.
+* **Tweak** - If the Display Cart When Product Added is enabled and you don’t use the Ocean Sticky Header plugin, an animation will go to the top of the page to show the cart.
+* **Fixed** - Issue on the second step of the multi-step checkout page.
+* **Fixed** - Breadcrumb SEO issue with markups.
+* **Fixed** - Undefined word on single related products.
+* **Fixed** - Issue on category product if the Hover Style is selected.
+* **Fixed** - JS issue with the SmoothScroll script.
+
 ### *2019.02.15* - 1.6.4:
 * **Fixed** - Elementor header and footer CSS issue.
 
