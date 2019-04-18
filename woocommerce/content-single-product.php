@@ -17,6 +17,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+global $product;
+
 /**
  * Hook: woocommerce_before_single_product.
  *
