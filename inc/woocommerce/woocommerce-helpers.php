@@ -133,12 +133,8 @@ if ( ! function_exists( 'oceanwp_woo_product_instock' ) ) {
 	function oceanwp_woo_product_instock( $post_id = '' ) {
 		global $post;
 		$post_id      = $post_id ? $post_id : $post->ID;
-		$stock_status = get_post_meta( $post_id, '_stock_status', true );
-		if ( 'instock' == $stock_status ) {
-			return true;
-		} else {
-			return false;
-		}
+		$product = wc_get_product($post_id);
+		return $product->is_in_stock();
 	}
 
 }
