@@ -55,10 +55,7 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
     }
 	
 	// Rank Math breadcrumbs
-	if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
-		if ( ! isset( rank_math()->breadcrumbs ) ) {
-			rank_math()->breadcrumbs = new RankMath\Frontend\Breadcrumbs;
-		}
+	if ( function_exists( 'rank_math_the_breadcrumbs' ) && RankMath\Helper::get_settings( 'general.breadcrumbs' ) ) {
 		return rank_math_the_breadcrumbs();
 	}
 
