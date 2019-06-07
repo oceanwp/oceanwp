@@ -4664,6 +4664,11 @@ Woo Quantity Buttons
   min-height: 36px;
 }
 
+.woocommerce form input.qty[type="number"] {
+  -moz-appearance: textfield;
+  /* hack firefox */
+}
+
 /*------------------------------------------------------------------
 Woo Product Navigation
 -------------------------------------------------------------------*/

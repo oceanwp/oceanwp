@@ -2000,6 +2000,13 @@ if ( ! function_exists( 'oceanwp_title' ) ) {
 			$title = esc_html__( '404: Page Not Found', 'oceanwp' );
 
 		}
+
+		// Fix for WooCommerce My Accounts pages
+		elseif( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url() ) {
+			$endpoint       = WC()->query->get_current_endpoint();
+			$endpoint_title = WC()->query->get_endpoint_title( $endpoint );
+			$title          = $endpoint_title ? $endpoint_title : $title;
+		}
 		
 		// Anything else with a post_id defined
 		elseif ( $post_id ) {

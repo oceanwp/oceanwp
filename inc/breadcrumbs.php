@@ -687,8 +687,16 @@ class OceanWP_Breadcrumb_Trail {
 		if ( true == get_theme_mod( 'ocean_breadcrumb_show_title', true )
 			&& $post_title = single_post_title( '', false ) ) {
 
-			if ( 1 < get_query_var( 'page' ) || is_paged() || true === $this->args['show_title'] )
+			if ( 1 < get_query_var( 'page' ) || is_paged() || true === $this->args['show_title'] ) {
 				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), $post_title );
+			}
+
+			if ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url() ){
+				$endpoint       = WC()->query->get_current_endpoint();
+				$endpoint_title = WC()->query->get_endpoint_title( $endpoint );
+
+				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( wc_get_endpoint_url( $endpoint ) ), $endpoint_title );
+			}
 		}
 	}
 

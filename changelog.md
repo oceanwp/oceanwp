@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2019.06.07* - 1.6.8:
+* **Fixed** - WooCommerce issues.
+
 ### *2019.04.18* - 1.6.7:
 * **Fixed** - Single product layout issue.
 
