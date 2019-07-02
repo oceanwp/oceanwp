@@ -16,6 +16,8 @@ function oceanwpMobileMenu( event ) {
 	if ( typeof oceanwpLocalize.sidrSource !== 'undefined'
 		&& $j( 'body' ).hasClass( 'sidebar-mobile' ) ) {
 
+		var $first = true;
+
 		// Add sidr
 		$j( '.mobile-menu' ).sidr( {
 			name     : 'sidr',
@@ -31,47 +33,51 @@ function oceanwpMobileMenu( event ) {
 				// Class of the custom opening button
 				$j( '.mobile-menu > .hamburger' ).addClass( 'is-active' );
 
-				// Declare useful vars
-				var $hasChildren = $j( '.sidr-class-menu-item-has-children' );
+				if ( $first == true ) {
+					// Declare useful vars
+					var $hasChildren = $j( '.sidr-class-menu-item-has-children' );
 
-				// Add dropdown toggle (plus)
-				$hasChildren.children( 'a' ).append( '<span class="sidr-class-dropdown-toggle"></span>' );
+					// Add dropdown toggle (plus)
+					$hasChildren.children( 'a' ).append( '<span class="sidr-class-dropdown-toggle"></span>' );
 
-				// Toggle dropdowns
-				var $sidrDropdownTarget = $j( '.sidr-class-dropdown-toggle' );
+					// Toggle dropdowns
+					var $sidrDropdownTarget = $j( '.sidr-class-dropdown-toggle' );
 
-				// Check localization
-				if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
-					$sidrDropdownTarget = $j( 'li.sidr-class-menu-item-has-children > a' );
-				}
-
-				// Add toggle click event
-				$sidrDropdownTarget.on( 'click', function( event ) {
-
-					// Define toggle vars
+					// Check localization
 					if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
-						var $toggleParentLi   = $j( this ).parent( 'li' );
-					} else {
-						var $toggleParentLink = $j( this ).parent( 'a' ),
-							$toggleParentLi   = $toggleParentLink.parent( 'li' );
+						$sidrDropdownTarget = $j( 'li.sidr-class-menu-item-has-children > a' );
 					}
 
-					// Get parent items and dropdown
-					var $allParentLis = $toggleParentLi.parents( 'li' ),
-						$dropdown     = $toggleParentLi.children( 'ul' );
+					// Add toggle click event
+					$sidrDropdownTarget.on( 'click', function( event ) {
 
-					// Toogle items
-					if ( ! $toggleParentLi.hasClass( 'active' ) ) {
-						$hasChildren.not( $allParentLis ).removeClass( 'active' ).children( 'ul' ).slideUp( 'fast' );
-						$toggleParentLi.addClass( 'active' ).children( 'ul' ).slideDown( 'fast' );
-					} else {
-						$toggleParentLi.removeClass( 'active' ).children( 'ul' ).slideUp( 'fast' );
-					}
+						// Define toggle vars
+						if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
+							var $toggleParentLi   = $j( this ).parent( 'li' );
+						} else {
+							var $toggleParentLink = $j( this ).parent( 'a' ),
+								$toggleParentLi   = $toggleParentLink.parent( 'li' );
+						}
 
-					// Return false
-					return false;
+						// Get parent items and dropdown
+						var $allParentLis = $toggleParentLi.parents( 'li' ),
+							$dropdown     = $toggleParentLi.children( 'ul' );
 
-				} );
+						// Toogle items
+						if ( ! $toggleParentLi.hasClass( 'active' ) ) {
+							$hasChildren.not( $allParentLis ).removeClass( 'active' ).children( 'ul' ).slideUp( 'fast' );
+							$toggleParentLi.addClass( 'active' ).children( 'ul' ).slideDown( 'fast' );
+						} else {
+							$toggleParentLi.removeClass( 'active' ).children( 'ul' ).slideUp( 'fast' );
+						}
+
+						// Return false
+						return false;
+
+					} );
+
+					$first = false;
+				}
 
 				// Add light overlay to content
 				$j( 'body' ).append( '<div class="oceanwp-sidr-overlay"></div>' );
@@ -108,14 +114,14 @@ function oceanwpMobileMenu( event ) {
 
 		} );
 
-        // Replace Font Awesome icons class
+        	// Replace Font Awesome icons class
 		$j( '#sidr [class*="sidr-class-fa"]' ).attr( 'class', function( i, c ) {
 			c = c.replace( 'sidr-class-fa', 'fa' );
 			c = c.replace( 'sidr-class-fa-', 'fa-' );
 			return c;
 		} );
 
-        // Replace Simple Line Icons class
+        	// Replace Simple Line Icons class
 		$j( '#sidr [class*="sidr-class-icon"]' ).attr( 'class', function( i, c ) {
 			c = c.replace( 'sidr-class-icon-', 'icon-' );
 			return c;
