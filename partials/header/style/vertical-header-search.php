@@ -28,5 +28,6 @@ $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
 		<?php if ( 'any' != $post_type ) { ?>
 			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 		<?php } ?>
+		<?php do_action( 'wpml_add_language_form_field' ); ?>
 	</form>
 </div><!-- #vertical-searchform -->

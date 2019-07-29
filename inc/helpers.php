@@ -1696,6 +1696,9 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 						&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
 						$items .= '<label>'. esc_html__( 'Type your search', 'oceanwp' ) .'<span><i></i><i></i><i></i></span></label>';
 					}
+					if( ICL_LANGUAGE_CODE ){
+						$items .= '<input type="hidden" name="lang" value="'.ICL_LANGUAGE_CODE.'"/>';
+					}
 				$items .= '</form>';
 			} else {
 				$items .= '<a href="#" class="site-search-toggle'. $class .'">';
