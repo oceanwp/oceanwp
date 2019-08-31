@@ -1,5 +1,17 @@
 # OceanWP Changelog
 
+### *2019.08.18* - 1.7.1:
+* **Fixed** - WooCommerce outdated file.
+
+### *2019.08.18* - 1.7.0:
+* **Added** - Get theme ready for the Freemius switch.
+
+### *2019.08.04* - 1.6.10:
+* **Added** - Codes for Freemius update.
+
+### *2019.08.04* - 1.6.9:
+* **Added** - Some codes for the upcoming switch to Freemius.
+
 ### *2019.06.07* - 1.6.8:
 * **Fixed** - WooCommerce issues.
 
