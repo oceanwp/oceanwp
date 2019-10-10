@@ -24,17 +24,17 @@ msgstr ""
 
 #: 404.php:103
 msgid "This page could not be found!"
-msgstr "Oups, cette page n’existe pas !"
+msgstr "Oups, cette page est introuvable !"
 
 #: 404.php:104
 msgid "We are sorry. But the page you are looking for is not available."
-msgstr "Nous sommes désolés, mais la page que vous cherchez n’existe plus."
+msgstr "Nous sommes désolés, mais la page que vous cherchez n’est pas disponnible."
 
 #: 404.php:104
 #, fuzzy
 #| msgid "Perhaps you can try a new searching."
-msgid "Perhaps you can try a new search."
-msgstr "Peut-être vous pouvez essayer une nouvelle recherche."
+msgid "If this page does exist, you may need to log in to see it. Otherwise, you can try to look for it via a search."
+msgstr "Si cette page existe bien, il est possible que vous ayez besoin de vous connecter pour y accéder. Sinon, vous pouvez la chercher par une recherche."
 
 #: 404.php:106
 msgid "Back To Homepage"
