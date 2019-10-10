@@ -34,7 +34,7 @@ msgstr "Nous sommes désolés mais la page que vous cherchez n’est pas disponn
 #, fuzzy
 #| msgid "Perhaps you can try a new searching."
 msgid "Perhaps you can try a new search."
-msgstr "Si cette page existe bien, il est possible que vous ayez besoin de vous connecter pour y accéder. Sinon, vous pouvez la chercher par une recherche."
+msgstr "Si cette page existe bien, il est possible que vous ayez besoin de vous connecter pour y accéder ou que vous ayez des droits que vous n'avez pas. Sinon, vous pouvez la chercher par une recherche."
 
 #: 404.php:106
 msgid "Back To Homepage"
