@@ -86,7 +86,7 @@ $caption = get_the_post_thumbnail_caption(); ?>
 	// Caption
 	if ( $caption ) { ?>
 		<div class="thumbnail-caption">
-			<?php echo esc_attr( $caption ); ?>
+			<?php echo wp_kses_post( $caption ); ?>
 		</div>
 	<?php
 	} ?>
