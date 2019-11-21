@@ -4804,7 +4804,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Search overlay close button color
 			if ( ! empty( $search_overlay_close_button_color ) && '#ffffff' != $search_overlay_close_button_color ) {
-				$css .= '.search-overlay .search-toggle-li .search-overlay-toggle.exit > span:before{color:'. $search_overlay_close_button_color .';}';
+				$css .= '#searchform-overlay a.search-overlay-close span::before, #searchform-overlay a.search-overlay-close span::after{background-color:'. $search_overlay_close_button_color .';}';
 			}
 
 			// Links effect blue color
