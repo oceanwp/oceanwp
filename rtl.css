@@ -23,7 +23,7 @@ table th, table td, caption, th, td { text-align: right; }
 
 /* Theme heading */
 .theme-heading .text::before { display: none; }
-.theme-heading .text::after { content: '\f104'; font-family: 'FontAwesome'; font-size: 18px; font-weight: 600; color: #13aff0; padding-left: 6px;}
+.theme-heading .text::after { content: '\f104'; font-family: 'Font Awesome 5 Free'; font-size: 18px; font-weight: 600; color: #13aff0; padding-left: 6px;}
 
 /* Change right position to Left position*/
 .site-breadcrumbs,

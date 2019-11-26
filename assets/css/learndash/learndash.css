@@ -86,7 +86,7 @@ a#quiz_continue_link:focus {
   top: 10px;
   right: 20px;
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal 900 14px/1 'Font Awesome 5 free';
   font-size: 20px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -121,7 +121,7 @@ a#quiz_continue_link:focus {
 .learndash_topic_dots .topic-notcompleted span:before,
 .learndash_topic_dots ul .topic-completed span:before,
 .learndash_topic_dots ul .topic-notcompleted span:before {
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal 900 14px/1 'Font Awesome 5 free';
   font-size: 20px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -175,7 +175,7 @@ a#quiz_continue_link:focus {
 
 #learndash_profile .list_arrow.collapse:before,
 #learndash_profile .list_arrow.expand:before {
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal 900 14px/1 'Font Awesome 5 free';
   font-size: 20px;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;

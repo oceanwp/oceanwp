@@ -14,7 +14,7 @@
     z-index: 1;
 
     &:after {
-        font-family: 'FontAwesome';
+        font-family: 'Font Awesome 5 Free';
         content: '\f107';
         position: absolute;
         right: 0;
@@ -23,6 +23,7 @@
         height: 32px;
         width: 32px;
         font-size: 11px;
+        font-weight: 600;
         color: $color-4;
         border-left: 1px solid $color-10;
         text-align: center;

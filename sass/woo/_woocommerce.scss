@@ -1208,8 +1208,9 @@
 				overflow: hidden;
 				&:before {
 					display: inline-block;
-					font-family: 'FontAwesome';
+					font-family: 'Font Awesome 5 Free';
 					font-size: inherit;
+					font-weight: 900;
 					text-rendering: auto;
 					display: block;
 					content: '\f002';
@@ -2449,12 +2450,13 @@ ul {
 					margin: 0;
 					letter-spacing: 0.4px;
 					&:before {
-						font-family: 'FontAwesome';
+						font-family: 'Font Awesome 5 Free';
 						text-rendering: auto;
 						display: inline-block;
 						font-size: inherit;
-						content: '\f10c';
+						content: '\f111';
 						color: #333;
+						font-weight: 400;
 						margin-right: 10px;
 						@include transition( color .2s ease );
 					}
@@ -3142,9 +3144,9 @@ form.checkout {
 .woocommerce .widget_shopping_cart_content .buttons .button:after,
 .woocommerce div.product form.cart .variations .reset_variations:before,
 .wcmenucart i {
-	font-weight: normal;
 	font-style: normal;
 	letter-spacing: normal;
+	font-weight: 600;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -3375,14 +3377,15 @@ form.checkout {
 					cursor: pointer;
 					margin: 0;
 					letter-spacing: .4px;
-						
+
 					&:before {
-						font-family: fontawesome;
+						font-family: 'Font Awesome 5 Free';
 						text-rendering: auto;
 						display: inline-block;
 						font-size: inherit;
-						content: '\f10c';
+						content: '\f111';
 						color: #333;
+						font-weight: 400;
 						margin-right: 10px;
 						-webkit-transition: color .2s ease;
 						-moz-transition: color .2s ease;

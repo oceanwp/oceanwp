@@ -21,8 +21,8 @@ $term_tax = $term_tax ? $term_tax : 'post_tag';
 
 // Args
 $args = array(
-	'prev_text'             => '<span class="title"><i class="fa fa-long-arrow-left"></i>'. esc_html__( 'Previous Post', 'oceanwp' ) .'</span><span class="post-title">%title</span>',
-    'next_text'             => '<span class="title"><i class="fa fa-long-arrow-right"></i>'. esc_html__( 'Next Post', 'oceanwp' ) .'</span><span class="post-title">%title</span>',
+	'prev_text'             => '<span class="title"><i class="fas fa-long-arrow-alt-left"></i>'. esc_html__( 'Previous Post', 'oceanwp' ) .'</span><span class="post-title">%title</span>',
+    'next_text'             => '<span class="title"><i class="fas fa-long-arrow-alt-right"></i>'. esc_html__( 'Next Post', 'oceanwp' ) .'</span><span class="post-title">%title</span>',
     'in_same_term'          => true,
     'taxonomy'              => $term_tax,
     'screen_reader_text'    => esc_html__( 'Continue Reading', 'oceanwp' ),

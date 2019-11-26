@@ -143,7 +143,7 @@ a.sidr-class-toggle-sidr-close {
   @include transition( all .3s ease );
 
   &:before {
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 5 Free';
     content: '+';
     font-size: 20px;
     position: absolute;
@@ -163,10 +163,11 @@ a.sidr-class-toggle-sidr-close {
   }
 
   ul a:before {
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 5 Free';
     content: '\f105';
     display: inline-block;
     margin: 0 10px;
+    font-weight: 600;
   }
 
   ul ul a:before {

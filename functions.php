@@ -387,7 +387,7 @@ final class OCEANWP_Theme_Class {
 		wp_deregister_style( 'fontawesome' );
 
 		// Load font awesome style
-		wp_enqueue_style( 'font-awesome', $dir .'third/font-awesome.min.css', false, '4.7.0' );
+		wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI .'/assets/fonts/fontawesome/css/all.min.css', false, '5.11.2' );
 
 		// Register simple line icons style
 		wp_enqueue_style( 'simple-line-icons', $dir .'third/simple-line-icons.min.css', false, '2.4.0' );
@@ -933,4 +933,55 @@ final class OCEANWP_Theme_Class {
 	}
 
 }
+
+#--------------------------------------------------------------------------------
+#region Freemius - This logic will only be executed when Ocean Extra is active and has the Freemius SDK
+#--------------------------------------------------------------------------------
+
+if ( ! function_exists( 'owp_fs' ) ) {
+    if ( class_exists( 'Ocean_Extra' ) &&
+         defined( 'OE_FILE_PATH' ) &&
+         file_exists( dirname( OE_FILE_PATH ) . '/includes/freemius/start.php' )
+    ) {
+        // Create a helper function for easy SDK access.
+        function owp_fs() {
+            global $owp_fs;
+
+            if ( ! isset( $owp_fs ) ) {
+                // Include Freemius SDK.
+                require_once dirname( OE_FILE_PATH ) . '/includes/freemius/start.php';
+
+                $owp_fs = fs_dynamic_init( array(
+                    'id'                => '3752',
+                    'bundle_id'         => '3767',
+                    'slug'              => 'oceanwp',
+                    'type'              => 'theme',
+                    'public_key'        => 'pk_043077b34f20f5e11334af3c12493',
+                    'bundle_public_key' => 'pk_c334eb1ae413deac41e30bf00b9dc',
+                    'is_premium'        => false,
+                    'has_addons'        => true,
+                    'has_paid_plans'    => true,
+                    'menu'              => array(
+                        'slug'    => 'oceanwp-panel',
+                        'account' => true,
+                        'contact' => false,
+                        'support' => false,
+                    ),
+                    'navigation'        => 'menu',
+                    'is_org_compliant'  => true,
+                ) );
+            }
+
+            return $owp_fs;
+        }
+
+        // Init Freemius.
+        owp_fs();
+        // Signal that SDK was initiated.
+        do_action( 'owp_fs_loaded' );
+    }
+}
+
+#endregion
+
 new OCEANWP_Theme_Class;

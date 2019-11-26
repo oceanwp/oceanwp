@@ -1577,7 +1577,7 @@ h6 {
 
 .theme-heading .text::before {
   content: '\f105';
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
   font-size: 18px;
   font-weight: 600;
   color: #13aff0;
@@ -1888,7 +1888,7 @@ input[type=checkbox]:checked:before {
   vertical-align: middle;
   width: 16px;
   line-height: 14px;
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2605,9 +2605,9 @@ a.pure-button-selected {
   display: block;
   height: 100%;
   z-index: 2;
-  background: -moz-linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
-  background: -webkit-linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
+  background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
+  background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 #site-header .custom-header-media video, #site-header .custom-header-media iframe {
@@ -6360,7 +6360,8 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 }
 
 #mobile-fullscreen ul li .dropdown-toggle:before {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 600;
   content: '+';
 }
 
@@ -7908,7 +7909,7 @@ time.published i {
 }
 
 .theme-select:after {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
   content: '\f107';
   position: absolute;
   right: 0;
@@ -7917,6 +7918,7 @@ time.published i {
   height: 32px;
   width: 32px;
   font-size: 11px;
+  font-weight: 600;
   color: #929292;
   border-left: 1px solid #ddd;
   text-align: center;
@@ -9099,7 +9101,7 @@ a.sidr-class-toggle-sidr-close i {
 }
 
 .sidr-class-dropdown-toggle:before {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
   content: '+';
   font-size: 20px;
   position: absolute;
@@ -9117,10 +9119,11 @@ a.sidr-class-toggle-sidr-close i {
 }
 
 .sidr-class-dropdown-menu ul a:before {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
   content: '\f105';
   display: inline-block;
   margin: 0 10px;
+  font-weight: 600;
 }
 
 .sidr-class-dropdown-menu ul ul a:before {

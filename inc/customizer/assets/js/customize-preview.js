@@ -8086,7 +8086,7 @@
 				var $child = $(".customizer-ocean_stars_color_before");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_stars_color_before">.woocommerce .star-rating::before{ color: ' + to + "!important; }</style>";
+					var img = '<style class="customizer-ocean_stars_color_before">.woocommerce .star-rating:before{ color: ' + to + "!important; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -8097,19 +8097,8 @@
 				}
 			});
 		}), api("ocean_stars_color", function($swipe) {
-			$swipe.bind(function(to) {
-				var $child = $(".customizer-ocean_stars_color");
-				if (to) {
-					/** @type {string} */
-					var img = '<style class="customizer-ocean_stars_color">.woocommerce .star-rating span::before{ color: ' + to + "!important; }</style>";
-					if ($child.length) {
-						$child.replaceWith(img);
-					} else {
-						$("head").append(img);
-					}
-				} else {
-					$child.remove();
-				}
+			$swipe.bind(function(size) {
+				$(".woocommerce .star-rating span").css("color", size);
 			});
 		}), api("ocean_quantity_border_color", function($swipe) {
 			$swipe.bind(function(size) {

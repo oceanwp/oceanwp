@@ -171,7 +171,7 @@
 	.llms-prev-lesson .llms-pre-text::before,
 	.llms-next-lesson .llms-pre-text::after{
 		display: inline-block;
-		font: normal normal normal 14px/1 FontAwesome;
+		font: normal normal 900 14px/1 'Font Awesome 5 free';
 		font-size: inherit;
 		text-rendering: auto;
 		-webkit-font-smoothing: antialiased;
@@ -198,7 +198,7 @@
 #llms_mark_complete::before,
 .llms-lesson-button-wrapper::before{
 	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
+	font: normal normal 900 14px/1 'Font Awesome 5 free';
 	font-size: inherit;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;

@@ -958,7 +958,7 @@ class OceanWP_Breadcrumb_Trail {
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
 
 		// Add the week item.
-		if ( is_paged() || true === $this->args['show_title'] )
+		if ( is_paged() || true === $this->args['show_title'] )
 			$this->items[] = esc_url( get_archives_link( add_query_arg( array( 'm' => get_the_time( 'Y' ), 'w' => get_the_time( 'W' ) ), home_url() ), $week, false ) );
 	}
 

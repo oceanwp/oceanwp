@@ -70,7 +70,7 @@ a#quiz_continue_link:focus{
 		top: 10px;
 		right: 20px;
 		display: inline-block;
-		font: normal normal normal 14px/1 FontAwesome;
+		font: normal normal 900 14px/1 'Font Awesome 5 free';
 		font-size: 20px;
 		text-rendering: auto;
 		-webkit-font-smoothing: antialiased;
@@ -97,7 +97,7 @@ a#quiz_continue_link:focus{
 	background: 0 0;
 
 	&:before{
-		font: normal normal normal 14px/1 FontAwesome;
+		font: normal normal 900 14px/1 'Font Awesome 5 free';
 		font-size: 20px;
 		text-rendering: auto;
 		-webkit-font-smoothing: antialiased;
@@ -151,7 +151,7 @@ a#quiz_continue_link:focus{
 		color: $color-15;
 	
 		&:before{
-			font: normal normal normal 14px/1 FontAwesome;
+			font: normal normal 900 14px/1 'Font Awesome 5 free';
 			font-size: 20px;
 			text-rendering: auto;
 			-webkit-font-smoothing: antialiased;

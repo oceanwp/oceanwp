@@ -5723,12 +5723,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add stars color
 			if ( ! empty( $stars_color ) && '#f9ca63' != $stars_color ) {
-				$css .= '.woocommerce .star-rating span:before{color:'. $stars_color .';}';
+				$css .= '.woocommerce .star-rating span{color:'. $stars_color .';}';
 			}
 
 			// Add quantity border color
 			if ( ! empty( $quantity_border_color ) && '#e4e4e4' != $quantity_border_color ) {
-				$css .= '.quantity .qty, .quantity .minus, .quantity .plus{border-color:'. $quantity_border_color .';}';
+				$css .= '.quantity .qty,.quantity .qty-changer a{border-color:'. $quantity_border_color .';}';
 			}
 
 			// Add quantity border color focus
@@ -5743,17 +5743,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add quantity plus/minus color
 			if ( ! empty( $quantity_plus_minus_color ) && '#cccccc' != $quantity_plus_minus_color ) {
-				$css .= '..quantity .minus, .quantity .plus{color:'. $quantity_plus_minus_color .';}';
+				$css .= '.quantity .qty-changer a{color:'. $quantity_plus_minus_color .';}';
 			}
 
 			// Add quantity plus/minus color hover
 			if ( ! empty( $quantity_plus_minus_color_hover ) && '#cccccc' != $quantity_plus_minus_color_hover ) {
-				$css .= '.quantity .minus:hover, .quantity .plus:hover{color:'. $quantity_plus_minus_color_hover .';}';
+				$css .= '.quantity .qty-changer a:hover{color:'. $quantity_plus_minus_color_hover .';}';
 			}
 
 			// Add quantity plus/minus border color hover
 			if ( ! empty( $quantity_plus_minus_border_color_hover ) && '#e0e0e0' != $quantity_plus_minus_border_color_hover ) {
-				$css .= '.quantity .minus:hover, .quantity .plus:hover{border-color:'. $quantity_plus_minus_border_color_hover .';}';
+				$css .= '.quantity .qty-changer a:hover{border-color:'. $quantity_plus_minus_border_color_hover .';}';
 			}
 
 			// Add toolbar border color

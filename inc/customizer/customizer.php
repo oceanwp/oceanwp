@@ -109,33 +109,35 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			// Move custom logo setting
 			$wp_customize->get_control( 'custom_logo' )->section 		= 'ocean_header_logo';
 
-			// Add our upsell section
-			if ( true != apply_filters( 'oceanwp_licence_tab_enable', false ) ) {
+            if ( ! function_exists( 'owp_fs' ) ) {
+                // Add our upsell section
+                if ( true != apply_filters( 'oceanwp_licence_tab_enable', false ) ) {
 
-				// Get link
-				$url = 'https://oceanwp.org/core-extensions-bundle/';
+                    // Get link
+                    $url = 'https://oceanwp.org/core-extensions-bundle/';
 
-				// If affiliate ref
-				$ref_url = '';
-				$aff_ref = apply_filters( 'ocean_affiliate_ref', $ref_url );
+                    // If affiliate ref
+                    $ref_url = '';
+                    $aff_ref = apply_filters( 'ocean_affiliate_ref', $ref_url );
 
-				// Add & is has referal link
-				if ( $aff_ref ) {
-					$if_ref = '&';
-				} else {
-					$if_ref = '?';
-				}
+                    // Add & is has referal link
+                    if ( $aff_ref ) {
+                        $if_ref = '&';
+                    } else {
+                        $if_ref = '?';
+                    }
 
-				// Add source
-				$utm = $if_ref . 'utm_source=customizer&utm_campaign=bundle&utm_medium=wp-dash';
+                    // Add source
+                    $utm = $if_ref . 'utm_source=customizer&utm_campaign=bundle&utm_medium=wp-dash';
 
-				$wp_customize->add_section( new OceanWP_Customizer_Upsell_Section_Control( $wp_customize, 'oceanwp_upsell_section', array(
-					'title'	   				=> esc_html__( 'Premium Addons Available', 'oceanwp' ),
-					'url' 					=> $url . $aff_ref . $utm,
-					'priority' 				=> 0,
-				) ) );
+                    $wp_customize->add_section( new OceanWP_Customizer_Upsell_Section_Control( $wp_customize, 'oceanwp_upsell_section', array(
+                        'title'    => esc_html__( 'Premium Addons Available', 'oceanwp' ),
+                        'url'      => $url . $aff_ref . $utm,
+                        'priority' => 0,
+                    ) ) );
 
-			}
+                }
+            }
 
 		}
 
@@ -218,7 +220,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public function custom_customize_enqueue() {
-			wp_enqueue_style( 'font-awesome', OCEANWP_CSS_DIR_URI .'devs/font-awesome.min.css', false, '4.7.0' );
+			wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI .'/assets/fonts/fontawesome/css/all.min.css', false, '5.11.2'  );
 			wp_enqueue_style( 'simple-line-icons', OCEANWP_INC_DIR_URI .'customizer/assets/css/customizer-simple-line-icons.min.css', false, '2.4.0' );
 			wp_enqueue_style( 'oceanwp-general', OCEANWP_INC_DIR_URI . 'customizer/assets/min/css/general.min.css' );
 			wp_enqueue_script( 'oceanwp-general', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/general.min.js', array( 'jquery', 'customize-base' ), false, true );

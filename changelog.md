@@ -1,5 +1,16 @@
 # OceanWP Changelog
 
+### *2019.11.13* - 1.7.3:
+* **Fixed** - Broken icon issue.
+
+### *2019.10.30* - 1.7.2:
+* **Fixed** - Use WooCommerce product object functions.
+* **Fixed** - Updated sidr.js to latest version.
+* **Fixed** - Rank Math SEO Breadcrumb issue.
+* **Added** - Updated to FontAwesome-5 to fix the version conflict.
+* **Fixed** - Searchform compatibility with WPML.
+* **Added** - Updated version number and changelog.
+
 ### *2019.08.18* - 1.7.1:
 * **Fixed** - WooCommerce outdated file.
 
