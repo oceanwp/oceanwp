@@ -1,11 +1,11 @@
 # OceanWP
 
 **Contributors:** Nicolas, Alex, Amit, and Marko
-**Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 5.2.2  
-**Stable tag:** 1.7.3  
-**License:** GPLv3 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
+**Requires at least:** WordPress 4.4
+**Tested up to:** WordPress 5.3
+**Stable tag:** 1.7.4
+**License:** GPLv3 or later
+**License URI:** http://www.gnu.org/licenses/gpl-3.0.html
 **Tags:** two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, rtl-language-support, sticky-post, editor-style, threaded-comments, translation-ready, buddypress, custom-colors, featured-images, full-width-template, theme-options, e-commerce
 
 ## Description

@@ -8,9 +8,9 @@
 .editor-block-list__block {
 
     font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.8;
-	color: #929292;
+	color: #333;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
@@ -173,7 +173,7 @@
 
 .mce-content-body {
     a {
-        color: #333;
+        color: #0550f7;
 
         &:hover {
             color: #13aff0;

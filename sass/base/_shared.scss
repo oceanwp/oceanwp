@@ -43,6 +43,18 @@ object {
 	max-width: 100%;
 }
 
+.alignfull {
+	margin: 32px 0;
+	max-width: 100%;
+	width: 100%;
+}
+
+.alignwide {
+	margin: 32px auto;
+	width: 90%;
+	max-width: 90%;
+}
+
 .alignleft {
 	float: left;
 	margin-right: 1.5em;
@@ -55,6 +67,7 @@ object {
 
 .aligncenter {
 	text-align: center;
+	margin: 0 auto;
 	clear: both;
 }
 

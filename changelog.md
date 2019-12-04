@@ -1,5 +1,14 @@
 # OceanWP Changelog
 
+### *2019.12.04* - 1.7.4:
+* **Fixed** - Responsive design for woocommerce my account page (order and download).
+* **Fixed** - Compatiblity issue - Woocommerce Product Addons with Ajax add to cart feature for single product page, Quick view window.
+* **Fixed** - Icon and checkbox issue.
+* **Fixed** - WPML Search compatibilty.
+* **Fixed** - Removed depreciated function get_wooocmmerce_term_meta.
+* **Fixed** - Gutenberg editor stylesheet improvment.
+
+
 ### *2019.11.13* - 1.7.3:
 * **Fixed** - Broken icon issue.
 

@@ -178,6 +178,26 @@ Woo Responsive
 		&.woocommerce-cart table.shop_table td.product-price {
 			display: none !important;
 		}
+
+		table.shop_table,
+		table.shop_table_responsive {
+			thead {
+				display: none;
+			}
+
+			td {
+				display: block;
+				text-align: right!important;
+
+				&::before {
+					content: attr(data-title) ": ";
+					font-weight: 700;
+					float: left;
+				}
+			}
+
+		}
+
 	}
 	.woocommerce-cart {
 		.cart-collaterals .cart_totals table td {
@@ -274,7 +294,7 @@ Woo Responsive
 		    float: none;
 		    margin-top: 14px;
 		    text-align: left;
-			
+
 			.orderby {
 				width: 100% !important;
 				span {

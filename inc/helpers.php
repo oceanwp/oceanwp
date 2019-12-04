@@ -1696,8 +1696,12 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 						&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
 						$items .= '<label>'. esc_html__( 'Type your search', 'oceanwp' ) .'<span><i></i><i></i><i></i></span></label>';
 					}
-					if( ICL_LANGUAGE_CODE ){
-						$items .= '<input type="hidden" name="lang" value="'.ICL_LANGUAGE_CODE.'"/>';
+					//include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+					if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ){
+						$my_current_lang = apply_filters( 'wpml_current_language', NULL );
+						if( $my_current_lang ){
+							$items .= '<input type="hidden" name="lang" value="'. $my_current_lang .'"/>';
+						}
 					}
 				$items .= '</form>';
 			} else {
