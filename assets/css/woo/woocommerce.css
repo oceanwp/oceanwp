@@ -1981,7 +1981,7 @@
 }
 
 .woocommerce #order_review table.shop_table label {
-  display: inline-block;
+  display: contents;
 }
 
 .woocommerce #order_review table tfoot th {
