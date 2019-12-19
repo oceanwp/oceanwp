@@ -19,7 +19,7 @@
  * @author    Justin Tadlock <justin@justintadlock.com>
  * @copyright Copyright (c) 2008 - 2015, Justin Tadlock
  * @link      https://themehybrid.com/plugins/breadcrumb-trail
- * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @license   https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 /**
@@ -247,8 +247,8 @@ class OceanWP_Breadcrumb_Trail {
 
 				// Wrap the item with its itemprop.
 				$item = ! empty( $matches )
-					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemtype="http://schema.org/Thing" itemprop=$2item$2>', $item )
-					: sprintf( '<span itemprop="item">%s</span>', $item );
+					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemtype="https://schema.org/Thing" itemprop=$2item$2>', $item )
+					: sprintf( '<a span itemprop="item" href="#">%s</span></a>', $item );
 
 				// Add list item classes.
 				$item_class = 'trail-item';
@@ -260,7 +260,7 @@ class OceanWP_Breadcrumb_Trail {
 				}
 
 				// Create list item attributes.
-				$attributes = 'class="' . $item_class . '" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"';
+				$attributes = 'class="' . $item_class . '" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"';
 
 				// Separator
 				if ( $item_count === $item_position ) {
