@@ -1,6 +1,7 @@
 # OceanWP Changelog
 
 ### *2019.12.12* - 1.7.4:
+* **Fixed** - Wrong Yoast breadcrumbs syntax.
 * **Tweak** - Gutenberg editor: font size increased; default paragraph font color darkened.
 * **Fixed** - Font Awesome 5: issues with check boxes and radio buttons.
 * **Fixed** - Gutenberg editor: table not within assigned page/post margins.
