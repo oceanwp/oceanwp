@@ -1,6 +1,7 @@
 # OceanWP Changelog
 
 ### *2019.12.12* - 1.7.4:
+* **Updated** - readme.txt to reflect credit changes.
 * **Fixed** - XFN 1.1 relationships meta data profile.
 * **Fixed** - Wrong Yoast breadcrumbs syntax.
 * **Tweak** - Gutenberg editor: font size increased; default paragraph font color darkened.
