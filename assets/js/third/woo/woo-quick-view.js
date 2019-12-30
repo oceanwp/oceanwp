@@ -40,7 +40,7 @@ $j( document ).on( 'ready', function() {
 				// Display modal
 				qv_modal.fadeIn();
 				qv_modal.addClass( 'is-visible' );
-				
+
 				// Variation Form
 				var form_variation = qv_content.find( '.variations_form' );
 
@@ -82,7 +82,7 @@ $j( document ).on( 'ready', function() {
 	var owpCloseQuickView = function() {
 		$j( 'html' ).css( {
 			'overflow': '',
-			'margin-right': '' 
+			'margin-right': ''
 		} );
 		$j( 'html' ).removeClass( 'owp-qv-open' );
 
@@ -118,7 +118,7 @@ $j( document ).on( 'ready', function() {
 			return this.elements ? jQuery.makeArray(this.elements) : this;
 		}).map(function (i, elem) {
 			var val = jQuery(this).val();
-		
+
 			if (val == null) {
 				return val == null
 

@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### *2019.12.12* - 1.7.4:
+### *2019.12.30* - 1.7.4:
 * **Updated** - readme.txt to reflect credit changes.
 * **Fixed** - XFN 1.1 relationships meta data profile.
 * **Fixed** - Wrong Yoast breadcrumbs syntax.
