@@ -1136,7 +1136,7 @@
 				right: auto;
 				margin-left: 6px;
 				vertical-align: top;
-				font-weight: 400;
+				font-weight: 600;
 				@include animation( spin 2s infinite linear );
 				color: inherit;
 				@include opacity( 1 );
@@ -1589,7 +1589,7 @@
 			}
 
 			label {
-			    display: inline-block;
+			    display: contents;
 			}
 		}
 		tfoot th {

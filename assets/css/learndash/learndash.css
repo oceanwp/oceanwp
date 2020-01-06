@@ -91,14 +91,14 @@ a#quiz_continue_link:focus {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\f05d";
+  content: "\f058";
   text-indent: 0;
   color: #068806;
 }
 
 .learndash .notcompleted:before,
 #learndash_profile .notcompleted:before {
-  content: "\f10c";
+  content: "\f111";
   color: #777;
 }
 
@@ -126,7 +126,7 @@ a#quiz_continue_link:focus {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\f05d";
+  content: "\f058";
   margin-right: 10px;
 }
 

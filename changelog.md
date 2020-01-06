@@ -1,5 +1,20 @@
 # OceanWP Changelog
 
+### *2019.01.06* - 1.7.4:
+* **Updated** - readme.txt to reflect credit changes.
+* **Fixed** - XFN 1.1 relationships meta data profile.
+* **Fixed** - Wrong Yoast breadcrumbs syntax.
+* **Tweak** - Gutenberg editor: font size increased; default paragraph font color darkened.
+* **Fixed** - Font Awesome 5: issues with check boxes and radio buttons.
+* **Fixed** - Gutenberg editor: table not within assigned page/post margins.
+* **Tweak** - WooCommerce product variations available within the cart.
+* **Tweak** - WooCommerce product variations available on Quick View.
+* **Fixed** - WooCommerce Product Addons with Ajax "Add to Cart" feature for the Single Product Page and Quick View.
+* **Fixed** - WPML Search: compatibility issue.
+* **Fixed** - Gutenberg editor: links having the same style as paragraphs.
+* **Fixed** - WooCommerce "My Account" page responsive design issues: "Order" and "Download" sections.
+* **Fixed** - WooCommerce UL responsive design issues.
+
 ### *2019.11.13* - 1.7.3:
 * **Fixed** - Broken icon issue.
 

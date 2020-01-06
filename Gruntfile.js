@@ -1,5 +1,7 @@
 module.exports = function ( grunt ) {
 
+	const sass = require('node-sass');
+
 	// require it at the top and pass in the grunt instance
 	require( 'time-grunt' )( grunt );
 
@@ -106,6 +108,7 @@ module.exports = function ( grunt ) {
 		sass: {
 			dev: { // This outputs the expanded css file
                 options: {
+					implementation: sass,
                     outputStyle: 'expanded',
                     sourceMap: false,
                 },
@@ -126,6 +129,7 @@ module.exports = function ( grunt ) {
             },
             prod: { // This outputs the compressed css file
                 options: {
+					implementation: sass,
                     outputStyle: 'compressed',
                     sourceMap: false,
                 },

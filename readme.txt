@@ -3,7 +3,7 @@ Welcome to OceanWP!
 -------------------------------------------------------
 Website: https://oceanwp.org/
 Support: https://oceanwp.org/support
-Documentation: http://docs.oceanwp.org/
+Documentation: https://docs.oceanwp.org/
 Extensions: https://oceanwp.org/extensions/
 Email: support@oceanwp.org
 
@@ -37,7 +37,7 @@ There are multiple ways you can use a child theme with the OceanWP Theme, Use an
 OceanWP License
 -------------------------------------------------------
 OceanWP is licensed under the GNU General Public License v3 or later
-More details here: http://www.gnu.org/licenses/gpl-3.0.html
+More details here: https://www.gnu.org/licenses/gpl-3.0.html
 
 -------------------------------------------------------
 Screenshot Licenses
@@ -65,15 +65,15 @@ Source: https://github.com/js-cookie/js-cookie/
 
 customSelect, Copyright 2013 Adam Coulombe
 License: MIT
-Source: http://adam.co/lab/jquery/customselect/
+Source: https://adam.co/lab/jquery/customselect/
 
 Isotope, Copyright 2015 Metafizzy
 License: MIT/GPLv3
-Source: http://isotope.metafizzy.co
+Source: https://isotope.metafizzy.co
 
 Match Heights, Copyright (c) 2014 Liam Brummitt
 License: MIT
-Source: http://brm.io/jquery-match-height/
+Source: https://brm.io/jquery-match-height/
 
 NiceScroll, copyright 2016-02-29 InuYaksa*2016
 License: MIT
@@ -81,7 +81,7 @@ Source: https://github.com/inuyaksa/jquery.nicescroll
 
 Slick, Copyright (c) Ken Wheeler
 License: MIT
-Source: http://github.com/kenwheeler/slick/
+Source: https://github.com/kenwheeler/slick/
 
 Sidr, Copyright (c) 2013-2016 Alberto Varela
 License: MIT
@@ -89,7 +89,7 @@ Source: https://github.com/artberri/sidr
 
 SmoothScroll, Copyright Balazs Galambosi
 License: MIT
-Source: http://www.smoothscroll.net/
+Source: https://www.smoothscroll.net/
 
 Superfish, Copyright (c) 2013 Joel Birch
 License: MIT/GPL
@@ -105,7 +105,7 @@ Source: https://necolas.github.io/normalize.css/
 
 Font Awesome icons, Copyright Dave Gandy
 License: SIL Open Font License, version 1.1.
-Source: http://fontawesome.io/
+Source: https://fontawesome.com/
 
 Simple line icons, Copyright Jamal Jama & Ahmad Firoz
 License: MIT

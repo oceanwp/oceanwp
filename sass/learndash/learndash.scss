@@ -75,13 +75,13 @@ a#quiz_continue_link:focus{
 		text-rendering: auto;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		content: "\f05d";
+		content: "\f058";
 		text-indent: 0;
 		color: #068806;
 	}
 
 	.notcompleted:before{
-		content: "\f10c";
+		content: "\f111";
 		color: $color-15;
 	}
 }
@@ -102,7 +102,7 @@ a#quiz_continue_link:focus{
 		text-rendering: auto;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		content: "\f05d";
+		content: "\f058";
 		margin-right: 10px;
 	}
 }

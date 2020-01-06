@@ -1418,7 +1418,7 @@
   right: auto;
   margin-left: 6px;
   vertical-align: top;
-  font-weight: 400;
+  font-weight: 600;
   -ms-animation: spin 2s infinite linear;
   -webkit-animation: spin 2s infinite linear;
   -o-animation: spin 2s infinite linear;
@@ -1981,7 +1981,7 @@
 }
 
 .woocommerce #order_review table.shop_table label {
-  display: inline-block;
+  display: contents;
 }
 
 .woocommerce #order_review table tfoot th {
@@ -4941,6 +4941,21 @@ Woo Responsive
   }
   .woocommerce-page.woocommerce-cart table.shop_table td.product-price {
     display: none !important;
+  }
+  .woocommerce-page table.shop_table thead,
+  .woocommerce-page table.shop_table_responsive thead {
+    display: none;
+  }
+  .woocommerce-page table.shop_table td,
+  .woocommerce-page table.shop_table_responsive td {
+    display: block;
+    text-align: right !important;
+  }
+  .woocommerce-page table.shop_table td::before,
+  .woocommerce-page table.shop_table_responsive td::before {
+    content: attr(data-title) ": ";
+    font-weight: 700;
+    float: left;
   }
   .woocommerce-cart .cart-collaterals .cart_totals table td {
     text-align: right;
