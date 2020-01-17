@@ -3960,7 +3960,7 @@ msgstr "Seu comentário aguarda moderação."
 #, fuzzy
 #| msgid "Update Required"
 msgid "Name (required)"
-msgstr "Atualização necessária"
+msgstr "Nome (obrigatório)"
 
 #: inc/helpers.php:2960
 msgid "Email (required)"
