@@ -7920,6 +7920,7 @@ time.published i {
   padding: 0 45px 0 15px;
   width: 100%;
   z-index: 1;
+  white-space: nowrap;
 }
 
 .theme-select:after {

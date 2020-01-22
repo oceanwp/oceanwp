@@ -4946,17 +4946,6 @@ Woo Responsive
   .woocommerce-page table.shop_table_responsive thead {
     display: none;
   }
-  .woocommerce-page table.shop_table td,
-  .woocommerce-page table.shop_table_responsive td {
-    display: block;
-    text-align: right !important;
-  }
-  .woocommerce-page table.shop_table td::before,
-  .woocommerce-page table.shop_table_responsive td::before {
-    content: attr(data-title) ": ";
-    font-weight: 700;
-    float: left;
-  }
   .woocommerce-cart .cart-collaterals .cart_totals table td {
     text-align: right;
   }
