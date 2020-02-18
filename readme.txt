@@ -49,6 +49,20 @@ Source: https://pixabay.com/en/underwater-sunbeams-ocean-sea-698671/
 -------------------------------------------------------
 Copyright
 -------------------------------------------------------
+
+OceanWP WordPress Theme, Copyright 2020 WordPress.org
+OceanWP is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
 OceanWP bundles the following third-party resources:
 
 HTML5 Shiv, Copyright 2014 Alexander Farkas

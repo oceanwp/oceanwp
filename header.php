@@ -14,7 +14,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> <?php oceanwp_schema_markup( 'html' ); ?>>
 
 	<?php do_action( 'ocean_before_outer_wrap' ); ?>
 

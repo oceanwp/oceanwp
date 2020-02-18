@@ -1696,10 +1696,12 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 						&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
 						$items .= '<label>'. esc_html__( 'Type your search', 'oceanwp' ) .'<span><i></i><i></i><i></i></span></label>';
 					}
-					//include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+					if( !function_exists('is_plugin_active') ) {
+						include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+					}
 					if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ){
 						$my_current_lang = apply_filters( 'wpml_current_language', NULL );
-						if( $my_current_lang ){
+						if( ! empty($my_current_lang) ){
 							$items .= '<input type="hidden" name="lang" value="'. $my_current_lang .'"/>';
 						}
 					}
@@ -1880,7 +1882,7 @@ if ( ! function_exists( 'oceanwp_has_page_header' ) ) {
 if ( ! function_exists( 'oceanwp_has_page_header_heading' ) ) {
 
 	function oceanwp_has_page_header_heading() {
-		
+
 		// Define vars
 		$return = true;
 
@@ -3422,6 +3424,8 @@ if ( ! function_exists( 'oceanwp_excerpt' ) ) {
 
 		}
 
+		$output = apply_filters('oceanwp_excerpt', $output);
+
 		return $output;
 
 	}
@@ -4286,42 +4290,52 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 
 		// HTML
 		if ( 'html' == $location ) {
-			$schema = 'itemscope itemtype="http://schema.org/WebPage"';
+			if ( is_home() || is_front_page() ) {
+				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
+			}
+			elseif ( is_category() || is_tag() ) {
+				$schema = 'itemscope="itemscope" itemtype="https://schema.org/Blog"';
+			}
+			elseif ( is_singular( 'post') ) {
+				$schema = 'itemscope="itemscope" itemtype="https://schema.org/Article"';
+			}
+			elseif ( is_page() ) {
+				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
+			}
+			else {
+				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
+			}
 		}
 
 		// Header
 		elseif ( 'header' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="http://schema.org/WPHeader"';
+			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPHeader"';
 		}
 
 		// Logo
 		elseif ( 'logo' == $location ) {
-			$schema = 'itemscope itemtype="http://schema.org/Brand"';
+			$schema = 'itemscope itemtype="https://schema.org/Brand"';
 		}
 
 		// Navigation
 		elseif ( 'site_navigation' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"';
+			$schema = 'itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"';
 		}
 
 		// Main
 		elseif ( 'main' == $location ) {
-			$itemtype = 'http://schema.org/WebPageElement';
+			$itemtype = 'https://schema.org/WebPageElement';
 			$itemprop = 'mainContentOfPage';
-			if ( is_singular( 'post' ) ) {
-				$itemprop = '';
-				$itemtype = 'http://schema.org/Blog';
-			}
 		}
 
 		// Sidebar
 		elseif ( 'sidebar' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="http://schema.org/WPSideBar"';
+			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPSideBar"';
 		}
 
 		// Footer widgets
 		elseif ( 'footer' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="http://schema.org/WPFooter"';
+			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPFooter"';
 		}
 
 		// Headings
@@ -4346,7 +4360,7 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 
 		// Author link
 		elseif ( 'author_link' == $location ) {
-			$schema = 'itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"';
+			$schema = 'itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person"';
 		}
 
 		// Item

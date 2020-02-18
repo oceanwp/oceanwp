@@ -285,6 +285,9 @@ final class OCEANWP_Theme_Class {
 		// Enable support for Post Thumbnails on posts and pages
 		add_theme_support( 'post-thumbnails' );
 
+		// Enable support for custom background
+		add_theme_support( 'custom-background' );
+
 		/**
 		 * Enable support for header image
 		 */
@@ -530,7 +533,7 @@ final class OCEANWP_Theme_Class {
 	 * @since 1.0.0
 	 */
 	public static function html5_shiv() {
-		wp_register_script( 'html5shiv', OCEANWP_JS_DIR_URI . '/third/html5.min.js', array(), OCEANWP_THEME_VERSION, false );
+		wp_register_script( 'html5shiv', OCEANWP_JS_DIR_URI . 'third/html5.min.js', array(), OCEANWP_THEME_VERSION, false );
 		wp_enqueue_script( 'html5shiv' );
 		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 	}

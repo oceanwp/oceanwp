@@ -66,16 +66,16 @@
                     .addClass('hasCustomSelect')
                     .on('render.customSelect', function () {
                         changed($select,customSelectSpan);
-                        $select.css('width','');			
+                        $select.css('width','');
                         var selectBoxWidth = parseInt($select.outerWidth(), 10) -
                                 (parseInt(customSelectSpan.outerWidth(), 10) -
                                     parseInt(customSelectSpan.width(), 10));
-                        
+
                         // Set to inline-block before calculating outerHeight
                         customSelectSpan.css({
                             display: 'inline-block'
                         });
-                        
+
                         var selectBoxHeight = customSelectSpan.outerHeight();
 
                         if ($select.attr('disabled')) {
@@ -85,7 +85,6 @@
                         }
 
                         customSelectInnerSpan.css({
-                            width:   selectBoxWidth,
                             display: 'inline-block'
                         });
 

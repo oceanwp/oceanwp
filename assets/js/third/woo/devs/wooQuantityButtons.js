@@ -44,11 +44,12 @@ function oceanwpWooQuantityButtons( $quantitySelector ) {
 		// Quantity input
 		if ( $j( 'body' ).hasClass( 'single-product' )
 			&& 'on' == oceanwpLocalize.floating_bar
-			&& ! $cart.hasClass( 'grouped_form' ) ) {
+			&& ! $cart.hasClass( 'grouped_form' )
+			&& ! $cart.hasClass( 'cart_group' ) ) {
 			var $quantityInput = $j( '.woocommerce form input[type=number].qty' );
-			$quantityInput.on( 'keyup', function() { 
+			$quantityInput.on( 'keyup', function() {
 				var qty_val = $j( this ).val();
-				$quantityInput.val( qty_val ); 
+				$quantityInput.val( qty_val );
 			});
 		}
 
@@ -111,7 +112,7 @@ function oceanwpWooQuantityButtons( $quantitySelector ) {
 
 			// Trigger change event
 			$quantityBox.trigger( 'change' );
-			
+
 		} );
 	}
 }
