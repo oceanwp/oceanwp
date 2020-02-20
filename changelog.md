@@ -3,12 +3,15 @@
 * **Added** - Filter 'oceanwp_excerpt' to output the exceprt.
 * **Fixed** - Checkout order summary layout for mobile view.
 * **Fixed** - HTML is escaped in featured image caption #210
-* **Fixed** - customSelect dropdpwn layout error
+* **Fixed** - customSelect dropdown layout error
 * **Fixed** - Fix product quantities syncing incorrectly for Mix and Match products #251
 * **Fixed** - Breadcrumbs.php get_day_links error #191
 * **Fixed** - Fatal error: Uncaught Error: Call to undefined function is_plugin_active() in helper.php #253
+* **Fixed** - WooCommerce Cart Page 'select' width issue on calculate shipping
+* **Fixed** - Gutenberg Code Block Not Within Set Margins
+* **Fixed** - Display site title and tagline issue in the customiser
 * **Added** - Enable theme support for custom background
-* **Added** - Remove wrong double slash #255
+* **Added** - Incorrect wrong double slash #255
 * **Added** - Accessibility Improvement - Added 'aria-hidden' labels to: top bar and header social menu; blog single and archive post meta;
 * **Added** - SEO Improvement: Added "noopener noreferrer" tags for top bar and header social menus when links open in a new window.
 * **Added** - Schema Markup Improvement: Schema markup for blog, blog archives and tags, and articles.

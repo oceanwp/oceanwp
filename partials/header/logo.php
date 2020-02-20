@@ -54,10 +54,10 @@ $responsive_logo 	= get_theme_mod( 'ocean_responsive_logo' ); ?>
 
 			do_action( 'ocean_after_logo_img' );
 
-		} else { ?>
-
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title site-logo-text"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
-
+		} else {
+			if (display_header_text()==true){ ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title site-logo-text"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
+			<?php } ?>
 		<?php } ?>
 
 	</div><!-- #site-logo-inner -->
@@ -66,10 +66,11 @@ $responsive_logo 	= get_theme_mod( 'ocean_responsive_logo' ); ?>
 
 	<?php
 	// Site description
-	if ( 'top' == oceanwp_header_style()
-		&& '' != get_bloginfo( 'description' ) ) { ?>
-		<div id="site-description"><h2><?php echo bloginfo( 'description' ); ?></h2></div>
-	<?php } ?>
+	if (display_header_text()==true){
+		if ( 'top' == oceanwp_header_style()
+			&& '' != get_bloginfo( 'description' ) ) { ?>
+			<div id="site-description"><h2><?php echo bloginfo( 'description' ); ?></h2></div>
+	<?php }} ?>
 
 </div><!-- #site-logo -->
 
