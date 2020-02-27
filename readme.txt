@@ -42,9 +42,10 @@ More details here: https://www.gnu.org/licenses/gpl-3.0.html
 -------------------------------------------------------
 Screenshot Licenses
 -------------------------------------------------------
-Screenshot image, Copyright StockSnap
+Screenshot image, Copyright Pexels
 License: CC0 Public Domain
-Source: https://pixabay.com/en/underwater-sunbeams-ocean-sea-698671/
+Source: https://www.pexels.com/photo/fish-in-body-of-water-3168998/
+Source: https://www.pexels.com/photo/woman-wearing-white-and-yellow-scoop-neck-mini-dress-884979/
 
 -------------------------------------------------------
 Copyright

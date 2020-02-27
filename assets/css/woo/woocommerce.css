@@ -3191,7 +3191,7 @@ ul.order_details li strong {
 }
 
 .woocommerce-cart .cart-collaterals .cart_totals table select {
-  width: 100% !important;
+  width: 100%;
   min-height: 34px;
 }
 

@@ -1,6 +1,11 @@
 # OceanWP Changelog
-### *2020.02.18* - 1.7.5:
-* **Added** - Filter 'oceanwp_excerpt' to output the exceprt.
+### *2020.02.27* - 1.7.6:
+* **Added** - Changed theme screesnhot.
+* **Added** - Updated credit links for images used in theme screenshot in readme.txt file.
+* **Fixed** - Reversed sequence of hierarchical taxonomy breadcrumbs.
+
+### *2020.02.20* - 1.7.5:
+* **Added** - Filter 'oceanwp_excerpt' to output the excerpt.
 * **Fixed** - Checkout order summary layout for mobile view.
 * **Fixed** - HTML is escaped in featured image caption #210
 * **Fixed** - customSelect dropdown layout error
@@ -11,14 +16,13 @@
 * **Fixed** - Gutenberg Code Block Not Within Set Margins
 * **Fixed** - Display site title and tagline issue in the customiser
 * **Added** - Enable theme support for custom background
-* **Added** - Incorrect wrong double slash #255
+* **Added** - Incorrect double slash #255
 * **Added** - Accessibility Improvement - Added 'aria-hidden' labels to: top bar and header social menu; blog single and archive post meta;
 * **Added** - SEO Improvement: Added "noopener noreferrer" tags for top bar and header social menus when links open in a new window.
 * **Added** - Schema Markup Improvement: Schema markup for blog, blog archives and tags, and articles.
 * **Tweak** - Schema Markup: Main itemtype moved to body.
 * **Updated** - Dutch translation, thanks to Annie Bohets
 * **Updated** - README.md file
-
 
 ### *2020.01.06* - 1.7.4:
 * **Updated** - readme.txt to reflect credit changes.
