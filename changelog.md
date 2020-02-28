@@ -1,7 +1,10 @@
 # OceanWP Changelog
+
+### *2020.02.28* - 1.7.7:
+* **Added** - Updated credit links for images used in theme screenshot in readme.txt file.
+
 ### *2020.02.27* - 1.7.6:
 * **Added** - Changed theme screesnhot.
-* **Added** - Updated credit links for images used in theme screenshot in readme.txt file.
 * **Fixed** - Reversed sequence of hierarchical taxonomy breadcrumbs.
 
 ### *2020.02.20* - 1.7.5:

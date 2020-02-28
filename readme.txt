@@ -44,8 +44,12 @@ Screenshot Licenses
 -------------------------------------------------------
 Screenshot image, Copyright Pexels
 License: CC0 Public Domain
-Source: https://www.pexels.com/photo/fish-in-body-of-water-3168998/
-Source: https://www.pexels.com/photo/woman-wearing-white-and-yellow-scoop-neck-mini-dress-884979/
+Source: https://www.pexels.com/photo/fish-in-body-of-water-3168998/ is by Francesco Ungaro
+Source: https://www.pexels.com/photo/woman-wearing-white-and-yellow-scoop-neck-mini-dress-884979/ is by Quang Anh Ha Nguyen
+
+Font Awesome icons, Copyright Dave Gandy
+License: SIL Open Font License, version 1.1.
+Source: https://fontawesome.com/
 
 -------------------------------------------------------
 Copyright
