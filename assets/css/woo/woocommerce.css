@@ -4942,10 +4942,6 @@ Woo Responsive
   .woocommerce-page.woocommerce-cart table.shop_table td.product-price {
     display: none !important;
   }
-  .woocommerce-page table.shop_table thead,
-  .woocommerce-page table.shop_table_responsive thead {
-    display: none;
-  }
   .woocommerce-cart .cart-collaterals .cart_totals table td {
     text-align: right;
   }

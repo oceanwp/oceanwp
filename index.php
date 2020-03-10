@@ -52,7 +52,7 @@ get_header(); ?>
 									}
 								endwhile; ?>
 							</div>
-							
+
 							<?php
 							do_action( 'ocean_after_archive_download' );
 						}  else { ?>

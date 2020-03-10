@@ -43,7 +43,7 @@ if ( empty( $sections ) ) {
 		<?php } ?>
 
 	<?php } ?>
-	
+
 </ul>
 
 <?php do_action( 'ocean_after_blog_entry_meta' ); ?>

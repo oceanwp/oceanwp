@@ -1,5 +1,16 @@
 # OceanWP Changelog
 
+### *2020.03.10* - 1.7.8:
+* **Added** - Improved Accessibility.
+* **Added** - Added hook after site title text in the header.
+* **Added** - Added hook wp_body_open() after the body tag.
+* **Fixed** - Fatal error when using filter woommerce_add_to_cart_redirect.
+* **Fixed** - Customizer Header Text Color setting when Ocean Extra is disabled.
+* **Fixed** - improved the usage of escaping functions.
+* **Updated** - readme.txt file.
+
+
+
 ### *2020.02.28* - 1.7.7:
 * **Added** - Updated credit links for images used in theme screenshot in readme.txt file.
 

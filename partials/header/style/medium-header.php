@@ -72,7 +72,7 @@ $classes = implode( ' ', $classes ); ?>
 							else if ( 'logo' == $element ) {
 								get_template_part( 'partials/header/logo' );
 							}
-							
+
 							// Social buttons
 							else if ( 'social' == $element ) {
 								if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {

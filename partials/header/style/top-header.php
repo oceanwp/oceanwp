@@ -52,19 +52,19 @@ if ( 'after' == $position ) { ?>
 		<div class="left clr">
 
 			<div class="inner">
-				
+
 				<?php get_template_part( 'partials/header/nav' ); ?>
 
 				<?php get_template_part( 'partials/mobile/mobile-icon' ); ?>
 
 			</div>
-			
+
 		</div>
 
 		<div class="right clr">
 
 			<div class="inner">
-				
+
 				<?php if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
 					get_template_part( 'partials/header/social' );
 				}

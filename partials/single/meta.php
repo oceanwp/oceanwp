@@ -49,7 +49,7 @@ if ( 'quote' == get_post_format() ) {
 		<?php } ?>
 
 	<?php } ?>
-	
+
 </ul>
 
 <?php do_action( 'ocean_after_single_post_meta' ); ?>

@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
 
 <div id="vertical-searchform" class="header-searchform-wrap clr">
-	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform">
+	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform" role="search" aria-label="<?php _e( 'Vertical Header Search', 'oceanwp' ); ?>">
 		<input type="search" name="s" autocomplete="off" value="" />
 		<?php
 		// If the headerSearchForm script is not disable

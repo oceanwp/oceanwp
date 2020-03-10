@@ -285,9 +285,6 @@ final class OCEANWP_Theme_Class {
 		// Enable support for Post Thumbnails on posts and pages
 		add_theme_support( 'post-thumbnails' );
 
-		// Enable support for custom background
-		add_theme_support( 'custom-background' );
-
 		/**
 		 * Enable support for header image
 		 */

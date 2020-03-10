@@ -116,19 +116,19 @@ class OceanWP_Customizer_Text_Control extends WP_Customize_Control {
 
 		<# if ( data.desktop ) { #>
 			<div class="desktop control-wrap active">
-				<input type="text" value="{{ data.desktop.value }}" placeholder="<?php esc_html_e( 'px - em - rem', 'oceanwp' ); ?>" {{{ data.desktop.link }}} />
+				<input type="text" value="{{ data.desktop.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" {{{ data.desktop.link }}} />
 	    	</div>
 	    <# } #>
 
 		<# if ( data.tablet ) { #>
 			<div class="tablet control-wrap">
-				<input type="text" value="{{ data.tablet.value }}" placeholder="<?php esc_html_e( 'px - em - rem', 'oceanwp' ); ?>" {{{ data.tablet.link }}} />
+				<input type="text" value="{{ data.tablet.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" {{{ data.tablet.link }}} />
 	    	</div>
 	    <# } #>
 
 		<# if ( data.mobile ) { #>
 			<div class="mobile control-wrap">
-				<input type="text" value="{{ data.mobile.value }}" placeholder="<?php esc_html_e( 'px - em - rem', 'oceanwp' ); ?>" {{{ data.mobile.link }}} />
+				<input type="text" value="{{ data.mobile.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" {{{ data.mobile.link }}} />
 	    	</div>
 	    <# } #>
 	<?php

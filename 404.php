@@ -4,7 +4,7 @@
  *
  * @package OceanWP WordPress theme
  */
-	
+
 // Get ID
 $get_id = get_theme_mod( 'ocean_error_page_template' );
 
@@ -18,7 +18,7 @@ $get_content = oceanwp_error_page_template_content();
 if ( 'on' == get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 
 	<!DOCTYPE html>
-	<html <?php language_attributes(); ?><?php oceanwp_schema_markup( 'html' ); ?>>
+	<html class="<?php echo esc_attr( oceanwp_html_classes() ); ?>" <?php language_attributes(); ?>>
 		<head>
 			<meta charset="<?php bloginfo( 'charset' ); ?>">
 			<link rel="profile" href="https://gmpg.org/xfn/11">
@@ -27,11 +27,15 @@ if ( 'on' == get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 		</head>
 
 		<!-- Begin Body -->
-		<body <?php body_class(); ?><?php oceanwp_schema_markup( 'body' ); ?>>
+		<body <?php body_class(); ?><?php oceanwp_schema_markup( 'html' ); ?>>
+
+			<?php wp_body_open(); ?>
 
 			<?php do_action( 'ocean_before_outer_wrap' ); ?>
 
 			<div id="outer-wrap" class="site clr">
+
+				<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'oceanwp' ); ?></a>
 
 				<?php do_action( 'ocean_before_wrap' ); ?>
 
@@ -39,7 +43,7 @@ if ( 'on' == get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 
 					<?php do_action( 'ocean_before_main' ); ?>
 
-					<main id="main" class="site-main clr"<?php oceanwp_schema_markup( 'main' ); ?>>
+					<main id="main" class="site-main clr"<?php oceanwp_schema_markup( 'main' ); ?> role="main">
 
 <?php
 } else {
@@ -134,7 +138,7 @@ if ( 'on' == get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 			        </main><!-- #main-content -->
 
 			        <?php do_action( 'ocean_after_main' ); ?>
-			                
+
 			    </div><!-- #wrap -->
 
 			    <?php do_action( 'ocean_after_wrap' ); ?>

@@ -65,7 +65,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 
 			the_comments_navigation( array(
 				'prev_text' => '<i class="fa fa-angle-left"></i>'. esc_html__( 'Previous', 'oceanwp' ),
-				'next_text' => esc_html__( 'Next', 'oceanwp' ) .'<i class="fa fa-angle-right"></i>',
+				'next_text' => esc_html__( 'Next', 'oceanwp' ) .'<i class="fa fa-angle-right" aria-hidden="true"></i>',
 			) );
 
 		elseif ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
@@ -73,7 +73,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 			<div class="comment-navigation clr">
 				<?php paginate_comments_links( array(
 					'prev_text' => '<i class="fa fa-angle-left"></i>'. esc_html__( 'Previous', 'oceanwp' ),
-					'next_text' => esc_html__( 'Next', 'oceanwp' ) .'<i class="fa fa-angle-right"></i>',
+					'next_text' => esc_html__( 'Next', 'oceanwp' ) .'<i class="fa fa-angle-right" aria-hidden="true"></i>',
 				) ); ?>
 			</div>
 
@@ -91,10 +91,10 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 	comment_form(
 		array(
 			'must_log_in'			=> '<p class="must-log-in">'.  sprintf( esc_html__( 'You must be %1$slogged in%2$s to post a comment.', 'oceanwp' ), '<a href="'. wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) .'">', '</a>' ) .'</p>',
-			'logged_in_as'			=> '<p class="logged-in-as">'. esc_html__( 'Logged in as', 'oceanwp' ) .' <a href="'. admin_url( 'profile.php' ) .'">'. $user_identity .'</a>. <a href="' . wp_logout_url( get_permalink() ) .'" title="'. esc_html__( 'Log out of this account', 'oceanwp' ) .'">'. esc_html__( 'Log out &raquo;', 'oceanwp' ) .'</a></p>',
+			'logged_in_as'			=> '<p class="logged-in-as">'. esc_html__( 'Logged in as', 'oceanwp' ) .' <a href="'. admin_url( 'profile.php' ) .'">'. $user_identity .'</a>. <a href="' . wp_logout_url( get_permalink() ) .'" title="'. esc_attr__( 'Log out of this account', 'oceanwp' ) .'">'. esc_attr__( 'Log out &raquo;', 'oceanwp' ) .'</a></p>',
 			'comment_notes_before'	=> false,
 			'comment_notes_after'	=> false,
-			'comment_field'			=> '<div class="comment-textarea"><textarea name="comment" id="comment" cols="39" rows="4" tabindex="100" class="textarea-comment" placeholder="'. esc_html__( 'Your Comment Here...', 'oceanwp' ) .'"></textarea></div>',
+			'comment_field'			=> '<div class="comment-textarea"><label for="comment" class="screen-reader-text">'. esc_attr( 'Comment', 'oceanwp' ) . '</label><textarea name="comment" id="comment" cols="39" rows="4" tabindex="100" class="textarea-comment" placeholder="'. esc_attr__( 'Your Comment Here...', 'oceanwp' ) .'"></textarea></div>',
 			'id_submit'				=> 'comment-submit',
 			'label_submit'			=> esc_html__( 'Post Comment', 'oceanwp' ),
 		)

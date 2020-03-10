@@ -16,11 +16,11 @@
         if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'footer' ) ) { ?>
 
             <?php do_action( 'ocean_footer' ); ?>
-            
+
         <?php } ?>
 
         <?php do_action( 'ocean_after_footer' ); ?>
-                
+
     </div><!-- #wrap -->
 
     <?php do_action( 'ocean_after_wrap' ); ?>
@@ -44,7 +44,7 @@ if ( 'overlay' == oceanwp_menu_search_style() ) {
 <?php
 // If sidebar mobile menu style
 if ( 'sidebar' == oceanwp_mobile_menu_style() ) {
-    
+
     // Mobile panel close button
     if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
         get_template_part( 'partials/mobile/mobile-sidr-close' );
