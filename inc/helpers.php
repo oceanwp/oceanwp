@@ -3082,7 +3082,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 
 			<article id="comment-<?php comment_ID(); ?>" class="comment-container">
-				<p><?php esc_html_e( 'Pingback:', 'oceanwp' ); ?> <span><span<?php oceanwp_schema_markup( 'author_name' ); ?>><?php comment_author_link(); ?></span></span> <?php edit_comment_link( esc_html__( '(Edit)', 'oceanwp' ), '<span class="edit-link">', '</span>' ); ?></p>
+				<p><?php esc_html_e( 'Pingback:', 'oceanwp' ); ?> <span><?php oceanwp_schema_markup( 'author_name' ); ?>><?php comment_author_link(); ?></span> <?php edit_comment_link( esc_html__( '(Edit)', 'oceanwp' ), '<span class="edit-link">', '</span>' ); ?></p>
 			</article>
 
 			<?php
@@ -3151,11 +3151,11 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
 
-		$fields['author'] 	= '<div class="comment-form-author"><label for="author" class="screen-reader-text">'. esc_attr( 'Author', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_attr_e( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="101"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
+		$fields['author'] 	= '<div class="comment-form-author"><label for="author" class="screen-reader-text">'. esc_attr( 'Author', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_attr__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="101"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
 
-		$fields['email'] 	= '<div class="comment-form-email"><label for="email" class="screen-reader-text">'. esc_attr( 'Email', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_attr_e( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="102"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
+		$fields['email'] 	= '<div class="comment-form-email"><label for="email" class="screen-reader-text">'. esc_attr( 'Email', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_attr__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="102"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
 
-		$fields['url'] 		= '<div class="comment-form-url"><label for="url" class="screen-reader-text">'. esc_attr( 'URL', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_attr_e( 'Website', 'oceanwp' ) .'" size="22" tabindex="103" class="input-website" /></div>';
+		$fields['url'] 		= '<div class="comment-form-url"><label for="url" class="screen-reader-text">'. esc_attr( 'URL', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_attr__( 'Website', 'oceanwp' ) .'" size="22" tabindex="103" class="input-website" /></div>';
 
 		return $fields;
 
