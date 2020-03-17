@@ -1,5 +1,43 @@
 # OceanWP Changelog
 
+### *2020.03.10* - 1.7.8:
+* **Added** - Improved Accessibility.
+* **Added** - Added hook after site title text in the header.
+* **Added** - Added hook wp_body_open() after the body tag.
+* **Fixed** - Fatal error when using filter woommerce_add_to_cart_redirect.
+* **Fixed** - Customizer Header Text Color setting when Ocean Extra is disabled.
+* **Fixed** - improved the usage of escaping functions.
+* **Updated** - readme.txt file.
+
+
+
+### *2020.02.28* - 1.7.7:
+* **Added** - Updated credit links for images used in theme screenshot in readme.txt file.
+
+### *2020.02.27* - 1.7.6:
+* **Added** - Changed theme screesnhot.
+* **Fixed** - Reversed sequence of hierarchical taxonomy breadcrumbs.
+
+### *2020.02.20* - 1.7.5:
+* **Added** - Filter 'oceanwp_excerpt' to output the excerpt.
+* **Fixed** - Checkout order summary layout for mobile view.
+* **Fixed** - HTML is escaped in featured image caption #210
+* **Fixed** - customSelect dropdown layout error
+* **Fixed** - Fix product quantities syncing incorrectly for Mix and Match products #251
+* **Fixed** - Breadcrumbs.php get_day_links error #191
+* **Fixed** - Fatal error: Uncaught Error: Call to undefined function is_plugin_active() in helper.php #253
+* **Fixed** - WooCommerce Cart Page 'select' width issue on calculate shipping
+* **Fixed** - Gutenberg Code Block Not Within Set Margins
+* **Fixed** - Display site title and tagline issue in the customiser
+* **Added** - Enable theme support for custom background
+* **Added** - Incorrect double slash #255
+* **Added** - Accessibility Improvement - Added 'aria-hidden' labels to: top bar and header social menu; blog single and archive post meta;
+* **Added** - SEO Improvement: Added "noopener noreferrer" tags for top bar and header social menus when links open in a new window.
+* **Added** - Schema Markup Improvement: Schema markup for blog, blog archives and tags, and articles.
+* **Tweak** - Schema Markup: Main itemtype moved to body.
+* **Updated** - Dutch translation, thanks to Annie Bohets
+* **Updated** - README.md file
+
 ### *2020.01.06* - 1.7.4:
 * **Updated** - readme.txt to reflect credit changes.
 * **Fixed** - XFN 1.1 relationships meta data profile.

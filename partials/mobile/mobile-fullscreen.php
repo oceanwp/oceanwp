@@ -75,7 +75,7 @@ $top_menu_args = array(
 			</div>
 		</a>
 
-		<nav class="<?php echo esc_attr( $classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?>>
+		<nav class="<?php echo esc_attr( $classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?> role="navigation">
 
 			<?php
 			// If has mobile menu

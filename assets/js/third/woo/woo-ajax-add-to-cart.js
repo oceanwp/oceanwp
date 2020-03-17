@@ -12,7 +12,7 @@ jQuery( function( $ ) {
 			return this.elements ? jQuery.makeArray(this.elements) : this;
 		}).map(function (i, elem) {
 			var val = jQuery(this).val();
-		
+
 			if (val == null) {
 				return val == null
 

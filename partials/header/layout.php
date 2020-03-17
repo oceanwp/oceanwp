@@ -46,7 +46,7 @@ if ( 'transparent' == $header_style
 <?php
 } ?>
 
-<header id="site-header" class="<?php echo esc_attr( oceanwp_header_classes() ); ?>" data-height="<?php echo esc_attr( $header_height ); ?>"<?php oceanwp_schema_markup( 'header' ); ?>>
+<header id="site-header" class="<?php echo esc_attr( oceanwp_header_classes() ); ?>" data-height="<?php echo esc_attr( $header_height ); ?>"<?php oceanwp_schema_markup( 'header' ); ?> role="banner">
 
 	<?php
 	// Elementor `header` location

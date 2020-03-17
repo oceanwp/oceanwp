@@ -63,9 +63,9 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 				if ( function_exists( 'ocean_add_custom_fonts' ) ) {
 					$fonts = ocean_add_custom_fonts();
 					if ( $fonts && is_array( $fonts ) ) { ?>
-						<optgroup label="<?php esc_html_e( 'Custom Fonts', 'oceanwp' ); ?>">
+						<optgroup label="<?php esc_attr_e( 'Custom Fonts', 'oceanwp' ); ?>">
 							<?php foreach ( $fonts as $font ) { ?>
-								<option value="<?php echo esc_html( $font ); ?>" <?php if ( $font == $this_val ) echo 'selected="selected"'; ?>><?php echo esc_html( $font ); ?></option>
+								<option value="<?php echo esc_attr( $font ); ?>" <?php if ( $font == $this_val ) echo 'selected="selected"'; ?>><?php echo esc_html( $font ); ?></option>
 							<?php } ?>
 						</optgroup>
 					<?php }
@@ -73,22 +73,22 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 
 				// Get Standard font options
 				if ( $std_fonts = oceanwp_standard_fonts() ) { ?>
-					<optgroup label="<?php esc_html_e( 'Standard Fonts', 'oceanwp' ); ?>">
+					<optgroup label="<?php esc_attr_e( 'Standard Fonts', 'oceanwp' ); ?>">
 						<?php
 						// Loop through font options and add to select
 						foreach ( $std_fonts as $font ) { ?>
-							<option value="<?php echo esc_html( $font ); ?>" <?php selected( $font, $this_val ); ?>><?php echo esc_html( $font ); ?></option>
+							<option value="<?php echo esc_attr( $font ); ?>" <?php selected( $font, $this_val ); ?>><?php echo esc_html( $font ); ?></option>
 						<?php } ?>
 					</optgroup>
 				<?php }
 
 				// Google font options
 				if ( $google_fonts = oceanwp_google_fonts_array() ) { ?>
-					<optgroup label="<?php esc_html_e( 'Google Fonts', 'oceanwp' ); ?>">
+					<optgroup label="<?php esc_attr_e( 'Google Fonts', 'oceanwp' ); ?>">
 						<?php
 						// Loop through font options and add to select
 						foreach ( $google_fonts as $font ) { ?>
-							<option value="<?php echo esc_html( $font ); ?>" <?php selected( $font, $this_val ); ?>><?php echo esc_html( $font ); ?></option>
+							<option value="<?php echo esc_attr( $font ); ?>" <?php selected( $font, $this_val ); ?>><?php echo esc_html( $font ); ?></option>
 						<?php } ?>
 					</optgroup>
 				<?php } ?>

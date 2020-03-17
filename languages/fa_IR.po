@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Portfolio Web\n"
-"POT-Creation-Date: 2019-02-21 12:46+0330\n"
-"PO-Revision-Date: 2019-02-21 23:58+0330\n"
+"POT-Creation-Date: 2020-01-19 09:30+0100\n"
+"PO-Revision-Date: 2020-01-19 09:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -50,7 +50,7 @@ msgstr "این پست دارای %s نظر است"
 msgid "Previous"
 msgstr "قبلی"
 
-#: comments.php:68 comments.php:76 inc/woocommerce/woocommerce-config.php:762
+#: comments.php:68 comments.php:76 inc/woocommerce/woocommerce-config.php:761
 #: partials/edd/single.php:51
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "Next"
@@ -169,75 +169,75 @@ msgstr "فوتر 4"
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr "ابزارک های این ناحیه در قسمت چهارم فوتر استفاده می شود."
 
-#: inc/breadcrumbs.php:302
+#: inc/breadcrumbs.php:329
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/breadcrumbs.php:303 inc/customizer/settings/general.php:1419
+#: inc/breadcrumbs.php:330 inc/customizer/settings/general.php:1435
 msgid "Home"
 msgstr "خانه"
 
-#: inc/breadcrumbs.php:304 inc/customizer/settings/general.php:1436
+#: inc/breadcrumbs.php:331 inc/customizer/settings/general.php:1452
 msgid "404 Not Found"
 msgstr "404 پیدا نشد"
 
-#: inc/breadcrumbs.php:305 inc/customizer/settings/edd.php:686
+#: inc/breadcrumbs.php:332 inc/customizer/settings/edd.php:686
 #: inc/customizer/settings/woocommerce.php:1080
 msgid "Archives"
 msgstr "بایگانی"
 
-#: inc/breadcrumbs.php:307 inc/customizer/settings/general.php:1453
+#: inc/breadcrumbs.php:334 inc/customizer/settings/general.php:1469
 msgid "Search results for"
 msgstr "نتایج جستجو برای"
 
-#: inc/breadcrumbs.php:309
+#: inc/breadcrumbs.php:336
 #, php-format
 msgid "Page %s"
 msgstr "صفحه %s"
 
-#: inc/breadcrumbs.php:311
+#: inc/breadcrumbs.php:338
 #, php-format
 msgid "Minute %s"
 msgstr "دقیقه %s"
 
-#: inc/breadcrumbs.php:313
+#: inc/breadcrumbs.php:340
 #, php-format
 msgid "Week %s"
 msgstr "هفته %s"
 
-#: inc/breadcrumbs.php:854
+#: inc/breadcrumbs.php:878
 msgctxt "minute and hour archives time format"
 msgid "g:i a"
 msgstr ""
 
-#: inc/breadcrumbs.php:871
+#: inc/breadcrumbs.php:895
 msgctxt "minute archives time format"
 msgid "i"
 msgstr ""
 
-#: inc/breadcrumbs.php:888
+#: inc/breadcrumbs.php:912
 msgctxt "hour archives time format"
 msgid "g a"
 msgstr ""
 
-#: inc/breadcrumbs.php:904 inc/breadcrumbs.php:933 inc/breadcrumbs.php:960
-#: inc/breadcrumbs.php:987 inc/breadcrumbs.php:1327
+#: inc/breadcrumbs.php:928 inc/breadcrumbs.php:954 inc/breadcrumbs.php:978
+#: inc/breadcrumbs.php:1002 inc/breadcrumbs.php:1336
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/breadcrumbs.php:905 inc/breadcrumbs.php:961 inc/breadcrumbs.php:1331
+#: inc/breadcrumbs.php:929 inc/breadcrumbs.php:979 inc/breadcrumbs.php:1340
 msgctxt "monthly archives date format"
 msgid "F"
 msgstr ""
 
-#: inc/breadcrumbs.php:906 inc/breadcrumbs.php:1335
+#: inc/breadcrumbs.php:930 inc/breadcrumbs.php:1344
 msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
-#: inc/breadcrumbs.php:934
+#: inc/breadcrumbs.php:955
 msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
@@ -256,17 +256,17 @@ msgstr "بالا"
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:191
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:195
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:199
-#: inc/customizer/settings/blog.php:321 inc/customizer/settings/blog.php:795
+#: inc/customizer/settings/blog.php:321 inc/customizer/settings/blog.php:796
 #: inc/customizer/settings/edd.php:882 inc/customizer/settings/general.php:1076
-#: inc/customizer/settings/general.php:1664
-#: inc/customizer/settings/general.php:1849
+#: inc/customizer/settings/general.php:1680
+#: inc/customizer/settings/general.php:1865
 #: inc/customizer/settings/header.php:1084
 #: inc/customizer/settings/header.php:1546
 #: inc/customizer/settings/header.php:1568
 #: inc/customizer/settings/header.php:2244
 #: inc/customizer/settings/header.php:3597
 #: inc/customizer/settings/woocommerce.php:1556
-#: inc/customizer/settings/woocommerce.php:1951
+#: inc/customizer/settings/woocommerce.php:1978
 msgid "Right"
 msgstr "راست"
 
@@ -280,17 +280,17 @@ msgstr "پائین"
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:193
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:197
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:201
-#: inc/customizer/settings/blog.php:320 inc/customizer/settings/blog.php:793
+#: inc/customizer/settings/blog.php:320 inc/customizer/settings/blog.php:794
 #: inc/customizer/settings/edd.php:880 inc/customizer/settings/general.php:1074
-#: inc/customizer/settings/general.php:1663
-#: inc/customizer/settings/general.php:1851
+#: inc/customizer/settings/general.php:1679
+#: inc/customizer/settings/general.php:1867
 #: inc/customizer/settings/header.php:1082
 #: inc/customizer/settings/header.php:1545
 #: inc/customizer/settings/header.php:1566
 #: inc/customizer/settings/header.php:2242
 #: inc/customizer/settings/header.php:3596
 #: inc/customizer/settings/woocommerce.php:1554
-#: inc/customizer/settings/woocommerce.php:1949
+#: inc/customizer/settings/woocommerce.php:1976
 msgid "Left"
 msgstr "چپ"
 
@@ -365,8 +365,8 @@ msgstr "فاصله بین حروف"
 #: inc/customizer/controls/typo/class-control-typo.php:319
 #: inc/customizer/controls/typo/class-control-typo.php:335
 #: inc/customizer/controls/typography/class-control-typography.php:60
-#: inc/customizer/settings/blog.php:817 inc/customizer/settings/blog.php:847
-#: inc/customizer/settings/blog.php:870 inc/customizer/settings/blog.php:895
+#: inc/customizer/settings/blog.php:818 inc/customizer/settings/blog.php:848
+#: inc/customizer/settings/blog.php:871 inc/customizer/settings/blog.php:896
 #: inc/customizer/settings/general.php:184
 #: inc/customizer/settings/general.php:214
 #: inc/customizer/settings/general.php:237
@@ -376,7 +376,7 @@ msgstr "فاصله بین حروف"
 #: inc/customizer/settings/general.php:1128
 #: inc/customizer/settings/general.php:1151
 #: inc/customizer/settings/general.php:1176
-#: inc/customizer/settings/general.php:2542
+#: inc/customizer/settings/general.php:2558
 #: inc/customizer/settings/header.php:1942
 #: inc/customizer/settings/header.php:1971
 #: inc/customizer/settings/header.php:1993
@@ -436,7 +436,7 @@ msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:320
 #: inc/customizer/settings/typography.php:439
-#: inc/customizer/settings/woocommerce.php:1892
+#: inc/customizer/settings/woocommerce.php:1919
 msgid "Normal"
 msgstr "استاندارد"
 
@@ -472,12 +472,12 @@ msgstr "فونت های استاندارد"
 msgid "Google Fonts"
 msgstr "فونت های گوگل"
 
-#: inc/customizer/customizer.php:133
+#: inc/customizer/customizer.php:134
 msgid "Premium Addons Available"
 msgstr "افزودنی های پولی موجود است"
 
-#: inc/customizer/settings/blog.php:40 inc/customizer/settings/blog.php:757
-#: inc/helpers.php:2018
+#: inc/customizer/settings/blog.php:40 inc/customizer/settings/blog.php:758
+#: inc/helpers.php:2032
 msgid "Blog"
 msgstr "وبلاگ"
 
@@ -489,7 +489,7 @@ msgstr "نوشته های وبلاگ"
 msgid "Archives & Entries Layout"
 msgstr "لایه بندی بایگانی و مطالب"
 
-#: inc/customizer/settings/blog.php:78 inc/customizer/settings/blog.php:637
+#: inc/customizer/settings/blog.php:78 inc/customizer/settings/blog.php:638
 #: inc/customizer/settings/edd.php:716 inc/customizer/settings/edd.php:993
 #: inc/customizer/settings/general.php:590
 #: inc/customizer/settings/general.php:806
@@ -504,7 +504,7 @@ msgstr "لایه بندی بایگانی و مطالب"
 msgid "Both Sidebars: Style"
 msgstr "هر دو سایدبار: استایل"
 
-#: inc/customizer/settings/blog.php:84 inc/customizer/settings/blog.php:643
+#: inc/customizer/settings/blog.php:84 inc/customizer/settings/blog.php:644
 #: inc/customizer/settings/edd.php:722 inc/customizer/settings/edd.php:999
 #: inc/customizer/settings/general.php:596
 #: inc/customizer/settings/general.php:812
@@ -519,7 +519,7 @@ msgstr "هر دو سایدبار: استایل"
 msgid "Sidebar / Sidebar / Content"
 msgstr "سایدبار / سایدبار / محتوا"
 
-#: inc/customizer/settings/blog.php:85 inc/customizer/settings/blog.php:644
+#: inc/customizer/settings/blog.php:85 inc/customizer/settings/blog.php:645
 #: inc/customizer/settings/edd.php:723 inc/customizer/settings/edd.php:1000
 #: inc/customizer/settings/general.php:597
 #: inc/customizer/settings/general.php:813
@@ -534,7 +534,7 @@ msgstr "سایدبار / سایدبار / محتوا"
 msgid "Sidebar / Content / Sidebar"
 msgstr "سایدبار / محتوا / سایدبار"
 
-#: inc/customizer/settings/blog.php:86 inc/customizer/settings/blog.php:645
+#: inc/customizer/settings/blog.php:86 inc/customizer/settings/blog.php:646
 #: inc/customizer/settings/edd.php:724 inc/customizer/settings/edd.php:1001
 #: inc/customizer/settings/general.php:598
 #: inc/customizer/settings/general.php:814
@@ -549,7 +549,7 @@ msgstr "سایدبار / محتوا / سایدبار"
 msgid "Content / Sidebar / Sidebar"
 msgstr "محتوا / سایدبار / سایدبار"
 
-#: inc/customizer/settings/blog.php:100 inc/customizer/settings/blog.php:659
+#: inc/customizer/settings/blog.php:100 inc/customizer/settings/blog.php:660
 #: inc/customizer/settings/edd.php:738 inc/customizer/settings/edd.php:1015
 #: inc/customizer/settings/general.php:612
 #: inc/customizer/settings/general.php:828
@@ -564,7 +564,7 @@ msgstr "محتوا / سایدبار / سایدبار"
 msgid "Both Sidebars: Content Width (%)"
 msgstr "هردو سایدبار: عرض محتوا (%)"
 
-#: inc/customizer/settings/blog.php:122 inc/customizer/settings/blog.php:681
+#: inc/customizer/settings/blog.php:122 inc/customizer/settings/blog.php:682
 #: inc/customizer/settings/edd.php:760 inc/customizer/settings/edd.php:1037
 #: inc/customizer/settings/general.php:634
 #: inc/customizer/settings/general.php:850
@@ -579,7 +579,7 @@ msgstr "هردو سایدبار: عرض محتوا (%)"
 msgid "Both Sidebars: Sidebars Width (%)"
 msgstr "هردو سایدبار: عرض سایدبارها (%)"
 
-#: inc/customizer/settings/blog.php:144 inc/customizer/settings/blog.php:703
+#: inc/customizer/settings/blog.php:144 inc/customizer/settings/blog.php:704
 #: inc/customizer/settings/edd.php:782 inc/customizer/settings/edd.php:1059
 #: inc/customizer/settings/general.php:656
 #: inc/customizer/settings/general.php:872
@@ -594,7 +594,7 @@ msgstr "هردو سایدبار: عرض سایدبارها (%)"
 msgid "Mobile Sidebar Order"
 msgstr "سفارش سایدبار موبایل"
 
-#: inc/customizer/settings/blog.php:150 inc/customizer/settings/blog.php:709
+#: inc/customizer/settings/blog.php:150 inc/customizer/settings/blog.php:710
 #: inc/customizer/settings/edd.php:788 inc/customizer/settings/edd.php:1065
 #: inc/customizer/settings/general.php:662
 #: inc/customizer/settings/general.php:878
@@ -609,7 +609,7 @@ msgstr "سفارش سایدبار موبایل"
 msgid "Content / Sidebar"
 msgstr "محتوا / سایدبار"
 
-#: inc/customizer/settings/blog.php:151 inc/customizer/settings/blog.php:710
+#: inc/customizer/settings/blog.php:151 inc/customizer/settings/blog.php:711
 #: inc/customizer/settings/edd.php:789 inc/customizer/settings/edd.php:1066
 #: inc/customizer/settings/general.php:663
 #: inc/customizer/settings/general.php:879
@@ -624,53 +624,62 @@ msgstr "محتوا / سایدبار"
 msgid "Sidebar / Content"
 msgstr "سایدبار / محتوا"
 
-#: inc/customizer/settings/blog.php:165 inc/customizer/settings/blog.php:724
+#: inc/customizer/settings/blog.php:165 inc/customizer/settings/blog.php:725
 #: inc/customizer/settings/general.php:1003
 msgid "Heading Tag"
 msgstr "هدینگ برچسب"
 
-#: inc/customizer/settings/blog.php:171 inc/customizer/settings/blog.php:730
+#: inc/customizer/settings/blog.php:171 inc/customizer/settings/blog.php:731
 #: inc/customizer/settings/general.php:1009
+#: inc/customizer/settings/woocommerce.php:1773
 msgid "H1"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:172 inc/customizer/settings/blog.php:731
+#: inc/customizer/settings/blog.php:172 inc/customizer/settings/blog.php:732
 #: inc/customizer/settings/general.php:1010
+#: inc/customizer/settings/woocommerce.php:1774
 msgid "H2"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:173 inc/customizer/settings/blog.php:732
+#: inc/customizer/settings/blog.php:173 inc/customizer/settings/blog.php:733
 #: inc/customizer/settings/general.php:1011
+#: inc/customizer/settings/woocommerce.php:1775
 msgid "H3"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:174 inc/customizer/settings/blog.php:733
+#: inc/customizer/settings/blog.php:174 inc/customizer/settings/blog.php:734
 #: inc/customizer/settings/general.php:1012
+#: inc/customizer/settings/woocommerce.php:1776
 msgid "H4"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:175 inc/customizer/settings/blog.php:734
+#: inc/customizer/settings/blog.php:175 inc/customizer/settings/blog.php:735
 #: inc/customizer/settings/general.php:1013
+#: inc/customizer/settings/woocommerce.php:1777
 msgid "H5"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:176 inc/customizer/settings/blog.php:735
+#: inc/customizer/settings/blog.php:176 inc/customizer/settings/blog.php:736
 #: inc/customizer/settings/general.php:1014
+#: inc/customizer/settings/woocommerce.php:1778
 msgid "H6"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:177 inc/customizer/settings/blog.php:736
+#: inc/customizer/settings/blog.php:177 inc/customizer/settings/blog.php:737
 #: inc/customizer/settings/general.php:1015
+#: inc/customizer/settings/woocommerce.php:1779
 msgid "div"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:178 inc/customizer/settings/blog.php:737
+#: inc/customizer/settings/blog.php:178 inc/customizer/settings/blog.php:738
 #: inc/customizer/settings/general.php:1016
+#: inc/customizer/settings/woocommerce.php:1780
 msgid "span"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:179 inc/customizer/settings/blog.php:738
+#: inc/customizer/settings/blog.php:179 inc/customizer/settings/blog.php:739
 #: inc/customizer/settings/general.php:1017
+#: inc/customizer/settings/woocommerce.php:1781
 msgid "p"
 msgstr ""
 
@@ -739,15 +748,15 @@ msgstr "موقعیت تصویر"
 msgid "Vertical Position"
 msgstr "موقعیت عمودی"
 
-#: inc/customizer/settings/blog.php:342 inc/customizer/settings/blog.php:794
+#: inc/customizer/settings/blog.php:342 inc/customizer/settings/blog.php:795
 #: inc/customizer/settings/edd.php:881 inc/customizer/settings/general.php:1075
-#: inc/customizer/settings/general.php:1850
+#: inc/customizer/settings/general.php:1866
 #: inc/customizer/settings/header.php:73
 #: inc/customizer/settings/header.php:1083
 #: inc/customizer/settings/header.php:1567
 #: inc/customizer/settings/header.php:2243
 #: inc/customizer/settings/woocommerce.php:1555
-#: inc/customizer/settings/woocommerce.php:1950
+#: inc/customizer/settings/woocommerce.php:1977
 msgid "Center"
 msgstr "وسط"
 
@@ -760,7 +769,7 @@ msgid "Custom Image Height (px)"
 msgstr "طول تصویر سفارشی (پیکسل)"
 
 #: inc/customizer/settings/blog.php:394 inc/customizer/settings/edd.php:1536
-#: inc/customizer/settings/woocommerce.php:3279
+#: inc/customizer/settings/woocommerce.php:3306
 msgid "Category Color"
 msgstr "رنگ دسته بندی"
 
@@ -813,7 +822,7 @@ msgid "Infinite Scroll: Spinners Color"
 msgstr "اسکرول بی نهایت: رنگ Spinners"
 
 #: inc/customizer/settings/blog.php:532
-#: inc/customizer/settings/woocommerce.php:1614 inc/helpers.php:3273
+#: inc/customizer/settings/woocommerce.php:1614 inc/helpers.php:3287
 #: inc/woocommerce/woocommerce-config.php:551
 msgid "End of content"
 msgstr "پایان محتوا"
@@ -824,7 +833,7 @@ msgid "Infinite Scroll: Last Text"
 msgstr "اسکرول بی نهایت: آخرین متن"
 
 #: inc/customizer/settings/blog.php:550
-#: inc/customizer/settings/woocommerce.php:1632 inc/helpers.php:3278
+#: inc/customizer/settings/woocommerce.php:1632 inc/helpers.php:3292
 #: inc/woocommerce/woocommerce-config.php:556
 msgid "No more pages to load"
 msgstr "صفحات بیشتری برای بارگیری وجود ندارد"
@@ -834,45 +843,49 @@ msgstr "صفحات بیشتری برای بارگیری وجود ندارد"
 msgid "Infinite Scroll: Error Text"
 msgstr "اسکرول بی نهایت: خطای متن"
 
-#: inc/customizer/settings/blog.php:573 inc/customizer/settings/blog.php:994
+#: inc/customizer/settings/blog.php:573 inc/customizer/settings/blog.php:995
 #: inc/customizer/settings/edd.php:851 inc/customizer/settings/header.php:936
 #: inc/customizer/settings/header.php:3419
 #: inc/customizer/settings/woocommerce.php:1486
 msgid "Elements Positioning"
 msgstr "موقعیت عناصر"
 
-#: inc/customizer/settings/blog.php:590 inc/customizer/settings/blog.php:1010
-#: inc/customizer/settings/lifterlms.php:211 inc/helpers.php:2889
-#: inc/helpers.php:2974
+#: inc/customizer/settings/blog.php:590 inc/customizer/settings/blog.php:1011
+#: inc/customizer/settings/lifterlms.php:211 inc/helpers.php:2903
+#: inc/helpers.php:2988
 msgid "Meta"
 msgstr "متا"
 
-#: inc/customizer/settings/blog.php:595 inc/customizer/settings/blog.php:1015
+#: inc/customizer/settings/blog.php:595 inc/customizer/settings/blog.php:1016
 #: inc/customizer/settings/lifterlms.php:212
 msgid "Author"
 msgstr "نویسنده"
 
-#: inc/customizer/settings/blog.php:596 inc/customizer/settings/blog.php:1016
+#: inc/customizer/settings/blog.php:596 inc/customizer/settings/blog.php:1017
 msgid "Date"
 msgstr "تاریخ"
 
-#: inc/customizer/settings/blog.php:597 inc/customizer/settings/blog.php:1017
+#: inc/customizer/settings/blog.php:597 inc/customizer/settings/blog.php:1018
 msgid "Categories"
 msgstr "دسته بندی ها"
 
-#: inc/customizer/settings/blog.php:598 inc/customizer/settings/blog.php:1018
-#: inc/helpers.php:2981
+#: inc/customizer/settings/blog.php:598 inc/customizer/settings/blog.php:1019
+#: inc/helpers.php:2995
 msgid "Comments"
 msgstr "نظرات"
 
-#: inc/customizer/settings/blog.php:607
+#: inc/customizer/settings/blog.php:599 inc/customizer/settings/blog.php:1020
+msgid "Modified Date"
+msgstr "تاریخ اصلاح شده"
+
+#: inc/customizer/settings/blog.php:608
 msgid "Single Post"
 msgstr "تک پست"
 
-#: inc/customizer/settings/blog.php:621 inc/customizer/settings/edd.php:700
+#: inc/customizer/settings/blog.php:622 inc/customizer/settings/edd.php:700
 #: inc/customizer/settings/edd.php:977 inc/customizer/settings/general.php:574
 #: inc/customizer/settings/general.php:790
-#: inc/customizer/settings/general.php:2503
+#: inc/customizer/settings/general.php:2519
 #: inc/customizer/settings/learndash.php:87
 #: inc/customizer/settings/learndash.php:115
 #: inc/customizer/settings/learndash.php:231
@@ -887,27 +900,27 @@ msgstr "تک پست"
 msgid "Layout"
 msgstr "طرح بندی"
 
-#: inc/customizer/settings/blog.php:751
+#: inc/customizer/settings/blog.php:752
 msgid "Page Header Title"
 msgstr "عنوان هدر صفحه"
 
-#: inc/customizer/settings/blog.php:758
+#: inc/customizer/settings/blog.php:759
 msgid "Post Title"
 msgstr "عنوان پست"
 
-#: inc/customizer/settings/blog.php:771
+#: inc/customizer/settings/blog.php:772
 msgid "Featured Image In Page Header"
 msgstr "تصویر ویژه در صفحه هر"
 
-#: inc/customizer/settings/blog.php:788
+#: inc/customizer/settings/blog.php:789
 #: inc/customizer/settings/general.php:1069
 msgid "Title/Breadcrumb Position"
 msgstr "موقعیت عنوان/Breadcrumb"
 
-#: inc/customizer/settings/blog.php:810 inc/customizer/settings/general.php:177
+#: inc/customizer/settings/blog.php:811 inc/customizer/settings/general.php:177
 #: inc/customizer/settings/general.php:1091
-#: inc/customizer/settings/general.php:1365
-#: inc/customizer/settings/general.php:1657
+#: inc/customizer/settings/general.php:1381
+#: inc/customizer/settings/general.php:1673
 #: inc/customizer/settings/header.php:1077
 #: inc/customizer/settings/header.php:1540
 #: inc/customizer/settings/header.php:1936
@@ -915,79 +928,79 @@ msgstr "موقعیت عنوان/Breadcrumb"
 msgid "Position"
 msgstr "موقعیت"
 
-#: inc/customizer/settings/blog.php:818 inc/customizer/settings/general.php:185
+#: inc/customizer/settings/blog.php:819 inc/customizer/settings/general.php:185
 #: inc/customizer/settings/general.php:1099
 #: inc/customizer/settings/header.php:1943
 msgid "Top Left"
 msgstr "بالا سمت چپ"
 
-#: inc/customizer/settings/blog.php:819 inc/customizer/settings/general.php:186
+#: inc/customizer/settings/blog.php:820 inc/customizer/settings/general.php:186
 #: inc/customizer/settings/general.php:1100
 #: inc/customizer/settings/header.php:1944
 msgid "Top Center"
 msgstr "بالا وسط"
 
-#: inc/customizer/settings/blog.php:820 inc/customizer/settings/general.php:187
+#: inc/customizer/settings/blog.php:821 inc/customizer/settings/general.php:187
 #: inc/customizer/settings/general.php:1101
 #: inc/customizer/settings/header.php:1945
 msgid "Top Right"
 msgstr "بالا سمت راست"
 
-#: inc/customizer/settings/blog.php:821 inc/customizer/settings/general.php:188
+#: inc/customizer/settings/blog.php:822 inc/customizer/settings/general.php:188
 #: inc/customizer/settings/general.php:1102
 #: inc/customizer/settings/header.php:1946
 msgid "Center Left"
 msgstr "وسط سمت چپ"
 
-#: inc/customizer/settings/blog.php:822 inc/customizer/settings/general.php:189
+#: inc/customizer/settings/blog.php:823 inc/customizer/settings/general.php:189
 #: inc/customizer/settings/general.php:1103
 #: inc/customizer/settings/header.php:1947
 msgid "Center Center"
 msgstr "وسط"
 
-#: inc/customizer/settings/blog.php:823 inc/customizer/settings/general.php:190
+#: inc/customizer/settings/blog.php:824 inc/customizer/settings/general.php:190
 #: inc/customizer/settings/general.php:1104
 #: inc/customizer/settings/header.php:1948
 msgid "Center Right"
 msgstr "وسط سمت راست"
 
-#: inc/customizer/settings/blog.php:824 inc/customizer/settings/general.php:191
+#: inc/customizer/settings/blog.php:825 inc/customizer/settings/general.php:191
 #: inc/customizer/settings/general.php:1105
 #: inc/customizer/settings/header.php:1949
 msgid "Bottom Left"
 msgstr "پائین سمت چپ"
 
-#: inc/customizer/settings/blog.php:825 inc/customizer/settings/general.php:192
+#: inc/customizer/settings/blog.php:826 inc/customizer/settings/general.php:192
 #: inc/customizer/settings/general.php:1106
 #: inc/customizer/settings/header.php:1950
 msgid "Bottom Center"
 msgstr "پایئن در مرکز"
 
-#: inc/customizer/settings/blog.php:826 inc/customizer/settings/general.php:193
+#: inc/customizer/settings/blog.php:827 inc/customizer/settings/general.php:193
 #: inc/customizer/settings/general.php:1107
 #: inc/customizer/settings/header.php:1951
 msgid "Bottom Right"
 msgstr "پائین سمت راست"
 
-#: inc/customizer/settings/blog.php:840 inc/customizer/settings/general.php:207
+#: inc/customizer/settings/blog.php:841 inc/customizer/settings/general.php:207
 #: inc/customizer/settings/general.php:1121
 #: inc/customizer/settings/header.php:1965
 msgid "Attachment"
 msgstr "ضمیمه"
 
-#: inc/customizer/settings/blog.php:848 inc/customizer/settings/general.php:215
+#: inc/customizer/settings/blog.php:849 inc/customizer/settings/general.php:215
 #: inc/customizer/settings/general.php:1129
 #: inc/customizer/settings/header.php:1972
 msgid "Scroll"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:849 inc/customizer/settings/general.php:216
+#: inc/customizer/settings/blog.php:850 inc/customizer/settings/general.php:216
 #: inc/customizer/settings/general.php:1130
 #: inc/customizer/settings/header.php:1973
 msgid "Fixed"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:863 inc/customizer/settings/blog.php:872
+#: inc/customizer/settings/blog.php:864 inc/customizer/settings/blog.php:873
 #: inc/customizer/settings/general.php:230
 #: inc/customizer/settings/general.php:239
 #: inc/customizer/settings/general.php:1144
@@ -997,68 +1010,68 @@ msgstr ""
 msgid "Repeat"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:871 inc/customizer/settings/general.php:238
+#: inc/customizer/settings/blog.php:872 inc/customizer/settings/general.php:238
 #: inc/customizer/settings/general.php:1152
 #: inc/customizer/settings/header.php:1994
 msgid "No-repeat"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:873 inc/customizer/settings/general.php:240
+#: inc/customizer/settings/blog.php:874 inc/customizer/settings/general.php:240
 #: inc/customizer/settings/general.php:1154
 #: inc/customizer/settings/header.php:1996
 msgid "Repeat-x"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:874 inc/customizer/settings/general.php:241
+#: inc/customizer/settings/blog.php:875 inc/customizer/settings/general.php:241
 #: inc/customizer/settings/general.php:1155
 #: inc/customizer/settings/header.php:1997
 msgid "Repeat-y"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:888 inc/customizer/settings/general.php:255
+#: inc/customizer/settings/blog.php:889 inc/customizer/settings/general.php:255
 #: inc/customizer/settings/general.php:1169
 #: inc/customizer/settings/header.php:2011
 msgid "Size"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:896 inc/customizer/settings/general.php:263
+#: inc/customizer/settings/blog.php:897 inc/customizer/settings/general.php:263
 #: inc/customizer/settings/general.php:1177
 #: inc/customizer/settings/header.php:2018
 msgid "Auto"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:897 inc/customizer/settings/general.php:264
+#: inc/customizer/settings/blog.php:898 inc/customizer/settings/general.php:264
 #: inc/customizer/settings/general.php:1178
 #: inc/customizer/settings/header.php:2019
 msgid "Cover"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:898 inc/customizer/settings/general.php:265
+#: inc/customizer/settings/blog.php:899 inc/customizer/settings/general.php:265
 #: inc/customizer/settings/general.php:1179
 #: inc/customizer/settings/header.php:2020
 msgid "Contain"
 msgstr "شامل"
 
-#: inc/customizer/settings/blog.php:912
+#: inc/customizer/settings/blog.php:913
 msgid "Page Header Height (px)"
 msgstr "ارتفاع هدر صفحه (پیکسل)"
 
-#: inc/customizer/settings/blog.php:934
+#: inc/customizer/settings/blog.php:935
 #: inc/customizer/settings/general.php:1215
 msgid "Overlay Opacity"
 msgstr "شفافیت لایه رویی"
 
-#: inc/customizer/settings/blog.php:956
+#: inc/customizer/settings/blog.php:957
 #: inc/customizer/settings/general.php:1237
 #: inc/customizer/settings/header.php:1920
 msgid "Overlay Color"
 msgstr "رنگ لایه رویی"
 
-#: inc/customizer/settings/blog.php:973
+#: inc/customizer/settings/blog.php:974
 msgid "Full Width Content"
 msgstr "محتوای تمام عرض"
 
-#: inc/customizer/settings/blog.php:974
+#: inc/customizer/settings/blog.php:975
 msgid ""
 "Enter the max width your the content with the full width layout. Add 0 to "
 "disable the max width."
@@ -1066,44 +1079,44 @@ msgstr ""
 "حداکثر عرض محتوای خود را با در نظر گرفتن عرض کل صفحه وارد کنید. اضافه کردن 0 "
 "به معنای غیرفعال کردن حداکثر عرض می باشد."
 
-#: inc/customizer/settings/blog.php:1031 inc/customizer/settings/edd.php:1112
+#: inc/customizer/settings/blog.php:1033 inc/customizer/settings/edd.php:1112
 msgid "Next/Prev Taxonomy"
 msgstr "بعدی/قبلی دسته بندی"
 
-#: inc/customizer/settings/blog.php:1036 inc/customizer/settings/blog.php:1095
+#: inc/customizer/settings/blog.php:1038 inc/customizer/settings/blog.php:1097
 #: inc/customizer/settings/edd.php:857 inc/customizer/settings/edd.php:1117
-#: inc/customizer/settings/general.php:1481
-#: inc/customizer/settings/general.php:1503
-#: inc/customizer/settings/general.php:1528
+#: inc/customizer/settings/general.php:1497
+#: inc/customizer/settings/general.php:1519
+#: inc/customizer/settings/general.php:1544
 #: inc/customizer/settings/woocommerce.php:1492
 msgid "Category"
 msgstr "دسته بندی"
 
-#: inc/customizer/settings/blog.php:1037 inc/customizer/settings/blog.php:1096
+#: inc/customizer/settings/blog.php:1039 inc/customizer/settings/blog.php:1098
 #: inc/customizer/settings/edd.php:1118
-#: inc/customizer/settings/general.php:1482
-#: inc/customizer/settings/general.php:1504
-#: inc/customizer/settings/general.php:1529
+#: inc/customizer/settings/general.php:1498
+#: inc/customizer/settings/general.php:1520
+#: inc/customizer/settings/general.php:1545
 msgid "Tag"
 msgstr "برچسب"
 
-#: inc/customizer/settings/blog.php:1050
+#: inc/customizer/settings/blog.php:1052
 msgid "Related Posts Count"
 msgstr "تعداد پست های مرتبط"
 
-#: inc/customizer/settings/blog.php:1070
+#: inc/customizer/settings/blog.php:1072
 msgid "Related Posts Columns"
 msgstr "ستون های پست های مرتبط"
 
-#: inc/customizer/settings/blog.php:1090
+#: inc/customizer/settings/blog.php:1092
 msgid "Related Posts Taxonomy"
 msgstr "دسته بندی پست های مرتبط"
 
-#: inc/customizer/settings/blog.php:1108
+#: inc/customizer/settings/blog.php:1110
 msgid "Related Posts Image Width (px)"
 msgstr "عرض تصویر پست های مرتبط (پیکسل)"
 
-#: inc/customizer/settings/blog.php:1127
+#: inc/customizer/settings/blog.php:1129
 msgid "Related Posts Image Height (px)"
 msgstr "ارتفاع تصویر پست های مرتبط (پیکسل)"
 
@@ -1131,7 +1144,7 @@ msgstr "عمومی"
 #: inc/customizer/settings/lifterlms.php:610
 #: inc/customizer/settings/woocommerce.php:49
 #: inc/customizer/settings/woocommerce.php:288
-#: inc/customizer/settings/woocommerce.php:2326
+#: inc/customizer/settings/woocommerce.php:2353
 msgid ""
 "For some options, you must save and refresh your live site to preview "
 "changes."
@@ -1162,8 +1175,8 @@ msgstr ""
 #: inc/customizer/settings/woocommerce.php:105
 #: inc/customizer/settings/woocommerce.php:278
 #: inc/customizer/settings/woocommerce.php:361
-#: inc/customizer/settings/woocommerce.php:2022
-#: inc/customizer/settings/woocommerce.php:2095
+#: inc/customizer/settings/woocommerce.php:2049
+#: inc/customizer/settings/woocommerce.php:2122
 msgid "Yes"
 msgstr "بله"
 
@@ -1172,8 +1185,8 @@ msgstr "بله"
 #: inc/customizer/settings/woocommerce.php:106
 #: inc/customizer/settings/woocommerce.php:279
 #: inc/customizer/settings/woocommerce.php:362
-#: inc/customizer/settings/woocommerce.php:2023
-#: inc/customizer/settings/woocommerce.php:2096
+#: inc/customizer/settings/woocommerce.php:2050
+#: inc/customizer/settings/woocommerce.php:2123
 msgid "No"
 msgstr "خیر"
 
@@ -1247,7 +1260,7 @@ msgstr "رنگ هاور آیکون شمارنده کیف"
 msgid "Display"
 msgstr "نمایش"
 
-#: inc/customizer/settings/edd.php:256 inc/customizer/settings/general.php:1409
+#: inc/customizer/settings/edd.php:256 inc/customizer/settings/general.php:1425
 #: inc/customizer/settings/header.php:1610
 #: inc/customizer/settings/header.php:3711
 #: inc/customizer/settings/woocommerce.php:466
@@ -1313,7 +1326,7 @@ msgstr "آیکون سفارشی"
 msgid "Enter your full icon class"
 msgstr "کلاس مربوط به تمامی آیکون ها را وارد کنید"
 
-#: inc/customizer/settings/edd.php:357 inc/customizer/settings/general.php:1722
+#: inc/customizer/settings/edd.php:357 inc/customizer/settings/general.php:1738
 #: inc/customizer/settings/woocommerce.php:567
 msgid "Icon Size (px)"
 msgstr "سایز آیکون (پیکسل)"
@@ -1364,9 +1377,9 @@ msgstr "رنگ عنوان محصول"
 
 #: inc/customizer/settings/edd.php:520 inc/customizer/settings/edd.php:1600
 #: inc/customizer/settings/woocommerce.php:795
-#: inc/customizer/settings/woocommerce.php:2144
-#: inc/customizer/settings/woocommerce.php:3343
-#: inc/customizer/settings/woocommerce.php:3924
+#: inc/customizer/settings/woocommerce.php:2171
+#: inc/customizer/settings/woocommerce.php:3370
+#: inc/customizer/settings/woocommerce.php:3951
 msgid "Price Color"
 msgstr "رنگ قیمت"
 
@@ -1436,13 +1449,13 @@ msgstr "تصویر"
 
 #: inc/customizer/settings/edd.php:858
 #: inc/customizer/settings/woocommerce.php:1493
-#: inc/customizer/settings/woocommerce.php:1772 inc/helpers.php:2888
-#: inc/helpers.php:2973
+#: inc/customizer/settings/woocommerce.php:1799 inc/helpers.php:2902
+#: inc/helpers.php:2987
 msgid "Title"
 msgstr "عنوان"
 
 #: inc/customizer/settings/edd.php:859
-#: inc/customizer/settings/woocommerce.php:1774
+#: inc/customizer/settings/woocommerce.php:1801
 msgid "Price"
 msgstr "قیمت"
 
@@ -1476,12 +1489,12 @@ msgstr "تتظیمات"
 
 #: inc/customizer/settings/edd.php:963 inc/customizer/settings/edd.php:1779
 #: inc/customizer/settings/woocommerce.php:1650
-#: inc/customizer/settings/woocommerce.php:3893
+#: inc/customizer/settings/woocommerce.php:3920
 msgid "Single Product"
 msgstr "تک محصول"
 
 #: inc/customizer/settings/edd.php:1080
-#: inc/customizer/settings/woocommerce.php:1790
+#: inc/customizer/settings/woocommerce.php:1817
 msgid "Display Product Navigation"
 msgstr "نمایش ناوبری محصولا"
 
@@ -1495,19 +1508,19 @@ msgstr "صفحه تسویه حساب"
 
 #: inc/customizer/settings/edd.php:1152
 #: inc/customizer/settings/lifterlms.php:76
-#: inc/customizer/settings/woocommerce.php:2405
+#: inc/customizer/settings/woocommerce.php:2432
 msgid "Distraction Free Checkout"
 msgstr "تغییر به پرداخت رایگان"
 
 #: inc/customizer/settings/edd.php:1163
 #: inc/customizer/settings/learndash.php:445
 #: inc/customizer/settings/lifterlms.php:609
-#: inc/customizer/settings/woocommerce.php:2573
+#: inc/customizer/settings/woocommerce.php:2600
 msgid "Advanced Styling"
 msgstr "استایل دهی پیشرفته"
 
 #: inc/customizer/settings/edd.php:1176
-#: inc/customizer/settings/woocommerce.php:2919
+#: inc/customizer/settings/woocommerce.php:2946
 msgid "Product Entry"
 msgstr "نوشته محصول"
 
@@ -1515,8 +1528,8 @@ msgstr "نوشته محصول"
 #: inc/customizer/settings/footer-bottom.php:161
 #: inc/customizer/settings/footer-widgets.php:257
 #: inc/customizer/settings/general.php:1277
-#: inc/customizer/settings/general.php:2076
-#: inc/customizer/settings/general.php:2356
+#: inc/customizer/settings/general.php:2092
+#: inc/customizer/settings/general.php:2372
 #: inc/customizer/settings/header.php:288
 #: inc/customizer/settings/header.php:981
 #: inc/customizer/settings/header.php:3112
@@ -1525,31 +1538,31 @@ msgstr "نوشته محصول"
 #: inc/customizer/settings/sidebar.php:229
 #: inc/customizer/settings/topbar.php:192
 #: inc/customizer/settings/topbar.php:484
-#: inc/customizer/settings/woocommerce.php:2979
+#: inc/customizer/settings/woocommerce.php:3006
 msgid "Padding (px)"
 msgstr ""
 
 #: inc/customizer/settings/edd.php:1315
 #: inc/customizer/settings/lifterlms.php:763
-#: inc/customizer/settings/woocommerce.php:3058
+#: inc/customizer/settings/woocommerce.php:3085
 msgid "Image Margin (px)"
 msgstr ""
 
 #: inc/customizer/settings/edd.php:1393
-#: inc/customizer/settings/general.php:1886
-#: inc/customizer/settings/general.php:2180
+#: inc/customizer/settings/general.php:1902
+#: inc/customizer/settings/general.php:2196
 #: inc/customizer/settings/lifterlms.php:841
-#: inc/customizer/settings/woocommerce.php:3136
+#: inc/customizer/settings/woocommerce.php:3163
 msgid "Border Width (px)"
 msgstr ""
 
 #: inc/customizer/settings/edd.php:1472
-#: inc/customizer/settings/general.php:1744
-#: inc/customizer/settings/general.php:2214
-#: inc/customizer/settings/general.php:2390
+#: inc/customizer/settings/general.php:1760
+#: inc/customizer/settings/general.php:2230
+#: inc/customizer/settings/general.php:2406
 #: inc/customizer/settings/lifterlms.php:920
-#: inc/customizer/settings/woocommerce.php:3215
-#: inc/customizer/settings/woocommerce.php:4129
+#: inc/customizer/settings/woocommerce.php:3242
+#: inc/customizer/settings/woocommerce.php:4156
 msgid "Border Radius (px)"
 msgstr ""
 
@@ -1558,10 +1571,10 @@ msgstr ""
 #: inc/customizer/settings/footer-widgets.php:292
 #: inc/customizer/settings/general.php:146
 #: inc/customizer/settings/general.php:1305
-#: inc/customizer/settings/general.php:1766
-#: inc/customizer/settings/general.php:1906
-#: inc/customizer/settings/general.php:2266
-#: inc/customizer/settings/general.php:2411
+#: inc/customizer/settings/general.php:1782
+#: inc/customizer/settings/general.php:1922
+#: inc/customizer/settings/general.php:2282
+#: inc/customizer/settings/general.php:2427
 #: inc/customizer/settings/header.php:206
 #: inc/customizer/settings/header.php:353
 #: inc/customizer/settings/header.php:586
@@ -1576,26 +1589,26 @@ msgstr ""
 #: inc/customizer/settings/sidebar.php:164
 #: inc/customizer/settings/topbar.php:227
 #: inc/customizer/settings/woocommerce.php:1022
-#: inc/customizer/settings/woocommerce.php:2110
-#: inc/customizer/settings/woocommerce.php:3248
-#: inc/customizer/settings/woocommerce.php:3863
-#: inc/customizer/settings/woocommerce.php:4149
+#: inc/customizer/settings/woocommerce.php:2137
+#: inc/customizer/settings/woocommerce.php:3275
+#: inc/customizer/settings/woocommerce.php:3890
+#: inc/customizer/settings/woocommerce.php:4176
 msgid "Background Color"
 msgstr "رنگ پس زمینه"
 
 #: inc/customizer/settings/edd.php:1520
-#: inc/customizer/settings/general.php:1970
-#: inc/customizer/settings/general.php:2235
+#: inc/customizer/settings/general.php:1986
+#: inc/customizer/settings/general.php:2251
 #: inc/customizer/settings/header.php:1828
 #: inc/customizer/settings/lifterlms.php:969
 #: inc/customizer/settings/topbar.php:244
-#: inc/customizer/settings/woocommerce.php:3263
-#: inc/customizer/settings/woocommerce.php:4213
+#: inc/customizer/settings/woocommerce.php:3290
+#: inc/customizer/settings/woocommerce.php:4240
 msgid "Border Color"
 msgstr "رنگ حاشیه"
 
 #: inc/customizer/settings/edd.php:1552
-#: inc/customizer/settings/woocommerce.php:3295
+#: inc/customizer/settings/woocommerce.php:3322
 msgid "Category Color: Hover"
 msgstr "رنگ دسته بندی: هاور"
 
@@ -1604,144 +1617,144 @@ msgstr "رنگ دسته بندی: هاور"
 #: inc/customizer/settings/lifterlms.php:1059
 #: inc/customizer/settings/lifterlms.php:1213
 #: inc/customizer/settings/woocommerce.php:1054
-#: inc/customizer/settings/woocommerce.php:2127
-#: inc/customizer/settings/woocommerce.php:3311
-#: inc/customizer/settings/woocommerce.php:3908
+#: inc/customizer/settings/woocommerce.php:2154
+#: inc/customizer/settings/woocommerce.php:3338
+#: inc/customizer/settings/woocommerce.php:3935
 msgid "Title Color"
 msgstr "رنگ عنوان"
 
 #: inc/customizer/settings/edd.php:1584
 #: inc/customizer/settings/lifterlms.php:999
-#: inc/customizer/settings/woocommerce.php:3327
+#: inc/customizer/settings/woocommerce.php:3354
 msgid "Title Color: Hover"
 msgstr "رنگ عنوان: هاور"
 
 #: inc/customizer/settings/edd.php:1614
-#: inc/customizer/settings/woocommerce.php:3526
+#: inc/customizer/settings/woocommerce.php:3553
 msgid "Product Entry: Add To Cart"
 msgstr "نوشته محصول: افزودن به سبد خرید"
 
 #: inc/customizer/settings/edd.php:1628
-#: inc/customizer/settings/woocommerce.php:3540
-#: inc/customizer/settings/woocommerce.php:4257
+#: inc/customizer/settings/woocommerce.php:3567
+#: inc/customizer/settings/woocommerce.php:4284
 msgid "Add To Cart Background Color"
 msgstr "رنگ پس زمینه افزودن به سبد خرید"
 
 #: inc/customizer/settings/edd.php:1643
-#: inc/customizer/settings/woocommerce.php:3555
-#: inc/customizer/settings/woocommerce.php:4272
+#: inc/customizer/settings/woocommerce.php:3582
+#: inc/customizer/settings/woocommerce.php:4299
 msgid "Add To Cart Background Color: Hover"
 msgstr "رنگ پس زمینه افزودن به سبد خرید: هاور"
 
 #: inc/customizer/settings/edd.php:1659
-#: inc/customizer/settings/woocommerce.php:3571
-#: inc/customizer/settings/woocommerce.php:4287
+#: inc/customizer/settings/woocommerce.php:3598
+#: inc/customizer/settings/woocommerce.php:4314
 msgid "Add To Cart Color"
 msgstr "رنگ افزودن به سبد خرید"
 
 #: inc/customizer/settings/edd.php:1675
-#: inc/customizer/settings/woocommerce.php:3587
-#: inc/customizer/settings/woocommerce.php:4302
+#: inc/customizer/settings/woocommerce.php:3614
+#: inc/customizer/settings/woocommerce.php:4329
 msgid "Add To Cart Color: Hover"
 msgstr "رنگ افزودن به سبد خرید: هاور"
 
 #: inc/customizer/settings/edd.php:1691
-#: inc/customizer/settings/woocommerce.php:3603
-#: inc/customizer/settings/woocommerce.php:4317
+#: inc/customizer/settings/woocommerce.php:3630
+#: inc/customizer/settings/woocommerce.php:4344
 msgid "Add To Cart Border Color"
 msgstr "رنگ حاشیه افزودن به سبد خرید"
 
 #: inc/customizer/settings/edd.php:1707
-#: inc/customizer/settings/woocommerce.php:3619
-#: inc/customizer/settings/woocommerce.php:4332
+#: inc/customizer/settings/woocommerce.php:3646
+#: inc/customizer/settings/woocommerce.php:4359
 msgid "Add To Cart Border Color: Hover"
 msgstr "رنگ حاشیه افزودن به سبد خرید: هاور"
 
 #: inc/customizer/settings/edd.php:1723
-#: inc/customizer/settings/woocommerce.php:3635
-#: inc/customizer/settings/woocommerce.php:4348
+#: inc/customizer/settings/woocommerce.php:3662
+#: inc/customizer/settings/woocommerce.php:4375
 msgid "Add To Cart Border: Style"
 msgstr "افزودن به حاشیه سبد خرید: استایل"
 
 #: inc/customizer/settings/edd.php:1729
-#: inc/customizer/settings/general.php:1480
-#: inc/customizer/settings/general.php:1502
-#: inc/customizer/settings/general.php:1527
+#: inc/customizer/settings/general.php:1496
+#: inc/customizer/settings/general.php:1518
+#: inc/customizer/settings/general.php:1543
 #: inc/customizer/settings/typography.php:469
-#: inc/customizer/settings/woocommerce.php:3641
-#: inc/customizer/settings/woocommerce.php:4354
+#: inc/customizer/settings/woocommerce.php:3668
+#: inc/customizer/settings/woocommerce.php:4381
 msgid "None"
 msgstr "هیچ"
 
 #: inc/customizer/settings/edd.php:1730
-#: inc/customizer/settings/woocommerce.php:3642
-#: inc/customizer/settings/woocommerce.php:4355
+#: inc/customizer/settings/woocommerce.php:3669
+#: inc/customizer/settings/woocommerce.php:4382
 msgid "Solid"
 msgstr ""
 
 #: inc/customizer/settings/edd.php:1731
-#: inc/customizer/settings/woocommerce.php:3643
-#: inc/customizer/settings/woocommerce.php:4356
+#: inc/customizer/settings/woocommerce.php:3670
+#: inc/customizer/settings/woocommerce.php:4383
 msgid "Double"
 msgstr ""
 
 #: inc/customizer/settings/edd.php:1732
-#: inc/customizer/settings/woocommerce.php:3644
-#: inc/customizer/settings/woocommerce.php:4357
+#: inc/customizer/settings/woocommerce.php:3671
+#: inc/customizer/settings/woocommerce.php:4384
 msgid "Dashed"
 msgstr ""
 
 #: inc/customizer/settings/edd.php:1733
-#: inc/customizer/settings/woocommerce.php:3645
-#: inc/customizer/settings/woocommerce.php:4358
+#: inc/customizer/settings/woocommerce.php:3672
+#: inc/customizer/settings/woocommerce.php:4385
 msgid "Dotted"
 msgstr ""
 
 #: inc/customizer/settings/edd.php:1746
-#: inc/customizer/settings/woocommerce.php:3658
-#: inc/customizer/settings/woocommerce.php:4371
+#: inc/customizer/settings/woocommerce.php:3685
+#: inc/customizer/settings/woocommerce.php:4398
 msgid "Add To Cart Border: Size"
 msgstr "افزودن به حاشیه سبد خرید: سایز"
 
 #: inc/customizer/settings/edd.php:1747
-#: inc/customizer/settings/woocommerce.php:3659
-#: inc/customizer/settings/woocommerce.php:4372
+#: inc/customizer/settings/woocommerce.php:3686
+#: inc/customizer/settings/woocommerce.php:4399
 msgid "Add a custom border size. px - em - %."
 msgstr "افزودن سایز حاشیه سفارشی شده. px - em - %."
 
 #: inc/customizer/settings/edd.php:1763
-#: inc/customizer/settings/woocommerce.php:3675
-#: inc/customizer/settings/woocommerce.php:4388
+#: inc/customizer/settings/woocommerce.php:3702
+#: inc/customizer/settings/woocommerce.php:4415
 msgid "Add To Cart Border: Radius"
 msgstr "افزودن به حاشیه سبد خرید: لبه گرد"
 
 #: inc/customizer/settings/edd.php:1764 inc/customizer/settings/header.php:1758
 #: inc/customizer/settings/header.php:1776
 #: inc/customizer/settings/header.php:3197
-#: inc/customizer/settings/woocommerce.php:3676
-#: inc/customizer/settings/woocommerce.php:4389
+#: inc/customizer/settings/woocommerce.php:3703
+#: inc/customizer/settings/woocommerce.php:4416
 msgid "Add a custom border radius. px - em - %."
 msgstr "افزودن یک اندازه برای گرد شدن لبه های حاشیه. . px - em - %."
 
 #: inc/customizer/settings/edd.php:1810 inc/customizer/settings/edd.php:1903
 #: inc/customizer/settings/lifterlms.php:1229
-#: inc/customizer/settings/woocommerce.php:3956
+#: inc/customizer/settings/woocommerce.php:3983
 msgid "Description Color"
 msgstr "رنگ توضیحات"
 
 #: inc/customizer/settings/edd.php:1824
-#: inc/customizer/settings/woocommerce.php:2391
-#: inc/customizer/settings/woocommerce.php:4858
+#: inc/customizer/settings/woocommerce.php:2418
+#: inc/customizer/settings/woocommerce.php:4885
 msgid "Checkout"
 msgstr "تسویه حساب"
 
 #: inc/customizer/settings/edd.php:1839
-#: inc/customizer/settings/woocommerce.php:4969
+#: inc/customizer/settings/woocommerce.php:4996
 msgid "Titles Color"
 msgstr "رنگ عناوین"
 
 #: inc/customizer/settings/edd.php:1855
-#: inc/customizer/settings/woocommerce.php:4985
+#: inc/customizer/settings/woocommerce.php:5012
 msgid "Titles Border Bottom Color"
 msgstr "رنگ حاشیه پائین عناوین"
 
@@ -1749,38 +1762,38 @@ msgstr "رنگ حاشیه پائین عناوین"
 #: inc/customizer/settings/footer-widgets.php:326
 #: inc/customizer/settings/header.php:2516
 #: inc/customizer/settings/header.php:3807
-#: inc/customizer/settings/woocommerce.php:4419
-#: inc/customizer/settings/woocommerce.php:4765
+#: inc/customizer/settings/woocommerce.php:4446
+#: inc/customizer/settings/woocommerce.php:4792
 msgid "Borders Color"
 msgstr "رنگ حاشیه ها"
 
 #: inc/customizer/settings/edd.php:1887
-#: inc/customizer/settings/general.php:2011
+#: inc/customizer/settings/general.php:2027
 msgid "Label Color"
 msgstr "رنگ برچسب"
 
 #: inc/customizer/settings/edd.php:1919
-#: inc/customizer/settings/woocommerce.php:4781
+#: inc/customizer/settings/woocommerce.php:4808
 msgid "Head Background"
 msgstr "پس زمینه هدر"
 
 #: inc/customizer/settings/edd.php:1935
-#: inc/customizer/settings/woocommerce.php:4797
+#: inc/customizer/settings/woocommerce.php:4824
 msgid "Head Titles Color"
 msgstr "رنگ سرعنوان"
 
 #: inc/customizer/settings/edd.php:1951
-#: inc/customizer/settings/woocommerce.php:4813
+#: inc/customizer/settings/woocommerce.php:4840
 msgid "Cart Totals Table: Titles Color"
 msgstr ""
 
 #: inc/customizer/settings/edd.php:1966
-#: inc/customizer/settings/woocommerce.php:4828
+#: inc/customizer/settings/woocommerce.php:4855
 msgid "Remove Button Color"
 msgstr ""
 
 #: inc/customizer/settings/edd.php:1982
-#: inc/customizer/settings/woocommerce.php:4844
+#: inc/customizer/settings/woocommerce.php:4871
 msgid "Remove Button Color: Hover"
 msgstr ""
 
@@ -1834,9 +1847,9 @@ msgstr "کد کوتاه مجاز است، %1$sلیست را ببینید%2$s."
 #: inc/customizer/settings/footer-bottom.php:213
 #: inc/customizer/settings/footer-widgets.php:309
 #: inc/customizer/settings/general.php:1321
-#: inc/customizer/settings/general.php:1546
+#: inc/customizer/settings/general.php:1562
 #: inc/customizer/settings/topbar.php:261
-#: inc/customizer/settings/woocommerce.php:4435
+#: inc/customizer/settings/woocommerce.php:4462
 msgid "Text Color"
 msgstr "رنگ عنوان"
 
@@ -1876,13 +1889,13 @@ msgstr ""
 
 #: inc/customizer/settings/footer-widgets.php:99
 #: inc/customizer/settings/footer-widgets.php:120
-#: inc/customizer/settings/general.php:2489
+#: inc/customizer/settings/general.php:2505
 msgid "On"
 msgstr "روشن"
 
 #: inc/customizer/settings/footer-widgets.php:100
 #: inc/customizer/settings/footer-widgets.php:121
-#: inc/customizer/settings/general.php:2490
+#: inc/customizer/settings/general.php:2506
 msgid "Off"
 msgstr "خاموش"
 
@@ -1895,7 +1908,7 @@ msgid "Add a parallax effect to your footer."
 msgstr "افزودن یک افکت پارالاکس به فوتر سایت."
 
 #: inc/customizer/settings/footer-widgets.php:135
-#: inc/customizer/settings/general.php:2522
+#: inc/customizer/settings/general.php:2538
 #: inc/customizer/settings/header.php:89
 #: inc/customizer/settings/header.php:1302
 #: inc/customizer/settings/header.php:2169
@@ -1905,7 +1918,7 @@ msgid "Select Template"
 msgstr "انتخاب قالب"
 
 #: inc/customizer/settings/footer-widgets.php:136
-#: inc/customizer/settings/general.php:2523
+#: inc/customizer/settings/general.php:2539
 #: inc/customizer/settings/header.php:90
 #: inc/customizer/settings/header.php:2968
 #: inc/customizer/settings/topbar.php:384
@@ -1970,22 +1983,22 @@ msgid "Background Image"
 msgstr "تصویر پس زمینه"
 
 #: inc/customizer/settings/general.php:292
-#: inc/customizer/settings/general.php:1800
-#: inc/customizer/settings/general.php:1938
-#: inc/customizer/settings/general.php:2282
-#: inc/customizer/settings/general.php:2443
+#: inc/customizer/settings/general.php:1816
+#: inc/customizer/settings/general.php:1954
+#: inc/customizer/settings/general.php:2298
+#: inc/customizer/settings/general.php:2459
 #: inc/customizer/settings/header.php:1811
 #: inc/customizer/settings/header.php:2127
-#: inc/customizer/settings/woocommerce.php:4181
+#: inc/customizer/settings/woocommerce.php:4208
 msgid "Color"
 msgstr "رنگ"
 
 #: inc/customizer/settings/general.php:308
-#: inc/customizer/settings/general.php:1817
-#: inc/customizer/settings/general.php:1954
-#: inc/customizer/settings/general.php:2459
+#: inc/customizer/settings/general.php:1833
+#: inc/customizer/settings/general.php:1970
+#: inc/customizer/settings/general.php:2475
 #: inc/customizer/settings/header.php:2144
-#: inc/customizer/settings/woocommerce.php:4197
+#: inc/customizer/settings/woocommerce.php:4224
 msgid "Color: Hover"
 msgstr "رنگ: هاور"
 
@@ -2144,67 +2157,73 @@ msgstr ""
 msgid "Enable Breadcrumbs"
 msgstr "فعال سازی Breadcrumbs"
 
-#: inc/customizer/settings/general.php:1372
+#: inc/customizer/settings/general.php:1365
+#, fuzzy
+#| msgid "Post Title"
+msgid "Show Item Title"
+msgstr "عنوان پست"
+
+#: inc/customizer/settings/general.php:1388
 msgid "Absolute Right"
 msgstr ""
 
-#: inc/customizer/settings/general.php:1373
+#: inc/customizer/settings/general.php:1389
 msgid "Under Title"
 msgstr "عنوان زیرین"
 
-#: inc/customizer/settings/general.php:1387
+#: inc/customizer/settings/general.php:1403
 msgid "Breadcrumb Separator"
 msgstr "Breadcrumb جداگانه"
 
-#: inc/customizer/settings/general.php:1404
+#: inc/customizer/settings/general.php:1420
 msgid "Home Item"
 msgstr "آیتم خانه"
 
-#: inc/customizer/settings/general.php:1410
+#: inc/customizer/settings/general.php:1426
 msgid "Text"
 msgstr "متن"
 
-#: inc/customizer/settings/general.php:1424
+#: inc/customizer/settings/general.php:1440
 msgid "Translation for Homepage"
 msgstr "ترجمه برای صفحه اصلی"
 
-#: inc/customizer/settings/general.php:1441
+#: inc/customizer/settings/general.php:1457
 msgid "Translation for \"404 Not Found\""
 msgstr "ترجمه برای \"404 پیدا نشد\""
 
-#: inc/customizer/settings/general.php:1458
+#: inc/customizer/settings/general.php:1474
 msgid "Translation for \"Search results for\""
 msgstr "ترجمه برای \"نتایج جستجو برای\""
 
-#: inc/customizer/settings/general.php:1474
+#: inc/customizer/settings/general.php:1490
 msgid "Posts Taxonomy"
 msgstr "دسته بندی پست ها"
 
-#: inc/customizer/settings/general.php:1483
+#: inc/customizer/settings/general.php:1499
 msgid "Blog Page"
 msgstr "صفحه وبلاگ"
 
-#: inc/customizer/settings/general.php:1496
+#: inc/customizer/settings/general.php:1512
 msgid "Products Taxonomy"
 msgstr "دسته بندی محصولات"
 
-#: inc/customizer/settings/general.php:1505
+#: inc/customizer/settings/general.php:1521
 msgid "Shop Page"
 msgstr "صفحه فروشگاه"
 
-#: inc/customizer/settings/general.php:1521
+#: inc/customizer/settings/general.php:1537
 msgid "Portfolio Taxonomy"
 msgstr "دسته بندی نمونه کارها"
 
-#: inc/customizer/settings/general.php:1530
+#: inc/customizer/settings/general.php:1546
 msgid "Portfolio Page"
 msgstr "صفحه نمونه کارها"
 
-#: inc/customizer/settings/general.php:1563
+#: inc/customizer/settings/general.php:1579
 msgid "Separator Color"
 msgstr "رنگ جداگانه"
 
-#: inc/customizer/settings/general.php:1580
+#: inc/customizer/settings/general.php:1596
 #: inc/customizer/settings/header.php:2357
 #: inc/customizer/settings/header.php:2532
 #: inc/customizer/settings/topbar.php:278
@@ -2212,7 +2231,7 @@ msgstr "رنگ جداگانه"
 msgid "Link Color"
 msgstr "رنگ لینک"
 
-#: inc/customizer/settings/general.php:1597
+#: inc/customizer/settings/general.php:1613
 #: inc/customizer/settings/header.php:2373
 #: inc/customizer/settings/header.php:2548
 #: inc/customizer/settings/topbar.php:295
@@ -2220,77 +2239,77 @@ msgstr "رنگ لینک"
 msgid "Link Color: Hover"
 msgstr "رنگ لینک: هاور"
 
-#: inc/customizer/settings/general.php:1608
+#: inc/customizer/settings/general.php:1624
 msgid "Scroll To Top"
 msgstr "اسکرول به بالا"
 
-#: inc/customizer/settings/general.php:1622
+#: inc/customizer/settings/general.php:1638
 msgid "Scroll Up Button"
 msgstr "اسکرول به پائین"
 
-#: inc/customizer/settings/general.php:1639
+#: inc/customizer/settings/general.php:1655
 msgid "Arrow Icon"
 msgstr "آیکون فلش"
 
-#: inc/customizer/settings/general.php:1678
+#: inc/customizer/settings/general.php:1694
 msgid "Bottom Position (px)"
 msgstr "موقعیت پائین (پیکسل)"
 
-#: inc/customizer/settings/general.php:1700
+#: inc/customizer/settings/general.php:1716
 msgid "Button Size (px)"
 msgstr "سایز دکمه (پیکسل)"
 
-#: inc/customizer/settings/general.php:1783
-#: inc/customizer/settings/general.php:1922
-#: inc/customizer/settings/general.php:2427
-#: inc/customizer/settings/woocommerce.php:4165
+#: inc/customizer/settings/general.php:1799
+#: inc/customizer/settings/general.php:1938
+#: inc/customizer/settings/general.php:2443
+#: inc/customizer/settings/woocommerce.php:4192
 msgid "Background Color: Hover"
 msgstr "رنگ پس زمینه: هاور"
 
-#: inc/customizer/settings/general.php:1828
+#: inc/customizer/settings/general.php:1844
 #: inc/customizer/settings/woocommerce.php:1568
 msgid "Pagination"
 msgstr "صفحه بندی"
 
-#: inc/customizer/settings/general.php:1843
+#: inc/customizer/settings/general.php:1859
 msgid "Align"
 msgstr "تزار"
 
-#: inc/customizer/settings/general.php:1865
-#: inc/customizer/settings/general.php:2110
+#: inc/customizer/settings/general.php:1881
+#: inc/customizer/settings/general.php:2126
 #: inc/customizer/settings/header.php:3041
 #: inc/customizer/settings/topbar.php:435
 msgid "Font Size (px)"
 msgstr "سایز فونت (پیکسل)"
 
-#: inc/customizer/settings/general.php:1986
+#: inc/customizer/settings/general.php:2002
 #: inc/customizer/settings/header.php:1844
-#: inc/customizer/settings/woocommerce.php:4229
+#: inc/customizer/settings/woocommerce.php:4256
 msgid "Border Color: Hover"
 msgstr "رنگ حاشیه: هاور"
 
-#: inc/customizer/settings/general.php:1996
+#: inc/customizer/settings/general.php:2012
 msgid "Forms (Input - Textarea)"
 msgstr "فرم ها (Input - Textarea)"
 
-#: inc/customizer/settings/general.php:2251
+#: inc/customizer/settings/general.php:2267
 #: inc/customizer/settings/header.php:1860
 msgid "Border Color: Focus"
 msgstr "رنگ حاشیه: Focus"
 
-#: inc/customizer/settings/general.php:2292
+#: inc/customizer/settings/general.php:2308
 msgid "Theme Buttons"
 msgstr "دکمه های قالب"
 
-#: inc/customizer/settings/general.php:2469
+#: inc/customizer/settings/general.php:2485
 msgid "404 Error Page"
 msgstr "صفحه خطای 404"
 
-#: inc/customizer/settings/general.php:2483
+#: inc/customizer/settings/general.php:2499
 msgid "Blank Page"
 msgstr "صفحه خالی"
 
-#: inc/customizer/settings/general.php:2484
+#: inc/customizer/settings/general.php:2500
 msgid ""
 "Enable this option to remove all the elements and have full control of the "
 "404 error page."
@@ -2298,7 +2317,7 @@ msgstr ""
 "این گزینه را فعال کنید تا تمام عناصر شوند و کنترل کامل صفحه 404 را بدست "
 "بگیرید."
 
-#: inc/customizer/settings/general.php:2573
+#: inc/customizer/settings/general.php:2589
 msgid "All Post Types"
 msgstr "همه پست ها"
 
@@ -2325,8 +2344,8 @@ msgid "Full Screen"
 msgstr "تمام صفحه"
 
 #: inc/customizer/settings/header.php:75
-#: inc/customizer/settings/woocommerce.php:1872
-#: inc/customizer/settings/woocommerce.php:1928
+#: inc/customizer/settings/woocommerce.php:1899
+#: inc/customizer/settings/woocommerce.php:1955
 msgid "Vertical"
 msgstr "عمودی"
 
@@ -2536,7 +2555,7 @@ msgstr "اگر از افزودنی استیکی هدر استفاده می کن�
 
 #: inc/customizer/settings/header.php:1061
 #: inc/customizer/settings/header.php:2155
-#: inc/customizer/settings/header.php:3486 inc/helpers.php:3749
+#: inc/customizer/settings/header.php:3486 inc/helpers.php:3763
 #: partials/mobile/mobile-icon.php:37
 msgid "Menu"
 msgstr "منو"
@@ -3049,7 +3068,7 @@ msgstr "نمایش متن منو"
 msgid "Menu Text"
 msgstr "متن منو"
 
-#: inc/customizer/settings/header.php:3503 inc/helpers.php:3750
+#: inc/customizer/settings/header.php:3503 inc/helpers.php:3764
 #: partials/mobile/mobile-icon.php:42
 msgid "Close"
 msgstr "بستن"
@@ -3100,7 +3119,7 @@ msgstr "دکمه \"بستن\" منو"
 msgid "Close Menu Button Icon Class"
 msgstr "کلاس آیکون دکمه \"بستن\" منو"
 
-#: inc/customizer/settings/header.php:3682 inc/helpers.php:3751
+#: inc/customizer/settings/header.php:3682 inc/helpers.php:3765
 #: partials/mobile/mobile-sidr-close.php:20
 msgid "Close Menu"
 msgstr "بستن منو"
@@ -3237,8 +3256,8 @@ msgstr "جزئیات دوره ها"
 
 #: inc/customizer/settings/lifterlms.php:209
 #: inc/customizer/settings/lifterlms.php:240
-#: inc/customizer/settings/woocommerce.php:1516 inc/helpers.php:2887
-#: inc/helpers.php:2972
+#: inc/customizer/settings/woocommerce.php:1516 inc/helpers.php:2901
+#: inc/helpers.php:2986
 msgid "Featured Image"
 msgstr "تصویر ویژه"
 
@@ -3277,7 +3296,7 @@ msgid "Sub Title Color"
 msgstr "رنگ زیرعنوان"
 
 #: inc/customizer/settings/lifterlms.php:1091
-#: inc/customizer/settings/woocommerce.php:4068
+#: inc/customizer/settings/woocommerce.php:4095
 msgid "Meta Title Color"
 msgstr "رنگ متای عنوان"
 
@@ -3286,7 +3305,7 @@ msgid "Meta Link/SubTitle Color"
 msgstr "رنگ متا لینک/زیرعنوان"
 
 #: inc/customizer/settings/lifterlms.php:1122
-#: inc/customizer/settings/woocommerce.php:4100
+#: inc/customizer/settings/woocommerce.php:4127
 msgid "Meta Link Color: Hover"
 msgstr "رنگ متا لینک: هاور"
 
@@ -3336,8 +3355,8 @@ msgid "Centered Content & Social"
 msgstr "محتوا و شبکه های اجتماعی در مرکز"
 
 #: inc/customizer/settings/topbar.php:306
-#: inc/customizer/settings/topbar.php:340 inc/helpers.php:2890
-#: inc/helpers.php:2975 inc/third/class-beaver-themer.php:127
+#: inc/customizer/settings/topbar.php:340 inc/helpers.php:2904
+#: inc/helpers.php:2989 inc/third/class-beaver-themer.php:127
 msgid "Content"
 msgstr "محتوا"
 
@@ -3524,7 +3543,7 @@ msgid "On Sale Badge Style"
 msgstr "استایل نشان حراجی"
 
 #: inc/customizer/settings/woocommerce.php:191
-#: inc/customizer/settings/woocommerce.php:2445
+#: inc/customizer/settings/woocommerce.php:2472
 msgid "Square"
 msgstr "مربع"
 
@@ -3581,7 +3600,7 @@ msgid "Disabled Only On Desktop"
 msgstr "غیرفعال فقط در حالت دسکتاپ"
 
 #: inc/customizer/settings/woocommerce.php:779
-#: inc/customizer/settings/woocommerce.php:4004
+#: inc/customizer/settings/woocommerce.php:4031
 msgid "Quantity Color"
 msgstr "رنگ Quantity"
 
@@ -3661,8 +3680,8 @@ msgstr "فیلتر کردن Off Canvas"
 msgid "Display Filter Button"
 msgstr "نمایش دکمه فیلتر"
 
-#: inc/customizer/settings/woocommerce.php:1380 inc/helpers.php:3756
-#: inc/woocommerce/woocommerce-config.php:912
+#: inc/customizer/settings/woocommerce.php:1380 inc/helpers.php:3770
+#: inc/woocommerce/woocommerce-config.php:914
 msgid "Filter"
 msgstr "فیلتر"
 
@@ -3715,111 +3734,115 @@ msgid "Pagination Style"
 msgstr "استایل صفحه بندی"
 
 #: inc/customizer/settings/woocommerce.php:1767
+msgid "Title HTML Tag"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:1794
 msgid "Summary Elements Positioning"
 msgstr "موقعیت عناصر خلاصه"
 
-#: inc/customizer/settings/woocommerce.php:1773
+#: inc/customizer/settings/woocommerce.php:1800
 msgid "Rating"
 msgstr "امتیازدهی"
 
-#: inc/customizer/settings/woocommerce.php:1775
+#: inc/customizer/settings/woocommerce.php:1802
 msgid "Excerpt"
 msgstr "چکیده"
 
-#: inc/customizer/settings/woocommerce.php:1776
+#: inc/customizer/settings/woocommerce.php:1803
 msgid "Quantity & Add To Cart"
 msgstr "Quantity و افزودن به سبد خرید"
 
-#: inc/customizer/settings/woocommerce.php:1777
+#: inc/customizer/settings/woocommerce.php:1804
 msgid "Product Meta"
 msgstr "متای محصول"
 
-#: inc/customizer/settings/woocommerce.php:1806
+#: inc/customizer/settings/woocommerce.php:1833
 msgid "Enable Ajax Add To Cart"
 msgstr "فعال سازی Ajax افزودن به سبد خرید"
 
-#: inc/customizer/settings/woocommerce.php:1823
+#: inc/customizer/settings/woocommerce.php:1850
 msgid "Image Width (%)"
 msgstr "عرض تصویر (%)"
 
-#: inc/customizer/settings/woocommerce.php:1844
+#: inc/customizer/settings/woocommerce.php:1871
 msgid "Summary Width (%)"
 msgstr "عرض خلاصه (%)"
 
-#: inc/customizer/settings/woocommerce.php:1865
+#: inc/customizer/settings/woocommerce.php:1892
 msgid "Thumbnails Layout"
 msgstr "لایه بندی تصاویر شاخص"
 
-#: inc/customizer/settings/woocommerce.php:1871
-#: inc/customizer/settings/woocommerce.php:1927
+#: inc/customizer/settings/woocommerce.php:1898
+#: inc/customizer/settings/woocommerce.php:1954
 msgid "Horizontal"
 msgstr "افقی"
 
-#: inc/customizer/settings/woocommerce.php:1886
+#: inc/customizer/settings/woocommerce.php:1913
 msgid "Add To Cart Button Style"
 msgstr "استایل دکمه افزودن به سبد خرید"
 
-#: inc/customizer/settings/woocommerce.php:1893
+#: inc/customizer/settings/woocommerce.php:1920
 msgid "Big"
 msgstr "بزرگ"
 
-#: inc/customizer/settings/woocommerce.php:1894
+#: inc/customizer/settings/woocommerce.php:1921
 msgid "Very Big"
 msgstr "خیلی بزرگ"
 
-#: inc/customizer/settings/woocommerce.php:1906
+#: inc/customizer/settings/woocommerce.php:1933
 msgid "Tabs"
 msgstr "زبانه ها"
 
-#: inc/customizer/settings/woocommerce.php:1921
+#: inc/customizer/settings/woocommerce.php:1948
 msgid "Tabs Layout"
 msgstr "لایه بندی زبانه ها"
 
-#: inc/customizer/settings/woocommerce.php:1929
+#: inc/customizer/settings/woocommerce.php:1956
 msgid "Section"
 msgstr "بخش"
 
-#: inc/customizer/settings/woocommerce.php:1943
+#: inc/customizer/settings/woocommerce.php:1970
 msgid "Tabs Position"
 msgstr "موقعیت زبانه ها"
 
-#: inc/customizer/settings/woocommerce.php:1944
+#: inc/customizer/settings/woocommerce.php:1971
 msgid "Only work for the horizontal tabs layout"
 msgstr "فقط برای لایه بندی زبانه های افقی کار می کند"
 
-#: inc/customizer/settings/woocommerce.php:1963
+#: inc/customizer/settings/woocommerce.php:1990
 msgid "Up-Sells & Related Items"
 msgstr "بیش فروش ها و آیتم های مرتبط"
 
-#: inc/customizer/settings/woocommerce.php:1977
+#: inc/customizer/settings/woocommerce.php:2004
 msgid "Up-Sells Count"
 msgstr "تعداد فروش بالاها"
 
-#: inc/customizer/settings/woocommerce.php:1997
+#: inc/customizer/settings/woocommerce.php:2024
 msgid "Up-Sells Columns"
 msgstr "ستون های بیش فروش"
 
-#: inc/customizer/settings/woocommerce.php:2017
+#: inc/customizer/settings/woocommerce.php:2044
 msgid "Display Related Items"
 msgstr "نمایش آیتم های مرتبط"
 
-#: inc/customizer/settings/woocommerce.php:2036
+#: inc/customizer/settings/woocommerce.php:2063
 msgid "Related Items Count"
 msgstr "تعداد آیتم های مرتبط"
 
-#: inc/customizer/settings/woocommerce.php:2056
+#: inc/customizer/settings/woocommerce.php:2083
 msgid "Related Products Columns"
 msgstr "ستون های محصولات مرتبط"
 
-#: inc/customizer/settings/woocommerce.php:2075
+#: inc/customizer/settings/woocommerce.php:2102
 msgid "Floating Bar"
 msgstr "نوار شناور"
 
-#: inc/customizer/settings/woocommerce.php:2089
+#: inc/customizer/settings/woocommerce.php:2116
 msgid "Display Floating Bar"
 msgstr "نمایش نوار شناور"
 
-#: inc/customizer/settings/woocommerce.php:2090
+#: inc/customizer/settings/woocommerce.php:2117
 msgid ""
 "The floating bar is to display the add to cart button when you scroll to "
 "increase conversions."
@@ -3827,439 +3850,439 @@ msgstr ""
 "نوار شناور به این صورت است که دکمه افزودن به سبد خرید را همزمان با اسکرول در "
 "صفحه، به حرکت در می آورد."
 
-#: inc/customizer/settings/woocommerce.php:2161
+#: inc/customizer/settings/woocommerce.php:2188
 msgid "Quantity Buttons: Background"
 msgstr "دکمه های Quantity: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:2178
+#: inc/customizer/settings/woocommerce.php:2205
 msgid "Quantity Buttons Hover: Background"
 msgstr "هاور دکمه های Quantity: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:2195
+#: inc/customizer/settings/woocommerce.php:2222
 msgid "Quantity Buttons: Color"
 msgstr "دکمه های Quantity: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:2212
+#: inc/customizer/settings/woocommerce.php:2239
 msgid "Quantity Buttons Hover: Color"
 msgstr "هاور دکمه های Quantity: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:2229
+#: inc/customizer/settings/woocommerce.php:2256
 msgid "Quantity Input: Background"
 msgstr "ورودی Quantity: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:2246
+#: inc/customizer/settings/woocommerce.php:2273
 msgid "Quantity Input: Color"
 msgstr "ورودی Quantity: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:2263
+#: inc/customizer/settings/woocommerce.php:2290
 msgid "Add To Cart: Background"
 msgstr "افزودن به سبد خرید: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:2280
+#: inc/customizer/settings/woocommerce.php:2307
 msgid "Add To Cart Hover: Background"
 msgstr "هاور افزودن به سبد خرید: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:2297
+#: inc/customizer/settings/woocommerce.php:2324
 msgid "Add To Cart: Color"
 msgstr "افزودن به سبد خرید: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:2314
+#: inc/customizer/settings/woocommerce.php:2341
 msgid "Add To Cart Hover: Color"
 msgstr "هاور افزودن به سبد خرید: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:2325
-#: inc/customizer/settings/woocommerce.php:4750
-#: inc/woocommerce/woocommerce-config.php:839
+#: inc/customizer/settings/woocommerce.php:2352
+#: inc/customizer/settings/woocommerce.php:4777
+#: inc/woocommerce/woocommerce-config.php:841
 msgid "Cart"
 msgstr "سبد خرید"
 
-#: inc/customizer/settings/woocommerce.php:2340
+#: inc/customizer/settings/woocommerce.php:2367
 msgid "Distraction Free Cart"
 msgstr "کارت تخفیف رایگان"
 
-#: inc/customizer/settings/woocommerce.php:2356
+#: inc/customizer/settings/woocommerce.php:2383
 msgid "Cart: Cross-Sells Count"
 msgstr "سبد خرید: تعداد دفعات فروش"
 
-#: inc/customizer/settings/woocommerce.php:2376
+#: inc/customizer/settings/woocommerce.php:2403
 msgid "Cart: Cross-Sells Columns"
 msgstr "سبد خرید: ستون های فروش مکمل"
 
-#: inc/customizer/settings/woocommerce.php:2421
+#: inc/customizer/settings/woocommerce.php:2448
 msgid "Multi-Step Checkout"
 msgstr "تسویه حساب چند مرحله ای"
 
-#: inc/customizer/settings/woocommerce.php:2438
+#: inc/customizer/settings/woocommerce.php:2465
 msgid "Timeline Style"
 msgstr "استایل نوار زمان"
 
-#: inc/customizer/settings/woocommerce.php:2444 inc/helpers.php:3676
+#: inc/customizer/settings/woocommerce.php:2471 inc/helpers.php:3690
 msgid "Arrow"
 msgstr "فلش"
 
-#: inc/customizer/settings/woocommerce.php:2460
+#: inc/customizer/settings/woocommerce.php:2487
 msgid "Timeline: Background"
 msgstr "نوار زمان: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:2477
+#: inc/customizer/settings/woocommerce.php:2504
 msgid "Timeline: Color"
 msgstr "نوار زمان: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:2494
+#: inc/customizer/settings/woocommerce.php:2521
 msgid "Timeline Number: Background"
 msgstr "عدد نوار زمان: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:2511
+#: inc/customizer/settings/woocommerce.php:2538
 msgid "Timeline Number: Color"
 msgstr "عدد نوار زمان: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:2528
+#: inc/customizer/settings/woocommerce.php:2555
 msgid "Timeline Number: Border Color"
 msgstr "عدد نوار زمان: رنگ حاشیه"
 
-#: inc/customizer/settings/woocommerce.php:2545
+#: inc/customizer/settings/woocommerce.php:2572
 msgid "Timeline Active: Background"
 msgstr "فعال سازی نوار زمان: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:2562
+#: inc/customizer/settings/woocommerce.php:2589
 msgid "Timeline Active: Color"
 msgstr "فعال سازی نوار زمان: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:2588
+#: inc/customizer/settings/woocommerce.php:2615
 msgid "On Sale Background"
 msgstr "پس زمینه حراجی"
 
-#: inc/customizer/settings/woocommerce.php:2604
+#: inc/customizer/settings/woocommerce.php:2631
 msgid "On Sale Color"
 msgstr "رنگ حراجی"
 
-#: inc/customizer/settings/woocommerce.php:2620
+#: inc/customizer/settings/woocommerce.php:2647
 msgid "Out of Stock Background"
 msgstr "پس زمینه Out of Stock"
 
-#: inc/customizer/settings/woocommerce.php:2636
+#: inc/customizer/settings/woocommerce.php:2663
 msgid "Out of Stock Color"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:2652
+#: inc/customizer/settings/woocommerce.php:2679
 msgid "Stars Color Before"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:2668
+#: inc/customizer/settings/woocommerce.php:2695
 msgid "Stars Color"
 msgstr "رنگ ستاره ها"
 
-#: inc/customizer/settings/woocommerce.php:2682
+#: inc/customizer/settings/woocommerce.php:2709
 msgid "Product Entry: Toolbar"
 msgstr "ورودی محصول: نوار ابزار"
 
-#: inc/customizer/settings/woocommerce.php:2697
+#: inc/customizer/settings/woocommerce.php:2724
 msgid "Border Top/Bottom Color"
 msgstr "رنگ حاشیه بالا/پائین"
 
-#: inc/customizer/settings/woocommerce.php:2713
+#: inc/customizer/settings/woocommerce.php:2740
 msgid "Off Canvas Filter Color"
 msgstr "رنگ فیلتر Off Canvas"
 
-#: inc/customizer/settings/woocommerce.php:2729
+#: inc/customizer/settings/woocommerce.php:2756
 msgid "Off Canvas Filter Border Color"
 msgstr "رنگ حاشیه فیلتر Off Canvas"
 
-#: inc/customizer/settings/woocommerce.php:2745
+#: inc/customizer/settings/woocommerce.php:2772
 msgid "Off Canvas Filter Hover Color"
 msgstr "رنگ هاور فیلتر Off Canvas"
 
-#: inc/customizer/settings/woocommerce.php:2761
+#: inc/customizer/settings/woocommerce.php:2788
 msgid "Off Canvas Filter Hover Border Color"
 msgstr "رنگ هاور حاشیه فیلتر Off Canvas"
 
-#: inc/customizer/settings/woocommerce.php:2777
+#: inc/customizer/settings/woocommerce.php:2804
 msgid "Grid/List Color"
 msgstr "رنگ Grid/List"
 
-#: inc/customizer/settings/woocommerce.php:2793
+#: inc/customizer/settings/woocommerce.php:2820
 msgid "Grid/List Border Color"
 msgstr "رنگ حاشیه Grid/List"
 
-#: inc/customizer/settings/woocommerce.php:2809
+#: inc/customizer/settings/woocommerce.php:2836
 msgid "Grid/List Hover Color"
 msgstr "رنگ هاور فعال سازی Grid/List"
 
-#: inc/customizer/settings/woocommerce.php:2825
+#: inc/customizer/settings/woocommerce.php:2852
 msgid "Grid/List Active Color"
 msgstr "رنگ فعال سازی Grid/List"
 
-#: inc/customizer/settings/woocommerce.php:2841
+#: inc/customizer/settings/woocommerce.php:2868
 msgid "Select Color"
 msgstr "انتخاب رنگ"
 
-#: inc/customizer/settings/woocommerce.php:2857
+#: inc/customizer/settings/woocommerce.php:2884
 msgid "Select Border Color"
 msgstr "رنگ حاشیه را انتخاب کنید"
 
-#: inc/customizer/settings/woocommerce.php:2873
+#: inc/customizer/settings/woocommerce.php:2900
 msgid "Number of Products Color"
 msgstr "رنگ تعداد محصولات"
 
-#: inc/customizer/settings/woocommerce.php:2889
+#: inc/customizer/settings/woocommerce.php:2916
 msgid "Number of Products Inactive Color"
 msgstr "رنگ حاشیه تعداد محصولات غیرفعال"
 
-#: inc/customizer/settings/woocommerce.php:2905
+#: inc/customizer/settings/woocommerce.php:2932
 msgid "Number of Products Border Color"
 msgstr "رنگ حاشیه تعداد محصولات"
 
-#: inc/customizer/settings/woocommerce.php:3359
-#: inc/customizer/settings/woocommerce.php:3940
+#: inc/customizer/settings/woocommerce.php:3386
+#: inc/customizer/settings/woocommerce.php:3967
 msgid "Del Price Color"
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:3375
+#: inc/customizer/settings/woocommerce.php:3402
 msgid "Hover: Thumbnails Border Color"
 msgstr "هاور: رنگ حاشیه تصاویر شاخص"
 
-#: inc/customizer/settings/woocommerce.php:3392
+#: inc/customizer/settings/woocommerce.php:3419
 msgid "Hover: Quick View Background"
 msgstr "هاور: پس زمینه مشاهده سریع"
 
-#: inc/customizer/settings/woocommerce.php:3409
+#: inc/customizer/settings/woocommerce.php:3436
 msgid "Hover: Quick View Hover Background"
 msgstr "هاور: هاور پس زمینه مشاهده سریع"
 
-#: inc/customizer/settings/woocommerce.php:3426
+#: inc/customizer/settings/woocommerce.php:3453
 msgid "Hover: Quick View Color"
 msgstr "هاور: رنگ مشاهده سریع"
 
-#: inc/customizer/settings/woocommerce.php:3443
+#: inc/customizer/settings/woocommerce.php:3470
 msgid "Hover: Quick View Hover Color"
 msgstr "هاور: رنگ هاور مشاهده سریع"
 
-#: inc/customizer/settings/woocommerce.php:3460
+#: inc/customizer/settings/woocommerce.php:3487
 msgid "Hover: Wishlist Background"
 msgstr "هاور: پس زمینه لیست علاقه مندی ها"
 
-#: inc/customizer/settings/woocommerce.php:3477
+#: inc/customizer/settings/woocommerce.php:3504
 msgid "Hover: Wishlist Hover Background"
 msgstr "هاور: هاور پس زمینه لیست علاقه مندی ها"
 
-#: inc/customizer/settings/woocommerce.php:3494
+#: inc/customizer/settings/woocommerce.php:3521
 msgid "Hover: Wishlist Color"
 msgstr "هاور: رنگ لیست علاقه مندی ها"
 
-#: inc/customizer/settings/woocommerce.php:3511
+#: inc/customizer/settings/woocommerce.php:3538
 msgid "Hover: Wishlist Hover Color"
 msgstr "هاور: رنگ هاور لیست علاقه مندی ها"
 
-#: inc/customizer/settings/woocommerce.php:3691
-#: inc/woocommerce/woocommerce-config.php:1142
+#: inc/customizer/settings/woocommerce.php:3718
+#: inc/woocommerce/woocommerce-config.php:1144
 msgid "Quick View"
 msgstr "مشاهده سریع"
 
-#: inc/customizer/settings/woocommerce.php:3706
+#: inc/customizer/settings/woocommerce.php:3733
 msgid "Button: Background"
 msgstr "دکمه: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:3722
+#: inc/customizer/settings/woocommerce.php:3749
 msgid "Button: Hover Background"
 msgstr "دکمه: هاور پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:3738
+#: inc/customizer/settings/woocommerce.php:3765
 msgid "Button: Color"
 msgstr "دکمه: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:3754
+#: inc/customizer/settings/woocommerce.php:3781
 msgid "Button: Hover Color"
 msgstr "دکمه: رنگ هاور"
 
-#: inc/customizer/settings/woocommerce.php:3770
+#: inc/customizer/settings/woocommerce.php:3797
 msgid "Overlay: Background"
 msgstr "لایه اندازی: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:3786
+#: inc/customizer/settings/woocommerce.php:3813
 msgid "Overlay Spinner: Outside Color"
 msgstr "لایه اندازی روی Spinner: رنگ خارجی"
 
-#: inc/customizer/settings/woocommerce.php:3802
+#: inc/customizer/settings/woocommerce.php:3829
 msgid "Overlay Spinner: Inner Color"
 msgstr "لایه اندازی روی Spinner: رنگ داخلی"
 
-#: inc/customizer/settings/woocommerce.php:3818
+#: inc/customizer/settings/woocommerce.php:3845
 msgid "Modal: Background"
 msgstr "حالت: پس زمینه"
 
-#: inc/customizer/settings/woocommerce.php:3834
+#: inc/customizer/settings/woocommerce.php:3861
 msgid "Modal Close Button: Color"
 msgstr "حالت دکمه \"بستن\": رنگ"
 
-#: inc/customizer/settings/woocommerce.php:3848
+#: inc/customizer/settings/woocommerce.php:3875
 msgid "Off Canvas Sidebar"
 msgstr "سایدبار Off Canvas"
 
-#: inc/customizer/settings/woocommerce.php:3879
+#: inc/customizer/settings/woocommerce.php:3906
 msgid "Widgets Border Color"
 msgstr "رنگ حاشیه ابزارک ها"
 
-#: inc/customizer/settings/woocommerce.php:3972
+#: inc/customizer/settings/woocommerce.php:3999
 msgid "Quantity Border Color"
 msgstr "رنگ حاشیه بخش تعداد کالا"
 
-#: inc/customizer/settings/woocommerce.php:3988
+#: inc/customizer/settings/woocommerce.php:4015
 msgid "Quantity Border Color Focus"
 msgstr "تمرکز رنگ روی حاشیه بخش تعداد کالا"
 
-#: inc/customizer/settings/woocommerce.php:4020
+#: inc/customizer/settings/woocommerce.php:4047
 msgid "Quantity Plus/Minus Color"
 msgstr "رنگ حاشیه +/- تعداد کالا"
 
-#: inc/customizer/settings/woocommerce.php:4036
+#: inc/customizer/settings/woocommerce.php:4063
 msgid "Quantity Plus/Minus Color: Hover"
 msgstr "رنگ +/-: هاور تعداد کالا"
 
-#: inc/customizer/settings/woocommerce.php:4052
+#: inc/customizer/settings/woocommerce.php:4079
 msgid "Quantity Plus/Minus Border Color: Hover"
 msgstr "رنگ حاشیه +/- تعداد کالا: هاور"
 
-#: inc/customizer/settings/woocommerce.php:4084
+#: inc/customizer/settings/woocommerce.php:4111
 msgid "Meta Link Color"
 msgstr "رنگ لینک متا"
 
-#: inc/customizer/settings/woocommerce.php:4114
+#: inc/customizer/settings/woocommerce.php:4141
 msgid "Single Product: Product Navigation"
 msgstr "تک محصول: ناوبری محصول"
 
-#: inc/customizer/settings/woocommerce.php:4243
+#: inc/customizer/settings/woocommerce.php:4270
 msgid "Single Product: Add To Cart"
 msgstr "تک محصول: افزودن به سبد خرید"
 
-#: inc/customizer/settings/woocommerce.php:4404
+#: inc/customizer/settings/woocommerce.php:4431
 msgid "Single Product: Tabs"
 msgstr "تک محصول» زبانه ها"
 
-#: inc/customizer/settings/woocommerce.php:4451
+#: inc/customizer/settings/woocommerce.php:4478
 msgid "Text Color: Hover"
 msgstr "رنگ عنوان: هاور"
 
-#: inc/customizer/settings/woocommerce.php:4467
+#: inc/customizer/settings/woocommerce.php:4494
 msgid "Active Text Color"
 msgstr "رنگ متن فعال"
 
-#: inc/customizer/settings/woocommerce.php:4483
+#: inc/customizer/settings/woocommerce.php:4510
 msgid "Active Text Borders Color"
 msgstr "رنگ حاشیه های متن فعال"
 
-#: inc/customizer/settings/woocommerce.php:4499
+#: inc/customizer/settings/woocommerce.php:4526
 msgid "Product Description: Title Color"
 msgstr "توضیحات محصول: رنگ عنوان"
 
-#: inc/customizer/settings/woocommerce.php:4515
+#: inc/customizer/settings/woocommerce.php:4542
 msgid "Product Description: Color"
 msgstr "توضیحات محصول: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:4529
+#: inc/customizer/settings/woocommerce.php:4556
 msgid "Account"
 msgstr "حساب کاربری"
 
-#: inc/customizer/settings/woocommerce.php:4544
+#: inc/customizer/settings/woocommerce.php:4571
 msgid "Login/Register Links: Color"
 msgstr "لینک های ورود/ثبت نام: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:4560
+#: inc/customizer/settings/woocommerce.php:4587
 msgid "Navigation: Borders Color"
 msgstr "ناوبری: رنگ حاشیه ها"
 
-#: inc/customizer/settings/woocommerce.php:4576
+#: inc/customizer/settings/woocommerce.php:4603
 msgid "Navigation: Icons Color"
 msgstr "ناوبری: رنگ آیکون ها"
 
-#: inc/customizer/settings/woocommerce.php:4592
+#: inc/customizer/settings/woocommerce.php:4619
 msgid "Navigation: Links Color"
 msgstr "ناوبری: رنگ لینک ها"
 
-#: inc/customizer/settings/woocommerce.php:4608
+#: inc/customizer/settings/woocommerce.php:4635
 msgid "Navigation: Links Color: Hover"
 msgstr "ناوبری: رنگ لینک ها: هاور"
 
-#: inc/customizer/settings/woocommerce.php:4624
+#: inc/customizer/settings/woocommerce.php:4651
 msgid "Addresses: Box Background"
 msgstr "آدرس ها: پس زمینه باکس"
 
-#: inc/customizer/settings/woocommerce.php:4640
+#: inc/customizer/settings/woocommerce.php:4667
 msgid "Addresses: Box Title Color"
 msgstr "آدرس ها: رنگ باکس عنوان"
 
-#: inc/customizer/settings/woocommerce.php:4656
+#: inc/customizer/settings/woocommerce.php:4683
 msgid "Addresses: Box Title Border Bottom Color"
 msgstr "آدرس ها: رنگ حاشیه پائین باکس عنوان"
 
-#: inc/customizer/settings/woocommerce.php:4672
+#: inc/customizer/settings/woocommerce.php:4699
 msgid "Addresses: Box Content Color"
 msgstr "آدرس ها: رنگ باکس محتوا"
 
-#: inc/customizer/settings/woocommerce.php:4688
+#: inc/customizer/settings/woocommerce.php:4715
 msgid "Addresses: Box Button Background"
 msgstr "آدرس ها: پس زمینه باکس دکمه"
 
-#: inc/customizer/settings/woocommerce.php:4704
+#: inc/customizer/settings/woocommerce.php:4731
 msgid "Addresses: Box Button Background: Hover"
 msgstr "آدرس ها: پس زمینه باکس دکمه: هاور"
 
-#: inc/customizer/settings/woocommerce.php:4720
+#: inc/customizer/settings/woocommerce.php:4747
 msgid "Addresses: Box Button color"
 msgstr "آدرس ها: رنگ باکس دکمه"
 
-#: inc/customizer/settings/woocommerce.php:4736
+#: inc/customizer/settings/woocommerce.php:4763
 msgid "Addresses: Box Button color: Hover"
 msgstr "آدرس ها: رنگ باکس دکمه: هاور"
 
-#: inc/customizer/settings/woocommerce.php:4873
+#: inc/customizer/settings/woocommerce.php:4900
 msgid "Notices: Borders Color"
 msgstr "اطلاعیه: رنگ حاشیه ها"
 
-#: inc/customizer/settings/woocommerce.php:4889
+#: inc/customizer/settings/woocommerce.php:4916
 msgid "Notices: Icon Color"
 msgstr "اطلاعیه: رنگ آیکون"
 
-#: inc/customizer/settings/woocommerce.php:4905
+#: inc/customizer/settings/woocommerce.php:4932
 msgid "Notices: Color"
 msgstr "اطلاعیه ها: رنگ"
 
-#: inc/customizer/settings/woocommerce.php:4921
+#: inc/customizer/settings/woocommerce.php:4948
 msgid "Notices: Link Color"
 msgstr "اطلاعیه ها: رنگ لینک"
 
-#: inc/customizer/settings/woocommerce.php:4937
+#: inc/customizer/settings/woocommerce.php:4964
 msgid "Notices: Link Color: Hover"
 msgstr "رنگ اطلاعیه لینک: هاور"
 
-#: inc/customizer/settings/woocommerce.php:4953
+#: inc/customizer/settings/woocommerce.php:4980
 msgid "Notices Form: Border Color"
 msgstr "اطلاعیه فرم: رنگ حاشیه"
 
-#: inc/customizer/settings/woocommerce.php:5001
+#: inc/customizer/settings/woocommerce.php:5028
 msgid "Table Main Background"
 msgstr "پس زمینه جدول اصلی"
 
-#: inc/customizer/settings/woocommerce.php:5017
+#: inc/customizer/settings/woocommerce.php:5044
 msgid "Table Titles Color"
 msgstr "رنگ جدول عناوین"
 
-#: inc/customizer/settings/woocommerce.php:5033
+#: inc/customizer/settings/woocommerce.php:5060
 msgid "Table Borders Color"
 msgstr "رنگ حاشیه های جدول"
 
-#: inc/customizer/settings/woocommerce.php:5049
+#: inc/customizer/settings/woocommerce.php:5076
 msgid "Payment Methods Background"
 msgstr "پس زمینه روش های پرداخت"
 
-#: inc/customizer/settings/woocommerce.php:5065
+#: inc/customizer/settings/woocommerce.php:5092
 msgid "Payment Methods Borders Color"
 msgstr "رنگ حاشیه های روش های پرداخت"
 
-#: inc/customizer/settings/woocommerce.php:5081
+#: inc/customizer/settings/woocommerce.php:5108
 msgid "Payment Box Background"
 msgstr "پس زمینه باکس پرداخت"
 
-#: inc/customizer/settings/woocommerce.php:5097
+#: inc/customizer/settings/woocommerce.php:5124
 msgid "Payment Box Color"
 msgstr "رنگ باکس پرداخت"
 
@@ -4267,7 +4290,7 @@ msgstr "رنگ باکس پرداخت"
 msgid "EDD Sidebar"
 msgstr "سایدبار EDD"
 
-#: inc/edd/edd-config.php:392 inc/woocommerce/woocommerce-config.php:1862
+#: inc/edd/edd-config.php:392 inc/woocommerce/woocommerce-config.php:1864
 msgid "Your cart"
 msgstr "سبد خرید شما"
 
@@ -4295,324 +4318,324 @@ msgstr "افزودن به سبد خرید"
 msgid "Type your search"
 msgstr "نوع جستجوی شما"
 
-#: inc/helpers.php:1937
+#: inc/helpers.php:1944
 msgid "Recent Posts"
 msgstr "پست های اخیر"
 
-#: inc/helpers.php:1950
+#: inc/helpers.php:1957
 msgid "Search Results Found"
 msgstr "نتایج جستجو یافت شد"
 
-#: inc/helpers.php:1968
+#: inc/helpers.php:1975
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "بایگانی روزانه: %s"
 
-#: inc/helpers.php:1973
+#: inc/helpers.php:1980
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "بایگانی ماهانه: %s"
 
-#: inc/helpers.php:1973
+#: inc/helpers.php:1980
 msgctxt "Page title monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/helpers.php:1978
+#: inc/helpers.php:1985
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "بایگانی سالانه: %s"
 
-#: inc/helpers.php:1978
+#: inc/helpers.php:1985
 msgctxt "Page title yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/helpers.php:2000
+#: inc/helpers.php:2007
 msgid "404: Page Not Found"
 msgstr "404: صفحه پیدا نشد"
 
-#: inc/helpers.php:2056
+#: inc/helpers.php:2070
 msgid "You searched for:"
 msgstr "شما جستجو کردید برای:"
 
-#: inc/helpers.php:2061
+#: inc/helpers.php:2075
 msgid "This author has written"
 msgstr "این نویسنده نوشته است"
 
-#: inc/helpers.php:2061
+#: inc/helpers.php:2075
 msgid "articles"
 msgstr "مقالات"
 
-#: inc/helpers.php:2891
+#: inc/helpers.php:2905
 msgid "Read More"
 msgstr "ادامه مطلب"
 
-#: inc/helpers.php:2976
+#: inc/helpers.php:2990
 msgid "Tags"
 msgstr "برچسب ها"
 
-#: inc/helpers.php:2977
+#: inc/helpers.php:2991
 msgid "Social Share"
 msgstr "اشتراک گذاری شبکه های اجتماعی"
 
-#: inc/helpers.php:2978
+#: inc/helpers.php:2992
 msgid "Next/Prev Links"
 msgstr "لینک های بعدی/قبلی"
 
-#: inc/helpers.php:2979
+#: inc/helpers.php:2993
 msgid "Author Box"
 msgstr "باکس نویسنده"
 
-#: inc/helpers.php:2980
+#: inc/helpers.php:2994
 msgid "Related Posts"
 msgstr "پست های مرتبط"
 
-#: inc/helpers.php:3069
+#: inc/helpers.php:3083
 msgid "Pingback:"
 msgstr ""
 
-#: inc/helpers.php:3069
+#: inc/helpers.php:3083
 msgid "(Edit)"
 msgstr "(ویرایش)"
 
-#: inc/helpers.php:3087
+#: inc/helpers.php:3101
 #, php-format
 msgid "%s "
 msgstr ""
 
-#: inc/helpers.php:3096
+#: inc/helpers.php:3110
 msgid "edit"
 msgstr "ویرایش"
 
-#: inc/helpers.php:3108
+#: inc/helpers.php:3122
 msgid "Your comment is awaiting moderation."
 msgstr "نظر شما در انتظار تایید است."
 
-#: inc/helpers.php:3138
+#: inc/helpers.php:3152
 msgid "Name (required)"
 msgstr "نام (الزامی)"
 
-#: inc/helpers.php:3140
+#: inc/helpers.php:3154
 msgid "Email (required)"
 msgstr "ایمیل (الزامی)"
 
-#: inc/helpers.php:3142
+#: inc/helpers.php:3156
 msgid "Website"
 msgstr "وبسایت"
 
-#: inc/helpers.php:3239 inc/helpers.php:3293
+#: inc/helpers.php:3253 inc/helpers.php:3307
 #: inc/woocommerce/woocommerce-config.php:570
 msgid "Newer Posts"
 msgstr "پست های جدیدتر"
 
-#: inc/helpers.php:3242 inc/helpers.php:3294
+#: inc/helpers.php:3256 inc/helpers.php:3308
 #: inc/woocommerce/woocommerce-config.php:571
 msgid "Older Posts"
 msgstr "پست های قدیمی تر"
 
 #. Theme Name of the plugin/theme
-#: inc/helpers.php:3622
+#: inc/helpers.php:3636
 msgid "OceanWP"
 msgstr ""
 
-#: inc/helpers.php:3669
+#: inc/helpers.php:3683
 msgid "Default Icon"
 msgstr "آیکون پیش فرض"
 
-#: inc/helpers.php:3670
+#: inc/helpers.php:3684
 msgid "3D X"
 msgstr ""
 
-#: inc/helpers.php:3671
+#: inc/helpers.php:3685
 msgid "3D X Reverse"
 msgstr ""
 
-#: inc/helpers.php:3672
+#: inc/helpers.php:3686
 msgid "3D Y"
 msgstr ""
 
-#: inc/helpers.php:3673
+#: inc/helpers.php:3687
 msgid "3D Y Reverse"
 msgstr ""
 
-#: inc/helpers.php:3674
+#: inc/helpers.php:3688
 msgid "3D XY"
 msgstr ""
 
-#: inc/helpers.php:3675
+#: inc/helpers.php:3689
 msgid "3D XY Reverse"
 msgstr ""
 
-#: inc/helpers.php:3677
+#: inc/helpers.php:3691
 msgid "Arrow Reverse"
 msgstr ""
 
-#: inc/helpers.php:3678
+#: inc/helpers.php:3692
 msgid "Arrowalt"
 msgstr ""
 
-#: inc/helpers.php:3679
+#: inc/helpers.php:3693
 msgid "Arrowalt Reverse"
 msgstr ""
 
-#: inc/helpers.php:3680
+#: inc/helpers.php:3694
 msgid "Arrowturn"
 msgstr ""
 
-#: inc/helpers.php:3681
+#: inc/helpers.php:3695
 msgid "Arrowturn Reverse"
 msgstr ""
 
-#: inc/helpers.php:3682
+#: inc/helpers.php:3696
 msgid "Boring"
 msgstr ""
 
-#: inc/helpers.php:3683
+#: inc/helpers.php:3697
 msgid "Collapse"
 msgstr ""
 
-#: inc/helpers.php:3684
+#: inc/helpers.php:3698
 msgid "Collapse Reverse"
 msgstr ""
 
-#: inc/helpers.php:3685
+#: inc/helpers.php:3699
 msgid "Elastic"
 msgstr ""
 
-#: inc/helpers.php:3686
+#: inc/helpers.php:3700
 msgid "Elastic Reverse"
 msgstr ""
 
-#: inc/helpers.php:3687
+#: inc/helpers.php:3701
 msgid "Minus"
 msgstr ""
 
-#: inc/helpers.php:3688
+#: inc/helpers.php:3702
 msgid "Slider"
 msgstr ""
 
-#: inc/helpers.php:3689
+#: inc/helpers.php:3703
 msgid "Slider Reverse"
 msgstr ""
 
-#: inc/helpers.php:3690
+#: inc/helpers.php:3704
 msgid "Spin"
 msgstr ""
 
-#: inc/helpers.php:3691
+#: inc/helpers.php:3705
 msgid "Spin Reverse"
 msgstr ""
 
-#: inc/helpers.php:3692
+#: inc/helpers.php:3706
 msgid "Spring"
 msgstr ""
 
-#: inc/helpers.php:3693
+#: inc/helpers.php:3707
 msgid "Spring Reverse"
 msgstr ""
 
-#: inc/helpers.php:3694
+#: inc/helpers.php:3708
 msgid "Stand"
 msgstr ""
 
-#: inc/helpers.php:3695
+#: inc/helpers.php:3709
 msgid "Stand Reverse"
 msgstr ""
 
-#: inc/helpers.php:3696
+#: inc/helpers.php:3710
 msgid "Squeeze"
 msgstr ""
 
-#: inc/helpers.php:3697
+#: inc/helpers.php:3711
 msgid "Vortex"
 msgstr ""
 
-#: inc/helpers.php:3698
+#: inc/helpers.php:3712
 msgid "Vortex Reverse"
 msgstr ""
 
-#: inc/helpers.php:3752
+#: inc/helpers.php:3766
 msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
 msgstr ""
 
-#: inc/helpers.php:3775
+#: inc/helpers.php:3789
 msgid "Twitter"
 msgstr ""
 
-#: inc/helpers.php:3779
+#: inc/helpers.php:3793
 msgid "Facebook"
 msgstr ""
 
-#: inc/helpers.php:3783
+#: inc/helpers.php:3797
 msgid "Google Plus"
 msgstr ""
 
-#: inc/helpers.php:3787
+#: inc/helpers.php:3801
 msgid "Pinterest"
 msgstr ""
 
-#: inc/helpers.php:3791
+#: inc/helpers.php:3805
 msgid "Dribbble"
 msgstr ""
 
-#: inc/helpers.php:3795
+#: inc/helpers.php:3809
 msgid "VK"
 msgstr ""
 
-#: inc/helpers.php:3799
+#: inc/helpers.php:3813
 msgid "Instagram"
 msgstr ""
 
-#: inc/helpers.php:3803
+#: inc/helpers.php:3817
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/helpers.php:3807
+#: inc/helpers.php:3821
 msgid "Tumblr"
 msgstr ""
 
-#: inc/helpers.php:3811
+#: inc/helpers.php:3825
 msgid "Github"
 msgstr ""
 
-#: inc/helpers.php:3815
+#: inc/helpers.php:3829
 msgid "Flickr"
 msgstr ""
 
-#: inc/helpers.php:3819
+#: inc/helpers.php:3833
 msgid "Skype"
 msgstr ""
 
-#: inc/helpers.php:3823
+#: inc/helpers.php:3837
 msgid "Youtube"
 msgstr ""
 
-#: inc/helpers.php:3827
+#: inc/helpers.php:3841
 msgid "Vimeo"
 msgstr ""
 
-#: inc/helpers.php:3831
+#: inc/helpers.php:3845
 msgid "Vine"
 msgstr ""
 
-#: inc/helpers.php:3835
+#: inc/helpers.php:3849
 msgid "Xing"
 msgstr ""
 
-#: inc/helpers.php:3839
+#: inc/helpers.php:3853
 msgid "Yelp"
 msgstr ""
 
-#: inc/helpers.php:3843
+#: inc/helpers.php:3857
 msgid "Tripadvisor"
 msgstr ""
 
-#: inc/helpers.php:3847
+#: inc/helpers.php:3861
 msgid "RSS"
 msgstr ""
 
-#: inc/helpers.php:3851
+#: inc/helpers.php:3865
 msgid "Email"
 msgstr "ایمیل"
 
@@ -5279,24 +5302,24 @@ msgstr "آخرین ها در"
 msgid "WooCommerce Sidebar"
 msgstr "سایدبار ووکامرس"
 
-#: inc/woocommerce/woocommerce-config.php:753
-msgid "View cart"
-msgstr "مشاهده سبد خرید"
-
-#: inc/woocommerce/woocommerce-config.php:761
+#: inc/woocommerce/woocommerce-config.php:760
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "I don&rsquo;t have an account"
 msgstr "من حساب کاربری ندارم"
 
-#: inc/woocommerce/woocommerce-config.php:778
+#: inc/woocommerce/woocommerce-config.php:774
+msgid "View cart"
+msgstr "مشاهده سبد خرید"
+
+#: inc/woocommerce/woocommerce-config.php:780
 msgid "View products"
 msgstr "مشاهده محصولات"
 
-#: inc/woocommerce/woocommerce-config.php:866
+#: inc/woocommerce/woocommerce-config.php:868
 msgid "Off-Canvas Filters"
 msgstr "فیلترهای Off-Canvas"
 
-#: inc/woocommerce/woocommerce-config.php:867
+#: inc/woocommerce/woocommerce-config.php:869
 msgid ""
 "Widgets in this area are used in the off canvas sidebar. To enable the Off "
 "Canvas filter, go to the WooCommerce > Archives section of the customizer "
@@ -5306,118 +5329,118 @@ msgstr ""
 "Canvas، به بخش وکامرس > بایگانی بروید و گزینه Button Filter Filter را فعال "
 "کنید."
 
-#: inc/woocommerce/woocommerce-config.php:933
+#: inc/woocommerce/woocommerce-config.php:935
 msgid "Grid view"
 msgstr "نمای Grid"
 
-#: inc/woocommerce/woocommerce-config.php:934
+#: inc/woocommerce/woocommerce-config.php:936
 msgid "List view"
 msgstr "نمای لیستی"
 
-#: inc/woocommerce/woocommerce-config.php:1088
+#: inc/woocommerce/woocommerce-config.php:1090
 msgid "Out of Stock"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1221
+#: inc/woocommerce/woocommerce-config.php:1223
 msgid "Previous Product"
 msgstr "محصول قبلی"
 
-#: inc/woocommerce/woocommerce-config.php:1225
+#: inc/woocommerce/woocommerce-config.php:1227
 msgid "Next Product"
 msgstr "محصول بعدی"
 
-#: inc/woocommerce/woocommerce-config.php:1274
+#: inc/woocommerce/woocommerce-config.php:1276
 msgid "Select Options"
 msgstr "گزینه مورد نظر را انتخاب کنید"
 
-#: inc/woocommerce/woocommerce-config.php:1280
+#: inc/woocommerce/woocommerce-config.php:1282
 msgid "Selected:"
 msgstr "انتخاب شد:"
 
-#: inc/woocommerce/woocommerce-config.php:1290
+#: inc/woocommerce/woocommerce-config.php:1292
 msgid "Out of stock"
 msgstr "تمام شده"
 
-#: inc/woocommerce/woocommerce-config.php:1349
+#: inc/woocommerce/woocommerce-config.php:1351
 msgid "Welcome!"
 msgstr "خوش آمدی!"
 
-#: inc/woocommerce/woocommerce-config.php:1358
+#: inc/woocommerce/woocommerce-config.php:1360
 msgid "Logout"
 msgstr "خروج"
 
-#: inc/woocommerce/woocommerce-config.php:1985
+#: inc/woocommerce/woocommerce-config.php:1987
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1989
+#: inc/woocommerce/woocommerce-config.php:1991
 msgid "Sale!"
 msgstr "فروش!"
 
-#: inc/woocommerce/woocommerce-config.php:2026
+#: inc/woocommerce/woocommerce-config.php:2028
 #: woocommerce/checkout/checkout-timeline.php:42
 msgid "Login"
 msgstr "ورود"
 
-#: inc/woocommerce/woocommerce-config.php:2039
+#: inc/woocommerce/woocommerce-config.php:2041
 msgid "Or"
 msgstr "یا"
 
-#: inc/woocommerce/woocommerce-config.php:2041
+#: inc/woocommerce/woocommerce-config.php:2043
 msgid "Register"
 msgstr "ثبت نام"
 
 #. translators: %s: field name
-#: inc/woocommerce/woocommerce-config.php:2163
+#: inc/woocommerce/woocommerce-config.php:2165
 #, php-format
 msgid "Shipping %s"
 msgstr "حمل دریایی %s"
 
 #. translators: %s: field name
-#: inc/woocommerce/woocommerce-config.php:2167
+#: inc/woocommerce/woocommerce-config.php:2169
 #, php-format
 msgid "Billing %s"
 msgstr "صورتحساب %s"
 
-#: inc/woocommerce/woocommerce-config.php:2176
+#: inc/woocommerce/woocommerce-config.php:2178
 #, php-format
 msgid "%s is not a valid postcode / ZIP."
 msgstr "%s یک کد پستی معتبر نیست."
 
 #. translators: %s: phone number
-#: inc/woocommerce/woocommerce-config.php:2185
+#: inc/woocommerce/woocommerce-config.php:2187
 #, php-format
 msgid "%s is not a valid phone number."
 msgstr "%s یک شماره تلفن معتبر نیست."
 
 #. translators: %s: email address
-#: inc/woocommerce/woocommerce-config.php:2194
+#: inc/woocommerce/woocommerce-config.php:2196
 #, php-format
 msgid "%s is not a valid email address."
 msgstr "%s یک آدرس ایمیل معتبر نیست."
 
 #. translators: 1: state field 2: valid states
-#: inc/woocommerce/woocommerce-config.php:2214
+#: inc/woocommerce/woocommerce-config.php:2216
 #, php-format
 msgid "%1$s is not valid. Please enter one of the following: %2$s"
 msgstr "%1$s معتبر نیست لطفا یکی از موارد زیر را وارد کنید: %2$s"
 
 #. translators: %s: field name
-#: inc/woocommerce/woocommerce-config.php:2221
+#: inc/woocommerce/woocommerce-config.php:2223
 #, php-format
 msgid "%s is a required field."
 msgstr "فیلد %s ضروری است."
 
-#: inc/woocommerce/woocommerce-config.php:2308
+#: inc/woocommerce/woocommerce-config.php:2310
 msgid "WooCommerce Product Title"
 msgstr "عنوان محصولات ووکامرس"
 
-#: inc/woocommerce/woocommerce-config.php:2319
+#: inc/woocommerce/woocommerce-config.php:2321
 msgid "WooCommerce Product Price"
 msgstr "قیمت محصولات ووکامرس"
 
-#: inc/woocommerce/woocommerce-config.php:2329
+#: inc/woocommerce/woocommerce-config.php:2331
 msgid "WooCommerce Product Add To Cart"
 msgstr "محصول ووکامرس را به سبد خرید اضافه کنید"
 
@@ -5431,18 +5454,18 @@ msgstr "تصویر Placeholder"
 msgid "Continue Reading"
 msgstr "ادامه خواندن"
 
-#: partials/entry/meta.php:42 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:48
+#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:52
 msgid "0 Comments"
 msgstr "0 دیدگاه"
 
-#: partials/entry/meta.php:42 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:48
+#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:52
 msgid "1 Comment"
 msgstr "1 دیدگاه"
 
-#: partials/entry/meta.php:42 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:48
+#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:52
 msgid "% Comments"
 msgstr "% دیدگاه"
 
@@ -5512,15 +5535,11 @@ msgstr "پست بعدی"
 msgid "You Might Also Like"
 msgstr "شاید دوست داشته باشید"
 
-#: woocommerce/cart/mini-cart.php:76
+#: woocommerce/cart/mini-cart.php:73
 msgid "Remove this item"
 msgstr "حذف این آیتم"
 
-#: woocommerce/cart/mini-cart.php:93
-msgid "Subtotal"
-msgstr "کل"
-
-#: woocommerce/cart/mini-cart.php:101
+#: woocommerce/cart/mini-cart.php:111
 msgid "No products in the cart."
 msgstr "محصولی در سبد خرید نیست."
 
@@ -5606,6 +5625,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://oceanwp.org/about-me/"
 msgstr "https://demo.hamyarwp.com/oceanwp/"
+
+#~ msgid "Subtotal"
+#~ msgstr "کل"
 
 #~ msgid "Sorry! We could not found that page"
 #~ msgstr "متاسفیم! ما نمی توانیم این صفحه را پیدا کنیم"
@@ -6381,9 +6403,6 @@ msgstr "https://demo.hamyarwp.com/oceanwp/"
 
 #~ msgid "ID"
 #~ msgstr "شناسه"
-
-#~ msgid "Modified Date"
-#~ msgstr "تاریخ اصلاح شده"
 
 #~ msgid "Random"
 #~ msgstr "تصادفی"

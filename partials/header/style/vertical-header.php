@@ -101,7 +101,7 @@ $classes = implode( ' ', $classes ); ?>
         if ( true == get_theme_mod( 'ocean_vertical_header_search_form', true ) ) {
             get_template_part( 'partials/header/style/vertical-header-search' );
         } ?>
-        
+
         <?php
         // Social menu
         if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {

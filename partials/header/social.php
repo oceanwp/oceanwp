@@ -60,7 +60,15 @@ if ( ( ! $profiles = get_theme_mod( 'ocean_menu_social_profiles' ) )
 }
 
 // Get theme mods
-$link_target = get_theme_mod( 'ocean_menu_social_target', 'blank' ); ?>
+$link_target = get_theme_mod( 'ocean_menu_social_target', 'blank' );
+
+if ( $link_target == 'blank' ) {
+	$link_rel = 'rel="noopener noreferrer"';
+}
+
+?>
+
+
 
 <div class="<?php echo esc_attr( $classes ); ?>">
 
@@ -115,10 +123,10 @@ $link_target = get_theme_mod( 'ocean_menu_social_target', 'blank' ); ?>
 							} else if ( in_array( $key, array( 'email' ) ) ) {
 								echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" target="_self">';
 							} else {
-								echo '<a href="'. esc_url( $url ) .'" target="_'. esc_attr( $link_target ) .'">';
+								echo '<a href="'. esc_url( $url ) .'" target="_'. esc_attr( $link_target ) .'" '. $link_rel .'>';
 							}
 
-								echo '<span class="'. esc_attr( $val['icon_class'] ) .'"></span>';
+								echo '<span class="'. esc_attr( $val['icon_class'] ) .'" aria-hidden="true"></span>';
 
 							echo '</a>';
 

@@ -30,7 +30,7 @@ $classes = implode( ' ', $classes ); ?>
 	<?php get_template_part( 'partials/header/logo' ); ?>
 
 	<div id="site-navigation-wrap" class="clr">
-				
+
 		<div class="menu-bar-wrap clr">
 			<div class="menu-bar-inner clr">
 				<a href="#" class="menu-bar"><span class="ham"></span></a>

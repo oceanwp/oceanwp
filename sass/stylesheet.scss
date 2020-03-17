@@ -13,6 +13,7 @@
  * BASE
  * - MAIN
  * - NORMALIZE
+ * - ACCESSIBILITY
  * - LAYOUTS
  * - COMPONENTS
  * - TYPOGRAPHY
@@ -55,6 +56,11 @@
 	$NORMALIZE
 *------------------------------------*/
 @import "base/normalize";
+
+/*------------------------------------*
+	$ACCESSIBILITY
+*------------------------------------*/
+@import "base/accessibility";
 
 /*------------------------------------*
 	$LAYOUTS

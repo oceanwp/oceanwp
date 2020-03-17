@@ -934,8 +934,11 @@ class OceanWP_Breadcrumb_Trail {
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ), $month );
 
 		// Add the day item.
+		$archive_year  = get_the_time( 'Y' );
+		$archive_month = get_the_time( 'm' );
+		$archive_day   = get_the_time( 'd' );
 		if ( is_paged() || true === $this->args['show_title'] )
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y' ) ), get_the_time( 'm' ), get_the_time( 'd' ) ), $day );
+			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( $archive_year, $archive_month, $archive_day ) ), $day );
 	}
 
 	/**
@@ -1292,7 +1295,7 @@ class OceanWP_Breadcrumb_Trail {
 
 		// If we have parent terms, reverse the array to put them in the proper order for the trail.
 		if ( !empty( $parents ) )
-			$this->items = array_merge( $this->items, $parents );
+			$this->items = array_merge( $this->items, array_reverse( $parents ) );
 	}
 
 	/**

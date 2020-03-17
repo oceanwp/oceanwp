@@ -13,7 +13,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Vars
 $retina_logo 		= oceanwp_header_retina_logo_setting();
 $full_screen_logo 	= get_theme_mod( 'ocean_full_screen_header_logo' );
-$responsive_logo 	= get_theme_mod( 'ocean_responsive_logo' ); ?>
+$responsive_logo 	= get_theme_mod( 'ocean_responsive_logo' );
+$header_text_color	= null;
+
+if ( display_header_text() && ! OCEAN_EXTRA_ACTIVE && ! class_exists( 'Ocean_Extra_Theme_Panel' ) ) {
+	$header_text_color = ' style="color:#' . get_header_textcolor() . ';"';
+}
+
+?>
 
 <?php do_action( 'ocean_before_logo' ); ?>
 
@@ -54,11 +61,14 @@ $responsive_logo 	= get_theme_mod( 'ocean_responsive_logo' ); ?>
 
 			do_action( 'ocean_after_logo_img' );
 
-		} else { ?>
+		} else {
+			if (display_header_text()==true){ ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title site-logo-text" <?php echo $header_text_color; ?>><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
+				<?php
+				do_action( 'ocean_after_site_title' );
+			 }
 
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title site-logo-text"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
-
-		<?php } ?>
+		} ?>
 
 	</div><!-- #site-logo-inner -->
 
@@ -66,10 +76,11 @@ $responsive_logo 	= get_theme_mod( 'ocean_responsive_logo' ); ?>
 
 	<?php
 	// Site description
-	if ( 'top' == oceanwp_header_style()
-		&& '' != get_bloginfo( 'description' ) ) { ?>
-		<div id="site-description"><h2><?php echo bloginfo( 'description' ); ?></h2></div>
-	<?php } ?>
+	if (display_header_text()==true){
+		if ( 'top' == oceanwp_header_style()
+			&& '' != get_bloginfo( 'description' ) ) { ?>
+			<div id="site-description"><h2 <?php echo $header_text_color; ?>><?php echo bloginfo( 'description' ); ?></h2></div>
+	<?php }} ?>
 
 </div><!-- #site-logo -->
 

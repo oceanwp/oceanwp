@@ -1696,10 +1696,12 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 						&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
 						$items .= '<label>'. esc_html__( 'Type your search', 'oceanwp' ) .'<span><i></i><i></i><i></i></span></label>';
 					}
-					//include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+					if( !function_exists('is_plugin_active') ) {
+						include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+					}
 					if ( is_plugin_active( 'sitepress-multilingual-cms/sitepress.php' ) ){
 						$my_current_lang = apply_filters( 'wpml_current_language', NULL );
-						if( $my_current_lang ){
+						if( ! empty($my_current_lang) ){
 							$items .= '<input type="hidden" name="lang" value="'. $my_current_lang .'"/>';
 						}
 					}
@@ -1880,7 +1882,7 @@ if ( ! function_exists( 'oceanwp_has_page_header' ) ) {
 if ( ! function_exists( 'oceanwp_has_page_header_heading' ) ) {
 
 	function oceanwp_has_page_header_heading() {
-		
+
 		// Define vars
 		$return = true;
 
@@ -3080,7 +3082,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 
 			<article id="comment-<?php comment_ID(); ?>" class="comment-container">
-				<p><?php esc_html_e( 'Pingback:', 'oceanwp' ); ?> <span><span<?php oceanwp_schema_markup( 'author_name' ); ?>><?php comment_author_link(); ?></span></span> <?php edit_comment_link( esc_html__( '(Edit)', 'oceanwp' ), '<span class="edit-link">', '</span>' ); ?></p>
+				<p><?php esc_html_e( 'Pingback:', 'oceanwp' ); ?> <span><?php oceanwp_schema_markup( 'author_name' ); ?>><?php comment_author_link(); ?></span> <?php edit_comment_link( esc_html__( '(Edit)', 'oceanwp' ), '<span class="edit-link">', '</span>' ); ?></p>
 			</article>
 
 			<?php
@@ -3149,11 +3151,11 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
 
-		$fields['author'] 	= '<div class="comment-form-author"><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_html__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="101"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
+		$fields['author'] 	= '<div class="comment-form-author"><label for="author" class="screen-reader-text">'. esc_attr( 'Author', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_attr__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="101"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
 
-		$fields['email'] 	= '<div class="comment-form-email"><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_html__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="102"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
+		$fields['email'] 	= '<div class="comment-form-email"><label for="email" class="screen-reader-text">'. esc_attr( 'Email', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_attr__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="102"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
 
-		$fields['url'] 		= '<div class="comment-form-url"><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_html__( 'Website', 'oceanwp' ) .'" size="22" tabindex="103" class="input-website" /></div>';
+		$fields['url'] 		= '<div class="comment-form-url"><label for="url" class="screen-reader-text">'. esc_attr( 'URL', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_attr__( 'Website', 'oceanwp' ) .'" size="22" tabindex="103" class="input-website" /></div>';
 
 		return $fields;
 
@@ -3421,6 +3423,8 @@ if ( ! function_exists( 'oceanwp_excerpt' ) ) {
 			}
 
 		}
+
+		$output = apply_filters('oceanwp_excerpt', $output);
 
 		return $output;
 
@@ -4286,42 +4290,52 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 
 		// HTML
 		if ( 'html' == $location ) {
-			$schema = 'itemscope itemtype="http://schema.org/WebPage"';
+			if ( is_home() || is_front_page() ) {
+				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
+			}
+			elseif ( is_category() || is_tag() ) {
+				$schema = 'itemscope="itemscope" itemtype="https://schema.org/Blog"';
+			}
+			elseif ( is_singular( 'post') ) {
+				$schema = 'itemscope="itemscope" itemtype="https://schema.org/Article"';
+			}
+			elseif ( is_page() ) {
+				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
+			}
+			else {
+				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
+			}
 		}
 
 		// Header
 		elseif ( 'header' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="http://schema.org/WPHeader"';
+			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPHeader"';
 		}
 
 		// Logo
 		elseif ( 'logo' == $location ) {
-			$schema = 'itemscope itemtype="http://schema.org/Brand"';
+			$schema = 'itemscope itemtype="https://schema.org/Brand"';
 		}
 
 		// Navigation
 		elseif ( 'site_navigation' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"';
+			$schema = 'itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"';
 		}
 
 		// Main
 		elseif ( 'main' == $location ) {
-			$itemtype = 'http://schema.org/WebPageElement';
+			$itemtype = 'https://schema.org/WebPageElement';
 			$itemprop = 'mainContentOfPage';
-			if ( is_singular( 'post' ) ) {
-				$itemprop = '';
-				$itemtype = 'http://schema.org/Blog';
-			}
 		}
 
 		// Sidebar
 		elseif ( 'sidebar' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="http://schema.org/WPSideBar"';
+			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPSideBar"';
 		}
 
 		// Footer widgets
 		elseif ( 'footer' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="http://schema.org/WPFooter"';
+			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPFooter"';
 		}
 
 		// Headings
@@ -4346,7 +4360,7 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 
 		// Author link
 		elseif ( 'author_link' == $location ) {
-			$schema = 'itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"';
+			$schema = 'itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person"';
 		}
 
 		// Item

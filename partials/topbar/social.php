@@ -76,7 +76,12 @@ if ( ! $profiles = get_theme_mod( 'ocean_top_bar_social_profiles' ) ) {
 
 // Get theme mods
 $link_target = get_theme_mod( 'ocean_top_bar_social_target', 'blank' );
-$link_target = $link_target ? $link_target : 'blank'; ?>
+$link_target = $link_target ? $link_target : 'blank';
+
+if ( $link_target == 'blank' ) {
+	$link_rel = 'rel="noopener noreferrer"';
+}
+?>
 
 <div id="top-bar-social" class="clr <?php echo esc_attr( $classes ); ?>">
 
@@ -100,10 +105,10 @@ $link_target = $link_target ? $link_target : 'blank'; ?>
 					} else if ( in_array( $key, array( 'email' ) ) ) {
 						echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" title="'. esc_attr( $val['label'] ) .'" target="_self">';
 					} else {
-						echo '<a href="'. esc_url( $url ) .'" title="'. esc_attr( $val['label'] ) .'" target="_'. esc_attr( $link_target ) .'">';
+						echo '<a href="'. esc_url( $url ) .'" title="'. esc_attr( $val['label'] ) .'" target="_'. esc_attr( $link_target ) .'" '. $link_rel .'>';
 					}
 
-						echo '<span class="'. esc_attr( $val['icon_class'] ) .'"></span>';
+						echo '<span class="'. esc_attr( $val['icon_class'] ) .'" aria-hidden="true"></span>';
 
 					echo '</a>';
 

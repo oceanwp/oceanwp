@@ -230,6 +230,7 @@ module.exports = function ( grunt ) {
 					'!.git/**',
 					'!Gruntfile.js',
 					'!package.json',
+					'!package-lock.json',
 					'!desktop.ini',
 					'!prepros.cfg',
 					'!CONTRIBUTING.md',
@@ -316,7 +317,6 @@ module.exports = function ( grunt ) {
 	// Production task
 	grunt.registerTask( 'build', [
 		'newer:uglify:prod',
-		'newer:imagemin',
 		'sass:dev',
 		'sass:prod',
 		'autoprefixer:main',

@@ -27,7 +27,7 @@ get_header(); ?>
 				<?php
 				// Elementor `single` location
 				if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'single' ) ) {
-					
+
 					// Start loop
 					while ( have_posts() ) : the_post();
 

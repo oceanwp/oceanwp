@@ -13,8 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Post type
 $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
 
-<form method="get" class="searchform" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<input type="text" class="field" name="s" id="s" placeholder="<?php esc_html_e( 'Search', 'oceanwp' ); ?>">
+<form method="get" class="searchform" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" aria-label="<?php _e( 'Primary', 'oceanwp' ); ?>">
+	<label for="s" class="screen-reader-text"><?php _e( 'Search', 'oceanwp' ) ?></label>
+	<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'oceanwp' ); ?>">
 	<?php if ( 'any' != $post_type ) { ?>
 		<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 	<?php } ?>

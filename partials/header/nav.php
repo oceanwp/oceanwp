@@ -139,13 +139,13 @@ else {
 				<div class="container clr">
 			<?php } ?>
 
-			<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?>>
+			<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?> role="navigation">
 
 				<?php
 				// Display global multisite menu
 				if ( is_multisite() && $ms_global_menu ) :
-					
-					switch_to_blog( 1 );  
+
+					switch_to_blog( 1 );
 					wp_nav_menu( $menu_args );
 					restore_current_blog();
 

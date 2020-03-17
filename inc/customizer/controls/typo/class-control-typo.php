@@ -153,7 +153,7 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 						<span class="label">{{ data.size.label }}</span>
 					<# } #>
 
-					<input type="text" name="{{ data.size.name }}" value="{{ data.size.value }}" placeholder="<?php esc_html_e( 'px - em - rem', 'oceanwp' ); ?>" />
+					<input type="text" name="{{ data.size.name }}" value="{{ data.size.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" />
 
 				</li>
 			<# } #>
@@ -222,7 +222,7 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 						<span class="label">{{ data.line_height.label }}</span>
 					<# } #>
 
-					<input type="text" name="{{ data.line_height.name }}" value="{{ data.line_height.value }}" placeholder="<?php esc_html_e( 'px - em - rem', 'oceanwp' ); ?>" />
+					<input type="text" name="{{ data.line_height.name }}" value="{{ data.line_height.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" />
 
 				</li>
 			<# } #>
@@ -234,7 +234,7 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 						<span class="label">{{ data.spacing.label }}</span>
 					<# } #>
 
-					<input type="text" name="{{ data.spacing.name }}" value="{{ data.spacing.value }}" placeholder="<?php esc_html_e( 'px - em - rem', 'oceanwp' ); ?>" />
+					<input type="text" name="{{ data.spacing.name }}" value="{{ data.spacing.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" />
 
 				</li>
 			<# } #>

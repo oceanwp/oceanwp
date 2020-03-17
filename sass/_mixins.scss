@@ -1,3 +1,9 @@
+// Font Size
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
 // Box Sizing
 @mixin box-sizing( $args ) {
     -webkit-box-sizing: $args;

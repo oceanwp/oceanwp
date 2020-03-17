@@ -24,7 +24,7 @@ get_header(); ?>
 				<?php do_action( 'ocean_before_content_inner' ); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
-					
+
 					<article <?php post_class( 'image-attachment' ); ?>>
 						<p><?php echo wp_get_attachment_image( get_the_ID(), 'full' ); ?></p>
 						<div class="entry clr">

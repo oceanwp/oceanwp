@@ -4,13 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP Theme\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2018-02-19 13:53+0100\n"
+"POT-Creation-Date: 2020-01-19 09:32+0100\n"
+"PO-Revision-Date: 2020-01-19 09:32+0100\n"
+"Last-Translator: \n"
+"Language-Team: OceanWP\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-04-16 01:29+0800\n"
-"Language-Team: OceanWP\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -18,23 +20,23 @@ msgstr ""
 "esc_html_e;esc_html_x;__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Textdomain-Support: yes\n"
-"Last-Translator: \n"
-"Language: zh_CN\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:100
+#: 404.php:103
 msgid "This page could not be found!"
 msgstr "找不到这个页面！"
 
-#: 404.php:101
+#: 404.php:104
 msgid "We are sorry. But the page you are looking for is not available."
 msgstr "我们很抱歉。但您要找的页面不可用。"
 
-#: 404.php:101
-msgid "Perhaps you can try a new searching."
+#: 404.php:104
+#, fuzzy
+#| msgid "Perhaps you can try a new searching."
+msgid "Perhaps you can try a new search."
 msgstr "也许你可以尝试一下新的搜索方式。"
 
-#: 404.php:103
+#: 404.php:106
 msgid "Back To Homepage"
 msgstr "返回主页"
 
@@ -47,11 +49,12 @@ msgstr "这篇文章有一个评论"
 msgid "This Post Has %s Comments"
 msgstr "这篇文章有 %s 个评论"
 
-#: comments.php:67 comments.php:75
+#: comments.php:67 comments.php:75 partials/edd/single.php:50
 msgid "Previous"
 msgstr "上一个"
 
-#: comments.php:68 comments.php:76 inc/woocommerce/woocommerce-config.php:634
+#: comments.php:68 comments.php:76 inc/woocommerce/woocommerce-config.php:761
+#: partials/edd/single.php:51
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "Next"
 msgstr "下一个"
@@ -85,144 +88,155 @@ msgstr "你的评论在这里……"
 msgid "Post Comment"
 msgstr "文章评论"
 
-#: functions.php:257 inc/customizer/settings/topbar.php:40
+#: functions.php:270 inc/customizer/settings/topbar.php:40
 #: inc/customizer/settings/typography.php:109
 #: inc/third/class-beaver-themer.php:100
 msgid "Top Bar"
 msgstr "顶部模块"
 
-#: functions.php:258
+#: functions.php:271
 msgid "Main"
 msgstr "主体"
 
-#: functions.php:259 inc/third/class-beaver-themer.php:145
+#: functions.php:272 inc/third/class-beaver-themer.php:145
 msgid "Footer"
 msgstr "页脚"
 
-#: functions.php:260
+#: functions.php:273
 msgid "Mobile (optional)"
 msgstr "移动端（可选）"
 
-#: functions.php:533
-msgid "Right Sidebar"
-msgstr "右侧边栏"
+#: functions.php:550
+#, fuzzy
+#| msgid "Left Sidebar"
+msgid "Default Sidebar"
+msgstr "左侧边栏"
 
-#: functions.php:535
-msgid "Widgets in this area are used in the right sidebar region."
+#: functions.php:552
+#, fuzzy
+#| msgid "Widgets in this area are used in the right sidebar region."
+msgid ""
+"Widgets in this area will be displayed in the left or right sidebar area if "
+"you choose the Left or Right Sidebar layout."
 msgstr "该区域的小工具用于右侧栏区域。"
 
-#: functions.php:544
+#: functions.php:561 inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr "左侧边栏"
 
-#: functions.php:546
-msgid "Widgets in this area are used in the left sidebar region."
+#: functions.php:563
+#, fuzzy
+#| msgid "Widgets in this area are used in the left sidebar region."
+msgid ""
+"Widgets in this area are used in the left sidebar region if you use the Both "
+"Sidebars layout."
 msgstr "该区域的小部件用于左侧栏区域。"
 
-#: functions.php:556
+#: functions.php:573
 msgid "Search Results Sidebar"
 msgstr "搜索结果侧栏"
 
-#: functions.php:558
+#: functions.php:575
 msgid "Widgets in this area are used in the search result page."
 msgstr "此区域中的小部件在搜索结果页中使用。"
 
-#: functions.php:568
+#: functions.php:585
 msgid "Footer 1"
 msgstr "页脚1"
 
-#: functions.php:570
+#: functions.php:587
 msgid "Widgets in this area are used in the first footer region."
 msgstr "此区域中的小部件用于第一页脚区域。"
 
-#: functions.php:579
+#: functions.php:596
 msgid "Footer 2"
 msgstr "页脚2"
 
-#: functions.php:581
+#: functions.php:598
 msgid "Widgets in this area are used in the second footer region."
 msgstr "此区域中的小部件用于第二页脚区域。"
 
-#: functions.php:590
+#: functions.php:607
 msgid "Footer 3"
 msgstr "页脚3"
 
-#: functions.php:592
+#: functions.php:609
 msgid "Widgets in this area are used in the third footer region."
 msgstr "此区域中的小部件用于第三页脚区域。"
 
-#: functions.php:601
+#: functions.php:618
 msgid "Footer 4"
 msgstr "页脚4"
 
-#: functions.php:603
+#: functions.php:620
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr "此区域中的小部件用于第四页脚区域。"
 
-#: inc/breadcrumbs.php:268 inc/customizer/settings/general.php:1217
-#: inc/customizer/settings/general.php:1231
+#: inc/breadcrumbs.php:329 inc/customizer/settings/general.php:1335
 #: inc/customizer/settings/typography.php:167
 msgid "Breadcrumbs"
 msgstr "面包屑导航"
 
-#: inc/breadcrumbs.php:269
+#: inc/breadcrumbs.php:330 inc/customizer/settings/general.php:1435
 msgid "Home"
 msgstr "首页"
 
-#: inc/breadcrumbs.php:270
+#: inc/breadcrumbs.php:331 inc/customizer/settings/general.php:1452
 msgid "404 Not Found"
 msgstr "404 Not Found"
 
-#: inc/breadcrumbs.php:271 inc/customizer/settings/woocommerce.php:894
+#: inc/breadcrumbs.php:332 inc/customizer/settings/edd.php:686
+#: inc/customizer/settings/woocommerce.php:1080
 msgid "Archives"
 msgstr "档案"
 
-#: inc/breadcrumbs.php:273
-#, php-format
-msgid "Search results for &#8220;%s&#8221;"
-msgstr "&#8220;%s&#8221的搜索结果;"
+#: inc/breadcrumbs.php:334 inc/customizer/settings/general.php:1469
+#, fuzzy
+#| msgid "Search Results Found"
+msgid "Search results for"
+msgstr "未找到任何文件"
 
-#: inc/breadcrumbs.php:275
+#: inc/breadcrumbs.php:336
 #, php-format
 msgid "Page %s"
 msgstr "第 %s页"
 
-#: inc/breadcrumbs.php:277
+#: inc/breadcrumbs.php:338
 #, php-format
 msgid "Minute %s"
 msgstr "%s分钟"
 
-#: inc/breadcrumbs.php:279
+#: inc/breadcrumbs.php:340
 #, php-format
 msgid "Week %s"
 msgstr "%s周"
 
-#: inc/breadcrumbs.php:717
+#: inc/breadcrumbs.php:878
 msgid "g:i a"
 msgstr ""
 
-#: inc/breadcrumbs.php:734
+#: inc/breadcrumbs.php:895
 msgid "i"
 msgstr ""
 
-#: inc/breadcrumbs.php:751
+#: inc/breadcrumbs.php:912
 msgid "g a"
 msgstr ""
 
-#: inc/breadcrumbs.php:767 inc/breadcrumbs.php:796 inc/breadcrumbs.php:823
-#: inc/breadcrumbs.php:850 inc/breadcrumbs.php:1190 inc/helpers.php:1840
+#: inc/breadcrumbs.php:928 inc/breadcrumbs.php:954 inc/breadcrumbs.php:978
+#: inc/breadcrumbs.php:1002 inc/breadcrumbs.php:1336 inc/helpers.php:1985
 msgid "Y"
 msgstr ""
 
-#: inc/breadcrumbs.php:768 inc/breadcrumbs.php:824 inc/breadcrumbs.php:1194
+#: inc/breadcrumbs.php:929 inc/breadcrumbs.php:979 inc/breadcrumbs.php:1340
 msgid "F"
 msgstr ""
 
-#: inc/breadcrumbs.php:769 inc/breadcrumbs.php:1198
+#: inc/breadcrumbs.php:930 inc/breadcrumbs.php:1344
 msgid "j"
 msgstr ""
 
-#: inc/breadcrumbs.php:797
+#: inc/breadcrumbs.php:955
 msgid "W"
 msgstr ""
 
@@ -235,32 +249,42 @@ msgstr "链接所有的值"
 msgid "Select"
 msgstr "选择"
 
+#: inc/customizer/controls/text/class-control-text.php:119
+#: inc/customizer/controls/text/class-control-text.php:125
+#: inc/customizer/controls/text/class-control-text.php:131
+#: inc/customizer/controls/typo/class-control-typo.php:156
+#: inc/customizer/controls/typo/class-control-typo.php:225
+#: inc/customizer/controls/typo/class-control-typo.php:237
+msgid "px - em - rem"
+msgstr ""
+
 #: inc/customizer/controls/typo/class-control-typo.php:56
-#: inc/customizer/settings/typography.php:355
+#: inc/customizer/settings/typography.php:375
 msgid "Font Family"
 msgstr "字体类型"
 
 #: inc/customizer/controls/typo/class-control-typo.php:57
+#: inc/customizer/settings/typography.php:501
 msgid "Font Size"
 msgstr "字号"
 
 #: inc/customizer/controls/typo/class-control-typo.php:58
-#: inc/customizer/settings/typography.php:377
+#: inc/customizer/settings/typography.php:397
 msgid "Font Weight"
 msgstr "字体粗细"
 
 #: inc/customizer/controls/typo/class-control-typo.php:59
-#: inc/customizer/settings/typography.php:411
+#: inc/customizer/settings/typography.php:431
 msgid "Font Style"
 msgstr "字体风格"
 
 #: inc/customizer/controls/typo/class-control-typo.php:60
-#: inc/customizer/settings/typography.php:438
+#: inc/customizer/settings/typography.php:458
 msgid "Text Transform"
 msgstr "文本转换"
 
 #: inc/customizer/controls/typo/class-control-typo.php:61
-#: inc/customizer/settings/typography.php:525
+#: inc/customizer/settings/typography.php:541
 msgid "Line Height"
 msgstr "行高"
 
@@ -268,123 +292,124 @@ msgstr "行高"
 msgid "Letter Spacing"
 msgstr "字符间距"
 
-#: inc/customizer/controls/typo/class-control-typo.php:156
-#: inc/customizer/controls/typo/class-control-typo.php:225
-#: inc/customizer/controls/typo/class-control-typo.php:237
-msgid "px - em - rem"
-msgstr ""
-
 #: inc/customizer/controls/typo/class-control-typo.php:255
 #: inc/customizer/controls/typo/class-control-typo.php:296
 #: inc/customizer/controls/typo/class-control-typo.php:319
 #: inc/customizer/controls/typo/class-control-typo.php:335
-#: inc/customizer/controls/typography/class-control-typography.php:57
-#: inc/customizer/settings/blog.php:775 inc/customizer/settings/blog.php:805
-#: inc/customizer/settings/blog.php:828 inc/customizer/settings/blog.php:853
+#: inc/customizer/controls/typography/class-control-typography.php:60
+#: inc/customizer/settings/blog.php:818 inc/customizer/settings/blog.php:848
+#: inc/customizer/settings/blog.php:871 inc/customizer/settings/blog.php:896
 #: inc/customizer/settings/general.php:184
 #: inc/customizer/settings/general.php:214
 #: inc/customizer/settings/general.php:237
 #: inc/customizer/settings/general.php:262
-#: inc/customizer/settings/general.php:916
-#: inc/customizer/settings/general.php:978
-#: inc/customizer/settings/general.php:1008
-#: inc/customizer/settings/general.php:1031
-#: inc/customizer/settings/general.php:1056
-#: inc/customizer/settings/general.php:2222
+#: inc/customizer/settings/general.php:1036
+#: inc/customizer/settings/general.php:1098
+#: inc/customizer/settings/general.php:1128
+#: inc/customizer/settings/general.php:1151
+#: inc/customizer/settings/general.php:1176
+#: inc/customizer/settings/general.php:2558
 #: inc/customizer/settings/header.php:1942
 #: inc/customizer/settings/header.php:1971
 #: inc/customizer/settings/header.php:1993
 #: inc/customizer/settings/header.php:2017
-#: inc/customizer/settings/typography.php:385
-#: inc/customizer/settings/typography.php:418
-#: inc/customizer/settings/typography.php:445
+#: inc/customizer/settings/typography.php:405
+#: inc/customizer/settings/typography.php:438
+#: inc/customizer/settings/typography.php:465
+#: inc/customizer/settings/woocommerce.php:127
+#: inc/third/class-lifterlms.php:308
 msgid "Default"
 msgstr "默认"
 
 #: inc/customizer/controls/typo/class-control-typo.php:297
-#: inc/customizer/settings/typography.php:386
+#: inc/customizer/settings/typography.php:406
 msgid "Thin: 100"
 msgstr "极细：100"
 
 #: inc/customizer/controls/typo/class-control-typo.php:298
-#: inc/customizer/settings/typography.php:387
+#: inc/customizer/settings/typography.php:407
 msgid "Light: 200"
 msgstr "亮度：200"
 
 #: inc/customizer/controls/typo/class-control-typo.php:299
-#: inc/customizer/settings/typography.php:388
+#: inc/customizer/settings/typography.php:408
 msgid "Book: 300"
 msgstr "一般：300"
 
 #: inc/customizer/controls/typo/class-control-typo.php:300
-#: inc/customizer/settings/typography.php:389
+#: inc/customizer/settings/typography.php:409
 msgid "Normal: 400"
 msgstr "正常：400"
 
 #: inc/customizer/controls/typo/class-control-typo.php:301
-#: inc/customizer/settings/typography.php:390
+#: inc/customizer/settings/typography.php:410
 msgid "Medium: 500"
 msgstr "中等：500"
 
 #: inc/customizer/controls/typo/class-control-typo.php:302
-#: inc/customizer/settings/typography.php:391
+#: inc/customizer/settings/typography.php:411
 msgid "Semibold: 600"
 msgstr "半粗体：600"
 
 #: inc/customizer/controls/typo/class-control-typo.php:303
-#: inc/customizer/settings/typography.php:392
+#: inc/customizer/settings/typography.php:412
 msgid "Bold: 700"
 msgstr "粗体：700"
 
 #: inc/customizer/controls/typo/class-control-typo.php:304
-#: inc/customizer/settings/typography.php:393
+#: inc/customizer/settings/typography.php:413
 msgid "Extra Bold: 800"
 msgstr "特大号：800"
 
 #: inc/customizer/controls/typo/class-control-typo.php:305
-#: inc/customizer/settings/typography.php:394
+#: inc/customizer/settings/typography.php:414
 msgid "Black: 900"
 msgstr "黑色：900"
 
 #: inc/customizer/controls/typo/class-control-typo.php:320
-#: inc/customizer/settings/typography.php:419
+#: inc/customizer/settings/typography.php:439
+#: inc/customizer/settings/woocommerce.php:1919
 msgid "Normal"
 msgstr "正常"
 
 #: inc/customizer/controls/typo/class-control-typo.php:321
-#: inc/customizer/settings/typography.php:420
+#: inc/customizer/settings/typography.php:440
 msgid "Italic"
 msgstr "斜体"
 
 #: inc/customizer/controls/typo/class-control-typo.php:336
-#: inc/customizer/settings/typography.php:446
+#: inc/customizer/settings/typography.php:466
 msgid "Capitalize"
 msgstr "大写字母"
 
 #: inc/customizer/controls/typo/class-control-typo.php:337
-#: inc/customizer/settings/typography.php:447
+#: inc/customizer/settings/typography.php:467
 msgid "Lowercase"
 msgstr "小写字母"
 
 #: inc/customizer/controls/typo/class-control-typo.php:338
-#: inc/customizer/settings/typography.php:448
+#: inc/customizer/settings/typography.php:468
 msgid "Uppercase"
 msgstr "大写字母"
 
-#: inc/customizer/controls/typography/class-control-typography.php:63
+#: inc/customizer/controls/typography/class-control-typography.php:66
 msgid "Custom Fonts"
 msgstr "自定义字体"
 
-#: inc/customizer/controls/typography/class-control-typography.php:73
+#: inc/customizer/controls/typography/class-control-typography.php:76
 msgid "Standard Fonts"
 msgstr "标准字体"
 
-#: inc/customizer/controls/typography/class-control-typography.php:84
+#: inc/customizer/controls/typography/class-control-typography.php:87
 msgid "Google Fonts"
 msgstr "Google字体"
 
-#: inc/customizer/settings/blog.php:40 inc/customizer/settings/blog.php:715
-#: inc/helpers.php:1880
+#: inc/customizer/customizer.php:134
+msgid "Premium Addons Available"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:40 inc/customizer/settings/blog.php:758
+#: inc/helpers.php:2032
 msgid "Blog"
 msgstr "博客"
 
@@ -396,352 +421,482 @@ msgstr "博客条目"
 msgid "Archives & Entries Layout"
 msgstr "档案 & 条目布局"
 
-#: inc/customizer/settings/blog.php:78 inc/customizer/settings/blog.php:616
+#: inc/customizer/settings/blog.php:78 inc/customizer/settings/blog.php:638
+#: inc/customizer/settings/edd.php:716 inc/customizer/settings/edd.php:993
 #: inc/customizer/settings/general.php:590
-#: inc/customizer/settings/general.php:785
-#: inc/customizer/settings/woocommerce.php:924
-#: inc/customizer/settings/woocommerce.php:1388
+#: inc/customizer/settings/general.php:806
+#: inc/customizer/settings/learndash.php:131
+#: inc/customizer/settings/learndash.php:247
+#: inc/customizer/settings/learndash.php:363
+#: inc/customizer/settings/lifterlms.php:295
+#: inc/customizer/settings/lifterlms.php:411
+#: inc/customizer/settings/lifterlms.php:527
+#: inc/customizer/settings/woocommerce.php:1110
+#: inc/customizer/settings/woocommerce.php:1680
 msgid "Both Sidebars: Style"
 msgstr "两个侧边栏：风格"
 
-#: inc/customizer/settings/blog.php:84 inc/customizer/settings/blog.php:622
+#: inc/customizer/settings/blog.php:84 inc/customizer/settings/blog.php:644
+#: inc/customizer/settings/edd.php:722 inc/customizer/settings/edd.php:999
 #: inc/customizer/settings/general.php:596
-#: inc/customizer/settings/general.php:791
-#: inc/customizer/settings/woocommerce.php:930
-#: inc/customizer/settings/woocommerce.php:1394
+#: inc/customizer/settings/general.php:812
+#: inc/customizer/settings/learndash.php:137
+#: inc/customizer/settings/learndash.php:253
+#: inc/customizer/settings/learndash.php:369
+#: inc/customizer/settings/lifterlms.php:301
+#: inc/customizer/settings/lifterlms.php:417
+#: inc/customizer/settings/lifterlms.php:533
+#: inc/customizer/settings/woocommerce.php:1116
+#: inc/customizer/settings/woocommerce.php:1686
 msgid "Sidebar / Sidebar / Content"
 msgstr "边栏/边栏/内容"
 
-#: inc/customizer/settings/blog.php:85 inc/customizer/settings/blog.php:623
+#: inc/customizer/settings/blog.php:85 inc/customizer/settings/blog.php:645
+#: inc/customizer/settings/edd.php:723 inc/customizer/settings/edd.php:1000
 #: inc/customizer/settings/general.php:597
-#: inc/customizer/settings/general.php:792
-#: inc/customizer/settings/woocommerce.php:931
-#: inc/customizer/settings/woocommerce.php:1395
+#: inc/customizer/settings/general.php:813
+#: inc/customizer/settings/learndash.php:138
+#: inc/customizer/settings/learndash.php:254
+#: inc/customizer/settings/learndash.php:370
+#: inc/customizer/settings/lifterlms.php:302
+#: inc/customizer/settings/lifterlms.php:418
+#: inc/customizer/settings/lifterlms.php:534
+#: inc/customizer/settings/woocommerce.php:1117
+#: inc/customizer/settings/woocommerce.php:1687
 msgid "Sidebar / Content / Sidebar"
 msgstr "边栏/内容/边栏"
 
-#: inc/customizer/settings/blog.php:86 inc/customizer/settings/blog.php:624
+#: inc/customizer/settings/blog.php:86 inc/customizer/settings/blog.php:646
+#: inc/customizer/settings/edd.php:724 inc/customizer/settings/edd.php:1001
 #: inc/customizer/settings/general.php:598
-#: inc/customizer/settings/general.php:793
-#: inc/customizer/settings/woocommerce.php:932
-#: inc/customizer/settings/woocommerce.php:1396
+#: inc/customizer/settings/general.php:814
+#: inc/customizer/settings/learndash.php:139
+#: inc/customizer/settings/learndash.php:255
+#: inc/customizer/settings/learndash.php:371
+#: inc/customizer/settings/lifterlms.php:303
+#: inc/customizer/settings/lifterlms.php:419
+#: inc/customizer/settings/lifterlms.php:535
+#: inc/customizer/settings/woocommerce.php:1118
+#: inc/customizer/settings/woocommerce.php:1688
 msgid "Content / Sidebar / Sidebar"
 msgstr "内容/边栏/边栏"
 
-#: inc/customizer/settings/blog.php:100 inc/customizer/settings/blog.php:638
+#: inc/customizer/settings/blog.php:100 inc/customizer/settings/blog.php:660
+#: inc/customizer/settings/edd.php:738 inc/customizer/settings/edd.php:1015
 #: inc/customizer/settings/general.php:612
-#: inc/customizer/settings/general.php:807
-#: inc/customizer/settings/woocommerce.php:946
-#: inc/customizer/settings/woocommerce.php:1410
+#: inc/customizer/settings/general.php:828
+#: inc/customizer/settings/learndash.php:153
+#: inc/customizer/settings/learndash.php:269
+#: inc/customizer/settings/learndash.php:385
+#: inc/customizer/settings/lifterlms.php:317
+#: inc/customizer/settings/lifterlms.php:433
+#: inc/customizer/settings/lifterlms.php:549
+#: inc/customizer/settings/woocommerce.php:1132
+#: inc/customizer/settings/woocommerce.php:1702
 msgid "Both Sidebars: Content Width (%)"
 msgstr "两个侧边栏：内容宽度（％）"
 
-#: inc/customizer/settings/blog.php:122 inc/customizer/settings/blog.php:660
+#: inc/customizer/settings/blog.php:122 inc/customizer/settings/blog.php:682
+#: inc/customizer/settings/edd.php:760 inc/customizer/settings/edd.php:1037
 #: inc/customizer/settings/general.php:634
-#: inc/customizer/settings/general.php:829
-#: inc/customizer/settings/woocommerce.php:968
-#: inc/customizer/settings/woocommerce.php:1432
+#: inc/customizer/settings/general.php:850
+#: inc/customizer/settings/learndash.php:175
+#: inc/customizer/settings/learndash.php:291
+#: inc/customizer/settings/learndash.php:407
+#: inc/customizer/settings/lifterlms.php:339
+#: inc/customizer/settings/lifterlms.php:455
+#: inc/customizer/settings/lifterlms.php:571
+#: inc/customizer/settings/woocommerce.php:1154
+#: inc/customizer/settings/woocommerce.php:1724
 msgid "Both Sidebars: Sidebars Width (%)"
 msgstr "两个侧边栏：侧边栏宽度（％）"
 
-#: inc/customizer/settings/blog.php:144 inc/customizer/settings/blog.php:682
-#: inc/customizer/settings/general.php:883
+#: inc/customizer/settings/blog.php:144 inc/customizer/settings/blog.php:704
+#: inc/customizer/settings/edd.php:782 inc/customizer/settings/edd.php:1059
+#: inc/customizer/settings/general.php:656
+#: inc/customizer/settings/general.php:872
+#: inc/customizer/settings/learndash.php:197
+#: inc/customizer/settings/learndash.php:313
+#: inc/customizer/settings/learndash.php:429
+#: inc/customizer/settings/lifterlms.php:361
+#: inc/customizer/settings/lifterlms.php:477
+#: inc/customizer/settings/lifterlms.php:593
+#: inc/customizer/settings/woocommerce.php:1176
+#: inc/customizer/settings/woocommerce.php:1746
+#, fuzzy
+#| msgid "Before Sidebar Inner"
+msgid "Mobile Sidebar Order"
+msgstr "前侧栏内部"
+
+#: inc/customizer/settings/blog.php:150 inc/customizer/settings/blog.php:710
+#: inc/customizer/settings/edd.php:788 inc/customizer/settings/edd.php:1065
+#: inc/customizer/settings/general.php:662
+#: inc/customizer/settings/general.php:878
+#: inc/customizer/settings/learndash.php:203
+#: inc/customizer/settings/learndash.php:319
+#: inc/customizer/settings/learndash.php:435
+#: inc/customizer/settings/lifterlms.php:367
+#: inc/customizer/settings/lifterlms.php:483
+#: inc/customizer/settings/lifterlms.php:599
+#: inc/customizer/settings/woocommerce.php:1182
+#: inc/customizer/settings/woocommerce.php:1752
+#, fuzzy
+#| msgid "Sidebar / Content / Sidebar"
+msgid "Content / Sidebar"
+msgstr "边栏/内容/边栏"
+
+#: inc/customizer/settings/blog.php:151 inc/customizer/settings/blog.php:711
+#: inc/customizer/settings/edd.php:789 inc/customizer/settings/edd.php:1066
+#: inc/customizer/settings/general.php:663
+#: inc/customizer/settings/general.php:879
+#: inc/customizer/settings/learndash.php:204
+#: inc/customizer/settings/learndash.php:320
+#: inc/customizer/settings/learndash.php:436
+#: inc/customizer/settings/lifterlms.php:368
+#: inc/customizer/settings/lifterlms.php:484
+#: inc/customizer/settings/lifterlms.php:600
+#: inc/customizer/settings/woocommerce.php:1183
+#: inc/customizer/settings/woocommerce.php:1753
+#, fuzzy
+#| msgid "Sidebar / Sidebar / Content"
+msgid "Sidebar / Content"
+msgstr "边栏/边栏/内容"
+
+#: inc/customizer/settings/blog.php:165 inc/customizer/settings/blog.php:725
+#: inc/customizer/settings/general.php:1003
 msgid "Heading Tag"
 msgstr "标题标签"
 
-#: inc/customizer/settings/blog.php:150 inc/customizer/settings/blog.php:688
-#: inc/customizer/settings/general.php:889
+#: inc/customizer/settings/blog.php:171 inc/customizer/settings/blog.php:731
+#: inc/customizer/settings/general.php:1009
+#: inc/customizer/settings/woocommerce.php:1773
 msgid "H1"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:151 inc/customizer/settings/blog.php:689
-#: inc/customizer/settings/general.php:890
+#: inc/customizer/settings/blog.php:172 inc/customizer/settings/blog.php:732
+#: inc/customizer/settings/general.php:1010
+#: inc/customizer/settings/woocommerce.php:1774
 msgid "H2"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:152 inc/customizer/settings/blog.php:690
-#: inc/customizer/settings/general.php:891
+#: inc/customizer/settings/blog.php:173 inc/customizer/settings/blog.php:733
+#: inc/customizer/settings/general.php:1011
+#: inc/customizer/settings/woocommerce.php:1775
 msgid "H3"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:153 inc/customizer/settings/blog.php:691
-#: inc/customizer/settings/general.php:892
+#: inc/customizer/settings/blog.php:174 inc/customizer/settings/blog.php:734
+#: inc/customizer/settings/general.php:1012
+#: inc/customizer/settings/woocommerce.php:1776
 msgid "H4"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:154 inc/customizer/settings/blog.php:692
-#: inc/customizer/settings/general.php:893
+#: inc/customizer/settings/blog.php:175 inc/customizer/settings/blog.php:735
+#: inc/customizer/settings/general.php:1013
+#: inc/customizer/settings/woocommerce.php:1777
 msgid "H5"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:155 inc/customizer/settings/blog.php:693
-#: inc/customizer/settings/general.php:894
+#: inc/customizer/settings/blog.php:176 inc/customizer/settings/blog.php:736
+#: inc/customizer/settings/general.php:1014
+#: inc/customizer/settings/woocommerce.php:1778
 msgid "H6"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:156 inc/customizer/settings/blog.php:694
-#: inc/customizer/settings/general.php:895
+#: inc/customizer/settings/blog.php:177 inc/customizer/settings/blog.php:737
+#: inc/customizer/settings/general.php:1015
+#: inc/customizer/settings/woocommerce.php:1779
 msgid "div"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:157 inc/customizer/settings/blog.php:695
-#: inc/customizer/settings/general.php:896
+#: inc/customizer/settings/blog.php:178 inc/customizer/settings/blog.php:738
+#: inc/customizer/settings/general.php:1016
+#: inc/customizer/settings/woocommerce.php:1780
 msgid "span"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:158 inc/customizer/settings/blog.php:696
-#: inc/customizer/settings/general.php:897
+#: inc/customizer/settings/blog.php:179 inc/customizer/settings/blog.php:739
+#: inc/customizer/settings/general.php:1017
+#: inc/customizer/settings/woocommerce.php:1781
 msgid "p"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:172
+#: inc/customizer/settings/blog.php:193
 msgid "Add Overlay On image Hover"
 msgstr "叠加在图像上"
 
-#: inc/customizer/settings/blog.php:188
+#: inc/customizer/settings/blog.php:209
 msgid "Blog Style"
 msgstr "博客风格"
 
-#: inc/customizer/settings/blog.php:194
+#: inc/customizer/settings/blog.php:215
 msgid "Large Image"
 msgstr "图片最大化"
 
-#: inc/customizer/settings/blog.php:195
+#: inc/customizer/settings/blog.php:216
+#: inc/customizer/settings/lifterlms.php:107
 msgid "Grid"
 msgstr "网格"
 
-#: inc/customizer/settings/blog.php:196 inc/customizer/settings/blog.php:216
+#: inc/customizer/settings/blog.php:217 inc/customizer/settings/blog.php:237
 msgid "Thumbnail"
 msgstr "缩略图"
 
-#: inc/customizer/settings/blog.php:209
+#: inc/customizer/settings/blog.php:230
 msgid "Images Size"
 msgstr "图像尺寸"
 
-#: inc/customizer/settings/blog.php:217 inc/customizer/settings/header.php:74
+#: inc/customizer/settings/blog.php:238 inc/customizer/settings/header.php:74
 msgid "Medium"
 msgstr "中等的"
 
-#: inc/customizer/settings/blog.php:218
+#: inc/customizer/settings/blog.php:239
 msgid "Medium Large"
 msgstr "稍大"
 
-#: inc/customizer/settings/blog.php:219
+#: inc/customizer/settings/blog.php:240
 msgid "Large"
 msgstr "大"
 
-#: inc/customizer/settings/blog.php:232
+#: inc/customizer/settings/blog.php:253
 msgid "Grid Columns"
 msgstr "网格列"
 
-#: inc/customizer/settings/blog.php:256
+#: inc/customizer/settings/blog.php:277
 msgid "Grid Style"
 msgstr "网格样式"
 
-#: inc/customizer/settings/blog.php:263
+#: inc/customizer/settings/blog.php:284
 msgid "Fit Rows"
 msgstr "适合行"
 
-#: inc/customizer/settings/blog.php:264
+#: inc/customizer/settings/blog.php:285
 msgid "Masonry"
 msgstr "建筑"
 
-#: inc/customizer/settings/blog.php:277
+#: inc/customizer/settings/blog.php:298
 msgid "Equal Heights"
 msgstr "平等高度"
 
-#: inc/customizer/settings/blog.php:294
+#: inc/customizer/settings/blog.php:315
 msgid "Image Position"
 msgstr "图片位置"
 
-#: inc/customizer/settings/blog.php:299 inc/customizer/settings/blog.php:751
-#: inc/customizer/settings/general.php:954
-#: inc/customizer/settings/general.php:1531
+#: inc/customizer/settings/blog.php:320 inc/customizer/settings/blog.php:794
+#: inc/customizer/settings/edd.php:880 inc/customizer/settings/general.php:1074
+#: inc/customizer/settings/general.php:1679
+#: inc/customizer/settings/general.php:1867
 #: inc/customizer/settings/header.php:1082
 #: inc/customizer/settings/header.php:1545
 #: inc/customizer/settings/header.php:1566
 #: inc/customizer/settings/header.php:2242
-#: inc/customizer/settings/header.php:3574
-#: inc/customizer/settings/woocommerce.php:1275
-#: inc/customizer/settings/woocommerce.php:1571
+#: inc/customizer/settings/header.php:3596
+#: inc/customizer/settings/woocommerce.php:1554
+#: inc/customizer/settings/woocommerce.php:1976
 msgid "Left"
 msgstr "左"
 
-#: inc/customizer/settings/blog.php:300 inc/customizer/settings/blog.php:753
-#: inc/customizer/settings/general.php:956
-#: inc/customizer/settings/general.php:1529
+#: inc/customizer/settings/blog.php:321 inc/customizer/settings/blog.php:796
+#: inc/customizer/settings/edd.php:882 inc/customizer/settings/general.php:1076
+#: inc/customizer/settings/general.php:1680
+#: inc/customizer/settings/general.php:1865
 #: inc/customizer/settings/header.php:1084
 #: inc/customizer/settings/header.php:1546
 #: inc/customizer/settings/header.php:1568
 #: inc/customizer/settings/header.php:2244
-#: inc/customizer/settings/header.php:3575
-#: inc/customizer/settings/woocommerce.php:1277
-#: inc/customizer/settings/woocommerce.php:1573
+#: inc/customizer/settings/header.php:3597
+#: inc/customizer/settings/woocommerce.php:1556
+#: inc/customizer/settings/woocommerce.php:1978
 msgid "Right"
 msgstr "右"
 
-#: inc/customizer/settings/blog.php:315
+#: inc/customizer/settings/blog.php:336
 msgid "Vertical Position"
 msgstr "垂直位置"
 
-#: inc/customizer/settings/blog.php:320
+#: inc/customizer/settings/blog.php:341
 msgid "Top"
 msgstr "顶部"
 
-#: inc/customizer/settings/blog.php:321 inc/customizer/settings/blog.php:752
-#: inc/customizer/settings/general.php:955
-#: inc/customizer/settings/general.php:1530
+#: inc/customizer/settings/blog.php:342 inc/customizer/settings/blog.php:795
+#: inc/customizer/settings/edd.php:881 inc/customizer/settings/general.php:1075
+#: inc/customizer/settings/general.php:1866
 #: inc/customizer/settings/header.php:73
 #: inc/customizer/settings/header.php:1083
 #: inc/customizer/settings/header.php:1567
 #: inc/customizer/settings/header.php:2243
-#: inc/customizer/settings/woocommerce.php:1276
-#: inc/customizer/settings/woocommerce.php:1572
+#: inc/customizer/settings/woocommerce.php:1555
+#: inc/customizer/settings/woocommerce.php:1977
 msgid "Center"
 msgstr "中间"
 
-#: inc/customizer/settings/blog.php:322
+#: inc/customizer/settings/blog.php:343
 msgid "Bottom"
 msgstr "底部"
 
-#: inc/customizer/settings/blog.php:335
+#: inc/customizer/settings/blog.php:356 inc/customizer/settings/edd.php:914
 msgid "Custom Image Width (px)"
 msgstr "自定义图像宽度(像素)"
 
-#: inc/customizer/settings/blog.php:353
+#: inc/customizer/settings/blog.php:374 inc/customizer/settings/edd.php:931
 msgid "Custom Image Height (px)"
 msgstr "自定义图像高度(像素)"
 
-#: inc/customizer/settings/blog.php:373
-#: inc/customizer/settings/woocommerce.php:2905
+#: inc/customizer/settings/blog.php:394 inc/customizer/settings/edd.php:1536
+#: inc/customizer/settings/woocommerce.php:3306
 msgid "Category Color"
 msgstr "分类颜色"
 
-#: inc/customizer/settings/blog.php:390 inc/customizer/settings/blog.php:441
+#: inc/customizer/settings/blog.php:411
 msgid "Category Hover Color"
 msgstr "分类悬停颜色"
 
-#: inc/customizer/settings/blog.php:407
+#: inc/customizer/settings/blog.php:428
 msgid "Comments Color"
 msgstr "评论颜色"
 
-#: inc/customizer/settings/blog.php:424
+#: inc/customizer/settings/blog.php:445
 msgid "Comments Hover Color"
 msgstr "评论悬停颜色"
 
-#: inc/customizer/settings/blog.php:457
-#: inc/customizer/settings/woocommerce.php:1095
+#: inc/customizer/settings/blog.php:462
+#, fuzzy
+#| msgid "Title Color"
+msgid "Date Color"
+msgstr "标题颜色"
+
+#: inc/customizer/settings/blog.php:478 inc/customizer/settings/edd.php:948
+#: inc/customizer/settings/woocommerce.php:1302
 msgid "Excerpt Length"
 msgstr "摘要长度"
 
-#: inc/customizer/settings/blog.php:458
+#: inc/customizer/settings/blog.php:479
 msgid "Add 500 to display full content"
 msgstr "添加500以显示全部内容"
 
-#: inc/customizer/settings/blog.php:478
+#: inc/customizer/settings/blog.php:499
 msgid "Blog Pagination Style"
 msgstr "博客分页样式"
 
-#: inc/customizer/settings/blog.php:484
-#: inc/customizer/settings/woocommerce.php:1296
+#: inc/customizer/settings/blog.php:505
+#: inc/customizer/settings/woocommerce.php:1588
 msgid "Standard"
 msgstr "标准"
 
-#: inc/customizer/settings/blog.php:485
-#: inc/customizer/settings/woocommerce.php:1297
+#: inc/customizer/settings/blog.php:506
+#: inc/customizer/settings/woocommerce.php:1589
 msgid "Infinite Scroll"
 msgstr "无限滚动"
 
-#: inc/customizer/settings/blog.php:486
+#: inc/customizer/settings/blog.php:507
 msgid "Next/Prev"
 msgstr "下一个/上一页"
 
-#: inc/customizer/settings/blog.php:500
-#: inc/customizer/settings/woocommerce.php:1311
+#: inc/customizer/settings/blog.php:521
+#: inc/customizer/settings/woocommerce.php:1603
 msgid "Infinite Scroll: Spinners Color"
 msgstr "无限滚动：纺纱颜色"
 
-#: inc/customizer/settings/blog.php:511
-#: inc/customizer/settings/woocommerce.php:1322 inc/helpers.php:3093
-#: inc/woocommerce/woocommerce-config.php:348
+#: inc/customizer/settings/blog.php:532
+#: inc/customizer/settings/woocommerce.php:1614 inc/helpers.php:3287
+#: inc/woocommerce/woocommerce-config.php:551
 msgid "End of content"
 msgstr "最后的内容"
 
-#: inc/customizer/settings/blog.php:517
-#: inc/customizer/settings/woocommerce.php:1328
+#: inc/customizer/settings/blog.php:538
+#: inc/customizer/settings/woocommerce.php:1620
 msgid "Infinite Scroll: Last Text"
 msgstr "无限滚动:最后文本"
 
-#: inc/customizer/settings/blog.php:529
-#: inc/customizer/settings/woocommerce.php:1340 inc/helpers.php:3098
-#: inc/woocommerce/woocommerce-config.php:353
+#: inc/customizer/settings/blog.php:550
+#: inc/customizer/settings/woocommerce.php:1632 inc/helpers.php:3292
+#: inc/woocommerce/woocommerce-config.php:556
 msgid "No more pages to load"
 msgstr "不再加载页面"
 
-#: inc/customizer/settings/blog.php:535
-#: inc/customizer/settings/woocommerce.php:1346
+#: inc/customizer/settings/blog.php:556
+#: inc/customizer/settings/woocommerce.php:1638
 msgid "Infinite Scroll: Error Text"
 msgstr "无限滚动:错误文本"
 
-#: inc/customizer/settings/blog.php:552 inc/customizer/settings/blog.php:952
-#: inc/customizer/settings/header.php:936
-#: inc/customizer/settings/woocommerce.php:1209
+#: inc/customizer/settings/blog.php:573 inc/customizer/settings/blog.php:995
+#: inc/customizer/settings/edd.php:851 inc/customizer/settings/header.php:936
+#: inc/customizer/settings/header.php:3419
+#: inc/customizer/settings/woocommerce.php:1486
 msgid "Elements Positioning"
 msgstr "元素定位"
 
-#: inc/customizer/settings/blog.php:569 inc/customizer/settings/blog.php:968
-#: inc/helpers.php:2709 inc/helpers.php:2794
+#: inc/customizer/settings/blog.php:590 inc/customizer/settings/blog.php:1011
+#: inc/customizer/settings/lifterlms.php:211 inc/helpers.php:2903
+#: inc/helpers.php:2988
 msgid "Meta"
 msgstr "Meta"
 
-#: inc/customizer/settings/blog.php:574 inc/customizer/settings/blog.php:973
+#: inc/customizer/settings/blog.php:595 inc/customizer/settings/blog.php:1016
+#: inc/customizer/settings/lifterlms.php:212
 msgid "Author"
 msgstr "作者"
 
-#: inc/customizer/settings/blog.php:575 inc/customizer/settings/blog.php:974
+#: inc/customizer/settings/blog.php:596 inc/customizer/settings/blog.php:1017
 msgid "Date"
 msgstr "日期"
 
-#: inc/customizer/settings/blog.php:576 inc/customizer/settings/blog.php:975
+#: inc/customizer/settings/blog.php:597 inc/customizer/settings/blog.php:1018
 msgid "Categories"
 msgstr "类别"
 
-#: inc/customizer/settings/blog.php:577 inc/customizer/settings/blog.php:976
-#: inc/helpers.php:2801
+#: inc/customizer/settings/blog.php:598 inc/customizer/settings/blog.php:1019
+#: inc/helpers.php:2995
 msgid "Comments"
 msgstr "评论"
 
-#: inc/customizer/settings/blog.php:586
+#: inc/customizer/settings/blog.php:599 inc/customizer/settings/blog.php:1020
+msgid "Modified Date"
+msgstr ""
+
+#: inc/customizer/settings/blog.php:608
 msgid "Single Post"
 msgstr "单篇文章子"
 
-#: inc/customizer/settings/blog.php:600 inc/customizer/settings/general.php:574
-#: inc/customizer/settings/general.php:769
-#: inc/customizer/settings/general.php:2183
-#: inc/customizer/settings/woocommerce.php:908
-#: inc/customizer/settings/woocommerce.php:1372
+#: inc/customizer/settings/blog.php:622 inc/customizer/settings/edd.php:700
+#: inc/customizer/settings/edd.php:977 inc/customizer/settings/general.php:574
+#: inc/customizer/settings/general.php:790
+#: inc/customizer/settings/general.php:2519
+#: inc/customizer/settings/learndash.php:87
+#: inc/customizer/settings/learndash.php:115
+#: inc/customizer/settings/learndash.php:231
+#: inc/customizer/settings/learndash.php:347
+#: inc/customizer/settings/lifterlms.php:251
+#: inc/customizer/settings/lifterlms.php:279
+#: inc/customizer/settings/lifterlms.php:395
+#: inc/customizer/settings/lifterlms.php:511
+#: inc/customizer/settings/woocommerce.php:1094
+#: inc/customizer/settings/woocommerce.php:1664
+#: inc/third/class-lifterlms.php:305
 msgid "Layout"
 msgstr "布局"
 
-#: inc/customizer/settings/blog.php:709
+#: inc/customizer/settings/blog.php:752
 msgid "Page Header Title"
 msgstr "页眉标题"
 
-#: inc/customizer/settings/blog.php:716
+#: inc/customizer/settings/blog.php:759
 msgid "Post Title"
 msgstr "文章标题"
 
-#: inc/customizer/settings/blog.php:729
+#: inc/customizer/settings/blog.php:772
 msgid "Featured Image In Page Header"
 msgstr "在页眉中有特色的图像"
 
-#: inc/customizer/settings/blog.php:746 inc/customizer/settings/general.php:949
+#: inc/customizer/settings/blog.php:789
+#: inc/customizer/settings/general.php:1069
 msgid "Title/Breadcrumb Position"
 msgstr "标题/面包屑位置"
 
-#: inc/customizer/settings/blog.php:768 inc/customizer/settings/general.php:177
-#: inc/customizer/settings/general.php:971
-#: inc/customizer/settings/general.php:1247
+#: inc/customizer/settings/blog.php:811 inc/customizer/settings/general.php:177
+#: inc/customizer/settings/general.php:1091
+#: inc/customizer/settings/general.php:1381
+#: inc/customizer/settings/general.php:1673
 #: inc/customizer/settings/header.php:1077
 #: inc/customizer/settings/header.php:1540
 #: inc/customizer/settings/header.php:1936
@@ -749,187 +904,897 @@ msgstr "标题/面包屑位置"
 msgid "Position"
 msgstr "位置"
 
-#: inc/customizer/settings/blog.php:776 inc/customizer/settings/general.php:185
-#: inc/customizer/settings/general.php:979
+#: inc/customizer/settings/blog.php:819 inc/customizer/settings/general.php:185
+#: inc/customizer/settings/general.php:1099
 #: inc/customizer/settings/header.php:1943
 msgid "Top Left"
 msgstr "左上角"
 
-#: inc/customizer/settings/blog.php:777 inc/customizer/settings/general.php:186
-#: inc/customizer/settings/general.php:980
+#: inc/customizer/settings/blog.php:820 inc/customizer/settings/general.php:186
+#: inc/customizer/settings/general.php:1100
 #: inc/customizer/settings/header.php:1944
 msgid "Top Center"
 msgstr "顶部中心"
 
-#: inc/customizer/settings/blog.php:778 inc/customizer/settings/general.php:187
-#: inc/customizer/settings/general.php:981
+#: inc/customizer/settings/blog.php:821 inc/customizer/settings/general.php:187
+#: inc/customizer/settings/general.php:1101
 #: inc/customizer/settings/header.php:1945
 msgid "Top Right"
 msgstr "右上方"
 
-#: inc/customizer/settings/blog.php:779 inc/customizer/settings/general.php:188
-#: inc/customizer/settings/general.php:982
+#: inc/customizer/settings/blog.php:822 inc/customizer/settings/general.php:188
+#: inc/customizer/settings/general.php:1102
 #: inc/customizer/settings/header.php:1946
 msgid "Center Left"
 msgstr "中间偏左"
 
-#: inc/customizer/settings/blog.php:780 inc/customizer/settings/general.php:189
-#: inc/customizer/settings/general.php:983
+#: inc/customizer/settings/blog.php:823 inc/customizer/settings/general.php:189
+#: inc/customizer/settings/general.php:1103
 #: inc/customizer/settings/header.php:1947
 msgid "Center Center"
 msgstr "放在中央"
 
-#: inc/customizer/settings/blog.php:781 inc/customizer/settings/general.php:190
-#: inc/customizer/settings/general.php:984
+#: inc/customizer/settings/blog.php:824 inc/customizer/settings/general.php:190
+#: inc/customizer/settings/general.php:1104
 #: inc/customizer/settings/header.php:1948
 msgid "Center Right"
 msgstr "中间偏右"
 
-#: inc/customizer/settings/blog.php:782 inc/customizer/settings/general.php:191
-#: inc/customizer/settings/general.php:985
+#: inc/customizer/settings/blog.php:825 inc/customizer/settings/general.php:191
+#: inc/customizer/settings/general.php:1105
 #: inc/customizer/settings/header.php:1949
 msgid "Bottom Left"
 msgstr "左下"
 
-#: inc/customizer/settings/blog.php:783 inc/customizer/settings/general.php:192
-#: inc/customizer/settings/general.php:986
+#: inc/customizer/settings/blog.php:826 inc/customizer/settings/general.php:192
+#: inc/customizer/settings/general.php:1106
 #: inc/customizer/settings/header.php:1950
 msgid "Bottom Center"
 msgstr "底部中心"
 
-#: inc/customizer/settings/blog.php:784 inc/customizer/settings/general.php:193
-#: inc/customizer/settings/general.php:987
+#: inc/customizer/settings/blog.php:827 inc/customizer/settings/general.php:193
+#: inc/customizer/settings/general.php:1107
 #: inc/customizer/settings/header.php:1951
 msgid "Bottom Right"
 msgstr "右下角"
 
-#: inc/customizer/settings/blog.php:798 inc/customizer/settings/general.php:207
-#: inc/customizer/settings/general.php:1001
+#: inc/customizer/settings/blog.php:841 inc/customizer/settings/general.php:207
+#: inc/customizer/settings/general.php:1121
 #: inc/customizer/settings/header.php:1965
 msgid "Attachment"
 msgstr "附件"
 
-#: inc/customizer/settings/blog.php:806 inc/customizer/settings/general.php:215
-#: inc/customizer/settings/general.php:1009
+#: inc/customizer/settings/blog.php:849 inc/customizer/settings/general.php:215
+#: inc/customizer/settings/general.php:1129
 #: inc/customizer/settings/header.php:1972
 msgid "Scroll"
 msgstr "滚动"
 
-#: inc/customizer/settings/blog.php:807 inc/customizer/settings/general.php:216
-#: inc/customizer/settings/general.php:1010
+#: inc/customizer/settings/blog.php:850 inc/customizer/settings/general.php:216
+#: inc/customizer/settings/general.php:1130
 #: inc/customizer/settings/header.php:1973
 msgid "Fixed"
 msgstr "固定"
 
-#: inc/customizer/settings/blog.php:821 inc/customizer/settings/blog.php:830
+#: inc/customizer/settings/blog.php:864 inc/customizer/settings/blog.php:873
 #: inc/customizer/settings/general.php:230
 #: inc/customizer/settings/general.php:239
-#: inc/customizer/settings/general.php:1024
-#: inc/customizer/settings/general.php:1033
+#: inc/customizer/settings/general.php:1144
+#: inc/customizer/settings/general.php:1153
 #: inc/customizer/settings/header.php:1987
 #: inc/customizer/settings/header.php:1995
 msgid "Repeat"
 msgstr "重复"
 
-#: inc/customizer/settings/blog.php:829 inc/customizer/settings/general.php:238
-#: inc/customizer/settings/general.php:1032
+#: inc/customizer/settings/blog.php:872 inc/customizer/settings/general.php:238
+#: inc/customizer/settings/general.php:1152
 #: inc/customizer/settings/header.php:1994
 msgid "No-repeat"
 msgstr "不重复"
 
-#: inc/customizer/settings/blog.php:831 inc/customizer/settings/general.php:240
-#: inc/customizer/settings/general.php:1034
+#: inc/customizer/settings/blog.php:874 inc/customizer/settings/general.php:240
+#: inc/customizer/settings/general.php:1154
 #: inc/customizer/settings/header.php:1996
 msgid "Repeat-x"
 msgstr "水平重复"
 
-#: inc/customizer/settings/blog.php:832 inc/customizer/settings/general.php:241
-#: inc/customizer/settings/general.php:1035
+#: inc/customizer/settings/blog.php:875 inc/customizer/settings/general.php:241
+#: inc/customizer/settings/general.php:1155
 #: inc/customizer/settings/header.php:1997
 msgid "Repeat-y"
 msgstr "纵向重复"
 
-#: inc/customizer/settings/blog.php:846 inc/customizer/settings/general.php:255
-#: inc/customizer/settings/general.php:1049
+#: inc/customizer/settings/blog.php:889 inc/customizer/settings/general.php:255
+#: inc/customizer/settings/general.php:1169
 #: inc/customizer/settings/header.php:2011
 msgid "Size"
 msgstr "大小尺寸"
 
-#: inc/customizer/settings/blog.php:854 inc/customizer/settings/general.php:263
-#: inc/customizer/settings/general.php:1057
+#: inc/customizer/settings/blog.php:897 inc/customizer/settings/general.php:263
+#: inc/customizer/settings/general.php:1177
 #: inc/customizer/settings/header.php:2018
 msgid "Auto"
 msgstr "自动"
 
-#: inc/customizer/settings/blog.php:855 inc/customizer/settings/general.php:264
-#: inc/customizer/settings/general.php:1058
+#: inc/customizer/settings/blog.php:898 inc/customizer/settings/general.php:264
+#: inc/customizer/settings/general.php:1178
 #: inc/customizer/settings/header.php:2019
 msgid "Cover"
 msgstr "封面"
 
-#: inc/customizer/settings/blog.php:856 inc/customizer/settings/general.php:265
-#: inc/customizer/settings/general.php:1059
+#: inc/customizer/settings/blog.php:899 inc/customizer/settings/general.php:265
+#: inc/customizer/settings/general.php:1179
 #: inc/customizer/settings/header.php:2020
 msgid "Contain"
 msgstr "包含"
 
-#: inc/customizer/settings/blog.php:870
+#: inc/customizer/settings/blog.php:913
 msgid "Page Header Height (px)"
 msgstr "页眉的高度(像素)"
 
-#: inc/customizer/settings/blog.php:892
-#: inc/customizer/settings/general.php:1095
+#: inc/customizer/settings/blog.php:935
+#: inc/customizer/settings/general.php:1215
 msgid "Overlay Opacity"
 msgstr "叠层的不透明度"
 
-#: inc/customizer/settings/blog.php:914
-#: inc/customizer/settings/general.php:1117
+#: inc/customizer/settings/blog.php:957
+#: inc/customizer/settings/general.php:1237
 #: inc/customizer/settings/header.php:1920
 msgid "Overlay Color"
 msgstr "颜色叠加"
 
-#: inc/customizer/settings/blog.php:931
+#: inc/customizer/settings/blog.php:974
 msgid "Full Width Content"
 msgstr "全宽度内容"
 
-#: inc/customizer/settings/blog.php:932
+#: inc/customizer/settings/blog.php:975
 msgid ""
 "Enter the max width your the content with the full width layout. Add 0 to "
 "disable the max width."
 msgstr "输入最大宽度你的内容与全宽度布局。输入0来禁用最大宽度。"
 
-#: inc/customizer/settings/blog.php:989
+#: inc/customizer/settings/blog.php:1033 inc/customizer/settings/edd.php:1112
 msgid "Next/Prev Taxonomy"
 msgstr "下一个/上一页分类法"
 
-#: inc/customizer/settings/blog.php:994 inc/customizer/settings/blog.php:1053
-#: inc/customizer/settings/woocommerce.php:1215
+#: inc/customizer/settings/blog.php:1038 inc/customizer/settings/blog.php:1097
+#: inc/customizer/settings/edd.php:857 inc/customizer/settings/edd.php:1117
+#: inc/customizer/settings/general.php:1497
+#: inc/customizer/settings/general.php:1519
+#: inc/customizer/settings/general.php:1544
+#: inc/customizer/settings/woocommerce.php:1492
 msgid "Category"
 msgstr "类别"
 
-#: inc/customizer/settings/blog.php:995 inc/customizer/settings/blog.php:1054
+#: inc/customizer/settings/blog.php:1039 inc/customizer/settings/blog.php:1098
+#: inc/customizer/settings/edd.php:1118
+#: inc/customizer/settings/general.php:1498
+#: inc/customizer/settings/general.php:1520
+#: inc/customizer/settings/general.php:1545
 msgid "Tag"
 msgstr "标签"
 
-#: inc/customizer/settings/blog.php:1008
+#: inc/customizer/settings/blog.php:1052
 msgid "Related Posts Count"
 msgstr "相关帖子数"
 
-#: inc/customizer/settings/blog.php:1028
+#: inc/customizer/settings/blog.php:1072
 msgid "Related Posts Columns"
 msgstr "相关文章列"
 
-#: inc/customizer/settings/blog.php:1048
+#: inc/customizer/settings/blog.php:1092
 msgid "Related Posts Taxonomy"
 msgstr "相关文章分类"
 
-#: inc/customizer/settings/blog.php:1066
+#: inc/customizer/settings/blog.php:1110
 msgid "Related Posts Image Width (px)"
 msgstr "相关贴子图像宽度(px)"
 
-#: inc/customizer/settings/blog.php:1085
+#: inc/customizer/settings/blog.php:1129
 msgid "Related Posts Image Height (px)"
 msgstr "相关职位图片高度(px)"
+
+#: inc/customizer/settings/edd.php:40
+msgid "Easy Digital Downloads"
+msgstr ""
+
+#: inc/customizer/settings/edd.php:48 inc/customizer/settings/header.php:49
+#: inc/customizer/settings/learndash.php:48
+#: inc/customizer/settings/learndash.php:62
+#: inc/customizer/settings/lifterlms.php:48
+#: inc/customizer/settings/lifterlms.php:62
+#: inc/customizer/settings/topbar.php:48
+#: inc/customizer/settings/typography.php:268
+#: inc/customizer/settings/woocommerce.php:48
+msgid "General"
+msgstr "一般"
+
+#: inc/customizer/settings/edd.php:49 inc/customizer/settings/edd.php:95
+#: inc/customizer/settings/learndash.php:49
+#: inc/customizer/settings/learndash.php:88
+#: inc/customizer/settings/learndash.php:446
+#: inc/customizer/settings/lifterlms.php:49
+#: inc/customizer/settings/lifterlms.php:252
+#: inc/customizer/settings/lifterlms.php:610
+#: inc/customizer/settings/woocommerce.php:49
+#: inc/customizer/settings/woocommerce.php:288
+#: inc/customizer/settings/woocommerce.php:2353
+msgid ""
+"For some options, you must save and refresh your live site to preview "
+"changes."
+msgstr "对于某些选项，您必须保存并刷新活动站点以预览更改。"
+
+#: inc/customizer/settings/edd.php:63
+#, fuzzy
+#| msgid "Custom Sidebar"
+msgid "Custom EDD Sidebar"
+msgstr "自定义侧边栏"
+
+#: inc/customizer/settings/edd.php:79
+#: inc/customizer/settings/woocommerce.php:99
+msgid "Display Cart When Product Added"
+msgstr "当产品添加时显示购物车"
+
+#: inc/customizer/settings/edd.php:80
+#, fuzzy
+#| msgid ""
+#| "Display the cart when a product is added, work in the shop and the single "
+#| "product pages if ajax is enabled."
+msgid ""
+"Display the cart when a edd is added, work in the shop and the single edd "
+"pages if ajax is enabled."
+msgstr "在添加产品时显示购物车，如果启用了ajax，则在商店和单个产品页面中工作。"
+
+#: inc/customizer/settings/edd.php:85 inc/customizer/settings/edd.php:151
+#: inc/customizer/settings/woocommerce.php:69
+#: inc/customizer/settings/woocommerce.php:105
+#: inc/customizer/settings/woocommerce.php:278
+#: inc/customizer/settings/woocommerce.php:361
+#: inc/customizer/settings/woocommerce.php:2049
+#: inc/customizer/settings/woocommerce.php:2122
+msgid "Yes"
+msgstr ""
+
+#: inc/customizer/settings/edd.php:86 inc/customizer/settings/edd.php:152
+#: inc/customizer/settings/woocommerce.php:70
+#: inc/customizer/settings/woocommerce.php:106
+#: inc/customizer/settings/woocommerce.php:279
+#: inc/customizer/settings/woocommerce.php:362
+#: inc/customizer/settings/woocommerce.php:2050
+#: inc/customizer/settings/woocommerce.php:2123
+msgid "No"
+msgstr ""
+
+#: inc/customizer/settings/edd.php:94
+#: inc/customizer/settings/woocommerce.php:287
+msgid "Menu Cart"
+msgstr "购物车菜单"
+
+#: inc/customizer/settings/edd.php:109
+#: inc/customizer/settings/woocommerce.php:302
+msgid "Hide If Empty Cart"
+msgstr "如果购物车是空的就隐藏"
+
+#: inc/customizer/settings/edd.php:125
+#: inc/customizer/settings/footer-bottom.php:70
+#: inc/customizer/settings/footer-widgets.php:70
+#: inc/customizer/settings/general.php:981
+#: inc/customizer/settings/topbar.php:97
+#: inc/customizer/settings/woocommerce.php:334
+msgid "Visibility"
+msgstr "可见性"
+
+#: inc/customizer/settings/edd.php:131
+#: inc/customizer/settings/woocommerce.php:340
+msgid "Display On All Devices"
+msgstr "在所有设备上显示"
+
+#: inc/customizer/settings/edd.php:132
+#: inc/customizer/settings/woocommerce.php:341
+msgid "Disabled On All Devices"
+msgstr "在所有设备上禁用"
+
+#: inc/customizer/settings/edd.php:145
+#: inc/customizer/settings/woocommerce.php:355
+#, fuzzy
+#| msgid "Blog Style"
+msgid "Bag Style"
+msgstr "博客风格"
+
+#: inc/customizer/settings/edd.php:146
+#: inc/customizer/settings/woocommerce.php:356
+msgid ""
+"This setting rep^lace the cart icon by a bag with the items count in it."
+msgstr ""
+
+#: inc/customizer/settings/edd.php:165
+#: inc/customizer/settings/woocommerce.php:375
+msgid "Bag Icon Display Total"
+msgstr ""
+
+#: inc/customizer/settings/edd.php:183
+#: inc/customizer/settings/woocommerce.php:393
+#, fuzzy
+#| msgid "Background Color"
+msgid "Bag Icon Color"
+msgstr "背景颜色"
+
+#: inc/customizer/settings/edd.php:200
+#: inc/customizer/settings/woocommerce.php:410
+#, fuzzy
+#| msgid "Button Hover Color"
+msgid "Bag Icon Hover Color"
+msgstr "按钮悬停颜色"
+
+#: inc/customizer/settings/edd.php:217
+#: inc/customizer/settings/woocommerce.php:427
+#, fuzzy
+#| msgid "Background Color"
+msgid "Bag Icon Count Color"
+msgstr "背景颜色"
+
+#: inc/customizer/settings/edd.php:234
+#: inc/customizer/settings/woocommerce.php:444
+#, fuzzy
+#| msgid "Button Hover Color"
+msgid "Bag Icon Hover Count Color"
+msgstr "按钮悬停颜色"
+
+#: inc/customizer/settings/edd.php:250
+#: inc/customizer/settings/woocommerce.php:460
+msgid "Display"
+msgstr "显示"
+
+#: inc/customizer/settings/edd.php:256 inc/customizer/settings/general.php:1425
+#: inc/customizer/settings/header.php:1610
+#: inc/customizer/settings/header.php:3711
+#: inc/customizer/settings/woocommerce.php:466
+msgid "Icon"
+msgstr "图标"
+
+#: inc/customizer/settings/edd.php:257
+#: inc/customizer/settings/woocommerce.php:467
+msgid "Icon And Cart Total"
+msgstr "图标和购物车总计"
+
+#: inc/customizer/settings/edd.php:258
+#: inc/customizer/settings/woocommerce.php:468
+msgid "Icon And Cart Count"
+msgstr "图标和购物车计数"
+
+#: inc/customizer/settings/edd.php:259
+#: inc/customizer/settings/woocommerce.php:469
+msgid "Icon And Cart Count + Total"
+msgstr "图标和购物车计数 + 总计"
+
+#: inc/customizer/settings/edd.php:274 inc/customizer/settings/edd.php:431
+#: inc/customizer/settings/general.php:1030
+#: inc/customizer/settings/header.php:63 inc/customizer/settings/topbar.php:120
+#: inc/customizer/settings/woocommerce.php:484
+#: inc/customizer/settings/woocommerce.php:641
+msgid "Style"
+msgstr "风格"
+
+#: inc/customizer/settings/edd.php:280
+#: inc/customizer/settings/woocommerce.php:490
+msgid "Drop-Down"
+msgstr "下拉"
+
+#: inc/customizer/settings/edd.php:281
+#: inc/customizer/settings/woocommerce.php:491
+msgid "Go To Cart"
+msgstr "转到购物车"
+
+#: inc/customizer/settings/edd.php:282 inc/customizer/settings/edd.php:295
+#: inc/customizer/settings/woocommerce.php:492
+#: inc/customizer/settings/woocommerce.php:505
+msgid "Custom Link"
+msgstr "自定义链接"
+
+#: inc/customizer/settings/edd.php:296
+#: inc/customizer/settings/woocommerce.php:506
+msgid "The Custom Link style need to be selected"
+msgstr "需要选择自定义链接样式"
+
+#: inc/customizer/settings/edd.php:313
+#: inc/customizer/settings/woocommerce.php:523
+msgid "Cart Icon"
+msgstr "购物车图标"
+
+#: inc/customizer/settings/edd.php:330
+#: inc/customizer/settings/woocommerce.php:540
+msgid "Custom Icon"
+msgstr "自定义图标"
+
+#: inc/customizer/settings/edd.php:331
+#: inc/customizer/settings/woocommerce.php:541
+msgid "Enter your full icon class"
+msgstr "输入完整的图标类"
+
+#: inc/customizer/settings/edd.php:357 inc/customizer/settings/general.php:1738
+#: inc/customizer/settings/woocommerce.php:567
+msgid "Icon Size (px)"
+msgstr "图标大小 (px)"
+
+#: inc/customizer/settings/edd.php:391
+#: inc/customizer/settings/woocommerce.php:601
+msgid "Center Vertically"
+msgstr "垂直居中"
+
+#: inc/customizer/settings/edd.php:392
+#: inc/customizer/settings/woocommerce.php:602
+msgid "Use this field to center your icon vertically"
+msgstr "使用此字段可以垂直居中图标"
+
+#: inc/customizer/settings/edd.php:416
+#: inc/customizer/settings/woocommerce.php:626
+msgid "Cart Dropdown Styling"
+msgstr "购物车下拉样式"
+
+#: inc/customizer/settings/edd.php:437
+#: inc/customizer/settings/woocommerce.php:647
+msgid "Compact"
+msgstr "紧凑"
+
+#: inc/customizer/settings/edd.php:438
+#: inc/customizer/settings/woocommerce.php:648
+msgid "Spacious"
+msgstr "宽敞"
+
+#: inc/customizer/settings/edd.php:452
+#: inc/customizer/settings/woocommerce.php:662
+msgid "Cart Dropdowns Width (px)"
+msgstr "购物车下拉列表宽度 (px)"
+
+#: inc/customizer/settings/edd.php:473
+#: inc/customizer/settings/woocommerce.php:683
+msgid "Dropdown Background Color"
+msgstr "下拉背景色"
+
+#: inc/customizer/settings/edd.php:489
+#: inc/customizer/settings/woocommerce.php:699
+msgid "Dropdown Borders Color"
+msgstr "下拉边框颜色"
+
+#: inc/customizer/settings/edd.php:504
+#, fuzzy
+#| msgid "Product Description: Title Color"
+msgid "Product Title Color"
+msgstr "产品描述: 标题颜色"
+
+#: inc/customizer/settings/edd.php:520 inc/customizer/settings/edd.php:1600
+#: inc/customizer/settings/woocommerce.php:795
+#: inc/customizer/settings/woocommerce.php:2171
+#: inc/customizer/settings/woocommerce.php:3370
+#: inc/customizer/settings/woocommerce.php:3951
+msgid "Price Color"
+msgstr "价格颜色"
+
+#: inc/customizer/settings/edd.php:536
+#: inc/customizer/settings/woocommerce.php:747
+msgid "Remove Link Color"
+msgstr "删除链接颜色"
+
+#: inc/customizer/settings/edd.php:552
+#: inc/customizer/settings/woocommerce.php:763
+msgid "Remove Link Color: Hover"
+msgstr "删除链接颜色: 悬停"
+
+#: inc/customizer/settings/edd.php:568
+#, fuzzy
+#| msgid "Social: Background Color"
+msgid "Subtotal Background Color"
+msgstr "社交: 背景颜色"
+
+#: inc/customizer/settings/edd.php:584
+#, fuzzy
+#| msgid "Subtotal Color"
+msgid "Subtotal Border Color"
+msgstr "分类汇总颜色"
+
+#: inc/customizer/settings/edd.php:600
+#: inc/customizer/settings/woocommerce.php:811
+#: inc/customizer/settings/woocommerce.php:827
+msgid "Subtotal Color"
+msgstr "分类汇总颜色"
+
+#: inc/customizer/settings/edd.php:616
+#: inc/customizer/settings/woocommerce.php:843
+#, fuzzy
+#| msgid "Price Color"
+msgid "Total Price Color"
+msgstr "价格颜色"
+
+#: inc/customizer/settings/edd.php:631
+#: inc/customizer/settings/woocommerce.php:948
+msgid "Checkout Button Background"
+msgstr "结帐按钮背景"
+
+#: inc/customizer/settings/edd.php:646
+#: inc/customizer/settings/woocommerce.php:963
+msgid "Checkout Button Background: Hover"
+msgstr "结帐按钮背景：悬停"
+
+#: inc/customizer/settings/edd.php:661
+#: inc/customizer/settings/woocommerce.php:978
+msgid "Checkout Button Color"
+msgstr "结账按钮颜色"
+
+#: inc/customizer/settings/edd.php:676
+#: inc/customizer/settings/woocommerce.php:993
+msgid "Checkout Button Color: Hover"
+msgstr "结账按钮颜色：悬停"
+
+#: inc/customizer/settings/edd.php:814
+#: inc/customizer/settings/woocommerce.php:1228
+msgid "Shop Columns"
+msgstr "商店专栏"
+
+#: inc/customizer/settings/edd.php:837
+#: inc/customizer/settings/woocommerce.php:1452
+msgid "Products"
+msgstr "产品"
+
+#: inc/customizer/settings/edd.php:856 inc/customizer/settings/general.php:1052
+#: inc/customizer/settings/woocommerce.php:1491
+msgid "Image"
+msgstr "图片"
+
+#: inc/customizer/settings/edd.php:858
+#: inc/customizer/settings/woocommerce.php:1493
+#: inc/customizer/settings/woocommerce.php:1799 inc/helpers.php:2902
+#: inc/helpers.php:2987
+msgid "Title"
+msgstr "标题"
+
+#: inc/customizer/settings/edd.php:859
+#: inc/customizer/settings/woocommerce.php:1801
+msgid "Price"
+msgstr "价格"
+
+#: inc/customizer/settings/edd.php:860
+#: inc/customizer/settings/lifterlms.php:210
+#: inc/customizer/settings/woocommerce.php:1495
+msgid "Description"
+msgstr "描述"
+
+#: inc/customizer/settings/edd.php:861
+#: inc/customizer/settings/woocommerce.php:1496
+msgid "Add To Cart Button"
+msgstr "\"添加到购物车\" 按钮"
+
+#: inc/customizer/settings/edd.php:875
+#: inc/customizer/settings/woocommerce.php:1549
+msgid "Content Alignment"
+msgstr "内容对齐方式"
+
+#: inc/customizer/settings/edd.php:896
+msgid "Variable Product Button"
+msgstr ""
+
+#: inc/customizer/settings/edd.php:901
+#, fuzzy
+#| msgid "Button Color"
+msgid "Button"
+msgstr "按钮颜色"
+
+#: inc/customizer/settings/edd.php:902
+#, fuzzy
+#| msgid "Select Options"
+msgid "Options"
+msgstr "选择选项"
+
+#: inc/customizer/settings/edd.php:963 inc/customizer/settings/edd.php:1779
+#: inc/customizer/settings/woocommerce.php:1650
+#: inc/customizer/settings/woocommerce.php:3920
+msgid "Single Product"
+msgstr "单一产品"
+
+#: inc/customizer/settings/edd.php:1080
+#: inc/customizer/settings/woocommerce.php:1817
+msgid "Display Product Navigation"
+msgstr "显示产品导航"
+
+#: inc/customizer/settings/edd.php:1096
+#, fuzzy
+#| msgid "Add To Cart Button"
+msgid "Display Add to Cart Button"
+msgstr "\"添加到购物车\" 按钮"
+
+#: inc/customizer/settings/edd.php:1126 inc/customizer/settings/edd.php:1138
+msgid "Checkout Page"
+msgstr "结帐页"
+
+#: inc/customizer/settings/edd.php:1152
+#: inc/customizer/settings/lifterlms.php:76
+#: inc/customizer/settings/woocommerce.php:2432
+msgid "Distraction Free Checkout"
+msgstr "结帐"
+
+#: inc/customizer/settings/edd.php:1163
+#: inc/customizer/settings/learndash.php:445
+#: inc/customizer/settings/lifterlms.php:609
+#: inc/customizer/settings/woocommerce.php:2600
+msgid "Advanced Styling"
+msgstr "高级样式"
+
+#: inc/customizer/settings/edd.php:1176
+#: inc/customizer/settings/woocommerce.php:2946
+msgid "Product Entry"
+msgstr "产品入口"
+
+#: inc/customizer/settings/edd.php:1236
+#: inc/customizer/settings/footer-bottom.php:161
+#: inc/customizer/settings/footer-widgets.php:257
+#: inc/customizer/settings/general.php:1277
+#: inc/customizer/settings/general.php:2092
+#: inc/customizer/settings/general.php:2372
+#: inc/customizer/settings/header.php:288
+#: inc/customizer/settings/header.php:981
+#: inc/customizer/settings/header.php:3112
+#: inc/customizer/settings/lifterlms.php:684
+#: inc/customizer/settings/sidebar.php:118
+#: inc/customizer/settings/sidebar.php:229
+#: inc/customizer/settings/topbar.php:192
+#: inc/customizer/settings/topbar.php:484
+#: inc/customizer/settings/woocommerce.php:3006
+msgid "Padding (px)"
+msgstr "填充(像素)"
+
+#: inc/customizer/settings/edd.php:1315
+#: inc/customizer/settings/lifterlms.php:763
+#: inc/customizer/settings/woocommerce.php:3085
+msgid "Image Margin (px)"
+msgstr "图像边距 (px)"
+
+#: inc/customizer/settings/edd.php:1393
+#: inc/customizer/settings/general.php:1902
+#: inc/customizer/settings/general.php:2196
+#: inc/customizer/settings/lifterlms.php:841
+#: inc/customizer/settings/woocommerce.php:3163
+msgid "Border Width (px)"
+msgstr "边框宽度(像素)"
+
+#: inc/customizer/settings/edd.php:1472
+#: inc/customizer/settings/general.php:1760
+#: inc/customizer/settings/general.php:2230
+#: inc/customizer/settings/general.php:2406
+#: inc/customizer/settings/lifterlms.php:920
+#: inc/customizer/settings/woocommerce.php:3242
+#: inc/customizer/settings/woocommerce.php:4156
+msgid "Border Radius (px)"
+msgstr "边框半径 (px)"
+
+#: inc/customizer/settings/edd.php:1505
+#: inc/customizer/settings/footer-bottom.php:196
+#: inc/customizer/settings/footer-widgets.php:292
+#: inc/customizer/settings/general.php:146
+#: inc/customizer/settings/general.php:1305
+#: inc/customizer/settings/general.php:1782
+#: inc/customizer/settings/general.php:1922
+#: inc/customizer/settings/general.php:2282
+#: inc/customizer/settings/general.php:2427
+#: inc/customizer/settings/header.php:206
+#: inc/customizer/settings/header.php:353
+#: inc/customizer/settings/header.php:586
+#: inc/customizer/settings/header.php:920
+#: inc/customizer/settings/header.php:1173
+#: inc/customizer/settings/header.php:1794
+#: inc/customizer/settings/header.php:2484
+#: inc/customizer/settings/header.php:3773
+#: inc/customizer/settings/header.php:3790
+#: inc/customizer/settings/lifterlms.php:954
+#: inc/customizer/settings/sidebar.php:53
+#: inc/customizer/settings/sidebar.php:164
+#: inc/customizer/settings/topbar.php:227
+#: inc/customizer/settings/woocommerce.php:1022
+#: inc/customizer/settings/woocommerce.php:2137
+#: inc/customizer/settings/woocommerce.php:3275
+#: inc/customizer/settings/woocommerce.php:3890
+#: inc/customizer/settings/woocommerce.php:4176
+msgid "Background Color"
+msgstr "背景颜色"
+
+#: inc/customizer/settings/edd.php:1520
+#: inc/customizer/settings/general.php:1986
+#: inc/customizer/settings/general.php:2251
+#: inc/customizer/settings/header.php:1828
+#: inc/customizer/settings/lifterlms.php:969
+#: inc/customizer/settings/topbar.php:244
+#: inc/customizer/settings/woocommerce.php:3290
+#: inc/customizer/settings/woocommerce.php:4240
+msgid "Border Color"
+msgstr "边框颜色"
+
+#: inc/customizer/settings/edd.php:1552
+#: inc/customizer/settings/woocommerce.php:3322
+msgid "Category Color: Hover"
+msgstr "分类悬停颜色"
+
+#: inc/customizer/settings/edd.php:1568 inc/customizer/settings/edd.php:1794
+#: inc/customizer/settings/lifterlms.php:984
+#: inc/customizer/settings/lifterlms.php:1059
+#: inc/customizer/settings/lifterlms.php:1213
+#: inc/customizer/settings/woocommerce.php:1054
+#: inc/customizer/settings/woocommerce.php:2154
+#: inc/customizer/settings/woocommerce.php:3338
+#: inc/customizer/settings/woocommerce.php:3935
+msgid "Title Color"
+msgstr "标题颜色"
+
+#: inc/customizer/settings/edd.php:1584
+#: inc/customizer/settings/lifterlms.php:999
+#: inc/customizer/settings/woocommerce.php:3354
+msgid "Title Color: Hover"
+msgstr "标题悬停颜色"
+
+#: inc/customizer/settings/edd.php:1614
+#: inc/customizer/settings/woocommerce.php:3553
+msgid "Product Entry: Add To Cart"
+msgstr "产品入口: 产品添加到购物车"
+
+#: inc/customizer/settings/edd.php:1628
+#: inc/customizer/settings/woocommerce.php:3567
+#: inc/customizer/settings/woocommerce.php:4284
+msgid "Add To Cart Background Color"
+msgstr "添加到购物车背景颜色"
+
+#: inc/customizer/settings/edd.php:1643
+#: inc/customizer/settings/woocommerce.php:3582
+#: inc/customizer/settings/woocommerce.php:4299
+msgid "Add To Cart Background Color: Hover"
+msgstr "添加到购物车背景颜色: 悬停"
+
+#: inc/customizer/settings/edd.php:1659
+#: inc/customizer/settings/woocommerce.php:3598
+#: inc/customizer/settings/woocommerce.php:4314
+msgid "Add To Cart Color"
+msgstr "添加到购物车: 颜色"
+
+#: inc/customizer/settings/edd.php:1675
+#: inc/customizer/settings/woocommerce.php:3614
+#: inc/customizer/settings/woocommerce.php:4329
+msgid "Add To Cart Color: Hover"
+msgstr "添加到购物车颜色: 悬停"
+
+#: inc/customizer/settings/edd.php:1691
+#: inc/customizer/settings/woocommerce.php:3630
+#: inc/customizer/settings/woocommerce.php:4344
+msgid "Add To Cart Border Color"
+msgstr "添加到购物车边框颜色"
+
+#: inc/customizer/settings/edd.php:1707
+#: inc/customizer/settings/woocommerce.php:3646
+#: inc/customizer/settings/woocommerce.php:4359
+msgid "Add To Cart Border Color: Hover"
+msgstr "添加到购物车边框颜色: 悬停"
+
+#: inc/customizer/settings/edd.php:1723
+#: inc/customizer/settings/woocommerce.php:3662
+#: inc/customizer/settings/woocommerce.php:4375
+msgid "Add To Cart Border: Style"
+msgstr "添加到购物车边框: 样式"
+
+#: inc/customizer/settings/edd.php:1729
+#: inc/customizer/settings/general.php:1496
+#: inc/customizer/settings/general.php:1518
+#: inc/customizer/settings/general.php:1543
+#: inc/customizer/settings/typography.php:469
+#: inc/customizer/settings/woocommerce.php:3668
+#: inc/customizer/settings/woocommerce.php:4381
+msgid "None"
+msgstr "没有"
+
+#: inc/customizer/settings/edd.php:1730
+#: inc/customizer/settings/woocommerce.php:3669
+#: inc/customizer/settings/woocommerce.php:4382
+msgid "Solid"
+msgstr "立方体"
+
+#: inc/customizer/settings/edd.php:1731
+#: inc/customizer/settings/woocommerce.php:3670
+#: inc/customizer/settings/woocommerce.php:4383
+msgid "Double"
+msgstr "两倍"
+
+#: inc/customizer/settings/edd.php:1732
+#: inc/customizer/settings/woocommerce.php:3671
+#: inc/customizer/settings/woocommerce.php:4384
+msgid "Dashed"
+msgstr "虚线"
+
+#: inc/customizer/settings/edd.php:1733
+#: inc/customizer/settings/woocommerce.php:3672
+#: inc/customizer/settings/woocommerce.php:4385
+msgid "Dotted"
+msgstr "点缀"
+
+#: inc/customizer/settings/edd.php:1746
+#: inc/customizer/settings/woocommerce.php:3685
+#: inc/customizer/settings/woocommerce.php:4398
+msgid "Add To Cart Border: Size"
+msgstr "添加到购物车边框: 大小"
+
+#: inc/customizer/settings/edd.php:1747
+#: inc/customizer/settings/woocommerce.php:3686
+#: inc/customizer/settings/woocommerce.php:4399
+msgid "Add a custom border size. px - em - %."
+msgstr "添加自定义边框大小。像素-%。"
+
+#: inc/customizer/settings/edd.php:1763
+#: inc/customizer/settings/woocommerce.php:3702
+#: inc/customizer/settings/woocommerce.php:4415
+msgid "Add To Cart Border: Radius"
+msgstr "添加到购物车边框: 半径"
+
+#: inc/customizer/settings/edd.php:1764 inc/customizer/settings/header.php:1758
+#: inc/customizer/settings/header.php:1776
+#: inc/customizer/settings/header.php:3197
+#: inc/customizer/settings/woocommerce.php:3703
+#: inc/customizer/settings/woocommerce.php:4416
+msgid "Add a custom border radius. px - em - %."
+msgstr "添加自定义边框半径。像素-%。"
+
+#: inc/customizer/settings/edd.php:1810 inc/customizer/settings/edd.php:1903
+#: inc/customizer/settings/lifterlms.php:1229
+#: inc/customizer/settings/woocommerce.php:3983
+msgid "Description Color"
+msgstr "说明颜色"
+
+#: inc/customizer/settings/edd.php:1824
+#: inc/customizer/settings/woocommerce.php:2418
+#: inc/customizer/settings/woocommerce.php:4885
+msgid "Checkout"
+msgstr "结帐"
+
+#: inc/customizer/settings/edd.php:1839
+#: inc/customizer/settings/woocommerce.php:4996
+msgid "Titles Color"
+msgstr "标题颜色"
+
+#: inc/customizer/settings/edd.php:1855
+#: inc/customizer/settings/woocommerce.php:5012
+msgid "Titles Border Bottom Color"
+msgstr "标题边框底颜色"
+
+#: inc/customizer/settings/edd.php:1871
+#: inc/customizer/settings/footer-widgets.php:326
+#: inc/customizer/settings/header.php:2516
+#: inc/customizer/settings/header.php:3807
+#: inc/customizer/settings/woocommerce.php:4446
+#: inc/customizer/settings/woocommerce.php:4792
+msgid "Borders Color"
+msgstr "边框颜色"
+
+#: inc/customizer/settings/edd.php:1887
+#: inc/customizer/settings/general.php:2027
+msgid "Label Color"
+msgstr "标签颜色"
+
+#: inc/customizer/settings/edd.php:1919
+#: inc/customizer/settings/woocommerce.php:4808
+msgid "Head Background"
+msgstr "头部背景"
+
+#: inc/customizer/settings/edd.php:1935
+#: inc/customizer/settings/woocommerce.php:4824
+msgid "Head Titles Color"
+msgstr "头标题颜色"
+
+#: inc/customizer/settings/edd.php:1951
+#: inc/customizer/settings/woocommerce.php:4840
+msgid "Cart Totals Table: Titles Color"
+msgstr "购物车总计表: 标题颜色"
+
+#: inc/customizer/settings/edd.php:1966
+#: inc/customizer/settings/woocommerce.php:4855
+msgid "Remove Button Color"
+msgstr "删除按钮颜色"
+
+#: inc/customizer/settings/edd.php:1982
+#: inc/customizer/settings/woocommerce.php:4871
+msgid "Remove Button Color: Hover"
+msgstr "删除按钮颜色: 悬停"
 
 #: inc/customizer/settings/footer-bottom.php:40
 msgid "Footer Bottom"
@@ -939,38 +1804,30 @@ msgstr "页脚底部"
 msgid "Enable Footer Bottom"
 msgstr "开启底部页脚"
 
-#: inc/customizer/settings/footer-bottom.php:70
-#: inc/customizer/settings/footer-widgets.php:70
-#: inc/customizer/settings/general.php:861
-#: inc/customizer/settings/topbar.php:97
-#: inc/customizer/settings/woocommerce.php:258
-msgid "Visibility"
-msgstr "可见性"
-
 #: inc/customizer/settings/footer-bottom.php:77
 #: inc/customizer/settings/footer-widgets.php:77
-#: inc/customizer/settings/general.php:867
+#: inc/customizer/settings/general.php:987
 #: inc/customizer/settings/topbar.php:104
 msgid "Show On All Devices"
 msgstr "显示在所有设备上"
 
 #: inc/customizer/settings/footer-bottom.php:78
 #: inc/customizer/settings/footer-widgets.php:78
-#: inc/customizer/settings/general.php:868
+#: inc/customizer/settings/general.php:988
 #: inc/customizer/settings/topbar.php:105
 msgid "Hide On Tablet"
 msgstr "平板上不可见"
 
 #: inc/customizer/settings/footer-bottom.php:79
 #: inc/customizer/settings/footer-widgets.php:79
-#: inc/customizer/settings/general.php:869
+#: inc/customizer/settings/general.php:989
 #: inc/customizer/settings/topbar.php:106
 msgid "Hide On Mobile"
 msgstr "手机端不可见"
 
 #: inc/customizer/settings/footer-bottom.php:80
 #: inc/customizer/settings/footer-widgets.php:80
-#: inc/customizer/settings/general.php:870
+#: inc/customizer/settings/general.php:990
 #: inc/customizer/settings/topbar.php:107
 msgid "Hide On Tablet & Mobile"
 msgstr "手机平板都不可见"
@@ -986,56 +1843,12 @@ msgstr "版权"
 msgid "Shortcodes allowed, %1$ssee the list%2$s."
 msgstr "简码允许%1$s看到列表%2$s."
 
-#: inc/customizer/settings/footer-bottom.php:161
-#: inc/customizer/settings/footer-widgets.php:257
-#: inc/customizer/settings/general.php:1157
-#: inc/customizer/settings/general.php:1756
-#: inc/customizer/settings/general.php:2036
-#: inc/customizer/settings/header.php:288
-#: inc/customizer/settings/header.php:981
-#: inc/customizer/settings/header.php:3112
-#: inc/customizer/settings/sidebar.php:118
-#: inc/customizer/settings/sidebar.php:229
-#: inc/customizer/settings/topbar.php:192
-#: inc/customizer/settings/topbar.php:484
-#: inc/customizer/settings/woocommerce.php:2605
-msgid "Padding (px)"
-msgstr "填充(像素)"
-
-#: inc/customizer/settings/footer-bottom.php:196
-#: inc/customizer/settings/footer-widgets.php:292
-#: inc/customizer/settings/general.php:146
-#: inc/customizer/settings/general.php:1185
-#: inc/customizer/settings/general.php:1446
-#: inc/customizer/settings/general.php:1586
-#: inc/customizer/settings/general.php:1946
-#: inc/customizer/settings/general.php:2091
-#: inc/customizer/settings/header.php:206
-#: inc/customizer/settings/header.php:353
-#: inc/customizer/settings/header.php:586
-#: inc/customizer/settings/header.php:920
-#: inc/customizer/settings/header.php:1173
-#: inc/customizer/settings/header.php:1794
-#: inc/customizer/settings/header.php:2484
-#: inc/customizer/settings/header.php:3751
-#: inc/customizer/settings/header.php:3768
-#: inc/customizer/settings/sidebar.php:53
-#: inc/customizer/settings/sidebar.php:164
-#: inc/customizer/settings/topbar.php:227
-#: inc/customizer/settings/woocommerce.php:836
-#: inc/customizer/settings/woocommerce.php:1732
-#: inc/customizer/settings/woocommerce.php:2874
-#: inc/customizer/settings/woocommerce.php:3336
-#: inc/customizer/settings/woocommerce.php:3622
-msgid "Background Color"
-msgstr "背景颜色"
-
 #: inc/customizer/settings/footer-bottom.php:213
 #: inc/customizer/settings/footer-widgets.php:309
-#: inc/customizer/settings/general.php:1202
-#: inc/customizer/settings/general.php:1269
+#: inc/customizer/settings/general.php:1321
+#: inc/customizer/settings/general.php:1562
 #: inc/customizer/settings/topbar.php:261
-#: inc/customizer/settings/woocommerce.php:3747
+#: inc/customizer/settings/woocommerce.php:4462
 msgid "Text Color"
 msgstr "文本颜色"
 
@@ -1043,13 +1856,13 @@ msgstr "文本颜色"
 #: inc/customizer/settings/footer-widgets.php:343
 #: inc/customizer/settings/general.php:277
 #: inc/customizer/settings/header.php:635
-#: inc/customizer/settings/header.php:3802
+#: inc/customizer/settings/header.php:3824
 msgid "Links Color"
 msgstr "链接颜色"
 
 #: inc/customizer/settings/footer-bottom.php:247
 #: inc/customizer/settings/footer-widgets.php:360
-#: inc/customizer/settings/header.php:3818
+#: inc/customizer/settings/header.php:3840
 msgid "Links Color: Hover"
 msgstr "链接颜色:悬停"
 
@@ -1073,13 +1886,13 @@ msgstr "此选项为您的内容添加高度，以将页脚保留在页面底部
 
 #: inc/customizer/settings/footer-widgets.php:99
 #: inc/customizer/settings/footer-widgets.php:120
-#: inc/customizer/settings/general.php:2169
+#: inc/customizer/settings/general.php:2505
 msgid "On"
 msgstr "开"
 
 #: inc/customizer/settings/footer-widgets.php:100
 #: inc/customizer/settings/footer-widgets.php:121
-#: inc/customizer/settings/general.php:2170
+#: inc/customizer/settings/general.php:2506
 msgid "Off"
 msgstr "关"
 
@@ -1092,7 +1905,7 @@ msgid "Add a parallax effect to your footer."
 msgstr "向你的页脚添加视差效果。"
 
 #: inc/customizer/settings/footer-widgets.php:135
-#: inc/customizer/settings/general.php:2202
+#: inc/customizer/settings/general.php:2538
 #: inc/customizer/settings/header.php:89
 #: inc/customizer/settings/header.php:1302
 #: inc/customizer/settings/header.php:2169
@@ -1102,7 +1915,7 @@ msgid "Select Template"
 msgstr "选择模板"
 
 #: inc/customizer/settings/footer-widgets.php:136
-#: inc/customizer/settings/general.php:2203
+#: inc/customizer/settings/general.php:2539
 #: inc/customizer/settings/header.php:90
 #: inc/customizer/settings/header.php:2968
 #: inc/customizer/settings/topbar.php:384
@@ -1117,14 +1930,6 @@ msgstr "列"
 #: inc/customizer/settings/header.php:109
 msgid "Add Container"
 msgstr "添加容器"
-
-#: inc/customizer/settings/footer-widgets.php:326
-#: inc/customizer/settings/header.php:2516
-#: inc/customizer/settings/header.php:3785
-#: inc/customizer/settings/woocommerce.php:3731
-#: inc/customizer/settings/woocommerce.php:4077
-msgid "Borders Color"
-msgstr "边框颜色"
 
 #: inc/customizer/settings/general.php:40
 msgid "General Options"
@@ -1168,32 +1973,32 @@ msgid "Site Background"
 msgstr "网站背景"
 
 #: inc/customizer/settings/general.php:161
-#: inc/customizer/settings/general.php:919
+#: inc/customizer/settings/general.php:1039
 msgid "Background Image"
 msgstr "背景图像"
 
 #: inc/customizer/settings/general.php:292
-#: inc/customizer/settings/general.php:1480
-#: inc/customizer/settings/general.php:1618
-#: inc/customizer/settings/general.php:1962
-#: inc/customizer/settings/general.php:2123
+#: inc/customizer/settings/general.php:1816
+#: inc/customizer/settings/general.php:1954
+#: inc/customizer/settings/general.php:2298
+#: inc/customizer/settings/general.php:2459
 #: inc/customizer/settings/header.php:1811
 #: inc/customizer/settings/header.php:2127
-#: inc/customizer/settings/woocommerce.php:3654
+#: inc/customizer/settings/woocommerce.php:4208
 msgid "Color"
 msgstr "颜色"
 
 #: inc/customizer/settings/general.php:308
-#: inc/customizer/settings/general.php:1497
-#: inc/customizer/settings/general.php:1634
-#: inc/customizer/settings/general.php:2139
+#: inc/customizer/settings/general.php:1833
+#: inc/customizer/settings/general.php:1970
+#: inc/customizer/settings/general.php:2475
 #: inc/customizer/settings/header.php:2144
-#: inc/customizer/settings/woocommerce.php:3670
+#: inc/customizer/settings/woocommerce.php:4224
 msgid "Color: Hover"
 msgstr "颜色: 悬停"
 
 #: inc/customizer/settings/general.php:318
-#: inc/customizer/settings/header.php:3397
+#: inc/customizer/settings/header.php:3440
 msgid "General Settings"
 msgstr "常规设置"
 
@@ -1266,209 +2071,269 @@ msgstr "启用架构标记"
 msgid "Pages"
 msgstr "页面"
 
-#: inc/customizer/settings/general.php:678
+#: inc/customizer/settings/general.php:699
 msgid "Content Padding (px)"
 msgstr "内容填充 (px)"
 
-#: inc/customizer/settings/general.php:704
+#: inc/customizer/settings/general.php:725
 msgid "Search Result Page"
 msgstr "搜索结果页"
 
-#: inc/customizer/settings/general.php:718
+#: inc/customizer/settings/general.php:739
 #: inc/plugins/class-tgm-plugin-activation.php:2548
 msgid "Source"
 msgstr "源"
 
-#: inc/customizer/settings/general.php:734
+#: inc/customizer/settings/general.php:755
 msgid "Search Posts Per Page"
 msgstr "每页搜索帖子"
 
-#: inc/customizer/settings/general.php:753
+#: inc/customizer/settings/general.php:774
 msgid "Custom Sidebar"
 msgstr "自定义侧边栏"
 
-#: inc/customizer/settings/general.php:846
+#: inc/customizer/settings/general.php:892
+msgid "OpenGraph"
+msgstr ""
+
+#: inc/customizer/settings/general.php:893
+msgid "This is information taken by social media when a link is shared"
+msgstr ""
+
+#: inc/customizer/settings/general.php:907
+#, fuzzy
+#| msgid "Enable Top Bar"
+msgid "Enable OpenGraph"
+msgstr "启用顶部栏"
+
+#: inc/customizer/settings/general.php:923
+msgid "Twitter Username"
+msgstr ""
+
+#: inc/customizer/settings/general.php:939
+msgid "Facebook Page URL"
+msgstr ""
+
+#: inc/customizer/settings/general.php:955
+msgid "Facebook App ID"
+msgstr ""
+
+#: inc/customizer/settings/general.php:966
 #: inc/customizer/settings/typography.php:147
 msgid "Page Title"
 msgstr "页面标题"
 
-#: inc/customizer/settings/general.php:910
-#: inc/customizer/settings/header.php:63 inc/customizer/settings/topbar.php:120
-#: inc/customizer/settings/woocommerce.php:302
-#: inc/customizer/settings/woocommerce.php:455
-msgid "Style"
-msgstr "风格"
-
-#: inc/customizer/settings/general.php:917
+#: inc/customizer/settings/general.php:1037
 msgid "Centered"
 msgstr "居中的"
 
-#: inc/customizer/settings/general.php:918
+#: inc/customizer/settings/general.php:1038
 msgid "Centered Minimal"
 msgstr "居中最小"
 
-#: inc/customizer/settings/general.php:920
+#: inc/customizer/settings/general.php:1040
 msgid "Hidden"
 msgstr "隐藏"
 
-#: inc/customizer/settings/general.php:932
-#: inc/customizer/settings/woocommerce.php:1214
-msgid "Image"
-msgstr "图片"
-
-#: inc/customizer/settings/general.php:1073
+#: inc/customizer/settings/general.php:1193
 #: inc/customizer/settings/header.php:127
 #: inc/customizer/settings/header.php:149
 #: inc/customizer/settings/header.php:1099
-#: inc/customizer/settings/header.php:3340
+#: inc/customizer/settings/header.php:3361
 msgid "Height (px)"
 msgstr "高度 (px)"
 
-#: inc/customizer/settings/general.php:1254
+#: inc/customizer/settings/general.php:1349
+#, fuzzy
+#| msgid "Breadcrumbs"
+msgid "Enable Breadcrumbs"
+msgstr "面包屑导航"
+
+#: inc/customizer/settings/general.php:1365
+#, fuzzy
+#| msgid "Post Title"
+msgid "Show Item Title"
+msgstr "文章标题"
+
+#: inc/customizer/settings/general.php:1388
 msgid "Absolute Right"
 msgstr "绝对正确"
 
-#: inc/customizer/settings/general.php:1255
+#: inc/customizer/settings/general.php:1389
 msgid "Under Title"
 msgstr "标题下方"
 
-#: inc/customizer/settings/general.php:1286
+#: inc/customizer/settings/general.php:1403
+#, fuzzy
+#| msgid "Breadcrumbs"
+msgid "Breadcrumb Separator"
+msgstr "面包屑导航"
+
+#: inc/customizer/settings/general.php:1420
+#, fuzzy
+#| msgid "Home"
+msgid "Home Item"
+msgstr "首页"
+
+#: inc/customizer/settings/general.php:1426
+#, fuzzy
+#| msgid "Menu Text"
+msgid "Text"
+msgstr "菜单文本"
+
+#: inc/customizer/settings/general.php:1440
+#, fuzzy
+#| msgid "Back To Homepage"
+msgid "Translation for Homepage"
+msgstr "返回主页"
+
+#: inc/customizer/settings/general.php:1457
+msgid "Translation for \"404 Not Found\""
+msgstr ""
+
+#: inc/customizer/settings/general.php:1474
+msgid "Translation for \"Search results for\""
+msgstr ""
+
+#: inc/customizer/settings/general.php:1490
+#, fuzzy
+#| msgid "Related Posts Taxonomy"
+msgid "Posts Taxonomy"
+msgstr "相关文章分类"
+
+#: inc/customizer/settings/general.php:1499
+#, fuzzy
+#| msgid "Blank Page"
+msgid "Blog Page"
+msgstr "空白页"
+
+#: inc/customizer/settings/general.php:1512
+#, fuzzy
+#| msgid "Related Posts Taxonomy"
+msgid "Products Taxonomy"
+msgstr "相关文章分类"
+
+#: inc/customizer/settings/general.php:1521
+#, fuzzy
+#| msgid "Shop Posts Per Page"
+msgid "Shop Page"
+msgstr "商店每页帖子"
+
+#: inc/customizer/settings/general.php:1537
+#, fuzzy
+#| msgid "Next/Prev Taxonomy"
+msgid "Portfolio Taxonomy"
+msgstr "下一个/上一页分类法"
+
+#: inc/customizer/settings/general.php:1546
+msgid "Portfolio Page"
+msgstr ""
+
+#: inc/customizer/settings/general.php:1579
 msgid "Separator Color"
 msgstr "分隔符颜色"
 
-#: inc/customizer/settings/general.php:1303
+#: inc/customizer/settings/general.php:1596
 #: inc/customizer/settings/header.php:2357
 #: inc/customizer/settings/header.php:2532
 #: inc/customizer/settings/topbar.php:278
-#: inc/customizer/settings/woocommerce.php:529
+#: inc/customizer/settings/woocommerce.php:715
 msgid "Link Color"
 msgstr "链接颜色"
 
-#: inc/customizer/settings/general.php:1320
+#: inc/customizer/settings/general.php:1613
 #: inc/customizer/settings/header.php:2373
 #: inc/customizer/settings/header.php:2548
 #: inc/customizer/settings/topbar.php:295
-#: inc/customizer/settings/woocommerce.php:545
+#: inc/customizer/settings/woocommerce.php:731
 msgid "Link Color: Hover"
 msgstr "链接颜色：悬停"
 
-#: inc/customizer/settings/general.php:1331
+#: inc/customizer/settings/general.php:1624
 msgid "Scroll To Top"
 msgstr "滚动到顶部"
 
-#: inc/customizer/settings/general.php:1345
+#: inc/customizer/settings/general.php:1638
 msgid "Scroll Up Button"
 msgstr "向上滚动按钮"
 
-#: inc/customizer/settings/general.php:1362
+#: inc/customizer/settings/general.php:1655
 msgid "Arrow Icon"
 msgstr "箭头图标"
 
-#: inc/customizer/settings/general.php:1380
+#: inc/customizer/settings/general.php:1694
+#, fuzzy
+#| msgid "Logo Position"
+msgid "Bottom Position (px)"
+msgstr "logo位置"
+
+#: inc/customizer/settings/general.php:1716
 msgid "Button Size (px)"
 msgstr "按钮大小 (px)"
 
-#: inc/customizer/settings/general.php:1402
-#: inc/customizer/settings/woocommerce.php:383
-msgid "Icon Size (px)"
-msgstr "图标大小 (px)"
-
-#: inc/customizer/settings/general.php:1424
-#: inc/customizer/settings/general.php:1894
-#: inc/customizer/settings/general.php:2070
-#: inc/customizer/settings/woocommerce.php:2841
-#: inc/customizer/settings/woocommerce.php:3602
-msgid "Border Radius (px)"
-msgstr "边框半径 (px)"
-
-#: inc/customizer/settings/general.php:1463
-#: inc/customizer/settings/general.php:1602
-#: inc/customizer/settings/general.php:2107
-#: inc/customizer/settings/woocommerce.php:3638
+#: inc/customizer/settings/general.php:1799
+#: inc/customizer/settings/general.php:1938
+#: inc/customizer/settings/general.php:2443
+#: inc/customizer/settings/woocommerce.php:4192
 msgid "Background Color: Hover"
 msgstr "背景颜色: 悬停"
 
-#: inc/customizer/settings/general.php:1508
+#: inc/customizer/settings/general.php:1844
+#: inc/customizer/settings/woocommerce.php:1568
 msgid "Pagination"
 msgstr "页"
 
-#: inc/customizer/settings/general.php:1523
+#: inc/customizer/settings/general.php:1859
 msgid "Align"
 msgstr "对齐"
 
-#: inc/customizer/settings/general.php:1545
-#: inc/customizer/settings/general.php:1790
+#: inc/customizer/settings/general.php:1881
+#: inc/customizer/settings/general.php:2126
 #: inc/customizer/settings/header.php:3041
 #: inc/customizer/settings/topbar.php:435
-#: inc/customizer/settings/typography.php:481
 msgid "Font Size (px)"
 msgstr "字体大小(像素)"
 
-#: inc/customizer/settings/general.php:1566
-#: inc/customizer/settings/general.php:1860
-#: inc/customizer/settings/woocommerce.php:2762
-msgid "Border Width (px)"
-msgstr "边框宽度(像素)"
-
-#: inc/customizer/settings/general.php:1650
-#: inc/customizer/settings/general.php:1915
-#: inc/customizer/settings/header.php:1828
-#: inc/customizer/settings/topbar.php:244
-#: inc/customizer/settings/woocommerce.php:2889
-#: inc/customizer/settings/woocommerce.php:3686
-msgid "Border Color"
-msgstr "边框颜色"
-
-#: inc/customizer/settings/general.php:1666
+#: inc/customizer/settings/general.php:2002
 #: inc/customizer/settings/header.php:1844
-#: inc/customizer/settings/woocommerce.php:3702
+#: inc/customizer/settings/woocommerce.php:4256
 msgid "Border Color: Hover"
 msgstr "边框颜色: 悬停"
 
-#: inc/customizer/settings/general.php:1676
+#: inc/customizer/settings/general.php:2012
 msgid "Forms (Input - Textarea)"
 msgstr "表单 (输入-文本区域)"
 
-#: inc/customizer/settings/general.php:1691
-msgid "Label Color"
-msgstr "标签颜色"
-
-#: inc/customizer/settings/general.php:1931
+#: inc/customizer/settings/general.php:2267
 #: inc/customizer/settings/header.php:1860
 msgid "Border Color: Focus"
 msgstr "边框颜色: 焦点"
 
-#: inc/customizer/settings/general.php:1972
+#: inc/customizer/settings/general.php:2308
 msgid "Theme Buttons"
 msgstr "主题按钮"
 
-#: inc/customizer/settings/general.php:2149
+#: inc/customizer/settings/general.php:2485
 msgid "404 Error Page"
 msgstr "404错误页"
 
-#: inc/customizer/settings/general.php:2163
+#: inc/customizer/settings/general.php:2499
 msgid "Blank Page"
 msgstr "空白页"
 
-#: inc/customizer/settings/general.php:2164
+#: inc/customizer/settings/general.php:2500
 msgid ""
 "Enable this option to remove all the elements and have full control of the "
 "404 error page."
 msgstr "启用此选项可删除所有元素并完全控制404错误页。"
 
-#: inc/customizer/settings/general.php:2253
+#: inc/customizer/settings/general.php:2589
 msgid "All Post Types"
 msgstr "所有文章类型"
 
 #: inc/customizer/settings/header.php:41 inc/third/class-beaver-themer.php:109
 msgid "Header"
 msgstr "头部"
-
-#: inc/customizer/settings/header.php:49 inc/customizer/settings/topbar.php:48
-#: inc/customizer/settings/typography.php:265
-#: inc/customizer/settings/woocommerce.php:48
-msgid "General"
-msgstr "一般"
 
 #: inc/customizer/settings/header.php:69
 #: inc/customizer/settings/header.php:2995
@@ -1484,13 +2349,13 @@ msgid "Top Menu"
 msgstr "顶部菜单"
 
 #: inc/customizer/settings/header.php:72
-#: inc/customizer/settings/header.php:3440
+#: inc/customizer/settings/header.php:3462 inc/third/class-lifterlms.php:312
 msgid "Full Screen"
 msgstr "全屏显示"
 
 #: inc/customizer/settings/header.php:75
-#: inc/customizer/settings/woocommerce.php:1517
-#: inc/customizer/settings/woocommerce.php:1551
+#: inc/customizer/settings/woocommerce.php:1899
+#: inc/customizer/settings/woocommerce.php:1955
 msgid "Vertical"
 msgstr "垂直"
 
@@ -1562,7 +2427,7 @@ msgid "Add Transparent Header"
 msgstr "添加透明页眉"
 
 #: inc/customizer/settings/header.php:503
-#: inc/customizer/settings/header.php:3361
+#: inc/customizer/settings/header.php:3382
 msgid "Logo (optional)"
 msgstr "logo（可选)"
 
@@ -1592,7 +2457,7 @@ msgid "Menu Bar Close Color"
 msgstr "菜单栏关闭颜色"
 
 #: inc/customizer/settings/header.php:602
-#: inc/customizer/settings/header.php:3833
+#: inc/customizer/settings/header.php:3855
 msgid "Links Background Color"
 msgstr "链接背景颜色"
 
@@ -1698,7 +2563,7 @@ msgstr "如果您使用粘性标题扩展名"
 
 #: inc/customizer/settings/header.php:1061
 #: inc/customizer/settings/header.php:2155
-#: inc/customizer/settings/header.php:3464 inc/helpers.php:3533
+#: inc/customizer/settings/header.php:3486 inc/helpers.php:3763
 #: partials/mobile/mobile-icon.php:37
 msgid "Menu"
 msgstr "菜单"
@@ -1790,23 +2655,17 @@ msgid "Menu Items Top/Bottom Padding (px)"
 msgstr "菜单项顶部/底部填充 (px)"
 
 #: inc/customizer/settings/header.php:1604
-#: inc/customizer/settings/header.php:3683
+#: inc/customizer/settings/header.php:3705
 msgid "Dropdown Target"
 msgstr "下拉目标"
 
 #: inc/customizer/settings/header.php:1605
-#: inc/customizer/settings/header.php:3684
+#: inc/customizer/settings/header.php:3706
 msgid "Choose your opening target for your submenus"
 msgstr "选择您的子菜单的打开目标"
 
-#: inc/customizer/settings/header.php:1610
-#: inc/customizer/settings/header.php:3689
-#: inc/customizer/settings/woocommerce.php:285
-msgid "Icon"
-msgstr "图标"
-
 #: inc/customizer/settings/header.php:1611
-#: inc/customizer/settings/header.php:3690
+#: inc/customizer/settings/header.php:3712
 msgid "Link"
 msgstr "链接"
 
@@ -1841,13 +2700,6 @@ msgstr "显示搜索表单"
 #: inc/customizer/settings/header.php:1757
 msgid "Border Width"
 msgstr "边框宽度"
-
-#: inc/customizer/settings/header.php:1758
-#: inc/customizer/settings/header.php:1776
-#: inc/customizer/settings/header.php:3197
-#: inc/customizer/settings/woocommerce.php:3149
-msgid "Add a custom border radius. px - em - %."
-msgstr "添加自定义边框半径。像素-%。"
 
 #: inc/customizer/settings/header.php:1775
 #: inc/customizer/settings/header.php:3196
@@ -1997,7 +2849,7 @@ msgid "Disabled"
 msgstr "禁用"
 
 #: inc/customizer/settings/header.php:2631
-#: inc/customizer/settings/header.php:3439
+#: inc/customizer/settings/header.php:3461
 msgid "Drop Down"
 msgstr "下拉"
 
@@ -2032,7 +2884,8 @@ msgid "Input Border Color: Hover"
 msgstr "输入边框颜色: 悬停"
 
 #: inc/customizer/settings/header.php:2833
-#: inc/customizer/settings/woocommerce.php:852
+#: inc/customizer/settings/woocommerce.php:1038
+#: inc/customizer/settings/woocommerce.php:1420
 msgid "Close Button Color"
 msgstr "关闭按钮颜色"
 
@@ -2120,7 +2973,7 @@ msgid "Social Hover: Color"
 msgstr "社交悬停: 颜色"
 
 #: inc/customizer/settings/header.php:3300
-#: inc/customizer/settings/header.php:3555
+#: inc/customizer/settings/header.php:3577
 #: inc/customizer/settings/typography.php:138
 msgid "Mobile Menu"
 msgstr "移动端菜单"
@@ -2161,157 +3014,345 @@ msgstr ""
 msgid "Custom media query"
 msgstr "自定义媒体查询"
 
-#: inc/customizer/settings/header.php:3362
-msgid "Select a custom responsive logo for tablet and mobile."
-msgstr "为平板电脑和移动设备选择一个定制的响应标志。"
-
-#: inc/customizer/settings/header.php:3377
-msgid "Logo Max Height (px)"
-msgstr "logo最大高度(像素)"
-
-#: inc/customizer/settings/header.php:3378
-msgid "Enter a max height for your responsive logo."
-msgstr "为你的响应logo输入一个最大高度。"
-
-#: inc/customizer/settings/header.php:3410
+#: inc/customizer/settings/header.php:3339
 msgid "Custom Media Query"
 msgstr "自定义媒体查询"
 
-#: inc/customizer/settings/header.php:3411
+#: inc/customizer/settings/header.php:3340
 msgid ""
 "Enter your custom media query where you want to display the mobile menu."
 msgstr "在要显示移动菜单的位置输入您的自定义媒体查询。"
 
-#: inc/customizer/settings/header.php:3432
+#: inc/customizer/settings/header.php:3383
+msgid "Select a custom responsive logo for tablet and mobile."
+msgstr "为平板电脑和移动设备选择一个定制的响应标志。"
+
+#: inc/customizer/settings/header.php:3398
+msgid "Logo Max Height (px)"
+msgstr "logo最大高度(像素)"
+
+#: inc/customizer/settings/header.php:3399
+msgid "Enter a max height for your responsive logo."
+msgstr "为你的响应logo输入一个最大高度。"
+
+#: inc/customizer/settings/header.php:3425
+msgid "Logo / Cart / Link"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3426
+msgid "Cart / Logo / Link"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3427
+msgid "Link / Logo / Cart"
+msgstr ""
+
+#: inc/customizer/settings/header.php:3454
 msgid "Mobile Menu Style"
 msgstr "移动菜单样式"
 
-#: inc/customizer/settings/header.php:3438
+#: inc/customizer/settings/header.php:3460
 #: inc/customizer/settings/sidebar.php:40 inc/third/class-beaver-themer.php:136
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: inc/customizer/settings/header.php:3453
+#: inc/customizer/settings/header.php:3475
 msgid "Display Menu Text"
 msgstr "显示菜单文本"
 
-#: inc/customizer/settings/header.php:3470
+#: inc/customizer/settings/header.php:3492
 msgid "Menu Text"
 msgstr "菜单文本"
 
-#: inc/customizer/settings/header.php:3481 inc/helpers.php:3534
+#: inc/customizer/settings/header.php:3503 inc/helpers.php:3764
 #: partials/mobile/mobile-icon.php:42
 msgid "Close"
 msgstr "关闭"
 
-#: inc/customizer/settings/header.php:3487
+#: inc/customizer/settings/header.php:3509
 msgid "Close Menu Text"
 msgstr "关闭菜单文本"
 
-#: inc/customizer/settings/header.php:3505
+#: inc/customizer/settings/header.php:3527
 msgid "Hamburger Icon Class"
 msgstr "汉堡包图标类"
 
-#: inc/customizer/settings/header.php:3506
-#: inc/customizer/settings/header.php:3648
+#: inc/customizer/settings/header.php:3528
+#: inc/customizer/settings/header.php:3670
 msgid "Enter the full icon class"
 msgstr "输入完整图标类"
 
-#: inc/customizer/settings/header.php:3522
+#: inc/customizer/settings/header.php:3544
 msgid "Custom Hamburger Button"
 msgstr "自定义汉堡包按钮"
 
-#: inc/customizer/settings/header.php:3540
+#: inc/customizer/settings/header.php:3562
 msgid "Custom Hamburger Button: Color"
 msgstr "自定义汉堡包按钮: 颜色"
 
-#: inc/customizer/settings/header.php:3569
+#: inc/customizer/settings/header.php:3591
 msgid "Direction"
 msgstr "方向"
 
-#: inc/customizer/settings/header.php:3590
+#: inc/customizer/settings/header.php:3612
 msgid "Drop Down Max Height (px)"
 msgstr "下拉最大高度 (px)"
 
-#: inc/customizer/settings/header.php:3591
+#: inc/customizer/settings/header.php:3613
 msgid ""
 "Add the height from which you want to display the scrollbar in the drop down"
 msgstr "添加要在下拉列表中显示滚动条的高度"
 
-#: inc/customizer/settings/header.php:3612
+#: inc/customizer/settings/header.php:3634
 msgid "Displace"
 msgstr "取代"
 
-#: inc/customizer/settings/header.php:3629
+#: inc/customizer/settings/header.php:3651
 msgid "Close Menu Button"
 msgstr "关闭菜单按钮"
 
-#: inc/customizer/settings/header.php:3647
+#: inc/customizer/settings/header.php:3669
 msgid "Close Menu Button Icon Class"
 msgstr "关闭菜单按钮图标类"
 
-#: inc/customizer/settings/header.php:3660 inc/helpers.php:3535
+#: inc/customizer/settings/header.php:3682 inc/helpers.php:3765
 #: partials/mobile/mobile-sidr-close.php:20
 msgid "Close Menu"
 msgstr "关闭菜单"
 
-#: inc/customizer/settings/header.php:3666
+#: inc/customizer/settings/header.php:3688
 msgid "Close Menu Button Text"
 msgstr "关闭菜单按钮文本"
 
-#: inc/customizer/settings/header.php:3704
+#: inc/customizer/settings/header.php:3726
 msgid "Mobile Menu Search"
 msgstr "手机菜单搜索"
 
-#: inc/customizer/settings/header.php:3719
+#: inc/customizer/settings/header.php:3741
 msgid "Styling: Mobile Menu"
 msgstr "样式: 移动菜单"
 
-#: inc/customizer/settings/header.php:3734
+#: inc/customizer/settings/header.php:3756
 msgid "Close Button Background"
 msgstr "关闭按钮背景"
 
-#: inc/customizer/settings/header.php:3849
+#: inc/customizer/settings/header.php:3871
 msgid "Links Background Color: Hover"
 msgstr "链接背景颜色: 悬停"
 
-#: inc/customizer/settings/header.php:3866
+#: inc/customizer/settings/header.php:3888
 msgid "Dropdowns Menus: Background"
 msgstr "下拉列表菜单: 背景"
 
-#: inc/customizer/settings/header.php:3881
+#: inc/customizer/settings/header.php:3903
 msgid "Searchbar Background"
 msgstr "搜索框背景"
 
-#: inc/customizer/settings/header.php:3898
+#: inc/customizer/settings/header.php:3920
 msgid "Searchbar Color"
 msgstr "搜索框颜色"
 
-#: inc/customizer/settings/header.php:3914
+#: inc/customizer/settings/header.php:3936
 msgid "Searchbar Border Color"
 msgstr "搜索框边框颜色"
 
-#: inc/customizer/settings/header.php:3930
+#: inc/customizer/settings/header.php:3952
 msgid "Searchbar Border Color: Hover"
 msgstr "搜索框边框颜色: 悬停"
 
-#: inc/customizer/settings/header.php:3947
+#: inc/customizer/settings/header.php:3969
 msgid "Searchbar Border Color: Focus"
 msgstr "搜索框边框颜色：聚焦"
 
-#: inc/customizer/settings/header.php:3963
+#: inc/customizer/settings/header.php:3985
 msgid "Searchbar Button Color"
 msgstr "搜索框按钮颜色"
 
-#: inc/customizer/settings/header.php:3980
+#: inc/customizer/settings/header.php:4002
 msgid "Searchbar Button Color: Hover"
 msgstr "搜索框按钮颜色：悬停"
 
-#: inc/customizer/settings/header.php:3995
+#: inc/customizer/settings/header.php:4017
 msgid "Select Your Menu"
 msgstr "选择您的菜单"
 
+#: inc/customizer/settings/learndash.php:40
+msgid "LearnDash"
+msgstr ""
+
+#: inc/customizer/settings/learndash.php:76
+#: inc/customizer/settings/lifterlms.php:92
+#, fuzzy
+#| msgid "Distraction Free Cart"
+msgid "Distraction Free Learning"
+msgstr "购物车里没有产品。"
+
+#: inc/customizer/settings/learndash.php:101
+#: inc/customizer/settings/lifterlms.php:265
+msgid "Global"
+msgstr ""
+
+#: inc/customizer/settings/learndash.php:217
+#: inc/customizer/settings/lifterlms.php:381
+#: inc/customizer/settings/lifterlms.php:1045
+msgid "Course"
+msgstr ""
+
+#: inc/customizer/settings/learndash.php:333
+msgid "Lesson/Topic"
+msgstr ""
+
+#: inc/customizer/settings/learndash.php:459
+#, fuzzy
+#| msgid "Disabled"
+msgid "Table"
+msgstr "禁用"
+
+#: inc/customizer/settings/learndash.php:473
+#, fuzzy
+#| msgid "Head Titles Color"
+msgid "Heading Color"
+msgstr "头标题颜色"
+
+#: inc/customizer/settings/learndash.php:489
+#, fuzzy
+#| msgid "Menu Background Color"
+msgid "Heading Background Color"
+msgstr "菜单背景颜色"
+
+#: inc/customizer/settings/learndash.php:505
+#, fuzzy
+#| msgid "Input Color"
+msgid "Item Color"
+msgstr "输入颜色"
+
+#: inc/customizer/settings/learndash.php:521
+#, fuzzy
+#| msgid "Category Hover Color"
+msgid "Item Hover Color"
+msgstr "分类悬停颜色"
+
+#: inc/customizer/settings/learndash.php:536
+#, fuzzy
+#| msgid "Comments Color"
+msgid "Complete Color"
+msgstr "评论颜色"
+
+#: inc/customizer/settings/learndash.php:551
+#, fuzzy
+#| msgid "Input Color"
+msgid "Incomplete Color"
+msgstr "输入颜色"
+
+#: inc/customizer/settings/learndash.php:566
+#: inc/customizer/settings/lifterlms.php:1152
+#, fuzzy
+#| msgid "Menu Bar Color"
+msgid "Progress Bar Color"
+msgstr "菜单栏颜色"
+
+#: inc/customizer/settings/lifterlms.php:40
+msgid "LifterLMS"
+msgstr ""
+
+#: inc/customizer/settings/lifterlms.php:132
+#, fuzzy
+#| msgid "Grid Columns"
+msgid "Courses Columns"
+msgstr "网格列"
+
+#: inc/customizer/settings/lifterlms.php:167
+#, fuzzy
+#| msgid "Shop Columns"
+msgid "Membership Columns"
+msgstr "商店专栏"
+
+#: inc/customizer/settings/lifterlms.php:190
+#: inc/customizer/settings/lifterlms.php:204
+#, fuzzy
+#| msgid "Hide Details"
+msgid "Course Details"
+msgstr "隐藏详细信息"
+
+#: inc/customizer/settings/lifterlms.php:209
+#: inc/customizer/settings/lifterlms.php:240
+#: inc/customizer/settings/woocommerce.php:1516 inc/helpers.php:2901
+#: inc/helpers.php:2986
+msgid "Featured Image"
+msgstr "特色图像"
+
+#: inc/customizer/settings/lifterlms.php:213
+msgid "Progress"
+msgstr ""
+
+#: inc/customizer/settings/lifterlms.php:214
+msgid "Syllabus"
+msgstr ""
+
+#: inc/customizer/settings/lifterlms.php:226
+#, fuzzy
+#| msgid "Show Details"
+msgid "Membership Details"
+msgstr "显示详细信息"
+
+#: inc/customizer/settings/lifterlms.php:497
+#: inc/customizer/settings/lifterlms.php:1198
+msgid "Lesson"
+msgstr ""
+
+#: inc/customizer/settings/lifterlms.php:623
+msgid "Courses/Memberships"
+msgstr ""
+
+#: inc/customizer/settings/lifterlms.php:1015
+#: inc/customizer/settings/lifterlms.php:1137
+#, fuzzy
+#| msgid "Button Color"
+msgid "Author Color"
+msgstr "按钮颜色"
+
+#: inc/customizer/settings/lifterlms.php:1031
+#, fuzzy
+#| msgid "Meta Link Color"
+msgid "Meta Color"
+msgstr "Meta链接颜色"
+
+#: inc/customizer/settings/lifterlms.php:1075
+#, fuzzy
+#| msgid "Title Color"
+msgid "Sub Title Color"
+msgstr "标题颜色"
+
+#: inc/customizer/settings/lifterlms.php:1091
+#: inc/customizer/settings/woocommerce.php:4095
+msgid "Meta Title Color"
+msgstr "Meta标题颜色"
+
+#: inc/customizer/settings/lifterlms.php:1107
+#, fuzzy
+#| msgid "Meta Title Color"
+msgid "Meta Link/SubTitle Color"
+msgstr "Meta标题颜色"
+
+#: inc/customizer/settings/lifterlms.php:1122
+#: inc/customizer/settings/woocommerce.php:4127
+msgid "Meta Link Color: Hover"
+msgstr "元链接颜色:悬停"
+
+#: inc/customizer/settings/lifterlms.php:1168
+#, fuzzy
+#| msgid "Meta Title Color"
+msgid "Section Title Color"
+msgstr "Meta标题颜色"
+
+#: inc/customizer/settings/lifterlms.php:1183
+#, fuzzy
+#| msgid "Site Background"
+msgid "Section Title Background"
+msgstr "网站背景"
+
 #: inc/customizer/settings/sidebar.php:150
+#: inc/customizer/settings/typography.php:205
 msgid "Widgets"
 msgstr "部件"
 
@@ -2348,8 +3389,8 @@ msgid "Centered Content & Social"
 msgstr "中间内容&社社交"
 
 #: inc/customizer/settings/topbar.php:306
-#: inc/customizer/settings/topbar.php:340 inc/helpers.php:2710
-#: inc/helpers.php:2795 inc/third/class-beaver-themer.php:127
+#: inc/customizer/settings/topbar.php:340 inc/helpers.php:2904
+#: inc/helpers.php:2989 inc/third/class-beaver-themer.php:127
 msgid "Content"
 msgstr "内容"
 
@@ -2430,40 +3471,45 @@ msgstr "博客文章标题"
 msgid "Sidebar Widget Heading"
 msgstr "侧栏小部件标题"
 
-#: inc/customizer/settings/typography.php:206
+#: inc/customizer/settings/typography.php:209
 msgid "Footer Widget Heading"
 msgstr "页脚小部件标题"
 
-#: inc/customizer/settings/typography.php:217
+#: inc/customizer/settings/typography.php:220
 msgid "Footer Copyright"
 msgstr "页脚版权"
 
-#: inc/customizer/settings/typography.php:227
+#: inc/customizer/settings/typography.php:230
 msgid "Footer Menu"
 msgstr "页脚菜单"
 
-#: inc/customizer/settings/typography.php:257
+#: inc/customizer/settings/typography.php:260
 msgid "Typography"
 msgstr "排版"
 
-#: inc/customizer/settings/typography.php:279
+#: inc/customizer/settings/typography.php:283
+#, fuzzy
+#| msgid "Google Fonts"
+msgid "Disable Google Fonts"
+msgstr "Google字体"
+
+#: inc/customizer/settings/typography.php:299
 msgid "Font Subsets"
 msgstr "字符集"
 
-#: inc/customizer/settings/typography.php:378
+#: inc/customizer/settings/typography.php:398
 msgid "Important: Not all fonts support every font-weight."
 msgstr "重要:不是所有字体都支持每一个字体。"
 
-#: inc/customizer/settings/typography.php:449
-#: inc/customizer/settings/woocommerce.php:3114
-msgid "None"
-msgstr "没有"
+#: inc/customizer/settings/typography.php:502
+msgid "You can add: px-em-%"
+msgstr ""
 
-#: inc/customizer/settings/typography.php:569
+#: inc/customizer/settings/typography.php:585
 msgid "Letter Spacing (px)"
 msgstr "字符间距(像素)"
 
-#: inc/customizer/settings/typography.php:603
+#: inc/customizer/settings/typography.php:619
 msgid "Font Color"
 msgstr "字体颜色"
 
@@ -2471,1333 +3517,1211 @@ msgstr "字体颜色"
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: inc/customizer/settings/woocommerce.php:49
-#: inc/customizer/settings/woocommerce.php:212
-#: inc/customizer/settings/woocommerce.php:1948
-msgid ""
-"For some options, you must save and refresh your live site to preview "
-"changes."
-msgstr "对于某些选项，您必须保存并刷新活动站点以预览更改。"
-
 #: inc/customizer/settings/woocommerce.php:63
+#, fuzzy
+#| msgid "Custom WooCommerce Sidebar"
+msgid "Remove Custom WooCommerce Features"
+msgstr "自定义WooCommerce侧边栏"
+
+#: inc/customizer/settings/woocommerce.php:64
+msgid ""
+"Remove all the custom WooCommerce features added for OceanWP, you will have "
+"the default plugin features."
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:83
 msgid "Custom WooCommerce Sidebar"
 msgstr "自定义WooCommerce侧边栏"
 
-#: inc/customizer/settings/woocommerce.php:79
-msgid "Display Cart When Product Added"
-msgstr "当产品添加时显示购物车"
-
-#: inc/customizer/settings/woocommerce.php:80
+#: inc/customizer/settings/woocommerce.php:100
 msgid ""
 "Display the cart when a product is added, work in the shop and the single "
 "product pages if ajax is enabled."
 msgstr "在添加产品时显示购物车，如果启用了ajax，则在商店和单个产品页面中工作。"
 
-#: inc/customizer/settings/woocommerce.php:85
-#: inc/customizer/settings/woocommerce.php:202
-#: inc/customizer/settings/woocommerce.php:1644
-#: inc/customizer/settings/woocommerce.php:1717
-msgid "Yes"
+#: inc/customizer/settings/woocommerce.php:120
+#, fuzzy
+#| msgid "Categories"
+msgid "Categories Widget Style"
+msgstr "类别"
+
+#: inc/customizer/settings/woocommerce.php:121
+msgid "Choose the WooCommerce Categories widget style."
 msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:86
-#: inc/customizer/settings/woocommerce.php:203
-#: inc/customizer/settings/woocommerce.php:1645
-#: inc/customizer/settings/woocommerce.php:1718
-msgid "No"
-msgstr ""
+#: inc/customizer/settings/woocommerce.php:128
+#, fuzzy
+#| msgid "Drop Down"
+msgid "Dropdown"
+msgstr "下拉"
 
-#: inc/customizer/settings/woocommerce.php:98
+#: inc/customizer/settings/woocommerce.php:140
 msgid "Wishlist"
 msgstr "收藏"
 
-#: inc/customizer/settings/woocommerce.php:99
+#: inc/customizer/settings/woocommerce.php:141
+#, fuzzy, php-format
+#| msgid ""
+#| "You need to activate the YITH WooCommerce Wishlist to add a wishlist "
+#| "button and icon"
 msgid ""
-"You need to activate the YITH WooCommerce Wishlist to add a wishlist button "
-"and icon"
+"You need to activate the %1$sTI WooCommerce Wishlist%2$s plugin to add a "
+"wishlist button and icon"
 msgstr "你需要激活yith WooCommerce愿望单收藏按钮和图标"
 
-#: inc/customizer/settings/woocommerce.php:113
+#: inc/customizer/settings/woocommerce.php:155
 msgid "Add Wishlist Icon In Header"
 msgstr "在添加页眉愿望单t图标"
 
-#: inc/customizer/settings/woocommerce.php:128
+#: inc/customizer/settings/woocommerce.php:170
 msgid "On Sale Badge"
 msgstr "销售徽章"
 
-#: inc/customizer/settings/woocommerce.php:143
+#: inc/customizer/settings/woocommerce.php:185
 msgid "On Sale Badge Style"
 msgstr "销售徽章样式"
 
-#: inc/customizer/settings/woocommerce.php:149
-#: inc/customizer/settings/woocommerce.php:2071
+#: inc/customizer/settings/woocommerce.php:191
+#: inc/customizer/settings/woocommerce.php:2472
 msgid "Square"
 msgstr "广场"
 
-#: inc/customizer/settings/woocommerce.php:150
+#: inc/customizer/settings/woocommerce.php:192
 msgid "Circle"
 msgstr "圈"
 
-#: inc/customizer/settings/woocommerce.php:163
+#: inc/customizer/settings/woocommerce.php:205
 msgid "On Sale Badge Content"
 msgstr "关于销售徽章内容"
 
-#: inc/customizer/settings/woocommerce.php:169
+#: inc/customizer/settings/woocommerce.php:211
 msgid "On Sale Text"
 msgstr "销售文本"
 
-#: inc/customizer/settings/woocommerce.php:170
+#: inc/customizer/settings/woocommerce.php:212
 msgid "Percentage"
 msgstr "百分比"
 
-#: inc/customizer/settings/woocommerce.php:182
+#: inc/customizer/settings/woocommerce.php:224
+#, fuzzy
+#| msgid "Checkout Page"
+msgid "My Account Page"
+msgstr "结帐页"
+
+#: inc/customizer/settings/woocommerce.php:239
+#, fuzzy
+#| msgid "Login/Register Links: Color"
+msgid "Login/Register Style"
+msgstr "登录/注册链接: 颜色"
+
+#: inc/customizer/settings/woocommerce.php:245
+msgid "Original"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:246
+msgid "Side by Side"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:258
 msgid "Category Page"
 msgstr "分类页"
 
-#: inc/customizer/settings/woocommerce.php:196
+#: inc/customizer/settings/woocommerce.php:272
 msgid "Display Featured Image"
 msgstr "显示特色图像"
 
-#: inc/customizer/settings/woocommerce.php:197
+#: inc/customizer/settings/woocommerce.php:273
 msgid "Display the categories featured images before the product archives."
 msgstr "在产品存档之前显示具有特色的图像类别。"
 
-#: inc/customizer/settings/woocommerce.php:211
-msgid "Menu Cart"
-msgstr "购物车菜单"
-
-#: inc/customizer/settings/woocommerce.php:226
-msgid "Hide If Empty Cart"
-msgstr "如果购物车是空的就隐藏"
-
-#: inc/customizer/settings/woocommerce.php:242
+#: inc/customizer/settings/woocommerce.php:318
 msgid "Display Mini Cart On Mobile"
 msgstr "在手机上显示迷你购物车"
 
-#: inc/customizer/settings/woocommerce.php:264
-msgid "Display On All Devices"
-msgstr "在所有设备上显示"
-
-#: inc/customizer/settings/woocommerce.php:265
-msgid "Disabled On All Devices"
-msgstr "在所有设备上禁用"
-
-#: inc/customizer/settings/woocommerce.php:266
+#: inc/customizer/settings/woocommerce.php:342
 msgid "Disabled Only On Desktop"
 msgstr "仅在桌面上禁用"
 
-#: inc/customizer/settings/woocommerce.php:279
-msgid "Display"
-msgstr "显示"
-
-#: inc/customizer/settings/woocommerce.php:286
-msgid "Icon And Cart Total"
-msgstr "图标和购物车总计"
-
-#: inc/customizer/settings/woocommerce.php:287
-msgid "Icon And Cart Count"
-msgstr "图标和购物车计数"
-
-#: inc/customizer/settings/woocommerce.php:288
-msgid "Icon And Cart Count + Total"
-msgstr "图标和购物车计数 + 总计"
-
-#: inc/customizer/settings/woocommerce.php:308
-msgid "Drop-Down"
-msgstr "下拉"
-
-#: inc/customizer/settings/woocommerce.php:309
-msgid "Go To Cart"
-msgstr "转到购物车"
-
-#: inc/customizer/settings/woocommerce.php:310
-#: inc/customizer/settings/woocommerce.php:323
-msgid "Custom Link"
-msgstr "自定义链接"
-
-#: inc/customizer/settings/woocommerce.php:324
-msgid "The Custom Link style need to be selected"
-msgstr "需要选择自定义链接样式"
-
-#: inc/customizer/settings/woocommerce.php:341
-msgid "Cart Icon"
-msgstr "购物车图标"
-
-#: inc/customizer/settings/woocommerce.php:357
-msgid "Custom Icon"
-msgstr "自定义图标"
-
-#: inc/customizer/settings/woocommerce.php:358
-msgid "Enter your full icon class"
-msgstr "输入完整的图标类"
-
-#: inc/customizer/settings/woocommerce.php:416
-msgid "Center Vertically"
-msgstr "垂直居中"
-
-#: inc/customizer/settings/woocommerce.php:417
-msgid "Use this field to center your icon vertically"
-msgstr "使用此字段可以垂直居中图标"
-
-#: inc/customizer/settings/woocommerce.php:440
-msgid "Cart Dropdown Styling"
-msgstr "购物车下拉样式"
-
-#: inc/customizer/settings/woocommerce.php:461
-msgid "Compact"
-msgstr "紧凑"
-
-#: inc/customizer/settings/woocommerce.php:462
-msgid "Spacious"
-msgstr "宽敞"
-
-#: inc/customizer/settings/woocommerce.php:476
-msgid "Cart Dropdowns Width (px)"
-msgstr "购物车下拉列表宽度 (px)"
-
-#: inc/customizer/settings/woocommerce.php:497
-msgid "Dropdown Background Color"
-msgstr "下拉背景色"
-
-#: inc/customizer/settings/woocommerce.php:513
-msgid "Dropdown Borders Color"
-msgstr "下拉边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:561
-msgid "Remove Link Color"
-msgstr "删除链接颜色"
-
-#: inc/customizer/settings/woocommerce.php:577
-msgid "Remove Link Color: Hover"
-msgstr "删除链接颜色: 悬停"
-
-#: inc/customizer/settings/woocommerce.php:593
-#: inc/customizer/settings/woocommerce.php:3477
+#: inc/customizer/settings/woocommerce.php:779
+#: inc/customizer/settings/woocommerce.php:4031
 msgid "Quantity Color"
 msgstr "数量颜色"
 
-#: inc/customizer/settings/woocommerce.php:609
-#: inc/customizer/settings/woocommerce.php:1766
-#: inc/customizer/settings/woocommerce.php:2969
-#: inc/customizer/settings/woocommerce.php:3397
-msgid "Price Color"
-msgstr "价格颜色"
-
-#: inc/customizer/settings/woocommerce.php:625
-#: inc/customizer/settings/woocommerce.php:641
-#: inc/customizer/settings/woocommerce.php:657
-msgid "Subtotal Color"
-msgstr "分类汇总颜色"
-
-#: inc/customizer/settings/woocommerce.php:672
+#: inc/customizer/settings/woocommerce.php:858
 msgid "Cart Button Background"
 msgstr "Cart Button Background"
 
-#: inc/customizer/settings/woocommerce.php:687
+#: inc/customizer/settings/woocommerce.php:873
 msgid "Cart Button Background: Hover"
 msgstr "购物车按钮背景: 悬停"
 
-#: inc/customizer/settings/woocommerce.php:702
+#: inc/customizer/settings/woocommerce.php:888
 msgid "Cart Button Color"
 msgstr "购物车按钮颜色"
 
-#: inc/customizer/settings/woocommerce.php:717
+#: inc/customizer/settings/woocommerce.php:903
 msgid "Cart Button Color: Hover"
 msgstr "购物车按钮颜色: 悬停"
 
-#: inc/customizer/settings/woocommerce.php:732
+#: inc/customizer/settings/woocommerce.php:918
 msgid "Cart Button Border Color"
 msgstr "购物车按钮边框颜色"
 
-#: inc/customizer/settings/woocommerce.php:747
+#: inc/customizer/settings/woocommerce.php:933
 msgid "Cart Button Border Color: Hover"
 msgstr "购物车按钮边框颜色: 悬停"
 
-#: inc/customizer/settings/woocommerce.php:762
-msgid "Checkout Button Background"
-msgstr "结帐按钮背景"
-
-#: inc/customizer/settings/woocommerce.php:777
-msgid "Checkout Button Background: Hover"
-msgstr "结帐按钮背景：悬停"
-
-#: inc/customizer/settings/woocommerce.php:792
-msgid "Checkout Button Color"
-msgstr "结账按钮颜色"
-
-#: inc/customizer/settings/woocommerce.php:807
-msgid "Checkout Button Color: Hover"
-msgstr "结账按钮颜色：悬停"
-
-#: inc/customizer/settings/woocommerce.php:821
+#: inc/customizer/settings/woocommerce.php:1007
 msgid "Mobile Cart Sidebar Styling"
 msgstr "移动购物车侧栏样式"
 
-#: inc/customizer/settings/woocommerce.php:868
-#: inc/customizer/settings/woocommerce.php:1749
-#: inc/customizer/settings/woocommerce.php:2937
-#: inc/customizer/settings/woocommerce.php:3381
-msgid "Title Color"
-msgstr "标题颜色"
-
-#: inc/customizer/settings/woocommerce.php:884
+#: inc/customizer/settings/woocommerce.php:1070
 msgid "Divider Color"
 msgstr "分隔符颜色"
 
-#: inc/customizer/settings/woocommerce.php:990
+#: inc/customizer/settings/woocommerce.php:1197
 msgid "Shop Posts Per Page"
 msgstr "商店每页帖子"
 
-#: inc/customizer/settings/woocommerce.php:1021
-msgid "Shop Columns"
-msgstr "商店专栏"
-
-#: inc/customizer/settings/woocommerce.php:1044
+#: inc/customizer/settings/woocommerce.php:1251
 msgid "Toolbar"
 msgstr "工具栏"
 
-#: inc/customizer/settings/woocommerce.php:1058
+#: inc/customizer/settings/woocommerce.php:1265
 msgid "Grid/List Buttons"
 msgstr "网格/列表按钮"
 
-#: inc/customizer/settings/woocommerce.php:1074
+#: inc/customizer/settings/woocommerce.php:1281
 msgid "Default Catalog View"
 msgstr "默认目录视图"
 
-#: inc/customizer/settings/woocommerce.php:1080
+#: inc/customizer/settings/woocommerce.php:1287
 msgid "Grid View"
 msgstr "网格视图"
 
-#: inc/customizer/settings/woocommerce.php:1081
+#: inc/customizer/settings/woocommerce.php:1288
 msgid "List View"
 msgstr "列表视图"
 
-#: inc/customizer/settings/woocommerce.php:1096
+#: inc/customizer/settings/woocommerce.php:1303
 msgid "Length of the short description of the list view."
 msgstr "列表视图的简介长度。"
 
-#: inc/customizer/settings/woocommerce.php:1117
+#: inc/customizer/settings/woocommerce.php:1324
 msgid "Shop Sort"
 msgstr "店铺分类"
 
-#: inc/customizer/settings/woocommerce.php:1133
+#: inc/customizer/settings/woocommerce.php:1340
 msgid "Shop Result Count"
 msgstr "商店结果计数"
 
-#: inc/customizer/settings/woocommerce.php:1148
+#: inc/customizer/settings/woocommerce.php:1355
 msgid "Off Canvas Filtering"
 msgstr "关闭画布筛选"
 
-#: inc/customizer/settings/woocommerce.php:1162
+#: inc/customizer/settings/woocommerce.php:1369
 msgid "Display Filter Button"
 msgstr "显示过滤器按钮"
 
-#: inc/customizer/settings/woocommerce.php:1173 inc/helpers.php:3540
-#: inc/woocommerce/woocommerce-config.php:788
+#: inc/customizer/settings/woocommerce.php:1380 inc/helpers.php:3770
+#: inc/woocommerce/woocommerce-config.php:914
 msgid "Filter"
 msgstr "过滤"
 
-#: inc/customizer/settings/woocommerce.php:1179
+#: inc/customizer/settings/woocommerce.php:1386
 msgid "Filter Button Text"
 msgstr "过滤按钮文字"
 
-#: inc/customizer/settings/woocommerce.php:1195
-msgid "Products"
-msgstr "产品"
+#: inc/customizer/settings/woocommerce.php:1403
+#, fuzzy
+#| msgid "Close Menu Button"
+msgid "Add Close Button"
+msgstr "关闭菜单按钮"
 
-#: inc/customizer/settings/woocommerce.php:1216
-#: inc/customizer/settings/woocommerce.php:1459 inc/helpers.php:2708
-#: inc/helpers.php:2793
-msgid "Title"
-msgstr "标题"
+#: inc/customizer/settings/woocommerce.php:1437
+#, fuzzy
+#| msgid "Button Color: Hover"
+msgid "Close Button Color: Hover"
+msgstr "按钮颜色: 悬停"
 
-#: inc/customizer/settings/woocommerce.php:1217
+#: inc/customizer/settings/woocommerce.php:1466
+#, fuzzy
+#| msgid "Product Entry"
+msgid "Products Style"
+msgstr "产品入口"
+
+#: inc/customizer/settings/woocommerce.php:1472
+#, fuzzy
+#| msgid "Layout Style"
+msgid "Default Style"
+msgstr "版式样式"
+
+#: inc/customizer/settings/woocommerce.php:1473
+#, fuzzy
+#| msgid "Font Style"
+msgid "Hover Style"
+msgstr "字体风格"
+
+#: inc/customizer/settings/woocommerce.php:1494
 msgid "Price/Rating"
 msgstr "价格/评级"
 
-#: inc/customizer/settings/woocommerce.php:1218
-msgid "Description"
-msgstr "描述"
-
-#: inc/customizer/settings/woocommerce.php:1219
-msgid "Add To Cart Button"
-msgstr "\"添加到购物车\" 按钮"
-
-#: inc/customizer/settings/woocommerce.php:1232
+#: inc/customizer/settings/woocommerce.php:1510
 msgid "Product Entry Media"
 msgstr "产品入口视频"
 
-#: inc/customizer/settings/woocommerce.php:1238 inc/helpers.php:2707
-#: inc/helpers.php:2792
-msgid "Featured Image"
-msgstr "特色图像"
-
-#: inc/customizer/settings/woocommerce.php:1239
+#: inc/customizer/settings/woocommerce.php:1517
 msgid "Image Swap"
 msgstr "图像交换"
 
-#: inc/customizer/settings/woocommerce.php:1240
+#: inc/customizer/settings/woocommerce.php:1518
 msgid "Gallery Slider"
 msgstr "画廊滑块"
 
-#: inc/customizer/settings/woocommerce.php:1253
+#: inc/customizer/settings/woocommerce.php:1532
 msgid "Display Quick View Button"
 msgstr "显示快速视图按钮"
 
-#: inc/customizer/settings/woocommerce.php:1270
-msgid "Content Alignment"
-msgstr "内容对齐方式"
-
-#: inc/customizer/settings/woocommerce.php:1290
+#: inc/customizer/settings/woocommerce.php:1582
 msgid "Pagination Style"
 msgstr "分页样式"
 
-#: inc/customizer/settings/woocommerce.php:1358
-#: inc/customizer/settings/woocommerce.php:3366
-msgid "Single Product"
-msgstr "单一产品"
+#: inc/customizer/settings/woocommerce.php:1767
+msgid "Title HTML Tag"
+msgstr ""
 
-#: inc/customizer/settings/woocommerce.php:1454
+#: inc/customizer/settings/woocommerce.php:1794
 msgid "Summary Elements Positioning"
 msgstr "摘要元素定位"
 
-#: inc/customizer/settings/woocommerce.php:1460
+#: inc/customizer/settings/woocommerce.php:1800
 msgid "Rating"
 msgstr "评级"
 
-#: inc/customizer/settings/woocommerce.php:1461
-msgid "Price"
-msgstr "价格"
-
-#: inc/customizer/settings/woocommerce.php:1462
+#: inc/customizer/settings/woocommerce.php:1802
 msgid "Excerpt"
 msgstr "摘录"
 
-#: inc/customizer/settings/woocommerce.php:1463
+#: inc/customizer/settings/woocommerce.php:1803
 msgid "Quantity & Add To Cart"
 msgstr "数量和添加到购物车"
 
-#: inc/customizer/settings/woocommerce.php:1464
+#: inc/customizer/settings/woocommerce.php:1804
 msgid "Product Meta"
 msgstr "产品meta"
 
-#: inc/customizer/settings/woocommerce.php:1477
-msgid "Display Product Navigation"
-msgstr "显示产品导航"
-
-#: inc/customizer/settings/woocommerce.php:1493
+#: inc/customizer/settings/woocommerce.php:1833
 msgid "Enable Ajax Add To Cart"
 msgstr "启用 Ajax 添加到购物车"
 
-#: inc/customizer/settings/woocommerce.php:1510
+#: inc/customizer/settings/woocommerce.php:1850
+#, fuzzy
+#| msgid "Custom Image Width (px)"
+msgid "Image Width (%)"
+msgstr "自定义图像宽度(像素)"
+
+#: inc/customizer/settings/woocommerce.php:1871
+#, fuzzy
+#| msgid "Sidebar Width (%)"
+msgid "Summary Width (%)"
+msgstr "边栏宽度 (%)"
+
+#: inc/customizer/settings/woocommerce.php:1892
 msgid "Thumbnails Layout"
 msgstr "缩略图布局"
 
-#: inc/customizer/settings/woocommerce.php:1516
-#: inc/customizer/settings/woocommerce.php:1550
+#: inc/customizer/settings/woocommerce.php:1898
+#: inc/customizer/settings/woocommerce.php:1954
 msgid "Horizontal"
 msgstr "水平"
 
-#: inc/customizer/settings/woocommerce.php:1529
+#: inc/customizer/settings/woocommerce.php:1913
+#, fuzzy
+#| msgid "Add To Cart Button"
+msgid "Add To Cart Button Style"
+msgstr "\"添加到购物车\" 按钮"
+
+#: inc/customizer/settings/woocommerce.php:1920
+#, fuzzy
+#| msgid "Billing"
+msgid "Big"
+msgstr "计费"
+
+#: inc/customizer/settings/woocommerce.php:1921
+msgid "Very Big"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:1933
 msgid "Tabs"
 msgstr "标签"
 
-#: inc/customizer/settings/woocommerce.php:1544
+#: inc/customizer/settings/woocommerce.php:1948
 msgid "Tabs Layout"
 msgstr "标签布局"
 
-#: inc/customizer/settings/woocommerce.php:1565
+#: inc/customizer/settings/woocommerce.php:1956
+#, fuzzy
+#| msgid "Direction"
+msgid "Section"
+msgstr "方向"
+
+#: inc/customizer/settings/woocommerce.php:1970
 msgid "Tabs Position"
 msgstr "标签的位置"
 
-#: inc/customizer/settings/woocommerce.php:1566
+#: inc/customizer/settings/woocommerce.php:1971
 msgid "Only work for the horizontal tabs layout"
 msgstr "仅用于水平选项卡布局"
 
-#: inc/customizer/settings/woocommerce.php:1585
+#: inc/customizer/settings/woocommerce.php:1990
 msgid "Up-Sells & Related Items"
 msgstr "销售及相关项目"
 
-#: inc/customizer/settings/woocommerce.php:1599
+#: inc/customizer/settings/woocommerce.php:2004
 msgid "Up-Sells Count"
 msgstr "销售数量"
 
-#: inc/customizer/settings/woocommerce.php:1619
+#: inc/customizer/settings/woocommerce.php:2024
 msgid "Up-Sells Columns"
 msgstr "打开销售列表"
 
-#: inc/customizer/settings/woocommerce.php:1639
+#: inc/customizer/settings/woocommerce.php:2044
 msgid "Display Related Items"
 msgstr "显示相关项目"
 
-#: inc/customizer/settings/woocommerce.php:1658
+#: inc/customizer/settings/woocommerce.php:2063
 msgid "Related Items Count"
 msgstr "相关项目计数"
 
-#: inc/customizer/settings/woocommerce.php:1678
+#: inc/customizer/settings/woocommerce.php:2083
 msgid "Related Products Columns"
 msgstr "相关产品专栏"
 
-#: inc/customizer/settings/woocommerce.php:1697
+#: inc/customizer/settings/woocommerce.php:2102
 msgid "Floating Bar"
 msgstr "浮动栏"
 
-#: inc/customizer/settings/woocommerce.php:1711
+#: inc/customizer/settings/woocommerce.php:2116
 msgid "Display Floating Bar"
 msgstr "显示浮动栏"
 
-#: inc/customizer/settings/woocommerce.php:1712
+#: inc/customizer/settings/woocommerce.php:2117
 msgid ""
 "The floating bar is to display the add to cart button when you scroll to "
 "increase conversions."
 msgstr "浮动栏是在滚动以增加转换时显示 \"添加到购物车\" 按钮。"
 
-#: inc/customizer/settings/woocommerce.php:1783
+#: inc/customizer/settings/woocommerce.php:2188
 msgid "Quantity Buttons: Background"
 msgstr "数量按钮: 背景"
 
-#: inc/customizer/settings/woocommerce.php:1800
+#: inc/customizer/settings/woocommerce.php:2205
 msgid "Quantity Buttons Hover: Background"
 msgstr "数量按钮悬停: 背景"
 
-#: inc/customizer/settings/woocommerce.php:1817
+#: inc/customizer/settings/woocommerce.php:2222
 msgid "Quantity Buttons: Color"
 msgstr "数量按钮: 颜色"
 
-#: inc/customizer/settings/woocommerce.php:1834
+#: inc/customizer/settings/woocommerce.php:2239
 msgid "Quantity Buttons Hover: Color"
 msgstr "数量按钮悬停: 颜色"
 
-#: inc/customizer/settings/woocommerce.php:1851
+#: inc/customizer/settings/woocommerce.php:2256
 msgid "Quantity Input: Background"
 msgstr "数量输入: 背景"
 
-#: inc/customizer/settings/woocommerce.php:1868
+#: inc/customizer/settings/woocommerce.php:2273
 msgid "Quantity Input: Color"
 msgstr "数量输入: 颜色"
 
-#: inc/customizer/settings/woocommerce.php:1885
+#: inc/customizer/settings/woocommerce.php:2290
 msgid "Add To Cart: Background"
 msgstr "添加到购物车: 背景"
 
-#: inc/customizer/settings/woocommerce.php:1902
+#: inc/customizer/settings/woocommerce.php:2307
 msgid "Add To Cart Hover: Background"
 msgstr "添加到购物车悬停: 背景"
 
-#: inc/customizer/settings/woocommerce.php:1919
+#: inc/customizer/settings/woocommerce.php:2324
 msgid "Add To Cart: Color"
 msgstr "添加到购物车: 颜色"
 
-#: inc/customizer/settings/woocommerce.php:1936
+#: inc/customizer/settings/woocommerce.php:2341
 msgid "Add To Cart Hover: Color"
 msgstr "添加到购物车悬停: 颜色"
 
-#: inc/customizer/settings/woocommerce.php:1947
-msgid "Cart/Checkout"
-msgstr "购物车/结帐"
-
-#: inc/customizer/settings/woocommerce.php:1962
-msgid "Distraction Free Cart"
-msgstr "购物车里没有产品。"
-
-#: inc/customizer/settings/woocommerce.php:1978
-msgid "Cart: Cross-Sells Count"
-msgstr "购物车: 交叉销售计数"
-
-#: inc/customizer/settings/woocommerce.php:1998
-msgid "Cart: Cross-Sells Columns"
-msgstr "购物车: 交叉销售专栏"
-
-#: inc/customizer/settings/woocommerce.php:2017
-msgid "Checkout Page"
-msgstr "结帐页"
-
-#: inc/customizer/settings/woocommerce.php:2031
-msgid "Distraction Free Checkout"
-msgstr "结帐"
-
-#: inc/customizer/settings/woocommerce.php:2047
-msgid "Multi-Step Checkout"
-msgstr "多步校验"
-
-#: inc/customizer/settings/woocommerce.php:2064
-msgid "Timeline Style"
-msgstr "时间线样式"
-
-#: inc/customizer/settings/woocommerce.php:2070 inc/helpers.php:3460
-msgid "Arrow"
-msgstr "箭头"
-
-#: inc/customizer/settings/woocommerce.php:2086
-msgid "Timeline: Background"
-msgstr "时间轴: 背景"
-
-#: inc/customizer/settings/woocommerce.php:2103
-msgid "Timeline: Color"
-msgstr "时间轴: 颜色"
-
-#: inc/customizer/settings/woocommerce.php:2120
-msgid "Timeline Number: Background"
-msgstr "时间轴编号: 背景"
-
-#: inc/customizer/settings/woocommerce.php:2137
-msgid "Timeline Number: Color"
-msgstr "时间轴编号: 颜色"
-
-#: inc/customizer/settings/woocommerce.php:2154
-msgid "Timeline Number: Border Color"
-msgstr "时间线编号: 边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:2171
-msgid "Timeline Active: Background"
-msgstr "活动时间线: 背景"
-
-#: inc/customizer/settings/woocommerce.php:2188
-msgid "Timeline Active: Color"
-msgstr "时间轴活动: 颜色"
-
-#: inc/customizer/settings/woocommerce.php:2199
-msgid "Advanced Styling"
-msgstr "高级样式"
-
-#: inc/customizer/settings/woocommerce.php:2214
-msgid "On Sale Background"
-msgstr "销售背景"
-
-#: inc/customizer/settings/woocommerce.php:2230
-msgid "On Sale Color"
-msgstr "销售颜色"
-
-#: inc/customizer/settings/woocommerce.php:2246
-msgid "Out of Stock Background"
-msgstr "缺货背景"
-
-#: inc/customizer/settings/woocommerce.php:2262
-msgid "Out of Stock Color"
-msgstr "缺货颜色"
-
-#: inc/customizer/settings/woocommerce.php:2278
-msgid "Stars Color Before"
-msgstr "链接颜色:悬停"
-
-#: inc/customizer/settings/woocommerce.php:2294
-msgid "Stars Color"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:2308
-msgid "Product Entry: Toolbar"
-msgstr "产品条目: 工具栏"
-
-#: inc/customizer/settings/woocommerce.php:2323
-msgid "Border Top/Bottom Color"
-msgstr "边框顶部/底部颜色"
-
-#: inc/customizer/settings/woocommerce.php:2339
-msgid "Off Canvas Filter Color"
-msgstr "关闭画布滤镜颜色"
-
-#: inc/customizer/settings/woocommerce.php:2355
-msgid "Off Canvas Filter Border Color"
-msgstr "关闭画布滤镜边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:2371
-msgid "Off Canvas Filter Hover Color"
-msgstr "关闭画布滤镜悬停颜色"
-
-#: inc/customizer/settings/woocommerce.php:2387
-msgid "Off Canvas Filter Hover Border Color"
-msgstr "关闭画布滤镜悬停边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:2403
-msgid "Grid/List Color"
-msgstr "网格/列表颜色"
-
-#: inc/customizer/settings/woocommerce.php:2419
-msgid "Grid/List Border Color"
-msgstr "网格/列表边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:2435
-msgid "Grid/List Hover Color"
-msgstr "网格/列表悬停颜色"
-
-#: inc/customizer/settings/woocommerce.php:2451
-msgid "Grid/List Active Color"
-msgstr "网格/列表活动颜色"
-
-#: inc/customizer/settings/woocommerce.php:2467
-msgid "Select Color"
-msgstr "选择颜色"
-
-#: inc/customizer/settings/woocommerce.php:2483
-msgid "Select Border Color"
-msgstr "选择边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:2499
-msgid "Number of Products Color"
-msgstr "产品颜色数量"
-
-#: inc/customizer/settings/woocommerce.php:2515
-msgid "Number of Products Inactive Color"
-msgstr "非活动颜色的产品数量"
-
-#: inc/customizer/settings/woocommerce.php:2531
-msgid "Number of Products Border Color"
-msgstr "产品数量边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:2545
-msgid "Product Entry"
-msgstr "产品入口"
-
-#: inc/customizer/settings/woocommerce.php:2684
-msgid "Image Margin (px)"
-msgstr "图像边距 (px)"
-
-#: inc/customizer/settings/woocommerce.php:2921
-msgid "Category Color: Hover"
-msgstr "分类悬停颜色"
-
-#: inc/customizer/settings/woocommerce.php:2953
-msgid "Title Color: Hover"
-msgstr "标题悬停颜色"
-
-#: inc/customizer/settings/woocommerce.php:2985
-#: inc/customizer/settings/woocommerce.php:3413
-msgid "Del Price Color"
-msgstr ""
-
-#: inc/customizer/settings/woocommerce.php:2999
-msgid "Product Entry: Add To Cart"
-msgstr "产品入口: 产品添加到购物车"
-
-#: inc/customizer/settings/woocommerce.php:3013
-msgid "Add To Cart Background Color"
-msgstr "添加到购物车背景颜色"
-
-#: inc/customizer/settings/woocommerce.php:3028
-msgid "Add To Cart Background Color: Hover"
-msgstr "添加到购物车背景颜色: 悬停"
-
-#: inc/customizer/settings/woocommerce.php:3044
-msgid "Add To Cart Color"
-msgstr "添加到购物车: 颜色"
-
-#: inc/customizer/settings/woocommerce.php:3060
-msgid "Add To Cart Color: Hover"
-msgstr "添加到购物车颜色: 悬停"
-
-#: inc/customizer/settings/woocommerce.php:3076
-msgid "Add To Cart Border Color"
-msgstr "添加到购物车边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:3092
-msgid "Add To Cart Border Color: Hover"
-msgstr "添加到购物车边框颜色: 悬停"
-
-#: inc/customizer/settings/woocommerce.php:3108
-msgid "Add To Cart Border: Style"
-msgstr "添加到购物车边框: 样式"
-
-#: inc/customizer/settings/woocommerce.php:3115
-msgid "Solid"
-msgstr "立方体"
-
-#: inc/customizer/settings/woocommerce.php:3116
-msgid "Double"
-msgstr "两倍"
-
-#: inc/customizer/settings/woocommerce.php:3117
-msgid "Dashed"
-msgstr "虚线"
-
-#: inc/customizer/settings/woocommerce.php:3118
-msgid "Dotted"
-msgstr "点缀"
-
-#: inc/customizer/settings/woocommerce.php:3131
-msgid "Add To Cart Border: Size"
-msgstr "添加到购物车边框: 大小"
-
-#: inc/customizer/settings/woocommerce.php:3132
-msgid "Add a custom border size. px - em - %."
-msgstr "添加自定义边框大小。像素-%。"
-
-#: inc/customizer/settings/woocommerce.php:3148
-msgid "Add To Cart Border: Radius"
-msgstr "添加到购物车边框: 半径"
-
-#: inc/customizer/settings/woocommerce.php:3164
-#: inc/woocommerce/woocommerce-config.php:1130
-msgid "Quick View"
-msgstr "快速查看"
-
-#: inc/customizer/settings/woocommerce.php:3179
-msgid "Button: Background"
-msgstr "按钮: 背景"
-
-#: inc/customizer/settings/woocommerce.php:3195
-msgid "Button: Hover Background"
-msgstr "按钮: 悬停背景"
-
-#: inc/customizer/settings/woocommerce.php:3211
-msgid "Button: Color"
-msgstr "按钮: 颜色"
-
-#: inc/customizer/settings/woocommerce.php:3227
-msgid "Button: Hover Color"
-msgstr "按钮: 悬停颜色"
-
-#: inc/customizer/settings/woocommerce.php:3243
-msgid "Overlay: Background"
-msgstr "覆盖: 背景"
-
-#: inc/customizer/settings/woocommerce.php:3259
-msgid "Overlay Spinner: Outside Color"
-msgstr "覆盖微调：外部颜色"
-
-#: inc/customizer/settings/woocommerce.php:3275
-msgid "Overlay Spinner: Inner Color"
-msgstr "叠加微调框: 内部颜色"
-
-#: inc/customizer/settings/woocommerce.php:3291
-msgid "Modal: Background"
-msgstr "模式: 背景"
-
-#: inc/customizer/settings/woocommerce.php:3307
-msgid "Modal Close Button: Color"
-msgstr "模式关闭按钮：颜色"
-
-#: inc/customizer/settings/woocommerce.php:3321
-msgid "Off Canvas Sidebar"
-msgstr "关闭画布边栏"
-
-#: inc/customizer/settings/woocommerce.php:3352
-msgid "Widgets Border Color"
-msgstr "小部件边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:3429
-msgid "Description Color"
-msgstr "说明颜色"
-
-#: inc/customizer/settings/woocommerce.php:3445
-msgid "Quantity Border Color"
-msgstr "数量边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:3461
-msgid "Quantity Border Color Focus"
-msgstr "边框颜色数量集中"
-
-#: inc/customizer/settings/woocommerce.php:3493
-msgid "Quantity Plus/Minus Color"
-msgstr "数量+ / -颜色"
-
-#: inc/customizer/settings/woocommerce.php:3509
-msgid "Quantity Plus/Minus Color: Hover"
-msgstr "数量加/减颜色: 悬停"
-
-#: inc/customizer/settings/woocommerce.php:3525
-msgid "Quantity Plus/Minus Border Color: Hover"
-msgstr "数量加/减边框颜色: 悬停"
-
-#: inc/customizer/settings/woocommerce.php:3541
-msgid "Meta Title Color"
-msgstr "Meta标题颜色"
-
-#: inc/customizer/settings/woocommerce.php:3557
-msgid "Meta Link Color"
-msgstr "Meta链接颜色"
-
-#: inc/customizer/settings/woocommerce.php:3573
-msgid "Meta Link Color: Hover"
-msgstr "元链接颜色:悬停"
-
-#: inc/customizer/settings/woocommerce.php:3587
-msgid "Single Product: Product Navigation"
-msgstr "单一产品: 产品导航"
-
-#: inc/customizer/settings/woocommerce.php:3716
-msgid "Single Product: Tabs"
-msgstr "单一的产品:标签"
-
-#: inc/customizer/settings/woocommerce.php:3763
-msgid "Text Color: Hover"
-msgstr "文本颜色:悬停"
-
-#: inc/customizer/settings/woocommerce.php:3779
-msgid "Active Text Color"
-msgstr "活跃文本颜色"
-
-#: inc/customizer/settings/woocommerce.php:3795
-msgid "Active Text Borders Color"
-msgstr "活跃文本边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:3811
-msgid "Product Description: Title Color"
-msgstr "产品描述: 标题颜色"
-
-#: inc/customizer/settings/woocommerce.php:3827
-msgid "Product Description: Color"
-msgstr "产品描述: 颜色"
-
-#: inc/customizer/settings/woocommerce.php:3841
-msgid "Account"
-msgstr "帐户"
-
-#: inc/customizer/settings/woocommerce.php:3856
-msgid "Login/Register Links: Color"
-msgstr "登录/注册链接: 颜色"
-
-#: inc/customizer/settings/woocommerce.php:3872
-msgid "Navigation: Borders Color"
-msgstr "导航: 边框颜色"
-
-#: inc/customizer/settings/woocommerce.php:3888
-msgid "Navigation: Icons Color"
-msgstr "导航: 图标颜色"
-
-#: inc/customizer/settings/woocommerce.php:3904
-msgid "Navigation: Links Color"
-msgstr "导航: 链接颜色"
-
-#: inc/customizer/settings/woocommerce.php:3920
-msgid "Navigation: Links Color: Hover"
-msgstr "导航: 链接颜色: 悬停"
-
-#: inc/customizer/settings/woocommerce.php:3936
-msgid "Addresses: Box Background"
-msgstr "地址: 框背景"
-
-#: inc/customizer/settings/woocommerce.php:3952
-msgid "Addresses: Box Title Color"
-msgstr "地址: 框标题颜色"
-
-#: inc/customizer/settings/woocommerce.php:3968
-msgid "Addresses: Box Title Border Bottom Color"
-msgstr "地址:框标题边框底色"
-
-#: inc/customizer/settings/woocommerce.php:3984
-msgid "Addresses: Box Content Color"
-msgstr "地址: 方框内容颜色"
-
-#: inc/customizer/settings/woocommerce.php:4000
-msgid "Addresses: Box Button Background"
-msgstr "地址:框按钮背景"
-
-#: inc/customizer/settings/woocommerce.php:4016
-msgid "Addresses: Box Button Background: Hover"
-msgstr "地址:按钮背景:鼠标悬停"
-
-#: inc/customizer/settings/woocommerce.php:4032
-msgid "Addresses: Box Button color"
-msgstr "地址: 框按钮颜色"
-
-#: inc/customizer/settings/woocommerce.php:4048
-msgid "Addresses: Box Button color: Hover"
-msgstr "地址:按钮颜色:鼠标悬停"
-
-#: inc/customizer/settings/woocommerce.php:4062
-#: inc/woocommerce/woocommerce-config.php:712
+#: inc/customizer/settings/woocommerce.php:2352
+#: inc/customizer/settings/woocommerce.php:4777
+#: inc/woocommerce/woocommerce-config.php:841
 msgid "Cart"
 msgstr "产品入口: 产品添加到购物车"
 
-#: inc/customizer/settings/woocommerce.php:4093
-msgid "Head Background"
-msgstr "头部背景"
+#: inc/customizer/settings/woocommerce.php:2367
+msgid "Distraction Free Cart"
+msgstr "购物车里没有产品。"
 
-#: inc/customizer/settings/woocommerce.php:4109
-msgid "Head Titles Color"
-msgstr "头标题颜色"
+#: inc/customizer/settings/woocommerce.php:2383
+msgid "Cart: Cross-Sells Count"
+msgstr "购物车: 交叉销售计数"
 
-#: inc/customizer/settings/woocommerce.php:4125
-msgid "Cart Totals Table: Titles Color"
-msgstr "购物车总计表: 标题颜色"
+#: inc/customizer/settings/woocommerce.php:2403
+msgid "Cart: Cross-Sells Columns"
+msgstr "购物车: 交叉销售专栏"
 
-#: inc/customizer/settings/woocommerce.php:4140
-msgid "Remove Button Color"
-msgstr "删除按钮颜色"
+#: inc/customizer/settings/woocommerce.php:2448
+msgid "Multi-Step Checkout"
+msgstr "多步校验"
 
-#: inc/customizer/settings/woocommerce.php:4156
-msgid "Remove Button Color: Hover"
-msgstr "删除按钮颜色: 悬停"
+#: inc/customizer/settings/woocommerce.php:2465
+msgid "Timeline Style"
+msgstr "时间线样式"
 
-#: inc/customizer/settings/woocommerce.php:4170
-msgid "Checkout"
-msgstr "结帐"
+#: inc/customizer/settings/woocommerce.php:2471 inc/helpers.php:3690
+msgid "Arrow"
+msgstr "箭头"
 
-#: inc/customizer/settings/woocommerce.php:4185
+#: inc/customizer/settings/woocommerce.php:2487
+msgid "Timeline: Background"
+msgstr "时间轴: 背景"
+
+#: inc/customizer/settings/woocommerce.php:2504
+msgid "Timeline: Color"
+msgstr "时间轴: 颜色"
+
+#: inc/customizer/settings/woocommerce.php:2521
+msgid "Timeline Number: Background"
+msgstr "时间轴编号: 背景"
+
+#: inc/customizer/settings/woocommerce.php:2538
+msgid "Timeline Number: Color"
+msgstr "时间轴编号: 颜色"
+
+#: inc/customizer/settings/woocommerce.php:2555
+msgid "Timeline Number: Border Color"
+msgstr "时间线编号: 边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:2572
+msgid "Timeline Active: Background"
+msgstr "活动时间线: 背景"
+
+#: inc/customizer/settings/woocommerce.php:2589
+msgid "Timeline Active: Color"
+msgstr "时间轴活动: 颜色"
+
+#: inc/customizer/settings/woocommerce.php:2615
+msgid "On Sale Background"
+msgstr "销售背景"
+
+#: inc/customizer/settings/woocommerce.php:2631
+msgid "On Sale Color"
+msgstr "销售颜色"
+
+#: inc/customizer/settings/woocommerce.php:2647
+msgid "Out of Stock Background"
+msgstr "缺货背景"
+
+#: inc/customizer/settings/woocommerce.php:2663
+msgid "Out of Stock Color"
+msgstr "缺货颜色"
+
+#: inc/customizer/settings/woocommerce.php:2679
+msgid "Stars Color Before"
+msgstr "链接颜色:悬停"
+
+#: inc/customizer/settings/woocommerce.php:2695
+msgid "Stars Color"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:2709
+msgid "Product Entry: Toolbar"
+msgstr "产品条目: 工具栏"
+
+#: inc/customizer/settings/woocommerce.php:2724
+msgid "Border Top/Bottom Color"
+msgstr "边框顶部/底部颜色"
+
+#: inc/customizer/settings/woocommerce.php:2740
+msgid "Off Canvas Filter Color"
+msgstr "关闭画布滤镜颜色"
+
+#: inc/customizer/settings/woocommerce.php:2756
+msgid "Off Canvas Filter Border Color"
+msgstr "关闭画布滤镜边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:2772
+msgid "Off Canvas Filter Hover Color"
+msgstr "关闭画布滤镜悬停颜色"
+
+#: inc/customizer/settings/woocommerce.php:2788
+msgid "Off Canvas Filter Hover Border Color"
+msgstr "关闭画布滤镜悬停边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:2804
+msgid "Grid/List Color"
+msgstr "网格/列表颜色"
+
+#: inc/customizer/settings/woocommerce.php:2820
+msgid "Grid/List Border Color"
+msgstr "网格/列表边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:2836
+msgid "Grid/List Hover Color"
+msgstr "网格/列表悬停颜色"
+
+#: inc/customizer/settings/woocommerce.php:2852
+msgid "Grid/List Active Color"
+msgstr "网格/列表活动颜色"
+
+#: inc/customizer/settings/woocommerce.php:2868
+msgid "Select Color"
+msgstr "选择颜色"
+
+#: inc/customizer/settings/woocommerce.php:2884
+msgid "Select Border Color"
+msgstr "选择边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:2900
+msgid "Number of Products Color"
+msgstr "产品颜色数量"
+
+#: inc/customizer/settings/woocommerce.php:2916
+msgid "Number of Products Inactive Color"
+msgstr "非活动颜色的产品数量"
+
+#: inc/customizer/settings/woocommerce.php:2932
+msgid "Number of Products Border Color"
+msgstr "产品数量边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:3386
+#: inc/customizer/settings/woocommerce.php:3967
+msgid "Del Price Color"
+msgstr ""
+
+#: inc/customizer/settings/woocommerce.php:3402
+#, fuzzy
+#| msgid "Titles Border Color"
+msgid "Hover: Thumbnails Border Color"
+msgstr "标题边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:3419
+#, fuzzy
+#| msgid "Overlay: Background"
+msgid "Hover: Quick View Background"
+msgstr "覆盖: 背景"
+
+#: inc/customizer/settings/woocommerce.php:3436
+#, fuzzy
+#| msgid "Button: Hover Background"
+msgid "Hover: Quick View Hover Background"
+msgstr "按钮: 悬停背景"
+
+#: inc/customizer/settings/woocommerce.php:3453
+#, fuzzy
+#| msgid "Hover Primary Color"
+msgid "Hover: Quick View Color"
+msgstr "悬停主色"
+
+#: inc/customizer/settings/woocommerce.php:3470
+#, fuzzy
+#| msgid "Social Hover: Color"
+msgid "Hover: Quick View Hover Color"
+msgstr "社交悬停: 颜色"
+
+#: inc/customizer/settings/woocommerce.php:3487
+#, fuzzy
+#| msgid "Overlay: Background"
+msgid "Hover: Wishlist Background"
+msgstr "覆盖: 背景"
+
+#: inc/customizer/settings/woocommerce.php:3504
+#, fuzzy
+#| msgid "Button: Hover Background"
+msgid "Hover: Wishlist Hover Background"
+msgstr "按钮: 悬停背景"
+
+#: inc/customizer/settings/woocommerce.php:3521
+#, fuzzy
+#| msgid "Hover Primary Color"
+msgid "Hover: Wishlist Color"
+msgstr "悬停主色"
+
+#: inc/customizer/settings/woocommerce.php:3538
+#, fuzzy
+#| msgid "Grid/List Hover Color"
+msgid "Hover: Wishlist Hover Color"
+msgstr "网格/列表悬停颜色"
+
+#: inc/customizer/settings/woocommerce.php:3718
+#: inc/woocommerce/woocommerce-config.php:1144
+msgid "Quick View"
+msgstr "快速查看"
+
+#: inc/customizer/settings/woocommerce.php:3733
+msgid "Button: Background"
+msgstr "按钮: 背景"
+
+#: inc/customizer/settings/woocommerce.php:3749
+msgid "Button: Hover Background"
+msgstr "按钮: 悬停背景"
+
+#: inc/customizer/settings/woocommerce.php:3765
+msgid "Button: Color"
+msgstr "按钮: 颜色"
+
+#: inc/customizer/settings/woocommerce.php:3781
+msgid "Button: Hover Color"
+msgstr "按钮: 悬停颜色"
+
+#: inc/customizer/settings/woocommerce.php:3797
+msgid "Overlay: Background"
+msgstr "覆盖: 背景"
+
+#: inc/customizer/settings/woocommerce.php:3813
+msgid "Overlay Spinner: Outside Color"
+msgstr "覆盖微调：外部颜色"
+
+#: inc/customizer/settings/woocommerce.php:3829
+msgid "Overlay Spinner: Inner Color"
+msgstr "叠加微调框: 内部颜色"
+
+#: inc/customizer/settings/woocommerce.php:3845
+msgid "Modal: Background"
+msgstr "模式: 背景"
+
+#: inc/customizer/settings/woocommerce.php:3861
+msgid "Modal Close Button: Color"
+msgstr "模式关闭按钮：颜色"
+
+#: inc/customizer/settings/woocommerce.php:3875
+msgid "Off Canvas Sidebar"
+msgstr "关闭画布边栏"
+
+#: inc/customizer/settings/woocommerce.php:3906
+msgid "Widgets Border Color"
+msgstr "小部件边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:3999
+msgid "Quantity Border Color"
+msgstr "数量边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:4015
+msgid "Quantity Border Color Focus"
+msgstr "边框颜色数量集中"
+
+#: inc/customizer/settings/woocommerce.php:4047
+msgid "Quantity Plus/Minus Color"
+msgstr "数量+ / -颜色"
+
+#: inc/customizer/settings/woocommerce.php:4063
+msgid "Quantity Plus/Minus Color: Hover"
+msgstr "数量加/减颜色: 悬停"
+
+#: inc/customizer/settings/woocommerce.php:4079
+msgid "Quantity Plus/Minus Border Color: Hover"
+msgstr "数量加/减边框颜色: 悬停"
+
+#: inc/customizer/settings/woocommerce.php:4111
+msgid "Meta Link Color"
+msgstr "Meta链接颜色"
+
+#: inc/customizer/settings/woocommerce.php:4141
+msgid "Single Product: Product Navigation"
+msgstr "单一产品: 产品导航"
+
+#: inc/customizer/settings/woocommerce.php:4270
+#, fuzzy
+#| msgid "Single Product: Tabs"
+msgid "Single Product: Add To Cart"
+msgstr "单一的产品:标签"
+
+#: inc/customizer/settings/woocommerce.php:4431
+msgid "Single Product: Tabs"
+msgstr "单一的产品:标签"
+
+#: inc/customizer/settings/woocommerce.php:4478
+msgid "Text Color: Hover"
+msgstr "文本颜色:悬停"
+
+#: inc/customizer/settings/woocommerce.php:4494
+msgid "Active Text Color"
+msgstr "活跃文本颜色"
+
+#: inc/customizer/settings/woocommerce.php:4510
+msgid "Active Text Borders Color"
+msgstr "活跃文本边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:4526
+msgid "Product Description: Title Color"
+msgstr "产品描述: 标题颜色"
+
+#: inc/customizer/settings/woocommerce.php:4542
+msgid "Product Description: Color"
+msgstr "产品描述: 颜色"
+
+#: inc/customizer/settings/woocommerce.php:4556
+msgid "Account"
+msgstr "帐户"
+
+#: inc/customizer/settings/woocommerce.php:4571
+msgid "Login/Register Links: Color"
+msgstr "登录/注册链接: 颜色"
+
+#: inc/customizer/settings/woocommerce.php:4587
+msgid "Navigation: Borders Color"
+msgstr "导航: 边框颜色"
+
+#: inc/customizer/settings/woocommerce.php:4603
+msgid "Navigation: Icons Color"
+msgstr "导航: 图标颜色"
+
+#: inc/customizer/settings/woocommerce.php:4619
+msgid "Navigation: Links Color"
+msgstr "导航: 链接颜色"
+
+#: inc/customizer/settings/woocommerce.php:4635
+msgid "Navigation: Links Color: Hover"
+msgstr "导航: 链接颜色: 悬停"
+
+#: inc/customizer/settings/woocommerce.php:4651
+msgid "Addresses: Box Background"
+msgstr "地址: 框背景"
+
+#: inc/customizer/settings/woocommerce.php:4667
+msgid "Addresses: Box Title Color"
+msgstr "地址: 框标题颜色"
+
+#: inc/customizer/settings/woocommerce.php:4683
+msgid "Addresses: Box Title Border Bottom Color"
+msgstr "地址:框标题边框底色"
+
+#: inc/customizer/settings/woocommerce.php:4699
+msgid "Addresses: Box Content Color"
+msgstr "地址: 方框内容颜色"
+
+#: inc/customizer/settings/woocommerce.php:4715
+msgid "Addresses: Box Button Background"
+msgstr "地址:框按钮背景"
+
+#: inc/customizer/settings/woocommerce.php:4731
+msgid "Addresses: Box Button Background: Hover"
+msgstr "地址:按钮背景:鼠标悬停"
+
+#: inc/customizer/settings/woocommerce.php:4747
+msgid "Addresses: Box Button color"
+msgstr "地址: 框按钮颜色"
+
+#: inc/customizer/settings/woocommerce.php:4763
+msgid "Addresses: Box Button color: Hover"
+msgstr "地址:按钮颜色:鼠标悬停"
+
+#: inc/customizer/settings/woocommerce.php:4900
 msgid "Notices: Borders Color"
 msgstr "通告: 边框颜色"
 
-#: inc/customizer/settings/woocommerce.php:4201
+#: inc/customizer/settings/woocommerce.php:4916
 msgid "Notices: Icon Color"
 msgstr "注意事项: 图标颜色"
 
-#: inc/customizer/settings/woocommerce.php:4217
+#: inc/customizer/settings/woocommerce.php:4932
 msgid "Notices: Color"
 msgstr "注意事项: 颜色"
 
-#: inc/customizer/settings/woocommerce.php:4233
+#: inc/customizer/settings/woocommerce.php:4948
 msgid "Notices: Link Color"
 msgstr "注意事项: 链接颜色"
 
-#: inc/customizer/settings/woocommerce.php:4249
+#: inc/customizer/settings/woocommerce.php:4964
 msgid "Notices: Link Color: Hover"
 msgstr "注意事项: 链接颜色: 悬停"
 
-#: inc/customizer/settings/woocommerce.php:4265
+#: inc/customizer/settings/woocommerce.php:4980
 msgid "Notices Form: Border Color"
 msgstr "公告形式: 边框颜色"
 
-#: inc/customizer/settings/woocommerce.php:4281
-msgid "Titles Color"
-msgstr "标题颜色"
-
-#: inc/customizer/settings/woocommerce.php:4297
-msgid "Titles Border Bottom Color"
-msgstr "标题边框底颜色"
-
-#: inc/customizer/settings/woocommerce.php:4313
+#: inc/customizer/settings/woocommerce.php:5028
 msgid "Table Main Background"
 msgstr "表主要背景"
 
-#: inc/customizer/settings/woocommerce.php:4329
+#: inc/customizer/settings/woocommerce.php:5044
 msgid "Table Titles Color"
 msgstr "表标题颜色"
 
-#: inc/customizer/settings/woocommerce.php:4345
+#: inc/customizer/settings/woocommerce.php:5060
 msgid "Table Borders Color"
 msgstr "表格边框颜色"
 
-#: inc/customizer/settings/woocommerce.php:4361
+#: inc/customizer/settings/woocommerce.php:5076
 msgid "Payment Methods Background"
 msgstr "付款方式背景"
 
-#: inc/customizer/settings/woocommerce.php:4377
+#: inc/customizer/settings/woocommerce.php:5092
 msgid "Payment Methods Borders Color"
 msgstr "付款方式边框颜色"
 
-#: inc/customizer/settings/woocommerce.php:4393
+#: inc/customizer/settings/woocommerce.php:5108
 msgid "Payment Box Background"
 msgstr "付款箱背景"
 
-#: inc/customizer/settings/woocommerce.php:4409
+#: inc/customizer/settings/woocommerce.php:5124
 msgid "Payment Box Color"
 msgstr "付款箱颜色"
 
-#: inc/helpers.php:1559 partials/mobile/mobile-fullscreen-search.php:28
+#: inc/edd/edd-config.php:124
+#, fuzzy
+#| msgid "Sidebar"
+msgid "EDD Sidebar"
+msgstr "侧栏"
+
+#: inc/edd/edd-config.php:392 inc/woocommerce/woocommerce-config.php:1864
+msgid "Your cart"
+msgstr "您的购物车"
+
+#: inc/edd/edd-config.php:495
+#, fuzzy
+#| msgid "WooCommerce Product Title"
+msgid "EDD Product Title"
+msgstr "WooCommerce 产品名称"
+
+#: inc/edd/edd-config.php:506
+#, fuzzy
+#| msgid "WooCommerce Product Price"
+msgid "EDD Product Price"
+msgstr "WooCommerce 产品价格"
+
+#: inc/edd/edd-config.php:516
+#, fuzzy
+#| msgid "Product Entry: Add To Cart"
+msgid "EDD Product Add To Cart"
+msgstr "产品入口: 产品添加到购物车"
+
+#: inc/edd/edd-helpers.php:199
+#, fuzzy
+#| msgid "Hide Details"
+msgid "View Details"
+msgstr "隐藏详细信息"
+
+#: inc/edd/edd-helpers.php:202
+#, fuzzy
+#| msgid "Add To Cart Color"
+msgid "Add to Cart"
+msgstr "添加到购物车: 颜色"
+
+#: inc/helpers.php:1697 partials/mobile/mobile-fullscreen-search.php:28
 msgid "Type your search"
 msgstr "键入搜索范围"
 
-#: inc/helpers.php:1799
+#: inc/helpers.php:1944
 msgid "Recent Posts"
 msgstr "最近的帖子"
 
-#: inc/helpers.php:1812
+#: inc/helpers.php:1957
 msgid "Search Results Found"
 msgstr "未找到任何文件"
 
-#: inc/helpers.php:1830
+#: inc/helpers.php:1975
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "每日存档:%s"
 
-#: inc/helpers.php:1835
+#: inc/helpers.php:1980
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "每月存档:%s"
 
-#: inc/helpers.php:1835
+#: inc/helpers.php:1980
 msgid "F Y"
 msgstr ""
 
-#: inc/helpers.php:1840
+#: inc/helpers.php:1985
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "年度存档:%s"
 
-#: inc/helpers.php:1862
+#: inc/helpers.php:2007
 msgid "404: Page Not Found"
 msgstr "404: Page Not Found"
 
-#: inc/helpers.php:1918
+#: inc/helpers.php:2070
 msgid "You searched for:"
 msgstr "您搜索:"
 
-#: inc/helpers.php:1923
+#: inc/helpers.php:2075
 msgid "This author has written"
 msgstr "这个作者已经写了"
 
-#: inc/helpers.php:1923
+#: inc/helpers.php:2075
 msgid "articles"
 msgstr "文章"
 
-#: inc/helpers.php:2711
+#: inc/helpers.php:2905
 msgid "Read More"
 msgstr "阅读更多"
 
-#: inc/helpers.php:2796
+#: inc/helpers.php:2990
 msgid "Tags"
 msgstr "标签"
 
-#: inc/helpers.php:2797
+#: inc/helpers.php:2991
 msgid "Social Share"
 msgstr "社交分享"
 
-#: inc/helpers.php:2798
+#: inc/helpers.php:2992
 msgid "Next/Prev Links"
 msgstr "下一页/上一个链接"
 
-#: inc/helpers.php:2799
+#: inc/helpers.php:2993
 msgid "Author Box"
 msgstr "作者框"
 
-#: inc/helpers.php:2800
+#: inc/helpers.php:2994
 msgid "Related Posts"
 msgstr "相关职位"
 
-#: inc/helpers.php:2889
+#: inc/helpers.php:3083
 msgid "Pingback:"
 msgstr "通告:"
 
-#: inc/helpers.php:2889
+#: inc/helpers.php:3083
 msgid "(Edit)"
 msgstr "（编辑)"
 
-#: inc/helpers.php:2907
+#: inc/helpers.php:3101
 #, php-format
 msgid "%s "
 msgstr "第 %s页"
 
-#: inc/helpers.php:2916
+#: inc/helpers.php:3110
 msgid "edit"
 msgstr "编辑"
 
-#: inc/helpers.php:2928
+#: inc/helpers.php:3122
 msgid "Your comment is awaiting moderation."
 msgstr "你的评论正在等待缓和。"
 
-#: inc/helpers.php:2958
+#: inc/helpers.php:3152
 msgid "Name (required)"
 msgstr "名称 (必需)"
 
-#: inc/helpers.php:2960
+#: inc/helpers.php:3154
 msgid "Email (required)"
 msgstr "电子邮件 (必需)"
 
-#: inc/helpers.php:2962
+#: inc/helpers.php:3156
 msgid "Website"
 msgstr "网站"
 
-#: inc/helpers.php:3059 inc/helpers.php:3113
-#: inc/woocommerce/woocommerce-config.php:367
+#: inc/helpers.php:3253 inc/helpers.php:3307
+#: inc/woocommerce/woocommerce-config.php:570
 msgid "Newer Posts"
 msgstr "新的帖子"
 
-#: inc/helpers.php:3062 inc/helpers.php:3114
-#: inc/woocommerce/woocommerce-config.php:368
+#: inc/helpers.php:3256 inc/helpers.php:3308
+#: inc/woocommerce/woocommerce-config.php:571
 msgid "Older Posts"
 msgstr "旧帖子"
 
-#: inc/helpers.php:3406
+#: inc/helpers.php:3636
 msgid "OceanWP"
 msgstr "OceanWP"
 
-#: inc/helpers.php:3453
+#: inc/helpers.php:3683
 msgid "Default Icon"
 msgstr "默认图标"
 
-#: inc/helpers.php:3454
+#: inc/helpers.php:3684
 msgid "3D X"
 msgstr ""
 
-#: inc/helpers.php:3455
+#: inc/helpers.php:3685
 msgid "3D X Reverse"
 msgstr ""
 
-#: inc/helpers.php:3456
+#: inc/helpers.php:3686
 msgid "3D Y"
 msgstr ""
 
-#: inc/helpers.php:3457
+#: inc/helpers.php:3687
 msgid "3D Y Reverse"
 msgstr ""
 
-#: inc/helpers.php:3458
+#: inc/helpers.php:3688
 msgid "3D XY"
 msgstr ""
 
-#: inc/helpers.php:3459
+#: inc/helpers.php:3689
 msgid "3D XY Reverse"
 msgstr ""
 
-#: inc/helpers.php:3461
+#: inc/helpers.php:3691
 msgid "Arrow Reverse"
 msgstr "箭头"
 
-#: inc/helpers.php:3462
+#: inc/helpers.php:3692
 msgid "Arrowalt"
 msgstr ""
 
-#: inc/helpers.php:3463
+#: inc/helpers.php:3693
 msgid "Arrowalt Reverse"
 msgstr ""
 
-#: inc/helpers.php:3464
+#: inc/helpers.php:3694
 msgid "Arrowturn"
 msgstr ""
 
-#: inc/helpers.php:3465
+#: inc/helpers.php:3695
 msgid "Arrowturn Reverse"
 msgstr ""
 
-#: inc/helpers.php:3466
+#: inc/helpers.php:3696
 msgid "Boring"
 msgstr ""
 
-#: inc/helpers.php:3467
+#: inc/helpers.php:3697
 msgid "Collapse"
 msgstr ""
 
-#: inc/helpers.php:3468
+#: inc/helpers.php:3698
 msgid "Collapse Reverse"
 msgstr ""
 
-#: inc/helpers.php:3469
+#: inc/helpers.php:3699
 msgid "Elastic"
 msgstr ""
 
-#: inc/helpers.php:3470
+#: inc/helpers.php:3700
 msgid "Elastic Reverse"
 msgstr ""
 
-#: inc/helpers.php:3471
+#: inc/helpers.php:3701
 msgid "Minus"
 msgstr ""
 
-#: inc/helpers.php:3472
+#: inc/helpers.php:3702
 msgid "Slider"
 msgstr ""
 
-#: inc/helpers.php:3473
+#: inc/helpers.php:3703
 msgid "Slider Reverse"
 msgstr ""
 
-#: inc/helpers.php:3474
+#: inc/helpers.php:3704
 msgid "Spin"
 msgstr ""
 
-#: inc/helpers.php:3475
+#: inc/helpers.php:3705
 msgid "Spin Reverse"
 msgstr ""
 
-#: inc/helpers.php:3476
+#: inc/helpers.php:3706
 msgid "Spring"
 msgstr ""
 
-#: inc/helpers.php:3477
+#: inc/helpers.php:3707
 msgid "Spring Reverse"
 msgstr ""
 
-#: inc/helpers.php:3478
+#: inc/helpers.php:3708
 msgid "Stand"
 msgstr ""
 
-#: inc/helpers.php:3479
+#: inc/helpers.php:3709
 msgid "Stand Reverse"
 msgstr ""
 
-#: inc/helpers.php:3480
+#: inc/helpers.php:3710
 msgid "Squeeze"
 msgstr ""
 
-#: inc/helpers.php:3481
+#: inc/helpers.php:3711
 msgid "Vortex"
 msgstr ""
 
-#: inc/helpers.php:3482
+#: inc/helpers.php:3712
 msgid "Vortex Reverse"
 msgstr ""
 
-#: inc/helpers.php:3536
+#: inc/helpers.php:3766
 msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
 msgstr ""
 
-#: inc/helpers.php:3559
+#: inc/helpers.php:3789
 msgid "Twitter"
 msgstr ""
 
-#: inc/helpers.php:3563
+#: inc/helpers.php:3793
 msgid "Facebook"
 msgstr ""
 
-#: inc/helpers.php:3567
+#: inc/helpers.php:3797
 msgid "Google Plus"
 msgstr ""
 
-#: inc/helpers.php:3571
+#: inc/helpers.php:3801
 msgid "Pinterest"
 msgstr ""
 
-#: inc/helpers.php:3575
+#: inc/helpers.php:3805
 msgid "Dribbble"
 msgstr ""
 
-#: inc/helpers.php:3579
+#: inc/helpers.php:3809
 msgid "VK"
 msgstr ""
 
-#: inc/helpers.php:3583
+#: inc/helpers.php:3813
 msgid "Instagram"
 msgstr ""
 
-#: inc/helpers.php:3587
+#: inc/helpers.php:3817
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/helpers.php:3591
+#: inc/helpers.php:3821
 msgid "Tumblr"
 msgstr ""
 
-#: inc/helpers.php:3595
+#: inc/helpers.php:3825
 msgid "Github"
 msgstr ""
 
-#: inc/helpers.php:3599
+#: inc/helpers.php:3829
 msgid "Flickr"
 msgstr ""
 
-#: inc/helpers.php:3603
+#: inc/helpers.php:3833
 msgid "Skype"
 msgstr ""
 
-#: inc/helpers.php:3607
+#: inc/helpers.php:3837
 msgid "Youtube"
 msgstr ""
 
-#: inc/helpers.php:3611
+#: inc/helpers.php:3841
 msgid "Vimeo"
 msgstr ""
 
-#: inc/helpers.php:3615
+#: inc/helpers.php:3845
 msgid "Vine"
 msgstr ""
 
-#: inc/helpers.php:3619
+#: inc/helpers.php:3849
 msgid "Xing"
 msgstr ""
 
-#: inc/helpers.php:3623
+#: inc/helpers.php:3853
 msgid "Yelp"
 msgstr ""
 
-#: inc/helpers.php:3627
+#: inc/helpers.php:3857
 msgid "Tripadvisor"
 msgstr ""
 
-#: inc/helpers.php:3631
+#: inc/helpers.php:3861
 msgid "RSS"
 msgstr ""
 
-#: inc/helpers.php:3635
+#: inc/helpers.php:3865
 msgid "Email"
 msgstr ""
 
@@ -4312,6 +5236,60 @@ msgstr "页脚内"
 msgid "After Footer"
 msgstr "页脚"
 
+#: inc/third/class-learndash.php:189
+msgid "LearnDash Titles"
+msgstr ""
+
+#: inc/third/class-learndash.php:200
+msgid "LearnDash Table Heading"
+msgstr ""
+
+#: inc/third/class-learndash.php:211
+msgid "LearnDash Table Item"
+msgstr ""
+
+#: inc/third/class-learndash.php:222
+msgid "LearnDash Take Course Button"
+msgstr ""
+
+#: inc/third/class-lifterlms.php:299
+#, fuzzy
+#| msgid "Center Header Settings"
+msgid "OceanWP Theme Setting"
+msgstr "页眉居中设置"
+
+#: inc/third/class-lifterlms.php:309
+msgid "Right Sidebar"
+msgstr "右侧边栏"
+
+#: inc/third/class-lifterlms.php:311
+#, fuzzy
+#| msgid "Header Full Width"
+msgid "Full Width"
+msgstr "全宽页眉"
+
+#: inc/third/class-lifterlms.php:313
+#, fuzzy
+#| msgid "Before Sidebar"
+msgid "Both Sidebar"
+msgstr "边栏前"
+
+#: inc/third/class-lifterlms.php:417
+msgid "LifterLMS Course/Lesson Title"
+msgstr ""
+
+#: inc/third/class-lifterlms.php:428
+msgid "LifterLMS Section Title"
+msgstr ""
+
+#: inc/third/class-lifterlms.php:439
+msgid "LifterLMS Lesson Title"
+msgstr ""
+
+#: inc/third/class-lifterlms.php:450
+msgid "LifterLMS Buy Button"
+msgstr ""
+
 #: inc/walker/init.php:70
 msgid "Template"
 msgstr "模板"
@@ -4356,24 +5334,28 @@ msgstr "超级菜单小部件区域"
 msgid "Select Widget Area"
 msgstr "选择小部件区域"
 
-#: inc/walker/menu-walker.php:222
+#: inc/walker/menu-walker.php:291
 msgid "Latest in"
 msgstr "Latest in"
 
-#: inc/woocommerce/woocommerce-config.php:461
+#: inc/woocommerce/woocommerce-config.php:338
 msgid "WooCommerce Sidebar"
 msgstr "WooCommerce 边栏"
 
-#: inc/woocommerce/woocommerce-config.php:633
+#: inc/woocommerce/woocommerce-config.php:760
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "I don&rsquo;t have an account"
 msgstr "我没有帐户"
 
-#: inc/woocommerce/woocommerce-config.php:739
+#: inc/woocommerce/woocommerce-config.php:774
+msgid "View cart"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:868
 msgid "Off-Canvas Filters"
 msgstr "画布滤镜"
 
-#: inc/woocommerce/woocommerce-config.php:740
+#: inc/woocommerce/woocommerce-config.php:869
 msgid ""
 "Widgets in this area are used in the off canvas sidebar. To enable the Off "
 "Canvas filter, go to the WooCommerce > Archives section of the customizer "
@@ -4382,99 +5364,148 @@ msgstr ""
 "此区域中的小部件在画布边栏中使用。要启用 \"关闭画布\" 筛选, 请转到定制器的 "
 "\"WooCommerce > 存档\" 部分, 并启用 \"显示筛选器\" 按钮选项。"
 
-#: inc/woocommerce/woocommerce-config.php:809
+#: inc/woocommerce/woocommerce-config.php:935
 msgid "Grid view"
 msgstr "网格视图"
 
-#: inc/woocommerce/woocommerce-config.php:810
+#: inc/woocommerce/woocommerce-config.php:936
 msgid "List view"
 msgstr "列表视图"
 
-#: inc/woocommerce/woocommerce-config.php:964
+#: inc/woocommerce/woocommerce-config.php:1090
 msgid "Out of Stock"
 msgstr "缺货"
 
-#: inc/woocommerce/woocommerce-config.php:1291
-msgid "Selected:"
-msgstr "选择："
+#: inc/woocommerce/woocommerce-config.php:1223
+#, fuzzy
+#| msgid "Previous Post"
+msgid "Previous Product"
+msgstr "以前的文章"
 
-#: inc/woocommerce/woocommerce-config.php:1301
-msgid "Out of stock"
-msgstr "缺货"
+#: inc/woocommerce/woocommerce-config.php:1227
+#, fuzzy
+#| msgid "Next Post"
+msgid "Next Product"
+msgstr "在下一篇文章"
 
-#: inc/woocommerce/woocommerce-config.php:1306
+#: inc/woocommerce/woocommerce-config.php:1276
 msgid "Select Options"
 msgstr "选择选项"
 
-#: inc/woocommerce/woocommerce-config.php:1360
+#: inc/woocommerce/woocommerce-config.php:1282
+msgid "Selected:"
+msgstr "选择："
+
+#: inc/woocommerce/woocommerce-config.php:1292
+msgid "Out of stock"
+msgstr "缺货"
+
+#: inc/woocommerce/woocommerce-config.php:1351
 msgid "Welcome!"
 msgstr "欢迎！"
 
-#: inc/woocommerce/woocommerce-config.php:1369
+#: inc/woocommerce/woocommerce-config.php:1360
 msgid "Logout"
 msgstr "注销"
 
-#: inc/woocommerce/woocommerce-config.php:1847
-msgid "Your cart"
-msgstr "您的购物车"
+#: inc/woocommerce/woocommerce-config.php:1987
+#, fuzzy, php-format
+#| msgid "%s "
+msgid "%s"
+msgstr "第 %s页"
 
-#: inc/woocommerce/woocommerce-config.php:1939
-msgid "Sale"
+#: inc/woocommerce/woocommerce-config.php:1991
+#, fuzzy
+#| msgid "Sale"
+msgid "Sale!"
 msgstr "销售"
 
-#: inc/woocommerce/woocommerce-config.php:1973
+#: inc/woocommerce/woocommerce-config.php:2028
 #: woocommerce/checkout/checkout-timeline.php:42
 msgid "Login"
 msgstr "Login"
 
-#: inc/woocommerce/woocommerce-config.php:1986
+#: inc/woocommerce/woocommerce-config.php:2041
 msgid "Or"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1988
+#: inc/woocommerce/woocommerce-config.php:2043
 msgid "Register"
 msgstr "注册"
 
-#: inc/woocommerce/woocommerce-config.php:2092
+#: inc/woocommerce/woocommerce-config.php:2165
+#, fuzzy, php-format
+#| msgid "Shipping"
+msgid "Shipping %s"
+msgstr "运送"
+
+#: inc/woocommerce/woocommerce-config.php:2169
+#, fuzzy, php-format
+#| msgid "Billing"
+msgid "Billing %s"
+msgstr "计费"
+
+#: inc/woocommerce/woocommerce-config.php:2178
+#, php-format
+msgid "%s is not a valid postcode / ZIP."
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:2187
+#, php-format
+msgid "%s is not a valid phone number."
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:2196
+#, php-format
+msgid "%s is not a valid email address."
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:2216
+#, php-format
+msgid "%1$s is not valid. Please enter one of the following: %2$s"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:2223
+#, php-format
+msgid "%s is a required field."
+msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:2310
 msgid "WooCommerce Product Title"
 msgstr "WooCommerce 产品名称"
 
-#: inc/woocommerce/woocommerce-config.php:2103
+#: inc/woocommerce/woocommerce-config.php:2321
 msgid "WooCommerce Product Price"
 msgstr "WooCommerce 产品价格"
 
-#: inc/woocommerce/woocommerce-config.php:2113
+#: inc/woocommerce/woocommerce-config.php:2331
 msgid "WooCommerce Product Add To Cart"
 msgstr "WooCommerce 产品添加到购物车"
 
-#: inc/woocommerce/woocommerce-config.php:2164
-msgid "Share on"
-msgstr "分享"
-
-#: inc/woocommerce/woocommerce-helpers.php:87
+#: inc/woocommerce/woocommerce-helpers.php:116
 #: woocommerce/loop/thumbnail/featured-image.php:53
 msgid "Placeholder Image"
 msgstr "图像占位符"
 
-#: partials/entry/meta.php:42 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:48
+#: partials/edd/single.php:54 partials/entry/readmore.php:14
+#: partials/search/readmore.php:14 partials/single/next-prev.php:28
+msgid "Continue Reading"
+msgstr "继续阅读"
+
+#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:52
 msgid "0 Comments"
 msgstr "0评论"
 
-#: partials/entry/meta.php:42 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:48
+#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:52
 msgid "1 Comment"
 msgstr "1评论"
 
-#: partials/entry/meta.php:42 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:48
+#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:52
 msgid "% Comments"
 msgstr "%评论"
-
-#: partials/entry/readmore.php:14 partials/search/readmore.php:14
-#: partials/single/next-prev.php:28
-msgid "Continue Reading"
-msgstr "继续阅读"
 
 #: partials/header/search-overlay.php:21
 msgid "Type your text and hit enter to search"
@@ -4540,15 +5571,11 @@ msgstr "在下一篇文章"
 msgid "You Might Also Like"
 msgstr "你可能也喜欢"
 
-#: woocommerce/cart/mini-cart.php:76
+#: woocommerce/cart/mini-cart.php:73
 msgid "Remove this item"
 msgstr "删除这一项"
 
-#: woocommerce/cart/mini-cart.php:93
-msgid "Subtotal"
-msgstr "小计"
-
-#: woocommerce/cart/mini-cart.php:101
+#: woocommerce/cart/mini-cart.php:111
 msgid "No products in the cart."
 msgstr "购物车里没有产品。"
 
@@ -4585,7 +5612,7 @@ msgstr "返回购物车"
 msgid "Prev"
 msgstr "上一页"
 
-#: woocommerce/quick-view-image.php:53
+#: woocommerce/quick-view-image.php:55
 msgid "Placeholder"
 msgstr "占 位 符"
 
@@ -4596,3 +5623,16 @@ msgstr "视图："
 #: woocommerce/result-count.php:63
 msgid "All"
 msgstr "所有"
+
+#, php-format
+#~ msgid "Search results for &#8220;%s&#8221;"
+#~ msgstr "&#8220;%s&#8221的搜索结果;"
+
+#~ msgid "Cart/Checkout"
+#~ msgstr "购物车/结帐"
+
+#~ msgid "Share on"
+#~ msgstr "分享"
+
+#~ msgid "Subtotal"
+#~ msgstr "小计"
