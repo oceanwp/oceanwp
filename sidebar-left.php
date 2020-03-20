@@ -7,7 +7,7 @@
 
 <?php do_action( 'ocean_before_sidebar' ); ?>
 
-<aside id="left-sidebar" class="sidebar-container widget-area sidebar-secondary"<?php oceanwp_schema_markup( 'sidebar' ); ?> role="complementary" aria-label="<?php _e( 'Secondary', 'oceanwp' ); ?>">
+<aside id="left-sidebar" class="sidebar-container widget-area sidebar-secondary"<?php oceanwp_schema_markup( 'sidebar' ); ?> role="complementary" aria-label="<?php _e( 'Secondary Sidebar', 'oceanwp' ); ?>">
 
 	<?php do_action( 'ocean_before_sidebar_inner' ); ?>
 

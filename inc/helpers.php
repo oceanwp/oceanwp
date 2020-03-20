@@ -326,6 +326,23 @@ if ( ! function_exists( 'oceanwp_post_id' ) ) {
 }
 
 /**
+ * Get unique ID
+ *
+ * Based on the TwentyTwenty theme unique ID method: inc\template-tags.php
+ *
+ * @since 1.7.9
+ */
+if ( ! function_exists( 'oceanwp_unique_id' ) ) {
+	function oceanwp_unique_id( $prefix = '' ) {
+		static $id_counter = 0;
+		if ( function_exists( 'wp_unique_id' ) ) {
+			return wp_unique_id( $prefix );
+		}
+		return $prefix . (string) ++$id_counter;
+	}
+}
+
+/**
  * Returns correct post layout
  *
  * @since 1.0.0
@@ -1707,8 +1724,8 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 					}
 				$items .= '</form>';
 			} else {
-				$items .= '<a href="#" class="site-search-toggle'. $class .'">';
-					$items .= '<span class="icon-magnifier"></span>';
+				$items .= '<a href="#" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
+					$items .= '<span class="icon-magnifier" aria-hidden="true"></span>';
 				$items .= '</a>';
 			}
 		$items .= '</li>';
@@ -1740,7 +1757,7 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 			|| 'disabled' == $search_style ) {
 			return;
 		}
-		
+
 		// Get correct search icon class
 		if ( 'drop_down' == $search_style ) {
 			$class = ' search-dropdown-toggle';
@@ -1754,11 +1771,11 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 
 		// Add search item to menu
 		echo '<div id="search-toggle">';
-			echo '<a href="#" class="site-search-toggle'. esc_attr( $class ) .'">';
-				echo '<span class="icon-magnifier"></span>';
+			echo '<a href="#" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
+				echo '<span class="icon-magnifier" aria-hidden="true"></span>';
 			echo '</a>';
 		echo '</div>';
-		
+
 	}
 
 }
@@ -3100,7 +3117,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 
 		            <div class="comment-content">
 		                <div class="comment-author">
-		                    <h3 class="comment-link"><?php printf( esc_html__( '%s ', 'oceanwp' ), sprintf( '%s', get_comment_author_link() ) ); ?></h3>
+		                    <span class="comment-link"><?php printf( esc_html__( '%s ', 'oceanwp' ), sprintf( '%s', get_comment_author_link() ) ); ?></span>
 
 		                    <span class="comment-meta commentmetadata">
 		                    	<?php if ( ! is_rtl() ) { ?>
@@ -3109,7 +3126,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 
 		                        <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 
-		                        <?php edit_comment_link(__('edit', 'oceanwp' )); ?>
+		                        <?php edit_comment_link(__( 'edit', 'oceanwp' )); ?>
 
 		                    	<?php if ( is_rtl() ) { ?>
 		                        	<span class="comment-date"><?php comment_date('j M Y'); ?></span>
@@ -3151,11 +3168,11 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
 
-		$fields['author'] 	= '<div class="comment-form-author"><label for="author" class="screen-reader-text">'. esc_attr( 'Author', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_attr__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="101"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
+		$fields['author'] 	= '<div class="comment-form-author"><label for="author" class="screen-reader-text">'. esc_attr_x( 'Enter your name or username', 'screen reader text for comment author', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_attr__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="0"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
 
-		$fields['email'] 	= '<div class="comment-form-email"><label for="email" class="screen-reader-text">'. esc_attr( 'Email', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_attr__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="102"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
+		$fields['email'] 	= '<div class="comment-form-email"><label for="email" class="screen-reader-text">'. esc_attr_x( 'Enter your email', 'screen reader text for comment author email', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_attr__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="0"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
 
-		$fields['url'] 		= '<div class="comment-form-url"><label for="url" class="screen-reader-text">'. esc_attr( 'URL', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_attr__( 'Website', 'oceanwp' ) .'" size="22" tabindex="103" class="input-website" /></div>';
+		$fields['url'] 		= '<div class="comment-form-url"><label for="url" class="screen-reader-text">'. esc_attr_x( 'Enter your website URL (optional)', 'screen reader text for comment author website url', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_attr__( 'Website', 'oceanwp' ) .'" size="22" tabindex="0" class="input-website" /></div>';
 
 		return $fields;
 
@@ -3219,8 +3236,8 @@ if ( ! function_exists( 'oceanwp_pagination') ) {
 				'total'     => $total,
 				'mid_size'  => 3,
 				'type'      => 'list',
-				'prev_text' => '<i class="'. $prev_arrow .'"></i>',
-				'next_text' => '<i class="'. $next_arrow .'"></i>',
+				'prev_text' => '<span class="screen-reader-text">'. esc_attr__( 'Go to the previous page','oceanwp' ) .'</span><i class="'. $prev_arrow .'" aria-hidden="true"></i>',
+				'next_text' => '<span class="screen-reader-text">'. esc_attr__( 'Go to the next page','oceanwp' ) .'</span><i class="'. $next_arrow .'" aria-hidden="true"></i>',
 			) );
 
 			// Output pagination
@@ -3252,10 +3269,10 @@ if ( ! function_exists( 'oceanwp_pagejump' ) ) {
 
 			$output .= '<div class="page-jump clr">';
 				$output .= '<div class="alignleft newer-posts">';
-					$output .= get_previous_posts_link( '&larr; '. esc_html__( 'Newer Posts', 'oceanwp' ) );
+					$output .= get_previous_posts_link( '<span aria-hidden="true">&larr;</span> '. esc_attr__( 'Newer Posts', 'oceanwp' ) );
 				$output .= '</div>';
 				$output .= '<div class="alignright older-posts">';
-					$output .= get_next_posts_link( esc_html__( 'Older Posts', 'oceanwp' ) .' &rarr;' );
+					$output .= get_next_posts_link( esc_attr__( 'Older Posts', 'oceanwp' ) .' <span aria-hidden="true">&rarr;</span>' );
 				$output .= '</div>';
 			$output .= '</div>';
 
@@ -3306,8 +3323,8 @@ if ( ! function_exists( 'oceanwp_infinite_scroll' ) ) {
 			$output .= '<p class="scroller-status__message infinite-scroll-error">'. $error .'</p>';
 		$output .= '</div>';
 		$output .= '<div class="infinite-scroll-nav clr">';
-			$output .= '<div class="alignleft newer-posts">'. get_previous_posts_link('&larr; '. esc_html__( 'Newer Posts', 'oceanwp' ) ) .'</div>';
-			$output .= '<div class="alignright older-posts">'. get_next_posts_link( esc_html__( 'Older Posts', 'oceanwp' ) .' &rarr;') .'</div>';
+			$output .= '<div class="alignleft newer-posts">'. get_previous_posts_link( '<span aria-hidden="true">&larr;</span> '. esc_attr__( 'Newer Posts', 'oceanwp' ) ) .'</div>';
+			$output .= '<div class="alignright older-posts">'. get_next_posts_link( esc_attr__( 'Older Posts', 'oceanwp' ) .' <span aria-hidden="true">&rarr;</span>' ) .'</div>';
 		$output .= '</div>';
 
 		echo wp_kses_post( $output );
@@ -4351,6 +4368,11 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 		// Publish date
 		elseif ( 'publish_date' == $location ) {
 			$schema = 'itemprop="datePublished"';
+		}
+
+		// Modified date
+		elseif ( 'modified_date' == $location ) {
+			$schema = 'itemprop="dateModified"';
 		}
 
 		// Author name

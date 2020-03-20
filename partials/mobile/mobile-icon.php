@@ -54,7 +54,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		}
 
 		// Cart Icon
-		$cart_icon = '<i class="'. esc_attr( $woo_icon ) .'"></i>';
+		$cart_icon = '<i class="'. esc_attr( $woo_icon ) .'" aria-hidden="true"></i>';
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
 	}
@@ -84,17 +84,17 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 		<?php do_action( 'ocean_before_mobile_icon_inner' ); ?>
 
-		<a href="#" class="mobile-menu">
+		<a href="#" class="mobile-menu" aria-label="<?php _e( 'Mobile Menu', 'oceanwp' ); ?>">
 			<?php
 			if ( 'default' != $btn ) { ?>
-				<div class="hamburger hamburger--<?php echo esc_attr( $btn ); ?>">
+				<div class="hamburger hamburger--<?php echo esc_attr( $btn ); ?>" aria-expanded="false">
 					<div class="hamburger-box">
 						<div class="hamburger-inner"></div>
 					</div>
 				</div>
 			<?php
 			} else { ?>
-				<i class="<?php echo esc_attr( $icon ); ?>"></i>
+				<i class="<?php echo esc_attr( $icon ); ?>" aria-hidden="true"></i>
 			<?php
 			}
 

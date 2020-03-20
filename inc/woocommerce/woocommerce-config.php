@@ -1141,7 +1141,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function quick_view_button() {
 			global $product;
 
-			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '"><i class="icon-eye"></i>' . esc_html__( 'Quick View', 'oceanwp' ) . '</a>';
+			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '"><i class="icon-eye" aria-hidden="true"></i>' . esc_html__( 'Quick View', 'oceanwp' ) . '</a>';
 
 			echo apply_filters( 'ocean_woo_quick_view_button_html', $button );
 		}
@@ -1232,7 +1232,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			        <?php
 			        if ( is_a( $next_post , 'WP_Post' ) ) { ?>
 						<li class="next-li">
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="fa fa-angle-left"></i></a>
+							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
 							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php echo esc_attr( $next_text ); ?></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
@@ -1244,7 +1244,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					if ( is_a( $prev_post , 'WP_Post' ) ) { ?>
 						<li class="prev-li">
 							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php echo esc_attr( $prev_text ); ?></a>
-							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="fa fa-angle-right"></i></a>
+							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 							</div>
@@ -1500,8 +1500,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function pagination_args( $args ) {
-			$args['prev_text'] = '<i class="fa fa-angle-left"></i>';
-			$args['next_text'] = '<i class="fa fa-angle-right"></i>';
+			$args['prev_text'] = '<i class="fa fa-angle-left" aria-hidden="true"></i>';
+			$args['next_text'] = '<i class="fa fa-angle-right" aria-hidden="true"></i>';
 			return $args;
 		}
 

@@ -4,37 +4,44 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP Theme\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2020-01-19 09:31+0100\n"
-"PO-Revision-Date: 2020-01-19 09:31+0100\n"
+"POT-Creation-Date: 2020-03-18 16:39+0100\n"
+"PO-Revision-Date: 2020-03-18 16:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: OceanWP\n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _esc_attr__;esc_attr_x;esc_attr_e;esc_html__;"
 "esc_html_e;esc_html_x;__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"esc_attr__\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:103
+#: 404.php:38 header.php:25 templates/landing.php:26
+#, fuzzy
+#| msgid "End of content"
+msgid "Skip to content"
+msgstr "Slut på innehåll"
+
+#: 404.php:107
 msgid "This page could not be found!"
 msgstr "Sidan kan inte hittas!"
 
-#: 404.php:104
+#: 404.php:108
 msgid "We are sorry. But the page you are looking for is not available."
 msgstr "Tyvärr, men sidan du sökte är inte längre tillgänglig."
 
-#: 404.php:104
+#: 404.php:108
 msgid "Perhaps you can try a new search."
 msgstr "Testa att söka igen."
 
-#: 404.php:106
+#: 404.php:110
 msgid "Back To Homepage"
 msgstr "Tillbaks till hemsidan"
 
@@ -47,6 +54,12 @@ msgstr "Detta inlägg har en kommentar"
 msgid "This Post Has %s Comments"
 msgstr "Detta inlägg har %s kommentarer"
 
+#: comments.php:67 comments.php:75
+#, fuzzy
+#| msgid "Previous Post"
+msgid "Previous comment"
+msgstr "Föregående inlägg"
+
 #: comments.php:67 comments.php:75 partials/edd/single.php:50
 msgid "Previous"
 msgstr "Föregående"
@@ -56,6 +69,12 @@ msgstr "Föregående"
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "Next"
 msgstr "Nästa"
+
+#: comments.php:68 comments.php:76
+#, fuzzy
+#| msgid "Post Comment"
+msgid "Next comment"
+msgstr "Skriv Kommentar"
 
 #: comments.php:85
 msgid "Comments are closed."
@@ -79,12 +98,20 @@ msgid "Log out &raquo;"
 msgstr "Logga ut &raquo;"
 
 #: comments.php:97
+#, fuzzy
+#| msgid "Comments"
+msgid "Comment"
+msgstr "Kommentarer"
+
+#: comments.php:97
 msgid "Your Comment Here..."
 msgstr "Din Kommentar Här…"
 
 #: comments.php:99
+#, fuzzy
+#| msgid "1 Comment"
 msgid "Post Comment"
-msgstr "Skriv Kommentar"
+msgstr "1 Kommentar"
 
 #: functions.php:270 inc/customizer/settings/topbar.php:40
 #: inc/customizer/settings/typography.php:109
@@ -116,7 +143,9 @@ msgstr ""
 "Widgets i denna del kommer att synas i vänster eller höger sidofält om du "
 "väljer Vänster eller Höger sidofältslayout."
 
-#: functions.php:561 inc/third/class-lifterlms.php:310
+#: functions.php:561
+#: inc/customizer/controls/radio-image/class-control-radio-image.php:110
+#: inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr "Vänster sidofält"
 
@@ -219,20 +248,20 @@ msgstr "i"
 msgid "g a"
 msgstr "g a"
 
-#: inc/breadcrumbs.php:928 inc/breadcrumbs.php:954 inc/breadcrumbs.php:978
-#: inc/breadcrumbs.php:1002 inc/breadcrumbs.php:1336 inc/helpers.php:1985
+#: inc/breadcrumbs.php:928 inc/breadcrumbs.php:957 inc/breadcrumbs.php:981
+#: inc/breadcrumbs.php:1005 inc/breadcrumbs.php:1339 inc/helpers.php:2004
 msgid "Y"
 msgstr "Y"
 
-#: inc/breadcrumbs.php:929 inc/breadcrumbs.php:979 inc/breadcrumbs.php:1340
+#: inc/breadcrumbs.php:929 inc/breadcrumbs.php:982 inc/breadcrumbs.php:1343
 msgid "F"
 msgstr "F"
 
-#: inc/breadcrumbs.php:930 inc/breadcrumbs.php:1344
+#: inc/breadcrumbs.php:930 inc/breadcrumbs.php:1347
 msgid "j"
 msgstr "j"
 
-#: inc/breadcrumbs.php:955
+#: inc/breadcrumbs.php:958
 msgid "W"
 msgstr "W"
 
@@ -240,10 +269,80 @@ msgstr "W"
 msgid "Link values together"
 msgstr "Länka ihop värden"
 
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:190
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:194
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:198
+#: inc/customizer/settings/blog.php:341
+msgid "Top"
+msgstr "Topp"
+
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:191
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:195
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:199
+#: inc/customizer/settings/blog.php:321 inc/customizer/settings/blog.php:796
+#: inc/customizer/settings/edd.php:882 inc/customizer/settings/general.php:1076
+#: inc/customizer/settings/general.php:1680
+#: inc/customizer/settings/general.php:1865
+#: inc/customizer/settings/header.php:1084
+#: inc/customizer/settings/header.php:1546
+#: inc/customizer/settings/header.php:1568
+#: inc/customizer/settings/header.php:2244
+#: inc/customizer/settings/header.php:3597
+#: inc/customizer/settings/woocommerce.php:1556
+#: inc/customizer/settings/woocommerce.php:1978
+msgid "Right"
+msgstr "Höger"
+
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:192
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:196
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:200
+#: inc/customizer/settings/blog.php:343
+msgid "Bottom"
+msgstr "Botten"
+
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:193
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:197
+#: inc/customizer/controls/dimensions/class-control-dimensions.php:201
+#: inc/customizer/settings/blog.php:320 inc/customizer/settings/blog.php:794
+#: inc/customizer/settings/edd.php:880 inc/customizer/settings/general.php:1074
+#: inc/customizer/settings/general.php:1679
+#: inc/customizer/settings/general.php:1867
+#: inc/customizer/settings/header.php:1082
+#: inc/customizer/settings/header.php:1545
+#: inc/customizer/settings/header.php:1566
+#: inc/customizer/settings/header.php:2242
+#: inc/customizer/settings/header.php:3596
+#: inc/customizer/settings/woocommerce.php:1554
+#: inc/customizer/settings/woocommerce.php:1976
+msgid "Left"
+msgstr "Vänster"
+
 #: inc/customizer/controls/dropdown-pages/class-control-dropdown-pages.php:61
 #: inc/customizer/customizer-helpers.php:45
 msgid "Select"
 msgstr "Välj"
+
+#: inc/customizer/controls/radio-image/class-control-radio-image.php:109
+#: inc/third/class-lifterlms.php:309
+msgid "Right Sidebar"
+msgstr "Höger sidofält"
+
+#: inc/customizer/controls/radio-image/class-control-radio-image.php:111
+#: inc/third/class-lifterlms.php:311
+msgid "Full Width"
+msgstr "Fullbredd"
+
+#: inc/customizer/controls/radio-image/class-control-radio-image.php:112
+#, fuzzy
+#| msgid "Full Width"
+msgid "100% Full Width"
+msgstr "Fullbredd"
+
+#: inc/customizer/controls/radio-image/class-control-radio-image.php:113
+#, fuzzy
+#| msgid "Both Sidebar"
+msgid "Both Sidebars"
+msgstr "Båda sidofält"
 
 #: inc/customizer/controls/text/class-control-text.php:119
 #: inc/customizer/controls/text/class-control-text.php:125
@@ -405,7 +504,7 @@ msgid "Premium Addons Available"
 msgstr "Premiumtillägg finns tillgängliga"
 
 #: inc/customizer/settings/blog.php:40 inc/customizer/settings/blog.php:758
-#: inc/helpers.php:2032
+#: inc/helpers.php:2051
 msgid "Blog"
 msgstr "Blogg"
 
@@ -678,41 +777,9 @@ msgstr "Jämna ut höjder"
 msgid "Image Position"
 msgstr "Bildposition"
 
-#: inc/customizer/settings/blog.php:320 inc/customizer/settings/blog.php:794
-#: inc/customizer/settings/edd.php:880 inc/customizer/settings/general.php:1074
-#: inc/customizer/settings/general.php:1679
-#: inc/customizer/settings/general.php:1867
-#: inc/customizer/settings/header.php:1082
-#: inc/customizer/settings/header.php:1545
-#: inc/customizer/settings/header.php:1566
-#: inc/customizer/settings/header.php:2242
-#: inc/customizer/settings/header.php:3596
-#: inc/customizer/settings/woocommerce.php:1554
-#: inc/customizer/settings/woocommerce.php:1976
-msgid "Left"
-msgstr "Vänster"
-
-#: inc/customizer/settings/blog.php:321 inc/customizer/settings/blog.php:796
-#: inc/customizer/settings/edd.php:882 inc/customizer/settings/general.php:1076
-#: inc/customizer/settings/general.php:1680
-#: inc/customizer/settings/general.php:1865
-#: inc/customizer/settings/header.php:1084
-#: inc/customizer/settings/header.php:1546
-#: inc/customizer/settings/header.php:1568
-#: inc/customizer/settings/header.php:2244
-#: inc/customizer/settings/header.php:3597
-#: inc/customizer/settings/woocommerce.php:1556
-#: inc/customizer/settings/woocommerce.php:1978
-msgid "Right"
-msgstr "Höger"
-
 #: inc/customizer/settings/blog.php:336
 msgid "Vertical Position"
 msgstr "Vertikal position"
-
-#: inc/customizer/settings/blog.php:341
-msgid "Top"
-msgstr "Topp"
 
 #: inc/customizer/settings/blog.php:342 inc/customizer/settings/blog.php:795
 #: inc/customizer/settings/edd.php:881 inc/customizer/settings/general.php:1075
@@ -725,10 +792,6 @@ msgstr "Topp"
 #: inc/customizer/settings/woocommerce.php:1977
 msgid "Center"
 msgstr "Center"
-
-#: inc/customizer/settings/blog.php:343
-msgid "Bottom"
-msgstr "Botten"
 
 #: inc/customizer/settings/blog.php:356 inc/customizer/settings/edd.php:914
 msgid "Custom Image Width (px)"
@@ -794,7 +857,7 @@ msgid "Infinite Scroll: Spinners Color"
 msgstr "Oändlig scroll: Färg på snurra"
 
 #: inc/customizer/settings/blog.php:532
-#: inc/customizer/settings/woocommerce.php:1614 inc/helpers.php:3287
+#: inc/customizer/settings/woocommerce.php:1614 inc/helpers.php:3306
 #: inc/woocommerce/woocommerce-config.php:551
 msgid "End of content"
 msgstr "Slut på innehåll"
@@ -805,7 +868,7 @@ msgid "Infinite Scroll: Last Text"
 msgstr "Oändlig scroll: Sista texten"
 
 #: inc/customizer/settings/blog.php:550
-#: inc/customizer/settings/woocommerce.php:1632 inc/helpers.php:3292
+#: inc/customizer/settings/woocommerce.php:1632 inc/helpers.php:3311
 #: inc/woocommerce/woocommerce-config.php:556
 msgid "No more pages to load"
 msgstr "Inga fler sidor att ladda"
@@ -823,8 +886,8 @@ msgid "Elements Positioning"
 msgstr "Elementpositionering"
 
 #: inc/customizer/settings/blog.php:590 inc/customizer/settings/blog.php:1011
-#: inc/customizer/settings/lifterlms.php:211 inc/helpers.php:2903
-#: inc/helpers.php:2988
+#: inc/customizer/settings/lifterlms.php:211 inc/helpers.php:2922
+#: inc/helpers.php:3007
 msgid "Meta"
 msgstr "Meta"
 
@@ -842,7 +905,7 @@ msgid "Categories"
 msgstr "Kategorier"
 
 #: inc/customizer/settings/blog.php:598 inc/customizer/settings/blog.php:1019
-#: inc/helpers.php:2995
+#: inc/helpers.php:3014
 msgid "Comments"
 msgstr "Kommentarer"
 
@@ -1424,8 +1487,8 @@ msgstr "Bild"
 
 #: inc/customizer/settings/edd.php:858
 #: inc/customizer/settings/woocommerce.php:1493
-#: inc/customizer/settings/woocommerce.php:1799 inc/helpers.php:2902
-#: inc/helpers.php:2987
+#: inc/customizer/settings/woocommerce.php:1799 inc/helpers.php:2921
+#: inc/helpers.php:3006
 msgid "Title"
 msgstr "Titel"
 
@@ -2545,7 +2608,7 @@ msgstr "Om du använder Sticky Header-tillägget"
 
 #: inc/customizer/settings/header.php:1061
 #: inc/customizer/settings/header.php:2155
-#: inc/customizer/settings/header.php:3486 inc/helpers.php:3763
+#: inc/customizer/settings/header.php:3486 inc/helpers.php:3784
 #: partials/mobile/mobile-icon.php:37
 msgid "Menu"
 msgstr "Meny"
@@ -2965,6 +3028,7 @@ msgstr "Socialt: Färg: Vid muspekare över"
 #: inc/customizer/settings/header.php:3300
 #: inc/customizer/settings/header.php:3577
 #: inc/customizer/settings/typography.php:138
+#: partials/mobile/mobile-icon.php:87
 msgid "Mobile Menu"
 msgstr "Mobil meny"
 
@@ -3054,7 +3118,7 @@ msgstr "Visa menytext"
 msgid "Menu Text"
 msgstr "Menytext"
 
-#: inc/customizer/settings/header.php:3503 inc/helpers.php:3764
+#: inc/customizer/settings/header.php:3503 inc/helpers.php:3785
 #: partials/mobile/mobile-icon.php:42
 msgid "Close"
 msgstr "Stäng"
@@ -3105,7 +3169,8 @@ msgstr "Stäng meny: Knapp"
 msgid "Close Menu Button Icon Class"
 msgstr "Stäng meny: Knapp: Ikonklass"
 
-#: inc/customizer/settings/header.php:3682 inc/helpers.php:3765
+#: inc/customizer/settings/header.php:3682 inc/helpers.php:3786
+#: partials/mobile/mobile-fullscreen.php:72
 #: partials/mobile/mobile-sidr-close.php:20
 msgid "Close Menu"
 msgstr "Stäng meny"
@@ -3258,8 +3323,8 @@ msgstr "Kursinformation"
 
 #: inc/customizer/settings/lifterlms.php:209
 #: inc/customizer/settings/lifterlms.php:240
-#: inc/customizer/settings/woocommerce.php:1516 inc/helpers.php:2901
-#: inc/helpers.php:2986
+#: inc/customizer/settings/woocommerce.php:1516 inc/helpers.php:2920
+#: inc/helpers.php:3005
 msgid "Featured Image"
 msgstr "Utvald bild"
 
@@ -3357,8 +3422,8 @@ msgid "Centered Content & Social"
 msgstr "Centrerat innehåll & socialt"
 
 #: inc/customizer/settings/topbar.php:306
-#: inc/customizer/settings/topbar.php:340 inc/helpers.php:2904
-#: inc/helpers.php:2989 inc/third/class-beaver-themer.php:127
+#: inc/customizer/settings/topbar.php:340 inc/helpers.php:2923
+#: inc/helpers.php:3008 inc/third/class-beaver-themer.php:127
 msgid "Content"
 msgstr "Innehåll"
 
@@ -3683,7 +3748,7 @@ msgstr "Off Canvas Filtrering"
 msgid "Display Filter Button"
 msgstr "Visa filtreringsknapp"
 
-#: inc/customizer/settings/woocommerce.php:1380 inc/helpers.php:3770
+#: inc/customizer/settings/woocommerce.php:1380 inc/helpers.php:3791
 #: inc/woocommerce/woocommerce-config.php:914
 msgid "Filter"
 msgstr "Filtrering"
@@ -3929,7 +3994,7 @@ msgstr "Multi-stegskassa"
 msgid "Timeline Style"
 msgstr "Tidslinjestil"
 
-#: inc/customizer/settings/woocommerce.php:2471 inc/helpers.php:3690
+#: inc/customizer/settings/woocommerce.php:2471 inc/helpers.php:3711
 msgid "Arrow"
 msgstr "Pil"
 
@@ -4347,321 +4412,351 @@ msgstr "Visa detaljer"
 msgid "Add to Cart"
 msgstr "Lägg i kundvagn"
 
-#: inc/helpers.php:1697 partials/mobile/mobile-fullscreen-search.php:28
+#: inc/helpers.php:1714 partials/mobile/mobile-fullscreen-search.php:28
 msgid "Type your search"
 msgstr "Skriv in ditt sökord"
 
-#: inc/helpers.php:1944
+#: inc/helpers.php:1774
+#, fuzzy
+#| msgid "Search Result Page"
+msgid "Search website"
+msgstr "Sökresultatssida"
+
+#: inc/helpers.php:1963
 msgid "Recent Posts"
 msgstr "Senaste inlägg"
 
-#: inc/helpers.php:1957
+#: inc/helpers.php:1976
 msgid "Search Results Found"
 msgstr "Sökresultat"
 
-#: inc/helpers.php:1975
+#: inc/helpers.php:1994
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "Dagliga arkiv: %s"
 
-#: inc/helpers.php:1980
+#: inc/helpers.php:1999
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "Månadsarkiv: %s"
 
-#: inc/helpers.php:1980
+#: inc/helpers.php:1999
 msgid "F Y"
 msgstr "F Y"
 
-#: inc/helpers.php:1985
+#: inc/helpers.php:2004
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "Årsarkiv: %s"
 
-#: inc/helpers.php:2007
+#: inc/helpers.php:2026
 msgid "404: Page Not Found"
 msgstr "404: Sidan kan inte hittas"
 
-#: inc/helpers.php:2070
+#: inc/helpers.php:2089
 msgid "You searched for:"
 msgstr "Du sökte efter:"
 
-#: inc/helpers.php:2075
+#: inc/helpers.php:2094
 msgid "This author has written"
 msgstr "Denna författare har skrivit"
 
-#: inc/helpers.php:2075
+#: inc/helpers.php:2094
 msgid "articles"
 msgstr ""
 
-#: inc/helpers.php:2905
+#: inc/helpers.php:2924
 msgid "Read More"
 msgstr "Läs mer"
 
-#: inc/helpers.php:2990
+#: inc/helpers.php:3009
 msgid "Tags"
 msgstr "Taggar"
 
-#: inc/helpers.php:2991
+#: inc/helpers.php:3010
 msgid "Social Share"
 msgstr "Social delning"
 
-#: inc/helpers.php:2992
+#: inc/helpers.php:3011
 msgid "Next/Prev Links"
 msgstr "Nästa/Föregående-länkar"
 
-#: inc/helpers.php:2993
+#: inc/helpers.php:3012
 msgid "Author Box"
 msgstr "Författarbox"
 
-#: inc/helpers.php:2994
+#: inc/helpers.php:3013
 msgid "Related Posts"
 msgstr "Relaterade inlägg"
 
-#: inc/helpers.php:3083
+#: inc/helpers.php:3102
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: inc/helpers.php:3083
+#: inc/helpers.php:3102
 msgid "(Edit)"
 msgstr "(Redigera)"
 
-#: inc/helpers.php:3101
+#: inc/helpers.php:3120
 #, php-format
 msgid "%s "
 msgstr "%s "
 
-#: inc/helpers.php:3110
+#: inc/helpers.php:3129
 msgid "edit"
 msgstr "redigera"
 
-#: inc/helpers.php:3122
+#: inc/helpers.php:3141
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar granskning."
 
-#: inc/helpers.php:3152
+#: inc/helpers.php:3171
+msgid "Enter your name or username"
+msgstr ""
+
+#: inc/helpers.php:3171
 msgid "Name (required)"
 msgstr "Namn (obligatorisk)"
 
-#: inc/helpers.php:3154
+#: inc/helpers.php:3173
+#, fuzzy
+#| msgid "Enter your full icon class"
+msgid "Enter your email"
+msgstr "Skriv i din fulla ikonklass"
+
+#: inc/helpers.php:3173
 msgid "Email (required)"
 msgstr "E-post (obligatorisk)"
 
-#: inc/helpers.php:3156
+#: inc/helpers.php:3175
+#, fuzzy
+#| msgid "Mobile (optional)"
+msgid "Enter your website URL (optional)"
+msgstr "Mobil (frivillig)"
+
+#: inc/helpers.php:3175
 msgid "Website"
 msgstr "Hemsida"
 
-#: inc/helpers.php:3253 inc/helpers.php:3307
+#: inc/helpers.php:3239
+msgid "Go to the previous page"
+msgstr ""
+
+#: inc/helpers.php:3240
+msgid "Go to the next page"
+msgstr ""
+
+#: inc/helpers.php:3272 inc/helpers.php:3326
 #: inc/woocommerce/woocommerce-config.php:570
 msgid "Newer Posts"
 msgstr "Nyare Inlägg"
 
-#: inc/helpers.php:3256 inc/helpers.php:3308
+#: inc/helpers.php:3275 inc/helpers.php:3327
 #: inc/woocommerce/woocommerce-config.php:571
 msgid "Older Posts"
 msgstr "Äldre Inlägg"
 
-#: inc/helpers.php:3636
+#: inc/helpers.php:3657
 msgid "OceanWP"
 msgstr "OceanWP"
 
-#: inc/helpers.php:3683
+#: inc/helpers.php:3704
 msgid "Default Icon"
 msgstr "Standardikon"
 
-#: inc/helpers.php:3684
+#: inc/helpers.php:3705
 msgid "3D X"
 msgstr "3D X"
 
-#: inc/helpers.php:3685
+#: inc/helpers.php:3706
 msgid "3D X Reverse"
 msgstr "3D X omvänd"
 
-#: inc/helpers.php:3686
+#: inc/helpers.php:3707
 msgid "3D Y"
 msgstr "3D Y"
 
-#: inc/helpers.php:3687
+#: inc/helpers.php:3708
 msgid "3D Y Reverse"
 msgstr "3D Y omvänd"
 
-#: inc/helpers.php:3688
+#: inc/helpers.php:3709
 msgid "3D XY"
 msgstr "3D YX"
 
-#: inc/helpers.php:3689
+#: inc/helpers.php:3710
 msgid "3D XY Reverse"
 msgstr "3D YX omvänd"
 
-#: inc/helpers.php:3691
+#: inc/helpers.php:3712
 msgid "Arrow Reverse"
 msgstr "Pil omvänd"
 
-#: inc/helpers.php:3692
+#: inc/helpers.php:3713
 msgid "Arrowalt"
 msgstr ""
 
-#: inc/helpers.php:3693
+#: inc/helpers.php:3714
 msgid "Arrowalt Reverse"
 msgstr ""
 
-#: inc/helpers.php:3694
+#: inc/helpers.php:3715
 msgid "Arrowturn"
 msgstr "Pil svängd"
 
-#: inc/helpers.php:3695
+#: inc/helpers.php:3716
 msgid "Arrowturn Reverse"
 msgstr "Pil svängd omvänd"
 
-#: inc/helpers.php:3696
+#: inc/helpers.php:3717
 msgid "Boring"
 msgstr "Tråkig"
 
-#: inc/helpers.php:3697
+#: inc/helpers.php:3718
 msgid "Collapse"
 msgstr "Stäng"
 
-#: inc/helpers.php:3698
+#: inc/helpers.php:3719
 msgid "Collapse Reverse"
 msgstr "Stäng omvänd"
 
-#: inc/helpers.php:3699
+#: inc/helpers.php:3720
 msgid "Elastic"
 msgstr "Elastisk"
 
-#: inc/helpers.php:3700
+#: inc/helpers.php:3721
 msgid "Elastic Reverse"
 msgstr "Elastisk omvänd"
 
-#: inc/helpers.php:3701
+#: inc/helpers.php:3722
 msgid "Minus"
 msgstr "Minus"
 
-#: inc/helpers.php:3702
+#: inc/helpers.php:3723
 msgid "Slider"
 msgstr "Slider"
 
-#: inc/helpers.php:3703
+#: inc/helpers.php:3724
 msgid "Slider Reverse"
 msgstr "Slider omvänd"
 
-#: inc/helpers.php:3704
+#: inc/helpers.php:3725
 msgid "Spin"
 msgstr "Spinn"
 
-#: inc/helpers.php:3705
+#: inc/helpers.php:3726
 msgid "Spin Reverse"
 msgstr "Spinn omvänd"
 
-#: inc/helpers.php:3706
+#: inc/helpers.php:3727
 msgid "Spring"
 msgstr ""
 
-#: inc/helpers.php:3707
+#: inc/helpers.php:3728
 msgid "Spring Reverse"
 msgstr ""
 
-#: inc/helpers.php:3708
+#: inc/helpers.php:3729
 msgid "Stand"
 msgstr ""
 
-#: inc/helpers.php:3709
+#: inc/helpers.php:3730
 msgid "Stand Reverse"
 msgstr ""
 
-#: inc/helpers.php:3710
+#: inc/helpers.php:3731
 msgid "Squeeze"
 msgstr ""
 
-#: inc/helpers.php:3711
+#: inc/helpers.php:3732
 msgid "Vortex"
 msgstr ""
 
-#: inc/helpers.php:3712
+#: inc/helpers.php:3733
 msgid "Vortex Reverse"
 msgstr ""
 
-#: inc/helpers.php:3766
+#: inc/helpers.php:3787
 msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
 msgstr ""
 
-#: inc/helpers.php:3789
+#: inc/helpers.php:3810
 msgid "Twitter"
 msgstr "Twitter"
 
-#: inc/helpers.php:3793
+#: inc/helpers.php:3814
 msgid "Facebook"
 msgstr "Facebook"
 
-#: inc/helpers.php:3797
+#: inc/helpers.php:3818
 msgid "Google Plus"
 msgstr "Google Plus"
 
-#: inc/helpers.php:3801
+#: inc/helpers.php:3822
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: inc/helpers.php:3805
+#: inc/helpers.php:3826
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: inc/helpers.php:3809
+#: inc/helpers.php:3830
 msgid "VK"
 msgstr "VK"
 
-#: inc/helpers.php:3813
+#: inc/helpers.php:3834
 msgid "Instagram"
 msgstr "Instagram"
 
-#: inc/helpers.php:3817
+#: inc/helpers.php:3838
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: inc/helpers.php:3821
+#: inc/helpers.php:3842
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: inc/helpers.php:3825
+#: inc/helpers.php:3846
 msgid "Github"
 msgstr "Github"
 
-#: inc/helpers.php:3829
+#: inc/helpers.php:3850
 msgid "Flickr"
 msgstr "Flickr"
 
-#: inc/helpers.php:3833
+#: inc/helpers.php:3854
 msgid "Skype"
 msgstr "Skype"
 
-#: inc/helpers.php:3837
+#: inc/helpers.php:3858
 msgid "Youtube"
 msgstr "Youtube"
 
-#: inc/helpers.php:3841
+#: inc/helpers.php:3862
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: inc/helpers.php:3845
+#: inc/helpers.php:3866
 msgid "Vine"
 msgstr "Vine"
 
-#: inc/helpers.php:3849
+#: inc/helpers.php:3870
 msgid "Xing"
 msgstr "Xing"
 
-#: inc/helpers.php:3853
+#: inc/helpers.php:3874
 msgid "Yelp"
 msgstr "Yelp"
 
-#: inc/helpers.php:3857
+#: inc/helpers.php:3878
 msgid "Tripadvisor"
 msgstr "Tripadvisor"
 
-#: inc/helpers.php:3861
+#: inc/helpers.php:3882
 msgid "RSS"
 msgstr "RSS"
 
-#: inc/helpers.php:3865
+#: inc/helpers.php:3886
 msgid "Email"
 msgstr "Epost"
 
@@ -4812,6 +4907,19 @@ msgstr ""
 #: inc/plugins/class-tgm-plugin-activation.php:397
 msgid "Please contact the administrator of this site for help."
 msgstr "Vänligen kontakta administratören för denna sida för hjälp."
+
+#: inc/plugins/class-tgm-plugin-activation.php:522
+#, fuzzy
+#| msgid ""
+#| "The following plugin needs to be updated to its latest version to ensure "
+#| "maximum compatibility with this theme: %1$s."
+#| msgid_plural ""
+#| "The following plugins need to be updated to their latest version to "
+#| "ensure maximum compatibility with this theme: %1$s."
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+"Följande tillägg behöver uppdateras till senaste versionen för att "
+"säkerställa maximal kompatibilitet med detta tema: %1$s."
 
 #: inc/plugins/class-tgm-plugin-activation.php:523
 msgid "Update Required"
@@ -5225,14 +5333,6 @@ msgstr ""
 msgid "OceanWP Theme Setting"
 msgstr "OceanWP Temainställningar"
 
-#: inc/third/class-lifterlms.php:309
-msgid "Right Sidebar"
-msgstr "Höger sidofält"
-
-#: inc/third/class-lifterlms.php:311
-msgid "Full Width"
-msgstr "Fullbredd"
-
 #: inc/third/class-lifterlms.php:313
 msgid "Both Sidebar"
 msgstr "Båda sidofält"
@@ -5313,6 +5413,12 @@ msgstr "Jag har inget konto"
 #: inc/woocommerce/woocommerce-config.php:774
 msgid "View cart"
 msgstr ""
+
+#: inc/woocommerce/woocommerce-config.php:780
+#, fuzzy
+#| msgid "Products"
+msgid "View products"
+msgstr "Produkter"
 
 #: inc/woocommerce/woocommerce-config.php:868
 msgid "Off-Canvas Filters"
@@ -5443,41 +5549,128 @@ msgid "Placeholder Image"
 msgstr "Platshållarbild"
 
 #: partials/edd/single.php:54 partials/entry/readmore.php:14
-#: partials/search/readmore.php:14 partials/single/next-prev.php:28
+#: partials/search/readmore.php:14
 msgid "Continue Reading"
 msgstr "Fortsätt läsa"
 
-#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:52
+#: partials/entry/meta.php:23
+#, fuzzy
+#| msgid "Course Details"
+msgid "Post details:"
+msgstr "Kursinformation"
+
+#: partials/entry/meta.php:35 partials/single/meta.php:42
+msgid "Post published:"
+msgstr ""
+
+#: partials/entry/meta.php:41 partials/single/meta.php:48
+msgid "Post last modified:"
+msgstr ""
+
+#: partials/entry/meta.php:46 partials/single/meta.php:53
+#, fuzzy
+#| msgid "Categories"
+msgid "Categories:"
+msgstr "Kategorier"
+
+#: partials/entry/meta.php:51 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:58
 msgid "0 Comments"
 msgstr "0 Kommentarer"
 
-#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:52
+#: partials/entry/meta.php:51 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:58
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:52
+#: partials/entry/meta.php:51 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:58
 msgid "% Comments"
 msgstr "% Kommentarer"
+
+#: partials/header/search-overlay.php:19 partials/header/search-replace.php:25
+#, fuzzy
+#| msgid "Mobile Menu Search"
+msgid "Close Search"
+msgstr "Mobil meny: Sökfält"
+
+#: partials/header/search-overlay.php:20 partials/header/search-replace.php:18
+#: partials/mobile/mobile-search.php:22 searchform.php:24
+#, fuzzy
+#| msgid "Search Form"
+msgid "Search for:"
+msgstr "Sökformulär"
 
 #: partials/header/search-overlay.php:21
 msgid "Type your text and hit enter to search"
 msgstr "Skriv din text och tryck enter för att söka"
 
-#: partials/header/search-replace.php:18
+#: partials/header/search-overlay.php:22
+#, fuzzy
+#| msgid "Type your text and hit enter to search"
+msgid "Type text and hit enter to search"
+msgstr "Skriv din text och tryck enter för att söka"
+
+#: partials/header/search-replace.php:19
 msgid "Type then hit enter to search..."
 msgstr "Skriv och tryck enter för att söka…"
+
+#: partials/header/social.php:106 partials/topbar/social.php:88
+#, fuzzy
+#| msgid "Social Links Color"
+msgid "Social links"
+msgstr "Sociala länkfärger"
+
+#: partials/header/social.php:116 partials/topbar/social.php:102
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: partials/header/social.php:128 partials/topbar/social.php:115
+msgid "Skype (opens in your application)"
+msgstr ""
+
+#: partials/header/social.php:130 partials/topbar/social.php:117
+msgid "Send email (opens in your application)"
+msgstr ""
+
+#: partials/header/style/medium-header-search.php:17
+#, fuzzy
+#| msgid "Medium Header Settings"
+msgid "Medium Header Search"
+msgstr "Medium sidhuvud: Inställningar"
 
 #: partials/header/style/medium-header-search.php:24
 #: partials/header/style/vertical-header-search.php:24
 msgid "Search..."
 msgstr "Sök…"
 
-#: partials/mobile/mobile-search.php:18 searchform.php:17
+#: partials/header/style/vertical-header-search.php:17
+#, fuzzy
+#| msgid "Vertical Header Settings"
+msgid "Vertical Header Search"
+msgstr "Vertikalt sidhuvud: Inställningar"
+
+#: partials/mobile/mobile-fullscreen-search.php:21
+#, fuzzy
+#| msgid "Mobile Menu Search"
+msgid "Mobile Search"
+msgstr "Mobil meny: Sökfält"
+
+#: partials/mobile/mobile-search.php:24 searchform.php:25
 msgid "Search"
 msgstr "Sök"
+
+#: partials/mobile/mobile-search.php:25
+#, fuzzy
+#| msgid "Search"
+msgid "Submit Search"
+msgstr "Sök"
+
+#: partials/mobile/mobile-sidr-close.php:23
+#, fuzzy
+#| msgid "Close Menu"
+msgid "Close mobile Menu"
+msgstr "Stäng meny"
 
 #: partials/none.php:11
 #, php-format
@@ -5510,21 +5703,61 @@ msgstr "Det ser ut som vi inte kan hitta det du letar efter."
 msgid "Pages:"
 msgstr "Sidor:"
 
+#: partials/scroll-top.php:26
+msgid "Scroll to the top of the page"
+msgstr ""
+
 #: partials/single/author-bio.php:36 partials/single/author-bio.php:47
 msgid "Visit Author Page"
 msgstr "Besök författarens sida"
 
+#: partials/single/meta.php:37
+msgid "By:&nbsp;"
+msgstr ""
+
+#: partials/single/meta.php:43
+msgid "Published:&nbsp;"
+msgstr ""
+
+#: partials/single/meta.php:49
+msgid "Last Modified:&nbsp;"
+msgstr ""
+
 #: partials/single/next-prev.php:24
+#, fuzzy
+#| msgid "Previous Product"
 msgid "Previous Post"
-msgstr "Föregående inlägg"
+msgstr "Föregående produkt"
 
 #: partials/single/next-prev.php:25
 msgid "Next Post"
 msgstr "Nästa inlägg"
 
+#: partials/single/next-prev.php:28
+msgid "Read more articles"
+msgstr ""
+
 #: partials/single/related-posts.php:19
 msgid "You Might Also Like"
 msgstr "Du kanske också gillar"
+
+#: partials/single/tags.php:15
+#, fuzzy
+#| msgid "Tags"
+msgid "Tags: "
+msgstr "Taggar"
+
+#: sidebar-left.php:10
+#, fuzzy
+#| msgid "Before Sidebar"
+msgid "Secondary sidebar"
+msgstr "Före sidofält"
+
+#: sidebar.php:15
+#, fuzzy
+#| msgid "Primary Color"
+msgid "Primary sidebar"
+msgstr "Primär färg"
 
 #: woocommerce/cart/mini-cart.php:73
 msgid "Remove this item"
@@ -5567,9 +5800,17 @@ msgstr "Tillbaks till kundvagn"
 msgid "Prev"
 msgstr "Föregående"
 
+#: woocommerce/owp-off-canvas-sidebar.php:17
+msgid "Close off canvas panel"
+msgstr ""
+
 #: woocommerce/quick-view-image.php:55
 msgid "Placeholder"
 msgstr "Platshållare"
+
+#: woocommerce/quick-view.php:16
+msgid "Close quick preview"
+msgstr ""
 
 #: woocommerce/result-count.php:60
 msgid "View:"
@@ -5578,6 +5819,26 @@ msgstr "Visa:"
 #: woocommerce/result-count.php:63
 msgid "All"
 msgstr "Alla"
+
+#: woocommerce/share.php:21
+msgid "Share on Facebook (opens in a new tab)"
+msgstr ""
+
+#: woocommerce/share.php:28
+msgid "Share on Twitter (opens in a new tab)"
+msgstr ""
+
+#: woocommerce/share.php:35
+msgid "Share on Pinterest (opens in a new tab)"
+msgstr ""
+
+#: woocommerce/share.php:42
+msgid "Share on Google plus (opens in a new tab)"
+msgstr ""
+
+#: woocommerce/share.php:49
+msgid "Share by email (opens in a new tab)"
+msgstr ""
 
 #, php-format
 #~ msgid "Search results for &#8220;%s&#8221;"

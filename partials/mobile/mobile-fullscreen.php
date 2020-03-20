@@ -69,7 +69,7 @@ $top_menu_args = array(
 
 	<div id="mobile-fullscreen-inner" class="clr">
 
-		<a href="#" class="close">
+		<a href="#" class="close" aria-label="<?php esc_attr_e( 'Close Menu', 'oceanwp' ); ?>">
 			<div class="close-icon-wrap">
 				<div class="close-icon-inner"></div>
 			</div>

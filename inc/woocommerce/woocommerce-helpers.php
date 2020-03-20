@@ -75,7 +75,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		}
 
 		// Cart Icon
-		$cart_icon = '<i class="'. esc_attr( $icon ) .'"></i>';
+		$cart_icon = '<i class="'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
 		// If bag style
@@ -113,7 +113,7 @@ if ( ! function_exists( 'oceanwp_woo_placeholder_img' ) ) {
 
 	function oceanwp_woo_placeholder_img() {
 		if ( function_exists( 'wc_placeholder_img_src' ) && wc_placeholder_img_src() ) {
-			$placeholder = '<div class="woo-entry-image clr"><img src="'. wc_placeholder_img_src() .'" alt="'. esc_html__( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" /></div>';
+			$placeholder = '<div class="woo-entry-image clr"><img src="'. wc_placeholder_img_src() .'" alt="'. __( 'Placeholder Image', 'oceanwp' ) .'" class="woo-entry-image-main" /></div>';
 			$placeholder = apply_filters( 'ocean_woo_placeholder_img_html', $placeholder );
 			if ( $placeholder ) {
 				echo wp_kses_post( $placeholder );

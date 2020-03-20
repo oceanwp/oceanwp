@@ -78,6 +78,7 @@ if ( ! $profiles = get_theme_mod( 'ocean_top_bar_social_profiles' ) ) {
 $link_target = get_theme_mod( 'ocean_top_bar_social_target', 'blank' );
 $link_target = $link_target ? $link_target : 'blank';
 
+$link_rel='';
 if ( $link_target == 'blank' ) {
 	$link_rel = 'rel="noopener noreferrer"';
 }
@@ -85,7 +86,7 @@ if ( $link_target == 'blank' ) {
 
 <div id="top-bar-social" class="clr <?php echo esc_attr( $classes ); ?>">
 
-	<ul class="clr">
+	<ul class="clr" aria-label="<?php echo esc_attr__( 'Social links', 'oceanwp' ); ?>">
 
 		<?php
 		// Loop through social options
@@ -94,6 +95,17 @@ if ( $link_target == 'blank' ) {
 			// Get URL from the theme mods
 			$url = isset( $profiles[$key] ) ? $profiles[$key] : '';
 
+			$esc_url = esc_url( $url );
+
+			// Get correct label
+			$label = ! empty( $val['label'] ) ? esc_attr( $val['label'] ) : '';
+			if ( $link_target == 'blank' ) {
+				$aria_label = 'aria-label="' . $label . ' '. esc_attr__( '(opens in a new tab)', 'oceanwp' ) .'"';
+			}
+			else {
+				$aria_label = 'aria-label="' . $label . '"';
+			}
+
 			// Display if there is a value defined
 			if ( $url ) {
 
@@ -101,14 +113,14 @@ if ( $link_target == 'blank' ) {
 				echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
 
 					if ( in_array( $key, array( 'skype' ) ) ) {
-						echo '<a href="skype:'. esc_attr( $url ) .'?call" title="'. esc_attr( $val['label'] ) .'" target="_self">';
+						echo '<a href="skype:'. $esc_url .'?call" aria-label="'. esc_attr__( 'Skype (opens in your application)', 'oceanwp' ) .'" target="_self">';
 					} else if ( in_array( $key, array( 'email' ) ) ) {
-						echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" title="'. esc_attr( $val['label'] ) .'" target="_self">';
+						echo '<a href="mailto:'. antispambot( $esc_url ) .'" aria-label="'. esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) .'" target="_self">';
 					} else {
-						echo '<a href="'. esc_url( $url ) .'" title="'. esc_attr( $val['label'] ) .'" target="_'. esc_attr( $link_target ) .'" '. $link_rel .'>';
+						echo '<a href="'. $esc_url .'" '. $aria_label .' target="_'. esc_attr( $link_target ) .'" '. $link_rel .'>';
 					}
 
-						echo '<span class="'. esc_attr( $val['icon_class'] ) .'" aria-hidden="true"></span>';
+					echo '<span class="'. esc_attr( $val['icon_class'] ) .'" aria-hidden="true"></span>';
 
 					echo '</a>';
 

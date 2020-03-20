@@ -1,8 +1,8 @@
 == OceanWP ==
-Contributors: oceanwp, apprimit
+Contributors: oceanwp
 Requires at least: 5.0
-Tested up to: 5.3
-Stable tag: 1.7.8
+Tested up to: 5.3.2
+Stable tag: 1.7.9
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,8 +38,8 @@ https://github.com/oceanwp/oceanwp/blob/master/changelog.md
 There are multiple ways you can use a child theme with the OceanWP Theme, Use any one method mentioned below to create a child theme or use a child theme we have created.
 
 1. Download the child theme from Github - https://github.com/oceanwp/oceanwp-child-theme
-2. Using Plugin One click Child theme - https://wordpress.org/plugins/one-click-child-theme/
-3. More information on creating child theme. - https://codex.wordpress.org/Child_Themes
+2. Using Plugin One click Child theme - https://wordpress.org/plugins/one-click-child-theme
+3. More information on creating child theme - https://codex.wordpress.org/Child_Themes
 
 == OceanWP License ==
 
@@ -48,7 +48,7 @@ More details here: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Screenshots ==
 
-Screenshot image, Copyright Pexels
+Screenshot image, Copyright Stocksnap
 License: CC0 Public Domain - https://stocksnap.io/license
 Source: https://stocksnap.io/photo/ELADKTWHHU is by Aleksei Bakulin
 Source: https://stocksnap.io/photo/2NQCKGAMDR is by Daria Shevtsova
@@ -145,3 +145,7 @@ Source: http://css-tricks.com + Dave Rupert - http://daverupert.com
 Hamburgers, Copyright (c) 2016 Jonathan Suh
 License: MIT - https://opensource.org/licenses/MIT
 Source: https://github.com/jonsuh/hamburgers
+
+Unique ID function from the Twenty Twenty theme, Copyright 2019-2020 WordPress.org
+License: GPLv2 or later - https://www.gnu.org/licenses/gpl-2.0.html
+Source: https://wordpress.org/themes/twentytwenty/

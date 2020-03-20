@@ -309,6 +309,7 @@ module.exports = function ( grunt ) {
 	// Dev task
 	grunt.registerTask( 'default', [
 		'uglify:dev',
+		'newer:uglify:prod',
 		'cssmin:prod',
 		'sass:dev',
 		'sass:prod'

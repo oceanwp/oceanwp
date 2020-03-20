@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php dynamic_sidebar( 'owp_off_canvas_sidebar' ); ?>
 		<?php
 		if ( true == get_theme_mod( 'ocean_woo_off_canvas_close_button', false ) ) { ?>
-    		<button type="button" class="oceanwp-off-canvas-close">
-    			<svg width="14" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+    		<button type="button" class="oceanwp-off-canvas-close" aria-label="<?php echo esc_attr__( 'Close off canvas panel', 'oceanwp' ); ?>">
+    			<svg width="14" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" role="img" aria-hidden="true" focusable="false">
 					<path d="M505.943,6.058c-8.077-8.077-21.172-8.077-29.249,0L6.058,476.693c-8.077,8.077-8.077,21.172,0,29.249
 						C10.096,509.982,15.39,512,20.683,512c5.293,0,10.586-2.019,14.625-6.059L505.943,35.306
 						C514.019,27.23,514.019,14.135,505.943,6.058z"/>

@@ -27,7 +27,7 @@ function oceanwpMobileMenu( event ) {
 			speed    : 300,
 			renaming : true,
 			bind     : 'click',
-			
+
 			onOpen   : function onOpen() {
 
 				// Class of the custom opening button
@@ -36,6 +36,13 @@ function oceanwpMobileMenu( event ) {
 				if ( $first == true ) {
 					// Declare useful vars
 					var $hasChildren = $j( '.sidr-class-menu-item-has-children' );
+
+					var $sidrmenu = $j( '.mobile-menu > .hamburger' );
+					var isMenuOpen = false;
+					$sidrmenu.on('click', function () {
+						isMenuOpen = !isMenuOpen;
+						$sidrmenu.attr('aria-expanded', isMenuOpen);
+					});
 
 					// Add dropdown toggle (plus)
 					$hasChildren.children( 'a' ).append( '<span class="sidr-class-dropdown-toggle"></span>' );

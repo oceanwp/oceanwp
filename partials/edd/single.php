@@ -13,7 +13,7 @@ do_action( 'ocean_before_single_download_item' ); ?>
 		<h2 class="edd_download_title">
 			<?php the_title(); ?>
 		</h2>
-			
+
 		<?php
 		if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ) : ?>
 			<div class="edd_download_image">
@@ -47,8 +47,8 @@ do_action( 'ocean_before_single_download_item' ); ?>
 
 				// Args
 				$args = array(
-					'prev_text'             => '<span class="title"><i class="fa fa-long-arrow-left"></i>'. esc_html__( 'Previous', 'oceanwp' ) .'</span><span class="post-title">%title</span>',
-				    'next_text'             => '<span class="title"><i class="fa fa-long-arrow-right"></i>'. esc_html__( 'Next', 'oceanwp' ) .'</span><span class="post-title">%title</span>',
+					'prev_text'             => '<span class="title"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>'. esc_html__( 'Previous', 'oceanwp' ) .'</span><span class="post-title">%title</span>',
+				    'next_text'             => '<span class="title"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>'. esc_html__( 'Next', 'oceanwp' ) .'</span><span class="post-title">%title</span>',
 				    'in_same_term'          => true,
 				    'taxonomy'              => $term_tax,
 				    'screen_reader_text'    => esc_html__( 'Continue Reading', 'oceanwp' ),
