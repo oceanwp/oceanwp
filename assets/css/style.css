@@ -9263,6 +9263,28 @@ a.sidr-class-toggle-sidr-close i {
   padding: 12px 10px;
 }
 
+.admin-bar #sidr,
+.admin-bar .oceanwp-sidr-overlay {
+  top: 32px;
+  height: -webkit-calc(100% - 32px);
+  height: calc(100% - 32px);
+}
+
+@media screen and (max-width: 782px) {
+  .admin-bar #sidr,
+  .admin-bar .oceanwp-sidr-overlay {
+    top: 46px;
+    height: -webkit-calc(100% - 46px);
+    height: calc(100% - 46px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #admin-bar {
+    position: relative;
+  }
+}
+
 /*------------------------------------*
 	$SLICK
 *------------------------------------*/
