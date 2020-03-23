@@ -97,7 +97,7 @@ blockquote, q {
 }
 
 a:focus {
-  outline: 0;
+  outline: 1px dashed #13aff0;
 }
 
 a:hover, a:active {
