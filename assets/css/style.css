@@ -9281,7 +9281,7 @@ a.sidr-class-toggle-sidr-close i {
 
 @media screen and (max-width: 600px) {
   #admin-bar {
-    position: relative;
+    position: fixed;
   }
 }
 
