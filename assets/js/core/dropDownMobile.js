@@ -28,7 +28,14 @@ function oceanwpDropDownMobile() {
 			$j( '#mobile-dropdown' ).slideUp( 200 );
 			$j( '.mobile-menu' ).removeClass( 'opened' );
 			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
-        }
+		}
+
+		var $owpmenu = $j( '.mobile-menu > .hamburger' );
+		var isMenuOpen = false;
+		$owpmenu.on('click', function () {
+			isMenuOpen = !isMenuOpen;
+			$owpmenu.attr('aria-expanded', isMenuOpen);
+		});
 
 		// Declare useful vars
 		var $hasChildren = $j( '#mobile-dropdown .menu-item-has-children' );

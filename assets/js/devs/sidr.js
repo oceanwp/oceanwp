@@ -521,7 +521,7 @@
 
     // If the side menu do not exist create it
     if ($sideMenu.length === 0) {
-      $sideMenu = $$3('<div />').attr('id', name).appendTo($$3('body'));
+      $sideMenu = $$3('<div />').attr('id', name).appendTo($$3('.mobile-sidebar-menu-style'));
     }
 
     // Add transition to menu if are supported

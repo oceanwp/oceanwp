@@ -490,10 +490,10 @@ final class OCEANWP_Theme_Class {
 		// Create array
 		$sidr_side 		= get_theme_mod( 'ocean_mobile_menu_sidr_direction', 'left' );
 		$sidr_side 		= $sidr_side ? $sidr_side : 'left';
-		$sidr_target 	= get_theme_mod( 'ocean_mobile_menu_sidr_dropdown_target', 'icon' );
-		$sidr_target 	= $sidr_target ? $sidr_target : 'icon';
-		$vh_target 		= get_theme_mod( 'ocean_vertical_header_dropdown_target', 'icon' );
-		$vh_target 		= $vh_target ? $vh_target : 'icon';
+		$sidr_target 	= get_theme_mod( 'ocean_mobile_menu_sidr_dropdown_target', 'link' );
+		$sidr_target 	= $sidr_target ? $sidr_target : 'link';
+		$vh_target 		= get_theme_mod( 'ocean_vertical_header_dropdown_target', 'link' );
+		$vh_target 		= $vh_target ? $vh_target : 'link';
 		$array = array(
 			'isRTL'                 => is_rtl(),
 			'menuSearchStyle'       => oceanwp_menu_search_style(),

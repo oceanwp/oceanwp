@@ -11,13 +11,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Post type
-$post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
+$post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
 
-<form method="get" class="searchform" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" aria-label="<?php _e( 'Primary', 'oceanwp' ); ?>">
-	<label for="s" class="screen-reader-text"><?php _e( 'Search', 'oceanwp' ) ?></label>
-	<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'oceanwp' ); ?>">
-	<?php if ( 'any' != $post_type ) { ?>
-		<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
-	<?php } ?>
+// Generate unique form ID. Based on the codes from the Twenty Twenty theme
+$ocean_sf_id = oceanwp_unique_id( 'ocean-search-form-' );
+$osf_id = esc_attr( $ocean_sf_id );
+
+?>
+
+<form role="search" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<label for="<?php echo $osf_id; ?>">
+		<span class="screen-reader-text"><?php _e( 'Search for:', 'oceanwp' ); ?></span>
+		<input type="search" id="<?php echo $osf_id; ?>" class="field" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Search', 'search placeholder', 'oceanwp' ); ?>" name="s">
+		<?php if ( 'any' != $post_type ) { ?>
+			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
+		<?php } ?>
+	</label>
 	<?php do_action( 'wpml_add_language_form_field' ); ?>
 </form>

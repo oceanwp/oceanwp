@@ -596,6 +596,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					'date'       		=> esc_html__( 'Date', 'oceanwp' ),
 					'categories' 		=> esc_html__( 'Categories', 'oceanwp' ),
 					'comments'   		=> esc_html__( 'Comments', 'oceanwp' ),
+					'mod-date'          => esc_html__( 'Modified Date', 'oceanwp' ),
 				) ),
 				'active_callback' 		=> 'oceanwp_cac_hasnt_thumbnail_blog_style',
 			) ) );
@@ -1016,6 +1017,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					'date'       		=> esc_html__( 'Date', 'oceanwp' ),
 					'categories' 		=> esc_html__( 'Categories', 'oceanwp' ),
 					'comments'   		=> esc_html__( 'Comments', 'oceanwp' ),
+					'mod-date'          => esc_html__( 'Modified Date', 'oceanwp' ),
 				) ),
 			) ) );
 

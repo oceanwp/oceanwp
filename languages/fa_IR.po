@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Portfolio Web\n"
-"POT-Creation-Date: 2020-01-19 09:30+0100\n"
-"PO-Revision-Date: 2020-01-19 09:30+0100\n"
+"POT-Creation-Date: 2020-03-18 16:36+0100\n"
+"PO-Revision-Date: 2020-03-18 16:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -17,23 +17,29 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2;esc_attr__\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:103
+#: 404.php:38 header.php:25 templates/landing.php:26
+#, fuzzy
+#| msgid "End of content"
+msgid "Skip to content"
+msgstr "پایان محتوا"
+
+#: 404.php:107
 msgid "This page could not be found!"
 msgstr "این صفحه نمی تواند پیدا شود!"
 
-#: 404.php:104
+#: 404.php:108
 msgid "We are sorry. But the page you are looking for is not available."
 msgstr "متاسفیم. اما صفحه مورد نظر شما در دسترس نیست."
 
-#: 404.php:104
+#: 404.php:108
 msgid "Perhaps you can try a new search."
 msgstr "شاید یک جستجوی جدید شما را به نتیجه برساند."
 
-#: 404.php:106
+#: 404.php:110
 msgid "Back To Homepage"
 msgstr "بازگشت به صفحه اصلی"
 
@@ -46,6 +52,12 @@ msgstr "این پست دارای یک نظر است"
 msgid "This Post Has %s Comments"
 msgstr "این پست دارای %s نظر است"
 
+#: comments.php:67 comments.php:75
+#, fuzzy
+#| msgid "Previous Post"
+msgid "Previous comment"
+msgstr "پست قبلی"
+
 #: comments.php:67 comments.php:75 partials/edd/single.php:50
 msgid "Previous"
 msgstr "قبلی"
@@ -55,6 +67,12 @@ msgstr "قبلی"
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "Next"
 msgstr "بعدی"
+
+#: comments.php:68 comments.php:76
+#, fuzzy
+#| msgid "Leave a comment"
+msgid "Next comment"
+msgstr "پیام بگذارید"
 
 #: comments.php:85
 msgid "Comments are closed."
@@ -76,6 +94,12 @@ msgstr "خروج از حساب کاربری"
 #: comments.php:94
 msgid "Log out &raquo;"
 msgstr "خروج &raquo;"
+
+#: comments.php:97
+#, fuzzy
+#| msgid "Comments"
+msgid "Comment"
+msgstr "نظرات"
 
 #: comments.php:97
 msgid "Your Comment Here..."
@@ -221,23 +245,23 @@ msgctxt "hour archives time format"
 msgid "g a"
 msgstr ""
 
-#: inc/breadcrumbs.php:928 inc/breadcrumbs.php:954 inc/breadcrumbs.php:978
-#: inc/breadcrumbs.php:1002 inc/breadcrumbs.php:1336
+#: inc/breadcrumbs.php:928 inc/breadcrumbs.php:957 inc/breadcrumbs.php:981
+#: inc/breadcrumbs.php:1005 inc/breadcrumbs.php:1339
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/breadcrumbs.php:929 inc/breadcrumbs.php:979 inc/breadcrumbs.php:1340
+#: inc/breadcrumbs.php:929 inc/breadcrumbs.php:982 inc/breadcrumbs.php:1343
 msgctxt "monthly archives date format"
 msgid "F"
 msgstr ""
 
-#: inc/breadcrumbs.php:930 inc/breadcrumbs.php:1344
+#: inc/breadcrumbs.php:930 inc/breadcrumbs.php:1347
 msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
-#: inc/breadcrumbs.php:955
+#: inc/breadcrumbs.php:958
 msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
@@ -477,7 +501,7 @@ msgid "Premium Addons Available"
 msgstr "افزودنی های پولی موجود است"
 
 #: inc/customizer/settings/blog.php:40 inc/customizer/settings/blog.php:758
-#: inc/helpers.php:2032
+#: inc/helpers.php:2051
 msgid "Blog"
 msgstr "وبلاگ"
 
@@ -822,7 +846,7 @@ msgid "Infinite Scroll: Spinners Color"
 msgstr "اسکرول بی نهایت: رنگ Spinners"
 
 #: inc/customizer/settings/blog.php:532
-#: inc/customizer/settings/woocommerce.php:1614 inc/helpers.php:3287
+#: inc/customizer/settings/woocommerce.php:1614 inc/helpers.php:3306
 #: inc/woocommerce/woocommerce-config.php:551
 msgid "End of content"
 msgstr "پایان محتوا"
@@ -833,7 +857,7 @@ msgid "Infinite Scroll: Last Text"
 msgstr "اسکرول بی نهایت: آخرین متن"
 
 #: inc/customizer/settings/blog.php:550
-#: inc/customizer/settings/woocommerce.php:1632 inc/helpers.php:3292
+#: inc/customizer/settings/woocommerce.php:1632 inc/helpers.php:3311
 #: inc/woocommerce/woocommerce-config.php:556
 msgid "No more pages to load"
 msgstr "صفحات بیشتری برای بارگیری وجود ندارد"
@@ -851,8 +875,8 @@ msgid "Elements Positioning"
 msgstr "موقعیت عناصر"
 
 #: inc/customizer/settings/blog.php:590 inc/customizer/settings/blog.php:1011
-#: inc/customizer/settings/lifterlms.php:211 inc/helpers.php:2903
-#: inc/helpers.php:2988
+#: inc/customizer/settings/lifterlms.php:211 inc/helpers.php:2922
+#: inc/helpers.php:3007
 msgid "Meta"
 msgstr "متا"
 
@@ -870,7 +894,7 @@ msgid "Categories"
 msgstr "دسته بندی ها"
 
 #: inc/customizer/settings/blog.php:598 inc/customizer/settings/blog.php:1019
-#: inc/helpers.php:2995
+#: inc/helpers.php:3014
 msgid "Comments"
 msgstr "نظرات"
 
@@ -1449,8 +1473,8 @@ msgstr "تصویر"
 
 #: inc/customizer/settings/edd.php:858
 #: inc/customizer/settings/woocommerce.php:1493
-#: inc/customizer/settings/woocommerce.php:1799 inc/helpers.php:2902
-#: inc/helpers.php:2987
+#: inc/customizer/settings/woocommerce.php:1799 inc/helpers.php:2921
+#: inc/helpers.php:3006
 msgid "Title"
 msgstr "عنوان"
 
@@ -2555,7 +2579,7 @@ msgstr "اگر از افزودنی استیکی هدر استفاده می کن�
 
 #: inc/customizer/settings/header.php:1061
 #: inc/customizer/settings/header.php:2155
-#: inc/customizer/settings/header.php:3486 inc/helpers.php:3763
+#: inc/customizer/settings/header.php:3486 inc/helpers.php:3784
 #: partials/mobile/mobile-icon.php:37
 msgid "Menu"
 msgstr "منو"
@@ -2976,6 +3000,7 @@ msgstr "هاور شبکه های اجتماعی: رنگ"
 #: inc/customizer/settings/header.php:3300
 #: inc/customizer/settings/header.php:3577
 #: inc/customizer/settings/typography.php:138
+#: partials/mobile/mobile-icon.php:87
 msgid "Mobile Menu"
 msgstr "منوی موبایل"
 
@@ -3068,7 +3093,7 @@ msgstr "نمایش متن منو"
 msgid "Menu Text"
 msgstr "متن منو"
 
-#: inc/customizer/settings/header.php:3503 inc/helpers.php:3764
+#: inc/customizer/settings/header.php:3503 inc/helpers.php:3785
 #: partials/mobile/mobile-icon.php:42
 msgid "Close"
 msgstr "بستن"
@@ -3119,7 +3144,8 @@ msgstr "دکمه \"بستن\" منو"
 msgid "Close Menu Button Icon Class"
 msgstr "کلاس آیکون دکمه \"بستن\" منو"
 
-#: inc/customizer/settings/header.php:3682 inc/helpers.php:3765
+#: inc/customizer/settings/header.php:3682 inc/helpers.php:3786
+#: partials/mobile/mobile-fullscreen.php:72
 #: partials/mobile/mobile-sidr-close.php:20
 msgid "Close Menu"
 msgstr "بستن منو"
@@ -3256,8 +3282,8 @@ msgstr "جزئیات دوره ها"
 
 #: inc/customizer/settings/lifterlms.php:209
 #: inc/customizer/settings/lifterlms.php:240
-#: inc/customizer/settings/woocommerce.php:1516 inc/helpers.php:2901
-#: inc/helpers.php:2986
+#: inc/customizer/settings/woocommerce.php:1516 inc/helpers.php:2920
+#: inc/helpers.php:3005
 msgid "Featured Image"
 msgstr "تصویر ویژه"
 
@@ -3355,8 +3381,8 @@ msgid "Centered Content & Social"
 msgstr "محتوا و شبکه های اجتماعی در مرکز"
 
 #: inc/customizer/settings/topbar.php:306
-#: inc/customizer/settings/topbar.php:340 inc/helpers.php:2904
-#: inc/helpers.php:2989 inc/third/class-beaver-themer.php:127
+#: inc/customizer/settings/topbar.php:340 inc/helpers.php:2923
+#: inc/helpers.php:3008 inc/third/class-beaver-themer.php:127
 msgid "Content"
 msgstr "محتوا"
 
@@ -3680,7 +3706,7 @@ msgstr "فیلتر کردن Off Canvas"
 msgid "Display Filter Button"
 msgstr "نمایش دکمه فیلتر"
 
-#: inc/customizer/settings/woocommerce.php:1380 inc/helpers.php:3770
+#: inc/customizer/settings/woocommerce.php:1380 inc/helpers.php:3791
 #: inc/woocommerce/woocommerce-config.php:914
 msgid "Filter"
 msgstr "فیلتر"
@@ -3916,7 +3942,7 @@ msgstr "تسویه حساب چند مرحله ای"
 msgid "Timeline Style"
 msgstr "استایل نوار زمان"
 
-#: inc/customizer/settings/woocommerce.php:2471 inc/helpers.php:3690
+#: inc/customizer/settings/woocommerce.php:2471 inc/helpers.php:3711
 msgid "Arrow"
 msgstr "فلش"
 
@@ -4314,328 +4340,364 @@ msgstr "مشاهده جزئیات"
 msgid "Add to Cart"
 msgstr "افزودن به سبد خرید"
 
-#: inc/helpers.php:1697 partials/mobile/mobile-fullscreen-search.php:28
+#: inc/helpers.php:1714 partials/mobile/mobile-fullscreen-search.php:28
 msgid "Type your search"
 msgstr "نوع جستجوی شما"
 
-#: inc/helpers.php:1944
+#: inc/helpers.php:1774
+#, fuzzy
+#| msgid "Search Result Page"
+msgid "Search website"
+msgstr "صفحه نتایج جستجو"
+
+#: inc/helpers.php:1963
 msgid "Recent Posts"
 msgstr "پست های اخیر"
 
-#: inc/helpers.php:1957
+#: inc/helpers.php:1976
 msgid "Search Results Found"
 msgstr "نتایج جستجو یافت شد"
 
-#: inc/helpers.php:1975
+#: inc/helpers.php:1994
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "بایگانی روزانه: %s"
 
-#: inc/helpers.php:1980
+#: inc/helpers.php:1999
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "بایگانی ماهانه: %s"
 
-#: inc/helpers.php:1980
+#: inc/helpers.php:1999
 msgctxt "Page title monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/helpers.php:1985
+#: inc/helpers.php:2004
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "بایگانی سالانه: %s"
 
-#: inc/helpers.php:1985
+#: inc/helpers.php:2004
 msgctxt "Page title yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/helpers.php:2007
+#: inc/helpers.php:2026
 msgid "404: Page Not Found"
 msgstr "404: صفحه پیدا نشد"
 
-#: inc/helpers.php:2070
+#: inc/helpers.php:2089
 msgid "You searched for:"
 msgstr "شما جستجو کردید برای:"
 
-#: inc/helpers.php:2075
+#: inc/helpers.php:2094
 msgid "This author has written"
 msgstr "این نویسنده نوشته است"
 
-#: inc/helpers.php:2075
+#: inc/helpers.php:2094
 msgid "articles"
 msgstr "مقالات"
 
-#: inc/helpers.php:2905
+#: inc/helpers.php:2924
 msgid "Read More"
 msgstr "ادامه مطلب"
 
-#: inc/helpers.php:2990
+#: inc/helpers.php:3009
 msgid "Tags"
 msgstr "برچسب ها"
 
-#: inc/helpers.php:2991
+#: inc/helpers.php:3010
 msgid "Social Share"
 msgstr "اشتراک گذاری شبکه های اجتماعی"
 
-#: inc/helpers.php:2992
+#: inc/helpers.php:3011
 msgid "Next/Prev Links"
 msgstr "لینک های بعدی/قبلی"
 
-#: inc/helpers.php:2993
+#: inc/helpers.php:3012
 msgid "Author Box"
 msgstr "باکس نویسنده"
 
-#: inc/helpers.php:2994
+#: inc/helpers.php:3013
 msgid "Related Posts"
 msgstr "پست های مرتبط"
 
-#: inc/helpers.php:3083
+#: inc/helpers.php:3102
 msgid "Pingback:"
 msgstr ""
 
-#: inc/helpers.php:3083
+#: inc/helpers.php:3102
+#, fuzzy
+#| msgid "(Edit)"
+msgctxt "edit the post comment"
 msgid "(Edit)"
 msgstr "(ویرایش)"
 
-#: inc/helpers.php:3101
+#: inc/helpers.php:3120
 #, php-format
 msgid "%s "
 msgstr ""
 
-#: inc/helpers.php:3110
+#: inc/helpers.php:3129
 msgid "edit"
 msgstr "ویرایش"
 
-#: inc/helpers.php:3122
+#: inc/helpers.php:3141
 msgid "Your comment is awaiting moderation."
 msgstr "نظر شما در انتظار تایید است."
 
-#: inc/helpers.php:3152
+#: inc/helpers.php:3171
+msgctxt "screen reader text for comment author"
+msgid "Enter your name or username"
+msgstr ""
+
+#: inc/helpers.php:3171
 msgid "Name (required)"
 msgstr "نام (الزامی)"
 
-#: inc/helpers.php:3154
+#: inc/helpers.php:3173
+#, fuzzy
+#| msgid "Enter Food Menu Details"
+msgctxt "screen reader text for comment author email"
+msgid "Enter your email"
+msgstr "جزئیات غذا را وارد کنید"
+
+#: inc/helpers.php:3173
 msgid "Email (required)"
 msgstr "ایمیل (الزامی)"
 
-#: inc/helpers.php:3156
+#: inc/helpers.php:3175
+#, fuzzy
+#| msgid "Mobile (optional)"
+msgctxt "screen reader text for comment author website url"
+msgid "Enter your website URL (optional)"
+msgstr "موبایل (اختیاری)"
+
+#: inc/helpers.php:3175
 msgid "Website"
 msgstr "وبسایت"
 
-#: inc/helpers.php:3253 inc/helpers.php:3307
+#: inc/helpers.php:3239
+msgid "Go to the previous page"
+msgstr ""
+
+#: inc/helpers.php:3240
+msgid "Go to the next page"
+msgstr ""
+
+#: inc/helpers.php:3272 inc/helpers.php:3326
 #: inc/woocommerce/woocommerce-config.php:570
 msgid "Newer Posts"
 msgstr "پست های جدیدتر"
 
-#: inc/helpers.php:3256 inc/helpers.php:3308
+#: inc/helpers.php:3275 inc/helpers.php:3327
 #: inc/woocommerce/woocommerce-config.php:571
 msgid "Older Posts"
 msgstr "پست های قدیمی تر"
 
 #. Theme Name of the plugin/theme
-#: inc/helpers.php:3636
+#: inc/helpers.php:3657
 msgid "OceanWP"
 msgstr ""
 
-#: inc/helpers.php:3683
+#: inc/helpers.php:3704
 msgid "Default Icon"
 msgstr "آیکون پیش فرض"
 
-#: inc/helpers.php:3684
+#: inc/helpers.php:3705
 msgid "3D X"
 msgstr ""
 
-#: inc/helpers.php:3685
+#: inc/helpers.php:3706
 msgid "3D X Reverse"
 msgstr ""
 
-#: inc/helpers.php:3686
+#: inc/helpers.php:3707
 msgid "3D Y"
 msgstr ""
 
-#: inc/helpers.php:3687
+#: inc/helpers.php:3708
 msgid "3D Y Reverse"
 msgstr ""
 
-#: inc/helpers.php:3688
+#: inc/helpers.php:3709
 msgid "3D XY"
 msgstr ""
 
-#: inc/helpers.php:3689
+#: inc/helpers.php:3710
 msgid "3D XY Reverse"
 msgstr ""
 
-#: inc/helpers.php:3691
+#: inc/helpers.php:3712
 msgid "Arrow Reverse"
 msgstr ""
 
-#: inc/helpers.php:3692
+#: inc/helpers.php:3713
 msgid "Arrowalt"
 msgstr ""
 
-#: inc/helpers.php:3693
+#: inc/helpers.php:3714
 msgid "Arrowalt Reverse"
 msgstr ""
 
-#: inc/helpers.php:3694
+#: inc/helpers.php:3715
 msgid "Arrowturn"
 msgstr ""
 
-#: inc/helpers.php:3695
+#: inc/helpers.php:3716
 msgid "Arrowturn Reverse"
 msgstr ""
 
-#: inc/helpers.php:3696
+#: inc/helpers.php:3717
 msgid "Boring"
 msgstr ""
 
-#: inc/helpers.php:3697
+#: inc/helpers.php:3718
 msgid "Collapse"
 msgstr ""
 
-#: inc/helpers.php:3698
+#: inc/helpers.php:3719
 msgid "Collapse Reverse"
 msgstr ""
 
-#: inc/helpers.php:3699
+#: inc/helpers.php:3720
 msgid "Elastic"
 msgstr ""
 
-#: inc/helpers.php:3700
+#: inc/helpers.php:3721
 msgid "Elastic Reverse"
 msgstr ""
 
-#: inc/helpers.php:3701
+#: inc/helpers.php:3722
 msgid "Minus"
 msgstr ""
 
-#: inc/helpers.php:3702
+#: inc/helpers.php:3723
 msgid "Slider"
 msgstr ""
 
-#: inc/helpers.php:3703
+#: inc/helpers.php:3724
 msgid "Slider Reverse"
 msgstr ""
 
-#: inc/helpers.php:3704
+#: inc/helpers.php:3725
 msgid "Spin"
 msgstr ""
 
-#: inc/helpers.php:3705
+#: inc/helpers.php:3726
 msgid "Spin Reverse"
 msgstr ""
 
-#: inc/helpers.php:3706
+#: inc/helpers.php:3727
 msgid "Spring"
 msgstr ""
 
-#: inc/helpers.php:3707
+#: inc/helpers.php:3728
 msgid "Spring Reverse"
 msgstr ""
 
-#: inc/helpers.php:3708
+#: inc/helpers.php:3729
 msgid "Stand"
 msgstr ""
 
-#: inc/helpers.php:3709
+#: inc/helpers.php:3730
 msgid "Stand Reverse"
 msgstr ""
 
-#: inc/helpers.php:3710
+#: inc/helpers.php:3731
 msgid "Squeeze"
 msgstr ""
 
-#: inc/helpers.php:3711
+#: inc/helpers.php:3732
 msgid "Vortex"
 msgstr ""
 
-#: inc/helpers.php:3712
+#: inc/helpers.php:3733
 msgid "Vortex Reverse"
 msgstr ""
 
-#: inc/helpers.php:3766
+#: inc/helpers.php:3787
 msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
 msgstr ""
 
-#: inc/helpers.php:3789
+#: inc/helpers.php:3810
 msgid "Twitter"
 msgstr ""
 
-#: inc/helpers.php:3793
+#: inc/helpers.php:3814
 msgid "Facebook"
 msgstr ""
 
-#: inc/helpers.php:3797
+#: inc/helpers.php:3818
 msgid "Google Plus"
 msgstr ""
 
-#: inc/helpers.php:3801
+#: inc/helpers.php:3822
 msgid "Pinterest"
 msgstr ""
 
-#: inc/helpers.php:3805
+#: inc/helpers.php:3826
 msgid "Dribbble"
 msgstr ""
 
-#: inc/helpers.php:3809
+#: inc/helpers.php:3830
 msgid "VK"
 msgstr ""
 
-#: inc/helpers.php:3813
+#: inc/helpers.php:3834
 msgid "Instagram"
 msgstr ""
 
-#: inc/helpers.php:3817
+#: inc/helpers.php:3838
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/helpers.php:3821
+#: inc/helpers.php:3842
 msgid "Tumblr"
 msgstr ""
 
-#: inc/helpers.php:3825
+#: inc/helpers.php:3846
 msgid "Github"
 msgstr ""
 
-#: inc/helpers.php:3829
+#: inc/helpers.php:3850
 msgid "Flickr"
 msgstr ""
 
-#: inc/helpers.php:3833
+#: inc/helpers.php:3854
 msgid "Skype"
 msgstr ""
 
-#: inc/helpers.php:3837
+#: inc/helpers.php:3858
 msgid "Youtube"
 msgstr ""
 
-#: inc/helpers.php:3841
+#: inc/helpers.php:3862
 msgid "Vimeo"
 msgstr ""
 
-#: inc/helpers.php:3845
+#: inc/helpers.php:3866
 msgid "Vine"
 msgstr ""
 
-#: inc/helpers.php:3849
+#: inc/helpers.php:3870
 msgid "Xing"
 msgstr ""
 
-#: inc/helpers.php:3853
+#: inc/helpers.php:3874
 msgid "Yelp"
 msgstr ""
 
-#: inc/helpers.php:3857
+#: inc/helpers.php:3878
 msgid "Tripadvisor"
 msgstr ""
 
-#: inc/helpers.php:3861
+#: inc/helpers.php:3882
 msgid "RSS"
 msgstr ""
 
-#: inc/helpers.php:3865
+#: inc/helpers.php:3886
 msgid "Email"
 msgstr "ایمیل"
 
@@ -5450,41 +5512,128 @@ msgid "Placeholder Image"
 msgstr "تصویر Placeholder"
 
 #: partials/edd/single.php:54 partials/entry/readmore.php:14
-#: partials/search/readmore.php:14 partials/single/next-prev.php:28
+#: partials/search/readmore.php:14
 msgid "Continue Reading"
 msgstr "ادامه خواندن"
 
-#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:52
+#: partials/entry/meta.php:23
+#, fuzzy
+#| msgid "Course Details"
+msgid "Post details:"
+msgstr "جزئیات دوره ها"
+
+#: partials/entry/meta.php:35 partials/single/meta.php:42
+msgid "Post published:"
+msgstr ""
+
+#: partials/entry/meta.php:41 partials/single/meta.php:48
+msgid "Post last modified:"
+msgstr ""
+
+#: partials/entry/meta.php:46 partials/single/meta.php:53
+#, fuzzy
+#| msgid "Categories"
+msgid "Categories:"
+msgstr "دسته بندی ها"
+
+#: partials/entry/meta.php:51 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:58
 msgid "0 Comments"
 msgstr "0 دیدگاه"
 
-#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:52
+#: partials/entry/meta.php:51 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:58
 msgid "1 Comment"
 msgstr "1 دیدگاه"
 
-#: partials/entry/meta.php:46 partials/entry/thumbnail-style/comments.php:16
-#: partials/single/meta.php:52
+#: partials/entry/meta.php:51 partials/entry/thumbnail-style/comments.php:16
+#: partials/single/meta.php:58
 msgid "% Comments"
 msgstr "% دیدگاه"
+
+#: partials/header/search-overlay.php:19 partials/header/search-replace.php:25
+#, fuzzy
+#| msgid "Mobile Menu Search"
+msgid "Close Search"
+msgstr "جستجوی منوی موبایل"
+
+#: partials/header/search-overlay.php:20 partials/header/search-replace.php:18
+#: partials/mobile/mobile-search.php:22 searchform.php:24
+#, fuzzy
+#| msgid "Search Form"
+msgid "Search for:"
+msgstr "فرم جستجو"
 
 #: partials/header/search-overlay.php:21
 msgid "Type your text and hit enter to search"
 msgstr "متن خود را جهت جستجو تایپ کنید"
 
-#: partials/header/search-replace.php:18
+#: partials/header/search-overlay.php:22
+#, fuzzy
+#| msgid "Type your text and hit enter to search"
+msgid "Type text and hit enter to search"
+msgstr "متن خود را جهت جستجو تایپ کنید"
+
+#: partials/header/search-replace.php:19
 msgid "Type then hit enter to search..."
 msgstr "متن مورد نظر را وارد کنید..."
+
+#: partials/header/social.php:106 partials/topbar/social.php:88
+#, fuzzy
+#| msgid "Social Icons"
+msgid "Social links"
+msgstr "آیکون شبکه های اجتماعی"
+
+#: partials/header/social.php:116 partials/topbar/social.php:102
+msgid "(opens in a new tab)"
+msgstr ""
+
+#: partials/header/social.php:128 partials/topbar/social.php:115
+msgid "Skype (opens in your application)"
+msgstr ""
+
+#: partials/header/social.php:130 partials/topbar/social.php:117
+msgid "Send email (opens in your application)"
+msgstr ""
+
+#: partials/header/style/medium-header-search.php:17
+#, fuzzy
+#| msgid "Medium Header Settings"
+msgid "Medium Header Search"
+msgstr "تنظیمات هدر"
 
 #: partials/header/style/medium-header-search.php:24
 #: partials/header/style/vertical-header-search.php:24
 msgid "Search..."
 msgstr "جستجو..."
 
-#: partials/mobile/mobile-search.php:18 searchform.php:17
+#: partials/header/style/vertical-header-search.php:17
+#, fuzzy
+#| msgid "Vertical Header Settings"
+msgid "Vertical Header Search"
+msgstr "تنظیمات هدر عمودی"
+
+#: partials/mobile/mobile-fullscreen-search.php:21
+#, fuzzy
+#| msgid "Mobile Menu Search"
+msgid "Mobile Search"
+msgstr "جستجوی منوی موبایل"
+
+#: partials/mobile/mobile-search.php:24
 msgid "Search"
 msgstr "جستجو"
+
+#: partials/mobile/mobile-search.php:25
+#, fuzzy
+#| msgid "Search"
+msgid "Submit Search"
+msgstr "جستجو"
+
+#: partials/mobile/mobile-sidr-close.php:23
+#, fuzzy
+#| msgid "Close Menu"
+msgid "Close mobile Menu"
+msgstr "بستن منو"
 
 #: partials/none.php:11
 #, php-format
@@ -5519,9 +5668,25 @@ msgstr "به نظر می رسد ما نمی توانیم چیزی که به دن
 msgid "Pages:"
 msgstr "صفحات:"
 
+#: partials/scroll-top.php:26
+msgid "Scroll to the top of the page"
+msgstr ""
+
 #: partials/single/author-bio.php:36 partials/single/author-bio.php:47
 msgid "Visit Author Page"
 msgstr "صفجه نویسنده را ببینید"
+
+#: partials/single/meta.php:37
+msgid "By:&nbsp;"
+msgstr ""
+
+#: partials/single/meta.php:43
+msgid "Published:&nbsp;"
+msgstr ""
+
+#: partials/single/meta.php:49
+msgid "Last Modified:&nbsp;"
+msgstr ""
 
 #: partials/single/next-prev.php:24
 msgid "Previous Post"
@@ -5531,9 +5696,40 @@ msgstr "پست قبلی"
 msgid "Next Post"
 msgstr "پست بعدی"
 
+#: partials/single/next-prev.php:28
+#, fuzzy
+#| msgid "Need more features?"
+msgid "Read more articles"
+msgstr "نیاز به ویژگی های بیشتر دارید؟"
+
 #: partials/single/related-posts.php:19
 msgid "You Might Also Like"
 msgstr "شاید دوست داشته باشید"
+
+#: partials/single/tags.php:15
+#, fuzzy
+#| msgid "Tags"
+msgid "Tags: "
+msgstr "برچسب ها"
+
+#: searchform.php:25
+#, fuzzy
+#| msgid "Search"
+msgctxt "search placeholder"
+msgid "Search"
+msgstr "جستجو"
+
+#: sidebar-left.php:10
+#, fuzzy
+#| msgid "Before Sidebar"
+msgid "Secondary sidebar"
+msgstr "قبل از اسلایدر"
+
+#: sidebar.php:15
+#, fuzzy
+#| msgid "Primary Menu"
+msgid "Primary sidebar"
+msgstr "منوی اصلی"
 
 #: woocommerce/cart/mini-cart.php:73
 msgid "Remove this item"
@@ -5576,8 +5772,16 @@ msgstr "بازگشت به سبد خرید"
 msgid "Prev"
 msgstr "قبلی"
 
+#: woocommerce/owp-off-canvas-sidebar.php:17
+msgid "Close off canvas panel"
+msgstr ""
+
 #: woocommerce/quick-view-image.php:55
 msgid "Placeholder"
+msgstr ""
+
+#: woocommerce/quick-view.php:16
+msgid "Close quick preview"
 msgstr ""
 
 #: woocommerce/result-count.php:60
@@ -5587,6 +5791,26 @@ msgstr "مشاهده:"
 #: woocommerce/result-count.php:63
 msgid "All"
 msgstr "همه"
+
+#: woocommerce/share.php:21
+msgid "Share on Facebook (opens in a new tab)"
+msgstr ""
+
+#: woocommerce/share.php:28
+msgid "Share on Twitter (opens in a new tab)"
+msgstr ""
+
+#: woocommerce/share.php:35
+msgid "Share on Pinterest (opens in a new tab)"
+msgstr ""
+
+#: woocommerce/share.php:42
+msgid "Share on Google plus (opens in a new tab)"
+msgstr ""
+
+#: woocommerce/share.php:49
+msgid "Share by email (opens in a new tab)"
+msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "https://oceanwp.org/"
@@ -5849,9 +6073,6 @@ msgstr "https://demo.hamyarwp.com/oceanwp/"
 #~ msgid "Read full documentation"
 #~ msgstr "مستندات را کامل بخوانید"
 
-#~ msgid "Need more features?"
-#~ msgstr "نیاز به ویژگی های بیشتر دارید؟"
-
 #~ msgid ""
 #~ "Upgrade to PRO version for more exciting features and Priority Support."
 #~ msgstr ""
@@ -5974,9 +6195,6 @@ msgstr "https://demo.hamyarwp.com/oceanwp/"
 
 #~ msgid "Write your own credit text."
 #~ msgstr "متن Credit خود را بنویسید."
-
-#~ msgid "Social Icons"
-#~ msgstr "آیکون شبکه های اجتماعی"
 
 #~ msgid "Unlimited"
 #~ msgstr "نامحدود"
@@ -6107,9 +6325,6 @@ msgstr "https://demo.hamyarwp.com/oceanwp/"
 #~ msgid "Top Menu ( Support First Level Only )"
 #~ msgstr "منوی بالا (پشتیبانی فقط برای سطح اول)"
 
-#~ msgid "Primary Menu"
-#~ msgstr "منوی اصلی"
-
 #~ msgid "One Page Menu for Front Page"
 #~ msgstr "صفحه منو برای صفحه اول"
 
@@ -6118,9 +6333,6 @@ msgstr "https://demo.hamyarwp.com/oceanwp/"
 
 #~ msgid ", "
 #~ msgstr "، "
-
-#~ msgid "Leave a comment"
-#~ msgstr "پیام بگذارید"
 
 #~ msgid "Edit %s"
 #~ msgstr "ویرایش %s"
@@ -6571,9 +6783,6 @@ msgstr "https://demo.hamyarwp.com/oceanwp/"
 
 #~ msgid "Enter Food Menu Link"
 #~ msgstr "لینک غذا را وارد کنید"
-
-#~ msgid "Enter Food Menu Details"
-#~ msgstr "جزئیات غذا را وارد کنید"
 
 #~ msgid "AT Gallery Section"
 #~ msgstr "بخش گالری"

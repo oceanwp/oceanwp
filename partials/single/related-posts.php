@@ -182,11 +182,11 @@ if ( $oceanwp_related_query->have_posts() ) :
 					<h3 class="related-post-title">
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3><!-- .related-post-title -->
-									
-					<time class="published" datetime="<?php echo esc_html( get_the_date( 'c' ) ); ?>"><i class="icon-clock"></i><?php echo esc_html( get_the_date() ); ?></time>
+
+					<time class="published" datetime="<?php echo esc_html( get_the_date( 'c' ) ); ?>"><i class="icon-clock" aria-hidden="true"></i><?php echo esc_html( get_the_date() ); ?></time>
 
 				</article><!-- .related-post -->
-				
+
 				<?php if ( $oceanwp_columns == $oceanwp_count ) $oceanwp_count=0; ?>
 
 			<?php endforeach; ?>

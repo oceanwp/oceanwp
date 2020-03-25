@@ -18,4 +18,5 @@ $text = apply_filters( 'ocean_search_readmore_link_text', $text ); ?>
 
 <div class="search-entry-readmore clr">
     <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( $text ); ?>"><?php echo esc_html( $text ); ?></a>
+    <span class="screen-reader-text"><?php the_title(); ?></span>
 </div><!-- .search-entry-readmore -->

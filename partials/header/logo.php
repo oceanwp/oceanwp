@@ -76,7 +76,7 @@ if ( display_header_text() && ! OCEAN_EXTRA_ACTIVE && ! class_exists( 'Ocean_Ext
 
 	<?php
 	// Site description
-	if (display_header_text()==true){
+	if ( display_header_text()==true ){
 		if ( 'top' == oceanwp_header_style()
 			&& '' != get_bloginfo( 'description' ) ) { ?>
 			<div id="site-description"><h2 <?php echo $header_text_color; ?>><?php echo bloginfo( 'description' ); ?></h2></div>

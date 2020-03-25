@@ -1,15 +1,27 @@
 # OceanWP Changelog
 
+### *2020.03.23* - 1.7.9:
+* **Added** - Improved keyboard navigation for Accessibility.
+* **Added** - Improved Accessibility - aria labels and screen reader text, especially for Tob Bar and Header social menus.
+* **Added** - Modified Date option with Schema Markup: Blog entries & single posts.
+* **Added** - SEO Improvement - comment author link tag changed from H3 to span.
+* **Fixed** - Keyboard navigation for the Mobile Menu.
+* **Fixed** - Default dropdown target for the Mobile Menu set to 'Link' instead of 'Icon'.
+* **Fixed** - Mobile Menu covering the admin bar when logged in.
+* **Fixed** - DOM errors occuring due to default search forms not having unique IDs.
+* **Fixed** - Keyboard navigation for the comment section with screen reader text.
+* **Fixed** - Escaped placeholder text on the comment section.
+* **Updated** - Translation strings.
+* **Updated** - readme.txt file.
+
 ### *2020.03.10* - 1.7.8:
 * **Added** - Improved Accessibility.
 * **Added** - Added hook after site title text in the header.
 * **Added** - Added hook wp_body_open() after the body tag.
 * **Fixed** - Fatal error when using filter woommerce_add_to_cart_redirect.
 * **Fixed** - Customizer Header Text Color setting when Ocean Extra is disabled.
-* **Fixed** - improved the usage of escaping functions.
+* **Fixed** - Improved the usage of escaping functions.
 * **Updated** - readme.txt file.
-
-
 
 ### *2020.02.28* - 1.7.7:
 * **Added** - Updated credit links for images used in theme screenshot in readme.txt file.

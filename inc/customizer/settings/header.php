@@ -1596,7 +1596,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 * Vertical Header Menu Dropdown Target
 			 */
 			$wp_customize->add_setting( 'ocean_vertical_header_dropdown_target', array(
-				'default'           	=> 'icon',
+				'default'           	=> 'link',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 
@@ -3697,7 +3697,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 * Mobile Menu Dropdown Target
 			 */
 			$wp_customize->add_setting( 'ocean_mobile_menu_sidr_dropdown_target', array(
-				'default'           	=> 'icon',
+				'default'           	=> 'link',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 

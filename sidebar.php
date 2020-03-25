@@ -12,7 +12,7 @@ if ( in_array( oceanwp_post_layout(), array( 'full-screen', 'full-width' ) ) ) {
 
 <?php do_action( 'ocean_before_sidebar' ); ?>
 
-<aside id="right-sidebar" class="sidebar-container widget-area sidebar-primary"<?php oceanwp_schema_markup( 'sidebar' ); ?> role="complementary" aria-label="<?php _e( 'Primary', 'oceanwp' ); ?>">
+<aside id="right-sidebar" class="sidebar-container widget-area sidebar-primary"<?php oceanwp_schema_markup( 'sidebar' ); ?> role="complementary" aria-label="<?php _e( 'Primary Sidebar', 'oceanwp' ); ?>">
 
 	<?php do_action( 'ocean_before_sidebar_inner' ); ?>
 
