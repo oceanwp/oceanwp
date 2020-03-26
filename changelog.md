@@ -1,9 +1,11 @@
 # OceanWP Changelog
 
-### *2020.03.25* - 1.8.0:
+### *2020.03.26* - 1.8.0:
 * **Fixed** - Homepage title override #196
 * **Fixed** - Topbar covers the sidebar menu style when open.
 * **Fixed** - Sidebar menu style is not working with other header styles.
+* **Fixed** - Categories shown on product listing grid view not constrained #211
+* **Fixed** - Huge space on Youtube video emabeding
 
 
 ### *2020.03.23* - 1.7.9:

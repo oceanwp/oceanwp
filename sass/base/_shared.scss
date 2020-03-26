@@ -43,6 +43,16 @@ object {
 	max-width: 100%;
 }
 
+.wp-embed-responsive {
+	.wp-block-embed {
+		.wp-block-embed__wrapper {
+			&:before {
+				position: absolute;
+			}
+		}
+	}
+}
+
 .alignfull {
 	margin: 32px 0;
 	max-width: 100%;

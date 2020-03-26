@@ -255,7 +255,7 @@
   font-style: italic;
   margin-bottom: 8px;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .woocommerce ul.products li.product li.category a {
