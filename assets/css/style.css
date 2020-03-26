@@ -2178,7 +2178,7 @@ a.pure-button-selected {
   background-color: #fff;
   font-size: 12px;
   border-bottom: 1px solid #f1f1f1;
-  z-index: 101;
+  z-index: 100;
 }
 
 #top-bar {
@@ -3772,6 +3772,10 @@ a.pure-button-selected {
 
 #site-header.vertical-header #site-header-inner > *:not(#site-navigation-wrap) {
   padding: 0 30px;
+}
+
+#site-header.vertical-header #site-header-inner #sidr {
+  display: block;
 }
 
 #site-header.vertical-header.vh-left-logo #site-logo {

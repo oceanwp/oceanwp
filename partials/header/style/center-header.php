@@ -18,6 +18,10 @@ if ( true != get_theme_mod( 'ocean_header_full_width', false ) )  {
 	$classes[] = 'container';
 }
 
+if ( 'sidebar' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
+	$classes[] = 'mobile-sidebar-menu-style';
+}
+
 // Add menus position class
 $position = get_theme_mod( 'ocean_center_header_menu_position', 'centered' );
 $position = $position ? $position : 'centered';

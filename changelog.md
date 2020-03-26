@@ -1,8 +1,14 @@
 # OceanWP Changelog
 
+### *2020.03.25* - 1.8.0:
+* **Fixed** - Homepage title override #196
+* **Fixed** - Topbar covers the sidebar menu style when open.
+* **Fixed** - Sidebar menu style is not working with other header styles.
+
+
 ### *2020.03.23* - 1.7.9:
 * **Added** - Improved keyboard navigation for Accessibility.
-* **Added** - Improved Accessibility - aria labels and screen reader text, especially for Tob Bar and Header social menus.
+* **Added** - Improved Accessibility - aria labels and screen reader text, especially for Top Bar and Header social menus.
 * **Added** - Modified Date option with Schema Markup: Blog entries & single posts.
 * **Added** - SEO Improvement - comment author link tag changed from H3 to span.
 * **Fixed** - Keyboard navigation for the Mobile Menu.

@@ -94,7 +94,7 @@ if ( 'full-screen' == oceanwp_post_layout() ) {
 			'logged_in_as'			=> '<p class="logged-in-as">'. esc_html__( 'Logged in as', 'oceanwp' ) .' <a href="'. admin_url( 'profile.php' ) .'">'. $user_identity .'</a>. <a href="' . wp_logout_url( get_permalink() ) .'" title="'. esc_attr__( 'Log out of this account', 'oceanwp' ) .'">'. esc_attr__( 'Log out &raquo;', 'oceanwp' ) .'</a></p>',
 			'comment_notes_before'	=> false,
 			'comment_notes_after'	=> false,
-			'comment_field'			=> '<div class="comment-textarea"><label for="comment" class="screen-reader-text">'. esc_attr( 'Comment', 'oceanwp' ) . '</label><textarea name="comment" id="comment" cols="39" rows="4" tabindex="0" class="textarea-comment" placeholder="'. esc_attr__( 'Your Comment Here...', 'oceanwp' ) .'"></textarea></div>',
+			'comment_field'			=> '<div class="comment-textarea"><label for="comment" class="screen-reader-text">'. esc_html( 'Comment', 'oceanwp' ) . '</label><textarea name="comment" id="comment" cols="39" rows="4" tabindex="0" class="textarea-comment" placeholder="'. esc_attr__( 'Your Comment Here...', 'oceanwp' ) .'"></textarea></div>',
 			'id_submit'				=> 'comment-submit',
 			'label_submit'			=> esc_html__( 'Post Comment', 'oceanwp' ),
 		)

@@ -21,6 +21,10 @@ if ( true != get_theme_mod( 'ocean_header_full_width', false ) ) {
     $classes[] = 'container';
 }
 
+if ( 'sidebar' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
+	$classes[] = 'mobile-sidebar-menu-style';
+}
+
 // Turn classes into space seperated string
 $classes = implode( ' ', $classes );
 

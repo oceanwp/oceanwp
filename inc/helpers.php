@@ -1950,17 +1950,17 @@ if ( ! function_exists( 'oceanwp_title' ) ) {
 
 		// Default title is null
 		$title = NULL;
-		
+
 		// Get post ID
 		$post_id = oceanwp_post_id();
-		
+
 		// Homepage - display blog description if not a static page
 		if ( is_front_page() && ! is_singular( 'page' ) ) {
-			
+
 			if ( get_bloginfo( 'description' ) ) {
 				$title = get_bloginfo( 'description' );
 			} else {
-				return esc_html__( 'Recent Posts', 'oceanwp' );
+				$title = esc_html__( 'Recent Posts', 'oceanwp' );
 			}
 
 		// Homepage posts page
@@ -1975,7 +1975,7 @@ if ( ! function_exists( 'oceanwp_title' ) ) {
 			global $wp_query;
 			$title = '<span id="search-results-count">'. $wp_query->found_posts .'</span> '. esc_html__( 'Search Results Found', 'oceanwp' );
 		}
-			
+
 		// Archives
 		elseif ( is_archive() ) {
 
