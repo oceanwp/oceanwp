@@ -101,7 +101,7 @@ if ( 'transparent' == $header_style
 
 			<?php do_action( 'ocean_before_header_inner' ); ?>
 
-			<div id="site-header-inner" class="clr<?php echo esc_attr( $class ); ?>">
+			<div id="site-header-inner" class="clr <?php echo esc_attr( $class ); ?>">
 
 				<?php do_action( 'ocean_header_inner_left_content' ); ?>
 

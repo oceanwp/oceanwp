@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2020.03.27* - 1.8.1:
+* **Fixed** - Mobile Menu is not working with full-width header option.
+
 ### *2020.03.26* - 1.8.0:
 * **Fixed** - Homepage title override #196
 * **Fixed** - Topbar covers the sidebar menu style when open.
