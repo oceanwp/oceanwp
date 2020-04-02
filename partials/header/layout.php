@@ -29,16 +29,12 @@ if ( 'vertical' == $header_style ) {
 	$header_height = 0;
 }
 
-// Add container class if the header is not full width
-$class = array();
-if ( true != get_theme_mod( 'ocean_header_full_width', false ) )  {
-	$class[] = ' container';
-}
-if ( 'sidebar' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
-	$class[] = 'mobile-sidebar-menu-style';
-}
 
-$class = implode( ' ', $class );
+// Add container class if the header is not full width
+$class = '';
+if ( true != get_theme_mod( 'ocean_header_full_width', false ) )  {
+	$class = 'container';
+}
 
 do_action( 'ocean_before_header' );
 

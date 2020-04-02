@@ -87,7 +87,7 @@ function oceanwpMobileMenu( event ) {
 				}
 
 				// Add light overlay to content
-				$j( '.mobile-sidebar-menu-style' ).append( '<div class="oceanwp-sidr-overlay"></div>' );
+				$j( '#site-header' ).after( '<div class="oceanwp-sidr-overlay"></div>' );
 				$j( '.oceanwp-sidr-overlay' ).fadeIn( 300 );
 
 				// Close sidr when clicking overlay

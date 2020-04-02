@@ -1,7 +1,11 @@
 # OceanWP Changelog
 
+### *2020.04.01* - 1.8.2:
+* **Fixed** - Mobile Menu doesn't work with sticky header.
+* **Fixed** - Attibute Archives dont work result count #252
+
 ### *2020.03.27* - 1.8.1:
-* **Fixed** - Mobile Menu is not working with full-width header option.
+* **Fixed** - Mobile Menu error.
 
 ### *2020.03.26* - 1.8.0:
 * **Fixed** - Homepage title override #196

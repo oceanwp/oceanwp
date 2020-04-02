@@ -25,17 +25,13 @@ if ( true == get_theme_mod( 'ocean_medium_header_stick_menu', false ) ) {
 }
 
 // Turn classes into space seperated string
-$classes = implode( ' ', $classes ); 
+$classes = implode( ' ', $classes );
 
-$sidr_class = '';
-if ( 'sidebar' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
-	$sidr_class = 'mobile-sidebar-menu-style';
-}
 ?>
 
 <?php do_action( 'ocean_before_header_inner' ); ?>
 
-<div id="site-header-inner" class="clr <?php echo esc_attr( $sidr_class ); ?>">
+<div id="site-header-inner" class="clr">
 
 	<?php
 	// If elements
