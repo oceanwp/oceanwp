@@ -32,7 +32,7 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 		// Don't call is The Event Calendar active to avoid conflict
-		if ( ! class_exists( 'Tribe__Events__Main' ) ) {
+		if ( ! class_exists( 'Tribe__Events__Main' ) || ! class_exists( 'LearnPress' ) || ! defined( 'TUTOR_VERSION' ) || ! defined( 'LEARNDASH_VERSION' ) ) {
 			wp_enqueue_script( 'oceanwp-select2', OCEANWP_INC_DIR_URI . 'customizer/controls/select2.min.js', array( 'jquery' ), false, true );
 			wp_enqueue_style( 'select2', OCEANWP_INC_DIR_URI . 'customizer/controls/select2.min.css', null );
 			wp_enqueue_script( 'oceanwp-typography-js', OCEANWP_INC_DIR_URI . 'customizer/assets/min/js/typography.min.js', array( 'jquery', 'select2' ), false, true );

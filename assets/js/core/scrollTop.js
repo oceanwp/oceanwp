@@ -1,7 +1,7 @@
 var $j 		= jQuery.noConflict(),
 	$window = $j( window );
 
-$j( document ).on( 'ready', function() {
+$j( document ).ready( function() {
 	"use strict";
 	// Scroll top
 	oceanwpScrollTop();

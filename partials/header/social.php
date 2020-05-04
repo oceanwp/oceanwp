@@ -5,64 +5,64 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Get social options array
+// Get social options array.
 $social_options = oceanwp_social_options();
 
-// Return if $social_options array is empty
+// Return if array is empty.
 if ( empty( $social_options ) ) {
 	return;
 }
 
-// Get template ID
+// Get template ID.
 $get_id = get_theme_mod( 'ocean_menu_social_template' );
 
-// Check if page is Elementor page
+// Check if page is Elementor page.
 $elementor  = get_post_meta( $get_id, '_elementor_edit_mode', true );
 
-// Get content
+// Get content.
 $get_content = oceanwp_social_menu_content();
 
-// Style
+// Style.
 $style = get_theme_mod( 'ocean_menu_social_style', 'simple' );
 $style = $style ? $style : 'simple';
 
-// Classes
+// Classes.
 $classes = array( 'oceanwp-social-menu', 'clr' );
 
-// Add class if social menu has class
+// Add class if social menu has class.
 if (  'simple' != $style ) {
 	$classes[] = 'social-with-style';
 } else {
 	$classes[] = 'simple-social';
 }
 
-// Turn classes into space seperated string
+// Turn classes into space seperated string.
 $classes = implode( ' ', $classes );
 
-// Inner classes
+// Inner classes.
 $inner_classes = array( 'social-menu-inner', 'clr' );
 if ( 'simple' != $style ) {
 	$inner_classes[] = $style;
 }
 
-// Turn classes into space seperated string
+// Turn classes into space seperated string.
 $inner_classes = implode( ' ', $inner_classes );
 
-// Return if there aren't any profiles defined and define var
+// Return if there aren't any profiles defined and define var.
 if ( ( ! $profiles = get_theme_mod( 'ocean_menu_social_profiles' ) )
 	&& empty( $get_content ) ) {
 	return;
 }
 
-// Get theme mods
+// Get theme mods.
 $link_target = get_theme_mod( 'ocean_menu_social_target', 'blank' );
 
-$link_rel='';
+$link_rel = '';
 if ( $link_target == 'blank' ) {
 	$link_rel = 'rel="noopener noreferrer"';
 }
@@ -131,9 +131,9 @@ if ( $link_target == 'blank' ) {
 						echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
 
 							if ( in_array( $key, array( 'skype' ) ) ) {
-								echo '<a href="skype:'. $esc_url .'?call" aria-label="'. esc_attr__( 'Skype (opens in your application)', 'oceanwp' ) .'" target="_self">';
+								echo '<a href="skype:'. esc_attr( $url ) .'?call" aria-label="'. esc_attr__( 'Skype (opens in your application)', 'oceanwp' ) .'" target="_self">';
 							} else if ( in_array( $key, array( 'email' ) ) ) {
-								echo '<a href="mailto:'. antispambot( $esc_url ) .'" aria-label="'. esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) .'" target="_self">';
+								echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" aria-label="'. esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) .'" target="_self">';
 							} else {
 								echo '<a href="'. $esc_url .'" '. $aria_label .' target="_'. esc_attr( $link_target ) .'" '. $link_rel .'>';
 							}

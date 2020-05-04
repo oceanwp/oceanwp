@@ -112,9 +112,9 @@ a.bp-title-button:hover {
 #buddypress .activity-meta .fav:before {
     content: "\f075";
     display: inline-block;
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -321,9 +321,9 @@ a.bp-title-button:hover {
 #buddypress .button.accept:before {
     content: "\f055";
     display: inline-block;
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -362,9 +362,9 @@ a.bp-title-button:hover {
 #buddypress div#item-header div#item-meta #latest-update:before {
     content: "\f0da";
     display: inline-block;
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -460,9 +460,9 @@ a.bp-title-button:hover {
 #buddypress #invite:before {
     content: "\f0ac";
     display: inline-block;
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -497,16 +497,16 @@ a.bp-title-button:hover {
 }
 
 #buddypress #user-xprofile:before {
-    content: "\f114"
+    content: "\f07b"
 }
 
 #buddypress #user-notifications:before {
-    content: "\f0a2"
+    content: "\f0f3"
 }
 
 #buddypress #user-messages:before,
 #buddypress .send-message:before {
-    content: "\f003"
+    content: "\f0e0"
 }
 
 #buddypress #user-settings:before,
@@ -528,7 +528,7 @@ a.bp-title-button:hover {
 }
 
 #buddypress #invite:before {
-    content: "\f046"
+    content: "\f14a"
 }
 
 #buddypress div.item-list-tabs#subnav {
@@ -600,9 +600,9 @@ a.bp-title-button:hover {
 .widget.buddypress div.item-options .selected:before {
     content: "\f0da";
     display: inline-block;
-    font-family: FontAwesome;
+    font-family: 'Font Awesome 5 Free';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 600;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

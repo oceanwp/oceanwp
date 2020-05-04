@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 
-$j( document ).on( 'ready', function() {
+$j( document ).ready( function() {
 	"use strict";
 	// Custom select
 	oceanwpCustomSelects();

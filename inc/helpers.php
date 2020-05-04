@@ -272,7 +272,7 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			}
 
 		}
-		
+
 		// Return classes
 		return $classes;
 
@@ -280,6 +280,21 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 
 	add_filter( 'body_class', 'oceanwp_body_classes' );
 
+}
+
+/**
+ * Backward compatibility
+ *
+ * @since 1.8.3
+ */
+if ( ! function_exists( 'wp_body_open' ) ) {
+
+	/**
+	 * Shim for wp_body_open, ensuring backward compatibility with versions of WordPress older than 5.2.
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
 }
 
 /**

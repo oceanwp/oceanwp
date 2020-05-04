@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 
-$j( document ).on( 'ready', function() {
+$j( document ).ready( function() {
 
 	if ( typeof oceanwpLocalize === 'undefined' ) {
 		return false;

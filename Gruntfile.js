@@ -227,6 +227,9 @@ module.exports = function ( grunt ) {
 					'!node_modules/**',
 					'!bower_components/**',
 					'!build/**',
+					'!vendor/**',
+					'!composer.json',
+					'!composer.lock',
 					'!.git/**',
 					'!Gruntfile.js',
 					'!package.json',
@@ -278,6 +281,7 @@ module.exports = function ( grunt ) {
 					domainPath: '/languages/', // Where to save the POT file.
 					exclude: [ // Exlude folder.
 						'build/.*',
+						'vendor/.*',
 						'assets/.*',
 						'readme/.*',
 						'sass/.*',
