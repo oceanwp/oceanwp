@@ -3435,14 +3435,15 @@ if ( ! function_exists( 'oceanwp_excerpt' ) ) {
 
 	function oceanwp_excerpt( $length = 30 ) {
 		global $post;
+		$output = '';
 
 		// Check for custom excerpt
-		if ( has_excerpt( $post->ID ) ) {
+		if ( isset( $post->ID ) && has_excerpt( $post->ID ) ) {
 			$output = $post->post_excerpt;
 		}
 
 		// No custom excerpt
-		else {
+		elseif ( isset( $post->post_content ) ) {
 
 			// Check for more tag and return content if it exists
 			if ( strpos( $post->post_content, '<!--more-->' ) ) {

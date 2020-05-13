@@ -1,10 +1,12 @@
 # OceanWP Changelog
 
-### *2020.05.xx* - 1.8.3:
+### *2020.05.13 - 1.8.3:
 * **Fixed** - WooCommerce Grid List button.
 * **Fixed** - Duplicate custom menu fields with WP5.4.
 * **Fixed** - Missing BuddyPress Icons.
 * **Fixed** - OceanWP javascripts won't execute on fast pages #241
+* **Fixed** - Trying to get property 'post_content' of non-object
+* **Fixed** - Trying to get property 'ID' of non-object
 * **Fixed** - select2.js conflcit with TutorLMS, LearnDash and LearnPress plugin
 * **Added** - Backward compatibility for wp_body_open()s.
 
