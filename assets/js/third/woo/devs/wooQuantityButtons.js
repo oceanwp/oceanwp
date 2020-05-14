@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 
-$j( window ).on( 'load', function() {
+$j( window ).ready( function() {
 	"use strict";
 	// Woo quantity buttons
 	oceanwpWooQuantityButtons();

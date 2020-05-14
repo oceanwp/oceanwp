@@ -27,7 +27,11 @@
 
     	> *:not(#site-navigation-wrap) {
     		padding: 0 30px;
-    	}
+		}
+
+		#sidr {
+			display: block;
+		}
 	}
 
     &.vh-left-logo #site-logo {

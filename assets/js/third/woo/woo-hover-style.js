@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 
-$j( document ).on( 'ready', function() {
+$j( document ).ready( function() {
 
 	// Wishlist button
 	if ( $j( '.woocommerce ul.products li.product .woo-entry-buttons li.woo-wishlist-btn' ).length ) {

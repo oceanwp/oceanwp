@@ -29,10 +29,11 @@ class OceanWP_Nav_Walker {
 
 		// Save menu custom fields
 		add_action( 'wp_update_nav_menu_item', array( $this, 'update_custom_nav_fields' ), 10, 3 );
-		
-		// Edit menu walker
-		add_filter( 'wp_edit_nav_menu_walker', array( $this, 'edit_walker' ), 10, 2 );
 
+		// Edit menu walker.
+		if ( ! OCEANWP_Theme_Class::is_wp_version( '5.4' ) ) {
+			add_filter( 'wp_edit_nav_menu_walker', array( $this, 'edit_walker' ), 10, 2 );
+		}
 	}
 
 	/**

@@ -968,7 +968,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Return if is not in shop page
 			if ( ! oceanwp_is_woo_shop()
 				&& ! is_product_category()
-				&& ! is_product_tag() ) {
+				&& ! is_product_tag()
+				&& ! ocean_is_wc_attribute() ) {
 				return;
 			}
 

@@ -272,7 +272,7 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			}
 
 		}
-		
+
 		// Return classes
 		return $classes;
 
@@ -280,6 +280,21 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 
 	add_filter( 'body_class', 'oceanwp_body_classes' );
 
+}
+
+/**
+ * Backward compatibility
+ *
+ * @since 1.8.3
+ */
+if ( ! function_exists( 'wp_body_open' ) ) {
+
+	/**
+	 * Shim for wp_body_open, ensuring backward compatibility with versions of WordPress older than 5.2.
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
 }
 
 /**
@@ -1950,17 +1965,17 @@ if ( ! function_exists( 'oceanwp_title' ) ) {
 
 		// Default title is null
 		$title = NULL;
-		
+
 		// Get post ID
 		$post_id = oceanwp_post_id();
-		
+
 		// Homepage - display blog description if not a static page
 		if ( is_front_page() && ! is_singular( 'page' ) ) {
-			
+
 			if ( get_bloginfo( 'description' ) ) {
 				$title = get_bloginfo( 'description' );
 			} else {
-				return esc_html__( 'Recent Posts', 'oceanwp' );
+				$title = esc_html__( 'Recent Posts', 'oceanwp' );
 			}
 
 		// Homepage posts page
@@ -1975,7 +1990,7 @@ if ( ! function_exists( 'oceanwp_title' ) ) {
 			global $wp_query;
 			$title = '<span id="search-results-count">'. $wp_query->found_posts .'</span> '. esc_html__( 'Search Results Found', 'oceanwp' );
 		}
-			
+
 		// Archives
 		elseif ( is_archive() ) {
 
@@ -3168,11 +3183,11 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
 
-		$fields['author'] 	= '<div class="comment-form-author"><label for="author" class="screen-reader-text">'. esc_attr_x( 'Enter your name or username', 'screen reader text for comment author', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_attr__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="0"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
+		$fields['author'] 	= '<div class="comment-form-author"><label for="author" class="screen-reader-text">'. esc_html( 'Enter your name or username', 'screen reader text for comment author', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_attr__( 'Name (required)', 'oceanwp' ) .'" size="22" tabindex="0"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
 
-		$fields['email'] 	= '<div class="comment-form-email"><label for="email" class="screen-reader-text">'. esc_attr_x( 'Enter your email', 'screen reader text for comment author email', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_attr__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="0"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
+		$fields['email'] 	= '<div class="comment-form-email"><label for="email" class="screen-reader-text">'. esc_html( 'Enter your email', 'screen reader text for comment author email', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_attr__( 'Email (required)', 'oceanwp' ) .'" size="22" tabindex="0"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
 
-		$fields['url'] 		= '<div class="comment-form-url"><label for="url" class="screen-reader-text">'. esc_attr_x( 'Enter your website URL (optional)', 'screen reader text for comment author website url', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_attr__( 'Website', 'oceanwp' ) .'" size="22" tabindex="0" class="input-website" /></div>';
+		$fields['url'] 		= '<div class="comment-form-url"><label for="url" class="screen-reader-text">'. esc_html( 'Enter your website URL (optional)', 'screen reader text for comment author website url', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_attr__( 'Website', 'oceanwp' ) .'" size="22" tabindex="0" class="input-website" /></div>';
 
 		return $fields;
 
@@ -3420,14 +3435,15 @@ if ( ! function_exists( 'oceanwp_excerpt' ) ) {
 
 	function oceanwp_excerpt( $length = 30 ) {
 		global $post;
+		$output = '';
 
 		// Check for custom excerpt
-		if ( has_excerpt( $post->ID ) ) {
+		if ( isset( $post->ID ) && has_excerpt( $post->ID ) ) {
 			$output = $post->post_excerpt;
 		}
 
 		// No custom excerpt
-		else {
+		elseif ( isset( $post->post_content ) ) {
 
 			// Check for more tag and return content if it exists
 			if ( strpos( $post->post_content, '<!--more-->' ) ) {

@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 
-$j( document ).on( 'ready', function() {
+$j( document ).ready( function() {
 	"use strict";
     // Woo remove brackets from categories and filter widgets
     oceanwpWooRemoveBrackets();

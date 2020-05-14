@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 
-$j( document ).on( 'ready', function() {
+$j( document ).ready( function() {
 	"use strict";
     // Woo mobile cart sidebar
     oceanwpWooMobileCart();
@@ -16,11 +16,11 @@ function oceanwpWooMobileCart() {
 		|| $j( 'body' ).hasClass( 'woocommerce-checkout' ) ) {
 		return;
 	}
-	
+
 	var oceanwp_cart_filter_close = function() {
 		$j( 'html' ).css( {
 			'overflow': '',
-			'margin-right': '' 
+			'margin-right': ''
 		} );
 
 		$j( 'body' ).removeClass( 'show-cart-sidebar' );

@@ -44,5 +44,11 @@
 		float: none;
 		text-align: center;
 	}
-	
+
+}
+
+@media screen and (max-width: 782px) {
+	#top-bar-wrap {
+		z-index: 100;
+	}
 }

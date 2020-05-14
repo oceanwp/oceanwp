@@ -25,7 +25,9 @@ if ( true == get_theme_mod( 'ocean_medium_header_stick_menu', false ) ) {
 }
 
 // Turn classes into space seperated string
-$classes = implode( ' ', $classes ); ?>
+$classes = implode( ' ', $classes );
+
+?>
 
 <?php do_action( 'ocean_before_header_inner' ); ?>
 

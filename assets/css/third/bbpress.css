@@ -1232,8 +1232,8 @@ body.my-account #bbpress-forums {
     display: inline-block;
     cursor: pointer;
     text-indent: 0;
-    font-family: FontAwesome;
-    font-weight: normal
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
 }
 
 #bbpress-forums .bbp-search-form input[type="submit"] {

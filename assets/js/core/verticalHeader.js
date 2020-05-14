@@ -1,7 +1,7 @@
 var $j = jQuery.noConflict();
 
 // On ready
-$j( document ).on( 'ready', function() {
+$j( document ).ready( function() {
 	"use strict";
 	// Vertical header style
 	oceanwpVerticalHeader();

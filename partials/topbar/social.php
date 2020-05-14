@@ -113,9 +113,9 @@ if ( $link_target == 'blank' ) {
 				echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
 
 					if ( in_array( $key, array( 'skype' ) ) ) {
-						echo '<a href="skype:'. $esc_url .'?call" aria-label="'. esc_attr__( 'Skype (opens in your application)', 'oceanwp' ) .'" target="_self">';
+						echo '<a href="skype:'. esc_attr( $url ) .'?call" aria-label="'. esc_attr__( 'Skype (opens in your application)', 'oceanwp' ) .'" target="_self">';
 					} else if ( in_array( $key, array( 'email' ) ) ) {
-						echo '<a href="mailto:'. antispambot( $esc_url ) .'" aria-label="'. esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) .'" target="_self">';
+						echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" aria-label="'. esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) .'" target="_self">';
 					} else {
 						echo '<a href="'. $esc_url .'" '. $aria_label .' target="_'. esc_attr( $link_target ) .'" '. $link_rel .'>';
 					}

@@ -32,6 +32,10 @@ if ( isset( $obj->term_id ) ) {
         $link = get_term_link( $obj->term_id, 'product_tag' );
     }
 
+    if ( is_wp_error( $link ) ) {
+        $link = get_term_link( $obj->term_id, get_term_tax_attr() );
+    }
+
 } else {
 
     if ( get_option( 'permalink_structure' ) == '' ) {

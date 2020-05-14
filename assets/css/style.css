@@ -97,7 +97,7 @@ blockquote, q {
 }
 
 a:focus {
-  outline: 1px dashed #13aff0;
+  outline: 0;
 }
 
 a:hover, a:active {
@@ -2218,6 +2218,12 @@ a.pure-button-selected {
   }
 }
 
+@media screen and (max-width: 782px) {
+  #top-bar-wrap {
+    z-index: 100;
+  }
+}
+
 /**
  * Top Bar Content
  */
@@ -3772,6 +3778,10 @@ a.pure-button-selected {
 
 #site-header.vertical-header #site-header-inner > *:not(#site-navigation-wrap) {
   padding: 0 30px;
+}
+
+#site-header.vertical-header #site-header-inner #sidr {
+  display: block;
 }
 
 #site-header.vertical-header.vh-left-logo #site-logo {
@@ -9196,7 +9206,7 @@ a.sidr-class-toggle-sidr-close i {
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.3);
-  z-index: 9999;
+  z-index: 99;
 }
 
 /* Search */
