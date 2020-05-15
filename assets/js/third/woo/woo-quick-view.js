@@ -155,13 +155,13 @@ $j( document ).ready( function() {
 	owpQVAddToCartHandler.prototype.onAddToCart = function( e ) {
 		e.preventDefault();
 
-		var button	  = $( this ),
-			$form 	  = $( this ).closest('form.cart'),
+		var button	  = $j( this ),
+			$form 	  = $j( this ).closest('form.cart'),
 			data      = $form.serializeArrayAll();
 
 		var is_valid = false;
 
-		$.each(data, function (i, item) {
+		$j.each(data, function (i, item) {
 			if (item.name === 'add-to-cart') {
 				is_valid = true;
         		return false;
