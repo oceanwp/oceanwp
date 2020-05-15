@@ -1,14 +1,19 @@
 # OceanWP Changelog
 
+### *2020.05.XX* - 1.8.4:
+* **Fixed** - Ajax add to cart compatibility with variations, product-addons, composite product etc.
+
+
 ### *2020.05.13 - 1.8.3:
 * **Fixed** - WooCommerce Grid List button.
+* **Fixed** - cookie.js is not defined when shop page set as home page.
 * **Fixed** - Duplicate custom menu fields with WP5.4.
 * **Fixed** - Missing BuddyPress Icons.
 * **Fixed** - OceanWP javascripts won't execute on fast pages #241
 * **Fixed** - Trying to get property 'post_content' of non-object
 * **Fixed** - Trying to get property 'ID' of non-object
 * **Fixed** - select2.js conflcit with TutorLMS, LearnDash and LearnPress plugin
-* **Added** - Backward compatibility for wp_body_open()s.
+* **Added** - Backward compatibility for wp_body_open().
 
 ### *2020.04.01* - 1.8.2:
 * **Fixed** - Mobile Menu doesn't work with sticky header.
