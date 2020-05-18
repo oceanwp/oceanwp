@@ -2,6 +2,7 @@
 
 ### *2020.05.XX* - 1.8.4:
 * **Fixed** - Ajax add to cart compatibility with variations, product-addons, composite product etc.
+* **Fixed** - Skipt to content link is displaying after disabling css file.
 
 
 ### *2020.05.13 - 1.8.3:
