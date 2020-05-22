@@ -38,35 +38,35 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 				?>
 				<li class="woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
-                    <div class="owp-grid-wrap">
-                        <div class="owp-grid thumbnail">
-                            <?php if ( ! $_product->is_visible() ) : ?>
-                                <?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
-                            <?php else : ?>
-                                <a href="<?php echo esc_url( $product_permalink ); ?>">
-                                    <?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
-                                </a>
-                            <?php endif; ?>
-                        </div>
+					<div class="owp-grid-wrap">
+						<div class="owp-grid thumbnail">
+							<?php if ( ! $_product->is_visible() ) : ?>
+								<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
+							<?php else : ?>
+								<a href="<?php echo esc_url( $product_permalink ); ?>">
+									<?php echo str_replace( array( 'http:', 'https:' ), '', $thumbnail ); ?>
+								</a>
+							<?php endif; ?>
+						</div>
 
-                        <div class="owp-grid content">
-                            <div>
-                                <?php if ( empty( $product_permalink ) ) : ?>
-                                    <h3>
-                                        <?php echo $product_name; ?>
-                                    </h3>
-                                <?php else : ?>
-                                    <h3>
-                                        <a href="<?php echo esc_url( $product_permalink ); ?>">
-                                            <?php echo $product_name; ?>
-                                        </a>
-                                    </h3>
-                                <?php endif; ?>
+						<div class="owp-grid content">
+							<div>
+								<?php if ( empty( $product_permalink ) ) : ?>
+									<h3>
+										<?php echo $product_name; ?>
+									</h3>
+								<?php else : ?>
+									<h3>
+										<a href="<?php echo esc_url( $product_permalink ); ?>">
+											<?php echo $product_name; ?>
+										</a>
+									</h3>
+								<?php endif; ?>
 
-                                <?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
+								<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
 
-                                <?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
-                                <?php
+								<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+								<?php
 									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 										'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
 										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
@@ -74,14 +74,15 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 										esc_attr( $product_id ),
 										esc_attr( $cart_item_key ),
 										esc_attr( $_product->get_sku() )
-                                    ), $cart_item_key
-                                );
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <?php
+									),
+									$cart_item_key
+								);
+								?>
+							</div>
+						</div>
+					</div>
+				</li>
+				<?php
 			}
 		}
 

@@ -5,18 +5,23 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-} ?>
+	exit;
+}
+
+?>
 
 <article class="single-page-article clr">
 
 	<?php
-	// Get page entry
+
+	// Get page entry.
 	get_template_part( 'partials/page/article' );
 
-	// Display comments
-	comments_template(); ?>
+	// Display comments.
+	comments_template();
+
+	?>
 
 </article>

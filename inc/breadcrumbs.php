@@ -33,35 +33,35 @@
  */
 function oceanwp_breadcrumb_trail( $args = array() ) {
 
-	// Return if breadcrumbs are disabled
+	// Return if breadcrumbs are disabled.
 	if ( ! oceanwp_has_breadcrumbs()
 		|| is_front_page() ) {
 		return;
 	}
 
-	// Yoast breadcrumbs
+	// Yoast breadcrumbs.
 	if ( function_exists( 'yoast_breadcrumb' )
 		&& true === WPSEO_Options::get( 'breadcrumbs-enable', false ) ) {
 		$classes = 'site-breadcrumbs clr';
 		if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
-			$classes .= ' position-'. $breadcrumbs_position;
+			$classes .= ' position-' . $breadcrumbs_position;
 		}
-		return yoast_breadcrumb( '<nav class="'. $classes .'">', '</nav>' );
+		return yoast_breadcrumb( '<nav class="' . $classes . '">', '</nav>' );
 	}
 
-	// SEOPress breadcrumbs
+	// SEOPress breadcrumbs.
 	if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
 		return seopress_display_breadcrumbs();
-    }
+	}
 
-	// Rank Math breadcrumbs
+	// Rank Math breadcrumbs.
 	if ( function_exists( 'rank_math_the_breadcrumbs' ) && RankMath\Helper::get_settings( 'general.breadcrumbs' ) ) {
 		return rank_math_the_breadcrumbs();
-  }
+	}
 
 	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
 
-	if ( !is_object( $breadcrumb ) )
+	if ( ! is_object( $breadcrumb ) )
 		$breadcrumb = new OceanWP_Breadcrumb_Trail( $args );
 
 	return $breadcrumb->trail();
@@ -75,13 +75,16 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 function sp_breadcrumbs_before() {
 	$classes = 'site-breadcrumbs clr';
 	if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
-		$classes .= ' position-'. $breadcrumbs_position;
+		$classes .= ' position-' . $breadcrumbs_position;
 	}
 
-	echo '<div class="'. $classes .'">';
+	echo '<div class="' . esc_attr( $classes ) . '">';
 }
 add_action( 'seopress_breadcrumbs_before_html', 'sp_breadcrumbs_before' );
 
+/**
+ * Div closed
+ */
 function sp_breadcrumbs_after() {
 	echo '</div>';
 }
@@ -95,7 +98,7 @@ add_action( 'seopress_breadcrumbs_after_html', 'sp_breadcrumbs_after' );
 function rm_breadcrumbs( $args ) {
 	$classes = 'site-breadcrumbs clr';
 	if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
-		$classes .= ' position-'. $breadcrumbs_position;
+		$classes .= ' position-' . $breadcrumbs_position;
 	}
 	$args['wrap_before'] = '<div class="' . $classes . '">';
 	$args['wrap_after']  = '</div>';
@@ -167,7 +170,7 @@ class OceanWP_Breadcrumb_Trail {
 	 *
 	 * @since  0.6.0
 	 * @access public
-	 * @param  array   $args  {
+	 * @param  array $args  {
 	 *     @type string    $container      Container HTML element. nav|div
 	 *     @type string    $before         String to output before breadcrumb menu.
 	 *     @type string    $after          String to output after breadcrumb menu.
@@ -183,15 +186,15 @@ class OceanWP_Breadcrumb_Trail {
 	public function __construct( $args = array() ) {
 
 		$defaults = array(
-			'container'       => 'nav',
-			'before'          => '',
-			'after'           => '',
-			'show_on_front'   => false,
-			'network'         => false,
-			'show_title'      => true,
-			'labels'          => array(),
-			'post_taxonomy'   => array(),
-			'echo'            => true
+			'container'     => 'nav',
+			'before'        => '',
+			'after'         => '',
+			'show_on_front' => false,
+			'network'       => false,
+			'show_title'    => true,
+			'labels'        => array(),
+			'post_taxonomy' => array(),
+			'echo'          => true,
 		);
 
 		// Parse the arguments with the deaults.
@@ -217,11 +220,11 @@ class OceanWP_Breadcrumb_Trail {
 	public function get_trail() {
 
 		// Set up variables that we'll need.
-		$breadcrumb    	= '';
-		$separator      = apply_filters( 'oceanwp_breadcrumb_separator', get_theme_mod( 'ocean_breadcrumb_separator', '>' ) );
-		$separator      = '<span class="breadcrumb-sep">' . $separator . '</span>';
-		$item_count    	= count( $this->items );
-		$item_position 	= 0;
+		$breadcrumb    = '';
+		$separator     = apply_filters( 'oceanwp_breadcrumb_separator', get_theme_mod( 'ocean_breadcrumb_separator', '>' ) );
+		$separator     = '<span class="breadcrumb-sep">' . $separator . '</span>';
+		$item_count    = count( $this->items );
+		$item_position = 0;
 
 		// Connect the breadcrumb trail if there are items in the trail.
 		if ( 0 < $item_count ) {
@@ -243,7 +246,7 @@ class OceanWP_Breadcrumb_Trail {
 				preg_match( '/(<a.*?>)(.*?)(<\/a>)/i', $item, $matches );
 
 				// Wrap the item text with appropriate itemprop.
-				$item = !empty( $matches ) ? sprintf( '%s<span itemprop="name">%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span itemprop="name">%s</span>', $item );
+				$item = ! empty( $matches ) ? sprintf( '%s<span itemprop="name">%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span itemprop="name">%s</span>', $item );
 
 				// Wrap the item with its itemprop.
 				$item = ! empty( $matches )
@@ -255,14 +258,14 @@ class OceanWP_Breadcrumb_Trail {
 
 				if ( 1 === $item_position && 1 < $item_count ) {
 					$item_class .= ' trail-begin';
-				} else if ( $item_count === $item_position ) {
+				} elseif ( $item_count === $item_position ) {
 					$item_class .= ' trail-end';
 				}
 
 				// Create list item attributes.
 				$attributes = 'class="' . $item_class . '" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"';
 
-				// Separator
+				// Separator.
 				if ( $item_count === $item_position ) {
 					$sep = '';
 				} else {
@@ -279,15 +282,15 @@ class OceanWP_Breadcrumb_Trail {
 			// Close the unordered list.
 			$breadcrumb .= '</ol>';
 
-			// Postion class
+			// Postion class.
 			$p_class = '';
-			if ( '' != get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
+			if ( '' !== get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
 				$p_class = ' position-' . get_theme_mod( 'ocean_breadcrumbs_position' );
 			}
 
 			// Wrap the breadcrumb trail.
 			$breadcrumb = sprintf(
-				'<%1$s aria-label="%2$s" class="site-breadcrumbs clr'. $p_class .'" itemprop="breadcrumb">%3$s%4$s%5$s</%1$s>',
+				'<%1$s aria-label="%2$s" class="site-breadcrumbs clr' . $p_class . '" itemprop="breadcrumb">%3$s%4$s%5$s</%1$s>',
 				tag_escape( $this->args['container'] ),
 				esc_attr( $this->labels['aria_label'] ),
 				$this->args['before'],
@@ -311,7 +314,7 @@ class OceanWP_Breadcrumb_Trail {
 	 */
 	public function trail() {
 
-		echo $this->get_trail();
+		echo $this->get_trail(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/* ====== Protected Methods ====== */
@@ -326,25 +329,25 @@ class OceanWP_Breadcrumb_Trail {
 	protected function set_labels() {
 
 		$defaults = array(
-			'aria_label'          	=> esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'oceanwp' ),
-			'home'           		=> get_theme_mod( 'ocean_breadcrumb_translation_home', esc_html__( 'Home', 'oceanwp' ) ),
-			'error_404'           	=> get_theme_mod( 'ocean_breadcrumb_translation_error', esc_html__( '404 Not Found', 'oceanwp' ) ),
-			'archives'            	=> esc_html__( 'Archives',                              'oceanwp' ),
+			'aria_label'          => esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'oceanwp' ),
+			'home'                => get_theme_mod( 'ocean_breadcrumb_translation_home', esc_html__( 'Home', 'oceanwp' ) ),
+			'error_404'           => get_theme_mod( 'ocean_breadcrumb_translation_error', esc_html__( '404 Not Found', 'oceanwp' ) ),
+			'archives'            => esc_html__( 'Archives', 'oceanwp' ),
 			// Translators: %s is the search query. The HTML entities are opening and closing curly quotes.
-			'search'           		=> get_theme_mod( 'ocean_breadcrumb_translation_search', esc_html__( 'Search results for', 'oceanwp' ) ),
+			'search'              => get_theme_mod( 'ocean_breadcrumb_translation_search', esc_html__( 'Search results for', 'oceanwp' ) ),
 			// Translators: %s is the page number.
-			'paged'               	=> esc_html__( 'Page %s',                               'oceanwp' ),
+			'paged'               => esc_html__( 'Page %s', 'oceanwp' ),
 			// Translators: Minute archive title. %s is the minute time format.
-			'archive_minute'      	=> esc_html__( 'Minute %s',                             'oceanwp' ),
+			'archive_minute'      => esc_html__( 'Minute %s', 'oceanwp' ),
 			// Translators: Weekly archive title. %s is the week date format.
-			'archive_week'        	=> esc_html__( 'Week %s',                               'oceanwp' ),
+			'archive_week'        => esc_html__( 'Week %s', 'oceanwp' ),
 
 			// "%s" is replaced with the translated date/time format.
-			'archive_minute_hour' 	=> '%s',
-			'archive_hour'        	=> '%s',
-			'archive_day'         	=> '%s',
-			'archive_month'       	=> '%s',
-			'archive_year'        	=> '%s',
+			'archive_minute_hour' => '%s',
+			'archive_hour'        => '%s',
+			'archive_day'         => '%s',
+			'archive_month'       => '%s',
+			'archive_year'        => '%s',
 		);
 
 		$this->labels = apply_filters( 'breadcrumb_trail_labels', wp_parse_args( $this->args['labels'], $defaults ) );

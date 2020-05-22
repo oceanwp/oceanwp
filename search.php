@@ -23,7 +23,10 @@ get_header(); ?>
 
 				<?php if ( have_posts() ) : ?>
 
-						<?php while ( have_posts() ) : the_post(); ?>
+						<?php
+						while ( have_posts() ) :
+							the_post();
+							?>
 
 							<?php get_template_part( 'partials/search/layout' ); ?>
 
@@ -34,8 +37,9 @@ get_header(); ?>
 				<?php else : ?>
 
 					<?php
-					// Display no post found notice
-					get_template_part( 'partials/none' ); ?>
+					// Display no post found notice.
+					get_template_part( 'partials/none' );
+					?>
 
 				<?php endif; ?>
 

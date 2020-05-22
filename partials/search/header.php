@@ -5,10 +5,12 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-exit;
-} ?>
+	exit;
+}
+
+?>
 
 <header class="search-entry-header clr">
 	<h2 class="search-entry-title entry-title">

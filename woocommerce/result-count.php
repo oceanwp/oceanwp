@@ -5,13 +5,13 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
 if ( is_single() || ! have_posts() ) {
-    return;
+	return;
 }
 
 $products_per_page = get_theme_mod( 'ocean_woo_shop_posts_per_page', '12' );
@@ -26,24 +26,23 @@ $link = '';
 
 if ( isset( $obj->term_id ) ) {
 
-    $link = get_term_link( $obj->term_id, 'product_cat' );
+	$link = get_term_link( $obj->term_id, 'product_cat' );
 
-    if ( is_wp_error( $link ) ) {
-        $link = get_term_link( $obj->term_id, 'product_tag' );
-    }
+	if ( is_wp_error( $link ) ) {
+		$link = get_term_link( $obj->term_id, 'product_tag' );
+	}
 
-    if ( is_wp_error( $link ) ) {
-        $link = get_term_link( $obj->term_id, get_term_tax_attr() );
-    }
+	if ( is_wp_error( $link ) ) {
+		$link = get_term_link( $obj->term_id, get_term_tax_attr() );
+	}
 
 } else {
 
-    if ( get_option( 'permalink_structure' ) == '' ) {
-        $link = get_post_type_archive_link( 'product' );
-    } else {
-        $link = get_permalink( wc_get_page_id( 'shop' ) );
-    }
-
+	if ( get_option( 'permalink_structure' ) == '' ) {
+		$link = get_post_type_archive_link( 'product' );
+	} else {
+		$link = get_permalink( wc_get_page_id( 'shop' ) );
+	}
 }
 
 /**
@@ -54,15 +53,15 @@ if ( isset( $obj->term_id ) ) {
  */
 $link = apply_filters( 'ocean_num_products_link', $link );
 
-if( ! empty( $_GET ) ) {
-    foreach( $_GET as $key => $value ){
-        $link = add_query_arg( $key, $value, $link  );
-    }
+if ( ! empty( $_GET ) ) {
+	foreach ( $_GET as $key => $value ){
+		$link = add_query_arg( $key, $value, $link );
+	}
 } ?>
 
 <ul class="result-count">
-    <li class="view-title"><?php esc_html_e( 'View:', 'oceanwp' ) ?></li>
-    <li><a class="view-first<?php if ( $num_prod == $num_prod_x1 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x1, $link  ) ) ?>"><?php echo esc_attr( $num_prod_x1 ); ?></a></li>
-    <li><a class="view-second<?php if ( $num_prod == $num_prod_x2 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x2, $link  ) ) ?>"><?php echo esc_attr( $num_prod_x2 ); ?></a></li>
-    <li><a class="view-all<?php if ( $num_prod == 'all' ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', 'all', $link  ) ) ?>"><?php esc_html_e( 'All', 'oceanwp' ) ?></a></li>
+	<li class="view-title"><?php esc_html_e( 'View:', 'oceanwp' ); ?></li>
+	<li><a class="view-first<?php if ( $num_prod === $num_prod_x1 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x1, $link ) ); ?>"><?php echo esc_attr( $num_prod_x1 ); ?></a></li>
+	<li><a class="view-second<?php if ( $num_prod === $num_prod_x2 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x2, $link ) ); ?>"><?php echo esc_attr( $num_prod_x2 ); ?></a></li>
+	<li><a class="view-all<?php if ( $num_prod === 'all' ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', 'all', $link ) ); ?>"><?php esc_html_e( 'All', 'oceanwp' ); ?></a></li>
 </ul>

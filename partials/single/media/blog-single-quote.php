@@ -5,15 +5,17 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Return if Ocean Extra is not active
+// Return if Ocean Extra is not active.
 if ( ! OCEAN_EXTRA_ACTIVE ) {
 	return;
-} ?>
+}
+
+?>
 
 <div class="post-quote-wrap">
 
@@ -26,5 +28,5 @@ if ( ! OCEAN_EXTRA_ACTIVE ) {
 	</div>
 
 	<div class="post-quote-author"><?php the_title(); ?></div>
-	
+
 </div>

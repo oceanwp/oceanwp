@@ -5,20 +5,22 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
-// Return if quote format
-if ( 'quote' == get_post_format() ) {
+// Return if quote format.
+if ( 'quote' === get_post_format() ) {
 	return;
 }
 
-// Heading tag
+// Heading tag.
 $heading = get_theme_mod( 'ocean_single_post_heading_tag', 'h2' );
 $heading = $heading ? $heading : 'h2';
-$heading = apply_filters( 'ocean_single_post_heading', $heading ); ?>
+$heading = apply_filters( 'ocean_single_post_heading', $heading );
+
+?>
 
 <?php do_action( 'ocean_before_single_post_title' ); ?>
 

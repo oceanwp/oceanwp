@@ -5,30 +5,32 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( 'fullscreen' != oceanwp_mobile_menu_style() ) {
+if ( 'fullscreen' !== oceanwp_mobile_menu_style() ) {
 	return;
 }
 
-// Post type
+// Post type.
 $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
 
 <div id="mobile-search" class="clr">
-	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform" role="search" aria-label="<?php _e( 'Mobile Search', 'oceanwp' ); ?>">
+	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform" role="search" aria-label="<?php esc_html_e( 'Mobile Search', 'oceanwp' ); ?>">
 		<input type="search" name="s" value="" autocomplete="off" />
 		<?php
-		// If the headerSearchForm script is not disable
+		// If the headerSearchForm script is not disable.
 		if ( OCEAN_EXTRA_ACTIVE
 			&& class_exists( 'Ocean_Extra_Scripts_Panel' )
-			&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) { ?>
+			&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
+			?>
 			<label><?php esc_html_e( 'Type your search', 'oceanwp' ); ?><span><i></i><i></i><i></i></span></label>
-		<?php
-		} ?>
-		<?php if ( 'any' != $post_type ) { ?>
+			<?php
+		}
+		?>
+		<?php if ( 'any' !== $post_type ) { ?>
 			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 		<?php } ?>
 	</form>

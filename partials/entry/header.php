@@ -5,12 +5,12 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Heading tag
+// Heading tag.
 $heading = get_theme_mod( 'ocean_blog_entries_heading_tag', 'h2' );
 $heading = $heading ? $heading : 'h2';
 $heading = apply_filters( 'ocean_blog_entries_heading', $heading ); ?>
