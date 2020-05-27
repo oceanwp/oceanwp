@@ -5,6 +5,7 @@
 * **Fixed** - Skipt to content link is displaying after disabling css file.
 * **Fixed** - Coding standards as per the required WordPress coding standards.
 * **Fixed** - Customizer is not loading - Uncaught TypeError: data.value.indexOf is not a function.
+* **Fixed** - Woocommerce apply coupon button issue in mobile view.
 
 
 ### *2020.05.13 - 1.8.3:
