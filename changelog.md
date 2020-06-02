@@ -9,6 +9,8 @@
 * **Fixed** - Translation issues - translation not reflected on the front end: search widget, related posts title, header search overlay, header replace search
 * **Fixed** - 404 page #content-wrap syntax error.
 * **Added** - Filters to replace default text (for child theming): search widget/search dropdown, header search overlay, header replace search.
+* **Fixed** - Comment form name and email placeholder text always displaying as required.
+* **Added** - Improved accessibility on the comments section.
 
 
 ### *2020.05.13 - 1.8.3:

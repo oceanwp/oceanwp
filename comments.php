@@ -105,14 +105,20 @@ if ( 'full-screen' === oceanwp_post_layout() ) {
 	<?php endif; // have_comments() ?>
 
 	<?php
+
+	// Comment form attributes.
+	$comment_logout_text = __( 'Log out of this account', 'oceanwp' );
+	$comment_placeholder = __( 'Your Comment Here...', 'oceanwp' );
+	$comment_profile_edit = __( '. Click to edit your profile', 'oceanwp' );
+
 	comment_form(
 		array(
 			/* translators: 1: Login URL 2: </a> */
 			'must_log_in'          => '<p class="must-log-in">' . sprintf( esc_html__( 'You must be %1$slogged in%2$s to post a comment.', 'oceanwp' ), '<a href="' . wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) . '">', '</a>' ) . '</p>',
-			'logged_in_as'         => '<p class="logged-in-as">' . esc_html__( 'Logged in as', 'oceanwp' ) . ' <a href="' . admin_url( 'profile.php' ) . '">' . $user_identity . '</a>. <a href="' . wp_logout_url( get_permalink() ) . '" title="' . esc_attr__( 'Log out of this account', 'oceanwp' ) . '">' . esc_attr__( 'Log out &raquo;', 'oceanwp' ) . '</a></p>',
+			'logged_in_as'         => '<p class="logged-in-as">' . esc_html__( 'Logged in as', 'oceanwp' ) . ' <a href="' . admin_url( 'profile.php' ) . '" aria-label="'. esc_attr( $user_identity . $comment_profile_edit ) .'">' . $user_identity . '</a>. <a href="' . wp_logout_url( get_permalink() ) . '" aria-label="' . esc_attr( $comment_logout_text ) . '">' . esc_html__( 'Log out', 'oceanwp' ) . '<span aria-hidden="true"> &raquo;</span>' .'</a></p>',
 			'comment_notes_before' => false,
 			'comment_notes_after'  => false,
-			'comment_field'        => '<div class="comment-textarea"><label for="comment" class="screen-reader-text">' . esc_html__( 'Comment', 'oceanwp' ) . '</label><textarea name="comment" id="comment" cols="39" rows="4" tabindex="0" class="textarea-comment" placeholder="' . esc_attr__( 'Your Comment Here...', 'oceanwp' ) . '"></textarea></div>',
+			'comment_field'        => '<div class="comment-textarea"><label for="comment" class="screen-reader-text">' . esc_html__( 'Enter your text to leave a comment', 'oceanwp' ) . '</label><textarea name="comment" id="comment" cols="39" rows="4" tabindex="0" class="textarea-comment" placeholder="' . esc_attr( $comment_placeholder ) . '"></textarea></div>',
 			'id_submit'            => 'comment-submit',
 			'label_submit'         => esc_html__( 'Post Comment', 'oceanwp' ),
 		)
