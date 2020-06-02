@@ -120,7 +120,7 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 
 							<?php do_action( 'ocean_after_primary' ); ?>
 
-						</div><!--#content-wrap -->
+						</div><!-- #content-wrap -->
 
 						<?php do_action( 'ocean_after_content_wrap' ); ?>
 

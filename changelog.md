@@ -1,11 +1,14 @@
 # OceanWP Changelog
 
 ### *2020.05.XX* - 1.8.4:
-* **Fixed** - Ajax add to cart compatibility with variations, product-addons, composite product etc.
-* **Fixed** - Skipt to content link is displaying after disabling css file.
-* **Fixed** - Coding standards as per the required WordPress coding standards.
-* **Fixed** - Customizer is not loading - Uncaught TypeError: data.value.indexOf is not a function.
-* **Fixed** - Woocommerce apply coupon button issue in mobile view.
+* **Fixed** - Ajax 'add to cart' compatibility with variations, product-addons, composite product etc.
+* **Fixed** - 'Skip to content' link displayed after disabling CSS file.
+* **Fixed** - Coding standards in accordance with WordPress Coding Standards.
+* **Fixed** - Customizer not loading - Uncaught TypeError: data.value.indexOf is not a function.
+* **Fixed** - Woocommerce 'Apply Coupon' button layout issue in mobile view.
+* **Fixed** - Translation issues - translation not reflected on the front end: search widget, related posts title,
+* **Fixed** - 404 page #content-wrap syntax error.
+* **Added** - Filters to replace default text (for child theming): search widget/search dropdown, 
 
 
 ### *2020.05.13 - 1.8.3:
