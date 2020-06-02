@@ -6,9 +6,9 @@
 * **Fixed** - Coding standards in accordance with WordPress Coding Standards.
 * **Fixed** - Customizer not loading - Uncaught TypeError: data.value.indexOf is not a function.
 * **Fixed** - Woocommerce 'Apply Coupon' button layout issue in mobile view.
-* **Fixed** - Translation issues - translation not reflected on the front end: search widget, related posts title,
+* **Fixed** - Translation issues - translation not reflected on the front end: search widget, related posts title, header search overlay,
 * **Fixed** - 404 page #content-wrap syntax error.
-* **Added** - Filters to replace default text (for child theming): search widget/search dropdown, 
+* **Added** - Filters to replace default text (for child theming): search widget/search dropdown, header search overlay, 
 
 
 ### *2020.05.13 - 1.8.3:
