@@ -13,6 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Post type.
 $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
 
+// Placeholder text.
+$search_text = __( 'Search', 'oceanwp' );
+
+// Apply filter for child theming.
+$search_text = apply_filters( 'ocean_search_text', $search_text );
+
 // Generate unique form ID.
 $ocean_sf_id = oceanwp_unique_id( 'ocean-search-form-' );
 $osf_id      = esc_attr( $ocean_sf_id );
@@ -22,7 +28,7 @@ $osf_id      = esc_attr( $ocean_sf_id );
 <form role="search" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label for="<?php echo esc_attr( $osf_id ); ?>">
 		<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'oceanwp' ); ?></span>
-		<input type="search" id="<?php echo esc_attr( $osf_id ); ?>" class="field" autocomplete="off" placeholder="<?php echo esc_attr_x( 'Search', 'search placeholder', 'oceanwp' ); ?>" name="s">
+		<input type="search" id="<?php echo esc_attr( $osf_id ); ?>" class="field" autocomplete="off" placeholder="<?php echo esc_attr( $search_text ); ?>" name="s">
 		<?php if ( 'any' !== $post_type ) { ?>
 			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 		<?php } ?>

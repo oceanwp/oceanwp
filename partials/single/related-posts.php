@@ -16,7 +16,7 @@ if ( 'post' !== get_post_type() ) {
 }
 
 // Text.
-$text = esc_html__( 'You Might Also Like', 'oceanwp' );
+$text = __( 'You Might Also Like', 'oceanwp' );
 
 // Apply filters for child theming.
 $text = apply_filters( 'ocean_related_posts_title', $text );
