@@ -19,8 +19,8 @@ if ( in_array( oceanwp_post_layout(), array( 'full-screen', 'full-width' ), true
 	<div id="right-sidebar-inner" class="clr">
 
 		<?php
-		$get_sidebar_id = oceanwp_get_second_sidebar();
-		if ( $sidebar === $get_sidebar_id ) {
+		$sidebar = oceanwp_get_sidebar();
+		if ( $sidebar ) {
 			dynamic_sidebar( $sidebar );
 		}
 		?>

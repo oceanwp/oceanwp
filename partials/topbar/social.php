@@ -71,8 +71,7 @@ endif;
 
 <?php
 // Return if there aren't any profiles defined and define var.
-$get_profile_list = get_theme_mod( 'ocean_top_bar_social_profiles' );
-if ( ! $profiles === $get_profile_list ) {
+if ( ! $profiles = get_theme_mod( 'ocean_top_bar_social_profiles' ) ) {
 	return;
 }
 

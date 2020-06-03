@@ -16,8 +16,8 @@
 	<div id="left-sidebar-inner" class="clr">
 
 		<?php
-		$second_sidebar_id = oceanwp_get_second_sidebar();
-		if ( $sidebar === $second_sidebar_id ) {
+		$sidebar = oceanwp_get_second_sidebar();
+		if ( $sidebar ) {
 			dynamic_sidebar( $sidebar );
 		}
 		?>
