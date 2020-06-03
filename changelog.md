@@ -6,7 +6,7 @@
 * **Fixed** - Coding standards in accordance with WordPress Coding Standards.
 * **Fixed** - Customizer not loading - Uncaught TypeError: data.value.indexOf is not a function.
 * **Fixed** - Woocommerce 'Apply Coupon' button layout issue in mobile view.
-* **Fixed** - Translation issues - translation not reflected on the front end: search widget, related posts title, header search overlay, header replace search
+* **Fixed** - Translation issues - translation not reflected on the front end: search widget, related posts title, header search overlay, header replace search, next/previous post.
 * **Fixed** - 404 page #content-wrap syntax error.
 * **Added** - Filters to replace default text (for child theming): search widget/search dropdown, header search overlay, header replace search.
 * **Fixed** - Comment form name and email placeholder text always displaying as required.
