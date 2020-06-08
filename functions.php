@@ -402,7 +402,7 @@ final class OCEANWP_Theme_Class {
 	public static function admin_scripts() {
 		global $pagenow;
 		if ( 'nav-menus.php' === $pagenow ) {
-			wp_enqueue_style( 'oceanwp-menus', OCEANWP_INC_DIR_URI . 'walker/assets/menus.css', false, $theme_version );
+			wp_enqueue_style( 'oceanwp-menus', OCEANWP_INC_DIR_URI . 'walker/assets/menus.css', false, OCEANWP_THEME_VERSION );
 		}
 	}
 

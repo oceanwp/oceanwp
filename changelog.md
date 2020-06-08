@@ -4,6 +4,8 @@
 * **Fixed** - Ajax 'add to cart' compatibility with variations, product-addons, composite product etc.
 * **Fixed** - 'Skip to content' link displayed after disabling CSS file.
 * **Fixed** - Coding standards in accordance with WordPress Coding Standards.
+* **Fixed** - Code optimized for speed improvements.
+* **Fixed** - Undefined variable $theme_version on menu settings page.
 * **Fixed** - Customizer not loading - Uncaught TypeError: data.value.indexOf is not a function.
 * **Fixed** - Woocommerce 'Apply Coupon' button layout issue in mobile view.
 * **Fixed** - Translation issues - translation not reflected on the front end: search widget, related posts title, header search overlay, header replace search, next/previous post.
