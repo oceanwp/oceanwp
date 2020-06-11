@@ -30,7 +30,7 @@ if ( empty( $sections ) ) {
 		?>
 
 		<?php if ( 'author' === $section ) { ?>
-			<li class="meta-author"<?php oceanwp_schema_markup( 'author_name' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post Author:', 'oceanwp' ); ?></span><i class="icon-user" aria-hidden="true"></i><?php echo esc_attr( the_author_posts_link() ); ?></li>
+			<li class="meta-author"<?php oceanwp_schema_markup( 'author_name' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post author:', 'oceanwp' ); ?></span><i class="icon-user" aria-hidden="true"></i><?php echo esc_attr( the_author_posts_link() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'date' === $section ) { ?>
@@ -42,11 +42,15 @@ if ( empty( $sections ) ) {
 		<?php } ?>
 
 		<?php if ( 'categories' === $section ) { ?>
-			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Post Category:', 'oceanwp' ); ?></span><i class="icon-folder" aria-hidden="true"></i><?php the_category( ' <span class="owp-sep">/</span> ', get_the_ID() ); ?></li>
+			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Post category:', 'oceanwp' ); ?></span><i class="icon-folder" aria-hidden="true"></i><?php the_category( ' <span class="owp-sep">/</span> ', get_the_ID() ); ?></li>
+		<?php } ?>
+
+		<?php if ( 'reading-time' == $section ) { ?>
+			<li class="meta-cat"><span class="screen-reader-text"><?php _e( 'Reading time:', 'oceanwp' ); ?></span><i class="icon-cup" aria-hidden="true"></i><?php echo ocean_reading_time(); ?></li>
 		<?php } ?>
 
 		<?php if ( 'comments' === $section && comments_open() && ! post_password_required() ) { ?>
-			<li class="meta-comments"><span class="screen-reader-text"><?php esc_html_e( 'Post Comments:', 'oceanwp' ); ?></span><i class="icon-bubble" aria-hidden="true"></i><?php comments_popup_link( esc_html__( '0 Comments', 'oceanwp' ), esc_html__( '1 Comment', 'oceanwp' ), esc_html__( '% Comments', 'oceanwp' ), 'comments-link' ); ?></li>
+			<li class="meta-comments"><span class="screen-reader-text"><?php esc_html_e( 'Post comments:', 'oceanwp' ); ?></span><i class="icon-bubble" aria-hidden="true"></i><?php comments_popup_link( esc_html__( '0 Comments', 'oceanwp' ), esc_html__( '1 Comment', 'oceanwp' ), esc_html__( '% Comments', 'oceanwp' ), 'comments-link' ); ?></li>
 		<?php } ?>
 
 	<?php } ?>
