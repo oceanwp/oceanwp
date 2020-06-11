@@ -4562,9 +4562,9 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 					// If closed header
 					$css .= '
-						body.vertical-header-style.vh-closed.left-header #site-header.vertical-header {left: -'. $vh_width_minus .'px;}
+						body.vertical-header-style.vh-closed.left-header #site-header.vertical-header {left: -'. $vertical_header_width .'px;}
 						body.vertical-header-style.vh-closed.left-header #outer-wrap {margin-left: 34px;}
-						body.vertical-header-style.vh-closed.right-header #site-header.vertical-header {right: -'. $vh_width_minus .'px;}
+						body.vertical-header-style.vh-closed.right-header #site-header.vertical-header {right: -'. $vertical_header_width .'px;}
 						body.vertical-header-style.vh-closed.right-header #outer-wrap {margin-right: 34px;}';
 
 					// For small screens

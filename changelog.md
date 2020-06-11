@@ -6,6 +6,7 @@
 * **Fixed** - Coding standards in accordance with WordPress Coding Standards.
 * **Fixed** - Code optimized for speed improvements.
 * **Fixed** - Undefined variable $theme_version on menu settings page.
+* **Fixed** - Undefined variable $vh_width_minus when using vertical header.
 * **Fixed** - Customizer not loading - Uncaught TypeError: data.value.indexOf is not a function.
 * **Fixed** - Woocommerce 'Apply Coupon' button layout issue in mobile view.
 * **Fixed** - Translation issues - translation not reflected on the front end: search widget, related posts title, header search overlay, header replace search, next/previous post.
