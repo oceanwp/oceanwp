@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### *2020.05.XX* - 1.8.4:
+### *2020.06.XX* - 1.8.4:
 * **Fixed** - Ajax 'add to cart' compatibility with variations, product-addons, composite product etc.
 * **Fixed** - 'Skip to content' link displayed after disabling CSS file.
 * **Fixed** - Coding standards in accordance with WordPress Coding Standards.
@@ -14,6 +14,7 @@
 * **Added** - Filters to replace default text (for child theming): search widget/search dropdown, header search overlay, header replace search.
 * **Fixed** - Comment form name and email placeholder text always displaying as required.
 * **Added** - Improved accessibility on the comments section.
+* **Added** - Meta 'Reading Time': single blog post and blog post entries.
 
 
 ### *2020.05.13 - 1.8.3:

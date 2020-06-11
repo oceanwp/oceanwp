@@ -3099,6 +3099,23 @@ if ( ! function_exists( 'oceanwp_blog_single_meta' ) ) {
 }
 
 /**
+ * Returns reading time
+ * 
+ * @since 1.8.4
+*/
+if ( ! function_exists( 'ocean_reading_time' ) ) {
+
+	function ocean_reading_time() {
+		$reading_time = get_post_field( 'post_content', $post->ID );
+		$reading_time = str_word_count( strip_tags( $reading_time ) );
+		$reading_time = ceil( $reading_time / 200 );
+
+		$total_rt = $reading_time . " " . esc_html__( 'min(s) read', 'oceanwp' );
+		return $total_rt;
+	}
+}
+
+/**
  * Comments and pingbacks
  *
  * @since 1.0.0
