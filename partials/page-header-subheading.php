@@ -11,10 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Display subheading if there is one.
-$subheading         = '';
-$subheading_content = oceanwp_get_page_subheading();
-
-if ( $subheading === $subheading_content ) :
+if ( $subheading = oceanwp_get_page_subheading() ) :
 	?>
 
 	<div class="clr page-subheading">
