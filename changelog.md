@@ -15,6 +15,7 @@
 * **Fixed** - Comment form name and email placeholder text always displaying as required.
 * **Added** - Improved accessibility on the comments section.
 * **Added** - Meta 'Reading Time': single blog post and blog post entries.
+* **Added** - 'Date' taxonomy for Next/Prev single blog post navigation.
 
 
 ### *2020.05.13 - 1.8.3:

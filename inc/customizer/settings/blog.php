@@ -1491,6 +1491,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 						'choices'  => array(
 							'category' => esc_html__( 'Category', 'oceanwp' ),
 							'post_tag' => esc_html__( 'Tag', 'oceanwp' ),
+							'pub-date'  => esc_html__( 'Date', 'oceanwp' ),
 						),
 					)
 				)
