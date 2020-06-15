@@ -11,6 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
+	/**
+	 * Settings for header
+	 */
 	class OceanWP_Header_Customizer {
 
 		/**
@@ -20,15 +23,16 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 		 */
 		public function __construct() {
 
-			add_action( 'customize_register', 	array( $this, 'customizer_options' ) );
-			add_filter( 'ocean_head_css', 		array( $this, 'head_css' ) );
-			add_filter( 'ocean_head_css', 		array( $this, 'header_image_css' ) );
+			add_action( 'customize_register', array( $this, 'customizer_options' ) );
+			add_filter( 'ocean_head_css', array( $this, 'head_css' ) );
+			add_filter( 'ocean_head_css', array( $this, 'header_image_css' ) );
 
 		}
 
 		/**
 		 * Customizer options
 		 *
+		 * @param WP_Customize_Manager $wp_customize Reference to WP_Customize_Manager.
 		 * @since 1.0.0
 		 */
 		public function customizer_options( $wp_customize ) {
@@ -37,45 +41,60 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 * Panel
 			 */
 			$panel = 'ocean_header_panel';
-			$wp_customize->add_panel( $panel , array(
-				'title' 			=> esc_html__( 'Header', 'oceanwp' ),
-				'priority' 			=> 210,
-			) );
+			$wp_customize->add_panel(
+				$panel ,
+				array(
+					'title'    => esc_html__( 'Header', 'oceanwp' ),
+					'priority' => 210,
+				)
+			);
 
 			/**
 			 * Section
 			 */
-			$wp_customize->add_section( 'ocean_header_general' , array(
-				'title' 			=> esc_html__( 'General', 'oceanwp' ),
-				'priority' 			=> 10,
-				'panel' 			=> $panel,
-			) );
+			$wp_customize->add_section(
+				'ocean_header_general',
+				array(
+					'title'    => esc_html__( 'General', 'oceanwp' ),
+					'priority' => 10,
+					'panel'    => $panel,
+				)
+			);
 
 			/**
 			 * Header Style
 			 */
-			$wp_customize->add_setting( 'ocean_header_style', array(
-				'default'           	=> 'minimal',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
+			$wp_customize->add_setting(
+				'ocean_header_style',
+				array(
+					'default'           => 'minimal',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_header_style', array(
-				'label'	   				=> esc_html__( 'Style', 'oceanwp' ),
-				'type' 					=> 'select',
-				'section'  				=> 'ocean_header_general',
-				'settings' 				=> 'ocean_header_style',
-				'priority' 				=> 10,
-				'choices' 				=> array(
-					'minimal' 		=> esc_html__( 'Minimal', 'oceanwp' ),
-					'transparent' 	=> esc_html__( 'Transparent', 'oceanwp' ),
-					'top'			=> esc_html__( 'Top Menu', 'oceanwp' ),
-					'full_screen'	=> esc_html__( 'Full Screen', 'oceanwp' ),
-					'center'		=> esc_html__( 'Center', 'oceanwp' ),
-					'medium'		=> esc_html__( 'Medium', 'oceanwp' ),
-					'vertical'		=> esc_html__( 'Vertical', 'oceanwp' ),
-					'custom'		=> esc_html__( 'Custom Header', 'oceanwp' ),
-				),
-			) ) );
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_header_style',
+					array(
+						'label'    => esc_html__( 'Style', 'oceanwp' ),
+						'type'     => 'select',
+						'section'  => 'ocean_header_general',
+						'settings' => 'ocean_header_style',
+						'priority' => 10,
+						'choices'  => array(
+							'minimal'     => esc_html__( 'Minimal', 'oceanwp' ),
+							'transparent' => esc_html__( 'Transparent', 'oceanwp' ),
+							'top'         => esc_html__( 'Top Menu', 'oceanwp' ),
+							'full_screen' => esc_html__( 'Full Screen', 'oceanwp' ),
+							'center'      => esc_html__( 'Center', 'oceanwp' ),
+							'medium'      => esc_html__( 'Medium', 'oceanwp' ),
+							'vertical'    => esc_html__( 'Vertical', 'oceanwp' ),
+							'custom'      => esc_html__( 'Custom Header', 'oceanwp' ),
+						),
+					)
+				)
+			);
 
 			/**
 			 * Custom Header Template
