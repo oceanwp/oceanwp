@@ -24,7 +24,7 @@
     letter-spacing: 1px;
     padding-left: 15px;
     margin: 0 0 20px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 /**
@@ -53,5 +53,5 @@
 	#main .widget_nav_menu li a:before {
 		display: none;
 	}
-	
+
 }
