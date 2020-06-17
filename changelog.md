@@ -16,6 +16,7 @@
 * **Added** - Improved accessibility on the comments section.
 * **Added** - Meta 'Reading Time': single blog post and blog post entries.
 * **Added** - 'Date' taxonomy for Next/Prev single blog post navigation.
+* **Added** - Option to set the comment form position before or after the comment list.
 
 
 ### *2020.05.13 - 1.8.3:

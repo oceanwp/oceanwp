@@ -1639,6 +1639,36 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 				)
 			);
 
+			/**
+			 * Comment form position.
+			 * 
+			 * @since 1.8.4
+			 */
+			$wp_customize->add_setting(
+				'ocean_comment_form_position',
+				array(
+					'default'               => 'after',
+					'sanitize_callback'     => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_comment_form_position',
+					array(
+						'label'              => esc_html__( 'Comment Form Position', 'oceanwp' ),
+						'section'            => 'ocean_single_post',
+						'settings'           => 'ocean_comment_form_position',
+						'priority'           => 10,
+						'choices'            => array(
+							'before'    => esc_html__( 'Before', 'oceanwp' ),
+							'after'     => esc_html__( 'After', 'oceanwp' ),
+						),
+					)
+				)
+			);
+
 		}
 
 		/**
