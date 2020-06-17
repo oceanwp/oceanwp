@@ -11,6 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
+	/**
+	 * Settings for general options
+	 */
 	class OceanWP_General_Customizer {
 
 		/**
@@ -20,14 +23,15 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 		 */
 		public function __construct() {
 
-			add_action( 'customize_register', 	array( $this, 'customizer_options' ) );
-			add_filter( 'ocean_head_css', 		array( $this, 'head_css' ) );
+			add_action( 'customize_register', array( $this, 'customizer_options' ) );
+			add_filter( 'ocean_head_css', array( $this, 'head_css' ) );
 
 		}
 
 		/**
 		 * Customizer options
 		 *
+		 * @param WP_Customize_Manager $wp_customize Reference to WP_Customize_Manager.
 		 * @since 1.0.0
 		 */
 		public function customizer_options( $wp_customize ) {
@@ -36,327 +40,477 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			 * Panel
 			 */
 			$panel = 'ocean_general_panel';
-			$wp_customize->add_panel( $panel , array(
-				'title' 			=> esc_html__( 'General Options', 'oceanwp' ),
-				'priority' 			=> 210,
-			) );
+			$wp_customize->add_panel(
+				$panel,
+				array(
+					'title'    => esc_html__( 'General Options', 'oceanwp' ),
+					'priority' => 210,
+				)
+			);
 
 			/**
 			 * Section
 			 */
-			$wp_customize->add_section( 'ocean_general_styling' , array(
-				'title' 			=> esc_html__( 'General Styling', 'oceanwp' ),
-				'priority' 			=> 10,
-				'panel' 			=> $panel,
-			) );
+			$wp_customize->add_section(
+				'ocean_general_styling',
+				array(
+					'title'    => esc_html__( 'General Styling', 'oceanwp' ),
+					'priority' => 10,
+					'panel'    => $panel,
+				)
+			);
 
 			/**
 			 * Styling
 			 */
-			$wp_customize->add_setting( 'ocean_customzer_styling', array(
-				'transport'           	=> 'postMessage',
-				'default'           	=> 'head',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
-
-			$wp_customize->add_control( 'ocean_customzer_styling', array(
-				'label'	   				=> esc_html__( 'Styling Options Location', 'oceanwp' ),
-				'description'	   		=> esc_html__( 'If you choose Custom File, a CSS file will be created in your uploads folder.', 'oceanwp' ),
-				'type'              	=> 'radio',
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_customzer_styling',
-				'priority'          	=> 10,
-				'choices'           	=> array(
-					'head' 		=> esc_html__( 'WP Head', 'oceanwp' ),
-					'file' 		=> esc_html__( 'Custom File', 'oceanwp' ),
+			$wp_customize->add_setting(
+				'ocean_customzer_styling',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'head',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
 				)
-			) );
+			);
+
+			$wp_customize->add_control(
+				'ocean_customzer_styling',
+				array(
+					'label'       => esc_html__( 'Styling Options Location', 'oceanwp' ),
+					'description' => esc_html__( 'If you choose Custom File, a CSS file will be created in your uploads folder.', 'oceanwp' ),
+					'type'        => 'radio',
+					'section'     => 'ocean_general_styling',
+					'settings'    => 'ocean_customzer_styling',
+					'priority'    => 10,
+					'choices'     => array(
+						'head' => esc_html__( 'WP Head', 'oceanwp' ),
+						'file' => esc_html__( 'Custom File', 'oceanwp' ),
+					)
+				)
+			);
 
 			/**
 			 * Primary Color
 			 */
-			$wp_customize->add_setting( 'ocean_primary_color', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '#13aff0',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
+			$wp_customize->add_setting(
+				'ocean_primary_color',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => '#13aff0',
+					'sanitize_callback' => 'oceanwp_sanitize_color',
+				)
+			);
 
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_primary_color', array(
-				'label'	   				=> esc_html__( 'Primary Color', 'oceanwp' ),
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_primary_color',
-				'priority' 				=> 10,
-			) ) );
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_primary_color',
+					array(
+						'label'    => esc_html__( 'Primary Color', 'oceanwp' ),
+						'section'  => 'ocean_general_styling',
+						'settings' => 'ocean_primary_color',
+						'priority' => 10,
+					)
+				)
+			);
 
 			/**
 			 * Hover Primary Color
 			 */
-			$wp_customize->add_setting( 'ocean_hover_primary_color', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '#0b7cac',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
+			$wp_customize->add_setting(
+				'ocean_hover_primary_color',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => '#0b7cac',
+					'sanitize_callback' => 'oceanwp_sanitize_color',
+				)
+			);
 
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_hover_primary_color', array(
-				'label'	   				=> esc_html__( 'Hover Primary Color', 'oceanwp' ),
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_hover_primary_color',
-				'priority' 				=> 10,
-			) ) );
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_hover_primary_color',
+					array(
+						'label'    => esc_html__( 'Hover Primary Color', 'oceanwp' ),
+						'section'  => 'ocean_general_styling',
+						'settings' => 'ocean_hover_primary_color',
+						'priority' => 10,
+					)
+				)
+			);
 
 			/**
 			 * Main Border Color
 			 */
-			$wp_customize->add_setting( 'ocean_main_border_color', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '#e9e9e9',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
+			$wp_customize->add_setting(
+				'ocean_main_border_color',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => '#e9e9e9',
+					'sanitize_callback' => 'oceanwp_sanitize_color',
+				)
+			);
 
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_main_border_color', array(
-				'label'	   				=> esc_html__( 'Main Border Color', 'oceanwp' ),
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_main_border_color',
-				'priority' 				=> 10,
-			) ) );
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_main_border_color',
+					array(
+						'label'    => esc_html__( 'Main Border Color', 'oceanwp' ),
+						'section'  => 'ocean_general_styling',
+						'settings' => 'ocean_main_border_color',
+						'priority' => 10,
+					)
+				)
+			);
 
 			/**
 			 * Heading Site Background
 			 */
-			$wp_customize->add_setting( 'ocean_site_background_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
+			$wp_customize->add_setting(
+				'ocean_site_background_heading',
+				array(
+					'sanitize_callback' => 'wp_kses',
+				)
+			);
 
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_site_background_heading', array(
-				'label'    				=> esc_html__( 'Site Background', 'oceanwp' ),
-				'section'  				=> 'ocean_general_styling',
-				'priority' 				=> 10,
-			) ) );
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Heading_Control(
+					$wp_customize,
+					'ocean_site_background_heading',
+					array(
+						'label'    => esc_html__( 'Site Background', 'oceanwp' ),
+						'section'  => 'ocean_general_styling',
+						'priority' => 10,
+					)
+				)
+			);
 
 			/**
 			 * Site Background
 			 */
-			$wp_customize->add_setting( 'ocean_background_color', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '#ffffff',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
+			$wp_customize->add_setting(
+				'ocean_background_color',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => '#ffffff',
+					'sanitize_callback' => 'oceanwp_sanitize_color',
+				)
+			);
 
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_background_color', array(
-				'label'	   				=> esc_html__( 'Background Color', 'oceanwp' ),
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_background_color',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_hasnt_boxed_layout',
-			) ) );
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_background_color',
+					array(
+						'label'           => esc_html__( 'Background Color', 'oceanwp' ),
+						'section'         => 'ocean_general_styling',
+						'settings'        => 'ocean_background_color',
+						'priority'        => 10,
+						'active_callback' => 'oceanwp_cac_hasnt_boxed_layout',
+					)
+				)
+			);
 
 			/**
 			 * Site Background Image
 			 */
-			$wp_customize->add_setting( 'ocean_background_image', array(
-				'sanitize_callback' 	=> 'oceanwp_sanitize_image',
-			) );
+			$wp_customize->add_setting(
+				'ocean_background_image',
+				array(
+					'sanitize_callback' => 'oceanwp_sanitize_image',
+				)
+			);
 
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ocean_background_image', array(
-				'label'	   				=> esc_html__( 'Background Image', 'oceanwp' ),
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_background_image',
-				'priority' 				=> 10,
-			) ) );
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
+					$wp_customize,
+					'ocean_background_image',
+					array(
+						'label'    => esc_html__( 'Background Image', 'oceanwp' ),
+						'section'  => 'ocean_general_styling',
+						'settings' => 'ocean_background_image',
+						'priority' => 10,
+					)
+				)
+			);
 
 			/**
 			 * Site Background Image Position
 			 */
-			$wp_customize->add_setting( 'ocean_background_image_position', array(
-				'transport' 			=> 'postMessage',
-				'default' 				=> 'initial',
-				'sanitize_callback' 	=> 'sanitize_text_field',
-			) );
+			$wp_customize->add_setting(
+				'ocean_background_image_position',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'initial',
+					'sanitize_callback' => 'sanitize_text_field',
+				)
+			);
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_background_image_position', array(
-				'label'	   				=> esc_html__( 'Position', 'oceanwp' ),
-				'type' 					=> 'select',
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_background_image_position',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_background_image',
-				'choices' 				=> array(
-					'initial' 			=> esc_html__( 'Default', 'oceanwp' ),
-					'top left' 			=> esc_html__( 'Top Left', 'oceanwp' ),
-					'top center' 		=> esc_html__( 'Top Center', 'oceanwp' ),
-					'top right'  		=> esc_html__( 'Top Right', 'oceanwp' ),
-					'center left' 		=> esc_html__( 'Center Left', 'oceanwp' ),
-					'center center' 	=> esc_html__( 'Center Center', 'oceanwp' ),
-					'center right' 		=> esc_html__( 'Center Right', 'oceanwp' ),
-					'bottom left' 		=> esc_html__( 'Bottom Left', 'oceanwp' ),
-					'bottom center' 	=> esc_html__( 'Bottom Center', 'oceanwp' ),
-					'bottom right' 		=> esc_html__( 'Bottom Right', 'oceanwp' ),
-				),
-			) ) );
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_background_image_position',
+					array(
+						'label'           => esc_html__( 'Position', 'oceanwp' ),
+						'type'            => 'select',
+						'section'         => 'ocean_general_styling',
+						'settings'        => 'ocean_background_image_position',
+						'priority'        => 10,
+						'active_callback' => 'oceanwp_cac_has_background_image',
+						'choices'         => array(
+							'initial'       => esc_html__( 'Default', 'oceanwp' ),
+							'top left'      => esc_html__( 'Top Left', 'oceanwp' ),
+							'top center'    => esc_html__( 'Top Center', 'oceanwp' ),
+							'top right'     => esc_html__( 'Top Right', 'oceanwp' ),
+							'center left'   => esc_html__( 'Center Left', 'oceanwp' ),
+							'center center' => esc_html__( 'Center Center', 'oceanwp' ),
+							'center right'  => esc_html__( 'Center Right', 'oceanwp' ),
+							'bottom left'   => esc_html__( 'Bottom Left', 'oceanwp' ),
+							'bottom center' => esc_html__( 'Bottom Center', 'oceanwp' ),
+							'bottom right'  => esc_html__( 'Bottom Right', 'oceanwp' ),
+						),
+					)
+				)
+			);
 
 			/**
 			 * Site Background Image Attachment
 			 */
-			$wp_customize->add_setting( 'ocean_background_image_attachment', array(
-				'transport' 			=> 'postMessage',
-				'default' 				=> 'initial',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
+			$wp_customize->add_setting(
+				'ocean_background_image_attachment',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'initial',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_background_image_attachment', array(
-				'label'	   				=> esc_html__( 'Attachment', 'oceanwp' ),
-				'type' 					=> 'select',
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_background_image_attachment',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_background_image',
-				'choices' 				=> array(
-					'initial' 	=> esc_html__( 'Default', 'oceanwp' ),
-					'scroll' 	=> esc_html__( 'Scroll', 'oceanwp' ),
-					'fixed' 	=> esc_html__( 'Fixed', 'oceanwp' ),
-				),
-			) ) );
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_background_image_attachment',
+					array(
+						'label'           => esc_html__( 'Attachment', 'oceanwp' ),
+						'type'            => 'select',
+						'section'         => 'ocean_general_styling',
+						'settings'        => 'ocean_background_image_attachment',
+						'priority'        => 10,
+						'active_callback' => 'oceanwp_cac_has_background_image',
+						'choices'         => array(
+							'initial' => esc_html__( 'Default', 'oceanwp' ),
+							'scroll'  => esc_html__( 'Scroll', 'oceanwp' ),
+							'fixed'   => esc_html__( 'Fixed', 'oceanwp' ),
+						),
+					)
+				)
+			);
 
 			/**
 			 * Site Background Image Repeat
 			 */
-			$wp_customize->add_setting( 'ocean_background_image_repeat', array(
-				'transport' 			=> 'postMessage',
-				'default' 				=> 'initial',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
+			$wp_customize->add_setting(
+				'ocean_background_image_repeat',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'initial',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_background_image_repeat', array(
-				'label'	   				=> esc_html__( 'Repeat', 'oceanwp' ),
-				'type' 					=> 'select',
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_background_image_repeat',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_background_image',
-				'choices' 				=> array(
-					'initial' 	=> esc_html__( 'Default', 'oceanwp' ),
-					'no-repeat' => esc_html__( 'No-repeat', 'oceanwp' ),
-					'repeat' 	=> esc_html__( 'Repeat', 'oceanwp' ),
-					'repeat-x' 	=> esc_html__( 'Repeat-x', 'oceanwp' ),
-					'repeat-y' 	=> esc_html__( 'Repeat-y', 'oceanwp' ),
-				),
-			) ) );
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_background_image_repeat',
+					array(
+						'label'           => esc_html__( 'Repeat', 'oceanwp' ),
+						'type'            => 'select',
+						'section'         => 'ocean_general_styling',
+						'settings'        => 'ocean_background_image_repeat',
+						'priority'        => 10,
+						'active_callback' => 'oceanwp_cac_has_background_image',
+						'choices'         => array(
+							'initial'   => esc_html__( 'Default', 'oceanwp' ),
+							'no-repeat' => esc_html__( 'No-repeat', 'oceanwp' ),
+							'repeat'    => esc_html__( 'Repeat', 'oceanwp' ),
+							'repeat-x'  => esc_html__( 'Repeat-x', 'oceanwp' ),
+							'repeat-y'  => esc_html__( 'Repeat-y', 'oceanwp' ),
+						),
+					)
+				)
+			);
 
 			/**
 			 * Site Background Image Size
 			 */
-			$wp_customize->add_setting( 'ocean_background_image_size', array(
-				'transport' 			=> 'postMessage',
-				'default' 				=> 'initial',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
+			$wp_customize->add_setting(
+				'ocean_background_image_size',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'initial',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_background_image_size', array(
-				'label'	   				=> esc_html__( 'Size', 'oceanwp' ),
-				'type' 					=> 'select',
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_background_image_size',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_background_image',
-				'choices' 				=> array(
-					'initial' 	=> esc_html__( 'Default', 'oceanwp' ),
-					'auto' 		=> esc_html__( 'Auto', 'oceanwp' ),
-					'cover' 	=> esc_html__( 'Cover', 'oceanwp' ),
-					'contain' 	=> esc_html__( 'Contain', 'oceanwp' ),
-				),
-			) ) );
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_background_image_size',
+					array(
+						'label'           => esc_html__( 'Size', 'oceanwp' ),
+						'type'            => 'select',
+						'section'         => 'ocean_general_styling',
+						'settings'        => 'ocean_background_image_size',
+						'priority'        => 10,
+						'active_callback' => 'oceanwp_cac_has_background_image',
+						'choices'         => array(
+							'initial' => esc_html__( 'Default', 'oceanwp' ),
+							'auto'    => esc_html__( 'Auto', 'oceanwp' ),
+							'cover'   => esc_html__( 'Cover', 'oceanwp' ),
+							'contain' => esc_html__( 'Contain', 'oceanwp' ),
+						),
+					)
+				)
+			);
 
 			/**
 			 * Heading Links Color
 			 */
-			$wp_customize->add_setting( 'ocean_links_color_heading', array(
-				'sanitize_callback' 	=> 'wp_kses',
-			) );
+			$wp_customize->add_setting(
+				'ocean_links_color_heading',
+				array(
+					'sanitize_callback' => 'wp_kses',
+				)
+			);
 
-			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_links_color_heading', array(
-				'label'    				=> esc_html__( 'Links Color', 'oceanwp' ),
-				'section'  				=> 'ocean_general_styling',
-				'priority' 				=> 10,
-			) ) );
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Heading_Control(
+					$wp_customize,
+					'ocean_links_color_heading',
+					array(
+						'label'    => esc_html__( 'Links Color', 'oceanwp' ),
+						'section'  => 'ocean_general_styling',
+						'priority' => 10,
+					)
+				)
+			);
 
 			/**
 			 * Links Color
 			 */
-			$wp_customize->add_setting( 'ocean_links_color', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '#333333',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
+			$wp_customize->add_setting(
+				'ocean_links_color',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => '#333333',
+					'sanitize_callback' => 'oceanwp_sanitize_color',
+				)
+			);
 
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_links_color', array(
-				'label'	   				=> esc_html__( 'Color', 'oceanwp' ),
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_links_color',
-				'priority' 				=> 10,
-			) ) );
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_links_color',
+					array(
+						'label'    => esc_html__( 'Color', 'oceanwp' ),
+						'section'  => 'ocean_general_styling',
+						'settings' => 'ocean_links_color',
+						'priority' => 10,
+					)
+				)
+			);
 
 			/**
 			 * Links Color Hover
 			 */
-			$wp_customize->add_setting( 'ocean_links_color_hover', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> '#13aff0',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_color',
-			) );
+			$wp_customize->add_setting(
+				'ocean_links_color_hover',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => '#13aff0',
+					'sanitize_callback' => 'oceanwp_sanitize_color',
+				)
+			);
 
-			$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, 'ocean_links_color_hover', array(
-				'label'	   				=> esc_html__( 'Color: Hover', 'oceanwp' ),
-				'section'  				=> 'ocean_general_styling',
-				'settings' 				=> 'ocean_links_color_hover',
-				'priority' 				=> 10,
-			) ) );
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_links_color_hover',
+					array(
+						'label'    => esc_html__( 'Color: Hover', 'oceanwp' ),
+						'section'  => 'ocean_general_styling',
+						'settings' => 'ocean_links_color_hover',
+						'priority' => 10,
+					)
+				)
+			);
 
 			/**
 			 * Section
 			 */
-			$wp_customize->add_section( 'ocean_general_settings' , array(
-				'title' 			=> esc_html__( 'General Settings', 'oceanwp' ),
-				'priority' 			=> 10,
-				'panel' 			=> $panel,
-			) );
+			$wp_customize->add_section(
+				'ocean_general_settings',
+				array(
+					'title'    => esc_html__( 'General Settings', 'oceanwp' ),
+					'priority' => 10,
+					'panel'    => $panel,
+				)
+			);
 
 			/**
 			 * Main Layout Style
 			 */
-			$wp_customize->add_setting( 'ocean_main_layout_style', array(
-				'default'           	=> 'wide',
-				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-			) );
+			$wp_customize->add_setting(
+				'ocean_main_layout_style',
+				array(
+					'default'           => 'wide',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
 
-			$wp_customize->add_control( new OceanWP_Customizer_Buttonset_Control( $wp_customize, 'ocean_main_layout_style', array(
-				'label'	   				=> esc_html__( 'Layout Style', 'oceanwp' ),
-				'section'  				=> 'ocean_general_settings',
-				'settings' 				=> 'ocean_main_layout_style',
-				'priority' 				=> 10,
-				'choices' 				=> array(
-					'wide'  			=> esc_html__( 'Wide', 'oceanwp' ),
-					'boxed' 			=> esc_html__( 'Boxed', 'oceanwp' ),
-					'separate' 			=> esc_html__( 'Separate', 'oceanwp' ),
-				),
-			) ) );
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_main_layout_style',
+					array(
+						'label'    => esc_html__( 'Layout Style', 'oceanwp' ),
+						'section'  => 'ocean_general_settings',
+						'settings' => 'ocean_main_layout_style',
+						'priority' => 10,
+						'choices'      => array(
+							'wide'     => esc_html__( 'Wide', 'oceanwp' ),
+							'boxed'    => esc_html__( 'Boxed', 'oceanwp' ),
+							'separate' => esc_html__( 'Separate', 'oceanwp' ),
+						),
+					)
+				)
+			);
 
 			/**
 			 * Boxed Layout Drop-Shadow
 			 */
-			$wp_customize->add_setting( 'ocean_boxed_dropdshadow', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> true,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
+			$wp_customize->add_setting(
+				'ocean_boxed_dropdshadow',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => true,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_boxed_dropdshadow', array(
-				'label'	   				=> esc_html__( 'Boxed Layout Drop-Shadow', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_general_settings',
-				'settings' 				=> 'ocean_boxed_dropdshadow',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_boxed_layout',
-			) ) );
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_boxed_dropdshadow',
+					array(
+						'label'           => esc_html__( 'Boxed Layout Drop-Shadow', 'oceanwp' ),
+						'type'            => 'checkbox',
+						'section'         => 'ocean_general_settings',
+						'settings'        => 'ocean_boxed_dropdshadow',
+						'priority'        => 10,
+						'active_callback' => 'oceanwp_cac_has_boxed_layout',
+					)
+				)
+			);
 
 			/**
 			 * Boxed Width
@@ -2797,6 +2951,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 		/**
 		 * Get CSS
 		 *
+		 * @param obj $output    css output.
 		 * @since 1.0.0
 		 */
 		public function head_css( $output ) {
