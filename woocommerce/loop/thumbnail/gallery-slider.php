@@ -20,7 +20,7 @@ if ( ! has_post_thumbnail() ) {
 global $product;
 
 // Get first image
-$thumbnail_id  = get_post_thumbnail_id();
+$thumbnail_id  = $product->get_image_id();
 
 // Get gallery images
 if ( version_compare( OceanWP_WooCommerce_Config::get_wc_version(), '2.7', '>=' ) ) {
