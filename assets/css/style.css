@@ -7001,7 +7001,7 @@ body.breadcrumbs-position-default .page-header-title {
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
   border-radius: 2px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 1px;
 }
 
@@ -7054,7 +7054,7 @@ body.breadcrumbs-position-default .page-header-title {
   line-height: 1.2;
   padding-bottom: 3px;
   border-bottom: 1px solid;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .blog-entry.grid-entry .blog-entry-readmore a i {

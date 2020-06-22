@@ -49,8 +49,8 @@ if ( 'quote' === get_post_format() ) {
 			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Post category:', 'oceanwp' ); ?></span><i class="icon-folder" aria-hidden="true"></i><?php the_category( ' <span class="owp-sep">/</span> ', get_the_ID() ); ?></li>
 		<?php } ?>
 
-		<?php if ( 'reading-time' == $section ) { ?>
-			<li class="meta-cat"><span class="screen-reader-text"><?php _e( 'Reading time:', 'oceanwp' ); ?></span><i class="icon-cup" aria-hidden="true"></i><?php echo ocean_reading_time(); ?></li>
+		<?php if ( 'reading-time' === $section ) { ?>
+			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Reading time:', 'oceanwp' ); ?></span><i class="icon-cup" aria-hidden="true"></i><?php echo esc_attr( ocean_reading_time() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'comments' === $section && comments_open() && ! post_password_required() ) { ?>
