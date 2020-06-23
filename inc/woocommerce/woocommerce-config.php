@@ -1320,7 +1320,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
 				),
 				$product,
-				false,
+				false
 			);
 			$html .= '<button type="submit" name="add-to-cart" value="' . get_the_ID() . '" class="floating_add_to_cart_button button alt">' . esc_html( $product->add_to_cart_text() ) . '</button>';
 			$html .= '</form>';
