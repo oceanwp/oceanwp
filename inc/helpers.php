@@ -1936,20 +1936,20 @@ if ( ! function_exists( 'oceanwp_page_header_style' ) ) {
 
 	function oceanwp_page_header_style() {
 
-		// Get default page header style defined in Customizer
+		// Get default page header style defined in Customizer.
 		$style = get_theme_mod( 'ocean_page_header_style' );
 
-		// If featured image in page header
+		// If featured image in page header.
 		if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
 			&& is_singular( 'post' )
 			&& has_post_thumbnail() ) {
 			$style = 'background-image';
 		}
 
-		// Sanitize data
+		// Sanitize data.
 		$style = ( 'default' == $style ) ? '' : $style;
 		
-		// Apply filters and return
+		// Apply filters and return.
 		return apply_filters( 'ocean_page_header_style', $style );
 
 	}
