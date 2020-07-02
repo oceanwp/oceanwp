@@ -16,8 +16,11 @@ if ( ! has_post_thumbnail() ) {
 	return;
 }
 
+// Get global product data.
+global $product;
+
 // Get featured image.
-$attachment = get_post_thumbnail_id();
+$attachment = $product->get_image_id();
 
 // Image args.
 $img_args = array(

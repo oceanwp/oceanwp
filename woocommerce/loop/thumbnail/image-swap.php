@@ -20,7 +20,7 @@ if ( ! has_post_thumbnail() ) {
 global $product;
 
 // Get first image.
-$attachment = get_post_thumbnail_id();
+$attachment = $product->get_image_id();
 
 // Get Second Image in Gallery.
 if ( version_compare( OceanWP_WooCommerce_Config::get_wc_version(), '2.7', '>=' ) ) {
