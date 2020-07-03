@@ -93,7 +93,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
 		<a href="<?php echo esc_url( wc_get_cart_url() ); ?>"><i class="fa <?php echo esc_attr( $icon ); ?>"></i><?php esc_html_e( 'Back to cart', 'oceanwp' ); ?></a>
 
 		<div class="buttons">
-			<input type="button" class="button prev" name="checkout_prev_step" value="<?php esc_html_e( 'Prev', 'oceanwp' ); ?>" data-action="prev">
+			<input type="button" class="button prev" name="checkout_prev_step" value="<?php esc_attr_e( 'Prev', 'oceanwp' ); ?>" data-action="prev">
 			<input type="button" class="button next" name="checkout_next_step" value="<?php echo $enable_login_reminder && ! is_user_logged_in() ? esc_html_e( 'I don&rsquo;t have an account', 'oceanwp' ) : esc_html_e( 'Next', 'oceanwp' ); ?>" data-action="next">
 		</div>
 	</div>

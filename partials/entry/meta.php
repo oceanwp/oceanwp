@@ -22,7 +22,7 @@ if ( empty( $sections ) ) {
 
 <?php do_action( 'ocean_before_blog_entry_meta' ); ?>
 
-<ul class="meta clr" aria-label="<?php esc_html_e( 'Post details:', 'oceanwp' ); ?>">
+<ul class="meta clr" aria-label="<?php esc_attr_e( 'Post details:', 'oceanwp' ); ?>">
 
 	<?php
 	// Loop through meta sections.
@@ -30,7 +30,7 @@ if ( empty( $sections ) ) {
 		?>
 
 		<?php if ( 'author' === $section ) { ?>
-			<li class="meta-author"<?php oceanwp_schema_markup( 'author_name' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post author:', 'oceanwp' ); ?></span><i class="icon-user" aria-hidden="true"></i><?php echo esc_attr( the_author_posts_link() ); ?></li>
+			<li class="meta-author"<?php oceanwp_schema_markup( 'author_name' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post author:', 'oceanwp' ); ?></span><i class="icon-user" aria-hidden="true"></i><?php echo esc_html( the_author_posts_link() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'date' === $section ) { ?>
@@ -38,15 +38,15 @@ if ( empty( $sections ) ) {
 		<?php } ?>
 
 		<?php if ( 'mod-date' === $section ) { ?>
-			<li class="meta-mod-date"<?php oceanwp_schema_markup( 'modified_date' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post last modified:', 'oceanwp' ); ?></span><i class="icon-note" aria-hidden="true"></i><?php echo esc_attr( get_the_modified_date() ); ?></li>
+			<li class="meta-mod-date"<?php oceanwp_schema_markup( 'modified_date' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post last modified:', 'oceanwp' ); ?></span><i class="icon-note" aria-hidden="true"></i><?php echo esc_html( get_the_modified_date() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'categories' === $section ) { ?>
 			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Post category:', 'oceanwp' ); ?></span><i class="icon-folder" aria-hidden="true"></i><?php the_category( ' <span class="owp-sep">/</span> ', get_the_ID() ); ?></li>
 		<?php } ?>
 
-		<?php if ( 'reading-time' == $section ) { ?>
-			<li class="meta-cat"><span class="screen-reader-text"><?php _e( 'Reading time:', 'oceanwp' ); ?></span><i class="icon-cup" aria-hidden="true"></i><?php echo ocean_reading_time(); ?></li>
+		<?php if ( 'reading-time' === $section ) { ?>
+			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Reading time:', 'oceanwp' ); ?></span><i class="icon-cup" aria-hidden="true"></i><?php esc_html( ocean_reading_time() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'comments' === $section && comments_open() && ! post_password_required() ) { ?>

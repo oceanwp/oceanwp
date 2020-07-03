@@ -51,7 +51,7 @@ if ( ! class_exists( 'OceanWP_Social_Login' ) ) :
 
 			<a href="<?php echo esc_url( $authenticate_url ); ?>" data-provider="<?php echo esc_attr( $provider_id ); ?>" class="opl-<?php echo esc_attr( strtolower( $provider_id ) ); ?>" rel="nofollow">
 		       <i class="fa fa-<?php echo esc_attr( $provider_icon ); ?>"></i>
-		       <span><?php echo esc_attr( $provider_name ); ?></span>
+		       <span><?php echo esc_html( $provider_name ); ?></span>
 		    </a>
 
 		<?php

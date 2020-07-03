@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### *2020.06.XX* - 1.8.4:
+### *2020.07.03* - 1.8.4:
 * **Fixed** - Ajax 'add to cart' compatibility with variations, product-addons, composite product etc.
 * **Fixed** - 'Skip to content' link displayed after disabling CSS file.
 * **Fixed** - Coding standards in accordance with WordPress Coding Standards.
