@@ -11,6 +11,7 @@
 * **Fixed** - Woocommerce product quantity selector bug on floating cart element.
 * **Fixed** - Woocommerce product quantity selector bug on qucik view.
 * **Fixed** - Get product image ID using product method #280
+* **Fixed** - Comment pingback schema markup error.
 * **Fixed** - Customizer not loading - Uncaught TypeError: data.value.indexOf is not a function.
 * **Fixed** - Woocommerce 'Apply Coupon' button layout issue in mobile view.
 * **Fixed** - Translation issues - translation not reflected on the front end: search widget, related posts title, header search overlay, header replace search, next/previous post.
