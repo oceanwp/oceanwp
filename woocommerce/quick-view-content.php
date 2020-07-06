@@ -6,10 +6,11 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
-while ( have_posts() ) : the_post(); ?>
+while ( have_posts() ) :
+	the_post(); ?>
 
 	<div id="product-<?php the_ID(); ?>" <?php post_class( 'product' ); ?>>
 		<?php do_action( 'ocean_woo_quick_view_product_image' ); ?>
@@ -20,5 +21,5 @@ while ( have_posts() ) : the_post(); ?>
 		</div>
 	</div>
 
-<?php
+	<?php
 endwhile;

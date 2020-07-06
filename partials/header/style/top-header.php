@@ -5,37 +5,39 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
-// Menu position
-$position 	= get_theme_mod( 'ocean_top_header_menu_position', 'before' );
+// Menu position.
+$position = get_theme_mod( 'ocean_top_header_menu_position', 'before' );
 
-// Get classes
+// Get classes.
 $classes = array( 'clr' );
 
-// Add container class
-if ( true != get_theme_mod( 'ocean_header_full_width', false ) ) {
-    $classes[] = 'container';
+// Add container class.
+if ( true !== get_theme_mod( 'ocean_header_full_width', false ) ) {
+	$classes[] = 'container';
 }
 
-// Turn classes into space seperated string
+// Turn classes into space seperated string.
 $classes = implode( ' ', $classes );
 
-// Search style
+// Search style.
 $search = oceanwp_menu_search_style(); ?>
 
 <?php
-if ( 'after' == $position ) { ?>
+if ( 'after' === $position ) {
+	?>
 	<div class="header-bottom clr">
 		<div class="container">
 			<?php get_template_part( 'partials/header/logo' ); ?>
 		</div>
 	</div>
-<?php
-} ?>
+	<?php
+}
+?>
 
 <div class="<?php echo esc_attr( oceanwp_top_header_classes() ); ?>">
 
@@ -44,10 +46,11 @@ if ( 'after' == $position ) { ?>
 	<div id="site-header-inner" class="<?php echo esc_attr( $classes ); ?>">
 
 		<?php
-		// Search header replace
-		if ( 'header_replace' == $search ) {
+		// Search header replace.
+		if ( 'header_replace' === $search ) {
 			get_template_part( 'partials/header/search-replace' );
-		} ?>
+		}
+		?>
 
 		<div class="left clr">
 
@@ -65,18 +68,20 @@ if ( 'after' == $position ) { ?>
 
 			<div class="inner">
 
-				<?php if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
+				<?php
+				if ( true === get_theme_mod( 'ocean_menu_social', false ) ) {
 					get_template_part( 'partials/header/social' );
 				}
 
 				oceanwp_top_header_search();
 
-				// Search style
-				if ( 'drop_down' == $search ) {
+				// Search style.
+				if ( 'drop_down' === $search ) {
 					get_template_part( 'partials/header/search-dropdown' );
-				} else if ( 'overlay' == $search ) {
+				} elseif ( 'overlay' === $search ) {
 					get_template_part( 'partials/header/search-overlay' );
-				} ?>
+				}
+				?>
 
 			</div>
 
@@ -91,11 +96,13 @@ if ( 'after' == $position ) { ?>
 </div><!-- .header-top -->
 
 <?php
-if ( 'before' == $position ) { ?>
+if ( 'before' === $position ) {
+	?>
 	<div class="header-bottom clr">
 		<div class="container">
 			<?php get_template_part( 'partials/header/logo' ); ?>
 		</div>
 	</div>
-<?php
-} ?>
+	<?php
+}
+?>

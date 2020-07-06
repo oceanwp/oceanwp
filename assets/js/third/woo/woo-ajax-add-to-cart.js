@@ -20,6 +20,9 @@ jQuery( function( $ ) {
 			} else if (this.type == "checkbox" && this.checked == false) {
 				return {name: this.name, value: this.checked ? this.value : ''}
 
+			} else if (this.type == "radio" && this.checked == false) {
+				return {name: this.name, value: this.checked ? this.value : ''}
+
 			//default: all checkboxes = on
 			} else {
 				return jQuery.isArray(val) ?
@@ -43,19 +46,28 @@ jQuery( function( $ ) {
 	/**
 	 * Handle the add to cart event.
 	 */
-	owpAddToCartHandler.prototype.onAddToCart = function( e ) {
+	owpAddToCartHandler.prototype.onAddToCart = function(e) {
 		e.preventDefault();
 
-    	var button				= $(this),
-            $form 				= button.closest('form.cart'),
-            data 				= $form.find('input:not([name="product_id"]), select, button, textarea').serializeArrayAll() || 0;
+		var button	  = $( this ),
+			$form 	  = $( this ).closest('form.cart'),
+			data      = $form.serializeArrayAll();
+
+		var is_valid = false;
 
 		$.each(data, function (i, item) {
-			if (item.name == 'add-to-cart') {
-				item.name = 'product_id';
-				item.value = $form.find('input[name=variation_id]').val() || button.val();
+			if (item.name === 'add-to-cart') {
+				is_valid = true;
+        		return false;
 			}
-		});
+		})
+
+		if( is_valid ){
+        	e.preventDefault();
+        }
+        else{
+        	return;
+        }
 
 		$(document.body).trigger('adding_to_cart', [button, data]);
 
@@ -64,7 +76,7 @@ jQuery( function( $ ) {
 
 		// Ajax action.
 		$.ajax ({
-			url: woocommerce_params.wc_ajax_url.toString().replace('%%endpoint%%', 'add_to_cart'),
+			url: oceanwpLocalize.wc_ajax_url,
 			type: 'POST',
 			data : data,
 
@@ -79,6 +91,7 @@ jQuery( function( $ ) {
 				}
 			}
 		});
+
 	};
 
 	/**
@@ -94,7 +107,7 @@ jQuery( function( $ ) {
 			// View cart text.
 			if ( ! oceanwpLocalize.is_cart && $button.parent().find( '.added_to_cart' ).length === 0 ) {
 				$button.after( ' <a href="' + oceanwpLocalize.cart_url + '" class="added_to_cart wc-forward" title="' +
-					oceanwpLocalize.view_cart + '">' + oceanwpLocalize.view_cart + '</a>' );
+				oceanwpLocalize.view_cart + '">' + oceanwpLocalize.view_cart + '</a>' );
 			}
 		}
 	};

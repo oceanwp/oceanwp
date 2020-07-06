@@ -5889,7 +5889,7 @@
 				var $child = $(".customizer-ocean_search_overlay_close_button_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_close_button_color">.search-overlay .search-toggle-li .search-overlay-toggle.exit > span:before { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_close_button_color">#searchform-overlay a.search-overlay-close span::before, #searchform-overlay a.search-overlay-close span::after{ background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

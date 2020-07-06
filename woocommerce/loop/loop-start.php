@@ -2,26 +2,26 @@
 /**
  * Product Loop Start
  *
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     9999
+ * @author    WooThemes
+ * @package   WooCommerce/Templates
+ * @version   9999
  */
 
-// Classes
+// Classes.
 $wrap_classes = array( 'products', 'oceanwp-row', 'clr' );
 
-// List/grid style
+// List/grid style.
 if ( ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() )
 	&& get_theme_mod( 'ocean_woo_grid_list', true )
-	&& 'list' == get_theme_mod( 'ocean_woo_catalog_view', 'grid' ) ) {
+	&& 'list' === get_theme_mod( 'ocean_woo_catalog_view', 'grid' ) ) {
 	$wrap_classes[] = 'list';
 } else {
 	$wrap_classes[] = 'grid';
 }
 
-// Responsive columns
-$tablet_columns    = get_theme_mod( 'ocean_woocommerce_tablet_shop_columns' );
-$mobile_columns    = get_theme_mod( 'ocean_woocommerce_mobile_shop_columns' );
+// Responsive columns.
+$tablet_columns = get_theme_mod( 'ocean_woocommerce_tablet_shop_columns' );
+$mobile_columns = get_theme_mod( 'ocean_woocommerce_mobile_shop_columns' );
 
 if ( ! empty( $tablet_columns ) ) {
 	$wrap_classes[] = 'tablet-col';
@@ -32,8 +32,8 @@ if ( ! empty( $mobile_columns ) ) {
 	$wrap_classes[] = 'mobile-' . $mobile_columns . '-col';
 }
 
-// If infinite scroll
-if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+// If infinite scroll.
+if ( 'infinite_scroll' === get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
 	$wrap_classes[] = 'infinite-scroll-wrap';
 }
 

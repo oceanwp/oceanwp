@@ -6,11 +6,12 @@
  * @package WooCommerce/Templates
  * @version 1.6.4
  */
+
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
 
-// Heading tag
+// Heading tag.
 $heading = get_theme_mod( 'ocean_woo_product_title_tag', 'h2' );
 $heading = $heading ? $heading : 'h2';
 $heading = apply_filters( 'ocean_woo_product_title_tag', $heading ); ?>

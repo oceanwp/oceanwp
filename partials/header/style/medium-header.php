@@ -5,26 +5,26 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
-// Get elements
+// Get elements.
 $elements = oceanwp_medium_header_elements();
 
-// Define counter
+// Define counter.
 $count = '';
 
-// Bottom header class
+// Bottom header class.
 $classes = array( 'bottom-header-wrap', 'clr' );
 
-// Add the fixed class if only sticky menu
-if ( true == get_theme_mod( 'ocean_medium_header_stick_menu', false ) ) {
+// Add the fixed class if only sticky menu.
+if ( true === get_theme_mod( 'ocean_medium_header_stick_menu', false ) ) {
 	$classes[] = 'fixed-scroll';
 }
 
-// Turn classes into space seperated string
+// Turn classes into space seperated string.
 $classes = implode( ' ', $classes );
 
 ?>
@@ -34,65 +34,68 @@ $classes = implode( ' ', $classes );
 <div id="site-header-inner" class="clr">
 
 	<?php
-	// If elements
-	if ( ! empty( $elements ) ) { ?>
+	// If elements.
+	if ( ! empty( $elements ) ) {
+		?>
 
 		<div class="top-header-wrap clr">
 			<div class="container clr">
 				<div class="top-header-inner clr">
 
 					<?php
-					// Loop through elements
+					// Loop through elements.
 					foreach ( $elements as $element ) :
 
-						// Counter
+						// Counter.
 						$count++;
 
-						// Classes
+						// Classes.
 						$e_classes = array( 'top-col', 'clr' );
 
-						// Count
-						$e_classes[] = 'col-'. $count;
+						// Count.
+						$e_classes[] = 'col-' . $count;
 
-						// If logo
-						if ( 'logo' == $element ) {
+						// If logo.
+						if ( 'logo' === $element ) {
 							$e_classes[] = 'logo-col';
 						}
 
-						// Turn classes into space seperated string
-						$e_classes = implode( ' ', $e_classes ); ?>
+						// Turn classes into space seperated string.
+						$e_classes = implode( ' ', $e_classes );
+						?>
 
 						<div class="<?php echo esc_attr( $e_classes ); ?>">
 
 							<?php
-							// Search form
-							if ( 'searchfrom' == $element ) {
+							// Search form.
+							if ( 'searchfrom' === $element ) {
 								get_template_part( 'partials/header/style/medium-header-search' );
-							}
 
-							// Logo
-							else if ( 'logo' == $element ) {
+							} elseif ( 'logo' === $element ) {
+								// Logo.
 								get_template_part( 'partials/header/logo' );
-							}
 
-							// Social buttons
-							else if ( 'social' == $element ) {
-								if ( true == get_theme_mod( 'ocean_menu_social', false ) ) {
+							} elseif ( 'social' === $element ) {
+								// Social buttons.
+								if ( true === get_theme_mod( 'ocean_menu_social', false ) ) {
 									get_template_part( 'partials/header/social' );
 								}
-							} ?>
+							}
+							?>
 
 						</div>
 
-					<?php
-					endforeach; ?>
+						<?php
+					endforeach;
+					?>
 
 				</div>
 			</div>
 		</div>
 
-	<?php
-	} ?>
+		<?php
+	}
+	?>
 
 	<div class="<?php echo esc_attr( $classes ); ?>">
 

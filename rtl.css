@@ -317,10 +317,10 @@ ul.page-numbers { text-align: left; }
 	All Devices under 960px
 *------------------------------------*/
 @media only screen and (max-width: 959px) {
-	
+
 	/* Separate layout */
 	.separate-layout .widget-area.sidebar-primary { padding-right: 0; }
-	
+
 }
 
 /*------------------------------------*

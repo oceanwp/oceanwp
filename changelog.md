@@ -1,14 +1,39 @@
 # OceanWP Changelog
 
-### *2020.05.13 - 1.8.3:
+### *2020.07.06* - 1.8.4:
+* **Fixed** - Ajax 'add to cart' compatibility with variations, product-addons, composite product etc.
+* **Fixed** - 'Skip to content' link displayed after disabling CSS file.
+* **Fixed** - Coding standards in accordance with WordPress Coding Standards.
+* **Fixed** - Code optimized for speed improvements.
+* **Fixed** - Undefined variable $theme_version on menu settings page.
+* **Fixed** - Undefined variable $vh_width_minus when using vertical header.
+* **Fixed** - Woocommerce product quantity selector bug.
+* **Fixed** - Woocommerce product quantity selector bug on floating cart element.
+* **Fixed** - Woocommerce product quantity selector bug on qucik view.
+* **Fixed** - Get product image ID using product method #280
+* **Fixed** - Comment pingback schema markup error.
+* **Fixed** - Customizer not loading - Uncaught TypeError: data.value.indexOf is not a function.
+* **Fixed** - Woocommerce 'Apply Coupon' button layout issue in mobile view.
+* **Fixed** - Translation issues - translation not reflected on the front end: search widget, related posts title, header search overlay, header replace search, next/previous post.
+* **Fixed** - 404 page #content-wrap syntax error.
+* **Added** - Filters to replace default text (for child theming): search widget/search dropdown, header search overlay, header replace search.
+* **Fixed** - Comment form name and email placeholder text always displaying as required.
+* **Added** - Improved accessibility on the comments section.
+* **Added** - Meta 'Reading Time': single blog post and blog post entries.
+* **Added** - 'Date' taxonomy for Next/Prev single blog post navigation.
+* **Added** - Option to set the comment form position before or after the comment list.
+
+
+### *2020.05.13* - 1.8.3:
 * **Fixed** - WooCommerce Grid List button.
+* **Fixed** - cookie.js is not defined when shop page set as home page.
 * **Fixed** - Duplicate custom menu fields with WP5.4.
 * **Fixed** - Missing BuddyPress Icons.
 * **Fixed** - OceanWP javascripts won't execute on fast pages #241
 * **Fixed** - Trying to get property 'post_content' of non-object
 * **Fixed** - Trying to get property 'ID' of non-object
 * **Fixed** - select2.js conflcit with TutorLMS, LearnDash and LearnPress plugin
-* **Added** - Backward compatibility for wp_body_open()s.
+* **Added** - Backward compatibility for wp_body_open().
 
 ### *2020.04.01* - 1.8.2:
 * **Fixed** - Mobile Menu doesn't work with sticky header.

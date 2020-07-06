@@ -4992,6 +4992,35 @@ Woo Responsive
   }
 }
 
+@media only screen and (max-width: 580px) {
+  .woocommerce-cart table.cart td.actions .coupon {
+    float: none;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .woocommerce-cart table.cart td.actions .coupon .input-text {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 10px;
+  }
+  .woocommerce-cart table.cart td.actions .coupon input {
+    width: 100%;
+  }
+  .woocommerce-cart table.cart td.actions .coupon button[name='apply_coupon'] {
+    width: 100%;
+    display: inline-block;
+    float: none;
+  }
+  .woocommerce-cart table.cart td.actions button[name='update_cart'] {
+    display: inline-block;
+    float: none;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .woocommerce .result-count {
     display: none;
@@ -5017,27 +5046,6 @@ Woo Responsive
   }
   .woocommerce .woocommerce-ordering .orderby span {
     width: 100% !important;
-  }
-  .woocommerce-cart table.cart td.actions .coupon {
-    float: none;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 1em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  }
-  .woocommerce-cart table.cart td.actions .coupon .input-text {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 10px;
-  }
-  .woocommerce-cart table.cart td.actions .coupon input {
-    width: 100%;
-  }
-  .woocommerce-cart table.cart td.actions button[name='update_cart'] {
-    display: inline-block;
-    float: none;
-    width: 100%;
-    margin-top: 15px;
   }
   .woocommerce-checkout form.login .lost_password {
     float: none;
