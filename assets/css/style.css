@@ -7338,7 +7338,7 @@ time.published i {
   letter-spacing: 1px;
   padding-left: 15px;
   margin: 0 0 20px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 /**
