@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### *2020.07.03* - 1.8.4:
+### *2020.07.06* - 1.8.4:
 * **Fixed** - Ajax 'add to cart' compatibility with variations, product-addons, composite product etc.
 * **Fixed** - 'Skip to content' link displayed after disabling CSS file.
 * **Fixed** - Coding standards in accordance with WordPress Coding Standards.
@@ -24,7 +24,7 @@
 * **Added** - Option to set the comment form position before or after the comment list.
 
 
-### *2020.05.13 - 1.8.3:
+### *2020.05.13* - 1.8.3:
 * **Fixed** - WooCommerce Grid List button.
 * **Fixed** - cookie.js is not defined when shop page set as home page.
 * **Fixed** - Duplicate custom menu fields with WP5.4.
