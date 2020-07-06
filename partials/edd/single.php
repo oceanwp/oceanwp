@@ -1,7 +1,8 @@
 <?php
 /**
- * Template for displaying single layout for easy digital downloads 
+ * Template for displaying single layout for easy digital downloads
  *
+ * @package OceanWP WordPress theme
  */
 
 global $post;
@@ -15,7 +16,8 @@ do_action( 'ocean_before_single_download_item' ); ?>
 		</h2>
 
 		<?php
-		if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ) : ?>
+		if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( get_the_ID() ) ) :
+			?>
 			<div class="edd_download_image">
 
 				<?php do_action( 'ocean_before_single_download_image' ); ?>
@@ -38,24 +40,27 @@ do_action( 'ocean_before_single_download_item' ); ?>
 		</div>
 
 		<?php
-		if ( get_theme_mod( 'ocean_edd_display_navigation', true ) ) : ?>
+		if ( get_theme_mod( 'ocean_edd_display_navigation', true ) ) :
+			?>
 			<div class="edd_download_navigation">
 				<?php
-				// Term
+				// Term.
 				$term_tax = get_theme_mod( 'ocean_edd_next_prev_taxonomy', 'download_tag' );
 				$term_tax = $term_tax ? $term_tax : 'download_tag';
 
-				// Args
+				// Args.
 				$args = array(
-					'prev_text'             => '<span class="title"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>'. esc_html__( 'Previous', 'oceanwp' ) .'</span><span class="post-title">%title</span>',
-				    'next_text'             => '<span class="title"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>'. esc_html__( 'Next', 'oceanwp' ) .'</span><span class="post-title">%title</span>',
-				    'in_same_term'          => true,
-				    'taxonomy'              => $term_tax,
-				    'screen_reader_text'    => esc_html__( 'Continue Reading', 'oceanwp' ),
+					'prev_text'          => '<span class="title"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>' . esc_html__( 'Previous', 'oceanwp' ) . '</span><span class="post-title">%title</span>',
+					'next_text'          => '<span class="title"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>' . esc_html__( 'Next', 'oceanwp' ) . '</span><span class="post-title">%title</span>',
+					'in_same_term'       => true,
+					'taxonomy'           => $term_tax,
+					'screen_reader_text' => esc_html__( 'Continue Reading', 'oceanwp' ),
 				);
 
-				// Args
-				$args = apply_filters( 'ocean_single_post_next_prev_args', $args ); ?>
+				// Args.
+				$args = apply_filters( 'ocean_single_post_next_prev_args', $args );
+
+				?>
 
 				<?php do_action( 'ocean_before_single_post_next_prev' ); ?>
 
@@ -66,5 +71,5 @@ do_action( 'ocean_before_single_download_item' ); ?>
 		<?php endif; ?>
 	</div>
 </div>
-<?php 
+<?php
 do_action( 'ocean_after_single_download_item' ); ?>

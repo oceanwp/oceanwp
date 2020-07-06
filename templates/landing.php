@@ -3,7 +3,9 @@
  * Template Name: Landing Page
  *
  * @package OceanWP WordPress theme
- */ ?>
+ */
+
+?>
 
 <!DOCTYPE html>
 <html class="<?php echo esc_attr( oceanwp_html_classes() ); ?>" <?php language_attributes(); ?>>
@@ -47,7 +49,10 @@
 
 								<?php do_action( 'ocean_before_content_inner' ); ?>
 
-								<?php while ( have_posts() ) : the_post(); ?>
+								<?php
+								while ( have_posts() ) :
+									the_post();
+									?>
 
 									<div class="entry-content entry clr">
 										<?php the_content(); ?>
@@ -69,13 +74,13 @@
 
 					<?php do_action( 'ocean_after_content_wrap' ); ?>
 
-		        </main><!-- #main-content -->
+				</main><!-- #main-content -->
 
-		        <?php do_action( 'ocean_after_main' ); ?>
+				<?php do_action( 'ocean_after_main' ); ?>
 
-		    </div><!-- #wrap -->
+			</div><!-- #wrap -->
 
-		    <?php do_action( 'ocean_after_wrap' ); ?>
+			<?php do_action( 'ocean_after_wrap' ); ?>
 
 		</div><!-- .outer-wrap -->
 

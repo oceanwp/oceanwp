@@ -15,7 +15,7 @@
 		    border: 1px solid $color-10;
 		    padding: 10px 16px;
 		    @include border-radius( 2px );
-		    text-transform: uppercase;
+		    text-transform: capitalize;
 		    letter-spacing: 1px;
 
 		    &:hover {

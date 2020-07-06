@@ -5,40 +5,42 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Return if page header is disabled
+// Return if page header is disabled.
 if ( ! oceanwp_has_page_header() ) {
 	return;
 }
 
-// Classes
+// Classes.
 $classes = array( 'page-header' );
 
-// Get header style
+// Get header style.
 $style = oceanwp_page_header_style();
 
-// Add classes for title style
+// Add classes for title style.
 if ( $style ) {
-	$classes[$style .'-page-header'] = $style .'-page-header';
+	$classes[ $style . '-page-header' ] = $style . '-page-header';
 }
 
-// Visibility
+// Visibility.
 $visibility = get_theme_mod( 'ocean_page_header_visibility', 'all-devices' );
-if ( 'all-devices' != $visibility ) {
+if ( 'all-devices' !== $visibility ) {
 	$classes[] = $visibility;
 }
 
-// Turn into space seperated list
+// Turn into space seperated list.
 $classes = implode( ' ', $classes );
 
-// Heading tag
+// Heading tag.
 $heading = get_theme_mod( 'ocean_page_header_heading_tag', 'h1' );
 $heading = $heading ? $heading : 'h1';
-$heading = apply_filters( 'ocean_page_header_heading', $heading ); ?>
+$heading = apply_filters( 'ocean_page_header_heading', $heading );
+
+?>
 
 <?php do_action( 'ocean_before_page_header' ); ?>
 
@@ -49,8 +51,9 @@ $heading = apply_filters( 'ocean_page_header_heading', $heading ); ?>
 	<div class="container clr page-header-inner">
 
 		<?php
-		// Return if page header is disabled
-		if ( oceanwp_has_page_header_heading() ) { ?>
+		// Return if page header is disabled.
+		if ( oceanwp_has_page_header_heading() ) {
+			?>
 
 			<<?php echo esc_attr( $heading ); ?> class="page-header-title clr"<?php oceanwp_schema_markup( 'headline' ); ?>><?php echo wp_kses_post( oceanwp_title() ); ?></<?php echo esc_attr( $heading ); ?>>
 
@@ -58,9 +61,11 @@ $heading = apply_filters( 'ocean_page_header_heading', $heading ); ?>
 
 		<?php } ?>
 
-		<?php if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) {
+		<?php
+		if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) {
 			oceanwp_breadcrumb_trail();
-		} ?>
+		}
+		?>
 
 	</div><!-- .page-header-inner -->
 

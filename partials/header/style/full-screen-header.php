@@ -5,20 +5,20 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
-// Get classes
+// Get classes.
 $classes = array( 'clr' );
 
-// Add container class
-if ( true != get_theme_mod( 'ocean_header_full_width', false ) ) {
-    $classes[] = 'container';
+// Add container class.
+if ( true !== get_theme_mod( 'ocean_header_full_width', false ) ) {
+	$classes[] = 'container';
 }
 
-// Turn classes into space seperated string
+// Turn classes into space seperated string.
 $classes = implode( ' ', $classes ); ?>
 
 <?php do_action( 'ocean_before_header_inner' ); ?>

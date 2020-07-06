@@ -23,17 +23,21 @@ get_header(); ?>
 
 				<?php do_action( 'ocean_before_content_inner' ); ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					?>
 
 					<article <?php post_class( 'image-attachment' ); ?>>
 						<p><?php echo wp_get_attachment_image( get_the_ID(), 'full' ); ?></p>
 						<div class="entry clr">
 							<?php the_content(); ?>
 							<?php
-							// If comments are open or we have at least one comment, load up the comment template
-							if ( comments_open() || '0' != get_comments_number() ) :
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || '0' !== get_comments_number() ) :
 								comments_template();
-							endif; ?>
+							endif;
+							?>
 						</div><!-- .entry -->
 					</article><!-- #post -->
 

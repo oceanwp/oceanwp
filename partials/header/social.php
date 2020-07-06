@@ -133,9 +133,9 @@ if ( $link_target == 'blank' ) {
 							if ( in_array( $key, array( 'skype' ) ) ) {
 								echo '<a href="skype:'. esc_attr( $url ) .'?call" aria-label="'. esc_attr__( 'Skype (opens in your application)', 'oceanwp' ) .'" target="_self">';
 							} else if ( in_array( $key, array( 'email' ) ) ) {
-								echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" aria-label="'. esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) .'" target="_self">';
+								echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" aria-label="'. esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) .'" target="_self">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							} else {
-								echo '<a href="'. $esc_url .'" '. $aria_label .' target="_'. esc_attr( $link_target ) .'" '. $link_rel .'>';
+								echo '<a href="'. $esc_url .'" '. $aria_label .' target="_'. esc_attr( $link_target ) .'" '. $link_rel .'>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							}
 
 							echo '<span class="'. esc_attr( $val['icon_class'] ) .'" aria-hidden="true"></span>';

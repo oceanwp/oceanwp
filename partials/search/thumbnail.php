@@ -5,19 +5,19 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Return if there isn't a thumbnail defined
+// Return if there isn't a thumbnail defined.
 if ( ! has_post_thumbnail() ) {
 	return;
 }
 
-// Image args
+// Image args.
 $img_args = array(
-    'alt' => get_the_title(),
+	'alt' => get_the_title(),
 );
 if ( oceanwp_get_schema_markup( 'image' ) ) {
 	$img_args['itemprop'] = 'image';
@@ -28,9 +28,10 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 	<a href="<?php the_permalink(); ?>" class="thumbnail-link">
 
 		<?php
-		// Display post thumbnail
-		the_post_thumbnail( 'thumbnail', $img_args ); ?>
-		
+		// Display post thumbnail.
+		the_post_thumbnail( 'thumbnail', $img_args );
+		?>
+
 	</a>
 
 </div><!-- .thumbnail -->
