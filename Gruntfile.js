@@ -316,7 +316,8 @@ module.exports = function ( grunt ) {
 		'newer:uglify:prod',
 		'cssmin:prod',
 		'sass:dev',
-		'sass:prod'
+		'sass:prod',
+		'makepot'
 	] );
 
 	// Production task
@@ -325,6 +326,7 @@ module.exports = function ( grunt ) {
 		'sass:dev',
 		'sass:prod',
 		'autoprefixer:main',
+		'makepot',
 		'copy'
 	] );
 
