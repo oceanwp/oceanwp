@@ -20,25 +20,25 @@ $term_tax = get_theme_mod( 'ocean_single_post_next_prev_taxonomy', 'post_tag' );
 $term_tax = $term_tax ? $term_tax : 'post_tag';
 
 // Vars.
-$prev_text = '<span class="title"><i class="fas fa-long-arrow-alt-left" aria-hidden="true"></i>'. esc_html__( 'Previous Post', 'oceanwp' ) .'</span><span class="post-title">%title</span>';
-$next_text = '<span class="title"><i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>'. esc_html__( 'Next Post', 'oceanwp' ) .'</span><span class="post-title">%title</span>';
-$screen_rt = esc_html__( 'Read more articles', 'oceanwp' );
+$prev_text = '<span class="title"><i class="fas fa-long-arrow-alt-left" aria-hidden="true"></i>' . oceanwp_theme_strings( 'owp-string-single-prev-post', 'oceanwp' ) . '</span><span class="post-title">%title</span>';
+$next_text = '<span class="title"><i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>' . oceanwp_theme_strings( 'owp-string-single-next-post', 'oceanwp' ) . '</span><span class="post-title">%title</span>';
+$screen_rt = oceanwp_theme_strings( 'owp-string-single-screen-reader-rm', 'oceanwp' );
 
 // Args.
-if ( $term_tax === 'pub-date' ) {
+if ( 'pub-date' === $term_tax ) {
 	$args = array(
-		'prev_text'           => $prev_text,
-		'next_text'           => $next_text,
-		'in_same_term'        => false,
-		'screen_reader_text'  => $screen_rt,
+		'prev_text'          => $prev_text,
+		'next_text'          => $next_text,
+		'in_same_term'       => false,
+		'screen_reader_text' => $screen_rt,
 	);
 } else {
 	$args = array(
-		'prev_text'           => $prev_text,
-		'next_text'           => $next_text,
-		'in_same_term'        => true,
-		'taxonomy'            => $term_tax,
-		'screen_reader_text'  => $screen_rt,
+		'prev_text'          => $prev_text,
+		'next_text'          => $next_text,
+		'in_same_term'       => true,
+		'taxonomy'           => $term_tax,
+		'screen_reader_text' => $screen_rt,
 	);
 }
 

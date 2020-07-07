@@ -26,7 +26,7 @@ $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
 			&& class_exists( 'Ocean_Extra_Scripts_Panel' )
 			&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
 			?>
-			<label><?php esc_html_e( 'Type your search', 'oceanwp' ); ?><span><i></i><i></i><i></i></span></label>
+			<label><?php oceanwp_theme_strings( 'owp-string-mobile-fs-search-text', 'oceanwp' ); ?><span><i></i><i></i><i></i></span></label>
 			<?php
 		}
 		?>

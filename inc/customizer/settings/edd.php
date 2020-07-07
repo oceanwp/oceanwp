@@ -3201,39 +3201,39 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			}
 
 			// Cart dropdown width.
-			if ( ! empty( $cart_dropdown_width ) && '350' !== $cart_dropdown_width ) {
+			if ( ! empty( $cart_dropdown_width ) && '350' != $cart_dropdown_width ) {
 				$css .= '.current-shop-items-dropdown{width:' . $cart_dropdown_width . 'px;}';
 			}
 
 			// Bag icon style color.
-			if ( ! empty( $edd_menu_bag_icon_color ) && '#333333' !== $edd_menu_bag_icon_color ) {
+			if ( ! empty( $edd_menu_bag_icon_color ) && '#333333' != $edd_menu_bag_icon_color ) {
 				$css .= '.eddmenucart-cart-icon .eddmenucart-count{border-color:' . $edd_menu_bag_icon_color . ';}';
 				$css .= '.eddmenucart-cart-icon .eddmenucart-count:after{border-color:' . $edd_menu_bag_icon_color . ';}';
 			}
 
 			// Bag icon style hover color.
-			if ( ! empty( $edd_menu_bag_icon_hover_color ) && '#13aff0' !== $edd_menu_bag_icon_hover_color ) {
+			if ( ! empty( $edd_menu_bag_icon_hover_color ) && '#13aff0' != $edd_menu_bag_icon_hover_color ) {
 				$css .= '.bag-style:hover .eddmenucart-cart-icon .eddmenucart-count, .show-cart .eddmenucart-cart-icon .eddmenucart-count{background-color:' . $edd_menu_bag_icon_hover_color . '; border-color:' . $edd_menu_bag_icon_hover_color . ';}';
 				$css .= '.bag-style:hover .eddmenucart-cart-icon .eddmenucart-count:after, .show-cart .eddmenucart-cart-icon .eddmenucart-count:after{border-color:' . $edd_menu_bag_icon_hover_color . ';}';
 			}
 
 			// Bag icon style count color.
-			if ( ! empty( $edd_menu_bag_icon_count_color ) && '#333333' !== $edd_menu_bag_icon_count_color ) {
+			if ( ! empty( $edd_menu_bag_icon_count_color ) && '#333333' != $edd_menu_bag_icon_count_color ) {
 				$css .= '.eddmenucart-cart-icon .eddmenucart-count, .edd-menu-icon .eddmenucart-total span{color:' . $edd_menu_bag_icon_count_color . ';}';
 			}
 
 			// Bag icon style hover count color.
-			if ( ! empty( $edd_menu_bag_icon_hover_count_color ) && '#ffffff' !== $edd_menu_bag_icon_hover_count_color ) {
+			if ( ! empty( $edd_menu_bag_icon_hover_count_color ) && '#ffffff' != $edd_menu_bag_icon_hover_count_color ) {
 				$css .= '.bag-style:hover .eddmenucart-cart-icon .eddmenucart-count, .show-cart .eddmenucart-cart-icon .eddmenucart-count{color:' . $edd_menu_bag_icon_hover_count_color . ';}';
 			}
 
 			// Cart dropdown background.
-			if ( ! empty( $cart_dropdown_bg ) && '#ffffff' !== $cart_dropdown_bg ) {
+			if ( ! empty( $cart_dropdown_bg ) && '#ffffff' != $cart_dropdown_bg ) {
 				$css .= '.current-shop-items-dropdown{background-color:' . $cart_dropdown_bg . ';}';
 			}
 
 			// Cart dropdown borders.
-			if ( ! empty( $cart_dropdown_borders ) && '#e6e6e6' !== $cart_dropdown_borders ) {
+			if ( ! empty( $cart_dropdown_borders ) && '#e6e6e6' != $cart_dropdown_borders ) {
 				$css .= '.current-shop-items-dropdown .widget_edd_cart_widget li{border-color:' . $cart_dropdown_borders . ';}';
 			}
 
@@ -3243,37 +3243,37 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			}
 
 			// Cart dropdown price color.
-			if ( ! empty( $cart_dropdown_price_color ) && '#57bf6d' !== $cart_dropdown_price_color ) {
+			if ( ! empty( $cart_dropdown_price_color ) && '#57bf6d' != $cart_dropdown_price_color ) {
 				$css .= '.current-shop-items-dropdown .widget_edd_cart_widget li .edd-cart-item-price{color:' . $cart_dropdown_price_color . ';}';
 			}
 
 			// Cart dropdown remove link color.
-			if ( ! empty( $cart_dropdown_remove_link_color ) && '#b3b3b3' !== $cart_dropdown_remove_link_color ) {
+			if ( ! empty( $cart_dropdown_remove_link_color ) && '#b3b3b3' != $cart_dropdown_remove_link_color ) {
 				$css .= '.current-shop-items-dropdown .widget_edd_cart_widget ul.edd-cart li a.edd-remove-from-cart{color:' . $cart_dropdown_remove_link_color . ';}';
 			}
 
 			// Cart dropdown remove link hover color.
-			if ( ! empty( $cart_dropdown_remove_link_color_hover ) && '#13aff0' !== $cart_dropdown_remove_link_color_hover ) {
+			if ( ! empty( $cart_dropdown_remove_link_color_hover ) && '#13aff0' != $cart_dropdown_remove_link_color_hover ) {
 				$css .= '.current-shop-items-dropdown .widget_edd_cart_widget ul.edd-cart li a.edd-remove-from-cart:hover{color:' . $cart_dropdown_remove_link_color_hover . ';}';
 			}
 
 			// Cart dropdown subtotal background color.
-			if ( ! empty( $cart_dropdown_subtotal_bg ) && '#fafafa' !== $cart_dropdown_subtotal_bg ) {
+			if ( ! empty( $cart_dropdown_subtotal_bg ) && '#fafafa' != $cart_dropdown_subtotal_bg ) {
 				$css .= '.current-shop-items-dropdown .widget_edd_cart_widget li.edd_total{background-color:' . $cart_dropdown_subtotal_bg . ';}';
 			}
 
 			// Cart dropdown subtotal borde color.
-			if ( ! empty( $cart_dropdown_subtotal_border_color ) && '#e6e6e6' !== $cart_dropdown_subtotal_border_color ) {
+			if ( ! empty( $cart_dropdown_subtotal_border_color ) && '#e6e6e6' != $cart_dropdown_subtotal_border_color ) {
 				$css .= '.current-shop-items-dropdown .widget_edd_cart_widget li.edd_total{border-color:' . $cart_dropdown_subtotal_border_color . ';}';
 			}
 
 			// Cart dropdown subtotal color.
-			if ( ! empty( $cart_dropdown_subtotal_color ) && '#797979' !== $cart_dropdown_subtotal_color ) {
+			if ( ! empty( $cart_dropdown_subtotal_color ) && '#797979' != $cart_dropdown_subtotal_color ) {
 				$css .= '.current-shop-items-dropdown .widget_edd_cart_widget li.edd_total{color:' . $cart_dropdown_subtotal_color . ';}';
 			}
 
 			// Cart dropdown total price color.
-			if ( ! empty( $cart_dropdown_total_price_color ) && '#57bf6d' !== $cart_dropdown_total_price_color ) {
+			if ( ! empty( $cart_dropdown_total_price_color ) && '#57bf6d' != $cart_dropdown_total_price_color ) {
 				$css .= '.current-shop-items-dropdown .widget_edd_cart_widget li.edd_total .cart-total{color:' . $cart_dropdown_total_price_color . ';}';
 			}
 
@@ -3298,114 +3298,114 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			}
 
 			// Product padding.
-			if ( isset( $edd_top_padding ) && '' !== $edd_top_padding
-				|| isset( $edd_right_padding ) && '' !== $edd_right_padding
-				|| isset( $edd_bottom_padding ) && '' !== $edd_bottom_padding
-				|| isset( $edd_left_padding ) && '' !== $edd_left_padding ) {
+			if ( isset( $edd_top_padding ) && '' != $edd_top_padding
+				|| isset( $edd_right_padding ) && '' != $edd_right_padding
+				|| isset( $edd_bottom_padding ) && '' != $edd_bottom_padding
+				|| isset( $edd_left_padding ) && '' != $edd_left_padding ) {
 				$css .= '.edd_downloads_list .edd_download_inner{padding:' . oceanwp_spacing_css( $edd_top_padding, $edd_right_padding, $edd_bottom_padding, $edd_left_padding ) . '}';
 			}
 
 			// Tablet edd padding.
-			if ( isset( $tablet_edd_top_padding ) && '' !== $tablet_edd_top_padding
-				|| isset( $tablet_edd_right_padding ) && '' !== $tablet_edd_right_padding
-				|| isset( $tablet_edd_bottom_padding ) && '' !== $tablet_edd_bottom_padding
-				|| isset( $tablet_edd_left_padding ) && '' !== $tablet_edd_left_padding ) {
+			if ( isset( $tablet_edd_top_padding ) && '' != $tablet_edd_top_padding
+				|| isset( $tablet_edd_right_padding ) && '' != $tablet_edd_right_padding
+				|| isset( $tablet_edd_bottom_padding ) && '' != $tablet_edd_bottom_padding
+				|| isset( $tablet_edd_left_padding ) && '' != $tablet_edd_left_padding ) {
 				$css .= '@media (max-width: 768px){.edd_downloads_list .edd_download_inner{padding:' . oceanwp_spacing_css( $tablet_edd_top_padding, $tablet_edd_right_padding, $tablet_edd_bottom_padding, $tablet_edd_left_padding ) . '}}';
 			}
 
 			// Mobile edd padding.
-			if ( isset( $mobile_edd_top_padding ) && '' !== $mobile_edd_top_padding
-				|| isset( $mobile_edd_right_padding ) && '' !== $mobile_edd_right_padding
-				|| isset( $mobile_edd_bottom_padding ) && '' !== $mobile_edd_bottom_padding
-				|| isset( $mobile_edd_left_padding ) && '' !== $mobile_edd_left_padding ) {
+			if ( isset( $mobile_edd_top_padding ) && '' != $mobile_edd_top_padding
+				|| isset( $mobile_edd_right_padding ) && '' != $mobile_edd_right_padding
+				|| isset( $mobile_edd_bottom_padding ) && '' != $mobile_edd_bottom_padding
+				|| isset( $mobile_edd_left_padding ) && '' != $mobile_edd_left_padding ) {
 				$css .= '@media (max-width: 480px){.edd_downloads_list .edd_download_inner{padding:' . oceanwp_spacing_css( $mobile_edd_top_padding, $mobile_edd_right_padding, $mobile_edd_bottom_padding, $mobile_edd_left_padding ) . '}}';
 			}
 
 			// Product image margin.
-			if ( isset( $edd_image_top_margin ) && '' !== $edd_image_top_margin
-				|| isset( $edd_image_right_margin ) && '' !== $edd_image_right_margin
-				|| isset( $edd_image_bottom_margin ) && '' !== $edd_image_bottom_margin
-				|| isset( $edd_image_left_margin ) && '' !== $edd_image_left_margin ) {
+			if ( isset( $edd_image_top_margin ) && '' != $edd_image_top_margin
+				|| isset( $edd_image_right_margin ) && '' != $edd_image_right_margin
+				|| isset( $edd_image_bottom_margin ) && '' != $edd_image_bottom_margin
+				|| isset( $edd_image_left_margin ) && '' != $edd_image_left_margin ) {
 				$css .= '.edd_downloads_list .edd_download_inner .edd_download_image{margin:' . oceanwp_spacing_css( $edd_image_top_margin, $edd_image_right_margin, $edd_image_bottom_margin, $edd_image_left_margin ) . '}';
 			}
 
 			// Tablet edd image margin.
-			if ( isset( $tablet_edd_image_top_margin ) && '' !== $tablet_edd_image_top_margin
-				|| isset( $tablet_edd_image_right_margin ) && '' !== $tablet_edd_image_right_margin
-				|| isset( $tablet_edd_image_bottom_margin ) && '' !== $tablet_edd_image_bottom_margin
-				|| isset( $tablet_edd_image_left_margin ) && '' !== $tablet_edd_image_left_margin ) {
+			if ( isset( $tablet_edd_image_top_margin ) && '' != $tablet_edd_image_top_margin
+				|| isset( $tablet_edd_image_right_margin ) && '' != $tablet_edd_image_right_margin
+				|| isset( $tablet_edd_image_bottom_margin ) && '' != $tablet_edd_image_bottom_margin
+				|| isset( $tablet_edd_image_left_margin ) && '' != $tablet_edd_image_left_margin ) {
 				$css .= '@media (max-width: 768px){.edd_downloads_list .edd_download_inner .edd_download_image{margin:' . oceanwp_spacing_css( $tablet_edd_image_top_margin, $tablet_edd_image_right_margin, $tablet_edd_image_bottom_margin, $tablet_edd_image_left_margin ) . '}}';
 			}
 
 			// Mobile edd image margin.
-			if ( isset( $mobile_edd_image_top_margin ) && '' !== $mobile_edd_image_top_margin
-				|| isset( $mobile_edd_image_right_margin ) && '' !== $mobile_edd_image_right_margin
-				|| isset( $mobile_edd_image_bottom_margin ) && '' !== $mobile_edd_image_bottom_margin
-				|| isset( $mobile_edd_image_left_margin ) && '' !== $mobile_edd_image_left_margin ) {
+			if ( isset( $mobile_edd_image_top_margin ) && '' != $mobile_edd_image_top_margin
+				|| isset( $mobile_edd_image_right_margin ) && '' != $mobile_edd_image_right_margin
+				|| isset( $mobile_edd_image_bottom_margin ) && '' != $mobile_edd_image_bottom_margin
+				|| isset( $mobile_edd_image_left_margin ) && '' != $mobile_edd_image_left_margin ) {
 				$css .= '@media (max-width: 480px){.edd_downloads_list .edd_download_inner .edd_download_image{margin:' . oceanwp_spacing_css( $mobile_edd_image_top_margin, $mobile_edd_image_right_margin, $mobile_edd_image_bottom_margin, $mobile_edd_image_left_margin ) . '}}';
 			}
 
 			// Product border style if border width.
-			if ( isset( $edd_top_border_width ) && '' !== $edd_top_border_width
-				|| isset( $edd_right_border_width ) && '' !== $edd_right_border_width
-				|| isset( $edd_bottom_border_width ) && '' !== $edd_bottom_border_width
-				|| isset( $edd_left_border_width ) && '' !== $edd_left_border_width
-				|| isset( $tablet_edd_top_border_width ) && '' !== $tablet_edd_top_border_width
-				|| isset( $tablet_edd_right_border_width ) && '' !== $tablet_edd_right_border_width
-				|| isset( $tablet_edd_bottom_border_width ) && '' !== $tablet_edd_bottom_border_width
-				|| isset( $tablet_edd_left_border_width ) && '' !== $tablet_edd_left_border_width
-				|| isset( $mobile_edd_top_border_width ) && '' !== $mobile_edd_top_border_width
-				|| isset( $mobile_edd_right_border_width ) && '' !== $mobile_edd_right_border_width
-				|| isset( $mobile_edd_bottom_border_width ) && '' !== $mobile_edd_bottom_border_width
-				|| isset( $mobile_edd_left_border_width ) && '' !== $mobile_edd_left_border_width ) {
+			if ( isset( $edd_top_border_width ) && '' != $edd_top_border_width
+				|| isset( $edd_right_border_width ) && '' != $edd_right_border_width
+				|| isset( $edd_bottom_border_width ) && '' != $edd_bottom_border_width
+				|| isset( $edd_left_border_width ) && '' != $edd_left_border_width
+				|| isset( $tablet_edd_top_border_width ) && '' != $tablet_edd_top_border_width
+				|| isset( $tablet_edd_right_border_width ) && '' != $tablet_edd_right_border_width
+				|| isset( $tablet_edd_bottom_border_width ) && '' != $tablet_edd_bottom_border_width
+				|| isset( $tablet_edd_left_border_width ) && '' != $tablet_edd_left_border_width
+				|| isset( $mobile_edd_top_border_width ) && '' != $mobile_edd_top_border_width
+				|| isset( $mobile_edd_right_border_width ) && '' != $mobile_edd_right_border_width
+				|| isset( $mobile_edd_bottom_border_width ) && '' != $mobile_edd_bottom_border_width
+				|| isset( $mobile_edd_left_border_width ) && '' != $mobile_edd_left_border_width ) {
 				$css .= '.edd_downloads_list .edd_download_inner{border-style: solid}';
 			}
 
 			// Product border width.
-			if ( isset( $edd_top_border_width ) && '' !== $edd_top_border_width
-				|| isset( $edd_right_border_width ) && '' !== $edd_right_border_width
-				|| isset( $edd_bottom_border_width ) && '' !== $edd_bottom_border_width
-				|| isset( $edd_left_border_width ) && '' !== $edd_left_border_width ) {
+			if ( isset( $edd_top_border_width ) && '' != $edd_top_border_width
+				|| isset( $edd_right_border_width ) && '' != $edd_right_border_width
+				|| isset( $edd_bottom_border_width ) && '' != $edd_bottom_border_width
+				|| isset( $edd_left_border_width ) && '' != $edd_left_border_width ) {
 				$css .= '.edd_downloads_list .edd_download_inner{border-width:' . oceanwp_spacing_css( $edd_top_border_width, $edd_right_border_width, $edd_bottom_border_width, $edd_left_border_width ) . '}';
 			}
 
 			// Tablet edd border width.
-			if ( isset( $tablet_edd_top_border_width ) && '' !== $tablet_edd_top_border_width
-				|| isset( $tablet_edd_right_border_width ) && '' !== $tablet_edd_right_border_width
-				|| isset( $tablet_edd_bottom_border_width ) && '' !== $tablet_edd_bottom_border_width
-				|| isset( $tablet_edd_left_border_width ) && '' !== $tablet_edd_left_border_width ) {
+			if ( isset( $tablet_edd_top_border_width ) && '' != $tablet_edd_top_border_width
+				|| isset( $tablet_edd_right_border_width ) && '' != $tablet_edd_right_border_width
+				|| isset( $tablet_edd_bottom_border_width ) && '' != $tablet_edd_bottom_border_width
+				|| isset( $tablet_edd_left_border_width ) && '' != $tablet_edd_left_border_width ) {
 				$css .= '@media (max-width: 768px){.edd_downloads_list .edd_download_inner{border-width:' . oceanwp_spacing_css( $tablet_edd_top_border_width, $tablet_edd_right_border_width, $tablet_edd_bottom_border_width, $tablet_edd_left_border_width ) . '}}';
 			}
 
 			// Mobile edd border width.
-			if ( isset( $mobile_edd_top_border_width ) && '' !== $mobile_edd_top_border_width
-				|| isset( $mobile_edd_right_border_width ) && '' !== $mobile_edd_right_border_width
-				|| isset( $mobile_edd_bottom_border_width ) && '' !== $mobile_edd_bottom_border_width
-				|| isset( $mobile_edd_left_border_width ) && '' !== $mobile_edd_left_border_width ) {
+			if ( isset( $mobile_edd_top_border_width ) && '' != $mobile_edd_top_border_width
+				|| isset( $mobile_edd_right_border_width ) && '' != $mobile_edd_right_border_width
+				|| isset( $mobile_edd_bottom_border_width ) && '' != $mobile_edd_bottom_border_width
+				|| isset( $mobile_edd_left_border_width ) && '' != $mobile_edd_left_border_width ) {
 				$css .= '@media (max-width: 480px){.edd_downloads_list .edd_download_inner{border-width:' . oceanwp_spacing_css( $mobile_edd_top_border_width, $mobile_edd_right_border_width, $mobile_edd_bottom_border_width, $mobile_edd_left_border_width ) . '}}';
 			}
 
 			// Product border radius.
-			if ( isset( $edd_top_border_radius ) && '' !== $edd_top_border_radius
-				|| isset( $edd_right_border_radius ) && '' !== $edd_right_border_radius
-				|| isset( $edd_bottom_border_radius ) && '' !== $edd_bottom_border_radius
-				|| isset( $edd_left_border_radius ) && '' !== $edd_left_border_radius ) {
+			if ( isset( $edd_top_border_radius ) && '' != $edd_top_border_radius
+				|| isset( $edd_right_border_radius ) && '' != $edd_right_border_radius
+				|| isset( $edd_bottom_border_radius ) && '' != $edd_bottom_border_radius
+				|| isset( $edd_left_border_radius ) && '' != $edd_left_border_radius ) {
 				$css .= '.edd_downloads_list .edd_download_inner{border-radius:' . oceanwp_spacing_css( $edd_top_border_radius, $edd_right_border_radius, $edd_bottom_border_radius, $edd_left_border_radius ) . '}';
 			}
 
 			// Tablet edd border radius.
-			if ( isset( $tablet_edd_top_border_radius ) && '' !== $tablet_edd_top_border_radius
-				|| isset( $tablet_edd_right_border_radius ) && '' !== $tablet_edd_right_border_radius
-				|| isset( $tablet_edd_bottom_border_radius ) && '' !== $tablet_edd_bottom_border_radius
-				|| isset( $tablet_edd_left_border_radius ) && '' !== $tablet_edd_left_border_radius ) {
+			if ( isset( $tablet_edd_top_border_radius ) && '' != $tablet_edd_top_border_radius
+				|| isset( $tablet_edd_right_border_radius ) && '' != $tablet_edd_right_border_radius
+				|| isset( $tablet_edd_bottom_border_radius ) && '' != $tablet_edd_bottom_border_radius
+				|| isset( $tablet_edd_left_border_radius ) && '' != $tablet_edd_left_border_radius ) {
 				$css .= '@media (max-width: 768px){.edd_downloads_list .edd_download_inner{border-radius:' . oceanwp_spacing_css( $tablet_edd_top_border_radius, $tablet_edd_right_border_radius, $tablet_edd_bottom_border_radius, $tablet_edd_left_border_radius ) . '}}';
 			}
 
 			// Mobile edd border radius.
-			if ( isset( $mobile_edd_top_border_radius ) && '' !== $mobile_edd_top_border_radius
-				|| isset( $mobile_edd_right_border_radius ) && '' !== $mobile_edd_right_border_radius
-				|| isset( $mobile_edd_bottom_border_radius ) && '' !== $mobile_edd_bottom_border_radius
-				|| isset( $mobile_edd_left_border_radius ) && '' !== $mobile_edd_left_border_radius ) {
+			if ( isset( $mobile_edd_top_border_radius ) && '' != $mobile_edd_top_border_radius
+				|| isset( $mobile_edd_right_border_radius ) && '' != $mobile_edd_right_border_radius
+				|| isset( $mobile_edd_bottom_border_radius ) && '' != $mobile_edd_bottom_border_radius
+				|| isset( $mobile_edd_left_border_radius ) && '' != $mobile_edd_left_border_radius ) {
 				$css .= '@media (max-width: 480px){.edd_downloads_list .edd_download_inner{border-radius:' . oceanwp_spacing_css( $mobile_edd_top_border_radius, $mobile_edd_right_border_radius, $mobile_edd_bottom_border_radius, $mobile_edd_left_border_radius ) . '}}';
 			}
 
@@ -3420,27 +3420,27 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			}
 
 			// Add category color.
-			if ( ! empty( $category_color ) && '#999999' !== $category_color ) {
+			if ( ! empty( $category_color ) && '#999999' != $category_color ) {
 				$css .= '.edd_downloads_list .edd_download_inner .edd_download_categories a{color:' . $category_color . ';}';
 			}
 
 			// Add category color hover.
-			if ( ! empty( $category_color_hover ) && '#13aff0' !== $category_color_hover ) {
+			if ( ! empty( $category_color_hover ) && '#13aff0' != $category_color_hover ) {
 				$css .= '.edd_downloads_list .edd_download_inner .edd_download_categories a:hover{color:' . $category_color_hover . ';}';
 			}
 
 			// Add edd entry title color.
-			if ( ! empty( $edd_title_color ) && '#333333' !== $edd_title_color ) {
+			if ( ! empty( $edd_title_color ) && '#333333' != $edd_title_color ) {
 				$css .= '.edd_downloads_list .edd_download_inner .edd_download_title a{color:' . $edd_title_color . ';}';
 			}
 
 			// Add edd entry title color hover.
-			if ( ! empty( $edd_title_color_hover ) && '#13aff0' !== $edd_title_color_hover ) {
+			if ( ! empty( $edd_title_color_hover ) && '#13aff0' != $edd_title_color_hover ) {
 				$css .= '.edd_downloads_list .edd_download_inner .edd_download_title a:hover{color:' . $edd_title_color_hover . ';}';
 			}
 
 			// Add edd entry price color.
-			if ( ! empty( $edd_entry_price_color ) && '#57bf6d' !== $edd_entry_price_color ) {
+			if ( ! empty( $edd_entry_price_color ) && '#57bf6d' != $edd_entry_price_color ) {
 				$css .= '.edd_downloads_list .edd_download_inner span.edd_price, .edd_price_range_sep{color:' . $edd_entry_price_color . ';}';
 			}
 
@@ -3455,32 +3455,32 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			}
 
 			// Add edd entry add to cart color.
-			if ( ! empty( $edd_entry_addtocart_color ) && '#848494' !== $edd_entry_addtocart_color ) {
+			if ( ! empty( $edd_entry_addtocart_color ) && '#848494' != $edd_entry_addtocart_color ) {
 				$css .= '.edd_downloads_list .edd_download_inner .button{color:' . $edd_entry_addtocart_color . ';}';
 			}
 
 			// Add edd entry add to cart color hover.
-			if ( ! empty( $edd_entry_addtocart_color_hover ) && '#13aff0' !== $edd_entry_addtocart_color_hover ) {
+			if ( ! empty( $edd_entry_addtocart_color_hover ) && '#13aff0' != $edd_entry_addtocart_color_hover ) {
 				$css .= '.edd_downloads_list .edd_download_inner .button:hover{color:' . $edd_entry_addtocart_color_hover . ';}';
 			}
 
 			// Add edd entry add to cart border color.
-			if ( ! empty( $edd_entry_addtocart_border_color ) && '#e4e4e4' !== $edd_entry_addtocart_border_color ) {
+			if ( ! empty( $edd_entry_addtocart_border_color ) && '#e4e4e4' != $edd_entry_addtocart_border_color ) {
 				$css .= '.edd_downloads_list .edd_download_inner .button{border-color:' . $edd_entry_addtocart_border_color . ';}';
 			}
 
 			// Add edd entry add to cart border color hover.
-			if ( ! empty( $edd_entry_addtocart_border_color_hover ) && '#13aff0' !== $edd_entry_addtocart_border_color_hover ) {
+			if ( ! empty( $edd_entry_addtocart_border_color_hover ) && '#13aff0' != $edd_entry_addtocart_border_color_hover ) {
 				$css .= '.edd_downloads_list .edd_download_inner .button:hover{border-color:' . $edd_entry_addtocart_border_color_hover . ';}';
 			}
 
 			// Add edd entry add to cart border style.
-			if ( ! empty( $edd_entry_addtocart_border_style ) && 'double' !== $edd_entry_addtocart_border_style ) {
+			if ( ! empty( $edd_entry_addtocart_border_style ) && 'double' != $edd_entry_addtocart_border_style ) {
 				$css .= '.edd_downloads_list .edd_download_inner .button{border-style:' . $edd_entry_addtocart_border_style . ';}';
 			}
 
 			// Add edd entry add to cart border size.
-			if ( ! empty( $edd_entry_addtocart_border_size ) && '3' !== $edd_entry_addtocart_border_size ) {
+			if ( ! empty( $edd_entry_addtocart_border_size ) && '3' != $edd_entry_addtocart_border_size ) {
 				$css .= '.edd_downloads_list .edd_download_inner .button{border-width:' . $edd_entry_addtocart_border_size . ';}';
 			}
 
@@ -3490,62 +3490,62 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			}
 
 			// Add single edd title color.
-			if ( ! empty( $single_edd_title_color ) && '#333333' !== $single_edd_title_color ) {
+			if ( ! empty( $single_edd_title_color ) && '#333333' != $single_edd_title_color ) {
 				$css .= '.single-download .edd-download .edd_download_title{color:' . $single_edd_title_color . ';}';
 			}
 
 			// Add single edd description color.
-			if ( ! empty( $single_edd_description_color ) && '#aaaaaa' !== $single_edd_description_color ) {
+			if ( ! empty( $single_edd_description_color ) && '#aaaaaa' != $single_edd_description_color ) {
 				$css .= '.single-download .edd-download .edd_download_content{color:' . $single_edd_description_color . ';}';
 			}
 
 			// Add checkout titles color.
-			if ( ! empty( $checkout_titles_color ) && '#222' !== $checkout_titles_color ) {
+			if ( ! empty( $checkout_titles_color ) && '#222' != $checkout_titles_color ) {
 				$css .= '#edd_checkout_form_wrap legend{color:' . $checkout_titles_color . ';}';
 			}
 
 			// Add checkout notices titles border bottom color.
-			if ( ! empty( $checkout_titles_border_bottom_color ) && '#e5e5e5' !== $checkout_titles_border_bottom_color ) {
+			if ( ! empty( $checkout_titles_border_bottom_color ) && '#e5e5e5' != $checkout_titles_border_bottom_color ) {
 				$css .= '#edd_checkout_form_wrap legend{border-color:' . $checkout_titles_border_bottom_color . ';}';
 			}
 
 			// Add checkout borders color.
-			if ( ! empty( $checkout_borders_color ) && '#eee' !== $checkout_borders_color ) {
+			if ( ! empty( $checkout_borders_color ) && '#eee' != $checkout_borders_color ) {
 				$css .= '#edd_checkout_cart th, #edd_checkout_cart td, #edd_checkout_form_wrap #edd-discount-code-wrap, #edd_checkout_form_wrap #edd_final_total_wrap, #edd_checkout_form_wrap #edd_show_discount, #edd_checkout_form_wrap fieldset{border-color:' . $checkout_borders_color . ';}';
 			}
 
 			// Add checkout label color.
-			if ( ! empty( $checkout_label_color ) && '#929292' !== $checkout_label_color ) {
+			if ( ! empty( $checkout_label_color ) && '#929292' != $checkout_label_color ) {
 				$css .= '#edd_checkout_form_wrap .edd-label{color:' . $checkout_label_color . ';}';
 			}
 
 			// Add checkout description color.
-			if ( ! empty( $checkout_description_color ) && '#666' !== $checkout_description_color ) {
+			if ( ! empty( $checkout_description_color ) && '#666' != $checkout_description_color ) {
 				$css .= '#edd_checkout_form_wrap .edd-description{color:' . $checkout_description_color . ';}';
 			}
 
 			// Add checkout head background.
-			if ( ! empty( $checkout_head_bg ) && '#fafafa' !== $checkout_head_bg ) {
+			if ( ! empty( $checkout_head_bg ) && '#fafafa' != $checkout_head_bg ) {
 				$css .= '#edd_checkout_cart .edd_cart_header_row th, .edd-table tr th{background-color:' . $checkout_head_bg . ';}';
 			}
 
 			// Add checkout head titles color.
-			if ( ! empty( $checkout_head_titles_color ) && '#666' !== $checkout_head_titles_color ) {
+			if ( ! empty( $checkout_head_titles_color ) && '#666' != $checkout_head_titles_color ) {
 				$css .= '#edd_checkout_cart .edd_cart_header_row th, .edd-table tr th{color:' . $checkout_head_titles_color . ';}';
 			}
 
 			// Add checkout totals table titles color.
-			if ( ! empty( $checkout_totals_table_titles_color ) && '#666' !== $checkout_totals_table_titles_color ) {
+			if ( ! empty( $checkout_totals_table_titles_color ) && '#666' != $checkout_totals_table_titles_color ) {
 				$css .= '#edd_checkout_cart th.edd_cart_total{color:' . $checkout_totals_table_titles_color . ';}';
 			}
 
 			// Add checkout remove button color.
-			if ( ! empty( $checkout_remove_button_color ) && '#333' !== $checkout_remove_button_color ) {
+			if ( ! empty( $checkout_remove_button_color ) && '#333' != $checkout_remove_button_color ) {
 				$css .= '#edd_checkout_cart a.edd_cart_remove_item_btn{color:' . $checkout_remove_button_color . ';}';
 			}
 
 			// Add checkout remove button color hover.
-			if ( ! empty( $checkout_remove_button_color_hover ) && '#13aff0' !== $checkout_remove_button_color_hover ) {
+			if ( ! empty( $checkout_remove_button_color_hover ) && '#13aff0' != $checkout_remove_button_color_hover ) {
 				$css .= '#edd_checkout_cart a.edd_cart_remove_item_btn:hover{color:' . $checkout_remove_button_color_hover . ';}';
 			}
 

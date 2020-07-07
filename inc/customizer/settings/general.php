@@ -4167,17 +4167,17 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$main_border = self::main_border_array();
 
 			// Texts.
-			if ( ! empty( $texts ) && '#13aff0' !== $primary_color ) {
+			if ( ! empty( $texts ) && '#13aff0' != $primary_color ) {
 				$css .= implode( ',', $texts ) . '{color:' . $primary_color . ';}';
 			}
 
 			// Backgrounds.
-			if ( ! empty( $backgrounds ) && '#13aff0' !== $primary_color ) {
+			if ( ! empty( $backgrounds ) && '#13aff0' != $primary_color ) {
 				$css .= implode( ',', $backgrounds ) . '{background-color:' . $primary_color . ';}';
 			}
 
 			// Borders.
-			if ( ! empty( $borders ) && '#13aff0' !== $primary_color ) {
+			if ( ! empty( $borders ) && '#13aff0' != $primary_color ) {
 				foreach ( $borders as $key => $val ) {
 					if ( is_array( $val ) ) {
 						$css .= $key . '{';
@@ -4192,17 +4192,17 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			}
 
 			// Hover primary color.
-			if ( ! empty( $hover_primary ) && '#0b7cac' !== $hover_primary_color ) {
+			if ( ! empty( $hover_primary ) && '#0b7cac' != $hover_primary_color ) {
 				$css .= implode( ',', $hover_primary ) . '{background-color:' . $hover_primary_color . ';}';
 			}
 
 			// Main border color.
-			if ( ! empty( $main_border ) && '#e9e9e9' !== $main_border_color ) {
+			if ( ! empty( $main_border ) && '#e9e9e9' != $main_border_color ) {
 				$css .= implode( ',', $main_border ) . '{border-color:' . $main_border_color . ';}';
 			}
 
 			// Get site background color.
-			if ( ! empty( $background_color ) && '#ffffff' !== $background_color ) {
+			if ( ! empty( $background_color ) && '#ffffff' != $background_color ) {
 				$css .= 'body, .has-parallax-footer:not(.separate-layout) #main{background-color:' . $background_color . ';}';
 			}
 
@@ -4212,148 +4212,148 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			}
 
 			// Get site background position.
-			if ( ! empty( $background_image_position ) && 'initial' !== $background_image_position ) {
+			if ( ! empty( $background_image_position ) && 'initial' != $background_image_position ) {
 				$css .= 'body{background-position:' . $background_image_position . ';}';
 			}
 
 			// Get site background attachment.
-			if ( ! empty( $background_image_attachment ) && 'initial' !== $background_image_attachment ) {
+			if ( ! empty( $background_image_attachment ) && 'initial' != $background_image_attachment ) {
 				$css .= 'body{background-attachment:' . $background_image_attachment . ';}';
 			}
 
 			// Get site background repeat.
-			if ( ! empty( $background_image_repeat ) && 'initial' !== $background_image_repeat ) {
+			if ( ! empty( $background_image_repeat ) && 'initial' != $background_image_repeat ) {
 				$css .= 'body{background-repeat:' . $background_image_repeat . ';}';
 			}
 
 			// Get site background size.
-			if ( ! empty( $background_image_size ) && 'initial' !== $background_image_size ) {
+			if ( ! empty( $background_image_size ) && 'initial' != $background_image_size ) {
 				$css .= 'body{background-size:' . $background_image_size . ';}';
 			}
 
 			// Links color.
-			if ( ! empty( $links_color ) && '#333333' !== $links_color ) {
+			if ( ! empty( $links_color ) && '#333333' != $links_color ) {
 				$css .= 'a{color:' . $links_color . ';}';
 			}
 
 			// Links color hover.
-			if ( ! empty( $links_color_hover ) && '#13aff0' !== $links_color_hover ) {
+			if ( ! empty( $links_color_hover ) && '#13aff0' != $links_color_hover ) {
 				$css .= 'a:hover{color:' . $links_color_hover . ';}';
 			}
 
 			// Boxed width.
-			if ( ! empty( $boxed_width ) && '1280' !== $boxed_width ) {
+			if ( ! empty( $boxed_width ) && '1280' != $boxed_width ) {
 				$css .= '.boxed-layout #wrap, .boxed-layout .parallax-footer, .boxed-layout .owp-floating-bar{width:' . $boxed_width . 'px;}';
 			}
 
 			// Boxed outside background.
-			if ( ! empty( $boxed_outside_bg ) && '#e9e9e9' !== $boxed_outside_bg ) {
+			if ( ! empty( $boxed_outside_bg ) && '#e9e9e9' != $boxed_outside_bg ) {
 				$css .= '.boxed-layout{background-color:' . $boxed_outside_bg . ';}';
 			}
 
 			// Separate outside background.
-			if ( ! empty( $separate_outside_bg ) && '#f1f1f1' !== $separate_outside_bg ) {
+			if ( ! empty( $separate_outside_bg ) && '#f1f1f1' != $separate_outside_bg ) {
 				$css .= '.separate-layout, .has-parallax-footer.separate-layout #main{background-color:' . $separate_outside_bg . ';}';
 			}
 
 			// Boxed inner background.
-			if ( ! empty( $boxed_inner_bg ) && '#ffffff' !== $boxed_inner_bg ) {
+			if ( ! empty( $boxed_inner_bg ) && '#ffffff' != $boxed_inner_bg ) {
 				$css .= '.boxed-layout #wrap, .separate-layout .content-area, .separate-layout .widget-area .sidebar-box, body.separate-blog.separate-layout #blog-entries > *, body.separate-blog.separate-layout .oceanwp-pagination, body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner, .has-parallax-footer:not(.separate-layout) #main{background-color:' . $boxed_inner_bg . ';}';
 			}
 
 			// Separate content padding.
-			if ( ! empty( $separate_content_padding ) && '30px' !== $separate_content_padding ) {
+			if ( ! empty( $separate_content_padding ) && '30px' != $separate_content_padding ) {
 				$css .= '.separate-layout .content-area, .separate-layout.content-left-sidebar .content-area, .content-both-sidebars.scs-style .content-area, .separate-layout.content-both-sidebars.ssc-style .content-area, body.separate-blog.separate-layout #blog-entries > *, body.separate-blog.separate-layout .oceanwp-pagination, body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner{padding:' . $separate_content_padding . ';}.separate-layout.content-full-width .content-area{padding:' . $separate_content_padding . ' !important;}';
 			}
 
 			// Separate widgets padding.
-			if ( ! empty( $separate_widgets_padding ) && '30px' !== $separate_widgets_padding ) {
+			if ( ! empty( $separate_widgets_padding ) && '30px' != $separate_widgets_padding ) {
 				$css .= '.separate-layout .widget-area .sidebar-box{padding:' . $separate_widgets_padding . ';}';
 			}
 
 			// Content top padding.
-			if ( ! empty( $main_container_width ) && '1200' !== $main_container_width ) {
+			if ( ! empty( $main_container_width ) && '1200' != $main_container_width ) {
 				$css .= '.container{width:' . $main_container_width . 'px;}';
 			}
 
 			// Content top padding.
-			if ( ! empty( $left_container_width ) && '72' !== $left_container_width ) {
+			if ( ! empty( $left_container_width ) && '72' != $left_container_width ) {
 				$css .= '@media only screen and (min-width: 960px){ .content-area, .content-left-sidebar .content-area{width:' . $left_container_width . '%;} }';
 			}
 
 			// Content top padding.
-			if ( ! empty( $sidebar_width ) && '28' !== $sidebar_width ) {
+			if ( ! empty( $sidebar_width ) && '28' != $sidebar_width ) {
 				$css .= '@media only screen and (min-width: 960px){ .widget-area, .content-left-sidebar .widget-area{width:' . $sidebar_width . '%;} }';
 			}
 
 			// Content top padding.
-			if ( isset( $content_top_padding ) && '' !== $content_top_padding ) {
+			if ( isset( $content_top_padding ) && '' != $content_top_padding ) {
 				$content_padding_css .= 'padding-top:' . $content_top_padding . 'px;';
 			}
 
 			// Content bottom padding.
-			if ( isset( $content_bottom_padding ) && '' !== $content_bottom_padding ) {
+			if ( isset( $content_bottom_padding ) && '' != $content_bottom_padding ) {
 				$content_padding_css .= 'padding-bottom:' . $content_bottom_padding . 'px;';
 			}
 
 			// Content padding css.
-			if ( isset( $content_top_padding ) && '' !== $content_top_padding
-				|| isset( $content_bottom_padding ) && '' !== $content_bottom_padding ) {
+			if ( isset( $content_top_padding ) && '' != $content_top_padding
+				|| isset( $content_bottom_padding ) && '' != $content_bottom_padding ) {
 				$css .= '#main #content-wrap, .separate-layout #main #content-wrap{' . $content_padding_css . '}';
 			}
 
 			// Tablet content top padding.
-			if ( isset( $tablet_content_top_padding ) && '' !== $tablet_content_top_padding ) {
+			if ( isset( $tablet_content_top_padding ) && '' != $tablet_content_top_padding ) {
 				$tablet_content_padding_css .= 'padding-top:' . $tablet_content_top_padding . 'px;';
 			}
 
 			// Tablet content bottom padding.
-			if ( isset( $tablet_content_bottom_padding ) && '' !== $tablet_content_bottom_padding ) {
+			if ( isset( $tablet_content_bottom_padding ) && '' != $tablet_content_bottom_padding ) {
 				$tablet_content_padding_css .= 'padding-bottom:' . $tablet_content_bottom_padding . 'px;';
 			}
 
 			// Tablet content padding css.
-			if ( isset( $tablet_content_top_padding ) && '' !== $tablet_content_top_padding
-				|| isset( $tablet_content_bottom_padding ) && '' !== $tablet_content_bottom_padding ) {
+			if ( isset( $tablet_content_top_padding ) && '' != $tablet_content_top_padding
+				|| isset( $tablet_content_bottom_padding ) && '' != $tablet_content_bottom_padding ) {
 				$css .= '@media (max-width: 768px){#main #content-wrap, .separate-layout #main #content-wrap{' . $tablet_content_padding_css . '}}';
 			}
 
 			// Mobile content top padding.
-			if ( isset( $mobile_content_top_padding ) && '' !== $mobile_content_top_padding ) {
+			if ( isset( $mobile_content_top_padding ) && '' != $mobile_content_top_padding ) {
 				$mobile_content_padding_css .= 'padding-top:' . $mobile_content_top_padding . 'px;';
 			}
 
 			// Mobile content bottom padding.
-			if ( isset( $mobile_content_bottom_padding ) && '' !== $mobile_content_bottom_padding ) {
+			if ( isset( $mobile_content_bottom_padding ) && '' != $mobile_content_bottom_padding ) {
 				$mobile_content_padding_css .= 'padding-bottom:' . $mobile_content_bottom_padding . 'px;';
 			}
 
 			// Mobile content padding css.
-			if ( isset( $mobile_content_top_padding ) && '' !== $mobile_content_top_padding
-				|| isset( $mobile_content_bottom_padding ) && '' !== $mobile_content_bottom_padding ) {
+			if ( isset( $mobile_content_top_padding ) && '' != $mobile_content_top_padding
+				|| isset( $mobile_content_bottom_padding ) && '' != $mobile_content_bottom_padding ) {
 				$css .= '@media (max-width: 480px){#main #content-wrap, .separate-layout #main #content-wrap{' . $mobile_content_padding_css . '}}';
 			}
 
 			// Title/breadcrumb position.
-			if ( ! empty( $title_breadcrumb_position ) && 'center' !== $title_breadcrumb_position ) {
+			if ( ! empty( $title_breadcrumb_position ) && 'center' != $title_breadcrumb_position ) {
 				$css .= '.background-image-page-header .page-header-inner, .background-image-page-header .site-breadcrumbs{text-align: ' . $title_breadcrumb_position . '}';
 			}
 
 			// Page header padding.
-			if ( isset( $page_header_top_padding ) && '34' !== $page_header_top_padding && '' !== $page_header_top_padding
-				|| isset( $page_header_bottom_padding ) && '34' !== $page_header_bottom_padding && '' !== $page_header_bottom_padding ) {
+			if ( isset( $page_header_top_padding ) && '34' != $page_header_top_padding && '' != $page_header_top_padding
+				|| isset( $page_header_bottom_padding ) && '34' != $page_header_bottom_padding && '' != $page_header_bottom_padding ) {
 				$css .= '.page-header, .has-transparent-header .page-header{padding:' . oceanwp_spacing_css( $page_header_top_padding, '', $page_header_bottom_padding, '' ) . '}';
 			}
 
 			// Tablet page header padding.
-			if ( isset( $tablet_ph_top_padding ) && '' !== $tablet_ph_top_padding
-				|| isset( $tablet_ph_bottom_padding ) && '' !== $tablet_ph_bottom_padding ) {
+			if ( isset( $tablet_ph_top_padding ) && '' != $tablet_ph_top_padding
+				|| isset( $tablet_ph_bottom_padding ) && '' != $tablet_ph_bottom_padding ) {
 				$css .= '@media (max-width: 768px){.page-header, .has-transparent-header .page-header{padding:' . oceanwp_spacing_css( $tablet_ph_top_padding, '', $tablet_ph_bottom_padding, '' ) . '}}';
 			}
 
 			// Mobile page header padding.
-			if ( isset( $mobile_ph_top_padding ) && '' !== $mobile_ph_top_padding
-				|| isset( $mobile_ph_bottom_padding ) && '' !== $mobile_ph_bottom_padding ) {
+			if ( isset( $mobile_ph_top_padding ) && '' != $mobile_ph_top_padding
+				|| isset( $mobile_ph_bottom_padding ) && '' != $mobile_ph_bottom_padding ) {
 				$css .= '@media (max-width: 480px){.page-header, .has-transparent-header .page-header{padding:' . oceanwp_spacing_css( $mobile_ph_top_padding, '', $mobile_ph_bottom_padding, '' ) . '}}';
 			}
 
@@ -4363,22 +4363,22 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			}
 
 			// Breadcrumbs text color.
-			if ( ! empty( $breadcrumbs_text_color ) && '#c6c6c6' !== $breadcrumbs_text_color ) {
+			if ( ! empty( $breadcrumbs_text_color ) && '#c6c6c6' != $breadcrumbs_text_color ) {
 				$css .= '.site-breadcrumbs, .background-image-page-header .site-breadcrumbs{color:' . $breadcrumbs_text_color . ';}';
 			}
 
 			// Breadcrumbs seperator color.
-			if ( ! empty( $breadcrumbs_seperator_color ) && '#c6c6c6' !== $breadcrumbs_seperator_color ) {
+			if ( ! empty( $breadcrumbs_seperator_color ) && '#c6c6c6' != $breadcrumbs_seperator_color ) {
 				$css .= '.site-breadcrumbs ul li .breadcrumb-sep{color:' . $breadcrumbs_seperator_color . ';}';
 			}
 
 			// Breadcrumbs link color.
-			if ( ! empty( $breadcrumbs_link_color ) && '#333333' !== $breadcrumbs_link_color ) {
+			if ( ! empty( $breadcrumbs_link_color ) && '#333333' != $breadcrumbs_link_color ) {
 				$css .= '.site-breadcrumbs a, .background-image-page-header .site-breadcrumbs a{color:' . $breadcrumbs_link_color . ';}';
 			}
 
 			// Breadcrumbs link hover color.
-			if ( ! empty( $breadcrumbs_link_color_hover ) && '#13aff0' !== $breadcrumbs_link_color_hover ) {
+			if ( ! empty( $breadcrumbs_link_color_hover ) && '#13aff0' != $breadcrumbs_link_color_hover ) {
 				$css .= '.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover{color:' . $breadcrumbs_link_color_hover . ';}';
 			}
 
@@ -4403,52 +4403,52 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			}
 
 			// Scroll top button bottom position.
-			if ( ! empty( $scroll_top_bottom_position ) && '20' !== $scroll_top_bottom_position ) {
+			if ( ! empty( $scroll_top_bottom_position ) && '20' != $scroll_top_bottom_position ) {
 				$css .= '#scroll-top{bottom:' . $scroll_top_bottom_position . 'px;}';
 			}
 
 			// Scroll top button size.
-			if ( ! empty( $scroll_top_size ) && '40' !== $scroll_top_size ) {
+			if ( ! empty( $scroll_top_size ) && '40' != $scroll_top_size ) {
 				$css .= '#scroll-top{width:' . $scroll_top_size . 'px;height:' . $scroll_top_size . 'px;line-height:' . $scroll_top_size . 'px;}';
 			}
 
 			// Scroll top button icon size.
-			if ( ! empty( $scroll_top_icon_size ) && '18' !== $scroll_top_icon_size ) {
+			if ( ! empty( $scroll_top_icon_size ) && '18' != $scroll_top_icon_size ) {
 				$css .= '#scroll-top{font-size:' . $scroll_top_icon_size . 'px;}';
 			}
 
 			// Scroll top button border radius.
-			if ( ! empty( $scroll_top_border_radius ) && '2' !== $scroll_top_border_radius ) {
+			if ( ! empty( $scroll_top_border_radius ) && '2' != $scroll_top_border_radius ) {
 				$css .= '#scroll-top{border-radius:' . $scroll_top_border_radius . 'px;}';
 			}
 
 			// Scroll top button background color.
-			if ( ! empty( $scroll_top_bg ) && 'rgba(0,0,0,0.4)' !== $scroll_top_bg ) {
+			if ( ! empty( $scroll_top_bg ) && 'rgba(0,0,0,0.4)' != $scroll_top_bg ) {
 				$css .= '#scroll-top{background-color:' . $scroll_top_bg . ';}';
 			}
 
 			// Scroll top button background hover color.
-			if ( ! empty( $scroll_top_bg_hover ) && 'rgba(0,0,0,0.8)' !== $scroll_top_bg_hover ) {
+			if ( ! empty( $scroll_top_bg_hover ) && 'rgba(0,0,0,0.8)' != $scroll_top_bg_hover ) {
 				$css .= '#scroll-top:hover{background-color:' . $scroll_top_bg_hover . ';}';
 			}
 
 			// Scroll top button background color.
-			if ( ! empty( $scroll_top_color ) && '#ffffff' !== $scroll_top_color ) {
+			if ( ! empty( $scroll_top_color ) && '#ffffff' != $scroll_top_color ) {
 				$css .= '#scroll-top{color:' . $scroll_top_color . ';}';
 			}
 
 			// Scroll top button background hover color.
-			if ( ! empty( $scroll_top_color_hover ) && '#ffffff' !== $scroll_top_color_hover ) {
+			if ( ! empty( $scroll_top_color_hover ) && '#ffffff' != $scroll_top_color_hover ) {
 				$css .= '#scroll-top:hover{color:' . $scroll_top_color_hover . ';}';
 			}
 
 			// Pagination font size.
-			if ( ! empty( $pagination_font_size ) && '18' !== $pagination_font_size ) {
+			if ( ! empty( $pagination_font_size ) && '18' != $pagination_font_size ) {
 				$css .= '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span{font-size:' . $pagination_font_size . 'px;}';
 			}
 
 			// Pagination border width.
-			if ( ! empty( $pagination_border_width ) && '1' !== $pagination_border_width ) {
+			if ( ! empty( $pagination_border_width ) && '1' != $pagination_border_width ) {
 				$css .= '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span{border-width:' . $pagination_border_width . 'px;}';
 			}
 
@@ -4458,109 +4458,109 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			}
 
 			// Pagination background color hover.
-			if ( ! empty( $pagination_hover_bg ) && '#f8f8f8' !== $pagination_hover_bg ) {
+			if ( ! empty( $pagination_hover_bg ) && '#f8f8f8' != $pagination_hover_bg ) {
 				$css .= '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover{background-color:' . $pagination_hover_bg . ';}';
 			}
 
 			// Pagination color.
-			if ( ! empty( $pagination_color ) && '#555555' !== $pagination_color ) {
+			if ( ! empty( $pagination_color ) && '#555555' != $pagination_color ) {
 				$css .= '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span{color:' . $pagination_color . ';}';
 			}
 
 			// Pagination color hover.
-			if ( ! empty( $pagination_hover_color ) && '#333333' !== $pagination_hover_color ) {
+			if ( ! empty( $pagination_hover_color ) && '#333333' != $pagination_hover_color ) {
 				$css .= '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover{color:' . $pagination_hover_color . ';}';
 			}
 
 			// Pagination border color.
-			if ( ! empty( $pagination_border_color ) && '#e9e9e9' !== $pagination_border_color ) {
+			if ( ! empty( $pagination_border_color ) && '#e9e9e9' != $pagination_border_color ) {
 				$css .= '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span{border-color:' . $pagination_border_color . ';}';
 			}
 
 			// Pagination border color hover.
-			if ( ! empty( $pagination_border_hover_color ) && '#e9e9e9' !== $pagination_border_hover_color ) {
+			if ( ! empty( $pagination_border_hover_color ) && '#e9e9e9' != $pagination_border_hover_color ) {
 				$css .= '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover{border-color:' . $pagination_border_hover_color . ';}';
 			}
 
 			// Label color.
-			if ( ! empty( $label_color ) && '#929292' !== $label_color ) {
+			if ( ! empty( $label_color ) && '#929292' != $label_color ) {
 				$css .= 'label, body div.wpforms-container-full .wpforms-form .wpforms-field-label{color:' . $label_color . ';}';
 			}
 
 			// Input padding.
-			if ( isset( $input_top_padding ) && '6' !== $input_top_padding && '' !== $input_top_padding
-				|| isset( $input_right_padding ) && '12' !== $input_right_padding && '' !== $input_right_padding
-				|| isset( $input_bottom_padding ) && '6' !== $input_bottom_padding && '' !== $input_bottom_padding
-				|| isset( $input_left_padding ) && '12' !== $input_left_padding && '' !== $input_left_padding ) {
+			if ( isset( $input_top_padding ) && '6' != $input_top_padding && '' != $input_top_padding
+				|| isset( $input_right_padding ) && '12' != $input_right_padding && '' != $input_right_padding
+				|| isset( $input_bottom_padding ) && '6' != $input_bottom_padding && '' != $input_bottom_padding
+				|| isset( $input_left_padding ) && '12' != $input_left_padding && '' != $input_left_padding ) {
 				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{padding:' . oceanwp_spacing_css( $input_top_padding, $input_right_padding, $input_bottom_padding, $input_left_padding ) . '}';
 				$css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{padding:' . oceanwp_spacing_css( $input_top_padding, $input_right_padding, $input_bottom_padding, $input_left_padding ) . '; height: auto;}';
 			}
 
 			// Tablet input padding.
-			if ( isset( $tablet_input_top_padding ) && '' !== $tablet_input_top_padding
-				|| isset( $tablet_input_right_padding ) && '' !== $tablet_input_right_padding
-				|| isset( $tablet_input_bottom_padding ) && '' !== $tablet_input_bottom_padding
-				|| isset( $tablet_input_left_padding ) && '' !== $tablet_input_left_padding ) {
+			if ( isset( $tablet_input_top_padding ) && '' != $tablet_input_top_padding
+				|| isset( $tablet_input_right_padding ) && '' != $tablet_input_right_padding
+				|| isset( $tablet_input_bottom_padding ) && '' != $tablet_input_bottom_padding
+				|| isset( $tablet_input_left_padding ) && '' != $tablet_input_left_padding ) {
 				$css .= '@media (max-width: 768px){form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{padding:' . oceanwp_spacing_css( $tablet_input_top_padding, $tablet_input_right_padding, $tablet_input_bottom_padding, $tablet_input_left_padding ) . '}}';
 				$css .= '@media (max-width: 768px){body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{padding:' . oceanwp_spacing_css( $tablet_input_top_padding, $tablet_input_right_padding, $tablet_input_bottom_padding, $tablet_input_left_padding ) . '}}';
 			}
 
 			// Mobile input padding.
-			if ( isset( $mobile_input_top_padding ) && '' !== $mobile_input_top_padding
-				|| isset( $mobile_input_right_padding ) && '' !== $mobile_input_right_padding
-				|| isset( $mobile_input_bottom_padding ) && '' !== $mobile_input_bottom_padding
-				|| isset( $mobile_input_left_padding ) && '' !== $mobile_input_left_padding ) {
+			if ( isset( $mobile_input_top_padding ) && '' != $mobile_input_top_padding
+				|| isset( $mobile_input_right_padding ) && '' != $mobile_input_right_padding
+				|| isset( $mobile_input_bottom_padding ) && '' != $mobile_input_bottom_padding
+				|| isset( $mobile_input_left_padding ) && '' != $mobile_input_left_padding ) {
 				$css .= '@media (max-width: 480px){form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{padding:' . oceanwp_spacing_css( $mobile_input_top_padding, $mobile_input_right_padding, $mobile_input_bottom_padding, $mobile_input_left_padding ) . '}}';
 				$css .= '@media (max-width: 480px){body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{padding:' . oceanwp_spacing_css( $mobile_input_top_padding, $mobile_input_right_padding, $mobile_input_bottom_padding, $mobile_input_left_padding ) . '}}';
 			}
 
 			// Input font size.
-			if ( ! empty( $input_font_size ) && '14' !== $input_font_size ) {
+			if ( ! empty( $input_font_size ) && '14' != $input_font_size ) {
 				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{font-size:' . $input_font_size . 'px;}';
 				$css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{font-size:' . $input_font_size . 'px;}';
 			}
 
 			// Input border width border width.
-			if ( isset( $input_top_border_width ) && '1' !== $input_top_border_width && '' !== $input_top_border_width
-				|| isset( $input_right_border_width ) && '1' !== $input_right_border_width && '' !== $input_right_border_width
-				|| isset( $input_bottom_border_width ) && '1' !== $input_bottom_border_width && '' !== $input_bottom_border_width
-				|| isset( $input_left_border_width ) && '1' !== $input_left_border_width && '' !== $input_left_border_width ) {
+			if ( isset( $input_top_border_width ) && '1' != $input_top_border_width && '' != $input_top_border_width
+				|| isset( $input_right_border_width ) && '1' != $input_right_border_width && '' != $input_right_border_width
+				|| isset( $input_bottom_border_width ) && '1' != $input_bottom_border_width && '' != $input_bottom_border_width
+				|| isset( $input_left_border_width ) && '1' != $input_left_border_width && '' != $input_left_border_width ) {
 				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{border-width:' . oceanwp_spacing_css( $input_top_border_width, $input_right_border_width, $input_bottom_border_width, $input_left_border_width ) . '}';
 				$css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{border-width:' . oceanwp_spacing_css( $input_top_border_width, $input_right_border_width, $input_bottom_border_width, $input_left_border_width ) . '}';
 			}
 
 			// Tablet input border width border width.
-			if ( isset( $tablet_input_top_bw ) && '' !== $tablet_input_top_bw
-				|| isset( $tablet_input_right_bw ) && '' !== $tablet_input_right_bw
-				|| isset( $tablet_input_bottom_bw ) && '' !== $tablet_input_bottom_bw
-				|| isset( $tablet_input_left_bw ) && '' !== $tablet_input_left_bw ) {
+			if ( isset( $tablet_input_top_bw ) && '' != $tablet_input_top_bw
+				|| isset( $tablet_input_right_bw ) && '' != $tablet_input_right_bw
+				|| isset( $tablet_input_bottom_bw ) && '' != $tablet_input_bottom_bw
+				|| isset( $tablet_input_left_bw ) && '' != $tablet_input_left_bw ) {
 				$css .= '@media (max-width: 768px){form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{border-width:' . oceanwp_spacing_css( $tablet_input_top_bw, $tablet_input_right_bw, $tablet_input_bottom_bw, $tablet_input_left_bw ) . '}}';
 				$css .= '@media (max-width: 768px){body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{border-width:' . oceanwp_spacing_css( $tablet_input_top_bw, $tablet_input_right_bw, $tablet_input_bottom_bw, $tablet_input_left_bw ) . '}}';
 			}
 
 			// Mobile input border width border width.
-			if ( isset( $mobile_input_top_bw ) && '' !== $mobile_input_top_bw
-				|| isset( $mobile_input_right_bw ) && '' !== $mobile_input_right_bw
-				|| isset( $mobile_input_bottom_bw ) && '' !== $mobile_input_bottom_bw
-				|| isset( $mobile_input_left_bw ) && '' !== $mobile_input_left_bw ) {
+			if ( isset( $mobile_input_top_bw ) && '' != $mobile_input_top_bw
+				|| isset( $mobile_input_right_bw ) && '' != $mobile_input_right_bw
+				|| isset( $mobile_input_bottom_bw ) && '' != $mobile_input_bottom_bw
+				|| isset( $mobile_input_left_bw ) && '' != $mobile_input_left_bw ) {
 				$css .= '@media (max-width: 480px){form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{border-width:' . oceanwp_spacing_css( $mobile_input_top_bw, $mobile_input_right_bw, $mobile_input_bottom_bw, $mobile_input_left_bw ) . '}}';
 				$css .= '@media (max-width: 480px){body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{border-width:' . oceanwp_spacing_css( $mobile_input_top_bw, $mobile_input_right_bw, $mobile_input_bottom_bw, $mobile_input_left_bw ) . '}}';
 			}
 
 			// Input border radius.
-			if ( ! empty( $input_border_radius ) && '3' !== $input_border_radius ) {
+			if ( ! empty( $input_border_radius ) && '3' != $input_border_radius ) {
 				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single{border-radius:' . $input_border_radius . 'px;}';
 				$css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{border-radius:' . $input_border_radius . 'px;}';
 			}
 
 			// Input border color.
-			if ( ! empty( $input_border_color ) && '#dddddd' !== $input_border_color ) {
+			if ( ! empty( $input_border_color ) && '#dddddd' != $input_border_color ) {
 				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea,.select2-container .select2-choice, .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single{border-color:' . $input_border_color . ';}';
 				$css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{border-color:' . $input_border_color . ';}';
 			}
 
 			// Input border color focus.
-			if ( ! empty( $input_border_color_focus ) && '#bbbbbb' !== $input_border_color_focus ) {
+			if ( ! empty( $input_border_color_focus ) && '#bbbbbb' != $input_border_color_focus ) {
 				$css .= 'form input[type="text"]:focus,form input[type="password"]:focus,form input[type="email"]:focus,form input[type="tel"]:focus,form input[type="url"]:focus,form input[type="search"]:focus,form textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices{border-color:' . $input_border_color_focus . ';}';
 				$css .= 'body div.wpforms-container-full .wpforms-form input:focus, body div.wpforms-container-full .wpforms-form textarea:focus, body div.wpforms-container-full .wpforms-form select:focus{border-color:' . $input_border_color_focus . ';}';
 			}
@@ -4572,62 +4572,62 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			}
 
 			// Input border color.
-			if ( ! empty( $input_color ) && '#333333' !== $input_color ) {
+			if ( ! empty( $input_color ) && '#333333' != $input_color ) {
 				$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{color:' . $input_color . ';}';
 				$css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{color:' . $input_color . ';}';
 			}
 
 			// Theme buttons padding.
-			if ( isset( $theme_button_top_padding ) && '14' !== $theme_button_top_padding && '' !== $theme_button_top_padding
-				|| isset( $theme_button_right_padding ) && '20' !== $theme_button_right_padding && '' !== $theme_button_right_padding
-				|| isset( $theme_button_bottom_padding ) && '14' !== $theme_button_bottom_padding && '' !== $theme_button_bottom_padding
-				|| isset( $theme_button_left_padding ) && '20' !== $theme_button_left_padding && '' !== $theme_button_left_padding ) {
+			if ( isset( $theme_button_top_padding ) && '14' != $theme_button_top_padding && '' != $theme_button_top_padding
+				|| isset( $theme_button_right_padding ) && '20' != $theme_button_right_padding && '' != $theme_button_right_padding
+				|| isset( $theme_button_bottom_padding ) && '14' != $theme_button_bottom_padding && '' != $theme_button_bottom_padding
+				|| isset( $theme_button_left_padding ) && '20' != $theme_button_left_padding && '' != $theme_button_left_padding ) {
 				$css .= '.theme-button,input[type="submit"],button[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{padding:' . oceanwp_spacing_css( $theme_button_top_padding, $theme_button_right_padding, $theme_button_bottom_padding, $theme_button_left_padding ) . '}';
 			}
 
 			// Tablet theme buttons padding.
-			if ( isset( $tablet_tb_top_padding ) && '' !== $tablet_tb_top_padding
-				|| isset( $tablet_tb_right_padding ) && '' !== $tablet_tb_right_padding
-				|| isset( $tablet_tb_bottom_padding ) && '' !== $tablet_tb_bottom_padding
-				|| isset( $tablet_tb_left_padding ) && '' !== $tablet_tb_left_padding ) {
+			if ( isset( $tablet_tb_top_padding ) && '' != $tablet_tb_top_padding
+				|| isset( $tablet_tb_right_padding ) && '' != $tablet_tb_right_padding
+				|| isset( $tablet_tb_bottom_padding ) && '' != $tablet_tb_bottom_padding
+				|| isset( $tablet_tb_left_padding ) && '' != $tablet_tb_left_padding ) {
 				$css .= '@media (max-width: 768px){.theme-button,input[type="submit"],button[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{padding:' . oceanwp_spacing_css( $tablet_tb_top_padding, $tablet_tb_right_padding, $tablet_tb_bottom_padding, $tablet_tb_left_padding ) . '}}';
 			}
 
 			// Mobile theme buttons padding.
-			if ( isset( $mobile_tb_top_padding ) && '' !== $mobile_tb_top_padding
-				|| isset( $mobile_tb_right_padding ) && '' !== $mobile_tb_right_padding
-				|| isset( $mobile_tb_bottom_padding ) && '' !== $mobile_tb_bottom_padding
-				|| isset( $mobile_tb_left_padding ) && '' !== $mobile_tb_left_padding ) {
+			if ( isset( $mobile_tb_top_padding ) && '' != $mobile_tb_top_padding
+				|| isset( $mobile_tb_right_padding ) && '' != $mobile_tb_right_padding
+				|| isset( $mobile_tb_bottom_padding ) && '' != $mobile_tb_bottom_padding
+				|| isset( $mobile_tb_left_padding ) && '' != $mobile_tb_left_padding ) {
 				$css .= '@media (max-width: 480px){.theme-button,input[type="submit"],button[type="submit"],button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{padding:' . oceanwp_spacing_css( $mobile_tb_top_padding, $mobile_tb_right_padding, $mobile_tb_bottom_padding, $mobile_tb_left_padding ) . '}}';
 			}
 
 			// Theme buttons border radius.
-			if ( ! empty( $theme_button_border_radius ) && '0' !== $theme_button_border_radius ) {
+			if ( ! empty( $theme_button_border_radius ) && '0' != $theme_button_border_radius ) {
 				$css .= '.theme-button,input[type="submit"],button[type="submit"],button,.button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{border-radius:' . $theme_button_border_radius . 'px;}';
 			}
 
 			// Theme buttons background color.
-			if ( ! empty( $theme_button_bg ) && '#13aff0' !== $theme_button_bg ) {
+			if ( ! empty( $theme_button_bg ) && '#13aff0' != $theme_button_bg ) {
 				$css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{background-color:' . $theme_button_bg . ';}';
 			}
 
 			// Theme buttons background color.
-			if ( ! empty( $theme_button_hover_bg ) && '#0b7cac' !== $theme_button_hover_bg ) {
+			if ( ! empty( $theme_button_hover_bg ) && '#0b7cac' != $theme_button_hover_bg ) {
 				$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active{background-color:' . $theme_button_hover_bg . ';}';
 			}
 
 			// Theme buttons background color.
-			if ( ! empty( $theme_button_color ) && '#ffffff' !== $theme_button_color ) {
+			if ( ! empty( $theme_button_color ) && '#ffffff' != $theme_button_color ) {
 				$css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{color:' . $theme_button_color . ';}';
 			}
 
 			// Theme buttons hover color.
-			if ( ! empty( $theme_button_hover_color ) && '#ffffff' !== $theme_button_hover_color ) {
+			if ( ! empty( $theme_button_hover_color ) && '#ffffff' != $theme_button_hover_color ) {
 				$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active{color:' . $theme_button_hover_color . ';}';
 			}
 
 			// If page Both Sidebars layout.
-			if ( 'both-sidebars' === $page_layout ) {
+			if ( 'both-sidebars' == $page_layout ) {
 
 				// Both Sidebars layout page content width.
 				if ( ! empty( $bs_page_content_width ) ) {
@@ -4651,7 +4651,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			}
 
 			// If search Both Sidebars layout.
-			if ( 'both-sidebars' === $search_layout ) {
+			if ( 'both-sidebars' == $search_layout ) {
 
 				// Both Sidebars layout search content width.
 				if ( ! empty( $bs_search_content_width ) ) {

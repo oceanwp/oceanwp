@@ -30,33 +30,30 @@ if ( 'full-screen' === oceanwp_post_layout() ) {
 	$classes .= ' container';
 }
 
-// Comment form text attributes.
-$comment_logout_text = __( 'Log out of this account', 'oceanwp' );
-$comment_placeholder = __( 'Your Comment Here...', 'oceanwp' );
-$comment_profile_edit = __( 'Click to edit your profile', 'oceanwp' );
-
 // Get comment form position.
 $comment_position = apply_filters( 'ocean_comment_form_position', get_theme_mod( 'ocean_comment_form_position' ) );
 $comment_position = $comment_position ? $comment_position : 'after';
 
 // Comment form args.
 $args = array(
-	'must_log_in'           => '<p class="must-log-in">'.  sprintf( esc_html__( 'You must be %1$slogged in%2$s to post a comment.', 'oceanwp' ), '<a href="'. wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) .'">', '</a>' ) .'</p>',
-	'logged_in_as'          => '<p class="logged-in-as">'. esc_html__( 'Logged in as', 'oceanwp' ) .' <a href="'. admin_url( 'profile.php' ) .'">'. $user_identity .'</a>.<span class="screen-reader-text">'. $comment_profile_edit .'</span> <a href="' . wp_logout_url( get_permalink() ) .'" aria-label="'. esc_attr( $comment_logout_text ) .'">'. esc_html__( 'Log out &raquo;', 'oceanwp' ) .'</a></p>',
-	'comment_notes_before'  => false,
-	'comment_notes_after'   => false,
-	'comment_field'         => '<div class="comment-textarea"><label for="comment" class="screen-reader-text">'. esc_html__( 'Comment', 'oceanwp' ) . '</label><textarea name="comment" id="comment" cols="39" rows="4" tabindex="0" class="textarea-comment" placeholder="'. esc_attr( $comment_placeholder ) .'"></textarea></div>',
-	'id_submit'             => 'comment-submit',
-	'label_submit'          => esc_html__( 'Post Comment', 'oceanwp' ),
+	/* translators: 1: logged in to comment */
+	'must_log_in'          => '<p class="must-log-in">' . sprintf( esc_html__( 'You must be %1$slogged in%2$s to post a comment.', 'oceanwp' ), '<a href="' . wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) . '">', '</a>' ) . '</p>',
+	'logged_in_as'         => '<p class="logged-in-as">' . esc_html__( 'Logged in as', 'oceanwp' ) . ' <a href="' . admin_url( 'profile.php' ) . '">' . $user_identity . '</a>.<span class="screen-reader-text">' . oceanwp_theme_strings( 'owp-string-comment-profile-edit', false, 'oceanwp' ) . '</span> <a href="' . wp_logout_url( get_permalink() ) . '" aria-label="' . oceanwp_theme_strings( 'owp-string-comment-logout-text', false, 'oceanwp' ) . '">' . esc_html__( 'Log out &raquo;', 'oceanwp' ) . '</a></p>',
+	'comment_notes_before' => false,
+	'comment_notes_after'  => false,
+	'comment_field'        => '<div class="comment-textarea"><label for="comment" class="screen-reader-text">' . esc_html__( 'Comment', 'oceanwp' ) . '</label><textarea name="comment" id="comment" cols="39" rows="4" tabindex="0" class="textarea-comment" placeholder="' . oceanwp_theme_strings( 'owp-string-comment-placeholder', false, 'oceanwp' ) . '"></textarea></div>',
+	'id_submit'            => 'comment-submit',
+	'label_submit'         => esc_html( oceanwp_theme_strings( 'owp-string-comment-post-button', false, 'oceanwp' ) ),
 );
 
 ?>
 
 <section id="comments" class="<?php echo esc_attr( $classes ); ?>">
 
-	<?php // You can start editing here -- including this comment!
+	<?php
+	// You can start editing here -- including this comment!
 	// Display comment form if position set to before the comment list.
-	if ( $comment_position === 'before' ) {
+	if ( 'before' === $comment_position ) {
 		comment_form( $args );
 	}
 	?>
@@ -133,7 +130,7 @@ $args = array(
 
 	<?php
 	// Display comment form if position set to after the comment list (default setting).
-	if ( $comment_position === 'after' ) {
+	if ( 'after' === $comment_position ) {
 		comment_form( $args );
 	}
 	?>

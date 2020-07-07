@@ -50,7 +50,7 @@ if ( 'quote' === get_post_format() ) {
 		<?php } ?>
 
 		<?php if ( 'reading-time' === $section ) { ?>
-			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Reading time:', 'oceanwp' ); ?></span><i class="icon-cup" aria-hidden="true"></i><?php echo esc_html( ocean_reading_time() ); ?></li>
+			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Reading time:', 'oceanwp' ); ?></span><i class="icon-cup" aria-hidden="true"></i><?php echo esc_attr( ocean_reading_time() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'comments' === $section && comments_open() && ! post_password_required() ) { ?>

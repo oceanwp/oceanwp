@@ -1142,9 +1142,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function quick_view_button() {
 			global $product;
 
-			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '"><i class="icon-eye" aria-hidden="true"></i>' . esc_html__( 'Quick View', 'oceanwp' ) . '</a>';
+			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '"><i class="icon-eye" aria-hidden="true"></i>' . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false, 'oceanwp' ) . '</a>';
 
-			echo apply_filters( 'ocean_woo_quick_view_button_html', $button );
+			echo apply_filters( 'ocean_woo_quick_view_button_html', $button ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 		/**
@@ -1270,17 +1270,15 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				return;
 			}
 
-			// Get product object
+			// Get product object.
 			$product = wc_get_product( get_the_ID() );
 
-			// Select options text
-			$text = esc_html__( 'Select Options', 'oceanwp' );
-			$text = apply_filters( 'ocean_floating_bar_select_text', $text ); ?>
+			?>
 
 			<div class="owp-floating-bar">
 				<div class="container clr">
 					<div class="left">
-				        <p class="selected"><?php esc_html_e( 'Selected:', 'oceanwp' ); ?></p>
+				        <p class="selected"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-selected', 'oceanwp' ); ?></p>
 				        <h2 class="entry-title" itemprop="name"><?php echo $product->get_title(); ?></h2>
 				    </div>
 					<div class="right">
@@ -1288,14 +1286,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				        	<p class="price"><?php echo $product->get_price_html(); ?></p>
 		                </div>
 		                <?php
-		                // If out of stock
+		                // If out of stock.
 		                if ( 'outofstock' == $product->get_stock_status() ) { ?>
-		                	<p class="stock out-of-stock"><?php esc_html_e( 'Out of stock', 'oceanwp' ); ?></p>
+		                	<p class="stock out-of-stock"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-out-stock', 'oceanwp' ); ?></p>
 		            	<?php
 		            	} else if ( $product && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually() ) {
 		                	echo self::floating_bar_add_to_cart( $product );
 		            	} else { ?>
-		                	<button type="submit" class="button top"><?php echo esc_html( $text ); ?></button>
+		                	<button type="submit" class="button top"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-select-btn', 'oceanwp' ); ?></button>
 		                <?php
 		            	} ?>
 				    </div>

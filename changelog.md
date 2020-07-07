@@ -1,5 +1,18 @@
 # OceanWP Changelog
 
+### *2020.07.07* - 1.8.5:
+* **Fixed** - Padding issue on mobile view.
+* **Fixed** - Improved transaltation.
+* **Added** - filter to handle the transaltion 'oceanwp_theme_strings'.
+* **Removed** - filter 'ocean_search_text'.
+* **Removed** - filter 'ocean_search_readmore_link_text'.
+* **Removed** - filter 'ocean_post_readmore_link_text'
+* **Removed** - filter 'ocean_mobile_searchform_placeholder'
+* **Removed** - filter 'ocean_header_replace_search_text'
+* **Removed** - filter 'ocean_overlay_search_text'
+* **Removed** - filter 'ocean_related_posts_title'
+* **Removed** - filter 'ocean_floating_bar_select_text'
+
 ### *2020.07.06* - 1.8.4:
 * **Fixed** - Ajax 'add to cart' compatibility with variations, product-addons, composite product etc.
 * **Fixed** - 'Skip to content' link displayed after disabling CSS file.
