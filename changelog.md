@@ -1,5 +1,38 @@
 # OceanWP Changelog
 
+### *2020.07.08* - 1.8.6:
+* **Fixed** - Woocommerce product gallery slider style image issue.
+* **Fixed** - Woocommerce list view star rating alignment.
+* **Added** - Separate filters for transalating the string
+* **Added** - Skip link text - 'ocean_header_skip_link'
+* **Added** - Search field placeholder - 'ocean_search_text'
+* **Added** - Mobile search field placeholder - 'ocean_mobile_search_text'
+* **Added** - Mobile full screen search placeholder - 'ocean_mobile_fs_search_text'
+* **Added** - Header replace search placeholder - 'ocean_header_replace_search_text'
+* **Added** - header search overlay placeholder - 'ocean_search_overlay_search_text'
+* **Added** - vertical header search placeholder - 'ocean_vertical_header_search_text'
+* **Added** - Medium header search placeholder - 'ocean_medium_header_search_text'
+* **Added** - Comment logout - 'ocean_comment_logout_text'
+* **Added** - Comment placeholder - 'ocean_comment_placeholder'
+* **Added** - Comment Profile - 'ocean_comment_profile_edit'
+* **Added** - Comment Post button - 'ocean_comment_post_button'
+* **Added** - Comment name required - 'ocean_comment_name_req'
+* **Added** - Comment email required - 'ocean_comment_email_req'
+* **Added** - Comment name - 'ocean_comment_name'
+* **Added** - Comment email - 'ocean_comment_email'
+* **Added** - Comment website - 'ocean_comment_website'
+* **Added** - Search result page continue reading - 'ocean_search_continue_reading'
+* **Added** - Post continue reading - 'ocean_post_continue_reading'
+* **Added** - Single related post - 'ocean_single_related_posts'
+* **Added** - Single next post - 'ocean_single_next_post'
+* **Added** - Single previous post - 'ocean_single_prev_post'
+* **Added** - Single screen reader Read more text - 'ocean_single_screen_reader_rm'
+* **Added** - Woo quick view text - 'ocean_woo_quick_view_text'
+* **Added** - Woo quick view close text - 'ocean_woo_quick_view_close'
+* **Added** - Woo floating bar button - 'ocean_woo_floating_bar_select_btn'
+* **Added** - Woo flating bar selected - 'ocean_woo_floating_bar_selected'
+* **Added** - woo floating bar out of stock - 'ocean_woo_floating_bar_out_stock'
+
 ### *2020.07.07* - 1.8.5:
 * **Fixed** - Padding issue on mobile view.
 * **Fixed** - Improved transaltation.
