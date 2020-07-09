@@ -25,7 +25,7 @@ $oaria_close = __( 'Close search form', 'oceanwp' );
 			<a href="#" class="search-overlay-close" aria-label="<?php echo esc_attr( $oaria_close ); ?>"><span></span></a>
 			<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'oceanwp' ); ?></span>
 			<input class="searchform-overlay-input" type="search" name="s" autocomplete="off" value="" aria-placeholder="<?php oceanwp_theme_strings( 'owp-string-search-overlay-search-text', 'oceanwp' ); ?>" />
-			<label><?php echo esc_html( $osearch_text ); ?><span aria-hidden="true"><i></i><i></i><i></i></span></label>
+			<label><?php oceanwp_theme_strings( 'owp-string-search-overlay-search-text', 'oceanwp' ); ?><span aria-hidden="true"><i></i><i></i><i></i></span></label>
 			<?php if ( 'any' !== $post_type ) { ?>
 				<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 			<?php } ?>

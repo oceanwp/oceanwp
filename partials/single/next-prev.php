@@ -20,9 +20,9 @@ $term_tax = get_theme_mod( 'ocean_single_post_next_prev_taxonomy', 'post_tag' );
 $term_tax = $term_tax ? $term_tax : 'post_tag';
 
 // Vars.
-$prev_text = '<span class="title"><i class="fas fa-long-arrow-alt-left" aria-hidden="true"></i>' . oceanwp_theme_strings( 'owp-string-single-prev-post', 'oceanwp' ) . '</span><span class="post-title">%title</span>';
-$next_text = '<span class="title"><i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>' . oceanwp_theme_strings( 'owp-string-single-next-post', 'oceanwp' ) . '</span><span class="post-title">%title</span>';
-$screen_rt = oceanwp_theme_strings( 'owp-string-single-screen-reader-rm', 'oceanwp' );
+$prev_text = '<span class="title"><i class="fas fa-long-arrow-alt-left" aria-hidden="true"></i>' . oceanwp_theme_strings( 'owp-string-single-prev-post', false, 'oceanwp' ) . '</span><span class="post-title">%title</span>';
+$next_text = '<span class="title"><i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i>' . oceanwp_theme_strings( 'owp-string-single-next-post', false, 'oceanwp' ) . '</span><span class="post-title">%title</span>';
+$screen_rt = oceanwp_theme_strings( 'owp-string-single-screen-reader-rm', false, 'oceanwp' );
 
 // Args.
 if ( 'pub-date' === $term_tax ) {

@@ -1,7 +1,8 @@
 # OceanWP Changelog
 
-### *2020.07.08* - 1.8.6:
+### *2020.07.09* - 1.8.6:
 * **Fixed** - Woocommerce product gallery slider style image issue.
+* **Fixed** - Single post navigation text issue.
 * **Fixed** - Woocommerce list view star rating alignment.
 * **Added** - Separate filters for transalating the string
 * **Added** - Skip link text - 'ocean_header_skip_link'
