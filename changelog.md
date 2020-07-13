@@ -1,17 +1,17 @@
 # OceanWP Changelog
 
 ### *2020.07.09* - 1.8.6:
-* **Fixed** - Woocommerce product gallery slider style image issue.
-* **Fixed** - Single post navigation text issue.
-* **Fixed** - Woocommerce list view star rating alignment.
-* **Added** - Separate filters for transalating the string
+* **Fixed** - WooCommerce product gallery slider style image issue.
+* **Fixed** - Single blog post navigation text issue.
+* **Fixed** - WooCommerce list view star rating alignment.
+* **Added** - Separate filters for string translation.
 * **Added** - Skip link text - 'ocean_header_skip_link'
 * **Added** - Search field placeholder - 'ocean_search_text'
 * **Added** - Mobile search field placeholder - 'ocean_mobile_search_text'
 * **Added** - Mobile full screen search placeholder - 'ocean_mobile_fs_search_text'
 * **Added** - Header replace search placeholder - 'ocean_header_replace_search_text'
-* **Added** - header search overlay placeholder - 'ocean_search_overlay_search_text'
-* **Added** - vertical header search placeholder - 'ocean_vertical_header_search_text'
+* **Added** - Header search overlay placeholder - 'ocean_search_overlay_search_text'
+* **Added** - Vertical header search placeholder - 'ocean_vertical_header_search_text'
 * **Added** - Medium header search placeholder - 'ocean_medium_header_search_text'
 * **Added** - Comment logout - 'ocean_comment_logout_text'
 * **Added** - Comment placeholder - 'ocean_comment_placeholder'
@@ -32,12 +32,12 @@
 * **Added** - Woo quick view close text - 'ocean_woo_quick_view_close'
 * **Added** - Woo floating bar button - 'ocean_woo_floating_bar_select_btn'
 * **Added** - Woo flating bar selected - 'ocean_woo_floating_bar_selected'
-* **Added** - woo floating bar out of stock - 'ocean_woo_floating_bar_out_stock'
+* **Added** - Woo floating bar out of stock - 'ocean_woo_floating_bar_out_stock'
 
 ### *2020.07.07* - 1.8.5:
 * **Fixed** - Padding issue on mobile view.
-* **Fixed** - Improved transaltation.
-* **Added** - filter to handle the transaltion 'oceanwp_theme_strings'.
+* **Fixed** - Improved translation.
+* **Added** - filter to handle the translation 'oceanwp_theme_strings'.
 * **Removed** - filter 'ocean_search_text'.
 * **Removed** - filter 'ocean_search_readmore_link_text'.
 * **Removed** - filter 'ocean_post_readmore_link_text'

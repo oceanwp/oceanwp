@@ -56,7 +56,7 @@ foreach ( $elements as $element ) {
 
 		echo '<li class="title">';
 			do_action( 'ocean_before_archive_product_title_inner' );
-			echo '<a href="' . esc_url( get_the_permalink() ) . '">' . esc_attr( get_the_title() ) . '</a>';
+			echo '<a href="' . esc_url( get_the_permalink() ) . '">' . esc_html( get_the_title() ) . '</a>';
 			do_action( 'ocean_after_archive_product_title_inner' );
 		echo '</li>';
 
