@@ -176,6 +176,7 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'customizer/controls/typography/webfonts.php';
 		require_once $dir . 'walker/init.php';
 		require_once $dir . 'walker/menu-walker.php';
+		require_once $dir . 'third/class-amp.php';
 		require_once $dir . 'third/class-gutenberg.php';
 		require_once $dir . 'third/class-elementor.php';
 		require_once $dir . 'third/class-beaver-themer.php';
@@ -469,6 +470,10 @@ final class OCEANWP_Theme_Class {
 	 * @since 1.0.0
 	 */
 	public static function theme_js() {
+
+		if ( function_exists( 'oceanwp_is_amp' ) ) {
+			return;
+		}
 
 		// Get js directory uri.
 		$dir = OCEANWP_JS_DIR_URI;

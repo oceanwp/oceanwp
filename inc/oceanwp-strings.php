@@ -15,7 +15,7 @@ if ( ! function_exists( 'oceanwp_theme_strings' ) ) {
 	/**
 	 * OceanWP Theme Strings
 	 *
-	 *  @author Amit Singh (@apprimit)
+	 *  @author Amit Singh (apprimit@gmail.com)
 	 *  @since 1.8.5
 	 *
 	 * @param  string  $value  String key.

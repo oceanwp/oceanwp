@@ -10,6 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Search attributes.
+$item_search_attrs = apply_filters( 'oceanwp_attrs_search_bar', '' );
+
 // Post type.
 $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
 
@@ -19,7 +22,7 @@ $oaria_close = __( 'Close search form', 'oceanwp' );
 
 ?>
 
-<div id="searchform-header-replace" class="header-searchform-wrap clr">
+<div id="searchform-header-replace" class="header-searchform-wrap clr" <?php echo $item_search_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform">
 		<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'oceanwp' ); ?></span>
 		<input type="search" name="s" autocomplete="off" value="" placeholder="<?php oceanwp_theme_strings( 'owp-string-header-replace-search-text', 'oceanwp' ); ?>" />

@@ -26,6 +26,10 @@ if ( true === get_theme_mod( 'ocean_menu_social', false ) ) {
 // Turn classes into space seperated string.
 $classes = implode( ' ', $classes );
 
+// Fullscreen menu attributes.
+$fullscreen_menu_attrs = apply_filters( 'oceanwp_attrs_mobile_fullscreen', '' );
+$fs_menu_close_attrs   = apply_filters( 'oceanwp_attrs_mobile_fullscreen_close', '' );
+
 // Menu Location.
 $menu_location = apply_filters( 'ocean_main_menu_location', 'main_menu' );
 
@@ -67,11 +71,11 @@ $top_menu_args = array(
 
 ?>
 
-<div id="mobile-fullscreen" class="clr">
+<div id="mobile-fullscreen" class="clr" <?php echo $fullscreen_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
 	<div id="mobile-fullscreen-inner" class="clr">
 
-		<a href="#" class="close" aria-label="<?php esc_attr_e( 'Close Menu', 'oceanwp' ); ?>">
+		<a href="#/" class="close" aria-label="<?php esc_attr_e( 'Close Menu', 'oceanwp' ); ?>" <?php echo $fs_menu_close_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 			<div class="close-icon-wrap">
 				<div class="close-icon-inner"></div>
 			</div>
