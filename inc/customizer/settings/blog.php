@@ -1755,42 +1755,42 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			}
 
 			// Blog thumbnail category color.
-			if ( ! empty( $thumbnail_category_color ) && '#13aff0' !== $thumbnail_category_color ) {
+			if ( ! empty( $thumbnail_category_color ) && '#13aff0' != $thumbnail_category_color ) {
 				$css .= '.blog-entry.thumbnail-entry .blog-entry-category a{color:' . $thumbnail_category_color . ';}';
 			}
 
 			// Blog thumbnail category hover color.
-			if ( ! empty( $thumbnail_category_hover_color ) && '#333333' !== $thumbnail_category_hover_color ) {
+			if ( ! empty( $thumbnail_category_hover_color ) && '#333333' != $thumbnail_category_hover_color ) {
 				$css .= '.blog-entry.thumbnail-entry .blog-entry-category a:hover{color:' . $thumbnail_category_hover_color . ';}';
 			}
 
 			// Blog thumbnail comments color.
-			if ( ! empty( $thumbnail_comments_color ) && '#ababab' !== $thumbnail_comments_color ) {
+			if ( ! empty( $thumbnail_comments_color ) && '#ababab' != $thumbnail_comments_color ) {
 				$css .= '.blog-entry.thumbnail-entry .blog-entry-comments, .blog-entry.thumbnail-entry .blog-entry-comments a{color:' . $thumbnail_comments_color . ';}';
 			}
 
 			// Blog thumbnail comments hover color.
-			if ( ! empty( $thumbnail_comments_hover_color ) && '#13aff0' !== $thumbnail_comments_hover_color ) {
+			if ( ! empty( $thumbnail_comments_hover_color ) && '#13aff0' != $thumbnail_comments_hover_color ) {
 				$css .= '.blog-entry.thumbnail-entry .blog-entry-comments a:hover{color:' . $thumbnail_comments_hover_color . ';}';
 			}
 
 			// Blog thumbnail date color.
-			if ( ! empty( $thumbnail_date_color ) && '#ababab' !== $thumbnail_date_color ) {
+			if ( ! empty( $thumbnail_date_color ) && '#ababab' != $thumbnail_date_color ) {
 				$css .= '.blog-entry.thumbnail-entry .blog-entry-date{color:' . $thumbnail_date_color . ';}';
 			}
 
 			// Blog infinite scroll spinners color.
-			if ( ! empty( $infinite_scroll_spinners_color ) && '#333333' !== $infinite_scroll_spinners_color ) {
+			if ( ! empty( $infinite_scroll_spinners_color ) && '#333333' != $infinite_scroll_spinners_color ) {
 				$css .= '.loader-ellips__dot{background-color:' . $infinite_scroll_spinners_color . ';}';
 			}
 
 			// Title/breadcrumb position.
-			if ( ! empty( $title_breadcrumb_position ) && 'center' !== $title_breadcrumb_position ) {
+			if ( ! empty( $title_breadcrumb_position ) && 'center' != $title_breadcrumb_position ) {
 				$css .= '.single-post .background-image-page-header .page-header-inner, .single-post .background-image-page-header .site-breadcrumbs{text-align:' . $title_breadcrumb_position . ';}';
 			}
 
 			// Single content width.
-			if ( ! empty( $single_content_width ) && '700' !== $single_content_width ) {
+			if ( ! empty( $single_content_width ) && '700' != $single_content_width ) {
 				$css .= '.single-post.content-max-width .thumbnail, .single-post.content-max-width .entry-header, .single-post.content-max-width ul.meta, .single-post.content-max-width .entry-content p, .single-post.content-max-width .entry-content h1, .single-post.content-max-width .entry-content h2, .single-post.content-max-width .entry-content h3, .single-post.content-max-width .entry-content h4, .single-post.content-max-width .entry-content h5, .single-post.content-max-width .entry-content h6, .single-post.content-max-width .wp-block-image, .single-post.content-max-width .wp-block-gallery, .single-post.content-max-width .wp-block-video, .single-post.content-max-width .wp-block-quote, .single-post.content-max-width .wp-block-text-columns, .single-post.content-max-width .entry-content ul, .single-post.content-max-width .entry-content ol, .single-post.content-max-width .wp-block-cover-text, .single-post.content-max-width .post-tags, .single-post.content-max-width .comments-area, .wp-block-separator.is-style-wide{max-width:' . $single_content_width . 'px;} .single-post.content-max-width .wp-block-image.alignleft, .single-post.content-max-width .wp-block-image.alignright{max-width:' . $single_content_width / 2 . 'px;} .single-post.content-max-width .wp-block-image.alignleft{margin-left: calc( 50% - ' . $single_content_width / 2 . 'px);} .single-post.content-max-width .wp-block-image.alignright{margin-right: calc( 50% - ' . $single_content_width / 2 . 'px);}';
 
 			}

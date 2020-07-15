@@ -16,18 +16,13 @@ $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
 // Aria labels.
 $oaria_close = __( 'Close search form', 'oceanwp' );
 
-// Label and placeholder text.
-$osearch_text = __( 'Type then hit enter to search...', 'oceanwp' );
-
-// Apply filter for child theming.
-$osearch_text = apply_filters( 'ocean_header_replace_search_text', $osearch_text );
 
 ?>
 
 <div id="searchform-header-replace" class="header-searchform-wrap clr">
 <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform">
 		<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'oceanwp' ); ?></span>
-		<input type="search" name="s" autocomplete="off" value="" placeholder="<?php echo esc_attr( $osearch_text ); ?>" />
+		<input type="search" name="s" autocomplete="off" value="" placeholder="<?php oceanwp_theme_strings( 'owp-string-header-replace-search-text', 'oceanwp' ); ?>" />
 		<?php if ( 'any' !== $post_type ) { ?>
 			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 		<?php } ?>

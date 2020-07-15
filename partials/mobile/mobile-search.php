@@ -21,7 +21,7 @@ $mosf_id      = esc_attr( $ocean_msf_id );
 <div id="mobile-menu-search" class="clr">
 	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="mobile-searchform" role="search" aria-label="<?php esc_attr_e( 'Search for:', 'oceanwp' ); ?>">
 		<label for="<?php echo esc_attr( $mosf_id ); ?>">
-			<input type="search" name="s" autocomplete="off" placeholder="<?php echo esc_attr( apply_filters( 'ocean_mobile_searchform_placeholder', __( 'Search', 'oceanwp' ) ) ); ?>" />
+			<input type="search" name="s" autocomplete="off" placeholder="<?php oceanwp_theme_strings( 'owp-string-mobile-search-text', 'oceanwp' ); ?>" />
 			<button type="submit" class="searchform-submit" aria-label="<?php esc_attr_e( 'Submit Search', 'oceanwp' ); ?>">
 				<i class="icon icon-magnifier" aria-hidden="true"></i>
 			</button>

@@ -3100,18 +3100,21 @@ if ( ! function_exists( 'oceanwp_blog_single_meta' ) ) {
 
 /**
  * Returns reading time
- * 
+ *
  * @since 1.8.4
 */
 if ( ! function_exists( 'ocean_reading_time' ) ) {
 
 	function ocean_reading_time() {
-		$reading_time = get_post_field( 'post_content', $post->ID );
-		$reading_time = str_word_count( strip_tags( $reading_time ) );
-		$reading_time = ceil( $reading_time / 200 );
 
-		$total_rt = $reading_time . " " . esc_html__( 'min(s) read', 'oceanwp' );
-		return $total_rt;
+		global $post;
+
+		$content      = get_post_field( 'post_content', $post->ID );
+		$word_count   = str_word_count( strip_tags( $content ) );
+		$reading_time = ceil( $word_count / 200 );
+
+		$owp_reading_time = $reading_time . " " . esc_html__( 'min(s) read', 'oceanwp' );
+		return apply_filters( 'oceanwp_post_reading_time', $owp_reading_time );
 	}
 }
 
@@ -3204,18 +3207,20 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 
 		// Labels.
 		if ( $req ) {
-			$comment_name = __( 'Name (required)', 'oceanwp' );
-			$comment_email = __( 'Email (required)', 'oceanwp' );
+			$comment_name = oceanwp_theme_strings( 'owp-string-comment-name-req', false, 'oceanwp' );
+			$comment_email = oceanwp_theme_strings( 'owp-string-comment-email-req', false, 'oceanwp' );
 		} else {
-			$comment_name = __( 'Name', 'oceanwp' );
-			$comment_email = __( 'Email', 'oceanwp' );
+			$comment_name = oceanwp_theme_strings( 'owp-string-comment-name', false, 'oceanwp' );
+			$comment_email = oceanwp_theme_strings( 'owp-string-comment-email', false, 'oceanwp' );
 		}
 
-		$fields['author'] 	= '<div class="comment-form-author"><label for="author" class="screen-reader-text">'. esc_html__( 'Enter your name or username to comment', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. esc_attr( $comment_name ) .'" size="22" tabindex="0"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
+		$comment_site = oceanwp_theme_strings( 'owp-string-comment-website', false, 'oceanwp' );
 
-		$fields['email'] 	= '<div class="comment-form-email"><label for="email" class="screen-reader-text">'. esc_html__( 'Enter your email address to comment', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. esc_attr( $comment_email ) .'" size="22" tabindex="0"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
+		$fields['author'] 	= '<div class="comment-form-author"><label for="author" class="screen-reader-text">'. esc_html__( 'Enter your name or username to comment', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="'. esc_attr( $commenter['comment_author'] ) .'" placeholder="'. $comment_name .'" size="22" tabindex="0"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-name" /></div>';
 
-		$fields['url'] 		= '<div class="comment-form-url"><label for="url" class="screen-reader-text">'. esc_html__( 'Enter your website URL (optional)', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. esc_attr__( 'Website', 'oceanwp' ) .'" size="22" tabindex="0" class="input-website" /></div>';
+		$fields['email'] 	= '<div class="comment-form-email"><label for="email" class="screen-reader-text">'. esc_html__( 'Enter your email address to comment', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="'. esc_attr( $commenter['comment_author_email'] ) .'" placeholder="'. $comment_email .'" size="22" tabindex="0"'. ( $req ? ' aria-required="true"' : '' ) .' class="input-email" /></div>';
+
+		$fields['url'] 		= '<div class="comment-form-url"><label for="url" class="screen-reader-text">'. esc_html__( 'Enter your website URL (optional)', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="'. esc_attr( $commenter['comment_author_url'] ) .'" placeholder="'. $comment_site .'" size="22" tabindex="0" class="input-website" /></div>';
 
 		return $fields;
 

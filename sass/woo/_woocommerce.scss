@@ -368,8 +368,11 @@
 						}
 					}
 					&.has-rating li.inner .star-rating {
-						left: auto;
-						right: auto;
+						left: 0;
+						right: 0;
+						margin-left: auto;
+						margin-right: auto;
+						text-align: center;
 					}
 				}
 				li.product-category.product .woo-desc {

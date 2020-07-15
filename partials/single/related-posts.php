@@ -15,12 +15,6 @@ if ( 'post' !== get_post_type() ) {
 	return;
 }
 
-// Text.
-$text = __( 'You Might Also Like', 'oceanwp' );
-
-// Apply filters for child theming.
-$text = apply_filters( 'ocean_related_posts_title', $text );
-
 // Number of columns for entries.
 $oceanwp_columns = apply_filters( 'ocean_related_blog_posts_columns', absint( get_theme_mod( 'ocean_blog_related_columns', '3' ) ) );
 
@@ -82,7 +76,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 	<section id="related-posts" class="<?php echo esc_attr( $classes ); ?>">
 
 		<h3 class="theme-heading related-posts-title">
-			<span class="text"><?php echo esc_html( $text ); ?></span>
+			<span class="text"><?php oceanwp_theme_strings( 'owp-string-single-related-posts', 'oceanwp' ); ?></span>
 		</h3>
 
 		<div class="oceanwp-row clr">

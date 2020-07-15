@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="owp-qv-container">
 		<div class="owp-qv-content-wrap">
 			<div class="owp-qv-content-inner">
-				<a href="#" class="owp-qv-close" aria-label="<?php esc_attr_e( 'Close quick preview', 'oceanwp' ); ?>">×</a>
+				<a href="#" class="owp-qv-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-woo-quick-view-close', 'oceanwp' ); ?>">×</a>
 				<div id="owp-qv-content" class="woocommerce single-product"></div>
 			</div>
 		</div>
