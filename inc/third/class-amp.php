@@ -49,6 +49,7 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 			add_filter( 'oceanwp_attrs_overlay_search_bar', array( $this, 'oceanwp_menu_overlay_search_bar' ) );
 			add_filter( 'oceanwp_attrs_nav_search_bar', array( $this, 'oceanwp_nav_item_search_bar' ) );
 			add_filter( 'oceanwp_attrs_main_nav', array( $this, 'oceanwp_attrs_nav_wrapper' ) );
+			add_filter( 'oceanwp_attrs_vertical_header_style', array( $this, 'oceanwp_attrs_vertical_header_toggle' ) );
 			add_filter( 'ocean_head_css', array( $this, 'oceanwp_amp_css' ) );
 
 			// Woocommerce AMP.
@@ -129,6 +130,7 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 
 			$amp_menu_breakpoint        = get_theme_mod( 'ocean_mobile_menu_breakpoints', '959' );
 			$amp_menu_custom_breakpoint = get_theme_mod( 'ocean_mobile_menu_custom_breakpoint' );
+			$amp_vheader_style_width    = get_theme_mod( 'ocean_vertical_header_width', '300' );
 			if ( ! empty( $amp_menu_breakpoint ) && '959' !== $amp_menu_breakpoint ) {
 
 				if ( 'custom' === $amp_menu_breakpoint && ! empty( $amp_menu_custom_breakpoint ) && '959' !== $amp_menu_custom_breakpoint ) {
@@ -136,9 +138,24 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 				}
 
 				$css .= '@media (min-width: ' . $amp_menu_breakpoint . 'px) {
-					.menu-item-has-children > button.submenu-toggle {
+					#site-header:not(.vertical-header) .menu-item-has-children > button.submenu-toggle {
 						display: none;
 					}
+
+					body.vertical-header-style.default-collapse.left-header #site-header.vertical-header {
+						left: -' . ( $amp_vheader_style_width - 36 ) . 'px;
+					}
+					body.vertical-header-style.default-collapse.left-header.amp-vertical-header #site-header.vertical-header {
+						left: 0;
+					}
+
+					body.vertical-header-style.default-collapse.right-header #site-header.vertical-header {
+						right: -' . ( $amp_vheader_style_width - 36 ) . 'px;
+					}
+					body.vertical-header-style.default-collapse.right-header.amp-vertical-header #site-header.vertical-header {
+						right: 0;
+					}
+
 				}';
 			}
 
@@ -218,6 +235,22 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 		public function oceanwp_fullscreen_menu_close( $input ) {
 			$input .= ' on="tap:AMP.setState( { owpAmpMenuExpanded: ! owpAmpMenuExpanded } ),oceanwp-body.toggleClass(class=clr)" ';
 			$input .= ' [class]="\'close\' + ( owpAmpMenuExpanded ? \' false\' : \'\' )" ';
+
+			return $input;
+		}
+
+
+		/**
+		 * Add AMP attributes to the Vertical header toggle.
+		 *
+		 * @param string $input the data attrs already existing in nav toggle.
+		 * @return string
+		 */
+		public function oceanwp_attrs_vertical_header_toggle( $input ) {
+			$input .= ' on="tap:AMP.setState( { owpAmpVhMenuExpanded: ! owpAmpVhMenuExpanded } ),oceanwp-body.toggleClass(class=amp-vertical-header)" ';
+			$input .= ' [class]="\'hamburger hamburger--spin\' + ( owpAmpVhMenuExpanded ? \' is-active\' : \'\' )" ';
+			$input .= ' aria-expanded="false" ';
+			$input .= ' [aria-expanded]="owpAmpVhMenuExpanded ? \'true\' : \'false\'" ';
 
 			return $input;
 		}

@@ -471,7 +471,7 @@ final class OCEANWP_Theme_Class {
 	 */
 	public static function theme_js() {
 
-		if ( function_exists( 'oceanwp_is_amp' ) ) {
+		if ( oceanwp_is_amp() ) {
 			return;
 		}
 
