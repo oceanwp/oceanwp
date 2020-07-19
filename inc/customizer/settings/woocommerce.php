@@ -1478,7 +1478,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 * Product Elements Positioning
 			 */
 			$wp_customize->add_setting( 'oceanwp_woo_product_elements_positioning', array(
-				'default' 				=> array( 'image', 'category', 'title', 'price-rating', 'description' , 'button' ),
+				'default' 				=> array( 'image', 'category', 'title', 'price-rating', 'woo-rating', 'description', 'button' ),
 				'sanitize_callback' 	=> 'oceanwp_sanitize_multi_choices',
 			) );
 
@@ -1492,7 +1492,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'category'       	=> esc_html__( 'Category', 'oceanwp' ),
 					'title' 			=> esc_html__( 'Title', 'oceanwp' ),
 					'price-rating' 		=> esc_html__( 'Price/Rating', 'oceanwp' ),
-					'description' 		=> esc_html__( 'Description', 'oceanwp' ),
+					'woo-rating'        => esc_html__( 'Star Rating', 'oceanwp' ),
+					'description' 		=> esc_html__( 'List Description', 'oceanwp' ),
 					'button' 			=> esc_html__( 'Add To Cart Button', 'oceanwp' ),
 				),
 				'active_callback' 		=> 'oceanwp_cac_has_woo_default_products_style',
@@ -1556,6 +1557,163 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'right' 	=> esc_html__( 'Right', 'oceanwp' ),
 				),
 			) ) );
+
+			/**
+			 * Shop Conditional Heading
+			 * 
+			 * @since 1.8.7
+			 */
+			$wp_customize->add_setting(
+				'ocean_woocommerce_shop_conditional_heading',
+				array(
+					'sanitize_callback' 	=> 'wp_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Heading_Control(
+					$wp_customize,
+					'ocean_woocommerce_shop_conditional_heading',
+					array(
+						'label'              => esc_html__( 'Shop Conditional', 'oceanwp' ),
+						'section'            => 'ocean_woocommerce_archives',
+						'priority'           => 10,
+					)
+				)
+			);
+
+			/**
+			 * Product Entry Show Logged in/Logged out, show products conditional
+			 * 
+			 * @since 1.8.7
+			 */
+			$wp_customize->add_setting(
+				'ocean_shop_conditional',
+				array(
+					'default'                => false,
+					'sanitize_callback'      => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_shop_conditional',
+					array(
+						'label'               => esc_html__( 'Display price and Add to Cart button only to logged in users', 'oceanwp' ),
+						'type'                => 'checkbox',
+						'section'             => 'ocean_woocommerce_archives',
+						'settings'            => 'ocean_shop_conditional',
+						'priority'            => 10,
+					)
+				)
+			);
+
+			// Display message instead of price for logged out users if conditional enabled.
+			$wp_customize->add_setting(
+				'ocean_shop_cond_msg',
+				array(
+					'transport'               => 'postMessage',
+					'default'                 => 'yes',
+					'sanitize_callback'       => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_shop_cond_msg',
+					array(
+						'label'                => esc_html__( 'Display message to logged out users', 'oceanwp' ),
+						'section'              => 'ocean_woocommerce_archives',
+						'settings'             => 'ocean_shop_cond_msg',
+						'priority'             => 10,
+						'choices'              => array(
+							'yes'       => esc_html__( 'Yes', 'oceanwp' ),
+							'no'        => esc_html__( 'No', 'oceanwp' ),
+						),
+						'active_callback'      => 'oceanwp_cac_has_shop_condition',
+					)
+				)
+			);
+
+			// Display message to logged out users instead of price, if conditional logic enabled.
+			$wp_customize->add_setting(
+				'ocean_shop_msg_text',
+				array(
+					'default'                => esc_html__( 'Log in to view price and purchase', 'oceanwp' ),
+					'transport'              => 'postMessage',
+					'sanitize_callback'      => 'wp_kses_post',
+				)
+			);
+
+			$wp_customize->add_control(
+				'ocean_shop_msg_text',
+				array(
+					'label'                  => esc_html__( 'Conditional replacement message', 'oceanwp' ),
+					'description'            => esc_html__( 'Message to display to logged out users instead of the price and Add to Cart button. The message will be displayed in the position of the Add to Cart button', 'oceanwp' ),
+					'section'                => 'ocean_woocommerce_archives',
+					'priority'               => 10,
+					'type'                   => 'text',
+					'active_callback'        => 'oceanwp_cac_has_shop_condition',
+				)
+			);
+
+			/**
+			 * Product Entry Enable/Disable Image and Product Title links
+			 * 
+			 * @since 1.8.7
+			 */
+			$wp_customize->add_setting(
+				'ocean_shop_woo_disable_links',
+				array(
+					'default'                => false,
+					'sanitize_callback'      => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_shop_woo_disable_links',
+					array(
+						'label'               => esc_html__( 'Disable image and product title links functionality', 'oceanwp' ),
+						'type'                => 'checkbox',
+						'section'             => 'ocean_woocommerce_archives',
+						'settings'            => 'ocean_shop_woo_disable_links',
+						'priority'            => 10,
+					)
+				)
+			);
+
+			// Disable all archive pages links for logged out users only.
+			$wp_customize->add_setting(
+				'ocean_shop_woo_disable_links_cond',
+				array(
+					'transport'               => 'postMessage',
+					'default'                 => 'no',
+					'sanitize_callback'       => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_shop_woo_disable_links_cond',
+					array(
+						'label'                => esc_html__( 'Disable links only for logged out users', 'oceanwp' ),
+						'description'          => esc_html__( 'If selected, image and title product archive links will be functional only for logged in users', 'oceanwp' ),
+						'section'              => 'ocean_woocommerce_archives',
+						'settings'             => 'ocean_shop_woo_disable_links_cond',
+						'priority'             => 10,
+						'choices'              => array(
+							'yes'       => esc_html__( 'Yes', 'oceanwp' ),
+							'no'        => esc_html__( 'No', 'oceanwp' ),
+						),
+						'active_callback'      => 'oceanwp_cac_has_shop_links_disabled',
+					)
+				)
+			);
 
 			/**
 			 * Pagination Heading
@@ -1921,6 +2079,107 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'very-big' 		=> esc_html__( 'Very Big', 'oceanwp' ),
 				),
 			) ) );
+
+			/**
+			 * Single Product Conditional Heading
+			 * 
+			 * @since 1.8.7
+			 */
+			$wp_customize->add_setting(
+				'ocean_woocommerce_single_conditional_heading',
+				array(
+					'sanitize_callback' 	=> 'wp_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Heading_Control(
+					$wp_customize,
+					'ocean_woocommerce_single_conditional_heading',
+					array(
+						'label'              => esc_html__( 'Single Product Conditional', 'oceanwp' ),
+						'section'            => 'ocean_woocommerce_single',
+						'priority'           => 10,
+					)
+				)
+			);
+
+			/**
+			 * Single Product Show Logged in/Logged out, show products conditional
+			 * 
+			 * @since 1.8.7
+			 */
+			$wp_customize->add_setting(
+				'ocean_woo_single_conditional',
+				array(
+					'default'                => false,
+					'sanitize_callback'      => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_woo_single_conditional',
+					array(
+						'label'               => esc_html__( 'Display price and Add to Cart button only to logged in users', 'oceanwp' ),
+						'type'                => 'checkbox',
+						'section'             => 'ocean_woocommerce_single',
+						'settings'            => 'ocean_woo_single_conditional',
+						'priority'            => 10,
+					)
+				)
+			);
+
+			// Display message instead of price and Add to Cart button for logged out users if conditional enabled.
+			$wp_customize->add_setting(
+				'ocean_woo_single_cond_msg',
+				array(
+					'transport'               => 'postMessage',
+					'default'                 => 'yes',
+					'sanitize_callback'       => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_woo_single_cond_msg',
+					array(
+						'label'                => esc_html__( 'Display message to logged out users', 'oceanwp' ),
+						'section'              => 'ocean_woocommerce_single',
+						'settings'             => 'ocean_woo_single_cond_msg',
+						'priority'             => 10,
+						'choices'              => array(
+							'yes'       => esc_html__( 'Yes', 'oceanwp' ),
+							'no'        => esc_html__( 'No', 'oceanwp' ),
+						),
+						'active_callback'      => 'oceanwp_cac_has_single_condition',
+					)
+				)
+			);
+
+			// Message to display instead of price and Add to Cart button, if conditional logic enabled.
+			$wp_customize->add_setting(
+				'ocean_woo_single_cond_msg_text',
+				array(
+					'default'                => esc_html__( 'Log in to view price and purchase', 'oceanwp' ),
+					'transport'              => 'postMessage',
+					'sanitize_callback'      => 'wp_kses_post',
+				)
+			);
+
+			$wp_customize->add_control(
+				'ocean_woo_single_cond_msg_text',
+				array(
+					'label'                  => esc_html__( 'Price replacement message', 'oceanwp' ),
+					'description'            => esc_html__( 'Display message instead of the Add to Cart button to logged out users'),
+					'section'                => 'ocean_woocommerce_single',
+					'priority'               => 10,
+					'type'                   => 'text',
+					'active_callback'        => 'oceanwp_cac_has_single_condition',
+				)
+			);
 
 			/**
 			 * Heading Woo Tabs

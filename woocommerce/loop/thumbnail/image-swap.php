@@ -19,6 +19,13 @@ if ( ! has_post_thumbnail() ) {
 // Globals.
 global $product;
 
+// Get links conditional mod.
+$ocean_woo_disable_links = get_theme_mod( 'ocean_shop_woo_disable_links', false );
+$ocean_woo_disable_links_cond = get_theme_mod( 'ocean_shop_woo_disable_links_cond', 'no' );
+
+$disable_links = '';
+$disable_links = ( true === $ocean_woo_disable_links && 'yes' === $ocean_woo_disable_links_cond );
+
 // Get first image.
 $attachment = $product->get_image_id();
 
@@ -50,7 +57,7 @@ $first_img = array(
 if ( oceanwp_get_schema_markup( 'image' ) ) {
 	$first_img['itemprop'] = 'image';
 }
-
+// Second image args.
 $second_img = array(
 	'class' => 'woo-entry-image-secondary',
 	'alt'   => get_the_title(),
@@ -64,30 +71,61 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 if ( $secondary_img_id ) : ?>
 
 	<div class="woo-entry-image-swap woo-entry-image clr">
-		<?php do_action( 'ocean_before_product_entry_image' ); ?>
-		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
-			<?php
+		<?php
+		do_action( 'ocean_before_product_entry_image' );
+
+		if ( false === $ocean_woo_disable_links
+			|| ( $disable_links && is_user_logged_in() ) ) {
+
+			ocean_woo_img_link_open();
+			
+				// Main Image.
+				echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $first_img );
+
+				// Secondary Image.
+				echo wp_get_attachment_image( $secondary_img_id, 'shop_catalog', '', $second_img );
+					
+			ocean_woo_img_link_close();
+
+		} else {
+				
 			// Main Image.
 			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $first_img );
 
 			// Secondary Image.
-			echo wp_get_attachment_image( $secondary_img_id, 'shop_catalog', '', $second_img );
-			?>
-		</a>
-		<?php do_action( 'ocean_after_product_entry_image' ); ?>
+			echo wp_get_attachment_image( $secondary_img_id, 'shop_catalog', '', $second_img );;
+
+		}
+
+		do_action( 'ocean_after_product_entry_image' );
+		?>
 	</div><!-- .woo-entry-image-swap -->
 
 <?php else : ?>
 
 	<div class="woo-entry-image clr">
-		<?php do_action( 'ocean_before_product_entry_image' ); ?>
-		<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
-			<?php
+		<?php
+		do_action( 'ocean_before_product_entry_image' );
+
+		if ( false === $ocean_woo_disable_links
+			|| ( $disable_links && is_user_logged_in() ) ) {
+
+			ocean_woo_img_link_open();
+			
+				// Single Image.
+				echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $first_img );
+					
+			ocean_woo_img_link_close();
+
+		} else {
+				
 			// Single Image.
 			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $first_img );
-			?>
-		</a>
-		<?php do_action( 'ocean_after_product_entry_image' ); ?>
+
+		}
+
+		do_action( 'ocean_after_product_entry_image' );
+		?>
 	</div><!-- .woo-entry-image -->
 
 <?php endif; ?>

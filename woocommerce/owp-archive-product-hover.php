@@ -11,6 +11,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product, $post;
 
+// Get price and Add to Cart button conditional display state.
+$ocean_woo_cond = get_theme_mod( 'ocean_shop_conditional', false );
+
+// Conditional vars.
+$show_woo_cond = '';
+$show_woo_cond = ( is_user_logged_in() && true === $ocean_woo_cond );
+$hide_woo_cond = ( ! is_user_logged_in() && true === $ocean_woo_cond );
+
+// Get links conditional mod.
+$ocean_woo_disable_links = get_theme_mod( 'ocean_shop_woo_disable_links', false );
+$ocean_woo_disable_links_cond = get_theme_mod( 'ocean_shop_woo_disable_links_cond', 'no' );
+
+$disable_links = '';
+$disable_links = ( true === $ocean_woo_disable_links && 'yes' === $ocean_woo_disable_links_cond );
+
 do_action( 'ocean_before_archive_product_item' );
 
 echo '<ul class="woo-entry-inner clr">';
@@ -19,21 +34,26 @@ echo '<li class="image-wrap">';
 
 do_action( 'ocean_before_archive_product_image' );
 
+// Add Out of Stock badge.
 if ( class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 	OceanWP_WooCommerce_Config::add_out_of_stock_badge();
 }
 
 woocommerce_show_product_loop_sale_flash();
 
+// Display product featured image.
 if ( function_exists( 'wc_get_template' ) ) {
 	wc_get_template( 'loop/thumbnail/featured-image.php' );
 }
 
-do_action( 'ocean_before_archive_product_add_to_cart_inner' );
-woocommerce_template_loop_add_to_cart();
-do_action( 'ocean_after_archive_product_add_to_cart_inner' );
+// Add to cart.
+if ( false === $ocean_woo_cond || $show_woo_cond ) {
+	do_action( 'ocean_before_archive_product_add_to_cart_inner' );
+	woocommerce_template_loop_add_to_cart();
+	do_action( 'ocean_after_archive_product_add_to_cart_inner' );
+}
 
-
+// Wishlist button.
 if ( get_theme_mod( 'ocean_woo_quick_view', true )
 	|| class_exists( 'TInvWL_Wishlist' ) ) {
 	echo '<ul class="woo-entry-buttons">';
@@ -55,38 +75,75 @@ echo '</li>';
 
 echo '<ul class="woo-product-info">';
 
+// Display product categories.
 do_action( 'ocean_before_archive_product_categories' );
 echo wp_kses_post( wc_get_product_category_list( $product->get_id(), ', ', '<li class="category">', '</li>' ) );
 do_action( 'ocean_after_archive_product_categories' );
 
+// Display product title.
 do_action( 'ocean_before_archive_product_title' );
 
 echo '<li class="title">';
+
 	do_action( 'ocean_before_archive_product_title_inner' );
-	echo '<a href="' . esc_url( get_the_permalink() ) . '">' . esc_html( get_the_title() ) . '</a>';
+
+	if ( false === $ocean_woo_disable_links
+		|| ( $disable_links && is_user_logged_in() ) ) {
+
+		echo '<a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a>';
+
+	} else {
+		
+		the_title();
+
+	}
+	
 	do_action( 'ocean_after_archive_product_title_inner' );
+
 echo '</li>';
 
 do_action( 'ocean_after_archive_product_title' );
 
+// Display price.
 do_action( 'ocean_before_archive_product_inner' );
 
-echo '<li class="price-wrap">';
-	do_action( 'ocean_before_archive_product_price' );
-	woocommerce_template_loop_price();
-	do_action( 'ocean_after_archive_product_price' );
-echo '</li>';
+if ( false === $ocean_woo_cond || $show_woo_cond ) {
 
-if ( $product->get_rating_count() ) {
-	echo '<li class="rating">';
-		do_action( 'ocean_before_archive_product_rating' );
-		woocommerce_template_loop_rating();
-		do_action( 'ocean_after_archive_product_rating' );
+	echo '<li class="price-wrap">';
+	
+		do_action( 'ocean_before_archive_product_price' );
+		woocommerce_template_loop_price();
+		do_action( 'ocean_after_archive_product_price' );
+
 	echo '</li>';
+
+} else {
+
+	$ocean_woo_cond_msg = get_theme_mod( 'ocean_shop_cond_msg', 'yes' );
+		
+	if ( $ocean_woo_cond_msg === 'yes' ) {
+
+		// Get Add to Cart button replacement message.
+		$woo_cond_message = get_theme_mod( 'ocean_shop_msg_text' );
+		$woo_cond_message = $woo_cond_message ? $woo_cond_message : esc_html__( 'Log in to view price and purchase', 'oceanwp' );
+
+		echo '<li class="owp-woo-cond-notice">';
+			echo '<span>'. $woo_cond_message .'</span>';
+		echo '</li>';
+		
+	}
 }
 
 do_action( 'ocean_after_archive_product_inner' );
 
+// Display rating.
+echo '<li class="rating">';
+	do_action( 'ocean_before_archive_product_rating' );
+	woocommerce_template_loop_rating();
+	do_action( 'ocean_after_archive_product_rating' );
+echo '</li>';
+
+// Display product description for product archive List view.
 do_action( 'ocean_before_archive_product_description' );
 
 if ( ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() )

@@ -19,6 +19,13 @@ if ( ! has_post_thumbnail() ) {
 // Get global product data.
 global $product;
 
+// Get links conditional mod.
+$ocean_woo_disable_links = get_theme_mod( 'ocean_shop_woo_disable_links', false );
+$ocean_woo_disable_links_cond = get_theme_mod( 'ocean_shop_woo_disable_links_cond', 'no' );
+
+$disable_links = '';
+$disable_links = ( true === $ocean_woo_disable_links && 'yes' === $ocean_woo_disable_links_cond );
+
 // Get featured image.
 $thumbnail_id = $product->get_image_id();
 
@@ -59,11 +66,22 @@ if ( $attachment_ids ) : ?>
 				?>
 
 				<div class="oceanwp-slider-slide">
-					<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
-						<?php
+					<?php
+					if ( false === $ocean_woo_disable_links
+						|| ( $disable_links && is_user_logged_in() ) ) {
+		
+						ocean_woo_img_link_open();
+					
+							echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', $img_args );
+							
+						ocean_woo_img_link_close();
+		
+					} else {
+							
 						echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', $img_args );
-						?>
-					</a>
+			
+					}
+					?>
 				</div>
 
 				<?php
@@ -82,11 +100,22 @@ if ( $attachment_ids ) : ?>
 						?>
 
 						<div class="oceanwp-slider-slide">
-							<a href="<?php the_permalink(); ?>" class="woocommerce-LoopProduct-link">
-								<?php
+						<?php
+						if ( false === $ocean_woo_disable_links
+							|| ( $disable_links && is_user_logged_in() ) ) {
+			
+							ocean_woo_img_link_open();
+						
 								echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', $img_args );
-								?>
-							</a>
+								
+							ocean_woo_img_link_close();
+			
+						} else {
+								
+							echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', $img_args );
+				
+						}
+						?>
 						</div>
 
 						<?php

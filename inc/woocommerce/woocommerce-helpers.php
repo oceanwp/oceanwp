@@ -149,7 +149,7 @@ if ( ! function_exists( 'oceanwp_woo_product_elements_positioning' ) ) {
 	function oceanwp_woo_product_elements_positioning() {
 
 		// Default sections
-		$sections = array( 'image', 'category', 'title', 'price-rating', 'description' , 'button' );
+		$sections = array( 'image', 'category', 'title', 'price-rating', 'woo-rating', 'description', 'button' );
 
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'oceanwp_woo_product_elements_positioning', $sections );
@@ -237,5 +237,52 @@ function get_term_tax_attr() {
 				$taxonomy_terms[$tax->attribute_name] = get_terms( wc_attribute_taxonomy_name($tax->attribute_name), 'orderby=name&hide_empty=0' );
 			}
 		}
+	}
+}
+
+/**
+ * WooCommerce product image gallery open and close tags
+ * 
+ * @since 1.8.7
+ */
+if ( ! function_exists( 'ocean_woo_img_link_open' ) ) {
+	function ocean_woo_img_link_open() {
+
+		global $product;
+
+		$woo_img_link = get_the_permalink( $product->get_id() );
+
+		echo '<a href="' . esc_url( $woo_img_link ) . '" class="woocommerce-LoopProduct-link">';
+		
+	}
+}
+
+if ( ! function_exists( 'ocean_woo_img_link_close' ) ) {
+	function ocean_woo_img_link_close() {
+		echo '</a>';
+	}
+}
+
+/**
+ * WooCommerce Grid List Product Archive Excerpt
+ * 
+ * @since 1.8.7
+ */
+if ( ! function_exists( 'ocean_woo_grid_view_excerpt' ) ) {
+	function ocean_woo_grid_view_excerpt() {
+
+		global $product;
+
+		$exc_length = get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
+
+		$woo_excerpt = $product->get_description();
+
+		if ( ! $exc_length ) {
+			$woo_excerpt = wp_kses_post( strip_shortcodes( $woo_excerpt ) );
+		} else {
+			$woo_excerpt = wp_trim_words( strip_shortcodes( $woo_excerpt ), $exc_length ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		} 
+
+		echo $woo_excerpt;
 	}
 }

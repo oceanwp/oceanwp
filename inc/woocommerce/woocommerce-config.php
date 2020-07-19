@@ -1273,6 +1273,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Get product object.
 			$product = wc_get_product( get_the_ID() );
 
+			// Floating bar conditional
+			$fb_woo_cond = get_theme_mod( 'ocean_single_conditional', false );
+
+			// Floating Bar conditional vars.
+			$fb_show_cond = '';
+			$fb_show_cond = ( is_user_logged_in() && $fb_woo_cond === true );
+
 			?>
 
 			<div class="owp-floating-bar">
@@ -1281,24 +1288,51 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				        <p class="selected"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-selected', 'oceanwp' ); ?></p>
 				        <h2 class="entry-title" itemprop="name"><?php echo $product->get_title(); ?></h2>
 				    </div>
-					<div class="right">
-				        <div class="product_price">
-				        	<p class="price"><?php echo $product->get_price_html(); ?></p>
-		                </div>
+					<?php
+					if ( false === $fb_woo_cond || $fb_show_cond ) {
+						?>
+						<div class="right">
+							<div class="product_price">
+								<p class="price"><?php echo $product->get_price_html(); ?></p>
+							</div>
+					<?php } ?>
 		                <?php
 		                // If out of stock.
 		                if ( 'outofstock' == $product->get_stock_status() ) { ?>
 		                	<p class="stock out-of-stock"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-out-stock', 'oceanwp' ); ?></p>
 		            	<?php
-		            	} else if ( $product && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually() ) {
-		                	echo self::floating_bar_add_to_cart( $product );
-		            	} else { ?>
-		                	<button type="submit" class="button top"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-select-btn', 'oceanwp' ); ?></button>
-		                <?php
-		            	} ?>
-				    </div>
-		        </div>
-		    </div>
+						} else if ( false === $fb_woo_cond || $fb_show_cond ) {
+						
+							if ( $product && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually() ) {
+								echo self::floating_bar_add_to_cart( $product );
+							} else { ?>
+								<button type="submit" class="button top"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-select-btn', 'oceanwp' ); ?></button>
+							<?php
+							} 
+
+						} else {
+
+							// Get price message display state.
+							$fb_woo_cond_msg = get_theme_mod( 'ocean_woo_single_cond_msg', 'yes' );
+
+							if ( 'yes' === $fb_woo_cond_msg ) {
+
+								// Get Add to Cart button replacement message.
+								$fb_woo_msg_txt = get_theme_mod( 'ocean_woo_single_cond_msg_text' );
+								$fb_woo_msg_txt = $fb_woo_msg_txt ? $fb_woo_msg_txt : esc_html__( 'Log in to view price and purchase', 'oceanwp' );
+							?>
+							<div class="right">
+								<p class="selected"><?php echo $fb_woo_msg_txt; ?></p>
+							</div>
+						<?php
+							}
+						}
+					if ( false === $fb_woo_cond || $fb_show_cond ) {
+						?>
+					</div>
+					<?php } ?>
+				</div>
+			</div>
 
 		<?php
 		}

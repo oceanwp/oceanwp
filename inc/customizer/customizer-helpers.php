@@ -668,6 +668,30 @@ function oceanwp_cac_has_woo_multistep_checkout() {
 	}
 }
 
+function oceanwp_cac_has_shop_condition() {
+	if ( true === get_theme_mod( 'ocean_shop_conditional', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_single_condition() {
+	if ( true === get_theme_mod( 'ocean_woo_single_conditional', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_shop_links_disabled() {
+	if ( true === get_theme_mod( 'ocean_shop_woo_disable_links', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 /*-------------------------------------------------------------------------------*/
 /* [ Easy Digital Downloads ]
 /*-------------------------------------------------------------------------------*/
