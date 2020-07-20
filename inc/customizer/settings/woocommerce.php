@@ -1659,6 +1659,30 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				)
 			);
 
+			// Insert link to My Account page if conditional message displayed
+			$wp_customize->add_setting(
+				'ocean_shop_add_myaccount_link',
+				array(
+					'default'                => false,
+					'sanitize_callback'      => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_shop_add_myaccount_link',
+					array(
+						'label'               => esc_html__( 'Include My Account page link in conditional message', 'oceanwp' ),
+						'type'                => 'checkbox',
+						'section'             => 'ocean_woocommerce_archives',
+						'settings'            => 'ocean_shop_add_myaccount_link',
+						'priority'            => 10,
+						'active_callback'     => 'oceanwp_cac_has_shop_condition',
+					)
+				)
+			);
+
 			/**
 			 * Product Entry Enable/Disable Image and Product Title links
 			 * 
@@ -2178,6 +2202,30 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'priority'               => 10,
 					'type'                   => 'text',
 					'active_callback'        => 'oceanwp_cac_has_single_condition',
+				)
+			);
+
+			// Insert link to My Account page if conditional message displayed
+			$wp_customize->add_setting(
+				'ocean_single_add_myaccount_link',
+				array(
+					'default'                => false,
+					'sanitize_callback'      => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_single_add_myaccount_link',
+					array(
+						'label'               => esc_html__( 'Include My Account page link in conditional message', 'oceanwp' ),
+						'type'                => 'checkbox',
+						'section'             => 'ocean_woocommerce_single',
+						'settings'            => 'ocean_single_add_myaccount_link',
+						'priority'            => 10,
+						'active_callback'     => 'oceanwp_cac_has_single_condition',
+					)
 				)
 			);
 

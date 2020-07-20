@@ -127,8 +127,14 @@ if ( false === $ocean_woo_cond || $show_woo_cond ) {
 		$woo_cond_message = get_theme_mod( 'ocean_shop_msg_text' );
 		$woo_cond_message = $woo_cond_message ? $woo_cond_message : esc_html__( 'Log in to view price and purchase', 'oceanwp' );
 
+		$woo_add_myaccunt_link = get_theme_mod( 'ocean_shop_add_myaccount_link', false );
+
 		echo '<li class="owp-woo-cond-notice">';
+		if ( false === $woo_add_myaccunt_link ) {
 			echo '<span>'. $woo_cond_message .'</span>';
+		} else {
+			echo '<a href="' . esc_url( get_permalink( wc_get_page_id( 'myaccount' ) ) ) . '">' . $woo_cond_message . '</a>';
+		}	
 		echo '</li>';
 		
 	}

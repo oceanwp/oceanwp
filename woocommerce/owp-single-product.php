@@ -78,8 +78,14 @@ foreach ( $elements as $element ) {
 				$ocean_woo_single_msg_txt = get_theme_mod( 'ocean_woo_single_cond_msg_text' );
 				$ocean_woo_single_msg_txt = $ocean_woo_single_msg_txt ? $ocean_woo_single_msg_txt : esc_html__( 'Log in to view price and purchase', 'oceanwp' );
 
+				$woo_single_myaccunt_link = get_theme_mod( 'ocean_single_add_myaccount_link', false );
+
 				echo '<div class="owp-woo-single-cond-notice">';
-					echo '<span">'. $ocean_woo_single_msg_txt .'</span>';
+				if ( false === $woo_single_myaccunt_link ) {
+					echo '<span>'. $ocean_woo_single_msg_txt .'</span>';
+				} else {
+					echo '<a href="' . esc_url( get_permalink( wc_get_page_id( 'myaccount' ) ) ) . '">' . $ocean_woo_single_msg_txt . '</a>';
+				}	
 				echo '</div>';
 
 			}
