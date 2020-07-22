@@ -1220,13 +1220,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$next_post = get_next_post( true, '', 'product_cat' );
 			$prev_post = get_previous_post( true, '', 'product_cat' );
 
-			// Next text
-			$next_text = esc_html__( 'Previous Product', 'oceanwp' );
-			$next_text = apply_filters( 'ocean_woo_nav_next_text', $next_text );
-
-			// Prev text
-			$prev_text = esc_html__( 'Next Product', 'oceanwp' );
-			$prev_text = apply_filters( 'ocean_woo_nav_prev_text', $prev_text ); ?>
+			?>
 
 			<div class="owp-product-nav-wrap clr">
 				<ul class="owp-product-nav">
@@ -1234,7 +1228,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			        if ( is_a( $next_post , 'WP_Post' ) ) { ?>
 						<li class="next-li">
 							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php echo esc_html( $next_text ); ?></a>
+							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product', 'oceanwp' ); ?></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 							</div>
@@ -1244,7 +1238,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 					if ( is_a( $prev_post , 'WP_Post' ) ) { ?>
 						<li class="prev-li">
-							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php echo esc_html( $prev_text ); ?></a>
+							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', 'oceanwp' ); ?></a>
 							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>

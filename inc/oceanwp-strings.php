@@ -58,6 +58,8 @@ if ( ! function_exists( 'oceanwp_theme_strings' ) ) {
 				'owp-string-woo-floating-bar-select-btn' => apply_filters( 'ocean_woo_floating_bar_select_btn', __( 'Select Options', 'oceanwp' ) ),
 				'owp-string-woo-floating-bar-selected'   => apply_filters( 'ocean_woo_floating_bar_selected', __( 'Selected:', 'oceanwp' ) ),
 				'owp-string-woo-floating-bar-out-stock'  => apply_filters( 'ocean_woo_floating_bar_out_stock', __( 'Out of stock', 'oceanwp' ) ),
+				'owp-string-woo-nav-next-product'        => apply_filters( 'ocean_woo_nav_next_text', __( 'Next Product', 'oceanwp' ) ),
+				'owp-string-woo-nav-prev-product'        => apply_filters( 'ocean_woo_nav_prev_text', __( 'Previous Product', 'oceanwp' ) ),
 
 			)
 		);

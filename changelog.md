@@ -11,6 +11,7 @@
 * **Added** - WooCommerce: Single product show/hode price and Add to Cart button message display (optional).
 * **Added** - WooCommerce: Single product - option to include 'My Account' link into the conditional message.
 * **Tweak** - WooCommerce: Product archive rating separated from price as an individual element.
+* **Fixed** - Mixed up translation filters for WooCommerce Next & Previous Product navigation.
 
 ### *2020.07.09* - 1.8.6:
 * **Fixed** - WooCommerce product gallery slider style image issue.
