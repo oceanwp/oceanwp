@@ -4774,10 +4774,10 @@ Woo Product Navigation
     display: block;
   }
   .owp-product-nav li.next-li {
-    float: left;
+    float: right;
   }
   .owp-product-nav li.prev-li {
-    float: right;
+    float: left;
   }
   .owp-product-nav li {
     position: relative;

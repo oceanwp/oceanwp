@@ -1225,27 +1225,34 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			<div class="owp-product-nav-wrap clr">
 				<ul class="owp-product-nav">
 			        <?php
-			        if ( is_a( $next_post , 'WP_Post' ) ) { ?>
-						<li class="next-li">
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product', 'oceanwp' ); ?></a>
-							<div class="owp-nav-thumb">
-								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
-							</div>
-						</li>
-					<?php
-					}
+					if ( is_a( $prev_post , 'WP_Post' ) ) {
+						?>
 
-					if ( is_a( $prev_post , 'WP_Post' ) ) { ?>
 						<li class="prev-li">
+						<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
 							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', 'oceanwp' ); ?></a>
-							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 							</div>
 						</li>
+
 					<?php
-					} ?>
+					} 
+
+			        if ( is_a( $next_post , 'WP_Post' ) ) {
+						?>
+
+						<li class="next-li">
+							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product', 'oceanwp' ); ?></a>
+							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<div class="owp-nav-thumb">
+								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
+							</div>
+						</li>
+						
+					<?php
+					}
+					?>	
 		        </ul>
 		    </div>
 
