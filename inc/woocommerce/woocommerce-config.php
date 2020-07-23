@@ -1249,7 +1249,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 							</div>
 						</li>
-						
+
 					<?php
 					}
 					?>	
@@ -1287,7 +1287,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				<div class="container clr">
 					<div class="left">
 				        <p class="selected"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-selected', 'oceanwp' ); ?></p>
-				        <h2 class="entry-title" itemprop="name"><?php echo $product->get_title(); ?></h2>
+				        <h2 class="entry-title" itemprop="name"><?php echo wp_trim_words( $product->get_title(), '4' ); ?></h2>
 				    </div>
 					<?php
 					if ( false === $fb_woo_cond || $fb_show_cond ) {

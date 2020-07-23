@@ -158,12 +158,12 @@ Woo Floating Bar
   .owp-floating-bar .container {
     height: 45px;
   }
-  .owp-floating-bar .left {
-    display: none;
+  .owp-floating-bar .left,
+  .owp-floating-bar .right {
+    width: 50%;
   }
   .owp-floating-bar .right {
-    width: 100%;
-    text-align: center;
+    text-align: right;
   }
   .owp-floating-bar form.cart {
     vertical-align: bottom;
@@ -180,14 +180,27 @@ Woo Floating Bar
   }
 }
 
+@media screen and (max-width: 848px) {
+  .owp-floating-bar .left {
+    display: none;
+  }
+  .owp-floating-bar .right {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .owp-floating-bar .product_price {
     display: none;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 339px) {
   .owp-floating-bar {
     display: none;
+  }
+  body {
+    margin-bottom: 0px;
   }
 }

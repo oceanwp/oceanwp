@@ -13,6 +13,10 @@
 * **Tweak** - WooCommerce: Product archive rating separated from price as an individual element.
 * **Fixed** - WooCommerce: Mixed up translation filters for Next/Prev product navigation.
 * **Fixed** - WooCommerce: Incorrect single product Next/Prev nav - next nav displaying previous product & vice versa.
+* **Fixed** - WooCommerce: Floating Bar - blank space below footer on 320px width and lower.
+* **Fixed** - WooCommerce: Floating Bar - responsiveness issues on width 767px - 848px.
+* **Added** - WooCommerce: Floating Bar - display product name on iPad Pro.
+* **Added** - WooCommerce: Floating Bar - limit product title to 4 words to avoid responsiveness issues.
 
 ### *2020.07.09* - 1.8.6:
 * **Fixed** - WooCommerce product gallery slider style image issue.
