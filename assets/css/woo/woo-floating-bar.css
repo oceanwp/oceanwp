@@ -180,7 +180,7 @@ Woo Floating Bar
   }
 }
 
-@media screen and (max-width: 848px) {
+@media screen and (max-width: 1191px) {
   .owp-floating-bar .left {
     display: none;
   }
@@ -190,13 +190,21 @@ Woo Floating Bar
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 700px) {
   .owp-floating-bar .product_price {
     display: none;
   }
 }
 
 @media screen and (max-width: 339px) {
+  .owp-floating-bar .quantity .qty,
+  .owp-floating-bar .quantity .minus,
+  .owp-floating-bar .quantity .plus {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 300px) {
   .owp-floating-bar {
     display: none;
   }
