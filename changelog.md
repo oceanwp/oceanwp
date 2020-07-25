@@ -16,7 +16,10 @@
 * **Fixed** - WooCommerce: Floating Bar - blank space below footer on 320px width and lower.
 * **Fixed** - WooCommerce: Floating Bar - responsiveness issues.
 * **Added** - WooCommerce: Floating Bar - limit product title to 4 words to avoid responsiveness issues.
-* **Added** - WooCommerce: Floating Bar - display add to cart button on 320px width.
+* **Added** - WooCommerce: Floating Bar - display 'Add to Cart' button on 320px width.
+* **Added** - WooCommerce: Improved 'Sales!' badge responsiveness.
+* **Fixed** - WooCommerce: Single product missing 'has-product-nav' class when navigation enabled.
+* **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
 
 ### *2020.07.09* - 1.8.6:
 * **Fixed** - WooCommerce product gallery slider style image issue.

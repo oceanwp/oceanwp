@@ -1624,6 +1624,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					$classes[] = 'has-no-thumbnails';
 				}
 
+				if ( true == get_theme_mod( 'ocean_woocommerce_display_navigation', true ) ) {
+					$classes[] = 'has-product-nav';
+				}
+
 			}
 
 			// Sale badge style

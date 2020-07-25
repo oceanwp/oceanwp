@@ -2,20 +2,22 @@
 	float: left;
 
 	.blog-entry-inner {
-		padding: 0 20px 20px;
+		padding: 0 1.25rem 1.25rem;
 		border: 1px solid $color-7;
 	}
 
 	.thumbnail {
-		margin: 0 -20px;
+		margin: 0 -1.25rem;
 	}
 
 	ul.meta {
-	    margin: 0;
+		margin: 0.3rem 0;
+		display: inline-block;
+		vertical-align: middle;
 	}
 
 	.blog-entry-header {
-		margin: 20px 0 12px;
+		margin: 1rem 0 1rem;
 
 		.entry-title {
 			font-size: 18px;
@@ -24,22 +26,22 @@
 
 	.blog-entry-summary {
 		line-height: 1.6;
-		margin: 10px 0 0;
+		margin-top: 0.625rem;
 	}
 
 	.blog-entry-readmore {
-		margin-top: 16px;
+		margin-top: 1rem;
 
 		a {
 			display: inline-block;
 		    font-size: 12px;
 		    line-height: 1.2;
-		    padding-bottom: 3px;
+		    padding-bottom: 0.19rem;
 		    border-bottom: 1px solid;
 		    text-transform: capitalize;
 
 		    i {
-		    	margin-left: 5px;
+		    	margin-left: 0.5rem;
 		    }
 		}
 	}

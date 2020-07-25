@@ -3569,10 +3569,13 @@ del .amount {
   left: auto;
 }
 
+/**
+ * WooCommerce Sales Badge
+ */
 .woocommerce span.onsale {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 1.25rem;
+  left: 1.25rem;
   background-color: rgba(63, 195, 135, 0.8);
   color: #fff;
   padding: 8px 12px;
@@ -3596,15 +3599,36 @@ del .amount {
   border-radius: 50%;
 }
 
+.woocommerce .owp-thumbs-layout-vertical span.onsale {
+  left: 15% !important;
+}
+
+/* Sales Badge Responsive */
 @media only screen and (max-width: 1080px) {
   .woocommerce .has-product-nav span.onsale {
-    top: 44px;
+    top: 3.5rem;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .woocommerce .has-product-nav span.onsale {
-    top: 54px;
+    top: 7rem !important;
+  }
+  .woocommerce span.onsale {
+    left: 15%;
+    top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .woocommerce span.onsale {
+    left: 10% !important;
+  }
+}
+
+@media only screen and (max-width: 240px) {
+  .woocommerce .has-product-nav span.onsale {
+    top: 8rem !important;
   }
 }
 

@@ -280,17 +280,17 @@ body.separate-blog.separate-layout {
 
 	.oceanwp-row {
 		margin: 0;
-		margin-right: -20px;
+		margin-right: -1.25rem;
 	}
 
 	#blog-entries.blog-grid > {
 	    * {
 		    background-color: transparent;
-    		padding: 0 20px 0 0;
+    		padding: 0 1.25rem 0 0;
 		}
 
 		:last-child {
-			margin-bottom: 20px;
+			margin-bottom: 1.25rem;
 		}
 	}
 
@@ -301,7 +301,7 @@ body.separate-blog.separate-layout {
 	.blog-entry.grid-entry {
 		.blog-entry-inner {
 			background-color: #fff;
-		    padding: 30px;
+		    padding: 1.875rem;
 		    border: 0;
 	    }
 
