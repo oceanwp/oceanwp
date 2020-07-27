@@ -1742,7 +1742,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 				$items .= '</form>';
 			} else {
 				$items .= '<a href="#" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
-					$items .= '<span class="icon-magnifier" aria-hidden="true"></span>';
+					$items .= '<span class="fas fa-search" aria-hidden="true"></span>';
 				$items .= '</a>';
 			}
 		$items .= '</li>';
@@ -1789,7 +1789,7 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 		// Add search item to menu
 		echo '<div id="search-toggle">';
 			echo '<a href="#" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
-				echo '<span class="icon-magnifier" aria-hidden="true"></span>';
+				echo '<span class="fas fa-search" aria-hidden="true"></span>';
 			echo '</a>';
 		echo '</div>';
 
@@ -4040,8 +4040,8 @@ if ( ! function_exists( 'oceanwp_get_cart_icons' ) ) {
 	function oceanwp_get_cart_icons( $default = 'icon-handbag' ) {
 
 		// Returns icons
-		$return_icons = array('icon-basket','icon-handbag','fa fa-shopping-basket','fa fa-shopping-bag','fa fa-shopping-cart');
-		$return_icons = array_combine($return_icons, $return_icons);
+		$return_icons = array( 'icon-basket', 'icon-handbag', 'fas fa-shopping-basket', 'fas fa-shopping-bag', 'fas fa-shopping-cart' );
+		$return_icons = array_combine( $return_icons, $return_icons );
 		
 		return apply_filters( 'ocean_get_cart_icons', array_merge( $return_icons ) );
 		

@@ -3679,7 +3679,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 * Close Menu Button Icon Class
 			 */
 			$wp_customize->add_setting( 'ocean_mobile_menu_close_btn_icon', array(
-				'default'           	=> 'icon-close',
+				'default'           	=> 'fas fa-times',
 				'transport'           	=> 'postMessage',
 				'sanitize_callback' 	=> 'wp_filter_nohtml_kses',
 			) );

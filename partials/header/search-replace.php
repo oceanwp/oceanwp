@@ -28,5 +28,5 @@ $oaria_close = __( 'Close search form', 'oceanwp' );
 		<?php } ?>
 		<?php do_action( 'wpml_add_language_form_field' ); ?>
 	</form>
-	<span id="searchform-header-replace-close" class="icon-close" aria-label="<?php echo esc_attr( $oaria_close ); ?>"></span>
+	<span id="searchform-header-replace-close" class="fas fa-times-circle" aria-label="<?php echo esc_attr( $oaria_close ); ?>"></span>
 </div><!-- #searchform-header-replace -->

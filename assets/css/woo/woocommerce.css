@@ -4199,7 +4199,7 @@ form.checkout > .blockUI {
   font-weight: bold;
 }
 
-.woocommerce .widget_product_categories li.current-cat > a:bofore {
+.woocommerce .widget_product_categories li.current-cat > a:before {
   background-color: #13aff0;
   border-color: #13aff0;
 }

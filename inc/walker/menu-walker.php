@@ -322,7 +322,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 										$output .= '<span class="overlay"></span>';
 									$output .= '</a>';
 
-									$output .= '<h3 class="mega-post-title"><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3><div class="mega-post-date"><i class="icon-clock"></i>'. get_the_date() .'</div>';
+									$output .= '<h3 class="mega-post-title"><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3><div class="mega-post-date"><i class="far fa-calendar-alt"></i>'. get_the_date() .'</div>';
 
 								}
 

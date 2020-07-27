@@ -23,7 +23,7 @@ if ( ! OCEAN_EXTRA_ACTIVE ) {
 
 		<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'ocean_quote_format', true ) ); ?>
 
-		<span class="post-quote-icon icon-speech"></span>
+		<span class="post-quote-icon fas fa-quote-right"></span>
 
 	</div>
 

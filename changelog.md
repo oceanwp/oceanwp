@@ -8,7 +8,7 @@
 * **Added** - WooCommerce: Product archive disable/enable image and title links option.
 * **Added** - WooCommerce: Product archive disable/enable image and title links conditional logic.
 * **Added** - WooCommerce: Single product show/hide price and Add to Cart button option.
-* **Added** - WooCommerce: Single product show/hode price and Add to Cart button message display (optional).
+* **Added** - WooCommerce: Single product show/hide price and Add to Cart button message display (optional).
 * **Added** - WooCommerce: Single product - option to include 'My Account' link into the conditional message.
 * **Tweak** - WooCommerce: Product archive rating separated from price as an individual element.
 * **Fixed** - WooCommerce: Mixed up translation filters for Next/Prev product navigation.
@@ -20,6 +20,8 @@
 * **Added** - WooCommerce: Improved 'Sales!' badge responsiveness.
 * **Fixed** - WooCommerce: Single product missing 'has-product-nav' class when navigation enabled.
 * **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
+* **Tweak** - Blog: Post entries & single post meta data styling.
+* **Updated** - Speed Optimization: Simple Line Icons replaced with Font Awesome 5.
 
 ### *2020.07.09* - 1.8.6:
 * **Fixed** - WooCommerce product gallery slider style image issue.

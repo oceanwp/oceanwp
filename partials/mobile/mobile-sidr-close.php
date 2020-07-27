@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Get icon.
-$icon = get_theme_mod( 'ocean_mobile_menu_close_btn_icon', 'icon-close' );
+$icon = get_theme_mod( 'ocean_mobile_menu_close_btn_icon', 'fas fa-times' );
 $icon = apply_filters( 'ocean_mobile_menu_close_btn_icon', $icon );
 
 // Text.

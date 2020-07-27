@@ -231,14 +231,10 @@ Woo Floating Bar
 	}
 }
 
+
 @media screen and (max-width: 339px) {
-	.owp-floating-bar {
-		
-		.quantity .qty,
-		.quantity .minus,
-		.quantity .plus {
-			display: none;
-		}
+	[class*="owp-floating-bar"] [class*="quantity"] {
+		display: none;
 	}
 }
 

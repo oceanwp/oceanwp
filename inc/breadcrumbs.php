@@ -513,7 +513,7 @@ class OceanWP_Breadcrumb_Trail {
 		$icon = '';
 		if ( is_customize_preview()
 			|| 'icon' == $setting ) {
-			$icon = '<span class="icon-home'. $icon_class .'"></span>';
+			$icon = '<span class="fas fa-home'. $icon_class .'"></span>';
 		}
 
 		// Text
@@ -548,7 +548,7 @@ class OceanWP_Breadcrumb_Trail {
 		$icon = '';
 		if ( is_customize_preview()
 			|| 'icon' == $setting ) {
-			$icon = '<span class="icon-home'. $icon_class .'"></span>';
+			$icon = '<span class="fas fa-home'. $icon_class .'"></span>';
 		}
 
 		// Text

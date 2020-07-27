@@ -28,7 +28,7 @@ $classes = oceanwp_post_entry_classes(); ?>
 		<?php } ?>
 				<div class="post-quote-content">
 					<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'ocean_quote_format', true ) ); ?>
-					<span class="post-quote-icon icon-speech"></span>
+					<span class="post-quote-icon far fa-comment-dots"></span>
 				</div>
 				<div class="post-quote-author"><?php the_title(); ?></div>
 		<?php if ( 'post' === $link ) { ?>

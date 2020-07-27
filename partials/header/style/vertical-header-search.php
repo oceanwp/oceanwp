@@ -26,7 +26,7 @@ $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
 			<?php
 		}
 		?>
-		<button class="search-submit"><i class="icon-magnifier"></i></button>
+		<button class="search-submit"><i class="fas fa-search"></i></button>
 		<div class="search-bg"></div>
 		<?php if ( 'any' !== $post_type ) { ?>
 			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
