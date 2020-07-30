@@ -131,11 +131,12 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 			$amp_menu_breakpoint        = get_theme_mod( 'ocean_mobile_menu_breakpoints', '959' );
 			$amp_menu_custom_breakpoint = get_theme_mod( 'ocean_mobile_menu_custom_breakpoint' );
 			$amp_vheader_style_width    = get_theme_mod( 'ocean_vertical_header_width', '300' );
-			if ( ! empty( $amp_menu_breakpoint ) && '959' !== $amp_menu_breakpoint ) {
 
-				if ( 'custom' === $amp_menu_breakpoint && ! empty( $amp_menu_custom_breakpoint ) && '959' !== $amp_menu_custom_breakpoint ) {
-					$amp_menu_breakpoint = $amp_menu_custom_breakpoint;
-				}
+			if ( 'custom' === $amp_menu_breakpoint && ! empty( $amp_menu_custom_breakpoint ) ) {
+				$amp_menu_breakpoint = $amp_menu_custom_breakpoint;
+			}
+
+			if ( ! empty( $amp_menu_breakpoint ) ) {
 
 				$css .= '@media (min-width: ' . $amp_menu_breakpoint . 'px) {
 					#site-header:not(.vertical-header) .menu-item-has-children > button.submenu-toggle {

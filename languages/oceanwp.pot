@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 1.8.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2020-07-15 10:42:18+00:00\n"
+"POT-Creation-Date: 2020-07-30 02:36:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4607,8 +4607,12 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: inc/oceanwp-strings.php:35 inc/oceanwp-strings.php:36
+#: inc/oceanwp-strings.php:35
 msgid "Type then hit enter to search..."
+msgstr ""
+
+#: inc/oceanwp-strings.php:36
+msgid "Type then hit enter to search"
 msgstr ""
 
 #: inc/oceanwp-strings.php:37 inc/oceanwp-strings.php:38
@@ -5030,7 +5034,7 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/third/class-amp.php:313
+#: inc/third/class-amp.php:346
 msgid "Menu Toggle"
 msgstr ""
 

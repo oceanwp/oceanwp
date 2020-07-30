@@ -1,3 +1,15 @@
+.has-blog-grid {
+	.blog-grid {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		height: auto!important;
+	}
+}
+
 .blog-entry.grid-entry {
 	float: left;
 
