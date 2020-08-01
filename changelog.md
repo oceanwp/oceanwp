@@ -23,6 +23,7 @@
 * **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
 * **Tweak** - Blog: Post entries & single post meta data styling.
 * **Tweak** - Customizer Loading Optimization: WooCommerce typography live preview scripts separated from main script.
+* **Tweak** - Customizer Loading Optimization: WooCommerce style live preview scripts separate from main script.
 * **Updated** - Speed Optimization: Simple Line Icons replaced with Font Awesome 5.
 
 ### *2020.07.09* - 1.8.6:

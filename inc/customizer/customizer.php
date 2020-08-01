@@ -212,6 +212,12 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 */
 		public function customize_preview_init() {
 			wp_enqueue_script( 'oceanwp-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
+
+			// If WooCommerce is activated
+			if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
+				wp_enqueue_script( 'oceanwp-woo-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/woo-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
+
+			}
 		}
 
 		/**
