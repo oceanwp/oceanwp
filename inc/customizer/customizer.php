@@ -183,22 +183,22 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 
 			}
 
-			// If WooCommerce is activated
+			// If WooCommerce is activated.
 			if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 				require_once( $dir .'woocommerce.php' );
 			}
 
-			// Easy Digital Downloads Settings
+			// Easy Digital Downloads Settings.
 			if ( OCEANWP_EDD_ACTIVE ) {
 				require_once( $dir .'edd.php' );
 			}
 
-			// If LifterLMS is activated
+			// If LifterLMS is activated.
 			if ( OCEANWP_LIFTERLMS_ACTIVE ) {
 				require_once( $dir .'lifterlms.php' );
 			}
 
-			// If LearnDash is activated
+			// If LearnDash is activated.
 			if ( OCEANWP_LEARNDASH_ACTIVE ) {
 				require_once( $dir .'learndash.php' );
 			}
@@ -226,6 +226,11 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			// If LifterLMS is activated.
 			if ( OCEANWP_LIFTERLMS_ACTIVE ) {
 				wp_enqueue_script( 'oceanwp-llms-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/llms-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
+			}
+
+			// If LearnDash is activated.
+			if ( OCEANWP_LEARNDASH_ACTIVE ) {
+				wp_enqueue_script( 'oceanwp-ld-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/ld-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
 			}
 		}
 

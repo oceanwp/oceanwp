@@ -41,6 +41,7 @@ module.exports = function ( grunt ) {
 					'inc/customizer/assets/js/woo-customize-preview.min.js'				: 'inc/customizer/assets/js/woo-customize-preview.js',
 					'inc/customizer/assets/js/edd-customize-preview.min.js'				: 'inc/customizer/assets/js/edd-customize-preview.js',
 					'inc/customizer/assets/js/llms-customize-preview.min.js'			: 'inc/customizer/assets/js/llms-customize-preview.js',
+					'inc/customizer/assets/js/ld-customize-preview.min.js'				: 'inc/customizer/assets/js/ld-customize-preview.js',
 					'inc/customizer/assets/min/js/general.min.js'						: 'inc/customizer/controls/general.js',
 					'inc/customizer/assets/min/js/buttonset.min.js'						: 'inc/customizer/controls/buttonset/buttonset.js',
 					'inc/customizer/assets/min/js/color.min.js'							: 'inc/customizer/controls/color/color.js',
