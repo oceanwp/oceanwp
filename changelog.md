@@ -25,6 +25,7 @@
 * **Tweak** - Customizer Loading Optimization: WooCommerce typography live preview scripts separated from main script.
 * **Tweak** - Customizer Loading Optimization: WooCommerce style live preview scripts separated from main script.
 * **Tweak** - Customizer Loading Optimization: EDD style live preview script separated from main script.
+* **Tweak** - Customizer Loading Optimization: LifterLMS style live preview script separated from main script.
 * **Updated** - Speed Optimization: Simple Line Icons replaced with Font Awesome 5.
 
 ### *2020.07.09* - 1.8.6:

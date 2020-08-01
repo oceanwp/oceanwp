@@ -222,6 +222,11 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			if ( OCEANWP_EDD_ACTIVE ) {
 				wp_enqueue_script( 'oceanwp-edd-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/edd-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
 			}
+
+			// If LifterLMS is activated.
+			if ( OCEANWP_LIFTERLMS_ACTIVE ) {
+				wp_enqueue_script( 'oceanwp-llms-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/llms-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
+			}
 		}
 
 		/**
