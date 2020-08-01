@@ -206,17 +206,21 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		}
 
 		/**
-		 * Loads js file for customizer preview
+		 * Loads js files for customizer preview
 		 *
 		 * @since 1.0.0
 		 */
 		public function customize_preview_init() {
 			wp_enqueue_script( 'oceanwp-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
 
-			// If WooCommerce is activated
+			// If WooCommerce is activated.
 			if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 				wp_enqueue_script( 'oceanwp-woo-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/woo-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
+			}
 
+			// Easy Digital Downloads Settings.
+			if ( OCEANWP_EDD_ACTIVE ) {
+				wp_enqueue_script( 'oceanwp-edd-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/edd-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
 			}
 		}
 
