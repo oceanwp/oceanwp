@@ -2384,6 +2384,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				),
 			);
 
+			$settings['woo_archive_title'] = array(
+				'label' 				=> esc_html__( 'WooCommerce Archive Title', 'oceanwp' ),
+				'target' 				=> '.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a',
+				'exclude' 				=> array( 'font-color' ),
+				'defaults' 				=> array(
+					'font-size' 		=> '14',
+					'line-height' 		=> '1.5',
+					'letter-spacing' 	=> '0',
+				),
+			);
+
 			return $settings;
 		}
 

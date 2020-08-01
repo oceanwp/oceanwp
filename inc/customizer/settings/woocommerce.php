@@ -6267,7 +6267,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add product entry title color
 			if ( ! empty( $product_title_color ) && '#333333' != $product_title_color ) {
-				$css .= '.woocommerce ul.products li.product li.title a{color:'. $product_title_color .';}';
+				$css .= '.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{color:'. $product_title_color .';}';
 			}
 
 			// Add product entry title color hover

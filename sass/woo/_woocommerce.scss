@@ -205,10 +205,13 @@
 						&.btn-wrap {
 							display: block;
 						}
+						&.title,
 						&.title a {
 							display: inline-block;
+							font-family: inherit;
 							font-size: 14px;
 							line-height: 1.5;
+							color: #333;
 						}
 					}
 					.price {

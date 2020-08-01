@@ -279,10 +279,13 @@
   display: block;
 }
 
+.woocommerce ul.products li.product li.title,
 .woocommerce ul.products li.product li.title a {
   display: inline-block;
+  font-family: inherit;
   font-size: 14px;
   line-height: 1.5;
+  color: #333;
 }
 
 .woocommerce ul.products li.product .price {

@@ -9105,7 +9105,7 @@
 			});
 		}), api("ocean_product_title_color", function($swipe) {
 			$swipe.bind(function(size) {
-				$(".woocommerce ul.products li.product li.title a").css("color", size);
+				$(".woocommerce ul.products li.product li.title,.woocommerce ul.products li.product li.title a").css("color", size);
 			});
 		}), api("ocean_product_title_color_hover", function($swipe) {
 			$swipe.bind(function(to) {

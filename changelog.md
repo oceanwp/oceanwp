@@ -19,6 +19,7 @@
 * **Added** - WooCommerce: Floating Bar - display 'Add to Cart' button on 320px width.
 * **Added** - WooCommerce: Improved 'Sales!' badge responsiveness.
 * **Fixed** - WooCommerce: Single product missing 'has-product-nav' class when navigation enabled.
+* **Added** - WooCommerce: Product archive title typography settings.
 * **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
 * **Tweak** - Blog: Post entries & single post meta data styling.
 * **Updated** - Speed Optimization: Simple Line Icons replaced with Font Awesome 5.
