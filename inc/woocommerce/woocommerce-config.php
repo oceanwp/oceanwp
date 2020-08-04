@@ -2373,6 +2373,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				),
 			);
 
+			$settings['woo_single_add_to_cart'] = array(
+				'label'                 => esc_html__( 'WooCommerce Product Add To Cart', 'oceanwp' ),
+				'target'                => '.woocommerce .owp-btn-normal .summary form button.button, .woocommerce .owp-btn-big .summary form button.button, .woocommerce .owp-btn-very-big .summary form button.button',
+				'exclude'               => array( 'font-color' ),
+				'defaults'              => array(
+					'font-size'         => '12',
+					'text-transform'    => 'uppercase',
+					'line-height'       => '1.5',
+					'letter-spacing'    => '1',
+				),
+			);
+
 			$settings['woo_archive_title'] = array(
 				'label'                 => esc_html__( 'WooCommerce Archive Title', 'oceanwp' ),
 				'target'                => '.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a',
@@ -2409,7 +2421,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$settings['woo_product_add_to_cart'] = array(
 				'label'                 => esc_html__( 'WooCommerce Archive Add To Cart', 'oceanwp' ),
 				'target'                => '.woocommerce ul.products li.product .button, .woocommerce ul.products li.product .product-inner .added_to_cart',
-				'exclude' 				=> array( 'font-color' ),
+				'exclude'               => array( 'font-color' ),
 				'defaults'              => array(
 					'font-size'         => '12',
 					'line-height'       => '1.5',
