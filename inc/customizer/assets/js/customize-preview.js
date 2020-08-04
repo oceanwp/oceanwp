@@ -59,7 +59,7 @@
 		];
 
 	/******** WordPress Core *********/
-
+	wp.customize.bind( 'ready', function() {
 		// Site title
 		api( 'blogname', function( value ) {
 			value.bind( function( newval ) {
@@ -68,14 +68,14 @@
 		});
 
 		// Site description
-		api('blogdescription', function( value ) {
+		api( 'blogdescription', function( value ) {
 			value.bind( function( newval ) {
 				$( '#site-description h2' ).text( newval );
 			});
 		});
 
 	/******** General *********/
-
+		
 	    api( 'ocean_primary_color', function( value ) {
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_primary_color' );
@@ -263,7 +263,8 @@
 	          body.css( 'background-size', newval );
 	        }
 	      });
-	    });
+		});
+		
 
 	/******** Layouts *********/	
 
@@ -7042,5 +7043,6 @@
 				}
 			});
 		});
-		
+	});
+
 } )( jQuery );
