@@ -2406,6 +2406,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				),
 			);
 
+			$settings['woo_archive_price'] = array(
+				'label'                 => esc_html__( 'WooCommerce Archive Price', 'oceanwp' ),
+				'target'                => '.woocommerce ul.products li.product .price',
+				'exclude'               => array( 'font-color' ),
+				'defaults'              => array(
+					'font-size'         => '18',
+					'line-height'       => '1',
+					'letter-spacing'    => '0',
+				),
+			);
+
 			return $settings;
 		}
 

@@ -59,7 +59,6 @@
 		];
 
 	/******** WordPress Core *********/
-	wp.customize.bind( 'ready', function() {
 		// Site title
 		api( 'blogname', function( value ) {
 			value.bind( function( newval ) {
@@ -7043,6 +7042,5 @@
 				}
 			});
 		});
-	});
 
 } )( jQuery );

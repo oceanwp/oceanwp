@@ -85,7 +85,7 @@
     ];
 
     /******** WooCommerce *********/
-    wp.customize.bind( 'ready', function() {
+    
 		// Categories widget style
 		api('ocean_woo_cat_widget_style', function( value ) {
 			value.bind( function( newval ) {
@@ -2645,6 +2645,5 @@
             $(".woocommerce-checkout #payment div.payment_box").css("color", size);
         });
     });
-});
 
 } )( jQuery );

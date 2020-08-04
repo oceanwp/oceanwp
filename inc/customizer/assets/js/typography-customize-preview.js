@@ -10,7 +10,7 @@
 	var api = wp.customize;
 
 	/******** TYPOGRAPHY OPTIONS LOOP *********/
-	wp.customize.bind( 'ready', function() {
+
 	api( "body_typography[font-family]", function( $swipe ) {
 		$swipe.bind( function( pair ) {
 			if ( pair ) {
@@ -4635,6 +4635,5 @@
 			}
 		} );
 	} );
-});
 
 } )( jQuery );
