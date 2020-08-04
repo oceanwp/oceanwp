@@ -6257,7 +6257,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add category color
 			if ( ! empty( $category_color ) && '#999999' != $category_color ) {
-				$css .= '.woocommerce ul.products li.product li.category a{color:'. $category_color .';}';
+				$css .= '.woocommerce ul.products li.product li.category, .woocommerce ul.products li.product li.category a{color:'. $category_color .';}';
 			}
 
 			// Add category color hover

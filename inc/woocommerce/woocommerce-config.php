@@ -2385,13 +2385,24 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			);
 
 			$settings['woo_archive_title'] = array(
-				'label' 				=> esc_html__( 'WooCommerce Archive Title', 'oceanwp' ),
-				'target' 				=> '.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a',
-				'exclude' 				=> array( 'font-color' ),
-				'defaults' 				=> array(
-					'font-size' 		=> '14',
-					'line-height' 		=> '1.5',
-					'letter-spacing' 	=> '0',
+				'label'                 => esc_html__( 'WooCommerce Archive Title', 'oceanwp' ),
+				'target'                => '.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a',
+				'exclude'               => array( 'font-color' ),
+				'defaults'              => array(
+					'font-size'         => '14',
+					'line-height'       => '1.5',
+					'letter-spacing'    => '0',
+				),
+			);
+
+			$settings['woo_archive_cats'] = array(
+				'label'                 => esc_html__( 'WooCommerce Archive Category', 'oceanwp' ),
+				'target'                => '.woocommerce ul.products li.product li.category, .woocommerce ul.products li.product li.category a',
+				'exclude'               => array( 'font-color' ),
+				'defaults'              => array(
+					'font-size'         => '12',
+					'line-height'       => '1',
+					'letter-spacing'    => '0',
 				),
 			);
 

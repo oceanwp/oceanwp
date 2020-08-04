@@ -20,6 +20,7 @@
 * **Added** - WooCommerce: Improved 'Sales!' badge responsiveness.
 * **Fixed** - WooCommerce: Single product missing 'has-product-nav' class when navigation enabled.
 * **Added** - WooCommerce: Product archive title typography settings.
+* **Added** - WooCommerce: Product archive category typography settings.
 * **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
 * **Tweak** - Blog: Post entries & single post meta data styling.
 * **Tweak** - Customizer Loading Optimization: WooCommerce typography live preview scripts separated from main script.
