@@ -4539,19 +4539,6 @@ if ( ! function_exists( 'oceanwp_default_color_palettes' ) ) {
 
 }
 
-if ( ! function_exists( 'oceanwp_is_amp' ) ) {
-
-	/**
-	 * Check for AMP endpoint
-	 *
-	 * @return bool
-	 * @since 1.8.7
-	 */
-	function oceanwp_is_amp() {
-		return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
-	}
-}
-
 /**
  * Create list of attributes into a string and apply filter baes on context
  *

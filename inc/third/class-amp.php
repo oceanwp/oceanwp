@@ -32,7 +32,7 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 		 */
 		public function oceanwp_amp_config() {
 
-			if ( ! oceanwp_is_amp() ) {
+			if ( ! OCEANWP_Theme_Class::oceanwp_is_amp() ) {
 				return;
 			}
 
@@ -173,6 +173,25 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 			$css .= '#searchform-overlay.active {
 				display: block;
 			}';
+
+			if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
+
+				$css .= '.woocommerce ul.products li.product:not(.product-category) .woo-entry-buttons li a.owp-quick-view,
+				.owp-quick-view {
+					display: none;
+				}
+				.woocommerce .oceanwp-grid-list {
+					display: none;
+				}
+				@media only screen and (max-width: 480px) {
+					.woocommerce .oceanwp-grid-list {
+						display: none;
+					}
+				}
+
+				';
+
+			}
 
 			// Return CSS.
 			if ( ! empty( $css ) ) {
