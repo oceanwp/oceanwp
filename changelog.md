@@ -2,13 +2,15 @@
 
 ### *2020.08.XX* - 1.8.7
 * **Added** - Hook: ocean_after_archive_product_price;
-* **Added** - WooCommerce: Product archive show/hide price and Add to Cart button option.
-* **Added** - WooCommerce: Product archive show/hide price and Add to Cart button message display (optional).
+* **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button option.
+* **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button message display (optional).
+* **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button message typography settings.
+* **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button message color styling settings.
 * **Added** - WooCommerce: Product archive - option to include 'My Account' link into the conditional message.
 * **Added** - WooCommerce: Product archive disable/enable image and title links option.
 * **Added** - WooCommerce: Product archive disable/enable image and title links conditional logic.
-* **Added** - WooCommerce: Single product show/hide price and Add to Cart button option.
-* **Added** - WooCommerce: Single product show/hide price and Add to Cart button message display (optional).
+* **Added** - WooCommerce: Single product show/hide price and 'Add to Cart' button option.
+* **Added** - WooCommerce: Single product show/hide price and 'Add to Cart' button message display (optional).
 * **Added** - WooCommerce: Single product - option to include 'My Account' link into the conditional message.
 * **Tweak** - WooCommerce: Product archive rating separated from price as an individual element.
 * **Fixed** - WooCommerce: Mixed up translation filters for Next/Prev product navigation.

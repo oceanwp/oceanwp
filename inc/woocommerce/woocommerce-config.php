@@ -1585,7 +1585,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Product entries
 			if ( $product && ! empty( $woocommerce_loop['columns'] ) ) {
 
-				// If has rating
+				// If has rating.
 				if ( $product->get_rating_count() ) {
 					$classes[] = 'has-rating';
 				}
@@ -1595,11 +1595,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					$classes[] = 'has-product-nav';
 				}
 
+				// Column Alignment.
 				$classes[] = 'col';
 				$classes[] = oceanwp_grid_class( $woocommerce_loop['columns'] );
 				$classes[] = 'owp-content-'. $content_alignment;
 
-				// If infinite scroll
+				// If infinite scroll.
 				if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
 					$classes[] = 'item-entry';
 				}
@@ -1624,6 +1625,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					$classes[] = 'has-no-thumbnails';
 				}
 
+				// Display product navigation.
 				if ( true == get_theme_mod( 'ocean_woocommerce_display_navigation', true ) ) {
 					$classes[] = 'has-product-nav';
 				}
@@ -2425,6 +2427,19 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				'defaults'              => array(
 					'font-size'         => '12',
 					'line-height'       => '1.5',
+					'letter-spacing'    => '1',
+				),
+			);
+
+			$settings['woo_archive_notice'] = array(
+				'label'                 => esc_html__( 'WooCommerce Archive Notice', 'oceanwp' ),
+				'target'                => '.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a',
+				'exclude'               => array( 'font-color' ),
+				'defaults'              => array(
+					'font-size'         => '16',
+					'font-weight'       => '600',
+					'text-transform'    => 'capitalize',
+					'line-height'       => '1',
 					'letter-spacing'    => '1',
 				),
 			);

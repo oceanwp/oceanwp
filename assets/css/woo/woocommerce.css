@@ -288,6 +288,26 @@
   color: #333;
 }
 
+.woocommerce ul.products li.product li.owp-woo-cond-notice {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1;
+}
+
+.woocommerce ul.products li.product li.owp-woo-cond-notice span,
+.woocommerce ul.products li.product li.owp-woo-cond-notice a {
+  color: #333;
+}
+
+.woocommerce ul.products li.product li.owp-woo-cond-notice a:hover {
+  color: #52a7fe;
+}
+
 .woocommerce ul.products li.product .price {
   font-size: 18px;
   text-align: center;

@@ -272,6 +272,49 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 				&& 'center' != $woo_tabs ) {
 				$classes[] = 'woo-' . $woo_tabs . '-tabs';
 			}
+
+			// If shop conditional.
+			if ( true === get_theme_mod( 'ocean_shop_conditional', false ) ) {
+				$classes[] = 'has-woo-shop-conditional';
+
+				// If shop conditional message.
+				if ( 'yes' === get_theme_mod( 'ocean_shop_cond_msg', 'yes' ) ) {
+
+					// If My Account page linked to conditional message.
+					if ( true === get_theme_mod( 'ocean_shop_add_myaccount_link', false ) ) {
+						$classes[] = 'has-woo-shop-cond-msg-myaccount';
+					} else {
+						$classes[] = 'has-woo-shop-cond-msg';
+					}
+				}
+			}
+
+			// If has disabled image and product archive links.
+			if ( true === get_theme_mod( 'ocean_shop_woo_disable_links', false ) ) {
+				
+				// If disable image and links conditional.
+				if ( 'yes' === get_theme_mod( 'ocean_shop_woo_disable_links_cond', 'no' ) ) {
+					$classes[] = 'has-woo-shop-links-disabled-cond';
+				} else {
+					$classes[] = 'has-woo-shop-links-disabled-all';
+				}
+			}
+
+			// If has sinlge product conditional.
+			if ( true === get_theme_mod( 'ocean_woo_single_conditional', false ) ) {
+				$classes[] = 'has-woo-single-conditional';
+
+				// If single conditional message.
+				if ( 'yes' === get_theme_mod( 'ocean_woo_single_cond_msg', 'yes' ) ) {
+
+					// If My Account page linked to conditional message.
+					if ( true === get_theme_mod( 'ocean_single_add_myaccount_link', false ) ) {
+						$classes[] = 'has-woo-single-cond-msg-myaccount';
+					} else {
+						$classes[] = 'has-woo-single-cond-msg';
+					}
+				}
+			}
 		}
 
 		// Return classes.

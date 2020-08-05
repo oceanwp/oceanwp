@@ -213,6 +213,24 @@
 							line-height: 1.5;
 							color: #333;
 						}
+						&.owp-woo-cond-notice {
+							display: inline-block;
+							margin-bottom: 10px;
+							font-family: inherit;
+							font-size: 16px;
+							text-transform: capitalize;
+							font-weight: 600;
+							line-height: 1;
+							letter-spacing: 1;
+							span,
+							a {
+								color: #333;
+							}
+							
+							a:hover {
+								color: #52a7fe;
+							}
+						}
 					}
 					.price {
 						font-size: 18px;

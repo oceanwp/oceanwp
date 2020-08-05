@@ -1796,6 +1796,25 @@
         $swipe.bind(function(size) {
             $(".woocommerce ul.products li.product .price del .amount").css("color", size);
         });
+    }), api("ocean_product_entry_cond_note_color", function($swipe) {
+        $swipe.bind(function(size) {
+            $(".woocommerce ul.products li.product li.owp-woo-cond-notice span, .woocommerce ul.products li.product li.owp-woo-cond-notice a").css("color", size);
+        });
+    }), api("ocean_product_entry_cond_note_color_hover", function($swipe) {
+        $swipe.bind(function(to) {
+            var $child = $(".customizer-ocean_product_entry_cond_note_color_hover");
+            if (to) {
+                /** @type {string} */
+                var img = '<style class="customizer-ocean_product_entry_cond_note_color_hover">.woocommerce ul.products li.product li.owp-woo-cond-notice a:hover{ color: ' + to + "!important; }</style>";
+                if ($child.length) {
+                    $child.replaceWith(img);
+                } else {
+                    $("head").append(img);
+                }
+            } else {
+                $child.remove();
+            }
+        });
     }), api("ocean_product_entry_hover_thumbnails_border_color", function($swipe) {
         $swipe.bind(function(to) {
             var $child = $(".customizer-ocean_product_entry_hover_thumbnails_border_color");

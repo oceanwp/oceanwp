@@ -3697,6 +3697,56 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Product Entry Conditional Notice Color
+			 */
+			$wp_customize->add_setting(
+				'ocean_product_entry_cond_note_color',
+				array(
+					'default'               => '#333',
+					'transport'             => 'postMessage',
+					'sanitize_callback'     => 'oceanwp_sanitize_color',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_product_entry_cond_note_color',
+					array(
+						'label'                 => esc_html__( 'Conditional Notice: Color', 'oceanwp' ),
+						'section'               => 'ocean_woocommerce_styling',
+						'settings'              => 'ocean_product_entry_cond_note_color',
+						'priority'              => 10,
+					)
+				)
+			);
+
+			/**
+			 * Product Entry Conditional Notice Hover Color
+			 */
+			$wp_customize->add_setting(
+				'ocean_product_entry_cond_note_color_hover',
+				array(
+					'default'               => '#52a7fe',
+					'transport'             => 'postMessage',
+					'sanitize_callback'     => 'oceanwp_sanitize_color',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_product_entry_cond_note_color_hover',
+					array(
+						'label'                 => esc_html__( 'Conditional Notice: Hover Color', 'oceanwp' ),
+						'section'               => 'ocean_woocommerce_styling',
+						'settings'              => 'ocean_product_entry_cond_note_color_hover',
+						'priority'              => 10,
+					)
+				)
+			);
+
+			/**
 		     * Product Entry Hover Thumbnails Border Color
 		     */
 	        $wp_customize->add_setting( 'ocean_product_entry_hover_thumbnails_border_color', array(
@@ -5589,6 +5639,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$product_title_color_hover 							= get_theme_mod( 'ocean_product_title_color_hover', '#13aff0' );
 			$product_entry_price_color 							= get_theme_mod( 'ocean_product_entry_price_color', '#57bf6d' );
 			$product_entry_del_price_color 						= get_theme_mod( 'ocean_product_entry_del_price_color', '#666666' );
+			$product_entry_cond_note_color                      = get_theme_mod( 'ocean_product_entry_cond_note_color', '#333' );
+			$product_entry_cond_note_color_hover                = get_theme_mod( 'ocean_product_entry_cond_note_color_hover', '#52a7fe' );
 			$product_entry_hover_thumbnails_border_color 		= get_theme_mod( 'ocean_product_entry_hover_thumbnails_border_color', '#13aff0' );
 			$product_entry_hover_quickview_background 			= get_theme_mod( 'ocean_product_entry_hover_quickview_background', '#ffffff' );
 			$product_entry_hover_quickview_hover_background 	= get_theme_mod( 'ocean_product_entry_hover_quickview_hover_background', '#ffffff' );
@@ -6284,6 +6336,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			if ( ! empty( $product_entry_del_price_color ) && '#666666' != $product_entry_del_price_color ) {
 				$css .= '.woocommerce ul.products li.product .price del .amount{color:'. $product_entry_del_price_color .';}';
 			}
+
+			// Add product entry conditional notice color.
+			if ( ! empty( $product_entry_cond_note_color ) && '#333' != $product_entry_cond_note_color ) {
+				$css .= '.woocommerce ul.products li.product li.owp-woo-cond-notice span, .woocommerce ul.products li.product li.owp-woo-cond-notice a{color:'. $product_entry_cond_note_color .';}';
+			}
+
+			// Add product entry conditional notice hover color.
+			if ( ! empty( $product_entry_cond_note_color_hover ) && '#52a7fe' != $product_entry_cond_note_color_hover ) {
+				$css .= '.woocommerce ul.products li.product li.owp-woo-cond-notice a:hover{color:'. $product_entry_cond_note_color_hover .';}';
+			}
+
 
 			// Add product hover thumbnails border color
 			if ( ! empty( $product_entry_hover_thumbnails_border_color ) && '#13aff0' != $product_entry_hover_thumbnails_border_color ) {
