@@ -649,6 +649,214 @@
 				$child.remove();
 			}
 		} );
+	} ), api( "woo_single_notice_typography[font-family]", function( $swipe ) {
+		$swipe.bind( function( pair ) {
+			if ( pair ) {
+				/** @type {string} */
+				var idfirst = ( pair.trim().toLowerCase().replace( " ", "-" ), "customizer-typography-single-notice-font-family" );
+				var fontSize = pair.replace( " ", "%20" );
+				fontSize = fontSize.replace( ",", "%2C" );
+				/** @type {string} */
+				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				if ( $( "#" + idfirst ).length ) {
+					$( "#" + idfirst ).attr( "href", fontSize );
+				} else {
+					$( "head" ).append( '<link id="' + idfirst + '" rel="stylesheet" type="text/css" href="' + fontSize + '">' );
+				}
+			}
+			var $child = $( ".customizer-typography-single-notice-font-family" );
+			if ( pair ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-single-notice-font-family">.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{font-family: ' + pair + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_typography[font-weight]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-single-notice-font-weight" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-single-notice-font-weight">.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{font-weight: ' + dataAndEvents + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_typography[font-style]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-single-notice-font-style" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-single-notice-font-style">.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{font-style: ' + dataAndEvents + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_typography[font-size]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-single-notice-font-size" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-single-notice-font-size">.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{font-size: ' + dataAndEvents + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_tablet_typography[font-size]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_single_notice-tablet-font-size" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_single_notice-tablet-font-size">@media (max-width: 768px){.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{font-size: ' + dataAndEvents + ";}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_mobile_typography[font-size]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_single_notice-mobile-font-size" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_single_notice-mobile-font-size">@media (max-width: 480px){.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{font-size: ' + dataAndEvents + ";}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_typography[line-height]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-single-notice-line-height" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-single-notice-line-height">.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{line-height: ' + dataAndEvents + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_tablet_typography[line-height]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_single_notice-tablet-line-height" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_single_notice-tablet-line-height">@media (max-width: 768px){.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{line-height: ' + dataAndEvents + ";}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_mobile_typography[line-height]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_single_notice-mobile-line-height" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_single_notice-mobile-line-height">@media (max-width: 480px){.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{line-height: ' + dataAndEvents + ";}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_typography[letter-spacing]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-single-notice-letter-spacing" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-single-notice-letter-spacing">.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{letter-spacing: ' + dataAndEvents + "px;}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_tablet_typography[letter-spacing]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_single_notice-tablet-letter-spacing" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_single_notice-tablet-letter-spacing">@media (max-width: 768px){.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_mobile_typography[letter-spacing]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_single_notice-mobile-letter-spacing" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_single_notice-mobile-letter-spacing">@media (max-width: 480px){.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_single_notice_typography[text-transform]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-single-notice-text-transform" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-single-notice-text-transform">.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{text-transform: ' + dataAndEvents + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
 	} ), api( "woo_archive_title_typography[font-family]", function( $swipe ) {
 		$swipe.bind( function( pair ) {
 			if ( pair ) {
@@ -1441,7 +1649,7 @@
 			var $child = $( ".customizer-typography-woo_single_add_to_cart-tablet-letter-spacing" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="ustomizer-typography-woo_single_add_to_cart-tablet-letter-spacing">@media (max-width: 768px){.woocommerce .owp-btn-normal .summary form button.button, .woocommerce .owp-btn-big .summary form button.button, .woocommerce .owp-btn-very-big .summary form button.button{letter-spacing: ' + dataAndEvents + "px;}}</style>";
+				var img = '<style class="customizer-typography-woo_single_add_to_cart-tablet-letter-spacing">@media (max-width: 768px){.woocommerce .owp-btn-normal .summary form button.button, .woocommerce .owp-btn-big .summary form button.button, .woocommerce .owp-btn-very-big .summary form button.button{letter-spacing: ' + dataAndEvents + "px;}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1472,6 +1680,214 @@
 			if ( dataAndEvents ) {
 				/** @type {string} */
 				var img = '<style class="customizer-typography-single-add-to-cart-text-transform">.woocommerce .owp-btn-normal .summary form button.button, .woocommerce .owp-btn-big .summary form button.button, .woocommerce .owp-btn-very-big .summary form button.button{text-transform: ' + dataAndEvents + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_typography[font-family]", function( $swipe ) {
+		$swipe.bind( function( pair ) {
+			if ( pair ) {
+				/** @type {string} */
+				var idfirst = ( pair.trim().toLowerCase().replace( " ", "-" ), "customizer-typography-archive-notice-font-family" );
+				var fontSize = pair.replace( " ", "%20" );
+				fontSize = fontSize.replace( ",", "%2C" );
+				/** @type {string} */
+				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				if ( $( "#" + idfirst ).length ) {
+					$( "#" + idfirst ).attr( "href", fontSize );
+				} else {
+					$( "head" ).append( '<link id="' + idfirst + '" rel="stylesheet" type="text/css" href="' + fontSize + '">' );
+				}
+			}
+			var $child = $( ".customizer-typography-archive-notice-font-family" );
+			if ( pair ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-archive-notice-font-family">.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{font-family: ' + pair + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_typography[font-weight]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-archive-notice-font-weight" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-archive-notice-font-weight">.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{font-weight: ' + dataAndEvents + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_typography[font-style]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-archive-notice-font-style" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-archive-notice-font-style">.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{font-style: ' + dataAndEvents + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_typography[font-size]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-archive-notice-font-size" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-archive-notice-font-size">.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{font-size: ' + dataAndEvents + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_tablet_typography[font-size]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_archive_notice-tablet-font-size" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_archive_notice-tablet-font-size">@media (max-width: 768px){.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{font-size: ' + dataAndEvents + ";}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_mobile_typography[font-size]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_archive_notice-mobile-font-size" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_archive_notice-mobile-font-size">@media (max-width: 480px){.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{font-size: ' + dataAndEvents + ";}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_typography[line-height]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-archive-notice-line-height" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-archive-notice-line-height">.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{line-height: ' + dataAndEvents + ";}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_tablet_typography[line-height]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_archive_notice-tablet-line-height" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_archive_notice-tablet-line-height">@media (max-width: 768px){.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{line-height: ' + dataAndEvents + ";}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_mobile_typography[line-height]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_archive_notice-mobile-line-height" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_archive_notice-mobile-line-height">@media (max-width: 480px){.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{line-height: ' + dataAndEvents + ";}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_typography[letter-spacing]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-archive-notice-letter-spacing" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-archive-notice-letter-spacing">.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{letter-spacing: ' + dataAndEvents + "px;}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_tablet_typography[letter-spacing]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_archive_notice-tablet-letter-spacing" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_archive_notice-tablet-letter-spacing">@media (max-width: 768px){.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_mobile_typography[letter-spacing]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-woo_archive_notice-mobile-letter-spacing" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-woo_archive_notice-mobile-letter-spacing">@media (max-width: 480px){.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
+				if ( $child.length ) {
+					$child.replaceWith( img );
+				} else {
+					$( "head" ).append( img );
+				}
+			} else {
+				$child.remove();
+			}
+		} );
+	} ), api( "woo_archive_notice_typography[text-transform]", function( $swipe ) {
+		$swipe.bind( function( dataAndEvents ) {
+			var $child = $( ".customizer-typography-archive-notice-text-transform" );
+			if ( dataAndEvents ) {
+				/** @type {string} */
+				var img = '<style class="customizer-typography-archive-notice-text-transform">.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a{text-transform: ' + dataAndEvents + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {

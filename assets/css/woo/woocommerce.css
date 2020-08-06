@@ -3282,6 +3282,31 @@ ul.order_details li strong {
   clear: both;
 }
 
+div.owp-woo-single-cond-notice {
+  display: inline-block;
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid;
+  border-color: #eaeaea;
+  width: 100%;
+  text-align: center;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 1.5;
+  text-transform: capitalize;
+}
+
+div.owp-woo-single-cond-notice span,
+div.owp-woo-single-cond-notice a {
+  color: #333333;
+}
+
+div.owp-woo-single-cond-notice a:hover {
+  color: #52a7fe;
+}
+
 .product_meta {
   clear: both;
   font-size: 13px;
