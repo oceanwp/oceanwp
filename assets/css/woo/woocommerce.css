@@ -4096,11 +4096,28 @@ form.checkout > .blockUI {
   cursor: pointer;
 }
 
-.product p.wc-gzd-additional-info {
-  display: inline-block;
-  margin: 0 0 5px;
+li.wc-gzd {
+  display: block;
+  padding: 2px 0;
+  margin-bottom: 5px !important;
 }
 
+li.wc-gzd.price.price-unit.smaller.wc-gzd-additional-info,
+li.wc-gzd .wc-gzd-additional-info.product-units-wrapper.product-units,
+li.wc-gzd .wc-gzd-additional-info.shipping-costs-info {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 0 0 5px;
+  padding: 5px 0;
+  line-height: 1;
+  letter-spacing: 1;
+}
+
+/*.product p.wc-gzd-additional-info {
+	display: inline-block;
+	margin: 0 0 5px;
+}*/
 .woocommerce.single-product .legal-price-info {
   margin-top: 10px;
 }

@@ -481,6 +481,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			if ( class_exists( 'WooCommerce_Germanized' ) ) {
+				remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_gzd_template_single_price_unit', 11 );
+				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_single_product_units', 9 );
 				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_single_shipping_costs_info', 7 );
 				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_single_tax_info', 6 );
 				remove_action( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_legal_info', 12 );
@@ -2504,6 +2506,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public function woocommerce_germanized() {
 			echo '<li class="wc-gzd">';
+				wc_get_template( 'single-product/price-unit.php' );
+				wc_get_template( 'single-product/units.php' );
 				wc_get_template( 'single-product/tax-info.php' );
 				wc_get_template( 'single-product/shipping-costs-info.php' );
 			echo '</li>';
