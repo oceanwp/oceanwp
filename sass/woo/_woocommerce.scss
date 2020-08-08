@@ -3426,12 +3426,12 @@ form.checkout {
     cursor: pointer;
 }
 
+/* WooCommerce Germanized ___________>> OceanWP */
+
 li.wc-gzd {
-	display: block;
-	padding: 2px 0;
 	margin-bottom: 5px !important;
 
-	&.price.price-unit.smaller.wc-gzd-additional-info,
+	.price.price-unit.smaller.wc-gzd-additional-info,
 	.wc-gzd-additional-info.product-units-wrapper.product-units,
 	.wc-gzd-additional-info.shipping-costs-info {
 		display: inline-block;
@@ -3442,16 +3442,60 @@ li.wc-gzd {
 		line-height: 1;
 		letter-spacing: 1;
 	}
+
+	.price.price-unit.smaller.wc-gzd-additional-info {
+		font-size: 16px;
+	}
 }
 
-/*.product p.wc-gzd-additional-info {
-	display: inline-block;
-	margin: 0 0 5px;
-}*/
+.wc-gzd-single {
+
+	.wc-gzd-additional-info.product-units-wrapper.product-units,
+	.wc-gzd-additional-info.shipping-costs-info,
+	p.price.price-unit.smaller.wc-gzd-additional-info {
+		display: inline-block;
+		width: 100%;
+		margin: 0 0 5px;
+		padding: 5px 0;
+		line-height: 1.5;
+		letter-spacing: 1;
+	}
+
+	p.price.price-unit.smaller.wc-gzd-additional-info {
+		font-size: 24px;
+	}
+}
+
+.wc-gzd-single,
+.wc-gzd-single-meta,
+li.wc-gzd {
+	display: block;
+	padding: 2px 0;
+}
+
+.wc-gzd-single-meta {
+
+	p.wc-gzd-additional-info {
+		display: inline-block;
+		width: 100%;
+	}
+
+	p.wc-gzd-additional-info {
+		font-size: 14px;
+	}
+}
 
 .woocommerce.single-product .legal-price-info {
 	margin-top: 10px;
 }
+
+/*.product_meta {
+	.tagged_as::before {
+		@include font-awesome();
+		content: '\f02c';
+		margin-right: 5px;
+	}
+}*/
 
 /* WooCommerce My Account -> Add Payment Method */
 .woocommerce-MyAccount-content {

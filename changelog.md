@@ -14,8 +14,10 @@
 * **Added** - WooCommerce: Single product show/hide price and 'Add to Cart' button message typography settings.
 * **Added** - WooCommerce: Single product show/hide price and 'Add to Cart' button message color styling settings.
 * **Added** - WooCommerce: Single product - option to include 'My Account' link into the conditional message.
-* **Added** - WooCommerce Germanized: Product archive - price unit support.
-* **Added** - WooCommerce Germanized: Product archive - product units support.
+* **Added** - WooCommerce Germanized: Product archive & single product - product price unit support.
+* **Added** - WooCommerce Germanized: Product archive & single product - product units support.
+* **Added** - WooCommerce Germanized: Product archive & single product - product legal info support.
+* **Added** - WooCommerce Germanized: Product archive & single product - product delivery time info.
 * **Tweak** - WooCommerce: Product archive rating separated from price as an individual element.
 * **Fixed** - WooCommerce: Mixed up translation filters for Next/Prev product navigation.
 * **Fixed** - WooCommerce: Incorrect single product Next/Prev nav - next nav displaying previous product & vice versa.
