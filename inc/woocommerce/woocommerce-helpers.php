@@ -243,7 +243,7 @@ function get_term_tax_attr() {
 /**
  * WooCommerce product image gallery open and close tags
  * 
- * @since 1.8.7
+ * @since 1.8.8
  */
 if ( ! function_exists( 'ocean_woo_img_link_open' ) ) {
 	function ocean_woo_img_link_open() {
@@ -266,7 +266,7 @@ if ( ! function_exists( 'ocean_woo_img_link_close' ) ) {
 /**
  * WooCommerce Grid List Product Archive Excerpt
  * 
- * @since 1.8.7
+ * @since 1.8.8
  */
 if ( ! function_exists( 'ocean_woo_grid_view_excerpt' ) ) {
 	function ocean_woo_grid_view_excerpt() {
@@ -284,5 +284,73 @@ if ( ! function_exists( 'ocean_woo_grid_view_excerpt' ) ) {
 		} 
 
 		echo $woo_excerpt;
+	}
+}
+
+/**
+ * Determine if active WooCommerce Wishlist plugin matches theme plugin support.
+ * 
+ * @since 1.8.8
+ */
+if ( ! function_exists( 'ocean_woo_wishlist_plugin' ) ) {
+	
+	function ocean_woo_wishlist_plugin() {
+		if ( ! OCEANWP_WOOCOMMERCE_ACTIVE ) {
+			return false;
+		}
+
+		$woo_wl_plugin = get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' );
+		
+		// Only TI or only YITH Wishlist plugin.
+		if ( ( defined( 'TINWL_URL' ) && 'ti_wl' === $woo_wl_plugin ) || ( defined( 'YITH_WCWL' ) && 'yith_wl' === $woo_wl_plugin ) ) {
+			return true;
+		}
+
+		return false;
+	}
+}
+
+/**
+ * Determine if Wishlists exists
+ * 
+ * @since 1.8.8
+ */
+if ( ! function_exists( 'ocean_woo_wishlist' ) ) {
+
+	function ocean_woo_wishlist() {
+		if ( class_exists( 'TInvWL_Wishlist' ) || class_exists( 'YITH_WCWL_Wishlist' ) ) {
+			return true;
+		}
+
+		return false;
+	}
+}
+
+/**
+ * Return YITH WooCommerce Wishlist item count
+ * 
+ * @since 1.8.8
+ */
+if ( ! function_exists( 'ocean_woo_wishlist_count' ) ) {
+
+	function ocean_woo_wishlist_count() {
+		$wl_count = 0;
+
+		if ( 'yith_wl' === get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' ) && function_exists( 'yith_wcwl_count_all_products' ) ) {
+			$wl_count = yith_wcwl_count_all_products();
+		}
+
+		return $wl_count;
+	}
+}
+
+if ( ! function_exists( 'ocean_dequeue_yith_wl_scripts' ) ) {
+
+	function ocean_dequeue_yith_wl_scripts() {
+
+		// Remove default YITH WCWL style.
+		wp_dequeue_style( 'yith-wcwl-main' );
+		wp_dequeue_style( 'yith-wcwl-font-awesome' );
+		wp_dequeue_style( 'jquery-selectBox' );
 	}
 }

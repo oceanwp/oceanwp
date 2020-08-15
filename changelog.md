@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### *2020.08.XX* - 1.8.7
+### *2020.08.XX* - 1.8.8
 * **Added** - Hook: ocean_after_archive_product_price;
 * **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button option.
 * **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button message display (optional).
@@ -14,31 +14,34 @@
 * **Added** - WooCommerce: Single product show/hide price and 'Add to Cart' button message typography settings.
 * **Added** - WooCommerce: Single product show/hide price and 'Add to Cart' button message color styling settings.
 * **Added** - WooCommerce: Single product - option to include 'My Account' link into the conditional message.
+* **Added** - WooCommerce: Product archive title typography settings.
+* **Added** - WooCommerce: Product archive category typography settings.
+* **Added** - WooCommerce: Product archive price typography settings.
+* **Added** - WooCommerce: Single product 'Add to Cart' typography settings.
+* **Added** - WooCommerce: Floating Bar - limit product title to 4 words to avoid responsiveness issues.
+* **Added** - WooCommerce: Floating Bar - display 'Add to Cart' button on 320px width.
+* **Added** - WooCommerce: Improved 'Sales!' badge responsiveness.
 * **Added** - WooCommerce Germanized: Product archive & single product - product price unit support.
 * **Added** - WooCommerce Germanized: Product archive & single product - product units support.
 * **Added** - WooCommerce Germanized: Product archive & single product - product legal info support.
 * **Added** - WooCommerce Germanized: Product archive & single product - product delivery time info.
+* **Added** - YITH WooCommerce Wishlist plugin support.
+* **Added** - Speed Optimization: Display Swap: Google Fonts, woo star font, Font Awesome 5 icons, Simple Line icons, slick buttons.
 * **Tweak** - WooCommerce: Product archive rating separated from price as an individual element.
-* **Fixed** - WooCommerce: Mixed up translation filters for Next/Prev product navigation.
-* **Fixed** - WooCommerce: Incorrect single product Next/Prev nav - next nav displaying previous product & vice versa.
-* **Fixed** - WooCommerce: Floating Bar - blank space below footer on 320px width and lower.
-* **Fixed** - WooCommerce: Floating Bar - responsiveness issues.
-* **Added** - WooCommerce: Floating Bar - limit product title to 4 words to avoid responsiveness issues.
-* **Added** - WooCommerce: Floating Bar - display 'Add to Cart' button on 320px width.
-* **Added** - WooCommerce: Improved 'Sales!' badge responsiveness.
-* **Fixed** - WooCommerce: Single product missing 'has-product-nav' class when navigation enabled.
-* **Added** - WooCommerce: Product archive title typography settings.
-* **Added** - WooCommerce: Product archive category typography settings.
-* **Added** - WooCommerce: Product archive price typography settings.
-* **Fixed** - WooCommerce: Product archive 'Add to Cart' typography settings declared as single 'Add to Cart' typography settings.
-* **Added** - WooCommerce: Single product 'Add to Cart' typography settings.
-* **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
+* **Tweak** - WooCommerce: SEO Improvement - product title set to H2 tag.
 * **Tweak** - Blog: Post entries & single post meta data styling.
 * **Tweak** - Customizer Loading Optimization: WooCommerce typography live preview scripts separated from main script.
 * **Tweak** - Customizer Loading Optimization: WooCommerce style live preview scripts separated from main script.
 * **Tweak** - Customizer Loading Optimization: EDD style live preview script separated from main script.
 * **Tweak** - Customizer Loading Optimization: LifterLMS style live preview script separated from main script.
 * **Tweak** - Customizer Loading Optimization: LearnDash style live preview script separated from main script.
+* **Fixed** - WooCommerce: Mixed up translation filters for Next/Prev product navigation.
+* **Fixed** - WooCommerce: Incorrect single product Next/Prev nav - next nav displaying previous product & vice versa.
+* **Fixed** - WooCommerce: Floating Bar - blank space below footer on 320px width and lower.
+* **Fixed** - WooCommerce: Floating Bar - responsiveness issues.
+* **Fixed** - WooCommerce: Single product missing 'has-product-nav' class when navigation enabled.
+* **Fixed** - WooCommerce: Product archive 'Add to Cart' typography settings declared as single 'Add to Cart' typography settings.
+* **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
 * **Updated** - Speed Optimization: Simple Line Icons replaced with Font Awesome 5.
 
 ### *2020.07.09* - 1.8.6:
@@ -414,7 +417,7 @@
 * **Added** - New cart icon style "Bag Style", it is the same style as the cart icon shortcode.
 * **Added** - New setting in WooCommerce > Single Product to control the image and summary width.
 * **Added** - New setting in WooCommerce > Single Product to put the Add To Cart button bigger to increase conversion.
-* **Added** - New WooCommerce tab layout "Section" to put the description, additionalt information and reviews as sections.
+* **Added** - New WooCommerce tab layout "Section" to put the description, additional information and reviews as sections.
 * **Added** - Meta tags, so when you will share a link of your site on your social medias, the meta tags will tell them exactly what to take.
 * **Added** - New settings for OpenGraph in the General Options > General Settings section of the customizer.
 * **Added** - Full compatibility for Elementor Pro 2.0.
@@ -432,7 +435,7 @@
 * **Fixed** - Search form in the Medium header style if no search icon in the navigation.
 
 ### *2018.03.04* - 1.5.5
-* **Added** - Integration with TI WooCommerce Wishlist instead of the YITH Wishlist plugin, because the YITH plugin have error woth PHP 7.2 and the new Wishlist plugin is much better.
+* **Added** - Integration with TI WooCommerce Wishlist instead of the YITH Wishlist plugin, because the YITH plugin has error with PHP 7.2 and the new Wishlist plugin is much better.
 * **Added** - Compatibility with WooCommerce Social Login for the multi-step checkout.
 * **Added** - New setting in the WooCommerce General section of the customizer to choose between the default or dropdown style for the WooCommerce categories widget.
 * **Tweak** - The archive_product_content() and single_product_content() functions are now in two files in the woocommerce folder so you can easily edit them via a child theme.
@@ -444,10 +447,10 @@
 * **Fixed** - Variations images not taken into account in the WooCommerce quick view form.
 
 ### *2018.02.19* - 1.5.4
-* **Fixed** - Issue "Invalid payment method" with the muti-step checkout.
+* **Fixed** - Issue "Invalid payment method" with the multi-step checkout.
 
 ### *2018.02.16* - 1.5.3
-* **Fixed** - Issue "Invalid payment method" with the muti-step checkout.
+* **Fixed** - Issue "Invalid payment method" with the multi-step checkout.
 
 ### *2018.02.16* - 1.5.2
 * **Fixed** - Issue to disable the Off Canvas filter button.

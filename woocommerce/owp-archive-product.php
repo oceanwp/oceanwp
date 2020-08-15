@@ -78,11 +78,11 @@ foreach ( $elements as $element ) {
 			if ( false === $ocean_woo_disable_links
 				|| ( $disable_links && is_user_logged_in() ) ) {
 
-				echo '<a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a>';
+				echo '<h2><a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a></h2>';
 
 			} else {
 				
-				the_title();
+				echo '<h2>' . get_the_title() . '</h2>';
 
 			}
 			

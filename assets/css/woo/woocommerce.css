@@ -279,7 +279,7 @@
   display: block;
 }
 
-.woocommerce ul.products li.product li.title,
+.woocommerce ul.products li.product li.title h2,
 .woocommerce ul.products li.product li.title a {
   display: inline-block;
   font-family: inherit;

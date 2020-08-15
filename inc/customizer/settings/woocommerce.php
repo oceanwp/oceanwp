@@ -144,6 +144,38 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Add support for Wishlist plugin of choice
+			 * 
+			 * @since 1.8.8
+			 */
+			$wp_customize->add_setting(
+				'ocean_woo_wl_plugin',
+				array(
+					'transport'             => 'postMessage',
+					'default'               => 'ti_wl',
+					'sanitize_callback'     => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_woo_wl_plugin',
+					array(
+						'label'                 => esc_html__( 'WooCommerce Wishlist Plugin Support', 'oceanwp' ),
+						'type'                  => 'select',
+						'section'               => 'ocean_woocommerce_general',
+						'settings'              => 'ocean_woo_wl_plugin',
+						'priority'              => 10,
+						'choices'               => array(
+							'ti_wl'     => esc_html__( 'TI WC Wishlist', 'oceanwp' ),
+							'yith_wl'   => esc_html__( 'YITH WC Wishlist', 'oceanwp' ),
+						),
+					)
+				)
+			);
+
+			/**
 			 * Add Wishlist Icon In Header
 			 */
 			$wp_customize->add_setting( 'ocean_woo_wishlist_icon', array(
@@ -6371,7 +6403,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add product entry title color
 			if ( ! empty( $product_title_color ) && '#333333' != $product_title_color ) {
-				$css .= '.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{color:'. $product_title_color .';}';
+				$css .= '.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{color:'. $product_title_color .';}';
 			}
 
 			// Add product entry title color hover

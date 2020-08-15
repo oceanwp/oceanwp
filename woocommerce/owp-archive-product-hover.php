@@ -55,16 +55,21 @@ if ( false === $ocean_woo_cond || $show_woo_cond ) {
 
 // Wishlist button.
 if ( get_theme_mod( 'ocean_woo_quick_view', true )
-	|| class_exists( 'TInvWL_Wishlist' ) ) {
+	|| ocean_woo_wishlist() ) {
 	echo '<ul class="woo-entry-buttons">';
 	do_action( 'ocean_before_archive_woo_entry_buttons' );
 	if ( get_theme_mod( 'ocean_woo_quick_view', true ) ) {
 		echo '<li class="woo-quickview-btn">' . apply_filters( 'ocean_woo_quick_view_button_html', '<a href="#" class="owp-quick-view" id="product_id_' . $product->get_id() . '" data-product_id="' . $product->get_id() . '"><i class="far fa-eye"></i></a>' ) . '</li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
-	if ( class_exists( 'TInvWL_Wishlist' ) ) {
+	$wl_plugin = get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' );
+
+	if ( 'ti_wl' === $wl_plugin && class_exists( 'TInvWL_Wishlist' ) ) {
 		echo '<li class="woo-wishlist-btn">' . do_shortcode( '[ti_wishlists_addtowishlist]' ) . '</li>';
+	} else if ( 'yith_wl' === $wl_plugin && class_exists( 'YITH_WCWL' ) ) {
+		echo '<li class="woo-wishlist-btn">' . do_shortcode( '[yith_wcwl_add_to_wishlist]' ) . '</li>';
 	}
+
 	do_action( 'ocean_after_archive_woo_entry_buttons' );
 	echo '</ul>';
 }
@@ -90,11 +95,11 @@ echo '<li class="title">';
 	if ( false === $ocean_woo_disable_links
 		|| ( $disable_links && is_user_logged_in() ) ) {
 
-		echo '<a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a>';
+		echo '<h2><a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a></h2>';
 
 	} else {
 		
-		the_title();
+		echo '<h2>' . get_the_title() . '</h2>';
 
 	}
 	

@@ -501,10 +501,16 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'ocean_after_single_product_excerpt', array( $this, 'woocommerce_germanized_single_meta' ) );
 			}
 
+			if ( class_exists( 'YITH_WCWL' ) ) {
+
+				add_action( 'wp_enqueue_scripts', 'ocean_dequeue_yith_wl_scripts' );
+
+			}
+
 		}
 
 		/**
-		 * Remove elemnts.
+		 * Remove elements.
 		 *
 		 * @since 1.0.0
 		 */
@@ -693,7 +699,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				wp_enqueue_script( 'oceanwp-woo-thumbnails', OCEANWP_JS_DIR_URI .'third/woo/woo-thumbnails.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
 			}
 
-			// If quick view
+			// If quick view.
 			if ( get_theme_mod( 'ocean_woo_quick_view', true ) ) {
 				wp_enqueue_script( 'oceanwp-woo-quick-view', OCEANWP_JS_DIR_URI .'third/woo/woo-quick-view.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
 				wp_enqueue_style( 'oceanwp-woo-quick-view', OCEANWP_CSS_DIR_URI .'woo/woo-quick-view.min.css' );
@@ -701,8 +707,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				wp_enqueue_script( 'flexslider' );
 			}
 
-			// If whislist
-			if ( class_exists( 'TInvWL_Wishlist' ) ) {
+			// If whislist.
+			if ( class_exists( 'TInvWL_Wishlist' ) || class_exists( 'YITH_WCWL' ) ) {
 				wp_enqueue_style( 'oceanwp-wishlist', OCEANWP_CSS_DIR_URI .'woo/wishlist.min.css' );
 			}
 
@@ -1873,23 +1879,37 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function menu_wishlist_icon( $items, $args ) {
 
-			// Return items if is in the Elementor edit mode, to avoid error
+			// Return items if is in the Elementor edit mode, to avoid error.
 			if ( OCEANWP_ELEMENTOR_ACTIVE
 				&& \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 				return $items;
 			}
 
-			// Return
-			if ( ! class_exists( 'TInvWL_Wishlist' )
+			// Return.
+			if ( ! ocean_woo_wishlist()
 				|| true != get_theme_mod( 'ocean_woo_wishlist_icon', false )
 				|| 'main_menu' != $args->theme_location ) {
 				return $items;
 			}
 
-			// Add wishlist link to menu items
-			$items .= '<li class="woo-wishlist-link">'. do_shortcode( '[ti_wishlist_products_counter]' ) .'</li>';
+			$wl_plugin = get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' );
+			
+			$items .= '<li class="woo-wishlist-link">';
 
-			// Return menu items
+			if ( 'ti_wl' === $wl_plugin ) {
+				$items .= do_shortcode( '[ti_wishlist_products_counter]' );
+			} else if ( 'yith_wl' === $wl_plugin ) {
+
+				// Get YITH Wishlist URL.
+				$wishlist_url = YITH_WCWL()->get_last_operation_url();
+				$woo_wl_count = ocean_woo_wishlist_count();
+
+				$items .= '<a href="' . esc_url( $wishlist_url ) . '"><i class="fas fa-heart"><span class="wcmenucart-details count">' . esc_html( $woo_wl_count ) . '</i></span></a>';
+			}
+
+			$items .= '</li>';
+
+			// Return menu items.
 			return $items;
 		}
 
@@ -2415,7 +2435,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			$settings['woo_archive_title'] = array(
 				'label'                 => esc_html__( 'WooCommerce Archive Title', 'oceanwp' ),
-				'target'                => '.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a',
+				'target'                => '.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a',
 				'exclude'               => array( 'font-color' ),
 				'defaults'              => array(
 					'font-size'         => '14',

@@ -875,7 +875,7 @@
 			var $child = $( ".customizer-typography-archive-title-font-family" );
 			if ( pair ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-archive-title-font-family">.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{font-family: ' + pair + ";}</style>";
+				var img = '<style class="customizer-typography-archive-title-font-family">.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{font-family: ' + pair + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -890,7 +890,7 @@
 			var $child = $( ".customizer-typography-woo-archive-title-font-weight" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo-archive-title-font-weight">.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{font-weight: ' + dataAndEvents + ";}</style>";
+				var img = '<style class="customizer-typography-woo-archive-title-font-weight">.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{font-weight: ' + dataAndEvents + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -905,7 +905,7 @@
 			var $child = $( ".customizer-typography-woo-archive-title-font-style" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo-archive-title-font-style">.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{font-style: ' + dataAndEvents + ";}</style>";
+				var img = '<style class="customizer-typography-woo-archive-title-font-style">.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{font-style: ' + dataAndEvents + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -920,7 +920,7 @@
 			var $child = $( ".customizer-typography-woo-archive-title-font-size" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo-archive-title-font-size">.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{font-size: ' + dataAndEvents + ";}</style>";
+				var img = '<style class="customizer-typography-woo-archive-title-font-size">.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{font-size: ' + dataAndEvents + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -935,7 +935,7 @@
 			var $child = $( ".customizer-typography-woo_archive_title-tablet-font-size" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo_archive_title-tablet-font-size">@media (max-width: 768px){.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{font-size: ' + dataAndEvents + ";}}</style>";
+				var img = '<style class="customizer-typography-woo_archive_title-tablet-font-size">@media (max-width: 768px){.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{font-size: ' + dataAndEvents + ";}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -950,7 +950,7 @@
 			var $child = $( ".customizer-typography-woo_archive_title-mobile-font-size" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo_archive_title-mobile-font-size">@media (max-width: 480px){.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{font-size: ' + dataAndEvents + ";}}</style>";
+				var img = '<style class="customizer-typography-woo_archive_title-mobile-font-size">@media (max-width: 480px){.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{font-size: ' + dataAndEvents + ";}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -965,7 +965,7 @@
 			var $child = $( ".customizer-typography-woo-archive-title-line-height" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo-archive-title-line-height">.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{line-height: ' + dataAndEvents + ";}</style>";
+				var img = '<style class="customizer-typography-woo-archive-title-line-height">.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{line-height: ' + dataAndEvents + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -980,7 +980,7 @@
 			var $child = $( ".customizer-typography-woo_archive_title-tablet-line-height" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo_archive_title-tablet-line-height">@media (max-width: 768px){.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{line-height: ' + dataAndEvents + ";}}</style>";
+				var img = '<style class="customizer-typography-woo_archive_title-tablet-line-height">@media (max-width: 768px){.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{line-height: ' + dataAndEvents + ";}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -995,7 +995,7 @@
 			var $child = $( ".customizer-typography-woo_archive_title-mobile-line-height" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo_archive_title-mobile-line-height">@media (max-width: 480px){.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{line-height: ' + dataAndEvents + ";}}</style>";
+				var img = '<style class="customizer-typography-woo_archive_title-mobile-line-height">@media (max-width: 480px){.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{line-height: ' + dataAndEvents + ";}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1010,7 +1010,7 @@
 			var $child = $( ".customizer-typography-woo-archive-title-letter-spacing" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo-archive-title-letter-spacing">.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{letter-spacing: ' + dataAndEvents + "px;}</style>";
+				var img = '<style class="customizer-typography-woo-archive-title-letter-spacing">.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{letter-spacing: ' + dataAndEvents + "px;}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1025,7 +1025,7 @@
 			var $child = $( ".customizer-typography-woo_archive_title-tablet-letter-spacing" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo_archive_title-tablet-letter-spacing">@media (max-width: 768px){.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
+				var img = '<style class="customizer-typography-woo_archive_title-tablet-letter-spacing">@media (max-width: 768px){.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1040,7 +1040,7 @@
 			var $child = $( ".customizer-typography-woo_archive_title-mobile-letter-spacing" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo_archive_title-mobile-letter-spacing">@media (max-width: 480px){.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
+				var img = '<style class="customizer-typography-woo_archive_title-mobile-letter-spacing">@media (max-width: 480px){.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{letter-spacing: ' + dataAndEvents + "px;}}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
@@ -1055,7 +1055,7 @@
 			var $child = $( ".customizer-typography-woo-archive-title-text-transform" );
 			if ( dataAndEvents ) {
 				/** @type {string} */
-				var img = '<style class="customizer-typography-woo-archive-title-text-transform">.woocommerce ul.products li.product li.title, .woocommerce ul.products li.product li.title a{text-transform: ' + dataAndEvents + ";}</style>";
+				var img = '<style class="customizer-typography-woo-archive-title-text-transform">.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{text-transform: ' + dataAndEvents + ";}</style>";
 				if ( $child.length ) {
 					$child.replaceWith( img );
 				} else {
