@@ -1720,7 +1720,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 		}
 
 		// Add search item to menu
-		$items .= '<li class="search-toggle-li">';
+		$items .= '<li class="search-toggle-li" ' . apply_filters( 'oceanwp_attrs_nav_search_bar', '' ) . '>';
 			if ( 'full_screen' == $header_style ) {
 				$items .= '<form method="get" action="'. esc_url( home_url( '/' ) ) .'" class="header-searchform">';
 					$items .= '<input type="search" name="s" value="" autocomplete="off" />';
@@ -1741,7 +1741,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 					}
 				$items .= '</form>';
 			} else {
-				$items .= '<a href="#" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
+				$items .= '<a href="#/" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
 					$items .= '<span class="icon-magnifier" aria-hidden="true"></span>';
 				$items .= '</a>';
 			}
@@ -1788,7 +1788,7 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 
 		// Add search item to menu
 		echo '<div id="search-toggle">';
-			echo '<a href="#" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
+			echo '<a href="#/" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
 				echo '<span class="icon-magnifier" aria-hidden="true"></span>';
 			echo '</a>';
 		echo '</div>';
@@ -4371,6 +4371,8 @@ if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
 			else {
 				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
 			}
+
+			return apply_filters( 'oceanwp_schema_location_html', $schema );
 		}
 
 		// Header
@@ -4535,4 +4537,59 @@ if ( ! function_exists( 'oceanwp_default_color_palettes' ) ) {
 
 	}
 
+}
+
+/**
+ * Create list of attributes into a string and apply filter baes on context
+ *
+ * @since 1.8.7
+ * @param string $context    The context, to build filter name.
+ * @param array  $attributes To load defaults attributes.
+ * @param array  $args       Custom data to pass to filter.
+ * @return string String of HTML attributes and values.
+ */
+function owp_attr( $context, $attributes = array(), $args = array() ) {
+
+	$attributes = owp_parse_attr( $context, $attributes, $args );
+
+	$output = '';
+
+	// loop through attributes and build attribute string.
+	foreach ( $attributes as $key => $value ) {
+
+		if ( ! $value ) {
+			continue;
+		}
+
+		if ( true === $value ) {
+			$output .= esc_html( $key ) . ' ';
+		} else {
+			$output .= sprintf( '%s="%s" ', esc_html( $key ), esc_attr( $value ) );
+		}
+	}
+
+	$output = apply_filters( "owp_attr_{$context}_output", $output, $attributes, $context, $args );
+
+	return trim( $output );
+}
+
+/**
+ * Create list of attributes into a string and apply filter baes on context
+ *
+ * @since 1.8.7
+ * @param string $context    The context, to build filter name.
+ * @param array  $attributes To load defaults attributes.
+ * @param array  $args       Custom data to pass to filter.
+ * @return string String of HTML attributes and values.
+ */
+function owp_parse_attr( $context, $attributes = array(), $args = array() ) {
+
+	$defaults = array(
+		'class' => sanitize_html_class( $context ),
+	);
+
+	$attributes = wp_parse_args( $attributes, $defaults );
+
+	// Apply filter based on context.
+	return apply_filters( "owp_attr_{$context}", $attributes, $context, $args );
 }

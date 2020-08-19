@@ -21,6 +21,9 @@ $menu_location = apply_filters( 'ocean_main_menu_location', 'main_menu' );
 // Multisite global menu.
 $ms_global_menu = apply_filters( 'ocean_ms_global_menu', false );
 
+// Menu data attributes.
+$toggle_menu_attrs = apply_filters( 'oceanwp_menu_toggle_data_attrs', '' );
+
 // Display if menu is defined.
 if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
@@ -87,7 +90,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 		<?php do_action( 'ocean_before_mobile_icon_inner' ); ?>
 
-		<a href="#" class="mobile-menu" aria-label="<?php esc_attr_e( 'Mobile Menu', 'oceanwp' ); ?>">
+		<a href="#/" class="mobile-menu" <?php echo $toggle_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> aria-label="<?php esc_attr_e( 'Mobile Menu', 'oceanwp' ); ?>">
 			<?php
 			if ( 'default' !== $btn ) {
 				?>

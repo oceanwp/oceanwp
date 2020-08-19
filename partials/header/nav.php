@@ -31,6 +31,9 @@ $get_content = oceanwp_nav_template_content();
 $wrap_classes  = oceanwp_header_menu_classes( 'wrapper' );
 $inner_classes = oceanwp_header_menu_classes( 'inner' );
 
+// Nav attributes.
+$owp_nav_attrs = apply_filters( 'oceanwp_attrs_main_nav', '' );
+
 if ( ! empty( $template ) ) {
 
 	do_action( 'ocean_before_nav' );
@@ -143,7 +146,7 @@ if ( ! empty( $template ) ) {
 			}
 			?>
 
-			<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?> role="navigation">
+			<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?> role="navigation" <?php echo $owp_nav_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
 				<?php
 				// Display global multisite menu.

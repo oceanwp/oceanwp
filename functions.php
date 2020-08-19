@@ -48,6 +48,9 @@ final class OCEANWP_Theme_Class {
 		// Load configuration classes.
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'configs' ), 3 );
 
+		// Load AMP configuration classes.
+		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'amp_config' ), 4 );
+
 		// Load framework classes.
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'classes' ), 4 );
 
@@ -208,6 +211,14 @@ final class OCEANWP_Theme_Class {
 	}
 
 	/**
+	 * OceanWP AMP support
+	 */
+	public static function amp_config() {
+		$dir = OCEANWP_INC_DIR;
+		require_once $dir . 'third/class-amp.php';
+	}
+
+	/**
 	 * Returns current theme version
 	 *
 	 * @since   1.0.0
@@ -237,6 +248,17 @@ final class OCEANWP_Theme_Class {
 		// WordPress version.
 		return version_compare( strtolower( $wp_version ), strtolower( $version ), '>=' );
 
+	}
+
+
+	/**
+	 * Check for AMP endpoint
+	 *
+	 * @return bool
+	 * @since 1.8.7
+	 */
+	public static function oceanwp_is_amp() {
+		return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
 	}
 
 	/**
@@ -469,6 +491,10 @@ final class OCEANWP_Theme_Class {
 	 * @since 1.0.0
 	 */
 	public static function theme_js() {
+
+		if ( self::oceanwp_is_amp() ) {
+			return;
+		}
 
 		// Get js directory uri.
 		$dir = OCEANWP_JS_DIR_URI;

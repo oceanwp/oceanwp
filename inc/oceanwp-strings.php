@@ -15,7 +15,7 @@ if ( ! function_exists( 'oceanwp_theme_strings' ) ) {
 	/**
 	 * OceanWP Theme Strings
 	 *
-	 *  @author Amit Singh (@apprimit)
+	 *  @author Amit Singh (apprimit@gmail.com)
 	 *  @since 1.8.5
 	 *
 	 * @param  string  $value  String key.
@@ -58,7 +58,6 @@ if ( ! function_exists( 'oceanwp_theme_strings' ) ) {
 				'owp-string-woo-floating-bar-select-btn' => apply_filters( 'ocean_woo_floating_bar_select_btn', __( 'Select Options', 'oceanwp' ) ),
 				'owp-string-woo-floating-bar-selected'   => apply_filters( 'ocean_woo_floating_bar_selected', __( 'Selected:', 'oceanwp' ) ),
 				'owp-string-woo-floating-bar-out-stock'  => apply_filters( 'ocean_woo_floating_bar_out_stock', __( 'Out of stock', 'oceanwp' ) ),
-
 			)
 		);
 
