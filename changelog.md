@@ -1,8 +1,9 @@
 # OceanWP Changelog
 
-### *2020.08.XX* - 1.8.7:
+### *2020.08.19* - 1.8.7:
 * **Added** - AMP support for theme.
 * **Fixed** - Blog grid layout issue.
+* **Fixed** - Outdated copies of some WooCommerce template files.
 
 ### *2020.07.09* - 1.8.6:
 * **Fixed** - WooCommerce product gallery slider style image issue.
