@@ -2,6 +2,8 @@
 
 ### *2020.08.XX* - 1.8.8
 * **Added** - Hook: ocean_after_archive_product_price;
+* **Added** - Options to choose default theme icons: General Options > Theme Icons.
+* **Added** - Blog: Post entries & single post meta icons color options - General Options > Theme Icons.
 * **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button option.
 * **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button message display (optional).
 * **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button message typography settings.
@@ -21,12 +23,18 @@
 * **Added** - WooCommerce: Floating Bar - limit product title to 4 words to avoid responsiveness issues.
 * **Added** - WooCommerce: Floating Bar - display 'Add to Cart' button on 320px width.
 * **Added** - WooCommerce: Improved 'Sales!' badge responsiveness.
+* **Added** - WooCommerce: SEO improvement - product archive title H2 tag.
+* **Added** - WooCommerce: Cart - product price on mobile devices.
 * **Added** - WooCommerce Germanized: Product archive & single product - product price unit support.
 * **Added** - WooCommerce Germanized: Product archive & single product - product units support.
 * **Added** - WooCommerce Germanized: Product archive & single product - product legal info support.
 * **Added** - WooCommerce Germanized: Product archive & single product - product delivery time info.
 * **Added** - YITH WooCommerce Wishlist plugin support.
 * **Added** - Speed Optimization: Display Swap: Google Fonts, woo star font, Font Awesome 5 icons, Simple Line icons, slick buttons.
+* **Added** - Translation string: Close mobile menu - 'owp-string-close-mobile-menu".
+* **Added** - Translation string: Mobile search - 'owp-string-mobile-search'.
+* **Added** - Translation string: Mobile submit search query - 'owp-string-mobile-submit-search'.
+* **Added** - Social Menu Options: TikTok & Medium.
 * **Tweak** - WooCommerce: Product archive rating separated from price as an individual element.
 * **Tweak** - WooCommerce: SEO Improvement - product title set to H2 tag.
 * **Tweak** - Blog: Post entries & single post meta data styling.
@@ -41,8 +49,15 @@
 * **Fixed** - WooCommerce: Floating Bar - responsiveness issues.
 * **Fixed** - WooCommerce: Single product missing 'has-product-nav' class when navigation enabled.
 * **Fixed** - WooCommerce: Product archive 'Add to Cart' typography settings declared as single 'Add to Cart' typography settings.
+* **Fixed** - WooCommerce: Single product - next/prev RTL arrows.
+* **Fixed** - WooCommerce: Cart shipping methods layout.
+* **Fixed** - WooCommerce: Checkout shipping methods layout.
+* **Fixed** - WooCommerce: RTL - 'Update Cart' button position.
+* **Fixed** - WooCommerce: Cart responsiveness.
 * **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
-* **Updated** - Speed Optimization: Simple Line Icons replaced with Font Awesome 5.
+* **Fixed** - Blog: Sinlge post - next/prev RTL arrows.
+* **Fixed** - Minor RTL style issues.
+* **Removed** - Google+ social menu option.
 
 ### *2020.07.09* - 1.8.6:
 * **Fixed** - WooCommerce product gallery slider style image issue.

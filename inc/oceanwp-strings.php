@@ -61,6 +61,11 @@ if ( ! function_exists( 'oceanwp_theme_strings' ) ) {
 				'owp-string-woo-nav-next-product'        => apply_filters( 'ocean_woo_nav_next_text', __( 'Next Product', 'oceanwp' ) ),
 				'owp-string-woo-nav-prev-product'        => apply_filters( 'ocean_woo_nav_prev_text', __( 'Previous Product', 'oceanwp' ) ),
 
+				// Aria
+				'owp-string-close-mobile-menu'           => apply_filters( 'ocean_wai_close_mobile_menu', __( 'Close mobile menu', 'oceanwp' ) ),
+				'owp-string-mobile-search'               => apply_filters( 'ocean_wai_mobile_search', __( 'Search for:', 'oceanwp' ) ),
+				'owp-string-mobile-submit-search'        => apply_filters( 'ocean_wai_mobile_search_submit', __( 'Submit search', 'oceanwp' ) ),
+
 			)
 		);
 

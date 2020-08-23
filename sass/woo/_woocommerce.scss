@@ -622,6 +622,7 @@
 		}
 		p {
 			margin: 0 0 5px;
+			color: #525252;
 		}
 		&:after {
 			content: ' ';
@@ -643,6 +644,12 @@
 			border-width: 1px;
 			border-style: solid;
 			border-color: #eaeaea;
+		}
+
+		tr th {
+			font-size: 16px;
+			letter-spacing: 0.8px;
+			text-transform: capitalize;
 		}
 		.shipping_calculator {
 			width: 48%;
@@ -679,12 +686,12 @@
 			border-bottom: 1px solid;
 			margin: 0 -20px 20px;
 			padding: 0.8em 20px;
-			font-size: 1.077em;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
 			font-weight: 600;
 			color: #444;
 			text-align: center;
-			border-color: #eaeaea;
-			border-color: #eaeaea;
 			border-color: #eaeaea;
 		}
 		.products .product {
@@ -867,6 +874,15 @@
 				}
 				th {
 					border-color: #eaeaea;
+					font-size: 14.5px;
+					letter-spacing: 0.8px;
+				}
+
+				tr.order-total td {
+					span.woocommerce-Price-amount.amount {
+						font-size: 15px;
+						letter-spacing: 0.5px;
+					}
 				}
 			}
 			a.remove {
@@ -2686,17 +2702,24 @@ ul {
 			td {
 				border-bottom: 1px solid;
 				border-color: #eaeaea;
+				span.woocommerce-Price-amount.amount {
+					font-size: 15px;
+					vertical-align: middle;
+					padding-top: 0.8em;
+					letter-spacing: 0.5px;
+				}
 			}
 		}
 		.shipping-calculator-button {
 			display: inline-block;
-			font-size: 13px;
-			line-height: 1;
+			font-size: 12px;
+			line-height: 1.5;
+			font-weight: 900;
 			padding-bottom: 3px;
 			border-bottom: 1px solid;
 			margin-top: 13px;
 			text-transform: uppercase;
-			letter-spacing: 0.4px;
+			letter-spacing: 0.9px;
 		}
 		.shipping-calculator-form {
 			margin-top: 15px;
@@ -3574,6 +3597,77 @@ li.wc-gzd {
 		font-size: 15px;
 		line-height: 1.6;
 		padding: 16px 20px;
+	}
+}
+
+ul#shipping_method {
+	padding-bottom: 20px;
+	li {
+	padding-bottom: 10px;
+		label {
+			padding-left: 10px;
+			font-weight: bold;
+			vertical-align: middle;
+			color: #525252;
+			cursor: pointer;
+			font-size: 14.5px;
+			letter-spacing: 0.5px;
+	}
+
+	input[type=radio] {
+		vertical-align: middle;
+		cursor: pointer;
+	}
+  }
+}
+
+.woocommerce #order_review table.shop_table {
+	ul#shipping_method.woocommerce-shipping-methods {
+		padding-bottom: 20px;
+		text-align: left;
+		li {
+			padding-bottom: 10px;
+			/*display: inline-block;*/
+			label {
+				display: inline;
+				padding-left: 10px;
+				font-weight: bold;
+				vertical-align: middle;
+				color: #525252;
+				cursor: pointer;
+				font-size: 14.5px;
+				letter-spacing: 0.5px;
+			}
+			input[type=radio] {
+				vertical-align: middle;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+#order-review table tfoot tr.woocommerce-shipping-totals.shipping td {
+	ul#shipping_method {
+		padding-bottom: 20px;
+		display: block;
+		li {
+		padding-bottom: 10px;
+			label {
+				padding-left: 10px;
+				font-weight: bold;
+				vertical-align: middle;
+				color: #525252;
+				cursor: pointer;
+				font-size: 14.5px;
+				letter-spacing: 0.5px;
+		}
+	
+		input[type=radio] {
+			vertical-align: middle;
+			cursor: pointer;
+			display: inline-block;
+		}
+	  }
 	}
 }
 

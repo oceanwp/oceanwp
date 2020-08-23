@@ -10,6 +10,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Get theme icons.
+$theme_icons = oceanwp_theme_icons();
+$icon_t = oceanwp_theme_icon_class();
+
 // Post type.
 $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
 
@@ -28,7 +32,7 @@ $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
 			<?php
 		}
 		?>
-		<button class="search-submit"><i class="fas fa-search"></i></button>
+		<button class="search-submit"><i class="<?php echo $theme_icons[ 'search' ][ $icon_t ]; ?>"></i></button>
 		<div class="search-bg"></div>
 		<?php if ( 'any' !== $post_type ) { ?>
 			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">

@@ -16,7 +16,9 @@ $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
 // Aria labels.
 $oaria_close = __( 'Close search form', 'oceanwp' );
 
-
+// Get theme icons.
+$theme_icons = oceanwp_theme_icons();
+$icon_t = oceanwp_theme_icon_class();
 ?>
 
 <div id="searchform-header-replace" class="header-searchform-wrap clr">
@@ -28,5 +30,5 @@ $oaria_close = __( 'Close search form', 'oceanwp' );
 		<?php } ?>
 		<?php do_action( 'wpml_add_language_form_field' ); ?>
 	</form>
-	<span id="searchform-header-replace-close" class="fas fa-times-circle" aria-label="<?php echo esc_attr( $oaria_close ); ?>"></span>
+	<span id="searchform-header-replace-close" class="<?php echo $theme_icons[ 'close' ][ $icon_t ]; ?>" aria-label="<?php echo esc_attr( $oaria_close ); ?>"></span>
 </div><!-- #searchform-header-replace -->

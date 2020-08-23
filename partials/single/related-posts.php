@@ -15,6 +15,10 @@ if ( 'post' !== get_post_type() ) {
 	return;
 }
 
+// Get theme icons.
+$theme_icons = oceanwp_theme_icons();
+$icon_t = oceanwp_theme_icon_class();
+
 // Number of columns for entries.
 $oceanwp_columns = apply_filters( 'ocean_related_blog_posts_columns', absint( get_theme_mod( 'ocean_blog_related_columns', '3' ) ) );
 
@@ -187,7 +191,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3><!-- .related-post-title -->
 
-					<time class="published" datetime="<?php echo esc_html( get_the_date( 'c' ) ); ?>"><i class="far fa-calendar-alt" aria-hidden="true"></i><?php echo esc_html( get_the_date() ); ?></time>
+					<time class="published" datetime="<?php echo esc_html( get_the_date( 'c' ) ); ?>"><i class="<?php echo $theme_icons[ 'date' ][ $icon_t ]; ?>" aria-hidden="true"></i><?php echo esc_html( get_the_date() ); ?></time>
 
 				</article><!-- .related-post -->
 

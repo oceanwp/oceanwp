@@ -7041,6 +7041,36 @@
 					$child.remove();
 				}
 			});
+		}), api("ocean_theme_blog_posts_icons_color", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_theme_blog_posts_icons_color");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_theme_blog_posts_icons_color">#blog-entries ul.meta li i{ color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_theme_single_post_icons_color", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_theme_single_post_icons_color");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_theme_single_post_icons_color">.single-post ul.meta li i{ color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
 		});
 
 } )( jQuery );

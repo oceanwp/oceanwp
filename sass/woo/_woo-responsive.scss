@@ -175,10 +175,6 @@ Woo Responsive
 			width: 100%;
 			margin-bottom: 20px;
 		}
-		&.woocommerce-cart table.shop_table td.product-price {
-			display: none !important;
-		}
-
 	}
 	.woocommerce-cart {
 		.cart-collaterals .cart_totals table td {
@@ -213,6 +209,9 @@ Woo Responsive
 					content: attr(data-title) ': ';
 					font-weight: 600;
 					float: left;
+					font-size: 14.5px;
+					letter-spacing: 0.8px;
+					color: #525252;
 				}
 
 				&.product-remove:before,
@@ -226,6 +225,14 @@ Woo Responsive
 
 				&.product-quantity .quantity {
 					float: right;
+				}
+
+				&.product-subtotal {
+					span.woocommerce-Price-amount.amount {
+						font-size: 14px;
+						font-weight: 600;
+						letter-spacing: 0.5px;
+					}
 				}
 
 				&.actions,
@@ -254,6 +261,28 @@ Woo Responsive
 			}
 		}
 	}
+}
+
+@media only screen and (max-width: 767px) {
+	ul#shipping_method {
+		display: inline-block;
+		width: 100%;
+		text-align: left;
+		padding-top: 20px;
+		li {
+			padding-bottom: 20px;
+		}
+	}
+
+	.woocommerce .cart-collaterals{
+		p {
+		text-align: left;
+		}
+		.cart_totals .shipping-calculator-button {
+			float: left;
+		}
+	}
+
 }
 
 @media only screen and(max-width: 580px) {

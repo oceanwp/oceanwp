@@ -315,6 +315,10 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 										$img_args['itemprop'] = 'image';
 									}
 
+									// Get theme icons.
+									$theme_icons = oceanwp_theme_icons();
+									$icon_t = oceanwp_theme_icon_class();
+
 									$output .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="mega-post-link">';
 
 										$output .= get_the_post_thumbnail( get_the_ID(), 'medium', $img_args );
@@ -322,7 +326,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 										$output .= '<span class="overlay"></span>';
 									$output .= '</a>';
 
-									$output .= '<h3 class="mega-post-title"><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3><div class="mega-post-date"><i class="far fa-calendar-alt"></i>'. get_the_date() .'</div>';
+									$output .= '<h3 class="mega-post-title"><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3><div class="mega-post-date"><i class="'. $theme_icons[ 'date' ][ $icon_t ] . '" aria-hidden="true"></i>'. get_the_date() .'</div>';
 
 								}
 
