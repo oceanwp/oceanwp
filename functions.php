@@ -39,17 +39,11 @@ final class OCEANWP_Theme_Class {
 	 */
 	public function __construct() {
 
-		// Define constants.
-		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'constants' ), 0 );
+		// Define theme constants.
+		$this->oceanwp_constants();
 
-		// Load all core theme function files.
-		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'include_functions' ), 1 );
-
-		// Load configuration classes.
-		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'configs' ), 3 );
-
-		// Load AMP configuration classes.
-		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'amp_config' ), 4 );
+		// Load required files.
+		$this->oceanwp_has_setup();
 
 		// Load framework classes.
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'classes' ), 4 );
@@ -140,7 +134,7 @@ final class OCEANWP_Theme_Class {
 	 *
 	 * @since   1.0.0
 	 */
-	public static function constants() {
+	public static function oceanwp_constants() {
 
 		$version = self::theme_version();
 
@@ -169,10 +163,12 @@ final class OCEANWP_Theme_Class {
 	/**
 	 * Load all core theme function files
 	 *
-	 * @since 1.0.0
+	 * @since 1.0.0oceanwp_has_setup
 	 */
-	public static function include_functions() {
+	public static function oceanwp_has_setup() {
+
 		$dir = OCEANWP_INC_DIR;
+
 		require_once $dir . 'helpers.php';
 		require_once $dir . 'header-content.php';
 		require_once $dir . 'oceanwp-strings.php';
@@ -188,16 +184,8 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'third/class-learndash.php';
 		require_once $dir . 'third/class-sensei.php';
 		require_once $dir . 'third/class-social-login.php';
-	}
-
-	/**
-	 * Configs for 3rd party plugins.
-	 *
-	 * @since 1.0.0
-	 */
-	public static function configs() {
-
-		$dir = OCEANWP_INC_DIR;
+		require_once $dir . 'third/class-amp.php';
+		require_once $dir . 'third/class-pwa.php';
 
 		// WooCommerce.
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
@@ -208,14 +196,7 @@ final class OCEANWP_Theme_Class {
 		if ( OCEANWP_EDD_ACTIVE ) {
 			require_once $dir . 'edd/edd-config.php';
 		}
-	}
 
-	/**
-	 * OceanWP AMP support
-	 */
-	public static function amp_config() {
-		$dir = OCEANWP_INC_DIR;
-		require_once $dir . 'third/class-amp.php';
 	}
 
 	/**

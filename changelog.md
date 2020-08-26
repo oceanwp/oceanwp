@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2020.08.XX* - 1.8.8:
+* **Added** - PWA ( Progressive Web App ) support for theme.
+
 ### *2020.08.19* - 1.8.7:
 * **Added** - AMP support for theme.
 * **Fixed** - Blog grid layout issue.
