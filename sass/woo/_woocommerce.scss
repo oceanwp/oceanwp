@@ -3674,3 +3674,9 @@ ul#shipping_method {
 .woocommerce.woo-variation-swatches-stylesheet-enabled .variable-items-wrapper {
     margin: 0;
 }
+
+.woocommerce .cross-sells {
+	li.title h2 {
+	background-color: transparent !important;
+	}
+}
