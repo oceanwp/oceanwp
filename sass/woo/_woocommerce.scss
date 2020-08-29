@@ -3680,3 +3680,13 @@ ul#shipping_method {
 	background-color: transparent !important;
 	}
 }
+
+/* Product variation on Elementor pages */
+.woocommerce div.product.elementor form.cart table.variations
+td.value:before {
+    content: none;
+}
+.woocommerce div.product.elementor form.cart table.variations td { 
+    display: block !important; 
+    line-height: inherit !important; 
+}

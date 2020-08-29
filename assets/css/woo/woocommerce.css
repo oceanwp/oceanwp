@@ -4335,6 +4335,17 @@ ul#shipping_method li input[type=radio] {
   background-color: transparent !important;
 }
 
+/* Product variation on Elementor pages */
+.woocommerce div.product.elementor form.cart table.variations
+td.value:before {
+  content: none;
+}
+
+.woocommerce div.product.elementor form.cart table.variations td {
+  display: block !important;
+  line-height: inherit !important;
+}
+
 .widget_product_categories li,
 .widget_layered_nav li {
   position: relative;
