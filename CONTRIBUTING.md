@@ -12,11 +12,11 @@ GitHub is for *bug reports and contributions only* - if you have a support quest
 
 ### Reporting Issues
 
-Reporting issues is a great way to became a contributor as it doesn't require technical skills. In fact you don't even need to know a programming language or to be able to check the code itself, you just need to make sure that everything works as expected and [submit an issue report](https://github.com/oceanwp/oceanwp/issues/new) if you spot a bug. Sounds like something you're up for? Go for it!
+Reporting issues is a great way to became a contributor, because it doesn't require technical skills. In fact, you don't even need to know a programming language or to be able to check the code itself. You just need to make sure that everything works as expected and [submit an issue report](https://github.com/oceanwp/oceanwp/issues/new) if you spot a bug. Sounds like something you're up for? Go for it!
 
 #### How To Submit An Issue Report
 
-If something isn't working, congratulations you've found a bug! Help us fix it by submitting an issue report:
+If something doesn't function - congratulations - you've found a bug! Help us fix it by submitting an issue report:
 
 * Make sure you have a [GitHub account](https://github.com/signup/free)
 * Search the [Existing Issues](https://github.com/oceanwp/oceanwp/issues) to be sure that the one you've noticed isn't already there
@@ -26,7 +26,7 @@ If something isn't working, congratulations you've found a bug! Help us fix it b
 
 ### Making Changes
 
-Making changes to the core is a key way to help us improve OceanWP. You will need some technical skills to make a change, like knowing a bit of PHP, CSS, SASS or JavaScript as well as some other development technologies (more on that shortly).
+Making changes to the core is a key way to help us improve OceanWP. You will need some technical skills to make a change, like knowing a bit of PHP, CSS, SASS or JavaScript, as well as some other development technologies (more on that shortly).
 
 If you think something could be improved and you're able to do so, make your changes and submit a Pull Request. We'll be pleased to get it :)
 
@@ -39,7 +39,7 @@ OceanWP utilises technologies such as [Grunt](http://gruntjs.com/) and [Sass](ht
 * Pull the OceanWP project dependencies into your environment by navigating to your `/oceanwp/` directory in Terminal then run `npm install`.
 * Create local copies of OceanWP css (we do not version control the .css files) by running `grunt sass`.
 
-You're now ready to go! You can now activate OceanWP in your WordPress install and begin making changes.
+You're now ready to go! You can activate OceanWP in your WordPress install and start making changes.
 
 **Please note:** any style changes you make should be done in the Sass files, not the .css files. Once you've changed a .scss file you will want to compile it to see those changes in your setup. There are two ways to do this;
 
@@ -53,8 +53,8 @@ You're now ready to go! You can now activate OceanWP in your WordPress install a
   * Ensure you use LF line endings - no crazy Windows line endings please :)
 * When committing, reference your issue number (#1234) and include a note about the fix
 * Push the changes to your fork and submit a pull request on the master branch of the OceanWP repository.
-* Please **don't** modify the changelog - this will be maintained by the OceanWP developers.
-* Please **don't** add your localizations or update the .pot files - these will also be maintained by the OceanWP developers.
+* Please **don't** modify the changelog - this will be maintained by OceanWP developers.
+* Please **don't** add your localizations or update the .pot files - these will also be maintained by OceanWP developers.
 
 After you follow the step above, the next stage will be waiting on us to merge your Pull Request. We review them all, and make suggestions and changes as and if necessary.
 

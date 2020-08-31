@@ -1784,17 +1784,12 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 					}
 				$items .= '</form>';
 			} else {
-<<<<<<< HEAD
 				// Get theme icons.
 				$theme_icons = oceanwp_theme_icons();
 				$icon_t = oceanwp_theme_icon_class();
 
 				$items .= '<a href="#" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
 					$items .= '<span class="' . $theme_icons[ 'search' ][ $icon_t ] . '" aria-hidden="true"></span>';
-=======
-				$items .= '<a href="#/" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
-					$items .= '<span class="icon-magnifier" aria-hidden="true"></span>';
->>>>>>> dev-2
 				$items .= '</a>';
 			}
 		$items .= '</li>';
@@ -1844,13 +1839,8 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 
 		// Add search item to menu.
 		echo '<div id="search-toggle">';
-<<<<<<< HEAD
 			echo '<a href="#" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
 				echo '<span class="' . $theme_icons[ 'search' ][ $icon_t ] . '" aria-hidden="true"></span>';
-=======
-			echo '<a href="#/" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
-				echo '<span class="icon-magnifier" aria-hidden="true"></span>';
->>>>>>> dev-2
 			echo '</a>';
 		echo '</div>';
 
