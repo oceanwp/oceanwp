@@ -9,7 +9,7 @@
 
 if ( ! defined( 'YITH_WCWL' ) ) {
 	exit;
-} // Exit if accessed directly
+} // Exit if accessed directly.
 
 global $product;
 ?>

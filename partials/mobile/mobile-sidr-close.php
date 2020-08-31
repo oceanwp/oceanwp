@@ -10,19 +10,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Get theme icons.
+$theme_icons = oceanwp_theme_icons();
+$icon_t = oceanwp_theme_icon_class();
+
 // Get icon.
-$icon = get_theme_mod( 'ocean_mobile_menu_close_btn_icon', 'icon-close' );
+$icon = $theme_icons[ 'close' ][ $icon_t ];
+$icon = get_theme_mod( 'ocean_mobile_menu_close_btn_icon', $icon );
 $icon = apply_filters( 'ocean_mobile_menu_close_btn_icon', $icon );
 
 // Text.
 $text = get_theme_mod( 'ocean_mobile_menu_close_btn_text' );
 $text = oceanwp_tm_translation( 'ocean_mobile_menu_close_btn_text', $text );
 $text = $text ? $text : esc_html__( 'Close Menu', 'oceanwp' );
-
 ?>
 
 <div id="sidr-close">
-	<a href="#" class="toggle-sidr-close" aria-label="<?php esc_attr_e( 'Close mobile Menu', 'oceanwp' ); ?>">
+	<a href="#" class="toggle-sidr-close" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-close-mobile-menu', 'oceanwp' ) ); ?>">
 		<i class="icon <?php echo esc_attr( $icon ); ?>" aria-hidden="true"></i><span class="close-text"><?php echo do_shortcode( $text ); ?></span>
 	</a>
 </div>
