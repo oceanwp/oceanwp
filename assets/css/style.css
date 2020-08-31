@@ -6492,6 +6492,15 @@ body.breadcrumbs-position-default .page-header-title {
   margin-left: 8px;
 }
 
+.has-blog-grid .blog-grid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+  height: auto !important;
+}
+
 .blog-entry.grid-entry {
   float: left;
 }

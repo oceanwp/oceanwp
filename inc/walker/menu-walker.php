@@ -194,7 +194,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 	    	// Description
 		    if ( $item->description && 0 != $depth ) {
 		    	$item_output .= '<span class="nav-content">'. $item->description .'</span>';
-		    }
+			}
 
 			$item_output .= '</a>';
 

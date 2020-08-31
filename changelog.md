@@ -1,5 +1,6 @@
 # OceanWP Changelog
 
+<<<<<<< HEAD
 ### *2020.08.XX* - 1.8.8
 * **Added** - Hook: ocean_after_archive_product_price;
 * **Added** - Options to choose default theme icons: General Options > Theme Icons.
@@ -58,6 +59,15 @@
 * **Fixed** - Blog: Sinlge post - next/prev RTL arrows.
 * **Fixed** - Minor RTL style issues.
 * **Removed** - Google+ social menu option.
+=======
+### *2020.08.XX* - 1.8.8:
+* **Added** - PWA ( Progressive Web App ) support for theme.
+
+### *2020.08.19* - 1.8.7:
+* **Added** - AMP support for theme.
+* **Fixed** - Blog grid layout issue.
+* **Fixed** - Outdated copies of some WooCommerce template files.
+>>>>>>> dev-2
 
 ### *2020.07.09* - 1.8.6:
 * **Fixed** - WooCommerce product gallery slider style image issue.

@@ -664,7 +664,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Return
  			return $classes;
-			
+
 		}
 
 		/**

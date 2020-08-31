@@ -2,9 +2,9 @@
 
 **Contributors:** Nicolas, Alex, Amit, and Marko
 **Requires at least:** WordPress 5.3
-**Tested up to:** WordPress 5.4.2
-**Stable tag:** 1.8.6
-**Requires PHP:** 7.0
+**Tested up to:** WordPress 5.5
+**Stable tag:** 1.8.8
+**Requires PHP:** 7.2
 **License:** GPLv2 or later
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 **Tags:** two-columns, right-sidebar, footer-widgets, blog, news, custom-background, custom-menu, post-formats, rtl-language-support, sticky-post, editor-style, threaded-comments, translation-ready, buddypress, custom-colors, featured-images, full-width-template, theme-options, e-commerce
