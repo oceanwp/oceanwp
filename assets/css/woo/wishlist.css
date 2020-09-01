@@ -50,3 +50,6 @@ a.wishlist_products_counter.top_wishlist-heart-plus:before, a.wishlist_products_
 }
 
 /* YITH WooCommerce Wishlist ______________>> OceanWP */
+.woo-wishlist-link span.count {
+  margin-left: 5px;
+}

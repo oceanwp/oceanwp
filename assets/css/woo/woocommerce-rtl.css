@@ -4,7 +4,7 @@
  */
 
 /* Header cart */
-.wcmenucart-details { margin-right: 8px; margin-left: 0; }
+.wcmenucart-details { margin-right: 8px !important; margin-left: 0; }
 .wcmenucart-details.count:before { right: -3px; left: auto; border-style: solid none solid solid; border-width: 5px medium 5px 5px; }
 
 /* General */

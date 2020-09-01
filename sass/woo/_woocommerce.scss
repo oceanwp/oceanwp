@@ -1850,7 +1850,7 @@
 	}
 }
 .wcmenucart-details {
-	margin-left: 8px;
+	margin-left: 8px !important;
 	&.count {
 		display: inline-block;
 		position: relative;
@@ -3627,7 +3627,6 @@ ul#shipping_method {
 		text-align: left;
 		li {
 			padding-bottom: 10px;
-			/*display: inline-block;*/
 			label {
 				display: inline;
 				padding-left: 10px;
@@ -3675,9 +3674,11 @@ ul#shipping_method {
     margin: 0;
 }
 
+/* Product title background for cross-sell on cart page */
 .woocommerce .cross-sells {
 	li.title h2 {
 	background-color: transparent !important;
+	border-bottom: none;
 	}
 }
 

@@ -2271,7 +2271,7 @@
 }
 
 .wcmenucart-details {
-  margin-left: 8px;
+  margin-left: 8px !important;
 }
 
 .wcmenucart-details.count {
@@ -4283,7 +4283,6 @@ ul#shipping_method li input[type=radio] {
 
 .woocommerce #order_review table.shop_table ul#shipping_method.woocommerce-shipping-methods li {
   padding-bottom: 10px;
-  /*display: inline-block;*/
 }
 
 .woocommerce #order_review table.shop_table ul#shipping_method.woocommerce-shipping-methods li label {
@@ -4331,8 +4330,10 @@ ul#shipping_method li input[type=radio] {
   margin: 0;
 }
 
+/* Product title background for cross-sell on cart page */
 .woocommerce .cross-sells li.title h2 {
   background-color: transparent !important;
+  border-bottom: none;
 }
 
 /* Product variation on Elementor pages */

@@ -1918,7 +1918,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$wishlist_url = YITH_WCWL()->get_last_operation_url();
 				$woo_wl_count = ocean_woo_wishlist_count();
 
-				$items .= '<a href="' . esc_url( $wishlist_url ) . '"><i class="fas fa-heart"><span class="wcmenucart-details count">' . esc_html( $woo_wl_count ) . '</i></span></a>';
+				$items .= '<a href="' . esc_url( $wishlist_url ) . '"><i class="fas fa-heart"><span class="count">' . esc_html( $woo_wl_count ) . '</i></span></a>';
 			}
 
 			$items .= '</li>';
