@@ -1,9 +1,9 @@
 # OceanWP Changelog
 
-<<<<<<< HEAD
-### *2020.08.XX* - 1.8.8
+### *2020.09.XX* - 1.8.8
+* **Added** - PWA ( Progressive Web App ) theme support.
 * **Added** - Hook: ocean_after_archive_product_price;
-* **Added** - Options to choose default theme icons: General Options > Theme Icons.
+* **Added** - Option to choose default theme icons: General Options > Theme Icons.
 * **Added** - Blog: Post entries & single post meta icons color options - General Options > Theme Icons.
 * **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button option.
 * **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button message display (optional).
@@ -21,7 +21,7 @@
 * **Added** - WooCommerce: Product archive category typography settings.
 * **Added** - WooCommerce: Product archive price typography settings.
 * **Added** - WooCommerce: Single product 'Add to Cart' typography settings.
-* **Added** - WooCommerce: Floating Bar - limit product title to 4 words to avoid responsiveness issues.
+* **Added** - WooCommerce: Floating Bar - product title limited to 4 words to avoid responsiveness issues.
 * **Added** - WooCommerce: Floating Bar - display 'Add to Cart' button on 320px width.
 * **Added** - WooCommerce: Improved 'Sales!' badge responsiveness.
 * **Added** - WooCommerce: SEO improvement - product archive title H2 tag.
@@ -46,7 +46,7 @@
 * **Tweak** - Customizer Loading Optimization: LearnDash style live preview script separated from main script.
 * **Fixed** - WooCommerce: Mixed up translation filters for Next/Prev product navigation.
 * **Fixed** - WooCommerce: Incorrect single product Next/Prev nav - next nav displaying previous product & vice versa.
-* **Fixed** - WooCommerce: Floating Bar - blank space below footer on 320px width and lower.
+* **Fixed** - WooCommerce: Floating Bar - blank space below footer on 320px width and less.
 * **Fixed** - WooCommerce: Floating Bar - responsiveness issues.
 * **Fixed** - WooCommerce: Single product missing 'has-product-nav' class when navigation enabled.
 * **Fixed** - WooCommerce: Product archive 'Add to Cart' typography settings declared as single 'Add to Cart' typography settings.
@@ -56,18 +56,14 @@
 * **Fixed** - WooCommerce: RTL - 'Update Cart' button position.
 * **Fixed** - WooCommerce: Cart responsiveness.
 * **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
-* **Fixed** - Blog: Sinlge post - next/prev RTL arrows.
+* **Fixed** - Blog: Single post - next/prev RTL arrows.
 * **Fixed** - Minor RTL style issues.
 * **Removed** - Google+ social menu option.
-=======
-### *2020.08.XX* - 1.8.8:
-* **Added** - PWA ( Progressive Web App ) support for theme.
 
 ### *2020.08.19* - 1.8.7:
 * **Added** - AMP support for theme.
 * **Fixed** - Blog grid layout issue.
 * **Fixed** - Outdated copies of some WooCommerce template files.
->>>>>>> dev-2
 
 ### *2020.07.09* - 1.8.6:
 * **Fixed** - WooCommerce product gallery slider style image issue.
