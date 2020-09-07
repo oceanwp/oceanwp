@@ -113,7 +113,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 				<?php
 				// Display close text if drop down mobile style.
-				if ( 'dropdown' === get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
+				if ( 'dropdown' === get_theme_mod( 'ocean_mobile_menu_style', 'dropdown' ) ) {
 					?>
 					<span class="oceanwp-close-text"><?php echo do_shortcode( $close_text ); ?></span>
 					<?php

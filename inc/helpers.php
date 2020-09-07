@@ -1849,10 +1849,10 @@ if ( ! function_exists( 'oceanwp_mobile_menu_style' ) ) {
 	function oceanwp_mobile_menu_style() {
 
 		// Get style from customizer setting
-		$style = get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' );
+		$style = get_theme_mod( 'ocean_mobile_menu_style', 'dropdown' );
 
 		// Sanitize style to make sure it isn't empty
-		$style = $style ? $style : 'sidebar';
+		$style = $style ? $style : 'dropdown';
 
 		// Apply filters and return
 		return apply_filters( 'ocean_mobile_menu_style', $style );

@@ -2,6 +2,12 @@
 
 ### *2020.08.XX* - 1.8.8:
 * **Added** - PWA ( Progressive Web App ) support for theme.
+* **Fixed** - Font size for Skip to content text.
+* **Fixed** - Header text color doesn't work.
+* **Fixed** - Adding a custom logo and removing it will make the text logo (and description) disappear aswell.
+* **Fixed** - Default mobile menu style changed from sidebar to dropdown.
+
+
 
 ### *2020.08.19* - 1.8.7:
 * **Added** - AMP support for theme.

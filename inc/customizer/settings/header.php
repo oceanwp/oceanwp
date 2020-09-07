@@ -3465,7 +3465,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 * Mobile Menu Style
 			 */
 			$wp_customize->add_setting( 'ocean_mobile_menu_style', array(
-				'default' 				=> 'sidebar',
+				'default' 				=> 'dropdown',
 				'sanitize_callback' 	=> 'sanitize_key',
 			) );
 
