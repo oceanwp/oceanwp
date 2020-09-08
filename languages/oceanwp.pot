@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 1.8.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2020-09-07 07:43:13+00:00\n"
+"POT-Creation-Date: 2020-09-08 05:13:02+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3037,7 +3037,8 @@ msgid "Menu Text"
 msgstr ""
 
 #: inc/customizer/settings/header.php:3522 inc/helpers.php:3834
-#: partials/mobile/mobile-icon.php:45
+#: partials/mobile/mobile-dropdown-close.php:40
+#: partials/mobile/mobile-dropdown.php:72 partials/mobile/mobile-icon.php:45
 msgid "Close"
 msgstr ""
 
@@ -5450,6 +5451,10 @@ msgstr ""
 
 #: partials/header/style/vertical-header-search.php:17
 msgid "Vertical Header Search"
+msgstr ""
+
+#: partials/mobile/mobile-dropdown-close.php:47
+msgid "Mobile Menu Close"
 msgstr ""
 
 #: partials/mobile/mobile-fullscreen-search.php:21

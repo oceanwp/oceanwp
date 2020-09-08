@@ -64,7 +64,16 @@ $top_menu_args = array(
 	'theme_location' => $top_menu_location,
 	'container'      => false,
 	'fallback_cb'    => false,
-); ?>
+);
+
+// Get close menu text.
+$close_text = get_theme_mod( 'ocean_mobile_menu_close_text' );
+$close_text = oceanwp_tm_translation( 'ocean_mobile_menu_close_text', $close_text );
+$close_text = $close_text ? $close_text : esc_html__( 'Close', 'oceanwp' );
+
+?>
+
+
 
 <div id="mobile-dropdown" class="clr" <?php echo $dropdown_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
@@ -105,3 +114,5 @@ $top_menu_args = array(
 	</nav>
 
 </div>
+
+<?php get_template_part( 'partials/mobile/mobile-dropdown-close' ); ?>

@@ -20,6 +20,7 @@ function oceanwpDropDownMobile() {
 			$j( '#mobile-dropdown' ).slideToggle( 500 );
 			$j( this ).toggleClass( 'opened' );
 			$j( '.mobile-menu > .hamburger' ).toggleClass( 'is-active' );
+			$j( '.mobile-menu-close' ).toggleClass( 'show' );
 			return false;
 		} );
 
@@ -28,6 +29,7 @@ function oceanwpDropDownMobile() {
 			$j( '#mobile-dropdown' ).slideUp( 200 );
 			$j( '.mobile-menu' ).removeClass( 'opened' );
 			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
+			$j( '.mobile-menu-close' ).removeClass( 'show' );
 		}
 
 		var $owpmenu = $j( '.mobile-menu > .hamburger' );

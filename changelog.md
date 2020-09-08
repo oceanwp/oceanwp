@@ -5,7 +5,7 @@
 * **Fixed** - Font size for Skip to content text.
 * **Fixed** - Header text color doesn't work.
 * **Fixed** - Adding a custom logo and removing it will make the text logo (and description) disappear aswell.
-* **Fixed** - Default mobile menu style changed from sidebar to dropdown.
+* **Fixed** - Accessibility improvement for mobile menu.
 
 
 
