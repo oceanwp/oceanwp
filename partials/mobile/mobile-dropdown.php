@@ -73,8 +73,6 @@ $close_text = $close_text ? $close_text : esc_html__( 'Close', 'oceanwp' );
 
 ?>
 
-
-
 <div id="mobile-dropdown" class="clr" <?php echo $dropdown_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
 	<nav class="<?php echo esc_attr( $classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?>>
@@ -114,5 +112,3 @@ $close_text = $close_text ? $close_text : esc_html__( 'Close', 'oceanwp' );
 	</nav>
 
 </div>
-
-<?php get_template_part( 'partials/mobile/mobile-dropdown-close' ); ?>

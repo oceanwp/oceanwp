@@ -146,28 +146,3 @@
         padding-top: 0;
     }
 }
-
-.mobile-menu-close {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    line-height: 74px;
-    letter-spacing: 0.6px;
-    display: none;
-
-    .oceanwp-close-text {
-        padding-left: 6px;
-    }
-
-    &.show {
-        display: block;
-    }
-}
-
-.dropdown-mobile {
-
-    .mobile-menu.opened {
-        display: none;
-    }
-
-}
