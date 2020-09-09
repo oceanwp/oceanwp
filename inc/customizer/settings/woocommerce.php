@@ -1523,7 +1523,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'image'    			=> esc_html__( 'Image', 'oceanwp' ),
 					'category'       	=> esc_html__( 'Category', 'oceanwp' ),
 					'title' 			=> esc_html__( 'Title', 'oceanwp' ),
-					'price-rating' 		=> esc_html__( 'Price/Rating', 'oceanwp' ),
+					'price-rating' 		=> esc_html__( 'Price', 'oceanwp' ),
 					'woo-rating'        => esc_html__( 'Star Rating', 'oceanwp' ),
 					'description' 		=> esc_html__( 'List Description', 'oceanwp' ),
 					'button' 			=> esc_html__( 'Add To Cart Button', 'oceanwp' ),
