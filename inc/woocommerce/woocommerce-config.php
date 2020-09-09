@@ -1575,8 +1575,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function pagination_args( $args ) {
-			$args['prev_text'] = '<i class="fa fa-angle-left" aria-hidden="true"></i>';
-			$args['next_text'] = '<i class="fa fa-angle-right" aria-hidden="true"></i>';
+
+			// Nav icons.
+			$p_arrow = is_rtl() ? 'fa fa-angle-right' : 'fa fa-angle-left';
+			$n_arrow = is_rtl() ? 'fa fa-angle-left' : 'fa fa-angle-right';
+
+			// Args.
+			$args['prev_text'] = '<i class="' . $p_arrow . '" aria-hidden="true"></i>';
+			$args['next_text'] = '<i class="' . $n_arrow . '" aria-hidden="true"></i>';
 			return $args;
 		}
 

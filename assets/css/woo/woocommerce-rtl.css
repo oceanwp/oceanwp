@@ -222,6 +222,9 @@ ul#shipping_method li label { padding-right: 10px; }
 
 .woocommerce #order_review table.shop_table tfoot td ul#shipping_method li { text-align: right;}
 
+/* Checkout */
+#ship-to-different-address label span { text-align: left !important; display: inherit; }
+
 @media only screen and (max-width: 767px) {
 	ul#shipping_method {
 		text-align: right;

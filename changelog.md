@@ -1,7 +1,6 @@
 # OceanWP Changelog
 
-### *2020.09.XX* - 1.8.8
-* **Added** - PWA ( Progressive Web App ) theme support.
+### *2020.09.XX* - 1.8.9
 * **Added** - Hook: ocean_after_archive_product_price;
 * **Added** - Option to choose default theme icons: General Options > Theme Icons.
 * **Added** - Blog: Post entries & single post meta icons color options - General Options > Theme Icons.
@@ -24,7 +23,6 @@
 * **Added** - WooCommerce: Floating Bar - product title limited to 4 words to avoid responsiveness issues.
 * **Added** - WooCommerce: Floating Bar - display 'Add to Cart' button on 320px width.
 * **Added** - WooCommerce: Improved 'Sales!' badge responsiveness.
-* **Added** - WooCommerce: SEO improvement - product archive title H2 tag.
 * **Added** - WooCommerce: Cart - product price on mobile devices.
 * **Added** - WooCommerce Germanized: Product archive & single product - product price unit support.
 * **Added** - WooCommerce Germanized: Product archive & single product - product units support.
@@ -54,6 +52,7 @@
 * **Fixed** - WooCommerce: Cart shipping methods layout.
 * **Fixed** - WooCommerce: Checkout shipping methods layout.
 * **Fixed** - WooCommerce: RTL - 'Update Cart' button position.
+* **Fixed** - WooCommerce: RTL - pagination arrows.
 * **Fixed** - WooCommerce: Cart responsiveness.
 * **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
 * **Fixed** - Blog: Single post - next/prev RTL arrows.

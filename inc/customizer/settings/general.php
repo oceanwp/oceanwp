@@ -3924,8 +3924,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 					'.blog-entry.post .blog-entry-readmore a:hover',
 					'.blog-entry.thumbnail-entry .blog-entry-category a',
 					'ul.meta li a:hover',
-					'#blog-entries ul.meta li i',
-					'.single-post ul.meta li i',
 					'.dropcap',
 					'.single nav.post-navigation .nav-links .title',
 					'body .related-post-title a:hover',
