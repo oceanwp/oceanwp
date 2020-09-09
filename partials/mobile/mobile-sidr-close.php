@@ -22,7 +22,7 @@ $text = $text ? $text : esc_html__( 'Close Menu', 'oceanwp' );
 ?>
 
 <div id="sidr-close">
-	<a href="#" class="toggle-sidr-close" aria-label="<?php esc_attr_e( 'Close mobile Menu', 'oceanwp' ); ?>">
+	<a href="javascript:void(0)" class="toggle-sidr-close" aria-label="<?php esc_attr_e( 'Close mobile Menu', 'oceanwp' ); ?>">
 		<i class="icon <?php echo esc_attr( $icon ); ?>" aria-hidden="true"></i><span class="close-text"><?php echo do_shortcode( $text ); ?></span>
 	</a>
 </div>
