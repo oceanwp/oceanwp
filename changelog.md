@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### *2020.09.08* - 1.8.8:
+### *2020.09.09* - 1.8.8:
 * **Added** - PWA ( Progressive Web App ) support for theme.
 * **Fixed** - Font size for Skip to content text.
 * **Fixed** - Header text color doesn't work.
