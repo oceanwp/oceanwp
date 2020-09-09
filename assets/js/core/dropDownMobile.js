@@ -20,7 +20,6 @@ function oceanwpDropDownMobile() {
 			$j( '#mobile-dropdown' ).slideToggle( 500 );
 			$j( this ).toggleClass( 'opened' );
 			$j( '.mobile-menu > .hamburger' ).toggleClass( 'is-active' );
-			$j( '.mobile-menu-close' ).toggleClass( 'show' );
 			return false;
 		} );
 
@@ -29,7 +28,6 @@ function oceanwpDropDownMobile() {
 			$j( '#mobile-dropdown' ).slideUp( 200 );
 			$j( '.mobile-menu' ).removeClass( 'opened' );
 			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
-			$j( '.mobile-menu-close' ).removeClass( 'show' );
 		}
 
 		var $owpmenu = $j( '.mobile-menu > .hamburger' );
@@ -106,22 +104,23 @@ function oceanwpDropDownMobile() {
 
 ( function() {
 
-	var owpHeader = document.getElementById('site-header');
-	if ( ! owpHeader ) {
+	var owpHeader = document.getElementById('site-header'),
+		navWarap = document.querySelectorAll( '#mobile-dropdown nav' )[0];
+	if ( ! owpHeader || ! navWarap ) {
 		return;
 	}
 
 	document.addEventListener( 'keydown', function( event ) {
 
-		var navWarap = document.querySelectorAll( '#mobile-dropdown nav' )[0],
-			selectors = 'input, a, button';
-			elements = navWarap.querySelectorAll( selectors ),
-			closMenu = document.querySelector( '.mobile-menu.opened' ),
-			lastEl   = elements[ elements.length - 1 ],
-			firstEl  = elements[0],
-			activeEl = document.activeElement,
-			tabKey   = event.keyCode === 9,
-			shiftKey = event.shiftKey;
+		var selectors = 'input, a, button',
+			elements  = navWarap.querySelectorAll( selectors ),
+			closMenu  = document.querySelector( '.mobile-menu.opened' ),
+			lastEl    = elements[ elements.length - 1 ],
+			firstEl   = elements[0],
+			activeEl  = document.activeElement,
+			tabKey    = event.keyCode === 9,
+			shiftKey  = event.shiftKey;
+
 
 		if ( ! shiftKey && tabKey && lastEl ===  activeEl ) {
 			event.preventDefault();
