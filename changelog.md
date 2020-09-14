@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2020.09.14* - 1.8.9:
+* **Fixed** - Keyboard navigation improvement for mobile menu.
+
 ### *2020.09.09* - 1.8.8:
 * **Added** - PWA ( Progressive Web App ) support for theme.
 * **Fixed** - Font size for Skip to content text.

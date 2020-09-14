@@ -205,6 +205,15 @@ function owpSidrDropdown() {
 			closMenu.focus();
 		}
 
+		if ( shiftKey && tabKey && closMenu === activeEl ) {
+			event.preventDefault();
+			lastEl.focus();
+		}
+
+		closMenu.addEventListener( 'click', function() {
+			mobileIcon.focus();
+		} );
+
 	});
 
 

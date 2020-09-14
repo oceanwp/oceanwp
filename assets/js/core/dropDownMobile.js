@@ -132,6 +132,11 @@ function oceanwpDropDownMobile() {
 			closMenu.focus();
 		}
 
+		if ( shiftKey && tabKey && closMenu === activeEl ) {
+			event.preventDefault();
+			lastEl.focus();
+		}
+
 	});
 
 }() );
