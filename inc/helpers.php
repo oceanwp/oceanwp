@@ -1741,7 +1741,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 					}
 				$items .= '</form>';
 			} else {
-				$items .= '<a href="#/" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
+				$items .= '<a href="javascript:void(0)" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
 					$items .= '<span class="icon-magnifier" aria-hidden="true"></span>';
 				$items .= '</a>';
 			}
@@ -1788,7 +1788,7 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 
 		// Add search item to menu
 		echo '<div id="search-toggle">';
-			echo '<a href="#/" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
+			echo '<a href="javascript:void(0)" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
 				echo '<span class="icon-magnifier" aria-hidden="true"></span>';
 			echo '</a>';
 		echo '</div>';
@@ -1849,10 +1849,10 @@ if ( ! function_exists( 'oceanwp_mobile_menu_style' ) ) {
 	function oceanwp_mobile_menu_style() {
 
 		// Get style from customizer setting
-		$style = get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' );
+		$style = get_theme_mod( 'ocean_mobile_menu_style', 'dropdown' );
 
 		// Sanitize style to make sure it isn't empty
-		$style = $style ? $style : 'sidebar';
+		$style = $style ? $style : 'dropdown';
 
 		// Apply filters and return
 		return apply_filters( 'ocean_mobile_menu_style', $style );

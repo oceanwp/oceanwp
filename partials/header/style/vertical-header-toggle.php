@@ -14,7 +14,7 @@ $vertical_header_attrs = apply_filters( 'oceanwp_attrs_vertical_header_style', '
 
 ?>
 
-<a href="#/" class="vertical-toggle">
+<a href="javascript:void(0)" class="vertical-toggle">
 	<div class="hamburger hamburger--spin" <?php echo $vertical_header_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<div class="hamburger-box">
 			<div class="hamburger-inner"></div>
