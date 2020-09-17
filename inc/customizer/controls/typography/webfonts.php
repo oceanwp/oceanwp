@@ -108,6 +108,7 @@ function oceanwp_enqueue_google_font( $font ) {
 
 	// Add subset to URL
 	$url .= $subset;
+	$url = $url . '&display=swap';
 
 	// Enqueue style
 	wp_enqueue_style( 'oceanwp-google-font-'. $handle, $url, false, false, 'all' );

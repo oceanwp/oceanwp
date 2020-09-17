@@ -144,6 +144,38 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Add support for Wishlist plugin of choice
+			 * 
+			 * @since 1.8.8
+			 */
+			$wp_customize->add_setting(
+				'ocean_woo_wl_plugin',
+				array(
+					'transport'             => 'postMessage',
+					'default'               => 'ti_wl',
+					'sanitize_callback'     => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_woo_wl_plugin',
+					array(
+						'label'                 => esc_html__( 'WooCommerce Wishlist Plugin Support', 'oceanwp' ),
+						'type'                  => 'select',
+						'section'               => 'ocean_woocommerce_general',
+						'settings'              => 'ocean_woo_wl_plugin',
+						'priority'              => 10,
+						'choices'               => array(
+							'ti_wl'     => esc_html__( 'TI WC Wishlist', 'oceanwp' ),
+							'yith_wl'   => esc_html__( 'YITH WC Wishlist', 'oceanwp' ),
+						),
+					)
+				)
+			);
+
+			/**
 			 * Add Wishlist Icon In Header
 			 */
 			$wp_customize->add_setting( 'ocean_woo_wishlist_icon', array(
@@ -1478,7 +1510,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			 * Product Elements Positioning
 			 */
 			$wp_customize->add_setting( 'oceanwp_woo_product_elements_positioning', array(
-				'default' 				=> array( 'image', 'category', 'title', 'price-rating', 'description' , 'button' ),
+				'default' 				=> array( 'image', 'category', 'title', 'price-rating', 'woo-rating', 'description', 'button' ),
 				'sanitize_callback' 	=> 'oceanwp_sanitize_multi_choices',
 			) );
 
@@ -1491,8 +1523,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'image'    			=> esc_html__( 'Image', 'oceanwp' ),
 					'category'       	=> esc_html__( 'Category', 'oceanwp' ),
 					'title' 			=> esc_html__( 'Title', 'oceanwp' ),
-					'price-rating' 		=> esc_html__( 'Price/Rating', 'oceanwp' ),
-					'description' 		=> esc_html__( 'Description', 'oceanwp' ),
+					'price-rating' 		=> esc_html__( 'Price', 'oceanwp' ),
+					'woo-rating'        => esc_html__( 'Star Rating', 'oceanwp' ),
+					'description' 		=> esc_html__( 'List Description', 'oceanwp' ),
 					'button' 			=> esc_html__( 'Add To Cart Button', 'oceanwp' ),
 				),
 				'active_callback' 		=> 'oceanwp_cac_has_woo_default_products_style',
@@ -1556,6 +1589,187 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'right' 	=> esc_html__( 'Right', 'oceanwp' ),
 				),
 			) ) );
+
+			/**
+			 * Shop Conditional Heading
+			 * 
+			 * @since 1.8.7
+			 */
+			$wp_customize->add_setting(
+				'ocean_woocommerce_shop_conditional_heading',
+				array(
+					'sanitize_callback' 	=> 'wp_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Heading_Control(
+					$wp_customize,
+					'ocean_woocommerce_shop_conditional_heading',
+					array(
+						'label'              => esc_html__( 'Shop Conditional', 'oceanwp' ),
+						'section'            => 'ocean_woocommerce_archives',
+						'priority'           => 10,
+					)
+				)
+			);
+
+			/**
+			 * Product Entry Show Logged in/Logged out, show products conditional
+			 * 
+			 * @since 1.8.7
+			 */
+			$wp_customize->add_setting(
+				'ocean_shop_conditional',
+				array(
+					'default'                => false,
+					'sanitize_callback'      => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_shop_conditional',
+					array(
+						'label'               => esc_html__( 'Display price and Add to Cart button only to logged in users', 'oceanwp' ),
+						'type'                => 'checkbox',
+						'section'             => 'ocean_woocommerce_archives',
+						'settings'            => 'ocean_shop_conditional',
+						'priority'            => 10,
+					)
+				)
+			);
+
+			// Display message instead of price for logged out users if conditional enabled.
+			$wp_customize->add_setting(
+				'ocean_shop_cond_msg',
+				array(
+					'transport'               => 'postMessage',
+					'default'                 => 'yes',
+					'sanitize_callback'       => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_shop_cond_msg',
+					array(
+						'label'                => esc_html__( 'Display message to logged out users', 'oceanwp' ),
+						'section'              => 'ocean_woocommerce_archives',
+						'settings'             => 'ocean_shop_cond_msg',
+						'priority'             => 10,
+						'choices'              => array(
+							'yes'       => esc_html__( 'Yes', 'oceanwp' ),
+							'no'        => esc_html__( 'No', 'oceanwp' ),
+						),
+						'active_callback'      => 'oceanwp_cac_has_shop_condition',
+					)
+				)
+			);
+
+			// Display message to logged out users instead of price, if conditional logic enabled.
+			$wp_customize->add_setting(
+				'ocean_shop_msg_text',
+				array(
+					'default'                => esc_html__( 'Log in to view price and purchase', 'oceanwp' ),
+					'transport'              => 'postMessage',
+					'sanitize_callback'      => 'wp_kses_post',
+				)
+			);
+
+			$wp_customize->add_control(
+				'ocean_shop_msg_text',
+				array(
+					'label'                  => esc_html__( 'Conditional replacement message', 'oceanwp' ),
+					'description'            => esc_html__( 'Message to display to logged out users instead of the price and Add to Cart button. The message will be displayed in the position of the Add to Cart button', 'oceanwp' ),
+					'section'                => 'ocean_woocommerce_archives',
+					'priority'               => 10,
+					'type'                   => 'text',
+					'active_callback'        => 'oceanwp_cac_has_shop_condition',
+				)
+			);
+
+			// Insert link to My Account page if conditional message displayed
+			$wp_customize->add_setting(
+				'ocean_shop_add_myaccount_link',
+				array(
+					'default'                => false,
+					'sanitize_callback'      => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_shop_add_myaccount_link',
+					array(
+						'label'               => esc_html__( 'Include My Account page link in conditional message', 'oceanwp' ),
+						'type'                => 'checkbox',
+						'section'             => 'ocean_woocommerce_archives',
+						'settings'            => 'ocean_shop_add_myaccount_link',
+						'priority'            => 10,
+						'active_callback'     => 'oceanwp_cac_has_shop_condition',
+					)
+				)
+			);
+
+			/**
+			 * Product Entry Enable/Disable Image and Product Title links
+			 * 
+			 * @since 1.8.7
+			 */
+			$wp_customize->add_setting(
+				'ocean_shop_woo_disable_links',
+				array(
+					'default'                => false,
+					'sanitize_callback'      => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_shop_woo_disable_links',
+					array(
+						'label'               => esc_html__( 'Disable image and product title links functionality', 'oceanwp' ),
+						'type'                => 'checkbox',
+						'section'             => 'ocean_woocommerce_archives',
+						'settings'            => 'ocean_shop_woo_disable_links',
+						'priority'            => 10,
+					)
+				)
+			);
+
+			// Disable all archive pages links for logged out users only.
+			$wp_customize->add_setting(
+				'ocean_shop_woo_disable_links_cond',
+				array(
+					'transport'               => 'postMessage',
+					'default'                 => 'no',
+					'sanitize_callback'       => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_shop_woo_disable_links_cond',
+					array(
+						'label'                => esc_html__( 'Disable links only for logged out users', 'oceanwp' ),
+						'description'          => esc_html__( 'If selected, image and title product archive links will be functional only for logged in users', 'oceanwp' ),
+						'section'              => 'ocean_woocommerce_archives',
+						'settings'             => 'ocean_shop_woo_disable_links_cond',
+						'priority'             => 10,
+						'choices'              => array(
+							'yes'       => esc_html__( 'Yes', 'oceanwp' ),
+							'no'        => esc_html__( 'No', 'oceanwp' ),
+						),
+						'active_callback'      => 'oceanwp_cac_has_shop_links_disabled',
+					)
+				)
+			);
 
 			/**
 			 * Pagination Heading
@@ -1921,6 +2135,131 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 					'very-big' 		=> esc_html__( 'Very Big', 'oceanwp' ),
 				),
 			) ) );
+
+			/**
+			 * Single Product Conditional Heading
+			 * 
+			 * @since 1.8.7
+			 */
+			$wp_customize->add_setting(
+				'ocean_woocommerce_single_conditional_heading',
+				array(
+					'sanitize_callback' 	=> 'wp_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Heading_Control(
+					$wp_customize,
+					'ocean_woocommerce_single_conditional_heading',
+					array(
+						'label'              => esc_html__( 'Single Product Conditional', 'oceanwp' ),
+						'section'            => 'ocean_woocommerce_single',
+						'priority'           => 10,
+					)
+				)
+			);
+
+			/**
+			 * Single Product Show Logged in/Logged out, show products conditional
+			 * 
+			 * @since 1.8.7
+			 */
+			$wp_customize->add_setting(
+				'ocean_woo_single_conditional',
+				array(
+					'default'                => false,
+					'sanitize_callback'      => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_woo_single_conditional',
+					array(
+						'label'               => esc_html__( 'Display price and Add to Cart button only to logged in users', 'oceanwp' ),
+						'type'                => 'checkbox',
+						'section'             => 'ocean_woocommerce_single',
+						'settings'            => 'ocean_woo_single_conditional',
+						'priority'            => 10,
+					)
+				)
+			);
+
+			// Display message instead of price and Add to Cart button for logged out users if conditional enabled.
+			$wp_customize->add_setting(
+				'ocean_woo_single_cond_msg',
+				array(
+					'transport'               => 'postMessage',
+					'default'                 => 'yes',
+					'sanitize_callback'       => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_woo_single_cond_msg',
+					array(
+						'label'                => esc_html__( 'Display message to logged out users', 'oceanwp' ),
+						'section'              => 'ocean_woocommerce_single',
+						'settings'             => 'ocean_woo_single_cond_msg',
+						'priority'             => 10,
+						'choices'              => array(
+							'yes'       => esc_html__( 'Yes', 'oceanwp' ),
+							'no'        => esc_html__( 'No', 'oceanwp' ),
+						),
+						'active_callback'      => 'oceanwp_cac_has_single_condition',
+					)
+				)
+			);
+
+			// Message to display instead of price and Add to Cart button, if conditional logic enabled.
+			$wp_customize->add_setting(
+				'ocean_woo_single_cond_msg_text',
+				array(
+					'default'                => esc_html__( 'Log in to view price and purchase', 'oceanwp' ),
+					'transport'              => 'postMessage',
+					'sanitize_callback'      => 'wp_kses_post',
+				)
+			);
+
+			$wp_customize->add_control(
+				'ocean_woo_single_cond_msg_text',
+				array(
+					'label'                  => esc_html__( 'Price replacement message', 'oceanwp' ),
+					'description'            => esc_html__( 'Display message instead of the Add to Cart button to logged out users'),
+					'section'                => 'ocean_woocommerce_single',
+					'priority'               => 10,
+					'type'                   => 'text',
+					'active_callback'        => 'oceanwp_cac_has_single_condition',
+				)
+			);
+
+			// Insert link to My Account page if conditional message displayed
+			$wp_customize->add_setting(
+				'ocean_single_add_myaccount_link',
+				array(
+					'default'                => false,
+					'sanitize_callback'      => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_single_add_myaccount_link',
+					array(
+						'label'               => esc_html__( 'Include My Account page link in conditional message', 'oceanwp' ),
+						'type'                => 'checkbox',
+						'section'             => 'ocean_woocommerce_single',
+						'settings'            => 'ocean_single_add_myaccount_link',
+						'priority'            => 10,
+						'active_callback'     => 'oceanwp_cac_has_single_condition',
+					)
+				)
+			);
 
 			/**
 			 * Heading Woo Tabs
@@ -3390,6 +3729,56 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Product Entry Conditional Notice Color
+			 */
+			$wp_customize->add_setting(
+				'ocean_product_entry_cond_note_color',
+				array(
+					'default'               => '#333',
+					'transport'             => 'postMessage',
+					'sanitize_callback'     => 'oceanwp_sanitize_color',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_product_entry_cond_note_color',
+					array(
+						'label'                 => esc_html__( 'Conditional Notice: Color', 'oceanwp' ),
+						'section'               => 'ocean_woocommerce_styling',
+						'settings'              => 'ocean_product_entry_cond_note_color',
+						'priority'              => 10,
+					)
+				)
+			);
+
+			/**
+			 * Product Entry Conditional Notice Hover Color
+			 */
+			$wp_customize->add_setting(
+				'ocean_product_entry_cond_note_color_hover',
+				array(
+					'default'               => '#52a7fe',
+					'transport'             => 'postMessage',
+					'sanitize_callback'     => 'oceanwp_sanitize_color',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_product_entry_cond_note_color_hover',
+					array(
+						'label'                 => esc_html__( 'Conditional Notice: Hover Color', 'oceanwp' ),
+						'section'               => 'ocean_woocommerce_styling',
+						'settings'              => 'ocean_product_entry_cond_note_color_hover',
+						'priority'              => 10,
+					)
+				)
+			);
+
+			/**
 		     * Product Entry Hover Thumbnails Border Color
 		     */
 	        $wp_customize->add_setting( 'ocean_product_entry_hover_thumbnails_border_color', array(
@@ -4129,6 +4518,56 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'settings'				=> 'ocean_single_product_meta_link_color_hover',
 				'priority'				=> 10,
 			) ) );
+
+			/**
+			 * Single Product Conditional Notice Color
+			 */
+			$wp_customize->add_setting(
+				'ocean_single_cond_note_color',
+				array(
+					'default'               => '#333333',
+					'transport'             => 'postMessage',
+					'sanitize_callback'     => 'oceanwp_sanitize_color',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_single_cond_note_color',
+					array(
+						'label'                 => esc_html__( 'Conditional Notice: Color', 'oceanwp' ),
+						'section'               => 'ocean_woocommerce_styling',
+						'settings'              => 'ocean_single_cond_note_color',
+						'priority'              => 10,
+					)
+				)
+			);
+
+			/**
+			 * Single Product Conditional Notice Hover Color
+			 */
+			$wp_customize->add_setting(
+				'ocean_single_cond_note_color_hover',
+				array(
+					'default'               => '#52a7fe',
+					'transport'             => 'postMessage',
+					'sanitize_callback'     => 'oceanwp_sanitize_color',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Color_Control(
+					$wp_customize,
+					'ocean_single_cond_note_color_hover',
+					array(
+						'label'                 => esc_html__( 'Conditional Notice: Hover Color', 'oceanwp' ),
+						'section'               => 'ocean_woocommerce_styling',
+						'settings'              => 'ocean_single_cond_note_color_hover',
+						'priority'              => 10,
+					)
+				)
+			);
 
 			/**
 			 * Heading Single Product Navigation
@@ -5282,6 +5721,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$product_title_color_hover 							= get_theme_mod( 'ocean_product_title_color_hover', '#13aff0' );
 			$product_entry_price_color 							= get_theme_mod( 'ocean_product_entry_price_color', '#57bf6d' );
 			$product_entry_del_price_color 						= get_theme_mod( 'ocean_product_entry_del_price_color', '#666666' );
+			$product_entry_cond_note_color                      = get_theme_mod( 'ocean_product_entry_cond_note_color', '#333' );
+			$product_entry_cond_note_color_hover                = get_theme_mod( 'ocean_product_entry_cond_note_color_hover', '#52a7fe' );
 			$product_entry_hover_thumbnails_border_color 		= get_theme_mod( 'ocean_product_entry_hover_thumbnails_border_color', '#13aff0' );
 			$product_entry_hover_quickview_background 			= get_theme_mod( 'ocean_product_entry_hover_quickview_background', '#ffffff' );
 			$product_entry_hover_quickview_hover_background 	= get_theme_mod( 'ocean_product_entry_hover_quickview_hover_background', '#ffffff' );
@@ -5318,6 +5759,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$single_product_meta_title_color 					= get_theme_mod( 'ocean_single_product_meta_title_color', '#333333' );
 			$single_product_meta_link_color 					= get_theme_mod( 'ocean_single_product_meta_link_color', '#aaaaaa' );
 			$single_product_meta_link_color_hover 				= get_theme_mod( 'ocean_single_product_meta_link_color_hover', '#13aff0' );
+			$single_product_cond_notice_color                   = get_theme_mod( 'ocean_single_cond_note_color', '#333333' );
+			$single_product_cond_notice_color_hover             = get_theme_mod( 'ocean_single_cond_note_color_hover', '#52a7fe' );
 			$single_product_navigation_border_radius 			= get_theme_mod( 'ocean_single_product_navigation_border_radius', '30' );
 			$single_product_navigation_bg 						= get_theme_mod( 'ocean_single_product_navigation_bg' );
 			$single_product_navigation_hover_bg 				= get_theme_mod( 'ocean_single_product_navigation_hover_bg', '#13aff0' );
@@ -5950,7 +6393,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add category color
 			if ( ! empty( $category_color ) && '#999999' != $category_color ) {
-				$css .= '.woocommerce ul.products li.product li.category a{color:'. $category_color .';}';
+				$css .= '.woocommerce ul.products li.product li.category, .woocommerce ul.products li.product li.category a{color:'. $category_color .';}';
 			}
 
 			// Add category color hover
@@ -5960,7 +6403,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add product entry title color
 			if ( ! empty( $product_title_color ) && '#333333' != $product_title_color ) {
-				$css .= '.woocommerce ul.products li.product li.title a{color:'. $product_title_color .';}';
+				$css .= '.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a{color:'. $product_title_color .';}';
 			}
 
 			// Add product entry title color hover
@@ -5977,6 +6420,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			if ( ! empty( $product_entry_del_price_color ) && '#666666' != $product_entry_del_price_color ) {
 				$css .= '.woocommerce ul.products li.product .price del .amount{color:'. $product_entry_del_price_color .';}';
 			}
+
+			// Add product entry conditional notice color.
+			if ( ! empty( $product_entry_cond_note_color ) && '#333' != $product_entry_cond_note_color ) {
+				$css .= '.woocommerce ul.products li.product li.owp-woo-cond-notice span, .woocommerce ul.products li.product li.owp-woo-cond-notice a{color:'. $product_entry_cond_note_color .';}';
+			}
+
+			// Add product entry conditional notice hover color.
+			if ( ! empty( $product_entry_cond_note_color_hover ) && '#52a7fe' != $product_entry_cond_note_color_hover ) {
+				$css .= '.woocommerce ul.products li.product li.owp-woo-cond-notice a:hover{color:'. $product_entry_cond_note_color_hover .';}';
+			}
+
 
 			// Add product hover thumbnails border color
 			if ( ! empty( $product_entry_hover_thumbnails_border_color ) && '#13aff0' != $product_entry_hover_thumbnails_border_color ) {
@@ -6156,6 +6610,16 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Add single product meta link color hover
 			if ( ! empty( $single_product_meta_link_color_hover ) && '#13aff0' != $single_product_meta_link_color_hover ) {
 				$css .= '.product_meta .posted_in a:hover,.product_meta .tagged_as a:hover{color:'. $single_product_meta_link_color_hover .';}';
+			}
+
+			// Add single product notice color.
+			if ( ! empty( $single_product_cond_notice_color ) && '#333333' != $single_product_cond_notice_color ) {
+				$css .= '.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a{color:'. $single_product_cond_notice_color .';}';
+			}
+
+			// Add single product notice hover color.
+			if ( ! empty( $single_product_cond_notice_color_hover ) && '#52a7fe' != $single_product_cond_notice_color_hover ) {
+				$css .= '.woocommerce div.owp-woo-single-cond-notice a:hover{color:'. $single_product_cond_notice_color_hover .';}';
 			}
 
 			// Add single product navigation border radius

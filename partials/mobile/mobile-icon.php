@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Retunr if disabled.
+// Return if disabled.
 if ( ! oceanwp_display_navigation() ) {
 	return;
 }

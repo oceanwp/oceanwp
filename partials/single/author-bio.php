@@ -24,7 +24,6 @@ $url         = esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
 if ( ! $description ) {
 	return;
 }
-
 ?>
 
 <?php do_action( 'ocean_before_single_post_author_bio' ); ?>
