@@ -96,7 +96,7 @@ blockquote, q {
 }
 
 a:focus {
-  outline: 0;
+  outline: 1.5px solid #323232;
 }
 
 a:hover, a:active {
@@ -318,6 +318,8 @@ form.oceanwp-searchform button {
   clip-path: inset(50%);
   height: 1px;
   margin: -1px;
+  font-size: 14px !important;
+  font-weight: 400;
   overflow: hidden;
   padding: 0;
   position: absolute !important;

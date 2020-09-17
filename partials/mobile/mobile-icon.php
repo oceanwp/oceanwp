@@ -90,7 +90,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 		<?php do_action( 'ocean_before_mobile_icon_inner' ); ?>
 
-		<a href="#/" class="mobile-menu" <?php echo $toggle_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> aria-label="<?php esc_attr_e( 'Mobile Menu', 'oceanwp' ); ?>">
+		<a href="javascript:void(0)" class="mobile-menu" <?php echo $toggle_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> aria-label="<?php esc_attr_e( 'Mobile Menu', 'oceanwp' ); ?>">
 			<?php
 			if ( 'default' !== $btn ) {
 				?>
@@ -110,14 +110,8 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 			if ( get_theme_mod( 'ocean_mobile_menu_display_opening_text', true ) ) {
 				?>
 				<span class="oceanwp-text"><?php echo do_shortcode( $text ); ?></span>
-
+				<span class="oceanwp-close-text"><?php echo do_shortcode( $close_text ); ?></span>
 				<?php
-				// Display close text if drop down mobile style.
-				if ( 'dropdown' === get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
-					?>
-					<span class="oceanwp-close-text"><?php echo do_shortcode( $close_text ); ?></span>
-					<?php
-				}
 			}
 			?>
 		</a>

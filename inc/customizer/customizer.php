@@ -103,6 +103,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		public static function customize_register( $wp_customize ) {
 
 			// Tweak default controls
+			$wp_customize->get_setting( 'custom_logo' )->transport      = 'refresh';
 			$wp_customize->get_setting( 'blogname' )->transport 		= 'postMessage';
 			$wp_customize->get_setting( 'blogdescription' )->transport 	= 'postMessage';
 

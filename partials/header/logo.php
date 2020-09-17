@@ -17,14 +17,14 @@ $responsive_logo   = get_theme_mod( 'ocean_responsive_logo' );
 $header_text_color = null;
 
 if ( display_header_text() && ! OCEAN_EXTRA_ACTIVE && ! class_exists( 'Ocean_Extra_Theme_Panel' ) ) {
-	$header_text_color = ' style="color:#' . get_header_textcolor() . ';"';
+	$header_text_color = ' style=color:#' . get_header_textcolor() . ';';
 }
 
 ?>
 
 <?php do_action( 'ocean_before_logo' ); ?>
 
-<div id="site-logo" class="<?php echo esc_attr( oceanwp_header_logo_classes() ); ?>"<?php oceanwp_schema_markup( 'logo' ); ?>>
+<div id="site-logo" class="<?php echo esc_attr( oceanwp_header_logo_classes() ); ?>"<?php oceanwp_schema_markup( 'logo' ); ?> >
 
 	<?php do_action( 'ocean_before_logo_inner' ); ?>
 

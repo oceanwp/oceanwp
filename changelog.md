@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### *2020.09.XX* - 1.8.9
+### *2020.09.XX* - 1.9.0
 * **Added** - Hook: ocean_after_archive_product_price;
 * **Added** - Option to choose default theme icons: General Options > Theme Icons.
 * **Added** - Blog: Post entries & single post meta icons color options - General Options > Theme Icons.
@@ -58,6 +58,16 @@
 * **Fixed** - Blog: Single post - next/prev RTL arrows.
 * **Fixed** - Minor RTL style issues.
 * **Removed** - Google+ social menu option.
+
+### *2020.09.14* - 1.8.9:
+* **Fixed** - Keyboard navigation improvement for mobile menu.
+
+### *2020.09.09* - 1.8.8:
+* **Added** - PWA ( Progressive Web App ) support for theme.
+* **Fixed** - Font size for Skip to content text.
+* **Fixed** - Header text color doesn't work.
+* **Fixed** - Adding a custom logo and removing it will make the text logo (and description) disappear aswell.
+* **Fixed** - Accessibility improvement for mobile menu.
 
 ### *2020.08.19* - 1.8.7:
 * **Added** - AMP support for theme.

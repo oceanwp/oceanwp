@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 1.8.8\n"
+"Project-Id-Version: OceanWP 1.8.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
 "POT-Creation-Date: 2020-09-01 09:00:18+00:00\n"
 "MIME-Version: 1.0\n"
@@ -434,7 +434,7 @@ msgstr ""
 msgid "Google Fonts"
 msgstr ""
 
-#: inc/customizer/customizer.php:134
+#: inc/customizer/customizer.php:135
 msgid "Premium Addons Available"
 msgstr ""
 

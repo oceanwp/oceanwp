@@ -3465,7 +3465,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 * Mobile Menu Style
 			 */
 			$wp_customize->add_setting( 'ocean_mobile_menu_style', array(
-				'default' 				=> 'sidebar',
+				'default' 				=> 'dropdown',
 				'sanitize_callback' 	=> 'sanitize_key',
 			) );
 
@@ -4264,13 +4264,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				if ( 'custom' != $header_style ) {
 					$css .= '#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner,.after-header-content .after-header-content-inner{height:'. $header_height .'px;}';
 				}
-				$css .= '#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,.after-header-content-inner > a{line-height:'. $header_height .'px;}';
+				$css .= '#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,.mobile-menu-close,.after-header-content-inner > a{line-height:'. $header_height .'px;}';
 			}
 
 			// Add header height for top header style
 			if ( 'top' == $header_style && ! empty( $top_height ) && '40' != $top_height ) {
 				$css .= '#site-header.top-header .oceanwp-social-menu,#site-header.top-header #search-toggle{height:'. $top_height .'px;}';
-				$css .= '#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.top-header .oceanwp-mobile-menu-icon a{line-height:'. $top_height .'px;}';
+				$css .= '#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.top-header .oceanwp-mobile-menu-icon a,.mobile-menu-close{line-height:'. $top_height .'px;}';
 			}
 
 			// Add mobile header height
@@ -4278,7 +4278,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				if ( 'custom' != $header_style ) {
 					$css .= '@media only screen and (max-width: 959px) {body.default-breakpoint #site-logo #site-logo-inner{height:'. $mobile_header_height .'px;}}';
 				}
-				$css .= '@media only screen and (max-width: 959px) {body.default-breakpoint .oceanwp-mobile-menu-icon a{line-height:'. $mobile_header_height .'px;}}';
+				$css .= '@media only screen and (max-width: 959px) {body.default-breakpoint .oceanwp-mobile-menu-icon a,.mobile-menu-close{line-height:'. $mobile_header_height .'px;}}';
 			}
 
 			// Header background color

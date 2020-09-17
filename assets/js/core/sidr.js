@@ -112,7 +112,7 @@ function oceanwpMobileMenu( event ) {
 
 				// Remove active dropdowns
 				$j( '.sidr-class-menu-item-has-children.active' ).removeClass( 'active' ).children( 'ul' ).hide();
-				
+
 				// FadeOut overlay
 				$j( '.oceanwp-sidr-overlay' ).fadeOut( 300, function() {
 					$j( this ).remove();
@@ -155,3 +155,73 @@ function oceanwpMobileMenu( event ) {
 	}
 
 }
+
+function owpSidrDropdown() {
+
+	var owpHeader = document.getElementById('site-header'),
+		navWarap  = document.querySelectorAll( '#sidr' )[0],
+		sidrClose = document.querySelector( '.sidr-class-toggle-sidr-close' );
+	if ( ! owpHeader || ! navWarap ) {
+		return;
+	}
+
+	var mobileIcon = document.querySelector( '.mobile-menu' );
+
+	mobileIcon.addEventListener( 'click', function() {
+		if ( ! sidrClose.classList.contains( 'opened' ) ) {
+			sidrClose.classList.toggle( 'opened' );
+		} else {
+			sidrClose.classList.remove( 'opened' );
+		}
+
+	});
+
+	sidrClose.addEventListener( 'click', function() {
+		sidrClose.classList.remove( 'opened' );
+	});
+
+	document.addEventListener( 'keydown', function( event ) {
+
+		var selectors = 'input, a, button',
+			elements = navWarap.querySelectorAll( selectors ),
+			closMenu = document.querySelector( '.sidr-class-toggle-sidr-close.opened' ),
+			lastEl   = elements[ elements.length - 1 ],
+			firstEl  = elements[0],
+			activeEl = document.activeElement,
+			tabKey   = event.keyCode === 9,
+			shiftKey = event.shiftKey;
+
+		if ( ! closMenu ) {
+			return;
+		}
+
+		if ( ! shiftKey && tabKey && lastEl ===  activeEl ) {
+			event.preventDefault();
+			closMenu.focus();
+		}
+
+		if ( shiftKey && tabKey && firstEl === activeEl ) {
+			event.preventDefault();
+			closMenu.focus();
+		}
+
+		if ( shiftKey && tabKey && closMenu === activeEl ) {
+			event.preventDefault();
+			lastEl.focus();
+		}
+
+		closMenu.addEventListener( 'click', function() {
+			mobileIcon.focus();
+		} );
+
+	});
+
+
+}
+
+document.addEventListener(
+	'DOMContentLoaded',
+	function() {
+		owpSidrDropdown();
+	}
+);
