@@ -3164,8 +3164,13 @@ if ( ! function_exists( 'ocean_reading_time' ) ) {
 		$word_count   = str_word_count( strip_tags( $content ) );
 		$reading_time = ceil( $word_count / 200 );
 
-		$owp_reading_time = $reading_time . " " . esc_html__( 'min(s) read', 'oceanwp' );
-		return apply_filters( 'oceanwp_post_reading_time', $owp_reading_time );
+		$reading_time = apply_filters( 'oceanwp_post_reading_time', $reading_time );
+
+		$owp_reading_time = printf(
+			/* translators: 1: post reading time. */
+			esc_html__( '%1$s mins read', 'oceanwp' ),
+			number_format_i18n( $reading_time )
+		);
 	}
 }
 

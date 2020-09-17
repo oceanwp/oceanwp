@@ -1850,7 +1850,6 @@
 	}
 }
 .wcmenucart-details {
-	margin-left: 8px !important;
 	&.count {
 		display: inline-block;
 		position: relative;
@@ -1859,6 +1858,7 @@
 		line-height: 1;
 		font-weight: 600;
 		padding: 3px 5px;
+		margin-left: 8px;
 		@include border-radius( 2px );
 		background-color: #13aff0;
 		&:before {
