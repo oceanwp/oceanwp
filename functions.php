@@ -846,7 +846,6 @@ final class OCEANWP_Theme_Class {
 		echo '<style>div#setting-error-tgmpa{display:block;}</style>';
 	}
 
-
 	/**
 	 * Alter the search posts per page
 	 *
