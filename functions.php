@@ -1028,23 +1028,24 @@ if ( ! function_exists( 'owp_fs' ) ) {
 
 				$owp_fs = fs_dynamic_init(
 					array(
-						'id'                => '3752',
-						'bundle_id'         => '3767',
-						'slug'              => 'oceanwp',
-						'type'              => 'theme',
-						'public_key'        => 'pk_043077b34f20f5e11334af3c12493',
-						'bundle_public_key' => 'pk_c334eb1ae413deac41e30bf00b9dc',
-						'is_premium'        => false,
-						'has_addons'        => true,
-						'has_paid_plans'    => true,
-						'menu'              => array(
+						'id'                             => '3752',
+						'bundle_id'                      => '3767',
+						'slug'                           => 'oceanwp',
+						'type'                           => 'theme',
+						'public_key'                     => 'pk_043077b34f20f5e11334af3c12493',
+						'bundle_public_key'              => 'pk_c334eb1ae413deac41e30bf00b9dc',
+						'is_premium'                     => false,
+						'has_addons'                     => true,
+						'has_paid_plans'                 => true,
+						'menu'                           => array(
 							'slug'    => 'oceanwp-panel',
 							'account' => true,
 							'contact' => false,
 							'support' => false,
 						),
-						'navigation'        => 'menu',
-						'is_org_compliant'  => true,
+						'bundle_license_auto_activation' => true,
+						'navigation'                     => 'menu',
+						'is_org_compliant'               => true,
 					)
 				);
 			}
@@ -1061,4 +1062,4 @@ if ( ! function_exists( 'owp_fs' ) ) {
 
 #endregion
 
-new OCEANWP_Theme_Class;
+new OCEANWP_Theme_Class();
