@@ -6743,6 +6743,7 @@ ul.meta li a:hover {
 
 ul.meta li i {
   display: inline-block;
+  vertical-align: middle;
   padding-right: 6px;
   font-size: 17px;
   color: #13aff0;
@@ -6779,6 +6780,10 @@ ul.bsp-class-none li:after {
 
 .single-post ul.meta li {
   line-height: 1.5;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .single-post ul.meta li:after {
@@ -6788,6 +6793,7 @@ ul.bsp-class-none li:after {
 .single-post ul.meta li i {
   font-size: 17px;
   padding-right: 9px;
+  vertical-align: baseline;
 }
 
 .single-post ul.ms-class-default li:after {

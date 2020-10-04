@@ -32,6 +32,7 @@ ul.meta {
 
 		i {
 			display: inline-block;
+			vertical-align: middle;
 			padding-right: 6px;
 			font-size: 17px;
 			color: $color-5;
@@ -60,6 +61,8 @@ ul.bsp-class-none li:after { content: ''; margin: 0 5px; }
 
 	li {
 		line-height: 1.5;
+		display: inline-flex;
+		align-self: flex-end;
 
 		&:after {
 			padding: 0 8px;
@@ -68,6 +71,7 @@ ul.bsp-class-none li:after { content: ''; margin: 0 5px; }
 		i {
 			font-size: 17px;
 			padding-right: 9px;
+			vertical-align: baseline;
 		}
 	}
 }
