@@ -39,6 +39,7 @@
 * **Tweak** - WooCommerce: SEO Improvement - product title set to H2 tag.
 * **Tweak** - WooCommerce: Improved 'My Account' login page style.
 * **Tweak** - Blog: Post entries & single post meta data styling.
+* **Tweak** - Blog: Sinlge Post Author Bio tag changed to H3 for Accessibility & SEO improvement.
 * **Tweak** - Customizer Loading Optimization: WooCommerce typography live preview scripts separated from main script.
 * **Tweak** - Customizer Loading Optimization: WooCommerce style live preview scripts separated from main script.
 * **Tweak** - Customizer Loading Optimization: EDD style live preview script separated from main script.
