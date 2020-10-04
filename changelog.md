@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### *2020.09.XX* - 1.9.0
+### *2020.10.XX* - 2.0
 * **Added** - Hook: ocean_after_archive_product_price;
 * **Added** - Option to choose default theme icons: General Options > Theme Icons.
 * **Added** - Blog: Post entries & single post meta icons color options - General Options > Theme Icons.
@@ -36,6 +36,7 @@
 * **Added** - Social Menu Options: TikTok & Medium.
 * **Tweak** - WooCommerce: Product archive rating separated from price as an individual element.
 * **Tweak** - WooCommerce: SEO Improvement - product title set to H2 tag.
+* **Tweak** - WooCommerce: Improved 'My Account' login page style.
 * **Tweak** - Blog: Post entries & single post meta data styling.
 * **Tweak** - Customizer Loading Optimization: WooCommerce typography live preview scripts separated from main script.
 * **Tweak** - Customizer Loading Optimization: WooCommerce style live preview scripts separated from main script.
@@ -58,6 +59,9 @@
 * **Fixed** - Blog: Single post - next/prev RTL arrows.
 * **Fixed** - Minor RTL style issues.
 * **Removed** - Google+ social menu option.
+
+### *2020.09.30* - 1.9.0
+* **Updated** - Freemius Bundle activation.
 
 ### *2020.09.14* - 1.8.9:
 * **Fixed** - Keyboard navigation improvement for mobile menu.

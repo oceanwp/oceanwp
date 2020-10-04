@@ -18,6 +18,7 @@
 .account-side-style .woocommerce #customer_login > div { float: right; }
 .account-side-style .woocommerce #customer_login .col-2 { float: left; }
 .account-side-style .woocommerce #customer_login .woocommerce-form__label .woocommerce-form__input { margin: -3px 15px 0 6px !important; }
+.woocommerce .oceanwp-loginform-wrap .form-row label.woocommerce-form__label input#rememberme { margin: -3px 0 0 10px; }
 
 /* Stars */
 .woocommerce .star-rating:before { float: right; right: 0; left: auto; }

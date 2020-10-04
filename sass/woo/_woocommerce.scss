@@ -1811,17 +1811,31 @@
 		}
 	}
 	.form-row {
-		display: inline-block;
+		display: block;
 		&.form-row-wide {
 			width: 100%;
 		}
 		label.woocommerce-form__label {
-			margin: 0 0 0 15px;
+			display: block;
+			float: left;
+			clear: both;
+			width: 100%;
+			padding-bottom: 15px;
+		}
+		button.woocommerce-button.button.woocommerce-form-login__submit {
+			width: 70%;
+			display: block;
+			margin: auto;
+			padding-top: 15px;
 		}
 	}
 	.lost_password {
-		float: right;
 		line-height: 42px;
+		padding-top: 15px;
+		text-align: center;
+	}
+	input:focus {
+		outline: -webkit-focus-ring-color 1px solid;
 	}
 }
 .woocommerce .lost_reset_password {
@@ -1850,6 +1864,7 @@
 	}
 }
 .wcmenucart-details {
+	margin-left: 8px !important;
 	&.count {
 		display: inline-block;
 		position: relative;
