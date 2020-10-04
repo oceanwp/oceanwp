@@ -13,7 +13,6 @@ ul.meta {
 		line-height: 1.3;
 
 	    &:after {
-	    	content: '|';
 			padding: 0 6px;
 			font-weight: bold;
 		}
@@ -40,10 +39,20 @@ ul.meta {
 	}
 }
 
+ul.bsp-class-default li:after { content: '-'; }
+
+ul.bsp-class-modern li:after { content: '|'; }
+
+ul.bsp-class-none li:after { content: ''; margin: 0 5px; }
+
+
 /*------------------------------------*
 	Single Post Styling
 *------------------------------------*/
 .single-post ul.meta {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
 	font-size: 14.5px;
 	line-height: 1.3;
 	border-bottom: 1px solid $color-9;
@@ -62,6 +71,12 @@ ul.meta {
 		}
 	}
 }
+
+.single-post ul.ms-class-default li:after { content: '-'; }
+
+.single-post ul.ms-class-modern li:after { content: '|'; }
+
+.single-post ul.ms-class-none li:after { content: ''; margin: 0 10px; }
 
 /*------------------------------------*
 	Phone Landscape

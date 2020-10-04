@@ -28,11 +28,13 @@ if ( 'quote' === get_post_format() ) {
 $theme_icons = oceanwp_theme_icons();
 $icon_t = oceanwp_theme_icon_class();
 
-do_action( 'ocean_before_single_post_meta' );
+// Get meta separator class.
+$sp_meta_sep_class = oceanwp_theme_single_post_separator();
 
+do_action( 'ocean_before_single_post_meta' );
 ?>
 
-<ul class="meta clr">
+<ul class="meta ms-class-<?php echo $sp_meta_sep_class; ?> clr">
 
 	<?php
 	// Loop through meta sections.

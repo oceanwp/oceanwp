@@ -243,7 +243,7 @@ function get_term_tax_attr() {
 /**
  * WooCommerce product image gallery open and close tags
  * 
- * @since 1.8.8
+ * @since 2.0
  */
 if ( ! function_exists( 'ocean_woo_img_link_open' ) ) {
 	function ocean_woo_img_link_open() {
@@ -266,7 +266,7 @@ if ( ! function_exists( 'ocean_woo_img_link_close' ) ) {
 /**
  * WooCommerce Grid List Product Archive Excerpt
  * 
- * @since 1.8.8
+ * @since 2.0
  */
 if ( ! function_exists( 'ocean_woo_grid_view_excerpt' ) ) {
 	function ocean_woo_grid_view_excerpt() {
@@ -290,7 +290,7 @@ if ( ! function_exists( 'ocean_woo_grid_view_excerpt' ) ) {
 /**
  * Determine if active WooCommerce Wishlist plugin matches theme plugin support.
  * 
- * @since 1.8.8
+ * @since 2.0
  */
 if ( ! function_exists( 'ocean_woo_wishlist_plugin' ) ) {
 	
@@ -313,7 +313,7 @@ if ( ! function_exists( 'ocean_woo_wishlist_plugin' ) ) {
 /**
  * Determine if Wishlists exists
  * 
- * @since 1.8.8
+ * @since 2.0
  */
 if ( ! function_exists( 'ocean_woo_wishlist' ) ) {
 
@@ -329,7 +329,7 @@ if ( ! function_exists( 'ocean_woo_wishlist' ) ) {
 /**
  * Return YITH WooCommerce Wishlist item count
  * 
- * @since 1.8.8
+ * @since 2.0
  */
 if ( ! function_exists( 'ocean_woo_wishlist_count' ) ) {
 

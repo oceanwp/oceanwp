@@ -4,6 +4,7 @@
 * **Added** - Hook: ocean_after_archive_product_price;
 * **Added** - Option to choose default theme icons: General Options > Theme Icons.
 * **Added** - Blog: Post entries & single post meta icons color options - General Options > Theme Icons.
+* **Added** - Blog: Post entries & single post meta separator style - Blog > Blog Entries & Blog > Single Post.
 * **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button option.
 * **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button message display (optional).
 * **Added** - WooCommerce: Product archive show/hide price and 'Add to Cart' button message typography settings.

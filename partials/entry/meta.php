@@ -18,14 +18,17 @@ if ( empty( $sections ) ) {
 	return;
 }
 
-do_action( 'ocean_before_blog_entry_meta' );
-
 // Get theme icons.
 $theme_icons = oceanwp_theme_icons();
 $icon_t = oceanwp_theme_icon_class();
+
+// Get meta separator style.
+$meta_class = oceanwp_theme_blog_meta_separator();
+
+do_action( 'ocean_before_blog_entry_meta' );
 ?>
 
-<ul class="meta clr" aria-label="<?php esc_attr_e( 'Post details:', 'oceanwp' ); ?>">
+<ul class="meta bsp-class-<?php echo $meta_class; ?> clr" aria-label="<?php esc_attr_e( 'Post details:', 'oceanwp' ); ?>">
 
 	<?php
 	// Loop through meta sections.
