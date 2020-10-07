@@ -146,7 +146,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			/**
 			 * Add support for Wishlist plugin of choice
 			 * 
-			 * @since 1.8.8
+			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
 				'ocean_woo_wl_plugin',
@@ -1593,7 +1593,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			/**
 			 * Shop Conditional Heading
 			 * 
-			 * @since 1.8.7
+			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
 				'ocean_woocommerce_shop_conditional_heading',
@@ -1617,7 +1617,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			/**
 			 * Product Entry Show Logged in/Logged out, show products conditional
 			 * 
-			 * @since 1.8.7
+			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
 				'ocean_shop_conditional',
@@ -1718,7 +1718,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			/**
 			 * Product Entry Enable/Disable Image and Product Title links
 			 * 
-			 * @since 1.8.7
+			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
 				'ocean_shop_woo_disable_links',
@@ -2139,7 +2139,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			/**
 			 * Single Product Conditional Heading
 			 * 
-			 * @since 1.8.7
+			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
 				'ocean_woocommerce_single_conditional_heading',
@@ -2163,7 +2163,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			/**
 			 * Single Product Show Logged in/Logged out, show products conditional
 			 * 
-			 * @since 1.8.7
+			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
 				'ocean_woo_single_conditional',

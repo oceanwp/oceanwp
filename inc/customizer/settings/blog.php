@@ -871,6 +871,39 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			);
 
 			/**
+			 * Blog Entries Meta Separator
+			 * 
+			 * @since 2.0
+			 */
+			$wp_customize->add_setting(
+				'ocean_blog_meta_separator',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'default',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_blog_meta_separator',
+					array(
+						'label'           => esc_html__( 'Meta Separator', 'oceanwp' ),
+						'type'            => 'select',
+						'section'         => 'ocean_blog_entries',
+						'settings'        => 'ocean_blog_meta_separator',
+						'priority'        => 10,
+						'choices'         => array(
+							'default' => esc_html__( 'Default', 'oceanwp' ),
+							'modern'  => esc_html__( 'Modern', 'oceanwp' ),
+							'none'    => esc_html__( 'None', 'oceanwp' ),
+						),
+					)
+				)
+			);
+
+			/**
 			 * Section
 			 */
 			$wp_customize->add_section(
@@ -1463,6 +1496,39 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 								'mod-date'      => esc_html__( 'Modified Date', 'oceanwp' ),
 								'reading-time'  => esc_html__( 'Reading Time', 'oceanwp' ),
 							)
+						),
+					)
+				)
+			);
+
+			/**
+			 * Single Post Meta Separator
+			 * 
+			 * @since 2.0
+			 */
+			$wp_customize->add_setting(
+				'ocean_blog_single_meta_separator',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'default',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_blog_single_meta_separator',
+					array(
+						'label'           => esc_html__( 'Meta Separator', 'oceanwp' ),
+						'type'            => 'select',
+						'section'         => 'ocean_single_post',
+						'settings'        => 'ocean_blog_single_meta_separator',
+						'priority'        => 10,
+						'choices'         => array(
+							'default' => esc_html__( 'Default', 'oceanwp' ),
+							'modern'  => esc_html__( 'Modern', 'oceanwp' ),
+							'none'    => esc_html__( 'None', 'oceanwp' ),
 						),
 					)
 				)

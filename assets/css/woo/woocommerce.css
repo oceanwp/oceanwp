@@ -2226,7 +2226,7 @@
 }
 
 .woocommerce .oceanwp-loginform-wrap .form-row {
-  display: inline-block;
+  display: block;
 }
 
 .woocommerce .oceanwp-loginform-wrap .form-row.form-row-wide {
@@ -2234,12 +2234,28 @@
 }
 
 .woocommerce .oceanwp-loginform-wrap .form-row label.woocommerce-form__label {
-  margin: 0 0 0 15px;
+  display: block;
+  float: left;
+  clear: both;
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.woocommerce .oceanwp-loginform-wrap .form-row button.woocommerce-button.button.woocommerce-form-login__submit {
+  width: 70%;
+  display: block;
+  margin: auto;
+  padding-top: 15px;
 }
 
 .woocommerce .oceanwp-loginform-wrap .lost_password {
-  float: right;
   line-height: 42px;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.woocommerce .oceanwp-loginform-wrap input:focus {
+  outline: -webkit-focus-ring-color 1px solid;
 }
 
 .woocommerce .lost_reset_password {
@@ -2268,6 +2284,10 @@
 
 .wcmenucart:after {
   display: none;
+}
+
+.wcmenucart-details {
+  margin-left: 8px !important;
 }
 
 .wcmenucart-details.count {

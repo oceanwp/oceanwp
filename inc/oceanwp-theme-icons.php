@@ -15,7 +15,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 	/**
 	 * OceanWP Theme Icons
 	 *
-	 * @since 1.8.8
+	 * @since 2.0
 	 *
 	 */
 	function oceanwp_theme_icons() {
@@ -104,5 +104,37 @@ if ( ! function_exists( 'oceanwp_theme_icon_class' ) ) {
 		}
 
 		return $ti_class;
+	}
+}
+
+/**
+ * Blog Entries Meta Separator Style
+ * 
+ * @since 2.0
+ */
+if ( ! function_exists( 'oceanwp_theme_blog_meta_separator' ) ) {
+
+	function oceanwp_theme_blog_meta_separator() {
+		$meta_style = get_theme_mod( 'ocean_blog_meta_separator', 'default' );
+
+		$meta_style = $meta_style ? $meta_style : 'default';
+
+		return $meta_style;
+	}
+}
+
+/**
+ * Single Blog Post Meta Separator
+ * 
+ * @since 2.0
+ */
+if ( ! function_exists( 'oceanwp_theme_single_post_separator' ) ) {
+
+	function oceanwp_theme_single_post_separator() {
+		$sep_style = get_theme_mod( 'ocean_blog_single_meta_separator', 'default' );
+
+		$sep_style = $sep_style ? $sep_style : 'default';
+
+		return $sep_style;
 	}
 }

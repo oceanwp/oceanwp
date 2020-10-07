@@ -3747,9 +3747,9 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			
 			/**
-			 * Section
+			 * Section Theme Icons
 			 * 
-			 * @since 1.8.8
+			 * @since 2.0
 			 */
 			$wp_customize->add_section(
 				'ocean_general_theme_icons',

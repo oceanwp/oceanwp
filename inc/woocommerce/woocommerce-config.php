@@ -2568,7 +2568,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		/**
 		 * Compatibility with WooCommerce Germanized Single Product template.
 		 *
-		 * @since 1.8.8
+		 * @since 2.0
 		 */
 		public function woocommerce_germanized_single() {
 			echo '<div class="wc-gzd-single">';
@@ -2581,7 +2581,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		/**
 		 * Compatibility with WooCommerce Germanized Single Product meta template.
 		 *
-		 * @since 1.8.8
+		 * @since 2.0
 		 */
 		public function woocommerce_germanized_single_meta() {
 			echo '<div class="wc-gzd-single-meta">';

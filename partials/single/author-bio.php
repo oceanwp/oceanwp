@@ -45,11 +45,11 @@ if ( ! $description ) {
 
 		<div class="author-bio-content clr">
 
-			<h4 class="author-bio-title">
+			<h3 class="author-bio-title">
 				<a href="<?php echo esc_url( $url ); ?>" title="<?php esc_attr_e( 'Visit Author Page', 'oceanwp' ); ?>">
 					<?php echo esc_html( wp_strip_all_tags( $author ) ); ?>
 				</a>
-			</h4><!-- .author-bio-title -->
+			</h3><!-- .author-bio-title -->
 
 			<?php
 			// Outputs the author description if one exists.
