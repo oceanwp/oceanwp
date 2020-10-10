@@ -60,7 +60,7 @@
 * **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
 * **Fixed** - Blog: Single post - next/prev RTL arrows.
 * **Fixed** - Minor RTL style issues.
-* **Removed** - Google+ social menu option.
+* **Updated** - Font Awesome 5.15.1 version.
 
 ### *2020.09.30* - 1.9.0
 * **Updated** - Freemius Bundle activation.

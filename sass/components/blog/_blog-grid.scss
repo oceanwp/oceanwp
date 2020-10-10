@@ -11,7 +11,7 @@
 }
 
 .blog-entry.grid-entry {
-	float: left;
+	justify-content: flex-start;
 
 	.blog-entry-inner {
 		padding: 0 1.25rem 1.25rem;
@@ -20,12 +20,6 @@
 
 	.thumbnail {
 		margin: 0 -1.25rem;
-	}
-
-	ul.meta {
-		margin: 0.3rem 0;
-		display: inline-block;
-		vertical-align: middle;
 	}
 
 	.blog-entry-header {

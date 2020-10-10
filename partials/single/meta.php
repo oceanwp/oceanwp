@@ -34,7 +34,7 @@ $sp_meta_sep_class = oceanwp_theme_single_post_separator();
 do_action( 'ocean_before_single_post_meta' );
 ?>
 
-<ul class="meta ms-class-<?php echo $sp_meta_sep_class; ?> clr">
+<ul class="meta ospm-<?php echo $sp_meta_sep_class; ?> clr">
 
 	<?php
 	// Loop through meta sections.

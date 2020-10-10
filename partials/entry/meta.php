@@ -28,7 +28,7 @@ $meta_class = oceanwp_theme_blog_meta_separator();
 do_action( 'ocean_before_blog_entry_meta' );
 ?>
 
-<ul class="meta bsp-class-<?php echo $meta_class; ?> clr" aria-label="<?php esc_attr_e( 'Post details:', 'oceanwp' ); ?>">
+<ul class="meta obem-<?php echo $meta_class; ?> clr" aria-label="<?php esc_attr_e( 'Post details:', 'oceanwp' ); ?>">
 
 	<?php
 	// Loop through meta sections.
@@ -48,7 +48,7 @@ do_action( 'ocean_before_blog_entry_meta' );
 		<?php } ?>
 
 		<?php if ( 'categories' === $section ) { ?>
-			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Post category:', 'oceanwp' ); ?></span><i class="<?php echo $theme_icons[ 'category' ][ $icon_t ]; ?>" aria-hidden="true"></i><?php the_category( ' <span class="owp-sep" aria-hidden="true">/</span> ', get_the_ID() ); ?></li>
+			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Post category:', 'oceanwp' ); ?></span><i class="<?php echo $theme_icons[ 'category' ][ $icon_t ]; ?>" aria-hidden="true"></i><?php the_category( '<span class="owp-sep" aria-hidden="true">/</span>', get_the_ID() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'reading-time' === $section ) { ?>

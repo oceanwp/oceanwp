@@ -1,16 +1,19 @@
 ul.meta {
-	display: inline-block;
-	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 	color: $color-15;
     font-size: 14px;
-    line-height: 1;
+    line-height: 1.3;
     margin: 0 0 20px;
-    padding: 0;
+    padding: 0 0 10px;
     list-style: none;
 
 	li {
-		float: left;
-		line-height: 1.3;
+		line-height: 1.5;
+		align-self: flex-end;
+		flex-wrap: nowrap;
+		padding-bottom: 5px;
 
 	    &:after {
 			padding: 0 6px;
@@ -31,68 +34,45 @@ ul.meta {
 		}
 
 		i {
-			display: inline-block;
-			vertical-align: middle;
 			padding-right: 6px;
 			font-size: 17px;
-			color: $color-5;
+		}
+
+		.owp-sep {
+			padding: 0 5px;
 		}
 	}
 }
 
-ul.bsp-class-default li:after { content: '-'; }
+ul.obem-default li:after { content: '-'; }
 
-ul.bsp-class-modern li:after { content: '|'; }
+ul.obem-modern li:after { content: '|'; }
 
-ul.bsp-class-none li:after { content: ''; margin: 0 5px; }
+ul.obem-none li:after { content: ''; margin: 0 5px; }
 
 
 /*------------------------------------*
 	Single Post Styling
 *------------------------------------*/
 .single-post ul.meta {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: left;
 	font-size: 14.5px;
-	line-height: 1.3;
 	border-bottom: 1px solid $color-9;
 	padding-bottom: 15px;
 
 	li {
-		line-height: 1.5;
-		display: inline-flex;
-		align-self: flex-end;
 
 		&:after {
 			padding: 0 8px;
 		}
 
 		i {
-			font-size: 17px;
 			padding-right: 9px;
-			vertical-align: baseline;
 		}
 	}
 }
 
-.single-post ul.ms-class-default li:after { content: '-'; }
+.single-post ul.ospm-default li:after { content: '-'; }
 
-.single-post ul.ms-class-modern li:after { content: '|'; }
+.single-post ul.ospm-modern li:after { content: '|'; }
 
-.single-post ul.ms-class-none li:after { content: ''; margin: 0 10px; }
-
-/*------------------------------------*
-	Phone Landscape
-*------------------------------------*/
-@media only screen and (max-width: 480px) {
-
-	ul.meta {
-		margin-bottom: 12px;
-
-		li {
-			margin-bottom: 8px;
-		}
-	}
-
-}
+.single-post ul.ospm-none li:after { content: ''; margin: 0 10px; }
