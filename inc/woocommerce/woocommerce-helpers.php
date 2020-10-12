@@ -287,20 +287,20 @@ if ( ! function_exists( 'ocean_woo_grid_view_excerpt' ) ) {
 	}
 }
 
-/**
- * Determine if active WooCommerce Wishlist plugin matches theme plugin support.
- * 
- * @since 2.0
- */
 if ( ! function_exists( 'ocean_woo_wishlist_plugin' ) ) {
-	
+
+	/**
+	 * Determine if active WooCommerce Wishlist plugin matches theme plugin support.
+	 *
+	 * @since 2.0
+	 */
 	function ocean_woo_wishlist_plugin() {
 		if ( ! OCEANWP_WOOCOMMERCE_ACTIVE ) {
 			return false;
 		}
 
 		$woo_wl_plugin = get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' );
-		
+
 		// Only TI or only YITH Wishlist plugin.
 		if ( ( defined( 'TINWL_URL' ) && 'ti_wl' === $woo_wl_plugin ) || ( defined( 'YITH_WCWL' ) && 'yith_wl' === $woo_wl_plugin ) ) {
 			return true;
@@ -310,13 +310,14 @@ if ( ! function_exists( 'ocean_woo_wishlist_plugin' ) ) {
 	}
 }
 
-/**
- * Determine if Wishlists exists
- * 
- * @since 2.0
- */
+
 if ( ! function_exists( 'ocean_woo_wishlist' ) ) {
 
+	/**
+	 * Determine if Wishlists exists
+	 *
+	 * @since 2.0
+	 */
 	function ocean_woo_wishlist() {
 		if ( class_exists( 'TInvWL_Wishlist' ) || class_exists( 'YITH_WCWL_Wishlist' ) ) {
 			return true;
@@ -326,13 +327,13 @@ if ( ! function_exists( 'ocean_woo_wishlist' ) ) {
 	}
 }
 
-/**
- * Return YITH WooCommerce Wishlist item count
- * 
- * @since 2.0
- */
 if ( ! function_exists( 'ocean_woo_wishlist_count' ) ) {
 
+	/**
+	 * Return YITH WooCommerce Wishlist item count
+	 *
+	 * @since 2.0
+	 */
 	function ocean_woo_wishlist_count() {
 		$wl_count = 0;
 
@@ -346,11 +347,47 @@ if ( ! function_exists( 'ocean_woo_wishlist_count' ) ) {
 
 if ( ! function_exists( 'ocean_dequeue_yith_wl_scripts' ) ) {
 
+	/**
+	 * Styles/Scripts
+	 */
 	function ocean_dequeue_yith_wl_scripts() {
 
 		// Remove default YITH WCWL style.
 		wp_dequeue_style( 'yith-wcwl-main' );
 		wp_dequeue_style( 'yith-wcwl-font-awesome' );
 		wp_dequeue_style( 'jquery-selectBox' );
+	}
+}
+
+if ( ! function_exists( 'owp_yith_wishlist_button_label' ) ) {
+
+	/**
+	 * Add to wishlist
+	 */
+	function owp_yith_wishlist_button_label() {
+		return '';
+	}
+}
+
+if ( ! function_exists( 'owp_yith_wishlist_browse_button_label' ) ) {
+
+	/**
+	 * Browse add to wishlist
+	 */
+	function owp_yith_wishlist_browse_button_label() {
+
+		$icon_option = get_option( 'yith_wcwl_add_to_wishlist_icon' );
+		$custom_icon = 'none' != $icon_option ? get_option( 'yith_wcwl_add_to_wishlist_custom_icon' ) : '';
+		$added_icon_option = get_option( 'yith_wcwl_added_to_wishlist_icon' );
+		$custom_added_icon = 'none' != $added_icon_option ? get_option( 'yith_wcwl_added_to_wishlist_custom_icon' ) : '';
+
+		$icon = apply_filters( 'yith_wcwl_button_icon', 'none' != $icon_option ? $icon_option : '' );
+		$added_icon = apply_filters( 'yith_wcwl_button_added_icon', 'none' != $added_icon_option ? $added_icon_option : '' );
+
+		if ( $added_icon ) {
+			return '<i class="yith-wcwl-icon fa ' . $added_icon . '"></i>';
+		} else {
+			return '<i class="yith-wcwl-icon fa ' . $icon . '"></i>';
+		}
 	}
 }

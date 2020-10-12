@@ -504,6 +504,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			if ( class_exists( 'YITH_WCWL' ) ) {
 
 				add_action( 'wp_enqueue_scripts', 'ocean_dequeue_yith_wl_scripts' );
+				add_filter( 'yith_wcwl_button_label', 'owp_yith_wishlist_button_label' );
+				add_filter( 'yith_wcwl_browse_wishlist_label', 'owp_yith_wishlist_browse_button_label' );
 
 			}
 
@@ -709,7 +711,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// If whislist.
 			if ( class_exists( 'TInvWL_Wishlist' ) || class_exists( 'YITH_WCWL' ) ) {
-				wp_enqueue_style( 'oceanwp-wishlist', OCEANWP_CSS_DIR_URI .'woo/wishlist.min.css' );
+				wp_enqueue_style( 'oceanwp-wishlist', OCEANWP_CSS_DIR_URI . 'woo/wishlist.min.css' );
 			}
 
 			// If single product ajax add to cart
@@ -1913,7 +1915,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			$wl_plugin = get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' );
-			
+
 			$items .= '<li class="woo-wishlist-link">';
 
 			if ( 'ti_wl' === $wl_plugin ) {
@@ -1924,7 +1926,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$wishlist_url = YITH_WCWL()->get_last_operation_url();
 				$woo_wl_count = ocean_woo_wishlist_count();
 
-				$items .= '<a href="' . esc_url( $wishlist_url ) . '"><i class="fas fa-heart"><span class="count">' . esc_html( $woo_wl_count ) . '</i></span></a>';
+				$items .= '<a href="' . esc_url( $wishlist_url ) . '"><i class="far fa-heart"><span class="count">' . esc_html( $woo_wl_count ) . '</i></span></a>';
 			}
 
 			$items .= '</li>';
