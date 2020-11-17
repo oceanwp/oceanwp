@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### *2020.10.XX* - 2.0
+### *2020.11.17* - 2.0.0
 * **Added** - Hook: ocean_after_archive_product_price;
 * **Added** - Option to choose default theme icons: General Options > Theme Icons.
 * **Added** - Blog: Post entries & single post meta icons color options - General Options > Theme Icons.
@@ -57,6 +57,7 @@
 * **Fixed** - WooCommerce: RTL - 'Update Cart' button position.
 * **Fixed** - WooCommerce: RTL - pagination arrows.
 * **Fixed** - WooCommerce: Cart responsiveness.
+* **Fixed** - WooCommerce: Fatal error - Call to a member function get_cart_contents_count () on null
 * **Fixed** - Blog: Post entries - grid layout fit-rows style issue - skipped space even when containers equal height.
 * **Fixed** - Blog: Single post - next/prev RTL arrows.
 * **Fixed** - Minor RTL style issues.

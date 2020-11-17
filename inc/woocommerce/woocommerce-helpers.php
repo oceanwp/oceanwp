@@ -48,16 +48,16 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 			}
 			$url = get_permalink( $cart_id );
 		}
-		
+
 		// Cart total
 		$display = get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' );
 		if ( 'icon_total' == $display ) {
 			$cart_extra = WC()->cart->get_total();
 			$cart_extra = str_replace( 'amount', 'wcmenucart-details', $cart_extra );
 		} elseif ( 'icon_count' == $display ) {
-			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
+			$cart_extra = '<span class="wcmenucart-details count">'. is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : '' .'</span>';
 		} elseif ( 'icon_count_total' == $display ) {
-			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
+			$cart_extra = '<span class="wcmenucart-details count">'. is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : '' .'</span>';
 			$cart_total = WC()->cart->get_total();
 			$cart_extra .= str_replace( 'amount', 'wcmenucart-details', $cart_total );
 		} else {
@@ -87,7 +87,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 					<span class="wcmenucart-total"><?php echo WC()->cart->get_total(); ?></span>
 				<?php } ?>
 				<span class="wcmenucart-cart-icon">
-					<span class="wcmenucart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+					<span class="wcmenucart-count"><?php echo is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : ''; ?></span>
 				</span>
 			</a>
 
