@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2020.12.01.* - 2.0.1
+* **Fixed** - WooCommerce: Menu Icon Cart Count style missing.
+
 ### *2020.11.17* - 2.0.0
 * **Added** - Hook: ocean_after_archive_product_price;
 * **Added** - Option to choose default theme icons: General Options > Theme Icons.

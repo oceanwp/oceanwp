@@ -19,26 +19,26 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		// Classes
 		$classes = array( 'wcmenucart' );
 
-		// Hide items if "hide if empty cart" is checked
+		// Hide items if "hide if empty cart" is checked.
 		if ( true == get_theme_mod( 'ocean_woo_menu_icon_hide_if_empty', false )
 			&& ! WC()->cart->cart_contents_count > 0 ) {
 			$classes[] = 'wcmenucart-hide';
 		}
 
-		// Turn classes into space seperated string
+		// Turn classes into space seperated string.
 		$classes = implode( ' ', $classes );
 
-		// Return if is in the Elementor edit mode, to avoid error
+		// Return if is in the Elementor edit mode, to avoid error.
 		if ( OCEANWP_ELEMENTOR_ACTIVE
 			&& \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 			return;
 		}
 		
-		// Vars
+		// Vars.
 		$icon_style   = get_theme_mod( 'ocean_woo_menu_icon_style', 'drop_down' );
 		$custom_link  = get_theme_mod( 'ocean_woo_menu_icon_custom_link' );
 
-		// URL
+		// URL.
 		if ( 'custom_link' == $icon_style && $custom_link ) {
 			$url = esc_url( $custom_link );
 		} else {
@@ -49,45 +49,50 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 			$url = get_permalink( $cart_id );
 		}
 
-		// Cart total
+		// Cart total.
 		$display = get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' );
+
 		if ( 'icon_total' == $display ) {
 			$cart_extra = WC()->cart->get_total();
 			$cart_extra = str_replace( 'amount', 'wcmenucart-details', $cart_extra );
-		} elseif ( 'icon_count' == $display ) {
-			$cart_extra = '<span class="wcmenucart-details count">'. is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : '' .'</span>';
-		} elseif ( 'icon_count_total' == $display ) {
-			$cart_extra = '<span class="wcmenucart-details count">'. is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : '' .'</span>';
+		} else if ( 'icon_count' == $display && !is_null( WC()->cart ) ) {
+			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
+		} else if ( 'icon_count_total' == $display && !is_null( WC()->cart ) ) {
+			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
 			$cart_total = WC()->cart->get_total();
 			$cart_extra .= str_replace( 'amount', 'wcmenucart-details', $cart_total );
 		} else {
 			$cart_extra = '';
 		}
 
-		// Get cart icon
+		// Get cart icon.
 		$icon = get_theme_mod( 'ocean_woo_menu_icon', 'icon-handbag' );
-		$icon = $icon ? $icon : 'icon-handbag';
 
-		// If has custom cart icon
+		// If has custom cart icon.
 		$custom_icon = get_theme_mod( 'ocean_woo_menu_custom_icon' );
 		if ( '' != $custom_icon ) {
 			$icon = $custom_icon;
 		}
 
-		// Cart Icon
+		// Cart Icon.
 		$cart_icon = '<i class="'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
-		// If bag style
-		if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) { ?>
+		// If bag style.
+		$woo_bag_style = get_theme_mod( 'ocean_woo_menu_bag_style', 'no' );
+
+		if ( 'yes' === $woo_bag_style ) { ?>
 
 			<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $classes ); ?>">
 				<?php
 				if ( true == get_theme_mod( 'ocean_woo_menu_bag_style_total', false ) ) { ?>
 					<span class="wcmenucart-total"><?php echo WC()->cart->get_total(); ?></span>
-				<?php } ?>
+				<?php }
+				?>
 				<span class="wcmenucart-cart-icon">
-					<span class="wcmenucart-count"><?php echo is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : ''; ?></span>
+					<?php if ( !is_null( WC()->cart ) ) { ?>
+						<span class="wcmenucart-count"><?php echo WC()->cart->get_cart_contents_count();  ?></span>
+					<?php } ?>
 				</span>
 			</a>
 
