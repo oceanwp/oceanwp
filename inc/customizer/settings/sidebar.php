@@ -116,7 +116,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_sidebar_padding_dimensions', array(
 				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
-				'section'  				=> $section,				
+				'section'  				=> $section,
 				'settings'   => array(
 		            'desktop_top' 		=> 'ocean_sidebar_top_padding',
 		            'desktop_right' 	=> 'ocean_sidebar_right_padding',
@@ -151,6 +151,42 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 				'section'  				=> $section,
 				'priority' 				=> 10,
 			) ) );
+
+			/**
+			 * Sidebar widget Title Heading Tag
+			 */
+			$wp_customize->add_setting(
+				'ocean_sidebar_widget_heading_tag',
+				array(
+					'default'           => 'h4',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_sidebar_widget_heading_tag',
+					array(
+						'label'    => esc_html__( 'Heading Tag', 'oceanwp' ),
+						'type'     => 'select',
+						'section'  => $section,
+						'settings' => 'ocean_sidebar_widget_heading_tag',
+						'priority' => 10,
+						'choices'  => array(
+							'h1'   => esc_html__( 'H1', 'oceanwp' ),
+							'h2'   => esc_html__( 'H2', 'oceanwp' ),
+							'h3'   => esc_html__( 'H3', 'oceanwp' ),
+							'h4'   => esc_html__( 'H4', 'oceanwp' ),
+							'h5'   => esc_html__( 'H5', 'oceanwp' ),
+							'h6'   => esc_html__( 'H6', 'oceanwp' ),
+							'div'  => esc_html__( 'div', 'oceanwp' ),
+							'span' => esc_html__( 'span', 'oceanwp' ),
+							'p'    => esc_html__( 'p', 'oceanwp' ),
+						),
+					)
+				)
+			);
 
 			/**
 			 * Widgets Background

@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 2.0.0\n"
+"Project-Id-Version: OceanWP 2.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2020-11-17 06:35:43+00:00\n"
+"POT-Creation-Date: 2020-12-11 05:09:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -106,65 +106,65 @@ msgstr ""
 msgid "Mobile (optional)"
 msgstr ""
 
-#: functions.php:596
+#: functions.php:599
 msgid "Default Sidebar"
 msgstr ""
 
-#: functions.php:598
+#: functions.php:601
 msgid ""
 "Widgets in this area will be displayed in the left or right sidebar area if "
 "you choose the Left or Right Sidebar layout."
 msgstr ""
 
-#: functions.php:609
+#: functions.php:612
 #: inc/customizer/controls/radio-image/class-control-radio-image.php:110
 #: inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:611
+#: functions.php:614
 msgid ""
 "Widgets in this area are used in the left sidebar region if you use the "
 "Both Sidebars layout."
 msgstr ""
 
-#: functions.php:623
+#: functions.php:626
 msgid "Search Results Sidebar"
 msgstr ""
 
-#: functions.php:625
+#: functions.php:628
 msgid "Widgets in this area are used in the search result page."
 msgstr ""
 
-#: functions.php:637
+#: functions.php:640
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:639
+#: functions.php:642
 msgid "Widgets in this area are used in the first footer region."
 msgstr ""
 
-#: functions.php:650
+#: functions.php:653
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:652
+#: functions.php:655
 msgid "Widgets in this area are used in the second footer region."
 msgstr ""
 
-#: functions.php:663
+#: functions.php:666
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:665
+#: functions.php:668
 msgid "Widgets in this area are used in the third footer region."
 msgstr ""
 
-#: functions.php:676
+#: functions.php:679
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:678
+#: functions.php:681
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr ""
 
@@ -588,60 +588,80 @@ msgid "Sidebar / Content"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:227 inc/customizer/settings/blog.php:1082
+#: inc/customizer/settings/footer-widgets.php:263
 #: inc/customizer/settings/general.php:1470
+#: inc/customizer/settings/sidebar.php:171
 msgid "Heading Tag"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:233 inc/customizer/settings/blog.php:1088
+#: inc/customizer/settings/footer-widgets.php:269
 #: inc/customizer/settings/general.php:1476
+#: inc/customizer/settings/sidebar.php:177
 #: inc/customizer/settings/woocommerce.php:1987
 msgid "H1"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:234 inc/customizer/settings/blog.php:1089
+#: inc/customizer/settings/footer-widgets.php:270
 #: inc/customizer/settings/general.php:1477
+#: inc/customizer/settings/sidebar.php:178
 #: inc/customizer/settings/woocommerce.php:1988
 msgid "H2"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:235 inc/customizer/settings/blog.php:1090
+#: inc/customizer/settings/footer-widgets.php:271
 #: inc/customizer/settings/general.php:1478
+#: inc/customizer/settings/sidebar.php:179
 #: inc/customizer/settings/woocommerce.php:1989
 msgid "H3"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:236 inc/customizer/settings/blog.php:1091
+#: inc/customizer/settings/footer-widgets.php:272
 #: inc/customizer/settings/general.php:1479
+#: inc/customizer/settings/sidebar.php:180
 #: inc/customizer/settings/woocommerce.php:1990
 msgid "H4"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:237 inc/customizer/settings/blog.php:1092
+#: inc/customizer/settings/footer-widgets.php:273
 #: inc/customizer/settings/general.php:1480
+#: inc/customizer/settings/sidebar.php:181
 #: inc/customizer/settings/woocommerce.php:1991
 msgid "H5"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:238 inc/customizer/settings/blog.php:1093
+#: inc/customizer/settings/footer-widgets.php:274
 #: inc/customizer/settings/general.php:1481
+#: inc/customizer/settings/sidebar.php:182
 #: inc/customizer/settings/woocommerce.php:1992
 msgid "H6"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:239 inc/customizer/settings/blog.php:1094
+#: inc/customizer/settings/footer-widgets.php:275
 #: inc/customizer/settings/general.php:1482
+#: inc/customizer/settings/sidebar.php:183
 #: inc/customizer/settings/woocommerce.php:1993
 msgid "div"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:240 inc/customizer/settings/blog.php:1095
+#: inc/customizer/settings/footer-widgets.php:276
 #: inc/customizer/settings/general.php:1483
+#: inc/customizer/settings/sidebar.php:184
 #: inc/customizer/settings/woocommerce.php:1994
 msgid "span"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:241 inc/customizer/settings/blog.php:1096
+#: inc/customizer/settings/footer-widgets.php:277
 #: inc/customizer/settings/general.php:1484
+#: inc/customizer/settings/sidebar.php:185
 #: inc/customizer/settings/woocommerce.php:1995
 msgid "p"
 msgstr ""
@@ -1546,7 +1566,7 @@ msgstr ""
 
 #: inc/customizer/settings/edd.php:1856
 #: inc/customizer/settings/footer-bottom.php:236
-#: inc/customizer/settings/footer-widgets.php:373
+#: inc/customizer/settings/footer-widgets.php:409
 #: inc/customizer/settings/general.php:1858
 #: inc/customizer/settings/general.php:3075
 #: inc/customizer/settings/general.php:3496
@@ -1555,7 +1575,7 @@ msgstr ""
 #: inc/customizer/settings/header.php:3131
 #: inc/customizer/settings/lifterlms.php:684
 #: inc/customizer/settings/sidebar.php:118
-#: inc/customizer/settings/sidebar.php:229
+#: inc/customizer/settings/sidebar.php:265
 #: inc/customizer/settings/topbar.php:192
 #: inc/customizer/settings/topbar.php:484
 #: inc/customizer/settings/woocommerce.php:3345
@@ -1588,7 +1608,7 @@ msgstr ""
 
 #: inc/customizer/settings/edd.php:2287
 #: inc/customizer/settings/footer-bottom.php:280
-#: inc/customizer/settings/footer-widgets.php:417
+#: inc/customizer/settings/footer-widgets.php:453
 #: inc/customizer/settings/general.php:205
 #: inc/customizer/settings/general.php:1895
 #: inc/customizer/settings/general.php:2600
@@ -1606,7 +1626,7 @@ msgstr ""
 #: inc/customizer/settings/header.php:3809
 #: inc/customizer/settings/lifterlms.php:954
 #: inc/customizer/settings/sidebar.php:53
-#: inc/customizer/settings/sidebar.php:164
+#: inc/customizer/settings/sidebar.php:200
 #: inc/customizer/settings/topbar.php:227
 #: inc/customizer/settings/woocommerce.php:1054
 #: inc/customizer/settings/woocommerce.php:2476
@@ -1769,7 +1789,7 @@ msgid "Titles Border Bottom Color"
 msgstr ""
 
 #: inc/customizer/settings/edd.php:2860
-#: inc/customizer/settings/footer-widgets.php:469
+#: inc/customizer/settings/footer-widgets.php:505
 #: inc/customizer/settings/header.php:2535
 #: inc/customizer/settings/header.php:3826
 #: inc/customizer/settings/woocommerce.php:4885
@@ -1855,7 +1875,7 @@ msgid "Shortcodes allowed, %1$ssee the list%2$s."
 msgstr ""
 
 #: inc/customizer/settings/footer-bottom.php:306
-#: inc/customizer/settings/footer-widgets.php:443
+#: inc/customizer/settings/footer-widgets.php:479
 #: inc/customizer/settings/general.php:1920
 #: inc/customizer/settings/general.php:2278
 #: inc/customizer/settings/topbar.php:261
@@ -1864,7 +1884,7 @@ msgid "Text Color"
 msgstr ""
 
 #: inc/customizer/settings/footer-bottom.php:332
-#: inc/customizer/settings/footer-widgets.php:495
+#: inc/customizer/settings/footer-widgets.php:531
 #: inc/customizer/settings/general.php:390
 #: inc/customizer/settings/header.php:654
 #: inc/customizer/settings/header.php:3843
@@ -1872,7 +1892,7 @@ msgid "Links Color"
 msgstr ""
 
 #: inc/customizer/settings/footer-bottom.php:358
-#: inc/customizer/settings/footer-widgets.php:521
+#: inc/customizer/settings/footer-widgets.php:557
 #: inc/customizer/settings/header.php:3859
 msgid "Links Color: Hover"
 msgstr ""
@@ -1937,7 +1957,7 @@ msgstr ""
 msgid "Columns"
 msgstr ""
 
-#: inc/customizer/settings/footer-widgets.php:264
+#: inc/customizer/settings/footer-widgets.php:300
 #: inc/customizer/settings/header.php:128
 msgid "Add Container"
 msgstr ""
@@ -3335,15 +3355,15 @@ msgstr ""
 msgid "Widgets"
 msgstr ""
 
-#: inc/customizer/settings/sidebar.php:262
+#: inc/customizer/settings/sidebar.php:298
 msgid "Margin Bottom (px)"
 msgstr ""
 
-#: inc/customizer/settings/sidebar.php:284
+#: inc/customizer/settings/sidebar.php:320
 msgid "Titles Border Color"
 msgstr ""
 
-#: inc/customizer/settings/sidebar.php:300
+#: inc/customizer/settings/sidebar.php:336
 msgid "Titles Margin Bottom (px)"
 msgstr ""
 
@@ -5545,7 +5565,7 @@ msgstr ""
 msgid "WooCommerce Archive Notice"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-helpers.php:116
+#: inc/woocommerce/woocommerce-helpers.php:121
 #: woocommerce/loop/thumbnail/featured-image.php:84
 #: woocommerce/loop/thumbnail/featured-image.php:90
 msgid "Placeholder Image"

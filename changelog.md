@@ -1,7 +1,9 @@
 # OceanWP Changelog
 
-### *2020.12.01.* - 2.0.1
+### *2020.12.11.* - 2.0.1
+* **Added** - Heading tag option in the customizer for sidebar and footer widget title.
 * **Fixed** - WooCommerce: Menu Icon Cart Count style missing.
+* **Fixed** - WooCommerce: Multistep checkout form submission error.
 
 ### *2020.11.17* - 2.0.0
 * **Added** - Hook: ocean_after_archive_product_price;
