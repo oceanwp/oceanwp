@@ -22,8 +22,8 @@ a, a:hover, a:focus {
     @include transition( all .3s ease );
 }
 
-.entry-content,
-.entry {
+.single .entry-content,
+.page .entry {
 	a {
 		cursor: pointer;
 		text-underline-offset: 3px;
