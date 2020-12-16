@@ -1,12 +1,12 @@
 # OceanWP Changelog
 
 ### *2020.12.16.* - 2.0.1
-* **Added** - Heading tag option in the customizer for sidebar and footer widget title.
-* **Added** - Text decoration set to underline for accessibility.
-* **Added** - Body text color changed to match the accessibility requirement.
+* **Added** - Heading tag option in the Customizer: Sidebar and Footer widget title.
+* **Added** - Content links underlined per WordPress accessibility requirements.
+* **Tweak** - Default Body text color altered for increased contrast & accessibility requirements.
 * **Fixed** - WooCommerce: Menu Icon Cart Count style missing.
-* **Fixed** - WooCommerce: Multistep checkout form submission error.
-* **Added** - WooCommerce: filter 'ocean_product_archive_title_tag' to alter the title tag in shop loop.
+* **Fixed** - WooCommerce: Multistep-checkout form submission error.
+* **Added** - WooCommerce: Filter 'ocean_product_archive_title_tag' to alter the title tag in shop loop.
 
 ### *2020.11.17* - 2.0.0
 * **Added** - Hook: ocean_after_archive_product_price;
