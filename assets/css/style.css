@@ -1507,30 +1507,11 @@ table tr td:last-child {
  * Set link colors.
  */
 a {
-  cursor: pointer;
   color: #333;
-  text-underline-offset: 3px;
-  text-decoration: none;
-  text-decoration-skip-ink: all;
-  transition: all 0.3s ease;
 }
 
 a:hover {
   color: #13aff0;
-  text-decoration: underline;
-  -webkit-text-decoration-style: dotted;
-          text-decoration-style: dotted;
-  text-decoration-skip-ink: none;
-  transition: all 0.3s ease;
-}
-
-a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
-  /* Only visible in Windows High Contrast mode */
-  outline: 2px solid transparent;
-  text-decoration: underline 1px dotted #13aff0;
-  text-decoration-skip-ink: none;
-  background: rgba(255, 255, 255, 0.9);
-  transition: all 0.3s ease;
 }
 
 a.light {
@@ -1539,6 +1520,38 @@ a.light {
 
 a.light:hover {
   color: #13aff0;
+}
+
+a, a:hover, a:focus {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#content-wrap a {
+  cursor: pointer;
+  color: #333;
+  text-underline-offset: 3px;
+  text-decoration: none;
+  text-decoration-skip-ink: all;
+  transition: all 0.3s ease;
+}
+
+#content-wrap a:hover {
+  color: #13aff0;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+  text-decoration-skip-ink: none;
+  transition: all 0.3s ease;
+}
+
+#content-wrap a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  /* Only visible in Windows High Contrast mode */
+  outline: 2px solid transparent;
+  text-decoration: underline 1px dotted #13aff0;
+  text-decoration-skip-ink: none;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
 }
 
 /**
