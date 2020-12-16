@@ -22,17 +22,16 @@ a, a:hover, a:focus {
     @include transition( all .3s ease );
 }
 
-#content-wrap {
+.entry-content,
+.entry {
 	a {
 		cursor: pointer;
-		color: $link-color;
 		text-underline-offset: 3px;
-		text-decoration: none;
+		text-decoration: underline;
 		text-decoration-skip-ink: all;
 		@include transition( all .3s ease );
 
 		&:hover {
-			color: $link-hover-color;
 			text-decoration: underline;
 			text-decoration-style: dotted;
 			text-decoration-skip-ink: none;
