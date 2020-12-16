@@ -70,6 +70,9 @@ foreach ( $elements as $element ) {
 	// Title.
 	if ( 'title' === $element ) {
 
+		$heading = 'h2';
+		$heading = apply_filters( 'ocean_product_archive_title_tag', $heading );
+
 		do_action( 'ocean_before_archive_product_title' );
 
 		echo '<li class="title">';
@@ -78,14 +81,13 @@ foreach ( $elements as $element ) {
 			if ( false === $ocean_woo_disable_links
 				|| ( $disable_links && is_user_logged_in() ) ) {
 
-				echo '<h2><a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a></h2>';
+				echo '<' . esc_attr( $heading ) . '><a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a></' . esc_attr( $heading ) . '>';
 
 			} else {
-				
-				echo '<h2>' . get_the_title() . '</h2>';
+
+				echo '<' . esc_attr( $heading ) . '>' . get_the_title() . '</' . esc_attr( $heading ) . '>';
 
 			}
-			
 			do_action( 'ocean_after_archive_product_title_inner' );
 
 		echo '</li>';

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 2.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2020-12-11 05:09:07+00:00\n"
+"POT-Creation-Date: 2020-12-16 05:57:03+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3790,7 +3790,7 @@ msgstr ""
 #: inc/customizer/settings/woocommerce.php:2222
 #: inc/woocommerce/woocommerce-config.php:1358
 #: woocommerce/owp-archive-product-hover.php:137
-#: woocommerce/owp-archive-product.php:178
+#: woocommerce/owp-archive-product.php:180
 #: woocommerce/owp-single-product.php:79
 msgid "Log in to view price and purchase"
 msgstr ""

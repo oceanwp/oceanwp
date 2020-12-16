@@ -94,7 +94,7 @@ blockquote, q {
 }
 
 a:focus {
-  outline: 1.5px solid #323232;
+  outline: 0;
 }
 
 a:hover, a:active {
@@ -131,7 +131,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 1.8;
-  color: #929292;
+  color: #4a4a4a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-wrap: break-word;
@@ -1507,11 +1507,30 @@ table tr td:last-child {
  * Set link colors.
  */
 a {
+  cursor: pointer;
   color: #333;
+  text-underline-offset: 3px;
+  text-decoration: none;
+  text-decoration-skip-ink: all;
+  transition: all 0.3s ease;
 }
 
 a:hover {
   color: #13aff0;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+  text-decoration-skip-ink: none;
+  transition: all 0.3s ease;
+}
+
+a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  /* Only visible in Windows High Contrast mode */
+  outline: 2px solid transparent;
+  text-decoration: underline 1px dotted #13aff0;
+  text-decoration-skip-ink: none;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
 }
 
 a.light {
@@ -1520,11 +1539,6 @@ a.light {
 
 a.light:hover {
   color: #13aff0;
-}
-
-a, a:hover, a:focus {
-  text-decoration: none;
-  transition: all 0.3s ease;
 }
 
 /**
@@ -6709,7 +6723,7 @@ ul.meta {
       flex-wrap: wrap;
   -ms-flex-pack: start;
       justify-content: flex-start;
-  color: #777;
+  color: #4a4a4a;
   font-size: 14px;
   line-height: 1.3;
   margin: 0 0 20px;
@@ -6737,7 +6751,7 @@ ul.meta li:last-child:after {
 }
 
 ul.meta li a {
-  color: #777;
+  color: #4a4a4a;
 }
 
 ul.meta li a:hover {
@@ -6983,10 +6997,23 @@ ul.obem-none li:after {
 
 .single-post.content-max-width .entry-header {
   margin-bottom: 0;
+  text-align: center;
 }
 
 .single-post.content-max-width ul.meta {
-  display: block;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+  color: #4a4a4a;
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 0 0 10px;
+  list-style: none;
 }
 
 .single-post.content-max-width .wp-block-quote p {
