@@ -60,7 +60,6 @@ if ( ! function_exists( 'oceanwp_edd_menu_cart_style' ) ) {
 
 }
 
-
 /**
  * Creates the WooCommerce link for the navbar
  *

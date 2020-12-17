@@ -172,6 +172,7 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'helpers.php';
 		require_once $dir . 'header-content.php';
 		require_once $dir . 'oceanwp-strings.php';
+		require_once $dir . 'oceanwp-theme-icons.php';
 		require_once $dir . 'customizer/controls/typography/webfonts.php';
 		require_once $dir . 'walker/init.php';
 		require_once $dir . 'walker/menu-walker.php';
@@ -426,7 +427,7 @@ final class OCEANWP_Theme_Class {
 		wp_deregister_style( 'fontawesome' );
 
 		// Load font awesome style.
-		wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI . '/assets/fonts/fontawesome/css/all.min.css', false, '5.11.2' );
+		wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI . '/assets/fonts/fontawesome/css/all.min.css', false, '5.15.1' );
 
 		// Register simple line icons style.
 		wp_enqueue_style( 'simple-line-icons', $dir . 'third/simple-line-icons.min.css', false, '2.4.0' );
@@ -586,8 +587,11 @@ final class OCEANWP_Theme_Class {
 	 */
 	public static function register_sidebars() {
 
-		$heading = 'h4';
-		$heading = apply_filters( 'ocean_sidebar_heading', $heading );
+		$heading = get_theme_mod( 'ocean_sidebar_widget_heading_tag', 'h4' );
+		$heading = apply_filters( 'ocean_sidebar_widget_heading_tag', $heading );
+
+		$foo_heading = get_theme_mod( 'ocean_footer_widget_heading_tag', 'h4' );
+		$foo_heading = apply_filters( 'ocean_footer_widget_heading_tag', $foo_heading );
 
 		// Default Sidebar.
 		register_sidebar(
@@ -638,8 +642,8 @@ final class OCEANWP_Theme_Class {
 				'description'   => esc_html__( 'Widgets in this area are used in the first footer region.', 'oceanwp' ),
 				'before_widget' => '<div id="%1$s" class="footer-widget %2$s clr">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<' . $heading . ' class="widget-title">',
-				'after_title'   => '</' . $heading . '>',
+				'before_title'  => '<' . $foo_heading . ' class="widget-title">',
+				'after_title'   => '</' . $foo_heading . '>',
 			)
 		);
 
@@ -651,8 +655,8 @@ final class OCEANWP_Theme_Class {
 				'description'   => esc_html__( 'Widgets in this area are used in the second footer region.', 'oceanwp' ),
 				'before_widget' => '<div id="%1$s" class="footer-widget %2$s clr">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<' . $heading . ' class="widget-title">',
-				'after_title'   => '</' . $heading . '>',
+				'before_title'  => '<' . $foo_heading . ' class="widget-title">',
+				'after_title'   => '</' . $foo_heading . '>',
 			)
 		);
 
@@ -664,8 +668,8 @@ final class OCEANWP_Theme_Class {
 				'description'   => esc_html__( 'Widgets in this area are used in the third footer region.', 'oceanwp' ),
 				'before_widget' => '<div id="%1$s" class="footer-widget %2$s clr">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<' . $heading . ' class="widget-title">',
-				'after_title'   => '</' . $heading . '>',
+				'before_title'  => '<' . $foo_heading . ' class="widget-title">',
+				'after_title'   => '</' . $foo_heading . '>',
 			)
 		);
 
@@ -677,8 +681,8 @@ final class OCEANWP_Theme_Class {
 				'description'   => esc_html__( 'Widgets in this area are used in the fourth footer region.', 'oceanwp' ),
 				'before_widget' => '<div id="%1$s" class="footer-widget %2$s clr">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<' . $heading . ' class="widget-title">',
-				'after_title'   => '</' . $heading . '>',
+				'before_title'  => '<' . $foo_heading . ' class="widget-title">',
+				'after_title'   => '</' . $foo_heading . '>',
 			)
 		);
 
@@ -844,7 +848,6 @@ final class OCEANWP_Theme_Class {
 	public static function admin_inline_css() {
 		echo '<style>div#setting-error-tgmpa{display:block;}</style>';
 	}
-
 
 	/**
 	 * Alter the search posts per page
@@ -1027,23 +1030,24 @@ if ( ! function_exists( 'owp_fs' ) ) {
 
 				$owp_fs = fs_dynamic_init(
 					array(
-						'id'                => '3752',
-						'bundle_id'         => '3767',
-						'slug'              => 'oceanwp',
-						'type'              => 'theme',
-						'public_key'        => 'pk_043077b34f20f5e11334af3c12493',
-						'bundle_public_key' => 'pk_c334eb1ae413deac41e30bf00b9dc',
-						'is_premium'        => false,
-						'has_addons'        => true,
-						'has_paid_plans'    => true,
-						'menu'              => array(
+						'id'                             => '3752',
+						'bundle_id'                      => '3767',
+						'slug'                           => 'oceanwp',
+						'type'                           => 'theme',
+						'public_key'                     => 'pk_043077b34f20f5e11334af3c12493',
+						'bundle_public_key'              => 'pk_c334eb1ae413deac41e30bf00b9dc',
+						'is_premium'                     => false,
+						'has_addons'                     => true,
+						'has_paid_plans'                 => true,
+						'menu'                           => array(
 							'slug'    => 'oceanwp-panel',
 							'account' => true,
 							'contact' => false,
 							'support' => false,
 						),
-						'navigation'        => 'menu',
-						'is_org_compliant'  => true,
+						'bundle_license_auto_activation' => true,
+						'navigation'                     => 'menu',
+						'is_org_compliant'               => true,
 					)
 				);
 			}
@@ -1060,4 +1064,4 @@ if ( ! function_exists( 'owp_fs' ) ) {
 
 #endregion
 
-new OCEANWP_Theme_Class;
+new OCEANWP_Theme_Class();

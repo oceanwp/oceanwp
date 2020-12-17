@@ -22,6 +22,34 @@ a, a:hover, a:focus {
     @include transition( all .3s ease );
 }
 
+.single-post:not(.elementor-page) .entry-content,
+.page:not(.elementor-page):not(.woocommerce-page) .entry {
+	a {
+		cursor: pointer;
+		text-underline-offset: 3px;
+		text-decoration: underline;
+		text-decoration-skip-ink: all;
+		@include transition( all .3s ease );
+
+		&:hover {
+			text-decoration: underline;
+			text-decoration-style: dotted;
+			text-decoration-skip-ink: none;
+			@include transition( all .3s ease );
+		}
+
+		&:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+
+			/* Only visible in Windows High Contrast mode */
+			outline: 2px solid transparent;
+			text-decoration: underline 1px dotted $link-hover-color;
+			text-decoration-skip-ink: none;
+			background: rgba(255, 255, 255, 0.9);
+			@include transition( all .3s ease );
+		}
+	}
+}
+
 /**
  * Headings.
  */

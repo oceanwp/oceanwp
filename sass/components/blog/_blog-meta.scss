@@ -1,20 +1,23 @@
 ul.meta {
-	display: inline-block;
-	width: 100%;
-	color: $color-15;
-    font-size: 12px;
-    line-height: 1;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	color: $color-18;
+    font-size: 14px;
+    line-height: 1.3;
     margin: 0 0 20px;
-    padding: 0;
+    padding: 0 0 10px;
     list-style: none;
 
 	li {
-		float: left;
-		line-height: 1.3;
+		line-height: 1.5;
+		align-self: flex-end;
+		flex-wrap: nowrap;
+		padding-bottom: 5px;
 
 	    &:after {
-	    	content: '-';
-	    	padding: 0 6px;
+			padding: 0 6px;
+			font-weight: bold;
 		}
 
 	    &:last-child:after {
@@ -23,7 +26,7 @@ ul.meta {
 		}
 
 		a {
-			color: $color-15;
+			color: $color-18;
 
 		    &:hover {
 				color: $color-5;
@@ -31,24 +34,45 @@ ul.meta {
 		}
 
 		i {
-			display: inline-block;
-			color: $color-4;
-			padding-right: 5px;
+			padding-right: 6px;
+			font-size: 17px;
+		}
+
+		.owp-sep {
+			padding: 0 5px;
 		}
 	}
 }
+
+ul.obem-default li:after { content: '-'; }
+
+ul.obem-modern li:after { content: '|'; }
+
+ul.obem-none li:after { content: ''; margin: 0 5px; }
+
 
 /*------------------------------------*
-	Phone Landscape
+	Single Post Styling
 *------------------------------------*/
-@media only screen and (max-width: 480px) {
+.single-post ul.meta {
+	font-size: 14.5px;
+	border-bottom: 1px solid $color-9;
+	padding-bottom: 15px;
 
-	ul.meta {
-		margin-bottom: 12px;
+	li {
 
-		li {
-			margin-bottom: 8px;
+		&:after {
+			padding: 0 8px;
+		}
+
+		i {
+			padding-right: 9px;
 		}
 	}
-
 }
+
+.single-post ul.ospm-default li:after { content: '-'; }
+
+.single-post ul.ospm-modern li:after { content: '|'; }
+
+.single-post ul.ospm-none li:after { content: ''; margin: 0 10px; }

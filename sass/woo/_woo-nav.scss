@@ -51,11 +51,11 @@ Woo Product Navigation
 		    font-size: 12px;
 
 		    &.next-text {
-			    padding-left: 3px;
+			    padding-right: 5px;
 			}
 
 		    &.prev-text {
-			    padding-right: 3px;
+			    padding-left: 5px;
 			}
 		}
 
@@ -89,11 +89,11 @@ Woo Product Navigation
 		display: block;
 
 		li.next-li {
-			float: left;
+			float: right;
 		}
 
 		li.prev-li {
-			float: right;
+			float: left;
 		}
 
 		li {

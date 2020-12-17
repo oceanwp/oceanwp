@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 
-$j( document ).ready( function() {
+$j(document).ready(function(){
     "use strict";
     // Woo multi-step checkout
     oceanwpWooMultiStepCheckout();
@@ -40,6 +40,8 @@ function oceanwpWooMultiStepCheckout() {
             steps[4] = $j( '#order_checkout_payment' );
         }
 
+        payment_method();
+
         $j( '#order_checkout_payment' ).find( 'input[name=payment_method]' ).on( 'click', function() {
 
             if ( $j( '.payment_methods input.input-radio' ).length > 1 ) {
@@ -76,92 +78,9 @@ function oceanwpWooMultiStepCheckout() {
             next            = form_actions.find( '.button.next' ),
             checkout_form   = $j( 'form.woocommerce-checkout' ),
             is_logged_in    = oceanwpLocalize.is_logged_in,
-            button_title,
-            valid           = false,
-            current_step_item = steps[current_step],
-            selector        = current_step_item.selector,
-            posted_data     = {},
-            type            = '',
-            $offset         = 30,
-            $adminBar       = $j( '#wpadminbar' ),
-            $stickyTopBar   = $j( '#top-bar-wrap' ),
-            $stickyHeader   = $j( '#site-header' );
+            button_title;
 
-        // Offset adminbar
-        if ( $adminBar.length
-            && $j( window ).width() > 600 ) {
-            $offset = $offset + $adminBar.outerHeight();
-        }
-
-        // Offset sticky topbar
-        if ( true == oceanwpLocalize.hasStickyTopBar ) {
-            $offset = $offset + $stickyTopBar.outerHeight();
-        }
-
-        // Offset sticky header
-        if ( $j( '#site-header' ).hasClass( 'fixed-scroll' )
-            && ! $j( '#site-header' ).hasClass( 'vertical-header' ) ) {
-            $offset = $offset + $stickyHeader.outerHeight();
-        }
-
-        $j( 'form.woocommerce-checkout .woocommerce-NoticeGroup.woocommerce-NoticeGroup-checkout' ).remove();
-
-        type = (selector.indexOf( 'billing' ) >= 0) ? 'billing' : type;
-        type = (selector.indexOf( 'shipping' ) >= 0) ? 'shipping' : type;
-
-        if ( type == 'billing' || type == 'shipping' ) {
-
-            $j( selector ).find( '.validate-required input' ).each( function() {
-                posted_data[ $j( this ).attr( 'name' ) ] = $j( this ).val();
-            } );
-
-            $j( selector ).find( '.validate-required select' ).each( function() {
-                posted_data[ $j( this ).attr( 'name' ) ] = $j( this ).val();
-            } );
-
-            $j( selector ).find( '.input-checkbox' ).each( function() {
-                if ( $j( this ).is( ':checked' ) ) {
-                    posted_data[ $j( this ).attr( 'name' ) ] = $j( this ).val();
-                }
-            } );
-
-            var data = {
-                action: 'oceanwp_validate_checkout',
-                type: type,
-                posted_data: posted_data
-            };
-
-            $j.ajax( {
-                type: 'POST',
-                url: oceanwpLocalize.ajax_url,
-                data: data,
-                success: function( response ) {
-                    valid = response.valid;
-
-                    if ( ! response.valid ) {
-                        $j( 'form.woocommerce-checkout' ).prepend( response.html );
-                        $j( 'html, body' ).animate( {
-                            scrollTop: $j( 'form.woocommerce-checkout' ).offset().top - $offset },
-                        'slow' );
-                    }
-                    else{
-                        after_validation(timeline,form_actions,checkout_form,checkout_form,steps,action,next_step,current_step,prev_step,prev,next,$offset,is_logged_in,coupon);                    }
-                },
-                complete: function() {}
-            } );
-
-        } else {
-            valid = true;
-            after_validation(timeline,form_actions,checkout_form,checkout_form,steps,action,next_step,current_step,prev_step,prev,next,$offset,is_logged_in,coupon);        }
-
-
-
-    } );
-
-}
-function after_validation(timeline,form_actions,checkout_form,checkout_form,steps,action,next_step,current_step,prev_step,prev,next,$offset,is_logged_in,coupon)
-{
-               timeline.find( '.active' ).removeClass( 'active' );
+        timeline.find( '.active' ).removeClass( 'active' );
 
             if ( action == 'next' ) {
                 form_actions.data( 'step', next_step );
@@ -170,9 +89,6 @@ function after_validation(timeline,form_actions,checkout_form,checkout_form,step
                 } );
 
                 $j( '#timeline-' + next_step ).toggleClass( 'active' );
-                $j( 'html, body' ).animate( {
-                    scrollTop: $j( '#owp-checkout-timeline' ).offset().top - $offset },
-                'slow' );
             } else if ( action == 'prev' ) {
                 form_actions.data( 'step', prev_step );
                 steps[current_step].fadeOut( 120, function() {
@@ -180,9 +96,6 @@ function after_validation(timeline,form_actions,checkout_form,checkout_form,step
                 } );
 
                 $j( '#timeline-' + prev_step ).toggleClass( 'active' );
-                $j( 'html, body' ).animate( {
-                    scrollTop: $j( '#owp-checkout-timeline' ).offset().top - $offset },
-                'slow' );
             }
 
             current_step = form_actions.data( 'step' );
@@ -220,4 +133,7 @@ function after_validation(timeline,form_actions,checkout_form,checkout_form,step
                 coupon.fadeOut( 80 );
                 next.fadeIn( 120 );
             }
+
+    });
+
 }

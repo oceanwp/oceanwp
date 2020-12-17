@@ -10,7 +10,6 @@
 if ( ! defined( 'YITH_WCWL' ) ) {
 	exit; // Exit if accessed directly.
 }
-
 ?>
 
 <div class="yith-wcwl-share">
@@ -34,13 +33,6 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 			<li style="list-style-type: none; display: inline-block;">
 				<a target="_blank" class="pinterest" href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode( $share_link_url ); ?>&amp;description=<?php echo $share_summary; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>&amp;media=<?php echo $share_image_url; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" onclick="window.open(this.href); return false;"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
 				<span class="screen-reader-text"><?php esc_html_e( 'Share on Pinterest (opens in a new tab)', 'oceanwp' ); ?></span>
-			</li>
-		<?php endif; ?>
-
-		<?php if ( $share_googleplus_enabled ) : ?>
-			<li style="list-style-type: none; display: inline-block;">
-				<a target="_blank" class="googleplus" href="https://plus.google.com/share?url=<?php echo urlencode( $share_link_url ); ?>&amp;title=<?php echo $share_link_title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" onclick='javascript:window.open(this.href, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600");return false;'><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-				<span class="screen-reader-text"><?php esc_html_e( 'Share on Google plus (opens in a new tab)', 'oceanwp' ); ?></span>
 			</li>
 		<?php endif; ?>
 

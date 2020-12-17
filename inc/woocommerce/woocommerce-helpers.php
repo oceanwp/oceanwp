@@ -19,26 +19,26 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		// Classes
 		$classes = array( 'wcmenucart' );
 
-		// Hide items if "hide if empty cart" is checked
+		// Hide items if "hide if empty cart" is checked.
 		if ( true == get_theme_mod( 'ocean_woo_menu_icon_hide_if_empty', false )
 			&& ! WC()->cart->cart_contents_count > 0 ) {
 			$classes[] = 'wcmenucart-hide';
 		}
 
-		// Turn classes into space seperated string
+		// Turn classes into space seperated string.
 		$classes = implode( ' ', $classes );
 
-		// Return if is in the Elementor edit mode, to avoid error
+		// Return if is in the Elementor edit mode, to avoid error.
 		if ( OCEANWP_ELEMENTOR_ACTIVE
 			&& \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 			return;
 		}
 		
-		// Vars
+		// Vars.
 		$icon_style   = get_theme_mod( 'ocean_woo_menu_icon_style', 'drop_down' );
 		$custom_link  = get_theme_mod( 'ocean_woo_menu_icon_custom_link' );
 
-		// URL
+		// URL.
 		if ( 'custom_link' == $icon_style && $custom_link ) {
 			$url = esc_url( $custom_link );
 		} else {
@@ -48,15 +48,16 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 			}
 			$url = get_permalink( $cart_id );
 		}
-		
-		// Cart total
+
+		// Cart total.
 		$display = get_theme_mod( 'ocean_woo_menu_icon_display', 'icon_count' );
+
 		if ( 'icon_total' == $display ) {
 			$cart_extra = WC()->cart->get_total();
 			$cart_extra = str_replace( 'amount', 'wcmenucart-details', $cart_extra );
-		} elseif ( 'icon_count' == $display ) {
+		} else if ( 'icon_count' == $display && !is_null( WC()->cart ) ) {
 			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
-		} elseif ( 'icon_count_total' == $display ) {
+		} else if ( 'icon_count_total' == $display && !is_null( WC()->cart ) ) {
 			$cart_extra = '<span class="wcmenucart-details count">'. WC()->cart->get_cart_contents_count() .'</span>';
 			$cart_total = WC()->cart->get_total();
 			$cart_extra .= str_replace( 'amount', 'wcmenucart-details', $cart_total );
@@ -64,30 +65,34 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 			$cart_extra = '';
 		}
 
-		// Get cart icon
+		// Get cart icon.
 		$icon = get_theme_mod( 'ocean_woo_menu_icon', 'icon-handbag' );
-		$icon = $icon ? $icon : 'icon-handbag';
 
-		// If has custom cart icon
+		// If has custom cart icon.
 		$custom_icon = get_theme_mod( 'ocean_woo_menu_custom_icon' );
 		if ( '' != $custom_icon ) {
 			$icon = $custom_icon;
 		}
 
-		// Cart Icon
+		// Cart Icon.
 		$cart_icon = '<i class="'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
-		// If bag style
-		if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) { ?>
+		// If bag style.
+		$woo_bag_style = get_theme_mod( 'ocean_woo_menu_bag_style', 'no' );
+
+		if ( 'yes' === $woo_bag_style ) { ?>
 
 			<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $classes ); ?>">
 				<?php
 				if ( true == get_theme_mod( 'ocean_woo_menu_bag_style_total', false ) ) { ?>
 					<span class="wcmenucart-total"><?php echo WC()->cart->get_total(); ?></span>
-				<?php } ?>
+				<?php }
+				?>
 				<span class="wcmenucart-cart-icon">
-					<span class="wcmenucart-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+					<?php if ( !is_null( WC()->cart ) ) { ?>
+						<span class="wcmenucart-count"><?php echo WC()->cart->get_cart_contents_count();  ?></span>
+					<?php } ?>
 				</span>
 			</a>
 
@@ -149,7 +154,7 @@ if ( ! function_exists( 'oceanwp_woo_product_elements_positioning' ) ) {
 	function oceanwp_woo_product_elements_positioning() {
 
 		// Default sections
-		$sections = array( 'image', 'category', 'title', 'price-rating', 'description' , 'button' );
+		$sections = array( 'image', 'category', 'title', 'price-rating', 'woo-rating', 'description', 'button' );
 
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'oceanwp_woo_product_elements_positioning', $sections );
@@ -236,6 +241,158 @@ function get_term_tax_attr() {
 			if (taxonomy_exists(wc_attribute_taxonomy_name($tax->attribute_name))) {
 				$taxonomy_terms[$tax->attribute_name] = get_terms( wc_attribute_taxonomy_name($tax->attribute_name), 'orderby=name&hide_empty=0' );
 			}
+		}
+	}
+}
+
+/**
+ * WooCommerce product image gallery open and close tags
+ * 
+ * @since 2.0
+ */
+if ( ! function_exists( 'ocean_woo_img_link_open' ) ) {
+	function ocean_woo_img_link_open() {
+
+		global $product;
+
+		$woo_img_link = get_the_permalink( $product->get_id() );
+
+		echo '<a href="' . esc_url( $woo_img_link ) . '" class="woocommerce-LoopProduct-link">';
+		
+	}
+}
+
+if ( ! function_exists( 'ocean_woo_img_link_close' ) ) {
+	function ocean_woo_img_link_close() {
+		echo '</a>';
+	}
+}
+
+/**
+ * WooCommerce Grid List Product Archive Excerpt
+ * 
+ * @since 2.0
+ */
+if ( ! function_exists( 'ocean_woo_grid_view_excerpt' ) ) {
+	function ocean_woo_grid_view_excerpt() {
+
+		global $product;
+
+		$exc_length = get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
+
+		$woo_excerpt = $product->get_description();
+
+		if ( ! $exc_length ) {
+			$woo_excerpt = wp_kses_post( strip_shortcodes( $woo_excerpt ) );
+		} else {
+			$woo_excerpt = wp_trim_words( strip_shortcodes( $woo_excerpt ), $exc_length ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		} 
+
+		echo $woo_excerpt;
+	}
+}
+
+if ( ! function_exists( 'ocean_woo_wishlist_plugin' ) ) {
+
+	/**
+	 * Determine if active WooCommerce Wishlist plugin matches theme plugin support.
+	 *
+	 * @since 2.0
+	 */
+	function ocean_woo_wishlist_plugin() {
+		if ( ! OCEANWP_WOOCOMMERCE_ACTIVE ) {
+			return false;
+		}
+
+		$woo_wl_plugin = get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' );
+
+		// Only TI or only YITH Wishlist plugin.
+		if ( ( defined( 'TINWL_URL' ) && 'ti_wl' === $woo_wl_plugin ) || ( defined( 'YITH_WCWL' ) && 'yith_wl' === $woo_wl_plugin ) ) {
+			return true;
+		}
+
+		return false;
+	}
+}
+
+
+if ( ! function_exists( 'ocean_woo_wishlist' ) ) {
+
+	/**
+	 * Determine if Wishlists exists
+	 *
+	 * @since 2.0
+	 */
+	function ocean_woo_wishlist() {
+		if ( class_exists( 'TInvWL_Wishlist' ) || class_exists( 'YITH_WCWL_Wishlist' ) ) {
+			return true;
+		}
+
+		return false;
+	}
+}
+
+if ( ! function_exists( 'ocean_woo_wishlist_count' ) ) {
+
+	/**
+	 * Return YITH WooCommerce Wishlist item count
+	 *
+	 * @since 2.0
+	 */
+	function ocean_woo_wishlist_count() {
+		$wl_count = 0;
+
+		if ( 'yith_wl' === get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' ) && function_exists( 'yith_wcwl_count_all_products' ) ) {
+			$wl_count = yith_wcwl_count_all_products();
+		}
+
+		return $wl_count;
+	}
+}
+
+if ( ! function_exists( 'ocean_dequeue_yith_wl_scripts' ) ) {
+
+	/**
+	 * Styles/Scripts
+	 */
+	function ocean_dequeue_yith_wl_scripts() {
+
+		// Remove default YITH WCWL style.
+		wp_dequeue_style( 'yith-wcwl-main' );
+		wp_dequeue_style( 'yith-wcwl-font-awesome' );
+		wp_dequeue_style( 'jquery-selectBox' );
+	}
+}
+
+if ( ! function_exists( 'owp_yith_wishlist_button_label' ) ) {
+
+	/**
+	 * Add to wishlist
+	 */
+	function owp_yith_wishlist_button_label() {
+		return '';
+	}
+}
+
+if ( ! function_exists( 'owp_yith_wishlist_browse_button_label' ) ) {
+
+	/**
+	 * Browse add to wishlist
+	 */
+	function owp_yith_wishlist_browse_button_label() {
+
+		$icon_option = get_option( 'yith_wcwl_add_to_wishlist_icon' );
+		$custom_icon = 'none' != $icon_option ? get_option( 'yith_wcwl_add_to_wishlist_custom_icon' ) : '';
+		$added_icon_option = get_option( 'yith_wcwl_added_to_wishlist_icon' );
+		$custom_added_icon = 'none' != $added_icon_option ? get_option( 'yith_wcwl_added_to_wishlist_custom_icon' ) : '';
+
+		$icon = apply_filters( 'yith_wcwl_button_icon', 'none' != $icon_option ? $icon_option : '' );
+		$added_icon = apply_filters( 'yith_wcwl_button_added_icon', 'none' != $added_icon_option ? $added_icon_option : '' );
+
+		if ( $added_icon ) {
+			return '<i class="yith-wcwl-icon fa ' . $added_icon . '"></i>';
+		} else {
+			return '<i class="yith-wcwl-icon fa ' . $icon . '"></i>';
 		}
 	}
 }

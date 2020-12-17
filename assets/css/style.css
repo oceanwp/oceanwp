@@ -94,7 +94,7 @@ blockquote, q {
 }
 
 a:focus {
-  outline: 1.5px solid #323232;
+  outline: 0;
 }
 
 a:hover, a:active {
@@ -131,7 +131,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 1.8;
-  color: #929292;
+  color: #4a4a4a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-wrap: break-word;
@@ -154,13 +154,13 @@ dfn, cite, em, i {
  * Grid > Main Classes.
  */
 body .oceanwp-row {
-  margin: 0 -10px;
+  margin: 0 -0.625rem;
 }
 
 body .oceanwp-row .col {
   float: left;
-  margin: 0 0 20px;
-  padding: 0 10px;
+  margin: 0 0 1.25rem;
+  padding: 0 0.625rem;
 }
 
 body .oceanwp-row .span_1_of_1 {
@@ -1023,16 +1023,16 @@ body.separate-blog.separate-layout .scroller-status ul.page-numbers {
 
 body.separate-blog.separate-layout .oceanwp-row {
   margin: 0;
-  margin-right: -20px;
+  margin-right: -1.25rem;
 }
 
 body.separate-blog.separate-layout #blog-entries.blog-grid > * {
   background-color: transparent;
-  padding: 0 20px 0 0;
+  padding: 0 1.25rem 0 0;
 }
 
 body.separate-blog.separate-layout #blog-entries.blog-grid > :last-child {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 body.separate-blog.separate-layout.has-blog-grid .oceanwp-pagination {
@@ -1041,7 +1041,7 @@ body.separate-blog.separate-layout.has-blog-grid .oceanwp-pagination {
 
 body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner {
   background-color: #fff;
-  padding: 30px;
+  padding: 1.875rem;
   border: 0;
 }
 
@@ -1524,6 +1524,34 @@ a.light:hover {
 
 a, a:hover, a:focus {
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.single-post:not(.elementor-page) .entry-content a,
+.page:not(.elementor-page):not(.woocommerce-page) .entry a {
+  cursor: pointer;
+  text-underline-offset: 3px;
+  text-decoration: underline;
+  text-decoration-skip-ink: all;
+  transition: all 0.3s ease;
+}
+
+.single-post:not(.elementor-page) .entry-content a:hover,
+.page:not(.elementor-page):not(.woocommerce-page) .entry a:hover {
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
+  text-decoration-skip-ink: none;
+  transition: all 0.3s ease;
+}
+
+.single-post:not(.elementor-page) .entry-content a:focus:not(.wp-block-button__link):not(.wp-block-file__button),
+.page:not(.elementor-page):not(.woocommerce-page) .entry a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  /* Only visible in Windows High Contrast mode */
+  outline: 2px solid transparent;
+  text-decoration: underline 1px dotted #13aff0;
+  text-decoration-skip-ink: none;
+  background: rgba(255, 255, 255, 0.9);
   transition: all 0.3s ease;
 }
 
@@ -6504,24 +6532,21 @@ body.breadcrumbs-position-default .page-header-title {
 }
 
 .blog-entry.grid-entry {
-  float: left;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
 }
 
 .blog-entry.grid-entry .blog-entry-inner {
-  padding: 0 20px 20px;
+  padding: 0 1.25rem 1.25rem;
   border: 1px solid #e9e9e9;
 }
 
 .blog-entry.grid-entry .thumbnail {
-  margin: 0 -20px;
-}
-
-.blog-entry.grid-entry ul.meta {
-  margin: 0;
+  margin: 0 -1.25rem;
 }
 
 .blog-entry.grid-entry .blog-entry-header {
-  margin: 20px 0 12px;
+  margin: 1rem 0 1rem;
 }
 
 .blog-entry.grid-entry .blog-entry-header .entry-title {
@@ -6530,24 +6555,24 @@ body.breadcrumbs-position-default .page-header-title {
 
 .blog-entry.grid-entry .blog-entry-summary {
   line-height: 1.6;
-  margin: 10px 0 0;
+  margin-top: 0.625rem;
 }
 
 .blog-entry.grid-entry .blog-entry-readmore {
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 .blog-entry.grid-entry .blog-entry-readmore a {
   display: inline-block;
   font-size: 12px;
   line-height: 1.2;
-  padding-bottom: 3px;
+  padding-bottom: 0.19rem;
   border-bottom: 1px solid;
   text-transform: capitalize;
 }
 
 .blog-entry.grid-entry .blog-entry-readmore a i {
-  margin-left: 5px;
+  margin-left: 0.5rem;
 }
 
 .blog-entry.thumbnail-entry {
@@ -6706,24 +6731,32 @@ body.breadcrumbs-position-default .page-header-title {
 }
 
 ul.meta {
-  display: inline-block;
-  width: 100%;
-  color: #777;
-  font-size: 12px;
-  line-height: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  color: #4a4a4a;
+  font-size: 14px;
+  line-height: 1.3;
   margin: 0 0 20px;
-  padding: 0;
+  padding: 0 0 10px;
   list-style: none;
 }
 
 ul.meta li {
-  float: left;
-  line-height: 1.3;
+  line-height: 1.5;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding-bottom: 5px;
 }
 
 ul.meta li:after {
-  content: '-';
   padding: 0 6px;
+  font-weight: bold;
 }
 
 ul.meta li:last-child:after {
@@ -6732,7 +6765,7 @@ ul.meta li:last-child:after {
 }
 
 ul.meta li a {
-  color: #777;
+  color: #4a4a4a;
 }
 
 ul.meta li a:hover {
@@ -6740,21 +6773,55 @@ ul.meta li a:hover {
 }
 
 ul.meta li i {
-  display: inline-block;
-  color: #929292;
-  padding-right: 5px;
+  padding-right: 6px;
+  font-size: 17px;
+}
+
+ul.meta li .owp-sep {
+  padding: 0 5px;
+}
+
+ul.obem-default li:after {
+  content: '-';
+}
+
+ul.obem-modern li:after {
+  content: '|';
+}
+
+ul.obem-none li:after {
+  content: '';
+  margin: 0 5px;
 }
 
 /*------------------------------------*
-	Phone Landscape
+	Single Post Styling
 *------------------------------------*/
-@media only screen and (max-width: 480px) {
-  ul.meta {
-    margin-bottom: 12px;
-  }
-  ul.meta li {
-    margin-bottom: 8px;
-  }
+.single-post ul.meta {
+  font-size: 14.5px;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 15px;
+}
+
+.single-post ul.meta li:after {
+  padding: 0 8px;
+}
+
+.single-post ul.meta li i {
+  padding-right: 9px;
+}
+
+.single-post ul.ospm-default li:after {
+  content: '-';
+}
+
+.single-post ul.ospm-modern li:after {
+  content: '|';
+}
+
+.single-post ul.ospm-none li:after {
+  content: '';
+  margin: 0 10px;
 }
 
 /**
@@ -6944,10 +7011,23 @@ ul.meta li i {
 
 .single-post.content-max-width .entry-header {
   margin-bottom: 0;
+  text-align: center;
 }
 
 .single-post.content-max-width ul.meta {
-  display: block;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+  color: #4a4a4a;
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 0 0 10px;
+  list-style: none;
 }
 
 .single-post.content-max-width .wp-block-quote p {

@@ -272,6 +272,49 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 				&& 'center' != $woo_tabs ) {
 				$classes[] = 'woo-' . $woo_tabs . '-tabs';
 			}
+
+			// If shop conditional.
+			if ( true === get_theme_mod( 'ocean_shop_conditional', false ) ) {
+				$classes[] = 'has-woo-shop-conditional';
+
+				// If shop conditional message.
+				if ( 'yes' === get_theme_mod( 'ocean_shop_cond_msg', 'yes' ) ) {
+
+					// If My Account page linked to conditional message.
+					if ( true === get_theme_mod( 'ocean_shop_add_myaccount_link', false ) ) {
+						$classes[] = 'has-woo-shop-cond-msg-myaccount';
+					} else {
+						$classes[] = 'has-woo-shop-cond-msg';
+					}
+				}
+			}
+
+			// If has disabled image and product archive links.
+			if ( true === get_theme_mod( 'ocean_shop_woo_disable_links', false ) ) {
+				
+				// If disable image and links conditional.
+				if ( 'yes' === get_theme_mod( 'ocean_shop_woo_disable_links_cond', 'no' ) ) {
+					$classes[] = 'has-woo-shop-links-disabled-cond';
+				} else {
+					$classes[] = 'has-woo-shop-links-disabled-all';
+				}
+			}
+
+			// If has sinlge product conditional.
+			if ( true === get_theme_mod( 'ocean_woo_single_conditional', false ) ) {
+				$classes[] = 'has-woo-single-conditional';
+
+				// If single conditional message.
+				if ( 'yes' === get_theme_mod( 'ocean_woo_single_cond_msg', 'yes' ) ) {
+
+					// If My Account page linked to conditional message.
+					if ( true === get_theme_mod( 'ocean_single_add_myaccount_link', false ) ) {
+						$classes[] = 'has-woo-single-cond-msg-myaccount';
+					} else {
+						$classes[] = 'has-woo-single-cond-msg';
+					}
+				}
+			}
 		}
 
 		// Return classes.
@@ -1741,13 +1784,17 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 					}
 				$items .= '</form>';
 			} else {
+				// Get theme icons.
+				$theme_icons = oceanwp_theme_icons();
+				$icon_t = oceanwp_theme_icon_class();
+
 				$items .= '<a href="javascript:void(0)" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
-					$items .= '<span class="icon-magnifier" aria-hidden="true"></span>';
+					$items .= '<span class="' . $theme_icons[ 'search' ][ $icon_t ] . '" aria-hidden="true"></span>';
 				$items .= '</a>';
 			}
 		$items .= '</li>';
 
-		// Return nav $items
+		// Return nav $items.
 		return $items;
 
 	}
@@ -1786,10 +1833,14 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 			$class = '';
 		}
 
-		// Add search item to menu
+		// Get theme icons.
+		$theme_icons = oceanwp_theme_icons();
+		$icon_t = oceanwp_theme_icon_class();
+
+		// Add search item to menu.
 		echo '<div id="search-toggle">';
 			echo '<a href="javascript:void(0)" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
-				echo '<span class="icon-magnifier" aria-hidden="true"></span>';
+				echo '<span class="' . $theme_icons[ 'search' ][ $icon_t ] . '" aria-hidden="true"></span>';
 			echo '</a>';
 		echo '</div>';
 
@@ -3113,8 +3164,13 @@ if ( ! function_exists( 'ocean_reading_time' ) ) {
 		$word_count   = str_word_count( strip_tags( $content ) );
 		$reading_time = ceil( $word_count / 200 );
 
-		$owp_reading_time = $reading_time . " " . esc_html__( 'min(s) read', 'oceanwp' );
-		return apply_filters( 'oceanwp_post_reading_time', $owp_reading_time );
+		$reading_time = apply_filters( 'oceanwp_post_reading_time', $reading_time );
+
+		$owp_reading_time = printf(
+			/* translators: 1: post reading time. */
+			esc_html__( '%1$s mins read', 'oceanwp' ),
+			number_format_i18n( $reading_time )
+		);
 	}
 }
 
@@ -3854,90 +3910,96 @@ if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
 if ( ! function_exists( 'oceanwp_social_options' ) ) {
 
 	function oceanwp_social_options() {
-		return apply_filters( 'ocean_social_options', array(
-			'twitter' => array(
-				'label' => esc_html__( 'Twitter', 'oceanwp' ),
-				'icon_class' => 'fab fa-twitter',
-			),
-			'facebook' => array(
-				'label' => esc_html__( 'Facebook', 'oceanwp' ),
-				'icon_class' => 'fab fa-facebook',
-			),
-			'googleplus' => array(
-				'label' => esc_html__( 'Google Plus', 'oceanwp' ),
-				'icon_class' => 'fab fa-google-plus',
-			),
-			'pinterest'  => array(
-				'label' => esc_html__( 'Pinterest', 'oceanwp' ),
-				'icon_class' => 'fab fa-pinterest-p',
-			),
-			'dribbble' => array(
-				'label' => esc_html__( 'Dribbble', 'oceanwp' ),
-				'icon_class' => 'fab fa-dribbble',
-			),
-			'vk' => array(
-				'label' => esc_html__( 'VK', 'oceanwp' ),
-				'icon_class' => 'fab fa-vk',
-			),
-			'instagram'  => array(
-				'label' => esc_html__( 'Instagram', 'oceanwp' ),
-				'icon_class' => 'fab fa-instagram',
-			),
-			'linkedin' => array(
-				'label' => esc_html__( 'LinkedIn', 'oceanwp' ),
-				'icon_class' => 'fab fa-linkedin',
-			),
-			'tumblr'  => array(
-				'label' => esc_html__( 'Tumblr', 'oceanwp' ),
-				'icon_class' => 'fab fa-tumblr',
-			),
-			'github'  => array(
-				'label' => esc_html__( 'Github', 'oceanwp' ),
-				'icon_class' => 'fab fa-github-alt',
-			),
-			'flickr'  => array(
-				'label' => esc_html__( 'Flickr', 'oceanwp' ),
-				'icon_class' => 'fab fa-flickr',
-			),
-			'skype' => array(
-				'label' => esc_html__( 'Skype', 'oceanwp' ),
-				'icon_class' => 'fab fa-skype',
-			),
-			'youtube' => array(
-				'label' => esc_html__( 'Youtube', 'oceanwp' ),
-				'icon_class' => 'fab fa-youtube',
-			),
-			'vimeo' => array(
-				'label' => esc_html__( 'Vimeo', 'oceanwp' ),
-				'icon_class' => 'fab fa-vimeo-square',
-			),
-			'vine' => array(
-				'label' => esc_html__( 'Vine', 'oceanwp' ),
-				'icon_class' => 'fab fa-vine',
-			),
-			'xing' => array(
-				'label' => esc_html__( 'Xing', 'oceanwp' ),
-				'icon_class' => 'fab fa-xing',
-			),
-			'yelp' => array(
-				'label' => esc_html__( 'Yelp', 'oceanwp' ),
-				'icon_class' => 'fab fa-yelp',
-			),
-			'tripadvisor' => array(
-				'label' => esc_html__( 'Tripadvisor', 'oceanwp' ),
-				'icon_class' => 'fab fa-tripadvisor',
-			),
-			'rss'  => array(
-				'label' => esc_html__( 'RSS', 'oceanwp' ),
-				'icon_class' => 'fa fa-rss',
-			),
-			'email' => array(
-				'label' => esc_html__( 'Email', 'oceanwp' ),
-				'icon_class' => 'fa fa-envelope',
-			),
-		) );
+		return apply_filters(
+			'ocean_social_options',
+			array(
+				'twitter' => array(
+					'label' => esc_html__( 'Twitter', 'oceanwp' ),
+					'icon_class' => 'fab fa-twitter',
+				),
+				'facebook' => array(
+					'label' => esc_html__( 'Facebook', 'oceanwp' ),
+					'icon_class' => 'fab fa-facebook',
+				),
+				'pinterest'  => array(
+					'label' => esc_html__( 'Pinterest', 'oceanwp' ),
+					'icon_class' => 'fab fa-pinterest-p',
+				),
+				'dribbble' => array(
+					'label' => esc_html__( 'Dribbble', 'oceanwp' ),
+					'icon_class' => 'fab fa-dribbble',
+				),
+				'vk' => array(
+					'label' => esc_html__( 'VK', 'oceanwp' ),
+					'icon_class' => 'fab fa-vk',
+				),
+				'instagram'  => array(
+					'label' => esc_html__( 'Instagram', 'oceanwp' ),
+					'icon_class' => 'fab fa-instagram',
+				),
+				'linkedin' => array(
+					'label' => esc_html__( 'LinkedIn', 'oceanwp' ),
+					'icon_class' => 'fab fa-linkedin',
+				),
+				'tumblr'  => array(
+					'label' => esc_html__( 'Tumblr', 'oceanwp' ),
+					'icon_class' => 'fab fa-tumblr',
+				),
+				'github'  => array(
+					'label' => esc_html__( 'Github', 'oceanwp' ),
+					'icon_class' => 'fab fa-github-alt',
+				),
+				'flickr'  => array(
+					'label' => esc_html__( 'Flickr', 'oceanwp' ),
+					'icon_class' => 'fab fa-flickr',
+				),
+				'skype' => array(
+					'label' => esc_html__( 'Skype', 'oceanwp' ),
+					'icon_class' => 'fab fa-skype',
+				),
+				'youtube' => array(
+					'label' => esc_html__( 'Youtube', 'oceanwp' ),
+					'icon_class' => 'fab fa-youtube',
+				),
+				'vimeo' => array(
+					'label' => esc_html__( 'Vimeo', 'oceanwp' ),
+					'icon_class' => 'fab fa-vimeo-square',
+				),
+				'vine' => array(
+					'label' => esc_html__( 'Vine', 'oceanwp' ),
+					'icon_class' => 'fab fa-vine',
+				),
+				'xing' => array(
+					'label' => esc_html__( 'Xing', 'oceanwp' ),
+					'icon_class' => 'fab fa-xing',
+				),
+				'yelp' => array(
+					'label' => esc_html__( 'Yelp', 'oceanwp' ),
+					'icon_class' => 'fab fa-yelp',
+				),
+				'tripadvisor' => array(
+					'label' => esc_html__( 'Tripadvisor', 'oceanwp' ),
+					'icon_class' => 'fab fa-tripadvisor',
+				),
+				'rss'  => array(
+					'label' => esc_html__( 'RSS', 'oceanwp' ),
+					'icon_class' => 'fa fa-rss',
+				),
+				'email' => array(
+					'label' => esc_html__( 'Email', 'oceanwp' ),
+					'icon_class' => 'fa fa-envelope',
+				),
+				'tiktok' => array(
+					'label' => esc_html__( 'TikTok', 'oceanwp' ),
+					'icon_class' => 'fab fa-tiktok'
+				),
+				'medium' => array(
+					'label' => esc_html__( 'Medium', 'oceanwp' ),
+					'icon_class' => 'fab fa-medium-m'
+				)
+			)
+		);
 	}
-
 }
 
 /**
@@ -4040,8 +4102,8 @@ if ( ! function_exists( 'oceanwp_get_cart_icons' ) ) {
 	function oceanwp_get_cart_icons( $default = 'icon-handbag' ) {
 
 		// Returns icons
-		$return_icons = array('icon-basket','icon-handbag','fa fa-shopping-basket','fa fa-shopping-bag','fa fa-shopping-cart');
-		$return_icons = array_combine($return_icons, $return_icons);
+		$return_icons = array( 'icon-basket', 'icon-handbag', 'fas fa-shopping-basket', 'fas fa-shopping-bag', 'fas fa-shopping-cart' );
+		$return_icons = array_combine( $return_icons, $return_icons );
 		
 		return apply_filters( 'ocean_get_cart_icons', array_merge( $return_icons ) );
 		

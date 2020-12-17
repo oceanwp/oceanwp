@@ -15,6 +15,10 @@ if ( ! has_post_thumbnail() ) {
 	return;
 }
 
+// Get theme icons.
+$theme_icons = oceanwp_theme_icons();
+$icon_t = oceanwp_theme_icon_class();
+
 // Add images size if blog grid.
 if ( 'grid-entry' === oceanwp_blog_entry_style() ) {
 	$size = oceanwp_blog_entry_images_size();
@@ -99,7 +103,7 @@ $caption = get_the_post_thumbnail_caption();
 
 	<div class="link-entry clr">
 
-		<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'ocean_link_format', true ) ); ?>" target="_<?php echo esc_attr( get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ); ?>"><i class="icon-link"></i></a>
+		<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'ocean_link_format', true ) ); ?>" target="_<?php echo esc_attr( get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ); ?>"><i class="<?php echo $theme_icons[ 'link' ][ $icon_t ]; ?>"></i></a>
 
 	</div>
 
