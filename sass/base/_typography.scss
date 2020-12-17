@@ -22,8 +22,8 @@ a, a:hover, a:focus {
     @include transition( all .3s ease );
 }
 
-.single .entry-content,
-.page .entry {
+.single-post:not(.elementor-page) .entry-content,
+.page:not(.elementor-page):not(.woocommerce-page) .entry {
 	a {
 		cursor: pointer;
 		text-underline-offset: 3px;

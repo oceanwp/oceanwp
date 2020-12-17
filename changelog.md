@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2020.12.17.* - 2.0.2
+* **Added** - Link underlined style removed from the elementor and woocommerce pages.
+
 ### *2020.12.16.* - 2.0.1
 * **Added** - Heading tag option in the Customizer: Sidebar and Footer widget title.
 * **Added** - Content links underlined per WordPress accessibility requirements.

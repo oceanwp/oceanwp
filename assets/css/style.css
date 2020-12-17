@@ -1527,8 +1527,8 @@ a, a:hover, a:focus {
   transition: all 0.3s ease;
 }
 
-.single .entry-content a,
-.page .entry a {
+.single-post:not(.elementor-page) .entry-content a,
+.page:not(.elementor-page):not(.woocommerce-page) .entry a {
   cursor: pointer;
   text-underline-offset: 3px;
   text-decoration: underline;
@@ -1536,8 +1536,8 @@ a, a:hover, a:focus {
   transition: all 0.3s ease;
 }
 
-.single .entry-content a:hover,
-.page .entry a:hover {
+.single-post:not(.elementor-page) .entry-content a:hover,
+.page:not(.elementor-page):not(.woocommerce-page) .entry a:hover {
   text-decoration: underline;
   -webkit-text-decoration-style: dotted;
           text-decoration-style: dotted;
@@ -1545,8 +1545,8 @@ a, a:hover, a:focus {
   transition: all 0.3s ease;
 }
 
-.single .entry-content a:focus:not(.wp-block-button__link):not(.wp-block-file__button),
-.page .entry a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+.single-post:not(.elementor-page) .entry-content a:focus:not(.wp-block-button__link):not(.wp-block-file__button),
+.page:not(.elementor-page):not(.woocommerce-page) .entry a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
   /* Only visible in Windows High Contrast mode */
   outline: 2px solid transparent;
   text-decoration: underline 1px dotted #13aff0;
