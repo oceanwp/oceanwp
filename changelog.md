@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2020.12.21.* - 2.0.3
+* **Fixed** - Some AMP related validation issues have been fixed.
+
 ### *2020.12.17.* - 2.0.2
 * **Added** - Link underlined style removed from the elementor and woocommerce pages.
 
