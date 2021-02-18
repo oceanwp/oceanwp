@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2020 Nick
+# <!=Copyright (C) 2021 Nick
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 2.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2020-12-21 04:04:06+00:00\n"
+"POT-Creation-Date: 2021-02-18 06:45:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: OceanWP\n"
 "Language-Team: OceanWP\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
@@ -106,65 +106,65 @@ msgstr ""
 msgid "Mobile (optional)"
 msgstr ""
 
-#: functions.php:599
+#: functions.php:598
 msgid "Default Sidebar"
 msgstr ""
 
-#: functions.php:601
+#: functions.php:600
 msgid ""
 "Widgets in this area will be displayed in the left or right sidebar area if "
 "you choose the Left or Right Sidebar layout."
 msgstr ""
 
-#: functions.php:612
+#: functions.php:611
 #: inc/customizer/controls/radio-image/class-control-radio-image.php:110
 #: inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:614
+#: functions.php:613
 msgid ""
 "Widgets in this area are used in the left sidebar region if you use the "
 "Both Sidebars layout."
 msgstr ""
 
-#: functions.php:626
+#: functions.php:625
 msgid "Search Results Sidebar"
 msgstr ""
 
-#: functions.php:628
+#: functions.php:627
 msgid "Widgets in this area are used in the search result page."
 msgstr ""
 
-#: functions.php:640
+#: functions.php:639
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:642
+#: functions.php:641
 msgid "Widgets in this area are used in the first footer region."
 msgstr ""
 
-#: functions.php:653
+#: functions.php:652
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:655
+#: functions.php:654
 msgid "Widgets in this area are used in the second footer region."
 msgstr ""
 
-#: functions.php:666
+#: functions.php:665
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:668
+#: functions.php:667
 msgid "Widgets in this area are used in the third footer region."
 msgstr ""
 
-#: functions.php:679
+#: functions.php:678
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:681
+#: functions.php:680
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr ""
 
@@ -5212,7 +5212,7 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/third/class-amp.php:366
+#: inc/third/class-amp.php:376
 msgid "Menu Toggle"
 msgstr ""
 
@@ -5677,7 +5677,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: partials/scroll-top.php:26
+#: partials/scroll-top.php:30
 msgid "Scroll to the top of the page"
 msgstr ""
 

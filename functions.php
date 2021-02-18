@@ -521,7 +521,6 @@ final class OCEANWP_Theme_Class {
 
 		// Localize array.
 		wp_localize_script( 'oceanwp-main', 'oceanwpLocalize', $localize_array );
-
 	}
 
 	/**

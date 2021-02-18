@@ -15,7 +15,7 @@ module.exports = function ( grunt ) {
 		pkg: grunt.file.readJSON( 'package.json' ),
 
 		// Concat and Minify our js.
-		uglify: {
+		terser: {
 			dev: {
 				files: {
 					'assets/js/third/html5.min.js'									: 'assets/js/third/html5.js',
@@ -63,7 +63,7 @@ module.exports = function ( grunt ) {
 			},
 			prod: {
 				files: {
-					'assets/js/main.min.js'											: [ 'assets/js/devs/**/*.js', 'assets/js/core/**/*.js' ]
+					'assets/js/main.min.js'											: [ 'assets/js/base/**/*.js', 'assets/js/devs/**/*.js', 'assets/js/core/**/*.js' ]
 				}
 			}
 		},
@@ -200,8 +200,8 @@ module.exports = function ( grunt ) {
 			js: {
 				files: [ 'assets/js/**/*.js' ],
 				tasks: [
-					'newer:uglify:dev',
-					'newer:uglify:prod',
+					'newer:terser:dev',
+					'newer:terser:prod',
 				]
 			}
 		},
@@ -317,17 +317,19 @@ module.exports = function ( grunt ) {
 
 	// Dev task
 	grunt.registerTask( 'default', [
-		'uglify:dev',
-		'newer:uglify:prod',
+		'terser:dev',
+		'terser:prod',
+		'newer:terser:prod',
 		'cssmin:prod',
 		'sass:dev',
-		'sass:prod',
-		'makepot'
+		'sass:prod'
+		//'makepot'
 	] );
 
 	// Production task
 	grunt.registerTask( 'build', [
-		'newer:uglify:prod',
+		'terser:prod',
+		'newer:terser:prod',
 		'sass:dev',
 		'sass:prod',
 		'autoprefixer:main',

@@ -1,38 +1,35 @@
-var $j 		= jQuery.noConflict(),
-	$window = $j( window );
-
-$j( document ).ready( function() {
-	"use strict";
-	// Scroll top
+/**
+ * Scroll to Top
+ */
+document.addEventListener( 'DOMContentLoaded', function() {
 	oceanwpScrollTop();
 } );
 
-/* ==============================================
-SCROLL TOP
-============================================== */
+// Scroll to top function.
 function oceanwpScrollTop() {
-	"use strict"
 
-	var selectors  = {
-		scrollTop  		: '#scroll-top',
-		topLink    		: 'a[href="#go-top"]',
-		slashTopLink 	: 'body.home a[href="/#go-top"]'
-	}
+	var rootElement    = document.documentElement,
+		scrollTopClass = document.querySelector( '#scroll-top' ),
+		intervalId     = 0;
 
-	$window.on( 'scroll', function() {
-		if ( $j( this ).scrollTop() > 100 ) {
-			$j( '#scroll-top' ).fadeIn();
+	window.addEventListener( 'scroll', function() {
+
+		if ( rootElement.scrollTop > 100 ) {
+			fadeIn( scrollTopClass );
 		} else {
-			$j( '#scroll-top' ).fadeOut();
+			fadeOut( scrollTopClass );
 		}
+
 	});
 
-	$j.each( selectors, function( key, value ){
-		$j( value ).on( 'click', function(e){
-			e.preventDefault();
-			$j( 'html, body' ).animate( { scrollTop: 0 }, 400 );
-			$j( this ).parent().removeClass( 'sfHover' );
-		});
+	scrollTopClass.addEventListener( 'click', function(e) {
+		e.preventDefault();
+		intervalId = setInterval( function() {
+			if (window.pageYOffset === 0) {
+				clearInterval(intervalId);
+			}
+			window.scroll(0, window.pageYOffset - 50);
+		}, 10);
 	});
 
 }

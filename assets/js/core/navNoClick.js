@@ -1,19 +1,18 @@
-var $j = jQuery.noConflict();
+( function() {
 
-$j( document ).ready( function() {
-	"use strict";
-	// Nav no click
-	oceanwpNavNoClick();
-} );
+	var menu_link = document.querySelectorAll( 'li.nav-no-click > a' );
 
-/* ==============================================
-NAV NO CLICK
-============================================== */
-function oceanwpNavNoClick() {
-	"use strict"
+	if ( ! menu_link.length ) {
+		return;
+	}
 
-	$j( 'li.nav-no-click > a' ).on( 'click', function() {
-		return false;
-	} );
+	menu_link.forEach( function ( link, index ) {
 
-}
+		link.addEventListener( 'click', function( e ) {
+			e.preventDefault();
+			return false;
+		});
+
+	});
+
+}() );

@@ -1,48 +1,46 @@
-var $j = jQuery.noConflict();
-
-$j( document ).ready( function() {
-	"use strict";
-	// Drop down search
+/**
+ * DropDown search
+ */
+ document.addEventListener( 'DOMContentLoaded', function() {
 	oceanwpDropDownSearch();
 } );
 
-/* ==============================================
-DROP DOWN SEARCH
-============================================== */
+// DropDown search function.
 function oceanwpDropDownSearch() {
-	"use strict"
 
-	// Return if is the not this search style
+	// Return if is the not this search style.
 	if ( 'drop_down' != oceanwpLocalize.menuSearchStyle ) {
 		return;
 	}
 
-	var $searchDropdownToggle = $j( 'a.search-dropdown-toggle' ),
-		$searchDropdownForm   = $j( '#searchform-dropdown' );
+	var searchDropdownToggle = document.querySelector( 'a.search-dropdown-toggle' ),
+		searchDropdownForm   = document.querySelector( '#searchform-dropdown' );
 
-	$searchDropdownToggle.click( function( event ) {
-		// Display search form
-		$searchDropdownForm.toggleClass( 'show' );
-		// Active menu item
-		$j( this ).parent( 'li' ).toggleClass( 'active' );
-		// Focus
-		var $transitionDuration = $searchDropdownForm.css( 'transition-duration' );
-		$transitionDuration = $transitionDuration.replace( 's', '' ) * 1000;
-		if ( $transitionDuration ) {
-			setTimeout( function() {
-				$searchDropdownForm.find( 'input.field' ).focus();
-			}, $transitionDuration );
-		}
-		// Return false
+	searchDropdownToggle.addEventListener( 'click', function(e) {
+		e.preventDefault();
+
+		// Display search form.
+		searchDropdownForm.classList.toggle( 'show' );
+
+		// Active menu item.
+		this.parentNode.classList.toggle( 'active' );
+
+		setTimeout( function() {
+			searchDropdownForm.querySelector( 'input.field' ).focus();
+		}, 200 );
+
+		// Return false.
 		return false;
 	} );
 
-	// Close on doc click
-	$j( document ).on( 'click', function( event ) {
-		if ( ! $j( event.target ).closest( '#searchform-dropdown.show' ).length ) {
-			$searchDropdownToggle.parent( 'li' ).removeClass( 'active' );
-			$searchDropdownForm.removeClass( 'show' );
+	// Close if click outside.
+	window.addEventListener( 'click', function(e) {
+
+		if ( ! searchDropdownForm.contains( e.target ) && ( ! searchDropdownToggle.contains( e.target ) ) ) {
+			searchDropdownForm.classList.remove( 'show' );
+			searchDropdownToggle.parentNode.classList.remove( 'active' );
 		}
+
 	} );
 
 }

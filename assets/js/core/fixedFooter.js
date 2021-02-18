@@ -1,50 +1,50 @@
-var $j 					= jQuery.noConflict(),
-	$window 			= $j( window ),
-	$lastWindowWidth 	= $window.width(),
-	$lastWindowHeight 	= $window.height();
-
-$window.on( 'load', function() {
-	"use strict";
-	// Fixed footer
+/**
+ * Fixed Footer
+ */
+ document.addEventListener( 'DOMContentLoaded', function() {
 	oceanwpFixedFooter();
 } );
 
-$window.resize( function() {
-	"use strict";
+// Define variables.
+var lastWindowWidth  = window.innerWidth,
+	lastWindowHeight = window.innerHeight;
 
-	var $windowWidth  = $window.width(),
-		$windowHeight = $window.height();
+// On window resize.
+window.addEventListener( 'resize', function() {
 
-    if ( $lastWindowWidth !== $windowWidth
-    	|| $lastWindowHeight !== $windowHeight ) {
+    var windowWidth  = window.innerWidth,
+        windowHeight = window.innerHeight;
+
+    if ( lastWindowWidth !== windowWidth || lastWindowHeight !== windowHeight ) {
         oceanwpFixedFooter();
     }
+});
 
-} );
-
-/* ==============================================
-FIXED FOOTER
-============================================== */
+// Fixed footer function
 function oceanwpFixedFooter() {
-	"use strict"
 
-    if ( ! $j( 'body' ).hasClass( 'has-fixed-footer' ) ) {
+    var body = document.getElementsByTagName( 'body' )[0];
+
+    // Return if not fixed footer.
+    if ( ! body.matches( '.has-fixed-footer' ) ) {
         return;
     }
 
-    // Set main vars
-    var $mainHeight 	= $j( '#main' ).outerHeight(),
-    	$htmlHeight 	= $j( 'html' ).height(),
-        $offset         = 0,
-        $adminBar       = $j( '#wpadminbar' );
+    // Set main vars.
+    var mainEle     = document.querySelector( '#main' ),
+        mainHeight 	= mainEle.offsetHeight,
+    	htmlHeight 	= document.documentElement.offsetHeight,
+        offset      = 0,
+        adminBar    = document.getElementById( 'wpadminbar' );
 
-    if ( $adminBar.length ) {
-        $offset         = $adminBar.outerHeight();
+    // If exist adminbar.
+    if ( adminBar ) {
+        offset = adminBar.offsetHeight;
     }
 
-    var $minHeight 		= $mainHeight + ( $window.height() - $htmlHeight - $offset );
+    // Get total height.
+    var minEleHeight = mainHeight + ( window.innerHeight - htmlHeight - offset );
 
-    // Add min height
-    $j( '#main' ).css( 'min-height', $minHeight );
-
+    // Add min height.
+    mainEle.style.minHeight = minEleHeight+'px';
 }

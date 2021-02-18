@@ -1,28 +1,32 @@
-var $j = jQuery.noConflict();
-
-$j( document ).ready( function() {
-	"use strict";
-	// Parallax footer
+/**
+ * Parallax Footer
+ */
+ document.addEventListener( 'DOMContentLoaded', function() {
 	oceanwpParallaxFooter();
 } );
 
-$j( window ).on( 'resize', function() {
-	"use strict";
-	// Parallax footer
+// On window resize.
+window.addEventListener( 'resize', function() {
 	oceanwpParallaxFooter();
 } );
 
-/* ==============================================
-PARALLAX FOOTER
-============================================== */
+// Parallax footer function
 function oceanwpParallaxFooter() {
-	"use strict"
 
-	// Needed timeout for dynamic parallax content
-	if ( $j( 'body' ).hasClass( 'has-parallax-footer' ) ) {
+	var body    = document.getElementsByTagName( 'body' )[0];
+		mainEle = document.querySelector( '#main' );
+
+	// Needed timeout for dynamic parallax content.
+	if ( body.matches( '.has-parallax-footer' ) ) {
 
 		setTimeout( function() {
-			$j( '#main' ).css( 'margin-bottom', $j( '.parallax-footer' ).outerHeight() );
+
+			// Get height.
+			let footerHeight = document.querySelector( '.parallax-footer' ).offsetHeight;
+
+			// Add the margin-bottom.
+			mainEle.style.marginBottom =  footerHeight+'px';
+
 		}, 1 );
 
 	}

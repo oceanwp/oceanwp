@@ -1,17 +1,17 @@
-var $j = jQuery.noConflict();
-
-$j( document ).ready( function() {
-	"use strict";
-    // Responsive Video
+/**
+ * Fitvids
+ */
+ document.addEventListener( 'DOMContentLoaded', function() {
 	oceanwpInitFitVids();
 } );
 
-/* ==============================================
-RESPONSIVE VIDEOS
-============================================== */
+// Fitvids function.
 function oceanwpInitFitVids( $context ) {
-	"use strict"
 
-	$j( '.responsive-video-wrap, .responsive-audio-wrap', $context ).fitVids();
+	var frameClass = document.querySelectorAll( '.responsive-video-wrap, .responsive-audio-wrap', $context );
 
+	for ( const elem of frameClass ) {
+		var videos = new FitVids();
+		videos.render();
+	}
 }
