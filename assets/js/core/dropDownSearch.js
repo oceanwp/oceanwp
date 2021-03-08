@@ -9,7 +9,7 @@
 function oceanwpDropDownSearch() {
 
 	// Return if is the not this search style.
-	if ( 'drop_down' != oceanwpLocalize.menuSearchStyle ) {
+	if ( 'drop_down' !== oceanwpLocalize.menuSearchStyle || 'full_screen' === oceanwpLocalize.headerType ) {
 		return;
 	}
 

@@ -20,18 +20,7 @@ function oceanwpWooMultiStepCheckout() {
         payment             = $j( '#order_checkout_payment' ),
         form_actions        = $j( '#form_actions' ),
         coupon              = $j( '#checkout_coupon' ),
-        steps               = new Array( login, billing, shipping, order, payment ),
-        payment_method      = function () {
-
-            $j( '#place_order' ).on( 'click', function () {
-                var $this               = $j( '#order_checkout_payment' ).find( 'input[name=payment_method]:checked' ),
-                    current_gateway     = $this.val(),
-                    order_button_text   = $this.data( 'order_button_text' );
-
-                order.find( 'input[name="payment_method"]' ).val( current_gateway ).data( 'order_button_text', order_button_text ).attr( 'checked', 'checked' );
-            } );
-
-        };
+        steps               = new Array( login, billing, shipping, order, payment );
 
     body.on( 'updated_checkout', function( e ) {
 
@@ -39,8 +28,6 @@ function oceanwpWooMultiStepCheckout() {
         if ( e.type == 'updated_checkout' ) {
             steps[4] = $j( '#order_checkout_payment' );
         }
-
-        payment_method();
 
         $j( '#order_checkout_payment' ).find( 'input[name=payment_method]' ).on( 'click', function() {
 

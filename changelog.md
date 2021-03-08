@@ -1,9 +1,11 @@
 # OceanWP Changelog
 
-### *2021.02.18.* - 2.0.3
+### *2021.03.08.* - 2.0.3
 * **Fixed** - Some AMP related validation issues have been fixed.
 * **Added** - AMP support for scroll to top button.
-* **Added** - Migrating from jQuery to vanilla JS : Part - 1.
+* **Fixed** - Multistep checkout issue.
+* **Fixed** - WPML translation issue.
+* **Added** - Migrating from jQuery to vanilla JS.
 
 ### *2020.12.17.* - 2.0.2
 * **Added** - Link underlined style removed from the elementor and woocommerce pages.

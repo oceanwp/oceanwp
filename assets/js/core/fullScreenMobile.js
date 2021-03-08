@@ -1,81 +1,118 @@
-var $j 		= jQuery.noConflict(),
-	$window = $j( window );
-
-$j( document ).ready( function() {
-	"use strict";
-	// Full Screen mobile menu
+/**
+ * Full screen mobile menu
+ */
+ document.addEventListener( 'DOMContentLoaded', function() {
 	oceanwpFullScreenMobile();
 } );
 
-/* ==============================================
-FULL SCREEN MOBILE
-============================================== */
+// Full screen mobile menu function.
 function oceanwpFullScreenMobile() {
-	"use strict"
 
-	if ( $j( 'body' ).hasClass( 'fullscreen-mobile' ) ) {
+	var htmlEle  = document.documentElement,
+		body     = document.getElementsByTagName( 'body' )[0],
+		fsMobile = document.querySelector( '#mobile-fullscreen' );
 
-		var $mobileMenu 	= $j( '#mobile-fullscreen' ),
-			$mobileLink 	= $j( '.mobile-menu' );
+	if ( body.matches( '.fullscreen-mobile' ) ) {
 
-		// Close menu function
+		var mobileMenu 	= document.querySelector( '#mobile-fullscreen' ),
+			mobileLink 	= document.querySelector( '.mobile-menu' ),
+			hamburger   = document.querySelector( '.mobile-menu > .hamburger' ),
+			closeMenu   = mobileMenu.querySelector( 'a.close' );
+
+		// Close menu function.
 		var oceanwpFullScreenMobileClose = function( e ) {
-			$mobileLink.removeClass( 'exit' );
-			$mobileMenu.removeClass( 'active' ).fadeOut( 200 );
+			mobileLink.classList.remove( 'exit' );
+			mobileMenu.classList.remove( 'active' );
+			fadeOut( mobileMenu );
 
-			$j( 'html' ).css( {
-				'overflow': '',
-				'margin-right': '' 
-			} );
-        	$j( '#mobile-fullscreen nav ul > li.dropdown' ).removeClass( 'open-sub' );
-            $j( '#mobile-fullscreen nav ul.sub-menu' ).slideUp( 200 );
-            $j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
-        }
+			htmlEle.style.cssText = "overflow: ''; margin-right: ''";
 
-		// Open full screen menu
-		$mobileLink.on( 'click', function() {
-			$j( this ).addClass( 'exit' );
-			$mobileMenu.addClass( 'active' ).fadeIn( 200 );
-			$j( '.mobile-menu > .hamburger' ).addClass( 'is-active' );
+			var fsDropdown = fsMobile.querySelectorAll( 'nav ul > li.dropdown' ),
+				fsSubmenu  = fsMobile.querySelectorAll( 'nav ul.sub-menu' );
 
-            var innerWidth = $j( 'html' ).innerWidth();
-			$j( 'html' ).css( 'overflow', 'hidden' );
-			var hiddenInnerWidth = $j( 'html' ).innerWidth();
-			$j( 'html' ).css( 'margin-right', hiddenInnerWidth - innerWidth );
+			for( const dropdown of fsDropdown ) {
+				dropdown.classList.remove( 'open-sub' );
+			}
+
+			for( const submenu of fsSubmenu ) {
+				slideUp( submenu, 200 );
+			}
+
+			hamburger.classList.remove( 'is-active' );
+
+		}
+
+		// Open full screen menu.
+		mobileLink.addEventListener( 'click', function(e) {
+			e.preventDefault();
+
+			this.classList.add( 'exit' );
+			mobileMenu.classList.add( 'active' );
+			fadeIn( mobileMenu );
+			hamburger.classList.add( 'is-active' );
+
+            var innerWidth = htmlEle.innerWidth;
+			htmlEle.style.overflow = 'hidden';
+
+			var hiddenInnerWidth = htmlEle.innerWidth;
+			htmlEle.style.marginRight = hiddenInnerWidth - innerWidth;
+
 			return false;
+
 		} );
 
 		// Add dropdown toggle (plus)
-		$j( '#mobile-fullscreen .menu-item-has-children' ).children( 'a' ).append( '<span class="dropdown-toggle"></span>' );
+		var menuhasChildren = mobileMenu.querySelectorAll( '.menu-item-has-children > a' );
+			for ( const child of menuhasChildren ) {
 
-		// Add toggle click event
-		$j( '#mobile-fullscreen nav ul > li.menu-item-has-children > a > span.dropdown-toggle, #mobile-fullscreen nav ul > li.menu-item-has-children > a[href="#"]' ).on( 'tap click', function() {
+				var addSpan = document.createElement( 'span' );
 
-            if ( $j( this ).closest( 'li.menu-item-has-children' ).find( '> ul.sub-menu' ).is( ':visible' ) ) {
-                $j( this ).closest( 'li.menu-item-has-children' ).removeClass( 'open-sub' );
-                $j( this ).closest( 'li.menu-item-has-children' ).find( '> ul.sub-menu' ).slideUp( 200 );
-            } else {
-                $j( this ).closest( 'li.menu-item-has-children' ).addClass( 'open-sub' );
-                $j( this ).closest( 'li.menu-item-has-children' ).find( '> ul.sub-menu' ).slideDown( 200 );
-            }
+				addSpan.classList.add( 'dropdown-toggle' );
+				child.appendChild( addSpan );
+			}
 
-            return false;
-        } );
+		var linkArrow = mobileMenu.querySelectorAll( 'nav ul > li.menu-item-has-children > a > span.dropdown-toggle' );
+
+		// Logic for open sub menus
+		for( const link of linkArrow ) {
+			link.addEventListener( 'click', function(e) {
+				e.preventDefault();
+
+				let thisEle   = this.parentNode.parentNode,
+					ulSubmenu = thisEle.querySelector( 'ul.sub-menu' );
+
+				if ( thisEle.matches( '.open-sub' ) ) {
+					thisEle.classList.remove( 'open-sub' );
+					slideUp( ulSubmenu, 200 );
+				} else {
+					thisEle.classList.add( 'open-sub' );
+					slideDown( ulSubmenu, 200 );
+				}
+
+				return false;
+
+			} );
+		}
 
 		// Close menu
-		$j( '#mobile-fullscreen a.close' ).on( 'click', function( e ) {
+		closeMenu.addEventListener( 'click', function(e) {
 			e.preventDefault();
 			oceanwpFullScreenMobileClose();
 		} );
 
+		var fsCloseLink = mobileMenu.querySelectorAll( '.fs-dropdown-menu li a[href*="#"]:not([href="#"]), #mobile-nav li a[href*="#"]:not([href="#"])' );
+
 		// Close menu if anchor link
-        $j( '#mobile-fullscreen .fs-dropdown-menu li a[href*="#"]:not([href="#"]), #mobile-fullscreen #mobile-nav li a[href*="#"]:not([href="#"])' ).on( 'click', function() {
-        	oceanwpFullScreenMobileClose();
-	    } );
+		for( const closeLink of fsCloseLink ) {
+			closeLink.addEventListener( 'click', function(e) {
+				e.preventDefault();
+				oceanwpFullScreenMobileClose();
+			});
+		}
 
 		// Close on resize
-		$window.resize( function() {
-			if ( $window.width() >= 960 ) {
+		window.addEventListener( 'resize', function() {
+			if ( window.innerWidth >= 960 ) {
 				oceanwpFullScreenMobileClose();
 			}
 		} );

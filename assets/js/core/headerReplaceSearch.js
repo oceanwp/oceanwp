@@ -1,16 +1,12 @@
-var $j = jQuery.noConflict();
-
-$j( document ).ready( function() {
-	"use strict";
-	// Header replace search
+/**
+ *  Header replace search
+ */
+ document.addEventListener( 'DOMContentLoaded', function() {
 	oceanwpHeaderReplaceSearch();
 } );
 
-/* ==============================================
-HEADER REPLACE SEARCH
-============================================== */
+// Header replace search function.
 function oceanwpHeaderReplaceSearch() {
-	"use strict"
 
 	// Return if is the not this search style
 	if ( 'header_replace' != oceanwpLocalize.menuSearchStyle ) {
@@ -18,89 +14,104 @@ function oceanwpHeaderReplaceSearch() {
 	}
 
 	// Header
-	var $header = $j( '#site-header' );
+	var header = document.querySelector( '#site-header' );
 
-	// If is top menu header style
-	if ( $header.hasClass( 'top-header' ) ) {
+	if ( header.matches( 'top-header' ) ) {
 
 		// Show
-		var $headerReplace 	= $j( '#searchform-header-replace' ),
-			$siteLeft 		= $j( '#site-header.top-header .header-top .left' ),
-			$siteRight 		= $j( '#site-header.top-header .header-top .right' );
-		
-		$j( 'a.search-header-replace-toggle' ).click( function( event ) {
+		let headerReplace 	= document.querySelector( '#searchform-header-replace' ),
+			siteLeft 		= document.querySelector( '#site-header.top-header .header-top .left' ),
+			siteRight 		= document.querySelector( '#site-header.top-header .header-top .right' ),
+			searchToggle    = document.querySelector( 'a.search-header-replace-toggle' ),
+			replaceClose    = document.querySelector( '#searchform-header-replace-close' );
+
+		searchToggle.addEventListener( 'click', function(e) {
+			e.preventDefault();
+
 			// Display search form
-			$headerReplace.toggleClass( 'show' );
-			$siteLeft.toggleClass( 'hide' );
-			$siteRight.toggleClass( 'hide' );
+			headerReplace.classList.toggle( 'show' );
+			siteLeft.classList.toggle( 'hide' );
+			siteRight.classList.toggle( 'hide' );
+
 			// Focus
-			var $transitionDuration =  $headerReplace.css( 'transition-duration' );
-			$transitionDuration = $transitionDuration.replace( 's', '' ) * 1000;
-			if ( $transitionDuration ) {
-				setTimeout( function() {
-					$headerReplace.find( 'input[type="search"]' ).focus();
-				}, $transitionDuration );
-			}
+			setTimeout( function() {
+				headerReplace.querySelector( 'input[type="search"]' ).focus();
+			}, 200 );
+
 			// Return false
 			return false;
 		} );
 
 		// Close on click
-		$j( '#searchform-header-replace-close' ).click( function() {
-			$headerReplace.removeClass( 'show' );
-			$siteLeft.removeClass( 'hide' );
-			$siteRight.removeClass( 'hide' );
+		replaceClose.addEventListener( 'click', function(e) {
+			e.preventDefault();
+
+			headerReplace.classList.remove( 'show' );
+			siteLeft.classList.remove( 'hide' );
+			siteRight.classList.remove( 'hide' );
 			return false;
 		} );
 
-		// Close on doc click
-		$j( document ).on( 'click', function( event ) {
-			if ( ! $j( event.target ).closest( $j( '#searchform-header-replace.show' ) ).length ) {
-				$headerReplace.removeClass( 'show' );
-				$siteLeft.removeClass( 'hide' );
-				$siteRight.removeClass( 'hide' );
+		// Close if click outside.
+		window.addEventListener( 'click', function(e) {
+
+			if ( ! headerReplace.contains( e.target ) && ( ! searchToggle.contains( e.target ) ) ) {
+				headerReplace.classList.remove( 'show' );
+				siteLeft.classList.remove( 'hide' );
+				siteRight.classList.remove( 'hide' );
 			}
+
 		} );
 
 	} else {
 
 		// Show
-		var $headerReplace 	= $j( '#searchform-header-replace' ),
-			$siteNavigation = $j( '#site-header.header-replace #site-navigation' );
-		
-		$j( 'a.search-header-replace-toggle' ).click( function( event ) {
+		let headerReplace  = document.querySelector( '#searchform-header-replace' ),
+			siteNavigation = document.querySelector( '#site-header.header-replace #site-navigation' ),
+			searchToggle   = document.querySelector( 'a.search-header-replace-toggle' ),
+			replaceClose   = document.querySelector( '#searchform-header-replace-close' ),
+			dropdownMenu   = document.querySelectorAll( '#site-navigation > ul.dropdown-menu' );
+
+		searchToggle.addEventListener( 'click', function(e) {
+			e.preventDefault();
+
 			// Display search form
-			$headerReplace.toggleClass( 'show' );
-			$siteNavigation.toggleClass( 'hide' );
-			var menu_width = $j( '#site-navigation > ul.dropdown-menu' ).width();
-			$headerReplace.css( 'max-width', menu_width + 60 );
-			// Focus
-			var $transitionDuration =  $headerReplace.css( 'transition-duration' );
-			$transitionDuration = $transitionDuration.replace( 's', '' ) * 1000;
-			if ( $transitionDuration ) {
-				setTimeout( function() {
-					$headerReplace.find( 'input[type="search"]' ).focus();
-				}, $transitionDuration );
+			headerReplace.classList.toggle( 'show' );
+			siteNavigation.classList.toggle( 'hide' );
+
+			for ( const dropdown of dropdownMenu) {
+				var menu_width = dropdown.innerWidth;
 			}
+
+			headerReplace.style.maxWidth = menu_width + 60;
+
+			// Focus
+			setTimeout( function() {
+				headerReplace.querySelector( 'input[type="search"]' ).focus();
+			}, 200 );
+
 			// Return false
 			return false;
 		} );
 
 		// Close on click
-		$j( '#searchform-header-replace-close' ).click( function() {
-			$headerReplace.removeClass( 'show' );
-			$siteNavigation.removeClass( 'hide' );
+		replaceClose.addEventListener( 'click', function(e) {
+			e.preventDefault();
+
+			headerReplace.classList.remove( 'show' );
+			siteNavigation.classList.remove( 'hide' );
 			return false;
 		} );
 
 		// Close on doc click
-		$j( document ).on( 'click', function( event ) {
-			if ( ! $j( event.target ).closest( $j( '#searchform-header-replace.show' ) ).length ) {
-				$headerReplace.removeClass( 'show' );
-				$siteNavigation.removeClass( 'hide' );
+		window.addEventListener( 'click', function(e) {
+
+			if ( ! headerReplace.contains( e.target ) && ( ! searchToggle.contains( e.target ) ) ) {
+				headerReplace.classList.remove( 'show' );
+				siteNavigation.classList.remove( 'hide' );
 			}
+
 		} );
 
 	}
-
 }

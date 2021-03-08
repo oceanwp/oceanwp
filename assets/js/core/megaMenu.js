@@ -16,8 +16,8 @@ function oceanwpMegaMenu() {
     // Mega menu in top bar menu
     $j( '#top-bar-nav .megamenu-li.full-mega' ).hover( function() {
         var $topBar              = $j( '#top-bar' ),
-            $menuWidth           = $topBar.width(),     
-            $menuPosition        = $topBar.offset(),     
+            $menuWidth           = $topBar.width(),
+            $menuPosition        = $topBar.offset(),
             $menuItemPosition    = $j( this ).offset(),
             $positionLeft        = $menuItemPosition.left-$menuPosition.left+1;
 
@@ -32,8 +32,8 @@ function oceanwpMegaMenu() {
     // Mega menu in principal menu
     $j( '#site-navigation .megamenu-li.full-mega' ).hover( function() {
         var $siteHeader          = $j( '#site-header-inner' ),
-            $menuWidth           = $siteHeader.width(),     
-            $menuPosition        = $siteHeader.offset(),     
+            $menuWidth           = $siteHeader.width(),
+            $menuPosition        = $siteHeader.offset(),
             $menuItemPosition    = $j( this ).offset(),
             $positionLeft        = $menuItemPosition.left-$menuPosition.left+1;
 

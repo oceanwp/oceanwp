@@ -1,58 +1,72 @@
-var $j = jQuery.noConflict();
-
-$j( document ).ready( function() {
-	"use strict";
-	// Full Screen header menu
+/**
+ * Full screen menu
+ */
+ document.addEventListener( 'DOMContentLoaded', function() {
 	oceanwpFullScreenMenu();
 } );
 
-/* ==============================================
-FULL SCREEN MENU
-============================================== */
+// Full screen menu fucntion
 function oceanwpFullScreenMenu() {
-	"use strict"
 
-	var $siteHeader 	= $j( '#site-header.full_screen-header' ),
-		$menuWrap 		= $j( '#site-header.full_screen-header #full-screen-menu' ),
-		$menuBar 		= $j( '#site-header.full_screen-header .menu-bar' ),
-		$customLogo 	= $j( '#site-logo.has-full-screen-logo' );
+	var htmlEle    = document.documentElement,
+		siteHeader = document.querySelector( '#site-header.full_screen-header' );
 
-	if ( $menuBar.length ) {
+	if ( ! siteHeader ) {
+		return;
+	}
 
-		// Open menu function
+	var	menuWrap   = siteHeader.querySelector( '#full-screen-menu' ),
+		menuBar    = siteHeader.querySelector( '.menu-bar' ),
+		customLogo = document.querySelector( '#site-logo.has-full-screen-logo' );
+
+	if ( menuBar ) {
+
+		// Open menu function.
 		var oceanwpFullScreenMenuOpen = function() {
-			$siteHeader.addClass( 'nav-open' );
-			$menuBar.addClass( 'exit' );
-			$customLogo.addClass( 'opened' );
-			$menuWrap.addClass( 'active' );
-			$menuWrap.fadeIn( 200 );
+			siteHeader.classList.add( 'nav-open' );
+			menuBar.classList.add( 'exit' );
+			if ( customLogo ) {
+				customLogo.classList.add( 'opened' );
+			}
+			menuWrap.classList.add( 'active' );
+			fadeIn( menuWrap );
 
-			var innerWidth = $j( 'html' ).innerWidth();
-			$j( 'html' ).css( 'overflow', 'hidden' );
-			var hiddenInnerWidth = $j( 'html' ).innerWidth();
-			$j( 'html' ).css( 'margin-right', hiddenInnerWidth - innerWidth );
-        }
+			var innerWidth = htmlEle.innerWidth;
+			htmlEle.style.overflow = 'hidden';
 
-		// Close menu function
+			var hiddenInnerWidth = htmlEle.innerWidth;
+			htmlEle.style.marginRight = hiddenInnerWidth - innerWidth;
+		}
+
+		// Close menu function.
 		var oceanwpFullScreenMenuClose = function() {
-			$siteHeader.removeClass( 'nav-open' );
-			$menuBar.removeClass( 'exit' );
-			$customLogo.removeClass( 'opened' );
-			$menuWrap.removeClass( 'active' );
-			$menuWrap.fadeOut( 200 );
+			siteHeader.classList.remove( 'nav-open' );
+			menuBar.classList.remove( 'exit' );
+			if ( customLogo ) {
+				customLogo.classList.remove( 'opened' );
+			}
+			menuWrap.classList.remove( 'active' );
+			fadeOut( menuWrap );
 
-			$j( 'html' ).css( {
-				'overflow': '',
-				'margin-right': '' 
-			} );
-        	$j( '#full-screen-menu #site-navigation ul > li.dropdown' ).removeClass( 'open-sub' );
-            $j( '#full-screen-menu #site-navigation ul.sub-menu' ).slideUp( 200 );
-        }
+			htmlEle.style.cssText = "overflow: ''; margin-right: ''";
 
-		$menuBar.on( 'click', function( e ) {
+			var fsDropdown = menuWrap.querySelectorAll( '#site-navigation ul > li.dropdown' ),
+				fsSubmenu  = menuWrap.querySelectorAll( '#site-navigation ul.sub-menu' );
+
+			for ( const dropdown of fsDropdown) {
+				dropdown.classList.remove( 'open-sub' );
+			}
+
+			for ( const submenu of fsSubmenu) {
+				slideUp( submenu, 200 );
+			}
+
+		}
+
+		menuBar.addEventListener( 'click', function(e) {
 			e.preventDefault();
 
-			if ( ! $j( this ).hasClass( 'exit' ) ) {
+			if ( ! this.matches( '.exit' ) ) {
 				oceanwpFullScreenMenuOpen();
 	        } else {
 	        	oceanwpFullScreenMenuClose();
@@ -60,25 +74,37 @@ function oceanwpFullScreenMenu() {
 
 		} );
 
+		var linkArrow = menuWrap.querySelectorAll( '#site-navigation ul > li.dropdown > a > .text-wrap > span.nav-arrow' );
+
 		// Logic for open sub menus
-        $j( '#full-screen-menu #site-navigation ul > li.dropdown > a > .text-wrap > span.nav-arrow, #full-screen-menu #site-navigation ul > li.dropdown > a[href="#"]' ).on( 'tap click', function() {
+		for( const link of linkArrow ) {
+			link.addEventListener( 'click', function(e) {
+				e.preventDefault();
 
-            if ( $j( this ).closest( 'li.dropdown' ).find( '> ul.sub-menu' ).is( ':visible' ) ) {
-                $j( this ).closest( 'li.dropdown' ).removeClass( 'open-sub' );
-                $j( this ).closest( 'li.dropdown' ).find( '> ul.sub-menu' ).slideUp( 200 );
-            } else {
-                $j( this ).closest( 'li.dropdown' ).addClass( 'open-sub' );
-                $j( this ).closest( 'li.dropdown' ).find( '> ul.sub-menu' ).slideDown( 200 );
-            }
+				let thisEle   = this.parentNode.parentNode.parentNode,
+					ulSubmenu = thisEle.querySelector( 'ul.sub-menu' );
 
-            return false;
+				if ( thisEle.matches( '.open-sub' ) ) {
+					thisEle.classList.remove( 'open-sub' );
+					slideUp( ulSubmenu, 200 );
+				} else {
+					thisEle.classList.add( 'open-sub' );
+					slideDown( ulSubmenu, 200 );
+				}
 
-        } );
+				return false;
 
-        // Close menu if anchor link
-        $j( '#full-screen-menu #site-navigation a.menu-link[href*="#"]:not([href="#"])' ).on( 'click', function() {
-        	oceanwpFullScreenMenuClose();
-	    } );
+			} );
+		}
+
+		var fsCloseLink = menuWrap.querySelectorAll( '#site-navigation a.menu-link[href*="#"]:not([href="#"])' );
+
+		for( const closeLink of fsCloseLink ) {
+			closeLink.addEventListener( 'click', function(e) {
+				e.preventDefault();
+				oceanwpFullScreenMenuClose();
+			});
+		}
 
 	}
 

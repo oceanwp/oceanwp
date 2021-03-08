@@ -531,6 +531,8 @@ final class OCEANWP_Theme_Class {
 	public static function localize_array() {
 
 		// Create array.
+		$header_type = get_theme_mod( 'ocean_header_style', 'minimal' );
+		$header_type = $header_type ? $header_type : 'minimal';
 		$sidr_side   = get_theme_mod( 'ocean_mobile_menu_sidr_direction', 'left' );
 		$sidr_side   = $sidr_side ? $sidr_side : 'left';
 		$sidr_target = get_theme_mod( 'ocean_mobile_menu_sidr_dropdown_target', 'link' );
@@ -538,6 +540,7 @@ final class OCEANWP_Theme_Class {
 		$vh_target   = get_theme_mod( 'ocean_vertical_header_dropdown_target', 'link' );
 		$vh_target   = $vh_target ? $vh_target : 'link';
 		$array       = array(
+			'headerType'           => $header_type,
 			'isRTL'                => is_rtl(),
 			'menuSearchStyle'      => oceanwp_menu_search_style(),
 			'sidrSource'           => oceanwp_sidr_menu_source(),

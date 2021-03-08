@@ -1,102 +1,115 @@
-var $j 		= jQuery.noConflict(),
-	$window = $j( window );
-
-$j( document ).ready( function() {
-	"use strict";
-	// Drop down mobile menu
+/**
+ * Drop down mobile menu
+ */
+document.addEventListener( 'DOMContentLoaded', function() {
 	oceanwpDropDownMobile();
 } );
 
-/* ==============================================
-DROPDOWN MOBILE SCRIPT
-============================================== */
+// Drop down mobile menu function.
 function oceanwpDropDownMobile() {
-	"use strict"
 
-	if ( $j( 'body' ).hasClass( 'dropdown-mobile' ) ) {
+	var htmlEle  = document.documentElement,
+		body     = document.getElementsByTagName( 'body' )[0];
 
-		// Open drop down menu
-		$j( '.mobile-menu' ).on( 'click', function() {
-			$j( '#mobile-dropdown' ).slideToggle( 500 );
-			$j( this ).toggleClass( 'opened' );
-			$j( '.mobile-menu > .hamburger' ).toggleClass( 'is-active' );
+	if ( body.matches( '.dropdown-mobile' ) ) {
+
+		var	mobileMenu     = document.querySelector( '.mobile-menu' ),
+			mobileDropDown = document.querySelector( '#mobile-dropdown' ),
+			menuHamburger  = document.querySelector( '.mobile-menu > .hamburger' );
+
+		// Open drop down menu.
+		mobileMenu.addEventListener( 'click', function(e) {
+			e.preventDefault();
+			slideToggle( mobileDropDown, 500 );
+			mobileMenu.classList.toggle( 'opened' );
+			menuHamburger.classList.toggle( 'is-active' );
 			return false;
 		} );
 
-		// Close menu function
+		// Close menu function.
 		var oceanwpDropDownMobileClose = function( e ) {
-			$j( '#mobile-dropdown' ).slideUp( 200 );
-			$j( '.mobile-menu' ).removeClass( 'opened' );
-			$j( '.mobile-menu > .hamburger' ).removeClass( 'is-active' );
+			slideUp( mobileDropDown, 200 );
+			mobileMenu.classList.remove( 'opened' );
+			menuHamburger.classList.remove( 'is-active' );
 		}
 
-		var $owpmenu = $j( '.mobile-menu > .hamburger' );
 		var isMenuOpen = false;
-		$owpmenu.on('click', function () {
+		menuHamburger.addEventListener( 'click', function() {
 			isMenuOpen = !isMenuOpen;
-			$owpmenu.attr('aria-expanded', isMenuOpen);
-		});
+			this.setAttribute( 'aria-expanded', isMenuOpen );
+		} );
 
 		// Declare useful vars
-		var $hasChildren = $j( '#mobile-dropdown .menu-item-has-children' );
+		var hasChildren = mobileDropDown.querySelectorAll( '.menu-item-has-children > a' );
+		for ( const child of hasChildren ) {
 
-		// Add dropdown toggle (plus)
-		$hasChildren.children( 'a' ).append( '<span class="dropdown-toggle"></span>' );
+			var addSpan = document.createElement( 'span' );
 
-		// Toggle dropdowns
-		var $dropdownTarget = $j( '.dropdown-toggle' );
+			addSpan.classList.add( 'dropdown-toggle' );
+			child.appendChild( addSpan );
+
+		}
+
+		var dropdownTarget = mobileDropDown.querySelectorAll( 'li.menu-item-has-children > a > span.dropdown-toggle' );
 
 		// Check localization
 		if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
-			$dropdownTarget = $j( '#mobile-dropdown li.menu-item-has-children > a' );
+			dropdownTarget = mobileDropDown.querySelectorAll( 'li.menu-item-has-children > a' );
 		}
 
-		// Add toggle click event
-		$dropdownTarget.on( 'tap click', function() {
+		for ( const dropdown of dropdownTarget ) {
 
-			// Define toggle vars
-			if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
-				var $toggleParentLi = $j( this ).parent( 'li' );
-			} else {
-				var $toggleParentLink = $j( this ).parent( 'a' ),
-					$toggleParentLi   = $toggleParentLink.parent( 'li' );
+			// Add toggle click event
+			dropdown.addEventListener( 'click', function(e) {
+				e.preventDefault();
+
+				// Define toggle vars
+				if ( oceanwpLocalize.sidrDropdownTarget == 'link' ) {
+					var toggleParentLi = this.parentNode;
+				} else {
+					var toggleParentLink = this.parentNode,
+						toggleParentLi   = toggleParentLink.parentNode;
+				}
+
+				var ulSubmenu = toggleParentLi.querySelector( 'ul.sub-menu' );
+
+				toggleParentLi.classList.toggle( 'active' );
+				slideToggle( ulSubmenu, 200 );
+
+				// Return false
+				return false;
+
+			} );
+
+		}
+
+		window.addEventListener( 'click', function(e) {
+			if ( ! mobileMenu.contains( e.target ) && ! menuHamburger.contains( e.target ) && ! mobileDropDown.contains( e.target ) ) {
+				mobileMenu.classList.remove( 'opened' );
+				menuHamburger.classList.remove( 'is-active' );
+				slideUp( mobileDropDown, 200 );
 			}
-
-			// Get parent items and dropdown
-			var $allParentLis = $toggleParentLi.parents( 'li' ),
-				$dropdown     = $toggleParentLi.children( 'ul' );
-
-			// Toogle items
-			if ( ! $toggleParentLi.hasClass( 'active' ) ) {
-				$hasChildren.not( $allParentLis ).removeClass( 'active' ).children( 'ul' ).slideUp( 'fast' );
-				$toggleParentLi.addClass( 'active' ).children( 'ul' ).slideDown( 'fast' );
-			} else {
-				$toggleParentLi.removeClass( 'active' ).children( 'ul' ).slideUp( 'fast' );
-			}
-
-			// Return false
-			return false;
-
 		} );
 
-		// Close menu
-		$j( document ).on( 'click', function() {
-			oceanwpDropDownMobileClose();
-		} ).on( 'click', '#mobile-dropdown', function( e ) {
-		    e.stopPropagation();
+		mobileDropDown.addEventListener( 'click', function(e) {
+			e.stopPropagation();
 		} );
 
 		// Close on resize
-		$window.resize( function() {
-			if ( $window.width() >= 960 ) {
+		window.addEventListener( 'resize', function() {
+			if ( window.innerWidth >= 960 ) {
 				oceanwpDropDownMobileClose();
 			}
 		} );
 
 		// Close menu if anchor link
-        $j( '#mobile-dropdown li a[href*="#"]:not([href="#"])' ).on( 'click', function() {
-        	oceanwpDropDownMobileClose();
-	    } );
+		var anchorLink = mobileDropDown.querySelectorAll( 'li a[href*="#"]:not([href="#"])' );
+		for ( const link of anchorLink ) {
+			link.addEventListener( 'click', function(e) {
+				e.preventDefault();
+				oceanwpDropDownMobileClose();
+			} );
+		}
 
 	}
 

@@ -1,36 +1,35 @@
-var $j = jQuery.noConflict();
-
-$j( document ).ready( function() {
-	"use strict";
-	// Header search form label
+/**
+ *  Header search form
+ */
+ document.addEventListener( 'DOMContentLoaded', function() {
 	oceanwpHeaderSearchForm();
 } );
 
-/* ==============================================
-HEADER SEARCH FORM LABEL
-============================================== */
+// Header search form function.
 function oceanwpHeaderSearchForm() {
-	"use strict"
 
-	// Add class when the search input is not empty
-	$j( 'form.header-searchform' ).each( function() {
+	var searchForm = document.querySelectorAll( 'form.header-searchform' );
 
-		var form 		= $j( this ),
-			listener	= form.find( 'input' ),
-			$label 		= form.find( 'label' );
+	if ( ! searchForm.length ) {
+		return;
+	}
 
-		if ( listener.val().length ) {
-			form.addClass( 'search-filled' );
+	searchForm.forEach( function ( owpSearchForm, e ) {
+
+		var	listener = owpSearchForm.querySelector( 'input' );
+
+		if ( listener.value.length ) {
+			owpSearchForm.classList.add( 'search-filled' );
 		}
 
-		listener.on( 'keyup blur', function() {
-			if ( listener.val().length > 0 ) {
-			  form.addClass( 'search-filled' );
+		listener.addEventListener( 'keyup', function() {
+			if ( listener.value.length > 0 ) {
+				owpSearchForm.classList.add( 'search-filled' );
 			} else {
-			  form.removeClass( 'search-filled' );
+				owpSearchForm.classList.remove( 'search-filled' );
 			}
 		} );
 
-    } );
+	} );
 
 }
