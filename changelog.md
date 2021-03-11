@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2021.03.08.* - 2.0.3
+* **Fixed** - Multistep checkout issue.
+* **Fixed** - WPML translation issue.
+
 ### *2020.12.17.* - 2.0.2
 * **Added** - Link underlined style removed from the elementor and woocommerce pages.
 
