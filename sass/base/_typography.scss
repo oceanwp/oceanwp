@@ -24,7 +24,7 @@ a, a:hover, a:focus {
 
 .single-post:not(.elementor-page) .entry-content,
 .page:not(.elementor-page):not(.woocommerce-page) .entry {
-	a {
+	a:not( .wp-block-button__link ):not(.wp-block-file__button) {
 		cursor: pointer;
 		text-underline-offset: 3px;
 		text-decoration: underline;
@@ -147,7 +147,7 @@ blockquote {
 	padding-left: 20px;
 	border-left-width: 3px;
 	border-style: solid;
-	border-color: $color-5;
+	border-left-color: $color-5;
 
 	cite {
 		position: relative;

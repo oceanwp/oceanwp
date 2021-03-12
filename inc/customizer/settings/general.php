@@ -4289,6 +4289,11 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				}
 			}
 
+			// Blockquotes color.
+			if ( ! empty( $primary_color ) && '#13aff0' != $primary_color ) {
+				$css .= 'blockquote, .wp-block-quote{border-left-color:' . $primary_color . ';}';
+			}
+
 			// Hover primary color.
 			if ( ! empty( $hover_primary ) && '#0b7cac' != $hover_primary_color ) {
 				$css .= implode( ',', $hover_primary ) . '{background-color:' . $hover_primary_color . ';}';

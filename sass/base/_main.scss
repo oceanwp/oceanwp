@@ -121,6 +121,10 @@ body .oceanwp-row {
 	}
 }
 
+.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before {
+	padding-top: 0;
+}
+
 .wp-video-shortcode {
 	max-width: 100% !important;
 }
