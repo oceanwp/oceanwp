@@ -518,6 +518,7 @@ final class OCEANWP_Theme_Class {
 
 		// Load minified js.
 		wp_enqueue_script( 'oceanwp-main', $dir . 'main.min.js', array( 'jquery' ), $theme_version, true );
+		wp_enqueue_script( 'oceanwp-main-vanilla', $dir . 'main.vanilla.min.js', array(), $theme_version, true );
 
 		// Localize array.
 		wp_localize_script( 'oceanwp-main', 'oceanwpLocalize', $localize_array );
@@ -1062,6 +1063,6 @@ if ( ! function_exists( 'owp_fs' ) ) {
 	}
 }
 
-#endregion
+// endregion
 
 new OCEANWP_Theme_Class();
