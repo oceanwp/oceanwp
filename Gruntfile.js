@@ -95,8 +95,12 @@ module.exports = function (grunt) {
                 },
             },
             prod: {
+                // options: {
+                //     sourceMap: true,
+                // },
                 files: {
                     "assets/js/main.min.js": ["assets/js/devs/**/*.js", "assets/js/core/**/*.js"],
+                    // "assets/js/main.vanilla.min.js": ["assets/js/main.vanilla.min.js"],
                 },
             },
         },
