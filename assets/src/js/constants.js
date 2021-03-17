@@ -9,6 +9,10 @@ export const DOM = {
         hamburger: document.querySelector(".mobile-menu > .hamburger"),
         menuItemsHasChildren: document.querySelectorAll("#mobile-dropdown .menu-item-has-children"),
     },
+    search: {
+        dropdownToggleIcon: document.querySelector("a.search-dropdown-toggle"),
+        dropdownForm: document.querySelector("#searchform-dropdown"),
+    },
 };
 
 export const DOMString = {};
