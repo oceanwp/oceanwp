@@ -1,3 +1,4 @@
+import Element from "./lib/element";
 import Select from "./components/select";
 import MobileMenu from "./components/mobile-menu";
 

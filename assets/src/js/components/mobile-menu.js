@@ -1,5 +1,5 @@
 import { DOM, options } from "../constants";
-import { slideUp, slideToggle } from "../lib/utils";
+import { slideUp, slideDown, slideToggle, getParents } from "../lib/utils";
 
 export default class MobileMenu {
     #isMenuOpen;
@@ -15,7 +15,7 @@ export default class MobileMenu {
     #start = () => {
         this.#isMenuOpen = false;
 
-        DOM.mobileMenu.itemsHasChildren.forEach((item) => {
+        DOM.mobileMenu.menuItemsHasChildren.forEach((item) => {
             let span = document.createElement("span");
             span.className = "dropdown-toggle";
 
@@ -24,14 +24,14 @@ export default class MobileMenu {
 
         this.#menuItemsToggleIcon =
             options.sidrDropdownTarget == "link"
-                ? document.querySelectorAll(".dropdown-toggle")
-                : document.querySelectorAll("#mobile-dropdown li.menu-item-has-children > a");
+                ? document.querySelectorAll("#mobile-dropdown li.menu-item-has-children > a")
+                : document.querySelectorAll(".dropdown-toggle");
     };
 
     #setupEventListeners = () => {
         DOM.mobileMenu.icon.addEventListener("click", this.#onMenuIconClick);
 
-        // document.addEventListener("click", this.#onMenuClose);
+        document.addEventListener("click", this.#onMenuClose);
 
         DOM.mobileMenu.nav.querySelectorAll('li a[href*="#"]:not([href="#"])').forEach((menuItemLink) => {
             menuItemLink.addEventListener("click", this.#onMenuClose);
@@ -46,11 +46,14 @@ export default class MobileMenu {
         DOM.mobileMenu.hamburger.addEventListener("click", this.#onHamburgerClick);
 
         this.#menuItemsToggleIcon.forEach((menuItemToggleIcon) => {
-            menuItemToggleIcon.addEventListener("click tap", this.#onDropdownToggle);
+            menuItemToggleIcon.addEventListener("click", this.#onMenuItemToggleIcon);
+            menuItemToggleIcon.addEventListener("tap", this.#onMenuItemToggleIcon);
         });
     };
 
     #onMenuIconClick = (event) => {
+        event.stopPropagation();
+
         slideToggle(DOM.mobileMenu.nav, 500);
         DOM.mobileMenu.icon.classList.toggle("opened");
         DOM.mobileMenu.hamburger.classList.toggle("is-active");
@@ -64,7 +67,7 @@ export default class MobileMenu {
 
     #onWindowResize = (event) => {
         if (window.innerWidth >= 960) {
-            this.#onMenuClose;
+            this.#onMenuClose();
         }
     };
 
@@ -73,11 +76,34 @@ export default class MobileMenu {
         event.currentTarget.setAttribute("aria-expanded", this.#isMenuOpen);
     };
 
-    #onDropdownToggle = (event) => {
-        const dropdownToggle = event.currentTarget;
+    #onMenuItemToggleIcon = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const menuItemToggleIcon = event.currentTarget;
         const menuItem =
             options.sidrDropdownTarget == "link"
-                ? dropdownToggle.parentNode
-                : dropdownToggle.parentNode.parentNode;
+                ? menuItemToggleIcon.parentNode
+                : menuItemToggleIcon.parentNode.parentNode;
+
+        if (!menuItem.classList.contains("active")) {
+            DOM.mobileMenu.menuItemsHasChildren.forEach((menuItemHasChildren) => {
+                if (
+                    menuItem != menuItemHasChildren &&
+                    menuItem
+                        .oceanParents(".menu-item-has-children")
+                        .findIndex((parentMenuItem) => parentMenuItem == menuItemHasChildren)
+                ) {
+                    menuItemHasChildren.classList.remove("active");
+                    slideUp(menuItemHasChildren.lastElementChild, 200);
+                }
+            });
+
+            menuItem.classList.add("active");
+            slideDown(menuItem.lastElementChild, 200);
+        } else {
+            menuItem.classList.remove("active");
+            slideUp(menuItem.lastElementChild, 200);
+        }
     };
 }

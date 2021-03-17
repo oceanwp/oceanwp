@@ -13,7 +13,9 @@ export const slideUp = (element, duration) => {
     element.style.transitionDuration = duration + "ms";
     element.style.boxSizing = "border-box";
     element.style.height = element.offsetHeight + "px";
-    element.style.height = 0;
+    setTimeout(() => {
+        element.style.height = 0;
+    }, 10);
     element.style.paddingTop = 0;
     element.style.paddingBottom = 0;
     element.style.marginTop = 0;
@@ -54,7 +56,9 @@ export const slideDown = (element, duration) => {
     element.style.boxSizing = "border-box";
     element.style.transitionProperty = "height, margin, padding";
     element.style.transitionDuration = duration + "ms";
-    element.style.height = height + "px";
+    setTimeout(() => {
+        element.style.height = height + "px";
+    }, 10);
     element.style.removeProperty("padding-top");
     element.style.removeProperty("padding-bottom");
     element.style.removeProperty("margin-top");
@@ -72,23 +76,3 @@ export const slideToggle = (element, duration) =>
     window.getComputedStyle(element).display === "none"
         ? slideDown(element, duration)
         : slideUp(element, duration);
-
-export const parents = (element, parentSelector) => {
-    // If no parentSelector defined will bubble up all the way to *document*
-    if (parentSelector === undefined) {
-        parentSelector = document;
-    }
-
-    const parents = [];
-    let parent = element.parentNode;
-
-    while (parent !== parentSelector) {
-        parents.push(parent);
-        parent = parent.parentNode;
-    }
-
-    // Push that parentSelector you wanted to stop at
-    parents.push(parentSelector);
-
-    return parents;
-};

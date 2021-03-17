@@ -7,7 +7,7 @@ export const DOM = {
         nav: document.querySelector("#mobile-dropdown"),
         icon: document.querySelector(".mobile-menu"),
         hamburger: document.querySelector(".mobile-menu > .hamburger"),
-        itemsHasChildren: document.querySelectorAll("#mobile-dropdown .menu-item-has-children"),
+        menuItemsHasChildren: document.querySelectorAll("#mobile-dropdown .menu-item-has-children"),
     },
 };
 
