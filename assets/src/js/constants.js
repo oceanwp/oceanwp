@@ -8,7 +8,8 @@ export const DOM = {
     nav: document.querySelector("#site-header.header-replace #site-navigation"),
     selects: document.querySelectorAll(options.customSelects),
     mobileMenu: {
-        nav: document.querySelector("#mobile-dropdown"),
+        nav: document.querySelector("#mobile-dropdown > nav"),
+        navWrapper: document.querySelector("#mobile-dropdown"),
         icon: document.querySelector(".mobile-menu"),
         hamburger: document.querySelector(".mobile-menu > .hamburger"),
         menuItemsHasChildren: document.querySelectorAll("#mobile-dropdown .menu-item-has-children"),

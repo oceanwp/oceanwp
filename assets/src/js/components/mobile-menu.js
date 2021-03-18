@@ -33,11 +33,13 @@ export default class MobileMenu {
 
         document.addEventListener("click", this.#onMenuClose);
 
-        DOM.mobileMenu.nav.querySelectorAll('li a[href*="#"]:not([href="#"])').forEach((menuItemLink) => {
-            menuItemLink.addEventListener("click", this.#onMenuClose);
-        });
+        DOM.mobileMenu.navWrapper
+            .querySelectorAll('li a[href*="#"]:not([href="#"])')
+            .forEach((menuItemLink) => {
+                menuItemLink.addEventListener("click", this.#onMenuClose);
+            });
 
-        DOM.mobileMenu.nav.addEventListener("click", (event) => {
+        DOM.mobileMenu.navWrapper.addEventListener("click", (event) => {
             event.stopPropagation();
         });
 
@@ -49,18 +51,22 @@ export default class MobileMenu {
             menuItemToggleIcon.addEventListener("click", this.#onMenuItemToggleIcon);
             menuItemToggleIcon.addEventListener("tap", this.#onMenuItemToggleIcon);
         });
+
+        if (!!DOM.header && !!DOM.mobileMenu.nav) {
+            document.addEventListener("keydown", this.#onDocumentKeydown);
+        }
     };
 
     #onMenuIconClick = (event) => {
         event.stopPropagation();
 
-        slideToggle(DOM.mobileMenu.nav, 500);
+        slideToggle(DOM.mobileMenu.navWrapper, 500);
         DOM.mobileMenu.icon.classList.toggle("opened");
         DOM.mobileMenu.hamburger.classList.toggle("is-active");
     };
 
     #onMenuClose = (event) => {
-        slideUp(DOM.mobileMenu.nav, 200);
+        slideUp(DOM.mobileMenu.navWrapper, 200);
         DOM.mobileMenu.icon.classList.remove("opened");
         DOM.mobileMenu.hamburger.classList.remove("is-active");
     };
@@ -104,6 +110,30 @@ export default class MobileMenu {
         } else {
             menuItem.classList.remove("active");
             slideUp(menuItem.lastElementChild, 200);
+        }
+    };
+
+    #onDocumentKeydown = (event) => {
+        const tabKey = event.keyCode === 9;
+        const shiftKey = event.shiftKey;
+        const mobileMenuCloseIcon = document.querySelector(".mobile-menu.opened");
+        const mobileMenuElements = DOM.mobileMenu.nav.querySelectorAll("input, a, button");
+        const mobileMenuFirstElement = mobileMenuElements[0];
+        const mobileMenuLastElement = mobileMenuElements[mobileMenuElements.length - 1];
+
+        if (!shiftKey && tabKey && mobileMenuLastElement === document.activeElement) {
+            event.preventDefault();
+            mobileMenuCloseIcon.focus();
+        }
+
+        if (shiftKey && tabKey && mobileMenuFirstElement === document.activeElement) {
+            event.preventDefault();
+            mobileMenuCloseIcon.focus();
+        }
+
+        if (shiftKey && tabKey && mobileMenuCloseIcon === document.activeElement) {
+            event.preventDefault();
+            mobileMenuLastElement.focus();
         }
     };
 }
