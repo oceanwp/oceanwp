@@ -5506,6 +5506,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   right: 0;
   height: 100%;
   width: 100%;
+  min-width: 370px;
   visibility: hidden;
   -moz-opacity: 0;
   -webkit-opacity: 0;
