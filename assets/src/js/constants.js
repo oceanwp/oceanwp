@@ -1,6 +1,7 @@
 export const options = oceanwpLocalize;
 
 export const DOM = {
+    html: document.querySelector("html"),
     body: document.body,
     header: document.querySelector("#site-header"),
     headerTopLeftSide: document.querySelector("#site-header.top-header .header-top .left"),
@@ -21,6 +22,9 @@ export const DOM = {
         headerReplaceToggleIcon: document.querySelector("a.search-header-replace-toggle"),
         headerReplaceCloseIcon: document.querySelector("#searchform-header-replace-close"),
         headerReplaceForm: document.querySelector("#searchform-header-replace"),
+        overlayToggleIcon: document.querySelector("a.search-overlay-toggle"),
+        overlayCloseIcon: document.querySelector("a.search-overlay-close"),
+        overlayForm: document.querySelector("#searchform-overlay"),
     },
 };
 

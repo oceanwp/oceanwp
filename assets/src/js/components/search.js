@@ -1,4 +1,5 @@
 import { DOM, options } from "../constants";
+import { fadeIn, fadeOut } from "../lib/utils";
 
 export default class Search {
     constructor() {
@@ -6,16 +7,27 @@ export default class Search {
     }
 
     #setupEventListeners = () => {
+        // Drop-Down style
         if (options.menuSearchStyle == "drop_down") {
             DOM.search.dropdownToggleIcon.addEventListener("click", this.#onDropdownToggleIcon);
         }
 
+        // Header Replace style
         if (options.menuSearchStyle == "header_replace") {
             DOM.search.headerReplaceToggleIcon.addEventListener("click", this.#onHeaderReplaceToggleIcon);
             DOM.search.headerReplaceCloseIcon.addEventListener("click", this.#onHeaderReplaceCloseIcon);
         }
 
-        window.addEventListener("click", this.#onWindowClick);
+        // Overlay style
+        if (options.menuSearchStyle == "overlay") {
+            if (!!DOM.search.overlayToggleIcon) {
+                DOM.search.overlayToggleIcon.addEventListener("click", this.#onOverlayToggleIcon);
+            }
+
+            DOM.search.overlayCloseIcon.addEventListener("click", this.#onOverlayCloseIcon);
+        }
+
+        document.addEventListener("click", this.#onDocumentClick);
     };
 
     #onDropdownToggleIcon = (event) => {
@@ -65,7 +77,34 @@ export default class Search {
         }
     };
 
-    #onWindowClick = (event) => {
+    #onOverlayToggleIcon = (event) => {
+        event.preventDefault();
+
+        const { overlayForm: form } = DOM.search;
+
+        form.classList.add("active");
+        fadeIn(form);
+        form.getElementsByTagName("input")[0].focus();
+
+        setTimeout(function () {
+            DOM.html.style.overflow = "hidden";
+        }, 400);
+    };
+
+    #onOverlayCloseIcon = (event) => {
+        event.preventDefault();
+
+        const { overlayForm: form } = DOM.search;
+
+        form.classList.remove("active");
+        fadeOut(form);
+
+        setTimeout(function () {
+            DOM.html.style.overflow = "visible";
+        }, 400);
+    };
+
+    #onDocumentClick = (event) => {
         // Dropdonw Search Style Collaps
         if (!event.target.closest("#searchform-dropdown.show")) {
             DOM.search.dropdownForm?.classList.remove("show");
@@ -74,13 +113,13 @@ export default class Search {
 
         // Header Replace Search Style Collaps
         if (!event.target.closest("#searchform-header-replace.show")) {
-            DOM.search.headerReplaceForm.classList.remove("show");
+            DOM.search.headerReplaceForm?.classList.remove("show");
 
             if (this.#hasTopHeader()) {
-                DOM.headerTopLeftSide.classList.remove("hide");
-                DOM.headerTopRighttSide.classList.remove("hide");
+                DOM.headerTopLeftSide?.classList.remove("hide");
+                DOM.headerTopRighttSide?.classList.remove("hide");
             } else {
-                DOM.nav.classList.remove("hide");
+                DOM.nav?.classList.remove("hide");
             }
         }
     };
