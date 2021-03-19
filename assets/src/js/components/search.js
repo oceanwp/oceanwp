@@ -3,10 +3,20 @@ import { fadeIn, fadeOut } from "../lib/utils";
 
 export default class Search {
     constructor() {
+        this.#start();
         this.#setupEventListeners();
     }
 
+    #start = () => {
+        if (DOM.search.input?.value) {
+            DOM.search.form?.classList.add("search-filled");
+        }
+    };
+
     #setupEventListeners = () => {
+        DOM.search.input?.addEventListener("keyup", this.#onInputKeyup);
+        DOM.search.input?.addEventListener("blur", this.#onInputBlur);
+
         // Drop-Down style
         if (options.menuSearchStyle == "drop_down") {
             DOM.search.dropdownToggleIcon.addEventListener("click", this.#onDropdownToggleIcon);
@@ -30,6 +40,18 @@ export default class Search {
         document.addEventListener("click", this.#onDocumentClick);
     };
 
+    #onInputKeyup = (event) => {
+        if (DOM.search.input.value) {
+            DOM.search.form.classList.add("search-filled");
+        } else {
+            DOM.search.form.classList.remove("search-filled");
+        }
+    };
+
+    #onInputBlur = (event) => {
+        this.#onInputKeyup();
+    };
+
     #onDropdownToggleIcon = (event) => {
         event.preventDefault();
         event.stopPropagation();
@@ -39,7 +61,7 @@ export default class Search {
         form.classList.toggle("show");
         toggleIcon.parentNode.classList.toggle("active");
 
-        this.#focusForm(form, "input.field");
+        this.#focus(form, "input.field");
     };
 
     #onHeaderReplaceToggleIcon = (event) => {
@@ -59,7 +81,7 @@ export default class Search {
                 document.querySelector("#site-navigation > ul.dropdown-menu")?.offsetWidth + 60;
         }
 
-        this.#focusForm(form, 'input[type="search"]');
+        this.#focus(form, 'input[type="search"]');
     };
 
     #onHeaderReplaceCloseIcon = (event) => {
@@ -124,7 +146,7 @@ export default class Search {
         }
     };
 
-    #focusForm = (form, inputClass) => {
+    #focus = (form, inputClass) => {
         const formTransitionDuration =
             parseFloat(getComputedStyle(form).transitionDuration.replace("s", "")) * 1000;
 

@@ -1,9 +1,11 @@
 export const options = oceanwpLocalize;
 
 export const DOM = {
+    WPAdminbar: document.querySelector("#wpadminbar"),
     html: document.querySelector("html"),
     body: document.body,
     header: document.querySelector("#site-header"),
+    main: document.querySelector("#main"),
     headerTopLeftSide: document.querySelector("#site-header.top-header .header-top .left"),
     headerTopRightSide: document.querySelector("#site-header.top-header .header-top .right"),
     nav: document.querySelector("#site-header.header-replace #site-navigation"),
@@ -16,7 +18,8 @@ export const DOM = {
         menuItemsHasChildren: document.querySelectorAll("#mobile-dropdown .menu-item-has-children"),
     },
     search: {
-        forms: document.querySelectorAll("form.header-searchform"),
+        form: document.querySelector("form.header-searchform"),
+        input: document.querySelector("form.header-searchform input"),
         dropdownToggleIcon: document.querySelector("a.search-dropdown-toggle"),
         dropdownForm: document.querySelector("#searchform-dropdown"),
         headerReplaceToggleIcon: document.querySelector("a.search-header-replace-toggle"),
