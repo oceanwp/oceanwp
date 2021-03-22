@@ -45,7 +45,7 @@ export default class MobileMenu {
 
         window.addEventListener("resize", this.#onWindowResize);
 
-        DOM.mobileMenu.hamburger.addEventListener("click", this.#onHamburgerClick);
+        DOM.mobileMenu.hamburger?.addEventListener("click", this.#onHamburgerClick);
 
         this.#menuItemsToggleIcon.forEach((menuItemToggleIcon) => {
             menuItemToggleIcon.addEventListener("click", this.#onMenuItemToggleIcon);
@@ -62,13 +62,13 @@ export default class MobileMenu {
 
         slideToggle(DOM.mobileMenu.navWrapper, 500);
         DOM.mobileMenu.icon.classList.toggle("opened");
-        DOM.mobileMenu.hamburger.classList.toggle("is-active");
+        DOM.mobileMenu.hamburger?.classList.toggle("is-active");
     };
 
     #onMenuClose = (event) => {
         slideUp(DOM.mobileMenu.navWrapper, 200);
         DOM.mobileMenu.icon.classList.remove("opened");
-        DOM.mobileMenu.hamburger.classList.remove("is-active");
+        DOM.mobileMenu.hamburger?.classList.remove("is-active");
     };
 
     #onWindowResize = (event) => {
