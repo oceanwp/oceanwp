@@ -114,6 +114,16 @@
         content: "";
     }
 
+    blockquote .wp-block-quote__citation {
+        padding: 10px 0 0 20px;
+    }
+
+    blockquote .wp-block-quote__citation:before {
+        position: absolute;
+        left: 0;
+        content: "\2014";
+    }
+
     address {
         display: block;
     }

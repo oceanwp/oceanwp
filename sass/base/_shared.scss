@@ -137,14 +137,6 @@ table td {
 table th {
 	text-transform: uppercase;
 }
-table tr th:first-child,
-table tr td:first-child {
-	padding-left: 0;
-}
-table tr th:last-child,
-table tr td:last-child {
-	padding-right: 0;
-}
 
 .sticky,
 .bypostauthor {

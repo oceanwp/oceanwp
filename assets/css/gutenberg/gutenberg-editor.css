@@ -105,6 +105,16 @@
   content: "";
 }
 
+.block-editor-block-list__layout blockquote .wp-block-quote__citation {
+  padding: 10px 0 0 20px;
+}
+
+.block-editor-block-list__layout blockquote .wp-block-quote__citation:before {
+  position: absolute;
+  left: 0;
+  content: "\2014";
+}
+
 .block-editor-block-list__layout address {
   display: block;
 }

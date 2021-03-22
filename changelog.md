@@ -1,7 +1,8 @@
 # OceanWP Changelog
 
-### *2021.03.12.* - 2.0.4
+### *2021.03.22.* - 2.0.4
 * **Added** - Added Gutenberg support to match the backend editor with frontend.
+* **Fixed** - Styling for some Gutenberg blocks like table, blockquote etc.
 
 ### *2021.03.08.* - 2.0.3
 * **Fixed** - Multistep checkout issue.
