@@ -363,7 +363,6 @@ form.oceanwp-searchform button {
 .owp-icon {
   width: 20px;
   height: 20px;
-  margin-right: 8px;
   vertical-align: text-bottom;
 }
 
@@ -6828,6 +6827,10 @@ ul.meta li i {
   font-size: 17px;
 }
 
+ul.meta li .owp-icon {
+  margin-right: 8px;
+}
+
 ul.meta li .owp-sep {
   padding: 0 5px;
 }
@@ -6860,6 +6863,10 @@ ul.obem-none li:after {
 
 .single-post ul.meta li i {
   padding-right: 9px;
+}
+
+.single-post ul.meta li .owp-icon {
+  margin-right: 8px;
 }
 
 .single-post ul.ospm-default li:after {

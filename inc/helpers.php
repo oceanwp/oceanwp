@@ -1789,7 +1789,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 				$icon_t = oceanwp_theme_icon_class();
 
 				$items .= '<a href="javascript:void(0)" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
-					$items .= '<span class="' . $theme_icons[ 'search' ][ $icon_t ] . '" aria-hidden="true"></span>';
+					$items .= oceanwp_icon( 'search', false );
 				$items .= '</a>';
 			}
 		$items .= '</li>';
