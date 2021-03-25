@@ -16,6 +16,7 @@ export default class Menu {
 
         if (!!DOM.fullScreenMenuBar) {
             DOM.fullScreenMenuBar.addEventListener("click", this.#onFullScreenMenuBarClick);
+
             document
                 .querySelectorAll(
                     '#full-screen-menu #site-navigation ul > li.dropdown > a > .text-wrap > span.nav-arrow, #full-screen-menu #site-navigation ul > li.dropdown > a[href="#"]'
@@ -24,6 +25,7 @@ export default class Menu {
                     menuItemLink.addEventListener("click", this.#onFullScreenMenuItemLinkClick);
                     menuItemLink.addEventListener("tap", this.#onFullScreenMenuItemLinkClick);
                 });
+
             document
                 .querySelectorAll('#full-screen-menu #site-navigation a.menu-link[href*="#"]:not([href="#"])')
                 .forEach((menuItemLink) => {
@@ -81,7 +83,7 @@ export default class Menu {
         const htmlWidthBeforeOverflowHidden = DOM.html.innerWidth;
         DOM.html.style.overflow = "hidden";
         const htmlWidthAfterOverflowHidden = DOM.html.innerWidth;
-        DOM.html.style.marginRight = htmlWidthBeforeOverflowHidden - htmlWidthAfterOverflowHidden + "px";
+        DOM.html.style.marginRight = htmlWidthAfterOverflowHidden - htmlWidthAfterOverflowHidden + "px";
     };
 
     #closeFullScreenMenu = () => {

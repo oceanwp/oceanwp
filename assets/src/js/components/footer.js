@@ -21,12 +21,14 @@ export default class Footer {
 
     #onWindowLoad = (event) => {
         this.#fixedFooter();
+        this.#parallaxFooter();
     };
 
     #onWindowResize = (event) => {
         if (this.#lastWindowWidth !== window.innerWidth || this.#lastWindowHeight !== window.innerHeight) {
             this.#fixedFooter();
         }
+        this.#parallaxFooter();
     };
 
     #fixedFooter = () => {
@@ -42,5 +44,13 @@ export default class Footer {
 
         DOM.main.style.minHeight =
             DOM.main.offsetHeight + (window.innerHeight - DOM.html.offsetHeight - offset) + "px";
+    };
+
+    #parallaxFooter = () => {
+        if (DOM.body.classList.contains("has-parallax-footer")) {
+            setTimeout(() => {
+                DOM.main.style.marginBottom = DOM.parallaxFooter.offsetHeight + "px";
+            }, 1);
+        }
     };
 }

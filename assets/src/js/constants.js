@@ -20,6 +20,7 @@ export const DOM = {
         icon: document.querySelector(".mobile-menu"),
         hamburger: document.querySelector(".mobile-menu > .hamburger"),
         menuItemsHasChildren: document.querySelectorAll("#mobile-dropdown .menu-item-has-children"),
+        fullScreen: document.querySelector("#mobile-fullscreen"),
     },
     search: {
         form: document.querySelector("form.header-searchform"),
@@ -33,6 +34,11 @@ export const DOM = {
         overlayCloseIcon: document.querySelector("a.search-overlay-close"),
         overlayForm: document.querySelector("#searchform-overlay"),
     },
+    scrollTop: document.querySelector("#scroll-top"),
+    goTop: document.querySelector('a[href="#go-top"]'),
+    goTopSlash: document.querySelector('body.home a[href="/#go-top"]'),
+    blogMasonryGrids: document.querySelectorAll(".blog-masonry-grid"),
+    parallaxFooter: document.querySelector(".parallax-footer"),
 };
 
 export const DOMString = {};
