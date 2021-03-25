@@ -26,7 +26,7 @@ $mosf_id      = esc_attr( $ocean_msf_id );
 		<label for="<?php echo esc_attr( $mosf_id ); ?>">
 			<input type="search" name="s" autocomplete="off" placeholder="<?php oceanwp_theme_strings( 'owp-string-mobile-search-text', 'oceanwp' ); ?>" />
 			<button type="submit" class="searchform-submit" aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-submit-search', 'oceanwp' ); ?>">
-				<i class="<?php echo $theme_icons[ 'search' ][ $icon_t ]; ?>" aria-hidden="true"></i>
+				<?php oceanwp_icon( 'search' ); ?>
 			</button>
 			<?php if ( 'any' !== $post_type ) { ?>
 				<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">

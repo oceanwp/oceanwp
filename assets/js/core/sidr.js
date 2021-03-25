@@ -134,6 +134,13 @@ function oceanwpMobileMenu( event ) {
 			return c;
 		} );
 
+			// Replace OWP SVG Icons class
+		$j( '#sidr [class*="sidr-class-owp-icon"]' ).attr( 'class', function( i, c ) {
+			c = c.replace( 'sidr-class-owp-icon', 'owp-icon' );
+			c = c.replace( 'sidr-class-owp-icon--', 'owp-icon--' );
+			return c;
+		} );
+
 		// Close sidr when clicking on close button
 		$j( 'a.sidr-class-toggle-sidr-close' ).on( 'click', function() {
 			$j.sidr( 'close', 'sidr' );
