@@ -225,6 +225,19 @@ form.oceanwp-searchform {
 	}
 }
 
+.no-display {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    display: none;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    -webkit-clip-path: circle(1% at 1% 1%);
+    clip-path: circle(1% at 1% 1%);
+}
+
 /**
  * Selection Color.
  */

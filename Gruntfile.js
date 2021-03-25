@@ -156,6 +156,24 @@ module.exports = function ( grunt ) {
             }
 		},
 
+		svgstore: {
+			options: {
+			  prefix: 'owp-icon-', // This will prefix each ID
+			  svg: { // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG
+			  	id: 'owp-svg-icons',
+			  	version: '1.0.0',
+			  	viewBox: '0 0 100 100',
+				xmlns: 'http://www.w3.org/2000/svg',
+				class: 'no-display'
+			  }
+			},
+			prod: {
+				files: {
+					'assets/fonts/owp-icons/owp-icons.svg': [ 'assets/fonts/owp-icons/files/**/*.svg' ]
+				}
+			}
+		},
+
 		// Autoprefixer.
 		autoprefixer: {
 			options: {
@@ -252,6 +270,7 @@ module.exports = function ( grunt ) {
 					'!**/*.map',
 					'!**/Gruntfile.js',
 					'!**/package.json',
+					'!assets/fonts/owp-icons/files/**',
 					'!**/*~'
 				],
 				dest: 'build/<%= pkg.name %>/'
@@ -323,6 +342,7 @@ module.exports = function ( grunt ) {
 		'sass:dev',
 		'sass:prod',
 		'makepot'
+		//'svgstore:prod'
 	] );
 
 	// Production task
@@ -332,6 +352,7 @@ module.exports = function ( grunt ) {
 		'sass:prod',
 		'autoprefixer:main',
 		'makepot',
+		//'svgstore:prod',
 		'copy'
 	] );
 
