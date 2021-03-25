@@ -121,6 +121,10 @@ body .oceanwp-row {
 	}
 }
 
+.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before {
+	padding-top: 0;
+}
+
 .wp-video-shortcode {
 	max-width: 100% !important;
 }
@@ -219,6 +223,19 @@ form.oceanwp-searchform {
 		width: auto;
 		z-index: 100000; /* Above WP toolbar. */
 	}
+}
+
+.no-display {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    display: none;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    -webkit-clip-path: circle(1% at 1% 1%);
+    clip-path: circle(1% at 1% 1%);
 }
 
 /**

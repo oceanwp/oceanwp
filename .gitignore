@@ -266,6 +266,9 @@ node_modules/
 # build folder
 build/
 
+# Theme files
+assets/fonts/owp-icons/files/
+
 # vender folder
 vendor/
 

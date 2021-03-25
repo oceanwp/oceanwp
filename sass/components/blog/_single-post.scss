@@ -58,6 +58,7 @@
 	.entry-content blockquote,
 	.entry-content p,
 	.wp-block-image,
+	.wp-block-buttons,
 	.wp-block-gallery,
 	.wp-block-video,
 	.wp-block-quote,
@@ -176,10 +177,6 @@
 	margin-bottom: 20px;
 }
 
-.wp-block-button a:hover {
-    color: inherit;
-}
-
 .wp-block-quote.blocks-quote-style-2 {
     border: 0;
 }
@@ -195,10 +192,6 @@
     &.is-style-wide {
     	max-width: 700px;
     }
-}
-
-.wp-block-table {
-	display: table;
 }
 
 /*------------------------------------*
