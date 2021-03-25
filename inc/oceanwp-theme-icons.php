@@ -246,7 +246,7 @@ if ( ! function_exists( 'oceanwp_print_icon' ) ) {
  */
 if ( ! function_exists( 'oceanwp_icon' ) ) {
 
-	function oceanwp_icon( $icon, $title = '', $desc = '', $aria_hidden = true, $fallback = false, $echo = true ) {
+	function oceanwp_icon( $icon, $echo = true, $title = '', $desc = '', $aria_hidden = true, $fallback = false ) {
 
 		$icon = oceanwp_print_icon(
 				array(

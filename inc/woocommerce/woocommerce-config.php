@@ -934,11 +934,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$text = oceanwp_tm_translation( 'ocean_woo_off_canvas_filter_text', $text );
 			$text = $text ? $text: esc_html__( 'Filter', 'oceanwp' );
 
-			// Get theme icons.
-			$theme_icons = oceanwp_theme_icons();
-			$icon_t = oceanwp_theme_icon_class();
-
-			$output = '<a href="#" class="oceanwp-off-canvas-filter"><i class="' . $theme_icons[ 'menu' ][ $icon_t ] . '" aria-hidden="true"></i><span class="off-canvas-filter-text">'. esc_html( $text ) .'</span></a>';
+			$output = '<a href="#" class="oceanwp-off-canvas-filter">' . oceanwp_icon( 'menu', false ) . '<span class="off-canvas-filter-text">'. esc_html( $text ) .'</span></a>';
 
 			echo apply_filters( 'oceanwp_off_canvas_filter_button_output', $output );
 		}
@@ -969,11 +965,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$list = '';
 			}
 
-			// Get theme icons.
-			$theme_icons = oceanwp_theme_icons();
-			$icon_t = oceanwp_theme_icon_class();
-
-			$output = sprintf( '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="%1$s" class="%2$sgrid-btn"><span class="' . $theme_icons[ 'grid' ][ $icon_t ] . '" aria-hidden="true"></span></a><a href="#" id="oceanwp-list" title="%3$s" class="%4$slist-btn"><span class="' . $theme_icons[ 'list' ][ $icon_t ] . '" aria-hidden="true"></span></a></nav>', esc_html( $grid_view ), esc_attr( $grid ), esc_html( $list_view ), esc_attr( $list ) );
+			$output = sprintf( '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="%1$s" class="%2$sgrid-btn">' . oceanwp_icon( 'grid', false ) . '</a><a href="#" id="oceanwp-list" title="%3$s" class="%4$slist-btn">' . oceanwp_icon( 'list', false ) . '</a></nav>', esc_html( $grid_view ), esc_attr( $grid ), esc_html( $list_view ), esc_attr( $list ) );
 
 			echo wp_kses_post( apply_filters( 'oceanwp_grid_list_buttons_output', $output ) );
 		}
@@ -1171,11 +1163,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function quick_view_button() {
 			global $product;
 
-			// Get theme icons.
-			$theme_icons = oceanwp_theme_icons();
-			$icon_t = oceanwp_theme_icon_class();
-
-			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '"><i class="' . $theme_icons[ 'eye' ][ $icon_t ] . '" aria-hidden="true"></i>' . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false, 'oceanwp' ) . '</a>';
+			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '">' . oceanwp_icon( 'eye', false) . " " . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false, 'oceanwp' ) . '</a>';
 
 			echo apply_filters( 'ocean_woo_quick_view_button_html', $button ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}

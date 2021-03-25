@@ -24,10 +24,6 @@ if ( 'quote' === get_post_format() ) {
 	return;
 }
 
-// Get theme icons.
-$theme_icons = oceanwp_theme_icons();
-$icon_t = oceanwp_theme_icon_class();
-
 // Get meta separator class.
 $sp_meta_sep_class = oceanwp_theme_single_post_separator();
 

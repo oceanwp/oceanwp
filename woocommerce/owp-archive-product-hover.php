@@ -53,17 +53,13 @@ if ( false === $ocean_woo_cond || $show_woo_cond ) {
 	do_action( 'ocean_after_archive_product_add_to_cart_inner' );
 }
 
-// Get theme icons.
-$theme_icons = oceanwp_theme_icons();
-$icon_t = oceanwp_theme_icon_class();
-
 // Wishlist button.
 if ( get_theme_mod( 'ocean_woo_quick_view', true )
 	|| ocean_woo_wishlist() ) {
 	echo '<ul class="woo-entry-buttons">';
 	do_action( 'ocean_before_archive_woo_entry_buttons' );
 	if ( get_theme_mod( 'ocean_woo_quick_view', true ) ) {
-		echo '<li class="woo-quickview-btn">' . apply_filters( 'ocean_woo_quick_view_button_html', '<a href="#" class="owp-quick-view" id="product_id_' . $product->get_id() . '" data-product_id="' . $product->get_id() . '"><i class="' . $theme_icons[ 'eye' ][ $icon_t ] . '" aria-hidden="true"></i></a>' ) . '</li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<li class="woo-quickview-btn">' . apply_filters( 'ocean_woo_quick_view_button_html', '<a href="#" class="owp-quick-view" id="product_id_' . $product->get_id() . '" data-product_id="' . $product->get_id() . '">' . oceanwp_icon( 'eye', false ) . '</i></a>' ) . '</li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	$wl_plugin = get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' );

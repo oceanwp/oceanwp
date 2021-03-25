@@ -1762,7 +1762,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 			$class = '';
 		}
 
-		// Add search item to menu
+		// Add search item to menu.
 		$items .= '<li class="search-toggle-li" ' . apply_filters( 'oceanwp_attrs_nav_search_bar', '' ) . '>';
 			if ( 'full_screen' == $header_style ) {
 				$items .= '<form method="get" action="'. esc_url( home_url( '/' ) ) .'" class="header-searchform">';
@@ -1784,12 +1784,9 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 					}
 				$items .= '</form>';
 			} else {
-				// Get theme icons.
-				$theme_icons = oceanwp_theme_icons();
-				$icon_t = oceanwp_theme_icon_class();
 
 				$items .= '<a href="javascript:void(0)" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
-					$items .= '<span class="' . $theme_icons[ 'search' ][ $icon_t ] . '" aria-hidden="true"></span>';
+					$items .= oceanwp_icon( 'search', false );
 				$items .= '</a>';
 			}
 		$items .= '</li>';
@@ -1822,7 +1819,7 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 			return;
 		}
 
-		// Get correct search icon class
+		// Get correct search icon class.
 		if ( 'drop_down' == $search_style ) {
 			$class = ' search-dropdown-toggle';
 		} elseif ( 'header_replace' == $search_style ) {
@@ -1833,14 +1830,10 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 			$class = '';
 		}
 
-		// Get theme icons.
-		$theme_icons = oceanwp_theme_icons();
-		$icon_t = oceanwp_theme_icon_class();
-
 		// Add search item to menu.
 		echo '<div id="search-toggle">';
 			echo '<a href="javascript:void(0)" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
-				echo '<span class="' . $theme_icons[ 'search' ][ $icon_t ] . '" aria-hidden="true"></span>';
+				oceanwp_icon( 'search' );
 			echo '</a>';
 		echo '</div>';
 
