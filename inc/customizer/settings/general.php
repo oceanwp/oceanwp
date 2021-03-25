@@ -3745,10 +3745,9 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				)
 			);
 
-			
 			/**
 			 * Section Theme Icons
-			 * 
+			 *
 			 * @since 2.0
 			 */
 			$wp_customize->add_section(
@@ -3766,7 +3765,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'ocean_theme_default_icons',
 				array(
-					'default'           => 'sili',
+					'default'           => 'svg',
 					'sanitize_callback' => 'oceanwp_sanitize_select',
 				)
 			);
@@ -3783,9 +3782,34 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 						'settings'    => 'ocean_theme_default_icons',
 						'priority'    => 10,
 						'choices'     => array(
-							'sili'    => esc_html__( 'Simple Line Icons', 'oceanwp' ),
-							'fai'     => esc_html__( 'Font Awesome Icons', 'oceanwp' )
+							'svg'  => esc_html__( 'Ocean SVG Icons', 'oceanwp' ),
+							'sili' => esc_html__( 'Simple Line Icons', 'oceanwp' ),
+							'fai'  => esc_html__( 'Font Awesome Icons', 'oceanwp' ),
 						),
+					)
+				)
+			);
+
+			/**
+			 * Disable OceanWP SVG Icons
+			 */
+			$wp_customize->add_setting(
+				'ocean_disable_svg_icons',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_disable_svg_icons',
+					array(
+						'label'    => esc_html__( 'Disable Ocean SVG Icons', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_theme_icons',
+						'priority' => 10,
 					)
 				)
 			);

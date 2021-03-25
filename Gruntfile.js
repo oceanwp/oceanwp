@@ -341,8 +341,8 @@ module.exports = function ( grunt ) {
 		'cssmin:prod',
 		'sass:dev',
 		'sass:prod',
-		'makepot'
-		//'svgstore:prod'
+		'makepot',
+		'svgstore:prod'
 	] );
 
 	// Production task
@@ -352,7 +352,7 @@ module.exports = function ( grunt ) {
 		'sass:prod',
 		'autoprefixer:main',
 		'makepot',
-		//'svgstore:prod',
+		'svgstore:prod',
 		'copy'
 	] );
 

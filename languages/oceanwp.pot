@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 2.0.4\n"
+"Project-Id-Version: OceanWP 2.0.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-03-25 01:33:24+00:00\n"
+"POT-Creation-Date: 2021-03-25 09:51:11+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -88,83 +88,83 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:294 inc/customizer/settings/topbar.php:40
+#: functions.php:295 inc/customizer/settings/topbar.php:40
 #: inc/customizer/settings/typography.php:109
 #: inc/third/class-beaver-themer.php:100
 msgid "Top Bar"
 msgstr ""
 
-#: functions.php:295
+#: functions.php:296
 msgid "Main"
 msgstr ""
 
-#: functions.php:296 inc/third/class-beaver-themer.php:145
+#: functions.php:297 inc/third/class-beaver-themer.php:145
 msgid "Footer"
 msgstr ""
 
-#: functions.php:297
+#: functions.php:298
 msgid "Mobile (optional)"
 msgstr ""
 
-#: functions.php:599
+#: functions.php:600
 msgid "Default Sidebar"
 msgstr ""
 
-#: functions.php:601
+#: functions.php:602
 msgid ""
 "Widgets in this area will be displayed in the left or right sidebar area if "
 "you choose the Left or Right Sidebar layout."
 msgstr ""
 
-#: functions.php:612
+#: functions.php:613
 #: inc/customizer/controls/radio-image/class-control-radio-image.php:110
 #: inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:614
+#: functions.php:615
 msgid ""
 "Widgets in this area are used in the left sidebar region if you use the "
 "Both Sidebars layout."
 msgstr ""
 
-#: functions.php:626
+#: functions.php:627
 msgid "Search Results Sidebar"
 msgstr ""
 
-#: functions.php:628
+#: functions.php:629
 msgid "Widgets in this area are used in the search result page."
 msgstr ""
 
-#: functions.php:640
+#: functions.php:641
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:642
+#: functions.php:643
 msgid "Widgets in this area are used in the first footer region."
 msgstr ""
 
-#: functions.php:653
+#: functions.php:654
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:655
+#: functions.php:656
 msgid "Widgets in this area are used in the second footer region."
 msgstr ""
 
-#: functions.php:666
+#: functions.php:667
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:668
+#: functions.php:669
 msgid "Widgets in this area are used in the third footer region."
 msgstr ""
 
-#: functions.php:679
+#: functions.php:680
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:681
+#: functions.php:682
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr ""
 
@@ -339,7 +339,7 @@ msgstr ""
 #: inc/customizer/settings/general.php:1640
 #: inc/customizer/settings/general.php:1672
 #: inc/customizer/settings/general.php:1706
-#: inc/customizer/settings/general.php:3855
+#: inc/customizer/settings/general.php:3879
 #: inc/customizer/settings/header.php:1961
 #: inc/customizer/settings/header.php:1990
 #: inc/customizer/settings/header.php:2012
@@ -2338,16 +2338,20 @@ msgid ""
 "404 error page."
 msgstr ""
 
-#: inc/customizer/settings/general.php:3757
+#: inc/customizer/settings/general.php:3756
 msgid "Theme Icons"
 msgstr ""
 
-#: inc/customizer/settings/general.php:3779
+#: inc/customizer/settings/general.php:3778
 msgid "Select Icons"
 msgstr ""
 
-#: inc/customizer/settings/general.php:3780
+#: inc/customizer/settings/general.php:3779
 msgid "Choose icons you would like to use in the theme."
+msgstr ""
+
+#: inc/customizer/settings/general.php:3785
+msgid "Ocean SVG Icons"
 msgstr ""
 
 #: inc/customizer/settings/general.php:3786
@@ -2358,15 +2362,19 @@ msgstr ""
 msgid "Font Awesome Icons"
 msgstr ""
 
-#: inc/customizer/settings/general.php:3810
+#: inc/customizer/settings/general.php:3809
+msgid "Disable Ocean SVG Icons"
+msgstr ""
+
+#: inc/customizer/settings/general.php:3834
 msgid "Blog Entries Icons: Color"
 msgstr ""
 
-#: inc/customizer/settings/general.php:3835
+#: inc/customizer/settings/general.php:3859
 msgid "Single Post Icons: Color"
 msgstr ""
 
-#: inc/customizer/settings/general.php:3893
+#: inc/customizer/settings/general.php:3917
 msgid "All Post Types"
 msgstr ""
 
@@ -4864,6 +4872,27 @@ msgstr ""
 
 #: inc/oceanwp-strings.php:67
 msgid "Submit search"
+msgstr ""
+
+#: inc/oceanwp-svg.php:54 inc/oceanwp-theme-icons.php:172
+#: inc/oceanwp-theme-icons.php:214
+msgid "Please define default parameters in the form of an array."
+msgstr ""
+
+#: inc/oceanwp-svg.php:59
+msgid "Please define an SVG icon filename."
+msgstr ""
+
+#: inc/oceanwp-theme-icons.php:127
+msgid "Please select an icon type."
+msgstr ""
+
+#: inc/oceanwp-theme-icons.php:177
+msgid "Please define an icon class."
+msgstr ""
+
+#: inc/oceanwp-theme-icons.php:227
+msgid "Please define an icon type."
 msgstr ""
 
 #: inc/plugins/class-tgm-plugin-activation.php:327
