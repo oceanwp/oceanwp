@@ -19,7 +19,7 @@ export default class Search {
 
         // Drop-Down style
         if (options.menuSearchStyle == "drop_down") {
-            DOM.search.dropdownToggleIcon.addEventListener("click", this.#onDropdownToggleIcon);
+            DOM.search.dropdownToggleIcon?.addEventListener("click", this.#onDropdownToggleIcon);
         }
 
         // Header Replace style
