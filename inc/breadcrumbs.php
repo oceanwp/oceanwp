@@ -516,7 +516,7 @@ class OceanWP_Breadcrumb_Trail {
 			$icon = oceanwp_icon( 'home', false );
 		}
 
-		// Text
+		// Text.
 		$text_class = '';
 		if ( 'icon' == $setting ) {
 			$text_class = ' has-icon';

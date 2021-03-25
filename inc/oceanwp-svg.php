@@ -153,7 +153,7 @@ function ocean_svg_icon_allowed_html() {
  *
  * @return string SVG Icon.
  */
-function ocean_svg( $icon, $title = '', $desc = '', $aria_hidden = true, $fallback = false, $echo = true ) {
+function ocean_svg( $icon, $echo = true, $title = '', $desc = '', $aria_hidden = true, $fallback = false ) {
 
 	$owp_icon = wp_kses(
 		ocean_svg_icon(

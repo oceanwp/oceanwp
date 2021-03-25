@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 2.0.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-03-25 09:51:11+00:00\n"
+"POT-Creation-Date: 2021-03-25 16:11:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -5604,42 +5604,42 @@ msgstr ""
 msgid "Post details:"
 msgstr ""
 
-#: partials/entry/meta.php:39 partials/single/meta.php:45
+#: partials/entry/meta.php:39 partials/single/meta.php:41
 msgid "Post author:"
 msgstr ""
 
-#: partials/entry/meta.php:43 partials/single/meta.php:49
+#: partials/entry/meta.php:43 partials/single/meta.php:45
 msgid "Post published:"
 msgstr ""
 
-#: partials/entry/meta.php:47 partials/single/meta.php:53
+#: partials/entry/meta.php:47 partials/single/meta.php:49
 msgid "Post last modified:"
 msgstr ""
 
-#: partials/entry/meta.php:51 partials/single/meta.php:57
+#: partials/entry/meta.php:51 partials/single/meta.php:53
 msgid "Post category:"
 msgstr ""
 
-#: partials/entry/meta.php:55 partials/single/meta.php:61
+#: partials/entry/meta.php:55 partials/single/meta.php:57
 msgid "Reading time:"
 msgstr ""
 
-#: partials/entry/meta.php:59 partials/single/meta.php:65
+#: partials/entry/meta.php:59 partials/single/meta.php:61
 msgid "Post comments:"
 msgstr ""
 
 #: partials/entry/meta.php:59 partials/entry/thumbnail-style/comments.php:21
-#: partials/single/meta.php:65
+#: partials/single/meta.php:61
 msgid "0 Comments"
 msgstr ""
 
 #: partials/entry/meta.php:59 partials/entry/thumbnail-style/comments.php:21
-#: partials/single/meta.php:65
+#: partials/single/meta.php:61
 msgid "1 Comment"
 msgstr ""
 
 #: partials/entry/meta.php:59 partials/entry/thumbnail-style/comments.php:21
-#: partials/single/meta.php:65
+#: partials/single/meta.php:61
 msgid "% Comments"
 msgstr ""
 
