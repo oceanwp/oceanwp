@@ -965,9 +965,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$list = '';
 			}
 
-			$output = sprintf( '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="%1$s" class="%2$sgrid-btn">' . oceanwp_icon( 'grid', false ) . '</a><a href="#" id="oceanwp-list" title="%3$s" class="%4$slist-btn">' . oceanwp_icon( 'list', false ) . '</a></nav>', esc_html( $grid_view ), esc_attr( $grid ), esc_html( $list_view ), esc_attr( $list ) );
+			$grid_view_icon = oceanwp_icon( 'grid', false );
+			$list_view_icon = oceanwp_icon( 'list', false );
 
-			echo wp_kses_post( apply_filters( 'oceanwp_grid_list_buttons_output', $output ) );
+			$output = '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="' . esc_html( $grid_view ) . '" class="' . esc_attr( $grid ) . ' grid-btn">' . $grid_view_icon . '</a><a href="#" id="oceanwp-list" title="' . esc_html( $list_view ) . '" class="' . esc_attr( $list ) . ' list-btn">' . $list_view_icon . '</a></nav>';
+
+			echo apply_filters( 'oceanwp_grid_list_buttons_output', $output );
 		}
 
 		/**

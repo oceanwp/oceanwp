@@ -148,6 +148,30 @@ function ocean_svg_icon_allowed_html() {
 }
 
 /**
+ * Ocean SVG print icon
+ */
+function ocean_svg_print_icon( $args = array(), $echo = true ) {
+
+	if ( empty( $args ) ) {
+		return __( 'Please define default parameters in the form of an array.', 'oceanwp' );
+	}
+
+	$icon = wp_kses( ocean_svg_icon( $args, false ), ocean_svg_icon_allowed_html() );
+
+	$icon = apply_filters( "ocean_svg_print_icon_{$icon}", $icon );
+
+	/**
+	 * Print or return icon
+	 */
+	if ( $echo ) {
+		echo $icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	} else {
+		return $icon;
+	}
+
+}
+
+/**
  * Return SVG markup.
  *
  * @param string  $icon        Icon class.

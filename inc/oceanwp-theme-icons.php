@@ -241,9 +241,9 @@ if ( ! function_exists( 'oceanwp_print_icon' ) ) {
 		if ( isset( $icon_type ) && ! empty( $icon_type ) ) {
 
 			if ( 'sili' === $icon_type || 'fai' === $icon_type ) {
-				$icon = get_ocean_icon( $args, false );
+				$icon = get_ocean_icon( $args );
 			} elseif( 'svg' === $icon_type ) {
-				$icon = wp_kses( ocean_svg_icon( $args, false ), ocean_svg_icon_allowed_html() );
+				$icon = ocean_svg_print_icon( $args, false );
 			} else {
 				return __( 'Please define an icon type.', 'oceanwp' );
 			}
