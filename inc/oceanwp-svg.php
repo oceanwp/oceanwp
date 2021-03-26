@@ -62,6 +62,7 @@ function ocean_svg_icon( $args = array(), $location = true ) {
 	// Set defaults.
 	$defaults = array(
 		'icon'        => '',
+		'class'       => '',
 		'title'       => '',
 		'desc'        => '',
 		'aria_hidden' => true,
@@ -97,8 +98,13 @@ function ocean_svg_icon( $args = array(), $location = true ) {
 		$has_icon = esc_attr( $args['icon'] );
 	}
 
+	$class = '';
+	if ( ! empty( $args['class'] ) ) {
+		$class = $args['class'];
+	}
+
 	// Add SVG markup.
-	$svg = '<svg class="owp-icon owp-icon--' . $has_icon . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
+	$svg = '<svg class="owp-icon owp-icon--' . $has_icon . ' ' . $class . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 
 	// If there is a title, display it.
 	if ( $args['title'] ) {
@@ -144,21 +150,23 @@ function ocean_svg_icon_allowed_html() {
 /**
  * Return SVG markup.
  *
- * @param string  $icon         Icon class.
- * @param string  $title        Optional SVG title.
- * @param string  $desc         Optional SVG description.
- * @param string  $aria_hidden  Optional SVG description.
- * @param boolean $fallback     Fallback icon.
- * @param boolean $echo         Print string.
+ * @param string  $icon        Icon class.
+ * @param bool    $echo        Print string.
+ * @param string  $class       Icon class.
+ * @param string  $title       Optional SVG title.
+ * @param string  $desc        Optional SVG description.
+ * @param string  $aria_hidden Optional SVG description.
+ * @param boolean $fallback    Fallback icon.
  *
  * @return string SVG Icon.
  */
-function ocean_svg( $icon, $echo = true, $title = '', $desc = '', $aria_hidden = true, $fallback = false ) {
+function ocean_svg( $icon, $echo = true, $class = '', $title = '', $desc = '', $aria_hidden = true, $fallback = false ) {
 
 	$owp_icon = wp_kses(
 		ocean_svg_icon(
 			array(
 				'icon'        => $icon,
+				'class'       => $class,
 				'title'       => $title,
 				'desc'        => $desc,
 				'area_hidden' => $aria_hidden,

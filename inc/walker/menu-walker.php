@@ -372,7 +372,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 				&& 'full_screen' != $header_style ) {
 				$element->classes[] = 'dropdown';
 				if ( true == get_theme_mod( 'ocean_menu_arrow_down', true ) ) {
-					$element->title .= ' <span class="nav-arrow fa fa-angle-down"></span>';
+					$element->title .= oceanwp_icon( 'angle_down', false, 'nav-arrow' );
 				}
 			}
 
@@ -381,9 +381,9 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 				$element->classes[] = 'dropdown';
 				if ( true == get_theme_mod( 'ocean_menu_arrow_side', true ) ) {
 					if ( is_rtl() ) {
-						$element->title .= '<span class="nav-arrow fa fa-angle-left"></span>';
+						$element->title .= oceanwp_icon( 'angle_left', false, 'nav-arrow' );
 					} else {
-						$element->title .= '<span class="nav-arrow fa fa-angle-right"></span>';
+						$element->title .= oceanwp_icon( 'angle_right', false, 'nav-arrow' );
 					}
 				}
 			}

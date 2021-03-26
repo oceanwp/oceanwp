@@ -85,20 +85,35 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'fai'  => 'far fa-eye',
 				'svg'  => 'eye',
 			),
-			'menu'     => array(
+			'menu'       => array(
 				'sili' => 'icon-menu',
 				'fai'  => 'fas fa-bars',
 				'svg'  => 'mobile-menu',
 			),
-			'grid'     => array(
+			'grid'       => array(
 				'sili' => 'icon-grid',
 				'fai'  => 'fas fa-th',
 				'svg'  => 'grid-view',
 			),
-			'list'     => array(
+			'list'       => array(
 				'sili' => 'icon-list',
 				'fai'  => 'fas fa-list',
 				'svg'  => 'list-view',
+			),
+			'angle_down' => array(
+				'sili' => 'fa fa-angle-down',
+				'fai'  => 'fa fa-angle-down',
+				'svg'  => 'small-arrow-down',
+			),
+			'angle_left' => array(
+				'sili' => 'arrow-left',
+				'fai'  => 'fa fa-angle-left',
+				'svg'  => 'small-arrow-left',
+			),
+			'angle_right' => array(
+				'sili' => 'fa fa-angle-right',
+				'fai'  => 'fa fa-angle-right',
+				'svg'  => 'small-arrow-right',
 			),
 		);
 
@@ -180,6 +195,7 @@ function get_ocean_icon( $args = array() ) {
 	// Set defaults.
 	$defaults = array(
 		'icon'        => '',
+		'class'       => '',
 		'aria_hidden' => true,
 	);
 
@@ -197,8 +213,13 @@ function get_ocean_icon( $args = array() ) {
 		$aria_hidden = ' aria-hidden="true"';
 	}
 
+	$class = '';
+	if ( ! empty( $args['class'] ) ) {
+		$class = $args['class'];
+	}
+
 	// Add SVG markup.
-	$icon_html = '<i class="' . $theme_icons[ $args['icon'] ][ $icon_class ] . '"' . $aria_hidden . ' role="img"></i>';
+	$icon_html = '<i class="' . $class . ' ' . $theme_icons[ $args['icon'] ][ $icon_class ] . '"' . $aria_hidden . ' role="img"></i>';
 
 	return $icon_html;
 }
@@ -243,14 +264,25 @@ if ( ! function_exists( 'oceanwp_print_icon' ) ) {
 
 /**
  * OceanWP icon tag
+ *
+ * @param string  $icon        Icon class.
+ * @param bool    $echo        Print string.
+ * @param string  $class       Icon class.
+ * @param string  $title       Optional SVG title.
+ * @param string  $desc        Optional SVG description.
+ * @param string  $aria_hidden Optional SVG description.
+ * @param boolean $fallback    Fallback icon.
+ *
+ * @return string OceanWP Icon.
  */
 if ( ! function_exists( 'oceanwp_icon' ) ) {
 
-	function oceanwp_icon( $icon, $echo = true, $title = '', $desc = '', $aria_hidden = true, $fallback = false ) {
+	function oceanwp_icon( $icon, $echo = true, $class = '', $title = '', $desc = '', $aria_hidden = true, $fallback = false ) {
 
 		$icon = oceanwp_print_icon(
 				array(
 					'icon'        => $icon,
+					'class'       => $class,
 					'title'       => $title,
 					'desc'        => $desc,
 					'area_hidden' => $aria_hidden,
