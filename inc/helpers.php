@@ -3290,8 +3290,8 @@ if ( ! function_exists( 'oceanwp_pagination') ) {
 	function oceanwp_pagination( $query = '', $echo = true ) {
 		
 		// Arrows with RTL support
-		$prev_arrow = is_rtl() ? 'fa fa-angle-right' : 'fa fa-angle-left';
-		$next_arrow = is_rtl() ? 'fa fa-angle-left' : 'fa fa-angle-right';
+		$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
+		$next_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
 		
 		// Get global $query
 		if ( ! $query ) {
@@ -3333,8 +3333,8 @@ if ( ! function_exists( 'oceanwp_pagination') ) {
 				'total'     => $total,
 				'mid_size'  => 3,
 				'type'      => 'list',
-				'prev_text' => '<span class="screen-reader-text">'. esc_attr__( 'Go to the previous page','oceanwp' ) .'</span><i class="'. $prev_arrow .'" aria-hidden="true"></i>',
-				'next_text' => '<span class="screen-reader-text">'. esc_attr__( 'Go to the next page','oceanwp' ) .'</span><i class="'. $next_arrow .'" aria-hidden="true"></i>',
+				'prev_text' => '<span class="screen-reader-text">'. esc_attr__( 'Go to the previous page','oceanwp' ) .'</span>'. $prev_arrow,
+				'next_text' => '<span class="screen-reader-text">'. esc_attr__( 'Go to the next page','oceanwp' ) .'</span>'. $next_arrow,
 			) );
 
 			// Output pagination
