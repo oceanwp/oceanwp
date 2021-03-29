@@ -7046,7 +7046,7 @@
 				var $child = $(".customizer-ocean_theme_blog_posts_icons_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_blog_posts_icons_color">#blog-entries ul.meta li i{ color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_blog_posts_icons_color">#blog-entries ul.meta li i{ color: ' + to + '; }, #blog-entries ul.meta li .owp-icon use{stroke: ' + to + ";}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -7061,7 +7061,7 @@
 				var $child = $(".customizer-ocean_theme_single_post_icons_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_single_post_icons_color">.single-post ul.meta li i{ color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_single_post_icons_color">.single-post ul.meta li i{ color: ' + to + '; }, .single-post ul.meta li .owp-icon use{stroke: ' + to + ";}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

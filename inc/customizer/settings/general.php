@@ -4756,11 +4756,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Blog entries meta icons color.
 			if ( ! empty( $theme_blog_icons_color ) && '#333333' != $theme_blog_icons_color ) {
 				$css .= '#blog-entries ul.meta li i{color:' . $theme_blog_icons_color . ';}';
+				$css .= '#blog-entries ul.meta li .owp-icon use{stroke:' . $theme_blog_icons_color . ';}';
 			}
 
 			// Single post meta icons color.
 			if ( ! empty( $theme_post_icons_color ) && '#333333' != $theme_post_icons_color ) {
 				$css .= '.single-post ul.meta li i{color:' . $theme_post_icons_color . ';}';
+				$css .= '.single-post ul.meta li .owp-icon use{stroke:' . $theme_post_icons_color . ';}';
 			}
 
 			// If page Both Sidebars layout.
