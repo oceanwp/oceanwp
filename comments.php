@@ -95,10 +95,13 @@ $args = array(
 		// Display comment navigation - WP 4.4.0.
 		if ( function_exists( 'the_comments_navigation' ) ) :
 
+			$prev_comm_txt = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
+			$next_comm_txt = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
+
 			the_comments_navigation(
 				array(
-					'prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i><span class="screen-reader-text">' . __( 'Previous comment', 'oceanwp' ) . '</span>' . esc_html__( 'Previous', 'oceanwp' ),
-					'next_text' => esc_html__( 'Next', 'oceanwp' ) . '<i class="fa fa-angle-right" aria-hidden="true"></i><span class="screen-reader-text">' . __( 'Next comment', 'oceanwp' ) . '</span>',
+					'prev_text' => $prev_comm_txt . '<span class="screen-reader-text">' . __( 'Previous comment', 'oceanwp' ) . '</span>' . esc_html__( 'Previous', 'oceanwp' ),
+					'next_text' => esc_html__( 'Next', 'oceanwp' ) . $next_comm_txt . '</i><span class="screen-reader-text">' . __( 'Next comment', 'oceanwp' ) . '</span>',
 				)
 			);
 
@@ -110,8 +113,8 @@ $args = array(
 				<?php
 				paginate_comments_links(
 					array(
-						'prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i><span class="screen-reader-text">' . __( 'Previous comment', 'oceanwp' ) . '</span>' . esc_html__( 'Previous', 'oceanwp' ),
-						'next_text' => esc_html__( 'Next', 'oceanwp' ) . '<i class="fa fa-angle-right" aria-hidden="true"></i><span class="screen-reader-text">' . __( 'Next comment', 'oceanwp' ) . '</span>',
+						'prev_text' => $prev_comm_txt . '</i><span class="screen-reader-text">' . __( 'Previous comment', 'oceanwp' ) . '</span>' . esc_html__( 'Previous', 'oceanwp' ),
+						'next_text' => esc_html__( 'Next', 'oceanwp' ) . $next_comm_txt . '<span class="screen-reader-text">' . __( 'Next comment', 'oceanwp' ) . '</span>',
 					)
 				);
 				?>
