@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 2.0.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-03-29 06:54:46+00:00\n"
+"POT-Creation-Date: 2021-03-29 07:15:03+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,25 +66,25 @@ msgstr ""
 msgid "This Post Has %s Comments"
 msgstr ""
 
-#: comments.php:100 comments.php:113
+#: comments.php:103 comments.php:116
 msgid "Previous comment"
 msgstr ""
 
-#: comments.php:100 comments.php:113 partials/edd/single.php:53
+#: comments.php:103 comments.php:116 partials/edd/single.php:53
 msgid "Previous"
 msgstr ""
 
-#: comments.php:101 comments.php:114 inc/woocommerce/woocommerce-config.php:782
+#: comments.php:104 comments.php:117 inc/woocommerce/woocommerce-config.php:782
 #: partials/edd/single.php:54
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "Next"
 msgstr ""
 
-#: comments.php:101 comments.php:114
+#: comments.php:104 comments.php:117
 msgid "Next comment"
 msgstr ""
 
-#: comments.php:126
+#: comments.php:129
 msgid "Comments are closed."
 msgstr ""
 
