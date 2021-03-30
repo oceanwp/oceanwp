@@ -25,7 +25,7 @@ class OverlaySearch extends SearchBase {
 
         form.classList.add("active");
         fadeIn(form);
-        form.getElementsByTagName("input")[0].focus();
+        form.querySelector('input[type="search"]').focus();
 
         setTimeout(function () {
             DOM.global.html.style.overflow = "hidden";
