@@ -7,7 +7,7 @@ export default class BlogMasonry {
     }
 
     #start = () => {
-        DOM.blogMasonryGrids.forEach((blogMasonryGrid) => {
+        DOM.blog.masonryGrids.forEach((blogMasonryGrid) => {
             imagesLoaded(blogMasonryGrid, (instance) => {
                 new Isotope(blogMasonryGrid, {
                     itemSelector: ".isotope-entry",

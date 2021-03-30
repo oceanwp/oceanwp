@@ -1,44 +1,64 @@
 export const options = oceanwpLocalize;
 
 export const DOM = {
-    WPAdminbar: document.querySelector("#wpadminbar"),
-    html: document.querySelector("html"),
-    body: document.body,
-    main: document.querySelector("#main"),
-    header: document.querySelector("#site-header"),
-    headerTopLeftSide: document.querySelector("#site-header.top-header .header-top .left"),
-    headerTopRightSide: document.querySelector("#site-header.top-header .header-top .right"),
-    nav: document.querySelector("#site-header.header-replace #site-navigation"),
-    mainMenu: document.querySelector(".main-menu"),
-    fullScreenHeader: document.querySelector("#site-header.full_screen-header"),
-    fullScreenMenu: document.querySelector("#site-header.full_screen-header #full-screen-menu"),
-    fullScreenMenuBar: document.querySelector("#site-header.full_screen-header .menu-bar"),
-    fullScreenLogo: document.querySelector("#site-logo.has-full-screen-logo"),
-    selects: document.querySelectorAll(options.customSelects),
+    global: {
+        WPAdminbar: document.querySelector("#wpadminbar"),
+        html: document.querySelector("html"),
+        body: document.body,
+        main: document.querySelector("#main"),
+        selects: document.querySelectorAll(options.customSelects),
+    },
+    header: {
+        site: document.querySelector("#site-header"),
+        fullScreen: document.querySelector("#site-header.full_screen-header"),
+        topLeftSide: document.querySelector("#site-header.top-header .header-top .left"),
+        topRightSide: document.querySelector("#site-header.top-header .header-top .right"),
+    },
+    menu: {
+        nav: document.querySelector("#site-header.header-replace #site-navigation"),
+        main: document.querySelector(".main-menu"),
+        fullScreen: {
+            menu: document.querySelector("#site-header.full_screen-header #full-screen-menu"),
+            toggleMenuBtn: document.querySelector("#site-header.full_screen-header .menu-bar"),
+            logo: document.querySelector("#site-logo.has-full-screen-logo"),
+        },
+    },
     mobileMenu: {
         nav: document.querySelector("#mobile-dropdown > nav"),
         navWrapper: document.querySelector("#mobile-dropdown"),
-        icon: document.querySelector(".mobile-menu"),
-        hamburger: document.querySelector(".mobile-menu > .hamburger"),
+        toggleMenuBtn: document.querySelector(".mobile-menu"),
+        hamburgerBtn: document.querySelector(".mobile-menu > .hamburger"),
         menuItemsHasChildren: document.querySelectorAll("#mobile-dropdown .menu-item-has-children"),
         fullScreen: document.querySelector("#mobile-fullscreen"),
     },
     search: {
         forms: document.querySelectorAll("form.header-searchform"),
-        dropdownToggleIcon: document.querySelector("a.search-dropdown-toggle"),
-        dropdownForm: document.querySelector("#searchform-dropdown"),
-        headerReplaceToggleIcon: document.querySelector("a.search-header-replace-toggle"),
-        headerReplaceCloseIcon: document.querySelector("#searchform-header-replace-close"),
-        headerReplaceForm: document.querySelector("#searchform-header-replace"),
-        overlayToggleIcon: document.querySelector("a.search-overlay-toggle"),
-        overlayCloseIcon: document.querySelector("a.search-overlay-close"),
-        overlayForm: document.querySelector("#searchform-overlay"),
+        dropDown: {
+            toggleSearchBtn: document.querySelector("a.search-dropdown-toggle"),
+            form: document.querySelector("#searchform-dropdown"),
+        },
+        headerReplace: {
+            toggleSearchBtn: document.querySelector("a.search-header-replace-toggle"),
+            closeBtn: document.querySelector("#searchform-header-replace-close"),
+            form: document.querySelector("#searchform-header-replace"),
+        },
+        overlay: {
+            toggleSearchBtn: document.querySelector("a.search-overlay-toggle"),
+            closeBtn: document.querySelector("a.search-overlay-close"),
+            form: document.querySelector("#searchform-overlay"),
+        },
     },
-    scrollTop: document.querySelector("#scroll-top"),
-    goTop: document.querySelector('a[href="#go-top"]'),
-    goTopSlash: document.querySelector('body.home a[href="/#go-top"]'),
-    blogMasonryGrids: document.querySelectorAll(".blog-masonry-grid"),
-    parallaxFooter: document.querySelector(".parallax-footer"),
+    footer: {
+        parallax: document.querySelector(".parallax-footer"),
+    },
+    scroll: {
+        scrollTop: document.querySelector("#scroll-top"),
+        goTop: document.querySelector('a[href="#go-top"]'),
+        goTopSlash: document.querySelector('body.home a[href="/#go-top"]'),
+    },
+    blog: {
+        masonryGrids: document.querySelectorAll(".blog-masonry-grid"),
+    },
 };
 
 export const DOMString = {};
