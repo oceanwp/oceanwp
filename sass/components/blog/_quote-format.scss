@@ -19,6 +19,11 @@
     font-size: 48px;
     @include opacity( 0.2 );
     z-index: -1;
+
+    svg.owp-icon {
+        width: 45px;
+        height: 45px;
+    }
 }
 
 .post-quote-author {

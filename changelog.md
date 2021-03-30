@@ -3,6 +3,7 @@
 ### *2021.04.XX.* - 2.0.5
 * **Added** - Replaced all theme Font Awesome icons with OceanWP SVG icons.
 * **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.
+* **Added** - New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon]
 * **Fixed** - Gutenberg: list block backend layout issue.
 
 ### *2021.03.25.* - 2.0.4

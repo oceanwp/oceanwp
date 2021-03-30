@@ -214,6 +214,7 @@ ul.meta li i { padding-left: 5px; padding-right: 0; }
 .blog-entry.thumbnail-entry .right-position .blog-entry-content { padding-left: 3em; padding-right: 0; }
 .blog-entry.thumbnail-entry .blog-entry-comments { float: right; }
 .blog-entry.thumbnail-entry .blog-entry-comments i { padding-left: 6px; padding-right: 0; }
+.blog-entry.thumbnail-entry .blog-entry-comments svg.owp-icon { margin-right: 0; margin-left: 0.7rem; }
 .blog-entry.thumbnail-entry .blog-entry-date { float: left; }
 
 /* Readmore button */
@@ -234,6 +235,7 @@ ul.meta li i { padding-left: 5px; padding-right: 0; }
 
 /* Related Posts */
 #related-posts time.published i { padding-left: 5px; }
+#related-posts time.published svg.owp-icon { margin-left: 0.7rem; margin-right: 0; }
 
 /* Author bio */
 #author-bio .author-bio-avatar { margin-left: 30px; margin-right: 0; }
