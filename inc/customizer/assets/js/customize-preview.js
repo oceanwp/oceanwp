@@ -3343,7 +3343,7 @@
 				var $child = $(".customizer-ocean_top_bar_social_font_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_top_bar_social_font_size">#top-bar-social li a { font-size: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_top_bar_social_font_size">#top-bar-social li a { font-size: ' + to + 'px; }, #top-bar-social li a .owp-icon{width:' + to + 'px; height:' + to + "px;}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3358,7 +3358,7 @@
 				var $child = $(".customizer-ocean_top_bar_social_tablet_font_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_top_bar_social_tablet_font_size">@media (max-width: 768px){#top-bar-social li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_top_bar_social_tablet_font_size">@media (max-width: 768px){#top-bar-social li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + 'px; }, #top-bar-social li a .owp-icon, .sidr-class-social-menu-inner ul li a .owp-icon{width:' + to + 'px; height:' + to + "px;}}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3373,7 +3373,7 @@
 				var $child = $(".customizer-ocean_top_bar_social_mobile_font_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_top_bar_social_mobile_font_size">@media (max-width: 768px){#top-bar-social li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_top_bar_social_mobile_font_size">@media (max-width: 768px){#top-bar-social li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + 'px; }, #top-bar-social li a .owp-icon, .sidr-class-social-menu-inner ul li a .owp-icon{width:' + to + 'px; height:' + to + "px;}}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3478,7 +3478,7 @@
 				var $child = $(".customizer-ocean_top_bar_social_links_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_top_bar_social_links_color">#top-bar-social li a { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_top_bar_social_links_color">#top-bar-social li a { color: ' + to + '; }, #top-bar-social li a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3493,7 +3493,7 @@
 				var $child = $(".customizer-ocean_top_bar_social_hover_links_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_top_bar_social_hover_links_color">body #top-bar #top-bar-social li a:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_top_bar_social_hover_links_color">body #top-bar #top-bar-social li a:hover { color: ' + to + '; }, #top-bar-social li a:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5538,7 +5538,7 @@
 				var $child = $(".customizer-ocean_menu_social_font_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_social_font_size">.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a { font-size: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_menu_social_font_size">.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a { font-size: ' + to + 'px; }, .oceanwp-social-menu ul li a .owp-icon{width:' + to + 'px; height:' + to + "px;}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5553,7 +5553,7 @@
 				var $child = $(".customizer-ocean_menu_social_tablet_font_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_social_tablet_font_size">@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_menu_social_tablet_font_size">@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + 'px; }, .oceanwp-social-menu ul li a .owp-icon{width:' + to + 'px; height:' + to + "px;}}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5568,7 +5568,7 @@
 				var $child = $(".customizer-ocean_menu_social_mobile_font_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_social_mobile_font_size">@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_menu_social_mobile_font_size">@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + 'px; }, .oceanwp-social-menu ul li a .owp-icon{width:' + to + 'px; height:' + to + "px;}}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

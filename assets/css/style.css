@@ -366,12 +366,12 @@ form.oceanwp-searchform button {
   vertical-align: text-bottom;
 }
 
-#owp-svg-icons g path,
-#owp-svg-icons g rect,
-#owp-svg-icons g circle,
-#owp-svg-icons g line,
-#owp-svg-icons g polygon,
-#owp-svg-icons g polyline {
+#owp-svg-icons path,
+#owp-svg-icons rect,
+#owp-svg-icons circle,
+#owp-svg-icons line,
+#owp-svg-icons polygon,
+#owp-svg-icons polyline {
   stroke: inherit;
 }
 
@@ -4598,6 +4598,14 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   color: #13aff0;
 }
 
+.oceanwp-social-menu ul li.oceanwp-tiktok a:hover {
+  color: #000000;
+}
+
+.oceanwp-social-menu ul li.oceanwp-medium a:hover {
+  color: #00ab6c;
+}
+
 .oceanwp-social-menu .colored ul li a {
   position: relative;
   display: inline-block;
@@ -4612,6 +4620,10 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 
 .oceanwp-social-menu .colored ul li a:hover {
   color: #fff;
+}
+
+.oceanwp-social-menu .colored ul li a .owp-icon use {
+  stroke: #fff;
 }
 
 .oceanwp-social-menu .colored ul li.oceanwp-twitter a {
@@ -4774,6 +4786,22 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   background-color: #0f8dc2;
 }
 
+.oceanwp-social-menu .colored ul li.oceanwp-tiktok a {
+  background-color: #000000;
+}
+
+.oceanwp-social-menu .colored ul li.oceanwp-tiktok a:hover {
+  background-color: #141414;
+}
+
+.oceanwp-social-menu .colored ul li.oceanwp-medium a {
+  background-color: #00ab6c;
+}
+
+.oceanwp-social-menu .colored ul li.oceanwp-medium a:hover {
+  background-color: #03945f;
+}
+
 .oceanwp-social-menu .minimal ul li a {
   position: relative;
   display: inline-block;
@@ -4892,6 +4920,16 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   border-color: #13aff0;
 }
 
+.oceanwp-social-menu .minimal ul li.oceanwp-tiktok a:hover {
+  color: #000000;
+  border-color: #000000;
+}
+
+.oceanwp-social-menu .minimal ul li.oceanwp-medium a:hover {
+  color: #00ab6c;
+  border-color: #00ab6c;
+}
+
 .oceanwp-social-menu .dark ul li a {
   position: relative;
   display: inline-block;
@@ -4908,6 +4946,10 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .oceanwp-social-menu .dark ul li a:hover {
   background-color: #000;
   color: #fff;
+}
+
+.oceanwp-social-menu .dark ul li a .owp-icon use {
+  stroke: #fff;
 }
 
 /*------------------------------------*

@@ -115,6 +115,113 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'fai'  => 'fa fa-angle-right',
 				'svg'  => 'small-arrow-right',
 			),
+
+			// Social icons.
+			'twitter'     => array(
+				'sili' => 'fab fa-twitter',
+				'fai'  => 'fab fa-twitter',
+				'svg'  => 'twitter',
+			),
+			'facebook'    => array(
+				'sili' => 'fab fa-facebook',
+				'fai'  => 'fab fa-facebook',
+				'svg'  => 'facebook',
+			),
+			'pinterest'     => array(
+				'sili' => 'fab fa-pinterest-p',
+				'fai'  => 'fab fa-pinterest-p',
+				'svg'  => 'pinterest',
+			),
+			'dribbble'     => array(
+				'sili' => 'fab fa-dribbble',
+				'fai'  => 'fab fa-dribbble',
+				'svg'  => 'dribbble',
+			),
+			'vk'         => array(
+				'sili' => 'fab fa-vk',
+				'fai'  => 'fab fa-vk',
+				'svg'  => 'vkontakte',
+			),
+			'instagram'     => array(
+				'sili' => 'fab fa-instagram',
+				'fai'  => 'fab fa-instagram',
+				'svg'  => 'instagram',
+			),
+			'linkedin'     => array(
+				'sili' => 'fab fa-linkedin',
+				'fai'  => 'fab fa-linkedin',
+				'svg'  => 'linkedin',
+			),
+			'tumblr'     => array(
+				'sili' => 'fab fa-tumblr',
+				'fai'  => 'fab fa-tumblr',
+				'svg'  => 'tumblr',
+			),
+			'github'     => array(
+				'sili' => 'fab fa-github-alt',
+				'fai'  => 'fab fa-github-alt',
+				'svg'  => 'github',
+			),
+			'flickr'     => array(
+				'sili' => 'fab fa-flickr',
+				'fai'  => 'fab fa-flickr',
+				'svg'  => 'flickr',
+			),
+			'skype'     => array(
+				'sili' => 'fab fa-skype',
+				'fai'  => 'fab fa-skype',
+				'svg'  => 'skype',
+			),
+			'youtube'     => array(
+				'sili' => 'fab fa-youtube',
+				'fai'  => 'fab fa-youtube',
+				'svg'  => 'youtube',
+			),
+			'vimeo'     => array(
+				'sili' => 'fab fa-vimeo-square',
+				'fai'  => 'fab fa-vimeo-square',
+				'svg'  => 'vimeo',
+			),
+			'vine'     => array(
+				'sili' => 'fab fa-vine',
+				'fai'  => 'fab fa-vine',
+				'svg'  => 'vine',
+			),
+			'xing'     => array(
+				'sili' => 'fab fa-xing',
+				'fai'  => 'fab fa-xing',
+				'svg'  => 'xing',
+			),
+			'yelp'     => array(
+				'sili' => 'fab fa-yelp',
+				'fai'  => 'fab fa-yelp',
+				'svg'  => 'yelp',
+			),
+			'tripadvisor'     => array(
+				'sili' => 'fab fa-tripadvisor',
+				'fai'  => 'fab fa-tripadvisor',
+				'svg'  => 'tripadvisor',
+			),
+			'rss'     => array(
+				'sili' => 'fa fa-rss',
+				'fai'  => 'fa fa-rss',
+				'svg'  => 'rss',
+			),
+			'envelope'     => array(
+				'sili' => 'fa fa-envelope',
+				'fai'  => 'fa fa-envelope',
+				'svg'  => 'gmail',
+			),
+			'tiktok'     => array(
+				'sili' => 'fab fa-tiktok',
+				'fai'  => 'fab fa-tiktok',
+				'svg'  => 'tiktok',
+			),
+			'medium'     => array(
+				'sili' => 'fab fa-medium-m',
+				'fai'  => 'fab fa-medium-m',
+				'svg'  => 'medium',
+			),
 		);
 
 		return apply_filters( 'oceanwp_theme_icons', $oceanwp_theme_icons );

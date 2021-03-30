@@ -654,16 +654,17 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			// Add top bar social font size
 			if ( ! empty( $social_font_size ) && '14' != $social_font_size ) {
 				$css .= '#top-bar-social li a{font-size:'. $social_font_size .'px;}';
+				$css .= '#top-bar-social li a .owp-icon{width:'. $social_font_size .'px; height:'. $social_font_size .'px;}';
 			}
 
 			// Add top bar social tablet font size
 			if ( ! empty( $social_tablet_font_size ) ) {
-				$css .= '@media (max-width: 768px){#top-bar-social li a{font-size:'. $social_tablet_font_size .'px;}}';
+				$css .= '@media (max-width: 768px){#top-bar-social li a{font-size:'. $social_tablet_font_size .'px;}, #top-bar-social li a .owp-icon{width:'. $social_tablet_font_size .'px; height:'. $social_tablet_font_size .'px;}}';
 			}
 
 			// Add top bar social mobile font size
 			if ( ! empty( $social_mobile_font_size ) ) {
-				$css .= '@media (max-width: 480px){#top-bar-social li a{font-size:'. $social_mobile_font_size .'px;}}';
+				$css .= '@media (max-width: 480px){#top-bar-social li a{font-size:'. $social_mobile_font_size .'px;}, #top-bar-social li a .owp-icon{width:'. $social_mobile_font_size .'px; height:'. $social_mobile_font_size .'px;}}';
 			}
 
 			// Top bar padding
@@ -687,11 +688,13 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			// Top bar social link color
 			if ( ! empty( $social_links_color ) && '#bbbbbb' != $social_links_color ) {
 				$css .= '#top-bar-social li a{color:'. $social_links_color .';}';
+				$css .= '#top-bar-social li a .owp-icon use{stroke:'. $social_links_color .';}';
 			}
 
 			// Top bar social link color hover
 			if ( ! empty( $social_hover_links_color ) ) {
 				$css .= '#top-bar-social li a:hover{color:'. $social_hover_links_color .'!important;}';
+				$css .= '#top-bar-social li a:hover .owp-icon use{stroke:'. $social_hover_links_color .';}';
 			}
 				
 			// Return CSS
