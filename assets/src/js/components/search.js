@@ -8,14 +8,18 @@ export default class Search {
     }
 
     #start = () => {
-        if (DOM.search.input?.value) {
-            DOM.search.form?.classList.add("search-filled");
-        }
+        DOM.search.forms.forEach((form) => {
+            if (form.querySelector("input")?.value) {
+                form.classList.add("search-filled");
+            }
+        });
     };
 
     #setupEventListeners = () => {
-        DOM.search.input?.addEventListener("keyup", this.#onInputKeyup);
-        DOM.search.input?.addEventListener("blur", this.#onInputBlur);
+        DOM.search.forms.forEach((form) => {
+            form.querySelector("input")?.addEventListener("keyup", this.#onInputKeyup);
+            form.querySelector("input")?.addEventListener("blur", this.#onInputKeyup);
+        });
 
         // Drop-Down style
         if (options.menuSearchStyle == "drop_down") {
@@ -24,8 +28,8 @@ export default class Search {
 
         // Header Replace style
         if (options.menuSearchStyle == "header_replace") {
-            DOM.search.headerReplaceToggleIcon.addEventListener("click", this.#onHeaderReplaceToggleIcon);
-            DOM.search.headerReplaceCloseIcon.addEventListener("click", this.#onHeaderReplaceCloseIcon);
+            DOM.search.headerReplaceToggleIcon?.addEventListener("click", this.#onHeaderReplaceToggleIcon);
+            DOM.search.headerReplaceCloseIcon?.addEventListener("click", this.#onHeaderReplaceCloseIcon);
         }
 
         // Overlay style
@@ -41,15 +45,14 @@ export default class Search {
     };
 
     #onInputKeyup = (event) => {
-        if (DOM.search.input.value) {
-            DOM.search.form.classList.add("search-filled");
-        } else {
-            DOM.search.form.classList.remove("search-filled");
-        }
-    };
+        const input = event.currentTarget;
+        const form = input.closest("form.header-searchform");
 
-    #onInputBlur = (event) => {
-        this.#onInputKeyup();
+        if (input.value) {
+            form.classList.add("search-filled");
+        } else {
+            form.classList.remove("search-filled");
+        }
     };
 
     #onDropdownToggleIcon = (event) => {
@@ -74,11 +77,14 @@ export default class Search {
 
         if (this.#hasTopHeader()) {
             DOM.headerTopLeftSide.classList.toggle("hide");
-            DOM.headerTopRighttSide.classList.toggle("hide");
+            DOM.headerTopRightSide.classList.toggle("hide");
         } else {
+            if (!DOM.nav.classList.contains("hide")) {
+                DOM.mainMenu.style.minWidth = "370px";
+            }
             DOM.nav.classList.toggle("hide");
             form.style.maxWidth =
-                document.querySelector("#site-navigation > ul.dropdown-menu")?.offsetWidth + 60;
+                document.querySelector("#site-navigation > ul.dropdown-menu")?.offsetWidth + 60 + "px";
         }
 
         this.#focus(form, 'input[type="search"]');
@@ -93,9 +99,12 @@ export default class Search {
 
         if (this.#hasTopHeader()) {
             DOM.headerTopLeftSide.classList.remove("hide");
-            DOM.headerTopRighttSide.classList.remove("hide");
+            DOM.headerTopRightSide.classList.remove("hide");
         } else {
             DOM.nav.classList.remove("hide");
+            setTimeout(() => {
+                DOM.mainMenu.style.minWidth = "";
+            }, 250);
         }
     };
 
@@ -139,7 +148,7 @@ export default class Search {
 
             if (this.#hasTopHeader()) {
                 DOM.headerTopLeftSide?.classList.remove("hide");
-                DOM.headerTopRighttSide?.classList.remove("hide");
+                DOM.headerTopRightSide?.classList.remove("hide");
             } else {
                 DOM.nav?.classList.remove("hide");
             }

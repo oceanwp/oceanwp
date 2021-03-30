@@ -6,6 +6,8 @@ export default class MobileMenu {
     #menuItemsToggleIcon;
 
     constructor() {
+        this.#start();
+
         if (DOM.body.classList.contains("dropdown-mobile")) {
             this.#dropdownMenuStart();
             this.#dropdownMenuSetupEventListeners();
@@ -16,6 +18,8 @@ export default class MobileMenu {
             this.#fullScreenMenuSetupEventListeners();
         }
     }
+
+    #start = () => {};
 
     #dropdownMenuStart = () => {
         this.#isMenuOpen = false;
@@ -64,7 +68,7 @@ export default class MobileMenu {
 
     #fullScreenMenuStart = () => {
         DOM.mobileMenu.fullScreen.querySelectorAll(".menu-item-has-children > a").forEach((menuItemLink) => {
-            menuItemLink.insertAdjacentHTML("beforeend", '<span class="dropdown-toggle"></span>');
+            menuItemLink.insertAdjacentHTML("beforeend", '<span class="dropdown-toggle" tabindex=0></span>');
         });
     };
 
@@ -89,6 +93,8 @@ export default class MobileMenu {
             .forEach((menuItemLink) => {
                 menuItemLink.addEventListener("click", this.#onFullScreenCloseIconClick);
             });
+
+        document.addEventListener("keydown", this.#onDocumentKeydown);
     };
 
     #onMenuIconClick = (event) => {
@@ -147,37 +153,13 @@ export default class MobileMenu {
         }
     };
 
-    #onDocumentKeydown = (event) => {
-        const tabKey = event.keyCode === 9;
-        const shiftKey = event.shiftKey;
-        const mobileMenuCloseIcon = document.querySelector(".mobile-menu.opened");
-        const mobileMenuElements = DOM.mobileMenu.nav.querySelectorAll("input, a, button");
-        const mobileMenuFirstElement = mobileMenuElements[0];
-        const mobileMenuLastElement = mobileMenuElements[mobileMenuElements.length - 1];
-
-        if (!shiftKey && tabKey && mobileMenuLastElement === document.activeElement) {
-            event.preventDefault();
-            mobileMenuCloseIcon.focus();
-        }
-
-        if (shiftKey && tabKey && mobileMenuFirstElement === document.activeElement) {
-            event.preventDefault();
-            mobileMenuCloseIcon.focus();
-        }
-
-        if (shiftKey && tabKey && mobileMenuCloseIcon === document.activeElement) {
-            event.preventDefault();
-            mobileMenuLastElement.focus();
-        }
-    };
-
     #onFullScreenMenuItemClick = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
         DOM.mobileMenu.icon.classList.add("exit");
         DOM.mobileMenu.fullScreen.classList.add("active");
-        DOM.mobileMenu.hamburger.classList.add("is-active");
+        DOM.mobileMenu.hamburger?.classList.add("is-active");
 
         fadeIn(DOM.mobileMenu.fullScreen);
 
@@ -185,6 +167,8 @@ export default class MobileMenu {
         DOM.html.style.overflow = "hidden";
         const htmlWidthAfterOverflowHidden = DOM.html.innerWidth;
         DOM.html.style.marginRight = htmlWidthAfterOverflowHidden - htmlWidthBeforeOverflowHidden + "px";
+
+        DOM.mobileMenu.fullScreen.querySelector("a.close").focus();
     };
 
     #onFullScreenCloseIconClick = (event) => {
@@ -210,7 +194,7 @@ export default class MobileMenu {
             slideUp(subMenu, 200);
         });
 
-        DOM.mobileMenu.hamburger.classList.remove("is-active");
+        DOM.mobileMenu.hamburger?.classList.remove("is-active");
     };
 
     #onFullScreenDropownToggleIcon = (event) => {
@@ -233,6 +217,58 @@ export default class MobileMenu {
     #onFullScreenWindowResize = (event) => {
         if (window.innerWidth >= 960) {
             this.#closeFullScreenMenu();
+        }
+    };
+
+    /**
+     * Trap keyboard navigation in the menu modal.
+     */
+    #onDocumentKeydown = (event) => {
+        if (!DOM.mobileMenu.fullScreen?.classList.contains("active")) {
+            return;
+        }
+
+        const tabKey = event.keyCode === 9;
+        const shiftKey = event.shiftKey;
+        const escKey = event.keyCode === 27;
+        const enterKey = event.keyCode === 13;
+
+        const closeIcon = DOM.mobileMenu.fullScreen.querySelector("a.close");
+
+        const navElements = DOM.mobileMenu.fullScreen
+            .querySelector("nav")
+            .querySelectorAll("a, span.dropdown-toggle, input, button");
+
+        const navFirstElement = navElements[0];
+        const navLastElement = navElements[navElements.length - 1];
+
+        closeIcon.style.outline = "";
+
+        if (escKey) {
+            event.preventDefault();
+            this.#closeFullScreenMenu();
+        }
+
+        if (enterKey && document.activeElement.classList.contains("dropdown-toggle")) {
+            event.preventDefault();
+            document.activeElement.click();
+        }
+
+        if (!shiftKey && tabKey && navLastElement === document.activeElement) {
+            event.preventDefault();
+            closeIcon.style.outline = "1px dashed rgba(255, 255, 255, 0.6)";
+            closeIcon.focus();
+        }
+
+        if (shiftKey && tabKey && navFirstElement === document.activeElement) {
+            event.preventDefault();
+            closeIcon.style.outline = "1px dashed rgba(255, 255, 255, 0.6)";
+            closeIcon.focus();
+        }
+
+        // If there are no elements in the menu, don't move the focus
+        if (tabKey && navFirstElement === navLastElement) {
+            event.preventDefault();
         }
     };
 }

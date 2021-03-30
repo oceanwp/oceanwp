@@ -9,6 +9,7 @@ export const DOM = {
     headerTopLeftSide: document.querySelector("#site-header.top-header .header-top .left"),
     headerTopRightSide: document.querySelector("#site-header.top-header .header-top .right"),
     nav: document.querySelector("#site-header.header-replace #site-navigation"),
+    mainMenu: document.querySelector(".main-menu"),
     fullScreenHeader: document.querySelector("#site-header.full_screen-header"),
     fullScreenMenu: document.querySelector("#site-header.full_screen-header #full-screen-menu"),
     fullScreenMenuBar: document.querySelector("#site-header.full_screen-header .menu-bar"),
@@ -23,8 +24,7 @@ export const DOM = {
         fullScreen: document.querySelector("#mobile-fullscreen"),
     },
     search: {
-        form: document.querySelector("form.header-searchform"),
-        input: document.querySelector("form.header-searchform input"),
+        forms: document.querySelectorAll("form.header-searchform"),
         dropdownToggleIcon: document.querySelector("a.search-dropdown-toggle"),
         dropdownForm: document.querySelector("#searchform-dropdown"),
         headerReplaceToggleIcon: document.querySelector("a.search-header-replace-toggle"),

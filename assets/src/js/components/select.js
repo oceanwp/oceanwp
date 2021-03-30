@@ -53,6 +53,7 @@ export default class Select {
 
     #setupEventListeners = () => {
         document.addEventListener("DOMContentLoaded", this.#onDocumentReady);
+        window.addEventListener("resize", this.#onDocumentReady);
     };
 
     #onDocumentReady = (event) => {
