@@ -11,6 +11,7 @@ export const DOM = {
     header: {
         site: document.querySelector("#site-header"),
         fullScreen: document.querySelector("#site-header.full_screen-header"),
+        topbar: document.querySelector("#top-bar"),
         topLeftSide: document.querySelector("#site-header.top-header .header-top .left"),
         topRightSide: document.querySelector("#site-header.top-header .header-top .right"),
     },
@@ -21,6 +22,11 @@ export const DOM = {
             menu: document.querySelector("#site-header.full_screen-header #full-screen-menu"),
             toggleMenuBtn: document.querySelector("#site-header.full_screen-header .menu-bar"),
             logo: document.querySelector("#site-logo.has-full-screen-logo"),
+        },
+        mega: {
+            menuItems: document.querySelectorAll("#site-navigation .megamenu-li.full-mega"),
+            topbarMenuItems: document.querySelectorAll("#top-bar-nav .megamenu-li.full-mega"),
+            menuContents: document.querySelectorAll(".navigation .megamenu-li.auto-mega .megamenu"),
         },
     },
     mobileMenu: {

@@ -101,3 +101,17 @@ export const fadeOut = (element) => {
         }
     })();
 };
+
+export const offset = (element) => {
+    if (!element.getClientRects().length) {
+        return { top: 0, left: 0 };
+    }
+
+    // Get document-relative position by adding viewport scroll to viewport-relative gBCR
+    const rect = element.getBoundingClientRect();
+    const win = element.ownerDocument.defaultView;
+    return {
+        top: rect.top + win.pageYOffset,
+        left: rect.left + win.pageXOffset,
+    };
+};

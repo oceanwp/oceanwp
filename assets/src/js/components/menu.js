@@ -1,4 +1,5 @@
 import FullScreenMenu from "./menu/full-screen";
+import MegaMenu from "./menu/mega";
 
 class Menu {
     constructor() {
@@ -8,6 +9,7 @@ class Menu {
 
     #start = () => {
         this.fullScreen = new FullScreenMenu();
+        this.mega = new MegaMenu();
     };
 
     #setupEventListeners = () => {
