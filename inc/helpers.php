@@ -3288,11 +3288,16 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 if ( ! function_exists( 'oceanwp_pagination') ) {
 
 	function oceanwp_pagination( $query = '', $echo = true ) {
-		
+
 		// Arrows with RTL support
-		$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
-		$next_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
-		
+		if ( $echo ) {
+			$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
+			$next_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
+		} else {
+			$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_right' ) : oceanwp_icon( 'angle_left' );
+			$next_arrow = is_rtl() ? oceanwp_icon( 'angle_left' ) : oceanwp_icon( 'angle_right' );
+		}
+
 		// Get global $query
 		if ( ! $query ) {
 			global $wp_query;
@@ -3339,9 +3344,9 @@ if ( ! function_exists( 'oceanwp_pagination') ) {
 
 			// Output pagination
 			if ( $echo ) {
-				echo '<div class="oceanwp-pagination clr">'. wp_kses_post( paginate_links( $args ) ) .'</div>';
+				echo '<div class="oceanwp-pagination clr">'. paginate_links( $args ) .'</div>';
 			} else {
-				return '<div class="oceanwp-pagination clr">'. wp_kses_post( paginate_links( $args ) ) .'</div>';
+				return '<div class="oceanwp-pagination clr">'. paginate_links( $args ) .'</div>';
 			}
 		}
 	}
