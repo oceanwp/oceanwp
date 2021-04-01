@@ -80,6 +80,11 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'fai'  => 'fas fa-times-circle',
 				'svg'  => 'close',
 			),
+			'close_x'  => array(
+				'sili' => 'icon-close',
+				'fai'  => 'fas fa-times',
+				'svg'  => 'close',
+			),
 			'eye'      => array(
 				'sili' => 'icon-eye',
 				'fai'  => 'far fa-eye',

@@ -8666,6 +8666,10 @@ a.sidr-class-toggle-sidr-close i {
   vertical-align: bottom;
 }
 
+a.sidr-class-toggle-sidr-close .owp-icon {
+  margin-right: 8px;
+}
+
 .sidr-class-dropdown-menu ul,
 .sidr-class-fs-dropdown-menu ul {
   display: none;
