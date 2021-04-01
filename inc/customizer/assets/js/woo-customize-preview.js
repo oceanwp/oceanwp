@@ -2279,7 +2279,7 @@
             var $child = $(".customizer-ocean_single_product_navigation_color");
             if (to) {
                 /** @type {string} */
-                var img = '<style class="customizer-ocean_single_product_navigation_color">.owp-product-nav li a.owp-nav-link{ color: ' + to + "; }</style>";
+                var img = '<style class="customizer-ocean_single_product_navigation_color">.owp-product-nav li a.owp-nav-link{ color: ' + to + '; } .owp-product-nav li a.owp-nav-link .owp-icon use{ stroke: ' + to + "; }</style>";
                 if ($child.length) {
                     $child.replaceWith(img);
                 } else {
@@ -2294,7 +2294,7 @@
             var $child = $(".customizer-ocean_single_product_navigation_hover_color");
             if (to) {
                 /** @type {string} */
-                var img = '<style class="customizer-ocean_single_product_navigation_hover_color">.owp-product-nav li a.owp-nav-link:hover{ color: ' + to + "; }</style>";
+                var img = '<style class="customizer-ocean_single_product_navigation_hover_color">.owp-product-nav li a.owp-nav-link:hover{ color: ' + to + '; } .owp-product-nav li a.owp-nav-link:hover .owp-icon use{ stroke: ' + to + "; }</style>";
                 if ($child.length) {
                     $child.replaceWith(img);
                 } else {

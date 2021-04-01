@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 2.0.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-04-01 07:06:31+00:00\n"
+"POT-Creation-Date: 2021-04-01 08:06:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4413,7 +4413,7 @@ msgstr ""
 msgid "EDD Sidebar"
 msgstr ""
 
-#: inc/edd/edd-config.php:392 inc/woocommerce/woocommerce-config.php:1958
+#: inc/edd/edd-config.php:392 inc/woocommerce/woocommerce-config.php:1959
 msgid "Your cart"
 msgstr ""
 
@@ -5503,94 +5503,94 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2081
+#: inc/woocommerce/woocommerce-config.php:2082
 msgid "%s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2085
+#: inc/woocommerce/woocommerce-config.php:2086
 msgid "Sale!"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2122
+#: inc/woocommerce/woocommerce-config.php:2123
 #: woocommerce/checkout/checkout-timeline.php:43
 msgid "Login"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2135
+#: inc/woocommerce/woocommerce-config.php:2136
 msgid "Or"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2137
+#: inc/woocommerce/woocommerce-config.php:2138
 msgid "Register"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2259
+#: inc/woocommerce/woocommerce-config.php:2260
 #. translators: %s: field name
 msgid "Shipping %s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2263
+#: inc/woocommerce/woocommerce-config.php:2264
 #. translators: %s: field name
 msgid "Billing %s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2272
+#: inc/woocommerce/woocommerce-config.php:2273
 msgid "%s is not a valid postcode / ZIP."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2281
+#: inc/woocommerce/woocommerce-config.php:2282
 #. translators: %s: phone number
 msgid "%s is not a valid phone number."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2290
+#: inc/woocommerce/woocommerce-config.php:2291
 #. translators: %s: email address
 msgid "%s is not a valid email address."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2310
+#: inc/woocommerce/woocommerce-config.php:2311
 #. translators: 1: state field 2: valid states
 msgid "%1$s is not valid. Please enter one of the following: %2$s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2317
+#: inc/woocommerce/woocommerce-config.php:2318
 #. translators: %s: field name
 msgid "%s is a required field."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2404
+#: inc/woocommerce/woocommerce-config.php:2405
 msgid "WooCommerce Product Title"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2415
+#: inc/woocommerce/woocommerce-config.php:2416
 msgid "WooCommerce Product Price"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2425
+#: inc/woocommerce/woocommerce-config.php:2426
 msgid "WooCommerce Product Add To Cart"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2437
+#: inc/woocommerce/woocommerce-config.php:2438
 msgid "WooCommerce Product Notice"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2450
+#: inc/woocommerce/woocommerce-config.php:2451
 msgid "WooCommerce Archive Title"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2461
+#: inc/woocommerce/woocommerce-config.php:2462
 msgid "WooCommerce Archive Category"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2472
+#: inc/woocommerce/woocommerce-config.php:2473
 msgid "WooCommerce Archive Price"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2483
+#: inc/woocommerce/woocommerce-config.php:2484
 msgid "WooCommerce Archive Add To Cart"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2494
+#: inc/woocommerce/woocommerce-config.php:2495
 msgid "WooCommerce Archive Notice"
 msgstr ""
 

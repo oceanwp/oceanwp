@@ -1250,11 +1250,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				<ul class="owp-product-nav">
 			        <?php
 					if ( is_a( $prev_post , 'WP_Post' ) ) {
-						$next_arrow = is_rtl() ? oceanwp_icon( 'angle_right' ) : oceanwp_icon( 'angle_left' );
+						$next_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
 						?>
 
 						<li class="prev-li">
-						<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><?php $next_arrow; ?></a>
+						<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><?php echo $next_arrow; ?></a>
 							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', 'oceanwp' ); ?></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
@@ -1265,12 +1265,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					} 
 
 			        if ( is_a( $next_post , 'WP_Post' ) ) {
-						$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_left' ) : oceanwp_icon( 'angle_right' );
+						$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
 						?>
 
 						<li class="next-li">
 							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product', 'oceanwp' ); ?></a>
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><?php $prev_arrow; ?></i></a>
+							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><?php echo $prev_arrow; ?></i></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 							</div>
@@ -1570,12 +1570,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function pagination_args( $args ) {
 
 			// Nav icons.
-			$p_arrow = is_rtl() ? oceanwp_icon( 'angle_right' ) : oceanwp_icon( 'angle_left' );
-			$n_arrow = is_rtl() ? oceanwp_icon( 'angle_left' ) : oceanwp_icon( 'angle_right' );
+			$p_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
+			$n_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
 
 			// Args.
 			$args['prev_text'] = $p_arrow;
 			$args['next_text'] = $n_arrow;
+
 			return $args;
 		}
 
