@@ -5541,6 +5541,12 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   padding-right: 5px;
 }
 
+.navigation li.mega-cat ul li .mega-post-date svg.owp-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.7rem;
+}
+
 .navigation > ul > li.mega-cat > ul.megamenu.sub-menu > li.first {
   border-left: 0;
 }
@@ -6627,6 +6633,10 @@ body.breadcrumbs-position-default .page-header-title {
   margin-left: 8px;
 }
 
+.blog-entry.large-entry .blog-entry-readmore a svg.owp-icon {
+  margin-left: 0.7rem;
+}
+
 .has-blog-grid .blog-grid {
   display: -ms-flexbox;
   display: flex;
@@ -6678,6 +6688,10 @@ body.breadcrumbs-position-default .page-header-title {
 
 .blog-entry.grid-entry .blog-entry-readmore a i {
   margin-left: 0.5rem;
+}
+
+.blog-entry.grid-entry .blog-entry-readmore a svg.owp-icon {
+  margin-left: 0.7rem;
 }
 
 .blog-entry.thumbnail-entry {
@@ -6801,6 +6815,12 @@ body.breadcrumbs-position-default .page-header-title {
   color: #333;
 }
 
+.blog-entry.thumbnail-entry .blog-entry-comments svg.owp-icon {
+  width: 17px;
+  height: 17px;
+  margin-right: 0.7rem;
+}
+
 .blog-entry.thumbnail-entry .blog-entry-date {
   float: right;
 }
@@ -6886,6 +6906,11 @@ ul.meta li .owp-icon {
   margin-right: 8px;
 }
 
+ul.meta li svg.owp-icon {
+  width: 18px;
+  height: 18px;
+}
+
 ul.meta li .owp-sep {
   padding: 0 5px;
 }
@@ -6922,6 +6947,11 @@ ul.obem-none li:after {
 
 .single-post ul.meta li .owp-icon {
   margin-right: 8px;
+}
+
+.single-post ul.meta li svg.owp-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .single-post ul.ospm-default li:after {
@@ -6998,6 +7028,11 @@ ul.obem-none li:after {
   transition: all 0.3s ease;
 }
 
+.link-entry svg.owp-icon {
+  width: 50px;
+  height: 50px;
+}
+
 .thumbnail:hover i {
   background-color: #13aff0;
 }
@@ -7025,6 +7060,11 @@ ul.obem-none li:after {
   -webkit-opacity: 0.2;
   opacity: 0.2;
   z-index: -1;
+}
+
+.post-quote-icon svg.owp-icon {
+  width: 45px;
+  height: 45px;
 }
 
 .post-quote-author {
@@ -7490,6 +7530,12 @@ time.published {
 
 time.published i {
   padding-right: 5px;
+}
+
+time.published svg.owp-icon {
+  width: 17px;
+  height: 17px;
+  margin-right: 0.7rem;
 }
 
 /*------------------------------------*
