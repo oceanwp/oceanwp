@@ -896,6 +896,7 @@ final class OCEANWP_Theme_Class {
 			array(
 				'vimeo.com',
 				'youtube.com',
+				'youtu.be',
 				'blip.tv',
 				'money.cnn.com',
 				'dailymotion.com',
