@@ -7028,13 +7028,26 @@ ul.obem-none li:after {
   transition: all 0.3s ease;
 }
 
-.link-entry svg.owp-icon {
-  width: 50px;
-  height: 50px;
-}
-
 .thumbnail:hover i {
   background-color: #13aff0;
+}
+
+.link-post-svg-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #333;
+  text-align: center;
+  padding-top: 18px;
+}
+
+.link-post-svg-icon .owp-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.link-post-svg-icon .owp-icon use {
+  stroke: #fff;
 }
 
 /**

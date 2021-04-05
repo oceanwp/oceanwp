@@ -69,13 +69,48 @@ function oceanwpWooMultiStepCheckout() {
 
         timeline.find( '.active' ).removeClass( 'active' );
 
-            if ( action == 'next' ) {
-                form_actions.data( 'step', next_step );
-                steps[current_step].fadeOut( 120, function() {
-                    steps[next_step].fadeIn( 120 );
-                } );
+                if ( action == 'next' ) {
 
-                $j( '#timeline-' + next_step ).toggleClass( 'active' );
+                var inputField   = $j( '#customer_billing_details p.validate-required input, #customer_billing_details p.validate-required select' );
+
+                inputField.filter(function() {
+
+                    if ( '' == $j( this ).val() ) {
+                        $j( this ).css(
+                            'border-color', '#ff0000'
+                        );
+                    } else {
+                        $j( this ).css(
+                            'border-color', ''
+                        );
+                    }
+                });
+
+                if ( 0 === inputField.filter(function() {
+                        return ! this.value;
+                    }).length ) {
+
+                    form_actions.data( 'step', next_step );
+
+                    steps[current_step].fadeOut( 120, function() {
+                        steps[next_step].fadeIn( 120 );
+                    } );
+
+                    $j( '#timeline-' + next_step ).toggleClass( 'active' );
+
+                    $j( checkout_form ).find( '.ocean-multistep-error-notice' ).remove();
+
+                } else {
+
+                    $j(window).scrollTop( $j( '#content-wrap' ).offset().top );
+
+                    $j( checkout_form ).prepend( '<div class="ocean-multistep-error-notice"><ul class="woocommerce-error" role="alert"></ul></div>' );
+                    $j( '.ocean-multistep-error-notice' ).html( '<ul class="woocommerce-error" role="alert">' );
+                    $j( '.woocommerce-error' ).prepend( '<li >' + oceanwpLocalize.multistep_checkout_error + '</li>' );
+
+                    $j( '#timeline-' + current_step ).addClass( 'active' );
+                }
+
             } else if ( action == 'prev' ) {
                 form_actions.data( 'step', prev_step );
                 steps[current_step].fadeOut( 120, function() {

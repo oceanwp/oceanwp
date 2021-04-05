@@ -800,6 +800,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Grouped product button text in the quick view
 			$array['grouped_text'] = esc_attr__( 'View products', 'oceanwp' );
 
+			$array['multistep_checkout_error'] = __( 'Some required fields are empty. Please fill the required fields to go to the next step.' );
+
 			return $array;
 
 		}
