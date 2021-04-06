@@ -12,6 +12,7 @@ export const DOM = {
         site: document.querySelector("#site-header"),
         fullScreen: document.querySelector("#site-header.full_screen-header"),
         topbar: document.querySelector("#top-bar"),
+        topbarWrapper: document.querySelector("#top-bar-wrap"),
         topLeftSide: document.querySelector("#site-header.top-header .header-top .left"),
         topRightSide: document.querySelector("#site-header.top-header .header-top .right"),
     },
