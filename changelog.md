@@ -8,6 +8,7 @@
 * **Fixed** - Youtube short link doesn't work to embed video in post.
 * **Fixed** - Multi-step checkout does not validate fields before clicking next button #315
 * **Fixed** - Block column layout with full-width page layout.
+* **Fixed** - Block editor post title input style.
 
 ### *2021.03.25.* - 2.0.4
 * **Added** - Added Gutenberg support to match the backend editor with frontend.

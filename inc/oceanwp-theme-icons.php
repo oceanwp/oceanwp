@@ -105,6 +105,11 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'fai'  => 'fas fa-list',
 				'svg'  => 'list-view',
 			),
+			'angle_up' => array(
+				'sili' => 'fa fa-angle-up',
+				'fai'  => 'fa fa-angle-up',
+				'svg'  => 'small-arrow-up',
+			),
 			'angle_down' => array(
 				'sili' => 'fa fa-angle-down',
 				'fai'  => 'fa fa-angle-down',
@@ -119,6 +124,46 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'sili' => 'fa fa-angle-right',
 				'fai'  => 'fa fa-angle-right',
 				'svg'  => 'small-arrow-right',
+			),
+			'chevron_up'     => array(
+				'sili' => 'arrow-up',
+				'fai'  => 'fa fa-chevron-up',
+				'svg'  => 'chevron-up',
+			),
+			'caret_up'     => array(
+				'sili' => 'fa fa-caret-up',
+				'fai'  => 'fa fa-caret-up',
+				'svg'  => 'caret-up',
+			),
+			'double_arrows_up'     => array(
+				'sili' => 'fa fa-angle-double-up',
+				'fai'  => 'fa fa-angle-double-up',
+				'svg'  => 'double-arrows-up',
+			),
+			'long_arrow_alt_up'     => array(
+				'sili' => 'fa fa-long-arrow-alt-up',
+				'fai'  => 'fa fa-long-arrow-alt-up',
+				'svg'  => 'long-arrow-alt-up',
+			),
+			'arrow_alt_circle_up'     => array(
+				'sili' => 'fa fa-arrow-alt-circle-up',
+				'fai'  => 'fa fa-arrow-alt-circle-up',
+				'svg'  => 'arrow-alt-circle-up',
+			),
+			'arrow_up'     => array(
+				'sili' => 'fa fa-arrow-up',
+				'fai'  => 'fa fa-arrow-up',
+				'svg'  => 'arrow-up',
+			),
+			'level_up_alt'     => array(
+				'sili' => 'fa fa-level-up-alt',
+				'fai'  => 'fa fa-level-up-alt',
+				'svg'  => 'level-up-alt',
+			),
+			'caret_square_up'     => array(
+				'sili' => 'fa fa-caret-square-up',
+				'fai'  => 'fa fa-caret-square-up',
+				'svg'  => 'caret-square-up',
 			),
 
 			// Social icons.

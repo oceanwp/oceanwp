@@ -106,7 +106,7 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 					),
 					'blog_post_title' => array(
 						'label'    => esc_html__( 'Blog Post Title', 'oceanwp' ),
-						'target'   => '.editor-post-title__block .editor-post-title__input',
+						'target'   => '.block-editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input',
 						'defaults' => array(
 							'font-size'      => '34px',
 							'color'          => '#333333',
