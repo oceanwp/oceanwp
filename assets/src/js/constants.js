@@ -10,6 +10,7 @@ export const DOM = {
     },
     header: {
         site: document.querySelector("#site-header"),
+        vertical: document.querySelector("#site-header.vertical-header #site-header-inner"),
         fullScreen: document.querySelector("#site-header.full_screen-header"),
         topbar: document.querySelector("#top-bar"),
         topbarWrapper: document.querySelector("#top-bar-wrap"),
@@ -28,6 +29,9 @@ export const DOM = {
             menuItems: document.querySelectorAll("#site-navigation .megamenu-li.full-mega"),
             topbarMenuItems: document.querySelectorAll("#top-bar-nav .megamenu-li.full-mega"),
             menuContents: document.querySelectorAll(".navigation .megamenu-li.auto-mega .megamenu"),
+        },
+        vertical: {
+            toggleMenuBtn: document.querySelector("a.vertical-toggle"),
         },
     },
     mobileMenu: {

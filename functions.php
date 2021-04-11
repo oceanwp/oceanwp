@@ -444,6 +444,9 @@ final class OCEANWP_Theme_Class {
 		// Register hamburgers buttons to easily use them.
 		wp_register_style( 'oceanwp-hamburgers', $dir . 'third/hamburgers/hamburgers.min.css', false, $theme_version );
 
+		// Register perfect-scrollbar plugin style.
+		wp_register_style( 'perfect-scrollbar', $dir . 'third/perfect-scrollbar.css', false, '1.5.0' );
+
 		// Register hamburgers buttons styles.
 		$hamburgers = oceanwp_hamburgers_styles();
 		foreach ( $hamburgers as $class => $name ) {
@@ -463,6 +466,7 @@ final class OCEANWP_Theme_Class {
 		if ( 'vertical' === oceanwp_header_style() ) {
 			wp_enqueue_style( 'oceanwp-hamburgers' );
 			wp_enqueue_style( 'oceanwp-spin' );
+			wp_enqueue_style( 'perfect-scrollbar' );
 		}
 
 	}
@@ -498,9 +502,12 @@ final class OCEANWP_Theme_Class {
 		// Register nicescroll script to use it in some extensions.
 		wp_register_script( 'nicescroll', $dir . 'third/nicescroll.min.js', array( 'jquery' ), $theme_version, true );
 
-		// Enqueue nicescroll script if vertical header style.
+		// Register perfect-scrollbar script to use it in some extensions.
+		wp_register_script( 'perfect-scrollbar', $dir . 'third/perfect-scrollbar.min.js', array(), '1.5.0', true );
+
+		// Enqueue perfect-scrollbar script if vertical header style.
 		if ( 'vertical' === oceanwp_header_style() ) {
-			wp_enqueue_script( 'nicescroll' );
+			wp_enqueue_script( 'perfect-scrollbar' );
 		}
 
 		// Register Infinite Scroll script.

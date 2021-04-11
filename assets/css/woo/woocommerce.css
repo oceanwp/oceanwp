@@ -31,7 +31,7 @@
 
 .woocommerce button.button.loading:after {
   display: inline-block;
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -45,10 +45,10 @@
   margin-left: 6px;
   vertical-align: top;
   font-weight: 400;
-  -ms-animation: spin 2s infinite linear;
   -webkit-animation: spin 2s infinite linear;
-  -o-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
+  -ms-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
   color: inherit;
   -moz-opacity: 1;
@@ -79,7 +79,7 @@
 }
 
 .woocommerce ul.products li.product .added_to_cart:after {
-  font-family: 'simple-line-icons';
+  font-family: "simple-line-icons";
   font-weight: normal;
   font-style: normal;
   letter-spacing: normal;
@@ -1408,7 +1408,7 @@
 
 .woocommerce a.button.loading:after {
   display: inline-block;
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -1422,10 +1422,10 @@
   margin-left: 6px;
   vertical-align: top;
   font-weight: 400;
-  -ms-animation: spin 2s infinite linear;
   -webkit-animation: spin 2s infinite linear;
-  -o-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
+  -ms-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
   color: inherit;
   -moz-opacity: 1;
@@ -1445,7 +1445,7 @@
 
 .woocommerce input.button.loading:after {
   display: inline-block;
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -1459,10 +1459,10 @@
   margin-left: 6px;
   vertical-align: top;
   font-weight: 600;
-  -ms-animation: spin 2s infinite linear;
   -webkit-animation: spin 2s infinite linear;
-  -o-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
+  -ms-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
   color: inherit;
   -moz-opacity: 1;
@@ -1789,7 +1789,7 @@
 
 .woocommerce div.product form.cart .variations .reset_variations:before {
   display: inline-block;
-  font-family: 'simple-line-icons';
+  font-family: "simple-line-icons";
   font-weight: normal;
   font-style: normal;
   letter-spacing: normal;
@@ -1893,7 +1893,7 @@
 
 .woocommerce #respond input#submit.loading:after {
   display: inline-block;
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -1907,10 +1907,10 @@
   margin-left: 6px;
   vertical-align: top;
   font-weight: 400;
-  -ms-animation: spin 2s infinite linear;
   -webkit-animation: spin 2s infinite linear;
-  -o-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
+  -ms-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
   color: inherit;
   -moz-opacity: 1;
@@ -2674,7 +2674,7 @@
 }
 
 .woocommerce-message:before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -2719,7 +2719,7 @@
 }
 
 .woocommerce-error:before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -2764,7 +2764,7 @@
 }
 
 .woocommerce-info:before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -2796,7 +2796,7 @@ ul.woocommerce-error:before {
 }
 
 ul.woocommerce-error li:before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -2813,7 +2813,7 @@ ul.woocommerce-message:before {
 }
 
 ul.woocommerce-message li:before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -2830,7 +2830,7 @@ ul.woocommerce-info:before {
 }
 
 ul.woocommerce-info li:before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -3507,7 +3507,7 @@ p.stars span a {
 }
 
 .return-to-shop .button.wc-backward:before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -3554,7 +3554,7 @@ del .amount {
 }
 
 .select2-container .select2-choice .select2-arrow b {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -3575,7 +3575,7 @@ del .amount {
 }
 
 .select2-container .select2-choice abbr {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -3750,7 +3750,7 @@ form.checkout > .blockUI {
 }
 
 .blockUI:before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -3758,10 +3758,10 @@ form.checkout > .blockUI {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: '\f110';
-  -ms-animation: fa-spin 0.75s infinite linear;
   -webkit-animation: fa-spin 0.75s infinite linear;
-  -o-animation: fa-spin 0.75s infinite linear;
   -moz-animation: fa-spin 0.75s infinite linear;
+  -ms-animation: fa-spin 0.75s infinite linear;
+  -o-animation: fa-spin 0.75s infinite linear;
   animation: fa-spin 0.75s infinite linear;
   height: 30px;
   width: 30px;
@@ -3835,7 +3835,7 @@ form.checkout > .blockUI {
 
 .woocommerce-MyAccount-navigation ul li a:before {
   display: inline-block;
-  font-family: 'simple-line-icons';
+  font-family: "simple-line-icons";
   font-weight: normal;
   font-style: normal;
   letter-spacing: normal;
@@ -4091,7 +4091,7 @@ form.checkout > .blockUI {
 }
 
 .demo_store:before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 600;
   font-style: normal;
   letter-spacing: normal;
@@ -4111,7 +4111,7 @@ form.checkout > .blockUI {
     padding: 15px 20px;
   }
   .demo_store a:before {
-    font-family: 'Font Awesome 5 Free';
+    font-family: "Font Awesome 5 Free";
     font-weight: 600;
     font-style: normal;
     letter-spacing: normal;

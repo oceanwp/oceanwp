@@ -27,8 +27,8 @@ class DropDownMobileMenu {
 
         this.#menuItemsToggleIcon =
             options.sidrDropdownTarget == "link"
-                ? document.querySelectorAll("#mobile-dropdown li.menu-item-has-children > a")
-                : document.querySelectorAll(".dropdown-toggle");
+                ? DOM.mobileMenu.navWrapper.querySelectorAll("li.menu-item-has-children > a")
+                : DOM.mobileMenu.navWrapper.querySelectorAll(".dropdown-toggle");
     };
 
     #setupEventListeners = () => {
@@ -50,9 +50,9 @@ class DropDownMobileMenu {
 
         DOM.mobileMenu.hamburgerBtn?.addEventListener("click", this.#onHamburgerClick);
 
-        this.#menuItemsToggleIcon.forEach((menuItemToggleIcon) => {
-            menuItemToggleIcon.addEventListener("click", this.#onMenuItemToggleIcon);
-            menuItemToggleIcon.addEventListener("tap", this.#onMenuItemToggleIcon);
+        this.#menuItemsToggleIcon.forEach((menuItemPlusIcon) => {
+            menuItemPlusIcon.addEventListener("click", this.#onMenuItemPlusIconClick);
+            menuItemPlusIcon.addEventListener("tap", this.#onMenuItemPlusIconClick);
         });
 
         document.addEventListener("keydown", this.#onDocumentKeydown);
@@ -84,15 +84,15 @@ class DropDownMobileMenu {
         event.currentTarget.setAttribute("aria-expanded", this.#isMenuOpen);
     };
 
-    #onMenuItemToggleIcon = (event) => {
+    #onMenuItemPlusIconClick = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
-        const menuItemToggleIcon = event.currentTarget;
+        const menuItemPlusIcon = event.currentTarget;
         const menuItem =
             options.sidrDropdownTarget == "link"
-                ? menuItemToggleIcon.parentNode
-                : menuItemToggleIcon.parentNode.parentNode;
+                ? menuItemPlusIcon.parentNode
+                : menuItemPlusIcon.parentNode.parentNode;
 
         if (!menuItem.classList.contains("active")) {
             DOM.mobileMenu.menuItemsHasChildren.forEach((menuItemHasChildren) => {
@@ -116,7 +116,7 @@ class DropDownMobileMenu {
     };
 
     /**
-     * Trap keyboard navigation in the menu modal.
+     * Trap keyboard navigation
      */
     #onDocumentKeydown = (event) => {
         if (!DOM.mobileMenu.toggleMenuBtn?.classList.contains("opened")) {
