@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2021.04.14.* - 2.0.6
+* **Fixed** - Gutenberg: cover block layout issue.
+* **Fixed** - Outdated woocommerce template error notice.
+
 ### *2021.04.13.* - 2.0.5
 * **Fixed** - Gutenberg: list block backend layout issue.
 * **Fixed** - Youtube short link doesn't work to embed video in post.
