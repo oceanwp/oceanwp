@@ -43,16 +43,36 @@ object {
 	max-width: 100%;
 }
 
-.entry-content .alignwide {
-	margin-left: -15px;
-    width: calc(100% + 30px);
-    max-width: calc(100% + 30px);
+.entry-content {
+	.alignwide {
+		margin-left: -15px;
+		width: calc(100% + 30px);
+		max-width: calc(100% + 30px);
+	}
 }
 
-.entry-content .alignfull {
-	margin-left: -32px;
-    width: calc(100% + 64px);
-    max-width: calc(100% + 64px);
+.entry-content {
+	.alignfull {
+		margin-left: -32px;
+		width: calc(100% + 64px);
+		max-width: calc(100% + 64px);
+	}
+}
+
+.entry {
+	.alignwide {
+		margin-left: -30px;
+		width: calc(100% + 60px);
+		max-width: calc(100% + 60px);
+	}
+}
+
+.entry {
+	.alignfull {
+		margin-left: -5.6%;
+		width: calc(100% + 11.1%);
+		max-width: calc(100% + 11.1%);
+	}
 }
 
 body.content-full-screen {

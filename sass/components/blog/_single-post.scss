@@ -67,6 +67,8 @@
 	.entry-content ul,
 	.entry-content ol,
 	.wp-block-cover-text,
+	.wp-block-columns,
+	.wp-block-cover,
 	.post-tags,
 	.comments-area {
 	    margin: 1.5em auto;
@@ -100,7 +102,7 @@
 		padding: 0 0 10px;
 		list-style: none;
 	}
-
+	
 	.wp-block-quote p {
 		padding: 0;
 	}

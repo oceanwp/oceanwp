@@ -238,6 +238,26 @@ form.oceanwp-searchform {
     clip-path: circle(1% at 1% 1%);
 }
 
+.owp-icon {
+    width: 14px;
+    height: 14px;
+	vertical-align: text-bottom;
+}
+
+#owp-svg-icons path,
+#owp-svg-icons rect,
+#owp-svg-icons circle,
+#owp-svg-icons line,
+#owp-svg-icons polygon,
+#owp-svg-icons polyline {
+    stroke:inherit;
+}
+
+.owp-icon use {
+	stroke: #2D3E50;
+}
+
+
 /**
  * Selection Color.
  */

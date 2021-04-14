@@ -1,5 +1,17 @@
 # OceanWP Changelog
 
+### *2021.04.14.* - 2.0.6
+* **Fixed** - Gutenberg: cover block layout issue.
+* **Fixed** - Outdated woocommerce template error notice.
+
+### *2021.04.13.* - 2.0.5
+* **Fixed** - Gutenberg: list block backend layout issue.
+* **Fixed** - Youtube short link doesn't work to embed video in post.
+* **Fixed** - Multi-step checkout does not validate fields before clicking next button #315
+* **Fixed** - Block column layout with full-width page layout.
+* **Fixed** - Block editor post title input style.
+* **Fixed** - Call to a member function is_block_editor() on null.
+
 ### *2021.03.25.* - 2.0.4
 * **Added** - Added Gutenberg support to match the backend editor with frontend.
 * **Fixed** - Styling for some Gutenberg blocks like table, blockquote etc.

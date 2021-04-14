@@ -119,11 +119,6 @@
   display: block;
 }
 
-.block-editor-block-list__layout ul,
-.block-editor-block-list__layout ol {
-  margin: 15px 0 15px 0;
-}
-
 .block-editor-block-list__layout ol {
   list-style-type: decimal;
 }
