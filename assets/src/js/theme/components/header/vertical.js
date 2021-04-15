@@ -1,5 +1,5 @@
-import { DOM, options } from "../../constants";
-import { slideDown, slideUp } from "../../lib/utils";
+import { DOM, options } from "../../../constants";
+import { slideDown, slideUp } from "../../../lib/utils";
 
 class VerticalHeader {
     #menuItemsPlusIcon;

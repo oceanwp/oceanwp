@@ -1,5 +1,5 @@
-import { DOM } from "../../constants";
-import { slideUp, slideDown, fadeIn, fadeOut } from "../../lib/utils";
+import { DOM } from "../../../constants";
+import { slideUp, slideDown, fadeIn, fadeOut } from "../../../lib/utils";
 
 class FullScreenMobileMenu {
     constructor() {

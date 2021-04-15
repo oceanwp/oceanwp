@@ -1,5 +1,5 @@
-import { DOM, options } from "../../constants";
-import { offset } from "../../lib/utils";
+import { DOM, options } from "../../../constants";
+import { offset } from "../../../lib/utils";
 
 class MegaMenu {
     constructor() {

@@ -1,4 +1,4 @@
-import { DOM } from "../constants";
+import { DOM } from "../../constants";
 import DropDownSearch from "./search/drop-down";
 import HeaderReplaceSearch from "./search/header-replace";
 import OverlaySearch from "./search/overlay";

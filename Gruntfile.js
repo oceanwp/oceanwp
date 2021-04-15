@@ -16,8 +16,11 @@ module.exports = function (grunt) {
         browserify: {
             dist: {
                 files: {
-                    // destination for transpiled js : source js
                     "./assets/js/main.vanilla.min.js": "./assets/src/js/index.js",
+
+                    // Easy Digital Downloads
+                    "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax.min.js":
+                        "./assets/src/js/wp-plugins/easy-digital-downloads/edd-ajax.js",
                 },
                 options: {
                     transform: [["babelify", { presets: ["@babel/preset-env"] }]],
@@ -48,8 +51,6 @@ module.exports = function (grunt) {
                     "assets/js/third/woo/woo-floating-bar.min.js": "assets/js/third/woo/woo-floating-bar.js",
                     "assets/js/third/woo/woo-cat-widget.min.js": "assets/js/third/woo/woo-cat-widget.js",
                     "assets/js/third/woo/woo-hover-style.min.js": "assets/js/third/woo/woo-hover-style.js",
-                    "assets/js/third/edd/edd-display-cart.min.js": "assets/js/third/edd/edd-display-cart.js",
-                    "assets/js/third/edd/edd-cart-ajax.min.js": "assets/js/third/edd/edd-cart-ajax.js",
 
                     "inc/customizer/assets/js/customize-preview.min.js":
                         "inc/customizer/assets/js/customize-preview.js",

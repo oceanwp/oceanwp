@@ -1,5 +1,5 @@
-import { DOM } from "../constants";
-import { offset } from "../lib/utils";
+import { DOM } from "../../constants";
+import { offset } from "../../lib/utils";
 
 class ScrollEffect {
     constructor() {

@@ -1,5 +1,5 @@
-import { DOM, options } from "../../constants";
-import { fadeIn, fadeOut } from "../../lib/utils";
+import { DOM, options } from "../../../constants";
+import { fadeIn, fadeOut } from "../../../lib/utils";
 import SearchBase from "./base";
 
 class OverlaySearch extends SearchBase {

@@ -1,4 +1,4 @@
-import { DOM } from "../constants";
+import { DOM } from "../../constants";
 
 export default class Select {
     #select;

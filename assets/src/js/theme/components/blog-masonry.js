@@ -1,4 +1,4 @@
-import { DOM, options } from "../constants";
+import { DOM, options } from "../../constants";
 
 export default class BlogMasonry {
     constructor() {

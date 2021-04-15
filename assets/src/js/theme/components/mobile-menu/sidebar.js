@@ -1,5 +1,5 @@
-import { DOM, options } from "../../constants";
-import { fadeIn, fadeOut, slideDown, slideUp } from "../../lib/utils";
+import { DOM, options } from "../../../constants";
+import { fadeIn, fadeOut, slideDown, slideUp } from "../../../lib/utils";
 
 class SidebarMobileMenu {
     #isMenuOpen;

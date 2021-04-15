@@ -1,5 +1,5 @@
-import { DOM } from "../constants";
-import { fadeIn, fadeOut } from "../lib/utils";
+import { DOM } from "../../constants";
+import { fadeIn, fadeOut } from "../../lib/utils";
 
 export default class ScrollTop {
     constructor() {

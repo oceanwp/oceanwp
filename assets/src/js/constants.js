@@ -70,6 +70,13 @@ export const DOM = {
     blog: {
         masonryGrids: document.querySelectorAll(".blog-masonry-grid"),
     },
+    edd: {
+        carts: document.querySelectorAll(".edd-menu-icon"),
+        overlayCarts: document.querySelectorAll(".owp-cart-overlay"),
+        totalPrices: document.querySelectorAll(".eddmenucart-details.total"),
+        quickViewModal: document.querySelector("#owp-qv-wrap"),
+        quickViewContent: document.querySelector("#owp-qv-content"),
+    },
 };
 
 export const DOMString = {};

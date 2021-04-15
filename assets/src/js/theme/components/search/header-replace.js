@@ -1,4 +1,4 @@
-import { DOM, options } from "../../constants";
+import { DOM, options } from "../../../constants";
 import SearchBase from "./base";
 
 class HeaderReplaceSearch extends SearchBase {

@@ -1,5 +1,5 @@
-import { DOM, options } from "../../constants";
-import { slideUp, slideDown, slideToggle } from "../../lib/utils";
+import { DOM, options } from "../../../constants";
+import { slideUp, slideDown, slideToggle } from "../../../lib/utils";
 
 class DropDownMobileMenu {
     #isMenuOpen;

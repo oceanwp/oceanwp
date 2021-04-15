@@ -1,4 +1,4 @@
-import { fadeIn, fadeOut } from "../lib/utils";
+import { fadeIn, fadeOut } from "../../lib/utils";
 import FullScreenMenu from "./menu/full-screen";
 import MegaMenu from "./menu/mega";
 
