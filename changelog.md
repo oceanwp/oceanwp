@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### *2021.04.16.* - 2.0.7
+* **Moved** - Customizer hide page title setting to the visibility setting section.
+* **Fixed** - Multistep checkout undefined error notice.
+
 ### *2021.04.14.* - 2.0.6
 * **Fixed** - Gutenberg: cover block layout issue.
 * **Fixed** - Outdated woocommerce template error notice.

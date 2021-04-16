@@ -1947,8 +1947,9 @@ if ( ! function_exists( 'oceanwp_has_page_header' ) ) {
 		$return = true;
 		$style  = oceanwp_page_header_style();
 
-		// Check if page header style is set to hidden
-		if ( 'hidden' == $style || is_page_template( 'templates/landing.php' ) ) {
+		// Check if page header
+		if ( 'hide-all-devices' == get_theme_mod( 'ocean_page_header_visibility' )
+			|| is_page_template( 'templates/landing.php' ) ) {
 			$return = false;
 		}
 

@@ -1425,7 +1425,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'ocean_page_header_visibility',
 				array(
-					'transport'         => 'postMessage',
 					'default'           => 'all-devices',
 					'sanitize_callback' => 'oceanwp_sanitize_select',
 				)
@@ -1446,6 +1445,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'hide-tablet'        => esc_html__( 'Hide On Tablet', 'oceanwp' ),
 							'hide-mobile'        => esc_html__( 'Hide On Mobile', 'oceanwp' ),
 							'hide-tablet-mobile' => esc_html__( 'Hide On Tablet & Mobile', 'oceanwp' ),
+							'hide-all-devices'   => esc_html__( 'Hide On All Devices', 'oceanwp' ),
 						),
 					)
 				)
@@ -1513,7 +1513,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'centered'         => esc_html__( 'Centered', 'oceanwp' ),
 							'centered-minimal' => esc_html__( 'Centered Minimal', 'oceanwp' ),
 							'background-image' => esc_html__( 'Background Image', 'oceanwp' ),
-							'hidden'           => esc_html__( 'Hidden', 'oceanwp' ),
 						),
 					)
 				)
