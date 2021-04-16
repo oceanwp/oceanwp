@@ -4948,19 +4948,16 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Add social menu font size
 			if ( ! empty( $menu_social_font_size ) ) {
 				$css .= '.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a{font-size:'. $menu_social_font_size .'px;}';
-				$css .= '.oceanwp-social-menu ul li a .owp-icon{width:'. $menu_social_font_size .'px; height:'. $menu_social_font_size .'px;}';
 			}
 
 			// Add social menu tablet font size
 			if ( ! empty( $menu_social_tablet_font_size ) ) {
 				$css .= '@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a{font-size:'. $menu_social_tablet_font_size .'px;}}';
-				$css .= '@media (max-width: 768px){.oceanwp-social-menu ul li a .owp-icon{width:'. $menu_social_tablet_font_size .'px; height:'. $menu_social_tablet_font_size .'px;}}';
 			}
 
 			// Add social menu mobile font size
 			if ( ! empty( $menu_social_mobile_font_size ) ) {
 				$css .= '@media (max-width: 480px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a{font-size:'. $menu_social_mobile_font_size .'px;}}';
-				$css .= '@media (max-width: 480px){.oceanwp-social-menu ul li a .owp-icon{width:'. $menu_social_mobile_font_size .'px; height:'. $menu_social_mobile_font_size .'px;}}';
 			}
 
 			// Social menu padding

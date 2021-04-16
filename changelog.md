@@ -1,14 +1,26 @@
 # OceanWP Changelog
 
-### *2021.04.XX.* - 2.0.5
+### *2021.04.XX.* - 2.0.8
 * **Added** - Replaced all theme Font Awesome icons with OceanWP SVG icons.
 * **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.
 * **Added** - New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon]
+* **Added** - New customizer control to support SVG Icons.
+
+### *2021.04.16.* - 2.0.7
+* **Moved** - Customizer hide page title setting to the visibility setting section.
+* **Fixed** - Multistep checkout undefined error notice.
+
+### *2021.04.14.* - 2.0.6
+* **Fixed** - Gutenberg: cover block layout issue.
+* **Fixed** - Outdated woocommerce template error notice.
+
+### *2021.04.13.* - 2.0.5
 * **Fixed** - Gutenberg: list block backend layout issue.
 * **Fixed** - Youtube short link doesn't work to embed video in post.
 * **Fixed** - Multi-step checkout does not validate fields before clicking next button #315
 * **Fixed** - Block column layout with full-width page layout.
 * **Fixed** - Block editor post title input style.
+* **Fixed** - Call to a member function is_block_editor() on null.
 
 ### *2021.03.25.* - 2.0.4
 * **Added** - Added Gutenberg support to match the backend editor with frontend.

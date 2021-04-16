@@ -72,6 +72,10 @@ function ocean_svg_icon( $args = array(), $location = true ) {
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
 
+	if ( empty( $args['icon'] ) || 'none' === $args['icon'] ) {
+		return;
+	}
+
 	// Set aria hidden.
 	$aria_hidden = '';
 

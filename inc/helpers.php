@@ -1940,8 +1940,9 @@ if ( ! function_exists( 'oceanwp_has_page_header' ) ) {
 		$return = true;
 		$style  = oceanwp_page_header_style();
 
-		// Check if page header style is set to hidden
-		if ( 'hidden' == $style || is_page_template( 'templates/landing.php' ) ) {
+		// Check if page header
+		if ( 'hide-all-devices' == get_theme_mod( 'ocean_page_header_visibility' )
+			|| is_page_template( 'templates/landing.php' ) ) {
 			$return = false;
 		}
 
@@ -4056,7 +4057,7 @@ if ( ! function_exists( 'oceanwp_minify_css' ) ) {
 
 		// Return minified CSS
 		return $css;
-		
+
 	}
 
 }
@@ -4066,9 +4067,9 @@ if ( ! function_exists( 'oceanwp_minify_css' ) ) {
  *
  * @since 1.0.0
  */
-if ( ! function_exists( 'oceanwp_get_awesome_icons' ) ) {
+if ( ! function_exists( 'oceanwp_get_scrolltotop_icons' ) ) {
 
-	function oceanwp_get_awesome_icons( $return = 'up_arrows', $default = 'none' ) {
+	function oceanwp_get_scrolltotop_icons( $return = 'up_arrows', $default = 'none' ) {
 
 		// Add none to top of array
 		$icons_array = array(
@@ -4080,11 +4081,11 @@ if ( ! function_exists( 'oceanwp_get_awesome_icons' ) ) {
 
 		// Returns up arrows only
 		if ( 'up_arrows' == $return ) {
-			$return_icons = array('fa fa-chevron-up','fa fa-caret-up','fa fa-angle-up','fa fa-angle-double-up','fa fa-long-arrow-alt-up','fa fa-arrow-alt-circle-up','fa fa-arrow-up','fa fa-level-up-alt','fa fa-caret-square-up');
+			$return_icons = array('chevron_up','caret_up','angle_up','double_arrows_up','long_arrow_alt_up','arrow_alt_circle_up','arrow_up','level_up_alt','caret_square_up');
 			$return_icons = array_combine($return_icons, $return_icons);
 		}
 
-		return apply_filters( 'ocean_get_awesome_icons', array_merge( $icons_array, $return_icons ) );
+		return apply_filters( 'oceanwp_get_scrolltotop_icons', array_merge( $icons_array, $return_icons ) );
 
 	}
 
@@ -4097,14 +4098,14 @@ if ( ! function_exists( 'oceanwp_get_awesome_icons' ) ) {
  */
 if ( ! function_exists( 'oceanwp_get_cart_icons' ) ) {
 
-	function oceanwp_get_cart_icons( $default = 'icon-handbag' ) {
+	function oceanwp_get_cart_icons( $default = 'icon_handbag' ) {
 
 		// Returns icons
-		$return_icons = array( 'icon-basket', 'icon-handbag', 'fas fa-shopping-basket', 'fas fa-shopping-bag', 'fas fa-shopping-cart' );
+		$return_icons = array( 'icon_basket', 'icon_handbag', 'shopping_basket', 'shopping_bag', 'shopping_cart' );
 		$return_icons = array_combine( $return_icons, $return_icons );
-		
+
 		return apply_filters( 'ocean_get_cart_icons', array_merge( $return_icons ) );
-		
+
 	}
 
 }

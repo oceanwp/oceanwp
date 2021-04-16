@@ -1425,7 +1425,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'ocean_page_header_visibility',
 				array(
-					'transport'         => 'postMessage',
 					'default'           => 'all-devices',
 					'sanitize_callback' => 'oceanwp_sanitize_select',
 				)
@@ -1446,6 +1445,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'hide-tablet'        => esc_html__( 'Hide On Tablet', 'oceanwp' ),
 							'hide-mobile'        => esc_html__( 'Hide On Mobile', 'oceanwp' ),
 							'hide-tablet-mobile' => esc_html__( 'Hide On Tablet & Mobile', 'oceanwp' ),
+							'hide-all-devices'   => esc_html__( 'Hide On All Devices', 'oceanwp' ),
 						),
 					)
 				)
@@ -1513,7 +1513,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'centered'         => esc_html__( 'Centered', 'oceanwp' ),
 							'centered-minimal' => esc_html__( 'Centered Minimal', 'oceanwp' ),
 							'background-image' => esc_html__( 'Background Image', 'oceanwp' ),
-							'hidden'           => esc_html__( 'Hidden', 'oceanwp' ),
 						),
 					)
 				)
@@ -2405,23 +2404,22 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'ocean_scroll_top_arrow',
 				array(
-					'transport'         => 'postMessage',
-					'default'           => 'fa fa-angle-up',
-					'sanitize_callback' => 'wp_filter_nohtml_kses',
+					'default'           => 'angle_up',
+					'sanitize_callback' => 'sanitize_text_field',
 				)
 			);
 
 			$wp_customize->add_control(
-				new OceanWP_Customizer_Icon_Select_Control(
+				new OceanWP_Customizer_Icon_Select_Multi_Control(
 					$wp_customize,
 					'ocean_scroll_top_arrow',
 					array(
 						'label'           => esc_html__( 'Arrow Icon', 'oceanwp' ),
 						'section'         => 'ocean_general_scroll_top',
-						'settings'        => 'ocean_scroll_top_arrow',
+						'type'            => 'select',
 						'priority'        => 10,
 						'active_callback' => 'oceanwp_cac_has_scrolltop',
-						'choices'         => oceanwp_get_awesome_icons( 'up_arrows' ),
+						'choices'         => oceanwp_get_scrolltotop_icons( 'up_arrows' ),
 					)
 				)
 			);
@@ -4542,6 +4540,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Scroll top button icon size.
 			if ( ! empty( $scroll_top_icon_size ) && '18' != $scroll_top_icon_size ) {
 				$css .= '#scroll-top{font-size:' . $scroll_top_icon_size . 'px;}';
+				$css .= '#scroll-top .owp-icon{width:' . $scroll_top_icon_size . 'px; height:' . $scroll_top_icon_size . 'px;}';
 			}
 
 			// Scroll top button border radius.
@@ -4562,11 +4561,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Scroll top button background color.
 			if ( ! empty( $scroll_top_color ) && '#ffffff' != $scroll_top_color ) {
 				$css .= '#scroll-top{color:' . $scroll_top_color . ';}';
+				$css .= '#scroll-top .owp-icon use{stroke:' . $scroll_top_color . ';}';
 			}
 
 			// Scroll top button background hover color.
 			if ( ! empty( $scroll_top_color_hover ) && '#ffffff' != $scroll_top_color_hover ) {
 				$css .= '#scroll-top:hover{color:' . $scroll_top_color_hover . ';}';
+				$css .= '#scroll-top:hover .owp-icon use{stroke:' . $scroll_top_color . ';}';
 			}
 
 			// Pagination font size.
@@ -4756,13 +4757,11 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Blog entries meta icons color.
 			if ( ! empty( $theme_blog_icons_color ) && '#333333' != $theme_blog_icons_color ) {
 				$css .= '#blog-entries ul.meta li i{color:' . $theme_blog_icons_color . ';}';
-				$css .= '#blog-entries ul.meta li .owp-icon use{stroke:' . $theme_blog_icons_color . ';}';
 			}
 
 			// Single post meta icons color.
 			if ( ! empty( $theme_post_icons_color ) && '#333333' != $theme_post_icons_color ) {
 				$css .= '.single-post ul.meta li i{color:' . $theme_post_icons_color . ';}';
-				$css .= '.single-post ul.meta li .owp-icon use{stroke:' . $theme_post_icons_color . ';}';
 			}
 
 			// If page Both Sidebars layout.

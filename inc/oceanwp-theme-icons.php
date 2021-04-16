@@ -166,6 +166,33 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'caret-square-up',
 			),
 
+			// Cart icon.
+			'icon_basket'     => array(
+				'sili' => 'icon-basket',
+				'fai'  => 'icon-basket',
+				'svg'  => 'cart-menu-1',
+			),
+			'icon_handbag'     => array(
+				'sili' => 'icon-handbag',
+				'fai'  => 'icon-handbag',
+				'svg'  => 'cart-menu-4',
+			),
+			'shopping_basket'     => array(
+				'sili' => 'fas fa-shopping-basket',
+				'fai'  => 'fas fa-shopping-basket',
+				'svg'  => 'cart-menu-2',
+			),
+			'shopping_bag'     => array(
+				'sili' => 'fas fa-shopping-bag',
+				'fai'  => 'fas fa-shopping-bag',
+				'svg'  => 'shopping-bag',
+			),
+			'shopping_cart'     => array(
+				'sili' => 'fas fa-shopping-cart',
+				'fai'  => 'fas fa-shopping-cart',
+				'svg'  => 'shopping-cart',
+			),
+
 			// Social icons.
 			'twitter'     => array(
 				'sili' => 'fab fa-twitter',
@@ -362,6 +389,10 @@ function get_ocean_icon( $args = array() ) {
 
 	// Parse args.
 	$args = wp_parse_args( $args, $defaults );
+
+	if ( empty( $args['icon'] ) || 'none' === $args['icon'] ) {
+		return;
+	}
 
 	// Set aria hidden.
 	$aria_hidden = '';

@@ -127,7 +127,7 @@ function oceanwp_cac_has_search_rl_layout() {
 }
 
 function oceanwp_cac_has_page_header() {
-	if ( 'hidden' != get_theme_mod( 'ocean_page_header_style' ) ) {
+	if ( 'hide-all-devices' != get_theme_mod( 'ocean_page_header_visibility' ) ) {
 		return true;
 	} else {
 		return false;
