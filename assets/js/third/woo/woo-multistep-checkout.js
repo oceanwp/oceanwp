@@ -69,7 +69,7 @@ function oceanwpWooMultiStepCheckout() {
 
         timeline.find( '.active' ).removeClass( 'active' );
 
-                if ( action == 'next' ) {
+            if ( action == 'next' ) {
 
                 var inputField   = $j( '#customer_billing_details p.validate-required input, #customer_billing_details p.validate-required select' );
 
@@ -89,6 +89,18 @@ function oceanwpWooMultiStepCheckout() {
                 if ( 0 === inputField.filter(function() {
                         return ! this.value;
                     }).length ) {
+
+                    form_actions.data( 'step', next_step );
+
+                    steps[current_step].fadeOut( 120, function() {
+                        steps[next_step].fadeIn( 120 );
+                    } );
+
+                    $j( '#timeline-' + next_step ).toggleClass( 'active' );
+
+                    $j( checkout_form ).find( '.ocean-multistep-error-notice' ).remove();
+
+                } else if ( current_step == 0 && is_logged_in == false ) {
 
                     form_actions.data( 'step', next_step );
 
@@ -121,6 +133,8 @@ function oceanwpWooMultiStepCheckout() {
                 } );
 
                 $j( '#timeline-' + prev_step ).toggleClass( 'active' );
+
+                $j( checkout_form ).find( '.ocean-multistep-error-notice' ).remove();
             }
 
             current_step = form_actions.data( 'step' );
