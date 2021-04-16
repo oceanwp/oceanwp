@@ -104,9 +104,12 @@ function oceanwpWooMultiStepCheckout() {
 
                     $j(window).scrollTop( $j( '#content-wrap' ).offset().top );
 
-                    $j( checkout_form ).prepend( '<div class="ocean-multistep-error-notice"><ul class="woocommerce-error" role="alert"></ul></div>' );
-                    $j( '.ocean-multistep-error-notice' ).html( '<ul class="woocommerce-error" role="alert">' );
-                    $j( '.woocommerce-error' ).prepend( '<li >' + oceanwpLocalize.multistep_checkout_error + '</li>' );
+
+                    if ( 0 === $j( checkout_form ).find( '.ocean-multistep-error-notice' ).length ) {
+                        $j( checkout_form ).prepend( '<div class="ocean-multistep-error-notice"><ul class="woocommerce-error" role="alert"></ul></div>' );
+                        $j( '.ocean-multistep-error-notice' ).html( '<ul class="woocommerce-error" role="alert">' );
+                        $j( '.woocommerce-error' ).prepend( '<li >' + oceanwpLocalize.multistep_checkout_error + '</li>' );
+                    }
 
                     $j( '#timeline-' + current_step ).addClass( 'active' );
                 }
