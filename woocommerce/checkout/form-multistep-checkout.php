@@ -27,9 +27,9 @@ $login_message         = apply_filters( 'ocean_form_checkout_login_message', __(
 
 // Back cart icon.
 if ( is_RTL() ) {
-	$icon = 'fa-angle-right';
+	$icon = 'angle_right';
 } else {
-	$icon = 'fa-angle-left';
+	$icon = 'angle_left';
 }
 
 wc_print_notices();
@@ -90,7 +90,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
 	</form>
 
 	<div id="form_actions" data-step="<?php echo $show_login_step ? 0 : 1; ?>">
-		<a href="<?php echo esc_url( wc_get_cart_url() ); ?>"><i class="fa <?php echo esc_attr( $icon ); ?>"></i><?php esc_html_e( 'Back to cart', 'oceanwp' ); ?></a>
+		<a href="<?php echo esc_url( wc_get_cart_url() ); ?>"><?php oceanwp_icon( $icon ); ?><?php esc_html_e( 'Back to cart', 'oceanwp' ); ?></a>
 
 		<div class="buttons">
 			<input type="button" class="button prev" name="checkout_prev_step" value="<?php esc_attr_e( 'Prev', 'oceanwp' ); ?>" data-action="prev">

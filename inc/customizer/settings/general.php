@@ -4289,6 +4289,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Texts.
 			if ( ! empty( $texts ) && '#13aff0' != $primary_color ) {
 				$css .= implode( ',', $texts ) . '{color:' . $primary_color . ';}';
+				$css .= '.single nav.post-navigation .nav-links .title .owp-icon use{ stroke:' . $primary_color . ';}';
 			}
 
 			// Backgrounds.

@@ -38,11 +38,11 @@ if ( ! class_exists( 'OceanWP_Social_Login' ) ) :
 
 			// Custom icons
 			if ( 'facebook' == strtolower( $provider_id ) ) {
-				$provider_icon = 'facebook-f';
+				$provider_icon = 'facebook';
 			} else if ( 'vkontakte' == strtolower( $provider_id ) ) {
 				$provider_icon = 'vk';
 			} else if ( 'stackoverflow' == strtolower( $provider_id ) ) {
-				$provider_icon = 'stack-overflow';
+				$provider_icon = 'stackoverflow';
 			} else if ( 'twitchTV' == strtolower( $provider_id ) ) {
 				$provider_icon = 'twitch';
 			} else if ( 'mailru' == strtolower( $provider_id ) ) {
@@ -50,11 +50,11 @@ if ( ! class_exists( 'OceanWP_Social_Login' ) ) :
 			} ?>
 
 			<a href="<?php echo esc_url( $authenticate_url ); ?>" data-provider="<?php echo esc_attr( $provider_id ); ?>" class="opl-<?php echo esc_attr( strtolower( $provider_id ) ); ?>" rel="nofollow">
-		       <i class="fa fa-<?php echo esc_attr( $provider_icon ); ?>"></i>
-		       <span><?php echo esc_html( $provider_name ); ?></span>
-		    </a>
+				<?php oceanwp_icon( $provider_icon ); ?>
+				<span><?php echo esc_html( $provider_name ); ?></span>
+			</a>
 
-		<?php
+			<?php
 		}
 
 		/**

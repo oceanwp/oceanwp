@@ -141,9 +141,24 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'double-arrows-up',
 			),
 			'long_arrow_alt_up'     => array(
-				'sili' => 'fa fa-long-arrow-alt-up',
-				'fai'  => 'fa fa-long-arrow-alt-up',
+				'sili' => 'fas fa-long-arrow-alt-up',
+				'fai'  => 'fas fa-long-arrow-alt-up',
 				'svg'  => 'long-arrow-alt-up',
+			),
+			'long_arrow_alt_down'     => array(
+				'sili' => 'fas fa-long-arrow-alt-down',
+				'fai'  => 'fas fa-long-arrow-alt-down',
+				'svg'  => 'long-arrow-alt-down',
+			),
+			'long_arrow_alt_left'     => array(
+				'sili' => 'fas fa-long-arrow-alt-left',
+				'fai'  => 'fas fa-long-arrow-alt-left',
+				'svg'  => 'long-arrow-alt-left',
+			),
+			'long_arrow_alt_right'     => array(
+				'sili' => 'fas fa-long-arrow-alt-right',
+				'fai'  => 'fas fa-long-arrow-alt-right',
+				'svg'  => 'long-arrow-alt-right',
 			),
 			'arrow_alt_circle_up'     => array(
 				'sili' => 'fa fa-arrow-alt-circle-up',
@@ -164,6 +179,11 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'sili' => 'fa fa-caret-square-up',
 				'fai'  => 'fa fa-caret-square-up',
 				'svg'  => 'caret-square-up',
+			),
+			'heart'  => array(
+				'sili' => 'far fa-heart',
+				'fai'  => 'far fa-heart',
+				'svg'  => 'wishlist',
 			),
 
 			// Cart icon.
@@ -298,6 +318,16 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'sili' => 'fab fa-medium-m',
 				'fai'  => 'fab fa-medium-m',
 				'svg'  => 'medium',
+			),
+			'stackoverflow'  => array(
+				'sili' => 'fab fa-stack-overflow',
+				'fai'  => 'fab fa-stack-overflow',
+				'svg'  => 'stackoverflow',
+			),
+			'twitch'  => array(
+				'sili' => 'fab fa-twitch',
+				'fai'  => 'fab fa-twitch',
+				'svg'  => 'twitch',
 			),
 		);
 
