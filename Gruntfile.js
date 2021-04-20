@@ -22,9 +22,13 @@ module.exports = function (grunt) {
                     "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax.min.js":
                         "./assets/src/js/wp-plugins/easy-digital-downloads/edd-ajax.js",
 
-                    // Woocommerce
+                    // Woocommerce ajax add to cart
                     "./assets/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.min.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.js",
+
+                    // Woocommerce categories widget
+                    "./assets/js/wp-plugins/woocommerce/woo-cat-widget.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-cat-widget.js",
                 },
                 options: {
                     transform: [["babelify", { presets: ["@babel/preset-env"] }]],
@@ -51,7 +55,6 @@ module.exports = function (grunt) {
                         "assets/js/third/woo/woo-multistep-checkout.js",
                     "assets/js/third/woo/woo-thumbnails.min.js": "assets/js/third/woo/woo-thumbnails.js",
                     "assets/js/third/woo/woo-floating-bar.min.js": "assets/js/third/woo/woo-floating-bar.js",
-                    "assets/js/third/woo/woo-cat-widget.min.js": "assets/js/third/woo/woo-cat-widget.js",
                     "assets/js/third/woo/woo-hover-style.min.js": "assets/js/third/woo/woo-hover-style.js",
 
                     "inc/customizer/assets/js/customize-preview.min.js":

@@ -79,6 +79,7 @@ export const DOM = {
     },
     woo: {
         product: document.querySelector(".woocommerce div.product"),
+        categories: document.querySelectorAll(".woo-dropdown-cat .product-categories"),
     },
 };
 
