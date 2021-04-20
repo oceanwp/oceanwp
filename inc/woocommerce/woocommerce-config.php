@@ -94,7 +94,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				}
 
 				// Main Woo Actions
-				add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ) );
+				add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ), 99 );
 				add_filter( 'ocean_localize_array', array( $this, 'localize_array' ) );
 				if ( get_theme_mod( 'ocean_woo_shop_result_count', true )
 					|| get_theme_mod( 'ocean_woo_shop_sort', true )
@@ -717,7 +717,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// If single product ajax add to cart
 			if ( true == get_theme_mod( 'ocean_woo_product_ajax_add_to_cart', false )
 				&& oceanwp_is_woo_single() ) {
-				wp_enqueue_script( 'oceanwp-woo-ajax-addtocart', OCEANWP_JS_DIR_URI .'third/woo/woo-ajax-add-to-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-ajax-addtocart', OCEANWP_JS_DIR_URI .'wp-plugins/woocommerce/woo-ajax-add-to-cart.min.js', array(), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If floating bar

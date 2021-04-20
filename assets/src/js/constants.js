@@ -77,6 +77,9 @@ export const DOM = {
         quickViewModal: document.querySelector("#owp-qv-wrap"),
         quickViewContent: document.querySelector("#owp-qv-content"),
     },
+    woo: {
+        product: document.querySelector(".woocommerce div.product"),
+    },
 };
 
 export const DOMString = {};

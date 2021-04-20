@@ -31,6 +31,8 @@
         "time-grunt": "^2.0.0"
     },
     "dependencies": {
+        "axios": "^0.21.1",
+        "ftdomdelegate": "^4.0.6",
         "responsive-auto-height": "0.0.5"
     }
 }

@@ -21,6 +21,10 @@ module.exports = function (grunt) {
                     // Easy Digital Downloads
                     "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax.min.js":
                         "./assets/src/js/wp-plugins/easy-digital-downloads/edd-ajax.js",
+
+                    // Woocommerce
+                    "./assets/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.js",
                 },
                 options: {
                     transform: [["babelify", { presets: ["@babel/preset-env"] }]],
@@ -39,8 +43,6 @@ module.exports = function (grunt) {
                     "assets/js/third/magnific-popup.min.js": "assets/js/third/magnific-popup.js",
                     "assets/js/third/lightbox.min.js": "assets/js/third/lightbox.js",
                     "assets/js/third/woo/woo-scripts.min.js": ["assets/js/third/woo/devs/**/*.js"],
-                    "assets/js/third/woo/woo-ajax-add-to-cart.min.js":
-                        "assets/js/third/woo/woo-ajax-add-to-cart.js",
                     "assets/js/third/woo/woo-display-cart.min.js": "assets/js/third/woo/woo-display-cart.js",
                     "assets/js/third/woo/woo-off-canvas.min.js": "assets/js/third/woo/woo-off-canvas.js",
                     "assets/js/third/woo/woo-mini-cart.min.js": "assets/js/third/woo/woo-mini-cart.js",
