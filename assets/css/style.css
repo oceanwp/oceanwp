@@ -1356,16 +1356,16 @@ object {
   max-width: calc(100% + 64px);
 }
 
-.entry .alignwide {
-  margin-left: -30px;
-  width: calc(100% + 60px);
-  max-width: calc(100% + 60px);
-}
-
-.entry .alignfull {
+.page .entry .alignfull {
   margin-left: -5.6%;
   width: calc(100% + 11.1%);
   max-width: calc(100% + 11.1%);
+}
+
+.page .entry .alignwide {
+  margin-left: -30px;
+  width: calc(100% + 60px);
+  max-width: calc(100% + 60px);
 }
 
 body.content-full-screen .entry-content .alignwide, body.content-full-screen .entry-content .alignfull {

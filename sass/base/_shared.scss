@@ -59,20 +59,23 @@ object {
 	}
 }
 
-.entry {
-	.alignwide {
-		margin-left: -30px;
-		width: calc(100% + 60px);
-		max-width: calc(100% + 60px);
+.page {
+	.entry {
+		.alignfull {
+			margin-left: -5.6%;
+			width: calc(100% + 11.1%);
+			max-width: calc(100% + 11.1%);
+		}
 	}
-}
 
-.entry {
-	.alignfull {
-		margin-left: -5.6%;
-		width: calc(100% + 11.1%);
-		max-width: calc(100% + 11.1%);
+	.entry {
+		.alignwide {
+			margin-left: -30px;
+			width: calc(100% + 60px);
+			max-width: calc(100% + 60px);
+		}
 	}
+
 }
 
 body.content-full-screen {

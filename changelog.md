@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2021.04.26.* - 2.0.8
+* **Fixed** - Page title displayed with old setting.
+
 ### *2021.04.16.* - 2.0.7
 * **Moved** - Customizer hide page title setting to the visibility setting section.
 * **Fixed** - Multistep checkout undefined error notice.

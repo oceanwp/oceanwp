@@ -1949,6 +1949,7 @@ if ( ! function_exists( 'oceanwp_has_page_header' ) ) {
 
 		// Check if page header
 		if ( 'hide-all-devices' == get_theme_mod( 'ocean_page_header_visibility' )
+			|| 'hidden' == $style
 			|| is_page_template( 'templates/landing.php' ) ) {
 			$return = false;
 		}

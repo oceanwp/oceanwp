@@ -1513,6 +1513,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'centered'         => esc_html__( 'Centered', 'oceanwp' ),
 							'centered-minimal' => esc_html__( 'Centered Minimal', 'oceanwp' ),
 							'background-image' => esc_html__( 'Background Image', 'oceanwp' ),
+							'hidden'           =>  esc_html__( 'Hidden', 'oceanwp' ),
 						),
 					)
 				)
