@@ -71,7 +71,19 @@ function oceanwpWooMultiStepCheckout() {
 
             if ( action == 'next' ) {
 
-                var inputField   = $j( '#customer_billing_details p.validate-required input, #customer_billing_details p.validate-required select' );
+                var billingField  = $j( '.woocommerce-billing-fields p.validate-required input, .woocommerce-billing-fields p.validate-required select' ),
+                    createAccount = checkout_form.find( '.woocommerce-account-fields p.create-account input' );
+
+                if ( createAccount.is( ":checked" ) == true ) {
+                    var reqAccntDetails = $j( '.woocommerce-account-fields p#account_password_field input, .woocommerce-account-fields p#account_username_field input' );
+                } else {
+                    var reqAccntDetails = '';
+                }
+
+
+                var inputField = $j.merge( billingField, reqAccntDetails );
+
+                console.log(inputField);
 
                 inputField.filter(function() {
 
