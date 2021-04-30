@@ -79,11 +79,10 @@ class FullScreenMenu {
 
         fadeIn(DOM.menu.fullScreen.menu);
 
-        const htmlWidthBeforeOverflowHidden = DOM.global.html.innerWidth;
-        DOM.global.html.style.overflow = "hidden";
-        const htmlWidthAfterOverflowHidden = DOM.global.html.innerWidth;
-        DOM.global.html.style.marginRight =
-            htmlWidthBeforeOverflowHidden - htmlWidthAfterOverflowHidden + "px";
+        const htmlWidthBeforeOverflowHidden = DOM.html.innerWidth;
+        DOM.html.style.overflow = "hidden";
+        const htmlWidthAfterOverflowHidden = DOM.html.innerWidth;
+        DOM.html.style.marginRight = htmlWidthBeforeOverflowHidden - htmlWidthAfterOverflowHidden + "px";
     };
 
     #closeMenu = () => {
@@ -94,8 +93,8 @@ class FullScreenMenu {
 
         fadeOut(DOM.menu.fullScreen.menu);
 
-        DOM.global.html.style.overflow = "";
-        DOM.global.html.style.marginRight = "";
+        DOM.html.style.overflow = "";
+        DOM.html.style.marginRight = "";
 
         document
             .querySelectorAll("#full-screen-menu #site-navigation ul > li.dropdown")

@@ -548,6 +548,7 @@ final class OCEANWP_Theme_Class {
 		$vh_target   = get_theme_mod( 'ocean_vertical_header_dropdown_target', 'link' );
 		$vh_target   = $vh_target ? $vh_target : 'link';
 		$array       = array(
+			'nonce'                => wp_create_nonce( 'ocean_wp' ),
 			'isRTL'                => is_rtl(),
 			'menuSearchStyle'      => oceanwp_menu_search_style(),
 			'sidrSource'           => oceanwp_sidr_menu_source(),

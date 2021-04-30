@@ -28,7 +28,7 @@ class OverlaySearch extends SearchBase {
         form.querySelector('input[type="search"]').focus();
 
         setTimeout(function () {
-            DOM.global.html.style.overflow = "hidden";
+            DOM.html.style.overflow = "hidden";
         }, 400);
     };
 
@@ -41,7 +41,7 @@ class OverlaySearch extends SearchBase {
         fadeOut(form);
 
         setTimeout(function () {
-            DOM.global.html.style.overflow = "visible";
+            DOM.html.style.overflow = "visible";
         }, 400);
     };
 }

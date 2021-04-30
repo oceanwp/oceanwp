@@ -32,7 +32,7 @@
     },
     "dependencies": {
         "axios": "^0.21.1",
-        "ftdomdelegate": "^4.0.6",
+        "delegate": "^3.2.0",
         "responsive-auto-height": "0.0.5"
     }
 }

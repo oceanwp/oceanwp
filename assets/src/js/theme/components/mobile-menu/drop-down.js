@@ -6,7 +6,7 @@ class DropDownMobileMenu {
     #menuItemsToggleIcon;
 
     constructor() {
-        if (!DOM.global.body.classList.contains("dropdown-mobile")) {
+        if (!DOM.body.classList.contains("dropdown-mobile")) {
             return;
         }
 

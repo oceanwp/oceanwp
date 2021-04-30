@@ -37,12 +37,12 @@ export default class ScrollTop {
 
         const scrollTop = event.currentTarget;
 
-        DOM.global.html.scrollTo({
+        DOM.html.scrollTo({
             top: 0,
             behavior: "smooth",
         });
 
-        DOM.global.body.scrollTo({
+        DOM.body.scrollTo({
             top: 0,
             behavior: "smooth",
         });

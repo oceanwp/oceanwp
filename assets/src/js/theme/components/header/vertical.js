@@ -14,9 +14,14 @@ class VerticalHeader {
     }
 
     #start = () => {
-        DOM.header.vertical.querySelectorAll("li.menu-item-has-children > a").forEach((menuLink) => {
-            menuLink.insertAdjacentHTML("beforeend", '<span class="dropdown-toggle" tabindex="0"></span>');
-        });
+        DOM.header.vertical
+            .querySelectorAll("li.menu-item-has-children:not(.btn) > a")
+            .forEach((menuLink) => {
+                menuLink.insertAdjacentHTML(
+                    "beforeend",
+                    '<span class="dropdown-toggle" tabindex="0"></span>'
+                );
+            });
 
         this.#menuItemsPlusIcon =
             options.verticalHeaderTarget == "link"
@@ -25,6 +30,8 @@ class VerticalHeader {
 
         new PerfectScrollbar(DOM.header.vertical, {
             wheelSpeed: 0.5,
+            suppressScrollX: false,
+            suppressScrollY: false,
         });
     };
 
@@ -73,11 +80,11 @@ class VerticalHeader {
     #onToggleMenuBtnClick = (event) => {
         event.preventDefault();
 
-        if (!DOM.global.body.classList.contains("vh-opened")) {
-            DOM.global.body.classList.add("vh-opened");
+        if (!DOM.body.classList.contains("vh-opened")) {
+            DOM.body.classList.add("vh-opened");
             DOM.menu.vertical.toggleMenuBtn.querySelector(".hamburger").classList.add("is-active");
         } else {
-            DOM.global.body.classList.remove("vh-opened");
+            DOM.body.classList.remove("vh-opened");
             DOM.menu.vertical.toggleMenuBtn.querySelector(".hamburger").classList.remove("is-active");
         }
 
@@ -88,20 +95,29 @@ class VerticalHeader {
      * Trap keyboard navigation
      */
     #onDocumentKeydown = (event) => {
-        if (!DOM.global.body.classList.contains("vh-opened")) {
-            return;
-        }
-
         const tabKey = event.keyCode === 9;
         const shiftKey = event.shiftKey;
         const escKey = event.keyCode === 27;
         const enterKey = event.keyCode === 13;
 
-        const navElements = DOM.header.vertical.querySelectorAll("a, span.dropdown-toggle, input, button");
-        const navFirstElement = navElements[0];
-        const navLastElement = navElements[navElements.length - 1];
+        const navElements = DOM.header.vertical?.querySelectorAll("a, span.dropdown-toggle, input, button");
+        const navFirstElement = navElements ? navElements[0] : "";
+        const navLastElement = navElements ? navElements[navElements.length - 1] : "";
 
         navLastElement.style.outline = "";
+
+        if (DOM.body.classList.contains("vertical-header-style")) {
+            if (!DOM.body.classList.contains("vh-closed")) {
+                if (enterKey && document.activeElement.classList.contains("dropdown-toggle")) {
+                    console.log(document.activeElement);
+                    document.activeElement.click();
+                }
+            }
+
+            if (!DOM.body.classList.contains("vh-opened")) {
+                return;
+            }
+        }
 
         if (escKey) {
             event.preventDefault();
@@ -109,7 +125,7 @@ class VerticalHeader {
         }
 
         if (enterKey && document.activeElement.classList.contains("dropdown-toggle")) {
-            event.preventDefault();
+            console.log(document.activeElement);
             document.activeElement.click();
         }
 

@@ -7,10 +7,7 @@ class SidebarMobileMenu {
     #sidebarToggleMenuBtn;
 
     constructor() {
-        if (
-            typeof options.sidrSource !== "undefined" &&
-            DOM.global.body.classList.contains("sidebar-mobile")
-        ) {
+        if (typeof options.sidrSource !== "undefined" && DOM.body.classList.contains("sidebar-mobile")) {
             this.#start();
             this.#setupEventListeners();
         }
@@ -21,12 +18,14 @@ class SidebarMobileMenu {
 
         this.#startSidrPlugin();
 
-        document.querySelectorAll(".sidr-class-menu-item-has-children > a").forEach((menuItemLink) => {
-            menuItemLink.insertAdjacentHTML(
-                "beforeend",
-                '<span class="sidr-class-dropdown-toggle" tabindex=0></span>'
-            );
-        });
+        if (!document.querySelector(".sidr-class-dropdown-toggle")) {
+            document.querySelectorAll(".sidr-class-menu-item-has-children > a").forEach((menuItemLink) => {
+                menuItemLink.insertAdjacentHTML(
+                    "beforeend",
+                    '<span class="sidr-class-dropdown-toggle" tabindex=0></span>'
+                );
+            });
+        }
 
         this.#menuItemsPlusIcon =
             options.sidrDropdownTarget == "link"
@@ -47,7 +46,7 @@ class SidebarMobileMenu {
             onOpen() {
                 document.querySelector("a.sidr-class-toggle-sidr-close").focus();
 
-                DOM.mobileMenu.hamburgerBtn.classList.add("is-active");
+                DOM.mobileMenu.hamburgerBtn?.classList.add("is-active");
 
                 DOM.header.site.insertAdjacentHTML(
                     "afterend",
@@ -66,7 +65,7 @@ class SidebarMobileMenu {
                 });
             },
             onClose() {
-                DOM.mobileMenu.hamburgerBtn.classList.remove("is-active");
+                DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
 
                 document
                     .querySelectorAll(".sidr-class-menu-item-has-children.active > ul")
@@ -102,7 +101,7 @@ class SidebarMobileMenu {
     };
 
     #setupEventListeners = () => {
-        DOM.mobileMenu.hamburgerBtn.addEventListener("click", this.#onHamburgerBtnClick);
+        DOM.mobileMenu.hamburgerBtn?.addEventListener("click", this.#onHamburgerBtnClick);
         this.#sidebarToggleMenuBtn.addEventListener("click", this.#onSidebarCloseMenuBtnClick);
 
         this.#menuItemsPlusIcon.forEach((menuItemPlusIcon) => {
@@ -183,7 +182,7 @@ class SidebarMobileMenu {
      * Trap keyboard navigation
      */
     #onDocumentKeydown = (event) => {
-        if (!DOM.global.body.classList.contains("sidr-open")) {
+        if (!DOM.body.classList.contains("sidr-open")) {
             return;
         }
 
@@ -236,7 +235,7 @@ class SidebarMobileMenu {
 
     #closeSidr = () => {
         sidr.close("sidr");
-        DOM.mobileMenu.hamburgerBtn.classList.remove("is-active");
+        DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
     };
 }
 

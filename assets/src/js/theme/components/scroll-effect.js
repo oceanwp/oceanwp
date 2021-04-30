@@ -4,8 +4,8 @@ import { offset } from "../../lib/utils";
 class ScrollEffect {
     constructor() {
         if (
-            !DOM.global.body.classList.contains("single-product") &&
-            !DOM.global.body.classList.contains("no-local-scroll")
+            !DOM.body.classList.contains("single-product") &&
+            !DOM.body.classList.contains("no-local-scroll")
         ) {
             this.#setupEventListeners();
         }
@@ -43,12 +43,12 @@ class ScrollEffect {
                     this.#getTopbarHeight() +
                     this.#getStickyHeaderHeight();
 
-                DOM.global.html.scrollTo({
+                DOM.html.scrollTo({
                     top: scrollPosition,
                     behavior: "smooth",
                 });
 
-                DOM.global.body.scrollTo({
+                DOM.body.scrollTo({
                     top: scrollPosition,
                     behavior: "smooth",
                 });
@@ -56,7 +56,7 @@ class ScrollEffect {
         }
     };
 
-    #getAdminBarHeight = () => (!!DOM.global.WPAdminbar ? DOM.global.WPAdminbar.offsetHeight : 0);
+    #getAdminBarHeight = () => (!!DOM.WPAdminbar ? DOM.WPAdminbar.offsetHeight : 0);
 
     #getTopbarHeight = () =>
         !!DOM.header.topbarWrapper && DOM.header.topbarWrapper.classList.contains("top-bar-sticky")

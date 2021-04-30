@@ -9,7 +9,7 @@ export default class Select {
     }
 
     #render = () => {
-        DOM.global.selects.forEach((select) => {
+        DOM.selectTags.forEach((select) => {
             this.#select = select;
 
             this.#select.insertAdjacentHTML(
@@ -57,7 +57,7 @@ export default class Select {
     };
 
     #onDocumentReady = (event) => {
-        DOM.global.selects.forEach((select) => {
+        DOM.selectTags.forEach((select) => {
             select.style.width = select.nextSibling.offsetWidth + "px";
         });
     };

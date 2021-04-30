@@ -8,6 +8,11 @@
     z-index: 3000;
     @include transition(all 0.3s ease-in-out);
 
+    .ps__rail-y {
+        padding: 0 !important;
+        width: 0;
+    }
+
     &.has-scrolled {
         background-color: $color-1;
     }

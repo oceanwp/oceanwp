@@ -1,6 +1,5 @@
 const { DOM, options } = require("../../constants");
-import Delegate from "ftdomdelegate";
-import axios from "axios";
+import delegate from "delegate";
 
 class WooAjaxAddToCart {
     constructor() {
@@ -12,11 +11,9 @@ class WooAjaxAddToCart {
     }
 
     #setupEventListeners = () => {
-        const delegate = new Delegate(document.body);
-
         delegate.on(
-            "click",
             ".product:not(.product-type-external) .single_add_to_cart_button:not(.disabled)",
+            "click",
             this.#onAddToCartBtnClick
         );
 
@@ -24,7 +21,7 @@ class WooAjaxAddToCart {
     };
 
     #onAddToCartBtnClick = (event) => {
-        const addToCartBtn = event.target;
+        const addToCartBtn = event.delegateTarget;
         const $addToCartBtn = jQuery(addToCartBtn);
         const form = addToCartBtn.closest("form.cart");
         const formData = this.#getFormData(form);

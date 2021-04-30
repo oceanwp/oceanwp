@@ -3620,6 +3620,11 @@ a.pure-button-selected {
   transition: all 0.3s ease-in-out;
 }
 
+#site-header.vertical-header .ps__rail-y {
+  padding: 0 !important;
+  width: 0;
+}
+
 #site-header.vertical-header.has-scrolled {
   background-color: #fff;
 }

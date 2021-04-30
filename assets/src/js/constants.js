@@ -1,13 +1,11 @@
 export const options = oceanwpLocalize;
 
 export const DOM = {
-    global: {
-        WPAdminbar: document.querySelector("#wpadminbar"),
-        html: document.querySelector("html"),
-        body: document.body,
-        main: document.querySelector("#main"),
-        selects: document.querySelectorAll(options.customSelects),
-    },
+    html: document.querySelector("html"),
+    body: document.body,
+    WPAdminbar: document.querySelector("#wpadminbar"),
+    main: document.querySelector("#main"),
+    selectTags: document.querySelectorAll(options.customSelects),
     header: {
         site: document.querySelector("#site-header"),
         vertical: document.querySelector("#site-header.vertical-header #site-header-inner"),
@@ -80,6 +78,12 @@ export const DOM = {
     woo: {
         product: document.querySelector(".woocommerce div.product"),
         categories: document.querySelectorAll(".woo-dropdown-cat .product-categories"),
+        verticalThumbs: document.querySelectorAll(".owp-thumbs-layout-vertical"),
+        navs: document.querySelectorAll(".flex-control-nav"),
+        quickView: {
+            modal: document.querySelector("#owp-qv-wrap"),
+            content: document.querySelector("#owp-qv-content"),
+        },
     },
 };
 

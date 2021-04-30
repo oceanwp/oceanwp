@@ -14,21 +14,45 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON("package.json"),
 
         browserify: {
-            dist: {
+            prod: {
                 files: {
                     "./assets/js/main.vanilla.min.js": "./assets/src/js/index.js",
+                },
+                options: {
+                    transform: [["babelify", { presets: ["@babel/preset-env"] }]],
+                    browserifyOptions: {
+                        debug: true,
+                    },
+                },
+            },
+            dev: {
+                files: {
+                    // "./assets/js/main.vanilla.min.js": "./assets/src/js/index.js",
 
                     // Easy Digital Downloads
                     "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax.min.js":
                         "./assets/src/js/wp-plugins/easy-digital-downloads/edd-ajax.js",
-
                     // Woocommerce ajax add to cart
                     "./assets/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.min.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.js",
-
                     // Woocommerce categories widget
                     "./assets/js/wp-plugins/woocommerce/woo-cat-widget.min.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-cat-widget.js",
+                    // Woocommerce canvans filter
+                    "./assets/js/wp-plugins/woocommerce/woo-off-canvas.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-off-canvas.js",
+                    // Woocommerce thumbnails
+                    "./assets/js/wp-plugins/woocommerce/woo-thumbnails.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-thumbnails.js",
+                    // Woocommerce widgets
+                    "./assets/js/wp-plugins/woocommerce/dev/wooWidgets.js":
+                        "./assets/src/js/wp-plugins/woocommerce/dev/wooWidgets.js",
+                    // Woocommerce review scroll
+                    "./assets/js/wp-plugins/woocommerce/dev/wooReviewScroll.js":
+                        "./assets/src/js/wp-plugins/woocommerce/dev/wooReviewScroll.js",
+                    // Woocommerce quick view
+                    "./assets/js/wp-plugins/woocommerce/woo-quick-view.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-quick-view.js",
                 },
                 options: {
                     transform: [["babelify", { presets: ["@babel/preset-env"] }]],
@@ -48,12 +72,10 @@ module.exports = function (grunt) {
                     "assets/js/third/lightbox.min.js": "assets/js/third/lightbox.js",
                     "assets/js/third/woo/woo-scripts.min.js": ["assets/js/third/woo/devs/**/*.js"],
                     "assets/js/third/woo/woo-display-cart.min.js": "assets/js/third/woo/woo-display-cart.js",
-                    "assets/js/third/woo/woo-off-canvas.min.js": "assets/js/third/woo/woo-off-canvas.js",
                     "assets/js/third/woo/woo-mini-cart.min.js": "assets/js/third/woo/woo-mini-cart.js",
                     "assets/js/third/woo/woo-quick-view.min.js": "assets/js/third/woo/woo-quick-view.js",
                     "assets/js/third/woo/woo-multistep-checkout.min.js":
                         "assets/js/third/woo/woo-multistep-checkout.js",
-                    "assets/js/third/woo/woo-thumbnails.min.js": "assets/js/third/woo/woo-thumbnails.js",
                     "assets/js/third/woo/woo-floating-bar.min.js": "assets/js/third/woo/woo-floating-bar.js",
                     "assets/js/third/woo/woo-hover-style.min.js": "assets/js/third/woo/woo-hover-style.js",
 
@@ -105,7 +127,7 @@ module.exports = function (grunt) {
                 //     sourceMap: true,
                 // },
                 files: {
-                    "assets/js/main.min.js": ["assets/js/devs/**/*.js", "assets/js/core/**/*.js"],
+                    "./assets/js/main.min.js": ["./assets/js/devs/**/*.js", "./assets/js/core/**/*.js"],
                     // "assets/js/main.vanilla.min.js": ["assets/js/main.vanilla.min.js"],
                 },
             },
@@ -255,7 +277,7 @@ module.exports = function (grunt) {
             // },
             js: {
                 files: ["assets/src/js/**/*.js"],
-                tasks: ["browserify:dist"],
+                tasks: ["browserify:prod", "newer:browserify:dev"],
             },
         },
 

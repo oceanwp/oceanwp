@@ -3,7 +3,7 @@ import { slideUp, slideDown, fadeIn, fadeOut } from "../../../lib/utils";
 
 class FullScreenMobileMenu {
     constructor() {
-        if (!DOM.global.body.classList.contains("fullscreen-mobile")) {
+        if (!DOM.body.classList.contains("fullscreen-mobile")) {
             return;
         }
 
@@ -52,11 +52,10 @@ class FullScreenMobileMenu {
 
         fadeIn(DOM.mobileMenu.fullScreen);
 
-        const htmlWidthBeforeOverflowHidden = DOM.global.html.innerWidth;
-        DOM.global.html.style.overflow = "hidden";
-        const htmlWidthAfterOverflowHidden = DOM.global.html.innerWidth;
-        DOM.global.html.style.marginRight =
-            htmlWidthAfterOverflowHidden - htmlWidthBeforeOverflowHidden + "px";
+        const htmlWidthBeforeOverflowHidden = DOM.html.innerWidth;
+        DOM.html.style.overflow = "hidden";
+        const htmlWidthAfterOverflowHidden = DOM.html.innerWidth;
+        DOM.html.style.marginRight = htmlWidthAfterOverflowHidden - htmlWidthBeforeOverflowHidden + "px";
 
         DOM.mobileMenu.fullScreen.querySelector("a.close").focus();
     };
@@ -73,8 +72,8 @@ class FullScreenMobileMenu {
 
         fadeOut(DOM.mobileMenu.fullScreen);
 
-        DOM.global.html.style.overflow = "";
-        DOM.global.html.style.marginRight = "";
+        DOM.html.style.overflow = "";
+        DOM.html.style.marginRight = "";
 
         document.querySelectorAll("#mobile-fullscreen nav ul > li.dropdown").forEach((menuItem) => {
             menuItem.classList.remove("open-sub");

@@ -29,12 +29,12 @@ class EDDAjax {
         DOM.edd.overlayCarts?.forEach((overlayCart) => {
             fadeIn(overlayCart);
 
-            DOM.global.body.classList.add("show-cart");
+            DOM.body.classList.add("show-cart");
 
             if (!!DOM.edd.quickViewModal) {
-                DOM.global.html.style.overflow = "";
-                DOM.global.html.style.marginRight = "";
-                DOM.global.html.classList.remove("owp-qv-open");
+                DOM.html.style.overflow = "";
+                DOM.html.style.marginRight = "";
+                DOM.html.classList.remove("owp-qv-open");
 
                 fadeOut(DOM.edd.quickViewModal);
 
@@ -54,7 +54,7 @@ class EDDAjax {
         overlayCart = event.currentTarget;
 
         fadeOut(overlayCart);
-        DOM.global.body.classList.remove("show-cart");
+        DOM.body.classList.remove("show-cart");
     };
 
     #onWindowResize = (event) => {
@@ -63,7 +63,7 @@ class EDDAjax {
                 fadeOut(overlayCart);
             });
 
-            DOM.global.body.classList.remove("show-cart");
+            DOM.body.classList.remove("show-cart");
         }
     };
 }

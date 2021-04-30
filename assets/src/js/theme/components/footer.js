@@ -38,20 +38,18 @@ export default class Footer {
 
         let offset = 0;
 
-        if (!!DOM.global.WPAdminbar) {
-            offset = DOM.global.WPAdminbar.offsetHeight;
+        if (!!DOM.WPAdminbar) {
+            offset = DOM.WPAdminbar.offsetHeight;
         }
 
-        DOM.global.main.style.minHeight =
-            DOM.global.main.offsetHeight +
-            (window.innerHeight - DOM.global.html.offsetHeight - offset) +
-            "px";
+        DOM.main.style.minHeight =
+            DOM.main.offsetHeight + (window.innerHeight - DOM.html.offsetHeight - offset) + "px";
     };
 
     #parallaxFooter = () => {
-        if (DOM.global.body.classList.contains("has-parallax-footer")) {
+        if (DOM.body.classList.contains("has-parallax-footer")) {
             setTimeout(() => {
-                DOM.global.main.style.marginBottom = DOM.footer.parallax.offsetHeight + "px";
+                DOM.main.style.marginBottom = DOM.footer.parallax.offsetHeight + "px";
             }, 1);
         }
     };
