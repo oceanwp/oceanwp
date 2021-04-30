@@ -376,7 +376,7 @@ form.oceanwp-searchform button {
 }
 
 .owp-icon use {
-  stroke: #2D3E50;
+  stroke: #333;
 }
 
 /**
@@ -4295,6 +4295,10 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   color: #555;
 }
 
+.dropdown-menu ul li a.menu-link:hover .owp-icon use {
+  stroke: #555;
+}
+
 .dropdown-menu ul li a.menu-link .nav-arrow {
   position: absolute;
   top: 50%;
@@ -6435,6 +6439,10 @@ body.breadcrumbs-position-default .page-header-title {
   margin-right: 5px;
 }
 
+.site-breadcrumbs .owp-icon {
+  vertical-align: text-top;
+}
+
 .site-breadcrumbs.position-under-title,
 .centered-page-header .site-breadcrumbs,
 .centered-minimal-page-header .site-breadcrumbs {
@@ -7696,6 +7704,10 @@ ul.page-numbers li {
   display: inline-block;
 }
 
+ul.page-numbers li .owp-icon {
+  vertical-align: inherit;
+}
+
 .page-links {
   text-align: center;
   margin: 15px 0;
@@ -7721,6 +7733,10 @@ ul.page-numbers li {
   box-sizing: content-box;
 }
 
+.page-numbers a .owp-icon use {
+  stroke: #555;
+}
+
 .page-numbers a span:not(.elementor-screen-only) {
   padding: 0;
 }
@@ -7732,6 +7748,10 @@ ul.page-numbers li {
 .page-links > span {
   background-color: #f8f8f8;
   color: #333;
+}
+
+.page-numbers a:hover .owp-icon use {
+  stroke: #555;
 }
 
 .elementor-pagination .page-numbers.current,

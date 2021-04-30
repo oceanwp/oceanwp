@@ -687,13 +687,15 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 			// Top bar social link color
 			if ( ! empty( $social_links_color ) && '#bbbbbb' != $social_links_color ) {
 				$css .= '#top-bar-social li a{color:'. $social_links_color .';}';
+				$css .= '#top-bar-social li a .owp-icon use{stroke:'. $social_links_color .';}';
 			}
 
 			// Top bar social link color hover
 			if ( ! empty( $social_hover_links_color ) ) {
 				$css .= '#top-bar-social li a:hover{color:'. $social_hover_links_color .'!important;}';
+				$css .= '#top-bar-social li a:hover .owp-icon use{stroke:'. $social_hover_links_color .'!important;}';
 			}
-				
+
 			// Return CSS
 			if ( ! empty( $css ) ) {
 				$output .= '/* Top Bar CSS */'. $css;

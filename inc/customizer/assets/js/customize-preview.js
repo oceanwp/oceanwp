@@ -1262,7 +1262,7 @@
 				var $child = $(".customizer-breadcrumbs_link_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_breadcrumbs_link_color">.site-breadcrumbs a, .background-image-page-header .site-breadcrumbs a { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_breadcrumbs_link_color">.site-breadcrumbs a, .background-image-page-header .site-breadcrumbs a { color: ' + to + '; } .site-breadcrumbs a .owp-icon use, .background-image-page-header .site-breadcrumbs a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -1277,7 +1277,7 @@
 				var $child = $(".customizer-breadcrumbs_link_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_breadcrumbs_link_color_hover">.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_breadcrumbs_link_color_hover">.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover { color: ' + to + '; } .site-breadcrumbs a:hover .owp-icon use, .background-image-page-header .site-breadcrumbs a:hover .owp-icon use { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -1592,7 +1592,7 @@
 				var $child = $(".customizer-ocean_pagination_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_pagination_color">.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_pagination_color">.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span { color: ' + to + '; } .page-numbers a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -1607,7 +1607,7 @@
 				var $child = $(".customizer-ocean_pagination_hover_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_pagination_hover_color">.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_pagination_hover_color">.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover { color: ' + to + '; } .page-numbers a:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2148,7 +2148,7 @@
 				var $child = $(".customizer-ocean_links_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_links_color">a { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_links_color">a { color: ' + to + '; } a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2163,7 +2163,7 @@
 				var $child = $(".customizer-ocean_links_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_links_color_hover">a:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_links_color_hover">a:hover { color: ' + to + '; } a:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3468,7 +3468,7 @@
 				var $child = $(".customizer-ocean_top_bar_social_links_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_top_bar_social_links_color">#top-bar-social li a { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_top_bar_social_links_color">#top-bar-social li a { color: ' + to + '; } #top-bar-social li a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3483,7 +3483,7 @@
 				var $child = $(".customizer-ocean_top_bar_social_hover_links_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_top_bar_social_hover_links_color">body #top-bar #top-bar-social li a:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_top_bar_social_hover_links_color">body #top-bar #top-bar-social li a:hover { color: ' + to + '; } body #top-bar #top-bar-social li a:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5168,7 +5168,7 @@
 				var $child = $(".customizer-ocean_menu_link_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_link_color">#site-navigation-wrap .dropdown-menu > li > a, .oceanwp-mobile-menu-icon a { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_menu_link_color">#site-navigation-wrap .dropdown-menu > li > a, .oceanwp-mobile-menu-icon a { color: ' + to + '; } #site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5183,7 +5183,7 @@
 				var $child = $(".customizer-ocean_menu_link_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_link_color_hover">#site-navigation-wrap .dropdown-menu > li > a:hover, .oceanwp-mobile-menu-icon a:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_menu_link_color_hover">#site-navigation-wrap .dropdown-menu > li > a:hover, .oceanwp-mobile-menu-icon a:hover { color: ' + to + '; } #site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5378,7 +5378,7 @@
 				var $child = $(".customizer-ocean_dropdown_menu_link_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_dropdown_menu_link_color">.dropdown-menu ul li a.menu-link { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_dropdown_menu_link_color">.dropdown-menu ul li a.menu-link { color: ' + to + '; } .dropdown-menu ul li a.menu-link .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5393,7 +5393,7 @@
 				var $child = $(".customizer-ocean_dropdown_menu_link_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_dropdown_menu_link_color_hover">.dropdown-menu ul li a.menu-link:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_dropdown_menu_link_color_hover">.dropdown-menu ul li a.menu-link:hover { color: ' + to + '; } .dropdown-menu ul li a.menu-link:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5513,7 +5513,7 @@
 				var $child = $(".customizer-ocean_dropdown_category_date_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_dropdown_category_date_color">.navigation li.mega-cat ul li .mega-post-date { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_dropdown_category_date_color">.navigation li.mega-cat ul li .mega-post-date { color: ' + to + '; } .navigation li.mega-cat ul li .mega-post-date .owp-icon use{ stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -7036,7 +7036,7 @@
 				var $child = $(".customizer-ocean_theme_blog_posts_icons_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_blog_posts_icons_color">#blog-entries ul.meta li i{ color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_blog_posts_icons_color">#blog-entries ul.meta li i{ color: ' + to + '; } #blog-entries ul.meta li .owp-icon use{ stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -7051,7 +7051,7 @@
 				var $child = $(".customizer-ocean_theme_single_post_icons_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_single_post_icons_color">.single-post ul.meta li i{ color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_single_post_icons_color">.single-post ul.meta li i{ color: ' + to + '; } .single-post ul.meta li .owp-icon use{ stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

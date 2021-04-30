@@ -4848,11 +4848,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Menu link color
 			if ( ! empty( $menu_link_color ) && '#555555' != $menu_link_color ) {
 				$css .= '#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close{color:'. $menu_link_color .';}';
+				$css .= '#site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use,#searchform-header-replace-close .owp-icon use{stroke:'. $menu_link_color .';}';
 			}
 
 			// Menu link color hover
 			if ( ! empty( $menu_link_color_hover ) && '#13aff0' != $menu_link_color_hover ) {
 				$css .= '#site-navigation-wrap .dropdown-menu > li > a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover{color:'. $menu_link_color_hover .';}';
+				$css .= '#site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use,#searchform-header-replace-close:hover .owp-icon use{stroke:'. $menu_link_color_hover .';}';
 			}
 
 			// Menu link active color
@@ -4898,11 +4900,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Dropdown menu link color
 			if ( ! empty( $dropdown_menu_link_color ) && '#333333' != $dropdown_menu_link_color ) {
 				$css .= '.dropdown-menu ul li a.menu-link{color:'. $dropdown_menu_link_color .';}';
+				$css .= '.dropdown-menu ul li a.menu-link .owp-icon use{stroke:'. $dropdown_menu_link_color .';}';
 			}
 
 			// Dropdown menu link hover color
 			if ( ! empty( $dropdown_menu_link_color_hover ) && '#555555' != $dropdown_menu_link_color_hover ) {
 				$css .= '.dropdown-menu ul li a.menu-link:hover{color:'. $dropdown_menu_link_color_hover .';}';
+				$css .= '.dropdown-menu ul li a.menu-link:hover .owp-icon use{stroke:'. $dropdown_menu_link_color_hover .';}';
 			}
 
 			// Dropdown menu link hover background color
@@ -4943,6 +4947,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Dropdown menu link active background color
 			if ( ! empty( $dropdown_category_date_color ) && '#bbbbbb' != $dropdown_category_date_color ) {
 				$css .= '.navigation li.mega-cat ul li .mega-post-date{color:'. $dropdown_category_date_color .';}';
+				$css .= '.navigation li.mega-cat ul li .mega-post-date .owp-icon use{stroke:'. $dropdown_category_date_color .';}';
 			}
 
 			// Add social menu font size

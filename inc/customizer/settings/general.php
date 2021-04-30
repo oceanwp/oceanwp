@@ -3969,6 +3969,15 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				)
 			);
 
+			// SVG Icon color.
+			$svg_icons = apply_filters(
+				'ocean_primary_svg_icons',
+				array(
+					'.single nav.post-navigation .nav-links .title .owp-icon use',
+					'.blog-entry.post .blog-entry-readmore a:hover .owp-icon use',
+				)
+			);
+
 			// Backgrounds.
 			$backgrounds = apply_filters(
 				'ocean_primary_backgrounds',
@@ -4009,6 +4018,8 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Return array.
 			if ( 'texts' === $return ) {
 				return $texts;
+			} elseif ( 'svg_icons' === $return ) {
+				return $svg_icons;
 			} elseif ( 'backgrounds' === $return ) {
 				return $backgrounds;
 			} elseif ( 'borders' === $return ) {
@@ -4277,6 +4288,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Get primary color arrays.
 			$texts       = self::primary_color_arrays( 'texts' );
+			$svg_icons   = self::primary_color_arrays( 'svg_icons' );
 			$backgrounds = self::primary_color_arrays( 'backgrounds' );
 			$borders     = self::primary_color_arrays( 'borders' );
 
@@ -4289,12 +4301,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Texts.
 			if ( ! empty( $texts ) && '#13aff0' != $primary_color ) {
 				$css .= implode( ',', $texts ) . '{color:' . $primary_color . ';}';
-				$css .= '.single nav.post-navigation .nav-links .title .owp-icon use{ stroke:' . $primary_color . ';}';
+				$css .= implode( ',', $svg_icons ) . '{stroke:' . $primary_color . ';}';
 			}
 
 			// Backgrounds.
 			if ( ! empty( $backgrounds ) && '#13aff0' != $primary_color ) {
 				$css .= implode( ',', $backgrounds ) . '{background-color:' . $primary_color . ';}';
+				$css .= '.thumbnail:hover .link-post-svg-icon{background-color:' . $primary_color . ';}';
 			}
 
 			// Borders.
@@ -4360,11 +4373,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Links color.
 			if ( ! empty( $links_color ) && '#333333' != $links_color ) {
 				$css .= 'a{color:' . $links_color . ';}';
+				$css .= 'a .owp-icon use {stroke:' . $links_color . ';}';
 			}
 
 			// Links color hover.
 			if ( ! empty( $links_color_hover ) && '#13aff0' != $links_color_hover ) {
 				$css .= 'a:hover{color:' . $links_color_hover . ';}';
+				$css .= 'a:hover .owp-icon use {stroke:' . $links_color_hover . ';}';
 			}
 
 			// Boxed width.
@@ -4501,11 +4516,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Breadcrumbs link color.
 			if ( ! empty( $breadcrumbs_link_color ) && '#333333' != $breadcrumbs_link_color ) {
 				$css .= '.site-breadcrumbs a, .background-image-page-header .site-breadcrumbs a{color:' . $breadcrumbs_link_color . ';}';
+				$css .= '.site-breadcrumbs a .owp-icon use, .background-image-page-header .site-breadcrumbs a .owp-icon use{stroke:' . $breadcrumbs_link_color . ';}';
 			}
 
 			// Breadcrumbs link hover color.
 			if ( ! empty( $breadcrumbs_link_color_hover ) && '#13aff0' != $breadcrumbs_link_color_hover ) {
 				$css .= '.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover{color:' . $breadcrumbs_link_color_hover . ';}';
+				$css .= '.site-breadcrumbs a:hover .owp-icon use, .background-image-page-header .site-breadcrumbs a:hover .owp-icon use{stroke:' . $breadcrumbs_link_color_hover . ';}';
 			}
 
 			// Meta breadcrumbs text color.
@@ -4594,11 +4611,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Pagination color.
 			if ( ! empty( $pagination_color ) && '#555555' != $pagination_color ) {
 				$css .= '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span{color:' . $pagination_color . ';}';
+				$css .= '.page-numbers a .owp-icon use{stroke:' . $pagination_color . ';}';
 			}
 
 			// Pagination color hover.
 			if ( ! empty( $pagination_hover_color ) && '#333333' != $pagination_hover_color ) {
 				$css .= '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover{color:' . $pagination_hover_color . ';}';
+				$css .= '.page-numbers a:hover .owp-icon use{stroke:' . $pagination_hover_color . ';}';
 			}
 
 			// Pagination border color.
@@ -4758,11 +4777,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Blog entries meta icons color.
 			if ( ! empty( $theme_blog_icons_color ) && '#333333' != $theme_blog_icons_color ) {
 				$css .= '#blog-entries ul.meta li i{color:' . $theme_blog_icons_color . ';}';
+				$css .= '#blog-entries ul.meta li .owp-icon use{stroke:' . $theme_blog_icons_color . ';}';
 			}
 
 			// Single post meta icons color.
 			if ( ! empty( $theme_post_icons_color ) && '#333333' != $theme_post_icons_color ) {
 				$css .= '.single-post ul.meta li i{color:' . $theme_post_icons_color . ';}';
+				$css .= '.single-post ul.meta li .owp-icon use{stroke:' . $theme_post_icons_color . ';}';
 			}
 
 			// If page Both Sidebars layout.

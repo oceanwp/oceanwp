@@ -285,7 +285,7 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 		 */
 		public function gutenberg_editor_style( $output ) {
 
-			if ( ! is_null( get_current_screen() ) || get_current_screen()->is_block_editor() ) {
+			if ( ! is_null( get_current_screen() ) && get_current_screen()->is_block_editor() ) {
 
 				$gutenberg_css = self::loop( 'css' );
 
