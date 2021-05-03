@@ -129,3 +129,7 @@ export const offset = (element) => {
         left: rect.left + win.pageXOffset,
     };
 };
+
+export const visible = (element) => {
+    return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
+};
