@@ -82,7 +82,7 @@ export const slideToggle = (element, duration) =>
         ? slideDown(element, duration)
         : slideUp(element, duration);
 
-export const fadeIn = (element, display) => {
+export const fadeIn = (element, display, callback = null) => {
     element.style.opacity = 0;
     element.style.display = display || "block";
 
@@ -91,6 +91,11 @@ export const fadeIn = (element, display) => {
 
         if ((opacity += 0.1) <= 1) {
             element.style.opacity = opacity;
+
+            if (opacity === 1 && callback) {
+                callback();
+            }
+
             window.requestAnimationFrame(fade);
         }
     };
@@ -98,7 +103,7 @@ export const fadeIn = (element, display) => {
     window.requestAnimationFrame(fade);
 };
 
-export const fadeOut = (element, display) => {
+export const fadeOut = (element, display, callback = null) => {
     element.style.opacity = 1;
     element.style.display = display || "block";
 
@@ -109,6 +114,11 @@ export const fadeOut = (element, display) => {
             element.style.display = "none";
         } else {
             element.style.opacity = opacity;
+
+            if (opacity === 0 && callback) {
+                callback();
+            }
+
             window.requestAnimationFrame(fade);
         }
     };
@@ -132,4 +142,28 @@ export const offset = (element) => {
 
 export const visible = (element) => {
     return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
+};
+
+export const getSiblings = function (e) {
+    // for collecting siblings
+    const siblings = [];
+
+    // if no parent, return no sibling
+    if (!e.parentNode) {
+        return siblings;
+    }
+
+    // first child of the parent node
+    let sibling = e.parentNode.firstChild;
+
+    // collecting siblings
+    while (sibling) {
+        if (sibling.nodeType === 1 && sibling !== e) {
+            siblings.push(sibling);
+        }
+
+        sibling = sibling.nextSibling;
+    }
+
+    return siblings;
 };
