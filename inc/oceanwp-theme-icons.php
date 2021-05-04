@@ -93,7 +93,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 			'menu'       => array(
 				'sili' => 'icon-menu',
 				'fai'  => 'fas fa-bars',
-				'svg'  => 'mobile-menu',
+				'svg'  => 'bars',
 			),
 			'grid'       => array(
 				'sili' => 'icon-grid',
@@ -140,6 +140,21 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'fai'  => 'fa fa-angle-double-up',
 				'svg'  => 'double-arrows-up',
 			),
+			'double_arrows_down'     => array(
+				'sili' => 'fa fa-angle-double-down',
+				'fai'  => 'fa fa-angle-double-down',
+				'svg'  => 'double-arrows-down',
+			),
+			'double_arrows_left'     => array(
+				'sili' => 'fa fa-angle-double-left',
+				'fai'  => 'fa fa-angle-double-left',
+				'svg'  => 'double-arrows-left',
+			),
+			'double_arrows_right'     => array(
+				'sili' => 'fa fa-angle-double-right',
+				'fai'  => 'fa fa-angle-double-right',
+				'svg'  => 'double-arrows-right',
+			),
 			'long_arrow_alt_up'     => array(
 				'sili' => 'fas fa-long-arrow-alt-up',
 				'fai'  => 'fas fa-long-arrow-alt-up',
@@ -170,6 +185,21 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'fai'  => 'fa fa-arrow-up',
 				'svg'  => 'arrow-up',
 			),
+			'arrow_down'     => array(
+				'sili' => 'fa fa-arrow-down',
+				'fai'  => 'fa fa-arrow-down',
+				'svg'  => 'arrow-down',
+			),
+			'arrow_left'     => array(
+				'sili' => 'fa fa-arrow-left',
+				'fai'  => 'fa fa-arrow-left',
+				'svg'  => 'arrow-left',
+			),
+			'arrow_right'     => array(
+				'sili' => 'fa fa-arrow-right',
+				'fai'  => 'fa fa-arrow-right',
+				'svg'  => 'arrow-right',
+			),
 			'level_up_alt'     => array(
 				'sili' => 'fa fa-level-up-alt',
 				'fai'  => 'fa fa-level-up-alt',
@@ -184,6 +214,21 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'sili' => 'far fa-heart',
 				'fai'  => 'far fa-heart',
 				'svg'  => 'wishlist',
+			),
+			'map_marker'     => array(
+				'sili' => 'fas fa-map-marker-alt',
+				'fai'  => 'fas fa-map-marker-alt',
+				'svg'  => 'place',
+			),
+			'hand_point_left'     => array(
+				'sili' => 'far fa-hand-point-left',
+				'fai'  => 'far fa-hand-point-left',
+				'svg'  => 'side-panel-opening-2-left',
+			),
+			'hand_point_right'     => array(
+				'sili' => 'far fa-hand-point-right',
+				'fai'  => 'far fa-hand-point-right',
+				'svg'  => 'side-panel-opening-2-right',
 			),
 
 			// Cart icon.
