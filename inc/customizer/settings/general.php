@@ -3975,6 +3975,8 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				array(
 					'.single nav.post-navigation .nav-links .title .owp-icon use',
 					'.blog-entry.post .blog-entry-readmore a:hover .owp-icon use',
+					'body .contact-info-widget.default .owp-icon use',
+					'body .contact-info-widget.big-icons .owp-icon use',
 				)
 			);
 
@@ -4308,6 +4310,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			if ( ! empty( $backgrounds ) && '#13aff0' != $primary_color ) {
 				$css .= implode( ',', $backgrounds ) . '{background-color:' . $primary_color . ';}';
 				$css .= '.thumbnail:hover .link-post-svg-icon{background-color:' . $primary_color . ';}';
+				$css .= 'body .contact-info-widget.big-icons li:hover .owp-icon{background-color:' . $primary_color . ';}';
 			}
 
 			// Borders.
@@ -4328,6 +4331,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Blockquotes color.
 			if ( ! empty( $primary_color ) && '#13aff0' != $primary_color ) {
 				$css .= 'blockquote, .wp-block-quote{border-left-color:' . $primary_color . ';}';
+				$css .= 'body .contact-info-widget.big-icons li:hover .owp-icon{border-color:' . $primary_color . ';}';
 			}
 
 			// Hover primary color.
@@ -4338,6 +4342,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Main border color.
 			if ( ! empty( $main_border ) && '#e9e9e9' != $main_border_color ) {
 				$css .= implode( ',', $main_border ) . '{border-color:' . $main_border_color . ';}';
+				$css .= 'body .contact-info-widget.big-icons .owp-icon, body .contact-info-widget.default .owp-icon{border-color:' . $main_border_color . ';}';
 			}
 
 			// Get site background color.

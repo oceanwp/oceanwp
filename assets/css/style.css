@@ -7401,9 +7401,14 @@ ul.obem-none li:after {
   padding-right: 20px;
 }
 
-.single nav.post-navigation .nav-previous i {
+.single nav.post-navigation .nav-previous i,
+.single nav.post-navigation .nav-previous .owp-icon {
   float: left;
   margin-right: 20px;
+}
+
+.single nav.post-navigation .nav-previous .owp-icon {
+  margin-top: 4px;
 }
 
 .single nav.post-navigation .nav-next {
@@ -7413,9 +7418,14 @@ ul.obem-none li:after {
   padding-left: 20px;
 }
 
-.single nav.post-navigation .nav-next i {
+.single nav.post-navigation .nav-next i,
+.single nav.post-navigation .nav-next .owp-icon {
   float: right;
   margin-left: 20px;
+}
+
+.single nav.post-navigation .nav-next .owp-icon {
+  margin-top: 4px;
 }
 
 /*------------------------------------*
@@ -8201,6 +8211,7 @@ span.required {
 #footer-widgets #wp-calendar th,
 #footer-widgets #wp-calendar tbody,
 #footer-widgets .contact-info-widget i,
+#footer-widgets .contact-info-widget .owp-icon,
 #footer-widgets .mailchimp-widget input[type="email"],
 #footer-widgets .posts-thumbnails-widget li,
 #footer-widgets .social-widget li a {

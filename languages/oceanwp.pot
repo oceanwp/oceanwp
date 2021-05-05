@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 2.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-05-04 12:48:01+00:00\n"
+"POT-Creation-Date: 2021-05-05 09:29:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4875,7 +4875,7 @@ msgid "Submit search"
 msgstr ""
 
 #: inc/oceanwp-svg.php:54 inc/oceanwp-svg.php:160
-#: inc/oceanwp-theme-icons.php:446 inc/oceanwp-theme-icons.php:498
+#: inc/oceanwp-theme-icons.php:471 inc/oceanwp-theme-icons.php:523
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
@@ -4883,15 +4883,15 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: inc/oceanwp-theme-icons.php:401
+#: inc/oceanwp-theme-icons.php:426
 msgid "Please select an icon type."
 msgstr ""
 
-#: inc/oceanwp-theme-icons.php:451
+#: inc/oceanwp-theme-icons.php:476
 msgid "Please define an icon class."
 msgstr ""
 
-#: inc/oceanwp-theme-icons.php:511
+#: inc/oceanwp-theme-icons.php:536
 msgid "Please define an icon type."
 msgstr ""
 

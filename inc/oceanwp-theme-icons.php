@@ -216,7 +216,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'wishlist',
 			),
 			'map_marker'     => array(
-				'sili' => 'fas fa-map-marker-alt',
+				'sili' => 'icon-location-pin',
 				'fai'  => 'fas fa-map-marker-alt',
 				'svg'  => 'place',
 			),
@@ -229,6 +229,21 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'sili' => 'far fa-hand-point-right',
 				'fai'  => 'far fa-hand-point-right',
 				'svg'  => 'side-panel-opening-2-right',
+			),
+			'phone'     => array(
+				'sili' => 'icon-phone',
+				'fai'  => 'fas fa-phone-alt',
+				'svg'  => 'phone',
+			),
+			'smartphone'     => array(
+				'sili' => 'icon-screen-smartphone',
+				'fai'  => 'fas fa-mobile-alt',
+				'svg'  => 'mobile',
+			),
+			'fax'     => array(
+				'sili' => 'icon-printer',
+				'fai'  => 'fas fa-fax',
+				'svg'  => 'fax',
 			),
 
 			// Cart icon.
@@ -350,9 +365,9 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'rss',
 			),
 			'envelope'     => array(
-				'sili' => 'fa fa-envelope',
+				'sili' => 'icon-envelope',
 				'fai'  => 'fa fa-envelope',
-				'svg'  => 'gmail',
+				'svg'  => 'envelope',
 			),
 			'tiktok'     => array(
 				'sili' => 'fab fa-tiktok',
@@ -373,6 +388,16 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'sili' => 'fab fa-twitch',
 				'fai'  => 'fab fa-twitch',
 				'svg'  => 'twitch',
+			),
+			'foursquare'  => array(
+				'sili' => 'fab fa-foursquare',
+				'fai'  => 'fab fa-foursquare',
+				'svg'  => 'foursquare',
+			),
+			'trello'  => array(
+				'sili' => 'fab fa-trello',
+				'fai'  => 'fab fa-trello',
+				'svg'  => 'trello',
 			),
 		);
 
