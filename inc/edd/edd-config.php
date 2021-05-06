@@ -18,7 +18,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public function __construct() {
 
 			// Include helper functions
-			require_once( OCEANWP_INC_DIR .'edd/edd-helpers.php' );
+			require_once OCEANWP_INC_DIR . 'edd/edd-helpers.php';
 
 			// Body classes
 			add_filter( 'body_class', array( $this, 'body_class' ) );
@@ -34,9 +34,10 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 
 			add_action( 'ocean_main_metaboxes_post_types', array( $this, 'add_metabox' ), 20 );
 
-
-			/*-------------------------------------------------------------------------------*/
-			/* -  Front-End only actions/filters
+			/*
+			-------------------------------------------------------------------------------*/
+			/*
+			 -  Front-End only actions/filters
 			/*-------------------------------------------------------------------------------*/
 			if ( ! is_admin() ) {
 
@@ -67,7 +68,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			}
 
 			// Main Woo Filters
-			add_filter( 'wp_nav_menu_items', array( $this, 'menu_cart_icon' ) , 10, 2 );
+			add_filter( 'wp_nav_menu_items', array( $this, 'menu_cart_icon' ), 10, 2 );
 			add_filter( 'post_class', array( $this, 'add_download_classes' ), 40, 3 );
 
 			// Distraction free cart/checkout
@@ -85,8 +86,10 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			add_filter( 'ocean_typography_settings', array( $this, 'typography_settings' ) );
 		} // End __construct
 
-		/*-------------------------------------------------------------------------------*/
-		/* -  Start Class Functions
+		/*
+		-------------------------------------------------------------------------------*/
+		/*
+		 -  Start Class Functions
 		/*-------------------------------------------------------------------------------*/
 
 		/**
@@ -103,8 +106,8 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			}
 
 			// Return
- 			return $classes;
-			
+			return $classes;
+
 		}
 
 		/**
@@ -120,14 +123,16 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			}
 
 			// Register new edd_sidebar widget area
-			register_sidebar( array (
-				'name'          => esc_html__( 'EDD Sidebar', 'oceanwp' ),
-				'id'            => 'edd_sidebar',
-				'before_widget' => '<div id="%1$s" class="sidebar-box %2$s clr">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<h4 class="widget-title">',
-				'after_title'   => '</h4>',
-			) );
+			register_sidebar(
+				array(
+					'name'          => esc_html__( 'EDD Sidebar', 'oceanwp' ),
+					'id'            => 'edd_sidebar',
+					'before_widget' => '<div id="%1$s" class="sidebar-box %2$s clr">',
+					'after_widget'  => '</div>',
+					'before_title'  => '<h4 class="widget-title">',
+					'after_title'   => '</h4>',
+				)
+			);
 
 		}
 
@@ -156,8 +161,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function layouts( $class ) {
-			if ( 
-				is_post_type_archive( 'download' ) ||
+			if ( is_post_type_archive( 'download' ) ||
 				is_tax( 'download_category' ) ||
 				is_tax( 'download_tag' ) ) {
 				$class = get_theme_mod( 'ocean_edd_archive_layout', 'left-sidebar' );
@@ -173,8 +177,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 * @since 1.4.0
 		 */
 		public static function bs_class( $class ) {
-			if ( 
-				is_post_type_archive( 'download' ) ||
+			if ( is_post_type_archive( 'download' ) ||
 				is_tax( 'download_category' ) ||
 				is_tax( 'download_tag' ) ) {
 				$class = get_theme_mod( 'ocean_edd_archive_both_sidebars_style', 'scs-style' );
@@ -190,8 +193,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 * @since 1.6
 		 */
 		public static function sidebar_order( $order ) {
-			if ( 
-				is_post_type_archive( 'download' ) ||
+			if ( is_post_type_archive( 'download' ) ||
 				is_tax( 'download_category' ) ||
 				is_tax( 'download_tag' ) ) {
 				$order = get_theme_mod( 'ocean_edd_archive_sidebar_order', 'content-sidebar' );
@@ -207,8 +209,8 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function add_custom_scripts() {
-			wp_enqueue_style( 'oceanwp-edd', OCEANWP_CSS_DIR_URI .'edd/edd.min.css' );
-			wp_enqueue_script( 'oceanwp-edd-ajax', OCEANWP_JS_DIR_URI .'wp-plugins/easy-digital-downloads/edd-ajax.min.js', array(), OCEANWP_THEME_VERSION, true );
+			wp_enqueue_style( 'oceanwp-edd', OCEANWP_CSS_DIR_URI . 'edd/edd.min.css', array(), OCEANWP_THEME_VERSION, 'all' );
+			wp_enqueue_script( 'oceanwp-edd-ajax', OCEANWP_JS_DIR_URI . 'wp-plugins/easy-digital-downloads/edd-ajax.min.js', array(), OCEANWP_THEME_VERSION, true );
 		}
 
 		/**
@@ -218,7 +220,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 */
 		public static function cart_overlay() { ?>
 			<div class="owp-cart-overlay"></div>
-		<?php
+			<?php
 		}
 
 		/**
@@ -237,17 +239,17 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			}
 
 			// Vars
-			$content_alignment 	= get_theme_mod( 'ocean_edd_archive_entry_content_alignment', 'center' );
-			$content_alignment 	= $content_alignment ? $content_alignment : 'center';
+			$content_alignment = get_theme_mod( 'ocean_edd_archive_entry_content_alignment', 'center' );
+			$content_alignment = $content_alignment ? $content_alignment : 'center';
 
 			$classes[] = 'col';
 			$classes[] = oceanwp_grid_class( get_theme_mod( 'ocean_edd_archive_columns', 3 ) );
-			$classes[] = 'owp-content-'. $content_alignment;
+			$classes[] = 'owp-content-' . $content_alignment;
 
 			// Counter
 			global $oceanwp_count;
 			if ( $oceanwp_count ) {
-				$classes[] = 'col-'. $oceanwp_count;
+				$classes[] = 'col-' . $oceanwp_count;
 			}
 
 			return $classes;
@@ -269,16 +271,19 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function primary_texts( $texts ) {
-			return array_merge( array(
-				'.edd_downloads_list .edd_download_categories a:hover',
-				'.edd_downloads_list .button:hover',
-				'.edd-meta a:hover',
-				'.widget_edd_categories_tags_widget li a:hover',
-				'.widget_edd_cart_widget li a.edd-remove-from-cart:hover',
-				'.current-shop-items-dropdown .widget_edd_cart_widget li a.edd-remove-from-cart:hover',
-				'.edd_price_range_sep',
-				'.widget_edd_product_details .edd_price'
-			), $texts );
+			return array_merge(
+				array(
+					'.edd_downloads_list .edd_download_categories a:hover',
+					'.edd_downloads_list .button:hover',
+					'.edd-meta a:hover',
+					'.widget_edd_categories_tags_widget li a:hover',
+					'.widget_edd_cart_widget li a.edd-remove-from-cart:hover',
+					'.current-shop-items-dropdown .widget_edd_cart_widget li a.edd-remove-from-cart:hover',
+					'.edd_price_range_sep',
+					'.widget_edd_product_details .edd_price',
+				),
+				$texts
+			);
 		}
 
 		/**
@@ -287,16 +292,19 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function primary_borders( $borders ) {
-			return array_merge( array(
-				'.current-shop-items-dropdown' => array( 'top' ),
-				'.simple-style.eddmenucart .edd-cart-quantity.count:after',
-				'.edd_downloads_list .button:hover',
-				'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container:after', 
-				'.show-cart .eddmenucart-cart-icon .eddmenucart-container:after',
-				'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container',
-				'.show-cart .eddmenucart-cart-icon .eddmenucart-container',
-				'.edd_downloads_list .button:hover .edd-loading',
-			), $borders );
+			return array_merge(
+				array(
+					'.current-shop-items-dropdown' => array( 'top' ),
+					'.simple-style.eddmenucart .edd-cart-quantity.count:after',
+					'.edd_downloads_list .button:hover',
+					'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container:after',
+					'.show-cart .eddmenucart-cart-icon .eddmenucart-container:after',
+					'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container',
+					'.show-cart .eddmenucart-cart-icon .eddmenucart-container',
+					'.edd_downloads_list .button:hover .edd-loading',
+				),
+				$borders
+			);
 		}
 
 		/**
@@ -305,16 +313,19 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function primary_backgrounds( $backgrounds ) {
-			return array_merge( array(
-				'.content-area ul.edd-cart li .edd-cart-item-price',
-				'.widget-area ul.edd-cart li .edd-cart-item-price',
-				'.simple-style.eddmenucart .edd-cart-quantity.count',
-				'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container',
-				'.show-cart .eddmenucart-cart-icon .eddmenucart-container',
-				'.content-area ul.edd-cart li.edd_checkout a', 
-				'.widget-area ul.edd-cart li.edd_checkout a',
-				'.current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout a',
-			), $backgrounds );
+			return array_merge(
+				array(
+					'.content-area ul.edd-cart li .edd-cart-item-price',
+					'.widget-area ul.edd-cart li .edd-cart-item-price',
+					'.simple-style.eddmenucart .edd-cart-quantity.count',
+					'.bag-style:hover .eddmenucart-cart-icon .eddmenucart-container',
+					'.show-cart .eddmenucart-cart-icon .eddmenucart-container',
+					'.content-area ul.edd-cart li.edd_checkout a',
+					'.widget-area ul.edd-cart li.edd_checkout a',
+					'.current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout a',
+				),
+				$backgrounds
+			);
 		}
 
 		/**
@@ -323,11 +334,14 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function hover_primary_backgrounds( $hover ) {
-			return array_merge( array(
-				'.content-area ul.edd-cart li.edd_checkout a:hover', 
-				'.widget-area ul.edd-cart li.edd_checkout a:hover',
-				'.current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout a:hover'
-			), $hover );
+			return array_merge(
+				array(
+					'.content-area ul.edd-cart li.edd_checkout a:hover',
+					'.widget-area ul.edd-cart li.edd_checkout a:hover',
+					'.current-shop-items-dropdown .widget_edd_cart_widget .edd_checkout a:hover',
+				),
+				$hover
+			);
 		}
 
 		/**
@@ -336,15 +350,18 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function border_color_elements( $elements ) {
-			return array_merge( array(
-				'#edd_checkout_user_info',
-				'#edd_checkout_form_wrap legend',
-				'#edd_checkout_form_wrap #edd-discount-code-wrap', 
-				'#edd_checkout_form_wrap #edd_final_total_wrap', 
-				'#edd_checkout_form_wrap #edd_show_discount',
-				'#edd_checkout_form_wrap fieldset',
-				'.edd-table th, .edd-table td',
-			), $elements );
+			return array_merge(
+				array(
+					'#edd_checkout_user_info',
+					'#edd_checkout_form_wrap legend',
+					'#edd_checkout_form_wrap #edd-discount-code-wrap',
+					'#edd_checkout_form_wrap #edd_final_total_wrap',
+					'#edd_checkout_form_wrap #edd_show_discount',
+					'#edd_checkout_form_wrap fieldset',
+					'.edd-table th, .edd-table td',
+				),
+				$elements
+			);
 		}
 
 		/**
@@ -366,8 +383,8 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			}
 
 			// Get style
-			$style 			= oceanwp_edd_menu_cart_style();
-			$header_style 	= oceanwp_header_style();
+			$style        = oceanwp_edd_menu_cart_style();
+			$header_style = oceanwp_header_style();
 
 			// Return items if no style
 			if ( ! $style ) {
@@ -382,7 +399,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 
 			// Add cart link to menu items
 			if ( 'full_screen' == $header_style ) {
-				$items .= '<li class="edd-cart-link"><a href="'. edd_get_checkout_uri() .'">'. esc_html__( 'Your cart', 'oceanwp' ) .'</a></li>';
+				$items .= '<li class="edd-cart-link"><a href="' . edd_get_checkout_uri() . '">' . esc_html__( 'Your cart', 'oceanwp' ) . '</a></li>';
 			} else {
 				$items .= self::get_cart_icon();
 			}
@@ -399,9 +416,9 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		public static function get_cart_icon() {
 
 			// Style
-			$style = oceanwp_edd_menu_cart_style();
+			$style        = oceanwp_edd_menu_cart_style();
 			$header_style = oceanwp_header_style();
-			$cart_style = get_theme_mod( 'ocean_edd_cart_dropdown_style', 'compact' );
+			$cart_style   = get_theme_mod( 'ocean_edd_cart_dropdown_style', 'compact' );
 
 			// Toggle class
 			$toggle_class = 'toggle-cart-widget';
@@ -410,7 +427,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			$classes = array( 'edd-menu-icon' );
 
 			// Add style class
-			$classes[] = 'eddmenucart-toggle-'. $style;
+			$classes[] = 'eddmenucart-toggle-' . $style;
 
 			// If bag style
 			if ( 'yes' == get_theme_mod( 'ocean_edd_menu_bag_style', 'no' ) ) {
@@ -440,14 +457,16 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			// Turn classes into string
 			$classes = implode( ' ', $classes );
 
-			ob_start(); ?>
+			ob_start();
+			?>
 
 			<li class="<?php echo esc_attr( $classes ); ?>">
 				<?php oceanwp_eddmenucart_menu_item(); ?>
 				<?php
 				if ( 'drop_down' == $style
 					&& 'full_screen' != $header_style
-					&& 'vertical' != $header_style ) { ?>
+					&& 'vertical' != $header_style ) {
+					?>
 					<div class="current-shop-items-dropdown owp-mini-cart clr">
 						<div class="current-shop-items-inner clr">
 							<?php the_widget( 'edd_cart_widget', 'title=' ); ?>
@@ -475,7 +494,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 
 			// Return
 			return $return;
-			
+
 		}
 
 		/**
@@ -485,34 +504,34 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 */
 		public static function typography_settings( $settings ) {
 			$settings['edd_product_title'] = array(
-				'label' 				=> esc_html__( 'EDD Product Title', 'oceanwp' ),
-				'target' 				=> '.edd_download_title, .widget_edd_product_details h4',
-				'defaults' 				=> array(
-					'font-size' 		=> '24',
-					'color' 			=> '#333333',
-					'line-height' 		=> '1.4',
-					'letter-spacing' 	=> '0.6',
+				'label'    => esc_html__( 'EDD Product Title', 'oceanwp' ),
+				'target'   => '.edd_download_title, .widget_edd_product_details h4',
+				'defaults' => array(
+					'font-size'      => '24',
+					'color'          => '#333333',
+					'line-height'    => '1.4',
+					'letter-spacing' => '0.6',
 				),
 			);
 
 			$settings['edd_product_price'] = array(
-				'label' 				=> esc_html__( 'EDD Product Price', 'oceanwp' ),
-				'target' 				=> '.edd_price, .edd_single_mode',
-				'defaults' 				=> array(
-					'font-size' 		=> '36',
-					'line-height' 		=> '1',
-					'letter-spacing' 	=> '0',
+				'label'    => esc_html__( 'EDD Product Price', 'oceanwp' ),
+				'target'   => '.edd_price, .edd_single_mode',
+				'defaults' => array(
+					'font-size'      => '36',
+					'line-height'    => '1',
+					'letter-spacing' => '0',
 				),
 			);
 
 			$settings['edd_product_add_to_cart'] = array(
-				'label'                 => esc_html__( 'EDD Product Add To Cart', 'oceanwp' ),
-				'target'                => '.edd_downloads_list .button, .edd-add-to-cart',
-				'exclude' 				=> array( 'font-color' ),
-				'defaults'              => array(
-					'font-size'         => '12',
-					'line-height'       => '1.5',
-					'letter-spacing'    => '1',
+				'label'    => esc_html__( 'EDD Product Add To Cart', 'oceanwp' ),
+				'target'   => '.edd_downloads_list .button, .edd-add-to-cart',
+				'exclude'  => array( 'font-color' ),
+				'defaults' => array(
+					'font-size'      => '12',
+					'line-height'    => '1.5',
+					'letter-spacing' => '1',
 				),
 			);
 

@@ -12,3 +12,5 @@ class WooWidgets {
             });
     };
 }
+
+new WooWidgets();

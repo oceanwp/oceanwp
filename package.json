@@ -33,6 +33,8 @@
     "dependencies": {
         "axios": "^0.21.1",
         "delegate": "^3.2.0",
+        "flickity": "^2.2.2",
+        "flickity-imagesloaded": "^2.0.0",
         "responsive-auto-height": "0.0.5"
     }
 }

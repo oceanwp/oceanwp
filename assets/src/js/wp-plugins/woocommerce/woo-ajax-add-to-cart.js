@@ -11,7 +11,8 @@ class WooAjaxAddToCart {
     }
 
     #setupEventListeners = () => {
-        delegate.on(
+        delegate(
+            DOM.body,
             ".product:not(.product-type-external) .single_add_to_cart_button:not(.disabled)",
             "click",
             this.#onAddToCartBtnClick
@@ -94,4 +95,6 @@ class WooAjaxAddToCart {
     };
 }
 
-new WooAjaxAddToCart();
+jQuery(function () {
+    new WooAjaxAddToCart();
+});

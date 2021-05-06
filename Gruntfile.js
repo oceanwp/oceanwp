@@ -27,8 +27,6 @@ module.exports = function (grunt) {
             },
             dev: {
                 files: {
-                    // "./assets/js/main.vanilla.min.js": "./assets/src/js/index.js",
-
                     // Easy Digital Downloads
                     "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax.min.js":
                         "./assets/src/js/wp-plugins/easy-digital-downloads/edd-ajax.js",

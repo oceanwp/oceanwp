@@ -83,8 +83,8 @@ class WooFloatingBar {
     #onTopBtnClick = (event) => {
         event.preventDefault();
 
-        if (!!DOM.woo.productCart) {
-            const scrollPosition = offset(DOM.woo.productCart).top - this.#offset;
+        if (!!DOM.woo.productCarts) {
+            const scrollPosition = offset(DOM.woo.productCarts).top - this.#offset;
 
             DOM.html.scrollTo({
                 top: Math.round(scrollPosition),
