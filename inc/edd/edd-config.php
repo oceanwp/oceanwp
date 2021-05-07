@@ -209,8 +209,13 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function add_custom_scripts() {
-			wp_enqueue_style( 'oceanwp-edd', OCEANWP_CSS_DIR_URI . 'edd/edd.min.css', array(), OCEANWP_THEME_VERSION, 'all' );
-			wp_enqueue_script( 'oceanwp-edd-ajax', OCEANWP_JS_DIR_URI . 'wp-plugins/easy-digital-downloads/edd-ajax.min.js', array(), OCEANWP_THEME_VERSION, true );
+			wp_enqueue_style( 'oceanwp-edd', OCEANWP_CSS_DIR_URI . 'edd/edd.min.css' );
+			wp_enqueue_script( 'oceanwp-edd-ajax', OCEANWP_JS_DIR_URI . 'wp-plugins/easy-digital-downloads/edd-ajax.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+
+			// If display cart when product added
+			// if ( 'yes' == get_theme_mod( 'ocean_edd_display_cart_download_added', 'no' ) ) {
+			// wp_enqueue_script( 'oceanwp-edd-display-cart', OCEANWP_JS_DIR_URI .'third/edd/edd-display-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+			// }
 		}
 
 		/**
