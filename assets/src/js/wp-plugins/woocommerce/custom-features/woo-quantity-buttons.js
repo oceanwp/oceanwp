@@ -1,8 +1,11 @@
+import delegate from "delegate";
 import { DOM, options } from "../../../constants";
 
 class WooQuantityButtons {
+    #changeEvent;
+
     constructor() {
-        if (DOM.woo.quantityInputs.length > 0) {
+        if (!!DOM.woo.quantityInputs) {
             this.#start();
             this.#setupEventListeners();
         }
@@ -30,12 +33,15 @@ class WooQuantityButtons {
         // Check quantity bigger than min
         document.querySelectorAll("input.qty:not(.product-quantity input.qty)").forEach((quantityInput) => {
             const min = parseFloat(quantityInput.getAttribute("min"));
-            const current = parseFloat(quantityInput.value);
+            const currentValue = parseFloat(quantityInput.value);
 
-            if (min && min > 0 && current < min) {
+            if (min && min > 0 && currentValue < min) {
                 quantityInput.value = min;
             }
         });
+
+        // Create a new 'change' event
+        this.#changeEvent = new Event("change");
     };
 
     #setupEventListeners = () => {
@@ -52,9 +58,7 @@ class WooQuantityButtons {
             });
         }
 
-        document.querySelectorAll(".minus, .plus").forEach((quantityBtn) => {
-            quantityBtn.addEventListener("click", this.#onQuantityBtnClick);
-        });
+        delegate(DOM.body, ".cart .minus, .cart .plus", "click", this.#onQuantityBtnClick);
     };
 
     #onQuantityInputKeyup = (event) => {
@@ -72,51 +76,59 @@ class WooQuantityButtons {
         event.preventDefault();
         event.stopPropagation();
 
-        const quantityBtn = event.currentTarget;
-        const quantityInputs = quantityBtn.closest(".quantity").querySelectorAll(".qty");
+        const quantityBtn = event.delegateTarget;
+        const quantityInput = quantityBtn.closest(".quantity").querySelector(".qty");
 
-        quantityInputs.forEach((quantityInput) => {
-            const current = parseFloat(quantityInput.value);
-            const min = parseFloat(quantityInput.getAttribute("min"));
-            const max = parseFloat(quantityInput.getAttribute("max"));
-            const step = quantityInput.getAttribute("step");
+        const currentValue = parseFloat(quantityInput.value);
+        const min = parseFloat(quantityInput.getAttribute("min"));
+        const max = parseFloat(quantityInput.getAttribute("max"));
+        const step = quantityInput.getAttribute("step");
 
-            // Fallback default values
-            if (!current || "" === current || "NaN" === current) {
-                current = 0;
-            }
+        // Fallback default values
+        if (!currentValue || currentValue === "" || Number.isNaN(currentValue)) {
+            currentValue = 0;
+        }
 
-            if ("" === max || "NaN" === max) {
-                max = "";
-            }
+        if (max === "" || Number.isNaN(max)) {
+            max = "";
+        }
 
-            if ("" === min || "NaN" === min) {
-                min = 0;
-            }
+        if (min === "" || Number.isNaN(min)) {
+            min = 0;
+        }
 
-            if ("any" === step || "" === step || undefined === step || "NaN" === parseFloat(step)) {
-                step = 1;
-            }
+        if (step === undefined || step === "" || step === "any" || Number.isNaN(parseFloat(step))) {
+            step = 1;
+        }
 
-            // Change the value
-            console.log(quantityInput);
-            console.log(quantityInput.classList.contains(".plus"));
-            if (quantityInput.classList.contains(".plus")) {
-                if (max && (max == current || current > max)) {
-                    quantityInput.value = max;
-                } else {
-                    quantityInput.value = current + parseFloat(step);
-                }
+        // Plus button
+        if (quantityBtn.classList.contains("plus")) {
+            if (max && (currentValue === max || currentValue > max)) {
+                DOM.woo.quantityInputs.forEach((_quantityInput) => {
+                    _quantityInput.value = max;
+                });
             } else {
-                if (min && (min == current || current < min)) {
-                    quantityInput.value = min;
-                } else if (current > 0) {
-                    quantityInput.value = current - parseFloat(step);
-                }
+                DOM.woo.quantityInputs.forEach((_quantityInput) => {
+                    _quantityInput.value = currentValue + parseFloat(step);
+                });
             }
 
-            // Trigger change event
-            jQuery(quantityInput).trigger("change");
+            // Minus button
+        } else {
+            if (min && (currentValue === min || currentValue < min)) {
+                DOM.woo.quantityInputs.forEach((_quantityInput) => {
+                    _quantityInput.value = min;
+                });
+            } else if (currentValue > 0) {
+                DOM.woo.quantityInputs.forEach((_quantityInput) => {
+                    _quantityInput.value = currentValue - parseFloat(step);
+                });
+            }
+        }
+
+        // Trigger change event
+        DOM.woo.quantityInputs.forEach((_quantityInput) => {
+            _quantityInput.dispatchEvent(this.#changeEvent);
         });
     };
 }
