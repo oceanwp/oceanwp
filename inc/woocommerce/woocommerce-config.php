@@ -95,7 +95,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				}
 
 				// Main Woo Actions
-				add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ), 99 );
+				add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ) );
 				add_filter( 'ocean_localize_array', array( $this, 'localize_array' ) );
 				if ( get_theme_mod( 'ocean_woo_shop_result_count', true )
 					|| get_theme_mod( 'ocean_woo_shop_sort', true )
@@ -721,7 +721,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// If single product ajax add to cart
 			if ( true == get_theme_mod( 'ocean_woo_product_ajax_add_to_cart', false )
 				&& oceanwp_is_woo_single() ) {
-				wp_enqueue_script( 'oceanwp-woo-ajax-addtocart', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-ajax-add-to-cart.min.js', array(), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-ajax-addtocart', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-ajax-add-to-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If floating bar
@@ -803,6 +803,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Grouped product button text in the quick view
 			$array['grouped_text'] = esc_attr__( 'View products', 'oceanwp' );
+
+			$array['multistep_checkout_error'] = __( 'Some required fields are empty. Please fill the required fields to go to the next step.' );
 
 			return $array;
 
@@ -1199,11 +1201,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				wp_die();
 			}
 
-			if ( ! isset( $_POST['product_id'] ) ) {
-				wp_die();
+			if ( ! isset( $_REQUEST['product_id'] ) ) {
+				die();
 			}
 
-			$product_id = intval( $_POST['product_id'] );
+			$product_id = intval( $_REQUEST['product_id'] );
 
 			// wp_query for the product.
 			wp( 'p=' . $product_id . '&post_type=product' );
@@ -1212,11 +1214,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			get_template_part( 'woocommerce/quick-view-content' );
 
-			$output = ob_get_clean();
+			echo ob_get_clean();
 
-			echo wp_json_encode( array( 'output' => $output ) );
-
-			wp_die();
+			die();
 		}
 
 		/**
