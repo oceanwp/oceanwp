@@ -8465,78 +8465,6 @@ body .elementor-element.elementor-wc-products ul.products li.product.circle-sale
 }
 
 /*------------------------------------*
-	$MAGNIFIC POPUP
-*------------------------------------*/
-.mfp-bg {
-  z-index: 104200;
-  -webkit-transform: translateZ(0);
-}
-
-.mfp-wrap {
-  z-index: 104300;
-}
-
-/* Zoom effect */
-.mfp-with-zoom .mfp-container, .mfp-with-zoom.mfp-bg {
-  opacity: 0;
-  -webkit-backface-visibility: hidden;
-  transition: all 0.3s ease-out;
-}
-
-.mfp-with-zoom.mfp-ready .mfp-container {
-  opacity: 1;
-}
-
-.mfp-with-zoom.mfp-ready.mfp-bg {
-  opacity: 0.8;
-}
-
-.mfp-with-zoom.mfp-removing .mfp-container, .mfp-with-zoom.mfp-removing.mfp-bg {
-  opacity: 0;
-}
-
-.mfp-zoom-out-cur {
-  cursor: -moz-default;
-  cursor: -webkit-default;
-  cursor: default;
-}
-
-.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
-  width: 20px;
-  cursor: -moz-pointer;
-  cursor: -webkit-pointer;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Fade effect */
-.mfp-fade.mfp-bg {
-  opacity: 0;
-  transition: all 0.15s ease-out;
-}
-
-.mfp-fade.mfp-bg.mfp-ready {
-  opacity: 0.8;
-}
-
-.mfp-fade.mfp-bg.mfp-removing {
-  opacity: 0;
-}
-
-.mfp-fade.mfp-wrap .mfp-content {
-  opacity: 0;
-  transition: all 0.15s ease-out;
-}
-
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-  opacity: 1;
-}
-
-.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-  opacity: 0;
-}
-
-/*------------------------------------*
 	$SIDR
 *------------------------------------*/
 #sidr-close,
@@ -8855,136 +8783,123 @@ a.sidr-class-toggle-sidr-close i {
 }
 
 /*------------------------------------*
-	$SLICK
+	$PERFECT SCROLLBAR
 *------------------------------------*/
-/* Arrows */
-.slick-prev,
-.slick-next {
+/*
+ * Container style
+ */
+.ps {
+  overflow: hidden !important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+
+/*
+ * Scrollbar rail styles
+ */
+.ps__rail-x {
+  display: none;
+  opacity: 0;
+  transition: background-color .2s linear, opacity .2s linear;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  height: 15px;
+  /* there must be 'bottom' or 'top' for ps__rail-x */
+  bottom: 0px;
+  /* please don't change 'position' */
   position: absolute;
-  bottom: 0;
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  width: 30px;
-  height: 35px;
-  line-height: 35px;
-  font-size: 20px;
-  border: 0;
-  text-align: center;
-  cursor: pointer;
-  padding: 0;
-  border-radius: 0;
-  z-index: 10;
-  transition: all 0.3s ease-in-out;
 }
 
-.slick-prev:hover, .slick-prev:focus,
-.slick-next:hover,
-.slick-next:focus {
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #fff;
-}
-
-.slick-prev {
-  right: 30px;
-}
-
-[dir="rtl"] .slick-prev {
-  right: auto;
-  left: 30px;
-}
-
-[dir="rtl"] .slick-prev span:before {
-  content: '\f105';
-}
-
-.slick-next {
+.ps__rail-y {
+  display: none;
+  opacity: 0;
+  transition: background-color .2s linear, opacity .2s linear;
+  -webkit-transition: background-color .2s linear, opacity .2s linear;
+  width: 15px;
+  /* there must be 'right' or 'left' for ps__rail-y */
   right: 0;
-}
-
-[dir="rtl"] .slick-next {
-  left: 0;
-  right: auto;
-}
-
-[dir="rtl"] .slick-next span:before {
-  content: '\f104';
-}
-
-/* Dots */
-.slick-dotted.slick-slider {
-  margin-bottom: 30px;
-}
-
-.slick-dots {
+  /* please don't change 'position' */
   position: absolute;
-  bottom: -25px;
-  list-style: none;
+}
+
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
   display: block;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+  background-color: transparent;
 }
 
-.slick-dots li {
-  position: relative;
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  margin: 0 5px;
-  padding: 0;
-  cursor: pointer;
+.ps:hover > .ps__rail-x,
+.ps:hover > .ps__rail-y,
+.ps--focus > .ps__rail-x,
+.ps--focus > .ps__rail-y,
+.ps--scrolling-x > .ps__rail-x,
+.ps--scrolling-y > .ps__rail-y {
+  opacity: 0.6;
 }
 
-.slick-dots li button {
-  border: 0;
-  background: transparent;
-  display: block;
-  height: 20px;
-  width: 20px;
-  outline: none;
-  line-height: 0px;
-  font-size: 0px;
-  color: transparent;
-  padding: 5px;
-  cursor: pointer;
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y:hover,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-y.ps--clicking {
+  background-color: #eee;
+  opacity: 0.9;
 }
 
-.slick-dots li button:hover, .slick-dots li button:focus {
-  outline: none;
-}
-
-.slick-dots li button:hover:before, .slick-dots li button:focus:before {
-  -moz-opacity: 1;
-  -webkit-opacity: 1;
-  opacity: 1;
-}
-
-.slick-dots li button:before {
+/*
+ * Scrollbar thumb styles
+ */
+.ps__thumb-x {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color .2s linear, height .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, height .2s ease-in-out;
+  height: 6px;
+  /* there must be 'bottom' for ps__thumb-x */
+  bottom: 2px;
+  /* please don't change 'position' */
   position: absolute;
-  top: 0;
-  left: 0;
-  content: "•";
-  width: 20px;
-  height: 20px;
-  font-family: "slick";
-  font-size: 20px;
-  line-height: 20px;
-  text-align: center;
-  color: black;
-  -moz-opacity: 0.25;
-  -webkit-opacity: 0.25;
-  opacity: 0.25;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-.slick-dots li.slick-active button:before {
-  color: black;
-  -moz-opacity: 0.75;
-  -webkit-opacity: 0.75;
-  opacity: 0.75;
+.ps__thumb-y {
+  background-color: #aaa;
+  border-radius: 6px;
+  transition: background-color .2s linear, width .2s ease-in-out;
+  -webkit-transition: background-color .2s linear, width .2s ease-in-out;
+  width: 6px;
+  /* there must be 'right' for ps__thumb-y */
+  right: 2px;
+  /* please don't change 'position' */
+  position: absolute;
+}
+
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-x.ps--clicking .ps__thumb-x {
+  background-color: #999;
+  height: 11px;
+}
+
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: #999;
+  width: 11px;
+}
+
+/* MS supports */
+@supports (-ms-overflow-style: none) {
+  .ps {
+    overflow: auto !important;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ps {
+    overflow: auto !important;
+  }
 }
 
 /*------------------------------------*

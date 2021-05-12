@@ -16,7 +16,11 @@ module.exports = function (grunt) {
         browserify: {
             prod: {
                 files: {
-                    "./assets/js/main.vanilla.min.js": "./assets/src/js/index.js",
+                    // Theme scripts
+                    "./assets/js/theme.vanilla.min.js": "./assets/src/js/index.js",
+                    // Woocommerce custom features
+                    "./assets/js/wp-plugins/woocommerce/woo-custom-features.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-custom-features.js",
                 },
                 options: {
                     transform: [["babelify", { presets: ["@babel/preset-env"] }]],
@@ -27,30 +31,40 @@ module.exports = function (grunt) {
             },
             dev: {
                 files: {
-                    // Easy Digital Downloads
-                    "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax.min.js":
-                        "./assets/src/js/wp-plugins/easy-digital-downloads/edd-ajax.js",
+                    // Easy Digital Downloads ajax cart
+                    "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax-cart.min.js":
+                        "./assets/src/js/wp-plugins/easy-digital-downloads/edd-ajax-cart.js",
+                    // Easy Digital Downloads display cart
+                    "./assets/js/wp-plugins/easy-digital-downloads/edd-display-cart.min.js":
+                        "./assets/src/js/wp-plugins/easy-digital-downloads/edd-display-cart.js",
+
                     // Woocommerce ajax add to cart
                     "./assets/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.min.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.js",
                     // Woocommerce categories widget
                     "./assets/js/wp-plugins/woocommerce/woo-cat-widget.min.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-cat-widget.js",
+                    // Woocommerce display cart
+                    "./assets/js/wp-plugins/woocommerce/woo-display-cart.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-display-cart.js",
+                    // Woocommerce floating bar
+                    "./assets/js/wp-plugins/woocommerce/woo-floating-bar.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-floating-bar.js",
+                    // Woocommerce mini cart
+                    "./assets/js/wp-plugins/woocommerce/woo-mini-cart.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-mini-cart.js",
+                    // Woocommerce multi step checkout
+                    "./assets/js/wp-plugins/woocommerce/woo-multi-step-checkout.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-multi-step-checkout.js",
                     // Woocommerce canvans filter
                     "./assets/js/wp-plugins/woocommerce/woo-off-canvas.min.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-off-canvas.js",
-                    // Woocommerce thumbnails
-                    "./assets/js/wp-plugins/woocommerce/woo-thumbnails.min.js":
-                        "./assets/src/js/wp-plugins/woocommerce/woo-thumbnails.js",
-                    // Woocommerce widgets
-                    "./assets/js/wp-plugins/woocommerce/dev/wooWidgets.js":
-                        "./assets/src/js/wp-plugins/woocommerce/dev/wooWidgets.js",
-                    // Woocommerce review scroll
-                    "./assets/js/wp-plugins/woocommerce/dev/wooReviewScroll.js":
-                        "./assets/src/js/wp-plugins/woocommerce/dev/wooReviewScroll.js",
                     // Woocommerce quick view
                     "./assets/js/wp-plugins/woocommerce/woo-quick-view.min.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-quick-view.js",
+                    // Woocommerce thumbnails
+                    "./assets/js/wp-plugins/woocommerce/woo-thumbnails.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-thumbnails.js",
                 },
                 options: {
                     transform: [["babelify", { presets: ["@babel/preset-env"] }]],

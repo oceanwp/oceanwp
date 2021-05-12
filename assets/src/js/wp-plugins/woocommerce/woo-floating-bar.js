@@ -1,6 +1,7 @@
-import { DOM } from "../../constants";
+import { DOM, options } from "../../constants";
 import { offset } from "../../lib/utils";
 import delegate from "delegate";
+import axios from "axios";
 
 class WooFloatingBar {
     #offset;
@@ -16,8 +17,12 @@ class WooFloatingBar {
     #setupEventListeners = () => {
         if (!!DOM.woo.productTabs) {
             document.addEventListener("scroll", this.#onDocumentScroll);
+
             window.addEventListener("scroll", this.#onWindowScroll);
-            DOM.floatingBar.querySelector("button.button.top").addEventListener("click", this.#onTopBtnClick);
+
+            DOM.floatingBar
+                ?.querySelector("button.button.top")
+                ?.addEventListener("click", this.#onTopBtnClick);
         }
 
         delegate(
@@ -27,11 +32,16 @@ class WooFloatingBar {
             this.#onAddToCartBtnClick
         );
 
+        /**
+         * Because Woocommerce plugin uses jQuery custom event,
+         * We also have to use jQuery to customize this event
+         */
         jQuery(document.body).on("added_to_cart", this.#updateCart);
     };
 
     #onDocumentScroll = (event) => {
         const header = DOM.header.site;
+        const stickyTopbarWrapper = document.querySelector("#top-bar-sticky-wrapper");
 
         this.#offset = 0;
         this.#tabsTopOffset = offset(DOM.woo.productTabs).top;
@@ -42,20 +52,20 @@ class WooFloatingBar {
         }
 
         // Sticky topbar offset
-        if (!!DOM.header.stickyTopbarWrapper) {
-            this.#offset = this.#offset + $stickyTopBar.offsetHeight;
+        if (!!stickyTopbarWrapper) {
+            this.#offset = this.#offset + stickyTopbarWrapper.offsetHeight;
         }
 
         // Sticky header
         if (!!header) {
             if (header.classList.contains("top-header")) {
-                this.#offset = this.#offset + header.querySelector(".header-top").offsetHeight;
+                this.#offset = this.#offset + header.querySelector(".header-top")?.offsetHeight;
             } else if (header.classList.contains("medium-header")) {
-                if (header.querySelector(".bottom-header-wrap").classList.contains("fixed-scroll")) {
+                if (header.querySelector(".bottom-header-wrap")?.classList.contains("fixed-scroll")) {
                     this.#offset = this.#offset + header.querySelector(".bottom-header-wrap").offsetHeight;
                 } else {
                     this.#offset =
-                        this.#offset + document.querySelector(".is-sticky #site-header-inner").offsetHeight;
+                        this.#offset + document.querySelector(".is-sticky #site-header-inner")?.offsetHeight;
                 }
             } else if (
                 header.classList.contains("center-header") ||
@@ -63,7 +73,7 @@ class WooFloatingBar {
             ) {
                 this.#offset = this.#offset + header.offsetHeight;
             } else if (header.classList.contains("fixed-scroll")) {
-                this.#offset = this.#offset + header.data("height");
+                this.#offset = this.#offset + parseInt(header.getAttribute("data-height"));
             }
         }
 
@@ -73,7 +83,7 @@ class WooFloatingBar {
     };
 
     #onWindowScroll = (event) => {
-        if (window.scrollTop > this.#tabsTopOffset) {
+        if (window.pageYOffset > this.#tabsTopOffset) {
             DOM.floatingBar.classList.add("show");
         } else {
             DOM.floatingBar.classList.remove("show");
@@ -84,7 +94,7 @@ class WooFloatingBar {
         event.preventDefault();
 
         if (!!DOM.woo.productCarts) {
-            const scrollPosition = offset(DOM.woo.productCarts).top - this.#offset;
+            const scrollPosition = offset(DOM.woo.productCarts[0]).top - this.#offset;
 
             DOM.html.scrollTo({
                 top: Math.round(scrollPosition),
@@ -102,37 +112,31 @@ class WooFloatingBar {
         event.preventDefault();
 
         const addToCartBtn = event.delegateTarget;
-        const $addToCartBtn = jQuery(addToCartBtn);
-        const product_id = addToCartBtn.value;
-        const quentity = DOM.woo.quentity.value;
+        const productID = addToCartBtn.value;
+        const quantity = DOM.woo.quantity.value;
+        const data = new FormData();
 
         addToCartBtn.classList.remove("added");
         addToCartBtn.classList.add("loading");
 
-        // Ajax action.
-        jQuery.ajax({
-            url: options.ajax_url,
-            type: "POST",
-            data: {
-                action: oceanwp_add_cart_floating_bar,
-                product_id: product_id,
-                quantity: quantity,
-            },
+        data.append("action", "oceanwp_add_cart_floating_bar");
+        data.append("nonce", options.nonce);
+        data.append("product_id", productID);
+        data.append("quantity", quantity);
 
-            success: function (results) {
-                jQuery(document.body).trigger("wc_fragment_refresh");
-                jQuery(document.body).trigger("added_to_cart", [
-                    results.fragments,
-                    results.cart_hash,
-                    $addToCartBtn,
-                ]);
+        axios.post(options.ajax_url, data).then((response) => {
+            /**
+             * Because Woocommerce plugin uses jQuery custom event,
+             * We also have to use jQuery to customize this event
+             */
+            jQuery(document.body).trigger("wc_fragment_refresh");
+            jQuery(document.body).trigger("added_to_cart", [null, null, jQuery(addToCartBtn)]);
 
-                // Redirect to cart option
-                if (options.cart_redirect_after_add === "yes") {
-                    window.location = options.cart_url;
-                    return;
-                }
-            },
+            // Redirect to cart option
+            if (options.cart_redirect_after_add === "yes") {
+                window.location = options.cart_url;
+                return;
+            }
         });
     };
 
@@ -154,4 +158,6 @@ class WooFloatingBar {
     };
 }
 
-new WooFloatingBar();
+document.addEventListener("DOMContentLoaded", () => {
+    new WooFloatingBar();
+});

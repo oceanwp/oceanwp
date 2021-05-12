@@ -109,7 +109,6 @@ class VerticalHeader {
         if (DOM.body.classList.contains("vertical-header-style")) {
             if (!DOM.body.classList.contains("vh-closed")) {
                 if (enterKey && document.activeElement.classList.contains("dropdown-toggle")) {
-                    console.log(document.activeElement);
                     document.activeElement.click();
                 }
             }
@@ -124,8 +123,11 @@ class VerticalHeader {
             this.#onToggleMenuBtnClick(event);
         }
 
-        if (enterKey && document.activeElement.classList.contains("dropdown-toggle")) {
-            console.log(document.activeElement);
+        if (
+            enterKey &&
+            document.activeElement.classList.contains("dropdown-toggle") &&
+            DOM.body.classList.contains("vh-closed")
+        ) {
             document.activeElement.click();
         }
 

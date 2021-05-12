@@ -83,7 +83,7 @@ class WooMultiStepCheckout {
         if (action === "next") {
             DOM.formActions.setAttribute("data-step", nextStep);
 
-            fadeOut(this.#setps[currentStep], null, () => {
+            fadeOut(this.#steps[currentStep], null, () => {
                 fadeIn(this.#steps[nextStep]);
             });
 
@@ -91,7 +91,7 @@ class WooMultiStepCheckout {
         } else if (action === "prev") {
             DOM.formActions.setAttribute("data-step", prevStep);
 
-            fadeOut(this.#setps[currentStep], null, () => {
+            fadeOut(this.#steps[currentStep], null, () => {
                 fadeIn(this.#steps[prevStep]);
             });
         }
