@@ -2,7 +2,6 @@ import axios from "axios";
 import delegate from "delegate";
 import { DOM, options } from "../../constants";
 import { fadeIn, fadeOut } from "../../lib/utils";
-import Qs from "qs";
 
 class WooQuickView {
     constructor() {
@@ -116,8 +115,8 @@ class WooQuickView {
     #open = (quickViewBtn, productId) => {
         const data = new FormData();
 
-        data.append("nonce", options.nonce);
         data.append("action", "oceanwp_product_quick_view");
+        data.append("nonce", options.nonce);
         data.append("product_id", productId);
 
         axios
