@@ -1,4 +1,4 @@
-class WooWidgets {
+class WooRemoveCategoriesCountParenthesis {
     constructor() {
         this.#start();
     }
@@ -13,4 +13,4 @@ class WooWidgets {
     };
 }
 
-export default WooWidgets;
+export default WooRemoveCategoriesCountParenthesis;

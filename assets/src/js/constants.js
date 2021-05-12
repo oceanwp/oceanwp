@@ -86,6 +86,9 @@ export const DOM = {
         list: document.querySelector(".oceanwp-grid-list #oceanwp-list"),
         productTabs: document.querySelector(".woocommerce div.product .woocommerce-tabs"),
         productCarts: document.querySelectorAll(".woocommerce div.product .cart"),
+        productCustomerReviewLink: document.querySelector(
+            ".woocommerce div.product .woocommerce-review-link"
+        ),
         quantity: document.querySelector('input[name="quantity"]'),
         checkoutForm: document.querySelector("form.woocommerce-checkout"),
         checkoutLogin: document.querySelector("#checkout_login"),

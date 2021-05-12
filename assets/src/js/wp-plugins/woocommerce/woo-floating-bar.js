@@ -2,6 +2,7 @@ import { DOM, options } from "../../constants";
 import { offset } from "../../lib/utils";
 import delegate from "delegate";
 import axios from "axios";
+import qs from "qs";
 
 class WooFloatingBar {
     #offset;
@@ -114,30 +115,34 @@ class WooFloatingBar {
         const addToCartBtn = event.delegateTarget;
         const productID = addToCartBtn.value;
         const quantity = DOM.woo.quantity.value;
-        const data = new FormData();
 
         addToCartBtn.classList.remove("added");
         addToCartBtn.classList.add("loading");
 
-        data.append("action", "oceanwp_add_cart_floating_bar");
-        data.append("nonce", options.nonce);
-        data.append("product_id", productID);
-        data.append("quantity", quantity);
+        axios
+            .post(
+                options.ajax_url,
+                qs.stringify({
+                    action: "oceanwp_add_cart_floating_bar",
+                    nonce: options.nonce,
+                    product_id: productID,
+                    quantity: quantity,
+                })
+            )
+            .then(({ data }) => {
+                /**
+                 * Because Woocommerce plugin uses jQuery custom event,
+                 * We also have to use jQuery to customize this event
+                 */
+                jQuery(document.body).trigger("wc_fragment_refresh");
+                jQuery(document.body).trigger("added_to_cart", [null, null, jQuery(addToCartBtn)]);
 
-        axios.post(options.ajax_url, data).then((response) => {
-            /**
-             * Because Woocommerce plugin uses jQuery custom event,
-             * We also have to use jQuery to customize this event
-             */
-            jQuery(document.body).trigger("wc_fragment_refresh");
-            jQuery(document.body).trigger("added_to_cart", [null, null, jQuery(addToCartBtn)]);
-
-            // Redirect to cart option
-            if (options.cart_redirect_after_add === "yes") {
-                window.location = options.cart_url;
-                return;
-            }
-        });
+                // Redirect to cart option
+                if (options.cart_redirect_after_add === "yes") {
+                    window.location = options.cart_url;
+                    return;
+                }
+            });
     };
 
     #updateCart = (e, fragments, cart_hash, $button) => {

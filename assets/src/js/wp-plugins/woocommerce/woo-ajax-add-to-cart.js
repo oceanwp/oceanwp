@@ -1,4 +1,4 @@
-const { DOM, options } = require("../../constants");
+import { DOM, options } from "../../constants";
 import delegate from "delegate";
 
 class WooAjaxAddToCart {
@@ -18,32 +18,57 @@ class WooAjaxAddToCart {
             this.#onAddToCartBtnClick
         );
 
+        /**
+         * Because Woocommerce plugin uses jQuery custom event,
+         * We also have to use jQuery to customize this event.
+         */
         jQuery("body").on("added_to_cart", this.#updateCart);
     };
 
     #onAddToCartBtnClick = (event) => {
         const addToCartBtn = event.delegateTarget;
-        const $addToCartBtn = jQuery(addToCartBtn);
         const form = addToCartBtn.closest("form.cart");
         const formData = this.#getFormData(form);
-        const $body = jQuery("body");
 
-        if (formData.some((data) => data.name === "add-to-cart")) {
+        if (formData.some(({ name }) => name === "add-to-cart")) {
             event.preventDefault();
-
-            $body.trigger("adding_to_cart", [$addToCartBtn, formData]);
 
             addToCartBtn.classList.remove("added");
             addToCartBtn.classList.add("loading");
 
+            formData.forEach((dataItem) => {
+                if (dataItem.name == "add-to-cart") {
+                    dataItem.name = "product_id";
+                    dataItem.value =
+                        form.querySelector("input[name=variation_id]")?.value || addToCartBtn.value;
+                }
+            });
+
+            /**
+             * Because Woocommerce plugin uses jQuery custom event,
+             * We also have to use jQuery to customize this event.
+             */
+            jQuery("body").trigger("adding_to_cart", [jQuery(addToCartBtn), formData]);
+
+            /**
+             * Because Woocommerce plugin uses jQuery dynamic nonce,
+             * We also have to use jQuery to customize.
+             */
             jQuery.ajax({
-                url: options.wc_ajax_url,
                 type: "POST",
+                url: woocommerce_params.wc_ajax_url.replace("%%endpoint%%", "add_to_cart"),
                 data: formData,
 
-                success: function (results) {
-                    $body.trigger("wc_fragment_refresh");
-                    $body.trigger("added_to_cart", [null, null, $addToCartBtn]);
+                success: function (response) {
+                    /**
+                     * Because Woocommerce plugin uses jQuery custom event,
+                     * We also have to use jQuery to customize this event.
+                     */
+                    jQuery("body").trigger("added_to_cart", [
+                        response.fragments,
+                        response.cart_hash,
+                        jQuery(addToCartBtn),
+                    ]);
 
                     if (options.cart_redirect_after_add === "yes") {
                         window.location = options.cart_url;
@@ -76,21 +101,26 @@ class WooAjaxAddToCart {
         const rCRLF = /\r?\n/g;
 
         return Array.from(form.elements).map((element, index) => {
-            const value = element.value;
+            const elementValue = element.value;
+            const elementName = element.name;
 
-            if (value === null) {
+            if (elementName === "product_id") {
                 return true;
-            } else if (element.nodeName === "checkbox" && element.checked === false) {
-                return { name: element.name, value: "" };
-            } else if (element.nodeName === "radio" && element.checked === false) {
-                return { name: element.name, value: "" };
             }
 
-            return Array.isArray(value)
-                ? Array.from(value).map((val, index) => {
-                      return { name: element.name, value: val.replace(rCRLF, "\r\n") };
+            if (elementValue === null) {
+                return true;
+            } else if (element.nodeName === "checkbox" && element.checked == false) {
+                return { name: elementName, value: "" };
+            } else if (element.nodeName === "radio" && element.checked == false) {
+                return { name: elementName, value: element.checked ? elementValue : "" };
+            }
+
+            return Array.isArray(elementValue)
+                ? Array.from(elementValue).map((val, index) => {
+                      return { name: elementName, value: val.replace(rCRLF, "\r\n") };
                   })
-                : { name: element.name, value: value.replace(rCRLF, "\r\n") };
+                : { name: elementName, value: elementValue.replace(rCRLF, "\r\n") };
         });
     };
 }

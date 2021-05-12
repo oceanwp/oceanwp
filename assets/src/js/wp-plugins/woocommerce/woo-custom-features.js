@@ -1,16 +1,16 @@
-import WooGuestAccountPage from "./custom-features/woo-guest-account-page";
 import WooGridList from "./custom-features/woo-grid-list";
+import WooGuestAccountPage from "./custom-features/woo-guest-account-page";
 import WooQuantityButtons from "./custom-features/woo-quantity-buttons";
-import WooReviewScroll from "./custom-features/woo-review-scroll";
-import WooWidgets from "./custom-features/woo-widgets";
+import WooScrollToReviewTab from "./custom-features/woo-scroll-to-review-tab";
+import WooRemoveCategoriesCountParenthesis from "./custom-features/remove-categories-count-parenthesis";
 
 class WooCustomFeatures {
     start = () => {
+        // this.gridList = new WooGridList();
         this.guestAccountPage = new WooGuestAccountPage();
         this.quantityButtons = new WooQuantityButtons();
-        // this.gridList = new WooGridList();
-        // this.reviewScroll = new WooReviewScroll();
-        // this.widgets = new WooWidgets();
+        this.reviewScroll = new WooScrollToReviewTab();
+        this.widgets = new WooRemoveCategoriesCountParenthesis();
     };
 }
 
