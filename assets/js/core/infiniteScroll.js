@@ -78,4 +78,9 @@ function oceanwpInfiniteScrollInit() {
 
 	} );
 
+	$container.on('append.infiniteScroll', function() {
+
+		oceanwpWooQuantityButtons();
+
+	});
 }
