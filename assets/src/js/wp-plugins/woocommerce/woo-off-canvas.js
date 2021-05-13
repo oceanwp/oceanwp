@@ -1,7 +1,7 @@
 import delegate from "delegate";
 import { DOM } from "../../constants";
 
-class WOOOffCanvas {
+class WooOffCanvas {
     constructor() {
         this.#start();
         this.#setupEventListeners();
@@ -10,17 +10,19 @@ class WOOOffCanvas {
     #start = () => {};
 
     #setupEventListeners = () => {
-        delegate(".oceanwp-off-canvas-filter", "click", this.#onCanvasFilterClick);
-        delegate(".oceanwp-off-canvas-overlay, .oceanwp-off-canvas-close", "click", this.#onCanvasCloseClick);
+        delegate(DOM.body, ".oceanwp-off-canvas-filter", "click", this.#onCanvasFilterClick);
+        delegate(
+            DOM.body,
+            ".oceanwp-off-canvas-overlay, .oceanwp-off-canvas-close",
+            "click",
+            this.#onCanvasCloseClick
+        );
     };
 
     #onCanvasFilterClick = (event) => {
         const initialHTMLInnerWidth = DOM.html.innerWidth;
-
         DOM.html.style.overflow = "hidden";
-
         const afterInitialHTMLInnerWidth = DOM.html.innerWidth;
-
         DOM.html.style.marginRight = afterInitialHTMLInnerWidth - initialHTMLInnerWidth + "px";
 
         DOM.body.classList.add("off-canvas-enabled");
@@ -34,4 +36,4 @@ class WOOOffCanvas {
     };
 }
 
-export default WOOOffCanvas;
+new WooOffCanvas();

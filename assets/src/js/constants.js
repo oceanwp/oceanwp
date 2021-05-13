@@ -81,7 +81,7 @@ export const DOM = {
         allProducts: document.querySelectorAll(".woocommerce ul.products"),
         categories: document.querySelectorAll(".woo-dropdown-cat .product-categories"),
         verticalThumbs: document.querySelectorAll(".owp-thumbs-layout-vertical"),
-        navs: document.querySelectorAll(".flex-control-nav"),
+        thumbsVerticalLayout: document.querySelector(".owp-thumbs-layout-vertical"),
         grid: document.querySelector(".oceanwp-grid-list #oceanwp-grid"),
         list: document.querySelector(".oceanwp-grid-list #oceanwp-list"),
         productTabs: document.querySelector(".woocommerce div.product .woocommerce-tabs"),

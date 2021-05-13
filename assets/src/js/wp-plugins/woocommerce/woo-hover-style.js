@@ -1,4 +1,5 @@
 import delegate from "delegate";
+import { DOM } from "../../constants";
 import { getSiblings } from "../../lib/utils";
 
 class WooHoverStyle {
@@ -22,7 +23,7 @@ class WooHoverStyle {
             DOM.body,
             ".woo-product-gallery a.woo-product-gallery-link",
             "click",
-            this.#onProductGalleryLinkClick
+            this.#onProductGalleryImageClick
         );
     };
 
@@ -33,18 +34,18 @@ class WooHoverStyle {
 
         setTimeout(() => {
             addToWishlistBtn.parentNode.parentNode.classList.remove("loading");
-        }, 1000);
+        }, 500);
     };
 
-    #onProductGalleryLinkClick = (event) => {
+    #onProductGalleryImageClick = (event) => {
         event.preventDefault();
 
-        const galleryLink = event.delegateTarget;
-        const mainImage = galleryLink.closest(".product-inner").querySelector(".woo-entry-image-main");
+        const galleryImage = event.delegateTarget;
+        const mainImage = galleryImage.closest(".product-inner").querySelector(".woo-entry-image-main");
 
         if (mainImage) {
-            const mainImageURL = galleryLink.getAttribute("href");
-            const mainImageSiblings = getSiblings(mainImage.parentNode);
+            const mainImageURL = galleryImage.getAttribute("href");
+            const galleryImageSiblings = getSiblings(galleryImage.parentNode);
 
             mainImage.parentNode.classList.add("loading");
 
@@ -89,9 +90,10 @@ class WooHoverStyle {
                 mainImage.addEventListener("load", imageLoaded);
             }
 
-            mainImage.parentNode.classList.add("active");
-            mainImageSiblings?.forEach((siblings) => {
-                siblings.classList.remove("active");
+            galleryImage.parentNode.classList.add("active");
+
+            galleryImageSiblings?.forEach((_galleryImage) => {
+                _galleryImage.classList.remove("active");
             });
         }
     };

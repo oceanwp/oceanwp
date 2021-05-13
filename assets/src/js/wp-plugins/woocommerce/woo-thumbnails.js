@@ -11,23 +11,23 @@ class WooThumbnails {
     };
 
     #start = () => {
-        if (!!DOM.woo.navs) {
-            if (window.innerWidth > 768) {
-                DOM.woo.navs.forEach((nav) => {
-                    const imageHeight = nav.querySelector(".flex-viewport").offsetHeight;
-                    const navHeight = nav.querySelector(".flex-control-nav").offsetHeight;
+        const thumbsNav = DOM.woo.thumbsVerticalLayout.querySelector(".flex-control-nav");
 
-                    if (navHeight > imageHeight + 50) {
-                        nav.style.maxHeight = `${imageHeight}px`;
-                    }
-                });
+        if (!!thumbsNav) {
+            if (window.innerWidth > 768) {
+                const imageHeight =
+                    DOM.woo.thumbsVerticalLayout.querySelector(".flex-viewport")?.offsetHeight;
+                const navHeight =
+                    DOM.woo.thumbsVerticalLayout.querySelector(".flex-control-nav")?.offsetHeight;
+
+                if (navHeight > imageHeight + 50) {
+                    thumbsNav.style.maxHeight = `${imageHeight}px`;
+                }
             } else {
-                DOM.woo.navs.forEach((nav) => {
-                    nav.style.maxHeight = "";
-                });
+                thumbsNav.style.maxHeight = "";
             }
         }
     };
 }
 
-export default WooThumbnails;
+new WooThumbnails();

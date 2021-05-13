@@ -20,7 +20,7 @@ $show_woo_cond = ( is_user_logged_in() && true === $ocean_woo_cond );
 $hide_woo_cond = ( ! is_user_logged_in() && true === $ocean_woo_cond );
 
 // Get links conditional mod.
-$ocean_woo_disable_links = get_theme_mod( 'ocean_shop_woo_disable_links', false );
+$ocean_woo_disable_links      = get_theme_mod( 'ocean_shop_woo_disable_links', false );
 $ocean_woo_disable_links_cond = get_theme_mod( 'ocean_shop_woo_disable_links_cond', 'no' );
 
 $disable_links = '';
@@ -55,7 +55,7 @@ if ( false === $ocean_woo_cond || $show_woo_cond ) {
 
 // Get theme icons.
 $theme_icons = oceanwp_theme_icons();
-$icon_t = oceanwp_theme_icon_class();
+$icon_t      = oceanwp_theme_icon_class();
 
 // Wishlist button.
 if ( get_theme_mod( 'ocean_woo_quick_view', true )
@@ -63,14 +63,14 @@ if ( get_theme_mod( 'ocean_woo_quick_view', true )
 	echo '<ul class="woo-entry-buttons">';
 	do_action( 'ocean_before_archive_woo_entry_buttons' );
 	if ( get_theme_mod( 'ocean_woo_quick_view', true ) ) {
-		echo '<li class="woo-quickview-btn">' . apply_filters( 'ocean_woo_quick_view_button_html', '<a href="#" class="owp-quick-view" id="product_id_' . $product->get_id() . '" data-product_id="' . $product->get_id() . '"><i class="' . $theme_icons[ 'eye' ][ $icon_t ] . '" aria-hidden="true"></i></a>' ) . '</li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<li class="woo-quickview-btn">' . apply_filters( 'ocean_woo_quick_view_button_html', '<a href="#" class="owp-quick-view" id="product_id_' . $product->get_id() . '" data-product_id="' . $product->get_id() . '"><i class="' . $theme_icons['eye'][ $icon_t ] . '" aria-hidden="true"></i></a>' ) . '</li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	$wl_plugin = get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' );
 
 	if ( 'ti_wl' === $wl_plugin && class_exists( 'TInvWL_Wishlist' ) ) {
 		echo '<li class="woo-wishlist-btn">' . do_shortcode( '[ti_wishlists_addtowishlist]' ) . '</li>';
-	} else if ( 'yith_wl' === $wl_plugin && class_exists( 'YITH_WCWL' ) ) {
+	} elseif ( 'yith_wl' === $wl_plugin && class_exists( 'YITH_WCWL' ) ) {
 		echo '<li class="woo-wishlist-btn">' . do_shortcode( '[yith_wcwl_add_to_wishlist]' ) . '</li>';
 	}
 
@@ -96,17 +96,17 @@ echo '<li class="title">';
 
 	do_action( 'ocean_before_archive_product_title_inner' );
 
-	if ( false === $ocean_woo_disable_links
+if ( false === $ocean_woo_disable_links
 		|| ( $disable_links && is_user_logged_in() ) ) {
 
-		echo '<h2><a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a></h2>';
+	echo '<h2><a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a></h2>';
 
-	} else {
-		
-		echo '<h2>' . get_the_title() . '</h2>';
+} else {
 
-	}
-	
+	echo '<h2>' . get_the_title() . '</h2>';
+
+}
+
 	do_action( 'ocean_after_archive_product_title_inner' );
 
 echo '</li>';
@@ -119,7 +119,7 @@ do_action( 'ocean_before_archive_product_inner' );
 if ( false === $ocean_woo_cond || $show_woo_cond ) {
 
 	echo '<li class="price-wrap">';
-	
+
 		do_action( 'ocean_before_archive_product_price' );
 		woocommerce_template_loop_price();
 		do_action( 'ocean_after_archive_product_price' );
@@ -129,7 +129,7 @@ if ( false === $ocean_woo_cond || $show_woo_cond ) {
 } else {
 
 	$ocean_woo_cond_msg = get_theme_mod( 'ocean_shop_cond_msg', 'yes' );
-		
+
 	if ( $ocean_woo_cond_msg === 'yes' ) {
 
 		// Get Add to Cart button replacement message.
@@ -140,12 +140,12 @@ if ( false === $ocean_woo_cond || $show_woo_cond ) {
 
 		echo '<li class="owp-woo-cond-notice">';
 		if ( false === $woo_add_myaccunt_link ) {
-			echo '<span>'. $woo_cond_message .'</span>';
+			echo '<span>' . $woo_cond_message . '</span>';
 		} else {
 			echo '<a href="' . esc_url( get_permalink( wc_get_page_id( 'myaccount' ) ) ) . '">' . $woo_cond_message . '</a>';
-		}	
+		}
 		echo '</li>';
-		
+
 	}
 }
 

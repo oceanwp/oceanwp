@@ -51,6 +51,9 @@ module.exports = function (grunt) {
                     "./assets/js/wp-plugins/woocommerce/woo-floating-bar.min.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-floating-bar.js",
                     // Woocommerce mini cart
+                    "./assets/js/wp-plugins/woocommerce/woo-hover-style.min.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-hover-style.js",
+                    // Woocommerce mini cart
                     "./assets/js/wp-plugins/woocommerce/woo-mini-cart.min.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-mini-cart.js",
                     // Woocommerce multi step checkout

@@ -43,7 +43,9 @@ class WooQuickView {
     };
 
     #onCloseBtnClick = (event) => {
-        event.preventDefault();
+        if (!!event) {
+            event.preventDefault();
+        }
 
         this.#close();
     };
