@@ -139,9 +139,7 @@ if ( ! function_exists( 'oceanwp_woo_product_instock' ) ) {
 		global $post;
 		$post_id      = $post_id ? $post_id : $post->ID;
 		$product = wc_get_product($post_id);
-		//return $product->is_in_stock(); // returns error if product not found and wc_get_product() returns boolean
-		
-		return $product ? $product->is_in_stock() : false;
+		return $product->is_in_stock();
 	}
 
 }
