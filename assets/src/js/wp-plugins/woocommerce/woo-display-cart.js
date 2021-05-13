@@ -1,5 +1,5 @@
 import { DOM } from "../../constants";
-import { fadeIn, fadeOut } from "../../lib/utils";
+import { fadeIn, fadeOut, visible } from "../../lib/utils";
 
 class WooDisplayCart {
     constructor() {
@@ -49,8 +49,10 @@ class WooDisplayCart {
     };
 
     #closeOverlay = (event) => {
-        fadeOut(DOM.woo.overlayCart);
-        DOM.body.classList.remove("show-cart");
+        if (visible(DOM.woo.overlayCart)) {
+            fadeOut(DOM.woo.overlayCart);
+            DOM.body.classList.remove("show-cart");
+        }
     };
 }
 

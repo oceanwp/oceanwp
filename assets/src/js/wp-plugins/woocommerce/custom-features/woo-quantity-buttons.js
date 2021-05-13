@@ -3,59 +3,73 @@ import { DOM, options } from "../../../constants";
 
 class WooQuantityButtons {
     #changeEvent;
+    #firstTimeRunning;
 
     constructor() {
-        if (!!DOM.woo.quantityInputs) {
-            this.#start();
-            this.#setupEventListeners();
-        }
+        this.#firstTimeRunning = true;
+
+        this.start();
+        this.#setupEventListeners();
     }
 
-    #start = () => {
-        DOM.woo.quantityInputs.forEach((quantityInput) => {
-            const inputType = quantityInput.getAttribute("type");
+    start = () => {
+        const quantityInputs = document.querySelectorAll(".quantity:not(.buttons_added) .qty");
 
-            if (!(inputType === "date" || inputType === "hidden")) {
-                // Add minus icon
-                quantityInput.insertAdjacentHTML(
-                    "beforebegin",
-                    '<a href="javascript:void(0)" class="minus">-</a>'
-                );
+        if (!!quantityInputs) {
+            quantityInputs.forEach((quantityInput) => {
+                const inputType = quantityInput.getAttribute("type");
 
-                // Add plus icon
-                quantityInput.insertAdjacentHTML(
-                    "afterend",
-                    '<a href="javascript:void(0)" class="plus">+</a>'
-                );
+                if (!(inputType === "date" || inputType === "hidden")) {
+                    // Add minus icon
+                    quantityInput.insertAdjacentHTML(
+                        "beforebegin",
+                        '<a href="javascript:void(0)" class="minus">-</a>'
+                    );
+
+                    // Add plus icon
+                    quantityInput.insertAdjacentHTML(
+                        "afterend",
+                        '<a href="javascript:void(0)" class="plus">+</a>'
+                    );
+                }
+            });
+
+            // Check quantity bigger than min
+            document
+                .querySelectorAll("input.qty:not(.product-quantity input.qty)")
+                .forEach((quantityInput) => {
+                    const min = parseFloat(quantityInput.getAttribute("min"));
+                    const currentValue = parseFloat(quantityInput.value);
+
+                    if (min && min > 0 && currentValue < min) {
+                        quantityInput.value = min;
+                    }
+                });
+
+            if (this.#firstTimeRunning) {
+                // Create a new 'change' event
+                this.#changeEvent = new Event("change");
             }
-        });
-
-        // Check quantity bigger than min
-        document.querySelectorAll("input.qty:not(.product-quantity input.qty)").forEach((quantityInput) => {
-            const min = parseFloat(quantityInput.getAttribute("min"));
-            const currentValue = parseFloat(quantityInput.value);
-
-            if (min && min > 0 && currentValue < min) {
-                quantityInput.value = min;
-            }
-        });
-
-        // Create a new 'change' event
-        this.#changeEvent = new Event("change");
+        }
     };
 
     #setupEventListeners = () => {
+        const quantityInputs = document.querySelectorAll(".quantity:not(.buttons_added) .qty");
+
         // Update floating bar quantity
-        if (
-            DOM.body.classList.contains("single-product") &&
-            options.floating_bar === "on" &&
-            !Array.from(DOM.woo.productCarts).some(({ classList }) =>
-                classList.contains("grouped_form cart_group")
-            )
-        ) {
-            DOM.woo.quantityInputs.forEach((quantityInput) => {
-                quantityInput.addEventListener("keyup", this.#onQuantityInputKeyup);
-            });
+        if (!!quantityInputs) {
+            if (
+                DOM.body.classList.contains("single-product") &&
+                options.floating_bar === "on" &&
+                !Array.from(DOM.woo.productCarts).some(({ classList }) =>
+                    classList.contains("grouped_form cart_group")
+                )
+            ) {
+                quantityInputs.forEach((quantityInput) => {
+                    quantityInput.addEventListener("keyup", this.#onQuantityInputKeyup);
+                    quantityInput.addEventListener("change", this.#onQuantityInputKeyup);
+                });
+            }
         }
 
         delegate(DOM.body, ".cart .minus, .cart .plus", "click", this.#onQuantityBtnClick);
@@ -64,9 +78,10 @@ class WooQuantityButtons {
     #onQuantityInputKeyup = (event) => {
         const currentQuantityInput = event.target;
         const inputType = currentQuantityInput.getAttribute("type");
+        const quantityInputs = document.querySelectorAll(".quantity:not(.buttons_added) .qty");
 
         if (!(inputType === "date" || inputType === "hidden")) {
-            DOM.woo.quantityInputs.forEach((quantityInput) => {
+            quantityInputs.forEach((quantityInput) => {
                 quantityInput.value = currentQuantityInput.value;
             });
         }
@@ -79,10 +94,10 @@ class WooQuantityButtons {
         const quantityBtn = event.delegateTarget;
         const quantityInput = quantityBtn.closest(".quantity").querySelector(".qty");
 
-        const currentValue = parseFloat(quantityInput.value);
-        const min = parseFloat(quantityInput.getAttribute("min"));
-        const max = parseFloat(quantityInput.getAttribute("max"));
-        const step = quantityInput.getAttribute("step");
+        let currentValue = parseFloat(quantityInput.value);
+        let min = parseFloat(quantityInput.getAttribute("min"));
+        let max = parseFloat(quantityInput.getAttribute("max"));
+        let step = quantityInput.getAttribute("step");
 
         // Fallback default values
         if (!currentValue || currentValue === "" || Number.isNaN(currentValue)) {
@@ -104,32 +119,22 @@ class WooQuantityButtons {
         // Plus button
         if (quantityBtn.classList.contains("plus")) {
             if (max && (currentValue === max || currentValue > max)) {
-                DOM.woo.quantityInputs.forEach((_quantityInput) => {
-                    _quantityInput.value = max;
-                });
+                quantityInput.value = max;
             } else {
-                DOM.woo.quantityInputs.forEach((_quantityInput) => {
-                    _quantityInput.value = currentValue + parseFloat(step);
-                });
+                quantityInput.value = currentValue + parseFloat(step);
             }
 
             // Minus button
         } else {
             if (min && (currentValue === min || currentValue < min)) {
-                DOM.woo.quantityInputs.forEach((_quantityInput) => {
-                    _quantityInput.value = min;
-                });
+                quantityInput.value = min;
             } else if (currentValue > 0) {
-                DOM.woo.quantityInputs.forEach((_quantityInput) => {
-                    _quantityInput.value = currentValue - parseFloat(step);
-                });
+                quantityInput.value = currentValue - parseFloat(step);
             }
         }
 
         // Trigger change event
-        DOM.woo.quantityInputs.forEach((_quantityInput) => {
-            _quantityInput.dispatchEvent(this.#changeEvent);
-        });
+        quantityInput.dispatchEvent(this.#changeEvent);
     };
 }
 

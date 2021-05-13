@@ -2,6 +2,7 @@ import axios from "axios";
 import delegate from "delegate";
 import { DOM, options } from "../../constants";
 import { fadeIn, fadeOut } from "../../lib/utils";
+import qs from "qs";
 
 class WooQuickView {
     constructor() {
@@ -58,41 +59,56 @@ class WooQuickView {
         event.preventDefault();
 
         const addToCartBtn = event.delegateTarget;
-        const $addToCartBtn = jQuery(addToCartBtn);
         const form = addToCartBtn.closest("form.cart");
         const formData = this.#getFormData(form);
-        const $body = jQuery("body");
 
-        if (formData.some((data) => data.name === "add-to-cart")) {
+        if (formData.some(({ name }) => name === "add-to-cart")) {
             event.preventDefault();
-        }
 
-        $body.trigger("adding_to_cart", [$addToCartBtn, formData]);
+            addToCartBtn.classList.remove("added");
+            addToCartBtn.classList.add("loading");
 
-        addToCartBtn.classList.remove("added");
-        addToCartBtn.classList.add("loading");
-
-        // Ajax action.
-        jQuery.ajax({
-            url: options.wc_ajax_url,
-            type: "POST",
-            data: formData,
-
-            success: function (results) {
-                jQuery(document.body).trigger("wc_fragment_refresh");
-                jQuery(document.body).trigger("added_to_cart", [
-                    results.fragments,
-                    results.cart_hash,
-                    $addToCartBtn,
-                ]);
-
-                // Redirect to cart option
-                if (options.cart_redirect_after_add === "yes") {
-                    window.location = options.cart_url;
-                    return;
+            formData.forEach((dataItem) => {
+                if (dataItem.name == "add-to-cart") {
+                    dataItem.name = "product_id";
+                    dataItem.value =
+                        form.querySelector("input[name=variation_id]")?.value || addToCartBtn.value;
                 }
-            },
-        });
+            });
+
+            /**
+             * Because Woocommerce plugin uses jQuery custom event,
+             * We also have to use jQuery to customize this event.
+             */
+            jQuery("body").trigger("adding_to_cart", [jQuery(addToCartBtn), formData]);
+
+            /**
+             * Because Woocommerce plugin uses jQuery dynamic nonce,
+             * We also have to use jQuery to customize.
+             */
+            jQuery.ajax({
+                type: "POST",
+                url: woocommerce_params.wc_ajax_url.replace("%%endpoint%%", "add_to_cart"),
+                data: formData,
+
+                success: function (response) {
+                    /**
+                     * Because Woocommerce plugin uses jQuery custom event,
+                     * We also have to use jQuery to customize this event.
+                     */
+                    jQuery("body").trigger("added_to_cart", [
+                        response.fragments,
+                        response.cart_hash,
+                        jQuery(addToCartBtn),
+                    ]);
+
+                    if (options.cart_redirect_after_add === "yes") {
+                        window.location = options.cart_url;
+                        return;
+                    }
+                },
+            });
+        }
     };
 
     #updateCart = (e, fragments, cart_hash, $button) => {
@@ -113,28 +129,37 @@ class WooQuickView {
     };
 
     #open = (quickViewBtn, productId) => {
-        const data = new FormData();
-
-        data.append("action", "oceanwp_product_quick_view");
-        data.append("nonce", options.nonce);
-        data.append("product_id", productId);
-
         axios
-            .post(options.ajax_url, data)
-            .then((response) => {
+            .post(
+                options.ajax_url,
+                qs.stringify({
+                    action: "oceanwp_product_quick_view",
+                    nonce: options.nonce,
+                    product_id: productId,
+                })
+            )
+            .then(({ data }) => {
                 const initialHTMLInnerWidth = DOM.html.innerWidth;
                 DOM.html.style.overflow = "hidden";
                 const afterInitialHTMLInnerWidth = DOM.html.innerWidth;
                 DOM.html.style.marginRight = afterInitialHTMLInnerWidth - initialHTMLInnerWidth + "px";
 
                 DOM.body.classList.add("owp-qv-open");
-                DOM.woo.quickView.content.innerHTML = response.data.output;
+                DOM.woo.quickView.content.innerHTML = data.output;
+
+                // Run quantity button
+                window.oceanwpWooCustomFeatures.quantityButtons.start();
 
                 fadeIn(DOM.woo.quickView.modal);
 
                 DOM.woo.quickView.modal.classList.add("is-visible");
 
                 const variations_form = DOM.woo.quickView.content.querySelector(".variations_form");
+
+                /**
+                 * Because Woocommerce plugin uses jQuery custom event,
+                 * We also have to use jQuery to customize this event
+                 */
                 const $variationsForm = jQuery(variations_form);
 
                 $variationsForm.trigger("check_variations");
@@ -146,6 +171,11 @@ class WooQuickView {
                 }
 
                 const galleryImagesWrapper = DOM.woo.quickView.content.querySelector(".owp-qv-image");
+
+                /**
+                 * Because Woocommerce plugin uses jQuery flexslider,
+                 * We also have to use jQuery
+                 */
                 const $galleryImagesWrapper = jQuery(galleryImagesWrapper);
 
                 if (!!galleryImagesWrapper.querySelectorAll("li")) {
@@ -170,9 +200,6 @@ class WooQuickView {
                 }
 
                 quickViewBtn.parentNode.classList.remove("loading");
-            })
-            .catch((error) => {
-                console.log(error);
             });
     };
 
@@ -194,21 +221,26 @@ class WooQuickView {
         const rCRLF = /\r?\n/g;
 
         return Array.from(form.elements).map((element, index) => {
-            const value = element.value;
+            const elementValue = element.value;
+            const elementName = element.name;
 
-            if (value === null) {
+            if (elementName === "product_id") {
                 return true;
-            } else if (element.nodeName === "checkbox" && element.checked === false) {
-                return { name: element.name, value: "" };
-            } else if (element.nodeName === "radio" && element.checked === false) {
-                return { name: element.name, value: "" };
             }
 
-            return Array.isArray(value)
-                ? Array.from(value).map((val, index) => {
-                      return { name: element.name, value: val.replace(rCRLF, "\r\n") };
+            if (elementValue === null) {
+                return true;
+            } else if (element.nodeName === "checkbox" && element.checked == false) {
+                return { name: elementName, value: "" };
+            } else if (element.nodeName === "radio" && element.checked == false) {
+                return { name: elementName, value: element.checked ? elementValue : "" };
+            }
+
+            return Array.isArray(elementValue)
+                ? Array.from(elementValue).map((val, index) => {
+                      return { name: elementName, value: val.replace(rCRLF, "\r\n") };
                   })
-                : { name: element.name, value: value.replace(rCRLF, "\r\n") };
+                : { name: elementName, value: elementValue.replace(rCRLF, "\r\n") };
         });
     };
 }

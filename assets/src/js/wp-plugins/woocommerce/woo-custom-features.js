@@ -14,5 +14,5 @@ class WooCustomFeatures {
     };
 }
 
-const wooCustomFeatures = new WooCustomFeatures();
-wooCustomFeatures.start();
+window.oceanwpWooCustomFeatures = new WooCustomFeatures();
+oceanwpWooCustomFeatures.start();

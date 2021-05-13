@@ -26,6 +26,8 @@ class WooAjaxAddToCart {
     };
 
     #onAddToCartBtnClick = (event) => {
+        event.preventDefault();
+
         const addToCartBtn = event.delegateTarget;
         const form = addToCartBtn.closest("form.cart");
         const formData = this.#getFormData(form);
