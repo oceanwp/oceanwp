@@ -1,4 +1,5 @@
 import delegate from "delegate";
+import { getSiblings } from "../../lib/utils";
 
 class WooHoverStyle {
     constructor() {
@@ -40,14 +41,15 @@ class WooHoverStyle {
 
         const galleryLink = event.delegateTarget;
         const mainImage = galleryLink.closest(".product-inner").querySelector(".woo-entry-image-main");
-        const mainImageSiblings = getSiblings(mainImage.parentNode);
 
         if (mainImage) {
-            const url = galleryLink.getAttribute("href");
+            const mainImageURL = galleryLink.getAttribute("href");
+            const mainImageSiblings = getSiblings(mainImage.parentNode);
 
             mainImage.parentNode.classList.add("loading");
-            mainImage.setAttribute("src", url);
-            mainImage.setAttribute("srcset", url);
+
+            mainImage.setAttribute("src", mainImageURL);
+            mainImage.setAttribute("srcset", mainImageURL);
 
             mainImage.style.cssText = `
                 opacity: 0;
@@ -94,3 +96,5 @@ class WooHoverStyle {
         }
     };
 }
+
+new WooHoverStyle();

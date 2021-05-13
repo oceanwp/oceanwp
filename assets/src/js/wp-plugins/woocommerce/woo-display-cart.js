@@ -11,7 +11,9 @@ class WooDisplayCart {
 
     #setupEventListeners = () => {
         jQuery("body").on("added_to_cart", this.#onAddToCartBtn);
+
         DOM.woo.overlayCart.addEventListener("click", this.#closeOverlay);
+
         window.addEventListener("resize", this.#closeOverlay);
     };
 
@@ -31,10 +33,6 @@ class WooDisplayCart {
             setTimeout(() => {
                 DOM.woo.quickView.content.innerHTML = "";
             }, 600);
-        }
-
-        if (header.length && !header.hasClass("fixed-scroll")) {
-            $j("html, body").animate({ scrollTop: 0 }, 400);
         }
 
         if (!!DOM.header.site && !DOM.header.site.classList.contains("fixed-scroll")) {

@@ -86,7 +86,7 @@ class WooAjaxAddToCart {
             cartBtn.classList.remove("loading");
             cartBtn.classList.add("added");
 
-            // View cart text.
+            // Add view cart text.
             if (!options.is_cart && !cartBtn.parentNode.querySelector(".added_to_cart")) {
                 cartBtn.insertAdjacentHTML(
                     "afterend",

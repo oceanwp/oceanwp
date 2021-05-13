@@ -692,22 +692,22 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// If products hover style
 			if ( 'hover' == get_theme_mod( 'ocean_woo_products_style', 'default' ) ) {
 				wp_enqueue_style( 'oceanwp-woo-hover-style', OCEANWP_CSS_DIR_URI . 'woo/hover-style.min.css' );
-				wp_enqueue_script( 'oceanwp-woo-hover-style', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-hover-style.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-hover-style', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-hover-style.min.js', array(), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If dropdown category widget style
 			if ( 'dropdown' == get_theme_mod( 'ocean_woo_cat_widget_style', 'default' ) ) {
-				wp_enqueue_script( 'oceanwp-woo-cat-widget', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-cat-widget.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-cat-widget', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-cat-widget.min.js', array(), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If vertical thumbnails style
 			if ( 'vertical' == get_theme_mod( 'ocean_woo_product_thumbs_layout', 'horizontal' ) ) {
-				wp_enqueue_script( 'oceanwp-woo-thumbnails', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-thumbnails.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-thumbnails', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-thumbnails.min.js', array(), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If quick view.
 			if ( get_theme_mod( 'ocean_woo_quick_view', true ) ) {
-				wp_enqueue_script( 'oceanwp-woo-quick-view', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-quick-view.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-quick-view', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-quick-view.min.js', array(), OCEANWP_THEME_VERSION, true );
 				wp_enqueue_style( 'oceanwp-woo-quick-view', OCEANWP_CSS_DIR_URI . 'woo/woo-quick-view.min.css' );
 				wp_enqueue_script( 'wc-add-to-cart-variation' );
 				wp_enqueue_script( 'flexslider' );
@@ -733,19 +733,19 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// If display cart when product added
 			if ( 'yes' == get_theme_mod( 'ocean_woo_display_cart_product_added', 'no' ) ) {
-				wp_enqueue_script( 'oceanwp-woo-display-cart', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-display-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-display-cart', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-display-cart.min.js', array(), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If off canvas filter
 			if ( true == get_theme_mod( 'ocean_woo_off_canvas_filter', false )
 				&& ( oceanwp_is_woo_shop()
 					|| oceanwp_is_woo_tax() ) ) {
-				wp_enqueue_script( 'oceanwp-woo-off-canvas', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-off-canvas.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-off-canvas', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-off-canvas.min.js', array(), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If mobile menu mini cart
 			if ( get_theme_mod( 'ocean_woo_add_mobile_mini_cart', true ) ) {
-				wp_enqueue_script( 'oceanwp-woo-mini-cart', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-mini-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-mini-cart', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-mini-cart.min.js', array(), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If multi step checkout
@@ -753,13 +753,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				&& is_checkout() ) {
 				wp_enqueue_style( 'oceanwp-woo-multistep-checkout', OCEANWP_CSS_DIR_URI . 'woo/woo-multistep-checkout.min.css' );
 
-				$woo_deps = array( 'jquery', 'wc-checkout', 'wc-country-select' );
+				$woo_deps = array( 'wc-checkout', 'wc-country-select' );
 
 				if ( class_exists( 'WC_Ship_Multiple' ) ) {
 					$woo_deps[] = 'wcms-country-select';
 				}
 
-				wp_enqueue_script( 'oceanwp-woo-multistep-checkout', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-multistep-checkout.min.js', $woo_deps, OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-multistep-checkout', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-multi-step-checkout.min.js', $woo_deps, OCEANWP_THEME_VERSION, true );
 			}
 
 		}

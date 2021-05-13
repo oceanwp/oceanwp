@@ -20,38 +20,46 @@ class WooMultiStepCheckout {
     };
 
     #setupEventListeners = () => {
+        /**
+         * Because Woocommerce plugin uses jQuery custom event,
+         * We also have to use jQuery to customize this event
+         */
         jQuery(DOM.body).on("updated_checkout", this.#updateCheckout);
 
         DOM.woo.formActions
-            .querySelector(".button.prev")
-            .addEventListener("click", this.#onNavigationBtnClick);
+            ?.querySelector(".button.prev")
+            ?.addEventListener("click", this.#onNavigationBtnClick);
 
         DOM.woo.formActions
-            .querySelector(".button.next")
-            .addEventListener("click", this.#onNavigationBtnClick);
+            ?.querySelector(".button.next")
+            ?.addEventListener("click", this.#onNavigationBtnClick);
     };
 
     #updateCheckout = (event) => {
         DOM.woo.orderCheckoutPayment
-            .querySelector("input[name=payment_method]")
-            .addEventListener("click", this.#onPaymentMethodBtnClick);
+            ?.querySelectorAll("input[name=payment_method]")
+            ?.forEach((paymentMethod) => {
+                paymentMethod.addEventListener("click", this.#onPaymentMethodBtnClick);
+            });
     };
 
     #onPaymentMethodBtnClick = (event) => {
-        const paymentMethodBtn = event.currentTarget;
+        const paymentMethodBtn = event.target;
         const radioInputs = document.querySelectorAll(".payment_methods input.input-radio");
 
         if (radioInputs.length > 1) {
             const paymentBox = document.querySelector(`.payment_box.${paymentMethodBtn.getAttribute("id")}`);
 
-            if (paymentMethodBtn.checked === true && visible(paymentBox)) {
+            if (paymentMethodBtn.checked === true && !visible(paymentBox)) {
                 document.querySelectorAll(".payment_box").forEach((_paymentBox) => {
                     if (visible(_paymentBox)) {
-                        slideUp(_paymentBox, 250);
+                        setTimeout(() => {
+                            slideUp(_paymentBox, 250);
+                        }, 250);
                     }
                 });
 
-                slideDown(document.querySelector(paymentBox), 250);
+                slideDown(paymentBox, 250);
             } else {
                 document.querySelectorAll(".payment_box").forEach((_paymentBox) => {
                     _paymentBox.style.display = "block";
@@ -67,13 +75,15 @@ class WooMultiStepCheckout {
     };
 
     #onNavigationBtnClick = (event) => {
+        event.preventDefault();
+
         const btn = event.currentTarget;
         const nextBtn = DOM.woo.formActions.querySelector(".button.next");
         const prevBtn = DOM.woo.formActions.querySelector(".button.prev");
         const action = btn.getAttribute("data-action");
-        let currentStep = DOM.woo.formActions.getAttribute("data-step");
-        let nextStep = ++currentStep;
-        let prevStep = --currentStep;
+        let currentStep = Number.parseInt(DOM.woo.formActions.getAttribute("data-step"));
+        let nextStep = currentStep + 1;
+        let prevStep = currentStep - 1;
         const isLoggedIn = options.is_logged_in;
 
         DOM.woo.checkoutTimeline.querySelectorAll(".active").forEach((activeItem) => {
@@ -81,39 +91,41 @@ class WooMultiStepCheckout {
         });
 
         if (action === "next") {
-            DOM.formActions.setAttribute("data-step", nextStep);
+            DOM.woo.formActions.setAttribute("data-step", nextStep);
 
-            fadeOut(this.#steps[currentStep], null, () => {
+            fadeOut(this.#steps[currentStep], "inline-block", () => {
                 fadeIn(this.#steps[nextStep]);
             });
 
             document.querySelector(`#timeline-${nextStep}`).classList.toggle("active");
         } else if (action === "prev") {
-            DOM.formActions.setAttribute("data-step", prevStep);
+            DOM.woo.formActions.setAttribute("data-step", prevStep);
 
-            fadeOut(this.#steps[currentStep], null, () => {
+            fadeOut(this.#steps[currentStep], "inline-block", () => {
                 fadeIn(this.#steps[prevStep]);
             });
+
+            document.querySelector(`#timeline-${prevStep}`).classList.toggle("active");
         }
 
         currentStep = DOM.woo.formActions.getAttribute("data-step");
 
         if (
-            (isLoggedIn === true && currentStep === 1) ||
-            (isLoggedIn === false &&
-                ((currentStep === 0 && options.login_reminder_enabled === 1) ||
-                    (currentStep === 1 && options.login_reminder_enabled === 0)))
+            (isLoggedIn == true && currentStep == 1) ||
+            (isLoggedIn == false &&
+                ((currentStep == 0 && options.login_reminder_enabled === 1) ||
+                    (currentStep == 1 && options.login_reminder_enabled === 0)))
         ) {
-            fadeOut(prevBtn);
+            fadeOut(prevBtn, "inline-block");
         } else {
-            fadeIn(prevBtn);
+            fadeIn(prevBtn, "inline-block");
         }
 
         // Next title
         if (
-            isLoggedIn === false &&
-            ((currentStep === 0 && options.login_reminder_enabled === 1) ||
-                (currentStep === 1 && options.login_reminder_enabled === 0))
+            isLoggedIn == false &&
+            ((currentStep == 0 && options.login_reminder_enabled === 1) ||
+                (currentStep == 1 && options.login_reminder_enabled === 0))
         ) {
             nextBtn.value = options.no_account_btn;
         } else {
@@ -121,14 +133,14 @@ class WooMultiStepCheckout {
         }
 
         // Last step
-        if (currentStep === 3) {
+        if (currentStep == 3) {
             DOM.woo.checkoutForm.classList.remove("processing");
             fadeIn(DOM.woo.checkoutCoupon);
-            fadeOut(nextBtn);
+            fadeOut(nextBtn, "inline-block");
         } else {
             DOM.woo.checkoutForm.classList.add("processing");
             fadeOut(DOM.woo.checkoutCoupon);
-            fadeIn(nextBtn);
+            fadeIn(nextBtn, "inline-block");
         }
     };
 }
