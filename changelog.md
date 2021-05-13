@@ -2,6 +2,7 @@
 
 ### *2021.04.XX.* - 2.0.9
 * **Fixed** - Multistep checkout when using create account option.
+* **Fixed** - Number of products display between 768px and 959px.
 
 ### *2021.04.26.* - 2.0.8
 * **Fixed** - Page title displayed with old setting.

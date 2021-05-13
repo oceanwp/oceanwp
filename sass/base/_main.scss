@@ -280,14 +280,13 @@ form.oceanwp-searchform {
 	
 	/* turn 4 column masonry grids into 2 columns */
 	body .oceanwp-row {
-		.span_1_of_4.col-3.col,
-		.span_1_of_4.col.product:nth-child(2n+3) {
+		.span_1_of_4.col-3.col {
 			margin-left: 0;
 			clear: both;
 		}
 	}
 
-	body .oceanwp-row .span_1_of_4.col,
+	body .oceanwp-row .span_1_of_4.col:not(.product),
 	body .oceanwp-isotope-grid .span_1_of_4.col {
 		width: 50%;
 	}

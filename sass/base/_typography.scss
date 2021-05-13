@@ -141,6 +141,14 @@ code {
 	color: #2080ad;
 }
 
+.wp-block-quote {
+	margin: 1.5em auto;
+	padding-left: 20px;
+	border-left-width: 3px;
+	border-style: solid;
+	border-left-color: $color-5;
+}
+
 blockquote {
 	font-style: italic;
 	margin: 20px 40px;

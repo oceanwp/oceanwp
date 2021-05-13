@@ -399,12 +399,11 @@ form.oceanwp-searchform button {
 *------------------------------------*/
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   /* turn 4 column masonry grids into 2 columns */
-  body .oceanwp-row .span_1_of_4.col-3.col,
-  body .oceanwp-row .span_1_of_4.col.product:nth-child(2n+3) {
+  body .oceanwp-row .span_1_of_4.col-3.col {
     margin-left: 0;
     clear: both;
   }
-  body .oceanwp-row .span_1_of_4.col,
+  body .oceanwp-row .span_1_of_4.col:not(.product),
   body .oceanwp-isotope-grid .span_1_of_4.col {
     width: 50%;
   }
@@ -1719,6 +1718,14 @@ pre {
 
 code {
   color: #2080ad;
+}
+
+.wp-block-quote {
+  margin: 1.5em auto;
+  padding-left: 20px;
+  border-left-width: 3px;
+  border-style: solid;
+  border-left-color: #13aff0;
 }
 
 blockquote {
