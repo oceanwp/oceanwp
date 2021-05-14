@@ -699,11 +699,6 @@
 				var $icon_item = $( '.site-breadcrumbs ul li i, .site-breadcrumbs ol li i, .site-breadcrumbs ul li .owp-icon, .site-breadcrumbs ol li .owp-icon' ),
 					$home_item = $( '.site-breadcrumbs ul li .breadcrumb-home, .site-breadcrumbs ol li .breadcrumb-home' );
 
-					console.log($icon_item);
-					console.log($home_item);
-					console.log('Hi Log');
-					console.log(newval);
-
 				if ( 'icon' == newval && $icon_item.length ) {
 					$icon_item.removeClass( 'icon-home has-text' );
 					$home_item.addClass( 'has-icon' );
