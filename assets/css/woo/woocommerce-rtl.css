@@ -40,8 +40,7 @@
 .woocommerce input.button.loading:after { margin-right: 6px; margin-left: 0; }
 
 /* Button added to cart */
-.woocommerce ul.products li.product .added_to_cart:before { font-family: 'simple-line-icons'; content: '\e035'; margin-right: 6px; vertical-align: bottom; }
-.woocommerce ul.products li.product .added_to_cart:after { display: none; }
+.woocommerce ul.products li.product .added_to_cart:after { font-family: 'simple-line-icons'; content: '\e035'; margin-right: 6px; margin-left: 0; vertical-align: bottom; }
 
 /* Store > ordering & sorting */
 .woocommerce .oceanwp-off-canvas-filter,

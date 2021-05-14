@@ -4515,7 +4515,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Breadcrumbs seperator color.
 			if ( ! empty( $breadcrumbs_seperator_color ) && '#c6c6c6' != $breadcrumbs_seperator_color ) {
-				$css .= '.site-breadcrumbs ul li .breadcrumb-sep{color:' . $breadcrumbs_seperator_color . ';}';
+				$css .= '.site-breadcrumbs ul li .breadcrumb-sep, .site-breadcrumbs ol li .breadcrumb-sep{color:' . $breadcrumbs_seperator_color . ';}';
 			}
 
 			// Breadcrumbs link color.

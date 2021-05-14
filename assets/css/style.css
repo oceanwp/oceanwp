@@ -373,6 +373,7 @@ form.oceanwp-searchform button {
 #owp-svg-icons polygon,
 #owp-svg-icons polyline {
   stroke: inherit;
+  fill: none;
 }
 
 .owp-icon use {
@@ -7679,6 +7680,7 @@ time.published svg.owp-icon {
   padding: 0 45px 0 15px;
   width: 100%;
   z-index: 1;
+  overflow: hidden;
 }
 
 .theme-select:after {

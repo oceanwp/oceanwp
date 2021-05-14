@@ -66,6 +66,19 @@ Woo Quick View
 	    vertical-align: middle;
 	    margin-top: -4px;
 	}
+
+	.owp-icon {
+		margin-right: 9px;
+		line-height: 1;
+		margin-top: -4px;
+		use {
+			stroke: #fff;
+
+			&:hover {
+				stroke: #fff;
+			}
+		}
+	}
 }
 
 .woocommerce .products .product-inner:hover .owp-quick-view {

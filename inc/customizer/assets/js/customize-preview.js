@@ -696,23 +696,22 @@
 		// Home item
 		api('ocean_breadcrumb_home_item', function( value ) {
 			value.bind( function( newval ) {
-				var $icon_item = $( '.site-breadcrumbs ul li .icon-home' ),
-					$home_item = $( '.site-breadcrumbs ul li .breadcrumb-home' );
+				var $icon_item = $( '.site-breadcrumbs ul li i, .site-breadcrumbs ol li i, .site-breadcrumbs ul li .owp-icon, .site-breadcrumbs ol li .owp-icon' ),
+					$home_item = $( '.site-breadcrumbs ul li .breadcrumb-home, .site-breadcrumbs ol li .breadcrumb-home' );
 
-				if ( 'icon' == newval
-					&& $icon_item.length ) {
-					$icon_item.removeClass();
-					$icon_item.addClass( 'icon-home' );
-					$home_item.removeClass();
-					$home_item.addClass( 'breadcrumb-home has-icon' );
+					console.log($icon_item);
+					console.log($home_item);
+					console.log('Hi Log');
+					console.log(newval);
+
+				if ( 'icon' == newval && $icon_item.length ) {
+					$icon_item.removeClass( 'icon-home has-text' );
+					$home_item.addClass( 'has-icon' );
 				}
 
-				if ( 'text' == newval
-					&& $home_item.length ) {
-					$home_item.removeClass();
-					$home_item.addClass( 'breadcrumb-home' );
-					$icon_item.removeClass();
+				if ( 'text' == newval ) {
 					$icon_item.addClass( 'icon-home has-text' );
+					$home_item.removeClass( 'has-icon' );
 				}
 			});
 		});
@@ -1247,7 +1246,7 @@
 				var $child = $(".customizer-breadcrumbs_seperator_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_breadcrumbs_seperator_color">.site-breadcrumbs ul li .breadcrumb-sep { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_breadcrumbs_seperator_color">.site-breadcrumbs ul li .breadcrumb-sep, .site-breadcrumbs ol li .breadcrumb-sep { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -6128,7 +6127,7 @@
 				var $child = $(".customizer-ocean_mobile_menu_sidr_search_button_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_mobile_menu_sidr_search_button_color">.sidr-class-mobile-searchform button, #mobile-dropdown #mobile-menu-search form button { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_mobile_menu_sidr_search_button_color">.sidr-class-mobile-searchform button, #mobile-dropdown #mobile-menu-search form button { color: ' + to + '; } .sidr-class-mobile-searchform button .owp-icon use, #mobile-dropdown #mobile-menu-search form button .owp-icon use{ stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -6143,7 +6142,7 @@
 				var $child = $(".customizer-ocean_mobile_menu_sidr_search_button_hover_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_mobile_menu_sidr_search_button_hover_color">.sidr-class-mobile-searchform button:hover, #mobile-dropdown #mobile-menu-search form button:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_mobile_menu_sidr_search_button_hover_color">.sidr-class-mobile-searchform button:hover, #mobile-dropdown #mobile-menu-search form button:hover { color: ' + to + '; } .sidr-class-mobile-searchform button:hover .owp-icon use, #mobile-dropdown #mobile-menu-search form button:hover .owp-icon use{ stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

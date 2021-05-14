@@ -6538,11 +6538,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Add quick view button color
 			if ( ! empty( $quick_view_button_color ) && '#ffffff' != $quick_view_button_color ) {
 				$css .= '.owp-quick-view{color:'. $quick_view_button_color .';}';
+				$css .= '.owp-quick-view .owp-icon use{stroke:'. $quick_view_button_color .';}';
 			}
 
 			// Add quick view button hover color
 			if ( ! empty( $quick_view_button_hover_color ) && '#ffffff' != $quick_view_button_hover_color ) {
 				$css .= '.owp-quick-view:hover{color:'. $quick_view_button_hover_color .';}';
+				$css .= '.owp-quick-view:hover .owp-icon use{stroke:'. $quick_view_button_hover_color .';}';
 			}
 
 			// Add quick view overlay background
@@ -6643,11 +6645,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Add single product navigation color
 			if ( ! empty( $single_product_navigation_color ) && '#333333' != $single_product_navigation_color ) {
 				$css .= '.owp-product-nav li a.owp-nav-link{color:'. $single_product_navigation_color .';}';
+				$css .= '.owp-product-nav li a.owp-nav-link .owp-icon use{stroke:'. $single_product_navigation_color .';}';
 			}
 			
 			// Add single product navigation color
 			if ( ! empty( $single_product_navigation_hover_color ) && '#ffffff' != $single_product_navigation_hover_color ) {
 				$css .= '.owp-product-nav li a.owp-nav-link:hover{color:'. $single_product_navigation_hover_color .';}';
+				$css .= '.owp-product-nav li a.owp-nav-link:hover .owp-icon use{stroke:'. $single_product_navigation_hover_color .';}';
 			}
 			
 			// Add single product navigation border color
