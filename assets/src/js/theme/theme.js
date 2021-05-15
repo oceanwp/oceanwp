@@ -8,6 +8,8 @@ import BlogMasonry from "./components/blog-masonry";
 import ScrollTop from "./components/scroll-top";
 import ScrollEffect from "./components/scroll-effect";
 import EqualHeightElements from "./components/equal-height-elements";
+import OWInfiniteScroll from "./components/ow-infinite-scroll";
+import OWSlider from "./components/ow-slider";
 
 class Theme {
     constructor() {
@@ -25,6 +27,8 @@ class Theme {
         this.scrollTop = new ScrollTop();
         this.scrollEffect = new ScrollEffect();
         this.equalHeightElements = new EqualHeightElements();
+        this.owInfiniteScroll = new OWInfiniteScroll();
+        this.owSlider = new OWSlider();
     };
 }
 

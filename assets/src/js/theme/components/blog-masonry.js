@@ -1,15 +1,16 @@
 import { DOM, options } from "../../constants";
 
 export default class BlogMasonry {
+    isotop;
+
     constructor() {
-        this.#start();
-        this.#setupEventListeners();
+        this.start();
     }
 
-    #start = () => {
+    start = () => {
         DOM.blog.masonryGrids.forEach((blogMasonryGrid) => {
             imagesLoaded(blogMasonryGrid, (instance) => {
-                new Isotope(blogMasonryGrid, {
+                this.isotop = new Isotope(blogMasonryGrid, {
                     itemSelector: ".isotope-entry",
                     transformsEnabled: true,
                     isOriginLeft: options.isRTL ? false : true,
@@ -17,9 +18,5 @@ export default class BlogMasonry {
                 });
             });
         });
-    };
-
-    #setupEventListeners = () => {
-        window.addEventListener("orientationchange", this.#start());
     };
 }

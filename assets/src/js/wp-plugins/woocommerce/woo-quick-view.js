@@ -1,7 +1,7 @@
 import axios from "axios";
 import delegate from "delegate";
 import { DOM, options } from "../../constants";
-import { fadeIn, fadeOut } from "../../lib/utils";
+import { fadeIn, fadeOut, visible } from "../../lib/utils";
 import qs from "qs";
 
 class WooQuickView {
@@ -150,7 +150,7 @@ class WooQuickView {
                 DOM.woo.quickView.content.innerHTML = data.output;
 
                 // Run quantity button
-                window.oceanwpWooCustomFeatures.quantityButtons.start();
+                oceanwpWooCustomFeatures.quantityButtons.start();
 
                 fadeIn(DOM.woo.quickView.modal);
 
@@ -206,16 +206,18 @@ class WooQuickView {
     };
 
     #close = () => {
-        DOM.html.style.overflow = "";
-        DOM.html.style.marginRight = "";
-        DOM.html.classList.remove("owp-qv-open");
+        if (visible(DOM.woo.quickView.modal)) {
+            DOM.html.style.overflow = "";
+            DOM.html.style.marginRight = "";
+            DOM.html.classList.remove("owp-qv-open");
 
-        fadeOut(DOM.woo.quickView.modal);
-        DOM.woo.quickView.modal.classList.remove("is-visible");
+            fadeOut(DOM.woo.quickView.modal);
+            DOM.woo.quickView.modal.classList.remove("is-visible");
 
-        setTimeout(() => {
-            DOM.woo.quickView.content.innerHTML = "";
-        }, 600);
+            setTimeout(() => {
+                DOM.woo.quickView.content.innerHTML = "";
+            }, 600);
+        }
     };
 
     #getFormData = (form) => {

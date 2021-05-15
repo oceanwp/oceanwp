@@ -499,9 +499,11 @@ final class OCEANWP_Theme_Class {
 		// Add images loaded.
 		wp_enqueue_script( 'imagesloaded' );
 
-		// Enqueue perfect-scrollbar script if vertical header style.
-		wp_register_script( 'perfect-scrollbar', $dir . 'vendors/perfect-scrollbar.min.js', array(), '1.5.0', true );
-
+		// Vendors.
+		wp_enqueue_script( 'isotop', $dir . 'vendors/isotope.pkgd.min.js', array(), $theme_version, true );
+		wp_enqueue_script( 'flickity', $dir . 'vendors/flickity.pkgd.min.js', array(), $theme_version, true );
+		wp_enqueue_script( 'isotop', $dir . 'vendors/flickity-imagesloaded.js', array(), $theme_version, true );
+		wp_register_script( 'perfect-scrollbar', $dir . 'vendors/perfect-scrollbar.min.js', array(), $theme_version, true );
 		if ( 'vertical' === oceanwp_header_style() ) {
 			wp_enqueue_script( 'perfect-scrollbar' );
 		}
@@ -510,18 +512,16 @@ final class OCEANWP_Theme_Class {
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
 		&& 'yes' !== get_theme_mod( 'ocean_woo_remove_custom_features', 'no' ) ) {
 			wp_enqueue_script( 'oceanwp-woocommerce-custom-features', $dir . 'wp-plugins/woocommerce/woo-custom-features.min.js', array(), $theme_version, true );
+			wp_localize_script( 'oceanwp-woocommerce-custom-features', 'oceanwpLocalize', $localize_array );
 		}
 
 		// Load theme scripts.
 		wp_enqueue_script( 'oceanwp-theme-vanilla', $dir . 'theme.vanilla.min.js', array(), $theme_version, true );
-
-		// Localize array.
-		wp_localize_script( 'oceanwp-woocommerce-custom-features', 'oceanwpLocalize', $localize_array );
 		wp_localize_script( 'oceanwp-theme-vanilla', 'oceanwpLocalize', $localize_array );
 
-		// // Register scripts for old addons.
+		// Register scripts for old addons.
+		// wp_register_script( 'infinitescroll', $dir . 'vendors/infinite-scroll.pkgd.min.js', array( 'jquery' ), $theme_version, true );
 		// wp_register_script( 'nicescroll', $dir . 'vendors/support-old-addons/jquery.nicescroll.min.js', array( 'jquery' ), $theme_version, true );
-		// wp_register_script( 'infinitescroll', $dir . 'vendors/support-old-addons/infinitescroll.min.js', array( 'jquery' ), $theme_version, true );
 		// wp_register_script( 'magnific-popup', $dir . 'vendors/support-old-addons/magnific-popup.min.js', array( 'jquery' ), $theme_version, true );
 		// wp_register_script( 'oceanwp-lightbox', $dir . 'vendors/support-old-addons/lightbox.min.js', array( 'jquery' ), $theme_version, true );
 	}

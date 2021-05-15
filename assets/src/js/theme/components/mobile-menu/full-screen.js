@@ -1,5 +1,5 @@
 import { DOM } from "../../../constants";
-import { slideUp, slideDown, fadeIn, fadeOut } from "../../../lib/utils";
+import { slideUp, slideDown, fadeIn, fadeOut, visible } from "../../../lib/utils";
 
 class FullScreenMobileMenu {
     constructor() {
@@ -67,23 +67,25 @@ class FullScreenMobileMenu {
     };
 
     #closeMenu = () => {
-        DOM.mobileMenu.toggleMenuBtn.classList.remove("exit");
-        DOM.mobileMenu.fullScreen.classList.remove("active");
+        if (visible(DOM.mobileMenu.fullScreen)) {
+            DOM.mobileMenu.toggleMenuBtn.classList.remove("exit");
+            DOM.mobileMenu.fullScreen.classList.remove("active");
 
-        fadeOut(DOM.mobileMenu.fullScreen);
+            fadeOut(DOM.mobileMenu.fullScreen);
 
-        DOM.html.style.overflow = "";
-        DOM.html.style.marginRight = "";
+            DOM.html.style.overflow = "";
+            DOM.html.style.marginRight = "";
 
-        document.querySelectorAll("#mobile-fullscreen nav ul > li.dropdown").forEach((menuItem) => {
-            menuItem.classList.remove("open-sub");
-        });
+            document.querySelectorAll("#mobile-fullscreen nav ul > li.dropdown").forEach((menuItem) => {
+                menuItem.classList.remove("open-sub");
+            });
 
-        document.querySelectorAll("#mobile-fullscreen nav ul.sub-menu").forEach((subMenu) => {
-            slideUp(subMenu, 200);
-        });
+            document.querySelectorAll("#mobile-fullscreen nav ul.sub-menu").forEach((subMenu) => {
+                slideUp(subMenu, 200);
+            });
 
-        DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
+            DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
+        }
     };
 
     #onWindowResize = (event) => {

@@ -63,7 +63,7 @@ class HeaderReplaceSearch extends SearchBase {
     #onDocumentClick = (event) => {
         // Collaps search form
         if (!event.target.closest("#searchform-header-replace.show")) {
-            DOM.search.headerReplace.form?.classList.remove("show");
+            DOM.search.headerReplace?.form?.classList.remove("show");
 
             if (this.#hasTopHeader()) {
                 DOM.header.topLeftSide?.classList.remove("hide");

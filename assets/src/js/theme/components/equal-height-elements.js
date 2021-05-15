@@ -2,10 +2,10 @@ import ResponsiveAutoHeight from "responsive-auto-height";
 
 class EqualHeightElements {
     constructor() {
-        this.#start();
+        this.start();
     }
 
-    #start = () => {
+    start = () => {
         if (!!document.querySelector(".blog-equal-heights .blog-entry-inner")) {
             new ResponsiveAutoHeight(".blog-equal-heights .blog-entry-inner");
         }

@@ -2,7 +2,9 @@ import { DOM } from "../../constants";
 
 class WooThumbnails {
     constructor() {
-        this.#setupEventListeners();
+        if (!!DOM.woo.thumbsVerticalLayout) {
+            this.#setupEventListeners();
+        }
     }
 
     #setupEventListeners = () => {

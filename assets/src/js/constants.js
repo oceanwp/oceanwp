@@ -65,6 +65,8 @@ export const DOM = {
         scrollTop: document.querySelector("#scroll-top"),
         goTop: document.querySelector('a[href="#go-top"]'),
         goTopSlash: document.querySelector('body.home a[href="/#go-top"]'),
+        infiniteScrollNav: document.querySelector(".infinite-scroll-nav"),
+        infiniteScrollWrapper: document.querySelector(".infinite-scroll-wrap"),
     },
     blog: {
         masonryGrids: document.querySelectorAll(".blog-masonry-grid"),

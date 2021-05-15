@@ -567,9 +567,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				return;
 			}
 
-			// Load infinite scroll script
-			wp_enqueue_script( 'infinitescroll' );
-
 			// Last text
 			$last = get_theme_mod( 'ocean_woo_infinite_scroll_last_text' );
 			$last = oceanwp_tm_translation( 'ocean_woo_infinite_scroll_last_text', $last );

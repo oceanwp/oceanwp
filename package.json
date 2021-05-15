@@ -33,8 +33,7 @@
     "dependencies": {
         "axios": "^0.21.1",
         "delegate": "^3.2.0",
-        "flickity": "^2.2.2",
-        "flickity-imagesloaded": "^2.0.0",
+        "infinite-scroll": "^4.0.1",
         "js-cookie": "^2.2.1",
         "qs": "^6.5.2",
         "responsive-auto-height": "0.0.5"

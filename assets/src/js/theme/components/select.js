@@ -41,6 +41,7 @@ export default class Select {
     #setupEventListenersItem = () => {
         this.#select.addEventListener("mouseenter", this.#onMouseenter);
         this.#select.addEventListener("mouseleave", this.#onMouseleave);
+        this.#select.addEventListener("change", this.#onChange);
     };
 
     #onMouseenter = () => {
@@ -49,6 +50,10 @@ export default class Select {
 
     #onMouseleave = () => {
         this.#select.classList.remove("theme-selectHover");
+    };
+
+    #onChange = (event) => {
+        this.#select.nextSibling.innerHTML = this.#select.options[this.#select.selectedIndex].text;
     };
 
     #setupEventListeners = () => {
