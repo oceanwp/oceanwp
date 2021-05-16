@@ -167,3 +167,35 @@ export const getSiblings = function (e) {
 
     return siblings;
 };
+
+// Returns true if it is a DOM node
+export const isNode = (o) => {
+    return typeof Node === "object"
+        ? o instanceof Node
+        : o && typeof o === "object" && typeof o.nodeType === "number" && typeof o.nodeName === "string";
+};
+
+// Returns true if it is a DOM element
+export const isElement = (o) => {
+    return typeof HTMLElement === "object"
+        ? o instanceof HTMLElement // DOM2
+        : o && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName === "string";
+};
+
+export const singleNode = (function () {
+    // make an empty node list to inherit from
+    var nodelist = document.createDocumentFragment().childNodes;
+    // return a function to create object formed as desired
+    return function (node) {
+        return Object.create(nodelist, {
+            "0": { value: node, enumerable: true },
+            "length": { value: 1 },
+            "item": {
+                "value": function (i) {
+                    return this[+i || 0];
+                },
+                enumerable: true,
+            },
+        }); // return an object pretending to be a NodeList
+    };
+})();

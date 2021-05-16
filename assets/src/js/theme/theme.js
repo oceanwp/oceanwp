@@ -10,6 +10,7 @@ import ScrollEffect from "./components/scroll-effect";
 import EqualHeightElements from "./components/equal-height-elements";
 import OWInfiniteScroll from "./components/ow-infinite-scroll";
 import OWSlider from "./components/ow-slider";
+import OWLightbox from "./components/ow-lightbox";
 
 class Theme {
     constructor() {
@@ -29,6 +30,7 @@ class Theme {
         this.equalHeightElements = new EqualHeightElements();
         this.owInfiniteScroll = new OWInfiniteScroll();
         this.owSlider = new OWSlider();
+        this.owLightbox = new OWLightbox();
     };
 }
 

@@ -432,9 +432,6 @@ final class OCEANWP_Theme_Class {
 		// Register simple line icons style.
 		wp_enqueue_style( 'simple-line-icons', $dir . 'third/simple-line-icons.min.css', false, '2.4.0' );
 
-		// Register the lightbox style.
-		wp_enqueue_style( 'magnific-popup', $dir . 'third/magnific-popup.min.css', false, '1.0.0' );
-
 		// Register the slick style.
 		wp_enqueue_style( 'slick', $dir . 'third/slick.min.css', false, '1.6.0' );
 
@@ -502,7 +499,9 @@ final class OCEANWP_Theme_Class {
 		// Vendors.
 		wp_enqueue_script( 'isotop', $dir . 'vendors/isotope.pkgd.min.js', array(), $theme_version, true );
 		wp_enqueue_script( 'flickity', $dir . 'vendors/flickity.pkgd.min.js', array(), $theme_version, true );
-		wp_enqueue_script( 'isotop', $dir . 'vendors/flickity-imagesloaded.js', array(), $theme_version, true );
+		wp_enqueue_script( 'flickity-imagesloaded', $dir . 'vendors/flickity-imagesloaded.js', array(), $theme_version, true );
+		wp_enqueue_script( 'photoswipe', $dir . 'vendors/photoswipe.min.js', array(), $theme_version, true );
+		wp_enqueue_script( 'photoswipe-ui-default', $dir . 'vendors/photoswipe-ui-default.min.js', array(), $theme_version, true );
 		wp_register_script( 'perfect-scrollbar', $dir . 'vendors/perfect-scrollbar.min.js', array(), $theme_version, true );
 		if ( 'vertical' === oceanwp_header_style() ) {
 			wp_enqueue_script( 'perfect-scrollbar' );

@@ -11,7 +11,7 @@ class OWSlider {
                 autoPlay: element.classList.contains("woo-entry-image") ? false : 6000,
                 rightToLeft: DOM.body.classList.contains("rtl") ? true : false,
                 imagesLoaded: true,
-                contain: true,
+                // contain: true,
                 pageDots: false,
                 on: {
                     ready: () => {

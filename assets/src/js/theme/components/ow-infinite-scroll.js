@@ -35,11 +35,7 @@ class OWInfiniteScroll {
                     oceanwp.theme.blogMasonry.isotop.appended(items);
 
                     // Fix Gallery posts
-                    if (
-                        this.element
-                            .querySelector(".gallery-format")
-                            .parentNode.classList.contains("thumbnail")
-                    ) {
+                    if (!!this.element.querySelectorAll(".gallery-format")) {
                         setTimeout(function () {
                             oceanwp.theme.blogMasonry.isotop.layout();
                         }, 600 + 1);

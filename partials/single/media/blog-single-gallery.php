@@ -51,7 +51,7 @@ if ( post_password_required() || empty( $attachments ) ) {
 			);
 
 			// Display with lightbox.
-			if ( oceanwp_gallery_is_lightbox_enabled() === 'on' ) :
+			if ( oceanwp_gallery_is_lightbox_enabled() ) :
 				?>
 
 				<a href="<?php echo esc_url( wp_get_attachment_url( $attachment ) ); ?>" title="<?php echo esc_attr( $attachment_alt ); ?>" class="gallery-lightbox">

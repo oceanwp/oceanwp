@@ -6,7 +6,8 @@
     visibility: hidden;
     height: 0;
 
-    img {
+    img,
+    a.gallery-lightbox {
         display: block;
         position: relative;
         width: 100%;
