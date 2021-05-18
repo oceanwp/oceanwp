@@ -48,7 +48,7 @@ class WooQuantityButtons {
 
             if (this.#firstTimeRunning) {
                 // Create a new 'change' event
-                this.#changeEvent = new Event("change");
+                this.#changeEvent = new Event("change", { bubbles: true });
             }
         }
     };
@@ -61,8 +61,8 @@ class WooQuantityButtons {
             if (
                 DOM.body.classList.contains("single-product") &&
                 options.floating_bar === "on" &&
-                !Array.from(DOM.woo.productCarts).some(({ classList }) =>
-                    classList.contains("grouped_form cart_group")
+                !Array.from(DOM.woo.productCarts).some(
+                    ({ classList }) => classList.contains("grouped_form") || classList.contains("cart_group")
                 )
             ) {
                 quantityInputs.forEach((quantityInput) => {
@@ -77,6 +77,7 @@ class WooQuantityButtons {
 
     #onQuantityInputKeyup = (event) => {
         const currentQuantityInput = event.target;
+
         const inputType = currentQuantityInput.getAttribute("type");
         const quantityInputs = document.querySelectorAll(".quantity:not(.buttons_added) .qty");
 

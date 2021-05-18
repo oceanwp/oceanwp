@@ -28,9 +28,9 @@ class Theme {
         this.scrollTop = new ScrollTop();
         this.scrollEffect = new ScrollEffect();
         this.equalHeightElements = new EqualHeightElements();
-        this.owInfiniteScroll = new OWInfiniteScroll();
-        this.owSlider = new OWSlider();
         this.owLightbox = new OWLightbox();
+        this.owSlider = new OWSlider();
+        this.owInfiniteScroll = new OWInfiniteScroll();
     };
 }
 

@@ -51,6 +51,56 @@
             margin: 0 -10px;
             li {
                 &.product {
+                    .product-entry-slider {
+                        opacity: 0;
+                        visibility: hidden;
+                        height: 0;
+
+                        .oceanwp-slider-slide {
+                            &,
+                            a,
+                            img {
+                                display: block;
+                                position: relative;
+                                width: 100%;
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        .flickity-button {
+                            width: 30px;
+                            height: 36px;
+                            border-radius: 0;
+                            background-color: rgba(0, 0, 0, 0.6);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            @include opacity(0);
+                            visibility: hidden;
+                            transition: opacity 0.3s ease;
+
+                            &:hover {
+                                background-color: rgba(0, 0, 0, 0.8);
+                            }
+
+                            &:disabled {
+                                pointer-events: unset;
+                            }
+
+                            svg {
+                                fill: #fff;
+                                width: 12px;
+                                height: auto;
+                                position: static;
+                            }
+                        }
+
+                        &:hover .flickity-button {
+                            @include opacity(1);
+                            visibility: visible;
+                        }
+                    }
+
                     .added_to_cart {
                         padding: 12px 20px;
                         &:after {
@@ -74,46 +124,6 @@
                                 .woo-entry-image,
                                 .product-entry-slider-wrap {
                                     display: block;
-                                }
-                                .product-entry-slider {
-                                    opacity: 0;
-                                    visibility: hidden;
-                                    height: 0;
-
-                                    .flickity-button {
-                                        top: calc(100% - 18px);
-                                        width: 30px;
-                                        height: 36px;
-                                        border-radius: 0;
-                                        background-color: rgba(0, 0, 0, 0.6);
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-
-                                        &:hover {
-                                            background-color: rgba(0, 0, 0, 0.8);
-                                        }
-
-                                        &:disabled {
-                                            pointer-events: unset;
-                                        }
-
-                                        &.next {
-                                            right: 0;
-                                        }
-
-                                        &.previous {
-                                            left: auto;
-                                            right: 30px;
-                                        }
-
-                                        svg {
-                                            fill: #fff;
-                                            width: 12px;
-                                            height: auto;
-                                            position: static;
-                                        }
-                                    }
                                 }
                             }
                         }
@@ -409,10 +419,10 @@
                         margin: 0;
                     }
                     .product-entry-slider {
-                        display: none;
-                        &.slick-slider {
-                            display: block;
-                        }
+                        // display: none;
+                        // &.slick-slider {
+                        //     display: block;
+                        // }
                     }
                     li {
                         &.woo-desc {

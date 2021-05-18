@@ -1,11 +1,15 @@
 import { DOM } from "../../constants";
+import { fadeIn, fadeOut } from "../../lib/utils";
 import InfiniteScroll from "infinite-scroll";
 
 class OWInfiniteScroll {
     #infiniteScroll;
 
     constructor() {
-        if (!!DOM.scroll.infiniteScrollNav) {
+        if (
+            !!DOM.scroll.infiniteScrollNav &&
+            !!DOM.scroll.infiniteScrollNav.querySelector(".older-posts a")
+        ) {
             this.#start();
             this.#setupEventListeners();
         }
@@ -25,18 +29,20 @@ class OWInfiniteScroll {
         this.#infiniteScroll.on("load", function (body, path, response) {
             const items = body.querySelectorAll(".item-entry");
 
+            if (this.element.classList.contains("blog-masonry-grid")) {
+                items.forEach((item) => {
+                    fadeOut(item);
+                });
+            }
+
             imagesLoaded(items, () => {
                 // Blog masonry isotope
                 if (this.element.classList.contains("blog-masonry-grid")) {
-                    items.forEach((item) => {
-                        item.style.opacity = 0;
-                    });
-
                     oceanwp.theme.blogMasonry.isotop.appended(items);
 
                     // Fix Gallery posts
-                    if (!!this.element.querySelectorAll(".gallery-format")) {
-                        setTimeout(function () {
+                    if (!!this.element.querySelector(".gallery-format")) {
+                        setTimeout(() => {
                             oceanwp.theme.blogMasonry.isotop.layout();
                         }, 600 + 1);
                     }
@@ -47,12 +53,27 @@ class OWInfiniteScroll {
                     oceanwp.theme.equalHeightElements.start();
                 }
 
-                // Gallery posts
+                // Gallery posts slider
                 if (!DOM.body.classList.contains("no-carousel")) {
                     oceanwp.theme.owSlider.start(
                         this.element.querySelectorAll(".gallery-format, .product-entry-slider")
                     );
                 }
+
+                if (this.element.querySelector(".gallery-format")) {
+                    oceanwp.theme.owLightbox.initPhotoSwipeFromDOM(".gallery-format");
+                }
+
+                // Gallery posts lightbox
+                items.forEach((item) => {
+                    // Post image lightbox
+                    item.querySelectorAll("a.oceanwp-lightbox")?.forEach((link) => {
+                        link.querySelector("img").addEventListener(
+                            "click",
+                            oceanwp.theme.owLightbox.openLightbox
+                        );
+                    });
+                });
 
                 // Force the images to be parsed to fix Safari issue
                 items.forEach((item) => {
@@ -61,10 +82,14 @@ class OWInfiniteScroll {
                     });
                 });
             });
+        });
 
-            // if (!$j("body").hasClass("no-lightbox")) {
-            //     oceanwpInitLightbox($items);
-            // }
+        this.#infiniteScroll.on("append", function (body, path, items, response) {
+            if (this.element.classList.contains("blog-masonry-grid")) {
+                items.forEach((item) => {
+                    fadeIn(item);
+                });
+            }
         });
     };
 }

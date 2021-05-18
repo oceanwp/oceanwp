@@ -44,7 +44,7 @@ class Menu {
         const parentMenuItem = event.currentTarget;
         const subMenu = parentMenuItem.querySelector("ul.sub-menu");
 
-        parentMenuItem.classList.add("sfHover");
+        parentMenuItem.classList.remove("sfHover");
         fadeOut(subMenu);
     };
 }

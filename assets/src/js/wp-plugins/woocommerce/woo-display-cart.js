@@ -12,7 +12,7 @@ class WooDisplayCart {
     #setupEventListeners = () => {
         jQuery("body").on("added_to_cart", this.#onAddToCartBtn);
 
-        DOM.woo.overlayCart.addEventListener("click", this.#closeOverlay);
+        DOM.woo.overlayCart?.addEventListener("click", this.#closeOverlay);
 
         window.addEventListener("resize", this.#closeOverlay);
     };

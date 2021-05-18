@@ -502,10 +502,15 @@ final class OCEANWP_Theme_Class {
 		wp_enqueue_script( 'flickity-imagesloaded', $dir . 'vendors/flickity-imagesloaded.js', array(), $theme_version, true );
 		wp_enqueue_script( 'photoswipe', $dir . 'vendors/photoswipe.min.js', array(), $theme_version, true );
 		wp_enqueue_script( 'photoswipe-ui-default', $dir . 'vendors/photoswipe-ui-default.min.js', array(), $theme_version, true );
+		wp_enqueue_script( 'sidr', $dir . 'vendors/sidr.js', array(), $theme_version, true );
 		wp_register_script( 'perfect-scrollbar', $dir . 'vendors/perfect-scrollbar.min.js', array(), $theme_version, true );
 		if ( 'vertical' === oceanwp_header_style() ) {
 			wp_enqueue_script( 'perfect-scrollbar' );
 		}
+
+		// Load theme scripts.
+		wp_enqueue_script( 'oceanwp-theme-vanilla', $dir . 'theme.vanilla.min.js', array(), $theme_version, true );
+		wp_localize_script( 'oceanwp-theme-vanilla', 'oceanwpLocalize', $localize_array );
 
 		// WooCommerce scripts.
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
@@ -513,10 +518,6 @@ final class OCEANWP_Theme_Class {
 			wp_enqueue_script( 'oceanwp-woocommerce-custom-features', $dir . 'wp-plugins/woocommerce/woo-custom-features.min.js', array(), $theme_version, true );
 			wp_localize_script( 'oceanwp-woocommerce-custom-features', 'oceanwpLocalize', $localize_array );
 		}
-
-		// Load theme scripts.
-		wp_enqueue_script( 'oceanwp-theme-vanilla', $dir . 'theme.vanilla.min.js', array(), $theme_version, true );
-		wp_localize_script( 'oceanwp-theme-vanilla', 'oceanwpLocalize', $localize_array );
 
 		// Register scripts for old addons.
 		// wp_register_script( 'infinitescroll', $dir . 'vendors/infinite-scroll.pkgd.min.js', array( 'jquery' ), $theme_version, true );

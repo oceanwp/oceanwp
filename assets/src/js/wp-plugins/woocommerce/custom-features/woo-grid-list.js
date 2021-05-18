@@ -1,6 +1,6 @@
+import Cookies from "js-cookie";
 import { DOM } from "../../../constants";
 import { fadeIn, fadeOut } from "../../../lib/utils";
-import Cookies from "js-cookie";
 
 class WooGridList {
     constructor() {
@@ -31,6 +31,8 @@ class WooGridList {
                 products.classList.add("list");
                 products.classList.remove("grid");
             });
+
+            this.#productCarousel();
         }
     };
 
@@ -43,8 +45,6 @@ class WooGridList {
         event.preventDefault();
         event.stopPropagation();
 
-        this.#productCarousel();
-
         DOM.woo.grid.classList.add("active");
         DOM.woo.list.classList.remove("active");
 
@@ -56,16 +56,19 @@ class WooGridList {
             setTimeout(() => {
                 products.classList.add("grid");
                 products.classList.remove("list");
+
                 fadeIn(products);
             }, 300);
         });
+
+        setTimeout(() => {
+            this.#productCarousel();
+        }, 301);
     };
 
     #onListClick = (event) => {
         event.preventDefault();
         event.stopPropagation();
-
-        this.#productCarousel();
 
         DOM.woo.grid.classList.remove("active");
         DOM.woo.list.classList.add("active");
@@ -78,14 +81,27 @@ class WooGridList {
             setTimeout(() => {
                 products.classList.add("list");
                 products.classList.remove("grid");
+
                 fadeIn(products);
             }, 300);
         });
+
+        setTimeout(() => {
+            this.#productCarousel();
+        }, 301);
     };
 
     #productCarousel = () => {
-        if (!DOM.body.classList.contains("no-carousel")) {
+        if (
+            !DOM.body.classList.contains("no-carousel") &&
+            !!document.querySelector(".woo-entry-image.product-entry-slider")
+        ) {
+            oceanwp.theme.owSlider.flickity?.forEach((flickity) => {
+                flickity.destroy();
+            });
         }
+
+        oceanwp.theme.owSlider.start();
     };
 }
 

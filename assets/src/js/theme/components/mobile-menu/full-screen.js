@@ -12,15 +12,20 @@ class FullScreenMobileMenu {
     }
 
     #start = () => {
-        DOM.mobileMenu.fullScreen.querySelectorAll(".menu-item-has-children > a").forEach((menuItemLink) => {
-            menuItemLink.insertAdjacentHTML("beforeend", '<span class="dropdown-toggle" tabindex=0></span>');
-        });
+        DOM.mobileMenu.fullScreen
+            ?.querySelectorAll(".menu-item-has-children > a")
+            ?.forEach((menuItemLink) => {
+                menuItemLink.insertAdjacentHTML(
+                    "beforeend",
+                    '<span class="dropdown-toggle" tabindex=0></span>'
+                );
+            });
     };
 
     #setupEventListeners = () => {
         window.addEventListener("resize", this.#onWindowResize);
 
-        DOM.mobileMenu.toggleMenuBtn.addEventListener("click", this.#onMenuButtonClick);
+        DOM.mobileMenu.toggleMenuBtn?.addEventListener("click", this.#onMenuButtonClick);
 
         document
             .querySelectorAll(

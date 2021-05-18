@@ -6,7 +6,7 @@ import WooRemoveCategoriesCountParenthesis from "./custom-features/remove-catego
 
 class WooCustomFeatures {
     start = () => {
-        // this.gridList = new WooGridList();
+        this.gridList = new WooGridList();
         this.guestAccountPage = new WooGuestAccountPage();
         this.quantityButtons = new WooQuantityButtons();
         this.reviewScroll = new WooScrollToReviewTab();

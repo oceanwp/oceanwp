@@ -187,7 +187,7 @@ class WooQuickView {
                 const groupedForm = DOM.woo.quickView.content.querySelector("form.grouped_form");
 
                 if (!!groupedForm) {
-                    const groupedFormURL = groupedForm.attr("action");
+                    const groupedFormURL = groupedForm.getAttribute("action");
 
                     groupedForm
                         .querySelectorAll(".group_table, button.single_add_to_cart_button")

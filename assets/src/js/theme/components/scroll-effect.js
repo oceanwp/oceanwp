@@ -79,7 +79,9 @@ class ScrollEffect {
 
             height = bottomHeaderWrapper.classList.contains("fixed-scroll")
                 ? bottomHeaderWrapper.offsetHeight
-                : document.querySelector(".is-sticky #site-header-inner").offsetHeight;
+                : !!document.querySelector(".is-sticky #site-header-inner")
+                ? document.querySelector(".is-sticky #site-header-inner").offsetHeight
+                : 0;
         }
 
         return height;

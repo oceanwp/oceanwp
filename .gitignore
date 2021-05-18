@@ -340,3 +340,4 @@ ASALocalRun/
 .DS_Store?
 
 .vscode
+.push.settings.jsonc

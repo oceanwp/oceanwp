@@ -8,13 +8,13 @@ export default class BlogMasonry {
     }
 
     start = () => {
-        DOM.blog.masonryGrids.forEach((blogMasonryGrid) => {
+        DOM.blog.masonryGrids?.forEach((blogMasonryGrid) => {
             imagesLoaded(blogMasonryGrid, (instance) => {
                 this.isotop = new Isotope(blogMasonryGrid, {
                     itemSelector: ".isotope-entry",
                     transformsEnabled: true,
                     isOriginLeft: options.isRTL ? false : true,
-                    transitionDuration: "0.0s",
+                    transitionDuration: 0,
                 });
             });
         });

@@ -19,11 +19,11 @@ class OWLightbox {
 
         // Image lightbox
         document.querySelectorAll("a.oceanwp-lightbox")?.forEach((link) => {
-            link.querySelector("img").addEventListener("click", this.#openLightbox);
+            link.querySelector("img").addEventListener("click", this.openLightbox);
         });
     };
 
-    #openLightbox = (event) => {
+    openLightbox = (event) => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -49,7 +49,7 @@ class OWLightbox {
     };
 
     #addLightboxClass = () => {
-        document.querySelectorAll("body .entry-content a, body .entry a").forEach((link) => {
+        document.querySelectorAll("body .entry-content a, body .entry a")?.forEach((link) => {
             if (!!link.querySelector("img")) {
                 const imageFormats = this.#imageFormats();
                 let imageFormatsMask = 0;
@@ -212,9 +212,6 @@ class OWLightbox {
         // triggers when user clicks on thumbnail
         var onThumbnailsClick = function (e) {
             e = e || window.event;
-            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-            e.stopPropagation();
-
             var eTarget = e.target || e.srcElement;
 
             // find root element of slide
@@ -229,6 +226,9 @@ class OWLightbox {
             if (!clickedListItem) {
                 return;
             }
+
+            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+            e.stopPropagation();
 
             // find index of clicked item by looping through all child nodes
             // alternatively, you may define index via data- attribute
@@ -344,7 +344,6 @@ class OWLightbox {
 
         // loop through all gallery elements and bind events
         var galleryElements = document.querySelectorAll(gallerySelector);
-        console.log(galleryElements);
 
         for (var i = 0, l = galleryElements.length; i < l; i++) {
             galleryElements[i].setAttribute("data-pswp-uid", i + 1);

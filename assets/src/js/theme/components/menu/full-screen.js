@@ -24,7 +24,7 @@ class FullScreenMenu {
             .querySelectorAll(
                 '#full-screen-menu #site-navigation ul > li.dropdown > a > .text-wrap > span.nav-arrow, #full-screen-menu #site-navigation ul > li.dropdown > a[href="#"]'
             )
-            .forEach((menuItemLink) => {
+            ?.forEach((menuItemLink) => {
                 menuItemLink.addEventListener("click", this.#onMenuLinkClick);
                 menuItemLink.addEventListener("tap", this.#onMenuLinkClick);
             });
