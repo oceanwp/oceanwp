@@ -5,6 +5,10 @@ export default class Footer {
     #lastWindowHeight;
 
     constructor() {
+        if (!DOM.main) {
+            return;
+        }
+
         this.#start();
         this.#setupEventListeners();
     }

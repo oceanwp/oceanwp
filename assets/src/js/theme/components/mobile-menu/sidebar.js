@@ -20,10 +20,7 @@ class SidebarMobileMenu {
 
         if (!document.querySelector(".sidr-class-dropdown-toggle")) {
             document.querySelectorAll(".sidr-class-menu-item-has-children > a").forEach((menuItemLink) => {
-                menuItemLink.insertAdjacentHTML(
-                    "beforeend",
-                    '<span class="sidr-class-dropdown-toggle" tabindex=0></span>'
-                );
+                menuItemLink.insertAdjacentHTML("beforeend", '<span class="sidr-class-dropdown-toggle" tabindex=0></span>');
             });
         }
 
@@ -48,10 +45,7 @@ class SidebarMobileMenu {
 
                 DOM.mobileMenu.hamburgerBtn?.classList.add("is-active");
 
-                DOM.header.site.insertAdjacentHTML(
-                    "afterend",
-                    '<div class="oceanwp-sidr-overlay" tabindex=0></div>'
-                );
+                DOM.header.site.insertAdjacentHTML("afterend", '<div class="oceanwp-sidr-overlay" tabindex=0></div>');
 
                 const overlay = document.querySelector(".oceanwp-sidr-overlay");
 
@@ -67,17 +61,13 @@ class SidebarMobileMenu {
             onClose() {
                 DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
 
-                document
-                    .querySelectorAll(".sidr-class-menu-item-has-children.active > ul")
-                    .forEach((subMenuActive) => {
-                        subMenuActive.style.display = "none";
-                    });
+                document.querySelectorAll(".sidr-class-menu-item-has-children.active > ul").forEach((subMenuActive) => {
+                    subMenuActive.style.display = "none";
+                });
 
-                document
-                    .querySelectorAll(".sidr-class-menu-item-has-children.active")
-                    .forEach((menuItemActive) => {
-                        menuItemActive.classList.remove("active");
-                    });
+                document.querySelectorAll(".sidr-class-menu-item-has-children.active").forEach((menuItemActive) => {
+                    menuItemActive.classList.remove("active");
+                });
 
                 const overlay = document.querySelector(".oceanwp-sidr-overlay");
 
@@ -102,9 +92,9 @@ class SidebarMobileMenu {
 
     #setupEventListeners = () => {
         DOM.mobileMenu.hamburgerBtn?.addEventListener("click", this.#onHamburgerBtnClick);
-        this.#sidebarToggleMenuBtn.addEventListener("click", this.#onSidebarCloseMenuBtnClick);
+        this.#sidebarToggleMenuBtn?.addEventListener("click", this.#onSidebarCloseMenuBtnClick);
 
-        this.#menuItemsPlusIcon.forEach((menuItemPlusIcon) => {
+        this.#menuItemsPlusIcon?.forEach((menuItemPlusIcon) => {
             menuItemPlusIcon.addEventListener("click", this.#onMenuItemPlusIconClick);
             menuItemPlusIcon.addEventListener("tap", this.#onMenuItemPlusIconClick);
         });
@@ -113,11 +103,11 @@ class SidebarMobileMenu {
             .querySelectorAll(
                 '.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])'
             )
-            .forEach((menuItemLink) => {
+            ?.forEach((menuItemLink) => {
                 menuItemLink.addEventListener("click", this.#closeSidr);
             });
 
-        document.querySelectorAll("li.sidr-class-nav-no-click > a").forEach((menuItemLink) => {
+        document.querySelectorAll("li.sidr-class-nav-no-click > a")?.forEach((menuItemLink) => {
             menuItemLink.addEventListener("click", (event) => {
                 event.preventDefault();
                 event.stopPropagation();
@@ -147,9 +137,7 @@ class SidebarMobileMenu {
 
         const menuItemPlusIcon = event.currentTarget;
         const menuItem =
-            options.sidrDropdownTarget == "link"
-                ? menuItemPlusIcon.parentNode
-                : menuItemPlusIcon.parentNode.parentNode;
+            options.sidrDropdownTarget == "link" ? menuItemPlusIcon.parentNode : menuItemPlusIcon.parentNode.parentNode;
 
         if (!menuItem.classList.contains("active")) {
             document.querySelectorAll(".sidr-class-menu-item-has-children").forEach((parentMenuItem) => {
@@ -195,9 +183,7 @@ class SidebarMobileMenu {
 
         const closeIcon = this.#sidebarToggleMenuBtn;
 
-        const navElements = document
-            .querySelector("#sidr")
-            .querySelectorAll("a, span.sidr-class-dropdown-toggle, input, button");
+        const navElements = document.querySelector("#sidr").querySelectorAll("a, span.sidr-class-dropdown-toggle, input, button");
 
         const navFirstElement = navElements[0];
         const navLastElement = navElements[navElements.length - 1];

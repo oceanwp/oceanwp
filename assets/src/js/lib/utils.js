@@ -8,11 +8,11 @@ export const wrap = (element, wrapper = document.createElement("div")) => {
     return wrapper.appendChild(element);
 };
 
-export const slideUp = (element, duration) => {
+export const slideUp = (element, duration = 300) => {
     element.style.boxSizing = "border-box";
     element.style.transitionProperty = "height, margin, padding";
-    element.style.transitionDuration = duration + "ms";
-    element.style.height = element.offsetHeight + "px";
+    element.style.transitionDuration = `${duration}ms`;
+    element.style.height = `${element.offsetHeight}px`;
     element.style.paddingTop = 0;
     element.style.paddingBottom = 0;
     element.style.marginTop = 0;
@@ -21,7 +21,7 @@ export const slideUp = (element, duration) => {
 
     setTimeout(() => {
         element.style.height = 0;
-    }, 1);
+    }, 10);
 
     window.setTimeout(() => {
         element.style.display = "none";
@@ -36,7 +36,7 @@ export const slideUp = (element, duration) => {
     }, duration);
 };
 
-export const slideDown = (element, duration) => {
+export const slideDown = (element, duration = 300) => {
     element.style.removeProperty("display");
 
     let display = window.getComputedStyle(element).display;
@@ -48,6 +48,10 @@ export const slideDown = (element, duration) => {
     element.style.display = display;
 
     let height = element.offsetHeight;
+    let paddingTop = window.getComputedStyle(element).paddingTop;
+    let paddingBottom = window.getComputedStyle(element).paddingBottom;
+    let marginTop = window.getComputedStyle(element).marginTop;
+    let marginBottom = window.getComputedStyle(element).marginBottom;
 
     element.style.height = 0;
     element.style.paddingTop = 0;
@@ -57,23 +61,28 @@ export const slideDown = (element, duration) => {
     element.style.overflow = "hidden";
 
     element.style.boxSizing = "border-box";
-    element.style.transitionProperty = "height, margin, padding";
-    element.style.transitionDuration = duration + "ms";
-
-    element.style.removeProperty("padding-top");
-    element.style.removeProperty("padding-bottom");
-    element.style.removeProperty("margin-top");
-    element.style.removeProperty("margin-bottom");
+    element.style.transitionProperty = "height";
+    element.style.transitionDuration = `${duration}ms`;
 
     setTimeout(() => {
-        element.style.height = height + "px";
-    }, 1);
+        element.style.height = `${height}px`;
+        element.style.transitionProperty = "padding";
+        element.style.transitionDuration = `${duration / 1.2}ms`;
+        element.style.paddingTop = paddingTop;
+        element.style.paddingBottom = paddingBottom;
+        element.style.marginTop = marginTop;
+        element.style.marginBottom = marginBottom;
+    }, 10);
 
     window.setTimeout(() => {
         element.style.removeProperty("height");
         element.style.removeProperty("overflow");
         element.style.removeProperty("transition-duration");
         element.style.removeProperty("transition-property");
+        element.style.removeProperty("padding-top");
+        element.style.removeProperty("padding-bottom");
+        element.style.removeProperty("margin-top");
+        element.style.removeProperty("margin-bottom");
     }, duration);
 };
 
@@ -141,10 +150,14 @@ export const offset = (element) => {
 };
 
 export const visible = (element) => {
+    if (!element) {
+        return false;
+    }
+
     return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
 };
 
-export const getSiblings = function (e) {
+export const getSiblings = (e) => {
     // for collecting siblings
     const siblings = [];
 
@@ -168,34 +181,9 @@ export const getSiblings = function (e) {
     return siblings;
 };
 
-// Returns true if it is a DOM node
-export const isNode = (o) => {
-    return typeof Node === "object"
-        ? o instanceof Node
-        : o && typeof o === "object" && typeof o.nodeType === "number" && typeof o.nodeName === "string";
-};
-
 // Returns true if it is a DOM element
 export const isElement = (o) => {
     return typeof HTMLElement === "object"
         ? o instanceof HTMLElement // DOM2
         : o && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName === "string";
 };
-
-export const singleNode = (function () {
-    // make an empty node list to inherit from
-    var nodelist = document.createDocumentFragment().childNodes;
-    // return a function to create object formed as desired
-    return function (node) {
-        return Object.create(nodelist, {
-            "0": { value: node, enumerable: true },
-            "length": { value: 1 },
-            "item": {
-                "value": function (i) {
-                    return this[+i || 0];
-                },
-                enumerable: true,
-            },
-        }); // return an object pretending to be a NodeList
-    };
-})();

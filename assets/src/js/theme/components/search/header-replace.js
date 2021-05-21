@@ -74,7 +74,7 @@ class HeaderReplaceSearch extends SearchBase {
         }
     };
 
-    #hasTopHeader = () => DOM.header.site.classList.contains("top-header");
+    #hasTopHeader = () => DOM.header.site?.classList.contains("top-header");
 }
 
 export default HeaderReplaceSearch;
