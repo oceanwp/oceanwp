@@ -1,14 +1,14 @@
 # OceanWP Changelog
 
 ### *2021.06.01.* - 2.0.9
-* **Added** - Replaced all theme Font Awesome icons with OceanWP SVG icons.
+* **Added** - OceanWP SVG icons - will be set as default icons on all new installations. Perform icons switch via Customize > General Options > Theme Icons.
 * **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.
 * **Added** - New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon]
 * **Added** - New customizer control to support SVG Icons.
-* **Fixed** - Multistep checkout when using create account option.
-* **Fixed** - Number of products display between 768px and 959px.
-* **Fixed** - Long Variation Names Overflowing #328
-* **Fixed** - Fixed fatal error on product page #327
+* **Fixed** - WooCommerce: Multistep checkout issue upon using the Create Account option on.
+* **Fixed** - WooCommerce: Number of products displayed between 768px and 959px screen widths.
+* **Fixed** - WooCommerce: Long Variation Names Overflowing #328
+* **Fixed** - WooCommerce: Fixed fatal error on product page #327
 
 ### *2021.04.26.* - 2.0.8
 * **Fixed** - Page title displayed with old setting.
