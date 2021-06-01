@@ -1,9 +1,10 @@
 # OceanWP Changelog
 
-### *2021.04.XX.* - 2.0.9
+### *2021.06.01.* - 2.0.9
 * **Fixed** - Multistep checkout when using create account option.
 * **Fixed** - Number of products display between 768px and 959px.
 * **Fixed** - Long Variation Names Overflowing #328
+* **Fixed** - Fixed fatal error on product page #327
 
 ### *2021.04.26.* - 2.0.8
 * **Fixed** - Page title displayed with old setting.
