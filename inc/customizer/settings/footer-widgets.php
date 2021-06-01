@@ -632,6 +632,7 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			// Footer borders color.
 			if ( ! empty( $footer_borders ) && '#555555' != $footer_borders ) {
 				$css .= '#footer-widgets li,#footer-widgets #wp-calendar caption,#footer-widgets #wp-calendar th,#footer-widgets #wp-calendar tbody,#footer-widgets .contact-info-widget i,#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"],#footer-widgets .posts-thumbnails-widget li,#footer-widgets .social-widget li a{border-color:' . $footer_borders . ';}';
+				$css .= '#footer-widgets .contact-info-widget .owp-icon{border-color:' . $footer_borders . ';}';
 			}
 
 			// Footer link color.

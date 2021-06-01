@@ -47,10 +47,15 @@
 	    border-color: $color-9;
 	    padding-right: 20px;
 
-	    i {
+	    i,
+		.owp-icon {
 	    	float: left;
 			margin-right: 20px;
 	    }
+
+		.owp-icon {
+			margin-top: 4px;
+		}
 	}
 
 	.nav-next {
@@ -59,10 +64,16 @@
 	    text-align: right;
 	    padding-left: 20px;
 
-	    i {
+	    i,
+		.owp-icon {
 	    	float: right;
 			margin-left: 20px;
 	    }
+
+		.owp-icon {
+			margin-top: 4px;
+		}
+
 	}
 }
 

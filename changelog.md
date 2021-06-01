@@ -5,6 +5,14 @@
 * **Fixed** - Number of products display between 768px and 959px.
 * **Fixed** - Long Variation Names Overflowing #328
 * **Fixed** - Fixed fatal error on product page #327
+### *2021.04.XX.* - 2.1.0
+* **Added** - Replaced all theme Font Awesome icons with OceanWP SVG icons.
+* **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.
+* **Added** - New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon]
+* **Added** - New customizer control to support SVG Icons.
+
+### *2021.04.XX.* - 2.0.9
+* **Fixed** - Multistep checkout when using create account option.
 
 ### *2021.04.26.* - 2.0.8
 * **Fixed** - Page title displayed with old setting.

@@ -29,6 +29,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			add_action( 'after_setup_theme',					array( $this, 'register_options' ) );
 			add_action( 'customize_preview_init', 				array( $this, 'customize_preview_init' ) );
 			add_action( 'customize_controls_enqueue_scripts', 	array( $this, 'custom_customize_enqueue' ), 7 );
+			add_action( 'customize_controls_print_scripts', 'ocean_get_svg_icon' );
 
 		}
 
@@ -49,6 +50,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			require_once( $dir . 'dropdown-pages/class-control-dropdown-pages.php' 			);
 			require_once( $dir . 'heading/class-control-heading.php' 						);
 			require_once( $dir . 'icon-select/class-control-icon-select.php' 				);
+			require_once( $dir . 'icon-select-multi/class-control-icon-select-multi.php' 	);
 			require_once( $dir . 'multicheck/class-control-multicheck.php' 					);
 			require_once( $dir . 'multiple-select/class-control-multiple-select.php' 		);
 			require_once( $dir . 'radio-image/class-control-radio-image.php' 				);
@@ -67,6 +69,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Dropdown_Pages' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Heading_Control' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Icon_Select_Control' 		);
+			$wp_customize->register_control_type( 'OceanWP_Customizer_Icon_Select_Multi_Control' );
 			$wp_customize->register_control_type( 'OceanWP_Customize_Multicheck_Control' 		);
 			$wp_customize->register_control_type( 'OceanWP_Customize_Multiple_Select_Control' 	);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Range_Control' 			);

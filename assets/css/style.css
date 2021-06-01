@@ -373,10 +373,18 @@ form.oceanwp-searchform button {
 #owp-svg-icons polygon,
 #owp-svg-icons polyline {
   stroke: inherit;
+<<<<<<< HEAD
 }
 
 .owp-icon use {
   stroke: #2D3E50;
+=======
+  fill: none;
+}
+
+.owp-icon use {
+  stroke: #333;
+>>>>>>> develop
 }
 
 /**
@@ -4302,6 +4310,10 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   color: #555;
 }
 
+.dropdown-menu ul li a.menu-link:hover .owp-icon use {
+  stroke: #555;
+}
+
 .dropdown-menu ul li a.menu-link .nav-arrow {
   position: absolute;
   top: 50%;
@@ -6442,6 +6454,10 @@ body.breadcrumbs-position-default .page-header-title {
   margin-right: 5px;
 }
 
+.site-breadcrumbs .owp-icon {
+  vertical-align: text-top;
+}
+
 .site-breadcrumbs.position-under-title,
 .centered-page-header .site-breadcrumbs,
 .centered-minimal-page-header .site-breadcrumbs {
@@ -7400,9 +7416,14 @@ ul.obem-none li:after {
   padding-right: 20px;
 }
 
-.single nav.post-navigation .nav-previous i {
+.single nav.post-navigation .nav-previous i,
+.single nav.post-navigation .nav-previous .owp-icon {
   float: left;
   margin-right: 20px;
+}
+
+.single nav.post-navigation .nav-previous .owp-icon {
+  margin-top: 4px;
 }
 
 .single nav.post-navigation .nav-next {
@@ -7412,9 +7433,14 @@ ul.obem-none li:after {
   padding-left: 20px;
 }
 
-.single nav.post-navigation .nav-next i {
+.single nav.post-navigation .nav-next i,
+.single nav.post-navigation .nav-next .owp-icon {
   float: right;
   margin-left: 20px;
+}
+
+.single nav.post-navigation .nav-next .owp-icon {
+  margin-top: 4px;
 }
 
 /*------------------------------------*
@@ -7704,6 +7730,10 @@ ul.page-numbers li {
   display: inline-block;
 }
 
+ul.page-numbers li .owp-icon {
+  vertical-align: inherit;
+}
+
 .page-links {
   text-align: center;
   margin: 15px 0;
@@ -7729,6 +7759,10 @@ ul.page-numbers li {
   box-sizing: content-box;
 }
 
+.page-numbers a .owp-icon use {
+  stroke: #555;
+}
+
 .page-numbers a span:not(.elementor-screen-only) {
   padding: 0;
 }
@@ -7740,6 +7774,10 @@ ul.page-numbers li {
 .page-links > span {
   background-color: #f8f8f8;
   color: #333;
+}
+
+.page-numbers a:hover .owp-icon use {
+  stroke: #555;
 }
 
 .elementor-pagination .page-numbers.current,
@@ -8189,6 +8227,7 @@ span.required {
 #footer-widgets #wp-calendar th,
 #footer-widgets #wp-calendar tbody,
 #footer-widgets .contact-info-widget i,
+#footer-widgets .contact-info-widget .owp-icon,
 #footer-widgets .mailchimp-widget input[type="email"],
 #footer-widgets .posts-thumbnails-widget li,
 #footer-widgets .social-widget li a {
@@ -8449,6 +8488,14 @@ span.required {
 #scroll-top.scroll-top-left {
   left: 20px;
   right: auto;
+}
+
+#scroll-top .owp-icon {
+  vertical-align: initial;
+}
+
+#scroll-top .owp-icon use {
+  stroke: #fff;
 }
 
 /*------------------------------------*

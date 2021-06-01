@@ -315,10 +315,6 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 										$img_args['itemprop'] = 'image';
 									}
 
-									// Get theme icons.
-									$theme_icons = oceanwp_theme_icons();
-									$icon_t = oceanwp_theme_icon_class();
-
 									$output .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="mega-post-link">';
 
 										$output .= get_the_post_thumbnail( get_the_ID(), 'medium', $img_args );
@@ -326,7 +322,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 										$output .= '<span class="overlay"></span>';
 									$output .= '</a>';
 
-									$output .= '<h3 class="mega-post-title"><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3><div class="mega-post-date"><i class="'. $theme_icons[ 'date' ][ $icon_t ] . '" aria-hidden="true"></i>'. get_the_date() .'</div>';
+									$output .= '<h3 class="mega-post-title"><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3><div class="mega-post-date">' . oceanwp_icon( 'date', false ) ." ". get_the_date() .'</div>';
 
 								}
 
@@ -376,7 +372,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 				&& 'full_screen' != $header_style ) {
 				$element->classes[] = 'dropdown';
 				if ( true == get_theme_mod( 'ocean_menu_arrow_down', true ) ) {
-					$element->title .= ' <span class="nav-arrow fa fa-angle-down"></span>';
+					$element->title .= oceanwp_icon( 'angle_down', false, 'nav-arrow' );
 				}
 			}
 
@@ -385,9 +381,9 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 				$element->classes[] = 'dropdown';
 				if ( true == get_theme_mod( 'ocean_menu_arrow_side', true ) ) {
 					if ( is_rtl() ) {
-						$element->title .= '<span class="nav-arrow fa fa-angle-left"></span>';
+						$element->title .= oceanwp_icon( 'angle_left', false, 'nav-arrow' );
 					} else {
-						$element->title .= '<span class="nav-arrow fa fa-angle-right"></span>';
+						$element->title .= oceanwp_icon( 'angle_right', false, 'nav-arrow' );
 					}
 				}
 			}

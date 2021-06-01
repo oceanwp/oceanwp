@@ -120,7 +120,7 @@ if ( 'blank' === $link_target ) {
 					echo '<a href="' . $esc_url . '" ' . $aria_label . ' target="_' . esc_attr( $link_target ) . '" ' . $link_rel . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 
-				echo '<span class="' . esc_attr( $val['icon_class'] ) . '" aria-hidden="true"></span>';
+				echo $val['icon_class'];
 
 				echo '</a>';
 

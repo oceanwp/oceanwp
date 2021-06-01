@@ -251,10 +251,11 @@ form.oceanwp-searchform {
 #owp-svg-icons polygon,
 #owp-svg-icons polyline {
     stroke:inherit;
+	fill: none;
 }
 
 .owp-icon use {
-	stroke: #2D3E50;
+	stroke: $color-2;
 }
 
 

@@ -48,6 +48,7 @@ module.exports = function ( grunt ) {
 					'inc/customizer/assets/min/js/dimensions.min.js'					: 'inc/customizer/controls/dimensions/dimensions.js',
 					'inc/customizer/assets/min/js/dropdown-pages.min.js'				: 'inc/customizer/controls/dropdown-pages/dropdown-pages.js',
 					'inc/customizer/assets/min/js/icon-select.min.js'					: 'inc/customizer/controls/icon-select/icon-select.js',
+					'inc/customizer/assets/min/js/iconmulti-select.min.js'				: 'inc/customizer/controls/icon-select-multi/iconmulti-select.js',
 					'inc/customizer/assets/min/js/multicheck.min.js'					: 'inc/customizer/controls/multicheck/multicheck.js',
 					'inc/customizer/assets/min/js/multiple-select.min.js'				: 'inc/customizer/controls/multiple-select/multiple-select.js',
 					'inc/customizer/assets/min/js/radio-image.min.js'					: 'inc/customizer/controls/radio-image/radio-image.js',
@@ -96,6 +97,7 @@ module.exports = function ( grunt ) {
 					'inc/customizer/assets/min/css/dimensions.min.css'				: 'inc/customizer/controls/dimensions/dimensions.css',
 					'inc/customizer/assets/min/css/heading.min.css'					: 'inc/customizer/controls/heading/heading.css',
 					'inc/customizer/assets/min/css/icon-select.min.css'				: 'inc/customizer/controls/icon-select/icon-select.css',
+					'inc/customizer/assets/min/css/iconmulti-select.min.css'				: 'inc/customizer/controls/icon-select-multi/iconmulti-select.css',
 					'inc/customizer/assets/min/css/multiple-select.min.css'			: 'inc/customizer/controls/multiple-select/multiple-select.css',
 					'inc/customizer/assets/min/css/radio-image.min.css'				: 'inc/customizer/controls/radio-image/radio-image.css',
 					'inc/customizer/assets/min/css/range.min.css'					: 'inc/customizer/controls/range/range.css',
@@ -341,8 +343,8 @@ module.exports = function ( grunt ) {
 		'cssmin:prod',
 		'sass:dev',
 		'sass:prod',
-		'makepot'
-		//'svgstore:prod'
+		'makepot',
+		'svgstore:prod'
 	] );
 
 	// Production task
@@ -352,7 +354,7 @@ module.exports = function ( grunt ) {
 		'sass:prod',
 		'autoprefixer:main',
 		'makepot',
-		//'svgstore:prod',
+		'svgstore:prod',
 		'copy'
 	] );
 
