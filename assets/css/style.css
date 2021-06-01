@@ -373,18 +373,11 @@ form.oceanwp-searchform button {
 #owp-svg-icons polygon,
 #owp-svg-icons polyline {
   stroke: inherit;
-<<<<<<< HEAD
-}
-
-.owp-icon use {
-  stroke: #2D3E50;
-=======
   fill: none;
 }
 
 .owp-icon use {
   stroke: #333;
->>>>>>> develop
 }
 
 /**
