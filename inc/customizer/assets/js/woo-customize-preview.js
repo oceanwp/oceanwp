@@ -880,7 +880,7 @@
             var $child = $(".customizer-ocean_toolbar_grid_list_color");
             if (to) {
                 /** @type {string} */
-                var img = '<style class="customizer-ocean_toolbar_grid_list_color">.woocommerce .oceanwp-grid-list a { color: ' + to + "; }</style>";
+                var img = '<style class="customizer-ocean_toolbar_grid_list_color">.woocommerce .oceanwp-grid-list a { color: ' + to + '; } .woocommerce .oceanwp-grid-list a .owp-icon use{ stroke: ' + to + "; }</style>";
                 if ($child.length) {
                     $child.replaceWith(img);
                 } else {
@@ -910,7 +910,7 @@
             var $child = $(".customizer-ocean_toolbar_grid_list_hover_color");
             if (to) {
                 /** @type {string} */
-                var img = '<style class="customizer-ocean_toolbar_grid_list_hover_color">.woocommerce .oceanwp-grid-list a:hover { color: ' + to + "; border-color: " + to + "; }</style>";
+                var img = '<style class="customizer-ocean_toolbar_grid_list_hover_color">.woocommerce .oceanwp-grid-list a:hover { color: ' + to + "; border-color: " + to + '; } .woocommerce .oceanwp-grid-list a:hover .owp-icon use{ stroke: ' + to + "; }</style>";
                 if ($child.length) {
                     $child.replaceWith(img);
                 } else {
@@ -925,7 +925,7 @@
             var $child = $(".customizer-ocean_toolbar_grid_list_active_color");
             if (to) {
                 /** @type {string} */
-                var img = '<style class="customizer-ocean_toolbar_grid_list_active_color">.woocommerce .oceanwp-grid-list a.active { color: ' + to + "; border-color: " + to + "; }</style>";
+                var img = '<style class="customizer-ocean_toolbar_grid_list_active_color">.woocommerce .oceanwp-grid-list a.active { color: ' + to + "; border-color: " + to + '; } .woocommerce .oceanwp-grid-list a.active .owp-icon use{ stroke: ' + to + "; }</style>";
                 if ($child.length) {
                     $child.replaceWith(img);
                 } else {

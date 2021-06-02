@@ -34,17 +34,17 @@ Woo Quick View
   margin-top: -4px;
 }
 
-.owp-quick-view .owp-icon {
+.woo-entry-image .owp-quick-view .owp-icon {
   margin-right: 9px;
   line-height: 1;
   margin-top: -4px;
 }
 
-.owp-quick-view .owp-icon use {
+.woo-entry-image .owp-quick-view .owp-icon use {
   stroke: #fff;
 }
 
-.owp-quick-view .owp-icon use:hover {
+.woo-entry-image .owp-quick-view .owp-icon use:hover {
   stroke: #fff;
 }
 

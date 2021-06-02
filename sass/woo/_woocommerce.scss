@@ -90,6 +90,14 @@
 					}
 					.product-entry-slider-wrap {
 						position: relative;
+
+						.owp-icon {
+							margin-right: 9px;
+
+							use {
+								stroke: #fff;
+							}
+						}
 					}
 					.woo-entry-image-swap {
 						position: relative;
@@ -739,6 +747,10 @@
 				color: #13aff0;
 				border-color: #13aff0;
 			}
+		}
+
+		.owp-icon {
+			vertical-align: inherit;
 		}
 	}
 	.woocommerce-ordering {

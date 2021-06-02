@@ -67,6 +67,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 				// Define accents
 				add_filter( 'ocean_primary_texts', array( $this, 'primary_texts' ) );
+				add_filter( 'ocean_primary_svg_icons', array( $this, 'primary_svg_icons' ) );
 				add_filter( 'ocean_primary_borders', array( $this, 'primary_borders' ) );
 				add_filter( 'ocean_primary_backgrounds', array( $this, 'primary_backgrounds' ) );
 				add_filter( 'ocean_hover_primary_backgrounds', array( $this, 'hover_primary_backgrounds' ) );
@@ -1738,6 +1739,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				'.widget_layered_nav li a:hover ~ .count',
 				'.woocommerce ul.products li.product:not(.product-category) .woo-entry-buttons li a:hover',
 			), $texts );
+		}
+
+		/**
+		 * Adds color accents for SVG icons.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function primary_svg_icons( $svg_icons ) {
+			return array_merge( array(
+				'.woocommerce .oceanwp-grid-list a.active .owp-icon use',
+				'.woocommerce .oceanwp-grid-list a:hover .owp-icon use',
+			), $svg_icons );
 		}
 
 		/**

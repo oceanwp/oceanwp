@@ -6230,6 +6230,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Add toolbar grid/list color
 			if ( ! empty( $toolbar_grid_list_color ) && '#999999' != $toolbar_grid_list_color ) {
 				$css .= '.woocommerce .oceanwp-grid-list a{color:'. $toolbar_grid_list_color .';}';
+				$css .= '.woocommerce .oceanwp-grid-list a .owp-icon use{stroke:'. $toolbar_grid_list_color .';}';
 			}
 
 			// Add toolbar grid/list border color
@@ -6240,11 +6241,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Add toolbar grid/list hover color
 			if ( ! empty( $toolbar_grid_list_hover_color ) && '#13aff0' != $toolbar_grid_list_hover_color ) {
 				$css .= '.woocommerce .oceanwp-grid-list a:hover{color:'. $toolbar_grid_list_hover_color .';border-color:'. $toolbar_grid_list_hover_color .';}';
+				$css .= '.woocommerce .oceanwp-grid-list a:hover .owp-icon use{stroke:'. $toolbar_grid_list_hover_color .';}';
 			}
 
 			// Add toolbar grid/list active color
 			if ( ! empty( $toolbar_grid_list_active_color ) && '#13aff0' != $toolbar_grid_list_active_color ) {
 				$css .= '.woocommerce .oceanwp-grid-list a.active{color:'. $toolbar_grid_list_active_color .';border-color:'. $toolbar_grid_list_active_color .';}';
+				$css .= '.woocommerce .oceanwp-grid-list a.active .owp-icon use{stroke:'. $toolbar_grid_list_hover_color .';}';
 			}
 
 			// Add toolbar select color
