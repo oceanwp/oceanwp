@@ -1262,21 +1262,48 @@ if ( ! function_exists( 'oceanwp_header_retina_logo' ) ) {
 		$attr['srcset'] = '';
 
 		// Get logo
-		$custom_logo 	= oceanwp_header_logo_setting();
+		$custom_logo = oceanwp_header_logo_setting();
 
-		// Get retina logo
-		$retina_logo 	= oceanwp_header_retina_logo_setting();
+		if ( $custom_logo === $attachment->ID ) {
 
-		if ( $custom_logo && $retina_logo ) {
+				// Logo data
+				$logo_data = array(
+					'url'    	=> '',
+					'width'  	=> '',
+					'height' 	=> '',
+					'alt' 		=> '',
+				);
 
-			$cutom_logo_src = wp_get_attachment_image_src( $custom_logo , 'full' );
-			$cutom_logo_url = $cutom_logo_src[0];
+			if ( ! is_customize_preview() ) {
+				$logo_attachment_data = oceanwp_get_attachment_data_from_url( $logo_data['url'] );
 
-			$attr['srcset'] = $cutom_logo_url . ' 1x, ' . $retina_logo . ' 2x';
+				if ( isset( $logo_attachment_data[0] ) ) {
+					$attr['src'] = $logo_attachment_data[0];
+				}
+			}
 
-			// Remove the size attr
-			unset( $attr['sizes'] );
+			// Get file type.
+			$file_type = wp_check_filetype( $attr['src'] );
+			$file_ext  = $file_type['ext'];
 
+			if ( 'svg' === $file_ext ) {
+				$attr['width']  = '100%';
+				$attr['height'] = '100%';
+				$logo_has_classes = isset( $attr['class'] ) ? $attr['class'] : '';
+				$attr['class']    = $logo_has_classes . ' oceanwp-logo-svg';
+			}
+
+			// Get retina logo
+			$retina_logo = oceanwp_header_retina_logo_setting();
+
+			if ( $retina_logo ) {
+
+				$cutom_logo_src = wp_get_attachment_image_src( $custom_logo , 'full' );
+				$cutom_logo_url = $cutom_logo_src[0];
+
+				$attr['srcset'] = $cutom_logo_url . ' 1x, ' . $retina_logo . ' 2x';
+
+			}
 		}
 
 		// Return attr
@@ -1750,7 +1777,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 			|| 'vertical' == $header_style ) {
 			return $items;
 		}
-		
+
 		// Get correct search icon class
 		if ( 'drop_down' == $search_style ) {
 			$class = ' search-dropdown-toggle';

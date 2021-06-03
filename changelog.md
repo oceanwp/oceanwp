@@ -1,10 +1,11 @@
 # OceanWP Changelog
 
-### *2021.06.02.* - 2.0.9
+### *2021.06.03.* - 2.0.9
 * **Added** - OceanWP SVG icons - will be set as default icons on all new installations. Perform icons switch via Customize > General Options > Theme Icons.
 * **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.
 * **Added** - New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon]
 * **Added** - New customizer control to support SVG Icons.
+* **Added** - Enable support for SVG logo type.
 * **Fixed** - WooCommerce: Multistep checkout issue upon using the Create Account option on.
 * **Fixed** - WooCommerce: Number of products displayed between 768px and 959px screen widths.
 * **Fixed** - WooCommerce: Long Variation Names Overflowing #328
