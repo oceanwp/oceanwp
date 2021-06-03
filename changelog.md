@@ -6,6 +6,7 @@
 * **Added** - New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon]
 * **Added** - New customizer control to support SVG Icons.
 * **Added** - Enable support for SVG logo type.
+* **Added** - Social option: Telegram, Twitch, Line, QQ
 * **Fixed** - WooCommerce: Multistep checkout issue upon using the Create Account option on.
 * **Fixed** - WooCommerce: Number of products displayed between 768px and 959px screen widths.
 * **Fixed** - WooCommerce: Long Variation Names Overflowing #328

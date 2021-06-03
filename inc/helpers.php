@@ -4023,6 +4023,22 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 				'medium' => array(
 					'label' => esc_html__( 'Medium', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'medium', false ),
+				),
+				'telegram' => array(
+					'label' => esc_html__( 'Telegram', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'telegram', false ),
+				),
+				'twitch' => array(
+					'label' => esc_html__( 'Twitch', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'twitch', false ),
+				),
+				'line' => array(
+					'label' => esc_html__( 'Line', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'line', false ),
+				),
+				'qq' => array(
+					'label' => esc_html__( 'QQ', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'qq', false ),
 				)
 			)
 		);

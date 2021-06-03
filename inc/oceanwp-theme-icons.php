@@ -399,6 +399,21 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'fai'  => 'fab fa-trello',
 				'svg'  => 'trello',
 			),
+			'telegram'  => array(
+				'sili' => 'fab fa-telegram',
+				'fai'  => 'fab fa-telegram',
+				'svg'  => 'telegram',
+			),
+			'line'  => array(
+				'sili' => 'fab fa-line',
+				'fai'  => 'fab fa-line',
+				'svg'  => 'line',
+			),
+			'qq'  => array(
+				'sili' => 'fab fa-qq',
+				'fai'  => 'fab fa-qq',
+				'svg'  => 'qq',
+			),
 		);
 
 		return apply_filters( 'oceanwp_theme_icons', $oceanwp_theme_icons );

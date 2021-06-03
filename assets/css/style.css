@@ -4630,6 +4630,22 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   color: #00ab6c;
 }
 
+.oceanwp-social-menu ul li.oceanwp-telegram a:hover {
+  color: #0088cc;
+}
+
+.oceanwp-social-menu ul li.oceanwp-twitch a:hover {
+  color: #6441a5;
+}
+
+.oceanwp-social-menu ul li.oceanwp-line a:hover {
+  color: #00c300;
+}
+
+.oceanwp-social-menu ul li.oceanwp-qq a:hover {
+  color: #febf1b;
+}
+
 .oceanwp-social-menu .colored ul li a {
   position: relative;
   display: inline-block;
@@ -4826,6 +4842,38 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   background-color: #03945f;
 }
 
+.oceanwp-social-menu .colored ul li.oceanwp-telegram a {
+  background-color: #0088cc;
+}
+
+.oceanwp-social-menu .colored ul li.oceanwp-telegram a:hover {
+  background-color: #0da4f0;
+}
+
+.oceanwp-social-menu .colored ul li.oceanwp-twitch a {
+  background-color: #6441a5;
+}
+
+.oceanwp-social-menu .colored ul li.oceanwp-twitch a:hover {
+  background-color: #702cee;
+}
+
+.oceanwp-social-menu .colored ul li.oceanwp-line a {
+  background-color: #00c300;
+}
+
+.oceanwp-social-menu .colored ul li.oceanwp-line a:hover {
+  background-color: #09f309;
+}
+
+.oceanwp-social-menu .colored ul li.oceanwp-qq a {
+  background-color: #febf1b;
+}
+
+.oceanwp-social-menu .colored ul li.oceanwp-qq a:hover {
+  background-color: #db9f07;
+}
+
 .oceanwp-social-menu .minimal ul li a {
   position: relative;
   display: inline-block;
@@ -4952,6 +5000,26 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .oceanwp-social-menu .minimal ul li.oceanwp-medium a:hover {
   color: #00ab6c;
   border-color: #00ab6c;
+}
+
+.oceanwp-social-menu .minimal ul li.oceanwp-telegram a:hover {
+  color: #0088cc;
+  border-color: #0088cc;
+}
+
+.oceanwp-social-menu .minimal ul li.oceanwp-twitch a:hover {
+  color: #702cee;
+  border-color: #702cee;
+}
+
+.oceanwp-social-menu .minimal ul li.oceanwp-line a:hover {
+  color: #00c300;
+  border-color: #00c300;
+}
+
+.oceanwp-social-menu .minimal ul li.oceanwp-qq a:hover {
+  color: #febf1b;
+  border-color: #febf1b;
 }
 
 .oceanwp-social-menu .dark ul li a {
