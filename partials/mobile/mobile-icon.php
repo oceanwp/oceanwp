@@ -80,6 +80,8 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 	// Turn classes into space seperated string.
 	$classes = implode( ' ', $classes ); ?>
 
+	<?php do_action( 'ocean_mobile_menu_icon_before' ); ?>
+
 	<div class="<?php echo esc_attr( $classes ); ?>">
 
 		<?php do_action( 'ocean_before_mobile_icon' ); ?>
@@ -136,4 +138,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 	</div><!-- #oceanwp-mobile-menu-navbar -->
 
+	<?php do_action( 'ocean_mobile_menu_icon_after' ); ?>
+
 <?php endif; ?>
+
