@@ -1,4 +1,5 @@
-#searchform-overlay {
+#searchform-overlay,
+#icon-searchform-overlay {
 	display: none;
     position: fixed;
     top: 0;
@@ -135,10 +136,10 @@
 	All Devices under 960px
 *------------------------------------*/
 @media only screen and (max-width: 959px) {
-			
+
 	/* header > search overlay */
 	#searchform-overlay {
 		display: none !important;
 	}
-	
+
 }
