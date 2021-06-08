@@ -11,6 +11,7 @@
 * **Fixed** - WooCommerce: Number of products displayed between 768px and 959px screen widths.
 * **Fixed** - WooCommerce: Long Variation Names Overflowing #328
 * **Fixed** - WooCommerce: Fixed fatal error on product page #327
+* **Fixed** - Replaced slick-slide class with swiper-slide.
 
 ### *2021.04.26.* - 2.0.8
 * **Fixed** - Page title displayed with old setting.

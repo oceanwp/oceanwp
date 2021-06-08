@@ -1278,7 +1278,7 @@ body.separate-blog.separate-layout .blog-entry.grid-entry .thumbnail {
   .boxed-layout #top-bar-social.top-bar-left {
     left: auto;
   }
-  .col:not(.slick-slide), .blog-entry {
+  .col:not(.swiper-slide), .blog-entry {
     width: 100% !important;
     margin-bottom: 25px;
   }
