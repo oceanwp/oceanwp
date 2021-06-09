@@ -3,7 +3,8 @@
 ### *2021.06.09.* - 2.0.9
 * **Added** - OceanWP SVG icons - will be set as default icons on all new installations. Perform icons switch via Customize > General Options > Theme Icons.
 * **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.
-* **Added** - New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon]
+* **Added** - New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon] - https://docs.oceanwp.org/article/779-oceanwp-icon-shortcode
+* **Added** - All SVG icons - https://oceanwp.org/oceanwp-svg-icons/
 * **Added** - New customizer control to support SVG Icons.
 * **Added** - Enable support for SVG logo type.
 * **Added** - Social option: Telegram, Twitch, Line, QQ
