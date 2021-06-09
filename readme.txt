@@ -47,20 +47,10 @@ More details here: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Screenshots ==
 
-Screenshot image, Copyright Pixabay and Flaticon
-
-1. "Woman with the pink hairstyle", by George. Source Pixabay.
-Source: https://pixabay.com/photos/pink-hair-hairstyle-woman-makeup-1450045/
-Author: https://pixabay.com/users/katyandgeorge-2733227/
-License free for personal and commercial use with attribution. Pixabay license: https://pixabay.com/service/license/
-2. "Harbor Firewoks", by Tom Hill. Source Pixabay.
-Source: https://pixabay.com/photos/fireworks-harbour-blue-pink-night-4021214/
-Author: https://pixabay.com/users/tomchill-11724380/
-License free for personal and commercial use with attribution. Pixabay license: https://pixabay.com/service/license/
-3. PNG icons from the "eCommerce" icon pack by Freepik. Source FlatIcon.
-Source: https://www.flaticon.com/packs/ecommerce-501?word=ecommerce#
-Author: https://www.flaticon.com/authors/freepik
-License free for personal and commercial use with attribution. Direct license link unavailable. All license information avaialable in a popup form on each icon / icon pack.
+Screenshot image, Copyright Stocksnap
+License: CC0 Public Domain - https://stocksnap.io/license
+Source: https://stocksnap.io/photo/concert-singer-F66MXRQS1K is by Austin Neill
+Source: https://stocksnap.io/photo/fireworks-celebration-R4GSFACUEC is by Travel Photographer
 
 == Copyright ==
 
