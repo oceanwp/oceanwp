@@ -75,10 +75,7 @@ class OWLightbox {
                     link.classList.add("oceanwp-lightbox");
                 }
 
-                if (
-                    !link.classList.contains("no-lightbox") &&
-                    link.parentNode.classList.contains("gallery-icon")
-                ) {
+                if (!link.classList.contains("no-lightbox") && link.parentNode.classList.contains("gallery-icon")) {
                     link.classList.add("gallery-lightbox");
                 }
             }
@@ -86,24 +83,14 @@ class OWLightbox {
     };
 
     #imageFormats = () => {
-        return [
-            "bmp",
-            "gif",
-            "jpeg",
-            "jpg",
-            "png",
-            "tiff",
-            "tif",
-            "jfif",
-            "jpe",
-            "svg",
-            "mp4",
-            "ogg",
-            "webm",
-        ];
+        return ["bmp", "gif", "jpeg", "jpg", "png", "tiff", "tif", "jfif", "jpe", "svg", "mp4", "ogg", "webm"];
     };
 
     #addPhotoSwipeToDOM = () => {
+        if (!!document.querySelector(".pswp")) {
+            return;
+        }
+
         DOM.body.insertAdjacentHTML(
             "beforeend",
             `<!-- Root element of PhotoSwipe. Must have class pswp. -->
@@ -216,11 +203,7 @@ class OWLightbox {
 
             // find root element of slide
             var clickedListItem = closest(eTarget, function (el) {
-                return (
-                    el.tagName &&
-                    el.tagName.toUpperCase() === "A" &&
-                    el.classList.contains("gallery-lightbox")
-                );
+                return el.tagName && el.tagName.toUpperCase() === "A" && el.classList.contains("gallery-lightbox");
             });
 
             if (!clickedListItem) {
