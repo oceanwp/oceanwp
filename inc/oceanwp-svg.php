@@ -213,31 +213,3 @@ function ocean_svg( $icon, $echo = true, $class = '', $title = '', $desc = '', $
 		return $owp_icon;
 	}
 }
-
-/**
- * SVG icon shortcode
- *
- * @param array $atts    An associative array of attributes.
- * @param obj   $content The enclosed content.
- */
-function ocean_svg_icon_shortcode( $atts, $content = null ) {
-
-	// Extract attributes.
-	$attr = shortcode_atts(
-		array(
-			'icon'        => 'Add an icon class',
-			'class'       => '',
-			'title'       => '',
-			'desc'        => '',
-			'area_hidden' => true,
-			'fallback'    => false,
-		),
-		$atts
-	);
-
-	$owp_icon = ocean_svg( $attr['icon'], false, $attr['class'], $attr['title'], $attr['desc'], $attr['area_hidden'], $attr['fallback'] );
-
-	return $owp_icon;
-
-}
-add_shortcode( 'oceanwp_icon', 'ocean_svg_icon_shortcode' );
