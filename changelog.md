@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### *2021.06.08.* - 2.0.9
+### *2021.06.09.* - 2.0.9
 * **Added** - OceanWP SVG icons - will be set as default icons on all new installations. Perform icons switch via Customize > General Options > Theme Icons.
 * **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.
 * **Added** - New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon]
@@ -12,6 +12,7 @@
 * **Fixed** - WooCommerce: Long Variation Names Overflowing #328
 * **Fixed** - WooCommerce: Fixed fatal error on product page #327
 * **Fixed** - Replaced slick-slide class with swiper-slide.
+* **Fixed** - Gutenberg: layout issue with block alignfull and alignwide.
 
 ### *2021.04.26.* - 2.0.8
 * **Fixed** - Page title displayed with old setting.
