@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2021.06.10.* - 2.1.0
+* **Added** - Check if icon class exist or not from theme icons.
+
 ### *2021.06.09.* - 2.0.9
 * **Added** - OceanWP SVG icons - will be set as default icons on all new installations. Perform icons switch via Customize > General Options > Theme Icons.
 * **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.

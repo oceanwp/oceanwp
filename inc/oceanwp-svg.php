@@ -54,11 +54,6 @@ function ocean_svg_icon( $args = array(), $location = true ) {
 		return __( 'Please define default parameters in the form of an array.', 'oceanwp' );
 	}
 
-	// Define an icon.
-	if ( false === array_key_exists( 'icon', $args ) ) {
-		return __( 'Please define an SVG icon filename.', 'oceanwp' );
-	}
-
 	// Set defaults.
 	$defaults = array(
 		'icon'        => '',
@@ -74,6 +69,11 @@ function ocean_svg_icon( $args = array(), $location = true ) {
 
 	if ( empty( $args['icon'] ) || 'none' === $args['icon'] ) {
 		return;
+	}
+
+	// Define an icon.
+	if ( false === array_key_exists( $args['icon'], oceanwp_theme_icons() ) ) {
+		return __( 'Add an icon.', 'oceanwp' );
 	}
 
 	// Set aria hidden.
