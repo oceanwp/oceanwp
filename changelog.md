@@ -4,6 +4,7 @@
 * **Added** - Check if icon class exist or not from theme icons.
 * **Tweak** - Default Theme Icon settings set to "Simple Line Icons" to prevent issues on websites that did not store any theme icons settings in the past.
 * **Tweak** - Ocean SVG Icons disabled by default. In order to use the new icons, enable them via Customize > General Options > Theme Icons
+* **Fixed** - Icons that require manual selection get deselect on Theme icons change
 
 ### *2021.06.09.* - 2.0.9
 * **Added** - OceanWP SVG icons - will be set as default icons on all new installations. Perform icons switch via Customize > General Options > Theme Icons.
