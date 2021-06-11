@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function ocean_get_svg_icon() {
 
-	if ( true === get_theme_mod( 'ocean_disable_svg_icons', false ) ) {
+	if ( true === get_theme_mod( 'ocean_disable_svg_icons', true ) || 'svg' !== oceanwp_theme_icon_class() ) {
 		return;
 	}
 
@@ -45,7 +45,7 @@ add_action( 'wp_footer', 'ocean_get_svg_icon' );
  */
 function ocean_svg_icon( $args = array(), $location = true ) {
 
-	if ( true === get_theme_mod( 'ocean_disable_svg_icons', false ) ) {
+	if ( true === get_theme_mod( 'ocean_disable_svg_icons', true ) || 'svg' !== oceanwp_theme_icon_class() ) {
 		return;
 	}
 
@@ -73,7 +73,7 @@ function ocean_svg_icon( $args = array(), $location = true ) {
 
 	// Define an icon.
 	if ( false === array_key_exists( $args['icon'], oceanwp_theme_icons() ) ) {
-		return __( 'Add an icon.', 'oceanwp' );
+		return;
 	}
 
 	// Set aria hidden.

@@ -3764,7 +3764,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'ocean_theme_default_icons',
 				array(
-					'default'           => 'svg',
+					'default'           => 'sili',
 					'sanitize_callback' => 'oceanwp_sanitize_select',
 				)
 			);
@@ -3795,7 +3795,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'ocean_disable_svg_icons',
 				array(
-					'default'           => false,
+					'default'           => true,
 					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 				)
 			);

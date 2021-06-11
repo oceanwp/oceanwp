@@ -429,7 +429,7 @@ if ( ! function_exists( 'oceanwp_theme_icon_class' ) ) {
 
 	function oceanwp_theme_icon_class() {
 
-		$i_class = get_theme_mod( 'ocean_theme_default_icons', 'svg' );
+		$i_class = get_theme_mod( 'ocean_theme_default_icons', 'sili' );
 
 		if ( 'sili' === $i_class  ) {
 			$ti_class = 'sili';
@@ -539,7 +539,7 @@ if ( ! function_exists( 'oceanwp_print_icon' ) ) {
 		}
 
 		$icon      = '';
-		$icon_type = get_theme_mod( 'ocean_theme_default_icons', 'svg' );
+		$icon_type = get_theme_mod( 'ocean_theme_default_icons', 'sili' );
 
 		if ( isset( $icon_type ) && ! empty( $icon_type ) ) {
 
