@@ -27,22 +27,20 @@ class DropDownMobileMenu {
 
         this.#menuItemsToggleIcon =
             options.sidrDropdownTarget == "link"
-                ? DOM.mobileMenu.navWrapper.querySelectorAll("li.menu-item-has-children > a")
-                : DOM.mobileMenu.navWrapper.querySelectorAll(".dropdown-toggle");
+                ? DOM.mobileMenu.navWrapper?.querySelectorAll("li.menu-item-has-children > a")
+                : DOM.mobileMenu.navWrapper?.querySelectorAll(".dropdown-toggle");
     };
 
     #setupEventListeners = () => {
-        DOM.mobileMenu.toggleMenuBtn.addEventListener("click", this.#onToggleMenuButtonClick);
+        DOM.mobileMenu.toggleMenuBtn?.addEventListener("click", this.#onToggleMenuButtonClick);
 
-        DOM.mobileMenu.navWrapper
-            .querySelectorAll('li a[href*="#"]:not([href="#"])')
-            .forEach((menuItemLink) => {
-                menuItemLink.addEventListener("click", this.#onMenuCloseClick);
-            });
+        DOM.mobileMenu.navWrapper?.querySelectorAll('li a[href*="#"]:not([href="#"])').forEach((menuItemLink) => {
+            menuItemLink.addEventListener("click", this.#onMenuCloseClick);
+        });
 
         document.addEventListener("click", this.#onMenuCloseClick);
 
-        DOM.mobileMenu.navWrapper.addEventListener("click", (event) => {
+        DOM.mobileMenu.navWrapper?.addEventListener("click", (event) => {
             event.stopPropagation();
         });
 
@@ -50,7 +48,7 @@ class DropDownMobileMenu {
 
         DOM.mobileMenu.hamburgerBtn?.addEventListener("click", this.#onHamburgerClick);
 
-        this.#menuItemsToggleIcon.forEach((menuItemPlusIcon) => {
+        this.#menuItemsToggleIcon?.forEach((menuItemPlusIcon) => {
             menuItemPlusIcon.addEventListener("click", this.#onMenuItemPlusIconClick);
             menuItemPlusIcon.addEventListener("tap", this.#onMenuItemPlusIconClick);
         });
@@ -68,9 +66,11 @@ class DropDownMobileMenu {
     };
 
     #onMenuCloseClick = (event) => {
-        slideUp(DOM.mobileMenu.navWrapper, 200);
-        DOM.mobileMenu.toggleMenuBtn.classList.remove("opened");
-        DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
+        if (!!DOM.mobileMenu.navWrapper) {
+            slideUp(DOM.mobileMenu.navWrapper, 200);
+            DOM.mobileMenu.toggleMenuBtn.classList.remove("opened");
+            DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
+        }
     };
 
     #onWindowResize = (event) => {
@@ -90,9 +90,7 @@ class DropDownMobileMenu {
 
         const menuItemPlusIcon = event.currentTarget;
         const menuItem =
-            options.sidrDropdownTarget == "link"
-                ? menuItemPlusIcon.parentNode
-                : menuItemPlusIcon.parentNode.parentNode;
+            options.sidrDropdownTarget == "link" ? menuItemPlusIcon.parentNode : menuItemPlusIcon.parentNode.parentNode;
 
         if (!menuItem.classList.contains("active")) {
             DOM.mobileMenu.menuItemsHasChildren.forEach((menuItemHasChildren) => {

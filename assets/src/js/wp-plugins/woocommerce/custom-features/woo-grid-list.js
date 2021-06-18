@@ -51,14 +51,12 @@ class WooGridList {
         Cookies.set("gridcookie", "grid", { path: "" });
 
         DOM.woo.allProducts.forEach((products) => {
-            fadeOut(products);
-
-            setTimeout(() => {
+            fadeOut(products, null, () => {
                 products.classList.add("grid");
                 products.classList.remove("list");
 
                 fadeIn(products);
-            }, 300);
+            });
         });
 
         setTimeout(() => {
@@ -76,14 +74,12 @@ class WooGridList {
         Cookies.set("gridcookie", "list", { path: "" });
 
         DOM.woo.allProducts.forEach((products) => {
-            fadeOut(products);
-
-            setTimeout(() => {
+            fadeOut(products, null, () => {
                 products.classList.add("list");
                 products.classList.remove("grid");
 
                 fadeIn(products);
-            }, 300);
+            });
         });
 
         setTimeout(() => {
