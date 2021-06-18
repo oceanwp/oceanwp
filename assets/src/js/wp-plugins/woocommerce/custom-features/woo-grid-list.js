@@ -13,9 +13,13 @@ class WooGridList {
     }
 
     #start = () => {
+        if (!(DOM.woo.grid || DOM.woo.list)) {
+            return;
+        }
+
         if (Cookies.get("gridcookie") === "grid") {
-            DOM.woo.grid?.classList.add("active");
-            DOM.woo.list?.classList.remove("active");
+            DOM.woo.grid.classList.add("active");
+            DOM.woo.list.classList.remove("active");
 
             DOM.woo.allProducts?.forEach((products) => {
                 products.classList.add("grid");
@@ -24,8 +28,8 @@ class WooGridList {
         }
 
         if (Cookies.get("gridcookie") === "list") {
-            DOM.woo.grid?.classList.remove("active");
-            DOM.woo.list?.classList.add("active");
+            DOM.woo.grid.classList.remove("active");
+            DOM.woo.list.classList.add("active");
 
             DOM.woo.allProducts?.forEach((products) => {
                 products.classList.add("list");
