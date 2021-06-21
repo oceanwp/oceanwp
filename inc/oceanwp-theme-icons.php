@@ -116,7 +116,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'small-arrow-down',
 			),
 			'angle_left' => array(
-				'sili' => 'arrow-left',
+				'sili' => 'icon-arrow-left',
 				'fai'  => 'fa fa-angle-left',
 				'svg'  => 'small-arrow-left',
 			),
@@ -126,7 +126,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'small-arrow-right',
 			),
 			'chevron_up'     => array(
-				'sili' => 'arrow-up',
+				'sili' => 'icon-arrow-up',
 				'fai'  => 'fa fa-chevron-up',
 				'svg'  => 'chevron-up',
 			),
@@ -244,6 +244,261 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'sili' => 'icon-printer',
 				'fai'  => 'fas fa-fax',
 				'svg'  => 'fax',
+			),
+			'website'     => array(
+				'sili' => 'fas fa-globe',
+				'fai'  => 'fas fa-globe',
+				'svg'  => 'website',
+			),
+			'hashtag'     => array(
+				'sili' => 'fas fa-hashtag',
+				'fai'  => 'fas fa-hashtag',
+				'svg'  => 'hashtag',
+			),
+			'hollow_ring'     => array(
+				'sili' => 'far fa-circle',
+				'fai'  => 'far fa-circle',
+				'svg'  => 'hollow-ring',
+			),
+			'login'     => array(
+				'sili' => 'icon-login',
+				'fai'  => 'fas fa-sign-in-alt',
+				'svg'  => 'login',
+			),
+			'logout'     => array(
+				'sili' => 'fas fa-sign-out-alt',
+				'fai'  => 'fas fa-sign-out-alt',
+				'svg'  => 'logout',
+			),
+			'sms'     => array(
+				'sili' => 'icon-speech',
+				'fai'  => 'fas fa-sms',
+				'svg'  => 'sms',
+			),
+			'reading_time_stopwatch' => array(
+				'sili' => 'fas fa-stopwatch',
+				'fai'  => 'fas fa-stopwatch',
+				'svg'  => 'reading-time-stopwatch',
+			),
+			'windows' => array(
+				'sili' => 'fab fa-windows',
+				'fai'  => 'fab fa-windows',
+				'svg'  => 'windows',
+			),
+			'zoom' => array(
+				'sili' => 'zoom',
+				'fai'  => 'zoom',
+				'svg'  => 'zoom',
+			),
+			'android' => array(
+				'sili' => 'fab fa-android',
+				'fai'  => 'fab fa-android',
+				'svg'  => 'android',
+			),
+			'behance' => array(
+				'sili' => 'icon-social-behance',
+				'fai'  => 'fab fa-behance',
+				'svg'  => 'behance',
+			),
+			'blogger' => array(
+				'sili' => 'fab fa-blogger',
+				'fai'  => 'fab fa-blogger',
+				'svg'  => 'blogger',
+			),
+			'discord' => array(
+				'sili' => 'fab fa-discord',
+				'fai'  => 'fab fa-discord',
+				'svg'  => 'discord',
+			),
+			'discord' => array(
+				'sili' => 'fab fa-discord',
+				'fai'  => 'fab fa-discord',
+				'svg'  => 'discord',
+			),
+			'gmail' => array(
+				'sili' => 'fab fa-gmail',
+				'fai'  => 'fab fa-gmail',
+				'svg'  => 'gmail',
+			),
+			'google_drive' => array(
+				'sili' => 'fab fa-google-drive',
+				'fai'  => 'fab fa-google-drive',
+				'svg'  => 'google-drive',
+			),
+			'ios' => array(
+				'sili' => 'fab fa-apple',
+				'fai'  => 'fab fa-apple',
+				'svg'  => 'ios',
+			),
+			'messanger' => array(
+				'sili' => 'fab fa-facebook-messenger',
+				'fai'  => 'fab fa-facebook-messenger',
+				'svg'  => 'messanger',
+			),
+			'reddit' => array(
+				'sili' => 'fab fa-reddit-alien',
+				'fai'  => 'fab fa-reddit-alien',
+				'svg'  => 'reddit',
+			),
+			'shazam' => array(
+				'sili' => 'shazam',
+				'fai'  => 'shazam',
+				'svg'  => 'shazam',
+			),
+			'snapchat' => array(
+				'sili' => 'fab fa-snapchat',
+				'fai'  => 'fab fa-snapchat',
+				'svg'  => 'snapchat',
+			),
+			'soundcloud' => array(
+				'sili' => 'icon-social-soundcloud',
+				'fai'  => 'fab fa-soundcloud',
+				'svg'  => 'soundcloud',
+			),
+			'spotify' => array(
+				'sili' => 'fab fa-spotify',
+				'fai'  => 'fab fa-spotify',
+				'svg'  => 'spotify',
+			),
+			'tinder' => array(
+				'sili' => 'fab fa-tinder',
+				'fai'  => 'fab fa-tinder',
+				'svg'  => 'tinder',
+			),
+			'viber' => array(
+				'sili' => 'fab fa-viber',
+				'fai'  => 'fab fa-viber',
+				'svg'  => 'viber',
+			),
+			'wechat' => array(
+				'sili' => 'fab fa-wechat',
+				'fai'  => 'fab fa-wechat',
+				'svg'  => 'wechat',
+			),
+			'envelope_open' => array(
+				'sili' => 'far fa-envelope-open',
+				'fai'  => 'far fa-envelope-open',
+				'svg'  => 'envelope-open',
+			),
+			'quote_left' => array(
+				'sili' => 'fas fa-quote-left',
+				'fai'  => 'fas fa-quote-left',
+				'svg'  => 'quote-left',
+			),
+			'quote_right' => array(
+				'sili' => 'fas fa-quote-right',
+				'fai'  => 'fas fa-quote-right',
+				'svg'  => 'quote-right',
+			),
+			'spinner' => array(
+				'sili' => 'fas fa-spinner',
+				'fai'  => 'fas fa-spinner',
+				'svg'  => 'spinner',
+			),
+			'sync' => array(
+				'sili' => 'icon-refresh',
+				'fai'  => 'fas fa-sync-alt',
+				'svg'  => 'sync',
+			),
+			'arrow_alt_circle_down' => array(
+				'sili' => 'icon-arrow-down-circle',
+				'fai'  => 'far fa-arrow-alt-circle-down',
+				'svg'  => 'arrow-alt-circle-down',
+			),
+			'arrow_alt_circle_left' => array(
+				'sili' => 'icon-arrow-left-circle',
+				'fai'  => 'far fa-arrow-alt-circle-left',
+				'svg'  => 'arrow-alt-circle-left',
+			),
+			'arrow_alt_circle_right' => array(
+				'sili' => 'far fa-arrow-alt-circle-right',
+				'fai'  => 'far fa-arrow-alt-circle-right',
+				'svg'  => 'arrow-alt-circle-right',
+			),
+			'buffer' => array(
+				'sili' => 'icon-layers',
+				'fai'  => 'fab fa-buffer',
+				'svg'  => 'buffer',
+			),
+			'caret_down' => array(
+				'sili' => 'fas fa-caret-down',
+				'fai'  => 'fas fa-caret-down',
+				'svg'  => 'caret-down',
+			),
+			'caret_left' => array(
+				'sili' => 'fas fa-caret-left',
+				'fai'  => 'fas fa-caret-left',
+				'svg'  => 'caret-left',
+			),
+			'caret_right' => array(
+				'sili' => 'fas fa-caret-right',
+				'fai'  => 'fas fa-caret-right',
+				'svg'  => 'caret-right',
+			),
+			'chevron_down' => array(
+				'sili' => 'fas fa-chevron-down',
+				'fai'  => 'fas fa-chevron-down',
+				'svg'  => 'chevron-down',
+			),
+			'chevron_left' => array(
+				'sili' => 'fas fa-chevron-left',
+				'fai'  => 'fas fa-chevron-left',
+				'svg'  => 'chevron-left',
+			),
+			'chevron_right' => array(
+				'sili' => 'fas fa-chevron-right',
+				'fai'  => 'fas fa-chevron-right',
+				'svg'  => 'chevron-right',
+			),
+			'clock' => array(
+				'sili' => 'far fa-clock',
+				'fai'  => 'far fa-clock',
+				'svg'  => 'clock',
+			),
+			'copyright' => array(
+				'sili' => 'far fa-copyright',
+				'fai'  => 'far fa-copyright',
+				'svg'  => 'copyright',
+			),
+			'copyright' => array(
+				'sili' => 'far fa-copyright',
+				'fai'  => 'far fa-copyright',
+				'svg'  => 'copyright',
+			),
+			'arrow_down' => array(
+				'sili' => 'fas fa-arrow-down',
+				'fai'  => 'fas fa-arrow-down',
+				'svg'  => 'arrow-down',
+			),
+			'arrow_left' => array(
+				'sili' => 'icon-arrow-left',
+				'fai'  => 'fas fa-arrow-left',
+				'svg'  => 'arrow-left',
+			),
+			'arrow_right' => array(
+				'sili' => 'fas fa-arrow-right',
+				'fai'  => 'fas fa-arrow-right',
+				'svg'  => 'arrow-right',
+			),
+			'caret_square_down' => array(
+				'sili' => 'far fa-caret-square-down',
+				'fai'  => 'far fa-caret-square-down',
+				'svg'  => 'caret-square-down',
+			),
+			'caret_square_left' => array(
+				'sili' => 'far fa-caret-square-left',
+				'fai'  => 'far fa-caret-square-left',
+				'svg'  => 'caret-square-left',
+			),
+			'caret_square_right' => array(
+				'sili' => 'far fa-caret-square-right',
+				'fai'  => 'far fa-caret-square-right',
+				'svg'  => 'caret-square-right',
+			),
+			'level_down_alt' => array(
+				'sili' => 'fas fa-level-down-alt',
+				'fai'  => 'fas fa-level-down-alt',
+				'svg'  => 'level-down-alt',
 			),
 
 			// Cart icon.

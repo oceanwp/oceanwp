@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 2.1.0\n"
+"Project-Id-Version: OceanWP 2.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-06-11 11:09:35+00:00\n"
+"POT-Creation-Date: 2021-06-21 04:48:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4895,19 +4895,19 @@ msgid "Submit search"
 msgstr ""
 
 #: inc/oceanwp-svg.php:54 inc/oceanwp-svg.php:160
-#: inc/oceanwp-theme-icons.php:486 inc/oceanwp-theme-icons.php:538
+#: inc/oceanwp-theme-icons.php:741 inc/oceanwp-theme-icons.php:793
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
-#: inc/oceanwp-theme-icons.php:441
+#: inc/oceanwp-theme-icons.php:696
 msgid "Please select an icon type."
 msgstr ""
 
-#: inc/oceanwp-theme-icons.php:491
+#: inc/oceanwp-theme-icons.php:746
 msgid "Please define an icon class."
 msgstr ""
 
-#: inc/oceanwp-theme-icons.php:551
+#: inc/oceanwp-theme-icons.php:806
 msgid "Please define an icon type."
 msgstr ""
 
