@@ -1,9 +1,10 @@
 # OceanWP Changelog
 
-### *2021.06.21.* - 2.1.1
+### *2021.06.23.* - 2.1.1
 * **Fixed** - Header: Full Screen style dropdown icon issue.
 * **Fixed** - PHP Deprecated: Required parameter $output follows optional parameter $depth in menu-walker.
 * **Added** - New icons added in theme icon array.
+* **Fixed** - Function 'oceanwp_title' has been renamed to 'oceanwp_has_page_title'.
 
 ### *2021.06.11.* - 2.1.0
 * **Added** - Check if icon class exist or not from theme icons.
