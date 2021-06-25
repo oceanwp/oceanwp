@@ -9,6 +9,10 @@ ul.page-numbers {
 
     li {
 	    display: inline-block;
+
+        .owp-icon {
+            vertical-align: inherit;
+        }
 	}
 }
 
@@ -37,6 +41,10 @@ ul.page-numbers {
     @include box-sizing( content-box );
 }
 
+.page-numbers a .owp-icon use {
+    stroke: $color-11;
+}
+
 .page-numbers a span:not(.elementor-screen-only) {
     padding: 0;
 }
@@ -48,6 +56,10 @@ ul.page-numbers {
 .page-links > span {
     background-color: $color-8;
     color: $color-2;
+}
+
+.page-numbers a:hover .owp-icon use {
+    stroke: $color-11;
 }
 
 .elementor-pagination .page-numbers.current,

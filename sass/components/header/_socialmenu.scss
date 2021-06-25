@@ -76,6 +76,10 @@
 		    &.oceanwp-email a:hover { color: #13aff0; }
 			&.oceanwp-tiktok a:hover { color: #000000 }
 			&.oceanwp-medium a:hover { color: #00ab6c; }
+			&.oceanwp-telegram a:hover { color: #0088cc }
+			&.oceanwp-twitch a:hover { color: #6441a5 }
+			&.oceanwp-line a:hover { color: #00c300 }
+			&.oceanwp-qq a:hover { color: #febf1b }
 	    }
 	}
 
@@ -144,6 +148,14 @@
 	    &.oceanwp-tiktok a:hover { background-color: #141414; }
 		&.oceanwp-medium a { background-color: #00ab6c; }
 	    &.oceanwp-medium a:hover { background-color: #03945f; }
+		&.oceanwp-telegram a { background-color: #0088cc; }
+	    &.oceanwp-telegram a:hover { background-color: #0da4f0; }
+		&.oceanwp-twitch a { background-color: #6441a5 }
+		&.oceanwp-twitch a:hover { background-color: #702cee }
+		&.oceanwp-line a { background-color: #00c300 }
+		&.oceanwp-line a:hover { background-color: #09f309 }
+		&.oceanwp-qq a { background-color: #febf1b }
+		&.oceanwp-qq a:hover { background-color: #db9f07 }
 	}
 
 	.minimal ul li {
@@ -187,8 +199,12 @@
 	    &.oceanwp-email a:hover { color: #13aff0; border-color: #13aff0; }
 	    &.oceanwp-tiktok a:hover { color: #000000; border-color: #000000; }
 	    &.oceanwp-medium a:hover { color: #00ab6c; border-color: #00ab6c; }
+	    &.oceanwp-telegram a:hover { color: #0088cc; border-color: #0088cc;}
+		&.oceanwp-twitch a:hover { color: #702cee; border-color: #702cee; }
+		&.oceanwp-line a:hover { color: #00c300; border-color: #00c300; }
+		&.oceanwp-qq a:hover { color: #febf1b; border-color: #febf1b; }
 	}
-	
+
 	.dark ul li a {
     	position: relative;
 	    display: inline-block;

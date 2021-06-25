@@ -4848,11 +4848,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Menu link color
 			if ( ! empty( $menu_link_color ) && '#555555' != $menu_link_color ) {
 				$css .= '#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close{color:'. $menu_link_color .';}';
+				$css .= '#site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use,#searchform-header-replace-close .owp-icon use{stroke:'. $menu_link_color .';}';
 			}
 
 			// Menu link color hover
 			if ( ! empty( $menu_link_color_hover ) && '#13aff0' != $menu_link_color_hover ) {
 				$css .= '#site-navigation-wrap .dropdown-menu > li > a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover{color:'. $menu_link_color_hover .';}';
+				$css .= '#site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use,#searchform-header-replace-close:hover .owp-icon use{stroke:'. $menu_link_color_hover .';}';
 			}
 
 			// Menu link active color
@@ -4898,11 +4900,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Dropdown menu link color
 			if ( ! empty( $dropdown_menu_link_color ) && '#333333' != $dropdown_menu_link_color ) {
 				$css .= '.dropdown-menu ul li a.menu-link{color:'. $dropdown_menu_link_color .';}';
+				$css .= '.dropdown-menu ul li a.menu-link .owp-icon use{stroke:'. $dropdown_menu_link_color .';}';
 			}
 
 			// Dropdown menu link hover color
 			if ( ! empty( $dropdown_menu_link_color_hover ) && '#555555' != $dropdown_menu_link_color_hover ) {
 				$css .= '.dropdown-menu ul li a.menu-link:hover{color:'. $dropdown_menu_link_color_hover .';}';
+				$css .= '.dropdown-menu ul li a.menu-link:hover .owp-icon use{stroke:'. $dropdown_menu_link_color_hover .';}';
 			}
 
 			// Dropdown menu link hover background color
@@ -4943,21 +4947,25 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Dropdown menu link active background color
 			if ( ! empty( $dropdown_category_date_color ) && '#bbbbbb' != $dropdown_category_date_color ) {
 				$css .= '.navigation li.mega-cat ul li .mega-post-date{color:'. $dropdown_category_date_color .';}';
+				$css .= '.navigation li.mega-cat ul li .mega-post-date .owp-icon use{stroke:'. $dropdown_category_date_color .';}';
 			}
 
 			// Add social menu font size
 			if ( ! empty( $menu_social_font_size ) ) {
 				$css .= '.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a{font-size:'. $menu_social_font_size .'px;}';
+				$css .= '.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon{width:'. $menu_social_font_size .'px; height:'. $menu_social_font_size .'px;}';
 			}
 
 			// Add social menu tablet font size
 			if ( ! empty( $menu_social_tablet_font_size ) ) {
 				$css .= '@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a{font-size:'. $menu_social_tablet_font_size .'px;}}';
+				$css .= '@media (max-width: 768px){.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon{width:'. $menu_social_tablet_font_size .'px; height:'. $menu_social_tablet_font_size .'px;}}';
 			}
 
 			// Add social menu mobile font size
 			if ( ! empty( $menu_social_mobile_font_size ) ) {
 				$css .= '@media (max-width: 480px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a{font-size:'. $menu_social_mobile_font_size .'px;}}';
+				$css .= '@media (max-width: 480px){.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon{width:'. $menu_social_mobile_font_size .'px; height:'. $menu_social_mobile_font_size .'px;}}';
 			}
 
 			// Social menu padding
@@ -5020,11 +5028,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Social menu links color
 			if ( ! empty( $menu_social_links_color ) ) {
 				$css .= '.oceanwp-social-menu.simple-social ul li a{color:'. $menu_social_links_color .';}';
+				$css .= '.oceanwp-social-menu.simple-social ul li a .owp-icon use{stroke:'. $menu_social_links_color .';}';
 			}
 
 			// social menu links hover color
 			if ( ! empty( $menu_social_hover_links_color ) ) {
 				$css .= '.oceanwp-social-menu.simple-social ul li a:hover{color:'. $menu_social_hover_links_color .'!important;}';
+				$css .= '.oceanwp-social-menu.simple-social ul li a:hover .owp-icon use{stroke:'. $menu_social_hover_links_color .'!important;}';
 			}
 
 			// Mobile menu breakpoint
@@ -5153,11 +5163,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Mobile menu search border color
 			if ( ! empty( $mobile_menu_sidr_search_button_color ) && '#555555' != $mobile_menu_sidr_search_button_color ) {
 				$css .= '.sidr-class-mobile-searchform button, #mobile-dropdown #mobile-menu-search form button{color:'. $mobile_menu_sidr_search_button_color .';}';
+				$css .= '.sidr-class-mobile-searchform button .owp-icon use, #mobile-dropdown #mobile-menu-search form button .owp-icon use{stroke:'. $mobile_menu_sidr_search_button_color .';}';
 			}
 
 			// Mobile menu search border color
 			if ( ! empty( $mobile_menu_sidr_search_button_hover_color ) && '#222222' != $mobile_menu_sidr_search_button_hover_color ) {
 				$css .= '.sidr-class-mobile-searchform button:hover, #mobile-dropdown #mobile-menu-search form button:hover{color:'. $mobile_menu_sidr_search_button_hover_color .';}';
+				$css .= '.sidr-class-mobile-searchform button:hover .owp-icon use, #mobile-dropdown #mobile-menu-search form button:hover .owp-icon use{stroke:'. $mobile_menu_sidr_search_button_hover_color .';}';
 			}
 				
 			// Return CSS

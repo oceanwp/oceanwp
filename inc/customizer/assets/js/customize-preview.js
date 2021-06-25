@@ -14,7 +14,8 @@
 			'all-devices',
 			'hide-tablet',
 			'hide-mobile',
-			'hide-tablet-mobile'
+			'hide-tablet-mobile',
+			'hide-all-devices'
 		],
 		menuPosition 		= [
 			'left-menu',
@@ -122,17 +123,6 @@
 				}
 			} );
 	    } );
-
-		api('ocean_scroll_top_arrow', function( value ) {
-			value.bind( function( newval ) {
-				var $arrow = $( '#scroll-top > span' );
-
-				if ( $arrow.length ) {
-					$arrow.removeClass();
-					$arrow.addClass( newval );
-				}
-			});
-		});
 
 		api('ocean_scroll_top_position', function( value ) {
 			value.bind( function( newval ) {
@@ -706,23 +696,17 @@
 		// Home item
 		api('ocean_breadcrumb_home_item', function( value ) {
 			value.bind( function( newval ) {
-				var $icon_item = $( '.site-breadcrumbs ul li .icon-home' ),
-					$home_item = $( '.site-breadcrumbs ul li .breadcrumb-home' );
+				var $icon_item = $( '.site-breadcrumbs ul li i, .site-breadcrumbs ol li i, .site-breadcrumbs ul li .owp-icon, .site-breadcrumbs ol li .owp-icon' ),
+					$home_item = $( '.site-breadcrumbs ul li .breadcrumb-home, .site-breadcrumbs ol li .breadcrumb-home' );
 
-				if ( 'icon' == newval
-					&& $icon_item.length ) {
-					$icon_item.removeClass();
-					$icon_item.addClass( 'icon-home' );
-					$home_item.removeClass();
-					$home_item.addClass( 'breadcrumb-home has-icon' );
+				if ( 'icon' == newval && $icon_item.length ) {
+					$icon_item.removeClass( 'icon-home has-text' );
+					$home_item.addClass( 'has-icon' );
 				}
 
-				if ( 'text' == newval
-					&& $home_item.length ) {
-					$home_item.removeClass();
-					$home_item.addClass( 'breadcrumb-home' );
-					$icon_item.removeClass();
+				if ( 'text' == newval ) {
 					$icon_item.addClass( 'icon-home has-text' );
+					$home_item.removeClass( 'has-icon' );
 				}
 			});
 		});
@@ -1257,7 +1241,7 @@
 				var $child = $(".customizer-breadcrumbs_seperator_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_breadcrumbs_seperator_color">.site-breadcrumbs ul li .breadcrumb-sep { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_breadcrumbs_seperator_color">.site-breadcrumbs ul li .breadcrumb-sep, .site-breadcrumbs ol li .breadcrumb-sep { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -1272,7 +1256,7 @@
 				var $child = $(".customizer-breadcrumbs_link_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_breadcrumbs_link_color">.site-breadcrumbs a, .background-image-page-header .site-breadcrumbs a { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_breadcrumbs_link_color">.site-breadcrumbs a, .background-image-page-header .site-breadcrumbs a { color: ' + to + '; } .site-breadcrumbs a .owp-icon use, .background-image-page-header .site-breadcrumbs a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -1287,7 +1271,7 @@
 				var $child = $(".customizer-breadcrumbs_link_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_breadcrumbs_link_color_hover">.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_breadcrumbs_link_color_hover">.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover { color: ' + to + '; } .site-breadcrumbs a:hover .owp-icon use, .background-image-page-header .site-breadcrumbs a:hover .owp-icon use { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -1422,7 +1406,7 @@
 				var $child = $(".customizer-ocean_scroll_top_icon_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_scroll_top_icon_size">#scroll-top { font-size: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_scroll_top_icon_size">#scroll-top { font-size: ' + to + 'px; } #scroll-top .owp-icon { width: ' + to + 'px; height: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -1452,7 +1436,7 @@
 				var $child = $(".customizer-ocean_scroll_top_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_scroll_top_color">#scroll-top { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_scroll_top_color">#scroll-top { color: ' + to + '; } #scroll-top .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -1467,7 +1451,7 @@
 				var $child = $(".customizer-ocean_scroll_top_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_scroll_top_color_hover">#scroll-top:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_scroll_top_color_hover">#scroll-top:hover { color: ' + to + '; } #scroll-top:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -1602,7 +1586,7 @@
 				var $child = $(".customizer-ocean_pagination_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_pagination_color">.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_pagination_color">.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span { color: ' + to + '; } .page-numbers a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -1617,7 +1601,7 @@
 				var $child = $(".customizer-ocean_pagination_hover_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_pagination_hover_color">.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_pagination_hover_color">.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover { color: ' + to + '; } .page-numbers a:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2158,7 +2142,7 @@
 				var $child = $(".customizer-ocean_links_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_links_color">a { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_links_color">a { color: ' + to + '; } a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -2173,7 +2157,7 @@
 				var $child = $(".customizer-ocean_links_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_links_color_hover">a:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_links_color_hover">a:hover { color: ' + to + '; } a:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3478,7 +3462,7 @@
 				var $child = $(".customizer-ocean_top_bar_social_links_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_top_bar_social_links_color">#top-bar-social li a { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_top_bar_social_links_color">#top-bar-social li a { color: ' + to + '; } #top-bar-social li a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3493,7 +3477,7 @@
 				var $child = $(".customizer-ocean_top_bar_social_hover_links_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_top_bar_social_hover_links_color">body #top-bar #top-bar-social li a:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_top_bar_social_hover_links_color">body #top-bar #top-bar-social li a:hover { color: ' + to + '; } body #top-bar #top-bar-social li a:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5178,7 +5162,7 @@
 				var $child = $(".customizer-ocean_menu_link_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_link_color">#site-navigation-wrap .dropdown-menu > li > a, .oceanwp-mobile-menu-icon a { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_menu_link_color">#site-navigation-wrap .dropdown-menu > li > a, .oceanwp-mobile-menu-icon a { color: ' + to + '; } #site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5193,7 +5177,7 @@
 				var $child = $(".customizer-ocean_menu_link_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_link_color_hover">#site-navigation-wrap .dropdown-menu > li > a:hover, .oceanwp-mobile-menu-icon a:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_menu_link_color_hover">#site-navigation-wrap .dropdown-menu > li > a:hover, .oceanwp-mobile-menu-icon a:hover { color: ' + to + '; } #site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5388,7 +5372,7 @@
 				var $child = $(".customizer-ocean_dropdown_menu_link_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_dropdown_menu_link_color">.dropdown-menu ul li a.menu-link { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_dropdown_menu_link_color">.dropdown-menu ul li a.menu-link { color: ' + to + '; } .dropdown-menu ul li a.menu-link .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5403,7 +5387,7 @@
 				var $child = $(".customizer-ocean_dropdown_menu_link_color_hover");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_dropdown_menu_link_color_hover">.dropdown-menu ul li a.menu-link:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_dropdown_menu_link_color_hover">.dropdown-menu ul li a.menu-link:hover { color: ' + to + '; } .dropdown-menu ul li a.menu-link:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5523,7 +5507,7 @@
 				var $child = $(".customizer-ocean_dropdown_category_date_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_dropdown_category_date_color">.navigation li.mega-cat ul li .mega-post-date { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_dropdown_category_date_color">.navigation li.mega-cat ul li .mega-post-date { color: ' + to + '; } .navigation li.mega-cat ul li .mega-post-date .owp-icon use{ stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5538,7 +5522,7 @@
 				var $child = $(".customizer-ocean_menu_social_font_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_social_font_size">.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a { font-size: ' + to + "px; }</style>";
+					var img = '<style class="customizer-ocean_menu_social_font_size">.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a { font-size: ' + to + 'px; } .oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon { width: ' + to + 'px; height: ' + to + "px; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5553,7 +5537,7 @@
 				var $child = $(".customizer-ocean_menu_social_tablet_font_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_social_tablet_font_size">@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_menu_social_tablet_font_size">@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + 'px; } .oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon { width: ' + to + 'px; height: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5568,7 +5552,7 @@
 				var $child = $(".customizer-ocean_menu_social_mobile_font_size");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_social_mobile_font_size">@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + "px; }}</style>";
+					var img = '<style class="customizer-ocean_menu_social_mobile_font_size">@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a { font-size: ' + to + 'px; } .oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon { width: ' + to + 'px; height: ' + to + "px; }}</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5868,7 +5852,7 @@
 				var $child = $(".customizer-ocean_menu_social_links_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_social_links_color">.oceanwp-social-menu.simple-social ul li a { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_menu_social_links_color">.oceanwp-social-menu.simple-social ul li a { color: ' + to + '; } .oceanwp-social-menu.simple-social ul li a .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5883,7 +5867,7 @@
 				var $child = $(".customizer-ocean_menu_social_hover_links_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_menu_social_hover_links_color">.oceanwp-social-menu.simple-social ul li a:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_menu_social_hover_links_color">.oceanwp-social-menu.simple-social ul li a:hover { color: ' + to + '; } .oceanwp-social-menu.simple-social ul li a:hover .owp-icon use { stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -6138,7 +6122,7 @@
 				var $child = $(".customizer-ocean_mobile_menu_sidr_search_button_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_mobile_menu_sidr_search_button_color">.sidr-class-mobile-searchform button, #mobile-dropdown #mobile-menu-search form button { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_mobile_menu_sidr_search_button_color">.sidr-class-mobile-searchform button, #mobile-dropdown #mobile-menu-search form button { color: ' + to + '; } .sidr-class-mobile-searchform button .owp-icon use, #mobile-dropdown #mobile-menu-search form button .owp-icon use{ stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -6153,7 +6137,7 @@
 				var $child = $(".customizer-ocean_mobile_menu_sidr_search_button_hover_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_mobile_menu_sidr_search_button_hover_color">.sidr-class-mobile-searchform button:hover, #mobile-dropdown #mobile-menu-search form button:hover { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_mobile_menu_sidr_search_button_hover_color">.sidr-class-mobile-searchform button:hover, #mobile-dropdown #mobile-menu-search form button:hover { color: ' + to + '; } .sidr-class-mobile-searchform button:hover .owp-icon use, #mobile-dropdown #mobile-menu-search form button:hover .owp-icon use{ stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -7046,7 +7030,7 @@
 				var $child = $(".customizer-ocean_theme_blog_posts_icons_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_blog_posts_icons_color">#blog-entries ul.meta li i{ color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_blog_posts_icons_color">#blog-entries ul.meta li i{ color: ' + to + '; } #blog-entries ul.meta li .owp-icon use{ stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -7061,7 +7045,7 @@
 				var $child = $(".customizer-ocean_theme_single_post_icons_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_theme_single_post_icons_color">.single-post ul.meta li i{ color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_theme_single_post_icons_color">.single-post ul.meta li i{ color: ' + to + '; } .single-post ul.meta li .owp-icon use{ stroke: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

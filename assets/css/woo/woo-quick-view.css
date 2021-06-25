@@ -34,6 +34,20 @@ Woo Quick View
   margin-top: -4px;
 }
 
+.woo-entry-image .owp-quick-view .owp-icon {
+  margin-right: 9px;
+  line-height: 1;
+  margin-top: -4px;
+}
+
+.woo-entry-image .owp-quick-view .owp-icon use {
+  stroke: #fff;
+}
+
+.woo-entry-image .owp-quick-view .owp-icon use:hover {
+  stroke: #fff;
+}
+
 .woocommerce .products .product-inner:hover .owp-quick-view {
   opacity: 1;
   visibility: visible;

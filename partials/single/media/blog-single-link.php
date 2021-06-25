@@ -15,9 +15,12 @@ if ( ! has_post_thumbnail() ) {
 	return;
 }
 
-// Get theme icons.
-$theme_icons = oceanwp_theme_icons();
-$icon_t = oceanwp_theme_icon_class();
+$icon_class = '';
+if ( 'svg' === oceanwp_theme_icon_class() ) {
+	$icon_class = 'link-post-svg-icon';
+} else {
+	$icon_class = '';
+}
 
 // Image args.
 $img_args = array(
@@ -48,9 +51,9 @@ $caption = get_the_post_thumbnail_caption();
 	}
 	?>
 
-	<div class="link-entry clr">
+	<div class="link-entry <?php echo esc_attr( $icon_class ); ?> clr">
 
-		<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'ocean_link_format', true ) ); ?>" target="_<?php echo esc_attr( get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ); ?>"><i class="<?php echo $theme_icons[ 'link' ][ $icon_t ]; ?>" aria-hidden="true"></i></a>
+		<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'ocean_link_format', true ) ); ?>" target="_<?php echo esc_attr( get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ); ?>"><?php oceanwp_icon( 'link' ); ?></a>
 
 	</div>
 

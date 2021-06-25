@@ -44,7 +44,6 @@ a, a:hover, a:focus {
 			outline: 2px solid transparent;
 			text-decoration: underline 1px dotted $link-hover-color;
 			text-decoration-skip-ink: none;
-			background: rgba(255, 255, 255, 0.9);
 			@include transition( all .3s ease );
 		}
 	}
@@ -139,6 +138,14 @@ pre {
 
 code {
 	color: #2080ad;
+}
+
+.wp-block-quote {
+	margin: 1.5em auto;
+	padding-left: 20px;
+	border-left-width: 3px;
+	border-style: solid;
+	border-left-color: $color-5;
 }
 
 blockquote {

@@ -1262,21 +1262,48 @@ if ( ! function_exists( 'oceanwp_header_retina_logo' ) ) {
 		$attr['srcset'] = '';
 
 		// Get logo
-		$custom_logo 	= oceanwp_header_logo_setting();
+		$custom_logo = oceanwp_header_logo_setting();
 
-		// Get retina logo
-		$retina_logo 	= oceanwp_header_retina_logo_setting();
+		if ( $custom_logo === $attachment->ID ) {
 
-		if ( $custom_logo && $retina_logo ) {
+				// Logo data
+				$logo_data = array(
+					'url'    	=> '',
+					'width'  	=> '',
+					'height' 	=> '',
+					'alt' 		=> '',
+				);
 
-			$cutom_logo_src = wp_get_attachment_image_src( $custom_logo , 'full' );
-			$cutom_logo_url = $cutom_logo_src[0];
+			if ( ! is_customize_preview() ) {
+				$logo_attachment_data = oceanwp_get_attachment_data_from_url( $logo_data['url'] );
 
-			$attr['srcset'] = $cutom_logo_url . ' 1x, ' . $retina_logo . ' 2x';
+				if ( isset( $logo_attachment_data[0] ) ) {
+					$attr['src'] = $logo_attachment_data[0];
+				}
+			}
 
-			// Remove the size attr
-			unset( $attr['sizes'] );
+			// Get file type.
+			$file_type = wp_check_filetype( $attr['src'] );
+			$file_ext  = $file_type['ext'];
 
+			if ( 'svg' === $file_ext ) {
+				$attr['width']  = '100%';
+				$attr['height'] = '100%';
+				$logo_has_classes = isset( $attr['class'] ) ? $attr['class'] : '';
+				$attr['class']    = $logo_has_classes . ' oceanwp-logo-svg';
+			}
+
+			// Get retina logo
+			$retina_logo = oceanwp_header_retina_logo_setting();
+
+			if ( $retina_logo ) {
+
+				$cutom_logo_src = wp_get_attachment_image_src( $custom_logo , 'full' );
+				$cutom_logo_url = $cutom_logo_src[0];
+
+				$attr['srcset'] = $cutom_logo_url . ' 1x, ' . $retina_logo . ' 2x';
+
+			}
 		}
 
 		// Return attr
@@ -1750,7 +1777,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 			|| 'vertical' == $header_style ) {
 			return $items;
 		}
-		
+
 		// Get correct search icon class
 		if ( 'drop_down' == $search_style ) {
 			$class = ' search-dropdown-toggle';
@@ -1762,7 +1789,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 			$class = '';
 		}
 
-		// Add search item to menu
+		// Add search item to menu.
 		$items .= '<li class="search-toggle-li" ' . apply_filters( 'oceanwp_attrs_nav_search_bar', '' ) . '>';
 			if ( 'full_screen' == $header_style ) {
 				$items .= '<form method="get" action="'. esc_url( home_url( '/' ) ) .'" class="header-searchform">';
@@ -1784,12 +1811,9 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 					}
 				$items .= '</form>';
 			} else {
-				// Get theme icons.
-				$theme_icons = oceanwp_theme_icons();
-				$icon_t = oceanwp_theme_icon_class();
 
 				$items .= '<a href="javascript:void(0)" class="site-search-toggle'. $class .'" aria-label="'. esc_attr( 'Search website', 'oceanwp' ) .'">';
-					$items .= '<span class="' . $theme_icons[ 'search' ][ $icon_t ] . '" aria-hidden="true"></span>';
+					$items .= oceanwp_icon( 'search', false );
 				$items .= '</a>';
 			}
 		$items .= '</li>';
@@ -1822,7 +1846,7 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 			return;
 		}
 
-		// Get correct search icon class
+		// Get correct search icon class.
 		if ( 'drop_down' == $search_style ) {
 			$class = ' search-dropdown-toggle';
 		} elseif ( 'header_replace' == $search_style ) {
@@ -1833,14 +1857,10 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 			$class = '';
 		}
 
-		// Get theme icons.
-		$theme_icons = oceanwp_theme_icons();
-		$icon_t = oceanwp_theme_icon_class();
-
 		// Add search item to menu.
 		echo '<div id="search-toggle">';
 			echo '<a href="javascript:void(0)" class="site-search-toggle'. esc_attr( $class ) .'" aria-label="'. esc_attr__( 'Search website', 'oceanwp' ) .'">';
-				echo '<span class="' . $theme_icons[ 'search' ][ $icon_t ] . '" aria-hidden="true"></span>';
+				oceanwp_icon( 'search' );
 			echo '</a>';
 		echo '</div>';
 
@@ -1947,8 +1967,10 @@ if ( ! function_exists( 'oceanwp_has_page_header' ) ) {
 		$return = true;
 		$style  = oceanwp_page_header_style();
 
-		// Check if page header style is set to hidden
-		if ( 'hidden' == $style || is_page_template( 'templates/landing.php' ) ) {
+		// Check if page header
+		if ( 'hide-all-devices' == get_theme_mod( 'ocean_page_header_visibility' )
+			|| 'hidden' == $style
+			|| is_page_template( 'templates/landing.php' ) ) {
 			$return = false;
 		}
 
@@ -2012,9 +2034,9 @@ if ( ! function_exists( 'oceanwp_page_header_style' ) ) {
  *
  * @since 1.0.0
  */
-if ( ! function_exists( 'oceanwp_title' ) ) {
+if ( ! function_exists( 'oceanwp_has_page_title' ) ) {
 
-	function oceanwp_title() {
+	function oceanwp_has_page_title() {
 
 		// Default title is null
 		$title = NULL;
@@ -3295,11 +3317,16 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 if ( ! function_exists( 'oceanwp_pagination') ) {
 
 	function oceanwp_pagination( $query = '', $echo = true ) {
-		
+
 		// Arrows with RTL support
-		$prev_arrow = is_rtl() ? 'fa fa-angle-right' : 'fa fa-angle-left';
-		$next_arrow = is_rtl() ? 'fa fa-angle-left' : 'fa fa-angle-right';
-		
+		if ( $echo ) {
+			$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
+			$next_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
+		} else {
+			$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_right' ) : oceanwp_icon( 'angle_left' );
+			$next_arrow = is_rtl() ? oceanwp_icon( 'angle_left' ) : oceanwp_icon( 'angle_right' );
+		}
+
 		// Get global $query
 		if ( ! $query ) {
 			global $wp_query;
@@ -3340,15 +3367,15 @@ if ( ! function_exists( 'oceanwp_pagination') ) {
 				'total'     => $total,
 				'mid_size'  => 3,
 				'type'      => 'list',
-				'prev_text' => '<span class="screen-reader-text">'. esc_attr__( 'Go to the previous page','oceanwp' ) .'</span><i class="'. $prev_arrow .'" aria-hidden="true"></i>',
-				'next_text' => '<span class="screen-reader-text">'. esc_attr__( 'Go to the next page','oceanwp' ) .'</span><i class="'. $next_arrow .'" aria-hidden="true"></i>',
+				'prev_text' => '<span class="screen-reader-text">'. esc_attr__( 'Go to the previous page','oceanwp' ) .'</span>'. $prev_arrow,
+				'next_text' => '<span class="screen-reader-text">'. esc_attr__( 'Go to the next page','oceanwp' ) .'</span>'. $next_arrow,
 			) );
 
 			// Output pagination
 			if ( $echo ) {
-				echo '<div class="oceanwp-pagination clr">'. wp_kses_post( paginate_links( $args ) ) .'</div>';
+				echo '<div class="oceanwp-pagination clr">'. paginate_links( $args ) .'</div>';
 			} else {
-				return '<div class="oceanwp-pagination clr">'. wp_kses_post( paginate_links( $args ) ) .'</div>';
+				return '<div class="oceanwp-pagination clr">'. paginate_links( $args ) .'</div>';
 			}
 		}
 	}
@@ -3915,87 +3942,103 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 			array(
 				'twitter' => array(
 					'label' => esc_html__( 'Twitter', 'oceanwp' ),
-					'icon_class' => 'fab fa-twitter',
+					'icon_class' => oceanwp_icon( 'twitter', false ),
 				),
 				'facebook' => array(
 					'label' => esc_html__( 'Facebook', 'oceanwp' ),
-					'icon_class' => 'fab fa-facebook',
+					'icon_class' => oceanwp_icon( 'facebook', false ),
 				),
 				'pinterest'  => array(
 					'label' => esc_html__( 'Pinterest', 'oceanwp' ),
-					'icon_class' => 'fab fa-pinterest-p',
+					'icon_class' => oceanwp_icon( 'pinterest', false ),
 				),
 				'dribbble' => array(
 					'label' => esc_html__( 'Dribbble', 'oceanwp' ),
-					'icon_class' => 'fab fa-dribbble',
+					'icon_class' => oceanwp_icon( 'dribbble', false ),
 				),
 				'vk' => array(
 					'label' => esc_html__( 'VK', 'oceanwp' ),
-					'icon_class' => 'fab fa-vk',
+					'icon_class' => oceanwp_icon( 'vk', false ),
 				),
 				'instagram'  => array(
 					'label' => esc_html__( 'Instagram', 'oceanwp' ),
-					'icon_class' => 'fab fa-instagram',
+					'icon_class' => oceanwp_icon( 'instagram', false ),
 				),
 				'linkedin' => array(
 					'label' => esc_html__( 'LinkedIn', 'oceanwp' ),
-					'icon_class' => 'fab fa-linkedin',
+					'icon_class' => oceanwp_icon( 'linkedin', false ),
 				),
 				'tumblr'  => array(
 					'label' => esc_html__( 'Tumblr', 'oceanwp' ),
-					'icon_class' => 'fab fa-tumblr',
+					'icon_class' => oceanwp_icon( 'tumblr', false ),
 				),
 				'github'  => array(
 					'label' => esc_html__( 'Github', 'oceanwp' ),
-					'icon_class' => 'fab fa-github-alt',
+					'icon_class' => oceanwp_icon( 'github', false ),
 				),
 				'flickr'  => array(
 					'label' => esc_html__( 'Flickr', 'oceanwp' ),
-					'icon_class' => 'fab fa-flickr',
+					'icon_class' => oceanwp_icon( 'flickr', false ),
 				),
 				'skype' => array(
 					'label' => esc_html__( 'Skype', 'oceanwp' ),
-					'icon_class' => 'fab fa-skype',
+					'icon_class' => oceanwp_icon( 'skype', false ),
 				),
 				'youtube' => array(
 					'label' => esc_html__( 'Youtube', 'oceanwp' ),
-					'icon_class' => 'fab fa-youtube',
+					'icon_class' => oceanwp_icon( 'youtube', false ),
 				),
 				'vimeo' => array(
 					'label' => esc_html__( 'Vimeo', 'oceanwp' ),
-					'icon_class' => 'fab fa-vimeo-square',
+					'icon_class' => oceanwp_icon( 'vimeo', false ),
 				),
 				'vine' => array(
 					'label' => esc_html__( 'Vine', 'oceanwp' ),
-					'icon_class' => 'fab fa-vine',
+					'icon_class' => oceanwp_icon( 'vine', false ),
 				),
 				'xing' => array(
 					'label' => esc_html__( 'Xing', 'oceanwp' ),
-					'icon_class' => 'fab fa-xing',
+					'icon_class' => oceanwp_icon( 'xing', false ),
 				),
 				'yelp' => array(
 					'label' => esc_html__( 'Yelp', 'oceanwp' ),
-					'icon_class' => 'fab fa-yelp',
+					'icon_class' => oceanwp_icon( 'yelp', false ),
 				),
 				'tripadvisor' => array(
 					'label' => esc_html__( 'Tripadvisor', 'oceanwp' ),
-					'icon_class' => 'fab fa-tripadvisor',
+					'icon_class' => oceanwp_icon( 'tripadvisor', false ),
 				),
 				'rss'  => array(
 					'label' => esc_html__( 'RSS', 'oceanwp' ),
-					'icon_class' => 'fa fa-rss',
+					'icon_class' => oceanwp_icon( 'rss', false ),
 				),
 				'email' => array(
 					'label' => esc_html__( 'Email', 'oceanwp' ),
-					'icon_class' => 'fa fa-envelope',
+					'icon_class' => oceanwp_icon( 'envelope', false ),
 				),
 				'tiktok' => array(
 					'label' => esc_html__( 'TikTok', 'oceanwp' ),
-					'icon_class' => 'fab fa-tiktok'
+					'icon_class' => oceanwp_icon( 'tiktok', false ),
 				),
 				'medium' => array(
 					'label' => esc_html__( 'Medium', 'oceanwp' ),
-					'icon_class' => 'fab fa-medium-m'
+					'icon_class' => oceanwp_icon( 'medium', false ),
+				),
+				'telegram' => array(
+					'label' => esc_html__( 'Telegram', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'telegram', false ),
+				),
+				'twitch' => array(
+					'label' => esc_html__( 'Twitch', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'twitch', false ),
+				),
+				'line' => array(
+					'label' => esc_html__( 'Line', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'line', false ),
+				),
+				'qq' => array(
+					'label' => esc_html__( 'QQ', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'qq', false ),
 				)
 			)
 		);
@@ -4058,7 +4101,7 @@ if ( ! function_exists( 'oceanwp_minify_css' ) ) {
 
 		// Return minified CSS
 		return $css;
-		
+
 	}
 
 }
@@ -4068,9 +4111,9 @@ if ( ! function_exists( 'oceanwp_minify_css' ) ) {
  *
  * @since 1.0.0
  */
-if ( ! function_exists( 'oceanwp_get_awesome_icons' ) ) {
+if ( ! function_exists( 'oceanwp_get_scrolltotop_icons' ) ) {
 
-	function oceanwp_get_awesome_icons( $return = 'up_arrows', $default = 'none' ) {
+	function oceanwp_get_scrolltotop_icons( $return = 'up_arrows', $default = 'none' ) {
 
 		// Add none to top of array
 		$icons_array = array(
@@ -4082,11 +4125,11 @@ if ( ! function_exists( 'oceanwp_get_awesome_icons' ) ) {
 
 		// Returns up arrows only
 		if ( 'up_arrows' == $return ) {
-			$return_icons = array('fa fa-chevron-up','fa fa-caret-up','fa fa-angle-up','fa fa-angle-double-up','fa fa-long-arrow-alt-up','fa fa-arrow-alt-circle-up','fa fa-arrow-up','fa fa-level-up-alt','fa fa-caret-square-up');
+			$return_icons = array('chevron_up','caret_up','angle_up','double_arrows_up','long_arrow_alt_up','arrow_alt_circle_up','arrow_up','level_up_alt','caret_square_up');
 			$return_icons = array_combine($return_icons, $return_icons);
 		}
 
-		return apply_filters( 'ocean_get_awesome_icons', array_merge( $icons_array, $return_icons ) );
+		return apply_filters( 'oceanwp_get_scrolltotop_icons', array_merge( $icons_array, $return_icons ) );
 
 	}
 
@@ -4099,14 +4142,14 @@ if ( ! function_exists( 'oceanwp_get_awesome_icons' ) ) {
  */
 if ( ! function_exists( 'oceanwp_get_cart_icons' ) ) {
 
-	function oceanwp_get_cart_icons( $default = 'icon-handbag' ) {
+	function oceanwp_get_cart_icons( $default = 'icon_handbag' ) {
 
 		// Returns icons
-		$return_icons = array( 'icon-basket', 'icon-handbag', 'fas fa-shopping-basket', 'fas fa-shopping-bag', 'fas fa-shopping-cart' );
+		$return_icons = array( 'icon_basket', 'icon_handbag', 'shopping_basket', 'shopping_bag', 'shopping_cart' );
 		$return_icons = array_combine( $return_icons, $return_icons );
-		
+
 		return apply_filters( 'ocean_get_cart_icons', array_merge( $return_icons ) );
-		
+
 	}
 
 }

@@ -436,14 +436,13 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'ocean_edd_menu_icon',
 				array(
-					'transport'         => 'postMessage',
-					'default'           => 'icon-handbag',
-					'sanitize_callback' => 'wp_filter_nohtml_kses',
+					'default'           => 'icon_handbag',
+					'sanitize_callback' => 'sanitize_text_field',
 				)
 			);
 
 			$wp_customize->add_control(
-				new OceanWP_Customizer_Icon_Select_Control(
+				new OceanWP_Customizer_Icon_Select_Multi_Control(
 					$wp_customize,
 					'ocean_edd_menu_icon',
 					array(
@@ -451,6 +450,7 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 						'section'         => 'ocean_edd_menu_cart',
 						'settings'        => 'ocean_edd_menu_icon',
 						'priority'        => 10,
+						'type'            => 'select',
 						'choices'         => oceanwp_get_cart_icons(),
 						'active_callback' => 'oceanwp_cac_hasnt_edd_bag_style',
 					)
@@ -3173,16 +3173,19 @@ if ( ! class_exists( 'OceanWP_EDD_Customizer' ) ) :
 			// Menu cart icon size.
 			if ( ! empty( $menu_icon_size ) ) {
 				$css .= '.eddmenucart i{font-size:' . $menu_icon_size . 'px;}';
+				$css .= '.eddmenucart .owp-icon{width:' . $menu_icon_size . 'px; height:' . $menu_icon_size . 'px;}';
 			}
 
 			// Menu cart icon size tablet.
 			if ( ! empty( $menu_icon_size_tablet ) ) {
 				$css .= '@media (max-width: 768px){.oceanwp-mobile-menu-icon a.eddmenucart{font-size:' . $menu_icon_size_tablet . 'px;}}';
+				$css .= '@media (max-width: 768px){.oceanwp-mobile-menu-icon a.eddmenucart .owp-icon{width:' . $menu_icon_size_tablet . 'px; height:' . $menu_icon_size_tablet . 'px;}}';
 			}
 
 			// Menu cart icon size mobile.
 			if ( ! empty( $menu_icon_size_mobile ) ) {
 				$css .= '@media (max-width: 480px){.oceanwp-mobile-menu-icon a.eddmenucart{font-size:' . $menu_icon_size_mobile . 'px;}}';
+				$css .= '@media (max-width: 480px){.oceanwp-mobile-menu-icon a.eddmenucart .owp-icon{width:' . $menu_icon_size_mobile . 'px; height:' . $menu_icon_size_mobile . 'px;}}';
 			}
 
 			// Menu cart icon center vertically.

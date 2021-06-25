@@ -100,8 +100,8 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 		}
 
 		// Get cart icon
-		$icon = get_theme_mod( 'ocean_edd_menu_icon', 'icon-handbag' );
-		$icon = $icon ? $icon : 'icon-handbag';
+		$icon = get_theme_mod( 'ocean_edd_menu_icon', 'icon_handbag' );
+		$icon = $icon ? $icon : 'icon_handbag';
 
 		// If has custom cart icon
 		$custom_icon = get_theme_mod( 'ocean_edd_menu_custom_icon' );
@@ -109,8 +109,13 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 			$icon = $custom_icon;
 		}
 
+		if ( '' != $custom_icon ) {
+			$cart_icon = '<i class="'. esc_attr( $icon ) .'"></i>';
+		} else {
+			$cart_icon = oceanwp_icon( $icon, false );
+		}
+
 		// Cart Icon
-		$cart_icon = '<i class="'. esc_attr( $icon ) .'"></i>';
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
 		// If bag style
@@ -129,7 +134,7 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 		<?php } else { ?>
 
 			<a href="<?php echo esc_url( $url ); ?>" class="simple-style eddmenucart">
-				<span class="eddmenucart-container"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
+				<span class="eddmenucart-container"><?php echo $cart_icon; ?><?php echo wp_kses_post( $cart_extra ); ?></span>
 			</a>
 
 		<?php

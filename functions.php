@@ -172,6 +172,7 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'helpers.php';
 		require_once $dir . 'header-content.php';
 		require_once $dir . 'oceanwp-strings.php';
+		require_once $dir . 'oceanwp-svg.php';
 		require_once $dir . 'oceanwp-theme-icons.php';
 		require_once $dir . 'customizer/controls/typography/webfonts.php';
 		require_once $dir . 'walker/init.php';

@@ -67,6 +67,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 				// Define accents
 				add_filter( 'ocean_primary_texts', array( $this, 'primary_texts' ) );
+				add_filter( 'ocean_primary_svg_icons', array( $this, 'primary_svg_icons' ) );
 				add_filter( 'ocean_primary_borders', array( $this, 'primary_borders' ) );
 				add_filter( 'ocean_primary_backgrounds', array( $this, 'primary_backgrounds' ) );
 				add_filter( 'ocean_hover_primary_backgrounds', array( $this, 'hover_primary_backgrounds' ) );
@@ -800,6 +801,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Grouped product button text in the quick view
 			$array['grouped_text'] = esc_attr__( 'View products', 'oceanwp' );
 
+			$array['multistep_checkout_error'] = __( 'Some required fields are empty. Please fill the required fields to go to the next step.' );
+
 			return $array;
 
 		}
@@ -934,11 +937,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$text = oceanwp_tm_translation( 'ocean_woo_off_canvas_filter_text', $text );
 			$text = $text ? $text: esc_html__( 'Filter', 'oceanwp' );
 
-			// Get theme icons.
-			$theme_icons = oceanwp_theme_icons();
-			$icon_t = oceanwp_theme_icon_class();
-
-			$output = '<a href="#" class="oceanwp-off-canvas-filter"><i class="' . $theme_icons[ 'menu' ][ $icon_t ] . '" aria-hidden="true"></i><span class="off-canvas-filter-text">'. esc_html( $text ) .'</span></a>';
+			$output = '<a href="#" class="oceanwp-off-canvas-filter">' . oceanwp_icon( 'menu', false ) . '<span class="off-canvas-filter-text">'. esc_html( $text ) .'</span></a>';
 
 			echo apply_filters( 'oceanwp_off_canvas_filter_button_output', $output );
 		}
@@ -969,13 +968,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$list = '';
 			}
 
-			// Get theme icons.
-			$theme_icons = oceanwp_theme_icons();
-			$icon_t = oceanwp_theme_icon_class();
+			$grid_view_icon = oceanwp_icon( 'grid', false );
+			$list_view_icon = oceanwp_icon( 'list', false );
 
-			$output = sprintf( '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="%1$s" class="%2$sgrid-btn"><span class="' . $theme_icons[ 'grid' ][ $icon_t ] . '" aria-hidden="true"></span></a><a href="#" id="oceanwp-list" title="%3$s" class="%4$slist-btn"><span class="' . $theme_icons[ 'list' ][ $icon_t ] . '" aria-hidden="true"></span></a></nav>', esc_html( $grid_view ), esc_attr( $grid ), esc_html( $list_view ), esc_attr( $list ) );
+			$output = '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="' . esc_html( $grid_view ) . '" class="' . esc_attr( $grid ) . ' grid-btn">' . $grid_view_icon . '</a><a href="#" id="oceanwp-list" title="' . esc_html( $list_view ) . '" class="' . esc_attr( $list ) . ' list-btn">' . $list_view_icon . '</a></nav>';
 
-			echo wp_kses_post( apply_filters( 'oceanwp_grid_list_buttons_output', $output ) );
+			echo apply_filters( 'oceanwp_grid_list_buttons_output', $output );
 		}
 
 		/**
@@ -1171,11 +1169,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function quick_view_button() {
 			global $product;
 
-			// Get theme icons.
-			$theme_icons = oceanwp_theme_icons();
-			$icon_t = oceanwp_theme_icon_class();
-
-			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '"><i class="' . $theme_icons[ 'eye' ][ $icon_t ] . '" aria-hidden="true"></i>' . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false, 'oceanwp' ) . '</a>';
+			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '">' . oceanwp_icon( 'eye', false) . " " . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false, 'oceanwp' ) . '</a>';
 
 			echo apply_filters( 'ocean_woo_quick_view_button_html', $button ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
@@ -1259,11 +1253,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				<ul class="owp-product-nav">
 			        <?php
 					if ( is_a( $prev_post , 'WP_Post' ) ) {
-						$next_arrow = is_rtl() ? 'fa fa-angle-right' : 'fa fa-angle-left';
+						$next_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
 						?>
 
 						<li class="prev-li">
-						<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="<?php echo $next_arrow; ?>" aria-hidden="true"></i></a>
+						<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><?php echo $next_arrow; ?></a>
 							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', 'oceanwp' ); ?></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
@@ -1274,12 +1268,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					} 
 
 			        if ( is_a( $next_post , 'WP_Post' ) ) {
-						$prev_arrow = is_rtl() ? 'fa fa-angle-left' : 'fa fa-angle-right';
+						$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
 						?>
 
 						<li class="next-li">
 							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product', 'oceanwp' ); ?></a>
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="<?php echo $prev_arrow; ?>" aria-hidden="true"></i></a>
+							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><?php echo $prev_arrow; ?></i></a>
 							<div class="owp-nav-thumb">
 								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 							</div>
@@ -1579,12 +1573,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function pagination_args( $args ) {
 
 			// Nav icons.
-			$p_arrow = is_rtl() ? 'fa fa-angle-right' : 'fa fa-angle-left';
-			$n_arrow = is_rtl() ? 'fa fa-angle-left' : 'fa fa-angle-right';
+			$p_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
+			$n_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
 
 			// Args.
-			$args['prev_text'] = '<i class="' . $p_arrow . '" aria-hidden="true"></i>';
-			$args['next_text'] = '<i class="' . $n_arrow . '" aria-hidden="true"></i>';
+			$args['prev_text'] = $p_arrow;
+			$args['next_text'] = $n_arrow;
+
 			return $args;
 		}
 
@@ -1744,6 +1739,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				'.widget_layered_nav li a:hover ~ .count',
 				'.woocommerce ul.products li.product:not(.product-category) .woo-entry-buttons li a:hover',
 			), $texts );
+		}
+
+		/**
+		 * Adds color accents for SVG icons.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function primary_svg_icons( $svg_icons ) {
+			return array_merge( array(
+				'.woocommerce .oceanwp-grid-list a.active .owp-icon use',
+				'.woocommerce .oceanwp-grid-list a:hover .owp-icon use',
+			), $svg_icons );
 		}
 
 		/**
@@ -1926,7 +1933,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$wishlist_url = YITH_WCWL()->get_last_operation_url();
 				$woo_wl_count = ocean_woo_wishlist_count();
 
-				$items .= '<a href="' . esc_url( $wishlist_url ) . '"><i class="far fa-heart"><span class="count">' . esc_html( $woo_wl_count ) . '</i></span></a>';
+				$items .= '<a href="' . esc_url( $wishlist_url ) . '">' . oceanwp_icon( 'heart', false ) . '<span class="count">' . esc_html( $woo_wl_count ) . '</i></span></a>';
 			}
 
 			$items .= '</li>';

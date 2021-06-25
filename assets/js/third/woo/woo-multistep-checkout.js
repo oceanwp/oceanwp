@@ -69,9 +69,21 @@ function oceanwpWooMultiStepCheckout() {
 
         timeline.find( '.active' ).removeClass( 'active' );
 
-                if ( action == 'next' ) {
+            if ( action == 'next' ) {
 
-                var inputField   = $j( '#customer_billing_details p.validate-required input, #customer_billing_details p.validate-required select' );
+                var billingField  = $j( '.woocommerce-billing-fields p.validate-required input, .woocommerce-billing-fields p.validate-required select' ),
+                    createAccount = checkout_form.find( '.woocommerce-account-fields p.create-account input' );
+
+                if ( createAccount.is( ":checked" ) == true ) {
+                    var reqAccntDetails = $j( '.woocommerce-account-fields p#account_password_field input, .woocommerce-account-fields p#account_username_field input' );
+                } else {
+                    var reqAccntDetails = '';
+                }
+
+
+                var inputField = $j.merge( billingField, reqAccntDetails );
+
+                console.log(inputField);
 
                 inputField.filter(function() {
 
@@ -100,13 +112,28 @@ function oceanwpWooMultiStepCheckout() {
 
                     $j( checkout_form ).find( '.ocean-multistep-error-notice' ).remove();
 
+                } else if ( current_step == 0 && is_logged_in == false ) {
+
+                    form_actions.data( 'step', next_step );
+
+                    steps[current_step].fadeOut( 120, function() {
+                        steps[next_step].fadeIn( 120 );
+                    } );
+
+                    $j( '#timeline-' + next_step ).toggleClass( 'active' );
+
+                    $j( checkout_form ).find( '.ocean-multistep-error-notice' ).remove();
+
                 } else {
 
                     $j(window).scrollTop( $j( '#content-wrap' ).offset().top );
 
-                    $j( checkout_form ).prepend( '<div class="ocean-multistep-error-notice"><ul class="woocommerce-error" role="alert"></ul></div>' );
-                    $j( '.ocean-multistep-error-notice' ).html( '<ul class="woocommerce-error" role="alert">' );
-                    $j( '.woocommerce-error' ).prepend( '<li >' + oceanwpLocalize.multistep_checkout_error + '</li>' );
+
+                    if ( 0 === $j( checkout_form ).find( '.ocean-multistep-error-notice' ).length ) {
+                        $j( checkout_form ).prepend( '<div class="ocean-multistep-error-notice"><ul class="woocommerce-error" role="alert"></ul></div>' );
+                        $j( '.ocean-multistep-error-notice' ).html( '<ul class="woocommerce-error" role="alert">' );
+                        $j( '.woocommerce-error' ).prepend( '<li >' + oceanwpLocalize.multistep_checkout_error + '</li>' );
+                    }
 
                     $j( '#timeline-' + current_step ).addClass( 'active' );
                 }
@@ -118,6 +145,8 @@ function oceanwpWooMultiStepCheckout() {
                 } );
 
                 $j( '#timeline-' + prev_step ).toggleClass( 'active' );
+
+                $j( checkout_form ).find( '.ocean-multistep-error-notice' ).remove();
             }
 
             current_step = form_actions.data( 'step' );

@@ -176,6 +176,10 @@ Woo Hover Style
   animation: loader 450ms infinite linear;
 }
 
+.woocommerce ul.products li.product:not(.product-category) .woo-entry-buttons li .owp-icon {
+  vertical-align: inherit;
+}
+
 .woocommerce ul.products li.product:not(.product-category) .product-inner:hover .woo-entry-buttons li {
   opacity: 1;
   -webkit-transform: translatex(0);
