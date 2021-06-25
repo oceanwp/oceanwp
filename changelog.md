@@ -1,9 +1,23 @@
 # OceanWP Changelog
 
-### *2021.06.08.* - 2.0.9
+### *2021.06.25.* - 2.1.2
+* **Added** - Mobile search icon.
+
+### *2021.06.23.* - 2.1.1
+* **Fixed** - Header: Full Screen style dropdown icon issue.
+* **Fixed** - PHP Deprecated: Required parameter $output follows optional parameter $depth in menu-walker.
+* **Added** - New icons added in theme icon array.
+* **Fixed** - Function 'oceanwp_title' has been renamed to 'oceanwp_has_page_title'.
+
+### *2021.06.11.* - 2.1.0
+* **Added** - Check if icon class exist or not from theme icons.
+* **Tweak** - Default Theme Icon settings set to "Simple Line Icons" to prevent issues on websites that did not store any theme icons settings in the past.
+* **Tweak** - Ocean SVG Icons disabled by default. In order to use the new icons, enable them via Customize > General Options > Theme Icons
+* **Fixed** - Icons that require manual selection get deselect on Theme icons change
+
+### *2021.06.09.* - 2.0.9
 * **Added** - OceanWP SVG icons - will be set as default icons on all new installations. Perform icons switch via Customize > General Options > Theme Icons.
 * **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.
-* **Added** - New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon]
 * **Added** - New customizer control to support SVG Icons.
 * **Added** - Enable support for SVG logo type.
 * **Added** - Social option: Telegram, Twitch, Line, QQ
@@ -12,6 +26,8 @@
 * **Fixed** - WooCommerce: Number of products displayed between 768px and 959px screen widths.
 * **Fixed** - WooCommerce: Long Variation Names Overflowing #328
 * **Fixed** - WooCommerce: Fixed fatal error on product page #327
+* **Fixed** - Replaced slick-slide class with swiper-slide.
+* **Fixed** - Gutenberg: layout issue with block alignfull and alignwide.
 
 ### *2021.04.26.* - 2.0.8
 * **Fixed** - Page title displayed with old setting.

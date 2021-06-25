@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function ocean_get_svg_icon() {
 
-	if ( true === get_theme_mod( 'ocean_disable_svg_icons', false ) ) {
+	if ( true === get_theme_mod( 'ocean_disable_svg_icons', true ) || 'svg' !== oceanwp_theme_icon_class() ) {
 		return;
 	}
 
@@ -45,18 +45,13 @@ add_action( 'wp_footer', 'ocean_get_svg_icon' );
  */
 function ocean_svg_icon( $args = array(), $location = true ) {
 
-	if ( true === get_theme_mod( 'ocean_disable_svg_icons', false ) ) {
+	if ( true === get_theme_mod( 'ocean_disable_svg_icons', true ) || 'svg' !== oceanwp_theme_icon_class() ) {
 		return;
 	}
 
 	// Make sure $args are an array.
 	if ( empty( $args ) ) {
 		return __( 'Please define default parameters in the form of an array.', 'oceanwp' );
-	}
-
-	// Define an icon.
-	if ( false === array_key_exists( 'icon', $args ) ) {
-		return __( 'Please define an SVG icon filename.', 'oceanwp' );
 	}
 
 	// Set defaults.
@@ -73,6 +68,11 @@ function ocean_svg_icon( $args = array(), $location = true ) {
 	$args = wp_parse_args( $args, $defaults );
 
 	if ( empty( $args['icon'] ) || 'none' === $args['icon'] ) {
+		return;
+	}
+
+	// Define an icon.
+	if ( false === array_key_exists( $args['icon'], oceanwp_theme_icons() ) ) {
 		return;
 	}
 
@@ -213,31 +213,3 @@ function ocean_svg( $icon, $echo = true, $class = '', $title = '', $desc = '', $
 		return $owp_icon;
 	}
 }
-
-/**
- * SVG icon shortcode
- *
- * @param array $atts    An associative array of attributes.
- * @param obj   $content The enclosed content.
- */
-function ocean_svg_icon_shortcode( $atts, $content = null ) {
-
-	// Extract attributes.
-	$attr = shortcode_atts(
-		array(
-			'icon'        => 'Add an icon class',
-			'class'       => '',
-			'title'       => '',
-			'desc'        => '',
-			'area_hidden' => true,
-			'fallback'    => false,
-		),
-		$atts
-	);
-
-	$owp_icon = ocean_svg( $attr['icon'], false, $attr['class'], $attr['title'], $attr['desc'], $attr['area_hidden'], $attr['fallback'] );
-
-	return $owp_icon;
-
-}
-add_shortcode( 'oceanwp_icon', 'ocean_svg_icon_shortcode' );

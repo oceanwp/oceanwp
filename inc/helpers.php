@@ -2059,9 +2059,9 @@ if ( ! function_exists( 'oceanwp_page_header_style' ) ) {
  *
  * @since 1.0.0
  */
-if ( ! function_exists( 'oceanwp_title' ) ) {
+if ( ! function_exists( 'oceanwp_has_page_title' ) ) {
 
-	function oceanwp_title() {
+	function oceanwp_has_page_title() {
 
 		// Default title is null
 		$title = NULL;
