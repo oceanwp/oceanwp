@@ -5659,7 +5659,8 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 /*------------------------------------*
 	$SEARCH ICON
 *------------------------------------*/
-#searchform-dropdown {
+#searchform-dropdown,
+#icon-searchform-dropdown {
   position: absolute;
   right: 0;
   background-color: #fff;
@@ -5676,23 +5677,30 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   z-index: 10000;
 }
 
-#searchform-dropdown input {
+#searchform-dropdown input,
+#icon-searchform-dropdown input {
   display: block;
   background-color: transparent;
   border-radius: 0;
   margin: 0;
 }
 
-.no-top-border #searchform-dropdown {
+.no-top-border #searchform-dropdown,
+.no-top-border #icon-searchform-dropdown {
   border: none;
 }
 
 /* display search on click */
-#searchform-dropdown.show {
+#searchform-dropdown.show,
+#icon-searchform-dropdown.show {
   visibility: visible;
   -moz-opacity: 1;
   -webkit-opacity: 1;
   opacity: 1;
+}
+
+#icon-searchform-dropdown {
+  width: 100%;
 }
 
 #site-header.header-replace #site-navigation .dropdown-menu {
@@ -5762,7 +5770,8 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   opacity: 1;
 }
 
-#searchform-overlay {
+#searchform-overlay,
+#icon-searchform-overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -5773,13 +5782,15 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   z-index: 9999;
 }
 
-#searchform-overlay .container {
+#searchform-overlay .container,
+#icon-searchform-overlay .container {
   position: relative;
-  max-width: 550px;
+  width: 100%;
   height: 100%;
 }
 
-#searchform-overlay a.search-overlay-close {
+#searchform-overlay a.search-overlay-close,
+#icon-searchform-overlay a.search-overlay-close {
   position: absolute;
   top: -50px;
   left: 50%;
@@ -5791,18 +5802,22 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   border-radius: 2px;
 }
 
-#searchform-overlay a.search-overlay-close:hover {
+#searchform-overlay a.search-overlay-close:hover,
+#icon-searchform-overlay a.search-overlay-close:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-#searchform-overlay a.search-overlay-close span {
+#searchform-overlay a.search-overlay-close span,
+#icon-searchform-overlay a.search-overlay-close span {
   position: relative;
   display: inline-block;
   width: 24px;
   height: 24px;
 }
 
-#searchform-overlay a.search-overlay-close span:before, #searchform-overlay a.search-overlay-close span:after {
+#searchform-overlay a.search-overlay-close span:before, #searchform-overlay a.search-overlay-close span:after,
+#icon-searchform-overlay a.search-overlay-close span:before,
+#icon-searchform-overlay a.search-overlay-close span:after {
   content: '';
   position: absolute;
   top: 50%;
@@ -5814,17 +5829,20 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   border-radius: 5px;
 }
 
-#searchform-overlay a.search-overlay-close span:before {
+#searchform-overlay a.search-overlay-close span:before,
+#icon-searchform-overlay a.search-overlay-close span:before {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-#searchform-overlay a.search-overlay-close span:after {
+#searchform-overlay a.search-overlay-close span:after,
+#icon-searchform-overlay a.search-overlay-close span:after {
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
-#searchform-overlay form {
+#searchform-overlay form,
+#icon-searchform-overlay form {
   position: absolute;
   top: 50%;
   left: 0;
@@ -5833,7 +5851,9 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   text-align: center;
 }
 
-#searchform-overlay form input, #searchform-overlay form label {
+#searchform-overlay form input, #searchform-overlay form label,
+#icon-searchform-overlay form input,
+#icon-searchform-overlay form label {
   font-size: 22px;
   line-height: 1.3;
   padding: 18px 0;
@@ -5845,7 +5865,8 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   text-align: center;
 }
 
-#searchform-overlay form input {
+#searchform-overlay form input,
+#icon-searchform-overlay form input {
   position: relative;
   border: 0;
   background-color: transparent;
@@ -5854,15 +5875,18 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   transition: border-color 0.3s ease;
 }
 
-#searchform-overlay form input:hover {
+#searchform-overlay form input:hover,
+#icon-searchform-overlay form input:hover {
   border-color: #777;
 }
 
-#searchform-overlay form input:focus {
+#searchform-overlay form input:focus,
+#icon-searchform-overlay form input:focus {
   border-color: #fff;
 }
 
-#searchform-overlay form label {
+#searchform-overlay form label,
+#icon-searchform-overlay form label {
   display: block;
   position: absolute;
   top: 0;
@@ -5876,7 +5900,8 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   z-index: 1;
 }
 
-#searchform-overlay form label i {
+#searchform-overlay form label i,
+#icon-searchform-overlay form label i {
   display: inline-block;
   background-color: #fff;
   width: 3px;
@@ -5885,19 +5910,35 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   animation: blink 1s linear infinite;
 }
 
-#searchform-overlay form label i + i {
+#searchform-overlay form label i + i,
+#icon-searchform-overlay form label i + i {
   animation-delay: 0.2s;
 }
 
-#searchform-overlay form label i + i + i {
+#searchform-overlay form label i + i + i,
+#icon-searchform-overlay form label i + i + i {
   animation-delay: 0.4s;
 }
 
-#searchform-overlay form.search-filled label {
+#searchform-overlay form.search-filled label,
+#icon-searchform-overlay form.search-filled label {
   -moz-opacity: 0;
   -webkit-opacity: 0;
   opacity: 0;
   transition-duration: 150ms;
+}
+
+#searchform-overlay .container {
+  max-width: 550px;
+}
+
+#icon-searchform-overlay form label,
+#icon-searchform-overlay form input {
+  font-size: 16px;
+}
+
+#icon-searchform-overlay .search-overlay-close {
+  line-height: inherit;
 }
 
 /*------------------------------------*
@@ -9297,7 +9338,8 @@ a.sidr-class-toggle-sidr-close .owp-icon {
         transform: translateX(-50%);
   }
   body.default-breakpoint .oceanwp-mobile-menu-icon {
-    display: block;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
   }
   body.default-breakpoint #top-bar.has-no-content #top-bar-social {
     text-align: center;

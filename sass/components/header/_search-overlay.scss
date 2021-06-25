@@ -1,4 +1,5 @@
-#searchform-overlay {
+#searchform-overlay,
+#icon-searchform-overlay {
 	display: none;
     position: fixed;
     top: 0;
@@ -10,7 +11,7 @@
 
     .container {
     	position: relative;
-    	max-width: 550px;
+		width: 100%;
     	height: 100%;
     }
 
@@ -131,14 +132,33 @@
     }
 }
 
+#searchform-overlay {
+	.container {
+    	max-width: 550px;
+    }
+}
+
+#icon-searchform-overlay {
+
+	form {
+		label,
+		input {
+			font-size: 16px;
+		}
+	}
+	.search-overlay-close {
+		line-height: inherit;
+	}
+}
+
 /*------------------------------------*
 	All Devices under 960px
 *------------------------------------*/
 @media only screen and (max-width: 959px) {
-			
+
 	/* header > search overlay */
 	#searchform-overlay {
 		display: none !important;
 	}
-	
+
 }

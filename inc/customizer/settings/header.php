@@ -3750,6 +3750,40 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Mobile Menu Search Icon
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_search_icon', array(
+				'sanitize_callback' 	=> 'wp_kses',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_mobile_menu_search_icon', array(
+				'label'    				=> esc_html__( 'Mobile Menu Search Icon', 'oceanwp' ),
+				'section'  				=> 'ocean_header_mobile_menu',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Search Icon Style
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_search_style', array(
+				'default'           	=> 'drop_down',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_search_style', array(
+				'label'	   				=> esc_html__( 'Search Icon Style', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_search_style',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'disabled' 			=> esc_html__( 'Disabled','oceanwp' ),
+					'drop_down' 		=> esc_html__( 'Drop Down','oceanwp' ),
+					'overlay' 			=> esc_html__( 'Overlay','oceanwp' ),
+				),
+			) ) );
+
+			/**
 			 * Mobile Menu Styling
 			 */
 			$wp_customize->add_setting( 'ocean_mobile_menu_styling_heading', array(
@@ -4768,62 +4802,62 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Search dropdown input background
 			if ( ! empty( $search_dropdown_input_bg ) ) {
-				$css .= '#searchform-dropdown input{background-color:'. $search_dropdown_input_bg .';}';
+				$css .= '#searchform-dropdown input, #icon-searchform-dropdown input{background-color:'. $search_dropdown_input_bg .';}';
 			}
 
 			// Search dropdown input color
 			if ( ! empty( $search_dropdown_input_color ) && '#333333' != $search_dropdown_input_color ) {
-				$css .= '#searchform-dropdown input{color:'. $search_dropdown_input_color .';}';
+				$css .= '#searchform-dropdown input, #icon-searchform-dropdown input{color:'. $search_dropdown_input_color .';}';
 			}
 
 			// Search dropdown input border color
 			if ( ! empty( $search_dropdown_input_border ) && '#dddddd' != $search_dropdown_input_border ) {
-				$css .= '#searchform-dropdown input{border-color:'. $search_dropdown_input_border .';}';
+				$css .= '#searchform-dropdown input, #icon-searchform-dropdown input{border-color:'. $search_dropdown_input_border .';}';
 			}
 
 			// Search dropdown input border color focus
 			if ( ! empty( $search_dropdown_input_border_focus ) && '#bbbbbb' != $search_dropdown_input_border_focus ) {
-				$css .= '#searchform-dropdown input:focus{border-color:'. $search_dropdown_input_border_focus .';}';
+				$css .= '#searchform-dropdown input:focus, #icon-searchform-dropdown input:focus{border-color:'. $search_dropdown_input_border_focus .';}';
 			}
 
 			// Search overlay background color
 			if ( ! empty( $search_overlay_bg ) && 'rgba(0,0,0,0.9)' != $search_overlay_bg ) {
-				$css .= '#searchform-overlay{background-color:'. $search_overlay_bg .';}';
+				$css .= '#searchform-overlay, #icon-searchform-overlay{background-color:'. $search_overlay_bg .';}';
 			}
 
 			// Search overlay input color
 			if ( ! empty( $search_overlay_input_color ) && '#ffffff' != $search_overlay_input_color ) {
-				$css .= '#searchform-overlay form input, #searchform-overlay form label{color:'. $search_overlay_input_color .';}';
+				$css .= '#searchform-overlay form input, #searchform-overlay form label, #icon-searchform-overlay form input, #icon-searchform-overlay form label{color:'. $search_overlay_input_color .';}';
 			}
 
 			// Search overlay input placeholder color
 			if ( ! empty( $search_overlay_placeholder_color ) && '#ffffff' != $search_overlay_placeholder_color ) {
-				$css .= '#searchform-overlay form label{color:'. $search_overlay_placeholder_color .';}';
+				$css .= '#searchform-overlay form label, #icon-searchform-overlay form label{color:'. $search_overlay_placeholder_color .';}';
 			}
 
 			// Search overlay input dashed background
 			if ( ! empty( $search_overlay_input_dashed_bg ) && '#ffffff' != $search_overlay_input_dashed_bg ) {
-				$css .= '#searchform-overlay form label i{background-color:'. $search_overlay_input_dashed_bg .';}';
+				$css .= '#searchform-overlay form label i, #icon-searchform-overlay form label i{background-color:'. $search_overlay_input_dashed_bg .';}';
 			}
 
 			// Search overlay input border color
 			if ( ! empty( $search_overlay_input_border ) && '#444444' != $search_overlay_input_border ) {
-				$css .= '#searchform-overlay form input{border-color:'. $search_overlay_input_border .';}';
+				$css .= '#searchform-overlay form input, #icon-searchform-overlay form input{border-color:'. $search_overlay_input_border .';}';
 			}
 
 			// Search overlay input border color hover
 			if ( ! empty( $search_overlay_input_border_hover ) && '#777777' != $search_overlay_input_border_hover ) {
-				$css .= '#searchform-overlay form input:hover{border-color:'. $search_overlay_input_border_hover .';}';
+				$css .= '#searchform-overlay form input:hover, #icon-searchform-overlay form input:hover{border-color:'. $search_overlay_input_border_hover .';}';
 			}
 
 			// Search overlay input border color focus
 			if ( ! empty( $search_overlay_input_border_focus ) && '#ffffff' != $search_overlay_input_border_focus ) {
-				$css .= '#searchform-overlay form input:focus{border-color:'. $search_overlay_input_border_focus .';}';
+				$css .= '#searchform-overlay form input:focus, #icon-searchform-overlay form input:focus{border-color:'. $search_overlay_input_border_focus .';}';
 			}
 
 			// Search overlay close button color
 			if ( ! empty( $search_overlay_close_button_color ) && '#ffffff' != $search_overlay_close_button_color ) {
-				$css .= '#searchform-overlay a.search-overlay-close span::before, #searchform-overlay a.search-overlay-close span::after{background-color:'. $search_overlay_close_button_color .';}';
+				$css .= '#searchform-overlay a.search-overlay-close span::before, #searchform-overlay a.search-overlay-close span::after, #icon-searchform-overlay a.search-overlay-close span::before, #icon-searchform-overlay a.search-overlay-close span::after{background-color:'. $search_overlay_close_button_color .';}';
 			}
 
 			// Links effect blue color

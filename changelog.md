@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### *2021.06.25.* - 2.1.2
+* **Added** - Mobile search icon.
+
 ### *2021.06.23.* - 2.1.1
 * **Fixed** - Header: Full Screen style dropdown icon issue.
 * **Fixed** - PHP Deprecated: Required parameter $output follows optional parameter $depth in menu-walker.
@@ -18,6 +21,7 @@
 * **Added** - New customizer control to support SVG Icons.
 * **Added** - Enable support for SVG logo type.
 * **Added** - Social option: Telegram, Twitch, Line, QQ
+* **Added** - Mobile menu search icon
 * **Fixed** - WooCommerce: Multistep checkout issue upon using the Create Account option on.
 * **Fixed** - WooCommerce: Number of products displayed between 768px and 959px screen widths.
 * **Fixed** - WooCommerce: Long Variation Names Overflowing #328
