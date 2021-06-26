@@ -116,7 +116,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'small-arrow-down',
 			),
 			'angle_left' => array(
-				'sili' => 'icon-arrow-left',
+				'sili' => 'fa fa-angle-left',
 				'fai'  => 'fa fa-angle-left',
 				'svg'  => 'small-arrow-left',
 			),
@@ -296,7 +296,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'android',
 			),
 			'behance' => array(
-				'sili' => 'icon-social-behance',
+				'sili' => 'fab fa-behance',
 				'fai'  => 'fab fa-behance',
 				'svg'  => 'behance',
 			),
@@ -351,7 +351,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'snapchat',
 			),
 			'soundcloud' => array(
-				'sili' => 'icon-social-soundcloud',
+				'sili' => 'fab fa-soundcloud',
 				'fai'  => 'fab fa-soundcloud',
 				'svg'  => 'soundcloud',
 			),
@@ -471,7 +471,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'arrow-down',
 			),
 			'arrow_left' => array(
-				'sili' => 'icon-arrow-left',
+				'sili' => 'fas fa-arrow-left',
 				'fai'  => 'fas fa-arrow-left',
 				'svg'  => 'arrow-left',
 			),
@@ -501,7 +501,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'level-down-alt',
 			),
 
-			// Cart icon.
+			// Cart icons.
 			'icon_basket'     => array(
 				'sili' => 'icon-basket',
 				'fai'  => 'icon-basket',

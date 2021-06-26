@@ -3757,7 +3757,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) );
 
 			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_mobile_menu_search_icon', array(
-				'label'    				=> esc_html__( 'Mobile Menu Search Icon', 'oceanwp' ),
+				'label'    				=> esc_html__( 'Mobile Header Search Icon', 'oceanwp' ),
 				'section'  				=> 'ocean_header_mobile_menu',
 				'priority' 				=> 10,
 			) ) );
@@ -3766,7 +3766,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			 * Search Icon Style
 			 */
 			$wp_customize->add_setting( 'ocean_mobile_menu_search_style', array(
-				'default'           	=> 'drop_down',
+				'default'           	=> 'disabled',
 				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
 			) );
 

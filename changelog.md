@@ -1,13 +1,17 @@
 # OceanWP Changelog
 
-### *2021.06.25.* - 2.1.2
-* **Added** - Mobile search icon.
+### *2021.06.30.* - 2.1.2
+* **Added** - Mobile Header: search icon, default state disabled.
+* **Added** - Single Blog Post: 'ocean_single_modified_date_state' filter. Disable display of modifided date if the same as the published date. Default state false.
+* **Added** - WooCommerce: 'ocean_floating_bar_h_tag' filter. Change Floating Bar heading tag. Default value h2.
+* **Improved** - Accessibility: Mobile search form.
+* **Fixed** - Previous arrow icon class.
 
 ### *2021.06.23.* - 2.1.1
+* **Added** - New icons added in theme icon array.
+* **Tweak** - Function 'oceanwp_title' has been renamed to 'oceanwp_has_page_title'.
 * **Fixed** - Header: Full Screen style dropdown icon issue.
 * **Fixed** - PHP Deprecated: Required parameter $output follows optional parameter $depth in menu-walker.
-* **Added** - New icons added in theme icon array.
-* **Fixed** - Function 'oceanwp_title' has been renamed to 'oceanwp_has_page_title'.
 
 ### *2021.06.11.* - 2.1.0
 * **Added** - Check if icon class exist or not from theme icons.
@@ -21,7 +25,6 @@
 * **Added** - New customizer control to support SVG Icons.
 * **Added** - Enable support for SVG logo type.
 * **Added** - Social option: Telegram, Twitch, Line, QQ
-* **Added** - Mobile menu search icon
 * **Fixed** - WooCommerce: Multistep checkout issue upon using the Create Account option on.
 * **Fixed** - WooCommerce: Number of products displayed between 768px and 959px screen widths.
 * **Fixed** - WooCommerce: Long Variation Names Overflowing #328

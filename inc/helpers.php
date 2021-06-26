@@ -4726,6 +4726,10 @@ function owp_parse_attr( $context, $attributes = array(), $args = array() ) {
 
 /**
  * Search Icon
+ * 
+ * Adds a search icon into the mobile header.
+ * 
+ * @since 2.1.2
  */
 function oceanwp_mobile_search_icon() {
 
@@ -4737,7 +4741,7 @@ function oceanwp_mobile_search_icon() {
 		return;
 	}
 
-	// Get correct search icon class
+	// Get correct search icon class.
 	if ( 'drop_down' == $search_style ) {
 		$class = 'dropdown';
 	} elseif ( 'overlay' == $search_style ) {
@@ -4748,15 +4752,17 @@ function oceanwp_mobile_search_icon() {
 
 	?>
 
-	<a href="#" class="search-icon-<?php echo esc_attr( $class ); ?>"><?php oceanwp_icon( 'search' ); ?></a>
+	<a href="#" class="search-icon-<?php echo esc_attr( $class ); ?>" aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-search', 'oceanwp' ); ?>"><?php oceanwp_icon( 'search' ); ?></a>
 
 	<?php
 }
 
 /**
- * Search form
+ * Mobile Search Form
+ * 
+ * @since 2.1.2
  */
-function oceanwp_mobile_search_form_htlm() {
+function oceanwp_mobile_search_form_html() {
 
 	$class        = '';
 	$search_style = oceanwp_mobile_menu_search_style();
@@ -4778,44 +4784,56 @@ function oceanwp_mobile_search_form_htlm() {
 		$class = '';
 	}
 
-	?>
+	if ( 'drop_down' === $search_style ) {
+		$mobile_search_content = '';
+		ob_start();
+		?>
+		<form role="search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-mobile-search' ); ?></span>
+			<input type="text" class="field" name="s" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>">
+			<?php
+			if ( 'any' !== $post_type ) { ?>
+				<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
+			<?php
+			} ?>
+		</form>
+	<?php
+		$mobile_search_content .= ob_get_clean();
+	}
 
-	<div id="icon-searchform-<?php echo esc_attr( $class ); ?>" class="search-style-<?php echo esc_attr( $class ); ?>">
-		<?php
-		if ( 'drop_down' === $search_style ) { ?>
-			<form method="get" class="oew-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<input type="text" class="field" name="s" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>">
+	else if ( 'overlay' === $search_style ) {
+		$mobile_search_content = '';
+		ob_start();
+		?>
+		<div class="container clr">
+			<form role="search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<a href="#" class="search-overlay-close"><span></span></a>
+				<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-mobile-search' ); ?></span>
+				<input class="mobile-search-overlay-input" type="search" name="s" autocomplete="off" value="">
 				<?php
 				if ( 'any' !== $post_type ) { ?>
 					<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 				<?php
 				} ?>
+				<label><?php oceanwp_theme_strings( 'owp-string-search-overlay-search-text' ); ?><span aria-hidden="true"><i></i><i></i><i></i></span></label>
 			</form>
-		<?php
-		}
+		</div>
+	<?php
+		$mobile_search_content .= ob_get_clean();
+	}
+	?>
 
-		else if ( 'overlay' === $search_style ) { ?>
-			<div class="container clr">
-				<form method="get" class="oew-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<a href="#" class="search-overlay-close"><span></span></a>
-					<input class="oew-search-overlay-input" type="search" name="s" autocomplete="off" value="">
-					<?php
-					if ( 'any' !== $post_type ) { ?>
-						<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
-					<?php
-					} ?>
-					<label><?php oceanwp_theme_strings( 'owp-string-search-overlay-search-text', 'oceanwp' ); ?><span><i></i><i></i><i></i></span></label>
-				</form>
-			</div>
-		<?php
-		} ?>
+	<div id="icon-searchform-<?php echo esc_attr( $class ); ?>" class="search-style-<?php echo esc_attr( $class ); ?>">
+		<?php echo $mobile_search_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	</div>
 
 	<?php
 }
 
 /**
- * Display search icon
+ * Display Mobile Search Icon in Header
+ * 
+ * @since 2.1.2
  */
 function mobile_menu_search_icon() {
 
@@ -4827,7 +4845,7 @@ function mobile_menu_search_icon() {
 	}
 
 	add_action( 'ocean_after_mobile_icon', 'oceanwp_mobile_search_icon' );
-	add_action( 'ocean_mobile_menu_icon_after', 'oceanwp_mobile_search_form_htlm' );
+	add_action( 'ocean_mobile_menu_icon_after', 'oceanwp_mobile_search_form_html' );
 
 }
 add_action( 'wp', 'mobile_menu_search_icon' );

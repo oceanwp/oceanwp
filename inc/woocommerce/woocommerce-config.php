@@ -1246,44 +1246,49 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			$next_post = get_next_post( true, '', 'product_cat' );
 			$prev_post = get_previous_post( true, '', 'product_cat' );
+			$ocean_next_prev_prod_content = '';
+
+			if ( is_a( $prev_post , 'WP_Post' ) ) {
+				$next_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
+				ob_start();
+				?>
+
+				<li class="prev-li">
+				<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><?php echo $next_arrow; ?></a>
+					<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', 'oceanwp' ); ?></a>
+					<div class="owp-nav-thumb">
+						<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
+					</div>
+				</li>
+
+			<?php
+				$ocean_next_prev_prod_content .= ob_get_clean();
+			} 
+
+			if ( is_a( $next_post , 'WP_Post' ) ) {
+				$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
+				ob_start();
+				?>
+
+				<li class="next-li">
+					<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product', 'oceanwp' ); ?></a>
+					<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><?php echo $prev_arrow; ?></i></a>
+					<div class="owp-nav-thumb">
+						<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
+					</div>
+				</li>
+
+			<?php
+				$ocean_next_prev_prod_content .= ob_get_clean();
+			}
 
 			?>
 
 			<div class="owp-product-nav-wrap clr">
 				<ul class="owp-product-nav">
-			        <?php
-					if ( is_a( $prev_post , 'WP_Post' ) ) {
-						$next_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
-						?>
-
-						<li class="prev-li">
-						<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><?php echo $next_arrow; ?></a>
-							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', 'oceanwp' ); ?></a>
-							<div class="owp-nav-thumb">
-								<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
-							</div>
-						</li>
-
-					<?php
-					} 
-
-			        if ( is_a( $next_post , 'WP_Post' ) ) {
-						$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
-						?>
-
-						<li class="next-li">
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product', 'oceanwp' ); ?></a>
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><?php echo $prev_arrow; ?></i></a>
-							<div class="owp-nav-thumb">
-								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
-							</div>
-						</li>
-
-					<?php
-					}
-					?>	
-		        </ul>
-		    </div>
+					 <?php echo $ocean_next_prev_prod_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</ul>
+			</div>
 
 		<?php
 		}
@@ -1310,13 +1315,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$fb_show_cond = '';
 			$fb_show_cond = ( is_user_logged_in() && $fb_woo_cond === true );
 
+			// Floating Bar Heading tag.
+			$fb_h_tag = 'h2';
+			$fb_h_tag = apply_filters( 'ocean_floating_bar_h_tag', $fb_h_tag );
+
 			?>
 
 			<div class="owp-floating-bar">
 				<div class="container clr">
 					<div class="left">
 				        <p class="selected"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-selected', 'oceanwp' ); ?></p>
-				        <h2 class="entry-title" itemprop="name"><?php echo wp_trim_words( $product->get_title(), '4' ); ?></h2>
+				        <<?php echo esc_attr( $fb_h_tag ); ?> class="entry-title" itemprop="name"><?php echo wp_trim_words( $product->get_title(), '4' ); ?></<?php echo esc_attr( $fb_h_tag ); ?>>
 				    </div>
 					<?php
 					if ( false === $fb_woo_cond || $fb_show_cond ) {

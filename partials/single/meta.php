@@ -27,6 +27,11 @@ if ( 'quote' === get_post_format() ) {
 // Get meta separator class.
 $sp_meta_sep_class = oceanwp_theme_single_post_separator();
 
+// Don't display modified date if the same as the published date.
+$ocean_date_onoff = false;
+$ocean_date_onoff = apply_filters( 'ocean_single_modified_date_state', $ocean_date_onoff );
+$display_mod_date = ( false === $ocean_date_onoff || ( true === $ocean_date_onoff && ( get_the_date() != get_the_modified_date() ) ) ) ? true : false;
+
 do_action( 'ocean_before_single_post_meta' );
 ?>
 
@@ -45,7 +50,7 @@ do_action( 'ocean_before_single_post_meta' );
 			<li class="meta-date"<?php oceanwp_schema_markup( 'publish_date' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post published:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'date' ); ?><?php echo get_the_date(); ?></li>
 		<?php } ?>
 
-		<?php if ( 'mod-date' === $section ) { ?>
+		<?php if ( 'mod-date' === $section && true === $display_mod_date ) { ?>
 			<li class="meta-mod-date"<?php oceanwp_schema_markup( 'modified_date' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post last modified:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'm_date' ); ?><?php echo esc_html( get_the_modified_date() ); ?></li>
 		<?php } ?>
 
