@@ -499,7 +499,6 @@ final class OCEANWP_Theme_Class {
 		// Vendors.
 		wp_enqueue_script( 'isotop', $dir . 'vendors/isotope.pkgd.min.js', array(), $theme_version, true );
 		wp_enqueue_script( 'flickity', $dir . 'vendors/flickity.pkgd.min.js', array(), $theme_version, true );
-		wp_enqueue_script( 'flickity-imagesloaded', $dir . 'vendors/flickity-imagesloaded.js', array(), $theme_version, true );
 		wp_enqueue_script( 'photoswipe', $dir . 'vendors/photoswipe.min.js', array(), $theme_version, true );
 		wp_enqueue_script( 'photoswipe-ui-default', $dir . 'vendors/photoswipe-ui-default.min.js', array(), $theme_version, true );
 		wp_enqueue_script( 'sidr', $dir . 'vendors/sidr.js', array(), $theme_version, true );

@@ -17,7 +17,7 @@ class Carousel {
                 rightToLeft: DOM.body.classList.contains("rtl") ? true : false,
             });
 
-            const imgs = carousel.querySelectorAll(".carousel-cell img");
+            const imgs = element.querySelectorAll(".carousel-cell img");
             // get transform property
             const docStyle = document.documentElement.style;
             const transformProp = typeof docStyle.transform == "string" ? "transform" : "WebkitTransform";
