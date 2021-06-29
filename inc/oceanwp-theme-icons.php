@@ -286,8 +286,8 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'windows',
 			),
 			'zoom' => array(
-				'sili' => 'zoom',
-				'fai'  => 'zoom',
+				'sili' => 'fas fa-video',
+				'fai'  => 'fas fa-video',
 				'svg'  => 'zoom',
 			),
 			'android' => array(
@@ -341,8 +341,8 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'svg'  => 'reddit',
 			),
 			'shazam' => array(
-				'sili' => 'shazam',
-				'fai'  => 'shazam',
+				'sili' => 'fas fa-music',
+				'fai'  => 'fas fa-music',
 				'svg'  => 'shazam',
 			),
 			'snapchat' => array(

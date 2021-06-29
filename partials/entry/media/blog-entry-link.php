@@ -106,7 +106,15 @@ $caption = get_the_post_thumbnail_caption();
 
 	<div class="link-entry <?php echo esc_attr( $icon_class ); ?> clr">
 
-		<a href="<?php echo esc_url( get_post_meta( get_the_ID(), 'ocean_link_format', true ) ); ?>" target="_<?php echo esc_attr( get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ); ?>"><?php oceanwp_icon( 'link' ); ?></a>
+		<a aria-label="<?php oceanwp_theme_strings( 'owp-string-link-post-format' ); ?>" href="<?php echo esc_url( get_post_meta( get_the_ID(), 'ocean_link_format', true ) ); ?>" target="_<?php echo esc_attr( get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ); ?>"><?php oceanwp_icon( 'link' ); ?>
+		<?php
+		if ( 'blank' === get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ) {
+			?>
+			<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-new-tab-alert' ); ?></span>
+		<?php
+		}
+		?>
+		</a>
 
 	</div>
 

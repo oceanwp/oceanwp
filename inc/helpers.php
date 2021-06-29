@@ -4766,6 +4766,7 @@ function oceanwp_mobile_search_form_html() {
 
 	$class        = '';
 	$search_style = oceanwp_mobile_menu_search_style();
+	$search_style = $search_style ? $search_style : 'disabled';
 	$header_style = oceanwp_header_style();
 	$post_type    = get_theme_mod( 'ocean_menu_search_source', 'any' );
 
@@ -4789,8 +4790,8 @@ function oceanwp_mobile_search_form_html() {
 		ob_start();
 		?>
 		<form role="search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-mobile-search' ); ?></span>
-			<input type="text" class="field" name="s" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>">
+		<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
+			<input aria-label="<?php oceanwp_theme_strings( 'owp-string-search-field' ); ?>" type="text" class="field" name="s" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>">
 			<?php
 			if ( 'any' !== $post_type ) { ?>
 				<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
@@ -4807,9 +4808,9 @@ function oceanwp_mobile_search_form_html() {
 		?>
 		<div class="container clr">
 			<form role="search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<a href="#" class="search-overlay-close"><span></span></a>
-				<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-mobile-search' ); ?></span>
-				<input class="mobile-search-overlay-input" type="search" name="s" autocomplete="off" value="">
+				<a href="#" class="search-overlay-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-close-search-form' ); ?>"><span></span></a>
+				<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
+				<input aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-submit-search' ); ?>" class="mobile-search-overlay-input" type="search" name="s" autocomplete="off" value="">
 				<?php
 				if ( 'any' !== $post_type ) { ?>
 					<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
@@ -4838,6 +4839,7 @@ function oceanwp_mobile_search_form_html() {
 function mobile_menu_search_icon() {
 
 	$search_style = oceanwp_mobile_menu_search_style();
+	$search_style = $search_style ? $search_style : 'disabled';
 	$header_style = oceanwp_header_style();
 
 	if ( 'disabled' === $search_style || 'vertical' === $header_style ) {

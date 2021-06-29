@@ -4,8 +4,12 @@
 * **Added** - Mobile Header: search icon, default state disabled.
 * **Added** - Single Blog Post: 'ocean_single_modified_date_state' filter. Disable display of modifided date if the same as the published date. Default state false.
 * **Added** - WooCommerce: 'ocean_floating_bar_h_tag' filter. Change Floating Bar heading tag. Default value h2.
-* **Improved** - Accessibility: Mobile search form.
-* **Fixed** - Previous arrow icon class.
+* **Improved** - Accessibility: Mobile menu search form.
+* **Improved** - Accessibility: Scroll to top.
+* **Improved** - Accessibility: Header Replace search form style.
+* **Improved** - Accessibility: Header Overlay search form style.
+* **Improved** - Accessibility: Link Post Format, both entry and single.
+* **Fixed** - Previous item navigation arrow icon class.
 
 ### *2021.06.23.* - 2.1.1
 * **Added** - New icons added in theme icon array.

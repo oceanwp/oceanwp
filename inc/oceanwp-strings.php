@@ -65,6 +65,12 @@ if ( ! function_exists( 'oceanwp_theme_strings' ) ) {
 				'owp-string-close-mobile-menu'           => apply_filters( 'ocean_wai_close_mobile_menu', __( 'Close mobile menu', 'oceanwp' ) ),
 				'owp-string-mobile-search'               => apply_filters( 'ocean_wai_mobile_search', __( 'Search for:', 'oceanwp' ) ),
 				'owp-string-mobile-submit-search'        => apply_filters( 'ocean_wai_mobile_search_submit', __( 'Submit search', 'oceanwp' ) ),
+				'owp-string-search-field'                => apply_filters( 'ocean_wai_search_field', __( 'Insert search query', 'oceanwp' ) ),
+				'owp-string-search-form-label'           => apply_filters( 'ocean_wai_search_form_label', __( 'Search this website', 'oceanwp' ) ),
+				'owp-string-close-search-form'           => apply_filters( 'ocean_wai_close_search_form', __( 'Close this search form', 'oceanwp' ) ),
+				'owp-string-scroll-top'                  => apply_filters( 'ocean_wai_scroll_top', __( 'Scroll to the top of the page', 'oceanwp' ) ),
+				'owp-string-link-post-format'            => apply_filters( 'ocean_wai_link_post_format', __( 'Visit this link', 'oceanwp' ) ),
+				'owp-string-new-tab-alert'               => apply_filters( 'ocean_wai_new_tab_alert', __( 'Opens in a new tab', 'oceanwp' ) ),
 
 			)
 		);
