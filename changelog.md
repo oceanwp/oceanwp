@@ -10,6 +10,7 @@
 * **Improved** - Accessibility: Header Overlay search form style.
 * **Improved** - Accessibility: Link Post Format, both entry and single.
 * **Improved** - Accessibility: Blog Entry titles.
+* **Improved** - Accessibility: Single Blog Post: Related Posts title.
 * **Fixed** - Previous item navigation arrow icon class.
 
 ### *2021.06.23.* - 2.1.1
