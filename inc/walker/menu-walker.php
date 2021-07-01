@@ -307,15 +307,15 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 								if ( has_post_thumbnail() ) {
 
-									// Image args
+									// Image args.
 									$img_args = array(
-									    'alt' => get_the_title(),
+									    'alt' => oceanwp_theme_strings( 'owp-string-read-more-article', false ) . ' ' . get_the_title(),
 									);
 									if ( oceanwp_get_schema_markup( 'image' ) ) {
 										$img_args['itemprop'] = 'image';
 									}
 
-									$output .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="mega-post-link">';
+									$output .= '<a href="'. get_permalink() .'" class="mega-post-link">';
 
 										$output .= get_the_post_thumbnail( get_the_ID(), 'medium', $img_args );
 

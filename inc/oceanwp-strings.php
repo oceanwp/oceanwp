@@ -51,6 +51,7 @@ if ( ! function_exists( 'oceanwp_theme_strings' ) ) {
 				'owp-string-single-next-post'            => apply_filters( 'ocean_single_next_post', __( 'Next Post', 'oceanwp' ) ),
 				'owp-string-single-prev-post'            => apply_filters( 'ocean_single_prev_post', __( 'Previous Post', 'oceanwp' ) ),
 				'owp-string-single-screen-reader-rm'     => apply_filters( 'ocean_single_screen_reader_rm', __( 'Read more articles', 'oceanwp' ) ),
+				'owp-string-author-page'                 => apply_filters( 'ocean_author_page', __( 'Visit author page', 'oceanwp' ) ),
 
 				// Woocommerce.
 				'owp-string-woo-quick-view-text'         => apply_filters( 'ocean_woo_quick_view_text', __( 'Quick View', 'oceanwp' ) ),
@@ -71,6 +72,10 @@ if ( ! function_exists( 'oceanwp_theme_strings' ) ) {
 				'owp-string-scroll-top'                  => apply_filters( 'ocean_wai_scroll_top', __( 'Scroll to the top of the page', 'oceanwp' ) ),
 				'owp-string-link-post-format'            => apply_filters( 'ocean_wai_link_post_format', __( 'Visit this link', 'oceanwp' ) ),
 				'owp-string-new-tab-alert'               => apply_filters( 'ocean_wai_new_tab_alert', __( 'Opens in a new tab', 'oceanwp' ) ),
+				'owp-string-read-more'                   => apply_filters( 'ocean_wai_read_more', __( 'Read more about', 'oceanwp' ) ),
+				'owp-string-read-more-article'           => apply_filters( 'ocean_wai_read_more_article', __( 'Read more about the article', 'oceanwp' ) ),
+				'owp-string-current-read'                => apply_filters( 'ocean_wai_current_read', __( 'You are currently viewing', 'oceanwp' ) ),
+				'owp-string-author-img'                  => apply_filters( 'ocean_wai_author_img', __( 'Post author avatar', 'oceanwp' ) ),
 
 			)
 		);

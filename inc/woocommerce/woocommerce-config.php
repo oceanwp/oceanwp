@@ -1169,7 +1169,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function quick_view_button() {
 			global $product;
 
-			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '">' . oceanwp_icon( 'eye', false) . " " . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false, 'oceanwp' ) . '</a>';
+			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '">' . oceanwp_icon( 'eye', false ) . " " . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false ) . '</a>';
 
 			echo apply_filters( 'ocean_woo_quick_view_button_html', $button ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}

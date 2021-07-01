@@ -1,16 +1,35 @@
 # OceanWP Changelog
 
-### *2021.06.30.* - 2.1.2
-* **Added** - Mobile Header: search icon, default state disabled.
+### *2021.07.xx.* - 2.1.2
+* **Added** - Mobile Header: search icon, default state disabled. Customize > Header > Mobile Menu, section Mobile Header Search.
 * **Added** - Single Blog Post: 'ocean_single_modified_date_state' filter. Disable display of modifided date if the same as the published date. Default state false.
+* **Added** - Single Blog Post: 'ocean_related_posts_date' filter. Disable display of published date on related post items. Default state true.
 * **Added** - WooCommerce: 'ocean_floating_bar_h_tag' filter. Change Floating Bar heading tag. Default value h2.
+* **Added** - SEO Settings: Customize > General Options > SEO Settings.
 * **Improved** - Accessibility: Mobile menu search form.
 * **Improved** - Accessibility: Scroll to top.
 * **Improved** - Accessibility: Header Replace search form style.
 * **Improved** - Accessibility: Header Overlay search form style.
 * **Improved** - Accessibility: Link Post Format, both entry and single.
-* **Improved** - Accessibility: Blog Entry titles.
+* **Improved** - Accessibility: Blog Entry: Blog post titles.
+* **Improved** - Accessibility: Blog Entry: Featured image.
+* **Improved** - Accessibility: Blog Entry: Continue Reading option.
 * **Improved** - Accessibility: Single Blog Post: Related Posts title.
+* **Improved** - Accessibility: Single Blog Post: Author avatar.
+* **Improved** - Accessibility: Post Categories Mega Menu.
+* **Updated** - Template: partials/entry/readmore.php
+* **Updated** - Template: partials/entry/media/blog-entry.php
+* **Updated** - Template: partials/entry/media/blog-entry-link.php
+* **Updated** - Template: partials/single/media/blog-single.php
+* **Updated** - Template: partials/single/media/blog-single-link.php
+* **Updated** - Template: partials/single/related-posts.php
+* **Updated** - Template: partials/single/author-bio.php
+* **Updated** - Template: partials/single/layout.php
+* **Updated** - Template: partials/single/meta.php
+* **Updated** - Template: partials/header/search-overlay.php
+* **Updated** - Template: partials/header/search-replace.php
+* **Updated** - Template: partials/mobile/mobile-search.php
+* **Updated** - Template: partials/scroll-top.php
 * **Fixed** - Previous item navigation arrow icon class.
 
 ### *2021.06.23.* - 2.1.1

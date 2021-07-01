@@ -3863,6 +3863,92 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				)
 			);
 
+			/**
+			 * Section SEO
+			 *
+			 * @since 2.1.2
+			 */
+			$wp_customize->add_section(
+				'ocean_general_seo_settings',
+				array(
+					'title'    => esc_html__( 'SEO Settings', 'oceanwp' ),
+					'priority' => 10,
+					'panel'    => $panel,
+				)
+			);
+
+			/**
+			 * Enable image alt text on blog entry featured images
+			 */
+			$wp_customize->add_setting(
+				'ocean_enable_be_fimage_alt',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_enable_be_fimage_alt',
+					array(
+						'label'    => esc_html__( 'Use featured image ALT text on blog entries', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Enable image alt text on single post featured images
+			 */
+			$wp_customize->add_setting(
+				'ocean_enable_sp_fimage_alt',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_enable_sp_fimage_alt',
+					array(
+						'label'    => esc_html__( 'Use featured image ALT text on single posts', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Enable image alt text on single post featured images
+			 */
+			$wp_customize->add_setting(
+				'ocean_enable_srp_fimage_alt',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_enable_srp_fimage_alt',
+					array(
+						'label'    => esc_html__( 'Use featured image ALT text on single post related items', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
+						'priority' => 10,
+					)
+				)
+			);
+
 		}
 
 		/**
