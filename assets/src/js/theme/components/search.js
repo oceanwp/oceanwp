@@ -1,6 +1,7 @@
 import { DOM } from "../../constants";
 import DropDownSearch from "./search/drop-down";
 import HeaderReplaceSearch from "./search/header-replace";
+import MobileSearchIcon from "./search/mobile-search-icon";
 import OverlaySearch from "./search/overlay";
 
 class Search {
@@ -13,6 +14,7 @@ class Search {
         this.dropDown = new DropDownSearch();
         this.headerReplace = new HeaderReplaceSearch();
         this.overlay = new OverlaySearch();
+        this.mobileSearchIcon = new MobileSearchIcon();
 
         DOM.search.forms.forEach((form) => {
             if (form.querySelector("input")?.value) {
