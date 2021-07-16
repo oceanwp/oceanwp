@@ -89,13 +89,11 @@ module.exports = function (grunt) {
                     "assets/js/third/woo/woo-display-cart.min.js": "assets/js/third/woo/woo-display-cart.js",
                     "assets/js/third/woo/woo-mini-cart.min.js": "assets/js/third/woo/woo-mini-cart.js",
                     "assets/js/third/woo/woo-quick-view.min.js": "assets/js/third/woo/woo-quick-view.js",
-                    "assets/js/third/woo/woo-multistep-checkout.min.js":
-                        "assets/js/third/woo/woo-multistep-checkout.js",
+                    "assets/js/third/woo/woo-multistep-checkout.min.js": "assets/js/third/woo/woo-multistep-checkout.js",
                     "assets/js/third/woo/woo-floating-bar.min.js": "assets/js/third/woo/woo-floating-bar.js",
                     "assets/js/third/woo/woo-hover-style.min.js": "assets/js/third/woo/woo-hover-style.js",
 
-                    "inc/customizer/assets/js/customize-preview.min.js":
-                        "inc/customizer/assets/js/customize-preview.js",
+                    "inc/customizer/assets/js/customize-preview.min.js": "inc/customizer/assets/js/customize-preview.js",
                     "inc/customizer/assets/js/typography-customize-preview.min.js":
                         "inc/customizer/assets/js/typography-customize-preview.js",
                     "inc/customizer/assets/js/woo-typography-customize-preview.min.js":
@@ -109,31 +107,23 @@ module.exports = function (grunt) {
                     "inc/customizer/assets/js/ld-customize-preview.min.js":
                         "inc/customizer/assets/js/ld-customize-preview.js",
                     "inc/customizer/assets/min/js/general.min.js": "inc/customizer/controls/general.js",
-                    "inc/customizer/assets/min/js/buttonset.min.js":
-                        "inc/customizer/controls/buttonset/buttonset.js",
+                    "inc/customizer/assets/min/js/buttonset.min.js": "inc/customizer/controls/buttonset/buttonset.js",
                     "inc/customizer/assets/min/js/color.min.js": "inc/customizer/controls/color/color.js",
-                    "inc/customizer/assets/min/js/dimensions.min.js":
-                        "inc/customizer/controls/dimensions/dimensions.js",
+                    "inc/customizer/assets/min/js/dimensions.min.js": "inc/customizer/controls/dimensions/dimensions.js",
                     "inc/customizer/assets/min/js/dropdown-pages.min.js":
                         "inc/customizer/controls/dropdown-pages/dropdown-pages.js",
-                    "inc/customizer/assets/min/js/icon-select.min.js":
-                        "inc/customizer/controls/icon-select/icon-select.js",
-                    "inc/customizer/assets/min/js/multicheck.min.js":
-                        "inc/customizer/controls/multicheck/multicheck.js",
+                    "inc/customizer/assets/min/js/icon-select.min.js": "inc/customizer/controls/icon-select/icon-select.js",
+                    "inc/customizer/assets/min/js/multicheck.min.js": "inc/customizer/controls/multicheck/multicheck.js",
                     "inc/customizer/assets/min/js/multiple-select.min.js":
                         "inc/customizer/controls/multiple-select/multiple-select.js",
-                    "inc/customizer/assets/min/js/radio-image.min.js":
-                        "inc/customizer/controls/radio-image/radio-image.js",
+                    "inc/customizer/assets/min/js/radio-image.min.js": "inc/customizer/controls/radio-image/radio-image.js",
                     "inc/customizer/assets/min/js/range.min.js": "inc/customizer/controls/range/range.js",
                     "inc/customizer/assets/min/js/slider.min.js": "inc/customizer/controls/slider/slider.js",
-                    "inc/customizer/assets/min/js/sortable.min.js":
-                        "inc/customizer/controls/sortable/sortable.js",
+                    "inc/customizer/assets/min/js/sortable.min.js": "inc/customizer/controls/sortable/sortable.js",
                     "inc/customizer/assets/min/js/text.min.js": "inc/customizer/controls/text/text.js",
-                    "inc/customizer/assets/min/js/textarea.min.js":
-                        "inc/customizer/controls/textarea/textarea.js",
+                    "inc/customizer/assets/min/js/textarea.min.js": "inc/customizer/controls/textarea/textarea.js",
                     "inc/customizer/assets/min/js/typo.min.js": "inc/customizer/controls/typo/typo.js",
-                    "inc/customizer/assets/min/js/typography.min.js":
-                        "inc/customizer/controls/typography/typography.js",
+                    "inc/customizer/assets/min/js/typography.min.js": "inc/customizer/controls/typography/typography.js",
                     "inc/customizer/assets/min/js/upsell.min.js": "inc/customizer/controls/upsell/upsell.js",
                 },
             },
@@ -158,8 +148,7 @@ module.exports = function (grunt) {
             prod: {
                 files: {
                     "assets/css/third/elementor-editor.min.css": "assets/css/third/elementor-editor.css",
-                    "assets/css/third/hamburgers/hamburgers.min.css":
-                        "assets/css/third/hamburgers/hamburgers.css",
+                    "assets/css/third/hamburgers/hamburgers.min.css": "assets/css/third/hamburgers/hamburgers.css",
                     "assets/css/third/magnific-popup.min.css": "assets/css/third/magnific-popup.css",
                     "assets/css/third/slick.min.css": "assets/css/third/slick.css",
                     "assets/css/third/bbpress.min.css": "assets/css/third/bbpress.css",
@@ -173,13 +162,10 @@ module.exports = function (grunt) {
                         "inc/customizer/assets/css/customizer-simple-line-icons.css",
                     "inc/customizer/assets/min/css/rtl.min.css": "inc/customizer/controls/rtl.css",
                     "inc/customizer/assets/min/css/general.min.css": "inc/customizer/controls/general.css",
-                    "inc/customizer/assets/min/css/buttonset.min.css":
-                        "inc/customizer/controls/buttonset/buttonset.css",
+                    "inc/customizer/assets/min/css/buttonset.min.css": "inc/customizer/controls/buttonset/buttonset.css",
                     "inc/customizer/assets/min/css/color.min.css": "inc/customizer/controls/color/color.css",
-                    "inc/customizer/assets/min/css/dimensions.min.css":
-                        "inc/customizer/controls/dimensions/dimensions.css",
-                    "inc/customizer/assets/min/css/heading.min.css":
-                        "inc/customizer/controls/heading/heading.css",
+                    "inc/customizer/assets/min/css/dimensions.min.css": "inc/customizer/controls/dimensions/dimensions.css",
+                    "inc/customizer/assets/min/css/heading.min.css": "inc/customizer/controls/heading/heading.css",
                     "inc/customizer/assets/min/css/icon-select.min.css":
                         "inc/customizer/controls/icon-select/icon-select.css",
                     "inc/customizer/assets/min/css/multiple-select.min.css":
@@ -187,17 +173,12 @@ module.exports = function (grunt) {
                     "inc/customizer/assets/min/css/radio-image.min.css":
                         "inc/customizer/controls/radio-image/radio-image.css",
                     "inc/customizer/assets/min/css/range.min.css": "inc/customizer/controls/range/range.css",
-                    "inc/customizer/assets/min/css/slider.min.css":
-                        "inc/customizer/controls/slider/slider.css",
-                    "inc/customizer/assets/min/css/sortable.min.css":
-                        "inc/customizer/controls/sortable/sortable.css",
-                    "inc/customizer/assets/min/css/textarea.min.css":
-                        "inc/customizer/controls/textarea/textarea.css",
+                    "inc/customizer/assets/min/css/slider.min.css": "inc/customizer/controls/slider/slider.css",
+                    "inc/customizer/assets/min/css/sortable.min.css": "inc/customizer/controls/sortable/sortable.css",
+                    "inc/customizer/assets/min/css/textarea.min.css": "inc/customizer/controls/textarea/textarea.css",
                     "inc/customizer/assets/min/css/typo.min.css": "inc/customizer/controls/typo/typo.css",
-                    "inc/customizer/assets/min/css/typography.min.css":
-                        "inc/customizer/controls/typography/typography.css",
-                    "inc/customizer/assets/min/css/upsell.min.css":
-                        "inc/customizer/controls/upsell/upsell.css",
+                    "inc/customizer/assets/min/css/typography.min.css": "inc/customizer/controls/typography/typography.css",
+                    "inc/customizer/assets/min/css/upsell.min.css": "inc/customizer/controls/upsell/upsell.css",
                 },
             },
         },
@@ -251,6 +232,25 @@ module.exports = function (grunt) {
             },
         },
 
+        svgstore: {
+            options: {
+                prefix: "owp-icon-", // This will prefix each ID
+                svg: {
+                    // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG
+                    id: "owp-svg-icons",
+                    version: "1.0.0",
+                    viewBox: "0 0 100 100",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    class: "no-display",
+                },
+            },
+            prod: {
+                files: {
+                    "assets/fonts/owp-icons/owp-icons.svg": ["assets/fonts/owp-icons/files/**/*.svg"],
+                },
+            },
+        },
+
         // Autoprefixer.
         autoprefixer: {
             options: {
@@ -286,13 +286,9 @@ module.exports = function (grunt) {
                 files: ["sass/**/*.scss"],
                 tasks: ["newer:sass:dev", "newer:sass:prod", "newer:autoprefixer:main"],
             },
-            // js: {
-            //     files: ["assets/js/**/*.js"],
-            //     tasks: ["newer:uglify:dev", "newer:uglify:prod"],
-            // },
             js: {
                 files: ["assets/src/js/**/*.js"],
-                tasks: ["browserify:prod", "newer:browserify:dev"],
+                tasks: ["browserify:prod", "newer:browserify:dev", "newer:uglify:prod"],
             },
         },
 
@@ -407,7 +403,7 @@ module.exports = function (grunt) {
 
     // Dev task
     grunt.registerTask("default", [
-        "browserify:dist",
+        "browserify:prod",
         "uglify:dev",
         "newer:uglify:prod",
         "cssmin:prod",
@@ -418,7 +414,7 @@ module.exports = function (grunt) {
 
     // Production task
     grunt.registerTask("build", [
-        "browserify:dist",
+        "browserify:prod",
         "newer:uglify:prod",
         "sass:dev",
         "sass:prod",

@@ -3,10 +3,7 @@ import { offset } from "../../lib/utils";
 
 class ScrollEffect {
     constructor() {
-        if (
-            !DOM.body.classList.contains("single-product") &&
-            !DOM.body.classList.contains("no-local-scroll")
-        ) {
+        if (!DOM.body.classList.contains("single-product") && !DOM.body.classList.contains("no-local-scroll")) {
             this.#setupEventListeners();
         }
     }
@@ -14,7 +11,7 @@ class ScrollEffect {
     #setupEventListeners = () => {
         document
             .querySelectorAll(
-                'a.local[href*="#"]:not([href="#"]), .local a[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"]), a.sidr-class-menu-link[href*="#"]:not([href="#"])'
+                'a[href*="#"]:not([href="#"]), a.local[href*="#"]:not([href="#"]), .local a[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"]), a.sidr-class-menu-link[href*="#"]:not([href="#"])'
             )
             .forEach((scrollItem) => {
                 scrollItem.addEventListener("click", this.#onScrollItemClick);
@@ -38,10 +35,7 @@ class ScrollEffect {
                 event.stopPropagation();
 
                 const scrollPosition =
-                    offset(target).top -
-                    this.#getAdminBarHeight() +
-                    this.#getTopbarHeight() +
-                    this.#getStickyHeaderHeight();
+                    offset(target).top - this.#getAdminBarHeight() - this.#getTopbarHeight() - this.#getStickyHeaderHeight();
 
                 DOM.html.scrollTo({
                     top: scrollPosition,

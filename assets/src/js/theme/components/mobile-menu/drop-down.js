@@ -60,15 +60,15 @@ class DropDownMobileMenu {
         event.stopPropagation();
 
         slideToggle(DOM.mobileMenu.navWrapper, 500);
-        DOM.mobileMenu.toggleMenuBtn.classList.toggle("opened");
+        DOM.mobileMenu.toggleMenuBtn?.classList.toggle("opened");
         DOM.mobileMenu.hamburgerBtn?.classList.toggle("is-active");
-        DOM.mobileMenu.toggleMenuBtn.focus();
+        DOM.mobileMenu.toggleMenuBtn?.focus();
     };
 
     #onMenuCloseClick = (event) => {
         if (!!DOM.mobileMenu.navWrapper) {
             slideUp(DOM.mobileMenu.navWrapper, 200);
-            DOM.mobileMenu.toggleMenuBtn.classList.remove("opened");
+            DOM.mobileMenu.toggleMenuBtn?.classList.remove("opened");
             DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
         }
     };
@@ -92,23 +92,23 @@ class DropDownMobileMenu {
         const menuItem =
             options.sidrDropdownTarget == "link" ? menuItemPlusIcon.parentNode : menuItemPlusIcon.parentNode.parentNode;
 
-        if (!menuItem.classList.contains("active")) {
-            DOM.mobileMenu.menuItemsHasChildren.forEach((menuItemHasChildren) => {
+        if (!menuItem?.classList.contains("active")) {
+            DOM.mobileMenu.menuItemsHasChildren?.forEach((menuItemHasChildren) => {
                 if (
                     menuItem != menuItemHasChildren &&
                     menuItem
                         .oceanParents(".menu-item-has-children")
                         .findIndex((parentMenuItem) => parentMenuItem == menuItemHasChildren)
                 ) {
-                    menuItemHasChildren.classList.remove("active");
+                    menuItemHasChildren?.classList.remove("active");
                     slideUp(menuItemHasChildren.lastElementChild, 200);
                 }
             });
 
-            menuItem.classList.add("active");
+            menuItem?.classList.add("active");
             slideDown(menuItem.lastElementChild, 200);
         } else {
-            menuItem.classList.remove("active");
+            menuItem?.classList.remove("active");
             slideUp(menuItem.lastElementChild, 200);
         }
     };
@@ -128,12 +128,14 @@ class DropDownMobileMenu {
 
         const closeIcon = DOM.mobileMenu.toggleMenuBtn;
 
-        const navElements = DOM.mobileMenu.nav.querySelectorAll("a, span.dropdown-toggle, input, button");
+        const navElements = DOM.mobileMenu.nav?.querySelectorAll("a, span.dropdown-toggle, input, button");
 
         const navFirstElement = navElements[0];
         const navLastElement = navElements[navElements.length - 1];
 
-        closeIcon.style.outline = "";
+        if (!!closeIcon) {
+            closeIcon.style.outline = "";
+        }
 
         if (escKey) {
             event.preventDefault();

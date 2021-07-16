@@ -9846,7 +9846,8 @@ a.pswp__share--download:hover {
         transform: translateX(-50%);
   }
   body.default-breakpoint .oceanwp-mobile-menu-icon {
-    display: block;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
   }
   body.default-breakpoint #top-bar.has-no-content #top-bar-social {
     text-align: center;
@@ -9902,6 +9903,10 @@ a.pswp__share--download:hover {
   }
   body.default-breakpoint #site-header.vertical-header .vertical-toggle {
     display: none;
+  }
+  body.default-breakpoint .is-sticky #site-header.vertical-header {
+    position: fixed;
+    height: auto;
   }
   body.default-breakpoint.vh-closed .vertical-toggle {
     display: none;

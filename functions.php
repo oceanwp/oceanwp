@@ -83,9 +83,6 @@ final class OCEANWP_Theme_Class {
 			// Remove Customizer CSS script from Front-end.
 			add_action( 'init', array( 'OCEANWP_Theme_Class', 'remove_customizer_custom_css' ) );
 
-			// Load theme js.
-			add_action( 'wp_enqueue_scripts', array( 'OCEANWP_Theme_Class', 'theme_js' ) );
-
 			// Add a pingback url auto-discovery header for singularly identifiable articles.
 			add_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'pingback_header' ), 1 );
 
@@ -126,6 +123,9 @@ final class OCEANWP_Theme_Class {
 			add_filter( 'fl_builder_override_lightbox', array( 'OCEANWP_Theme_Class', 'remove_bb_lightbox' ) );
 
 		}
+
+		// Load theme js.
+		add_action( 'wp_enqueue_scripts', array( 'OCEANWP_Theme_Class', 'theme_js' ) );
 
 	}
 
@@ -172,6 +172,7 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'helpers.php';
 		require_once $dir . 'header-content.php';
 		require_once $dir . 'oceanwp-strings.php';
+		require_once $dir . 'oceanwp-svg.php';
 		require_once $dir . 'oceanwp-theme-icons.php';
 		require_once $dir . 'customizer/controls/typography/webfonts.php';
 		require_once $dir . 'walker/init.php';
@@ -479,6 +480,14 @@ final class OCEANWP_Theme_Class {
 			return;
 		}
 
+		if ( is_admin() ) {
+			$current_url = wc_get_current_admin_url();
+
+			if ( ! ( strpos( $current_url, 'widgets.php' ) !== false ) ) {
+				return;
+			}
+		}
+
 		// Get js directory uri.
 		$dir = OCEANWP_JS_DIR_URI;
 
@@ -540,15 +549,16 @@ final class OCEANWP_Theme_Class {
 		$vh_target   = get_theme_mod( 'ocean_vertical_header_dropdown_target', 'link' );
 		$vh_target   = $vh_target ? $vh_target : 'link';
 		$array       = array(
-			'nonce'                => wp_create_nonce( 'oceanwp' ),
-			'isRTL'                => is_rtl(),
-			'menuSearchStyle'      => oceanwp_menu_search_style(),
-			'sidrSource'           => oceanwp_sidr_menu_source(),
-			'sidrDisplace'         => get_theme_mod( 'ocean_mobile_menu_sidr_displace', true ) ? true : false,
-			'sidrSide'             => $sidr_side,
-			'sidrDropdownTarget'   => $sidr_target,
-			'verticalHeaderTarget' => $vh_target,
-			'customSelects'        => '.woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select',
+			'nonce'                 => wp_create_nonce( 'oceanwp' ),
+			'isRTL'                 => is_rtl(),
+			'menuSearchStyle'       => oceanwp_menu_search_style(),
+			'mobileMenuSearchStyle' => oceanwp_mobile_menu_search_style(),
+			'sidrSource'            => oceanwp_sidr_menu_source(),
+			'sidrDisplace'          => get_theme_mod( 'ocean_mobile_menu_sidr_displace', true ) ? true : false,
+			'sidrSide'              => $sidr_side,
+			'sidrDropdownTarget'    => $sidr_target,
+			'verticalHeaderTarget'  => $vh_target,
+			'customSelects'         => '.woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select',
 		);
 
 		// WooCart.
@@ -897,6 +907,7 @@ final class OCEANWP_Theme_Class {
 			array(
 				'vimeo.com',
 				'youtube.com',
+				'youtu.be',
 				'blip.tv',
 				'money.cnn.com',
 				'dailymotion.com',
