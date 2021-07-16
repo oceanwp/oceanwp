@@ -1,7 +1,7 @@
 == OceanWP ==
 Contributors: oceanwp
-Tested up to: 5.6.2
-Stable tag: 2.0.3
+Tested up to: 5.7.2
+Stable tag: 2.1.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -49,12 +49,12 @@ More details here: https://www.gnu.org/licenses/gpl-2.0.html
 
 Screenshot image, Copyright Stocksnap
 License: CC0 Public Domain - https://stocksnap.io/license
-Source: https://stocksnap.io/photo/ELADKTWHHU is by Aleksei Bakulin
-Source: https://stocksnap.io/photo/2NQCKGAMDR is by Daria Shevtsova
+Source: https://stocksnap.io/photo/concert-singer-F66MXRQS1K is by Austin Neill
+Source: https://stocksnap.io/photo/fireworks-celebration-R4GSFACUEC is by Travel Photographer
 
 == Copyright ==
 
-OceanWP WordPress Theme, Copyright 2020 OceanWP.org
+OceanWP WordPress Theme, Copyright 2021 OceanWP.org
 OceanWP is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify

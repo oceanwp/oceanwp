@@ -58,6 +58,7 @@
 	.entry-content blockquote,
 	.entry-content p,
 	.wp-block-image,
+	.wp-block-buttons,
 	.wp-block-gallery,
 	.wp-block-video,
 	.wp-block-quote,
@@ -66,10 +67,37 @@
 	.entry-content ul,
 	.entry-content ol,
 	.wp-block-cover-text,
+	.wp-block-cover,
+	.wp-block-columns,
 	.post-tags,
 	.comments-area {
 	    margin: 1.5em auto;
 	    max-width: 700px;
+	}
+
+	.wp-block-columns.alignfull,
+	.wp-block-columns.alignwide {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		blockquote,
+		p,
+		.wp-block-image,
+		.wp-block-buttons,
+		.wp-block-gallery,
+		.wp-block-video,
+		.wp-block-quote,
+		.wp-block-text-columns,
+		.wp-block-code,
+		ul,
+		ol,
+		.wp-block-cover-text,
+		.wp-block-cover {
+			max-width: 100%;
+		}
 	}
 
 	.entry-content ul,
@@ -99,7 +127,7 @@
 		padding: 0 0 10px;
 		list-style: none;
 	}
-
+	
 	.wp-block-quote p {
 		padding: 0;
 	}
@@ -176,10 +204,6 @@
 	margin-bottom: 20px;
 }
 
-.wp-block-button a:hover {
-    color: inherit;
-}
-
 .wp-block-quote.blocks-quote-style-2 {
     border: 0;
 }
@@ -195,10 +219,6 @@
     &.is-style-wide {
     	max-width: 700px;
     }
-}
-
-.wp-block-table {
-	display: table;
 }
 
 /*------------------------------------*

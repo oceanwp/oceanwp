@@ -1425,7 +1425,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'ocean_page_header_visibility',
 				array(
-					'transport'         => 'postMessage',
 					'default'           => 'all-devices',
 					'sanitize_callback' => 'oceanwp_sanitize_select',
 				)
@@ -1446,6 +1445,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'hide-tablet'        => esc_html__( 'Hide On Tablet', 'oceanwp' ),
 							'hide-mobile'        => esc_html__( 'Hide On Mobile', 'oceanwp' ),
 							'hide-tablet-mobile' => esc_html__( 'Hide On Tablet & Mobile', 'oceanwp' ),
+							'hide-all-devices'   => esc_html__( 'Hide On All Devices', 'oceanwp' ),
 						),
 					)
 				)
@@ -1513,7 +1513,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'centered'         => esc_html__( 'Centered', 'oceanwp' ),
 							'centered-minimal' => esc_html__( 'Centered Minimal', 'oceanwp' ),
 							'background-image' => esc_html__( 'Background Image', 'oceanwp' ),
-							'hidden'           => esc_html__( 'Hidden', 'oceanwp' ),
+							'hidden'           =>  esc_html__( 'Hidden', 'oceanwp' ),
 						),
 					)
 				)
@@ -2405,23 +2405,22 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'ocean_scroll_top_arrow',
 				array(
-					'transport'         => 'postMessage',
-					'default'           => 'fa fa-angle-up',
-					'sanitize_callback' => 'wp_filter_nohtml_kses',
+					'default'           => 'angle_up',
+					'sanitize_callback' => 'sanitize_text_field',
 				)
 			);
 
 			$wp_customize->add_control(
-				new OceanWP_Customizer_Icon_Select_Control(
+				new OceanWP_Customizer_Icon_Select_Multi_Control(
 					$wp_customize,
 					'ocean_scroll_top_arrow',
 					array(
 						'label'           => esc_html__( 'Arrow Icon', 'oceanwp' ),
 						'section'         => 'ocean_general_scroll_top',
-						'settings'        => 'ocean_scroll_top_arrow',
+						'type'            => 'select',
 						'priority'        => 10,
 						'active_callback' => 'oceanwp_cac_has_scrolltop',
-						'choices'         => oceanwp_get_awesome_icons( 'up_arrows' ),
+						'choices'         => oceanwp_get_scrolltotop_icons( 'up_arrows' ),
 					)
 				)
 			);
@@ -3745,10 +3744,9 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				)
 			);
 
-			
 			/**
 			 * Section Theme Icons
-			 * 
+			 *
 			 * @since 2.0
 			 */
 			$wp_customize->add_section(
@@ -3783,9 +3781,34 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 						'settings'    => 'ocean_theme_default_icons',
 						'priority'    => 10,
 						'choices'     => array(
-							'sili'    => esc_html__( 'Simple Line Icons', 'oceanwp' ),
-							'fai'     => esc_html__( 'Font Awesome Icons', 'oceanwp' )
+							'svg'  => esc_html__( 'Ocean SVG Icons', 'oceanwp' ),
+							'sili' => esc_html__( 'Simple Line Icons', 'oceanwp' ),
+							'fai'  => esc_html__( 'Font Awesome Icons', 'oceanwp' ),
 						),
+					)
+				)
+			);
+
+			/**
+			 * Disable OceanWP SVG Icons
+			 */
+			$wp_customize->add_setting(
+				'ocean_disable_svg_icons',
+				array(
+					'default'           => true,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_disable_svg_icons',
+					array(
+						'label'    => esc_html__( 'Disable Ocean SVG Icons', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_theme_icons',
+						'priority' => 10,
 					)
 				)
 			);
@@ -3835,6 +3858,92 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 						'label'    => esc_html__( 'Single Post Icons: Color', 'oceanwp' ),
 						'section'  => 'ocean_general_theme_icons',
 						'settings' => 'ocean_theme_single_post_icons_color',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Section SEO
+			 *
+			 * @since 2.1.2
+			 */
+			$wp_customize->add_section(
+				'ocean_general_seo_settings',
+				array(
+					'title'    => esc_html__( 'SEO Settings', 'oceanwp' ),
+					'priority' => 10,
+					'panel'    => $panel,
+				)
+			);
+
+			/**
+			 * Enable image alt text on blog entry featured images
+			 */
+			$wp_customize->add_setting(
+				'ocean_enable_be_fimage_alt',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_enable_be_fimage_alt',
+					array(
+						'label'    => esc_html__( 'Use featured image ALT text on blog entries', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Enable image alt text on single post featured images
+			 */
+			$wp_customize->add_setting(
+				'ocean_enable_sp_fimage_alt',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_enable_sp_fimage_alt',
+					array(
+						'label'    => esc_html__( 'Use featured image ALT text on single posts', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Enable image alt text on single post featured images
+			 */
+			$wp_customize->add_setting(
+				'ocean_enable_srp_fimage_alt',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_enable_srp_fimage_alt',
+					array(
+						'label'    => esc_html__( 'Use featured image ALT text on single post related items', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
 						'priority' => 10,
 					)
 				)
@@ -3947,6 +4056,17 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				)
 			);
 
+			// SVG Icon color.
+			$svg_icons = apply_filters(
+				'ocean_primary_svg_icons',
+				array(
+					'.single nav.post-navigation .nav-links .title .owp-icon use',
+					'.blog-entry.post .blog-entry-readmore a:hover .owp-icon use',
+					'body .contact-info-widget.default .owp-icon use',
+					'body .contact-info-widget.big-icons .owp-icon use',
+				)
+			);
+
 			// Backgrounds.
 			$backgrounds = apply_filters(
 				'ocean_primary_backgrounds',
@@ -3987,6 +4107,8 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Return array.
 			if ( 'texts' === $return ) {
 				return $texts;
+			} elseif ( 'svg_icons' === $return ) {
+				return $svg_icons;
 			} elseif ( 'backgrounds' === $return ) {
 				return $backgrounds;
 			} elseif ( 'borders' === $return ) {
@@ -4255,6 +4377,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Get primary color arrays.
 			$texts       = self::primary_color_arrays( 'texts' );
+			$svg_icons   = self::primary_color_arrays( 'svg_icons' );
 			$backgrounds = self::primary_color_arrays( 'backgrounds' );
 			$borders     = self::primary_color_arrays( 'borders' );
 
@@ -4267,11 +4390,14 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Texts.
 			if ( ! empty( $texts ) && '#13aff0' != $primary_color ) {
 				$css .= implode( ',', $texts ) . '{color:' . $primary_color . ';}';
+				$css .= implode( ',', $svg_icons ) . '{stroke:' . $primary_color . ';}';
 			}
 
 			// Backgrounds.
 			if ( ! empty( $backgrounds ) && '#13aff0' != $primary_color ) {
 				$css .= implode( ',', $backgrounds ) . '{background-color:' . $primary_color . ';}';
+				$css .= '.thumbnail:hover .link-post-svg-icon{background-color:' . $primary_color . ';}';
+				$css .= 'body .contact-info-widget.big-icons li:hover .owp-icon{background-color:' . $primary_color . ';}';
 			}
 
 			// Borders.
@@ -4289,6 +4415,12 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				}
 			}
 
+			// Blockquotes color.
+			if ( ! empty( $primary_color ) && '#13aff0' != $primary_color ) {
+				$css .= 'blockquote, .wp-block-quote{border-left-color:' . $primary_color . ';}';
+				$css .= 'body .contact-info-widget.big-icons li:hover .owp-icon{border-color:' . $primary_color . ';}';
+			}
+
 			// Hover primary color.
 			if ( ! empty( $hover_primary ) && '#0b7cac' != $hover_primary_color ) {
 				$css .= implode( ',', $hover_primary ) . '{background-color:' . $hover_primary_color . ';}';
@@ -4297,6 +4429,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Main border color.
 			if ( ! empty( $main_border ) && '#e9e9e9' != $main_border_color ) {
 				$css .= implode( ',', $main_border ) . '{border-color:' . $main_border_color . ';}';
+				$css .= 'body .contact-info-widget.big-icons .owp-icon, body .contact-info-widget.default .owp-icon{border-color:' . $main_border_color . ';}';
 			}
 
 			// Get site background color.
@@ -4332,11 +4465,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Links color.
 			if ( ! empty( $links_color ) && '#333333' != $links_color ) {
 				$css .= 'a{color:' . $links_color . ';}';
+				$css .= 'a .owp-icon use {stroke:' . $links_color . ';}';
 			}
 
 			// Links color hover.
 			if ( ! empty( $links_color_hover ) && '#13aff0' != $links_color_hover ) {
 				$css .= 'a:hover{color:' . $links_color_hover . ';}';
+				$css .= 'a:hover .owp-icon use {stroke:' . $links_color_hover . ';}';
 			}
 
 			// Boxed width.
@@ -4467,17 +4602,19 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 
 			// Breadcrumbs seperator color.
 			if ( ! empty( $breadcrumbs_seperator_color ) && '#c6c6c6' != $breadcrumbs_seperator_color ) {
-				$css .= '.site-breadcrumbs ul li .breadcrumb-sep{color:' . $breadcrumbs_seperator_color . ';}';
+				$css .= '.site-breadcrumbs ul li .breadcrumb-sep, .site-breadcrumbs ol li .breadcrumb-sep{color:' . $breadcrumbs_seperator_color . ';}';
 			}
 
 			// Breadcrumbs link color.
 			if ( ! empty( $breadcrumbs_link_color ) && '#333333' != $breadcrumbs_link_color ) {
 				$css .= '.site-breadcrumbs a, .background-image-page-header .site-breadcrumbs a{color:' . $breadcrumbs_link_color . ';}';
+				$css .= '.site-breadcrumbs a .owp-icon use, .background-image-page-header .site-breadcrumbs a .owp-icon use{stroke:' . $breadcrumbs_link_color . ';}';
 			}
 
 			// Breadcrumbs link hover color.
 			if ( ! empty( $breadcrumbs_link_color_hover ) && '#13aff0' != $breadcrumbs_link_color_hover ) {
 				$css .= '.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover{color:' . $breadcrumbs_link_color_hover . ';}';
+				$css .= '.site-breadcrumbs a:hover .owp-icon use, .background-image-page-header .site-breadcrumbs a:hover .owp-icon use{stroke:' . $breadcrumbs_link_color_hover . ';}';
 			}
 
 			// Meta breadcrumbs text color.
@@ -4513,6 +4650,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Scroll top button icon size.
 			if ( ! empty( $scroll_top_icon_size ) && '18' != $scroll_top_icon_size ) {
 				$css .= '#scroll-top{font-size:' . $scroll_top_icon_size . 'px;}';
+				$css .= '#scroll-top .owp-icon{width:' . $scroll_top_icon_size . 'px; height:' . $scroll_top_icon_size . 'px;}';
 			}
 
 			// Scroll top button border radius.
@@ -4533,11 +4671,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Scroll top button background color.
 			if ( ! empty( $scroll_top_color ) && '#ffffff' != $scroll_top_color ) {
 				$css .= '#scroll-top{color:' . $scroll_top_color . ';}';
+				$css .= '#scroll-top .owp-icon use{stroke:' . $scroll_top_color . ';}';
 			}
 
 			// Scroll top button background hover color.
 			if ( ! empty( $scroll_top_color_hover ) && '#ffffff' != $scroll_top_color_hover ) {
 				$css .= '#scroll-top:hover{color:' . $scroll_top_color_hover . ';}';
+				$css .= '#scroll-top:hover .owp-icon use{stroke:' . $scroll_top_color . ';}';
 			}
 
 			// Pagination font size.
@@ -4563,11 +4703,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Pagination color.
 			if ( ! empty( $pagination_color ) && '#555555' != $pagination_color ) {
 				$css .= '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span{color:' . $pagination_color . ';}';
+				$css .= '.page-numbers a .owp-icon use{stroke:' . $pagination_color . ';}';
 			}
 
 			// Pagination color hover.
 			if ( ! empty( $pagination_hover_color ) && '#333333' != $pagination_hover_color ) {
 				$css .= '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover{color:' . $pagination_hover_color . ';}';
+				$css .= '.page-numbers a:hover .owp-icon use{stroke:' . $pagination_hover_color . ';}';
 			}
 
 			// Pagination border color.
@@ -4727,11 +4869,13 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			// Blog entries meta icons color.
 			if ( ! empty( $theme_blog_icons_color ) && '#333333' != $theme_blog_icons_color ) {
 				$css .= '#blog-entries ul.meta li i{color:' . $theme_blog_icons_color . ';}';
+				$css .= '#blog-entries ul.meta li .owp-icon use{stroke:' . $theme_blog_icons_color . ';}';
 			}
 
 			// Single post meta icons color.
 			if ( ! empty( $theme_post_icons_color ) && '#333333' != $theme_post_icons_color ) {
 				$css .= '.single-post ul.meta li i{color:' . $theme_post_icons_color . ';}';
+				$css .= '.single-post ul.meta li .owp-icon use{stroke:' . $theme_post_icons_color . ';}';
 			}
 
 			// If page Both Sidebars layout.

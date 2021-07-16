@@ -34,10 +34,10 @@ if ( ! $description ) {
 
 		<div class="author-bio-avatar">
 
-			<a href="<?php echo esc_url( $url ); ?>" title="<?php esc_attr_e( 'Visit Author Page', 'oceanwp' ); ?>" rel="author" >
+			<a href="<?php echo esc_url( $url ); ?>" title="<?php esc_attr( oceanwp_theme_strings( 'owp-string-author-page' ) ); ?>" rel="author" >
 				<?php
 				// Display author avatar.
-				echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'ocean_author_bio_avatar_size', 100 ) );
+				echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'ocean_author_bio_avatar_size', 100 ), $default = '', $alt = oceanwp_theme_strings( 'owp-string-author-img', false ) );
 				?>
 			</a>
 
@@ -46,7 +46,7 @@ if ( ! $description ) {
 		<div class="author-bio-content clr">
 
 			<h3 class="author-bio-title">
-				<a href="<?php echo esc_url( $url ); ?>" title="<?php esc_attr_e( 'Visit Author Page', 'oceanwp' ); ?>">
+				<a href="<?php echo esc_url( $url ); ?>" title="<?php esc_attr( oceanwp_theme_strings( 'owp-string-author-page' ) ); ?>">
 					<?php echo esc_html( wp_strip_all_tags( $author ) ); ?>
 				</a>
 			</h3><!-- .author-bio-title -->

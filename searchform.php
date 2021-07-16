@@ -21,7 +21,7 @@ $osf_id      = esc_attr( $ocean_sf_id );
 
 <form role="search" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label for="<?php echo esc_attr( $osf_id ); ?>">
-		<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'oceanwp' ); ?></span>
+		<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
 		<input type="search" id="<?php echo esc_attr( $osf_id ); ?>" class="field" autocomplete="off" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>" name="s">
 		<?php if ( 'any' !== $post_type ) { ?>
 			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">

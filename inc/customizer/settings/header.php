@@ -3750,6 +3750,40 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Mobile Menu Search Icon
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_search_icon', array(
+				'sanitize_callback' 	=> 'wp_kses',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Heading_Control( $wp_customize, 'ocean_mobile_menu_search_icon', array(
+				'label'    				=> esc_html__( 'Mobile Header Search Icon', 'oceanwp' ),
+				'section'  				=> 'ocean_header_mobile_menu',
+				'priority' 				=> 10,
+			) ) );
+
+			/**
+			 * Search Icon Style
+			 */
+			$wp_customize->add_setting( 'ocean_mobile_menu_search_style', array(
+				'default'           	=> 'disabled',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_select',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_mobile_menu_search_style', array(
+				'label'	   				=> esc_html__( 'Search Icon Style', 'oceanwp' ),
+				'type' 					=> 'select',
+				'section'  				=> 'ocean_header_mobile_menu',
+				'settings' 				=> 'ocean_mobile_menu_search_style',
+				'priority' 				=> 10,
+				'choices' 				=> array(
+					'disabled' 			=> esc_html__( 'Disabled','oceanwp' ),
+					'drop_down' 		=> esc_html__( 'Drop Down','oceanwp' ),
+					'overlay' 			=> esc_html__( 'Overlay','oceanwp' ),
+				),
+			) ) );
+
+			/**
 			 * Mobile Menu Styling
 			 */
 			$wp_customize->add_setting( 'ocean_mobile_menu_styling_heading', array(
@@ -4768,62 +4802,62 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Search dropdown input background
 			if ( ! empty( $search_dropdown_input_bg ) ) {
-				$css .= '#searchform-dropdown input{background-color:'. $search_dropdown_input_bg .';}';
+				$css .= '#searchform-dropdown input, #icon-searchform-dropdown input{background-color:'. $search_dropdown_input_bg .';}';
 			}
 
 			// Search dropdown input color
 			if ( ! empty( $search_dropdown_input_color ) && '#333333' != $search_dropdown_input_color ) {
-				$css .= '#searchform-dropdown input{color:'. $search_dropdown_input_color .';}';
+				$css .= '#searchform-dropdown input, #icon-searchform-dropdown input{color:'. $search_dropdown_input_color .';}';
 			}
 
 			// Search dropdown input border color
 			if ( ! empty( $search_dropdown_input_border ) && '#dddddd' != $search_dropdown_input_border ) {
-				$css .= '#searchform-dropdown input{border-color:'. $search_dropdown_input_border .';}';
+				$css .= '#searchform-dropdown input, #icon-searchform-dropdown input{border-color:'. $search_dropdown_input_border .';}';
 			}
 
 			// Search dropdown input border color focus
 			if ( ! empty( $search_dropdown_input_border_focus ) && '#bbbbbb' != $search_dropdown_input_border_focus ) {
-				$css .= '#searchform-dropdown input:focus{border-color:'. $search_dropdown_input_border_focus .';}';
+				$css .= '#searchform-dropdown input:focus, #icon-searchform-dropdown input:focus{border-color:'. $search_dropdown_input_border_focus .';}';
 			}
 
 			// Search overlay background color
 			if ( ! empty( $search_overlay_bg ) && 'rgba(0,0,0,0.9)' != $search_overlay_bg ) {
-				$css .= '#searchform-overlay{background-color:'. $search_overlay_bg .';}';
+				$css .= '#searchform-overlay, #icon-searchform-overlay{background-color:'. $search_overlay_bg .';}';
 			}
 
 			// Search overlay input color
 			if ( ! empty( $search_overlay_input_color ) && '#ffffff' != $search_overlay_input_color ) {
-				$css .= '#searchform-overlay form input, #searchform-overlay form label{color:'. $search_overlay_input_color .';}';
+				$css .= '#searchform-overlay form input, #searchform-overlay form label, #icon-searchform-overlay form input, #icon-searchform-overlay form label{color:'. $search_overlay_input_color .';}';
 			}
 
 			// Search overlay input placeholder color
 			if ( ! empty( $search_overlay_placeholder_color ) && '#ffffff' != $search_overlay_placeholder_color ) {
-				$css .= '#searchform-overlay form label{color:'. $search_overlay_placeholder_color .';}';
+				$css .= '#searchform-overlay form label, #icon-searchform-overlay form label{color:'. $search_overlay_placeholder_color .';}';
 			}
 
 			// Search overlay input dashed background
 			if ( ! empty( $search_overlay_input_dashed_bg ) && '#ffffff' != $search_overlay_input_dashed_bg ) {
-				$css .= '#searchform-overlay form label i{background-color:'. $search_overlay_input_dashed_bg .';}';
+				$css .= '#searchform-overlay form label i, #icon-searchform-overlay form label i{background-color:'. $search_overlay_input_dashed_bg .';}';
 			}
 
 			// Search overlay input border color
 			if ( ! empty( $search_overlay_input_border ) && '#444444' != $search_overlay_input_border ) {
-				$css .= '#searchform-overlay form input{border-color:'. $search_overlay_input_border .';}';
+				$css .= '#searchform-overlay form input, #icon-searchform-overlay form input{border-color:'. $search_overlay_input_border .';}';
 			}
 
 			// Search overlay input border color hover
 			if ( ! empty( $search_overlay_input_border_hover ) && '#777777' != $search_overlay_input_border_hover ) {
-				$css .= '#searchform-overlay form input:hover{border-color:'. $search_overlay_input_border_hover .';}';
+				$css .= '#searchform-overlay form input:hover, #icon-searchform-overlay form input:hover{border-color:'. $search_overlay_input_border_hover .';}';
 			}
 
 			// Search overlay input border color focus
 			if ( ! empty( $search_overlay_input_border_focus ) && '#ffffff' != $search_overlay_input_border_focus ) {
-				$css .= '#searchform-overlay form input:focus{border-color:'. $search_overlay_input_border_focus .';}';
+				$css .= '#searchform-overlay form input:focus, #icon-searchform-overlay form input:focus{border-color:'. $search_overlay_input_border_focus .';}';
 			}
 
 			// Search overlay close button color
 			if ( ! empty( $search_overlay_close_button_color ) && '#ffffff' != $search_overlay_close_button_color ) {
-				$css .= '#searchform-overlay a.search-overlay-close span::before, #searchform-overlay a.search-overlay-close span::after{background-color:'. $search_overlay_close_button_color .';}';
+				$css .= '#searchform-overlay a.search-overlay-close span::before, #searchform-overlay a.search-overlay-close span::after, #icon-searchform-overlay a.search-overlay-close span::before, #icon-searchform-overlay a.search-overlay-close span::after{background-color:'. $search_overlay_close_button_color .';}';
 			}
 
 			// Links effect blue color
@@ -4848,11 +4882,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Menu link color
 			if ( ! empty( $menu_link_color ) && '#555555' != $menu_link_color ) {
 				$css .= '#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close{color:'. $menu_link_color .';}';
+				$css .= '#site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use,#searchform-header-replace-close .owp-icon use{stroke:'. $menu_link_color .';}';
 			}
 
 			// Menu link color hover
 			if ( ! empty( $menu_link_color_hover ) && '#13aff0' != $menu_link_color_hover ) {
 				$css .= '#site-navigation-wrap .dropdown-menu > li > a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover{color:'. $menu_link_color_hover .';}';
+				$css .= '#site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use,#searchform-header-replace-close:hover .owp-icon use{stroke:'. $menu_link_color_hover .';}';
 			}
 
 			// Menu link active color
@@ -4898,11 +4934,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Dropdown menu link color
 			if ( ! empty( $dropdown_menu_link_color ) && '#333333' != $dropdown_menu_link_color ) {
 				$css .= '.dropdown-menu ul li a.menu-link{color:'. $dropdown_menu_link_color .';}';
+				$css .= '.dropdown-menu ul li a.menu-link .owp-icon use{stroke:'. $dropdown_menu_link_color .';}';
 			}
 
 			// Dropdown menu link hover color
 			if ( ! empty( $dropdown_menu_link_color_hover ) && '#555555' != $dropdown_menu_link_color_hover ) {
 				$css .= '.dropdown-menu ul li a.menu-link:hover{color:'. $dropdown_menu_link_color_hover .';}';
+				$css .= '.dropdown-menu ul li a.menu-link:hover .owp-icon use{stroke:'. $dropdown_menu_link_color_hover .';}';
 			}
 
 			// Dropdown menu link hover background color
@@ -4943,21 +4981,25 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Dropdown menu link active background color
 			if ( ! empty( $dropdown_category_date_color ) && '#bbbbbb' != $dropdown_category_date_color ) {
 				$css .= '.navigation li.mega-cat ul li .mega-post-date{color:'. $dropdown_category_date_color .';}';
+				$css .= '.navigation li.mega-cat ul li .mega-post-date .owp-icon use{stroke:'. $dropdown_category_date_color .';}';
 			}
 
 			// Add social menu font size
 			if ( ! empty( $menu_social_font_size ) ) {
 				$css .= '.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a{font-size:'. $menu_social_font_size .'px;}';
+				$css .= '.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon{width:'. $menu_social_font_size .'px; height:'. $menu_social_font_size .'px;}';
 			}
 
 			// Add social menu tablet font size
 			if ( ! empty( $menu_social_tablet_font_size ) ) {
 				$css .= '@media (max-width: 768px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a{font-size:'. $menu_social_tablet_font_size .'px;}}';
+				$css .= '@media (max-width: 768px){.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon{width:'. $menu_social_tablet_font_size .'px; height:'. $menu_social_tablet_font_size .'px;}}';
 			}
 
 			// Add social menu mobile font size
 			if ( ! empty( $menu_social_mobile_font_size ) ) {
 				$css .= '@media (max-width: 480px){.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a{font-size:'. $menu_social_mobile_font_size .'px;}}';
+				$css .= '@media (max-width: 480px){.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon{width:'. $menu_social_mobile_font_size .'px; height:'. $menu_social_mobile_font_size .'px;}}';
 			}
 
 			// Social menu padding
@@ -5020,11 +5062,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Social menu links color
 			if ( ! empty( $menu_social_links_color ) ) {
 				$css .= '.oceanwp-social-menu.simple-social ul li a{color:'. $menu_social_links_color .';}';
+				$css .= '.oceanwp-social-menu.simple-social ul li a .owp-icon use{stroke:'. $menu_social_links_color .';}';
 			}
 
 			// social menu links hover color
 			if ( ! empty( $menu_social_hover_links_color ) ) {
 				$css .= '.oceanwp-social-menu.simple-social ul li a:hover{color:'. $menu_social_hover_links_color .'!important;}';
+				$css .= '.oceanwp-social-menu.simple-social ul li a:hover .owp-icon use{stroke:'. $menu_social_hover_links_color .'!important;}';
 			}
 
 			// Mobile menu breakpoint
@@ -5153,11 +5197,13 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			// Mobile menu search border color
 			if ( ! empty( $mobile_menu_sidr_search_button_color ) && '#555555' != $mobile_menu_sidr_search_button_color ) {
 				$css .= '.sidr-class-mobile-searchform button, #mobile-dropdown #mobile-menu-search form button{color:'. $mobile_menu_sidr_search_button_color .';}';
+				$css .= '.sidr-class-mobile-searchform button .owp-icon use, #mobile-dropdown #mobile-menu-search form button .owp-icon use{stroke:'. $mobile_menu_sidr_search_button_color .';}';
 			}
 
 			// Mobile menu search border color
 			if ( ! empty( $mobile_menu_sidr_search_button_hover_color ) && '#222222' != $mobile_menu_sidr_search_button_hover_color ) {
 				$css .= '.sidr-class-mobile-searchform button:hover, #mobile-dropdown #mobile-menu-search form button:hover{color:'. $mobile_menu_sidr_search_button_hover_color .';}';
+				$css .= '.sidr-class-mobile-searchform button:hover .owp-icon use, #mobile-dropdown #mobile-menu-search form button:hover .owp-icon use{stroke:'. $mobile_menu_sidr_search_button_hover_color .';}';
 			}
 				
 			// Return CSS

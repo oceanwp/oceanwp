@@ -72,9 +72,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		// Next/Prev.
 		if ( 'next_prev' === $element ) {
-
+			ob_start();
 			get_template_part( 'partials/single/next-prev' );
-
+			echo ob_get_clean();
 		}
 
 		// Author Box.
@@ -86,16 +86,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		// Related Posts.
 		if ( 'related_posts' === $element ) {
-
+			ob_start();
 			get_template_part( 'partials/single/related-posts' );
-
+			echo ob_get_clean();
 		}
 
 		// Comments.
 		if ( 'single_comments' === $element ) {
-
+			ob_start();
 			comments_template();
-
+			echo ob_get_clean();
 		}
 	}
 	?>

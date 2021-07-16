@@ -74,6 +74,12 @@
 		    &.oceanwp-tripadvisor a:hover { color: #589442; }
 		    &.oceanwp-rss a:hover { color: #ff7900; }
 		    &.oceanwp-email a:hover { color: #13aff0; }
+			&.oceanwp-tiktok a:hover { color: #000000 }
+			&.oceanwp-medium a:hover { color: #00ab6c; }
+			&.oceanwp-telegram a:hover { color: #0088cc }
+			&.oceanwp-twitch a:hover { color: #6441a5 }
+			&.oceanwp-line a:hover { color: #00c300 }
+			&.oceanwp-qq a:hover { color: #febf1b }
 	    }
 	}
 
@@ -92,6 +98,10 @@
 		    &:hover {
 		    	color: $color-1;
 		    }
+
+			.owp-icon use {
+				stroke: $color-1;
+			}
 		}
 
 	    &.oceanwp-twitter a { background-color: #46d4fe; }
@@ -134,8 +144,20 @@
 	    &.oceanwp-rss a:hover { background-color: #d46603; }
 	    &.oceanwp-email a { background-color: #13aff0; }
 	    &.oceanwp-email a:hover { background-color: #0f8dc2; }
+		&.oceanwp-tiktok a { background-color: #000000; }
+	    &.oceanwp-tiktok a:hover { background-color: #141414; }
+		&.oceanwp-medium a { background-color: #00ab6c; }
+	    &.oceanwp-medium a:hover { background-color: #03945f; }
+		&.oceanwp-telegram a { background-color: #0088cc; }
+	    &.oceanwp-telegram a:hover { background-color: #0da4f0; }
+		&.oceanwp-twitch a { background-color: #6441a5 }
+		&.oceanwp-twitch a:hover { background-color: #702cee }
+		&.oceanwp-line a { background-color: #00c300 }
+		&.oceanwp-line a:hover { background-color: #09f309 }
+		&.oceanwp-qq a { background-color: #febf1b }
+		&.oceanwp-qq a:hover { background-color: #db9f07 }
 	}
-	
+
 	.minimal ul li {
 		a {
 	    	position: relative;
@@ -175,8 +197,14 @@
 	    &.oceanwp-tripadvisor a:hover { color: #589442; border-color: #589442; }
 	    &.oceanwp-rss a:hover { color: #ff7900; border-color: #ff7900; }
 	    &.oceanwp-email a:hover { color: #13aff0; border-color: #13aff0; }
+	    &.oceanwp-tiktok a:hover { color: #000000; border-color: #000000; }
+	    &.oceanwp-medium a:hover { color: #00ab6c; border-color: #00ab6c; }
+	    &.oceanwp-telegram a:hover { color: #0088cc; border-color: #0088cc;}
+		&.oceanwp-twitch a:hover { color: #702cee; border-color: #702cee; }
+		&.oceanwp-line a:hover { color: #00c300; border-color: #00c300; }
+		&.oceanwp-qq a:hover { color: #febf1b; border-color: #febf1b; }
 	}
-	
+
 	.dark ul li a {
     	position: relative;
 	    display: inline-block;
@@ -193,5 +221,9 @@
 	    	background-color: #000;
 	    	color: $color-1;
 	    }
+
+		.owp-icon use {
+			stroke: $color-1;
+		}
 	}
 }

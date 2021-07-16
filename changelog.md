@@ -1,5 +1,85 @@
 # OceanWP Changelog
 
+### *2021.07.xx.* - 2.1.2
+* **Added** - Mobile Header: search icon, default state disabled. Customize > Header > Mobile Menu, section Mobile Header Search.
+* **Added** - Single Blog Post: 'ocean_single_modified_date_state' filter. Disable display of modifided date if the same as the published date. Default state false.
+* **Added** - Single Blog Post: 'ocean_related_posts_date' filter. Disable display of published date on related post items. Default state true.
+* **Added** - WooCommerce: 'ocean_floating_bar_h_tag' filter. Change Floating Bar heading tag. Default value h2.
+* **Added** - SEO Settings: Customize > General Options > SEO Settings.
+* **Improved** - Accessibility: Mobile menu search form.
+* **Improved** - Accessibility: Scroll to top.
+* **Improved** - Accessibility: Header Replace search form style.
+* **Improved** - Accessibility: Header Overlay search form style.
+* **Improved** - Accessibility: Link Post Format, both entry and single.
+* **Improved** - Accessibility: Blog Entry: Blog post titles.
+* **Improved** - Accessibility: Blog Entry: Featured image.
+* **Improved** - Accessibility: Blog Entry: Continue Reading option.
+* **Improved** - Accessibility: Single Blog Post: Related Posts title.
+* **Improved** - Accessibility: Single Blog Post: Author avatar.
+* **Improved** - Accessibility: Post Categories Mega Menu.
+* **Updated** - Template: partials/entry/readmore.php
+* **Updated** - Template: partials/entry/media/blog-entry.php
+* **Updated** - Template: partials/entry/media/blog-entry-link.php
+* **Updated** - Template: partials/single/media/blog-single.php
+* **Updated** - Template: partials/single/media/blog-single-link.php
+* **Updated** - Template: partials/single/related-posts.php
+* **Updated** - Template: partials/single/author-bio.php
+* **Updated** - Template: partials/single/layout.php
+* **Updated** - Template: partials/single/meta.php
+* **Updated** - Template: partials/header/search-overlay.php
+* **Updated** - Template: partials/header/search-replace.php
+* **Updated** - Template: partials/mobile/mobile-search.php
+* **Updated** - Template: partials/scroll-top.php
+* **Fixed** - Previous item navigation arrow icon class.
+
+### *2021.06.23.* - 2.1.1
+* **Added** - New icons added in theme icon array.
+* **Tweak** - Function 'oceanwp_title' has been renamed to 'oceanwp_has_page_title'.
+* **Fixed** - Header: Full Screen style dropdown icon issue.
+* **Fixed** - PHP Deprecated: Required parameter $output follows optional parameter $depth in menu-walker.
+
+### *2021.06.11.* - 2.1.0
+* **Added** - Check if icon class exist or not from theme icons.
+* **Tweak** - Default Theme Icon settings set to "Simple Line Icons" to prevent issues on websites that did not store any theme icons settings in the past.
+* **Tweak** - Ocean SVG Icons disabled by default. In order to use the new icons, enable them via Customize > General Options > Theme Icons
+* **Fixed** - Icons that require manual selection get deselect on Theme icons change
+
+### *2021.06.09.* - 2.0.9
+* **Added** - OceanWP SVG icons - will be set as default icons on all new installations. Perform icons switch via Customize > General Options > Theme Icons.
+* **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.
+* **Added** - New customizer control to support SVG Icons.
+* **Added** - Enable support for SVG logo type.
+* **Added** - Social option: Telegram, Twitch, Line, QQ
+* **Fixed** - WooCommerce: Multistep checkout issue upon using the Create Account option on.
+* **Fixed** - WooCommerce: Number of products displayed between 768px and 959px screen widths.
+* **Fixed** - WooCommerce: Long Variation Names Overflowing #328
+* **Fixed** - WooCommerce: Fixed fatal error on product page #327
+* **Fixed** - Replaced slick-slide class with swiper-slide.
+* **Fixed** - Gutenberg: layout issue with block alignfull and alignwide.
+
+### *2021.04.26.* - 2.0.8
+* **Fixed** - Page title displayed with old setting.
+
+### *2021.04.16.* - 2.0.7
+* **Moved** - Customizer hide page title setting to the visibility setting section.
+* **Fixed** - Multistep checkout undefined error notice.
+
+### *2021.04.14.* - 2.0.6
+* **Fixed** - Gutenberg: cover block layout issue.
+* **Fixed** - Outdated woocommerce template error notice.
+
+### *2021.04.13.* - 2.0.5
+* **Fixed** - Gutenberg: list block backend layout issue.
+* **Fixed** - Youtube short link doesn't work to embed video in post.
+* **Fixed** - Multi-step checkout does not validate fields before clicking next button #315
+* **Fixed** - Block column layout with full-width page layout.
+* **Fixed** - Block editor post title input style.
+* **Fixed** - Call to a member function is_block_editor() on null.
+
+### *2021.03.25.* - 2.0.4
+* **Added** - Added Gutenberg support to match the backend editor with frontend.
+* **Fixed** - Styling for some Gutenberg blocks like table, blockquote etc.
+
 ### *2021.03.08.* - 2.0.3
 * **Fixed** - Multistep checkout issue.
 * **Fixed** - WPML translation issue.

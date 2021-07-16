@@ -1,7 +1,7 @@
 {
     "name": "oceanwp",
     "version": "1.0.0",
-    "description": "OceanWP ... ...",
+    "description": "OceanWP Theme",
     "main": "Gruntfile.js",
     "devDependencies": {
         "@babel/core": "^7.14.0",

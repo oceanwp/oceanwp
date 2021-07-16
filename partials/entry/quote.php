@@ -15,10 +15,6 @@ if ( ! OCEAN_EXTRA_ACTIVE ) {
 	return;
 }
 
-// Get theme icons.
-$theme_icons = oceanwp_theme_icons();
-$icon_t = oceanwp_theme_icon_class();
-
 // Quote link.
 $link = get_post_meta( get_the_ID(), 'ocean_quote_format_link', true );
 
@@ -32,7 +28,7 @@ $classes = oceanwp_post_entry_classes(); ?>
 		<?php } ?>
 				<div class="post-quote-content">
 					<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'ocean_quote_format', true ) ); ?>
-					<span class="post-quote-icon <?php echo $theme_icons[ 'quote' ][ $icon_t ]; ?>"></span>
+					<span class="post-quote-icon"><?php oceanwp_icon( 'quote' ); ?></span>
 				</div>
 				<div class="post-quote-author"><?php the_title(); ?></div>
 		<?php if ( 'post' === $link ) { ?>

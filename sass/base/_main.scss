@@ -121,6 +121,10 @@ body .oceanwp-row {
 	}
 }
 
+.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before {
+	padding-top: 0;
+}
+
 .wp-video-shortcode {
 	max-width: 100% !important;
 }
@@ -221,6 +225,40 @@ form.oceanwp-searchform {
 	}
 }
 
+.no-display {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    display: none;
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    -webkit-clip-path: circle(1% at 1% 1%);
+    clip-path: circle(1% at 1% 1%);
+}
+
+.owp-icon {
+    width: 14px;
+    height: 14px;
+	vertical-align: text-bottom;
+}
+
+#owp-svg-icons path,
+#owp-svg-icons rect,
+#owp-svg-icons circle,
+#owp-svg-icons line,
+#owp-svg-icons polygon,
+#owp-svg-icons polyline {
+    stroke:inherit;
+	fill: none;
+}
+
+.owp-icon use {
+	stroke: $color-2;
+}
+
+
 /**
  * Selection Color.
  */
@@ -243,14 +281,13 @@ form.oceanwp-searchform {
 	
 	/* turn 4 column masonry grids into 2 columns */
 	body .oceanwp-row {
-		.span_1_of_4.col-3.col,
-		.span_1_of_4.col.product:nth-child(2n+3) {
+		.span_1_of_4.col-3.col {
 			margin-left: 0;
 			clear: both;
 		}
 	}
 
-	body .oceanwp-row .span_1_of_4.col,
+	body .oceanwp-row .span_1_of_4.col:not(.product),
 	body .oceanwp-isotope-grid .span_1_of_4.col {
 		width: 50%;
 	}

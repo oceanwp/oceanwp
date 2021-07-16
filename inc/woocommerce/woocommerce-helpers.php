@@ -66,7 +66,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		}
 
 		// Get cart icon.
-		$icon = get_theme_mod( 'ocean_woo_menu_icon', 'icon-handbag' );
+		$icon = get_theme_mod( 'ocean_woo_menu_icon', 'icon_handbag' );
 
 		// If has custom cart icon.
 		$custom_icon = get_theme_mod( 'ocean_woo_menu_custom_icon' );
@@ -74,9 +74,15 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 			$icon = $custom_icon;
 		}
 
-		// Cart Icon.
-		$cart_icon = '<i class="'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
+		if ( '' != $custom_icon ) {
+			$cart_icon = '<i class="'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
+		} else {
+			$cart_icon = oceanwp_icon( $icon, false );
+		}
+
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
+
+		// Cart Icon.
 
 		// If bag style.
 		$woo_bag_style = get_theme_mod( 'ocean_woo_menu_bag_style', 'no' );
@@ -99,7 +105,7 @@ if ( ! function_exists( 'oceanwp_wcmenucart_menu_item' ) ) {
 		<?php } else { ?>
 
 			<a href="<?php echo esc_url( $url ); ?>" class="<?php echo esc_attr( $classes ); ?>">
-				<span class="wcmenucart-count"><?php echo wp_kses_post( $cart_icon ); ?><?php echo wp_kses_post( $cart_extra ); ?></span>
+				<span class="wcmenucart-count"><?php echo $cart_icon; ?><?php echo wp_kses_post( $cart_extra ); ?></span>
 			</a>
 
 		<?php
@@ -139,7 +145,7 @@ if ( ! function_exists( 'oceanwp_woo_product_instock' ) ) {
 		global $post;
 		$post_id      = $post_id ? $post_id : $post->ID;
 		$product = wc_get_product($post_id);
-		return $product->is_in_stock();
+		return $product ? $product->is_in_stock() : false;
 	}
 
 }
