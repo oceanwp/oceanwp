@@ -8,7 +8,7 @@ class MobileSearchIcon extends SearchBase {
     constructor() {
         super();
 
-        if (options.mobileMenuSearchStyle !== "disabled") {
+        if (options.mobileMenuSearchStyle === "disabled") {
             return;
         }
 
