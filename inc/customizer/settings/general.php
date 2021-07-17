@@ -3866,7 +3866,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			/**
 			 * Section SEO
 			 *
-			 * @since 2.1.2
+			 * @since 3.0.0
 			 */
 			$wp_customize->add_section(
 				'ocean_general_seo_settings',

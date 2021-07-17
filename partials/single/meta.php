@@ -59,7 +59,7 @@ do_action( 'ocean_before_single_post_meta' );
 		<?php } ?>
 
 		<?php if ( 'reading-time' === $section ) { ?>
-			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Reading time:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'r_time' ); ?><?php echo esc_attr( ocean_reading_time() ); ?></li>
+			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Reading time:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'r_time' ); ?><?php echo esc_html( ocean_reading_time() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'comments' === $section && comments_open() && ! post_password_required() ) { ?>

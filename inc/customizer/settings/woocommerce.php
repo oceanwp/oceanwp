@@ -2229,7 +2229,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				'ocean_woo_single_cond_msg_text',
 				array(
 					'label'                  => esc_html__( 'Price replacement message', 'oceanwp' ),
-					'description'            => esc_html__( 'Display message instead of the Add to Cart button to logged out users'),
+					'description'            => esc_html__( 'Display message instead of the Add to Cart button to logged out users', 'oceanwp' ),
 					'section'                => 'ocean_woocommerce_single',
 					'priority'               => 10,
 					'type'                   => 'text',

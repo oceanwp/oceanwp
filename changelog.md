@@ -1,6 +1,7 @@
 # OceanWP Changelog
 
-### *2021.07.xx.* - 2.1.2
+### *2021.07.20.* - 3.0.0
+* **Added** - Vanilla JS.
 * **Added** - Mobile Header: search icon, default state disabled. Customize > Header > Mobile Menu, section Mobile Header Search.
 * **Added** - Single Blog Post: 'ocean_single_modified_date_state' filter. Disable display of modifided date if the same as the published date. Default state false.
 * **Added** - Single Blog Post: 'ocean_related_posts_date' filter. Disable display of published date on related post items. Default state true.

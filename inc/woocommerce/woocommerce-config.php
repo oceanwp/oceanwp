@@ -800,9 +800,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$array['floating_bar'] = get_theme_mod( 'ocean_woo_display_floating_bar', 'on' );
 
 			// Grouped product button text in the quick view
-			$array['grouped_text'] = esc_attr__( 'View products', 'oceanwp' );
+			$array['grouped_text'] = esc_html__( 'View products', 'oceanwp' );
 
-			$array['multistep_checkout_error'] = __( 'Some required fields are empty. Please fill the required fields to go to the next step.' );
+			$array['multistep_checkout_error'] = __( 'Some required fields are empty. Please fill the required fields to go to the next step.', 'oceanwp' );
 
 			return $array;
 

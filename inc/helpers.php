@@ -1726,44 +1726,20 @@ if ( ! function_exists( 'oceanwp_menu_search_style' ) ) {
 /**
  * Returns mobile menu search style
  *
- * @since 2.0.9
+ * @since 3.0.0
  */
 if ( ! function_exists( 'oceanwp_mobile_menu_search_style' ) ) {
 
 	function oceanwp_mobile_menu_search_style() {
 
 		// Get search style from Customizer
-		$style = get_theme_mod( 'ocean_mobile_menu_search_style', 'drop_down' );
+		$style = get_theme_mod( 'ocean_mobile_menu_search_style', 'disabled' );
 
 		// Apply filters for advanced edits
 		$style = apply_filters( 'oceanwp_mobile_menu_search_style', $style );
 
 		// Sanitize output so it's not empty and return
-		$style = $style ? $style : 'drop_down';
-
-		// Return style
-		return $style;
-
-	}
-}
-
-/**
- * Returns mobile menu search style
- *
- * @since 2.0.9
- */
-if ( ! function_exists( 'oceanwp_mobile_menu_search_style' ) ) {
-
-	function oceanwp_mobile_menu_search_style() {
-
-		// Get search style from Customizer
-		$style = get_theme_mod( 'ocean_mobile_menu_search_style', 'drop_down' );
-
-		// Apply filters for advanced edits
-		$style = apply_filters( 'oceanwp_mobile_menu_search_style', $style );
-
-		// Sanitize output so it's not empty and return
-		$style = $style ? $style : 'drop_down';
+		$style = $style ? $style : 'disabled';
 
 		// Return style
 		return $style;
@@ -4660,12 +4636,13 @@ function owp_parse_attr( $context, $attributes = array(), $args = array() ) {
  *
  * Adds a search icon into the mobile header.
  *
- * @since 2.1.2
+ * @since 3.0.0
  */
 function oceanwp_mobile_search_icon() {
 
 	$class        = '';
 	$search_style = oceanwp_mobile_menu_search_style();
+	$search_style = $search_style ? $search_style : 'disabled';
 	$header_style = oceanwp_header_style();
 
 	if ( 'disabled' === $search_style || 'vertical' === $header_style ) {
@@ -4691,7 +4668,7 @@ function oceanwp_mobile_search_icon() {
 /**
  * Mobile Search Form
  *
- * @since 2.1.2
+ * @since 3.0.0
  */
 function oceanwp_mobile_search_form_html() {
 
@@ -4767,7 +4744,7 @@ function oceanwp_mobile_search_form_html() {
 /**
  * Display Mobile Search Icon in Header
  *
- * @since 2.1.2
+ * @since 3.0.0
  */
 function mobile_menu_search_icon() {
 
