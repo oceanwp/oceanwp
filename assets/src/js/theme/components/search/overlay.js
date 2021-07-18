@@ -15,7 +15,7 @@ class OverlaySearch extends SearchBase {
 
     #setupEventListeners = () => {
         DOM.search.overlay.toggleSearchBtn?.addEventListener("click", this.#onToggleSearchBtnClick);
-        DOM.search.overlay.closeBtn.addEventListener("click", this.#onCloseBtnClick);
+        DOM.search.overlay.closeBtn?.addEventListener("click", this.#onCloseBtnClick);
     };
 
     #onToggleSearchBtnClick = (event) => {
@@ -25,7 +25,8 @@ class OverlaySearch extends SearchBase {
 
         form.classList.add("active");
         fadeIn(form);
-        form.querySelector('input[type="search"]').focus();
+
+        this.focus(form, 'input[type="search"]');
 
         setTimeout(function () {
             DOM.html.style.overflow = "hidden";

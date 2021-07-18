@@ -1,7 +1,8 @@
 class SearchBase {
     focus = (form, inputClass) => {
-        const formTransitionDuration =
-            parseFloat(getComputedStyle(form).transitionDuration.replace("s", "")) * 1000;
+        let formTransitionDuration = parseFloat(getComputedStyle(form).transitionDuration.replace("s", "")) * 1000;
+
+        formTransitionDuration = !!formTransitionDuration ? formTransitionDuration : 600;
 
         if (formTransitionDuration) {
             setTimeout(function () {

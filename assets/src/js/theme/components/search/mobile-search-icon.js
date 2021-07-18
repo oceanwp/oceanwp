@@ -22,7 +22,7 @@ class MobileSearchIcon extends SearchBase {
             dropdownSearchForm: document.querySelector(".search-style-dropdown"),
             overlaySearch: document.querySelector(".search-style-overlay"),
             overlaySearchIcon: document.querySelector(".search-icon-overlay"),
-            overlaySearchCloseIcon: document.querySelector(".search-overlay-close"),
+            overlaySearchCloseIcon: document.querySelector(".search-style-overlay .search-overlay-close"),
             html: document.querySelector("html"),
         };
     };
@@ -43,14 +43,9 @@ class MobileSearchIcon extends SearchBase {
         event.stopPropagation();
 
         this.#elements.dropdownSearchForm.classList.toggle("show");
-        this.#elements.dropdownSearchIcon.toggle("active");
+        this.#elements.dropdownSearchIcon.classList.toggle("active");
 
-        let formTransitionDuration = window.getComputedStyle("transition-duration").replace("s", "") * 1000;
-        if (!!formTransitionDuration) {
-            setTimeout(function () {
-                this.#elements.dropdownSearchForm.querySelector("input.field").focus();
-            }, formTransitionDuration);
-        }
+        this.focus(this.#elements.dropdownSearchForm.querySelector("form"), "input.field");
     };
 
     #openOverlaySearch = (event) => {
@@ -59,7 +54,7 @@ class MobileSearchIcon extends SearchBase {
         this.#elements.overlaySearch.classList.add("active");
         fadeIn(this.#elements.overlaySearch);
 
-        this.#elements.overlaySearch.querySelector("input").focus();
+        this.focus(this.#elements.overlaySearch.querySelector("form"), "input.mobile-search-overlay-input");
 
         setTimeout(() => {
             this.#elements.html.style.overflow = "hidden";
@@ -82,7 +77,7 @@ class MobileSearchIcon extends SearchBase {
     };
 
     #onClickDocument = (event) => {
-        if (!event.target.closest("#searchform-dropdown.show")) {
+        if (!event.target.closest("#icon-searchform-dropdown.show")) {
             this.#elements.dropdownSearchIcon.classList.remove("active");
             this.#elements.dropdownSearchForm.classList.remove("show");
         }
