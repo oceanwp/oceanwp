@@ -36,6 +36,7 @@ class ScrollEffect {
                 event.preventDefault();
                 event.stopPropagation();
 
+                console.log(this.#getStickyHeaderHeight());
                 const scrollPosition =
                     offset(target).top - this.#getAdminBarHeight() - this.#getTopbarHeight() - this.#getStickyHeaderHeight();
 
@@ -67,7 +68,7 @@ class ScrollEffect {
         }
 
         if (DOM.header.site.classList.contains("fixed-scroll")) {
-            height = DOM.header.site.getAttribute("data-height");
+            height = DOM.header.site.offsetHeight;
         }
 
         if (DOM.header.site.classList.contains("medium-header")) {
