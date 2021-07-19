@@ -1,3 +1,4 @@
+import WooResetVariations from "./custom-features/reset-variations";
 import WooGridList from "./custom-features/woo-grid-list";
 import WooGuestAccountPage from "./custom-features/woo-guest-account-page";
 import WooQuantityButtons from "./custom-features/woo-quantity-buttons";
@@ -6,6 +7,7 @@ import WooRemoveCategoriesCountParenthesis from "./custom-features/remove-catego
 
 class WooCustomFeatures {
     start = () => {
+        this.resetVariations = new WooResetVariations();
         this.gridList = new WooGridList();
         this.guestAccountPage = new WooGuestAccountPage();
         this.quantityButtons = new WooQuantityButtons();

@@ -79,6 +79,7 @@ export const DOM = {
         quickViewContent: document.querySelector("#owp-qv-content"),
     },
     woo: {
+        resetVariations: document.querySelector(".reset_variations"),
         product: document.querySelector(".woocommerce div.product"),
         allProducts: document.querySelectorAll(".woocommerce ul.products"),
         categories: document.querySelectorAll(".woo-dropdown-cat .product-categories"),

@@ -23,7 +23,9 @@ class ScrollEffect {
 
         if (
             !scrollItem.classList.contains("omw-open-modal") &&
-            !scrollItem.parentNode.classList.contains("omw-open-modal opl-link") &&
+            !scrollItem.classList.contains("opl-link") &&
+            !scrollItem.parentNode.classList.contains("omw-open-modal") &&
+            !scrollItem.parentNode.classList.contains("opl-link") &&
             !scrollItem.parentNode.parentNode.parentNode.classList.contains("omw-open-modal")
         ) {
             const href = scrollItem.getAttribute("href");

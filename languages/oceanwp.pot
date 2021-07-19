@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 2.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-07-18 16:35:00+00:00\n"
+"POT-Creation-Date: 2021-07-19 13:26:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -106,65 +106,65 @@ msgstr ""
 msgid "Mobile (optional)"
 msgstr ""
 
-#: functions.php:611
+#: functions.php:605
 msgid "Default Sidebar"
 msgstr ""
 
-#: functions.php:613
+#: functions.php:607
 msgid ""
 "Widgets in this area will be displayed in the left or right sidebar area if "
 "you choose the Left or Right Sidebar layout."
 msgstr ""
 
-#: functions.php:624
+#: functions.php:618
 #: inc/customizer/controls/radio-image/class-control-radio-image.php:110
 #: inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:626
+#: functions.php:620
 msgid ""
 "Widgets in this area are used in the left sidebar region if you use the "
 "Both Sidebars layout."
 msgstr ""
 
-#: functions.php:638
+#: functions.php:632
 msgid "Search Results Sidebar"
 msgstr ""
 
-#: functions.php:640
+#: functions.php:634
 msgid "Widgets in this area are used in the search result page."
 msgstr ""
 
-#: functions.php:652
+#: functions.php:646
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:654
+#: functions.php:648
 msgid "Widgets in this area are used in the first footer region."
 msgstr ""
 
-#: functions.php:665
+#: functions.php:659
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:667
+#: functions.php:661
 msgid "Widgets in this area are used in the second footer region."
 msgstr ""
 
-#: functions.php:678
+#: functions.php:672
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:680
+#: functions.php:674
 msgid "Widgets in this area are used in the third footer region."
 msgstr ""
 
-#: functions.php:691
+#: functions.php:685
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:693
+#: functions.php:687
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr ""
 

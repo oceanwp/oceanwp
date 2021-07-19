@@ -41,19 +41,25 @@ export default class Select {
     #setupEventListenersItem = () => {
         this.#select.addEventListener("mouseenter", this.#onMouseenter);
         this.#select.addEventListener("mouseleave", this.#onMouseleave);
-        this.#select.addEventListener("change", this.#onChange);
+        this.#select.addEventListener("change", this.onChange);
     };
 
-    #onMouseenter = () => {
-        this.#select.classList.add("theme-selectHover");
+    #onMouseenter = (event) => {
+        const select = event.currentTarget;
+
+        select.classList.add("theme-selectHover");
     };
 
-    #onMouseleave = () => {
-        this.#select.classList.remove("theme-selectHover");
+    #onMouseleave = (event) => {
+        const select = event.currentTarget;
+
+        select.classList.remove("theme-selectHover");
     };
 
-    #onChange = (event) => {
-        this.#select.nextSibling.innerHTML = this.#select.options[this.#select.selectedIndex].text;
+    onChange = (event) => {
+        const select = event.currentTarget;
+
+        select.nextSibling.innerHTML = select.options[select.selectedIndex].text;
     };
 
     #setupEventListeners = () => {

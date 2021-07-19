@@ -433,9 +433,6 @@ final class OCEANWP_Theme_Class {
 		// Register simple line icons style.
 		wp_enqueue_style( 'simple-line-icons', $dir . 'third/simple-line-icons.min.css', false, '2.4.0' );
 
-		// Register the slick style.
-		wp_enqueue_style( 'slick', $dir . 'third/slick.min.css', false, '1.6.0' );
-
 		// Main Style.css File.
 		wp_enqueue_style( 'oceanwp-style', $dir . 'style.min.css', false, $theme_version );
 
@@ -529,9 +526,6 @@ final class OCEANWP_Theme_Class {
 
 		// Register scripts for old addons.
 		wp_register_script( 'nicescroll', $dir . 'vendors/support-old-oceanwp-addons/jquery.nicescroll.min.js', array( 'jquery' ), $theme_version, true );
-		// wp_register_script( 'infinitescroll', $dir . 'vendors/infinite-scroll.pkgd.min.js', array( 'jquery' ), $theme_version, true );
-		// wp_register_script( 'magnific-popup', $dir . 'vendors/support-old-addons/magnific-popup.min.js', array( 'jquery' ), $theme_version, true );
-		// wp_register_script( 'oceanwp-lightbox', $dir . 'vendors/support-old-addons/lightbox.min.js', array( 'jquery' ), $theme_version, true );
 	}
 
 	/**
