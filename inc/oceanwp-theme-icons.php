@@ -743,7 +743,7 @@ function get_ocean_icon( $args = array() ) {
 
 	// Define an icon.
 	if ( false === array_key_exists( 'icon', $args ) ) {
-		return __( 'Please define an icon class.', 'oceanwp' );
+		return;
 	}
 
 	// Set defaults.
