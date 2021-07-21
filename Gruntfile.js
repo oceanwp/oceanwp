@@ -16,11 +16,7 @@ module.exports = function (grunt) {
         browserify: {
             prod: {
                 files: {
-                    // Theme scripts
-                    "./assets/js/theme.vanilla.min.js": "./assets/src/js/index.js",
-                    // Woocommerce custom features
-                    "./assets/js/wp-plugins/woocommerce/woo-custom-features.min.js":
-                        "./assets/src/js/wp-plugins/woocommerce/woo-custom-features.js",
+                    "./assets/js/theme.vanilla.js": "./assets/src/js/index.js",
                 },
                 options: {
                     transform: [["babelify", { presets: ["@babel/preset-env"] }]],
@@ -31,42 +27,45 @@ module.exports = function (grunt) {
             },
             dev: {
                 files: {
-                    // Easy Digital Downloads ajax cart
-                    "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax-cart.min.js":
+                    // Easy Digital Downloads
+                    "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax-cart.js":
                         "./assets/src/js/wp-plugins/easy-digital-downloads/edd-ajax-cart.js",
-                    // Easy Digital Downloads display cart
-                    "./assets/js/wp-plugins/easy-digital-downloads/edd-display-cart.min.js":
+
+                    "./assets/js/wp-plugins/easy-digital-downloads/edd-display-cart.js":
                         "./assets/src/js/wp-plugins/easy-digital-downloads/edd-display-cart.js",
 
-                    // Woocommerce ajax add to cart
-                    "./assets/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.min.js":
+                    // Woocommerce
+                    "./assets/js/wp-plugins/woocommerce/woo-custom-features.js":
+                        "./assets/src/js/wp-plugins/woocommerce/woo-custom-features.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.js",
-                    // Woocommerce categories widget
-                    "./assets/js/wp-plugins/woocommerce/woo-cat-widget.min.js":
+
+                    "./assets/js/wp-plugins/woocommerce/woo-cat-widget.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-cat-widget.js",
-                    // Woocommerce display cart
-                    "./assets/js/wp-plugins/woocommerce/woo-display-cart.min.js":
+
+                    "./assets/js/wp-plugins/woocommerce/woo-display-cart.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-display-cart.js",
-                    // Woocommerce floating bar
-                    "./assets/js/wp-plugins/woocommerce/woo-floating-bar.min.js":
+
+                    "./assets/js/wp-plugins/woocommerce/woo-floating-bar.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-floating-bar.js",
-                    // Woocommerce mini cart
-                    "./assets/js/wp-plugins/woocommerce/woo-hover-style.min.js":
+
+                    "./assets/js/wp-plugins/woocommerce/woo-hover-style.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-hover-style.js",
-                    // Woocommerce mini cart
-                    "./assets/js/wp-plugins/woocommerce/woo-mini-cart.min.js":
+
+                    "./assets/js/wp-plugins/woocommerce/woo-mini-cart.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-mini-cart.js",
-                    // Woocommerce multi step checkout
-                    "./assets/js/wp-plugins/woocommerce/woo-multi-step-checkout.min.js":
+
+                    "./assets/js/wp-plugins/woocommerce/woo-multi-step-checkout.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-multi-step-checkout.js",
-                    // Woocommerce canvans filter
-                    "./assets/js/wp-plugins/woocommerce/woo-off-canvas.min.js":
+
+                    "./assets/js/wp-plugins/woocommerce/woo-off-canvas.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-off-canvas.js",
-                    // Woocommerce quick view
-                    "./assets/js/wp-plugins/woocommerce/woo-quick-view.min.js":
+
+                    "./assets/js/wp-plugins/woocommerce/woo-quick-view.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-quick-view.js",
-                    // Woocommerce thumbnails
-                    "./assets/js/wp-plugins/woocommerce/woo-thumbnails.min.js":
+
+                    "./assets/js/wp-plugins/woocommerce/woo-thumbnails.js":
                         "./assets/src/js/wp-plugins/woocommerce/woo-thumbnails.js",
                 },
                 options: {
@@ -80,60 +79,111 @@ module.exports = function (grunt) {
 
         // Concat and Minify our js.
         uglify: {
-            dev: {
+            prod: {
                 files: {
-                    "assets/js/third/html5.min.js": "assets/js/third/html5.js",
-                    "assets/js/third/magnific-popup.min.js": "assets/js/third/magnific-popup.js",
-                    "assets/js/third/lightbox.min.js": "assets/js/third/lightbox.js",
-                    "assets/js/third/woo/woo-scripts.min.js": ["assets/js/third/woo/devs/**/*.js"],
-                    "assets/js/third/woo/woo-display-cart.min.js": "assets/js/third/woo/woo-display-cart.js",
-                    "assets/js/third/woo/woo-mini-cart.min.js": "assets/js/third/woo/woo-mini-cart.js",
-                    "assets/js/third/woo/woo-quick-view.min.js": "assets/js/third/woo/woo-quick-view.js",
-                    "assets/js/third/woo/woo-multistep-checkout.min.js": "assets/js/third/woo/woo-multistep-checkout.js",
-                    "assets/js/third/woo/woo-floating-bar.min.js": "assets/js/third/woo/woo-floating-bar.js",
-                    "assets/js/third/woo/woo-hover-style.min.js": "assets/js/third/woo/woo-hover-style.js",
-
-                    "inc/customizer/assets/js/customize-preview.min.js": "inc/customizer/assets/js/customize-preview.js",
-                    "inc/customizer/assets/js/typography-customize-preview.min.js":
-                        "inc/customizer/assets/js/typography-customize-preview.js",
-                    "inc/customizer/assets/js/woo-typography-customize-preview.min.js":
-                        "inc/customizer/assets/js/woo-typography-customize-preview.js",
-                    "inc/customizer/assets/js/woo-customize-preview.min.js":
-                        "inc/customizer/assets/js/woo-customize-preview.js",
-                    "inc/customizer/assets/js/edd-customize-preview.min.js":
-                        "inc/customizer/assets/js/edd-customize-preview.js",
-                    "inc/customizer/assets/js/llms-customize-preview.min.js":
-                        "inc/customizer/assets/js/llms-customize-preview.js",
-                    "inc/customizer/assets/js/ld-customize-preview.min.js":
-                        "inc/customizer/assets/js/ld-customize-preview.js",
-                    "inc/customizer/assets/min/js/general.min.js": "inc/customizer/controls/general.js",
-                    "inc/customizer/assets/min/js/buttonset.min.js": "inc/customizer/controls/buttonset/buttonset.js",
-                    "inc/customizer/assets/min/js/color.min.js": "inc/customizer/controls/color/color.js",
-                    "inc/customizer/assets/min/js/dimensions.min.js": "inc/customizer/controls/dimensions/dimensions.js",
-                    "inc/customizer/assets/min/js/dropdown-pages.min.js":
-                        "inc/customizer/controls/dropdown-pages/dropdown-pages.js",
-                    "inc/customizer/assets/min/js/icon-select.min.js": "inc/customizer/controls/icon-select/icon-select.js",
-                    "inc/customizer/assets/min/js/multicheck.min.js": "inc/customizer/controls/multicheck/multicheck.js",
-                    "inc/customizer/assets/min/js/multiple-select.min.js":
-                        "inc/customizer/controls/multiple-select/multiple-select.js",
-                    "inc/customizer/assets/min/js/radio-image.min.js": "inc/customizer/controls/radio-image/radio-image.js",
-                    "inc/customizer/assets/min/js/range.min.js": "inc/customizer/controls/range/range.js",
-                    "inc/customizer/assets/min/js/slider.min.js": "inc/customizer/controls/slider/slider.js",
-                    "inc/customizer/assets/min/js/sortable.min.js": "inc/customizer/controls/sortable/sortable.js",
-                    "inc/customizer/assets/min/js/text.min.js": "inc/customizer/controls/text/text.js",
-                    "inc/customizer/assets/min/js/textarea.min.js": "inc/customizer/controls/textarea/textarea.js",
-                    "inc/customizer/assets/min/js/typo.min.js": "inc/customizer/controls/typo/typo.js",
-                    "inc/customizer/assets/min/js/typography.min.js": "inc/customizer/controls/typography/typography.js",
-                    "inc/customizer/assets/min/js/upsell.min.js": "inc/customizer/controls/upsell/upsell.js",
+                    "assets/js/theme.vanilla.min.js": ["assets/js/theme.vanilla.js"],
                 },
             },
-            prod: {
-                // options: {
-                //     sourceMap: true,
-                // },
+            dev: {
                 files: {
-                    "./assets/js/main.min.js": ["./assets/js/devs/**/*.js", "./assets/js/core/**/*.js"],
-                    // "assets/js/main.vanilla.min.js": ["assets/js/main.vanilla.min.js"],
+                    // Frontend
+                    // Easy Digital Downloads
+                    "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax-cart.min.js":
+                        "./assets/js/wp-plugins/easy-digital-downloads/edd-ajax-cart.js",
+
+                    "./assets/js/wp-plugins/easy-digital-downloads/edd-display-cart.min.js":
+                        "./assets/js/wp-plugins/easy-digital-downloads/edd-display-cart.js",
+
+                    // Woocommerce
+                    "./assets/js/wp-plugins/woocommerce/woo-custom-features.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-custom-features.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-ajax-add-to-cart.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-cat-widget.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-cat-widget.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-display-cart.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-display-cart.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-floating-bar.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-floating-bar.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-hover-style.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-hover-style.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-mini-cart.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-mini-cart.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-multi-step-checkout.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-multi-step-checkout.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-off-canvas.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-off-canvas.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-quick-view.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-quick-view.js",
+
+                    "./assets/js/wp-plugins/woocommerce/woo-thumbnails.min.js":
+                        "./assets/js/wp-plugins/woocommerce/woo-thumbnails.js",
+
+                    // Admin
+                    "inc/customizer/assets/js/customize-preview.min.js": "inc/customizer/assets/js/customize-preview.js",
+
+                    "inc/customizer/assets/js/typography-customize-preview.min.js":
+                        "inc/customizer/assets/js/typography-customize-preview.js",
+
+                    "inc/customizer/assets/js/woo-typography-customize-preview.min.js":
+                        "inc/customizer/assets/js/woo-typography-customize-preview.js",
+
+                    "inc/customizer/assets/js/woo-customize-preview.min.js":
+                        "inc/customizer/assets/js/woo-customize-preview.js",
+
+                    "inc/customizer/assets/js/edd-customize-preview.min.js":
+                        "inc/customizer/assets/js/edd-customize-preview.js",
+
+                    "inc/customizer/assets/js/llms-customize-preview.min.js":
+                        "inc/customizer/assets/js/llms-customize-preview.js",
+
+                    "inc/customizer/assets/js/ld-customize-preview.min.js":
+                        "inc/customizer/assets/js/ld-customize-preview.js",
+
+                    "inc/customizer/assets/min/js/general.min.js": "inc/customizer/controls/general.js",
+
+                    "inc/customizer/assets/min/js/buttonset.min.js": "inc/customizer/controls/buttonset/buttonset.js",
+
+                    "inc/customizer/assets/min/js/color.min.js": "inc/customizer/controls/color/color.js",
+
+                    "inc/customizer/assets/min/js/dimensions.min.js": "inc/customizer/controls/dimensions/dimensions.js",
+
+                    "inc/customizer/assets/min/js/dropdown-pages.min.js":
+                        "inc/customizer/controls/dropdown-pages/dropdown-pages.js",
+
+                    "inc/customizer/assets/min/js/icon-select.min.js": "inc/customizer/controls/icon-select/icon-select.js",
+
+                    "inc/customizer/assets/min/js/multicheck.min.js": "inc/customizer/controls/multicheck/multicheck.js",
+
+                    "inc/customizer/assets/min/js/multiple-select.min.js":
+                        "inc/customizer/controls/multiple-select/multiple-select.js",
+
+                    "inc/customizer/assets/min/js/radio-image.min.js": "inc/customizer/controls/radio-image/radio-image.js",
+
+                    "inc/customizer/assets/min/js/range.min.js": "inc/customizer/controls/range/range.js",
+
+                    "inc/customizer/assets/min/js/slider.min.js": "inc/customizer/controls/slider/slider.js",
+
+                    "inc/customizer/assets/min/js/sortable.min.js": "inc/customizer/controls/sortable/sortable.js",
+
+                    "inc/customizer/assets/min/js/text.min.js": "inc/customizer/controls/text/text.js",
+
+                    "inc/customizer/assets/min/js/textarea.min.js": "inc/customizer/controls/textarea/textarea.js",
+
+                    "inc/customizer/assets/min/js/typo.min.js": "inc/customizer/controls/typo/typo.js",
+
+                    "inc/customizer/assets/min/js/typography.min.js": "inc/customizer/controls/typography/typography.js",
+
+                    "inc/customizer/assets/min/js/upsell.min.js": "inc/customizer/controls/upsell/upsell.js",
                 },
             },
         },
@@ -288,7 +338,7 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ["assets/src/js/**/*.js"],
-                tasks: ["browserify:prod", "newer:browserify:dev", "newer:uglify:prod"],
+                tasks: ["newer:browserify:prod", "newer:browserify:dev", "newer:uglify:prod", "newer:uglify:dev"],
             },
         },
 
@@ -404,24 +454,18 @@ module.exports = function (grunt) {
     // Dev task
     grunt.registerTask("default", [
         "browserify:prod",
+        "browserify:dev",
+        "uglify:prod",
         "uglify:dev",
-        "newer:uglify:prod",
-        "cssmin:prod",
-        "sass:dev",
         "sass:prod",
+        "sass:dev",
+        "autoprefixer:main",
+        "cssmin:prod",
         "makepot",
     ]);
 
     // Production task
-    grunt.registerTask("build", [
-        "browserify:prod",
-        "newer:uglify:prod",
-        "sass:dev",
-        "sass:prod",
-        "autoprefixer:main",
-        "makepot",
-        "copy",
-    ]);
+    grunt.registerTask("build", ["copy"]);
 
     // Package task
     grunt.registerTask("package", ["compress"]);
