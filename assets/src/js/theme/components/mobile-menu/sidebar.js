@@ -183,7 +183,9 @@ class SidebarMobileMenu {
 
         const closeIcon = this.#sidebarToggleMenuBtn;
 
-        const navElements = document.querySelector("#sidr").querySelectorAll("a, span.sidr-class-dropdown-toggle, input, button");
+        const navElements = document
+            .querySelector("#sidr")
+            .querySelectorAll("a, span.sidr-class-dropdown-toggle, input, button");
 
         const navFirstElement = navElements[0];
         const navLastElement = navElements[navElements.length - 1];
@@ -191,7 +193,6 @@ class SidebarMobileMenu {
         closeIcon.style.outline = "";
 
         if (escKey) {
-            console.log("some");
             event.preventDefault();
             this.#closeSidr();
         }

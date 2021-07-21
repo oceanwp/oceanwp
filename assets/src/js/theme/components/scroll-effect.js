@@ -36,7 +36,6 @@ class ScrollEffect {
                 event.preventDefault();
                 event.stopPropagation();
 
-                console.log(this.#getStickyHeaderHeight());
                 const scrollPosition =
                     offset(target).top - this.#getAdminBarHeight() - this.#getTopbarHeight() - this.#getStickyHeaderHeight();
 
