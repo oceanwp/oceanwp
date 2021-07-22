@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### _2021.07.22._ - 3.0.2
+
+-   **Fixed** - Gutenberg embeds widgets issue
+
 ### _2021.07.21._ - 3.0.1
 
 -   **Fixed** - PHP errors in admin panel (Widgets page)
