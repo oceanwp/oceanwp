@@ -63,7 +63,9 @@ class ScrollEffect {
         let height = 0;
 
         if (!DOM.header.site) {
-            return;
+            if (!!document.querySelector(".elementor-sticky")) {
+                return 80;
+            }
         }
 
         if (DOM.header.site.classList.contains("fixed-scroll")) {

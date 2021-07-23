@@ -87,9 +87,7 @@ export const slideDown = (element, duration = 300) => {
 };
 
 export const slideToggle = (element, duration) =>
-    window.getComputedStyle(element).display === "none"
-        ? slideDown(element, duration)
-        : slideUp(element, duration);
+    window.getComputedStyle(element).display === "none" ? slideDown(element, duration) : slideUp(element, duration);
 
 export const fadeIn = (element, display, callback = null) => {
     element.style.opacity = 0;
@@ -97,8 +95,9 @@ export const fadeIn = (element, display, callback = null) => {
 
     const fade = () => {
         let opacity = parseFloat(element.style.opacity);
+        opacity = Math.round(opacity * 100 + 10) / 100;
 
-        if ((opacity += 0.1) <= 1) {
+        if (opacity <= 1) {
             element.style.opacity = opacity;
 
             if (opacity === 1 && callback) {
@@ -118,8 +117,9 @@ export const fadeOut = (element, display, callback = null) => {
 
     const fade = () => {
         let opacity = parseFloat(element.style.opacity);
+        opacity = Math.round(opacity * 100 - 10) / 100;
 
-        if ((opacity -= 0.1) < 0) {
+        if (opacity < 0) {
             element.style.display = "none";
         } else {
             element.style.opacity = opacity;

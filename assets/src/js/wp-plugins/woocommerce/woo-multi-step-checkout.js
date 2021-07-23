@@ -26,21 +26,15 @@ class WooMultiStepCheckout {
          */
         jQuery(DOM.body).on("updated_checkout", this.#updateCheckout);
 
-        DOM.woo.formActions
-            ?.querySelector(".button.prev")
-            ?.addEventListener("click", this.#onNavigationBtnClick);
+        DOM.woo.formActions?.querySelector(".button.prev")?.addEventListener("click", this.#onNavigationBtnClick);
 
-        DOM.woo.formActions
-            ?.querySelector(".button.next")
-            ?.addEventListener("click", this.#onNavigationBtnClick);
+        DOM.woo.formActions?.querySelector(".button.next")?.addEventListener("click", this.#onNavigationBtnClick);
     };
 
     #updateCheckout = (event) => {
-        DOM.woo.orderCheckoutPayment
-            ?.querySelectorAll("input[name=payment_method]")
-            ?.forEach((paymentMethod) => {
-                paymentMethod.addEventListener("click", this.#onPaymentMethodBtnClick);
-            });
+        DOM.woo.orderCheckoutPayment?.querySelectorAll("input[name=payment_method]")?.forEach((paymentMethod) => {
+            paymentMethod.addEventListener("click", this.#onPaymentMethodBtnClick);
+        });
     };
 
     #onPaymentMethodBtnClick = (event) => {

@@ -6,10 +6,7 @@ class OWInfiniteScroll {
     #infiniteScroll;
 
     constructor() {
-        if (
-            !!DOM.scroll.infiniteScrollNav &&
-            !!DOM.scroll.infiniteScrollNav.querySelector(".older-posts a")
-        ) {
+        if (!!DOM.scroll.infiniteScrollNav && !!DOM.scroll.infiniteScrollNav.querySelector(".older-posts a")) {
             this.#start();
             this.#setupEventListeners();
         }
@@ -22,6 +19,7 @@ class OWInfiniteScroll {
             status: ".scroller-status",
             hideNav: ".infinite-scroll-nav",
             history: false,
+            scrollThreshold: 800,
         });
     };
 
@@ -55,9 +53,7 @@ class OWInfiniteScroll {
 
                 // Gallery posts slider
                 if (!DOM.body.classList.contains("no-carousel")) {
-                    oceanwp.theme.owSlider.start(
-                        this.element.querySelectorAll(".gallery-format, .product-entry-slider")
-                    );
+                    oceanwp.theme.owSlider.start(this.element.querySelectorAll(".gallery-format, .product-entry-slider"));
                 }
 
                 if (this.element.querySelector(".gallery-format")) {
@@ -68,10 +64,7 @@ class OWInfiniteScroll {
                 items.forEach((item) => {
                     // Post image lightbox
                     item.querySelectorAll("a.oceanwp-lightbox")?.forEach((link) => {
-                        link.querySelector("img").addEventListener(
-                            "click",
-                            oceanwp.theme.owLightbox.openLightbox
-                        );
+                        link.querySelector("img").addEventListener("click", oceanwp.theme.owLightbox.openLightbox);
                     });
                 });
 

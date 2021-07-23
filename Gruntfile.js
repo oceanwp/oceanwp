@@ -338,7 +338,7 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ["assets/src/js/**/*.js"],
-                tasks: ["newer:browserify:prod", "newer:browserify:dev", "newer:uglify:prod", "newer:uglify:dev"],
+                tasks: ["browserify:prod", "newer:browserify:dev", "newer:uglify:prod", "newer:uglify:dev"],
             },
         },
 
