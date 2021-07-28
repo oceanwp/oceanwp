@@ -337,7 +337,7 @@ module.exports = function (grunt) {
                 tasks: ["newer:sass:dev", "newer:sass:prod", "newer:autoprefixer:main"],
             },
             js: {
-                files: ["assets/src/js/**/*.js"],
+                files: ["assets/src/js/**/*.js", "inc/customizer/**/*.js"],
                 tasks: ["browserify:prod", "newer:browserify:dev", "newer:uglify:prod", "newer:uglify:dev"],
             },
         },

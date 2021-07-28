@@ -19,7 +19,8 @@ class OWInfiniteScroll {
             status: ".scroller-status",
             hideNav: ".infinite-scroll-nav",
             history: false,
-            scrollThreshold: 800,
+            scrollThreshold: 750,
+            prefill: true,
         });
     };
 

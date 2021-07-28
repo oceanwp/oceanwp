@@ -6,6 +6,10 @@ class OWLightbox {
     }
 
     start = () => {
+        if (DOM.body.classList.contains("no-lightbox")) {
+            return;
+        }
+
         this.#addLightboxClass();
         this.#addPhotoSwipeToDOM();
         this.#init();
@@ -19,7 +23,13 @@ class OWLightbox {
 
         // Image lightbox
         document.querySelectorAll("a.oceanwp-lightbox")?.forEach((link) => {
-            link.querySelector("img").addEventListener("click", this.openLightbox);
+            if (
+                !link.getAttribute("data-elementor-open-lightbox") &&
+                !link.classList.contains("yith_magnifier_thumbnail") &&
+                !link.classList.contains("gg-link")
+            ) {
+                link.querySelector("img").addEventListener("click", this.openLightbox);
+            }
         });
     };
 
@@ -28,20 +38,24 @@ class OWLightbox {
         event.stopPropagation();
 
         const pswpElement = document.querySelectorAll(".pswp")[0];
+        const link = event.target.parentNode;
+        const src = link.getAttribute("href");
+        const width = !!link.dataset.width ? Number.parseInt(link.dataset.width) : 1024;
+        const height = !!link.dataset.height ? Number.parseInt(link.dataset.height) : 768;
 
         const imageLightbox = new PhotoSwipe(
             pswpElement,
             PhotoSwipeUI_Default,
             [
                 {
-                    src: event.target.parentNode.getAttribute("href"),
-                    w: 1920,
-                    h: 1200,
+                    src: src,
+                    w: width,
+                    h: height,
                 },
             ],
             {
-                showAnimationDuration: 0,
-                hideAnimationDuration: 0,
+                bgOpacity: 0.85,
+                showHideOpacity: true,
             }
         );
 
@@ -170,13 +184,17 @@ class OWLightbox {
                     continue;
                 }
 
-                size = [1920, 1200];
+                const src = linkEl.getAttribute("href");
+                const width = !!linkEl.dataset.width ? Number.parseInt(linkEl.dataset.width) : 1024;
+                const height = !!linkEl.dataset.height ? Number.parseInt(linkEl.dataset.height) : 768;
+
+                size = [width, height];
 
                 // create slide object
                 item = {
-                    src: linkEl.getAttribute("href"),
-                    w: parseInt(size[0], 10),
-                    h: parseInt(size[1], 10),
+                    src: src,
+                    w: width,
+                    h: height,
                 };
 
                 if (linkEl.children.length > 0) {
@@ -235,7 +253,7 @@ class OWLightbox {
 
             if (index >= 0) {
                 // open PhotoSwipe if valid index found
-                openPhotoSwipe(index, clickedGallery, true);
+                openPhotoSwipe(index, clickedGallery, false);
             }
             return false;
         };
@@ -319,6 +337,9 @@ class OWLightbox {
                 options.showAnimationDuration = 0;
                 options.hideAnimationDuration = 0;
             }
+
+            options.bgOpacity = 0.85;
+            options.showHideOpacity = true;
 
             // Pass data to PhotoSwipe and initialize it
             gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);

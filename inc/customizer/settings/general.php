@@ -1513,7 +1513,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'centered'         => esc_html__( 'Centered', 'oceanwp' ),
 							'centered-minimal' => esc_html__( 'Centered Minimal', 'oceanwp' ),
 							'background-image' => esc_html__( 'Background Image', 'oceanwp' ),
-							'hidden'           =>  esc_html__( 'Hidden', 'oceanwp' ),
+							'hidden'           => esc_html__( 'Hidden', 'oceanwp' ),
 						),
 					)
 				)
@@ -3949,6 +3949,84 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				)
 			);
 
+			/**
+			 * Call Performance Section
+			 *
+			 * @since 3.0.2
+			 * @return void
+			 */
+			$this->performance_section( $wp_customize, $panel );
+		}
+
+		/**
+		 * Performance Section
+		 *
+		 * @return void
+		 *
+		 * @since 3.0.2
+		 */
+		private function performance_section( $wp_customize, $panel ) {
+			/**
+			 * Section
+			 */
+			$wp_customize->add_section(
+				'ocean_general_performance_section',
+				array(
+					'title'    => esc_html__( 'Performance', 'oceanwp' ),
+					'priority' => 10,
+					'panel'    => $panel,
+				)
+			);
+
+			/**
+			 * Disable Lightbox
+			 */
+			$wp_customize->add_setting(
+				'ocean_disable_lightbox',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_disable_lightbox',
+					array(
+						'label'    => esc_html__( 'Disable Lightbox', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_performance_section',
+						'settings' => 'ocean_disable_lightbox',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Disable WP Emoji's
+			 */
+			$wp_customize->add_setting(
+				'ocean_disable_wp_emojis',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_disable_wp_emojis',
+					array(
+						'label'    => esc_html__( 'Disable WP Emoji\'s', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_performance_section',
+						'settings' => 'ocean_disable_wp_emojis',
+						'priority' => 10,
+					)
+				)
+			);
 		}
 
 		/**

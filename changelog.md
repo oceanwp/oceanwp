@@ -1,8 +1,21 @@
 # OceanWP Changelog
 
+### _2021.07.28._ - 3.0.3
+
+-   **Added** - Performance section in Customizer > General Options.
+-   **Fixed** - Lightbox issues.
+-   **Fixed** - Compatibility issue: Photo Gallery by Supsystic.
+-   **Fixed** - Compatibility issue: YITH WooCommerce Zoom Magnifier.
+-   **Fixed** - Customizer: Range slider control.
+-   **Fixed** - Gutenberg: Embeds widgets issue.
+-   **Fixed** - Mobile Menu: Third-level dropdown menu issue.
+-   **Fixed** - WooCommerce: Multi-Step checkout display issues in Safari and iPhone.
+-   **Fixed** - Pagination: Infinite Scroll issue.
+-   **Fixed** - Minor issues.
+
 ### _2021.07.22._ - 3.0.2
 
--   **Fixed** - Gutenberg embeds widgets issue
+-   **Fixed** - Gutenberg embeds widgets issue.
 
 ### _2021.07.21._ - 3.0.1
 

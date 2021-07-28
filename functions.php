@@ -124,6 +124,7 @@ final class OCEANWP_Theme_Class {
 			// Remove the default lightbox script for the beaver builder plugin.
 			add_filter( 'fl_builder_override_lightbox', array( 'OCEANWP_Theme_Class', 'remove_bb_lightbox' ) );
 
+			add_filter( 'ocean_enqueue_generated_files', '__return_false' );
 		}
 	}
 
@@ -352,6 +353,8 @@ final class OCEANWP_Theme_Class {
 				'comment-list',
 				'gallery',
 				'caption',
+				'style',
+				'script',
 				'widgets',
 			)
 		);
@@ -495,8 +498,13 @@ final class OCEANWP_Theme_Class {
 		// Vendors.
 		wp_enqueue_script( 'isotop', $dir . 'vendors/isotope.pkgd.min.js', array(), $theme_version, true );
 		wp_enqueue_script( 'flickity', $dir . 'vendors/flickity.pkgd.min.js', array(), $theme_version, true );
-		wp_enqueue_script( 'photoswipe', $dir . 'vendors/photoswipe.min.js', array(), $theme_version, true );
-		wp_enqueue_script( 'photoswipe-ui-default', $dir . 'vendors/photoswipe-ui-default.min.js', array(), $theme_version, true );
+
+		// Lightbox.
+		if ( ! get_theme_mod( 'ocean_disable_lightbox', false ) ) {
+			wp_enqueue_script( 'photoswipe', $dir . 'vendors/photoswipe.min.js', array(), $theme_version, true );
+			wp_enqueue_script( 'photoswipe-ui-default', $dir . 'vendors/photoswipe-ui-default.min.js', array(), $theme_version, true );
+		}
+
 		wp_enqueue_script( 'sidr', $dir . 'vendors/sidr.js', array(), $theme_version, true );
 		wp_register_script( 'perfect-scrollbar', $dir . 'vendors/perfect-scrollbar.min.js', array(), $theme_version, true );
 		if ( 'vertical' === oceanwp_header_style() ) {

@@ -50,7 +50,6 @@ class DropDownMobileMenu {
 
         this.#menuItemsToggleIcon?.forEach((menuItemPlusIcon) => {
             menuItemPlusIcon.addEventListener("click", this.#onMenuItemPlusIconClick);
-            menuItemPlusIcon.addEventListener("tap", this.#onMenuItemPlusIconClick);
         });
 
         document.addEventListener("keydown", this.#onDocumentKeydown);
@@ -91,25 +90,19 @@ class DropDownMobileMenu {
         const menuItemPlusIcon = event.currentTarget;
         const menuItem =
             options.sidrDropdownTarget == "link" ? menuItemPlusIcon.parentNode : menuItemPlusIcon.parentNode.parentNode;
+        const subMenu = menuItem.lastElementChild;
 
         if (!menuItem?.classList.contains("active")) {
-            DOM.mobileMenu.menuItemsHasChildren?.forEach((menuItemHasChildren) => {
-                if (
-                    menuItem != menuItemHasChildren &&
-                    menuItem
-                        .oceanParents(".menu-item-has-children")
-                        .findIndex((parentMenuItem) => parentMenuItem == menuItemHasChildren)
-                ) {
-                    menuItemHasChildren?.classList.remove("active");
-                    slideUp(menuItemHasChildren.lastElementChild, 200);
-                }
-            });
-
-            menuItem?.classList.add("active");
-            slideDown(menuItem.lastElementChild, 200);
+            menuItem.classList.add("active");
+            slideDown(subMenu, 200);
         } else {
-            menuItem?.classList.remove("active");
-            slideUp(menuItem.lastElementChild, 200);
+            menuItem.classList.remove("active");
+            slideUp(subMenu, 200);
+
+            menuItem.querySelectorAll(".menu-item-has-children.active")?.forEach((openMenuItem) => {
+                openMenuItem.classList.remove("active");
+                slideUp(openMenuItem.nextElementSibling);
+            });
         }
     };
 
