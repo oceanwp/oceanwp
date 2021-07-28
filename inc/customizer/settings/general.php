@@ -3952,7 +3952,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			/**
 			 * Call Performance Section
 			 *
-			 * @since 3.0.2
+			 * @since 3.0.3
 			 * @return void
 			 */
 			$this->performance_section( $wp_customize, $panel );
@@ -3963,7 +3963,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 		 *
 		 * @return void
 		 *
-		 * @since 3.0.2
+		 * @since 3.0.3
 		 */
 		private function performance_section( $wp_customize, $panel ) {
 			/**
@@ -3998,31 +3998,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 						'type'     => 'checkbox',
 						'section'  => 'ocean_general_performance_section',
 						'settings' => 'ocean_disable_lightbox',
-						'priority' => 10,
-					)
-				)
-			);
-
-			/**
-			 * Disable WP Emoji's
-			 */
-			$wp_customize->add_setting(
-				'ocean_disable_wp_emojis',
-				array(
-					'default'           => false,
-					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Control(
-					$wp_customize,
-					'ocean_disable_wp_emojis',
-					array(
-						'label'    => esc_html__( 'Disable WP Emoji\'s', 'oceanwp' ),
-						'type'     => 'checkbox',
-						'section'  => 'ocean_general_performance_section',
-						'settings' => 'ocean_disable_wp_emojis',
 						'priority' => 10,
 					)
 				)
