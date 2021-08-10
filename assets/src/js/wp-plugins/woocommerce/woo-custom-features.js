@@ -13,6 +13,14 @@ class WooCustomFeatures {
         this.quantityButtons = new WooQuantityButtons();
         this.reviewScroll = new WooScrollToReviewTab();
         this.widgets = new WooRemoveCategoriesCountParenthesis();
+
+        /**
+         * Because Woocommerce plugin uses jQuery custom event,
+         * We also have to use jQuery to customize this event.
+         */
+        jQuery("body").on("updated_cart_totals", () => {
+            this.quantityButtons.start();
+        });
     };
 }
 

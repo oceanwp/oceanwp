@@ -16,6 +16,8 @@ export default class Footer {
     #start = () => {
         this.#lastWindowWidth = window.innerWidth;
         this.#lastWindowHeight = window.innerHeight;
+
+        // this.#preventInMiddleOfPage();
     };
 
     #setupEventListeners = () => {
@@ -46,8 +48,7 @@ export default class Footer {
             offset = DOM.WPAdminbar.offsetHeight;
         }
 
-        DOM.main.style.minHeight =
-            DOM.main.offsetHeight + (window.innerHeight - DOM.html.offsetHeight - offset) + "px";
+        DOM.main.style.minHeight = DOM.main.offsetHeight + (window.innerHeight - DOM.html.offsetHeight - offset) + "px";
     };
 
     #parallaxFooter = () => {

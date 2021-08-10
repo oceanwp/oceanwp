@@ -11,15 +11,13 @@ class WooOffCanvas {
 
     #setupEventListeners = () => {
         delegate(DOM.body, ".oceanwp-off-canvas-filter", "click", this.#onCanvasFilterClick);
-        delegate(
-            DOM.body,
-            ".oceanwp-off-canvas-overlay, .oceanwp-off-canvas-close",
-            "click",
-            this.#onCanvasCloseClick
-        );
+        delegate(DOM.body, ".oceanwp-off-canvas-overlay, .oceanwp-off-canvas-close", "click", this.#onCanvasCloseClick);
     };
 
     #onCanvasFilterClick = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
         const initialHTMLInnerWidth = DOM.html.innerWidth;
         DOM.html.style.overflow = "hidden";
         const afterInitialHTMLInnerWidth = DOM.html.innerWidth;

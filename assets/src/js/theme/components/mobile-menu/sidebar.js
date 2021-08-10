@@ -138,25 +138,19 @@ class SidebarMobileMenu {
         const menuItemPlusIcon = event.currentTarget;
         const menuItem =
             options.sidrDropdownTarget == "link" ? menuItemPlusIcon.parentNode : menuItemPlusIcon.parentNode.parentNode;
+        const subMenu = menuItem.lastElementChild;
 
-        if (!menuItem.classList.contains("active")) {
-            document.querySelectorAll(".sidr-class-menu-item-has-children").forEach((parentMenuItem) => {
-                if (
-                    menuItem != parentMenuItem &&
-                    menuItem
-                        .oceanParents(".sidr-class-menu-item-has-children")
-                        .findIndex((nestedMenuItem) => nestedMenuItem == parentMenuItem)
-                ) {
-                    parentMenuItem.classList.remove("active");
-                    slideUp(parentMenuItem.lastElementChild, 200);
-                }
-            });
-
+        if (!menuItem?.classList.contains("active")) {
             menuItem.classList.add("active");
-            slideDown(menuItem.lastElementChild, 200);
+            slideDown(subMenu, 200);
         } else {
             menuItem.classList.remove("active");
-            slideUp(menuItem.lastElementChild, 200);
+            slideUp(subMenu, 200);
+
+            menuItem.querySelectorAll(".sidr-class-menu-item-has-children.active")?.forEach((openMenuItem) => {
+                openMenuItem.classList.remove("active");
+                slideUp(openMenuItem.nextElementSibling);
+            });
         }
     };
 

@@ -56,9 +56,10 @@ class DropDownMobileMenu {
     };
 
     #onToggleMenuButtonClick = (event) => {
+        event.preventDefault();
         event.stopPropagation();
 
-        slideToggle(DOM.mobileMenu.navWrapper, 500);
+        !!DOM.mobileMenu.navWrapper && slideToggle(DOM.mobileMenu.navWrapper, 500);
         DOM.mobileMenu.toggleMenuBtn?.classList.toggle("opened");
         DOM.mobileMenu.hamburgerBtn?.classList.toggle("is-active");
         DOM.mobileMenu.toggleMenuBtn?.focus();

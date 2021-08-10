@@ -23,10 +23,9 @@ class ScrollEffect {
 
         if (
             !scrollItem.classList.contains("omw-open-modal") &&
+            !scrollItem.closest(".omw-open-modal") &&
             !scrollItem.classList.contains("opl-link") &&
-            !scrollItem.parentNode.classList.contains("omw-open-modal") &&
-            !scrollItem.parentNode.classList.contains("opl-link") &&
-            !scrollItem.parentNode.parentNode.parentNode.classList.contains("omw-open-modal")
+            !scrollItem.parentNode.classList.contains("opl-link")
         ) {
             const href = scrollItem.getAttribute("href");
             const id = href.substring(href.indexOf("#")).slice(1);
@@ -68,11 +67,11 @@ class ScrollEffect {
             }
         }
 
-        if (DOM.header.site.classList.contains("fixed-scroll")) {
+        if (DOM.header.site?.classList.contains("fixed-scroll")) {
             height = DOM.header.site.offsetHeight;
         }
 
-        if (DOM.header.site.classList.contains("medium-header")) {
+        if (DOM.header.site?.classList.contains("medium-header")) {
             const bottomHeaderWrapper = DOM.header.site.querySelector(".bottom-header-wrap");
 
             height = bottomHeaderWrapper.classList.contains("fixed-scroll")

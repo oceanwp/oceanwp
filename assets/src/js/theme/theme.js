@@ -30,6 +30,7 @@ class Theme {
         this.equalHeightElements = new EqualHeightElements();
         this.owLightbox = new OWLightbox();
         this.owSlider = new OWSlider();
+
         document.addEventListener("DOMContentLoaded", () => {
             this.owInfiniteScroll = new OWInfiniteScroll();
         });
