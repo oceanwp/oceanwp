@@ -1,7 +1,10 @@
 import { DOM } from "../../constants";
-import { offset } from "../../lib/utils";
+import { isSelectorValid, offset } from "../../lib/utils";
 
 class ScrollEffect {
+    #targetElem;
+    #lastScrollTop = 0;
+
     constructor() {
         if (!DOM.body.classList.contains("single-product") && !DOM.body.classList.contains("no-local-scroll")) {
             this.#setupEventListeners();
@@ -25,28 +28,40 @@ class ScrollEffect {
             !scrollItem.classList.contains("omw-open-modal") &&
             !scrollItem.closest(".omw-open-modal") &&
             !scrollItem.classList.contains("opl-link") &&
-            !scrollItem.parentNode.classList.contains("opl-link")
+            !scrollItem.parentNode.classList.contains("opl-link") &&
+            !scrollItem.classList.contains("sidr-class-opl-link") &&
+            !scrollItem.parentNode.classList.contains("sidr-class-opl-link")
         ) {
             const href = scrollItem.getAttribute("href");
             const id = href.substring(href.indexOf("#")).slice(1);
-            const target = document.querySelector(`#${id}`);
 
-            if (id != "" && !!target) {
+            if (isSelectorValid(id)) {
+                this.#targetElem = document.querySelector(`#${id}`);
+            }
+
+            if (id != "" && !!this.#targetElem) {
                 event.preventDefault();
                 event.stopPropagation();
 
-                const scrollPosition =
-                    offset(target).top - this.#getAdminBarHeight() - this.#getTopbarHeight() - this.#getStickyHeaderHeight();
+                let scrollPosition =
+                    offset(this.#targetElem).top -
+                    this.#getAdminBarHeight() -
+                    this.#getTopbarHeight() -
+                    this.#getStickyHeaderHeight();
 
                 DOM.html.scrollTo({
                     top: scrollPosition,
                     behavior: "smooth",
                 });
 
-                DOM.body.scrollTo({
-                    top: scrollPosition,
-                    behavior: "smooth",
-                });
+                if (
+                    !DOM.header.site.classList.contains("top-header") &&
+                    !DOM.header.site.classList.contains("medium-header") &&
+                    !DOM.header.site.classList.contains("custom-header") &&
+                    !DOM.header.site.classList.contains("vertical-header")
+                ) {
+                    window.addEventListener("scroll", this.#fixMultiMenu);
+                }
             }
         }
     };
@@ -59,29 +74,73 @@ class ScrollEffect {
             : 0;
 
     #getStickyHeaderHeight = () => {
-        let height = 0;
+        const stickyHeader = document.querySelector("#site-header-sticky-wrapper");
 
-        if (!DOM.header.site) {
-            if (!!document.querySelector(".elementor-sticky")) {
-                return 80;
+        if (!!stickyHeader) {
+            if (DOM.header.site?.classList.contains("top-header")) {
+                return Number.parseInt(getComputedStyle(stickyHeader).height);
+            }
+
+            if (DOM.header.site?.classList.contains("medium-header")) {
+                let height = 0;
+                const menu = DOM.header.site.querySelector(".bottom-header-wrap");
+
+                if (menu.classList.contains("fixed-scroll")) {
+                    height = menu.offsetHeight;
+                } else if (DOM.header.site.classList.contains("hidden-menu")) {
+                    height = DOM.header.site.dataset.height;
+                } else {
+                    height = DOM.header.site.offsetHeight;
+                }
+
+                return height;
+            }
+
+            if (DOM.header.site?.classList.contains("fixed-header")) {
+                return DOM.header.site.offsetHeight;
+            }
+
+            if (DOM.header.site?.classList.contains("up-effect")) {
+                return 0;
+            }
+
+            if (!DOM.header.site && !!document.querySelector(".elementor-sticky")) {
+                return 100;
+            }
+
+            return DOM.header.site?.dataset.height ?? 54;
+        }
+
+        if (!!document.querySelector(".elementor-sticky")) {
+            return 80;
+        }
+    };
+
+    #fixMultiMenu = (event) => {
+        const fixedOffset =
+            offset(this.#targetElem).top -
+            this.#getAdminBarHeight() -
+            this.#getTopbarHeight() -
+            this.#getStickyHeaderHeight();
+
+        if (window.pageYOffset.toFixed() === fixedOffset.toFixed()) {
+            window.removeEventListener("scroll", this.#fixMultiMenu);
+
+            if (DOM.header.site?.offsetHeight - 1 > this.#getStickyHeaderHeight()) {
+                const scrollPosition =
+                    offset(this.#targetElem).top -
+                    this.#getAdminBarHeight() -
+                    this.#getTopbarHeight() -
+                    DOM.header.site?.offsetHeight;
+
+                DOM.html.scrollTo({
+                    top: scrollPosition,
+                    behavior: window.pageYOffset > this.#lastScrollTop ? "smooth" : "auto",
+                });
+
+                this.#lastScrollTop = window.pageYOffset;
             }
         }
-
-        if (DOM.header.site?.classList.contains("fixed-scroll")) {
-            height = DOM.header.site.offsetHeight;
-        }
-
-        if (DOM.header.site?.classList.contains("medium-header")) {
-            const bottomHeaderWrapper = DOM.header.site.querySelector(".bottom-header-wrap");
-
-            height = bottomHeaderWrapper.classList.contains("fixed-scroll")
-                ? bottomHeaderWrapper.offsetHeight
-                : !!document.querySelector(".is-sticky #site-header-inner")
-                ? document.querySelector(".is-sticky #site-header-inner").offsetHeight
-                : 0;
-        }
-
-        return height;
     };
 }
 

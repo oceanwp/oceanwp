@@ -4,6 +4,7 @@ export const DOM = {
     html: document.querySelector("html"),
     body: document.body,
     WPAdminbar: document.querySelector("#wpadminbar"),
+    wrap: document.querySelector("#wrap"),
     main: document.querySelector("#main"),
     selectTags: document.querySelectorAll(options.customSelects),
     floatingBar: document.querySelector(".owp-floating-bar"),
@@ -59,6 +60,9 @@ export const DOM = {
         },
     },
     footer: {
+        siteFooter: document.querySelector("#footer"),
+        calloutFooter: document.querySelector("#footer-callout-wrap"),
+        footerBar: document.querySelector("#footer-bar"),
         parallax: document.querySelector(".parallax-footer"),
     },
     scroll: {

@@ -3,6 +3,7 @@ import { DOM } from "../../constants";
 export default class Footer {
     #lastWindowWidth;
     #lastWindowHeight;
+    #footerPositionState = null;
 
     constructor() {
         if (!DOM.main) {
@@ -16,8 +17,6 @@ export default class Footer {
     #start = () => {
         this.#lastWindowWidth = window.innerWidth;
         this.#lastWindowHeight = window.innerHeight;
-
-        // this.#preventInMiddleOfPage();
     };
 
     #setupEventListeners = () => {
@@ -26,15 +25,49 @@ export default class Footer {
     };
 
     #onWindowLoad = (event) => {
+        this.#fixFooterAtMiddlePage();
         this.#fixedFooter();
         this.#parallaxFooter();
     };
 
     #onWindowResize = (event) => {
+        this.#fixFooterAtMiddlePage();
         if (this.#lastWindowWidth !== window.innerWidth || this.#lastWindowHeight !== window.innerHeight) {
             this.#fixedFooter();
         }
         this.#parallaxFooter();
+    };
+
+    #fixFooterAtMiddlePage = () => {
+        const wpAdminbarHeight = DOM.WPAdminbar?.offsetHeight ?? 0;
+        const footerBarHeight = DOM.footer.footerBar?.offsetHeight ?? 0;
+        const htmlHeight = DOM.html.offsetHeight - wpAdminbarHeight;
+
+        if (htmlHeight < window.innerHeight) {
+            DOM.wrap.style.cssText = `
+                display: flex;
+                flex-direction: column;
+                min-height: calc(100vh - ${wpAdminbarHeight}px - ${footerBarHeight}px);
+            `;
+
+            if (!!DOM.footer.calloutFooter) {
+                DOM.footer.calloutFooter.style.marginTop = "auto";
+            } else {
+                DOM.footer.siteFooter.style.marginTop = "auto";
+            }
+
+            this.#footerPositionState = "changed";
+        } else if (this.#footerPositionState === "changed") {
+            DOM.wrap.style.cssText = "";
+
+            if (!!DOM.footer.calloutFooter) {
+                DOM.footer.calloutFooter.style.marginTop = null;
+            } else {
+                DOM.footer.siteFooter.style.marginTop = null;
+            }
+
+            this.#footerPositionState = null;
+        }
     };
 
     #fixedFooter = () => {

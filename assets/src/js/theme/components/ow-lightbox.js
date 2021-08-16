@@ -5,12 +5,17 @@ class OWLightbox {
         this.start();
     }
 
-    start = () => {
+    start = async () => {
         if (DOM.body.classList.contains("no-lightbox")) {
             return;
         }
 
-        this.#addLightboxClass();
+        console.log("before await");
+
+        await this.#addLightboxClass();
+
+        console.log("after await");
+
         this.#addPhotoSwipeToDOM();
         this.#init();
     };
@@ -21,15 +26,24 @@ class OWLightbox {
             this.initPhotoSwipeFromDOM(".gallery-format");
         }
 
+        // Gutenberg Block Gallery
+        if (!!document.querySelector(".wp-block-gallery")) {
+            this.initPhotoSwipeFromDOM(document.querySelectorAll(".wp-block-gallery"));
+        }
+
+        // Class Editor Gallery
+        if (!!document.querySelector(".gallery")) {
+            this.initPhotoSwipeFromDOM(document.querySelectorAll(".gallery"));
+        }
+
         // Image lightbox
         document.querySelectorAll("a.oceanwp-lightbox")?.forEach((link) => {
-            if (
-                !link.getAttribute("data-elementor-open-lightbox") &&
-                !link.classList.contains("yith_magnifier_thumbnail") &&
-                !link.classList.contains("gg-link")
-            ) {
-                link.querySelector("img").addEventListener("click", this.openLightbox);
-            }
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+            });
+
+            link.querySelector("img").addEventListener("click", this.openLightbox);
         });
     };
 
@@ -56,6 +70,8 @@ class OWLightbox {
             {
                 bgOpacity: 0.85,
                 showHideOpacity: true,
+                showAnimationDuration: 0,
+                hideAnimationDuration: 500,
             }
         );
 
@@ -63,36 +79,92 @@ class OWLightbox {
     };
 
     #addLightboxClass = () => {
-        document.querySelectorAll("body .entry-content a, body .entry a")?.forEach((link) => {
-            if (!!link.querySelector("img")) {
-                const imageFormats = this.#imageFormats();
-                let imageFormatsMask = 0;
+        return new Promise((resolve, reject) => {
+            let itemsNum = 1;
+            const timeout = 3000;
 
-                imageFormats.forEach((imageFormat) => {
-                    imageFormatsMask += String(link.getAttribute("href")).indexOf("." + imageFormat);
+            document
+                .querySelectorAll("body .entry-content a, body .entry a, body article .gallery-format a")
+                ?.forEach((link, index, array) => {
+                    if (!!link.querySelector("img")) {
+                        const imageFormats = this.#imageFormats();
+                        let imageFormatsMask = 0;
+
+                        imageFormats.forEach((imageFormat) => {
+                            imageFormatsMask += String(link.getAttribute("href")).indexOf("." + imageFormat);
+                        });
+
+                        if (imageFormatsMask === -13) {
+                            link.classList.add("no-lightbox");
+                        }
+
+                        const checkClassList = () => {
+                            if (
+                                !(
+                                    link.classList.contains("no-lightbox") ||
+                                    link.classList.contains("gallery-lightbox") ||
+                                    link.parentNode.classList.contains("gallery-icon") ||
+                                    link.classList.contains("woo-lightbox") ||
+                                    link.classList.contains("woo-thumbnail") ||
+                                    link.parentNode.classList.contains("woocommerce-product-gallery__image") ||
+                                    !!link.closest(".wp-block-gallery") ||
+                                    link.getAttribute("data-elementor-open-lightbox") ||
+                                    link.classList.contains("yith_magnifier_thumbnail") ||
+                                    link.classList.contains("gg-link")
+                                )
+                            ) {
+                                link.classList.add("oceanwp-lightbox");
+                            }
+
+                            if (!link.classList.contains("no-lightbox")) {
+                                if (
+                                    link.parentNode.classList.contains("gallery-icon") ||
+                                    !!link.closest(".wp-block-gallery")
+                                ) {
+                                    link.classList.add("gallery-lightbox");
+                                }
+                            }
+                        };
+
+                        if (!!link.dataset.width && !!link.dataset.height) {
+                            checkClassList();
+
+                            if (array.length === itemsNum++) {
+                                resolve(true);
+                            }
+                        } else {
+                            let timer;
+                            const img = new Image();
+
+                            img.onload = function () {
+                                clearTimeout(timer);
+
+                                link.setAttribute("data-width", this.naturalWidth);
+                                link.setAttribute("data-height", this.naturalHeight);
+
+                                checkClassList();
+
+                                if (array.length === itemsNum++) {
+                                    resolve(true);
+                                }
+                            };
+
+                            img.onerror = img.onabort = () => {
+                                clearTimeout(timer);
+
+                                if (array.length === itemsNum++) {
+                                    resolve(true);
+                                }
+                            };
+
+                            timer = setTimeout(function () {
+                                itemsNum++;
+                            }, timeout);
+
+                            img.src = link.getAttribute("href");
+                        }
+                    }
                 });
-
-                if (imageFormatsMask === -13) {
-                    link.classList.add("no-lightbox");
-                }
-
-                if (
-                    !(
-                        link.classList.contains("no-lightbox") ||
-                        link.classList.contains("gallery-lightbox") ||
-                        link.parentNode.classList.contains("gallery-icon") ||
-                        link.classList.contains("woo-lightbox") ||
-                        link.classList.contains("woo-thumbnail") ||
-                        link.parentNode.classList.contains("woocommerce-product-gallery__image")
-                    )
-                ) {
-                    link.classList.add("oceanwp-lightbox");
-                }
-
-                if (!link.classList.contains("no-lightbox") && link.parentNode.classList.contains("gallery-icon")) {
-                    link.classList.add("gallery-lightbox");
-                }
-            }
         });
     };
 
@@ -166,144 +238,46 @@ class OWLightbox {
     };
 
     initPhotoSwipeFromDOM = (gallerySelector) => {
-        // parse slide data (url, title, size ...) from DOM elements
-        // (children of gallerySelector)
-        var parseThumbnailElements = function (el) {
-            var thumbElements = el.childNodes,
-                numNodes = thumbElements.length,
-                items = [],
-                linkEl,
-                size,
-                item;
+        // trigger when user click on image
+        const onImageClick = function (event) {
+            const clickedImage = event.target;
 
-            for (var i = 0; i < numNodes; i++) {
-                linkEl = thumbElements[i]; // <a> element
-
-                // include only element nodes
-                if (linkEl.nodeType !== 1) {
-                    continue;
-                }
-
-                const src = linkEl.getAttribute("href");
-                const width = !!linkEl.dataset.width ? Number.parseInt(linkEl.dataset.width) : 1024;
-                const height = !!linkEl.dataset.height ? Number.parseInt(linkEl.dataset.height) : 768;
-
-                size = [width, height];
-
-                // create slide object
-                item = {
-                    src: src,
-                    w: width,
-                    h: height,
-                };
-
-                if (linkEl.children.length > 0) {
-                    // <img> thumbnail element, retrieving thumbnail url
-                    item.msrc = linkEl.children[0].getAttribute("src");
-                }
-
-                item.el = linkEl; // save link to element for getThumbBoundsFn
-                items.push(item);
-            }
-
-            return items;
-        };
-
-        // find nearest parent element
-        var closest = function closest(el, fn) {
-            return el && (fn(el) ? el : closest(el.parentNode, fn));
-        };
-
-        // triggers when user clicks on thumbnail
-        var onThumbnailsClick = function (e) {
-            e = e || window.event;
-            var eTarget = e.target || e.srcElement;
-
-            // find root element of slide
-            var clickedListItem = closest(eTarget, function (el) {
+            const clickedGalleryLink = closest(clickedImage, function (el) {
                 return el.tagName && el.tagName.toUpperCase() === "A" && el.classList.contains("gallery-lightbox");
             });
 
-            if (!clickedListItem) {
+            if (!clickedGalleryLink) {
                 return;
             }
 
-            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-            e.stopPropagation();
+            event.preventDefault();
+            event.stopPropagation();
 
-            // find index of clicked item by looping through all child nodes
-            // alternatively, you may define index via data- attribute
-            var clickedGallery = clickedListItem.parentNode,
-                childNodes = clickedListItem.parentNode.childNodes,
-                numChildNodes = childNodes.length,
-                nodeIndex = 0,
-                index;
+            const gallery = clickedGalleryLink.closest("[data-pswp-uid]");
+            const galleryLinks = gallery.querySelectorAll("a.gallery-lightbox");
 
-            for (var i = 0; i < numChildNodes; i++) {
-                if (childNodes[i].nodeType !== 1) {
-                    continue;
-                }
-
-                if (childNodes[i] === clickedListItem) {
-                    index = nodeIndex;
+            for (let index = 0; index < galleryLinks.length; index++) {
+                if (galleryLinks[index] == clickedGalleryLink) {
+                    openPhotoSwipe(index, gallery, true);
                     break;
                 }
-                nodeIndex++;
             }
-
-            if (index >= 0) {
-                // open PhotoSwipe if valid index found
-                openPhotoSwipe(index, clickedGallery, false);
-            }
-            return false;
         };
 
-        // parse picture index and gallery index from URL (#&pid=1&gid=2)
-        var photoswipeParseHash = function () {
-            var hash = window.location.hash.substring(1),
-                params = {};
-
-            if (hash.length < 5) {
-                return params;
-            }
-
-            var vars = hash.split("&");
-            for (var i = 0; i < vars.length; i++) {
-                if (!vars[i]) {
-                    continue;
-                }
-                var pair = vars[i].split("=");
-                if (pair.length < 2) {
-                    continue;
-                }
-                params[pair[0]] = pair[1];
-            }
-
-            if (params.gid) {
-                params.gid = parseInt(params.gid, 10);
-            }
-
-            return params;
-        };
-
-        var openPhotoSwipe = function (index, galleryElement, disableAnimation, fromURL) {
-            var pswpElement = document.querySelectorAll(".pswp")[0],
-                gallery,
-                options,
-                items;
-
-            items = parseThumbnailElements(galleryElement);
+        const openPhotoSwipe = function (index, gallery, disableAnimation, fromURL) {
+            const pswpElement = document.querySelectorAll(".pswp")[0];
+            const photoSwipeItems = getPhotoSwipeItems(gallery);
 
             // define options (if needed)
-            options = {
+            const options = {
                 // define gallery index (for URL)
-                galleryUID: galleryElement.getAttribute("data-pswp-uid"),
+                galleryUID: gallery.getAttribute("data-pswp-uid"),
 
                 getThumbBoundsFn: function (index) {
                     // See Options -> getThumbBoundsFn section of documentation for more info
-                    var thumbnail = items[index].el.getElementsByTagName("img")[0], // find thumbnail
-                        pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                        rect = thumbnail.getBoundingClientRect();
+                    const thumbnail = photoSwipeItems[index].el.getElementsByTagName("img")[0]; // find thumbnail
+                    const pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
+                    const rect = thumbnail.getBoundingClientRect();
 
                     return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
                 },
@@ -314,9 +288,9 @@ class OWLightbox {
                 if (options.galleryPIDs) {
                     // parse real index when custom PIDs are used
                     // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
-                    for (var j = 0; j < items.length; j++) {
-                        if (items[j].pid == index) {
-                            options.index = j;
+                    for (let index = 0; index < photoSwipItems.length; index++) {
+                        if (photoSwipeItems[index].pid == index) {
+                            options.index = index;
                             break;
                         }
                     }
@@ -335,27 +309,95 @@ class OWLightbox {
 
             if (disableAnimation) {
                 options.showAnimationDuration = 0;
-                options.hideAnimationDuration = 0;
+                options.hideAnimationDuration = 500;
             }
 
             options.bgOpacity = 0.85;
             options.showHideOpacity = true;
 
             // Pass data to PhotoSwipe and initialize it
-            gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+            gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photoSwipeItems, options);
             gallery.init();
         };
 
-        // loop through all gallery elements and bind events
-        var galleryElements = document.querySelectorAll(gallerySelector);
+        // parse slide data (url, title, size ...) from DOM elements
+        const getPhotoSwipeItems = function (gallery) {
+            const galleryLinks = gallery.querySelectorAll("a.gallery-lightbox");
+            const items = [];
 
-        for (var i = 0, l = galleryElements.length; i < l; i++) {
+            galleryLinks.forEach((galleryLink) => {
+                const src = galleryLink.getAttribute("href");
+                const width = Number.parseInt(galleryLink.dataset.width) ?? 1024;
+                const height = Number.parseInt(galleryLink.dataset.height) ?? 768;
+
+                // create slide object
+                let item = {
+                    src: src,
+                    w: width,
+                    h: height,
+                };
+
+                if (!!galleryLink.querySelector("img")) {
+                    // <img> thumbnail element, retrieving thumbnail url
+                    item.msrc = galleryLink.querySelector("img").getAttribute("src");
+                }
+
+                item.el = galleryLink; // save link to element for getThumbBoundsFn
+                items.push(item);
+            });
+
+            return items;
+        };
+
+        // find nearest parent element
+        const closest = function closest(el, fn) {
+            return el && (fn(el) ? el : closest(el.parentNode, fn));
+        };
+
+        // parse picture index and gallery index from URL (#&pid=1&gid=2)
+        const photoswipeParseHash = function () {
+            const hash = window.location.hash.substring(1);
+            const params = {};
+
+            if (hash.length < 5) {
+                return params;
+            }
+
+            const vars = hash.split("&");
+
+            for (let i = 0; i < vars.length; i++) {
+                if (!vars[i]) {
+                    continue;
+                }
+
+                const pair = vars[i].split("=");
+
+                if (pair.length < 2) {
+                    continue;
+                }
+
+                params[pair[0]] = pair[1];
+            }
+
+            if (params.gid) {
+                params.gid = parseInt(params.gid, 10);
+            }
+
+            return params;
+        };
+
+        // loop through all gallery elements and bind events
+        const galleryElements = NodeList.prototype.isPrototypeOf(gallerySelector)
+            ? gallerySelector
+            : document.querySelectorAll(gallerySelector);
+
+        for (let i = 0, l = galleryElements.length; i < l; i++) {
             galleryElements[i].setAttribute("data-pswp-uid", i + 1);
-            galleryElements[i].onclick = onThumbnailsClick;
+            galleryElements[i].onclick = onImageClick;
         }
 
         // Parse URL and open gallery if it contains #&pid=3&gid=1
-        var hashData = photoswipeParseHash();
+        const hashData = photoswipeParseHash();
         if (hashData.pid && hashData.gid) {
             openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
         }

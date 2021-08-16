@@ -59,18 +59,16 @@ class DropDownMobileMenu {
         event.preventDefault();
         event.stopPropagation();
 
-        !!DOM.mobileMenu.navWrapper && slideToggle(DOM.mobileMenu.navWrapper, 500);
+        !!DOM.mobileMenu.navWrapper && slideToggle(DOM.mobileMenu.navWrapper, 400);
         DOM.mobileMenu.toggleMenuBtn?.classList.toggle("opened");
         DOM.mobileMenu.hamburgerBtn?.classList.toggle("is-active");
         DOM.mobileMenu.toggleMenuBtn?.focus();
     };
 
     #onMenuCloseClick = (event) => {
-        if (!!DOM.mobileMenu.navWrapper) {
-            slideUp(DOM.mobileMenu.navWrapper, 200);
-            DOM.mobileMenu.toggleMenuBtn?.classList.remove("opened");
-            DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
-        }
+        !!DOM.mobileMenu.navWrapper && slideUp(DOM.mobileMenu.navWrapper, 200);
+        DOM.mobileMenu.toggleMenuBtn?.classList.remove("opened");
+        DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
     };
 
     #onWindowResize = (event) => {
@@ -102,7 +100,7 @@ class DropDownMobileMenu {
 
             menuItem.querySelectorAll(".menu-item-has-children.active")?.forEach((openMenuItem) => {
                 openMenuItem.classList.remove("active");
-                slideUp(openMenuItem.nextElementSibling);
+                slideUp(openMenuItem.querySelector("ul"));
             });
         }
     };

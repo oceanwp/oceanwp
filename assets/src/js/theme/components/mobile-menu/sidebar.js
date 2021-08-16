@@ -149,7 +149,7 @@ class SidebarMobileMenu {
 
             menuItem.querySelectorAll(".sidr-class-menu-item-has-children.active")?.forEach((openMenuItem) => {
                 openMenuItem.classList.remove("active");
-                slideUp(openMenuItem.nextElementSibling);
+                slideUp(openMenuItem.querySelector("ul"));
             });
         }
     };

@@ -1477,8 +1477,10 @@ object {
   max-width: calc(100% + 6%);
 }
 
-body.content-full-screen .entry-content .alignwide, body.content-full-screen .entry-content .alignfull,
-body.content-full-screen .entry .alignwide, body.content-full-screen .entry .alignfull {
+body.content-full-screen .entry-content .alignwide,
+body.content-full-screen .entry-content .alignfull,
+body.content-full-screen .entry .alignwide,
+body.content-full-screen .entry .alignfull {
   margin-left: 0;
   width: 100%;
   max-width: 100%;
@@ -1500,16 +1502,16 @@ body.page.content-max-width .entry .alignwide {
 
 body.single-post.content-max-width .entry-content .alignfull,
 body.page.content-max-width .entry .alignfull {
-  margin-left: unset;
-  width: 100%;
-  max-width: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 @media screen and (max-width: 959px) {
   .entry-content .alignfull {
     margin-left: -5.5%;
-    width: calc( 100% + 11%);
-    max-width: calc( 100% + 11%);
+    width: calc(100% + 11%);
+    max-width: calc(100% + 11%);
   }
   .page .entry .alignfull {
     margin-left: -5.5%;
@@ -1566,9 +1568,13 @@ table th {
   font-size: inherit;
 }
 
-.col:after, .clr:after, .group:after, dl:after,
-.left_float:after, .right_float:after {
-  content: '';
+.col:after,
+.clr:after,
+.group:after,
+dl:after,
+.left_float:after,
+.right_float:after {
+  content: "";
   display: block;
   visibility: hidden;
   clear: both;
