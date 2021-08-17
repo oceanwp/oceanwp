@@ -10,12 +10,7 @@ class OWLightbox {
             return;
         }
 
-        console.log("before await");
-
         await this.#addLightboxClass();
-
-        console.log("after await");
-
         this.#addPhotoSwipeToDOM();
         this.#init();
     };
