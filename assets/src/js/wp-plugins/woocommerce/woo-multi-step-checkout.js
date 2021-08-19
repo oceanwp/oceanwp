@@ -87,16 +87,22 @@ class WooMultiStepCheckout {
         if (action === "next") {
             DOM.woo.formActions.setAttribute("data-step", nextStep);
 
-            fadeOut(this.#steps[currentStep], "inline-block", () => {
-                fadeIn(this.#steps[nextStep]);
+            fadeOut(this.#steps[currentStep], {
+                display: "inline-block",
+                callback: () => {
+                    fadeIn(this.#steps[nextStep]);
+                },
             });
 
             document.querySelector(`#timeline-${nextStep}`).classList.toggle("active");
         } else if (action === "prev") {
             DOM.woo.formActions.setAttribute("data-step", prevStep);
 
-            fadeOut(this.#steps[currentStep], "inline-block", () => {
-                fadeIn(this.#steps[prevStep]);
+            fadeOut(this.#steps[currentStep], {
+                display: "inline-block",
+                callback: () => {
+                    fadeIn(this.#steps[prevStep]);
+                },
             });
 
             document.querySelector(`#timeline-${prevStep}`).classList.toggle("active");
@@ -110,9 +116,13 @@ class WooMultiStepCheckout {
                 ((currentStep == 0 && options.login_reminder_enabled === 1) ||
                     (currentStep == 1 && options.login_reminder_enabled === 0)))
         ) {
-            fadeOut(prevBtn, "inline-block");
+            fadeOut(prevBtn, {
+                display: "inline-block",
+            });
         } else {
-            fadeIn(prevBtn, "inline-block");
+            fadeIn(prevBtn, {
+                display: "inline-block",
+            });
         }
 
         // Next title
@@ -130,11 +140,15 @@ class WooMultiStepCheckout {
         if (currentStep == 3) {
             DOM.woo.checkoutForm.classList.remove("processing");
             fadeIn(DOM.woo.checkoutCoupon);
-            fadeOut(nextBtn, "inline-block");
+            fadeOut(nextBtn, {
+                display: "inline-block",
+            });
         } else {
             DOM.woo.checkoutForm.classList.add("processing");
             fadeOut(DOM.woo.checkoutCoupon);
-            fadeIn(nextBtn, "inline-block");
+            fadeIn(nextBtn, {
+                display: "inline-block",
+            });
         }
     };
 }

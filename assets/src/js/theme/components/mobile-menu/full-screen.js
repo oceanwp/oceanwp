@@ -1,3 +1,4 @@
+import delegate from "delegate";
 import { DOM } from "../../../constants";
 import { slideUp, slideDown, fadeIn, fadeOut, visible } from "../../../lib/utils";
 
@@ -12,20 +13,15 @@ class FullScreenMobileMenu {
     }
 
     #start = () => {
-        DOM.mobileMenu.fullScreen
-            ?.querySelectorAll(".menu-item-has-children > a")
-            ?.forEach((menuItemLink) => {
-                menuItemLink.insertAdjacentHTML(
-                    "beforeend",
-                    '<span class="dropdown-toggle" tabindex=0></span>'
-                );
-            });
+        DOM.mobileMenu.fullScreen?.querySelectorAll(".menu-item-has-children > a")?.forEach((menuItemLink) => {
+            menuItemLink.insertAdjacentHTML("beforeend", '<span class="dropdown-toggle" tabindex=0></span>');
+        });
     };
 
     #setupEventListeners = () => {
         window.addEventListener("resize", this.#onWindowResize);
 
-        DOM.mobileMenu.toggleMenuBtn?.addEventListener("click", this.#onMenuButtonClick);
+        delegate(document.body, ".mobile-menu", "click", this.#onMenuButtonClick);
 
         document
             .querySelectorAll(

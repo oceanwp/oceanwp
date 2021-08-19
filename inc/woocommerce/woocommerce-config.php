@@ -550,7 +550,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.4.16
 		 */
 		public function shop_pagination() {
-			if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+			if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) && is_woocommerce() ) {
 				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 				add_action( 'woocommerce_after_shop_loop', array( $this, 'infinite_pagination' ), 10 );
 			}

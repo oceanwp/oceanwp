@@ -20,6 +20,7 @@ class OWInfiniteScroll {
             hideNav: ".infinite-scroll-nav",
             history: false,
             prefill: true,
+            scrollThreshold: 500,
         });
     };
 

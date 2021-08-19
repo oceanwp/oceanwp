@@ -8806,6 +8806,7 @@ span.required {
  */
 #scroll-top {
   display: none;
+  opacity: 0;
   position: fixed;
   right: 20px;
   bottom: 20px;

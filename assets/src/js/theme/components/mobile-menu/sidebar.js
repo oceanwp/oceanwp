@@ -1,3 +1,4 @@
+import delegate from "delegate";
 import { DOM, options } from "../../../constants";
 import { fadeIn, fadeOut, slideDown, slideUp } from "../../../lib/utils";
 
@@ -96,16 +97,22 @@ class SidebarMobileMenu {
 
         this.#menuItemsPlusIcon?.forEach((menuItemPlusIcon) => {
             menuItemPlusIcon.addEventListener("click", this.#onMenuItemPlusIconClick);
-            menuItemPlusIcon.addEventListener("tap", this.#onMenuItemPlusIconClick);
+            menuItemPlusIcon.addEventListener("touchend", this.#onMenuItemPlusIconClick);
         });
 
-        document
-            .querySelectorAll(
-                '.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])'
-            )
-            ?.forEach((menuItemLink) => {
-                menuItemLink.addEventListener("click", this.#closeSidr);
-            });
+        delegate(
+            document.body,
+            '.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])',
+            "click",
+            this.#closeSidr
+        );
+
+        delegate(
+            document.body,
+            '.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])',
+            "touchend",
+            this.#closeSidr
+        );
 
         document.querySelectorAll("li.sidr-class-nav-no-click > a")?.forEach((menuItemLink) => {
             menuItemLink.addEventListener("click", (event) => {

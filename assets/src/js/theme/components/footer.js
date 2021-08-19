@@ -87,8 +87,17 @@ export default class Footer {
     #parallaxFooter = () => {
         if (DOM.body.classList.contains("has-parallax-footer")) {
             setTimeout(() => {
-                DOM.main.style.marginBottom = DOM.footer.parallax?.offsetHeight + "px";
-            }, 1);
+                let mainSectionMarginBottom = 0;
+
+                mainSectionMarginBottom += DOM.footer.parallax?.offsetHeight;
+
+                if (!!DOM.footer.calloutFooter) {
+                    DOM.footer.calloutFooter.style.bottom = `${mainSectionMarginBottom}px`;
+                    mainSectionMarginBottom += DOM.footer.calloutFooter.offsetHeight;
+                }
+
+                DOM.main.style.marginBottom = `${mainSectionMarginBottom}px`;
+            }, 10);
         }
     };
 }

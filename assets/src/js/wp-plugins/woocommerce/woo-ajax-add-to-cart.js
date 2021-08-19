@@ -18,6 +18,13 @@ class WooAjaxAddToCart {
             this.#onAddToCartBtnClick
         );
 
+        delegate(
+            DOM.body,
+            ".product:not(.product-type-external) .single_add_to_cart_button:not(.disabled)",
+            "touchend",
+            this.#onAddToCartBtnClick
+        );
+
         /**
          * Because Woocommerce plugin uses jQuery custom event,
          * We also have to use jQuery to customize this event.

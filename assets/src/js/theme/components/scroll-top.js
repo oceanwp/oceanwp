@@ -25,10 +25,8 @@ export default class ScrollTop {
             if (window.getComputedStyle(DOM.scroll.scrollTop).display === "none") {
                 fadeIn(DOM.scroll.scrollTop);
             }
-        } else {
-            if (window.getComputedStyle(DOM.scroll.scrollTop).display !== "none") {
-                fadeOut(DOM.scroll.scrollTop);
-            }
+        } else if (window.getComputedStyle(DOM.scroll.scrollTop).display !== "none") {
+            fadeOut(DOM.scroll.scrollTop);
         }
     };
 
@@ -38,11 +36,6 @@ export default class ScrollTop {
         const scrollTop = event.currentTarget;
 
         DOM.html.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-
-        DOM.body.scrollTo({
             top: 0,
             behavior: "smooth",
         });

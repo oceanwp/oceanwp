@@ -1,3 +1,4 @@
+import delegate from "delegate";
 import { DOM, options } from "../../../constants";
 import { slideUp, slideDown, slideToggle } from "../../../lib/utils";
 
@@ -32,7 +33,7 @@ class DropDownMobileMenu {
     };
 
     #setupEventListeners = () => {
-        DOM.mobileMenu.toggleMenuBtn?.addEventListener("click", this.#onToggleMenuButtonClick);
+        delegate(document.body, ".mobile-menu", "click", this.#onToggleMenuButtonClick);
 
         DOM.mobileMenu.navWrapper?.querySelectorAll('li a[href*="#"]:not([href="#"])').forEach((menuItemLink) => {
             menuItemLink.addEventListener("click", this.#onMenuCloseClick);
@@ -58,6 +59,7 @@ class DropDownMobileMenu {
     #onToggleMenuButtonClick = (event) => {
         event.preventDefault();
         event.stopPropagation();
+        console.log("some");
 
         !!DOM.mobileMenu.navWrapper && slideToggle(DOM.mobileMenu.navWrapper, 400);
         DOM.mobileMenu.toggleMenuBtn?.classList.toggle("opened");

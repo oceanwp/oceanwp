@@ -36,8 +36,10 @@ class WooGuestAccountPage {
         this.#loginBtn.classList.add("current");
         this.#registerBtn.classList.remove("current");
 
-        fadeOut(this.#registerBox, null, () => {
-            fadeIn(this.#loginBox);
+        fadeOut(this.#registerBox, {
+            callback: () => {
+                fadeIn(this.#loginBox);
+            },
         });
     };
 
@@ -48,8 +50,10 @@ class WooGuestAccountPage {
         this.#registerBtn.classList.add("current");
         this.#loginBtn.classList.remove("current");
 
-        fadeOut(this.#loginBox, null, () => {
-            fadeIn(this.#registerBox);
+        fadeOut(this.#loginBox, {
+            callback: () => {
+                fadeIn(this.#registerBox);
+            },
         });
     };
 }

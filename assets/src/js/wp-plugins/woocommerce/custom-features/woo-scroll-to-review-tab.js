@@ -35,11 +35,6 @@ class WooScrollToReviewTab {
             top: reviewTabPositionTop - 120,
             behavior: "smooth",
         });
-
-        DOM.body.scrollTo({
-            top: reviewTabPositionTop - 120,
-            behavior: "smooth",
-        });
     };
 }
 

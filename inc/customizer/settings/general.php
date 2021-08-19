@@ -4002,6 +4002,31 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 					)
 				)
 			);
+
+			/**
+			 * Disable Emoji
+			 */
+			$wp_customize->add_setting(
+				'ocean_disable_emoji',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_disable_emoji',
+					array(
+						'label'    => esc_html__( 'Disable Emoji', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_performance_section',
+						'settings' => 'ocean_disable_emoji',
+						'priority' => 10,
+					)
+				)
+			);
 		}
 
 		/**

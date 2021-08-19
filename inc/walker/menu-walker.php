@@ -62,6 +62,8 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 		 * @param int      $id     Current item ID.
 		 */
 		public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+			$args = (object) $args;
+
 			global $wp_query;
 			$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 

@@ -5,19 +5,19 @@ class OWLightbox {
         this.start();
     }
 
-    start = async () => {
+    start = () => {
         if (DOM.body.classList.contains("no-lightbox")) {
             return;
         }
 
-        await this.#addLightboxClass();
+        this.#addLightboxClass();
         this.#addPhotoSwipeToDOM();
         this.#init();
     };
 
     #init = () => {
         // Post gallery
-        if (document.querySelector(".gallery-format")) {
+        if (!!document.querySelector(".gallery-format")) {
             this.initPhotoSwipeFromDOM(".gallery-format");
         }
 
@@ -49,8 +49,8 @@ class OWLightbox {
         const pswpElement = document.querySelectorAll(".pswp")[0];
         const link = event.target.parentNode;
         const src = link.getAttribute("href");
-        const width = !!link.dataset.width ? Number.parseInt(link.dataset.width) : 1024;
-        const height = !!link.dataset.height ? Number.parseInt(link.dataset.height) : 768;
+        const width = Number.parseInt(link.dataset.width) ?? 1024;
+        const height = Number.parseInt(link.dataset.width) ?? 768;
 
         const imageLightbox = new PhotoSwipe(
             pswpElement,
@@ -74,93 +74,62 @@ class OWLightbox {
     };
 
     #addLightboxClass = () => {
-        return new Promise((resolve, reject) => {
-            let itemsNum = 1;
-            const timeout = 3000;
+        document
+            .querySelectorAll("body .entry-content a, body .entry a, body article .gallery-format a")
+            ?.forEach((link, index, array) => {
+                if (!!link.querySelector("img")) {
+                    const imageFormats = this.#imageFormats();
+                    let imageFormatsMask = 0;
 
-            document
-                .querySelectorAll("body .entry-content a, body .entry a, body article .gallery-format a")
-                ?.forEach((link, index, array) => {
-                    if (!!link.querySelector("img")) {
-                        const imageFormats = this.#imageFormats();
-                        let imageFormatsMask = 0;
+                    imageFormats.forEach((imageFormat) => {
+                        imageFormatsMask += String(link.getAttribute("href")).indexOf("." + imageFormat);
+                    });
 
-                        imageFormats.forEach((imageFormat) => {
-                            imageFormatsMask += String(link.getAttribute("href")).indexOf("." + imageFormat);
-                        });
+                    if (imageFormatsMask === -13) {
+                        link.classList.add("no-lightbox");
+                    }
 
-                        if (imageFormatsMask === -13) {
-                            link.classList.add("no-lightbox");
+                    const checkClassList = () => {
+                        if (
+                            !(
+                                link.classList.contains("no-lightbox") ||
+                                link.classList.contains("gallery-lightbox") ||
+                                link.parentNode.classList.contains("gallery-icon") ||
+                                link.classList.contains("woo-lightbox") ||
+                                link.classList.contains("woo-thumbnail") ||
+                                link.parentNode.classList.contains("woocommerce-product-gallery__image") ||
+                                !!link.closest(".wp-block-gallery") ||
+                                link.getAttribute("data-elementor-open-lightbox") ||
+                                link.classList.contains("yith_magnifier_thumbnail") ||
+                                link.classList.contains("gg-link")
+                            )
+                        ) {
+                            link.classList.add("oceanwp-lightbox");
                         }
 
-                        const checkClassList = () => {
-                            if (
-                                !(
-                                    link.classList.contains("no-lightbox") ||
-                                    link.classList.contains("gallery-lightbox") ||
-                                    link.parentNode.classList.contains("gallery-icon") ||
-                                    link.classList.contains("woo-lightbox") ||
-                                    link.classList.contains("woo-thumbnail") ||
-                                    link.parentNode.classList.contains("woocommerce-product-gallery__image") ||
-                                    !!link.closest(".wp-block-gallery") ||
-                                    link.getAttribute("data-elementor-open-lightbox") ||
-                                    link.classList.contains("yith_magnifier_thumbnail") ||
-                                    link.classList.contains("gg-link")
-                                )
-                            ) {
-                                link.classList.add("oceanwp-lightbox");
+                        if (!link.classList.contains("no-lightbox")) {
+                            if (link.parentNode.classList.contains("gallery-icon") || !!link.closest(".wp-block-gallery")) {
+                                link.classList.add("gallery-lightbox");
                             }
+                        }
+                    };
 
-                            if (!link.classList.contains("no-lightbox")) {
-                                if (
-                                    link.parentNode.classList.contains("gallery-icon") ||
-                                    !!link.closest(".wp-block-gallery")
-                                ) {
-                                    link.classList.add("gallery-lightbox");
-                                }
-                            }
+                    if (!!link.dataset.width && !!link.dataset.height) {
+                        checkClassList();
+                    } else {
+                        const img = new Image();
+
+                        img.onload = function () {
+                            link.setAttribute("data-width", this.naturalWidth);
+                            link.setAttribute("data-height", this.naturalHeight);
+
+                            checkClassList();
                         };
 
-                        if (!!link.dataset.width && !!link.dataset.height) {
-                            checkClassList();
-
-                            if (array.length === itemsNum++) {
-                                resolve(true);
-                            }
-                        } else {
-                            let timer;
-                            const img = new Image();
-
-                            img.onload = function () {
-                                clearTimeout(timer);
-
-                                link.setAttribute("data-width", this.naturalWidth);
-                                link.setAttribute("data-height", this.naturalHeight);
-
-                                checkClassList();
-
-                                if (array.length === itemsNum++) {
-                                    resolve(true);
-                                }
-                            };
-
-                            img.onerror = img.onabort = () => {
-                                clearTimeout(timer);
-
-                                if (array.length === itemsNum++) {
-                                    resolve(true);
-                                }
-                            };
-
-                            timer = setTimeout(function () {
-                                itemsNum++;
-                            }, timeout);
-
-                            img.src = link.getAttribute("href");
-                        }
+                        img.src = link.getAttribute("href");
                     }
-                });
-        });
+                }
+            });
     };
 
     #imageFormats = () => {

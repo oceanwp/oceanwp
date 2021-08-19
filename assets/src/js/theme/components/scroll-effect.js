@@ -55,6 +55,7 @@ class ScrollEffect {
                 });
 
                 if (
+                    !!DOM.header.site &&
                     !DOM.header.site.classList.contains("top-header") &&
                     !DOM.header.site.classList.contains("medium-header") &&
                     !DOM.header.site.classList.contains("custom-header") &&
@@ -75,6 +76,10 @@ class ScrollEffect {
 
     #getStickyHeaderHeight = () => {
         const stickyHeader = document.querySelector("#site-header-sticky-wrapper");
+
+        if (!DOM.header.site) {
+            return 0;
+        }
 
         if (!!stickyHeader) {
             if (DOM.header.site?.classList.contains("top-header")) {

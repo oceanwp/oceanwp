@@ -14,14 +14,9 @@ class VerticalHeader {
     }
 
     #start = () => {
-        DOM.header.vertical
-            .querySelectorAll("li.menu-item-has-children:not(.btn) > a")
-            .forEach((menuLink) => {
-                menuLink.insertAdjacentHTML(
-                    "beforeend",
-                    '<span class="dropdown-toggle" tabindex="0"></span>'
-                );
-            });
+        DOM.header.vertical.querySelectorAll("li.menu-item-has-children:not(.btn) > a").forEach((menuLink) => {
+            menuLink.insertAdjacentHTML("beforeend", '<span class="dropdown-toggle" tabindex="0"></span>');
+        });
 
         this.#menuItemsPlusIcon =
             options.verticalHeaderTarget == "link"
@@ -50,30 +45,22 @@ class VerticalHeader {
         event.preventDefault();
         event.stopPropagation();
 
-        const plusIcon = event.currentTarget;
+        const menuItemPlusIcon = event.currentTarget;
         const menuItem =
-            options.verticalHeaderTarget == "link" ? plusIcon.parentNode : plusIcon.parentNode.parentNode;
+            options.verticalHeaderTarget == "link" ? menuItemPlusIcon.parentNode : menuItemPlusIcon.parentNode.parentNode;
+        const subMenu = menuItem.lastElementChild;
 
-        if (!menuItem.classList.contains("active")) {
-            DOM.header.vertical
-                .querySelectorAll("li.menu-item-has-children")
-                .forEach((menuItemHasChildren) => {
-                    if (
-                        menuItem != menuItemHasChildren &&
-                        menuItem
-                            .oceanParents(".menu-item-has-children")
-                            .findIndex((parentMenuItem) => parentMenuItem == menuItemHasChildren)
-                    ) {
-                        menuItemHasChildren.classList.remove("active");
-                        slideUp(menuItemHasChildren.lastElementChild, 200);
-                    }
-                });
-
+        if (!menuItem?.classList.contains("active")) {
             menuItem.classList.add("active");
-            slideDown(menuItem.lastElementChild, 200);
+            slideDown(subMenu, 200);
         } else {
             menuItem.classList.remove("active");
-            slideUp(menuItem.lastElementChild, 200);
+            slideUp(subMenu, 200);
+
+            menuItem.querySelectorAll(".menu-item-has-children.active")?.forEach((openMenuItem) => {
+                openMenuItem.classList.remove("active");
+                slideUp(openMenuItem.querySelector("ul"), 200);
+            });
         }
     };
 

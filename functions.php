@@ -518,6 +518,9 @@ final class OCEANWP_Theme_Class {
 			wp_enqueue_script( 'perfect-scrollbar' );
 		}
 
+		// Smooth Scroll.
+		wp_enqueue_script( 'smoothscroll', $dir . 'vendors/smoothscroll.min.js', array(), $theme_version, false );
+
 		/**
 		 * Load Theme Scripts.
 		 */

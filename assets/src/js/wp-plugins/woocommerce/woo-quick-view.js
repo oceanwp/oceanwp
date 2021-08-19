@@ -28,6 +28,13 @@ class WooQuickView {
             this.#onAddToCartBtnClick
         );
 
+        delegate(
+            document.body,
+            "#owp-qv-content .product:not(.product-type-external) .single_add_to_cart_button",
+            "touchend",
+            this.#onAddToCartBtnClick
+        );
+
         jQuery(document.body).on("added_to_cart", this.#updateCart);
     };
 
@@ -73,8 +80,7 @@ class WooQuickView {
             formData.forEach((dataItem) => {
                 if (dataItem.name == "add-to-cart") {
                     dataItem.name = "product_id";
-                    dataItem.value =
-                        form.querySelector("input[name=variation_id]")?.value || addToCartBtn.value;
+                    dataItem.value = form.querySelector("input[name=variation_id]")?.value || addToCartBtn.value;
                 }
             });
 
@@ -98,11 +104,7 @@ class WooQuickView {
                      * Because Woocommerce plugin uses jQuery custom event,
                      * We also have to use jQuery to customize this event.
                      */
-                    jQuery("body").trigger("added_to_cart", [
-                        response.fragments,
-                        response.cart_hash,
-                        jQuery(addToCartBtn),
-                    ]);
+                    jQuery("body").trigger("added_to_cart", [response.fragments, response.cart_hash, jQuery(addToCartBtn)]);
 
                     if (options.cart_redirect_after_add === "yes") {
                         window.location = options.cart_url;
@@ -189,11 +191,9 @@ class WooQuickView {
                 if (!!groupedForm) {
                     const groupedFormURL = groupedForm.getAttribute("action");
 
-                    groupedForm
-                        .querySelectorAll(".group_table, button.single_add_to_cart_button")
-                        .forEach((item) => {
-                            item.style.display = "none";
-                        });
+                    groupedForm.querySelectorAll(".group_table, button.single_add_to_cart_button").forEach((item) => {
+                        item.style.display = "none";
+                    });
 
                     groupedForm.insertAdjacentHTML(
                         "beforeend",

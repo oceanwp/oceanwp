@@ -21,30 +21,22 @@ class WooQuantityButtons {
 
                 if (!(inputType === "date" || inputType === "hidden")) {
                     // Add minus icon
-                    quantityInput.insertAdjacentHTML(
-                        "beforebegin",
-                        '<a href="javascript:void(0)" class="minus">-</a>'
-                    );
+                    quantityInput.insertAdjacentHTML("beforebegin", '<a href="javascript:void(0)" class="minus">-</a>');
 
                     // Add plus icon
-                    quantityInput.insertAdjacentHTML(
-                        "afterend",
-                        '<a href="javascript:void(0)" class="plus">+</a>'
-                    );
+                    quantityInput.insertAdjacentHTML("afterend", '<a href="javascript:void(0)" class="plus">+</a>');
                 }
             });
 
             // Check quantity bigger than min
-            document
-                .querySelectorAll("input.qty:not(.product-quantity input.qty)")
-                .forEach((quantityInput) => {
-                    const min = parseFloat(quantityInput.getAttribute("min"));
-                    const currentValue = parseFloat(quantityInput.value);
+            document.querySelectorAll("input.qty:not(.product-quantity input.qty)").forEach((quantityInput) => {
+                const min = parseFloat(quantityInput.getAttribute("min"));
+                const currentValue = parseFloat(quantityInput.value);
 
-                    if (min && min > 0 && currentValue < min) {
-                        quantityInput.value = min;
-                    }
-                });
+                if (min && min > 0 && currentValue < min) {
+                    quantityInput.value = min;
+                }
+            });
 
             if (this.#firstTimeRunning) {
                 // Create a new 'change' event

@@ -21,17 +21,10 @@ class WooFloatingBar {
 
             window.addEventListener("scroll", this.#onWindowScroll);
 
-            DOM.floatingBar
-                ?.querySelector("button.button.top")
-                ?.addEventListener("click", this.#onTopBtnClick);
+            DOM.floatingBar?.querySelector("button.button.top")?.addEventListener("click", this.#onTopBtnClick);
         }
 
-        delegate(
-            document.body,
-            ".owp-floating-bar .floating_add_to_cart_button",
-            "click",
-            this.#onAddToCartBtnClick
-        );
+        delegate(document.body, ".owp-floating-bar .floating_add_to_cart_button", "click", this.#onAddToCartBtnClick);
 
         /**
          * Because Woocommerce plugin uses jQuery custom event,
@@ -65,13 +58,9 @@ class WooFloatingBar {
                 if (header.querySelector(".bottom-header-wrap")?.classList.contains("fixed-scroll")) {
                     this.#offset = this.#offset + header.querySelector(".bottom-header-wrap").offsetHeight;
                 } else {
-                    this.#offset =
-                        this.#offset + document.querySelector(".is-sticky #site-header-inner")?.offsetHeight;
+                    this.#offset = this.#offset + document.querySelector(".is-sticky #site-header-inner")?.offsetHeight;
                 }
-            } else if (
-                header.classList.contains("center-header") ||
-                header.classList.contains("custom-header")
-            ) {
+            } else if (header.classList.contains("center-header") || header.classList.contains("custom-header")) {
                 this.#offset = this.#offset + header.offsetHeight;
             } else if (header.classList.contains("fixed-scroll")) {
                 this.#offset = this.#offset + parseInt(header.getAttribute("data-height"));
@@ -98,11 +87,6 @@ class WooFloatingBar {
             const scrollPosition = offset(DOM.woo.productCarts[0]).top - this.#offset;
 
             DOM.html.scrollTo({
-                top: Math.round(scrollPosition),
-                behavior: "smooth",
-            });
-
-            DOM.body.scrollTo({
                 top: Math.round(scrollPosition),
                 behavior: "smooth",
             });

@@ -40,11 +40,6 @@ class WooDisplayCart {
                 top: 0,
                 behavior: "smooth",
             });
-
-            DOM.body.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
         }
     };
 
