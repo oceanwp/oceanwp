@@ -526,7 +526,7 @@ final class OCEANWP_Theme_Class {
 		 */
 
 		// Main script.
-		wp_enqueue_script( 'oceanwp-main', $dir . 'theme.vanilla.js', array(), $theme_version, true );
+		wp_enqueue_script( 'oceanwp-main', $dir . 'theme.vanilla.min.js', array(), $theme_version, true );
 		wp_localize_script( 'oceanwp-main', 'oceanwpLocalize', $localize_array );
 
 		// WooCommerce scripts.

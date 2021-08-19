@@ -149,10 +149,10 @@ class SidebarMobileMenu {
 
         if (!menuItem?.classList.contains("active")) {
             menuItem.classList.add("active");
-            slideDown(subMenu, 200);
+            slideDown(subMenu, 250);
         } else {
             menuItem.classList.remove("active");
-            slideUp(subMenu, 200);
+            slideUp(subMenu, 250);
 
             menuItem.querySelectorAll(".sidr-class-menu-item-has-children.active")?.forEach((openMenuItem) => {
                 openMenuItem.classList.remove("active");

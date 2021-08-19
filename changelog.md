@@ -1,5 +1,27 @@
 # OceanWP Changelog
 
+### _2021.08.19_ - 3.0.4
+
+-   **Added** - Performance: Option to disable WordPress emoji script.
+-   **Improved** - WooCommerce: Add to Cart option on iPhones: removed the double-click.
+-   **Fixed** - Mobile Header: Dropdown Style: transition on open.
+-   **Fixed** - Mobile Header: Sidebar Style: fourth-level dropdown doesn't function.
+-   **Fixed** - Mobile Header: Mobile menu doesn't function if menu created using the nav shortcode or nav widget from Ocean Elementor Widgets.
+-   **Fixed** - Menu: Walker: Warnings related to PHP 8+ version.
+-   **Fixed** - Footer: Position: on pages with none or little content, footer doesn't stick to the bottom of the screen.
+-   **Fixed** - PhotoSwipe Lightbox: image stretched on full preview.
+-   **Fixed** - Scroll to Top: button transition on appear/disappear.
+-   **Fixed** - Gutenberg: Blocks: YouTube embed backend and front-end styling issues.
+-   **Fixed** - Gutenberg: Blocks: Full Width layout issues.
+-   **Fixed** - WooCommerce: Single Product: Ajax Add to Cart issues.
+-   **Fixed** - WooCommerce: Cart: changing quantity makes quantity buttons disappear.
+-   **Fixed** - WooCommerce: Cart: update + refresh cause increase of the quantity by 2 instead of 1 on new product add.
+-   **Fixed** - Compatibility: WooCommerce Product Addons plugin issues.
+-   **Fixed** - Compatibility: Variation Swatches for WooCommerce plugin issues.
+-   **Fixed** - Compatibility: Elementor: anchor link issues.
+-   **Fixed** - Compatibility: Elementor Pro: product widgets: WooCommerce infinite-scroll pagination issues.
+-   **Fixed** - Compatibility: WPBakery: tab & accordion shortcodes, anchor link and comment button issues.
+
 ### _2021.07.28._ - 3.0.3
 
 -   **Added** - Performance section in Customizer > General Options.

@@ -35,7 +35,7 @@ class ScrollEffect {
             const href = scrollItem.getAttribute("href");
             const id = href.substring(href.indexOf("#")).slice(1);
 
-            if (isSelectorValid(id)) {
+            if (isSelectorValid(`#${id}`)) {
                 this.#targetElem = document.querySelector(`#${id}`);
             }
 
@@ -77,10 +77,6 @@ class ScrollEffect {
     #getStickyHeaderHeight = () => {
         const stickyHeader = document.querySelector("#site-header-sticky-wrapper");
 
-        if (!DOM.header.site) {
-            return 0;
-        }
-
         if (!!stickyHeader) {
             if (DOM.header.site?.classList.contains("top-header")) {
                 return Number.parseInt(getComputedStyle(stickyHeader).height);
@@ -119,6 +115,8 @@ class ScrollEffect {
         if (!!document.querySelector(".elementor-sticky")) {
             return 80;
         }
+
+        return 0;
     };
 
     #fixMultiMenu = (event) => {

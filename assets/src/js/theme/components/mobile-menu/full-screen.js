@@ -82,7 +82,7 @@ class FullScreenMobileMenu {
             });
 
             document.querySelectorAll("#mobile-fullscreen nav ul.sub-menu").forEach((subMenu) => {
-                slideUp(subMenu, 200);
+                slideUp(subMenu, 250);
             });
 
             DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
@@ -105,10 +105,10 @@ class FullScreenMobileMenu {
 
         if (!(window.getComputedStyle(subMenu).display === "none")) {
             menuItem.classList.remove("open-sub");
-            slideUp(subMenu, 200);
+            slideUp(subMenu, 250);
         } else {
             menuItem.classList.add("open-sub");
-            slideDown(subMenu, 200);
+            slideDown(subMenu, 250);
         }
     };
 

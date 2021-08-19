@@ -77,13 +77,6 @@ class WooQuickView {
             addToCartBtn.classList.remove("added");
             addToCartBtn.classList.add("loading");
 
-            formData.forEach((dataItem) => {
-                if (dataItem.name == "add-to-cart") {
-                    dataItem.name = "product_id";
-                    dataItem.value = form.querySelector("input[name=variation_id]")?.value || addToCartBtn.value;
-                }
-            });
-
             /**
              * Because Woocommerce plugin uses jQuery custom event,
              * We also have to use jQuery to customize this event.
@@ -96,7 +89,7 @@ class WooQuickView {
              */
             jQuery.ajax({
                 type: "POST",
-                url: woocommerce_params.wc_ajax_url.replace("%%endpoint%%", "add_to_cart"),
+                url: oceanwpLocalize.wc_ajax_url,
                 data: formData,
 
                 success: function (response) {
@@ -104,6 +97,7 @@ class WooQuickView {
                      * Because Woocommerce plugin uses jQuery custom event,
                      * We also have to use jQuery to customize this event.
                      */
+                    jQuery("body").trigger("wc_fragment_refresh");
                     jQuery("body").trigger("added_to_cart", [response.fragments, response.cart_hash, jQuery(addToCartBtn)]);
 
                     if (options.cart_redirect_after_add === "yes") {
@@ -228,15 +222,11 @@ class WooQuickView {
             const elementValue = element.value;
             const elementName = element.name;
 
-            if (elementName === "product_id") {
-                return true;
-            }
-
-            if (elementValue === null) {
-                return true;
-            } else if (element.nodeName === "checkbox" && element.checked == false) {
+            if (elementValue == null) {
                 return { name: elementName, value: "" };
-            } else if (element.nodeName === "radio" && element.checked == false) {
+            } else if (element.type.toLowerCase() === "checkbox") {
+                return { name: elementName, value: element.checked ? elementValue : "" };
+            } else if (element.type.toLowerCase() === "radio") {
                 return { name: elementName, value: element.checked ? elementValue : "" };
             }
 

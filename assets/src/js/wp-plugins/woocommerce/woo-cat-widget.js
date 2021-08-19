@@ -33,7 +33,7 @@ class WooCatWidget {
                             const element = parentItemChildren[i];
 
                             if (element.nodeName.toLowerCase() === "ul") {
-                                slideUp(element, 200);
+                                slideUp(element, 250);
                             }
                         }
                     } else {
@@ -44,7 +44,7 @@ class WooCatWidget {
                             const element = parentItemChildren[i];
 
                             if (element.nodeName.toLowerCase() === "ul") {
-                                slideDown(element, 200);
+                                slideDown(element, 250);
                             }
                         }
                     }

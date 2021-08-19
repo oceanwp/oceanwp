@@ -59,7 +59,6 @@ class DropDownMobileMenu {
     #onToggleMenuButtonClick = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        console.log("some");
 
         !!DOM.mobileMenu.navWrapper && slideToggle(DOM.mobileMenu.navWrapper, 400);
         DOM.mobileMenu.toggleMenuBtn?.classList.toggle("opened");
@@ -68,7 +67,7 @@ class DropDownMobileMenu {
     };
 
     #onMenuCloseClick = (event) => {
-        !!DOM.mobileMenu.navWrapper && slideUp(DOM.mobileMenu.navWrapper, 200);
+        !!DOM.mobileMenu.navWrapper && slideUp(DOM.mobileMenu.navWrapper, 250);
         DOM.mobileMenu.toggleMenuBtn?.classList.remove("opened");
         DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
     };
@@ -95,10 +94,10 @@ class DropDownMobileMenu {
 
         if (!menuItem?.classList.contains("active")) {
             menuItem.classList.add("active");
-            slideDown(subMenu, 200);
+            slideDown(subMenu, 250);
         } else {
             menuItem.classList.remove("active");
-            slideUp(subMenu, 200);
+            slideUp(subMenu, 250);
 
             menuItem.querySelectorAll(".menu-item-has-children.active")?.forEach((openMenuItem) => {
                 openMenuItem.classList.remove("active");

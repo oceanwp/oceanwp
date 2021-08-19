@@ -60,10 +60,10 @@ class FullScreenMenu {
 
         if (!(window.getComputedStyle(subMenu).display === "none")) {
             menuItem.classList.remove("open-sub");
-            slideUp(subMenu, 200);
+            slideUp(subMenu, 250);
         } else {
             menuItem.classList.add("open-sub");
-            slideDown(subMenu, 200);
+            slideDown(subMenu, 250);
         }
     };
 
@@ -96,14 +96,12 @@ class FullScreenMenu {
         DOM.html.style.overflow = "";
         DOM.html.style.marginRight = "";
 
-        document
-            .querySelectorAll("#full-screen-menu #site-navigation ul > li.dropdown")
-            .forEach((menuItem) => {
-                menuItem.classList.remove("open-sub");
-            });
+        document.querySelectorAll("#full-screen-menu #site-navigation ul > li.dropdown").forEach((menuItem) => {
+            menuItem.classList.remove("open-sub");
+        });
 
         document.querySelectorAll("#full-screen-menu #site-navigation ul.sub-menu").forEach((subMenu) => {
-            slideUp(subMenu, 200);
+            slideUp(subMenu, 250);
         });
     };
 
