@@ -58,7 +58,6 @@ class ScrollEffect {
                     !!DOM.header.site &&
                     !DOM.header.site.classList.contains("top-header") &&
                     !DOM.header.site.classList.contains("medium-header") &&
-                    !DOM.header.site.classList.contains("custom-header") &&
                     !DOM.header.site.classList.contains("vertical-header")
                 ) {
                     window.addEventListener("scroll", this.#fixMultiMenu);
@@ -105,15 +104,18 @@ class ScrollEffect {
                 return 0;
             }
 
-            if (!DOM.header.site && !!document.querySelector(".elementor-sticky")) {
-                return 100;
-            }
-
             return DOM.header.site?.dataset.height ?? 54;
         }
 
-        if (!!document.querySelector(".elementor-sticky")) {
-            return 80;
+        if (!!document.querySelector("#stick-anything-header")) {
+            return document.querySelector("#stick-anything-header").offsetHeight;
+        }
+
+        if (
+            !DOM.header.site &&
+            !!document.querySelector(".elementor-section-wrap")?.firstElementChild.classList.contains("elementor-sticky")
+        ) {
+            return document.querySelector(".elementor-section-wrap")?.firstElementChild.offsetHeight;
         }
 
         return 0;
