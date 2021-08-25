@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### _2021.08.25._ - 3.0.5
+
+-   **Tweak** - PhotoSwipe replaced with Magnific Popup.
+-   **Fixed** - Compatibility: Ocean Sticky Header: Shrink style: logo height on scroll back.
+-   **Fixed** - Compatibility: Ocean Stick Anything: Header: offset.
+-   **Fixed** - WooCommerce: Reduce Ajax requests.
+
 ### _2021.08.19_ - 3.0.4
 
 -   **Added** - Performance: Option to disable WordPress emoji script.

@@ -505,8 +505,7 @@ final class OCEANWP_Theme_Class {
 
 		// Lightbox.
 		if ( ! get_theme_mod( 'ocean_disable_lightbox', false ) ) {
-			wp_enqueue_script( 'photoswipe', $dir . 'vendors/photoswipe.min.js', array(), $theme_version, true );
-			wp_enqueue_script( 'photoswipe-ui-default', $dir . 'vendors/photoswipe-ui-default.min.js', array(), $theme_version, true );
+			wp_enqueue_script( 'magnific-popup', $dir . 'vendors/magnific-popup.min.js', array(), $theme_version, true );
 		}
 
 		// Sidr Mobile Menu.

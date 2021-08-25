@@ -1,7 +1,7 @@
 == OceanWP ==
 Contributors: oceanwp
 Tested up to: 5.8
-Stable tag: 3.0.4
+Stable tag: 3.0.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -81,9 +81,9 @@ Perfect-Scrollbar, Copyright 2020 Hyunje Jun, MDBootstrap and Contributors
 License: MIT - https://opensource.org/licenses/MIT
 Source: https://github.com/mdbootstrap/perfect-scrollbar
 
-PhotoSwipe, Copyright (c) 2019 Dmitry Semenov
+Magnific Popup, Copyright (c) 2016 Dmitry Semenov
 License: MIT - https://opensource.org/licenses/MIT
-Source: https://github.com/dimsemenov/photoswipe
+Source: https://dimsemenov.com/plugins/magnific-popup/
 
 Select2, Copyright (c) 2012-2017 Kevin Brown, Igor Vaynberg, and Select2 contributors
 License: MIT - https://opensource.org/licenses/MIT

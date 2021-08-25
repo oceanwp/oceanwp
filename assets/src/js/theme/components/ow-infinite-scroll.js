@@ -57,17 +57,10 @@ class OWInfiniteScroll {
                     oceanwp.theme.owSlider.start(this.element.querySelectorAll(".gallery-format, .product-entry-slider"));
                 }
 
-                if (this.element.querySelector(".gallery-format")) {
-                    oceanwp.theme.owLightbox.initPhotoSwipeFromDOM(".gallery-format");
+                if (!document.body.classList.contains("no-lightbox")) {
+                    oceanwp.theme.owLightbox.initSingleImageLightbox();
+                    oceanwp.theme.owLightbox.initGalleryLightbox();
                 }
-
-                // Gallery posts lightbox
-                items.forEach((item) => {
-                    // Post image lightbox
-                    item.querySelectorAll("a.oceanwp-lightbox")?.forEach((link) => {
-                        link.querySelector("img").addEventListener("click", oceanwp.theme.owLightbox.openLightbox);
-                    });
-                });
 
                 // Force the images to be parsed to fix Safari issue
                 items.forEach((item) => {
