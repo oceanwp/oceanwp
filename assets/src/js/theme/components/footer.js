@@ -52,7 +52,7 @@ export default class Footer {
 
             if (!!DOM.footer.calloutFooter) {
                 DOM.footer.calloutFooter.style.marginTop = "auto";
-            } else {
+            } else if (!!DOM.footer.siteFooter) {
                 DOM.footer.siteFooter.style.marginTop = "auto";
             }
 

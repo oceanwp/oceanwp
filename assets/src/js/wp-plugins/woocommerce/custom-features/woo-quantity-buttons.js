@@ -64,7 +64,12 @@ class WooQuantityButtons {
             }
         }
 
-        delegate(DOM.body, ".cart .minus, .cart .plus", "click", this.#onQuantityBtnClick);
+        delegate(
+            DOM.body,
+            ".cart .minus, .cart .plus, .tinv-wishlist .minus, .tinv-wishlist .plus",
+            "click",
+            this.#onQuantityBtnClick
+        );
     };
 
     #onQuantityInputKeyup = (event) => {

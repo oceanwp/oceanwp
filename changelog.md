@@ -5,6 +5,7 @@
 -   **Tweak** - PhotoSwipe replaced with Magnific Popup.
 -   **Fixed** - Compatibility: Ocean Sticky Header: Shrink style: logo height on scroll back.
 -   **Fixed** - Compatibility: Ocean Stick Anything: Header: offset.
+-   **Fixed** - Compatibility: TI WooCommerce Wishlist: qunatity buttons.
 -   **Fixed** - WooCommerce: Reduce Ajax requests.
 
 ### _2021.08.19_ - 3.0.4
