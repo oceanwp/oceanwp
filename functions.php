@@ -890,7 +890,7 @@ final class OCEANWP_Theme_Class {
 	 */
 	public static function wp_list_categories_args( $links ) {
 		$links = str_replace( '</a> (', '</a> <span class="cat-count-span">(', $links );
-		$links = str_replace( ' )', ' )</span>', $links );
+		$links = str_replace( ')', ')</span>', $links );
 		return $links;
 	}
 
