@@ -9,20 +9,20 @@ class WooFloatingBar {
     #tabsTopOffset;
 
     constructor() {
-        this.#start();
-        this.#setupEventListeners();
+        if (!!DOM.floatingBar) {
+            this.#start();
+            this.#setupEventListeners();
+        }
     }
 
     #start = () => {};
 
     #setupEventListeners = () => {
-        if (!!DOM.woo.productTabs) {
-            document.addEventListener("scroll", this.#onDocumentScroll);
+        document.addEventListener("scroll", this.#onDocumentScroll);
 
-            window.addEventListener("scroll", this.#onWindowScroll);
+        window.addEventListener("scroll", this.#onWindowScroll);
 
-            DOM.floatingBar?.querySelector("button.button.top")?.addEventListener("click", this.#onTopBtnClick);
-        }
+        DOM.floatingBar?.querySelector("button.button.top")?.addEventListener("click", this.#onTopBtnClick);
 
         delegate(document.body, ".owp-floating-bar .floating_add_to_cart_button", "click", this.#onAddToCartBtnClick);
 
@@ -38,7 +38,7 @@ class WooFloatingBar {
         const stickyTopbarWrapper = document.querySelector("#top-bar-sticky-wrapper");
 
         this.#offset = 0;
-        this.#tabsTopOffset = offset(DOM.woo.productTabs).top;
+        this.#tabsTopOffset = !!DOM.woo.productTabs ? offset(DOM.woo.productTabs).top : 0;
 
         // Adminbar offset
         if (!!DOM.WPAdminbar && window.innerWidth > 600) {
@@ -67,16 +67,24 @@ class WooFloatingBar {
             }
         }
 
-        this.#tabsTopOffset = this.#tabsTopOffset - this.#offset;
+        this.#tabsTopOffset = this.#tabsTopOffset !== 0 ? this.#tabsTopOffset - this.#offset : 0;
 
         DOM.floatingBar.style.top = `${this.#offset}px`;
     };
 
     #onWindowScroll = (event) => {
-        if (window.pageYOffset > this.#tabsTopOffset) {
-            DOM.floatingBar.classList.add("show");
+        if (this.#tabsTopOffset !== 0) {
+            if (window.pageYOffset > this.#tabsTopOffset) {
+                DOM.floatingBar.classList.add("show");
+            } else {
+                DOM.floatingBar.classList.remove("show");
+            }
         } else {
-            DOM.floatingBar.classList.remove("show");
+            if (window.pageYOffset > this.#offset) {
+                DOM.floatingBar.classList.add("show");
+            } else {
+                DOM.floatingBar.classList.remove("show");
+            }
         }
     };
 

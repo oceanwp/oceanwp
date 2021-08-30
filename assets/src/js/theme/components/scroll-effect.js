@@ -55,6 +55,7 @@ class ScrollEffect {
                 });
 
                 if (
+                    !!document.querySelector("#site-header-sticky-wrapper") &&
                     !!DOM.header.site &&
                     !DOM.header.site.classList.contains("top-header") &&
                     !DOM.header.site.classList.contains("medium-header") &&
