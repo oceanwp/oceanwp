@@ -21,10 +21,14 @@ class WooQuantityButtons {
 
                 if (!(inputType === "date" || inputType === "hidden")) {
                     // Add minus icon
-                    quantityInput.insertAdjacentHTML("beforebegin", '<a href="javascript:void(0)" class="minus">-</a>');
+                    if (!quantityInput.previousElementSibling?.classList.contains("minus")) {
+                        quantityInput.insertAdjacentHTML("beforebegin", '<a href="javascript:void(0)" class="minus">-</a>');
+                    }
 
                     // Add plus icon
-                    quantityInput.insertAdjacentHTML("afterend", '<a href="javascript:void(0)" class="plus">+</a>');
+                    if (!quantityInput.nextElementSibling?.classList.contains("plus")) {
+                        quantityInput.insertAdjacentHTML("afterend", '<a href="javascript:void(0)" class="plus">+</a>');
+                    }
                 }
             });
 
