@@ -37,6 +37,7 @@ class Menu {
         const subMenu = parentMenuItem.querySelector("ul.sub-menu");
 
         parentMenuItem.classList.add("sfHover");
+
         fadeIn(subMenu);
     };
 
@@ -45,7 +46,13 @@ class Menu {
         const subMenu = parentMenuItem.querySelector("ul.sub-menu");
 
         parentMenuItem.classList.remove("sfHover");
-        fadeOut(subMenu);
+        subMenu.style.pointerEvents = "none";
+
+        fadeOut(subMenu, {
+            callback: () => {
+                subMenu.style.pointerEvents = null;
+            },
+        });
     };
 }
 
