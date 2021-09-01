@@ -308,3 +308,33 @@ dl:after,
         max-width: 11.11%;
     }
 }
+
+/* Responsive Classic Editor Video */
+.responsive-video-wrap {
+    position: relative;
+}
+
+.responsive-video-wrap:before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+.responsive-video-wrap iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.wp-block-embed .responsive-video-wrap {
+    position: static;
+}
+
+.wp-block-embed .responsive-video-wrap:before {
+    display: none;
+}
