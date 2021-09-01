@@ -1,8 +1,18 @@
 import ResponsiveAutoHeight from "responsive-auto-height";
 
 class EqualHeightElements {
+    #executed = false;
+
     constructor() {
-        this.start();
+        if (window.innerWidth > 768) {
+            this.start();
+        }
+
+        window.addEventListener("resize", (event) => {
+            if (window.innerWidth > 768 && !this.#executed) {
+                this.start();
+            }
+        });
     }
 
     start = () => {
@@ -13,6 +23,8 @@ class EqualHeightElements {
         if (!!document.querySelector(".match-height-grid .match-height-content")) {
             new ResponsiveAutoHeight(".match-height-grid .match-height-content");
         }
+
+        this.#executed = true;
     };
 }
 
