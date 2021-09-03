@@ -50,7 +50,7 @@ class ScrollEffect {
                     this.#getStickyHeaderHeight();
 
                 if (
-                    !document.querySelector("#site-header-sticky-wrapper").classList.contains("is-sticky") &&
+                    !document.querySelector("#site-header-sticky-wrapper")?.classList.contains("is-sticky") &&
                     (!!document.querySelector("#site-header-sticky-wrapper") ||
                         !!document.querySelector("#stick-anything-header") ||
                         !!document

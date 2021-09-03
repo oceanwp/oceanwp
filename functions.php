@@ -525,13 +525,13 @@ final class OCEANWP_Theme_Class {
 		 */
 
 		// Main script.
-		wp_enqueue_script( 'oceanwp-main', $dir . 'theme.vanilla.min.js', array(), $theme_version, true );
+		wp_enqueue_script( 'oceanwp-main', $dir . 'theme.vanilla.min.js', array( 'jquery' ), $theme_version, true );
 		wp_localize_script( 'oceanwp-main', 'oceanwpLocalize', $localize_array );
 
 		// WooCommerce scripts.
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
 		&& 'yes' !== get_theme_mod( 'ocean_woo_remove_custom_features', 'no' ) ) {
-			wp_enqueue_script( 'oceanwp-woocommerce-custom-features', $dir . 'wp-plugins/woocommerce/woo-custom-features.min.js', array(), $theme_version, true );
+			wp_enqueue_script( 'oceanwp-woocommerce-custom-features', $dir . 'wp-plugins/woocommerce/woo-custom-features.min.js', array( 'jquery' ), $theme_version, true );
 			wp_localize_script( 'oceanwp-woocommerce-custom-features', 'oceanwpLocalize', $localize_array );
 		}
 
