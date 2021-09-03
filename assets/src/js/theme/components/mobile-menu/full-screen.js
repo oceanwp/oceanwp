@@ -62,7 +62,9 @@ class FullScreenMobileMenu {
     };
 
     #onCloseIconClick = (event) => {
-        event.preventDefault();
+        if (event.currentTarget.getAttribute("href").substring(0, 1) === "#") {
+            event.preventDefault();
+        }
 
         this.#closeMenu();
     };
