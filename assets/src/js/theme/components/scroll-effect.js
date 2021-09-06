@@ -24,6 +24,10 @@ class ScrollEffect {
     #onScrollItemClick = (event) => {
         const scrollItem = event.currentTarget;
 
+        if (scrollItem.classList.contains("elementor-item-anchor") && scrollItem.classList.contains("has-submenu")) {
+            return;
+        }
+
         if (
             !scrollItem.classList.contains("omw-open-modal") &&
             !scrollItem.closest(".omw-open-modal") &&

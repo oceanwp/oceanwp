@@ -148,6 +148,14 @@
 }
 
 /*------------------------------------*
+	Fixed old Font Awesomes
+*------------------------------------*/
+#sidr .sidr-class-social-menu-inner .fa {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+}
+
+/*------------------------------------*
 	All Devices under 960px
 *------------------------------------*/
 @media only screen and (max-width: 959px) {
