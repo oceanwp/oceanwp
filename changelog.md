@@ -1,5 +1,21 @@
 # OceanWP Changelog
 
+### _2021.09.06._ - 3.0.6
+
+-   **Fixed** - Header: anchor link animation issue on double-click.
+-   **Fixed** - Header: Dropdowns and Mega Menu: Flicker on repetitive or longer hover.
+-   **Fixed** - Mobile Menu: Full Screen style: custom links navigation issue.
+-   **Fixed** - Blog: Entries: page jump on scroll when equal heights condition in use.
+-   **Fixed** - WooCommerce: Floating Bar: display on Elementor single product custom templates.
+-   **Fixed** - WooCommerce: Floting Bar: scroll to anchor link offset.
+-   **Fixed** - WooCommerce: Checkout: Double quantity buttons.
+-   **Fixed** - Compatibility: WooCommerce: Categories widget: missing closing span tag.
+-   **Fixed** - Compatibility: TI WooCommerce Wishlist: quantity buttons.
+-   **Fixed** - Compatibility: Classic Editor: Video responsiveness.
+-   **Fixed** - Deprecated PhotoSwipe script: removed redundandt HTML.
+-   **Fixed** - Filter links: active style.
+-   **Fixed** - Minor issues.
+
 ### _2021.08.25._ - 3.0.5
 
 -   **Tweak** - PhotoSwipe replaced with Magnific Popup.
