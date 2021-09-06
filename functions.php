@@ -505,7 +505,7 @@ final class OCEANWP_Theme_Class {
 
 		// Lightbox.
 		if ( ! get_theme_mod( 'ocean_disable_lightbox', false ) ) {
-			wp_enqueue_script( 'magnific-popup', $dir . 'vendors/magnific-popup.min.js', array(), $theme_version, true );
+			wp_enqueue_script( 'magnific-popup', $dir . 'vendors/magnific-popup.min.js', array( 'jquery' ), $theme_version, true );
 		}
 
 		// Sidr Mobile Menu.
@@ -525,7 +525,7 @@ final class OCEANWP_Theme_Class {
 		 */
 
 		// Main script.
-		wp_enqueue_script( 'oceanwp-main', $dir . 'theme.vanilla.min.js', array( 'jquery' ), $theme_version, true );
+		wp_enqueue_script( 'oceanwp-main', $dir . 'theme.vanilla.min.js', array( 'magnific-popup' ), $theme_version, true );
 		wp_localize_script( 'oceanwp-main', 'oceanwpLocalize', $localize_array );
 
 		// WooCommerce scripts.
