@@ -3,7 +3,7 @@
 **Contributors:** Nicolas, Amit, Marko and Mohammad
 **Requires at least:** WordPress 5.3
 **Tested up to:** WordPress 5.8
-**Stable tag:** 3.0.6
+**Stable tag:** 3.0.7
 **Requires PHP:** 7.2
 **License:** GPLv2 or later
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html

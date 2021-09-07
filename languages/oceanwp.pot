@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.0.6\n"
+"Project-Id-Version: OceanWP 3.0.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-09-06 06:40:41+00:00\n"
+"POT-Creation-Date: 2021-09-07 09:40:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -106,65 +106,65 @@ msgstr ""
 msgid "Mobile (optional)"
 msgstr ""
 
-#: functions.php:616
+#: functions.php:622
 msgid "Default Sidebar"
 msgstr ""
 
-#: functions.php:618
+#: functions.php:624
 msgid ""
 "Widgets in this area will be displayed in the left or right sidebar area if "
 "you choose the Left or Right Sidebar layout."
 msgstr ""
 
-#: functions.php:629
+#: functions.php:635
 #: inc/customizer/controls/radio-image/class-control-radio-image.php:110
 #: inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:631
+#: functions.php:637
 msgid ""
 "Widgets in this area are used in the left sidebar region if you use the "
 "Both Sidebars layout."
 msgstr ""
 
-#: functions.php:643
+#: functions.php:649
 msgid "Search Results Sidebar"
 msgstr ""
 
-#: functions.php:645
+#: functions.php:651
 msgid "Widgets in this area are used in the search result page."
 msgstr ""
 
-#: functions.php:657
+#: functions.php:663
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:659
+#: functions.php:665
 msgid "Widgets in this area are used in the first footer region."
 msgstr ""
 
-#: functions.php:670
+#: functions.php:676
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:672
+#: functions.php:678
 msgid "Widgets in this area are used in the second footer region."
 msgstr ""
 
-#: functions.php:683
+#: functions.php:689
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:685
+#: functions.php:691
 msgid "Widgets in this area are used in the third footer region."
 msgstr ""
 
-#: functions.php:696
+#: functions.php:702
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:698
+#: functions.php:704
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr ""
 

@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### _2021.09.07._ - 3.0.7
+
+-   **Fixed** - Scripts: load issue.
+
 ### _2021.09.06._ - 3.0.6
 
 -   **Fixed** - Header: anchor link animation issue on double-click.
