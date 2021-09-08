@@ -214,7 +214,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 				],
 			);
 			$default_type = 'all';
-			if ( basename($_SERVER[PHP_SELF]) === 'customize.php' ){
+			if ( basename( $_SERVER['PHP_SELF'] ) === 'customize.php' ){
 				$default_type = 'general';
 			}
 
