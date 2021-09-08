@@ -27,10 +27,44 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			add_action( 'customize_register',					array( $this, 'controls_helpers' ) );
 			add_action( 'customize_register',					array( $this, 'customize_register' ), 11 );
 			add_action( 'after_setup_theme',					array( $this, 'register_options' ) );
+			add_action( 'customize_controls_print_footer_scripts', array( $this, 'customize_panel_init' ) );
 			add_action( 'customize_preview_init', 				array( $this, 'customize_preview_init' ) );
+			add_action( 'customize_render_panel', 				array( $this, 'render_tabs' ) );
 			add_action( 'customize_controls_enqueue_scripts', 	array( $this, 'custom_customize_enqueue' ), 7 );
 			add_action( 'customize_controls_print_scripts', 'ocean_get_svg_icon' );
 
+		}
+
+
+		/**
+		 * Adds custom controls
+		 *
+		 * @since 1.0.0
+		 */
+		public function render_tabs() {
+			remove_action( 'customize_render_panel', array( $this, 'render_tabs' ) );
+			$tabs = apply_filters( 'oceanwp-customizer-tabs', [
+				'general' => __('General', 'oceanwp'),
+				'typography' => __('Typography', 'oceanwp'),
+				// 'blog' => __('Blog', 'oceanwp'),
+				// 'header-footer' => __('Header & Footer', 'oceanwp'),
+				// 'sidebar' => __('Sidebar', 'oceanwp'),
+			]);
+
+			$list = '';
+			foreach ($tabs as $id => $label) {
+				$url   = admin_url('customize.php?oceanwp-customizer-part=' . $id);
+				$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : 'header-footer';
+				$class = "";
+				if ( $type === $id ) {
+					$class = "class=\"active\"";
+				}
+				$list .= wp_sprintf( '<li data-id="%s"%s><a href="%s">%s</a></li>', $id, $class , $url, $label );
+			}
+
+			echo '<div class="oceanwp-customizer-tabs-wrap">';
+				echo '<ul>' . $list . '</ul>';
+			echo '</div>';
 		}
 
 		/**
@@ -45,7 +79,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 
 			// Load customize control classes
 			require_once( $dir . 'buttonset/class-control-buttonset.php' 					);
-			require_once( $dir . 'color/class-control-color.php' 							);		
+			require_once( $dir . 'color/class-control-color.php' 							);
 			require_once( $dir . 'dimensions/class-control-dimensions.php' 					);
 			require_once( $dir . 'dropdown-pages/class-control-dropdown-pages.php' 			);
 			require_once( $dir . 'heading/class-control-heading.php' 						);
@@ -151,21 +185,43 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public function register_options() {
-			
 			// Var
 			$dir = OCEANWP_INC_DIR .'customizer/settings/';
 
 			// Customizer files array
-			$files = array(
-				'general',
-				'typography',
-				'topbar',
-				'header',
-				'blog',
-				'sidebar',
-				'footer-widgets',
-				'footer-bottom',
+			$list = array(
+				'all' => [
+					'typography',
+					'general',
+					'blog',
+					'header',
+					'topbar',
+					'footer-widgets',
+					'footer-bottom',
+					'sidebar',
+				],
+				'general' => [
+					'general',
+					'blog',
+					'header',
+					'topbar',
+					'footer-widgets',
+					'footer-bottom',
+					'sidebar',
+				],
+				'typography' => [
+					'typography',
+				],
 			);
+			$default_type = 'all';
+			if ( basename($_SERVER[PHP_SELF]) === 'customize.php' ){
+				$default_type = 'general';
+			}
+
+			$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : $default_type;
+			$files = isset( $list [ $type ] ) ? $list[ $type ] : array();
+
+			do_action( 'oceanwp_register_customizer_controls', $type );
 
 			foreach ( $files as $key ) {
 
@@ -207,6 +263,16 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 				require_once( $dir .'learndash.php' );
 			}
 
+		}
+
+
+		/**
+		 * Loads Css files for customizer Panel
+		 *
+		 * @since 1.0.0
+		 */
+		public function customize_panel_init() {
+			wp_enqueue_style( 'oceanwp-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customize-preview.min.css');
 		}
 
 		/**

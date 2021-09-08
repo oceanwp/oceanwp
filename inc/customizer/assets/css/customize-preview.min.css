@@ -1,0 +1,50 @@
+ul.customize-pane-parent {
+    display:flex;
+    flex-direction:column;
+}
+ul.customize-pane-parent li[id*="accordion-section-ocean"],
+ul.customize-pane-parent li[id*="accordion-panel-ocean"] {
+    order:-99999;
+}
+
+ul.customize-pane-parent li[id="accordion-section-oceanwp_upsell_section"] {
+    order:-99995;
+}
+.oceanwp-customizer-tabs-wrap {
+    height: 46px;
+    order: -99999;
+    border-bottom: solid 2px #0000;
+    overflow: hidden;
+}
+.oceanwp-customizer-tabs-wrap:hover {
+    height: auto;
+}
+
+.oceanwp-customizer-tabs-wrap ul {
+    display:flex;
+    flex-direction:column;
+}
+.oceanwp-customizer-tabs-wrap ul li {
+    margin: 0;
+
+}
+
+.oceanwp-customizer-tabs-wrap ul li a {
+    position: relative;
+    display: block;
+    line-height: 2;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #999;
+    border-bottom: solid 1px #ddd;
+}
+.oceanwp-customizer-tabs-wrap ul li.active {
+    order: -999;
+}
+.oceanwp-customizer-tabs-wrap ul li.active a,
+.oceanwp-customizer-tabs-wrap ul li a:hover {
+    font-weight:bold;
+    color: blue;
+}
