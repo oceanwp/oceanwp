@@ -29,42 +29,9 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			add_action( 'after_setup_theme',					array( $this, 'register_options' ) );
 			add_action( 'customize_controls_print_footer_scripts', array( $this, 'customize_panel_init' ) );
 			add_action( 'customize_preview_init', 				array( $this, 'customize_preview_init' ) );
-			add_action( 'customize_render_panel', 				array( $this, 'render_tabs' ) );
 			add_action( 'customize_controls_enqueue_scripts', 	array( $this, 'custom_customize_enqueue' ), 7 );
 			add_action( 'customize_controls_print_scripts', 'ocean_get_svg_icon' );
 
-		}
-
-
-		/**
-		 * Adds custom controls
-		 *
-		 * @since 1.0.0
-		 */
-		public function render_tabs() {
-			remove_action( 'customize_render_panel', array( $this, 'render_tabs' ) );
-			$tabs = apply_filters( 'oceanwp-customizer-tabs', [
-				'general' => __('General', 'oceanwp'),
-				'typography' => __('Typography', 'oceanwp'),
-				// 'blog' => __('Blog', 'oceanwp'),
-				// 'header-footer' => __('Header & Footer', 'oceanwp'),
-				// 'sidebar' => __('Sidebar', 'oceanwp'),
-			]);
-
-			$list = '';
-			foreach ($tabs as $id => $label) {
-				$url   = admin_url('customize.php?oceanwp-customizer-part=' . $id);
-				$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : 'header-footer';
-				$class = "";
-				if ( $type === $id ) {
-					$class = "class=\"active\"";
-				}
-				$list .= wp_sprintf( '<li data-id="%s"%s><a href="%s">%s</a></li>', $id, $class , $url, $label );
-			}
-
-			echo '<div class="oceanwp-customizer-tabs-wrap">';
-				echo '<ul>' . $list . '</ul>';
-			echo '</div>';
 		}
 
 		/**
@@ -78,17 +45,12 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			$dir = OCEANWP_INC_DIR . 'customizer/controls/';
 
 			// Load customize control classes
-			require_once( $dir . 'buttonset/class-control-buttonset.php' 					);
-			require_once( $dir . 'color/class-control-color.php' 							);
 			require_once( $dir . 'dimensions/class-control-dimensions.php' 					);
 			require_once( $dir . 'dropdown-pages/class-control-dropdown-pages.php' 			);
 			require_once( $dir . 'heading/class-control-heading.php' 						);
 			require_once( $dir . 'icon-select/class-control-icon-select.php' 				);
 			require_once( $dir . 'icon-select-multi/class-control-icon-select-multi.php' 	);
-			require_once( $dir . 'multicheck/class-control-multicheck.php' 					);
 			require_once( $dir . 'multiple-select/class-control-multiple-select.php' 		);
-			require_once( $dir . 'radio-image/class-control-radio-image.php' 				);
-			require_once( $dir . 'range/class-control-range.php' 							);
 			require_once( $dir . 'slider/class-control-slider.php' 							);
 			require_once( $dir . 'sortable/class-control-sortable.php' 						);
 			require_once( $dir . 'text/class-control-text.php' 								);
@@ -97,28 +59,18 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			require_once( $dir . 'typography/class-control-typography.php' 					);
 
 			// Register JS control types
-			$wp_customize->register_control_type( 'OceanWP_Customizer_Buttonset_Control' 		);
-			$wp_customize->register_control_type( 'OceanWP_Customizer_Color_Control' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Dimensions_Control' 		);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Dropdown_Pages' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Heading_Control' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Icon_Select_Control' 		);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Icon_Select_Multi_Control' );
-			$wp_customize->register_control_type( 'OceanWP_Customize_Multicheck_Control' 		);
 			$wp_customize->register_control_type( 'OceanWP_Customize_Multiple_Select_Control' 	);
-			$wp_customize->register_control_type( 'OceanWP_Customizer_Range_Control' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Slider_Control' 			);
-			$wp_customize->register_control_type( 'OceanWP_Customizer_Radio_Image_Control' 		);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Sortable_Control' 		);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Text_Control' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Textarea_Control' 		);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Typo_Control' 			);
 			$wp_customize->register_control_type( 'OceanWP_Customizer_Typography_Control' 		);
-
-			if ( true != apply_filters( 'oceanwp_licence_tab_enable', false ) ) {
-				require_once( $dir . 'upsell/class-control-upsell.php' 								);
-				$wp_customize->register_section_type( 'OceanWP_Customizer_Upsell_Section_Control' 	);
-			}
 
 		}
 
@@ -168,10 +120,12 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
                     // Add source
                     $utm = $if_ref . 'utm_source=customizer&utm_campaign=bundle&utm_medium=wp-dash';
 
-                    $wp_customize->add_section( new OceanWP_Customizer_Upsell_Section_Control( $wp_customize, 'oceanwp_upsell_section', array(
+                    $wp_customize->add_section( new OceanWP_Upsell_Section( $wp_customize, 'oceanwp_upsell_section', array(
                         'title'    => esc_html__( 'Premium Addons Available', 'oceanwp' ),
                         'url'      => $url . $aff_ref . $utm,
                         'priority' => 0,
+						'backgroundcolor' => '#5277fe',
+						'textcolor' => '#fff',
                     ) ) );
 
                 }
@@ -189,39 +143,16 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 			$dir = OCEANWP_INC_DIR .'customizer/settings/';
 
 			// Customizer files array
-			$list = array(
-				'all' => [
-					'typography',
-					'general',
-					'blog',
-					'header',
-					'topbar',
-					'footer-widgets',
-					'footer-bottom',
-					'sidebar',
-				],
-				'general' => [
-					'general',
-					'blog',
-					'header',
-					'topbar',
-					'footer-widgets',
-					'footer-bottom',
-					'sidebar',
-				],
-				'typography' => [
-					'typography',
-				],
+			$files = array(
+				'typography',
+				'general',
+				'blog',
+				'header',
+				'topbar',
+				'footer-widgets',
+				'footer-bottom',
+				'sidebar',
 			);
-			$default_type = 'all';
-			if ( basename( $_SERVER['PHP_SELF'] ) === 'customize.php' ){
-				$default_type = 'general';
-			}
-
-			$type  = isset ( $_REQUEST['oceanwp-customizer-part'] ) ? $_REQUEST['oceanwp-customizer-part'] : $default_type;
-			$files = isset( $list [ $type ] ) ? $list[ $type ] : array();
-
-			do_action( 'oceanwp_register_customizer_controls', $type );
 
 			foreach ( $files as $key ) {
 
@@ -273,6 +204,10 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 */
 		public function customize_panel_init() {
 			wp_enqueue_style( 'oceanwp-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customize-preview.min.css');
+			wp_localize_script( 'oceanwp-customize-preview', 'oceanwpTG', array(
+				'googleFontsUrl' 	=> '//fonts.googleapis.com',
+				'googleFontsWeight' => '100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i',
+			) );
 		}
 
 		/**

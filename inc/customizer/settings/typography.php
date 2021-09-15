@@ -407,7 +407,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 								'section' 			=> 'ocean_typography_'. $element,
 								'settings' 			=> $element .'_typography[font-family]',
 								'priority' 			=> 10,
-								'type' 				=> 'select',
+								'type' 				=> 'dropdown_select2',
 								'active_callback' 	=> $active_callback,
 						) ) );
 
@@ -646,6 +646,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'transport' 		=> $transport,
 							'default' 			=> $default,
 						) );
+
 						$wp_customize->add_control( new OceanWP_Customizer_Color_Control( $wp_customize, $element .'_typography[color]', array(
 							'label' 			=> esc_html__( 'Font Color', 'oceanwp' ),
 							'section' 			=> 'ocean_typography_'. $element,
@@ -667,14 +668,14 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		 */
 		public function customize_preview_init() {
 			wp_enqueue_script( 'oceanwp-typography-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/typography-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
-			wp_localize_script( 'oceanwp-typography-customize-preview', 'oceanwp', array(
+			wp_localize_script( 'oceanwp-typography-customize-preview', 'oceanwpTG', array(
 				'googleFontsUrl' 	=> '//fonts.googleapis.com',
 				'googleFontsWeight' => '100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i',
 			) );
 
 			if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 				wp_enqueue_script( 'oceanwp-woo-typography-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/js/woo-typography-customize-preview.min.js', array( 'customize-preview' ), OCEANWP_THEME_VERSION, true );
-				wp_localize_script( 'oceanwp-woo-typography-customize-preview', 'oceanwp', array(
+				wp_localize_script( 'oceanwp-woo-typography-customize-preview', 'oceanwpTG', array(
 					'googleFontsUrl' 	=> '//fonts.googleapis.com',
 					'googleFontsWeight' => '100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i',
 				) );

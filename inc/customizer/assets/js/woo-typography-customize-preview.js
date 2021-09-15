@@ -2,14 +2,14 @@
  * Update WooCommerce Typography Customizer settings live.
  *
  * @version 1.0.0
- * 
+ *
  * @since 2.0
  */
 ( function( $ ) {
 
     // Declare vars
     var api = wp.customize;
-    
+
     api( "woo_product_title_typography[font-family]", function( $swipe ) {
 		$swipe.bind( function( pair ) {
 			if ( pair ) {
@@ -18,7 +18,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -241,7 +241,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -449,7 +449,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -657,7 +657,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -865,7 +865,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1073,7 +1073,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1281,7 +1281,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1489,7 +1489,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1697,7 +1697,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1898,5 +1898,5 @@
 			}
 		} );
 	} );
-    
+
 } )( jQuery );

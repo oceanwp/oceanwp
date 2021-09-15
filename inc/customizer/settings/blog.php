@@ -872,7 +872,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 
 			/**
 			 * Blog Entries Meta Separator
-			 * 
+			 *
 			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
@@ -1503,7 +1503,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 
 			/**
 			 * Single Post Meta Separator
-			 * 
+			 *
 			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
@@ -1707,7 +1707,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 
 			/**
 			 * Comment form position.
-			 * 
+			 *
 			 * @since 1.8.4
 			 */
 			$wp_customize->add_setting(

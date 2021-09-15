@@ -19,7 +19,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -242,7 +242,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -465,7 +465,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -688,7 +688,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -911,7 +911,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1134,7 +1134,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1357,7 +1357,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1580,7 +1580,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1803,7 +1803,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -1981,7 +1981,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -2204,7 +2204,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -2412,7 +2412,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -2635,7 +2635,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -2858,7 +2858,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -3081,7 +3081,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -3304,7 +3304,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -3527,7 +3527,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -3750,7 +3750,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -3973,7 +3973,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -4196,7 +4196,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
@@ -4419,7 +4419,7 @@
 				var fontSize = pair.replace( " ", "%20" );
 				fontSize = fontSize.replace( ",", "%2C" );
 				/** @type {string} */
-				fontSize = oceanwp.googleFontsUrl + "/css?family=" + pair + ":" + oceanwp.googleFontsWeight;
+				fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
 				if ( $( "#" + idfirst ).length ) {
 					$( "#" + idfirst ).attr( "href", fontSize );
 				} else {
