@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 3.0.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-09-07 09:40:29+00:00\n"
+"POT-Creation-Date: 2021-10-12 13:55:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -89,7 +89,7 @@ msgid "Comments are closed."
 msgstr ""
 
 #: functions.php:294 inc/customizer/settings/topbar.php:40
-#: inc/customizer/settings/typography.php:109
+#: inc/customizer/settings/typography.php:111
 #: inc/third/class-beaver-themer.php:100
 msgid "Top Bar"
 msgstr ""
@@ -289,32 +289,32 @@ msgid "px - em - rem"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:56
-#: inc/customizer/settings/typography.php:375
+#: inc/customizer/settings/typography.php:412
 msgid "Font Family"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:57
-#: inc/customizer/settings/typography.php:501
+#: inc/customizer/settings/typography.php:571
 msgid "Font Size"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:58
-#: inc/customizer/settings/typography.php:397
+#: inc/customizer/settings/typography.php:441
 msgid "Font Weight"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:59
-#: inc/customizer/settings/typography.php:431
+#: inc/customizer/settings/typography.php:481
 msgid "Font Style"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:60
-#: inc/customizer/settings/typography.php:458
+#: inc/customizer/settings/typography.php:514
 msgid "Text Transform"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:61
-#: inc/customizer/settings/typography.php:541
+#: inc/customizer/settings/typography.php:626
 msgid "Line Height"
 msgstr ""
 
@@ -344,82 +344,82 @@ msgstr ""
 #: inc/customizer/settings/header.php:1990
 #: inc/customizer/settings/header.php:2012
 #: inc/customizer/settings/header.php:2036
-#: inc/customizer/settings/typography.php:405
-#: inc/customizer/settings/typography.php:438
-#: inc/customizer/settings/typography.php:465
+#: inc/customizer/settings/typography.php:449
+#: inc/customizer/settings/typography.php:488
+#: inc/customizer/settings/typography.php:521
 #: inc/customizer/settings/woocommerce.php:127
 #: inc/third/class-lifterlms.php:308
 msgid "Default"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:297
-#: inc/customizer/settings/typography.php:406
+#: inc/customizer/settings/typography.php:450
 msgid "Thin: 100"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:298
-#: inc/customizer/settings/typography.php:407
+#: inc/customizer/settings/typography.php:451
 msgid "Light: 200"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:299
-#: inc/customizer/settings/typography.php:408
+#: inc/customizer/settings/typography.php:452
 msgid "Book: 300"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:300
-#: inc/customizer/settings/typography.php:409
+#: inc/customizer/settings/typography.php:453
 msgid "Normal: 400"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:301
-#: inc/customizer/settings/typography.php:410
+#: inc/customizer/settings/typography.php:454
 msgid "Medium: 500"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:302
-#: inc/customizer/settings/typography.php:411
+#: inc/customizer/settings/typography.php:455
 msgid "Semibold: 600"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:303
-#: inc/customizer/settings/typography.php:412
+#: inc/customizer/settings/typography.php:456
 msgid "Bold: 700"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:304
-#: inc/customizer/settings/typography.php:413
+#: inc/customizer/settings/typography.php:457
 msgid "Extra Bold: 800"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:305
-#: inc/customizer/settings/typography.php:414
+#: inc/customizer/settings/typography.php:458
 msgid "Black: 900"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:320
-#: inc/customizer/settings/typography.php:439
+#: inc/customizer/settings/typography.php:489
 #: inc/customizer/settings/woocommerce.php:2133
 msgid "Normal"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:321
-#: inc/customizer/settings/typography.php:440
+#: inc/customizer/settings/typography.php:490
 msgid "Italic"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:336
-#: inc/customizer/settings/typography.php:466
+#: inc/customizer/settings/typography.php:522
 msgid "Capitalize"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:337
-#: inc/customizer/settings/typography.php:467
+#: inc/customizer/settings/typography.php:523
 msgid "Lowercase"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:338
-#: inc/customizer/settings/typography.php:468
+#: inc/customizer/settings/typography.php:524
 msgid "Uppercase"
 msgstr ""
 
@@ -881,7 +881,7 @@ msgstr ""
 #: inc/customizer/settings/general.php:2185
 #: inc/customizer/settings/general.php:2216
 #: inc/customizer/settings/general.php:2250
-#: inc/customizer/settings/typography.php:469
+#: inc/customizer/settings/typography.php:525
 #: inc/customizer/settings/woocommerce.php:4057
 #: inc/customizer/settings/woocommerce.php:4820
 msgid "None"
@@ -1169,7 +1169,7 @@ msgstr ""
 #: inc/customizer/settings/lifterlms.php:48
 #: inc/customizer/settings/lifterlms.php:62
 #: inc/customizer/settings/topbar.php:48
-#: inc/customizer/settings/typography.php:268
+#: inc/customizer/settings/typography.php:276
 #: inc/customizer/settings/woocommerce.php:48
 msgid "General"
 msgstr ""
@@ -2149,7 +2149,7 @@ msgid "Facebook App ID"
 msgstr ""
 
 #: inc/customizer/settings/general.php:1416
-#: inc/customizer/settings/typography.php:147
+#: inc/customizer/settings/typography.php:149
 msgid "Page Title"
 msgstr ""
 
@@ -2178,7 +2178,7 @@ msgid "Height (px)"
 msgstr ""
 
 #: inc/customizer/settings/general.php:1943
-#: inc/customizer/settings/typography.php:167
+#: inc/customizer/settings/typography.php:169
 msgid "Breadcrumbs"
 msgstr ""
 
@@ -2623,7 +2623,7 @@ msgstr ""
 
 #: inc/customizer/settings/header.php:961
 #: inc/customizer/settings/header.php:2047
-#: inc/customizer/settings/typography.php:100
+#: inc/customizer/settings/typography.php:102
 msgid "Logo"
 msgstr ""
 
@@ -3055,7 +3055,7 @@ msgstr ""
 
 #: inc/customizer/settings/header.php:3319
 #: inc/customizer/settings/header.php:3596
-#: inc/customizer/settings/typography.php:138
+#: inc/customizer/settings/typography.php:140
 #: partials/mobile/mobile-icon.php:100
 msgid "Mobile Menu"
 msgstr ""
@@ -3399,7 +3399,7 @@ msgid "Section Title Background"
 msgstr ""
 
 #: inc/customizer/settings/sidebar.php:150
-#: inc/customizer/settings/typography.php:205
+#: inc/customizer/settings/typography.php:207
 msgid "Widgets"
 msgstr ""
 
@@ -3471,91 +3471,91 @@ msgstr ""
 msgid "Social Links Color: Hover"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:46 inc/third/class-gutenberg.php:54
+#: inc/customizer/settings/typography.php:48 inc/third/class-gutenberg.php:54
 msgid "Body"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:55 inc/third/class-gutenberg.php:63
+#: inc/customizer/settings/typography.php:57 inc/third/class-gutenberg.php:63
 msgid "All Headings"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:64 inc/third/class-gutenberg.php:72
+#: inc/customizer/settings/typography.php:66 inc/third/class-gutenberg.php:72
 msgid "Heading 1 (H1)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:73 inc/third/class-gutenberg.php:81
+#: inc/customizer/settings/typography.php:75 inc/third/class-gutenberg.php:81
 msgid "Heading 2 (H2)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:82 inc/third/class-gutenberg.php:90
+#: inc/customizer/settings/typography.php:84 inc/third/class-gutenberg.php:90
 msgid "Heading 3 (H3)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:91 inc/third/class-gutenberg.php:99
+#: inc/customizer/settings/typography.php:93 inc/third/class-gutenberg.php:99
 msgid "Heading 4 (H4)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:119
+#: inc/customizer/settings/typography.php:121
 msgid "Main Menu"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:128
+#: inc/customizer/settings/typography.php:130
 msgid "Main Menu: Dropdowns"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:157
+#: inc/customizer/settings/typography.php:159
 msgid "Page Title Subheading"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:176
+#: inc/customizer/settings/typography.php:178
 msgid "Blog Entry Title"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:185 inc/third/class-gutenberg.php:108
+#: inc/customizer/settings/typography.php:187 inc/third/class-gutenberg.php:108
 msgid "Blog Post Title"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:195
+#: inc/customizer/settings/typography.php:197
 msgid "Sidebar Widget Heading"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:209
+#: inc/customizer/settings/typography.php:211
 msgid "Footer Widget Heading"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:220
+#: inc/customizer/settings/typography.php:222
 msgid "Footer Copyright"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:230
+#: inc/customizer/settings/typography.php:232
 msgid "Footer Menu"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:260
+#: inc/customizer/settings/typography.php:265
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:283
+#: inc/customizer/settings/typography.php:299
 msgid "Disable Google Fonts"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:299
+#: inc/customizer/settings/typography.php:324
 msgid "Font Subsets"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:398
+#: inc/customizer/settings/typography.php:442
 msgid "Important: Not all fonts support every font-weight."
 msgstr ""
 
-#: inc/customizer/settings/typography.php:502
+#: inc/customizer/settings/typography.php:572
 msgid "You can add: px-em-%"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:585
+#: inc/customizer/settings/typography.php:685
 msgid "Letter Spacing (px)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:619
+#: inc/customizer/settings/typography.php:728
 msgid "Font Color"
 msgstr ""
 
