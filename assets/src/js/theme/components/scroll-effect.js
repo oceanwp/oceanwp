@@ -39,7 +39,8 @@ class ScrollEffect {
       !scrollItem.classList.contains("opl-link") &&
       !scrollItem.parentNode.classList.contains("opl-link") &&
       !scrollItem.classList.contains("sidr-class-opl-link") &&
-      !scrollItem.parentNode.classList.contains("sidr-class-opl-link")
+      !scrollItem.parentNode.classList.contains("sidr-class-opl-link") &&
+      !scrollItem.classList.contains("acomment-reply")
     ) {
       const href = scrollItem.getAttribute("href");
       const id = href.substring(href.indexOf("#")).slice(1);
