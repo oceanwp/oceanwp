@@ -36,6 +36,8 @@ class ScrollEffect {
     if (
       !scrollItem.classList.contains("omw-open-modal") &&
       !scrollItem.closest(".omw-open-modal") &&
+      !scrollItem.classList.contains("oew-modal-button") &&
+      !scrollItem.closest(".oew-modal-button") &&
       !scrollItem.classList.contains("opl-link") &&
       !scrollItem.parentNode.classList.contains("opl-link") &&
       !scrollItem.classList.contains("sidr-class-opl-link") &&
