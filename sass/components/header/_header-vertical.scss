@@ -133,7 +133,9 @@
         }
 
         .dropdown-menu .sub-menu {
-            display: none;
+            // display: none;
+            visibility: hidden;
+            pointer-events: none;
             position: relative;
             top: 100%;
             left: 0;

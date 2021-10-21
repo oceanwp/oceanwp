@@ -34,25 +34,12 @@ class Menu {
 
     #onParentMenuItemMouseenter = (event) => {
         const parentMenuItem = event.currentTarget;
-        const subMenu = parentMenuItem.querySelector("ul.sub-menu");
-
         parentMenuItem.classList.add("sfHover");
-
-        fadeIn(subMenu);
     };
 
     #onParentMenuItemMouseleave = (event) => {
         const parentMenuItem = event.currentTarget;
-        const subMenu = parentMenuItem.querySelector("ul.sub-menu");
-
         parentMenuItem.classList.remove("sfHover");
-        subMenu.style.pointerEvents = "none";
-
-        fadeOut(subMenu, {
-            callback: () => {
-                subMenu.style.pointerEvents = null;
-            },
-        });
     };
 }
 

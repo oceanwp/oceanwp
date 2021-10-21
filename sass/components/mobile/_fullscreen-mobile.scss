@@ -116,7 +116,8 @@
         }
 
         ul.sub-menu {
-            display: none;
+            visibility: hidden;
+            pointer-events: none;
             list-style: none;
             margin: 0;
             padding: 0;
