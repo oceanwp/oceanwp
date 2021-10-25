@@ -21,6 +21,10 @@ class WooCustomFeatures {
         jQuery("body").on("updated_cart_totals", () => {
             this.quantityButtons.start();
         });
+
+        jQuery( document ).on("append.infiniteScroll", () => {
+            this.quantityButtons.start();
+        });
     };
 }
 
