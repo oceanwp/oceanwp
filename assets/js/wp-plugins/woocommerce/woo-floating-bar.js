@@ -269,7 +269,7 @@ var fadeToggle = function fadeToggle(element, options) {
 exports.fadeToggle = fadeToggle;
 
 var offset = function offset(element) {
-  if (typeof element.getClientRects !== 'undefined' && !element.getClientRects().length) {
+  if (!element.getClientRects().length) {
     return {
       top: 0,
       left: 0
@@ -292,7 +292,7 @@ var visible = function visible(element) {
     return false;
   }
 
-  return !!(element.offsetWidth || element.offsetHeight || ( typeof element.getClientRects !== 'undefined' ? element.getClientRects().length : 0 ) );
+  return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
 };
 
 exports.visible = visible;
