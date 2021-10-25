@@ -70,7 +70,7 @@ class WooQuantityButtons {
 
         delegate(
             DOM.body,
-            ".cart .minus, .cart .plus, .tinv-wishlist .minus, .tinv-wishlist .plus",
+            ".cart .minus, .cart .plus, .tinv-wishlist .minus, .tinv-wishlist .plus, .quantity .minus, .quantity .plus",
             "click",
             this.#onQuantityBtnClick
         );
@@ -90,6 +90,7 @@ class WooQuantityButtons {
     };
 
     #onQuantityBtnClick = (event) => {
+
         event.preventDefault();
         event.stopPropagation();
 
