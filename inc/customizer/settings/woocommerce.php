@@ -145,7 +145,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			/**
 			 * Add support for Wishlist plugin of choice
-			 * 
+			 *
 			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
@@ -1592,7 +1592,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			/**
 			 * Shop Conditional Heading
-			 * 
+			 *
 			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
@@ -1616,7 +1616,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			/**
 			 * Product Entry Show Logged in/Logged out, show products conditional
-			 * 
+			 *
 			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
@@ -1717,7 +1717,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			/**
 			 * Product Entry Enable/Disable Image and Product Title links
-			 * 
+			 *
 			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
@@ -2138,7 +2138,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			/**
 			 * Single Product Conditional Heading
-			 * 
+			 *
 			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
@@ -2162,7 +2162,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			/**
 			 * Single Product Show Logged in/Logged out, show products conditional
-			 * 
+			 *
 			 * @since 2.0
 			 */
 			$wp_customize->add_setting(
@@ -3343,7 +3343,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_product_padding', array(
 				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
-				'section'  				=> 'ocean_woocommerce_styling',				
+				'section'  				=> 'ocean_woocommerce_styling',
 				'settings'   => array(
 		            'desktop_top' 		=> 'ocean_product_top_padding',
 		            'desktop_right' 	=> 'ocean_product_right_padding',
@@ -3422,7 +3422,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_product_image_margin', array(
 				'label'	   				=> esc_html__( 'Image Margin (px)', 'oceanwp' ),
-				'section'  				=> 'ocean_woocommerce_styling',				
+				'section'  				=> 'ocean_woocommerce_styling',
 				'settings'   => array(
 		            'desktop_top' 		=> 'ocean_product_image_top_margin',
 		            'desktop_right' 	=> 'ocean_product_image_right_margin',
@@ -3500,7 +3500,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_product_border_width', array(
 				'label'	   				=> esc_html__( 'Border Width (px)', 'oceanwp' ),
-				'section'  				=> 'ocean_woocommerce_styling',				
+				'section'  				=> 'ocean_woocommerce_styling',
 				'settings'   => array(
 		            'desktop_top' 		=> 'ocean_product_top_border_width',
 		            'desktop_right' 	=> 'ocean_product_right_border_width',
@@ -3579,7 +3579,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_product_border_radius', array(
 				'label'	   				=> esc_html__( 'Border Radius (px)', 'oceanwp' ),
-				'section'  				=> 'ocean_woocommerce_styling',				
+				'section'  				=> 'ocean_woocommerce_styling',
 				'settings'   => array(
 		            'desktop_top' 		=> 'ocean_product_top_border_radius',
 		            'desktop_right' 	=> 'ocean_product_right_border_radius',
@@ -5574,7 +5574,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public static function head_css( $output ) {
-		
+
 			// Global vars
 			$menu_icon_size										= get_theme_mod( 'ocean_woo_menu_icon_size' );
 			$menu_icon_size_tablet								= get_theme_mod( 'ocean_woo_menu_icon_size_tablet' );
@@ -5612,7 +5612,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			$woo_mobile_cart_sidebar_close_button_color			= get_theme_mod( 'ocean_woo_mobile_cart_sidebar_close_button_color', '#000000' );
 			$woo_mobile_cart_sidebar_title_color				= get_theme_mod( 'ocean_woo_mobile_cart_sidebar_title_color', '#555555' );
 			$woo_mobile_cart_sidebar_divider_color				= get_theme_mod( 'ocean_woo_mobile_cart_sidebar_divider_color', 'rgba(0,0,0,0.1)' );
-		
+
 			// Styling vars
 			$off_canvas_close_button_color 						= get_theme_mod( 'ocean_woo_off_canvas_close_button_color', '#333333' );
 			$off_canvas_close_button_hover_color 				= get_theme_mod( 'ocean_woo_off_canvas_close_button_hover_color', '#777777' );
@@ -6639,29 +6639,29 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			if ( ! empty( $single_product_navigation_bg ) ) {
 				$css .= '.owp-product-nav li a.owp-nav-link{background-color:'. $single_product_navigation_bg .';}';
 			}
-			
+
 			// Add single product navigation background color
 			if ( ! empty( $single_product_navigation_hover_bg ) && '#13aff0' != $single_product_navigation_hover_bg ) {
 				$css .= '.owp-product-nav li a.owp-nav-link:hover{background-color:'. $single_product_navigation_hover_bg .';}';
 			}
-			
+
 			// Add single product navigation color
 			if ( ! empty( $single_product_navigation_color ) && '#333333' != $single_product_navigation_color ) {
 				$css .= '.owp-product-nav li a.owp-nav-link{color:'. $single_product_navigation_color .';}';
 				$css .= '.owp-product-nav li a.owp-nav-link .owp-icon use{stroke:'. $single_product_navigation_color .';}';
 			}
-			
+
 			// Add single product navigation color
 			if ( ! empty( $single_product_navigation_hover_color ) && '#ffffff' != $single_product_navigation_hover_color ) {
 				$css .= '.owp-product-nav li a.owp-nav-link:hover{color:'. $single_product_navigation_hover_color .';}';
 				$css .= '.owp-product-nav li a.owp-nav-link:hover .owp-icon use{stroke:'. $single_product_navigation_hover_color .';}';
 			}
-			
+
 			// Add single product navigation border color
 			if ( ! empty( $single_product_navigation_border_color ) && '#e9e9e9' != $single_product_navigation_border_color ) {
 				$css .= '.owp-product-nav li a.owp-nav-link{border-color:'. $single_product_navigation_border_color .';}';
 			}
-			
+
 			// Add single product navigation border color
 			if ( ! empty( $single_product_navigation_hover_border_color ) && '#13aff0' != $single_product_navigation_hover_border_color ) {
 				$css .= '.owp-product-nav li a.owp-nav-link:hover{border-color:'. $single_product_navigation_hover_border_color .';}';
@@ -6966,7 +6966,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 				}
 
 			}
-				
+
 			// Return CSS
 			if ( ! empty( $css ) ) {
 				$output .= '/* WooCommerce CSS */'. $css;

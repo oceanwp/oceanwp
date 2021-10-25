@@ -27,11 +27,26 @@
 function oceanwp_customizer_layout() {
 
 	$layouts = array(
-		'right-sidebar'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/rs.png',
-		'left-sidebar' 		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/ls.png',
-		'full-width'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
-		'full-screen'  		=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
-		'both-sidebars'  	=> OCEANWP_INC_DIR_URI . 'customizer/assets/img/bs.png',
+		'right-sidebar'  	=> [
+			'name'  => 'right-sidebar',
+			'image' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/rs.png'
+		],
+		'left-sidebar' 		=> [
+			'name'  => 'left-sidebar',
+			'image' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/ls.png'
+		],
+		'full-width'  		=> [
+			'name'  => 'full-width',
+			'image' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png'
+		],
+		'full-screen'  		=> [
+			'name'  => 'full-screen',
+			'image' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png'
+		],
+		'both-sidebars'  	=> [
+			'name'  => 'both-sidebars',
+			'image' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/bs.png'
+		],
 	);
 
 	return $layouts;

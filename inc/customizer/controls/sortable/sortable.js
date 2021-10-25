@@ -19,8 +19,11 @@ wp.customize.controlConstructor['oceanwp-sortable'] = wp.customize.Control.exten
 		}).disableSelection().find( 'li' ).each( function() {
 
 			// Enable/disable options when we click on the eye of Thundera.
-			jQuery( this ).find( 'i.visibility' ).click( function() {
-				jQuery( this ).toggleClass( 'dashicons-visibility-faint' ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
+			jQuery( this ).click( function() {
+				var $i = jQuery( this ).find( 'i.visibility' );
+				$i.toggleClass( 'dashicons-saved' );
+				$i.toggleClass( 'dashicons-no-alt' );
+				$i.toggleClass( 'dashicons-visibility-faint' ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
 			});
 		}).click( function() {
 

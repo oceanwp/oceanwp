@@ -40,7 +40,7 @@ wp.customize.controlConstructor['oceanwp-slider'] = wp.customize.Control.extend(
 			slide: function( event, ui ) {
 				tablet_slider_input.val( ui.value ).keyup();
 			},
-	        change: function( event, ui ){ 
+	        change: function( event, ui ){
 	            control.settings['tablet'].set( ui.value );
 	        }
 		} );
@@ -55,7 +55,7 @@ wp.customize.controlConstructor['oceanwp-slider'] = wp.customize.Control.extend(
 			slide: function( event, ui ) {
 				mobile_slider_input.val( ui.value ).keyup();
 			},
-	        change: function( event, ui ){ 
+	        change: function( event, ui ){
 	            control.settings['mobile'].set( ui.value );
 	        }
 		} );

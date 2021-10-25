@@ -1,0 +1,111 @@
+
+body {
+    @import 'node_modules/bootstrap/scss/modal';
+    @import 'node_modules/bootstrap/scss/badge';
+    .modal {
+        z-index: 99999999999 !important;
+    }
+    li.ocean-control-focused {
+        box-shadow: -6px 0px 0px #eee, -10px 0px 0px #2ee500;
+    }
+
+    .modal-backdrop {
+        z-index: 99999999999;
+    }
+}
+#ocean-wp-customize-search, .ocean-customize-search-modal {
+    @import 'node_modules/bootstrap/scss/reboot';
+    @import 'node_modules/bootstrap/scss/forms';
+    @import 'node_modules/bootstrap/scss/buttons';
+    @import 'node_modules/bootstrap/scss/utilities';
+    @import 'node_modules/bootstrap/scss/list-group';
+    @import 'node_modules/bootstrap/scss/grid';
+    @import 'node_modules/bootstrap/scss/type';
+    // @import 'node_modules/bootstrap/scss/images';
+    // @import 'node_modules/bootstrap/scss/code';
+    // @import 'node_modules/bootstrap/scss/navbar';
+    // @import 'node_modules/bootstrap/scss/card';
+    @import 'node_modules/bootstrap/scss/alert';
+    // @import 'node_modules/bootstrap/scss/close';
+    @import 'node_modules/bootstrap/scss/spinners';
+    // @import 'node_modules/bootstrap/scss/progress';
+    // @import 'node_modules/bootstrap/scss/tables';
+    // @import 'node_modules/bootstrap/scss/pagination';
+    // @import 'node_modules/bootstrap/scss/transitions';
+    // @import 'node_modules/bootstrap/scss/dropdown';
+    // @import 'node_modules/bootstrap/scss/button-group';
+    // @import 'node_modules/bootstrap/scss/input-group';
+    // @import 'node_modules/bootstrap/scss/custom-forms';
+    // @import 'node_modules/bootstrap/scss/nav';
+
+    .modal-content {
+        background-color: #06214E;
+        color: #fff;
+    }
+
+    .modal-header {
+        background-color: #06214E;
+        color: #fff;
+        border-color: #0442a9;
+
+        .modal-title {
+            margin: 0 !important;
+        }
+
+        button.close {
+            border: none;
+            background: none;
+            font-size: 22px;
+            color: #fff;
+        }
+    }
+
+    .modal-body {
+
+        background-color: #06214E;
+        color: #fff;
+
+        .form-control {
+            height: 43px;
+        }
+
+        .list-group {
+            margin-top: 15px;
+        }
+
+        .badge.btn-success, .badge.btn-warning {
+            margin-right: 5px;
+        }
+
+        .text-muted {
+            display: block;
+            font-style: italic;
+        }
+    }
+}
+
+#ocean-wp-customize-search {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 45px;
+    height: 41px;
+    padding: 0 2px 0 0;
+    background: #f0f0f1;
+    border: none;
+    border-top: 4px solid #f0f0f1;
+    border-right: 1px solid #dcdcde;
+    cursor: pointer;
+    transition: color .15s ease-in-out, border-color .15s ease-in-out, background .15s ease-in-out;
+    box-sizing: content-box;
+
+    a.customize-controls-ocean-search {
+        color: #3c434a !important;
+        text-decoration: none !important;
+        padding: 10px 0px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+}

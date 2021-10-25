@@ -75,7 +75,7 @@
 		});
 
 	/******** General *********/
-		
+
 	    api( 'ocean_primary_color', function( value ) {
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_primary_color' );
@@ -253,9 +253,9 @@
 	        }
 	      });
 		});
-		
 
-	/******** Layouts *********/	
+
+	/******** Layouts *********/
 
 	api('ocean_boxed_dropdshadow', function( value ) {
 		value.bind( function( newval ) {
@@ -767,7 +767,7 @@
 				}
 			} );
 		} );
-		
+
 		// Both Sidebars layout single post content width
 		api( 'ocean_blog_single_both_sidebars_content_width', function( value ) {
 			value.bind( function( to ) {
@@ -1010,7 +1010,7 @@
 		});
 
 	/******** Styling *********/
-		
+
 		api("ocean_page_header_bg_image_height", function($swipe) {
 			$swipe.bind(function(to) {
 				var $child = $(".customizer-ocean_page_header_bg_image_height");
