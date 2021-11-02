@@ -38,28 +38,28 @@
         "jit-grunt": "^0.10.0",
         "node-sass": "^6.0.0",
         "time-grunt": "^2.0.0",
-        "webpack-cli": "^4.9.1"
-    },
-    "dependencies": {
+        "webpack-cli": "^4.9.1",
         "@babel/preset-react": "^7.16.0",
         "@wordpress/babel-preset-default": "^6.3.2",
-        "axios": "^0.21.1",
         "bootstrap": "^5.1.1",
         "copy-webpack-plugin": "^9.0.1",
         "cross-env": "^7.0.3",
         "css-loader": "^6.3.0",
-        "delegate": "^3.2.0",
         "file-loader": "^6.2.0",
         "imagemin-webpack-plugin": "^2.4.2",
-        "infinite-scroll": "^4.0.1",
-        "js-cookie": "^2.2.1",
         "mini-css-extract-plugin": "^2.3.0",
-        "qs": "^6.5.2",
         "react-bootstrap": "^1.6.3",
-        "responsive-auto-height": "0.0.5",
         "sass-loader": "^12.3.0",
         "style-loader": "^3.3.0",
         "terser-webpack-plugin": "^5.2.4",
         "url-loader": "^4.1.1"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "delegate": "^3.2.0",
+        "infinite-scroll": "^4.0.1",
+        "js-cookie": "^2.2.1",
+        "qs": "^6.5.2",
+        "responsive-auto-height": "0.0.5"
     }
 }
