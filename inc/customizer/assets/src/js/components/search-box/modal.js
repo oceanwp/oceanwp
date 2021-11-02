@@ -7,6 +7,18 @@ const SearchBoxModal = ( { ...props } ) => {
 
     const [ searchResults, setsearchResults ] = React.useState( '' );
 
+    const switchThemeMode = () => {
+
+        oceanCustomizerSearchOptions.lightMode = oceanCustomizerSearchOptions.lightMode === '1'
+        || oceanCustomizerSearchOptions.lightMode === 'true'
+        || oceanCustomizerSearchOptions.lightMode === true ? false : true;
+        jQuery( '.modal-dialog.ocean-customize-search-modal' ).toggleClass( 'light-theme' );
+
+        wp.ajax.post( 'ocean_update_search_box_light_mode', {
+            lightMode: oceanCustomizerSearchOptions.lightMode
+        } );
+    }
+
     /**
      * Hide the Finder &
      * Expand Customize Sections When Click on Each Item
@@ -20,19 +32,24 @@ const SearchBoxModal = ( { ...props } ) => {
         setsearchResults( '' );
         jQuery( '.ocean-customize-search-modal' ).parent().fadeOut();
         jQuery( '.modal-backdrop.show' ).removeClass( 'show' );
-        jQuery( '#customize-control-' + ElementID ).addClass( 'ocean-control-focused' );
+        props.onHide();
 
         setTimeout( function() {
             jQuery( '.ocean-customize-search-modal .modal-header button.close' ).trigger( 'click' ).trigger( 'mouseup' )
             if ( jQuery( '#customize-control-' + ElementID ).length ) {
+
+                jQuery( '#customize-controls .wp-full-overlay-sidebar-content' ).scrollTop(0);
+
                 jQuery( '#customize-controls .wp-full-overlay-sidebar-content' ).animate(
                     { scrollTop: jQuery( '#customize-control-' + ElementID ).offset().top - 50 }
                 , "slow" );
+
+                jQuery( '#customize-control-' + ElementID ).addClass( 'ocean-control-focused' );
             }
         }, 1500 )
 
         setTimeout( () => {
-            jQuery( '#customize-control-' + ElementID ).removeClass( 'ocean-control-focused' );
+            jQuery( '.ocean-control-focused' ).removeClass( 'ocean-control-focused' );
         }, 8000 );
     }
 
@@ -69,13 +86,15 @@ const SearchBoxModal = ( { ...props } ) => {
                 onClick      = { () => { ClickHandler( data.section, data.settings.default ) } }
                 action>
 
+                <Badge className="btn-primary">
+                    { data.panelName }
+                    { data.sectionName ? <span className="dashicons dashicons-arrow-right-alt2"></span> : '' }
+                    { data.sectionName ? data.sectionName : '' }
+                </Badge>
+
                 <span>{ String(data.label) }</span>
 
-                <br />
-
-                <Badge className="btn-primary">
-                    { data.panelName }{ data.sectionName ? " ‎» " + data.sectionName : '' }
-                </Badge>
+                <span className="dashicons dashicons-editor-break"></span>
 
             </ListGroup.Item>
         })
@@ -85,22 +104,28 @@ const SearchBoxModal = ( { ...props } ) => {
 
     return <>
         <Modal
-            size="lg"
+            size = "lg"
             show = { props.show }
             onHide = { props.onHide }
-            dialogClassName="ocean-customize-search-modal"
-            aria-labelledby="contained-modal-title-vcenter"
+            dialogClassName = {
+                oceanCustomizerSearchOptions.lightMode === '1'
+                || oceanCustomizerSearchOptions.lightMode === 'true'
+                || oceanCustomizerSearchOptions.lightMode === true ? "ocean-customize-search-modal light-theme" : "ocean-customize-search-modal" }
+            aria-labelledby = "contained-modal-title-vcenter"
             centered>
             <Modal.Header closeButton>
-                <Modal.Title>{ __( "OceanWP - Customize Finder" ) }</Modal.Title>
+                <Form.Group className="full-width" controlId="ocean-wp-customize-search-input">
+                    <i className="dashicons dashicons-search"></i>
+                    <Form.Control type="text" placeholder={ __( "Search..." ) } onChange={ onSearch } />
+                    <span onClick={ switchThemeMode } className="dashicons dashicons-lightbulb"></span>
+                </Form.Group>
             </Modal.Header>
             <Modal.Body>
-                <Form.Group className="mb-3" controlId="search">
-                    <Form.Control type="text" placeholder={ __( "Search..." ) } onChange={ onSearch } />
-                </Form.Group>
-                <ListGroup className="mt-4">
-                    { searchResults }
-                </ListGroup>
+            { searchResults ?
+                    <ListGroup>
+                        { searchResults }
+                    </ListGroup>
+            : ""}
             </Modal.Body>
         </Modal>
     </>

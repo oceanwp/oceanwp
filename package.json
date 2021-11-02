@@ -3,6 +3,14 @@
     "version": "1.0.0",
     "description": "OceanWP Theme",
     "main": "Gruntfile.js",
+    "scripts": {
+        "start": "npm install && npm run build",
+        "build": "cross-env NODE_ENV=production webpack --mode production",
+        "dev": "cross-env NODE_ENV=development webpack --watch --mode development",
+        "lint:js": "eslint assets/src",
+        "format:js": "eslint --fix assets/src",
+        "make:json": "wp i18n make-json languages --no-purge"
+    },
     "devDependencies": {
         "@babel/core": "^7.14.0",
         "@babel/plugin-proposal-class-properties": "^7.13.0",
@@ -10,7 +18,7 @@
         "@babel/plugin-proposal-private-methods": "^7.13.0",
         "@babel/plugin-transform-runtime": "^7.15.0",
         "@babel/preset-env": "^7.14.1",
-        "babel-loader": "^8.2.2",
+        "babel-loader": "^8.2.3",
         "babelify": "^10.0.0",
         "grunt": "^1.4.1",
         "grunt-autoprefixer": "^3.0.4",
@@ -29,14 +37,29 @@
         "grunt-wp-i18n": "^1.0.3",
         "jit-grunt": "^0.10.0",
         "node-sass": "^6.0.0",
-        "time-grunt": "^2.0.0"
+        "time-grunt": "^2.0.0",
+        "webpack-cli": "^4.9.1"
     },
     "dependencies": {
+        "@babel/preset-react": "^7.16.0",
+        "@wordpress/babel-preset-default": "^6.3.2",
         "axios": "^0.21.1",
+        "bootstrap": "^5.1.1",
+        "copy-webpack-plugin": "^9.0.1",
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.3.0",
         "delegate": "^3.2.0",
+        "file-loader": "^6.2.0",
+        "imagemin-webpack-plugin": "^2.4.2",
         "infinite-scroll": "^4.0.1",
         "js-cookie": "^2.2.1",
+        "mini-css-extract-plugin": "^2.3.0",
         "qs": "^6.5.2",
-        "responsive-auto-height": "0.0.5"
+        "react-bootstrap": "^1.6.3",
+        "responsive-auto-height": "0.0.5",
+        "sass-loader": "^12.3.0",
+        "style-loader": "^3.3.0",
+        "terser-webpack-plugin": "^5.2.4",
+        "url-loader": "^4.1.1"
     }
 }

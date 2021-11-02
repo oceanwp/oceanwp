@@ -22,6 +22,10 @@ const CustomizeSearch = () => {
         <a className="customize-controls-ocean-search dashicons dashicons-search"
             onClick = { () => {
                 setShowModal( true );
+
+                setTimeout(() => {
+                    ReactDOM.findDOMNode( document.getElementById( 'ocean-wp-customize-search-input' ) ).focus();
+                }, 500);
                 return false;
             }}>
             <span className="screen-reader-text">{ __( 'Search' ) }</span>
