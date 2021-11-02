@@ -514,6 +514,20 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			}
 
+			if ( class_exists( 'SitePress' ) ) {
+				add_filter( 'wcml_multi_currency_ajax_actions', array( $this, 'add_action_to_multi_currency_ajax' ), 10, 1 );
+			}
+		}
+
+		/**
+		 * Add action to multi currency ajax.
+		 *
+		 * @param array $ajax_actions The ajax actions.
+		 * @since 3.0.0
+		 */
+		public function add_action_to_multi_currency_ajax( $ajax_actions ) {
+			$ajax_actions[] = 'oceanwp_product_quick_view';
+			return $ajax_actions;
 		}
 
 		/**
