@@ -174,8 +174,19 @@
             }
         }
 
+        .open-sub {
+
+            ul.sub-menu {
+                visibility: visible;
+                display: block;
+                opacity: 1;
+            }
+        }
+
         ul.sub-menu {
             visibility: hidden;
+            display: none;
+            opacity: 0;
             pointer-events: none;
             list-style: none;
             margin: 0;

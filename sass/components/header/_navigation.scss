@@ -121,6 +121,8 @@
         top: 100%;
         left: 0;
         z-index: 9999;
+        opacity: 0;
+        transition: 0.3s;
     }
 
     > li {
@@ -132,6 +134,7 @@
         // display: block;
         visibility: visible;
         pointer-events: auto;
+        opacity: 1;
     }
 
     a.menu-link {
@@ -165,6 +168,7 @@
         left: 0;
         background-color: $color-1;
         border-top: 3px solid $color-5;
+        opacity: 0;
         min-width: 180px;
         line-height: 1;
         text-align: left;
