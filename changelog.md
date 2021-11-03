@@ -1,5 +1,24 @@
 # OceanWP Changelog
 
+### _2021.11.08._ - 3.1.0
+
+-   **New** - Customizer: Customizer Search.
+-   **Updated** - Customizer: Styling and scripts.
+-   **Improved** - Customizer: Loading time and performance.
+-   **Fixed** - Header: Menu Dropdown: display on hover issue.
+-   **Fixed** - Header: Mobile Menu: Sidebar style: Anchor links issue.
+-   **Fixed** - Header: Mobile Menu: Sidebar style: JS issue when menu closing button disabled.
+-   **Fixed** - Blog: Single Post: Page width issue.
+-   **Fixed** - Blog: Pagination: Infinite scroll on archive pages issue.
+-   **Fixed** - WooCommerce: Archives: Quantity buttons not displayed on infinite scroll pagination.
+-   **Fixed** - Compatibility: WPML: Currency switcher on WooCommerce product Quick View.
+-   **Fixed** - Compatibility: Kadence WooCommerce Email Designer issue.
+-   **Fixed** - Compatibility: Elementor Pro: Modal Popup.
+-   **Fixed** - Compatibility: Elementor Pro: Floating bar and variable products issue on mobile devices for custom product pages.
+-   **Fixed** - Compatibility: Elementor Pro: Smooth Scroll conflict issue.
+-   **Fixed** - Compatibility: BuddyPress: Comment box issue.
+-   **Fixed** - Compatibility: Woo Variation Swatches Pro: variation button resets on add to cart issue.
+
 ### _2021.09.07._ - 3.0.7
 
 -   **Fixed** - Scripts: load issue.
