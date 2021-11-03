@@ -54,7 +54,7 @@ class SidebarMobileMenu {
             onOpen() {
                 document
                     .querySelector("a.sidr-class-toggle-sidr-close")
-                    .focus();
+                    ?.focus();
 
                 DOM.mobileMenu.hamburgerBtn?.classList.add("is-active");
 
@@ -246,7 +246,29 @@ class SidebarMobileMenu {
         const navFirstElement = navElements[0];
         const navLastElement = navElements[navElements.length - 1];
 
-        closeIcon.style.outline = "";
+        if (closeIcon) {
+            closeIcon.style.outline = "";
+
+            if (
+                !shiftKey &&
+                tabKey &&
+                navLastElement === document.activeElement
+            ) {
+                event.preventDefault();
+                closeIcon.style.outline = "1px dashed rgba(255, 255, 255, 0.6)";
+                closeIcon.focus();
+            }
+
+            if (
+                shiftKey &&
+                tabKey &&
+                navFirstElement === document.activeElement
+            ) {
+                event.preventDefault();
+                closeIcon.style.outline = "1px dashed rgba(255, 255, 255, 0.6)";
+                closeIcon.focus();
+            }
+        }
 
         if (escKey) {
             event.preventDefault();
@@ -261,18 +283,6 @@ class SidebarMobileMenu {
         ) {
             event.preventDefault();
             document.activeElement.click();
-        }
-
-        if (!shiftKey && tabKey && navLastElement === document.activeElement) {
-            event.preventDefault();
-            closeIcon.style.outline = "1px dashed rgba(255, 255, 255, 0.6)";
-            closeIcon.focus();
-        }
-
-        if (shiftKey && tabKey && navFirstElement === document.activeElement) {
-            event.preventDefault();
-            closeIcon.style.outline = "1px dashed rgba(255, 255, 255, 0.6)";
-            closeIcon.focus();
         }
 
         // If there are no elements in the menu, don't move the focus
