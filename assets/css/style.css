@@ -3323,10 +3323,18 @@ a.pure-button-selected {
 
 #site-header.full_screen-header .fs-dropdown-menu ul.sub-menu {
   visibility: hidden;
+  display: none;
+  opacity: 0;
   pointer-events: none;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+#site-header.full_screen-header .fs-dropdown-menu .open-sub ul.sub-menu {
+  visibility: visible;
+  display: block;
+  opacity: 1;
 }
 
 #site-header.full_screen-header .fs-dropdown-menu ul.sub-menu li a {
@@ -3990,6 +3998,7 @@ a.pure-button-selected {
 
 #site-header.vertical-header #site-navigation-wrap .dropdown-menu .sub-menu {
   visibility: hidden;
+  opacity: 0;
   pointer-events: none;
   position: relative;
   top: 100%;
@@ -4413,6 +4422,8 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .sf-menu ul.sub-menu {
   position: absolute;
   visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
   pointer-events: none;
   top: 100%;
   left: 0;
@@ -4426,6 +4437,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .sf-menu li:hover > ul,
 .sf-menu li.sfHover > ul {
   visibility: visible;
+  opacity: 1;
   pointer-events: auto;
 }
 
@@ -4452,6 +4464,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 
 .dropdown-menu .sub-menu {
   visibility: hidden;
+  opacity: 0;
   pointer-events: none;
   position: absolute;
   top: 100%;
@@ -6440,6 +6453,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 
 #mobile-fullscreen ul ul.sub-menu {
   visibility: hidden;
+  opacity: 0;
   pointer-events: none;
   list-style: none;
   margin: 0;
