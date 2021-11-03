@@ -19,7 +19,9 @@ module.exports = function (grunt) {
                     "./assets/js/theme.vanilla.js": "./assets/src/js/index.js",
                 },
                 options: {
-                    transform: [["babelify", { presets: ["@babel/preset-env"] }]],
+                    transform: [
+                        ["babelify", { presets: ["@babel/preset-env"] }],
+                    ],
                     browserifyOptions: {
                         debug: true,
                     },
@@ -69,7 +71,9 @@ module.exports = function (grunt) {
                         "./assets/src/js/wp-plugins/woocommerce/woo-thumbnails.js",
                 },
                 options: {
-                    transform: [["babelify", { presets: ["@babel/preset-env"] }]],
+                    transform: [
+                        ["babelify", { presets: ["@babel/preset-env"] }],
+                    ],
                     browserifyOptions: {
                         debug: true,
                     },
@@ -81,7 +85,9 @@ module.exports = function (grunt) {
         uglify: {
             prod: {
                 files: {
-                    "assets/js/theme.vanilla.min.js": ["assets/js/theme.vanilla.js"],
+                    "assets/js/theme.vanilla.min.js": [
+                        "assets/js/theme.vanilla.js",
+                    ],
                 },
             },
             dev: {
@@ -129,7 +135,8 @@ module.exports = function (grunt) {
                         "./assets/js/wp-plugins/woocommerce/woo-thumbnails.js",
 
                     // Admin
-                    "inc/customizer/assets/js/customize-preview.min.js": "inc/customizer/assets/js/customize-preview.js",
+                    "inc/customizer/assets/js/customize-preview.min.js":
+                        "inc/customizer/assets/js/customize-preview.js",
 
                     "inc/customizer/assets/js/typography-customize-preview.min.js":
                         "inc/customizer/assets/js/typography-customize-preview.js",
@@ -149,41 +156,56 @@ module.exports = function (grunt) {
                     "inc/customizer/assets/js/ld-customize-preview.min.js":
                         "inc/customizer/assets/js/ld-customize-preview.js",
 
-                    "inc/customizer/assets/min/js/general.min.js": "inc/customizer/controls/general.js",
+                    "inc/customizer/assets/min/js/general.min.js":
+                        "inc/customizer/controls/general.js",
 
-                    "inc/customizer/assets/min/js/buttonset.min.js": "inc/customizer/controls/buttonset/buttonset.js",
+                    "inc/customizer/assets/min/js/buttonset.min.js":
+                        "inc/customizer/controls/buttonset/buttonset.js",
 
-                    "inc/customizer/assets/min/js/color.min.js": "inc/customizer/controls/color/color.js",
+                    "inc/customizer/assets/min/js/color.min.js":
+                        "inc/customizer/controls/color/color.js",
 
-                    "inc/customizer/assets/min/js/dimensions.min.js": "inc/customizer/controls/dimensions/dimensions.js",
+                    "inc/customizer/assets/min/js/dimensions.min.js":
+                        "inc/customizer/controls/dimensions/dimensions.js",
 
                     "inc/customizer/assets/min/js/dropdown-pages.min.js":
                         "inc/customizer/controls/dropdown-pages/dropdown-pages.js",
 
-                    "inc/customizer/assets/min/js/icon-select.min.js": "inc/customizer/controls/icon-select/icon-select.js",
+                    "inc/customizer/assets/min/js/icon-select.min.js":
+                        "inc/customizer/controls/icon-select/icon-select.js",
 
-                    "inc/customizer/assets/min/js/multicheck.min.js": "inc/customizer/controls/multicheck/multicheck.js",
+                    "inc/customizer/assets/min/js/multicheck.min.js":
+                        "inc/customizer/controls/multicheck/multicheck.js",
 
                     "inc/customizer/assets/min/js/multiple-select.min.js":
                         "inc/customizer/controls/multiple-select/multiple-select.js",
 
-                    "inc/customizer/assets/min/js/radio-image.min.js": "inc/customizer/controls/radio-image/radio-image.js",
+                    "inc/customizer/assets/min/js/radio-image.min.js":
+                        "inc/customizer/controls/radio-image/radio-image.js",
 
-                    "inc/customizer/assets/min/js/range.min.js": "inc/customizer/controls/range/range.js",
+                    "inc/customizer/assets/min/js/range.min.js":
+                        "inc/customizer/controls/range/range.js",
 
-                    "inc/customizer/assets/min/js/slider.min.js": "inc/customizer/controls/slider/slider.js",
+                    "inc/customizer/assets/min/js/slider.min.js":
+                        "inc/customizer/controls/slider/slider.js",
 
-                    "inc/customizer/assets/min/js/sortable.min.js": "inc/customizer/controls/sortable/sortable.js",
+                    "inc/customizer/assets/min/js/sortable.min.js":
+                        "inc/customizer/controls/sortable/sortable.js",
 
-                    "inc/customizer/assets/min/js/text.min.js": "inc/customizer/controls/text/text.js",
+                    "inc/customizer/assets/min/js/text.min.js":
+                        "inc/customizer/controls/text/text.js",
 
-                    "inc/customizer/assets/min/js/textarea.min.js": "inc/customizer/controls/textarea/textarea.js",
+                    "inc/customizer/assets/min/js/textarea.min.js":
+                        "inc/customizer/controls/textarea/textarea.js",
 
-                    "inc/customizer/assets/min/js/typo.min.js": "inc/customizer/controls/typo/typo.js",
+                    "inc/customizer/assets/min/js/typo.min.js":
+                        "inc/customizer/controls/typo/typo.js",
 
-                    "inc/customizer/assets/min/js/typography.min.js": "inc/customizer/controls/typography/typography.js",
+                    "inc/customizer/assets/min/js/typography.min.js":
+                        "inc/customizer/controls/typography/typography.js",
 
-                    "inc/customizer/assets/min/js/upsell.min.js": "inc/customizer/controls/upsell/upsell.js",
+                    "inc/customizer/assets/min/js/upsell.min.js":
+                        "inc/customizer/controls/upsell/upsell.js",
                 },
             },
         },
@@ -197,38 +219,61 @@ module.exports = function (grunt) {
             },
             prod: {
                 files: {
-                    "assets/css/third/elementor-editor.min.css": "assets/css/third/elementor-editor.css",
-                    "assets/css/third/hamburgers/hamburgers.min.css": "assets/css/third/hamburgers/hamburgers.css",
-                    "assets/css/third/magnific-popup.min.css": "assets/css/third/magnific-popup.css",
-                    "assets/css/third/slick.min.css": "assets/css/third/slick.css",
-                    "assets/css/third/bbpress.min.css": "assets/css/third/bbpress.css",
-                    "assets/css/third/buddypress.min.css": "assets/css/third/buddypress.css",
-                    "assets/css/third/sensei.min.css": "assets/css/third/sensei.css",
-                    "assets/css/third/social-login.min.css": "assets/css/third/social-login.css",
-                    "assets/css/woo/woo-star-font.min.css": "assets/css/woo/woo-star-font.css",
-                    "assets/css/editor-style.min.css": "assets/css/editor-style.css",
+                    "assets/css/third/elementor-editor.min.css":
+                        "assets/css/third/elementor-editor.css",
+                    "assets/css/third/hamburgers/hamburgers.min.css":
+                        "assets/css/third/hamburgers/hamburgers.css",
+                    "assets/css/third/magnific-popup.min.css":
+                        "assets/css/third/magnific-popup.css",
+                    "assets/css/third/slick.min.css":
+                        "assets/css/third/slick.css",
+                    "assets/css/third/bbpress.min.css":
+                        "assets/css/third/bbpress.css",
+                    "assets/css/third/buddypress.min.css":
+                        "assets/css/third/buddypress.css",
+                    "assets/css/third/sensei.min.css":
+                        "assets/css/third/sensei.css",
+                    "assets/css/third/social-login.min.css":
+                        "assets/css/third/social-login.css",
+                    "assets/css/woo/woo-star-font.min.css":
+                        "assets/css/woo/woo-star-font.css",
+                    "assets/css/editor-style.min.css":
+                        "assets/css/editor-style.css",
 
                     "inc/customizer/assets/css/customizer-simple-line-icons.min.css":
                         "inc/customizer/assets/css/customizer-simple-line-icons.css",
-                    "inc/customizer/assets/min/css/rtl.min.css": "inc/customizer/controls/rtl.css",
-                    "inc/customizer/assets/min/css/general.min.css": "inc/customizer/controls/general.css",
-                    "inc/customizer/assets/min/css/buttonset.min.css": "inc/customizer/controls/buttonset/buttonset.css",
-                    "inc/customizer/assets/min/css/color.min.css": "inc/customizer/controls/color/color.css",
-                    "inc/customizer/assets/min/css/dimensions.min.css": "inc/customizer/controls/dimensions/dimensions.css",
-                    "inc/customizer/assets/min/css/heading.min.css": "inc/customizer/controls/heading/heading.css",
+                    "inc/customizer/assets/min/css/rtl.min.css":
+                        "inc/customizer/controls/rtl.css",
+                    "inc/customizer/assets/min/css/general.min.css":
+                        "inc/customizer/controls/general.css",
+                    "inc/customizer/assets/min/css/buttonset.min.css":
+                        "inc/customizer/controls/buttonset/buttonset.css",
+                    "inc/customizer/assets/min/css/color.min.css":
+                        "inc/customizer/controls/color/color.css",
+                    "inc/customizer/assets/min/css/dimensions.min.css":
+                        "inc/customizer/controls/dimensions/dimensions.css",
+                    "inc/customizer/assets/min/css/heading.min.css":
+                        "inc/customizer/controls/heading/heading.css",
                     "inc/customizer/assets/min/css/icon-select.min.css":
                         "inc/customizer/controls/icon-select/icon-select.css",
                     "inc/customizer/assets/min/css/multiple-select.min.css":
                         "inc/customizer/controls/multiple-select/multiple-select.css",
                     "inc/customizer/assets/min/css/radio-image.min.css":
                         "inc/customizer/controls/radio-image/radio-image.css",
-                    "inc/customizer/assets/min/css/range.min.css": "inc/customizer/controls/range/range.css",
-                    "inc/customizer/assets/min/css/slider.min.css": "inc/customizer/controls/slider/slider.css",
-                    "inc/customizer/assets/min/css/sortable.min.css": "inc/customizer/controls/sortable/sortable.css",
-                    "inc/customizer/assets/min/css/textarea.min.css": "inc/customizer/controls/textarea/textarea.css",
-                    "inc/customizer/assets/min/css/typo.min.css": "inc/customizer/controls/typo/typo.css",
-                    "inc/customizer/assets/min/css/typography.min.css": "inc/customizer/controls/typography/typography.css",
-                    "inc/customizer/assets/min/css/upsell.min.css": "inc/customizer/controls/upsell/upsell.css",
+                    "inc/customizer/assets/min/css/range.min.css":
+                        "inc/customizer/controls/range/range.css",
+                    "inc/customizer/assets/min/css/slider.min.css":
+                        "inc/customizer/controls/slider/slider.css",
+                    "inc/customizer/assets/min/css/sortable.min.css":
+                        "inc/customizer/controls/sortable/sortable.css",
+                    "inc/customizer/assets/min/css/textarea.min.css":
+                        "inc/customizer/controls/textarea/textarea.css",
+                    "inc/customizer/assets/min/css/typo.min.css":
+                        "inc/customizer/controls/typo/typo.css",
+                    "inc/customizer/assets/min/css/typography.min.css":
+                        "inc/customizer/controls/typography/typography.css",
+                    "inc/customizer/assets/min/css/upsell.min.css":
+                        "inc/customizer/controls/upsell/upsell.css",
                 },
             },
         },
@@ -245,12 +290,17 @@ module.exports = function (grunt) {
                 files: {
                     "assets/css/woo/woocommerce.css": "sass/woocommerce.scss",
                     "assets/css/woo/hover-style.css": "sass/hover-style.scss",
-                    "assets/css/woo/woo-floating-bar.css": "sass/woo-floating-bar.scss",
-                    "assets/css/woo/woo-mini-cart.css": "sass/woo-mini-cart.scss",
-                    "assets/css/woo/woo-quick-view.css": "sass/woo-quick-view.scss",
-                    "assets/css/woo/woo-multistep-checkout.css": "sass/woo-multistep-checkout.scss",
+                    "assets/css/woo/woo-floating-bar.css":
+                        "sass/woo-floating-bar.scss",
+                    "assets/css/woo/woo-mini-cart.css":
+                        "sass/woo-mini-cart.scss",
+                    "assets/css/woo/woo-quick-view.css":
+                        "sass/woo-quick-view.scss",
+                    "assets/css/woo/woo-multistep-checkout.css":
+                        "sass/woo-multistep-checkout.scss",
                     "assets/css/woo/wishlist.css": "sass/wishlist.scss",
-                    "assets/css/gutenberg/gutenberg-editor.css": "sass/gutenberg-editor.scss",
+                    "assets/css/gutenberg/gutenberg-editor.css":
+                        "sass/gutenberg-editor.scss",
                     "assets/css/edd/edd.css": "sass/edd.scss",
                     "assets/css/llms/llms.css": "sass/llms.scss",
                     "assets/css/learndash/learndash.css": "sass/learndash.scss",
@@ -266,17 +316,25 @@ module.exports = function (grunt) {
                 },
                 files: {
                     "style.css": "sass/style.scss",
-                    "assets/css/woo/woocommerce.min.css": "sass/woocommerce.scss",
-                    "assets/css/woo/hover-style.min.css": "sass/hover-style.scss",
-                    "assets/css/woo/woo-floating-bar.min.css": "sass/woo-floating-bar.scss",
-                    "assets/css/woo/woo-mini-cart.min.css": "sass/woo-mini-cart.scss",
-                    "assets/css/woo/woo-quick-view.min.css": "sass/woo-quick-view.scss",
-                    "assets/css/woo/woo-multistep-checkout.min.css": "sass/woo-multistep-checkout.scss",
+                    "assets/css/woo/woocommerce.min.css":
+                        "sass/woocommerce.scss",
+                    "assets/css/woo/hover-style.min.css":
+                        "sass/hover-style.scss",
+                    "assets/css/woo/woo-floating-bar.min.css":
+                        "sass/woo-floating-bar.scss",
+                    "assets/css/woo/woo-mini-cart.min.css":
+                        "sass/woo-mini-cart.scss",
+                    "assets/css/woo/woo-quick-view.min.css":
+                        "sass/woo-quick-view.scss",
+                    "assets/css/woo/woo-multistep-checkout.min.css":
+                        "sass/woo-multistep-checkout.scss",
                     "assets/css/woo/wishlist.min.css": "sass/wishlist.scss",
-                    "assets/css/gutenberg/gutenberg-editor.min.css": "sass/gutenberg-editor.scss",
+                    "assets/css/gutenberg/gutenberg-editor.min.css":
+                        "sass/gutenberg-editor.scss",
                     "assets/css/edd/edd.min.css": "sass/edd.scss",
                     "assets/css/llms/llms.min.css": "sass/llms.scss",
-                    "assets/css/learndash/learndash.min.css": "sass/learndash.scss",
+                    "assets/css/learndash/learndash.min.css":
+                        "sass/learndash.scss",
                     "assets/css/style.min.css": "sass/stylesheet.scss",
                 },
             },
@@ -296,7 +354,9 @@ module.exports = function (grunt) {
             },
             prod: {
                 files: {
-                    "assets/fonts/owp-icons/owp-icons.svg": ["assets/fonts/owp-icons/files/**/*.svg"],
+                    "assets/fonts/owp-icons/owp-icons.svg": [
+                        "assets/fonts/owp-icons/files/**/*.svg",
+                    ],
                 },
             },
         },
@@ -334,11 +394,20 @@ module.exports = function (grunt) {
             },
             scss: {
                 files: ["sass/**/*.scss"],
-                tasks: ["newer:sass:dev", "newer:sass:prod", "newer:autoprefixer:main"],
+                tasks: [
+                    "newer:sass:dev",
+                    "newer:sass:prod",
+                    "newer:autoprefixer:main",
+                ],
             },
             js: {
                 files: ["assets/src/js/**/*.js", "inc/customizer/**/*.js"],
-                tasks: ["browserify:prod", "browserify:dev", "newer:uglify:prod", "newer:uglify:dev"],
+                tasks: [
+                    "browserify:prod",
+                    "newer:browserify:dev",
+                    "newer:uglify:prod",
+                    "newer:uglify:dev",
+                ],
             },
         },
 
@@ -433,7 +502,8 @@ module.exports = function (grunt) {
                     type: "wp-theme", // Type of project (wp-plugin or wp-theme).
                     updateTimestamp: true, // Whether the POT-Creation-Date should be updated without other changes.
                     processPot: function (pot, options) {
-                        pot.headers["plural-forms"] = "nplurals=2; plural=n != 1;";
+                        pot.headers["plural-forms"] =
+                            "nplurals=2; plural=n != 1;";
                         pot.headers["last-translator"] = "OceanWP\n";
                         pot.headers["language-team"] = "OceanWP\n";
                         pot.headers["x-poedit-basepath"] = "..\n";
