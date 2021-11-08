@@ -140,3 +140,7 @@ Source: https://github.com/jonsuh/hamburgers
 Unique ID function from the Twenty Twenty theme, Copyright 2019-2020 WordPress.org
 License: GPLv2 or later - https://www.gnu.org/licenses/gpl-2.0.html
 Source: https://wordpress.org/themes/twentytwenty/
+
+Customizer Custom Controls, Copyright Anthony Hortin
+License: License: GPLv2 or later - https://www.gnu.org/licenses/gpl-2.0.html
+Source: https://github.com/maddisondesigns/customizer-custom-controls
