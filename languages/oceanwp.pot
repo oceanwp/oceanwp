@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.0.7\n"
+"Project-Id-Version: OceanWP 3.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-10-12 18:32:12+00:00\n"
+"POT-Creation-Date: 2021-11-08 17:00:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: comments.php:104 comments.php:117 inc/woocommerce/woocommerce-config.php:784
+#: comments.php:104 comments.php:117 inc/woocommerce/woocommerce-config.php:798
 #: partials/edd/single.php:54
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "Next"
@@ -88,83 +88,81 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:294 inc/customizer/settings/topbar.php:40
+#: functions.php:295 inc/customizer/settings/topbar.php:40
 #: inc/customizer/settings/typography.php:111
 #: inc/third/class-beaver-themer.php:100
 msgid "Top Bar"
 msgstr ""
 
-#: functions.php:295
+#: functions.php:296
 msgid "Main"
 msgstr ""
 
-#: functions.php:296 inc/third/class-beaver-themer.php:145
+#: functions.php:297 inc/third/class-beaver-themer.php:145
 msgid "Footer"
 msgstr ""
 
-#: functions.php:297
+#: functions.php:298
 msgid "Mobile (optional)"
 msgstr ""
 
-#: functions.php:622
+#: functions.php:623
 msgid "Default Sidebar"
 msgstr ""
 
-#: functions.php:624
+#: functions.php:625
 msgid ""
 "Widgets in this area will be displayed in the left or right sidebar area if "
 "you choose the Left or Right Sidebar layout."
 msgstr ""
 
-#: functions.php:635
-#: inc/customizer/controls/radio-image/class-control-radio-image.php:110
-#: inc/third/class-lifterlms.php:310
+#: functions.php:636 inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:637
+#: functions.php:638
 msgid ""
 "Widgets in this area are used in the left sidebar region if you use the "
 "Both Sidebars layout."
 msgstr ""
 
-#: functions.php:649
+#: functions.php:650
 msgid "Search Results Sidebar"
 msgstr ""
 
-#: functions.php:651
+#: functions.php:652
 msgid "Widgets in this area are used in the search result page."
 msgstr ""
 
-#: functions.php:663
+#: functions.php:664
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:665
+#: functions.php:666
 msgid "Widgets in this area are used in the first footer region."
 msgstr ""
 
-#: functions.php:676
+#: functions.php:677
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:678
+#: functions.php:679
 msgid "Widgets in this area are used in the second footer region."
 msgstr ""
 
-#: functions.php:689
+#: functions.php:690
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:691
+#: functions.php:692
 msgid "Widgets in this area are used in the third footer region."
 msgstr ""
 
-#: functions.php:702
+#: functions.php:703
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:704
+#: functions.php:705
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr ""
 
@@ -257,26 +255,8 @@ msgid "Left"
 msgstr ""
 
 #: inc/customizer/controls/dropdown-pages/class-control-dropdown-pages.php:61
-#: inc/customizer/customizer-helpers.php:45
+#: inc/customizer/customizer-helpers.php:60
 msgid "Select"
-msgstr ""
-
-#: inc/customizer/controls/radio-image/class-control-radio-image.php:109
-#: inc/third/class-lifterlms.php:309
-msgid "Right Sidebar"
-msgstr ""
-
-#: inc/customizer/controls/radio-image/class-control-radio-image.php:111
-#: inc/third/class-lifterlms.php:311
-msgid "Full Width"
-msgstr ""
-
-#: inc/customizer/controls/radio-image/class-control-radio-image.php:112
-msgid "100% Full Width"
-msgstr ""
-
-#: inc/customizer/controls/radio-image/class-control-radio-image.php:113
-msgid "Both Sidebars"
 msgstr ""
 
 #: inc/customizer/controls/text/class-control-text.php:119
@@ -326,7 +306,7 @@ msgstr ""
 #: inc/customizer/controls/typo/class-control-typo.php:296
 #: inc/customizer/controls/typo/class-control-typo.php:319
 #: inc/customizer/controls/typo/class-control-typo.php:335
-#: inc/customizer/controls/typography/class-control-typography.php:60
+#: inc/customizer/controls/typography/class-control-typography.php:115
 #: inc/customizer/settings/blog.php:898 inc/customizer/settings/blog.php:1211
 #: inc/customizer/settings/blog.php:1250 inc/customizer/settings/blog.php:1282
 #: inc/customizer/settings/blog.php:1316 inc/customizer/settings/blog.php:1529
@@ -423,20 +403,169 @@ msgstr ""
 msgid "Uppercase"
 msgstr ""
 
-#: inc/customizer/controls/typography/class-control-typography.php:66
+#: inc/customizer/controls/typography/class-control-typography.php:59
 msgid "Custom Fonts"
 msgstr ""
 
-#: inc/customizer/controls/typography/class-control-typography.php:76
+#: inc/customizer/controls/typography/class-control-typography.php:69
 msgid "Standard Fonts"
 msgstr ""
 
-#: inc/customizer/controls/typography/class-control-typography.php:87
+#: inc/customizer/controls/typography/class-control-typography.php:80
 msgid "Google Fonts"
 msgstr ""
 
-#: inc/customizer/customizer.php:138
+#: inc/customizer/customizer.php:134
 msgid "Premium Addons Available"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:55
+msgid "Follow me on Behance"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:56
+msgid "Fork me on Bitbucket"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:57
+msgid "Follow me on CodePen"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:58
+msgid "Watch me on DeviantArt"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:59
+msgid "Join me on Discord"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:60
+msgid "Follow me on Dribbble"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:61
+msgid "favorite me on Etsy"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:62
+msgid "Like me on Facebook"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:63
+msgid "Connect with me on Flickr"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:64
+msgid "Follow me on Foursquare"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:65
+msgid "Fork me on GitHub"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:66
+msgid "Follow me on Instagram"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:67
+msgid "Back me on Kickstarter"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:68
+msgid "Follow me on Last.fm"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:69
+msgid "Connect with me on LinkedIn"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:70
+msgid "Follow me on Medium"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:71
+msgid "Support me on Patreon"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:72
+msgid "Follow me on Pinterest"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:73
+msgid "Connect with me on Google+"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:74
+msgid "Join me on Reddit"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:75
+msgid "Join me on Slack"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:76
+msgid "Follow me on SlideShare"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:77
+msgid "Add me on Snapchat"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:78
+msgid "Follow me on SoundCloud"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:79
+msgid "Follow me on Spotify"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:80
+msgid "Join me on Stack Overflow"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:81
+msgid "Follow me on Tumblr"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:82
+msgid "Follow me on Twitch"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:83
+msgid "Follow me on Twitter"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:84
+msgid "Follow me on Vimeo"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:85
+msgid "Follow me on weibo"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/functions.php:86
+msgid "Subscribe to me on YouTube"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/inc/custom-controls.php:396
+msgid "Add"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/inc/custom-controls.php:738
+msgid "Select weight & style for regular text"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/inc/custom-controls.php:748
+#: inc/customizer/library/customizer-custom-controls/inc/custom-controls.php:766
+msgid "Select weight for"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/inc/custom-controls.php:748
+msgid "italic text"
+msgstr ""
+
+#: inc/customizer/library/customizer-custom-controls/inc/custom-controls.php:766
+msgid "bold text"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:46 inc/customizer/settings/blog.php:1124
@@ -808,7 +937,7 @@ msgstr ""
 
 #: inc/customizer/settings/blog.php:763
 #: inc/customizer/settings/woocommerce.php:1828 inc/helpers.php:3467
-#: inc/woocommerce/woocommerce-config.php:574
+#: inc/woocommerce/woocommerce-config.php:588
 msgid "End of content"
 msgstr ""
 
@@ -819,7 +948,7 @@ msgstr ""
 
 #: inc/customizer/settings/blog.php:790
 #: inc/customizer/settings/woocommerce.php:1846 inc/helpers.php:3472
-#: inc/woocommerce/woocommerce-config.php:579
+#: inc/woocommerce/woocommerce-config.php:593
 msgid "No more pages to load"
 msgstr ""
 
@@ -3555,7 +3684,7 @@ msgstr ""
 msgid "Letter Spacing (px)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:728
+#: inc/customizer/settings/typography.php:729
 msgid "Font Color"
 msgstr ""
 
@@ -3768,7 +3897,7 @@ msgid "Display Filter Button"
 msgstr ""
 
 #: inc/customizer/settings/woocommerce.php:1412 inc/helpers.php:3944
-#: inc/woocommerce/woocommerce-config.php:942
+#: inc/woocommerce/woocommerce-config.php:956
 msgid "Filter"
 msgstr ""
 
@@ -3836,7 +3965,7 @@ msgstr ""
 
 #: inc/customizer/settings/woocommerce.php:1676
 #: inc/customizer/settings/woocommerce.php:2222
-#: inc/woocommerce/woocommerce-config.php:1374
+#: inc/woocommerce/woocommerce-config.php:1388
 #: woocommerce/owp-archive-product-hover.php:136
 #: woocommerce/owp-archive-product.php:180
 #: woocommerce/owp-single-product.php:79
@@ -4046,7 +4175,7 @@ msgstr ""
 
 #: inc/customizer/settings/woocommerce.php:2691
 #: inc/customizer/settings/woocommerce.php:5216
-#: inc/woocommerce/woocommerce-config.php:867
+#: inc/woocommerce/woocommerce-config.php:881
 msgid "Cart"
 msgstr ""
 
@@ -4453,7 +4582,7 @@ msgstr ""
 msgid "EDD Sidebar"
 msgstr ""
 
-#: inc/edd/edd-config.php:407 inc/woocommerce/woocommerce-config.php:2016
+#: inc/edd/edd-config.php:407 inc/woocommerce/woocommerce-config.php:2030
 msgid "Your cart"
 msgstr ""
 
@@ -4591,12 +4720,12 @@ msgid "Go to the next page"
 msgstr ""
 
 #: inc/helpers.php:3438 inc/helpers.php:3487
-#: inc/woocommerce/woocommerce-config.php:593
+#: inc/woocommerce/woocommerce-config.php:607
 msgid "Newer Posts"
 msgstr ""
 
 #: inc/helpers.php:3441 inc/helpers.php:3488
-#: inc/woocommerce/woocommerce-config.php:594
+#: inc/woocommerce/woocommerce-config.php:608
 msgid "Older Posts"
 msgstr ""
 
@@ -5468,6 +5597,14 @@ msgstr ""
 msgid "OceanWP Theme Setting"
 msgstr ""
 
+#: inc/third/class-lifterlms.php:309
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/third/class-lifterlms.php:311
+msgid "Full Width"
+msgstr ""
+
 #: inc/third/class-lifterlms.php:313
 msgid "Both Sidebar"
 msgstr ""
@@ -5550,144 +5687,144 @@ msgstr ""
 msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:783
+#: inc/woocommerce/woocommerce-config.php:797
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "I don&rsquo;t have an account"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:797
+#: inc/woocommerce/woocommerce-config.php:811
 msgid "View cart"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:803
+#: inc/woocommerce/woocommerce-config.php:817
 msgid "View products"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:805
+#: inc/woocommerce/woocommerce-config.php:819
 msgid ""
 "Some required fields are empty. Please fill the required fields to go to "
 "the next step."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:895
+#: inc/woocommerce/woocommerce-config.php:909
 msgid "Off-Canvas Filters"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:896
+#: inc/woocommerce/woocommerce-config.php:910
 msgid ""
 "Widgets in this area are used in the off canvas sidebar. To enable the Off "
 "Canvas filter, go to the WooCommerce > Archives section of the customizer "
 "and enable the Display Filter Button option."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:963
+#: inc/woocommerce/woocommerce-config.php:977
 msgid "Grid view"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:964
+#: inc/woocommerce/woocommerce-config.php:978
 msgid "List view"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1122
+#: inc/woocommerce/woocommerce-config.php:1136
 msgid "Out of Stock"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1448
+#: inc/woocommerce/woocommerce-config.php:1462
 msgid "Welcome!"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:1457
+#: inc/woocommerce/woocommerce-config.php:1471
 msgid "Logout"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2141
+#: inc/woocommerce/woocommerce-config.php:2155
 msgid "%s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2145
+#: inc/woocommerce/woocommerce-config.php:2159
 msgid "Sale!"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2182
+#: inc/woocommerce/woocommerce-config.php:2196
 #: woocommerce/checkout/checkout-timeline.php:43
 msgid "Login"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2195
+#: inc/woocommerce/woocommerce-config.php:2209
 msgid "Or"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2197
+#: inc/woocommerce/woocommerce-config.php:2211
 msgid "Register"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2315
+#: inc/woocommerce/woocommerce-config.php:2329
 #. translators: %s: field name
 msgid "Shipping %s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2319
+#: inc/woocommerce/woocommerce-config.php:2333
 #. translators: %s: field name
 msgid "Billing %s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2328
+#: inc/woocommerce/woocommerce-config.php:2342
 msgid "%s is not a valid postcode / ZIP."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2337
+#: inc/woocommerce/woocommerce-config.php:2351
 #. translators: %s: phone number
 msgid "%s is not a valid phone number."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2346
+#: inc/woocommerce/woocommerce-config.php:2360
 #. translators: %s: email address
 msgid "%s is not a valid email address."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2366
+#: inc/woocommerce/woocommerce-config.php:2380
 #. translators: 1: state field 2: valid states
 msgid "%1$s is not valid. Please enter one of the following: %2$s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2373
+#: inc/woocommerce/woocommerce-config.php:2387
 #. translators: %s: field name
 msgid "%s is a required field."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2465
+#: inc/woocommerce/woocommerce-config.php:2479
 msgid "WooCommerce Product Title"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2476
+#: inc/woocommerce/woocommerce-config.php:2490
 msgid "WooCommerce Product Price"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2486
+#: inc/woocommerce/woocommerce-config.php:2500
 msgid "WooCommerce Product Add To Cart"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2498
+#: inc/woocommerce/woocommerce-config.php:2512
 msgid "WooCommerce Product Notice"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2511
+#: inc/woocommerce/woocommerce-config.php:2525
 msgid "WooCommerce Archive Title"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2522
+#: inc/woocommerce/woocommerce-config.php:2536
 msgid "WooCommerce Archive Category"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2533
+#: inc/woocommerce/woocommerce-config.php:2547
 msgid "WooCommerce Archive Price"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2544
+#: inc/woocommerce/woocommerce-config.php:2558
 msgid "WooCommerce Archive Add To Cart"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2555
+#: inc/woocommerce/woocommerce-config.php:2569
 msgid "WooCommerce Archive Notice"
 msgstr ""
 
