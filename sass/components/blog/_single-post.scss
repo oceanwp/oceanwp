@@ -127,7 +127,7 @@
 		padding: 0 0 10px;
 		list-style: none;
 	}
-	
+
 	.wp-block-quote p {
 		padding: 0;
 	}
@@ -216,7 +216,7 @@
 .wp-block-separator {
     margin: 30px auto;
 
-    &.is-style-wide {
+    &.is-style-wide:not(.size-full) {
     	max-width: 700px;
     }
 }

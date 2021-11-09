@@ -2,20 +2,27 @@
 import React from "react";
 import { Form, ListGroup, Modal, Badge } from "react-bootstrap";
 import { __ } from '@wordpress/i18n';
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
+var searchInControlsAllResults,
+    Preset = 0,
+    Offset = 30;
 
 const SearchBoxModal = ( { ...props } ) => {
+
 
     const [ searchResults, setsearchResults ] = React.useState( '' );
 
     const switchThemeMode = () => {
 
-        oceanCustomizerSearchOptions.lightMode = oceanCustomizerSearchOptions.lightMode === '1'
-        || oceanCustomizerSearchOptions.lightMode === 'true'
-        || oceanCustomizerSearchOptions.lightMode === true ? false : true;
+        oceanCustomizerSearchOptions.darkMode = oceanCustomizerSearchOptions.darkMode === '1'
+        || oceanCustomizerSearchOptions.darkMode === 'true'
+        || oceanCustomizerSearchOptions.darkMode === true ? false : true;
         jQuery( '.modal-dialog.ocean-customize-search-modal' ).toggleClass( 'light-theme' );
 
         wp.ajax.post( 'ocean_update_search_box_light_mode', {
-            lightMode: oceanCustomizerSearchOptions.lightMode
+            darkMode: oceanCustomizerSearchOptions.darkMode
         } );
     }
 
@@ -53,26 +60,11 @@ const SearchBoxModal = ( { ...props } ) => {
         }, 8000 );
     }
 
-    /**
-     * Search Handler
-     *
-     * @param {element} e
-     * @returns
-     */
-    const onSearch = ( e ) => {
-        var search = e.target.value;
-        var searchInControlsResults = props.SearchHandler.searchInControls( search );
-        searchInControlsResults = searchInControlsResults.slice(0, 30);
-        setsearchResults( '' );
-
-        if ( ! searchInControlsResults.length ) {
-            return false;
-        }
-
+    const createList = ( searchInControlsResults ) => {
         /**
          * Prepare View From Search Result
          */
-        var list = searchInControlsResults.map( function( data, index ) {
+         var list = searchInControlsResults.map( function( data, index ) {
 
             if ( ! data.label || typeof data.panelName === 'undefined' ) {
                 return;
@@ -97,20 +89,59 @@ const SearchBoxModal = ( { ...props } ) => {
                 <span className="dashicons dashicons-editor-break"></span>
 
             </ListGroup.Item>
-        })
+        });
+
+        return list;
+    }
+
+    const showMore = () => {
+        if ( Offset >= 211 ) {
+            return false;
+        }
+
+        Offset = Offset + 30;
+        var searchInControlsResults = searchInControlsAllResults.slice( Preset, Offset );
+
+        if ( ! searchInControlsResults.length ) {
+            return false;
+        }
+
+        var list = createList( searchInControlsResults );
+
+        setsearchResults( list );
+    }
+
+    /**
+     * Search Handler
+     *
+     * @param {element} e
+     * @returns
+     */
+    const onSearch = ( e ) => {
+        var search = e.target.value;
+        searchInControlsAllResults  = props.SearchHandler.searchInControls( search );
+        Offset = 30
+        var searchInControlsResults = searchInControlsAllResults.slice( Preset, Offset );
+        setsearchResults( '' );
+
+        if ( ! searchInControlsResults.length ) {
+            return false;
+        }
+
+        var list = createList( searchInControlsResults );
 
         setsearchResults( list );
     }
 
     return <>
         <Modal
-            size = "lg"
-            show = { props.show }
+            size   = "lg"
+            show   = { props.show }
             onHide = { props.onHide }
             dialogClassName = {
-                oceanCustomizerSearchOptions.lightMode === '1'
-                || oceanCustomizerSearchOptions.lightMode === 'true'
-                || oceanCustomizerSearchOptions.lightMode === true ? "ocean-customize-search-modal light-theme" : "ocean-customize-search-modal" }
+                oceanCustomizerSearchOptions.darkMode === '1'
+                || oceanCustomizerSearchOptions.darkMode === 'true'
+                || oceanCustomizerSearchOptions.darkMode === true ? "ocean-customize-search-modal" : "ocean-customize-search-modal light-theme" }
             aria-labelledby = "contained-modal-title-vcenter"
             centered>
             <Modal.Header closeButton>
@@ -122,9 +153,13 @@ const SearchBoxModal = ( { ...props } ) => {
             </Modal.Header>
             <Modal.Body>
             { searchResults ?
-                    <ListGroup>
-                        { searchResults }
-                    </ListGroup>
+                    <PerfectScrollbar
+                        onYReachEnd = { showMore }
+                    >
+                        <ListGroup>
+                            { searchResults }
+                        </ListGroup>
+                    </PerfectScrollbar>
             : ""}
             </Modal.Body>
         </Modal>

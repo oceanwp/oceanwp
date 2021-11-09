@@ -7729,7 +7729,7 @@ ul.obem-none li:after {
   margin: 30px auto;
 }
 
-.wp-block-separator.is-style-wide {
+.wp-block-separator.is-style-wide:not(.size-full) {
   max-width: 700px;
 }
 

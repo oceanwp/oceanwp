@@ -139,7 +139,7 @@ input[type="number"]:focus {
 
 .text_radio_button_control .radio-button-label span:hover {
 	background-color: rgba(255, 255, 255, .2);
-	color: #2885bb;
+	color: #06214E;
 }
 
 .text_radio_button_control .radio-button-label > input:checked + span {
@@ -147,8 +147,9 @@ input[type="number"]:focus {
 	color: #fff;
 }
 
-.text_radio_button_control .radio-button-label > input:checked + span:hover {
-	color: #fff;
+.text_radio_button_control .radio-button-label > input + span:hover {
+	background-color: #06214E;
+	color: #fff !important;
 }
 
 /* ==========================================================================
@@ -164,7 +165,7 @@ input[type="number"]:focus {
 }
 
 .image_radio_button_control .radio-button-label > input:checked + img {
-	border: 3px solid #2885bb;
+	border: 3px solid #06214E;
 }
 
 /* ==========================================================================
@@ -180,7 +181,7 @@ input[type="number"]:focus {
 }
 
 .image_checkbox_control .checkbox-label > input:checked + img {
-	border: 3px solid #2885bb;
+	border: 3px solid #06214E;
 }
 
 /* ==========================================================================
@@ -374,8 +375,8 @@ input[type="number"]:focus {
 .slider-custom-control .ui-button,
 .slider-custom-control .ui-button.ui-state-disabled:hover,
 .slider-custom-control .ui-button.ui-state-disabled:active {
-	background: #2885bb none repeat scroll 0 0;
-	border: 1px solid #2885bb;
+	background: #06214E none repeat scroll 0 0;
+	border: 1px solid #06214E;
 	color: #454545;
 	font-weight: normal;
 }
@@ -459,7 +460,7 @@ input[type="number"]:focus {
 .toggle-switch-inner:before {
 	content: "ON";
 	padding-left: 8px;
-	background-color: #2885bb;
+	background-color: #06214E;
 	color: #fff;
 }
 

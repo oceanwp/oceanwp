@@ -79,8 +79,8 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public function update_search_box_light_Mode() {
-			$lightMode = esc_attr( $_REQUEST['lightMode'] );
-			update_option( 'oceanCustomizerSearchlightMode', $lightMode );
+			$darkMode = esc_attr( $_REQUEST['darkMode'] );
+			update_option( 'oceanCustomizerSearchdarkMode', $darkMode );
 			wp_send_json_success();
 		}
 
@@ -219,7 +219,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 				wp_enqueue_script( 'oceanwp-customize-search-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.js', array( 'lodash', 'wp-i18n', 'wp-util' ) );
 				wp_enqueue_style( 'oceanwp-customize-search', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.css' );
 				wp_localize_script( 'oceanwp-customize-search-js', 'oceanCustomizerSearchOptions', [
-					'lightMode' => get_option( 'oceanCustomizerSearchlightMode', false )
+					'darkMode' => get_option( 'oceanCustomizerSearchdarkMode', false )
 				] );
 			}
 

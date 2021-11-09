@@ -46,7 +46,7 @@ body {
         border-radius: 5px !important;
         overflow: hidden;
         border: none;
-        box-shadow: 0px 40px 60px -46px #000000;
+        box-shadow: 0px 40px 50px -26px #838383;
 
         button.list-group-item {
             background: #06214e !important;
@@ -197,9 +197,18 @@ body {
     }
 
     .modal-body {
+
         padding: 0px !important;
         background-color: #06214E;
         color: #fff;
+
+        .ps__rail-y {
+            z-index: 99999;
+        }
+
+        .list-group {
+            max-height: 400px;
+        }
 
         .form-control {
             height: 43px;
