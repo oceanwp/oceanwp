@@ -404,7 +404,7 @@ module.exports = function (grunt) {
                 files: ["assets/src/js/**/*.js", "inc/customizer/**/*.js"],
                 tasks: [
                     "browserify:prod",
-                    "newer:browserify:dev",
+                    "browserify:dev",
                     "newer:uglify:prod",
                     "newer:uglify:dev",
                 ],

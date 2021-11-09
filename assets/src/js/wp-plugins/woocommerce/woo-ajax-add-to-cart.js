@@ -3,7 +3,10 @@ import delegate from "delegate";
 
 class WooAjaxAddToCart {
     constructor() {
-        if (typeof options === "undefined" || DOM.woo.product.classList.contains("product-type-grouped")) {
+        if (
+            typeof options === "undefined" ||
+            DOM.woo.product.classList.contains("product-type-grouped")
+        ) {
             return;
         }
 
@@ -32,7 +35,7 @@ class WooAjaxAddToCart {
         jQuery("body").on("added_to_cart", this.#updateCart);
     };
 
-    #onAddToCartBtnClick = (event) => {
+    #onAddToCartBtnClick = event => {
         event.preventDefault();
 
         const addToCartBtn = event.delegateTarget;
@@ -49,7 +52,10 @@ class WooAjaxAddToCart {
              * Because Woocommerce plugin uses jQuery custom event,
              * We also have to use jQuery to customize this event.
              */
-            jQuery("body").trigger("adding_to_cart", [jQuery(addToCartBtn), formData]);
+            jQuery("body").trigger("adding_to_cart", [
+                jQuery(addToCartBtn),
+                formData,
+            ]);
 
             /**
              * Because Woocommerce plugin uses jQuery dynamic nonce,
@@ -66,7 +72,11 @@ class WooAjaxAddToCart {
                      * We also have to use jQuery to customize this event.
                      */
                     jQuery("body").trigger("wc_fragment_refresh");
-                    jQuery("body").trigger("added_to_cart", [response.fragments, response.cart_hash, jQuery(addToCartBtn)]);
+                    jQuery("body").trigger("added_to_cart", [
+                        response.fragments,
+                        response.cart_hash,
+                        jQuery(addToCartBtn),
+                    ]);
 
                     if (options.cart_redirect_after_add === "yes") {
                         window.location = options.cart_url;
@@ -85,7 +95,10 @@ class WooAjaxAddToCart {
             cartBtn.classList.add("added");
 
             // Add view cart text.
-            if (!options.is_cart && !cartBtn.parentNode.querySelector(".added_to_cart")) {
+            if (
+                !options.is_cart &&
+                !cartBtn.parentNode.querySelector(".added_to_cart")
+            ) {
                 cartBtn.insertAdjacentHTML(
                     "afterend",
                     `<a href="${options.cart_url}" class="added_to_cart wc-forward" title="${options.view_cart}">${options.view_cart}</a>`
@@ -94,7 +107,7 @@ class WooAjaxAddToCart {
         }
     };
 
-    #getFormData = (form) => {
+    #getFormData = form => {
         form = form instanceof Element ? form : document.querySelector(form);
         const rCRLF = /\r?\n/g;
 
@@ -105,16 +118,28 @@ class WooAjaxAddToCart {
             if (elementValue == null) {
                 return { name: elementName, value: "" };
             } else if (element.type.toLowerCase() === "checkbox") {
-                return { name: elementName, value: element.checked ? elementValue : "" };
+                return {
+                    name: elementName,
+                    value: element.checked ? elementValue : "",
+                };
             } else if (element.type.toLowerCase() === "radio") {
-                return { name: elementName, value: element.checked ? elementValue : "" };
+                return {
+                    name: elementName,
+                    value: element.checked ? elementValue : "",
+                };
             }
 
             return Array.isArray(elementValue)
                 ? Array.from(elementValue).map((val, index) => {
-                      return { name: elementName, value: val.replace(rCRLF, "\r\n") };
+                      return {
+                          name: elementName,
+                          value: val.replace(rCRLF, "\r\n"),
+                      };
                   })
-                : { name: elementName, value: elementValue.replace(rCRLF, "\r\n") };
+                : {
+                      name: elementName,
+                      value: elementValue.replace(rCRLF, "\r\n"),
+                  };
         });
     };
 }

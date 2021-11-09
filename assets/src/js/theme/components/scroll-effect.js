@@ -43,7 +43,8 @@ class ScrollEffect {
             !scrollItem.classList.contains("sidr-class-opl-link") &&
             !scrollItem.parentNode.classList.contains("sidr-class-opl-link") &&
             !scrollItem.classList.contains("acomment-reply") &&
-            !scrollItem.classList.contains("htb-nav-link")
+            !scrollItem.classList.contains("htb-nav-link") &&
+            !scrollItem.classList.contains("upload-file")
         ) {
             const href = scrollItem.getAttribute("href");
             const id = href.substring(href.indexOf("#")).slice(1);

@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2021.11.08._ - 3.1.0
+### _2021.11.10._ - 3.1.0
 
 -   **New** - Customizer: Customizer Search.
 -   **Updated** - Customizer: Styling and scripts.

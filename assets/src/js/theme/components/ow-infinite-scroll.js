@@ -1,5 +1,6 @@
 import { DOM } from "../../constants";
 import InfiniteScroll from "infinite-scroll";
+import ResponsiveAutoHeight from "responsive-auto-height";
 
 class OWInfiniteScroll {
     #infiniteScroll;
@@ -46,11 +47,6 @@ class OWInfiniteScroll {
                     }
                 }
 
-                // Equal height elements
-                if (!DOM.body.classList.contains("no-matchheight")) {
-                    oceanwp.theme.equalHeightElements.start();
-                }
-
                 // Gallery posts slider
                 if (!DOM.body.classList.contains("no-carousel")) {
                     oceanwp.theme.owSlider.start(
@@ -73,6 +69,26 @@ class OWInfiniteScroll {
                 });
             });
         });
+
+        this.#infiniteScroll.on(
+            "append",
+            function (body, path, items, response) {
+                imagesLoaded(items, () => {
+                    // Equal height elements
+                    if (!DOM.body.classList.contains("no-matchheight")) {
+                        const entryItemsSelectors = Array.from(items).map(
+                            item => {
+                                return `#${item.id} .blog-entry-inner`;
+                            }
+                        );
+
+                        console.log(entryItemsSelectors.join(","));
+
+                        new ResponsiveAutoHeight(entryItemsSelectors.join(","));
+                    }
+                });
+            }
+        );
     };
 }
 

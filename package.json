@@ -57,6 +57,7 @@
     "dependencies": {
         "axios": "^0.21.1",
         "delegate": "^3.2.0",
+        "heightify": "^5.0.5",
         "infinite-scroll": "^4.0.1",
         "js-cookie": "^2.2.1",
         "qs": "^6.5.2",

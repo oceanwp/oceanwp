@@ -1,6 +1,6 @@
 # OceanWP
 
-**Contributors:** Nicolas, Amit, Marko, Mohammad and Farzad
+**Contributors:** Nicolas, Amit, Marko and Mohammad Taghi
 **Requires at least:** WordPress 5.6
 **Tested up to:** WordPress 5.8.1
 **Stable tag:** 3.1.0

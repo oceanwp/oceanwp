@@ -8,7 +8,7 @@ class EqualHeightElements {
             this.start();
         }
 
-        window.addEventListener("resize", (event) => {
+        window.addEventListener("resize", event => {
             if (window.innerWidth > 768 && !this.#executed) {
                 this.start();
             }
@@ -20,8 +20,12 @@ class EqualHeightElements {
             new ResponsiveAutoHeight(".blog-equal-heights .blog-entry-inner");
         }
 
-        if (!!document.querySelector(".match-height-grid .match-height-content")) {
-            new ResponsiveAutoHeight(".match-height-grid .match-height-content");
+        if (
+            !!document.querySelector(".match-height-grid .match-height-content")
+        ) {
+            new ResponsiveAutoHeight(
+                ".match-height-grid .match-height-content"
+            );
         }
 
         this.#executed = true;
