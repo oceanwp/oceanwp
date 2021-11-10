@@ -1177,7 +1177,9 @@
             border-color: #ddd;
             @include border-radius(3px);
         }
-        .select2-container--default .select2-selection--single .select2-selection__arrow {
+        .select2-container--default
+            .select2-selection--single
+            .select2-selection__arrow {
             height: 40px;
         }
     }
@@ -3326,10 +3328,8 @@ form.checkout {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.distraction-free #site-logo {
-    float: none;
-    width: 100%;
-    text-align: center;
+.distraction-free #site-header {
+    display: none;
 }
 
 .quick-view-plugin-active ul.products li.product li.btn-wrap {
