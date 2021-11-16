@@ -398,7 +398,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 
 			// Return items if "hide if empty cart" is checked
 			if ( true == get_theme_mod( 'ocean_edd_menu_icon_hide_if_empty', false )
-				&& ! count( edd_get_cart_quantity() ) > 0 ) {
+				&& ! count( is_array( edd_get_cart_quantity() ) ? edd_get_cart_quantity() : array() ) > 0 ) {
 				return $items;
 			}
 

@@ -3321,17 +3321,8 @@ a.pure-button-selected {
   display: none;
 }
 
-#site-header.full_screen-header .fs-dropdown-menu .open-sub ul.sub-menu {
-  visibility: visible;
-  display: block;
-  opacity: 1;
-}
-
 #site-header.full_screen-header .fs-dropdown-menu ul.sub-menu {
-  visibility: hidden;
   display: none;
-  opacity: 0;
-  pointer-events: none;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -3650,7 +3641,8 @@ a.pure-button-selected {
   max-width: 220px;
 }
 
-#site-header.medium-header #medium-searchform label, #site-header.medium-header #medium-searchform button {
+#site-header.medium-header #medium-searchform label,
+#site-header.medium-header #medium-searchform button {
   position: absolute;
   top: 0;
   line-height: 40px;
@@ -3997,9 +3989,7 @@ a.pure-button-selected {
 }
 
 #site-header.vertical-header #site-navigation-wrap .dropdown-menu .sub-menu {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
   position: relative;
   top: 100%;
   left: 0;
@@ -4421,13 +4411,10 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 
 .sf-menu ul.sub-menu {
   position: absolute;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
   top: 100%;
   left: 0;
   z-index: 9999;
-  opacity: 0;
-  transition: 0.3s;
 }
 
 .sf-menu > li {
@@ -4436,9 +4423,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 
 .sf-menu li:hover > ul,
 .sf-menu li.sfHover > ul {
-  visibility: visible;
-  pointer-events: auto;
-  opacity: 1;
+  display: block;
 }
 
 .sf-menu a.menu-link {
@@ -4463,14 +4448,12 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 }
 
 .dropdown-menu .sub-menu {
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
   background-color: #fff;
   border-top: 3px solid #13aff0;
-  opacity: 0;
   min-width: 180px;
   line-height: 1;
   text-align: left;
@@ -6452,9 +6435,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 }
 
 #mobile-fullscreen ul ul.sub-menu {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
+  display: none;
   list-style: none;
   margin: 0;
   padding: 0;

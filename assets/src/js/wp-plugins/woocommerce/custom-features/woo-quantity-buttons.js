@@ -185,6 +185,15 @@ class WooQuantityButtons {
                 quantityInput.value;
         }
 
+        if (
+            !!quantityBtn.closest(".cart")?.querySelector(".add_to_cart_button")
+        ) {
+            quantityBtn
+                .closest(".cart")
+                .querySelector(".add_to_cart_button").dataset.quantity =
+                quantityInput.value;
+        }
+
         // Trigger change event
         quantityInput.dispatchEvent(this.#changeEvent);
     };

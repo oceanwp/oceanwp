@@ -1,10 +1,10 @@
 <?php
 
-if( ! function_exists( 'ow_esc_attr' ) ) {
+if ( ! function_exists( 'ow_esc_attr' ) ) {
 	function ow_esc_attr( $text ) {
 		if ( is_array( $text ) || is_object( $text ) ) {
-			$text =  is_string( current( $text ) ) ? current( $text ) : '';
-		} else if ( ! is_string( $text ) ) {
+			$text = is_string( current( $text ) ) ? current( $text ) : '';
+		} elseif ( ! is_string( $text ) ) {
 			$text = (string) $text;
 		}
 
@@ -14,10 +14,9 @@ if( ! function_exists( 'ow_esc_attr' ) ) {
 
 /**
  * Skyrocket Customizer Custom Controls
- *
  */
 
-if ( class_exists( 'WP_Customize_Control' ) ) {
+if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Section' ) ) {
 	/**
 	 * Custom Control Base Class
 	 *
@@ -27,7 +26,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 */
 	class OceanWP_Custom_Control extends WP_Customize_Control {
 		protected function get_skyrocket_resource_url() {
-			if( strpos( wp_normalize_path( __DIR__ ), wp_normalize_path( WP_PLUGIN_DIR ) ) === 0 ) {
+			if ( strpos( wp_normalize_path( __DIR__ ), wp_normalize_path( WP_PLUGIN_DIR ) ) === 0 ) {
 				// We're in a plugin directory and need to determine the url accordingly.
 				return plugin_dir_url( __DIR__ );
 			}
@@ -45,7 +44,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 */
 	class OceanWP_Custom_Section extends WP_Customize_Section {
 		protected function get_skyrocket_resource_url() {
-			if( strpos( wp_normalize_path( __DIR__ ), wp_normalize_path( WP_PLUGIN_DIR ) ) === 0 ) {
+			if ( strpos( wp_normalize_path( __DIR__ ), wp_normalize_path( WP_PLUGIN_DIR ) ) === 0 ) {
 				// We're in a plugin directory and need to determine the url accordingly.
 				return plugin_dir_url( __DIR__ );
 			}
@@ -61,7 +60,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	 class OceanWP_Image_Checkbox_Custom_Control extends OceanWP_Custom_Control {
+	class OceanWP_Image_Checkbox_Custom_Control extends OceanWP_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -77,12 +76,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 */
 		public function render_content() {
 			ob_clean();
-		?>
+			?>
 			<div class="image_checkbox_control">
-				<?php if( !empty( $this->label ) ) { ?>
+				<?php if ( ! empty( $this->label ) ) { ?>
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 				<?php	$chkboxValues = explode( ',', ow_esc_attr( $this->value() ) ); ?>
@@ -94,7 +93,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					</label>
 				<?php	} ?>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -105,7 +104,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
 	 */
-	 class OceanWP_Customizer_Buttonset_Control extends OceanWP_Custom_Control {
+	class OceanWP_Customizer_Buttonset_Control extends OceanWP_Custom_Control {
 		/**
 		 * The type of control being rendered
 		 */
@@ -120,12 +119,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Render the control in the customizer
 		 */
 		public function render_content() {
-		?>
+			?>
 			<div class="text_radio_button_control">
-				<?php if( !empty( $this->label ) ) { ?>
+				<?php if ( ! empty( $this->label ) ) { ?>
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 
@@ -138,7 +137,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					<?php	} ?>
 				</div>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -164,29 +163,29 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Render the control in the customizer
 		 */
 		public function render_content() {
-		?>
+			?>
 			<div class="image_radio_button_control">
-				<?php if( !empty( $this->label ) ) { ?>
+				<?php if ( ! empty( $this->label ) ) { ?>
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 
 				<?php foreach ( $this->choices as $key => $value ) { ?>
 					<?php
-						$value	= [
+						$value = array(
 							'image' => isset( $value['image'] ) ? $value['image'] : '',
-							'name' => isset( $value['name'] ) ? $value['name'] : '',
-						]
-					?>
+							'name'  => isset( $value['name'] ) ? $value['name'] : '',
+						)
+						?>
 					<label class="radio-button-label">
 						<input type="radio" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $key ); ?>" <?php $this->link(); ?> <?php checked( ow_esc_attr( $key ), $this->value() ); ?>/>
 						<img src="<?php echo ow_esc_attr( $value['image'] ); ?>" alt="<?php echo ow_esc_attr( $value['name'] ); ?>" title="<?php echo ow_esc_attr( $value['name'] ); ?>" />
 					</label>
 				<?php	} ?>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -214,38 +213,37 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 */
 		public function render_content() {
 			$allowed_html = array(
-				'a' => array(
-					'href' => array(),
-					'title' => array(),
-					'class' => array(),
+				'a'      => array(
+					'href'   => array(),
+					'title'  => array(),
+					'class'  => array(),
 					'target' => array(),
 				),
-				'br' => array(),
-				'em' => array(),
+				'br'     => array(),
+				'em'     => array(),
 				'strong' => array(),
-				'i' => array(
-					'class' => array()
+				'i'      => array(
+					'class' => array(),
 				),
 			);
-		?>
+			?>
 			<div class="single-accordion-custom-control">
 				<div class="single-accordion-toggle"><?php echo esc_html( $this->label ); ?><span class="accordion-icon-toggle dashicons dashicons-plus"></span></div>
 				<div class="single-accordion customize-control-description">
 					<?php
-						if ( is_array( $this->description ) ) {
-							echo '<ul class="single-accordion-description">';
-							foreach ( $this->description as $key => $value ) {
-								echo '<li>' . $key . wp_kses( $value, $allowed_html ) . '</li>';
-							}
-							echo '</ul>';
+					if ( is_array( $this->description ) ) {
+						echo '<ul class="single-accordion-description">';
+						foreach ( $this->description as $key => $value ) {
+							echo '<li>' . $key . wp_kses( $value, $allowed_html ) . '</li>';
 						}
-						else {
-							echo wp_kses( $this->description, $allowed_html );
-						}
-				  ?>
+						echo '</ul>';
+					} else {
+						echo wp_kses( $this->description, $allowed_html );
+					}
+					?>
 				</div>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -266,33 +264,33 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 */
 		public function render_content() {
 			$allowed_html = array(
-				'a' => array(
-					'href' => array(),
-					'title' => array(),
-					'class' => array(),
+				'a'      => array(
+					'href'   => array(),
+					'title'  => array(),
+					'class'  => array(),
 					'target' => array(),
 				),
-				'br' => array(),
-				'em' => array(),
+				'br'     => array(),
+				'em'     => array(),
 				'strong' => array(),
-				'i' => array(
-					'class' => array()
-				),
-				'span' => array(
+				'i'      => array(
 					'class' => array(),
 				),
-				'code' => array(),
+				'span'   => array(
+					'class' => array(),
+				),
+				'code'   => array(),
 			);
-		?>
+			?>
 			<div class="simple-notice-custom-control">
-				<?php if( !empty( $this->label ) ) { ?>
+				<?php if ( ! empty( $this->label ) ) { ?>
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo wp_kses( $this->description, $allowed_html ); ?></span>
 				<?php } ?>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -319,13 +317,13 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Render the control in the customizer
 		 */
 		public function render_content() {
-		?>
+			?>
 			<div class="slider-custom-control control-wrap customize-control-oceanwp-slider">
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<input type="number" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $this->value() ); ?>" class="customize-control-slider-value" <?php $this->link(); ?> />
 				<div class="slider oceanwp-slider" slider-min-value="<?php echo ow_esc_attr( @$this->input_attrs['min'] ); ?>" slider-max-value="<?php echo ow_esc_attr( @$this->input_attrs['max'] ); ?>" slider-step-value="<?php echo ow_esc_attr( @$this->input_attrs['step'] ); ?>"></div>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -344,28 +342,33 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		/**
 		 * Enqueue our scripts and styles
 		 */
-		public function enqueue(){
+		public function enqueue() {
 			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 		}
 		/**
 		 * Render the control in the customizer
 		 */
-		public function render_content(){
-		?>
+		public function render_content() {
+			?>
 			<div class="toggle-switch-control">
 				<div class="toggle-switch">
-					<input type="checkbox" id="<?php echo ow_esc_attr($this->id); ?>" name="<?php echo ow_esc_attr($this->id); ?>" class="toggle-switch-checkbox" value="<?php echo ow_esc_attr( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?>>
+					<input type="checkbox" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" class="toggle-switch-checkbox" value="<?php echo ow_esc_attr( $this->value() ); ?>" 
+														  <?php
+															$this->link();
+															checked( $this->value() );
+															?>
+					>
 					<label class="toggle-switch-label" for="<?php echo ow_esc_attr( $this->id ); ?>">
 						<span class="toggle-switch-inner"></span>
 						<span class="toggle-switch-switch"></span>
 					</label>
 				</div>
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -391,7 +394,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		public function __construct( $manager, $id, $args = array(), $options = array() ) {
 			parent::__construct( $manager, $id, $args );
 			// Merge the passed button labels with our default labels
-			$this->button_labels = wp_parse_args( $this->button_labels,
+			$this->button_labels = wp_parse_args(
+				$this->button_labels,
 				array(
 					'add' => __( 'Add', 'skyrocket' ),
 				)
@@ -408,12 +412,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Render the control in the customizer
 		 */
 		public function render_content() {
-		?>
+			?>
 		  <div class="sortable_repeater_control">
-				<?php if( !empty( $this->label ) ) { ?>
+				<?php if ( ! empty( $this->label ) ) { ?>
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 				<input type="hidden" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $this->value() ); ?>" class="customize-control-sortable-repeater" <?php $this->link(); ?> />
@@ -424,7 +428,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				</div>
 				<button class="button customize-control-sortable-repeater-add" type="button"><?php echo $this->button_labels['add']; ?></button>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -479,49 +483,46 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			if ( $this->multiselect ) {
 				$defaultValue = explode( ',', $this->value() );
 			}
-		?>
+			?>
 			<div class="dropdown_select2_control">
-				<?php if( !empty( $this->label ) ) { ?>
+				<?php if ( ! empty( $this->label ) ) { ?>
 					<label for="<?php echo ow_esc_attr( $this->id ); ?>" class="customize-control-title">
 						<?php echo esc_html( $this->label ); ?>
 					</label>
 				<?php } ?>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 				<input type="hidden" id="<?php echo ow_esc_attr( $this->id ); ?>" class="customize-control-dropdown-select2" value="<?php echo ow_esc_attr( $this->value() ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" <?php $this->link(); ?> />
 				<select name="select2-list-<?php echo ( $this->multiselect ? 'multi[]' : 'single' ); ?>" class="customize-control-select2" data-placeholder="<?php echo $this->placeholder; ?>" <?php echo ( $this->multiselect ? 'multiple="multiple" ' : '' ); ?>>
 					<?php
-						if ( !$this->multiselect ) {
-							// When using Select2 for single selection, the Placeholder needs an empty <option> at the top of the list for it to work (multi-selects dont need this)
-							echo '<option></option>';
-						}
-						foreach ( $this->choices as $key => $value ) {
-							if ( is_array( $value ) ) {
-								echo '<optgroup label="' . ow_esc_attr( $key ) . '">';
-								foreach ( $value as $optgroupkey => $optgroupvalue ) {
-									if( $this->multiselect ){
-										echo '<option value="' . ow_esc_attr( $optgroupkey ) . '" ' . ( in_array( ow_esc_attr( $optgroupkey ), $defaultValue ) ? 'selected="selected"' : '' ) . '>' . ow_esc_attr( $optgroupvalue ) . '</option>';
-									}
-									else{
-										echo '<option value="' . ow_esc_attr( $optgroupkey ) . '" ' . selected( ow_esc_attr( $optgroupkey ), $defaultValue, false )  . '>' . ow_esc_attr( $optgroupvalue ) . '</option>';
-									}
-								}
-								echo '</optgroup>';
-							}
-							else {
-								if( $this->multiselect ){
-									echo '<option value="' . ow_esc_attr( $key ) . '" ' . ( in_array( ow_esc_attr( $key ), $defaultValue ) ? 'selected="selected"' : '' ) . '>' . ow_esc_attr( $value ) . '</option>';
-								}
-								else{
-									echo '<option value="' . ow_esc_attr( $key ) . '" ' . selected( ow_esc_attr( $key ), $defaultValue, false )  . '>' . ow_esc_attr( $value ) . '</option>';
+					if ( ! $this->multiselect ) {
+						// When using Select2 for single selection, the Placeholder needs an empty <option> at the top of the list for it to work (multi-selects dont need this)
+						echo '<option></option>';
+					}
+					foreach ( $this->choices as $key => $value ) {
+						if ( is_array( $value ) ) {
+							echo '<optgroup label="' . ow_esc_attr( $key ) . '">';
+							foreach ( $value as $optgroupkey => $optgroupvalue ) {
+								if ( $this->multiselect ) {
+									echo '<option value="' . ow_esc_attr( $optgroupkey ) . '" ' . ( in_array( ow_esc_attr( $optgroupkey ), $defaultValue ) ? 'selected="selected"' : '' ) . '>' . ow_esc_attr( $optgroupvalue ) . '</option>';
+								} else {
+									echo '<option value="' . ow_esc_attr( $optgroupkey ) . '" ' . selected( ow_esc_attr( $optgroupkey ), $defaultValue, false ) . '>' . ow_esc_attr( $optgroupvalue ) . '</option>';
 								}
 							}
+							echo '</optgroup>';
+						} else {
+							if ( $this->multiselect ) {
+								echo '<option value="' . ow_esc_attr( $key ) . '" ' . ( in_array( ow_esc_attr( $key ), $defaultValue ) ? 'selected="selected"' : '' ) . '>' . ow_esc_attr( $value ) . '</option>';
+							} else {
+								echo '<option value="' . ow_esc_attr( $key ) . '" ' . selected( ow_esc_attr( $key ), $defaultValue, false ) . '>' . ow_esc_attr( $value ) . '</option>';
+							}
 						}
+					}
 					?>
 				</select>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -553,31 +554,32 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Render the control in the customizer
 		 */
 		public function render_content() {
-		?>
+			?>
 			<div class="dropdown_posts_control">
-				<?php if( !empty( $this->label ) ) { ?>
+				<?php if ( ! empty( $this->label ) ) { ?>
 					<label for="<?php echo ow_esc_attr( $this->id ); ?>" class="customize-control-title">
 						<?php echo esc_html( $this->label ); ?>
 					</label>
 				<?php } ?>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 				<select name="<?php echo $this->id; ?>" id="<?php echo $this->id; ?>" <?php $this->link(); ?>>
 					<?php
-						if( !empty( $this->posts ) ) {
-							foreach ( $this->posts as $post ) {
-								printf( '<option value="%s" %s>%s</option>',
-									$post->ID,
-									selected( $this->value(), $post->ID, false ),
-									$post->post_title
-								);
-							}
+					if ( ! empty( $this->posts ) ) {
+						foreach ( $this->posts as $post ) {
+							printf(
+								'<option value="%s" %s>%s</option>',
+								$post->ID,
+								selected( $this->value(), $post->ID, false ),
+								$post->post_title
+							);
 						}
+					}
 					?>
 				</select>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -596,7 +598,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		/**
 		 * Enqueue our scripts and styles
 		 */
-		public function enqueue(){
+		public function enqueue() {
 			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery' ), '1.0', true );
 			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
 			wp_enqueue_editor();
@@ -608,21 +610,21 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			parent::to_json();
 			$this->json['skyrockettinymcetoolbar1'] = isset( $this->input_attrs['toolbar1'] ) ? ow_esc_attr( $this->input_attrs['toolbar1'] ) : 'bold italic bullist numlist alignleft aligncenter alignright link';
 			$this->json['skyrockettinymcetoolbar2'] = isset( $this->input_attrs['toolbar2'] ) ? ow_esc_attr( $this->input_attrs['toolbar2'] ) : '';
-			$this->json['skyrocketmediabuttons'] = isset( $this->input_attrs['mediaButtons'] ) && ( $this->input_attrs['mediaButtons'] === true ) ? true : false;
+			$this->json['skyrocketmediabuttons']    = isset( $this->input_attrs['mediaButtons'] ) && ( $this->input_attrs['mediaButtons'] === true ) ? true : false;
 		}
 		/**
 		 * Render the control in the customizer
 		 */
-		public function render_content(){
-		?>
+		public function render_content() {
+			?>
 			<div class="tinymce-control">
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 				<textarea id="<?php echo ow_esc_attr( $this->id ); ?>" class="customize-control-tinymce-editor" <?php $this->link(); ?>><?php echo esc_html( $this->value() ); ?></textarea>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -645,7 +647,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		/**
 		 * The saved font values decoded from json
 		 */
-		private $fontValues = [];
+		private $fontValues = array();
 		/**
 		 * The index of the saved font within the list of Google fonts
 		 */
@@ -699,86 +701,86 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Render the control in the customizer
 		 */
 		public function render_content() {
-			$fontCounter = 0;
+			$fontCounter  = 0;
 			$isFontInList = false;
-			$fontListStr = '';
+			$fontListStr  = '';
 
-			if( !empty($this->fontList) ) {
+			if ( ! empty( $this->fontList ) ) {
 				?>
 				<div class="google_fonts_select_control">
-					<?php if( !empty( $this->label ) ) { ?>
+					<?php if ( ! empty( $this->label ) ) { ?>
 						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 					<?php } ?>
-					<?php if( !empty( $this->description ) ) { ?>
+					<?php if ( ! empty( $this->description ) ) { ?>
 						<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 					<?php } ?>
 					<input type="hidden" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $this->value() ); ?>" class="customize-control-google-font-selection" <?php $this->link(); ?> />
 					<div class="google-fonts">
 						<select class="google-fonts-list" control-name="<?php echo ow_esc_attr( $this->id ); ?>">
 							<?php
-								foreach( $this->fontList as $key => $value ) {
-									$fontCounter++;
-									$fontListStr .= '<option value="' . $value->family . '" ' . selected( $this->fontValues->font, $value->family, false ) . '>' . $value->family . '</option>';
-									if ( $this->fontValues->font === $value->family ) {
-										$isFontInList = true;
-									}
-									if ( is_int( $this->fontCount ) && $fontCounter === $this->fontCount ) {
-										break;
-									}
+							foreach ( $this->fontList as $key => $value ) {
+								$fontCounter++;
+								$fontListStr .= '<option value="' . $value->family . '" ' . selected( $this->fontValues->font, $value->family, false ) . '>' . $value->family . '</option>';
+								if ( $this->fontValues->font === $value->family ) {
+									$isFontInList = true;
 								}
-								if ( !$isFontInList && $this->fontListIndex ) {
-									// If the default or saved font value isn't in the list of displayed fonts, add it to the top of the list as the default font
-									$fontListStr = '<option value="' . $this->fontList[$this->fontListIndex]->family . '" ' . selected( $this->fontValues->font, $this->fontList[$this->fontListIndex]->family, false ) . '>' . $this->fontList[$this->fontListIndex]->family . ' (default)</option>' . $fontListStr;
+								if ( is_int( $this->fontCount ) && $fontCounter === $this->fontCount ) {
+									break;
 								}
+							}
+							if ( ! $isFontInList && $this->fontListIndex ) {
+								// If the default or saved font value isn't in the list of displayed fonts, add it to the top of the list as the default font
+								$fontListStr = '<option value="' . $this->fontList[ $this->fontListIndex ]->family . '" ' . selected( $this->fontValues->font, $this->fontList[ $this->fontListIndex ]->family, false ) . '>' . $this->fontList[ $this->fontListIndex ]->family . ' (default)</option>' . $fontListStr;
+							}
 								// Display our list of font options
 								echo $fontListStr;
 							?>
 						</select>
 					</div>
-					<div class="customize-control-description"><?php esc_html_e( 'Select weight & style for regular text', 'skyrocket' ) ?></div>
+					<div class="customize-control-description"><?php esc_html_e( 'Select weight & style for regular text', 'skyrocket' ); ?></div>
 					<div class="weight-style">
 						<select class="google-fonts-regularweight-style">
 							<?php
-								foreach( $this->fontList[$this->fontListIndex]->variants as $key => $value ) {
-									echo '<option value="' . $value . '" ' . selected( $this->fontValues->regularweight, $value, false ) . '>' . $value . '</option>';
-								}
+							foreach ( $this->fontList[ $this->fontListIndex ]->variants as $key => $value ) {
+								echo '<option value="' . $value . '" ' . selected( $this->fontValues->regularweight, $value, false ) . '>' . $value . '</option>';
+							}
 							?>
 						</select>
 					</div>
-					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'skyrocket' ) ?> <italic><?php esc_html_e( 'italic text', 'skyrocket' ) ?></italic></div>
+					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'skyrocket' ); ?> <italic><?php esc_html_e( 'italic text', 'skyrocket' ); ?></italic></div>
 					<div class="weight-style">
-						<select class="google-fonts-italicweight-style" <?php disabled( in_array( 'italic', $this->fontList[$this->fontListIndex]->variants ), false ); ?>>
+						<select class="google-fonts-italicweight-style" <?php disabled( in_array( 'italic', $this->fontList[ $this->fontListIndex ]->variants ), false ); ?>>
 							<?php
 								$optionCount = 0;
-								foreach( $this->fontList[$this->fontListIndex]->variants as $key => $value ) {
-									// Only add options that are italic
-									if( strpos( $value, 'italic' ) !== false ) {
-										echo '<option value="' . $value . '" ' . selected( $this->fontValues->italicweight, $value, false ) . '>' . $value . '</option>';
-										$optionCount++;
-									}
+							foreach ( $this->fontList[ $this->fontListIndex ]->variants as $key => $value ) {
+								// Only add options that are italic
+								if ( strpos( $value, 'italic' ) !== false ) {
+									echo '<option value="' . $value . '" ' . selected( $this->fontValues->italicweight, $value, false ) . '>' . $value . '</option>';
+									$optionCount++;
 								}
-								if( $optionCount == 0 ) {
-									echo '<option value="">Not Available for this font</option>';
-								}
+							}
+							if ( $optionCount == 0 ) {
+								echo '<option value="">Not Available for this font</option>';
+							}
 							?>
 						</select>
 					</div>
-					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'skyrocket' ) ?> <strong><?php esc_html_e( 'bold text', 'skyrocket' ) ?></strong></div>
+					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'skyrocket' ); ?> <strong><?php esc_html_e( 'bold text', 'skyrocket' ); ?></strong></div>
 					<div class="weight-style">
 						<select class="google-fonts-boldweight-style">
 							<?php
 								$optionCount = 0;
-								foreach( $this->fontList[$this->fontListIndex]->variants as $key => $value ) {
-									// Only add options that aren't italic
-									if( strpos( $value, 'italic' ) === false ) {
-										echo '<option value="' . $value . '" ' . selected( $this->fontValues->boldweight, $value, false ) . '>' . $value . '</option>';
-										$optionCount++;
-									}
+							foreach ( $this->fontList[ $this->fontListIndex ]->variants as $key => $value ) {
+								// Only add options that aren't italic
+								if ( strpos( $value, 'italic' ) === false ) {
+									echo '<option value="' . $value . '" ' . selected( $this->fontValues->boldweight, $value, false ) . '>' . $value . '</option>';
+									$optionCount++;
 								}
+							}
 								// This should never evaluate as there'll always be at least a 'regular' weight
-								if( $optionCount == 0 ) {
-									echo '<option value="">Not Available for this font</option>';
-								}
+							if ( $optionCount == 0 ) {
+								echo '<option value="">Not Available for this font</option>';
+							}
 							?>
 						</select>
 					</div>
@@ -792,8 +794,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Find the index of the saved font in our multidimensional array of Google Fonts
 		 */
 		public function skyrocket_getFontIndex( $haystack, $needle ) {
-			foreach( $haystack as $key => $value ) {
-				if( $value->family == $needle ) {
+			foreach ( $haystack as $key => $value ) {
+				if ( $value->family == $needle ) {
 					return $key;
 				}
 			}
@@ -811,14 +813,14 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			}
 
 			$request = wp_remote_get( $fontFile );
-			if( is_wp_error( $request ) ) {
-				return "";
+			if ( is_wp_error( $request ) ) {
+				return '';
 			}
 
-			$body = wp_remote_retrieve_body( $request );
+			$body    = wp_remote_retrieve_body( $request );
 			$content = json_decode( $body );
 
-			if( $count == 'all' ) {
+			if ( $count == 'all' ) {
 				return $content->items;
 			} else {
 				return array_slice( $content->items, 0, $count );
@@ -843,7 +845,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 *
 		 * Supported palette values are true, false, or an array of RGBa and Hex colors.
 		 */
-		public $palette = [];
+		public $palette = array();
 		/**
 		 * Add support for showing the opacity value on the slider handle.
 		 */
@@ -853,7 +855,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 */
 		public function enqueue() {
 			wp_enqueue_style( 'wp-color-picker' );
-    		wp_enqueue_script( 'wp-color-picker');
+			wp_enqueue_script( 'wp-color-picker' );
 			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery', 'wp-color-picker' ), '1.0', true );
 			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array( 'wp-color-picker' ), '1.0', 'all' );
 		}
@@ -875,13 +877,15 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
 			?>
 				<label>
-					<?php // Output the label and description if they were passed in.
+					<?php
+					// Output the label and description if they were passed in.
 					if ( isset( $this->label ) && '' !== $this->label ) {
 						echo '<span class="customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
 					}
 					if ( isset( $this->description ) && '' !== $this->description ) {
 						echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
-					} ?>
+					}
+					?>
 				</label>
 				<input class="alpha-color-control" type="text" data-show-opacity="<?php echo $show_opacity; ?>" data-palette="<?php echo ow_esc_attr( $palette ); ?>" data-default-color="<?php echo ow_esc_attr( $this->settings['default']->default ); ?>" <?php $this->link(); ?>  />
 			<?php
@@ -909,7 +913,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		/**
 		 * ColorPicker Attributes
 		 */
-		public $attributes = "";
+		public $attributes = '';
 		/**
 		 * Color palette defaults
 		 */
@@ -952,17 +956,17 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Render the control in the customizer
 		 */
 		public function render_content() {
-		?>
+			?>
 		  <div class="wpcolorpicker_alpha_color_control">
-				<?php if( !empty( $this->label ) ) { ?>
+				<?php if ( ! empty( $this->label ) ) { ?>
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 				<input type="text" class="wpcolorpicker-alpha-color-picker" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $this->value() ); ?>" class="customize-control-colorpicker-alpha-color" <?php echo $this->attributes; ?> <?php $this->link(); ?> />
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -999,9 +1003,9 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			if ( isset( $this->input_attrs['fullwidth'] ) && $this->input_attrs['fullwidth'] ) {
 				$this->fullwidth = true;
 			}
-		}		/**
-		 * Enqueue our scripts and styles
-		 */
+		}       /**
+				 * Enqueue our scripts and styles
+				 */
 		public function enqueue() {
 			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.1', true );
 			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array(), '1.0', 'all' );
@@ -1011,26 +1015,25 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 */
 		public function render_content() {
 			$reordered_choices = array();
-			$saved_choices = explode( ',', ow_esc_attr( $this->value() ) );
+			$saved_choices     = explode( ',', ow_esc_attr( $this->value() ) );
 
 			// Order the checkbox choices based on the saved order
-			if( $this->sortable ) {
+			if ( $this->sortable ) {
 				foreach ( $saved_choices as $key => $value ) {
-					if( isset( $this->choices[$value] ) ) {
-						$reordered_choices[$value] = $this->choices[$value];
+					if ( isset( $this->choices[ $value ] ) ) {
+						$reordered_choices[ $value ] = $this->choices[ $value ];
 					}
 				}
 				$reordered_choices = array_merge( $reordered_choices, array_diff_assoc( $this->choices, $reordered_choices ) );
-			}
-			else {
+			} else {
 				$reordered_choices = $this->choices;
 			}
-		?>
+			?>
 			<div class="pill_checkbox_control">
-				<?php if( !empty( $this->label ) ) { ?>
+				<?php if ( ! empty( $this->label ) ) { ?>
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
-				<?php if( !empty( $this->description ) ) { ?>
+				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
 				<input type="hidden" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $this->value() ); ?>" class="customize-control-sortable-pill-checkbox" <?php $this->link(); ?> />
@@ -1039,14 +1042,14 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					<label class="checkbox-label">
 						<input type="checkbox" name="<?php echo ow_esc_attr( $key ); ?>" value="<?php echo ow_esc_attr( $key ); ?>" <?php checked( in_array( ow_esc_attr( $key ), $saved_choices, true ), true ); ?> class="sortable-pill-checkbox"/>
 						<span class="sortable-pill-title"><?php echo ow_esc_attr( $value ); ?></span>
-						<?php if( $this->sortable && $this->fullwidth ) { ?>
+						<?php if ( $this->sortable && $this->fullwidth ) { ?>
 							<span class="dashicons dashicons-sort"></span>
 						<?php } ?>
 					</label>
 				<?php	} ?>
 				</div>
 			</div>
-		<?php
+			<?php
 		}
 	}
 
@@ -1056,7 +1059,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	 * @author Anthony Hortin <http://maddisondesigns.com>
 	 * @license http://www.gnu.org/licenses/gpl-2.0.html
 	 * @link https://github.com/maddisondesigns
-	 *
 	 */
 	class OceanWP_Upsell_Section extends OceanWP_Custom_Section {
 		/**
@@ -1086,12 +1088,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * Render the section, and the controls that have been added to it.
 		 */
 		protected function render() {
-			$bkgrndcolor = !empty( $this->backgroundcolor ) ? ow_esc_attr( $this->backgroundcolor ) : '#fff';
-			$color = !empty( $this->textcolor ) ? ow_esc_attr( $this->textcolor ) : '#555d66';
+			$bkgrndcolor = ! empty( $this->backgroundcolor ) ? ow_esc_attr( $this->backgroundcolor ) : '#fff';
+			$color       = ! empty( $this->textcolor ) ? ow_esc_attr( $this->textcolor ) : '#555d66';
 			?>
 			<li id="accordion-section-<?php echo ow_esc_attr( $this->id ); ?>" class="skyrocket_upsell_section accordion-section control-section control-section-<?php echo ow_esc_attr( $this->id ); ?> cannot-expand">
-				<h3 class="upsell-section-title" <?php echo ' style="color:' . $color . ';border-left-color:' . $bkgrndcolor .';border-right-color:' . $bkgrndcolor .';"'; ?>>
-					<a href="<?php echo esc_url( $this->url); ?>" target="_blank"<?php echo ' style="background-color:' . $bkgrndcolor . ';color:' . $color .';"'; ?>><?php echo esc_html( $this->title ); ?></a>
+				<h3 class="upsell-section-title" <?php echo ' style="color:' . $color . ';border-left-color:' . $bkgrndcolor . ';border-right-color:' . $bkgrndcolor . ';"'; ?>>
+					<a href="<?php echo esc_url( $this->url ); ?>" target="_blank"<?php echo ' style="background-color:' . $bkgrndcolor . ';color:' . $color . ';"'; ?>><?php echo esc_html( $this->title ); ?></a>
 				</h3>
 			</li>
 			<?php
@@ -1101,21 +1103,20 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * URL sanitization
 	 *
-	 * @param  string	Input to be sanitized (either a string containing a single url or multiple, separated by commas)
-	 * @return string	Sanitized input
+	 * @param  string   Input to be sanitized (either a string containing a single url or multiple, separated by commas)
+	 * @return string   Sanitized input
 	 */
 	if ( ! function_exists( 'skyrocket_url_sanitization' ) ) {
 		function skyrocket_url_sanitization( $input ) {
-			if ( strpos( $input, ',' ) !== false) {
+			if ( strpos( $input, ',' ) !== false ) {
 				$input = explode( ',', $input );
 			}
 			if ( is_array( $input ) ) {
-				foreach ($input as $key => $value) {
-					$input[$key] = esc_url_raw( $value );
+				foreach ( $input as $key => $value ) {
+					$input[ $key ] = esc_url_raw( $value );
 				}
 				$input = implode( ',', $input );
-			}
-			else {
+			} else {
 				$input = esc_url_raw( $input );
 			}
 			return $input;
@@ -1125,8 +1126,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * Switch sanitization
 	 *
-	 * @param  string		Switch value
-	 * @return integer	Sanitized value
+	 * @param  string       Switch value
+	 * @return integer  Sanitized value
 	 */
 	if ( ! function_exists( 'skyrocket_switch_sanitization' ) ) {
 		function skyrocket_switch_sanitization( $input ) {
@@ -1141,13 +1142,13 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * Radio Button and Select sanitization
 	 *
-	 * @param  string		Radio Button value
-	 * @return integer	Sanitized value
+	 * @param  string       Radio Button value
+	 * @return integer  Sanitized value
 	 */
 	if ( ! function_exists( 'skyrocket_radio_sanitization' ) ) {
 		function skyrocket_radio_sanitization( $input, $setting ) {
-			//get the list of possible radio box or select options
-		 $choices = $setting->manager->get_control( $setting->id )->choices;
+			// get the list of possible radio box or select options
+			$choices = $setting->manager->get_control( $setting->id )->choices;
 
 			if ( array_key_exists( $input, $choices ) ) {
 				return $input;
@@ -1160,8 +1161,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * Integer sanitization
 	 *
-	 * @param  string		Input value to check
-	 * @return integer	Returned integer value
+	 * @param  string       Input value to check
+	 * @return integer  Returned integer value
 	 */
 	if ( ! function_exists( 'skyrocket_sanitize_integer' ) ) {
 		function skyrocket_sanitize_integer( $input ) {
@@ -1172,21 +1173,20 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * Text sanitization
 	 *
-	 * @param  string	Input to be sanitized (either a string containing a single string or multiple, separated by commas)
-	 * @return string	Sanitized input
+	 * @param  string   Input to be sanitized (either a string containing a single string or multiple, separated by commas)
+	 * @return string   Sanitized input
 	 */
 	if ( ! function_exists( 'skyrocket_text_sanitization' ) ) {
 		function skyrocket_text_sanitization( $input ) {
-			if ( strpos( $input, ',' ) !== false) {
+			if ( strpos( $input, ',' ) !== false ) {
 				$input = explode( ',', $input );
 			}
-			if( is_array( $input ) ) {
+			if ( is_array( $input ) ) {
 				foreach ( $input as $key => $value ) {
-					$input[$key] = sanitize_text_field( $value );
+					$input[ $key ] = sanitize_text_field( $value );
 				}
 				$input = implode( ',', $input );
-			}
-			else {
+			} else {
 				$input = sanitize_text_field( $input );
 			}
 			return $input;
@@ -1196,17 +1196,16 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * Array sanitization
 	 *
-	 * @param  array	Input to be sanitized
-	 * @return array	Sanitized input
+	 * @param  array    Input to be sanitized
+	 * @return array    Sanitized input
 	 */
 	if ( ! function_exists( 'skyrocket_array_sanitization' ) ) {
 		function skyrocket_array_sanitization( $input ) {
-			if( is_array( $input ) ) {
+			if ( is_array( $input ) ) {
 				foreach ( $input as $key => $value ) {
-					$input[$key] = sanitize_text_field( $value );
+					$input[ $key ] = sanitize_text_field( $value );
 				}
-			}
-			else {
+			} else {
 				$input = '';
 			}
 			return $input;
@@ -1216,8 +1215,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * Alpha Color (Hex, RGB & RGBa) sanitization
 	 *
-	 * @param  string	Input to be sanitized
-	 * @return string	Sanitized input
+	 * @param  string   Input to be sanitized
+	 * @return string   Sanitized input
 	 */
 	if ( ! function_exists( 'skyrocket_hex_rgba_sanitization' ) ) {
 		function skyrocket_hex_rgba_sanitization( $input, $setting ) {
@@ -1234,8 +1233,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 					$input = str_replace( ' ', '', $input );
 					sscanf( $input, 'rgb(%d,%d,%d)', $red, $green, $blue );
 					$input = 'rgb(' . skyrocket_in_range( $red, 0, 255 ) . ',' . skyrocket_in_range( $green, 0, 255 ) . ',' . skyrocket_in_range( $blue, 0, 255 ) . ')';
-				}
-				else {
+				} else {
 					// Sanitize as RGBa color
 					$input = str_replace( ' ', '', $input );
 					sscanf( $input, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
@@ -1249,11 +1247,11 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * Only allow values between a certain minimum & maxmium range
 	 *
-	 * @param  number	Input to be sanitized
-	 * @return number	Sanitized input
+	 * @param  number   Input to be sanitized
+	 * @return number   Sanitized input
 	 */
 	if ( ! function_exists( 'skyrocket_in_range' ) ) {
-		function skyrocket_in_range( $input, $min, $max ){
+		function skyrocket_in_range( $input, $min, $max ) {
 			if ( $input < $min ) {
 				$input = $min;
 			}
@@ -1267,19 +1265,18 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * Google Font sanitization
 	 *
-	 * @param  string	JSON string to be sanitized
-	 * @return string	Sanitized input
+	 * @param  string   JSON string to be sanitized
+	 * @return string   Sanitized input
 	 */
 	if ( ! function_exists( 'skyrocket_google_font_sanitization' ) ) {
 		function skyrocket_google_font_sanitization( $input ) {
-			$val =  json_decode( $input, true );
-			if( is_array( $val ) ) {
+			$val = json_decode( $input, true );
+			if ( is_array( $val ) ) {
 				foreach ( $val as $key => $value ) {
-					$val[$key] = sanitize_text_field( $value );
+					$val[ $key ] = sanitize_text_field( $value );
 				}
 				$input = json_encode( $val );
-			}
-			else {
+			} else {
 				$input = json_encode( sanitize_text_field( $val ) );
 			}
 			return $input;
@@ -1289,8 +1286,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * Date Time sanitization
 	 *
-	 * @param  string	Date/Time string to be sanitized
-	 * @return string	Sanitized input
+	 * @param  string   Date/Time string to be sanitized
+	 * @return string   Sanitized input
 	 */
 	if ( ! function_exists( 'skyrocket_date_time_sanitization' ) ) {
 		function skyrocket_date_time_sanitization( $input, $setting ) {
@@ -1309,15 +1306,15 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 	/**
 	 * Slider sanitization
 	 *
-	 * @param  string	Slider value to be sanitized
-	 * @return string	Sanitized input
+	 * @param  string   Slider value to be sanitized
+	 * @return string   Sanitized input
 	 */
 	if ( ! function_exists( 'skyrocket_range_sanitization' ) ) {
 		function skyrocket_range_sanitization( $input, $setting ) {
 			$attrs = $setting->manager->get_control( $setting->id )->input_attrs;
 
-			$min = ( isset( $attrs['min'] ) ? $attrs['min'] : $input );
-			$max = ( isset( $attrs['max'] ) ? $attrs['max'] : $input );
+			$min  = ( isset( $attrs['min'] ) ? $attrs['min'] : $input );
+			$max  = ( isset( $attrs['max'] ) ? $attrs['max'] : $input );
 			$step = ( isset( $attrs['step'] ) ? $attrs['step'] : 1 );
 
 			$number = floor( $input / $attrs['step'] ) * $attrs['step'];
@@ -1325,5 +1322,4 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			return skyrocket_in_range( $number, $min, $max );
 		}
 	}
-
 }

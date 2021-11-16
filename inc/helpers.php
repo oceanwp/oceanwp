@@ -254,6 +254,11 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			$classes[] = 'has-parallax-footer';
 		}
 
+		// Fix the footer to the bottom.
+		if ( 'on' == get_theme_mod( 'ocean_fix_footer_to_bottom', 'off' ) ) {
+			$classes[] = 'has-fix-footer-to-bottom';
+		}
+
 		// Pagination.
 		$pagination_align = get_theme_mod( 'ocean_pagination_align', 'right' );
 		if ( 'right' != $pagination_align ) {

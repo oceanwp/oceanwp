@@ -449,7 +449,6 @@ module.exports = function (grunt) {
                     "!desktop.ini",
                     "!prepros.cfg",
                     "!CONTRIBUTING.md",
-                    "!README.md",
                     "!.csscomb.json",
                     "!.tern-project",
                     "!.gitignore",

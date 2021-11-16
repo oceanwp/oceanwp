@@ -2,8 +2,6 @@ import { DOM } from "../../constants";
 import { isSelectorValid, offset } from "../../lib/utils";
 
 class ScrollEffect {
-    #lastScrollTop = 0;
-
     constructor() {
         if (
             !DOM.body.classList.contains("single-product") &&
@@ -63,27 +61,6 @@ class ScrollEffect {
                     this.#getAdminBarHeight() -
                     this.#getTopbarHeight() -
                     this.#getStickyHeaderHeight();
-
-                if (
-                    !document
-                        .querySelector("#site-header-sticky-wrapper")
-                        ?.classList.contains("is-sticky") &&
-                    (!!document.querySelector("#site-header-sticky-wrapper") ||
-                        !!document.querySelector("#stick-anything-header") ||
-                        !!document
-                            .querySelector(".elementor-section-wrap")
-                            ?.firstElementChild.classList.contains(
-                                "elementor-sticky"
-                            )) &&
-                    !!DOM.header.site &&
-                    !DOM.header.site.classList.contains("top-header") &&
-                    !DOM.header.site.classList.contains("medium-header") &&
-                    !DOM.header.site.classList.contains("vertical-header")
-                ) {
-                    window.addEventListener("scroll", e =>
-                        this.#fixMultiMenu(e, targetElem)
-                    );
-                }
 
                 DOM.html.scrollTo({
                     top: scrollPosition,
@@ -153,7 +130,6 @@ class ScrollEffect {
         }
 
         if (
-            !DOM.header.site &&
             !!document
                 .querySelector(".elementor-section-wrap")
                 ?.firstElementChild.classList.contains("elementor-sticky")
@@ -163,39 +139,6 @@ class ScrollEffect {
         }
 
         return 0;
-    };
-
-    #fixMultiMenu = (event, targetElem) => {
-        const fixedOffset =
-            offset(targetElem).top -
-            this.#getAdminBarHeight() -
-            this.#getTopbarHeight() -
-            this.#getStickyHeaderHeight(true);
-
-        if (window.pageYOffset.toFixed() === fixedOffset.toFixed()) {
-            window.removeEventListener("scroll", this.#fixMultiMenu);
-
-            if (
-                DOM.header.site?.offsetHeight - 1 >
-                this.#getStickyHeaderHeight(true)
-            ) {
-                const scrollPosition =
-                    offset(targetElem).top -
-                    this.#getAdminBarHeight() -
-                    this.#getTopbarHeight() -
-                    DOM.header.site?.offsetHeight;
-
-                DOM.html.scrollTo({
-                    top: scrollPosition,
-                    behavior:
-                        window.pageYOffset > this.#lastScrollTop
-                            ? "smooth"
-                            : "auto",
-                });
-
-                this.#lastScrollTop = window.pageYOffset;
-            }
-        }
     };
 }
 

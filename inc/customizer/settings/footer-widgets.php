@@ -167,6 +167,36 @@ if ( ! class_exists( 'OceanWP_Footer_Widgets_Customizer' ) ) :
 			);
 
 			/**
+			 * Fixed Footer
+			 */
+			$wp_customize->add_setting(
+				'ocean_fix_footer_to_bottom',
+				array(
+					'default'           => 'off',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_fix_footer_to_bottom',
+					array(
+						'label'           => esc_html__( 'Fix the footer to the bottom', 'oceanwp' ),
+						'description'     => esc_html__( 'When this option is active, the footer will stick to the bottom of the page. Useful for short pages.', 'oceanwp' ),
+						'section'         => $section,
+						'settings'        => 'ocean_fix_footer_to_bottom',
+						'priority'        => 10,
+						'choices'         => array(
+							'on'  => esc_html__( 'On', 'oceanwp' ),
+							'off' => esc_html__( 'Off', 'oceanwp' ),
+						),
+						'active_callback' => 'oceanwp_cac_has_footer_widgets',
+					)
+				)
+			);
+
+			/**
 			 * Footer Widgets Template
 			 */
 			$wp_customize->add_setting(

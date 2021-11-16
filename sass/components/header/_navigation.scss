@@ -116,13 +116,10 @@
 
     ul.sub-menu {
         position: absolute;
-        visibility: hidden;
-        pointer-events: none;
+        display: none;
         top: 100%;
         left: 0;
         z-index: 9999;
-        opacity: 0;
-        transition: 0.3s;
     }
 
     > li {
@@ -131,10 +128,7 @@
 
     li:hover > ul,
     li.sfHover > ul {
-        // display: block;
-        visibility: visible;
-        pointer-events: auto;
-        opacity: 1;
+        display: block;
     }
 
     a.menu-link {
@@ -161,14 +155,12 @@
 
 .dropdown-menu {
     .sub-menu {
-        visibility: hidden;
-        pointer-events: none;
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
         background-color: $color-1;
         border-top: 3px solid $color-5;
-        opacity: 0;
         min-width: 180px;
         line-height: 1;
         text-align: left;

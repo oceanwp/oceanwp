@@ -24,21 +24,28 @@ export default class Footer {
         window.addEventListener("resize", this.#onWindowResize);
     };
 
-    #onWindowLoad = (event) => {
+    #onWindowLoad = event => {
         this.#fixFooterAtMiddlePage();
         this.#fixedFooter();
         this.#parallaxFooter();
     };
 
-    #onWindowResize = (event) => {
+    #onWindowResize = event => {
         this.#fixFooterAtMiddlePage();
-        if (this.#lastWindowWidth !== window.innerWidth || this.#lastWindowHeight !== window.innerHeight) {
+        if (
+            this.#lastWindowWidth !== window.innerWidth ||
+            this.#lastWindowHeight !== window.innerHeight
+        ) {
             this.#fixedFooter();
         }
         this.#parallaxFooter();
     };
 
     #fixFooterAtMiddlePage = () => {
+        if (!document.body.classList.contains("has-fix-footer-to-bottom")) {
+            return;
+        }
+
         const wpAdminbarHeight = DOM.WPAdminbar?.offsetHeight ?? 0;
         const footerBarHeight = DOM.footer.footerBar?.offsetHeight ?? 0;
         const htmlHeight = DOM.html.offsetHeight - wpAdminbarHeight;
@@ -81,7 +88,10 @@ export default class Footer {
             offset = DOM.WPAdminbar.offsetHeight;
         }
 
-        DOM.main.style.minHeight = DOM.main.offsetHeight + (window.innerHeight - DOM.html.offsetHeight - offset) + "px";
+        DOM.main.style.minHeight =
+            DOM.main.offsetHeight +
+            (window.innerHeight - DOM.html.offsetHeight - offset) +
+            "px";
     };
 
     #parallaxFooter = () => {
@@ -93,7 +103,8 @@ export default class Footer {
 
                 if (!!DOM.footer.calloutFooter) {
                     DOM.footer.calloutFooter.style.bottom = `${mainSectionMarginBottom}px`;
-                    mainSectionMarginBottom += DOM.footer.calloutFooter.offsetHeight;
+                    mainSectionMarginBottom +=
+                        DOM.footer.calloutFooter.offsetHeight;
                 }
 
                 DOM.main.style.marginBottom = `${mainSectionMarginBottom}px`;
