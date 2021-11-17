@@ -1,6 +1,12 @@
 import delegate from "delegate";
 import { DOM } from "../../../constants";
-import { slideUp, slideDown, fadeIn, fadeOut, visible } from "../../../lib/utils";
+import {
+    slideUp,
+    slideDown,
+    fadeIn,
+    fadeOut,
+    visible,
+} from "../../../lib/utils";
 
 class FullScreenMobileMenu {
     constructor() {
@@ -13,22 +19,35 @@ class FullScreenMobileMenu {
     }
 
     #start = () => {
-        DOM.mobileMenu.fullScreen?.querySelectorAll(".menu-item-has-children > a")?.forEach((menuItemLink) => {
-            menuItemLink.insertAdjacentHTML("beforeend", '<span class="dropdown-toggle" tabindex=0></span>');
-        });
+        DOM.mobileMenu.fullScreen
+            ?.querySelectorAll(".menu-item-has-children > a")
+            ?.forEach(menuItemLink => {
+                menuItemLink.insertAdjacentHTML(
+                    "beforeend",
+                    '<span class="dropdown-toggle" tabindex=0></span>'
+                );
+            });
     };
 
     #setupEventListeners = () => {
         window.addEventListener("resize", this.#onWindowResize);
 
-        delegate(document.body, ".mobile-menu", "click", this.#onMenuButtonClick);
+        delegate(
+            document.body,
+            ".mobile-menu",
+            "click",
+            this.#onMenuButtonClick
+        );
 
         document
             .querySelectorAll(
                 '#mobile-fullscreen nav ul > li.menu-item-has-children > a > span.dropdown-toggle, #mobile-fullscreen nav ul > li.menu-item-has-children > a[href="#"]'
             )
-            .forEach((menuItemLink) => {
-                menuItemLink.addEventListener("click", this.#onDropownToggleIcon);
+            .forEach(menuItemLink => {
+                menuItemLink.addEventListener(
+                    "click",
+                    this.#onDropownToggleIcon
+                );
                 menuItemLink.addEventListener("tap", this.#onDropownToggleIcon);
             });
 
@@ -36,14 +55,14 @@ class FullScreenMobileMenu {
             .querySelectorAll(
                 '#mobile-fullscreen .fs-dropdown-menu li a[href*="#"]:not([href="#"]), #mobile-fullscreen #mobile-nav li a[href*="#"]:not([href="#"]), #mobile-fullscreen a.close'
             )
-            .forEach((menuItemLink) => {
+            .forEach(menuItemLink => {
                 menuItemLink.addEventListener("click", this.#onCloseIconClick);
             });
 
         document.addEventListener("keydown", this.#onDocumentKeydown);
     };
 
-    #onMenuButtonClick = (event) => {
+    #onMenuButtonClick = event => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -56,12 +75,13 @@ class FullScreenMobileMenu {
         const htmlWidthBeforeOverflowHidden = DOM.html.innerWidth;
         DOM.html.style.overflow = "hidden";
         const htmlWidthAfterOverflowHidden = DOM.html.innerWidth;
-        DOM.html.style.marginRight = htmlWidthAfterOverflowHidden - htmlWidthBeforeOverflowHidden + "px";
+        DOM.html.style.marginRight =
+            htmlWidthAfterOverflowHidden - htmlWidthBeforeOverflowHidden + "px";
 
         DOM.mobileMenu.fullScreen.querySelector("a.close").focus();
     };
 
-    #onCloseIconClick = (event) => {
+    #onCloseIconClick = event => {
         if (event.currentTarget.getAttribute("href").substring(0, 1) === "#") {
             event.preventDefault();
         }
@@ -79,25 +99,29 @@ class FullScreenMobileMenu {
             DOM.html.style.overflow = "";
             DOM.html.style.marginRight = "";
 
-            document.querySelectorAll("#mobile-fullscreen nav ul > li.dropdown").forEach((menuItem) => {
-                menuItem.classList.remove("open-sub");
-            });
+            document
+                .querySelectorAll("#mobile-fullscreen nav ul > li.dropdown")
+                .forEach(menuItem => {
+                    menuItem.classList.remove("open-sub");
+                });
 
-            document.querySelectorAll("#mobile-fullscreen nav ul.sub-menu").forEach((subMenu) => {
-                slideUp(subMenu, 250);
-            });
+            document
+                .querySelectorAll("#mobile-fullscreen nav ul.sub-menu")
+                .forEach(subMenu => {
+                    slideUp(subMenu, 250);
+                });
 
             DOM.mobileMenu.hamburgerBtn?.classList.remove("is-active");
         }
     };
 
-    #onWindowResize = (event) => {
+    #onWindowResize = event => {
         if (window.innerWidth >= 960) {
             this.#closeMenu();
         }
     };
 
-    #onDropownToggleIcon = (event) => {
+    #onDropownToggleIcon = event => {
         event.preventDefault();
         event.stopPropagation();
 
@@ -117,7 +141,7 @@ class FullScreenMobileMenu {
     /**
      * Trap keyboard navigation in the menu modal.
      */
-    #onDocumentKeydown = (event) => {
+    #onDocumentKeydown = event => {
         if (!DOM.mobileMenu.fullScreen?.classList.contains("active")) {
             return;
         }
@@ -143,7 +167,10 @@ class FullScreenMobileMenu {
             this.#closeMenu();
         }
 
-        if (enterKey && document.activeElement.classList.contains("dropdown-toggle")) {
+        if (
+            enterKey &&
+            document.activeElement.classList.contains("dropdown-toggle")
+        ) {
             event.preventDefault();
             document.activeElement.click();
         }

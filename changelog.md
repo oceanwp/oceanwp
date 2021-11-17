@@ -1,5 +1,11 @@
 # OceanWP Changelog
 
+### _2021.11.17._ - 3.1.1
+
+-   **Fixed** Header: submenu display issue.
+-   **Fixed** Fatal Error: WP_Customize_Section not found.
+-   **Fixed** Some PHP notices.
+
 ### _2021.11.10._ - 3.1.0
 
 -   **New** - Customizer: Customizer Search.

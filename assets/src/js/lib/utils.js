@@ -70,10 +70,6 @@ export const slideToggle = (element, duration) => {
 };
 
 export const fadeIn = (element, _options = {}) => {
-    if (element.style.display !== "none") {
-        return;
-    }
-
     const options = {
         duration: 300,
         display: null,

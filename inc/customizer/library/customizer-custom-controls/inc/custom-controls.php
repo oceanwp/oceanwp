@@ -171,17 +171,25 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
-
+				
 				<?php foreach ( $this->choices as $key => $value ) { ?>
 					<?php
+					if ( ! is_array( $value ) ) {
+						$value = array(
+							'image' => $value,
+							'name'  => '',
+						);
+					} else {
 						$value = array(
 							'image' => isset( $value['image'] ) ? $value['image'] : '',
 							'name'  => isset( $value['name'] ) ? $value['name'] : '',
-						)
-						?>
+						);
+					}
+
+					?>
 					<label class="radio-button-label">
 						<input type="radio" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $key ); ?>" <?php $this->link(); ?> <?php checked( ow_esc_attr( $key ), $this->value() ); ?>/>
-						<img src="<?php echo ow_esc_attr( $value['image'] ); ?>" alt="<?php echo ow_esc_attr( $value['name'] ); ?>" title="<?php echo ow_esc_attr( $value['name'] ); ?>" />
+						<img src="<?php echo esc_url( $value['image'] ); ?>" alt="<?php echo ow_esc_attr( $value['name'] ); ?>" title="<?php echo ow_esc_attr( $value['name'] ); ?>" />
 					</label>
 				<?php	} ?>
 			</div>
