@@ -1,9 +1,9 @@
 # OceanWP
 
-**Contributors:** Nicolas, Amit, Marko and Mohammad Taghi
+**Contributors:** Amit, Marko and Mohammad Taghi
 **Requires at least:** WordPress 5.6
-**Tested up to:** WordPress 5.8.1
-**Stable tag:** 3.1.1
+**Tested up to:** WordPress 5.8.2
+**Stable tag:** 3.1.2
 **Requires PHP:** 7.2
 **License:** GPLv2 or later
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
@@ -11,7 +11,7 @@
 
 ## Description
 
-_OceanWP_ is a versatile and complete Multi-Purpose [WordPress](https://wordpress.org) theme, designed and built by [Nick](https://oceanwp.org/) to help you create outstanding and unique websites for every occasion with no limits. It's available to download for free at the site [OceanWP](https://oceanwp.org/).
+_OceanWP_ is a versatile and complete Multi-Purpose [WordPress](https://wordpress.org) theme, designed and built by [OceanWP](https://oceanwp.org/) to help you create outstanding and unique websites for every occasion with no limits. It's available to download for free at the site [OceanWP](https://oceanwp.org/).
 
 No matter how big or small, demanding or simple your blog, web page or eCommerce website is, _OceanWP_ has got you covered.
 

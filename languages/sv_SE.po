@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Nick
+# Copyright (C) 2016 OceanWP
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
@@ -4677,7 +4677,7 @@ msgid "Vortex Reverse"
 msgstr ""
 
 #: inc/helpers.php:3787
-msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
+msgid "Copyright [oceanwp_date] - OceanWP Theme by OceanWP"
 msgstr ""
 
 #: inc/helpers.php:3810

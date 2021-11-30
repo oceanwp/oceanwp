@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### _2021.11.30._ - 3.1.2
+
+-   **Fixed** Some minor issues.
+
 ### _2021.11.17._ - 3.1.1
 
 -   **Fixed** Header: submenu display issue.

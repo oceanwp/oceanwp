@@ -3937,7 +3937,7 @@ if ( ! function_exists( 'oceanwp_register_tm_strings' ) ) {
 				'ocean_mobile_menu_text'                => esc_html__( 'Menu', 'oceanwp' ),
 				'ocean_mobile_menu_close_text'          => esc_html__( 'Close', 'oceanwp' ),
 				'ocean_mobile_menu_close_btn_text'      => esc_html__( 'Close Menu', 'oceanwp' ),
-				'ocean_footer_copyright_text'           => esc_html__( 'Copyright [oceanwp_date] - OceanWP Theme by Nick', 'oceanwp' ),
+				'ocean_footer_copyright_text'           => esc_html__( 'Copyright [oceanwp_date] - OceanWP Theme by OceanWP', 'oceanwp' ),
 				'ocean_woo_menu_icon_custom_link'       => '',
 				'ocean_blog_infinite_scroll_last_text'  => '',
 				'ocean_blog_infinite_scroll_error_text' => '',

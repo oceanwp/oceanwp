@@ -5125,8 +5125,8 @@ msgid "Vortex Reverse"
 msgstr ""
 
 #: inc/helpers.php:3787
-msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
-msgstr "Copyright [oceanwp_date] - OceanWP Theme by Nick"
+msgid "Copyright [oceanwp_date] - OceanWP Theme by OceanWP"
+msgstr "Copyright [oceanwp_date] - OceanWP Theme by OceanWP"
 
 #: inc/helpers.php:3810
 msgid "Twitter"
