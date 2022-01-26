@@ -20,7 +20,7 @@ $show_woo_cond = ( is_user_logged_in() && true === $ocean_woo_cond );
 $hide_woo_cond = ( ! is_user_logged_in() && true === $ocean_woo_cond );
 
 // Get links conditional mod.
-$ocean_woo_disable_links = get_theme_mod( 'ocean_shop_woo_disable_links', false );
+$ocean_woo_disable_links      = get_theme_mod( 'ocean_shop_woo_disable_links', false );
 $ocean_woo_disable_links_cond = get_theme_mod( 'ocean_shop_woo_disable_links_cond', 'no' );
 
 $disable_links = '';
@@ -66,7 +66,7 @@ if ( get_theme_mod( 'ocean_woo_quick_view', true )
 
 	if ( 'ti_wl' === $wl_plugin && class_exists( 'TInvWL_Wishlist' ) ) {
 		echo '<li class="woo-wishlist-btn">' . do_shortcode( '[ti_wishlists_addtowishlist]' ) . '</li>';
-	} else if ( 'yith_wl' === $wl_plugin && class_exists( 'YITH_WCWL' ) ) {
+	} elseif ( 'yith_wl' === $wl_plugin && class_exists( 'YITH_WCWL' ) ) {
 		echo '<li class="woo-wishlist-btn">' . do_shortcode( '[yith_wcwl_add_to_wishlist]' ) . '</li>';
 	}
 
@@ -95,16 +95,16 @@ echo '<li class="title">';
 
 	do_action( 'ocean_before_archive_product_title_inner' );
 
-	if ( false === $ocean_woo_disable_links
+if ( false === $ocean_woo_disable_links
 		|| ( $disable_links && is_user_logged_in() ) ) {
 
 		echo '<' . esc_attr( $heading ) . '><a href="' . esc_url( get_the_permalink() ) . '">' . get_the_title() . '</a></' . esc_attr( $heading ) . '>';
 
-	} else {
+} else {
 
-		echo '<' . esc_attr( $heading ) . '>' . get_the_title() . '</' . esc_attr( $heading ) . '>';
+	echo '<' . esc_attr( $heading ) . '>' . get_the_title() . '</' . esc_attr( $heading ) . '>';
 
-	}
+}
 
 	do_action( 'ocean_after_archive_product_title_inner' );
 
@@ -118,7 +118,7 @@ do_action( 'ocean_before_archive_product_inner' );
 if ( false === $ocean_woo_cond || $show_woo_cond ) {
 
 	echo '<li class="price-wrap">';
-	
+
 		do_action( 'ocean_before_archive_product_price' );
 		woocommerce_template_loop_price();
 		do_action( 'ocean_after_archive_product_price' );
@@ -128,7 +128,7 @@ if ( false === $ocean_woo_cond || $show_woo_cond ) {
 } else {
 
 	$ocean_woo_cond_msg = get_theme_mod( 'ocean_shop_cond_msg', 'yes' );
-		
+
 	if ( $ocean_woo_cond_msg === 'yes' ) {
 
 		// Get Add to Cart button replacement message.
@@ -139,12 +139,12 @@ if ( false === $ocean_woo_cond || $show_woo_cond ) {
 
 		echo '<li class="owp-woo-cond-notice">';
 		if ( false === $woo_add_myaccunt_link ) {
-			echo '<span>'. $woo_cond_message .'</span>';
+			echo '<span>' . $woo_cond_message . '</span>';
 		} else {
 			echo '<a href="' . esc_url( get_permalink( wc_get_page_id( 'myaccount' ) ) ) . '">' . $woo_cond_message . '</a>';
-		}	
+		}
 		echo '</li>';
-		
+
 	}
 }
 

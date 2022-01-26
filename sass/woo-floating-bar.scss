@@ -3,14 +3,14 @@ Woo Floating Bar
 -------------------------------------------------------------------*/
 
 // Opacity
-@mixin opacity( $args ) {
+@mixin opacity($args) {
     -moz-opacity: $args;
     -webkit-opacity: $args;
     opacity: $args;
 }
 
 // Transition
-@mixin transition( $args ) {
+@mixin transition($args) {
     -webkit-transition: $args;
     -moz-transition: $args;
     -ms-transition: $args;
@@ -27,139 +27,139 @@ Woo Floating Bar
 }
 
 // Flex Wrap
-@mixin flex-wrap( $args ) {
+@mixin flex-wrap($args) {
     -ms-flex-wrap: $args;
     -webkit-flex-wrap: $args;
     flex-wrap: $args;
 }
 
 // Align Items
-@mixin align-items( $args ) {
+@mixin align-items($args) {
     -webkit-align-items: $args;
     align-items: $args;
 }
 
 .owp-floating-bar {
-	position: fixed;
+    position: fixed;
     top: 0;
     background-color: #2c2c2c;
     width: 100%;
     height: 0;
-    z-index: 15;
-   	@include opacity( 0 );
-   	visibility: hidden;
-    @include transition( all .3s );
+    z-index: 9999;
+    @include opacity(0);
+    visibility: hidden;
+    @include transition(all 0.3s);
 
     &.show {
-    	height: 66px;
-	   	@include opacity( 1 );
-	   	visibility: visible;
+        height: 66px;
+        @include opacity(1);
+        visibility: visible;
     }
 
-	.container {
-	    @include display();
-	    @include flex-wrap( wrap );
-	    @include align-items( center );
-	    height: 66px;
-	}
+    .container {
+        @include display();
+        @include flex-wrap(wrap);
+        @include align-items(center);
+        height: 66px;
+    }
 
-	.left,
-	.right {
-		width: 50%;
-	}
+    .left,
+    .right {
+        width: 50%;
+    }
 
-	.right {
-		text-align: right;
-	}
+    .right {
+        text-align: right;
+    }
 
-	p.selected {
-		display: inline-block;
-    	margin-bottom: 0;
-	    margin-right: 12px;
-	    color: #fff;
-	    font-size: 16px;
-	    font-weight: 600;
-	}
+    p.selected {
+        display: inline-block;
+        margin-bottom: 0;
+        margin-right: 12px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+    }
 
-	h2.entry-title {
-		display: inline-block;
-	    color: #fff;
-	    font-size: 16px;
-	    font-weight: 300;
-	    margin: 0;
-	    padding: 0;
-	    border: 0;
-	}
+    h2.entry-title {
+        display: inline-block;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
 
-	.product_price {
-		display: inline-block;
+    .product_price {
+        display: inline-block;
 
-		p {
-			font-size: 16px;
-		    font-weight: 600;
-		    margin: 0 30px 0 0;
-		}
+        p {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 30px 0 0;
+        }
 
-		del {
-			@include opacity( .7 );
-		}
+        del {
+            @include opacity(0.7);
+        }
 
-		del .amount,
-		.amount {
-			color: #fff;
-		}
-	}
+        del .amount,
+        .amount {
+            color: #fff;
+        }
+    }
 
-	form.cart {
-		display: inline-block;
+    form.cart {
+        display: inline-block;
 
-		.quantity {
-			margin: 5px 15px 0 0;
+        .quantity {
+            margin: 5px 15px 0 0;
 
-			.minus,
-			.plus {
-				background-color: rgba(255,255,255,.1);
-			    color: #fff;
-			    font-size: 20px;
-			    border: 0;
+            .minus,
+            .plus {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: #fff;
+                font-size: 20px;
+                border: 0;
 
-			    &:hover {
-			    	background-color: rgba(255,255,255,0.2);
-			    }
-			}
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
 
-			.qty {
-			    background-color: rgba(255,255,255,0.2);
-			    color: #fff;
-				border: 0;
-			}
-		}
-	}
+            .qty {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: #fff;
+                border: 0;
+            }
+        }
+    }
 
-	button.button {
-		background-color: #fff;
-	    color: #000;
-	    font-size: 14px;
-	    height: 46px;
-	    padding: 0 40px;
+    button.button {
+        background-color: #fff;
+        color: #000;
+        font-size: 14px;
+        height: 46px;
+        padding: 0 40px;
 
-	    &:hover,
-	    &:focus {
-	    	background-color: #f1f1f1;
-	    }
-	}
+        &:hover,
+        &:focus {
+            background-color: #f1f1f1;
+        }
+    }
 
-	.added_to_cart {
-		display: none;
-	}
+    .added_to_cart {
+        display: none;
+    }
 
-	.out-of-stock {
-		display: inline-block;
-	    margin: 0;
-	    color: #fff;
-	    font-size: 16px;
-	    font-weight: 600;
-	}
+    .out-of-stock {
+        display: inline-block;
+        margin: 0;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+    }
 }
 
 .boxed-layout .owp-floating-bar {
@@ -169,81 +169,78 @@ Woo Floating Bar
 
 /* Responsive */
 @media screen and (max-width: 1024px) {
-	body {
-		margin-bottom: 45px;
-	}
-	
-	.owp-floating-bar {
-	    top: auto !important;
-	    bottom: 0;
+    body {
+        margin-bottom: 45px;
+    }
 
-	    &.show,
-	    .container {
-	    	height: 45px;
-	    }
+    .owp-floating-bar {
+        top: auto !important;
+        bottom: 0;
 
-		.left,
-		.right {
-			width: 50%;
-		}
+        &.show,
+        .container {
+            height: 45px;
+        }
 
-		.right {
-			text-align: right;
-		}
+        .left,
+        .right {
+            width: 50%;
+        }
 
-		form.cart {
-			vertical-align: bottom;
-			
-			.quantity {
-			    margin-top: 0;
-			}
-		}
+        .right {
+            text-align: right;
+        }
 
-		button.button {
-		    height: 36px;
-		    padding: 0 30px;
-		}
-	}
+        form.cart {
+            vertical-align: bottom;
 
-	#scroll-top {
-    	bottom: 50px;
+            .quantity {
+                margin-top: 0;
+            }
+        }
+
+        button.button {
+            height: 36px;
+            padding: 0 30px;
+        }
+    }
+
+    #scroll-top {
+        bottom: 50px;
     }
 }
 
 @media screen and (max-width: 1191px) {
-	
-	.owp-floating-bar {
+    .owp-floating-bar {
+        .left {
+            display: none;
+        }
 
-		.left {
-			display: none;
-		}
-
-		.right {
-			width: 100%;
-			text-align: center;
-		}
-	}
+        .right {
+            width: 100%;
+            text-align: center;
+        }
+    }
 }
 
 @media screen and (max-width: 700px) {
-	.owp-floating-bar .product_price {
-		display: none;
-	}
+    .owp-floating-bar .product_price {
+        display: none;
+    }
 }
 
-
 @media screen and (max-width: 339px) {
-	[class*="owp-floating-bar"] [class*="quantity"] {
-		display: none;
-	}
+    [class*="owp-floating-bar"] [class*="quantity"] {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 300px) {
-	.owp-floating-bar {
-		display: none;
-	}
+    .owp-floating-bar {
+        display: none;
+    }
 
-	body {
-		margin-bottom: 0px;
-	}
+    body {
+        margin-bottom: 0px;
+    }
 }

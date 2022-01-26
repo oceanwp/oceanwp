@@ -1513,7 +1513,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'centered'         => esc_html__( 'Centered', 'oceanwp' ),
 							'centered-minimal' => esc_html__( 'Centered Minimal', 'oceanwp' ),
 							'background-image' => esc_html__( 'Background Image', 'oceanwp' ),
-							'hidden'           =>  esc_html__( 'Hidden', 'oceanwp' ),
+							'hidden'           => esc_html__( 'Hidden', 'oceanwp' ),
 						),
 					)
 				)
@@ -3863,6 +3863,170 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				)
 			);
 
+			/**
+			 * Section SEO
+			 *
+			 * @since 3.0.0
+			 */
+			$wp_customize->add_section(
+				'ocean_general_seo_settings',
+				array(
+					'title'    => esc_html__( 'SEO Settings', 'oceanwp' ),
+					'priority' => 10,
+					'panel'    => $panel,
+				)
+			);
+
+			/**
+			 * Enable image alt text on blog entry featured images
+			 */
+			$wp_customize->add_setting(
+				'ocean_enable_be_fimage_alt',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_enable_be_fimage_alt',
+					array(
+						'label'    => esc_html__( 'Use featured image ALT text on blog entries', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Enable image alt text on single post featured images
+			 */
+			$wp_customize->add_setting(
+				'ocean_enable_sp_fimage_alt',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_enable_sp_fimage_alt',
+					array(
+						'label'    => esc_html__( 'Use featured image ALT text on single posts', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Enable image alt text on single post featured images
+			 */
+			$wp_customize->add_setting(
+				'ocean_enable_srp_fimage_alt',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_enable_srp_fimage_alt',
+					array(
+						'label'    => esc_html__( 'Use featured image ALT text on single post related items', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Call Performance Section
+			 *
+			 * @since 3.0.3
+			 * @return void
+			 */
+			$this->performance_section( $wp_customize, $panel );
+		}
+
+		/**
+		 * Performance Section
+		 *
+		 * @return void
+		 *
+		 * @since 3.0.3
+		 */
+		private function performance_section( $wp_customize, $panel ) {
+			/**
+			 * Section
+			 */
+			$wp_customize->add_section(
+				'ocean_general_performance_section',
+				array(
+					'title'    => esc_html__( 'Performance', 'oceanwp' ),
+					'priority' => 10,
+					'panel'    => $panel,
+				)
+			);
+
+			/**
+			 * Disable Lightbox
+			 */
+			$wp_customize->add_setting(
+				'ocean_disable_lightbox',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_disable_lightbox',
+					array(
+						'label'    => esc_html__( 'Disable Lightbox', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_performance_section',
+						'settings' => 'ocean_disable_lightbox',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Disable Emoji
+			 */
+			$wp_customize->add_setting(
+				'ocean_disable_emoji',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_disable_emoji',
+					array(
+						'label'    => esc_html__( 'Disable Emoji', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_performance_section',
+						'settings' => 'ocean_disable_emoji',
+						'priority' => 10,
+					)
+				)
+			);
 		}
 
 		/**

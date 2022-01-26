@@ -4618,7 +4618,7 @@ msgid "Vortex Reverse"
 msgstr ""
 
 #: inc/helpers.php:3787
-msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
+msgid "Copyright [oceanwp_date] - OceanWP Theme by OceanWP"
 msgstr ""
 
 #: inc/helpers.php:3810
@@ -5843,7 +5843,7 @@ msgstr ""
 "لینک که قرار داده می شود ببینید: https://demo.hamyarwp.com/oceanwp/"
 
 #. Author of the plugin/theme
-msgid "Nick"
+msgid "OceanWP"
 msgstr ""
 
 #. Author URI of the plugin/theme

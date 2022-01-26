@@ -48,7 +48,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 		// Get cart icon.
 		$woo_icon = get_theme_mod( 'ocean_woo_menu_icon', 'icon_handbag' );
-		$woo_icon = $woo_icon ? $woo_icon : 'icon_handbag';
+		$woo_icon = in_array( $woo_icon, oceanwp_get_cart_icons() ) && $woo_icon ? $woo_icon : 'icon_handbag';
 
 		// If has custom cart icon.
 		$custom_icon = get_theme_mod( 'ocean_woo_menu_custom_icon' );
@@ -79,6 +79,8 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 	// Turn classes into space seperated string.
 	$classes = implode( ' ', $classes ); ?>
+
+	<?php do_action( 'ocean_mobile_menu_icon_before' ); ?>
 
 	<div class="<?php echo esc_attr( $classes ); ?>">
 
@@ -135,5 +137,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 		<?php do_action( 'ocean_after_mobile_icon' ); ?>
 
 	</div><!-- #oceanwp-mobile-menu-navbar -->
+
+	<?php do_action( 'ocean_mobile_menu_icon_after' ); ?>
 
 <?php endif; ?>

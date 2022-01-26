@@ -1,7 +1,7 @@
 == OceanWP ==
 Contributors: oceanwp
-Tested up to: 5.7.2
-Stable tag: 2.1.1
+Tested up to: 5.8
+Stable tag: 3.1.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -73,29 +73,29 @@ HTML5 Shiv, Copyright 2014 Alexander Farkas
 Licenses: MIT/GPL2 - https://opensource.org/licenses/MIT
 Source: https://github.com/aFarkas/html5shiv
 
-customSelect, Copyright 2013 Adam Coulombe
+Flickity, Copyright (c) 2015-2021 Metafizzy
+License: GPLv3 - https://www.gnu.org/licenses/gpl-3.0.html
+Source: https://flickity.metafizzy.com
+
+Perfect-Scrollbar, Copyright 2020 Hyunje Jun, MDBootstrap and Contributors
 License: MIT - https://opensource.org/licenses/MIT
-Source: https://adam.co/lab/jquery/customselect/
+Source: https://github.com/mdbootstrap/perfect-scrollbar
+
+Magnific Popup, Copyright (c) 2016 Dmitry Semenov
+License: MIT - https://opensource.org/licenses/MIT
+Source: https://dimsemenov.com/plugins/magnific-popup/
 
 Select2, Copyright (c) 2012-2017 Kevin Brown, Igor Vaynberg, and Select2 contributors
 License: MIT - https://opensource.org/licenses/MIT
 Source: https://select2.github.io
 
 Isotope, Copyright 2015 Metafizzy
-License: GPLv3 - https://opensource.org/licenses/MIT
+License: GPLv3 - https://www.gnu.org/licenses/gpl-3.0.html
 Source: https://isotope.metafizzy.co
-
-Match Heights, Copyright (c) 2014 Liam Brummitt
-License: MIT - https://opensource.org/licenses/MIT
-Source: https://brm.io/jquery-match-height/
 
 NiceScroll, copyright 2016-02-29 InuYaksa*2016
 License: MIT - https://opensource.org/licenses/MIT
 Source: https://github.com/inuyaksa/jquery.nicescroll
-
-Slick, Copyright (c) Ken Wheeler
-License: MIT - https://opensource.org/licenses/MIT
-Source: https://github.com/kenwheeler/slick/
 
 Sidr, Copyright (c) 2013-2016 Alberto Varela
 License: MIT - https://opensource.org/licenses/MIT
@@ -104,10 +104,6 @@ Source: https://github.com/artberri/sidr
 SmoothScroll, Copyright Balazs Galambosi
 License: MIT - https://opensource.org/licenses/MIT
 Source: https://www.smoothscroll.net/
-
-Superfish, Copyright (c) 2013 Joel Birch
-License: MIT/GPL - https://opensource.org/licenses/MIT
-Source: https://github.com/joeldbirch/superfish
 
 Infinite Scroll, Copyright 2017 Metafizzy
 License: GPLv3 - https://www.gnu.org/licenses/gpl-3.0.html
@@ -133,10 +129,6 @@ BreadcrumbTrail, Copyright 2008-2015 Justin Tadlock
 License: GNU/GPL - https://opensource.org/licenses/MIT
 Source: https://github.com/justintadlock/breadcrumb-trail
 
-Magnific Popup, Copyright (c) 2016 Dmitry Semenov
-License: MIT - https://opensource.org/licenses/MIT
-Source: https://dimsemenov.com/plugins/magnific-popup/
-
 Fitvids, Copyright 2013, Chris Coyier
 License: WTFPL - http://sam.zoy.org/wtfpl/
 Source: http://css-tricks.com + Dave Rupert - http://daverupert.com
@@ -148,3 +140,7 @@ Source: https://github.com/jonsuh/hamburgers
 Unique ID function from the Twenty Twenty theme, Copyright 2019-2020 WordPress.org
 License: GPLv2 or later - https://www.gnu.org/licenses/gpl-2.0.html
 Source: https://wordpress.org/themes/twentytwenty/
+
+Customizer Custom Controls, Copyright Anthony Hortin
+License: License: GPLv2 or later - https://www.gnu.org/licenses/gpl-2.0.html
+Source: https://github.com/maddisondesigns/customizer-custom-controls

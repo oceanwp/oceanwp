@@ -242,7 +242,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 				'section'  				=> 'ocean_llms_general',
 				'settings' 				=> 'ocean_llms_membership_image',
 				'priority' 				=> 10,
-			) ) );	
+			) ) );
 
 			/**
 			 * Section
@@ -682,7 +682,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_llms_padding', array(
 				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
-				'section'  				=> 'ocean_llms_styling',				
+				'section'  				=> 'ocean_llms_styling',
 				'settings'   => array(
 		            'desktop_top' 		=> 'ocean_llms_top_padding',
 		            'desktop_right' 	=> 'ocean_llms_right_padding',
@@ -761,7 +761,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_llms_image_margin', array(
 				'label'	   				=> esc_html__( 'Image Margin (px)', 'oceanwp' ),
-				'section'  				=> 'ocean_llms_styling',				
+				'section'  				=> 'ocean_llms_styling',
 				'settings'   => array(
 		            'desktop_top' 		=> 'ocean_llms_image_top_margin',
 		            'desktop_right' 	=> 'ocean_llms_image_right_margin',
@@ -839,7 +839,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_llms_border_width', array(
 				'label'	   				=> esc_html__( 'Border Width (px)', 'oceanwp' ),
-				'section'  				=> 'ocean_llms_styling',				
+				'section'  				=> 'ocean_llms_styling',
 				'settings'   => array(
 		            'desktop_top' 		=> 'ocean_llms_top_border_width',
 		            'desktop_right' 	=> 'ocean_llms_right_border_width',
@@ -918,7 +918,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_llms_border_radius', array(
 				'label'	   				=> esc_html__( 'Border Radius (px)', 'oceanwp' ),
-				'section'  				=> 'ocean_llms_styling',				
+				'section'  				=> 'ocean_llms_styling',
 				'settings'   => array(
 		            'desktop_top' 		=> 'ocean_llms_top_border_radius',
 		            'desktop_right' 	=> 'ocean_llms_right_border_radius',
@@ -1239,7 +1239,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public static function head_css( $output ) {
-		
+
 			// Styling vars
 			$llms_top_padding 								= get_theme_mod( 'ocean_llms_top_padding' );
 			$llms_right_padding 							= get_theme_mod( 'ocean_llms_right_padding' );
@@ -1307,7 +1307,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS_Customizer' ) ) :
 			$course_section_title_color 					= get_theme_mod( 'ocean_llms_course_section_title_color' );
 			$course_section_title_background 				= get_theme_mod( 'ocean_llms_course_section_title_background' );
 
-			// Lesson 
+			// Lesson
 			$lesson_title_color								= get_theme_mod( 'ocean_llms_lesson_title_color' );
 			$lesson_description_color						= get_theme_mod( 'ocean_llms_lesson_description_color' );
 

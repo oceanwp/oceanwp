@@ -1,8 +1,9 @@
-jQuery( document ).ready( function($) {
-
+jQuery(document).on('oceanready', function() {
+	var $ = jQuery;
 	// Responsive switchers
-	$( '.customize-control .responsive-switchers button' ).on( 'click', function( event ) {
+	$( '.customize-control .responsive-switchers button:not(.ocean-proccessed)' ).on( 'click', function( event ) {
 
+		$(this).addClass('ocean-proccessed');
 		// Set up variables
 		var $this 		= $( this ),
 			$devices 	= $( '.responsive-switchers' ),
@@ -35,8 +36,9 @@ jQuery( document ).ready( function($) {
 	} );
 
 	// If panel footer buttons clicked
-	$( '.wp-full-overlay-footer .devices button' ).on( 'click', function( event ) {
+	$( '.wp-full-overlay-footer .devices button:not(.ocean-proccessed)' ).on( 'click', function( event ) {
 
+		$(this).addClass('ocean-proccessed');
 		// Set up variables
 		var $this 		= $( this ),
 			$devices 	= $( '.customize-control.has-switchers .responsive-switchers' ),

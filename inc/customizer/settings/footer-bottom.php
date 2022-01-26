@@ -113,7 +113,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 				'ocean_footer_copyright_text',
 				array(
 					'transport'         => 'postMessage',
-					'default'           => 'Copyright [oceanwp_date] - OceanWP Theme by Nick',
+					'default'           => 'Copyright [oceanwp_date] - OceanWP Theme by OceanWP',
 					'sanitize_callback' => 'wp_kses_post',
 				)
 			);

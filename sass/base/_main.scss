@@ -1,34 +1,206 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;font:inherit;vertical-align:baseline;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html{font-size:62.5%;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}*,*:before,*:after{@include box-sizing( border-box );}article,aside,details,figcaption,figure,footer,header,main,nav,section{display:block}table{border-collapse:collapse;border-spacing:0;}caption,th,td{font-weight:normal;text-align:left;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}blockquote,q{quotes:none}a:focus{outline: 0;}a:hover,a:active{outline:0}a img{border:0}img{max-width:100%;height:auto;}select{max-width:100%}em{font-style: italic;}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+html {
+    font-size: 62.5%;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+*,
+*:before,
+*:after {
+    @include box-sizing(border-box);
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+    display: block;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+caption,
+th,
+td {
+    font-weight: normal;
+    text-align: left;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+a:focus {
+    outline: 0;
+}
+a:hover,
+a:active {
+    outline: 0;
+}
+a img {
+    border: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+select {
+    max-width: 100%;
+}
+em {
+    font-style: italic;
+}
 
 * html {
-	font-size: 100% * ( $font-size / $browser-font-size );
+    font-size: 100% * ($font-size / $browser-font-size);
 }
 
 html {
-	-ms-overflow-x: hidden;
-	overflow-x: hidden;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 body {
-	font-family: $body-font-family;
-	font-size: $font-size;
-	line-height: $base-line-height;
-	color: $body-font-color;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	overflow-wrap: break-word;
+    font-family: $body-font-family;
+    font-size: $font-size;
+    line-height: $base-line-height;
+    color: $body-font-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-wrap: break-word;
     word-wrap: break-word;
 }
 
 body {
-	background-color: $body-bg-color;
+    background-color: $body-bg-color;
 }
 
 .mejs-container {
     margin-bottom: 20px;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
     font-style: italic;
 }
 
@@ -36,54 +208,54 @@ dfn, cite, em, i {
  * Grid > Main Classes.
  */
 body .oceanwp-row {
-	margin: 0 -0.625rem;
+    margin: 0 -0.625rem;
 
-	.col {
-		float: left;
-		margin: 0 0 1.25rem;
-		padding: 0 0.625rem;
-	}
+    .col {
+        float: left;
+        margin: 0 0 1.25rem;
+        padding: 0 0.625rem;
+    }
 
-	.span_1_of_1 {
-		float: none;
-		width: 100%;
-	}
+    .span_1_of_1 {
+        float: none;
+        width: 100%;
+    }
 
-	.span_1_of_2 {
-		width: 50%;
-	}
+    .span_1_of_2 {
+        width: 50%;
+    }
 
-	.span_1_of_3 {
-		width: 33.33%;
-	}
+    .span_1_of_3 {
+        width: 33.33%;
+    }
 
-	.span_1_of_4 {
-		width: 25%;
-	}
+    .span_1_of_4 {
+        width: 25%;
+    }
 
-	.span_1_of_5 {
-		width: 20%;
-	}
+    .span_1_of_5 {
+        width: 20%;
+    }
 
-	.span_1_of_6 {
-		width: 16.66666667%;
-	}
+    .span_1_of_6 {
+        width: 16.66666667%;
+    }
 
-	.span_1_of_7 {
-		width: 14.28%;
-	}
+    .span_1_of_7 {
+        width: 14.28%;
+    }
 
-	.span_1_of_8 {
-		width: 12.5%;
-	}
+    .span_1_of_8 {
+        width: 12.5%;
+    }
 
-	.span_1_of_9 {
-		width: 11.11%;
-	}
+    .span_1_of_9 {
+        width: 11.11%;
+    }
 
-	.span_1_of_10 {
-		width: 10%;
-	}
+    .span_1_of_10 {
+        width: 10%;
+    }
 }
 
 /**
@@ -92,23 +264,23 @@ body .oceanwp-row {
 .count-1,
 .col-1,
 .col.first {
-	clear: both;
-	margin-left: 0;
+    clear: both;
+    margin-left: 0;
 }
 
 .isotope-entry {
-	clear: none;
+    clear: none;
 }
 
 /**
  * No margin or padding class.
  */
 .no-margin {
-	margin: 0 !important;
+    margin: 0 !important;
 }
 
 .no-padding {
-	padding: 0 !important;
+    padding: 0 !important;
 }
 
 /**
@@ -116,113 +288,111 @@ body .oceanwp-row {
  */
 .responsive-video-wrap,
 .responsive-audio-wrap {
-	iframe, object, embed {
-		display: block;
-	}
-}
-
-.wp-embed-responsive .wp-embed-aspect-16-9 .wp-block-embed__wrapper:before {
-	padding-top: 0;
+    iframe,
+    object,
+    embed {
+        display: block;
+    }
 }
 
 .wp-video-shortcode {
-	max-width: 100% !important;
+    max-width: 100% !important;
 }
 
 .responsive-video-wrap p {
-	margin: 0;
+    margin: 0;
 }
 
 /**
  * Search form shortcode
  */
 form.oceanwp-searchform {
-	display: inline-block;
-	position: relative;
-	height: 35px;
+    display: inline-block;
+    position: relative;
+    height: 35px;
 
-	input {
-		margin: 0;
-		padding: 0 40px 0 15px;
-		height: 100%;
-    	min-height: 100%;
-	}
+    input {
+        margin: 0;
+        padding: 0 40px 0 15px;
+        height: 100%;
+        min-height: 100%;
+    }
 
-	button {
-		display: block;
-	    position: absolute;
-	    top: 50%;
-	    right: 0;
-	    min-width: 40px;
-	    height: 60%;
-	    height: 100%;
-	    font-size: 12px;
-	    font-weight: 600;
-	    background-color: transparent !important;
-	    margin: 0;
-	    padding: 0;
-	    border: 0;
-	    text-align: center;
-	    line-height: 1;
-	    @include transition( all .3s ease );
-	    @include transform( translateY(-50%) );
-	}
+    button {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        min-width: 40px;
+        height: 60%;
+        height: 100%;
+        font-size: 12px;
+        font-weight: 600;
+        background-color: transparent !important;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        text-align: center;
+        line-height: 1;
+        @include transition(all 0.3s ease);
+        @include transform(translateY(-50%));
+    }
 }
 
 /**
  * Language Switches.
  */
 .polylang-switcher-shortcode {
-	li {
-		float: left;
-		margin-right: 5px;
-	}
+    li {
+        float: left;
+        margin-right: 5px;
+    }
 
-	&.flags-and-names li {
-		margin-right: 15px;
-	}
+    &.flags-and-names li {
+        margin-right: 15px;
+    }
 
-	li:last-child {
-		margin-right: 0;
-	}
+    li:last-child {
+        margin-right: 0;
+    }
 }
 
 /**
  * Text meant only for screen readers.
  */
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	font-size: 14px !important;
-	font-weight: 400;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    font-size: 14px !important;
+    font-weight: 400;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 
-	&:focus {
-		background-color: #f1f1f1;
-		border-radius: 3px;
-		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-		clip: auto !important;
-		clip-path: none;
-		color: #21759b;
-		display: block;
-		@include font-size(0.875);
-		font-weight: bold;
-		height: auto;
-		left: 5px;
-		line-height: normal;
-		padding: 15px 23px 14px;
-		text-decoration: none;
-		top: 5px;
-		width: auto;
-		z-index: 100000; /* Above WP toolbar. */
-	}
+    &:focus {
+        background-color: #f1f1f1;
+        border-radius: 3px;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+        clip: auto !important;
+        clip-path: none;
+        color: #21759b;
+        display: block;
+        @include font-size(0.875);
+        font-weight: bold;
+        height: auto;
+        left: 5px;
+        line-height: normal;
+        padding: 15px 23px 14px;
+        text-decoration: none;
+        top: 5px;
+        width: auto;
+        z-index: 100000; /* Above WP toolbar. */
+    }
 }
 
 .no-display {
@@ -241,7 +411,7 @@ form.oceanwp-searchform {
 .owp-icon {
     width: 14px;
     height: 14px;
-	vertical-align: text-bottom;
+    vertical-align: text-bottom;
 }
 
 #owp-svg-icons path,
@@ -250,60 +420,55 @@ form.oceanwp-searchform {
 #owp-svg-icons line,
 #owp-svg-icons polygon,
 #owp-svg-icons polyline {
-    stroke:inherit;
-	fill: none;
+    stroke: inherit;
+    fill: none;
 }
 
 .owp-icon use {
-	stroke: $color-2;
+    stroke: $color-2;
 }
-
 
 /**
  * Selection Color.
  */
 ::selection {
-	color: $selection-font-color;
-	background: $selection-bg-color;
-	text-shadow: none;
+    color: $selection-font-color;
+    background: $selection-bg-color;
+    text-shadow: none;
 }
 
 ::-moz-selection {
-	color: $selection-font-color;
-	background: $selection-bg-color;
-	text-shadow: none;
+    color: $selection-font-color;
+    background: $selection-bg-color;
+    text-shadow: none;
 }
 
 /*------------------------------------*
 	Tablet Portrait
 *------------------------------------*/
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-	
-	/* turn 4 column masonry grids into 2 columns */
-	body .oceanwp-row {
-		.span_1_of_4.col-3.col {
-			margin-left: 0;
-			clear: both;
-		}
-	}
+    /* turn 4 column masonry grids into 2 columns */
+    body .oceanwp-row {
+        .span_1_of_4.col-3.col {
+            margin-left: 0;
+            clear: both;
+        }
+    }
 
-	body .oceanwp-row .span_1_of_4.col:not(.product),
-	body .oceanwp-isotope-grid .span_1_of_4.col {
-		width: 50%;
-	}
-	
+    body .oceanwp-row .span_1_of_4.col:not(.product),
+    body .oceanwp-isotope-grid .span_1_of_4.col {
+        width: 50%;
+    }
 }
 
 /*------------------------------------*
 	Phone Landscape
 *------------------------------------*/
 @media only screen and (max-width: 480px) {
-
-	.col {
-		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-		margin-bottom: 30px;
-	}
-
+    .col {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
 }

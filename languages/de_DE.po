@@ -5060,7 +5060,7 @@ msgid "Vortex Reverse"
 msgstr ""
 
 #: inc/helpers.php:3787
-msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
+msgid "Copyright [oceanwp_date] - OceanWP Theme by OceanWP"
 msgstr ""
 
 #: inc/helpers.php:3810
@@ -6327,8 +6327,8 @@ msgstr ""
 #~ "und erweitern kannst. Du bist auf der Suche nach einem vielfältigen und "
 #~ "flexiblen Wordpress-Theme? Dann hast Du es jetzt gefunden!"
 
-#~ msgid "Nick"
-#~ msgstr "Nick"
+#~ msgid "OceanWP"
+#~ msgstr "OceanWP"
 
 #~ msgid "https://oceanwp.org/about-me/"
 #~ msgstr "https://oceanwp.org/about-me/"

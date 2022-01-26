@@ -568,7 +568,7 @@ if ( ! class_exists( 'OceanWP_Top_Bar_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public static function head_css( $output ) {
-		
+
 			// Global vars
 			$top_padding 					= get_theme_mod( 'ocean_top_bar_top_padding', '8' );
 			$right_padding 					= get_theme_mod( 'ocean_top_bar_right_padding', '0' );
