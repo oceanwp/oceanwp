@@ -8,21 +8,20 @@
     font-size: 2rem;
     //font-family: $body-font-family;
     font-weight: $heading-font-weight;
-  }
+}
 
 .block-editor-block-list__layout {
     //font-family: $body-font-family;
-	font-size: $font-size;
-	line-height: $base-line-height;
-	color: $body-font-color;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	overflow-wrap: break-word;
+    font-size: $font-size;
+    line-height: $base-line-height;
+    color: $body-font-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-wrap: break-word;
     word-wrap: break-word;
 }
 
 .block-editor-block-list__layout {
-
     h1,
     h2,
     h3,
@@ -90,7 +89,7 @@
     blockquote {
         font-style: italic;
         padding-left: 20px;
-        border-left-width: .25em;
+        border-left-width: 0.25em;
         border-style: solid;
         border-color: $color-5;
 
@@ -162,35 +161,38 @@
     }
 }
 
+a {
+    color: $link-color;
+    cursor: pointer;
+    text-underline-offset: 3px;
+    text-decoration: underline;
+    text-decoration-skip-ink: all;
+    @include transition(all 0.3s ease);
 
-	a {
-        color: $link-color;
-		cursor: pointer;
-		text-underline-offset: 3px;
-		text-decoration: underline;
-		text-decoration-skip-ink: all;
-		@include transition( all .3s ease );
+    &:hover {
+        color: $link-hover-color;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-decoration-skip-ink: none;
+        @include transition(all 0.3s ease);
+    }
 
-		&:hover {
-            color: $link-hover-color;
-			text-decoration: underline;
-			text-decoration-style: dotted;
-			text-decoration-skip-ink: none;
-			@include transition( all .3s ease );
-		}
-
-		&:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
-
-			/* Only visible in Windows High Contrast mode */
-			outline: 2px solid transparent;
-			text-decoration: underline 1px dotted $link-hover-color;
-			text-decoration-skip-ink: none;
-			background: rgba(255, 255, 255, 0.9);
-			@include transition( all .3s ease );
-		}
-	}
-
+    &:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+        /* Only visible in Windows High Contrast mode */
+        outline: 2px solid transparent;
+        text-decoration: underline 1px dotted $link-hover-color;
+        text-decoration-skip-ink: none;
+        background: rgba(255, 255, 255, 0.9);
+        @include transition(all 0.3s ease);
+    }
+}
 
 .editor-writing-flow {
     height: fit-content;
+}
+
+@media (min-width: 600px) {
+    [data-align="full"] .wp-block-group > .wp-block {
+        max-width: none;
+    }
 }

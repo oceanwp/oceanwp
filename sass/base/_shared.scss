@@ -103,25 +103,25 @@ body.page.content-max-width .entry {
     }
 
     .alignfull {
-        width: 100vw;
+        width: 100vw !important;
         max-width: 100vw !important;
-        margin-left: calc(50% - 50vw);
+        margin-left: calc(50% - 50vw) !important;
     }
 }
 
 @media screen and (max-width: 959px) {
     .entry-content .alignfull {
-        margin-left: -5.5%;
+        margin-left: -5.5% !important;
         width: calc(100% + 11%) !important;
-        max-width: calc(100% + 11%);
+        max-width: calc(100% + 11%) !important;
     }
 
     .page {
         .entry {
             .alignfull {
-                margin-left: -5.5%;
+                margin-left: -5.5% !important;
                 width: calc(100% + 11%) !important;
-                max-width: calc(100% + 11%);
+                max-width: calc(100% + 11%) !important;
             }
         }
     }

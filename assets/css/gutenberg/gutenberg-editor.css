@@ -80,7 +80,7 @@
 .block-editor-block-list__layout blockquote {
   font-style: italic;
   padding-left: 20px;
-  border-left-width: .25em;
+  border-left-width: 0.25em;
   border-style: solid;
   border-color: #13aff0;
 }
@@ -192,4 +192,10 @@ a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
 
 .editor-writing-flow {
   height: fit-content;
+}
+
+@media (min-width: 600px) {
+  [data-align="full"] .wp-block-group > .wp-block {
+    max-width: none;
+  }
 }

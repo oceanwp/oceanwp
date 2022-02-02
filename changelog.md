@@ -1,5 +1,16 @@
 # OceanWP Changelog
 
+### _2022.02.02._ - 3.1.3
+
+-   **Fixed** Customizer: Missing Typography Class.
+-   **Fixed** Customizer: Font assets loading on front end.
+-   **Fixed** Customizer: Color settings missing localize script.
+-   **Fixed** Header: Mobile Menu link not crawlable.
+-   **Fixed** Blog: Meta: Reading time displaying 1min for languages using non-alphabetic characters.
+-   **Fixed** WooCommerce: Checkout: Header disabled in full on distraction-free mode.
+-   **Fixed** WooCommerce: Checkout: Mandatory fields skipped.
+-   **Fixed** Gutenberg: Layout: Full Width Style issue.
+
 ### _2021.11.30._ - 3.1.2
 
 -   **Fixed** Some minor issues.

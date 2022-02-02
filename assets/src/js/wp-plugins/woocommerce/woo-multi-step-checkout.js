@@ -26,63 +26,89 @@ class WooMultiStepCheckout {
          */
         jQuery(DOM.body).on("updated_checkout", this.#updateCheckout);
 
-        DOM.woo.formActions?.querySelector(".button.prev")?.addEventListener("click", this.#onNavigationBtnClick);
+        DOM.woo.formActions
+            ?.querySelector(".button.prev")
+            ?.addEventListener("click", this.#onNavigationBtnClick);
 
-        DOM.woo.formActions?.querySelector(".button.next")?.addEventListener("click", this.#onNavigationBtnClick);
+        DOM.woo.formActions
+            ?.querySelector(".button.next")
+            ?.addEventListener("click", this.#onNavigationBtnClick);
     };
 
-    #updateCheckout = (event) => {
-        DOM.woo.orderCheckoutPayment?.querySelectorAll("input[name=payment_method]")?.forEach((paymentMethod) => {
-            paymentMethod.addEventListener("click", this.#onPaymentMethodBtnClick);
-        });
+    #updateCheckout = event => {
+        DOM.woo.orderCheckoutPayment
+            ?.querySelectorAll("input[name=payment_method]")
+            ?.forEach(paymentMethod => {
+                paymentMethod.addEventListener(
+                    "click",
+                    this.#onPaymentMethodBtnClick
+                );
+            });
     };
 
-    #onPaymentMethodBtnClick = (event) => {
+    #onPaymentMethodBtnClick = event => {
         const paymentMethodBtn = event.target;
-        const radioInputs = document.querySelectorAll(".payment_methods input.input-radio");
+        const radioInputs = document.querySelectorAll(
+            ".payment_methods input.input-radio"
+        );
 
         if (radioInputs.length > 1) {
-            const paymentBox = document.querySelector(`.payment_box.${paymentMethodBtn.getAttribute("id")}`);
+            const paymentBox = document.querySelector(
+                `.payment_box.${paymentMethodBtn.getAttribute("id")}`
+            );
 
             if (paymentMethodBtn.checked === true && !visible(paymentBox)) {
-                document.querySelectorAll(".payment_box").forEach((_paymentBox) => {
-                    if (visible(_paymentBox)) {
-                        setTimeout(() => {
-                            slideUp(_paymentBox, 250);
-                        }, 250);
-                    }
-                });
+                document
+                    .querySelectorAll(".payment_box")
+                    .forEach(_paymentBox => {
+                        if (visible(_paymentBox)) {
+                            setTimeout(() => {
+                                slideUp(_paymentBox, 250);
+                            }, 250);
+                        }
+                    });
 
                 slideDown(paymentBox, 250);
             } else {
-                document.querySelectorAll(".payment_box").forEach((_paymentBox) => {
-                    _paymentBox.style.display = "block";
-                });
+                document
+                    .querySelectorAll(".payment_box")
+                    .forEach(_paymentBox => {
+                        _paymentBox.style.display = "block";
+                    });
             }
 
             if (paymentMethodBtn.getAttribute("data-order_button_text")) {
-                DOM.woo.placeOrder.value = paymentMethodBtn.getAttribute("data-order_button_text");
+                DOM.woo.placeOrder.value = paymentMethodBtn.getAttribute(
+                    "data-order_button_text"
+                );
             } else {
-                DOM.woo.placeOrder.value = DOM.woo.placeOrder.getAttribute("data-value");
+                DOM.woo.placeOrder.value =
+                    DOM.woo.placeOrder.getAttribute("data-value");
             }
         }
     };
 
-    #onNavigationBtnClick = (event) => {
+    #onNavigationBtnClick = event => {
         event.preventDefault();
 
         const btn = event.currentTarget;
         const nextBtn = DOM.woo.formActions.querySelector(".button.next");
         const prevBtn = DOM.woo.formActions.querySelector(".button.prev");
         const action = btn.getAttribute("data-action");
-        let currentStep = Number.parseInt(DOM.woo.formActions.getAttribute("data-step"));
+        let currentStep = Number.parseInt(
+            DOM.woo.formActions.getAttribute("data-step")
+        );
         let nextStep = currentStep + 1;
         let prevStep = currentStep - 1;
         const isLoggedIn = options.is_logged_in;
 
-        DOM.woo.checkoutTimeline.querySelectorAll(".active").forEach((activeItem) => {
-            activeItem.classList.remove("active");
-        });
+        if (!this.#formValidate(this.#steps[currentStep])) return;
+
+        DOM.woo.checkoutTimeline
+            .querySelectorAll(".active")
+            .forEach(activeItem => {
+                activeItem.classList.remove("active");
+            });
 
         if (action === "next") {
             DOM.woo.formActions.setAttribute("data-step", nextStep);
@@ -94,7 +120,9 @@ class WooMultiStepCheckout {
                 },
             });
 
-            document.querySelector(`#timeline-${nextStep}`).classList.toggle("active");
+            document
+                .querySelector(`#timeline-${nextStep}`)
+                .classList.toggle("active");
         } else if (action === "prev") {
             DOM.woo.formActions.setAttribute("data-step", prevStep);
 
@@ -105,7 +133,9 @@ class WooMultiStepCheckout {
                 },
             });
 
-            document.querySelector(`#timeline-${prevStep}`).classList.toggle("active");
+            document
+                .querySelector(`#timeline-${prevStep}`)
+                .classList.toggle("active");
         }
 
         currentStep = DOM.woo.formActions.getAttribute("data-step");
@@ -151,6 +181,30 @@ class WooMultiStepCheckout {
             });
         }
     };
+
+    #formValidate(section) {
+        const invalidRows = Array.from(
+            section.querySelectorAll(".validate-required")
+        ).filter(row =>
+            "input, select, textarea".split(", ").find(selector => {
+                const input = row.querySelector(selector);
+                if (input) return input.value.trim() === "";
+            })
+        );
+        const isValid = invalidRows.length === 0;
+
+        section.querySelectorAll(".ow-invalid").forEach(row => {
+            row.classList.remove("ow-invalid");
+        });
+
+        if (!isValid) {
+            invalidRows.forEach(invalidRow => {
+                invalidRow.classList.add("ow-invalid");
+            });
+        }
+
+        return isValid;
+    }
 }
 
 new WooMultiStepCheckout();

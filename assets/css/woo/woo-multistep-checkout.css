@@ -57,7 +57,7 @@ Woo Multi-Step Checkout
 }
 
 #owp-checkout-timeline.arrow .timeline-wrapper:before, #owp-checkout-timeline.arrow .timeline-wrapper:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   width: 0;
@@ -147,7 +147,7 @@ Woo Multi-Step Checkout
 
 #checkout-wrapper .woocommerce-billing-fields__field-wrapper:after,
 #checkout-wrapper .woocommerce-shipping-fields__field-wrapper:after {
-  content: '';
+  content: "";
   display: block;
   visibility: hidden;
   clear: both;
@@ -198,6 +198,13 @@ Woo Multi-Step Checkout
 
 #checkout-wrapper #form_actions .buttons input.next {
   margin-left: 10px;
+}
+
+.ow-invalid input,
+.ow-invalid select,
+.ow-invalid .select2-selection,
+.ow-invalid textarea {
+  border: 1px solid #dc3545 !important;
 }
 
 /* Responsive */

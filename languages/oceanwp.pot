@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2021 OceanWP
+# <!=Copyright (C) 2022 OceanWP
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.1.2\n"
+"Project-Id-Version: OceanWP 3.1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2021-11-30 12:33:55+00:00\n"
+"POT-Creation-Date: 2022-02-02 07:04:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: OceanWP\n"
 "Language-Team: OceanWP\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
