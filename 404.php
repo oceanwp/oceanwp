@@ -94,7 +94,14 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 											} else {
 												?>
 
-													<div class="error404-content clr">
+												<div class="error404-content clr">
+													<?php
+													$logo_404 = get_theme_mod( 'ocean_404_logo' );
+													if ( ! empty( $logo_404 ) ) {
+														?>
+
+														<img src="<?php echo esc_url( $logo_404 ); ?>" alt="<?php esc_html_e( '404 Logo', 'oceanwp' ); ?>" title="<?php esc_html_e( '404 Logo', 'oceanwp' ); ?>" />
+													<?php } ?>
 
 													<h2 class="error-title"><?php esc_html_e( 'This page could not be found!', 'oceanwp' ); ?></h2>
 													<p class="error-text"><?php esc_html_e( 'We are sorry. But the page you are looking for is not available.', 'oceanwp' ); ?><br /><?php esc_html_e( 'Perhaps you can try a new search.', 'oceanwp' ); ?></p>

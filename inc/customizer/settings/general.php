@@ -1162,6 +1162,31 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			);
 
 			/**
+			 * Page Search Logo
+			 */
+			$wp_customize->add_setting(
+				'ocean_search_logo',
+				array(
+					'default'           => '',
+					'sanitize_callback' => 'oceanwp_sanitize_image',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
+					$wp_customize,
+					'ocean_search_logo',
+					array(
+						'label'       => esc_html__( 'Search Logo', 'oceanwp' ),
+						'description' => esc_html__( 'Select a search page logo.', 'oceanwp' ),
+						'section'     => 'ocean_general_settings',
+						'settings'    => 'ocean_search_logo',
+						'priority'    => 10,
+					)
+				)
+			);
+
+			/**
 			 * Both Sidebars Style
 			 */
 			$wp_customize->add_setting(
@@ -3685,6 +3710,31 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'on'  => esc_html__( 'On', 'oceanwp' ),
 							'off' => esc_html__( 'Off', 'oceanwp' ),
 						),
+					)
+				)
+			);
+
+			/**
+			 * Page 404 Logo
+			 */
+			$wp_customize->add_setting(
+				'ocean_404_logo',
+				array(
+					'default'           => '',
+					'sanitize_callback' => 'oceanwp_sanitize_image',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
+					$wp_customize,
+					'ocean_404_logo',
+					array(
+						'label'       => esc_html__( '404 Logo', 'oceanwp' ),
+						'description' => esc_html__( 'Select a 404 logo.', 'oceanwp' ),
+						'section'     => 'ocean_general_error_page',
+						'settings'    => 'ocean_404_logo',
+						'priority'    => 10,
 					)
 				)
 			);

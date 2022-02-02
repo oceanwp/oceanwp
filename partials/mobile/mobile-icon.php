@@ -97,7 +97,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 		<?php do_action( 'ocean_before_mobile_icon_inner' ); ?>
 
-		<a href="javascript:void(0)" class="mobile-menu" <?php echo $toggle_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> aria-label="<?php esc_attr_e( 'Mobile Menu', 'oceanwp' ); ?>">
+		<a href="#" class="mobile-menu" <?php echo $toggle_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> aria-label="<?php esc_attr_e( 'Mobile Menu', 'oceanwp' ); ?>">
 			<?php
 			if ( 'default' !== $btn ) {
 				?>

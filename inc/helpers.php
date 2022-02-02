@@ -3207,7 +3207,7 @@ if ( ! function_exists( 'ocean_reading_time' ) ) {
 		global $post;
 
 		$content      = get_post_field( 'post_content', $post->ID );
-		$word_count   = str_word_count( strip_tags( $content ) );
+		$word_count   = str_word_count( $content );
 		$reading_time = ceil( $word_count / 200 );
 
 		$reading_time = apply_filters( 'oceanwp_post_reading_time', $reading_time );
