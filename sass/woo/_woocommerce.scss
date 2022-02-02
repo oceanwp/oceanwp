@@ -3332,8 +3332,12 @@ form.checkout {
 .distraction-free .medium-header .col-3,
 .distraction-free .top-header .header-top,
 .distraction-free .vertical-header #site-header-inner .oceanwp-social-menu,
+.distraction-free .vertical-header #vertical-searchform,
 .distraction-free .oceanwp-social-menu,
-.distraction-free #site-description {
+.distraction-free #site-description,
+.distraction-free .center-header .left-menu,
+.distraction-free .center-header .right-menu,
+.distraction-free .full_screen-header #site-navigation-wrap {
   display: none;
 }
 
@@ -3344,6 +3348,21 @@ form.checkout {
 
 .distraction-free #site-logo #site-logo-inner {
   text-align: center;
+}
+
+.distraction-free .center-header .navigation {
+  justify-content: center;
+  min-height: 60px;
+}
+
+.distraction-free .vertical-header #site-header-inner {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 960px) {
+  .distraction-free .vertical-header #site-header-inner {
+    flex-direction: column;
+  }
 }
 
 .quick-view-plugin-active ul.products li.product li.btn-wrap {
