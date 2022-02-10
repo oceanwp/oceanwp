@@ -45,7 +45,7 @@
         "imagemin-webpack-plugin": "^2.4.2",
         "jit-grunt": "^0.10.0",
         "mini-css-extract-plugin": "^2.3.0",
-        "node-sass": "^6.0.0",
+        "node-sass": "^7.0.0",
         "react-bootstrap": "^1.6.3",
         "sass-loader": "^12.3.0",
         "style-loader": "^3.3.0",
