@@ -1,37 +1,57 @@
 import delegate from "delegate";
-import { DOM } from "../../constants";
 
 class WooOffCanvas {
-    constructor() {
-        this.#start();
-        this.#setupEventListeners();
-    }
+  #elements;
 
-    #start = () => {};
+  constructor() {
+    this.#setElements();
+    this.#start();
+    this.#setupEventListeners();
+  }
 
-    #setupEventListeners = () => {
-        delegate(DOM.body, ".oceanwp-off-canvas-filter", "click", this.#onCanvasFilterClick);
-        delegate(DOM.body, ".oceanwp-off-canvas-overlay, .oceanwp-off-canvas-close", "click", this.#onCanvasCloseClick);
+  #setElements = () => {
+    this.#elements = {
+      html: document.querySelector("html"),
+      body: document.body,
     };
+  };
 
-    #onCanvasFilterClick = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
+  #start = () => {};
 
-        const initialHTMLInnerWidth = DOM.html.innerWidth;
-        DOM.html.style.overflow = "hidden";
-        const afterInitialHTMLInnerWidth = DOM.html.innerWidth;
-        DOM.html.style.marginRight = afterInitialHTMLInnerWidth - initialHTMLInnerWidth + "px";
+  #setupEventListeners = () => {
+    delegate(
+      this.#elements.body,
+      ".oceanwp-off-canvas-filter",
+      "click",
+      this.#onCanvasFilterClick
+    );
+    delegate(
+      this.#elements.body,
+      ".oceanwp-off-canvas-overlay, .oceanwp-off-canvas-close",
+      "click",
+      this.#onCanvasCloseClick
+    );
+  };
 
-        DOM.body.classList.add("off-canvas-enabled");
-    };
+  #onCanvasFilterClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
 
-    #onCanvasCloseClick = (event) => {
-        DOM.html.style.overflow = "";
-        DOM.html.style.marginRight = "";
+    const initialHTMLInnerWidth = this.#elements.html.innerWidth;
+    this.#elements.html.style.overflow = "hidden";
+    const afterInitialHTMLInnerWidth = this.#elements.html.innerWidth;
+    this.#elements.html.style.marginRight =
+      afterInitialHTMLInnerWidth - initialHTMLInnerWidth + "px";
 
-        DOM.body.classList.remove("off-canvas-enabled");
-    };
+    this.#elements.body.classList.add("off-canvas-enabled");
+  };
+
+  #onCanvasCloseClick = (event) => {
+    this.#elements.html.style.overflow = "";
+    this.#elements.html.style.marginRight = "";
+
+    this.#elements.body.classList.remove("off-canvas-enabled");
+  };
 }
 
 new WooOffCanvas();

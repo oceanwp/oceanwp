@@ -1,41 +1,75 @@
-import { DOM } from "../../../constants";
 import { offset } from "../../../lib/utils";
 
 class WooScrollToReviewTab {
-    constructor() {
-        if (!!DOM.woo.productCustomerReviewLink) {
-            this.#setupEventListeners();
-        }
+  #elements = {
+    productCustomerReviewLink: document.querySelector(
+      ".woocommerce div.product .woocommerce-review-link"
+    ),
+  };
+
+  constructor() {
+    if (!!this.#elements.productCustomerReviewLink) {
+      this.#setElements();
+      this.#setupEventListeners();
+    }
+  }
+
+  #setElements = () => {
+    this.#elements = {
+      ...this.#elements,
+      productTabs: document.querySelector(
+        ".woocommerce div.product .woocommerce-tabs"
+      ),
+      html: document.querySelector("html"),
+    };
+  };
+
+  #setupEventListeners = () => {
+    this.#elements.productCustomerReviewLink.addEventListener(
+      "click",
+      this.#onCustomerReviewLinkClick
+    );
+  };
+
+  #onCustomerReviewLinkClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (!!this.#elements.productTabs.querySelector(".description_tab")) {
+      this.#elements.productTabs
+        .querySelector(".description_tab")
+        .classList.remove("active");
+      this.#elements.productTabs.querySelector(
+        "#tab-description"
+      ).style.display = "none";
     }
 
-    #setupEventListeners = () => {
-        DOM.woo.productCustomerReviewLink.addEventListener("click", this.#onCustomerReviewLinkClick);
-    };
+    if (
+      this.#elements.productTabs.querySelector(".additional_information_tab")
+    ) {
+      this.#elements.productTabs
+        .querySelector(".additional_information_tab")
+        .classList.remove("active");
+      this.#elements.productTabs.querySelector(
+        "#tab-additional_information"
+      ).style.display = "none";
+    }
 
-    #onCustomerReviewLinkClick = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
+    this.#elements.productTabs
+      .querySelector(".reviews_tab")
+      .classList.add("active");
+    this.#elements.productTabs.querySelector("#tab-reviews").style.display =
+      "block";
 
-        if (!!DOM.woo.productTabs.querySelector(".description_tab")) {
-            DOM.woo.productTabs.querySelector(".description_tab").classList.remove("active");
-            DOM.woo.productTabs.querySelector("#tab-description").style.display = "none";
-        }
+    const reviewTabPositionTop = offset(
+      document.querySelector(event.currentTarget.hash)
+    ).top;
 
-        if (DOM.woo.productTabs.querySelector(".additional_information_tab")) {
-            DOM.woo.productTabs.querySelector(".additional_information_tab").classList.remove("active");
-            DOM.woo.productTabs.querySelector("#tab-additional_information").style.display = "none";
-        }
-
-        DOM.woo.productTabs.querySelector(".reviews_tab").classList.add("active");
-        DOM.woo.productTabs.querySelector("#tab-reviews").style.display = "block";
-
-        const reviewTabPositionTop = offset(document.querySelector(event.currentTarget.hash)).top;
-
-        DOM.html.scrollTo({
-            top: reviewTabPositionTop - 120,
-            behavior: "smooth",
-        });
-    };
+    this.#elements.html.scrollTo({
+      top: reviewTabPositionTop - 120,
+      behavior: "smooth",
+    });
+  };
 }
 
 export default WooScrollToReviewTab;

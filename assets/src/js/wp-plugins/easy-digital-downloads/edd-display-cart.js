@@ -1,61 +1,79 @@
-import { DOM } from "../../constants";
 import { fadeIn, fadeOut } from "../../lib/utils";
 
 class EddDisplayCart {
-    constructor() {
-        if (!!DOM.edd.overlayCart) {
-            this.#start();
-            this.#setupEventListeners();
-        }
+  #elements = {
+    overlayCart: document.querySelector(".owp-cart-overlay"),
+  };
+
+  constructor() {
+    if (!!this.#elements.overlayCart) {
+      this.#setElements();
+      this.#start();
+      this.#setupEventListeners();
     }
+  }
 
-    #start = () => {};
-
-    #setupEventListeners = () => {
-        /**
-         * Because Easy Digital Downloads plugin uses jQuery custom event,
-         * We also have to use jQuery to customize this event
-         */
-        jQuery("body").on("edd_cart_item_added", this.#onCartItemAdded);
-
-        DOM.edd.overlayCart.addEventListener("click", this.#onOverlayCartClick);
-
-        window.addEventListener("resize", this.#onWindowResize);
+  #setElements = () => {
+    this.#elements = {
+      ...this.#elements,
+      overlayCart: document.querySelector(".owp-cart-overlay"),
+      quickViewModal: document.querySelector("#owp-qv-wrap"),
+      quickViewContent: document.querySelector("#owp-qv-content"),
+      body: document.body,
+      html: document.querySelector("html"),
     };
+  };
 
-    #onCartItemAdded = (event, response) => {
-        fadeIn(DOM.edd.overlayCart);
+  #start = () => {};
 
-        DOM.body.classList.add("show-cart");
+  #setupEventListeners = () => {
+    /**
+     * Because Easy Digital Downloads plugin uses jQuery custom event,
+     * We also have to use jQuery to customize this event
+     */
+    jQuery("body").on("edd_cart_item_added", this.#onCartItemAdded);
 
-        if (!!DOM.edd.quickViewModal) {
-            DOM.html.style.overflow = "";
-            DOM.html.style.marginRight = "";
-            DOM.html.classList.remove("owp-qv-open");
+    this.#elements.overlayCart.addEventListener(
+      "click",
+      this.#onOverlayCartClick
+    );
 
-            fadeOut(DOM.edd.quickViewModal);
+    window.addEventListener("resize", this.#onWindowResize);
+  };
 
-            DOM.edd.quickViewModal.classList.remove("is-visible");
+  #onCartItemAdded = (event, response) => {
+    fadeIn(this.#elements.overlayCart);
 
-            setTimeout(() => {
-                DOM.edd.quickViewContent.innerHTML = "";
-            }, 600);
-        }
-    };
+    this.#elements.body.classList.add("show-cart");
 
-    #onOverlayCartClick = (event) => {
-        overlayCart = event.currentTarget;
+    if (!!this.#elements.quickViewModal) {
+      this.#elements.html.style.overflow = "";
+      this.#elements.html.style.marginRight = "";
+      this.#elements.html.classList.remove("owp-qv-open");
 
-        fadeOut(overlayCart);
-        DOM.body.classList.remove("show-cart");
-    };
+      fadeOut(this.#elements.quickViewModal);
 
-    #onWindowResize = (event) => {
-        if (!!DOM.edd.overlayCart) {
-            fadeOut(overlayCart);
-            DOM.body.classList.remove("show-cart");
-        }
-    };
+      this.#elements.quickViewModal.classList.remove("is-visible");
+
+      setTimeout(() => {
+        this.#elements.quickViewContent.innerHTML = "";
+      }, 600);
+    }
+  };
+
+  #onOverlayCartClick = (event) => {
+    overlayCart = event.currentTarget;
+
+    fadeOut(overlayCart);
+    this.#elements.body.classList.remove("show-cart");
+  };
+
+  #onWindowResize = (event) => {
+    if (!!this.#elements.overlayCart) {
+      fadeOut(overlayCart);
+      this.#elements.body.classList.remove("show-cart");
+    }
+  };
 }
 
 new EddDisplayCart();

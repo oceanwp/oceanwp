@@ -1,38 +1,46 @@
-import { DOM } from "../../constants";
-
 class EddAjaxCart {
-    constructor() {
-        this.#start();
-        this.#setupEventListeners();
-    }
+  #elements;
 
-    #start = () => {};
+  constructor() {
+    this.#setElements();
+    this.#start();
+    this.#setupEventListeners();
+  }
 
-    #setupEventListeners = () => {
-        /**
-         * Because Easy Digital Downloads plugin uses jQuery custom event,
-         * We also have to use jQuery to customize this event
-         */
-        jQuery("body").on("edd_cart_item_added", this.#onCartItemAdded);
-        jQuery("body").on("edd_cart_item_removed", this.#onCartItemRemoved);
+  #setElements = () => {
+    this.#elements = {
+      carts: document.querySelectorAll(".edd-menu-icon"),
+      totalPrices: document.querySelectorAll(".eddmenucart-details.total"),
     };
+  };
 
-    #onCartItemAdded = (event, response) => {
-        // Simple cart
-        DOM.edd.carts?.forEach((cart) => {
-            cart.classList.remove("edd-cart-empty");
-        });
+  #start = () => {};
 
-        DOM.edd.totalPrices?.forEach((totalPrice) => {
-            totalPrice.innerHTML = response.total;
-        });
-    };
+  #setupEventListeners = () => {
+    /**
+     * Because Easy Digital Downloads plugin uses jQuery custom event,
+     * We also have to use jQuery to customize this event
+     */
+    jQuery("body").on("edd_cart_item_added", this.#onCartItemAdded);
+    jQuery("body").on("edd_cart_item_removed", this.#onCartItemRemoved);
+  };
 
-    #onCartItemRemoved = (event, response) => {
-        DOM.edd.totalPrices?.forEach((totalPrice) => {
-            totalPrice.innerHTML = response.total;
-        });
-    };
+  #onCartItemAdded = (event, response) => {
+    // Simple cart
+    this.#elements.carts?.forEach((cart) => {
+      cart.classList.remove("edd-cart-empty");
+    });
+
+    this.#elements.totalPrices?.forEach((totalPrice) => {
+      totalPrice.innerHTML = response.total;
+    });
+  };
+
+  #onCartItemRemoved = (event, response) => {
+    this.#elements.totalPrices?.forEach((totalPrice) => {
+      totalPrice.innerHTML = response.total;
+    });
+  };
 }
 
 new EddAjaxCart();

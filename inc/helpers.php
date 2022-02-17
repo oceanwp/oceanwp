@@ -322,7 +322,7 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 		/**
 		 * Performance Section
 		 */
-		if ( get_theme_mod( 'ocean_disable_lightbox', false ) ) {
+		if ( ! oceanwp_gallery_is_lightbox_enabled() && get_theme_mod( 'ocean_performance_lightbox', 'enabled' ) === 'disabled' ) {
 			$classes[] = 'no-lightbox';
 		}
 
@@ -335,7 +335,7 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 
 }
 
-if ( get_theme_mod( 'ocean_disable_emoji', false ) ) {
+if ( get_theme_mod( 'ocean_performance_emoji', 'enabled' ) === 'disabled' ) {
 	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );

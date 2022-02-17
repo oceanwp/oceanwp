@@ -38,6 +38,8 @@ final class OCEANWP_Theme_Class {
 	 * @since   1.0.0
 	 */
 	public function __construct() {
+		// Migrate
+		$this->migration();
 
 		// Define theme constants.
 		$this->oceanwp_constants();
@@ -125,6 +127,21 @@ final class OCEANWP_Theme_Class {
 			add_filter( 'fl_builder_override_lightbox', array( 'OCEANWP_Theme_Class', 'remove_bb_lightbox' ) );
 
 			add_filter( 'ocean_enqueue_generated_files', '__return_false' );
+		}
+	}
+
+	/**
+	 * Migration Functinality
+	 *
+	 * @since   1.0.0
+	 */
+	public static function migration() {
+		if ( get_theme_mod( 'ocean_disable_emoji', false ) ) {
+			set_theme_mod( 'ocean_performance_emoji', 'disabled' );
+		}
+
+		if ( get_theme_mod( 'ocean_disable_lightbox', false ) ) {
+			set_theme_mod( 'ocean_performance_lightbox', 'disabled' );
 		}
 	}
 
@@ -429,21 +446,24 @@ final class OCEANWP_Theme_Class {
 		wp_deregister_style( 'font-awesome' );
 		wp_deregister_style( 'fontawesome' );
 
-		// Load font awesome style.
-		wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI . '/assets/fonts/fontawesome/css/all.min.css', false, '5.15.1' );
+		// Enqueue font awesome style.
+		if ( get_theme_mod( 'ocean_performance_fontawesome', 'enabled' ) === 'enabled' ) {
+			wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI . '/assets/fonts/fontawesome/css/all.min.css', false, '5.15.1' );
+		}
 
-		// Register simple line icons style.
-		wp_enqueue_style( 'simple-line-icons', $dir . 'third/simple-line-icons.min.css', false, '2.4.0' );
+		// Enqueue simple line icons style.
+		if ( get_theme_mod( 'ocean_performance_simple_line_icons', 'enabled' ) === 'enabled' ) {
+			wp_enqueue_style( 'simple-line-icons', $dir . 'third/simple-line-icons.min.css', false, '2.4.0' );
+		}
 
-		// Main Style.css File.
+		// Enqueue Main style.
 		wp_enqueue_style( 'oceanwp-style', $dir . 'style.min.css', false, $theme_version );
-
-		// Register hamburgers buttons to easily use them.
-		wp_register_style( 'oceanwp-hamburgers', $dir . 'third/hamburgers/hamburgers.min.css', false, $theme_version );
 
 		// Register perfect-scrollbar plugin style.
 		wp_register_style( 'ow-perfect-scrollbar', $dir . 'third/perfect-scrollbar.css', false, '1.5.0' );
 
+		// Register hamburgers buttons to easily use them.
+		wp_register_style( 'oceanwp-hamburgers', $dir . 'third/hamburgers/hamburgers.min.css', false, $theme_version );
 		// Register hamburgers buttons styles.
 		$hamburgers = oceanwp_hamburgers_styles();
 		foreach ( $hamburgers as $class => $name ) {
@@ -451,12 +471,11 @@ final class OCEANWP_Theme_Class {
 		}
 
 		// Get mobile menu icon style.
-		$mobileMenu = get_theme_mod( 'ocean_mobile_menu_open_hamburger', 'default' );
-
+		$mobile_menu = get_theme_mod( 'ocean_mobile_menu_open_hamburger', 'default' );
 		// Enqueue mobile menu icon style.
-		if ( ! empty( $mobileMenu ) && 'default' !== $mobileMenu ) {
+		if ( ! empty( $mobile_menu ) && 'default' !== $mobile_menu ) {
 			wp_enqueue_style( 'oceanwp-hamburgers' );
-			wp_enqueue_style( 'oceanwp-' . $mobileMenu . '' );
+			wp_enqueue_style( 'oceanwp-' . $mobile_menu . '' );
 		}
 
 		// If Vertical header style.
@@ -465,7 +484,6 @@ final class OCEANWP_Theme_Class {
 			wp_enqueue_style( 'oceanwp-spin' );
 			wp_enqueue_style( 'ow-perfect-scrollbar' );
 		}
-
 	}
 
 	/**
@@ -488,8 +506,8 @@ final class OCEANWP_Theme_Class {
 		// Get localized array.
 		$localize_array = self::localize_array();
 
-		// Main script dependencies
-		$mainScriptDependencies = array( 'jquery' );
+		// Main script dependencies.
+		$main_script_dependencies = array( 'jquery' );
 
 		// Comment reply.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -503,37 +521,119 @@ final class OCEANWP_Theme_Class {
 		 * Load Venors Scripts.
 		 */
 
-		// Isotop
-		wp_enqueue_script( 'ow-isotop', $dir . 'vendors/isotope.pkgd.min.js', array(), '3.0.6', true );
+		// Isotop.
+		wp_register_script( 'ow-isotop', $dir . 'vendors/isotope.pkgd.min.js', array(), '3.0.6', true );
 
 		// Flickity.
-		wp_enqueue_script( 'ow-flickity', $dir . 'vendors/flickity.pkgd.min.js', array(), $theme_version, true );
+		wp_register_script( 'ow-flickity', $dir . 'vendors/flickity.pkgd.min.js', array(), $theme_version, true );
 
-		// Lightbox.
-		if ( ! get_theme_mod( 'ocean_disable_lightbox', false ) ) {
-			wp_register_script( 'ow-magnific-popup', $dir . 'vendors/magnific-popup.min.js', array( 'jquery' ), $theme_version, true );
-			array_push( $mainScriptDependencies, 'ow-magnific-popup' );
-		}
+		// Magnific Popup.
+		wp_register_script( 'ow-magnific-popup', $dir . 'vendors/magnific-popup.min.js', array( 'jquery' ), $theme_version, true );
 
 		// Sidr Mobile Menu.
-		wp_enqueue_script( 'ow-sidr', $dir . 'vendors/sidr.js', array(), $theme_version, true );
+		wp_register_script( 'ow-sidr', $dir . 'vendors/sidr.js', array(), $theme_version, true );
 
 		// Perfect Scrollbar.
 		wp_register_script( 'ow-perfect-scrollbar', $dir . 'vendors/perfect-scrollbar.min.js', array(), $theme_version, true );
-		if ( 'vertical' === oceanwp_header_style() ) {
-			wp_enqueue_script( 'ow-perfect-scrollbar' );
-		}
 
 		// Smooth Scroll.
-		wp_enqueue_script( 'ow-smoothscroll', $dir . 'vendors/smoothscroll.min.js', array(), $theme_version, false );
+		wp_register_script( 'ow-smoothscroll', $dir . 'vendors/smoothscroll.min.js', array(), $theme_version, false );
 
 		/**
 		 * Load Theme Scripts.
 		 */
 
-		// Main script.
-		wp_enqueue_script( 'oceanwp-main', $dir . 'theme.vanilla.min.js', $mainScriptDependencies, $theme_version, true );
+		// Theme script.
+		wp_enqueue_script( 'oceanwp-main', $dir . 'theme.min.js', $main_script_dependencies, $theme_version, true );
 		wp_localize_script( 'oceanwp-main', 'oceanwpLocalize', $localize_array );
+		array_push( $main_script_dependencies, 'oceanwp-main' );
+
+		// Blog Masonry script.
+		if ( 'masonry' === oceanwp_blog_grid_style() ) {
+			array_push( $main_script_dependencies, 'ow-isotop' );
+			wp_enqueue_script( 'ow-isotop' );
+			wp_enqueue_script( 'oceanwp-blog-masonry', $dir . 'blog-masonry.min.js', $main_script_dependencies, $theme_version, true );
+		}
+
+		// Menu script.
+		switch ( oceanwp_header_style() ) {
+			case 'full_screen':
+				wp_enqueue_script( 'oceanwp-full-screen-menu', $dir . 'full-screen-menu.min.js', $main_script_dependencies, $theme_version, true );
+				break;
+			case 'vertical':
+				array_push( $main_script_dependencies, 'ow-perfect-scrollbar' );
+				wp_enqueue_script( 'ow-perfect-scrollbar' );
+				wp_enqueue_script( 'oceanwp-vertical-header', $dir . 'vertical-header.min.js', $main_script_dependencies, $theme_version, true );
+				break;
+		}
+
+		// Mobile Menu script.
+		switch ( oceanwp_mobile_menu_style() ) {
+			case 'dropdown':
+				wp_enqueue_script( 'oceanwp-drop-down-mobile-menu', $dir . 'drop-down-mobile-menu.min.js', $main_script_dependencies, $theme_version, true );
+				break;
+			case 'fullscreen':
+				wp_enqueue_script( 'oceanwp-full-screen-mobile-menu', $dir . 'full-screen-mobile-menu.min.js', $main_script_dependencies, $theme_version, true );
+				break;
+			case 'sidebar':
+				array_push( $main_script_dependencies, 'ow-sidr' );
+				wp_enqueue_script( 'ow-sidr' );
+				wp_enqueue_script( 'oceanwp-sidebar-mobile-menu', $dir . 'sidebar-mobile-menu.min.js', $main_script_dependencies, $theme_version, true );
+				break;
+		}
+
+		// Search script.
+		switch ( oceanwp_menu_search_style() ) {
+			case 'drop_down':
+				wp_enqueue_script( 'oceanwp-drop-down-search', $dir . 'drop-down-search.min.js', $main_script_dependencies, $theme_version, true );
+				break;
+			case 'header_replace':
+				wp_enqueue_script( 'oceanwp-header-replace-search', $dir . 'header-replace-search.min.js', $main_script_dependencies, $theme_version, true );
+				break;
+			case 'overlay':
+				wp_enqueue_script( 'oceanwp-overlay-search', $dir . 'overlay-search.min.js', $main_script_dependencies, $theme_version, true );
+				break;
+		}
+
+		// Mobile Search Icon Style.
+		if ( oceanwp_mobile_menu_search_style() !== 'disabled' ) {
+			wp_enqueue_script( 'oceanwp-mobile-search-icon', $dir . 'mobile-search-icon.min.js', $main_script_dependencies, $theme_version, true );
+		}
+
+		// Equal Height Elements script.
+		if ( oceanwp_blog_entry_equal_heights() ) {
+			wp_enqueue_script( 'oceanwp-equal-height-elements', $dir . 'equal-height-elements.min.js', $main_script_dependencies, $theme_version, true );
+		}
+
+		// Lightbox script.
+		if ( oceanwp_gallery_is_lightbox_enabled() || get_theme_mod( 'ocean_performance_lightbox', 'enabled' ) === 'enabled' ) {
+			array_push( $main_script_dependencies, 'ow-magnific-popup' );
+			wp_enqueue_script( 'ow-magnific-popup' );
+			wp_enqueue_script( 'oceanwp-lightbox', $dir . 'ow-lightbox.min.js', $main_script_dependencies, $theme_version, true );
+		}
+
+		// Slider script.
+		array_push( $main_script_dependencies, 'ow-flickity' );
+		wp_enqueue_script( 'ow-flickity' );
+		wp_enqueue_script( 'oceanwp-slider', $dir . 'ow-slider.min.js', $main_script_dependencies, $theme_version, true );
+
+		// Scroll Effect script.
+		wp_enqueue_script( 'oceanwp-scroll-effect', $dir . 'scroll-effect.min.js', $main_script_dependencies, $theme_version, true );
+
+		// Scroll to Top script.
+		if ( oceanwp_display_scroll_up_button() ) {
+			wp_enqueue_script( 'oceanwp-scroll-top', $dir . 'scroll-top.min.js', $main_script_dependencies, $theme_version, true );
+		}
+
+		// Custom Select script.
+		if ( get_theme_mod( 'ocean_performance_custom_select', 'enabled' ) === 'enabled' ) {
+			wp_enqueue_script( 'oceanwp-select', $dir . 'select.min.js', $main_script_dependencies, $theme_version, true );
+		}
+
+		// Infinite Scroll script.
+		if ( 'infinite_scroll' === get_theme_mod( 'ocean_blog_pagination_style', 'standard' ) || 'infinite_scroll' === get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+			wp_enqueue_script( 'oceanwp-infinite-scroll', $dir . 'ow-infinite-scroll.min.js', $main_script_dependencies, $theme_version, true );
+		}
 
 		// WooCommerce scripts.
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE

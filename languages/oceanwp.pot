@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 3.1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-02-02 14:06:57+00:00\n"
+"POT-Creation-Date: 2022-02-17 15:44:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,81 +92,81 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:295 inc/customizer/settings/topbar.php:40
+#: functions.php:312 inc/customizer/settings/topbar.php:40
 #: inc/customizer/settings/typography.php:111
 #: inc/third/class-beaver-themer.php:100
 msgid "Top Bar"
 msgstr ""
 
-#: functions.php:296
+#: functions.php:313
 msgid "Main"
 msgstr ""
 
-#: functions.php:297 inc/third/class-beaver-themer.php:145
+#: functions.php:314 inc/third/class-beaver-themer.php:145
 msgid "Footer"
 msgstr ""
 
-#: functions.php:298
+#: functions.php:315
 msgid "Mobile (optional)"
 msgstr ""
 
-#: functions.php:623
+#: functions.php:723
 msgid "Default Sidebar"
 msgstr ""
 
-#: functions.php:625
+#: functions.php:725
 msgid ""
 "Widgets in this area will be displayed in the left or right sidebar area if "
 "you choose the Left or Right Sidebar layout."
 msgstr ""
 
-#: functions.php:636 inc/third/class-lifterlms.php:310
+#: functions.php:736 inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:638
+#: functions.php:738
 msgid ""
 "Widgets in this area are used in the left sidebar region if you use the "
 "Both Sidebars layout."
 msgstr ""
 
-#: functions.php:650
+#: functions.php:750
 msgid "Search Results Sidebar"
 msgstr ""
 
-#: functions.php:652
+#: functions.php:752
 msgid "Widgets in this area are used in the search result page."
 msgstr ""
 
-#: functions.php:664
+#: functions.php:764
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:666
+#: functions.php:766
 msgid "Widgets in this area are used in the first footer region."
 msgstr ""
 
-#: functions.php:677
+#: functions.php:777
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:679
+#: functions.php:779
 msgid "Widgets in this area are used in the second footer region."
 msgstr ""
 
-#: functions.php:690
+#: functions.php:790
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:692
+#: functions.php:792
 msgid "Widgets in this area are used in the third footer region."
 msgstr ""
 
-#: functions.php:703
+#: functions.php:803
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:705
+#: functions.php:805
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr ""
 
@@ -323,7 +323,7 @@ msgstr ""
 #: inc/customizer/settings/general.php:1665
 #: inc/customizer/settings/general.php:1697
 #: inc/customizer/settings/general.php:1731
-#: inc/customizer/settings/general.php:4092
+#: inc/customizer/settings/general.php:4192
 #: inc/customizer/settings/header.php:1961
 #: inc/customizer/settings/header.php:1990
 #: inc/customizer/settings/header.php:2012
@@ -2504,10 +2504,12 @@ msgid "Ocean SVG Icons"
 msgstr ""
 
 #: inc/customizer/settings/general.php:3835
+#: inc/customizer/settings/general.php:4108
 msgid "Simple Line Icons"
 msgstr ""
 
 #: inc/customizer/settings/general.php:3836
+#: inc/customizer/settings/general.php:4078
 msgid "Font Awesome Icons"
 msgstr ""
 
@@ -2543,15 +2545,61 @@ msgstr ""
 msgid "Performance"
 msgstr ""
 
-#: inc/customizer/settings/general.php:4047
-msgid "Disable Lightbox"
+#: inc/customizer/settings/general.php:4048
+msgid "Emoji"
 msgstr ""
 
-#: inc/customizer/settings/general.php:4072
-msgid "Disable Emoji"
+#: inc/customizer/settings/general.php:4049
+msgid "This style is all the css for the WP emoji."
 msgstr ""
 
-#: inc/customizer/settings/general.php:4130
+#: inc/customizer/settings/general.php:4054
+#: inc/customizer/settings/general.php:4084
+#: inc/customizer/settings/general.php:4114
+#: inc/customizer/settings/general.php:4144
+#: inc/customizer/settings/general.php:4174
+#: inc/customizer/settings/header.php:2649
+#: inc/customizer/settings/header.php:3780
+msgid "Disabled"
+msgstr ""
+
+#: inc/customizer/settings/general.php:4055
+#: inc/customizer/settings/general.php:4085
+#: inc/customizer/settings/general.php:4115
+#: inc/customizer/settings/general.php:4145
+#: inc/customizer/settings/general.php:4175
+msgid "Enabled"
+msgstr ""
+
+#: inc/customizer/settings/general.php:4079
+msgid "This style is all the css for the font awesome icons."
+msgstr ""
+
+#: inc/customizer/settings/general.php:4109
+msgid "This style is all the css for the simple line icons."
+msgstr ""
+
+#: inc/customizer/settings/general.php:4138
+msgid "Lightbox"
+msgstr ""
+
+#: inc/customizer/settings/general.php:4139
+msgid ""
+"This script enables you to overlay your images on the current page, used "
+"for the gallerie, single product and content images."
+msgstr ""
+
+#: inc/customizer/settings/general.php:4168
+msgid "Custom Select"
+msgstr ""
+
+#: inc/customizer/settings/general.php:4169
+msgid ""
+"This script uses the native select box and add overlays a stylable <span> "
+"element in order to acheive the desired look."
+msgstr ""
+
+#: inc/customizer/settings/general.php:4230
 msgid "All Post Types"
 msgstr ""
 
@@ -3065,11 +3113,6 @@ msgstr ""
 #: inc/customizer/settings/header.php:2643
 #: inc/customizer/settings/header.php:3774
 msgid "Search Icon Style"
-msgstr ""
-
-#: inc/customizer/settings/header.php:2649
-#: inc/customizer/settings/header.php:3780
-msgid "Disabled"
 msgstr ""
 
 #: inc/customizer/settings/header.php:2650

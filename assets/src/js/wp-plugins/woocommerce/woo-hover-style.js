@@ -1,58 +1,73 @@
 import delegate from "delegate";
-import { DOM } from "../../constants";
 import { getSiblings } from "../../lib/utils";
 
 class WooHoverStyle {
-    constructor() {
-        this.#start();
-        this.#setupEventListeners();
+  #elements;
+
+  constructor() {
+    this.#setElements();
+    this.#start();
+    this.#setupEventListeners();
+  }
+
+  #setElements = () => {
+    this.#elements = {
+      body: document.body,
+    };
+  };
+
+  #start = () => {};
+
+  #setupEventListeners = () => {
+    if (
+      !!document.querySelector(
+        ".woocommerce ul.products li.product .woo-entry-buttons li.woo-wishlist-btn"
+      )
+    ) {
+      delegate(
+        this.#elements.body,
+        ".tinvwl_add_to_wishlist_button",
+        "click",
+        this.#onAddToWishlistBtnClick
+      );
     }
 
-    #start = () => {};
+    delegate(
+      this.#elements.body,
+      ".woo-product-gallery a.woo-product-gallery-link",
+      "click",
+      this.#onProductGalleryImageClick
+    );
+  };
 
-    #setupEventListeners = () => {
-        if (
-            !!document.querySelector(
-                ".woocommerce ul.products li.product .woo-entry-buttons li.woo-wishlist-btn"
-            )
-        ) {
-            delegate(DOM.body, ".tinvwl_add_to_wishlist_button", "click", this.#onAddToWishlistBtnClick);
-        }
+  #onAddToWishlistBtnClick = (event) => {
+    const addToWishlistBtn = event.delegateTarget;
 
-        delegate(
-            DOM.body,
-            ".woo-product-gallery a.woo-product-gallery-link",
-            "click",
-            this.#onProductGalleryImageClick
-        );
-    };
+    addToWishlistBtn.parentNode.parentNode.classList.add("loading");
 
-    #onAddToWishlistBtnClick = (event) => {
-        const addToWishlistBtn = event.delegateTarget;
+    setTimeout(() => {
+      addToWishlistBtn.parentNode.parentNode.classList.remove("loading");
+    }, 500);
+  };
 
-        addToWishlistBtn.parentNode.parentNode.classList.add("loading");
+  #onProductGalleryImageClick = (event) => {
+    event.preventDefault();
 
-        setTimeout(() => {
-            addToWishlistBtn.parentNode.parentNode.classList.remove("loading");
-        }, 500);
-    };
+    const galleryImage = event.delegateTarget;
+    const mainImage = galleryImage
+      .closest(".product-inner")
+      .querySelector(".woo-entry-image-main");
 
-    #onProductGalleryImageClick = (event) => {
-        event.preventDefault();
+    if (mainImage) {
+      const mainImageURL = galleryImage.getAttribute("href");
+      const galleryImageSiblings = getSiblings(galleryImage.parentNode);
 
-        const galleryImage = event.delegateTarget;
-        const mainImage = galleryImage.closest(".product-inner").querySelector(".woo-entry-image-main");
+      mainImage.parentNode.classList.add("loading");
 
-        if (mainImage) {
-            const mainImageURL = galleryImage.getAttribute("href");
-            const galleryImageSiblings = getSiblings(galleryImage.parentNode);
+      mainImage.setAttribute("src", mainImageURL);
+      mainImage.setAttribute("srcset", mainImageURL);
 
-            mainImage.parentNode.classList.add("loading");
-
-            mainImage.setAttribute("src", mainImageURL);
-            mainImage.setAttribute("srcset", mainImageURL);
-
-            mainImage.style.cssText = `
+      mainImage.style.cssText = `
                 opacity: 0;
                 -webkit-transform: scale(0.5);
                 -moz-transform: scale(0.5);
@@ -65,9 +80,9 @@ class WooHoverStyle {
                 -o-transition: all 0.3s ease;
                 transition: all 0.3s ease;`;
 
-            const imageLoaded = () => {
-                setTimeout(() => {
-                    mainImage.style.cssText = `
+      const imageLoaded = () => {
+        setTimeout(() => {
+          mainImage.style.cssText = `
                         opacity: 1;
                         -webkit-transform: scale(1);
                         -moz-transform: scale(1);
@@ -80,23 +95,23 @@ class WooHoverStyle {
                         -o-transition: all 0.3s ease;
                         transition: all 0.3s ease;`;
 
-                    mainImage.parentNode.classList.remove("loading");
-                }, 300);
-            };
+          mainImage.parentNode.classList.remove("loading");
+        }, 300);
+      };
 
-            if (mainImage.complete) {
-                imageLoaded();
-            } else {
-                mainImage.addEventListener("load", imageLoaded);
-            }
+      if (mainImage.complete) {
+        imageLoaded();
+      } else {
+        mainImage.addEventListener("load", imageLoaded);
+      }
 
-            galleryImage.parentNode.classList.add("active");
+      galleryImage.parentNode.classList.add("active");
 
-            galleryImageSiblings?.forEach((_galleryImage) => {
-                _galleryImage.classList.remove("active");
-            });
-        }
-    };
+      galleryImageSiblings?.forEach((_galleryImage) => {
+        _galleryImage.classList.remove("active");
+      });
+    }
+  };
 }
 
 new WooHoverStyle();

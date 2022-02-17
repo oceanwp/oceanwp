@@ -1,61 +1,79 @@
-import { DOM } from "../../../constants";
 import { fadeIn, fadeOut, getSiblings } from "../../../lib/utils";
 
 class WooGuestAccountPage {
-    #loginBtn;
-    #registerBtn;
-    #loginBox;
-    #registerBox;
+  #elements = {
+    guestAccountPageNav: document.querySelector(".owp-account-links"),
+  };
+  #loginBtn;
+  #registerBtn;
+  #loginBox;
+  #registerBox;
 
-    constructor() {
-        // Return if registration disabled
-        if (DOM.woo.guestAccountPageNav?.classList.contains("registration-disabled")) {
-            return;
-        }
-
-        this.#start();
-        this.#setupEventListeners();
+  constructor() {
+    // Return if registration disabled
+    if (
+      this.#elements.guestAccountPageNav?.classList.contains(
+        "registration-disabled"
+      )
+    ) {
+      return;
     }
 
-    #start = () => {
-        this.#loginBtn = DOM.woo.guestAccountPageNav?.querySelector(".login a");
-        this.#registerBtn = DOM.woo.guestAccountPageNav?.querySelector(".register a");
-        this.#loginBox = DOM.woo.guestAccountPageBox?.querySelector(".col-1");
-        this.#registerBox = DOM.woo.guestAccountPageBox?.querySelector(".col-2");
+    this.#setElements();
+    this.#start();
+    this.#setupEventListeners();
+  }
+
+  #setElements = () => {
+    this.#elements = {
+      ...this.#elements,
+      guestAccountPageBox: document.querySelector("#customer_login"),
     };
+  };
 
-    #setupEventListeners = () => {
-        this.#loginBtn?.addEventListener("click", this.#onLoginBtnClick);
-        this.#registerBtn?.addEventListener("click", this.#onRegisterBtnClick);
-    };
+  #start = () => {
+    this.#loginBtn =
+      this.#elements.guestAccountPageNav?.querySelector(".login a");
+    this.#registerBtn =
+      this.#elements.guestAccountPageNav?.querySelector(".register a");
+    this.#loginBox =
+      this.#elements.guestAccountPageBox?.querySelector(".col-1");
+    this.#registerBox =
+      this.#elements.guestAccountPageBox?.querySelector(".col-2");
+  };
 
-    #onLoginBtnClick = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
+  #setupEventListeners = () => {
+    this.#loginBtn?.addEventListener("click", this.#onLoginBtnClick);
+    this.#registerBtn?.addEventListener("click", this.#onRegisterBtnClick);
+  };
 
-        this.#loginBtn.classList.add("current");
-        this.#registerBtn.classList.remove("current");
+  #onLoginBtnClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
 
-        fadeOut(this.#registerBox, {
-            callback: () => {
-                fadeIn(this.#loginBox);
-            },
-        });
-    };
+    this.#loginBtn.classList.add("current");
+    this.#registerBtn.classList.remove("current");
 
-    #onRegisterBtnClick = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
+    fadeOut(this.#registerBox, {
+      callback: () => {
+        fadeIn(this.#loginBox);
+      },
+    });
+  };
 
-        this.#registerBtn.classList.add("current");
-        this.#loginBtn.classList.remove("current");
+  #onRegisterBtnClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
 
-        fadeOut(this.#loginBox, {
-            callback: () => {
-                fadeIn(this.#registerBox);
-            },
-        });
-    };
+    this.#registerBtn.classList.add("current");
+    this.#loginBtn.classList.remove("current");
+
+    fadeOut(this.#loginBox, {
+      callback: () => {
+        fadeIn(this.#registerBox);
+      },
+    });
+  };
 }
 
 export default WooGuestAccountPage;

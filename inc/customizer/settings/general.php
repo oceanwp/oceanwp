@@ -4029,51 +4029,151 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			);
 
 			/**
-			 * Disable Lightbox
+			 * Emoji
 			 */
 			$wp_customize->add_setting(
-				'ocean_disable_lightbox',
+				'ocean_performance_emoji',
 				array(
-					'default'           => false,
-					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+					'transport'         => 'postMessage',
+					'default'           => 'enable',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
 				)
 			);
 
 			$wp_customize->add_control(
-				new WP_Customize_Control(
+				new OceanWP_Customizer_Buttonset_Control(
 					$wp_customize,
-					'ocean_disable_lightbox',
+					'ocean_performance_emoji',
 					array(
-						'label'    => esc_html__( 'Disable Lightbox', 'oceanwp' ),
-						'type'     => 'checkbox',
-						'section'  => 'ocean_general_performance_section',
-						'settings' => 'ocean_disable_lightbox',
-						'priority' => 10,
+						'label'       => esc_html__( 'Emoji', 'oceanwp' ),
+						'description' => esc_html__( 'This style is all the css for the WP emoji.', 'oceanwp' ),
+						'section'     => 'ocean_general_performance_section',
+						'settings'    => 'ocean_performance_emoji',
+						'priority'    => 10,
+						'choices'     => array(
+							'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+							'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+						),
 					)
 				)
 			);
 
 			/**
-			 * Disable Emoji
+			 * Font Awesome Icons
 			 */
 			$wp_customize->add_setting(
-				'ocean_disable_emoji',
+				'ocean_performance_fontawesome',
 				array(
-					'default'           => false,
-					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+					'transport'         => 'postMessage',
+					'default'           => 'enabled',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
 				)
 			);
 
 			$wp_customize->add_control(
-				new WP_Customize_Control(
+				new OceanWP_Customizer_Buttonset_Control(
 					$wp_customize,
-					'ocean_disable_emoji',
+					'ocean_performance_fontawesome',
 					array(
-						'label'    => esc_html__( 'Disable Emoji', 'oceanwp' ),
-						'type'     => 'checkbox',
-						'section'  => 'ocean_general_performance_section',
-						'settings' => 'ocean_disable_emoji',
-						'priority' => 10,
+						'label'       => esc_html__( 'Font Awesome Icons', 'oceanwp' ),
+						'description' => esc_html__( 'This style is all the css for the font awesome icons.', 'oceanwp' ),
+						'section'     => 'ocean_general_performance_section',
+						'settings'    => 'ocean_performance_fontawesome',
+						'priority'    => 10,
+						'choices'     => array(
+							'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+							'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+						),
+					)
+				)
+			);
+
+			/**
+			 * Simple Line Icons
+			 */
+			$wp_customize->add_setting(
+				'ocean_performance_simple_line_icons',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'enabled',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_performance_simple_line_icons',
+					array(
+						'label'       => esc_html__( 'Simple Line Icons', 'oceanwp' ),
+						'description' => esc_html__( 'This style is all the css for the simple line icons.', 'oceanwp' ),
+						'section'     => 'ocean_general_performance_section',
+						'settings'    => 'ocean_performance_simple_line_icons',
+						'priority'    => 10,
+						'choices'     => array(
+							'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+							'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+						),
+					)
+				)
+			);
+
+			/**
+			 * Lightbox
+			 */
+			$wp_customize->add_setting(
+				'ocean_performance_lightbox',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'enabled',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_performance_lightbox',
+					array(
+						'label'       => esc_html__( 'Lightbox', 'oceanwp' ),
+						'description' => esc_html__( 'This script enables you to overlay your images on the current page, used for the gallerie, single product and content images.', 'oceanwp' ),
+						'section'     => 'ocean_general_performance_section',
+						'settings'    => 'ocean_performance_lightbox',
+						'priority'    => 10,
+						'choices'     => array(
+							'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+							'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+						),
+					)
+				)
+			);
+
+			/**
+			 * Custom Select
+			 */
+			$wp_customize->add_setting(
+				'ocean_performance_custom_select',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'enabled',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_performance_custom_select',
+					array(
+						'label'       => esc_html__( 'Custom Select', 'oceanwp' ),
+						'description' => esc_html__( 'This script uses the native select box and add overlays a stylable <span> element in order to acheive the desired look.', 'oceanwp' ),
+						'section'     => 'ocean_general_performance_section',
+						'settings'    => 'ocean_performance_custom_select',
+						'priority'    => 10,
+						'choices'     => array(
+							'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+							'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+						),
 					)
 				)
 			);

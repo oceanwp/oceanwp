@@ -1,26 +1,29 @@
-import { DOM } from "../../../constants";
-
 class WooResetVariations {
-    constructor() {
-        if (!!DOM.woo.resetVariations) {
-            this.#setupEventListeners();
-        }
+  #elements = {
+    resetVariations: document.querySelector(".reset_variations"),
+  };
+
+  constructor() {
+    if (!!this.#elements.resetVariations) {
+      this.#setupEventListeners();
     }
+  }
 
-    #setupEventListeners = () => {
-        DOM.woo.resetVariations.addEventListener("click", (event) => {
-            const resetVariations = event.currentTarget;
+  #setupEventListeners = () => {
+    this.#elements.resetVariations.addEventListener("click", (event) => {
+      const resetVariations = event.currentTarget;
 
-            resetVariations
-                .closest(".variations")
-                .querySelectorAll("select")
-                .forEach((select) => {
-                    setTimeout(() => {
-                        select.nextSibling.innerHTML = select.options[select.selectedIndex].text;
-                    }, 100);
-                });
+      resetVariations
+        .closest(".variations")
+        .querySelectorAll("select")
+        .forEach((select) => {
+          setTimeout(() => {
+            select.nextSibling.innerHTML =
+              select.options[select.selectedIndex].text;
+          }, 100);
         });
-    };
+    });
+  };
 }
 
 export default WooResetVariations;

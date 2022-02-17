@@ -1,35 +1,42 @@
-import { DOM } from "../../constants";
-
 class WooThumbnails {
-    constructor() {
-        if (!!DOM.woo.thumbsVerticalLayout) {
-            this.#setupEventListeners();
-        }
+  #elements = {
+    thumbsVerticalLayout: document.querySelector(".owp-thumbs-layout-vertical"),
+  };
+
+  constructor() {
+    if (!!this.#elements.thumbsVerticalLayout) {
+      this.#setupEventListeners();
     }
+  }
 
-    #setupEventListeners = () => {
-        window.addEventListener("load", this.#start);
-        window.addEventListener("resize", this.#start);
-    };
+  #setupEventListeners = () => {
+    window.addEventListener("load", this.#start);
+    window.addEventListener("resize", this.#start);
+  };
 
-    #start = () => {
-        const thumbsNav = DOM.woo.thumbsVerticalLayout.querySelector(".flex-control-nav");
+  #start = () => {
+    const thumbsNav =
+      this.#elements.thumbsVerticalLayout.querySelector(".flex-control-nav");
 
-        if (!!thumbsNav) {
-            if (window.innerWidth > 768) {
-                const imageHeight =
-                    DOM.woo.thumbsVerticalLayout.querySelector(".flex-viewport")?.offsetHeight;
-                const navHeight =
-                    DOM.woo.thumbsVerticalLayout.querySelector(".flex-control-nav")?.offsetHeight;
+    if (!!thumbsNav) {
+      if (window.innerWidth > 768) {
+        const imageHeight =
+          this.#elements.thumbsVerticalLayout.querySelector(
+            ".flex-viewport"
+          )?.offsetHeight;
+        const navHeight =
+          this.#elements.thumbsVerticalLayout.querySelector(
+            ".flex-control-nav"
+          )?.offsetHeight;
 
-                if (navHeight > imageHeight + 50) {
-                    thumbsNav.style.maxHeight = `${imageHeight}px`;
-                }
-            } else {
-                thumbsNav.style.maxHeight = "";
-            }
+        if (navHeight > imageHeight + 50) {
+          thumbsNav.style.maxHeight = `${imageHeight}px`;
         }
-    };
+      } else {
+        thumbsNav.style.maxHeight = "";
+      }
+    }
+  };
 }
 
 new WooThumbnails();
