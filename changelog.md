@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### _2022.02.24._ - 3.1.4
+
+-   **Fixed** Retina logo display issue.
+
 ### _2022.02.02._ - 3.1.3
 
 -   **Fixed** Customizer: Missing Typography Class.
