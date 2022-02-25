@@ -468,7 +468,7 @@ jQuery(document).on('oceanready', function() {
 				// Always show the background color of the opacity slider at 100% opacity.
 				$transparency.css('background-color', ui.color.toString('no-alpha'));
 			},
-			palettes: palette // Use the passed in palette.
+			palettes: oceanwpLocalize.colorPalettes // Use the passed in palette.
 		};
 
 		// Create the colorpicker.
