@@ -1310,7 +1310,7 @@ if ( ! function_exists( 'oceanwp_header_retina_logo' ) ) {
 		// Get logo
 		$custom_logo = oceanwp_header_logo_setting();
 
-		if ( $custom_logo === $attachment->ID ) {
+		if ( (int) $custom_logo === $attachment->ID ) {
 
 				// Logo data
 				$logo_data = array(
