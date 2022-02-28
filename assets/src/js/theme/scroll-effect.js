@@ -38,6 +38,7 @@ class ScrollEffect {
   #onScrollItemClick = (event) => {
     const scrollItem = event.currentTarget;
 
+    console.log(scrollItem.parentNode.classList);
     if (
       scrollItem.classList.contains("elementor-item-anchor") &&
       scrollItem.classList.contains("has-submenu")
@@ -56,7 +57,8 @@ class ScrollEffect {
       !scrollItem.parentNode.classList.contains("sidr-class-opl-link") &&
       !scrollItem.classList.contains("acomment-reply") &&
       !scrollItem.classList.contains("htb-nav-link") &&
-      !scrollItem.classList.contains("upload-file")
+      !scrollItem.classList.contains("upload-file") &&
+      !scrollItem.parentNode.classList.contains("vc_tta-panel-title")
     ) {
       const href = scrollItem.getAttribute("href");
       const id = href.substring(href.indexOf("#")).slice(1);
