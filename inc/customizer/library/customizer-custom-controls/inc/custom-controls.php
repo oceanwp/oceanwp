@@ -866,6 +866,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 			wp_enqueue_script( 'wp-color-picker' );
 			wp_enqueue_script( 'skyrocket-custom-controls-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customizer.js', array( 'jquery', 'wp-color-picker' ), '1.0', true );
 			wp_enqueue_style( 'skyrocket-custom-controls-css', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customizer.css', array( 'wp-color-picker' ), '1.0', 'all' );
+			wp_localize_script( 'skyrocket-custom-controls-js', 'oceanwpLocalize', array( 'colorPalettes' => oceanwp_default_color_palettes() ) );
 		}
 		/**
 		 * Render the control in the customizer

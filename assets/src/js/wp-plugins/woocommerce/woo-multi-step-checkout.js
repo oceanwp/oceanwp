@@ -200,11 +200,13 @@ class WooMultiStepCheckout {
   #formValidate(section) {
     const invalidRows = Array.from(
       section.querySelectorAll(".validate-required")
-    ).filter((row) =>
-      "input, select, textarea".split(", ").find((selector) => {
-        const input = row.querySelector(selector);
-        if (input) return input.value.trim() === "";
-      })
+    ).filter(
+      (row) =>
+        this.#isVisible(row) &&
+        "input, select, textarea".split(", ").find((selector) => {
+          const input = row.querySelector(selector);
+          if (input) return input.value.trim() === "";
+        })
     );
     const isValid = invalidRows.length === 0;
 
@@ -219,6 +221,14 @@ class WooMultiStepCheckout {
     }
 
     return isValid;
+  }
+
+  #isVisible(element) {
+    return !!(
+      element.offsetWidth ||
+      element.offsetHeight ||
+      element.getClientRects().length
+    );
   }
 }
 
