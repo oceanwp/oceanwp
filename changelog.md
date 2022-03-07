@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### _2022.03.07._ - 3.1.4
+
+-   **Fixed** Logo: Retinal Logo: display issue.
+-   **Fixed** WooCommerce: Checkout: Multi-Step Checkout: guest checkout issue.
+-   **Fixed** Customizer: Color settings missing localize script.
+-   **Improved** Script performance
+
 ### _2022.02.02._ - 3.1.3
 
 -   **Fixed** Customizer: Missing Typography Class.
