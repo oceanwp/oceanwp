@@ -220,6 +220,7 @@ module.exports = function (grunt) {
           "assets/css/woo/woo-star-font.min.css":
             "assets/css/woo/woo-star-font.css",
           "assets/css/editor-style.min.css": "assets/css/editor-style.css",
+          'assets/css/blog/blog-post-headers.min.css': 'assets/css/blog/blog-post-headers.css',
 
           "inc/customizer/assets/css/customizer-simple-line-icons.min.css":
             "inc/customizer/assets/css/customizer-simple-line-icons.css",
@@ -283,6 +284,7 @@ module.exports = function (grunt) {
           "assets/css/llms/llms.css": "sass/llms.scss",
           "assets/css/learndash/learndash.css": "sass/learndash.scss",
           "assets/css/style.css": "sass/stylesheet.scss",
+          'assets/css/blog/blog-post-headers.css': 'sass/blog-post-headers.scss',
         },
       },
       prod: {
@@ -309,6 +311,7 @@ module.exports = function (grunt) {
           "assets/css/llms/llms.min.css": "sass/llms.scss",
           "assets/css/learndash/learndash.min.css": "sass/learndash.scss",
           "assets/css/style.min.css": "sass/stylesheet.scss",
+          'assets/css/blog/blog-post-headers.min.css': 'sass/blog-post-headers.scss',
         },
       },
     },

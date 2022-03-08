@@ -2003,9 +2003,12 @@ if ( ! function_exists( 'oceanwp_mobile_menu_style' ) ) {
 if ( ! function_exists( 'oceanwp_page_header_template' ) ) {
 
 	function oceanwp_page_header_template() {
-
-		get_template_part( 'partials/page-header' );
-
+		if ( is_singular( 'post' ) ) {
+			get_template_part( ocean_single_post_header_template() );
+		}
+		else {
+			get_template_part( 'partials/page-header' );
+		}
 	}
 
 	add_action( 'ocean_page_header', 'oceanwp_page_header_template' );
@@ -2569,6 +2572,10 @@ if ( ! function_exists( 'oceanwp_blog_wrap_classes' ) ) {
 			} else {
 				$classes[] = 'blog-grid';
 			}
+		} elseif ( 'minimal-stylish' === $style ) {
+			$classes[] = 'entry-layout-4';
+		} elseif ( 'wide-stylish' === $style ) {
+			$classes[] = 'entry-layout-5';
 		}
 
 		// Equal heights
@@ -4825,3 +4832,79 @@ function mobile_menu_search_icon() {
 
 }
 add_action( 'wp', 'mobile_menu_search_icon' );
+
+/**
+ * Add extra CSS classes to the page content wrap section based on conditions
+ *
+ * @param array
+ * @return string
+ * @since 3.1.0
+ */
+if ( ! function_exists( 'ocean_blog_entry_classes_content_wrap' ) ) {
+
+	function ocean_blog_entry_classes_content_wrap() {
+
+		$classes = array();
+
+		if ( is_category() || is_tag() || is_tax() || is_home() ) {
+			// Get default style from Customizer
+			$style = get_theme_mod( 'ocean_blog_style', 'large-entry' );
+
+			// Sanitize
+			$style = $style ? $style : 'large-entry';
+
+			if ( 'minimal-stylish' === $style || 'wide-stylish' === $style ) {
+
+				$classes[] = 'head-row';
+			}
+		}
+
+		// Turn classes into space seperated string
+		if ( is_array( $classes ) ) {
+			$classes = implode( ' ', $classes );
+		}
+
+		if ( ! empty( $classes) || isset( $classes ) ) {
+			// Echo classes
+			echo esc_attr( $classes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+	}
+}
+
+/**
+ * Add extra CSS classes to the page primary section based on conditions
+ *
+ * @param array
+ * @return string
+ * @since 3.1.0
+ */
+if ( ! function_exists( 'ocean_blog_entry_classes_primary' ) ) {
+
+	function ocean_blog_entry_classes_primary() {
+
+		$classes = array();
+
+		if ( is_category() || is_tag() || is_tax() || is_home() ) {
+			// Get default style from Customizer
+			$style = get_theme_mod( 'ocean_blog_style', 'large-entry' );
+
+			// Sanitize
+			$style = $style ? $style : 'large-entry';
+
+			if ( 'minimal-stylish' === $style || 'wide-stylish' === $style ) {
+
+				$classes[] = 'col-xs-12';
+			}
+		}
+
+		// Turn classes into space seperated string
+		if ( is_array( $classes ) ) {
+			$classes = implode( ' ', $classes );
+		}
+
+		if ( ! empty( $classes) || isset( $classes ) ) {
+			// Echo classes
+			echo esc_attr( $classes ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+	}
+}

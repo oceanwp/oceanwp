@@ -16,11 +16,11 @@ get_header(); ?>
 
 	<?php do_action( 'ocean_before_content_wrap' ); ?>
 
-	<div id="content-wrap" class="container clr">
+	<div id="content-wrap" class="container clr <?php ocean_blog_entry_classes_content_wrap(); ?>">
 
 		<?php do_action( 'ocean_before_primary' ); ?>
 
-		<div id="primary" class="content-area clr">
+		<div id="primary" class="content-area clr <?php ocean_blog_entry_classes_primary(); ?>">
 
 			<?php do_action( 'ocean_before_content' ); ?>
 
