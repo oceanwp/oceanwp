@@ -26,7 +26,7 @@ $display_mod_date = ( false === $ocean_date_onoff || ( true === $ocean_date_onof
 do_action( 'ocean_before_single_post_meta' );
 ?>
 
-<ul class="meta <?php echo oceanwp_theme_single_post_separator(); ?> clr">
+<ul class="meta-item meta <?php echo oceanwp_theme_single_post_separator(); ?> clr">
 
 	<?php
 	// Loop through meta sections.

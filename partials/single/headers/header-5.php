@@ -23,7 +23,7 @@ $display_sph_meta = apply_filters( 'display_single_ocean_header_5_meta', $displa
 
 ?>
 
-<div class="ocean-single-post-header .single-post-header-wrap single-header-ocean-5">
+<div class="ocean-single-post-header single-post-header-wrap single-header-ocean-5">
 	<div class="sh-container head-row row-center">
 		<div class="col-xs-12 col-l-8">
 
@@ -34,7 +34,7 @@ $display_sph_meta = apply_filters( 'display_single_ocean_header_5_meta', $displa
 				<?php the_title( '<'. $heading .' class="single-post-title">', '</'. $heading .'>' ); ?>
 
 				<?php if ( $display_sph_meta === true ) { ?>
-				
+
 					<?php do_action( 'ocean_single_post_header_meta' ); ?>
 
 				<?php } ?>

@@ -4724,7 +4724,7 @@
                 if (pair) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-font-family">.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{font-family: ' +
+                        '<style class="customizer-typography-single_post_meta-font-family">.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{font-family: ' +
                         pair +
                         ";}</style>";
                     if ($child.length) {
@@ -4743,7 +4743,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-font-weight">.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{font-weight: ' +
+                        '<style class="customizer-typography-single_post_meta-font-weight">.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{font-weight: ' +
                         dataAndEvents +
                         ";}</style>";
                     if ($child.length) {
@@ -4762,7 +4762,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-font-style">.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{font-style: ' +
+                        '<style class="customizer-typography-single_post_meta-font-style">.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{font-style: ' +
                         dataAndEvents +
                         ";}</style>";
                     if ($child.length) {
@@ -4781,7 +4781,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-font-size">.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{font-size: ' +
+                        '<style class="customizer-typography-single_post_meta-font-size">.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{font-size: ' +
                         dataAndEvents +
                         ";}</style>";
                     if ($child.length) {
@@ -4800,7 +4800,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-tablet-font-size">@media (max-width: 768px){.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{font-size: ' +
+                        '<style class="customizer-typography-single_post_meta-tablet-font-size">@media (max-width: 768px){.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{font-size: ' +
                         dataAndEvents +
                         ";}}</style>";
                     if ($child.length) {
@@ -4819,7 +4819,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-mobile-font-size">@media (max-width: 480px){.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{font-size: ' +
+                        '<style class="customizer-typography-single_post_meta-mobile-font-size">@media (max-width: 480px){.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{font-size: ' +
                         dataAndEvents +
                         ";}}</style>";
                     if ($child.length) {
@@ -4838,7 +4838,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-color">.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{color: ' +
+                        '<style class="customizer-typography-single_post_meta-color">.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{color: ' +
                         dataAndEvents +
                         ";}</style>";
                     if ($child.length) {
@@ -4857,7 +4857,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-line-height">.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{line-height: ' +
+                        '<style class="customizer-typography-single_post_meta-line-height">.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{line-height: ' +
                         dataAndEvents +
                         ";}</style>";
                     if ($child.length) {
@@ -4876,7 +4876,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-tablet-line-height">@media (max-width: 768px){.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{line-height: ' +
+                        '<style class="customizer-typography-single_post_meta-tablet-line-height">@media (max-width: 768px){.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{line-height: ' +
                         dataAndEvents +
                         ";}}</style>";
                     if ($child.length) {
@@ -4895,7 +4895,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-mobile-line-height">@media (max-width: 480px){.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{line-height: ' +
+                        '<style class="customizer-typography-single_post_meta-mobile-line-height">@media (max-width: 480px){.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{line-height: ' +
                         dataAndEvents +
                         ";}}</style>";
                     if ($child.length) {
@@ -4914,7 +4914,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-letter-spacing">.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{letter-spacing: ' +
+                        '<style class="customizer-typography-single_post_meta-letter-spacing">.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{letter-spacing: ' +
                         dataAndEvents +
                         "px;}</style>";
                     if ($child.length) {
@@ -4933,7 +4933,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-tablet-letter-spacing">@media (max-width: 768px){.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{letter-spacing: ' +
+                        '<style class="customizer-typography-single_post_meta-tablet-letter-spacing">@media (max-width: 768px){.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{letter-spacing: ' +
                         dataAndEvents +
                         "px;}}</style>";
                     if ($child.length) {
@@ -4952,7 +4952,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-mobile-letter-spacing">@media (max-width: 480px){.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{letter-spacing: ' +
+                        '<style class="customizer-typography-single_post_meta-mobile-letter-spacing">@media (max-width: 480px){.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{letter-spacing: ' +
                         dataAndEvents +
                         "px;}}</style>";
                     if ($child.length) {
@@ -4971,7 +4971,7 @@
                 if (dataAndEvents) {
                     /** @type {string} */
                     var img =
-                        '<style class="customizer-typography-single_post_meta-text-transform">.ocean-single-post-header .blog-post-meta, .ocean-single-post-header .blog-post-meta a{text-transform: ' +
+                        '<style class="customizer-typography-single_post_meta-text-transform">.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{text-transform: ' +
                         dataAndEvents +
                         ";}</style>";
                     if ($child.length) {

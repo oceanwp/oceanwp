@@ -205,7 +205,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 					),
 					'single_post_meta'      => array(
 						'label'    => esc_html__( 'Post Header Meta', 'oceanwp' ),
-						'target'   => '.ocean-single-post-header .blog-post-meta',
+						'target'   => '.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a',
 						'defaults' => array(
 							'font-size'      => '13px',
 							'color'          => '#333333',

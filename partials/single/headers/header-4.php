@@ -23,7 +23,7 @@ $display_sph_meta = apply_filters( 'display_single_ocean_header_4_meta', $displa
 
 ?>
 
-<div class="ocean-single-post-header .single-post-header-wrap single-header-ocean-4">
+<div class="ocean-single-post-header single-post-header-wrap single-header-ocean-4">
 	<div class="sh-container head-row row-center">
 		<div class="col-xs-12 col-l-8">
 

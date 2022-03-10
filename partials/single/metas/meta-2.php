@@ -24,7 +24,7 @@ $display_mod_date = ( false === $ocean_date_onoff || ( true === $ocean_date_onof
 do_action( 'ocean_before_single_post_header_meta' );
 ?>
 
-<ul class="meta-style-2 <?php echo ocean_blog_single_header_meta_separator_class(); ?>">
+<ul class="meta-item meta-style-2 <?php echo ocean_blog_single_header_meta_separator_class(); ?>">
 
 	<?php
 	// Loop through meta sections.
@@ -43,12 +43,12 @@ do_action( 'ocean_before_single_post_header_meta' );
 				<li class="meta-mod-date"><?php ocean_get_post_modified_date(); ?></li>
 		<?php } ?>
 
-		<?php if ( 'categories' === $section ) { ?>
+		<?php if ( 'categories' === $section && has_category() ) { ?>
 			<li class="meta-cat"><?php ocean_get_post_categories(); ?></li>
 		<?php } ?>
 
-		<?php if ( 'tags' === $section ) { ?>
-			<li class="meta-cat"><?php ocean_get_post_tags(); ?></li>
+		<?php if ( 'tags' === $section && ocean_get_post_tags() ) { ?>
+			<li class="meta-tag"><?php ocean_get_post_tags(); ?></li>
 		<?php } ?>
 
 		<?php if ( 'reading-time' === $section ) { ?>

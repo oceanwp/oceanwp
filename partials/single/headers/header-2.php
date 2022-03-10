@@ -27,7 +27,7 @@ $heading = apply_filters( 'single_ocean_header_2_h_tag', $heading );
 
 ?>
 
-<div class="ocean-single-post-header .single-post-header-wrap single-header-ocean-2 sh-container">
+<div class="ocean-single-post-header single-post-header-wrap single-header-ocean-2 sh-container">
 	<div class="head-row row-center">
 		<div class="col-xs-12 col-l-8 col-ml-9">
 
