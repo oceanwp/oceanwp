@@ -1,11 +1,9 @@
 # OceanWP Changelog
 
-### _2022.03.08._ - 3.1.5
+### _2022.03.10._ - 3.1.5
 
 -   **Added** New single post header style
 -   **Added** New single post meta style
--   **Added** New blog entry style
--   **Added** New blog entry meta style
 
 ### _2022.03.07._ - 3.1.4
 

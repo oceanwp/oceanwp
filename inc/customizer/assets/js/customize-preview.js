@@ -936,6 +936,23 @@
 			} );
 		} );
 
+		api("oceanwp_single_post_header_background", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-oceanwp_single_post_header_background");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-oceanwp_single_post_header_background">.single-post-header-wrap, .single-header-ocean-6 .blog-post-title, .single-header-ocean-7 .blog-post-title{ background-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		});
+
 	/******** Footer *********/
 
 		// Tablet columns class

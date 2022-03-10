@@ -23,7 +23,7 @@ $display_sph_meta = apply_filters( 'display_single_ocean_header_6_meta', $displa
 
 ?>
 
-<div class="single-header-ocean-6">
+<div class="ocean-single-post-header single-header-ocean-6">
 	<?php oceanwp_paint_post_thumbnail( 'full', array( 'name' => 'ocean-sh-6' ) ); ?>
 	<div class="sh-container head-row">
 		<div class="col-xs-12">

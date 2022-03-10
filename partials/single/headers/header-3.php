@@ -27,7 +27,7 @@ $display_author_bio = apply_filters( 'display_single_ocean_header_3_author_bio',
 
 ?>
 
-<div class="single-header-ocean-3">
+<div class="ocean-single-post-header .single-post-header-wrap single-header-ocean-3">
 	<div class="header-overlay-thumbnail" <?php ocean_paint_post_background( 'full' ); ?>></div>
 
 	<?php if ( has_post_thumbnail() ) { ?>

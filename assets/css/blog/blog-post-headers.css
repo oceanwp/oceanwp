@@ -809,14 +809,11 @@ ul.bebm-style-stylish li {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 20px 0 10px 30px;
+  margin: 20px 0 10px 0;
 }
 
 a.post-edit-link {
-  color: #ffb100;
-  background-color: #06214e;
   padding: 10px 20px;
-  border-radius: 12px;
 }
 
 /*------------------------------------*
@@ -825,6 +822,7 @@ a.post-edit-link {
 .single-header-ocean-2 {
   margin-top: 40px;
   margin-bottom: 25px;
+  padding: 40px 0;
 }
 
 header.blog-post-title {
@@ -1070,12 +1068,9 @@ header.blog-post-title {
   padding: 30px 40px;
 }
 
-.single-header-ocean-6 .blog-post-title {
-  margin: -150px auto 20px auto;
-}
-
+.single-header-ocean-6 .blog-post-title,
 .single-header-ocean-7 .blog-post-title {
-  margin: 20px auto -150px auto;
+  margin-top: 50px;
 }
 
 .single-header-ocean-6 .blog-post-title .single-post-title,

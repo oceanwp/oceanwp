@@ -193,6 +193,26 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'letter-spacing' => '0.6',
 						),
 					),
+					'single_post_title'      => array(
+						'label'    => esc_html__( 'Post Header Title', 'oceanwp' ),
+						'target'   => '.ocean-single-post-header .single-post-title',
+						'defaults' => array(
+							'font-size'      => '34px',
+							'color'          => '#333333',
+							'line-height'    => '1.4',
+							'letter-spacing' => '0.6',
+						),
+					),
+					'single_post_meta'      => array(
+						'label'    => esc_html__( 'Post Header Meta', 'oceanwp' ),
+						'target'   => '.ocean-single-post-header .blog-post-meta',
+						'defaults' => array(
+							'font-size'      => '13px',
+							'color'          => '#333333',
+							'line-height'    => '1.4',
+							'letter-spacing' => '0.6',
+						),
+					),
 					'sidebar_widget_title' => array(
 						'label'    => esc_html__( 'Sidebar Widget Heading', 'oceanwp' ),
 						'target'   => '.sidebar-box .widget-title',
