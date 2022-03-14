@@ -1113,6 +1113,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					'oceanwp_single_post_header_style',
 					array(
 						'label'           => esc_html__( 'Header Style', 'oceanwp' ),
+						'description'     => esc_html__( 'Post Page Title styles will not function properly with all Header styles. Please choose a Header for a Blog Post that will function best with your selected Post Page Title style.', 'oceanwp' ),
 						'type'            => 'select',
 						'section'         => 'ocean_single_post',
 						'settings'        => 'oceanwp_single_post_header_style',
