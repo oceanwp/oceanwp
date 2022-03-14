@@ -101,6 +101,9 @@ if ( ! function_exists( 'ocean_get_post_author_bio' ) ) {
 
 	function ocean_get_post_author_bio( $args = array(), $echo = true ) {
 
+		global $post;
+		$author_id = $post->post_author;
+
 		$default_args = array(
 			'before'  => '',
 			'after'   => ''
@@ -108,7 +111,7 @@ if ( ! function_exists( 'ocean_get_post_author_bio' ) ) {
 
 		$args = wp_parse_args( $args, $default_args );
 
-		$author_bio = get_the_author_meta( 'description' );
+		$author_bio = get_the_author_meta( 'description', $author_id );
 
 		$author_bio_meta = $args['before'] . $author_bio . $args['after'];
 		$author_bio_meta = apply_filters( 'ocean_meta_author_bio', $author_bio_meta );
