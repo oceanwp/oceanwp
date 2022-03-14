@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         files: {
           [`${outputsPath}/theme.min.js`]: `${scriptsPath}/theme.js`,
           [`${outputsPath}/select.min.js`]: `${scriptsPath}/select.js`,
-          [`${outputsPath}/vertical-header.min.js`]: `${scriptsPath}/vertical-header.js`,
+          [`${outputsPath}/vertical-header.min.js`]: `${scriptsPath}/header/vertical-header.js`,
           [`${outputsPath}/full-screen-menu.min.js`]: `${scriptsPath}/menu/full-screen-menu.js`,
           [`${outputsPath}/drop-down-mobile-menu.min.js`]: `${scriptsPath}/mobile-menu/drop-down-mobile-menu.js`,
           [`${outputsPath}/full-screen-mobile-menu.min.js`]: `${scriptsPath}/mobile-menu/full-screen-mobile-menu.js`,

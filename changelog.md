@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### _2022.03.14._ - 3.1.5
+
+-   **Fixed** Vertical Header: Submenu dropdown is not working.
+
 ### _2022.03.07._ - 3.1.4
 
 -   **Fixed** Logo: Retinal Logo: display issue.
