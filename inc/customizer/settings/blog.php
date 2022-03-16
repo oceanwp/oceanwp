@@ -888,7 +888,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					$wp_customize,
 					'ocean_blog_entry_meta_style',
 					array(
-						'label'           => esc_html__( 'Meta Separator', 'oceanwp' ),
+						'label'           => esc_html__( 'Meta Style', 'oceanwp' ),
 						'type'            => 'select',
 						'section'         => 'ocean_blog_entries',
 						'settings'        => 'ocean_blog_entry_meta_style',
@@ -1804,7 +1804,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					$wp_customize,
 					'ocean_blog_single_meta_style',
 					array(
-						'label'           => esc_html__( 'Meta Separator', 'oceanwp' ),
+						'label'           => esc_html__( 'Meta Style', 'oceanwp' ),
 						'type'            => 'select',
 						'section'         => 'ocean_single_post',
 						'settings'        => 'ocean_blog_single_meta_style',
