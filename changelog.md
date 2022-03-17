@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### _2022.03.14._ - 3.1.5
+
+-   **Added** New single post header style
+-   **Added** New single post meta style
+
 ### _2022.03.07._ - 3.1.4
 
 -   **Fixed** Logo: Retinal Logo: display issue.
