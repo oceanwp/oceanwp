@@ -564,6 +564,26 @@ function oceanwp_cac_has_blog_infinite_scroll() {
 	}
 }
 
+function oceanwp_cac_hasnt_default_post_header_style() {
+	$return = ( 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
+	return $return;
+}
+
+function oceanwp_cac_has_post_header_cover_style() {
+	$return = ( 'cover' === get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
+	return $return;
+}
+
+function oceanwp_cac_has_post_header_author() {
+	$return = ( 'intro' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) && 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
+	return $return;
+}
+
+function oceanwp_cac_has_post_meta_stylish() {
+	$return = ( 'spm_style_3' === get_theme_mod( 'oceanwp_single_post_header_meta_style', 'spm_style_2' ) && oceanwp_cac_hasnt_default_post_header_style() ) ? true : false;
+	return $return;
+}
+
 /*-------------------------------------------------------------------------------*/
 /* [ WooCommerce ]
 /*-------------------------------------------------------------------------------*/

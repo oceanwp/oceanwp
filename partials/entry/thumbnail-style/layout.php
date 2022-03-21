@@ -83,6 +83,8 @@ $inner_classes = implode( ' ', $inner_classes ); ?>
 		}
 		?>
 
+		<?php ocean_edit_post(); ?>
+
 	</div><!-- .blog-entry-inner -->
 
 </article><!-- #post-## -->

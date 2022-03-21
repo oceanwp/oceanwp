@@ -193,6 +193,26 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'letter-spacing' => '0.6',
 						),
 					),
+					'single_post_title'      => array(
+						'label'    => esc_html__( 'Post Header Title', 'oceanwp' ),
+						'target'   => '.ocean-single-post-header .single-post-title',
+						'defaults' => array(
+							'font-size'      => '34px',
+							'color'          => '#333333',
+							'line-height'    => '1.4',
+							'letter-spacing' => '0.6',
+						),
+					),
+					'single_post_meta'      => array(
+						'label'    => esc_html__( 'Post Header Meta', 'oceanwp' ),
+						'target'   => '.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a',
+						'defaults' => array(
+							'font-size'      => '13px',
+							'color'          => '#333333',
+							'line-height'    => '1.4',
+							'letter-spacing' => '0.6',
+						),
+					),
 					'sidebar_widget_title' => array(
 						'label'    => esc_html__( 'Sidebar Widget Heading', 'oceanwp' ),
 						'target'   => '.sidebar-box .widget-title',
@@ -300,6 +320,29 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						'type'     => 'checkbox',
 						'section'  => 'ocean_typography_general',
 						'settings' => 'ocean_disable_google_font',
+						'priority' => 10,
+					)
+				)
+			);
+
+			$wp_customize->add_setting(
+				'ocean_local_google_font',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_local_google_font',
+					array(
+						'label'    => esc_html__( 'Google Fonts from Site', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_typography_general',
+						'settings' => 'ocean_local_google_font',
 						'priority' => 10,
 					)
 				)

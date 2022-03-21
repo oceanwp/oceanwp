@@ -3,6 +3,8 @@
 ### _2022.03.14._ - 3.1.5
 
 -   **Fixed** Vertical Header: Submenu dropdown is not working.
+-   **Added** New single post header style
+-   **Added** New single post meta style
 
 ### _2022.03.07._ - 3.1.4
 
