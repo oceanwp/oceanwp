@@ -213,6 +213,26 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'letter-spacing' => '0.6',
 						),
 					),
+					'single_post_title_author'      => array(
+						'label'    => esc_html__( 'Post Title Author', 'oceanwp' ),
+						'target'   => '.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a',
+						'defaults' => array(
+							'font-size'      => '14px',
+							'color'          => '#333333',
+							'line-height'    => '1.4',
+							'letter-spacing' => '0.6',
+						),
+					),
+					'single_post_title_author_bio'      => array(
+						'label'    => esc_html__( 'Post Title Author Bio', 'oceanwp' ),
+						'target'   => '.ocean-single-post-header .post-author-description',
+						'defaults' => array(
+							'font-size'      => '12px',
+							'color'          => '#333333',
+							'line-height'    => '1.4',
+							'letter-spacing' => '0.6',
+						),
+					),
 					'sidebar_widget_title' => array(
 						'label'    => esc_html__( 'Sidebar Widget Heading', 'oceanwp' ),
 						'target'   => '.sidebar-box .widget-title',

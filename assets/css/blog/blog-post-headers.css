@@ -932,20 +932,20 @@ header.blog-post-title {
   margin: 0 0 30px;
 }
 
-.single-header-ocean-3 .blog-post-author .post-author-name {
+.single-header-ocean-3 .post-author-name {
   font-size: 22px;
   line-height: 2;
 }
 
-.single-header-ocean-3 .blog-post-author .post-author-name a {
+.single-header-ocean-3 .post-author-name a {
   color: #fff;
 }
 
-.single-header-ocean-3 .blog-post-author .post-author-name a :hover {
+.single-header-ocean-3 .post-author-name a :hover {
   color: inherit;
 }
 
-.single-header-ocean-3 .blog-post-author .blog-post-author-content {
+.single-header-ocean-3 .blog-post-author-content {
   color: #fff;
   font-size: 15px;
 }
