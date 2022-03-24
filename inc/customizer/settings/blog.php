@@ -1118,7 +1118,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					$wp_customize,
 					'oceanwp_single_post_header_background',
 					array(
-						'label'           => esc_html__( 'Header Background Color', 'oceanwp' ),
+						'label'           => esc_html__( 'Post Title Background Color', 'oceanwp' ),
 						'section'         => 'ocean_single_post',
 						'priority'        => 10,
 						'active_callback' => 'oceanwp_cac_hasnt_default_post_header_style',
@@ -1140,7 +1140,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					$wp_customize,
 					'oceanwp_single_post_header_background_cover',
 					array(
-						'label'           => esc_html__( 'Header Overlay Color', 'oceanwp' ),
+						'label'           => esc_html__( 'Post Title Overlay Color', 'oceanwp' ),
 						'section'         => 'ocean_single_post',
 						'priority'        => 10,
 						'active_callback' => 'oceanwp_cac_has_post_header_cover_style',
@@ -1166,7 +1166,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					$wp_customize,
 					'oceanwp_single_post_header_meta_style',
 					array(
-						'label'           => esc_html__( 'Header Meta Style', 'oceanwp' ),
+						'label'           => esc_html__( 'Post Title Meta Style', 'oceanwp' ),
 						'type'            => 'select',
 						'section'         => 'ocean_single_post',
 						'settings'        => 'oceanwp_single_post_header_meta_style',
@@ -1198,7 +1198,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					$wp_customize,
 					'oceanwp_single_post_header_meta_separator',
 					array(
-						'label'           => esc_html__( 'Header Meta Separator', 'oceanwp' ),
+						'label'           => esc_html__( 'Post Title Meta Separator', 'oceanwp' ),
 						'type'            => 'select',
 						'section'         => 'ocean_single_post',
 						'settings'        => 'oceanwp_single_post_header_meta_separator',
@@ -1719,7 +1719,6 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 			$wp_customize->add_setting(
 				'ocean_blog_single_meta_separator',
 				array(
-					'transport'         => 'postMessage',
 					'default'           => 'default',
 					'sanitize_callback' => 'oceanwp_sanitize_select',
 				)

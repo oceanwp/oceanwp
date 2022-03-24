@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 3.1.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-03-22 04:34:12+00:00\n"
+"POT-Creation-Date: 2022-03-24 04:49:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -110,63 +110,63 @@ msgstr ""
 msgid "Mobile (optional)"
 msgstr ""
 
-#: functions.php:727
+#: functions.php:730
 msgid "Default Sidebar"
 msgstr ""
 
-#: functions.php:729
+#: functions.php:732
 msgid ""
 "Widgets in this area will be displayed in the left or right sidebar area if "
 "you choose the Left or Right Sidebar layout."
 msgstr ""
 
-#: functions.php:740 inc/third/class-lifterlms.php:310
+#: functions.php:743 inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:742
+#: functions.php:745
 msgid ""
 "Widgets in this area are used in the left sidebar region if you use the "
 "Both Sidebars layout."
 msgstr ""
 
-#: functions.php:754
+#: functions.php:757
 msgid "Search Results Sidebar"
 msgstr ""
 
-#: functions.php:756
+#: functions.php:759
 msgid "Widgets in this area are used in the search result page."
 msgstr ""
 
-#: functions.php:768
+#: functions.php:771
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:770
+#: functions.php:773
 msgid "Widgets in this area are used in the first footer region."
 msgstr ""
 
-#: functions.php:781
+#: functions.php:784
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:783
+#: functions.php:786
 msgid "Widgets in this area are used in the second footer region."
 msgstr ""
 
-#: functions.php:794
+#: functions.php:797
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:796
+#: functions.php:799
 msgid "Widgets in this area are used in the third footer region."
 msgstr ""
 
-#: functions.php:807
+#: functions.php:810
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:809
+#: functions.php:812
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr ""
 
@@ -273,32 +273,32 @@ msgid "px - em - rem"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:56
-#: inc/customizer/settings/typography.php:452
+#: inc/customizer/settings/typography.php:456
 msgid "Font Family"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:57
-#: inc/customizer/settings/typography.php:611
+#: inc/customizer/settings/typography.php:615
 msgid "Font Size"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:58
-#: inc/customizer/settings/typography.php:481
+#: inc/customizer/settings/typography.php:485
 msgid "Font Weight"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:59
-#: inc/customizer/settings/typography.php:521
+#: inc/customizer/settings/typography.php:525
 msgid "Font Style"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:60
-#: inc/customizer/settings/typography.php:554
+#: inc/customizer/settings/typography.php:558
 msgid "Text Transform"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:61
-#: inc/customizer/settings/typography.php:666
+#: inc/customizer/settings/typography.php:670
 msgid "Line Height"
 msgstr ""
 
@@ -314,7 +314,7 @@ msgstr ""
 #: inc/customizer/settings/blog.php:898 inc/customizer/settings/blog.php:1092
 #: inc/customizer/settings/blog.php:1421 inc/customizer/settings/blog.php:1460
 #: inc/customizer/settings/blog.php:1492 inc/customizer/settings/blog.php:1526
-#: inc/customizer/settings/blog.php:1739
+#: inc/customizer/settings/blog.php:1738
 #: inc/customizer/settings/general.php:261
 #: inc/customizer/settings/general.php:300
 #: inc/customizer/settings/general.php:332
@@ -329,82 +329,82 @@ msgstr ""
 #: inc/customizer/settings/header.php:1990
 #: inc/customizer/settings/header.php:2012
 #: inc/customizer/settings/header.php:2036
-#: inc/customizer/settings/typography.php:489
-#: inc/customizer/settings/typography.php:528
-#: inc/customizer/settings/typography.php:561
+#: inc/customizer/settings/typography.php:493
+#: inc/customizer/settings/typography.php:532
+#: inc/customizer/settings/typography.php:565
 #: inc/customizer/settings/woocommerce.php:127
 #: inc/third/class-lifterlms.php:308
 msgid "Default"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:298
-#: inc/customizer/settings/typography.php:490
+#: inc/customizer/settings/typography.php:494
 msgid "Thin: 100"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:299
-#: inc/customizer/settings/typography.php:491
+#: inc/customizer/settings/typography.php:495
 msgid "Light: 200"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:300
-#: inc/customizer/settings/typography.php:492
+#: inc/customizer/settings/typography.php:496
 msgid "Book: 300"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:301
-#: inc/customizer/settings/typography.php:493
+#: inc/customizer/settings/typography.php:497
 msgid "Normal: 400"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:302
-#: inc/customizer/settings/typography.php:494
+#: inc/customizer/settings/typography.php:498
 msgid "Medium: 500"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:303
-#: inc/customizer/settings/typography.php:495
+#: inc/customizer/settings/typography.php:499
 msgid "Semibold: 600"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:304
-#: inc/customizer/settings/typography.php:496
+#: inc/customizer/settings/typography.php:500
 msgid "Bold: 700"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:305
-#: inc/customizer/settings/typography.php:497
+#: inc/customizer/settings/typography.php:501
 msgid "Extra Bold: 800"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:306
-#: inc/customizer/settings/typography.php:498
+#: inc/customizer/settings/typography.php:502
 msgid "Black: 900"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:321
-#: inc/customizer/settings/typography.php:529
+#: inc/customizer/settings/typography.php:533
 #: inc/customizer/settings/woocommerce.php:2133
 msgid "Normal"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:322
-#: inc/customizer/settings/typography.php:530
+#: inc/customizer/settings/typography.php:534
 msgid "Italic"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:337
-#: inc/customizer/settings/typography.php:562
+#: inc/customizer/settings/typography.php:566
 msgid "Capitalize"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:338
-#: inc/customizer/settings/typography.php:563
+#: inc/customizer/settings/typography.php:567
 msgid "Lowercase"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:339
-#: inc/customizer/settings/typography.php:564
+#: inc/customizer/settings/typography.php:568
 msgid "Uppercase"
 msgstr ""
 
@@ -982,7 +982,7 @@ msgid "Author"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:861 inc/customizer/settings/blog.php:1263
-#: inc/customizer/settings/blog.php:1703 inc/customizer/settings/blog.php:1771
+#: inc/customizer/settings/blog.php:1703 inc/customizer/settings/blog.php:1770
 msgid "Date"
 msgstr ""
 
@@ -1006,26 +1006,26 @@ msgstr ""
 msgid "Reading Time"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:892 inc/customizer/settings/blog.php:1733
+#: inc/customizer/settings/blog.php:892 inc/customizer/settings/blog.php:1732
 msgid "Meta Separator"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:899 inc/customizer/settings/blog.php:1210
-#: inc/customizer/settings/blog.php:1740
+#: inc/customizer/settings/blog.php:1739
 msgid "Modern"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:900 inc/customizer/settings/blog.php:1176
-#: inc/customizer/settings/blog.php:1209 inc/customizer/settings/blog.php:1741
+#: inc/customizer/settings/blog.php:1209 inc/customizer/settings/blog.php:1740
 msgid "Stylish"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:901 inc/customizer/settings/blog.php:1207
-#: inc/customizer/settings/blog.php:1742 inc/customizer/settings/edd.php:2637
+#: inc/customizer/settings/blog.php:1741 inc/customizer/settings/edd.php:2637
 #: inc/customizer/settings/general.php:2210
 #: inc/customizer/settings/general.php:2241
 #: inc/customizer/settings/general.php:2275
-#: inc/customizer/settings/typography.php:565
+#: inc/customizer/settings/typography.php:569
 #: inc/customizer/settings/woocommerce.php:4057
 #: inc/customizer/settings/woocommerce.php:4820
 msgid "None"
@@ -1092,15 +1092,15 @@ msgid "Screen Invert"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:1121
-msgid "Header Background Color"
+msgid "Post Title Background Color"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:1143
-msgid "Header Overlay Color"
+msgid "Post Title Overlay Color"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:1169
-msgid "Header Meta Style"
+msgid "Post Title Meta Style"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:1175 inc/customizer/settings/header.php:86
@@ -1109,7 +1109,7 @@ msgid "Minimal"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:1201
-msgid "Header Meta Separator"
+msgid "Post Title Meta Separator"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:1208
@@ -1318,11 +1318,11 @@ msgid ""
 "disable the max width."
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1764 inc/customizer/settings/edd.php:1647
+#: inc/customizer/settings/blog.php:1763 inc/customizer/settings/edd.php:1647
 msgid "Next/Prev Taxonomy"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1769 inc/customizer/settings/blog.php:1856
+#: inc/customizer/settings/blog.php:1768 inc/customizer/settings/blog.php:1855
 #: inc/customizer/settings/edd.php:1267 inc/customizer/settings/edd.php:1652
 #: inc/customizer/settings/general.php:2211
 #: inc/customizer/settings/general.php:2242
@@ -1331,7 +1331,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1770 inc/customizer/settings/blog.php:1857
+#: inc/customizer/settings/blog.php:1769 inc/customizer/settings/blog.php:1856
 #: inc/customizer/settings/edd.php:1653
 #: inc/customizer/settings/general.php:2212
 #: inc/customizer/settings/general.php:2243
@@ -1339,35 +1339,35 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1793
+#: inc/customizer/settings/blog.php:1792
 msgid "Related Posts Count"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1822
+#: inc/customizer/settings/blog.php:1821
 msgid "Related Posts Columns"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1851
+#: inc/customizer/settings/blog.php:1850
 msgid "Related Posts Taxonomy"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1878
+#: inc/customizer/settings/blog.php:1877
 msgid "Related Posts Image Width (px)"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1906
+#: inc/customizer/settings/blog.php:1905
 msgid "Related Posts Image Height (px)"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1937
+#: inc/customizer/settings/blog.php:1936
 msgid "Comment Form Position"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1942
+#: inc/customizer/settings/blog.php:1941
 msgid "Before"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1943
+#: inc/customizer/settings/blog.php:1942
 msgid "After"
 msgstr ""
 
@@ -1381,7 +1381,7 @@ msgstr ""
 #: inc/customizer/settings/lifterlms.php:48
 #: inc/customizer/settings/lifterlms.php:62
 #: inc/customizer/settings/topbar.php:48
-#: inc/customizer/settings/typography.php:316
+#: inc/customizer/settings/typography.php:320
 #: inc/customizer/settings/woocommerce.php:48
 msgid "General"
 msgstr ""
@@ -3661,7 +3661,7 @@ msgid "Section Title Background"
 msgstr ""
 
 #: inc/customizer/settings/sidebar.php:150
-#: inc/customizer/settings/typography.php:247
+#: inc/customizer/settings/typography.php:251
 msgid "Widgets"
 msgstr ""
 
@@ -3778,62 +3778,62 @@ msgid "Blog Post Title"
 msgstr ""
 
 #: inc/customizer/settings/typography.php:197
-msgid "Post Header Title"
+msgid "Blog Post Title Heading"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:207
-msgid "Post Header Meta"
+#: inc/customizer/settings/typography.php:208
+msgid "Blog Post Title Meta"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:217
-msgid "Post Title Author"
+#: inc/customizer/settings/typography.php:219
+msgid "Blog Post Title Author"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:227
-msgid "Post Title Author Bio"
+#: inc/customizer/settings/typography.php:230
+msgid "Blog Post Title Author Bio"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:237
+#: inc/customizer/settings/typography.php:241
 msgid "Sidebar Widget Heading"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:251
+#: inc/customizer/settings/typography.php:255
 msgid "Footer Widget Heading"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:262
+#: inc/customizer/settings/typography.php:266
 msgid "Footer Copyright"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:272
+#: inc/customizer/settings/typography.php:276
 msgid "Footer Menu"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:305
+#: inc/customizer/settings/typography.php:309
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:339
+#: inc/customizer/settings/typography.php:343
 msgid "Disable Google Fonts"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:364
+#: inc/customizer/settings/typography.php:368
 msgid "Font Subsets"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:482
+#: inc/customizer/settings/typography.php:486
 msgid "Important: Not all fonts support every font-weight."
 msgstr ""
 
-#: inc/customizer/settings/typography.php:612
+#: inc/customizer/settings/typography.php:616
 msgid "You can add: px-em-%"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:725
+#: inc/customizer/settings/typography.php:729
 msgid "Letter Spacing (px)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:769
+#: inc/customizer/settings/typography.php:773
 msgid "Font Color"
 msgstr ""
 
@@ -5612,8 +5612,8 @@ msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
 #: inc/template-helpers.php:73 inc/template-helpers.php:79
-#: inc/template-helpers.php:224 inc/template-helpers.php:261
-#: inc/template-helpers.php:303 inc/woocommerce/woocommerce-config.php:2155
+#: inc/template-helpers.php:225 inc/template-helpers.php:262
+#: inc/template-helpers.php:304 inc/woocommerce/woocommerce-config.php:2155
 #. translators: %s: author name for link aria label.
 #. translators: %s: author name for link meta.
 #. translators: %s: post reading time.
@@ -5622,11 +5622,11 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: inc/template-helpers.php:703
+#: inc/template-helpers.php:704
 msgid "Delete"
 msgstr ""
 
-#: inc/template-helpers.php:706
+#: inc/template-helpers.php:707
 msgid "Delete this comment"
 msgstr ""
 

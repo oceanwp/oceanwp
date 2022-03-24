@@ -213,6 +213,7 @@ if ( ! function_exists( 'ocean_get_post_reading_time' ) ) {
 
 		$content      = get_post_field( 'post_content', $post->ID );
 		$word_count   = str_word_count( strip_tags( $content ) );
+		$word_count   = apply_filters( 'ocean_post_reading_word_count', $word_count );
 		$reading_time = ceil( $word_count / 200 );
 
 		$reading_time = apply_filters( 'oceanwp_post_reading_time', $reading_time );
