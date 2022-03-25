@@ -4984,6 +4984,570 @@
                 }
             });
         }),
+        api("single_post_title_author_typography[font-family]", function ($swipe) {
+            $swipe.bind(function (pair) {
+                if (pair) {
+                    /** @type {string} */
+                    var idfirst =
+                        (pair.trim().toLowerCase().replace(" ", "-"), "customizer-typography-single_post_title_author-font-family");
+                    var fontSize = pair.replace(" ", "%20");
+                    fontSize = fontSize.replace(",", "%2C");
+                    /** @type {string} */
+                    fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
+                    if ($("#" + idfirst).length) {
+                        $("#" + idfirst).attr("href", fontSize);
+                    } else {
+                        $("head").append(
+                            '<link id="' + idfirst + '" rel="stylesheet" type="text/css" href="' + fontSize + '">'
+                        );
+                    }
+                }
+                var $child = $(".customizer-typography-single_post_title_author-font-family");
+                if (pair) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-font-family">.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{font-family: ' +
+                        pair +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_typography[font-weight]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-font-weight");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-font-weight">.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{font-weight: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_typography[font-style]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-font-style");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-font-style">.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{font-style: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_typography[font-size]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-font-size");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-font-size">.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{font-size: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_tablet_typography[font-size]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-tablet-font-size");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-tablet-font-size">@media (max-width: 768px){.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{font-size: ' +
+                        dataAndEvents +
+                        ";}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_mobile_typography[font-size]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-mobile-font-size");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-mobile-font-size">@media (max-width: 480px){.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{font-size: ' +
+                        dataAndEvents +
+                        ";}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_typography[color]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-color");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-color">.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{color: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_typography[line-height]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-line-height");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-line-height">.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{line-height: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_tablet_typography[line-height]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-tablet-line-height");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-tablet-line-height">@media (max-width: 768px){.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{line-height: ' +
+                        dataAndEvents +
+                        ";}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_mobile_typography[line-height]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-mobile-line-height");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-mobile-line-height">@media (max-width: 480px){.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{line-height: ' +
+                        dataAndEvents +
+                        ";}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_typography[letter-spacing]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-letter-spacing");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-letter-spacing">.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{letter-spacing: ' +
+                        dataAndEvents +
+                        "px;}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_tablet_typography[letter-spacing]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-tablet-letter-spacing");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-tablet-letter-spacing">@media (max-width: 768px){.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{letter-spacing: ' +
+                        dataAndEvents +
+                        "px;}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_mobile_typography[letter-spacing]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-mobile-letter-spacing");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-mobile-letter-spacing">@media (max-width: 480px){.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{letter-spacing: ' +
+                        dataAndEvents +
+                        "px;}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_typography[text-transform]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author-text-transform");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author-text-transform">.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{text-transform: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_typography[font-family]", function ($swipe) {
+            $swipe.bind(function (pair) {
+                if (pair) {
+                    /** @type {string} */
+                    var idfirst =
+                        (pair.trim().toLowerCase().replace(" ", "-"), "customizer-typography-single_post_title_author_bio-font-family");
+                    var fontSize = pair.replace(" ", "%20");
+                    fontSize = fontSize.replace(",", "%2C");
+                    /** @type {string} */
+                    fontSize = oceanwpTG.googleFontsUrl + "/css?family=" + pair + ":" + oceanwpTG.googleFontsWeight;
+                    if ($("#" + idfirst).length) {
+                        $("#" + idfirst).attr("href", fontSize);
+                    } else {
+                        $("head").append(
+                            '<link id="' + idfirst + '" rel="stylesheet" type="text/css" href="' + fontSize + '">'
+                        );
+                    }
+                }
+                var $child = $(".customizer-typography-single_post_title_author_bio-font-family");
+                if (pair) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-font-family">.ocean-single-post-header .post-author-description{font-family: ' +
+                        pair +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_typography[font-weight]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-font-weight");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-font-weight">.ocean-single-post-header .post-author-description{font-weight: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_typography[font-style]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-font-style");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-font-style">.ocean-single-post-header .post-author-description{font-style: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_typography[font-size]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-font-size");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-font-size">.ocean-single-post-header .post-author-description{font-size: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_tablet_typography[font-size]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-tablet-font-size");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-tablet-font-size">@media (max-width: 768px){.ocean-single-post-header .post-author-description{font-size: ' +
+                        dataAndEvents +
+                        ";}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_mobile_typography[font-size]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-mobile-font-size");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-mobile-font-size">@media (max-width: 480px){.ocean-single-post-header .post-author-description{font-size: ' +
+                        dataAndEvents +
+                        ";}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_typography[color]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-color");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-color">.ocean-single-post-header .post-author-description{color: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_typography[line-height]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-line-height");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-line-height">.ocean-single-post-header .post-author-description{line-height: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_tablet_typography[line-height]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-tablet-line-height");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-tablet-line-height">@media (max-width: 768px){.ocean-single-post-header .post-author-description{line-height: ' +
+                        dataAndEvents +
+                        ";}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_mobile_typography[line-height]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-mobile-line-height");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-mobile-line-height">@media (max-width: 480px){.ocean-single-post-header .post-author-description{line-height: ' +
+                        dataAndEvents +
+                        ";}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_typography[letter-spacing]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-letter-spacing");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-letter-spacing">.ocean-single-post-header .post-author-description{letter-spacing: ' +
+                        dataAndEvents +
+                        "px;}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_tablet_typography[letter-spacing]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-tablet-letter-spacing");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-tablet-letter-spacing">@media (max-width: 768px){.ocean-single-post-header .post-author-description{letter-spacing: ' +
+                        dataAndEvents +
+                        "px;}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_mobile_typography[letter-spacing]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-mobile-letter-spacing");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-mobile-letter-spacing">@media (max-width: 480px){.ocean-single-post-header .post-author-description{letter-spacing: ' +
+                        dataAndEvents +
+                        "px;}}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
+        api("single_post_title_author_bio_typography[text-transform]", function ($swipe) {
+            $swipe.bind(function (dataAndEvents) {
+                var $child = $(".customizer-typography-single_post_title_author_bio-text-transform");
+                if (dataAndEvents) {
+                    /** @type {string} */
+                    var img =
+                        '<style class="customizer-typography-single_post_title_author_bio-text-transform">.ocean-single-post-header .post-author-description{text-transform: ' +
+                        dataAndEvents +
+                        ";}</style>";
+                    if ($child.length) {
+                        $child.replaceWith(img);
+                    } else {
+                        $("head").append(img);
+                    }
+                } else {
+                    $child.remove();
+                }
+            });
+        }),
         api("sidebar_widget_title_typography[font-family]", function ($swipe) {
             $swipe.bind(function (pair) {
                 if (pair) {

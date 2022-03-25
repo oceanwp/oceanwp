@@ -461,7 +461,10 @@ final class OCEANWP_Theme_Class {
 		wp_enqueue_style( 'oceanwp-style', $dir . 'style.min.css', false, $theme_version );
 
 		// Blog Header styles.
-		wp_enqueue_style( 'oceanwp-blog-headers', $dir . 'blog/blog-post-headers.css', false, $theme_version );
+		if ( 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' )
+			&& is_single() && 'post' === get_post_type() ) {
+			wp_enqueue_style( 'oceanwp-blog-headers', $dir . 'blog/blog-post-headers.css', false, $theme_version );
+		}
 
 		// Register perfect-scrollbar plugin style.
 		wp_register_style( 'ow-perfect-scrollbar', $dir . 'third/perfect-scrollbar.css', false, '1.5.0' );

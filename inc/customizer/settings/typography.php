@@ -194,7 +194,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						),
 					),
 					'single_post_title'      => array(
-						'label'    => esc_html__( 'Post Header Title', 'oceanwp' ),
+						'label'    => esc_html__( 'Blog Post Title Heading', 'oceanwp' ),
 						'target'   => '.ocean-single-post-header .single-post-title',
 						'defaults' => array(
 							'font-size'      => '34px',
@@ -202,9 +202,10 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'line-height'    => '1.4',
 							'letter-spacing' => '0.6',
 						),
+						'active_callback' => 'oceanwp_cac_hasnt_default_post_header_style',
 					),
 					'single_post_meta'      => array(
-						'label'    => esc_html__( 'Post Header Meta', 'oceanwp' ),
+						'label'    => esc_html__( 'Blog Post Title Meta', 'oceanwp' ),
 						'target'   => '.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a',
 						'defaults' => array(
 							'font-size'      => '13px',
@@ -212,6 +213,29 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 							'line-height'    => '1.4',
 							'letter-spacing' => '0.6',
 						),
+						'active_callback' => 'oceanwp_cac_hasnt_default_post_header_style',
+					),
+					'single_post_title_author'      => array(
+						'label'    => esc_html__( 'Blog Post Title Author', 'oceanwp' ),
+						'target'   => '.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a',
+						'defaults' => array(
+							'font-size'      => '14px',
+							'color'          => '#333333',
+							'line-height'    => '1.4',
+							'letter-spacing' => '0.6',
+						),
+						'active_callback' => 'oceanwp_cac_hasnt_default_post_header_style',
+					),
+					'single_post_title_author_bio'      => array(
+						'label'    => esc_html__( 'Blog Post Title Author Bio', 'oceanwp' ),
+						'target'   => '.ocean-single-post-header .post-author-description',
+						'defaults' => array(
+							'font-size'      => '12px',
+							'color'          => '#333333',
+							'line-height'    => '1.4',
+							'letter-spacing' => '0.6',
+						),
+						'active_callback' => 'oceanwp_cac_hasnt_default_post_header_style',
 					),
 					'sidebar_widget_title' => array(
 						'label'    => esc_html__( 'Sidebar Widget Heading', 'oceanwp' ),

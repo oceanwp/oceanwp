@@ -57,6 +57,8 @@ ul.obem-default li:after { content: '-'; }
 
 ul.obem-modern li:after { content: '|'; }
 
+ul.obem-stylish li:after { content: '//'; }
+
 ul.obem-none li:after { content: ''; margin: 0 5px; }
 
 
@@ -92,5 +94,7 @@ ul.obem-none li:after { content: ''; margin: 0 5px; }
 .single-post ul.ospm-default li:after { content: '-'; }
 
 .single-post ul.ospm-modern li:after { content: '|'; }
+
+.single-post ul.ospm-stylish li:after { content: '//'; }
 
 .single-post ul.ospm-none li:after { content: ''; margin: 0 10px; }

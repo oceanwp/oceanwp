@@ -213,6 +213,7 @@ if ( ! function_exists( 'ocean_get_post_reading_time' ) ) {
 
 		$content      = get_post_field( 'post_content', $post->ID );
 		$word_count   = str_word_count( strip_tags( $content ) );
+		$word_count   = apply_filters( 'ocean_post_reading_word_count', $word_count );
 		$reading_time = ceil( $word_count / 200 );
 
 		$reading_time = apply_filters( 'oceanwp_post_reading_time', $reading_time );
@@ -732,46 +733,6 @@ if ( ! function_exists( 'ocean_delete_comment_link' ) ) {
 		} else {
 			return $delete_link;
 		}
-	}
-}
-
-/**
- * Return Single Post layout meta style
- * 
- * @since 3.1.0
- */
-if ( ! function_exists( 'ocean_single_layout_meta_style' ) ) {
-
-	function ocean_single_layout_meta_style() {
-
-		$style = get_theme_mod( 'ocean_blog_single_meta_style', 'default' );
-
-		$style = $style ? $style : 'default';
-
-		return apply_filters( 'oceanwp_single_layout_meta_style', $style );
-	}
-}
-
-/**
- * Get Single Post layout meta template
- * 
- * @since 3.1.0
- */
-if ( ! function_exists( 'ocean_single_layout_meta_style_template' ) ) {
-
-	function ocean_single_layout_meta_style_template() {
-
-		$style = ocean_single_layout_meta_style();
-
-		$template_path = '';
-
-		if ( 'default' === $style ) {
-			$template_path = 'partials/single/meta';
-		} else {
-			$template_path = 'partials/single/metas/meta-4';
-		}
-
-		return apply_filters( 'oceanwp_single_layout_meta_style_template', $template_path );
 	}
 }
 
