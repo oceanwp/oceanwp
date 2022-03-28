@@ -47,7 +47,7 @@ do_action( 'ocean_before_single_post_header_meta' );
 			<li class="meta-cat"><?php ocean_get_post_categories(); ?></li>
 		<?php } ?>
 
-		<?php if ( 'tags' === $section && ocean_get_post_tags() ) { ?>
+		<?php if ( 'tags' === $section && ! empty( ocean_get_post_tags( '', false ) ) ) { ?>
 			<li class="meta-tag"><?php ocean_get_post_tags(); ?></li>
 		<?php } ?>
 

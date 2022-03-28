@@ -564,6 +564,11 @@ function oceanwp_cac_has_blog_infinite_scroll() {
 	}
 }
 
+function oceanwp_cac_has_default_post_header_style() {
+	$return = ( 'default' === get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
+	return $return;
+}
+
 function oceanwp_cac_hasnt_default_post_header_style() {
 	$return = ( 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
 	return $return;
