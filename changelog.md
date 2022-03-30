@@ -1,10 +1,13 @@
 # OceanWP Changelog
 
-### _2022.03.14._ - 3.1.5
+### _2022.03.30._ - 3.2.0
 
--   **Fixed** Vertical Header: Submenu dropdown is not working.
--   **Added** New single post header style
--   **Added** New single post meta style
+- **New**: Blog: Single Post: Page Title Styles: Intro, Cover, Card, Card Invert, Screen and Screen Invert.
+- **New**: Blog: Single Post: Comments: Delete comment option. Available on frontend and visible to admins only.
+- **New**: Blog: Blog Entries: Edit post button. Visible to admins only.
+- **New**: Template: then list template urls for all new templates in the partials folder: partials/folder/file (for all new templates).
+- **New**: Typography: Host Google fonts locally via Customize > Typography > General. No font upload required.
+- **Fixed**: Header: Vertical Style: Dropdown options not displayed.
 
 ### _2022.03.07._ - 3.1.4
 

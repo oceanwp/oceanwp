@@ -47,7 +47,7 @@ do_action( 'ocean_before_single_post_header_meta' );
 			<li class="meta-cat" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-posted-in' ) ); ?>"><?php oceanwp_icon( 'category' ); ?><?php ocean_get_post_categories( array( 'prefix' => '' ) ); ?></li>
 		<?php } ?>
 
-		<?php if ( 'tags' === $section && ocean_get_post_tags() ) { ?>
+		<?php if ( 'tags' === $section && ! empty( ocean_get_post_tags( '', false ) ) ) { ?>
 			<li class="meta-tag" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-tagged-as' ) ); ?>"><?php oceanwp_icon( 'hashtag' ); ?><?php ocean_get_post_tags( array( 'prefix' => '' ) ); ?></li>
 		<?php } ?>
 

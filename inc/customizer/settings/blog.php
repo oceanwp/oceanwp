@@ -1354,11 +1354,12 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					$wp_customize,
 					'ocean_blog_single_featured_image_title',
 					array(
-						'label'    => esc_html__( 'Featured Image In Page Header', 'oceanwp' ),
-						'type'     => 'checkbox',
-						'section'  => 'ocean_single_post',
-						'settings' => 'ocean_blog_single_featured_image_title',
-						'priority' => 10,
+						'label'           => esc_html__( 'Featured Image In Page Header', 'oceanwp' ),
+						'type'            => 'checkbox',
+						'section'         => 'ocean_single_post',
+						'settings'        => 'ocean_blog_single_featured_image_title',
+						'priority'        => 10,
+						'active_callback' => 'oceanwp_cac_has_default_post_header_style',
 					)
 				)
 			);

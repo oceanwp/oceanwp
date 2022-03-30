@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.1.5\n"
+"Project-Id-Version: OceanWP 3.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-03-24 04:49:41+00:00\n"
+"POT-Creation-Date: 2022-03-30 06:46:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -218,7 +218,7 @@ msgstr ""
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:191
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:195
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:199
-#: inc/customizer/settings/blog.php:449 inc/customizer/settings/blog.php:1390
+#: inc/customizer/settings/blog.php:449 inc/customizer/settings/blog.php:1391
 #: inc/customizer/settings/edd.php:1301
 #: inc/customizer/settings/general.php:1595
 #: inc/customizer/settings/general.php:2477
@@ -243,7 +243,7 @@ msgstr ""
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:193
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:197
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:201
-#: inc/customizer/settings/blog.php:448 inc/customizer/settings/blog.php:1388
+#: inc/customizer/settings/blog.php:448 inc/customizer/settings/blog.php:1389
 #: inc/customizer/settings/edd.php:1299
 #: inc/customizer/settings/general.php:1593
 #: inc/customizer/settings/general.php:2476
@@ -312,9 +312,9 @@ msgstr ""
 #: inc/customizer/controls/typo/class-control-typo.php:336
 #: inc/customizer/controls/typography/class-control-typography.php:115
 #: inc/customizer/settings/blog.php:898 inc/customizer/settings/blog.php:1092
-#: inc/customizer/settings/blog.php:1421 inc/customizer/settings/blog.php:1460
-#: inc/customizer/settings/blog.php:1492 inc/customizer/settings/blog.php:1526
-#: inc/customizer/settings/blog.php:1738
+#: inc/customizer/settings/blog.php:1422 inc/customizer/settings/blog.php:1461
+#: inc/customizer/settings/blog.php:1493 inc/customizer/settings/blog.php:1527
+#: inc/customizer/settings/blog.php:1739
 #: inc/customizer/settings/general.php:261
 #: inc/customizer/settings/general.php:300
 #: inc/customizer/settings/general.php:332
@@ -866,7 +866,7 @@ msgstr ""
 msgid "Vertical Position"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:479 inc/customizer/settings/blog.php:1389
+#: inc/customizer/settings/blog.php:479 inc/customizer/settings/blog.php:1390
 #: inc/customizer/settings/edd.php:1300
 #: inc/customizer/settings/general.php:1594
 #: inc/customizer/settings/general.php:2747
@@ -962,66 +962,66 @@ msgstr ""
 msgid "Infinite Scroll: Error Text"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:827 inc/customizer/settings/blog.php:1670
+#: inc/customizer/settings/blog.php:827 inc/customizer/settings/blog.php:1671
 #: inc/customizer/settings/edd.php:1261 inc/customizer/settings/header.php:955
 #: inc/customizer/settings/header.php:3438
 #: inc/customizer/settings/woocommerce.php:1518
 msgid "Elements Positioning"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:853 inc/customizer/settings/blog.php:1695
+#: inc/customizer/settings/blog.php:853 inc/customizer/settings/blog.php:1696
 #: inc/customizer/settings/lifterlms.php:211 inc/helpers.php:3041
 #: inc/helpers.php:3126
 msgid "Meta"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:860 inc/customizer/settings/blog.php:1262
-#: inc/customizer/settings/blog.php:1702
+#: inc/customizer/settings/blog.php:1703
 #: inc/customizer/settings/lifterlms.php:212
 msgid "Author"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:861 inc/customizer/settings/blog.php:1263
-#: inc/customizer/settings/blog.php:1703 inc/customizer/settings/blog.php:1770
+#: inc/customizer/settings/blog.php:1704 inc/customizer/settings/blog.php:1771
 msgid "Date"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:862 inc/customizer/settings/blog.php:1264
-#: inc/customizer/settings/blog.php:1704
+#: inc/customizer/settings/blog.php:1705
 msgid "Categories"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:863 inc/customizer/settings/blog.php:1265
-#: inc/customizer/settings/blog.php:1705 inc/helpers.php:3133
+#: inc/customizer/settings/blog.php:1706 inc/helpers.php:3133
 msgid "Comments"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:864 inc/customizer/settings/blog.php:1266
-#: inc/customizer/settings/blog.php:1706
+#: inc/customizer/settings/blog.php:1707
 msgid "Modified Date"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:865 inc/customizer/settings/blog.php:1267
-#: inc/customizer/settings/blog.php:1707
+#: inc/customizer/settings/blog.php:1708
 msgid "Reading Time"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:892 inc/customizer/settings/blog.php:1732
+#: inc/customizer/settings/blog.php:892 inc/customizer/settings/blog.php:1733
 msgid "Meta Separator"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:899 inc/customizer/settings/blog.php:1210
-#: inc/customizer/settings/blog.php:1739
+#: inc/customizer/settings/blog.php:1740
 msgid "Modern"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:900 inc/customizer/settings/blog.php:1176
-#: inc/customizer/settings/blog.php:1209 inc/customizer/settings/blog.php:1740
+#: inc/customizer/settings/blog.php:1209 inc/customizer/settings/blog.php:1741
 msgid "Stylish"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:901 inc/customizer/settings/blog.php:1207
-#: inc/customizer/settings/blog.php:1741 inc/customizer/settings/edd.php:2637
+#: inc/customizer/settings/blog.php:1742 inc/customizer/settings/edd.php:2637
 #: inc/customizer/settings/general.php:2210
 #: inc/customizer/settings/general.php:2241
 #: inc/customizer/settings/general.php:2275
@@ -1068,7 +1068,7 @@ msgstr ""
 msgid "Intro"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1094 inc/customizer/settings/blog.php:1528
+#: inc/customizer/settings/blog.php:1094 inc/customizer/settings/blog.php:1529
 #: inc/customizer/settings/general.php:368
 #: inc/customizer/settings/general.php:1733
 #: inc/customizer/settings/header.php:2038
@@ -1140,12 +1140,12 @@ msgstr ""
 msgid "Featured Image In Page Header"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1383
+#: inc/customizer/settings/blog.php:1384
 #: inc/customizer/settings/general.php:1588
 msgid "Title/Breadcrumb Position"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1414
+#: inc/customizer/settings/blog.php:1415
 #: inc/customizer/settings/general.php:254
 #: inc/customizer/settings/general.php:1619
 #: inc/customizer/settings/general.php:2041
@@ -1157,91 +1157,91 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1422
+#: inc/customizer/settings/blog.php:1423
 #: inc/customizer/settings/general.php:262
 #: inc/customizer/settings/general.php:1627
 #: inc/customizer/settings/header.php:1962
 msgid "Top Left"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1423
+#: inc/customizer/settings/blog.php:1424
 #: inc/customizer/settings/general.php:263
 #: inc/customizer/settings/general.php:1628
 #: inc/customizer/settings/header.php:1963
 msgid "Top Center"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1424
+#: inc/customizer/settings/blog.php:1425
 #: inc/customizer/settings/general.php:264
 #: inc/customizer/settings/general.php:1629
 #: inc/customizer/settings/header.php:1964
 msgid "Top Right"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1425
+#: inc/customizer/settings/blog.php:1426
 #: inc/customizer/settings/general.php:265
 #: inc/customizer/settings/general.php:1630
 #: inc/customizer/settings/header.php:1965
 msgid "Center Left"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1426
+#: inc/customizer/settings/blog.php:1427
 #: inc/customizer/settings/general.php:266
 #: inc/customizer/settings/general.php:1631
 #: inc/customizer/settings/header.php:1966
 msgid "Center Center"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1427
+#: inc/customizer/settings/blog.php:1428
 #: inc/customizer/settings/general.php:267
 #: inc/customizer/settings/general.php:1632
 #: inc/customizer/settings/header.php:1967
 msgid "Center Right"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1428
+#: inc/customizer/settings/blog.php:1429
 #: inc/customizer/settings/general.php:268
 #: inc/customizer/settings/general.php:1633
 #: inc/customizer/settings/header.php:1968
 msgid "Bottom Left"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1429
+#: inc/customizer/settings/blog.php:1430
 #: inc/customizer/settings/general.php:269
 #: inc/customizer/settings/general.php:1634
 #: inc/customizer/settings/header.php:1969
 msgid "Bottom Center"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1430
+#: inc/customizer/settings/blog.php:1431
 #: inc/customizer/settings/general.php:270
 #: inc/customizer/settings/general.php:1635
 #: inc/customizer/settings/header.php:1970
 msgid "Bottom Right"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1453
+#: inc/customizer/settings/blog.php:1454
 #: inc/customizer/settings/general.php:293
 #: inc/customizer/settings/general.php:1658
 #: inc/customizer/settings/header.php:1984
 msgid "Attachment"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1461
+#: inc/customizer/settings/blog.php:1462
 #: inc/customizer/settings/general.php:301
 #: inc/customizer/settings/general.php:1666
 #: inc/customizer/settings/header.php:1991
 msgid "Scroll"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1462
+#: inc/customizer/settings/blog.php:1463
 #: inc/customizer/settings/general.php:302
 #: inc/customizer/settings/general.php:1667
 #: inc/customizer/settings/header.php:1992
 msgid "Fixed"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1485 inc/customizer/settings/blog.php:1494
+#: inc/customizer/settings/blog.php:1486 inc/customizer/settings/blog.php:1495
 #: inc/customizer/settings/general.php:325
 #: inc/customizer/settings/general.php:334
 #: inc/customizer/settings/general.php:1690
@@ -1251,78 +1251,78 @@ msgstr ""
 msgid "Repeat"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1493
+#: inc/customizer/settings/blog.php:1494
 #: inc/customizer/settings/general.php:333
 #: inc/customizer/settings/general.php:1698
 #: inc/customizer/settings/header.php:2013
 msgid "No-repeat"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1495
+#: inc/customizer/settings/blog.php:1496
 #: inc/customizer/settings/general.php:335
 #: inc/customizer/settings/general.php:1700
 #: inc/customizer/settings/header.php:2015
 msgid "Repeat-x"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1496
+#: inc/customizer/settings/blog.php:1497
 #: inc/customizer/settings/general.php:336
 #: inc/customizer/settings/general.php:1701
 #: inc/customizer/settings/header.php:2016
 msgid "Repeat-y"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1519
+#: inc/customizer/settings/blog.php:1520
 #: inc/customizer/settings/general.php:359
 #: inc/customizer/settings/general.php:1724
 #: inc/customizer/settings/header.php:2030
 msgid "Size"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1527
+#: inc/customizer/settings/blog.php:1528
 #: inc/customizer/settings/general.php:367
 #: inc/customizer/settings/general.php:1732
 #: inc/customizer/settings/header.php:2037
 msgid "Auto"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1529
+#: inc/customizer/settings/blog.php:1530
 #: inc/customizer/settings/general.php:369
 #: inc/customizer/settings/general.php:1734
 #: inc/customizer/settings/header.php:2039
 msgid "Contain"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1552
+#: inc/customizer/settings/blog.php:1553
 msgid "Page Header Height (px)"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1583
+#: inc/customizer/settings/blog.php:1584
 #: inc/customizer/settings/general.php:1788
 msgid "Overlay Opacity"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1614
+#: inc/customizer/settings/blog.php:1615
 #: inc/customizer/settings/general.php:1819
 #: inc/customizer/settings/header.php:1939
 msgid "Overlay Color"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1640
+#: inc/customizer/settings/blog.php:1641
 msgid "Full Width Content"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1641
+#: inc/customizer/settings/blog.php:1642
 msgid ""
 "Enter the max width your the content with the full width layout. Add 0 to "
 "disable the max width."
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1763 inc/customizer/settings/edd.php:1647
+#: inc/customizer/settings/blog.php:1764 inc/customizer/settings/edd.php:1647
 msgid "Next/Prev Taxonomy"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1768 inc/customizer/settings/blog.php:1855
+#: inc/customizer/settings/blog.php:1769 inc/customizer/settings/blog.php:1856
 #: inc/customizer/settings/edd.php:1267 inc/customizer/settings/edd.php:1652
 #: inc/customizer/settings/general.php:2211
 #: inc/customizer/settings/general.php:2242
@@ -1331,7 +1331,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1769 inc/customizer/settings/blog.php:1856
+#: inc/customizer/settings/blog.php:1770 inc/customizer/settings/blog.php:1857
 #: inc/customizer/settings/edd.php:1653
 #: inc/customizer/settings/general.php:2212
 #: inc/customizer/settings/general.php:2243
@@ -1339,35 +1339,35 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1792
+#: inc/customizer/settings/blog.php:1793
 msgid "Related Posts Count"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1821
+#: inc/customizer/settings/blog.php:1822
 msgid "Related Posts Columns"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1850
+#: inc/customizer/settings/blog.php:1851
 msgid "Related Posts Taxonomy"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1877
+#: inc/customizer/settings/blog.php:1878
 msgid "Related Posts Image Width (px)"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1905
+#: inc/customizer/settings/blog.php:1906
 msgid "Related Posts Image Height (px)"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1936
+#: inc/customizer/settings/blog.php:1937
 msgid "Comment Form Position"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1941
+#: inc/customizer/settings/blog.php:1942
 msgid "Before"
 msgstr ""
 
-#: inc/customizer/settings/blog.php:1942
+#: inc/customizer/settings/blog.php:1943
 msgid "After"
 msgstr ""
 

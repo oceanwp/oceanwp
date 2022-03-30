@@ -248,6 +248,22 @@ ul.meta li i { padding-left: 5px; padding-right: 0; }
 /* Author bio */
 #author-bio .author-bio-avatar { margin-left: 30px; margin-right: 0; }
 
+/**
+ * Post page header
+ */
+.single-header-ocean-6 .blog-post-title .single-post-title,
+.single-header-ocean-7 .blog-post-title .single-post-title {
+    text-align: right;
+}
+
+ul.hms-style-modern li i,
+ul.hms-style-modern li i,
+ul.betm-style-modern li i,
+ul.bebm-style-modern li i {
+    float: right;
+    margin-top: 5px;
+}
+
 /*------------------------------------*
 	Comments
 *------------------------------------*/
