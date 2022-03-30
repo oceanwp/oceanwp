@@ -497,7 +497,8 @@ function oceanwp_cac_blog_supports_equal_heights() {
 }
 
 function oceanwp_cac_has_blog_single_title_bg_image() {
-	if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false ) ) {
+	if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+		&& 'default' === get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) {
 		return true;
 	} else {
 		return false;
@@ -562,6 +563,31 @@ function oceanwp_cac_has_blog_infinite_scroll() {
 	} else {
 		return false;
 	}
+}
+
+function oceanwp_cac_has_default_post_header_style() {
+	$return = ( 'default' === get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
+	return $return;
+}
+
+function oceanwp_cac_hasnt_default_post_header_style() {
+	$return = ( 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
+	return $return;
+}
+
+function oceanwp_cac_has_post_header_cover_style() {
+	$return = ( 'cover' === get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
+	return $return;
+}
+
+function oceanwp_cac_has_post_header_author() {
+	$return = ( 'intro' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) && 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
+	return $return;
+}
+
+function oceanwp_cac_has_post_meta_stylish() {
+	$return = ( 'spm_style_3' === get_theme_mod( 'oceanwp_single_post_header_meta_style', 'spm_style_2' ) && oceanwp_cac_hasnt_default_post_header_style() ) ? true : false;
+	return $return;
 }
 
 /*-------------------------------------------------------------------------------*/

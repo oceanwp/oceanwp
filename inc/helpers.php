@@ -2003,9 +2003,12 @@ if ( ! function_exists( 'oceanwp_mobile_menu_style' ) ) {
 if ( ! function_exists( 'oceanwp_page_header_template' ) ) {
 
 	function oceanwp_page_header_template() {
-
-		get_template_part( 'partials/page-header' );
-
+		if ( is_singular( 'post' ) ) {
+			get_template_part( ocean_single_post_header_template() );
+		}
+		else {
+			get_template_part( 'partials/page-header' );
+		}
 	}
 
 	add_action( 'ocean_page_header', 'oceanwp_page_header_template' );
@@ -3276,6 +3279,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 							?>
 
 							<?php edit_comment_link( __( 'edit', 'oceanwp' ) ); ?>
+							<?php ocean_delete_comment_link(); ?>
 
 							<?php if ( is_rtl() ) { ?>
 									<span class="comment-date"><?php comment_date( 'j M Y' ); ?></span>

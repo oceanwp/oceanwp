@@ -1,5 +1,22 @@
 # OceanWP Changelog
 
+### _2022.03.30._ - 3.2.0
+
+- **New**: Blog: Single Post: Page Title Styles: Intro, Cover, Card, Card Invert, Screen and Screen Invert.
+- **New**: Blog: Single Post: Comments: Delete comment option. Available on frontend and visible to admins only.
+- **New**: Blog: Blog Entries: Edit post button. Visible to admins only.
+- **New**: Template: partials/single/headers/header-2
+- **New**: Template: partials/single/headers/header-3
+- **New**: Template: partials/single/headers/header-4
+- **New**: Template: partials/single/headers/header-5
+- **New**: Template: partials/single/headers/header-6
+- **New**: Template: partials/single/headers/header-7
+- **New**: Template: partials/single/metas/meta-2
+- **New**: Template: partials/single/metas/meta-3
+- **New**: Template: partials/single/metas/meta-4
+- **New**: Typography: Host Google fonts locally via Customize > Typography > General. No font upload required.
+- **Fixed**: Header: Vertical Style: Dropdown options not displayed.
+
 ### _2022.03.07._ - 3.1.4
 
 -   **Fixed** Logo: Retinal Logo: display issue.
