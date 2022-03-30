@@ -155,7 +155,7 @@ function oceanwp_webfonts_enqueue( $src, $font_name ) {
 						$local_font_file_path = trailingslashit( $webfonts_dir_path['upload_dir'] ) . $file_name;
 						$local_font_file_url  = trailingslashit( $webfonts_dir_path['upload_url'] ) . $file_name;
 
-						$local_css_file_name = base64_encode( $remote_font_file_url ) . '.css';
+						$local_css_file_name = md5( $remote_font_file_url ) . '.css';
 						$local_css_file_path = trailingslashit( $webfonts_css_dir_path['upload_dir'] ) . $local_css_file_name;
 
 						if ( file_exists( $local_font_file_path ) ) {
