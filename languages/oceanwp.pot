@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 3.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-03-30 06:46:37+00:00\n"
+"POT-Creation-Date: 2022-03-30 08:59:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -273,32 +273,32 @@ msgid "px - em - rem"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:56
-#: inc/customizer/settings/typography.php:456
+#: inc/customizer/settings/typography.php:479
 msgid "Font Family"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:57
-#: inc/customizer/settings/typography.php:615
+#: inc/customizer/settings/typography.php:638
 msgid "Font Size"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:58
-#: inc/customizer/settings/typography.php:485
+#: inc/customizer/settings/typography.php:508
 msgid "Font Weight"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:59
-#: inc/customizer/settings/typography.php:525
+#: inc/customizer/settings/typography.php:548
 msgid "Font Style"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:60
-#: inc/customizer/settings/typography.php:558
+#: inc/customizer/settings/typography.php:581
 msgid "Text Transform"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:61
-#: inc/customizer/settings/typography.php:670
+#: inc/customizer/settings/typography.php:693
 msgid "Line Height"
 msgstr ""
 
@@ -329,82 +329,82 @@ msgstr ""
 #: inc/customizer/settings/header.php:1990
 #: inc/customizer/settings/header.php:2012
 #: inc/customizer/settings/header.php:2036
-#: inc/customizer/settings/typography.php:493
-#: inc/customizer/settings/typography.php:532
-#: inc/customizer/settings/typography.php:565
+#: inc/customizer/settings/typography.php:516
+#: inc/customizer/settings/typography.php:555
+#: inc/customizer/settings/typography.php:588
 #: inc/customizer/settings/woocommerce.php:127
 #: inc/third/class-lifterlms.php:308
 msgid "Default"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:298
-#: inc/customizer/settings/typography.php:494
+#: inc/customizer/settings/typography.php:517
 msgid "Thin: 100"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:299
-#: inc/customizer/settings/typography.php:495
+#: inc/customizer/settings/typography.php:518
 msgid "Light: 200"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:300
-#: inc/customizer/settings/typography.php:496
+#: inc/customizer/settings/typography.php:519
 msgid "Book: 300"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:301
-#: inc/customizer/settings/typography.php:497
+#: inc/customizer/settings/typography.php:520
 msgid "Normal: 400"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:302
-#: inc/customizer/settings/typography.php:498
+#: inc/customizer/settings/typography.php:521
 msgid "Medium: 500"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:303
-#: inc/customizer/settings/typography.php:499
+#: inc/customizer/settings/typography.php:522
 msgid "Semibold: 600"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:304
-#: inc/customizer/settings/typography.php:500
+#: inc/customizer/settings/typography.php:523
 msgid "Bold: 700"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:305
-#: inc/customizer/settings/typography.php:501
+#: inc/customizer/settings/typography.php:524
 msgid "Extra Bold: 800"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:306
-#: inc/customizer/settings/typography.php:502
+#: inc/customizer/settings/typography.php:525
 msgid "Black: 900"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:321
-#: inc/customizer/settings/typography.php:533
+#: inc/customizer/settings/typography.php:556
 #: inc/customizer/settings/woocommerce.php:2133
 msgid "Normal"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:322
-#: inc/customizer/settings/typography.php:534
+#: inc/customizer/settings/typography.php:557
 msgid "Italic"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:337
-#: inc/customizer/settings/typography.php:566
+#: inc/customizer/settings/typography.php:589
 msgid "Capitalize"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:338
-#: inc/customizer/settings/typography.php:567
+#: inc/customizer/settings/typography.php:590
 msgid "Lowercase"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:339
-#: inc/customizer/settings/typography.php:568
+#: inc/customizer/settings/typography.php:591
 msgid "Uppercase"
 msgstr ""
 
@@ -1025,7 +1025,7 @@ msgstr ""
 #: inc/customizer/settings/general.php:2210
 #: inc/customizer/settings/general.php:2241
 #: inc/customizer/settings/general.php:2275
-#: inc/customizer/settings/typography.php:569
+#: inc/customizer/settings/typography.php:592
 #: inc/customizer/settings/woocommerce.php:4057
 #: inc/customizer/settings/woocommerce.php:4820
 msgid "None"
@@ -3817,23 +3817,27 @@ msgstr ""
 msgid "Disable Google Fonts"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:368
+#: inc/customizer/settings/typography.php:366
+msgid "Google Fonts from Site"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:391
 msgid "Font Subsets"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:486
+#: inc/customizer/settings/typography.php:509
 msgid "Important: Not all fonts support every font-weight."
 msgstr ""
 
-#: inc/customizer/settings/typography.php:616
+#: inc/customizer/settings/typography.php:639
 msgid "You can add: px-em-%"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:729
+#: inc/customizer/settings/typography.php:752
 msgid "Letter Spacing (px)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:773
+#: inc/customizer/settings/typography.php:796
 msgid "Font Color"
 msgstr ""
 
