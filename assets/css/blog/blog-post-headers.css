@@ -1071,10 +1071,18 @@ header.blog-post-title {
 }
 
 .single-header-ocean-6 .blog-post-title {
+  margin: 20px auto 20px auto;
+}
+
+.single-header-ocean-6.header-has-post-thumbnail .blog-post-title {
   margin: -150px auto 20px auto;
 }
 
 .single-header-ocean-7 .blog-post-title {
+  margin: 20px auto 20px auto;
+}
+
+.single-header-ocean-7.header-has-post-thumbnail .blog-post-title {
   margin: 20px auto -150px auto;
 }
 

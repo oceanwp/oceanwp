@@ -21,9 +21,14 @@ $heading = apply_filters( 'single_ocean_header_7_h_tag', $heading );
 $display_sph_meta = true;
 $display_sph_meta = apply_filters( 'display_single_ocean_header_7_meta', $display_sph_meta );
 
+$class = '';
+if ( has_post_thumbnail() ) {
+	$class = 'header-has-post-thumbnail';
+}
+
 ?>
 
-<div class="ocean-single-post-header single-header-ocean-7">
+<div class="ocean-single-post-header single-header-ocean-7 <?php echo esc_attr( $class ); ?>">
 	<div class="sh-container head-row">
 		<div class="col-xs-12">
 

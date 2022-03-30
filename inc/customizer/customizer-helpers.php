@@ -497,7 +497,8 @@ function oceanwp_cac_blog_supports_equal_heights() {
 }
 
 function oceanwp_cac_has_blog_single_title_bg_image() {
-	if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false ) ) {
+	if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+		&& 'default' === get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) {
 		return true;
 	} else {
 		return false;
