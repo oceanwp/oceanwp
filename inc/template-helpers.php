@@ -327,6 +327,9 @@ if ( ! function_exists( 'ocean_get_post_author_avatar' ) ) {
 
 	function ocean_get_post_author_avatar( $args = array(), $echo = true ) {
 
+		global $post;
+		$author_id = $post->post_author;
+
 		$default_args = array(
 			'size'        => 150,
 			'alt'         => oceanwp_theme_strings( 'owp-string-author-img', false ),
@@ -337,9 +340,15 @@ if ( ! function_exists( 'ocean_get_post_author_avatar' ) ) {
 
 		$args = wp_parse_args( $args, $default_args );
 
-		$avatar_url = '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author"' . ( $args['aria_hidden'] ? ' aria-hidden="true"' : '' ) . '>';
-		$avatar_url .= get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'ocean_author_bio_avatar_size', $args['size'] ), '', esc_attr( $args['alt'] ) );
-		$avatar_url .= '</a>';
+		$avatar_url = get_avatar(
+			$author_id,
+			apply_filters( 'ocean_author_bio_avatar_size', $args['size'] ),
+			'',
+			esc_attr( $args['alt'] ),
+			array(
+				'extra_attr' => '"rel="author"' . ( $args['aria_hidden'] ? ' aria-hidden="true"' : '' ),
+			)
+		);
 
 		$author_avatar = $args['before'] . $avatar_url . $args['after'];
 		$author_avatar = apply_filters( 'ocean_post_author_avatar', $author_avatar );
@@ -468,31 +477,6 @@ if ( ! function_exists( 'ocean_get_post_excerpt' ) ) {
 		}
 	}
 }
-
-/**
- * Register new theme image sizes
- * 
- * @since 3.1.0
- */
-if ( ! function_exists( 'ocean_register_image_size' ) ) {
-
-	function ocean_register_image_size() {
-
-		// Registers a new image sizes.
-	/* 	add_image_size( 'kava-thumb-s', 150, 85, true );
-		add_image_size( 'kava-thumb-s-2', 230, 230, true );
-		add_image_size( 'kava-thumb-m', 400, 400, true );
-		add_image_size( 'kava-thumb-m-vertical', 370, 500, true ); */
-		add_image_size( 'ocean-thumb-m', 600, 600, true );
-		add_image_size( 'ocean-thumb-ml', 800, 450, true );
-		add_image_size( 'ocean-thumb-l', 1200, 700, true );
-		/*add_image_size( 'kava-thumb-xl', 1920, 1080, true );
-		add_image_size( 'kava-thumb-masonry', 600, 999, false );
-		add_image_size( 'kava-thumb-justify', 640, 640, true );
-		add_image_size( 'kava-thumb-justify-2', 1280, 640, true ); */
-	}
-}
-add_action( 'after_setup_theme', 'ocean_register_image_size', 5 );
 
 /*-------------------------------------------------------------------------------*/
 /* [ Single Blog Post ]
