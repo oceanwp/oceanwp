@@ -101,7 +101,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 			<?php
 			if ( 'default' !== $btn ) {
 				?>
-				<div class="hamburger hamburger--<?php echo esc_attr( $btn ); ?>" aria-expanded="false">
+				<div class="hamburger hamburger--<?php echo esc_attr( $btn ); ?>" aria-expanded="false" role="navigation">
 					<div class="hamburger-box">
 						<div class="hamburger-inner"></div>
 					</div>

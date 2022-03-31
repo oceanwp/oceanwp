@@ -1121,7 +1121,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 						'label'           => esc_html__( 'Post Title Background Color', 'oceanwp' ),
 						'section'         => 'ocean_single_post',
 						'priority'        => 10,
-						'active_callback' => 'oceanwp_cac_hasnt_default_post_header_style',
+						'active_callback' => 'oceanwp_cac_has_not_cover_default_style',
 					)
 				)
 			);
@@ -1252,7 +1252,7 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 					$wp_customize,
 					'oceanwp_blog_single_header_meta',
 					array(
-						'label'    => esc_html__( 'Header Meta', 'oceanwp' ),
+						'label'    => esc_html__( 'Post Title Meta', 'oceanwp' ),
 						'section'  => 'ocean_single_post',
 						'settings' => 'oceanwp_blog_single_header_meta',
 						'priority' => 10,

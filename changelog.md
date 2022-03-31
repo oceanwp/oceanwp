@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### _2022.03.31._ - 3.2.1
+- **Improved**: Accessibility: Mobile icon.
+- **Updated**: Templates: partials/mobile/mobile icon.
+- **Fixed**: Blog: Single Post: Post Title Cover Style: Featured image not displayed on boxed website layout.
+- **Fixed**: Blog: Single Post: New Post Title Styles: Author avatar image not displayed.
+- **Added**: Blog: Single Post: Post Title Cover Style: color overlay settings.
+
 ### _2022.03.30._ - 3.2.0
 
 - **New**: Blog: Single Post: Page Title Styles: Intro, Cover, Card, Card Invert, Screen and Screen Invert.
