@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 3.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-03-31 07:57:28+00:00\n"
+"POT-Creation-Date: 2022-03-31 09:14:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1121,7 +1121,7 @@ msgid "Meta Icon Color"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:1255
-msgid "Header Meta"
+msgid "Post Title Meta"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:1268 inc/helpers.php:3128
@@ -5626,11 +5626,11 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: inc/template-helpers.php:688
+#: inc/template-helpers.php:704
 msgid "Delete"
 msgstr ""
 
-#: inc/template-helpers.php:691
+#: inc/template-helpers.php:707
 msgid "Delete this comment"
 msgstr ""
 
