@@ -63,7 +63,7 @@ if ( ! function_exists( 'ocean_get_post_author' ) ) {
 			'prefix'      => oceanwp_theme_strings( 'owp-string-posted-by', false ),
 			'aria_prefix' => oceanwp_theme_strings( 'owp-string-all-posts-by', false ),
 			'before'      => '',
-			'after'       => '',
+			'after'       => ''
 		);
 
 		$args = wp_parse_args( $args, $default_args );
@@ -71,7 +71,7 @@ if ( ! function_exists( 'ocean_get_post_author' ) ) {
 		$aria_label = sprintf(
 			/* translators: %s: author name for link aria label. */
 			esc_html( $args['aria_prefix'] . ' ' . __( '%s', 'oceanwp' ) ),
-			esc_html( the_author() )
+			esc_html( get_the_author() )
 		);
 
 		$author = sprintf(
@@ -174,7 +174,7 @@ if ( ! function_exists( 'ocean_get_post_modified_date' ) ) {
 
 		$default_args = array(
 			'prefix'      => oceanwp_theme_strings( 'owp-string-updated-on', false ),
-			'date_format' => 'F j, Y',
+			'date_format' => 'F j, Y'
 		);
 
 		$args = wp_parse_args( $args, $default_args );
@@ -249,7 +249,7 @@ if ( ! function_exists( 'ocean_get_post_categories' ) ) {
 			'prefix'    => oceanwp_theme_strings( 'owp-string-posted-in', false ),
 			'separator' => ' / ',
 			'before'    => '',
-			'after'     => '',
+			'after'     => ''
 		);
 
 		$args = wp_parse_args( $args, $default_args );
@@ -289,7 +289,7 @@ if ( ! function_exists( 'ocean_get_post_tags' ) ) {
 			'prefix'    => oceanwp_theme_strings( 'owp-string-tagged-as', false ),
 			'separator' => ', ',
 			'before'    => '',
-			'after'     => '',
+			'after'     => ''
 		);
 
 		$args = wp_parse_args( $args, $default_args );
@@ -345,7 +345,7 @@ if ( ! function_exists( 'ocean_get_post_author_avatar' ) ) {
 			$author_id,
 			apply_filters( 'ocean_author_bio_avatar_size', $args['size'] ),
 			'',
-			esc_attr( $args['alt'] ),
+			esc_attr( $args['alt'] )
 		);
 		$avatar_url .= '</a>';
 
@@ -379,7 +379,7 @@ if ( ! function_exists( 'oceanwp_paint_post_thumbnail' ) ) {
 		// Define default image args.
 		$def_img_args = array(
 			'class' => 'post-thumbnail',
-			'name' 	=> 'ocean-post-thumb-xl',
+			'name' 	=> 'ocean-post-thumb-xl'
 		);
 
 		$img_args = wp_parse_args( $img_args, $def_img_args );
