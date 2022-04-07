@@ -201,7 +201,7 @@ q {
 }
 
 a:focus {
-  outline: 0;
+  outline: solid 1px !important;
 }
 
 a:hover,
@@ -4411,7 +4411,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 
 .sf-menu ul.sub-menu {
   position: absolute;
-  display: none;
+  visibility: hidden;
   top: 100%;
   left: 0;
   z-index: 9999;

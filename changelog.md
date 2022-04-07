@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### _2022.04.07._ - 3.2.2
+- **Fixed**: Dobule author name display on single post header meta.
+- **Fixed**: Php version compatibility.
+- **Fixed**: Accessibility: Header navigation.
+
 ### _2022.03.31._ - 3.2.1
 - **Improved**: Accessibility: Mobile icon.
 - **Updated**: Templates: partials/mobile/mobile icon.

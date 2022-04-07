@@ -149,7 +149,7 @@ q {
     quotes: none;
 }
 a:focus {
-    outline: 0;
+    outline: solid 1px !important;
 }
 a:hover,
 a:active {
