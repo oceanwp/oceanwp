@@ -1,9 +1,11 @@
 # OceanWP Changelog
 
-### _2022.04.07._ - 3.2.2
+### _2022.04.013._ - 3.2.2
 - **Fixed**: Dobule author name display on single post header meta.
 - **Fixed**: Php version compatibility.
 - **Fixed**: Accessibility: Header navigation.
+- **Modified**: Template: woocommerce/mini-cart
+- **Added**: Filter: Mini Cart: oceanwp_mini_cart_shop_link.
 
 ### _2022.03.31._ - 3.2.1
 - **Improved**: Accessibility: Mobile icon.
