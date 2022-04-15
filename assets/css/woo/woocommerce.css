@@ -19,6 +19,11 @@
   cursor: not-allowed;
 }
 
+.woocommerce .button:focus {
+  background-color: #0b7cac;
+  color: #fff;
+}
+
 .woocommerce button.button {
   padding: 12px 20px;
 }
@@ -2719,6 +2724,11 @@
 }
 
 .woocommerce-message a:hover {
+  background-color: #0b7cac;
+  color: #fff;
+}
+
+.woocommerce-message a:focus {
   background-color: #0b7cac;
   color: #fff;
 }

@@ -6,6 +6,7 @@ import Footer from "./footer";
 class Theme {
   constructor() {
     this.#start();
+    this.#setupEventListeners();
   }
 
   #start = () => {
@@ -14,6 +15,25 @@ class Theme {
     this.search = new Search();
     this.footer = new Footer();
   };
+
+  #setupEventListeners = () => {
+    document.addEventListener(
+      "keydown",
+      this.#actionActive
+    );
+  };
+
+  #actionActive = (event) => {
+    document.querySelector('.skip-link').addEventListener('click', function(e) {
+      event.preventDefault();
+      const tabKey = event.keyCode === 9;
+      if ( tabKey ) {
+        var target = document.getElementById('main').querySelector( 'a' );
+        target.focus();
+      }
+    });
+  };
+
 }
 
 ("use script");
