@@ -64,7 +64,7 @@ class Menu {
 
     this.#onParentMenuItemMouseover( event );
 
-    const subMenu = this.#currentElem.querySelectorAll("ul.sub-menu a"),
+    const subMenu  = this.#currentElem.querySelectorAll("ul.sub-menu a"),
           lastEl   = subMenu[ subMenu.length - 1 ],
           activeEl = document.activeElement;
 
@@ -74,7 +74,7 @@ class Menu {
   };
 
   #onEnter = (parentMenuItem) => {
-    const subMenu = parentMenuItem.querySelector("ul.sub-menu");
+    const subMenu = parentMenuItem.querySelector("ul.sub-menu:not( ul.sub-menu.megamenu ul.sub-menu )");
 
     parentMenuItem.classList.add("sfHover");
 
@@ -84,7 +84,7 @@ class Menu {
   };
 
   #onLeave = (parentMenuItem) => {
-    const subMenu = parentMenuItem.querySelector("ul.sub-menu");
+    const subMenu = parentMenuItem.querySelector("ul.sub-menu:not( ul.sub-menu.megamenu ul.sub-menu )");
 
     parentMenuItem.classList.remove("sfHover");
     subMenu.style.pointerEvents = "none";

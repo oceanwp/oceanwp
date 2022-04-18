@@ -4436,6 +4436,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .sf-menu ul.sub-menu ul {
   top: 0;
   left: 100%;
+  visibility: visible;
 }
 
 /**
@@ -4470,6 +4471,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .dropdown-menu ul .sub-menu {
   top: 0;
   left: 100%;
+  margin-top: -3px;
 }
 
 .no-top-border .sub-menu {

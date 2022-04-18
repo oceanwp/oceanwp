@@ -72,11 +72,13 @@ class MegaMenu {
   #setupEventListeners = () => {
     this.#elements.menuItems.forEach((menuItem) => {
       menuItem.addEventListener("mouseenter", this.#onMenuItemMouseEnter);
+      menuItem.addEventListener("keydown", this.#onMenuItemMouseEnter);
     });
 
     // Topbar menu items
     this.#elements.topbarMenuItems.forEach((menuItem) => {
       menuItem.addEventListener("mouseenter", this.#onTopbarMenuItemMouseEnter);
+      menuItem.addEventListener("keydown", this.#onTopbarMenuItemMouseEnter);
     });
   };
 
