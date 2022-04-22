@@ -64,8 +64,8 @@ class WooMiniCart {
           tabKey    = event.keyCode === 9,
 			    shiftKey  = event.shiftKey;
 
-    if ( ! shiftKey && tabKey && itemLink ===  activeEl ) {
-     if ( cartElem.length ) {
+  if ( ! shiftKey && tabKey && itemLink ===  activeEl ) {
+    if ( cartElem.length ) {
         event.preventDefault();
       }
       fadeInNav(cartInner, {
@@ -81,10 +81,10 @@ class WooMiniCart {
         event.preventDefault();
         itemLink.focus();
       }
-			fadeOutNav(cartInner, {
+      fadeOutNav(cartInner, {
         callback: () => {},
       });
-		}
+    }
 
     if ( ! shiftKey && tabKey && lastEl ===  activeEl ) {
       fadeOutNav(cartInner, {
