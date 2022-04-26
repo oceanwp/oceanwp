@@ -3650,6 +3650,10 @@ a.pure-button-selected {
   margin: 0;
 }
 
+#site-header.medium-header #medium-searchform button:focus {
+  outline: 1px solid;
+}
+
 #site-header.medium-header #medium-searchform label {
   left: 12px;
   color: #333;

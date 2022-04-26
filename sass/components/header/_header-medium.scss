@@ -70,6 +70,10 @@
             margin: 0;
         }
 
+        button:focus {
+            outline: 1px solid;
+        }
+
         label {
             left: 12px;
             color: $color-2;

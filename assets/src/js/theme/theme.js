@@ -24,15 +24,14 @@ class Theme {
   };
 
   #actionActive = (event) => {
-    document.querySelector('.skip-link').addEventListener('keydown', function(e) {
-      event.preventDefault();
-      const tabKey = event.keyCode === 9;
-      if ( tabKey ) {
-        var target = document.getElementById('main');
-        target.tabIndex = -1;
-        target.focus();
-      }
-    });
+    const enterKey = event.keyCode === 13;
+    if ( enterKey ) {
+      document.querySelector('.skip-link').addEventListener('keydown', function(e) {
+          var target = document.getElementById('main');
+          target.tabIndex = -1;
+          target.focus();
+      });
+    }
   };
 
 }
