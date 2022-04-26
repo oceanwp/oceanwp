@@ -345,7 +345,7 @@ if ( ! function_exists( 'ocean_get_post_author_avatar' ) ) {
 			$author_id,
 			apply_filters( 'ocean_author_bio_avatar_size', $args['size'] ),
 			'',
-			esc_attr( $args['alt'] ),
+			esc_attr( $args['alt'] )
 		);
 		$avatar_url .= '</a>';
 
