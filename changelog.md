@@ -1,9 +1,12 @@
 # OceanWP Changelog
 
-### _2022.04.013._ - 3.2.2
-- **Fixed**: Dobule author name display on single post header meta.
-- **Fixed**: Php version compatibility.
-- **Fixed**: Accessibility: Header navigation.
+### _2022.04.28._ - 3.2.2
+- **Added**: Accessibility: Buttons: focus option.
+- **Added**: Accessibility: Header: Mega Menu.
+- **Improved**: Accessibility: Skip to Content functionality.
+- **Fixed**: Accessibility: Header: Menu: focus outline missing.
+- **Fixed**: PHP 7.2 Compatibility.
+- **Fixed**: Blog: Single Post: New Post Title Styles: Double author name in some occasions.
 - **Modified**: Template: woocommerce/mini-cart
 - **Added**: Filter: Mini Cart: oceanwp_mini_cart_shop_link.
 
