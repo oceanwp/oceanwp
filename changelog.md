@@ -9,7 +9,7 @@
 - **Fixed**: Blog: Single Post: New Post Title Styles: Double author name in some occasions.
 - **Modified**: Template: woocommerce/mini-cart
 - **Added**: Filter: Mini Cart: oceanwp_mini_cart_shop_link.
-- **Fixed**: Customizer: Typography shows the default font even using a different font.
+- **Fixed**: Customizer: Typography: Chosen font always displaying the Default option in the select menu after saving changes.
 
 ### _2022.03.31._ - 3.2.1
 - **Improved**: Accessibility: Mobile icon.
