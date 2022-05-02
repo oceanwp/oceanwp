@@ -197,3 +197,52 @@ export const isSelectorValid = ((dummyElement) => (selector) => {
   }
   return true;
 })(document.createDocumentFragment());
+
+
+export const fadeInNav = (element, _options = {}) => {
+  const options = {
+    duration: 300,
+    visibility: "visible",
+    opacity: 1,
+    callback: null,
+  };
+
+  Object.assign(options, _options);
+
+  element.style.opacity = 0;
+  element.style.visibility = options.visibility || "visible";
+
+  setTimeout(() => {
+    element.style.transition = `${options.duration}ms opacity ease`;
+    element.style.opacity = options.opacity;
+  }, 5);
+};
+
+export const fadeOutNav = (element, _options = {}) => {
+  if (element.style.visibility === "hidden") {
+    return;
+  }
+
+  const options = {
+    duration: 300,
+    visibility: "hidden",
+    opacity: 0,
+    callback: null,
+  };
+
+  Object.assign(options, _options);
+
+  element.style.opacity = 1;
+  element.style.visibility = options.visibility || "visible";
+
+  setTimeout(() => {
+    element.style.transition = `${options.duration}ms opacity ease`;
+    element.style.opacity = options.opacity;
+  }, 5);
+
+  setTimeout(() => {
+    element.style.visibility = "hidden";
+    element.style.removeProperty("transition");
+    !!options.callback && options.callback();
+  }, options.duration + 50);
+};

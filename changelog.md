@@ -1,5 +1,16 @@
 # OceanWP Changelog
 
+### _2022.05.02._ - 3.2.2
+- **Added**: Accessibility: Buttons: focus option.
+- **Added**: Accessibility: Header: Mega Menu.
+- **Improved**: Accessibility: Skip to Content functionality.
+- **Fixed**: Accessibility: Header: Menu: focus outline missing.
+- **Fixed**: PHP 7.2 Compatibility.
+- **Fixed**: Blog: Single Post: New Post Title Styles: Double author name in some occasions.
+- **Modified**: Template: woocommerce/mini-cart
+- **Added**: Filter: Mini Cart: oceanwp_mini_cart_shop_link.
+- **Fixed**: Customizer: Typography: Chosen font always displaying the Default option in the select menu after saving changes.
+
 ### _2022.03.31._ - 3.2.1
 - **Improved**: Accessibility: Mobile icon.
 - **Updated**: Templates: partials/mobile/mobile icon.

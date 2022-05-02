@@ -1,4 +1,5 @@
 import delegate from "delegate";
+import { fadeInNav, fadeOutNav } from "../../lib/utils";
 
 class WooMiniCart {
   #elements = {
@@ -42,7 +43,55 @@ class WooMiniCart {
       });
 
     window.addEventListener("resize", this.#onWindowResize);
+
+    let isMiniCart = document.querySelector( '.wcmenucart-toggle-drop_down' );
+    if ( isMiniCart ) {
+      isMiniCart.addEventListener(
+        "keydown",
+        this.#miniCartKeydown
+      );
+    }
   };
+
+  #miniCartKeydown = (event) => {
+    const cartItem  = document.querySelector( '.wcmenucart-toggle-drop_down' ),
+          itemLink  = cartItem.querySelector( '.wcmenucart' ),
+          cartInner = document.querySelector( '.owp-mini-cart' ),
+          cartElem  = cartInner.querySelectorAll("a"),
+          firstEl   = cartElem[0],
+          lastEl    = cartElem[ cartElem.length - 1 ],
+          activeEl  = document.activeElement,
+          tabKey    = event.keyCode === 9,
+			    shiftKey  = event.shiftKey;
+
+  if ( ! shiftKey && tabKey && itemLink ===  activeEl ) {
+    if ( cartElem.length ) {
+        event.preventDefault();
+      }
+      fadeInNav(cartInner, {
+        callback: () => {},
+      });
+      if (firstEl) {
+        firstEl.focus();
+      }
+    }
+
+    if ( shiftKey && tabKey && firstEl === activeEl ) {
+      if (itemLink) {
+        event.preventDefault();
+        itemLink.focus();
+      }
+      fadeOutNav(cartInner, {
+        callback: () => {},
+      });
+    }
+
+    if ( ! shiftKey && tabKey && lastEl ===  activeEl ) {
+      fadeOutNav(cartInner, {
+        callback: () => {},
+      });
+    }
+  }
 
   #onMenuCartClick = (event) => {
     event.preventDefault();

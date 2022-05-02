@@ -51,6 +51,7 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 	public function fonts_list() {
 		ob_start();
 		?>
+		<option value=""><?php esc_html_e( 'Default', 'oceanwp' ); ?></option>
 		<?php
 				// Add custom fonts from child themes
 				if ( function_exists( 'ocean_add_custom_fonts' ) ) {
@@ -102,7 +103,9 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 	 * @access protected
 	 */
 	protected function render_content() {
-		$this_val = $this->value(); ?>
+		$this_val = $this->value();
+		$has_val  = $this_val ? $this_val : esc_html__( 'Default', 'oceanwp' );
+		?>
 		<label>
 			<?php if ( ! empty( $this->label ) ) : ?>
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
@@ -112,7 +115,7 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 			<?php endif; ?>
 
 			<select class="oceanwp-typography-select" <?php $this->link(); ?> data-value="<?php echo $this_val ?>">
-				<option value="" <?php if ( ! $this_val ) echo 'selected="selected"'; ?>><?php esc_html_e( 'Default', 'oceanwp' ); ?></option>
+				<option value="" <?php if ( ! $this_val ) echo 'selected="selected"'; ?>><?php echo $has_val; ?></option>
 			</select>
 
 		</label>

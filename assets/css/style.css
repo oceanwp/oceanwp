@@ -201,7 +201,7 @@ q {
 }
 
 a:focus {
-  outline: 0;
+  outline: solid 1px !important;
 }
 
 a:hover,
@@ -2325,6 +2325,7 @@ input[type="reset"]:focus,
 input[type="submit"]:focus,
 button[type="submit"]:focus,
 .button:hover,
+.button:focus,
 body div.wpforms-container-full .wpforms-form input[type=submit]:hover,
 body div.wpforms-container-full .wpforms-form button[type=submit]:hover,
 body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
@@ -2336,8 +2337,7 @@ input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 button[type="submit"]:focus,
-button:focus,
-.button:focus {
+button:focus {
   outline: 0;
 }
 
@@ -2390,6 +2390,7 @@ a.pure-button-selected {
   background-color: #fff;
   font-size: 12px;
   border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 1px;
   z-index: 101;
 }
 
@@ -3649,6 +3650,10 @@ a.pure-button-selected {
   margin: 0;
 }
 
+#site-header.medium-header #medium-searchform button:focus {
+  outline: 1px solid;
+}
+
 #site-header.medium-header #medium-searchform label {
   left: 12px;
   color: #333;
@@ -4411,7 +4416,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 
 .sf-menu ul.sub-menu {
   position: absolute;
-  display: none;
+  visibility: hidden;
   top: 100%;
   left: 0;
   z-index: 9999;
@@ -4435,6 +4440,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .sf-menu ul.sub-menu ul {
   top: 0;
   left: 100%;
+  visibility: visible;
 }
 
 /**
@@ -4469,6 +4475,7 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .dropdown-menu ul .sub-menu {
   top: 0;
   left: 100%;
+  margin-top: -3px;
 }
 
 .no-top-border .sub-menu {
@@ -8330,6 +8337,10 @@ ul.page-numbers li .owp-icon {
   width: 100%;
 }
 
+#respond #wp-comment-cookies-consent:focus {
+  outline: 1px solid;
+}
+
 #respond .form-submit {
   float: right;
   margin-bottom: 0;
@@ -9318,6 +9329,11 @@ a.sidr-class-toggle-sidr-close .owp-icon {
 
 .sidr-class-mobile-searchform button:hover {
   color: #222;
+}
+
+.sidr-class-mobile-searchform button:focus {
+  outline: 1px solid;
+  color: #1a1a1a;
 }
 
 /* Social */

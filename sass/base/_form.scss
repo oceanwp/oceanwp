@@ -278,6 +278,7 @@ input[type="reset"]:focus,
 input[type="submit"]:focus,
 button[type="submit"]:focus,
 .button:hover,
+.button:focus,
 body div.wpforms-container-full .wpforms-form input[type=submit]:hover,
 body div.wpforms-container-full .wpforms-form button[type=submit]:hover,
 body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
@@ -289,8 +290,7 @@ input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 button[type="submit"]:focus,
-button:focus,
-.button:focus {
+button:focus {
 	outline: 0;
 }
 

@@ -96,7 +96,7 @@
 			value.bind( function( to ) {
 				var $child = $( '.customizer-ocean_hover_primary_color' );
 				if ( to ) {
-					var style = '<style class="customizer-ocean_hover_primary_color">input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,.button:hover,#site-navigation-wrap .dropdown-menu > li.btn > a:hover > span,.post-quote-author,.oceanwp-modal .oceanwp-close-modal:hover,.woocommerce div.product div.images .open-image:hover,.woocommerce-error a:hover,.woocommerce-info a:hover,.woocommerce-message a:hover{ background-color: ' + to + '; }</style>';
+					var style = '<style class="customizer-ocean_hover_primary_color">input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,.button:hover,.button:focus,#site-navigation-wrap .dropdown-menu > li.btn > a:hover > span,.post-quote-author,.oceanwp-modal .oceanwp-close-modal:hover,.woocommerce div.product div.images .open-image:hover,.woocommerce-error a:hover,.woocommerce-info a:hover,.woocommerce-message a:hover, .woocommerce-message a:focus, .woocommerce .button:focus{ background-color: ' + to + '; }</style>';
 					if ( $child.length ) {
 						$child.replaceWith( style );
 					} else {

@@ -116,7 +116,7 @@
 
     ul.sub-menu {
         position: absolute;
-        display: none;
+        visibility: hidden;
         top: 100%;
         left: 0;
         z-index: 9999;
@@ -140,6 +140,7 @@
     ul.sub-menu ul {
         top: 0;
         left: 100%;
+        visibility: visible;
     }
 }
 
@@ -176,6 +177,7 @@
     ul .sub-menu {
         top: 0;
         left: 100%;
+        margin-top: -3px;
     }
 }
 

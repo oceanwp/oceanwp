@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.2.1\n"
+"Project-Id-Version: OceanWP 3.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-03-31 09:58:19+00:00\n"
+"POT-Creation-Date: 2022-05-02 07:49:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -310,7 +310,8 @@ msgstr ""
 #: inc/customizer/controls/typo/class-control-typo.php:297
 #: inc/customizer/controls/typo/class-control-typo.php:320
 #: inc/customizer/controls/typo/class-control-typo.php:336
-#: inc/customizer/controls/typography/class-control-typography.php:115
+#: inc/customizer/controls/typography/class-control-typography.php:54
+#: inc/customizer/controls/typography/class-control-typography.php:107
 #: inc/customizer/settings/blog.php:898 inc/customizer/settings/blog.php:1092
 #: inc/customizer/settings/blog.php:1422 inc/customizer/settings/blog.php:1461
 #: inc/customizer/settings/blog.php:1493 inc/customizer/settings/blog.php:1527
@@ -408,15 +409,15 @@ msgstr ""
 msgid "Uppercase"
 msgstr ""
 
-#: inc/customizer/controls/typography/class-control-typography.php:59
+#: inc/customizer/controls/typography/class-control-typography.php:60
 msgid "Custom Fonts"
 msgstr ""
 
-#: inc/customizer/controls/typography/class-control-typography.php:69
+#: inc/customizer/controls/typography/class-control-typography.php:70
 msgid "Standard Fonts"
 msgstr ""
 
-#: inc/customizer/controls/typography/class-control-typography.php:80
+#: inc/customizer/controls/typography/class-control-typography.php:81
 msgid "Google Fonts"
 msgstr ""
 
@@ -4735,7 +4736,7 @@ msgstr ""
 msgid "EDD Sidebar"
 msgstr ""
 
-#: inc/edd/edd-config.php:407 inc/woocommerce/woocommerce-config.php:2030
+#: inc/edd/edd-config.php:407 inc/woocommerce/woocommerce-config.php:2032
 msgid "Your cart"
 msgstr ""
 
@@ -5617,7 +5618,7 @@ msgstr ""
 
 #: inc/template-helpers.php:73 inc/template-helpers.php:79
 #: inc/template-helpers.php:225 inc/template-helpers.php:262
-#: inc/template-helpers.php:304 inc/woocommerce/woocommerce-config.php:2155
+#: inc/template-helpers.php:304 inc/woocommerce/woocommerce-config.php:2157
 #. translators: %s: author name for link aria label.
 #. translators: %s: author name for link meta.
 #. translators: %s: post reading time.
@@ -5910,90 +5911,90 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2159
+#: inc/woocommerce/woocommerce-config.php:2161
 msgid "Sale!"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2196
+#: inc/woocommerce/woocommerce-config.php:2198
 #: woocommerce/checkout/checkout-timeline.php:43
 msgid "Login"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2209
+#: inc/woocommerce/woocommerce-config.php:2211
 msgid "Or"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2211
+#: inc/woocommerce/woocommerce-config.php:2213
 msgid "Register"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2329
+#: inc/woocommerce/woocommerce-config.php:2331
 #. translators: %s: field name
 msgid "Shipping %s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2333
+#: inc/woocommerce/woocommerce-config.php:2335
 #. translators: %s: field name
 msgid "Billing %s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2342
+#: inc/woocommerce/woocommerce-config.php:2344
 msgid "%s is not a valid postcode / ZIP."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2351
+#: inc/woocommerce/woocommerce-config.php:2353
 #. translators: %s: phone number
 msgid "%s is not a valid phone number."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2360
+#: inc/woocommerce/woocommerce-config.php:2362
 #. translators: %s: email address
 msgid "%s is not a valid email address."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2380
+#: inc/woocommerce/woocommerce-config.php:2382
 #. translators: 1: state field 2: valid states
 msgid "%1$s is not valid. Please enter one of the following: %2$s"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2387
+#: inc/woocommerce/woocommerce-config.php:2389
 #. translators: %s: field name
 msgid "%s is a required field."
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2479
+#: inc/woocommerce/woocommerce-config.php:2481
 msgid "WooCommerce Product Title"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2490
+#: inc/woocommerce/woocommerce-config.php:2492
 msgid "WooCommerce Product Price"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2500
+#: inc/woocommerce/woocommerce-config.php:2502
 msgid "WooCommerce Product Add To Cart"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2512
+#: inc/woocommerce/woocommerce-config.php:2514
 msgid "WooCommerce Product Notice"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2525
+#: inc/woocommerce/woocommerce-config.php:2527
 msgid "WooCommerce Archive Title"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2536
+#: inc/woocommerce/woocommerce-config.php:2538
 msgid "WooCommerce Archive Category"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2547
+#: inc/woocommerce/woocommerce-config.php:2549
 msgid "WooCommerce Archive Price"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2558
+#: inc/woocommerce/woocommerce-config.php:2560
 msgid "WooCommerce Archive Add To Cart"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-config.php:2569
+#: inc/woocommerce/woocommerce-config.php:2571
 msgid "WooCommerce Archive Notice"
 msgstr ""
 
@@ -6124,8 +6125,12 @@ msgstr ""
 msgid "Remove this item"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:112
+#: woocommerce/cart/mini-cart.php:113
 msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:122
+msgid "Add Products"
 msgstr ""
 
 #: woocommerce/checkout/checkout-timeline.php:51

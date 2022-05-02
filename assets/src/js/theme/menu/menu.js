@@ -1,4 +1,4 @@
-import { fadeIn, fadeOut } from "../../lib/utils";
+import { fadeInNav, fadeOutNav } from "../../lib/utils";
 
 class Menu {
   #currentElem;
@@ -24,6 +24,10 @@ class Menu {
         parentMenuItem.addEventListener(
           "mouseout",
           this.#onParentMenuItemMouseout
+        );
+        parentMenuItem.addEventListener(
+          "keydown",
+          this.#onParentMenuItemKeyDown
         );
       });
     });
@@ -53,29 +57,61 @@ class Menu {
     this.#currentElem = null;
   };
 
+  #onParentMenuItemKeyDown = (event) => {
+    if (this.#currentElem && this.#currentElem.contains(event.relatedTarget)) {
+      return;
+    }
+
+    const tabKey    = event.keyCode === 9,
+          shiftKey  = event.shiftKey;
+
+    if ( ! shiftKey && tabKey ) {
+      this.#onParentMenuItemMouseover( event );
+    }
+
+    if ( this.#currentElem ) {
+      const subMenu  = this.#currentElem.querySelectorAll("ul.sub-menu a"),
+      firstEl  = subMenu[0],
+      lastEl   = subMenu[ subMenu.length - 1 ],
+      activeEl = document.activeElement;
+
+      if ( ! shiftKey && tabKey && lastEl === activeEl ) {
+        this.#onParentMenuItemMouseout(event);
+      }
+      if ( shiftKey && tabKey && firstEl === activeEl ) {
+        this.#onParentMenuItemMouseout(event);
+      }
+    }
+  };
+
   #onEnter = (parentMenuItem) => {
-    const subMenu = parentMenuItem.querySelector("ul.sub-menu");
+    const subMenu = parentMenuItem.querySelector("ul.sub-menu:not( ul.sub-menu.megamenu ul.sub-menu )");
 
     parentMenuItem.classList.add("sfHover");
 
-    fadeIn(subMenu, {
-      callback: () => {},
-    });
+    if ( subMenu ) {
+      fadeInNav(subMenu, {
+        callback: () => {},
+      });
+    }
   };
 
   #onLeave = (parentMenuItem) => {
-    const subMenu = parentMenuItem.querySelector("ul.sub-menu");
+    const subMenu = parentMenuItem.querySelector("ul.sub-menu:not( ul.sub-menu.megamenu ul.sub-menu )");
 
     parentMenuItem.classList.remove("sfHover");
-    subMenu.style.pointerEvents = "none";
 
-    fadeOut(subMenu, {
-      callback: () => {
-        subMenu.style.pointerEvents = null;
-        parentMenuItem.classList.contains("sfHover") &&
-          this.#onEnter(parentMenuItem);
-      },
-    });
+    if ( subMenu ) {
+      subMenu.style.pointerEvents = "none";
+
+      fadeOutNav(subMenu, {
+        callback: () => {
+          subMenu.style.pointerEvents = null;
+          parentMenuItem.classList.contains("sfHover") &&
+            this.#onEnter(parentMenuItem);
+        },
+      });
+    }
   };
 }
 

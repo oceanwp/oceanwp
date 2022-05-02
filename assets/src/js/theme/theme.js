@@ -6,6 +6,7 @@ import Footer from "./footer";
 class Theme {
   constructor() {
     this.#start();
+    this.#setupEventListeners();
   }
 
   #start = () => {
@@ -14,6 +15,25 @@ class Theme {
     this.search = new Search();
     this.footer = new Footer();
   };
+
+  #setupEventListeners = () => {
+    document.addEventListener(
+      "keydown",
+      this.#actionActive
+    );
+  };
+
+  #actionActive = (event) => {
+    const enterKey = event.keyCode === 13;
+    if ( enterKey ) {
+      document.querySelector('.skip-link').addEventListener('keydown', function(e) {
+          var target = document.getElementById('main');
+          target.tabIndex = -1;
+          target.focus();
+      });
+    }
+  };
+
 }
 
 ("use script");

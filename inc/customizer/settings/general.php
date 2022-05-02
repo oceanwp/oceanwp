@@ -4366,6 +4366,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 					'input[type="submit"]:focus',
 					'button[type="submit"]:focus',
 					'.button:hover',
+					'.button:focus',
 					'#site-navigation-wrap .dropdown-menu > li.btn > a:hover > span',
 					'.post-quote-author',
 					'.omw-modal .omw-close-modal:hover',

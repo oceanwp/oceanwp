@@ -15,6 +15,11 @@
     cursor: not-allowed;
   }
 
+  .button:focus {
+    background-color: #0b7cac;
+    color: #fff;
+  }
+
   button {
     &.button {
       padding: 12px 20px;
@@ -2281,6 +2286,10 @@
     background-color: #13aff0;
 
     &:hover {
+      background-color: #0b7cac;
+      color: #fff;
+    }
+    &:focus {
       background-color: #0b7cac;
       color: #fff;
     }

@@ -1878,6 +1878,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					'.woocommerce-error a:hover',
 					'.woocommerce-info a:hover',
 					'.woocommerce-message a:hover',
+					'.woocommerce-message a:focus',
+					'.woocommerce .button:focus',
 					'.woocommerce ul.products li.product:not(.product-category) .image-wrap .button:hover',
 				),
 				$hover
