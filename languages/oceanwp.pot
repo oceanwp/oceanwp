@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 3.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-04-28 07:22:28+00:00\n"
+"POT-Creation-Date: 2022-05-02 03:28:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -310,7 +310,8 @@ msgstr ""
 #: inc/customizer/controls/typo/class-control-typo.php:297
 #: inc/customizer/controls/typo/class-control-typo.php:320
 #: inc/customizer/controls/typo/class-control-typo.php:336
-#: inc/customizer/controls/typography/class-control-typography.php:115
+#: inc/customizer/controls/typography/class-control-typography.php:54
+#: inc/customizer/controls/typography/class-control-typography.php:107
 #: inc/customizer/settings/blog.php:898 inc/customizer/settings/blog.php:1092
 #: inc/customizer/settings/blog.php:1422 inc/customizer/settings/blog.php:1461
 #: inc/customizer/settings/blog.php:1493 inc/customizer/settings/blog.php:1527
@@ -408,15 +409,15 @@ msgstr ""
 msgid "Uppercase"
 msgstr ""
 
-#: inc/customizer/controls/typography/class-control-typography.php:59
+#: inc/customizer/controls/typography/class-control-typography.php:60
 msgid "Custom Fonts"
 msgstr ""
 
-#: inc/customizer/controls/typography/class-control-typography.php:69
+#: inc/customizer/controls/typography/class-control-typography.php:70
 msgid "Standard Fonts"
 msgstr ""
 
-#: inc/customizer/controls/typography/class-control-typography.php:80
+#: inc/customizer/controls/typography/class-control-typography.php:81
 msgid "Google Fonts"
 msgstr ""
 
