@@ -1920,11 +1920,14 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			/**
 			 * Section where header images options are automatically added
 			 */
-			$wp_customize->add_section( 'header_image' , array(
-				'title' 			=> esc_html__( 'Header Media', 'oceanwp' ),
-				'priority' 			=> 10,
-				'panel' 			=> $panel,
-			) );
+			$wp_customize->add_section(
+				'header_image',
+				array(
+					'title'    => esc_html__( 'Header Media', 'oceanwp' ),
+					'priority' => 10,
+					'panel'    => $panel,
+				)
+			);
 
 			/**
 			 * Overlay Color

@@ -28,7 +28,7 @@ class ScrollEffect {
   #setupEventListeners = () => {
     document
       .querySelectorAll(
-        'a[href*="#"]:not([href="#"]), a.local[href*="#"]:not([href="#"]), .local a[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"]), a.sidr-class-menu-link[href*="#"]:not([href="#"])'
+        'a[href*="#"]:not([href="#"]):not(.comment-navigation .nav-links a), a.local[href*="#"]:not([href="#"]), .local a[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"]), a.sidr-class-menu-link[href*="#"]:not([href="#"])'
       )
       .forEach((scrollItem) => {
         scrollItem.addEventListener("click", this.#onScrollItemClick);
