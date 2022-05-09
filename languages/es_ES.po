@@ -4910,7 +4910,7 @@ msgid "Vortex Reverse"
 msgstr "Vortex inverso"
 
 #: inc/helpers.php:3787
-msgid "Copyright [oceanwp_date] - OceanWP Theme by Nick"
+msgid "Copyright [oceanwp_date] - OceanWP Theme by OceanWP"
 msgstr "Copyright [oceanwp_date] - OceanWP"
 
 #: inc/helpers.php:3810

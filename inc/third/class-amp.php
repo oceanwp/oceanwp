@@ -52,10 +52,6 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 			add_filter( 'oceanwp_attrs_vertical_header_style', array( $this, 'oceanwp_attrs_vertical_header_toggle' ) );
 			add_filter( 'ocean_head_css', array( $this, 'oceanwp_amp_css' ) );
 
-			// Scroll top button.
-			add_action( 'wp_body_open', array( $this, 'scroll_top_position_observer' ) );
-			add_filter( 'oceanwp_attrs_scroll_top', array( $this, 'oceanwp_attrs_scroll_top_button' ) );
-
 			// Woocommerce AMP.
 			if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 
@@ -130,12 +126,6 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 			}
 			.menu-item-has-children > button.submenu-toggle.submenu-open::before {
 				content: "-";
-			}
-			#oceanwp-body #scroll-top {
-				display: inline-block;
-			}
-			.anchor-hidden {
-				display: none;
 			}';
 
 			$amp_menu_breakpoint        = get_theme_mod( 'ocean_mobile_menu_breakpoints', '959' );
@@ -451,72 +441,6 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 
 		}
 
-		/**
-		 * Scroll to top target and script
-		 */
-		public function scroll_top_position_observer() {
-			?>
-			<div class="target">
-				<a class="target-anchor anchor-hidden" id="owpscrolltop"></a>
-				<amp-position-observer
-				on="enter:hideAnim.start; exit:showAnim.start"
-				layout="nodisplay">
-				</amp-position-observer>
-			</div>
-
-			<!-- Display the button. -->
-			<amp-animation id="showAnim" layout="nodisplay">
-				<script type="application/json">
-				{
-					"duration": "200ms",
-					"fill": "both",
-					"iterations": "1",
-					"direction": "alternate",
-					"animations": [
-					{
-						"selector": "#scroll-top",
-						"keyframes": [
-						{ "opacity": "1", "visibility": "visible" }
-						]
-					}
-					]
-				}
-				</script>
-			</amp-animation>
-
-			<!-- Add the button. -->
-			<amp-animation id="hideAnim" layout="nodisplay">
-				<script type="application/json">
-				{
-				"duration": "200ms",
-					"fill": "both",
-					"iterations": "1",
-					"direction": "alternate",
-					"animations": [
-					{
-						"selector": "#scroll-top",
-						"keyframes": [
-						{ "opacity": "0", "visibility": "hidden" }
-						]
-					}
-					]
-				}
-				</script>
-			</amp-animation>
-			<?Php
-		}
-
-		/**
-		 * AMP scroll to top button.
-		 *
-		 * @param string $input the data attrs already existing in scroll top button.
-		 * @return string
-		 */
-		public function oceanwp_attrs_scroll_top_button( $input ) {
-			$input .= ' on="tap:owpscrolltop.scrollTo(duration=200)" ';
-
-			return $input;
-		}
 
 		/**
 		 * Woocommerce mini cart amp style

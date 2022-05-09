@@ -15,10 +15,6 @@ if ( 'post' !== get_post_type() ) {
 	return;
 }
 
-// Get theme icons.
-$theme_icons = oceanwp_theme_icons();
-$icon_t = oceanwp_theme_icon_class();
-
 // Number of columns for entries.
 $oceanwp_columns = apply_filters( 'ocean_related_blog_posts_columns', absint( get_theme_mod( 'ocean_blog_related_columns', '3' ) ) );
 
@@ -59,6 +55,14 @@ if ( 'category' === $term_tax ) {
 if ( 'post_tag' === $term_tax ) {
 	$args['tag__in'] = $terms_ids;
 }
+
+// Define image alt text usage status.
+$srp_seo_set = get_theme_mod( 'ocean_enable_srp_fimage_alt', false );
+$srp_seo_set = $srp_seo_set ? $srp_seo_set : false;
+
+// Display date.
+$srp_date = true;
+$srp_date = apply_filters( 'ocean_related_posts_date', $srp_date );
 
 // Args.
 $args = apply_filters( 'ocean_blog_post_related_query_args', $args );
@@ -168,9 +172,14 @@ if ( $oceanwp_related_query->have_posts() ) :
 										$size = 'medium';
 									}
 
+									// Retreive image alt text or use OceanWP default text if image alt text not set.
+									$srpfe_img_alt = get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true);
+
+									$srp_fimage_alt = ( false === $srp_seo_set || ( true === $srp_seo_set && ! $srpfe_img_alt ) ) ? oceanwp_theme_strings( 'owp-string-read-more-article', false ) . ' ' . get_the_title() : $srpfe_img_alt;
+
 									// Image args.
 									$img_args = array(
-										'alt' => get_the_title(),
+										'alt' => $srp_fimage_alt,
 									);
 									if ( oceanwp_get_schema_markup( 'image' ) ) {
 										$img_args['itemprop'] = 'image';
@@ -188,11 +197,13 @@ if ( $oceanwp_related_query->have_posts() ) :
 					<?php endif; ?>
 
 					<h3 class="related-post-title">
-						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
+						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3><!-- .related-post-title -->
 
-					<time class="published" datetime="<?php echo esc_html( get_the_date( 'c' ) ); ?>"><i class="<?php echo $theme_icons[ 'date' ][ $icon_t ]; ?>" aria-hidden="true"></i><?php echo esc_html( get_the_date() ); ?></time>
-
+					<?php if ( true === $srp_date ) { ?>			
+						<time class="published" datetime="<?php echo esc_html( get_the_date( 'c' ) ); ?>"><?php oceanwp_icon( 'date' ); ?><?php echo esc_html( get_the_date() ); ?></time>
+					<?php } ?>	
+					
 				</article><!-- .related-post -->
 
 				<?php

@@ -7,20 +7,24 @@
     background-color: #fff;
     max-height: 400px;
     overflow-y: auto;
-    @include box-shadow( 0 2px 6px rgba(0,0,0,0.1) );
+    @include box-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
 
     ul {
         margin: 0;
         list-style: none;
 
         li {
-            border-bottom: 1px solid rgba(0,0,0,0.035);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.035);
 
             a {
                 display: block;
                 position: relative;
                 padding: 12px 40px;
                 text-align: left;
+
+                &:focus {
+                    outline: 1px dashed #e3e3e3;
+                }
 
                 i,
                 img {
@@ -42,10 +46,14 @@
                     color: #555;
                     padding-right: 40px;
                     text-align: center;
-                    @include transition( all 0.3s ease );
+                    @include transition(all 0.3s ease);
+
+                    &:focus {
+                        outline: 1px dashed rgba($color: #000, $alpha: 0.4);
+                    }
 
                     &:before {
-                        content: '+';
+                        content: "+";
                         font-size: 20px;
                         position: absolute;
                         top: 50%;
@@ -58,14 +66,14 @@
             }
 
             &.active > a > .dropdown-toggle:before {
-                content: '-';
+                content: "-";
             }
 
             ul {
                 display: none;
-                border-top: 1px solid rgba(0,0,0,0.035);
+                border-top: 1px solid rgba(0, 0, 0, 0.035);
                 margin-left: 0;
-                background-color: rgba(0,0,0,0.02);
+                background-color: rgba(0, 0, 0, 0.02);
             }
         }
 
@@ -111,7 +119,7 @@
         form {
             position: relative;
 
-             input {
+            input {
                 padding: 6px 45px 6px 12px !important;
                 margin-top: 0 !important;
                 -webkit-box-sizing: inherit;
@@ -133,7 +141,7 @@
                 background-color: transparent !important;
                 color: #555;
                 border: 0;
-                @include transition( all 0.3s ease-in-out );
+                @include transition(all 0.3s ease-in-out);
 
                 &:hover {
                     color: #222;

@@ -7,7 +7,6 @@
 
 if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 	class OceanWP_Custom_Nav_Walker extends Walker_Nav_Menu {
-
 		/**
 		 * Middle logo menu breaking point
 		 *
@@ -27,72 +26,83 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 		/**
 		 * Starts the list before the elements are added.
 		 *
-		 * @param string $output Passed by reference. Used to append additional content.
-		 * @param int    $depth  Depth of menu item. Used for padding.
-		 * @param array  $args   An array of arguments. @see wp_nav_menu()
+		 * @since 3.0.0
+		 *
+		 * @see Walker::start_lvl()
+		 *
+		 * @param string   $output Used to append additional content (passed by reference).
+		 * @param int      $depth  Depth of menu item. Used for padding.
+		 * @param stdClass $args   An object of wp_nav_menu() arguments.
 		 */
-		public function start_lvl( &$output, $depth = 0, $args = array() ) {
-	        $indent = str_repeat("\t", $depth);
+		public function start_lvl( &$output, $depth = 0, $args = null ) {
+			$indent = str_repeat( "\t", $depth );
 
-	        // Megamenu columns
-	        $col = ! empty( $this->megamenu_col ) ? ( 'col-'. $this->megamenu_col .'' ) : 'col-2';
+			// Megamenu columns
+			$col = ! empty( $this->megamenu_col ) ? ( 'col-' . $this->megamenu_col . '' ) : 'col-2';
 
-	        if( $depth === 0 && $this->megamenu != '' && 'full_screen' != oceanwp_header_style() && 'vertical' != oceanwp_header_style() ) {
-	        	$output .= "\n$indent<ul class=\"megamenu ". $col ." sub-menu\">\n";
-	         } else {
-	         	$output .= "\n$indent<ul class=\"sub-menu\">\n";
-	         }
-	    }
+			if ( $depth === 0 && $this->megamenu != '' && 'full_screen' != oceanwp_header_style() && 'vertical' != oceanwp_header_style() ) {
+				$output .= "\n$indent<ul class=\"megamenu " . $col . " sub-menu\">\n";
+			} else {
+				$output .= "\n$indent<ul class=\"sub-menu\">\n";
+			}
+		}
 
 		/**
-		 * Modified the menu output.
+		 * Starts the element output.
 		 *
-		 * @param string $output Passed by reference. Used to append additional content.
-		 * @param object $item   Menu item data object.
-		 * @param int    $depth  Depth of menu item. Used for padding.
-		 * @param array  $args   An array of arguments. @see wp_nav_menu()
-		 * @param int    $id     Current item ID.
+		 * @since 3.0.0
+		 * @since 4.4.0 The {@see 'nav_menu_item_args'} filter was added.
+		 *
+		 * @see Walker::start_el()
+		 *
+		 * @param string   $output Used to append additional content (passed by reference).
+		 * @param WP_Post  $item   Menu item data object.
+		 * @param int      $depth  Depth of menu item. Used for padding.
+		 * @param stdClass $args   An object of wp_nav_menu() arguments.
+		 * @param int      $id     Current item ID.
 		 */
-		public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+		public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+			$args = (object) $args;
+
 			global $wp_query;
 			$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
 			// Set some vars
 			if ( $depth === 0 ) {
-				$this->megamenu 			= get_post_meta( $item->ID, '_menu_item_megamenu', true );
-				$this->megamenu_auto_width 	= get_post_meta( $item->ID, '_menu_item_megamenu_auto_width', true );
-				$this->megamenu_col 		= get_post_meta( $item->ID, '_menu_item_megamenu_col', true );
-				$this->megamenu_heading 	= get_post_meta( $item->ID, '_menu_item_megamenu_heading', true );
+				$this->megamenu            = get_post_meta( $item->ID, '_menu_item_megamenu', true );
+				$this->megamenu_auto_width = get_post_meta( $item->ID, '_menu_item_megamenu_auto_width', true );
+				$this->megamenu_col        = get_post_meta( $item->ID, '_menu_item_megamenu_col', true );
+				$this->megamenu_heading    = get_post_meta( $item->ID, '_menu_item_megamenu_heading', true );
 			}
 
 			// Set up empty variable.
 			$class_names = '';
 
-			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+			$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[] = 'menu-item-' . $item->ID;
 
 			// Mega menu and Hide headings
-		    if( $depth === 0 && $this->has_children && 'vertical' != oceanwp_header_style() ) {
+			if ( $depth === 0 && $this->has_children && 'vertical' != oceanwp_header_style() ) {
 				if ( $this->megamenu != '' && $this->megamenu_auto_width == '' ) {
 					$classes[] = 'megamenu-li full-mega';
-				} else if ( $this->megamenu != '' && $this->megamenu_auto_width != '' ) {
+				} elseif ( $this->megamenu != '' && $this->megamenu_auto_width != '' ) {
 					$classes[] = 'megamenu-li auto-mega';
 				}
 
-				if( $this->megamenu != '' && $this->megamenu_heading != '' ){
+				if ( $this->megamenu != '' && $this->megamenu_heading != '' ) {
 					$classes[] = 'hide-headings';
 				}
 			}
 
 			// Latest post for menu item categories
-			if( $item->category_post != '' && $item->object == 'category' && 'vertical' != oceanwp_header_style() ) {
+			if ( $item->category_post != '' && $item->object == 'category' && 'vertical' != oceanwp_header_style() ) {
 				$classes[] = 'menu-item-has-children megamenu-li full-mega mega-cat';
 			}
 
-		    // Nav no click
-		    if( $item->nolink != '' ) {
-		    	$classes[] = 'nav-no-click';
-		    }
+			// Nav no click
+			if ( $item->nolink != '' ) {
+				$classes[] = 'nav-no-click';
+			}
 
 			/**
 			 * Filters the arguments for a single nav menu item.
@@ -130,16 +140,16 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			 * @param stdClass $args    An object of wp_nav_menu() arguments.
 			 * @param int      $depth   Depth of menu item. Used for padding.
 			 */
-			$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
+			$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
 			$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-			$output .= $indent . '<li' . $id . $class_names .'>';
+			$output .= $indent . '<li' . $id . $class_names . '>';
 
-			$atts = array();
+			$atts           = array();
 			$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
-			$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
-			$atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
-			$atts['href']   = ! empty( $item->url )        ? $item->url        : '';
+			$atts['target'] = ! empty( $item->target ) ? $item->target : '';
+			$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
+			$atts['href']   = ! empty( $item->url ) ? $item->url : '';
 
 			/**
 			 * Filters the HTML attributes applied to a menu item's anchor element.
@@ -164,7 +174,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
 				if ( ! empty( $value ) ) {
-					$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+					$value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 					$attributes .= ' ' . $attr . '="' . $value . '"';
 				}
 			}
@@ -184,23 +194,23 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			 */
 			$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-		    // Output
-		    $item_output = $args->before;
+			// Output
+			$item_output = $args->before;
 
-			$item_output .= '<a'. $attributes .' class="menu-link">';
+			$item_output .= '<a' . $attributes . ' class="menu-link">';
 
 			$item_output .= $args->link_before . $title . $args->link_after;
 
-	    	// Description
-		    if ( $item->description && 0 != $depth ) {
-		    	$item_output .= '<span class="nav-content">'. $item->description .'</span>';
+			// Description
+			if ( $item->description && 0 != $depth ) {
+				$item_output .= '<span class="nav-content">' . $item->description . '</span>';
 			}
 
 			$item_output .= '</a>';
 
 			if ( ( $item->template || $item->mega_template ) && $this->megamenu != '' && 'vertical' != oceanwp_header_style() ) {
 				ob_start();
-					include( OCEANWP_INC_DIR . 'walker/template.php' );
+					include OCEANWP_INC_DIR . 'walker/template.php';
 					$template_content = ob_get_contents();
 				ob_end_clean();
 				$item_output .= $template_content;
@@ -214,7 +224,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 				$item_output .= $sidebar_content;
 			}
 
-		    $item_output .= $args->after;
+			$item_output .= $args->after;
 
 			/**
 			 * Filters a menu item's starting output.
@@ -235,14 +245,18 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 		}
 
 		/**
-		 * Modified the menu end.
+		 * Ends the element output, if needed.
 		 *
-		 * @param string $output Passed by reference. Used to append additional content.
-		 * @param object $item   Menu item data object.
-		 * @param int    $depth  Depth of menu item. Used for padding.
-		 * @param array  $args   An array of arguments. @see wp_nav_menu()
+		 * @since 3.0.0
+		 *
+		 * @see Walker::end_el()
+		 *
+		 * @param string   $output Used to append additional content (passed by reference).
+		 * @param WP_Post  $item   Page data object. Not used.
+		 * @param int      $depth  Depth of page. Not Used.
+		 * @param stdClass $args   An object of wp_nav_menu() arguments.
 		 */
-		public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+		public function end_el( &$output, $item, $depth = 0, $args = null ) {
 
 			// Header style
 			$header_style = oceanwp_header_style();
@@ -254,88 +268,84 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 				$output .= "\n<ul class=\"megamenu col-4 sub-menu\">\n";
 
 					// Sub Categories ===============================================================
-					if ( $item->category_post != '' && $item->object == 'category' ) {
-						$no_sub_categories = $sub_categories_exists = $sub_categories = '';
+				if ( $item->category_post != '' && $item->object == 'category' ) {
+					$no_sub_categories = $sub_categories_exists = $sub_categories = '';
 
-						$query_args = array(
-							'child_of' => $item->object_id,
+					$query_args     = array(
+						'child_of' => $item->object_id,
+					);
+					$sub_categories = get_categories( $query_args );
+
+					// Check if the category doesn't contain any sub categories.
+					if ( count( $sub_categories ) == 0 ) {
+						$sub_categories    = array( $item->object_id );
+						$no_sub_categories = true;
+					}
+
+					foreach ( $sub_categories as $category ) {
+
+						if ( ! $no_sub_categories ) {
+							$cat_id = $category->term_id;
+						} else {
+							$cat_id = $category;
+						}
+
+						$original_post = $post;
+						$count         = 0;
+
+						$args      = array(
+							'posts_per_page'      => 4,
+							'cat'                 => $cat_id,
+							'no_found_rows'       => true,
+							'ignore_sticky_posts' => true,
 						);
-						$sub_categories = get_categories($query_args);
+						$cat_query = new WP_Query( $args );
 
-						//Check if the category doesn't contain any sub categories.
-						if ( count($sub_categories) == 0) {
-							$sub_categories = array( $item->object_id ) ;
-							$no_sub_categories = true ;
-						}
+						// Title
+						$output .= '<h3 class="mega-cat-title">' . esc_html__( 'Latest in', 'oceanwp' ) . ' ' . get_cat_name( $cat_id ) . '</h3>';
 
-						foreach( $sub_categories as $category ) {
+						while ( $cat_query->have_posts() ) {
 
-							if( ! $no_sub_categories ) {
-								$cat_id = $category->term_id;
+							// first post
+							$count++;
+
+							if ( $count == 1 ) {
+								$classes = 'mega-cat-post first';
 							} else {
-								$cat_id = $category;
+								$classes = 'mega-cat-post';
 							}
 
-							$original_post 	= $post;
-							$count 			= 0;
+							$cat_query->the_post();
 
-							$args = array(
-								'posts_per_page'		 => 4,
-								'cat'          			 => $cat_id,
-								'no_found_rows'          => true,
-								'ignore_sticky_posts'	 => true
-							);
-							$cat_query = new WP_Query( $args );
+							$output .= '<li class="' . $classes . '">';
 
-							// Title
-							$output .= '<h3 class="mega-cat-title">'. esc_html__( 'Latest in', 'oceanwp' ) .' '. get_cat_name( $cat_id ) .'</h3>';
+							if ( has_post_thumbnail() ) {
 
-							while ( $cat_query->have_posts() ) {
-
-								// first post
-								$count++;
-
-								if ( $count == 1 ) {
-									$classes = 'mega-cat-post first';
-								} else {
-									$classes = 'mega-cat-post';
+								// Image args.
+								$img_args = array(
+									'alt' => oceanwp_theme_strings( 'owp-string-read-more-article', false ) . ' ' . get_the_title(),
+								);
+								if ( oceanwp_get_schema_markup( 'image' ) ) {
+									$img_args['itemprop'] = 'image';
 								}
 
-								$cat_query->the_post();
+								$output .= '<a href="' . get_permalink() . '" class="mega-post-link">';
 
-								$output .= '<li class="'. $classes .'">';
+									$output .= get_the_post_thumbnail( get_the_ID(), 'medium', $img_args );
 
-								if ( has_post_thumbnail() ) {
+									$output .= '<span class="overlay"></span>';
+								$output     .= '</a>';
 
-									// Image args
-									$img_args = array(
-									    'alt' => get_the_title(),
-									);
-									if ( oceanwp_get_schema_markup( 'image' ) ) {
-										$img_args['itemprop'] = 'image';
-									}
+								$output .= '<h3 class="mega-post-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3><div class="mega-post-date">' . oceanwp_icon( 'date', false ) . ' ' . get_the_date() . '</div>';
 
-									// Get theme icons.
-									$theme_icons = oceanwp_theme_icons();
-									$icon_t = oceanwp_theme_icon_class();
-
-									$output .= '<a href="'. get_permalink() .'" title="'. get_the_title() .'" class="mega-post-link">';
-
-										$output .= get_the_post_thumbnail( get_the_ID(), 'medium', $img_args );
-
-										$output .= '<span class="overlay"></span>';
-									$output .= '</a>';
-
-									$output .= '<h3 class="mega-post-title"><a href="'. get_permalink() .'">'. get_the_title() .'</a></h3><div class="mega-post-date"><i class="'. $theme_icons[ 'date' ][ $icon_t ] . '" aria-hidden="true"></i>'. get_the_date() .'</div>';
-
-								}
-
-								$output .= '</li>';
 							}
 
-							wp_reset_postdata();
-
+							$output .= '</li>';
 						}
+
+						wp_reset_postdata();
+
+					}
 
 					$output .= '</ul>';
 				}
@@ -349,45 +359,51 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 		/**
 		 * Ends the list of after the elements are added.
 		 *
-		 * @param string $output Passed by reference. Used to append additional content.
-		 * @param int    $depth  Depth of menu item. Used for padding.
-		 * @param array  $args   An array of arguments. @see wp_nav_menu()
+		 * @since 3.0.0
+		 *
+		 * @see Walker::end_lvl()
+		 *
+		 * @param string   $output Used to append additional content (passed by reference).
+		 * @param int      $depth  Depth of menu item. Used for padding.
+		 * @param stdClass $args   An object of wp_nav_menu() arguments.
 		 */
-		public function end_lvl( &$output, $depth = 0, $args = array() ) {
-			$indent = str_repeat("\t", $depth);
+		public function end_lvl( &$output, $depth = 0, $args = null ) {
+			$indent  = str_repeat( "\t", $depth );
 			$output .= "$indent</ul>\n";
 		}
 
 		/**
 		 * Icon if sub menu.
 		 */
-		public function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+		public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
 
 			// Define vars
-			$id_field     = $this->db_fields['id'];
-			$header_style = oceanwp_header_style();
+			$id_field             = $this->db_fields['id'];
+			$header_style         = oceanwp_header_style();
+			$full_screen_dropdown = '<span class="nav-arrow"></span>';
 
-			if ( is_object( $args[0] ) )
-			   $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+			if ( isset( $args[0] ) && is_object( $args[0] ) ) {
+				$args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+			}
 
 			// Down Arrows
-			if ( ! empty( $children_elements[$element->$id_field] ) && ( $depth == 0 )
+			if ( ! empty( $children_elements[ $element->$id_field ] ) && ( $depth == 0 )
 				|| $element->category_post != '' && $element->object == 'category'
 				&& 'full_screen' != $header_style ) {
 				$element->classes[] = 'dropdown';
 				if ( true == get_theme_mod( 'ocean_menu_arrow_down', true ) ) {
-					$element->title .= ' <span class="nav-arrow fa fa-angle-down"></span>';
+					( 'full_screen' == $header_style ) ? $element->title .= '' . $full_screen_dropdown : $element->title .= oceanwp_icon( 'angle_down', false, 'nav-arrow' );
 				}
 			}
 
 			// Right/Left Arrows
-			if ( ! empty( $children_elements[$element->$id_field] ) && ( $depth > 0 ) ) {
+			if ( ! empty( $children_elements[ $element->$id_field ] ) && ( $depth > 0 ) ) {
 				$element->classes[] = 'dropdown';
 				if ( true == get_theme_mod( 'ocean_menu_arrow_side', true ) ) {
 					if ( is_rtl() ) {
-						$element->title .= '<span class="nav-arrow fa fa-angle-left"></span>';
+						( 'full_screen' == $header_style ) ? $element->title .= $full_screen_dropdown : $element->title .= oceanwp_icon( 'angle_left', false, 'nav-arrow' );
 					} else {
-						$element->title .= '<span class="nav-arrow fa fa-angle-right"></span>';
+						( 'full_screen' == $header_style ) ? $element->title .= $full_screen_dropdown : $element->title .= oceanwp_icon( 'angle_right', false, 'nav-arrow' );
 					}
 				}
 			}

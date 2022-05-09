@@ -51,10 +51,12 @@ if ( post_password_required() || empty( $attachments ) ) {
 			);
 
 			// Display with lightbox.
-			if ( oceanwp_gallery_is_lightbox_enabled() === 'on' ) :
+			if ( oceanwp_gallery_is_lightbox_enabled() ) :
+				$img_src = wp_get_attachment_image_src( $attachment, 'full', true );
+
 				?>
 
-				<a href="<?php echo esc_url( wp_get_attachment_url( $attachment ) ); ?>" title="<?php echo esc_attr( $attachment_alt ); ?>" class="gallery-lightbox">
+				<a href="<?php echo esc_url( wp_get_attachment_url( $attachment ) ); ?>" title="<?php echo esc_attr( $attachment_alt ); ?>" class="gallery-lightbox" data-width="<?php echo esc_attr( $img_src[1] ); ?>" data-height="<?php echo esc_attr( $img_src[2] ); ?>">
 					<?php echo wp_kses_post( $attachment_html ); ?>
 				</a>
 

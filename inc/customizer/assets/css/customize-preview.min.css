@@ -1,0 +1,61 @@
+ul.customize-pane-parent {
+    display: flex;
+    flex-direction: column;
+}
+
+#accordion-section-oceanwp_upsell_section,
+#accordion-section-freemius_upsell{
+    order: -99999999;
+}
+
+ul.customize-pane-parent li[id="accordion-section-oceanwp_upsell_section"] {
+    order: -99995;
+}
+
+#customize-controls .control-section:hover > .accordion-section-title, #customize-controls .control-section .accordion-section-title:hover, #customize-controls .control-section.open .accordion-section-title, #customize-controls .control-section .accordion-section-title:focus {
+    color: #06214E !important;
+    border-left-color: #06214E !important;
+}
+
+#customize-theme-controls .control-section:hover > .accordion-section-title:after, #customize-theme-controls .control-section .accordion-section-title:hover:after, #customize-theme-controls .control-section.open .accordion-section-title:after, #customize-theme-controls .control-section .accordion-section-title:focus:after, #customize-outer-theme-controls .control-section:hover > .accordion-section-title:after, #customize-outer-theme-controls .control-section .accordion-section-title:hover:after, #customize-outer-theme-controls .control-section.open .accordion-section-title:after, #customize-outer-theme-controls .control-section .accordion-section-title:focus:after {
+    color: #06214E !important;
+}
+.customize-panel-back:hover, .customize-panel-back:focus, .customize-section-back:hover, .customize-section-back:focus {
+    color: #06214E !important;
+    border-left-color: #06214E !important;
+}
+
+.customize-control-oceanwp-sortable ul li .dashicons.visibility {
+    color: #06214E !important;
+}
+
+.slider-custom-control .ui-state-default, .slider-custom-control .ui-widget-content .ui-state-default, .slider-custom-control .ui-widget-header .ui-state-default, .slider-custom-control .ui-button, .slider-custom-control .ui-button.ui-state-disabled:hover, .slider-custom-control .ui-button.ui-state-disabled:active {
+    background: #06214E none repeat scroll 0 0 !important;
+    border: 1px solid #06214E !important;
+}
+
+.text_radio_button_control .radio-button-label span:hover {
+    color: #06214E !important;
+}
+
+.customize-control-oceanwp-slider .oceanwp-slider .ui-slider-range {
+    background-color: #06214E !important;
+}
+
+.wp-core-ui select:hover {
+    color: #06214E;
+}
+
+.customize-control-oceanwp-iconmulti .icon-select-input:checked+.icon-select-label, .customize-control-oceanwp-iconmulti .icon-select-label:hover {
+    background-color: #06214E !important;
+    border-color: #06214E !important;
+}
+
+.customize-controls-close:focus, .customize-controls-close:hover, .customize-controls-preview-toggle:focus, .customize-controls-preview-toggle:hover {
+    color: #06214E !important;
+    border-top-color: #06214E !important;
+}
+
+input[type="radio"]:checked::before {
+    background-color: #06214E !important;
+}

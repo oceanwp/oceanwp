@@ -2,26 +2,50 @@
  *  Gallery Format
  */
 .gallery-format {
-	display: none;
-    position: relative;
-    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
 
-	img {
-		display: block;
-	    position: relative;
-	    width: 100%;
-	    margin-bottom: 0;
-	}
+    img,
+    a.gallery-lightbox {
+        display: block;
+        position: relative;
+        width: 100%;
+        margin-bottom: 0;
+    }
 
-	.slick-prev,
-	.slick-next {
-	    @include opacity( 0 );
-	    visibility: hidden;
-	}
+    .flickity-button {
+        top: calc(100% - 18px);
+        width: 30px;
+        height: 36px;
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-	&:hover .slick-prev,
-	&:hover .slick-next {
-	    @include opacity( 1 );
-	    visibility: visible;
-	}
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        &:disabled {
+            pointer-events: unset;
+        }
+
+        &.next {
+            right: 0;
+        }
+
+        &.previous {
+            left: auto;
+            right: 30px;
+        }
+
+        svg {
+            fill: #fff;
+            width: 12px;
+            height: auto;
+            position: static;
+        }
+    }
 }

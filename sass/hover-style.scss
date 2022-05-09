@@ -172,6 +172,7 @@ Woo Hover Style
 						    vertical-align: inherit;
 						    margin-top: 0;
 					    }
+
 					}
 
 					i,
@@ -209,6 +210,10 @@ Woo Hover Style
 						opacity: 1;
 				    	@include animation( loader 450ms infinite linear );
 					}
+				}
+
+				.owp-icon {
+					vertical-align: inherit;
 				}
 		    }
 		}

@@ -36,6 +36,10 @@
 		width: 100%;
 	}
 
+	#wp-comment-cookies-consent:focus {
+		outline: 1px solid;
+	}
+
 	.form-submit {
 		float: right;
     	margin-bottom: 0;

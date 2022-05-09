@@ -18,14 +18,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public function __construct() {
 
 			// Include helper functions
-			require_once( OCEANWP_INC_DIR .'woocommerce/woocommerce-helpers.php' );
+			require_once OCEANWP_INC_DIR . 'woocommerce/woocommerce-helpers.php';
 
 			// Move default WooCommerce customizer sections to the theme section
 			add_action( 'customize_register', array( $this, 'woo_section' ), 11 );
 
 			// Register Woo sidebar
 			add_filter( 'widgets_init', array( $this, 'register_woo_sidebar' ) );
-
 
 			if ( ! is_admin() ) {
 
@@ -67,12 +66,15 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 				// Define accents
 				add_filter( 'ocean_primary_texts', array( $this, 'primary_texts' ) );
+				add_filter( 'ocean_primary_svg_icons', array( $this, 'primary_svg_icons' ) );
 				add_filter( 'ocean_primary_borders', array( $this, 'primary_borders' ) );
 				add_filter( 'ocean_primary_backgrounds', array( $this, 'primary_backgrounds' ) );
 				add_filter( 'ocean_hover_primary_backgrounds', array( $this, 'hover_primary_backgrounds' ) );
 
-				/*-------------------------------------------------------------------------------*/
-				/* -  Front-End only actions/filters
+				/*
+				-------------------------------------------------------------------------------*/
+				/*
+				 -  Front-End only actions/filters
 				/*-------------------------------------------------------------------------------*/
 				if ( ! is_admin() ) {
 
@@ -94,7 +96,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				}
 
 				// Main Woo Actions
-				add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ) );
+				add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ), 99 );
 				add_filter( 'ocean_localize_array', array( $this, 'localize_array' ) );
 				if ( get_theme_mod( 'ocean_woo_shop_result_count', true )
 					|| get_theme_mod( 'ocean_woo_shop_sort', true )
@@ -131,8 +133,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				add_action( 'woocommerce_before_account_navigation', array( $this, 'oceanwp_before_account_navigation' ) );
 				add_action( 'woocommerce_after_account_navigation', array( $this, 'oceanwp_after_account_navigation' ) );
 				if ( get_option( 'woocommerce_enable_myaccount_registration' ) !== 'yes' ) {
-					add_action('woocommerce_before_customer_login_form', array( $this, 'oceanwp_login_wrap_before' ) );
-					add_action('woocommerce_after_customer_login_form', array( $this, 'oceanwp_login_wrap_after' ) );
+					add_action( 'woocommerce_before_customer_login_form', array( $this, 'oceanwp_login_wrap_before' ) );
+					add_action( 'woocommerce_after_customer_login_form', array( $this, 'oceanwp_login_wrap_after' ) );
 				}
 				if ( get_theme_mod( 'ocean_woo_category_image', 'no' ) == 'yes' ) {
 					add_action( 'woocommerce_archive_description', array( $this, 'woocommerce_category_image' ), 2 );
@@ -236,36 +238,35 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 					// Checkout validation
 					add_action( 'wp_ajax_oceanwp_validate_checkout', array( $this, 'validate_checkout_callback' ) );
-	            	add_action( 'wp_ajax_nopriv_oceanwp_validate_checkout', array( $this, 'validate_checkout_callback' ) );
+					add_action( 'wp_ajax_nopriv_oceanwp_validate_checkout', array( $this, 'validate_checkout_callback' ) );
 
-		            // Add checkout timeline template
-		            add_action( 'woocommerce_before_checkout_form', array( $this, 'checkout_timeline' ), 10 );
+					// Add checkout timeline template
+					add_action( 'woocommerce_before_checkout_form', array( $this, 'checkout_timeline' ), 10 );
 
 					// Change checkout template
-		            add_filter( 'woocommerce_locate_template', array( $this, 'multistep_checkout' ), 10, 3 );
+					add_filter( 'woocommerce_locate_template', array( $this, 'multistep_checkout' ), 10, 3 );
 
-		            // Checkout hack
-		            remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
-	            	remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
-		            remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
-		            remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
-		            add_action( 'ocean_woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
-	            	add_action( 'ocean_woocommerce_checkout_payment', 'woocommerce_checkout_payment', 20 );
-		            add_action( 'ocean_checkout_login_form', array( $this, 'checkout_login_form' ), 10 );
-		            add_action( 'ocean_woocommerce_checkout_coupon', 'woocommerce_checkout_coupon_form', 10 );
+					// Checkout hack
+					remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
+					remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+					remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
+					remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+					add_action( 'ocean_woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
+					add_action( 'ocean_woocommerce_checkout_payment', 'woocommerce_checkout_payment', 20 );
+					add_action( 'ocean_checkout_login_form', array( $this, 'checkout_login_form' ), 10 );
+					add_action( 'ocean_woocommerce_checkout_coupon', 'woocommerce_checkout_coupon_form', 10 );
 
-		            // Prevent empty shipping tab
-		            add_filter( 'woocommerce_enable_order_notes_field', '__return_true' );
+					// Prevent empty shipping tab
+					add_filter( 'woocommerce_enable_order_notes_field', '__return_true' );
 
-		            // Support to WooCommerce secure submit gateway
-		            if ( class_exists( 'WC_Gateway_SecureSubmit' ) ) {
-		                $secure_submit_options = get_option( 'woocommerce_securesubmit_settings' );
-		                if( ! empty( $secure_submit_options['use_iframes'] ) && 'yes' == $secure_submit_options['use_iframes'] ) {
-		                    add_filter( 'option_woocommerce_securesubmit_settings', array( $this, 'woocommerce_securesubmit_support' ), 10, 2 );
-		                }
-		            }
-
-		        }
+					// Support to WooCommerce secure submit gateway
+					if ( class_exists( 'WC_Gateway_SecureSubmit' ) ) {
+						$secure_submit_options = get_option( 'woocommerce_securesubmit_settings' );
+						if ( ! empty( $secure_submit_options['use_iframes'] ) && 'yes' == $secure_submit_options['use_iframes'] ) {
+							add_filter( 'option_woocommerce_securesubmit_settings', array( $this, 'woocommerce_securesubmit_support' ), 10, 2 );
+						}
+					}
+				}
 
 				// Add new typography settings
 				add_filter( 'ocean_typography_settings', array( $this, 'typography_settings' ) );
@@ -276,8 +277,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 		} // End __construct
 
-		/*-------------------------------------------------------------------------------*/
-		/* -  Start Class Functions
+		/*
+		-------------------------------------------------------------------------------*/
+		/*
+		 -  Start Class Functions
 		/*-------------------------------------------------------------------------------*/
 
 		/**
@@ -286,20 +289,20 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.0
 		 */
 		public static function woo_section( $wp_customize ) {
-			$wp_customize->get_section( 'woocommerce_checkout' )->panel = 'ocean_woocommerce_panel';
-			$wp_customize->get_section( 'woocommerce_store_notice' )->panel = 'ocean_woocommerce_panel';
-			$wp_customize->get_section( 'woocommerce_product_images' )->panel = 'ocean_woocommerce_panel';
-			$wp_customize->get_section( 'woocommerce_product_images' )->priority = 999;
-			$wp_customize->get_control( 'woocommerce_shop_page_display' )->section = 'ocean_woocommerce_archives';
-			$wp_customize->get_control( 'woocommerce_category_archive_display' )->section = 'ocean_woocommerce_archives';
-			$wp_customize->get_control( 'woocommerce_default_catalog_orderby' )->section = 'ocean_woocommerce_archives';
-			$wp_customize->get_control( 'woocommerce_checkout_company_field' )->section = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_checkout_address_2_field' )->section = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_checkout_phone_field' )->section = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_checkout_highlight_required_fields' )->section = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'wp_page_for_privacy_policy' )->section = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_terms_page_id' )->section = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_checkout_privacy_policy_text' )->section = 'ocean_woocommerce_checkout';
+			$wp_customize->get_section( 'woocommerce_checkout' )->panel                                      = 'ocean_woocommerce_panel';
+			$wp_customize->get_section( 'woocommerce_store_notice' )->panel                                  = 'ocean_woocommerce_panel';
+			$wp_customize->get_section( 'woocommerce_product_images' )->panel                                = 'ocean_woocommerce_panel';
+			$wp_customize->get_section( 'woocommerce_product_images' )->priority                             = 999;
+			$wp_customize->get_control( 'woocommerce_shop_page_display' )->section                           = 'ocean_woocommerce_archives';
+			$wp_customize->get_control( 'woocommerce_category_archive_display' )->section                    = 'ocean_woocommerce_archives';
+			$wp_customize->get_control( 'woocommerce_default_catalog_orderby' )->section                     = 'ocean_woocommerce_archives';
+			$wp_customize->get_control( 'woocommerce_checkout_company_field' )->section                      = 'ocean_woocommerce_checkout';
+			$wp_customize->get_control( 'woocommerce_checkout_address_2_field' )->section                    = 'ocean_woocommerce_checkout';
+			$wp_customize->get_control( 'woocommerce_checkout_phone_field' )->section                        = 'ocean_woocommerce_checkout';
+			$wp_customize->get_control( 'woocommerce_checkout_highlight_required_fields' )->section          = 'ocean_woocommerce_checkout';
+			$wp_customize->get_control( 'wp_page_for_privacy_policy' )->section                              = 'ocean_woocommerce_checkout';
+			$wp_customize->get_control( 'woocommerce_terms_page_id' )->section                               = 'ocean_woocommerce_checkout';
+			$wp_customize->get_control( 'woocommerce_checkout_privacy_policy_text' )->section                = 'ocean_woocommerce_checkout';
 			$wp_customize->get_control( 'woocommerce_checkout_terms_and_conditions_checkbox_text' )->section = 'ocean_woocommerce_checkout';
 		}
 
@@ -334,14 +337,16 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// Register new woo_sidebar widget area
-			register_sidebar( array (
-				'name'          => esc_html__( 'WooCommerce Sidebar', 'oceanwp' ),
-				'id'            => 'woo_sidebar',
-				'before_widget' => '<div id="%1$s" class="sidebar-box %2$s clr">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<h4 class="widget-title">',
-				'after_title'   => '</h4>',
-			) );
+			register_sidebar(
+				array(
+					'name'          => esc_html__( 'WooCommerce Sidebar', 'oceanwp' ),
+					'id'            => 'woo_sidebar',
+					'before_widget' => '<div id="%1$s" class="sidebar-box %2$s clr">',
+					'after_widget'  => '</div>',
+					'before_title'  => '<h4 class="widget-title">',
+					'after_title'   => '</h4>',
+				)
+			);
 
 		}
 
@@ -417,11 +422,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function mini_cart_style() {
 
 			// Register WooCommerce styles
-			wp_enqueue_style( 'oceanwp-woo-mini-cart', OCEANWP_CSS_DIR_URI .'woo/woo-mini-cart.min.css' );
+			wp_enqueue_style( 'oceanwp-woo-mini-cart', OCEANWP_CSS_DIR_URI . 'woo/woo-mini-cart.min.css' );
 
 			// If rtl
 			if ( is_RTL() ) {
-				wp_enqueue_style( 'oceanwp-woo-mini-cart-rtl', OCEANWP_CSS_DIR_URI .'woo/woo-mini-cart-rtl.css' );
+				wp_enqueue_style( 'oceanwp-woo-mini-cart-rtl', OCEANWP_CSS_DIR_URI . 'woo/woo-mini-cart-rtl.css' );
 			}
 
 		}
@@ -481,7 +486,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			if ( class_exists( 'WooCommerce_Germanized' ) ) {
-				
+
 				// Product entries.
 				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_single_delivery_time_info', 8 );
 				remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_gzd_template_single_price_unit', 11 );
@@ -509,6 +514,20 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			}
 
+			if ( class_exists( 'SitePress' ) ) {
+				add_filter( 'wcml_multi_currency_ajax_actions', array( $this, 'add_action_to_multi_currency_ajax' ), 10, 1 );
+			}
+		}
+
+		/**
+		 * Add action to multi currency ajax.
+		 *
+		 * @param array $ajax_actions The ajax actions.
+		 * @since 3.0.0
+		 */
+		public function add_action_to_multi_currency_ajax( $ajax_actions ) {
+			$ajax_actions[] = 'oceanwp_product_quick_view';
+			return $ajax_actions;
 		}
 
 		/**
@@ -517,8 +536,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public function remove_elements() {
-			remove_action( 'woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open', 10 );
-			remove_action( 'woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close', 5 );
+			remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+			remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
 			remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10 );
 			remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 			remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
@@ -545,7 +564,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.4.16
 		 */
 		public function shop_pagination() {
-			if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+			if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) && is_woocommerce() ) {
 				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 				add_action( 'woocommerce_after_shop_loop', array( $this, 'infinite_pagination' ), 10 );
 			}
@@ -563,19 +582,16 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				return;
 			}
 
-			// Load infinite scroll script
-			wp_enqueue_script( 'infinitescroll' );
-
 			// Last text
 			$last = get_theme_mod( 'ocean_woo_infinite_scroll_last_text' );
 			$last = oceanwp_tm_translation( 'ocean_woo_infinite_scroll_last_text', $last );
-			$last = $last ? $last: esc_html__( 'End of content', 'oceanwp' );
+			$last = $last ? $last : esc_html__( 'End of content', 'oceanwp' );
 
 			// Error text
 			$error = get_theme_mod( 'ocean_woo_infinite_scroll_error_text' );
 			$error = oceanwp_tm_translation( 'ocean_woo_infinite_scroll_error_text', $error );
-			$error = $error ? $error: esc_html__( 'No more pages to load', 'oceanwp' );
-			
+			$error = $error ? $error : esc_html__( 'No more pages to load', 'oceanwp' );
+
 			// Output pagination HTML ?>
 			<div class="scroller-status">
 				<div class="loader-ellips infinite-scroll-request">
@@ -588,10 +604,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				<p class="scroller-status__message infinite-scroll-error"><?php echo esc_html( $error ); ?></p>
 			</div>
 			<div class="infinite-scroll-nav clr">
-				<div class="alignleft newer-posts"><?php echo get_previous_posts_link('&larr; ' . esc_html__( 'Newer Posts', 'oceanwp' ) ); ?></div>
+				<div class="alignleft newer-posts"><?php echo get_previous_posts_link( '&larr; ' . esc_html__( 'Newer Posts', 'oceanwp' ) ); ?></div>
 				<div class="alignright older-posts"><?php echo get_next_posts_link( esc_html__( 'Older Posts', 'oceanwp' ) . ' &rarr;', $wp_query->max_num_pages ); ?></div>
 			</div>
-		<?php
+			<?php
 		}
 
 		/**
@@ -611,9 +627,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function remove_general_settings( $settings ) {
 			$remove = array( 'woocommerce_enable_lightbox' );
-			foreach( $settings as $key => $val ) {
+			foreach ( $settings as $key => $val ) {
 				if ( isset( $val['id'] ) && in_array( $val['id'], $remove ) ) {
-					unset( $settings[$key] );
+					unset( $settings[ $key ] );
 				}
 			}
 			return $settings;
@@ -626,11 +642,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function remove_product_settings( $settings ) {
 			$remove = array(
-				'woocommerce_enable_lightbox'
+				'woocommerce_enable_lightbox',
 			);
-			foreach( $settings as $key => $val ) {
+			foreach ( $settings as $key => $val ) {
 				if ( isset( $val['id'] ) && in_array( $val['id'], $remove ) ) {
-					unset( $settings[$key] );
+					unset( $settings[ $key ] );
 				}
 			}
 			return $settings;
@@ -665,7 +681,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// Return
- 			return $classes;
+			return $classes;
 
 		}
 
@@ -677,34 +693,34 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function add_custom_scripts() {
 
 			// Register WooCommerce styles
-			wp_enqueue_style( 'oceanwp-woocommerce', OCEANWP_CSS_DIR_URI .'woo/woocommerce.min.css' );
-			wp_enqueue_style( 'oceanwp-woo-star-font', OCEANWP_CSS_DIR_URI .'woo/woo-star-font.min.css' );
+			wp_enqueue_style( 'oceanwp-woocommerce', OCEANWP_CSS_DIR_URI . 'woo/woocommerce.min.css' );
+			wp_enqueue_style( 'oceanwp-woo-star-font', OCEANWP_CSS_DIR_URI . 'woo/woo-star-font.min.css' );
 
 			// If rtl
 			if ( is_RTL() ) {
-				wp_enqueue_style( 'oceanwp-woocommerce-rtl', OCEANWP_CSS_DIR_URI .'woo/woocommerce-rtl.css' );
+				wp_enqueue_style( 'oceanwp-woocommerce-rtl', OCEANWP_CSS_DIR_URI . 'woo/woocommerce-rtl.css' );
 			}
 
 			// If products hover style
 			if ( 'hover' == get_theme_mod( 'ocean_woo_products_style', 'default' ) ) {
-				wp_enqueue_style( 'oceanwp-woo-hover-style', OCEANWP_CSS_DIR_URI .'woo/hover-style.min.css' );
-				wp_enqueue_script( 'oceanwp-woo-hover-style', OCEANWP_JS_DIR_URI .'third/woo/woo-hover-style.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_style( 'oceanwp-woo-hover-style', OCEANWP_CSS_DIR_URI . 'woo/hover-style.min.css' );
+				wp_enqueue_script( 'oceanwp-woo-hover-style', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-hover-style.min.js', array( 'oceanwp-main' ), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If dropdown category widget style
 			if ( 'dropdown' == get_theme_mod( 'ocean_woo_cat_widget_style', 'default' ) ) {
-				wp_enqueue_script( 'oceanwp-woo-cat-widget', OCEANWP_JS_DIR_URI .'third/woo/woo-cat-widget.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-cat-widget', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-cat-widget.min.js', array( 'oceanwp-main' ), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If vertical thumbnails style
 			if ( 'vertical' == get_theme_mod( 'ocean_woo_product_thumbs_layout', 'horizontal' ) ) {
-				wp_enqueue_script( 'oceanwp-woo-thumbnails', OCEANWP_JS_DIR_URI .'third/woo/woo-thumbnails.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-thumbnails', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-thumbnails.min.js', array( 'oceanwp-main' ), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If quick view.
 			if ( get_theme_mod( 'ocean_woo_quick_view', true ) ) {
-				wp_enqueue_script( 'oceanwp-woo-quick-view', OCEANWP_JS_DIR_URI .'third/woo/woo-quick-view.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
-				wp_enqueue_style( 'oceanwp-woo-quick-view', OCEANWP_CSS_DIR_URI .'woo/woo-quick-view.min.css' );
+				wp_enqueue_script( 'oceanwp-woo-quick-view', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-quick-view.min.js', array( 'oceanwp-main' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_style( 'oceanwp-woo-quick-view', OCEANWP_CSS_DIR_URI . 'woo/woo-quick-view.min.css' );
 				wp_enqueue_script( 'wc-add-to-cart-variation' );
 				wp_enqueue_script( 'flexslider' );
 			}
@@ -717,45 +733,45 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// If single product ajax add to cart
 			if ( true == get_theme_mod( 'ocean_woo_product_ajax_add_to_cart', false )
 				&& oceanwp_is_woo_single() ) {
-				wp_enqueue_script( 'oceanwp-woo-ajax-addtocart', OCEANWP_JS_DIR_URI .'third/woo/woo-ajax-add-to-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-ajax-addtocart', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-ajax-add-to-cart.min.js', array( 'oceanwp-main' ), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If floating bar
 			if ( 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'on' )
 				&& oceanwp_is_woo_single() ) {
-				wp_enqueue_style( 'oceanwp-woo-floating-bar', OCEANWP_CSS_DIR_URI .'woo/woo-floating-bar.min.css' );
-				wp_enqueue_script( 'oceanwp-woo-floating-bar', OCEANWP_JS_DIR_URI .'third/woo/woo-floating-bar.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_style( 'oceanwp-woo-floating-bar', OCEANWP_CSS_DIR_URI . 'woo/woo-floating-bar.min.css' );
+				wp_enqueue_script( 'oceanwp-woo-floating-bar', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-floating-bar.min.js', array( 'oceanwp-main' ), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If display cart when product added
 			if ( 'yes' == get_theme_mod( 'ocean_woo_display_cart_product_added', 'no' ) ) {
-				wp_enqueue_script( 'oceanwp-woo-display-cart', OCEANWP_JS_DIR_URI .'third/woo/woo-display-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-display-cart', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-display-cart.min.js', array( 'oceanwp-main' ), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If off canvas filter
 			if ( true == get_theme_mod( 'ocean_woo_off_canvas_filter', false )
 				&& ( oceanwp_is_woo_shop()
 					|| oceanwp_is_woo_tax() ) ) {
-				wp_enqueue_script( 'oceanwp-woo-off-canvas', OCEANWP_JS_DIR_URI .'third/woo/woo-off-canvas.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-off-canvas', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-off-canvas.min.js', array( 'oceanwp-main' ), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If mobile menu mini cart
 			if ( get_theme_mod( 'ocean_woo_add_mobile_mini_cart', true ) ) {
-				wp_enqueue_script( 'oceanwp-woo-mini-cart', OCEANWP_JS_DIR_URI .'third/woo/woo-mini-cart.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-mini-cart', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-mini-cart.min.js', array( 'oceanwp-main' ), OCEANWP_THEME_VERSION, true );
 			}
 
 			// If multi step checkout
 			if ( true == get_theme_mod( 'ocean_woo_multi_step_checkout', false )
 				&& is_checkout() ) {
-				wp_enqueue_style( 'oceanwp-woo-multistep-checkout', OCEANWP_CSS_DIR_URI .'woo/woo-multistep-checkout.min.css' );
+				wp_enqueue_style( 'oceanwp-woo-multistep-checkout', OCEANWP_CSS_DIR_URI . 'woo/woo-multistep-checkout.min.css' );
 
-	            $woo_deps = array( 'jquery', 'wc-checkout', 'wc-country-select' );
+				$woo_deps = array( 'wc-checkout', 'wc-country-select' );
 
-	            if ( class_exists( 'WC_Ship_Multiple' ) ){
-	                $woo_deps[] = 'wcms-country-select';
-	            }
+				if ( class_exists( 'WC_Ship_Multiple' ) ) {
+					$woo_deps[] = 'wcms-country-select';
+				}
 
-				wp_enqueue_script( 'oceanwp-woo-multistep-checkout', OCEANWP_JS_DIR_URI .'third/woo/woo-multistep-checkout.min.js', $woo_deps, OCEANWP_THEME_VERSION, true );
+				wp_enqueue_script( 'oceanwp-woo-multistep-checkout', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-multi-step-checkout.min.js', $woo_deps, OCEANWP_THEME_VERSION, true );
 			}
 
 		}
@@ -769,25 +785,25 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// If single product ajax add to cart
 			if ( true == get_theme_mod( 'ocean_woo_product_ajax_add_to_cart', false ) ) {
-				$array['is_cart'] 			= is_cart();
-				$array['cart_url'] 			= apply_filters( 'ocean_woocommerce_add_to_cart_redirect', wc_get_cart_url() );
+				$array['is_cart']  = is_cart();
+				$array['cart_url'] = apply_filters( 'ocean_woocommerce_add_to_cart_redirect', wc_get_cart_url() );
 			}
 
 			// If multi step checkout
 			if ( true == get_theme_mod( 'ocean_woo_multi_step_checkout', false ) ) {
-				$array['ajax_url'] 				 = admin_url( 'admin-ajax.php' );
+				$array['ajax_url']               = admin_url( 'admin-ajax.php' );
 				$array['login_reminder_enabled'] = 'yes' == get_option( 'woocommerce_enable_checkout_login_reminder', 'yes' ) ? true : false;
-				$array['is_logged_in'] 		 	 = is_user_logged_in();
-				$array['no_account_btn'] 		 = esc_html__( 'I don&rsquo;t have an account', 'oceanwp' );
-				$array['next'] 		 			 = esc_html__( 'Next', 'oceanwp' );
+				$array['is_logged_in']           = is_user_logged_in();
+				$array['no_account_btn']         = esc_html__( 'I don&rsquo;t have an account', 'oceanwp' );
+				$array['next']                   = esc_html__( 'Next', 'oceanwp' );
 			}
 
 			// If quick view, ajax add to cart or floating bar
 			if ( get_theme_mod( 'ocean_woo_quick_view', true )
 				|| true == get_theme_mod( 'ocean_woo_product_ajax_add_to_cart', false )
 				|| 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'on' ) ) {
-				$array['ajax_url'] = admin_url( 'admin-ajax.php' );
-				$array['cart_url'] = apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url(), null );
+				$array['ajax_url']                = admin_url( 'admin-ajax.php' );
+				$array['cart_url']                = apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url(), null );
 				$array['cart_redirect_after_add'] = get_option( 'woocommerce_cart_redirect_after_add' );
 			}
 
@@ -798,7 +814,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$array['floating_bar'] = get_theme_mod( 'ocean_woo_display_floating_bar', 'on' );
 
 			// Grouped product button text in the quick view
-			$array['grouped_text'] = esc_attr__( 'View products', 'oceanwp' );
+			$array['grouped_text'] = esc_html__( 'View products', 'oceanwp' );
+
+			$array['multistep_checkout_error'] = __( 'Some required fields are empty. Please fill the required fields to go to the next step.', 'oceanwp' );
 
 			return $array;
 
@@ -811,10 +829,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function add_cart_single_product_ajax() {
 
-			$product_id   	= sanitize_text_field( $_POST['product_id'] );
-			$variation_id 	= sanitize_text_field( $_POST['variation_id'] );
-			$variation 		= $_POST['variation'];
-			$quantity     	= sanitize_text_field( $_POST['quantity'] );
+			$product_id   = sanitize_text_field( $_POST['product_id'] );
+			$variation_id = sanitize_text_field( $_POST['variation_id'] );
+			$variation    = $_POST['variation'];
+			$quantity     = sanitize_text_field( $_POST['quantity'] );
 
 			if ( $variation_id ) {
 				WC()->cart->add_to_cart( $product_id, $quantity, $variation_id, $variation );
@@ -830,9 +848,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 *
 		 * @since 1.5.0
 		 */
-		public static function cart_overlay() { ?>
+		public static function cart_overlay() {
+			?>
 			<div class="owp-cart-overlay"></div>
-		<?php
+			<?php
 		}
 
 		/**
@@ -857,9 +876,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$classes = implode( ' ', $classes );
 
 			echo '<div id="oceanwp-cart-sidebar-wrap">';
-				echo '<div class="'. $classes .'">';
+				echo '<div class="' . $classes . '">';
 					echo '<a href="#" class="oceanwp-cart-close">×</a>';
-					echo '<p class="owp-cart-title">'. esc_html__( 'Cart', 'oceanwp' ) .'</p><div class="divider"></div>';
+					echo '<p class="owp-cart-title">' . esc_html__( 'Cart', 'oceanwp' ) . '</p><div class="divider"></div>';
 					echo '<div class="owp-mini-cart">';
 						the_widget( 'WC_Widget_Cart', 'title=' );
 					echo '</div>';
@@ -885,15 +904,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function register_off_canvas_sidebar() {
 
-			register_sidebar( array (
-				'name'          => esc_html__( 'Off-Canvas Filters', 'oceanwp' ),
-				'description'   => esc_html__( 'Widgets in this area are used in the off canvas sidebar. To enable the Off Canvas filter, go to the WooCommerce > Archives section of the customizer and enable the Display Filter Button option.', 'oceanwp' ),
-				'id'            => 'owp_off_canvas_sidebar',
-				'before_widget' => '<div id="%1$s" class="sidebar-box %2$s clr">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<h4 class="widget-title">',
-				'after_title'   => '</h4>',
-			) );
+			register_sidebar(
+				array(
+					'name'          => esc_html__( 'Off-Canvas Filters', 'oceanwp' ),
+					'description'   => esc_html__( 'Widgets in this area are used in the off canvas sidebar. To enable the Off Canvas filter, go to the WooCommerce > Archives section of the customizer and enable the Display Filter Button option.', 'oceanwp' ),
+					'id'            => 'owp_off_canvas_sidebar',
+					'before_widget' => '<div id="%1$s" class="sidebar-box %2$s clr">',
+					'after_widget'  => '</div>',
+					'before_title'  => '<h4 class="widget-title">',
+					'after_title'   => '</h4>',
+				)
+			);
 
 		}
 
@@ -932,13 +953,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Get filter text
 			$text = get_theme_mod( 'ocean_woo_off_canvas_filter_text' );
 			$text = oceanwp_tm_translation( 'ocean_woo_off_canvas_filter_text', $text );
-			$text = $text ? $text: esc_html__( 'Filter', 'oceanwp' );
+			$text = $text ? $text : esc_html__( 'Filter', 'oceanwp' );
 
-			// Get theme icons.
-			$theme_icons = oceanwp_theme_icons();
-			$icon_t = oceanwp_theme_icon_class();
-
-			$output = '<a href="#" class="oceanwp-off-canvas-filter"><i class="' . $theme_icons[ 'menu' ][ $icon_t ] . '" aria-hidden="true"></i><span class="off-canvas-filter-text">'. esc_html( $text ) .'</span></a>';
+			$output = '<a href="#" class="oceanwp-off-canvas-filter">' . oceanwp_icon( 'menu', false ) . '<span class="off-canvas-filter-text">' . esc_html( $text ) . '</span></a>';
 
 			echo apply_filters( 'oceanwp_off_canvas_filter_button_output', $output );
 		}
@@ -969,13 +986,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$list = '';
 			}
 
-			// Get theme icons.
-			$theme_icons = oceanwp_theme_icons();
-			$icon_t = oceanwp_theme_icon_class();
+			$grid_view_icon = oceanwp_icon( 'grid', false );
+			$list_view_icon = oceanwp_icon( 'list', false );
 
-			$output = sprintf( '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="%1$s" class="%2$sgrid-btn"><span class="' . $theme_icons[ 'grid' ][ $icon_t ] . '" aria-hidden="true"></span></a><a href="#" id="oceanwp-list" title="%3$s" class="%4$slist-btn"><span class="' . $theme_icons[ 'list' ][ $icon_t ] . '" aria-hidden="true"></span></a></nav>', esc_html( $grid_view ), esc_attr( $grid ), esc_html( $list_view ), esc_attr( $list ) );
+			$output = '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="' . esc_html( $grid_view ) . '" class="' . esc_attr( $grid ) . ' grid-btn">' . $grid_view_icon . '</a><a href="#" id="oceanwp-list" title="' . esc_html( $list_view ) . '" class="' . esc_attr( $list ) . ' list-btn">' . $list_view_icon . '</a></nav>';
 
-			echo wp_kses_post( apply_filters( 'oceanwp_grid_list_buttons_output', $output ) );
+			echo apply_filters( 'oceanwp_grid_list_buttons_output', $output );
 		}
 
 		/**
@@ -1014,9 +1030,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			if ( get_theme_mod( 'ocean_woo_shop_result_count', true ) ) {
 				$posts_per_page = ( isset( $_GET['products-per-page'] ) ) ? sanitize_text_field( wp_unslash( $_GET['products-per-page'] ) ) : get_theme_mod( 'ocean_woo_shop_posts_per_page', '12' );
 
-			    if ( $posts_per_page == 'all' ) {
-			        $posts_per_page = wp_count_posts( 'product' )->publish;
-			    }
+				if ( $posts_per_page == 'all' ) {
+					$posts_per_page = wp_count_posts( 'product' )->publish;
+				}
 			} else {
 				$posts_per_page = get_theme_mod( 'ocean_woo_shop_posts_per_page' );
 				$posts_per_page = $posts_per_page ? $posts_per_page : '12';
@@ -1117,11 +1133,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function add_out_of_stock_badge() {
 			if ( function_exists( 'oceanwp_woo_product_instock' ) && ! oceanwp_woo_product_instock() ) {
-				$label = esc_html__( 'Out of Stock', 'oceanwp' );  ?>
+				$label = esc_html__( 'Out of Stock', 'oceanwp' );
+				?>
 				<div class="outofstock-badge">
 					<?php echo esc_html( apply_filters( 'ocean_woo_outofstock_text', $label ) ); ?>
 				</div><!-- .product-entry-out-of-stock-badge -->
-			<?php }
+				<?php
+			}
 		}
 
 		/**
@@ -1135,7 +1153,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$style = get_theme_mod( 'ocean_woo_product_entry_style' );
 				$style = $style ? $style : 'image-swap';
 				// Get entry product media template part
-				wc_get_template( 'loop/thumbnail/'. $style .'.php' );
+				wc_get_template( 'loop/thumbnail/' . $style . '.php' );
 			}
 		}
 
@@ -1171,11 +1189,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function quick_view_button() {
 			global $product;
 
-			// Get theme icons.
-			$theme_icons = oceanwp_theme_icons();
-			$icon_t = oceanwp_theme_icon_class();
-
-			$button  = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '"><i class="' . $theme_icons[ 'eye' ][ $icon_t ] . '" aria-hidden="true"></i>' . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false, 'oceanwp' ) . '</a>';
+			$button = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '">' . oceanwp_icon( 'eye', false ) . ' ' . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false ) . '</a>';
 
 			echo apply_filters( 'ocean_woo_quick_view_button_html', $button ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
@@ -1186,11 +1200,15 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.0
 		 */
 		public static function product_quick_view_ajax() {
-			if ( ! isset( $_REQUEST['product_id'] ) ) {
-				die();
+			if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'oceanwp' ) ) {
+				wp_die();
 			}
 
-			$product_id = intval( $_REQUEST['product_id'] );
+			if ( ! isset( $_POST['product_id'] ) ) {
+				wp_die();
+			}
+
+			$product_id = intval( $_POST['product_id'] );
 
 			// wp_query for the product.
 			wp( 'p=' . $product_id . '&post_type=product' );
@@ -1199,9 +1217,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			get_template_part( 'woocommerce/quick-view-content' );
 
-			echo ob_get_clean();
+			$output = ob_get_clean();
 
-			die();
+			echo wp_json_encode( array( 'output' => $output ) );
+
+			wp_die();
 		}
 
 		/**
@@ -1250,48 +1270,53 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function product_next_prev_nav() {
 			global $post;
 
-			$next_post = get_next_post( true, '', 'product_cat' );
-			$prev_post = get_previous_post( true, '', 'product_cat' );
+			$next_post                    = get_next_post( true, '', 'product_cat' );
+			$prev_post                    = get_previous_post( true, '', 'product_cat' );
+			$ocean_next_prev_prod_content = '';
+
+			if ( is_a( $prev_post, 'WP_Post' ) ) {
+				$next_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
+				ob_start();
+				?>
+
+				<li class="prev-li">
+				<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><?php echo $next_arrow; ?></a>
+					<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', 'oceanwp' ); ?></a>
+					<div class="owp-nav-thumb">
+						<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
+					</div>
+				</li>
+
+				<?php
+				$ocean_next_prev_prod_content .= ob_get_clean();
+			}
+
+			if ( is_a( $next_post, 'WP_Post' ) ) {
+				$prev_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
+				ob_start();
+				?>
+
+				<li class="next-li">
+					<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product', 'oceanwp' ); ?></a>
+					<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><?php echo $prev_arrow; ?></i></a>
+					<div class="owp-nav-thumb">
+						<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
+					</div>
+				</li>
+
+				<?php
+				$ocean_next_prev_prod_content .= ob_get_clean();
+			}
 
 			?>
 
 			<div class="owp-product-nav-wrap clr">
 				<ul class="owp-product-nav">
-			        <?php
-					if ( is_a( $prev_post , 'WP_Post' ) ) {
-						$next_arrow = is_rtl() ? 'fa fa-angle-right' : 'fa fa-angle-left';
-						?>
+					 <?php echo $ocean_next_prev_prod_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</ul>
+			</div>
 
-						<li class="prev-li">
-						<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><i class="<?php echo $next_arrow; ?>" aria-hidden="true"></i></a>
-							<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', 'oceanwp' ); ?></a>
-							<div class="owp-nav-thumb">
-								<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
-							</div>
-						</li>
-
-					<?php
-					} 
-
-			        if ( is_a( $next_post , 'WP_Post' ) ) {
-						$prev_arrow = is_rtl() ? 'fa fa-angle-left' : 'fa fa-angle-right';
-						?>
-
-						<li class="next-li">
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product', 'oceanwp' ); ?></a>
-							<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><i class="<?php echo $prev_arrow; ?>" aria-hidden="true"></i></a>
-							<div class="owp-nav-thumb">
-								<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
-							</div>
-						</li>
-
-					<?php
-					}
-					?>	
-		        </ul>
-		    </div>
-
-		<?php
+			<?php
 		}
 
 		/**
@@ -1316,14 +1341,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$fb_show_cond = '';
 			$fb_show_cond = ( is_user_logged_in() && $fb_woo_cond === true );
 
+			// Floating Bar Heading tag.
+			$fb_h_tag = 'h2';
+			$fb_h_tag = apply_filters( 'ocean_floating_bar_h_tag', $fb_h_tag );
+
 			?>
 
 			<div class="owp-floating-bar">
 				<div class="container clr">
 					<div class="left">
-				        <p class="selected"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-selected', 'oceanwp' ); ?></p>
-				        <h2 class="entry-title" itemprop="name"><?php echo wp_trim_words( $product->get_title(), '4' ); ?></h2>
-				    </div>
+						<p class="selected"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-selected', 'oceanwp' ); ?></p>
+						<<?php echo esc_attr( $fb_h_tag ); ?> class="entry-title" itemprop="name"><?php echo wp_trim_words( $product->get_title(), '4' ); ?></<?php echo esc_attr( $fb_h_tag ); ?>>
+					</div>
 					<?php
 					if ( false === $fb_woo_cond || $fb_show_cond ) {
 						?>
@@ -1332,20 +1361,21 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 								<p class="price"><?php echo $product->get_price_html(); ?></p>
 							</div>
 					<?php } ?>
-		                <?php
-		                // If out of stock.
-		                if ( 'outofstock' == $product->get_stock_status() ) { ?>
-		                	<p class="stock out-of-stock"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-out-stock', 'oceanwp' ); ?></p>
-		            	<?php
-						} else if ( false === $fb_woo_cond || $fb_show_cond ) {
-						
+						<?php
+						// If out of stock.
+						if ( 'outofstock' == $product->get_stock_status() ) {
+							?>
+							<p class="stock out-of-stock"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-out-stock', 'oceanwp' ); ?></p>
+							<?php
+						} elseif ( false === $fb_woo_cond || $fb_show_cond ) {
+
 							if ( $product && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually() ) {
 								echo self::floating_bar_add_to_cart( $product );
-							} else { ?>
+							} else {
+								?>
 								<button type="submit" class="button top"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-select-btn', 'oceanwp' ); ?></button>
-							<?php
-							} 
-
+								<?php
+							}
 						} else {
 
 							// Get price message display state.
@@ -1356,21 +1386,21 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 								// Get Add to Cart button replacement message.
 								$fb_woo_msg_txt = get_theme_mod( 'ocean_woo_single_cond_msg_text' );
 								$fb_woo_msg_txt = $fb_woo_msg_txt ? $fb_woo_msg_txt : esc_html__( 'Log in to view price and purchase', 'oceanwp' );
-							?>
+								?>
 							<div class="right">
 								<p class="selected"><?php echo $fb_woo_msg_txt; ?></p>
 							</div>
-						<?php
+								<?php
 							}
 						}
-					if ( false === $fb_woo_cond || $fb_show_cond ) {
-						?>
+						if ( false === $fb_woo_cond || $fb_show_cond ) {
+							?>
 					</div>
-					<?php } ?>
+						<?php } ?>
 				</div>
 			</div>
 
-		<?php
+			<?php
 		}
 
 		/**
@@ -1380,7 +1410,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function floating_bar_add_to_cart( $product ) {
 
-			$html = '<form action="' . esc_url( $product->add_to_cart_url() ) . '" class="cart" method="post" enctype="multipart/form-data">';
+			$html  = '<form action="' . esc_url( $product->add_to_cart_url() ) . '" class="cart" method="post" enctype="multipart/form-data">';
 			$html .= woocommerce_quantity_input(
 				array(
 					'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
@@ -1402,13 +1432,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.0
 		 */
 		public static function add_cart_floating_bar_ajax() {
+			if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'oceanwp' ) ) {
+				wp_die();
+			}
 
-			$product_id   = sanitize_text_field( $_POST['product_id'] );
-			$quantity     = sanitize_text_field( $_POST['quantity'] );
+			$product_id = sanitize_text_field( $_POST['product_id'] );
+			$quantity   = sanitize_text_field( $_POST['quantity'] );
 
-			WC()->cart->add_to_cart( $product_id, $quantity );
+			$cart_item_key = WC()->cart->add_to_cart( $product_id, $quantity );
 
-			die();
+			echo $cart_item_key;
+			wp_die();
 
 		}
 
@@ -1431,10 +1465,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			echo '<div class="woocommerce-MyAccount-tabs clr">';
 				echo '<div class="oceanwp-user-profile clr">';
-					echo '<div class="image">'. get_avatar( $current_user->user_email, 128 ) .'</div>';
+					echo '<div class="image">' . get_avatar( $current_user->user_email, 128 ) . '</div>';
 					echo '<div class="user-info">';
-						echo '<p class="name">'. esc_attr( $name ) .'</p>';
-						echo '<a class="logout" href="'. esc_url( wp_logout_url( get_permalink() ) ) .'">'. esc_html__( 'Logout', 'oceanwp' ) .'</a>';
+						echo '<p class="name">' . esc_attr( $name ) . '</p>';
+						echo '<a class="logout" href="' . esc_url( wp_logout_url( get_permalink() ) ) . '">' . esc_html__( 'Logout', 'oceanwp' ) . '</a>';
 					echo '</div>';
 				echo '</div>';
 
@@ -1498,20 +1532,20 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			echo '</a>';
 
 			 // Var
-			$term           = get_term( $category->term_id, 'product_cat' );
-			$description    = $term->description;
-			$length 		= get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
+			$term        = get_term( $category->term_id, 'product_cat' );
+			$description = $term->description;
+			$length      = get_theme_mod( 'ocean_woo_list_excerpt_length', '60' );
 
 			// Description
 			if ( get_theme_mod( 'ocean_woo_grid_list', true )
 				&& $description ) {
 				echo '<div class="woo-desc">';
 					echo '<div class="description">';
-						if ( ! $length ) {
-							echo wp_kses_post( strip_shortcodes( $description ) );
-						} else {
-							echo wp_trim_words( strip_shortcodes( $description ), $length );
-						}
+				if ( ! $length ) {
+					echo wp_kses_post( strip_shortcodes( $description ) );
+				} else {
+					echo wp_trim_words( strip_shortcodes( $description ), $length );
+				}
 					echo '</div>';
 				echo '</div>';
 			}
@@ -1560,13 +1594,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function woocommerce_category_image() {
 			if ( is_product_category() ) {
-			    global $wp_query;
-			    $cat 			= $wp_query->get_queried_object();
-			    $thumbnail_id 	= get_term_meta( $cat->term_id, 'thumbnail_id', true );
-			    $image 			= wp_get_attachment_url( $thumbnail_id );
+				global $wp_query;
+				$cat          = $wp_query->get_queried_object();
+				$thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+				$image        = wp_get_attachment_url( $thumbnail_id );
 
-			    if ( $image ) {
-				    echo '<div class="category-image"><img src="' . $image . '" alt="' . $cat->name . '" /></div>';
+				if ( $image ) {
+					echo '<div class="category-image"><img src="' . $image . '" alt="' . $cat->name . '" /></div>';
 				}
 			}
 		}
@@ -1579,12 +1613,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function pagination_args( $args ) {
 
 			// Nav icons.
-			$p_arrow = is_rtl() ? 'fa fa-angle-right' : 'fa fa-angle-left';
-			$n_arrow = is_rtl() ? 'fa fa-angle-left' : 'fa fa-angle-right';
+			$p_arrow = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
+			$n_arrow = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
 
 			// Args.
-			$args['prev_text'] = '<i class="' . $p_arrow . '" aria-hidden="true"></i>';
-			$args['next_text'] = '<i class="' . $n_arrow . '" aria-hidden="true"></i>';
+			$args['prev_text'] = $p_arrow;
+			$args['next_text'] = $n_arrow;
+
 			return $args;
 		}
 
@@ -1613,15 +1648,15 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			global $woocommerce_loop;
 
 			// Vars
-			$product 			= wc_get_product( get_the_ID() );
-			$content_alignment 	= get_theme_mod( 'ocean_woo_product_entry_content_alignment', 'center' );
-			$content_alignment 	= $content_alignment ? $content_alignment : 'center';
-			$thumbs_layout 		= get_theme_mod( 'ocean_woo_product_thumbs_layout', 'horizontal' );
-			$thumbs_layout 		= $thumbs_layout ? $thumbs_layout : 'horizontal';
-			$tabs_layout 		= get_theme_mod( 'ocean_woo_product_tabs_layout', 'horizontal' );
-			$tabs_layout 		= $tabs_layout ? $tabs_layout : 'horizontal';
-			$btn_style 			= get_theme_mod( 'ocean_woo_product_addtocart_style', 'normal' );
-			$btn_style 			= $btn_style ? $btn_style : 'normal';
+			$product           = wc_get_product( get_the_ID() );
+			$content_alignment = get_theme_mod( 'ocean_woo_product_entry_content_alignment', 'center' );
+			$content_alignment = $content_alignment ? $content_alignment : 'center';
+			$thumbs_layout     = get_theme_mod( 'ocean_woo_product_thumbs_layout', 'horizontal' );
+			$thumbs_layout     = $thumbs_layout ? $thumbs_layout : 'horizontal';
+			$tabs_layout       = get_theme_mod( 'ocean_woo_product_tabs_layout', 'horizontal' );
+			$tabs_layout       = $tabs_layout ? $tabs_layout : 'horizontal';
+			$btn_style         = get_theme_mod( 'ocean_woo_product_addtocart_style', 'normal' );
+			$btn_style         = $btn_style ? $btn_style : 'normal';
 
 			// Product entries
 			if ( $product && ! empty( $woocommerce_loop['columns'] ) ) {
@@ -1639,13 +1674,12 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				// Column Alignment.
 				$classes[] = 'col';
 				$classes[] = oceanwp_grid_class( $woocommerce_loop['columns'] );
-				$classes[] = 'owp-content-'. $content_alignment;
+				$classes[] = 'owp-content-' . $content_alignment;
 
 				// If infinite scroll.
 				if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
 					$classes[] = 'item-entry';
 				}
-
 			}
 
 			// Single product
@@ -1670,7 +1704,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				if ( true == get_theme_mod( 'ocean_woocommerce_display_navigation', true ) ) {
 					$classes[] = 'has-product-nav';
 				}
-
 			}
 
 			// Sale badge style
@@ -1689,8 +1722,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function add_product_class_for_elementor( $classes ) {
 			if ( in_array( 'type-product', $classes ) ) {
-	            $classes[] = 'product';
-	        }
+				$classes[] = 'product';
+			}
 			return $classes;
 		}
 
@@ -1724,26 +1757,44 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function primary_texts( $texts ) {
-			return array_merge( array(
-				'.woocommerce-MyAccount-navigation ul li a:before',
-				'.woocommerce-checkout .woocommerce-info a',
-				'.woocommerce-checkout #payment ul.payment_methods .wc_payment_method>input[type=radio]:first-child:checked+label:before',
-				'.woocommerce-checkout #payment .payment_method_paypal .about_paypal',
-				'.woocommerce ul.products li.product li.category a:hover',
-				'.woocommerce ul.products li.product .button:hover',
-				'.woocommerce ul.products li.product .product-inner .added_to_cart:hover',
-				'.product_meta .posted_in a:hover',
-				'.product_meta .tagged_as a:hover',
-				'.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover',
-				'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a',
-				'.woocommerce .oceanwp-grid-list a.active',
-				'.woocommerce .oceanwp-grid-list a:hover',
-				'.woocommerce .oceanwp-off-canvas-filter:hover',
-				'.widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid a.remove:hover',
-				'.widget_product_categories li a:hover ~ .count',
-				'.widget_layered_nav li a:hover ~ .count',
-				'.woocommerce ul.products li.product:not(.product-category) .woo-entry-buttons li a:hover',
-			), $texts );
+			return array_merge(
+				array(
+					'.woocommerce-MyAccount-navigation ul li a:before',
+					'.woocommerce-checkout .woocommerce-info a',
+					'.woocommerce-checkout #payment ul.payment_methods .wc_payment_method>input[type=radio]:first-child:checked+label:before',
+					'.woocommerce-checkout #payment .payment_method_paypal .about_paypal',
+					'.woocommerce ul.products li.product li.category a:hover',
+					'.woocommerce ul.products li.product .button:hover',
+					'.woocommerce ul.products li.product .product-inner .added_to_cart:hover',
+					'.product_meta .posted_in a:hover',
+					'.product_meta .tagged_as a:hover',
+					'.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover',
+					'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a',
+					'.woocommerce .oceanwp-grid-list a.active',
+					'.woocommerce .oceanwp-grid-list a:hover',
+					'.woocommerce .oceanwp-off-canvas-filter:hover',
+					'.widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid a.remove:hover',
+					'.widget_product_categories li a:hover ~ .count',
+					'.widget_layered_nav li a:hover ~ .count',
+					'.woocommerce ul.products li.product:not(.product-category) .woo-entry-buttons li a:hover',
+				),
+				$texts
+			);
+		}
+
+		/**
+		 * Adds color accents for SVG icons.
+		 *
+		 * @since 1.0.0
+		 */
+		public static function primary_svg_icons( $svg_icons ) {
+			return array_merge(
+				array(
+					'.woocommerce .oceanwp-grid-list a.active .owp-icon use',
+					'.woocommerce .oceanwp-grid-list a:hover .owp-icon use',
+				),
+				$svg_icons
+			);
 		}
 
 		/**
@@ -1752,34 +1803,37 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function primary_borders( $borders ) {
-			return array_merge( array(
-				'.current-shop-items-dropdown' => array( 'top' ),
-				'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a' => array( 'bottom' ),
-				'.wcmenucart-details.count:before',
-				'.woocommerce ul.products li.product .button:hover',
-				'.woocommerce ul.products li.product .product-inner .added_to_cart:hover',
-				'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a',
-				'.woocommerce .oceanwp-grid-list a.active',
-				'.woocommerce .oceanwp-grid-list a:hover',
-				'.woocommerce .oceanwp-off-canvas-filter:hover',
-				'.owp-product-nav li a.owp-nav-link:hover',
-				'.widget_shopping_cart_content .buttons .button:first-child:hover',
-				'.widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid a.remove:hover',
-				'.widget_product_categories li a:hover ~ .count',
-				'.woocommerce .widget_product_categories li.current-cat > a ~ .count',
-				'.woocommerce .widget_product_categories li.current-cat > a:before',
-				'.widget_layered_nav li a:hover ~ .count',
-				'.woocommerce .widget_layered_nav li.chosen a ~ .count',
-				'.woocommerce .widget_layered_nav li.chosen a:before',
-				'#owp-checkout-timeline.arrow .active .timeline-wrapper:before' => array( 'top', 'bottom' ),
-				'#owp-checkout-timeline.arrow .active .timeline-wrapper:after' => array( 'left', 'right' ),
-				'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count',
-				'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count:after',
-				'.show-cart .wcmenucart-cart-icon .wcmenucart-count',
-				'.show-cart .wcmenucart-cart-icon .wcmenucart-count:after',
-				'.woocommerce ul.products li.product:not(.product-category) .woo-product-gallery .active a',
-				'.woocommerce ul.products li.product:not(.product-category) .woo-product-gallery a:hover',
-			), $borders );
+			return array_merge(
+				array(
+					'.current-shop-items-dropdown' => array( 'top' ),
+					'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a' => array( 'bottom' ),
+					'.wcmenucart-details.count:before',
+					'.woocommerce ul.products li.product .button:hover',
+					'.woocommerce ul.products li.product .product-inner .added_to_cart:hover',
+					'.woocommerce div.product .woocommerce-tabs ul.tabs li.active a',
+					'.woocommerce .oceanwp-grid-list a.active',
+					'.woocommerce .oceanwp-grid-list a:hover',
+					'.woocommerce .oceanwp-off-canvas-filter:hover',
+					'.owp-product-nav li a.owp-nav-link:hover',
+					'.widget_shopping_cart_content .buttons .button:first-child:hover',
+					'.widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid a.remove:hover',
+					'.widget_product_categories li a:hover ~ .count',
+					'.woocommerce .widget_product_categories li.current-cat > a ~ .count',
+					'.woocommerce .widget_product_categories li.current-cat > a:before',
+					'.widget_layered_nav li a:hover ~ .count',
+					'.woocommerce .widget_layered_nav li.chosen a ~ .count',
+					'.woocommerce .widget_layered_nav li.chosen a:before',
+					'#owp-checkout-timeline.arrow .active .timeline-wrapper:before' => array( 'top', 'bottom' ),
+					'#owp-checkout-timeline.arrow .active .timeline-wrapper:after' => array( 'left', 'right' ),
+					'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count',
+					'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count:after',
+					'.show-cart .wcmenucart-cart-icon .wcmenucart-count',
+					'.show-cart .wcmenucart-cart-icon .wcmenucart-count:after',
+					'.woocommerce ul.products li.product:not(.product-category) .woo-product-gallery .active a',
+					'.woocommerce ul.products li.product:not(.product-category) .woo-product-gallery a:hover',
+				),
+				$borders
+			);
 		}
 
 		/**
@@ -1788,25 +1842,28 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function primary_backgrounds( $backgrounds ) {
-			return array_merge( array(
-				'.woocommerce div.product div.images .open-image',
-				'.wcmenucart-details.count',
-				'.woocommerce-message a',
-				'.woocommerce-error a',
-				'.woocommerce-info a',
-				'.woocommerce .widget_price_filter .ui-slider .ui-slider-handle',
-				'.woocommerce .widget_price_filter .ui-slider .ui-slider-range',
-				'.owp-product-nav li a.owp-nav-link:hover',
-				'.woocommerce div.product.owp-tabs-layout-vertical .woocommerce-tabs ul.tabs li a:after',
-				'.woocommerce .widget_product_categories li.current-cat > a ~ .count',
-				'.woocommerce .widget_product_categories li.current-cat > a:before',
-				'.woocommerce .widget_layered_nav li.chosen a ~ .count',
-				'.woocommerce .widget_layered_nav li.chosen a:before',
-				'#owp-checkout-timeline .active .timeline-wrapper',
-				'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count',
-				'.show-cart .wcmenucart-cart-icon .wcmenucart-count',
-				'.woocommerce ul.products li.product:not(.product-category) .image-wrap .button',
-			), $backgrounds );
+			return array_merge(
+				array(
+					'.woocommerce div.product div.images .open-image',
+					'.wcmenucart-details.count',
+					'.woocommerce-message a',
+					'.woocommerce-error a',
+					'.woocommerce-info a',
+					'.woocommerce .widget_price_filter .ui-slider .ui-slider-handle',
+					'.woocommerce .widget_price_filter .ui-slider .ui-slider-range',
+					'.owp-product-nav li a.owp-nav-link:hover',
+					'.woocommerce div.product.owp-tabs-layout-vertical .woocommerce-tabs ul.tabs li a:after',
+					'.woocommerce .widget_product_categories li.current-cat > a ~ .count',
+					'.woocommerce .widget_product_categories li.current-cat > a:before',
+					'.woocommerce .widget_layered_nav li.chosen a ~ .count',
+					'.woocommerce .widget_layered_nav li.chosen a:before',
+					'#owp-checkout-timeline .active .timeline-wrapper',
+					'.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count',
+					'.show-cart .wcmenucart-cart-icon .wcmenucart-count',
+					'.woocommerce ul.products li.product:not(.product-category) .image-wrap .button',
+				),
+				$backgrounds
+			);
 		}
 
 		/**
@@ -1815,13 +1872,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function hover_primary_backgrounds( $hover ) {
-			return array_merge( array(
-				'.woocommerce div.product div.images .open-image:hover',
-				'.woocommerce-error a:hover',
-				'.woocommerce-info a:hover',
-				'.woocommerce-message a:hover',
-				'.woocommerce ul.products li.product:not(.product-category) .image-wrap .button:hover',
-			), $hover );
+			return array_merge(
+				array(
+					'.woocommerce div.product div.images .open-image:hover',
+					'.woocommerce-error a:hover',
+					'.woocommerce-info a:hover',
+					'.woocommerce-message a:hover',
+					'.woocommerce-message a:focus',
+					'.woocommerce .button:focus',
+					'.woocommerce ul.products li.product:not(.product-category) .image-wrap .button:hover',
+				),
+				$hover
+			);
 		}
 
 		/**
@@ -1830,56 +1892,59 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function border_color_elements( $elements ) {
-			return array_merge( array(
-				'.woocommerce table.shop_table',
-				'.woocommerce table.shop_table td',
-				'.woocommerce-cart .cart-collaterals .cart_totals tr td',
-				'.woocommerce-cart .cart-collaterals .cart_totals tr th',
-				'.woocommerce table.shop_table tth',
-				'.woocommerce table.shop_table tfoot td',
-				'.woocommerce table.shop_table tfoot th',
-				'.woocommerce .order_details',
-				'.woocommerce .shop_table.order_details tfoot th',
-				'.woocommerce .shop_table.customer_details th',
-				'.woocommerce .cart-collaterals .cross-sells',
-				'.woocommerce-page .cart-collaterals .cross-sells',
-				'.woocommerce .cart-collaterals .cart_totals',
-				'.woocommerce-page .cart-collaterals .cart_totals',
-				'.woocommerce .cart-collaterals h2',
-				'.woocommerce .cart-collaterals h2',
-				'.woocommerce .cart-collaterals h2',
-				'.woocommerce-cart .cart-collaterals .cart_totals .order-total th',
-				'.woocommerce-cart .cart-collaterals .cart_totals .order-total td',
-				'.woocommerce ul.order_details',
-				'.woocommerce .shop_table.order_details tfoot th',
-				'.woocommerce .shop_table.customer_details th',
-				'.woocommerce .woocommerce-checkout #customer_details h3',
-				'.woocommerce .woocommerce-checkout h3#order_review_heading',
-				'.woocommerce-checkout #payment ul.payment_methods',
-				'.woocommerce-checkout form.login',
-				'.woocommerce-checkout form.checkout_coupon',
-				'.woocommerce-checkout-review-order-table tfoot th',
-				'.woocommerce-checkout #payment',
-				'.woocommerce ul.order_details',
-				'.woocommerce #customer_login > div',
-				'.woocommerce .col-1.address',
-				'.woocommerce .col-2.address',
-				'.woocommerce-checkout .woocommerce-info',
-				'.woocommerce div.product form.cart',
-				'.product_meta',
-				'.woocommerce div.product .woocommerce-tabs ul.tabs',
-				'.woocommerce #reviews #comments ol.commentlist li .comment_container',
-				'p.stars span a',
-				'.woocommerce ul.product_list_widget li',
-				'.woocommerce .widget_shopping_cart .cart_list li',
-				'.woocommerce.widget_shopping_cart .cart_list li',
-				'.woocommerce ul.product_list_widget li:first-child',
-				'.woocommerce .widget_shopping_cart .cart_list li:first-child',
-				'.woocommerce.widget_shopping_cart .cart_list li:first-child',
-				'.widget_product_categories li a',
-				'.woocommerce .oceanwp-toolbar',
-				'.woocommerce .products.list .product',
-			), $elements );
+			return array_merge(
+				array(
+					'.woocommerce table.shop_table',
+					'.woocommerce table.shop_table td',
+					'.woocommerce-cart .cart-collaterals .cart_totals tr td',
+					'.woocommerce-cart .cart-collaterals .cart_totals tr th',
+					'.woocommerce table.shop_table tth',
+					'.woocommerce table.shop_table tfoot td',
+					'.woocommerce table.shop_table tfoot th',
+					'.woocommerce .order_details',
+					'.woocommerce .shop_table.order_details tfoot th',
+					'.woocommerce .shop_table.customer_details th',
+					'.woocommerce .cart-collaterals .cross-sells',
+					'.woocommerce-page .cart-collaterals .cross-sells',
+					'.woocommerce .cart-collaterals .cart_totals',
+					'.woocommerce-page .cart-collaterals .cart_totals',
+					'.woocommerce .cart-collaterals h2',
+					'.woocommerce .cart-collaterals h2',
+					'.woocommerce .cart-collaterals h2',
+					'.woocommerce-cart .cart-collaterals .cart_totals .order-total th',
+					'.woocommerce-cart .cart-collaterals .cart_totals .order-total td',
+					'.woocommerce ul.order_details',
+					'.woocommerce .shop_table.order_details tfoot th',
+					'.woocommerce .shop_table.customer_details th',
+					'.woocommerce .woocommerce-checkout #customer_details h3',
+					'.woocommerce .woocommerce-checkout h3#order_review_heading',
+					'.woocommerce-checkout #payment ul.payment_methods',
+					'.woocommerce-checkout form.login',
+					'.woocommerce-checkout form.checkout_coupon',
+					'.woocommerce-checkout-review-order-table tfoot th',
+					'.woocommerce-checkout #payment',
+					'.woocommerce ul.order_details',
+					'.woocommerce #customer_login > div',
+					'.woocommerce .col-1.address',
+					'.woocommerce .col-2.address',
+					'.woocommerce-checkout .woocommerce-info',
+					'.woocommerce div.product form.cart',
+					'.product_meta',
+					'.woocommerce div.product .woocommerce-tabs ul.tabs',
+					'.woocommerce #reviews #comments ol.commentlist li .comment_container',
+					'p.stars span a',
+					'.woocommerce ul.product_list_widget li',
+					'.woocommerce .widget_shopping_cart .cart_list li',
+					'.woocommerce.widget_shopping_cart .cart_list li',
+					'.woocommerce ul.product_list_widget li:first-child',
+					'.woocommerce .widget_shopping_cart .cart_list li:first-child',
+					'.woocommerce.widget_shopping_cart .cart_list li:first-child',
+					'.widget_product_categories li a',
+					'.woocommerce .oceanwp-toolbar',
+					'.woocommerce .products.list .product',
+				),
+				$elements
+			);
 		}
 
 		/**
@@ -1920,13 +1985,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			if ( 'ti_wl' === $wl_plugin ) {
 				$items .= do_shortcode( '[ti_wishlist_products_counter]' );
-			} else if ( 'yith_wl' === $wl_plugin ) {
+			} elseif ( 'yith_wl' === $wl_plugin ) {
 
 				// Get YITH Wishlist URL.
 				$wishlist_url = YITH_WCWL()->get_last_operation_url();
 				$woo_wl_count = ocean_woo_wishlist_count();
 
-				$items .= '<a href="' . esc_url( $wishlist_url ) . '"><i class="far fa-heart"><span class="count">' . esc_html( $woo_wl_count ) . '</i></span></a>';
+				$items .= '<a href="' . esc_url( $wishlist_url ) . '">' . oceanwp_icon( 'heart', false ) . '<span class="count">' . esc_html( $woo_wl_count ) . '</i></span></a>';
 			}
 
 			$items .= '</li>';
@@ -1954,8 +2019,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// Get style
-			$style 			= oceanwp_menu_cart_style();
-			$header_style 	= oceanwp_header_style();
+			$style        = oceanwp_menu_cart_style();
+			$header_style = oceanwp_header_style();
 
 			// Return items if no style
 			if ( ! $style ) {
@@ -1964,7 +2029,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Add cart link to menu items
 			if ( 'full_screen' == $header_style ) {
-				$items .= '<li class="woo-cart-link"><a href="'. esc_url( wc_get_cart_url() ) .'">'. esc_html__( 'Your cart', 'oceanwp' ) .'</a></li>';
+				$items .= '<li class="woo-cart-link"><a href="' . esc_url( wc_get_cart_url() ) . '">' . esc_html__( 'Your cart', 'oceanwp' ) . '</a></li>';
 			} else {
 				$items .= self::get_cart_icon();
 			}
@@ -1981,9 +2046,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function get_cart_icon() {
 
 			// Style
-			$style = oceanwp_menu_cart_style();
+			$style        = oceanwp_menu_cart_style();
 			$header_style = oceanwp_header_style();
-			$cart_style = get_theme_mod( 'ocean_woo_cart_dropdown_style', 'compact' );
+			$cart_style   = get_theme_mod( 'ocean_woo_cart_dropdown_style', 'compact' );
 
 			// Toggle class
 			$toggle_class = 'toggle-cart-widget';
@@ -1992,7 +2057,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$classes = array( 'woo-menu-icon' );
 
 			// Add style class
-			$classes[] = 'wcmenucart-toggle-'. $style;
+			$classes[] = 'wcmenucart-toggle-' . $style;
 
 			// If bag style
 			if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) {
@@ -2017,14 +2082,16 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Turn classes into string
 			$classes = implode( ' ', $classes );
 
-			ob_start(); ?>
+			ob_start();
+			?>
 
 			<li class="<?php echo esc_attr( $classes ); ?>">
 				<?php oceanwp_wcmenucart_menu_item(); ?>
 				<?php
 				if ( 'drop_down' == $style
 					&& 'full_screen' != $header_style
-					&& 'vertical' != $header_style ) { ?>
+					&& 'vertical' != $header_style ) {
+					?>
 					<div class="current-shop-items-dropdown owp-mini-cart clr">
 						<div class="current-shop-items-inner clr">
 							<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
@@ -2061,11 +2128,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			if ( $product->is_type( 'simple' ) || $product->is_type( 'external' ) ) {
 
-				$r_price 	= $product->get_regular_price();
-				$s_price 	= $product->get_sale_price();
-				$percent 	= round( ( ( floatval( $r_price ) - floatval( $s_price ) ) / floatval( $r_price ) ) * 100 );
+				$r_price = $product->get_regular_price();
+				$s_price = $product->get_sale_price();
+				$percent = round( ( ( floatval( $r_price ) - floatval( $s_price ) ) / floatval( $r_price ) ) * 100 );
 
-			} else if ( $product->is_type( 'variable' ) ) {
+			} elseif ( $product->is_type( 'variable' ) ) {
 
 				$available_variations = $product->get_available_variations();
 				$maximumper           = 0;
@@ -2078,9 +2145,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 						continue;
 					}
 
-					$r_price 	= $variable_product->get_regular_price();
-					$s_price    = $variable_product->get_sale_price();
-					$percent 	= round( ( ( floatval( $r_price ) - floatval( $s_price ) ) / floatval( $r_price ) ) * 100 );
+					$r_price = $variable_product->get_regular_price();
+					$s_price = $variable_product->get_sale_price();
+					$percent = round( ( ( floatval( $r_price ) - floatval( $s_price ) ) / floatval( $r_price ) ) * 100 );
 
 					if ( $percent > $maximumper ) {
 						$maximumper = $percent;
@@ -2130,22 +2197,22 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			// Login text
 			$text = esc_html__( 'Login', 'oceanwp' );
 
-			$html = '<ul class="'. $classes .'">';
+			$html      = '<ul class="' . $classes . '">';
 				$html .= '<li class="login">';
-					if ( 'yes' == $registration ) {
-					    $html .= '<a href="#" class="owp-account-link current">'. $text .'</a>';
-					} else {
-					    $html .= '<span class="owp-account-link current">'. $text .'</span>';
-					}
+			if ( 'yes' == $registration ) {
+				$html .= '<a href="#" class="owp-account-link current">' . $text . '</a>';
+			} else {
+				$html .= '<span class="owp-account-link current">' . $text . '</span>';
+			}
 				$html .= '</li>';
 
 				// If registration
-				if ( 'yes' == $registration ) {
-					$html .= '<li class="or">'. esc_html__( 'Or', 'oceanwp' ) .'</li>';
-					$html .= '<li class="register">';
-						$html .= '<a href="#" class="owp-account-link">'. esc_html__( 'Register', 'oceanwp' ) .'</a>';
-					$html .= '</li>';
-				}
+			if ( 'yes' == $registration ) {
+				$html     .= '<li class="or">' . esc_html__( 'Or', 'oceanwp' ) . '</li>';
+				$html     .= '<li class="register">';
+					$html .= '<a href="#" class="owp-account-link">' . esc_html__( 'Register', 'oceanwp' ) . '</a>';
+				$html     .= '</li>';
+			}
 
 			$html .= '</ul>';
 
@@ -2168,7 +2235,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Return
 			return $return;
-			
+
 		}
 
 		/**
@@ -2177,171 +2244,172 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.17
 		 */
 		public function validate_checkout_callback() {
-			$posted_data = isset($_POST['posted_data'])?$_POST['posted_data']:array();
+			$posted_data = isset( $_POST['posted_data'] ) ? $_POST['posted_data'] : array();
 
-            $WC_Checkout = new WC_Checkout();
-            $errors = new WP_Error();
+			$WC_Checkout = new WC_Checkout();
+			$errors      = new WP_Error();
 
+						$skipped = array();
+			$data                = array(
+				'terms'                              => (int) isset( $posted_data['terms'] ),
+				'createaccount'                      => (int) ! empty( $posted_data['createaccount'] ),
+				'payment_method'                     => isset( $posted_data['payment_method'] ) ? wc_clean( $posted_data['payment_method'] ) : '',
+				'shipping_method'                    => isset( $posted_data['shipping_method'] ) ? wc_clean( $posted_data['shipping_method'] ) : '',
+				'ship_to_different_address'          => ! empty( $posted_data['ship_to_different_address'] ) && ! wc_ship_to_billing_address_only(),
+				'woocommerce_checkout_update_totals' => isset( $posted_data['woocommerce_checkout_update_totals'] ),
+			);
 
-            ////////////////////////////////////////
-            $skipped = array();
-            $data = array(
-                'terms' => (int) isset($posted_data['terms']),
-                'createaccount' => (int) !empty($posted_data['createaccount']),
-                'payment_method' => isset($posted_data['payment_method']) ? wc_clean($posted_data['payment_method']) : '',
-                'shipping_method' => isset($posted_data['shipping_method']) ? wc_clean($posted_data['shipping_method']) : '',
-                'ship_to_different_address' => !empty($posted_data['ship_to_different_address']) && !wc_ship_to_billing_address_only(),
-                'woocommerce_checkout_update_totals' => isset($posted_data['woocommerce_checkout_update_totals']),
-            );
-            
-            foreach ($WC_Checkout->get_checkout_fields() as $fieldset_key => $fieldset) {
-                if (isset($data['ship_to_different_address'])) {
-                    if ('shipping' === $fieldset_key && (!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address() )) {
-                        continue;
-                    }
-                }
+			foreach ( $WC_Checkout->get_checkout_fields() as $fieldset_key => $fieldset ) {
+				if ( isset( $data['ship_to_different_address'] ) ) {
+					if ( 'shipping' === $fieldset_key && ( ! $data['ship_to_different_address'] || ! WC()->cart->needs_shipping_address() ) ) {
+						continue;
+					}
+				}
 
-                if (isset($data['createaccount'])) {
-                    if ('account' === $fieldset_key && ( is_user_logged_in() || (!$WC_Checkout->is_registration_required() && empty($data['createaccount']) ) )) {
-                        continue;
-                    }
-                }
-                foreach ($fieldset as $key => $field) {
-                    $type = sanitize_title(isset($field['type']) ? $field['type'] : 'text' );
+				if ( isset( $data['createaccount'] ) ) {
+					if ( 'account' === $fieldset_key && ( is_user_logged_in() || ( ! $WC_Checkout->is_registration_required() && empty( $data['createaccount'] ) ) ) ) {
+						continue;
+					}
+				}
+				foreach ( $fieldset as $key => $field ) {
+					$type = sanitize_title( isset( $field['type'] ) ? $field['type'] : 'text' );
 
-                    switch ($type) {
-                        case 'checkbox' :
-                            $value = isset($posted_data[$key]) ? 1 : '';
-                            break;
-                        case 'multiselect' :
-                            $value = isset($posted_data[$key]) ? implode(', ', wc_clean($posted_data[$key])) : '';
-                            break;
-                        case 'textarea' :
-                            $value = isset($posted_data[$key]) ? wc_sanitize_textarea($posted_data[$key]) : '';
-                            break;
-                        default :
-                            $value = isset($posted_data[$key]) ? wc_clean($posted_data[$key]) : '';
-                            break;
-                    }
+					switch ( $type ) {
+						case 'checkbox':
+							$value = isset( $posted_data[ $key ] ) ? 1 : '';
+							break;
+						case 'multiselect':
+							$value = isset( $posted_data[ $key ] ) ? implode( ', ', wc_clean( $posted_data[ $key ] ) ) : '';
+							break;
+						case 'textarea':
+							$value = isset( $posted_data[ $key ] ) ? wc_sanitize_textarea( $posted_data[ $key ] ) : '';
+							break;
+						default:
+							$value = isset( $posted_data[ $key ] ) ? wc_clean( $posted_data[ $key ] ) : '';
+							break;
+					}
 
-                    $data[$key] = apply_filters('woocommerce_process_checkout_' . $type . '_field', apply_filters('woocommerce_process_checkout_field_' . $key, $value));
-                }
-            }
+					$data[ $key ] = apply_filters( 'woocommerce_process_checkout_' . $type . '_field', apply_filters( 'woocommerce_process_checkout_field_' . $key, $value ) );
+				}
+			}
 
-            if (in_array('shipping', $skipped) && ( WC()->cart->needs_shipping_address() || wc_ship_to_billing_address_only() )) {
-                foreach ($this->get_checkout_fields('shipping') as $key => $field) {
-                    $data[$key] = isset($data['billing_' . substr($key, 9)]) ? $data['billing_' . substr($key, 9)] : '';
-                }
-            }
+			if ( in_array( 'shipping', $skipped ) && ( WC()->cart->needs_shipping_address() || wc_ship_to_billing_address_only() ) ) {
+				foreach ( $this->get_checkout_fields( 'shipping' ) as $key => $field ) {
+					$data[ $key ] = isset( $data[ 'billing_' . substr( $key, 9 ) ] ) ? $data[ 'billing_' . substr( $key, 9 ) ] : '';
+				}
+			}
 
+			foreach ( $WC_Checkout->get_checkout_fields() as $fieldset_key => $fieldset ) {
 
-            //////////////////////////////////////////////////
-            foreach ($WC_Checkout->get_checkout_fields() as $fieldset_key => $fieldset) {
+				if ( $fieldset_key != $_POST['type'] ) {
+					 continue;
+				}
 
-                if($fieldset_key!=$_POST['type'])
-                     continue;
-                
-                
-                if (isset($data['ship_to_different_address'])) {
-                    if ('shipping' === $fieldset_key && (!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address() )) {
-                        continue;
-                    }
-                }
+				if ( isset( $data['ship_to_different_address'] ) ) {
+					if ( 'shipping' === $fieldset_key && ( ! $data['ship_to_different_address'] || ! WC()->cart->needs_shipping_address() ) ) {
+						continue;
+					}
+				}
 
-                if (isset($data['createaccount'])) {
-                    if ('account' === $fieldset_key && ( is_user_logged_in() || (!$WC_Checkout->is_registration_required() && empty($data['createaccount']) ) )) {
-                        continue;
-                    }
-                }
+				if ( isset( $data['createaccount'] ) ) {
+					if ( 'account' === $fieldset_key && ( is_user_logged_in() || ( ! $WC_Checkout->is_registration_required() && empty( $data['createaccount'] ) ) ) ) {
+						continue;
+					}
+				}
 
-                foreach ($fieldset as $key => $field) {
-                    if (!isset($data[$key])) {
-                        continue;
-                    }
-                    $required = !empty($field['required']);
-                    $format = array_filter(isset($field['validate']) ? (array) $field['validate'] : array() );
-                    $field_label = isset($field['label']) ? $field['label'] : '';
+				foreach ( $fieldset as $key => $field ) {
+					if ( ! isset( $data[ $key ] ) ) {
+						continue;
+					}
+					$required    = ! empty( $field['required'] );
+					$format      = array_filter( isset( $field['validate'] ) ? (array) $field['validate'] : array() );
+					$field_label = isset( $field['label'] ) ? $field['label'] : '';
 
-                    switch ($fieldset_key) {
-                        case 'shipping' :
-                            /* translators: %s: field name */
-                            $field_label = sprintf(__('Shipping %s', 'oceanwp'), $field_label);
-                            break;
-                        case 'billing' :
-                            /* translators: %s: field name */
-                            $field_label = sprintf(__('Billing %s', 'oceanwp'), $field_label);
-                            break;
-                    }
+					switch ( $fieldset_key ) {
+						case 'shipping':
+							/* translators: %s: field name */
+							$field_label = sprintf( __( 'Shipping %s', 'oceanwp' ), $field_label );
+							break;
+						case 'billing':
+							/* translators: %s: field name */
+							$field_label = sprintf( __( 'Billing %s', 'oceanwp' ), $field_label );
+							break;
+					}
 
-                    if (in_array('postcode', $format)) {
-                        $country = isset($data[$fieldset_key . '_country']) ? $data[$fieldset_key . '_country'] : WC()->customer->{"get_{$fieldset_key}_country"}();
-                        $data[$key] = wc_format_postcode($data[$key], $country);
+					if ( in_array( 'postcode', $format ) ) {
+						$country      = isset( $data[ $fieldset_key . '_country' ] ) ? $data[ $fieldset_key . '_country' ] : WC()->customer->{"get_{$fieldset_key}_country"}();
+						$data[ $key ] = wc_format_postcode( $data[ $key ], $country );
 
-                        if ('' !== $data[$key] && !WC_Validation::is_postcode($data[$key], $country)) {
-                            $errors->add('validation', sprintf(__('%s is not a valid postcode / ZIP.', 'oceanwp'), '<strong>' . esc_html($field_label) . '</strong>'));
-                        }
-                    }
+						if ( '' !== $data[ $key ] && ! WC_Validation::is_postcode( $data[ $key ], $country ) ) {
+							$errors->add( 'validation', sprintf( __( '%s is not a valid postcode / ZIP.', 'oceanwp' ), '<strong>' . esc_html( $field_label ) . '</strong>' ) );
+						}
+					}
 
-                    if (in_array('phone', $format)) {
-                        $data[$key] = wc_format_phone_number($data[$key]);
+					if ( in_array( 'phone', $format ) ) {
+						$data[ $key ] = wc_format_phone_number( $data[ $key ] );
 
-                        if ('' !== $data[$key] && !WC_Validation::is_phone($data[$key])) {
-                            /* translators: %s: phone number */
-                            $errors->add('validation', sprintf(__('%s is not a valid phone number.', 'oceanwp'), '<strong>' . esc_html($field_label) . '</strong>'));
-                        }
-                    }
+						if ( '' !== $data[ $key ] && ! WC_Validation::is_phone( $data[ $key ] ) ) {
+							/* translators: %s: phone number */
+							$errors->add( 'validation', sprintf( __( '%s is not a valid phone number.', 'oceanwp' ), '<strong>' . esc_html( $field_label ) . '</strong>' ) );
+						}
+					}
 
-                    if (in_array('email', $format) && '' !== $data[$key]) {
-                        $data[$key] = sanitize_email($data[$key]);
+					if ( in_array( 'email', $format ) && '' !== $data[ $key ] ) {
+						$data[ $key ] = sanitize_email( $data[ $key ] );
 
-                        if (!is_email($data[$key])) {
-                            /* translators: %s: email address */
-                            $errors->add('validation', sprintf(__('%s is not a valid email address.', 'oceanwp'), '<strong>' . esc_html($field_label) . '</strong>'));
-                            continue;
-                        }
-                    }
+						if ( ! is_email( $data[ $key ] ) ) {
+							/* translators: %s: email address */
+							$errors->add( 'validation', sprintf( __( '%s is not a valid email address.', 'oceanwp' ), '<strong>' . esc_html( $field_label ) . '</strong>' ) );
+							continue;
+						}
+					}
 
-                    if ('' !== $data[$key] && in_array('state', $format)) {
-                        $country = isset($data[$fieldset_key . '_country']) ? $data[$fieldset_key . '_country'] : WC()->customer->{"get_{$fieldset_key}_country"}();
-                        $valid_states = WC()->countries->get_states($country);
+					if ( '' !== $data[ $key ] && in_array( 'state', $format ) ) {
+						$country      = isset( $data[ $fieldset_key . '_country' ] ) ? $data[ $fieldset_key . '_country' ] : WC()->customer->{"get_{$fieldset_key}_country"}();
+						$valid_states = WC()->countries->get_states( $country );
 
-                        if (!empty($valid_states) && is_array($valid_states) && sizeof($valid_states) > 0) {
-                            $valid_state_values = array_map('wc_strtoupper', array_flip(array_map('wc_strtoupper', $valid_states)));
-                            $data[$key] = wc_strtoupper($data[$key]);
+						if ( ! empty( $valid_states ) && is_array( $valid_states ) && sizeof( $valid_states ) > 0 ) {
+							$valid_state_values = array_map( 'wc_strtoupper', array_flip( array_map( 'wc_strtoupper', $valid_states ) ) );
+							$data[ $key ]       = wc_strtoupper( $data[ $key ] );
 
-                            if (isset($valid_state_values[$data[$key]])) {
-                                // With this part we consider state value to be valid as well, convert it to the state key for the valid_states check below.
-                                $data[$key] = $valid_state_values[$data[$key]];
-                            }
+							if ( isset( $valid_state_values[ $data[ $key ] ] ) ) {
+								// With this part we consider state value to be valid as well, convert it to the state key for the valid_states check below.
+								$data[ $key ] = $valid_state_values[ $data[ $key ] ];
+							}
 
-                            if (!in_array($data[$key], $valid_state_values)) {
-                                /* translators: 1: state field 2: valid states */
-                                $errors->add('validation', sprintf(__('%1$s is not valid. Please enter one of the following: %2$s', 'oceanwp'), '<strong>' . esc_html($field_label) . '</strong>', implode(', ', $valid_states)));
-                            }
-                        }
-                    }
+							if ( ! in_array( $data[ $key ], $valid_state_values ) ) {
+								/* translators: 1: state field 2: valid states */
+								$errors->add( 'validation', sprintf( __( '%1$s is not valid. Please enter one of the following: %2$s', 'oceanwp' ), '<strong>' . esc_html( $field_label ) . '</strong>', implode( ', ', $valid_states ) ) );
+							}
+						}
+					}
 
-                    if ($required && '' === $data[$key]) {
-                        /* translators: %s: field name */
-                        $errors->add('required-field', apply_filters('woocommerce_checkout_required_field_notice', sprintf(__('%s is a required field.', 'oceanwp'), '<strong>' . esc_html($field_label) . '</strong>'), $field_label));
-                    }
-                }
-            }
+					if ( $required && '' === $data[ $key ] ) {
+						/* translators: %s: field name */
+						$errors->add( 'required-field', apply_filters( 'woocommerce_checkout_required_field_notice', sprintf( __( '%s is a required field.', 'oceanwp' ), '<strong>' . esc_html( $field_label ) . '</strong>' ), $field_label ) );
+					}
+				}
+			}
 
-            $html = '';
-            $valid = TRUE;
-            if ($errors->get_error_messages()) {
-                $valid = FALSE;
-                $html = '<div class="woocommerce-NoticeGroup woocommerce-NoticeGroup-checkout"><ul class="woocommerce-error" role="alert">';
-                foreach ($errors->get_error_messages() as $message) {
-                    $html.='<li>' . $message . '</li>';
-                }
-                $html.='</ul></div>';
-            }
-            
-            wp_send_json(array("valid"=>$valid,"html"=>$html));
-            wp_die();
-        }
+			$html  = '';
+			$valid = true;
+			if ( $errors->get_error_messages() ) {
+				$valid = false;
+				$html  = '<div class="woocommerce-NoticeGroup woocommerce-NoticeGroup-checkout"><ul class="woocommerce-error" role="alert">';
+				foreach ( $errors->get_error_messages() as $message ) {
+					$html .= '<li>' . $message . '</li>';
+				}
+				$html .= '</ul></div>';
+			}
+
+			wp_send_json(
+				array(
+					'valid' => $valid,
+					'html'  => $html,
+				)
+			);
+			wp_die();
+		}
 
 		/**
 		 * Checkout timeline template.
@@ -2360,17 +2428,17 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public function multistep_checkout( $template, $template_name, $template_path ) {
 
 			if ( 'checkout/form-checkout.php' == $template_name ) {
-                $template 	= OCEANWP_THEME_DIR . '/woocommerce/checkout/form-multistep-checkout.php';
+				$template   = OCEANWP_THEME_DIR . '/woocommerce/checkout/form-multistep-checkout.php';
 				$theme_file = get_stylesheet_directory() . '/woocommerce/checkout/form-multistep-checkout.php';
 
 				if ( file_exists( $theme_file ) ) {
 					$template = $theme_file;
 				}
-            }
+			}
 
 			// Return
 			return $template;
-			
+
 		}
 
 		/**
@@ -2383,14 +2451,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				array(
 					'message'  => $login_message,
 					'redirect' => wc_get_page_permalink( 'checkout' ),
-					'hidden'   => false
+					'hidden'   => false,
 				)
 			);
 
 			// If WooCommerce social login
 			if ( class_exists( 'WC_Social_Login' ) ) {
-                do_shortcode( '[woocommerce_social_login_buttons]' );
-            }
+				do_shortcode( '[woocommerce_social_login_buttons]' );
+			}
 		}
 
 		/**
@@ -2399,9 +2467,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.0
 		 */
 		public static function woocommerce_securesubmit_support( $value, $options ) {
-            $value['use_iframes'] = 'no';
-            return $value;
-        }
+			$value['use_iframes'] = 'no';
+			return $value;
+		}
 
 		/**
 		 * Add typography options for the WooCommerce product title
@@ -2410,105 +2478,105 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function typography_settings( $settings ) {
 			$settings['woo_product_title'] = array(
-				'label' 				=> esc_html__( 'WooCommerce Product Title', 'oceanwp' ),
-				'target' 				=> '.woocommerce div.product .product_title',
-				'defaults' 				=> array(
-					'font-size' 		=> '24',
-					'color' 			=> '#333333',
-					'line-height' 		=> '1.4',
-					'letter-spacing' 	=> '0.6',
+				'label'    => esc_html__( 'WooCommerce Product Title', 'oceanwp' ),
+				'target'   => '.woocommerce div.product .product_title',
+				'defaults' => array(
+					'font-size'      => '24',
+					'color'          => '#333333',
+					'line-height'    => '1.4',
+					'letter-spacing' => '0.6',
 				),
 			);
 
 			$settings['woo_product_price'] = array(
-				'label' 				=> esc_html__( 'WooCommerce Product Price', 'oceanwp' ),
-				'target' 				=> '.woocommerce div.product p.price',
-				'defaults' 				=> array(
-					'font-size' 		=> '36',
-					'line-height' 		=> '1',
-					'letter-spacing' 	=> '0',
+				'label'    => esc_html__( 'WooCommerce Product Price', 'oceanwp' ),
+				'target'   => '.woocommerce div.product p.price',
+				'defaults' => array(
+					'font-size'      => '36',
+					'line-height'    => '1',
+					'letter-spacing' => '0',
 				),
 			);
 
 			$settings['woo_single_add_to_cart'] = array(
-				'label'                 => esc_html__( 'WooCommerce Product Add To Cart', 'oceanwp' ),
-				'target'                => '.woocommerce .owp-btn-normal .summary form button.button, .woocommerce .owp-btn-big .summary form button.button, .woocommerce .owp-btn-very-big .summary form button.button',
-				'exclude'               => array( 'font-color' ),
-				'defaults'              => array(
-					'font-size'         => '12',
-					'text-transform'    => 'uppercase',
-					'line-height'       => '1.5',
-					'letter-spacing'    => '1',
+				'label'    => esc_html__( 'WooCommerce Product Add To Cart', 'oceanwp' ),
+				'target'   => '.woocommerce .owp-btn-normal .summary form button.button, .woocommerce .owp-btn-big .summary form button.button, .woocommerce .owp-btn-very-big .summary form button.button',
+				'exclude'  => array( 'font-color' ),
+				'defaults' => array(
+					'font-size'      => '12',
+					'text-transform' => 'uppercase',
+					'line-height'    => '1.5',
+					'letter-spacing' => '1',
 				),
 			);
 
 			$settings['woo_single_notice'] = array(
-				'label'                 => esc_html__( 'WooCommerce Product Notice', 'oceanwp' ),
-				'target'                => '.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a',
-				'exclude'               => array( 'font-color' ),
-				'defaults'              => array(
-					'font-size'         => '18',
-					'font-weight'       => '600',
-					'text-transform'    => 'capitalize',
-					'line-height'       => '2',
-					'letter-spacing'    => '1.5',
+				'label'    => esc_html__( 'WooCommerce Product Notice', 'oceanwp' ),
+				'target'   => '.woocommerce div.owp-woo-single-cond-notice span, .woocommerce div.owp-woo-single-cond-notice a',
+				'exclude'  => array( 'font-color' ),
+				'defaults' => array(
+					'font-size'      => '18',
+					'font-weight'    => '600',
+					'text-transform' => 'capitalize',
+					'line-height'    => '2',
+					'letter-spacing' => '1.5',
 				),
 			);
 
 			$settings['woo_archive_title'] = array(
-				'label'                 => esc_html__( 'WooCommerce Archive Title', 'oceanwp' ),
-				'target'                => '.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a',
-				'exclude'               => array( 'font-color' ),
-				'defaults'              => array(
-					'font-size'         => '14',
-					'line-height'       => '1.5',
-					'letter-spacing'    => '0',
+				'label'    => esc_html__( 'WooCommerce Archive Title', 'oceanwp' ),
+				'target'   => '.woocommerce ul.products li.product li.title h2, .woocommerce ul.products li.product li.title a',
+				'exclude'  => array( 'font-color' ),
+				'defaults' => array(
+					'font-size'      => '14',
+					'line-height'    => '1.5',
+					'letter-spacing' => '0',
 				),
 			);
 
 			$settings['woo_archive_cats'] = array(
-				'label'                 => esc_html__( 'WooCommerce Archive Category', 'oceanwp' ),
-				'target'                => '.woocommerce ul.products li.product li.category, .woocommerce ul.products li.product li.category a',
-				'exclude'               => array( 'font-color' ),
-				'defaults'              => array(
-					'font-size'         => '12',
-					'line-height'       => '1',
-					'letter-spacing'    => '0',
+				'label'    => esc_html__( 'WooCommerce Archive Category', 'oceanwp' ),
+				'target'   => '.woocommerce ul.products li.product li.category, .woocommerce ul.products li.product li.category a',
+				'exclude'  => array( 'font-color' ),
+				'defaults' => array(
+					'font-size'      => '12',
+					'line-height'    => '1',
+					'letter-spacing' => '0',
 				),
 			);
 
 			$settings['woo_archive_price'] = array(
-				'label'                 => esc_html__( 'WooCommerce Archive Price', 'oceanwp' ),
-				'target'                => '.woocommerce ul.products li.product .price',
-				'exclude'               => array( 'font-color' ),
-				'defaults'              => array(
-					'font-size'         => '18',
-					'line-height'       => '1',
-					'letter-spacing'    => '0',
+				'label'    => esc_html__( 'WooCommerce Archive Price', 'oceanwp' ),
+				'target'   => '.woocommerce ul.products li.product .price',
+				'exclude'  => array( 'font-color' ),
+				'defaults' => array(
+					'font-size'      => '18',
+					'line-height'    => '1',
+					'letter-spacing' => '0',
 				),
 			);
 
 			$settings['woo_product_add_to_cart'] = array(
-				'label'                 => esc_html__( 'WooCommerce Archive Add To Cart', 'oceanwp' ),
-				'target'                => '.woocommerce ul.products li.product .button, .woocommerce ul.products li.product .product-inner .added_to_cart',
-				'exclude'               => array( 'font-color' ),
-				'defaults'              => array(
-					'font-size'         => '12',
-					'line-height'       => '1.5',
-					'letter-spacing'    => '1',
+				'label'    => esc_html__( 'WooCommerce Archive Add To Cart', 'oceanwp' ),
+				'target'   => '.woocommerce ul.products li.product .button, .woocommerce ul.products li.product .product-inner .added_to_cart',
+				'exclude'  => array( 'font-color' ),
+				'defaults' => array(
+					'font-size'      => '12',
+					'line-height'    => '1.5',
+					'letter-spacing' => '1',
 				),
 			);
 
 			$settings['woo_archive_notice'] = array(
-				'label'                 => esc_html__( 'WooCommerce Archive Notice', 'oceanwp' ),
-				'target'                => '.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a',
-				'exclude'               => array( 'font-color' ),
-				'defaults'              => array(
-					'font-size'         => '16',
-					'font-weight'       => '600',
-					'text-transform'    => 'capitalize',
-					'line-height'       => '1',
-					'letter-spacing'    => '1',
+				'label'    => esc_html__( 'WooCommerce Archive Notice', 'oceanwp' ),
+				'target'   => '.woocommerce ul.products li.owp-woo-cond-notice span, .woocommerce ul.products li.owp-woo-cond-notice a',
+				'exclude'  => array( 'font-color' ),
+				'defaults' => array(
+					'font-size'      => '16',
+					'font-weight'    => '600',
+					'text-transform' => 'capitalize',
+					'line-height'    => '1',
+					'letter-spacing' => '1',
 				),
 			);
 

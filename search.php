@@ -19,6 +19,13 @@ get_header(); ?>
 
 			<div id="content" class="site-content clr">
 
+				<?php
+				$logo_search = get_theme_mod( 'ocean_search_logo' );
+				if ( ! empty( $logo_search ) ) {
+					?>
+					<img class="logo-search" src="<?php echo esc_url( $logo_search ); ?>" alt="<?php esc_html_e( 'Search Logo', 'oceanwp' ); ?>" title="<?php esc_html_e( 'Search Logo', 'oceanwp' ); ?>" />
+				<?php } ?>
+			
 				<?php do_action( 'ocean_before_content_inner' ); ?>
 
 				<?php if ( have_posts() ) : ?>

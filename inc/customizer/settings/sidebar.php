@@ -263,7 +263,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 
 			$wp_customize->add_control( new OceanWP_Customizer_Dimensions_Control( $wp_customize, 'ocean_widgets_padding_dimensions', array(
 				'label'	   				=> esc_html__( 'Padding (px)', 'oceanwp' ),
-				'section'  				=> $section,				
+				'section'  				=> $section,
 				'settings'   => array(
 		            'desktop_top' 		=> 'ocean_widgets_top_padding',
 		            'desktop_right' 	=> 'ocean_widgets_right_padding',
@@ -352,7 +352,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 		 * @since 1.0.0
 		 */
 		public static function head_css( $output ) {
-		
+
 			// Global vars
 			$sidebar_bg 							= get_theme_mod( 'ocean_sidebar_bg' );
 			$sidebar_top_padding 					= get_theme_mod( 'ocean_sidebar_top_padding', '0' );
@@ -464,7 +464,7 @@ if ( ! class_exists( 'OceanWP_Sidebar_Customizer' ) ) :
 			if ( ! empty( $widgets_titles_margin_bottom ) && '20' != $widgets_titles_margin_bottom ) {
 				$css .= '.widget-title{margin-bottom:'. $widgets_titles_margin_bottom .'px;}';
 			}
-				
+
 			// Return CSS
 			if ( ! empty( $css ) ) {
 				$output .= '/* Sidebar CSS */'. $css;

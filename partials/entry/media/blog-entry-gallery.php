@@ -82,10 +82,10 @@ if ( 'grid-entry' === oceanwp_blog_entry_style() ) {
 			}
 
 			// Display with lightbox.
-			if ( oceanwp_gallery_is_lightbox_enabled() === 'on' ) {
+			if ( oceanwp_gallery_is_lightbox_enabled() ) {
 				?>
 
-				<a href="<?php echo esc_url( wp_get_attachment_url( $attachment ) ); ?>" title="<?php echo esc_attr( $attachment_alt ); ?>" class="gallery-lightbox">
+				<a href="<?php echo esc_url( wp_get_attachment_url( $attachment ) ); ?>" title="<?php echo esc_attr( $attachment_alt ); ?>" class="gallery-lightbox" data-width="<?php echo esc_attr( $img_url[1] ); ?>" data-height="<?php echo esc_attr( $img_url[2] ); ?>">
 					<?php echo wp_kses_post( $attachment_html ); ?>
 				</a>
 

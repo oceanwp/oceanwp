@@ -1045,7 +1045,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 						if ( true === $plugin['required'] ) {
 							$message['notice_can_install_required'][] = $slug;
 						} else {
-							$message['notice_can_install_recommended'][] = $slug;
+							// $message['notice_can_install_recommended'][] = $slug;
 						}
 					}
 					if ( true === $plugin['required'] ) {
@@ -1059,7 +1059,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 							if ( true === $plugin['required'] ) {
 								$message['notice_can_activate_required'][] = $slug;
 							} else {
-								$message['notice_can_activate_recommended'][] = $slug;
+								// $message['notice_can_activate_recommended'][] = $slug;
 							}
 						}
 						if ( true === $plugin['required'] ) {

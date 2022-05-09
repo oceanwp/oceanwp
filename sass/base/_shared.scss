@@ -1,117 +1,185 @@
 figure > img {
-	display: block;
-	margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
 }
 
 img[class*="align"],
 img[class*="attachment-"] {
-	height: auto;
+    height: auto;
 }
 
 .wp-caption {
-	max-width: 100%;
-	margin-bottom: 24px;
-	img[class*="wp-image-"] {
-		display: block;
-		margin-bottom: 5px;
-	}
+    max-width: 100%;
+    margin-bottom: 24px;
+    img[class*="wp-image-"] {
+        display: block;
+        margin-bottom: 5px;
+    }
 }
 
 .wp-caption-text {
-	font-size: 14px;
-	font-style: italic;
-	color: #999;
+    font-size: 14px;
+    font-style: italic;
+    color: #999;
 }
 
 .wp-smiley {
-	margin-top: 0;
-	margin-bottom: 0;
-	padding: 0;
-	border: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    border: 0;
 }
 
 embed,
 iframe,
 object {
-	width: 100%;
-	max-width: 100%;
+    width: 100%;
+    max-width: 100%;
 }
 
-.alignfull {
-	margin: 32px 0;
-	max-width: 100%;
-	width: 100%;
+.entry-content {
+    .alignwide {
+        margin-left: -3%;
+        width: calc(100% + 6%);
+        max-width: calc(100% + 6%);
+    }
 }
 
-.alignwide {
-	margin: 32px auto;
-	width: 90%;
-	max-width: 90%;
+.entry-content {
+    .alignfull {
+        margin-left: -32px;
+        width: calc(100% + 64px) !important;
+        max-width: calc(100% + 64px);
+    }
+}
+
+.page {
+    .entry {
+        .alignfull {
+            margin-left: -32px;
+            width: calc(100% + 64px) !important;
+            max-width: calc(100% + 64px);
+        }
+    }
+
+    .entry {
+        .alignwide {
+            margin-left: -3%;
+            width: calc(100% + 6%);
+            max-width: calc(100% + 6%);
+        }
+    }
+}
+
+body.content-full-screen {
+    .entry-content .alignwide,
+    .entry-content .alignfull,
+    .entry .alignwide,
+    .entry .alignfull {
+        margin-left: 0;
+        width: 100% !important;
+        max-width: 100%;
+    }
+}
+
+body.single-post.content-max-width .entry-content,
+body.page.content-max-width .entry {
+    .wp-block-embed .responsive-video-wrap {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .alignwide {
+        margin: 0 auto;
+        width: calc(90% + 32px);
+        max-width: calc(90% + 32px);
+    }
+
+    .alignfull {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .entry-content .alignfull {
+        margin-left: -5.5% !important;
+        width: calc(100% + 11%) !important;
+        max-width: calc(100% + 11%) !important;
+    }
+
+    .page {
+        .entry {
+            .alignfull {
+                margin-left: -5.5% !important;
+                width: calc(100% + 11%) !important;
+                max-width: calc(100% + 11%) !important;
+            }
+        }
+    }
 }
 
 .alignleft {
-	float: left;
-	margin-right: 1.5em;
+    float: left;
+    margin-right: 1.5em;
 }
 
 .alignright {
-	float: right;
-	margin-left: 1.5em;
+    float: right;
+    margin-left: 1.5em;
 }
 
 .aligncenter {
-	text-align: center;
-	margin: 0 auto;
-	clear: both;
+    text-align: center;
+    margin: 0 auto;
+    clear: both;
 }
 
 img.aligncenter,
 .wp-caption.aligncenter {
-	display: block;
-	margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .alignnone {
-	display: block;
+    display: block;
 }
 
 table {
-	width: 100%;
-	margin-bottom: 2.618em;
+    width: 100%;
+    margin-bottom: 2.618em;
 }
 table th,
 table td {
-	padding: 10px;
-	text-align: left;
-	vertical-align: top;
-	border-bottom: 1px solid $border-color;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid $border-color;
 }
 table th {
-	text-transform: uppercase;
-}
-table tr th:first-child,
-table tr td:first-child {
-	padding-left: 0;
-}
-table tr th:last-child,
-table tr td:last-child {
-	padding-right: 0;
+    text-transform: uppercase;
 }
 
 .sticky,
 .bypostauthor {
-	font-size: inherit;
+    font-size: inherit;
 }
 
-.col:after, .clr:after, .group:after, dl:after,
-.left_float:after, .right_float:after {
-    content: '';
+.col:after,
+.clr:after,
+.group:after,
+dl:after,
+.left_float:after,
+.right_float:after {
+    content: "";
     display: block;
     visibility: hidden;
     clear: both;
@@ -120,32 +188,32 @@ table tr td:last-child {
 }
 
 .left_float {
-	float: left;
+    float: left;
     width: 48%;
 }
 
 .right_float {
-	float: right;
+    float: right;
     width: 48%;
 }
 
 .no_float {
-	clear: both;
+    clear: both;
 }
 
 .left_float,
 .right_float,
 .no_float {
-	label {
-		font-size: 13px;
-		font-weight: 600;
-		color: $color-2;
-	}
+    label {
+        font-size: 13px;
+        font-weight: 600;
+        color: $color-2;
+    }
 }
 
 .full {
-	display: block;
-	width: 100%;
+    display: block;
+    width: 100%;
 }
 
 /**
@@ -153,37 +221,37 @@ table tr td:last-child {
  * Taken from Twenty Seventeen theme.
  */
 .gallery-item {
-	display: inline-block;
-	text-align: left;
-	vertical-align: top;
-	margin: 0 0 1.5em;
-	width: 50%;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    margin: 0 0 1.5em;
+    width: 50%;
 }
 
 .gallery-columns-1 .gallery-item {
-	width: 100%;
+    width: 100%;
 }
 
 .gallery-columns-2 .gallery-item {
-	max-width: 50%;
+    max-width: 50%;
 }
 
 .gallery-item a,
 .gallery-item a:hover,
 .gallery-item a:focus {
-	@include box-shadow( none );
-	background: none;
-	display: inline-block;
-	max-width: 100%;
-	vertical-align: top;
+    @include box-shadow(none);
+    background: none;
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: top;
 }
 
 .gallery-item a img {
-	display: block;
+    display: block;
 }
 
 .gallery-caption {
-	background-color: $color-16;
+    background-color: $color-16;
     color: $color-2;
     font-size: 14px;
     font-weight: 400;
@@ -194,49 +262,79 @@ table tr td:last-child {
 .gallery-columns-7 .gallery-caption,
 .gallery-columns-8 .gallery-caption,
 .gallery-columns-9 .gallery-caption {
-	display: none;
+    display: none;
 }
 
 @media screen and (min-width: 30em) {
-	.gallery-item {
-		max-width: 25%;
-	}
+    .gallery-item {
+        max-width: 25%;
+    }
 
-	.gallery-columns-1 .gallery-item {
-		max-width: 100%;
-	}
+    .gallery-columns-1 .gallery-item {
+        max-width: 100%;
+    }
 
-	.gallery-columns-2 .gallery-item {
-		max-width: 50%;
-	}
+    .gallery-columns-2 .gallery-item {
+        max-width: 50%;
+    }
 
-	.gallery-columns-3 .gallery-item {
-		max-width: 33.33%;
-	}
+    .gallery-columns-3 .gallery-item {
+        max-width: 33.33%;
+    }
 
-	.gallery-columns-4 .gallery-item {
-		max-width: 25%;
-	}
+    .gallery-columns-4 .gallery-item {
+        max-width: 25%;
+    }
 }
 
 @media screen and (min-width: 48em) {
-	.gallery-columns-5 .gallery-item {
-		max-width: 20%;
-	}
+    .gallery-columns-5 .gallery-item {
+        max-width: 20%;
+    }
 
-	.gallery-columns-6 .gallery-item {
-		max-width: 16.66%;
-	}
+    .gallery-columns-6 .gallery-item {
+        max-width: 16.66%;
+    }
 
-	.gallery-columns-7 .gallery-item {
-		max-width: 14.28%;
-	}
+    .gallery-columns-7 .gallery-item {
+        max-width: 14.28%;
+    }
 
-	.gallery-columns-8 .gallery-item {
-		max-width: 12.5%;
-	}
+    .gallery-columns-8 .gallery-item {
+        max-width: 12.5%;
+    }
 
-	.gallery-columns-9 .gallery-item {
-		max-width: 11.11%;
-	}
+    .gallery-columns-9 .gallery-item {
+        max-width: 11.11%;
+    }
+}
+
+/* Responsive Classic Editor Video */
+.responsive-video-wrap {
+    position: relative;
+}
+
+.responsive-video-wrap:before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+.responsive-video-wrap iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.wp-block-embed .responsive-video-wrap {
+    position: static;
+}
+
+.wp-block-embed .responsive-video-wrap:before {
+    display: none;
 }

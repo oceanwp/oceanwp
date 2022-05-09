@@ -266,6 +266,9 @@ node_modules/
 # build folder
 build/
 
+# Theme files
+assets/fonts/owp-icons/files/
+
 # vender folder
 vendor/
 
@@ -338,3 +341,6 @@ ASALocalRun/
 # OS generated files
 .DS_Store
 .DS_Store?
+
+.vscode
+.push.settings.jsonc

@@ -37,7 +37,7 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 
 	<?php
 	if ( has_post_thumbnail() ) :
-		$thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'shop_catalog' )[0];
+		$thumbnail_url = is_array( wp_get_attachment_image_src( $thumbnail_id, 'shop_catalog' ) ) ? wp_get_attachment_image_src( $thumbnail_id, 'shop_catalog' )[0] : '';
 		?>
 
 		<li class="active">
@@ -60,7 +60,7 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 
 			// Loop through images.
 			foreach ( $attachment_ids as $attachment_id ) :
-				$attachment_url = wp_get_attachment_image_src( $attachment_id, 'shop_catalog' )[0];
+				$attachment_url = wp_get_attachment_image_src( $attachment_id, 'shop_catalog' ) ? wp_get_attachment_image_src( $attachment_id, 'shop_catalog' )[0] : '';
 
 				// Add to counter.
 				$count++;

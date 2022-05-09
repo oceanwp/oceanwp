@@ -26,7 +26,7 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 	public $type = 'oceanwp-typo';
 
 	/**
-	 * Array 
+	 * Array
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -39,9 +39,9 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  object  $manager
-	 * @param  string  $id
-	 * @param  array   $args
+	 * @param  object $manager
+	 * @param  string $id
+	 * @param  array  $args
 	 * @return void
 	 */
 	public function __construct( $manager, $id, $args = array() ) {
@@ -53,13 +53,13 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 		$this->l10n = wp_parse_args(
 			$this->l10n,
 			array(
-				'family'      	=> esc_html__( 'Font Family', 'oceanwp' ),
-				'size'        	=> esc_html__( 'Font Size',   'oceanwp' ),
-				'weight'      	=> esc_html__( 'Font Weight', 'oceanwp' ),
-				'style'      	=> esc_html__( 'Font Style',  'oceanwp' ),
-				'transform' 	=> esc_html__( 'Text Transform', 'oceanwp' ),
-				'line_height' 	=> esc_html__( 'Line Height', 'oceanwp' ),
-				'spacing' 		=> esc_html__( 'Letter Spacing', 'oceanwp' ),
+				'family'      => esc_html__( 'Font Family', 'oceanwp' ),
+				'size'        => esc_html__( 'Font Size', 'oceanwp' ),
+				'weight'      => esc_html__( 'Font Weight', 'oceanwp' ),
+				'style'       => esc_html__( 'Font Style', 'oceanwp' ),
+				'transform'   => esc_html__( 'Text Transform', 'oceanwp' ),
+				'line_height' => esc_html__( 'Line Height', 'oceanwp' ),
+				'spacing'     => esc_html__( 'Letter Spacing', 'oceanwp' ),
 			)
 		);
 	}
@@ -90,20 +90,21 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 			$this->json[ $setting_key ] = array(
 				'link'  => $this->get_link( $setting_key ),
 				'value' => $this->value( $setting_key ),
-				'label' => isset( $this->l10n[ $setting_key ] ) ? $this->l10n[ $setting_key ] : ''
+				'label' => isset( $this->l10n[ $setting_key ] ) ? $this->l10n[ $setting_key ] : '',
 			);
 
-			if ( 'family' === $setting_key )
+			if ( 'family' === $setting_key ) {
 				$this->json[ $setting_key ]['choices'] = $this->get_font_families();
 
-			elseif ( 'weight' === $setting_key )
+			} elseif ( 'weight' === $setting_key ) {
 				$this->json[ $setting_key ]['choices'] = $this->get_font_weight_choices();
 
-			elseif ( 'style' === $setting_key )
+			} elseif ( 'style' === $setting_key ) {
 				$this->json[ $setting_key ]['choices'] = $this->get_font_style_choices();
 
-			elseif ( 'transform' === $setting_key )
+			} elseif ( 'transform' === $setting_key ) {
 				$this->json[ $setting_key ]['choices'] = $this->get_text_transform_choices();
+			}
 		}
 
 	}
@@ -153,7 +154,7 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 						<span class="label">{{ data.size.label }}</span>
 					<# } #>
 
-					<input type="text" name="{{ data.size.name }}" value="{{ data.size.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" />
+					<input type="text" {{{ data.size.link }}} name="{{ data.size.name }}" value="{{ data.size.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" />
 
 				</li>
 			<# } #>
@@ -222,7 +223,7 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 						<span class="label">{{ data.line_height.label }}</span>
 					<# } #>
 
-					<input type="text" name="{{ data.line_height.name }}" value="{{ data.line_height.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" />
+					<input type="text" {{{ data.line_height.link }}} name="{{ data.line_height.name }}" value="{{ data.line_height.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" />
 
 				</li>
 			<# } #>
@@ -234,7 +235,7 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 						<span class="label">{{ data.spacing.label }}</span>
 					<# } #>
 
-					<input type="text" name="{{ data.spacing.name }}" value="{{ data.spacing.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" />
+					<input type="text" {{{ data.spacing.link }}} name="{{ data.spacing.name }}" value="{{ data.spacing.value }}" placeholder="<?php esc_attr_e( 'px - em - rem', 'oceanwp' ); ?>" />
 
 				</li>
 			<# } #>
@@ -252,15 +253,15 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 	 */
 	public function get_font_families() {
 
-		$fonts 	= array( '' => esc_html__( 'Default', 'oceanwp' ) );
-		$id 	= '';
+		$fonts = array( '' => esc_html__( 'Default', 'oceanwp' ) );
+		$id    = '';
 
 		// Add custom fonts from child themes
 		if ( function_exists( 'ocean_add_custom_fonts' ) ) {
 			$get_fonts = ocean_add_custom_fonts();
 			if ( $get_fonts && is_array( $get_fonts ) ) {
 				foreach ( $get_fonts as $font ) {
-					$fonts[$font] = $font;
+					$fonts[ $font ] = $font;
 				}
 			}
 		}
@@ -268,14 +269,14 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 		// Get Standard font options
 		if ( $std_fonts = oceanwp_standard_fonts() ) {
 			foreach ( $std_fonts as $font ) {
-				$fonts[$font] = $font;
+				$fonts[ $font ] = $font;
 			}
 		}
 
 		// Google font options
 		if ( $google_fonts = oceanwp_google_fonts_array() ) {
 			foreach ( $google_fonts as $font ) {
-				$fonts[$font] = $font;
+				$fonts[ $font ] = $font;
 			}
 		}
 
@@ -293,16 +294,16 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 	public function get_font_weight_choices() {
 
 		return array(
-			'' 		=> esc_html__( 'Default', 'oceanwp' ),
-			'100' 	=> esc_html__( 'Thin: 100', 'oceanwp' ),
-			'200' 	=> esc_html__( 'Light: 200', 'oceanwp' ),
-			'300' 	=> esc_html__( 'Book: 300', 'oceanwp' ),
-			'400' 	=> esc_html__( 'Normal: 400', 'oceanwp' ),
-			'500' 	=> esc_html__( 'Medium: 500', 'oceanwp' ),
-			'600' 	=> esc_html__( 'Semibold: 600', 'oceanwp' ),
-			'700' 	=> esc_html__( 'Bold: 700', 'oceanwp' ),
-			'800' 	=> esc_html__( 'Extra Bold: 800', 'oceanwp' ),
-			'900' 	=> esc_html__( 'Black: 900', 'oceanwp' ),
+			''    => esc_html__( 'Default', 'oceanwp' ),
+			'100' => esc_html__( 'Thin: 100', 'oceanwp' ),
+			'200' => esc_html__( 'Light: 200', 'oceanwp' ),
+			'300' => esc_html__( 'Book: 300', 'oceanwp' ),
+			'400' => esc_html__( 'Normal: 400', 'oceanwp' ),
+			'500' => esc_html__( 'Medium: 500', 'oceanwp' ),
+			'600' => esc_html__( 'Semibold: 600', 'oceanwp' ),
+			'700' => esc_html__( 'Bold: 700', 'oceanwp' ),
+			'800' => esc_html__( 'Extra Bold: 800', 'oceanwp' ),
+			'900' => esc_html__( 'Black: 900', 'oceanwp' ),
 		);
 	}
 
@@ -316,9 +317,9 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 	public function get_font_style_choices() {
 
 		return array(
-			''  		=> esc_html__( 'Default', 'oceanwp' ),
-			'normal'  	=> esc_html__( 'Normal', 'oceanwp' ),
-			'italic'  	=> esc_html__( 'Italic', 'oceanwp' ),
+			''       => esc_html__( 'Default', 'oceanwp' ),
+			'normal' => esc_html__( 'Normal', 'oceanwp' ),
+			'italic' => esc_html__( 'Italic', 'oceanwp' ),
 		);
 	}
 
@@ -332,10 +333,10 @@ class OceanWP_Customizer_Typo_Control extends WP_Customize_Control {
 	public function get_text_transform_choices() {
 
 		return array(
-			''  			=> esc_html__( 'Default', 'oceanwp' ),
-			'capitalize'  	=> esc_html__( 'Capitalize', 'oceanwp' ),
-			'lowercase'  	=> esc_html__( 'Lowercase', 'oceanwp' ),
-			'uppercase' 	=> esc_html__( 'Uppercase', 'oceanwp' )
+			''           => esc_html__( 'Default', 'oceanwp' ),
+			'capitalize' => esc_html__( 'Capitalize', 'oceanwp' ),
+			'lowercase'  => esc_html__( 'Lowercase', 'oceanwp' ),
+			'uppercase'  => esc_html__( 'Uppercase', 'oceanwp' ),
 		);
 	}
 }

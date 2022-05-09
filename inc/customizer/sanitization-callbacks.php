@@ -103,7 +103,8 @@ function oceanwp_sanitize_image( $image, $setting ) {
         'png'          => 'image/png',
         'bmp'          => 'image/bmp',
         'tif|tiff'     => 'image/tiff',
-        'ico'          => 'image/x-icon'
+        'ico'          => 'image/x-icon',
+		'svg'          => 'image/svg+xml'
     );
 	// Return an array with file extension and mime_type.
     $file = wp_check_filetype( $image, $mimes );

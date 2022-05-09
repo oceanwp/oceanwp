@@ -39,6 +39,19 @@ Woo Product Navigation
 				line-height: 1.2;
 			}
 
+			.owp-icon {
+				display: inline-block;
+				height: 100%;
+				width: 100%;
+				padding: 6px;
+
+				&:hover {
+					use {
+						stroke: #fff;
+					}
+				}
+			}
+
 			&:hover {
 				background-color: $color-5;
 				color: #fff;
@@ -90,15 +103,19 @@ Woo Product Navigation
 
 		li.next-li {
 			float: right;
+			display: flex;
+    		align-items: center;
 		}
 
 		li.prev-li {
 			float: left;
+			display: flex;
+    		align-items: center;
 		}
 
 		li {
 			position: relative;
-			
+
 			a.owp-nav-text {
 				display: inline-block;
 			}

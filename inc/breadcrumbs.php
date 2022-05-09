@@ -510,17 +510,13 @@ class OceanWP_Breadcrumb_Trail {
 			$icon_class = ' has-text';
 		}
 
-		// Get theme icons.
-		$theme_icons = oceanwp_theme_icons();
-		$icon_t = oceanwp_theme_icon_class();
-
 		$icon = '';
 		if ( is_customize_preview()
 			|| 'icon' == $setting ) {
-			$icon = '<span class="' . $theme_icons[ 'home' ][ $icon_t ] . $icon_class . '" aria-hidden="true"></span>';
+			$icon = oceanwp_icon( 'home', false );
 		}
 
-		// Text
+		// Text.
 		$text_class = '';
 		if ( 'icon' == $setting ) {
 			$text_class = ' has-icon';
@@ -549,14 +545,10 @@ class OceanWP_Breadcrumb_Trail {
 			$icon_class = ' has-text';
 		}
 
-		// Get theme icons.
-		$theme_icons = oceanwp_theme_icons();
-		$icon_t = oceanwp_theme_icon_class();
-
 		$icon = '';
 		if ( is_customize_preview()
 			|| 'icon' == $setting ) {
-			$icon = '<span class="' . $theme_icons[ 'home' ][ $icon_t ] . $icon_class . '" aria-hidden="true"></span>';
+			$icon = oceanwp_icon( 'home', false );
 		}
 
 		// Text

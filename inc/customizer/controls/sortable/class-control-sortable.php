@@ -87,7 +87,7 @@ class OceanWP_Customizer_Sortable_Control extends WP_Customize_Control {
 				<# _.each( data.value, function( choiceID ) { #>
 					<li {{{ data.inputAttrs }}} class='oceanwp-sortable-item' data-value='{{ choiceID }}'>
 						<i class='dashicons dashicons-menu'></i>
-						<i class="dashicons dashicons-visibility visibility"></i>
+						<i class="dashicons dashicons-saved visibility"></i>
 						{{{ data.choices[ choiceID ] }}}
 					</li>
 				<# }); #>
@@ -95,7 +95,7 @@ class OceanWP_Customizer_Sortable_Control extends WP_Customize_Control {
 					<# if ( Array.isArray(data.value) && -1 === data.value.indexOf( choiceID ) ) { #>
 						<li {{{ data.inputAttrs }}} class='oceanwp-sortable-item invisible' data-value='{{ choiceID }}'>
 							<i class='dashicons dashicons-menu'></i>
-							<i class="dashicons dashicons-visibility visibility"></i>
+							<i class="dashicons dashicons-no-alt visibility"></i>
 							{{{ data.choices[ choiceID ] }}}
 						</li>
 					<# } #>
