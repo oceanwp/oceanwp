@@ -4829,3 +4829,68 @@ function mobile_menu_search_icon() {
 
 }
 add_action( 'wp', 'mobile_menu_search_icon' );
+
+add_action( 'admin_init', 'oceanwp_includes' );
+function oceanwp_includes() {
+	//Include theme panel.
+	if ( is_admin() ) {
+		require_once OCEANWP_THEME_DIR . '/inc/themepanel/theme-panel.php';
+	}
+
+}
+
+add_filter( 'gettext', 'oceanwp_white_labels_translate', 1, 3 );
+function oceanwp_white_labels_translate( $translation, $text, $domain ) {
+	$white_label_active = get_option( 'oceanwp_whitelabel_oceanwp_panel', false );
+	$white_label_val = get_option( 'oceanwp_theme_name' );
+	if( $white_label_active && $white_label_val && strpos($text, 'OceanWP') !== false ) {
+		$translation = str_replace( 'OceanWP', $white_label_val, $text );
+	}
+	return $translation;
+}
+
+/**
+ * Register theme page.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function oceanwp_register_theme_page() {
+
+	if ( class_exists( 'Ocean_Extra' ) ) {
+		add_menu_page( 
+			__('OceanWP Panel', 'oceanwp'),
+			__('OceanWP', 'oceanwp'),
+			'manage_options',
+			'oceanwp', 
+			'ocean_admin_page_contents',
+			'dashicons-superhero-alt',
+			4
+		);
+		add_submenu_page( 
+			'oceanwp',
+			__('OceanWP Panel', 'oceanwp'),
+			__('OceanWP Panel', 'oceanwp'),
+			'manage_options',
+			'oceanwp',
+			'',
+			1
+		);
+	} else { 
+		add_theme_page( 
+			__('OceanWP', 'oceanwp'),
+			__('OceanWP', 'oceanwp'),
+			'edit_theme_options',
+			'oceanwp', 
+			function() {
+				include_once OCEANWP_THEME_PANEL_DIR . '/views/layout/master.php';
+			} 
+		);
+	}
+}
+add_action( 'admin_menu', 'oceanwp_register_theme_page', 0 );
+
+function ocean_admin_page_contents() {
+	include_once OCEANWP_THEME_PANEL_DIR . '/views/layout/master.php';
+}
