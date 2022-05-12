@@ -26,7 +26,7 @@ jQuery(document).ready(function ($) {
         }
     }
 
-    window['addSuccessNotify'] = function addSuccessNotify(message = 'Saved successfully', timeout = true) {
+    window['addSuccessNotify'] = function addSuccessNotify(message = 'Saved successfully', timeout = true, seconds = 4000) {
         $('#oceanwp-notifyType').text(message);
         $(".oceanwp-notify").addClass("active");
         $("#oceanwp-notifyType").addClass("success");
@@ -34,7 +34,7 @@ jQuery(document).ready(function ($) {
             setTimeout(function () {
                 $(".oceanwp-notify").removeClass("active");
                 $("#oceanwp-notifyType").removeClass("success");
-            }, 4000);
+            }, seconds);
         }
     }
 
@@ -206,10 +206,27 @@ jQuery(document).ready(function ($) {
                 if(slug == 'white-label' && window['init_white_label_uploader'] !== undefined) {
                     window['init_white_label_uploader']();
                 }
+                if(slug == 'customizer') {
+                    maybeAllCheckboxesActive();
+                }
 
                 initHandlersAfterLoadPanel();
             }
         });
+    }
+
+    function maybeAllCheckboxesActive() {
+        let allCheckboxes = $('#ocean-customizer-items').find('input[type="checkbox"]');
+        let allCheckboxesLength = allCheckboxes.length;
+        let checkedCheckboxes = 0;
+        allCheckboxes.each(function() {
+            if( $(this).prop('checked') ) {
+                checkedCheckboxes++;
+            }
+        });
+        if( allCheckboxesLength == checkedCheckboxes ) {
+            $('#customizer-reset-bulk').prop('checked', true);
+        }
     }
 
     function initHandlersAfterLoadPanel() {

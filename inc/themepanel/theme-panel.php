@@ -186,6 +186,7 @@ final class OceanWP_Theme_Panel {
 		ob_start();
 		$this->print_pane( $slug );
 		$pane_html = ob_get_clean();
+		$pane_html = '<div class="oceanwp-tp-preloader"><div class="oceanwp-tp-loader"></div></div>' . $pane_html;
 		wp_send_json_success( $pane_html );
 		wp_die();
 	}
@@ -198,7 +199,7 @@ final class OceanWP_Theme_Panel {
 	public function load_sidebar_warnings() {
 		$warnings = array();
 
-		if( get_theme_update_available( wp_get_theme() ) !== false ) {
+		if( ! empty( get_theme_update_available( wp_get_theme() ) ) ) {
 			$warnings['home'] = __( 'New theme version is available', 'oceanwp' );
 		}
 
@@ -226,7 +227,7 @@ final class OceanWP_Theme_Panel {
 	public function load_awaiting_mods() {
 		$warnings = array();
 
-		if( get_theme_update_available( wp_get_theme() ) !== false ) {
+		if( ! empty( get_theme_update_available( wp_get_theme() ) ) ) {
 			$warnings['home'] = __( 'New theme version is available', 'oceanwp' );
 		}
 

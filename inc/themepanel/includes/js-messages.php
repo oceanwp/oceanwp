@@ -25,5 +25,6 @@ function oceanwp_adminpanel_textdomain() {
 		'reseting'                         => __( 'Reseting...', 'oceanwp' ),
 		'exporting'                        => __( 'Exporting...', 'oceanwp' ),
 		'importing'                        => __( 'Importing...', 'oceanwp' ),
+		'copied_system_info'			   => __( 'Information was copied, please check WordPress Site Health', 'oceanwp' ),
 	);
 }
