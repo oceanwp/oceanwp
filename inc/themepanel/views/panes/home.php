@@ -3,7 +3,7 @@ $extra_mode_actived          = oceanwp_theme_panel()->extra_installed();
 $need_to_upgrade             = oceanwp_theme_panel()->need_to_upgrade();
 $banner_upgrade_link         = oceanwp_theme_panel()->banner_upgrade_link();
 
-if ( $extra_mode_actived ) {
+if ( $extra_mode_actived && class_exists('Ocean_Extra_New_Theme_Panel' ) ) {
 	$theme_panels = Ocean_Extra_New_Theme_Panel::get_panels();
 }
 /**
@@ -160,7 +160,7 @@ function get_options() {
 					?>
 				<?php echo $theme_update_available_message; ?>
 		<?php endif ?>
-		<h3 class="oceanwp-tp-block-description"><?php 
+		<h3 class="oceanwp-tp-block-description"><?php
 		echo sprintf(
 			esc_html__( 'Check %1$sSupport Notes and User Feedback on the latest version%2$s before upgrading.', 'oceanwp' ),
 			'<a href="https://docs.oceanwp.org/article/776-known-bugs-issues#oceanwp" target="_blank">',
