@@ -8,12 +8,14 @@ if( class_exists('Ocean_White_Label') ) {
 <div class="oceanwp-notify"><span id="oceanwp-notifyType" class=""></span></div>
 <div class="oceanwp-tp-header">
 	<div class="oceanwp-tp-branding">
-		<?php if ( ! get_option( 'oceanwp_whitelabel_oceanwp_panel', false ) ) : ?>
+		<?php if( ! empty( $custom_logo_url ) ) : ?>
 			<span class="oceanwp-tp-oceanwp-logo" 
 				<?php if (  ! empty( $custom_logo_url ) && get_option( 'oceanwp_theme_panel_logo' ) ) :	?>
 					style="background: url(<?php echo esc_url( $custom_logo_url ); ?>) no-repeat center center;"
 				<?php endif; ?>>
 			</span>
+		<?php elseif( empty( $custom_logo_url ) && ! get_option( 'oceanwp_whitelabel_oceanwp_panel', false ) ) : ?>
+			<span class="oceanwp-tp-oceanwp-logo"></span>
 		<?php endif; ?>
 		<strong>
 			<span>

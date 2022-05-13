@@ -13,37 +13,39 @@ $banner_upgrade_link = oceanwp_theme_panel()->banner_upgrade_link();
 		</img>
 	</div>
 
-	<div class="row oceanwp-tp-help-section">
-		<div class="col">
-			<div class="oceanwp-tp-large-block">
-				<div class="oceanwp-tp-block-outer">
-					<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/document.png' ); ?>" />
-					<div class="oceanwp-tp-block-inner">
-						<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Documentation', 'oceanwp' ); ?></h2>
-						<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Unlock the power of OceanWP. Install demos, create custom templates, customize each page or post, add WordPress widgets and more.', 'oceanwp' ); ?></p>
+	<div class="oceanwp-tp-wide-block">
+		<div class="row oceanwp-tp-help-section">
+			<div class="col">
+				<div class="oceanwp-tp-large-block">
+					<div class="oceanwp-tp-block-outer">
+						<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/document.png' ); ?>" />
+						<div class="oceanwp-tp-block-inner">
+							<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Documentation', 'oceanwp' ); ?></h2>
+							<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Unlock the power of OceanWP. Install demos, create custom templates, customize each page or post, add WordPress widgets and more.', 'oceanwp' ); ?></p>
+						</div>
 					</div>
-				</div>
-				<div class="oceanwp-tp-block-button-wrapper">
-					<a href="<?php echo esc_url( 'https://docs.oceanwp.org/' ); ?>" target="_blank" class="button blue" role="button">
-						<?php esc_html_e( 'Check Documentation', 'oceanwp' ); ?>
-					</a>
+					<div class="oceanwp-tp-block-button-wrapper">
+						<a href="<?php echo esc_url( 'https://docs.oceanwp.org/' ); ?>" target="_blank" class="button blue" role="button">
+							<?php esc_html_e( 'Check Documentation', 'oceanwp' ); ?>
+						</a>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="col">
-			<div class="oceanwp-tp-large-block">
-				<div class="oceanwp-tp-block-outer">
-					<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/media-player.png' ); ?>" />
-					<div class="oceanwp-tp-block-inner">
-						<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Video Tutorials', 'oceanwp' ); ?></h2>
-						<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Advanced drag & drop page builder for pixel perfect editing and mobile responsiveness design. Best friend with Ocean WordPress templates.', 'oceanwp' ); ?></p>
+			<div class="col">
+				<div class="oceanwp-tp-large-block">
+					<div class="oceanwp-tp-block-outer">
+						<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/media-player.png' ); ?>" />
+						<div class="oceanwp-tp-block-inner">
+							<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Video Tutorials', 'oceanwp' ); ?></h2>
+							<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Advanced drag & drop page builder for pixel perfect editing and mobile responsiveness design. Best friend with Ocean WordPress templates.', 'oceanwp' ); ?></p>
+						</div>
 					</div>
-				</div>
-				<div class="oceanwp-tp-block-button-wrapper">
-					<a href="<?php echo esc_url( 'https://www.youtube.com/channel/UC9oXVn5OlPjr2-BllEVLgkg' ); ?>" target="_blank" class="button blue" role="button">
-						<?php esc_html_e( 'Watch Videos', 'oceanwp' ); ?>
-					</a>
+					<div class="oceanwp-tp-block-button-wrapper">
+						<a href="<?php echo esc_url( 'https://www.youtube.com/channel/UC9oXVn5OlPjr2-BllEVLgkg' ); ?>" target="_blank" class="button blue" role="button">
+							<?php esc_html_e( 'Watch Videos', 'oceanwp' ); ?>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

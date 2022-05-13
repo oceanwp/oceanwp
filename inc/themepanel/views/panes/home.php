@@ -24,11 +24,13 @@ function get_options() {
 			'label' => esc_html__( 'Favicon', 'oceanwp' ),
 			'desc'  => esc_html__( 'Upload the browser tab and app icon for your website.', 'oceanwp' ),
 			'icon'  => esc_html__( 'favicon.png' ),
+			'customizer_autofocus' => 'blogname',
 		),
 		'ocean_primary_color'    => array(
 			'label' => esc_html__( 'Primary Colors', 'oceanwp' ),
 			'desc'  => esc_html__( 'Set primary color and hover color for main styling.', 'oceanwp' ),
 			'icon'  => esc_html__( 'primary-colors.png' ),
+			'customizer_autofocus' => 'ocean_customzer_styling',
 		),
 		'ocean_typography_panel' => array(
 			'label' => esc_html__( 'Typography', 'oceanwp' ),
@@ -203,60 +205,62 @@ function get_options() {
 		</div>
 
 		<!-- Install Plugins and Child Theme Block -->
-		<div class="row oceanwp-tp-help-section">
-			<div class="col">
-				<!-- Ocean Extra -->
-				<div class="oceanwp-tp-large-block">
-						<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/plugin-download.png' ); ?>" />
-						<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Ocean Extra', 'oceanwp' ); ?></h2>
-						<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Unlock the power of OceanWP. Install demos, create custom templates, customize each page or post, add WordPress widgets and more.', 'oceanwp' ); ?></p>
+		<div class="oceanwp-tp-wide-block">
+			<div class="row oceanwp-tp-help-section">
+				<div class="col">
+					<!-- Ocean Extra -->
+					<div class="oceanwp-tp-large-block">
+							<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/plugin-download.png' ); ?>" />
+							<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Ocean Extra', 'oceanwp' ); ?></h2>
+							<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Unlock the power of OceanWP. Install demos, create custom templates, customize each page or post, add WordPress widgets and more.', 'oceanwp' ); ?></p>
 
-					<?php
-						$real_plugin_path = oceanwp_theme_panel()->find_plugin_path( 'ocean-extra' );
-						$is_installed     = oceanwp_theme_panel()->check_plugin_installed( $real_plugin_path );
-					?>
-					<?php if ( ! $is_installed ) : ?>
-						<div class="oceanwp-tp-block-button-wrapper">
-							<a href="https://wordpress.org/plugins/ocean-extra/" target="_blank" class="button blue oceanwp_install_plugin" data-plugin-slug="ocean-extra" role="button">
-								<?php esc_html_e( 'Install Ocean Extra', 'oceanwp' ); ?>
-							</a>
-						</div>
-					<?php else : ?>
-						<div class="oceanwp-tp-block-button-wrapper">
-							<a href="#" class="button blue" role="button">
-								<?php esc_html_e( 'Installed', 'oceanwp' ); ?>
-							</a>
-						</div>
-					<?php endif; ?>
+						<?php
+							$real_plugin_path = oceanwp_theme_panel()->find_plugin_path( 'ocean-extra' );
+							$is_installed     = oceanwp_theme_panel()->check_plugin_installed( $real_plugin_path );
+						?>
+						<?php if ( ! $is_installed ) : ?>
+							<div class="oceanwp-tp-block-button-wrapper">
+								<a href="https://wordpress.org/plugins/ocean-extra/" target="_blank" class="button blue oceanwp_install_plugin" data-plugin-slug="ocean-extra" role="button">
+									<?php esc_html_e( 'Install Ocean Extra', 'oceanwp' ); ?>
+								</a>
+							</div>
+						<?php else : ?>
+							<div class="oceanwp-tp-block-button-wrapper">
+								<a href="#" class="button blue" role="button">
+									<?php esc_html_e( 'Installed', 'oceanwp' ); ?>
+								</a>
+							</div>
+						<?php endif; ?>
+					</div>
 				</div>
-			</div>
 
-			<div class="col">
-				<!-- OceanWP Child Theme -->
-				<div class="oceanwp-tp-large-block">
-						<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/plugin-download.png' ); ?>" />
-						<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'OceanWP Child Theme', 'oceanwp' ); ?></h2>
-						<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Install the official OceanWP Child Theme to add custom codes, modify theme or plugin templates, customize independetly and more.', 'oceanwp' ); ?></p>
+				<div class="col">
+					<!-- OceanWP Child Theme -->
+					<div class="oceanwp-tp-large-block">
+							<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/plugin-download.png' ); ?>" />
+							<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'OceanWP Child Theme', 'oceanwp' ); ?></h2>
+							<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Install the official OceanWP Child Theme to add custom codes, modify theme or plugin templates, customize independetly and more.', 'oceanwp' ); ?></p>
 
-					<?php if ( ! file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) ) : ?>
-						<div class="oceanwp-tp-block-button-wrapper">
-							<a href="https://downloads.oceanwp.org/oceanwp/oceanwp-child-theme.zip" target="_blank" class="button blue oceanwp_install_child_theme" role="button" >
-								<?php esc_html_e( 'Download', 'oceanwp' ); ?>
-							</a>
-						</div>
-					<?php elseif ( file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) && ! is_child_theme() ) : ?>
-						<div class="oceanwp-tp-block-button-wrapper">
-							<a href="<?php echo admin_url( 'themes.php' ); ?>" class="button blue" role="button">
-								<?php esc_html_e( 'Activate', 'oceanwp' ); ?>
-							</a>
-						</div>
-					<?php else : ?>
-						<div class="oceanwp-tp-block-button-wrapper">
-							<a href="#" class="button blue" role="button">
-								<?php esc_html_e( 'Installed and Activated', 'oceanwp' ); ?>
-							</a>
-						</div>
-					<?php endif; ?>
+						<?php if ( ! file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) ) : ?>
+							<div class="oceanwp-tp-block-button-wrapper">
+								<a href="https://downloads.oceanwp.org/oceanwp/oceanwp-child-theme.zip" target="_blank" class="button blue oceanwp_install_child_theme" role="button" >
+									<?php esc_html_e( 'Download', 'oceanwp' ); ?>
+								</a>
+							</div>
+						<?php elseif ( file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) && ! is_child_theme() ) : ?>
+							<div class="oceanwp-tp-block-button-wrapper">
+								<a href="<?php echo admin_url( 'themes.php' ); ?>" class="button blue" role="button">
+									<?php esc_html_e( 'Activate', 'oceanwp' ); ?>
+								</a>
+							</div>
+						<?php else : ?>
+							<div class="oceanwp-tp-block-button-wrapper">
+								<a href="#" class="button blue" role="button">
+									<?php esc_html_e( 'Installed and Activated', 'oceanwp' ); ?>
+								</a>
+							</div>
+						<?php endif; ?>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -264,66 +268,72 @@ function get_options() {
 
 	<!-- The Love Corner -->
 	<?php if( ! get_option( 'oceanwp_hide_love_corner_section', false ) ) : ?>
-		<div class="oceanwp-tp-message-heading-block">
-			<img class="ocean-tp-heading-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/love-corner.png' ); ?>" />
-			<h2 class="oceanwp-tp-message-heading"><?php esc_html_e( 'The Love Corner', 'oceanwp' ); ?></h2>
-			</img>
-		</div>
-
-		<div class="row oceanwp-tp-love-corner-section">
-			<div class="col">
-				<!-- Share the Love -->
-				<div class="oceanwp-tp-large-block">
-					<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/share-the-love.png' ); ?>" />
-						<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Share the Love', 'oceanwp' ); ?></h2>
-						<p class="oceanwp-tp-block-description"><?php esc_html_e( 'If you enjoy all the features the Ocean Universe has to offer, spread the word and share the love by giving us a 5-star rating. By sharing your support, you\'re directly contributing to the future development of amazing new features and products.', 'oceanwp' ); ?></p>
-					<div class="oceanwp-tp-block-button-wrapper">
-						<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/oceanwp/reviews/#new-post' ); ?>" target="_blank" class="button blue" role="button">
-							<?php esc_html_e( 'Share Rating Now', 'oceanwp' ); ?>
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col">
-				<!-- Get Some Love -->
-				<div class="oceanwp-tp-large-block">
-					<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/get-some-love.png' ); ?>" />
-						<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Get Some Love', 'oceanwp' ); ?></h2>
-						<p class="oceanwp-tp-block-description"><?php esc_html_e( 'We\'re excited to have you as a part of the amazing OceanWP family. Get yourself comfortable in the Ocean Universe. Subscribe to our newsletter to receive the latest news, discounts and all other sweets and goodies. No spam, that\'s a guarantee.', 'oceanwp' ); ?></p>
-					<div class="oceanwp-tp-block-button-wrapper">
-						<a href="<?php echo esc_url( 'https://oceanwp.org/newsletter-subscription/' ); ?>" target="_blank" class="button blue" role="button">
-							<?php esc_html_e( 'Subscribe Now', 'oceanwp' ); ?>
-						</a>
-					</div>
-				</div>
+		<div class="oceanwp-tp-wide-block">
+			<div class="oceanwp-tp-message-heading-block">
+				<img class="ocean-tp-heading-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/love-corner.png' ); ?>" />
+				<h2 class="oceanwp-tp-message-heading"><?php esc_html_e( 'The Love Corner', 'oceanwp' ); ?></h2>
+				</img>
 			</div>
 		</div>
-		<div class="row oceanwp-tp-love-corner-section">
-			<div class="col">
-				<!-- Showcase Website -->
-				<div class="oceanwp-tp-large-block">
-					<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/showcase-website.png' ); ?>" />
-						<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Showcase Website', 'oceanwp' ); ?></h2>
-						<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Your OceanWP website is worth admiring. Apply for our website showcase for a chance for your website to get featured in our blog posts.', 'oceanwp' ); ?></p>
-					<div class="oceanwp-tp-block-button-wrapper">
-						<a href="<?php echo esc_url( 'https://oceanwp.org/website-showcase/' ); ?>" target="_blank"" class="button blue" role="button">
-							<?php esc_html_e( 'Apply Now', 'oceanwp' ); ?>
-						</a>
+
+		<div class="oceanwp-tp-wide-block">
+			<div class="row oceanwp-tp-love-corner-section">
+				<div class="col">
+					<!-- Share the Love -->
+					<div class="oceanwp-tp-large-block">
+						<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/share-the-love.png' ); ?>" />
+							<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Share the Love', 'oceanwp' ); ?></h2>
+							<p class="oceanwp-tp-block-description"><?php esc_html_e( 'If you enjoy all the features the Ocean Universe has to offer, spread the word and share the love by giving us a 5-star rating. By sharing your support, you\'re directly contributing to the future development of amazing new features and products.', 'oceanwp' ); ?></p>
+						<div class="oceanwp-tp-block-button-wrapper">
+							<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/oceanwp/reviews/#new-post' ); ?>" target="_blank" class="button blue" role="button">
+								<?php esc_html_e( 'Share Rating Now', 'oceanwp' ); ?>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<!-- Get Some Love -->
+					<div class="oceanwp-tp-large-block">
+						<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/get-some-love.png' ); ?>" />
+							<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Get Some Love', 'oceanwp' ); ?></h2>
+							<p class="oceanwp-tp-block-description"><?php esc_html_e( 'We\'re excited to have you as a part of the amazing OceanWP family. Get yourself comfortable in the Ocean Universe. Subscribe to our newsletter to receive the latest news, discounts and all other sweets and goodies. No spam, that\'s a guarantee.', 'oceanwp' ); ?></p>
+						<div class="oceanwp-tp-block-button-wrapper">
+							<a href="<?php echo esc_url( 'https://oceanwp.org/newsletter-subscription/' ); ?>" target="_blank" class="button blue" role="button">
+								<?php esc_html_e( 'Subscribe Now', 'oceanwp' ); ?>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="oceanwp-tp-wide-block">
+			<div class="row oceanwp-tp-love-corner-section">
+				<div class="col">
+					<!-- Showcase Website -->
+					<div class="oceanwp-tp-large-block">
+						<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/showcase-website.png' ); ?>" />
+							<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Showcase Website', 'oceanwp' ); ?></h2>
+							<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Your OceanWP website is worth admiring. Apply for our website showcase for a chance for your website to get featured in our blog posts.', 'oceanwp' ); ?></p>
+						<div class="oceanwp-tp-block-button-wrapper">
+							<a href="<?php echo esc_url( 'https://oceanwp.org/website-showcase/' ); ?>" target="_blank"" class="button blue" role="button">
+								<?php esc_html_e( 'Apply Now', 'oceanwp' ); ?>
+							</a>
+						</div>
+					</div>
+				</div>
 
-			<div class="col">
-				<!-- Feature Requests -->
-				<div class="oceanwp-tp-large-block">
-					<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/feature-requests.png' ); ?>" />
-						<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Feature Requests', 'oceanwp' ); ?></h2>
-						<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Is there a feature, WordPress template, documentation or video tutorial we should consider? Let us know by requesting a feature.', 'oceanwp' ); ?></p>
-					<div class="oceanwp-tp-block-button-wrapper">
-						<a href="<?php echo esc_url( 'https://oceanwp.org/feature-requests/' ); ?>" target="_blank"" class="button blue" role="button">
-							<?php esc_html_e( 'Request Now', 'oceanwp' ); ?>
-						</a>
+				<div class="col">
+					<!-- Feature Requests -->
+					<div class="oceanwp-tp-large-block">
+						<img class="oceanwp-tp-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/feature-requests.png' ); ?>" />
+							<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Feature Requests', 'oceanwp' ); ?></h2>
+							<p class="oceanwp-tp-block-description"><?php esc_html_e( 'Is there a feature, WordPress template, documentation or video tutorial we should consider? Let us know by requesting a feature.', 'oceanwp' ); ?></p>
+						<div class="oceanwp-tp-block-button-wrapper">
+							<a href="<?php echo esc_url( 'https://oceanwp.org/feature-requests/' ); ?>" target="_blank"" class="button blue" role="button">
+								<?php esc_html_e( 'Request Now', 'oceanwp' ); ?>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

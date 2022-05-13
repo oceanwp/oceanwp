@@ -162,7 +162,6 @@ a.oceanwp-tp-sidebar-link {
   text-transform: capitalize;
   display: inline-block;
   text-decoration: none;
-  font-size: 16px;
   margin: 15px 20px;
   font-family: "Rubik", Sans-serif;
   font-size: 18px;
@@ -461,6 +460,9 @@ a.banner-button {
 
 .oceanwp-tp-pane-features {
   margin-top: 30px;
+}
+#oceanwp-tp-home .oceanwp-tp-pane-features {
+  padding: 15px;
 }
 
 .oceanwp-tp-pane-features li:not(:last-child) {
@@ -1210,54 +1212,59 @@ p.submit {
 #oceanwp-tp-white-label textarea {
   min-width: 400px;
 }
+
 #oceanwp-tp-white-label th {
   min-width: 220px;
 }
+
 #oceanwp-tp-white-label #oceanwp_branding_screenshot_tr img {
   width: 100%;
 }
-#oceanwp-tp-white-label.oceanwp-tp-pane-box input[type="checkbox"] ~ p:not(.oceanwp-tp-block-description) {
+
+#oceanwp-tp-white-label.oceanwp-tp-pane-box input[type="checkbox"]~p:not(.oceanwp-tp-block-description) {
   display: inline-block;
-  }
+}
 
 
 /** Preloader **/
 .oceanwp-tp-preloader {
-	display: none;
+  display: none;
 }
 
 .oceanwp-tp-panes.loading-pane .oceanwp-tp-preloader {
-	display: block;
-	opacity: 0.7;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1001;
-    background: #fafafa;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+  display: block;
+  opacity: 0.7;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1001;
+  background: #fafafa;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .oceanwp-tp-loader {
-	position: relative;
-    top: 50%;
-    left: 50%;
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-    border: 10px solid #ffb100;
-    border-top-color: #06214e;
-    box-sizing: border-box;
-    background: transparent;
-    animation: loading 1s linear infinite;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  border: 10px solid #ffb100;
+  border-top-color: #06214e;
+  box-sizing: border-box;
+  background: transparent;
+  animation: loading 1s linear infinite;
 }
 
 @keyframes loading {
-	0% {
-		transform: rotate(0deg);
-	}
-	0% {
-		transform: rotate(360deg);
-	}
+  0% {
+    transform: rotate(0deg);
+  }
+
+  0% {
+    transform: rotate(360deg);
+  }
 }
+
