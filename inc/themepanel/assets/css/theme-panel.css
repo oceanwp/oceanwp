@@ -461,6 +461,7 @@ a.banner-button {
 .oceanwp-tp-pane-features {
   margin-top: 30px;
 }
+
 #oceanwp-tp-home .oceanwp-tp-pane-features {
   padding: 15px;
 }
@@ -1268,3 +1269,135 @@ p.submit {
   }
 }
 
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .oceanwp-tp-top-panel-inner {
+    max-width: unset;
+  }
+
+  .oceanwp-tp-panes {
+    margin-left: 180px;
+  }
+
+  .oceanwp-tp-wrap {
+    max-width: unset;
+    min-width: unset;
+  }
+
+  a.oceanwp-tp-sidebar-link {
+    margin: 15px 20px 15px 8px;
+    font-size: 16px;
+  }
+
+  #ocean-customizer-items,
+  #ocean-elementor-widgets-items,
+  #ocean-gutenberg-blocks-items,
+  #ocean-metabox-items,
+  #ocean-widget-items,
+  .oceanwp-tp-recommended-plugins-section,
+  .oceanwp-tp-useful-plugins-section {
+    justify-content: space-between;
+  }
+
+  #ocean-customizer-items div,
+  #ocean-elementor-widgets-items div,
+  #ocean-gutenberg-blocks-items div,
+  #ocean-metabox-items div,
+  #ocean-widget-items>div {
+    flex-basis: 38%;
+  }
+
+  #install-demos .theme-wrap {
+    width: 40%;
+  }
+
+  .oceanwp-tp-recommended-plugins-section>div,
+  .oceanwp-tp-useful-plugins-section>div {
+    flex-basis: 100%;
+  }
+
+  #oceanwp-tp-white-label th {
+    min-width: auto;
+  }
+
+  #oceanwp-tp-help .oceanwp-tp-help-section {
+    display: block;
+  }
+
+  .quick-settings>div {
+    flex-basis: 43%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .oceanwp-tp-header {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .oceanwp-tp-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .oceanwp-tp-branding strong {
+    padding-left: 0;
+  }
+  .oceanwp-tp-sidebar {
+    width: auto;
+    float: none;
+    position: relative;
+  }
+  .oceanwp-tp-panes {
+    margin-left: 0;
+    width: auto;
+  }
+  .oceanwp-tp-wrap {
+    min-width: auto;
+  }
+  .oceanwp-tp-theme-version {
+    align-self: flex-end;
+  }
+  .oceanwp-tp-top-panel,
+  .oceanwp-tp-upgrade-button-wrap {
+    justify-content: flex-start;
+  }
+  .oceanwp-tp-pane-box {
+    padding: 10px;
+  }
+  #oceanwp-tp-home .oceanwp-tp-large-block {
+    margin: 20px;
+    padding: 20px;
+  }
+  .quick-settings>div {
+    flex-basis: 100%;
+  }
+  /* .oceanwp-tp-sidebar-list {
+    margin-left: 8%;
+  } */
+  /* .oceanwp-tp-block-outer {
+  display: inline-block;
+  } */
+  #oceanwp-tp-customizer .oceanwp-tp-large-block {
+    margin: 20px;
+    padding: 15px;
+  }
+  #ocean-customizer-items div,
+  #ocean-gutenberg-blocks-items div,
+  #ocean-elementor-widgets-items div,
+  #ocean-widget-items>div,
+  #ocean-metabox-items div {
+    flex-basis: 100%;
+  }
+  #install-demos .theme-wrap {
+    width: 100%;
+  }
+  .oceanwp-tp-useful-plugins-section>div,
+  .oceanwp-tp-recommended-plugins-section>div {
+    flex-basis: 100%;
+  }
+  .col {
+    flex-basis: fit-content;
+  }
+}
