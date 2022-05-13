@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 3.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-05-05 08:28:00+00:00\n"
+"POT-Creation-Date: 2022-05-13 01:59:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -92,85 +92,151 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:313 inc/customizer/settings/topbar.php:40
+#: functions.php:320 inc/customizer/settings/topbar.php:40
 #: inc/customizer/settings/typography.php:111
-#: inc/third/class-beaver-themer.php:100
+#: inc/themepanel/views/panes/home.php:40 inc/third/class-beaver-themer.php:100
 msgid "Top Bar"
 msgstr ""
 
-#: functions.php:314
+#: functions.php:321
 msgid "Main"
 msgstr ""
 
-#: functions.php:315 inc/third/class-beaver-themer.php:145
+#: functions.php:322 inc/third/class-beaver-themer.php:145
 msgid "Footer"
 msgstr ""
 
-#: functions.php:316
+#: functions.php:323
 msgid "Mobile (optional)"
 msgstr ""
 
-#: functions.php:730
+#: functions.php:737
 msgid "Default Sidebar"
 msgstr ""
 
-#: functions.php:732
+#: functions.php:739
 msgid ""
 "Widgets in this area will be displayed in the left or right sidebar area if "
 "you choose the Left or Right Sidebar layout."
 msgstr ""
 
-#: functions.php:743 inc/third/class-lifterlms.php:310
+#: functions.php:750 inc/third/class-lifterlms.php:310
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions.php:745
+#: functions.php:752
 msgid ""
 "Widgets in this area are used in the left sidebar region if you use the "
 "Both Sidebars layout."
 msgstr ""
 
-#: functions.php:757
+#: functions.php:764
 msgid "Search Results Sidebar"
 msgstr ""
 
-#: functions.php:759
+#: functions.php:766
 msgid "Widgets in this area are used in the search result page."
 msgstr ""
 
-#: functions.php:771
+#: functions.php:778
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:773
+#: functions.php:780
 msgid "Widgets in this area are used in the first footer region."
 msgstr ""
 
-#: functions.php:784
+#: functions.php:791
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:786
+#: functions.php:793
 msgid "Widgets in this area are used in the second footer region."
 msgstr ""
 
-#: functions.php:797
+#: functions.php:804
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:799
+#: functions.php:806
 msgid "Widgets in this area are used in the third footer region."
 msgstr ""
 
-#: functions.php:810
+#: functions.php:817
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:812
+#: functions.php:819
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr ""
 
+#: inc/activation-notice/api.php:21
+msgid "Activate Ocean Extra"
+msgstr ""
+
+#: inc/activation-notice/api.php:25
+msgid "Install & Activate Ocean Extra"
+msgstr ""
+
+#: inc/activation-notice/template.php:30
+msgid "Activating..."
+msgstr ""
+
+#: inc/activation-notice/template.php:31
+msgid "Installing & activating..."
+msgstr ""
+
+#: inc/activation-notice/template.php:76
+msgid "Dismiss this notice."
+msgstr ""
+
+#: inc/activation-notice/template.php:85
+msgid "Awesome Possum - You're Amazing!"
+msgstr ""
+
+#: inc/activation-notice/template.php:86
+msgid "Thank you for installing the OceanWP theme."
+msgstr ""
+
+#: inc/activation-notice/template.php:88
+msgid "We highly recommend you to install and activate the"
+msgstr ""
+
+#: inc/activation-notice/template.php:89
+#: inc/themepanel/includes/plugins-compatibility.php:86
+#: inc/themepanel/includes/plugins-compatibility.php:171
+#: inc/themepanel/views/panes/home.php:211
+msgid "Ocean Extra"
+msgstr ""
+
+#: inc/activation-notice/template.php:91
+msgid ""
+"This plugin will unlock new power tools to help you build an amazing "
+"website. Get access to:"
+msgstr ""
+
+#: inc/activation-notice/template.php:93
+msgid "freemium website template demos,"
+msgstr ""
+
+#: inc/activation-notice/template.php:94
+msgid "WordPress widgets,"
+msgstr ""
+
+#: inc/activation-notice/template.php:95
+msgid "Metabox settings to control pages and posts individually,"
+msgstr ""
+
+#: inc/activation-notice/template.php:96
+msgid "ability to create and use custom templates,"
+msgstr ""
+
+#: inc/activation-notice/template.php:97
+msgid "and much, much more."
+msgstr ""
+
 #: inc/breadcrumbs.php:333 inc/customizer/settings/general.php:2117
+#: inc/themepanel/theme-panel.php:390
 msgid "Home"
 msgstr ""
 
@@ -2041,6 +2107,7 @@ msgid "Remove Button Color: Hover"
 msgstr ""
 
 #: inc/customizer/settings/footer-bottom.php:46
+#: inc/themepanel/views/panes/home.php:55
 msgid "Footer Bottom"
 msgstr ""
 
@@ -2111,6 +2178,7 @@ msgid "Links Color: Hover"
 msgstr ""
 
 #: inc/customizer/settings/footer-widgets.php:46
+#: inc/themepanel/views/panes/home.php:50
 msgid "Footer Widgets"
 msgstr ""
 
@@ -2334,6 +2402,7 @@ msgid "Search Posts Per Page"
 msgstr ""
 
 #: inc/customizer/settings/general.php:1130
+#: inc/themepanel/includes/plugins-compatibility.php:179
 msgid "Custom Sidebar"
 msgstr ""
 
@@ -2683,7 +2752,8 @@ msgstr ""
 msgid "All Post Types"
 msgstr ""
 
-#: inc/customizer/settings/header.php:47 inc/third/class-beaver-themer.php:109
+#: inc/customizer/settings/header.php:47 inc/themepanel/views/panes/home.php:45
+#: inc/third/class-beaver-themer.php:109
 msgid "Header"
 msgstr ""
 
@@ -2696,7 +2766,9 @@ msgid "Top Menu"
 msgstr ""
 
 #: inc/customizer/settings/header.php:89
-#: inc/customizer/settings/header.php:3484 inc/third/class-lifterlms.php:312
+#: inc/customizer/settings/header.php:3484
+#: inc/themepanel/views/panes/free-vs-pro.php:82
+#: inc/third/class-lifterlms.php:312
 msgid "Full Screen"
 msgstr ""
 
@@ -2892,6 +2964,7 @@ msgstr ""
 #: inc/customizer/settings/header.php:961
 #: inc/customizer/settings/header.php:2050
 #: inc/customizer/settings/typography.php:102
+#: inc/themepanel/views/panes/home.php:19
 msgid "Logo"
 msgstr ""
 
@@ -3811,6 +3884,7 @@ msgid "Footer Menu"
 msgstr ""
 
 #: inc/customizer/settings/typography.php:309
+#: inc/themepanel/views/panes/home.php:34
 msgid "Typography"
 msgstr ""
 
@@ -5023,7 +5097,7 @@ msgstr ""
 msgid "VK"
 msgstr ""
 
-#: inc/helpers.php:3989
+#: inc/helpers.php:3989 inc/themepanel/views/panes/free-vs-pro.php:76
 msgid "Instagram"
 msgstr ""
 
@@ -5097,6 +5171,11 @@ msgstr ""
 
 #: inc/helpers.php:4065
 msgid "QQ"
+msgstr ""
+
+#: inc/helpers.php:4863 inc/helpers.php:4873 inc/helpers.php:4874
+#: inc/themepanel/views/layout/header.php:20
+msgid "OceanWP Panel"
 msgstr ""
 
 #: inc/oceanwp-strings.php:31
@@ -5507,6 +5586,8 @@ msgid "Upgrade message from the plugin author:"
 msgstr ""
 
 #: inc/plugins/class-tgm-plugin-activation.php:2717
+#: inc/themepanel/views/panes/useful-plugins.php:92
+#: inc/themepanel/views/panes/useful-plugins.php:178
 msgid "Install"
 msgstr ""
 
@@ -5515,6 +5596,7 @@ msgid "Update"
 msgstr ""
 
 #: inc/plugins/class-tgm-plugin-activation.php:2726
+#: inc/themepanel/views/panes/home.php:250
 msgid "Activate"
 msgstr ""
 
@@ -5633,6 +5715,1118 @@ msgstr ""
 
 #: inc/template-helpers.php:707
 msgid "Delete this comment"
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:16
+msgid "Plugin is installed successfully."
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:17
+msgid "Plugin is updated successfully."
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:18
+#: inc/themepanel/views/panes/home.php:227
+#: inc/themepanel/views/panes/useful-plugins.php:98
+#: inc/themepanel/views/panes/useful-plugins.php:184
+msgid "Installed"
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:19
+msgid "Updated"
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:20
+msgid "Child theme installed successfully"
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:21
+msgid "Installing Plugin..."
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:22
+msgid "Updating Plugin..."
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:23
+msgid "Installing Child Theme..."
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:24
+msgid "Saving..."
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:25
+msgid "Reseting..."
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:26
+msgid "Exporting..."
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:27
+msgid "Importing..."
+msgstr ""
+
+#: inc/themepanel/includes/js-messages.php:28
+msgid "Information was copied, please check WordPress Site Health"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:47
+#: inc/themepanel/views/panes/useful-plugins.php:132
+msgid "+ many, many more options and benefits."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:87
+#: inc/themepanel/includes/plugins-compatibility.php:172
+#: inc/themepanel/views/panes/help.php:23
+#: inc/themepanel/views/panes/home.php:212
+msgid ""
+"Unlock the power of OceanWP. Install demos, create custom templates, "
+"customize each page or post, add WordPress widgets and more."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:90
+msgid "Elementor"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:91
+#: inc/themepanel/views/panes/help.php:40
+msgid ""
+"Advanced drag & drop page builder for pixel perfect editing and mobile "
+"responsiveness design. Best friend with Ocean WordPress templates."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:94
+msgid "WPForms Contact Form"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:95
+msgid ""
+"Lite drag & drop contact form builder. Makes easy for your visitors to get "
+"in touch with you directly through your website."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:98
+msgid "HubSpot CRM"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:99
+msgid ""
+"Organize, capture, engage and grow your contact list with forms, live "
+"website chat with auto-replies and more."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:110
+msgid "Ocean Cookie Notice"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:113
+msgid "Ocean Elementor Widgets"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:116
+msgid "Ocean Footer Callout"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:119
+msgid "Ocean Gutenberg Blocks"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:122
+msgid "Ocean Hooks"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:125
+msgid "Ocean Instagram"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:128
+msgid "Ocean Popup Login"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:131
+msgid "Ocean Portfolio"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:134
+msgid "Ocean Pro Demos"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:137
+msgid "Ocean Side Panel"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:140
+msgid "Ocean Sticky Footer"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:143
+msgid "Ocean Sticky Header"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:146
+msgid "Ocean White Label"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:149
+msgid "Ocean Woo Popup"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:175
+msgid "Modal Window"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:176
+msgid ""
+"Display any content, like contact or subscription forms, in a modal window "
+"- popup on button-click."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:180
+msgid ""
+"Create endless number of WordPress sidebars with a unique widget "
+"combination for each."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:183
+msgid "Posts Slider"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:184
+msgid "Simple slider to display your blog posts wherever you want on your website."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:187
+msgid "Stick Anything"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:188
+msgid ""
+"Stick widget areas, widgets, boxes, menu or any other content on your "
+"website."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:191
+msgid "Social Sharing"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:192
+msgid ""
+"Display social media sharing options on your blog posts. Choose options, "
+"choose styling and write."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:195
+msgid "Product Sharing"
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:196
+msgid ""
+"Let customers express the love for your products. Add social media sharing "
+"options for products."
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:203 inc/themepanel/theme-panel.php:231
+msgid "New theme version is available"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:211
+msgid "Warning icon"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:301
+msgid "You should update plugin Ocean Elementor Widgets to use new features"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:304
+msgid "You should update plugin Ocean Gutenberg Blocks to use new features"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:307
+msgid "You should update plugin Ocean White Label to use new features"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:314
+msgid "Available new versions some plugins"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:395
+msgid "Customizer"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:400
+#: inc/themepanel/views/panes/install-demos.php:47
+msgid "Install Demos"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:405
+msgid "Ocean Images"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:410
+msgid "Integration"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:415
+msgid "Useful Plugins"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:420
+msgid "Changelog"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:425
+msgid "Free vs Pro"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:430
+#: inc/themepanel/views/panes/elementor-widgets.php:25
+#: inc/themepanel/views/panes/free-vs-pro.php:75
+#: inc/themepanel/views/panes/home.php:102
+msgid "Elementor Widgets"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:435
+msgid "Gutengerg Blocks"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:440
+#: inc/themepanel/views/panes/extra-settings.php:12
+msgid "Extra Settings"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:445
+#: inc/themepanel/views/panes/free-vs-pro.php:85
+#: inc/themepanel/views/panes/white-label.php:32
+msgid "White Label"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:450
+#: inc/themepanel/views/panes/system-info.php:13
+msgid "System Info"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:455
+msgid "Help"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:529
+msgid "%1$sInstall free Ocean Extra recommended plugin%2$s to unlock this feature."
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:542
+msgid ""
+"%1$sUpgrade to the Business or Agency Ocean Core Extensions Bundle "
+"plans%2$s to unlock this feature."
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:555
+msgid "%1$sUpgrade to the Ocean Core Extensions Bundle%2$s to unlock this feature."
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:567
+msgid "%1$s or %2$s"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:571
+msgid "Install free Ocean Extra recommended plugin"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:576
+msgid "upgrade to the Ocean Core Extensions Bundle"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:623
+msgid "Something went wrong"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:626
+msgid "You do not have sufficient privileges for this action."
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:764
+msgid "Child theme already installed"
+msgstr ""
+
+#: inc/themepanel/views/panes/customizer.php:13
+msgid "Customizer Search"
+msgstr ""
+
+#: inc/themepanel/views/panes/customizer.php:21
+msgid "Find all Customizer settings with ease."
+msgstr ""
+
+#: inc/themepanel/views/panes/customizer.php:31
+msgid "Customizer Reset"
+msgstr ""
+
+#: inc/themepanel/views/panes/customizer.php:39
+msgid ""
+"Delete your settings and reset all Customizer options to default theme "
+"values."
+msgstr ""
+
+#: inc/themepanel/views/panes/customizer.php:49
+msgid "Customizer Styling Import & Export"
+msgstr ""
+
+#: inc/themepanel/views/panes/customizer.php:58
+msgid ""
+"Export Customizer settings of the current theme and import on a Child Theme "
+"or use to create your own default styling for the next website."
+msgstr ""
+
+#: inc/themepanel/views/panes/customizer.php:68
+msgid "Customizer Controls"
+msgstr ""
+
+#: inc/themepanel/views/panes/customizer.php:77
+msgid ""
+"Disable Customizer OceanWP Control panels for faster Customizer load or "
+"faster management by displaying fewer options."
+msgstr ""
+
+#: inc/themepanel/views/panes/elementor-widgets.php:16
+msgid ""
+"Build astonishing content with Elementor Widgets and the Ocean Core "
+"Extensions Bundle."
+msgstr ""
+
+#: inc/themepanel/views/panes/elementor-widgets.php:17
+#: inc/themepanel/views/panes/gutengerg-blocks.php:16
+#: inc/themepanel/views/panes/help.php:107
+#: inc/themepanel/views/panes/home.php:74
+#: inc/themepanel/views/panes/install-demos.php:17
+#: inc/themepanel/views/panes/ocean-images.php:17
+#: inc/themepanel/views/panes/useful-plugins.php:113
+msgid "Take the lead. Experience website building with no limits"
+msgstr ""
+
+#: inc/themepanel/views/panes/elementor-widgets.php:18
+#: inc/themepanel/views/panes/gutengerg-blocks.php:17
+#: inc/themepanel/views/panes/help.php:108
+#: inc/themepanel/views/panes/home.php:75
+#: inc/themepanel/views/panes/install-demos.php:18
+#: inc/themepanel/views/panes/ocean-images.php:18
+#: inc/themepanel/views/panes/useful-plugins.php:114
+#: inc/themepanel/views/panes/white-label.php:25
+msgid "Upgrade now"
+msgstr ""
+
+#: inc/themepanel/views/panes/elementor-widgets.php:31
+#: inc/themepanel/views/panes/elementor-widgets.php:37
+msgid ""
+"Build astonishing pages with the help of Elementor Widgets. Functions "
+"perfectly with both free and pro Elementor. Counter, skill bar, Instagram "
+"feed, navigation, posts grid and slider, testimonials and more."
+msgstr ""
+
+#: inc/themepanel/views/panes/extra-settings.php:15
+#: inc/themepanel/views/panes/extra-settings.php:18
+msgid "Enable or disable some of the features included in the Ocean Extra plugin."
+msgstr ""
+
+#: inc/themepanel/views/panes/extra-settings.php:21
+msgid ""
+"%1$sInstall free Ocean Extra recommended plugin%2$s to unlock these "
+"features below."
+msgstr ""
+
+#: inc/themepanel/views/panes/extra-settings.php:33
+msgid "Meta-box Settings"
+msgstr ""
+
+#: inc/themepanel/views/panes/extra-settings.php:36
+#: inc/themepanel/views/panes/extra-settings.php:41
+msgid ""
+"Meta-box option allows you individual control of any page, post or custom "
+"template. Change header style, disable or enable many features such as the "
+"Page Title, Top Bar and more."
+msgstr ""
+
+#: inc/themepanel/views/panes/extra-settings.php:50
+msgid "My Library"
+msgstr ""
+
+#: inc/themepanel/views/panes/extra-settings.php:52
+msgid ""
+"Create custom templates to use within the OceanWP theme. Build custom "
+"headers, footers, templates for the Ocean Footer Callout or Ocean Hooks "
+"plugins, templates to use with shortcodes and more."
+msgstr ""
+
+#: inc/themepanel/views/panes/extra-settings.php:64
+msgid "WordPress Widgets"
+msgstr ""
+
+#: inc/themepanel/views/panes/extra-settings.php:66
+msgid ""
+"Ocean WordPress widgets add additional options for you to use across "
+"default WordPress widget areas, such as sidebars and footer. Add widgets "
+"via Appearance > Widgets."
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:19
+msgid "Upgrade Now"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:39
+msgid "Take the Lead. Own the Ocean Universe"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:44
+msgid "Legend"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:47
+msgid "Included"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:51
+msgid "Not included"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:55
+msgid "Limited"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:61
+msgid "Features"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:61
+msgid "Free"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:61
+msgid "Pro"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:62
+msgid "Forum & Community Support"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:63
+msgid "Personalized Customer Support"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:64
+msgid "Priority Customer Support*"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:65
+msgid "Special Coupon Deals*"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:66
+msgid "Professional Webinars*"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:67
+msgid "Newsletter Featuring*"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:68
+msgid "Pre-made Website Library"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:69
+msgid "Royalty-free Images with Templates"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:70
+msgid "Image Library*"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:71
+msgid "Icons Library*"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:72
+msgid "Access to PRO Updates"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:73
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:74
+msgid "Sticky Footer"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:77
+msgid "Footer Callout"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:78
+msgid "Side Panel"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:79
+#: inc/themepanel/views/panes/home.php:110
+msgid "Portfolio"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:80
+msgid "Conditional Hooks for Codes & Templates"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:81
+msgid "Login Popup"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:83
+msgid "Cookie Notice"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:84
+msgid "Woo Popup"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:90
+msgid ""
+"* Some PRO features are included or optional depending on the Business "
+"and/or Agency Bundle plan."
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:97
+msgid "Have any questions about going PRO or upgrading your plan?"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:98
+msgid "Let us know how we can help you make the best decision for your website."
+msgstr ""
+
+#: inc/themepanel/views/panes/gutengerg-blocks.php:15
+msgid "Enrich blog posts or pages with Ocean Gutenberg Blocks."
+msgstr ""
+
+#: inc/themepanel/views/panes/gutengerg-blocks.php:24
+#: inc/themepanel/views/panes/home.php:106
+msgid "Gutenberg Blocks"
+msgstr ""
+
+#: inc/themepanel/views/panes/gutengerg-blocks.php:30
+#: inc/themepanel/views/panes/gutengerg-blocks.php:35
+msgid ""
+"Enrich content with Ocean Gutenberg Blocks. Functions perfectly with the "
+"default WordPress editor. Counter, skill bar, Instagram feed, navigation, "
+"posts grid and slider, testimonials and more."
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:12
+msgid "The Help Corner"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:22
+msgid "Documentation"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:28
+msgid "Check Documentation"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:39
+msgid "Video Tutorials"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:45
+msgid "Watch Videos"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:59
+msgid "Meet OceanWP - Theme Overview"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:60
+#: inc/themepanel/views/panes/help.php:71
+#: inc/themepanel/views/panes/help.php:84
+#: inc/themepanel/views/panes/help.php:95
+msgid "Watch video"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:70
+msgid "Install WordPress in 10 minutes"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:83
+msgid "How to Install Ocean Demos"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:94
+msgid "How to Create a Custom Header"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:106
+msgid "Unlock additional support options with the Ocean Core Extensions Bundle"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:115
+msgid "Forum and Community Support"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:125
+msgid "WordPress Forum"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:126
+msgid ""
+"Search topics or start a thread on the official WordPress forum. Support "
+"for pro services and features is not allowed per WordPress forum rules."
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:131
+msgid "Visit Forum"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:142
+msgid "Facebook Community"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:143
+msgid ""
+"Meet OceanWP family members, developers, tech support agents, managers... "
+"Get support, stay in the loop, share happy moments."
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:148
+msgid "Visit Community"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:160
+msgid "Customer Support"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:161
+msgid ""
+"If you have purchased any of our Pro products, individually or in a form of "
+"the Bundle, and have an active license, you're entitled to our customer "
+"support services. Customer support services are performed through the "
+"ticketing/email system. To open a ticket with us, please click the button "
+"below."
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:166
+msgid "Open a Ticket"
+msgstr ""
+
+#: inc/themepanel/views/panes/help.php:175
+msgid "Support Policy"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:20
+msgid "Upload website logo and retina logo for large screens."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:21
+msgid "logo.png"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:24
+msgid "Favicon"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:25
+msgid "Upload the browser tab and app icon for your website."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:26
+msgid "favicon.png"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:29
+msgid "Primary Colors"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:30
+msgid "Set primary color and hover color for main styling."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:31
+msgid "primary-colors.png"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:35
+msgid "Pick typography settings for any part of the website."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:36
+msgid "typography.png"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:41
+msgid "Enable or disable, add social media, menu and more."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:42
+msgid "top-bar.png"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:46
+msgid "Choose main website header style, adjust colors, padding..."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:47
+msgid "header.png"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:51
+msgid "Select footer widgets or a custom template for website footer."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:52
+msgid "footer-widgets.png"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:56
+msgid "Disable or adjust the footer copyright area of your website."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:57
+msgid "footer-bottom.png"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:73
+msgid "Upgrade features with the Ocean Core Extensions Bundle"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:82
+msgid "Sticky header"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:86
+msgid "Sticky footer"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:90
+msgid "Instagram feed"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:94
+msgid "Custom hooks"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:114
+msgid "Footer callout"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:122
+msgid "220+ website templates"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:126
+msgid "Customer ticket support"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:130
+msgid "Images and icons library"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:134
+msgid "+ many more options..."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:146
+msgid "Theme Status"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:152
+msgid "Your OceanWP theme is up to date."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:165
+msgid ""
+"Check %1$sSupport Notes and User Feedback on the latest version%2$s before "
+"upgrading."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:177
+msgid "Quick Settings"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:186
+msgid "Access specific Customizer control settings quickly."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:188
+msgid "%1$sInstall free Ocean Extra recommended plugin%2$s to unlock more features."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:201
+#: inc/themepanel/views/panes/home.php:244
+msgid "Download"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:221
+msgid "Install Ocean Extra"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:238
+msgid "OceanWP Child Theme"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:239
+msgid ""
+"Install the official OceanWP Child Theme to add custom codes, modify theme "
+"or plugin templates, customize independetly and more."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:256
+msgid "Installed and Activated"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:269
+msgid "The Love Corner"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:278
+msgid "Share the Love"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:279
+msgid ""
+"If you enjoy all the features the Ocean Universe has to offer, spread the "
+"word and share the love by giving us a 5-star rating. By sharing your "
+"support, you're directly contributing to the future development of amazing "
+"new features and products."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:282
+msgid "Share Rating Now"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:292
+msgid "Get Some Love"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:293
+msgid ""
+"We're excited to have you as a part of the amazing OceanWP family. Get "
+"yourself comfortable in the Ocean Universe. Subscribe to our newsletter to "
+"receive the latest news, discounts and all other sweets and goodies. No "
+"spam, that's a guarantee."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:296
+msgid "Subscribe Now"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:307
+msgid "Showcase Website"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:308
+msgid ""
+"Your OceanWP website is worth admiring. Apply for our website showcase for "
+"a chance for your website to get featured in our blog posts."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:311
+msgid "Apply Now"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:321
+msgid "Feature Requests"
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:322
+msgid ""
+"Is there a feature, WordPress template, documentation or video tutorial we "
+"should consider? Let us know by requesting a feature."
+msgstr ""
+
+#: inc/themepanel/views/panes/home.php:325
+msgid "Request Now"
+msgstr ""
+
+#: inc/themepanel/views/panes/install-demos.php:16
+msgid "Access hundreds of WordPress templates with the Ocean Core Extensions Bundle"
+msgstr ""
+
+#: inc/themepanel/views/panes/install-demos.php:24
+msgid "220+ professional-looking pre-made full website WordPress templates"
+msgstr ""
+
+#: inc/themepanel/views/panes/install-demos.php:28
+msgid "Premium features"
+msgstr ""
+
+#: inc/themepanel/views/panes/install-demos.php:32
+msgid "Personalized customer support"
+msgstr ""
+
+#: inc/themepanel/views/panes/install-demos.php:36
+msgid "and so much more...."
+msgstr ""
+
+#: inc/themepanel/views/panes/install-demos.php:51
+msgid ""
+"Access freemium OceanWP full website WordPress templates and start building "
+"immediately."
+msgstr ""
+
+#: inc/themepanel/views/panes/install-demos.php:53
+msgid "to access premium templates and additional options."
+msgstr ""
+
+#: inc/themepanel/views/panes/install-demos.php:58
+msgid ""
+"If this is your first time working with templates or you wish to switch to "
+"a different template, make sure to check out %1$sthis document%2$s first."
+msgstr ""
+
+#: inc/themepanel/views/panes/install-demos.php:67
+msgid ""
+"Check out %1$sour documentation and full video guide%2$s on how easy it is "
+"to import website template demos, both free and pro."
+msgstr ""
+
+#: inc/themepanel/views/panes/integration.php:17
+msgid "Google Maps"
+msgstr ""
+
+#: inc/themepanel/views/panes/integration.php:20
+#: inc/themepanel/views/panes/integration.php:26
+msgid ""
+"Display the Google map on your website and help visitors locate your "
+"business."
+msgstr ""
+
+#: inc/themepanel/views/panes/integration.php:38
+msgid "Google reCAPTHA"
+msgstr ""
+
+#: inc/themepanel/views/panes/integration.php:41
+#: inc/themepanel/views/panes/integration.php:47
+msgid "Adds Google reCAPTCHA."
+msgstr ""
+
+#: inc/themepanel/views/panes/integration.php:57
+msgid "SVG Support"
+msgstr ""
+
+#: inc/themepanel/views/panes/integration.php:66
+msgid ""
+"Enable SVG file support for your WordPress Media Library. This option "
+"allows you to safely upload any SVG file to the Media Library as all files "
+"are sanitized upon upload."
+msgstr ""
+
+#: inc/themepanel/views/panes/integration.php:76
+msgid "MailChimp"
+msgstr ""
+
+#: inc/themepanel/views/panes/integration.php:84
+msgid "Add newsletter subscription to your website and grow your contact list."
+msgstr ""
+
+#: inc/themepanel/views/panes/integration.php:86
+msgid "to unlock this feature."
+msgstr ""
+
+#: inc/themepanel/views/panes/ocean-images.php:16
+msgid "Access thousands and thousands of image and icon files with the Core Bundle"
+msgstr ""
+
+#: inc/themepanel/views/panes/ocean-images.php:24
+msgid "Import images and icons directly to your media library"
+msgstr ""
+
+#: inc/themepanel/views/panes/ocean-images.php:28
+msgid "Choose image import size"
+msgstr ""
+
+#: inc/themepanel/views/panes/ocean-images.php:32
+msgid "No attribution required"
+msgstr ""
+
+#: inc/themepanel/views/panes/ocean-images.php:36
+msgid "Available with the Business and Agency plans"
+msgstr ""
+
+#: inc/themepanel/views/panes/ocean-images.php:47
+msgid "Ocean Images & Icons"
+msgstr ""
+
+#: inc/themepanel/views/panes/ocean-images.php:54
+#: inc/themepanel/views/panes/ocean-images.php:70
+msgid ""
+"Speed up the website building process. Search for professional looking "
+"images and icons directly through your WordPress dashboard. Import images "
+"and icon files to your media library and use across your website with no "
+"attribution."
+msgstr ""
+
+#: inc/themepanel/views/panes/ocean-images.php:60
+msgid ""
+"Check out our %1$sguide%2$s on how to benefit from royalty-free images and "
+"how to import them to your website."
+msgstr ""
+
+#: inc/themepanel/views/panes/plugin-upgrade-info.php:2
+msgid ""
+"To complete the functionality of this section, please update %1$s plugin to "
+"its latest version."
+msgstr ""
+
+#: inc/themepanel/views/panes/system-info.php:17
+#: inc/themepanel/views/panes/system-info.php:22
+msgid ""
+"Display and export your WordPress installation info. Important in case of a "
+"need of assistance or troubleshooting."
+msgstr ""
+
+#: inc/themepanel/views/panes/useful-plugins.php:44
+msgid ""
+"The following Ocean Pro Extensions need to be updated to complete the new "
+"functionality:"
+msgstr ""
+
+#: inc/themepanel/views/panes/useful-plugins.php:56
+msgid "Recommended Plugins"
+msgstr ""
+
+#: inc/themepanel/views/panes/useful-plugins.php:112
+msgid "Enjoy even more powerful features with the Ocean Core Extensions Bundle"
+msgstr ""
+
+#: inc/themepanel/views/panes/useful-plugins.php:120
+msgid "Sticky header and footer"
+msgstr ""
+
+#: inc/themepanel/views/panes/useful-plugins.php:124
+msgid "Footer Callout - multipurpose CTA feature"
+msgstr ""
+
+#: inc/themepanel/views/panes/useful-plugins.php:128
+msgid "Instagram feed, Elementor widgets and Gutenberg blocks"
+msgstr ""
+
+#: inc/themepanel/views/panes/useful-plugins.php:143
+msgid "Recommended Ocean Plugins"
+msgstr ""
+
+#: inc/themepanel/views/panes/useful-plugins.php:192
+msgid "Plugin update available"
+msgstr ""
+
+#: inc/themepanel/views/panes/white-label.php:23
+msgid ""
+"Claim OceanWP as your own. It's your turn to impress friends, clients, "
+"coworkers and the rest of the world"
+msgstr ""
+
+#: inc/themepanel/views/panes/white-label.php:24
+msgid "With OceanWP you don't have to imagine. Go ahead and build it"
+msgstr ""
+
+#: inc/themepanel/views/panes/white-label.php:38
+#: inc/themepanel/views/panes/white-label.php:44
+msgid ""
+"No coding skills, no problem. Claim OceanWP in the backend as your own. "
+"Give it a new name, a new image, sign your name, make it yours. Your great "
+"website-building skills need a cherry on top."
 msgstr ""
 
 #: inc/third/class-amp.php:366

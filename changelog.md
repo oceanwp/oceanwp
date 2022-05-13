@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### _2022.05.13._ - 3.3.0
+- **Added**: Theme Panel
+- **Updated**: Change OceanWP About URI
+- **Fixed**: Custom Template is not rendering perfectly for custom locations.
+- **Fixed**: Previous comment option not working.
+- **Fixed**: Extra Margin Bottom for Top Bar Wrapper
+
 ### _2022.05.02._ - 3.2.2
 - **Added**: Accessibility: Buttons: focus option.
 - **Added**: Accessibility: Header: Mega Menu.
