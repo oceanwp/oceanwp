@@ -4865,7 +4865,7 @@ function oceanwp_register_theme_page() {
 			'manage_options',
 			'oceanwp',
 			'ocean_admin_page_contents',
-			'dashicons-superhero-alt',
+			get_template_directory_uri() . '/inc/themepanel/assets/images/o.svg',
 			4
 		);
 		add_submenu_page(
@@ -4895,6 +4895,22 @@ function ocean_admin_page_contents() {
 	include_once OCEANWP_THEME_PANEL_DIR . '/views/layout/master.php';
 }
 
+/**
+ * Admin menu logo styles.
+ *
+ * @return void
+ */
+function oceanwp_admin_menu_logo_styles() {
+	echo '
+		<style>
+		#adminmenu #toplevel_page_oceanwp .wp-menu-image img {
+			width: 25px;
+			height: 25px;
+			padding: 5px;
+		}
+		</style>';
+	}
+add_action('admin_enqueue_scripts', 'oceanwp_admin_menu_logo_styles');
 
 /**
  * Display Notice when Ocean Extra is outdated.
