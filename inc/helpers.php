@@ -4859,16 +4859,16 @@ function oceanwp_white_labels_translate( $translation, $text, $domain ) {
 function oceanwp_register_theme_page() {
 
 	if ( class_exists( 'Ocean_Extra' ) ) {
-		add_menu_page( 
+		add_menu_page(
 			__('OceanWP Panel', 'oceanwp'),
 			__('OceanWP', 'oceanwp'),
 			'manage_options',
-			'oceanwp', 
+			'oceanwp',
 			'ocean_admin_page_contents',
 			'dashicons-superhero-alt',
 			4
 		);
-		add_submenu_page( 
+		add_submenu_page(
 			'oceanwp',
 			__('OceanWP Panel', 'oceanwp'),
 			__('OceanWP Panel', 'oceanwp'),
@@ -4877,15 +4877,15 @@ function oceanwp_register_theme_page() {
 			'',
 			1
 		);
-	} else { 
-		add_theme_page( 
+	} else {
+		add_theme_page(
 			__('OceanWP', 'oceanwp'),
 			__('OceanWP', 'oceanwp'),
 			'edit_theme_options',
-			'oceanwp', 
+			'oceanwp',
 			function() {
 				include_once OCEANWP_THEME_PANEL_DIR . '/views/layout/master.php';
-			} 
+			}
 		);
 	}
 }
@@ -4894,3 +4894,27 @@ add_action( 'admin_menu', 'oceanwp_register_theme_page', 0 );
 function ocean_admin_page_contents() {
 	include_once OCEANWP_THEME_PANEL_DIR . '/views/layout/master.php';
 }
+
+
+/**
+ * Display Notice when Ocean Extra is outdated.
+ *
+ * @return void
+ */
+function ocean_oe_is_outdated_admin_notice() {
+	if ( current_user_can('install_plugins') ) {
+		$current_oe_version = oceanwp_theme_panel()->get_current_plugin_version( 'ocean-extra/ocean-extra.php' );
+		$required_oe_version = '2.0.0';
+
+		if ( ! empty( $current_oe_version ) && ! empty( $required_oe_version ) && version_compare( $current_oe_version, $required_oe_version , '<' ) ) :
+		?>
+		<div class="notice notice-warning is-dismissible">
+			<p><?php esc_html_e('We\'ve made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please update your OceanWP Theme to the latest version.', 'oceanwp'); ?></p>
+			<a href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>"><?php esc_html_e('Update and get the new Theme Panel', 'oceanwp'); ?></a>
+			<br><br>
+		</div>
+		<?php
+		endif;
+	}
+}
+add_action('admin_notices', 'ocean_oe_is_outdated_admin_notice');
