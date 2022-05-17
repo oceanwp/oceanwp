@@ -24,21 +24,22 @@ $please_install_oe_text_link = oceanwp_theme_panel()->please_install_oe_text_lin
 		<?php endif; ?>
 	</div>
 
-	<!-- Customizer Reset -->
+	<!-- Customizer Controls -->
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
-			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/customizer-reset.png' ); ?>" />
-			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Customizer Reset', 'oceanwp' ); ?></h2>
+			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/customizer-controls.png' ); ?>" />
+			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Customizer Controls', 'oceanwp' ); ?></h2>
 		</div>
 
 		<?php if ( $extra_mode_actived ) : ?>
 
-			<?php oceanwp_theme_panel()->print_pane( 'customizer-reset' ); ?>
+			<?php oceanwp_theme_panel()->print_pane( 'customizer-controls' ); ?>
 
 		<?php else : ?>
-			<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Delete your settings and reset all Customizer options to default theme values.', 'oceanwp' ); ?>
-			<?php echo $please_install_oe_text_link; ?>
-			</h3>
+			<h3 class="oceanwp-tp-block-description">
+				<?php esc_html_e( 'Disable Customizer OceanWP Control panels for faster Customizer load or faster management by displaying fewer options.', 'oceanwp' ); ?>
+				<?php echo $please_install_oe_text_link; ?>
+		</h3>
 		<?php endif; ?>
 	</div>
 
@@ -61,25 +62,22 @@ $please_install_oe_text_link = oceanwp_theme_panel()->please_install_oe_text_lin
 		<?php endif; ?>
 	</div>
 
-	<!-- Customizer Controls -->
+	<!-- Customizer Reset -->
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
-			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/customizer-controls.png' ); ?>" />
-			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Customizer Controls', 'oceanwp' ); ?></h2>
+			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/customizer-reset.png' ); ?>" />
+			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Customizer Reset', 'oceanwp' ); ?></h2>
 		</div>
 
 		<?php if ( $extra_mode_actived ) : ?>
 
-			<?php oceanwp_theme_panel()->print_pane( 'customizer-controls' ); ?>
+			<?php oceanwp_theme_panel()->print_pane( 'customizer-reset' ); ?>
 
 		<?php else : ?>
-			<h3 class="oceanwp-tp-block-description">
-				<?php esc_html_e( 'Disable Customizer OceanWP Control panels for faster Customizer load or faster management by displaying fewer options.', 'oceanwp' ); ?>
-				<?php echo $please_install_oe_text_link; ?>
-		</h3>
+			<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Delete your settings and reset all Customizer options to default theme values.', 'oceanwp' ); ?>
+			<?php echo $please_install_oe_text_link; ?>
+			</h3>
 		<?php endif; ?>
-
-
 	</div>
 
 </div>

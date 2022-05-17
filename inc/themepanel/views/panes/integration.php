@@ -10,6 +10,25 @@ $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->in
 
 	<?php include_once oceanwp_theme_panel()->panel_top_header(); ?>
 
+	<!-- SVG Support -->
+	<div class="oceanwp-tp-wide-block">
+		<div class="oceanwp-tp-block-outer">
+			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/svg-support.png' ); ?>" />
+			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'SVG Support', 'oceanwp' ); ?></h2>
+		</div>
+
+		<?php if ( $extra_mode_actived ) : ?>
+
+			<?php oceanwp_theme_panel()->print_pane( 'integration-svg' ); ?>
+
+		<?php else : ?>
+			<h3 class="oceanwp-tp-block-description">
+				<?php esc_html_e( 'Enable SVG file support for your WordPress Media Library. This option allows you to safely upload any SVG file to the Media Library as all files are sanitized upon upload.', 'oceanwp' ); ?>
+				<?php echo $please_install_oe_text_link; ?>
+			</h3>
+		<?php endif; ?>
+	</div>
+
 	<!-- Google Maps -->
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
@@ -29,7 +48,7 @@ $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->in
 		<?php endif; ?>
 
 	</div>
-	
+
 
 	<!-- Google reCAPTCHA -->
 	<div class="oceanwp-tp-wide-block">
@@ -46,25 +65,6 @@ $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->in
 			<h3 class="oceanwp-tp-block-description">
 				<?php esc_html_e( 'Adds Google reCAPTCHA.', 'oceanwp' ); ?>
 				<?php echo $upgrade_core_extensions_bundle_text_link; ?>
-			</h3>
-		<?php endif; ?>
-	</div>
-
-	<!-- SVG Support -->
-	<div class="oceanwp-tp-wide-block">
-		<div class="oceanwp-tp-block-outer">
-			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/svg-support.png' ); ?>" />
-			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'SVG Support', 'oceanwp' ); ?></h2>
-		</div>
-		
-		<?php if ( $extra_mode_actived ) : ?>
-
-			<?php oceanwp_theme_panel()->print_pane( 'integration-svg' ); ?>
-
-		<?php else : ?>
-			<h3 class="oceanwp-tp-block-description">
-				<?php esc_html_e( 'Enable SVG file support for your WordPress Media Library. This option allows you to safely upload any SVG file to the Media Library as all files are sanitized upon upload.', 'oceanwp' ); ?>
-				<?php echo $please_install_oe_text_link; ?>
 			</h3>
 		<?php endif; ?>
 	</div>
