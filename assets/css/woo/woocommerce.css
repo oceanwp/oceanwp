@@ -41,8 +41,6 @@
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f110";
   position: inherit;
   top: auto;
@@ -763,6 +761,7 @@
 }
 
 .woocommerce ul.products .product {
+  position: relative;
   overflow: hidden;
   padding-bottom: 20px;
 }
@@ -1468,8 +1467,6 @@
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f110";
   position: inherit;
   top: auto;
@@ -1505,8 +1502,6 @@
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f110";
   position: inherit;
   top: auto;
@@ -1953,8 +1948,6 @@
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f110";
   position: inherit;
   top: auto;
@@ -2739,8 +2732,6 @@
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin-right: 10px;
   content: "\f00c";
   color: #ddd;
@@ -2784,8 +2775,6 @@
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin-right: 10px;
   content: "\f00d";
   color: #ffc4b7;
@@ -2829,8 +2818,6 @@
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin-right: 10px;
   content: "\f129";
   color: #b1befd;
@@ -2861,8 +2848,6 @@ ul.woocommerce-error li:before {
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin-right: 10px;
   content: "\f00d";
   color: #ffc4b7;
@@ -2878,8 +2863,6 @@ ul.woocommerce-message li:before {
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin-right: 10px;
   content: "\f00c";
   color: #ddd;
@@ -2895,8 +2878,6 @@ ul.woocommerce-info li:before {
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin-right: 10px;
   content: "\f129";
   color: #b1befd;
@@ -3572,8 +3553,6 @@ p.stars span a {
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f104";
   margin-right: 8px;
 }
@@ -3619,8 +3598,6 @@ del .amount {
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-size: 15px;
   line-height: 40px;
   text-align: center;
@@ -3640,8 +3617,6 @@ del .amount {
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-size: 15px;
   line-height: 40px;
   text-align: center;
@@ -3815,8 +3790,6 @@ form.checkout > .blockUI {
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f110";
   -webkit-animation: fa-spin 0.75s infinite linear;
   -moz-animation: fa-spin 0.75s infinite linear;
@@ -4006,8 +3979,6 @@ form.checkout > .blockUI {
   letter-spacing: normal;
   font-weight: 600;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .distraction-free .medium-header .col-1,
@@ -4188,8 +4159,6 @@ form.checkout > .blockUI {
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin-right: 10px;
   content: "\f05a";
 }
@@ -4208,8 +4177,6 @@ form.checkout > .blockUI {
     font-style: normal;
     letter-spacing: normal;
     text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     content: "\f057";
     margin-right: 10px;
   }
@@ -4581,8 +4548,6 @@ ul#shipping_method li input[type="radio"] {
   font-size: 10px;
   line-height: 10px;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .woocommerce .widget_layered_nav li.chosen a:hover:before {
@@ -4851,7 +4816,7 @@ Woo Off Canvas Filter
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999;
+  z-index: 9999;
 }
 
 #oceanwp-off-canvas-sidebar-wrap .oceanwp-off-canvas-overlay {
@@ -4868,7 +4833,7 @@ Woo Off Canvas Filter
   height: 100%;
   padding: 35px;
   overflow: auto;
-  z-index: 9999;
+  z-index: 99999;
   -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.4);

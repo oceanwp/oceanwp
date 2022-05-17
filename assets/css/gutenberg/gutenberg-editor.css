@@ -7,8 +7,6 @@
   font-size: 14px;
   line-height: 1.8;
   color: #4a4a4a;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }

@@ -221,8 +221,43 @@ Woo Hover Style
   color: #ffffff;
 }
 
-.woocommerce ul.products li.product:not(.product-category) .product-inner .added_to_cart {
+.woocommerce ul.products li.product:not(.product-category) .image-wrap .button.added {
   display: none;
+}
+
+.woocommerce ul.products li.product:not(.product-category) .image-wrap .added_to_cart {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  background-color: #13aff0;
+  color: #ffffff;
+  border: 0;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 99;
+  -webkit-transform: translateY(40px);
+  -moz-transform: translateY(40px);
+  -ms-transform: translateY(40px);
+  -o-transform: translateY(40px);
+  transform: translateY(40px);
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -ms-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.woocommerce ul.products li.product:not(.product-category) .product-inner:hover .added_to_cart {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .woocommerce ul.products li.product:not(.product-category) .product-inner:hover .button {

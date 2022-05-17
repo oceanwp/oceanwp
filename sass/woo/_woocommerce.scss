@@ -616,6 +616,7 @@
       margin: 0 -10px;
     }
     .product {
+      position: relative;
       overflow: hidden;
       padding-bottom: 20px;
     }
@@ -3333,8 +3334,6 @@ form.checkout {
   letter-spacing: normal;
   font-weight: 600;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .distraction-free .medium-header .col-1,

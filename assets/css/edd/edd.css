@@ -80,8 +80,6 @@
   font-style: normal;
   letter-spacing: normal;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .edd_purchase_submit_wrapper .edd-loading {
@@ -308,8 +306,6 @@
   display: inline-block;
   font-family: normal normal normal 14px/1 'Font Awesome 5 free';
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   position: absolute;
   top: 0;
   left: 0;

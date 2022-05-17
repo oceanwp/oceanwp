@@ -1,11 +1,17 @@
 # OceanWP Changelog
 
-### _2022.05.13._ - 3.3.0
+### _2022.05.16._ - 3.3.0
 - **Added**: Theme Panel
 - **Updated**: Change OceanWP About URI
 - **Fixed**: Custom Template is not rendering perfectly for custom locations.
 - **Fixed**: Previous comment option not working.
-- **Fixed**: Extra Margin Bottom for Top Bar Wrapper
+- **Fixed**: Extra Margin Bottom for Top Bar Wrapper.
+- **Fixed**: Minimal Header padding affecting all header styles (site header inner padding).
+- **Fixed**: WooCommerce: Add to Wishlist button is displaying at wrong place.
+- **Fixed**: WooCommerce: Hover style: "Add to cart" button not changing to "view cart" after adding product.
+- **Fixed**: WooCommerce: Off-Canvas Filter is displaying beneath Transparent Header.
+- **Removed**: WooCommerce: Remove 12/24/VIEW ALL on product search results pages
+- **Removed**: Remove non-standard outdated CSS #349
 
 ### _2022.05.02._ - 3.2.2
 - **Added**: Accessibility: Buttons: focus option.

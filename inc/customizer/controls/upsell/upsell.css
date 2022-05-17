@@ -38,8 +38,6 @@
     font: 400 20px/1 dashicons;
     speak: none;
     display: block;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     text-decoration: none !important;
 }
 
