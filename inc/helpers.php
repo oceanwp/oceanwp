@@ -4865,7 +4865,7 @@ function oceanwp_register_theme_page() {
 			'manage_options',
 			'oceanwp',
 			'ocean_admin_page_contents',
-			get_template_directory_uri() . '/inc/themepanel/assets/images/o.svg',
+			get_template_directory_uri() . '/inc/themepanel/assets/images/themepanel-icon.svg',
 			4
 		);
 		add_submenu_page(
