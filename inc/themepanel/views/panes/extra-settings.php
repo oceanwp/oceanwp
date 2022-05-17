@@ -9,14 +9,14 @@ $extra_mode_actived          = oceanwp_theme_panel()->extra_installed();
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/extra-settings.png' ); ?>" />
-			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Extra Settings', 'oceanwp' ); ?></h2>
+			<h2 class="oceanwp-tp-block-title main-heading"><?php esc_html_e( 'Extra Settings', 'oceanwp' ); ?></h2>
 		</div>
 		<?php if ( $extra_mode_actived ) : ?>
 			<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Enable or disable some of the features included in the Ocean Extra plugin.', 'oceanwp' ); ?></h3>
 		<?php else : ?>
 			<h3 class="oceanwp-tp-block-description">
 				<?php esc_html_e( 'Enable or disable some of the features included in the Ocean Extra plugin.', 'oceanwp' ); ?>
-				<?php echo 
+				<?php echo
 				sprintf(
 					esc_html__( '%1$sInstall free Ocean Extra recommended plugin%2$s to unlock these features below.', 'oceanwp' ),
 					'<a href="https://youtu.be/kqHNgUPWMTY" target="_blank">',

@@ -297,6 +297,9 @@ h1#oceanwp-changelog,
   font-size: 22px;
   font-weight: 600;
 }
+#oceanwp-tp-extra-settings .oceanwp-tp-wide-block .oceanwp-tp-block-title:not(.main-heading) {
+  font-size: 18px;
+}
 
 .oceanwp-tp-small-block {
   background-color: #f4f4f4;
