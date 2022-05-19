@@ -243,7 +243,7 @@ a.oceanwp-tp-sidebar-link:focus {
 }
 
 .oceanwp-tp-pane-box .oceanwp-tp-wide-block:not(:first-child) {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .oceanwp-tp-wide-block .oceanwp-tp-block-outer {
@@ -840,7 +840,7 @@ p.submit {
 
 /** HOME **/
 .quick-settings-block {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .quick-settings .column-wrap {
@@ -886,7 +886,7 @@ p.submit {
   background-color: #f4f4f4;
   box-shadow: 2px 4px 6px -4px rgb(0 0 0 / 50%);
   transition: background .3s, border .3s, border-radius .3s, box-shadow .3s;
-  margin: 30px;
+  margin: 0 30px 30px 30px;
   padding: 50px;
   border-radius: 15px 15px 15px 15px;
 }

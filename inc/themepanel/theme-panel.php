@@ -145,11 +145,11 @@ final class OceanWP_Theme_Panel {
 		// Google Fonts.
 		wp_enqueue_style( 'oceanwp-tp-googlefonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap', array(), null );
 		// Enqueue styles.
-		wp_enqueue_style( 'oceanwp-theme-panel', OCEANWP_THEME_PANEL_URI . '/assets/css/theme-panel.min.css', array(), OCEANWP_THEME_VERSION );
+		wp_enqueue_style( 'oceanwp-new-theme-panel', OCEANWP_THEME_PANEL_URI . '/assets/css/theme-panel.min.css', array(), OCEANWP_THEME_VERSION );
 
 		// Enqueue scripts.
 		wp_enqueue_script( 'oceanwp-changelog-markdown', OCEANWP_THEME_PANEL_URI . '/assets/js/marked.min.js', array(), OCEANWP_THEME_VERSION, true );
-		wp_enqueue_script( 'oceanwp-theme-panel', OCEANWP_THEME_PANEL_URI . '/assets/js/theme-panel.min.js', array( 'jquery', 'wp-util', 'updates' ), OCEANWP_THEME_VERSION, true );
+		wp_enqueue_script( 'oceanwp-new-theme-panel', OCEANWP_THEME_PANEL_URI . '/assets/js/theme-panel.min.js', array( 'jquery', 'wp-util', 'updates' ), OCEANWP_THEME_VERSION, true );
 
 		// Localize scripts.
 		$sections = $this->get_sections();
@@ -161,9 +161,9 @@ final class OceanWP_Theme_Panel {
 			$initial_section = $initial_section['href'];
 		}
 
-		wp_localize_script( 'oceanwp-theme-panel', 'oceanwp_cp_textdomain', oceanwp_adminpanel_textdomain() );
+		wp_localize_script( 'oceanwp-new-theme-panel', 'oceanwp_cp_textdomain', oceanwp_adminpanel_textdomain() );
 		wp_localize_script(
-			'oceanwp-theme-panel',
+			'oceanwp-new-theme-panel',
 			'oceanwpThemePanel',
 			array(
 				'initialSection' => $initial_section,
@@ -190,7 +190,7 @@ final class OceanWP_Theme_Panel {
 		wp_send_json_success( $pane_html );
 		wp_die();
 	}
-	
+
 	/**
 	 * Load Sidebar Warnings.
 	 *
@@ -218,7 +218,7 @@ final class OceanWP_Theme_Panel {
 			wp_send_json_success( $warnings );
 		}
 	}
-	
+
 	/**
 	 * Load Awaiting Modifications.
 	 *
@@ -241,7 +241,7 @@ final class OceanWP_Theme_Panel {
 			] );
 		}
 	}
-	
+
 	/**
 	 * Maybe has plugin updates warning.
 	 *
@@ -470,7 +470,7 @@ final class OceanWP_Theme_Panel {
 
 		return $sections;
 	}
-	
+
 	/**
 	 * Theme Panel Sections
 	 *
@@ -608,7 +608,7 @@ final class OceanWP_Theme_Panel {
 		$retval = class_exists( 'Ocean_White_Label' );
 		return $retval;
 	}
-	
+
 	/**
 	 * Check AJAX Access.
 	 *
@@ -620,10 +620,10 @@ final class OceanWP_Theme_Panel {
 	public static function check_ajax_access( $nonce_value, $nonce_action, $response_type = 'json' ) {
 		$response_message = '';
 		if ( empty( $nonce_value ) || ! wp_verify_nonce( $nonce_value, $nonce_action ) ) {
-			$response_message = esc_html__( 'Something went wrong', 'ocean-extra' );
+			$response_message = esc_html__( 'Something went wrong', 'oceanwp' );
 		}
 		if ( ! current_user_can( 'administrator' ) ) {
-			$response_message = esc_html__( 'You do not have sufficient privileges for this action.', 'ocean-extra' );
+			$response_message = esc_html__( 'You do not have sufficient privileges for this action.', 'oceanwp' );
 		}
 
 		if ( ! empty( $response_message ) ) {
@@ -761,7 +761,7 @@ final class OceanWP_Theme_Panel {
 		self::check_ajax_access( $_POST['nonce'], 'oceanwp_theme_panel' );
 
 		if ( file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) ) {
-			wp_send_json_error( array( 'message' => esc_html__( 'Child theme already installed', 'ocean-extra' ) ) );
+			wp_send_json_error( array( 'message' => esc_html__( 'Child theme already installed', 'oceanwp' ) ) );
 		}
 
 		try {
