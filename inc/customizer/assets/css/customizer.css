@@ -220,7 +220,6 @@ input[type="number"]:focus {
 	font-style: normal;
 	font-variant: normal;
 	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
 	font-family: "dashicons";
 	font-weight: normal;
 	font-size: 24px;
@@ -811,8 +810,6 @@ input[type="number"]:focus {
 	font: normal 20px/1 dashicons;
 	speak: none;
 	display: block;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	text-decoration: none !important;
 }
 

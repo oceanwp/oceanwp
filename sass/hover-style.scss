@@ -245,10 +245,33 @@ Woo Hover Style
 			    background-color: #0b7cac;
 			    color: #ffffff;
 		    }
+
+			&.added {
+				display: none;
+			}
 		}
 
-		.product-inner .added_to_cart {
-		    display: none;
+		.image-wrap .added_to_cart {
+		    display: block;
+		    position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 40px;
+		    line-height: 40px;
+		    padding: 0;
+		    background-color: #13aff0;
+		    color: #ffffff;
+		    border: 0;
+		    text-align: center;
+		    text-transform: uppercase;
+		    z-index: 99;
+		    @include transform( translateY(40px) );
+		    @include transition( all .6s );
+		}
+
+		.product-inner:hover .added_to_cart {
+		    @include transform( translateY(0) );
 		}
 
 		.product-inner:hover .button {

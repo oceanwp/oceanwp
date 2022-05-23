@@ -4328,7 +4328,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				$css .= '#site-header{border-color:'. $header_border_bottom .';}';
 			}
 
-			if ( 'medium' != $header_style || 'vertical' != $header_style ) {
+			if ( false === ( 'medium' === $header_style || 'vertical' === $header_style ) ) {
 
 				// Header padding
 				if ( isset( $header_top_padding ) && '0' != $header_top_padding && '' != $header_top_padding
