@@ -782,7 +782,9 @@ p.submit {
 #ocean-customizer-control .column-wrap:not(#ocean-customizer-reset-bulk) {
   width: 100%
 }
-
+#ocean-elementor-widgets-items #ocean-elementor-widgets-query-post {
+  display: none;
+}
 #ocean-customizer-items,
 #ocean-gutenberg-blocks-items,
 #ocean-elementor-widgets-items,
