@@ -68,10 +68,10 @@ function get_options() {
 <div class="oceanwp-tp-pane-box" id="oceanwp-tp-home">
 
 	<?php
-	$current_oe_version = oceanwp_theme_panel()->get_current_plugin_version( 'ocean-extra/ocean-extra.php' );
+	$current_oe_version  = oceanwp_theme_panel()->get_current_plugin_version( 'ocean-extra/ocean-extra.php' );
 	$required_oe_version = '2.0.0';
 	if ( ! empty( $current_oe_version ) && ! empty( $required_oe_version ) && version_compare( $current_oe_version, $required_oe_version , '<' ) ) : ?>
-		<h3 class="oceanwp-tp-block-description alert"><?php esc_html_e( 'We\'ve made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please update your OceanWP Theme to the latest version.', 'oceanwp' ); ?></h3>
+		<h3 class="oceanwp-tp-block-description alert"><?php esc_html_e( 'We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date.', 'oceanwp' ); ?></h3>
 	<?php endif; ?>
 
 	<?php include_once oceanwp_theme_panel()->panel_top_header(); ?>
