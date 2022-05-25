@@ -464,7 +464,7 @@ final class OceanWP_Theme_Panel {
 		uasort(
 			$sections,
 			function( $first, $second ) {
-				return $first['order'] > $second['order'];
+				return $first['order'] <=> $second['order'];
 			}
 		);
 
