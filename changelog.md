@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2022.05.23._ - 3.3.0
+### _2022.05.25._ - 3.3.0
 - **New**: OceanWP Theme Panel
 - **Added**: WooCommerce: Menu Cart: checkout button border color settings in the Customizer.
 - **Updated**: OceanWP About URI.
