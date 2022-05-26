@@ -39,10 +39,18 @@ else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 
 }
 
+// If Gutenberg template
+else if ( ocean_is_block_template( $get_id ) ) {
+
+	// Display block template content.
+	echo do_blocks( $content );
+
+}
+
 // Else
 else {
 
-    // Display template content
-    echo do_blocks( $content );
+	// Display template content.
+	echo do_shortcode( $content );
 
 }

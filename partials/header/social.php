@@ -93,13 +93,21 @@ if ( $link_target == 'blank' ) {
 
 		    }
 
-		    // Else
-		    else {
+		    // If Gutenberg template
+			else if ( ocean_is_block_template( $get_id ) ) {
 
-		        // Display template content
-		        echo do_blocks( $get_content );
+				// Display block template content.
+				echo do_blocks( $get_content );
 
-		    }
+			}
+
+			// Else
+			else {
+
+				// Display template content.
+				echo do_shortcode( $get_content );
+
+			}
 
 		// Display social
 		} else { ?>

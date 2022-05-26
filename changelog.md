@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2022.05.26._ - 3.3.1
+- **Fixed**: My Library: custom template render issues with custom locations with other page builders.
+
 ### _2022.05.25._ - 3.3.0
 - **New**: OceanWP Theme Panel
 - **Added**: WooCommerce: Menu Cart: checkout button border color settings in the Customizer.

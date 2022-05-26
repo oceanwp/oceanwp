@@ -78,10 +78,15 @@ $classes = implode( ' ', $classes ); ?>
 			// If Beaver Builder.
 			echo do_shortcode( '[fl_builder_insert_layout id="' . $template . '"]' );
 
+		} elseif ( ocean_is_block_template( $get_id ) ) {
+
+			// Display block template content.
+			echo do_blocks( $get_content );
+
 		} else {
 
 			// Display template content.
-			echo do_blocks( $get_content );
+			echo do_shortcode( $get_content );
 
 		}
 	} else {
@@ -117,10 +122,15 @@ $classes = implode( ' ', $classes ); ?>
 				// If Beaver Builder.
 				echo do_shortcode( '[fl_builder_insert_layout id="' . $bottom_template . '"]' );
 
+			} elseif ( ocean_is_block_template( $get_id ) ) {
+
+				// Display block template content.
+				echo do_blocks( $get_bottom_content );
+
 			} else {
 
-				// Display bottom template content.
-				echo do_blocks( $get_bottom_content );
+				// Display template content.
+				echo do_shortcode( $get_bottom_content );
 
 			}
 		}

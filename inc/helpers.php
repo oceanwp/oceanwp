@@ -4936,3 +4936,32 @@ function ocean_oe_is_outdated_admin_notice() {
 	}
 }
 add_action('admin_notices', 'ocean_oe_is_outdated_admin_notice');
+
+/**
+ * Check if a template is Gutenberg.
+ *
+ * @since 3.3.1
+ * @var int $post_id  Post ID.
+ */
+function ocean_is_block_template( $post_id ) {
+
+	if ( ! $post_id ) {
+		return;
+	}
+
+	$template = get_post( $post_id );
+	$blocks   = array();
+
+	if ( $template && ! is_wp_error( $template ) ) {
+		$blocks = parse_blocks( $template->post_content );
+	}
+
+	// check for Gutenberg page.
+	$is_gutenberg = ( ! empty( $blocks ) && '' !== $blocks[0]['blockName'] );
+
+    if ( $is_gutenberg ) {
+        return true;
+    } else {
+        return false;
+    }
+}

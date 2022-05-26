@@ -82,10 +82,15 @@ $inner_classes = implode( ' ', $inner_classes );
 				// If Beaver Builder.
 				echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
+			} elseif ( ocean_is_block_template( $get_id ) ) {
+
+				// Display block template content.
+				echo do_blocks( $get_content );
+
 			} else {
 
 				// Display template content.
-				echo do_blocks( $get_content );
+				echo do_shortcode( $get_content );
 
 			}
 
