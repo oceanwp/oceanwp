@@ -1,5 +1,19 @@
 # OceanWP Changelog
 
+### _2022.05.25._ - 3.3.0
+- **New**: OceanWP Theme Panel
+- **Added**: WooCommerce: Menu Cart: checkout button border color settings in the Customizer.
+- **Updated**: OceanWP About URI.
+- **Fixed**: Top Bar: extra bottom margin on the wrapper.
+- **Fixed**: Header: Minimal Header style padding affecting other header styles (inner padding).
+- **Fixed**: Blog: Single Post: Comments: previous comment option not working.
+- **Fixed**: My Library: custom template render issues with custom locations.
+- **Fixed**: WooCommerce: Product Archive: Add to Wishlist button display issue.
+- **Fixed**: WooCommerce: Product Archive: Hover Style: Add to Cart button text not changing after adding the product to the cart.
+- **Fixed**: WooCommerce: Off-Canvas Filter: display issues with Transparent Header style.
+- **Removed**: WooCommerce: Search Results Page: product number display option.
+- **Removed**: Outdated non-standard CSS #349
+
 ### _2022.05.02._ - 3.2.2
 - **Added**: Accessibility: Buttons: focus option.
 - **Added**: Accessibility: Header: Mega Menu.

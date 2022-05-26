@@ -274,6 +274,13 @@ final class OCEANWP_Theme_Class {
 			// Recommend plugins.
 			require_once OCEANWP_INC_DIR . 'plugins/class-tgm-plugin-activation.php';
 			require_once OCEANWP_INC_DIR . 'plugins/tgm-plugin-activation.php';
+			require_once OCEANWP_INC_DIR . 'activation-notice/class-oceanwp-plugin-manager.php';
+			require_once OCEANWP_INC_DIR . 'activation-notice/template.php';
+
+			// Ajax Actions
+			if (defined('DOING_AJAX') && DOING_AJAX) {
+				require OCEANWP_INC_DIR . 'activation-notice/api.php';
+			}
 
 			// Front-end classes.
 		} else {
@@ -1172,7 +1179,7 @@ if ( ! function_exists( 'owp_fs' ) ) {
 						'has_addons'                     => true,
 						'has_paid_plans'                 => true,
 						'menu'                           => array(
-							'slug'    => 'oceanwp-panel',
+'slug'    => 'oceanwp',
 							'account' => true,
 							'contact' => false,
 							'support' => false,

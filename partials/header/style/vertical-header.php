@@ -81,7 +81,7 @@ $classes = implode( ' ', $classes ); ?>
 		} else {
 
 			// Display template content.
-			echo do_shortcode( $get_content );
+			echo do_blocks( $get_content );
 
 		}
 	} else {
@@ -120,7 +120,7 @@ $classes = implode( ' ', $classes ); ?>
 			} else {
 
 				// Display bottom template content.
-				echo do_shortcode( $get_bottom_content );
+				echo do_blocks( $get_bottom_content );
 
 			}
 		}

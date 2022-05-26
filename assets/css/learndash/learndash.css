@@ -89,8 +89,6 @@ a#quiz_continue_link:focus {
   font: normal normal 900 14px/1 'Font Awesome 5 free';
   font-size: 20px;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f058";
   text-indent: 0;
   color: #068806;
@@ -124,8 +122,6 @@ a#quiz_continue_link:focus {
   font: normal normal 900 14px/1 'Font Awesome 5 free';
   font-size: 20px;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f058";
   margin-right: 10px;
 }
@@ -178,8 +174,6 @@ a#quiz_continue_link:focus {
   font: normal normal 900 14px/1 'Font Awesome 5 free';
   font-size: 20px;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   content: "\f152";
 }
 

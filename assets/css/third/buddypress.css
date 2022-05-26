@@ -116,8 +116,6 @@ a.bp-title-button:hover {
     font-style: normal;
     font-weight: 600;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     margin-right: 4px;
     font-size: 13px
 }
@@ -325,8 +323,6 @@ a.bp-title-button:hover {
     font-style: normal;
     font-weight: 600;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     margin-right: 5px;
     font-size: 14px
 }
@@ -366,8 +362,6 @@ a.bp-title-button:hover {
     font-style: normal;
     font-weight: 600;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     margin-right: 3px;
     font-size: 32px;
     color: #eee;
@@ -464,8 +458,6 @@ a.bp-title-button:hover {
     font-style: normal;
     font-weight: 600;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     margin-right: 5px;
     font-size: 14px
 }
@@ -604,8 +596,6 @@ a.bp-title-button:hover {
     font-style: normal;
     font-weight: 600;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     margin-right: 4px;
     font-size: 14px
 }

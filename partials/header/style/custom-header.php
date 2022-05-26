@@ -49,7 +49,7 @@ $classes = implode( ' ', $classes ); ?>
 	} else {
 
 		// Display template content.
-		echo do_shortcode( $get_content );
+		echo do_blocks( $get_content );
 
 	}
 

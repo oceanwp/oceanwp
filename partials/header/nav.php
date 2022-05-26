@@ -64,7 +64,7 @@ if ( ! empty( $template ) && ! defined( 'OCEANWP_NAV_SHORTCODE_DONE' ) ) {
 		} else {
 
 			// Display template content.
-			echo do_shortcode( $get_content );
+			echo do_blocks( $get_content );
 
 		}
 		?>

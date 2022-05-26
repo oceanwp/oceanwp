@@ -111,8 +111,6 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 				top: .3em;
 				right: 20px;
 				cursor: pointer;
-				webkit-font-smoothing: antialiased;
-				moz-osx-font-smoothing: grayscale;
 				padding: 0 1em;
 				font-weight: normal;
 				line-height: inherit;

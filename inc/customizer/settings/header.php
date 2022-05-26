@@ -1920,11 +1920,14 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			/**
 			 * Section where header images options are automatically added
 			 */
-			$wp_customize->add_section( 'header_image' , array(
-				'title' 			=> esc_html__( 'Header Media', 'oceanwp' ),
-				'priority' 			=> 10,
-				'panel' 			=> $panel,
-			) );
+			$wp_customize->add_section(
+				'header_image',
+				array(
+					'title'    => esc_html__( 'Header Media', 'oceanwp' ),
+					'priority' => 10,
+					'panel'    => $panel,
+				)
+			);
 
 			/**
 			 * Overlay Color
@@ -4325,7 +4328,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				$css .= '#site-header{border-color:'. $header_border_bottom .';}';
 			}
 
-			if ( 'medium' != $header_style || 'vertical' != $header_style ) {
+			if ( false === ( 'medium' === $header_style || 'vertical' === $header_style ) ) {
 
 				// Header padding
 				if ( isset( $header_top_padding ) && '0' != $header_top_padding && '' != $header_top_padding

@@ -240,8 +240,6 @@ body {
   font-size: 14px;
   line-height: 1.8;
   color: #4a4a4a;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -2132,8 +2130,6 @@ input[type=checkbox]:checked:before {
   line-height: 14px;
   font-family: 'Font Awesome 5 Free';
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 input[type=checkbox]:checked:before {
@@ -2390,7 +2386,6 @@ a.pure-button-selected {
   background-color: #fff;
   font-size: 12px;
   border-bottom: 1px solid #f1f1f1;
-  margin-bottom: 1px;
   z-index: 101;
 }
 

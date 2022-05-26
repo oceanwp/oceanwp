@@ -174,8 +174,6 @@
 		font: normal normal 900 14px/1 'Font Awesome 5 free';
 		font-size: inherit;
 		text-rendering: auto;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 	}
 
 	.llms-prev-lesson .llms-pre-text::before{
@@ -201,8 +199,6 @@
 	font: normal normal 900 14px/1 'Font Awesome 5 free';
 	font-size: inherit;
 	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 #llms_mark_complete::before{
