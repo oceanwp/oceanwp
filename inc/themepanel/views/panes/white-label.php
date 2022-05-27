@@ -3,7 +3,6 @@ $need_to_upgrade = oceanwp_theme_panel()->need_to_upgrade();
 $extra_mode_actived = oceanwp_theme_panel()->extra_installed();
 $ocean_white_label_activated = oceanwp_theme_panel()->ocean_white_label_activated();
 $banner_upgrade_link = oceanwp_theme_panel()->banner_upgrade_link();
-$upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->upgrade_core_extensions_bundle_text_link();
 $white_label_need_hide = get_option( 'oceanwp_hide_box', false );
 ?>
 
@@ -33,7 +32,7 @@ if( $white_label_need_hide ) {
 		</div>
 
 		<?php oceanwp_theme_panel()->panel_plugin_upgrade_message( 'ocean-white-label' ); ?>
-		
+
 		<?php if ( $extra_mode_actived && $ocean_white_label_activated ) : ?>
 			<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'No coding skills, no problem. Claim OceanWP in the backend as your own. Give it a new name, a new image, sign your name, make it yours. Your great website-building skills need a cherry on top.', 'oceanwp' ); ?></h3>
 
@@ -42,7 +41,11 @@ if( $white_label_need_hide ) {
 		<?php else : ?>
 			<h3 class="oceanwp-tp-block-description">
 				<?php esc_html_e( 'No coding skills, no problem. Claim OceanWP in the backend as your own. Give it a new name, a new image, sign your name, make it yours. Your great website-building skills need a cherry on top.', 'oceanwp' ); ?>
-				<?php echo $upgrade_core_extensions_bundle_text_link; ?>
+				<?php echo sprintf(
+						esc_html__( '%1$sInstall Ocean White Label%2$s to use these options.', 'oceanwp' ),
+						'<a href="https://users.freemius.com" target="_blank">',
+						'</a>'
+					); ?>
 				</h3>
 		<?php endif; ?>
 

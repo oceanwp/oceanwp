@@ -3,7 +3,6 @@ $need_to_upgrade                           = oceanwp_theme_panel()->need_to_upgr
 $extra_mode_actived                        = oceanwp_theme_panel()->extra_installed();
 $ocean_elementor_widgets_actived           = oceanwp_theme_panel()->ocean_elementor_widgets_activated();
 $banner_upgrade_link                       = oceanwp_theme_panel()->banner_upgrade_link();
-$upgrade_core_extensions_bundle_text_link  = oceanwp_theme_panel()->upgrade_core_extensions_bundle_text_link();
 ?>
 
 <div class="oceanwp-tp-pane-box" id="oceanwp-tp-elementor-widgets">
@@ -24,7 +23,7 @@ $upgrade_core_extensions_bundle_text_link  = oceanwp_theme_panel()->upgrade_core
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/elementor-widgets.png' ); ?>" />
 			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Elementor Widgets', 'oceanwp' ); ?></h2>
 		</div>
-		
+
 		<?php oceanwp_theme_panel()->panel_plugin_upgrade_message( 'ocean-elementor-widgets' ); ?>
 
 		<?php if ( $extra_mode_actived && $ocean_elementor_widgets_actived ) : ?>
@@ -35,7 +34,11 @@ $upgrade_core_extensions_bundle_text_link  = oceanwp_theme_panel()->upgrade_core
 		<?php else : ?>
 			<h3 class="oceanwp-tp-block-description">
 				<?php esc_html_e( 'Build astonishing pages with the help of Elementor Widgets. Functions perfectly with both free and pro Elementor. Counter, skill bar, Instagram feed, navigation, posts grid and slider, testimonials and more.', 'oceanwp' ); ?>
-				<?php echo $upgrade_core_extensions_bundle_text_link; ?>
+				<?php echo sprintf(
+					esc_html__( '%1$sInstall Ocean Elementor Widgets%2$s to use these options.', 'oceanwp' ),
+					'<a href="https://users.freemius.com" target="_blank">',
+					'</a>'
+				); ?>
 			</h3>
 		<?php endif; ?>
 
