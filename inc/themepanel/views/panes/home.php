@@ -12,7 +12,7 @@ if ( $extra_mode_actived && class_exists('Ocean_Extra_New_Theme_Panel' ) ) {
  * @return void
  */
 
-function get_options() {
+function owp_get_customizer_options() {
 
 	$options = array(
 		'custom_logo'            => array(
