@@ -4943,7 +4943,7 @@ add_action('admin_notices', 'ocean_oe_is_outdated_admin_notice');
  * @since 3.3.1
  * @var int $post_id  Post ID.
  */
-function ocean_is_block_template( $post_id ) {
+function ocean_do_template_content( $post_id ) {
 
 	if ( ! $post_id ) {
 		return;
@@ -4951,17 +4951,20 @@ function ocean_is_block_template( $post_id ) {
 
 	$template = get_post( $post_id );
 	$blocks   = array();
+	$html     = '';
 
 	if ( $template && ! is_wp_error( $template ) ) {
 		$blocks = parse_blocks( $template->post_content );
 	}
 
-	// check for Gutenberg page.
 	$is_gutenberg = ( ! empty( $blocks ) && '' !== $blocks[0]['blockName'] );
 
-    if ( $is_gutenberg ) {
-        return true;
-    } else {
-        return false;
-    }
+	if ( $is_gutenberg ) {
+		$template->post_content = apply_filters( 'the_content', do_blocks( $template->post_content ) );
+		$html .= do_blocks( $template->post_content );
+	} else {
+		$html .= do_shortcode( $template->post_content );
+	}
+
+	return $html;
 }

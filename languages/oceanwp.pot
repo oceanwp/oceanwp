@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.3.0\n"
+"Project-Id-Version: OceanWP 3.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-05-26 07:19:28+00:00\n"
+"POT-Creation-Date: 2022-05-27 10:29:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,23 +24,23 @@ msgstr ""
 "ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
 "X-Textdomain-Support: yes\n"
 
-#: 404.php:108 inc/customizer/settings/general.php:3733
+#: 404.php:103 inc/customizer/settings/general.php:3733
 msgid "404 Logo"
 msgstr ""
 
-#: 404.php:111
+#: 404.php:106
 msgid "This page could not be found!"
 msgstr ""
 
-#: 404.php:112
+#: 404.php:107
 msgid "We are sorry. But the page you are looking for is not available."
 msgstr ""
 
-#: 404.php:112
+#: 404.php:107
 msgid "Perhaps you can try a new search."
 msgstr ""
 
-#: 404.php:114
+#: 404.php:109
 msgid "Back To Homepage"
 msgstr ""
 
@@ -6000,7 +6000,7 @@ msgid "Free vs Pro"
 msgstr ""
 
 #: inc/themepanel/theme-panel.php:430
-#: inc/themepanel/views/panes/elementor-widgets.php:25
+#: inc/themepanel/views/panes/elementor-widgets.php:24
 #: inc/themepanel/views/panes/free-vs-pro.php:75
 #: inc/themepanel/views/panes/home.php:110
 msgid "Elementor Widgets"
@@ -6017,7 +6017,7 @@ msgstr ""
 
 #: inc/themepanel/theme-panel.php:445
 #: inc/themepanel/views/panes/free-vs-pro.php:85
-#: inc/themepanel/views/panes/white-label.php:32
+#: inc/themepanel/views/panes/white-label.php:31
 msgid "White Label"
 msgstr ""
 
@@ -6106,14 +6106,14 @@ msgid ""
 "values."
 msgstr ""
 
-#: inc/themepanel/views/panes/elementor-widgets.php:16
+#: inc/themepanel/views/panes/elementor-widgets.php:15
 msgid ""
 "Build astonishing content with Elementor Widgets and the Ocean Core "
 "Extensions Bundle."
 msgstr ""
 
-#: inc/themepanel/views/panes/elementor-widgets.php:17
-#: inc/themepanel/views/panes/gutengerg-blocks.php:16
+#: inc/themepanel/views/panes/elementor-widgets.php:16
+#: inc/themepanel/views/panes/gutengerg-blocks.php:15
 #: inc/themepanel/views/panes/help.php:109
 #: inc/themepanel/views/panes/home.php:82
 #: inc/themepanel/views/panes/install-demos.php:17
@@ -6122,23 +6122,27 @@ msgstr ""
 msgid "Take the lead. Experience website building with no limits"
 msgstr ""
 
-#: inc/themepanel/views/panes/elementor-widgets.php:18
-#: inc/themepanel/views/panes/gutengerg-blocks.php:17
+#: inc/themepanel/views/panes/elementor-widgets.php:17
+#: inc/themepanel/views/panes/gutengerg-blocks.php:16
 #: inc/themepanel/views/panes/help.php:110
 #: inc/themepanel/views/panes/home.php:83
 #: inc/themepanel/views/panes/install-demos.php:18
 #: inc/themepanel/views/panes/ocean-images.php:18
 #: inc/themepanel/views/panes/useful-plugins.php:114
-#: inc/themepanel/views/panes/white-label.php:25
+#: inc/themepanel/views/panes/white-label.php:24
 msgid "Upgrade now"
 msgstr ""
 
-#: inc/themepanel/views/panes/elementor-widgets.php:31
-#: inc/themepanel/views/panes/elementor-widgets.php:37
+#: inc/themepanel/views/panes/elementor-widgets.php:30
+#: inc/themepanel/views/panes/elementor-widgets.php:36
 msgid ""
 "Build astonishing pages with the help of Elementor Widgets. Functions "
 "perfectly with both free and pro Elementor. Counter, skill bar, Instagram "
 "feed, navigation, posts grid and slider, testimonials and more."
+msgstr ""
+
+#: inc/themepanel/views/panes/elementor-widgets.php:38
+msgid "%1$sInstall Ocean Elementor Widgets%2$s to use these options."
 msgstr ""
 
 #: inc/themepanel/views/panes/extra-settings.php:15
@@ -6317,21 +6321,25 @@ msgstr ""
 msgid "Let us know how we can help you make the best decision for your website."
 msgstr ""
 
-#: inc/themepanel/views/panes/gutengerg-blocks.php:15
+#: inc/themepanel/views/panes/gutengerg-blocks.php:14
 msgid "Enrich blog posts or pages with Ocean Gutenberg Blocks."
 msgstr ""
 
-#: inc/themepanel/views/panes/gutengerg-blocks.php:24
+#: inc/themepanel/views/panes/gutengerg-blocks.php:23
 #: inc/themepanel/views/panes/home.php:114
 msgid "Gutenberg Blocks"
 msgstr ""
 
-#: inc/themepanel/views/panes/gutengerg-blocks.php:30
-#: inc/themepanel/views/panes/gutengerg-blocks.php:35
+#: inc/themepanel/views/panes/gutengerg-blocks.php:29
+#: inc/themepanel/views/panes/gutengerg-blocks.php:34
 msgid ""
 "Enrich content with Ocean Gutenberg Blocks. Functions perfectly with the "
 "default WordPress editor. Counter, skill bar, Instagram feed, navigation, "
 "posts grid and slider, testimonials and more."
+msgstr ""
+
+#: inc/themepanel/views/panes/gutengerg-blocks.php:36
+msgid "%1$sInstall Ocean Gutenberg Blocks%2$s to use these options."
 msgstr ""
 
 #: inc/themepanel/views/panes/help.php:12
@@ -6830,22 +6838,26 @@ msgstr ""
 msgid "Plugin update available"
 msgstr ""
 
-#: inc/themepanel/views/panes/white-label.php:23
+#: inc/themepanel/views/panes/white-label.php:22
 msgid ""
 "Claim OceanWP as your own. It's your turn to impress friends, clients, "
 "coworkers and the rest of the world"
 msgstr ""
 
-#: inc/themepanel/views/panes/white-label.php:24
+#: inc/themepanel/views/panes/white-label.php:23
 msgid "With OceanWP you don't have to imagine. Go ahead and build it"
 msgstr ""
 
-#: inc/themepanel/views/panes/white-label.php:38
-#: inc/themepanel/views/panes/white-label.php:44
+#: inc/themepanel/views/panes/white-label.php:37
+#: inc/themepanel/views/panes/white-label.php:43
 msgid ""
 "No coding skills, no problem. Claim OceanWP in the backend as your own. "
 "Give it a new name, a new image, sign your name, make it yours. Your great "
 "website-building skills need a cherry on top."
+msgstr ""
+
+#: inc/themepanel/views/panes/white-label.php:45
+msgid "%1$sInstall Ocean White Label%2$s to use these options."
 msgstr ""
 
 #: inc/third/class-amp.php:364
@@ -7263,19 +7275,19 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: partials/header/social.php:115 partials/topbar/social.php:95
+#: partials/header/social.php:107 partials/topbar/social.php:90
 msgid "Social links"
 msgstr ""
 
-#: partials/header/social.php:129 partials/topbar/social.php:109
+#: partials/header/social.php:121 partials/topbar/social.php:104
 msgid "(opens in a new tab)"
 msgstr ""
 
-#: partials/header/social.php:142 partials/topbar/social.php:121
+#: partials/header/social.php:134 partials/topbar/social.php:116
 msgid "Skype (opens in your application)"
 msgstr ""
 
-#: partials/header/social.php:144 partials/topbar/social.php:123
+#: partials/header/social.php:136 partials/topbar/social.php:118
 msgid "Send email (opens in your application)"
 msgstr ""
 

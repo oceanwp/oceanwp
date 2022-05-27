@@ -85,15 +85,10 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 
 													echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
-												} elseif ( ocean_is_block_template( $get_id ) ) {
-
-													// Display block template content.
-													echo do_blocks( $get_content );
-
 												} else {
 
 													// Display template content.
-													echo do_shortcode( $get_content );
+													echo ocean_do_template_content( $get_id );
 
 												}
 											} else {

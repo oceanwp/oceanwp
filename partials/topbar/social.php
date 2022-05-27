@@ -54,15 +54,10 @@ if ( $get_id ) : ?>
 			echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
 			// Else.
-		} elseif ( ocean_is_block_template( $get_id ) ) {
-
-			// Display block template content.
-			echo do_blocks( $get_content );
-
 		} else {
 
 			// Display template content.
-			echo do_shortcode( $get_content );
+			echo ocean_do_template_content( $get_id );
 
 		}
 		?>
