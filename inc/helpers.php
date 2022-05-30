@@ -4910,7 +4910,7 @@ function oceanwp_admin_menu_logo_styles() {
 		}
 		</style>';
 	}
-add_action('admin_enqueue_scripts', 'oceanwp_admin_menu_logo_styles');
+add_action('admin_print_scripts', 'oceanwp_admin_menu_logo_styles');
 
 /**
  * Display Notice when Ocean Extra is outdated.
