@@ -117,7 +117,7 @@ class WooMultiStepCheckout {
     let prevStep = currentStep - 1;
     const isLoggedIn = options.is_logged_in;
 
-    if (!this.#formValidate(this.#steps[currentStep])) return;
+    if (action !== 'prev' && !this.#formValidate(this.#steps[currentStep])) return;
 
     this.#elements.checkoutTimeline
       .querySelectorAll(".active")
