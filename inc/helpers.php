@@ -4938,32 +4938,53 @@ function ocean_oe_is_outdated_admin_notice() {
 add_action('admin_notices', 'ocean_oe_is_outdated_admin_notice');
 
 /**
- * Check if a template is Gutenberg.
+ * Check if a template is Gutenberg and return the content.
  *
  * @since 3.3.1
- * @var int $post_id  Post ID.
+ * @var int $get_id  Post ID.
  */
-function ocean_do_template_content( $post_id ) {
+function ocean_do_template_content( $get_id ) {
 
-	if ( ! $post_id ) {
+	if ( ! $get_id ) {
 		return;
 	}
 
-	$template = get_post( $post_id );
-	$blocks   = array();
-	$html     = '';
+	$templates = get_posts(
+		array(
+			'post_type' => 'oceanwp_library',
+			'numberposts' => -1,
+			'post_status' => 'publish'
+		)
+	);
 
-	if ( $template && ! is_wp_error( $template ) ) {
-		$blocks = parse_blocks( $template->post_content );
+	$blocks  = array();
+	$content = '';
+	$html    = '';
+
+	if ( ! empty ( $templates ) ) {
+		foreach ( $templates as $template ) {
+			if ( $template->ID === (int)$get_id ) {
+
+				$content = $template->post_content;
+				if ( $template && ! is_wp_error( $template ) ) {
+					$blocks = parse_blocks( $content );
+				}
+
+			}
+		}
 	}
 
 	$is_gutenberg = ( ! empty( $blocks ) && '' !== $blocks[0]['blockName'] );
 
+	global $post;
+
 	if ( $is_gutenberg ) {
-		$template->post_content = apply_filters( 'the_content', do_blocks( $template->post_content ) );
-		$html .= do_blocks( $template->post_content );
+		if ( ! \Elementor\Plugin::$instance->db->is_built_with_elementor( $post->ID ) ) {
+			$content = apply_filters( 'the_content', do_blocks( $content ) );
+		}
+		$html = do_blocks( $content );
 	} else {
-		$html .= do_shortcode( $template->post_content );
+		$html = do_shortcode( $content );
 	}
 
 	return $html;

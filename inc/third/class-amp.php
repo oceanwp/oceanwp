@@ -124,6 +124,11 @@ if ( ! class_exists( 'OceanWP_AMP' ) ) {
 			}
 			.menu-item-has-children > button.submenu-toggle.submenu-open::before {
 				content: "-";
+			}
+			.menu-item-has-children:hover > ul.sub-menu {
+				opacity: 1;
+				display: block;
+				visibility: visible;
 			}';
 
 			$amp_menu_breakpoint        = get_theme_mod( 'ocean_mobile_menu_breakpoints', '959' );

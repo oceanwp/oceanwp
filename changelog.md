@@ -1,7 +1,8 @@
 # OceanWP Changelog
 
-### _2022.05.27._ - 3.3.1
+### _2022.05.31._ - 3.3.1
 - **Fixed**: My Library: custom template render issues with custom locations with other page builders.
+- **Fixed**: AMP: submenu dropdown is not working.
 
 ### _2022.05.25._ - 3.3.0
 - **New**: OceanWP Theme Panel
