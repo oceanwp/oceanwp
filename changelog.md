@@ -1,8 +1,11 @@
 # OceanWP Changelog
 
 ### _2022.05.31._ - 3.3.1
-- **Fixed**: My Library: custom template render issues with custom locations with other page builders.
-- **Fixed**: AMP: submenu dropdown is not working.
+- **Fixed**: Notice: "We made changes to our theme panel" cannot be dismissed if child theme in use.
+- **Fixed**: Custom Templates: Content display issues when templates used on Elementor pages.
+- **Fixed**: Compatibility: Klaviyo: PHP Fatal error: Cannot redeclare get_options().
+- **Fixed**: Compatibility: AMP: menu dropdowns do not function.
+- **Fixed**: Warning: Cannot modify header information - headers already sent by... oceanwp/inc/helpers.php.4904
 
 ### _2022.05.25._ - 3.3.0
 - **New**: OceanWP Theme Panel

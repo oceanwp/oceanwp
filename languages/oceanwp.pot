@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 3.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-05-31 06:15:12+00:00\n"
+"POT-Creation-Date: 2022-05-31 06:29:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -5186,14 +5186,14 @@ msgstr ""
 msgid "OceanWP Panel"
 msgstr ""
 
-#: inc/helpers.php:4929 inc/themepanel/views/panes/home.php:74
+#: inc/helpers.php:4923 inc/themepanel/views/panes/home.php:74
 msgid ""
 "We made changes to our Theme Panel. To complete the installation and enjoy "
 "both old and new features, please make sure the OceanWP theme and all Ocean "
 "plugins are up to date."
 msgstr ""
 
-#: inc/helpers.php:4930
+#: inc/helpers.php:4924
 msgid "Update and get the new Theme Panel"
 msgstr ""
 
