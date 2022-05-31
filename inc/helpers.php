@@ -4901,14 +4901,8 @@ function ocean_admin_page_contents() {
  * @return void
  */
 function oceanwp_admin_menu_logo_styles() {
-	echo '
-		<style>
-		#adminmenu #toplevel_page_oceanwp .wp-menu-image img {
-			width: 25px;
-			height: 25px;
-			padding: 5px;
-		}
-		</style>';
+		$owp_tp_logo_style = '<style>#adminmenu #toplevel_page_oceanwp .wp-menu-image img { width: 25px; height: 25px; padding: 5px; }</style>';
+		echo $owp_tp_logo_style;
 	}
 add_action('admin_enqueue_scripts', 'oceanwp_admin_menu_logo_styles');
 
