@@ -4971,9 +4971,10 @@ function ocean_do_template_content( $get_id ) {
 	$is_gutenberg = ( ! empty( $blocks ) && '' !== $blocks[0]['blockName'] );
 
 	global $post;
+	$elementor = get_post_meta( $post->ID, '_elementor_edit_mode', true );
 
 	if ( $is_gutenberg ) {
-		if ( ! \Elementor\Plugin::$instance->db->is_built_with_elementor( $post->ID ) ) {
+		if ( ! ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) ) {
 			$content = apply_filters( 'the_content', do_blocks( $content ) );
 		}
 		$html = do_blocks( $content );

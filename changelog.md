@@ -1,6 +1,9 @@
 # OceanWP Changelog
 
-### _2022.05.31._ - 3.3.1
+### _2022.06.1._ - 3.3.2
+- **Fixed**: Custom Templates: Conditional logic for Elementor plugin causing Fatal Error.
+
+### _2022.06.1._ - 3.3.1
 - **Fixed**: Notice: "We made changes to our theme panel" cannot be dismissed if child theme in use.
 - **Fixed**: Custom Templates: Content display issues when templates used on Elementor pages.
 - **Fixed**: Compatibility: Klaviyo: PHP Fatal error: Cannot redeclare get_options().
