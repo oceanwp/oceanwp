@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.3.2\n"
+"Project-Id-Version: OceanWP 3.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-06-01 09:38:12+00:00\n"
+"POT-Creation-Date: 2022-06-03 14:38:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,23 +24,23 @@ msgstr ""
 "ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
 "X-Textdomain-Support: yes\n"
 
-#: 404.php:103 inc/customizer/settings/general.php:3733
+#: 404.php:108 inc/customizer/settings/general.php:3733
 msgid "404 Logo"
 msgstr ""
 
-#: 404.php:106
+#: 404.php:111
 msgid "This page could not be found!"
 msgstr ""
 
-#: 404.php:107
+#: 404.php:112
 msgid "We are sorry. But the page you are looking for is not available."
 msgstr ""
 
-#: 404.php:107
+#: 404.php:112
 msgid "Perhaps you can try a new search."
 msgstr ""
 
-#: 404.php:109
+#: 404.php:114
 msgid "Back To Homepage"
 msgstr ""
 
@@ -7275,19 +7275,19 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: partials/header/social.php:107 partials/topbar/social.php:90
+#: partials/header/social.php:112 partials/topbar/social.php:95
 msgid "Social links"
 msgstr ""
 
-#: partials/header/social.php:121 partials/topbar/social.php:104
+#: partials/header/social.php:126 partials/topbar/social.php:109
 msgid "(opens in a new tab)"
 msgstr ""
 
-#: partials/header/social.php:134 partials/topbar/social.php:116
+#: partials/header/social.php:139 partials/topbar/social.php:121
 msgid "Skype (opens in your application)"
 msgstr ""
 
-#: partials/header/social.php:136 partials/topbar/social.php:118
+#: partials/header/social.php:141 partials/topbar/social.php:123
 msgid "Send email (opens in your application)"
 msgstr ""
 

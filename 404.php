@@ -87,8 +87,13 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 
 												} else {
 
+													// If Gutenberg.
+													if ( ocean_is_block_template( $get_id ) ) {
+														$get_content = apply_filters( 'ocean_error_page_template_content', do_blocks( $get_content ) );
+													}
+
 													// Display template content.
-													echo ocean_do_template_content( $get_id );
+													echo do_shortcode( $get_content );
 
 												}
 											} else {

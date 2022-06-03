@@ -1,5 +1,11 @@
 # OceanWP Changelog
 
+### _2022.06.3._ - 3.3.3
+- **Fixed**: My Library: Custom Template: dyanamic blocks is not rendering in custom template.
+- **Fixed**: Compatibility: Visual Composer: tabs and accordion is not working.
+- **Fixed**: Shortcode: [oceanwp_icon]: some icons are not appearing when using with shortcode.
+- **Fixed**: Mobile Search Icon: Uncaught TypeError when mobile search option is disabled.
+
 ### _2022.06.1._ - 3.3.2
 - **Fixed**: Custom Templates: Conditional logic for Elementor plugin causing Fatal Error.
 

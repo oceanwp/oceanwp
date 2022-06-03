@@ -24,7 +24,7 @@ if ( ! empty( $get_id ) ) {
 	}
 
 }
-	
+
 // If Elementor
 if ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) {
 
@@ -42,7 +42,12 @@ else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 // Else
 else {
 
+	// If Gutenberg.
+	if ( ocean_is_block_template( $get_id ) ) {
+		$content = apply_filters( 'ocean_mega_menu_template_content', do_blocks( $content ) );
+	}
+
 	// Display template content.
-	echo ocean_do_template_content( $get_id );
+	echo do_shortcode( $content );
 
 }

@@ -199,7 +199,8 @@ function ocean_svg( $icon, $echo = true, $class = '', $title = '', $desc = '', $
 				'desc'        => $desc,
 				'area_hidden' => $aria_hidden,
 				'fallback'    => $fallback,
-			)
+			),
+			false
 		),
 		ocean_svg_icon_allowed_html()
 	);
