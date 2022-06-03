@@ -1,5 +1,15 @@
 # OceanWP Changelog
 
+### _2022.06.1._ - 3.3.2
+- **Fixed**: Custom Templates: Conditional logic for Elementor plugin causing Fatal Error.
+
+### _2022.06.1._ - 3.3.1
+- **Fixed**: Notice: "We made changes to our theme panel" cannot be dismissed if child theme in use.
+- **Fixed**: Custom Templates: Content display issues when templates used on Elementor pages.
+- **Fixed**: Compatibility: Klaviyo: PHP Fatal error: Cannot redeclare get_options().
+- **Fixed**: Compatibility: AMP: menu dropdowns do not function.
+- **Fixed**: Warning: Cannot modify header information - headers already sent by... oceanwp/inc/helpers.php.4904
+
 ### _2022.05.25._ - 3.3.0
 - **New**: OceanWP Theme Panel
 - **Added**: WooCommerce: Menu Cart: checkout button border color settings in the Customizer.

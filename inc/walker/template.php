@@ -42,7 +42,7 @@ else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 // Else
 else {
 
-    // Display template content
-    echo do_blocks( $content );
+	// Display template content.
+	echo ocean_do_template_content( $get_id );
 
 }

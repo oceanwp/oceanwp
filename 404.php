@@ -88,7 +88,7 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 												} else {
 
 													// Display template content.
-													echo do_blocks( $get_content );
+													echo ocean_do_template_content( $get_id );
 
 												}
 											} else {

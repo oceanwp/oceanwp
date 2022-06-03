@@ -93,13 +93,13 @@ if ( $link_target == 'blank' ) {
 
 		    }
 
-		    // Else
-		    else {
+			// Else
+			else {
 
-		        // Display template content
-		        echo do_blocks( $get_content );
+				// Display template content.
+				echo ocean_do_template_content( $get_id );
 
-		    }
+			}
 
 		// Display social
 		} else { ?>

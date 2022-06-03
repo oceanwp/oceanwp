@@ -49,7 +49,7 @@ $classes = implode( ' ', $classes ); ?>
 	} else {
 
 		// Display template content.
-		echo do_blocks( $get_content );
+		echo ocean_do_template_content( $get_id );
 
 	}
 

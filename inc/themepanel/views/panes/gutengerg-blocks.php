@@ -3,7 +3,6 @@ $need_to_upgrade                          = oceanwp_theme_panel()->need_to_upgra
 $extra_mode_actived                       = oceanwp_theme_panel()->extra_installed();
 $ocean_gutenberg_blocks_actived           = oceanwp_theme_panel()->ocean_gutenberg_blocks_activated();
 $banner_upgrade_link                      = oceanwp_theme_panel()->banner_upgrade_link();
-$upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->upgrade_core_extensions_bundle_text_link();
 ?>
 <div class="oceanwp-tp-pane-box" id="oceanwp-tp-gutenberg-blocks">
 
@@ -33,7 +32,11 @@ $upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->upgrade_core_
 
 		<?php else : ?>
 			<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Enrich content with Ocean Gutenberg Blocks. Functions perfectly with the default WordPress editor. Counter, skill bar, Instagram feed, navigation, posts grid and slider, testimonials and more.', 'oceanwp' ); ?>
-			<?php echo $upgrade_core_extensions_bundle_text_link; ?>
+			<?php echo sprintf(
+					esc_html__( '%1$sInstall Ocean Gutenberg Blocks%2$s to use these options.', 'oceanwp' ),
+					'<a href="https://users.freemius.com" target="_blank">',
+					'</a>'
+				); ?>
 			</h3>
 		<?php endif; ?>
 

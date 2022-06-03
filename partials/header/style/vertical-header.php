@@ -81,7 +81,7 @@ $classes = implode( ' ', $classes ); ?>
 		} else {
 
 			// Display template content.
-			echo do_blocks( $get_content );
+			echo ocean_do_template_content( $template );
 
 		}
 	} else {
@@ -119,8 +119,8 @@ $classes = implode( ' ', $classes ); ?>
 
 			} else {
 
-				// Display bottom template content.
-				echo do_blocks( $get_bottom_content );
+				// Display template content.
+				echo ocean_do_template_content( $bottom_template );
 
 			}
 		}
