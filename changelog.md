@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2022.06.7_ - 3.3.3
+### _2022.06.9_ - 3.3.3
 - **Fixed**: My Library: Custom Template: dyanamic blocks is not rendering in custom template.
 - **Fixed**: Compatibility: Visual Composer: tabs and accordion is not working.
 - **Fixed**: Shortcode: [oceanwp_icon]: some icons are not appearing when using with shortcode.

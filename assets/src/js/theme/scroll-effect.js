@@ -60,6 +60,7 @@ class ScrollEffect {
       !scrollItem.classList.contains("upload-file") &&
       !scrollItem.parentNode.classList.contains("vc_tta-panel-title") &&
       !scrollItem.classList.contains("vce-tabs-with-slide-tab-title") &&
+      !scrollItem.classList.contains("vce-tabs-with-slide-panel-title") &&
       !scrollItem.classList.contains("vce-classic-tabs-tab-title") &&
       !scrollItem.classList.contains("vce-classic-accordion-panel-title")
     ) {
