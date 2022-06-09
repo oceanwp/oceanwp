@@ -77,7 +77,7 @@ if ( ! function_exists( 'ocean_get_post_author' ) ) {
 		$author = sprintf(
 			/* translators: %s: author name for link meta. */
 			esc_html( $args['prefix'] . ' ' . __( '%s', 'oceanwp' ) ),
-			'<a href="' . esc_url( get_author_posts_url( get_the_author_meta( $author_id ) ) ) . '" rel="author" aria-label="' . esc_attr( $aria_label ) . '">' . esc_html( get_the_author_meta( 'display_name', $author_id ) )  . '</a>'
+			'<a href="' . esc_url( get_author_posts_url( $author_id ) ) . '" rel="author" aria-label="' . esc_attr( $aria_label ) . '">' . esc_html( get_the_author_meta( 'display_name', $author_id ) )  . '</a>'
 		);
 
 		$author_meta = $args['before'] . $author . $args['after'];
@@ -340,7 +340,7 @@ if ( ! function_exists( 'ocean_get_post_author_avatar' ) ) {
 
 		$args = wp_parse_args( $args, $default_args );
 
-		$avatar_url = '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( $author_id ) ) ) . '" rel="author"' . ( $args['aria_hidden'] ? ' aria-hidden="true"' : '' ) . '>';
+		$avatar_url = '<a href="' . esc_url( get_author_posts_url( $author_id ) ) . '" rel="author"' . ( $args['aria_hidden'] ? ' aria-hidden="true"' : '' ) . '>';
 		$avatar_url .= get_avatar(
 			$author_id,
 			apply_filters( 'ocean_author_bio_avatar_size', $args['size'] ),
