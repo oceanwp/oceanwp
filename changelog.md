@@ -1,12 +1,13 @@
 # OceanWP Changelog
 
-### _2022.06.3._ - 3.3.3
+### _2022.06.7_ - 3.3.3
 - **Fixed**: My Library: Custom Template: dyanamic blocks is not rendering in custom template.
 - **Fixed**: Compatibility: Visual Composer: tabs and accordion is not working.
 - **Fixed**: Shortcode: [oceanwp_icon]: some icons are not appearing when using with shortcode.
 - **Fixed**: Mobile Search Icon: Uncaught TypeError when mobile search option is disabled.
+- **Fixed**: Customizer: Responsive Buttons Positions.
 
-### _2022.06.1._ - 3.3.2
+### _2022.06.1_ - 3.3.2
 - **Fixed**: Custom Templates: Conditional logic for Elementor plugin causing Fatal Error.
 
 ### _2022.06.1._ - 3.3.1
@@ -16,7 +17,7 @@
 - **Fixed**: Compatibility: AMP: menu dropdowns do not function.
 - **Fixed**: Warning: Cannot modify header information - headers already sent by... oceanwp/inc/helpers.php.4904
 
-### _2022.05.25._ - 3.3.0
+### _2022.05.25_ - 3.3.0
 - **New**: OceanWP Theme Panel
 - **Added**: WooCommerce: Menu Cart: checkout button border color settings in the Customizer.
 - **Updated**: OceanWP About URI.
@@ -30,7 +31,7 @@
 - **Removed**: WooCommerce: Search Results Page: product number display option.
 - **Removed**: Outdated non-standard CSS #349
 
-### _2022.05.02._ - 3.2.2
+### _2022.05.02_ - 3.2.2
 - **Added**: Accessibility: Buttons: focus option.
 - **Added**: Accessibility: Header: Mega Menu.
 - **Improved**: Accessibility: Skip to Content functionality.
@@ -41,14 +42,14 @@
 - **Added**: Filter: Mini Cart: oceanwp_mini_cart_shop_link.
 - **Fixed**: Customizer: Typography: Chosen font always displaying the Default option in the select menu after saving changes.
 
-### _2022.03.31._ - 3.2.1
+### _2022.03.31_ - 3.2.1
 - **Improved**: Accessibility: Mobile icon.
 - **Updated**: Templates: partials/mobile/mobile icon.
 - **Fixed**: Blog: Single Post: Post Title Cover Style: Featured image not displayed on boxed website layout.
 - **Fixed**: Blog: Single Post: New Post Title Styles: Author avatar image not displayed.
 - **Added**: Blog: Single Post: Post Title Cover Style: color overlay settings.
 
-### _2022.03.30._ - 3.2.0
+### _2022.03.30_ - 3.2.0
 
 - **New**: Blog: Single Post: Page Title Styles: Intro, Cover, Card, Card Invert, Screen and Screen Invert.
 - **New**: Blog: Single Post: Comments: Delete comment option. Available on frontend and visible to admins only.
@@ -65,14 +66,14 @@
 - **New**: Typography: Host Google fonts locally via Customize > Typography > General. No font upload required.
 - **Fixed**: Header: Vertical Style: Dropdown options not displayed.
 
-### _2022.03.07._ - 3.1.4
+### _2022.03.07_ - 3.1.4
 
 -   **Fixed** Logo: Retinal Logo: display issue.
 -   **Fixed** WooCommerce: Checkout: Multi-Step Checkout: guest checkout issue.
 -   **Fixed** Customizer: Color settings missing localize script.
 -   **Improved** Script performance
 
-### _2022.02.02._ - 3.1.3
+### _2022.02.02_ - 3.1.3
 
 -   **Fixed** Customizer: Missing Typography Class.
 -   **Fixed** Customizer: Font assets loading on front end.
@@ -83,17 +84,17 @@
 -   **Fixed** WooCommerce: Checkout: Mandatory fields skipped.
 -   **Fixed** Gutenberg: Layout: Full Width Style issue.
 
-### _2021.11.30._ - 3.1.2
+### _2021.11.30_ - 3.1.2
 
 -   **Fixed** Some minor issues.
 
-### _2021.11.17._ - 3.1.1
+### _2021.11.17_ - 3.1.1
 
 -   **Fixed** Header: submenu display issue.
 -   **Fixed** Fatal Error: WP_Customize_Section not found.
 -   **Fixed** Some PHP notices.
 
-### _2021.11.10._ - 3.1.0
+### _2021.11.10_ - 3.1.0
 
 -   **New** - Customizer: Customizer Search.
 -   **Updated** - Customizer: Styling and scripts.
@@ -112,11 +113,11 @@
 -   **Fixed** - Compatibility: BuddyPress: Comment box issue.
 -   **Fixed** - Compatibility: Woo Variation Swatches Pro: variation button resets on add to cart issue.
 
-### _2021.09.07._ - 3.0.7
+### _2021.09.07_ - 3.0.7
 
 -   **Fixed** - Scripts: load issue.
 
-### _2021.09.06._ - 3.0.6
+### _2021.09.06_ - 3.0.6
 
 -   **Fixed** - Header: anchor link animation issue on double-click.
 -   **Fixed** - Header: Dropdowns and Mega Menu: Flicker on repetitive or longer hover.
@@ -132,7 +133,7 @@
 -   **Fixed** - Filter links: active style.
 -   **Fixed** - Minor issues.
 
-### _2021.08.25._ - 3.0.5
+### _2021.08.25_ - 3.0.5
 
 -   **Tweak** - PhotoSwipe replaced with Magnific Popup.
 -   **Fixed** - Compatibility: Ocean Sticky Header: Shrink style: logo height on scroll back.
@@ -162,7 +163,7 @@
 -   **Fixed** - Compatibility: Elementor Pro: product widgets: WooCommerce infinite-scroll pagination issues.
 -   **Fixed** - Compatibility: WPBakery: tab & accordion shortcodes, anchor link and comment button issues.
 
-### _2021.07.28._ - 3.0.3
+### _2021.07.28_ - 3.0.3
 
 -   **Added** - Performance section in Customizer > General Options.
 -   **Fixed** - Lightbox issues.
@@ -175,15 +176,15 @@
 -   **Fixed** - Pagination: Infinite Scroll issue.
 -   **Fixed** - Minor issues.
 
-### _2021.07.22._ - 3.0.2
+### _2021.07.22_ - 3.0.2
 
 -   **Fixed** - Gutenberg embeds widgets issue.
 
-### _2021.07.21._ - 3.0.1
+### _2021.07.21_ - 3.0.1
 
 -   **Fixed** - PHP errors in admin panel (Widgets page)
 
-### _2021.07.20._ - 3.0.0
+### _2021.07.20_ - 3.0.0
 
 -   **Added** - Vanilla JS.
 -   **Added** - Mobile Header: search icon, default state disabled. Customize > Header > Mobile Menu, section Mobile Header Search.
@@ -217,21 +218,21 @@
 -   **Updated** - Template: partials/scroll-top.php
 -   **Fixed** - Previous item navigation arrow icon class.
 
-### _2021.06.23._ - 2.1.1
+### _2021.06.23_ - 2.1.1
 
 -   **Added** - New icons added in theme icon array.
 -   **Tweak** - Function 'oceanwp_title' has been renamed to 'oceanwp_has_page_title'.
 -   **Fixed** - Header: Full Screen style dropdown icon issue.
 -   **Fixed** - PHP Deprecated: Required parameter $output follows optional parameter $depth in menu-walker.
 
-### _2021.06.11._ - 2.1.0
+### _2021.06.11_ - 2.1.0
 
 -   **Added** - Check if icon class exist or not from theme icons.
 -   **Tweak** - Default Theme Icon settings set to "Simple Line Icons" to prevent issues on websites that did not store any theme icons settings in the past.
 -   **Tweak** - Ocean SVG Icons disabled by default. In order to use the new icons, enable them via Customize > General Options > Theme Icons
 -   **Fixed** - Icons that require manual selection get deselect on Theme icons change
 
-### _2021.06.09._ - 2.0.9
+### _2021.06.09_ - 2.0.9
 
 -   **Added** - OceanWP SVG icons - will be set as default icons on all new installations. Perform icons switch via Customize > General Options > Theme Icons.
 -   **Added** - Options for established websites to use the new icon pack via Customize > General Options > Theme Icons.
@@ -245,21 +246,21 @@
 -   **Fixed** - Replaced slick-slide class with swiper-slide.
 -   **Fixed** - Gutenberg: layout issue with block alignfull and alignwide.
 
-### _2021.04.26._ - 2.0.8
+### _2021.04.26_ - 2.0.8
 
 -   **Fixed** - Page title displayed with old setting.
 
-### _2021.04.16._ - 2.0.7
+### _2021.04.16_ - 2.0.7
 
 -   **Moved** - Customizer hide page title setting to the visibility setting section.
 -   **Fixed** - Multistep checkout undefined error notice.
 
-### _2021.04.14._ - 2.0.6
+### _2021.04.14_ - 2.0.6
 
 -   **Fixed** - Gutenberg: cover block layout issue.
 -   **Fixed** - Outdated woocommerce template error notice.
 
-### _2021.04.13._ - 2.0.5
+### _2021.04.13_ - 2.0.5
 
 -   **Fixed** - Gutenberg: list block backend layout issue.
 -   **Fixed** - Youtube short link doesn't work to embed video in post.
@@ -268,21 +269,21 @@
 -   **Fixed** - Block editor post title input style.
 -   **Fixed** - Call to a member function is_block_editor() on null.
 
-### _2021.03.25._ - 2.0.4
+### _2021.03.25_ - 2.0.4
 
 -   **Added** - Added Gutenberg support to match the backend editor with frontend.
 -   **Fixed** - Styling for some Gutenberg blocks like table, blockquote etc.
 
-### _2021.03.08._ - 2.0.3
+### _2021.03.08_ - 2.0.3
 
 -   **Fixed** - Multistep checkout issue.
 -   **Fixed** - WPML translation issue.
 
-### _2020.12.17._ - 2.0.2
+### _2020.12.17_ - 2.0.2
 
 -   **Added** - Link underlined style removed from the elementor and woocommerce pages.
 
-### _2020.12.16._ - 2.0.1
+### _2020.12.16_ - 2.0.1
 
 -   **Added** - Heading tag option in the Customizer: Sidebar and Footer widget title.
 -   **Added** - Content links underlined per WordPress accessibility requirements.

@@ -4935,15 +4935,15 @@ add_action('admin_notices', 'ocean_oe_is_outdated_admin_notice');
  * Check if a template is Gutenberg.
  *
  * @since 3.3.1
- * @var int $post_id  Post ID.
+ * @var int $get_id  Post ID.
  */
-function ocean_is_block_template( $post_id ) {
+function ocean_is_block_template( $get_id ) {
 
-	if ( ! $post_id ) {
+	if ( ! $get_id ) {
 		return;
 	}
 
-	$template = get_post( $post_id );
+	$template = get_post( $get_id );
 	$blocks   = array();
 
 	if ( $template && ! is_wp_error( $template ) ) {

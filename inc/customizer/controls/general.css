@@ -100,6 +100,9 @@ input, select { margin: 0; padding: 5px 10px; }
 /* Height Custom CSS textarea */
 .customize-control-code_editor .CodeMirror { height: calc(100vh - 185px); }
 
+/* Responsive wordpress device switcher button */
+#customize-footer-actions .devices-wrapper .devices button::before { vertical-align: unset; }
+
 /* RTL */
 body.rtl .customize-control-checkbox input[type=checkbox] { margin: 0 0 0 6px; }
 body.rtl .customize-control-checkbox input[type="checkbox"]:checked:before,
