@@ -59,7 +59,7 @@ if ( get_theme_mod( 'ocean_woo_quick_view', true )
 	echo '<ul class="woo-entry-buttons">';
 	do_action( 'ocean_before_archive_woo_entry_buttons' );
 	if ( get_theme_mod( 'ocean_woo_quick_view', true ) ) {
-		echo '<li class="woo-quickview-btn">' . apply_filters( 'ocean_woo_quick_view_button_html', '<a href="#" class="owp-quick-view" id="product_id_' . $product->get_id() . '" data-product_id="' . $product->get_id() . '">' . oceanwp_icon( 'eye', false ) . '</a>' ) . '</li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<li class="woo-quickview-btn">' . apply_filters( 'ocean_woo_quick_view_button_html', '<a href="#" class="owp-quick-view" id="product_id_' . $product->get_id() . '" data-product_id="' . $product->get_id() . '" aria-label="' . esc_attr__( 'Quickly preview product', 'oceanwp' ) . ' ' . $product->get_name() . '">' . oceanwp_icon( 'eye', false ) . '</a>' ) . '</li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	$wl_plugin = get_theme_mod( 'ocean_woo_wl_plugin', 'ti_wl' );

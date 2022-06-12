@@ -1,12 +1,16 @@
 # OceanWP Changelog
 
 ### _2022.06.9_ - 3.3.3
-- **Fixed**: Single Post Page Header: Incorrect author and author avatar url.
-- **Fixed**: My Library: Custom Template: dyanamic blocks is not rendering in custom template.
-- **Fixed**: Compatibility: Visual Composer: tabs and accordion is not working.
-- **Fixed**: Shortcode: [oceanwp_icon]: some icons are not appearing when using with shortcode.
-- **Fixed**: Mobile Search Icon: Uncaught TypeError when mobile search option is disabled.
+- **Added**: Accessibility: WooCommerce: Single Product: Aria labels for product navigation.
+- **Added**: Accessibility: WooCommerce: Single Product: Related Products: Aria label for product quick view.
+- **Added**: Accessibility: WooCommerce: Product Archive: Aria label for product quick view.
+- **Fixed**: Blog: Single Post: Page Header: Incorrect author and author avatar url.
+- **Fixed**: My Library: Custom Template: dyanamic blocks not rendering in custom template.
+- **Fixed**: Compatibility: Visual Composer: tabs and accordion don't function.
+- **Fixed**: Shortcode: [oceanwp_icon]: some icons are not appearing when using the icons shortcode.
+- **Fixed**: Mobile Header: Mobile Search Icon: Uncaught TypeError when mobile search option is disabled.
 - **Fixed**: Customizer: Responsive Buttons Positions.
+- **Updated**: Template: woocommerce/owp-archive-hover.php.
 
 ### _2022.06.1_ - 3.3.2
 - **Fixed**: Custom Templates: Conditional logic for Elementor plugin causing Fatal Error.
