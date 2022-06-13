@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2022.06.9_ - 3.3.3
+### _2022.06.13_ - 3.3.3
 - **Added**: Accessibility: WooCommerce: Single Product: Aria labels for product navigation.
 - **Added**: Accessibility: WooCommerce: Single Product: Related Products: Aria label for product quick view.
 - **Added**: Accessibility: WooCommerce: Product Archive: Aria label for product quick view.

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 3.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-06-09 06:17:14+00:00\n"
+"POT-Creation-Date: 2022-06-13 04:32:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -5350,6 +5350,14 @@ msgstr ""
 msgid "Post author avatar"
 msgstr ""
 
+#: inc/oceanwp-strings.php:81
+msgid "View next product"
+msgstr ""
+
+#: inc/oceanwp-strings.php:82
+msgid "View previous product"
+msgstr ""
+
 #: inc/oceanwp-svg.php:54 inc/oceanwp-svg.php:160
 #: inc/oceanwp-theme-icons.php:741 inc/oceanwp-theme-icons.php:792
 msgid "Please define default parameters in the form of an array."
@@ -7128,6 +7136,11 @@ msgstr ""
 msgid "Out of Stock"
 msgstr ""
 
+#: inc/woocommerce/woocommerce-config.php:1193
+#: woocommerce/owp-archive-product-hover.php:62
+msgid "Quickly preview product"
+msgstr ""
+
 #: inc/woocommerce/woocommerce-config.php:1463
 msgid "Welcome!"
 msgstr ""
@@ -7501,67 +7514,67 @@ msgctxt "Page title yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/oceanwp-strings.php:81
+#: inc/oceanwp-strings.php:85
 msgctxt "Prefix for post author name"
 msgid "By"
 msgstr ""
 
-#: inc/oceanwp-strings.php:82
+#: inc/oceanwp-strings.php:86
 msgctxt "Prefix for post author name"
 msgid "Written by"
 msgstr ""
 
-#: inc/oceanwp-strings.php:83
+#: inc/oceanwp-strings.php:87
 msgctxt "Aria label prefix for post author link"
 msgid "All posts by"
 msgstr ""
 
-#: inc/oceanwp-strings.php:84
+#: inc/oceanwp-strings.php:88
 msgctxt "Prefix for post published date"
 msgid "Published"
 msgstr ""
 
-#: inc/oceanwp-strings.php:85
+#: inc/oceanwp-strings.php:89
 msgctxt "Prefix for post modified date"
 msgid "Updated"
 msgstr ""
 
-#: inc/oceanwp-strings.php:86
+#: inc/oceanwp-strings.php:90
 msgctxt "Suffix for post reading time equal to 1"
 msgid "min read"
 msgstr ""
 
-#: inc/oceanwp-strings.php:87
+#: inc/oceanwp-strings.php:91
 msgctxt "Suffix for post reading time more than 1"
 msgid "mins read"
 msgstr ""
 
-#: inc/oceanwp-strings.php:88
+#: inc/oceanwp-strings.php:92
 msgctxt "Prefix for categories list"
 msgid "Posted in"
 msgstr ""
 
-#: inc/oceanwp-strings.php:89
+#: inc/oceanwp-strings.php:93
 msgctxt "Prefix for tags list"
 msgid "Tagged as"
 msgstr ""
 
-#: inc/oceanwp-strings.php:90
+#: inc/oceanwp-strings.php:94
 msgctxt "Aria label: post modified date"
 msgid "Updated on"
 msgstr ""
 
-#: inc/oceanwp-strings.php:91
+#: inc/oceanwp-strings.php:95
 msgctxt "Aria label: post published date"
 msgid "Published on"
 msgstr ""
 
-#: inc/oceanwp-strings.php:92
+#: inc/oceanwp-strings.php:96
 msgctxt "Aria label: post reading time"
 msgid "Reading time"
 msgstr ""
 
-#: inc/oceanwp-strings.php:93
+#: inc/oceanwp-strings.php:97
 msgctxt "Aria label: post comments"
 msgid "Comments"
 msgstr ""
