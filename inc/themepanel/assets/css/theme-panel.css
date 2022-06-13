@@ -790,6 +790,7 @@ p.submit {
 #ocean-elementor-widgets-items,
 #ocean-widget-items,
 #ocean-metabox-items,
+#ocean-elementor-library-tags-items,
 .oceanwp-tp-useful-plugins-section,
 .oceanwp-tp-recommended-plugins-section {
   display: flex;
@@ -801,6 +802,7 @@ p.submit {
 #ocean-gutenberg-blocks-items div,
 #ocean-elementor-widgets-items div,
 #ocean-widget-items>div,
+#ocean-elementor-library-tags-items div,
 #ocean-metabox-items div {
   flex-basis: 28%;
   padding: 20px;

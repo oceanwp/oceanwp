@@ -242,6 +242,7 @@ jQuery(document).ready(function ($) {
         if($('#owp_freepik_image_width').length) {
             jQuery('#owp_freepik_image_width').trigger('change');
         }
+        $( document.body ).trigger( 'op_panel_loaded' );
     }
 
     function loadSidebarWarnings() {
