@@ -353,7 +353,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				'ocean_local_google_font',
 				array(
 					'transport'         => 'postMessage',
-					'default'           => false,
+					'default'           => true,
 					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 				)
 			);
