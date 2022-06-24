@@ -122,7 +122,6 @@ function oceanwp_enqueue_google_font( $font ) {
 
 /**
  * Enqueues Local Google Font
- *
  */
 add_filter( 'oceanwp_enqueue_google_font_url', 'oceanwp_webfonts_enqueue', 20, 2 );
 function oceanwp_webfonts_enqueue( $src, $font_name ) {
@@ -153,7 +152,7 @@ function oceanwp_webfonts_enqueue( $src, $font_name ) {
 						$file_name = basename( $remote_font_file_url );
 
 						$local_font_file_path = trailingslashit( $webfonts_dir_path['upload_dir'] ) . $file_name;
-						$local_font_file_url  = trailingslashit( $webfonts_dir_path['upload_url'] ) . $file_name;
+						$local_font_file_url  = apply_filters( 'oceanwp_local_font_url', trailingslashit( $webfonts_dir_path['upload_url'] ) . $file_name );
 
 						$local_css_file_name = md5( $remote_font_file_url ) . '.css';
 						$local_css_file_path = trailingslashit( $webfonts_css_dir_path['upload_dir'] ) . $local_css_file_name;
@@ -192,10 +191,19 @@ function oceanwp_webfonts_enqueue( $src, $font_name ) {
 	return $src;
 }
 
+add_filter( 'oceanwp_local_font_url', 'oceanwp_webfonts_local_font_url' );
+function oceanwp_webfonts_local_font_url( $url ) {
+	if ( strpos( $url, 'https://' ) === 0 ) {
+		$url = str_replace( 'https://', '//', $url );
+	}
+	if ( strpos( $url, 'http://' ) === 0 ) {
+		$url = str_replace( 'http://', '//', $url );
+	}
+	return $url;
+}
 
 /**
  * Get Google Font CSS
- *
  */
 function ocean_get_google_font_css( $url ) {
 	$url = 'https:' . $url;
@@ -212,7 +220,6 @@ function ocean_get_google_font_css( $url ) {
 
 /**
  * Get Local WebFonts data
- *
  */
 function oceanwp_get_local_webfonts_data_dir( $file_name ) {
 	$upload      = wp_upload_dir();
@@ -231,7 +238,6 @@ function oceanwp_get_local_webfonts_data_dir( $file_name ) {
 
 /**
  * Get Local WebFonts CSS data
- *
  */
 function oceanwp_get_local_webfonts_css_data_dir( $file_name ) {
 	$upload      = wp_upload_dir();

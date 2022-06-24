@@ -121,6 +121,14 @@ jQuery(document).ready(function ($) {
         tpGoTo(slug);
     });
 
+    $(document).on('click', '#wp-admin-bar-ocean-menu-default>li>a', function (event) {
+        let url = new URL($(this).attr('href'));
+        if( url.hash && $('.oceanwp-tp-sidebar-link[href="'+url.hash+'"]').length ) {
+            event.preventDefault();
+            $('.oceanwp-tp-sidebar-link[href="'+url.hash+'"]').trigger('click');
+        }
+    });
+
     $(document).on('click', '.oceanwp_install_plugin', function (event) {
         event.preventDefault();
         $(this).addClass('disabled');

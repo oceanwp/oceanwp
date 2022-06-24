@@ -1,5 +1,6 @@
 <div id="wrap" class="wrap">
 	<h1></h1>
+	<?php do_action( 'ocean_notifications_content' ); ?>
 	<div class="oceanwp-tp-wrap oceanwp-wrap oceanwp">
 		<?php require_once OCEANWP_THEME_PANEL_DIR . '/views/layout/header.php'; ?>
 		<div class="oceanwp-tp-container">
