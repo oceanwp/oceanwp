@@ -59,6 +59,7 @@ final class OceanWP_Theme_Panel {
 		}
 
 		add_action( 'wp_ajax_oceanwp_cp_child_theme_install', array( $this, 'child_theme_install' ) );
+		add_action( 'wp_ajax_oceanwp_cp_fonts_clear', array( $this, 'clear_fonts' ) );
 		add_filter( 'oceanwp_theme_panel_panel_top_header', array( $this, 'panel_top_header' ) );
 		add_filter( 'oceanwp_tp_sidebar_warnings', array( $this, 'maybe_has_plugin_updates_warning' ) );
 		add_filter( 'oceanwp_theme_panel_sections', array( $this, 'control_theme_panel_sections' ), 9 );
@@ -456,6 +457,11 @@ final class OceanWP_Theme_Panel {
 				'href'  => 'help',
 				'order' => 130,
 			),
+			'admin-settings'              => array(
+				'title' => __( 'Admin Settings', 'oceanwp' ),
+				'href'  => 'admin-settings',
+				'order' => 150,
+			),
 		);
 
 		$sections = apply_filters( 'oceanwp_theme_panel_sections', $sections );
@@ -789,6 +795,46 @@ final class OceanWP_Theme_Panel {
 		} catch ( Exception $e ) {
 			wp_send_json_error();
 		}
+	}
+
+	
+	public function clear_fonts () {
+		self::check_ajax_access( $_POST['nonce'], 'oceanwp_theme_panel' );
+
+		$upload      = wp_upload_dir();
+		$uploads_fonts_dir = 'oceanwp-webfonts';
+		$uploads_css_dir = 'oceanwp-webfonts-css';
+
+		if ( ! file_exists( trailingslashit( $upload['basedir'] ) . $uploads_fonts_dir ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Fonts folder does not exist', 'oceanwp' ) ) );
+		}
+
+		if ( ! file_exists( trailingslashit( $upload['basedir'] ) . $uploads_css_dir ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'CSS folder does not exist', 'oceanwp' ) ) );
+		}
+
+		try {
+			$files_fonts = glob(trailingslashit( $upload['basedir'] ) . $uploads_fonts_dir."/*");
+			if (count($files_fonts) > 0) {
+				foreach ($files_fonts as $file) {      
+					if (file_exists($file)) {
+						unlink($file);
+					}   
+				}
+			}
+
+			$files_css = glob(trailingslashit( $upload['basedir'] ) . $uploads_css_dir."/*");
+			if (count($files_css) > 0) {
+				foreach ($files_css as $file) {      
+					if (file_exists($file)) {
+						unlink($file);
+					}   
+				}
+			}
+		} catch ( Exception $e ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Something went wrong', 'oceanwp' ) ) );
+		}
+		wp_send_json_success( array( 'message' => esc_html__( 'Data was cleared', 'oceanwp' ) ) );
 	}
 }
 

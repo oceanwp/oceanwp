@@ -197,7 +197,7 @@ a.oceanwp-tp-sidebar-link:focus {
 .oceanwp-tp-panes {
   background-color: #fff;
   float: left;
-  min-height: 700px;
+  min-height: 750px;
   padding-bottom: 50px;
   position: relative;
   margin-left: 200px;
@@ -738,11 +738,13 @@ input:checked+.slider:before {
   border-color: transparent;
 }
 
-#ocean-customizer-reset {
+#ocean-customizer-reset,
+#ocean-fonts-clear {
   margin-top: 20px;
 }
 
-#ocean-customizer-reset .btn {
+#ocean-customizer-reset .btn,
+#ocean-fonts-clear .btn {
   font-family: "Poppins", Sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -752,7 +754,8 @@ input:checked+.slider:before {
   padding: 12px 24px;
 }
 
-#ocean-customizer-reset .btn:focus {
+#ocean-customizer-reset .btn:focus,
+#ocean-fonts-clear .btn:focus {
   box-shadow: unset;
 }
 

@@ -141,6 +141,10 @@ jQuery(document).ready(function ($) {
         wp.updates.ajax('install-plugin', args)
     });
 
+    $(document.body).on('click', '#ocean-fonts-clear .btn', function (event) {
+        event.preventDefault();
+        clearLocalFonts();
+    });
 
     $(document).on( 'click', '.oceanwp_update_plugin', function( event ) {
         var $button = $( event.target );
@@ -272,6 +276,30 @@ jQuery(document).ready(function ($) {
                 }
             }
         });
+    }
+
+    function clearLocalFonts() {
+        var confirmReset = confirm('Do you really want to clear local google fonts data?');
+        if (confirmReset) {
+            $.ajax({
+                url: ajaxurl,
+                method: "POST",
+                data: {
+                    nonce: oceanwpThemePanel.nonce,
+                    action: 'oceanwp_cp_fonts_clear',
+                },
+                beforeSend: function () {
+                    window['showNotify']('success', oceanwp_cp_textdomain.fonts_clearing);
+                },
+                success: function (data) {
+                    window['showNotify'](data.success, data.data.message);
+                },
+                error: function (xhr, status, error) {
+                },
+                complete: function () {
+                }
+            });
+        }
     }
 
 });
