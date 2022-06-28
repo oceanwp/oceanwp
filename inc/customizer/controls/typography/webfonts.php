@@ -206,7 +206,7 @@ function oceanwp_webfonts_local_font_url( $url ) {
  * Get Google Font CSS
  */
 function ocean_get_google_font_css( $url ) {
-	if( strpos( 'https:', $url ) === false && strpos( 'http:', $url ) ) {
+	if( strpos( $url, 'https:' ) === false && strpos( $url, 'http:' ) === false ) {
 		$url = 'https:' . $url;
 	}
 	$ch  = curl_init();
@@ -263,7 +263,7 @@ function oceanwp_local_elementor_webfonts_enqueue( $src, $handle ) {
 		return $src;
 	}
 
-	if ( true != get_theme_mod( 'ocean_local_google_font', false ) ) {
+	if ( true != get_theme_mod( 'ocean_local_elementor_google_font', false ) ) {
 		return $src;
 	}
 
