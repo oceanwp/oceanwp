@@ -372,28 +372,30 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				)
 			);
 
-			$wp_customize->add_setting(
-				'ocean_local_elementor_google_font',
-				array(
-					'transport'         => 'postMessage',
-					'default'           => false,
-					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-				)
-			);
+			if ( did_action( 'elementor/loaded' ) ) {
+					$wp_customize->add_setting(
+						'ocean_local_elementor_google_font',
+						array(
+							'transport'         => 'postMessage',
+							'default'           => false,
+							'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+						)
+					);
 
-			$wp_customize->add_control(
-				new WP_Customize_Control(
-					$wp_customize,
-					'ocean_local_elementor_google_font',
-					array(
-						'label'    => esc_html__( 'Elementor Google Fonts from Site', 'oceanwp' ),
-						'type'     => 'checkbox',
-						'section'  => 'ocean_typography_general',
-						'settings' => 'ocean_local_elementor_google_font',
-						'priority' => 10,
-					)
-				)
-			);
+					$wp_customize->add_control(
+						new WP_Customize_Control(
+							$wp_customize,
+							'ocean_local_elementor_google_font',
+							array(
+								'label'    => esc_html__( 'Elementor Google Fonts from Site', 'oceanwp' ),
+								'type'     => 'checkbox',
+								'section'  => 'ocean_typography_general',
+								'settings' => 'ocean_local_elementor_google_font',
+								'priority' => 10,
+							)
+						)
+					);
+				}
 
 			/**
 			 * Font Subsets
