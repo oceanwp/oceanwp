@@ -393,6 +393,11 @@ h3.oceanwp-tp-block-description,
   margin-bottom: 50px;
 }
 
+.oceanwp-tp-banner.elementor-library {
+  background-image: url('../../../assets/images/banners/elementor-library.jpg');
+  margin-bottom: 50px;
+}
+
 .oceanwp-tp-banner.ocean-images {
   background-image: url('../../../assets/images/banners/ocean-images.jpg');
   margin-bottom: 50px;
