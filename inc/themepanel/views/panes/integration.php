@@ -54,7 +54,7 @@ $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->in
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/google-recaptcha.png' ); ?>" />
-			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Google reCAPTHA', 'oceanwp' ); ?></h2>
+			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Google reCAPTCHA', 'oceanwp' ); ?></h2>
 		</div>
 		<?php if ( $extra_mode_actived && $ocean_elementor_widgets_actived ) : ?>
 			<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Adds Google reCAPTCHA.', 'oceanwp' ); ?></h3>

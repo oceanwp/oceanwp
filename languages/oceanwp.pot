@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OceanWP 3.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-06-14 06:21:41+00:00\n"
+"POT-Creation-Date: 2022-06-13 04:32:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -6121,7 +6121,7 @@ msgid ""
 msgstr ""
 
 #: inc/themepanel/views/panes/elementor-widgets.php:16
-#: inc/themepanel/views/panes/gutengerg-blocks.php:15
+#: inc/themepanel/views/panes/gutenberg-blocks.php:15
 #: inc/themepanel/views/panes/help.php:109
 #: inc/themepanel/views/panes/home.php:82
 #: inc/themepanel/views/panes/install-demos.php:17
@@ -6131,7 +6131,7 @@ msgid "Take the lead. Experience website building with no limits"
 msgstr ""
 
 #: inc/themepanel/views/panes/elementor-widgets.php:17
-#: inc/themepanel/views/panes/gutengerg-blocks.php:16
+#: inc/themepanel/views/panes/gutenberg-blocks.php:16
 #: inc/themepanel/views/panes/help.php:110
 #: inc/themepanel/views/panes/home.php:83
 #: inc/themepanel/views/panes/install-demos.php:18
@@ -6329,24 +6329,24 @@ msgstr ""
 msgid "Let us know how we can help you make the best decision for your website."
 msgstr ""
 
-#: inc/themepanel/views/panes/gutengerg-blocks.php:14
+#: inc/themepanel/views/panes/gutenberg-blocks.php:14
 msgid "Enrich blog posts or pages with Ocean Gutenberg Blocks."
 msgstr ""
 
-#: inc/themepanel/views/panes/gutengerg-blocks.php:23
+#: inc/themepanel/views/panes/gutenberg-blocks.php:23
 #: inc/themepanel/views/panes/home.php:114
 msgid "Gutenberg Blocks"
 msgstr ""
 
-#: inc/themepanel/views/panes/gutengerg-blocks.php:29
-#: inc/themepanel/views/panes/gutengerg-blocks.php:34
+#: inc/themepanel/views/panes/gutenberg-blocks.php:29
+#: inc/themepanel/views/panes/gutenberg-blocks.php:34
 msgid ""
 "Enrich content with Ocean Gutenberg Blocks. Functions perfectly with the "
 "default WordPress editor. Counter, skill bar, Instagram feed, navigation, "
 "posts grid and slider, testimonials and more."
 msgstr ""
 
-#: inc/themepanel/views/panes/gutengerg-blocks.php:36
+#: inc/themepanel/views/panes/gutenberg-blocks.php:36
 msgid "%1$sInstall Ocean Gutenberg Blocks%2$s to use these options."
 msgstr ""
 

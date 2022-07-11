@@ -302,7 +302,7 @@ final class OceanWP_Theme_Panel {
 						$warnings['elementor-widgets'] = __( 'You should update plugin Ocean Elementor Widgets to use new features', 'oceanwp' );
 					}
 					if ( $sidebar_plugin_slug == 'ocean-gutenberg-blocks' ) {
-						$warnings['gutengerg-blocks'] = __( 'You should update plugin Ocean Gutenberg Blocks to use new features', 'oceanwp' );
+						$warnings['gutenberg-blocks'] = __( 'You should update plugin Ocean Gutenberg Blocks to use new features', 'oceanwp' );
 					}
 					if ( $sidebar_plugin_slug == 'ocean-white-label' ) {
 						$warnings['white-label'] = __( 'You should update plugin Ocean White Label to use new features', 'oceanwp' );
@@ -432,15 +432,20 @@ final class OceanWP_Theme_Panel {
 				'href'  => 'elementor-widgets',
 				'order' => 90,
 			),
-			'gutengerg-blocks'  => array(
-				'title' => __( 'Gutengerg Blocks', 'oceanwp' ),
-				'href'  => 'gutengerg-blocks',
+			'gutenberg-blocks'  => array(
+				'title' => __( 'Gutenberg Blocks', 'oceanwp' ),
+				'href'  => 'gutenberg-blocks',
 				'order' => 100,
 			),
 			'extra-settings'    => array(
 				'title' => __( 'Extra Settings', 'oceanwp' ),
 				'href'  => 'extra-settings',
 				'order' => 110,
+			),
+			'admin-settings'              => array(
+				'title' => __( 'Admin Settings', 'oceanwp' ),
+				'href'  => 'admin-settings',
+				'order' => 111,
 			),
 			'white-label' => array(
 				'title' => __( 'White Label', 'oceanwp' ),
@@ -456,11 +461,6 @@ final class OceanWP_Theme_Panel {
 				'title' => __( 'Help', 'oceanwp' ),
 				'href'  => 'help',
 				'order' => 130,
-			),
-			'admin-settings'              => array(
-				'title' => __( 'Admin Settings', 'oceanwp' ),
-				'href'  => 'admin-settings',
-				'order' => 150,
 			),
 		);
 
@@ -797,7 +797,7 @@ final class OceanWP_Theme_Panel {
 		}
 	}
 
-	
+
 	public function clear_fonts () {
 		self::check_ajax_access( $_POST['nonce'], 'oceanwp_theme_panel' );
 
@@ -816,19 +816,19 @@ final class OceanWP_Theme_Panel {
 		try {
 			$files_fonts = glob(trailingslashit( $upload['basedir'] ) . $uploads_fonts_dir."/*");
 			if (count($files_fonts) > 0) {
-				foreach ($files_fonts as $file) {      
+				foreach ($files_fonts as $file) {
 					if (file_exists($file)) {
 						unlink($file);
-					}   
+					}
 				}
 			}
 
 			$files_css = glob(trailingslashit( $upload['basedir'] ) . $uploads_css_dir."/*");
 			if (count($files_css) > 0) {
-				foreach ($files_css as $file) {      
+				foreach ($files_css as $file) {
 					if (file_exists($file)) {
 						unlink($file);
-					}   
+					}
 				}
 			}
 		} catch ( Exception $e ) {
