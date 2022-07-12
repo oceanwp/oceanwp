@@ -298,7 +298,9 @@ h1#oceanwp-changelog,
   font-weight: 600;
 }
 
-#oceanwp-tp-extra-settings .oceanwp-tp-wide-block .oceanwp-tp-block-title:not(.main-heading) {
+#oceanwp-tp-extra-settings .oceanwp-tp-wide-block .oceanwp-tp-block-title:not(.main-heading),
+#oceanwp-tp-admin-settings .oceanwp-tp-wide-block .oceanwp-tp-block-title:not(.main-heading),
+#oceanwp-tp-ocean-elementor-library .oceanwp-tp-wide-block .oceanwp-tp-block-title:not(.main-heading) {
   font-size: 18px;
 }
 
@@ -406,6 +408,10 @@ h3.oceanwp-tp-block-description,
 
 .oceanwp-tp-banner.install-demos {
   background-image: url('../../../assets/images/banners/install-demos.jpg');
+  margin-bottom: 50px;
+}
+.oceanwp-tp-banner.admin-settings {
+  background-image: url('../../../assets/images/banners/admin-settings.jpg');
   margin-bottom: 50px;
 }
 

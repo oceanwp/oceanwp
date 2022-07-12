@@ -82,7 +82,12 @@ if ( 'thumbnail-entry' === $style ) {
 			}
 			?>
 
-			<?php ocean_edit_post(); ?>
+			<?php
+			$oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_status', 'no' );
+			if( $oe_disable_edit_post_active_status == 'no' ) {
+				ocean_edit_post();
+			}
+			?>
 
 		</div><!-- .blog-entry-inner -->
 
