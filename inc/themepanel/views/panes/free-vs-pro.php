@@ -7,13 +7,13 @@ if( ! $need_to_upgrade ) {
 <?php
 $extra_mode_actived = oceanwp_theme_panel()->extra_installed();
 ?>
-<?php 
+<?php
 
 /**
  * Upgrade Now Button.
  *
  * @return mixed
- * 
+ *
  */
 function upgrade_now_button () {
 	return '<a href=" ' . esc_url( 'https://oceanwp.org/core-extensions-bundle/' )  . ' " target="_blank" class="button upgrade-button" role="button">' . esc_html__( 'Upgrade Now', 'oceanwp' )  . ' </a>';
@@ -66,6 +66,7 @@ function upgrade_now_button () {
 			<li><span><?php esc_html_e( 'Professional Webinars*', 'oceanwp' ); ?></span><span class="oceanwp-cancel-icon"></span><span class="oceanwp-tick-icon"></span></li>
 			<li><span><?php esc_html_e( 'Newsletter Featuring*', 'oceanwp' ); ?></span><span class="oceanwp-cancel-icon"></span><span class="oceanwp-tick-icon"></span></li>
 			<li><span><?php esc_html_e( 'Pre-made Website Library', 'oceanwp' ); ?></span><span class="oceanwp-limited-icon"></span><span class="oceanwp-tick-icon"></span></li>
+			<li><span><?php esc_html_e( 'Pre-made Sections Library*', 'oceanwp' ); ?></span><span class="oceanwp-limited-icon"></span><span class="oceanwp-tick-icon"></span></li>
 			<li><span><?php esc_html_e( 'Royalty-free Images with Templates', 'oceanwp' ); ?></span><span class="oceanwp-limited-icon"></span><span class="oceanwp-tick-icon"></span></li>
 			<li><span><?php esc_html_e( 'Image Library*', 'oceanwp' ); ?></span><span class="oceanwp-cancel-icon"></span><span class="oceanwp-tick-icon"></span></li>
 			<li><span><?php esc_html_e( 'Icons Library*', 'oceanwp' ); ?></span><span class="oceanwp-cancel-icon"></span><span class="oceanwp-tick-icon"></span></li>
