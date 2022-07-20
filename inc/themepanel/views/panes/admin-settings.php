@@ -14,7 +14,7 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 	<!-- Banner -->
 	<div class="oceanwp-tp-banner admin-settings">
 		<h1 class="banner-header"><?php esc_html_e( 'Turbocharge your OceanWP theme with premium features', 'oceanwp' ); ?></h1>
-		<h2 class="banner-subheader"><?php esc_html_e( 'Because you and your website deserve the best,=', 'oceanwp' ); ?></h2>
+		<h2 class="banner-subheader"><?php esc_html_e( 'Because you and your website deserve the best.', 'oceanwp' ); ?></h2>
 		<a href="<?php echo esc_url( $banner_upgrade_link ); ?>" target="_blank" class="banner-button" role="button"><span><?php esc_html_e( 'Upgrade now', 'oceanwp' ); ?></span></a>
 	</div>
 	<?php //endif; ?>
@@ -28,11 +28,11 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Disable or enable specific OceanWP and Ocean Extra site features.', 'oceanwp' ); ?></h3>
 	</div>
 
-	<!-- Disable edit links on blog archive pages -->
+	<!-- Disable Edit Links on Blog Archive Pages -->
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/disable-blog-edit-links.png' ); ?>" />
-			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Disable edit links on blog archive pages', 'oceanwp' ); ?></h2>
+			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Disable Edit Links on Blog Archive Pages', 'oceanwp' ); ?></h2>
 		</div>
 		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Disable the option for the edit links to be displayed on your blog archives (visible to website admins only). Edit links allow you to quickly access the WordPress editor for any blog post directly from the archive pages.', 'oceanwp' ); ?></h3>
 		<div id="ocean-edit-post-disable" class="oceanwp-tp-switcher column-wrap">
@@ -56,6 +56,7 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 	</div>
 
 	<!-- Disable Ocean Notifications -->
+	<?php if ( $extra_mode_actived ) : ?>
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/disable-notifications.png' ); ?>" />
@@ -69,6 +70,7 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 			</label>
 		</div>
 	</div>
+	<?php endif; ?>
 
 </div>
 
