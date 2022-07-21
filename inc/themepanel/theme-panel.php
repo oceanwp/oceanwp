@@ -432,6 +432,11 @@ final class OceanWP_Theme_Panel {
 				'href'  => 'elementor-widgets',
 				'order' => 90,
 			),
+			'elementor-library' => array(
+				'title' => __( 'Elementor Library', 'oceanwp' ),
+				'href'  => 'elementor-library',
+				'order' => 91,
+			),
 			'gutenberg-blocks'  => array(
 				'title' => __( 'Gutenberg Blocks', 'oceanwp' ),
 				'href'  => 'gutenberg-blocks',
