@@ -10,14 +10,14 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 
 	<?php include_once oceanwp_theme_panel()->panel_top_header(); ?>
 
-	<?php //if ( $need_to_upgrade ) : ?>
+	<?php if ( $need_to_upgrade ) : ?>
 	<!-- Banner -->
 	<div class="oceanwp-tp-banner admin-settings">
 		<h1 class="banner-header"><?php esc_html_e( 'Turbocharge your OceanWP theme with premium features', 'oceanwp' ); ?></h1>
 		<h2 class="banner-subheader"><?php esc_html_e( 'Because you and your website deserve the best.', 'oceanwp' ); ?></h2>
 		<a href="<?php echo esc_url( $banner_upgrade_link ); ?>" target="_blank" class="banner-button" role="button"><span><?php esc_html_e( 'Upgrade now', 'oceanwp' ); ?></span></a>
 	</div>
-	<?php //endif; ?>
+	<?php endif; ?>
 
 	<!-- Admin Settings -->
 	<div class="oceanwp-tp-wide-block">
