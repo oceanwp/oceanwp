@@ -1,8 +1,10 @@
 <?php
-$extra_mode_actived                  = oceanwp_theme_panel()->extra_installed();
-$need_to_upgrade                     = oceanwp_theme_panel()->need_to_upgrade();
-$ocean_pro_demos_activated           = oceanwp_theme_panel()->ocean_pro_demos_activated();
-$ocean_elementor_library_is_disabled = get_option( 'disable_ocean_elementor_library', 'no' ) == 'yes';
+$extra_mode_actived                                  = oceanwp_theme_panel()->extra_installed();
+$need_to_upgrade                                     = oceanwp_theme_panel()->need_to_upgrade();
+$banner_upgrade_link                                 = oceanwp_theme_panel()->banner_upgrade_link();
+$ocean_pro_demos_activated                           = oceanwp_theme_panel()->ocean_pro_demos_activated();
+$install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->install_oe_upgrade_core_extensions_bundle_text_link();
+$ocean_elementor_library_is_disabled                 = get_option( 'disable_ocean_elementor_library', 'no' ) == 'yes';
 
 $tags           = array(
 	'homepage'     => __( 'Homepage', 'ocean-pro-demos' ),
