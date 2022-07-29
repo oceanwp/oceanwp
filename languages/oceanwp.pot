@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.3.3\n"
+"Project-Id-Version: OceanWP 3.3.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
-"POT-Creation-Date: 2022-06-13 04:32:46+00:00\n"
+"POT-Creation-Date: 2022-07-21 08:41:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -236,7 +236,7 @@ msgid "and much, much more."
 msgstr ""
 
 #: inc/breadcrumbs.php:333 inc/customizer/settings/general.php:2117
-#: inc/themepanel/theme-panel.php:390
+#: inc/themepanel/theme-panel.php:391
 msgid "Home"
 msgstr ""
 
@@ -339,32 +339,32 @@ msgid "px - em - rem"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:56
-#: inc/customizer/settings/typography.php:479
+#: inc/customizer/settings/typography.php:504
 msgid "Font Family"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:57
-#: inc/customizer/settings/typography.php:638
+#: inc/customizer/settings/typography.php:663
 msgid "Font Size"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:58
-#: inc/customizer/settings/typography.php:508
+#: inc/customizer/settings/typography.php:533
 msgid "Font Weight"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:59
-#: inc/customizer/settings/typography.php:548
+#: inc/customizer/settings/typography.php:573
 msgid "Font Style"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:60
-#: inc/customizer/settings/typography.php:581
+#: inc/customizer/settings/typography.php:606
 msgid "Text Transform"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:61
-#: inc/customizer/settings/typography.php:693
+#: inc/customizer/settings/typography.php:718
 msgid "Line Height"
 msgstr ""
 
@@ -396,82 +396,82 @@ msgstr ""
 #: inc/customizer/settings/header.php:1993
 #: inc/customizer/settings/header.php:2015
 #: inc/customizer/settings/header.php:2039
-#: inc/customizer/settings/typography.php:516
-#: inc/customizer/settings/typography.php:555
-#: inc/customizer/settings/typography.php:588
+#: inc/customizer/settings/typography.php:541
+#: inc/customizer/settings/typography.php:580
+#: inc/customizer/settings/typography.php:613
 #: inc/customizer/settings/woocommerce.php:127
 #: inc/third/class-lifterlms.php:308
 msgid "Default"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:298
-#: inc/customizer/settings/typography.php:517
+#: inc/customizer/settings/typography.php:542
 msgid "Thin: 100"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:299
-#: inc/customizer/settings/typography.php:518
+#: inc/customizer/settings/typography.php:543
 msgid "Light: 200"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:300
-#: inc/customizer/settings/typography.php:519
+#: inc/customizer/settings/typography.php:544
 msgid "Book: 300"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:301
-#: inc/customizer/settings/typography.php:520
+#: inc/customizer/settings/typography.php:545
 msgid "Normal: 400"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:302
-#: inc/customizer/settings/typography.php:521
+#: inc/customizer/settings/typography.php:546
 msgid "Medium: 500"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:303
-#: inc/customizer/settings/typography.php:522
+#: inc/customizer/settings/typography.php:547
 msgid "Semibold: 600"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:304
-#: inc/customizer/settings/typography.php:523
+#: inc/customizer/settings/typography.php:548
 msgid "Bold: 700"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:305
-#: inc/customizer/settings/typography.php:524
+#: inc/customizer/settings/typography.php:549
 msgid "Extra Bold: 800"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:306
-#: inc/customizer/settings/typography.php:525
+#: inc/customizer/settings/typography.php:550
 msgid "Black: 900"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:321
-#: inc/customizer/settings/typography.php:556
+#: inc/customizer/settings/typography.php:581
 #: inc/customizer/settings/woocommerce.php:2163
 msgid "Normal"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:322
-#: inc/customizer/settings/typography.php:557
+#: inc/customizer/settings/typography.php:582
 msgid "Italic"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:337
-#: inc/customizer/settings/typography.php:589
+#: inc/customizer/settings/typography.php:614
 msgid "Capitalize"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:338
-#: inc/customizer/settings/typography.php:590
+#: inc/customizer/settings/typography.php:615
 msgid "Lowercase"
 msgstr ""
 
 #: inc/customizer/controls/typo/class-control-typo.php:339
-#: inc/customizer/settings/typography.php:591
+#: inc/customizer/settings/typography.php:616
 msgid "Uppercase"
 msgstr ""
 
@@ -1092,7 +1092,7 @@ msgstr ""
 #: inc/customizer/settings/general.php:2210
 #: inc/customizer/settings/general.php:2241
 #: inc/customizer/settings/general.php:2275
-#: inc/customizer/settings/typography.php:592
+#: inc/customizer/settings/typography.php:617
 #: inc/customizer/settings/woocommerce.php:4087
 #: inc/customizer/settings/woocommerce.php:4850
 msgid "None"
@@ -2767,7 +2767,7 @@ msgstr ""
 
 #: inc/customizer/settings/header.php:89
 #: inc/customizer/settings/header.php:3484
-#: inc/themepanel/views/panes/free-vs-pro.php:82
+#: inc/themepanel/views/panes/free-vs-pro.php:83
 #: inc/third/class-lifterlms.php:312
 msgid "Full Screen"
 msgstr ""
@@ -3896,23 +3896,27 @@ msgstr ""
 msgid "Google Fonts from Site"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:391
+#: inc/customizer/settings/typography.php:390
+msgid "Elementor Google Fonts from Site"
+msgstr ""
+
+#: inc/customizer/settings/typography.php:416
 msgid "Font Subsets"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:509
+#: inc/customizer/settings/typography.php:534
 msgid "Important: Not all fonts support every font-weight."
 msgstr ""
 
-#: inc/customizer/settings/typography.php:639
+#: inc/customizer/settings/typography.php:664
 msgid "You can add: px-em-%"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:752
+#: inc/customizer/settings/typography.php:777
 msgid "Letter Spacing (px)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:796
+#: inc/customizer/settings/typography.php:821
 msgid "Font Color"
 msgstr ""
 
@@ -5105,7 +5109,7 @@ msgstr ""
 msgid "VK"
 msgstr ""
 
-#: inc/helpers.php:3989 inc/themepanel/views/panes/free-vs-pro.php:76
+#: inc/helpers.php:3989 inc/themepanel/views/panes/free-vs-pro.php:77
 msgid "Instagram"
 msgstr ""
 
@@ -5799,6 +5803,10 @@ msgstr ""
 msgid "Information has been copied."
 msgstr ""
 
+#: inc/themepanel/includes/js-messages.php:29
+msgid "Clearing data..."
+msgstr ""
+
 #: inc/themepanel/includes/plugins-compatibility.php:47
 #: inc/themepanel/views/panes/useful-plugins.php:132
 msgid "+ many, many more options and benefits."
@@ -5954,126 +5962,205 @@ msgid ""
 "options for products."
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:203 inc/themepanel/theme-panel.php:231
+#: inc/themepanel/theme-panel.php:204 inc/themepanel/theme-panel.php:232
 msgid "New theme version is available"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:211
+#: inc/themepanel/theme-panel.php:212
 msgid "Warning icon"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:301
+#: inc/themepanel/theme-panel.php:302
 msgid "You should update plugin Ocean Elementor Widgets to use new features"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:304
+#: inc/themepanel/theme-panel.php:305
 msgid "You should update plugin Ocean Gutenberg Blocks to use new features"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:307
+#: inc/themepanel/theme-panel.php:308
 msgid "You should update plugin Ocean White Label to use new features"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:314
+#: inc/themepanel/theme-panel.php:315
 msgid "Available new versions some plugins"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:395
+#: inc/themepanel/theme-panel.php:396
 msgid "Customizer"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:400
+#: inc/themepanel/theme-panel.php:401
 #: inc/themepanel/views/panes/install-demos.php:47
 msgid "Install Demos"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:405
+#: inc/themepanel/theme-panel.php:406
 msgid "Ocean Images"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:410
+#: inc/themepanel/theme-panel.php:411
 msgid "Integration"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:415
+#: inc/themepanel/theme-panel.php:416
 msgid "Useful Plugins"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:420
+#: inc/themepanel/theme-panel.php:421
 msgid "Changelog"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:425
+#: inc/themepanel/theme-panel.php:426
 msgid "Free vs Pro"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:430
+#: inc/themepanel/theme-panel.php:431
 #: inc/themepanel/views/panes/elementor-widgets.php:24
-#: inc/themepanel/views/panes/free-vs-pro.php:75
+#: inc/themepanel/views/panes/free-vs-pro.php:76
 #: inc/themepanel/views/panes/home.php:110
 msgid "Elementor Widgets"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:435
-msgid "Gutengerg Blocks"
+#: inc/themepanel/theme-panel.php:436
+#: inc/themepanel/views/panes/gutenberg-blocks.php:23
+#: inc/themepanel/views/panes/home.php:114
+msgid "Gutenberg Blocks"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:440
+#: inc/themepanel/theme-panel.php:441
 #: inc/themepanel/views/panes/extra-settings.php:12
 msgid "Extra Settings"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:445
-#: inc/themepanel/views/panes/free-vs-pro.php:85
+#: inc/themepanel/theme-panel.php:446
+#: inc/themepanel/views/panes/admin-settings.php:26
+msgid "Admin Settings"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:451
+#: inc/themepanel/views/panes/free-vs-pro.php:86
 #: inc/themepanel/views/panes/white-label.php:31
 msgid "White Label"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:450
+#: inc/themepanel/theme-panel.php:456
 #: inc/themepanel/views/panes/system-info.php:13
 msgid "System Info"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:455
+#: inc/themepanel/theme-panel.php:461
 msgid "Help"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:529
+#: inc/themepanel/theme-panel.php:535
 msgid "%1$sInstall free Ocean Extra recommended plugin%2$s to unlock this feature."
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:542
+#: inc/themepanel/theme-panel.php:548
 msgid ""
 "%1$sUpgrade to the Business or Agency Ocean Core Extensions Bundle "
 "plans%2$s to unlock this feature."
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:555
+#: inc/themepanel/theme-panel.php:561
 msgid "%1$sUpgrade to the Ocean Core Extensions Bundle%2$s to unlock this feature."
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:567
+#: inc/themepanel/theme-panel.php:573
 msgid "%1$s or %2$s"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:571
+#: inc/themepanel/theme-panel.php:577
 msgid "Install free Ocean Extra recommended plugin"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:576
+#: inc/themepanel/theme-panel.php:582
 msgid "upgrade to the Ocean Core Extensions Bundle"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:623
+#: inc/themepanel/theme-panel.php:629 inc/themepanel/theme-panel.php:835
 msgid "Something went wrong"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:626
+#: inc/themepanel/theme-panel.php:632
 msgid "You do not have sufficient privileges for this action."
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:764
+#: inc/themepanel/theme-panel.php:770
 msgid "Child theme already installed"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:809
+msgid "Fonts folder does not exist"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:813
+msgid "CSS folder does not exist"
+msgstr ""
+
+#: inc/themepanel/theme-panel.php:837
+msgid "Data was cleared"
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:16
+msgid "Turbocharge your OceanWP theme with premium features"
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:17
+msgid "Because you and your website deserve the best."
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:18
+#: inc/themepanel/views/panes/elementor-widgets.php:17
+#: inc/themepanel/views/panes/gutenberg-blocks.php:16
+#: inc/themepanel/views/panes/help.php:110
+#: inc/themepanel/views/panes/home.php:83
+#: inc/themepanel/views/panes/install-demos.php:18
+#: inc/themepanel/views/panes/ocean-images.php:18
+#: inc/themepanel/views/panes/useful-plugins.php:114
+#: inc/themepanel/views/panes/white-label.php:24
+msgid "Upgrade now"
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:28
+msgid "Disable or enable specific OceanWP and Ocean Extra site features."
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:35
+msgid "Disable Edit Links on Blog Archive Pages"
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:37
+msgid ""
+"Disable the option for the edit links to be displayed on your blog archives "
+"(visible to website admins only). Edit links allow you to quickly access "
+"the WordPress editor for any blog post directly from the archive pages."
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:50
+msgid "Regenerate Local Google CSS files"
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:52
+msgid ""
+"OceanWP Google fonts not rendering on frontend of your website? If you have "
+"recently made any SSL or website URL changes, use the \"Clear Data\" button "
+"to regenerate local CSS files and fix the font rendering issue."
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:54
+msgid "Clear Data"
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:63
+msgid "Disable Ocean Notifications"
+msgstr ""
+
+#: inc/themepanel/views/panes/admin-settings.php:65
+msgid ""
+"Do not wish to receive news and updates from us? Disable or enable Ocean "
+"Notifications at any time."
 msgstr ""
 
 #: inc/themepanel/views/panes/customizer.php:13
@@ -6128,17 +6215,6 @@ msgstr ""
 #: inc/themepanel/views/panes/ocean-images.php:17
 #: inc/themepanel/views/panes/useful-plugins.php:113
 msgid "Take the lead. Experience website building with no limits"
-msgstr ""
-
-#: inc/themepanel/views/panes/elementor-widgets.php:17
-#: inc/themepanel/views/panes/gutenberg-blocks.php:16
-#: inc/themepanel/views/panes/help.php:110
-#: inc/themepanel/views/panes/home.php:83
-#: inc/themepanel/views/panes/install-demos.php:18
-#: inc/themepanel/views/panes/ocean-images.php:18
-#: inc/themepanel/views/panes/useful-plugins.php:114
-#: inc/themepanel/views/panes/white-label.php:24
-msgid "Upgrade now"
 msgstr ""
 
 #: inc/themepanel/views/panes/elementor-widgets.php:30
@@ -6263,79 +6339,78 @@ msgid "Pre-made Website Library"
 msgstr ""
 
 #: inc/themepanel/views/panes/free-vs-pro.php:69
-msgid "Royalty-free Images with Templates"
+msgid "Pre-made Sections Library*"
 msgstr ""
 
 #: inc/themepanel/views/panes/free-vs-pro.php:70
-msgid "Image Library*"
+msgid "Royalty-free Images with Templates"
 msgstr ""
 
 #: inc/themepanel/views/panes/free-vs-pro.php:71
-msgid "Icons Library*"
+msgid "Image Library*"
 msgstr ""
 
 #: inc/themepanel/views/panes/free-vs-pro.php:72
-msgid "Access to PRO Updates"
+msgid "Icons Library*"
 msgstr ""
 
 #: inc/themepanel/views/panes/free-vs-pro.php:73
-msgid "Sticky Header"
+msgid "Access to PRO Updates"
 msgstr ""
 
 #: inc/themepanel/views/panes/free-vs-pro.php:74
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/themepanel/views/panes/free-vs-pro.php:75
 msgid "Sticky Footer"
 msgstr ""
 
-#: inc/themepanel/views/panes/free-vs-pro.php:77
+#: inc/themepanel/views/panes/free-vs-pro.php:78
 msgid "Footer Callout"
 msgstr ""
 
-#: inc/themepanel/views/panes/free-vs-pro.php:78
+#: inc/themepanel/views/panes/free-vs-pro.php:79
 msgid "Side Panel"
 msgstr ""
 
-#: inc/themepanel/views/panes/free-vs-pro.php:79
+#: inc/themepanel/views/panes/free-vs-pro.php:80
 #: inc/themepanel/views/panes/home.php:118
 msgid "Portfolio"
 msgstr ""
 
-#: inc/themepanel/views/panes/free-vs-pro.php:80
+#: inc/themepanel/views/panes/free-vs-pro.php:81
 msgid "Conditional Hooks for Codes & Templates"
 msgstr ""
 
-#: inc/themepanel/views/panes/free-vs-pro.php:81
+#: inc/themepanel/views/panes/free-vs-pro.php:82
 msgid "Login Popup"
 msgstr ""
 
-#: inc/themepanel/views/panes/free-vs-pro.php:83
+#: inc/themepanel/views/panes/free-vs-pro.php:84
 msgid "Cookie Notice"
 msgstr ""
 
-#: inc/themepanel/views/panes/free-vs-pro.php:84
+#: inc/themepanel/views/panes/free-vs-pro.php:85
 msgid "Woo Popup"
 msgstr ""
 
-#: inc/themepanel/views/panes/free-vs-pro.php:90
+#: inc/themepanel/views/panes/free-vs-pro.php:91
 msgid ""
 "* Some PRO features are included or optional depending on the Business "
 "and/or Agency Bundle plan."
 msgstr ""
 
-#: inc/themepanel/views/panes/free-vs-pro.php:97
+#: inc/themepanel/views/panes/free-vs-pro.php:98
 msgid "Have any questions about going PRO or upgrading your plan?"
 msgstr ""
 
-#: inc/themepanel/views/panes/free-vs-pro.php:98
+#: inc/themepanel/views/panes/free-vs-pro.php:99
 msgid "Let us know how we can help you make the best decision for your website."
 msgstr ""
 
 #: inc/themepanel/views/panes/gutenberg-blocks.php:14
 msgid "Enrich blog posts or pages with Ocean Gutenberg Blocks."
-msgstr ""
-
-#: inc/themepanel/views/panes/gutenberg-blocks.php:23
-#: inc/themepanel/views/panes/home.php:114
-msgid "Gutenberg Blocks"
 msgstr ""
 
 #: inc/themepanel/views/panes/gutenberg-blocks.php:29
@@ -6740,7 +6815,7 @@ msgid ""
 msgstr ""
 
 #: inc/themepanel/views/panes/integration.php:57
-msgid "Google reCAPTHA"
+msgid "Google reCAPTCHA"
 msgstr ""
 
 #: inc/themepanel/views/panes/integration.php:60

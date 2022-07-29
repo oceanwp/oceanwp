@@ -31,7 +31,7 @@ class MobileSearchIcon extends SearchBase {
 
   #setupEventListeners = () => {
 
-    if ( ! this.#elements.length ) {
+    if ( ! this.#elements ) {
       return;
     }
 

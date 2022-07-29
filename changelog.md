@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2022.07.21_ - 3.3.4
+- **Fixed**: Mobile Search Icon: Search on tablet and mobile not responding #389
+
 ### _2022.06.14_ - 3.3.3
 - **Added**: Accessibility: WooCommerce: Single Product: Aria labels for product navigation.
 - **Added**: Accessibility: WooCommerce: Single Product: Related Products: Aria label for product quick view.
