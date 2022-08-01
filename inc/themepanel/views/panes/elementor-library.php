@@ -9,6 +9,7 @@ $ocean_elementor_library_is_disabled                 = get_option( 'disable_ocea
 $tags           = array(
 	'landing-page' => __( 'Landing Page', 'ocean-pro-demos' ),
 	'banner'       => __( 'Banner', 'ocean-pro-demos' ),
+	'hero'         => __( 'Hero', 'ocean-pro-demos' ),
 	'sales'        => __( 'Sales', 'ocean-pro-demos' ),
 	'contact'      => __( 'Contact', 'ocean-pro-demos' ),
 	'newsletter'   => __( 'Newsletter', 'ocean-pro-demos' ),
