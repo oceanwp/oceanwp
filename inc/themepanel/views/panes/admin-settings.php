@@ -49,7 +49,7 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/regenerate-google-cache.png' ); ?>" />
 			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Regenerate Local Google CSS files', 'oceanwp' ); ?></h2>
 		</div>
-		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'OceanWP Google fonts not rendering on frontend of your website? If you have recently made any SSL or website URL changes, use the "Clear Data" button to regenerate local CSS files and fix the font rendering issue.', 'oceanwp' ); ?></h3>
+		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'OceanWP Google fonts not rendering on frontend of your website when using the theme option to load Google fonts locally? If you have recently made any SSL or website URL changes, use the "Clear Data" button to regenerate local CSS files and fix the font rendering issue.', 'oceanwp' ); ?></h3>
         <div id="ocean-fonts-clear" class="column-wrap clr">
 			<button class="btn button"><?php esc_html_e( 'Clear Data', 'oceanwp' ); ?></button>
         </div>
@@ -62,7 +62,7 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/disable-notifications.png' ); ?>" />
 			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Disable Ocean Notifications', 'oceanwp' ); ?></h2>
 		</div>
-		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Do not wish to receive news and updates from us? Disable or enable Ocean Notifications at any time.', 'oceanwp' ); ?></h3>
+		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'We highly recommend you keep this feature enabled and always be up to speed with OceanWP news regarding features, webinars, updates and more. We will announce only the most important news. If you ever wish to disable this feature, you can do it any time.', 'oceanwp' ); ?></h3>
 		<div id="ocean-notification-disable" class="oceanwp-tp-switcher column-wrap">
 			<label for="oceanwp-switch-notification-disable" class="column-name">
 				<input type="checkbox" role="checkbox" name="notification-disable" value="true" id="oceanwp-switch-notification-disable" <?php checked( $oe_notification_active_status == 'yes' ); ?> />
