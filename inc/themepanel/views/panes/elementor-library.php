@@ -6,22 +6,8 @@ $ocean_pro_demos_activated                           = oceanwp_theme_panel()->oc
 $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->install_oe_upgrade_core_extensions_bundle_text_link();
 $ocean_elementor_library_is_disabled                 = get_option( 'disable_ocean_elementor_library', 'no' ) == 'yes';
 
-$tags           = array(
-	'landing-page' => __( 'Landing Page', 'ocean-pro-demos' ),
-	'banner'       => __( 'Banner', 'ocean-pro-demos' ),
-	'hero'         => __( 'Hero', 'ocean-pro-demos' ),
-	'sales'        => __( 'Sales', 'ocean-pro-demos' ),
-	'contact'      => __( 'Contact', 'ocean-pro-demos' ),
-	'newsletter'   => __( 'Newsletter', 'ocean-pro-demos' ),
-	'about'        => __( 'About', 'ocean-pro-demos' ),
-	'cta'          => __( 'Call to Action', 'ocean-pro-demos' ),
-	'footer'       => __( 'Footer', 'ocean-pro-demos' ),
-	'team'         => __( 'Team', 'ocean-pro-demos' ),
-	'services'     => __( 'Services', 'ocean-pro-demos' ),
-	'pricing'      => __( 'Pricing', 'ocean-pro-demos' ),
-	'testimonials' => __( 'Testimonials', 'ocean-pro-demos' ),
-	'quotes'       => __( 'Quotes', 'ocean-pro-demos' ),
-);
+$tags = apply_filters( 'opd_elementor_library_panel_tags', [] );
+
 $available_tags = get_option( 'opd_elementor_library_tags', null );
 ?>
 
