@@ -248,12 +248,6 @@ jQuery(document).ready(function ($) {
         if($('#owp_api_images_integration').length) {
             jQuery('#owp_api_images_integration').trigger('change');
         }
-        if($('#owp_freepik_integration').length) {
-            jQuery('#owp_freepik_integration').trigger('change');
-        }
-        if($('#owp_freepik_image_width').length) {
-            jQuery('#owp_freepik_image_width').trigger('change');
-        }
         $( document.body ).trigger( 'op_panel_loaded' );
     }
 
