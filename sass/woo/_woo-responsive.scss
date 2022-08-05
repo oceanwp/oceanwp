@@ -7,12 +7,12 @@ Woo Responsive
 .sidr-class-woocommerce {
   display: none;
 }
-@media only screen and(max-width: 1280px) {
+@media only screen and (max-width: 1280px) {
   .woocommerce div.product .product-thumbnails {
     width: 275px;
   }
 }
-@media only screen and(max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .woocommerce {
     #customer_login {
       .lost_password {
@@ -36,7 +36,7 @@ Woo Responsive
     }
   }
 }
-@media only screen and(max-width: 959px) {
+@media only screen and (max-width: 959px) {
   body.account-side-style .woocommerce #customer_login {
     > div,
     .col-2 {
@@ -78,7 +78,7 @@ Woo Responsive
     }
   }
 }
-@media only screen and(max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .woocommerce {
     ul {
       &.products.list li.product {
@@ -292,7 +292,7 @@ Woo Responsive
   }
 }
 
-@media only screen and(max-width: 580px) {
+@media only screen and (max-width: 580px) {
   .woocommerce-cart table.cart td.actions {
     .coupon {
       float: none;
@@ -326,7 +326,7 @@ Woo Responsive
   }
 }
 
-@media only screen and(max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .woocommerce {
     .result-count {
       display: none;
@@ -362,7 +362,7 @@ Woo Responsive
     margin: 10px 0 0;
   }
 }
-@media only screen and(max-width: 320px) {
+@media only screen and (max-width: 320px) {
   .woocommerce {
     .woocommerce-ordering .orderby {
       width: 175px !important;

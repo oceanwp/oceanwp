@@ -6,7 +6,7 @@
 /** Buttons **/
 .btn-join,
 #btn-join,
-.learndash_checkout_buttons input.btn-join[type="button"],
+.learndash_checkout_buttons input.btn-join[type=button],
 a#quiz_continue_link {
   display: inline-block;
   font-family: inherit;
@@ -41,7 +41,7 @@ a#quiz_continue_link {
 #btn-join:hover,
 #btn-join:focus,
 a#quiz_continue_link:hover,
-.learndash_checkout_buttons input.btn-join[type="button"]:hover,
+.learndash_checkout_buttons input.btn-join[type=button]:hover,
 a#quiz_continue_link:focus {
   background-color: #0b7cac;
   color: #fff;
@@ -77,7 +77,6 @@ a#quiz_continue_link:focus {
   background: 0 0;
   line-height: 1.8;
 }
-
 .learndash .completed:before,
 .learndash .notcompleted:before,
 #learndash_profile .completed:before,
@@ -86,14 +85,13 @@ a#quiz_continue_link:focus {
   top: 10px;
   right: 20px;
   display: inline-block;
-  font: normal normal 900 14px/1 'Font Awesome 5 free';
+  font: normal normal 900 14px/1 "Font Awesome 5 free";
   font-size: 20px;
   text-rendering: auto;
   content: "\f058";
   text-indent: 0;
   color: #068806;
 }
-
 .learndash .notcompleted:before,
 #learndash_profile .notcompleted:before {
   content: "\f111";
@@ -110,7 +108,6 @@ a#quiz_continue_link:focus {
 .learndash_topic_dots ul .topic-notcompleted span {
   background: 0 0;
 }
-
 .learndash_navigation_lesson_topics_list .topic-completed span:before,
 .learndash_navigation_lesson_topics_list .topic-notcompleted span:before,
 .learndash_navigation_lesson_topics_list ul .topic-completed span:before,
@@ -119,7 +116,7 @@ a#quiz_continue_link:focus {
 .learndash_topic_dots .topic-notcompleted span:before,
 .learndash_topic_dots ul .topic-completed span:before,
 .learndash_topic_dots ul .topic-notcompleted span:before {
-  font: normal normal 900 14px/1 'Font Awesome 5 free';
+  font: normal normal 900 14px/1 "Font Awesome 5 free";
   font-size: 20px;
   text-rendering: auto;
   content: "\f058";
@@ -168,30 +165,25 @@ a#quiz_continue_link:focus {
   vertical-align: top;
   color: #777;
 }
-
 #learndash_profile .list_arrow.collapse:before,
 #learndash_profile .list_arrow.expand:before {
-  font: normal normal 900 14px/1 'Font Awesome 5 free';
+  font: normal normal 900 14px/1 "Font Awesome 5 free";
   font-size: 20px;
   text-rendering: auto;
   content: "\f152";
 }
-
 #learndash_profile .list_arrow.expand:before {
   content: "\f150";
 }
-
 #learndash_profile .learndash-course-link a,
 #learndash_profile .learndash-course-status a,
 #learndash_profile .learndash-course-certificate a {
   line-height: inherit;
   padding: 10px 0;
 }
-
 #learndash_profile .course_progress {
   margin: 15px 0;
 }
-
 #learndash_profile .flip {
   padding-top: 10px;
 }
@@ -210,7 +202,6 @@ a#quiz_continue_link:focus {
 body .thumbnail.course .ld_course_grid_price.ribbon-enrolled {
   background-color: #13aff0;
 }
-
 body dd.course_progress {
   margin-left: 0;
   width: 100%;
@@ -219,7 +210,6 @@ body dd.course_progress {
   -ms-border-radius: 3px;
   border-radius: 3px;
 }
-
 body #ld_course_list .btn {
   display: inline-block;
   font-family: inherit;
@@ -245,7 +235,6 @@ body #ld_course_list .btn {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 body #ld_course_list .btn-primary:hover,
 body #ld_course_list .btn-primary:focus,
 body #ld_course_list .btn-primary:active,
@@ -260,7 +249,6 @@ body #ld_course_list .open .dropdown-toggle.btn-primary {
 body.rtl {
   /** Shortcodes **/
 }
-
 body.rtl .learndash .completed:before,
 body.rtl .learndash .notcompleted:before,
 body.rtl #learndash_profile .completed:before,
@@ -268,7 +256,6 @@ body.rtl #learndash_profile .notcompleted:before {
   left: 20px;
   right: auto;
 }
-
 body.rtl .learndash_navigation_lesson_topics_list .topic-completed span:before,
 body.rtl .learndash_navigation_lesson_topics_list .topic-notcompleted span:before,
 body.rtl .learndash_navigation_lesson_topics_list ul .topic-completed span:before,
@@ -280,7 +267,6 @@ body.rtl .learndash_topic_dots ul .topic-notcompleted span:before {
   margin-left: 10px;
   margin-right: 0;
 }
-
 body.rtl body dd.course_progress {
   margin-right: 0;
 }

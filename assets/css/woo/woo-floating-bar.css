@@ -18,7 +18,6 @@ Woo Floating Bar
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .owp-floating-bar.show {
   height: 66px;
   -moz-opacity: 1;
@@ -26,7 +25,6 @@ Woo Floating Bar
   opacity: 1;
   visibility: visible;
 }
-
 .owp-floating-bar .container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -39,16 +37,13 @@ Woo Floating Bar
   align-items: center;
   height: 66px;
 }
-
 .owp-floating-bar .left,
 .owp-floating-bar .right {
   width: 50%;
 }
-
 .owp-floating-bar .right {
   text-align: right;
 }
-
 .owp-floating-bar p.selected {
   display: inline-block;
   margin-bottom: 0;
@@ -57,7 +52,6 @@ Woo Floating Bar
   font-size: 16px;
   font-weight: 600;
 }
-
 .owp-floating-bar h2.entry-title {
   display: inline-block;
   color: #fff;
@@ -67,36 +61,29 @@ Woo Floating Bar
   padding: 0;
   border: 0;
 }
-
 .owp-floating-bar .product_price {
   display: inline-block;
 }
-
 .owp-floating-bar .product_price p {
   font-size: 16px;
   font-weight: 600;
   margin: 0 30px 0 0;
 }
-
 .owp-floating-bar .product_price del {
   -moz-opacity: 0.7;
   -webkit-opacity: 0.7;
   opacity: 0.7;
 }
-
 .owp-floating-bar .product_price del .amount,
 .owp-floating-bar .product_price .amount {
   color: #fff;
 }
-
 .owp-floating-bar form.cart {
   display: inline-block;
 }
-
 .owp-floating-bar form.cart .quantity {
   margin: 5px 15px 0 0;
 }
-
 .owp-floating-bar form.cart .quantity .minus,
 .owp-floating-bar form.cart .quantity .plus {
   background-color: rgba(255, 255, 255, 0.1);
@@ -104,18 +91,15 @@ Woo Floating Bar
   font-size: 20px;
   border: 0;
 }
-
 .owp-floating-bar form.cart .quantity .minus:hover,
 .owp-floating-bar form.cart .quantity .plus:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-
 .owp-floating-bar form.cart .quantity .qty {
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
   border: 0;
 }
-
 .owp-floating-bar button.button {
   background-color: #fff;
   color: #000;
@@ -123,15 +107,12 @@ Woo Floating Bar
   height: 46px;
   padding: 0 40px;
 }
-
 .owp-floating-bar button.button:hover, .owp-floating-bar button.button:focus {
   background-color: #f1f1f1;
 }
-
 .owp-floating-bar .added_to_cart {
   display: none;
 }
-
 .owp-floating-bar .out-of-stock {
   display: inline-block;
   margin: 0;
@@ -155,11 +136,11 @@ Woo Floating Bar
     bottom: 0;
   }
   .owp-floating-bar.show,
-  .owp-floating-bar .container {
+.owp-floating-bar .container {
     height: 45px;
   }
   .owp-floating-bar .left,
-  .owp-floating-bar .right {
+.owp-floating-bar .right {
     width: 50%;
   }
   .owp-floating-bar .right {
@@ -179,7 +160,6 @@ Woo Floating Bar
     bottom: 50px;
   }
 }
-
 @media screen and (max-width: 1191px) {
   .owp-floating-bar .left {
     display: none;
@@ -189,19 +169,16 @@ Woo Floating Bar
     text-align: center;
   }
 }
-
 @media screen and (max-width: 700px) {
   .owp-floating-bar .product_price {
     display: none;
   }
 }
-
 @media screen and (max-width: 339px) {
-  [class*="owp-floating-bar"] [class*="quantity"] {
+  [class*=owp-floating-bar] [class*=quantity] {
     display: none;
   }
 }
-
 @media screen and (max-width: 300px) {
   .owp-floating-bar {
     display: none;

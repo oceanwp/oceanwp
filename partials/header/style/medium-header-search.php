@@ -16,7 +16,7 @@ $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
 ?>
 
 <div id="medium-searchform" class="header-searchform-wrap clr">
-	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform" role="search" aria-label="<?php esc_attr_e( 'Medium Header Search', 'oceanwp' ); ?>">
+	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform" aria-label="<?php esc_attr_e( 'Medium Header Search', 'oceanwp' ); ?>">
 		<input type="search" name="s" autocomplete="off" value="" />
 		<?php
 		// If the headerSearchForm script is not disable.

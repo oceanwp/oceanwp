@@ -4765,7 +4765,7 @@ function oceanwp_mobile_search_form_html() {
 		$mobile_search_content = '';
 		ob_start();
 		?>
-		<form role="search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<form method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
 			<input aria-label="<?php oceanwp_theme_strings( 'owp-string-search-field' ); ?>" type="text" class="field" name="s" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>">
 			<?php
@@ -4783,7 +4783,7 @@ function oceanwp_mobile_search_form_html() {
 		ob_start();
 		?>
 		<div class="container clr">
-			<form role="search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<form method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<a href="#" class="search-overlay-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-close-search-form' ); ?>"><span></span></a>
 				<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
 				<input aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-submit-search' ); ?>" class="mobile-search-overlay-input" type="search" name="s" autocomplete="off" value="">

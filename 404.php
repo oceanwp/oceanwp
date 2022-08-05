@@ -105,7 +105,7 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 													if ( ! empty( $logo_404 ) ) {
 														?>
 
-														<img src="<?php echo esc_url( $logo_404 ); ?>" alt="<?php esc_html_e( '404 Logo', 'oceanwp' ); ?>" title="<?php esc_html_e( '404 Logo', 'oceanwp' ); ?>" />
+														<img src="<?php echo esc_url( $logo_404 ); ?>" alt="<?php esc_attr_e( '404 Logo', 'oceanwp' ); ?>" title="<?php esc_attr_e( '404 Logo', 'oceanwp' ); ?>" />
 													<?php } ?>
 
 													<h2 class="error-title"><?php esc_html_e( 'This page could not be found!', 'oceanwp' ); ?></h2>
