@@ -5,20 +5,10 @@ function get_latest_changelog() {
 	$access_type = get_filesystem_method();
 
 	if ( $access_type === 'direct' ) {
-		$creds = request_filesystem_credentials(
-			site_url() . '/wp-admin/',
-			'',
-			false,
-			false,
-			array()
-		);
 
-		if ( WP_Filesystem( $creds ) ) {
-			global $wp_filesystem;
-
-			$changelog = $wp_filesystem->get_contents(
-				get_template_directory() . '/changelog.md'
-			);
+		$changelog_file = get_template_directory() . '/changelog.md';
+		if( file_exists( $changelog_file ) ) {
+			$changelog = file_get_contents( $changelog_file );
 		}
 	}
 	return $changelog;

@@ -18,45 +18,45 @@ function owp_get_customizer_options() {
 		'custom_logo'            => array(
 			'label' => esc_html__( 'Logo', 'oceanwp' ),
 			'desc'  => esc_html__( 'Upload website logo and retina logo for large screens.', 'oceanwp' ),
-			'icon'  => esc_html__( 'logo.png' ),
+			'icon'  => 'logo.png',
 		),
 		'site_icon'              => array(
 			'label' => esc_html__( 'Favicon', 'oceanwp' ),
 			'desc'  => esc_html__( 'Upload the browser tab and app icon for your website.', 'oceanwp' ),
-			'icon'  => esc_html__( 'favicon.png' ),
+			'icon'  => 'favicon.png',
 			'customizer_autofocus' => 'blogname',
 		),
 		'ocean_primary_color'    => array(
 			'label' => esc_html__( 'Primary Colors', 'oceanwp' ),
 			'desc'  => esc_html__( 'Set primary color and hover color for main styling.', 'oceanwp' ),
-			'icon'  => esc_html__( 'primary-colors.png' ),
+			'icon'  => 'primary-colors.png',
 			'customizer_autofocus' => 'ocean_customzer_styling',
 		),
 		'ocean_typography_panel' => array(
 			'label' => esc_html__( 'Typography', 'oceanwp' ),
 			'desc'  => esc_html__( 'Pick typography settings for any part of the website.', 'oceanwp' ),
-			'icon'  => esc_html__( 'typography.png' ),
+			'icon'  => 'typography.png',
 			'panel' => true,
 		),
 		'ocean_top_bar'          => array(
 			'label' => esc_html__( 'Top Bar', 'oceanwp' ),
 			'desc'  => esc_html__( 'Enable or disable, add social media, menu and more.', 'oceanwp' ),
-			'icon'  => esc_html__( 'top-bar.png' ),
+			'icon'  => 'top-bar.png',
 		),
 		'ocean_header_style'     => array(
 			'label' => esc_html__( 'Header', 'oceanwp' ),
 			'desc'  => esc_html__( 'Choose main website header style, adjust colors, padding...', 'oceanwp' ),
-			'icon'  => esc_html__( 'header.png' ),
+			'icon'  => 'header.png',
 		),
 		'ocean_footer_widgets'   => array(
 			'label' => esc_html__( 'Footer Widgets', 'oceanwp' ),
 			'desc'  => esc_html__( 'Select footer widgets or a custom template for website footer.', 'oceanwp' ),
-			'icon'  => esc_html__( 'footer-widgets.png' ),
+			'icon'  => 'footer-widgets.png',
 		),
 		'ocean_footer_bottom'    => array(
 			'label' => esc_html__( 'Footer Bottom', 'oceanwp' ),
 			'desc'  => esc_html__( 'Disable or adjust the footer copyright area of your website.', 'oceanwp' ),
-			'icon'  => esc_html__( 'footer-bottom.png' ),
+			'icon'  => 'footer-bottom.png',
 		),
 	);
 
@@ -249,9 +249,22 @@ function owp_get_customizer_options() {
 
 						<?php if ( ! file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) ) : ?>
 							<div class="oceanwp-tp-block-button-wrapper">
+
+							<?php if ( $extra_mode_actived ) : ?>
 								<a href="https://downloads.oceanwp.org/oceanwp/oceanwp-child-theme.zip" target="_blank" class="button blue oceanwp_install_child_theme" role="button" >
 									<?php esc_html_e( 'Download', 'oceanwp' ); ?>
 								</a>
+							<?php else : ?>
+								<h3 class="oceanwp-tp-block-description">
+									<?php echo sprintf(
+										esc_html__( '%1$sInstall free Ocean Extra recommended plugin%2$s to unlock more features.', 'oceanwp' ),
+										'<a href="https://youtu.be/kqHNgUPWMTY" target="_blank">',
+										'</a>'
+									);
+									?>
+								</h3>
+							<?php endif; ?>
+
 							</div>
 						<?php elseif ( file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) && ! is_child_theme() ) : ?>
 							<div class="oceanwp-tp-block-button-wrapper">

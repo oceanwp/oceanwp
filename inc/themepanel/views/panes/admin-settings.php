@@ -49,10 +49,21 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/regenerate-google-cache.png' ); ?>" />
 			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Regenerate Local Google CSS files', 'oceanwp' ); ?></h2>
 		</div>
-		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'OceanWP Google fonts not rendering on frontend of your website when using the theme option to load Google fonts locally? If you have recently made any SSL or website URL changes, use the "Clear Data" button to regenerate local CSS files and fix the font rendering issue.', 'oceanwp' ); ?></h3>
-        <div id="ocean-fonts-clear" class="column-wrap clr">
-			<button class="btn button"><?php esc_html_e( 'Clear Data', 'oceanwp' ); ?></button>
-        </div>
+		<?php if ( $extra_mode_actived ) : ?>
+			<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'OceanWP Google fonts not rendering on frontend of your website when using the theme option to load Google fonts locally? If you have recently made any SSL or website URL changes, use the "Clear Data" button to regenerate local CSS files and fix the font rendering issue.', 'oceanwp' ); ?></h3>
+			<div id="ocean-fonts-clear" class="column-wrap clr">
+				<button class="btn button"><?php esc_html_e( 'Clear Data', 'oceanwp' ); ?></button>
+			</div>
+		<?php else : ?>
+			<h3 class="oceanwp-tp-block-description">
+				<?php echo sprintf(
+					esc_html__( '%1$sInstall free Ocean Extra recommended plugin%2$s to unlock more features.', 'oceanwp' ),
+					'<a href="https://youtu.be/kqHNgUPWMTY" target="_blank">',
+					'</a>'
+				);
+				?>
+			</h3>
+		<?php endif; ?>
 	</div>
 
 	<!-- Disable Ocean Notifications -->
