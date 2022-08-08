@@ -10,7 +10,7 @@ const wooScriptsPath = "./assets/src/js/wp-plugins/woocommerce";
 const wooOutputsPath = "./assets/js/wp-plugins/woocommerce";
 
 module.exports = function (grunt) {
-  const sass = require("node-sass");
+  const sass = require("sass");
 
   // require it at the top and pass in the grunt instance
   require("time-grunt")(grunt);

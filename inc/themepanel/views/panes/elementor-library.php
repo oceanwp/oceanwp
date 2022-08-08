@@ -18,9 +18,9 @@ $available_tags = get_option( 'opd_elementor_library_tags', null );
 	<?php if ( $need_to_upgrade ) : ?>
 	<!-- Banner -->
 	<div class="oceanwp-tp-banner elementor-library">
-		<h1 class="banner-header"><?php esc_html_e( 'Easily construct Elementor pages section by section with the Ocean Pro Demos and the Ocean Core Extensions Bundle.', 'ocean-pro-demos' ); ?></h1>
-		<h2 class="banner-subheader"><?php esc_html_e( 'Do even need to mention royalty-free images and icons come included with the design?', 'ocean-pro-demos' ); ?></h2>
-		<a href="<?php echo esc_url( $banner_upgrade_link ); ?>" target="_blank" class="banner-button" role="button"><span><?php esc_html_e( 'Upgrade now', 'ocean-pro-demos' ); ?></span></a>
+		<h1 class="banner-header"><?php echo esc_html__( 'Easily construct Elementor pages section by section with the Ocean Pro Demos and the Ocean Core Extensions Bundle', 'oceanwp' ); ?></h1>
+		<h2 class="banner-subheader"><?php echo esc_html__( 'Do even need to mention royalty-free images and icons come included with the design?', 'oceanwp' ); ?></h2>
+		<a href="<?php echo esc_url( $banner_upgrade_link ); ?>" target="_blank" class="banner-button" role="button"><span><?php echo esc_html__( 'Upgrade now', 'oceanwp' ); ?></span></a>
 	</div>
 	<?php endif; ?>
 
@@ -28,17 +28,17 @@ $available_tags = get_option( 'opd_elementor_library_tags', null );
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/elementor-library.png' ); ?>" />
-			<h2 class="oceanwp-tp-block-title main-heading"><?php esc_html_e( 'Elementor Library', 'oceanwp' ); ?></h2>
+			<h2 class="oceanwp-tp-block-title main-heading"><?php echo esc_html__( 'Elementor Library', 'oceanwp' ); ?></h2>
 		</div>
-		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Build your own pages in Elementor - when you want and how you want - using Ocean prebuilt section templates.', 'oceanwp' ); ?></h3>
+		<h3 class="oceanwp-tp-block-description"><?php echo esc_html__( 'Build your own pages in Elementor - when you want and how you want - using Ocean prebuilt section templates.', 'oceanwp' ); ?></h3>
 	</div>
 
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/disable-elementor-library.png' ); ?>" />
-			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Disable Ocean Elementor Library', 'ocean-pro-demos' ); ?></h2>
+			<h2 class="oceanwp-tp-block-title"><?php echo esc_html__( 'Disable Ocean Elementor Library', 'oceanwp' ); ?></h2>
 		</div>
-		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Do not have the need to use the Ocean Library for Elementor, currently or at all? Disable or enable this feature on a needs basis.', 'oceanwp' ); ?></h3>
+		<h3 class="oceanwp-tp-block-description"><?php echo esc_html__( 'Do not have the need to use the Ocean Library for Elementor, currently or at all? Disable or enable this feature on a needs basis.', 'oceanwp' ); ?></h3>
 		<div id="ocean-elementor-library-disabler" class="column-wrap clr">
 			<label for="disable-ocean-elementor-library" class="oceanwp-tp-switcher column-name clr">
 				<input type="checkbox" role="checkbox" name="disable_ocean_elementor_library" class="oceanwp-switch-single-option" value="true" id="disable-ocean-elementor-library" <?php checked( (bool) $ocean_elementor_library_is_disabled ); ?>>
@@ -50,9 +50,9 @@ $available_tags = get_option( 'opd_elementor_library_tags', null );
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/customizer-controls.png' ); ?>" />
-			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Control Elementor Library Tags', 'ocean-pro-demos' ); ?></h2>
+			<h2 class="oceanwp-tp-block-title"><?php echo esc_html__( 'Control Elementor Library Tags', 'oceanwp' ); ?></h2>
 		</div>
-		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Expand or shorten the list of available Ocean Library templates for Elementor by enabling or disabling sections by tags.', 'ocean-pro-demos' ); ?></h3>
+		<h3 class="oceanwp-tp-block-description"><?php echo esc_html__( 'Expand or shorten the list of available Ocean Library templates for Elementor by enabling or disabling sections by tags.', 'oceanwp' ); ?></h3>
 		<div id="ocean-elementor-library-tags-control" class="column-wrap clr">
 
 			<form class="save_panel_settings">
@@ -72,7 +72,7 @@ $available_tags = get_option( 'opd_elementor_library_tags', null );
 						?>
 
 						<div id="<?php echo esc_attr( $key ); ?>" class="oceanwp-tp-small-block column-wrap clr">
-							<h3 class="title"><?php echo esc_attr( $val ); ?></h3>
+							<h3 class="title"><?php echo esc_html( $val ); ?></h3>
 							<label for="oceanwp-switch-[<?php echo esc_attr( $key ); ?>]" class="oceanwp-tp-switcher column-name clr">
 								<input type="checkbox" role="checkbox" name="opd_elementor_library_tags[<?php echo esc_attr( $key ); ?>]" value="true" id="oceanwp-switch-[<?php echo esc_attr( $key ); ?>]" <?php checked( $checked ); ?>>
 								<span class="slider round"></span>
@@ -91,9 +91,9 @@ $available_tags = get_option( 'opd_elementor_library_tags', null );
 	<?php else : ?>
 
 	<h3 class="oceanwp-tp-block-description">
-			<?php esc_html_e( 'Easily construct Elementor pages section by section with the Ocean Pro Demos and the Ocean Core Extensions Bundle.', 'oceanwp' ); ?>
+			<?php echo esc_html__( 'Easily construct Elementor pages section by section with the Ocean Pro Demos and the Ocean Core Extensions Bundle.', 'oceanwp' ); ?>
 			<?php echo $install_oe_upgrade_core_extensions_bundle_text_link; ?>
-			<?php esc_html_e( 'to access premium templates and additional options.', 'oceanwp' ); ?>
+			<?php echo esc_html__( 'to access premium templates and additional options.', 'oceanwp' ); ?>
 		</h3>
 		<p class="oceanwp-tp-block-description">
 		<?php echo sprintf(

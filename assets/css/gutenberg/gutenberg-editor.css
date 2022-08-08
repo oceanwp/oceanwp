@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .editor-post-title__block .editor-post-title__input {
   font-size: 2rem;
   font-weight: 600;
@@ -21,60 +22,48 @@
   color: #333;
   line-height: 1.4;
 }
-
 .block-editor-block-list__layout h1 {
   font-size: 23px;
 }
-
 .block-editor-block-list__layout h2 {
   font-size: 20px;
 }
-
 .block-editor-block-list__layout h3 {
   font-size: 18px;
 }
-
 .block-editor-block-list__layout h4 {
   font-size: 17px;
 }
-
 .block-editor-block-list__layout h5 {
   font-size: 15px;
 }
-
 .block-editor-block-list__layout h6 {
   font-size: 14px;
 }
-
 .block-editor-block-list__layout abbr[title],
 .block-editor-block-list__layout dfn[title] {
   cursor: help;
 }
-
 .block-editor-block-list__layout del {
   vertical-align: baseline;
   text-decoration: line-through;
   color: #aaa;
 }
-
 .block-editor-block-list__layout code,
 .block-editor-block-list__layout kbd,
 .block-editor-block-list__layout pre,
 .block-editor-block-list__layout samp {
   font-size: 16px;
 }
-
 .block-editor-block-list__layout pre {
   margin: 20px 0;
   padding: 20px;
   color: #2080ad;
   background-color: #fafafa;
 }
-
 .block-editor-block-list__layout code {
   color: #2080ad;
 }
-
 .block-editor-block-list__layout blockquote {
   font-style: italic;
   padding-left: 20px;
@@ -82,70 +71,56 @@
   border-style: solid;
   border-color: #13aff0;
 }
-
 .block-editor-block-list__layout blockquote cite {
   position: relative;
   display: block;
   padding: 10px 0 0 20px;
   color: #555;
 }
-
 .block-editor-block-list__layout blockquote cite:before {
   position: absolute;
   left: 0;
-  content: "\2014";
+  content: "—";
 }
-
 .block-editor-block-list__layout q:before,
 .block-editor-block-list__layout q:after,
 .block-editor-block-list__layout blockquote:before,
 .block-editor-block-list__layout blockquote:after {
   content: "";
 }
-
 .block-editor-block-list__layout blockquote .wp-block-quote__citation {
   padding: 10px 0 0 20px;
 }
-
 .block-editor-block-list__layout blockquote .wp-block-quote__citation:before {
   position: absolute;
   left: 0;
-  content: "\2014";
+  content: "—";
 }
-
 .block-editor-block-list__layout address {
   display: block;
 }
-
 .block-editor-block-list__layout ol {
   list-style-type: decimal;
 }
-
 .block-editor-block-list__layout ol ol {
   list-style: upper-alpha;
 }
-
 .block-editor-block-list__layout ol ol ol {
   list-style: lower-roman;
 }
-
 .block-editor-block-list__layout ol ol ol ol {
   list-style: lower-alpha;
 }
-
 .block-editor-block-list__layout li ul,
 .block-editor-block-list__layout li ol {
   margin: 0 0 0 25px;
 }
-
 .block-editor-block-list__layout dl {
   margin: 20px;
 }
-
 .block-editor-block-list__layout dt {
   font-weight: 700;
 }
-
 .block-editor-block-list__layout dd {
   margin-bottom: 20px;
 }
@@ -162,7 +137,6 @@ a {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 a:hover {
   color: #13aff0;
   text-decoration: underline;
@@ -174,7 +148,6 @@ a:hover {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
   /* Only visible in Windows High Contrast mode */
   outline: 2px solid transparent;
@@ -193,7 +166,7 @@ a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
 }
 
 @media (min-width: 600px) {
-  [data-align="full"] .wp-block-group > .wp-block {
+  [data-align=full] .wp-block-group > .wp-block {
     max-width: none;
   }
 }

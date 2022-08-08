@@ -23,20 +23,16 @@ Woo Mini Cart
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-
 .current-shop-items-dropdown ul.woocommerce-mini-cart {
   max-height: 50vh;
   overflow-y: auto;
 }
-
 .current-shop-items-dropdown .widgettitle {
   display: none;
 }
-
 .current-shop-items-dropdown li:first-child {
   border-top: none;
 }
-
 .current-shop-items-dropdown p.woocommerce-mini-cart__empty-message {
   padding: 20px;
   margin: 0;
@@ -61,15 +57,12 @@ Woo Mini Cart
   border-color: #e6e6e6;
   min-height: 100%;
 }
-
 .widget_shopping_cart ul.cart_list li:first-child, .widget_shopping_cart ul.cart_list li:last-child {
   min-height: 100%;
 }
-
 .widget_shopping_cart ul.cart_list li:first-child {
   border-top-width: 0;
 }
-
 .widget_shopping_cart ul.cart_list li .owp-grid-wrap {
   display: -webkit-box;
   display: -webkit-flex;
@@ -81,11 +74,9 @@ Woo Mini Cart
   -webkit-align-items: center;
   align-items: center;
 }
-
 .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid {
   width: 100%;
 }
-
 .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid.thumbnail {
   width: 25%;
   margin: 0;
@@ -93,36 +84,30 @@ Woo Mini Cart
   border-style: solid;
   border-color: #e6e6e6;
 }
-
 .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid.thumbnail img {
   position: relative;
   top: 0;
   width: auto;
   height: auto;
 }
-
 .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid.content {
   position: relative;
   width: 75%;
   padding-left: 10px;
 }
-
 .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid > div {
   padding-right: 60px;
 }
-
 .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid h3 {
   display: block;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
 }
-
 .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid .quantity {
   color: #b2b2b2;
   font-weight: normal;
 }
-
 .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid a.remove {
   right: 20px;
   margin-top: -17px;
@@ -132,12 +117,10 @@ Woo Mini Cart
   color: #b3b3b3;
   border: 1px solid #e6e6e6;
 }
-
 .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid a.remove:hover {
   color: #13aff0;
   border-color: #13aff0;
 }
-
 .widget_shopping_cart .total {
   background-color: #fafafa;
   border-width: 1px 0;
@@ -146,7 +129,6 @@ Woo Mini Cart
   padding: 20px;
   margin: 0;
 }
-
 .widget_shopping_cart .total strong {
   float: left;
   font-size: 12px;
@@ -155,7 +137,6 @@ Woo Mini Cart
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
 .widget_shopping_cart .total .amount {
   float: right;
   font-size: 16px;
@@ -163,9 +144,8 @@ Woo Mini Cart
   font-weight: 600;
   letter-spacing: 1px;
 }
-
 .widget_shopping_cart .total:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -174,7 +154,6 @@ Woo Mini Cart
   margin: 0;
   padding: 20px;
 }
-
 .widget_shopping_cart_content .buttons .button {
   float: left;
   width: 48%;
@@ -182,23 +161,19 @@ Woo Mini Cart
   text-align: center;
   letter-spacing: 2px;
 }
-
 .widget_shopping_cart_content .buttons .button:first-child {
   background-color: transparent;
   border: 1px solid #e6e6e6;
   color: #666;
 }
-
 .widget_shopping_cart_content .buttons .button:first-child:hover {
   border-color: #13aff0;
 }
-
 .widget_shopping_cart_content .buttons .checkout {
   float: right;
 }
-
 .widget_shopping_cart_content .buttons:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -207,25 +182,20 @@ Woo Mini Cart
 .spacious .owp-mini-cart {
   padding: 20px;
 }
-
 .spacious .owp-mini-cart .widget_shopping_cart ul.cart_list li {
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
-
 .spacious .owp-mini-cart .widget_shopping_cart ul.cart_list li .owp-grid-wrap .owp-grid.thumbnail {
   border-width: 0;
 }
-
 .spacious .owp-mini-cart .widget_shopping_cart .total {
   background-color: transparent;
   padding: 14px 20px;
 }
-
 .spacious .owp-mini-cart .widget_shopping_cart_content .buttons {
   padding: 20px 0 0;
 }
-
 .spacious .owp-mini-cart p.woocommerce-mini-cart__empty-message {
   padding: 0;
 }
@@ -239,7 +209,6 @@ Woo Mini Cart
 .wcmenucart-total {
   margin-right: 7px;
 }
-
 .wcmenucart-total span {
   color: #333;
 }
@@ -247,7 +216,6 @@ Woo Mini Cart
 .wcmenucart-cart-icon {
   display: inline-block;
 }
-
 .wcmenucart-cart-icon .wcmenucart-count {
   position: relative;
   display: inline-block;
@@ -267,9 +235,8 @@ Woo Mini Cart
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 .wcmenucart-cart-icon .wcmenucart-count:after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 100%;
   left: 50%;
@@ -294,7 +261,6 @@ Woo Mini Cart
   color: #fff;
   border-color: #13aff0;
 }
-
 .bag-style:hover .wcmenucart-cart-icon .wcmenucart-count:after,
 .show-cart .wcmenucart-cart-icon .wcmenucart-count:after {
   border-color: #13aff0;

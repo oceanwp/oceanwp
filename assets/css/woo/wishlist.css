@@ -16,7 +16,6 @@ Woo Wishlist
   transition: all 0.25s ease-in-out;
   z-index: 10;
 }
-
 .products .product:hover .tinv-wraper.tinv-wishlist {
   visibility: visible;
   -moz-opacity: 1;
@@ -37,7 +36,7 @@ ul.products li.product .tinvwl_add_to_wishlist_button {
   margin-top: 0;
 }
 
-.tinv-wishlist table input[type="checkbox"] {
+.tinv-wishlist table input[type=checkbox] {
   margin-right: 0 !important;
 }
 

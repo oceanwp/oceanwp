@@ -93,9 +93,6 @@ final class OCEANWP_Theme_Class {
 			// Add an X-UA-Compatible header.
 			add_filter( 'wp_headers', array( 'OCEANWP_Theme_Class', 'x_ua_compatible_headers' ) );
 
-			// Loads html5 shiv script.
-			add_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'html5_shiv' ) );
-
 			// Outputs custom CSS to the head.
 			add_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'custom_css' ), 9999 );
 
@@ -700,17 +697,6 @@ final class OCEANWP_Theme_Class {
 	public static function x_ua_compatible_headers( $headers ) {
 		$headers['X-UA-Compatible'] = 'IE=edge';
 		return $headers;
-	}
-
-	/**
-	 * Load HTML5 dependencies for IE8
-	 *
-	 * @since 1.0.0
-	 */
-	public static function html5_shiv() {
-		wp_register_script( 'html5shiv', OCEANWP_JS_DIR_URI . 'third/html5.min.js', array(), OCEANWP_THEME_VERSION, false );
-		wp_enqueue_script( 'html5shiv' );
-		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 	}
 
 	/**
