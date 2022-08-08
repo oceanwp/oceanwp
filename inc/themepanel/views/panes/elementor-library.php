@@ -24,7 +24,6 @@ $available_tags = get_option( 'opd_elementor_library_tags', null );
 	</div>
 	<?php endif; ?>
 
-	<?php if ( $extra_mode_actived && $ocean_pro_demos_activated ) : ?>
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/elementor-library.png' ); ?>" />
@@ -33,6 +32,7 @@ $available_tags = get_option( 'opd_elementor_library_tags', null );
 		<h3 class="oceanwp-tp-block-description"><?php echo esc_html__( 'Build your own pages in Elementor - when you want and how you want - using Ocean prebuilt section templates.', 'oceanwp' ); ?></h3>
 	</div>
 
+	<?php if ( $extra_mode_actived && $ocean_pro_demos_activated ) : ?>
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/disable-elementor-library.png' ); ?>" />

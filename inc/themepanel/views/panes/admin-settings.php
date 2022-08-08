@@ -34,6 +34,7 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/disable-blog-edit-links.png' ); ?>" />
 			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Disable Edit Links on Blog Archive Pages', 'oceanwp' ); ?></h2>
 		</div>
+		<?php if ( $extra_mode_actived ) : ?>
 		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Disable the option for the edit links to be displayed on your blog archives (visible to website admins only). Edit links allow you to quickly access the WordPress editor for any blog post directly from the archive pages.', 'oceanwp' ); ?></h3>
 		<div id="ocean-edit-post-disable" class="oceanwp-tp-switcher column-wrap">
 			<label for="oceanwp-switch-edit-post-disable" class="column-name">
@@ -41,6 +42,16 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 				<span class="slider round"></span>
 			</label>
 		</div>
+		<?php else : ?>
+			<h3 class="oceanwp-tp-block-description">
+				<?php echo sprintf(
+					esc_html__( '%1$sInstall free Ocean Extra recommended plugin%2$s to unlock more features.', 'oceanwp' ),
+					'<a href="https://youtu.be/kqHNgUPWMTY" target="_blank">',
+					'</a>'
+				);
+				?>
+			</h3>
+		<?php endif; ?>
 	</div>
 
 	<!-- Regenerate Local Google CSS files -->

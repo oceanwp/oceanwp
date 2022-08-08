@@ -358,6 +358,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 				)
 			);
 
+			if ( class_exists( 'Ocean_Extra' ) ) {
 			$wp_customize->add_control(
 				new WP_Customize_Control(
 					$wp_customize,
@@ -396,6 +397,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						)
 					);
 				}
+			}
 
 			/**
 			 * Font Subsets
