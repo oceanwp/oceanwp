@@ -249,9 +249,22 @@ function owp_get_customizer_options() {
 
 						<?php if ( ! file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) ) : ?>
 							<div class="oceanwp-tp-block-button-wrapper">
+
+							<?php if ( $extra_mode_actived ) : ?>
 								<a href="https://downloads.oceanwp.org/oceanwp/oceanwp-child-theme.zip" target="_blank" class="button blue oceanwp_install_child_theme" role="button" >
 									<?php esc_html_e( 'Download', 'oceanwp' ); ?>
 								</a>
+							<?php else : ?>
+								<h3 class="oceanwp-tp-block-description">
+									<?php echo sprintf(
+										esc_html__( '%1$sInstall free Ocean Extra recommended plugin%2$s to unlock more features.', 'oceanwp' ),
+										'<a href="https://youtu.be/kqHNgUPWMTY" target="_blank">',
+										'</a>'
+									);
+									?>
+								</h3>
+							<?php endif; ?>
+
 							</div>
 						<?php elseif ( file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) && ! is_child_theme() ) : ?>
 							<div class="oceanwp-tp-block-button-wrapper">

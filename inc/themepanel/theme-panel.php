@@ -58,7 +58,6 @@ final class OceanWP_Theme_Panel {
 			$this->init();
 		}
 
-		add_action( 'wp_ajax_oceanwp_cp_child_theme_install', array( $this, 'child_theme_install' ) );
 		add_action( 'wp_ajax_oceanwp_cp_fonts_clear', array( $this, 'clear_fonts' ) );
 		add_filter( 'oceanwp_theme_panel_panel_top_header', array( $this, 'panel_top_header' ) );
 		add_filter( 'oceanwp_tp_sidebar_warnings', array( $this, 'maybe_has_plugin_updates_warning' ) );
@@ -761,47 +760,6 @@ final class OceanWP_Theme_Panel {
 		$plugin_data_name = ! empty( $plugin_data['Name'] ) ? $plugin_data['Name'] : false;
 		return $plugin_data_name;
 	}
-
-	/**
-	 * Check if Ocean Child theme is installed.
-	 *
-	 * @return void
-	 */
-	public function child_theme_install() {
-
-		self::check_ajax_access( $_POST['nonce'], 'oceanwp_theme_panel' );
-
-		if ( file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) ) {
-			wp_send_json_error( array( 'message' => esc_html__( 'Child theme already installed', 'oceanwp' ) ) );
-		}
-
-		try {
-			$ocean_child_zip_path = WP_CONTENT_DIR . '/oceanwp-child-theme.zip';
-
-			if ( file_exists( $ocean_child_zip_path ) ) {
-				unlink( $ocean_child_zip_path );
-			}
-			file_put_contents(
-				$ocean_child_zip_path,
-				file_get_contents( 'https://downloads.oceanwp.org/oceanwp/oceanwp-child-theme.zip' )
-			);
-
-			$zip = new ZipArchive();
-			if ( $zip->open( $ocean_child_zip_path ) === true ) {
-				$zip->extractTo( get_theme_root() );
-				$zip->close();
-				if ( file_exists( $ocean_child_zip_path ) ) {
-					unlink( $ocean_child_zip_path );
-				}
-				wp_send_json_success();
-			} else {
-				wp_send_json_error();
-			}
-		} catch ( Exception $e ) {
-			wp_send_json_error();
-		}
-	}
-
 
 	public function clear_fonts () {
 		self::check_ajax_access( $_POST['nonce'], 'oceanwp_theme_panel' );
