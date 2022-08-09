@@ -4065,6 +4065,10 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 					'label'      => esc_html__( 'QQ', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'qq', false ),
 				),
+				'discord'          => array(
+					'label'      => esc_html__( 'Discord', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'discord', false ),
+				),
 			)
 		);
 	}
