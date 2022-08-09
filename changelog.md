@@ -2,9 +2,9 @@
 
 ### _2022.08.09_ - 3.3.4
 - **NEW**: Admin Settings section in OceanWP Panel.
-- **NEW**: Typography: Load Elementor Google fonts from site (Customize > Typography > General). Disabled by default.
-- **Added**: Discord option for social menu.
-- **Improved**: Typography: Font front-end rendering when Load Google Fonts from Site option enabled.
+- **Added**: Social Menu for Header and Top Bar: Discord option.
+- **Tweak**: Option to install OceanWP Child Theme moved to Ocean Extra plugin.
+- **Tweak**: Typography: Host Google Fonts locally option moved to Ocean Extra plugin.
 - **Tweak**: Typography: Default OceanWP front-end font changed to Arial following WordPress GDPR recommendations.
 - **Fixed**: Mobile Search Icon: Search on tablet and mobile not responding #389
 - **Removed**: HTML5 dependencies for IE8.
