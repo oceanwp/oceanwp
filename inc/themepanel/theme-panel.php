@@ -58,7 +58,7 @@ final class OceanWP_Theme_Panel {
 			$this->init();
 		}
 
-		add_action( 'wp_ajax_oceanwp_cp_child_theme_install', array( $this, 'child_theme_install' ) );
+		add_action( 'wp_ajax_oceanwp_cp_fonts_clear', array( $this, 'clear_fonts' ) );
 		add_filter( 'oceanwp_theme_panel_panel_top_header', array( $this, 'panel_top_header' ) );
 		add_filter( 'oceanwp_tp_sidebar_warnings', array( $this, 'maybe_has_plugin_updates_warning' ) );
 		add_filter( 'oceanwp_theme_panel_sections', array( $this, 'control_theme_panel_sections' ), 9 );
@@ -301,7 +301,7 @@ final class OceanWP_Theme_Panel {
 						$warnings['elementor-widgets'] = __( 'You should update plugin Ocean Elementor Widgets to use new features', 'oceanwp' );
 					}
 					if ( $sidebar_plugin_slug == 'ocean-gutenberg-blocks' ) {
-						$warnings['gutengerg-blocks'] = __( 'You should update plugin Ocean Gutenberg Blocks to use new features', 'oceanwp' );
+						$warnings['gutenberg-blocks'] = __( 'You should update plugin Ocean Gutenberg Blocks to use new features', 'oceanwp' );
 					}
 					if ( $sidebar_plugin_slug == 'ocean-white-label' ) {
 						$warnings['white-label'] = __( 'You should update plugin Ocean White Label to use new features', 'oceanwp' );
@@ -431,15 +431,25 @@ final class OceanWP_Theme_Panel {
 				'href'  => 'elementor-widgets',
 				'order' => 90,
 			),
-			'gutengerg-blocks'  => array(
-				'title' => __( 'Gutengerg Blocks', 'oceanwp' ),
-				'href'  => 'gutengerg-blocks',
+			'elementor-library' => array(
+				'title' => __( 'Elementor Library', 'oceanwp' ),
+				'href'  => 'elementor-library',
+				'order' => 91,
+			),
+			'gutenberg-blocks'  => array(
+				'title' => __( 'Gutenberg Blocks', 'oceanwp' ),
+				'href'  => 'gutenberg-blocks',
 				'order' => 100,
 			),
 			'extra-settings'    => array(
 				'title' => __( 'Extra Settings', 'oceanwp' ),
 				'href'  => 'extra-settings',
 				'order' => 110,
+			),
+			'admin-settings'              => array(
+				'title' => __( 'Admin Settings', 'oceanwp' ),
+				'href'  => 'admin-settings',
+				'order' => 111,
 			),
 			'white-label' => array(
 				'title' => __( 'White Label', 'oceanwp' ),
@@ -751,44 +761,43 @@ final class OceanWP_Theme_Panel {
 		return $plugin_data_name;
 	}
 
-	/**
-	 * Check if Ocean Child theme is installed.
-	 *
-	 * @return void
-	 */
-	public function child_theme_install() {
-
+	public function clear_fonts () {
 		self::check_ajax_access( $_POST['nonce'], 'oceanwp_theme_panel' );
 
-		if ( file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) ) {
-			wp_send_json_error( array( 'message' => esc_html__( 'Child theme already installed', 'oceanwp' ) ) );
+		$upload      = wp_upload_dir();
+		$uploads_fonts_dir = 'oceanwp-webfonts';
+		$uploads_css_dir = 'oceanwp-webfonts-css';
+
+		if ( ! file_exists( trailingslashit( $upload['basedir'] ) . $uploads_fonts_dir ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Fonts folder does not exist', 'oceanwp' ) ) );
+		}
+
+		if ( ! file_exists( trailingslashit( $upload['basedir'] ) . $uploads_css_dir ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'CSS folder does not exist', 'oceanwp' ) ) );
 		}
 
 		try {
-			$ocean_child_zip_path = WP_CONTENT_DIR . '/oceanwp-child-theme.zip';
-
-			if ( file_exists( $ocean_child_zip_path ) ) {
-				unlink( $ocean_child_zip_path );
-			}
-			file_put_contents(
-				$ocean_child_zip_path,
-				file_get_contents( 'https://downloads.oceanwp.org/oceanwp/oceanwp-child-theme.zip' )
-			);
-
-			$zip = new ZipArchive();
-			if ( $zip->open( $ocean_child_zip_path ) === true ) {
-				$zip->extractTo( get_theme_root() );
-				$zip->close();
-				if ( file_exists( $ocean_child_zip_path ) ) {
-					unlink( $ocean_child_zip_path );
+			$files_fonts = glob(trailingslashit( $upload['basedir'] ) . $uploads_fonts_dir."/*");
+			if (count($files_fonts) > 0) {
+				foreach ($files_fonts as $file) {
+					if (file_exists($file)) {
+						unlink($file);
+					}
 				}
-				wp_send_json_success();
-			} else {
-				wp_send_json_error();
+			}
+
+			$files_css = glob(trailingslashit( $upload['basedir'] ) . $uploads_css_dir."/*");
+			if (count($files_css) > 0) {
+				foreach ($files_css as $file) {
+					if (file_exists($file)) {
+						unlink($file);
+					}
+				}
 			}
 		} catch ( Exception $e ) {
-			wp_send_json_error();
+			wp_send_json_error( array( 'message' => esc_html__( 'Something went wrong', 'oceanwp' ) ) );
 		}
+		wp_send_json_success( array( 'message' => esc_html__( 'Data was cleared', 'oceanwp' ) ) );
 	}
 }
 

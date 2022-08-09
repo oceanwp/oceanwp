@@ -80,8 +80,13 @@ $classes = implode( ' ', $classes ); ?>
 
 		} else {
 
+			// If Gutenberg.
+			if ( ocean_is_block_template( $template ) ) {
+				$get_content = apply_filters( 'oceanwp_vertical_header_content', do_blocks( $get_content ) );
+			}
+
 			// Display template content.
-			echo ocean_do_template_content( $template );
+			echo do_shortcode( $get_content );
 
 		}
 	} else {
@@ -119,8 +124,13 @@ $classes = implode( ' ', $classes ); ?>
 
 			} else {
 
+				// If Gutenberg.
+				if ( ocean_is_block_template( $bottom_template ) ) {
+					$get_bottom_content = apply_filters( 'oceanwp_vertical_header_bottom_content', do_blocks( $get_bottom_content ) );
+				}
+
 				// Display template content.
-				echo ocean_do_template_content( $bottom_template );
+				echo do_shortcode( $get_bottom_content );
 
 			}
 		}

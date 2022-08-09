@@ -197,7 +197,7 @@ a.oceanwp-tp-sidebar-link:focus {
 .oceanwp-tp-panes {
   background-color: #fff;
   float: left;
-  min-height: 700px;
+  min-height: 750px;
   padding-bottom: 50px;
   position: relative;
   margin-left: 200px;
@@ -298,7 +298,9 @@ h1#oceanwp-changelog,
   font-weight: 600;
 }
 
-#oceanwp-tp-extra-settings .oceanwp-tp-wide-block .oceanwp-tp-block-title:not(.main-heading) {
+#oceanwp-tp-extra-settings .oceanwp-tp-wide-block .oceanwp-tp-block-title:not(.main-heading),
+#oceanwp-tp-admin-settings .oceanwp-tp-wide-block .oceanwp-tp-block-title:not(.main-heading),
+#oceanwp-tp-ocean-elementor-library .oceanwp-tp-wide-block .oceanwp-tp-block-title:not(.main-heading) {
   font-size: 18px;
 }
 
@@ -393,6 +395,11 @@ h3.oceanwp-tp-block-description,
   margin-bottom: 50px;
 }
 
+.oceanwp-tp-banner.elementor-library {
+  background-image: url('../../../assets/images/banners/elementor-library.jpg');
+  margin-bottom: 50px;
+}
+
 .oceanwp-tp-banner.ocean-images {
   background-image: url('../../../assets/images/banners/ocean-images.jpg');
   margin-bottom: 50px;
@@ -401,6 +408,10 @@ h3.oceanwp-tp-block-description,
 
 .oceanwp-tp-banner.install-demos {
   background-image: url('../../../assets/images/banners/install-demos.jpg');
+  margin-bottom: 50px;
+}
+.oceanwp-tp-banner.admin-settings {
+  background-image: url('../../../assets/images/banners/admin-settings.jpg');
   margin-bottom: 50px;
 }
 
@@ -738,11 +749,13 @@ input:checked+.slider:before {
   border-color: transparent;
 }
 
-#ocean-customizer-reset {
+#ocean-customizer-reset,
+#ocean-fonts-clear {
   margin-top: 20px;
 }
 
-#ocean-customizer-reset .btn {
+#ocean-customizer-reset .btn,
+#ocean-fonts-clear .btn {
   font-family: "Poppins", Sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -752,7 +765,8 @@ input:checked+.slider:before {
   padding: 12px 24px;
 }
 
-#ocean-customizer-reset .btn:focus {
+#ocean-customizer-reset .btn:focus,
+#ocean-fonts-clear .btn:focus {
   box-shadow: unset;
 }
 
@@ -790,6 +804,7 @@ p.submit {
 #ocean-elementor-widgets-items,
 #ocean-widget-items,
 #ocean-metabox-items,
+#ocean-elementor-library-tags-items,
 .oceanwp-tp-useful-plugins-section,
 .oceanwp-tp-recommended-plugins-section {
   display: flex;
@@ -801,6 +816,7 @@ p.submit {
 #ocean-gutenberg-blocks-items div,
 #ocean-elementor-widgets-items div,
 #ocean-widget-items>div,
+#ocean-elementor-library-tags-items div,
 #ocean-metabox-items div {
   flex-basis: 28%;
   padding: 20px;

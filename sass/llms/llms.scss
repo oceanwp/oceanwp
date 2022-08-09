@@ -258,7 +258,7 @@
 		$cols: 1;
 		@while $cols <= 6 {
 			&.tablet-#{$cols}-col .llms-loop-item {
-				width: 100% / $cols;
+				width: calc(100% / $cols);
 			}
 			$cols: $cols + 1;
 		}
@@ -267,7 +267,7 @@
 		$cols: 1;
 		@while $cols <= 6 {
 			&.mobile-#{$cols}-col .llms-loop-item {
-				width: 100% / $cols;
+				width: calc(100% / $cols);
 			}
 			$cols: $cols + 1;
 		}

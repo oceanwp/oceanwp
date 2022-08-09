@@ -18,7 +18,7 @@ if ( 'fullscreen' !== oceanwp_mobile_menu_style() ) {
 $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
 
 <div id="mobile-search" class="clr">
-	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform" role="search" aria-label="<?php esc_attr_e( 'Mobile Search', 'oceanwp' ); ?>">
+	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform" aria-label="<?php esc_attr_e( 'Mobile Search', 'oceanwp' ); ?>">
 		<input type="search" name="s" value="" autocomplete="off" />
 		<?php
 		// If the headerSearchForm script is not disable.

@@ -77,6 +77,10 @@ if ( ! function_exists( 'oceanwp_theme_strings' ) ) {
 				'owp-string-current-read'                => apply_filters( 'ocean_wai_current_read', __( 'You are currently viewing', 'oceanwp' ) ),
 				'owp-string-author-img'                  => apply_filters( 'ocean_wai_author_img', __( 'Post author avatar', 'oceanwp' ) ),
 
+				// Woo Aria.
+				'owp-string-wai-next-product'            => apply_filters( 'ocean_wai_next_product', __( 'View next product', 'oceanwp' ) ),
+				'owp-string-wai-prev-product'            => apply_filters( 'ocean_wai_prev_product', __( 'View previous product', 'oceanwp' ) ),
+
 				// Post Header templates.
 				'owp-string-posted-by'                   => apply_filters( 'ocean_posted_by', _x( 'By', 'Prefix for post author name', 'oceanwp' ) ),
 				'owp-string-written-by'                  => apply_filters( 'ocean_written_by', _x( 'Written by', 'Prefix for post author name', 'oceanwp' ) ),

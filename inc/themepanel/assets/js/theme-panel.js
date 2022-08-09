@@ -121,6 +121,14 @@ jQuery(document).ready(function ($) {
         tpGoTo(slug);
     });
 
+    $(document).on('click', '#wp-admin-bar-ocean-menu-default>li>a', function (event) {
+        let url = new URL($(this).attr('href'));
+        if( url.hash && $('.oceanwp-tp-sidebar-link[href="'+url.hash+'"]').length ) {
+            event.preventDefault();
+            $('.oceanwp-tp-sidebar-link[href="'+url.hash+'"]').trigger('click');
+        }
+    });
+
     $(document).on('click', '.oceanwp_install_plugin', function (event) {
         event.preventDefault();
         $(this).addClass('disabled');
@@ -133,6 +141,10 @@ jQuery(document).ready(function ($) {
         wp.updates.ajax('install-plugin', args)
     });
 
+    $(document.body).on('click', '#ocean-fonts-clear .btn', function (event) {
+        event.preventDefault();
+        clearLocalFonts();
+    });
 
     $(document).on( 'click', '.oceanwp_update_plugin', function( event ) {
         var $button = $( event.target );
@@ -236,12 +248,7 @@ jQuery(document).ready(function ($) {
         if($('#owp_api_images_integration').length) {
             jQuery('#owp_api_images_integration').trigger('change');
         }
-        if($('#owp_freepik_integration').length) {
-            jQuery('#owp_freepik_integration').trigger('change');
-        }
-        if($('#owp_freepik_image_width').length) {
-            jQuery('#owp_freepik_image_width').trigger('change');
-        }
+        $( document.body ).trigger( 'op_panel_loaded' );
     }
 
     function loadSidebarWarnings() {
@@ -263,6 +270,30 @@ jQuery(document).ready(function ($) {
                 }
             }
         });
+    }
+
+    function clearLocalFonts() {
+        var confirmReset = confirm('Do you really want to clear local google fonts data?');
+        if (confirmReset) {
+            $.ajax({
+                url: ajaxurl,
+                method: "POST",
+                data: {
+                    nonce: oceanwpThemePanel.nonce,
+                    action: 'oceanwp_cp_fonts_clear',
+                },
+                beforeSend: function () {
+                    window['showNotify']('success', oceanwp_cp_textdomain.fonts_clearing);
+                },
+                success: function (data) {
+                    window['showNotify'](data.success, data.data.message);
+                },
+                error: function (xhr, status, error) {
+                },
+                complete: function () {
+                }
+            });
+        }
     }
 
 });

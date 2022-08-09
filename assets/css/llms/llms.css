@@ -52,7 +52,6 @@
   color: #000;
   font-weight: 700;
 }
-
 .lifterlms thead td {
   background: #fafafa;
 }
@@ -61,7 +60,6 @@
 .llms-student-dashboard .llms-sd-nav .llms-sep {
   display: none;
 }
-
 .llms-student-dashboard .llms-sd-item {
   padding: 0 15px 15px 0;
 }
@@ -70,26 +68,22 @@
 .llms-syllabus-wrapper {
   margin: 15px 0;
 }
-
 .llms-syllabus-wrapper .llms-section-title {
   background: #2295ff;
   color: #fff;
   margin-bottom: 0;
   padding: 10px;
 }
-
 .llms-syllabus-wrapper .llms-lesson-preview {
   width: auto;
   display: block;
   margin-top: 1px;
 }
-
 .llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-counter,
 .llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-complete {
   display: inline-block;
   margin-bottom: 0;
 }
-
 .llms-syllabus-wrapper .llms-lesson-preview .llms-lesson-complete {
   font-size: 16px;
 }
@@ -97,11 +91,9 @@
 .llms-meta-info .llms-meta p {
   color: #333;
 }
-
 .llms-meta-info .llms-meta span, .llms-meta-info .llms-meta a {
   color: #929292;
 }
-
 .llms-meta-info .llms-meta a:hover {
   color: #13aff0;
 }
@@ -110,20 +102,17 @@
   color: #333 !important;
   margin-bottom: 5px;
 }
-
 .single-course .llms_review h6 {
   margin-bottom: 10px;
 }
-
 .single-course .llms_review p {
   color: #303030 !important;
 }
-
 .single-course .llms_review p:last-child {
   margin-bottom: 0;
 }
 
-.single-course .review_box input[type="text"],
+.single-course .review_box input[type=text],
 .single-course .review_box textarea {
   display: inline-block;
   min-height: 40px;
@@ -145,7 +134,6 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 .single-course .review_box textarea {
   line-height: 1.5;
   resize: vertical;
@@ -162,25 +150,21 @@
   padding-top: 20px;
   border-top: 1px solid #f1f1f1;
 }
-
 .llms-course-navigation .llms-pre-text {
   color: #13aff0;
   font-weight: 300;
 }
-
 .llms-course-navigation .llms-prev-lesson .llms-pre-text::before,
 .llms-course-navigation .llms-next-lesson .llms-pre-text::after {
   display: inline-block;
-  font: normal normal 900 14px/1 'Font Awesome 5 free';
+  font: normal normal 900 14px/1 "Font Awesome 5 free";
   font-size: inherit;
   text-rendering: auto;
 }
-
 .llms-course-navigation .llms-prev-lesson .llms-pre-text::before {
   content: "\f30a";
   margin-right: 10px;
 }
-
 .llms-course-navigation .llms-next-lesson .llms-pre-text::after {
   content: "\f30b";
   margin-left: 10px;
@@ -195,7 +179,7 @@
 #llms_mark_complete::before,
 .llms-lesson-button-wrapper::before {
   display: inline-block;
-  font: normal normal 900 14px/1 'Font Awesome 5 free';
+  font: normal normal 900 14px/1 "Font Awesome 5 free";
   font-size: inherit;
   text-rendering: auto;
 }
@@ -209,7 +193,6 @@
 .llms-student-dashboard.edit-account .llms-form-field {
   padding: 0 20px 10px 0;
 }
-
 .llms-student-dashboard.edit-account .llms-form-field > label {
   font-weight: 700;
 }
@@ -265,7 +248,6 @@
     width: 16.6666666667%;
   }
 }
-
 @media all and (max-width: 480px) {
   .llms-loop-list.mobile-1-col .llms-loop-item {
     width: 100%;
@@ -295,7 +277,6 @@
 .pagination-center .llms-pagination {
   text-align: center;
 }
-
 .pagination-center .llms-pagination ul li {
   float: none;
 }

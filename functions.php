@@ -53,9 +53,6 @@ final class OCEANWP_Theme_Class {
 		// Setup theme => add_theme_support, register_nav_menus, load_theme_textdomain, etc.
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'theme_setup' ), 10 );
 
-		// Setup theme => Generate the custom CSS file.
-		add_action( 'admin_bar_init', array( 'OCEANWP_Theme_Class', 'save_customizer_css_in_file' ), 9999 );
-
 		// register sidebar widget areas.
 		add_action( 'widgets_init', array( 'OCEANWP_Theme_Class', 'register_sidebars' ) );
 
@@ -95,9 +92,6 @@ final class OCEANWP_Theme_Class {
 
 			// Add an X-UA-Compatible header.
 			add_filter( 'wp_headers', array( 'OCEANWP_Theme_Class', 'x_ua_compatible_headers' ) );
-
-			// Loads html5 shiv script.
-			add_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'html5_shiv' ) );
 
 			// Outputs custom CSS to the head.
 			add_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'custom_css' ), 9999 );
@@ -272,8 +266,6 @@ final class OCEANWP_Theme_Class {
 		if ( is_admin() ) {
 
 			// Recommend plugins.
-			require_once OCEANWP_INC_DIR . 'plugins/class-tgm-plugin-activation.php';
-			require_once OCEANWP_INC_DIR . 'plugins/tgm-plugin-activation.php';
 			require_once OCEANWP_INC_DIR . 'activation-notice/class-oceanwp-plugin-manager.php';
 			require_once OCEANWP_INC_DIR . 'activation-notice/template.php';
 
@@ -708,17 +700,6 @@ final class OCEANWP_Theme_Class {
 	}
 
 	/**
-	 * Load HTML5 dependencies for IE8
-	 *
-	 * @since 1.0.0
-	 */
-	public static function html5_shiv() {
-		wp_register_script( 'html5shiv', OCEANWP_JS_DIR_URI . 'third/html5.min.js', array(), OCEANWP_THEME_VERSION, false );
-		wp_enqueue_script( 'html5shiv' );
-		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
-	}
-
-	/**
 	 * Registers sidebars
 	 *
 	 * @since   1.0.0
@@ -885,41 +866,6 @@ final class OCEANWP_Theme_Class {
 	public static function minify_custom_css( $css ) {
 
 		return oceanwp_minify_css( $css );
-
-	}
-
-	/**
-	 * Save Customizer CSS in a file
-	 *
-	 * @param obj $output output value.
-	 * @since 1.4.12
-	 */
-	public static function save_customizer_css_in_file( $output = null ) {
-
-		// If Custom File is not selected.
-		if ( 'file' !== get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {
-			return;
-		}
-
-		// Get all the customier css.
-		$output = apply_filters( 'ocean_head_css', $output );
-
-		// Get Custom Panel CSS.
-		$output_custom_css = wp_get_custom_css();
-
-		// Minified the Custom CSS.
-		$output .= oceanwp_minify_css( $output_custom_css );
-
-		// We will probably need to load this file.
-		require_once ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'file.php';
-
-		global $wp_filesystem;
-		$upload_dir = wp_upload_dir(); // Grab uploads folder array.
-		$dir        = trailingslashit( $upload_dir['basedir'] ) . 'oceanwp' . DIRECTORY_SEPARATOR; // Set storage directory path.
-
-		WP_Filesystem(); // Initial WP file system.
-		$wp_filesystem->mkdir( $dir ); // Make a new folder 'oceanwp' for storing our file if not created already.
-		$wp_filesystem->put_contents( $dir . 'custom-style.css', $output, 0644 ); // Store in the file.
 
 	}
 

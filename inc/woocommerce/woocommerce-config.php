@@ -1190,7 +1190,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function quick_view_button() {
 			global $product;
 
-			$button = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '">' . oceanwp_icon( 'eye', false ) . ' ' . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false ) . '</a>';
+			$button = '<a href="#" id="product_id_' . $product->get_id() . '" class="owp-quick-view" data-product_id="' . $product->get_id() . '" aria-label="' . esc_attr__( 'Quickly preview product', 'oceanwp' ) . ' ' . $product->get_name() . '">' . oceanwp_icon( 'eye', false ) . ' ' . oceanwp_theme_strings( 'owp-string-woo-quick-view-text', false ) . '</a>';
 
 			echo apply_filters( 'ocean_woo_quick_view_button_html', $button ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
@@ -1281,8 +1281,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				?>
 
 				<li class="prev-li">
-				<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next"><?php echo $next_arrow; ?></a>
-					<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', 'oceanwp' ); ?></a>
+				<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next" aria-label="<?php oceanwp_theme_strings( 'owp-string-wai-prev-product' ); ?>"><?php echo $next_arrow; ?></a>
+					<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-prev-product' ); ?></a>
 					<div class="owp-nav-thumb">
 						<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 					</div>
@@ -1298,8 +1298,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				?>
 
 				<li class="next-li">
-					<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product', 'oceanwp' ); ?></a>
-					<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next"><?php echo $prev_arrow; ?></i></a>
+					<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php oceanwp_theme_strings( 'owp-string-woo-nav-next-product' ); ?></a>
+					<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next" aria-label="<?php oceanwp_theme_strings( 'owp-string-wai-next-product' ); ?>"><?php echo $prev_arrow; ?></i></a>
 					<div class="owp-nav-thumb">
 						<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 					</div>

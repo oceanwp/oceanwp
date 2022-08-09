@@ -87,8 +87,13 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 
 												} else {
 
+													// If Gutenberg.
+													if ( ocean_is_block_template( $get_id ) ) {
+														$get_content = apply_filters( 'ocean_error_page_template_content', do_blocks( $get_content ) );
+													}
+
 													// Display template content.
-													echo ocean_do_template_content( $get_id );
+													echo do_shortcode( $get_content );
 
 												}
 											} else {
@@ -100,7 +105,7 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 													if ( ! empty( $logo_404 ) ) {
 														?>
 
-														<img src="<?php echo esc_url( $logo_404 ); ?>" alt="<?php esc_html_e( '404 Logo', 'oceanwp' ); ?>" title="<?php esc_html_e( '404 Logo', 'oceanwp' ); ?>" />
+														<img src="<?php echo esc_url( $logo_404 ); ?>" alt="<?php esc_attr_e( '404 Logo', 'oceanwp' ); ?>" title="<?php esc_attr_e( '404 Logo', 'oceanwp' ); ?>" />
 													<?php } ?>
 
 													<h2 class="error-title"><?php esc_html_e( 'This page could not be found!', 'oceanwp' ); ?></h2>

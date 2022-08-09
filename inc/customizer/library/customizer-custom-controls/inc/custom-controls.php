@@ -171,7 +171,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 				<?php if ( ! empty( $this->description ) ) { ?>
 					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 				<?php } ?>
-				
+
 				<?php foreach ( $this->choices as $key => $value ) { ?>
 					<?php
 					if ( ! is_array( $value ) ) {
@@ -360,7 +360,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 			?>
 			<div class="toggle-switch-control">
 				<div class="toggle-switch">
-					<input type="checkbox" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" class="toggle-switch-checkbox" value="<?php echo ow_esc_attr( $this->value() ); ?>" 
+					<input type="checkbox" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" class="toggle-switch-checkbox" value="<?php echo ow_esc_attr( $this->value() ); ?>"
 														  <?php
 															$this->link();
 															checked( $this->value() );
@@ -405,7 +405,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 			$this->button_labels = wp_parse_args(
 				$this->button_labels,
 				array(
-					'add' => __( 'Add', 'skyrocket' ),
+					'add' => __( 'Add', 'oceanwp' ),
 				)
 			);
 		}
@@ -745,7 +745,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 							?>
 						</select>
 					</div>
-					<div class="customize-control-description"><?php esc_html_e( 'Select weight & style for regular text', 'skyrocket' ); ?></div>
+					<div class="customize-control-description"><?php esc_html_e( 'Select weight & style for regular text', 'oceanwp' ); ?></div>
 					<div class="weight-style">
 						<select class="google-fonts-regularweight-style">
 							<?php
@@ -755,7 +755,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 							?>
 						</select>
 					</div>
-					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'skyrocket' ); ?> <italic><?php esc_html_e( 'italic text', 'skyrocket' ); ?></italic></div>
+					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'oceanwp' ); ?> <italic><?php esc_html_e( 'italic text', 'oceanwp' ); ?></italic></div>
 					<div class="weight-style">
 						<select class="google-fonts-italicweight-style" <?php disabled( in_array( 'italic', $this->fontList[ $this->fontListIndex ]->variants ), false ); ?>>
 							<?php
@@ -773,7 +773,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 							?>
 						</select>
 					</div>
-					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'skyrocket' ); ?> <strong><?php esc_html_e( 'bold text', 'skyrocket' ); ?></strong></div>
+					<div class="customize-control-description"><?php esc_html_e( 'Select weight for', 'oceanwp' ); ?> <strong><?php esc_html_e( 'bold text', 'oceanwp' ); ?></strong></div>
 					<div class="weight-style">
 						<select class="google-fonts-boldweight-style">
 							<?php

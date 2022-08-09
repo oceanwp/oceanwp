@@ -30,6 +30,11 @@ class MobileSearchIcon extends SearchBase {
   };
 
   #setupEventListeners = () => {
+
+    if ( ! this.#elements ) {
+      return;
+    }
+
     if (options.mobileMenuSearchStyle === "drop_down") {
       this.#elements.dropdownSearchIcon?.addEventListener(
         "click",

@@ -26,5 +26,6 @@ function oceanwp_adminpanel_textdomain() {
 		'exporting'                        => __( 'Exporting...', 'oceanwp' ),
 		'importing'                        => __( 'Importing...', 'oceanwp' ),
 		'copied_system_info'			   => __( 'Information has been copied.', 'oceanwp' ),
+		'fonts_clearing'			       => __( 'Clearing data...', 'oceanwp' ),
 	);
 }

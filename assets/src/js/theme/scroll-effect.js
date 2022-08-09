@@ -35,10 +35,10 @@ class ScrollEffect {
       });
   };
 
+
   #onScrollItemClick = (event) => {
     const scrollItem = event.currentTarget;
 
-    console.log(scrollItem.parentNode.classList);
     if (
       scrollItem.classList.contains("elementor-item-anchor") &&
       scrollItem.classList.contains("has-submenu")
@@ -55,10 +55,14 @@ class ScrollEffect {
       !scrollItem.parentNode.classList.contains("opl-link") &&
       !scrollItem.classList.contains("sidr-class-opl-link") &&
       !scrollItem.parentNode.classList.contains("sidr-class-opl-link") &&
-      !scrollItem.classList.contains("acomment-reply") &&
+      !scrollItem.classList.contains("comment-reply") &&
       !scrollItem.classList.contains("htb-nav-link") &&
       !scrollItem.classList.contains("upload-file") &&
-      !scrollItem.parentNode.classList.contains("vc_tta-panel-title")
+      !scrollItem.parentNode.classList.contains("vc_tta-panel-title") &&
+      !scrollItem.classList.contains("vce-tabs-with-slide-tab-title") &&
+      !scrollItem.classList.contains("vce-tabs-with-slide-panel-title") &&
+      !scrollItem.classList.contains("vce-classic-tabs-tab-title") &&
+      !scrollItem.classList.contains("vce-classic-accordion-panel-title")
     ) {
       const href = scrollItem.getAttribute("href");
       const id = href.substring(href.indexOf("#")).slice(1);
