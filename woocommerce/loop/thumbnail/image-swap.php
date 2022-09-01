@@ -80,20 +80,20 @@ if ( $secondary_img_id ) : ?>
 			ocean_woo_img_link_open();
 			
 				// Main Image.
-				echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $first_img );
+				echo wp_get_attachment_image( $attachment, 'woocommerce_thumbnail', '', $first_img );
 
 				// Secondary Image.
-				echo wp_get_attachment_image( $secondary_img_id, 'shop_catalog', '', $second_img );
+				echo wp_get_attachment_image( $secondary_img_id, 'woocommerce_thumbnail', '', $second_img );
 					
 			ocean_woo_img_link_close();
 
 		} else {
 				
 			// Main Image.
-			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $first_img );
+			echo wp_get_attachment_image( $attachment, 'woocommerce_thumbnail', '', $first_img );
 
 			// Secondary Image.
-			echo wp_get_attachment_image( $secondary_img_id, 'shop_catalog', '', $second_img );;
+			echo wp_get_attachment_image( $secondary_img_id, 'woocommerce_thumbnail', '', $second_img );;
 
 		}
 
@@ -113,14 +113,14 @@ if ( $secondary_img_id ) : ?>
 			ocean_woo_img_link_open();
 			
 				// Single Image.
-				echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $first_img );
+				echo wp_get_attachment_image( $attachment, 'woocommerce_thumbnail', '', $first_img );
 					
 			ocean_woo_img_link_close();
 
 		} else {
 				
 			// Single Image.
-			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $first_img );
+			echo wp_get_attachment_image( $attachment, 'woocommerce_thumbnail', '', $first_img );
 
 		}
 
