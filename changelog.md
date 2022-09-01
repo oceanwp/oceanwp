@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### _2022.08.30_ - 3.3.5
+- **Added**: Filter: Single Post: ocean_single_author_bio_title_tag.
+- **Added**: Filter: Single Post: ocean_single_related_post_title_tag.
+- **Fixed**: Shop Page: Result Count: On the shop page active color not working for the second view option.
+
 ### _2022.08.09_ - 3.3.4
 - **NEW**: Admin Settings section in OceanWP Panel.
 - **Added**: Social Menu for Header and Top Bar: Discord option.
