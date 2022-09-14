@@ -82,7 +82,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					add_filter( 'woocommerce_show_page_title', '__return_false' );
 
 					// Disable WooCommerce css
-					add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+					add_filter( 'woocommerce_enqueue_styles', array( $this, 'disable_woo_css' ) );
 
 					// Remove the category description under the page title on taxonomy
 					add_filter( 'ocean_post_subheading', array( $this, 'post_subheading' ) );
@@ -1726,6 +1726,16 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$classes[] = 'product';
 			}
 			return $classes;
+		}
+
+		/**
+		 * Disable woo css
+		 *
+		 * @since 1.4.7
+		 */
+		public function disable_woo_css() {
+			$styles = [];
+			return $styles;
 		}
 
 		/**
