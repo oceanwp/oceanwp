@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2022.09.14_ - 3.3.5
+- **Fixed**: WooCommerce 6.9 compatibility patch: Fatal error: Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array
+
 ### _2022.08.09_ - 3.3.4
 - **NEW**: Admin Settings section in OceanWP Panel.
 - **Added**: Social Menu for Header and Top Bar: Discord option.
