@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2022.10.07_ - 3.3.6
+- **Added**: Customizer Settings: Full-Screen header: Icon size for Hamburger menu
+
 ### _2022.09.14_ - 3.3.5
 - **Fixed**: WooCommerce 6.9 compatibility patch: Fatal error: Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array
 

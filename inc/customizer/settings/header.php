@@ -494,6 +494,69 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			) ) );
 
 			/**
+			 * Full Screen header hamburger icon width
+			 */
+			$wp_customize->add_setting( 'ocean_full_screen_header_hamburger_icon_width', array(
+				'transport' 			=> 'postMessage',
+				'default'     			=> '23',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_full_screen_header_hamburger_icon_width', array(
+				'label'	   				=> esc_html__( ' Hamburger Width (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_header_general',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 100,
+			        'step'  => 1,
+			    ),
+				'active_callback' 		=> 'oceanwp_cac_has_full_screen_header_style',
+			) ) );
+
+			/**
+			 * Full Screen header hamburger icon height
+			 */
+			$wp_customize->add_setting( 'ocean_full_screen_header_hamburger_icon_height', array(
+				'transport' 			=> 'postMessage',
+				'default'     			=> '2',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_full_screen_header_hamburger_icon_height', array(
+				'label'	   				=> esc_html__( ' Hamburger Height (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_header_general',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 10,
+			        'step'  => 1,
+			    ),
+				'active_callback' 		=> 'oceanwp_cac_has_full_screen_header_style',
+			) ) );
+
+			/**
+			 * Full Screen header hamburger icon gap
+			 */
+			$wp_customize->add_setting( 'ocean_full_screen_header_hamburger_icon_gap', array(
+				'transport' 			=> 'postMessage',
+				'default'     			=> '8',
+				'sanitize_callback' 	=> 'oceanwp_sanitize_number',
+			) );
+
+			$wp_customize->add_control( new OceanWP_Customizer_Range_Control( $wp_customize, 'ocean_full_screen_header_hamburger_icon_gap', array(
+				'label'	   				=> esc_html__( ' Hamburger Gap (px)', 'oceanwp' ),
+				'section'  				=> 'ocean_header_general',
+				'priority' 				=> 10,
+			    'input_attrs' 			=> array(
+			        'min'   => 0,
+			        'max'   => 25,
+			        'step'  => 1,
+			    ),
+				'active_callback' 		=> 'oceanwp_cac_has_full_screen_header_style',
+			) ) );
+
+			/**
 			 * Full Screen Header Transparent
 			 */
 			$wp_customize->add_setting( 'ocean_full_screen_header_transparent', array(
@@ -4112,6 +4175,9 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			$top_header_search_button_border_color 						= get_theme_mod( 'ocean_top_header_search_button_border_color', '#f1f1f1' );
 			$top_header_search_button_color 							= get_theme_mod( 'ocean_top_header_search_button_color', '#333333' );
 			$top_header_search_button_hover_color 						= get_theme_mod( 'ocean_top_header_search_button_hover_color', '#13aff0' );
+			$full_screen_header_menu_hamburger_icon_width 			    = get_theme_mod( 'ocean_full_screen_header_hamburger_icon_width', '23' );
+			$full_screen_header_menu_hamburger_icon_height 				= get_theme_mod( 'ocean_full_screen_header_hamburger_icon_height', '2' );
+			$full_screen_header_menu_hamburger_icon_gap                 = get_theme_mod( 'ocean_full_screen_header_hamburger_icon_gap', '8' );
 			$full_screen_header_menu_bar_color 							= get_theme_mod( 'ocean_full_screen_header_menu_bar_color', '#333333' );
 			$full_screen_header_menu_bar_close_color 					= get_theme_mod( 'ocean_full_screen_header_menu_bar_close_color', '#ffffff' );
 			$full_screen_header_bg 										= get_theme_mod( 'ocean_full_screen_header_bg', 'rgba(0,0,0,0.9)' );
@@ -4388,6 +4454,21 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Full Screen header style
 			if ( 'full_screen' == $header_style ) {
+
+				if ( ! empty( $full_screen_header_menu_hamburger_icon_width ) && '23' != $full_screen_header_menu_hamburger_icon_width ) {
+					$css .= '#site-header.full_screen-header .menu-bar .ham,#site-header.full_screen-header .menu-bar .ham:before,#site-header.full_screen-header .menu-bar .ham:after{width:'. $full_screen_header_menu_hamburger_icon_width .'px;}';
+				}
+				if ( ! empty( $full_screen_header_menu_hamburger_icon_height ) && '2' != $full_screen_header_menu_hamburger_icon_height ) {
+					$css .= '#site-header.full_screen-header .menu-bar .ham,#site-header.full_screen-header .menu-bar .ham:before,#site-header.full_screen-header .menu-bar .ham:after{height:'. $full_screen_header_menu_hamburger_icon_height .'px;}';
+				}
+
+				if ( ! empty( $full_screen_header_menu_hamburger_icon_gap ) && '8' != $full_screen_header_menu_hamburger_icon_gap ) {
+					$css .= '#site-header.full_screen-header .menu-bar .ham:before{top: -'. $full_screen_header_menu_hamburger_icon_gap .'px;}';
+					$css .= '#site-header.full_screen-header .menu-bar .ham:after{top: '. $full_screen_header_menu_hamburger_icon_gap .'px;}';
+
+					$css .= '#site-header.full_screen-header .menu-bar.exit .ham:before{transform: translateY('. $full_screen_header_menu_hamburger_icon_gap .'px) rotateZ(-45deg);}';
+					$css .= '#site-header.full_screen-header .menu-bar.exit .ham:after{transform: translateY(-'. $full_screen_header_menu_hamburger_icon_gap .'px) rotateZ(45deg);}';
+				}
 
 				// Menu bar color
 				if ( ! empty( $full_screen_header_menu_bar_color ) && '#333333' != $full_screen_header_menu_bar_color ) {
