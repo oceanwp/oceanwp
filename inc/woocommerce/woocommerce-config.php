@@ -488,22 +488,22 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			if ( class_exists( 'WooCommerce_Germanized' ) ) {
 
 				// Product entries.
-				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_single_delivery_time_info', 8 );
-				remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_gzd_template_single_price_unit', 11 );
-				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_single_product_units', 9 );
-				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_single_shipping_costs_info', 7 );
-				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_single_tax_info', 6 );
+				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_loop_delivery_time_info', WC_GZD_Hook_Priorities::instance()->get_priority( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_loop_delivery_time_info', 8 ) );
+				remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_gzd_template_loop_price_unit', WC_GZD_Hook_Priorities::instance()->get_priority( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_loop_price_unit', 11 ) );
+				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_loop_product_units', WC_GZD_Hook_Priorities::instance()->get_priority( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_loop_product_units', 9 ) );
+				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_loop_shipping_costs_info', WC_GZD_Hook_Priorities::instance()->get_priority( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_loop_shipping_costs_info', 7 ) );
+				remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_loop_tax_info', WC_GZD_Hook_Priorities::instance()->get_priority( 'woocommerce_after_shop_loop_item', 'woocommerce_gzd_template_loop_tax_info', 6 ) );
 				add_action( 'ocean_after_archive_product_inner', array( $this, 'woocommerce_germanized' ) );
 
 				// Single product.
-				remove_action( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_price_unit', 11 );
-				remove_action( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_legal_info', 12 );
-				add_action( 'ocean_after_single_product_price', array( $this, 'woocommerce_germanized_single' ) );
+				remove_action( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_price_unit', WC_GZD_Hook_Priorities::instance()->get_priority( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_price_unit', 11 ) );
+				remove_action( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_legal_info', WC_GZD_Hook_Priorities::instance()->get_priority( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_legal_info', 12 ) );
+				add_action( 'ocean_after_single_product_price', array( $this, 'woocommerce_germanized_single' ), 12 );
 
 				// Single product product units and delivery time info.
-				remove_action( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_delivery_time_info', 27 );
-				remove_action( 'woocommerce_product_meta_start', 'woocommerce_gzd_template_single_product_units', 5 );
-				add_action( 'ocean_after_single_product_excerpt', array( $this, 'woocommerce_germanized_single_meta' ) );
+				remove_action( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_delivery_time_info', WC_GZD_Hook_Priorities::instance()->get_priority( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_delivery_time_info', 27 ) );
+				remove_action( 'woocommerce_product_meta_start', 'woocommerce_gzd_template_single_product_units', WC_GZD_Hook_Priorities::instance()->get_priority( 'woocommerce_single_product_summary', 'woocommerce_gzd_template_single_product_units', 5 ) );
+				add_action( 'ocean_after_single_product_excerpt', array( $this, 'woocommerce_germanized_single_meta' ), 12 );
 			}
 
 			if ( class_exists( 'YITH_WCWL' ) ) {
@@ -2637,25 +2637,32 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.6
 		 */
 		public function woocommerce_germanized() {
+
 			echo '<li class="wc-gzd">';
-				wc_get_template( 'single-product/price-unit.php' );
-				wc_get_template( 'single-product/tax-info.php' );
-				wc_get_template( 'single-product/shipping-costs-info.php' );
-				wc_get_template( 'single-product/delivery-time-info.php' );
-				wc_get_template( 'single-product/units.php' );
+
+			foreach ( wc_gzd_get_product_loop_shopmarks() as $shopmark ) {
+				$callback = $shopmark->get_callback();
+
+				if ( function_exists( $callback ) && $shopmark->is_enabled() && in_array( $shopmark->get_type(), array( 'unit_price', 'tax', 'shipping_costs', 'delivery_time', 'units' ), true ) ) {
+					call_user_func( $callback );
+				}
+			}
+
 			echo '</li>';
 		}
 
-		/**
-		 * Compatibility with WooCommerce Germanized Single Product template.
-		 *
-		 * @since 2.0
-		 */
 		public function woocommerce_germanized_single() {
+
 			echo '<div class="wc-gzd-single">';
-				wc_get_template( 'single-product/price-unit.php' );
-				wc_get_template( 'single-product/tax-info.php' );
-				wc_get_template( 'single-product/shipping-costs-info.php' );
+
+			foreach ( wc_gzd_get_single_product_shopmarks() as $shopmark ) {
+				$callback = $shopmark->get_callback();
+
+				if ( function_exists( $callback ) && $shopmark->is_enabled() && in_array( $shopmark->get_type(), array( 'unit_price', 'legal', 'shipping_costs' ), true ) ) {
+					call_user_func( $callback );
+				}
+			}
+
 			echo '</div>';
 		}
 
@@ -2665,10 +2672,19 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 2.0
 		 */
 		public function woocommerce_germanized_single_meta() {
+
 			echo '<div class="wc-gzd-single-meta">';
-				wc_get_template( 'single-product/units.php' );
-				wc_get_template( 'single-product/delivery-time-info.php' );
+
+			foreach ( wc_gzd_get_single_product_shopmarks() as $shopmark ) {
+				$callback = $shopmark->get_callback();
+
+				if ( function_exists( $callback ) && $shopmark->is_enabled() && in_array( $shopmark->get_type(), array( 'unit_price', 'delivery_time' ), true ) ) {
+					call_user_func( $callback );
+				}
+			}
+
 			echo '</div>';
+
 		}
 	}
 
