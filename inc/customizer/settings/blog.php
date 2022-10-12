@@ -2087,7 +2087,41 @@ if ( ! class_exists( 'OceanWP_Blog_Customizer' ) ) :
 
 			// Single content width.
 			if ( ! empty( $single_content_width ) && '700' != $single_content_width ) {
-				$css .= '.single-post.content-max-width #wrap .thumbnail, .single-post.content-max-width #wrap .wp-block-buttons, .single-post.content-max-width #wrap .wp-block-verse, .single-post.content-max-width #wrap .entry-header, .single-post.content-max-width #wrap ul.meta, .single-post.content-max-width #wrap .entry-content p, .single-post.content-max-width #wrap .entry-content h1, .single-post.content-max-width #wrap .entry-content h2, .single-post.content-max-width #wrap .entry-content h3, .single-post.content-max-width #wrap .entry-content h4, .single-post.content-max-width #wrap .entry-content h5, .single-post.content-max-width #wrap .entry-content h6, .single-post.content-max-width #wrap .wp-block-image, .single-post.content-max-width #wrap .wp-block-gallery, .single-post.content-max-width #wrap .wp-block-video, .single-post.content-max-width #wrap .wp-block-quote, .single-post.content-max-width #wrap .wp-block-text-columns, .single-post.content-max-width #wrap .entry-content ul, .single-post.content-max-width #wrap .entry-content ol, .single-post.content-max-width #wrap .wp-block-cover-text, .single-post.content-max-width #wrap .post-tags, .single-post.content-max-width #wrap .comments-area, .single-post.content-max-width #wrap .wp-block-embed, #wrap .wp-block-separator.is-style-wide:not(.size-full){max-width:' . $single_content_width . 'px;} .single-post.content-max-width #wrap .wp-block-image.alignleft, .single-post.content-max-width #wrap .wp-block-image.alignright{max-width:' . $single_content_width / 2 . 'px;} .single-post.content-max-width #wrap .wp-block-image.alignleft{margin-left: calc( 50% - ' . $single_content_width / 2 . 'px);} .single-post.content-max-width #wrap .wp-block-image.alignright{margin-right: calc( 50% - ' . $single_content_width / 2 . 'px);} .single-post.content-max-width #wrap .wp-block-embed, .single-post.content-max-width #wrap .wp-block-verse {margin-left: auto; margin-right: auto;}';
+				$css .= '
+					.single-post.content-max-width #wrap .thumbnail,
+					.single-post.content-max-width #wrap .wp-block-buttons,
+					.single-post.content-max-width #wrap .wp-block-verse,
+					.single-post.content-max-width #wrap .entry-header,
+					.single-post.content-max-width #wrap ul.meta,
+					.single-post.content-max-width #wrap .entry-content p,
+					.single-post.content-max-width #wrap .entry-content h1,
+					.single-post.content-max-width #wrap .entry-content h2,
+					.single-post.content-max-width #wrap .entry-content h3,
+					.single-post.content-max-width #wrap .entry-content h4,
+					.single-post.content-max-width #wrap .entry-content h5,
+					.single-post.content-max-width #wrap .entry-content h6,
+					.single-post.content-max-width #wrap .wp-block-image,
+					.single-post.content-max-width #wrap .wp-block-gallery,
+					.single-post.content-max-width #wrap .wp-block-video,
+					.single-post.content-max-width #wrap .wp-block-quote,
+					.single-post.content-max-width #wrap .wp-block-text-columns,
+					.single-post.content-max-width #wrap .wp-block-code,
+					.single-post.content-max-width #wrap .entry-content ul,
+					.single-post.content-max-width #wrap .entry-content ol,
+					.single-post.content-max-width #wrap .wp-block-cover-text,
+					.single-post.content-max-width #wrap .wp-block-cover,
+					.single-post.content-max-width #wrap .wp-block-columns,
+					.single-post.content-max-width #wrap .post-tags,
+					.single-post.content-max-width #wrap .comments-area,
+					.single-post.content-max-width #wrap .wp-block-embed,
+					#wrap .wp-block-separator.is-style-wide:not(.size-full){max-width:' . $single_content_width . 'px;}
+					.single-post.content-max-width #wrap .wp-block-image.alignleft,
+					.single-post.content-max-width #wrap .wp-block-image.alignright{max-width:' . $single_content_width / 2 . 'px;}
+					.single-post.content-max-width #wrap .wp-block-image.alignleft{margin-left: calc( 50% - ' . $single_content_width / 2 . 'px);}
+					.single-post.content-max-width #wrap .wp-block-image.alignright{margin-right: calc( 50% - ' . $single_content_width / 2 . 'px);}
+					.single-post.content-max-width #wrap .wp-block-embed,
+					.single-post.content-max-width #wrap .wp-block-verse {margin-left: auto; margin-right: auto;}
+				';
 
 			}
 
