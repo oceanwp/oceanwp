@@ -3263,7 +3263,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 
 							<span class="comment-meta commentmetadata">
 							<?php if ( ! is_rtl() ) { ?>
-									<span class="comment-date"><?php comment_date( 'j M Y' ); ?></span>
+									<span class="comment-date"><?php comment_date( apply_filters( 'ocean_comment_date_format', '' ) ); ?></span>
 								<?php } ?>
 
 							<?php

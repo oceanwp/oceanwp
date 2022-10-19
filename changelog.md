@@ -1,8 +1,11 @@
 # OceanWP Changelog
 
-### _2022.10.08_ - 3.3.6
-- **Added**: Customizer Settings: Full-Screen header: Icon size for Hamburger menu
+### _2022.10.19_ - 3.3.6
+- **Added**: Customizer Settings: Full-Screen header: Icon size for Hamburger menu.
+- **Added**: Filter: Comment Date: ocean_comment_date_format
 - **Fixed**: Compatibility: Germanized for WooCommerce: Shopmarks position and display based on settings.
+- **Fixed**: Comment Date: The date format for comments on WordPress does not follow the wordpress date format.
+- **Fixed**: Product Page: Infinite Scroll - Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document'.
 
 ### _2022.09.14_ - 3.3.5
 - **Fixed**: WooCommerce 6.9 compatibility patch: Fatal error: Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array
