@@ -60,6 +60,10 @@ if ( 'post_tag' === $term_tax ) {
 $srp_seo_set = get_theme_mod( 'ocean_enable_srp_fimage_alt', false );
 $srp_seo_set = $srp_seo_set ? $srp_seo_set : false;
 
+// Title tag.
+$tag = 'h3';
+$tag = apply_filters( 'ocean_single_related_post_title_tag', $tag );
+
 // Display date.
 $srp_date = true;
 $srp_date = apply_filters( 'ocean_related_posts_date', $srp_date );
@@ -83,9 +87,9 @@ if ( $oceanwp_related_query->have_posts() ) :
 
 	<section id="related-posts" class="<?php echo esc_attr( $classes ); ?>">
 
-		<h3 class="theme-heading related-posts-title">
+		<<?php echo esc_attr( $tag ); ?> class="theme-heading related-posts-title">
 			<span class="text"><?php oceanwp_theme_strings( 'owp-string-single-related-posts', 'oceanwp' ); ?></span>
-		</h3>
+		</<?php echo esc_attr( $tag ); ?>>
 
 		<div class="oceanwp-row clr">
 

@@ -19,6 +19,8 @@ if ( 'post' !== get_post_type() ) {
 $author      = get_the_author();
 $description = get_the_author_meta( 'description' );
 $url         = esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
+$tag         = 'h3';
+$tag         = apply_filters( 'ocean_single_author_bio_title_tag', $tag );
 
 // Only display if author has a description.
 if ( ! $description ) {
@@ -45,11 +47,11 @@ if ( ! $description ) {
 
 		<div class="author-bio-content clr">
 
-			<h3 class="author-bio-title">
+			<<?php echo esc_attr( $tag ); ?> class="author-bio-title">
 				<a href="<?php echo esc_url( $url ); ?>" title="<?php esc_attr( oceanwp_theme_strings( 'owp-string-author-page' ) ); ?>">
 					<?php echo esc_html( wp_strip_all_tags( $author ) ); ?>
 				</a>
-			</h3><!-- .author-bio-title -->
+			</<?php echo esc_attr( $tag ); ?>><!-- .author-bio-title -->
 
 			<?php
 			// Outputs the author description if one exists.

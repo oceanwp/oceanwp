@@ -7,8 +7,12 @@
 - **Fixed**: Comment Date: The date format for comments on WordPress does not follow the wordpress date format.
 - **Fixed**: Product Page: Infinite Scroll - Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document'.
 
+
 ### _2022.09.14_ - 3.3.5
+- **Added**: Filter: Single Post: ocean_single_author_bio_title_tag.
+- **Added**: Filter: Single Post: ocean_single_related_post_title_tag.
 - **Fixed**: WooCommerce 6.9 compatibility patch: Fatal error: Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array
+- **Fixed**: Shop Page: Result Count: On the shop page active color not working for the second view option.
 
 ### _2022.08.09_ - 3.3.4
 - **NEW**: Admin Settings section in OceanWP Panel.
