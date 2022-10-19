@@ -6211,7 +6211,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add stars color
 			if ( ! empty( $stars_color ) && '#f9ca63' != $stars_color ) {
-				$css .= '.woocommerce .star-rating span{color:'. $stars_color .';}';
+				$css .= '.woocommerce .star-rating span, .woocommerce .star-rating span:before{color:'. $stars_color .';}';
 			}
 
 			// Add quantity border color
