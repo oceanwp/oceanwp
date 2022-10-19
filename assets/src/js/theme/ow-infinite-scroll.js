@@ -84,11 +84,21 @@ class OWInfiniteScroll {
       imagesLoaded(items, () => {
         // Equal height elements
         if (!document.body.classList.contains("no-matchheight")) {
-          const entryItemsSelectors = Array.from(items).map((item) => {
-            return `#${item.id} .blog-entry-inner`;
+          let entryItemsSelectors = Array.from(items).map((item) => {
+            if ( item.id ) {
+              return `#${item.id} .blog-entry-inner`;
+            } else {
+              return;
+            }
           });
 
-          new ResponsiveAutoHeight(entryItemsSelectors.join(","));
+          entryItemsSelectors = entryItemsSelectors.filter(function( element ) {
+            return element !== undefined;
+         });
+
+          if ( entryItemsSelectors.length > 0 ) {
+            new ResponsiveAutoHeight(entryItemsSelectors.join(","));
+          }
         }
       });
     });

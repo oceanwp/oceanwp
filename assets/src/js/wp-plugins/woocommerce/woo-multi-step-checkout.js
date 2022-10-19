@@ -208,6 +208,17 @@ class WooMultiStepCheckout {
           if (input) return input.value.trim() === "";
         })
     );
+
+    const billingEmailRow = section.querySelector(".validate-email");
+    const emailValue      = billingEmailRow.querySelector("#billing_email").value;
+
+    if ( this.#validateEmail( emailValue )) {
+      billingEmailRow.classList.remove("ow-invalid");
+    } else {
+      invalidRows.push( billingEmailRow );
+      billingEmailRow.classList.add("ow-invalid");
+    }
+
     const isValid = invalidRows.length === 0;
 
     section.querySelectorAll(".ow-invalid").forEach((row) => {
@@ -222,6 +233,12 @@ class WooMultiStepCheckout {
 
     return isValid;
   }
+
+  #validateEmail = (email) => {
+    return email.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+  };
 
   #isVisible(element) {
     return !!(

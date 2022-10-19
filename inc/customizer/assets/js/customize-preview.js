@@ -3797,6 +3797,51 @@
 					$child.remove();
 				}
 			});
+		}), api("ocean_full_screen_header_hamburger_icon_width", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_full_screen_header_hamburger_icon_width");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_full_screen_header_hamburger_icon_width">#site-header.full_screen-header .menu-bar .ham,#site-header.full_screen-header .menu-bar .ham:before,#site-header.full_screen-header .menu-bar .ham:after { width: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_full_screen_header_hamburger_icon_height", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_full_screen_header_hamburger_icon_height");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_full_screen_header_hamburger_icon_height">#site-header.full_screen-header .menu-bar .ham, #site-header.full_screen-header .menu-bar .ham:before, #site-header.full_screen-header .menu-bar .ham:after { height: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_full_screen_header_hamburger_icon_gap", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_full_screen_header_hamburger_icon_gap");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_full_screen_header_hamburger_icon_gap">#site-header.full_screen-header .menu-bar .ham:before { top: -' + to + 'px; } #site-header.full_screen-header .menu-bar .ham:after { top: ' + to + "px; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
 		}), api("ocean_full_screen_header_menu_bar_color", function($swipe) {
 			$swipe.bind(function(to) {
 				var $child = $(".customizer-ocean_full_screen_header_menu_bar_color");
