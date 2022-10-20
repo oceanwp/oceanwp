@@ -1024,7 +1024,9 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 		 */
 		public function render_content() {
 			$reordered_choices = array();
-			$saved_choices     = explode( ',', ow_esc_attr( $this->value() ) );
+
+			$value = is_array( $this->value() ) ? array_map( 'ow_esc_attr', $this->value() ) : ow_esc_attr( $this->value() );
+			$saved_choices = ! is_array( $value ) ? explode( ',', $value ) : $value;
 
 			// Order the checkbox choices based on the saved order
 			if ( $this->sortable ) {
