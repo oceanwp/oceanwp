@@ -1,11 +1,13 @@
 # OceanWP Changelog
 
-### _2022.10.19_ - 3.3.6
+### _2022.10.25_ - 3.3.6
 - **Added**: Customizer Settings: Full-Screen header: Icon size for Hamburger menu.
 - **Added**: Filter: Comment Date: ocean_comment_date_format
 - **Fixed**: Compatibility: Germanized for WooCommerce: Shopmarks position and display based on settings.
 - **Fixed**: Comment Date: The date format for comments on WordPress does not follow the wordpress date format.
 - **Fixed**: Product Page: Infinite Scroll - Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document'.
+- **Fixed**: WooCommerce: Multistep Checkout - Next and prev buttons are not working.
+- **Fixed**: WooCommerce: Multistep Checkout - On the next step, it scrolls the page to the bottom.
 
 
 ### _2022.09.14_ - 3.3.5
