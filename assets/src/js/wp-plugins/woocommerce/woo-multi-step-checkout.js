@@ -138,6 +138,9 @@ class WooMultiStepCheckout {
       document
         .querySelector(`#timeline-${nextStep}`)
         .classList.toggle("active");
+      document
+        .querySelector(`#timeline-${nextStep}`)
+        .scrollIntoView();
     } else if (action === "prev") {
       this.#elements.formActions.setAttribute("data-step", prevStep);
 
@@ -151,6 +154,9 @@ class WooMultiStepCheckout {
       document
         .querySelector(`#timeline-${prevStep}`)
         .classList.toggle("active");
+      document
+        .querySelector(`#timeline-${prevStep}`)
+        .scrollIntoView();
     }
 
     currentStep = this.#elements.formActions.getAttribute("data-step");
@@ -209,14 +215,24 @@ class WooMultiStepCheckout {
         })
     );
 
-    const billingEmailRow = section.querySelector(".validate-email");
-    const emailValue      = billingEmailRow.querySelector("#billing_email").value;
+    let billingEmailRow = '';
+    let emailValue      = '';
 
-    if ( this.#validateEmail( emailValue )) {
-      billingEmailRow.classList.remove("ow-invalid");
-    } else {
-      invalidRows.push( billingEmailRow );
-      billingEmailRow.classList.add("ow-invalid");
+    if ( section.querySelector(".validate-email") !== null ) {
+      billingEmailRow = section.querySelector(".validate-email");
+    }
+
+    if ( billingEmailRow ) {
+      emailValue = billingEmailRow.querySelector("#billing_email").value;
+    }
+
+    if ( emailValue && billingEmailRow ) {
+      if ( this.#validateEmail( emailValue )) {
+        billingEmailRow.classList.remove("ow-invalid");
+      } else {
+        invalidRows.push( billingEmailRow );
+        billingEmailRow.classList.add("ow-invalid");
+      }
     }
 
     const isValid = invalidRows.length === 0;
