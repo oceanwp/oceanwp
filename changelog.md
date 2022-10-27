@@ -4,6 +4,10 @@
 - **Added**: Customizer Settings: Full-Screen header: Icon size for Hamburger menu.
 - **Added**: Filter: Comment Date: ocean_comment_date_format
 - **Added**: Filter: Infinite Scroll: oceanwp_infinite_scroll_output
+- **Added**: Filter: Post date format: ocean_get_post_date_format
+- **Added**: Filter: Post date arguments: ocean_get_post_date_args
+- **Added**: Filter: Modified date format: ocean_get_post_modified_date_format
+- **Added**: Filter: Modified date arguments: ocean_get_post_modified_date_args
 - **Moved**: Diable svg icon option from General Oprion > Theme Icons to General Options > Performance tab.
 - **Fixed**: Compatibility: Germanized for WooCommerce: Shopmarks position and display based on settings.
 - **Fixed**: Comment Date: The date format for comments on WordPress does not follow the wordpress date format.
