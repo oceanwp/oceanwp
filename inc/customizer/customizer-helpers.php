@@ -927,3 +927,19 @@ function oceanwp_cac_has_ld_lesson_rl_layout() {
 		return false;
 	}
 }
+
+// /**
+//  * Compatibility with v3.3.5
+//  */
+// function ocean_comp_svg_disable_option( $result = 'enabled' ) {
+
+// 	$is_svg = get_theme_mod( 'ocean_disable_svg_icons', 'enabled' );
+
+// 	if ( true === $is_svg || 'enabled' === $is_svg ) {
+// 		$result = 'enabled';
+// 	} else{
+// 		$result = 'enabled';
+// 	}
+
+// 	return $result;
+// }

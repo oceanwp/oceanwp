@@ -15,7 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function ocean_get_svg_icon() {
 
-	if ( true === get_theme_mod( 'ocean_disable_svg_icons', true ) || 'svg' !== oceanwp_theme_icon_class() ) {
+	$is_svg = get_theme_mod( 'ocean_disable_svg_icons', 'enabled' );
+
+	if ( ( true === $is_svg || 'enabled' === $is_svg ) || 'svg' !== oceanwp_theme_icon_class() ) {
 		return;
 	}
 
@@ -28,6 +30,21 @@ function ocean_get_svg_icon() {
 	}
 }
 add_action( 'wp_footer', 'ocean_get_svg_icon' );
+
+/**
+ * Backward compatibility with OceanWP v-3.3.5
+ */
+function ocean_comp_svg_disable_option() {
+
+	$is_svg = get_theme_mod( 'ocean_disable_svg_icons', 'enabled' );
+
+	if ( true === $is_svg ) {
+		set_theme_mod( 'ocean_disable_svg_icons', 'enabled' );
+	} else if ( false === $is_svg ) {
+		set_theme_mod( 'ocean_disable_svg_icons', 'disabled' );
+	}
+}
+add_action( 'init', 'ocean_comp_svg_disable_option' );
 
 /**
  * Return SVG markup.
@@ -45,7 +62,9 @@ add_action( 'wp_footer', 'ocean_get_svg_icon' );
  */
 function ocean_svg_icon( $args = array(), $location = true ) {
 
-	if ( true === get_theme_mod( 'ocean_disable_svg_icons', true ) || 'svg' !== oceanwp_theme_icon_class() ) {
+	$is_svg = get_theme_mod( 'ocean_disable_svg_icons', 'enabled' );
+
+	if ( ( true === $is_svg || 'enabled' === $is_svg ) || 'svg' !== oceanwp_theme_icon_class() ) {
 		return;
 	}
 

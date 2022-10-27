@@ -1,8 +1,10 @@
 # OceanWP Changelog
 
-### _2022.10.25_ - 3.3.6
+### _2022.10.27_ - 3.3.6
 - **Added**: Customizer Settings: Full-Screen header: Icon size for Hamburger menu.
 - **Added**: Filter: Comment Date: ocean_comment_date_format
+- **Added**: Filter: Infinite Scroll: oceanwp_infinite_scroll_output
+- **Moved**: Diable svg icon option from General Oprion > Theme Icons to General Options > Performance tab.
 - **Fixed**: Compatibility: Germanized for WooCommerce: Shopmarks position and display based on settings.
 - **Fixed**: Comment Date: The date format for comments on WordPress does not follow the wordpress date format.
 - **Fixed**: Product Page: Infinite Scroll - Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document'.
