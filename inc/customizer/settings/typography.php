@@ -397,6 +397,32 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 						)
 					);
 				}
+
+				$wp_customize->add_setting(
+					'ocean_local_google_font_format',
+					array(
+						'default'           => 'ttf',
+						'type'              => 'theme_mod',
+						'sanitize_callback' => 'oceanwp_sanitize_select',
+						'transport'         => 'postMessage',
+					)
+				);
+
+				$wp_customize->add_control(
+					'ocean_local_google_font_format',
+					array(
+						'label'           => esc_html__( 'Font Format', 'oceanwp' ),
+						'description'     => '',
+						'section'         => 'ocean_typography_general',
+						'settings'        => 'ocean_local_google_font_format',
+						'type'            => 'select',
+						'choices'         => array(
+							'ttf'    => esc_html__( 'ttf', 'oceanwp' ),
+							'woff'    => esc_html__( 'woff', 'oceanwp' ),
+							'woff2'    => esc_html__( 'woff2', 'oceanwp' ),
+						),
+					)
+				);
 			}
 
 			/**

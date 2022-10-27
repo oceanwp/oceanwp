@@ -52,14 +52,14 @@ if ( $attachment ) {
 			ocean_woo_img_link_open();
 			
 				// Single Image.
-				echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $img_args );
-					
+
+				echo wp_get_attachment_image( $attachment, 'woocommerce_thumbnail', '', $img_args );
 			ocean_woo_img_link_close();
 
 		} else {
 				
 			// Single Image.
-			echo wp_get_attachment_image( $attachment, 'shop_catalog', '', $img_args );
+			echo wp_get_attachment_image( $attachment, 'woocommerce_thumbnail', '', $img_args );
 
 		}
 		
