@@ -133,14 +133,19 @@ if ( ! function_exists( 'ocean_get_post_date' ) ) {
 
 	function ocean_get_post_date( $args = array(), $echo = true ) {
 
+		$format = 'F j, Y';
+		$format = apply_filters( 'ocean_get_post_date_format', $format );
+
 		$default_args = array(
 			'prefix'      => oceanwp_theme_strings( 'owp-string-posted-on', false ),
-			'date_format' => 'F j, Y',
+			'date_format' => $format,
 			'before'      => '',
 			'after'       => ''
 		);
 
 		$args = wp_parse_args( $args, $default_args );
+
+		$args = apply_filters( 'ocean_get_post_date_args', $args );
 
 		$date_format = $args['date_format'];
 
@@ -172,12 +177,17 @@ if ( ! function_exists( 'ocean_get_post_modified_date' ) ) {
 
 	function ocean_get_post_modified_date( $args = array(), $echo = true ) {
 
+		$format = 'F j, Y';
+		$format = apply_filters( 'ocean_get_post_modified_date_format', $format );
+
 		$default_args = array(
 			'prefix'      => oceanwp_theme_strings( 'owp-string-updated-on', false ),
-			'date_format' => 'F j, Y'
+			'date_format' => $format
 		);
 
 		$args = wp_parse_args( $args, $default_args );
+
+		$args = apply_filters( 'ocean_get_post_modified_date_args', $args );
 
 		$date_format = $args['date_format'];
 

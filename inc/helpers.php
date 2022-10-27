@@ -3492,6 +3492,8 @@ if ( ! function_exists( 'oceanwp_infinite_scroll' ) ) {
 			$output     .= '<div class="alignright older-posts">' . get_next_posts_link( esc_attr__( 'Older Posts', 'oceanwp' ) . ' <span aria-hidden="true">&rarr;</span>' ) . '</div>';
 		$output         .= '</div>';
 
+		$output = apply_filters( 'oceanwp_infinite_scroll_output', $output );
+
 		echo wp_kses_post( $output );
 
 	}
