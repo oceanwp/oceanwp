@@ -752,7 +752,7 @@
         });
     }), api("ocean_stars_color", function($swipe) {
         $swipe.bind(function(size) {
-            $(".woocommerce .star-rating span, .woocommerce .star-rating span:before").css("color", size);
+            $(".woocommerce .star-rating span:before").css("color", size);
         });
     }), api("ocean_quantity_border_color", function($swipe) {
         $swipe.bind(function(size) {

@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2022.10.27_ - 3.3.6
+### _2022.11.1_ - 3.3.6
 - **Added**: Customizer Settings: Full-Screen header: Icon size for Hamburger menu.
 - **Added**: Filter: Comment Date: ocean_comment_date_format
 - **Added**: Filter: Infinite Scroll: oceanwp_infinite_scroll_output
@@ -14,6 +14,8 @@
 - **Fixed**: Product Page: Infinite Scroll - Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document'.
 - **Fixed**: WooCommerce: Multistep Checkout - Next and prev buttons are not working.
 - **Fixed**: WooCommerce: Multistep Checkout - On the next step, it scrolls the page to the bottom.
+- **Fixed**: WooCOmmerce: Star Color: Live preview for star color is not working in customizer.
+- **Fixed**: WooCOmmerce: Product hover style: Products image from the gallery aren't cropped.
 
 ### _2022.09.14_ - 3.3.5
 - **Fixed**: WooCommerce 6.9 compatibility patch: Fatal error: Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array
