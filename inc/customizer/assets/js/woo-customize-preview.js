@@ -529,6 +529,18 @@
                 $child.remove();
             }
         });
+    }), api("ocean_woo_store_notice_bg_color", function($swipe) {
+        $swipe.bind(function(size) {
+            $(".woocommerce-store-notice.demo_store").css("background-color", size);
+        });
+    }), api("ocean_woo_store_notice_dismiss_bg_color", function($swipe) {
+        $swipe.bind(function(size) {
+            $(".demo_store .woocommerce-store-notice__dismiss-link").css("background-color", size);
+        });
+    }), api("ocean_woo_store_notice_dismiss_text_hover_color", function($swipe) {
+        $swipe.bind(function(size) {
+            $(".demo_store .woocommerce-store-notice__dismiss-link:hover").css("color", size);
+        });
     }), api("ocean_woo_floating_bar_bg", function($swipe) {
         $swipe.bind(function(size) {
             $(".owp-floating-bar").css("background-color", size);

@@ -2591,6 +2591,26 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				),
 			);
 
+			$settings['woo_store_notice'] = array(
+				'label'    => esc_html__( 'WooCommerce Store Notice', 'oceanwp' ),
+				'target'   => '.woocommerce-store-notice.demo_store',
+				'defaults' => array(
+					'color'          => '#ffffff',
+					'line-height'    => '2',
+					'letter-spacing' => '1.5',
+				),
+			);
+
+			$settings['woo_store_notice_dismiss_link'] = array(
+				'label'    => esc_html__( 'WooCommerce Store Notice Dismiss', 'oceanwp' ),
+				'target'   => '.demo_store .woocommerce-store-notice__dismiss-link',
+				'defaults' => array(
+					'color'          => '#ffffff',
+					'line-height'    => '2',
+					'letter-spacing' => '1.5',
+				),
+			);
+
 			return $settings;
 		}
 

@@ -1,21 +1,22 @@
 # OceanWP Changelog
 
-### _2022.11.1_ - 3.3.6
+### _2022.11.2_ - 3.3.6
 - **Added**: Customizer Settings: Full-Screen header: Icon size for Hamburger menu.
-- **Added**: Filter: Comment Date: ocean_comment_date_format
-- **Added**: Filter: Infinite Scroll: oceanwp_infinite_scroll_output
-- **Added**: Filter: Post date format: ocean_get_post_date_format
-- **Added**: Filter: Post date arguments: ocean_get_post_date_args
-- **Added**: Filter: Modified date format: ocean_get_post_modified_date_format
-- **Added**: Filter: Modified date arguments: ocean_get_post_modified_date_args
+- **Added**: Filter: Comment Date: ocean_comment_date_format.
+- **Added**: Filter: Infinite Scroll: oceanwp_infinite_scroll_output.
+- **Added**: Filter: Post date format: ocean_get_post_date_format.
+- **Added**: Filter: Post date arguments: ocean_get_post_date_args.
+- **Added**: Filter: Modified date format: ocean_get_post_modified_date_format.
+- **Added**: WooCommerce: Store Notice: Style and Typography options.
+- **Fixed**: WooCOmmerce: Product hover style: Products image from the gallery aren't cropped.
 - **Moved**: Diable svg icon option from General Oprion > Theme Icons to General Options > Performance tab.
 - **Fixed**: Compatibility: Germanized for WooCommerce: Shopmarks position and display based on settings.
 - **Fixed**: Comment Date: The date format for comments on WordPress does not follow the wordpress date format.
 - **Fixed**: Product Page: Infinite Scroll - Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document'.
 - **Fixed**: WooCommerce: Multistep Checkout - Next and prev buttons are not working.
 - **Fixed**: WooCommerce: Multistep Checkout - On the next step, it scrolls the page to the bottom.
-- **Fixed**: WooCOmmerce: Star Color: Live preview for star color is not working in customizer.
-- **Fixed**: WooCOmmerce: Product hover style: Products image from the gallery aren't cropped.
+- **Fixed**: WooCommerce: Star Color: Live preview for star color is not working in customizer.
+- **Fixed**: WooCommerce: Product hover style: Products image from the gallery aren't cropped.
 
 ### _2022.09.14_ - 3.3.5
 - **Fixed**: WooCommerce 6.9 compatibility patch: Fatal error: Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array
