@@ -76,7 +76,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'ocean_customzer_styling',
 				array(
 					'label'       => esc_html__( 'Styling Options Location', 'oceanwp' ),
-					'description' => esc_html__( 'If you choose Custom File, a CSS file will be created in your uploads folder.', 'oceanwp' ),
+					'description' => esc_html__( 'Both settings apply only to the custom CSS added in the Custom CSS field in the Customizer. If you choose the Custom File location, a dedicated CSS file will be created in your uploads folder of your WordPress installation.', 'oceanwp' ),
 					'type'        => 'radio',
 					'section'     => 'ocean_general_styling',
 					'settings'    => 'ocean_customzer_styling',
