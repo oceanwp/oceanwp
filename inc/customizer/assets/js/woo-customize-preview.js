@@ -763,8 +763,19 @@
             }
         });
     }), api("ocean_stars_color", function($swipe) {
-        $swipe.bind(function(size) {
-            $(".woocommerce .star-rating span:before").css("color", size);
+        $swipe.bind(function(to) {
+            var $child = $(".customizer-ocean_stars_color");
+            if (to) {
+                /** @type {string} */
+                var img = '<style class="customizer-ocean_stars_color">.woocommerce .star-rating span, .woocommerce .star-rating span:before{ color: ' + to + "!important; }</style>";
+                if ($child.length) {
+                    $child.replaceWith(img);
+                } else {
+                    $("head").append(img);
+                }
+            } else {
+                $child.remove();
+            }
         });
     }), api("ocean_quantity_border_color", function($swipe) {
         $swipe.bind(function(size) {
