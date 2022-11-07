@@ -7,8 +7,6 @@
 - **Added**: Filter: Post date format: ocean_get_post_date_format.
 - **Added**: Filter: Post date arguments: ocean_get_post_date_args.
 - **Added**: Filter: Modified date format: ocean_get_post_modified_date_format.
-- **Added**: Filter: Title tag for author biography: ocean_single_author_bio_title_tag.
-- **Added**: Filter: Title tag for related posts heading on single blog post: ocean_single_related_post_title_tag.
 - **Added**: WooCommerce: Store Notice: Style and Typography options.
 - **Moved**: Customizer: Disable svg icon option from General Options > Theme Icons to General Options > Performance tab.
 - **Fixed**: WooCommerce: Product Archive: Product hover style: Products image from the gallery aren't cropped.
@@ -30,8 +28,8 @@
 ### _2022.09.14_ - 3.3.5
 - **Added**: Filter: Single Post: ocean_single_author_bio_title_tag.
 - **Added**: Filter: Single Post: ocean_single_related_post_title_tag.
-- **Fixed**: WooCommerce 6.9 compatibility patch: Fatal error: Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array
-- **Fixed**: Shop Page: Result Count: On the shop page active color not working for the second view option.
+- **Fixed**: WooCommerce 6.9 compatibility patch: Fatal error: Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array.
+- **Fixed**: WooCommerce: Product Archive: Results Count: Active color settings not applied for the second view option.
 
 ### _2022.08.09_ - 3.3.4
 - **NEW**: Admin Settings section in OceanWP Panel.
