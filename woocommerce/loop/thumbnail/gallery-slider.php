@@ -72,13 +72,13 @@ if ( $attachment_ids ) : ?>
 		
 						ocean_woo_img_link_open();
 					
-							echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', $img_args );
+							echo wp_get_attachment_image( $thumbnail_id, 'woocommerce_thumbnail', '', $img_args );
 							
 						ocean_woo_img_link_close();
 		
 					} else {
 							
-						echo wp_get_attachment_image( $thumbnail_id, 'shop_catalog', '', $img_args );
+						echo wp_get_attachment_image( $thumbnail_id, 'woocommerce_thumbnail', '', $img_args );
 			
 					}
 					?>
@@ -106,13 +106,13 @@ if ( $attachment_ids ) : ?>
 			
 							ocean_woo_img_link_open();
 						
-								echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', $img_args );
+								echo wp_get_attachment_image( $attachment_id, 'woocommerce_thumbnail', '', $img_args );
 								
 							ocean_woo_img_link_close();
 			
 						} else {
 								
-							echo wp_get_attachment_image( $attachment_id, 'shop_catalog', '', $img_args );
+							echo wp_get_attachment_image( $attachment_id, 'woocommerce_thumbnail', '', $img_args );
 				
 						}
 						?>

@@ -1,5 +1,36 @@
 # OceanWP Changelog
 
+### _2022.11.9_ - 3.3.6
+- **Added**: Header: Full Screen Header: Customizer Settings: Icon size for the Hamburger menu.
+- **Added**: Filter: Comment Date: ocean_comment_date_format.
+- **Added**: Filter: Infinite Scroll: oceanwp_infinite_scroll_output.
+- **Added**: Filter: Post date format: ocean_get_post_date_format.
+- **Added**: Filter: Post date arguments: ocean_get_post_date_args.
+- **Added**: Filter: Modified date format: ocean_get_post_modified_date_format.
+- **Added**: WooCommerce: Store Notice: Style and Typography options.
+- **Moved**: Customizer: Disable svg icon option from General Options > Theme Icons to General Options > Performance tab.
+- **Fixed**: WooCommerce: Product Archive: Product hover style: Products image from the gallery aren't cropped.
+- **Fixed**: WooCommerce: Product Archive: Infinite Scroll: Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document'.
+- **Fixed**: WooCommerce: Product Archive: Active color settings not applied for the second view products option.
+- **Fixed**: WooCommerce: Multistep Checkout: Next and prev buttons are not working.
+- **Fixed**: WooCommerce: Multistep Checkout: On the next step, the page doesn't scroll to top.
+- **Fixed**: WooCommerce: Customizer: Star Color: Live preview for star color rating doesn't function.
+- **Fixed**: Blog: Single Post: Comment Date: The date format for comments doesn't follow general website settings.
+- **Fixed**: Blog: Single Post: Header Style: Screen: Mobile typography settings not applied.
+- **Fixed**: Customizer: Typography: Host Google fonts locally options displayed when Ocean Extra not installed.
+- **Fixed**: Customizer: Typography: Font subset selection doesn't function.
+- **Fixed**: Customizer: Typography: Font subset selection doesn't save.
+- **Fixed**: Customizer: Settings not saved in the custom-style.css file when Custom Location option enabled.
+- **Fixed**: Compatibility: Germanized for WooCommerce: Shopmarks position and display based on settings.
+- **Fixed**: Compatibility: Woo Variation Swatches: Images cropping settings not applied when this plugin is in use.
+
+
+### _2022.09.14_ - 3.3.5
+- **Added**: Filter: Single Post: ocean_single_author_bio_title_tag.
+- **Added**: Filter: Single Post: ocean_single_related_post_title_tag.
+- **Fixed**: WooCommerce 6.9 compatibility patch: Fatal error: Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array.
+- **Fixed**: WooCommerce: Product Archive: Results Count: Active color settings not applied for the second view option.
+
 ### _2022.08.09_ - 3.3.4
 - **NEW**: Admin Settings section in OceanWP Panel.
 - **Added**: Social Menu for Header and Top Bar: Discord option.

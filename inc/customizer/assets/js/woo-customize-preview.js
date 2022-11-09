@@ -529,6 +529,18 @@
                 $child.remove();
             }
         });
+    }), api("ocean_woo_store_notice_bg_color", function($swipe) {
+        $swipe.bind(function(size) {
+            $(".woocommerce-store-notice.demo_store").css("background-color", size);
+        });
+    }), api("ocean_woo_store_notice_dismiss_bg_color", function($swipe) {
+        $swipe.bind(function(size) {
+            $(".demo_store .woocommerce-store-notice__dismiss-link").css("background-color", size);
+        });
+    }), api("ocean_woo_store_notice_dismiss_text_hover_color", function($swipe) {
+        $swipe.bind(function(size) {
+            $(".demo_store .woocommerce-store-notice__dismiss-link:hover").css("color", size);
+        });
     }), api("ocean_woo_floating_bar_bg", function($swipe) {
         $swipe.bind(function(size) {
             $(".owp-floating-bar").css("background-color", size);
@@ -751,8 +763,19 @@
             }
         });
     }), api("ocean_stars_color", function($swipe) {
-        $swipe.bind(function(size) {
-            $(".woocommerce .star-rating span").css("color", size);
+        $swipe.bind(function(to) {
+            var $child = $(".customizer-ocean_stars_color");
+            if (to) {
+                /** @type {string} */
+                var img = '<style class="customizer-ocean_stars_color">.woocommerce .star-rating span, .woocommerce .star-rating span:before{ color: ' + to + "!important; }</style>";
+                if ($child.length) {
+                    $child.replaceWith(img);
+                } else {
+                    $("head").append(img);
+                }
+            } else {
+                $child.remove();
+            }
         });
     }), api("ocean_quantity_border_color", function($swipe) {
         $swipe.bind(function(size) {

@@ -76,7 +76,7 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				'ocean_customzer_styling',
 				array(
 					'label'       => esc_html__( 'Styling Options Location', 'oceanwp' ),
-					'description' => esc_html__( 'If you choose Custom File, a CSS file will be created in your uploads folder.', 'oceanwp' ),
+					'description' => esc_html__( 'Both settings apply only to the custom CSS added in the Custom CSS field in the Customizer. If you choose the Custom File location, a dedicated CSS file will be created in your uploads folder of your WordPress installation.', 'oceanwp' ),
 					'type'        => 'radio',
 					'section'     => 'ocean_general_styling',
 					'settings'    => 'ocean_customzer_styling',
@@ -3840,30 +3840,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			);
 
 			/**
-			 * Disable OceanWP SVG Icons
-			 */
-			$wp_customize->add_setting(
-				'ocean_disable_svg_icons',
-				array(
-					'default'           => true,
-					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Control(
-					$wp_customize,
-					'ocean_disable_svg_icons',
-					array(
-						'label'    => esc_html__( 'Disable Ocean SVG Icons', 'oceanwp' ),
-						'type'     => 'checkbox',
-						'section'  => 'ocean_general_theme_icons',
-						'priority' => 10,
-					)
-				)
-			);
-
-			/**
 			 * Blog Entries Meta Icons Color
 			 */
 			$wp_customize->add_setting(
@@ -4079,6 +4055,35 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 						'description' => esc_html__( 'This style is all the css for the font awesome icons.', 'oceanwp' ),
 						'section'     => 'ocean_general_performance_section',
 						'settings'    => 'ocean_performance_fontawesome',
+						'priority'    => 10,
+						'choices'     => array(
+							'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+							'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+						),
+					)
+				)
+			);
+
+			/**
+			 * Disable OceanWP SVG Icons
+			 */
+			$wp_customize->add_setting(
+				'ocean_disable_svg_icons',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'enabled',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_disable_svg_icons',
+					array(
+						'label'       => esc_html__( 'Ocean SVG Icons', 'oceanwp' ),
+						'description' => esc_html__( 'This file is for all the Ocean SVG icons.', 'oceanwp' ),
+						'section'     => 'ocean_general_performance_section',
 						'priority'    => 10,
 						'choices'     => array(
 							'disabled' => esc_html__( 'Disabled', 'oceanwp' ),

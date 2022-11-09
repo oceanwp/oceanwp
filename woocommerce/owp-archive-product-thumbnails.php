@@ -37,13 +37,13 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 
 	<?php
 	if ( has_post_thumbnail() ) :
-		$thumbnail_url = is_array( wp_get_attachment_image_src( $thumbnail_id, 'shop_catalog' ) ) ? wp_get_attachment_image_src( $thumbnail_id, 'shop_catalog' )[0] : '';
+		$thumbnail_url = is_array( wp_get_attachment_image_src( $thumbnail_id, 'woocommerce_thumbnail' ) ) ? wp_get_attachment_image_src( $thumbnail_id, 'woocommerce_thumbnail' )[0] : '';
 		?>
 
 		<li class="active">
 			<a href="<?php echo esc_url( $thumbnail_url ); ?>" class="woo-product-gallery-link no-lightbox">
 				<?php
-				echo wp_get_attachment_image( $thumbnail_id, 'thumbnail', '', $img_args );
+				echo wp_get_attachment_image( $thumbnail_id, 'woocommerce_thumbnail', '', $img_args );
 				?>
 			</a>
 		</li>
@@ -60,7 +60,7 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 
 			// Loop through images.
 			foreach ( $attachment_ids as $attachment_id ) :
-				$attachment_url = wp_get_attachment_image_src( $attachment_id, 'shop_catalog' ) ? wp_get_attachment_image_src( $attachment_id, 'shop_catalog' )[0] : '';
+				$attachment_url = wp_get_attachment_image_src( $attachment_id, 'woocommerce_thumbnail' ) ? wp_get_attachment_image_src( $attachment_id, 'woocommerce_thumbnail' )[0] : '';
 
 				// Add to counter.
 				$count++;
@@ -72,7 +72,7 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 					<li>
 						<a href="<?php echo esc_url( $attachment_url ); ?>" class="woo-product-gallery-link no-lightbox">
 							<?php
-							echo wp_get_attachment_image( $attachment_id, 'thumbnail', '', $img_args );
+							echo wp_get_attachment_image( $attachment_id, 'woocommerce_thumbnail', '', $img_args );
 							?>
 						</a>
 					</li>

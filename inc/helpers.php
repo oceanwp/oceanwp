@@ -3263,7 +3263,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 
 							<span class="comment-meta commentmetadata">
 							<?php if ( ! is_rtl() ) { ?>
-									<span class="comment-date"><?php comment_date( 'j M Y' ); ?></span>
+									<span class="comment-date"><?php comment_date( apply_filters( 'ocean_comment_date_format', '' ) ); ?></span>
 								<?php } ?>
 
 							<?php
@@ -3491,6 +3491,8 @@ if ( ! function_exists( 'oceanwp_infinite_scroll' ) ) {
 			$output     .= '<div class="alignleft newer-posts">' . get_previous_posts_link( '<span aria-hidden="true">&larr;</span> ' . esc_attr__( 'Newer Posts', 'oceanwp' ) ) . '</div>';
 			$output     .= '<div class="alignright older-posts">' . get_next_posts_link( esc_attr__( 'Older Posts', 'oceanwp' ) . ' <span aria-hidden="true">&rarr;</span>' ) . '</div>';
 		$output         .= '</div>';
+
+		$output = apply_filters( 'oceanwp_infinite_scroll_output', $output );
 
 		echo wp_kses_post( $output );
 
