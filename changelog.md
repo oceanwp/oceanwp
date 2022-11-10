@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2022.11.10_ - 3.3.7
+- **Fixed**: Compatibility: Visual Composer: hoverbox link is not working.
+
 ### _2022.11.9_ - 3.3.6
 - **Added**: Header: Full Screen Header: Customizer Settings: Icon size for the Hamburger menu.
 - **Added**: Filter: Comment Date: ocean_comment_date_format.
