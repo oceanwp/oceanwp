@@ -63,7 +63,8 @@ class ScrollEffect {
       !scrollItem.classList.contains("vce-tabs-with-slide-panel-title") &&
       !scrollItem.classList.contains("vce-classic-tabs-tab-title") &&
       !scrollItem.classList.contains("vce-classic-accordion-panel-title") &&
-      !scrollItem.classList.contains("vce-hoverbox-link")
+      !scrollItem.classList.contains("vce-hoverbox-link") &&
+      !scrollItem.classList.contains("vce-button")
     ) {
       const href = scrollItem.getAttribute("href");
       const id = href.substring(href.indexOf("#")).slice(1);
