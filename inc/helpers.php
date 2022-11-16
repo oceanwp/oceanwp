@@ -4905,7 +4905,7 @@ function ocean_admin_page_contents() {
  * @return void
  */
 function oceanwp_admin_menu_logo_styles() {
-		$owp_tp_logo_style = '<style>#adminmenu #toplevel_page_oceanwp .wp-menu-image img { width: 25px; height: 25px; padding: 5px; }</style>';
+		$owp_tp_logo_style = '<style>#adminmenu #toplevel_page_oceanwp .wp-menu-image img { width: 25px; height: 25px; padding: 5px; } #adminmenu #toplevel_page_ocean-ecommerce .wp-menu-image img { padding: 5px 0 0; }</style>';
 		echo $owp_tp_logo_style;
 	}
 add_action('admin_head', 'oceanwp_admin_menu_logo_styles');
