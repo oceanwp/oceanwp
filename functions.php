@@ -624,7 +624,9 @@ final class OCEANWP_Theme_Class {
 		wp_enqueue_script( 'oceanwp-slider', $dir . 'ow-slider.min.js', $main_script_dependencies, $theme_version, true );
 
 		// Scroll Effect script.
-		wp_enqueue_script( 'oceanwp-scroll-effect', $dir . 'scroll-effect.min.js', $main_script_dependencies, $theme_version, true );
+		if ( get_theme_mod( 'ocean_performance_scroll_effect', 'enabled' ) === 'enabled' ) {
+			wp_enqueue_script( 'oceanwp-scroll-effect', $dir . 'scroll-effect.min.js', $main_script_dependencies, $theme_version, true );
+		}
 
 		// Scroll to Top script.
 		if ( oceanwp_display_scroll_up_button() ) {
