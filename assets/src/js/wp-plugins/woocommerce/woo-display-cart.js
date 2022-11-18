@@ -30,7 +30,22 @@ class WooDisplayCart {
     window.addEventListener("resize", this.#closeOverlay);
   };
 
-  #onAddToCartBtn = (event) => {
+  #onAddToCartBtn = (event, fragments, cart_hash, $button, ontrigger = '') => {
+    if( ontrigger ) {
+      document.on(ontrigger, this.showCart)
+    } else {
+      this.showCart();
+    }
+  };
+
+  #closeOverlay = (event) => {
+    if (visible(this.#elements.overlayCart)) {
+      fadeOut(this.#elements.overlayCart);
+      this.#elements.body.classList.remove("show-cart");
+    }
+  };
+
+  showCart = () => {
     fadeIn(this.#elements.overlayCart);
 
     this.#elements.body.classList.add("show-cart");
@@ -56,13 +71,6 @@ class WooDisplayCart {
         top: 0,
         behavior: "smooth",
       });
-    }
-  };
-
-  #closeOverlay = (event) => {
-    if (visible(this.#elements.overlayCart)) {
-      fadeOut(this.#elements.overlayCart);
-      this.#elements.body.classList.remove("show-cart");
     }
   };
 }
