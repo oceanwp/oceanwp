@@ -121,6 +121,17 @@ jQuery(document).ready(function ($) {
         tpGoTo(slug);
     });
 
+    $(document).on('click', 'li.wp-menu-open.toplevel_page_oceanwp ul > li > a', function (event) {
+        var $this = $(this);
+        var href = $this.attr('href');
+        var href_parts = href.split("#");
+        if( window.location.href.indexOf('page=oceanwp#') !== -1 && href.indexOf('page=oceanwp#') !== -1 && href_parts.length > 1 ) {
+            event.preventDefault();
+            window.location.hash = href_parts[1];
+            tpGoTo(href_parts[1]);
+        }
+    });
+
     $(document).on('click', '#wp-admin-bar-ocean-menu-default>li>a', function (event) {
         let url = new URL($(this).attr('href'));
         if( url.hash && $('.oceanwp-tp-sidebar-link[href="'+url.hash+'"]').length ) {
@@ -226,7 +237,7 @@ jQuery(document).ready(function ($) {
             }
         });
     }
-
+1
     function maybeAllCheckboxesActive() {
         let allCheckboxes = $('#ocean-customizer-items').find('input[type="checkbox"]');
         let allCheckboxesLength = allCheckboxes.length;
