@@ -4213,6 +4213,35 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				)
 			);
 
+			/**
+			 * Scroll offset
+			 */
+			$wp_customize->add_setting(
+				'ocean_scroll_effect_offset_value',
+				array(
+					'transport'         => 'postMessage',
+					'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_scroll_effect_offset_value',
+					array(
+						'label'           => esc_html__( 'Scroll Effect - Custom Offset', 'oceanwp' ),
+						'type'            => 'number',
+						'section'         => 'ocean_general_performance_section',
+						'priority'        => 10,
+						'input_attrs'     => array(
+							'min'  => 0,
+							'max'  => 600,
+							'step' => 1,
+						),
+					)
+				)
+			);
+
 		}
 
 		/**

@@ -61,6 +61,7 @@ class ScrollEffect {
 
         let scrollPosition =
           offset(targetElem).top -
+          this.#getCustomOffsetValue() -
           this.#getAdminBarHeight() -
           this.#getTopbarHeight() -
           this.#getStickyHeaderHeight();
@@ -72,6 +73,9 @@ class ScrollEffect {
       }
     }
   };
+
+  #getCustomOffsetValue = () =>
+  !!oceanwpLocalize.customScrollOffset ? oceanwpLocalize.customScrollOffset : 0;
 
   #getAdminBarHeight = () =>
     !!this.#elements.WPAdminbar ? this.#elements.WPAdminbar.offsetHeight : 0;
