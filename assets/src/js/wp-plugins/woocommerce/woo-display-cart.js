@@ -31,6 +31,9 @@ class WooDisplayCart {
   };
 
   #onAddToCartBtn = (event, fragments, cart_hash, $button, ontrigger = '') => {
+    if( fragments !== undefined && fragments.e_manually_triggered ) {
+      return;
+    }
     if( ontrigger ) {
       document.on(ontrigger, this.showCart)
     } else {
