@@ -237,7 +237,7 @@ jQuery(document).ready(function ($) {
             }
         });
     }
-1
+
     function maybeAllCheckboxesActive() {
         let allCheckboxes = $('#ocean-customizer-items').find('input[type="checkbox"]');
         let allCheckboxesLength = allCheckboxes.length;
