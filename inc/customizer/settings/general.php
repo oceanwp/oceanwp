@@ -4182,6 +4182,39 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 					)
 				)
 			);
+
+			if ( class_exists( 'Ocean_Extra' ) ) {
+
+			/**
+			 * Disable widgets.css
+			 */
+				$wp_customize->add_setting(
+					'ocean_load_widgets_stylesheet',
+					array(
+						'transport'         => 'postMessage',
+						'default'           => 'enabled',
+						'sanitize_callback' => 'oceanwp_sanitize_select',
+					)
+				);
+
+				$wp_customize->add_control(
+					new OceanWP_Customizer_Buttonset_Control(
+						$wp_customize,
+						'ocean_load_widgets_stylesheet',
+						array(
+							'label'    => esc_html__( 'Widgets Stylesheet Load', 'oceanwp' ),
+							'description' => esc_html__( 'You can disable loading widgets.css stylesheet on your site.', 'oceanwp' ),
+							'section'  => 'ocean_general_performance_section',
+							'settings' => 'ocean_load_widgets_stylesheet',
+							'priority'    => 11,
+							'choices'     => array(
+								'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+								'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+							),
+						)
+					)
+				);
+			}
 		}
 
 		/**
