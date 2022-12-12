@@ -35,7 +35,7 @@ class WooDisplayCart {
       return;
     }
     if( ontrigger ) {
-      document.on(ontrigger, this.showCart)
+      jQuery(document).on(ontrigger, this.showCart)
     } else {
       this.showCart();
     }
