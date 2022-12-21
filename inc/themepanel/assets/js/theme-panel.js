@@ -28,24 +28,22 @@ jQuery(document).ready(function ($) {
 
     window['addSuccessNotify'] = function addSuccessNotify(message = 'Saved successfully', timeout = true, seconds = 4000) {
         $('#oceanwp-notifyType').text(message);
-        $(".oceanwp-notify").addClass("active");
-        $("#oceanwp-notifyType").addClass("success");
+        $(".oceanwp-notify").removeClass("failure");
+        $(".oceanwp-notify").addClass("active success");
         if (timeout) {
             setTimeout(function () {
                 $(".oceanwp-notify").removeClass("active");
-                $("#oceanwp-notifyType").removeClass("success");
             }, seconds);
         }
     }
 
     window['addFailureNotify'] = function (message = 'Something went wrong', timeout = true) {
         $('#oceanwp-notifyType').text(message);
-        $(".oceanwp-notify").addClass("active");
-        $("#oceanwp-notifyType").addClass("failure");
+        $(".oceanwp-notify").removeClass("success");
+        $(".oceanwp-notify").addClass("active failure");
         if (timeout) {
             setTimeout(function () {
                 $(".oceanwp-notify").removeClass("active");
-                $("#oceanwp-notifyType").removeClass("failure");
             }, 4000);
         }
     }

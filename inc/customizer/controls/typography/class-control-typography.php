@@ -86,6 +86,7 @@ class OceanWP_Customizer_Typography_Control extends WP_Customize_Control {
 						<?php } ?>
 					</optgroup>
 				<?php } ?>
+				<?php do_action('ocean_customizer_fonts'); ?>
 		<?php
 
 		$content = str_replace( [ "\n", "\r", "\t" ], '', ob_get_clean());
