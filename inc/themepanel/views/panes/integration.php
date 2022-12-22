@@ -87,4 +87,20 @@ $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->in
 				</h3>
 		<?php endif; ?>
 	</div>
+
+	<!-- Adobe Fonts Settings -->
+	<div class="oceanwp-tp-wide-block">
+		<div class="oceanwp-tp-block-outer">
+			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/typefonts.png' ); ?>" />
+			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Adobe Fonts (TypeKit)', 'oceanwp' ); ?></h2>
+		</div>
+		<?php if ( $extra_mode_actived ) : ?>
+			<?php oceanwp_theme_panel()->print_pane( 'extra-settings-adobe-fonts' ); ?>
+		<?php else : ?>
+			<h3 class="oceanwp-tp-block-description">
+				<?php esc_html_e( 'Get your creativity flowing and dive into thousands of wonderful fonts from the world\'s leading type foundries.', 'oceanwp' ); ?>
+				<?php echo $please_install_oe_text_link; ?>
+			</h3>
+		<?php endif; ?>
+	</div>
 </div>

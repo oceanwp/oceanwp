@@ -26,18 +26,6 @@ $extra_mode_actived          = oceanwp_theme_panel()->extra_installed();
 		<?php endif; ?>
 	</div>
 
-	<!-- Adobe Fonts Settings -->
-	<div class="oceanwp-tp-wide-block">
-		<div class="oceanwp-tp-block-outer">
-			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Adobe Fonts Settings', 'oceanwp' ); ?></h2>
-		</div>
-		<?php if ( $extra_mode_actived ) : ?>
-			<?php oceanwp_theme_panel()->print_pane( 'extra-settings-adobe-fonts' ); ?>
-		<?php else : ?>
-			<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Adobe fonts option allows you use adobe fonts.', 'oceanwp' ); ?></h3>
-		<?php endif; ?>
-	</div>
-
 	<!-- Meta-box Settings -->
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
