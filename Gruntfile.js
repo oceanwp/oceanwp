@@ -236,6 +236,8 @@ module.exports = function (grunt) {
             "inc/customizer/controls/dimensions/dimensions.css",
           "inc/customizer/assets/min/css/heading.min.css":
             "inc/customizer/controls/heading/heading.css",
+          "inc/customizer/assets/min/css/info.min.css":
+            "inc/customizer/controls/info/info.css",
           "inc/customizer/assets/min/css/icon-select.min.css":
             "inc/customizer/controls/icon-select/icon-select.css",
           "inc/customizer/assets/min/css/multiple-select.min.css":

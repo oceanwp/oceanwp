@@ -3976,6 +3976,29 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			);
 
 			/**
+			 * Site breadcrumb info
+			 */
+			$wp_customize->add_setting(
+				'ocean_configure_breadcrumb_link',
+				array(
+					'sanitize_callback' => 'wp_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Info_Control(
+					$wp_customize,
+					'ocean_configure_breadcrumb_link',
+					array(
+						'label'       => esc_html__( 'Configure Breadcrumb', 'oceanwp' ),
+						'description' => sprintf( esc_html__( 'Start configuring, %1$s the breadcrumb %2$s', 'oceanwp' ), '<a href="' . admin_url( 'customize.php?autofocus%5Bcontrol%5D=ocean_page_header_visibility' ) . '">', '</a>' ),
+						'section'     => 'ocean_general_seo_settings',
+						'priority'    => 10,
+					)
+				)
+			);
+
+			/**
 			 * Call Performance Section
 			 *
 			 * @since 3.0.3

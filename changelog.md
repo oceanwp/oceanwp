@@ -1,7 +1,11 @@
 # OceanWP Changelog
 
-### _2022.11.10_ - 3.3.7
+### _2022.12.23_ - 3.3.7
+- **Added**: SEO Settings: Added link to configure breadcrumb settings.
+- **Added**: Customizer Control: Info control.
+- **Added**: Customizer Setting: Performance Section: Enable/disable widget css.
 - **Fixed**: Compatibility: Visual Composer: hoverbox link is not working.
+- **Fixed**: Footer bottom: Copyright text color changed to white (#ffffff).
 
 ### _2022.11.9_ - 3.3.6
 - **Added**: Header: Full Screen Header: Customizer Settings: Icon size for the Hamburger menu.
