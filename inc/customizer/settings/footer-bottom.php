@@ -293,7 +293,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 				'ocean_bottom_footer_color',
 				array(
 					'transport'         => 'postMessage',
-					'default'           => '#929292',
+					'default'           => '#ffffff',
 					'sanitize_callback' => 'oceanwp_sanitize_color',
 				)
 			);

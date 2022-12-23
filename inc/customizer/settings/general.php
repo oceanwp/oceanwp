@@ -3976,6 +3976,29 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			);
 
 			/**
+			 * Site breadcrumb info
+			 */
+			$wp_customize->add_setting(
+				'ocean_configure_breadcrumb_link',
+				array(
+					'sanitize_callback' => 'wp_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Info_Control(
+					$wp_customize,
+					'ocean_configure_breadcrumb_link',
+					array(
+						'label'       => esc_html__( 'Configure Breadcrumb', 'oceanwp' ),
+						'description' => sprintf( esc_html__( 'Start configuring, %1$s the breadcrumb %2$s', 'oceanwp' ), '<a href="' . admin_url( 'customize.php?autofocus%5Bcontrol%5D=ocean_page_header_visibility' ) . '">', '</a>' ),
+						'section'     => 'ocean_general_seo_settings',
+						'priority'    => 10,
+					)
+				)
+			);
+
+			/**
 			 * Call Performance Section
 			 *
 			 * @since 3.0.3
@@ -4183,38 +4206,65 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 				)
 			);
 
-			if ( class_exists( 'Ocean_Extra' ) ) {
+			/**
+			 * Scroll Effect
+			 */
+			$wp_customize->add_setting(
+				'ocean_performance_scroll_effect',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'enabled',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_performance_scroll_effect',
+					array(
+						'label'       => esc_html__( 'Scroll Effect', 'oceanwp' ),
+						'description' => esc_html__( 'This script is responsible for the scroll effect in theme.', 'oceanwp' ),
+						'section'     => 'ocean_general_performance_section',
+						'settings'    => 'ocean_performance_scroll_effect',
+						'priority'    => 10,
+						'choices'     => array(
+							'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+							'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+						),
+					)
+				)
+			);
 
 			/**
-			 * Disable widgets.css
+			 * Scroll offset
 			 */
-				$wp_customize->add_setting(
-					'ocean_load_widgets_stylesheet',
-					array(
-						'transport'         => 'postMessage',
-						'default'           => 'enabled',
-						'sanitize_callback' => 'oceanwp_sanitize_select',
-					)
-				);
+			$wp_customize->add_setting(
+				'ocean_scroll_effect_offset_value',
+				array(
+					'transport'         => 'postMessage',
+					'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+				)
+			);
 
-				$wp_customize->add_control(
-					new OceanWP_Customizer_Buttonset_Control(
-						$wp_customize,
-						'ocean_load_widgets_stylesheet',
-						array(
-							'label'    => esc_html__( 'Widgets Stylesheet Load', 'oceanwp' ),
-							'description' => esc_html__( 'You can disable loading widgets.css stylesheet on your site.', 'oceanwp' ),
-							'section'  => 'ocean_general_performance_section',
-							'settings' => 'ocean_load_widgets_stylesheet',
-							'priority'    => 11,
-							'choices'     => array(
-								'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
-								'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
-							),
-						)
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_scroll_effect_offset_value',
+					array(
+						'label'           => esc_html__( 'Scroll Effect - Custom Offset', 'oceanwp' ),
+						'type'            => 'number',
+						'section'         => 'ocean_general_performance_section',
+						'priority'        => 10,
+						'input_attrs'     => array(
+							'min'  => 0,
+							'max'  => 600,
+							'step' => 1,
+						),
 					)
-				);
-			}
+				)
+			);
+
 		}
 
 		/**
