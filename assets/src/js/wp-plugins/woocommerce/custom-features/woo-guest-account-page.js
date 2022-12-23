@@ -48,31 +48,35 @@ class WooGuestAccountPage {
   };
 
   #onLoginBtnClick = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
+    if (this.#registerBox && this.#loginBox) {
+      event.preventDefault();
+      event.stopPropagation();
 
-    this.#loginBtn.classList.add("current");
-    this.#registerBtn.classList.remove("current");
+      this.#loginBtn.classList.add("current");
+      this.#registerBtn.classList.remove("current");
 
-    fadeOut(this.#registerBox, {
-      callback: () => {
-        fadeIn(this.#loginBox);
-      },
-    });
+      fadeOut(this.#registerBox, {
+        callback: () => {
+          fadeIn(this.#loginBox);
+        },
+      });
+    }
   };
 
   #onRegisterBtnClick = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
+    if (this.#registerBox && this.#loginBox) {
+      event.preventDefault();
+      event.stopPropagation();
 
-    this.#registerBtn.classList.add("current");
-    this.#loginBtn.classList.remove("current");
+      this.#registerBtn.classList.add("current");
+      this.#loginBtn.classList.remove("current");
 
-    fadeOut(this.#loginBox, {
-      callback: () => {
-        fadeIn(this.#registerBox);
-      },
-    });
+      fadeOut(this.#loginBox, {
+        callback: () => {
+          fadeIn(this.#registerBox);
+        },
+      });
+    }
   };
 }
 

@@ -6799,6 +6799,10 @@ ul.obem-none li:after {
   padding-left: 40px;
   padding-right: 40px;
 }
+.elementor-edit-area ul.elementor-editor-element-settings {
+  padding: 0 !important;
+  margin: 0 !important;
+}
 .single-post.content-max-width .thumbnail {
   margin-top: 0;
 }
