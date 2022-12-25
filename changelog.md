@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2022.12.23_ - 3.3.7
+### _2023.01.09_ - 3.4.0
 - **Added**: SEO Settings: Added link to configure breadcrumb settings.
 - **Added**: Customizer Control: Info control.
 - **Added**: Customizer Setting: Performance Section: Enable/disable widget css.

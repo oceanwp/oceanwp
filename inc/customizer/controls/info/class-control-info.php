@@ -4,7 +4,7 @@
  *
  * @package     OceanWP WordPress theme
  * @subpackage  Controls
- * @since       3.3.7
+ * @since       3.4.0
  */
 
 // Exit if accessed directly.
