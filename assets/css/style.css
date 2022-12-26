@@ -6919,6 +6919,11 @@ ul.obem-none li:after {
   max-width: 700px;
 }
 
+.elementor-edit-area ul.elementor-editor-element-settings {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 /*------------------------------------*
 	Phone Landscape
 *------------------------------------*/
