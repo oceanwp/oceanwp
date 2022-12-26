@@ -6791,17 +6791,32 @@ ul.obem-none li:after {
 .single-post.content-max-width .wp-block-columns.alignwide ul,
 .single-post.content-max-width .wp-block-columns.alignwide ol,
 .single-post.content-max-width .wp-block-columns.alignwide .wp-block-cover-text,
-.single-post.content-max-width .wp-block-columns.alignwide .wp-block-cover {
+.single-post.content-max-width .wp-block-columns.alignwide .wp-block-cover,
+.single-post.content-max-width .elementor-section h1,
+.single-post.content-max-width .elementor-section h2,
+.single-post.content-max-width .elementor-section h3,
+.single-post.content-max-width .elementor-section h4,
+.single-post.content-max-width .elementor-section h5,
+.single-post.content-max-width .elementor-section h6,
+.single-post.content-max-width .elementor-section blockquote,
+.single-post.content-max-width .elementor-section p,
+.single-post.content-max-width .elementor-section .wp-block-image,
+.single-post.content-max-width .elementor-section .wp-block-buttons,
+.single-post.content-max-width .elementor-section .wp-block-gallery,
+.single-post.content-max-width .elementor-section .wp-block-video,
+.single-post.content-max-width .elementor-section .wp-block-quote,
+.single-post.content-max-width .elementor-section .wp-block-text-columns,
+.single-post.content-max-width .elementor-section .wp-block-code,
+.single-post.content-max-width .elementor-section ul,
+.single-post.content-max-width .elementor-section ol,
+.single-post.content-max-width .elementor-section .wp-block-cover-text,
+.single-post.content-max-width .elementor-section .wp-block-cover {
   max-width: 100%;
 }
 .single-post.content-max-width .entry-content ul,
 .single-post.content-max-width .entry-content ol {
   padding-left: 40px;
   padding-right: 40px;
-}
-.elementor-edit-area ul.elementor-editor-element-settings {
-  padding: 0 !important;
-  margin: 0 !important;
 }
 .single-post.content-max-width .thumbnail {
   margin-top: 0;
