@@ -6,6 +6,9 @@
 - **Added**: Customizer Setting: Performance Section: Enable/disable widget css.
 - **Fixed**: Compatibility: Visual Composer: hoverbox link is not working.
 - **Fixed**: Footer bottom: Copyright text color changed to white (#ffffff).
+- **Fixed**: Search Icon URL: Replaced '#' with 'site url + /#'.
+- **Fixed**: Customizer ettings - ocean_medium_header_hidden_menu: Show when Sticky Header active'.
+- **Fixed**: Customizer ettings - ocean_medium_header_stick_menu: Show when Sticky Header active'.
 
 ### _2022.11.9_ - 3.3.6
 - **Added**: Header: Full Screen Header: Customizer Settings: Icon size for the Hamburger menu.
