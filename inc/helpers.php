@@ -1871,7 +1871,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 				$items .= '</form>';
 		} else {
 
-			$items     .= '<a href="' . site_url() . '/#" class="site-search-toggle' . $class . '" aria-label="' . esc_attr( 'Search website', 'oceanwp' ) . '">';
+			$items     .= '<a href="' . esc_url( site_url() ) . '/#" class="site-search-toggle' . $class . '" aria-label="' . esc_attr( 'Search website', 'oceanwp' ) . '">';
 				$items .= oceanwp_icon( 'search', false );
 			$items     .= '</a>';
 		}
@@ -1918,7 +1918,7 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 
 		// Add search item to menu.
 		echo '<div id="search-toggle">';
-			echo '<a href="' . site_url() . '/#" class="site-search-toggle' . esc_attr( $class ) . '" aria-label="' . esc_attr__( 'Search website', 'oceanwp' ) . '">';
+			echo '<a href="' . esc_url( site_url() ) . '/#" class="site-search-toggle' . esc_attr( $class ) . '" aria-label="' . esc_attr__( 'Search website', 'oceanwp' ) . '">';
 				oceanwp_icon( 'search' );
 			echo '</a>';
 		echo '</div>';
