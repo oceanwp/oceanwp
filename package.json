@@ -20,7 +20,7 @@
         "@babel/preset-env": "^7.14.1",
         "@babel/preset-react": "^7.16.0",
         "@wordpress/babel-preset-default": "^6.3.2",
-        "babel-loader": "^8.2.3",
+        "babel-loader": "^8.3.0",
         "babelify": "^10.0.0",
         "bootstrap": "^5.1.1",
         "copy-webpack-plugin": "^9.0.1",
