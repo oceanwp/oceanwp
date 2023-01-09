@@ -940,7 +940,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
 			) ) );
 
-			if ( class_exists( 'Ocean_Sticky_Header' ) ) {
+			if ( class_exists( 'Ocean_Sticky_Header' ) || class_exists( 'Ocean_Ecommerce_Sticky_Header' ) ) {
 
 				/**
 				 * Medium Header Hide Menu When Scrolling
