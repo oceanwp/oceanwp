@@ -1,14 +1,22 @@
 # OceanWP Changelog
 
-### _2023.01.09_ - 3.4.0
-- **Added**: SEO Settings: Added link to configure breadcrumb settings.
-- **Added**: Customizer Control: Info control.
-- **Added**: Customizer Setting: Performance Section: Enable/disable widget css.
-- **Fixed**: Compatibility: Visual Composer: hoverbox link is not working.
-- **Fixed**: Footer bottom: Copyright text color changed to white (#ffffff).
-- **Fixed**: Search Icon URL: Replaced '#' with 'site url + /#'.
-- **Fixed**: Customizer ettings - ocean_medium_header_hidden_menu: Show when Sticky Header active'.
-- **Fixed**: Customizer ettings - ocean_medium_header_stick_menu: Show when Sticky Header active'.
+### _2023.01.10_ - 3.4.0
+- **Added**: Customizer: SEO Settings: Quick access link to configure breadcrumb settings.
+- **Added**: Customizer: Customizer Control: Info control.
+- **Tweak**: Customizer: Enable Schema option moved to General Options > SEO Settings for improved UX (previously General Options > General Settings).
+- **Tweak**: Customizer: Opengraph section and options moved to General Options > SEO Settings for improved UX (previously General Options > General Settings).
+- **Tweak**: Accessibility: Footer bottom: Default copyright text color changed to white (#fff) for increased contrast.
+- **Updated**: SEO: Search Icon URLs following Google's latest Lighthouse (PSI) changes.
+- **Updated**: Language: OceanWP .pot file.
+- **Fixed**: WooCommerce: Mini Cart: Occassional flashing of the mini cart on various conditions (quick view, single product removal, first product add, etc.).
+- **Fixed**: WooCommerce: Login Register option.
+- **Fixed**: WooCommerce: Add to Cart Ajax: Change button text when product removed from the cart.
+- **Fixed**: Compatibility: Visual Composer: hoverbox link doesn't function.
+- **Fixed**: Compatibility: Elementor: Single Post: Full Width Layout: distorted sections and columns configuration settings display on the backend.
+- **Fixed**: Compatibility: Elementor: Single Post: Full Width Layout: increased paragraph margins display on the frontend.
+- **Fixed**: OceanWP Panel: submenu item links in WP Dashboard don't function if OceanWP Panel already open.
+- **Fixed**: Customizer: Header: Medium: Hide menu on hover option conditional logic: Display option only when Ocean Sticky Header active.
+- **Fixed**: Customizer: Header: Medium: Stick only the menu option conditional logic: Display option only when Ocean Sticky Header active.
 
 ### _2022.11.9_ - 3.3.6
 - **Added**: Header: Full Screen Header: Customizer Settings: Icon size for the Hamburger menu.
