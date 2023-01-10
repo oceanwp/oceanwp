@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2023.01.11_ - 3.4.1
+- **Fixed**: Customizer: Footer Bottom: Footer copyright text color applied settings do not work.
+
 ### _2023.01.10_ - 3.4.0
 - **Added**: Customizer: SEO Settings: Quick access link to configure breadcrumb settings.
 - **Added**: Customizer: Customizer Control: Info control.
