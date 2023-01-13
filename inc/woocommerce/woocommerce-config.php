@@ -11,6 +11,26 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 	class OceanWP_WooCommerce_Config {
 
 		/**
+		 * Instance
+		 *
+		 * @var  $instance
+		 */
+		private static $_instance;
+
+		/**
+		 * Initiator
+		 *
+		 * @return object
+		 */
+		public static function instance() {
+			if ( ! isset( self::$_instance ) ) {
+				self::$_instance = new self();
+			}
+			return self::$_instance;
+		}
+
+
+		/**
 		 * Main Class Constructor
 		 *
 		 * @since 1.0.0
@@ -2709,4 +2729,4 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 	}
 
 }
-new OceanWP_WooCommerce_Config();
+OceanWP_WooCommerce_Config::instance();
