@@ -59,7 +59,7 @@
         "heightify": "^5.0.5",
         "infinite-scroll": "^4.0.1",
         "js-cookie": "^2.2.1",
-        "qs": "^6.5.2",
+        "qs": "^6.5.3",
         "react-perfect-scrollbar": "^1.5.8",
         "responsive-auto-height": "0.0.5"
     }
