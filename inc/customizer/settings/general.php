@@ -769,31 +769,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			);
 
 			/**
-			 * Schema Markup
-			 */
-			$wp_customize->add_setting(
-				'ocean_schema_markup',
-				array(
-					'default'           => true,
-					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Control(
-					$wp_customize,
-					'ocean_schema_markup',
-					array(
-						'label'    => esc_html__( 'Enable Schema Markup', 'oceanwp' ),
-						'type'     => 'checkbox',
-						'section'  => 'ocean_general_settings',
-						'settings' => 'ocean_schema_markup',
-						'priority' => 10,
-					)
-				)
-			);
-
-			/**
 			 * Heading Pages
 			 */
 			$wp_customize->add_setting(
@@ -1305,129 +1280,6 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 							'sidebar-content' => esc_html__( 'Sidebar / Content', 'oceanwp' ),
 						),
 						'active_callback' => 'oceanwp_cac_has_search_rl_layout',
-					)
-				)
-			);
-
-			/**
-			 * Heading Sitewide Identity
-			 */
-			$wp_customize->add_setting(
-				'ocean_opengraph_heading',
-				array(
-					'sanitize_callback' => 'wp_kses',
-				)
-			);
-
-			$wp_customize->add_control(
-				new OceanWP_Customizer_Heading_Control(
-					$wp_customize,
-					'ocean_opengraph_heading',
-					array(
-						'label'       => esc_html__( 'OpenGraph', 'oceanwp' ),
-						'description' => esc_html__( 'This is information taken by social media when a link is shared', 'oceanwp' ),
-						'section'     => 'ocean_general_settings',
-						'priority'    => 10,
-					)
-				)
-			);
-
-			/**
-			 * Enable OpenGraph
-			 */
-			$wp_customize->add_setting(
-				'ocean_open_graph',
-				array(
-					'default'           => false,
-					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Control(
-					$wp_customize,
-					'ocean_open_graph',
-					array(
-						'label'    => esc_html__( 'Enable OpenGraph', 'oceanwp' ),
-						'type'     => 'checkbox',
-						'section'  => 'ocean_general_settings',
-						'settings' => 'ocean_open_graph',
-						'priority' => 10,
-					)
-				)
-			);
-
-			/**
-			 * Twitter Handle
-			 */
-			$wp_customize->add_setting(
-				'ocean_twitter_handle',
-				array(
-					'default'           => '',
-					'sanitize_callback' => 'wp_filter_nohtml_kses',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Control(
-					$wp_customize,
-					'ocean_twitter_handle',
-					array(
-						'label'    => esc_html__( 'Twitter Username', 'oceanwp' ),
-						'section'  => 'ocean_general_settings',
-						'settings' => 'ocean_twitter_handle',
-						'type'     => 'text',
-						'priority' => 10,
-					)
-				)
-			);
-
-			/**
-			 * Facebook Page URL
-			 */
-			$wp_customize->add_setting(
-				'ocean_facebook_page_url',
-				array(
-					'default'           => '',
-					'sanitize_callback' => 'wp_filter_nohtml_kses',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Control(
-					$wp_customize,
-					'ocean_facebook_page_url',
-					array(
-						'label'    => esc_html__( 'Facebook Page URL', 'oceanwp' ),
-						'section'  => 'ocean_general_settings',
-						'settings' => 'ocean_facebook_page_url',
-						'type'     => 'text',
-						'priority' => 10,
-					)
-				)
-			);
-
-			/**
-			 * Facebook App ID
-			 */
-			$wp_customize->add_setting(
-				'ocean_facebook_appid',
-				array(
-					'default'           => '',
-					'sanitize_callback' => 'wp_filter_nohtml_kses',
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Control(
-					$wp_customize,
-					'ocean_facebook_appid',
-					array(
-						'label'    => esc_html__( 'Facebook App ID', 'oceanwp' ),
-						'section'  => 'ocean_general_settings',
-						'settings' => 'ocean_facebook_appid',
-						'type'     => 'text',
-						'priority' => 10,
 					)
 				)
 			);
@@ -3904,6 +3756,31 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			);
 
 			/**
+			 * Schema Markup
+			 */
+			$wp_customize->add_setting(
+				'ocean_schema_markup',
+				array(
+					'default'           => true,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_schema_markup',
+					array(
+						'label'    => esc_html__( 'Enable Schema Markup', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
+						'settings' => 'ocean_schema_markup',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
 			 * Enable image alt text on blog entry featured images
 			 */
 			$wp_customize->add_setting(
@@ -3970,6 +3847,152 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 						'label'    => esc_html__( 'Use featured image ALT text on single post related items', 'oceanwp' ),
 						'type'     => 'checkbox',
 						'section'  => 'ocean_general_seo_settings',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Site breadcrumb info
+			 */
+			$wp_customize->add_setting(
+				'ocean_configure_breadcrumb_link',
+				array(
+					'sanitize_callback' => 'wp_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Info_Control(
+					$wp_customize,
+					'ocean_configure_breadcrumb_link',
+					array(
+						'label'       => esc_html__( 'Configure Breadcrumb', 'oceanwp' ),
+						'description' => sprintf( esc_html__( 'Go to the %1$s Breadcrumbs settings page %2$s', 'oceanwp' ), '<a href="' . admin_url( 'customize.php?autofocus%5Bcontrol%5D=ocean_page_header_visibility' ) . '">', '</a>' ),
+						'section'     => 'ocean_general_seo_settings',
+						'priority'    => 10,
+					)
+				)
+			);
+
+			/**
+			 * Heading Sitewide Identity
+			 */
+			$wp_customize->add_setting(
+				'ocean_opengraph_heading',
+				array(
+					'sanitize_callback' => 'wp_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Heading_Control(
+					$wp_customize,
+					'ocean_opengraph_heading',
+					array(
+						'label'       => esc_html__( 'OpenGraph', 'oceanwp' ),
+						'description' => esc_html__( 'This is information taken by social media when a link is shared', 'oceanwp' ),
+						'section'     => 'ocean_general_seo_settings',
+						'priority'    => 10,
+					)
+				)
+			);
+
+			/**
+			 * Enable OpenGraph
+			 */
+			$wp_customize->add_setting(
+				'ocean_open_graph',
+				array(
+					'default'           => false,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_open_graph',
+					array(
+						'label'    => esc_html__( 'Enable OpenGraph', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_seo_settings',
+						'settings' => 'ocean_open_graph',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Twitter Handle
+			 */
+			$wp_customize->add_setting(
+				'ocean_twitter_handle',
+				array(
+					'default'           => '',
+					'sanitize_callback' => 'wp_filter_nohtml_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_twitter_handle',
+					array(
+						'label'    => esc_html__( 'Twitter Username', 'oceanwp' ),
+						'section'  => 'ocean_general_seo_settings',
+						'settings' => 'ocean_twitter_handle',
+						'type'     => 'text',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Facebook Page URL
+			 */
+			$wp_customize->add_setting(
+				'ocean_facebook_page_url',
+				array(
+					'default'           => '',
+					'sanitize_callback' => 'wp_filter_nohtml_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_facebook_page_url',
+					array(
+						'label'    => esc_html__( 'Facebook Page URL', 'oceanwp' ),
+						'section'  => 'ocean_general_seo_settings',
+						'settings' => 'ocean_facebook_page_url',
+						'type'     => 'text',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
+			 * Facebook App ID
+			 */
+			$wp_customize->add_setting(
+				'ocean_facebook_appid',
+				array(
+					'default'           => '',
+					'sanitize_callback' => 'wp_filter_nohtml_kses',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_facebook_appid',
+					array(
+						'label'    => esc_html__( 'Facebook App ID', 'oceanwp' ),
+						'section'  => 'ocean_general_seo_settings',
+						'settings' => 'ocean_facebook_appid',
+						'type'     => 'text',
 						'priority' => 10,
 					)
 				)
@@ -4182,6 +4205,99 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 					)
 				)
 			);
+
+			if ( class_exists( 'Ocean_Extra' ) ) {
+
+				/**
+				 * Disable widgets.css
+				 */
+				$wp_customize->add_setting(
+					'ocean_load_widgets_stylesheet',
+					array(
+						'transport'         => 'postMessage',
+						'default'           => 'enabled',
+						'sanitize_callback' => 'oceanwp_sanitize_select',
+					)
+				);
+
+				$wp_customize->add_control(
+					new OceanWP_Customizer_Buttonset_Control(
+						$wp_customize,
+						'ocean_load_widgets_stylesheet',
+						array(
+							'label'    => esc_html__( 'Widgets Stylesheet Load', 'oceanwp' ),
+							'description' => esc_html__( 'You can disable loading widgets.css stylesheet on your site.', 'oceanwp' ),
+							'section'  => 'ocean_general_performance_section',
+							'settings' => 'ocean_load_widgets_stylesheet',
+							'priority'    => 11,
+							'choices'     => array(
+								'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+								'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+							),
+						)
+					)
+				);
+			}
+
+			/**
+			 * Scroll Effect
+			 */
+			$wp_customize->add_setting(
+				'ocean_performance_scroll_effect',
+				array(
+					'transport'         => 'postMessage',
+					'default'           => 'enabled',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_performance_scroll_effect',
+					array(
+						'label'       => esc_html__( 'Scroll Effect', 'oceanwp' ),
+						'description' => esc_html__( 'This script is responsible for the scroll effect in theme.', 'oceanwp' ),
+						'section'     => 'ocean_general_performance_section',
+						'settings'    => 'ocean_performance_scroll_effect',
+						'priority'    => 10,
+						'choices'     => array(
+							'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+							'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+						),
+					)
+				)
+			);
+
+			/**
+			 * Scroll offset
+			 */
+			$wp_customize->add_setting(
+				'ocean_scroll_effect_offset_value',
+				array(
+					'transport'         => 'postMessage',
+					'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_scroll_effect_offset_value',
+					array(
+						'label'           => esc_html__( 'Scroll Effect - Custom Offset', 'oceanwp' ),
+						'type'            => 'number',
+						'section'         => 'ocean_general_performance_section',
+						'priority'        => 10,
+						'input_attrs'     => array(
+							'min'  => 0,
+							'max'  => 600,
+							'step' => 1,
+						),
+					)
+				)
+			);
+
 		}
 
 		/**

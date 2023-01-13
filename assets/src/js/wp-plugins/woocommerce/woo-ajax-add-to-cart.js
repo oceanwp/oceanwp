@@ -88,6 +88,7 @@ class WooAjaxAddToCart {
             response.fragments,
             response.cart_hash,
             jQuery(addToCartBtn),
+            'wc_fragments_refreshed',
           ]);
 
           if (options.cart_redirect_after_add === "yes") {

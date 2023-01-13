@@ -76,7 +76,8 @@
     }
 
     .wp-block-columns.alignfull,
-    .wp-block-columns.alignwide {
+    .wp-block-columns.alignwide,
+    .elementor-section {
         h1,
         h2,
         h3,
@@ -219,6 +220,11 @@
     &.is-style-wide:not(.size-full) {
         max-width: 700px;
     }
+}
+
+.elementor-edit-area ul.elementor-editor-element-settings {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 /*------------------------------------*

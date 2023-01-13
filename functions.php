@@ -624,7 +624,9 @@ final class OCEANWP_Theme_Class {
 		wp_enqueue_script( 'oceanwp-slider', $dir . 'ow-slider.min.js', $main_script_dependencies, $theme_version, true );
 
 		// Scroll Effect script.
-		wp_enqueue_script( 'oceanwp-scroll-effect', $dir . 'scroll-effect.min.js', $main_script_dependencies, $theme_version, true );
+		if ( get_theme_mod( 'ocean_performance_scroll_effect', 'enabled' ) === 'enabled' ) {
+			wp_enqueue_script( 'oceanwp-scroll-effect', $dir . 'scroll-effect.min.js', $main_script_dependencies, $theme_version, true );
+		}
 
 		// Scroll to Top script.
 		if ( oceanwp_display_scroll_up_button() ) {
@@ -660,12 +662,14 @@ final class OCEANWP_Theme_Class {
 	public static function localize_array() {
 
 		// Create array.
-		$sidr_side   = get_theme_mod( 'ocean_mobile_menu_sidr_direction', 'left' );
-		$sidr_side   = $sidr_side ? $sidr_side : 'left';
-		$sidr_target = get_theme_mod( 'ocean_mobile_menu_sidr_dropdown_target', 'link' );
-		$sidr_target = $sidr_target ? $sidr_target : 'link';
-		$vh_target   = get_theme_mod( 'ocean_vertical_header_dropdown_target', 'link' );
-		$vh_target   = $vh_target ? $vh_target : 'link';
+		$sidr_side     = get_theme_mod( 'ocean_mobile_menu_sidr_direction', 'left' );
+		$sidr_side     = $sidr_side ? $sidr_side : 'left';
+		$sidr_target   = get_theme_mod( 'ocean_mobile_menu_sidr_dropdown_target', 'link' );
+		$sidr_target   = $sidr_target ? $sidr_target : 'link';
+		$vh_target     = get_theme_mod( 'ocean_vertical_header_dropdown_target', 'link' );
+		$vh_target     = $vh_target ? $vh_target : 'link';
+		$scroll_offset = get_theme_mod( 'ocean_scroll_effect_offset_value' );
+		$scroll_offset = $scroll_offset ? $scroll_offset : 0;
 		$array       = array(
 			'nonce'                 => wp_create_nonce( 'oceanwp' ),
 			'isRTL'                 => is_rtl(),
@@ -676,6 +680,7 @@ final class OCEANWP_Theme_Class {
 			'sidrSide'              => $sidr_side,
 			'sidrDropdownTarget'    => $sidr_target,
 			'verticalHeaderTarget'  => $vh_target,
+			'customScrollOffset'    => $scroll_offset,
 			'customSelects'         => '.woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select',
 		);
 

@@ -1871,7 +1871,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 				$items .= '</form>';
 		} else {
 
-			$items     .= '<a href="javascript:void(0)" class="site-search-toggle' . $class . '" aria-label="' . esc_attr( 'Search website', 'oceanwp' ) . '">';
+			$items     .= '<a href="' . esc_url( home_url( '/#' ) ) . '" class="site-search-toggle' . $class . '" aria-label="' . esc_attr( 'Search website', 'oceanwp' ) . '">';
 				$items .= oceanwp_icon( 'search', false );
 			$items     .= '</a>';
 		}
@@ -1918,7 +1918,7 @@ if ( ! function_exists( 'oceanwp_top_header_search' ) ) {
 
 		// Add search item to menu.
 		echo '<div id="search-toggle">';
-			echo '<a href="javascript:void(0)" class="site-search-toggle' . esc_attr( $class ) . '" aria-label="' . esc_attr__( 'Search website', 'oceanwp' ) . '">';
+			echo '<a href="' . esc_url( home_url( '/#' ) ) . '" class="site-search-toggle' . esc_attr( $class ) . '" aria-label="' . esc_attr__( 'Search website', 'oceanwp' ) . '">';
 				oceanwp_icon( 'search' );
 			echo '</a>';
 		echo '</div>';
@@ -4734,7 +4734,7 @@ function oceanwp_mobile_search_icon() {
 
 	?>
 
-	<a href="#" class="search-icon-<?php echo esc_attr( $class ); ?>" aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-search', 'oceanwp' ); ?>"><?php oceanwp_icon( 'search' ); ?></a>
+	<a href="<?php echo esc_url( home_url( '/#' ) ); ?>" class="search-icon-<?php echo esc_attr( $class ); ?>" aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-search', 'oceanwp' ); ?>"><?php oceanwp_icon( 'search' ); ?></a>
 
 	<?php
 }
@@ -4790,7 +4790,7 @@ function oceanwp_mobile_search_form_html() {
 		?>
 		<div class="container clr">
 			<form method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<a href="#" class="search-overlay-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-close-search-form' ); ?>"><span></span></a>
+				<a href="<?php echo esc_url( home_url( '/#' ) ); ?>" class="search-overlay-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-close-search-form' ); ?>"><span></span></a>
 				<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
 				<input aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-submit-search' ); ?>" class="mobile-search-overlay-input" type="search" name="s" autocomplete="off" value="">
 				<?php

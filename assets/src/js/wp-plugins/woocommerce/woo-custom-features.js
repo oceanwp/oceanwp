@@ -25,6 +25,21 @@ class WooCustomFeatures {
         jQuery( document ).on("append.infiniteScroll", () => {
             this.quantityButtons.start();
         });
+
+        jQuery("body").on("removed_from_cart", (e, fragments, cart_hash, $btn) => {
+            const productId = $btn.data('product_id');
+            if( productId ) {
+                const selector = `.button.add_to_cart_button.ajax_add_to_cart.added[data-product_id="${productId}"]`;
+                if( jQuery(selector).length ) {
+                    jQuery(selector).each((index, element) => {
+                        jQuery(element).removeClass('added');
+                        if(jQuery(element).next('a.added_to_cart').length) {
+                            jQuery(element).next('a.added_to_cart').remove();
+                        }
+                    });
+                }
+            }
+        });
     };
 }
 

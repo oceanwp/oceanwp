@@ -293,7 +293,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 				'ocean_bottom_footer_color',
 				array(
 					'transport'         => 'postMessage',
-					'default'           => '#929292',
+					'default'           => '#ffffff',
 					'sanitize_callback' => 'oceanwp_sanitize_color',
 				)
 			);
@@ -388,7 +388,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			$mobile_bottom_padding   = get_theme_mod( 'ocean_bottom_footer_mobile_bottom_padding' );
 			$mobile_left_padding     = get_theme_mod( 'ocean_bottom_footer_mobile_left_padding' );
 			$bottom_background       = get_theme_mod( 'ocean_bottom_footer_background', '#1b1b1b' );
-			$bottom_color            = get_theme_mod( 'ocean_bottom_footer_color', '#929292' );
+			$bottom_color            = get_theme_mod( 'ocean_bottom_footer_color', '#ffffff' );
 			$bottom_link_color       = get_theme_mod( 'ocean_bottom_footer_link_color', '#ffffff' );
 			$bottom_link_color_hover = get_theme_mod( 'ocean_bottom_footer_link_color_hover', '#13aff0' );
 
@@ -425,7 +425,7 @@ if ( ! class_exists( 'OceanWP_Footer_Bottom_Customizer' ) ) :
 			}
 
 			// Footer bottom color.
-			if ( ! empty( $bottom_color ) && '#929292' != $bottom_color ) {
+			if ( ! empty( $bottom_color ) && '#ffffff' != $bottom_color ) {
 				$css .= '#footer-bottom,#footer-bottom p{color:' . $bottom_color . ';}';
 			}
 

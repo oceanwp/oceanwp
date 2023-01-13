@@ -940,40 +940,44 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 				'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
 			) ) );
 
-			/**
-			 * Medium Header Hide Menu When Scrolling
-			 */
-			$wp_customize->add_setting( 'ocean_medium_header_hidden_menu', array(
-				'transport' 			=> 'postMessage',
-				'default'           	=> true,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
+			if ( class_exists( 'Ocean_Sticky_Header' ) || class_exists( 'Ocean_Ecommerce_Sticky_Header' ) ) {
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_medium_header_hidden_menu', array(
-				'label'	   				=> esc_html__( 'Hide Menu When Scrolling', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_header_general',
-				'settings' 				=> 'ocean_medium_header_hidden_menu',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
-			) ) );
+				/**
+				 * Medium Header Hide Menu When Scrolling
+				 */
+				$wp_customize->add_setting( 'ocean_medium_header_hidden_menu', array(
+					'transport' 			=> 'postMessage',
+					'default'           	=> true,
+					'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+				) );
 
-			/**
-			 * Medium Header Stick Menu
-			 */
-			$wp_customize->add_setting( 'ocean_medium_header_stick_menu', array(
-				'default'           	=> false,
-				'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
-			) );
+				$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_medium_header_hidden_menu', array(
+					'label'	   				=> esc_html__( 'Hide Menu When Scrolling', 'oceanwp' ),
+					'type' 					=> 'checkbox',
+					'section'  				=> 'ocean_header_general',
+					'settings' 				=> 'ocean_medium_header_hidden_menu',
+					'priority' 				=> 10,
+					'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
+				) ) );
 
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_medium_header_stick_menu', array(
-				'label'	   				=> esc_html__( 'Stick Only The Menu', 'oceanwp' ),
-				'type' 					=> 'checkbox',
-				'section'  				=> 'ocean_header_general',
-				'settings' 				=> 'ocean_medium_header_stick_menu',
-				'priority' 				=> 10,
-				'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
-			) ) );
+				/**
+				 * Medium Header Stick Menu
+				 */
+				$wp_customize->add_setting( 'ocean_medium_header_stick_menu', array(
+					'default'           	=> false,
+					'sanitize_callback' 	=> 'oceanwp_sanitize_checkbox',
+				) );
+
+				$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_medium_header_stick_menu', array(
+					'label'	   				=> esc_html__( 'Stick Only The Menu', 'oceanwp' ),
+					'type' 					=> 'checkbox',
+					'section'  				=> 'ocean_header_general',
+					'settings' 				=> 'ocean_medium_header_stick_menu',
+					'priority' 				=> 10,
+					'active_callback' 		=> 'oceanwp_cac_has_medium_header_style',
+				) ) );
+
+			}
 
 			/**
 			 * Medium Header Top Header Heading
