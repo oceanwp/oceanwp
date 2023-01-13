@@ -27,7 +27,7 @@
         "cross-env": "^7.0.3",
         "css-loader": "^6.3.0",
         "file-loader": "^6.2.0",
-        "grunt": "^1.4.1",
+        "grunt": "^1.5.3",
         "grunt-autoprefixer": "^3.0.4",
         "grunt-bowercopy": "^1.2.5",
         "grunt-browserify": "^6.0.0",
