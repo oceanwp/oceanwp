@@ -111,7 +111,7 @@ $link_target = ocean_link_post_url_target( get_the_ID() );
 
 		<a aria-label="<?php oceanwp_theme_strings( 'owp-string-link-post-format' ); ?>" href="<?php echo esc_url( $post_link ); ?>" <?php if ( $link_target ) { ?> target="<?php echo esc_attr( $link_target ); ?>" <?php } ?>><?php oceanwp_icon( 'link' ); ?>
 		<?php
-		if ( 'blank' === $ext_target ) {
+		if ( '_blank' === $link_target ) {
 			?>
 			<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-new-tab-alert' ); ?></span>
 		<?php
