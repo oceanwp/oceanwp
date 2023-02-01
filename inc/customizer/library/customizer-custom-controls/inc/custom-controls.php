@@ -82,7 +82,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 				<?php } ?>
 				<?php	$chkboxValues = explode( ',', ow_esc_attr( $this->value() ) ); ?>
 				<input type="hidden" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $this->value() ); ?>" class="customize-control-multi-image-checkbox" <?php $this->link(); ?> />
@@ -125,7 +125,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 				<?php } ?>
 
 				<div class="radio-buttons">
@@ -169,7 +169,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 				<?php } ?>
 
 				<?php foreach ( $this->choices as $key => $value ) { ?>
@@ -373,7 +373,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 				</div>
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 				<?php } ?>
 			</div>
 			<?php
@@ -426,7 +426,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 				<?php } ?>
 				<input type="hidden" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $this->value() ); ?>" class="customize-control-sortable-repeater" <?php $this->link(); ?> />
 				<div class="sortable_repeater sortable">
@@ -499,7 +499,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 					</label>
 				<?php } ?>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 				<?php } ?>
 				<input type="hidden" id="<?php echo ow_esc_attr( $this->id ); ?>" class="customize-control-dropdown-select2" value="<?php echo ow_esc_attr( $this->value() ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" <?php $this->link(); ?> />
 				<select name="select2-list-<?php echo ( $this->multiselect ? 'multi[]' : 'single' ); ?>" class="customize-control-select2" data-placeholder="<?php echo $this->placeholder; ?>" <?php echo ( $this->multiselect ? 'multiple="multiple" ' : '' ); ?>>
@@ -570,7 +570,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 					</label>
 				<?php } ?>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 				<?php } ?>
 				<select name="<?php echo $this->id; ?>" id="<?php echo $this->id; ?>" <?php $this->link(); ?>>
 					<?php
@@ -628,7 +628,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 			<div class="tinymce-control">
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 				<?php } ?>
 				<textarea id="<?php echo ow_esc_attr( $this->id ); ?>" class="customize-control-tinymce-editor" <?php $this->link(); ?>><?php echo esc_html( $this->value() ); ?></textarea>
 			</div>
@@ -720,7 +720,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 					<?php } ?>
 					<?php if ( ! empty( $this->description ) ) { ?>
-						<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+						<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 					<?php } ?>
 					<input type="hidden" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $this->value() ); ?>" class="customize-control-google-font-selection" <?php $this->link(); ?> />
 					<div class="google-fonts">
@@ -971,7 +971,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 				<?php } ?>
 				<input type="text" class="wpcolorpicker-alpha-color-picker" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $this->value() ); ?>" class="customize-control-colorpicker-alpha-color" <?php echo $this->attributes; ?> <?php $this->link(); ?> />
 			</div>
@@ -1045,7 +1045,7 @@ if ( class_exists( 'WP_Customize_Control' ) && class_exists( 'WP_Customize_Secti
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php } ?>
 				<?php if ( ! empty( $this->description ) ) { ?>
-					<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+					<span class="customize-control-description"><?php echo wp_kses_post( $this->description ); ?></span>
 				<?php } ?>
 				<input type="hidden" id="<?php echo ow_esc_attr( $this->id ); ?>" name="<?php echo ow_esc_attr( $this->id ); ?>" value="<?php echo ow_esc_attr( $this->value() ); ?>" class="customize-control-sortable-pill-checkbox" <?php $this->link(); ?> />
 				<div class="sortable_pills<?php echo ( $this->sortable ? ' sortable' : '' ) . ( $this->fullwidth ? ' fullwidth_pills' : '' ); ?>">

@@ -700,7 +700,7 @@
 					$home_item = $( '.site-breadcrumbs ul li .breadcrumb-home, .site-breadcrumbs ol li .breadcrumb-home' );
 
 				if ( 'icon' == newval && $icon_item.length ) {
-					$icon_item.removeClass( 'icon-home has-text' );
+					$icon_item.removeClass( 'has-text' );
 					$home_item.addClass( 'has-icon' );
 				}
 

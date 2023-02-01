@@ -14,10 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 $icon = '';
 $icon = is_rtl() ? oceanwp_icon( 'angle_left', false ) : oceanwp_icon( 'angle_right', false );
 
+$post_link   = ocean_link_post_url( get_the_ID() );
+$link_target = ocean_link_post_url_target( get_the_ID() );
+
 $blog_continue_reading_content = '';
 ob_start();
 ?>
-<a href="<?php the_permalink(); ?>"><?php oceanwp_theme_strings( 'owp-string-post-continue-reading' ); ?><span class="screen-reader-text"><?php the_title(); ?></span><?php echo $icon; ?></a>
+<a href="<?php echo esc_url( $post_link ); ?>" <?php if ( $link_target ) { ?> target="<?php echo esc_attr( $link_target ); ?>" <?php } ?>><?php oceanwp_theme_strings( 'owp-string-post-continue-reading' ); ?><span class="screen-reader-text"><?php the_title(); ?></span><?php echo $icon; ?></a>
 <?php
 $blog_continue_reading_content .= ob_get_clean();
 ?>
