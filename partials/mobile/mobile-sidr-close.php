@@ -32,7 +32,7 @@ $text = $text ? $text : esc_html__( 'Close Menu', 'oceanwp' );
 ?>
 
 <div id="sidr-close">
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="toggle-sidr-close" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-close-mobile-menu', 'oceanwp' ) ); ?>">
+	<a href="javascript:void(0)" class="toggle-sidr-close" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-close-mobile-menu', 'oceanwp' ) ); ?>">
 		<?php echo $icon_html; ?><span class="close-text"><?php echo do_shortcode( $text ); ?></span>
 	</a>
 </div>

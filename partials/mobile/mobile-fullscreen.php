@@ -75,7 +75,7 @@ $top_menu_args = array(
 
 	<div id="mobile-fullscreen-inner" class="clr">
 
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="close" aria-label="<?php esc_attr_e( 'Close Menu', 'oceanwp' ); ?>" <?php echo $fs_menu_close_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+		<a href="javascript:void(0)" class="close" aria-label="<?php esc_attr_e( 'Close Menu', 'oceanwp' ); ?>" <?php echo $fs_menu_close_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 			<div class="close-icon-wrap">
 				<div class="close-icon-inner"></div>
 			</div>

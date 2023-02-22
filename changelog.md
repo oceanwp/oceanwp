@@ -2,9 +2,6 @@
 
 ### _2023.02.22_ - 3.4.2
 - **Improved**: Customizer: Customizer panel scrollbar width for some browsers, like Chrome and Edge.
-- **Updated**: SEO: Mobile Header: Sidebar and Full Screen styles: Closing icon URLs following Google's latest Lighthouse (PSI) changes.
-- **Updated**: Template: partials/mobile/mobile-sidr-close.php
-- **Updated**: Template: partials/mobile-fullscreen.php
 - **Fixed**: OceanWP Panel: Potential vulnerability patch: Patchstack report #2023-23700.
 - **Fixed**: Posts: Link post format: External link option doesn't function.
 - **Fixed**: WooCommerce: Option to remove product category description with custom code doesn't function.
