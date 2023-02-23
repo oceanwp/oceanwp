@@ -66,6 +66,9 @@ class SidebarMobileMenu {
       onOpen() {
         document.querySelector("a.sidr-class-toggle-sidr-close")?.focus();
 
+        document.querySelector("a.sidr-class-toggle-sidr-close svg")?.classList.remove("sidr-class-owp-icon", "sidr-class-owp-icon--close");
+        document.querySelector("a.sidr-class-toggle-sidr-close svg")?.classList.add("owp-icon", "owp-icon--close");
+
         self.#elements.hamburgerBtn?.classList.add("is-active");
 
         self.#elements.header.insertAdjacentHTML(
