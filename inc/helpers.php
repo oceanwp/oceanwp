@@ -4965,3 +4965,37 @@ function ocean_is_block_template( $get_id ) {
         return false;
     }
 }
+
+/**
+ * Get link post format external url
+ */
+function ocean_link_post_url( $id ) {
+
+	// External link.
+	$ext_link  = get_post_meta( $id, 'ocean_link_format', true );
+	$post_link = get_permalink( $id );
+
+	if ( $ext_link ) {
+		$post_link = $ext_link;
+	} else {
+		$post_link = get_permalink( $id );
+	}
+
+	return apply_filters( 'ocean_link_post_url', $post_link );
+}
+
+/**
+ * Get link post format target
+ */
+function ocean_link_post_url_target( $id ) {
+
+	// External link.
+	$link_target  = get_post_meta( $id, 'ocean_link_format_target', true );
+	$target = '';
+
+	if ( 'blank' === $link_target ) {
+		$target = '_' . $link_target;
+	}
+
+	return apply_filters( 'ocean_link_post_url_target', $target );
+}

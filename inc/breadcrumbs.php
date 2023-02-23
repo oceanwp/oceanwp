@@ -511,9 +511,11 @@ class OceanWP_Breadcrumb_Trail {
 		}
 
 		$icon = '';
-		if ( is_customize_preview()
-			|| 'icon' == $setting ) {
+		if ( is_customize_preview() || 'icon' == $setting ) {
 			$icon = oceanwp_icon( 'home', false );
+		}
+		if ( is_customize_preview() && 'text' == $setting ) {
+			$icon = oceanwp_icon( 'home', false, 'icon-home has-text' );
 		}
 
 		// Text.
@@ -546,9 +548,11 @@ class OceanWP_Breadcrumb_Trail {
 		}
 
 		$icon = '';
-		if ( is_customize_preview()
-			|| 'icon' == $setting ) {
+		if ( is_customize_preview() || 'icon' == $setting ) {
 			$icon = oceanwp_icon( 'home', false );
+		}
+		if ( is_customize_preview() && 'text' == $setting ) {
+			$icon = oceanwp_icon( 'home', false, 'icon-home has-text' );
 		}
 
 		// Text

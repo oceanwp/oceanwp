@@ -331,6 +331,8 @@ final class OceanWP_Theme_Panel {
 			$slug = $default['href'];
 		}
 
+		$slug = basename( $slug );
+
 		$file = OCEANWP_THEME_PANEL_DIR . "/views/panes/{$slug}.php";
 
 		// String pattern replace.

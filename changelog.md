@@ -1,5 +1,15 @@
 # OceanWP Changelog
 
+### _2023.02.22_ - 3.4.2
+- **Improved**: Customizer: Customizer panel scrollbar width for some browsers, like Chrome and Edge.
+- **Fixed**: OceanWP Panel: Potential vulnerability patch: Patchstack report #2023-23700.
+- **Fixed**: Posts: Link post format: External link option doesn't function.
+- **Fixed**: WooCommerce: Option to remove product category description with custom code doesn't function.
+- **Fixed**: WooCommerce: Option to remove cart collaterals from the cart with custom code doesn't function.
+- **Fixed**: WooCommerce: Option to remove upsell section from the single product page with custom code doesn't function.
+- **Fixed**: Customizer: Some controls display incorrect output. Example, instead of a functional link, html is displayed.
+- **Fixed**: Customizer: General Options: Performance: SVG icons: Disable / Enable buttons action misconfigured.
+
 ### _2023.01.11_ - 3.4.1
 - **Fixed**: Customizer: Footer Bottom: Footer copyright text color applied settings do not work.
 

@@ -27,7 +27,6 @@ $disable_links = ( true === $ocean_woo_disable_links && 'yes' === $ocean_woo_dis
 
 /**
  * Display shop and product archive items
- * 
  */
 do_action( 'ocean_before_archive_product_item' );
 
@@ -104,7 +103,6 @@ foreach ( $elements as $element ) {
 		if ( false === $ocean_woo_cond || $show_woo_cond ) {
 
 			echo '<li class="price-wrap">';
-			
 				do_action( 'ocean_before_archive_product_price' );
 				woocommerce_template_loop_price();
 				do_action( 'ocean_after_archive_product_price' );

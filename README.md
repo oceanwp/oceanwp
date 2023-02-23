@@ -4,7 +4,7 @@
 **Requires at least:** WordPress 5.6
 **Tested up to:** WordPress 6.1.1
 =======
-**Stable tag:** 3.4.1
+**Stable tag:** 3.4.2
 **Requires PHP:** 7.2
 **License:** GPLv2 or later
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html

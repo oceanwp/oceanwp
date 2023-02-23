@@ -34,9 +34,10 @@
 #customize-control-ocean_breadcrumb_show_title { margin-top: 0; }
 
 /* General tweaks */
-.wp-full-overlay-sidebar-content::-webkit-scrollbar, .accordion-section-content::-webkit-scrollbar { width: 5px !important; }
+.wp-full-overlay-sidebar-content::-webkit-scrollbar, .accordion-section-content::-webkit-scrollbar { width: 10px !important; }
 .wp-full-overlay-sidebar-content::-webkit-scrollbar-track, .accordion-section-content::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.3) !important;  width: 20px !important; }
 .wp-full-overlay-sidebar-content::-webkit-scrollbar-thumb, .accordion-section-content::-webkit-scrollbar-thumb { -webkit-border-radius: 0 !important; border-radius: 0 !important; background-color: #d8d8d8 !important; }
+.wp-full-overlay-sidebar-content::-webkit-scrollbar-thumb, .accordion-section-content::-webkit-scrollbar-thumb { background-color: #b6b6b6 !important; }
 .wp-full-overlay-sidebar-content::-webkit-thumb:window-inactive, .accordion-section-content::-webkit-scrollbar-thumb:window-inactive { background-color: #fff !important; }
 .clr:after { content: ''; display: block; visibility: hidden; clear: both; zoom: 1; height: 0; }
 .customize-control { margin-bottom: 0; }
