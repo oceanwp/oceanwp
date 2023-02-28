@@ -77,7 +77,7 @@ $plugins_new_features = oceanwp_plugins_new_features();
 
 				<div class="oceanwp-tp-large-block">
 					<div class="oceanwp-tp-block-outer">
-						<img class="oceanwp-tp-block-image" src="<?php echo ! empty( $usefull_plugin_data['image_url'] ) ? $usefull_plugin_data['image_url'] : $plugin_download_icon_url; ?>" />
+						<img class="oceanwp-tp-block-image" src="<?php echo ! empty( $usefull_plugin_data['image_url'] ) ? esc_url( $usefull_plugin_data['image_url'] ) : esc_url( $plugin_download_icon_url ); ?>" />
 						<div class="oceanwp-tp-block-inner">
 							<h2 class="oceanwp-tp-block-title"><?php echo ! empty( $repos_plugins[ $usefull_plugin_slug ]['name'] ) ? $repos_plugins[ $usefull_plugin_slug ]['name'] : $usefull_plugin_data['name']; ?></h2>
 							<?php if ( empty( $usefull_plugin_data['hide_desc'] ) ) : ?>
@@ -88,7 +88,7 @@ $plugins_new_features = oceanwp_plugins_new_features();
 
 					<?php if ( ! $is_installed ) : ?>
 						<div class="oceanwp-tp-block-button-wrapper">
-							<a href="<?php echo $repos_plugins[ $usefull_plugin_slug ]['download_link']; ?>" target="_blank" class="button blue oceanwp_install_plugin" role="button" data-plugin-slug="<?php echo $usefull_plugin_slug; ?>">
+							<a href="<?php echo esc_url( $repos_plugins[ $usefull_plugin_slug ]['download_link'] ); ?>" target="_blank" class="button blue oceanwp_install_plugin" role="button" data-plugin-slug="<?php echo esc_attr( $usefull_plugin_slug ); ?>">
 								<?php esc_html_e( 'Install', 'oceanwp' ); ?>
 							</a>
 						</div>
@@ -163,7 +163,7 @@ $plugins_new_features = oceanwp_plugins_new_features();
 
 			<div class="oceanwp-tp-large-block">
 				<div class="oceanwp-tp-block-outer">
-					<img class="oceanwp-tp-block-image" src="<?php echo ! empty( $recommended_plugin_data['image_url'] ) ? $recommended_plugin_data['image_url'] : $plugin_download_icon_url; ?>" />
+					<img class="oceanwp-tp-block-image" src="<?php echo ! empty( $recommended_plugin_data['image_url'] ) ? esc_url( $recommended_plugin_data['image_url'] ) : esc_url( $plugin_download_icon_url ); ?>" />
 					<div class="oceanwp-tp-block-inner">
 						<h2 class="oceanwp-tp-block-title"><?php echo ! empty( $repos_recommended_plugins[ $recommended_plugin_slug ]['name'] ) ? $repos_recommended_plugins[ $recommended_plugin_slug ]['name'] : $recommended_plugin_data['name']; ?></h2>
 						<?php if ( empty( $recommended_plugin_data['hide_desc'] ) ) : ?>
@@ -174,7 +174,7 @@ $plugins_new_features = oceanwp_plugins_new_features();
 
 				<?php if ( ! $is_installed ) : ?>
 					<div class="oceanwp-tp-block-button-wrapper">
-						<a href="<?php echo $repos_recommended_plugins[ $recommended_plugin_slug ]['download_link']; ?>" target="_blank" class="button blue oceanwp_install_plugin" role="button" data-plugin-slug="<?php echo $recommended_plugin_slug; ?>">
+						<a href="<?php echo esc_url( $repos_recommended_plugins[ $recommended_plugin_slug ]['download_link'] ); ?>" target="_blank" class="button blue oceanwp_install_plugin" role="button" data-plugin-slug="<?php echo esc_attr( $recommended_plugin_slug ); ?>">
 							<?php esc_html_e( 'Install', 'oceanwp' ); ?>
 						</a>
 					</div>
@@ -188,7 +188,7 @@ $plugins_new_features = oceanwp_plugins_new_features();
 							$current_plugin_version = oceanwp_theme_panel()->get_current_plugin_version( $real_plugin_path );
 						?>
 						<?php if( ! empty( $current_plugin_version ) && ! empty( $plugins_compatibility_versions[ $recommended_plugin_slug ] ) && version_compare( $current_plugin_version, $plugins_compatibility_versions[ $recommended_plugin_slug ], '<' ) ) : ?>
-							<a href="#" class="button yellow oceanwp_update_plugin" role="button" data-plugin="<?php echo $real_plugin_path; ?>" data-slug="<?php echo $recommended_plugin_slug; ?>">
+							<a href="#" class="button yellow oceanwp_update_plugin" role="button" data-plugin="<?php echo esc_attr( $real_plugin_path ); ?>" data-slug="<?php echo esc_attr( $recommended_plugin_slug ); ?>">
 								<?php esc_html_e( 'Plugin update available', 'oceanwp' ); ?>
 								<?php if( ! empty( $plugins_new_features[ $recommended_plugin_slug ] ) ) : ?>
 									<div class="oceanwp-tp-tooltip" title="<?php echo $plugins_new_features[ $recommended_plugin_slug ]; ?>"><img class="oceanwp-top-panel-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/question-mark.svg' ); ?>" /></div>
