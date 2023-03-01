@@ -218,16 +218,16 @@ jQuery(document).ready(function ($) {
                 ThemePanelSidebar.find('.oceanwp-is-active').removeClass('oceanwp-is-active');
                 ThemePanelSidebar.find('[href=#' + slug + ']').parent().addClass('oceanwp-is-active');
 
-                if (slug == 'install-demos' && window['owpDemoImport'] !== undefined) {
+                if (slug === 'install-demos' && window['owpDemoImport'] !== undefined) {
                     window['owpDemoImport'].init();
                 }
-                if( slug == 'system-info' && window['owpSystemInfoGetter'] !== undefined ) {
+                if( slug === 'system-info' && window['owpSystemInfoGetter'] !== undefined ) {
                     window['owpSystemInfoGetter']();
                 }
-                if(slug == 'white-label' && window['init_white_label_uploader'] !== undefined) {
+                if(slug === 'white-label' && window['init_white_label_uploader'] !== undefined) {
                     window['init_white_label_uploader']();
                 }
-                if(slug == 'customizer') {
+                if(slug === 'customizer') {
                     maybeAllCheckboxesActive();
                 }
 
