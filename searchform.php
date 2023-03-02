@@ -15,14 +15,13 @@ $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
 
 // Generate unique form ID.
 $ocean_sf_id = oceanwp_unique_id( 'ocean-search-form-' );
-$osf_id      = esc_attr( $ocean_sf_id );
 
 ?>
 
 <form role="search" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label for="<?php echo esc_attr( $osf_id ); ?>">
+	<label for="<?php echo esc_attr( $ocean_sf_id ); ?>">
 		<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
-		<input type="search" id="<?php echo esc_attr( $osf_id ); ?>" class="field" autocomplete="off" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>" name="s">
+		<input aria-labelledby="<?php echo esc_attr( $ocean_sf_id ); ?>" type="search" id="<?php echo esc_attr( $ocean_sf_id ); ?>" class="field" autocomplete="off" placeholder="<?php esc_attr( oceanwp_theme_strings( 'owp-string-search-text' ) ); ?>" name="s">
 		<?php if ( 'any' !== $post_type ) { ?>
 			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 		<?php } ?>
