@@ -4752,6 +4752,9 @@ function oceanwp_mobile_search_form_html() {
 	$header_style = oceanwp_header_style();
 	$post_type    = get_theme_mod( 'ocean_menu_search_source', 'any' );
 
+	// Assign mobile search form unique ID.
+	$ocean_msf_id = oceanwp_unique_id( 'ocean-mobile-search-' );
+
 	if ( 'disabled' === $search_style || 'vertical' === $header_style ) {
 		return;
 	}
@@ -4773,7 +4776,7 @@ function oceanwp_mobile_search_form_html() {
 		?>
 		<form method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
-			<input aria-label="<?php oceanwp_theme_strings( 'owp-string-search-field' ); ?>" type="text" class="field" name="s" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>">
+			<input aria-label="<?php oceanwp_theme_strings( 'owp-string-search-field' ); ?>" type="text" class="field" id="<?php echo esc_attr( $ocean_msf_id ); ?>" name="s" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>">
 			<?php
 			if ( 'any' !== $post_type ) {
 				?>
@@ -4792,7 +4795,7 @@ function oceanwp_mobile_search_form_html() {
 			<form method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<a href="<?php echo esc_url( home_url( '/#' ) ); ?>" class="search-overlay-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-close-search-form' ); ?>"><span></span></a>
 				<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
-				<input aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-submit-search' ); ?>" class="mobile-search-overlay-input" type="search" name="s" autocomplete="off" value="">
+				<input aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-submit-search' ); ?>" class="mobile-search-overlay-input" id="<?php echo esc_attr( $ocean_msf_id ); ?>" type="search" name="s" autocomplete="off" value="">
 				<?php
 				if ( 'any' !== $post_type ) {
 					?>
