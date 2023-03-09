@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### _2023.03.xx_ - 3.4.3
+- **Improved**: Accessibility: Header: Search: Dropdown.
+- **Updated**: Template: searchform.php
+
 ### _2023.02.22_ - 3.4.2
 - **Improved**: Customizer: Customizer panel scrollbar width for some browsers, like Chrome and Edge.
 - **Fixed**: OceanWP Panel: Potential vulnerability patch: Patchstack report #2023-23700.
