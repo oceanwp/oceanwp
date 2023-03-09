@@ -5,6 +5,8 @@
 - **Improved**: Accessibility: Header: Full Screen: Search.
 - **Improved**: Accessibility: Header: Full Screen: Menu toggle button.
 - **Improved**: Accessibility: Header: Medium: Search.
+- **Improved**: Accessibility: Header: Vertical: Search.
+- **Improved**: Accessibility: Header: Vertical: Menu toggle button.
 - **Improved**: Accessibility: Header: Mobile: Full Screen: Search.
 - **Improved**: Accessibility: Header: Mobile: Header Search: Overlay.
 - **Updated**: Template: searchform.php
@@ -13,6 +15,8 @@
 - **Updated**: Template: partials/mobile/mobile-sidr-close.php
 - **Updated**: Template: partials/header/style/full-screen-header.php
 - **Updated**: Template: partials/header/style/medium-header-search.php
+- **Updated**: Template: partials/header/style/vertical-header-search.php
+- **Updated**: Template: partials/header/style/vertical-header-toggle.php
 - **Updated**: Language: Theme .pot file.
 
 ### _2023.02.22_ - 3.4.2
