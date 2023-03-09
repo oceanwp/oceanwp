@@ -33,7 +33,7 @@ $classes = implode( ' ', $classes ); ?>
 
 		<div class="menu-bar-wrap clr">
 			<div class="menu-bar-inner clr">
-				<a href="#" class="menu-bar"><span class="ham"></span></a>
+				<a href="#" class="menu-bar"><span class="ham"></span><span class="screen-reader-text"><?php  esc_html( oceanwp_theme_strings( 'owp-string-open-menu' ) ); ?></span></a>
 			</div>
 		</div>
 

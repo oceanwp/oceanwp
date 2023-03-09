@@ -1851,14 +1851,10 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 		// Add search item to menu.
 		$items .= '<li class="search-toggle-li" ' . apply_filters( 'oceanwp_attrs_nav_search_bar', '' ) . '>';
 		if ( 'full_screen' == $header_style ) {
-			$items     .= '<form method="get" action="' . esc_url( home_url( '/' ) ) . '" class="header-searchform">';
-				$items .= '<input type="search" name="s" value="" autocomplete="off" />';
-				// If the headerSearchForm script is not disable
-			if ( OCEAN_EXTRA_ACTIVE
-					&& class_exists( 'Ocean_Extra_Scripts_Panel' )
-					&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
-				$items .= '<label>' . esc_html__( 'Type your search', 'oceanwp' ) . '<span><i></i><i></i><i></i></span></label>';
-			}
+			$items .= '<form action="' . esc_url( home_url( '/' ) ) . '" class="header-searchform" aria-label="' . esc_attr( oceanwp_theme_strings( 'owp-string-search-form-label', false ) ) . '">';
+				$items .= '<label>' . esc_html( oceanwp_theme_strings( 'owp-string-mobile-fs-search-text', false ) ) . '<span><i></i><i></i><i></i></span></label>';
+				$items .= '<input aria-label="' . esc_attr( oceanwp_theme_strings( 'owp-string-fullscreen-submit-search', false ) ) . '" type="search" name="s" value="" autocomplete="off" />';
+		
 			if ( ! function_exists( 'is_plugin_active' ) ) {
 				include_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
@@ -1871,7 +1867,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 				$items .= '</form>';
 		} else {
 
-			$items     .= '<a href="' . esc_url( home_url( '/#' ) ) . '" class="site-search-toggle' . $class . '" aria-label="' . esc_attr( 'Search website', 'oceanwp' ) . '">';
+			$items     .= '<a href="' . esc_url( home_url( '/#' ) ) . '" class="site-search-toggle' . $class . '">';
 				$items .= oceanwp_icon( 'search', false );
 			$items     .= '</a>';
 		}
