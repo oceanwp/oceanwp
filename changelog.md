@@ -3,13 +3,17 @@
 ### _2023.03.xx_ - 3.4.3
 - **Improved**: Accessibility: Header: Search: Dropdown.
 - **Improved**: Accessibility: Header: Full Screen: Search.
-- **Improved**: Accessibility: Header: Full Screen: Menu hamburger button.
+- **Improved**: Accessibility: Header: Full Screen: Menu toggle button.
+- **Improved**: Accessibility: Header: Medium: Search.
 - **Improved**: Accessibility: Header: Mobile: Full Screen: Search.
 - **Improved**: Accessibility: Header: Mobile: Header Search: Overlay.
 - **Updated**: Template: searchform.php
 - **Updated**: Template: partials/mobile/mobile-fullscreen-search.php
+- **Updated**: Template: partials/mobile/mobile-fullscreen.php
 - **Updated**: Template: partials/mobile/mobile-sidr-close.php
 - **Updated**: Template: partials/header/style/full-screen-header.php
+- **Updated**: Template: partials/header/style/medium-header-search.php
+- **Updated**: Language: Theme .pot file.
 
 ### _2023.02.22_ - 3.4.2
 - **Improved**: Customizer: Customizer panel scrollbar width for some browsers, like Chrome and Edge.
