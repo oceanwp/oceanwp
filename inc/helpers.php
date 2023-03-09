@@ -4792,18 +4792,17 @@ function oceanwp_mobile_search_form_html() {
 		ob_start();
 		?>
 		<div class="container clr">
-			<form method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<form id="mhso-search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?>">
 				<a href="<?php echo esc_url( home_url( '/#' ) ); ?>" class="search-overlay-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-close-search-form' ); ?>"><span></span></a>
-				<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
-				<input aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-submit-search' ); ?>" class="mobile-search-overlay-input" id="<?php echo esc_attr( $ocean_msf_id ); ?>" type="search" name="s" autocomplete="off" value="">
+				<label for="<?php echo esc_attr( $ocean_msf_id ); ?>"><?php oceanwp_theme_strings( 'owp-string-search-overlay-search-text' ); ?><span aria-hidden="true"><i></i><i></i><i></i></span></label>
+				<input aria-labelledby="mhso-search <?php echo esc_attr( $ocean_msf_id ); ?>" class="mobile-search-overlay-input" id="<?php echo esc_attr( $ocean_msf_id ); ?>" type="search" name="s" autocomplete="off" value="">
 				<?php
 				if ( 'any' !== $post_type ) {
 					?>
 					<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 					<?php
 				}
-				?>
-				<label><?php oceanwp_theme_strings( 'owp-string-search-overlay-search-text' ); ?><span aria-hidden="true"><i></i><i></i><i></i></span></label>
+				?>		
 			</form>
 		</div>
 		<?php

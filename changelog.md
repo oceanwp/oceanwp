@@ -3,6 +3,7 @@
 ### _2023.03.xx_ - 3.4.3
 - **Improved**: Accessibility: Header: Search: Dropdown.
 - **Improved**: Accessibility: Header: Mobile: Full Screen: Search.
+- **Improved**: Accessibility: Header: Mobile: Header Search: Overlay.
 - **Updated**: Template: searchform.php
 - **Updated**: Template: partials/mobile/mobile-fullscreen-search.php
 
