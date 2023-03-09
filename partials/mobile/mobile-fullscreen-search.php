@@ -18,18 +18,9 @@ if ( 'fullscreen' !== oceanwp_mobile_menu_style() ) {
 $post_type = get_theme_mod( 'ocean_menu_search_source', 'any' ); ?>
 
 <div id="mobile-search" class="clr">
-	<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform" aria-label="<?php esc_attr_e( 'Mobile Search', 'oceanwp' ); ?>">
-		<input type="search" name="s" value="" autocomplete="off" />
-		<?php
-		// If the headerSearchForm script is not disable.
-		if ( OCEAN_EXTRA_ACTIVE
-			&& class_exists( 'Ocean_Extra_Scripts_Panel' )
-			&& Ocean_Extra_Scripts_Panel::get_setting( 'oe_headerSearchForm_script' ) ) {
-			?>
-			<label><?php oceanwp_theme_strings( 'owp-string-mobile-fs-search-text', 'oceanwp' ); ?><span><i></i><i></i><i></i></span></label>
-			<?php
-		}
-		?>
+	<form id="mfs-search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-searchform" aria-label="<?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?>">
+		<label for="mfs-input"><?php oceanwp_theme_strings( 'owp-string-mobile-fs-search-text' ); ?><span><i></i><i></i><i></i></span></label>
+		<input id="mfs-input" aria-labelledby="mfs-search mfs-input" type="search" name="s" value="" autocomplete="off" />
 		<?php if ( 'any' !== $post_type ) { ?>
 			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 		<?php } ?>
