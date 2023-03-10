@@ -1854,7 +1854,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 			$items .= '<form action="' . esc_url( home_url( '/' ) ) . '" class="header-searchform" aria-label="' . esc_attr( oceanwp_theme_strings( 'owp-string-search-form-label', false ) ) . '">';
 				$items .= '<label>' . esc_html( oceanwp_theme_strings( 'owp-string-mobile-fs-search-text', false ) ) . '<span><i></i><i></i><i></i></span></label>';
 				$items .= '<input aria-label="' . esc_attr( oceanwp_theme_strings( 'owp-string-fullscreen-submit-search', false ) ) . '" type="search" name="s" value="" autocomplete="off" />';
-		
+
 			if ( ! function_exists( 'is_plugin_active' ) ) {
 				include_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
@@ -4790,7 +4790,7 @@ function oceanwp_mobile_search_form_html() {
 		<div class="container clr">
 			<form id="mhso-search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?>">
 				<a href="<?php echo esc_url( ocean_get_site_name_anchors( 'mobile-header-search-close' ) ); ?>" class="search-overlay-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-close-search-form' ); ?>"><span></span></a>
-				<label for="<?php echo esc_attr( $ocean_msf_id ); ?>"><?php oceanwp_theme_strings( 'owp-string-search-overlay-search-text' ); ?><span aria-hidden="true"><i></i><i></i><i></i></span></label>
+				<span class="search-text"><?php oceanwp_theme_strings( 'owp-string-search-overlay-search-text' ); ?><span aria-hidden="true"><i></i><i></i><i></i></span></span>
 				<input aria-labelledby="mhso-search <?php echo esc_attr( $ocean_msf_id ); ?>" class="mobile-search-overlay-input" id="<?php echo esc_attr( $ocean_msf_id ); ?>" type="search" name="s" autocomplete="off" value="">
 				<?php
 				if ( 'any' !== $post_type ) {
@@ -4798,7 +4798,7 @@ function oceanwp_mobile_search_form_html() {
 					<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
 					<?php
 				}
-				?>		
+				?>
 			</form>
 		</div>
 		<?php
@@ -5000,7 +5000,7 @@ function ocean_link_post_url_target( $id ) {
 
 /**
  * Return SEO-friendly (crawlable) and accessibility-friendly (not redundant) links
- * 
+ *
  * @since 3.4.4
  */
 if ( ! function_exists( 'ocean_get_site_name_anchors') ) {

@@ -4915,17 +4915,17 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Search overlay input color
 			if ( ! empty( $search_overlay_input_color ) && '#ffffff' != $search_overlay_input_color ) {
-				$css .= '#searchform-overlay form input, #searchform-overlay form label, #icon-searchform-overlay form input, #icon-searchform-overlay form label{color:'. $search_overlay_input_color .';}';
+				$css .= '#searchform-overlay form input, #searchform-overlay form .search-text, #icon-searchform-overlay form input, #icon-searchform-overlay form .search-text{color:'. $search_overlay_input_color .';}';
 			}
 
 			// Search overlay input placeholder color
 			if ( ! empty( $search_overlay_placeholder_color ) && '#ffffff' != $search_overlay_placeholder_color ) {
-				$css .= '#searchform-overlay form label, #icon-searchform-overlay form label{color:'. $search_overlay_placeholder_color .';}';
+				$css .= '#searchform-overlay form label, #icon-searchform-overlay form .search-text{color:'. $search_overlay_placeholder_color .';}';
 			}
 
 			// Search overlay input dashed background
 			if ( ! empty( $search_overlay_input_dashed_bg ) && '#ffffff' != $search_overlay_input_dashed_bg ) {
-				$css .= '#searchform-overlay form label i, #icon-searchform-overlay form label i{background-color:'. $search_overlay_input_dashed_bg .';}';
+				$css .= '#searchform-overlay form label i, #icon-searchform-overlay form .search-text i{background-color:'. $search_overlay_input_dashed_bg .';}';
 			}
 
 			// Search overlay input border color
@@ -5264,7 +5264,7 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 			// Mobile menu search background color
 			if ( ! empty( $mobile_menu_sidr_search_color ) && '#333333' != $mobile_menu_sidr_search_color ) {
-				$css .= 'body .sidr-class-mobile-searchform input,body .sidr-class-mobile-searchform input:focus, #mobile-dropdown #mobile-menu-search form input, #mobile-fullscreen #mobile-search input, #mobile-fullscreen #mobile-search label{color:'. $mobile_menu_sidr_search_color .';}';
+				$css .= 'body .sidr-class-mobile-searchform input,body .sidr-class-mobile-searchform input:focus, #mobile-dropdown #mobile-menu-search form input, #mobile-fullscreen #mobile-search input, #mobile-fullscreen #mobile-search .search-text{color:'. $mobile_menu_sidr_search_color .';}';
 			}
 
 			// Mobile menu search border color

@@ -67,7 +67,7 @@
 	    width: 100%;
 	    text-align: center;
 
-	    input, label {
+	    input, .search-text {
 	    	font-size: 22px;
 		    line-height: 1.3;
 		    padding: 18px 0;
@@ -96,7 +96,7 @@
 		    }
 	    }
 
-		label {
+		.search-text {
 		    display: block;
 			position: absolute;
 		    top: 0;
@@ -125,7 +125,7 @@
 			}
 		}
 
-		&.search-filled label {
+		&.search-filled .search-text {
 			@include opacity( 0 );
 		    @include transition-duration( 150ms );
 		}
@@ -141,7 +141,7 @@
 #icon-searchform-overlay {
 
 	form {
-		label,
+		.search-text,
 		input {
 			font-size: 16px;
 		}
