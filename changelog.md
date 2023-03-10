@@ -9,6 +9,7 @@
 - **Improved**: Accessibility: Header: Vertical: Menu toggle button.
 - **Improved**: Accessibility: Header: Mobile: Full Screen: Search.
 - **Improved**: Accessibility: Header: Mobile: Header Search: Overlay.
+- **Improved**: SEO: Header: Mobile: Header Search: Overlay: Crawlable icon link.
 - **Updated**: Template: searchform.php
 - **Updated**: Template: partials/mobile/mobile-fullscreen-search.php
 - **Updated**: Template: partials/mobile/mobile-fullscreen.php

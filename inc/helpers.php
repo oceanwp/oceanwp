@@ -4730,7 +4730,7 @@ function oceanwp_mobile_search_icon() {
 
 	?>
 
-	<a href="<?php echo esc_url( home_url( '/#' ) ); ?>" class="search-icon-<?php echo esc_attr( $class ); ?>" aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-search', 'oceanwp' ); ?>"><?php oceanwp_icon( 'search' ); ?></a>
+	<a href="<?php echo esc_url( ocean_get_site_name_anchors( 'mobile-header-search' ) ); ?>" class="search-icon-<?php echo esc_attr( $class ); ?>" aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-search', 'oceanwp' ); ?>"><?php oceanwp_icon( 'search' ); ?></a>
 
 	<?php
 }
@@ -4789,7 +4789,7 @@ function oceanwp_mobile_search_form_html() {
 		?>
 		<div class="container clr">
 			<form id="mhso-search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?>">
-				<a href="<?php echo esc_url( home_url( '/#' ) ); ?>" class="search-overlay-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-close-search-form' ); ?>"><span></span></a>
+				<a href="<?php echo esc_url( ocean_get_site_name_anchors( 'mobile-header-search-close' ) ); ?>" class="search-overlay-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-close-search-form' ); ?>"><span></span></a>
 				<label for="<?php echo esc_attr( $ocean_msf_id ); ?>"><?php oceanwp_theme_strings( 'owp-string-search-overlay-search-text' ); ?><span aria-hidden="true"><i></i><i></i><i></i></span></label>
 				<input aria-labelledby="mhso-search <?php echo esc_attr( $ocean_msf_id ); ?>" class="mobile-search-overlay-input" id="<?php echo esc_attr( $ocean_msf_id ); ?>" type="search" name="s" autocomplete="off" value="">
 				<?php
@@ -4996,4 +4996,27 @@ function ocean_link_post_url_target( $id ) {
 	}
 
 	return apply_filters( 'ocean_link_post_url_target', $target );
+}
+
+/**
+ * Return SEO-friendly (crawlable) and accessibility-friendly (not redundant) links
+ * 
+ * @since 3.4.4
+ */
+if ( ! function_exists( 'ocean_get_site_name_anchors') ) {
+
+	function ocean_get_site_name_anchors( $content = '' ) {
+		$result     = '';
+		$site_url   = home_url( '/#owp-' );
+
+		if ( $content ) {
+			$result = $site_url . $content;
+		} else {
+			$result = $site_url . 'sitelink';
+		}
+
+		$result = apply_filters( 'ocean_site_name_anchors', $result );
+
+		return $result;
+	}
 }
