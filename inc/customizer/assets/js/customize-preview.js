@@ -3952,7 +3952,7 @@
 				var $child = $(".customizer-ocean_full_screen_header_search_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_full_screen_header_search_color">#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input,#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li label { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_full_screen_header_search_color">#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input,#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li .search-text { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3967,7 +3967,7 @@
 				var $child = $(".customizer-ocean_full_screen_header_search_dashed_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_full_screen_header_search_dashed_bg">#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li label i { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_full_screen_header_search_dashed_bg">#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li .search-text i { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

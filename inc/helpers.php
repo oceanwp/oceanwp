@@ -1852,7 +1852,7 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 		$items .= '<li class="search-toggle-li" ' . apply_filters( 'oceanwp_attrs_nav_search_bar', '' ) . '>';
 		if ( 'full_screen' == $header_style ) {
 			$items .= '<form action="' . esc_url( home_url( '/' ) ) . '" class="header-searchform" aria-label="' . esc_attr( oceanwp_theme_strings( 'owp-string-search-form-label', false ) ) . '">';
-				$items .= '<label>' . esc_html( oceanwp_theme_strings( 'owp-string-mobile-fs-search-text', false ) ) . '<span><i></i><i></i><i></i></span></label>';
+				$items .= '<span class="search-text">' . esc_html( oceanwp_theme_strings( 'owp-string-mobile-fs-search-text', false ) ) . '<span><i></i><i></i><i></i></span></span>';
 				$items .= '<input aria-label="' . esc_attr( oceanwp_theme_strings( 'owp-string-fullscreen-submit-search', false ) ) . '" type="search" name="s" value="" autocomplete="off" />';
 
 			if ( ! function_exists( 'is_plugin_active' ) ) {

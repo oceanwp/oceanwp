@@ -4511,12 +4511,12 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 
 				// Search color
 				if ( ! empty( $full_screen_header_search_color ) && '#ffffff' != $full_screen_header_search_color ) {
-					$css .= '#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input,#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li label{color:'. $full_screen_header_search_color .';}';
+					$css .= '#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input,#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li .search-text{color:'. $full_screen_header_search_color .';}';
 				}
 
 				// Search dashed background color
 				if ( ! empty( $full_screen_header_search_dashed_bg ) && '#ffffff' != $full_screen_header_search_dashed_bg ) {
-					$css .= '#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li label i{background-color:'. $full_screen_header_search_dashed_bg .';}';
+					$css .= '#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li .search-text i{background-color:'. $full_screen_header_search_dashed_bg .';}';
 				}
 
 				// Search border color
