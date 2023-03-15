@@ -44,11 +44,14 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 	$close_text = oceanwp_tm_translation( 'ocean_mobile_menu_close_text', $close_text );
 	$close_text = $close_text ? $close_text : esc_html__( 'Close', 'oceanwp' );
 
+	// SEO link txt.
+	$anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-mobile-icon-anchor', false ) );
+
 	if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 
 		// Get cart icon.
 		$woo_icon = get_theme_mod( 'ocean_woo_menu_icon', 'icon_handbag' );
-		$woo_icon = in_array( $woo_icon, oceanwp_get_cart_icons() ) && $woo_icon ? $woo_icon : 'icon_handbag';
+		$woo_icon = in_array( $woo_icon, oceanwp_get_cart_icons(), true ) && $woo_icon ? $woo_icon : 'icon_handbag';
 
 		// If has custom cart icon.
 		$custom_icon = get_theme_mod( 'ocean_woo_menu_custom_icon' );
@@ -97,7 +100,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 		<?php do_action( 'ocean_before_mobile_icon_inner' ); ?>
 
-		<a href="#" class="mobile-menu" <?php echo $toggle_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> aria-label="<?php esc_attr_e( 'Mobile Menu', 'oceanwp' ); ?>">
+		<a href="<?php echo esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ); ?>" class="mobile-menu" <?php echo $toggle_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> aria-label="<?php esc_attr_e( 'Mobile Menu', 'oceanwp' ); ?>">
 			<?php
 			if ( 'default' !== $btn ) {
 				?>

@@ -6,7 +6,7 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) or exit;
+defined( 'ABSPATH' ) || exit;
 
 // Only display for standard posts.
 if ( 'post' !== get_post_type() ) {
@@ -35,9 +35,9 @@ $heading = apply_filters( 'single_ocean_header_2_h_tag', $heading );
 
 			<header class="blog-post-title">
 
-				<?php the_title( '<'. $heading .' class="single-post-title">', '</'. $heading .'>' ); ?>
+				<?php the_title( '<' . esc_attr( $heading ) . ' class="single-post-title">', '</' . esc_attr( $heading ) . '>' ); ?>
 
-				<?php if ( $display_sph_meta === true ) { ?>
+				<?php if ( true === $display_sph_meta ) { ?>
 
 					<div class="blog-post-meta">
 						<?php do_action( 'ocean_single_post_header_meta' ); ?>

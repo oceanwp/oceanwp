@@ -33,13 +33,13 @@ $sp_seo_set = get_theme_mod( 'ocean_enable_sp_fimage_alt', false );
 $sp_seo_set = $sp_seo_set ? $sp_seo_set : false;
 
 // Retreive image alt text or use OceanWP default text if image alt text not set.
-$spfe_img_alt = get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true);
+$spfe_img_alt = get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true );
 
-$sp_fimage_alt = ( false === $sp_seo_set || ( true === $sp_seo_set && ! $spfe_img_alt ) ) ? oceanwp_theme_strings( 'owp-string-current-read', false ) . ' ' . get_the_title() : $spfe_img_alt;
+$sp_fimage_alt = ( false === $sp_seo_set || ( true === $sp_seo_set && ! $spfe_img_alt ) ) ? esc_attr( oceanwp_theme_strings( 'owp-string-current-read', false ) ) . ' ' . get_the_title() : esc_attr( $spfe_img_alt );
 
 // Image args.
 $img_args = array(
-	'alt' => $sp_fimage_alt,
+	'alt' => esc_attr( $sp_fimage_alt ),
 );
 
 if ( oceanwp_get_schema_markup( 'image' ) ) {

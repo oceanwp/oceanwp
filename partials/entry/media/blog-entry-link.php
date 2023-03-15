@@ -55,7 +55,10 @@ $link_target = ocean_link_post_url_target( get_the_ID() );
 
 <div class="thumbnail">
 
-	<a href="<?php echo esc_url( $post_link ); ?>" <?php if ( $link_target ) { ?> target="<?php echo esc_attr( $link_target ); ?>" <?php } ?> class="thumbnail-link">
+	<a href="<?php echo esc_url( $post_link ); ?>"
+		<?php if ( $link_target ) { ?>
+			target="<?php echo esc_attr( $link_target ); ?>"
+		<?php } ?> class="thumbnail-link">
 
 		<?php
 		// Image width.
@@ -109,14 +112,15 @@ $link_target = ocean_link_post_url_target( get_the_ID() );
 
 	<div class="link-entry <?php echo esc_attr( $icon_class ); ?> clr">
 
-		<a aria-label="<?php oceanwp_theme_strings( 'owp-string-link-post-format' ); ?>" href="<?php echo esc_url( $post_link ); ?>" <?php if ( $link_target ) { ?> target="<?php echo esc_attr( $link_target ); ?>" <?php } ?>><?php oceanwp_icon( 'link' ); ?>
-		<?php
-		if ( '_blank' === $link_target ) {
-			?>
-			<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-new-tab-alert' ); ?></span>
-		<?php
-		}
-		?>
+		<a aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-link-post-format', false ) ); ?>" href="<?php echo esc_url( $post_link ); ?>"
+			<?php if ( $link_target ) { ?>
+				target="<?php echo esc_attr( $link_target ); ?>"
+			<?php } ?>><?php oceanwp_icon( 'link' ); ?>
+
+			<?php if ( '_blank' === $link_target ) { ?>
+				<span class="screen-reader-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-new-tab-alert', false ) ); ?></span>
+			<?php } ?>
+
 		</a>
 
 	</div>

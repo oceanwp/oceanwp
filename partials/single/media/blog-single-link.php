@@ -33,6 +33,7 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 
 // Caption.
 $caption = get_the_post_thumbnail_caption();
+
 ?>
 
 <div class="thumbnail">
@@ -53,14 +54,12 @@ $caption = get_the_post_thumbnail_caption();
 
 	<div class="link-entry <?php echo esc_attr( $icon_class ); ?> clr">
 
-		<a aria-label="<?php oceanwp_theme_strings( 'owp-string-link-post-format' ); ?>" href="<?php echo esc_url( get_post_meta( get_the_ID(), 'ocean_link_format', true ) ); ?>" target="_<?php echo esc_attr( get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ); ?>"><?php oceanwp_icon( 'link' ); ?>
-		<?php
-		if ( 'blank' === get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ) {
-			?>
-			<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-new-tab-alert' ); ?></span>
-		<?php
-		}
-		?>
+		<a aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-link-post-format', false ) ); ?>" href="<?php echo esc_url( get_post_meta( get_the_ID(), 'ocean_link_format', true ) ); ?>" target="_<?php echo esc_attr( get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ); ?>"><?php oceanwp_icon( 'link' ); ?>
+
+			<?php if ( 'blank' === get_post_meta( get_the_ID(), 'ocean_link_format_target', true ) ) { ?>
+				<span class="screen-reader-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-new-tab-alert', false ) ); ?></span>
+			<?php } ?>
+
 		</a>
 
 	</div>

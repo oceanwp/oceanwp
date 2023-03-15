@@ -35,13 +35,13 @@ $be_seo_set = get_theme_mod( 'ocean_enable_be_fimage_alt', false );
 $be_seo_set = $be_seo_set ? $be_seo_set : false;
 
 // Retreive image alt text or use OceanWP default text if image alt text not set.
-$fe_img_alt = get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true);
+$fe_img_alt = get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true );
 
-$be_fimage_alt = ( false === $be_seo_set || ( true === $be_seo_set && ! $fe_img_alt ) ) ? oceanwp_theme_strings( 'owp-string-read-more-article', false ) . ' ' . get_the_title() : $fe_img_alt;
+$be_fimage_alt = ( false === $be_seo_set || ( true === $be_seo_set && ! $fe_img_alt ) ) ? esc_attr( oceanwp_theme_strings( 'owp-string-read-more-article', false ) ) . ' ' . esc_attr( get_the_title() ) : esc_attr( $fe_img_alt );
 
 // Image args.
 $img_args = array(
-	'alt' => $be_fimage_alt,
+	'alt' => esc_attr( $be_fimage_alt ),
 );
 
 if ( oceanwp_get_schema_markup( 'image' ) ) {
@@ -75,7 +75,7 @@ $caption = get_the_post_thumbnail_caption();
 		if ( OCEAN_EXTRA_ACTIVE
 			&& function_exists( 'ocean_extra_resize' )
 			&& ! empty( $img_atts ) ) {
-	
+
 			?>
 
 			<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts['width'], $img_atts['height'], $img_atts['crop'], true, $img_atts['upscale'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" alt="<?php the_title_attribute(); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>"<?php oceanwp_schema_markup( 'image' ); ?> />

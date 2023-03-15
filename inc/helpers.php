@@ -3318,20 +3318,20 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 
 		// Labels.
 		if ( $req ) {
-			$comment_name  = oceanwp_theme_strings( 'owp-string-comment-name-req', false, 'oceanwp' );
-			$comment_email = oceanwp_theme_strings( 'owp-string-comment-email-req', false, 'oceanwp' );
+			$comment_name  = oceanwp_theme_strings( 'owp-string-comment-name-req', false );
+			$comment_email = oceanwp_theme_strings( 'owp-string-comment-email-req', false );
 		} else {
-			$comment_name  = oceanwp_theme_strings( 'owp-string-comment-name', false, 'oceanwp' );
-			$comment_email = oceanwp_theme_strings( 'owp-string-comment-email', false, 'oceanwp' );
+			$comment_name  = oceanwp_theme_strings( 'owp-string-comment-name', false );
+			$comment_email = oceanwp_theme_strings( 'owp-string-comment-email', false );
 		}
 
-		$comment_site = oceanwp_theme_strings( 'owp-string-comment-website', false, 'oceanwp' );
+		$comment_site = oceanwp_theme_strings( 'owp-string-comment-website', false );
 
-		$fields['author'] = '<div class="comment-form-author"><label for="author" class="screen-reader-text">' . esc_html__( 'Enter your name or username to comment', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . $comment_name . '" size="22" tabindex="0"' . ( $req ? ' aria-required="true"' : '' ) . ' class="input-name" /></div>';
+		$fields['author'] = '<div class="comment-form-author"><label for="author" class="screen-reader-text">' . esc_html__( 'Enter your name or username to comment', 'oceanwp' ) . '</label><input type="text" name="author" id="author" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . esc_attr( $comment_name ) . '" size="22" tabindex="0"' . ( $req ? ' aria-required="true"' : '' ) . ' class="input-name" /></div>';
 
-		$fields['email'] = '<div class="comment-form-email"><label for="email" class="screen-reader-text">' . esc_html__( 'Enter your email address to comment', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . $comment_email . '" size="22" tabindex="0"' . ( $req ? ' aria-required="true"' : '' ) . ' class="input-email" /></div>';
+		$fields['email'] = '<div class="comment-form-email"><label for="email" class="screen-reader-text">' . esc_html__( 'Enter your email address to comment', 'oceanwp' ) . '</label><input type="text" name="email" id="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . esc_attr( $comment_email ) . '" size="22" tabindex="0"' . ( $req ? ' aria-required="true"' : '' ) . ' class="input-email" /></div>';
 
-		$fields['url'] = '<div class="comment-form-url"><label for="url" class="screen-reader-text">' . esc_html__( 'Enter your website URL (optional)', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . $comment_site . '" size="22" tabindex="0" class="input-website" /></div>';
+		$fields['url'] = '<div class="comment-form-url"><label for="url" class="screen-reader-text">' . esc_html__( 'Enter your website URL (optional)', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr( $comment_site ) . '" size="22" tabindex="0" class="input-website" /></div>';
 
 		return $fields;
 
@@ -4728,9 +4728,12 @@ function oceanwp_mobile_search_icon() {
 		$class = '';
 	}
 
+	// SEO link txt.
+	$anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-mobile-search-anchor', false ) );
+
 	?>
 
-	<a href="<?php echo esc_url( ocean_get_site_name_anchors( 'mobile-header-search' ) ); ?>" class="search-icon-<?php echo esc_attr( $class ); ?>" aria-label="<?php oceanwp_theme_strings( 'owp-string-mobile-search', 'oceanwp' ); ?>"><?php oceanwp_icon( 'search' ); ?></a>
+	<a href="<?php echo esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ); ?>" class="search-icon-<?php echo esc_attr( $class ); ?>" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-mobile-search', false ) ); ?>"><?php oceanwp_icon( 'search' ); ?></a>
 
 	<?php
 }
@@ -4755,7 +4758,7 @@ function oceanwp_mobile_search_form_html() {
 		return;
 	}
 
-	// Get correct search icon class
+	// Get correct search icon class.
 	if ( 'drop_down' == $search_style ) {
 		$class = 'dropdown';
 	} elseif ( 'header_replace' == $search_style ) {
@@ -4766,13 +4769,16 @@ function oceanwp_mobile_search_form_html() {
 		$class = '';
 	}
 
+	// SEO link txt.
+	$anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-mh-search-close-anchor', false ) );
+
 	if ( 'drop_down' === $search_style ) {
 		$mobile_search_content = '';
 		ob_start();
 		?>
 		<form method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
-			<input aria-label="<?php oceanwp_theme_strings( 'owp-string-search-field' ); ?>" type="text" class="field" id="<?php echo esc_attr( $ocean_msf_id ); ?>" name="s" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>">
+		<span class="screen-reader-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-search-form-label', false ) ); ?></span>
+			<input aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-search-field', false ) ); ?>" type="text" class="field" id="<?php echo esc_attr( $ocean_msf_id ); ?>" name="s" placeholder="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-search-text', false ) ); ?>">
 			<?php
 			if ( 'any' !== $post_type ) {
 				?>
@@ -4788,9 +4794,9 @@ function oceanwp_mobile_search_form_html() {
 		ob_start();
 		?>
 		<div class="container clr">
-			<form id="mhso-search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?>">
-				<a href="<?php echo esc_url( ocean_get_site_name_anchors( 'mobile-header-search-close' ) ); ?>" class="search-overlay-close" aria-label="<?php oceanwp_theme_strings( 'owp-string-close-search-form' ); ?>"><span></span></a>
-				<span class="search-text"><?php oceanwp_theme_strings( 'owp-string-search-overlay-search-text' ); ?><span aria-hidden="true"><i></i><i></i><i></i></span></span>
+			<form id="mhso-search" method="get" class="mobile-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-search-form-label', false ) ); ?>">
+				<a href="<?php echo esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ); ?>" class="search-overlay-close" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-close-search-form', false ) ); ?>"><span></span></a>
+				<span class="search-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-search-overlay-search-text', false ) ); ?><span aria-hidden="true"><i></i><i></i><i></i></span></span>
 				<input aria-labelledby="mhso-search <?php echo esc_attr( $ocean_msf_id ); ?>" class="mobile-search-overlay-input" id="<?php echo esc_attr( $ocean_msf_id ); ?>" type="search" name="s" autocomplete="off" value="">
 				<?php
 				if ( 'any' !== $post_type ) {
@@ -5007,7 +5013,7 @@ if ( ! function_exists( 'ocean_get_site_name_anchors') ) {
 
 	function ocean_get_site_name_anchors( $content = '' ) {
 		$result     = '';
-		$site_url   = home_url( '/#owp-' );
+		$site_url   = esc_url( home_url( '/#' ) );
 
 		if ( $content ) {
 			$result = $site_url . $content;
