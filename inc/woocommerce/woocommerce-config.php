@@ -1361,7 +1361,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Floating Bar conditional vars.
 			$fb_show_cond = '';
-			$fb_show_cond = ( is_user_logged_in() && $fb_woo_cond === true );
+			$fb_show_cond = ( is_user_logged_in() && true === $fb_woo_cond );
 
 			// Floating Bar Heading tag.
 			$fb_h_tag = 'h2';
@@ -1372,7 +1372,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			<div class="owp-floating-bar">
 				<div class="container clr">
 					<div class="left">
-						<p class="selected"><?php oceanwp_theme_strings( 'owp-string-woo-floating-bar-selected', 'oceanwp' ); ?></p>
+						<p class="selected"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-woo-floating-bar-selected', false ) ); ?></p>
 						<<?php echo esc_attr( $fb_h_tag ); ?> class="entry-title" itemprop="name"><?php echo wp_trim_words( $product->get_title(), '4' ); ?></<?php echo esc_attr( $fb_h_tag ); ?>>
 					</div>
 					<?php
