@@ -96,8 +96,8 @@ if ( $oceanwp_related_query->have_posts() ) :
 			<?php $oceanwp_count = 0; ?>
 
 			<?php
-			foreach ( $oceanwp_related_query->posts as $rel_post ) :
-				setup_postdata( $rel_post );
+			foreach ( $oceanwp_related_query->posts as $post ) :
+				setup_postdata( $post );
 				?>
 
 				<?php
