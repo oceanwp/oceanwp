@@ -126,7 +126,7 @@ if ( 'blank' === $link_target ) {
 					echo '<a href="' . $esc_url . '" ' . $aria_label . ' target="_' . esc_attr( $link_target ) . '" ' . $link_rel . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped  -- Escaped above.
 				}
 
-				echo wp_kses_post( $val['icon_class'] );
+				echo $val['icon_class']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped  -- Escaped during generation.
 
 				echo '</a>';
 
