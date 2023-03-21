@@ -1302,10 +1302,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				?>
 
 				<li class="prev-li">
-				<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-link prev" rel="next" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-prev-product', false ) ); ?>"><?php echo $next_arrow; ?></a>
-					<a href="<?php echo get_the_permalink( $prev_post->ID ); ?>" class="owp-nav-text prev-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', false ) ); ?></a>
+				<a href="<?php echo esc_url( get_the_permalink( $prev_post->ID ) ); ?>" class="owp-nav-link prev" rel="next" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-prev-product', false ) ); ?>"><?php echo $next_arrow; ?></a>
+					<a href="<?php echo esc_url( get_the_permalink( $prev_post->ID ) ); ?>" class="owp-nav-text prev-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-woo-nav-prev-product', false ) ); ?></a>
 					<div class="owp-nav-thumb">
-						<a title="<?php echo get_the_title( $prev_post->ID ); ?>" href="<?php echo get_the_permalink( $prev_post->ID ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
+						<a title="<?php echo esc_attr( get_the_title( $prev_post->ID ) ); ?>" href="<?php echo esc_url( get_the_permalink( $prev_post->ID ) ); ?>"><?php echo get_the_post_thumbnail( $prev_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 					</div>
 				</li>
 
@@ -1319,10 +1319,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				?>
 
 				<li class="next-li">
-					<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-text next-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-woo-nav-next-product', false ) ); ?></a>
-					<a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="owp-nav-link next" rel="next" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-next-product', false ) ); ?>"><?php echo $prev_arrow; ?></i></a>
+					<a href="<?php echo esc_url( get_the_permalink( $next_post->ID ) ); ?>" class="owp-nav-text next-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-woo-nav-next-product', false ) ); ?></a>
+					<a href="<?php echo esc_url( get_the_permalink( $next_post->ID ) ); ?>" class="owp-nav-link next" rel="next" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-next-product', false ) ); ?>"><?php echo $prev_arrow; ?></i></a>
 					<div class="owp-nav-thumb">
-						<a title="<?php echo get_the_title( $next_post->ID ); ?>" href="<?php echo get_the_permalink( $next_post->ID ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
+						<a title="<?php echo esc_attr( get_the_title( $next_post->ID ) ); ?>" href="<?php echo esc_url( get_the_permalink( $next_post->ID ) ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 					</div>
 				</li>
 
@@ -1334,7 +1334,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			<div class="owp-product-nav-wrap clr">
 				<ul class="owp-product-nav">
-					 <?php echo $ocean_next_prev_prod_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo $ocean_next_prev_prod_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?>
 				</ul>
 			</div>
 

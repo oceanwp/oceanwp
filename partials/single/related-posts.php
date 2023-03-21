@@ -96,7 +96,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 			<?php $oceanwp_count = 0; ?>
 
 			<?php
-			foreach ( $oceanwp_related_query->posts as $post ) :
+			foreach ( $oceanwp_related_query->posts as $post ) : // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited -- No override.
 				setup_postdata( $post );
 				?>
 
