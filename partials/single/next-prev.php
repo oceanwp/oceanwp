@@ -24,9 +24,9 @@ $prev_arrow = is_rtl() ? 'long_arrow_alt_right' : 'long_arrow_alt_left';
 $next_arrow = is_rtl() ? 'long_arrow_alt_left' : 'long_arrow_alt_right';
 
 // Vars.
-$prev_text = '<span class="title">' . oceanwp_icon( $prev_arrow, false ) . ' ' . oceanwp_theme_strings( 'owp-string-single-prev-post', false, 'oceanwp' ) . '</span><span class="post-title">%title</span>';
-$next_text = '<span class="title">' . oceanwp_icon( $next_arrow, false ) . ' ' . oceanwp_theme_strings( 'owp-string-single-next-post', false, 'oceanwp' ) . '</span><span class="post-title">%title</span>';
-$screen_rt = oceanwp_theme_strings( 'owp-string-single-screen-reader-rm', false, 'oceanwp' );
+$prev_text = '<span class="title">' . oceanwp_icon( $prev_arrow, false ) . ' ' . esc_html( oceanwp_theme_strings( 'owp-string-single-prev-post', false ) ) . '</span><span class="post-title">%title</span>';
+$next_text = '<span class="title">' . oceanwp_icon( $next_arrow, false ) . ' ' . esc_html( oceanwp_theme_strings( 'owp-string-single-next-post', false ) ) . '</span><span class="post-title">%title</span>';
+$screen_rt = esc_html( oceanwp_theme_strings( 'owp-string-single-screen-reader-rm', false ) );
 
 // Args.
 if ( 'pub-date' === $term_tax ) {

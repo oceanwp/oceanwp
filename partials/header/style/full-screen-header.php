@@ -19,7 +19,12 @@ if ( true !== get_theme_mod( 'ocean_header_full_width', false ) ) {
 }
 
 // Turn classes into space seperated string.
-$classes = implode( ' ', $classes ); ?>
+$classes = implode( ' ', $classes );
+
+// SEO link txt.
+$anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-fullscreen-header-anchor', false ) );
+
+?>
 
 <?php do_action( 'ocean_before_header_inner' ); ?>
 
@@ -33,7 +38,7 @@ $classes = implode( ' ', $classes ); ?>
 
 		<div class="menu-bar-wrap clr">
 			<div class="menu-bar-inner clr">
-				<a href="#" class="menu-bar"><span class="ham"></span></a>
+				<a href="<?php echo esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ); ?>" class="menu-bar"><span class="ham"></span><span class="screen-reader-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-open-menu', false ) ); ?></span></a>
 			</div>
 		</div>
 

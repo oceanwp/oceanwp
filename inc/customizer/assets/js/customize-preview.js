@@ -3952,7 +3952,7 @@
 				var $child = $(".customizer-ocean_full_screen_header_search_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_full_screen_header_search_color">#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input,#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li label { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_full_screen_header_search_color">#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input,#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li .search-text { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -3967,7 +3967,7 @@
 				var $child = $(".customizer-ocean_full_screen_header_search_dashed_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_full_screen_header_search_dashed_bg">#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li label i { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_full_screen_header_search_dashed_bg">#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li .search-text i { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5109,7 +5109,7 @@
 				var $child = $(".customizer-ocean_search_overlay_input_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_input_color">#searchform-overlay form input,#searchform-overlay form label, #icon-searchform-overlay form input, #icon-searchform-overlay form label{ color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_input_color">#searchform-overlay form input,#searchform-overlay form .search-text, #icon-searchform-overlay form input, #icon-searchform-overlay form .search-text{ color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5124,7 +5124,7 @@
 				var $child = $(".customizer-ocean_search_overlay_placeholder_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_placeholder_color">#searchform-overlay form label, #icon-searchform-overlay form label { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_placeholder_color">#searchform-overlay form .search-text, #icon-searchform-overlay form .search-text { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5139,7 +5139,7 @@
 				var $child = $(".customizer-ocean_search_overlay_input_dashed_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_input_dashed_bg">#searchform-overlay form label i, #icon-searchform-overlay form label i { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_input_dashed_bg">#searchform-overlay form .search-text i, #icon-searchform-overlay form .search-text i { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -6192,7 +6192,7 @@
 				var $child = $(".customizer-ocean_mobile_menu_sidr_search_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_mobile_menu_sidr_search_color">body .sidr-class-mobile-searchform input,body .sidr-class-mobile-searchform input:focus, #mobile-dropdown #mobile-menu-search form input, #mobile-fullscreen #mobile-search input, #mobile-fullscreen #mobile-search label { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_mobile_menu_sidr_search_color">body .sidr-class-mobile-searchform input,body .sidr-class-mobile-searchform input:focus, #mobile-dropdown #mobile-menu-search form input, #mobile-fullscreen #mobile-search input, #mobile-fullscreen #mobile-search .search-text { color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {

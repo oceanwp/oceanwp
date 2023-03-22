@@ -11,21 +11,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Post type.
-$post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
+$search_post_type = get_theme_mod( 'ocean_menu_search_source', 'any' );
 
 // Generate unique form ID.
 $ocean_sf_id = oceanwp_unique_id( 'ocean-search-form-' );
-$osf_id      = esc_attr( $ocean_sf_id );
 
 ?>
 
-<form role="search" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label for="<?php echo esc_attr( $osf_id ); ?>">
-		<span class="screen-reader-text"><?php oceanwp_theme_strings( 'owp-string-search-form-label' ); ?></span>
-		<input type="search" id="<?php echo esc_attr( $osf_id ); ?>" class="field" autocomplete="off" placeholder="<?php oceanwp_theme_strings( 'owp-string-search-text', 'oceanwp' ); ?>" name="s">
-		<?php if ( 'any' !== $post_type ) { ?>
-			<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>">
-		<?php } ?>
-	</label>
+<form aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-search-form-label', false ) ); ?>" role="search" method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">	
+	<input aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-search-field', false ) ); ?>" type="search" id="<?php echo esc_attr( $ocean_sf_id ); ?>" class="field" autocomplete="off" placeholder="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-search-text', false ) ); ?>" name="s">
+	<?php if ( 'any' !== $search_post_type ) { ?>
+		<input type="hidden" name="post_type" value="<?php echo esc_attr( $search_post_type ); ?>">
+	<?php } ?>
 	<?php do_action( 'wpml_add_language_form_field' ); ?>
 </form>

@@ -38,7 +38,7 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Disable the option for the edit links to be displayed on your blog archives (visible to website admins only). Edit links allow you to quickly access the WordPress editor for any blog post directly from the archive pages.', 'oceanwp' ); ?></h3>
 		<div id="ocean-edit-post-disable" class="oceanwp-tp-switcher column-wrap">
 			<label for="oceanwp-switch-edit-post-disable" class="column-name">
-				<input type="checkbox" role="checkbox" name="edit-post-disable" value="true" id="oceanwp-switch-edit-post-disable" <?php checked( $oe_disable_edit_post_active_status == 'yes' ); ?> />
+				<input type="checkbox" role="checkbox" name="edit-post-disable" value="true" id="oceanwp-switch-edit-post-disable" <?php checked( $oe_disable_edit_post_active_status === 'yes' ); ?> />
 				<span class="slider round"></span>
 			</label>
 		</div>
@@ -87,7 +87,7 @@ $oe_disable_edit_post_active_status = get_option( 'oe_disable_edit_post_active_s
 		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'We highly recommend you keep this feature enabled and always be up to speed with OceanWP news regarding features, webinars, updates and more. We will announce only the most important news. If you ever wish to disable this feature, you can do it any time.', 'oceanwp' ); ?></h3>
 		<div id="ocean-notification-disable" class="oceanwp-tp-switcher column-wrap">
 			<label for="oceanwp-switch-notification-disable" class="column-name">
-				<input type="checkbox" role="checkbox" name="notification-disable" value="true" id="oceanwp-switch-notification-disable" <?php checked( $oe_notification_active_status == 'yes' ); ?> />
+				<input type="checkbox" role="checkbox" name="notification-disable" value="true" id="oceanwp-switch-notification-disable" <?php checked( $oe_notification_active_status === 'yes' ); ?> />
 				<span class="slider round"></span>
 			</label>
 		</div>

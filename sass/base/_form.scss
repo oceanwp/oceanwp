@@ -284,6 +284,11 @@ body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	color: $color-1;
 }
 
+.elementor-form input[type=checkbox],
+.elementor-form input[type=radio] {
+    display: inline-block !important;
+}
+
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
