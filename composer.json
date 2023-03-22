@@ -26,5 +26,10 @@
             "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs"
         ],
         "make-pot": "wp i18n make-pot . languages/oceanwp.pot"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
