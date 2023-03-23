@@ -2604,7 +2604,11 @@ ul.order_details li strong {
   width: 100%;
   margin-top: 30px;
 }
-.woocommerce-checkout #order_review {
+.woocommerce-checkout div:not(.e-checkout__order_review) h3#order_review_heading {
+  float: right;
+  width: 48%;
+}
+.woocommerce-checkout div:not(.e-checkout__order_review) #order_review {
   float: right;
   width: 48%;
 }
@@ -2733,10 +2737,6 @@ ul.order_details li strong {
   clear: both;
   zoom: 1;
   height: 0;
-}
-.woocommerce-checkout h3#order_review_heading {
-  float: right;
-  width: 48%;
 }
 .woocommerce-checkout .place-order .terms {
   margin: 0 0 8px;
