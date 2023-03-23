@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-17T09:57:49+00:00\n"
+"POT-Creation-Date: 2023-03-23T10:17:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: oceanwp\n"
@@ -17,13 +17,13 @@ msgstr ""
 #. Theme Name of the theme
 #. Author of the theme
 #: build/oceanwp/inc/helpers.php:3814
-#: build/oceanwp/inc/helpers.php:4868
-#: build/oceanwp/inc/helpers.php:4886
-#: build/oceanwp/inc/helpers.php:4887
+#: build/oceanwp/inc/helpers.php:4874
+#: build/oceanwp/inc/helpers.php:4892
+#: build/oceanwp/inc/helpers.php:4893
 #: inc/helpers.php:3814
-#: inc/helpers.php:4868
-#: inc/helpers.php:4886
-#: inc/helpers.php:4887
+#: inc/helpers.php:4874
+#: inc/helpers.php:4892
+#: inc/helpers.php:4893
 msgid "OceanWP"
 msgstr ""
 
@@ -116,12 +116,12 @@ msgstr ""
 
 #: build/oceanwp/comments.php:104
 #: build/oceanwp/comments.php:117
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:818
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:840
 #: build/oceanwp/partials/edd/single.php:54
 #: build/oceanwp/woocommerce/checkout/form-multistep-checkout.php:97
 #: comments.php:104
 #: comments.php:117
-#: inc/woocommerce/woocommerce-config.php:818
+#: inc/woocommerce/woocommerce-config.php:819
 #: partials/edd/single.php:54
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "Next"
@@ -5105,11 +5105,11 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/header.php:3389
 #: build/oceanwp/inc/customizer/settings/header.php:3666
 #: build/oceanwp/inc/customizer/settings/typography.php:140
-#: build/oceanwp/partials/mobile/mobile-icon.php:100
+#: build/oceanwp/partials/mobile/mobile-icon.php:103
 #: inc/customizer/settings/header.php:3389
 #: inc/customizer/settings/header.php:3666
 #: inc/customizer/settings/typography.php:140
-#: partials/mobile/mobile-icon.php:100
+#: partials/mobile/mobile-icon.php:103
 msgid "Mobile Menu"
 msgstr ""
 
@@ -6109,10 +6109,10 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1487
 #: build/oceanwp/inc/helpers.php:3946
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:976
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:998
 #: inc/customizer/settings/woocommerce.php:1487
 #: inc/helpers.php:3946
-#: inc/woocommerce/woocommerce-config.php:976
+#: inc/woocommerce/woocommerce-config.php:977
 msgid "Filter"
 msgstr ""
 
@@ -6197,13 +6197,13 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1751
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2297
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1409
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1431
 #: build/oceanwp/woocommerce/owp-archive-product-hover.php:136
 #: build/oceanwp/woocommerce/owp-archive-product.php:178
 #: build/oceanwp/woocommerce/owp-single-product.php:79
 #: inc/customizer/settings/woocommerce.php:1751
 #: inc/customizer/settings/woocommerce.php:2297
-#: inc/woocommerce/woocommerce-config.php:1409
+#: inc/woocommerce/woocommerce-config.php:1410
 #: woocommerce/owp-archive-product-hover.php:136
 #: woocommerce/owp-archive-product.php:178
 #: woocommerce/owp-single-product.php:79
@@ -6456,10 +6456,10 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2766
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:5291
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:901
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:923
 #: inc/customizer/settings/woocommerce.php:2766
 #: inc/customizer/settings/woocommerce.php:5291
-#: inc/woocommerce/woocommerce-config.php:901
+#: inc/woocommerce/woocommerce-config.php:902
 msgid "Cart"
 msgstr ""
 
@@ -6702,9 +6702,9 @@ msgid "Hover: Wishlist Hover Color"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4182
-#: build/oceanwp/inc/oceanwp-strings.php:57
+#: build/oceanwp/inc/oceanwp-strings.php:99
 #: inc/customizer/settings/woocommerce.php:4182
-#: inc/oceanwp-strings.php:57
+#: inc/oceanwp-strings.php:99
 msgid "Quick View"
 msgstr ""
 
@@ -6974,9 +6974,9 @@ msgid "EDD Sidebar"
 msgstr ""
 
 #: build/oceanwp/inc/edd/edd-config.php:407
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2063
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2085
 #: inc/edd/edd-config.php:407
-#: inc/woocommerce/woocommerce-config.php:2063
+#: inc/woocommerce/woocommerce-config.php:2064
 msgid "Your cart"
 msgstr ""
 
@@ -7150,19 +7150,19 @@ msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3438
 #: build/oceanwp/inc/helpers.php:3487
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:627
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:628
 #: inc/helpers.php:3438
 #: inc/helpers.php:3487
-#: inc/woocommerce/woocommerce-config.php:627
+#: inc/woocommerce/woocommerce-config.php:628
 msgid "Newer Posts"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3441
 #: build/oceanwp/inc/helpers.php:3488
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:628
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:629
 #: inc/helpers.php:3441
 #: inc/helpers.php:3488
-#: inc/woocommerce/woocommerce-config.php:628
+#: inc/woocommerce/woocommerce-config.php:629
 msgid "Older Posts"
 msgstr ""
 
@@ -7409,9 +7409,9 @@ msgid "RSS"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4039
-#: build/oceanwp/inc/oceanwp-strings.php:46
+#: build/oceanwp/inc/oceanwp-strings.php:87
 #: inc/helpers.php:4039
-#: inc/oceanwp-strings.php:46
+#: inc/oceanwp-strings.php:87
 msgid "Email"
 msgstr ""
 
@@ -7445,341 +7445,389 @@ msgstr ""
 msgid "Discord"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:4867
-#: build/oceanwp/inc/helpers.php:4877
-#: build/oceanwp/inc/helpers.php:4878
+#: build/oceanwp/inc/helpers.php:4873
+#: build/oceanwp/inc/helpers.php:4883
+#: build/oceanwp/inc/helpers.php:4884
 #: build/oceanwp/inc/themepanel/views/layout/header.php:22
-#: inc/helpers.php:4867
-#: inc/helpers.php:4877
-#: inc/helpers.php:4878
+#: inc/helpers.php:4873
+#: inc/helpers.php:4883
+#: inc/helpers.php:4884
 #: inc/themepanel/views/layout/header.php:22
 msgid "OceanWP Panel"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:4927
+#: build/oceanwp/inc/helpers.php:4933
 #: build/oceanwp/inc/themepanel/views/panes/home.php:74
-#: inc/helpers.php:4927
+#: inc/helpers.php:4933
 #: inc/themepanel/views/panes/home.php:74
 msgid "We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date."
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:4928
-#: inc/helpers.php:4928
+#: build/oceanwp/inc/helpers.php:4934
+#: inc/helpers.php:4934
 msgid "Update and get the new Theme Panel"
 msgstr ""
 
-#: build/oceanwp/inc/oceanwp-strings.php:31
-#: inc/oceanwp-strings.php:31
-msgid "Skip to content"
-msgstr ""
-
 #: build/oceanwp/inc/oceanwp-strings.php:32
-#: build/oceanwp/inc/oceanwp-strings.php:33
 #: inc/oceanwp-strings.php:32
-#: inc/oceanwp-strings.php:33
-msgid "Search"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:34
-#: inc/oceanwp-strings.php:34
-msgid "Type your search"
+msgid "View website Menu"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:35
 #: inc/oceanwp-strings.php:35
-msgid "Type then hit enter to search..."
+msgid "Toggle the button to expand or collapse the Menu"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:36
 #: inc/oceanwp-strings.php:36
-msgid "Type then hit enter to search"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:37
-#: build/oceanwp/inc/oceanwp-strings.php:38
-#: inc/oceanwp-strings.php:37
-#: inc/oceanwp-strings.php:38
-msgid "Search..."
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "vertical-header-toggle"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:39
 #: inc/oceanwp-strings.php:39
-msgid "Log out of this account"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:40
-#: inc/oceanwp-strings.php:40
-msgid "Your comment here..."
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:41
-#: inc/oceanwp-strings.php:41
-msgid "Click to edit your profile"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "header-menu-toggle"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:42
 #: inc/oceanwp-strings.php:42
-msgid "Post Comment"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "mobile-menu-toggle"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:43
 #: inc/oceanwp-strings.php:43
-msgid "Name (required)"
+msgid "Close mobile menu"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:44
 #: inc/oceanwp-strings.php:44
-msgid "Email (required)"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:45
-#: inc/oceanwp-strings.php:45
-msgid "Name"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "mobile-header-search-close"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:47
 #: inc/oceanwp-strings.php:47
-msgid "Website"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:48
-#: build/oceanwp/inc/oceanwp-strings.php:49
-#: build/oceanwp/partials/edd/single.php:57
-#: inc/oceanwp-strings.php:48
-#: inc/oceanwp-strings.php:49
-#: partials/edd/single.php:57
-msgid "Continue Reading"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "sidr-menu-close"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:50
 #: inc/oceanwp-strings.php:50
-msgid "You Might Also Like"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:51
-#: inc/oceanwp-strings.php:51
-msgid "Next Post"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:52
-#: inc/oceanwp-strings.php:52
-msgid "Previous Post"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "mobile-fullscreen-menu"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:53
 #: inc/oceanwp-strings.php:53
-msgid "Read more articles"
+msgid "Search this website"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:54
 #: inc/oceanwp-strings.php:54
-msgid "Visit author page"
+msgid "Close this search form"
 msgstr ""
 
-#: build/oceanwp/inc/oceanwp-strings.php:58
-#: inc/oceanwp-strings.php:58
-msgid "Close quick preview"
+#: build/oceanwp/inc/oceanwp-strings.php:55
+#: inc/oceanwp-strings.php:55
+msgid "Insert search query"
 msgstr ""
 
+#: build/oceanwp/inc/oceanwp-strings.php:56
 #: build/oceanwp/inc/oceanwp-strings.php:59
+#: inc/oceanwp-strings.php:56
 #: inc/oceanwp-strings.php:59
-msgid "Select Options"
+msgid "Search"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:60
 #: inc/oceanwp-strings.php:60
-msgid "Selected:"
+msgid "Submit search"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:61
 #: inc/oceanwp-strings.php:61
-msgid "Out of stock"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "mobile-header-search"
 msgstr ""
 
-#: build/oceanwp/inc/oceanwp-strings.php:62
-#: inc/oceanwp-strings.php:62
-msgid "Next Product"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:63
-#: inc/oceanwp-strings.php:63
-msgid "Previous Product"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:66
-#: inc/oceanwp-strings.php:66
-msgid "Toggle the button to expand or collapse the Mnu"
+#: build/oceanwp/inc/oceanwp-strings.php:64
+#: inc/oceanwp-strings.php:64
+msgid "Type then hit enter to search..."
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:67
 #: inc/oceanwp-strings.php:67
-msgid "Close mobile menu"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:68
-#: inc/oceanwp-strings.php:68
-msgid "View website Menu"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:69
-#: inc/oceanwp-strings.php:69
-msgid "Toggle website search"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "hsoverlay-close"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:70
 #: inc/oceanwp-strings.php:70
-msgid "Website search form"
+msgid "Skip to content"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:71
 #: inc/oceanwp-strings.php:71
-msgid "Search for:"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:72
-#: inc/oceanwp-strings.php:72
-msgid "Submit search"
+msgid "Scroll to the top of the page"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:73
 #: inc/oceanwp-strings.php:73
-msgid "After typing hit enter to submit search query"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:74
-#: inc/oceanwp-strings.php:74
-msgid "Insert search query"
+msgid "Type your search"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:75
 #: inc/oceanwp-strings.php:75
-msgid "Search this website"
+msgid "Type then hit enter to search"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:76
-#: inc/oceanwp-strings.php:76
-msgid "Close this search form"
-msgstr ""
-
 #: build/oceanwp/inc/oceanwp-strings.php:77
+#: inc/oceanwp-strings.php:76
 #: inc/oceanwp-strings.php:77
-msgid "Scroll to the top of the page"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:78
-#: inc/oceanwp-strings.php:78
-msgid "Visit this link"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:79
-#: inc/oceanwp-strings.php:79
-msgid "Opens in a new tab"
+msgid "Search..."
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:80
 #: inc/oceanwp-strings.php:80
-msgid "Read more about"
+msgid "Log out of this account"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:81
 #: inc/oceanwp-strings.php:81
-msgid "Read more about the article"
+msgid "Your comment here..."
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:82
 #: inc/oceanwp-strings.php:82
-msgid "You are currently viewing"
+msgid "Click to edit your profile"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:83
 #: inc/oceanwp-strings.php:83
-msgid "Post author avatar"
+msgid "Post Comment"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:84
+#: inc/oceanwp-strings.php:84
+msgid "Name (required)"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:85
+#: inc/oceanwp-strings.php:85
+msgid "Email (required)"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:86
 #: inc/oceanwp-strings.php:86
-msgid "View next product"
+msgid "Name"
 msgstr ""
 
-#: build/oceanwp/inc/oceanwp-strings.php:87
-#: inc/oceanwp-strings.php:87
-msgid "View previous product"
+#: build/oceanwp/inc/oceanwp-strings.php:88
+#: inc/oceanwp-strings.php:88
+msgid "Website"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:90
-#: inc/oceanwp-strings.php:90
-msgctxt "Prefix for post author name"
-msgid "By"
-msgstr ""
-
 #: build/oceanwp/inc/oceanwp-strings.php:91
+#: build/oceanwp/partials/edd/single.php:57
+#: inc/oceanwp-strings.php:90
 #: inc/oceanwp-strings.php:91
-msgctxt "Prefix for post author name"
-msgid "Written by"
+#: partials/edd/single.php:57
+msgid "Continue Reading"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:92
 #: inc/oceanwp-strings.php:92
-msgctxt "Aria label prefix for post author link"
-msgid "All posts by"
+msgid "You Might Also Like"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:93
 #: inc/oceanwp-strings.php:93
-msgctxt "Prefix for post published date"
-msgid "Published"
+msgid "Next Post"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:94
 #: inc/oceanwp-strings.php:94
-msgctxt "Prefix for post modified date"
-msgid "Updated"
+msgid "Previous Post"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:95
 #: inc/oceanwp-strings.php:95
-msgctxt "Suffix for post reading time equal to 1"
-msgid "min read"
+msgid "Read more articles"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:96
 #: inc/oceanwp-strings.php:96
-msgctxt "Suffix for post reading time more than 1"
-msgid "mins read"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:97
-#: inc/oceanwp-strings.php:97
-msgctxt "Prefix for categories list"
-msgid "Posted in"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:98
-#: inc/oceanwp-strings.php:98
-msgctxt "Prefix for tags list"
-msgid "Tagged as"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:99
-#: inc/oceanwp-strings.php:99
-msgctxt "Aria label: post modified date"
-msgid "Updated on"
+msgid "Visit author page"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:100
 #: inc/oceanwp-strings.php:100
-msgctxt "Aria label: post published date"
-msgid "Published on"
+msgid "Close quick preview"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:101
 #: inc/oceanwp-strings.php:101
-msgctxt "Aria label: post reading time"
-msgid "Reading time"
+msgid "Select Options"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:102
 #: inc/oceanwp-strings.php:102
+msgid "Selected:"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:103
+#: inc/oceanwp-strings.php:103
+msgid "Out of stock"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:104
+#: inc/oceanwp-strings.php:104
+msgid "Next Product"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:105
+#: inc/oceanwp-strings.php:105
+msgid "Previous Product"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:108
+#: inc/oceanwp-strings.php:108
+msgid "Toggle website search"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:109
+#: inc/oceanwp-strings.php:109
+msgid "Website search form"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:110
+#: inc/oceanwp-strings.php:110
+msgid "Search for:"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:111
+#: inc/oceanwp-strings.php:111
+msgid "After typing hit enter to submit search query"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:112
+#: inc/oceanwp-strings.php:112
+msgid "Visit this link"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:113
+#: inc/oceanwp-strings.php:113
+msgid "Opens in a new tab"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:114
+#: inc/oceanwp-strings.php:114
+msgid "Read more about"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:115
+#: inc/oceanwp-strings.php:115
+msgid "Read more about the article"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:116
+#: inc/oceanwp-strings.php:116
+msgid "You are currently viewing"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:117
+#: inc/oceanwp-strings.php:117
+msgid "Post author avatar"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:120
+#: inc/oceanwp-strings.php:120
+msgid "View next product"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:121
+#: inc/oceanwp-strings.php:121
+msgid "View previous product"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:124
+#: inc/oceanwp-strings.php:124
+msgctxt "Prefix for post author name"
+msgid "By"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:125
+#: inc/oceanwp-strings.php:125
+msgctxt "Prefix for post author name"
+msgid "Written by"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:126
+#: inc/oceanwp-strings.php:126
+msgctxt "Aria label prefix for post author link"
+msgid "All posts by"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:127
+#: inc/oceanwp-strings.php:127
+msgctxt "Prefix for post published date"
+msgid "Published"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:128
+#: inc/oceanwp-strings.php:128
+msgctxt "Prefix for post modified date"
+msgid "Updated"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:129
+#: inc/oceanwp-strings.php:129
+msgctxt "Suffix for post reading time equal to 1"
+msgid "min read"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:130
+#: inc/oceanwp-strings.php:130
+msgctxt "Suffix for post reading time more than 1"
+msgid "mins read"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:131
+#: inc/oceanwp-strings.php:131
+msgctxt "Prefix for categories list"
+msgid "Posted in"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:132
+#: inc/oceanwp-strings.php:132
+msgctxt "Prefix for tags list"
+msgid "Tagged as"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:133
+#: inc/oceanwp-strings.php:133
+msgctxt "Aria label: post modified date"
+msgid "Updated on"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:134
+#: inc/oceanwp-strings.php:134
+msgctxt "Aria label: post published date"
+msgid "Published on"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:135
+#: inc/oceanwp-strings.php:135
+msgctxt "Aria label: post reading time"
+msgid "Reading time"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:136
+#: inc/oceanwp-strings.php:136
 msgctxt "Aria label: post comments"
 msgid "Comments"
 msgstr ""
@@ -8228,13 +8276,13 @@ msgstr ""
 #: build/oceanwp/inc/template-helpers.php:235
 #: build/oceanwp/inc/template-helpers.php:272
 #: build/oceanwp/inc/template-helpers.php:314
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2188
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2210
 #: inc/template-helpers.php:73
 #: inc/template-helpers.php:79
 #: inc/template-helpers.php:235
 #: inc/template-helpers.php:272
 #: inc/template-helpers.php:314
-#: inc/woocommerce/woocommerce-config.php:2188
+#: inc/woocommerce/woocommerce-config.php:2189
 msgid "%s"
 msgstr ""
 
@@ -9963,185 +10011,185 @@ msgstr ""
 msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:817
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:839
 #: build/oceanwp/woocommerce/checkout/form-multistep-checkout.php:97
-#: inc/woocommerce/woocommerce-config.php:817
+#: inc/woocommerce/woocommerce-config.php:818
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "I don&rsquo;t have an account"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:831
-#: inc/woocommerce/woocommerce-config.php:831
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:853
+#: inc/woocommerce/woocommerce-config.php:832
 msgid "View cart"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:837
-#: inc/woocommerce/woocommerce-config.php:837
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:859
+#: inc/woocommerce/woocommerce-config.php:838
 msgid "View products"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:839
-#: inc/woocommerce/woocommerce-config.php:839
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:861
+#: inc/woocommerce/woocommerce-config.php:840
 msgid "Some required fields are empty. Please fill the required fields to go to the next step."
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:929
-#: inc/woocommerce/woocommerce-config.php:929
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:951
+#: inc/woocommerce/woocommerce-config.php:930
 msgid "Off-Canvas Filters"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:930
-#: inc/woocommerce/woocommerce-config.php:930
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:952
+#: inc/woocommerce/woocommerce-config.php:931
 msgid "Widgets in this area are used in the off canvas sidebar. To enable the Off Canvas filter, go to the WooCommerce > Archives section of the customizer and enable the Display Filter Button option."
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:997
-#: inc/woocommerce/woocommerce-config.php:997
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1019
+#: inc/woocommerce/woocommerce-config.php:998
 msgid "Grid view"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:998
-#: inc/woocommerce/woocommerce-config.php:998
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1020
+#: inc/woocommerce/woocommerce-config.php:999
 msgid "List view"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1157
-#: inc/woocommerce/woocommerce-config.php:1157
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1179
+#: inc/woocommerce/woocommerce-config.php:1158
 msgid "Out of Stock"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1213
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1235
 #: build/oceanwp/woocommerce/owp-archive-product-hover.php:62
-#: inc/woocommerce/woocommerce-config.php:1213
+#: inc/woocommerce/woocommerce-config.php:1214
 #: woocommerce/owp-archive-product-hover.php:62
 msgid "Quickly preview product"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1483
-#: inc/woocommerce/woocommerce-config.php:1483
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1505
+#: inc/woocommerce/woocommerce-config.php:1484
 msgid "Welcome!"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1492
-#: inc/woocommerce/woocommerce-config.php:1492
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1514
+#: inc/woocommerce/woocommerce-config.php:1493
 msgid "Logout"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2192
-#: inc/woocommerce/woocommerce-config.php:2192
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2214
+#: inc/woocommerce/woocommerce-config.php:2193
 msgid "Sale!"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2229
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2251
 #: build/oceanwp/woocommerce/checkout/checkout-timeline.php:43
-#: inc/woocommerce/woocommerce-config.php:2229
+#: inc/woocommerce/woocommerce-config.php:2230
 #: woocommerce/checkout/checkout-timeline.php:43
 msgid "Login"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2242
-#: inc/woocommerce/woocommerce-config.php:2242
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2264
+#: inc/woocommerce/woocommerce-config.php:2243
 msgid "Or"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2244
-#: inc/woocommerce/woocommerce-config.php:2244
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2266
+#: inc/woocommerce/woocommerce-config.php:2245
 msgid "Register"
 msgstr ""
 
 #. translators: %s: field name
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2362
-#: inc/woocommerce/woocommerce-config.php:2362
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2384
+#: inc/woocommerce/woocommerce-config.php:2363
 msgid "Shipping %s"
 msgstr ""
 
 #. translators: %s: field name
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2366
-#: inc/woocommerce/woocommerce-config.php:2366
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2388
+#: inc/woocommerce/woocommerce-config.php:2367
 msgid "Billing %s"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2375
-#: inc/woocommerce/woocommerce-config.php:2375
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2397
+#: inc/woocommerce/woocommerce-config.php:2376
 msgid "%s is not a valid postcode / ZIP."
 msgstr ""
 
 #. translators: %s: phone number
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2384
-#: inc/woocommerce/woocommerce-config.php:2384
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2406
+#: inc/woocommerce/woocommerce-config.php:2385
 msgid "%s is not a valid phone number."
 msgstr ""
 
 #. translators: %s: email address
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2393
-#: inc/woocommerce/woocommerce-config.php:2393
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2415
+#: inc/woocommerce/woocommerce-config.php:2394
 msgid "%s is not a valid email address."
 msgstr ""
 
 #. translators: 1: state field 2: valid states
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2413
-#: inc/woocommerce/woocommerce-config.php:2413
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2435
+#: inc/woocommerce/woocommerce-config.php:2414
 msgid "%1$s is not valid. Please enter one of the following: %2$s"
 msgstr ""
 
 #. translators: %s: field name
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2420
-#: inc/woocommerce/woocommerce-config.php:2420
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2442
+#: inc/woocommerce/woocommerce-config.php:2421
 msgid "%s is a required field."
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2512
-#: inc/woocommerce/woocommerce-config.php:2512
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2534
+#: inc/woocommerce/woocommerce-config.php:2513
 msgid "WooCommerce Product Title"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2523
-#: inc/woocommerce/woocommerce-config.php:2523
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2545
+#: inc/woocommerce/woocommerce-config.php:2524
 msgid "WooCommerce Product Price"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2533
-#: inc/woocommerce/woocommerce-config.php:2533
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2555
+#: inc/woocommerce/woocommerce-config.php:2534
 msgid "WooCommerce Product Add To Cart"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2545
-#: inc/woocommerce/woocommerce-config.php:2545
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2567
+#: inc/woocommerce/woocommerce-config.php:2546
 msgid "WooCommerce Product Notice"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2558
-#: inc/woocommerce/woocommerce-config.php:2558
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2580
+#: inc/woocommerce/woocommerce-config.php:2559
 msgid "WooCommerce Archive Title"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2569
-#: inc/woocommerce/woocommerce-config.php:2569
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2591
+#: inc/woocommerce/woocommerce-config.php:2570
 msgid "WooCommerce Archive Category"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2580
-#: inc/woocommerce/woocommerce-config.php:2580
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2602
+#: inc/woocommerce/woocommerce-config.php:2581
 msgid "WooCommerce Archive Price"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2591
-#: inc/woocommerce/woocommerce-config.php:2591
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2613
+#: inc/woocommerce/woocommerce-config.php:2592
 msgid "WooCommerce Archive Add To Cart"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2602
-#: inc/woocommerce/woocommerce-config.php:2602
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2624
+#: inc/woocommerce/woocommerce-config.php:2603
 msgid "WooCommerce Archive Notice"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2615
-#: inc/woocommerce/woocommerce-config.php:2615
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2637
+#: inc/woocommerce/woocommerce-config.php:2616
 msgid "WooCommerce Store Notice"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2625
-#: inc/woocommerce/woocommerce-config.php:2625
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2647
+#: inc/woocommerce/woocommerce-config.php:2626
 msgid "WooCommerce Store Notice Dismiss"
 msgstr ""
 
@@ -10246,31 +10294,31 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: build/oceanwp/partials/header/social.php:112
-#: build/oceanwp/partials/topbar/social.php:95
-#: partials/header/social.php:112
-#: partials/topbar/social.php:95
+#: build/oceanwp/partials/header/social.php:110
+#: build/oceanwp/partials/topbar/social.php:96
+#: partials/header/social.php:110
+#: partials/topbar/social.php:96
 msgid "Social links"
 msgstr ""
 
-#: build/oceanwp/partials/header/social.php:126
-#: build/oceanwp/partials/topbar/social.php:109
-#: partials/header/social.php:126
-#: partials/topbar/social.php:109
+#: build/oceanwp/partials/header/social.php:124
+#: build/oceanwp/partials/topbar/social.php:110
+#: partials/header/social.php:124
+#: partials/topbar/social.php:110
 msgid "(opens in a new tab)"
 msgstr ""
 
-#: build/oceanwp/partials/header/social.php:139
-#: build/oceanwp/partials/topbar/social.php:121
-#: partials/header/social.php:139
-#: partials/topbar/social.php:121
+#: build/oceanwp/partials/header/social.php:137
+#: build/oceanwp/partials/topbar/social.php:122
+#: partials/header/social.php:137
+#: partials/topbar/social.php:122
 msgid "Skype (opens in your application)"
 msgstr ""
 
-#: build/oceanwp/partials/header/social.php:141
-#: build/oceanwp/partials/topbar/social.php:123
-#: partials/header/social.php:141
-#: partials/topbar/social.php:123
+#: build/oceanwp/partials/header/social.php:139
+#: build/oceanwp/partials/topbar/social.php:124
+#: partials/header/social.php:139
+#: partials/topbar/social.php:124
 msgid "Send email (opens in your application)"
 msgstr ""
 
