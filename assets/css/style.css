@@ -6181,7 +6181,7 @@ body.breadcrumbs-position-default .page-header-title {
 .blog-entry.post .thumbnail {
   position: relative;
 }
-.blog-entry.post .thumbnail a {
+.blog-entry.post .thumbnail a:not(.mejs-volume-slider) {
   display: inline-block;
   position: relative;
   width: 100%;
@@ -6417,13 +6417,13 @@ body.breadcrumbs-position-default .page-header-title {
 .blog-entry.thumbnail-entry .blog-entry-date {
   float: right;
 }
-.blog-entry.thumbnail-entry.no-featured-image .blog-entry-content {
+.blog-entry.thumbnail-entry.format-standard.no-featured-image .blog-entry-content {
   width: 100%;
 }
-.blog-entry.thumbnail-entry.no-featured-image .left-position .blog-entry-content {
+.blog-entry.thumbnail-entry.format-standard.no-featured-image .left-position .blog-entry-content {
   padding-left: 0;
 }
-.blog-entry.thumbnail-entry.no-featured-image .right-position .blog-entry-content {
+.blog-entry.thumbnail-entry.format-standard.no-featured-image .right-position .blog-entry-content {
   padding-right: 0;
 }
 

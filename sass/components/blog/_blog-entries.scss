@@ -8,7 +8,7 @@
 	.thumbnail {
 		position: relative;
 
-		a {
+		a:not(.mejs-volume-slider) {
 			display: inline-block;
 			position: relative;
 			width: 100%;
