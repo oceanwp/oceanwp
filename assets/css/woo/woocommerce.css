@@ -2604,13 +2604,15 @@ ul.order_details li strong {
   width: 100%;
   margin-top: 30px;
 }
-.woocommerce-checkout div:not(.e-checkout__order_review) h3#order_review_heading {
+.woocommerce-checkout h3#order_review_heading,
+.woocommerce-checkout #order_review {
   float: right;
   width: 48%;
 }
-.woocommerce-checkout div:not(.e-checkout__order_review) #order_review {
-  float: right;
-  width: 48%;
+.woocommerce-checkout .e-checkout__order_review h3#order_review_heading,
+.woocommerce-checkout .e-checkout__order_review #order_review {
+  float: none;
+  width: 100%;
 }
 .woocommerce-checkout .woocommerce-account-fields {
   display: inline-block;
