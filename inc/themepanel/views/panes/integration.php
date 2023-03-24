@@ -1,6 +1,7 @@
 <?php
 $extra_mode_actived                                  = oceanwp_theme_panel()->extra_installed();
 $ocean_elementor_widgets_actived                     = oceanwp_theme_panel()->ocean_elementor_widgets_activated();
+$ocean_popup_login_activated                         = oceanwp_theme_panel()->ocean_popup_login_activated();
 $upgrade_core_extensions_bundle_text_link            = oceanwp_theme_panel()->upgrade_core_extensions_bundle_text_link();
 $please_install_oe_text_link                         = oceanwp_theme_panel()->please_install_oe_text_link();
 $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->install_oe_upgrade_core_extensions_bundle_text_link();
@@ -56,7 +57,7 @@ $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->in
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/google-recaptcha.png' ); ?>" />
 			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Google reCAPTCHA', 'oceanwp' ); ?></h2>
 		</div>
-		<?php if ( $extra_mode_actived && $ocean_elementor_widgets_actived ) : ?>
+		<?php if ( $extra_mode_actived && $ocean_elementor_widgets_actived || $extra_mode_actived && $ocean_popup_login_activated) : ?>
 			<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Adds Google reCAPTCHA.', 'oceanwp' ); ?></h3>
 
 			<?php oceanwp_theme_panel()->print_pane( 'integration-google-recaptcha' ); ?>
