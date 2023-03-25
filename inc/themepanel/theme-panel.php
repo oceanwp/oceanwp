@@ -606,6 +606,11 @@ final class OceanWP_Theme_Panel {
 		return $retval;
 	}
 
+	public function ocean_popup_login_activated() {
+		$retval = class_exists( 'Ocean_Popup_Login' );
+		return $retval;
+	}
+
 	public function ocean_gutenberg_blocks_activated() {
 		$retval = class_exists( 'Ocean_Gutenberg_Blocks' );
 		return $retval;
