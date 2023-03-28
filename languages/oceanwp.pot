@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-23T10:17:07+00:00\n"
+"POT-Creation-Date: 2023-03-28T06:25:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: oceanwp\n"
@@ -116,7 +116,7 @@ msgstr ""
 
 #: build/oceanwp/comments.php:104
 #: build/oceanwp/comments.php:117
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:840
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:819
 #: build/oceanwp/partials/edd/single.php:54
 #: build/oceanwp/woocommerce/checkout/form-multistep-checkout.php:97
 #: comments.php:104
@@ -6109,7 +6109,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1487
 #: build/oceanwp/inc/helpers.php:3946
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:998
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:977
 #: inc/customizer/settings/woocommerce.php:1487
 #: inc/helpers.php:3946
 #: inc/woocommerce/woocommerce-config.php:977
@@ -6197,7 +6197,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1751
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2297
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1431
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1410
 #: build/oceanwp/woocommerce/owp-archive-product-hover.php:136
 #: build/oceanwp/woocommerce/owp-archive-product.php:178
 #: build/oceanwp/woocommerce/owp-single-product.php:79
@@ -6456,7 +6456,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2766
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:5291
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:923
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:902
 #: inc/customizer/settings/woocommerce.php:2766
 #: inc/customizer/settings/woocommerce.php:5291
 #: inc/woocommerce/woocommerce-config.php:902
@@ -6974,7 +6974,7 @@ msgid "EDD Sidebar"
 msgstr ""
 
 #: build/oceanwp/inc/edd/edd-config.php:407
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2085
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2064
 #: inc/edd/edd-config.php:407
 #: inc/woocommerce/woocommerce-config.php:2064
 msgid "Your cart"
@@ -8276,7 +8276,7 @@ msgstr ""
 #: build/oceanwp/inc/template-helpers.php:235
 #: build/oceanwp/inc/template-helpers.php:272
 #: build/oceanwp/inc/template-helpers.php:314
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2210
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2189
 #: inc/template-helpers.php:73
 #: inc/template-helpers.php:79
 #: inc/template-helpers.php:235
@@ -8720,28 +8720,28 @@ msgstr ""
 
 #: build/oceanwp/inc/themepanel/theme-panel.php:635
 #: build/oceanwp/inc/themepanel/theme-panel.php:800
-#: inc/themepanel/theme-panel.php:635
-#: inc/themepanel/theme-panel.php:800
+#: inc/themepanel/theme-panel.php:640
+#: inc/themepanel/theme-panel.php:805
 msgid "Something went wrong"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/theme-panel.php:638
-#: inc/themepanel/theme-panel.php:638
+#: inc/themepanel/theme-panel.php:643
 msgid "You do not have sufficient privileges for this action."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/theme-panel.php:774
-#: inc/themepanel/theme-panel.php:774
+#: inc/themepanel/theme-panel.php:779
 msgid "Fonts folder does not exist"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/theme-panel.php:778
-#: inc/themepanel/theme-panel.php:778
+#: inc/themepanel/theme-panel.php:783
 msgid "CSS folder does not exist"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/theme-panel.php:802
-#: inc/themepanel/theme-panel.php:802
+#: inc/themepanel/theme-panel.php:807
 msgid "Data was cleared"
 msgstr ""
 
@@ -9557,61 +9557,61 @@ msgid "Check out %1$sour documentation and full video guide%2$s on how easy it i
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:17
-#: inc/themepanel/views/panes/integration.php:17
+#: inc/themepanel/views/panes/integration.php:18
 msgid "SVG Support"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:26
-#: inc/themepanel/views/panes/integration.php:26
+#: inc/themepanel/views/panes/integration.php:27
 msgid "Enable SVG file support for your WordPress Media Library. This option allows you to safely upload any SVG file to the Media Library as all files are sanitized upon upload."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:36
-#: inc/themepanel/views/panes/integration.php:36
+#: inc/themepanel/views/panes/integration.php:37
 msgid "Google Maps"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:39
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:45
-#: inc/themepanel/views/panes/integration.php:39
-#: inc/themepanel/views/panes/integration.php:45
+#: inc/themepanel/views/panes/integration.php:40
+#: inc/themepanel/views/panes/integration.php:46
 msgid "Display the Google map on your website and help visitors locate your business."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:57
-#: inc/themepanel/views/panes/integration.php:57
+#: inc/themepanel/views/panes/integration.php:58
 msgid "Google reCAPTCHA"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:60
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:66
-#: inc/themepanel/views/panes/integration.php:60
-#: inc/themepanel/views/panes/integration.php:66
+#: inc/themepanel/views/panes/integration.php:61
+#: inc/themepanel/views/panes/integration.php:67
 msgid "Adds Google reCAPTCHA."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:76
-#: inc/themepanel/views/panes/integration.php:76
+#: inc/themepanel/views/panes/integration.php:77
 msgid "MailChimp"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:84
-#: inc/themepanel/views/panes/integration.php:84
+#: inc/themepanel/views/panes/integration.php:85
 msgid "Add newsletter subscription to your website and grow your contact list."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:86
-#: inc/themepanel/views/panes/integration.php:86
+#: inc/themepanel/views/panes/integration.php:87
 msgid "to unlock this feature."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:95
-#: inc/themepanel/views/panes/integration.php:95
+#: inc/themepanel/views/panes/integration.php:96
 msgid "Adobe Fonts (TypeKit)"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:101
-#: inc/themepanel/views/panes/integration.php:101
+#: inc/themepanel/views/panes/integration.php:102
 msgid "Get your creativity flowing and dive into thousands of wonderful fonts from the world's leading type foundries."
 msgstr ""
 
@@ -10011,184 +10011,184 @@ msgstr ""
 msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:839
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:818
 #: build/oceanwp/woocommerce/checkout/form-multistep-checkout.php:97
 #: inc/woocommerce/woocommerce-config.php:818
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "I don&rsquo;t have an account"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:853
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:832
 #: inc/woocommerce/woocommerce-config.php:832
 msgid "View cart"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:859
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:838
 #: inc/woocommerce/woocommerce-config.php:838
 msgid "View products"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:861
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:840
 #: inc/woocommerce/woocommerce-config.php:840
 msgid "Some required fields are empty. Please fill the required fields to go to the next step."
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:951
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:930
 #: inc/woocommerce/woocommerce-config.php:930
 msgid "Off-Canvas Filters"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:952
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:931
 #: inc/woocommerce/woocommerce-config.php:931
 msgid "Widgets in this area are used in the off canvas sidebar. To enable the Off Canvas filter, go to the WooCommerce > Archives section of the customizer and enable the Display Filter Button option."
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1019
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:998
 #: inc/woocommerce/woocommerce-config.php:998
 msgid "Grid view"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1020
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:999
 #: inc/woocommerce/woocommerce-config.php:999
 msgid "List view"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1179
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1158
 #: inc/woocommerce/woocommerce-config.php:1158
 msgid "Out of Stock"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1235
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1214
 #: build/oceanwp/woocommerce/owp-archive-product-hover.php:62
 #: inc/woocommerce/woocommerce-config.php:1214
 #: woocommerce/owp-archive-product-hover.php:62
 msgid "Quickly preview product"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1505
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1484
 #: inc/woocommerce/woocommerce-config.php:1484
 msgid "Welcome!"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1514
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1493
 #: inc/woocommerce/woocommerce-config.php:1493
 msgid "Logout"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2214
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2193
 #: inc/woocommerce/woocommerce-config.php:2193
 msgid "Sale!"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2251
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2230
 #: build/oceanwp/woocommerce/checkout/checkout-timeline.php:43
 #: inc/woocommerce/woocommerce-config.php:2230
 #: woocommerce/checkout/checkout-timeline.php:43
 msgid "Login"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2264
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2243
 #: inc/woocommerce/woocommerce-config.php:2243
 msgid "Or"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2266
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2245
 #: inc/woocommerce/woocommerce-config.php:2245
 msgid "Register"
 msgstr ""
 
 #. translators: %s: field name
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2384
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2363
 #: inc/woocommerce/woocommerce-config.php:2363
 msgid "Shipping %s"
 msgstr ""
 
 #. translators: %s: field name
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2388
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2367
 #: inc/woocommerce/woocommerce-config.php:2367
 msgid "Billing %s"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2397
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2376
 #: inc/woocommerce/woocommerce-config.php:2376
 msgid "%s is not a valid postcode / ZIP."
 msgstr ""
 
 #. translators: %s: phone number
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2406
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2385
 #: inc/woocommerce/woocommerce-config.php:2385
 msgid "%s is not a valid phone number."
 msgstr ""
 
 #. translators: %s: email address
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2415
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2394
 #: inc/woocommerce/woocommerce-config.php:2394
 msgid "%s is not a valid email address."
 msgstr ""
 
 #. translators: 1: state field 2: valid states
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2435
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2414
 #: inc/woocommerce/woocommerce-config.php:2414
 msgid "%1$s is not valid. Please enter one of the following: %2$s"
 msgstr ""
 
 #. translators: %s: field name
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2442
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2421
 #: inc/woocommerce/woocommerce-config.php:2421
 msgid "%s is a required field."
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2534
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2513
 #: inc/woocommerce/woocommerce-config.php:2513
 msgid "WooCommerce Product Title"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2545
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2524
 #: inc/woocommerce/woocommerce-config.php:2524
 msgid "WooCommerce Product Price"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2555
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2534
 #: inc/woocommerce/woocommerce-config.php:2534
 msgid "WooCommerce Product Add To Cart"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2567
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2546
 #: inc/woocommerce/woocommerce-config.php:2546
 msgid "WooCommerce Product Notice"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2580
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2559
 #: inc/woocommerce/woocommerce-config.php:2559
 msgid "WooCommerce Archive Title"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2591
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2570
 #: inc/woocommerce/woocommerce-config.php:2570
 msgid "WooCommerce Archive Category"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2602
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2581
 #: inc/woocommerce/woocommerce-config.php:2581
 msgid "WooCommerce Archive Price"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2613
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2592
 #: inc/woocommerce/woocommerce-config.php:2592
 msgid "WooCommerce Archive Add To Cart"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2624
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2603
 #: inc/woocommerce/woocommerce-config.php:2603
 msgid "WooCommerce Archive Notice"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2637
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2616
 #: inc/woocommerce/woocommerce-config.php:2616
 msgid "WooCommerce Store Notice"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2647
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2626
 #: inc/woocommerce/woocommerce-config.php:2626
 msgid "WooCommerce Store Notice Dismiss"
 msgstr ""
