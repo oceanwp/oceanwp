@@ -2,7 +2,7 @@
 
 **Contributors:** The OceanWP Team
 **Requires at least:** WordPress 5.6
-**Tested up to:** WordPress 6.1.1
+**Tested up to:** WordPress 6.2
 =======
 **Stable tag:** 3.4.3
 **Requires PHP:** 7.2

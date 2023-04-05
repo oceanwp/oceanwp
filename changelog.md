@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2023.03.29_ - 3.4.3
+### _2023.04.05_ - 3.4.3
 - **Added**: Compatibility: Elementor Pro: WooCommerce: Checkout styling.
 - **Added**: Compatibility: Ocean Popup Login: Google reCaptcha support for upcoming plugin release.
 - **Improved**: Accessibility: Header: Search: Dropdown.
@@ -45,6 +45,7 @@
 - **Updated**: Language: Theme .pot file.
 - **Fixed**: Incorrect oceanwp_theme_strings() function usage throughout the theme.
 - **Fixed**: Blog: Archives: Video and audio post formats styling.
+- **Fixed**: Compatibility: Events Calendar: Deprecated function tribe_get_view().
 
 ### _2023.02.22_ - 3.4.2
 - **Improved**: Customizer: Customizer panel scrollbar width for some browsers, like Chrome and Edge.

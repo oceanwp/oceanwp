@@ -1,6 +1,6 @@
 == OceanWP ==
 Contributors: oceanwp
-Tested up to: 6.1.1
+Tested up to: 6.2
 Stable tag: 3.4.3
 Requires PHP: 7.2
 License: GPLv2 or later
