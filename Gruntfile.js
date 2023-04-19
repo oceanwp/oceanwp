@@ -419,10 +419,12 @@ module.exports = function (grunt) {
           "!Gruntfile.js",
           "!package.json",
           "!package-lock.json",
+          "!phpcs.xml.dist",
           "!desktop.ini",
           "!prepros.cfg",
           "!CONTRIBUTING.md",
           "!.csscomb.json",
+          "!.editorconfig",
           "!.tern-project",
           "!.gitignore",
           "!.jshintrc",
@@ -474,4 +476,17 @@ module.exports = function (grunt) {
 
   // Package task
   grunt.registerTask("package", ["compress"]);
+
+  grunt.registerTask("final", [
+    "browserify:prod",
+    "browserify:dev",
+    "uglify:prod",
+    "uglify:dev",
+    "sass:prod",
+    "sass:dev",
+    "autoprefixer:main",
+    "cssmin:prod",
+    "copy",
+    "compress"
+  ]);
 };

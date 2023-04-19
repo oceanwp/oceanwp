@@ -5094,7 +5094,7 @@
 				var $child = $(".customizer-ocean_search_overlay_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_bg">#searchform-overlay, #icon-searchform-overlay { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_bg">#searchform-overlay{ background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5109,7 +5109,7 @@
 				var $child = $(".customizer-ocean_search_overlay_input_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_input_color">#searchform-overlay form input,#searchform-overlay form .search-text, #icon-searchform-overlay form input, #icon-searchform-overlay form .search-text{ color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_input_color">#searchform-overlay form input,#searchform-overlay form .search-text{ color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5124,7 +5124,7 @@
 				var $child = $(".customizer-ocean_search_overlay_placeholder_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_placeholder_color">#searchform-overlay form .search-text, #icon-searchform-overlay form .search-text { color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_placeholder_color">#searchform-overlay form .search-text{ color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5139,7 +5139,7 @@
 				var $child = $(".customizer-ocean_search_overlay_input_dashed_bg");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_input_dashed_bg">#searchform-overlay form .search-text i, #icon-searchform-overlay form .search-text i { background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_input_dashed_bg">#searchform-overlay form .search-text i { background-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5154,7 +5154,7 @@
 				var $child = $(".customizer-ocean_search_overlay_input_border_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_input_border_color">#searchform-overlay form input, #icon-searchform-overlay form input { border-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_input_border_color">#searchform-overlay form input{ border-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5169,7 +5169,7 @@
 				var $child = $(".customizer-ocean_search_overlay_input_hover_border_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_input_hover_border_color">#searchform-overlay form input:hover, #icon-searchform-overlay form input:hover { border-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_input_hover_border_color">#searchform-overlay form input:hover { border-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5184,7 +5184,7 @@
 				var $child = $(".customizer-ocean_search_overlay_input_focus_border_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_input_focus_border_color">#searchform-overlay form input:focus, #icon-searchform-overlay form input:focus { border-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_input_focus_border_color">#searchform-overlay form input:focus { border-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
@@ -5199,7 +5199,247 @@
 				var $child = $(".customizer-ocean_search_overlay_close_button_color");
 				if (to) {
 					/** @type {string} */
-					var img = '<style class="customizer-ocean_search_overlay_close_button_color">#searchform-overlay a.search-overlay-close span::before, #searchform-overlay a.search-overlay-close span::after, #icon-searchform-overlay a.search-overlay-close span::before, #icon-searchform-overlay a.search-overlay-close span::after{ background-color: ' + to + "; }</style>";
+					var img = '<style class="customizer-ocean_search_overlay_close_button_color">#searchform-overlay a.search-overlay-close span::before, #searchform-overlay a.search-overlay-close span::after{ background-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_search_dropdown_input_background", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_search_dropdown_input_background");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_search_dropdown_input_background">#searchform-dropdown input{ background-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_search_dropdown_input_color", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_search_dropdown_input_color");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_search_dropdown_input_color">#searchform-dropdown input{ color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_search_dropdown_input_border", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_search_dropdown_input_border");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_search_dropdown_input_border">#searchform-dropdown input{ border-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_search_dropdown_input_border_focus", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_search_dropdown_input_border_focus");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_search_dropdown_input_border_focus">#searchform-dropdown input:focus{ border-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_overlay_bg", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_overlay_bg");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_overlay_bg">#icon-searchform-overlay { background-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_overlay_input_color", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_overlay_input_color");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_overlay_input_color">#icon-searchform-overlay form input, #icon-searchform-overlay form .search-text{ color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_overlay_placeholder_color", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_overlay_placeholder_color");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_overlay_placeholder_color">#icon-searchform-overlay form .search-text { color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_overlay_input_dashed_bg", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_overlay_input_dashed_bg");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_overlay_input_dashed_bg">#icon-searchform-overlay form .search-text i { background-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_overlay_input_border_color", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_overlay_input_border_color");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_overlay_input_border_color">#icon-searchform-overlay form input { border-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_overlay_input_hover_border_color", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_overlay_input_hover_border_color");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_overlay_input_hover_border_color">#icon-searchform-overlay form input:hover { border-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_overlay_input_focus_border_color", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_overlay_input_focus_border_color");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_overlay_input_focus_border_color">#icon-searchform-overlay form input:focus { border-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_overlay_close_button_color", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_overlay_close_button_color");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_overlay_close_button_color">#icon-searchform-overlay a.search-overlay-close span::before, #icon-searchform-overlay a.search-overlay-close span::after{ background-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_dropdown_input_background", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_dropdown_input_background");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_dropdown_input_background">#icon-searchform-dropdown input{ background-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_dropdown_input_color", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_dropdown_input_color");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_dropdown_input_color">#icon-searchform-dropdown input{ color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_dropdown_input_border", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_dropdown_input_border");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_dropdown_input_border">#icon-searchform-dropdown input{ border-color: ' + to + "; }</style>";
+					if ($child.length) {
+						$child.replaceWith(img);
+					} else {
+						$("head").append(img);
+					}
+				} else {
+					$child.remove();
+				}
+			});
+		}), api("ocean_mobile_search_dropdown_input_border_focus", function($swipe) {
+			$swipe.bind(function(to) {
+				var $child = $(".customizer-ocean_mobile_search_dropdown_input_border_focus");
+				if (to) {
+					/** @type {string} */
+					var img = '<style class="customizer-ocean_mobile_search_dropdown_input_border_focus">#icon-searchform-dropdown input:focus{ border-color: ' + to + "; }</style>";
 					if ($child.length) {
 						$child.replaceWith(img);
 					} else {
