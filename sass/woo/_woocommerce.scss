@@ -2549,10 +2549,21 @@ ul {
       margin-top: 30px;
     }
   }
+
+  h3#order_review_heading,
   #order_review {
     float: right;
     width: 48%;
   }
+
+  .e-checkout__order_review {
+    h3#order_review_heading,
+    #order_review {
+      float: none;
+      width: 100%;
+    }
+  }
+
   .woocommerce-account-fields {
     display: inline-block;
     width: 100%;
@@ -2678,10 +2689,6 @@ ul {
         }
       }
     }
-  }
-  h3#order_review_heading {
-    float: right;
-    width: 48%;
   }
   .place-order .terms {
     margin: 0 0 8px;

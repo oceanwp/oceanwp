@@ -31,7 +31,7 @@ foreach ( $terms as $termkey ) {
 
 // Query args.
 $args = array(
-	'posts_per_page' => apply_filters( 'ocean_related_blog_posts_count', absint( get_theme_mod( 'ocean_blog_related_count', '3' ) ) ),
+	'posts_per_page' => apply_filters( 'ocean_related_blog_posts_count', absint( get_theme_mod( 'ocean_blog_related_count', '3' ) ) ), // phpcs:ignore WordPress.WP.PostsPerPage.posts_per_page_posts_per_page.
 	'orderby'        => 'rand',
 	'post__not_in'   => array( get_the_ID() ),
 	'no_found_rows'  => true,
@@ -61,8 +61,8 @@ $srp_seo_set = get_theme_mod( 'ocean_enable_srp_fimage_alt', false );
 $srp_seo_set = $srp_seo_set ? $srp_seo_set : false;
 
 // Title tag.
-$tag = 'h3';
-$tag = apply_filters( 'ocean_single_related_post_title_tag', $tag );
+$heading_tag = 'h3';
+$heading_tag = apply_filters( 'ocean_single_related_post_title_tag', $heading_tag );
 
 // Display date.
 $srp_date = true;
@@ -87,16 +87,16 @@ if ( $oceanwp_related_query->have_posts() ) :
 
 	<section id="related-posts" class="<?php echo esc_attr( $classes ); ?>">
 
-		<<?php echo esc_attr( $tag ); ?> class="theme-heading related-posts-title">
-			<span class="text"><?php oceanwp_theme_strings( 'owp-string-single-related-posts', 'oceanwp' ); ?></span>
-		</<?php echo esc_attr( $tag ); ?>>
+		<<?php echo esc_attr( $heading_tag ); ?> class="theme-heading related-posts-title">
+			<span class="text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-single-related-posts', false ) ); ?></span>
+		</<?php echo esc_attr( $heading_tag ); ?>>
 
 		<div class="oceanwp-row clr">
 
 			<?php $oceanwp_count = 0; ?>
 
 			<?php
-			foreach ( $oceanwp_related_query->posts as $post ) :
+			foreach ( $oceanwp_related_query->posts as $post ) : // phpcs:ignore WordPress.WP.GlobalVariablesOverride.OverrideProhibited -- No override.
 				setup_postdata( $post );
 				?>
 
@@ -177,13 +177,13 @@ if ( $oceanwp_related_query->have_posts() ) :
 									}
 
 									// Retreive image alt text or use OceanWP default text if image alt text not set.
-									$srpfe_img_alt = get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true);
+									$srpfe_img_alt = get_post_meta( get_post_thumbnail_id( get_the_ID() ), '_wp_attachment_image_alt', true );
 
-									$srp_fimage_alt = ( false === $srp_seo_set || ( true === $srp_seo_set && ! $srpfe_img_alt ) ) ? oceanwp_theme_strings( 'owp-string-read-more-article', false ) . ' ' . get_the_title() : $srpfe_img_alt;
+									$srp_fimage_alt = ( false === $srp_seo_set || ( true === $srp_seo_set && ! $srpfe_img_alt ) ) ? esc_attr( oceanwp_theme_strings( 'owp-string-read-more-article', false ) ) . ' ' . esc_attr( get_the_title() ) : esc_attr( $srpfe_img_alt );
 
 									// Image args.
 									$img_args = array(
-										'alt' => $srp_fimage_alt,
+										'alt' => esc_attr( $srp_fimage_alt ),
 									);
 									if ( oceanwp_get_schema_markup( 'image' ) ) {
 										$img_args['itemprop'] = 'image';
@@ -207,7 +207,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 					<?php if ( true === $srp_date ) { ?>			
 						<time class="published" datetime="<?php echo esc_html( get_the_date( 'c' ) ); ?>"><?php oceanwp_icon( 'date' ); ?><?php echo esc_html( get_the_date() ); ?></time>
 					<?php } ?>	
-					
+
 				</article><!-- .related-post -->
 
 				<?php

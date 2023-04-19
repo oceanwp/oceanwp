@@ -54,8 +54,8 @@ if ( 'simple' != $style ) {
 $inner_classes = implode( ' ', $inner_classes );
 
 // Return if there aren't any profiles defined and define var.
-if ( ( ! $profiles = get_theme_mod( 'ocean_menu_social_profiles' ) )
-	&& empty( $get_content ) ) {
+$profiles = get_theme_mod( 'ocean_menu_social_profiles' );
+if ( ! $profiles && empty( $get_content ) ) {
 	return;
 }
 
@@ -63,37 +63,35 @@ if ( ( ! $profiles = get_theme_mod( 'ocean_menu_social_profiles' ) )
 $link_target = get_theme_mod( 'ocean_menu_social_target', 'blank' );
 
 $link_rel = '';
-if ( $link_target == 'blank' ) {
+if ( 'blank' === $link_target ) {
 	$link_rel = 'rel="noopener noreferrer"';
 }
 
 ?>
-
-
 
 <div class="<?php echo esc_attr( $classes ); ?>">
 
 	<div class="<?php echo esc_attr( $inner_classes ); ?>">
 
 		<?php
-        // Check if there is a template for the footer
+        // Check if there is a template for the footer.
         if ( ! empty( $get_id ) ) {
 
-			// If Elementor
+			// If Elementor.
 		    if ( OCEANWP_ELEMENTOR_ACTIVE && $elementor ) {
 
 		        OceanWP_Elementor::get_social_menu_content();
 
 		    }
 
-		    // If Beaver Builder
+		    // If Beaver Builder.
 		    else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 
 		        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
 		    }
 
-			// Else
+			// Else.
 			else {
 
 				// If Gutenberg.
@@ -106,21 +104,21 @@ if ( $link_target == 'blank' ) {
 
 			}
 
-		// Display social
+		// Display social.
 		} else { ?>
 
 			<ul aria-label="<?php echo esc_attr__( 'Social links', 'oceanwp' ); ?>">
 
 				<?php
-				// Loop through social options
+				// Loop through social options.
 				foreach ( $social_options as $key => $val ) {
 
-					// Get URL from the theme mods
+					// Get URL from the theme mods.
 					$url = isset( $profiles[$key] ) ? $profiles[$key] : '';
 
 					$esc_url = esc_url( $url );
 
-					// Get correct label
+					// Get correct label.
 					$label = ! empty( $val['label'] ) ? esc_attr( $val['label'] ) : '';
 					if ( $link_target == 'blank' ) {
 						$aria_label = 'aria-label="' . $label . ' '. esc_attr__( '(opens in a new tab)', 'oceanwp' ).'"';
@@ -129,29 +127,29 @@ if ( $link_target == 'blank' ) {
 						$aria_label = 'aria-label="' . $label . '"';
 					}
 
-					// Display if there is a value defined
+					// Display if there is a value defined.
 					if ( $url ) {
 
-						// Display link
-						echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
+						// Display link.
+						echo '<li class="oceanwp-'. esc_attr( $key ) .'">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
 
 							if ( in_array( $key, array( 'skype' ) ) ) {
-								echo '<a href="skype:'. esc_attr( $url ) .'?call" aria-label="'. esc_attr__( 'Skype (opens in your application)', 'oceanwp' ) .'" target="_self">';
+								echo '<a href="skype:'. esc_attr( $url ) .'?call" aria-label="'. esc_attr__( 'Skype (opens in your application)', 'oceanwp' ) .'" target="_self">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
 							} else if ( in_array( $key, array( 'email' ) ) ) {
-								echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" aria-label="'. esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) .'" target="_self">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								echo '<a href="mailto:'. antispambot( esc_attr( $url ) ) .'" aria-label="'. esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) .'" target="_self">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
 							} else {
-								echo '<a href="'. $esc_url .'" '. $aria_label .' target="_'. esc_attr( $link_target ) .'" '. $link_rel .'>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								echo '<a href="'. $esc_url .'" '. $aria_label .' target="_'. esc_attr( $link_target ) .'" '. $link_rel .'>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
 							}
 
-							echo $val['icon_class'];
+							echo $val['icon_class']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped  -- Escaped during generation.
 
 							echo '</a>';
 
 						echo '</li>';
 
-					} // End url check
+					} // End url check.
 
-				} // End loop ?>
+				} // End loop. ?>
 
 			</ul>
 

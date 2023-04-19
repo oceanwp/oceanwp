@@ -2,28 +2,28 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.4.0\n"
+"Project-Id-Version: OceanWP 3.4.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
 "Last-Translator: OceanWP <support@oceanwp.org>\n"
 "Language-Team: OceanWP <support@oceanwp.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-01-09T06:57:11+00:00\n"
+"POT-Creation-Date: 2023-03-28T06:25:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: oceanwp\n"
 
 #. Theme Name of the theme
 #. Author of the theme
-#: build/oceanwp/inc/helpers.php:3818
-#: build/oceanwp/inc/helpers.php:4870
-#: build/oceanwp/inc/helpers.php:4888
-#: build/oceanwp/inc/helpers.php:4889
-#: inc/helpers.php:3818
-#: inc/helpers.php:4870
-#: inc/helpers.php:4888
-#: inc/helpers.php:4889
+#: build/oceanwp/inc/helpers.php:3814
+#: build/oceanwp/inc/helpers.php:4874
+#: build/oceanwp/inc/helpers.php:4892
+#: build/oceanwp/inc/helpers.php:4893
+#: inc/helpers.php:3814
+#: inc/helpers.php:4874
+#: inc/helpers.php:4892
+#: inc/helpers.php:4893
 msgid "OceanWP"
 msgstr ""
 
@@ -41,7 +41,7 @@ msgstr ""
 
 #: 404.php:108
 #: build/oceanwp/404.php:108
-#: build/oceanwp/inc/customizer/settings/general.php:3733
+#: build/oceanwp/inc/customizer/settings/general.php:3585
 #: inc/customizer/settings/general.php:3585
 msgid "404 Logo"
 msgstr ""
@@ -116,12 +116,12 @@ msgstr ""
 
 #: build/oceanwp/comments.php:104
 #: build/oceanwp/comments.php:117
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:798
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:819
 #: build/oceanwp/partials/edd/single.php:54
 #: build/oceanwp/woocommerce/checkout/form-multistep-checkout.php:97
 #: comments.php:104
 #: comments.php:117
-#: inc/woocommerce/woocommerce-config.php:798
+#: inc/woocommerce/woocommerce-config.php:819
 #: partials/edd/single.php:54
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "Next"
@@ -329,16 +329,16 @@ msgid "Breadcrumbs"
 msgstr ""
 
 #: build/oceanwp/inc/breadcrumbs.php:333
-#: build/oceanwp/inc/customizer/settings/general.php:2117
-#: build/oceanwp/inc/themepanel/theme-panel.php:390
+#: build/oceanwp/inc/customizer/settings/general.php:1969
+#: build/oceanwp/inc/themepanel/theme-panel.php:392
 #: inc/breadcrumbs.php:333
 #: inc/customizer/settings/general.php:1969
-#: inc/themepanel/theme-panel.php:390
+#: inc/themepanel/theme-panel.php:392
 msgid "Home"
 msgstr ""
 
 #: build/oceanwp/inc/breadcrumbs.php:334
-#: build/oceanwp/inc/customizer/settings/general.php:2143
+#: build/oceanwp/inc/customizer/settings/general.php:1995
 #: inc/breadcrumbs.php:334
 #: inc/customizer/settings/general.php:1995
 msgid "404 Not Found"
@@ -355,7 +355,7 @@ msgstr ""
 
 #. Translators: %s is the search query. The HTML entities are opening and closing curly quotes.
 #: build/oceanwp/inc/breadcrumbs.php:337
-#: build/oceanwp/inc/customizer/settings/general.php:2169
+#: build/oceanwp/inc/customizer/settings/general.php:2021
 #: inc/breadcrumbs.php:337
 #: inc/customizer/settings/general.php:2021
 msgid "Search results for"
@@ -379,58 +379,58 @@ msgstr ""
 msgid "Week %s"
 msgstr ""
 
-#: build/oceanwp/inc/breadcrumbs.php:881
-#: inc/breadcrumbs.php:881
+#: build/oceanwp/inc/breadcrumbs.php:885
+#: inc/breadcrumbs.php:885
 msgctxt "minute and hour archives time format"
 msgid "g:i a"
 msgstr ""
 
-#: build/oceanwp/inc/breadcrumbs.php:898
-#: inc/breadcrumbs.php:898
+#: build/oceanwp/inc/breadcrumbs.php:902
+#: inc/breadcrumbs.php:902
 msgctxt "minute archives time format"
 msgid "i"
 msgstr ""
 
-#: build/oceanwp/inc/breadcrumbs.php:915
-#: inc/breadcrumbs.php:915
+#: build/oceanwp/inc/breadcrumbs.php:919
+#: inc/breadcrumbs.php:919
 msgctxt "hour archives time format"
 msgid "g a"
 msgstr ""
 
-#: build/oceanwp/inc/breadcrumbs.php:931
-#: build/oceanwp/inc/breadcrumbs.php:960
-#: build/oceanwp/inc/breadcrumbs.php:984
-#: build/oceanwp/inc/breadcrumbs.php:1008
-#: build/oceanwp/inc/breadcrumbs.php:1342
-#: inc/breadcrumbs.php:931
-#: inc/breadcrumbs.php:960
-#: inc/breadcrumbs.php:984
-#: inc/breadcrumbs.php:1008
-#: inc/breadcrumbs.php:1342
+#: build/oceanwp/inc/breadcrumbs.php:935
+#: build/oceanwp/inc/breadcrumbs.php:964
+#: build/oceanwp/inc/breadcrumbs.php:988
+#: build/oceanwp/inc/breadcrumbs.php:1012
+#: build/oceanwp/inc/breadcrumbs.php:1346
+#: inc/breadcrumbs.php:935
+#: inc/breadcrumbs.php:964
+#: inc/breadcrumbs.php:988
+#: inc/breadcrumbs.php:1012
+#: inc/breadcrumbs.php:1346
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: build/oceanwp/inc/breadcrumbs.php:932
-#: build/oceanwp/inc/breadcrumbs.php:985
-#: build/oceanwp/inc/breadcrumbs.php:1346
-#: inc/breadcrumbs.php:932
-#: inc/breadcrumbs.php:985
-#: inc/breadcrumbs.php:1346
+#: build/oceanwp/inc/breadcrumbs.php:936
+#: build/oceanwp/inc/breadcrumbs.php:989
+#: build/oceanwp/inc/breadcrumbs.php:1350
+#: inc/breadcrumbs.php:936
+#: inc/breadcrumbs.php:989
+#: inc/breadcrumbs.php:1350
 msgctxt "monthly archives date format"
 msgid "F"
 msgstr ""
 
-#: build/oceanwp/inc/breadcrumbs.php:933
-#: build/oceanwp/inc/breadcrumbs.php:1350
-#: inc/breadcrumbs.php:933
-#: inc/breadcrumbs.php:1350
+#: build/oceanwp/inc/breadcrumbs.php:937
+#: build/oceanwp/inc/breadcrumbs.php:1354
+#: inc/breadcrumbs.php:937
+#: inc/breadcrumbs.php:1354
 msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
-#: build/oceanwp/inc/breadcrumbs.php:961
-#: inc/breadcrumbs.php:961
+#: build/oceanwp/inc/breadcrumbs.php:965
+#: inc/breadcrumbs.php:965
 msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
@@ -457,14 +457,14 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:449
 #: build/oceanwp/inc/customizer/settings/blog.php:1391
 #: build/oceanwp/inc/customizer/settings/edd.php:1301
-#: build/oceanwp/inc/customizer/settings/general.php:1595
-#: build/oceanwp/inc/customizer/settings/general.php:2477
-#: build/oceanwp/inc/customizer/settings/general.php:2746
-#: build/oceanwp/inc/customizer/settings/header.php:1166
-#: build/oceanwp/inc/customizer/settings/header.php:1628
-#: build/oceanwp/inc/customizer/settings/header.php:1650
-#: build/oceanwp/inc/customizer/settings/header.php:2329
-#: build/oceanwp/inc/customizer/settings/header.php:3682
+#: build/oceanwp/inc/customizer/settings/general.php:1447
+#: build/oceanwp/inc/customizer/settings/general.php:2329
+#: build/oceanwp/inc/customizer/settings/general.php:2598
+#: build/oceanwp/inc/customizer/settings/header.php:1170
+#: build/oceanwp/inc/customizer/settings/header.php:1632
+#: build/oceanwp/inc/customizer/settings/header.php:1654
+#: build/oceanwp/inc/customizer/settings/header.php:2333
+#: build/oceanwp/inc/customizer/settings/header.php:3686
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1664
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2392
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:191
@@ -503,14 +503,14 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:448
 #: build/oceanwp/inc/customizer/settings/blog.php:1389
 #: build/oceanwp/inc/customizer/settings/edd.php:1299
-#: build/oceanwp/inc/customizer/settings/general.php:1593
-#: build/oceanwp/inc/customizer/settings/general.php:2476
-#: build/oceanwp/inc/customizer/settings/general.php:2748
-#: build/oceanwp/inc/customizer/settings/header.php:1164
-#: build/oceanwp/inc/customizer/settings/header.php:1627
-#: build/oceanwp/inc/customizer/settings/header.php:1648
-#: build/oceanwp/inc/customizer/settings/header.php:2327
-#: build/oceanwp/inc/customizer/settings/header.php:3681
+#: build/oceanwp/inc/customizer/settings/general.php:1445
+#: build/oceanwp/inc/customizer/settings/general.php:2328
+#: build/oceanwp/inc/customizer/settings/general.php:2600
+#: build/oceanwp/inc/customizer/settings/header.php:1168
+#: build/oceanwp/inc/customizer/settings/header.php:1631
+#: build/oceanwp/inc/customizer/settings/header.php:1652
+#: build/oceanwp/inc/customizer/settings/header.php:2331
+#: build/oceanwp/inc/customizer/settings/header.php:3685
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1662
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2390
 #: inc/customizer/controls/dimensions/class-control-dimensions.php:193
@@ -618,16 +618,16 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/general.php:300
 #: build/oceanwp/inc/customizer/settings/general.php:332
 #: build/oceanwp/inc/customizer/settings/general.php:366
-#: build/oceanwp/inc/customizer/settings/general.php:1537
-#: build/oceanwp/inc/customizer/settings/general.php:1626
-#: build/oceanwp/inc/customizer/settings/general.php:1665
-#: build/oceanwp/inc/customizer/settings/general.php:1697
-#: build/oceanwp/inc/customizer/settings/general.php:1731
-#: build/oceanwp/inc/customizer/settings/general.php:4280
-#: build/oceanwp/inc/customizer/settings/header.php:2027
-#: build/oceanwp/inc/customizer/settings/header.php:2056
-#: build/oceanwp/inc/customizer/settings/header.php:2078
-#: build/oceanwp/inc/customizer/settings/header.php:2102
+#: build/oceanwp/inc/customizer/settings/general.php:1389
+#: build/oceanwp/inc/customizer/settings/general.php:1478
+#: build/oceanwp/inc/customizer/settings/general.php:1517
+#: build/oceanwp/inc/customizer/settings/general.php:1549
+#: build/oceanwp/inc/customizer/settings/general.php:1583
+#: build/oceanwp/inc/customizer/settings/general.php:4313
+#: build/oceanwp/inc/customizer/settings/header.php:2031
+#: build/oceanwp/inc/customizer/settings/header.php:2060
+#: build/oceanwp/inc/customizer/settings/header.php:2082
+#: build/oceanwp/inc/customizer/settings/header.php:2106
 #: build/oceanwp/inc/customizer/settings/typography.php:591
 #: build/oceanwp/inc/customizer/settings/typography.php:630
 #: build/oceanwp/inc/customizer/settings/typography.php:663
@@ -977,10 +977,10 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:46
 #: build/oceanwp/inc/customizer/settings/blog.php:1334
-#: build/oceanwp/inc/helpers.php:2197
+#: build/oceanwp/inc/helpers.php:2193
 #: inc/customizer/settings/blog.php:46
 #: inc/customizer/settings/blog.php:1334
-#: inc/helpers.php:2197
+#: inc/helpers.php:2193
 msgid "Blog"
 msgstr ""
 
@@ -998,8 +998,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:960
 #: build/oceanwp/inc/customizer/settings/edd.php:1066
 #: build/oceanwp/inc/customizer/settings/edd.php:1474
-#: build/oceanwp/inc/customizer/settings/general.php:859
-#: build/oceanwp/inc/customizer/settings/general.php:1205
+#: build/oceanwp/inc/customizer/settings/general.php:834
+#: build/oceanwp/inc/customizer/settings/general.php:1180
 #: build/oceanwp/inc/customizer/settings/learndash.php:187
 #: build/oceanwp/inc/customizer/settings/learndash.php:357
 #: build/oceanwp/inc/customizer/settings/learndash.php:527
@@ -1029,8 +1029,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:966
 #: build/oceanwp/inc/customizer/settings/edd.php:1072
 #: build/oceanwp/inc/customizer/settings/edd.php:1480
-#: build/oceanwp/inc/customizer/settings/general.php:865
-#: build/oceanwp/inc/customizer/settings/general.php:1211
+#: build/oceanwp/inc/customizer/settings/general.php:840
+#: build/oceanwp/inc/customizer/settings/general.php:1186
 #: build/oceanwp/inc/customizer/settings/learndash.php:193
 #: build/oceanwp/inc/customizer/settings/learndash.php:363
 #: build/oceanwp/inc/customizer/settings/learndash.php:533
@@ -1060,8 +1060,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:967
 #: build/oceanwp/inc/customizer/settings/edd.php:1073
 #: build/oceanwp/inc/customizer/settings/edd.php:1481
-#: build/oceanwp/inc/customizer/settings/general.php:866
-#: build/oceanwp/inc/customizer/settings/general.php:1212
+#: build/oceanwp/inc/customizer/settings/general.php:841
+#: build/oceanwp/inc/customizer/settings/general.php:1187
 #: build/oceanwp/inc/customizer/settings/learndash.php:194
 #: build/oceanwp/inc/customizer/settings/learndash.php:364
 #: build/oceanwp/inc/customizer/settings/learndash.php:534
@@ -1091,8 +1091,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:968
 #: build/oceanwp/inc/customizer/settings/edd.php:1074
 #: build/oceanwp/inc/customizer/settings/edd.php:1482
-#: build/oceanwp/inc/customizer/settings/general.php:867
-#: build/oceanwp/inc/customizer/settings/general.php:1213
+#: build/oceanwp/inc/customizer/settings/general.php:842
+#: build/oceanwp/inc/customizer/settings/general.php:1188
 #: build/oceanwp/inc/customizer/settings/learndash.php:195
 #: build/oceanwp/inc/customizer/settings/learndash.php:365
 #: build/oceanwp/inc/customizer/settings/learndash.php:535
@@ -1122,8 +1122,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:991
 #: build/oceanwp/inc/customizer/settings/edd.php:1097
 #: build/oceanwp/inc/customizer/settings/edd.php:1505
-#: build/oceanwp/inc/customizer/settings/general.php:890
-#: build/oceanwp/inc/customizer/settings/general.php:1236
+#: build/oceanwp/inc/customizer/settings/general.php:865
+#: build/oceanwp/inc/customizer/settings/general.php:1211
 #: build/oceanwp/inc/customizer/settings/learndash.php:218
 #: build/oceanwp/inc/customizer/settings/learndash.php:388
 #: build/oceanwp/inc/customizer/settings/learndash.php:558
@@ -1153,8 +1153,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:1022
 #: build/oceanwp/inc/customizer/settings/edd.php:1128
 #: build/oceanwp/inc/customizer/settings/edd.php:1536
-#: build/oceanwp/inc/customizer/settings/general.php:921
-#: build/oceanwp/inc/customizer/settings/general.php:1267
+#: build/oceanwp/inc/customizer/settings/general.php:896
+#: build/oceanwp/inc/customizer/settings/general.php:1242
 #: build/oceanwp/inc/customizer/settings/learndash.php:249
 #: build/oceanwp/inc/customizer/settings/learndash.php:419
 #: build/oceanwp/inc/customizer/settings/learndash.php:589
@@ -1184,8 +1184,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:1053
 #: build/oceanwp/inc/customizer/settings/edd.php:1159
 #: build/oceanwp/inc/customizer/settings/edd.php:1567
-#: build/oceanwp/inc/customizer/settings/general.php:952
-#: build/oceanwp/inc/customizer/settings/general.php:1298
+#: build/oceanwp/inc/customizer/settings/general.php:927
+#: build/oceanwp/inc/customizer/settings/general.php:1273
 #: build/oceanwp/inc/customizer/settings/learndash.php:280
 #: build/oceanwp/inc/customizer/settings/learndash.php:450
 #: build/oceanwp/inc/customizer/settings/learndash.php:620
@@ -1215,8 +1215,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:1059
 #: build/oceanwp/inc/customizer/settings/edd.php:1165
 #: build/oceanwp/inc/customizer/settings/edd.php:1573
-#: build/oceanwp/inc/customizer/settings/general.php:958
-#: build/oceanwp/inc/customizer/settings/general.php:1304
+#: build/oceanwp/inc/customizer/settings/general.php:933
+#: build/oceanwp/inc/customizer/settings/general.php:1279
 #: build/oceanwp/inc/customizer/settings/learndash.php:286
 #: build/oceanwp/inc/customizer/settings/learndash.php:456
 #: build/oceanwp/inc/customizer/settings/learndash.php:626
@@ -1246,8 +1246,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:1060
 #: build/oceanwp/inc/customizer/settings/edd.php:1166
 #: build/oceanwp/inc/customizer/settings/edd.php:1574
-#: build/oceanwp/inc/customizer/settings/general.php:959
-#: build/oceanwp/inc/customizer/settings/general.php:1305
+#: build/oceanwp/inc/customizer/settings/general.php:934
+#: build/oceanwp/inc/customizer/settings/general.php:1280
 #: build/oceanwp/inc/customizer/settings/learndash.php:287
 #: build/oceanwp/inc/customizer/settings/learndash.php:457
 #: build/oceanwp/inc/customizer/settings/learndash.php:627
@@ -1276,7 +1276,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:227
 #: build/oceanwp/inc/customizer/settings/blog.php:1292
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:263
-#: build/oceanwp/inc/customizer/settings/general.php:1495
+#: build/oceanwp/inc/customizer/settings/general.php:1347
 #: build/oceanwp/inc/customizer/settings/sidebar.php:171
 #: inc/customizer/settings/blog.php:227
 #: inc/customizer/settings/blog.php:1292
@@ -1289,7 +1289,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:233
 #: build/oceanwp/inc/customizer/settings/blog.php:1298
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:269
-#: build/oceanwp/inc/customizer/settings/general.php:1501
+#: build/oceanwp/inc/customizer/settings/general.php:1353
 #: build/oceanwp/inc/customizer/settings/sidebar.php:177
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2062
 #: inc/customizer/settings/blog.php:233
@@ -1304,7 +1304,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:234
 #: build/oceanwp/inc/customizer/settings/blog.php:1299
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:270
-#: build/oceanwp/inc/customizer/settings/general.php:1502
+#: build/oceanwp/inc/customizer/settings/general.php:1354
 #: build/oceanwp/inc/customizer/settings/sidebar.php:178
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2063
 #: inc/customizer/settings/blog.php:234
@@ -1319,7 +1319,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:235
 #: build/oceanwp/inc/customizer/settings/blog.php:1300
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:271
-#: build/oceanwp/inc/customizer/settings/general.php:1503
+#: build/oceanwp/inc/customizer/settings/general.php:1355
 #: build/oceanwp/inc/customizer/settings/sidebar.php:179
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2064
 #: inc/customizer/settings/blog.php:235
@@ -1334,7 +1334,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:236
 #: build/oceanwp/inc/customizer/settings/blog.php:1301
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:272
-#: build/oceanwp/inc/customizer/settings/general.php:1504
+#: build/oceanwp/inc/customizer/settings/general.php:1356
 #: build/oceanwp/inc/customizer/settings/sidebar.php:180
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2065
 #: inc/customizer/settings/blog.php:236
@@ -1349,7 +1349,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:237
 #: build/oceanwp/inc/customizer/settings/blog.php:1302
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:273
-#: build/oceanwp/inc/customizer/settings/general.php:1505
+#: build/oceanwp/inc/customizer/settings/general.php:1357
 #: build/oceanwp/inc/customizer/settings/sidebar.php:181
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2066
 #: inc/customizer/settings/blog.php:237
@@ -1364,7 +1364,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:238
 #: build/oceanwp/inc/customizer/settings/blog.php:1303
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:274
-#: build/oceanwp/inc/customizer/settings/general.php:1506
+#: build/oceanwp/inc/customizer/settings/general.php:1358
 #: build/oceanwp/inc/customizer/settings/sidebar.php:182
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2067
 #: inc/customizer/settings/blog.php:238
@@ -1379,7 +1379,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:239
 #: build/oceanwp/inc/customizer/settings/blog.php:1304
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:275
-#: build/oceanwp/inc/customizer/settings/general.php:1507
+#: build/oceanwp/inc/customizer/settings/general.php:1359
 #: build/oceanwp/inc/customizer/settings/sidebar.php:183
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2068
 #: inc/customizer/settings/blog.php:239
@@ -1394,7 +1394,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:240
 #: build/oceanwp/inc/customizer/settings/blog.php:1305
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:276
-#: build/oceanwp/inc/customizer/settings/general.php:1508
+#: build/oceanwp/inc/customizer/settings/general.php:1360
 #: build/oceanwp/inc/customizer/settings/sidebar.php:184
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2069
 #: inc/customizer/settings/blog.php:240
@@ -1409,7 +1409,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:241
 #: build/oceanwp/inc/customizer/settings/blog.php:1306
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:277
-#: build/oceanwp/inc/customizer/settings/general.php:1509
+#: build/oceanwp/inc/customizer/settings/general.php:1361
 #: build/oceanwp/inc/customizer/settings/sidebar.php:185
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2070
 #: inc/customizer/settings/blog.php:241
@@ -1457,10 +1457,10 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:329
 #: build/oceanwp/inc/customizer/settings/header.php:91
-#: build/oceanwp/inc/helpers.php:4051
+#: build/oceanwp/inc/helpers.php:4047
 #: inc/customizer/settings/blog.php:329
 #: inc/customizer/settings/header.php:91
-#: inc/helpers.php:4051
+#: inc/helpers.php:4047
 msgid "Medium"
 msgstr ""
 
@@ -1512,12 +1512,12 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:479
 #: build/oceanwp/inc/customizer/settings/blog.php:1390
 #: build/oceanwp/inc/customizer/settings/edd.php:1300
-#: build/oceanwp/inc/customizer/settings/general.php:1594
-#: build/oceanwp/inc/customizer/settings/general.php:2747
+#: build/oceanwp/inc/customizer/settings/general.php:1446
+#: build/oceanwp/inc/customizer/settings/general.php:2599
 #: build/oceanwp/inc/customizer/settings/header.php:90
-#: build/oceanwp/inc/customizer/settings/header.php:1165
-#: build/oceanwp/inc/customizer/settings/header.php:1649
-#: build/oceanwp/inc/customizer/settings/header.php:2328
+#: build/oceanwp/inc/customizer/settings/header.php:1169
+#: build/oceanwp/inc/customizer/settings/header.php:1653
+#: build/oceanwp/inc/customizer/settings/header.php:2332
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1663
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2391
 #: inc/customizer/settings/blog.php:479
@@ -1624,12 +1624,12 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:763
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1903
-#: build/oceanwp/inc/helpers.php:3471
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:588
+#: build/oceanwp/inc/helpers.php:3467
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:608
 #: inc/customizer/settings/blog.php:763
 #: inc/customizer/settings/woocommerce.php:1903
-#: inc/helpers.php:3471
-#: inc/woocommerce/woocommerce-config.php:588
+#: inc/helpers.php:3467
+#: inc/woocommerce/woocommerce-config.php:608
 msgid "End of content"
 msgstr ""
 
@@ -1642,12 +1642,12 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:790
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1921
-#: build/oceanwp/inc/helpers.php:3476
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:593
+#: build/oceanwp/inc/helpers.php:3472
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:613
 #: inc/customizer/settings/blog.php:790
 #: inc/customizer/settings/woocommerce.php:1921
-#: inc/helpers.php:3476
-#: inc/woocommerce/woocommerce-config.php:593
+#: inc/helpers.php:3472
+#: inc/woocommerce/woocommerce-config.php:613
 msgid "No more pages to load"
 msgstr ""
 
@@ -1661,8 +1661,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:827
 #: build/oceanwp/inc/customizer/settings/blog.php:1671
 #: build/oceanwp/inc/customizer/settings/edd.php:1261
-#: build/oceanwp/inc/customizer/settings/header.php:1018
-#: build/oceanwp/inc/customizer/settings/header.php:3504
+#: build/oceanwp/inc/customizer/settings/header.php:1022
+#: build/oceanwp/inc/customizer/settings/header.php:3508
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1593
 #: inc/customizer/settings/blog.php:827
 #: inc/customizer/settings/blog.php:1671
@@ -1676,13 +1676,13 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:853
 #: build/oceanwp/inc/customizer/settings/blog.php:1696
 #: build/oceanwp/inc/customizer/settings/lifterlms.php:211
-#: build/oceanwp/inc/helpers.php:3041
-#: build/oceanwp/inc/helpers.php:3126
+#: build/oceanwp/inc/helpers.php:3037
+#: build/oceanwp/inc/helpers.php:3122
 #: inc/customizer/settings/blog.php:853
 #: inc/customizer/settings/blog.php:1696
 #: inc/customizer/settings/lifterlms.php:211
-#: inc/helpers.php:3041
-#: inc/helpers.php:3126
+#: inc/helpers.php:3037
+#: inc/helpers.php:3122
 msgid "Meta"
 msgstr ""
 
@@ -1720,11 +1720,11 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:863
 #: build/oceanwp/inc/customizer/settings/blog.php:1265
 #: build/oceanwp/inc/customizer/settings/blog.php:1706
-#: build/oceanwp/inc/helpers.php:3133
+#: build/oceanwp/inc/helpers.php:3129
 #: inc/customizer/settings/blog.php:863
 #: inc/customizer/settings/blog.php:1265
 #: inc/customizer/settings/blog.php:1706
-#: inc/helpers.php:3133
+#: inc/helpers.php:3129
 msgid "Comments"
 msgstr ""
 
@@ -1777,9 +1777,9 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:1207
 #: build/oceanwp/inc/customizer/settings/blog.php:1742
 #: build/oceanwp/inc/customizer/settings/edd.php:2637
-#: build/oceanwp/inc/customizer/settings/general.php:2210
-#: build/oceanwp/inc/customizer/settings/general.php:2241
-#: build/oceanwp/inc/customizer/settings/general.php:2275
+#: build/oceanwp/inc/customizer/settings/general.php:2062
+#: build/oceanwp/inc/customizer/settings/general.php:2093
+#: build/oceanwp/inc/customizer/settings/general.php:2127
 #: build/oceanwp/inc/customizer/settings/typography.php:667
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4132
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4895
@@ -1804,9 +1804,9 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:935
 #: build/oceanwp/inc/customizer/settings/edd.php:1041
 #: build/oceanwp/inc/customizer/settings/edd.php:1449
-#: build/oceanwp/inc/customizer/settings/general.php:834
-#: build/oceanwp/inc/customizer/settings/general.php:1155
-#: build/oceanwp/inc/customizer/settings/general.php:3758
+#: build/oceanwp/inc/customizer/settings/general.php:809
+#: build/oceanwp/inc/customizer/settings/general.php:1130
+#: build/oceanwp/inc/customizer/settings/general.php:3610
 #: build/oceanwp/inc/customizer/settings/learndash.php:117
 #: build/oceanwp/inc/customizer/settings/learndash.php:162
 #: build/oceanwp/inc/customizer/settings/learndash.php:332
@@ -1856,8 +1856,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:1094
 #: build/oceanwp/inc/customizer/settings/blog.php:1529
 #: build/oceanwp/inc/customizer/settings/general.php:368
-#: build/oceanwp/inc/customizer/settings/general.php:1733
-#: build/oceanwp/inc/customizer/settings/header.php:2104
+#: build/oceanwp/inc/customizer/settings/general.php:1585
+#: build/oceanwp/inc/customizer/settings/header.php:2108
 #: inc/customizer/settings/blog.php:1094
 #: inc/customizer/settings/blog.php:1529
 #: inc/customizer/settings/general.php:368
@@ -1903,7 +1903,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1175
 #: build/oceanwp/inc/customizer/settings/header.php:86
-#: build/oceanwp/inc/customizer/settings/header.php:3080
+#: build/oceanwp/inc/customizer/settings/header.php:3084
 #: inc/customizer/settings/blog.php:1175
 #: inc/customizer/settings/header.php:86
 #: inc/customizer/settings/header.php:3084
@@ -1931,9 +1931,9 @@ msgid "Post Title Meta"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1268
-#: build/oceanwp/inc/helpers.php:3128
+#: build/oceanwp/inc/helpers.php:3124
 #: inc/customizer/settings/blog.php:1268
-#: inc/helpers.php:3128
+#: inc/helpers.php:3124
 msgid "Tags"
 msgstr ""
 
@@ -1953,7 +1953,7 @@ msgid "Featured Image In Page Header"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1384
-#: build/oceanwp/inc/customizer/settings/general.php:1588
+#: build/oceanwp/inc/customizer/settings/general.php:1440
 #: inc/customizer/settings/blog.php:1384
 #: inc/customizer/settings/general.php:1440
 msgid "Title/Breadcrumb Position"
@@ -1961,13 +1961,13 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1415
 #: build/oceanwp/inc/customizer/settings/general.php:254
-#: build/oceanwp/inc/customizer/settings/general.php:1619
-#: build/oceanwp/inc/customizer/settings/general.php:2041
-#: build/oceanwp/inc/customizer/settings/general.php:2470
-#: build/oceanwp/inc/customizer/settings/header.php:1159
-#: build/oceanwp/inc/customizer/settings/header.php:1622
-#: build/oceanwp/inc/customizer/settings/header.php:2021
-#: build/oceanwp/inc/customizer/settings/header.php:2322
+#: build/oceanwp/inc/customizer/settings/general.php:1471
+#: build/oceanwp/inc/customizer/settings/general.php:1893
+#: build/oceanwp/inc/customizer/settings/general.php:2322
+#: build/oceanwp/inc/customizer/settings/header.php:1163
+#: build/oceanwp/inc/customizer/settings/header.php:1626
+#: build/oceanwp/inc/customizer/settings/header.php:2025
+#: build/oceanwp/inc/customizer/settings/header.php:2326
 #: inc/customizer/settings/blog.php:1415
 #: inc/customizer/settings/general.php:254
 #: inc/customizer/settings/general.php:1471
@@ -1982,8 +1982,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1423
 #: build/oceanwp/inc/customizer/settings/general.php:262
-#: build/oceanwp/inc/customizer/settings/general.php:1627
-#: build/oceanwp/inc/customizer/settings/header.php:2028
+#: build/oceanwp/inc/customizer/settings/general.php:1479
+#: build/oceanwp/inc/customizer/settings/header.php:2032
 #: inc/customizer/settings/blog.php:1423
 #: inc/customizer/settings/general.php:262
 #: inc/customizer/settings/general.php:1479
@@ -1993,8 +1993,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1424
 #: build/oceanwp/inc/customizer/settings/general.php:263
-#: build/oceanwp/inc/customizer/settings/general.php:1628
-#: build/oceanwp/inc/customizer/settings/header.php:2029
+#: build/oceanwp/inc/customizer/settings/general.php:1480
+#: build/oceanwp/inc/customizer/settings/header.php:2033
 #: inc/customizer/settings/blog.php:1424
 #: inc/customizer/settings/general.php:263
 #: inc/customizer/settings/general.php:1480
@@ -2004,8 +2004,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1425
 #: build/oceanwp/inc/customizer/settings/general.php:264
-#: build/oceanwp/inc/customizer/settings/general.php:1629
-#: build/oceanwp/inc/customizer/settings/header.php:2030
+#: build/oceanwp/inc/customizer/settings/general.php:1481
+#: build/oceanwp/inc/customizer/settings/header.php:2034
 #: inc/customizer/settings/blog.php:1425
 #: inc/customizer/settings/general.php:264
 #: inc/customizer/settings/general.php:1481
@@ -2015,8 +2015,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1426
 #: build/oceanwp/inc/customizer/settings/general.php:265
-#: build/oceanwp/inc/customizer/settings/general.php:1630
-#: build/oceanwp/inc/customizer/settings/header.php:2031
+#: build/oceanwp/inc/customizer/settings/general.php:1482
+#: build/oceanwp/inc/customizer/settings/header.php:2035
 #: inc/customizer/settings/blog.php:1426
 #: inc/customizer/settings/general.php:265
 #: inc/customizer/settings/general.php:1482
@@ -2026,8 +2026,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1427
 #: build/oceanwp/inc/customizer/settings/general.php:266
-#: build/oceanwp/inc/customizer/settings/general.php:1631
-#: build/oceanwp/inc/customizer/settings/header.php:2032
+#: build/oceanwp/inc/customizer/settings/general.php:1483
+#: build/oceanwp/inc/customizer/settings/header.php:2036
 #: inc/customizer/settings/blog.php:1427
 #: inc/customizer/settings/general.php:266
 #: inc/customizer/settings/general.php:1483
@@ -2037,8 +2037,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1428
 #: build/oceanwp/inc/customizer/settings/general.php:267
-#: build/oceanwp/inc/customizer/settings/general.php:1632
-#: build/oceanwp/inc/customizer/settings/header.php:2033
+#: build/oceanwp/inc/customizer/settings/general.php:1484
+#: build/oceanwp/inc/customizer/settings/header.php:2037
 #: inc/customizer/settings/blog.php:1428
 #: inc/customizer/settings/general.php:267
 #: inc/customizer/settings/general.php:1484
@@ -2048,8 +2048,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1429
 #: build/oceanwp/inc/customizer/settings/general.php:268
-#: build/oceanwp/inc/customizer/settings/general.php:1633
-#: build/oceanwp/inc/customizer/settings/header.php:2034
+#: build/oceanwp/inc/customizer/settings/general.php:1485
+#: build/oceanwp/inc/customizer/settings/header.php:2038
 #: inc/customizer/settings/blog.php:1429
 #: inc/customizer/settings/general.php:268
 #: inc/customizer/settings/general.php:1485
@@ -2059,8 +2059,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1430
 #: build/oceanwp/inc/customizer/settings/general.php:269
-#: build/oceanwp/inc/customizer/settings/general.php:1634
-#: build/oceanwp/inc/customizer/settings/header.php:2035
+#: build/oceanwp/inc/customizer/settings/general.php:1486
+#: build/oceanwp/inc/customizer/settings/header.php:2039
 #: inc/customizer/settings/blog.php:1430
 #: inc/customizer/settings/general.php:269
 #: inc/customizer/settings/general.php:1486
@@ -2070,8 +2070,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1431
 #: build/oceanwp/inc/customizer/settings/general.php:270
-#: build/oceanwp/inc/customizer/settings/general.php:1635
-#: build/oceanwp/inc/customizer/settings/header.php:2036
+#: build/oceanwp/inc/customizer/settings/general.php:1487
+#: build/oceanwp/inc/customizer/settings/header.php:2040
 #: inc/customizer/settings/blog.php:1431
 #: inc/customizer/settings/general.php:270
 #: inc/customizer/settings/general.php:1487
@@ -2081,8 +2081,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1454
 #: build/oceanwp/inc/customizer/settings/general.php:293
-#: build/oceanwp/inc/customizer/settings/general.php:1658
-#: build/oceanwp/inc/customizer/settings/header.php:2050
+#: build/oceanwp/inc/customizer/settings/general.php:1510
+#: build/oceanwp/inc/customizer/settings/header.php:2054
 #: inc/customizer/settings/blog.php:1454
 #: inc/customizer/settings/general.php:293
 #: inc/customizer/settings/general.php:1510
@@ -2092,8 +2092,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1462
 #: build/oceanwp/inc/customizer/settings/general.php:301
-#: build/oceanwp/inc/customizer/settings/general.php:1666
-#: build/oceanwp/inc/customizer/settings/header.php:2057
+#: build/oceanwp/inc/customizer/settings/general.php:1518
+#: build/oceanwp/inc/customizer/settings/header.php:2061
 #: inc/customizer/settings/blog.php:1462
 #: inc/customizer/settings/general.php:301
 #: inc/customizer/settings/general.php:1518
@@ -2103,8 +2103,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1463
 #: build/oceanwp/inc/customizer/settings/general.php:302
-#: build/oceanwp/inc/customizer/settings/general.php:1667
-#: build/oceanwp/inc/customizer/settings/header.php:2058
+#: build/oceanwp/inc/customizer/settings/general.php:1519
+#: build/oceanwp/inc/customizer/settings/header.php:2062
 #: inc/customizer/settings/blog.php:1463
 #: inc/customizer/settings/general.php:302
 #: inc/customizer/settings/general.php:1519
@@ -2116,10 +2116,10 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:1495
 #: build/oceanwp/inc/customizer/settings/general.php:325
 #: build/oceanwp/inc/customizer/settings/general.php:334
-#: build/oceanwp/inc/customizer/settings/general.php:1690
-#: build/oceanwp/inc/customizer/settings/general.php:1699
-#: build/oceanwp/inc/customizer/settings/header.php:2072
-#: build/oceanwp/inc/customizer/settings/header.php:2080
+#: build/oceanwp/inc/customizer/settings/general.php:1542
+#: build/oceanwp/inc/customizer/settings/general.php:1551
+#: build/oceanwp/inc/customizer/settings/header.php:2076
+#: build/oceanwp/inc/customizer/settings/header.php:2084
 #: inc/customizer/settings/blog.php:1486
 #: inc/customizer/settings/blog.php:1495
 #: inc/customizer/settings/general.php:325
@@ -2133,8 +2133,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1494
 #: build/oceanwp/inc/customizer/settings/general.php:333
-#: build/oceanwp/inc/customizer/settings/general.php:1698
-#: build/oceanwp/inc/customizer/settings/header.php:2079
+#: build/oceanwp/inc/customizer/settings/general.php:1550
+#: build/oceanwp/inc/customizer/settings/header.php:2083
 #: inc/customizer/settings/blog.php:1494
 #: inc/customizer/settings/general.php:333
 #: inc/customizer/settings/general.php:1550
@@ -2144,8 +2144,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1496
 #: build/oceanwp/inc/customizer/settings/general.php:335
-#: build/oceanwp/inc/customizer/settings/general.php:1700
-#: build/oceanwp/inc/customizer/settings/header.php:2081
+#: build/oceanwp/inc/customizer/settings/general.php:1552
+#: build/oceanwp/inc/customizer/settings/header.php:2085
 #: inc/customizer/settings/blog.php:1496
 #: inc/customizer/settings/general.php:335
 #: inc/customizer/settings/general.php:1552
@@ -2155,8 +2155,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1497
 #: build/oceanwp/inc/customizer/settings/general.php:336
-#: build/oceanwp/inc/customizer/settings/general.php:1701
-#: build/oceanwp/inc/customizer/settings/header.php:2082
+#: build/oceanwp/inc/customizer/settings/general.php:1553
+#: build/oceanwp/inc/customizer/settings/header.php:2086
 #: inc/customizer/settings/blog.php:1497
 #: inc/customizer/settings/general.php:336
 #: inc/customizer/settings/general.php:1553
@@ -2166,8 +2166,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1520
 #: build/oceanwp/inc/customizer/settings/general.php:359
-#: build/oceanwp/inc/customizer/settings/general.php:1724
-#: build/oceanwp/inc/customizer/settings/header.php:2096
+#: build/oceanwp/inc/customizer/settings/general.php:1576
+#: build/oceanwp/inc/customizer/settings/header.php:2100
 #: inc/customizer/settings/blog.php:1520
 #: inc/customizer/settings/general.php:359
 #: inc/customizer/settings/general.php:1576
@@ -2177,8 +2177,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1528
 #: build/oceanwp/inc/customizer/settings/general.php:367
-#: build/oceanwp/inc/customizer/settings/general.php:1732
-#: build/oceanwp/inc/customizer/settings/header.php:2103
+#: build/oceanwp/inc/customizer/settings/general.php:1584
+#: build/oceanwp/inc/customizer/settings/header.php:2107
 #: inc/customizer/settings/blog.php:1528
 #: inc/customizer/settings/general.php:367
 #: inc/customizer/settings/general.php:1584
@@ -2188,8 +2188,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1530
 #: build/oceanwp/inc/customizer/settings/general.php:369
-#: build/oceanwp/inc/customizer/settings/general.php:1734
-#: build/oceanwp/inc/customizer/settings/header.php:2105
+#: build/oceanwp/inc/customizer/settings/general.php:1586
+#: build/oceanwp/inc/customizer/settings/header.php:2109
 #: inc/customizer/settings/blog.php:1530
 #: inc/customizer/settings/general.php:369
 #: inc/customizer/settings/general.php:1586
@@ -2203,15 +2203,15 @@ msgid "Page Header Height (px)"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1584
-#: build/oceanwp/inc/customizer/settings/general.php:1788
+#: build/oceanwp/inc/customizer/settings/general.php:1640
 #: inc/customizer/settings/blog.php:1584
 #: inc/customizer/settings/general.php:1640
 msgid "Overlay Opacity"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/blog.php:1615
-#: build/oceanwp/inc/customizer/settings/general.php:1819
-#: build/oceanwp/inc/customizer/settings/header.php:2005
+#: build/oceanwp/inc/customizer/settings/general.php:1671
+#: build/oceanwp/inc/customizer/settings/header.php:2009
 #: inc/customizer/settings/blog.php:1615
 #: inc/customizer/settings/general.php:1671
 #: inc/customizer/settings/header.php:2009
@@ -2239,9 +2239,9 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:1856
 #: build/oceanwp/inc/customizer/settings/edd.php:1267
 #: build/oceanwp/inc/customizer/settings/edd.php:1652
-#: build/oceanwp/inc/customizer/settings/general.php:2211
-#: build/oceanwp/inc/customizer/settings/general.php:2242
-#: build/oceanwp/inc/customizer/settings/general.php:2276
+#: build/oceanwp/inc/customizer/settings/general.php:2063
+#: build/oceanwp/inc/customizer/settings/general.php:2094
+#: build/oceanwp/inc/customizer/settings/general.php:2128
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1599
 #: inc/customizer/settings/blog.php:1769
 #: inc/customizer/settings/blog.php:1856
@@ -2257,9 +2257,9 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/blog.php:1770
 #: build/oceanwp/inc/customizer/settings/blog.php:1857
 #: build/oceanwp/inc/customizer/settings/edd.php:1653
-#: build/oceanwp/inc/customizer/settings/general.php:2212
-#: build/oceanwp/inc/customizer/settings/general.php:2243
-#: build/oceanwp/inc/customizer/settings/general.php:2277
+#: build/oceanwp/inc/customizer/settings/general.php:2064
+#: build/oceanwp/inc/customizer/settings/general.php:2095
+#: build/oceanwp/inc/customizer/settings/general.php:2129
 #: inc/customizer/settings/blog.php:1770
 #: inc/customizer/settings/blog.php:1857
 #: inc/customizer/settings/edd.php:1653
@@ -2444,7 +2444,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/edd.php:172
 #: build/oceanwp/inc/customizer/settings/footer-bottom.php:93
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:93
-#: build/oceanwp/inc/customizer/settings/general.php:1463
+#: build/oceanwp/inc/customizer/settings/general.php:1315
 #: build/oceanwp/inc/customizer/settings/topbar.php:97
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:411
 #: inc/customizer/settings/edd.php:172
@@ -2527,9 +2527,9 @@ msgid "Display"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/edd.php:366
-#: build/oceanwp/inc/customizer/settings/general.php:2103
-#: build/oceanwp/inc/customizer/settings/header.php:1692
-#: build/oceanwp/inc/customizer/settings/header.php:3796
+#: build/oceanwp/inc/customizer/settings/general.php:1955
+#: build/oceanwp/inc/customizer/settings/header.php:1696
+#: build/oceanwp/inc/customizer/settings/header.php:3800
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:543
 #: inc/customizer/settings/edd.php:366
 #: inc/customizer/settings/general.php:1955
@@ -2562,7 +2562,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/edd.php:393
 #: build/oceanwp/inc/customizer/settings/edd.php:625
-#: build/oceanwp/inc/customizer/settings/general.php:1531
+#: build/oceanwp/inc/customizer/settings/general.php:1383
 #: build/oceanwp/inc/customizer/settings/header.php:80
 #: build/oceanwp/inc/customizer/settings/topbar.php:120
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:561
@@ -2631,7 +2631,7 @@ msgid "Enter your full icon class"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/edd.php:518
-#: build/oceanwp/inc/customizer/settings/general.php:2562
+#: build/oceanwp/inc/customizer/settings/general.php:2414
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:644
 #: inc/customizer/settings/edd.php:518
 #: inc/customizer/settings/general.php:2414
@@ -2798,7 +2798,7 @@ msgid "Products"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/edd.php:1266
-#: build/oceanwp/inc/customizer/settings/general.php:1562
+#: build/oceanwp/inc/customizer/settings/general.php:1414
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1598
 #: inc/customizer/settings/edd.php:1266
 #: inc/customizer/settings/general.php:1414
@@ -2809,13 +2809,13 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/edd.php:1268
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1600
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2088
-#: build/oceanwp/inc/helpers.php:3040
-#: build/oceanwp/inc/helpers.php:3125
+#: build/oceanwp/inc/helpers.php:3036
+#: build/oceanwp/inc/helpers.php:3121
 #: inc/customizer/settings/edd.php:1268
 #: inc/customizer/settings/woocommerce.php:1600
 #: inc/customizer/settings/woocommerce.php:2088
-#: inc/helpers.php:3040
-#: inc/helpers.php:3125
+#: inc/helpers.php:3036
+#: inc/helpers.php:3121
 msgid "Title"
 msgstr ""
 
@@ -2924,12 +2924,12 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/edd.php:1856
 #: build/oceanwp/inc/customizer/settings/footer-bottom.php:236
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:409
-#: build/oceanwp/inc/customizer/settings/general.php:1883
-#: build/oceanwp/inc/customizer/settings/general.php:3099
-#: build/oceanwp/inc/customizer/settings/general.php:3520
+#: build/oceanwp/inc/customizer/settings/general.php:1735
+#: build/oceanwp/inc/customizer/settings/general.php:2951
+#: build/oceanwp/inc/customizer/settings/general.php:3372
 #: build/oceanwp/inc/customizer/settings/header.php:307
-#: build/oceanwp/inc/customizer/settings/header.php:1063
-#: build/oceanwp/inc/customizer/settings/header.php:3197
+#: build/oceanwp/inc/customizer/settings/header.php:1067
+#: build/oceanwp/inc/customizer/settings/header.php:3201
 #: build/oceanwp/inc/customizer/settings/lifterlms.php:684
 #: build/oceanwp/inc/customizer/settings/sidebar.php:118
 #: build/oceanwp/inc/customizer/settings/sidebar.php:265
@@ -2964,8 +2964,8 @@ msgid "Image Margin (px)"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/edd.php:2115
-#: build/oceanwp/inc/customizer/settings/general.php:2801
-#: build/oceanwp/inc/customizer/settings/general.php:3254
+#: build/oceanwp/inc/customizer/settings/general.php:2653
+#: build/oceanwp/inc/customizer/settings/general.php:3106
 #: build/oceanwp/inc/customizer/settings/lifterlms.php:841
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:3577
 #: inc/customizer/settings/edd.php:2115
@@ -2977,9 +2977,9 @@ msgid "Border Width (px)"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/edd.php:2245
-#: build/oceanwp/inc/customizer/settings/general.php:2593
-#: build/oceanwp/inc/customizer/settings/general.php:3297
-#: build/oceanwp/inc/customizer/settings/general.php:3563
+#: build/oceanwp/inc/customizer/settings/general.php:2445
+#: build/oceanwp/inc/customizer/settings/general.php:3149
+#: build/oceanwp/inc/customizer/settings/general.php:3415
 #: build/oceanwp/inc/customizer/settings/lifterlms.php:920
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:3656
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4670
@@ -2997,20 +2997,20 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/footer-bottom.php:280
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:453
 #: build/oceanwp/inc/customizer/settings/general.php:205
-#: build/oceanwp/inc/customizer/settings/general.php:1920
-#: build/oceanwp/inc/customizer/settings/general.php:2624
-#: build/oceanwp/inc/customizer/settings/general.php:2830
-#: build/oceanwp/inc/customizer/settings/general.php:3376
-#: build/oceanwp/inc/customizer/settings/general.php:3593
+#: build/oceanwp/inc/customizer/settings/general.php:1772
+#: build/oceanwp/inc/customizer/settings/general.php:2476
+#: build/oceanwp/inc/customizer/settings/general.php:2682
+#: build/oceanwp/inc/customizer/settings/general.php:3228
+#: build/oceanwp/inc/customizer/settings/general.php:3445
 #: build/oceanwp/inc/customizer/settings/header.php:225
 #: build/oceanwp/inc/customizer/settings/header.php:372
 #: build/oceanwp/inc/customizer/settings/header.php:668
-#: build/oceanwp/inc/customizer/settings/header.php:1002
-#: build/oceanwp/inc/customizer/settings/header.php:1255
-#: build/oceanwp/inc/customizer/settings/header.php:1876
-#: build/oceanwp/inc/customizer/settings/header.php:2569
-#: build/oceanwp/inc/customizer/settings/header.php:3892
-#: build/oceanwp/inc/customizer/settings/header.php:3909
+#: build/oceanwp/inc/customizer/settings/header.php:1006
+#: build/oceanwp/inc/customizer/settings/header.php:1259
+#: build/oceanwp/inc/customizer/settings/header.php:1880
+#: build/oceanwp/inc/customizer/settings/header.php:2573
+#: build/oceanwp/inc/customizer/settings/header.php:3896
+#: build/oceanwp/inc/customizer/settings/header.php:3913
 #: build/oceanwp/inc/customizer/settings/lifterlms.php:954
 #: build/oceanwp/inc/customizer/settings/sidebar.php:53
 #: build/oceanwp/inc/customizer/settings/sidebar.php:200
@@ -3053,9 +3053,9 @@ msgid "Background Color"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/edd.php:2311
-#: build/oceanwp/inc/customizer/settings/general.php:2930
-#: build/oceanwp/inc/customizer/settings/general.php:3327
-#: build/oceanwp/inc/customizer/settings/header.php:1910
+#: build/oceanwp/inc/customizer/settings/general.php:2782
+#: build/oceanwp/inc/customizer/settings/general.php:3179
+#: build/oceanwp/inc/customizer/settings/header.php:1914
 #: build/oceanwp/inc/customizer/settings/lifterlms.php:969
 #: build/oceanwp/inc/customizer/settings/topbar.php:244
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:3704
@@ -3242,9 +3242,9 @@ msgid "Add To Cart Border: Radius"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/edd.php:2690
-#: build/oceanwp/inc/customizer/settings/header.php:1840
-#: build/oceanwp/inc/customizer/settings/header.php:1858
-#: build/oceanwp/inc/customizer/settings/header.php:3282
+#: build/oceanwp/inc/customizer/settings/header.php:1844
+#: build/oceanwp/inc/customizer/settings/header.php:1862
+#: build/oceanwp/inc/customizer/settings/header.php:3286
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4167
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4930
 #: inc/customizer/settings/edd.php:2690
@@ -3292,8 +3292,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/edd.php:2860
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:505
-#: build/oceanwp/inc/customizer/settings/header.php:2601
-#: build/oceanwp/inc/customizer/settings/header.php:3926
+#: build/oceanwp/inc/customizer/settings/header.php:2605
+#: build/oceanwp/inc/customizer/settings/header.php:3930
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4960
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:5306
 #: inc/customizer/settings/edd.php:2860
@@ -3306,7 +3306,7 @@ msgid "Borders Color"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/edd.php:2885
-#: build/oceanwp/inc/customizer/settings/general.php:2992
+#: build/oceanwp/inc/customizer/settings/general.php:2844
 #: inc/customizer/settings/edd.php:2885
 #: inc/customizer/settings/general.php:2844
 msgid "Label Color"
@@ -3361,7 +3361,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/footer-bottom.php:100
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:100
-#: build/oceanwp/inc/customizer/settings/general.php:1469
+#: build/oceanwp/inc/customizer/settings/general.php:1321
 #: build/oceanwp/inc/customizer/settings/topbar.php:104
 #: inc/customizer/settings/footer-bottom.php:100
 #: inc/customizer/settings/footer-widgets.php:100
@@ -3372,7 +3372,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/footer-bottom.php:101
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:101
-#: build/oceanwp/inc/customizer/settings/general.php:1470
+#: build/oceanwp/inc/customizer/settings/general.php:1322
 #: build/oceanwp/inc/customizer/settings/topbar.php:105
 #: inc/customizer/settings/footer-bottom.php:101
 #: inc/customizer/settings/footer-widgets.php:101
@@ -3383,7 +3383,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/footer-bottom.php:102
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:102
-#: build/oceanwp/inc/customizer/settings/general.php:1471
+#: build/oceanwp/inc/customizer/settings/general.php:1323
 #: build/oceanwp/inc/customizer/settings/topbar.php:106
 #: inc/customizer/settings/footer-bottom.php:102
 #: inc/customizer/settings/footer-widgets.php:102
@@ -3394,7 +3394,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/footer-bottom.php:103
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:103
-#: build/oceanwp/inc/customizer/settings/general.php:1472
+#: build/oceanwp/inc/customizer/settings/general.php:1324
 #: build/oceanwp/inc/customizer/settings/topbar.php:107
 #: inc/customizer/settings/footer-bottom.php:103
 #: inc/customizer/settings/footer-widgets.php:103
@@ -3420,8 +3420,8 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/footer-bottom.php:306
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:479
-#: build/oceanwp/inc/customizer/settings/general.php:1945
-#: build/oceanwp/inc/customizer/settings/general.php:2303
+#: build/oceanwp/inc/customizer/settings/general.php:1797
+#: build/oceanwp/inc/customizer/settings/general.php:2155
 #: build/oceanwp/inc/customizer/settings/topbar.php:261
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4976
 #: inc/customizer/settings/footer-bottom.php:306
@@ -3437,7 +3437,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:531
 #: build/oceanwp/inc/customizer/settings/general.php:390
 #: build/oceanwp/inc/customizer/settings/header.php:717
-#: build/oceanwp/inc/customizer/settings/header.php:3943
+#: build/oceanwp/inc/customizer/settings/header.php:3947
 #: inc/customizer/settings/footer-bottom.php:332
 #: inc/customizer/settings/footer-widgets.php:531
 #: inc/customizer/settings/general.php:390
@@ -3448,7 +3448,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/footer-bottom.php:358
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:557
-#: build/oceanwp/inc/customizer/settings/header.php:3959
+#: build/oceanwp/inc/customizer/settings/header.php:3963
 #: inc/customizer/settings/footer-bottom.php:358
 #: inc/customizer/settings/footer-widgets.php:557
 #: inc/customizer/settings/header.php:3963
@@ -3479,7 +3479,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:131
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:161
-#: build/oceanwp/inc/customizer/settings/general.php:3710
+#: build/oceanwp/inc/customizer/settings/general.php:3562
 #: inc/customizer/settings/footer-widgets.php:131
 #: inc/customizer/settings/footer-widgets.php:161
 #: inc/customizer/settings/general.php:3562
@@ -3488,7 +3488,7 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:132
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:162
-#: build/oceanwp/inc/customizer/settings/general.php:3711
+#: build/oceanwp/inc/customizer/settings/general.php:3563
 #: inc/customizer/settings/footer-widgets.php:132
 #: inc/customizer/settings/footer-widgets.php:162
 #: inc/customizer/settings/general.php:3563
@@ -3506,11 +3506,11 @@ msgid "Add a parallax effect to your footer."
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:185
-#: build/oceanwp/inc/customizer/settings/general.php:3786
+#: build/oceanwp/inc/customizer/settings/general.php:3638
 #: build/oceanwp/inc/customizer/settings/header.php:108
-#: build/oceanwp/inc/customizer/settings/header.php:1384
-#: build/oceanwp/inc/customizer/settings/header.php:2254
-#: build/oceanwp/inc/customizer/settings/header.php:3052
+#: build/oceanwp/inc/customizer/settings/header.php:1388
+#: build/oceanwp/inc/customizer/settings/header.php:2258
+#: build/oceanwp/inc/customizer/settings/header.php:3056
 #: build/oceanwp/inc/customizer/settings/topbar.php:320
 #: inc/customizer/settings/footer-widgets.php:185
 #: inc/customizer/settings/general.php:3638
@@ -3523,9 +3523,9 @@ msgid "Select Template"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/footer-widgets.php:186
-#: build/oceanwp/inc/customizer/settings/general.php:3787
+#: build/oceanwp/inc/customizer/settings/general.php:3639
 #: build/oceanwp/inc/customizer/settings/header.php:109
-#: build/oceanwp/inc/customizer/settings/header.php:3053
+#: build/oceanwp/inc/customizer/settings/header.php:3057
 #: build/oceanwp/inc/customizer/settings/topbar.php:384
 #: inc/customizer/settings/footer-widgets.php:186
 #: inc/customizer/settings/general.php:3639
@@ -3598,19 +3598,19 @@ msgid "Site Background"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/general.php:229
-#: build/oceanwp/inc/customizer/settings/general.php:1540
+#: build/oceanwp/inc/customizer/settings/general.php:1392
 #: inc/customizer/settings/general.php:229
 #: inc/customizer/settings/general.php:1392
 msgid "Background Image"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/general.php:414
-#: build/oceanwp/inc/customizer/settings/general.php:2676
-#: build/oceanwp/inc/customizer/settings/general.php:2880
-#: build/oceanwp/inc/customizer/settings/general.php:3401
-#: build/oceanwp/inc/customizer/settings/general.php:3643
-#: build/oceanwp/inc/customizer/settings/header.php:1893
-#: build/oceanwp/inc/customizer/settings/header.php:2212
+#: build/oceanwp/inc/customizer/settings/general.php:2528
+#: build/oceanwp/inc/customizer/settings/general.php:2732
+#: build/oceanwp/inc/customizer/settings/general.php:3253
+#: build/oceanwp/inc/customizer/settings/general.php:3495
+#: build/oceanwp/inc/customizer/settings/header.php:1897
+#: build/oceanwp/inc/customizer/settings/header.php:2216
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4722
 #: inc/customizer/settings/general.php:414
 #: inc/customizer/settings/general.php:2528
@@ -3624,10 +3624,10 @@ msgid "Color"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/general.php:439
-#: build/oceanwp/inc/customizer/settings/general.php:2702
-#: build/oceanwp/inc/customizer/settings/general.php:2905
-#: build/oceanwp/inc/customizer/settings/general.php:3668
-#: build/oceanwp/inc/customizer/settings/header.php:2229
+#: build/oceanwp/inc/customizer/settings/general.php:2554
+#: build/oceanwp/inc/customizer/settings/general.php:2757
+#: build/oceanwp/inc/customizer/settings/general.php:3520
+#: build/oceanwp/inc/customizer/settings/header.php:2233
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4738
 #: inc/customizer/settings/general.php:439
 #: inc/customizer/settings/general.php:2554
@@ -3639,7 +3639,7 @@ msgid "Color: Hover"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/general.php:453
-#: build/oceanwp/inc/customizer/settings/header.php:3525
+#: build/oceanwp/inc/customizer/settings/header.php:3529
 #: inc/customizer/settings/general.php:453
 #: inc/customizer/settings/header.php:3529
 msgid "General Settings"
@@ -3722,118 +3722,83 @@ msgstr ""
 msgid "Sidebar Width (%)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:787
-#: inc/customizer/settings/general.php:3774
-msgid "Enable Schema Markup"
-msgstr ""
-
-#: build/oceanwp/inc/customizer/settings/general.php:811
+#: build/oceanwp/inc/customizer/settings/general.php:786
 #: inc/customizer/settings/general.php:786
 msgid "Pages"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1019
+#: build/oceanwp/inc/customizer/settings/general.php:994
 #: inc/customizer/settings/general.php:994
 msgid "Content Padding (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1054
+#: build/oceanwp/inc/customizer/settings/general.php:1029
 #: inc/customizer/settings/general.php:1029
 msgid "Search Result Page"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1077
+#: build/oceanwp/inc/customizer/settings/general.php:1052
 #: build/oceanwp/inc/plugins/class-tgm-plugin-activation.php:2548
 #: inc/customizer/settings/general.php:1052
 msgid "Source"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1102
+#: build/oceanwp/inc/customizer/settings/general.php:1077
 #: inc/customizer/settings/general.php:1077
 msgid "Search Posts Per Page"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1130
+#: build/oceanwp/inc/customizer/settings/general.php:1105
 #: build/oceanwp/inc/themepanel/includes/plugins-compatibility.php:184
 #: inc/customizer/settings/general.php:1105
 #: inc/themepanel/includes/plugins-compatibility.php:184
 msgid "Custom Sidebar"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1180
+#: build/oceanwp/inc/customizer/settings/general.php:1155
 #: build/oceanwp/search.php:26
 #: inc/customizer/settings/general.php:1155
 #: search.php:26
 msgid "Search Logo"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1181
+#: build/oceanwp/inc/customizer/settings/general.php:1156
 #: inc/customizer/settings/general.php:1156
 msgid "Select a search page logo."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1327
-#: inc/customizer/settings/general.php:3893
-msgid "OpenGraph"
-msgstr ""
-
-#: build/oceanwp/inc/customizer/settings/general.php:1328
-#: inc/customizer/settings/general.php:3894
-msgid "This is information taken by social media when a link is shared"
-msgstr ""
-
-#: build/oceanwp/inc/customizer/settings/general.php:1351
-#: inc/customizer/settings/general.php:3917
-msgid "Enable OpenGraph"
-msgstr ""
-
-#: build/oceanwp/inc/customizer/settings/general.php:1376
-#: inc/customizer/settings/general.php:3942
-msgid "Twitter Username"
-msgstr ""
-
-#: build/oceanwp/inc/customizer/settings/general.php:1401
-#: inc/customizer/settings/general.php:3967
-msgid "Facebook Page URL"
-msgstr ""
-
-#: build/oceanwp/inc/customizer/settings/general.php:1426
-#: inc/customizer/settings/general.php:3992
-msgid "Facebook App ID"
-msgstr ""
-
-#: build/oceanwp/inc/customizer/settings/general.php:1441
+#: build/oceanwp/inc/customizer/settings/general.php:1293
 #: build/oceanwp/inc/customizer/settings/typography.php:149
 #: inc/customizer/settings/general.php:1293
 #: inc/customizer/settings/typography.php:149
 msgid "Page Title"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1473
+#: build/oceanwp/inc/customizer/settings/general.php:1325
 #: inc/customizer/settings/general.php:1325
 msgid "Hide On All Devices"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1538
+#: build/oceanwp/inc/customizer/settings/general.php:1390
 #: inc/customizer/settings/general.php:1390
 msgid "Centered"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1539
+#: build/oceanwp/inc/customizer/settings/general.php:1391
 #: inc/customizer/settings/general.php:1391
 msgid "Centered Minimal"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1541
+#: build/oceanwp/inc/customizer/settings/general.php:1393
 #: inc/customizer/settings/general.php:1393
 msgid "Hidden"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1757
+#: build/oceanwp/inc/customizer/settings/general.php:1609
 #: build/oceanwp/inc/customizer/settings/header.php:146
 #: build/oceanwp/inc/customizer/settings/header.php:168
-#: build/oceanwp/inc/customizer/settings/header.php:1181
-#: build/oceanwp/inc/customizer/settings/header.php:3446
+#: build/oceanwp/inc/customizer/settings/header.php:1185
+#: build/oceanwp/inc/customizer/settings/header.php:3450
 #: inc/customizer/settings/general.php:1609
 #: inc/customizer/settings/header.php:146
 #: inc/customizer/settings/header.php:168
@@ -3842,101 +3807,101 @@ msgstr ""
 msgid "Height (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1968
+#: build/oceanwp/inc/customizer/settings/general.php:1820
 #: build/oceanwp/inc/customizer/settings/typography.php:169
 #: inc/customizer/settings/general.php:1820
 #: inc/customizer/settings/typography.php:169
 msgid "Breadcrumbs"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:1991
+#: build/oceanwp/inc/customizer/settings/general.php:1843
 #: inc/customizer/settings/general.php:1843
 msgid "Enable Breadcrumbs"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2016
+#: build/oceanwp/inc/customizer/settings/general.php:1868
 #: inc/customizer/settings/general.php:1868
 msgid "Show Item Title"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2048
+#: build/oceanwp/inc/customizer/settings/general.php:1900
 #: inc/customizer/settings/general.php:1900
 msgid "Absolute Right"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2049
+#: build/oceanwp/inc/customizer/settings/general.php:1901
 #: inc/customizer/settings/general.php:1901
 msgid "Under Title"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2072
+#: build/oceanwp/inc/customizer/settings/general.php:1924
 #: inc/customizer/settings/general.php:1924
 msgid "Breadcrumb Separator"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2098
+#: build/oceanwp/inc/customizer/settings/general.php:1950
 #: inc/customizer/settings/general.php:1950
 msgid "Home Item"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2104
+#: build/oceanwp/inc/customizer/settings/general.php:1956
 #: inc/customizer/settings/general.php:1956
 msgid "Text"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2127
+#: build/oceanwp/inc/customizer/settings/general.php:1979
 #: inc/customizer/settings/general.php:1979
 msgid "Translation for Homepage"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2153
+#: build/oceanwp/inc/customizer/settings/general.php:2005
 #: inc/customizer/settings/general.php:2005
 msgid "Translation for \"404 Not Found\""
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2179
+#: build/oceanwp/inc/customizer/settings/general.php:2031
 #: inc/customizer/settings/general.php:2031
 msgid "Translation for \"Search results for\""
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2204
+#: build/oceanwp/inc/customizer/settings/general.php:2056
 #: inc/customizer/settings/general.php:2056
 msgid "Posts Taxonomy"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2213
+#: build/oceanwp/inc/customizer/settings/general.php:2065
 #: inc/customizer/settings/general.php:2065
 msgid "Blog Page"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2235
+#: build/oceanwp/inc/customizer/settings/general.php:2087
 #: inc/customizer/settings/general.php:2087
 msgid "Products Taxonomy"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2244
+#: build/oceanwp/inc/customizer/settings/general.php:2096
 #: inc/customizer/settings/general.php:2096
 msgid "Shop Page"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2269
+#: build/oceanwp/inc/customizer/settings/general.php:2121
 #: inc/customizer/settings/general.php:2121
 msgid "Portfolio Taxonomy"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2278
+#: build/oceanwp/inc/customizer/settings/general.php:2130
 #: inc/customizer/settings/general.php:2130
 msgid "Portfolio Page"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2329
+#: build/oceanwp/inc/customizer/settings/general.php:2181
 #: inc/customizer/settings/general.php:2181
 msgid "Separator Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2355
-#: build/oceanwp/inc/customizer/settings/header.php:2442
-#: build/oceanwp/inc/customizer/settings/header.php:2617
+#: build/oceanwp/inc/customizer/settings/general.php:2207
+#: build/oceanwp/inc/customizer/settings/header.php:2446
+#: build/oceanwp/inc/customizer/settings/header.php:2621
 #: build/oceanwp/inc/customizer/settings/topbar.php:278
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:792
 #: inc/customizer/settings/general.php:2207
@@ -3947,9 +3912,9 @@ msgstr ""
 msgid "Link Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2381
-#: build/oceanwp/inc/customizer/settings/header.php:2458
-#: build/oceanwp/inc/customizer/settings/header.php:2633
+#: build/oceanwp/inc/customizer/settings/general.php:2233
+#: build/oceanwp/inc/customizer/settings/header.php:2462
+#: build/oceanwp/inc/customizer/settings/header.php:2637
 #: build/oceanwp/inc/customizer/settings/topbar.php:295
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:808
 #: inc/customizer/settings/general.php:2233
@@ -3960,34 +3925,34 @@ msgstr ""
 msgid "Link Color: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2396
+#: build/oceanwp/inc/customizer/settings/general.php:2248
 #: inc/customizer/settings/general.php:2248
 msgid "Scroll To Top"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2418
+#: build/oceanwp/inc/customizer/settings/general.php:2270
 #: inc/customizer/settings/general.php:2270
 msgid "Scroll Up Button"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2443
+#: build/oceanwp/inc/customizer/settings/general.php:2295
 #: inc/customizer/settings/general.php:2295
 msgid "Arrow Icon"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2500
+#: build/oceanwp/inc/customizer/settings/general.php:2352
 #: inc/customizer/settings/general.php:2352
 msgid "Bottom Position (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2531
+#: build/oceanwp/inc/customizer/settings/general.php:2383
 #: inc/customizer/settings/general.php:2383
 msgid "Button Size (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2650
-#: build/oceanwp/inc/customizer/settings/general.php:2855
-#: build/oceanwp/inc/customizer/settings/general.php:3618
+#: build/oceanwp/inc/customizer/settings/general.php:2502
+#: build/oceanwp/inc/customizer/settings/general.php:2707
+#: build/oceanwp/inc/customizer/settings/general.php:3470
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4706
 #: inc/customizer/settings/general.php:2502
 #: inc/customizer/settings/general.php:2707
@@ -3996,21 +3961,21 @@ msgstr ""
 msgid "Background Color: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2717
+#: build/oceanwp/inc/customizer/settings/general.php:2569
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1857
 #: inc/customizer/settings/general.php:2569
 #: inc/customizer/settings/woocommerce.php:1857
 msgid "Pagination"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2740
+#: build/oceanwp/inc/customizer/settings/general.php:2592
 #: inc/customizer/settings/general.php:2592
 msgid "Align"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2771
-#: build/oceanwp/inc/customizer/settings/general.php:3142
-#: build/oceanwp/inc/customizer/settings/header.php:3126
+#: build/oceanwp/inc/customizer/settings/general.php:2623
+#: build/oceanwp/inc/customizer/settings/general.php:2994
+#: build/oceanwp/inc/customizer/settings/header.php:3130
 #: build/oceanwp/inc/customizer/settings/topbar.php:435
 #: inc/customizer/settings/general.php:2623
 #: inc/customizer/settings/general.php:2994
@@ -4019,8 +3984,8 @@ msgstr ""
 msgid "Font Size (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2955
-#: build/oceanwp/inc/customizer/settings/header.php:1926
+#: build/oceanwp/inc/customizer/settings/general.php:2807
+#: build/oceanwp/inc/customizer/settings/header.php:1930
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4770
 #: inc/customizer/settings/general.php:2807
 #: inc/customizer/settings/header.php:1930
@@ -4028,116 +3993,152 @@ msgstr ""
 msgid "Border Color: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:2969
+#: build/oceanwp/inc/customizer/settings/general.php:2821
 #: inc/customizer/settings/general.php:2821
 msgid "Forms (Input - Textarea)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3352
-#: build/oceanwp/inc/customizer/settings/header.php:1942
+#: build/oceanwp/inc/customizer/settings/general.php:3204
+#: build/oceanwp/inc/customizer/settings/header.php:1946
 #: inc/customizer/settings/general.php:3204
 #: inc/customizer/settings/header.php:1946
 msgid "Border Color: Focus"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3415
+#: build/oceanwp/inc/customizer/settings/general.php:3267
 #: inc/customizer/settings/general.php:3267
 msgid "Theme Buttons"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3682
+#: build/oceanwp/inc/customizer/settings/general.php:3534
 #: inc/customizer/settings/general.php:3534
 msgid "404 Error Page"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3704
+#: build/oceanwp/inc/customizer/settings/general.php:3556
 #: inc/customizer/settings/general.php:3556
 msgid "Blank Page"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3705
+#: build/oceanwp/inc/customizer/settings/general.php:3557
 #: inc/customizer/settings/general.php:3557
 msgid "Enable this option to remove all the elements and have full control of the 404 error page."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3734
+#: build/oceanwp/inc/customizer/settings/general.php:3586
 #: inc/customizer/settings/general.php:3586
 msgid "Select a 404 logo."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3805
+#: build/oceanwp/inc/customizer/settings/general.php:3657
 #: inc/customizer/settings/general.php:3657
 msgid "Theme Icons"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3827
+#: build/oceanwp/inc/customizer/settings/general.php:3679
 #: inc/customizer/settings/general.php:3679
 msgid "Select Icons"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3828
+#: build/oceanwp/inc/customizer/settings/general.php:3680
 #: inc/customizer/settings/general.php:3680
 msgid "Choose icons you would like to use in the theme."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3834
+#: build/oceanwp/inc/customizer/settings/general.php:3686
 #: build/oceanwp/inc/customizer/settings/general.php:4107
 #: inc/customizer/settings/general.php:3686
 #: inc/customizer/settings/general.php:4107
 msgid "Ocean SVG Icons"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3835
+#: build/oceanwp/inc/customizer/settings/general.php:3687
 #: build/oceanwp/inc/customizer/settings/general.php:4136
 #: inc/customizer/settings/general.php:3687
 #: inc/customizer/settings/general.php:4136
 msgid "Simple Line Icons"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3836
+#: build/oceanwp/inc/customizer/settings/general.php:3688
 #: build/oceanwp/inc/customizer/settings/general.php:4077
 #: inc/customizer/settings/general.php:3688
 #: inc/customizer/settings/general.php:4077
 msgid "Font Awesome Icons"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3859
+#: build/oceanwp/inc/customizer/settings/general.php:3711
 #: inc/customizer/settings/general.php:3711
 msgid "Blog Entries Icons: Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3884
+#: build/oceanwp/inc/customizer/settings/general.php:3736
 #: inc/customizer/settings/general.php:3736
 msgid "Single Post Icons: Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3900
+#: build/oceanwp/inc/customizer/settings/general.php:3752
 #: inc/customizer/settings/general.php:3752
 msgid "SEO Settings"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3922
+#: build/oceanwp/inc/customizer/settings/general.php:3774
+#: inc/customizer/settings/general.php:3774
+msgid "Enable Schema Markup"
+msgstr ""
+
+#: build/oceanwp/inc/customizer/settings/general.php:3799
 #: inc/customizer/settings/general.php:3799
 msgid "Use featured image ALT text on blog entries"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3946
+#: build/oceanwp/inc/customizer/settings/general.php:3823
 #: inc/customizer/settings/general.php:3823
 msgid "Use featured image ALT text on single posts"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3970
+#: build/oceanwp/inc/customizer/settings/general.php:3847
 #: inc/customizer/settings/general.php:3847
 msgid "Use featured image ALT text on single post related items"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3993
+#: build/oceanwp/inc/customizer/settings/general.php:3870
 #: inc/customizer/settings/general.php:3870
 msgid "Configure Breadcrumb"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:3994
-msgid "Start configuring, %1$s the breadcrumb %2$s"
+#: build/oceanwp/inc/customizer/settings/general.php:3871
+#: inc/customizer/settings/general.php:3871
+msgid "Go to the %1$s Breadcrumbs settings page %2$s"
+msgstr ""
+
+#: build/oceanwp/inc/customizer/settings/general.php:3893
+#: inc/customizer/settings/general.php:3893
+msgid "OpenGraph"
+msgstr ""
+
+#: build/oceanwp/inc/customizer/settings/general.php:3894
+#: inc/customizer/settings/general.php:3894
+msgid "This is information taken by social media when a link is shared"
+msgstr ""
+
+#: build/oceanwp/inc/customizer/settings/general.php:3917
+#: inc/customizer/settings/general.php:3917
+msgid "Enable OpenGraph"
+msgstr ""
+
+#: build/oceanwp/inc/customizer/settings/general.php:3942
+#: inc/customizer/settings/general.php:3942
+msgid "Twitter Username"
+msgstr ""
+
+#: build/oceanwp/inc/customizer/settings/general.php:3967
+#: inc/customizer/settings/general.php:3967
+msgid "Facebook Page URL"
+msgstr ""
+
+#: build/oceanwp/inc/customizer/settings/general.php:3992
+#: inc/customizer/settings/general.php:3992
+msgid "Facebook App ID"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/general.php:4024
@@ -4161,9 +4162,10 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/general.php:4142
 #: build/oceanwp/inc/customizer/settings/general.php:4172
 #: build/oceanwp/inc/customizer/settings/general.php:4202
-#: build/oceanwp/inc/customizer/settings/general.php:4232
-#: build/oceanwp/inc/customizer/settings/header.php:2715
-#: build/oceanwp/inc/customizer/settings/header.php:3846
+#: build/oceanwp/inc/customizer/settings/general.php:4234
+#: build/oceanwp/inc/customizer/settings/general.php:4265
+#: build/oceanwp/inc/customizer/settings/header.php:2719
+#: build/oceanwp/inc/customizer/settings/header.php:3850
 #: inc/customizer/settings/general.php:4053
 #: inc/customizer/settings/general.php:4083
 #: inc/customizer/settings/general.php:4112
@@ -4183,7 +4185,8 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/general.php:4143
 #: build/oceanwp/inc/customizer/settings/general.php:4173
 #: build/oceanwp/inc/customizer/settings/general.php:4203
-#: build/oceanwp/inc/customizer/settings/general.php:4233
+#: build/oceanwp/inc/customizer/settings/general.php:4235
+#: build/oceanwp/inc/customizer/settings/general.php:4266
 #: inc/customizer/settings/general.php:4054
 #: inc/customizer/settings/general.php:4084
 #: inc/customizer/settings/general.php:4113
@@ -4230,22 +4233,32 @@ msgstr ""
 msgid "This script uses the native select box and add overlays a stylable <span> element in order to acheive the desired look."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:4226
+#: build/oceanwp/inc/customizer/settings/general.php:4228
+#: inc/customizer/settings/general.php:4228
+msgid "Widgets Stylesheet Load"
+msgstr ""
+
+#: build/oceanwp/inc/customizer/settings/general.php:4229
+#: inc/customizer/settings/general.php:4229
+msgid "You can disable loading widgets.css stylesheet on your site."
+msgstr ""
+
+#: build/oceanwp/inc/customizer/settings/general.php:4259
 #: inc/customizer/settings/general.php:4259
 msgid "Scroll Effect"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:4227
+#: build/oceanwp/inc/customizer/settings/general.php:4260
 #: inc/customizer/settings/general.php:4260
 msgid "This script is responsible for the scroll effect in theme."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:4255
+#: build/oceanwp/inc/customizer/settings/general.php:4288
 #: inc/customizer/settings/general.php:4288
 msgid "Scroll Effect - Custom Offset"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/general.php:4318
+#: build/oceanwp/inc/customizer/settings/general.php:4351
 #: inc/customizer/settings/general.php:4351
 msgid "All Post Types"
 msgstr ""
@@ -4270,7 +4283,7 @@ msgid "Top Menu"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/header.php:89
-#: build/oceanwp/inc/customizer/settings/header.php:3547
+#: build/oceanwp/inc/customizer/settings/header.php:3551
 #: build/oceanwp/inc/themepanel/views/panes/free-vs-pro.php:83
 #: build/oceanwp/inc/third/class-lifterlms.php:312
 #: inc/customizer/settings/header.php:89
@@ -4382,7 +4395,7 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/header.php:568
 #: build/oceanwp/inc/customizer/settings/header.php:904
 #: build/oceanwp/inc/customizer/settings/header.php:935
-#: build/oceanwp/inc/customizer/settings/header.php:1422
+#: build/oceanwp/inc/customizer/settings/header.php:1426
 #: inc/customizer/settings/header.php:568
 #: inc/customizer/settings/header.php:904
 #: inc/customizer/settings/header.php:935
@@ -4391,7 +4404,7 @@ msgid "Add Transparent Header"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/header.php:585
-#: build/oceanwp/inc/customizer/settings/header.php:3467
+#: build/oceanwp/inc/customizer/settings/header.php:3471
 #: inc/customizer/settings/header.php:585
 #: inc/customizer/settings/header.php:3471
 msgid "Logo (optional)"
@@ -4428,7 +4441,7 @@ msgid "Menu Bar Close Color"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/header.php:684
-#: build/oceanwp/inc/customizer/settings/header.php:3974
+#: build/oceanwp/inc/customizer/settings/header.php:3978
 #: inc/customizer/settings/header.php:684
 #: inc/customizer/settings/header.php:3978
 msgid "Links Background Color"
@@ -4450,9 +4463,9 @@ msgid "Search Styling"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/header.php:765
-#: build/oceanwp/inc/customizer/settings/header.php:1303
-#: build/oceanwp/inc/customizer/settings/header.php:2748
-#: build/oceanwp/inc/customizer/settings/header.php:2816
+#: build/oceanwp/inc/customizer/settings/header.php:1307
+#: build/oceanwp/inc/customizer/settings/header.php:2752
+#: build/oceanwp/inc/customizer/settings/header.php:2820
 #: inc/customizer/settings/header.php:765
 #: inc/customizer/settings/header.php:1307
 #: inc/customizer/settings/header.php:2752
@@ -4461,7 +4474,7 @@ msgid "Input Color"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/header.php:782
-#: build/oceanwp/inc/customizer/settings/header.php:2850
+#: build/oceanwp/inc/customizer/settings/header.php:2854
 #: inc/customizer/settings/header.php:782
 #: inc/customizer/settings/header.php:2854
 msgid "Input Dashed Text Color"
@@ -4517,32 +4530,32 @@ msgstr ""
 msgid "Medium Header Settings"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:953
+#: build/oceanwp/inc/customizer/settings/header.php:955
 #: inc/customizer/settings/header.php:955
 msgid "Hide Menu When Scrolling"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:970
+#: build/oceanwp/inc/customizer/settings/header.php:972
 #: inc/customizer/settings/header.php:972
 msgid "Stick Only The Menu"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:986
+#: build/oceanwp/inc/customizer/settings/header.php:990
 #: inc/customizer/settings/header.php:990
 msgid "Top Header"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1023
-#: build/oceanwp/inc/customizer/settings/header.php:1270
-#: build/oceanwp/inc/customizer/settings/header.php:1807
+#: build/oceanwp/inc/customizer/settings/header.php:1027
+#: build/oceanwp/inc/customizer/settings/header.php:1274
+#: build/oceanwp/inc/customizer/settings/header.php:1811
 #: inc/customizer/settings/header.php:1027
 #: inc/customizer/settings/header.php:1274
 #: inc/customizer/settings/header.php:1811
 msgid "Search Form"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1024
-#: build/oceanwp/inc/customizer/settings/header.php:2113
+#: build/oceanwp/inc/customizer/settings/header.php:1028
+#: build/oceanwp/inc/customizer/settings/header.php:2117
 #: build/oceanwp/inc/customizer/settings/typography.php:102
 #: build/oceanwp/inc/themepanel/views/panes/home.php:19
 #: inc/customizer/settings/header.php:1028
@@ -4552,429 +4565,429 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1025
+#: build/oceanwp/inc/customizer/settings/header.php:1029
 #: inc/customizer/settings/header.php:1029
 msgid "Social Buttons"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1115
+#: build/oceanwp/inc/customizer/settings/header.php:1119
 #: inc/customizer/settings/header.php:1119
 msgid "Sticky Padding (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1116
+#: build/oceanwp/inc/customizer/settings/header.php:1120
 #: inc/customizer/settings/header.php:1120
 msgid "If you use the sticky header extension"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1143
-#: build/oceanwp/inc/customizer/settings/header.php:2240
-#: build/oceanwp/inc/customizer/settings/header.php:3571
-#: build/oceanwp/inc/helpers.php:3943
+#: build/oceanwp/inc/customizer/settings/header.php:1147
+#: build/oceanwp/inc/customizer/settings/header.php:2244
+#: build/oceanwp/inc/customizer/settings/header.php:3575
+#: build/oceanwp/inc/helpers.php:3939
 #: build/oceanwp/partials/mobile/mobile-icon.php:40
 #: inc/customizer/settings/header.php:1147
 #: inc/customizer/settings/header.php:2244
 #: inc/customizer/settings/header.php:3575
-#: inc/helpers.php:3943
+#: inc/helpers.php:3939
 #: partials/mobile/mobile-icon.php:40
 msgid "Menu"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1226
+#: build/oceanwp/inc/customizer/settings/header.php:1230
 #: inc/customizer/settings/header.php:1230
 msgid "Menu Items Padding (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1286
-#: build/oceanwp/inc/customizer/settings/header.php:2731
+#: build/oceanwp/inc/customizer/settings/header.php:1290
+#: build/oceanwp/inc/customizer/settings/header.php:2735
 #: inc/customizer/settings/header.php:1290
 #: inc/customizer/settings/header.php:2735
 msgid "Input Background Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1320
+#: build/oceanwp/inc/customizer/settings/header.php:1324
 #: inc/customizer/settings/header.php:1324
 msgid "Placeholder Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1337
-#: build/oceanwp/inc/customizer/settings/header.php:1959
+#: build/oceanwp/inc/customizer/settings/header.php:1341
+#: build/oceanwp/inc/customizer/settings/header.php:1963
 #: inc/customizer/settings/header.php:1341
 #: inc/customizer/settings/header.php:1963
 msgid "Button Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1354
+#: build/oceanwp/inc/customizer/settings/header.php:1358
 #: inc/customizer/settings/header.php:1358
 msgid "Button Hover Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1369
+#: build/oceanwp/inc/customizer/settings/header.php:1373
 #: inc/customizer/settings/header.php:1373
 msgid "Vertical Header Settings"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1385
+#: build/oceanwp/inc/customizer/settings/header.php:1389
 #: inc/customizer/settings/header.php:1389
 msgid "Choose a template created in Theme Panel > My Library to replace the header content."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1403
+#: build/oceanwp/inc/customizer/settings/header.php:1407
 #: inc/customizer/settings/header.php:1407
 msgid "Select Bottom Template"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1404
+#: build/oceanwp/inc/customizer/settings/header.php:1408
 #: inc/customizer/settings/header.php:1408
 msgid "Choose a template created in Theme Panel > My Library to add at the header bottom."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1440
+#: build/oceanwp/inc/customizer/settings/header.php:1444
 #: inc/customizer/settings/header.php:1444
 msgid "Add Header Shadow"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1458
+#: build/oceanwp/inc/customizer/settings/header.php:1462
 #: inc/customizer/settings/header.php:1462
 msgid "Closed Header"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1476
+#: build/oceanwp/inc/customizer/settings/header.php:1480
 #: inc/customizer/settings/header.php:1480
 msgid "Custom Hamburger Button Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1477
+#: build/oceanwp/inc/customizer/settings/header.php:1481
 #: inc/customizer/settings/header.php:1481
 msgid "Used for the hamburger menu to open the header in small screens and if closed header."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1494
+#: build/oceanwp/inc/customizer/settings/header.php:1498
 #: inc/customizer/settings/header.php:1498
 msgid "Collapse Width (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1495
+#: build/oceanwp/inc/customizer/settings/header.php:1499
 #: inc/customizer/settings/header.php:1499
 msgid "This field is to control the width where you want to collapse the header."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1517
-#: build/oceanwp/inc/customizer/settings/header.php:2548
+#: build/oceanwp/inc/customizer/settings/header.php:1521
+#: build/oceanwp/inc/customizer/settings/header.php:2552
 #: inc/customizer/settings/header.php:1521
 #: inc/customizer/settings/header.php:2552
 msgid "Width (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1588
+#: build/oceanwp/inc/customizer/settings/header.php:1592
 #: inc/customizer/settings/header.php:1592
 msgid "Inner Padding (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1643
+#: build/oceanwp/inc/customizer/settings/header.php:1647
 #: inc/customizer/settings/header.php:1647
 msgid "Logo Position"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1665
+#: build/oceanwp/inc/customizer/settings/header.php:1669
 #: inc/customizer/settings/header.php:1669
 msgid "Menu Items Top/Bottom Padding (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1686
-#: build/oceanwp/inc/customizer/settings/header.php:3790
+#: build/oceanwp/inc/customizer/settings/header.php:1690
+#: build/oceanwp/inc/customizer/settings/header.php:3794
 #: inc/customizer/settings/header.php:1690
 #: inc/customizer/settings/header.php:3794
 msgid "Dropdown Target"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1687
-#: build/oceanwp/inc/customizer/settings/header.php:3791
+#: build/oceanwp/inc/customizer/settings/header.php:1691
+#: build/oceanwp/inc/customizer/settings/header.php:3795
 #: inc/customizer/settings/header.php:1691
 #: inc/customizer/settings/header.php:3795
 msgid "Choose your opening target for your submenus"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1693
-#: build/oceanwp/inc/customizer/settings/header.php:3797
+#: build/oceanwp/inc/customizer/settings/header.php:1697
+#: build/oceanwp/inc/customizer/settings/header.php:3801
 #: inc/customizer/settings/header.php:1697
 #: inc/customizer/settings/header.php:3801
 msgid "Link"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1708
+#: build/oceanwp/inc/customizer/settings/header.php:1712
 #: inc/customizer/settings/header.php:1712
 msgid "Menu Items Border Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1725
+#: build/oceanwp/inc/customizer/settings/header.php:1729
 #: inc/customizer/settings/header.php:1729
 msgid "Sub Menu Background Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1742
+#: build/oceanwp/inc/customizer/settings/header.php:1746
 #: inc/customizer/settings/header.php:1746
 msgid "Sub Menu Links Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1759
+#: build/oceanwp/inc/customizer/settings/header.php:1763
 #: inc/customizer/settings/header.php:1763
 msgid "Sub Menu Links Color: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1775
+#: build/oceanwp/inc/customizer/settings/header.php:1779
 #: inc/customizer/settings/header.php:1779
 msgid "Sub Menu Links Background Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1792
+#: build/oceanwp/inc/customizer/settings/header.php:1796
 #: inc/customizer/settings/header.php:1796
 msgid "Sub Menu Links Background Color: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1822
+#: build/oceanwp/inc/customizer/settings/header.php:1826
 #: inc/customizer/settings/header.php:1826
 msgid "Display Search Form"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1839
+#: build/oceanwp/inc/customizer/settings/header.php:1843
 #: inc/customizer/settings/header.php:1843
 msgid "Border Width"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1857
-#: build/oceanwp/inc/customizer/settings/header.php:3281
+#: build/oceanwp/inc/customizer/settings/header.php:1861
+#: build/oceanwp/inc/customizer/settings/header.php:3285
 #: inc/customizer/settings/header.php:1861
 #: inc/customizer/settings/header.php:3285
 msgid "Border Radius"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1976
+#: build/oceanwp/inc/customizer/settings/header.php:1980
 #: inc/customizer/settings/header.php:1980
 msgid "Button Color: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:1989
+#: build/oceanwp/inc/customizer/settings/header.php:1993
 #: inc/customizer/settings/header.php:1993
 msgid "Header Media"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2127
+#: build/oceanwp/inc/customizer/settings/header.php:2131
 #: inc/customizer/settings/header.php:2131
 msgid "Retina Logo"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2128
+#: build/oceanwp/inc/customizer/settings/header.php:2132
 #: inc/customizer/settings/header.php:2132
 msgid "Select a retina logo twice the normal logo size."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2152
+#: build/oceanwp/inc/customizer/settings/header.php:2156
 #: inc/customizer/settings/header.php:2156
 msgid "Max Width (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2186
+#: build/oceanwp/inc/customizer/settings/header.php:2190
 #: inc/customizer/settings/header.php:2190
 msgid "Max Height (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2255
+#: build/oceanwp/inc/customizer/settings/header.php:2259
 #: inc/customizer/settings/header.php:2259
 msgid "Choose a template created in Theme Panel > My Library to replace the navigation."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2272
+#: build/oceanwp/inc/customizer/settings/header.php:2276
 #: inc/customizer/settings/header.php:2276
 msgid "Top Level Dropdown Icon"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2288
+#: build/oceanwp/inc/customizer/settings/header.php:2292
 #: inc/customizer/settings/header.php:2292
 msgid "Second+ Level Dropdown Icon"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2305
+#: build/oceanwp/inc/customizer/settings/header.php:2309
 #: inc/customizer/settings/header.php:2309
 msgid "Dropdown Top Border"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2343
+#: build/oceanwp/inc/customizer/settings/header.php:2347
 #: inc/customizer/settings/header.php:2347
 msgid "Links Effect"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2349
+#: build/oceanwp/inc/customizer/settings/header.php:2353
 #: inc/customizer/settings/header.php:2353
 msgid "No Effect"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2350
+#: build/oceanwp/inc/customizer/settings/header.php:2354
 #: inc/customizer/settings/header.php:2354
 msgid "Underline From Left"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2351
+#: build/oceanwp/inc/customizer/settings/header.php:2355
 #: inc/customizer/settings/header.php:2355
 msgid "Underline Up"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2352
+#: build/oceanwp/inc/customizer/settings/header.php:2356
 #: inc/customizer/settings/header.php:2356
 msgid "Underline Down"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2353
+#: build/oceanwp/inc/customizer/settings/header.php:2357
 #: inc/customizer/settings/header.php:2357
 msgid "Brackets"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2354
+#: build/oceanwp/inc/customizer/settings/header.php:2358
 #: inc/customizer/settings/header.php:2358
 msgid "Overline & Fixed Underline"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2355
+#: build/oceanwp/inc/customizer/settings/header.php:2359
 #: inc/customizer/settings/header.php:2359
 msgid "Circular Reveal"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2356
+#: build/oceanwp/inc/customizer/settings/header.php:2360
 #: inc/customizer/settings/header.php:2360
 msgid "Tripple Dot Under"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2357
+#: build/oceanwp/inc/customizer/settings/header.php:2361
 #: inc/customizer/settings/header.php:2361
 msgid "X Marks The Spot"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2358
+#: build/oceanwp/inc/customizer/settings/header.php:2362
 #: inc/customizer/settings/header.php:2362
 msgid "Underline & Overline"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2359
+#: build/oceanwp/inc/customizer/settings/header.php:2363
 #: inc/customizer/settings/header.php:2363
 msgid "Backlighting"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2373
-#: build/oceanwp/inc/customizer/settings/header.php:2390
+#: build/oceanwp/inc/customizer/settings/header.php:2377
+#: build/oceanwp/inc/customizer/settings/header.php:2394
 #: inc/customizer/settings/header.php:2377
 #: inc/customizer/settings/header.php:2394
 msgid "Links Effect: Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2405
+#: build/oceanwp/inc/customizer/settings/header.php:2409
 #: inc/customizer/settings/header.php:2409
 msgid "Main Styling"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2420
+#: build/oceanwp/inc/customizer/settings/header.php:2424
 #: inc/customizer/settings/header.php:2424
 msgid "Left/Right Padding (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2474
-#: build/oceanwp/inc/customizer/settings/header.php:2664
+#: build/oceanwp/inc/customizer/settings/header.php:2478
+#: build/oceanwp/inc/customizer/settings/header.php:2668
 #: inc/customizer/settings/header.php:2478
 #: inc/customizer/settings/header.php:2668
 msgid "Link Color: Current Menu Item"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2489
+#: build/oceanwp/inc/customizer/settings/header.php:2493
 #: inc/customizer/settings/header.php:2493
 msgid "Link Background"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2504
-#: build/oceanwp/inc/customizer/settings/header.php:2649
+#: build/oceanwp/inc/customizer/settings/header.php:2508
+#: build/oceanwp/inc/customizer/settings/header.php:2653
 #: inc/customizer/settings/header.php:2508
 #: inc/customizer/settings/header.php:2653
 msgid "Link Background: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2519
-#: build/oceanwp/inc/customizer/settings/header.php:2679
+#: build/oceanwp/inc/customizer/settings/header.php:2523
+#: build/oceanwp/inc/customizer/settings/header.php:2683
 #: inc/customizer/settings/header.php:2523
 #: inc/customizer/settings/header.php:2683
 msgid "Link Background: Current Menu Item"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2533
+#: build/oceanwp/inc/customizer/settings/header.php:2537
 #: inc/customizer/settings/header.php:2537
 msgid "Dropdowns Styling"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2585
+#: build/oceanwp/inc/customizer/settings/header.php:2589
 #: inc/customizer/settings/header.php:2589
 msgid "Top Border Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2695
+#: build/oceanwp/inc/customizer/settings/header.php:2699
 #: inc/customizer/settings/header.php:2699
 msgid "Search Icon"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2709
-#: build/oceanwp/inc/customizer/settings/header.php:3840
+#: build/oceanwp/inc/customizer/settings/header.php:2713
+#: build/oceanwp/inc/customizer/settings/header.php:3844
 #: inc/customizer/settings/header.php:2713
 #: inc/customizer/settings/header.php:3844
 msgid "Search Icon Style"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2716
-#: build/oceanwp/inc/customizer/settings/header.php:3546
-#: build/oceanwp/inc/customizer/settings/header.php:3847
+#: build/oceanwp/inc/customizer/settings/header.php:2720
+#: build/oceanwp/inc/customizer/settings/header.php:3550
+#: build/oceanwp/inc/customizer/settings/header.php:3851
 #: inc/customizer/settings/header.php:2720
 #: inc/customizer/settings/header.php:3550
 #: inc/customizer/settings/header.php:3851
 msgid "Drop Down"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2717
+#: build/oceanwp/inc/customizer/settings/header.php:2721
 #: inc/customizer/settings/header.php:2721
 msgid "Header Replace"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2718
-#: build/oceanwp/inc/customizer/settings/header.php:3848
+#: build/oceanwp/inc/customizer/settings/header.php:2722
+#: build/oceanwp/inc/customizer/settings/header.php:3852
 #: inc/customizer/settings/header.php:2722
 #: inc/customizer/settings/header.php:3852
 msgid "Overlay"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2765
-#: build/oceanwp/inc/customizer/settings/header.php:2867
+#: build/oceanwp/inc/customizer/settings/header.php:2769
+#: build/oceanwp/inc/customizer/settings/header.php:2871
 #: inc/customizer/settings/header.php:2769
 #: inc/customizer/settings/header.php:2871
 msgid "Input Border Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2782
-#: build/oceanwp/inc/customizer/settings/header.php:2901
+#: build/oceanwp/inc/customizer/settings/header.php:2786
+#: build/oceanwp/inc/customizer/settings/header.php:2905
 #: inc/customizer/settings/header.php:2786
 #: inc/customizer/settings/header.php:2905
 msgid "Input Border Color: Focus"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2799
+#: build/oceanwp/inc/customizer/settings/header.php:2803
 #: inc/customizer/settings/header.php:2803
 msgid "Overlay Background Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2833
+#: build/oceanwp/inc/customizer/settings/header.php:2837
 #: inc/customizer/settings/header.php:2837
 msgid "Input Placeholder Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2884
+#: build/oceanwp/inc/customizer/settings/header.php:2888
 #: inc/customizer/settings/header.php:2888
 msgid "Input Border Color: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2918
+#: build/oceanwp/inc/customizer/settings/header.php:2922
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1145
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1527
 #: inc/customizer/settings/header.php:2922
@@ -4983,214 +4996,214 @@ msgstr ""
 msgid "Close Button Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2933
+#: build/oceanwp/inc/customizer/settings/header.php:2937
 #: inc/customizer/settings/header.php:2937
 msgid "Dropdowns Categories Posts"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2948
+#: build/oceanwp/inc/customizer/settings/header.php:2952
 #: inc/customizer/settings/header.php:2952
 msgid "Category Title: Background"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2964
+#: build/oceanwp/inc/customizer/settings/header.php:2968
 #: inc/customizer/settings/header.php:2968
 msgid "Category Title: Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2980
+#: build/oceanwp/inc/customizer/settings/header.php:2984
 #: inc/customizer/settings/header.php:2984
 msgid "Posts Links: Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:2996
+#: build/oceanwp/inc/customizer/settings/header.php:3000
 #: inc/customizer/settings/header.php:3000
 msgid "Posts Links Hover: Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3012
+#: build/oceanwp/inc/customizer/settings/header.php:3016
 #: inc/customizer/settings/header.php:3016
 msgid "Posts Date: Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3022
+#: build/oceanwp/inc/customizer/settings/header.php:3026
 #: inc/customizer/settings/header.php:3026
 msgid "Social Menu"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3036
+#: build/oceanwp/inc/customizer/settings/header.php:3040
 #: inc/customizer/settings/header.php:3040
 msgid "Enable Social Menu"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3071
+#: build/oceanwp/inc/customizer/settings/header.php:3075
 #: inc/customizer/settings/header.php:3075
 msgid "Social Link Style"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3078
+#: build/oceanwp/inc/customizer/settings/header.php:3082
 #: inc/customizer/settings/header.php:3082
 msgid "Simple"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3079
+#: build/oceanwp/inc/customizer/settings/header.php:3083
 #: inc/customizer/settings/header.php:3083
 msgid "Colored"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3081
+#: build/oceanwp/inc/customizer/settings/header.php:3085
 #: inc/customizer/settings/header.php:3085
 msgid "Dark"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3095
+#: build/oceanwp/inc/customizer/settings/header.php:3099
 #: build/oceanwp/inc/customizer/settings/topbar.php:403
 #: inc/customizer/settings/header.php:3099
 #: inc/customizer/settings/topbar.php:403
 msgid "Social Link Target"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3102
+#: build/oceanwp/inc/customizer/settings/header.php:3106
 #: build/oceanwp/inc/customizer/settings/topbar.php:410
 #: inc/customizer/settings/header.php:3106
 #: inc/customizer/settings/topbar.php:410
 msgid "New Window"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3103
+#: build/oceanwp/inc/customizer/settings/header.php:3107
 #: build/oceanwp/inc/customizer/settings/topbar.php:411
 #: inc/customizer/settings/header.php:3107
 #: inc/customizer/settings/topbar.php:411
 msgid "Same Window"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3253
+#: build/oceanwp/inc/customizer/settings/header.php:3257
 #: inc/customizer/settings/header.php:3257
 msgid "Margin (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3299
+#: build/oceanwp/inc/customizer/settings/header.php:3303
 #: inc/customizer/settings/header.php:3303
 msgid "Social: Background Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3315
+#: build/oceanwp/inc/customizer/settings/header.php:3319
 #: inc/customizer/settings/header.php:3319
 msgid "Social Hover: Background Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3331
+#: build/oceanwp/inc/customizer/settings/header.php:3335
 #: inc/customizer/settings/header.php:3335
 msgid "Social: Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3347
+#: build/oceanwp/inc/customizer/settings/header.php:3351
 #: inc/customizer/settings/header.php:3351
 msgid "Social Hover: Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3385
-#: build/oceanwp/inc/customizer/settings/header.php:3662
+#: build/oceanwp/inc/customizer/settings/header.php:3389
+#: build/oceanwp/inc/customizer/settings/header.php:3666
 #: build/oceanwp/inc/customizer/settings/typography.php:140
-#: build/oceanwp/partials/mobile/mobile-icon.php:100
+#: build/oceanwp/partials/mobile/mobile-icon.php:103
 #: inc/customizer/settings/header.php:3389
 #: inc/customizer/settings/header.php:3666
 #: inc/customizer/settings/typography.php:140
-#: partials/mobile/mobile-icon.php:100
+#: partials/mobile/mobile-icon.php:103
 msgid "Mobile Menu"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3399
+#: build/oceanwp/inc/customizer/settings/header.php:3403
 #: inc/customizer/settings/header.php:3403
 msgid "Breakpoints"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3400
+#: build/oceanwp/inc/customizer/settings/header.php:3404
 #: inc/customizer/settings/header.php:3404
 msgid "Choose the media query where you want to display the mobile menu."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3406
+#: build/oceanwp/inc/customizer/settings/header.php:3410
 #: inc/customizer/settings/header.php:3410
 msgid "From 1280px"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3407
+#: build/oceanwp/inc/customizer/settings/header.php:3411
 #: inc/customizer/settings/header.php:3411
 msgid "From 1080px"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3408
+#: build/oceanwp/inc/customizer/settings/header.php:3412
 #: inc/customizer/settings/header.php:3412
 msgid "From 959px"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3409
+#: build/oceanwp/inc/customizer/settings/header.php:3413
 #: inc/customizer/settings/header.php:3413
 msgid "From 767px"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3410
+#: build/oceanwp/inc/customizer/settings/header.php:3414
 #: inc/customizer/settings/header.php:3414
 msgid "From 480px"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3411
+#: build/oceanwp/inc/customizer/settings/header.php:3415
 #: inc/customizer/settings/header.php:3415
 msgid "From 320px"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3412
+#: build/oceanwp/inc/customizer/settings/header.php:3416
 #: inc/customizer/settings/header.php:3416
 msgid "Custom media query"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3424
+#: build/oceanwp/inc/customizer/settings/header.php:3428
 #: inc/customizer/settings/header.php:3428
 msgid "Custom Media Query"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3425
+#: build/oceanwp/inc/customizer/settings/header.php:3429
 #: inc/customizer/settings/header.php:3429
 msgid "Enter your custom media query where you want to display the mobile menu."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3468
+#: build/oceanwp/inc/customizer/settings/header.php:3472
 #: inc/customizer/settings/header.php:3472
 msgid "Select a custom responsive logo for tablet and mobile."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3483
+#: build/oceanwp/inc/customizer/settings/header.php:3487
 #: inc/customizer/settings/header.php:3487
 msgid "Logo Max Height (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3484
+#: build/oceanwp/inc/customizer/settings/header.php:3488
 #: inc/customizer/settings/header.php:3488
 msgid "Enter a max height for your responsive logo."
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3510
+#: build/oceanwp/inc/customizer/settings/header.php:3514
 #: inc/customizer/settings/header.php:3514
 msgid "Logo / Cart / Link"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3511
+#: build/oceanwp/inc/customizer/settings/header.php:3515
 #: inc/customizer/settings/header.php:3515
 msgid "Cart / Logo / Link"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3512
+#: build/oceanwp/inc/customizer/settings/header.php:3516
 #: inc/customizer/settings/header.php:3516
 msgid "Link / Logo / Cart"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3539
+#: build/oceanwp/inc/customizer/settings/header.php:3543
 #: inc/customizer/settings/header.php:3543
 msgid "Mobile Menu Style"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3545
+#: build/oceanwp/inc/customizer/settings/header.php:3549
 #: build/oceanwp/inc/customizer/settings/sidebar.php:40
 #: build/oceanwp/inc/third/class-beaver-themer.php:136
 #: inc/customizer/settings/header.php:3549
@@ -5199,166 +5212,164 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3560
+#: build/oceanwp/inc/customizer/settings/header.php:3564
 #: inc/customizer/settings/header.php:3564
 msgid "Display Menu Text"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3577
+#: build/oceanwp/inc/customizer/settings/header.php:3581
 #: inc/customizer/settings/header.php:3581
 msgid "Menu Text"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3588
-#: build/oceanwp/inc/helpers.php:3944
+#: build/oceanwp/inc/customizer/settings/header.php:3592
+#: build/oceanwp/inc/helpers.php:3940
 #: build/oceanwp/partials/mobile/mobile-dropdown.php:72
 #: build/oceanwp/partials/mobile/mobile-icon.php:45
 #: inc/customizer/settings/header.php:3592
-#: inc/helpers.php:3944
+#: inc/helpers.php:3940
 #: partials/mobile/mobile-dropdown.php:72
 #: partials/mobile/mobile-icon.php:45
 msgid "Close"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3594
+#: build/oceanwp/inc/customizer/settings/header.php:3598
 #: inc/customizer/settings/header.php:3598
 msgid "Close Menu Text"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3612
+#: build/oceanwp/inc/customizer/settings/header.php:3616
 #: inc/customizer/settings/header.php:3616
 msgid "Hamburger Icon Class"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3613
-#: build/oceanwp/inc/customizer/settings/header.php:3755
+#: build/oceanwp/inc/customizer/settings/header.php:3617
+#: build/oceanwp/inc/customizer/settings/header.php:3759
 #: inc/customizer/settings/header.php:3617
 #: inc/customizer/settings/header.php:3759
 msgid "Enter the full icon class"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3629
+#: build/oceanwp/inc/customizer/settings/header.php:3633
 #: inc/customizer/settings/header.php:3633
 msgid "Custom Hamburger Button"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3647
+#: build/oceanwp/inc/customizer/settings/header.php:3651
 #: inc/customizer/settings/header.php:3651
 msgid "Custom Hamburger Button: Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3676
+#: build/oceanwp/inc/customizer/settings/header.php:3680
 #: inc/customizer/settings/header.php:3680
 msgid "Direction"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3697
+#: build/oceanwp/inc/customizer/settings/header.php:3701
 #: inc/customizer/settings/header.php:3701
 msgid "Drop Down Max Height (px)"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3698
+#: build/oceanwp/inc/customizer/settings/header.php:3702
 #: inc/customizer/settings/header.php:3702
 msgid "Add the height from which you want to display the scrollbar in the drop down"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3719
+#: build/oceanwp/inc/customizer/settings/header.php:3723
 #: inc/customizer/settings/header.php:3723
 msgid "Displace"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3736
+#: build/oceanwp/inc/customizer/settings/header.php:3740
 #: inc/customizer/settings/header.php:3740
 msgid "Close Menu Button"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3754
+#: build/oceanwp/inc/customizer/settings/header.php:3758
 #: inc/customizer/settings/header.php:3758
 msgid "Close Menu Button Icon Class"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3767
-#: build/oceanwp/inc/helpers.php:3945
-#: build/oceanwp/partials/mobile/mobile-fullscreen.php:78
+#: build/oceanwp/inc/customizer/settings/header.php:3771
+#: build/oceanwp/inc/helpers.php:3941
 #: build/oceanwp/partials/mobile/mobile-sidr-close.php:31
 #: inc/customizer/settings/header.php:3771
-#: inc/helpers.php:3945
-#: partials/mobile/mobile-fullscreen.php:78
+#: inc/helpers.php:3941
 #: partials/mobile/mobile-sidr-close.php:31
 msgid "Close Menu"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3773
+#: build/oceanwp/inc/customizer/settings/header.php:3777
 #: inc/customizer/settings/header.php:3777
 msgid "Close Menu Button Text"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3811
+#: build/oceanwp/inc/customizer/settings/header.php:3815
 #: inc/customizer/settings/header.php:3815
 msgid "Mobile Menu Search"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3826
+#: build/oceanwp/inc/customizer/settings/header.php:3830
 #: inc/customizer/settings/header.php:3830
 msgid "Mobile Header Search Icon"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3860
+#: build/oceanwp/inc/customizer/settings/header.php:3864
 #: inc/customizer/settings/header.php:3864
 msgid "Styling: Mobile Menu"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3875
+#: build/oceanwp/inc/customizer/settings/header.php:3879
 #: inc/customizer/settings/header.php:3879
 msgid "Close Button Background"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:3990
+#: build/oceanwp/inc/customizer/settings/header.php:3994
 #: inc/customizer/settings/header.php:3994
 msgid "Links Background Color: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:4007
+#: build/oceanwp/inc/customizer/settings/header.php:4011
 #: inc/customizer/settings/header.php:4011
 msgid "Dropdowns Menus: Background"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:4022
+#: build/oceanwp/inc/customizer/settings/header.php:4026
 #: inc/customizer/settings/header.php:4026
 msgid "Searchbar Background"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:4039
+#: build/oceanwp/inc/customizer/settings/header.php:4043
 #: inc/customizer/settings/header.php:4043
 msgid "Searchbar Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:4055
+#: build/oceanwp/inc/customizer/settings/header.php:4059
 #: inc/customizer/settings/header.php:4059
 msgid "Searchbar Border Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:4071
+#: build/oceanwp/inc/customizer/settings/header.php:4075
 #: inc/customizer/settings/header.php:4075
 msgid "Searchbar Border Color: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:4088
+#: build/oceanwp/inc/customizer/settings/header.php:4092
 #: inc/customizer/settings/header.php:4092
 msgid "Searchbar Border Color: Focus"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:4104
+#: build/oceanwp/inc/customizer/settings/header.php:4108
 #: inc/customizer/settings/header.php:4108
 msgid "Searchbar Button Color"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:4121
+#: build/oceanwp/inc/customizer/settings/header.php:4125
 #: inc/customizer/settings/header.php:4125
 msgid "Searchbar Button Color: Hover"
 msgstr ""
 
-#: build/oceanwp/inc/customizer/settings/header.php:4136
+#: build/oceanwp/inc/customizer/settings/header.php:4140
 #: inc/customizer/settings/header.php:4140
 msgid "Select Your Menu"
 msgstr ""
@@ -5463,13 +5474,13 @@ msgstr ""
 #: build/oceanwp/inc/customizer/settings/lifterlms.php:209
 #: build/oceanwp/inc/customizer/settings/lifterlms.php:240
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1624
-#: build/oceanwp/inc/helpers.php:3039
-#: build/oceanwp/inc/helpers.php:3124
+#: build/oceanwp/inc/helpers.php:3035
+#: build/oceanwp/inc/helpers.php:3120
 #: inc/customizer/settings/lifterlms.php:209
 #: inc/customizer/settings/lifterlms.php:240
 #: inc/customizer/settings/woocommerce.php:1624
-#: inc/helpers.php:3039
-#: inc/helpers.php:3124
+#: inc/helpers.php:3035
+#: inc/helpers.php:3120
 msgid "Featured Image"
 msgstr ""
 
@@ -5595,13 +5606,13 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/topbar.php:306
 #: build/oceanwp/inc/customizer/settings/topbar.php:340
-#: build/oceanwp/inc/helpers.php:3042
-#: build/oceanwp/inc/helpers.php:3127
+#: build/oceanwp/inc/helpers.php:3038
+#: build/oceanwp/inc/helpers.php:3123
 #: build/oceanwp/inc/third/class-beaver-themer.php:127
 #: inc/customizer/settings/topbar.php:306
 #: inc/customizer/settings/topbar.php:340
-#: inc/helpers.php:3042
-#: inc/helpers.php:3127
+#: inc/helpers.php:3038
+#: inc/helpers.php:3123
 #: inc/third/class-beaver-themer.php:127
 msgid "Content"
 msgstr ""
@@ -6097,11 +6108,11 @@ msgid "Display Filter Button"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1487
-#: build/oceanwp/inc/helpers.php:3950
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:956
+#: build/oceanwp/inc/helpers.php:3946
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:977
 #: inc/customizer/settings/woocommerce.php:1487
-#: inc/helpers.php:3950
-#: inc/woocommerce/woocommerce-config.php:956
+#: inc/helpers.php:3946
+#: inc/woocommerce/woocommerce-config.php:977
 msgid "Filter"
 msgstr ""
 
@@ -6186,15 +6197,15 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:1751
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2297
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1389
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1410
 #: build/oceanwp/woocommerce/owp-archive-product-hover.php:136
-#: build/oceanwp/woocommerce/owp-archive-product.php:180
+#: build/oceanwp/woocommerce/owp-archive-product.php:178
 #: build/oceanwp/woocommerce/owp-single-product.php:79
 #: inc/customizer/settings/woocommerce.php:1751
 #: inc/customizer/settings/woocommerce.php:2297
-#: inc/woocommerce/woocommerce-config.php:1389
+#: inc/woocommerce/woocommerce-config.php:1410
 #: woocommerce/owp-archive-product-hover.php:136
-#: woocommerce/owp-archive-product.php:180
+#: woocommerce/owp-archive-product.php:178
 #: woocommerce/owp-single-product.php:79
 msgid "Log in to view price and purchase"
 msgstr ""
@@ -6445,10 +6456,10 @@ msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2766
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:5291
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:881
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:902
 #: inc/customizer/settings/woocommerce.php:2766
 #: inc/customizer/settings/woocommerce.php:5291
-#: inc/woocommerce/woocommerce-config.php:881
+#: inc/woocommerce/woocommerce-config.php:902
 msgid "Cart"
 msgstr ""
 
@@ -6478,9 +6489,9 @@ msgid "Timeline Style"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:2885
-#: build/oceanwp/inc/helpers.php:3870
+#: build/oceanwp/inc/helpers.php:3866
 #: inc/customizer/settings/woocommerce.php:2885
-#: inc/helpers.php:3870
+#: inc/helpers.php:3866
 msgid "Arrow"
 msgstr ""
 
@@ -6691,9 +6702,9 @@ msgid "Hover: Wishlist Hover Color"
 msgstr ""
 
 #: build/oceanwp/inc/customizer/settings/woocommerce.php:4182
-#: build/oceanwp/inc/oceanwp-strings.php:57
+#: build/oceanwp/inc/oceanwp-strings.php:99
 #: inc/customizer/settings/woocommerce.php:4182
-#: inc/oceanwp-strings.php:57
+#: inc/oceanwp-strings.php:99
 msgid "Quick View"
 msgstr ""
 
@@ -6963,9 +6974,9 @@ msgid "EDD Sidebar"
 msgstr ""
 
 #: build/oceanwp/inc/edd/edd-config.php:407
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2043
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2064
 #: inc/edd/edd-config.php:407
-#: inc/woocommerce/woocommerce-config.php:2043
+#: inc/woocommerce/woocommerce-config.php:2064
 msgid "Your cart"
 msgstr ""
 
@@ -6994,758 +7005,829 @@ msgstr ""
 msgid "Add to Cart"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:1860
-#: build/oceanwp/inc/oceanwp-strings.php:34
-#: inc/helpers.php:1860
-#: inc/oceanwp-strings.php:34
-msgid "Type your search"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:1921
-#: inc/helpers.php:1921
+#: build/oceanwp/inc/helpers.php:1917
+#: inc/helpers.php:1917
 msgid "Search website"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2111
-#: inc/helpers.php:2111
+#: build/oceanwp/inc/helpers.php:2107
+#: inc/helpers.php:2107
 msgid "Recent Posts"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2124
-#: inc/helpers.php:2124
+#: build/oceanwp/inc/helpers.php:2120
+#: inc/helpers.php:2120
 msgid "Search Results Found"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2142
-#: inc/helpers.php:2142
+#: build/oceanwp/inc/helpers.php:2138
+#: inc/helpers.php:2138
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2147
-#: inc/helpers.php:2147
+#: build/oceanwp/inc/helpers.php:2143
+#: inc/helpers.php:2143
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2147
-#: inc/helpers.php:2147
+#: build/oceanwp/inc/helpers.php:2143
+#: inc/helpers.php:2143
 msgctxt "Page title monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2152
-#: inc/helpers.php:2152
+#: build/oceanwp/inc/helpers.php:2148
+#: inc/helpers.php:2148
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2152
-#: inc/helpers.php:2152
+#: build/oceanwp/inc/helpers.php:2148
+#: inc/helpers.php:2148
 msgctxt "Page title yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2172
-#: inc/helpers.php:2172
+#: build/oceanwp/inc/helpers.php:2168
+#: inc/helpers.php:2168
 msgid "404: Page Not Found"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2232
-#: inc/helpers.php:2232
+#: build/oceanwp/inc/helpers.php:2228
+#: inc/helpers.php:2228
 msgid "You searched for:"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2237
-#: inc/helpers.php:2237
+#: build/oceanwp/inc/helpers.php:2233
+#: inc/helpers.php:2233
 msgid "This author has written"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:2237
-#: inc/helpers.php:2237
+#: build/oceanwp/inc/helpers.php:2233
+#: inc/helpers.php:2233
 msgid "articles"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3043
-#: inc/helpers.php:3043
+#: build/oceanwp/inc/helpers.php:3039
+#: inc/helpers.php:3039
 msgid "Read More"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3129
-#: inc/helpers.php:3129
+#: build/oceanwp/inc/helpers.php:3125
+#: inc/helpers.php:3125
 msgid "Social Share"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3130
-#: inc/helpers.php:3130
+#: build/oceanwp/inc/helpers.php:3126
+#: inc/helpers.php:3126
 msgid "Next/Prev Links"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3131
-#: inc/helpers.php:3131
+#: build/oceanwp/inc/helpers.php:3127
+#: inc/helpers.php:3127
 msgid "Author Box"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3132
-#: inc/helpers.php:3132
+#: build/oceanwp/inc/helpers.php:3128
+#: inc/helpers.php:3128
 msgid "Related Posts"
 msgstr ""
 
 #. translators: 1: post reading time.
-#: build/oceanwp/inc/helpers.php:3220
-#: inc/helpers.php:3220
+#: build/oceanwp/inc/helpers.php:3216
+#: inc/helpers.php:3216
 msgid "%1$s mins read"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3244
-#: inc/helpers.php:3244
+#: build/oceanwp/inc/helpers.php:3240
+#: inc/helpers.php:3240
 msgid "Pingback:"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3244
-#: inc/helpers.php:3244
+#: build/oceanwp/inc/helpers.php:3240
+#: inc/helpers.php:3240
 msgid "(Edit)"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3262
-#: inc/helpers.php:3262
+#: build/oceanwp/inc/helpers.php:3258
+#: inc/helpers.php:3258
 msgid "%s "
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3281
-#: inc/helpers.php:3281
+#: build/oceanwp/inc/helpers.php:3277
+#: inc/helpers.php:3277
 msgid "edit"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3294
-#: inc/helpers.php:3294
+#: build/oceanwp/inc/helpers.php:3290
+#: inc/helpers.php:3290
 msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: build/oceanwp/inc/helpers.php:3330
+#: inc/helpers.php:3330
+msgid "Enter your name or username to comment"
+msgstr ""
+
+#: build/oceanwp/inc/helpers.php:3332
+#: inc/helpers.php:3332
+msgid "Enter your email address to comment"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3334
 #: inc/helpers.php:3334
-msgid "Enter your name or username to comment"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:3336
-#: inc/helpers.php:3336
-msgid "Enter your email address to comment"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:3338
-#: inc/helpers.php:3338
 msgid "Enter your website URL (optional)"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3409
-#: inc/helpers.php:3409
+#: build/oceanwp/inc/helpers.php:3405
+#: inc/helpers.php:3405
 msgid "Go to the previous page"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3410
-#: inc/helpers.php:3410
+#: build/oceanwp/inc/helpers.php:3406
+#: inc/helpers.php:3406
 msgid "Go to the next page"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3442
-#: build/oceanwp/inc/helpers.php:3491
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:607
-#: inc/helpers.php:3442
-#: inc/helpers.php:3491
-#: inc/woocommerce/woocommerce-config.php:607
+#: build/oceanwp/inc/helpers.php:3438
+#: build/oceanwp/inc/helpers.php:3487
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:628
+#: inc/helpers.php:3438
+#: inc/helpers.php:3487
+#: inc/woocommerce/woocommerce-config.php:628
 msgid "Newer Posts"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3445
-#: build/oceanwp/inc/helpers.php:3492
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:608
-#: inc/helpers.php:3445
-#: inc/helpers.php:3492
-#: inc/woocommerce/woocommerce-config.php:608
+#: build/oceanwp/inc/helpers.php:3441
+#: build/oceanwp/inc/helpers.php:3488
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:629
+#: inc/helpers.php:3441
+#: inc/helpers.php:3488
+#: inc/woocommerce/woocommerce-config.php:629
 msgid "Older Posts"
+msgstr ""
+
+#: build/oceanwp/inc/helpers.php:3859
+#: inc/helpers.php:3859
+msgid "Default Icon"
+msgstr ""
+
+#: build/oceanwp/inc/helpers.php:3860
+#: inc/helpers.php:3860
+msgid "3D X"
+msgstr ""
+
+#: build/oceanwp/inc/helpers.php:3861
+#: inc/helpers.php:3861
+msgid "3D X Reverse"
+msgstr ""
+
+#: build/oceanwp/inc/helpers.php:3862
+#: inc/helpers.php:3862
+msgid "3D Y"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3863
 #: inc/helpers.php:3863
-msgid "Default Icon"
+msgid "3D Y Reverse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3864
 #: inc/helpers.php:3864
-msgid "3D X"
+msgid "3D XY"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3865
 #: inc/helpers.php:3865
-msgid "3D X Reverse"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:3866
-#: inc/helpers.php:3866
-msgid "3D Y"
+msgid "3D XY Reverse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3867
 #: inc/helpers.php:3867
-msgid "3D Y Reverse"
+msgid "Arrow Reverse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3868
 #: inc/helpers.php:3868
-msgid "3D XY"
+msgid "Arrowalt"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3869
 #: inc/helpers.php:3869
-msgid "3D XY Reverse"
+msgid "Arrowalt Reverse"
+msgstr ""
+
+#: build/oceanwp/inc/helpers.php:3870
+#: inc/helpers.php:3870
+msgid "Arrowturn"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3871
 #: inc/helpers.php:3871
-msgid "Arrow Reverse"
+msgid "Arrowturn Reverse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3872
 #: inc/helpers.php:3872
-msgid "Arrowalt"
+msgid "Boring"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3873
 #: inc/helpers.php:3873
-msgid "Arrowalt Reverse"
+msgid "Collapse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3874
 #: inc/helpers.php:3874
-msgid "Arrowturn"
+msgid "Collapse Reverse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3875
 #: inc/helpers.php:3875
-msgid "Arrowturn Reverse"
+msgid "Elastic"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3876
 #: inc/helpers.php:3876
-msgid "Boring"
+msgid "Elastic Reverse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3877
 #: inc/helpers.php:3877
-msgid "Collapse"
+msgid "Minus"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3878
 #: inc/helpers.php:3878
-msgid "Collapse Reverse"
+msgid "Slider"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3879
 #: inc/helpers.php:3879
-msgid "Elastic"
+msgid "Slider Reverse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3880
 #: inc/helpers.php:3880
-msgid "Elastic Reverse"
+msgid "Spin"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3881
 #: inc/helpers.php:3881
-msgid "Minus"
+msgid "Spin Reverse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3882
 #: inc/helpers.php:3882
-msgid "Slider"
+msgid "Spring"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3883
 #: inc/helpers.php:3883
-msgid "Slider Reverse"
+msgid "Spring Reverse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3884
 #: inc/helpers.php:3884
-msgid "Spin"
+msgid "Stand"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3885
 #: inc/helpers.php:3885
-msgid "Spin Reverse"
+msgid "Stand Reverse"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3886
 #: inc/helpers.php:3886
-msgid "Spring"
+msgid "Squeeze"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3887
 #: inc/helpers.php:3887
-msgid "Spring Reverse"
+msgid "Vortex"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3888
 #: inc/helpers.php:3888
-msgid "Stand"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:3889
-#: inc/helpers.php:3889
-msgid "Stand Reverse"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:3890
-#: inc/helpers.php:3890
-msgid "Squeeze"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:3891
-#: inc/helpers.php:3891
-msgid "Vortex"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:3892
-#: inc/helpers.php:3892
 msgid "Vortex Reverse"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3946
-#: inc/helpers.php:3946
+#: build/oceanwp/inc/helpers.php:3942
+#: inc/helpers.php:3942
 msgid "Copyright [oceanwp_date] - OceanWP Theme by OceanWP"
+msgstr ""
+
+#: build/oceanwp/inc/helpers.php:3967
+#: inc/helpers.php:3967
+msgid "Twitter"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3971
 #: inc/helpers.php:3971
-msgid "Twitter"
+msgid "Facebook"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3975
 #: inc/helpers.php:3975
-msgid "Facebook"
+msgid "Pinterest"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3979
 #: inc/helpers.php:3979
-msgid "Pinterest"
+msgid "Dribbble"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3983
 #: inc/helpers.php:3983
-msgid "Dribbble"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:3987
-#: inc/helpers.php:3987
 msgid "VK"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:3991
+#: build/oceanwp/inc/helpers.php:3987
 #: build/oceanwp/inc/themepanel/views/panes/free-vs-pro.php:77
-#: inc/helpers.php:3991
+#: inc/helpers.php:3987
 #: inc/themepanel/views/panes/free-vs-pro.php:77
 msgid "Instagram"
 msgstr ""
 
+#: build/oceanwp/inc/helpers.php:3991
+#: inc/helpers.php:3991
+msgid "LinkedIn"
+msgstr ""
+
 #: build/oceanwp/inc/helpers.php:3995
 #: inc/helpers.php:3995
-msgid "LinkedIn"
+msgid "Tumblr"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:3999
 #: inc/helpers.php:3999
-msgid "Tumblr"
+msgid "Github"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4003
 #: inc/helpers.php:4003
-msgid "Github"
+msgid "Flickr"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4007
 #: inc/helpers.php:4007
-msgid "Flickr"
+msgid "Skype"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4011
 #: inc/helpers.php:4011
-msgid "Skype"
+msgid "Youtube"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4015
 #: inc/helpers.php:4015
-msgid "Youtube"
+msgid "Vimeo"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4019
 #: inc/helpers.php:4019
-msgid "Vimeo"
+msgid "Vine"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4023
 #: inc/helpers.php:4023
-msgid "Vine"
+msgid "Xing"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4027
 #: inc/helpers.php:4027
-msgid "Xing"
+msgid "Yelp"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4031
 #: inc/helpers.php:4031
-msgid "Yelp"
+msgid "Tripadvisor"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4035
 #: inc/helpers.php:4035
-msgid "Tripadvisor"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:4039
-#: inc/helpers.php:4039
 msgid "RSS"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:4043
-#: build/oceanwp/inc/oceanwp-strings.php:46
-#: inc/helpers.php:4043
-#: inc/oceanwp-strings.php:46
+#: build/oceanwp/inc/helpers.php:4039
+#: build/oceanwp/inc/oceanwp-strings.php:87
+#: inc/helpers.php:4039
+#: inc/oceanwp-strings.php:87
 msgid "Email"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:4047
-#: inc/helpers.php:4047
+#: build/oceanwp/inc/helpers.php:4043
+#: inc/helpers.php:4043
 msgid "TikTok"
+msgstr ""
+
+#: build/oceanwp/inc/helpers.php:4051
+#: inc/helpers.php:4051
+msgid "Telegram"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4055
 #: inc/helpers.php:4055
-msgid "Telegram"
+msgid "Twitch"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4059
 #: inc/helpers.php:4059
-msgid "Twitch"
+msgid "Line"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4063
 #: inc/helpers.php:4063
-msgid "Line"
+msgid "QQ"
 msgstr ""
 
 #: build/oceanwp/inc/helpers.php:4067
 #: inc/helpers.php:4067
-msgid "QQ"
-msgstr ""
-
-#: build/oceanwp/inc/helpers.php:4071
-#: inc/helpers.php:4071
 msgid "Discord"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:4869
-#: build/oceanwp/inc/helpers.php:4879
-#: build/oceanwp/inc/helpers.php:4880
+#: build/oceanwp/inc/helpers.php:4873
+#: build/oceanwp/inc/helpers.php:4883
+#: build/oceanwp/inc/helpers.php:4884
 #: build/oceanwp/inc/themepanel/views/layout/header.php:22
-#: inc/helpers.php:4869
-#: inc/helpers.php:4879
-#: inc/helpers.php:4880
+#: inc/helpers.php:4873
+#: inc/helpers.php:4883
+#: inc/helpers.php:4884
 #: inc/themepanel/views/layout/header.php:22
 msgid "OceanWP Panel"
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:4929
+#: build/oceanwp/inc/helpers.php:4933
 #: build/oceanwp/inc/themepanel/views/panes/home.php:74
-#: inc/helpers.php:4929
+#: inc/helpers.php:4933
 #: inc/themepanel/views/panes/home.php:74
 msgid "We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date."
 msgstr ""
 
-#: build/oceanwp/inc/helpers.php:4930
-#: inc/helpers.php:4930
+#: build/oceanwp/inc/helpers.php:4934
+#: inc/helpers.php:4934
 msgid "Update and get the new Theme Panel"
 msgstr ""
 
-#: build/oceanwp/inc/oceanwp-strings.php:31
-#: inc/oceanwp-strings.php:31
-msgid "Skip to content"
-msgstr ""
-
 #: build/oceanwp/inc/oceanwp-strings.php:32
-#: build/oceanwp/inc/oceanwp-strings.php:33
 #: inc/oceanwp-strings.php:32
-#: inc/oceanwp-strings.php:33
-msgid "Search"
+msgid "View website Menu"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:35
 #: inc/oceanwp-strings.php:35
-msgid "Type then hit enter to search..."
+msgid "Toggle the button to expand or collapse the Menu"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:36
 #: inc/oceanwp-strings.php:36
-msgid "Type then hit enter to search"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:37
-#: build/oceanwp/inc/oceanwp-strings.php:38
-#: inc/oceanwp-strings.php:37
-#: inc/oceanwp-strings.php:38
-msgid "Search..."
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "vertical-header-toggle"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:39
 #: inc/oceanwp-strings.php:39
-msgid "Log out of this account"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:40
-#: inc/oceanwp-strings.php:40
-msgid "Your comment here..."
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:41
-#: inc/oceanwp-strings.php:41
-msgid "Click to edit your profile"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "header-menu-toggle"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:42
 #: inc/oceanwp-strings.php:42
-msgid "Post Comment"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "mobile-menu-toggle"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:43
 #: inc/oceanwp-strings.php:43
-msgid "Name (required)"
+msgid "Close mobile menu"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:44
 #: inc/oceanwp-strings.php:44
-msgid "Email (required)"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:45
-#: inc/oceanwp-strings.php:45
-msgid "Name"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "mobile-header-search-close"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:47
 #: inc/oceanwp-strings.php:47
-msgid "Website"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:48
-#: build/oceanwp/inc/oceanwp-strings.php:49
-#: build/oceanwp/partials/edd/single.php:57
-#: inc/oceanwp-strings.php:48
-#: inc/oceanwp-strings.php:49
-#: partials/edd/single.php:57
-msgid "Continue Reading"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "sidr-menu-close"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:50
 #: inc/oceanwp-strings.php:50
-msgid "You Might Also Like"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:51
-#: inc/oceanwp-strings.php:51
-msgid "Next Post"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:52
-#: inc/oceanwp-strings.php:52
-msgid "Previous Post"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "mobile-fullscreen-menu"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:53
 #: inc/oceanwp-strings.php:53
-msgid "Read more articles"
+msgid "Search this website"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:54
 #: inc/oceanwp-strings.php:54
-msgid "Visit author page"
+msgid "Close this search form"
 msgstr ""
 
-#: build/oceanwp/inc/oceanwp-strings.php:58
-#: inc/oceanwp-strings.php:58
-msgid "Close quick preview"
+#: build/oceanwp/inc/oceanwp-strings.php:55
+#: inc/oceanwp-strings.php:55
+msgid "Insert search query"
 msgstr ""
 
+#: build/oceanwp/inc/oceanwp-strings.php:56
 #: build/oceanwp/inc/oceanwp-strings.php:59
+#: inc/oceanwp-strings.php:56
 #: inc/oceanwp-strings.php:59
-msgid "Select Options"
+msgid "Search"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:60
 #: inc/oceanwp-strings.php:60
-msgid "Selected:"
+msgid "Submit search"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:61
 #: inc/oceanwp-strings.php:61
-msgid "Out of stock"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "mobile-header-search"
 msgstr ""
 
-#: build/oceanwp/inc/oceanwp-strings.php:62
-#: inc/oceanwp-strings.php:62
-msgid "Next Product"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:63
-#: inc/oceanwp-strings.php:63
-msgid "Previous Product"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:66
-#: inc/oceanwp-strings.php:66
-msgid "Close mobile menu"
+#: build/oceanwp/inc/oceanwp-strings.php:64
+#: inc/oceanwp-strings.php:64
+msgid "Type then hit enter to search..."
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:67
 #: inc/oceanwp-strings.php:67
-msgid "Search for:"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:68
-#: inc/oceanwp-strings.php:68
-msgid "Submit search"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:69
-#: inc/oceanwp-strings.php:69
-msgid "Insert search query"
+msgctxt "Used for creation of SEO friendly anchor links. Do not use spaces or pound keys."
+msgid "hsoverlay-close"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:70
 #: inc/oceanwp-strings.php:70
-msgid "Search this website"
+msgid "Skip to content"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:71
 #: inc/oceanwp-strings.php:71
-msgid "Close this search form"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:72
-#: inc/oceanwp-strings.php:72
 msgid "Scroll to the top of the page"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:73
 #: inc/oceanwp-strings.php:73
-msgid "Visit this link"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:74
-#: inc/oceanwp-strings.php:74
-msgid "Opens in a new tab"
+msgid "Type your search"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:75
 #: inc/oceanwp-strings.php:75
-msgid "Read more about"
+msgid "Type then hit enter to search"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:76
-#: inc/oceanwp-strings.php:76
-msgid "Read more about the article"
-msgstr ""
-
 #: build/oceanwp/inc/oceanwp-strings.php:77
+#: inc/oceanwp-strings.php:76
 #: inc/oceanwp-strings.php:77
-msgid "You are currently viewing"
+msgid "Search..."
 msgstr ""
 
-#: build/oceanwp/inc/oceanwp-strings.php:78
-#: inc/oceanwp-strings.php:78
-msgid "Post author avatar"
+#: build/oceanwp/inc/oceanwp-strings.php:80
+#: inc/oceanwp-strings.php:80
+msgid "Log out of this account"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:81
 #: inc/oceanwp-strings.php:81
-msgid "View next product"
+msgid "Your comment here..."
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:82
 #: inc/oceanwp-strings.php:82
-msgid "View previous product"
+msgid "Click to edit your profile"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:83
+#: inc/oceanwp-strings.php:83
+msgid "Post Comment"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:84
+#: inc/oceanwp-strings.php:84
+msgid "Name (required)"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:85
 #: inc/oceanwp-strings.php:85
-msgctxt "Prefix for post author name"
-msgid "By"
+msgid "Email (required)"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:86
 #: inc/oceanwp-strings.php:86
-msgctxt "Prefix for post author name"
-msgid "Written by"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:87
-#: inc/oceanwp-strings.php:87
-msgctxt "Aria label prefix for post author link"
-msgid "All posts by"
+msgid "Name"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:88
 #: inc/oceanwp-strings.php:88
-msgctxt "Prefix for post published date"
-msgid "Published"
-msgstr ""
-
-#: build/oceanwp/inc/oceanwp-strings.php:89
-#: inc/oceanwp-strings.php:89
-msgctxt "Prefix for post modified date"
-msgid "Updated"
+msgid "Website"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:90
-#: inc/oceanwp-strings.php:90
-msgctxt "Suffix for post reading time equal to 1"
-msgid "min read"
-msgstr ""
-
 #: build/oceanwp/inc/oceanwp-strings.php:91
+#: build/oceanwp/partials/edd/single.php:57
+#: inc/oceanwp-strings.php:90
 #: inc/oceanwp-strings.php:91
-msgctxt "Suffix for post reading time more than 1"
-msgid "mins read"
+#: partials/edd/single.php:57
+msgid "Continue Reading"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:92
 #: inc/oceanwp-strings.php:92
-msgctxt "Prefix for categories list"
-msgid "Posted in"
+msgid "You Might Also Like"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:93
 #: inc/oceanwp-strings.php:93
-msgctxt "Prefix for tags list"
-msgid "Tagged as"
+msgid "Next Post"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:94
 #: inc/oceanwp-strings.php:94
-msgctxt "Aria label: post modified date"
-msgid "Updated on"
+msgid "Previous Post"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:95
 #: inc/oceanwp-strings.php:95
-msgctxt "Aria label: post published date"
-msgid "Published on"
+msgid "Read more articles"
 msgstr ""
 
 #: build/oceanwp/inc/oceanwp-strings.php:96
 #: inc/oceanwp-strings.php:96
+msgid "Visit author page"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:100
+#: inc/oceanwp-strings.php:100
+msgid "Close quick preview"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:101
+#: inc/oceanwp-strings.php:101
+msgid "Select Options"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:102
+#: inc/oceanwp-strings.php:102
+msgid "Selected:"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:103
+#: inc/oceanwp-strings.php:103
+msgid "Out of stock"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:104
+#: inc/oceanwp-strings.php:104
+msgid "Next Product"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:105
+#: inc/oceanwp-strings.php:105
+msgid "Previous Product"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:108
+#: inc/oceanwp-strings.php:108
+msgid "Toggle website search"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:109
+#: inc/oceanwp-strings.php:109
+msgid "Website search form"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:110
+#: inc/oceanwp-strings.php:110
+msgid "Search for:"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:111
+#: inc/oceanwp-strings.php:111
+msgid "After typing hit enter to submit search query"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:112
+#: inc/oceanwp-strings.php:112
+msgid "Visit this link"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:113
+#: inc/oceanwp-strings.php:113
+msgid "Opens in a new tab"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:114
+#: inc/oceanwp-strings.php:114
+msgid "Read more about"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:115
+#: inc/oceanwp-strings.php:115
+msgid "Read more about the article"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:116
+#: inc/oceanwp-strings.php:116
+msgid "You are currently viewing"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:117
+#: inc/oceanwp-strings.php:117
+msgid "Post author avatar"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:120
+#: inc/oceanwp-strings.php:120
+msgid "View next product"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:121
+#: inc/oceanwp-strings.php:121
+msgid "View previous product"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:124
+#: inc/oceanwp-strings.php:124
+msgctxt "Prefix for post author name"
+msgid "By"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:125
+#: inc/oceanwp-strings.php:125
+msgctxt "Prefix for post author name"
+msgid "Written by"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:126
+#: inc/oceanwp-strings.php:126
+msgctxt "Aria label prefix for post author link"
+msgid "All posts by"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:127
+#: inc/oceanwp-strings.php:127
+msgctxt "Prefix for post published date"
+msgid "Published"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:128
+#: inc/oceanwp-strings.php:128
+msgctxt "Prefix for post modified date"
+msgid "Updated"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:129
+#: inc/oceanwp-strings.php:129
+msgctxt "Suffix for post reading time equal to 1"
+msgid "min read"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:130
+#: inc/oceanwp-strings.php:130
+msgctxt "Suffix for post reading time more than 1"
+msgid "mins read"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:131
+#: inc/oceanwp-strings.php:131
+msgctxt "Prefix for categories list"
+msgid "Posted in"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:132
+#: inc/oceanwp-strings.php:132
+msgctxt "Prefix for tags list"
+msgid "Tagged as"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:133
+#: inc/oceanwp-strings.php:133
+msgctxt "Aria label: post modified date"
+msgid "Updated on"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:134
+#: inc/oceanwp-strings.php:134
+msgctxt "Aria label: post published date"
+msgid "Published on"
+msgstr ""
+
+#: build/oceanwp/inc/oceanwp-strings.php:135
+#: inc/oceanwp-strings.php:135
 msgctxt "Aria label: post reading time"
 msgid "Reading time"
 msgstr ""
 
-#: build/oceanwp/inc/oceanwp-strings.php:97
-#: inc/oceanwp-strings.php:97
+#: build/oceanwp/inc/oceanwp-strings.php:136
+#: inc/oceanwp-strings.php:136
 msgctxt "Aria label: post comments"
 msgid "Comments"
 msgstr ""
@@ -8194,13 +8276,13 @@ msgstr ""
 #: build/oceanwp/inc/template-helpers.php:235
 #: build/oceanwp/inc/template-helpers.php:272
 #: build/oceanwp/inc/template-helpers.php:314
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2168
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2189
 #: inc/template-helpers.php:73
 #: inc/template-helpers.php:79
 #: inc/template-helpers.php:235
 #: inc/template-helpers.php:272
 #: inc/template-helpers.php:314
-#: inc/woocommerce/woocommerce-config.php:2168
+#: inc/woocommerce/woocommerce-config.php:2189
 msgid "%s"
 msgstr ""
 
@@ -8507,159 +8589,159 @@ msgstr ""
 msgid "Available new versions some plugins"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:395
-#: inc/themepanel/theme-panel.php:395
+#: build/oceanwp/inc/themepanel/theme-panel.php:397
+#: inc/themepanel/theme-panel.php:397
 msgid "Customizer"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:400
+#: build/oceanwp/inc/themepanel/theme-panel.php:402
 #: build/oceanwp/inc/themepanel/views/panes/install-demos.php:47
-#: inc/themepanel/theme-panel.php:400
+#: inc/themepanel/theme-panel.php:402
 #: inc/themepanel/views/panes/install-demos.php:47
 msgid "Install Demos"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:405
-#: inc/themepanel/theme-panel.php:405
+#: build/oceanwp/inc/themepanel/theme-panel.php:407
+#: inc/themepanel/theme-panel.php:407
 msgid "Ocean Images"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:410
-#: inc/themepanel/theme-panel.php:410
+#: build/oceanwp/inc/themepanel/theme-panel.php:412
+#: inc/themepanel/theme-panel.php:412
 msgid "Integration"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:415
-#: inc/themepanel/theme-panel.php:415
+#: build/oceanwp/inc/themepanel/theme-panel.php:417
+#: inc/themepanel/theme-panel.php:417
 msgid "Useful Plugins"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:420
-#: inc/themepanel/theme-panel.php:420
+#: build/oceanwp/inc/themepanel/theme-panel.php:422
+#: inc/themepanel/theme-panel.php:422
 msgid "Changelog"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:425
-#: inc/themepanel/theme-panel.php:425
+#: build/oceanwp/inc/themepanel/theme-panel.php:427
+#: inc/themepanel/theme-panel.php:427
 msgid "Free vs Pro"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:430
+#: build/oceanwp/inc/themepanel/theme-panel.php:432
 #: build/oceanwp/inc/themepanel/views/panes/elementor-widgets.php:24
 #: build/oceanwp/inc/themepanel/views/panes/free-vs-pro.php:76
 #: build/oceanwp/inc/themepanel/views/panes/home.php:110
-#: inc/themepanel/theme-panel.php:430
+#: inc/themepanel/theme-panel.php:432
 #: inc/themepanel/views/panes/elementor-widgets.php:24
 #: inc/themepanel/views/panes/free-vs-pro.php:76
 #: inc/themepanel/views/panes/home.php:110
 msgid "Elementor Widgets"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:435
+#: build/oceanwp/inc/themepanel/theme-panel.php:437
 #: build/oceanwp/inc/themepanel/views/panes/elementor-library.php:30
-#: inc/themepanel/theme-panel.php:435
+#: inc/themepanel/theme-panel.php:437
 #: inc/themepanel/views/panes/elementor-library.php:30
 msgid "Elementor Library"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:440
+#: build/oceanwp/inc/themepanel/theme-panel.php:442
 #: build/oceanwp/inc/themepanel/views/panes/gutenberg-blocks.php:23
 #: build/oceanwp/inc/themepanel/views/panes/home.php:114
-#: inc/themepanel/theme-panel.php:440
+#: inc/themepanel/theme-panel.php:442
 #: inc/themepanel/views/panes/gutenberg-blocks.php:23
 #: inc/themepanel/views/panes/home.php:114
 msgid "Gutenberg Blocks"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:445
+#: build/oceanwp/inc/themepanel/theme-panel.php:447
 #: build/oceanwp/inc/themepanel/views/panes/extra-settings.php:12
-#: inc/themepanel/theme-panel.php:445
+#: inc/themepanel/theme-panel.php:447
 #: inc/themepanel/views/panes/extra-settings.php:12
 msgid "Extra Settings"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:450
+#: build/oceanwp/inc/themepanel/theme-panel.php:452
 #: build/oceanwp/inc/themepanel/views/panes/admin-settings.php:26
-#: inc/themepanel/theme-panel.php:450
+#: inc/themepanel/theme-panel.php:452
 #: inc/themepanel/views/panes/admin-settings.php:26
 msgid "Admin Settings"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:455
+#: build/oceanwp/inc/themepanel/theme-panel.php:457
 #: build/oceanwp/inc/themepanel/views/panes/free-vs-pro.php:86
 #: build/oceanwp/inc/themepanel/views/panes/white-label.php:31
-#: inc/themepanel/theme-panel.php:455
+#: inc/themepanel/theme-panel.php:457
 #: inc/themepanel/views/panes/free-vs-pro.php:86
 #: inc/themepanel/views/panes/white-label.php:31
 msgid "White Label"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:460
+#: build/oceanwp/inc/themepanel/theme-panel.php:462
 #: build/oceanwp/inc/themepanel/views/panes/system-info.php:13
-#: inc/themepanel/theme-panel.php:460
+#: inc/themepanel/theme-panel.php:462
 #: inc/themepanel/views/panes/system-info.php:13
 msgid "System Info"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:465
-#: inc/themepanel/theme-panel.php:465
+#: build/oceanwp/inc/themepanel/theme-panel.php:467
+#: inc/themepanel/theme-panel.php:467
 msgid "Help"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:539
-#: inc/themepanel/theme-panel.php:539
+#: build/oceanwp/inc/themepanel/theme-panel.php:541
+#: inc/themepanel/theme-panel.php:541
 msgid "%1$sInstall free Ocean Extra recommended plugin%2$s to unlock this feature."
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:552
-#: inc/themepanel/theme-panel.php:552
+#: build/oceanwp/inc/themepanel/theme-panel.php:554
+#: inc/themepanel/theme-panel.php:554
 msgid "%1$sUpgrade to the Business or Agency Ocean Core Extensions Bundle plans%2$s to unlock this feature."
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:565
-#: inc/themepanel/theme-panel.php:565
+#: build/oceanwp/inc/themepanel/theme-panel.php:567
+#: inc/themepanel/theme-panel.php:567
 msgid "%1$sUpgrade to the Ocean Core Extensions Bundle%2$s to unlock this feature."
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:577
-#: inc/themepanel/theme-panel.php:577
+#: build/oceanwp/inc/themepanel/theme-panel.php:579
+#: inc/themepanel/theme-panel.php:579
 msgid "%1$s or %2$s"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:581
-#: inc/themepanel/theme-panel.php:581
+#: build/oceanwp/inc/themepanel/theme-panel.php:583
+#: inc/themepanel/theme-panel.php:583
 msgid "Install free Ocean Extra recommended plugin"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:586
-#: inc/themepanel/theme-panel.php:586
+#: build/oceanwp/inc/themepanel/theme-panel.php:588
+#: inc/themepanel/theme-panel.php:588
 msgid "upgrade to the Ocean Core Extensions Bundle"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:633
-#: build/oceanwp/inc/themepanel/theme-panel.php:798
-#: inc/themepanel/theme-panel.php:633
-#: inc/themepanel/theme-panel.php:798
+#: build/oceanwp/inc/themepanel/theme-panel.php:635
+#: build/oceanwp/inc/themepanel/theme-panel.php:800
+#: inc/themepanel/theme-panel.php:640
+#: inc/themepanel/theme-panel.php:805
 msgid "Something went wrong"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:636
-#: inc/themepanel/theme-panel.php:636
+#: build/oceanwp/inc/themepanel/theme-panel.php:638
+#: inc/themepanel/theme-panel.php:643
 msgid "You do not have sufficient privileges for this action."
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:772
-#: inc/themepanel/theme-panel.php:772
+#: build/oceanwp/inc/themepanel/theme-panel.php:774
+#: inc/themepanel/theme-panel.php:779
 msgid "Fonts folder does not exist"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:776
-#: inc/themepanel/theme-panel.php:776
+#: build/oceanwp/inc/themepanel/theme-panel.php:778
+#: inc/themepanel/theme-panel.php:783
 msgid "CSS folder does not exist"
 msgstr ""
 
-#: build/oceanwp/inc/themepanel/theme-panel.php:800
-#: inc/themepanel/theme-panel.php:800
+#: build/oceanwp/inc/themepanel/theme-panel.php:802
+#: inc/themepanel/theme-panel.php:807
 msgid "Data was cleared"
 msgstr ""
 
@@ -9475,61 +9557,61 @@ msgid "Check out %1$sour documentation and full video guide%2$s on how easy it i
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:17
-#: inc/themepanel/views/panes/integration.php:17
+#: inc/themepanel/views/panes/integration.php:18
 msgid "SVG Support"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:26
-#: inc/themepanel/views/panes/integration.php:26
+#: inc/themepanel/views/panes/integration.php:27
 msgid "Enable SVG file support for your WordPress Media Library. This option allows you to safely upload any SVG file to the Media Library as all files are sanitized upon upload."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:36
-#: inc/themepanel/views/panes/integration.php:36
+#: inc/themepanel/views/panes/integration.php:37
 msgid "Google Maps"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:39
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:45
-#: inc/themepanel/views/panes/integration.php:39
-#: inc/themepanel/views/panes/integration.php:45
+#: inc/themepanel/views/panes/integration.php:40
+#: inc/themepanel/views/panes/integration.php:46
 msgid "Display the Google map on your website and help visitors locate your business."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:57
-#: inc/themepanel/views/panes/integration.php:57
+#: inc/themepanel/views/panes/integration.php:58
 msgid "Google reCAPTCHA"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:60
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:66
-#: inc/themepanel/views/panes/integration.php:60
-#: inc/themepanel/views/panes/integration.php:66
+#: inc/themepanel/views/panes/integration.php:61
+#: inc/themepanel/views/panes/integration.php:67
 msgid "Adds Google reCAPTCHA."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:76
-#: inc/themepanel/views/panes/integration.php:76
+#: inc/themepanel/views/panes/integration.php:77
 msgid "MailChimp"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:84
-#: inc/themepanel/views/panes/integration.php:84
+#: inc/themepanel/views/panes/integration.php:85
 msgid "Add newsletter subscription to your website and grow your contact list."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:86
-#: inc/themepanel/views/panes/integration.php:86
+#: inc/themepanel/views/panes/integration.php:87
 msgid "to unlock this feature."
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:95
-#: inc/themepanel/views/panes/integration.php:95
+#: inc/themepanel/views/panes/integration.php:96
 msgid "Adobe Fonts (TypeKit)"
 msgstr ""
 
 #: build/oceanwp/inc/themepanel/views/panes/integration.php:101
-#: inc/themepanel/views/panes/integration.php:101
+#: inc/themepanel/views/panes/integration.php:102
 msgid "Get your creativity flowing and dive into thousands of wonderful fonts from the world's leading type foundries."
 msgstr ""
 
@@ -9924,190 +10006,190 @@ msgstr ""
 msgid "Latest in"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:342
-#: inc/woocommerce/woocommerce-config.php:342
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:362
+#: inc/woocommerce/woocommerce-config.php:362
 msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:797
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:818
 #: build/oceanwp/woocommerce/checkout/form-multistep-checkout.php:97
-#: inc/woocommerce/woocommerce-config.php:797
+#: inc/woocommerce/woocommerce-config.php:818
 #: woocommerce/checkout/form-multistep-checkout.php:97
 msgid "I don&rsquo;t have an account"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:811
-#: inc/woocommerce/woocommerce-config.php:811
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:832
+#: inc/woocommerce/woocommerce-config.php:832
 msgid "View cart"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:817
-#: inc/woocommerce/woocommerce-config.php:817
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:838
+#: inc/woocommerce/woocommerce-config.php:838
 msgid "View products"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:819
-#: inc/woocommerce/woocommerce-config.php:819
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:840
+#: inc/woocommerce/woocommerce-config.php:840
 msgid "Some required fields are empty. Please fill the required fields to go to the next step."
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:909
-#: inc/woocommerce/woocommerce-config.php:909
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:930
+#: inc/woocommerce/woocommerce-config.php:930
 msgid "Off-Canvas Filters"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:910
-#: inc/woocommerce/woocommerce-config.php:910
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:931
+#: inc/woocommerce/woocommerce-config.php:931
 msgid "Widgets in this area are used in the off canvas sidebar. To enable the Off Canvas filter, go to the WooCommerce > Archives section of the customizer and enable the Display Filter Button option."
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:977
-#: inc/woocommerce/woocommerce-config.php:977
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:998
+#: inc/woocommerce/woocommerce-config.php:998
 msgid "Grid view"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:978
-#: inc/woocommerce/woocommerce-config.php:978
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:999
+#: inc/woocommerce/woocommerce-config.php:999
 msgid "List view"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1137
-#: inc/woocommerce/woocommerce-config.php:1137
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1158
+#: inc/woocommerce/woocommerce-config.php:1158
 msgid "Out of Stock"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1193
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1214
 #: build/oceanwp/woocommerce/owp-archive-product-hover.php:62
-#: inc/woocommerce/woocommerce-config.php:1193
+#: inc/woocommerce/woocommerce-config.php:1214
 #: woocommerce/owp-archive-product-hover.php:62
 msgid "Quickly preview product"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1463
-#: inc/woocommerce/woocommerce-config.php:1463
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1484
+#: inc/woocommerce/woocommerce-config.php:1484
 msgid "Welcome!"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1472
-#: inc/woocommerce/woocommerce-config.php:1472
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:1493
+#: inc/woocommerce/woocommerce-config.php:1493
 msgid "Logout"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2172
-#: inc/woocommerce/woocommerce-config.php:2172
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2193
+#: inc/woocommerce/woocommerce-config.php:2193
 msgid "Sale!"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2209
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2230
 #: build/oceanwp/woocommerce/checkout/checkout-timeline.php:43
-#: inc/woocommerce/woocommerce-config.php:2209
+#: inc/woocommerce/woocommerce-config.php:2230
 #: woocommerce/checkout/checkout-timeline.php:43
 msgid "Login"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2222
-#: inc/woocommerce/woocommerce-config.php:2222
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2243
+#: inc/woocommerce/woocommerce-config.php:2243
 msgid "Or"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2224
-#: inc/woocommerce/woocommerce-config.php:2224
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2245
+#: inc/woocommerce/woocommerce-config.php:2245
 msgid "Register"
 msgstr ""
 
 #. translators: %s: field name
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2342
-#: inc/woocommerce/woocommerce-config.php:2342
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2363
+#: inc/woocommerce/woocommerce-config.php:2363
 msgid "Shipping %s"
 msgstr ""
 
 #. translators: %s: field name
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2346
-#: inc/woocommerce/woocommerce-config.php:2346
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2367
+#: inc/woocommerce/woocommerce-config.php:2367
 msgid "Billing %s"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2355
-#: inc/woocommerce/woocommerce-config.php:2355
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2376
+#: inc/woocommerce/woocommerce-config.php:2376
 msgid "%s is not a valid postcode / ZIP."
 msgstr ""
 
 #. translators: %s: phone number
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2364
-#: inc/woocommerce/woocommerce-config.php:2364
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2385
+#: inc/woocommerce/woocommerce-config.php:2385
 msgid "%s is not a valid phone number."
 msgstr ""
 
 #. translators: %s: email address
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2373
-#: inc/woocommerce/woocommerce-config.php:2373
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2394
+#: inc/woocommerce/woocommerce-config.php:2394
 msgid "%s is not a valid email address."
 msgstr ""
 
 #. translators: 1: state field 2: valid states
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2393
-#: inc/woocommerce/woocommerce-config.php:2393
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2414
+#: inc/woocommerce/woocommerce-config.php:2414
 msgid "%1$s is not valid. Please enter one of the following: %2$s"
 msgstr ""
 
 #. translators: %s: field name
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2400
-#: inc/woocommerce/woocommerce-config.php:2400
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2421
+#: inc/woocommerce/woocommerce-config.php:2421
 msgid "%s is a required field."
-msgstr ""
-
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2492
-#: inc/woocommerce/woocommerce-config.php:2492
-msgid "WooCommerce Product Title"
-msgstr ""
-
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2503
-#: inc/woocommerce/woocommerce-config.php:2503
-msgid "WooCommerce Product Price"
 msgstr ""
 
 #: build/oceanwp/inc/woocommerce/woocommerce-config.php:2513
 #: inc/woocommerce/woocommerce-config.php:2513
+msgid "WooCommerce Product Title"
+msgstr ""
+
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2524
+#: inc/woocommerce/woocommerce-config.php:2524
+msgid "WooCommerce Product Price"
+msgstr ""
+
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2534
+#: inc/woocommerce/woocommerce-config.php:2534
 msgid "WooCommerce Product Add To Cart"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2525
-#: inc/woocommerce/woocommerce-config.php:2525
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2546
+#: inc/woocommerce/woocommerce-config.php:2546
 msgid "WooCommerce Product Notice"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2538
-#: inc/woocommerce/woocommerce-config.php:2538
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2559
+#: inc/woocommerce/woocommerce-config.php:2559
 msgid "WooCommerce Archive Title"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2549
-#: inc/woocommerce/woocommerce-config.php:2549
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2570
+#: inc/woocommerce/woocommerce-config.php:2570
 msgid "WooCommerce Archive Category"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2560
-#: inc/woocommerce/woocommerce-config.php:2560
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2581
+#: inc/woocommerce/woocommerce-config.php:2581
 msgid "WooCommerce Archive Price"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2571
-#: inc/woocommerce/woocommerce-config.php:2571
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2592
+#: inc/woocommerce/woocommerce-config.php:2592
 msgid "WooCommerce Archive Add To Cart"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2582
-#: inc/woocommerce/woocommerce-config.php:2582
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2603
+#: inc/woocommerce/woocommerce-config.php:2603
 msgid "WooCommerce Archive Notice"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2595
-#: inc/woocommerce/woocommerce-config.php:2595
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2616
+#: inc/woocommerce/woocommerce-config.php:2616
 msgid "WooCommerce Store Notice"
 msgstr ""
 
-#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2605
-#: inc/woocommerce/woocommerce-config.php:2605
+#: build/oceanwp/inc/woocommerce/woocommerce-config.php:2626
+#: inc/woocommerce/woocommerce-config.php:2626
 msgid "WooCommerce Store Notice Dismiss"
 msgstr ""
 
@@ -10212,47 +10294,32 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: build/oceanwp/partials/header/social.php:112
-#: build/oceanwp/partials/topbar/social.php:95
-#: partials/header/social.php:112
-#: partials/topbar/social.php:95
+#: build/oceanwp/partials/header/social.php:110
+#: build/oceanwp/partials/topbar/social.php:96
+#: partials/header/social.php:110
+#: partials/topbar/social.php:96
 msgid "Social links"
 msgstr ""
 
-#: build/oceanwp/partials/header/social.php:126
-#: build/oceanwp/partials/topbar/social.php:109
-#: partials/header/social.php:126
-#: partials/topbar/social.php:109
+#: build/oceanwp/partials/header/social.php:124
+#: build/oceanwp/partials/topbar/social.php:110
+#: partials/header/social.php:124
+#: partials/topbar/social.php:110
 msgid "(opens in a new tab)"
 msgstr ""
 
-#: build/oceanwp/partials/header/social.php:139
-#: build/oceanwp/partials/topbar/social.php:121
-#: partials/header/social.php:139
-#: partials/topbar/social.php:121
+#: build/oceanwp/partials/header/social.php:137
+#: build/oceanwp/partials/topbar/social.php:122
+#: partials/header/social.php:137
+#: partials/topbar/social.php:122
 msgid "Skype (opens in your application)"
 msgstr ""
 
-#: build/oceanwp/partials/header/social.php:141
-#: build/oceanwp/partials/topbar/social.php:123
-#: partials/header/social.php:141
-#: partials/topbar/social.php:123
+#: build/oceanwp/partials/header/social.php:139
+#: build/oceanwp/partials/topbar/social.php:124
+#: partials/header/social.php:139
+#: partials/topbar/social.php:124
 msgid "Send email (opens in your application)"
-msgstr ""
-
-#: build/oceanwp/partials/header/style/medium-header-search.php:19
-#: partials/header/style/medium-header-search.php:19
-msgid "Medium Header Search"
-msgstr ""
-
-#: build/oceanwp/partials/header/style/vertical-header-search.php:17
-#: partials/header/style/vertical-header-search.php:17
-msgid "Vertical Header Search"
-msgstr ""
-
-#: build/oceanwp/partials/mobile/mobile-fullscreen-search.php:21
-#: partials/mobile/mobile-fullscreen-search.php:21
-msgid "Mobile Search"
 msgstr ""
 
 #. translators: 1: Admin URL 2: </a>
@@ -10400,16 +10467,4 @@ msgstr ""
 #: build/oceanwp/woocommerce/share.php:42
 #: woocommerce/share.php:42
 msgid "Share by email (opens in a new tab)"
-msgstr ""
-
-#: inc/customizer/settings/general.php:3871
-msgid "Go to the %1$s Breadcrumbs settings page %2$s"
-msgstr ""
-
-#: inc/customizer/settings/general.php:4228
-msgid "Widgets Stylesheet Load"
-msgstr ""
-
-#: inc/customizer/settings/general.php:4229
-msgid "You can disable loading widgets.css stylesheet on your site."
 msgstr ""

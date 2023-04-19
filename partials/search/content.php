@@ -26,7 +26,7 @@ $length = apply_filters( 'ocean_search_results_excerpt_length', '30' );
 
 		} else {
 			// Display custom excerpt.
-			echo wp_trim_words( strip_shortcodes( $post->post_content ), $length ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo wp_kses_post( wp_trim_words( strip_shortcodes( $post->post_content ), $length ) );
 		}
 		?>
 	</p>

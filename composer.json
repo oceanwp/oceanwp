@@ -7,7 +7,7 @@
         "Themes"
     ],
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.5",
+        "squizlabs/php_codesniffer": "^3.7",
         "wp-coding-standards/wpcs": "^2.2",
         "phpcompatibility/phpcompatibility-wp": "^2.1",
         "wptrt/wpthemereview": "*",
@@ -26,5 +26,10 @@
             "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs"
         ],
         "make-pot": "wp i18n make-pot . languages/oceanwp.pot"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

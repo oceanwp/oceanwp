@@ -1,5 +1,52 @@
 # OceanWP Changelog
 
+### _2023.04.05_ - 3.4.3
+- **Added**: Compatibility: Elementor Pro: WooCommerce: Checkout styling.
+- **Added**: Compatibility: Ocean Popup Login: Google reCaptcha support for upcoming plugin release.
+- **Improved**: Accessibility: Header: Search: Dropdown.
+- **Improved**: Accessibility: Header: Full Screen: Search.
+- **Improved**: Accessibility: Header: Full Screen: Menu toggle button.
+- **Improved**: Accessibility: Header: Medium: Search.
+- **Improved**: Accessibility: Header: Vertical: Search.
+- **Improved**: Accessibility: Header: Vertical: Menu toggle button.
+- **Improved**: Accessibility: Header: Mobile: Full Screen: Search.
+- **Improved**: Accessibility: Header: Mobile: Header Search: Overlay.
+- **Updated**: SEO: Header: Vertical: Menu toggle button: Crawlable icon URL following Google's latest Lighthouse (PSI) changes.
+- **Updated**: SEO: Header: Full Screen: Menu toggle button: Crawlable icon URL following Google's latest Lighthouse (PSI) changes.
+- **Updated**: SEO: Header: Mobile: Header Search: Overlay: Crawlable icon URL following Google's latest Lighthouse (PSI) changes.
+- **Updated**: SEO: Header: Mobile: Full Screen: Menu toggle button: Crawlable icon URL following Google's latest Lighthouse (PSI) changes.
+- **Updated**: SEO: Header: Mobile: Sidebar: Menu close button: Crawlable icon URL following Google's latest Lighthouse (PSI) changes.
+- **Updated**: SEO: Header: Mobile: Menu toggle button: Crawlable icon URL following Google's latest Lighthouse (PSI) changes.
+- **Updated**: SEO: Header: Search: Search Overlay close button: Crawlable icon URL following Google's latest Lighthouse (PSI) changes.
+- **Updated**: Template: 404.php
+- **Updated**: Template: header.php
+- **Updated**: Template: searchform.php
+- **Updated**: Template: comments.php
+- **Updated**: Template: partials/scroll-top.php
+- **Updated**: Template: partials/mobile/mobile-fullscreen-search.php
+- **Updated**: Template: partials/mobile/mobile-fullscreen.php
+- **Updated**: Template: partials/mobile/mobile-sidr-close.php
+- **Updated**: Template: partials/mobile/mobile-search.php
+- **Updated**: Template: partials/mobile/mobile-icon.php
+- **Updated**: Template: partials/header/style/full-screen-header.php
+- **Updated**: Template: partials/header/style/medium-header-search.php
+- **Updated**: Template: partials/header/style/vertical-header-search.php
+- **Updated**: Template: partials/header/style/vertical-header-toggle.php
+- **Updated**: Template: partials/header/search-replace.php
+- **Updated**: Template: partials/header/search-overlay.php
+- **Updated**: Template: partials/entry/readmore.php
+- **Updated**: Template: partials/entry/media/blog-entry-link.php
+- **Updated**: Template: partials/single/author-bio.php
+- **Updated**: Template: partials/single/next-prev.php
+- **Updated**: Template: partials/single/related-posts.php
+- **Updated**: Template: partials/single/media/blog-single-link.php
+- **Updated**: Template: partials/single/media/blog-single.php
+- **Updated**: Template: partials/search/readmore.php
+- **Updated**: Language: Theme .pot file.
+- **Fixed**: Incorrect oceanwp_theme_strings() function usage throughout the theme.
+- **Fixed**: Blog: Archives: Video and audio post formats styling.
+- **Fixed**: Compatibility: Events Calendar: Deprecated function tribe_get_view().
+
 ### _2023.02.22_ - 3.4.2
 - **Improved**: Customizer: Customizer panel scrollbar width for some browsers, like Chrome and Edge.
 - **Fixed**: OceanWP Panel: Potential vulnerability patch: Patchstack report #2023-23700.

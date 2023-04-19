@@ -6,7 +6,7 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) or exit;
+defined( 'ABSPATH' ) || exit;
 
 // Only display for standard posts.
 if ( 'post' !== get_post_type() ) {
@@ -31,9 +31,9 @@ $display_sph_meta = apply_filters( 'display_single_ocean_header_5_meta', $displa
 
 			<header class="blog-post-title">
 
-				<?php the_title( '<'. $heading .' class="single-post-title">', '</'. $heading .'>' ); ?>
+				<?php the_title( '<' . esc_attr( $heading ) . ' class="single-post-title">', '</' . esc_attr( $heading ) . '>' ); ?>
 
-				<?php if ( $display_sph_meta === true ) { ?>
+				<?php if ( true === $display_sph_meta ) { ?>
 
 					<?php do_action( 'ocean_single_post_header_meta' ); ?>
 
@@ -42,17 +42,36 @@ $display_sph_meta = apply_filters( 'display_single_ocean_header_5_meta', $displa
 				<div class="blog-post-author">
 
 					<div class="blog-post-author-content">
-						<?php ocean_get_post_author( array( 'prefix' => '', 'before' => '<span class="post-author-name">', 'after' => '</span>' ) ); ?>
+						<?php
+						wp_kses_post(
+							ocean_get_post_author(
+								array(
+									'prefix' => '',
+									'before' => '<span class="post-author-name">',
+									'after'  => '</span>',
+								)
+							)
+						);
+						?>
 					</div>
 
-					<?php ocean_get_post_author_avatar( array( 'before' => '<div class="post-author-avatar">', 'after' => '</div>' ) ); ?>
+					<?php
+					wp_kses_post(
+						ocean_get_post_author_avatar(
+							array(
+								'before' => '<div class="post-author-avatar">',
+								'after'  => '</div>',
+							)
+						)
+					);
+					?>
 
 				</div><!-- .blog-post-author -->
 
 			</header><!-- .blog-post-title -->
 
 			<?php do_action( 'ocean_after_page_header' ); ?>
-			
+
 		</div>
 	</div>
 </div>

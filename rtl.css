@@ -196,7 +196,7 @@ a.sidr-class-toggle-sidr-close i { padding-left: 8px; padding-right: 0; }
 #mobile-fullscreen { right: 0; left: auto; }
 #mobile-fullscreen a.close { left: 14px; right: auto; }
 #mobile-fullscreen .fs-dropdown-menu li .dropdown-toggle { padding-right: 5px; padding-left: 0; }
-#mobile-fullscreen #mobile-search label i { margin-right: 3px; margin-left: 0; }
+#mobile-fullscreen #mobile-search .search-text i { margin-right: 3px; margin-left: 0; }
 
 /*------------------------------------*
 	Breadcrumbs

@@ -282,7 +282,7 @@ final class OceanWP_Theme_Panel {
 			$real_plugin_path = oceanwp_theme_panel()->find_plugin_path( $sidebar_plugin_slug );
 			$is_installed     = oceanwp_theme_panel()->check_plugin_installed( $real_plugin_path );
 
-			if ( $sidebar_plugin_slug == 'ocean-elementor-widgets' || $sidebar_plugin_slug == 'ocean-gutenberg-blocks' || $sidebar_plugin_slug == 'ocean-white-label' ) {
+			if ( $sidebar_plugin_slug === 'ocean-elementor-widgets' || $sidebar_plugin_slug === 'ocean-gutenberg-blocks' || $sidebar_plugin_slug === 'ocean-white-label' ) {
 				$is_activated = false;
 				$method_name = str_replace('-','_', $sidebar_plugin_slug) . '_activated';
 				if( $is_installed && method_exists( 'OceanWP_Theme_Panel', $method_name ) ) {
@@ -297,13 +297,13 @@ final class OceanWP_Theme_Panel {
 			if ( $is_installed ) {
 				$current_plugin_version = oceanwp_theme_panel()->get_current_plugin_version( $real_plugin_path );
 				if ( ! empty( $current_plugin_version ) && ! empty( $plugins_compatibility_versions[ $sidebar_plugin_slug ] ) && version_compare( $current_plugin_version, $plugins_compatibility_versions[ $sidebar_plugin_slug ], '<' ) ) {
-					if ( $sidebar_plugin_slug == 'ocean-elementor-widgets' ) {
+					if ( $sidebar_plugin_slug === 'ocean-elementor-widgets' ) {
 						$warnings['elementor-widgets'] = __( 'You should update plugin Ocean Elementor Widgets to use new features', 'oceanwp' );
 					}
-					if ( $sidebar_plugin_slug == 'ocean-gutenberg-blocks' ) {
+					if ( $sidebar_plugin_slug === 'ocean-gutenberg-blocks' ) {
 						$warnings['gutenberg-blocks'] = __( 'You should update plugin Ocean Gutenberg Blocks to use new features', 'oceanwp' );
 					}
-					if ( $sidebar_plugin_slug == 'ocean-white-label' ) {
+					if ( $sidebar_plugin_slug === 'ocean-white-label' ) {
 						$warnings['white-label'] = __( 'You should update plugin Ocean White Label to use new features', 'oceanwp' );
 					}
 				}
@@ -606,6 +606,11 @@ final class OceanWP_Theme_Panel {
 		return $retval;
 	}
 
+	public function ocean_popup_login_activated() {
+		$retval = class_exists( 'Ocean_Popup_Login' );
+		return $retval;
+	}
+
 	public function ocean_gutenberg_blocks_activated() {
 		$retval = class_exists( 'Ocean_Gutenberg_Blocks' );
 		return $retval;
@@ -639,7 +644,7 @@ final class OceanWP_Theme_Panel {
 		}
 
 		if ( ! empty( $response_message ) ) {
-			if ( $response_type == 'json' ) {
+			if ( $response_type === 'json' ) {
 				wp_send_json_error( array( 'message' => $response_message ) );
 			} else {
 				http_response_code( 404 );
@@ -713,13 +718,13 @@ final class OceanWP_Theme_Panel {
 		foreach ( $plugins as $plugin_address => $plugin_data ) {
 
 			// Extract slug from address
-			if ( strlen( $plugin_address ) == basename( $plugin_address ) ) {
+			if ( strlen( $plugin_address ) === basename( $plugin_address ) ) {
 				$slug = strtolower( str_replace( '.php', '', $plugin_address ) );
 			} else {
 				$slug = strtolower( str_replace( '/' . basename( $plugin_address ), '', $plugin_address ) );
 			}
 			// Check if slug exists
-			if ( strtolower( $plugin_slug ) == $slug ) {
+			if ( strtolower( $plugin_slug ) === $slug ) {
 				return $plugin_address;
 			}
 		}
