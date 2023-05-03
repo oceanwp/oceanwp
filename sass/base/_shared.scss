@@ -125,6 +125,26 @@ body.page.content-max-width .entry {
             }
         }
     }
+
+    body {
+        &.content-full-screen {
+            .entry-content .alignfull {
+                margin-left: -5.5% !important;
+                width: calc(100% + 11%) !important;
+                max-width: calc(100% + 11%) !important;
+            }
+
+            &.page {
+                .entry {
+                    .alignfull {
+                        margin-left: -5.5% !important;
+                        width: calc(100% + 11%) !important;
+                        max-width: calc(100% + 11%) !important;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .alignleft {
