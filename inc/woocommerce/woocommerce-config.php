@@ -320,7 +320,10 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$wp_customize->get_control( 'woocommerce_checkout_address_2_field' )->section                    = 'ocean_woocommerce_checkout';
 			$wp_customize->get_control( 'woocommerce_checkout_phone_field' )->section                        = 'ocean_woocommerce_checkout';
 			$wp_customize->get_control( 'woocommerce_checkout_highlight_required_fields' )->section          = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'wp_page_for_privacy_policy' )->section                              = 'ocean_woocommerce_checkout';
+
+			if ( current_user_can( 'manage_privacy_options' ) ) {
+				$wp_customize->get_control( 'wp_page_for_privacy_policy' )->section                          = 'ocean_woocommerce_checkout';
+			}
 			$wp_customize->get_control( 'woocommerce_terms_page_id' )->section                               = 'ocean_woocommerce_checkout';
 			$wp_customize->get_control( 'woocommerce_checkout_privacy_policy_text' )->section                = 'ocean_woocommerce_checkout';
 			$wp_customize->get_control( 'woocommerce_checkout_terms_and_conditions_checkbox_text' )->section = 'ocean_woocommerce_checkout';
