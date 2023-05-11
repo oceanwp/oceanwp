@@ -5511,62 +5511,62 @@ if ( ! class_exists( 'OceanWP_Header_Customizer' ) ) :
 			}
 
 			// Search dropdown input background
-			if ( ! empty( $search_mobile_dropdown_input_bg ) ) {
-				$css .= '#icon-searchform-dropdown input{background-color:'. $search_mobile_dropdown_input_bg .';}';
+			if ( ! empty( $mobile_search_dropdown_input_bg ) ) {
+				$css .= '#icon-searchform-dropdown input{background-color:'. $mobile_search_dropdown_input_bg .';}';
 			}
 
 			// Search dropdown input color
-			if ( ! empty( $search_mobile_dropdown_input_color ) && '#333333' != $search_mobile_dropdown_input_color ) {
-				$css .= '#icon-searchform-dropdown input{color:'. $search_mobile_dropdown_input_color .';}';
+			if ( ! empty( $mobile_search_dropdown_input_color ) && '#333333' != $mobile_search_dropdown_input_color ) {
+				$css .= '#icon-searchform-dropdown input{color:'. $mobile_search_dropdown_input_color .';}';
 			}
 
 			// Search dropdown input border color
-			if ( ! empty( $search_mobile_dropdown_input_border ) && '#dddddd' != $search_mobile_dropdown_input_border ) {
-				$css .= '#icon-searchform-dropdown input{border-color:'. $search_mobile_dropdown_input_border .';}';
+			if ( ! empty( $mobile_search_dropdown_input_border ) && '#dddddd' != $mobile_search_dropdown_input_border ) {
+				$css .= '#icon-searchform-dropdown input{border-color:'. $mobile_search_dropdown_input_border .';}';
 			}
 
 			// Search dropdown input border color focus
-			if ( ! empty( $search_mobile_dropdown_input_border_focus ) && '#bbbbbb' != $search_mobile_dropdown_input_border_focus ) {
-				$css .= '#icon-searchform-dropdown input:focus{border-color:'. $search_mobile_dropdown_input_border_focus .';}';
+			if ( ! empty( $mobile_search_dropdown_input_border_focus ) && '#bbbbbb' != $mobile_search_dropdown_input_border_focus ) {
+				$css .= '#icon-searchform-dropdown input:focus{border-color:'. $mobile_search_dropdown_input_border_focus .';}';
 			}
 
 			// Search overlay background color
-			if ( ! empty( $search_mobile_overlay_bg ) && 'rgba(0,0,0,0.9)' != $search_mobile_overlay_bg ) {
-				$css .= '#icon-searchform-overlay{background-color:'. $search_mobile_overlay_bg .';}';
+			if ( ! empty( $mobile_search_overlay_bg ) && 'rgba(0,0,0,0.9)' != $mobile_search_overlay_bg ) {
+				$css .= '#icon-searchform-overlay{background-color:'. $mobile_search_overlay_bg .';}';
 			}
 
 			// Search overlay input color
-			if ( ! empty( $search_mobile_overlay_input_color ) && '#ffffff' != $search_mobile_overlay_input_color ) {
-				$css .= '#icon-searchform-overlay form input, #icon-searchform-overlay form .search-text{color:'. $search_mobile_overlay_input_color .';}';
+			if ( ! empty( $mobile_search_overlay_input_color ) && '#ffffff' != $mobile_search_overlay_input_color ) {
+				$css .= '#icon-searchform-overlay form input, #icon-searchform-overlay form .search-text{color:'. $mobile_search_overlay_input_color .';}';
 			}
 
 			// Search overlay input placeholder color
-			if ( ! empty( $search_mobile_overlay_placeholder_color ) && '#ffffff' != $search_mobile_overlay_placeholder_color ) {
-				$css .= '#icon-searchform-overlay form .search-text{color:'. $search_mobile_overlay_placeholder_color .';}';
+			if ( ! empty( $mobile_search_overlay_placeholder_color ) && '#ffffff' != $mobile_search_overlay_placeholder_color ) {
+				$css .= '#icon-searchform-overlay form .search-text{color:'. $mobile_search_overlay_placeholder_color .';}';
 			}
 
 			// Search overlay input dashed background
-			if ( ! empty( $search_mobile_overlay_input_dashed_bg ) && '#ffffff' != $search_mobile_overlay_input_dashed_bg ) {
-				$css .= '#icon-searchform-overlay form .search-text i{background-color:'. $search_mobile_overlay_input_dashed_bg .';}';
+			if ( ! empty( $mobile_search_overlay_input_dashed_bg ) && '#ffffff' != $mobile_search_overlay_input_dashed_bg ) {
+				$css .= '#icon-searchform-overlay form .search-text i{background-color:'. $mobile_search_overlay_input_dashed_bg .';}';
 			}
 
 			// Search overlay input border color
-			if ( ! empty( $search_mobile_overlay_input_border ) && '#444444' != $search_mobile_overlay_input_border ) {
-				$css .= '#icon-searchform-overlay form input{border-color:'. $search_mobile_overlay_input_border .';}';
+			if ( ! empty( $mobile_search_overlay_input_border ) && '#444444' != $mobile_search_overlay_input_border ) {
+				$css .= '#icon-searchform-overlay form input{border-color:'. $mobile_search_overlay_input_border .';}';
 			}
 
 			// Search overlay input border color hover
-			if ( ! empty( $search_mobile_overlay_input_border_hover ) && '#777777' != $search_mobile_overlay_input_border_hover ) {
-				$css .= '#icon-searchform-overlay form input:hover{border-color:'. $search_mobile_overlay_input_border_hover .';}';
+			if ( ! empty( $mobile_search_overlay_input_border_hover ) && '#777777' != $mobile_search_overlay_input_border_hover ) {
+				$css .= '#icon-searchform-overlay form input:hover{border-color:'. $mobile_search_overlay_input_border_hover .';}';
 			}
 
 			// Search overlay input border color focus
-			if ( ! empty( $search_mobile_overlay_input_border_focus ) && '#ffffff' != $search_mobile_overlay_input_border_focus ) {
-				$css .= '#icon-searchform-overlay form input:focus{border-color:'. $search_mobile_overlay_input_border_focus .';}';
+			if ( ! empty( $mobile_search_overlay_input_border_focus ) && '#ffffff' != $mobile_search_overlay_input_border_focus ) {
+				$css .= '#icon-searchform-overlay form input:focus{border-color:'. $mobile_search_overlay_input_border_focus .';}';
 			}
 
 			// Search overlay close button color
-			if ( ! empty( $search_mobile_overlay_close_button_color ) && '#ffffff' != $search_mobile_overlay_close_button_color ) {
+			if ( ! empty( $mobile_search_overlay_close_button_color ) && '#ffffff' != $mobile_search_overlay_close_button_color ) {
 				$css .= '#icon-searchform-overlay a.search-overlay-close span::before, #icon-searchform-overlay a.search-overlay-close span::after{background-color:'. $search_mobile_overlay_close_button_color .';}';
 			}
 
