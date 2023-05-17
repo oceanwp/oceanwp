@@ -89,7 +89,7 @@ if ( 'blank' === $link_target ) {
 
 		        echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
-		    } if ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $get_id, 'panels_data', true ) ) {
+		    } else if ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $get_id, 'panels_data', true ) ) {
 
 				echo SiteOrigin_Panels::renderer()->render( $get_id );
 
