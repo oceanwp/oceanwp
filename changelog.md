@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2023.05.22_ - 3.4.4
+### _2023.05.23_ - 3.4.4
 - **New**: Typography: Google fonts: Updated list.
 - **Added**: Mobile Header: Search icon and form styling options in the Customizer.
 - **Added**: Compatibility: SiteOrigin: Custom templates support.
