@@ -82,6 +82,10 @@ $inner_classes = implode( ' ', $inner_classes );
 				// If Beaver Builder.
 				echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
+			} else if ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $get_id, 'panels_data', true ) ) {
+
+				echo SiteOrigin_Panels::renderer()->render( $get_id );
+
 			} else {
 
 				// If Gutenberg.

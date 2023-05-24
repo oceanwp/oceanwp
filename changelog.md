@@ -1,5 +1,13 @@
 # OceanWP Changelog
 
+### _2023.05.23_ - 3.4.4
+- **New**: Typography: Google fonts: Updated list.
+- **Added**: Mobile Header: Search icon and form styling options in the Customizer.
+- **Added**: Compatibility: SiteOrigin: Custom templates support.
+- **Added**: Compatibility: Ocean eComm Treasure Box: Conditional assets loading for the next OeTB plugin update and feature.
+- **Fixed**: WooCommerce: Shop Manager user role accessing the Customizer causes critical error due to Privacy Policy page.
+- **Fixed**: Gutenberg: Align Full block layout display with the page Full Width layout.
+
 ### _2023.04.05_ - 3.4.3
 - **Added**: Compatibility: Elementor Pro: WooCommerce: Checkout styling.
 - **Added**: Compatibility: Ocean Popup Login: Google reCaptcha support for upcoming plugin release.

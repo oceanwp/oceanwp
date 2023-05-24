@@ -85,6 +85,10 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 
 													echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
+												} else if ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $get_id, 'panels_data', true ) ) {
+
+													echo SiteOrigin_Panels::renderer()->render( $get_id );
+
 												} else {
 
 													// If Gutenberg.

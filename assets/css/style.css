@@ -1429,6 +1429,16 @@ body.page.content-max-width .entry .alignfull {
     width: 111% !important;
     max-width: 111% !important;
   }
+  body.content-full-screen .entry-content .alignfull {
+    margin-left: -5.5% !important;
+    width: 111% !important;
+    max-width: 111% !important;
+  }
+  body.content-full-screen.page .entry .alignfull {
+    margin-left: -5.5% !important;
+    width: 111% !important;
+    max-width: 111% !important;
+  }
 }
 .alignleft {
   float: left;

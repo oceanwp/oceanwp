@@ -927,3 +927,19 @@ function oceanwp_cac_has_ld_lesson_rl_layout() {
 		return false;
 	}
 }
+
+function oceanwp_cac_has_mobile_search_dropdown() {
+	if ( 'drop_down' == get_theme_mod( 'ocean_mobile_menu_search_style', 'disabled' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_mobile_search_overlay() {
+	if ( 'overlay' == get_theme_mod( 'ocean_mobile_menu_search_style', 'disabled' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}

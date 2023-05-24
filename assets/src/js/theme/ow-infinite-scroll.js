@@ -101,6 +101,7 @@ class OWInfiniteScroll {
           }
         }
       });
+      jQuery(document).trigger('maybe-init-oec-wishlist');
     });
   };
 }

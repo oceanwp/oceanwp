@@ -78,6 +78,10 @@ $classes = implode( ' ', $classes ); ?>
 			// If Beaver Builder.
 			echo do_shortcode( '[fl_builder_insert_layout id="' . $template . '"]' );
 
+		} else if ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $template, 'panels_data', true ) ) {
+
+			echo SiteOrigin_Panels::renderer()->render( $template );
+
 		} else {
 
 			// If Gutenberg.
@@ -117,10 +121,14 @@ $classes = implode( ' ', $classes ); ?>
 				// If Elementor.
 				OceanWP_Elementor::get_vertical_header_bottom_content();
 
-			} elseif ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $bottom_template ) ) {
+			} else if ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $bottom_template ) ) {
 
 				// If Beaver Builder.
 				echo do_shortcode( '[fl_builder_insert_layout id="' . $bottom_template . '"]' );
+
+			} else if ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $bottom_template, 'panels_data', true ) ) {
+
+				echo SiteOrigin_Panels::renderer()->render( $bottom_template );
 
 			} else {
 
