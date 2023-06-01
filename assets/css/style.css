@@ -6069,6 +6069,9 @@ body.breadcrumbs-position-default .page-header-title {
 .site-breadcrumbs ol li .breadcrumb-sep {
   margin: 0 6px;
 }
+.site-breadcrumbs.woocommerce-breadcrumbs .breadcrumb-sep {
+  margin: 0 6px;
+}
 .site-breadcrumbs .icon-home.has-text,
 .site-breadcrumbs .breadcrumb-home.has-icon {
   display: none;

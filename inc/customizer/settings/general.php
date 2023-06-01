@@ -1875,6 +1875,62 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			);
 
 			/**
+			 * WooCommerce breadcrumbs for Woo Pages
+			 */
+			$wp_customize->add_setting(
+				'ocean_breadcrumb_woocommerce',
+				array(
+					'default'           => 'no',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Buttonset_Control(
+					$wp_customize,
+					'ocean_breadcrumb_woocommerce',
+					array(
+						'label'       => esc_html__( 'WooCommerce Breadcrumbs', 'oceanwp' ),
+						'description' => esc_html__( 'Enable this option to show the WooCommerce breadcrumbs for Woo pages.', 'oceanwp' ),
+						'section'     => 'ocean_general_page_header',
+						'settings'    => 'ocean_breadcrumb_woocommerce',
+						'priority'    => 10,
+						'choices'     => array(
+							'yes'  => esc_html__( 'Yes', 'oceanwp' ),
+							'no' => esc_html__( 'No', 'oceanwp' ),
+						),
+					)
+				)
+			);
+
+			/**
+			 * Breadcrumbs Source
+			 */
+			$wp_customize->add_setting(
+				'ocean_breadcrumbs_source',
+				array(
+					'default'           => 'default',
+					'sanitize_callback' => 'oceanwp_sanitize_select',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_breadcrumbs_source',
+					array(
+						'label'           => esc_html__( 'Breadcrumbs Source', 'oceanwp' ),
+						'type'            => 'select',
+						'section'         => 'ocean_general_page_header',
+						'settings'        => 'ocean_breadcrumbs_source',
+						'priority'        => 10,
+						'active_callback' => 'oceanwp_cac_has_breadcrumbs',
+						'choices'         => oceanwp_get_breadcrumbs_source_list(),
+					)
+				)
+			);
+
+			/**
 			 * Breadcrumbs Position
 			 */
 			$wp_customize->add_setting(

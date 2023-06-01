@@ -48,7 +48,7 @@ $heading = apply_filters( 'single_ocean_header_2_h_tag', $heading );
 				<?php if ( true === $display_breadcrumbs ) { ?>
 					<?php if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) { ?>
 						<div class="blog-post-breadcrumbs">
-							<?php oceanwp_breadcrumb_trail(); ?>
+							<?php do_action( 'ocean_breadcrumbs_main' ); ?>
 						</div>
 					<?php } ?>
 				<?php } ?>

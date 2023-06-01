@@ -23,6 +23,40 @@
  */
 
 /**
+ * Support for external plugin breadcrumbs.
+ *
+ * @param Array $options Breadcrumb Data.
+ *
+ * @return Array Breadcrumb Data.
+ */
+function oceanwp_breadcrumbs_sources( $options ) {
+
+	$is_enable  = is_callable( 'WPSEO_Options::get' ) ? WPSEO_Options::get( 'breadcrumbs-enable' ) : false;
+	$wpseo_data = get_option( 'wpseo_internallinks' ) ? get_option( 'wpseo_internallinks' ) : $is_enable;
+	if ( ! is_array( $wpseo_data ) ) {
+		unset( $wpseo_data );
+		$wpseo_data = array(
+			'breadcrumbs-enable' => $is_enable,
+		);
+	}
+
+	if ( function_exists( 'yoast_breadcrumb' ) && true === $wpseo_data['breadcrumbs-enable'] ) {
+		$options['yoast-seo'] = 'Yoast SEO Breadcrumbs';
+	}
+
+	if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
+		$options['seopress'] = 'SEOPress';
+	}
+
+	if ( function_exists( 'rank_math_the_breadcrumbs' ) && RankMath\Helper::get_settings( 'general.breadcrumbs' ) ) {
+		$options['rank-math'] = 'Rank Math';
+	}
+
+	return $options;
+}
+add_filter( 'oceanwp_breadcrumbs_source_list', 'oceanwp_breadcrumbs_sources' );
+
+/**
  * Shows a breadcrumb for all types of pages.  This is a wrapper function for the Breadcrumb_Trail class,
  * which should be used in theme templates.
  *
@@ -39,9 +73,19 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 		return;
 	}
 
+	$breadcrumb_source = get_theme_mod( 'ocean_breadcrumbs_source' );
+
+	$is_enable  = is_callable( 'WPSEO_Options::get' ) ? WPSEO_Options::get( 'breadcrumbs-enable' ) : false;
+	$wpseo_data = get_option( 'wpseo_internallinks' ) ? get_option( 'wpseo_internallinks' ) : $is_enable;
+	if ( ! is_array( $wpseo_data ) ) {
+		unset( $wpseo_data );
+		$wpseo_data = array(
+			'breadcrumbs-enable' => $is_enable,
+		);
+	}
+
 	// Yoast breadcrumbs.
-	if ( function_exists( 'yoast_breadcrumb' )
-		&& true === WPSEO_Options::get( 'breadcrumbs-enable', false ) ) {
+	if ( function_exists( 'yoast_breadcrumb' ) && true === $wpseo_data['breadcrumbs-enable'] && $breadcrumb_source && 'yoast-seo' === $breadcrumb_source ) {
 		$classes = 'site-breadcrumbs clr';
 		if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
 			$classes .= ' position-' . $breadcrumbs_position;
@@ -50,12 +94,12 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 	}
 
 	// SEOPress breadcrumbs.
-	if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
+	if ( function_exists( 'seopress_display_breadcrumbs' ) && $breadcrumb_source && 'seopress' === $breadcrumb_source ) {
 		return seopress_display_breadcrumbs();
 	}
 
 	// Rank Math breadcrumbs.
-	if ( function_exists( 'rank_math_the_breadcrumbs' ) && RankMath\Helper::get_settings( 'general.breadcrumbs' ) ) {
+	if ( function_exists( 'rank_math_the_breadcrumbs' ) && RankMath\Helper::get_settings( 'general.breadcrumbs' ) && $breadcrumb_source && 'rank-math' === $breadcrumb_source ) {
 		return rank_math_the_breadcrumbs();
 	}
 
@@ -105,6 +149,29 @@ function rm_breadcrumbs( $args ) {
 	return $args;
 }
 add_action( 'rank_math/frontend/breadcrumb/args', 'rm_breadcrumbs' );
+
+/**
+ * Add container to WooCommerce breadcrumbs.
+ *
+ * @since  3.4.5
+ */
+function owp_woo_breadcrumbs( $args ) {
+
+	$classes = 'site-breadcrumbs woocommerce-breadcrumbs clr';
+	if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
+		$classes .= ' position-' . $breadcrumbs_position;
+	}
+
+	$separator = apply_filters( 'oceanwp_breadcrumb_separator', get_theme_mod( 'ocean_breadcrumb_separator', '>' ) );
+	$separator = '<span class="breadcrumb-sep">' . $separator . '</span>';
+
+	$args['wrap_before'] = '<div class="' . $classes . '">';
+	$args['wrap_after']  = '</div>';
+	$args['delimiter']   = $separator;
+
+	return $args;
+}
+add_filter( 'woocommerce_breadcrumb_defaults', 'owp_woo_breadcrumbs' );
 
 /**
  * Creates a breadcrumbs menu for the site based on the current page that's being viewed by the user.
@@ -367,10 +434,10 @@ class OceanWP_Breadcrumb_Trail {
 
 		// If post permalink is set to `%postname%`, use the `category` taxonomy.
 		if ( '%postname%' === trim( get_option( 'permalink_structure' ), '/' ) ) {
-			$defaults['post'] = 'tag';
+			$defaults['post'] = 'category';
 		}
 
-		$this->post_taxonomy = apply_filters( 'breadcrumb_trail_post_taxonomy', wp_parse_args( $this->args['post_taxonomy'], $defaults ) );
+		$this->post_taxonomy = apply_filters( 'oceanwp_breadcrumb_trail_post_taxonomy', wp_parse_args( $this->args['post_taxonomy'], $defaults ) );
 	}
 
 	/**
@@ -408,38 +475,39 @@ class OceanWP_Breadcrumb_Trail {
 			// If viewing an archive page.
 			elseif ( is_archive() ) {
 
-				if ( is_post_type_archive() )
+				if ( is_post_type_archive() ) {
 					$this->add_post_type_archive_items();
-
-				elseif ( is_category() || is_tag() || is_tax() )
+				}
+				elseif ( is_category() || is_tag() || is_tax() ) {
 					$this->add_term_archive_items();
-
-				elseif ( is_author() )
+				}
+				elseif ( is_author() ) {
 					$this->add_user_archive_items();
-
-				elseif ( get_query_var( 'minute' ) && get_query_var( 'hour' ) )
+				}
+				elseif ( get_query_var( 'minute' ) && get_query_var( 'hour' ) ) {
 					$this->add_minute_hour_archive_items();
-
-				elseif ( get_query_var( 'minute' ) )
+				}
+				elseif ( get_query_var( 'minute' ) ) {
 					$this->add_minute_archive_items();
-
-				elseif ( get_query_var( 'hour' ) )
+				}
+				elseif ( get_query_var( 'hour' ) ) {
 					$this->add_hour_archive_items();
-
-				elseif ( is_day() )
+				}
+				elseif ( is_day() ) {
 					$this->add_day_archive_items();
-
-				elseif ( get_query_var( 'w' ) )
+				}
+				elseif ( get_query_var( 'w' ) ) {
 					$this->add_week_archive_items();
-
-				elseif ( is_month() )
+				}
+				elseif ( is_month() ) {
 					$this->add_month_archive_items();
-
-				elseif ( is_year() )
+				}
+				elseif ( is_year() ) {
 					$this->add_year_archive_items();
-
-				else
+				}
+				else {
 					$this->add_default_archive_items();
+				}
 			}
 
 			// If viewing a search results page.
@@ -457,7 +525,7 @@ class OceanWP_Breadcrumb_Trail {
 		$this->add_paged_items();
 
 		// Allow developers to overwrite the items for the breadcrumb trail.
-		$this->items = array_unique( apply_filters( 'breadcrumb_trail_items', $this->items, $this->args ) );
+		$this->items = array_unique( apply_filters( 'oceanwp_breadcrumb_trail_items', $this->items, $this->args ) );
 	}
 
 	/**
@@ -484,12 +552,17 @@ class OceanWP_Breadcrumb_Trail {
 	protected function add_paged_items() {
 
 		// If viewing a paged singular post.
-		if ( is_singular() && 1 < get_query_var( 'page' ) && true === $this->args['show_title'] )
+		if ( is_singular() && 1 < get_query_var( 'page' ) && true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( $this->labels['paged'], number_format_i18n( absint( get_query_var( 'page' ) ) ) );
-
+		}
+		// If viewing a singular post with paged comments.
+		elseif ( is_singular() && get_option( 'page_comments' ) && 1 < get_query_var( 'cpage' ) ) {
+			$this->items[] = sprintf( $this->labels['paged_comments'], number_format_i18n( absint( get_query_var( 'cpage' ) ) ) );
+		}
 		// If viewing a paged archive-type page.
-		elseif ( is_paged() && true === $this->args['show_title'] )
+		elseif ( is_paged() && true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( $this->labels['paged'], number_format_i18n( absint( get_query_var( 'paged' ) ) ) );
+		}
 	}
 
 	/**
@@ -525,8 +598,9 @@ class OceanWP_Breadcrumb_Trail {
 		}
 		$text = '<span class="breadcrumb-home'. $text_class .'">'. $this->labels['home'] .'</span>';
 
-		if ( is_multisite() && ! is_main_site() && true === $this->args['network'] )
+		if ( is_multisite() && ! is_main_site() && true === $this->args['network'] ) {
 			$this->items[] = sprintf( '<a href="%s" rel="home" aria-label="' .$this->labels['home']. '">%s</a>', esc_url( network_home_url() ), $icon, $text );
+		}
 	}
 
 	/**
@@ -586,12 +660,13 @@ class OceanWP_Breadcrumb_Trail {
 			$this->add_network_home_link();
 
 			// If on a paged view, add the site home link.
-			if ( is_paged() )
+			if ( is_paged() ) {
 				$this->add_site_home_link();
-
+			}
 			// If on the main front page, add the network home title.
-			elseif ( true === $this->args['show_title'] )
+			elseif ( true === $this->args['show_title'] ) {
 				$this->items[] = is_multisite() && true === $this->args['network'] ? get_bloginfo( 'name' ) : $this->labels['home'];
+			}
 		}
 	}
 
@@ -603,9 +678,15 @@ class OceanWP_Breadcrumb_Trail {
 	 * @return void
 	 */
 	protected function add_home_items() {
+		$post_id = get_option( 'page_for_posts' );
+		$title = get_the_title( $post_id );
 
-		if ( true === $this->args['show_title'] )
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_the_permalink( get_option( 'page_for_posts' ) ) ), get_the_title( get_option( 'page_for_posts', true ) ) );
+		if ( true === $this->args['show_title'] ) {
+			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), $title );
+		}
+		elseif ( $title && true === $this->args['show_title'] ) {
+			$this->items[] = $title;
+		}
 	}
 
 	/**
@@ -618,13 +699,13 @@ class OceanWP_Breadcrumb_Trail {
 	protected function add_singular_items() {
 
 		// Get the queried post.
-		$post    	= get_queried_object();
-		$post_id 	= get_queried_object_id();
+		$post    = get_queried_object();
+		$post_id = get_queried_object_id();
 
 		// Post type taxonomy
-		$posts_tax 		= get_theme_mod( 'ocean_breadcrumb_posts_taxonomy', 'category' );
-		$products_tax 	= get_theme_mod( 'ocean_breadcrumb_products_taxonomy', 'shop' );
-		$portfolio_tax 	= get_theme_mod( 'ocean_breadcrumb_portfolio_taxonomy', 'ocean_portfolio_category' );
+		$posts_tax     = get_theme_mod( 'ocean_breadcrumb_posts_taxonomy', 'category' );
+		$products_tax  = get_theme_mod( 'ocean_breadcrumb_products_taxonomy', 'shop' );
+		$portfolio_tax = get_theme_mod( 'ocean_breadcrumb_portfolio_taxonomy', 'ocean_portfolio_category' );
 
 		if ( 'product' != $post->post_type ) {
 
@@ -658,10 +739,35 @@ class OceanWP_Breadcrumb_Trail {
 		else if ( 'product' === $post->post_type
 			&& 'none' != $products_tax ) {
 
+			$cat = current( get_the_category( $post ) );
+
 			if ( 'shop' == $products_tax ) {
 				$shop_id = wc_get_page_id( 'shop' );
 				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $shop_id ) ), get_the_title( $shop_id ) );
 			} else {
+
+				if ( 'product_cat' === get_theme_mod( 'ocean_breadcrumb_products_taxonomy', 'shop' ) ) {
+					$terms     = get_the_terms( $post_id, 'product_cat' );
+					$ancestors = array_reverse( $terms );
+					foreach ( $ancestors as $ancestor ) {
+						$ancestor = get_term( $ancestor, $products_tax );
+
+						if ( ! is_wp_error( $ancestor ) && $ancestor ) {
+							$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $ancestor ) ), $ancestor->name );
+						}
+					}
+				} else if ( 'product_tag' === get_theme_mod( 'ocean_breadcrumb_products_taxonomy', 'shop' ) ) {
+					$terms     = get_the_terms( $post_id, 'product_tag' );
+					$ancestors = array_reverse( $terms );
+					foreach ( $ancestors as $ancestor ) {
+						$ancestor = get_term( $ancestor, $products_tax );
+
+						if ( ! is_wp_error( $ancestor ) && $ancestor ) {
+							$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $ancestor ) ), $ancestor->name );
+						}
+					}
+				}
+
 				$this->add_post_terms( $post_id, $products_tax );
 			}
 
@@ -758,12 +864,12 @@ class OceanWP_Breadcrumb_Trail {
 						// Get public post types that match the rewrite slug.
 						$post_types = $this->get_post_types_by_slug( $match );
 
-						if ( !empty( $post_types ) ) {
+						if ( ! empty( $post_types ) ) {
 
 							$post_type_object = $post_types[0];
 
 							// Add support for a non-standard label of 'archive_title' (special use case).
-							$label = !empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
+							$label = ! empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
 
 							// Core filter hook.
 							$label = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
@@ -791,27 +897,29 @@ class OceanWP_Breadcrumb_Trail {
 				if ( 'posts' !== get_option( 'show_on_front' ) && 0 < $post_id )
 					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), get_the_title( $post_id ) );
 
-			// If the post type is not 'post'.
+				// If the post type is not 'post'.
 			} else {
 				$post_type_object = get_post_type_object( $taxonomy->object_type[0] );
 
-				$label 	= !empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
+				$label = ! empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
 
 				// Core filter hook.
-				$label 	= apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
-				$url 	= apply_filters( 'post_type_archive_url', get_post_type_archive_link( $post_type_object->name ) );
+				$label = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
+				$url   = apply_filters( 'post_type_archive_url', get_post_type_archive_link( $post_type_object->name ) );
 
 				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), $label );
 			}
 		}
 
 		// If the taxonomy is hierarchical, list its parent terms.
-		if ( is_taxonomy_hierarchical( $term->taxonomy ) && $term->parent )
+		if ( is_taxonomy_hierarchical( $term->taxonomy ) && $term->parent ) {
 			$this->add_term_parents( $term->parent, $term->taxonomy );
+		}
 
 		// Add the term name to the trail end.
-		if ( is_paged() || true === $this->args['show_title'] )
+		if ( is_paged() || true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $term->taxonomy ) ), single_term_title( '', false ) );
+		}
 	}
 
 	/**
@@ -829,17 +937,20 @@ class OceanWP_Breadcrumb_Trail {
 		if ( false !== $post_type_object->rewrite ) {
 
 			// If 'with_front' is true, add $wp_rewrite->front to the trail.
-			if ( $post_type_object->rewrite['with_front'] )
+			if ( $post_type_object->rewrite['with_front'] ) {
 				$this->add_rewrite_front_items();
+			}
 
 			// If there's a rewrite slug, check for parents.
-			if ( !empty( $post_type_object->rewrite['slug'] ) )
+			if ( ! empty( $post_type_object->rewrite['slug'] ) ) {
 				$this->add_path_parents( $post_type_object->rewrite['slug'] );
+			}
 		}
 
 		// Add the post type [plural] name to the trail end.
-		if ( is_paged() || true === $this->args['show_title'] )
+		if ( is_paged() || true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), post_type_archive_title( '', false ) );
+		}
 	}
 
 	/**
@@ -860,12 +971,14 @@ class OceanWP_Breadcrumb_Trail {
 		$user_id = get_query_var( 'author' );
 
 		// If $author_base exists, check for parent pages.
-		if ( !empty( $wp_rewrite->author_base ) )
+		if ( ! empty( $wp_rewrite->author_base ) ) {
 			$this->add_path_parents( $wp_rewrite->author_base );
+		}
 
 		// Add the author's display name to the trail end.
-		if ( is_paged() || true === $this->args['show_title'] )
+		if ( is_paged() || true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_author_posts_url( $user_id ) ), get_the_author_meta( 'display_name', $user_id ) );
+		}
 	}
 
 	/**
@@ -881,8 +994,9 @@ class OceanWP_Breadcrumb_Trail {
 		$this->add_rewrite_front_items();
 
 		// Add the minute + hour item.
-		if ( true === $this->args['show_title'] )
+		if ( true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( $this->labels['archive_minute_hour'], get_the_time( esc_html_x( 'g:i a', 'minute and hour archives time format', 'oceanwp' ) ) );
+		}
 	}
 
 	/**
@@ -898,8 +1012,9 @@ class OceanWP_Breadcrumb_Trail {
 		$this->add_rewrite_front_items();
 
 		// Add the minute item.
-		if ( true === $this->args['show_title'] )
+		if ( true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( $this->labels['archive_minute'], get_the_time( esc_html_x( 'i', 'minute archives time format', 'oceanwp' ) ) );
+		}
 	}
 
 	/**
@@ -915,8 +1030,9 @@ class OceanWP_Breadcrumb_Trail {
 		$this->add_rewrite_front_items();
 
 		// Add the hour item.
-		if ( true === $this->args['show_title'] )
+		if ( true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( $this->labels['archive_hour'], get_the_time( esc_html_x( 'g a', 'hour archives time format', 'oceanwp' ) ) );
+		}
 	}
 
 	/**
@@ -944,8 +1060,9 @@ class OceanWP_Breadcrumb_Trail {
 		$archive_year  = get_the_time( 'Y' );
 		$archive_month = get_the_time( 'm' );
 		$archive_day   = get_the_time( 'd' );
-		if ( is_paged() || true === $this->args['show_title'] )
+		if ( is_paged() || true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( $archive_year, $archive_month, $archive_day ) ), $day );
+		}
 	}
 
 	/**
@@ -968,8 +1085,9 @@ class OceanWP_Breadcrumb_Trail {
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
 
 		// Add the week item.
-		if ( is_paged() || true === $this->args['show_title'] )
+		if ( is_paged() || true === $this->args['show_title'] ) {
 			$this->items[] = esc_url( get_archives_link( add_query_arg( array( 'm' => get_the_time( 'Y' ), 'w' => get_the_time( 'W' ) ), home_url() ), $week, false ) );
+		}
 	}
 
 	/**
@@ -992,8 +1110,9 @@ class OceanWP_Breadcrumb_Trail {
 		$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
 
 		// Add the month item.
-		if ( is_paged() || true === $this->args['show_title'] )
+		if ( is_paged() || true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) ), $month );
+		}
 	}
 
 	/**
@@ -1012,8 +1131,9 @@ class OceanWP_Breadcrumb_Trail {
 		$year  = sprintf( $this->labels['archive_year'],  get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'oceanwp' ) ) );
 
 		// Add the year item.
-		if ( is_paged() || true === $this->args['show_title'] )
+		if ( is_paged() || true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y' ) ) ), $year );
+		}
 	}
 
 	/**
@@ -1027,11 +1147,13 @@ class OceanWP_Breadcrumb_Trail {
 	protected function add_default_archive_items() {
 
 		// If this is a date-/time-based archive, add $wp_rewrite->front to the trail.
-		if ( is_date() || is_time() )
+		if ( is_date() || is_time() ) {
 			$this->add_rewrite_front_items();
+		}
 
-		if ( true === $this->args['show_title'] )
+		if ( true === $this->args['show_title'] ) {
 			$this->items[] = $this->labels['archives'];
+		}
 	}
 
 	/**
@@ -1043,8 +1165,9 @@ class OceanWP_Breadcrumb_Trail {
 	 */
 	protected function add_search_items() {
 
-		if ( is_paged() || true === $this->args['show_title'] )
+		if ( is_paged() || true === $this->args['show_title'] ) {
 			$this->items[] = sprintf( '<a href="%s">%s%s</a>', esc_url( get_search_link() ), '<span class="breadcrumb-search">'. $this->labels['search'] .'</span>', ' &#8220;'. get_search_query() .'&#8221;' );
+		}
 	}
 
 	/**
@@ -1056,8 +1179,9 @@ class OceanWP_Breadcrumb_Trail {
 	 */
 	protected function add_404_items() {
 
-		if ( true === $this->args['show_title'] )
+		if ( true === $this->args['show_title'] ) {
 			$this->items[] = '<span class="breadcrumb-error">'. $this->labels['error_404'] .'</span>';
+		}
 	}
 
 	/**
@@ -1077,15 +1201,17 @@ class OceanWP_Breadcrumb_Trail {
 			$post = get_post( $post_id );
 
 			// If we hit a page that's set as the front page, bail.
-			if ( 'page' == $post->post_type && 'page' == get_option( 'show_on_front' ) && $post_id == get_option( 'page_on_front' ) )
+			if ( 'page' == $post->post_type && 'page' == get_option( 'show_on_front' ) && $post_id == get_option( 'page_on_front' ) ) {
 				break;
+			}
 
 			// Add the formatted post link to the array of parents.
 			$parents[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), get_the_title( $post_id ) );
 
 			// If there's no longer a post parent, break out of the loop.
-			if ( 0 >= $post->post_parent )
+			if ( 0 >= $post->post_parent ) {
 				break;
+			}
 
 			// Change the post ID to the parent post to continue looping.
 			$post_id = $post->post_parent;
@@ -1095,8 +1221,9 @@ class OceanWP_Breadcrumb_Trail {
 		$this->add_post_hierarchy( $post_id );
 
 		// Display terms for specific post type taxonomy if requested.
-		if ( !empty( $this->post_taxonomy[ $post->post_type ] ) )
+		if ( ! empty( $this->post_taxonomy[ $post->post_type ] ) ) {
 			$this->add_post_terms( $post_id, $this->post_taxonomy[ $post->post_type ] );
+		}
 
 		// Merge the parent items into the items array.
 		$this->items = array_merge( $this->items, array_reverse( $parents ) );
@@ -1131,12 +1258,14 @@ class OceanWP_Breadcrumb_Trail {
 		elseif ( false !== $post_type_object->rewrite ) {
 
 			// If 'with_front' is true, add $wp_rewrite->front to the trail.
-			if ( $post_type_object->rewrite['with_front'] )
+			if ( $post_type_object->rewrite['with_front'] ) {
 				$this->add_rewrite_front_items();
+			}
 
 			// If there's a path, check for parents.
-			if ( !empty( $post_type_object->rewrite['slug'] ) )
+			if ( ! empty( $post_type_object->rewrite['slug'] ) ) {
 				$this->add_path_parents( $post_type_object->rewrite['slug'] );
+			}
 		}
 
 		// If there's an archive page, add it to the trail.
@@ -1169,8 +1298,9 @@ class OceanWP_Breadcrumb_Trail {
 
 		foreach ( $post_types as $type ) {
 
-			if ( $slug === $type->has_archive || ( true === $type->has_archive && $slug === $type->rewrite['slug'] ) )
+			if ( $slug === $type->has_archive || ( true === $type->has_archive && $slug === $type->rewrite['slug'] ) ) {
 				$return[] = $type;
+			}
 		}
 
 		return $return;
@@ -1197,17 +1327,18 @@ class OceanWP_Breadcrumb_Trail {
 		if ( $terms && ! is_wp_error( $terms ) ) {
 
 			// Sort the terms by ID and get the first category.
-			if ( function_exists( 'wp_list_sort' ) )
+			if ( function_exists( 'wp_list_sort' ) ) {
 				$terms = wp_list_sort( $terms, 'term_id' );
-
-			else
+			} else {
 				usort( $terms, '_usort_terms_by_ID' );
+			}
 
 			$term = get_term( $terms[0], $taxonomy );
 
 			// If the category has a parent, add the hierarchy to the trail.
-			if ( 0 < $term->parent )
+			if ( 0 < $term->parent ) {
 				$this->add_term_parents( $term->parent, $taxonomy );
+			}
 
 			// Add the category archive link to the trail.
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), $term->name );
@@ -1301,7 +1432,7 @@ class OceanWP_Breadcrumb_Trail {
 		}
 
 		// If we have parent terms, reverse the array to put them in the proper order for the trail.
-		if ( !empty( $parents ) )
+		if ( ! empty( $parents ) )
 			$this->items = array_merge( $this->items, array_reverse( $parents ) );
 	}
 
@@ -1342,29 +1473,29 @@ class OceanWP_Breadcrumb_Trail {
 				$tag = trim( $match, '/' );
 
 				// If using the %year% tag, add a link to the yearly archive.
-				if ( '%year%' == $tag )
+				if ( '%year%' == $tag ) {
 					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_year_link( get_the_time( 'Y', $post_id ) ) ), sprintf( $this->labels['archive_year'], get_the_time( esc_html_x( 'Y', 'yearly archives date format',  'oceanwp' ) ) ) );
-
+				}
 				// If using the %monthnum% tag, add a link to the monthly archive.
-				elseif ( '%monthnum%' == $tag )
+				elseif ( '%monthnum%' == $tag ) {
 					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_month_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ) ) ), sprintf( $this->labels['archive_month'], get_the_time( esc_html_x( 'F', 'monthly archives date format', 'oceanwp' ) ) ) );
-
+				}
 				// If using the %day% tag, add a link to the daily archive.
-				elseif ( '%day%' == $tag )
+				elseif ( '%day%' == $tag ) {
 					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_day_link( get_the_time( 'Y', $post_id ), get_the_time( 'm', $post_id ), get_the_time( 'd', $post_id ) ) ), sprintf( $this->labels['archive_day'], get_the_time( esc_html_x( 'j', 'daily archives date format', 'oceanwp' ) ) ) );
-
+				}
 				// If using the %author% tag, add a link to the post author archive.
-				elseif ( '%author%' == $tag )
+				elseif ( '%author%' == $tag ) {
 					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_author_posts_url( $post->post_author ) ), get_the_author_meta( 'display_name', $post->post_author ) );
-
+				}
 				// If using the %category% tag, add a link to the first category archive to match permalinks.
-				elseif ( '%category%' == $tag ) {
+				elseif ( taxonomy_exists( trim( $tag, '%' ) ) ) {
 
 					// Force override terms in this post type.
 					$this->post_taxonomy[ $post->post_type ] = false;
 
 					// Add the post categories.
-					$this->add_post_terms( $post_id, 'category' );
+					$this->add_post_terms( $post_id, trim( $tag, '%' ) );
 				}
 			}
 		}

@@ -61,11 +61,7 @@ $heading = apply_filters( 'ocean_page_header_heading', $heading );
 
 		<?php } ?>
 
-		<?php
-		if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) {
-			oceanwp_breadcrumb_trail();
-		}
-		?>
+		<?php do_action( 'ocean_breadcrumbs_main' ); ?>
 
 	</div><!-- .page-header-inner -->
 
