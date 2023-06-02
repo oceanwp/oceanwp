@@ -1875,6 +1875,31 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			);
 
 			/**
+			 * Breadcrumbs Schema
+			 */
+			$wp_customize->add_setting(
+				'ocean_breadcrumb_schema',
+				array(
+					'default'           => true,
+					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+				)
+			);
+
+			$wp_customize->add_control(
+				new WP_Customize_Control(
+					$wp_customize,
+					'ocean_breadcrumb_schema',
+					array(
+						'label'    => esc_html__( 'Enable Breadcrumb Schema', 'oceanwp' ),
+						'type'     => 'checkbox',
+						'section'  => 'ocean_general_page_header',
+						'settings' => 'ocean_breadcrumb_schema',
+						'priority' => 10,
+					)
+				)
+			);
+
+			/**
 			 * WooCommerce breadcrumbs for Woo Pages
 			 */
 			$wp_customize->add_setting(

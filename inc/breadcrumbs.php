@@ -103,10 +103,18 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 		return rank_math_the_breadcrumbs();
 	}
 
-	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
+	$schema = get_theme_mod( 'ocean_breadcrumb_schema', true );
 
-	if ( ! is_object( $breadcrumb ) )
+	$defaults = array(
+		'schema' => $schema,
+	);
+
+	$args       = apply_filters( 'oceanwp_breadcrumb_trail_args', $defaults );
+	$breadcrumb = apply_filters( 'oceanwp_breadcrumb_trail_object', null, $args );
+
+	if ( ! is_object( $breadcrumb ) ) {
 		$breadcrumb = new OceanWP_Breadcrumb_Trail( $args );
+	}
 
 	return $breadcrumb->trail();
 }
@@ -262,10 +270,11 @@ class OceanWP_Breadcrumb_Trail {
 			'labels'        => array(),
 			'post_taxonomy' => array(),
 			'echo'          => true,
+			'schema'        => true,
 		);
 
 		// Parse the arguments with the deaults.
-		$this->args = apply_filters( 'breadcrumb_trail_args', wp_parse_args( $args, $defaults ) );
+		$this->args = apply_filters( 'oceanwp_breadcrumb_trail_args', wp_parse_args( $args, $defaults ) );
 
 		// Set the labels and post taxonomy properties.
 		$this->set_labels();
@@ -276,6 +285,40 @@ class OceanWP_Breadcrumb_Trail {
 	}
 
 	/* ====== Public Methods ====== */
+
+	/**
+	 * Return the Schema attributes for breadcrumb.
+	 *
+	 * @since  3.4.5
+	 * @access protected
+	 * @return string
+	 */
+	protected function breadcrumb_schema( $schema_for ) {
+
+		$item_count = count( $this->items );
+
+		if ( 2 > $item_count || false === $this->args['schema'] ) {
+			return;
+		}
+
+		$breadcrumb_schema = apply_filters(
+			'oceanwp_theme_strings',
+			array(
+
+				'breadcrumbList' => 'itemscope itemtype="http://schema.org/BreadcrumbList"',
+				'itempropName'   => 'itemprop="name"',
+				'itempropThing'  => 'itemtype="https://schema.org/Thing"',
+				'ItempropList'   => 'itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"',
+				'itemPosition'   => 'itemprop="position"',
+
+			)
+		);
+
+		$schema_item = isset( $breadcrumb_schema[ $schema_for ] ) ? $breadcrumb_schema[ $schema_for ] : '';
+
+		return $schema_item;
+
+	}
 
 	/**
 	 * Formats the HTML output for the breadcrumb trail.
@@ -292,16 +335,21 @@ class OceanWP_Breadcrumb_Trail {
 		$separator     = '<span class="breadcrumb-sep">' . $separator . '</span>';
 		$item_count    = count( $this->items );
 		$item_position = 0;
+		$meta          = '';
+		$p_class       = '';
 
 		// Connect the breadcrumb trail if there are items in the trail.
 		if ( 0 < $item_count ) {
 
 			// Open the unordered list.
-			$breadcrumb .= '<ol class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">';
+			$breadcrumb .= sprintf( '<ol class="trail-items" %s>', $this->breadcrumb_schema( 'breadcrumbList' ) );
 
-			// Add the number of items and item list order schema.
-			$breadcrumb .= sprintf( '<meta name="numberOfItems" content="%d" />', absint( $item_count ) );
-			$breadcrumb .= '<meta name="itemListOrder" content="Ascending" />';
+			if ( $this->args['schema'] ) {
+
+				// Add the number of items and item list order schema.
+				$breadcrumb .= sprintf( '<meta name="numberOfItems" content="%d" />', absint( $item_count ) );
+				$breadcrumb .= '<meta name="itemListOrder" content="Ascending" />';
+			}
 
 			// Loop through the items and add them to the list.
 			foreach ( $this->items as $item ) {
@@ -313,12 +361,12 @@ class OceanWP_Breadcrumb_Trail {
 				preg_match( '/(<a.*?>)(.*?)(<\/a>)/i', $item, $matches );
 
 				// Wrap the item text with appropriate itemprop.
-				$item = ! empty( $matches ) ? sprintf( '%s<span itemprop="name">%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span itemprop="name">%s</span>', $item );
+				$item = ! empty( $matches ) ? sprintf( '%s<span %s>%s</span>%s', $matches[1], $this->breadcrumb_schema( 'itempropName' ), $matches[2], $matches[3] ) : sprintf( '<span>%s</span>', $item );
 
 				// Wrap the item with its itemprop.
-				$item = ! empty( $matches )
-					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemtype="https://schema.org/Thing" itemprop=$2item$2>', $item )
-					: sprintf( '<a span itemprop="item" href="#">%s</span></a>', $item );
+				$item = ( ! empty( $matches ) && $this->args['schema'] )
+					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemprop=$2item$2>', $item )
+					: sprintf( '<a span href="#">%s</span></a>', $item );
 
 				// Add list item classes.
 				$item_class = 'trail-item';
@@ -330,17 +378,20 @@ class OceanWP_Breadcrumb_Trail {
 				}
 
 				// Create list item attributes.
-				$attributes = 'class="' . $item_class . '" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"';
+				$attributes = 'class="' . $item_class . '" ' . $this->breadcrumb_schema( 'ItempropList' ) . '';
+
+				if ( $this->args['schema'] ) {
+					// Position meta.
+					$meta = sprintf( '<meta %1$s content="%2$s" />', $this->breadcrumb_schema( 'ItemPosition' ), absint( $item_position ) );
+				}
 
 				// Separator.
 				if ( $item_count === $item_position ) {
-					$sep = '';
+					$sep  = '';
+					$meta = '';
 				} else {
 					$sep = $separator;
 				}
-
-				// Build the meta position HTML.
-				$meta = sprintf( '<meta content="%s" itemprop="position" />', absint( $item_position ) );
 
 				// Build the list item.
 				$breadcrumb .= sprintf( '<li %s>%s%s%s</li>', $attributes, $item, $sep, $meta );
@@ -350,14 +401,13 @@ class OceanWP_Breadcrumb_Trail {
 			$breadcrumb .= '</ol>';
 
 			// Postion class.
-			$p_class = '';
 			if ( '' !== get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
 				$p_class = ' position-' . get_theme_mod( 'ocean_breadcrumbs_position' );
 			}
 
 			// Wrap the breadcrumb trail.
 			$breadcrumb = sprintf(
-				'<%1$s aria-label="%2$s" class="site-breadcrumbs clr' . $p_class . '" itemprop="breadcrumb">%3$s%4$s%5$s</%1$s>',
+				'<%1$s role="navigation" aria-label="%2$s" class="site-breadcrumbs clr' . $p_class . '">%3$s%4$s%5$s</%1$s>',
 				tag_escape( $this->args['container'] ),
 				esc_attr( $this->labels['aria_label'] ),
 				$this->args['before'],
@@ -641,7 +691,7 @@ class OceanWP_Breadcrumb_Trail {
 		$label   = $network ? get_bloginfo( 'name' ) : $text;
 		$rel     = $network ? '' : ' rel="home"';
 
-		$this->items[] = sprintf( '<a href="%s"%s aria-label="' .$this->labels['home']. '">%s%s</a>', esc_url( home_url() ), $rel, $icon, $label );
+		$this->items[] = sprintf( '<a href="%s"%s aria-label="' . $this->labels['home'] . '">%s%s</a>', esc_url( home_url() ), $rel, $icon, $label );
 	}
 
 	/**
@@ -686,6 +736,27 @@ class OceanWP_Breadcrumb_Trail {
 		}
 		elseif ( $title && true === $this->args['show_title'] ) {
 			$this->items[] = $title;
+		}
+	}
+
+	/**
+	 * Add crumbs for a term.
+	 *
+	 * @since  3.4.5
+	 * @access protected
+	 * @param int    $term_id  Term ID.
+	 * @param string $taxonomy Taxonomy.
+	 */
+	protected function term_ancestors( $term_id, $taxonomy ) {
+		$ancestors = get_ancestors( $term_id, $taxonomy );
+		$ancestors = array_reverse( $ancestors );
+
+		foreach ( $ancestors as $ancestor ) {
+			$ancestor = get_term( $ancestor, $taxonomy );
+
+			if ( ! is_wp_error( $ancestor ) && $ancestor ) {
+				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $ancestor ) ), $ancestor->name );
+			}
 		}
 	}
 
@@ -742,32 +813,31 @@ class OceanWP_Breadcrumb_Trail {
 			$cat = current( get_the_category( $post ) );
 
 			if ( 'shop' == $products_tax ) {
+
 				$shop_id = wc_get_page_id( 'shop' );
 				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $shop_id ) ), get_the_title( $shop_id ) );
-			} else {
 
-				if ( 'product_cat' === get_theme_mod( 'ocean_breadcrumb_products_taxonomy', 'shop' ) ) {
-					$terms     = get_the_terms( $post_id, 'product_cat' );
-					$ancestors = array_reverse( $terms );
-					foreach ( $ancestors as $ancestor ) {
-						$ancestor = get_term( $ancestor, $products_tax );
+			} else if ( 'product_cat' === $products_tax || 'product_tag' === $products_tax ) {
 
-						if ( ! is_wp_error( $ancestor ) && $ancestor ) {
-							$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $ancestor ) ), $ancestor->name );
-						}
-					}
-				} else if ( 'product_tag' === get_theme_mod( 'ocean_breadcrumb_products_taxonomy', 'shop' ) ) {
-					$terms     = get_the_terms( $post_id, 'product_tag' );
-					$ancestors = array_reverse( $terms );
-					foreach ( $ancestors as $ancestor ) {
-						$ancestor = get_term( $ancestor, $products_tax );
+				$terms = wc_get_product_terms(
+					$post_id,
+					$products_tax,
+					apply_filters(
+						'woocommerce_breadcrumb_product_terms_args',
+						array(
+							'orderby' => 'parent',
+							'order'   => 'DESC',
+						)
+					)
+				);
 
-						if ( ! is_wp_error( $ancestor ) && $ancestor ) {
-							$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $ancestor ) ), $ancestor->name );
-						}
-					}
+				if ( $terms ) {
+					$main_term = apply_filters( 'woocommerce_breadcrumb_main_term', $terms[0], $terms );
+					$this->term_ancestors( $main_term->term_id, $products_tax );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $main_term ) ), $main_term->name );
 				}
 
+			} else {
 				$this->add_post_terms( $post_id, $products_tax );
 			}
 
@@ -971,7 +1041,7 @@ class OceanWP_Breadcrumb_Trail {
 		$user_id = get_query_var( 'author' );
 
 		// If $author_base exists, check for parent pages.
-		if ( ! empty( $wp_rewrite->author_base ) ) {
+		if ( ! empty( $wp_rewrite->author_base ) && ! is_post_type_archive() ) {
 			$this->add_path_parents( $wp_rewrite->author_base );
 		}
 
@@ -1279,6 +1349,11 @@ class OceanWP_Breadcrumb_Trail {
 
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type ) ), $label );
 		}
+
+		// Map the rewrite tags if there's a `%` in the slug.
+		if ( 'post' !== $post_type && ! empty( $post_type_object->rewrite['slug'] ) && false !== strpos( $post_type_object->rewrite['slug'], '%' ) ) {
+			$this->map_rewrite_tags( $post_id, $post_type_object->rewrite['slug'] );
+		}
 	}
 
 	/**
@@ -1452,10 +1527,6 @@ class OceanWP_Breadcrumb_Trail {
 	protected function map_rewrite_tags( $post_id, $path ) {
 
 		$post = get_post( $post_id );
-
-		// If the post doesn't have the `post` post type, bail.
-		if ( 'post' !== $post->post_type )
-			return;
 
 		// Trim '/' from both sides of the $path.
 		$path = trim( $path, '/' );
