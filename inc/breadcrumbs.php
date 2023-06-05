@@ -304,13 +304,10 @@ class OceanWP_Breadcrumb_Trail {
 		$breadcrumb_schema = apply_filters(
 			'oceanwp_theme_strings',
 			array(
-
 				'breadcrumbList' => 'itemscope itemtype="http://schema.org/BreadcrumbList"',
 				'itempropName'   => 'itemprop="name"',
 				'itempropThing'  => 'itemtype="https://schema.org/Thing"',
 				'ItempropList'   => 'itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"',
-				'itemPosition'   => 'itemprop="position"',
-
 			)
 		);
 
@@ -382,13 +379,12 @@ class OceanWP_Breadcrumb_Trail {
 
 				if ( $this->args['schema'] ) {
 					// Position meta.
-					$meta = sprintf( '<meta %1$s content="%2$s" />', $this->breadcrumb_schema( 'ItemPosition' ), absint( $item_position ) );
+					$meta = sprintf( '<meta itemprop="position" content="%s" />', absint( $item_position ) );
 				}
 
 				// Separator.
 				if ( $item_count === $item_position ) {
 					$sep  = '';
-					$meta = '';
 				} else {
 					$sep = $separator;
 				}
