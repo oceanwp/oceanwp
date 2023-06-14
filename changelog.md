@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2023.06.14_ - 3.4.5
+- **Updated**: WooCommerce: Templates (mini-cart.php, loop-start.php, content-single-product.php) version number for compatibility to dismiss WooCommerce potential outdated templates notification.
+
 ### _2023.05.23_ - 3.4.4
 - **New**: Typography: Google fonts: Updated list.
 - **Added**: Mobile Header: Search icon and form styling options in the Customizer.
