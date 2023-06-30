@@ -15,13 +15,21 @@ if ( ! OCEAN_EXTRA_ACTIVE ) {
 	return;
 }
 
+$format = '';
+
+if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
+	$format = oe_get_meta( '_ocean_meta_quote_format' );
+} else {
+	$format = get_post_meta( get_the_ID(), 'ocean_quote_format', true );
+}
+
 ?>
 
 <div class="post-quote-wrap">
 
 	<div class="post-quote-content">
 
-		<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'ocean_quote_format', true ) ); ?>
+		<?php echo wp_kses_post( $format ); ?>
 
 		<span class="post-quote-icon"><?php oceanwp_icon( 'quote' ); ?></span>
 
