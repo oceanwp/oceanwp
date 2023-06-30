@@ -15,6 +15,7 @@ if ( ! OCEAN_EXTRA_ACTIVE ) {
 	return;
 }
 
+// Quote link.
 $link = get_post_meta( get_the_ID(), 'ocean_quote_format_link', true );
 
 // Add post classes.
