@@ -478,7 +478,9 @@ if ( ! function_exists( 'oceanwp_post_layout' ) ) {
 
 		// Define variables
 		$class = 'right-sidebar';
-		$meta  = get_post_meta( oceanwp_post_id(), 'ocean_post_layout', true );
+		$meta = get_post_meta( oceanwp_post_id(), 'ocean_post_layout', true )
+
+		$meta = apply_filters( 'ocean_post_layout_meta_value', $meta );
 
 		$meta = apply_filters( 'ocean_post_layout_meta_value', $meta );
 
@@ -2667,7 +2669,6 @@ if ( ! function_exists( 'oceanwp_post_entry_classes' ) ) {
 			}
 		}
 
-		// No Featured Image Class, don't add if oembed or self hosted meta are defined
 		if ( ! has_post_thumbnail()
 			&& '' == get_post_meta( get_the_ID(), 'ocean_post_self_hosted_shortcode', true )
 			&& '' == get_post_meta( get_the_ID(), 'ocean_post_oembed', true ) ) {
@@ -5029,6 +5030,7 @@ function ocean_link_post_url( $id ) {
 
 	// External link.
 	$ext_link  = get_post_meta( $id, 'ocean_link_format', true );
+
 	$post_link = get_permalink( $id );
 
 	if ( $ext_link ) {
@@ -5047,6 +5049,7 @@ function ocean_link_post_url_target( $id ) {
 
 	// External link.
 	$link_target  = get_post_meta( $id, 'ocean_link_format_target', true );
+
 	$target = '';
 
 	if ( 'blank' === $link_target ) {
