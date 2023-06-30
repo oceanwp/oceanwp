@@ -31,7 +31,8 @@
 #customize-control-osh_sticky_choose .customize-control-title,
 #customize-control-osp_side_panel_displace,
 #customize-control-osp_side_panel_overlay,
-#customize-control-ocean_breadcrumb_show_title { margin-top: 0; }
+#customize-control-ocean_breadcrumb_show_title,
+#customize-control-ocean_breadcrumb_schema { margin-top: 0; }
 
 /* General tweaks */
 .wp-full-overlay-sidebar-content::-webkit-scrollbar, .accordion-section-content::-webkit-scrollbar { width: 10px !important; }
