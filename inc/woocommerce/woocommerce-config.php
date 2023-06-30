@@ -115,6 +115,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 				}
 
+				// The Cart Fragments script.
+				wp_enqueue_script( 'wc-cart-fragments' );
+
 				// Main Woo Actions.
 				add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ), 99 );
 				add_filter( 'ocean_localize_array', array( $this, 'localize_array' ) );
