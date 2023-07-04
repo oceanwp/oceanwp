@@ -2921,12 +2921,11 @@ if ( ! function_exists( 'oceanwp_gallery_is_lightbox_enabled' ) ) {
 
 		$has_gallery = '';
 
-		if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
-			$has_gallery = oe_get_meta( '_ocean_meta_gallery_link_images' );
+		if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) && 'true' === get_option( 'ocean_metabox_migration_status' ) ) {
+			$has_gallery = oe_get_meta( '_ocean_meta_gallery_link_images' ) ? oe_get_meta( '_ocean_meta_gallery_link_images' ) : 'on';
 		} else {
 			$has_gallery = get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true );
 		}
-
 
 		if ( 'on' == $has_gallery ) {
 			return true;
