@@ -2832,8 +2832,15 @@ if ( ! function_exists( 'oceanwp_post_has_gallery' ) ) {
 	function oceanwp_post_has_gallery( $post_id = '' ) {
 
 		$post_id = $post_id ? $post_id : get_the_ID();
+		$attachment_ids = '';
 
-		if ( get_post_meta( $post_id, 'ocean_gallery_id', true ) ) {
+		if ( class_exists( 'Ocean_Extra' ) && 'true' === get_option( 'ocean_metabox_migration_status' ) ) {
+			$attachment_ids = get_post_meta( $post_id, '_ocean_meta_gallery_id', true );
+		} else {
+			$attachment_ids = get_post_meta( $post_id, 'ocean_gallery_id', true );
+		}
+
+		if ( $attachment_ids ) {
 			return true;
 		}
 
@@ -2850,7 +2857,13 @@ if ( ! function_exists( 'oceanwp_get_gallery_ids' ) ) {
 	function oceanwp_get_gallery_ids( $post_id = '' ) {
 
 		$post_id        = $post_id ? $post_id : get_the_ID();
-		$attachment_ids = get_post_meta( $post_id, 'ocean_gallery_id', true );
+		$attachment_ids = '';
+
+		if ( class_exists( 'Ocean_Extra' ) && 'true' === get_option( 'ocean_metabox_migration_status' ) ) {
+			$attachment_ids = get_post_meta( $post_id, '_ocean_meta_gallery_id', true );
+		} else {
+			$attachment_ids = get_post_meta( $post_id, 'ocean_gallery_id', true );
+		}
 
 		if ( $attachment_ids ) {
 			return $attachment_ids;
@@ -2906,7 +2919,16 @@ if ( ! function_exists( 'oceanwp_gallery_is_lightbox_enabled' ) ) {
 
 	function oceanwp_gallery_is_lightbox_enabled() {
 
-		if ( 'on' == get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true ) ) {
+		$has_gallery = '';
+
+		if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
+			$has_gallery = oe_get_meta( '_ocean_meta_gallery_link_images' );
+		} else {
+			$has_gallery = get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true );
+		}
+
+
+		if ( 'on' == $has_gallery ) {
 			return true;
 		}
 
