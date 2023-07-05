@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2023.07.05_ - 3.4.6
+- **Updated**: Breadcrumbs: Functionality enhancement.
+
 ### _2023.06.14_ - 3.4.5
 - **Updated**: WooCommerce: Templates (mini-cart.php, loop-start.php, content-single-product.php) version number for compatibility to dismiss WooCommerce potential outdated templates notification.
 
