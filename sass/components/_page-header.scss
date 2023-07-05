@@ -171,6 +171,12 @@ body.breadcrumbs-position-default .page-header-title {
     }
   }
 
+  &.woocommerce-breadcrumbs {
+    .breadcrumb-sep {
+      margin: 0 6px;
+    }
+  }
+
   .icon-home.has-text,
   .breadcrumb-home.has-icon {
     display: none;

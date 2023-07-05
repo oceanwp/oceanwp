@@ -2316,6 +2316,39 @@ if ( ! function_exists( 'oceanwp_has_breadcrumbs' ) ) {
 }
 
 /**
+ * Display breadcrumbs
+ *
+ * @since 3.4.5
+ */
+if ( ! function_exists( 'ocean_breadcrumbs_view') ) {
+
+	function ocean_breadcrumbs_view() {
+
+		if ( ! oceanwp_has_breadcrumbs() || is_front_page() ) {
+			return;
+		}
+
+		$woo_crumb = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' );
+
+		if ( 'yes' === $woo_crumb ) {
+			if ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() || oceanwp_is_woo_single() || is_cart() || is_checkout() || is_account_page() ) {
+				woocommerce_breadcrumb();
+			} else {
+				if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) {
+					oceanwp_breadcrumb_trail();
+				}
+			}
+		} else {
+			if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) {
+				oceanwp_breadcrumb_trail();
+			}
+		}
+	}
+
+	add_action( 'ocean_breadcrumbs_main', 'ocean_breadcrumbs_view' );
+}
+
+/**
  * Outputs Custom CSS for the page title
  *
  * @since 1.0.4
@@ -4911,9 +4944,9 @@ function ocean_admin_page_contents() {
  * @return void
  */
 function oceanwp_admin_menu_logo_styles() {
-		$owp_tp_logo_style = '<style>#adminmenu #toplevel_page_oceanwp .wp-menu-image img { width: 25px; height: 25px; padding: 5px; }</style>';
-		echo $owp_tp_logo_style;
-	}
+	$owp_tp_logo_style = '<style>#adminmenu #toplevel_page_oceanwp .wp-menu-image img { width: 25px; height: 25px; padding: 5px; }</style>';
+	echo $owp_tp_logo_style;
+}
 add_action('admin_head', 'oceanwp_admin_menu_logo_styles');
 
 /**
@@ -4928,13 +4961,13 @@ function ocean_oe_is_outdated_admin_notice() {
 			$required_oe_version = '2.0.0';
 
 			if ( ! empty( $current_oe_version ) && ! empty( $required_oe_version ) && version_compare( $current_oe_version, $required_oe_version , '<' ) ) :
-			?>
-			<div class="notice notice-warning is-dismissible">
-				<p><?php esc_html_e( 'We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date.', 'oceanwp' ); ?></p>
-				<a href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>"><?php esc_html_e( 'Update and get the new Theme Panel', 'oceanwp' ); ?></a>
-				<br><br>
-			</div>
-			<?php
+				?>
+				<div class="notice notice-warning is-dismissible">
+					<p><?php esc_html_e( 'We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date.', 'oceanwp' ); ?></p>
+					<a href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>"><?php esc_html_e( 'Update and get the new Theme Panel', 'oceanwp' ); ?></a>
+					<br><br>
+				</div>
+				<?php
 			endif;
 		}
 	}
@@ -4963,11 +4996,11 @@ function ocean_is_block_template( $get_id ) {
 	// check for Gutenberg page.
 	$is_gutenberg = ( ! empty( $blocks ) && '' !== $blocks[0]['blockName'] );
 
-    if ( $is_gutenberg ) {
-        return true;
-    } else {
-        return false;
-    }
+	if ( $is_gutenberg ) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 /**

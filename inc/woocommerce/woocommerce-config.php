@@ -826,6 +826,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				wp_enqueue_script( 'oceanwp-woo-multistep-checkout', OCEANWP_JS_DIR_URI . 'wp-plugins/woocommerce/woo-multi-step-checkout.min.js', $woo_deps, OCEANWP_THEME_VERSION, true );
 			}
 
+			// The Cart Fragments script.
+			wp_enqueue_script( 'wc-cart-fragments' );
+
 		}
 
 		/**

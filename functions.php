@@ -18,7 +18,7 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -275,12 +275,10 @@ final class OCEANWP_Theme_Class {
 			}
 
 			// Front-end classes.
-		} else {
-
-			// Breadcrumbs class.
-			require_once OCEANWP_INC_DIR . 'breadcrumbs.php';
-
 		}
+
+		// Breadcrumbs class.
+		require_once OCEANWP_INC_DIR . 'breadcrumbs.php';
 
 		// Customizer class.
 		require_once OCEANWP_INC_DIR . 'customizer/library/customizer-custom-controls/functions.php';

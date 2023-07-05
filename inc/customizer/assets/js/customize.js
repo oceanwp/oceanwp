@@ -14,7 +14,6 @@ jQuery( document ).on( 'ready', function (e) {
         delete _wpCustomizeSettings.controls[ i ];
     })
 
-
     wp.customize.bind('ready', function() {
         var api = wp.customize;
         var added = false;
