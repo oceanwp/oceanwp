@@ -18,7 +18,6 @@ $show_woo_single = ( is_user_logged_in() && $ocean_woo_single_cond === true );
 
 /**
  * Display Single Product template
- * 
  */
 
 // Get elements.
@@ -49,6 +48,8 @@ foreach ( $elements as $element ) {
 		if ( false === $ocean_woo_single_cond || $show_woo_single ) {
 
 			woocommerce_template_single_price();
+
+			do_action( 'woocommerce_single_product_summary' );
 
 		}
 	}
@@ -85,7 +86,7 @@ foreach ( $elements as $element ) {
 					echo '<span>'. $ocean_woo_single_msg_txt .'</span>';
 				} else {
 					echo '<a href="' . esc_url( get_permalink( wc_get_page_id( 'myaccount' ) ) ) . '">' . $ocean_woo_single_msg_txt . '</a>';
-				}	
+				}
 				echo '</div>';
 
 			}
@@ -94,9 +95,7 @@ foreach ( $elements as $element ) {
 
 	// Meta.
 	if ( 'meta' === $element ) {
-
 		woocommerce_template_single_meta();
-		
 	}
 
 	do_action( 'ocean_after_single_product_' . $element );
