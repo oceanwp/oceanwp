@@ -47,6 +47,11 @@ foreach ( $elements as $element ) {
 		if ( class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			OceanWP_WooCommerce_Config::add_out_of_stock_badge();
 		}
+
+		if ( class_exists( 'Custom_Product_Badges' ) ) {
+			Custom_Product_Badges::oec_custom_product_badge_display_shop();
+		}
+
 		woocommerce_show_product_loop_sale_flash();
 		if ( class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			OceanWP_WooCommerce_Config::loop_product_thumbnail();
@@ -142,7 +147,7 @@ foreach ( $elements as $element ) {
 				echo wp_kses_post( strip_shortcodes( $post->post_excerpt ) );
 			} else {
 				echo wp_trim_words( strip_shortcodes( $post->post_excerpt ), $length ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			} 
+			}
 
 			echo '</li>';
 		}
@@ -170,7 +175,7 @@ foreach ( $elements as $element ) {
 
 			// Get conditional message display state.
 			$ocean_woo_cond_msg = get_theme_mod( 'ocean_shop_cond_msg', 'yes' );
-		
+
 			if ( $ocean_woo_cond_msg === 'yes' ) {
 
 				// Get Add to Cart button replacement message.
@@ -184,9 +189,9 @@ foreach ( $elements as $element ) {
 					echo '<span>'. $woo_cond_message .'</span>';
 				} else {
 					echo '<a href="' . esc_url( get_permalink( wc_get_page_id( 'myaccount' ) ) ) . '">' . $woo_cond_message . '</a>';
-				}	
+				}
 				echo '</li>';
-				
+
 			}
 		}
 
