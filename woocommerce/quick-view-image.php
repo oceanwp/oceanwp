@@ -14,6 +14,9 @@ global $post, $product, $woocommerce; ?>
 <div class="owp-qv-image flexslider images">
 	<ul class="owp-qv-slides slides">
 		<?php
+		if ( class_exists( 'Custom_Product_Badges' ) ) {
+			Custom_Product_Badges::oec_custom_product_badge_display_shop();
+		}
 		if ( has_post_thumbnail() ) {
 			$attachment_ids = $product->get_gallery_image_ids();
 			$props          = wc_get_product_attachment_props( get_post_thumbnail_id(), $post );
