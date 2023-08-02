@@ -1043,23 +1043,11 @@ final class OCEANWP_Theme_Class {
 		// Add entry class.
 		$classes[] = 'entry';
 
-		$self_hosted_video = '';
-		$post_oembed       = '';
-		$post_video_oembed = '';
-
-
-		if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
-			$self_hosted_video = oe_get_meta( '_ocean_meta_post_self_hosted_media' );
-			$post_oembed       = oe_get_meta( '_ocean_meta_post_oembed' );
-			$post_video_oembed = oe_get_meta( '_ocean_meta_post_video_embed' );
-		} else {
-			$self_hosted_video = get_post_meta( $post->ID, 'ocean_post_self_hosted_media', true );
-			$post_oembed       = get_post_meta( $post->ID, 'ocean_post_oembed', true );
-			$post_video_oembed = get_post_meta( $post->ID, 'ocean_post_video_embed', true );
-		}
-
 		// Add has media class.
-		if ( has_post_thumbnail() || $post_oembed || $self_hosted_video || $post_video_oembed ) {
+		if ( has_post_thumbnail()
+			|| get_post_meta( $post->ID, 'ocean_post_self_hosted_media', true )
+			|| get_post_meta( $post->ID, 'ocean_post_oembed', true )
+			|| get_post_meta( $post->ID, 'ocean_post_video_embed', true ) ) {
 			$classes[] = 'has-media';
 		}
 
