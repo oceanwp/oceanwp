@@ -4797,22 +4797,11 @@ if ( ! class_exists( 'OceanWP_General_Customizer' ) ) :
 			$bs_search_sidebars_width = get_theme_mod( 'ocean_search_both_sidebars_sidebars_width' );
 
 			// Meta.
-			$meta_breadcrumbs_text_color       = '';
-			$meta_breadcrumbs_seperator_color  = '';
-			$meta_breadcrumbs_link_color       = '';
-			$meta_breadcrumbs_link_color_hover = '';
-
-			if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
-				$meta_breadcrumbs_text_color       = oe_get_meta( '_ocean_meta_breadcrumbs_color' );
-				$meta_breadcrumbs_seperator_color  = oe_get_meta( '_ocean_meta_breadcrumbs_separator_color' );
-				$meta_breadcrumbs_link_color       = oe_get_meta( '_ocean_meta_breadcrumbs_links_color' );
-				$meta_breadcrumbs_link_color_hover = oe_get_meta( '_ocean_meta_breadcrumbs_links_hover_color' );
-			} else {
-				$meta_breadcrumbs_text_color       = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_color', true );
-				$meta_breadcrumbs_seperator_color  = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_separator_color', true );
-				$meta_breadcrumbs_link_color       = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_color', true );
-				$meta_breadcrumbs_link_color_hover = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_hover_color', true );
-			}
+			$meta_breadcrumbs_text_color       = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_color', true );
+			$meta_breadcrumbs_seperator_color  = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_separator_color', true );
+			$meta_breadcrumbs_link_color       = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_color', true );
+			$meta_breadcrumbs_link_color_hover = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_hover_color', true );
+			$meta_breadcrumbs_link_color_hover = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_hover_color', true );
 
 			// Define css var.
 			$css                        = '';

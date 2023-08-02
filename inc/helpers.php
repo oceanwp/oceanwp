@@ -478,13 +478,7 @@ if ( ! function_exists( 'oceanwp_post_layout' ) ) {
 
 		// Define variables
 		$class = 'right-sidebar';
-		$meta = '';
-
-		if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
-			$meta = oe_get_meta( '_ocean_meta_post_layout' );
-		} else {
-			$meta = get_post_meta( oceanwp_post_id(), 'ocean_post_layout', true );
-		}
+		$meta  = get_post_meta( oceanwp_post_id(), 'ocean_post_layout', true );
 
 		$meta = apply_filters( 'ocean_post_layout_meta_value', $meta );
 
@@ -568,13 +562,7 @@ if ( ! function_exists( 'oceanwp_both_sidebars_style' ) ) {
 	function oceanwp_both_sidebars_style() {
 
 		// Meta.
-		$meta = '';
-
-		if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
-			$meta = oe_get_meta( '_ocean_meta_both_sidebars_style' );
-		} else {
-			$meta = get_post_meta( oceanwp_post_id(), 'ocean_both_sidebars_style', true );
-		}
+		$meta = get_post_meta( oceanwp_post_id(), 'ocean_both_sidebars_style', true );
 
 		$meta = apply_filters( 'ocean_both_sidebars_style_value', $meta );
 
@@ -2581,7 +2569,7 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 
 	}
 
-	add_filter( 'ocean_head_css', 'oceanwp_page_header_css' );
+	add_filter( 'ocean_head_css', 'oceanwp_page_header_css', 20 );
 
 }
 
@@ -2679,19 +2667,9 @@ if ( ! function_exists( 'oceanwp_post_entry_classes' ) ) {
 			}
 		}
 
-		$self_hosted_video = '';
-		$post_oembed       = '';
-
-		if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
-			$self_hosted_video = oe_get_meta( '_ocean_meta_post_self_hosted_media' );
-			$post_oembed       = oe_get_meta( '_ocean_meta_post_oembed' );
-		} else {
-			$self_hosted_video = get_post_meta( get_the_ID(), 'ocean_post_self_hosted_media', true );
-			$post_oembed       = get_post_meta( get_the_ID(), 'ocean_post_oembed', true );
-		}
-
-		// No Featured Image Class, don't add if oembed or self hosted meta are defined
-		if ( ! has_post_thumbnail() && '' === $self_hosted_video && '' === $post_oembed ) {
+		if ( ! has_post_thumbnail()
+			&& '' == get_post_meta( get_the_ID(), 'ocean_post_self_hosted_shortcode', true )
+			&& '' == get_post_meta( get_the_ID(), 'ocean_post_oembed', true ) ) {
 			$classes[] = 'no-featured-image';
 		}
 
@@ -2952,13 +2930,7 @@ if ( ! function_exists( 'oceanwp_gallery_is_lightbox_enabled' ) ) {
 
 	function oceanwp_gallery_is_lightbox_enabled() {
 
-		$has_gallery = '';
-
-		if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) && 'true' === get_option( 'ocean_metabox_migration_status' ) ) {
-			$has_gallery = oe_get_meta( '_ocean_meta_gallery_link_images' ) ? oe_get_meta( '_ocean_meta_gallery_link_images' ) : 'on';
-		} else {
-			$has_gallery = get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true );
-		}
+		$has_gallery = get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true );
 
 		if ( 'on' == $has_gallery ) {
 			return true;
@@ -2982,33 +2954,17 @@ if ( ! function_exists( 'oceanwp_get_post_media' ) ) {
 		// Get correct ID
 		$post_id = $post_id ? $post_id : get_the_ID();
 
-		$self_hosted_video = '';
-		$post_oembed       = '';
-		$post_video_oembed = '';
-
-
-		if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
-			$self_hosted_video = oe_get_meta( '_ocean_meta_post_self_hosted_media' );
-			$post_oembed       = oe_get_meta( '_ocean_meta_post_oembed' );
-			$post_video_oembed = oe_get_meta( '_ocean_meta_post_video_embed' );
-		} else {
-			$self_hosted_video = get_post_meta( $post_id, 'ocean_post_self_hosted_media', true );
-			$post_oembed       = get_post_meta( $post_id, 'ocean_post_oembed', true );
-			$post_video_oembed = get_post_meta( $post_id, 'ocean_post_video_embed', true );
-		}
-
-		// Embed
-		if ( $meta = $post_video_oembed ) {
+		if ( $meta = get_post_meta( $post_id, 'ocean_post_video_embed', true ) ) {
 			$video = $meta;
 		}
 
 		// Check for self-hosted first
-		elseif ( $meta = $self_hosted_video ) {
+		elseif ( $meta = get_post_meta( $post_id, 'ocean_post_self_hosted_media', true ) ) {
 			$video = $meta;
 		}
 
 		// Check for post oembed
-		elseif ( $meta = $post_oembed ) {
+		elseif ( $meta = get_post_meta( $post_id, 'ocean_post_oembed', true ) ) {
 			$video = $meta;
 		}
 
@@ -5070,13 +5026,7 @@ function ocean_is_block_template( $get_id ) {
 function ocean_link_post_url( $id ) {
 
 	// External link.
-	$ext_link  = '';
-
-	if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
-		$ext_link = oe_get_meta( '_ocean_meta_link_format_url' );
-	} else {
-		$ext_link = get_post_meta( $id, 'ocean_link_format', true );
-	}
+	$ext_link = get_post_meta( $id, 'ocean_link_format', true );
 
 	$post_link = get_permalink( $id );
 
@@ -5095,13 +5045,7 @@ function ocean_link_post_url( $id ) {
 function ocean_link_post_url_target( $id ) {
 
 	// External link.
-	$link_target  = 'self';
-
-	if ( class_exists( 'Ocean_Extra' ) && function_exists( 'oe_get_meta' ) ) {
-		$link_target = oe_get_meta( '_ocean_meta_link_format_target' );
-	} else {
-		$link_target = get_post_meta( $id, 'ocean_link_format_target', true );
-	}
+	$link_target  = get_post_meta( $id, 'ocean_link_format_target', true );
 
 	$target = '';
 
