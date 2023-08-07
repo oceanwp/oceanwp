@@ -115,14 +115,35 @@ final class OCEANWP_Theme_Class {
 			add_filter( 'the_author_posts_link', array( 'OCEANWP_Theme_Class', 'the_author_posts_link' ) );
 
 			// Add support for Elementor Pro locations.
-			add_action( 'elementor/theme/register_locations', array( 'OCEANWP_Theme_Class', 'register_elementor_locations' ) );
+			add_action( 'elementor/theme/register_locations', array(
+				'OCEANWP_Theme_Class',
+				'register_elementor_locations'
+			) );
 
 			// Remove the default lightbox script for the beaver builder plugin.
 			add_filter( 'fl_builder_override_lightbox', array( 'OCEANWP_Theme_Class', 'remove_bb_lightbox' ) );
 
 			add_filter( 'ocean_enqueue_generated_files', '__return_false' );
+
+			add_action('pre_get_posts', array($this, 'prevent_url_search'));
 		}
 	}
+
+	/****************** Prevent users from pasting or submitting a link or URL  *****/
+	public function prevent_url_search( $query ) {
+		if ( is_search() && ! empty( $_GET['s'] ) ) {
+			$search_query = trim( $_GET['s'] );
+			$url_pattern  = '/(http|https):\/\/[^\s]+/i';
+
+			if ( preg_match( $url_pattern, $search_query ) ) {
+				$query->set( 's', '' ); // Clear the search query to return no results
+
+				// Display a message to the user
+				wp_die( 'Sorry, URLs or links are not allowed in the search.' );
+			}
+		}
+	}
+	/****************** Prevent users from pasting or submitting a link or URL  *****/
 
 	/**
 	 * Migration Functinality
@@ -231,9 +252,11 @@ final class OCEANWP_Theme_Class {
 	 * Compare WordPress version
 	 *
 	 * @access public
-	 * @since 1.8.3
-	 * @param  string $version - A WordPress version to compare against current version.
+	 *
+	 * @param string $version - A WordPress version to compare against current version.
+	 *
 	 * @return boolean
+	 * @since 1.8.3
 	 */
 	public static function is_wp_version( $version = '5.4' ) {
 
@@ -270,7 +293,7 @@ final class OCEANWP_Theme_Class {
 			require_once OCEANWP_INC_DIR . 'activation-notice/template.php';
 
 			// Ajax Actions
-			if (defined('DOING_AJAX') && DOING_AJAX) {
+			if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
 				require OCEANWP_INC_DIR . 'activation-notice/api.php';
 			}
 
@@ -459,7 +482,7 @@ final class OCEANWP_Theme_Class {
 
 		// Blog Header styles.
 		if ( 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' )
-			&& is_single() && 'post' === get_post_type() ) {
+		     && is_single() && 'post' === get_post_type() ) {
 			wp_enqueue_style( 'oceanwp-blog-headers', $dir . 'blog/blog-post-headers.css', false, $theme_version );
 		}
 
@@ -643,7 +666,7 @@ final class OCEANWP_Theme_Class {
 
 		// WooCommerce scripts.
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
-		&& 'yes' !== get_theme_mod( 'ocean_woo_remove_custom_features', 'no' ) ) {
+		     && 'yes' !== get_theme_mod( 'ocean_woo_remove_custom_features', 'no' ) ) {
 			wp_enqueue_script( 'oceanwp-woocommerce-custom-features', $dir . 'wp-plugins/woocommerce/woo-custom-features.min.js', array( 'jquery' ), $theme_version, true );
 			wp_localize_script( 'oceanwp-woocommerce-custom-features', 'oceanwpLocalize', $localize_array );
 		}
@@ -668,7 +691,7 @@ final class OCEANWP_Theme_Class {
 		$vh_target     = $vh_target ? $vh_target : 'link';
 		$scroll_offset = get_theme_mod( 'ocean_scroll_effect_offset_value' );
 		$scroll_offset = $scroll_offset ? $scroll_offset : 0;
-		$array       = array(
+		$array         = array(
 			'nonce'                 => wp_create_nonce( 'oceanwp' ),
 			'isRTL'                 => is_rtl(),
 			'menuSearchStyle'       => oceanwp_menu_search_style(),
@@ -694,11 +717,13 @@ final class OCEANWP_Theme_Class {
 	/**
 	 * Add headers for IE to override IE's Compatibility View Settings
 	 *
-	 * @param obj $headers   header settings.
+	 * @param obj $headers header settings.
+	 *
 	 * @since 1.0.0
 	 */
 	public static function x_ua_compatible_headers( $headers ) {
 		$headers['X-UA-Compatible'] = 'IE=edge';
+
 		return $headers;
 	}
 
@@ -829,6 +854,7 @@ final class OCEANWP_Theme_Class {
 	 * All theme functions hook into the oceanwp_head_css filter for this function.
 	 *
 	 * @param obj $output output value.
+	 *
 	 * @since 1.0.0
 	 */
 	public static function custom_css( $output = null ) {
@@ -864,6 +890,7 @@ final class OCEANWP_Theme_Class {
 	 * Minify the WP custom CSS because WordPress doesn't do it by default.
 	 *
 	 * @param obj $css minify css.
+	 *
 	 * @since 1.1.9
 	 */
 	public static function minify_custom_css( $css ) {
@@ -876,6 +903,7 @@ final class OCEANWP_Theme_Class {
 	 * Include Custom CSS file if present.
 	 *
 	 * @param obj $output output value.
+	 *
 	 * @since 1.4.12
 	 */
 	public static function custom_style_css( $output = null ) {
@@ -940,6 +968,7 @@ final class OCEANWP_Theme_Class {
 	 * Alter the search posts per page
 	 *
 	 * @param obj $query query.
+	 *
 	 * @since 1.3.7
 	 */
 	public static function search_posts_per_page( $query ) {
@@ -956,11 +985,13 @@ final class OCEANWP_Theme_Class {
 	 * Adds a span around the counter for easier styling.
 	 *
 	 * @param obj $links link.
+	 *
 	 * @since 1.0.0
 	 */
 	public static function wp_list_categories_args( $links ) {
 		$links = str_replace( '</a> (', '</a> <span class="cat-count-span">(', $links );
 		$links = str_replace( ')', ')</span>', $links );
+
 		return $links;
 	}
 
@@ -968,10 +999,11 @@ final class OCEANWP_Theme_Class {
 	 * Alters the default oembed output.
 	 * Adds special classes for responsive oembeds via CSS.
 	 *
-	 * @param obj $cache     cache.
-	 * @param url $url       url.
-	 * @param obj $attr      attributes.
-	 * @param obj $post_ID   post id.
+	 * @param obj $cache cache.
+	 * @param url $url url.
+	 * @param obj $attr attributes.
+	 * @param obj $post_ID post id.
+	 *
 	 * @since 1.0.0
 	 */
 	public static function add_responsive_wrap_to_oembeds( $cache, $url, $attr, $post_ID ) {
@@ -1032,7 +1064,8 @@ final class OCEANWP_Theme_Class {
 	/**
 	 * Adds extra classes to the post_class() output
 	 *
-	 * @param obj $classes   Return classes.
+	 * @param obj $classes Return classes.
+	 *
 	 * @since 1.0.0
 	 */
 	public static function post_class( $classes ) {
@@ -1045,9 +1078,9 @@ final class OCEANWP_Theme_Class {
 
 		// Add has media class.
 		if ( has_post_thumbnail()
-			|| get_post_meta( $post->ID, 'ocean_post_oembed', true )
-			|| get_post_meta( $post->ID, 'ocean_post_self_hosted_media', true )
-			|| get_post_meta( $post->ID, 'ocean_post_video_embed', true )
+		     || get_post_meta( $post->ID, 'ocean_post_oembed', true )
+		     || get_post_meta( $post->ID, 'ocean_post_self_hosted_media', true )
+		     || get_post_meta( $post->ID, 'ocean_post_video_embed', true )
 		) {
 			$classes[] = 'has-media';
 		}
@@ -1060,7 +1093,8 @@ final class OCEANWP_Theme_Class {
 	/**
 	 * Add schema markup to the authors post link
 	 *
-	 * @param obj $link   Author link.
+	 * @param obj $link Author link.
+	 *
 	 * @since 1.0.0
 	 */
 	public static function the_author_posts_link( $link ) {
@@ -1079,7 +1113,8 @@ final class OCEANWP_Theme_Class {
 	/**
 	 * Add support for Elementor Pro locations
 	 *
-	 * @param obj $elementor_theme_manager    Elementor Instance.
+	 * @param obj $elementor_theme_manager Elementor Instance.
+	 *
 	 * @since 1.5.6
 	 */
 	public static function register_elementor_locations( $elementor_theme_manager ) {
@@ -1098,13 +1133,13 @@ final class OCEANWP_Theme_Class {
 }
 
 /**--------------------------------------------------------------------------------
-#region Freemius - This logic will only be executed when Ocean Extra is active and has the Freemius SDK
----------------------------------------------------------------------------------*/
+ * #region Freemius - This logic will only be executed when Ocean Extra is active and has the Freemius SDK
+ * ---------------------------------------------------------------------------------*/
 
 if ( ! function_exists( 'owp_fs' ) ) {
 	if ( class_exists( 'Ocean_Extra' ) &&
-			defined( 'OE_FILE_PATH' ) &&
-			file_exists( dirname( OE_FILE_PATH ) . '/includes/freemius/start.php' )
+	     defined( 'OE_FILE_PATH' ) &&
+	     file_exists( dirname( OE_FILE_PATH ) . '/includes/freemius/start.php' )
 	) {
 		/**
 		 * Create a helper function for easy SDK access.
@@ -1128,7 +1163,7 @@ if ( ! function_exists( 'owp_fs' ) ) {
 						'has_addons'                     => true,
 						'has_paid_plans'                 => true,
 						'menu'                           => array(
-'slug'    => 'oceanwp',
+							'slug'    => 'oceanwp',
 							'account' => true,
 							'contact' => false,
 							'support' => false,
