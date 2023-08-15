@@ -49,8 +49,6 @@ foreach ( $elements as $element ) {
 
 			woocommerce_template_single_price();
 
-			do_action( 'woocommerce_single_product_summary' );
-
 		}
 	}
 
