@@ -74,13 +74,16 @@ class FullScreenMobileMenu {
 		const targetElement = document.querySelector(targetId);
 
 		if (targetElement) {
-			event.preventDefault();
-			window.scrollTo({
-				top: targetElement.offsetTop,
-				behavior: 'smooth'
-			});
+			event.stopPropagation();
 			this.#closeMenu();
+			setTimeout(function() {
+			   window.scrollTo({
+			 top: targetElement.offsetTop,
+			 behavior: 'smooth'
+				});
+			}, 50)
 		}
+
 	};
 
 
