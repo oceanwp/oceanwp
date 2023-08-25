@@ -42,13 +42,6 @@ class FullScreenMobileMenu {
 
     delegate(document.body, ".mobile-menu", "click", this.#onMenuButtonClick);
 
-	document
-    .querySelectorAll('#mobile-fullscreen #mobile-nav li a[href^="#"]:not([href="#"])')
-    .forEach((anchorLink) => {
-        anchorLink.addEventListener("click", this.#handleAnchorLinks);
-    });
-
-
     document
       .querySelectorAll(
         '#mobile-fullscreen nav ul > li.menu-item-has-children > a > span.dropdown-toggle, #mobile-fullscreen nav ul > li.menu-item-has-children > a[href="#"]'
@@ -68,24 +61,6 @@ class FullScreenMobileMenu {
 
     document.addEventListener("keydown", this.#onDocumentKeydown);
   };
-
-	#handleAnchorLinks = (event) => {
-		const targetId = event.currentTarget.getAttribute('href');
-		const targetElement = document.querySelector(targetId);
-
-		if (targetElement) {
-			event.stopPropagation();
-			this.#closeMenu();
-			setTimeout(function() {
-			   window.scrollTo({
-			 top: targetElement.offsetTop,
-			 behavior: 'smooth'
-				});
-			}, 50)
-		}
-
-	};
-
 
   #onMenuButtonClick = (event) => {
     event.preventDefault();
