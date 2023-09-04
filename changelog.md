@@ -1,7 +1,7 @@
 # OceanWP Changelog
 
 ### _2023.09.05_ - 3.5.0
-- **Updated**: WooCommerce: Templates (product-image.php) version number for compatibility to dismiss WooCommerce potential outdated templates notification.
+- **Updated**: WooCommerce: Template version number for compatibility to dismiss WooCommerce potential outdated templates notification.
 - **Added**: Supprot for new metabox framework.
 
 ### _2023.07.19_ - 3.4.7
