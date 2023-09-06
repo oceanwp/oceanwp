@@ -1045,10 +1045,9 @@ final class OCEANWP_Theme_Class {
 
 		// Add has media class.
 		if ( has_post_thumbnail()
-			|| get_post_meta( $post->ID, 'ocean_post_oembed', true )
 			|| get_post_meta( $post->ID, 'ocean_post_self_hosted_media', true )
-			|| get_post_meta( $post->ID, 'ocean_post_video_embed', true )
-		) {
+			|| get_post_meta( $post->ID, 'ocean_post_oembed', true )
+			|| get_post_meta( $post->ID, 'ocean_post_video_embed', true ) ) {
 			$classes[] = 'has-media';
 		}
 

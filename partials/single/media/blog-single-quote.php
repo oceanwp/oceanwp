@@ -15,6 +15,7 @@ if ( ! OCEAN_EXTRA_ACTIVE ) {
 	return;
 }
 
+
 ?>
 
 <div class="post-quote-wrap">

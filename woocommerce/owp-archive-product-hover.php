@@ -39,6 +39,10 @@ if ( class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 	OceanWP_WooCommerce_Config::add_out_of_stock_badge();
 }
 
+if ( class_exists( 'Custom_Product_Badges' ) ) {
+	Custom_Product_Badges::oec_custom_product_badge_display_shop();
+}
+
 woocommerce_show_product_loop_sale_flash();
 
 // Display product featured image.
