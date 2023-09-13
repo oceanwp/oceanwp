@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2023.09.XX_ - 3.5.1
+- **Fixed**: Megamenu wrong calculation for left position when page set to boxed layout.
+
 ### _2023.09.06_ - 3.5.0
 - **Added**: Supprot for new the metabox framework.
 - **Updated**: Compatibility: WooCommerce: Template version number to dismiss potential outdated templates notification.

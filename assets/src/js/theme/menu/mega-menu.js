@@ -107,10 +107,6 @@ class MegaMenu {
       return;
     }
 
-    if (this.#elements.body.classList.contains("boxed-layout")) {
-      leftPosition = leftPosition - 30;
-    }
-
     content.style.left = `-${leftPosition}px`;
     content.style.width = `${wrapper.offsetWidth}px`;
   };
