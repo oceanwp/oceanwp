@@ -385,6 +385,7 @@ class OceanWP_Breadcrumb_Trail {
 				// Separator.
 				if ( $item_count === $item_position ) {
 					$sep  = '';
+					$item = sprintf( '<span itemprop="name">%s</span>', $this->items[$item_count - 1] );
 				} else {
 					$sep = $separator;
 				}

@@ -1,7 +1,8 @@
 # OceanWP Changelog
 
 ### _2023.09.XX_ - 3.5.1
-- **Fixed**: Megamenu wrong calculation for left position when page set to boxed layout.
+- **Fixed**: Megamenu: wrong calculation for left position when page set to boxed layout.
+- **Fixed**: Breadcrumb: invalid items when navigate to paged items.
 
 ### _2023.09.06_ - 3.5.0
 - **Added**: Supprot for new the metabox framework.
