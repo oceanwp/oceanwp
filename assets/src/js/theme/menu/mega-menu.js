@@ -100,7 +100,7 @@ class MegaMenu {
     const menuItem = event.currentTarget;
     const content = menuItem.querySelector(".megamenu");
     let leftPosition = parseInt(
-      offset(menuItem).left - offset(wrapper).left + 1
+      offset(menuItem).left - offset(wrapper).left
     );
 
     if (!content) {
