@@ -49,11 +49,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 
 			add_action( 'wp', array( $this, 'course_details' ) );
 
-			// Fix for the OceanWP Settings values not saved
-			if ( OCEAN_EXTRA_ACTIVE ) {
-				add_action( 'llms_metabox_after_save_lifterlms-course-options', array( $this, 'butterbean_fix' ) );
-			}
-
 			// Distraction free checkout
 			add_filter( 'ocean_display_top_bar', array( $this, 'distraction_free' ), 11 );
 			add_filter( 'ocean_display_navigation', array( $this, 'distraction_free' ), 11 );
@@ -332,7 +327,7 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			}
 
 			if( ( is_course() || is_lesson() )
-				 && true == get_theme_mod( 'ocean_llms_distraction_free_learning', false ) ) {
+				&& true == get_theme_mod( 'ocean_llms_distraction_free_learning', false ) ) {
 				$return = false;
 			}
 
@@ -395,16 +390,6 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 			}
 
 			return $classes;
-		}
-
-
-		/**
-		 * Fix for the OceanWP Settings values not saved
-		 *
-		 * @since 1.2.10
-		 */
-		public static function butterbean_fix( $post_id ) {
-			butterbean()->update( $post_id );
 		}
 
 		/**

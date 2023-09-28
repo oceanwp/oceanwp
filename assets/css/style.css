@@ -6126,6 +6126,12 @@ body.breadcrumbs-position-default .page-header-title {
   margin: 0;
 }
 
+.elementor .site-breadcrumbs {
+  position: relative;
+  display: block;
+  overflow: visible;
+}
+
 /*------------------------------------*
   All Devices under 960px
 *------------------------------------*/

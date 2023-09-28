@@ -3,6 +3,9 @@
 ### _2023.09.XX_ - 3.5.1
 - **Fixed**: Megamenu: wrong calculation for left position when page set to boxed layout.
 - **Fixed**: Breadcrumb: invalid items when navigate to paged items.
+- **Fixed**: Compatibility: Lifter LMS: Fatal error when adding a course.
+- **Fixed**: Compatibility: LearnDash: Fatal error when adding a course.
+- **Fixed**: Meta Style: Vertically align icon when using svg icon.
 
 ### _2023.09.06_ - 3.5.0
 - **Added**: Supprot for new the metabox framework.
