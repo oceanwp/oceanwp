@@ -42,6 +42,14 @@ class FullScreenMobileMenu {
 
     delegate(document.body, ".mobile-menu", "click", this.#onMenuButtonClick);
 
+	document
+	.querySelectorAll('#mobile-fullscreen ul > li > a[href^="#"]:not([href="#"])')
+	.forEach((anchorLink) => {
+		anchorLink.addEventListener("click", this.#handleAnchorLinks);
+	});
+
+
+
     document
       .querySelectorAll(
         '#mobile-fullscreen nav ul > li.menu-item-has-children > a > span.dropdown-toggle, #mobile-fullscreen nav ul > li.menu-item-has-children > a[href="#"]'
@@ -61,6 +69,26 @@ class FullScreenMobileMenu {
 
     document.addEventListener("keydown", this.#onDocumentKeydown);
   };
+
+  #handleAnchorLinks = (event) => {
+		// console.log("Anchor link clicked");
+		const targetId = event.currentTarget.getAttribute('href');
+		const targetElement = document.querySelector(targetId);
+
+		if (targetElement) {
+			event.stopPropagation();
+			// console.log("Trying to close menu");
+			this.#closeMenu();
+			setTimeout(function() {
+			   window.scrollTo({
+			 top: targetElement.offsetTop,
+			 behavior: 'smooth'
+				});
+			}, 50)
+		}
+
+	};
+
 
   #onMenuButtonClick = (event) => {
     event.preventDefault();
@@ -89,7 +117,9 @@ class FullScreenMobileMenu {
  }
 
   #closeMenu = () => {
+	// console.log("Inside closeMenu");
     if (visible(this.#elements.menu)) {
+		// console.log("Menu is visible");
       this.#elements.toggleMenuBtn.classList.remove("exit");
       this.#elements.menu.classList.remove("active");
 
@@ -111,7 +141,7 @@ class FullScreenMobileMenu {
         });
 
       this.#elements.hamburgerBtn?.classList.remove("is-active");
-    }
+	}
   };
 
   #onWindowResize = (event) => {
