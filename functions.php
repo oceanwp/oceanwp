@@ -185,7 +185,7 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'oceanwp-svg.php';
 		require_once $dir . 'oceanwp-theme-icons.php';
 		require_once $dir . 'template-helpers.php';
-		require_once $dir . 'customizer/controls/typography/webfonts.php';
+		require_once $dir . 'customizer/setup/webfonts.php';
 		require_once $dir . 'walker/init.php';
 		require_once $dir . 'walker/menu-walker.php';
 		require_once $dir . 'third/class-gutenberg.php';

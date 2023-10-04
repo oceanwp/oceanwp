@@ -142,6 +142,7 @@ $options = [
 				'label' => 'Unit',
 				'attr' => [
 					'transport' => 'postMessage',
+					'default'   => 'px'
 				],
 			],
 			'lineHeight' => [
@@ -311,6 +312,7 @@ $options = [
 				'label' => 'Unit',
 				'attr' => [
 					'transport' => 'postMessage',
+					'default'   => 'px'
 				],
 			],
 			'lineHeight' => [
@@ -468,6 +470,7 @@ $options = [
 				'label' => 'Unit',
 				'attr' => [
 					'transport' => 'postMessage',
+					'default'   => 'px'
 				],
 			],
 			'lineHeight' => [
@@ -625,6 +628,7 @@ $options = [
 				'label' => 'Unit',
 				'attr' => [
 					'transport' => 'postMessage',
+					'default'   => 'px'
 				],
 			],
 			'lineHeight' => [
@@ -782,6 +786,7 @@ $options = [
 				'label' => 'Unit',
 				'attr' => [
 					'transport' => 'postMessage',
+					'default'   => 'px'
 				],
 			],
 			'lineHeight' => [
@@ -939,6 +944,7 @@ $options = [
 				'label' => 'Unit',
 				'attr' => [
 					'transport' => 'postMessage',
+					'default'   => 'px'
 				],
 			],
 			'lineHeight' => [
@@ -1096,6 +1102,7 @@ $options = [
 				'label' => 'Unit',
 				'attr' => [
 					'transport' => 'postMessage',
+					'default'   => 'px'
 				],
 			],
 			'lineHeight' => [
@@ -1253,6 +1260,7 @@ $options = [
 				'label' => 'Unit',
 				'attr' => [
 					'transport' => 'postMessage',
+					'default'   => 'px'
 				],
 			],
 			'lineHeight' => [
@@ -1456,7 +1464,7 @@ $options = [
 				'bottom' => 10
 			],
 
-			'ocean_google_font_subsets_dummy' => [
+			'ocean_google_font_subsets' => [
 				'type' => 'ocean-multiselect',
 				'label' => esc_html__('Font Subsets', 'oceanwp'),
 				'section' => 'ocean_google_font_section',
