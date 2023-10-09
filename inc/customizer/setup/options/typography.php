@@ -209,6 +209,13 @@ $options = [
 					'transport' => 'postMessage',
 				],
 			],
+			'textDecoration' => [
+				'id' => 'body_typography[text-decoration]',
+				'label' => 'Text Decoration',
+				'attr' => [
+					'transport' => 'postMessage',
+				],
+			],
 		]
 	],
 
@@ -364,7 +371,14 @@ $options = [
 				'attr' => [
 					'transport' => 'postMessage',
 				],
-			]
+			],
+			'textDecoration' => [
+				'id' => 'headings_typography[text-decoration]',
+				'label' => 'Text Decoration',
+				'attr' => [
+					'transport' => 'postMessage',
+				],
+			],
 		]
 	],
 
@@ -522,7 +536,14 @@ $options = [
 				'attr' => [
 					'transport' => 'postMessage',
 				],
-			]
+			],
+			'textDecoration' => [
+				'id' => 'headings_h1_typography[text-decoration]',
+				'label' => 'Text Decoration',
+				'attr' => [
+					'transport' => 'postMessage',
+				],
+			],
 		]
 	],
 
@@ -680,7 +701,14 @@ $options = [
 				'attr' => [
 					'transport' => 'postMessage',
 				],
-			]
+			],
+			'textDecoration' => [
+				'id' => 'headings_h2_typography[text-decoration]',
+				'label' => 'Text Decoration',
+				'attr' => [
+					'transport' => 'postMessage',
+				],
+			],
 		]
 	],
 
@@ -838,7 +866,14 @@ $options = [
 				'attr' => [
 					'transport' => 'postMessage',
 				],
-			]
+			],
+			'textDecoration' => [
+				'id' => 'headings_h3_typography[text-decoration]',
+				'label' => 'Text Decoration',
+				'attr' => [
+					'transport' => 'postMessage',
+				],
+			],
 		]
 	],
 
@@ -996,7 +1031,14 @@ $options = [
 				'attr' => [
 					'transport' => 'postMessage',
 				],
-			]
+			],
+			'textDecoration' => [
+				'id' => 'headings_h4_typography[text-decoration]',
+				'label' => 'Text Decoration',
+				'attr' => [
+					'transport' => 'postMessage',
+				],
+			],
 		]
 	],
 
@@ -1154,7 +1196,14 @@ $options = [
 				'attr' => [
 					'transport' => 'postMessage',
 				],
-			]
+			],
+			'textDecoration' => [
+				'id' => 'headings_h5_typography[text-decoration]',
+				'label' => 'Text Decoration',
+				'attr' => [
+					'transport' => 'postMessage',
+				],
+			],
 		]
 	],
 
@@ -1312,7 +1361,14 @@ $options = [
 				'attr' => [
 					'transport' => 'postMessage',
 				],
-			]
+			],
+			'textDecoration' => [
+				'id' => 'headings_h6_typography[text-decoration]',
+				'label' => 'Text Decoration',
+				'attr' => [
+					'transport' => 'postMessage',
+				],
+			],
 		]
 	],
 

@@ -11,8 +11,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $options = [
     'ocean_typography' => [
-        'title' => __( 'Typography', 'oceanwp' ),
+        'title' => __( 'Site Typography', 'oceanwp' ),
         'priority' => 1,
         'options' => ocean_customize_options( 'typography' ),
+    ],
+    'ocean_colors' => [
+        'title' => __( 'Site Colors', 'oceanwp' ),
+        'priority' => 1,
+        'options' => ocean_customize_options( 'colors' ),
     ]
 ];

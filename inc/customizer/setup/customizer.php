@@ -137,10 +137,13 @@ class OceanWP_Customizer_Init {
 
                         $control_args['settings'][$setting_arg_key] = $setting_arg_data['id'];
 
-                        $control_args['settingGroup'][$setting_arg_key] = [
-                            'id' => $setting_arg_key,
-			                'label' => $setting_arg_data['label']
-                        ];
+						if ( 'ocean-color' ===  $option_data['type'] ) {
+							$control_args['json']['settingGroup'][$setting_arg_key] = [
+								'id' => $setting_arg_key,
+								'key' => isset($setting_arg_data['key']) ? $setting_arg_data['key'] : '',
+								'label' => $setting_arg_data['label']
+							];
+						}
                     }
                 }
 
@@ -178,7 +181,7 @@ class OceanWP_Customizer_Init {
                     $control_args['json']['showAlpha'] = $option_data['showAlpha'];
                 }
                 if ( isset( $option_data['showPalette'] ) && $option_data['showPalette'] ) {
-                    $control_args['json']['hideLabel'] = $option_data['showPalette'];
+                    $control_args['json']['showPalette'] = $option_data['showPalette'];
                 }
 				if ( isset( $option_data['subType'] ) && $option_data['subType'] ) {
                     $control_args['json']['subType'] = $option_data['subType'];
@@ -268,7 +271,7 @@ class OceanWP_Customizer_Init {
 			array(
 				// 'options' => ocean_customize_options('options'),
 				// 'isPremium' => ocean_check_pro_license(),
-				'isOE' => ocean_is_oe_active(),
+				'isOE' => ocean_is_oe_active()
 			)
 		);
 	}
@@ -302,6 +305,7 @@ class OceanWP_Customizer_Init {
 			'oceanCustomizePreview',
 			array(
 				'options' => ocean_customize_options('options'),
+				'googleFonts' => oceanwp_google_fonts_array()
 			)
 		);
 	}
