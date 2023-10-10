@@ -43,10 +43,11 @@ class FullScreenMobileMenu {
     delegate(document.body, ".mobile-menu", "click", this.#onMenuButtonClick);
 
 	document
-	.querySelectorAll('#mobile-fullscreen ul > li > a[href^="#"]:not([href="#"])')
+	.querySelectorAll('#mobile-fullscreen ul > li > a[href^="#"]:not([href="#"]), #mobile-fullscreen ul > li > a[href*="/#"]:not([href="#"])')
 	.forEach((anchorLink) => {
 		anchorLink.addEventListener("click", this.#handleAnchorLinks);
 	});
+
 
 
 
@@ -70,24 +71,24 @@ class FullScreenMobileMenu {
     document.addEventListener("keydown", this.#onDocumentKeydown);
   };
 
+
   #handleAnchorLinks = (event) => {
-		// console.log("Anchor link clicked");
-		const targetId = event.currentTarget.getAttribute('href');
-		const targetElement = document.querySelector(targetId);
+    const href = event.currentTarget.getAttribute('href');
+    const anchor = href.substring(href.lastIndexOf('#')); // Extract the #anchor part
+    const targetElement = document.querySelector(anchor);
 
-		if (targetElement) {
-			event.stopPropagation();
-			// console.log("Trying to close menu");
-			this.#closeMenu();
-			setTimeout(function() {
-			   window.scrollTo({
-			 top: targetElement.offsetTop,
-			 behavior: 'smooth'
-				});
-			}, 50)
-		}
+    if (targetElement) {
+        event.stopPropagation();
+        this.#closeMenu();
+        setTimeout(() => {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }, 50);
+    }
+};
 
-	};
 
 
   #onMenuButtonClick = (event) => {
