@@ -19,5 +19,10 @@ $options = [
         'title' => __( 'Site Colors', 'oceanwp' ),
         'priority' => 1,
         'options' => ocean_customize_options( 'colors' ),
+    ],
+    'ocean_styles_and_settings' => [
+        'title' => __( 'Site Style & Settings', 'oceanwp' ),
+        'priority' => 1,
+        'options' => ocean_customize_options( 'styles-and-settings' ),
     ]
 ];

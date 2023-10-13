@@ -354,7 +354,7 @@ $options = [
         'bottom' => 10
     ],
 
-    'ocean_typograhpy_whatnext_links' => [
+    'ocean_colors_whatnext_links' => [
 		'type' => 'ocean-links',
 		'label' => 'What to do next?',
 		'section' => 'ocean_colors',

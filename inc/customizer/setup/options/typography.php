@@ -202,13 +202,13 @@ $options = [
 					'transport' => 'postMessage',
 				],
 			],
-			'textColorHover' => [
-				'id' => 'body_typography[color-hover]',
-				'label' => 'Color',
-				'attr' => [
-					'transport' => 'postMessage',
-				],
-			],
+			// 'textColorHover' => [
+			// 	'id' => 'body_typography[color-hover]',
+			// 	'label' => 'Color',
+			// 	'attr' => [
+			// 		'transport' => 'postMessage',
+			// 	],
+			// ],
 			'textDecoration' => [
 				'id' => 'body_typography[text-decoration]',
 				'label' => 'Text Decoration',
@@ -1518,6 +1518,14 @@ $options = [
 				'active_callback' => 'ocean_is_google_font_settings',
 				'top' => 10,
 				'bottom' => 10
+			],
+
+			'ocean_title_for_font_subset' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__('Google Font Subsets', 'oceanwp'),
+				'section' => 'ocean_google_font_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
 			],
 
 			'ocean_google_font_subsets' => [

@@ -144,6 +144,15 @@ class OceanWP_Customizer_Init {
 								'label' => $setting_arg_data['label']
 							];
 						}
+
+						if ( 'ocean-range-slider' ===  $option_data['type'] ) {
+							if ( 'unit' !== $setting_arg_key ) {
+								$control_args['json']['settingGroup'][$setting_arg_key] = [
+									'id' => $setting_arg_key,
+									'label' => $setting_arg_data['label']
+								];
+							}
+						}
                     }
                 }
 
@@ -192,6 +201,25 @@ class OceanWP_Customizer_Init {
 				if ( isset( $option_data['selector'] ) && $option_data['selector'] ) {
                     $control_args['json']['selector'] = $option_data['selector'];
                 }
+
+				if ( 'ocean-range-slider' ===  $option_data['type'] ) {
+					if ( isset( $option_data['min'] ) && $option_data['min'] ) {
+						$control_args['json']['min'] = $option_data['min'];
+					}
+					if ( isset( $option_data['max'] ) && $option_data['max'] ) {
+						$control_args['json']['max'] = $option_data['max'];
+					}
+					if ( isset( $option_data['step'] ) && $option_data['step'] ) {
+						$control_args['json']['step'] = $option_data['step'];
+					}
+					if ( isset( $option_data['isUnit'] ) && $option_data['isUnit'] ) {
+						$control_args['json']['isUnit'] = $option_data['isUnit'];
+					}
+					if ( isset( $option_data['isResponsive'] ) && $option_data['isResponsive'] ) {
+						$control_args['json']['isResponsive'] = $option_data['isResponsive'];
+					}
+				}
+
 
                 $wp_customize->add_control(
                     $option_key,
