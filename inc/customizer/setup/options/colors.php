@@ -21,8 +21,8 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_background_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'ocean_background_color',
                 'key' => 'normal',
                 'label' => 'Select Color',
@@ -33,8 +33,8 @@ $options = [
 					'transport' => 'postMessage',
                     'default'   => '#ffffff',
 				],
-            ),
-        )
+            ],
+        ]
 	],
 
 	'ocean_primary_colors' => [
@@ -47,8 +47,8 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_primary_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'ocean_primary_color',
                 'key' => 'normal',
                 'label' => 'Normal',
@@ -61,8 +61,8 @@ $options = [
 					'transport' => 'postMessage',
                     'default'   => '#13aff0',
 				],
-            ),
-            'hover' => array(
+            ],
+            'hover' => [
                 'id' => 'ocean_hover_primary_color',
                 'key' => 'hover',
                 'label' => 'Hover',
@@ -73,8 +73,8 @@ $options = [
 					'transport' => 'postMessage',
                     'default'   => '#0b7cac',
 				],
-            )
-        )
+            ]
+        ]
 
 	],
 
@@ -88,8 +88,8 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_border_color',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'ocean_main_border_color',
                 'key' => 'normal',
                 'label' => 'Select Color',
@@ -101,8 +101,8 @@ $options = [
 					'transport' => 'postMessage',
                     'default'   => '#e9e9e9',
 				],
-            ),
-        )
+            ],
+        ]
 	],
 
     'ocean_divider_after_border_color' => [
@@ -124,16 +124,16 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_body_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'body_typography[color]',
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'attr' => [
 					'transport' => 'postMessage',
 				],
-            ),
-        )
+            ],
+        ]
 	],
 
     'ocean_headings_colors' => [
@@ -146,16 +146,16 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_headings_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'headings_typography[color]',
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'attr' => [
 					'transport' => 'postMessage',
 				],
-            ),
-        )
+            ],
+        ]
 	],
 
     'ocean_headings_h1_colors' => [
@@ -169,16 +169,16 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_headings_h1_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'headings_h1_typography[color]',
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'attr' => [
 					'transport' => 'postMessage',
 				],
-            ),
-        )
+            ],
+        ]
 	],
 
     'ocean_headings_h2_colors' => [
@@ -192,16 +192,16 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_headings_h2_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'headings_h2_typography[color]',
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'attr' => [
 					'transport' => 'postMessage',
 				],
-            ),
-        )
+            ],
+        ]
 	],
 
     'ocean_headings_h3_colors' => [
@@ -215,16 +215,16 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_headings_h3_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'headings_h3_typography[color]',
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'attr' => [
 					'transport' => 'postMessage',
 				],
-            ),
-        )
+            ],
+        ]
 	],
 
     'ocean_headings_h4_colors' => [
@@ -238,16 +238,16 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_headings_h4_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'headings_h4_typography[color]',
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'attr' => [
 					'transport' => 'postMessage',
 				],
-            ),
-        )
+            ],
+        ]
 	],
 
     'ocean_headings_h5_colors' => [
@@ -261,16 +261,16 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_headings_h5_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'headings_h5_typography[color]',
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'attr' => [
 					'transport' => 'postMessage',
 				],
-            ),
-        )
+            ],
+        ]
 	],
 
     'ocean_headings_h6_colors' => [
@@ -284,16 +284,16 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_headings_h6_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'headings_h6_typography[color]',
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'attr' => [
 					'transport' => 'postMessage',
 				],
-            ),
-        )
+            ],
+        ]
 	],
 
     'ocean_divider_after_headings_color' => [
@@ -315,8 +315,8 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'wrapper' => 'ocean_links_colors',
-        'setting_args' => array(
-            'normal' => array(
+        'setting_args' => [
+            'normal' => [
                 'id' => 'ocean_links_color',
                 'key' => 'normal',
                 'label' => 'Normal',
@@ -328,8 +328,8 @@ $options = [
 					'transport' => 'postMessage',
                     'default'   => '#333333',
 				],
-            ),
-            'hover' => array(
+            ],
+            'hover' => [
                 'id' => 'ocean_links_color_hover',
                 'key' => 'hover',
                 'label' => 'Hover',
@@ -341,8 +341,8 @@ $options = [
 					'transport' => 'postMessage',
                     'default'   => '#13aff0',
 				],
-            )
-        )
+            ]
+        ]
 	],
 
     'ocean_divider_after_link_color' => [

@@ -24,5 +24,10 @@ $options = [
         'title' => __( 'Site Style & Settings', 'oceanwp' ),
         'priority' => 1,
         'options' => ocean_customize_options( 'styles-and-settings' ),
+    ],
+    'ocean_site_page_settings' => [
+        'title' => __( 'Site Page Settings', 'oceanwp' ),
+        'priority' => 1,
+        'options' => ocean_customize_options( 'page-settings' ),
     ]
 ];

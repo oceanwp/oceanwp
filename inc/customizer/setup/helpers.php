@@ -108,3 +108,87 @@ if (! function_exists('ocean_find_key_recursive')) {
 		}
 	}
 }
+
+/**
+ * Get Icons for Scroll top
+ */
+if ( ! function_exists( 'oceanwp_get_scroll_top_icons' ) ) {
+
+	function oceanwp_get_scroll_top_icons() {
+
+		// Add none to top of array
+		// $icons_array = array(
+		// 	'none' => '',
+		// );
+
+		// // Define return icons
+		// $return_icons = array();
+
+		// // Returns up arrows only
+		// if ( 'up_arrows' == $return ) {
+		// 	$return_icons = array( 'chevron_up', 'caret_up', 'angle_up', 'double_arrows_up', 'long_arrow_alt_up', 'arrow_alt_circle_up', 'arrow_up', 'level_up_alt', 'caret_square_up' );
+		// 	$return_icons = array_combine( $return_icons, $return_icons );
+		// }
+
+		$icons = [
+			'chevron_up' => [
+				'id'     => 'chevron_up',
+				'label'   => 'chevron up',
+				'content' => oceanwp_icon( 'chevron_up', false ),
+			],
+			'caret_up'  => [
+				'id'     => 'caret_up',
+				'label'   => 'caret up',
+				'content' => oceanwp_icon( 'caret_up', false ),
+			],
+			'angle_up'  => [
+				'id'     => 'angle_up',
+				'label'   => 'angle up',
+				'content' => oceanwp_icon( 'angle_up', false ),
+			],
+			'double_arrows_up'  => [
+				'id'     => 'double_arrows_up',
+				'label'   => 'double arrows up',
+				'content' => oceanwp_icon( 'double_arrows_up', false ),
+			],
+			'long_arrow_alt_up'  => [
+				'id'     => 'long_arrow_alt_up',
+				'label'   => esc_html__('Left', 'oceanwp'),
+				'content' => oceanwp_icon( 'double_arrows_up', false ),
+			],
+			'arrow_alt_circle_up'  => [
+				'id'     => 'arrow_alt_circle_up',
+				'label'   => 'arrow alt circle up',
+				'content' => oceanwp_icon( 'arrow_alt_circle_up', false ),
+			],
+			'arrow_up'  => [
+				'id'     => 'arrow_up',
+				'label'   => 'arrow up',
+				'content' => oceanwp_icon( 'arrow_up', false ),
+			],
+			'level_up_alt'  => [
+				'id'     => 'level_up_alt',
+				'label'   => 'level up alt',
+				'content' => oceanwp_icon( 'level_up_alt', false ),
+			],
+			'caret_square_up'  => [
+				'id'     => 'caret_square_up',
+				'label'   => 'caret square up',
+				'content' => oceanwp_icon( 'caret_square_up', false ),
+			],
+		];
+
+		return apply_filters( 'oceanwp_get_scroll_top_icons', $icons );
+
+	}
+}
+
+/**
+ * Breadcrumb source choice
+ */
+function oceanwp_breadcrumbs_source_choices() {
+
+	$source_list = array( 'default' => esc_html__( 'Default', 'oceanwp' ) );
+
+	return apply_filters( 'oceanwp_breadcrumbs_source_list', $source_list );
+}

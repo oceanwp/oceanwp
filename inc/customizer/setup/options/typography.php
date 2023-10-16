@@ -1621,6 +1621,5 @@ $options = [
 		'section' => 'ocean_typography',
 		'transport' => 'postMessage',
 		'priority' => 10,
-	],
-
+	]
 ];
