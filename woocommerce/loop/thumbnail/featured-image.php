@@ -38,6 +38,9 @@ if ( oceanwp_get_schema_markup( 'image' ) ) {
 	$img_args['itemprop'] = 'image';
 }
 
+// Define filter for thumbnail size.
+$image_size = apply_filters( 'oceanwp_woo_thumbnail_size', 'woocommerce_thumbnail' );
+
 // Display featured image if defined.
 if ( $attachment ) {
 	?>
@@ -50,19 +53,19 @@ if ( $attachment ) {
 			|| ( $disable_links && is_user_logged_in() ) ) {
 
 			ocean_woo_img_link_open();
-			
+
 				// Single Image.
 
-				echo wp_get_attachment_image( $attachment, 'woocommerce_thumbnail', '', $img_args );
+				echo wp_get_attachment_image( $attachment, $image_size, '', $img_args );
 			ocean_woo_img_link_close();
 
 		} else {
-				
+
 			// Single Image.
-			echo wp_get_attachment_image( $attachment, 'woocommerce_thumbnail', '', $img_args );
+			echo wp_get_attachment_image( $attachment, $image_size, '', $img_args );
 
 		}
-		
+
 		do_action( 'ocean_after_product_entry_image' );
 		?>
 	</div><!-- .woo-entry-image -->
@@ -80,13 +83,13 @@ if ( $attachment ) {
 			|| ( $disable_links && is_user_logged_in() ) ) {
 
 			ocean_woo_img_link_open();
-			
+
 				echo '<img src="' . esc_url( wc_placeholder_img_src() ) . '" alt="' . esc_html__( 'Placeholder Image', 'oceanwp' ) . '" class="woo-entry-image-main" />';
-					
+
 			ocean_woo_img_link_close();
 
 		} else {
-				
+
 			echo '<img src="' . esc_url( wc_placeholder_img_src() ) . '" alt="' . esc_html__( 'Placeholder Image', 'oceanwp' ) . '" class="woo-entry-image-main" />';
 
 		}
