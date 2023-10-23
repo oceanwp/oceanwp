@@ -80,13 +80,13 @@ $options = [
             ],
 
             'ocean_main_container_width' => [
+                'id'      => 'ocean_main_container_width',
                 'label'    => esc_html__( 'Main Container Width', 'oceanwp' ),
                 'type'     => 'ocean-range-slider',
                 'section'  => 'ocean_site_layout_section',
                 'transport' => 'postMessage',
                 'priority' => 10,
                 'hideLabel'    => false,
-                'wrapper'      => 'ocean_main_container_width',
                 'isUnit'       => true,
                 'isResponsive' => false,
                 'min'          => 1,
@@ -98,6 +98,7 @@ $options = [
                         'label' => 'Desktop',
                         'attr' => [
                             'transport' => 'postMessage',
+                            'default' => 1200,
                         ],
                     ],
                     'unit' => [
@@ -105,8 +106,17 @@ $options = [
                         'label' => 'Unit',
                         'attr' => [
                             'transport' => 'postMessage',
+                            'default' => 'px',
                         ],
                     ],
+                ],
+                'preview' => 'queryWithType',
+                // 'css' => [
+                //     'selector' => '.container',
+                //     'property' => 'width'
+                // ]
+                'css' => [
+                    '.container' => 'width'
                 ]
             ],
 
@@ -137,14 +147,14 @@ $options = [
                     ],
 
                     'ocean_separate_content_padding' => [
+                        'id'      => 'ocean_separate_content_padding',
                         'label'       => esc_html__( 'Content Padding', 'oceanwp' ),
-						'description' => esc_html__( 'Add a custom content padding. px - em - %.', 'oceanwp' ),
+						'description' => esc_html__( 'Add a custom content padding.', 'oceanwp' ),
                         'type'     => 'ocean-range-slider',
                         'section'  => 'ocean_site_layout_content_settings',
                         'transport' => 'postMessage',
                         'priority' => 10,
                         'hideLabel'    => false,
-                        'wrapper'      => 'ocean_separate_content_padding',
                         'isUnit'       => true,
                         'isResponsive' => false,
                         'min'          => 1,
@@ -168,17 +178,25 @@ $options = [
                                 ],
                             ],
                         ],
+                        'preview' => 'queryWithType',
+                        // 'css' => [
+                        //     'selector' => '.separate-layout .content-area, .separate-layout.content-left-sidebar .content-area, .content-both-sidebars.scs-style .content-area, .separate-layout.content-both-sidebars.ssc-style .content-area, body.separate-blog.separate-layout #blog-entries > *, body.separate-blog.separate-layout .oceanwp-pagination, body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner',
+                        //     'property' => 'padding'
+                        // ]
+                        'css' => [
+                            '.separate-layout .content-area, .separate-layout.content-left-sidebar .content-area, .content-both-sidebars.scs-style .content-area, .separate-layout.content-both-sidebars.ssc-style .content-area, body.separate-blog.separate-layout #blog-entries > *, body.separate-blog.separate-layout .oceanwp-pagination, body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner' => 'padding'
+                        ]
                     ],
 
                     'ocean_separate_widgets_padding' => [
-                        'label'       => esc_html__( 'Content Padding', 'oceanwp' ),
-                        'description' => esc_html__( 'Add a custom content padding. px - em - %.', 'oceanwp' ),
+                        'id'      => 'ocean_separate_widgets_padding',
+                        'label'       => esc_html__( 'Widget Padding', 'oceanwp' ),
+                        'description' => esc_html__( 'Add a custom content padding.', 'oceanwp' ),
                         'type'     => 'ocean-range-slider',
                         'section'  => 'ocean_site_layout_content_settings',
                         'transport' => 'postMessage',
                         'priority' => 10,
                         'hideLabel'    => false,
-                        'wrapper'      => 'ocean_separate_widgets_padding',
                         'isUnit'       => true,
                         'isResponsive' => false,
                         'min'          => 1,
@@ -201,6 +219,14 @@ $options = [
                                     'default' => 'px'
                                 ],
                             ],
+                        ],
+                        'preview' => 'queryWithType',
+                        // 'css' => [
+                        //     'selector' => '.separate-layout .widget-area .sidebar-box',
+                        //     'property' => 'padding'
+                        // ]
+                        'css' => [
+                            '.separate-layout .widget-area .sidebar-box' => 'padding'
                         ]
                     ],
                 ]
@@ -245,13 +271,14 @@ $options = [
                 'label' => esc_html__( 'Image', 'oceanwp' ),
                 'type' => 'ocean-image',
                 'section'  => 'ocean_site_layout_section',
-                'transport' => 'postMessage',
+                'transport' => 'refresh',
                 'priority' => 10,
                 'hideLabel' => false,
-                'mediaType' => 'image'
+                'mediaType' => 'image',
             ],
 
             'ocean_background_image_position' => [
+                'id' => 'ocean_background_image_position',
                 'type' => 'ocean-select',
                 'label' => esc_html__('Position', 'oceanwp' ),
                 'section' => 'ocean_site_layout_section',
@@ -273,9 +300,15 @@ $options = [
                     'bottom center' => esc_html__( 'Bottom Center', 'oceanwp' ),
                     'bottom right'  => esc_html__( 'Bottom Right', 'oceanwp' ),
                 ],
+                'preview' => 'queryWithAttr',
+                'css' => [
+                    'selector' => 'body',
+                    'property' => 'background-position'
+                ]
             ],
 
             'ocean_background_image_repeat' => [
+                'id' => 'ocean_background_image_repeat',
                 'type' => 'ocean-select',
                 'label' => esc_html__('Repeat', 'oceanwp' ),
                 'section' => 'ocean_site_layout_section',
@@ -291,10 +324,16 @@ $options = [
                     'repeat'    => esc_html__( 'Repeat', 'oceanwp' ),
                     'repeat-x'  => esc_html__( 'Repeat-x', 'oceanwp' ),
                     'repeat-y'  => esc_html__( 'Repeat-y', 'oceanwp' ),
+                ],
+                'preview' => 'queryWithAttr',
+                'css' => [
+                    'selector' => 'body',
+                    'property' => 'background-repeat'
                 ]
             ],
 
             'ocean_background_image_attachment' => [
+                'id' => 'ocean_background_image_attachment',
                 'type' => 'ocean-buttons',
                 'label' => esc_html__('Attachment', 'oceanwp'),
                 'section' => 'ocean_site_layout_section',
@@ -320,10 +359,16 @@ $options = [
                         'label'   => esc_html__('Fixed', 'oceanwp'),
                         'content' => 'Fixed'
                     ]
+                ],
+                'preview' => 'queryWithAttr',
+                'css' => [
+                    'selector' => 'body',
+                    'property' => 'background-attachment'
                 ]
             ],
 
             'ocean_background_image_size' => [
+                'id' => 'ocean_background_image_size',
                 'type' => 'ocean-buttons',
                 'label' => esc_html__('Size', 'oceanwp'),
                 'section' => 'ocean_site_layout_section',
@@ -354,6 +399,11 @@ $options = [
                         'label'   => esc_html__('Contain', 'oceanwp'),
                         'content' => 'Contain'
                     ]
+                ],
+                'preview' => 'queryWithAttr',
+                'css' => [
+                    'selector' => 'body',
+                    'property' => 'background-size'
                 ]
             ],
 
@@ -618,6 +668,7 @@ $options = [
 		'priority' => 10,
 		'options' => [
             'ocean_theme_button_padding_dimensions' => [
+                'id' => 'ocean_theme_button_padding_dimensions',
                 'label'    => esc_html__( 'Padding (px)', 'oceanwp' ),
                 'type'     => 'ocean-spacing',
                 'section'  => 'ocean_site_button_section',
@@ -625,7 +676,6 @@ $options = [
                 'priority' => 10,
                 'hideLabel'    => false,
                 'isType'       => 'padding',
-                'wrapper'      => 'ocean_theme_button_padding_dimensions',
                 'setting_args' => [
                     'spacingTop' => [
                         'id' => 'ocean_theme_button_top_padding',
@@ -715,6 +765,11 @@ $options = [
                             'transport' => 'postMessage',
                         ],
                     ],
+                ],
+                'preview' => 'queryWithType',
+                'css' => [
+                    'selector' => 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button',
+                    'property' => 'padding'
                 ]
             ],
 
@@ -728,6 +783,7 @@ $options = [
             ],
 
             'ocean_theme_button_border_radius_settings' => [
+                'id' => 'ocean_theme_button_border_radius_settings',
                 'label'    => esc_html__( 'Radius (px)', 'oceanwp' ),
                 'type'     => 'ocean-spacing',
                 'section'  => 'ocean_site_button_section',
@@ -735,7 +791,6 @@ $options = [
                 'priority' => 10,
                 'hideLabel'    => false,
                 'isType'       => 'radius',
-                'wrapper'      => 'ocean_theme_button_border_radius_settings',
                 'setting_args' => [
                     'spacingTop' => [
                         'id' => 'ocean_theme_button_top_radius',
@@ -825,6 +880,11 @@ $options = [
                             'transport' => 'postMessage',
                         ],
                     ],
+                ],
+                'preview' => 'queryWithType',
+                'css' => [
+                    'selector' => 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button',
+                    'property' => 'border-radius'
                 ]
             ],
 
@@ -838,6 +898,7 @@ $options = [
             ],
 
             'ocean_theme_button_border_type' => [
+                'id' => 'ocean_theme_button_border_type',
                 'type' => 'ocean-select',
                 'label' => esc_html__('Border Type', 'oceanwp' ),
                 'section' => 'ocean_site_button_section',
@@ -845,7 +906,6 @@ $options = [
                 'transport' => 'postMessage',
                 'priority' => 10,
                 'hideLabel' => false,
-                'wrapper' => 'ocean_theme_button_border_type',
                 'multiple' => false,
                 'choices' => [
                     'dotted' => esc_html__( 'Dotted', 'oceanwp' ),
@@ -859,16 +919,21 @@ $options = [
                     'none' => esc_html__( 'None', 'oceanwp' ),
                     'hidden' => esc_html__( 'Hidden', 'oceanwp' )
                 ],
+                'preview' => 'queryWithAttr',
+                'css' => [
+                    'selector' => 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button',
+                    'property' => 'border-style'
+                ]
             ],
 
             'ocean_theme_button_border_width_setting' => [
+                'id'      => 'ocean_theme_button_border_width_setting',
                 'label'    => esc_html__( 'Border Width', 'oceanwp' ),
                 'type'     => 'ocean-range-slider',
                 'section'  => 'ocean_site_button_section',
                 'transport' => 'postMessage',
                 'priority' => 10,
                 'hideLabel'    => false,
-                'wrapper'      => 'ocean_theme_button_border_width_setting',
                 'isUnit'       => true,
                 'isResponsive' => true,
                 'min'          => 1,
@@ -905,6 +970,14 @@ $options = [
                             'default' => 'px',
                         ],
                     ],
+                ],
+                'preview' => 'queryWithType',
+                // 'css' => [
+                //     'selector' => 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button',
+                //     'property' => 'border-width'
+                // ],
+                'css' => [
+                    'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button' => 'border-width'
                 ]
             ],
 
@@ -1102,6 +1175,9 @@ $options = [
                         'id' => 'ocean_theme_button_bg',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button' => 'background-color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default'   => '#13aff0'
@@ -1111,6 +1187,9 @@ $options = [
                         'id' => 'ocean_theme_button_hover_bg',
                         'key' => 'hover',
                         'label' => esc_html__( 'Hover', 'oceanwp' ),
+                        'selector' => [
+                            'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active' => 'background-color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default'   => '#0b7cac'
@@ -1134,6 +1213,9 @@ $options = [
                         'id' => 'ocean_theme_button_color',
                         'key' => 'normal',
                         'label' => esc_html__( 'Normal', 'oceanwp' ),
+                        'selector' => [
+                            'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button' => 'color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default'   => '#ffffff'
@@ -1143,6 +1225,9 @@ $options = [
                         'id' => 'ocean_theme_button_hover_color',
                         'key' => 'hover',
                         'label' => esc_html__( 'Hover', 'oceanwp' ),
+                        'selector' => [
+                            'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active' => 'color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default'   => '#ffffff'
@@ -1166,6 +1251,9 @@ $options = [
                         'id' => 'ocean_theme_button_border_color',
                         'key' => 'normal',
                         'label' => esc_html__( 'Normal', 'oceanwp' ),
+                        'selector' => [
+                            'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button' => 'border-color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
@@ -1174,6 +1262,9 @@ $options = [
                         'id' => 'ocean_theme_button_border_hover_color',
                         'key' => 'hover',
                         'label' => esc_html__( 'Hover', 'oceanwp' ),
+                        'selector' => [
+                            'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active' => 'border-color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
@@ -1243,6 +1334,7 @@ $options = [
 		'priority' => 10,
 		'options' => [
             'ocean_input_padding_dimensions' => [
+                'id' => 'ocean_input_padding_dimensions',
                 'label'    => esc_html__( 'Padding (px)', 'oceanwp' ),
                 'type'     => 'ocean-spacing',
                 'section'  => 'ocean_site_forms_section',
@@ -1340,7 +1432,12 @@ $options = [
                             'transport' => 'postMessage',
                         ],
                     ],
-                ]
+                ],
+                'preview' => 'queryWithType',
+                'css' => [
+                    'selector' => 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea',
+                    'property' => 'padding'
+                ],
             ],
 
             'ocean_divider_after_site_forms_padding' => [
@@ -1353,6 +1450,7 @@ $options = [
             ],
 
             'ocean_input_border_radius_wrap' => [
+                'id' => 'ocean_input_border_radius_wrap',
                 'label'    => esc_html__( 'Radius (px)', 'oceanwp' ),
                 'type'     => 'ocean-spacing',
                 'section'  => 'ocean_site_forms_section',
@@ -1450,6 +1548,11 @@ $options = [
                             'transport' => 'postMessage',
                         ],
                     ],
+                ],
+                'preview' => 'queryWithType',
+                'css' => [
+                    'selector' => 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea',
+                    'property' => 'border-radius'
                 ]
             ],
 
@@ -1463,6 +1566,7 @@ $options = [
             ],
 
             'ocean_site_forms_border_type' => [
+                'id' => 'ocean_site_forms_border_type',
                 'type' => 'ocean-select',
                 'label' => esc_html__('Border Type', 'oceanwp' ),
                 'section' => 'ocean_site_forms_section',
@@ -1470,7 +1574,6 @@ $options = [
                 'transport' => 'postMessage',
                 'priority' => 10,
                 'hideLabel' => false,
-                'wrapper' => 'ocean_site_forms_border_type',
                 'multiple' => false,
                 'choices' => [
                     'dotted' => esc_html__( 'Dotted', 'oceanwp' ),
@@ -1484,9 +1587,15 @@ $options = [
                     'none' => esc_html__( 'None', 'oceanwp' ),
                     'hidden' => esc_html__( 'Hidden', 'oceanwp' )
                 ],
+                'preview' => 'queryWithAttr',
+                'css' => [
+                    'selector' => 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea',
+                    'property' => 'border-style'
+                ]
             ],
 
             'ocean_input_border_width_dimensions' => [
+                'id'      => 'ocean_input_border_width_dimensions',
                 'label'    => esc_html__( 'Border Width (px)', 'oceanwp' ),
                 'type'     => 'ocean-spacing',
                 'section'  => 'ocean_site_forms_section',
@@ -1494,7 +1603,6 @@ $options = [
                 'priority' => 10,
                 'hideLabel'    => false,
                 'isType'       => 'radius',
-                'wrapper'      => 'ocean_input_border_width_dimensions',
                 'setting_args' => [
                     'spacingTop' => [
                         'id' => 'ocean_input_top_border_width',
@@ -1584,6 +1692,11 @@ $options = [
                             'transport' => 'postMessage',
                         ],
                     ],
+                ],
+                'preview' => 'queryWithType',
+                'css' => [
+                    'selector' => 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea',
+                    'property' => 'border-width'
                 ]
             ],
 
@@ -2103,6 +2216,9 @@ $options = [
                         'id' => 'ocean_input_background',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea' => 'background-color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
@@ -2122,11 +2238,15 @@ $options = [
                 'wrapper' => 'ocean_input_label_wrap',
                 'setting_args' => [
                     'normal' => [
-                        'id' => 'ocean_input_label',
+                        'id' => 'ocean_label_color',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            'label, body div.wpforms-container-full .wpforms-form .wpforms-field-label' => 'color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
+                            'default' => '#929292'
                         ],
                     ]
                 ]
@@ -2147,6 +2267,9 @@ $options = [
                         'id' => 'ocean_input_placeholder',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            'form input[type="text"]::placeholder, form input[type="password"]::placeholder, form input[type="email"]::placeholder, form input[type="url"]::placeholder, form input[type="date"]::placeholder, form input[type="month"]::placeholder, form input[type="time"]::placeholder, form input[type="datetime"]::placeholder, form input[type="datetime-local"]::placeholder, form input[type="week"]::placeholder, form input[type="number"]::placeholder, form input[type="search"]::placeholder, form input[type="tel"]::placeholder, form input[type="color"]::placeholder, form select::placeholder, form textarea::placeholder, body div.wpforms-container-full .wpforms-form input[type=date]::placeholder, body div.wpforms-container-full .wpforms-form input[type=datetime]::placeholder, body div.wpforms-container-full .wpforms-form input[type=datetime-local]::placeholder, body div.wpforms-container-full .wpforms-form input[type=email]::placeholder, body div.wpforms-container-full .wpforms-form input[type=month]::placeholder, body div.wpforms-container-full .wpforms-form input[type=number]::placeholder, body div.wpforms-container-full .wpforms-form input[type=password]::placeholder, body div.wpforms-container-full .wpforms-form input[type=range]::placeholder, body div.wpforms-container-full .wpforms-form input[type=search]::placeholder, body div.wpforms-container-full .wpforms-form input[type=tel]::placeholder, body div.wpforms-container-full .wpforms-form input[type=text]::placeholder, body div.wpforms-container-full .wpforms-form input[type=time]::placeholder, body div.wpforms-container-full .wpforms-form input[type=url]::placeholder, body div.wpforms-container-full .wpforms-form input[type=week]::placeholder, body div.wpforms-container-full .wpforms-form select::placeholder, body div.wpforms-container-full .wpforms-form textarea::placeholder' => 'background-color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
@@ -2169,6 +2292,9 @@ $options = [
                         'id' => 'ocean_input_color',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea' => 'color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => '#333333',
@@ -2192,6 +2318,9 @@ $options = [
                         'id' => 'ocean_input_border_color',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea,.select2-container .select2-choice, .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea' => 'border-color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => '#dddddd',
@@ -2201,6 +2330,9 @@ $options = [
                         'id' => 'ocean_input_border_color_focus',
                         'key' => 'focus',
                         'label' => 'Focus',
+                        'selector' => [
+                            'form input[type="text"]:focus,form input[type="password"]:focus,form input[type="email"]:focus,form input[type="tel"]:focus,form input[type="url"]:focus,form input[type="search"]:focus,form textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices, body div.wpforms-container-full .wpforms-form input:focus, body div.wpforms-container-full .wpforms-form textarea:focus, body div.wpforms-container-full .wpforms-form select:focus' => 'border-color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => '#bbbbbb',
@@ -2327,7 +2459,7 @@ $options = [
                 'transport' => 'postMessage',
                 'priority' => 10,
                 'hideLabel'    => false,
-                'wrapper'      => 'ocean_scroll_top_size_setting',
+                'id' => 'ocean_scroll_top_size_setting',
                 'active_callback' => 'ocean_is_scroll_top',
                 'isUnit'       => true,
                 'isResponsive' => true,
@@ -2365,10 +2497,17 @@ $options = [
                             'default' => 'px',
                         ],
                     ],
+                ],
+                'preview' => 'queryWithType',
+                'css' => [
+                    '#scroll-top' => 'width',
+                    '#scroll-top' => 'height',
+                    '#scroll-top' => 'line-height'
                 ]
             ],
 
             'ocean_scroll_top_border_radius_settings' => [
+                'id' => 'ocean_scroll_top_border_radius_settings',
                 'label'    => esc_html__( 'Border Radius (px)', 'oceanwp' ),
                 'type'     => 'ocean-spacing',
                 'section'  => 'ocean_scroll_to_top_section',
@@ -2376,7 +2515,6 @@ $options = [
                 'priority' => 10,
                 'hideLabel'    => false,
                 'isType'       => 'radius',
-                'wrapper'      => 'ocean_scroll_top_border_radius_settings',
                 'active_callback' => 'ocean_is_scroll_top',
                 'setting_args' => [
                     'spacingTop' => [
@@ -2467,7 +2605,12 @@ $options = [
                             'transport' => 'postMessage',
                         ],
                     ],
-                ]
+                ],
+                'preview' => 'queryWithType',
+                'css' => [
+                    'selector' => '#scroll-top',
+                    'property' => 'border-radius'
+                ],
             ],
 
             'ocean_divider_after_scroll_top_border_radius' => [
@@ -2496,6 +2639,9 @@ $options = [
                         'id' => 'ocean_scroll_top_bg',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            '#scroll-top' => 'background-color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => 'rgba(0,0,0,0.4)',
@@ -2505,6 +2651,9 @@ $options = [
                         'id' => 'ocean_scroll_top_bg_hover',
                         'key' => 'hover',
                         'label' => 'Hover',
+                        'selector' => [
+                            '#scroll-top:hover' => 'background-color'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => 'rgba(0,0,0,0.8)',
@@ -2529,6 +2678,10 @@ $options = [
                         'id' => 'ocean_scroll_top_color',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            '#scroll-top' => 'color',
+                            '#scroll-top .owp-icon use' => 'stroke'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => '#ffffff',
@@ -2538,6 +2691,10 @@ $options = [
                         'id' => 'ocean_scroll_top_color_hover',
                         'key' => 'hover',
                         'label' => 'Hover',
+                        'selector' => [
+                            '#scroll-top:hover' => 'color',
+                            '#scroll-top:hover .owp-icon use' => 'stroke'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => '#ffffff',
@@ -2585,17 +2742,17 @@ $options = [
                                 'label'   => esc_html__('Left', 'oceanwp'),
                                 'content' => 'left'
                             ]
-                        ]
+                        ],
                     ],
 
                     'ocean_scroll_top_bottom_position_setting' => [
+                        'id' => 'ocean_scroll_top_bottom_position_setting',
                         'label'    => esc_html__( 'Bottom Position', 'oceanwp' ),
                         'type'     => 'ocean-range-slider',
                         'section'  => 'ocean_scroll_to_top_position_section',
                         'transport' => 'postMessage',
                         'priority' => 10,
                         'hideLabel'    => false,
-                        'wrapper'      => 'ocean_scroll_top_bottom_position_setting',
                         'active_callback' => 'ocean_is_scroll_top',
                         'isUnit'       => true,
                         'isResponsive' => false,
@@ -2619,6 +2776,10 @@ $options = [
                                     'default' => 'px'
                                 ],
                             ],
+                        ],
+                        'preview' => 'queryWithType',
+                        'css' => [
+                            '#scroll-top' => 'bottom',
                         ]
                     ],
 
@@ -2653,7 +2814,7 @@ $options = [
                                     'default' => 'px'
                                 ],
                             ],
-                        ]
+                        ],
                     ],
                 ]
             ],
@@ -2675,13 +2836,13 @@ $options = [
                 'priority' => 10,
                 'options' => [
                     'ocean_scroll_top_icon_size_setting' => [
+                        'id' => 'ocean_scroll_top_icon_size_setting',
                         'label'    => esc_html__( 'Icon Size', 'oceanwp' ),
                         'type'     => 'ocean-range-slider',
                         'section'  => 'ocean_scroll_to_top_icon_section',
                         'transport' => 'postMessage',
                         'priority' => 10,
                         'hideLabel'    => false,
-                        'wrapper'      => 'ocean_scroll_top_icon_size_setting',
                         'active_callback' => 'ocean_is_scroll_top',
                         'isUnit'       => true,
                         'isResponsive' => false,
@@ -2705,6 +2866,12 @@ $options = [
                                     'default' => 'px'
                                 ],
                             ],
+                        ],
+                        'preview' => 'queryWithType',
+                        'css' => [
+                            '#scroll-top' => 'font-size',
+                            '#scroll-top .owp-icon' => 'width',
+                            '#scroll-top .owp-icon' => 'height',
                         ]
                     ],
 
@@ -2834,13 +3001,13 @@ $options = [
             ],
 
             'ocean_pagination_font_size_setting' => [
+                'id' => 'ocean_pagination_font_size_setting',
                 'label'    => esc_html__( 'Font Size', 'oceanwp' ),
                 'type'     => 'ocean-range-slider',
                 'section'  => 'ocean_site_pagination_section',
                 'transport' => 'postMessage',
                 'priority' => 10,
                 'hideLabel'    => false,
-                'wrapper'      => 'ocean_pagination_font_size_setting',
                 'isUnit'       => true,
                 'isResponsive' => true,
                 'min'          => 1,
@@ -2877,6 +3044,10 @@ $options = [
                             'default' => 'px',
                         ],
                     ],
+                ],
+                'preview' => 'queryWithType',
+                'css' => [
+                    '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => 'font-size',
                 ]
             ],
 
@@ -2890,13 +3061,13 @@ $options = [
             ],
 
             'ocean_pagination_border_width_setting' => [
+                'id' => 'ocean_pagination_border_width_setting',
                 'label'    => esc_html__( 'Border Width', 'oceanwp' ),
                 'type'     => 'ocean-range-slider',
                 'section'  => 'ocean_site_pagination_section',
                 'transport' => 'postMessage',
                 'priority' => 10,
                 'hideLabel'    => false,
-                'wrapper'      => 'ocean_pagination_border_width_setting',
                 'isUnit'       => true,
                 'isResponsive' => true,
                 'min'          => 1,
@@ -2933,10 +3104,15 @@ $options = [
                             'default' => 'px',
                         ],
                     ],
+                ],
+                'preview' => 'queryWithType',
+                'css' => [
+                    '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => 'border-width',
                 ]
             ],
 
             'ocean_pagination_border_radius_setting' => [
+                'id' => 'ocean_pagination_border_radius_setting',
                 'label'    => esc_html__( 'Border Radius (px)', 'oceanwp' ),
                 'type'     => 'ocean-spacing',
                 'section'  => 'ocean_site_pagination_section',
@@ -2944,7 +3120,6 @@ $options = [
                 'priority' => 10,
                 'hideLabel'    => false,
                 'isType'       => 'radius',
-                'wrapper'      => 'ocean_pagination_border_radius_setting',
                 'setting_args' => [
                     'spacingTop' => [
                         'id' => 'ocean_pagination_top_radius',
@@ -3034,7 +3209,12 @@ $options = [
                             'transport' => 'postMessage',
                         ],
                     ],
-                ]
+                ],
+                'preview' => 'queryWithType',
+                'css' => [
+                    'selector' => '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span',
+                    'property' => 'border-radius'
+                ],
             ],
 
             'ocean_divider_after_pagination_border_radius_setting' => [
@@ -3061,6 +3241,9 @@ $options = [
                         'id' => 'ocean_pagination_bg',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => 'background-color',
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
@@ -3069,6 +3252,9 @@ $options = [
                         'id' => 'ocean_pagination_hover_bg',
                         'key' => 'hover',
                         'label' => 'Hover',
+                        'selector' => [
+                            '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover' => 'background-color',
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => '#f8f8f8',
@@ -3092,6 +3278,10 @@ $options = [
                         'id' => 'ocean_pagination_color',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => 'color',
+                            '.page-numbers a .owp-icon use' => 'stroke'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => '#555555',
@@ -3101,6 +3291,10 @@ $options = [
                         'id' => 'ocean_pagination_hover_color',
                         'key' => 'hover',
                         'label' => 'Hover',
+                        'selector' => [
+                            '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover' => 'color',
+                            '.page-numbers:hover a .owp-icon use' => 'stroke'
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => '#333333',
@@ -3124,6 +3318,9 @@ $options = [
                         'id' => 'ocean_pagination_border_color',
                         'key' => 'normal',
                         'label' => 'Normal',
+                        'selector' => [
+                            '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => 'border-color',
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => '#e9e9e9',
@@ -3133,6 +3330,9 @@ $options = [
                         'id' => 'ocean_pagination_border_hover_color',
                         'key' => 'hover',
                         'label' => 'Hover',
+                        'selector' => [
+                            '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover' => 'color',
+                        ],
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => '#e9e9e9',
