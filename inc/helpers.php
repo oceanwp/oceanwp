@@ -5081,3 +5081,27 @@ if ( ! function_exists( 'ocean_get_site_name_anchors') ) {
 		return $result;
 	}
 }
+
+/**
+ * Workaround for WPML and Ocean Library Shortcode Translation.
+ * This function modifies the output of the 'oceanwp_library' shortcode for WPML compatibility.
+ *
+ * @param array $out   The output array of shortcode attributes.
+ * @param array $pairs Entire list of supported attributes and their defaults.
+ * @param array $atts  User defined attributes in shortcode tag.
+ *
+ * @return array Filtered output array of shortcode attributes.
+ */
+
+if ( ! function_exists( 'ocean_wpml_filter_oceanwp_library_shortcode' ) ) {
+
+    function ocean_wpml_filter_oceanwp_library_shortcode( $out, $pairs, $atts ) {
+        if ( class_exists( 'Sitepress' ) && isset( $out['id'] ) ) {
+            $post_type = get_post_type( $out['id'] );
+            $out['id'] = apply_filters( 'wpml_object_id', $out['id'], $post_type, true );
+        }
+        return $out;
+    }
+
+    add_filter( 'shortcode_atts_oceanwp_library', 'ocean_wpml_filter_oceanwp_library_shortcode', 10, 3 );
+}
