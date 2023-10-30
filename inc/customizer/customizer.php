@@ -229,7 +229,7 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 
 
 			//wp_enqueue_script( 'oceanwp-customize-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize.js', array( 'jquery' ) );
-			wp_enqueue_style( 'oceanwp-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customize-preview.min.css');
+			//wp_enqueue_style( 'oceanwp-customize-preview', OCEANWP_INC_DIR_URI . 'customizer/assets/css/customize-preview.min.css');
 		}
 
 		/**

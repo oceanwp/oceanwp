@@ -384,6 +384,7 @@ class OceanWP_Typography_CSS {
             'letter-spacing' => 'letterSpacing',
             'font-weight' => 'fontWeight',
             'text-transform' => 'textTransform',
+            'text-decoration' => 'textDecoration',
             'color' => 'textColor',
         ];
 

@@ -156,6 +156,27 @@ class OceanWP_Customizer_Init {
                     }
                 }
 
+				if ( 'ocean-social-links' ===  $option_data['type'] && isset( $option_data['social_profiles'] ) && $option_data['social_profiles'] ) {
+					foreach ( $option_data['social_profiles'] as $social_profile_key => $social_profile_value ) {
+
+						$setting_name = $option_data['social_setting_id'] . '[' . $social_profile_key . ']';
+
+						$wp_customize->add_setting(
+							$setting_name,
+							array(
+								'transport' => 'postMessage'
+							)
+						);
+
+						$control_args['settings'][$social_profile_key] = $setting_name;
+
+						$control_args['json']['settingGroup'][$social_profile_key] = [
+							'id' => $social_profile_key,
+							'label' => $social_profile_value['label']
+						];
+					}
+				}
+
                 if ( isset( $option_data['wrapper'] ) && $option_data['wrapper'] ) {
                     $control_args['json']['wrapper'] = $option_data['wrapper'];
                 }
@@ -220,6 +241,29 @@ class OceanWP_Customizer_Init {
 					}
 				}
 
+				if ( 'ocean-spacing' ===  $option_data['type'] ) {
+					if ( isset( $option_data['isTop'] ) ) {
+						$control_args['json']['isTop'] = $option_data['isTop'];
+					}
+					if ( isset( $option_data['isRight'] ) ) {
+						$control_args['json']['isRight'] = $option_data['isRight'];
+					}
+					if ( isset( $option_data['isBottom'] ) ) {
+						$control_args['json']['isBottom'] = $option_data['isBottom'];
+					}
+					if ( isset( $option_data['isLeft'] ) ) {
+						$control_args['json']['isLeft'] = $option_data['isLeft'];
+					}
+				}
+
+				if ( 'ocean-rich-text' ===  $option_data['type'] ) {
+					if ( isset( $option_data['mediaButtons'] ) ) {
+						$control_args['json']['mediaButtons'] = $option_data['mediaButtons'];
+					}
+					if ( isset( $option_data['tinymce'] ) ) {
+						$control_args['json']['tinymce'] = $option_data['tinymce'];
+					}
+				}
 
                 $wp_customize->add_control(
                     $option_key,

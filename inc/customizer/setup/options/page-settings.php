@@ -28,6 +28,7 @@ $options = [
 	],
 
 	'ocean_page_content_padding' => [
+		'id' => 'ocean_page_content_padding',
 		'label'    => esc_html__( 'Content Padding (px)', 'oceanwp' ),
 		'type'     => 'ocean-spacing',
 		'section'  => 'ocean_site_page_settings',
@@ -121,7 +122,12 @@ $options = [
 					'transport' => 'postMessage',
 				],
 			],
-		]
+		],
+		'preview' => 'queryWithType',
+		'css' => [
+			'selector' => '#main #content-wrap, .separate-layout #main #content-wrap',
+			'property' => 'padding'
+		],
 	],
 
 	'ocean_divider_after_page_content_padding' => [
@@ -352,7 +358,7 @@ $options = [
 				'type' => 'ocean-select',
 				'label' => esc_html__('Heading Tag', 'oceanwp' ),
 				'section' => 'ocean_section_page_title',
-				'transport' => 'postMessage',
+				'transport' => 'refresh',
 				'default' => 'h1',
 				'priority' => 10,
 				'hideLabel' => false,
@@ -390,6 +396,7 @@ $options = [
 				'priority' => 10,
 				'options' => [
 					'ocean_page_header_padding' => [
+						'id' => 'ocean_page_header_padding',
 						'label'    => esc_html__( 'Padding (px)', 'oceanwp' ),
 						'type'     => 'ocean-spacing',
 						'section'  => 'ocean_section_page_title_style',
@@ -485,7 +492,12 @@ $options = [
 									'transport' => 'postMessage',
 								],
 							],
-						]
+						],
+						'preview' => 'queryWithType',
+						'css' => [
+							'selector' => '.page-header',
+							'property' => 'padding'
+						],
 					],
 
 					'ocean_page_header_style' => [
@@ -536,6 +548,7 @@ $options = [
 							],
 
 							'ocean_page_header_bg_title_breadcrumb_position' => [
+								'id' => 'ocean_page_header_bg_title_breadcrumb_position',
 								'type' => 'ocean-buttons',
 								'label' => esc_html__('Title / Breadcrumb Position', 'oceanwp'),
 								'section' => 'ocean_section_page_title_additional_settings',
@@ -561,6 +574,11 @@ $options = [
 										'label'   => esc_html__('Left', 'oceanwp'),
 										'content' => 'left'
 									]
+								],
+								'preview' => 'queryWithAttr',
+								'css' => [
+									'selector' => '.background-image-page-header .page-header-inner, .background-image-page-header .site-breadcrumbs',
+									'property' => 'text-align'
 								]
 							],
 
@@ -578,7 +596,7 @@ $options = [
 								'label' => esc_html__( 'Image', 'oceanwp' ),
 								'type' => 'ocean-image',
 								'section'  => 'ocean_section_page_title_additional_settings',
-								'transport' => 'postMessage',
+								'transport' => 'refresh',
 								'priority' => 10,
 								'hideLabel' => false,
 								'mediaType' => 'image',
@@ -586,6 +604,7 @@ $options = [
 							],
 
 							'ocean_page_header_bg_image_height_setting' => [
+								'id' => 'ocean_page_header_bg_image_height_setting',
 								'label'    => esc_html__( 'Height', 'oceanwp' ),
 								'type'     => 'ocean-range-slider',
 								'section'  => 'ocean_section_page_title_additional_settings',
@@ -615,10 +634,15 @@ $options = [
 											'default' => 'px'
 										]
 									]
+								],
+								'preview' => 'queryWithType',
+								'css' => [
+									'.page-header' => 'height',
 								]
 							],
 
 							'ocean_page_header_bg_image_position' => [
+								'id' => 'ocean_page_header_bg_image_position',
 								'type' => 'ocean-select',
 								'label' => esc_html__('Position', 'oceanwp' ),
 								'section' => 'ocean_section_page_title_additional_settings',
@@ -640,9 +664,15 @@ $options = [
 									'bottom center' => esc_html__( 'Bottom Center', 'oceanwp' ),
 									'bottom right'  => esc_html__( 'Bottom Right', 'oceanwp' ),
 								],
+								'preview' => 'queryWithAttr',
+								'css' => [
+									'selector' => '.page-header',
+									'property' => 'background-position'
+								]
 							],
 
 							'ocean_page_header_bg_image_repeat' => [
+								'id' => 'ocean_page_header_bg_image_repeat',
 								'type' => 'ocean-select',
 								'label' => esc_html__('Repeat', 'oceanwp' ),
 								'section' => 'ocean_section_page_title_additional_settings',
@@ -658,10 +688,16 @@ $options = [
 									'repeat'    => esc_html__( 'Repeat', 'oceanwp' ),
 									'repeat-x'  => esc_html__( 'Repeat-x', 'oceanwp' ),
 									'repeat-y'  => esc_html__( 'Repeat-y', 'oceanwp' ),
+								],
+								'preview' => 'queryWithAttr',
+								'css' => [
+									'selector' => '.page-header',
+									'property' => 'background-repeat'
 								]
 							],
 
 							'ocean_page_header_bg_image_attachment' => [
+								'id' => 'ocean_page_header_bg_image_attachment',
 								'type' => 'ocean-buttons',
 								'label' => esc_html__('Attachment', 'oceanwp'),
 								'section' => 'ocean_section_page_title_additional_settings',
@@ -687,10 +723,16 @@ $options = [
 										'label'   => esc_html__('Fixed', 'oceanwp'),
 										'content' => 'Fixed'
 									]
+								],
+								'preview' => 'queryWithAttr',
+								'css' => [
+									'selector' => '.page-header',
+									'property' => 'background-attachment'
 								]
 							],
 
 							'ocean_page_header_bg_image_size' => [
+								'id' => 'ocean_page_header_bg_image_size',
 								'type' => 'ocean-buttons',
 								'label' => esc_html__('Size', 'oceanwp'),
 								'section' => 'ocean_section_page_title_additional_settings',
@@ -721,6 +763,11 @@ $options = [
 										'label'   => esc_html__('Contain', 'oceanwp'),
 										'content' => 'Contain'
 									]
+								],
+								'preview' => 'queryWithAttr',
+								'css' => [
+									'selector' => '.page-header',
+									'property' => 'background-size'
 								]
 							],
 
@@ -735,6 +782,7 @@ $options = [
 							],
 
 							'ocean_page_header_bg_image_overlay_opacity_setting' => [
+								'id' => 'ocean_page_header_bg_image_overlay_opacity_setting',
 								'label'    => esc_html__( 'Overlay Opacity', 'oceanwp' ),
 								'type'     => 'ocean-range-slider',
 								'section'  => 'ocean_section_page_title_additional_settings',
@@ -756,6 +804,10 @@ $options = [
 											'default' => 0.5
 										],
 									]
+								],
+								'preview' => 'queryWithType',
+								'css' => [
+									'.background-image-page-header-overlay' => 'opacity',
 								]
 							],
 
@@ -863,7 +915,7 @@ $options = [
 					'ocean_page_title_typography' => [
 						'id' => 'ocean_page_title_typography',
 						'type' => 'ocean-typography',
-						'label' => esc_html__('Title Typography + Color', 'oceanwp'),
+						'label' => esc_html__('Title Typography', 'oceanwp'),
 						'section' => 'ocean_section_page_title_style',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -1015,13 +1067,6 @@ $options = [
 									'transport' => 'postMessage',
 								],
 							],
-							'textColor' => [
-								'id' => 'page_title_typography[color]',
-								'label' => 'Color',
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
 							'textDecoration' => [
 								'id' => 'page_title_typography[text-decoration]',
 								'label' => 'Text Decoration',
@@ -1032,10 +1077,36 @@ $options = [
 						]
 					],
 
+					'page_title_typography_color_wrap' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Title Color', 'oceanwp' ),
+						'section' => 'ocean_section_page_title_style',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'active_callback' => 'oceanwp_is_page_title_display',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'page_title_typography[color]',
+								'key' => 'normal',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
+								'selector' => [
+									'.page-header .page-header-title, .page-header.background-image-page-header .page-header-title' => 'color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => '#f5f5f5',
+								],
+							],
+						]
+					],
+
 					'ocean_page_subheading_typography' => [
 						'id' => 'ocean_page_subheading_typography',
 						'type' => 'ocean-typography',
-						'label' => esc_html__('Subtitle Typography + Color', 'oceanwp'),
+						'label' => esc_html__('Subtitle Typography', 'oceanwp'),
 						'section' => 'ocean_section_page_title_style',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -1187,19 +1258,37 @@ $options = [
 									'transport' => 'postMessage',
 								],
 							],
-							'textColor' => [
-								'id' => 'page_subheading_typography[color]',
-								'label' => 'Color',
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => '#929292'
-								],
-							],
 							'textDecoration' => [
 								'id' => 'page_subheading_typography[text-decoration]',
 								'label' => 'Text Decoration',
 								'attr' => [
 									'transport' => 'postMessage',
+								],
+							],
+						]
+					],
+
+					'page_subheading_typography_color_wrap' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Subtitle Color', 'oceanwp' ),
+						'section' => 'ocean_section_page_title_style',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'active_callback' => 'oceanwp_is_page_title_display',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'page_subheading_typography[color]',
+								'key' => 'normal',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
+								'selector' => [
+									'.page-header .page-subheading' => 'color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => '#929292',
 								],
 							],
 						]
@@ -1676,7 +1765,7 @@ $options = [
                         'label' => esc_html__('Display Item Title', 'oceanwp'),
                         'section' => 'ocean_section_breadcrumb_trail_settings',
                         'default'  => true,
-                        'transport' => 'postMessage',
+                        'transport' => 'refresh',
                         'priority' => 10,
                         'hideLabel' => false,
                         'active_callback' => 'oceanwp_is_active_breadcrumb_callback',

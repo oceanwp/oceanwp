@@ -29,5 +29,10 @@ $options = [
         'title' => __( 'Site Page Settings', 'oceanwp' ),
         'priority' => 1,
         'options' => ocean_customize_options( 'page-settings' ),
+    ],
+    'ocean_header_settings' => [
+        'title' => __( 'Header', 'oceanwp' ),
+        'priority' => 1,
+        'options' => ocean_customize_options( 'header' ),
     ]
 ];

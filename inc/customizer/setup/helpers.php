@@ -192,3 +192,37 @@ function oceanwp_breadcrumbs_source_choices() {
 
 	return apply_filters( 'oceanwp_breadcrumbs_source_list', $source_list );
 }
+
+/**
+ * Get all library template.
+ */
+function oceanwp_library_template_choices() {
+
+	// Return library templates array.
+	$templates = array( '0' => esc_html__( 'Select', 'oceanwp' ) );
+	$get_templates 	= get_posts( array( 'post_type' => 'oceanwp_library', 'numberposts' => -1, 'post_status' => 'publish' ) );
+
+	if ( ! empty ( $get_templates ) ) {
+		foreach ( $get_templates as $template ) {
+			$templates[ $template->ID ] = $template->post_title;
+		}
+	}
+
+	return apply_filters( 'oceanwp_library_template_choices', $templates );
+}
+
+/**
+ * Get all menus.
+ */
+function oceanwp_get_menu_choices() {
+
+	$menus = array( esc_html__( 'Select Your Menu', 'oceanwp' ) );
+
+	$get_menus 	= get_terms( 'nav_menu', array( 'hide_empty' => true ) );
+
+	foreach ( $get_menus as $menu) {
+		$menus[$menu->term_id] = $menu->name;
+	}
+
+	return $menus;
+}
