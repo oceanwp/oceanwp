@@ -30,6 +30,11 @@ $options = [
         'priority' => 1,
         'options' => ocean_customize_options( 'page-settings' ),
     ],
+    'ocean_topbar_settings' => [
+        'title' => __( 'Top Bar', 'oceanwp' ),
+        'priority' => 1,
+        'options' => ocean_customize_options( 'topbar' ),
+    ],
     'ocean_header_settings' => [
         'title' => __( 'Header', 'oceanwp' ),
         'priority' => 1,

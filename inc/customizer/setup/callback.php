@@ -318,3 +318,36 @@ function ocean_cac_has_mobile_menu_display_close_menu_text() {
 		return false;
 	}
 }
+
+function ocean_cac_topbar() {
+	if ( true === get_theme_mod( 'ocean_top_bar', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_topbar_social_menu() {
+	if ( true === get_theme_mod( 'ocean_top_bar', true )
+		&& true === get_theme_mod( 'ocean_top_bar_social', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_custom_logo() {
+	if ( has_custom_logo() ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_not_custom_logo() {
+	if ( has_custom_logo() ) {
+		return false;
+	} else {
+		return true;
+	}
+}

@@ -36,6 +36,14 @@ class OceanWP_Customizer_Init {
         require OCEANWP_INC_DIR . 'customizer/setup/extend-section/class-panel.php';
 		require OCEANWP_INC_DIR . 'customizer/setup/extend-section/class-section.php';
 
+		// Tweak default controls
+		$wp_customize->get_setting( 'custom_logo' )->transport      = 'refresh';
+		$wp_customize->get_setting( 'blogname' )->transport 		= 'postMessage';
+		$wp_customize->get_setting( 'blogdescription' )->transport 	= 'postMessage';
+
+		// Move custom logo setting
+		$wp_customize->get_control( 'custom_logo' )->section 		= 'ocean_header_logo_section';
+
 		$options = ocean_customize_options('options');
 
 		foreach ( $options as $section_key => $section_options ) {

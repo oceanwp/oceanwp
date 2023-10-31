@@ -103,13 +103,13 @@ if ( ! class_exists( 'OceanWP_Customizer' ) ) :
 		 */
 		public static function customize_register( $wp_customize ) {
 
-			// Tweak default controls
-			$wp_customize->get_setting( 'custom_logo' )->transport      = 'refresh';
-			$wp_customize->get_setting( 'blogname' )->transport 		= 'postMessage';
-			$wp_customize->get_setting( 'blogdescription' )->transport 	= 'postMessage';
+			// // Tweak default controls
+			// $wp_customize->get_setting( 'custom_logo' )->transport      = 'refresh';
+			// $wp_customize->get_setting( 'blogname' )->transport 		= 'postMessage';
+			// $wp_customize->get_setting( 'blogdescription' )->transport 	= 'postMessage';
 
-			// Move custom logo setting
-			$wp_customize->get_control( 'custom_logo' )->section 		= 'ocean_header_logo';
+			// // Move custom logo setting
+			// $wp_customize->get_control( 'custom_logo' )->section 		= 'ocean_header_logo';
 
             if ( ! function_exists( 'owp_fs' ) ) {
                 // Add our upsell section
