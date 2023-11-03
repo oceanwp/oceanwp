@@ -351,3 +351,27 @@ function oceanwp_cac_not_custom_logo() {
 		return true;
 	}
 }
+
+function oceanwp_cac_menu_links_effect_blue() {
+	if ( 'one' == get_theme_mod( 'ocean_menu_links_effect', 'no' )
+		|| 'three' == get_theme_mod( 'ocean_menu_links_effect', 'no' )
+		|| 'four' == get_theme_mod( 'ocean_menu_links_effect', 'no' )
+		|| 'five' == get_theme_mod( 'ocean_menu_links_effect', 'no' )
+		|| 'seven' == get_theme_mod( 'ocean_menu_links_effect', 'no' )
+		|| 'nine' == get_theme_mod( 'ocean_menu_links_effect', 'no' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_menu_links_effect_dark() {
+	if ( 'two' == get_theme_mod( 'ocean_menu_links_effect', 'no' )
+		|| 'six' == get_theme_mod( 'ocean_menu_links_effect', 'no' )
+		|| 'eight' == get_theme_mod( 'ocean_menu_links_effect', 'no' )
+		|| 'ten' == get_theme_mod( 'ocean_menu_links_effect', 'no' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}

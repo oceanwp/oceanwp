@@ -14,6 +14,7 @@ $options = [
         'title' => __( 'Site Typography', 'oceanwp' ),
         'priority' => 1,
         'options' => ocean_customize_options( 'typography' ),
+        'icon' => 'dashicons-schedule',
     ],
     'ocean_colors' => [
         'title' => __( 'Site Colors', 'oceanwp' ),
@@ -39,5 +40,6 @@ $options = [
         'title' => __( 'Header', 'oceanwp' ),
         'priority' => 1,
         'options' => ocean_customize_options( 'header' ),
+        'icon' => 'dashicons-align-wide',
     ]
 ];

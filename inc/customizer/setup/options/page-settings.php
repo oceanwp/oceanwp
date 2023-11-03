@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $options = [
 
 	'ocean_page_single_layout' => [
-		'label' => esc_html__( 'Layout', 'oceanwp' ),
+		'label' => esc_html__( 'Page Layout', 'oceanwp' ),
 		'type' => 'ocean-radio-image',
 		'section' => 'ocean_site_page_settings',
 		'transport' => 'refresh',
@@ -35,19 +35,14 @@ $options = [
 		'transport' => 'postMessage',
 		'priority' => 10,
 		'hideLabel'    => false,
+		'isLeft'        => false,
+		'isRight'     => false,
 		'isType'       => 'padding',
 		'wrapper'      => 'ocean_page_content_padding',
 		'setting_args' => [
 			'spacingTop' => [
 				'id' => 'ocean_page_content_top_padding',
 				'label' => esc_html__( 'Top', 'oceanwp' ),
-				'attr' => [
-					'transport' => 'postMessage',
-				],
-			],
-			'spacingRight' => [
-				'id' => 'ocean_page_content_right_padding',
-				'label' => esc_html__( 'Right', 'oceanwp' ),
 				'attr' => [
 					'transport' => 'postMessage',
 				],
@@ -59,23 +54,9 @@ $options = [
 					'transport' => 'postMessage',
 				],
 			],
-			'spacingLeft' => [
-				'id' => 'ocean_page_content_left_padding',
-				'label' => esc_html__( 'Left', 'oceanwp' ),
-				'attr' => [
-					'transport' => 'postMessage',
-				],
-			],
 			'spacingTopTablet' => [
 				'id' => 'ocean_page_content_tablet_top_padding',
 				'label' => esc_html__( 'Top', 'oceanwp' ),
-				'attr' => [
-					'transport' => 'postMessage',
-				],
-			],
-			'spacingRightTablet' => [
-				'id' => 'ocean_page_content_tablet_right_padding',
-				'label' => esc_html__( 'Right', 'oceanwp' ),
 				'attr' => [
 					'transport' => 'postMessage',
 				],
@@ -87,13 +68,6 @@ $options = [
 					'transport' => 'postMessage',
 				],
 			],
-			'spacingLeftTablet' => [
-				'id' => 'ocean_page_content_tablet_left_padding',
-				'label' => esc_html__( 'Left', 'oceanwp' ),
-				'attr' => [
-					'transport' => 'postMessage',
-				],
-			],
 			'spacingTopMobile' => [
 				'id' => 'ocean_page_content_mobile_top_padding',
 				'label' => esc_html__( 'Top', 'oceanwp' ),
@@ -101,23 +75,9 @@ $options = [
 					'transport' => 'postMessage',
 				],
 			],
-			'spacingRightMobile' => [
-				'id' => 'ocean_page_content_mobile_right_padding',
-				'label' => esc_html__( 'Right', 'oceanwp' ),
-				'attr' => [
-					'transport' => 'postMessage',
-				],
-			],
 			'spacingBottomMobile' => [
 				'id' => 'ocean_page_content_mobile_bottom_padding',
 				'label' => esc_html__( 'Bottom', 'oceanwp' ),
-				'attr' => [
-					'transport' => 'postMessage',
-				],
-			],
-			'spacingLeftMobile' => [
-				'id' => 'ocean_page_content_mobile_left_padding',
-				'label' => esc_html__( 'Left', 'oceanwp' ),
 				'attr' => [
 					'transport' => 'postMessage',
 				],

@@ -237,6 +237,29 @@ $options = [
                 'active_callback' => 'ocean_cac_topbar',
             ],
 
+            'ocean_top_bar_content' => [
+                'type'     => 'ocean-rich-text',
+                'label'    => esc_html__( 'Content', 'oceanwp' ),
+                'section'  => 'ocean_top_bar_content_section',
+                'transport' => 'postMessage',
+                'default' => esc_html__( 'Place your content here', 'oceanwp' ),
+                'priority' => 10,
+                'hideLabel'    => false,
+                'mediaButtons' => false,
+                'tinymce' => [
+                    'toolbar1' => 'bold,italic,link,undo,redo',
+                ],
+                'active_callback' => 'ocean_cac_topbar',
+            ],
+
+            'ocean_divider_after_top_bar_content_setting' => [
+                'type' => 'ocean-divider',
+                'section' => 'ocean_top_bar_content_section',
+                'transport' => 'postMessage',
+                'priority' => 10,
+                'active_callback' => 'ocean_cac_topbar',
+            ],
+
             'ocean_top_bar_template' => [
                 'type' => 'ocean-select',
                 'label' => esc_html__('Select Template', 'oceanwp' ),
@@ -249,28 +272,6 @@ $options = [
                 'multiple' => false,
                 'active_callback' => 'ocean_cac_topbar',
                 'choices' => oceanwp_library_template_choices(),
-            ],
-
-            'ocean_divider_after_top_bar_template_setting' => [
-                'type' => 'ocean-divider',
-                'section' => 'ocean_top_bar_content_section',
-                'transport' => 'postMessage',
-                'priority' => 10,
-                'active_callback' => 'ocean_cac_topbar',
-            ],
-
-            'ocean_top_bar_content' => [
-                'type'     => 'ocean-rich-text',
-                'label'    => esc_html__( 'Content', 'oceanwp' ),
-                'section'  => 'ocean_top_bar_content_section',
-                'transport' => 'postMessage',
-                'priority' => 10,
-                'hideLabel'    => false,
-                'mediaButtons' => false,
-                'tinymce' => [
-                    'toolbar1' => 'bold,italic,link,undo,redo',
-                ],
-                'active_callback' => 'ocean_cac_topbar',
             ]
         ]
     ],
@@ -390,10 +391,10 @@ $options = [
                                 ],
                             ],
                         ],
-                        // 'preview' => 'queryWithType',
-                        // 'css' => [
-                        //     'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button' => 'border-width'
-                        // ]
+                        'preview' => 'queryWithType',
+                        'css' => [
+                            '#top-bar-social li a' => 'font-size'
+                        ]
                     ],
 
                     'ocean_top_bar_social_padding' => [
@@ -456,7 +457,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            'selector' => '#site-header.medium-header .top-header-wrap',
+                            'selector' => '#top-bar-social li a',
                             'property' => 'padding'
                         ],
                     ],
@@ -485,7 +486,8 @@ $options = [
                                 'key' => 'normal',
                                 'label' => 'Normal',
                                 'selector' => [
-                                    // '#site-header.vertical-header .dropdown-menu ul li a.menu-link' => 'background-color'
+                                    '#top-bar-social li a' => 'color',
+                                    '#top-bar-social li a .owp-icon use' => 'stroke'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -497,7 +499,8 @@ $options = [
                                 'key' => 'hover',
                                 'label' => 'Hover',
                                 'selector' => [
-                                    // '#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover' => 'background-color'
+                                    '#top-bar-social li a:hover' => 'color',
+                                    '#top-bar-social li a:hover .owp-icon use' => 'stroke'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -540,6 +543,50 @@ $options = [
                     ],
                 ]
             ],
+
+            'ocean_divider_for_top_bar_social_menu_custom_template_section' => [
+                'type' => 'ocean-divider',
+                'section' => 'ocean_top_bar_social_menu_section',
+                'transport' => 'postMessage',
+                'priority' => 10,
+                'top' => 10,
+                'bottom' => 10,
+                'active_callback' => 'ocean_cac_topbar_social_menu',
+            ],
+
+            'ocean_top_bar_social_menu_custom_template_section' => [
+                'type' => 'section',
+                'title' => esc_html__('Custom Template', 'oceanwp'),
+                'section' => 'ocean_top_bar_social_menu_section',
+                'after' => 'ocean_divider_for_top_bar_social_menu_custom_template_section',
+                'class' => 'section-site-layout',
+                'priority' => 10,
+                'options' => [
+                    'ocean_desc_for_top_bar_social_menu_custom_template_settings' => [
+                        'type' => 'ocean-content',
+                        'isContent' => esc_html__('Select a template you created in OceanWP > My Library to replace the Topbar Social Icons.', 'oceanwp'),
+                        'section' => 'ocean_top_bar_social_menu_custom_template_section',
+                        'class' => 'description',
+                        'transport' => 'postMessage',
+                        'priority' => 10,
+                        'active_callback' => 'ocean_cac_topbar_social_menu',
+                    ],
+
+                    'ocean_top_bar_social_alt_template' => [
+                        'type' => 'ocean-select',
+                        'label' => esc_html__('Select Template', 'oceanwp' ),
+                        'section' => 'ocean_top_bar_social_menu_custom_template_section',
+                        'transport' => 'refresh',
+                        'default' => '0',
+                        'priority' => 10,
+                        'hideLabel' => false,
+                        'multiple' => false,
+                        'active_callback' => 'ocean_cac_topbar_social_menu',
+                        'choices' => oceanwp_library_template_choices(),
+                    ],
+
+                ]
+            ]
         ]
     ],
 
@@ -741,7 +788,7 @@ $options = [
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'selector' => [
-                    //'#site-header.vertical-header #vertical-searchform form input::placeholder' => 'color'
+                    '#top-bar-wrap,.oceanwp-top-bar-sticky' => 'background-color'
                 ],
                 'attr' => [
                     'transport' => 'postMessage',
@@ -767,7 +814,7 @@ $options = [
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'selector' => [
-                    //'#site-header.vertical-header #vertical-searchform form input::placeholder' => 'color'
+                    '#top-bar-wrap{border-color' => 'border-color'
                 ],
                 'attr' => [
                     'transport' => 'postMessage',
@@ -793,7 +840,7 @@ $options = [
                 'key' => 'normal',
                 'label' => 'Select Color',
                 'selector' => [
-                    //'#site-header.vertical-header #vertical-searchform form input::placeholder' => 'color'
+                    '#top-bar-wrap,#top-bar-content strong' => 'color'
                 ],
                 'attr' => [
                     'transport' => 'postMessage',
@@ -819,7 +866,7 @@ $options = [
                 'key' => 'normal',
                 'label' => 'Normal',
                 'selector' => [
-                    //'#site-header.vertical-header #vertical-searchform form input::placeholder' => 'color'
+                    '#top-bar-content a,#top-bar-social-alt a' => 'color'
                 ],
                 'attr' => [
                     'transport' => 'postMessage',
@@ -831,7 +878,7 @@ $options = [
                 'key' => 'hover',
                 'label' => 'Hover',
                 'selector' => [
-                    //'#site-header.vertical-header #vertical-searchform form input::placeholder' => 'color'
+                    '#top-bar-content a:hover,#top-bar-social-alt a:hover' => 'color'
                 ],
                 'attr' => [
                     'transport' => 'postMessage',

@@ -337,6 +337,14 @@ class OceanWP_Customizer_Init {
 			);
 		}
 
+		if ( is_array( $customize_loc ) ) {
+			wp_localize_script(
+				'extend-section',
+				'oceanSectionCustomize',
+				$customize_loc
+			);
+		}
+
 	}
 
 	/**

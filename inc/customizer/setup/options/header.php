@@ -30,7 +30,7 @@ $options = [
 		'options' => [
             'ocean_header_style' => [
                 'type' => 'ocean-select',
-                'label' => esc_html__('Header Style', 'oceanwp' ),
+                'label' => esc_html__('Header Type', 'oceanwp' ),
                 'section' => 'ocean_header_general_section',
                 'transport' => 'refresh',
                 'default' => 'minimal',
@@ -101,8 +101,8 @@ $options = [
                 ]
             ],
 
-            'ocean_spacer_after_custom_header_section' => [
-                'type' => 'ocean-spacer',
+            'ocean_divider_after_custom_header_setting_section' => [
+                'type' => 'ocean-divider',
                 'section' => 'ocean_header_general_section',
                 'transport' => 'postMessage',
                 'priority' => 10,
@@ -112,7 +112,7 @@ $options = [
                 'type' => 'section',
                 'title' => esc_html__('Styling', 'oceanwp'),
                 'section' => 'ocean_header_general_section',
-                'after' => 'ocean_spacer_after_custom_header_section',
+                'after' => 'ocean_divider_after_custom_header_setting_section',
                 'class' => 'section-site-layout',
                 'priority' => 10,
                 'options' => [
@@ -871,7 +871,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            'selector' => '#site-header.medium-header .top-header-wrap',
+                            'selector' => '#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a',
                             'property' => 'padding'
                         ],
                     ],
@@ -1111,7 +1111,7 @@ $options = [
                                     'transport' => 'postMessage',
                                 ],
                             ],
-                        ],
+                        ]
                     ],
 
                     'ocean_divider_after_vertical_header_inner_padding_settings' => [
@@ -1381,8 +1381,8 @@ $options = [
                 ]
             ],
 
-            'ocean_spacer_after_additional_styling_section' => [
-                'type' => 'ocean-spacer',
+            'ocean_divider_after_header_additional_styling_section' => [
+                'type' => 'ocean-divider',
                 'section' => 'ocean_header_general_section',
                 'transport' => 'postMessage',
                 'priority' => 10,
@@ -1392,7 +1392,7 @@ $options = [
                 'type' => 'section',
                 'title' => esc_html__('Colors', 'oceanwp'),
                 'section' => 'ocean_header_general_section',
-                'after' => 'ocean_spacer_after_additional_styling_section',
+                'after' => 'ocean_divider_after_header_additional_styling_section',
                 'class' => 'section-site-layout',
                 'priority' => 10,
                 'options' => [
@@ -1794,7 +1794,7 @@ $options = [
                                 'key' => 'normal',
                                 'label' => 'Normal',
                                 'selector' => [
-                                    '#site-header.full_screen-header .fs-dropdown-menu li a' => 'color'
+                                    '#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input' => 'border-color'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -1806,7 +1806,7 @@ $options = [
                                 'key' => 'hover',
                                 'label' => 'Hover',
                                 'selector' => [
-                                    '#site-header.full_screen-header .fs-dropdown-menu li a:hover' => 'color'
+                                    '#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input:hover' => 'border-color'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -1818,7 +1818,7 @@ $options = [
                                 'key' => 'hover',
                                 'label' => 'Hover',
                                 'selector' => [
-                                    '#site-header.full_screen-header .fs-dropdown-menu li a:hover' => 'color'
+                                    '#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input:focus' => 'border-color'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -1837,9 +1837,35 @@ $options = [
                         'active_callback' => 'ocean_cac_header_medium_style',
                     ],
 
+                    'ocean_medium_header_top_header_bg' => [
+                        'type' => 'ocean-color',
+                        'label' => esc_html__( 'Background Color', 'oceanwp' ),
+                        'section' => 'ocean_header_colors_section',
+                        'transport' => 'postMessage',
+                        'priority' => 10,
+                        'hideLabel' => false,
+                        'showAlpha' => true,
+                        'showPalette' => true,
+                        'active_callback' => 'ocean_cac_header_medium_style',
+                        'setting_args' => [
+                            'normal' => [
+                                'id' => 'ocean_medium_header_top_header_bg',
+                                'key' => 'normal',
+                                'label' => 'Select Color',
+                                'selector' => [
+                                    '#site-header.medium-header .top-header-wrap,.is-sticky #site-header.medium-header.is-transparent .top-header-wrap,#searchform-header-replace' => 'background-color'
+                                ],
+                                'attr' => [
+                                    'transport' => 'postMessage',
+                                    'default'   => '#ffffff',
+                                ],
+                            ],
+                        ]
+                    ],
+
                     'ocean_medium_header_menu_bg' => [
                         'type' => 'ocean-color',
-                        'label' => esc_html__( 'Menu background color', 'oceanwp' ),
+                        'label' => esc_html__( 'Menu background Color', 'oceanwp' ),
                         'section' => 'ocean_header_colors_section',
                         'transport' => 'postMessage',
                         'priority' => 10,
@@ -1941,7 +1967,7 @@ $options = [
                                 'key' => 'normal',
                                 'label' => 'Select Color',
                                 'selector' => [
-                                    '#site-header.medium-header #medium-searchform label' => 'color'
+                                    '#site-header.medium-header #medium-searchform input::placeholder' => 'color'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -2337,8 +2363,8 @@ $options = [
                 ]
             ],
 
-            'ocean_spacer_after_header_colors_section' => [
-                'type' => 'ocean-spacer',
+            'ocean_divider_after_header_colors_section' => [
+                'type' => 'ocean-divider',
                 'section' => 'ocean_header_general_section',
                 'transport' => 'postMessage',
                 'priority' => 10,
@@ -2348,7 +2374,7 @@ $options = [
                 'type' => 'section',
                 'title' => esc_html__('Content', 'oceanwp'),
                 'section' => 'ocean_header_general_section',
-                'after' => 'ocean_spacer_after_header_colors_section',
+                'after' => 'ocean_divider_after_header_colors_section',
                 'class' => 'section-site-layout',
                 'priority' => 10,
                 'options' => [
@@ -2375,23 +2401,30 @@ $options = [
                     ]
                 ]
             ],
+
+            'ocean_spacer_after_header_content_section' => [
+                'type' => 'ocean-spacer',
+                'section' => 'ocean_header_general_section',
+                'transport' => 'postMessage',
+                'priority' => 10,
+                'top' => 1,
+                'bottom' => 10,
+            ],
         ]
     ],
 
-    'ocean_spacer_for_header_media_section' => [
-        'type' => 'ocean-spacer',
+    'ocean_divider_after_header_general_section' => [
+        'type' => 'ocean-divider',
         'section' => 'ocean_header_settings',
         'transport' => 'postMessage',
         'priority' => 10,
-        'top' => 1,
-        'bottom' => 10,
     ],
 
     'header_image' => [
 		'type' => 'section',
 		'title' => esc_html__('Header Media', 'oceanwp'),
 		'section' => 'ocean_header_settings',
-		'after' => 'ocean_spacer_for_header_media_section',
+		'after' => 'ocean_divider_after_header_general_section',
 		'class' => 'section-site-layout',
 		'priority' => 10,
 		'options' => [
@@ -2418,7 +2451,7 @@ $options = [
                         'key' => 'normal',
                         'label' => 'Select Color',
                         'selector' => [
-                            //'#site-header.vertical-header #vertical-searchform form input::placeholder' => 'color'
+                            '#site-header.has-header-media .overlay-header-media' => 'background-color'
                         ],
                         'attr' => [
                             'transport' => 'postMessage',
@@ -2458,11 +2491,11 @@ $options = [
                     'bottom center' => esc_html__( 'Bottom Center', 'oceanwp' ),
                     'bottom right'  => esc_html__( 'Bottom Right', 'oceanwp' ),
                 ],
-                // 'preview' => 'queryWithAttr',
-                // 'css' => [
-                //     'selector' => '.page-header',
-                //     'property' => 'background-position'
-                // ]
+                'preview' => 'queryWithAttr',
+                'css' => [
+                    'selector' => '#site-header',
+                    'property' => 'background-position'
+                ]
             ],
 
             'ocean_header_image_repeat' => [
@@ -2482,11 +2515,11 @@ $options = [
                     'repeat-x'  => esc_html__( 'Repeat-x', 'oceanwp' ),
                     'repeat-y'  => esc_html__( 'Repeat-y', 'oceanwp' ),
                 ],
-                // 'preview' => 'queryWithAttr',
-                // 'css' => [
-                //     'selector' => '.page-header',
-                //     'property' => 'background-repeat'
-                // ]
+                'preview' => 'queryWithAttr',
+                'css' => [
+                    'selector' => '#site-header',
+                    'property' => 'background-repeat'
+                ]
             ],
 
             'ocean_header_image_attachment' => [
@@ -2516,11 +2549,11 @@ $options = [
                         'content' => 'Fixed'
                     ]
                 ],
-                // 'preview' => 'queryWithAttr',
-                // 'css' => [
-                //     'selector' => '.page-header',
-                //     'property' => 'background-attachment'
-                // ]
+                'preview' => 'queryWithAttr',
+                'css' => [
+                    'selector' => '#site-header',
+                    'property' => 'background-attachment'
+                ]
             ],
 
             'ocean_header_image_size' => [
@@ -2556,11 +2589,11 @@ $options = [
                         'content' => 'Contain'
                     ]
                 ],
-                // 'preview' => 'queryWithAttr',
-                // 'css' => [
-                //     'selector' => '.page-header',
-                //     'property' => 'background-size'
-                // ]
+                'preview' => 'queryWithAttr',
+                'css' => [
+                    'selector' => '#site-header',
+                    'property' => 'background-size'
+                ]
             ],
 
         ]
@@ -2647,10 +2680,10 @@ $options = [
                         ],
                     ],
                 ],
-                // 'preview' => 'queryWithType',
-                // 'css' => [
-                //     '.dropdown-menu .sub-menu' => 'min-width'
-                // ]
+                'preview' => 'queryWithType',
+                'css' => [
+                    '#site-logo #site-logo-inner a img, #site-header.center-header #site-navigation-wrap .middle-site-logo a img' => 'max-width'
+                ]
             ],
 
             'ocean_logo_max_height' => [
@@ -2698,10 +2731,10 @@ $options = [
                         ],
                     ],
                 ],
-                // 'preview' => 'queryWithType',
-                // 'css' => [
-                //     '.dropdown-menu .sub-menu' => 'min-width'
-                // ]
+                'preview' => 'queryWithType',
+                'css' => [
+                    '#site-header #site-logo #site-logo-inner a img, #site-header.center-header #site-navigation-wrap .middle-site-logo a img' => 'max-height'
+                ]
             ],
 
             'ocean_logo_color' => [
@@ -2720,7 +2753,7 @@ $options = [
                         'key' => 'normal',
                         'label' => 'Normal',
                         'selector' => [
-                            //'#site-header.vertical-header #vertical-searchform form input::placeholder' => 'color'
+                            '#site-logo a.site-logo-text' => 'color'
                         ],
                         'attr' => [
                             'transport' => 'postMessage',
@@ -2732,7 +2765,7 @@ $options = [
                         'key' => 'hover',
                         'label' => 'Hover',
                         'selector' => [
-                            //'#site-header.vertical-header #vertical-searchform form input::placeholder' => 'color'
+                            '#site-logo a.site-logo-text:hover' => 'color'
                         ],
                         'attr' => [
                             'transport' => 'postMessage',
@@ -2741,23 +2774,186 @@ $options = [
                     ],
                 ]
             ],
+
+            'ocean_logo_typography' => [
+                'id' => 'ocean_logo_typography',
+                'type' => 'ocean-typography',
+                'label' => esc_html__('Typography', 'oceanwp'),
+                'section' => 'ocean_header_logo_section',
+                'transport' => 'postMessage',
+                'priority' => 40,
+                'hideLabel' => false,
+                'selector' => '#site-logo a.site-logo-text',
+                'active_callback' => 'oceanwp_cac_not_custom_logo',
+                'setting_args' => [
+                    'fontFamily' => [
+                        'id' => 'logo_typography[font-family]',
+                        'label' => 'Font Family',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'fontWeight' => [
+                        'id' => 'logo_typography[font-weight]',
+                        'label' => 'Font Weight',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'fontWeightTablet' => [
+                        'id' => 'logo_tablet_typography[font-weight]',
+                        'label' => 'Font Weight',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'fontWeightMobile' => [
+                        'id' => 'logo_mobile_typography[font-weight]',
+                        'label' => 'Font Weight',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'fontSubset' => [
+                        'id' => 'logo_typography[font-subset]',
+                        'label' => 'Font Subset',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'fontSize' => [
+                        'id' => 'logo_typography[font-size]',
+                        'label' => 'Font Size',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                            'default'   => 24
+                        ],
+                    ],
+                    'fontSizeTablet' => [
+                        'id' => 'logo_tablet_typography[font-size]',
+                        'label' => 'Font Size',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'fontSizeMobile' => [
+                        'id' => 'logo_mobile_typography[font-size]',
+                        'label' => 'Font Size',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'fontSizeUnit' => [
+                        'id' => 'logo_typography[font-size-unit]',
+                        'label' => 'Unit',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                            'default'   => 'px'
+                        ],
+                    ],
+                    'letterSpacing' => [
+                        'id' => 'logo_typography[letter-spacing]',
+                        'label' => 'Letter Spacing',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'letterSpacingTablet' => [
+                        'id' => 'logo_tablet_typography[letter-spacing]',
+                        'label' => 'Letter Spacing',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'letterSpacingMobile' => [
+                        'id' => 'logo_mobile_typography[letter-spacing]',
+                        'label' => 'Letter Spacing',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'letterSpacingUnit' => [
+                        'id' => 'logo_typography[letter-spacing-unit]',
+                        'label' => 'Unit',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                            'default'   => 'px'
+                        ],
+                    ],
+                    'lineHeight' => [
+                        'id' => 'logo_typography[line-height]',
+                        'label' => 'Line Height',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                            'default'   => 1.8
+                        ],
+                    ],
+                    'lineHeightTablet' => [
+                        'id' => 'logo_tablet_typography[line-height]',
+                        'label' => 'Line Height',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'lineHeightMobile' => [
+                        'id' => 'logo_mobile_typography[line-height]',
+                        'label' => 'Line Height',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'lineHeightUnit' => [
+                        'id' => 'logo_typography[line-height-unit]',
+                        'label' => 'Unit',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'textTransform' => [
+                        'id' => 'logo_typography[text-transform]',
+                        'label' => 'Text Transform',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'textTransformTablet' => [
+                        'id' => 'logo_tablet_typography[text-transform]',
+                        'label' => 'Text Transform',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'textTransformMobile' => [
+                        'id' => 'logo_mobile_typography[text-transform]',
+                        'label' => 'Text Transform',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                    'textDecoration' => [
+                        'id' => 'logo_typography[text-decoration]',
+                        'label' => 'Text Decoration',
+                        'attr' => [
+                            'transport' => 'postMessage',
+                        ],
+                    ],
+                ]
+            ],
         ]
     ],
 
-    'ocean_spacer_for_header_menu_section' => [
-        'type' => 'ocean-spacer',
+    'ocean_divider_after_header_logo_section' => [
+        'type' => 'ocean-divider',
         'section' => 'ocean_header_settings',
         'transport' => 'postMessage',
         'priority' => 10,
-        'top' => 1,
-        'bottom' => 10,
     ],
 
     'ocean_header_menu_section' => [
 		'type' => 'section',
 		'title' => esc_html__('Menu', 'oceanwp'),
 		'section' => 'ocean_header_settings',
-		'after' => 'ocean_spacer_for_header_menu_section',
+		'after' => 'ocean_divider_after_header_logo_section',
 		'class' => 'section-site-layout',
 		'priority' => 10,
 		'options' => [
@@ -2810,6 +3006,60 @@ $options = [
                     'eight' 	=> esc_html__( 'X Marks The Spot', 'oceanwp' ),
                     'nine' 		=> esc_html__( 'Underline & Overline', 'oceanwp' ),
                     'ten' 		=> esc_html__( 'Backlighting', 'oceanwp' ),
+                ]
+            ],
+
+            'ocean_menu_links_effect_blue_color' => [
+                'type' => 'ocean-color',
+                'label' => esc_html__( 'Links Effect Color', 'oceanwp' ),
+                'section' => 'ocean_header_menu_section',
+                'transport' => 'postMessage',
+                'priority' => 10,
+                'hideLabel' => false,
+                'showAlpha' => true,
+                'showPalette' => true,
+                'active_callback' => 'oceanwp_cac_menu_links_effect_blue',
+                'setting_args' => [
+                    'normal' => [
+                        'id' => 'ocean_menu_links_effect_blue_color',
+                        'key' => 'normal',
+                        'label' => 'Normal',
+                        'selector' => [
+                            '.effect-one #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-three #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-five #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-five #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-nine #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-nine #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after' => 'background-color',
+                            '.effect-four #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-four #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-seven #site-navigation-wrap .dropdown-menu > li > a.menu-link:hover > span:after, .effect-seven #site-navigation-wrap .dropdown-menu > li.sfHover > a.menu-link > span:after' => 'color'
+                        ],
+                        'attr' => [
+                            'transport' => 'postMessage',
+                            'default'   => '#13aff0',
+                        ],
+                    ]
+                ]
+            ],
+
+            'ocean_menu_links_effect_dark_color' => [
+                'type' => 'ocean-color',
+                'label' => esc_html__( 'Links Effect Color', 'oceanwp' ),
+                'section' => 'ocean_header_menu_section',
+                'transport' => 'postMessage',
+                'priority' => 10,
+                'hideLabel' => false,
+                'showAlpha' => true,
+                'showPalette' => true,
+                'active_callback' => 'oceanwp_cac_menu_links_effect_dark',
+                'setting_args' => [
+                    'normal' => [
+                        'id' => 'ocean_menu_links_effect_dark_color',
+                        'key' => 'normal',
+                        'label' => 'Normal',
+                        'selector' => [
+                            '.effect-two #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-eight #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-eight #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after' => 'background-color',
+                            '.effect-six #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-six #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after' => 'border-color'
+                        ],
+                        'attr' => [
+                            'transport' => 'postMessage',
+                            'default'   => 'rgba(0,0,0,0.1)',
+                        ],
+                    ]
                 ]
             ],
 
@@ -2871,7 +3121,7 @@ $options = [
                 'options' => [
                     'ocean_menu_items_padding' => [
                         'id'      => 'ocean_menu_items_padding',
-                        'label'    => esc_html__( 'Height', 'oceanwp' ),
+                        'label'    => esc_html__( 'Menu Items Left and Right Spacing', 'oceanwp' ),
                         'type'     => 'ocean-range-slider',
                         'section'  => 'ocean_header_menu_section',
                         'transport' => 'postMessage',
@@ -2902,8 +3152,8 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-header.vertical-header #site-navigation-wrap .dropdown-menu > li > a' => 'padding-top',
-                            '#site-header.vertical-header #site-navigation-wrap .dropdown-menu > li > a' => 'padding-bottom'
+                            '#site-navigation-wrap .dropdown-menu > li > a' => 'padding-top',
+                            '#site-navigation-wrap .dropdown-menu > li > a' => 'padding-bottom'
                         ]
                     ],
 
@@ -3101,7 +3351,7 @@ $options = [
                                 'key' => 'normal',
                                 'label' => 'Normal',
                                 'selector' => [
-                                    '#site-header.vertical-header .dropdown-menu ul li a.menu-link' => 'background-color'
+                                    '#site-navigation-wrap .dropdown-menu > li > a' => 'background-color'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -3112,7 +3362,7 @@ $options = [
                                 'key' => 'hover',
                                 'label' => 'Hover',
                                 'selector' => [
-                                    '#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover' => 'background-color'
+                                    '#site-navigation-wrap .dropdown-menu > li > a:hover,#site-navigation-wrap .dropdown-menu > li.sfHover > a' => 'background-color'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -3137,7 +3387,8 @@ $options = [
                                 'key' => 'normal',
                                 'label' => 'Normal',
                                 'selector' => [
-                                    '#site-header.vertical-header .dropdown-menu ul li a.menu-link' => 'background-color'
+                                    '#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close' => 'color',
+                                    '#site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use,#searchform-header-replace-close .owp-icon use' => 'stroke'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -3149,7 +3400,8 @@ $options = [
                                 'key' => 'hover',
                                 'label' => 'Hover',
                                 'selector' => [
-                                    '#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover' => 'background-color'
+                                    '#site-navigation-wrap .dropdown-menu > li > a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover' => 'color',
+                                    '#site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use,#searchform-header-replace-close:hover .owp-icon use' => 'stroke'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -3159,9 +3411,9 @@ $options = [
                         ]
                     ],
 
-                    'ocean_current_menu_item_color_wrap' => [
+                    'ocean_menu_link_color_active' => [
                         'type' => 'ocean-color',
-                        'label' => esc_html__( 'Current Menu Item', 'oceanwp' ),
+                        'label' => esc_html__( 'Current Menu: Link', 'oceanwp' ),
                         'section' => 'ocean_header_menu_section',
                         'transport' => 'postMessage',
                         'priority' => 10,
@@ -3169,24 +3421,37 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'setting_args' => [
-                            'link' => [
+                            'normal' => [
                                 'id' => 'ocean_menu_link_color_active',
-                                'key' => 'link',
-                                'label' => 'Link',
+                                'key' => 'normal',
+                                'label' => 'Select Color',
                                 'selector' => [
-                                    '#site-header.vertical-header .dropdown-menu ul li a.menu-link' => 'background-color'
+                                    '#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'color'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => '#555555',
                                 ],
-                            ],
-                            'background' => [
+                            ]
+                        ]
+                    ],
+
+                    'ocean_menu_link_active_background' => [
+                        'type' => 'ocean-color',
+                        'label' => esc_html__( 'Current Menu: Background', 'oceanwp' ),
+                        'section' => 'ocean_header_menu_section',
+                        'transport' => 'postMessage',
+                        'priority' => 10,
+                        'hideLabel' => false,
+                        'showAlpha' => true,
+                        'showPalette' => true,
+                        'setting_args' => [
+                            'normal' => [
                                 'id' => 'ocean_menu_link_active_background',
-                                'key' => 'background',
-                                'label' => 'Background',
+                                'key' => 'normal',
+                                'label' => 'Select Color',
                                 'selector' => [
-                                    '#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover' => 'background-color'
+                                    '#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'background-color'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
@@ -3708,9 +3973,9 @@ $options = [
                         ]
                     ],
 
-                    'ocean_current_menu_item_dropdown_color_wrap' => [
+                    'ocean_dropdown_menu_link_color_active' => [
                         'type' => 'ocean-color',
-                        'label' => esc_html__( 'Current Menu Item', 'oceanwp' ),
+                        'label' => esc_html__( 'Current Menu: Link', 'oceanwp' ),
                         'section' => 'ocean_header_dropdown_menu_options_section',
                         'transport' => 'postMessage',
                         'priority' => 10,
@@ -3718,21 +3983,34 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'setting_args' => [
-                            'link' => [
+                            'normal' => [
                                 'id' => 'ocean_dropdown_menu_link_color_active',
-                                'key' => 'link',
-                                'label' => 'Link',
+                                'key' => 'normal',
+                                'label' => 'Select Color',
                                 'selector' => [
                                     '.dropdown-menu ul > .current-menu-item > a.menu-link' => 'color'
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
-                            ],
-                            'background' => [
+                            ]
+                        ]
+                    ],
+
+                    'ocean_dropdown_menu_link_bg_active' => [
+                        'type' => 'ocean-color',
+                        'label' => esc_html__( 'Current Menu: Background', 'oceanwp' ),
+                        'section' => 'ocean_header_dropdown_menu_options_section',
+                        'transport' => 'postMessage',
+                        'priority' => 10,
+                        'hideLabel' => false,
+                        'showAlpha' => true,
+                        'showPalette' => true,
+                        'setting_args' => [
+                            'normal' => [
                                 'id' => 'ocean_dropdown_menu_link_bg_active',
-                                'key' => 'background',
-                                'label' => 'Background',
+                                'key' => 'normal',
+                                'label' => 'Select Color',
                                 'selector' => [
                                     '.dropdown-menu ul > .current-menu-item > a.menu-link' => 'background-color'
                                 ],
@@ -4218,10 +4496,11 @@ $options = [
                                         ],
                                     ],
                                 ],
-                                // 'preview' => 'queryWithType',
-                                // 'css' => [
-                                //     'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button' => 'border-width'
-                                // ]
+                                'preview' => 'queryWithType',
+                                'css' => [
+                                    '.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a' => 'border-width',
+                                    '.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon' => 'width'
+                                ]
                             ],
 
                             'ocean_menu_social_border_radius' => [
@@ -4247,11 +4526,10 @@ $options = [
                                         ],
                                     ]
                                 ],
-                                // 'preview' => 'queryWithType',
-                                // 'css' => [
-                                //     '#site-header.full_screen-header .menu-bar .ham:before' => 'top',
-                                //     '#site-header.full_screen-header .menu-bar .ham:after' => 'top',
-                                // ]
+                                'preview' => 'queryWithType',
+                                'css' => [
+                                    '.oceanwp-social-menu ul li a' => 'border-radius'
+                                ]
                             ],
 
                             'ocean_menu_social_margin' => [
@@ -4310,11 +4588,11 @@ $options = [
                                         ],
                                     ],
                                 ],
-                                // 'preview' => 'queryWithType',
-                                // 'css' => [
-                                //     'selector' => '#site-header.medium-header .top-header-wrap',
-                                //     'property' => 'padding'
-                                // ],
+                                'preview' => 'queryWithType',
+                                'css' => [
+                                    'selector' => '.oceanwp-social-menu ul li a',
+                                    'property' => 'margin'
+                                ],
                             ],
 
                             'ocean_menu_social_padding' => [
@@ -4413,11 +4691,11 @@ $options = [
                                         ],
                                     ],
                                 ],
-                                // 'preview' => 'queryWithType',
-                                // 'css' => [
-                                //     'selector' => '#site-header-inner',
-                                //     'property' => 'padding'
-                                // ],
+                                'preview' => 'queryWithType',
+                                'css' => [
+                                    'selector' => '.oceanwp-social-menu ul li a',
+                                    'property' => 'padding'
+                                ],
                             ],
                         ]
                     ],
@@ -4464,7 +4742,7 @@ $options = [
                                         'key' => 'normal',
                                         'label' => 'Normal',
                                         'selector' => [
-                                            // '#site-header.vertical-header .dropdown-menu ul li a.menu-link' => 'background-color'
+                                            '.oceanwp-social-menu.simple-social ul li a' => 'background-color'
                                         ],
                                         'attr' => [
                                             'transport' => 'postMessage',
@@ -4475,7 +4753,7 @@ $options = [
                                         'key' => 'hover',
                                         'label' => 'Hover',
                                         'selector' => [
-                                            // '#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover' => 'background-color'
+                                            '.oceanwp-social-menu.simple-social ul li a:hover' => 'background-color'
                                         ],
                                         'attr' => [
                                             'transport' => 'postMessage',
@@ -4500,7 +4778,8 @@ $options = [
                                         'key' => 'normal',
                                         'label' => 'Normal',
                                         'selector' => [
-                                            // '#site-header.vertical-header .dropdown-menu ul li a.menu-link' => 'background-color'
+                                            '.oceanwp-social-menu.simple-social ul li a' => 'color',
+                                            '.oceanwp-social-menu.simple-social ul li a .owp-icon use' => 'stroke'
                                         ],
                                         'attr' => [
                                             'transport' => 'postMessage',
@@ -4511,7 +4790,8 @@ $options = [
                                         'key' => 'hover',
                                         'label' => 'Hover',
                                         'selector' => [
-                                            // '#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover' => 'background-color'
+                                            '.oceanwp-social-menu.simple-social ul li a:hover' => 'color',
+                                            '.oceanwp-social-menu.simple-social ul li a:hover .owp-icon use' => 'stroke'
                                         ],
                                         'attr' => [
                                             'transport' => 'postMessage',
@@ -4520,6 +4800,38 @@ $options = [
                                 ]
                             ],
                         ]
+                    ],
+                ]
+            ],
+
+            'ocean_spacer_for_social_menu_custom_template_section' => [
+                'type' => 'ocean-spacer',
+                'section' => 'ocean_header_social_menu_section',
+                'transport' => 'postMessage',
+                'priority' => 10,
+                'top' => 10,
+                'bottom' => 10,
+                'active_callback' => 'ocean_cac_header_social_menu',
+            ],
+
+            'ocean_header_social_menu_links_section' => [
+                'type' => 'section',
+                'title' => esc_html__('Social Links', 'oceanwp'),
+                'section' => 'ocean_header_social_menu_section',
+                'after' => 'ocean_spacer_for_social_menu_custom_template_section',
+                'class' => 'section-site-layout',
+                'priority' => 10,
+                'options' => [
+                    'ocean_menu_social_link_profile_options' => [
+                        'type' => 'ocean-social-links',
+                        'label' => esc_html__('Social Profile', 'oceanwp' ),
+                        'section' => 'ocean_header_social_menu_links_section',
+                        'transport' => 'postMessage',
+                        'priority' => 10,
+                        'hideLabel' => false,
+                        'active_callback' => 'ocean_cac_header_social_menu',
+                        'social_setting_id' => 'ocean_menu_social_profiles',
+                        'social_profiles' => oceanwp_social_options()
                     ],
                 ]
             ],
@@ -4566,57 +4878,22 @@ $options = [
                     ],
 
                 ]
-            ],
-
-            'ocean_divider_after_social_menu_custom_template_section' => [
-                'type' => 'ocean-divider',
-                'section' => 'ocean_header_social_menu_section',
-                'transport' => 'postMessage',
-                'priority' => 10,
-                'top' => 10,
-                'bottom' => 10,
-                'active_callback' => 'ocean_cac_header_social_menu',
-            ],
-
-            'ocean_header_social_menu_links_section' => [
-                'type' => 'section',
-                'title' => esc_html__('Social Links', 'oceanwp'),
-                'section' => 'ocean_header_social_menu_section',
-                'after' => 'ocean_divider_after_social_menu_custom_template_section',
-                'class' => 'section-site-layout',
-                'priority' => 10,
-                'options' => [
-                    'ocean_menu_social_link_profile_options' => [
-                        'type' => 'ocean-social-links',
-                        'label' => esc_html__('Social Profile', 'oceanwp' ),
-                        'section' => 'ocean_header_social_menu_links_section',
-                        'transport' => 'postMessage',
-                        'priority' => 10,
-                        'hideLabel' => false,
-                        'active_callback' => 'ocean_cac_header_social_menu',
-                        'social_setting_id' => 'ocean_menu_social_profiles',
-                        'social_profiles' => oceanwp_social_options()
-                    ],
-                ]
-            ],
-
+            ]
         ]
     ],
 
-    'ocean_spacer_for_header_mobile_menu_section' => [
-        'type' => 'ocean-spacer',
+    'ocean_divider_after_header_social_menu_section' => [
+        'type' => 'ocean-divider',
         'section' => 'ocean_header_settings',
         'transport' => 'postMessage',
         'priority' => 10,
-        'top' => 1,
-        'bottom' => 10,
     ],
 
     'ocean_header_mobile_menu_section' => [
 		'type' => 'section',
 		'title' => esc_html__('Mobile Menu', 'oceanwp'),
 		'section' => 'ocean_header_settings',
-		'after' => 'ocean_spacer_for_header_mobile_menu_section',
+		'after' => 'ocean_divider_after_header_social_menu_section',
 		'class' => 'section-site-layout',
 		'priority' => 10,
 		'options' => [
@@ -4824,6 +5101,34 @@ $options = [
                         'mediaType' => 'image',
                     ],
 
+                    'ocean_responsive_logo_height' => [
+                        'id' => 'ocean_responsive_logo_height',
+                        'label'    => esc_html__( 'Mobile Logo Height', 'oceanwp' ),
+                        'type'     => 'ocean-range-slider',
+                        'section'  => 'ocean_header_mobile_menu_general_section',
+                        'transport' => 'postMessage',
+                        'priority' => 10,
+                        'hideLabel'    => false,
+                        'isUnit'       => false,
+                        'isResponsive' => false,
+                        'min'          => 1,
+                        'max'          => 500,
+                        'step'         => 1,
+                        'setting_args' => [
+                            'desktop' => [
+                                'id' => 'ocean_responsive_logo_height',
+                                'label' => 'Desktop',
+                                'attr' => [
+                                    'transport' => 'postMessage',
+                                ],
+                            ]
+                        ],
+                        'preview' => 'queryWithType',
+                        'css' => [
+                            '#site-logo.has-responsive-logo .responsive-logo-link img' => 'max-height'
+                        ]
+                    ],
+
                 ]
             ],
 
@@ -4849,7 +5154,7 @@ $options = [
                         'label' => esc_html__('Mobile Menu Opening Direction', 'oceanwp'),
                         'section' => 'ocean_header_mobile_menu_options_section',
                         'default'  => 'left',
-                        'transport' => 'postMessage',
+                        'transport' => 'refresh',
                         'priority' => 10,
                         'hideLabel' => false,
                         'wrap'    => false,
@@ -4880,6 +5185,7 @@ $options = [
                     ],
 
                     'ocean_dropdown_mobile_menu_max_height' => [
+                        'id' => 'ocean_dropdown_mobile_menu_max_height',
                         'label'    => esc_html__( 'Drop Down Maximum Height', 'oceanwp' ),
                         'type'     => 'ocean-range-slider',
                         'section'  => 'ocean_header_mobile_menu_options_section',
@@ -4901,6 +5207,10 @@ $options = [
                                     'default'   => 400,
                                 ],
                             ]
+                        ],
+                        'preview' => 'queryWithType',
+                        'css' => [
+                            '#mobile-dropdown' => 'max-height'
                         ]
                     ],
 
@@ -5035,9 +5345,9 @@ $options = [
                                 'id' => 'ocean_mobile_menu_open_hamburger_color',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    '.mobile-menu .hamburger-inner, .mobile-menu .hamburger-inner::before, .mobile-menu .hamburger-inner::after' => 'background-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => '#000000'
@@ -5317,9 +5627,9 @@ $options = [
                                 'id' => 'ocean_mobile_menu_sidr_close_button_background',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    'a.sidr-class-toggle-sidr-close' => 'background-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => '#f8f8f8'
@@ -5343,9 +5653,9 @@ $options = [
                                 'id' => 'ocean_mobile_menu_sidr_background',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    '#sidr, #mobile-dropdown' => 'background-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => '#ffffff'
@@ -5369,9 +5679,9 @@ $options = [
                                 'id' => 'ocean_mobile_menu_sidr_borders',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    '#sidr li, #sidr ul, #mobile-dropdown ul li, #mobile-dropdown ul li ul' => 'border-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'rgba(0,0,0,0.035)'
@@ -5404,9 +5714,10 @@ $options = [
                                 'id' => 'ocean_mobile_menu_links',
                                 'key' => 'normal',
                                 'label' => 'Normal',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    'body .sidr a, body .sidr-class-dropdown-toggle, #mobile-dropdown ul li a, #mobile-dropdown ul li a .dropdown-toggle, #mobile-fullscreen ul li a, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a' => 'color',
+                                    '#mobile-fullscreen a.close .close-icon-inner, #mobile-fullscreen a.close .close-icon-inner::after' => 'background-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => '#555555'
@@ -5416,9 +5727,10 @@ $options = [
                                 'id' => 'ocean_mobile_menu_links_hover',
                                 'key' => 'hover',
                                 'label' => 'Hover',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    'body .sidr a:hover, body .sidr-class-dropdown-toggle:hover, body .sidr-class-dropdown-toggle .fa, body .sidr-class-menu-item-has-children.active > a, body .sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle, #mobile-dropdown ul li a:hover, #mobile-dropdown ul li a .dropdown-toggle:hover, #mobile-dropdown .menu-item-has-children.active > a, #mobile-dropdown .menu-item-has-children.active > a > .dropdown-toggle, #mobile-fullscreen ul li a:hover, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover' => 'color',
+                                    '#mobile-fullscreen a.close:hover .close-icon-inner, #mobile-fullscreen a.close:hover .close-icon-inner::after{background-color' => 'background-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => '#13aff0'
@@ -5450,9 +5762,9 @@ $options = [
                                 'id' => 'ocean_mobile_menu_sidr_dropdowns_background',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    '.sidr-class-dropdown-menu ul, #mobile-dropdown ul li ul, #mobile-fullscreen ul ul.sub-menu' => 'background-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'rgba(0,0,0,0.02)'
@@ -5486,9 +5798,9 @@ $options = [
                                 'id' => 'ocean_mobile_menu_sidr_search_bg',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    'body .sidr-class-mobile-searchform input, #mobile-dropdown #mobile-menu-search form input' => 'background-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage'
                                 ],
@@ -5510,9 +5822,9 @@ $options = [
                                 'id' => 'ocean_mobile_menu_sidr_search_color',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    'body .sidr-class-mobile-searchform input,body .sidr-class-mobile-searchform input:focus, #mobile-dropdown #mobile-menu-search form input, #mobile-fullscreen #mobile-search input, #mobile-fullscreen #mobile-search .search-text' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => '#333333'
@@ -5535,9 +5847,9 @@ $options = [
                                 'id' => 'ocean_mobile_menu_sidr_search_border_color',
                                 'key' => 'normal',
                                 'label' => 'Normal',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    'body .sidr-class-mobile-searchform input, #mobile-dropdown #mobile-menu-search form input, #mobile-fullscreen #mobile-search input' => 'border-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => '#dddddd'
@@ -5547,12 +5859,74 @@ $options = [
                                 'id' => 'ocean_mobile_menu_sidr_search_border_color_focus',
                                 'key' => 'hover',
                                 'label' => 'Hover',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    'body .sidr-class-mobile-searchform input:focus, #mobile-dropdown #mobile-menu-search form input:focus, #mobile-fullscreen #mobile-search input:focus' => 'border-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => '#bbbbbb'
+                                ],
+                            ]
+                        ]
+                    ],
+
+                    'ocean_full_screen_mobile_menu_bg' => [
+                        'type' => 'ocean-color',
+                        'label' => esc_html__( 'Search Form Border', 'oceanwp' ),
+                        'section' => 'ocean_header_mobile_menu_styling_section',
+                        'transport' => 'postMessage',
+                        'priority' => 10,
+                        'hideLabel' => false,
+                        'showAlpha' => true,
+                        'showPalette' => true,
+                        'active_callback' => 'ocean_cac_has_mobile_menu_fullscreen',
+                        'setting_args' => [
+                            'normal' => [
+                                'id' => 'ocean_full_screen_mobile_menu_bg',
+                                'key' => 'normal',
+                                'label' => 'Normal',
+                                'selector' => [
+                                    '#mobile-fullscreen' => 'background-color'
+                                ],
+                                'attr' => [
+                                    'transport' => 'postMessage',
+                                    'default' => 'rgba(0,0,0,0.9)'
+                                ],
+                            ]
+                        ]
+                    ],
+
+                    'ocean_full_screen_mobile_menu_links_bg' => [
+                        'type' => 'ocean-color',
+                        'label' => esc_html__( 'Search Form Border', 'oceanwp' ),
+                        'section' => 'ocean_header_mobile_menu_styling_section',
+                        'transport' => 'postMessage',
+                        'priority' => 10,
+                        'hideLabel' => false,
+                        'showAlpha' => true,
+                        'showPalette' => true,
+                        'active_callback' => 'ocean_cac_has_mobile_menu_fullscreen',
+                        'setting_args' => [
+                            'normal' => [
+                                'id' => 'ocean_full_screen_mobile_menu_links_bg',
+                                'key' => 'normal',
+                                'label' => 'Normal',
+                                'selector' => [
+                                    '#mobile-fullscreen ul > li > a' => 'background-color'
+                                ],
+                                'attr' => [
+                                    'transport' => 'postMessage',
+                                ],
+                            ],
+                            'hover' => [
+                                'id' => 'ocean_full_screen_mobile_menu_links_hover_bg',
+                                'key' => 'hover',
+                                'label' => 'Hover',
+                                'selector' => [
+                                    '#mobile-fullscreen ul > li > a:hover' => 'background-color'
+                                ],
+                                'attr' => [
+                                    'transport' => 'postMessage',
                                 ],
                             ]
                         ]
@@ -5573,9 +5947,9 @@ $options = [
                                 'id' => 'ocean_full_screen_mobile_menu_search_border_color_hover',
                                 'key' => 'hover',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    '#mobile-fullscreen #mobile-search input:hover' => 'border-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => '#ffffff'
@@ -5599,9 +5973,10 @@ $options = [
                                 'id' => 'ocean_mobile_menu_sidr_search_button_color',
                                 'key' => 'normal',
                                 'label' => 'Normal',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    '.sidr-class-mobile-searchform button, #mobile-dropdown #mobile-menu-search form button' => 'color',
+                                    '.sidr-class-mobile-searchform button .owp-icon use, #mobile-dropdown #mobile-menu-search form button .owp-icon use' => 'stroke'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => '#555555'
@@ -5611,19 +5986,17 @@ $options = [
                                 'id' => 'ocean_mobile_menu_sidr_search_button_hover_color',
                                 'key' => 'hover',
                                 'label' => 'Hover',
-                                // 'selector' => [
-                                //     '#searchform-overlay form label i' => 'background-color'
-                                // ],
+                                'selector' => [
+                                    '.sidr-class-mobile-searchform button:hover, #mobile-dropdown #mobile-menu-search form button:hover' => 'color',
+                                    '.sidr-class-mobile-searchform button:hover .owp-icon use, #mobile-dropdown #mobile-menu-search form button:hover .owp-icon use' => 'stroke'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => '#222222'
                                 ],
                             ]
                         ]
-                    ],
-
-
-
+                    ]
                 ]
             ],
 
