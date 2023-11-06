@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.5.0\n"
+"Project-Id-Version: OceanWP 3.5.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-06T05:08:52+00:00\n"
+"POT-Creation-Date: 2023-11-06T09:02:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: oceanwp\n"
@@ -140,7 +140,7 @@ msgid "Widgets in this area will be displayed in the left or right sidebar area 
 msgstr ""
 
 #: functions.php:734
-#: inc/third/class-lifterlms.php:310
+#: inc/third/class-lifterlms.php:305
 msgid "Left Sidebar"
 msgstr ""
 
@@ -251,87 +251,87 @@ msgstr ""
 msgid "and much, much more."
 msgstr ""
 
-#: inc/breadcrumbs.php:445
+#: inc/breadcrumbs.php:446
 msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/breadcrumbs.php:446
+#: inc/breadcrumbs.php:447
 #: inc/customizer/settings/general.php:2053
 #: inc/themepanel/theme-panel.php:392
 msgid "Home"
 msgstr ""
 
-#: inc/breadcrumbs.php:447
+#: inc/breadcrumbs.php:448
 #: inc/customizer/settings/general.php:2079
 msgid "404 Not Found"
 msgstr ""
 
-#: inc/breadcrumbs.php:448
+#: inc/breadcrumbs.php:449
 #: inc/customizer/settings/edd.php:1019
 #: inc/customizer/settings/woocommerce.php:1187
 msgid "Archives"
 msgstr ""
 
 #. Translators: %s is the search query. The HTML entities are opening and closing curly quotes.
-#: inc/breadcrumbs.php:450
+#: inc/breadcrumbs.php:451
 #: inc/customizer/settings/general.php:2105
 msgid "Search results for"
 msgstr ""
 
 #. Translators: %s is the page number.
-#: inc/breadcrumbs.php:452
+#: inc/breadcrumbs.php:453
 msgid "Page %s"
 msgstr ""
 
 #. Translators: Minute archive title. %s is the minute time format.
-#: inc/breadcrumbs.php:454
+#: inc/breadcrumbs.php:455
 msgid "Minute %s"
 msgstr ""
 
 #. Translators: Weekly archive title. %s is the week date format.
-#: inc/breadcrumbs.php:456
+#: inc/breadcrumbs.php:457
 msgid "Week %s"
 msgstr ""
 
-#: inc/breadcrumbs.php:1064
+#: inc/breadcrumbs.php:1065
 msgctxt "minute and hour archives time format"
 msgid "g:i a"
 msgstr ""
 
-#: inc/breadcrumbs.php:1082
+#: inc/breadcrumbs.php:1083
 msgctxt "minute archives time format"
 msgid "i"
 msgstr ""
 
-#: inc/breadcrumbs.php:1100
+#: inc/breadcrumbs.php:1101
 msgctxt "hour archives time format"
 msgid "g a"
 msgstr ""
 
-#: inc/breadcrumbs.php:1117
-#: inc/breadcrumbs.php:1147
-#: inc/breadcrumbs.php:1172
-#: inc/breadcrumbs.php:1197
-#: inc/breadcrumbs.php:1544
+#: inc/breadcrumbs.php:1118
+#: inc/breadcrumbs.php:1148
+#: inc/breadcrumbs.php:1173
+#: inc/breadcrumbs.php:1198
+#: inc/breadcrumbs.php:1545
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/breadcrumbs.php:1118
-#: inc/breadcrumbs.php:1173
-#: inc/breadcrumbs.php:1548
+#: inc/breadcrumbs.php:1119
+#: inc/breadcrumbs.php:1174
+#: inc/breadcrumbs.php:1549
 msgctxt "monthly archives date format"
 msgid "F"
 msgstr ""
 
-#: inc/breadcrumbs.php:1119
-#: inc/breadcrumbs.php:1552
+#: inc/breadcrumbs.php:1120
+#: inc/breadcrumbs.php:1553
 msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
-#: inc/breadcrumbs.php:1148
+#: inc/breadcrumbs.php:1149
 msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
@@ -472,7 +472,7 @@ msgstr ""
 #: inc/customizer/settings/typography.php:630
 #: inc/customizer/settings/typography.php:663
 #: inc/customizer/settings/woocommerce.php:172
-#: inc/third/class-lifterlms.php:308
+#: inc/third/class-lifterlms.php:303
 msgid "Default"
 msgstr ""
 
@@ -1246,7 +1246,7 @@ msgstr ""
 #: inc/customizer/settings/lifterlms.php:511
 #: inc/customizer/settings/woocommerce.php:1201
 #: inc/customizer/settings/woocommerce.php:1953
-#: inc/third/class-lifterlms.php:305
+#: inc/third/class-lifterlms.php:300
 msgid "Layout"
 msgstr ""
 
@@ -2958,7 +2958,7 @@ msgstr ""
 #: inc/customizer/settings/header.php:89
 #: inc/customizer/settings/header.php:3551
 #: inc/themepanel/views/panes/free-vs-pro.php:83
-#: inc/third/class-lifterlms.php:312
+#: inc/third/class-lifterlms.php:307
 msgid "Full Screen"
 msgstr ""
 
@@ -7022,51 +7022,51 @@ msgstr ""
 msgid "After Footer"
 msgstr ""
 
-#: inc/third/class-learndash.php:189
+#: inc/third/class-learndash.php:175
 msgid "LearnDash Titles"
 msgstr ""
 
-#: inc/third/class-learndash.php:200
+#: inc/third/class-learndash.php:186
 msgid "LearnDash Table Heading"
 msgstr ""
 
-#: inc/third/class-learndash.php:211
+#: inc/third/class-learndash.php:197
 msgid "LearnDash Table Item"
 msgstr ""
 
-#: inc/third/class-learndash.php:222
+#: inc/third/class-learndash.php:208
 msgid "LearnDash Take Course Button"
 msgstr ""
 
-#: inc/third/class-lifterlms.php:299
+#: inc/third/class-lifterlms.php:294
 msgid "OceanWP Theme Setting"
 msgstr ""
 
-#: inc/third/class-lifterlms.php:309
+#: inc/third/class-lifterlms.php:304
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/third/class-lifterlms.php:311
+#: inc/third/class-lifterlms.php:306
 msgid "Full Width"
 msgstr ""
 
-#: inc/third/class-lifterlms.php:313
+#: inc/third/class-lifterlms.php:308
 msgid "Both Sidebar"
 msgstr ""
 
-#: inc/third/class-lifterlms.php:417
+#: inc/third/class-lifterlms.php:402
 msgid "LifterLMS Course/Lesson Title"
 msgstr ""
 
-#: inc/third/class-lifterlms.php:428
+#: inc/third/class-lifterlms.php:413
 msgid "LifterLMS Section Title"
 msgstr ""
 
-#: inc/third/class-lifterlms.php:439
+#: inc/third/class-lifterlms.php:424
 msgid "LifterLMS Lesson Title"
 msgstr ""
 
-#: inc/third/class-lifterlms.php:450
+#: inc/third/class-lifterlms.php:435
 msgid "LifterLMS Buy Button"
 msgstr ""
 
@@ -7276,8 +7276,8 @@ msgid "WooCommerce Store Notice Dismiss"
 msgstr ""
 
 #: inc/woocommerce/woocommerce-helpers.php:129
-#: woocommerce/loop/thumbnail/featured-image.php:84
-#: woocommerce/loop/thumbnail/featured-image.php:90
+#: woocommerce/loop/thumbnail/featured-image.php:87
+#: woocommerce/loop/thumbnail/featured-image.php:93
 msgid "Placeholder Image"
 msgstr ""
 
@@ -7392,7 +7392,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: partials/single/tags.php:15
+#: partials/single/tags.php:22
 msgid "Tags: "
 msgstr ""
 
