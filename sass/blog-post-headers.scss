@@ -775,14 +775,23 @@ ul.bottom-entry-meta-3 {
     }
     li {
         padding: 0 7px 5px 7px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
     }
 }
 
 ul.meta-style-3,
 ul.top-entry-meta-3,
 ul.bottom-entry-meta-3 {
-    li i {
-        padding: 0 5px;
+    li {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
+        i {
+            padding: 0 5px;
+        }
     }
 }
 
@@ -796,6 +805,10 @@ ul.bebm-style-classic {
     }
     li {
         padding: 0 0 5px 0;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
     }
 }
 
@@ -809,6 +822,10 @@ ul.bebm-style-modern {
     }
     li {
         padding: 0 0 5px 0;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
     }
 }
 
@@ -822,6 +839,10 @@ ul.bebm-style-stylish {
     }
     li {
         padding: 0 0 5px 0;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
     }
 }
 

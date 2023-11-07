@@ -2225,6 +2225,10 @@
   border-color: #bbb;
 }
 
+.select2-container--open {
+  z-index: 99999;
+}
+
 @-webkit-keyframes spin {
   25% {
     -webkit-transform: rotate(270deg);
@@ -4168,6 +4172,10 @@ Woo Off Canvas Filter
 }
 .woocommerce .oceanwp-off-canvas-filter i {
   margin-right: 6px;
+}
+.woocommerce .oceanwp-off-canvas-filter .owp-icon {
+  vertical-align: inherit;
+  margin-right: 5px;
 }
 
 #oceanwp-off-canvas-sidebar-wrap {

@@ -100,15 +100,11 @@ class MegaMenu {
     const menuItem = event.currentTarget;
     const content = menuItem.querySelector(".megamenu");
     let leftPosition = parseInt(
-      offset(menuItem).left - offset(wrapper).left + 1
+      offset(menuItem).left - offset(wrapper).left
     );
 
     if (!content) {
       return;
-    }
-
-    if (this.#elements.body.classList.contains("boxed-layout")) {
-      leftPosition = leftPosition - 30;
     }
 
     content.style.left = `-${leftPosition}px`;

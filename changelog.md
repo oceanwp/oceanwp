@@ -1,5 +1,20 @@
 # OceanWP Changelog
 
+### _2023.11.07_ - 3.5.1
+- **Added**: WooCommerce: Product Archives: Filter for product thumbnail image.
+- **Fixed**: Header: Mega Menu: Incorrect position display when website layout is set to Boxed.
+- **Fixed**: Header: Current menu item color applied incorrectly on anchored links.
+- **Fixed**: Breadcrumbs: Invalid items error when navigating through paged items.
+- **Fixed**: Blog and Single Post: Meta: Vertical position when OceanWP SVG icons are in use.
+- **Fixed**: Single Post: Tags: Empty HTML renders when no tags are defined.
+- **Fixed**: WooCommerce: Attribute filter dropdown style doesn't function with Off Canvas Filter.
+- **Fixed**: Compatibility: LifterLMS: Fatal error when adding a course.
+- **Fixed**: Compatibility: LearnDash LMS: Fatal error when adding a course.
+- **Fixed**: Compatibility: WPML: OceanWP Library custom template translation through shortcodes usage.
+- **Updated**: Template: partials > single > tags.php
+- **Updated**: Template: woocommerce > loop > thumbnail > featured-image.php
+- **Updated**: Compatibility: WordPress version.
+
 ### _2023.09.06_ - 3.5.0
 - **Added**: Supprot for new the metabox framework.
 - **Updated**: Compatibility: WooCommerce: Template version number to dismiss potential outdated templates notification.

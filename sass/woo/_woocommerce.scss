@@ -2190,6 +2190,9 @@
     border-color: #bbb;
   }
 }
+.select2-container--open {
+  z-index: 99999;
+}
 @-webkit-keyframes spin {
   25% {
     -webkit-transform: rotate(270deg);
