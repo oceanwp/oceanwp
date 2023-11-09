@@ -97,7 +97,6 @@ $options = [
                         'active_callback' => 'ocean_cac_header_custom',
                         'choices' => oceanwp_library_template_choices(),
                     ],
-
                 ]
             ],
 
@@ -312,7 +311,7 @@ $options = [
                 'options' => [
                     'ocean_desc_for_additional_styling_settings' => [
                         'type' => 'ocean-content',
-                        'isContent' => esc_html__(' If any, additional Header styling settings and options will appear here, based on your main Header Type selection. For now, additional settings are available for the Top Menu, Full Screen, Center, Medium.', 'oceanwp'),
+                        'isContent' => esc_html__('If any, additional Header styling settings and options will appear here, based on your main Header Type selection. For now, additional settings are available for the Top Menu, Full Screen, Center, Medium.', 'oceanwp'),
                         'section' => 'ocean_header_additional_styling_section',
                         'class' => 'description',
                         'transport' => 'postMessage',
@@ -2652,7 +2651,7 @@ $options = [
                 'setting_args' => [
                     'desktop' => [
                         'id' => 'ocean_logo_max_width',
-                        'label' => 'Desktop',
+                        'label' => esc_html__( 'Desktop', 'oceanwp' ),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],

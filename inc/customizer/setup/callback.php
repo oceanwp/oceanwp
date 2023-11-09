@@ -375,3 +375,114 @@ function oceanwp_cac_menu_links_effect_dark() {
 		return false;
 	}
 }
+
+function ocean_cac_blog_main_page_styling() {
+	if ( true === get_theme_mod( 'ocean_blog_main_page_styling', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_blog_archive_bs_layout() {
+	if ( 'both-sidebars' === get_theme_mod( 'ocean_blog_archives_layout', 'right-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_blog_archive_sidebar_layout() {
+	$layout = get_theme_mod( 'ocean_blog_archives_layout', 'right-sidebar' );
+	if ( 'right-sidebar' === $layout
+		|| 'left-sidebar' === $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_blog_archive_grid_style() {
+	if ( 'grid-entry' === get_theme_mod( 'ocean_blog_style', 'large-entry' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_blog_archive_thumbnail_style() {
+	if ( 'thumbnail-entry' === get_theme_mod( 'ocean_blog_style', 'large-entry' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_not_blog_archive_thumbnail_style() {
+	if ( 'thumbnail-entry' === get_theme_mod( 'ocean_blog_style', 'large-entry' ) ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function oceanwp_cac_blog_archive_pagination_infinite_scroll() {
+	if ( 'infinite_scroll' == get_theme_mod( 'ocean_blog_pagination_style', 'standard' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_blog_single_bs_layout() {
+	if ( 'both-sidebars' === get_theme_mod( 'ocean_blog_single_layout', 'right-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_blog_single_sidebar_layout() {
+	$layout = get_theme_mod( 'ocean_blog_single_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_blog_single_post_title_default() {
+	if ( 'default' === get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_blog_single_post_title_has_featured_image() {
+	if ( true === get_theme_mod( 'ocean_blog_single_featured_image_title', false )
+		&& 'default' === get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_not_blog_single_post_title_default() {
+	if ( 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_single_post_title_cover() {
+	$return = ( 'sph_style_3' === get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
+	return $return;
+}
+
+function oceanwp_cac_not_single_post_title_cover_default() {
+	$return = ( 'sph_style_3' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) && 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
+	return $return;
+}
