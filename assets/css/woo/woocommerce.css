@@ -4462,6 +4462,53 @@ Woo Product Navigation
   }
 }
 /*------------------------------------------------------------------
+Woo Suggest Price
+-------------------------------------------------------------------*/
+.oe-suggest-price form {
+    margin-top: 10px;
+}
+
+.oe-suggestform-input input:not([type="submit"]) {
+    width: 100%;
+    display: block;
+    border: 1px solid #dddd;
+    padding: 10px 10px;
+    border-radius: 0;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.oe-suggestform-input input[type="submit"] {
+    font-size: 14px;
+    border-radius: 0;
+    font-weight: 500;
+}
+
+.oe-suggestform-input textarea {
+    border: 1px solid #dddd;
+    padding: 10px 10px;
+    border-radius: 0;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.oe-sugget-button {
+    padding: 8px 18px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+
+.oe-sent-message.error,
+.oe-error {
+    color: red;
+    background-color: #ffeeee;
+    border: 1px solid red;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/*------------------------------------------------------------------
 Woo Responsive
 -------------------------------------------------------------------*/
 .sidr-class-woo-menu-icon {

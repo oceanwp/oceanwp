@@ -219,6 +219,21 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					add_action( 'wp_ajax_nopriv_oceanwp_add_cart_floating_bar', array( $this, 'add_cart_floating_bar_ajax' ) );
 				}
 
+				// Add Special Deal Notices.
+				if ( 'on' == get_theme_mod( 'ocean_woo_special_deal_enable', 'off' ) ) {
+					add_action( 'woocommerce_before_add_to_cart_form', array( $this, 'render_special_deal_notice' ) );
+				}
+
+				// Add Custom Stock.
+				if ( 'on' == get_theme_mod( 'ocean_woo_custom_stock_enable', 'off' ) ) {
+					add_action( 'woocommerce_before_add_to_cart_form', array( $this, 'display_stock_message' ) );
+				}
+
+				// Add Suggest Price.
+				if ( 'on' == get_theme_mod( 'ocean_woo_suggest_price_enable', 'off' ) ) {
+					add_action( 'woocommerce_before_add_to_cart_form', array( $this, 'display_suggest_price_form' ) );
+				}
+
 				// Main Woo Filters.
 				add_filter( 'wp_nav_menu_items', array( $this, 'menu_wishlist_icon' ), 10, 2 );
 				add_filter( 'wp_nav_menu_items', array( $this, 'menu_cart_icon' ), 10, 2 );
@@ -539,6 +554,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			if ( class_exists( 'SitePress' ) ) {
 				add_filter( 'wcml_multi_currency_ajax_actions', array( $this, 'add_action_to_multi_currency_ajax' ), 10, 1 );
+			}
+			if (!function_exists('add_special_deal_notice_product_data_tab')) {
+				add_filter('woocommerce_product_data_tabs', array( $this, 'add_special_deal_notice_product_data_tab_method'));
+				add_action('woocommerce_product_data_panels', array( $this, 'display_special_deal_notice_data_panel_method'));
+				add_action('woocommerce_process_product_meta', array( $this, 'save_product_special_deal_notice_meta_method'));
 			}
 		}
 
@@ -1501,6 +1521,288 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			wp_die();
 
 		}
+
+		/**
+		 * Add Special Deal Notices.
+		 *
+		 * @since 2.1.1
+		 */
+
+		 public static function render_special_deal_notice() {
+			$enabled = get_theme_mod( 'ocean_woo_special_deal_enable', 'off' );
+			$source = get_theme_mod( 'ocean_woo_special_deal_source', 'editor' );
+
+			if ( 'off' === $enabled ) {
+				return; // If not enabled, return early
+			}
+
+			// Get the selected categories
+			$selected_categories = get_theme_mod( 'ocean_woo_special_deal_product_categories', array() );
+			if ( ! is_array( $selected_categories ) ) {
+				$selected_categories = array( $selected_categories );
+			}
+
+			// If it's not "All Products" and is a single product, then check the current product's category.
+			if ( ! in_array( 'all_products', $selected_categories ) && is_singular('product') ) {
+				global $product;
+				$product_categories = wp_get_post_terms( $product->get_id(), 'product_cat', array( 'fields' => 'slugs' ) );
+
+				// If the product doesn't belong to the selected categories, return.
+				if ( ! array_intersect( $selected_categories, $product_categories ) ) {
+					return;
+				}
+			}
+
+			// Now check the source and render the content
+			if ( 'editor' === $source ) {
+				$content = get_theme_mod( 'ocean_woo_special_deal_editor_text', '' );
+				echo '<div class="special-deal-notice">' . wp_kses_post( $content ) . '</div>';
+			} elseif ( 'product_meta' === $source && is_singular('product') ) {
+				global $product; // Make sure $product is available
+				$special_deal_notice_text = get_post_meta( $product->get_id(), 'oec_special_deal_notice_text', true );
+				if ( $special_deal_notice_text ) {
+					echo '<div class="special-deal-notice">' . esc_html( $special_deal_notice_text ) . '</div>';
+				}
+			}
+		}
+
+		public static function add_special_deal_notice_product_data_tab_method($product_data_tabs) {
+			$product_data_tabs['special-deal-notices'] = array(
+				'label' => __('Special Deal Notices', 'oceanwp'),
+				'target' => 'special_deal_notice_product_data',
+			);
+			return $product_data_tabs;
+		}
+
+		public static function display_special_deal_notice_data_panel_method() {
+			echo '<div id="special_deal_notice_product_data" class="panel woocommerce_options_panel">';
+			woocommerce_wp_text_input(
+				array(
+					'id' => 'oec_special_deal_notice_text',
+					'label' => __('Special Deal Notice Text', 'oceanwp'),
+					'desc_tip' => 'true',
+					'description' => __('Text for Special Deal Notice', 'oceanwp'),
+					'type' => 'text',
+				)
+			);
+			echo '</div>';
+		}
+
+		public static function save_product_special_deal_notice_meta_method($post_id) {
+			if (wp_verify_nonce(sanitize_key($_POST['woocommerce_meta_nonce']), 'woocommerce_save_data')) {
+				$special_deal_notice_text = !empty($_POST['oec_special_deal_notice_text']) ? wc_clean($_POST['oec_special_deal_notice_text']) : '';
+				update_post_meta($post_id, 'oec_special_deal_notice_text', $special_deal_notice_text);
+			} else {
+				delete_post_meta($post_id, 'oec_special_deal_notice_text');
+			}
+		}
+
+
+		/**
+		 * Add Custom Stock.
+		 *
+		 * @since 2.1.1
+		 */
+
+		 function display_stock_message() {
+
+			$enabled = get_theme_mod( 'ocean_woo_custom_stock_enable', 'off' );
+
+			if ( 'off' === $enabled ) {
+				return; // If not enabled, return early
+			}
+
+			if ( ! function_exists( 'wc_get_product' ) ) return;
+
+			$product = wc_get_product();
+
+			if ( empty( $product ) ) return;
+
+			$stock_amount = $product->get_stock_quantity();
+			$custom_message_text = get_theme_mod( 'custom_message_text', 'Only 1 left in stock' );
+			$stock_value_number = (int) get_theme_mod( 'stock_value_number', 1 );
+
+			if ($stock_amount > $stock_value_number || $stock_amount <= 0) {
+				return;
+			}
+
+			$message_to_display = sprintf($custom_message_text, $stock_amount);
+
+			if ($product->managing_stock()) {
+				echo '<div class="ocean-only-one-in-stock"><span>';
+				echo esc_html($message_to_display);
+				echo '</span></div>';
+			}
+		}
+
+		/**
+		 * Add Suggest Price.
+		 *
+		 * @since 2.1.1
+		 */
+		function display_suggest_price_form() {
+
+			$enabled = get_theme_mod( 'ocean_woo_suggest_price_enable', 'off' );
+
+			if ( 'off' === $enabled ) {
+				return; // If not enabled, return early
+			}
+
+			$selected_categories = get_theme_mod('ocean_woo_suggest_price_select_categories', array());
+			if (!is_array($selected_categories ) ) {
+				$selected_categories = array();  // reset to empty array if not an array
+			}
+			$selected_products = get_theme_mod('ocean_woo_suggest_price_select_products', array());
+			if ( !is_array($selected_products ) ) {
+				$selected_products = array();  // reset to empty array if not an array
+			}
+			$open_button_text = get_theme_mod('ocean_woo_suggest_price_open_button_text', __('Suggest Price', 'oceanwp'));
+			$close_button_text = get_theme_mod('ocean_woo_suggest_price_close_button_text', __('Close', 'oceanwp'));
+			$submit_button_text = get_theme_mod('ocean_woo_suggest_price_submit_button_txt', __('Submit', 'oceanwp'));
+			$send_to_mail = get_theme_mod('ocean_woo_suggest_price_send_to_mail', 'user@example.com');
+			$name_placeholder = get_theme_mod('ocean_woo_suggest_price_name_placeholder_text', __('Enter your name', 'oceanwp'));
+			$email_placeholder = get_theme_mod('ocean_woo_suggest_price_email_placeholder_text', __('Enter your email', 'oceanwp'));
+			$message_placeholder = get_theme_mod('ocean_woo_suggest_price_message_placeholder_text', __('Write the message', 'oceanwp'));
+			$show_agree_checkbox = get_theme_mod('ocean_woo_suggest_price_show_agree_checkbox', false);
+			$agreement_text = get_theme_mod('ocean_woo_suggest_price_agreement_text', __('I have read and agree to the website terms and conditions.', 'oceanwp'));
+			$message_success = get_theme_mod('ocean_message_success', __('Your message was sent successfully.', 'oceanwp'));
+			$message_error = get_theme_mod('ocean_message_error', __('There was an error sending your message.', 'oceanwp'));
+
+
+			$error_message = '';
+
+			global $product;
+			$product_id = $product->get_id();
+			$product_categories  = wp_get_post_terms( $product_id, 'product_cat', array( 'fields' => 'ids' ) );
+
+			if ( ! empty( $selected_categories ) && ! array_intersect( $product_categories, $selected_categories ) ) {
+				return;
+			}
+
+			if ( ! empty( $selected_products ) && ! in_array( $product_id, $selected_products ) ) {
+				return;
+			}
+
+			$current_product_name = $product->get_name();
+			$current_product_link = get_permalink( $product_id );
+			?>
+				<div class="oe-suggest-price">
+					<?php
+					// If there's an error, display it to the user.
+					if ( $error_message ) {
+						echo '<div class="oe-error">' . esc_html( $error_message ) . '</div>';
+					}
+					?>
+					<?php
+
+					if ( isset( $_REQUEST[ 'oecsubmit-' . $product_id ] ) ) {
+
+						// Verify nonce
+						if (!isset($_POST['suggest_price_nonce_name']) || !wp_verify_nonce($_POST['suggest_price_nonce_name'], 'suggest_price_nonce_action')) {
+							$error_message = __('Sorry, something went wrong. Please try again.', 'oceanwp');
+							return;
+						}
+						$name = sanitize_text_field( $_POST['oecname'] );
+
+						// Check if the name contains only alphabets and spaces.
+						if ( ! preg_match( '/^[A-Za-z\s]+$/', $name ) ) {
+							$error_message = __( 'Name can only contain letters and spaces.', 'oceanwp' );
+						}
+
+						$email = sanitize_email( $_POST['oecemail'] );
+
+						// Check if email is valid.
+						if ( ! $error_message && ! filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
+							$error_message = __( 'Please enter a valid email address.', 'oceanwp' );
+						}
+
+						$message = sanitize_textarea_field( $_POST['oecmessage'] );
+
+						// Remove any HTML tags but allow links.
+						$formatted_message = 'Name: ' . strip_tags( $name ) . '<br><br>' . strip_tags( $message, '<a>' );
+
+						$sentto  = $send_to_mail;
+						$subject = 'Suggest Price for ' . $current_product_name;
+						$headers = 'From: ' . $email . "\r\n" .
+						'Reply-To: ' . $email . "\r\n" .
+						'Content-Type: text/html; charset=UTF-8' . "\r\n";
+
+						if ( ! $error_message ) {
+							$sent = wp_mail( $sentto, $subject, $formatted_message, $headers );
+							if ( $sent ) {
+								echo '<p class="oe-sent-message success">' . $message_success . '</p>';
+							} else {
+								echo '<p class="oe-sent-message error">' . $message_error . '</p>';
+							}
+						}
+					}
+
+					?>
+					<button id="oe-open-form-<?php echo esc_attr( $product_id ); ?>" class="oe-sugget-button oe-open button"><?php echo esc_html__( $open_button_text, 'oceanwp' ); ?></button>
+					<button id="oe-close-form-<?php echo esc_attr( $product_id ); ?>" class="oe-sugget-button oe-close button" style="display: none;"><?php echo esc_html__( $close_button_text, 'oceanwp' ); ?></button>
+					<form style="display: none;" id="oe-suggestform-<?php echo esc_attr( $product_id ); ?>" action="<?php echo esc_url( $_SERVER['REQUEST_URI'] ); ?>" method="post">
+						<div class="oe-suggestform-input">
+							<input type="text" name="oecname" id="oecname-<?php echo esc_attr($product_id); ?>" placeholder="<?php echo esc_attr($name_placeholder); ?>">
+						</div>
+						<div class="oe-suggestform-input">
+							<input type="email" name="oecemail" id="oecemail-<?php echo esc_attr($product_id); ?>" placeholder="<?php echo esc_attr($email_placeholder); ?>">
+						</div>
+						<div class="oe-suggestform-input">
+							<textarea name="oecmessage" id="oecmessage-<?php echo esc_attr($product_id); ?>" rows="4" cols="50" placeholder="<?php echo esc_attr($message_placeholder); ?>"></textarea>
+						</div>
+						<?php
+						if ($show_agree_checkbox === true) {
+							echo '<div class="oe-agree-checkbox">';
+							echo '<input type="checkbox" name="oec_agree" id="oec_agree-' . esc_attr( $product_id ) . '" required>';
+							echo '<label for="oec_agree-' . esc_attr( $product_id ) . '">' . wp_kses(
+								$agreement_text,
+								array(
+									'a' => array(
+										'href'   => true,
+										'title'  => true,
+										'target' => true,
+										'rel'    => true,
+									),
+								)
+							) . '</label>';
+							echo '</div>';
+						}
+						wp_nonce_field('suggest_price_nonce_action', 'suggest_price_nonce_name');
+						?>
+
+						<div class="oe-suggestform-input">
+							<input type="submit" name="oecsubmit-<?php echo esc_attr($product_id); ?>" id="oecsubmit-<?php echo esc_attr($product_id); ?>" value="<?php echo esc_attr($submit_button_text); ?>">
+						</div>
+					</form>
+
+				</div>
+
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+					"use strict";
+
+						var open_form_button = '#oe-open-form-<?php echo esc_attr( $product_id ); ?>';
+						var close_form_button = '#oe-close-form-<?php echo esc_attr( $product_id ); ?>';
+						var main_form = 'form#oe-suggestform-<?php echo esc_attr( $product_id ); ?>';
+
+						$( open_form_button ).on('click', function(){
+							$(this).hide();
+							$(this).siblings( close_form_button ).show();
+							$(this).siblings( main_form ).slideDown('slow');
+						});
+
+						$( close_form_button ).on('click', function(){
+							$(this).hide();
+							$(this).siblings( open_form_button ).show();
+							$(this).siblings( main_form ).slideUp('slow');
+						});
+
+					});
+				</script>
+
+			<?php
+		}
+
 
 		/**
 		 * Add wrap and user info to the account navigation.
@@ -2765,3 +3067,4 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 }
 OceanWP_WooCommerce_Config::instance();
+

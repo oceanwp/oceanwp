@@ -290,6 +290,6 @@ class SidebarMobileMenu {
   };
 }
 
-("use script");
+("use strict");
 window.oceanwp = window.oceanwp || {};
 oceanwp.sidebarMobileMenu = new SidebarMobileMenu();
