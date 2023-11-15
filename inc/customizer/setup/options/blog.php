@@ -359,7 +359,7 @@ $options = [
                         'label'    => esc_html__( 'Grid Columns', 'oceanwp' ),
                         'type'     => 'ocean-range-slider',
                         'section'  => 'ocean_blog_archive_additional_blog_style_settings_section',
-                        'transport' => 'postMessage',
+                        'transport' => 'refresh',
                         'priority' => 10,
                         'hideLabel'    => false,
                         'isUnit'       => false,
@@ -373,7 +373,7 @@ $options = [
                                 'id' => 'ocean_blog_grid_columns',
                                 'label' => esc_html__( 'Desktop', 'oceanwp' ),
                                 'attr' => [
-                                    'transport' => 'postMessage',
+                                    'transport' => 'refresh',
                                     'default' => 2,
                                 ],
                             ],
@@ -381,7 +381,7 @@ $options = [
                                 'id' => 'ocean_blog_grid_columns_tablet',
                                 'label' => esc_html__( 'Tablet', 'oceanwp' ),
                                 'attr' => [
-                                    'transport' => 'postMessage',
+                                    'transport' => 'refresh',
                                     'default' => 2,
                                 ],
                             ],
@@ -389,7 +389,7 @@ $options = [
                                 'id' => 'ocean_blog_grid_columns_mobile',
                                 'label' => esc_html__( 'Mobile', 'oceanwp' ),
                                 'attr' => [
-                                    'transport' => 'postMessage',
+                                    'transport' => 'refresh',
                                     'default' => 1,
                                 ],
                             ]
@@ -656,9 +656,9 @@ $options = [
                                         'id' => 'ocean_blog_infinite_scroll_spinners_color',
                                         'key' => 'normal',
                                         'label' => 'Select Color',
-                                        // 'selector' => [
-                                        //     '#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input,#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li .search-text' => 'color'
-                                        // ],
+                                        'selector' => [
+                                            '.loader-ellips__dot' => 'background-color'
+                                        ],
                                         'attr' => [
                                             'transport' => 'postMessage',
                                             'default'   => '#333333',
@@ -745,9 +745,9 @@ $options = [
                                 'id' => 'ocean_blog_image_overlay_color',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input,#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li .search-text' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry.post .thumbnail .overlay' => 'background-color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'rgba(0,0,0,.2)',
@@ -1532,9 +1532,9 @@ $options = [
                                 'id' => 'ocean_blog_archive_meta_color',
                                 'key' => 'normal',
                                 'label' => 'Normal',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry ul.meta li a' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -1543,9 +1543,9 @@ $options = [
                                 'id' => 'ocean_blog_archive_meta_hover_color',
                                 'key' => 'hover',
                                 'label' => 'Hover',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a:hover' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry ul.meta li a:hover' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -1567,12 +1567,12 @@ $options = [
                                 'id' => 'ocean_theme_blog_posts_icons_color',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry ul.meta li .owp-icon use' => 'stroke',
+                                    '.blog-entry ul.meta li i' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
-                                    'default'   => '#333333',
                                 ],
                             ],
                         ]
@@ -1592,9 +1592,9 @@ $options = [
                                 'id' => 'ocean_blog_archive_content_color',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry.post .blog-entry-summary' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -1616,9 +1616,9 @@ $options = [
                                 'id' => 'ocean_blog_archive_readmore_color',
                                 'key' => 'normal',
                                 'label' => 'Normal',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry.large-entry .blog-entry-readmore a' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -1627,9 +1627,9 @@ $options = [
                                 'id' => 'ocean_blog_archive_readmore_hover_color',
                                 'key' => 'hover',
                                 'label' => 'Hover',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a:hover' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry.large-entry .blog-entry-readmore a:hover' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -1652,9 +1652,9 @@ $options = [
                                 'id' => 'ocean_blog_thumbnail_category_color',
                                 'key' => 'normal',
                                 'label' => 'Normal',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry.thumbnail-entry .blog-entry-category a' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => '#13aff0',
@@ -1664,9 +1664,9 @@ $options = [
                                 'id' => 'ocean_blog_thumbnail_category_hover_color',
                                 'key' => 'hover',
                                 'label' => 'Hover',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a:hover' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry.thumbnail-entry .blog-entry-category a:hover' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => '#333333',
@@ -1690,9 +1690,9 @@ $options = [
                                 'id' => 'ocean_blog_thumbnail_comments_color',
                                 'key' => 'normal',
                                 'label' => 'Normal',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry.thumbnail-entry .blog-entry-comments, .blog-entry.thumbnail-entry .blog-entry-comments a' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => '#ababab',
@@ -1702,9 +1702,9 @@ $options = [
                                 'id' => 'ocean_blog_thumbnail_comments_hover_color',
                                 'key' => 'hover',
                                 'label' => 'Hover',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a:hover' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry.thumbnail-entry .blog-entry-comments a:hover' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => '#13aff0',
@@ -1728,9 +1728,9 @@ $options = [
                                 'id' => 'ocean_blog_thumbnail_date_color',
                                 'key' => 'normal',
                                 'label' => 'Select Color',
-                                // 'selector' => [
-                                //     '.blog-entry.post .blog-entry-header .entry-title a' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.blog-entry.thumbnail-entry .blog-entry-date' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => '#ababab',
@@ -2158,10 +2158,10 @@ $options = [
                                         ],
                                     ]
                                 ],
-                                // 'preview' => 'queryWithType',
-                                // 'css' => [
-                                //     '#mobile-dropdown' => 'max-height'
-                                // ]
+                                'preview' => 'queryWithType',
+                                'css' => [
+                                    '.single-post .page-header' => 'height'
+                                ]
                             ],
 
                             'ocean_divider_after_blog_single_title_height' => [
@@ -2196,11 +2196,11 @@ $options = [
                                     'bottom center' => esc_html__( 'Bottom Center', 'oceanwp' ),
                                     'bottom right'  => esc_html__( 'Bottom Right', 'oceanwp' ),
                                 ],
-                                // 'preview' => 'queryWithAttr',
-                                // 'css' => [
-                                //     'selector' => '#site-header',
-                                //     'property' => 'background-position'
-                                // ]
+                                'preview' => 'queryWithAttr',
+                                'css' => [
+                                    'selector' => '.single-post .page-header',
+                                    'property' => 'background-position'
+                                ]
                             ],
 
                             'ocean_blog_single_title_bg_image_repeat' => [
@@ -2221,11 +2221,11 @@ $options = [
                                     'repeat-x'  => esc_html__( 'Repeat-x', 'oceanwp' ),
                                     'repeat-y'  => esc_html__( 'Repeat-y', 'oceanwp' ),
                                 ],
-                                // 'preview' => 'queryWithAttr',
-                                // 'css' => [
-                                //     'selector' => '#site-header',
-                                //     'property' => 'background-repeat'
-                                // ]
+                                'preview' => 'queryWithAttr',
+                                'css' => [
+                                    'selector' => '.single-post .page-header',
+                                    'property' => 'background-repeat'
+                                ]
                             ],
 
                             'ocean_blog_single_title_bg_image_attachment' => [
@@ -2256,11 +2256,11 @@ $options = [
                                         'content' => 'Fixed'
                                     ]
                                 ],
-                                // 'preview' => 'queryWithAttr',
-                                // 'css' => [
-                                //     'selector' => '#site-header',
-                                //     'property' => 'background-attachment'
-                                // ]
+                                'preview' => 'queryWithAttr',
+                                'css' => [
+                                    'selector' => '.single-post .page-header',
+                                    'property' => 'background-attachment'
+                                ]
                             ],
 
                             'ocean_blog_single_title_bg_image_size' => [
@@ -2296,11 +2296,11 @@ $options = [
                                         'content' => 'Contain'
                                     ]
                                 ],
-                                // 'preview' => 'queryWithAttr',
-                                // 'css' => [
-                                //     'selector' => '#site-header',
-                                //     'property' => 'background-size'
-                                // ]
+                                'preview' => 'queryWithAttr',
+                                'css' => [
+                                    'selector' => '.single-post .page-header',
+                                    'property' => 'background-size'
+                                ]
                             ],
 
                             'ocean_divider_after_blog_single_title_bg_image_size' => [
@@ -2328,7 +2328,7 @@ $options = [
                                         'key' => 'normal',
                                         'label' => esc_html__( 'Select Color', 'oceanwp' ),
                                         'selector' => [
-                                            '#overlay-color' => 'color'
+                                            '.single-post .background-image-page-header-overlay' => 'background-color'
                                         ],
                                         'attr' => [
                                             'transport' => 'postMessage',
@@ -2362,10 +2362,10 @@ $options = [
                                         ],
                                     ]
                                 ],
-                                // 'preview' => 'queryWithType',
-                                // 'css' => [
-                                //     '#mobile-dropdown' => 'max-height'
-                                // ]
+                                'preview' => 'queryWithType',
+                                'css' => [
+                                    '.single-post .background-image-page-header-overlay' => 'opacity'
+                                ]
                             ],
 
 
@@ -2446,12 +2446,7 @@ $options = [
                                 'label'   => esc_html__('Stylish', 'oceanwp'),
                                 'content' => esc_html__('Stylish', 'oceanwp'),
                             ]
-                        ],
-                        // 'preview' => 'queryWithAttr',
-                        // 'css' => [
-                        //     'selector' => '#site-header',
-                        //     'property' => 'background-attachment'
-                        // ]
+                        ]
                     ],
 
                     'oceanwp_single_post_header_meta_separator' => [
@@ -2486,12 +2481,7 @@ $options = [
                                 'label'   => esc_html__('Modern', 'oceanwp'),
                                 'content' => esc_html__('Modern', 'oceanwp'),
                             ]
-                        ],
-                        // 'preview' => 'queryWithAttr',
-                        // 'css' => [
-                        //     'selector' => '#site-header',
-                        //     'property' => 'background-attachment'
-                        // ]
+                        ]
                     ],
 
                     'ocean_divider_after_blog_single_title_meta_separator' => [
@@ -2659,12 +2649,7 @@ $options = [
                                 'label'   => esc_html__('None', 'oceanwp'),
                                 'content' => esc_html__('None', 'oceanwp'),
                             ],
-                        ],
-                        // 'preview' => 'queryWithAttr',
-                        // 'css' => [
-                        //     'selector' => '#site-header',
-                        //     'property' => 'background-attachment'
-                        // ]
+                        ]
                     ],
 
                 ]
@@ -2807,7 +2792,7 @@ $options = [
                         'label'    => esc_html__( 'Related Post Columns', 'oceanwp' ),
                         'type'     => 'ocean-range-slider',
                         'section'  => 'ocean_blog_single_additional_single_post_options_section',
-                        'transport' => 'postMessage',
+                        'transport' => 'refresh',
                         'priority' => 10,
                         'hideLabel'    => false,
                         'isUnit'       => false,
@@ -2897,8 +2882,6 @@ $options = [
                 'section' => 'ocean_blog_single_section',
                 'transport' => 'postMessage',
                 'priority' => 10,
-                // 'top' => 10,
-                // 'bottom' => 10
             ],
 
             'ocean_blog_single_typography_and_colors_section' => [
@@ -4060,9 +4043,9 @@ $options = [
                                 'id' => 'blog_post_meta_color',
                                 'key' => 'normal',
                                 'label' => esc_html__( 'Normal', 'oceanwp' ),
-                                // 'selector' => [
-                                //     '.single-post .entry-title' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.single-post ul.meta li, .single-post ul.meta li a' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => '#333333',
@@ -4072,9 +4055,9 @@ $options = [
                                 'id' => 'blog_post_meta_color_hover',
                                 'key' => 'hover',
                                 'label' => esc_html__( 'Hover', 'oceanwp' ),
-                                // 'selector' => [
-                                //     '.single-post .entry-title' => 'color'
-                                // ],
+                                'selector' => [
+                                    '.single-post ul.meta li a:hover' => 'color'
+                                ],
                                 'attr' => [
                                     'transport' => 'postMessage'
                                 ],
