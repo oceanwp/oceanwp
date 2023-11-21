@@ -5845,7 +5845,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Select Categories Control
 			$wp_customize->add_setting( 'ocean_woo_suggest_price_select_categories', array(
 				'default' => array(),
-				'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
+				'sanitize_callback' => 'oceanwp_sanitize_multiple_select',
 			) );
 
 			$wp_customize->add_control(
@@ -5866,7 +5866,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			// Select Products Control
 			$wp_customize->add_setting( 'ocean_woo_suggest_price_select_products', array(
 				'default' => array(),
-				'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
+				'sanitize_callback' => 'oceanwp_sanitize_multiple_select',
 			) );
 
 			$wp_customize->add_control(

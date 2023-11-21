@@ -220,19 +220,13 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				}
 
 				// Add Special Deal Notices.
-				if ( 'on' == get_theme_mod( 'ocean_woo_special_deal_enable', 'off' ) ) {
-					add_action( 'woocommerce_before_add_to_cart_form', array( $this, 'render_special_deal_notice' ) );
-				}
+				add_action( 'woocommerce_before_add_to_cart_form', array( $this, 'render_special_deal_notice' ) );
 
 				// Add Custom Stock.
-				if ( 'on' == get_theme_mod( 'ocean_woo_custom_stock_enable', 'off' ) ) {
-					add_action( 'woocommerce_before_add_to_cart_form', array( $this, 'display_stock_message' ) );
-				}
+				add_action( 'woocommerce_before_add_to_cart_form', array( $this, 'display_stock_message' ) );
 
 				// Add Suggest Price.
-				if ( 'on' == get_theme_mod( 'ocean_woo_suggest_price_enable', 'off' ) ) {
-					add_action( 'woocommerce_before_add_to_cart_form', array( $this, 'display_suggest_price_form' ) );
-				}
+				add_action( 'woocommerce_before_add_to_cart_form', array( $this, 'display_suggest_price_form' ) );
 
 				// Main Woo Filters.
 				add_filter( 'wp_nav_menu_items', array( $this, 'menu_wishlist_icon' ), 10, 2 );
@@ -1619,7 +1613,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			if ( empty( $product ) ) return;
 
 			$stock_amount = $product->get_stock_quantity();
-			$custom_message_text = get_theme_mod( 'custom_message_text', 'Only 1 left in stock' );
+			$custom_message_text = get_theme_mod( 'custom_message_text', 'Only %d left in stock' );
 			$stock_value_number = (int) get_theme_mod( 'stock_value_number', 1 );
 
 			if ($stock_amount > $stock_value_number || $stock_amount <= 0) {
@@ -1712,7 +1706,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 						$email = sanitize_email( $_POST['oecemail'] );
 
 						// Check if email is valid.
-						if ( ! $error_message && ! filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
+						if ( ! $error_message && ( empty( $email ) || ! filter_var( $email, FILTER_VALIDATE_EMAIL ) ) ) {
 							$error_message = __( 'Please enter a valid email address.', 'oceanwp' );
 						}
 
@@ -1745,7 +1739,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 							<input type="text" name="oecname" id="oecname-<?php echo esc_attr($product_id); ?>" placeholder="<?php echo esc_attr($name_placeholder); ?>">
 						</div>
 						<div class="oe-suggestform-input">
-							<input type="email" name="oecemail" id="oecemail-<?php echo esc_attr($product_id); ?>" placeholder="<?php echo esc_attr($email_placeholder); ?>">
+							<input type="email" name="oecemail" id="oecemail-<?php echo esc_attr($product_id); ?>" placeholder="<?php echo esc_attr($email_placeholder); ?>" required>
 						</div>
 						<div class="oe-suggestform-input">
 							<textarea name="oecmessage" id="oecmessage-<?php echo esc_attr($product_id); ?>" rows="4" cols="50" placeholder="<?php echo esc_attr($message_placeholder); ?>"></textarea>
