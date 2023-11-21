@@ -531,7 +531,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 			// Social icons.
 			'twitter'                => array(
 				'sili' => 'fab fa-twitter',
-				'fai'  => 'fab fa-twitter',
+				'fai'  => 'fab fa-x-twitter',
 				'svg'  => 'twitter',
 			),
 			'facebook'               => array(
@@ -571,7 +571,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 			),
 			'github'                 => array(
 				'sili' => 'fab fa-github-alt',
-				'fai'  => 'fab fa-github-alt',
+				'fai'  => 'fab fa-github',
 				'svg'  => 'github',
 			),
 			'flickr'                 => array(
