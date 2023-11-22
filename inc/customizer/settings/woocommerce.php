@@ -5725,7 +5725,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 			}
 
 			$wp_customize->add_setting( 'ocean_woo_special_deal_product_categories', array(
-				'default'   => array('all_products'),
+				'default'   => 'all_products',
 				'transport' => 'refresh',
 			));
 
