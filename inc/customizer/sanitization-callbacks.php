@@ -1,7 +1,7 @@
 <?php
 /**
  * Sanitization Callbacks
- * 
+ *
  * @package OceanWP WordPress theme
  */
 
@@ -37,7 +37,7 @@ function oceanwp_sanitize_multicheck( $values ) {
 function oceanwp_sanitize_dropdown_pages( $page_id, $setting ) {
 	// Ensure $input is an absolute integer.
 	$page_id = absint( $page_id );
-	
+
 	// If $page_id is an ID of a published page, return it; otherwise, return the default.
 	return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
 }
@@ -85,6 +85,27 @@ function oceanwp_sanitize_multi_choices( $input, $setting ) {
 	// otherwise, return the default.
 	return ( is_array( $input ) ? $input : $setting->default );
 }
+
+function oceanwp_sanitize_multiple_select( $values, $setting ) {
+    // Ensure input is an array.
+    if (!is_array($values)) {
+        $values = explode(',', $values);
+    }
+
+    // Get list of choices from the control associated with the setting.
+    $choices = $setting->manager->get_control($setting->id)->choices;
+
+    // Check if the value exists in the choices; if not, unset it.
+    foreach ($values as $key => $value) {
+        if (!array_key_exists($value, $choices)) {
+            unset($values[$key]);
+        }
+    }
+
+    // Return the sanitized array.
+    return $values;
+}
+
 
 /**
  * Image sanitization callback
@@ -138,10 +159,10 @@ function oceanwp_sanitize_number_blank( $val ) {
 function oceanwp_sanitize_select( $input, $setting ) {
 	// Ensure input is a slug.
 	$input = sanitize_key( $input );
-	
+
 	// Get list of choices from the control associated with the setting.
 	$choices = $setting->manager->get_control( $setting->id )->choices;
-	
+
 	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }

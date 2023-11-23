@@ -950,3 +950,50 @@ function oceanwp_cac_has_mobile_search_overlay() {
 		return false;
 	}
 }
+
+/*-------------------------------------------------------------------------------*/
+/* [ Special Deal Notices ]
+/*-------------------------------------------------------------------------------*/
+
+function oceanwp_cac_has_special_deal_enabled() {
+	if ('on' == get_theme_mod('ocean_woo_special_deal_enable', 'off')) {
+		return true;
+	} else {
+		return false;
+	}
+}
+function oceanwp_cac_special_deal_and_editor() {
+	if ('on' == get_theme_mod('ocean_woo_special_deal_enable', 'off') && 'editor' == get_theme_mod('ocean_woo_special_deal_source', 'editor')) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/*-------------------------------------------------------------------------------*/
+/* [ Custom Stock ]
+/*-------------------------------------------------------------------------------*/
+function oceanwp_cac_has_custom_stock_enabled() {
+	if ('on' == get_theme_mod('ocean_woo_custom_stock_enable', 'off')) {
+		return true;
+	} else {
+		return false;
+	}
+}
+/*-------------------------------------------------------------------------------*/
+/* [ Suggest Price ]
+/*-------------------------------------------------------------------------------*/
+function oceanwp_cac_is_suggest_price_enabled() {
+	return 'on' == get_theme_mod('ocean_woo_suggest_price_enable', 'off');
+}
+
+function oceanwp_cac_is_suggest_price_and_agree_checkbox_active() {
+	if ('on' == get_theme_mod('ocean_woo_suggest_price_enable', 'off')
+		&& true == get_theme_mod('ocean_woo_suggest_price_show_agree_checkbox', false) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
