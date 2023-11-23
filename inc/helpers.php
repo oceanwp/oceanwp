@@ -4017,7 +4017,7 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 			'ocean_social_options',
 			array(
 				'twitter'     => array(
-					'label'      => esc_html__( 'Twitter', 'oceanwp' ),
+					'label'      => esc_html__( 'X', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'twitter', false ),
 				),
 				'facebook'    => array(
