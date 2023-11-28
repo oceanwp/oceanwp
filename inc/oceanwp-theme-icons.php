@@ -669,6 +669,21 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'fai'  => 'fab fa-qq',
 				'svg'  => 'qq',
 			),
+			'mastodon'                     => array(
+				'sili' => 'fa-brands fa-mastodon',
+				'fai'  => 'fa-brands fa-mastodon',
+				'svg'  => '',
+			),
+			'slack'                     => array(
+				'sili' => 'fa-brands fa-slack',
+				'fai'  => 'fa-brands fa-slack',
+				'svg'  => '',
+			),
+			'threads'                     => array(
+				'sili' => 'fa-brands fa-threads',
+				'fai'  => 'fa-brands fa-threads',
+				'svg'  => '',
+			),
 		);
 
 		return apply_filters( 'oceanwp_theme_icons', $oceanwp_theme_icons );

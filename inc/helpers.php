@@ -4024,6 +4024,18 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 					'label'      => esc_html__( 'Facebook', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'facebook', false ),
 				),
+				'facebook_group' => array(
+					'label'      => esc_html__( 'Facebook Group', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'facebook', false ),
+				),
+				'slack'          => array(
+					'label'      => esc_html__( 'Slack', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'slack', false ),
+				),
+				'threads'          => array(
+					'label'      => esc_html__( 'Threads', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'threads', false ),
+				),
 				'pinterest'   => array(
 					'label'      => esc_html__( 'Pinterest', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'pinterest', false ),
@@ -4116,6 +4128,10 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 					'label'      => esc_html__( 'Discord', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'discord', false ),
 				),
+				'mastodon'          => array(
+					'label'      => esc_html__( 'Mastodon', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'mastodon', false ),
+				)
 			)
 		);
 	}
