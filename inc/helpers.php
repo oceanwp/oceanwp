@@ -4080,10 +4080,6 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 					'label'      => esc_html__( 'Yelp', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'yelp', false ),
 				),
-				'tripadvisor' => array(
-					'label'      => esc_html__( 'Tripadvisor', 'oceanwp' ),
-					'icon_class' => oceanwp_icon( 'tripadvisor', false ),
-				),
 				'rss'         => array(
 					'label'      => esc_html__( 'RSS', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'rss', false ),
