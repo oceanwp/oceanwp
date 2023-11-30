@@ -4416,6 +4416,21 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .oceanwp-social-menu ul li.oceanwp-qq a:hover {
   color: #febf1b;
 }
+.oceanwp-social-menu ul li.oceanwp-facebook_group a:hover {
+  color: #37589b;
+}
+.oceanwp-social-menu ul li.oceanwp-slack a:hover {
+  color: #4a154b;
+}
+.oceanwp-social-menu ul li.oceanwp-threads a:hover {
+  color: #000000;
+}
+.oceanwp-social-menu ul li.oceanwp-mastodon a:hover {
+  color: #563acc;
+}
+.oceanwp-social-menu ul li.oceanwp-discord a:hover {
+  color: #5865f2;
+}
 .oceanwp-social-menu .colored ul li a {
   position: relative;
   display: inline-block;
@@ -4589,6 +4604,36 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .oceanwp-social-menu .colored ul li.oceanwp-qq a:hover {
   background-color: #db9f07;
 }
+.oceanwp-social-menu .colored ul li.oceanwp-facebook_group a {
+  background-color: #37589b;
+}
+.oceanwp-social-menu .colored ul li.oceanwp-facebook_group a:hover {
+  background-color: #2d477c;
+}
+.oceanwp-social-menu .colored ul li.oceanwp-slack a {
+  background-color: #4a154b;
+}
+.oceanwp-social-menu .colored ul li.oceanwp-slack a:hover {
+  background-color: #3d0a3e;
+}
+.oceanwp-social-menu .colored ul li.oceanwp-threads a {
+  background-color: #000000;
+}
+.oceanwp-social-menu .colored ul li.oceanwp-threads a:hover {
+  background-color: #191919;
+}
+.oceanwp-social-menu .colored ul li.oceanwp-mastodon a {
+  background-color: #6364ff;
+}
+.oceanwp-social-menu .colored ul li.oceanwp-mastodon a:hover {
+  background-color: #563acc;
+}
+.oceanwp-social-menu .colored ul li.oceanwp-discord a {
+  background-color: #5865f2;
+}
+.oceanwp-social-menu .colored ul li.oceanwp-discord a:hover {
+  background-color: #7289da;
+}
 .oceanwp-social-menu .minimal ul li a {
   position: relative;
   display: inline-block;
@@ -4708,6 +4753,26 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 .oceanwp-social-menu .minimal ul li.oceanwp-qq a:hover {
   color: #febf1b;
   border-color: #febf1b;
+}
+.oceanwp-social-menu .minimal ul li.oceanwp-facebook_group a:hover {
+  color: #37589b;
+  border-color: #37589b;
+}
+.oceanwp-social-menu .minimal ul li.oceanwp-slack a:hover {
+  color: #4a154b;
+  border-color: #4a154b;
+}
+.oceanwp-social-menu .minimal ul li.oceanwp-threads a:hover {
+  color: #000000;
+  border-color: #000000;
+}
+.oceanwp-social-menu .minimal ul li.oceanwp-mastodon a:hover {
+  color: #563acc;
+  border-color: #563acc;
+}
+.oceanwp-social-menu .minimal ul li.oceanwp-discord a:hover {
+  color: #5865f2;
+  border-color: #7289da;
 }
 .oceanwp-social-menu .dark ul li a {
   position: relative;
