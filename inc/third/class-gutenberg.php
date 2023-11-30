@@ -45,7 +45,7 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 		/**
 		 * Typograhpy
 		 */
-		public function elements() {
+		public static function elements() {
 
 			return apply_filters(
 				'ocean_gutenberg_typography_tags',
