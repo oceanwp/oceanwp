@@ -4902,16 +4902,6 @@ function oceanwp_includes() {
 
 }
 
-add_filter( 'gettext', 'oceanwp_white_labels_translate', 1, 3 );
-function oceanwp_white_labels_translate( $translation, $text, $domain ) {
-	$white_label_active = get_option( 'oceanwp_whitelabel_oceanwp_panel', false );
-	$white_label_val = get_option( 'oceanwp_theme_name' );
-	if( $white_label_active && $white_label_val && strpos($text, 'OceanWP') !== false ) {
-		$translation = str_replace( 'OceanWP', $white_label_val, $text );
-	}
-	return $translation;
-}
-
 /**
  * Register theme page.
  *
