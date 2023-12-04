@@ -672,18 +672,23 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 			'mastodon'                     => array(
 				'sili' => 'fa-brands fa-mastodon',
 				'fai'  => 'fa-brands fa-mastodon',
-				'svg'  => '',
+				'svg'  => 'mastodon',
 			),
 			'slack'                     => array(
 				'sili' => 'fa-brands fa-slack',
 				'fai'  => 'fa-brands fa-slack',
-				'svg'  => '',
+				'svg'  => 'slack',
 			),
 			'threads'                     => array(
 				'sili' => 'fa-brands fa-threads',
 				'fai'  => 'fa-brands fa-threads',
-				'svg'  => '',
+				'svg'  => 'threads',
 			),
+			'whatsapp'                     => array(
+				'sili' => 'fa-brands fa-whatsapp',
+				'fai'  => 'fa-brands fa-whatsapp',
+				'svg'  => 'whatsapp',
+			)
 		);
 
 		return apply_filters( 'oceanwp_theme_icons', $oceanwp_theme_icons );
