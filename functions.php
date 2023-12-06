@@ -1127,7 +1127,7 @@ if ( ! function_exists( 'owp_fs' ) ) {
 						'has_addons'                     => true,
 						'has_paid_plans'                 => true,
 						'menu'                           => array(
-'slug'    => 'oceanwp',
+							'slug'    => 'oceanwp',
 							'account' => true,
 							'contact' => false,
 							'support' => false,

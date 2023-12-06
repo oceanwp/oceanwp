@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2023.12.06_ - 3.5.2
+- **Updated**: FontAwesome update to 6.5.1.
+
 ### _2023.11.07_ - 3.5.1
 - **Added**: WooCommerce: Product Archives: Filter for product thumbnail image.
 - **Fixed**: Header: Mega Menu: Incorrect position display when website layout is set to Boxed.
