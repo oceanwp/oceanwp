@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2023.12.06_ - 3.5.2
+### _2023.12.11_ - 3.5.2
 - **Added**:: Header: Social Menu: New options: Facebook group, Slack, Threads, Mastodon.
 - **Added**:: Top Bar: Social Menu: New options: Facebook group, Slack, Threads, Mastodon.
 - **Updated**: Google Fonts function: Avoid loading selected fonts in WP admin area where unnecessary.
