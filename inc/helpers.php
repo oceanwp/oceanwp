@@ -4017,12 +4017,24 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 			'ocean_social_options',
 			array(
 				'twitter'     => array(
-					'label'      => esc_html__( 'Twitter', 'oceanwp' ),
+					'label'      => esc_html__( 'X', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'twitter', false ),
 				),
 				'facebook'    => array(
 					'label'      => esc_html__( 'Facebook', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'facebook', false ),
+				),
+				'facebook_group' => array(
+					'label'      => esc_html__( 'Facebook Group', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'facebook', false ),
+				),
+				'slack'          => array(
+					'label'      => esc_html__( 'Slack', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'slack', false ),
+				),
+				'threads'          => array(
+					'label'      => esc_html__( 'Threads', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'threads', false ),
 				),
 				'pinterest'   => array(
 					'label'      => esc_html__( 'Pinterest', 'oceanwp' ),
@@ -4080,10 +4092,6 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 					'label'      => esc_html__( 'Yelp', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'yelp', false ),
 				),
-				'tripadvisor' => array(
-					'label'      => esc_html__( 'Tripadvisor', 'oceanwp' ),
-					'icon_class' => oceanwp_icon( 'tripadvisor', false ),
-				),
 				'rss'         => array(
 					'label'      => esc_html__( 'RSS', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'rss', false ),
@@ -4120,6 +4128,10 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 					'label'      => esc_html__( 'Discord', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'discord', false ),
 				),
+				'mastodon'          => array(
+					'label'      => esc_html__( 'Mastodon', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'mastodon', false ),
+				)
 			)
 		);
 	}
@@ -4900,16 +4912,6 @@ function oceanwp_includes() {
 		require_once OCEANWP_THEME_DIR . '/inc/themepanel/theme-panel.php';
 	}
 
-}
-
-add_filter( 'gettext', 'oceanwp_white_labels_translate', 1, 3 );
-function oceanwp_white_labels_translate( $translation, $text, $domain ) {
-	$white_label_active = get_option( 'oceanwp_whitelabel_oceanwp_panel', false );
-	$white_label_val = get_option( 'oceanwp_theme_name' );
-	if( $white_label_active && $white_label_val && strpos($text, 'OceanWP') !== false ) {
-		$translation = str_replace( 'OceanWP', $white_label_val, $text );
-	}
-	return $translation;
 }
 
 /**

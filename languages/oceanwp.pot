@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.5.1\n"
+"Project-Id-Version: OceanWP 3.5.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-06T09:02:48+00:00\n"
+"POT-Creation-Date: 2023-12-11T03:42:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: oceanwp\n"
@@ -17,9 +17,9 @@ msgstr ""
 #. Theme Name of the theme
 #. Author of the theme
 #: inc/helpers.php:3867
-#: inc/helpers.php:4927
-#: inc/helpers.php:4945
-#: inc/helpers.php:4946
+#: inc/helpers.php:4929
+#: inc/helpers.php:4947
+#: inc/helpers.php:4948
 msgid "OceanWP"
 msgstr ""
 
@@ -996,7 +996,7 @@ msgstr ""
 
 #: inc/customizer/settings/blog.php:329
 #: inc/customizer/settings/header.php:91
-#: inc/helpers.php:4100
+#: inc/helpers.php:4108
 msgid "Medium"
 msgstr ""
 
@@ -5331,7 +5331,7 @@ msgid "Copyright [oceanwp_date] - OceanWP Theme by OceanWP"
 msgstr ""
 
 #: inc/helpers.php:4020
-msgid "Twitter"
+msgid "X"
 msgstr ""
 
 #: inc/helpers.php:4024
@@ -5339,112 +5339,124 @@ msgid "Facebook"
 msgstr ""
 
 #: inc/helpers.php:4028
-msgid "Pinterest"
+msgid "Facebook Group"
 msgstr ""
 
 #: inc/helpers.php:4032
-msgid "Dribbble"
+msgid "Slack"
 msgstr ""
 
 #: inc/helpers.php:4036
-msgid "VK"
+msgid "Threads"
 msgstr ""
 
 #: inc/helpers.php:4040
+msgid "Pinterest"
+msgstr ""
+
+#: inc/helpers.php:4044
+msgid "Dribbble"
+msgstr ""
+
+#: inc/helpers.php:4048
+msgid "VK"
+msgstr ""
+
+#: inc/helpers.php:4052
 #: inc/themepanel/views/panes/free-vs-pro.php:77
 msgid "Instagram"
 msgstr ""
 
-#: inc/helpers.php:4044
+#: inc/helpers.php:4056
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/helpers.php:4048
+#: inc/helpers.php:4060
 msgid "Tumblr"
 msgstr ""
 
-#: inc/helpers.php:4052
+#: inc/helpers.php:4064
 msgid "Github"
 msgstr ""
 
-#: inc/helpers.php:4056
+#: inc/helpers.php:4068
 msgid "Flickr"
 msgstr ""
 
-#: inc/helpers.php:4060
+#: inc/helpers.php:4072
 msgid "Skype"
 msgstr ""
 
-#: inc/helpers.php:4064
+#: inc/helpers.php:4076
 msgid "Youtube"
 msgstr ""
 
-#: inc/helpers.php:4068
+#: inc/helpers.php:4080
 msgid "Vimeo"
 msgstr ""
 
-#: inc/helpers.php:4072
+#: inc/helpers.php:4084
 msgid "Vine"
 msgstr ""
 
-#: inc/helpers.php:4076
+#: inc/helpers.php:4088
 msgid "Xing"
 msgstr ""
 
-#: inc/helpers.php:4080
+#: inc/helpers.php:4092
 msgid "Yelp"
 msgstr ""
 
-#: inc/helpers.php:4084
-msgid "Tripadvisor"
-msgstr ""
-
-#: inc/helpers.php:4088
+#: inc/helpers.php:4096
 msgid "RSS"
 msgstr ""
 
-#: inc/helpers.php:4092
+#: inc/helpers.php:4100
 #: inc/oceanwp-strings.php:87
 msgid "Email"
 msgstr ""
 
-#: inc/helpers.php:4096
+#: inc/helpers.php:4104
 msgid "TikTok"
 msgstr ""
 
-#: inc/helpers.php:4104
+#: inc/helpers.php:4112
 msgid "Telegram"
 msgstr ""
 
-#: inc/helpers.php:4108
+#: inc/helpers.php:4116
 msgid "Twitch"
 msgstr ""
 
-#: inc/helpers.php:4112
+#: inc/helpers.php:4120
 msgid "Line"
 msgstr ""
 
-#: inc/helpers.php:4116
+#: inc/helpers.php:4124
 msgid "QQ"
 msgstr ""
 
-#: inc/helpers.php:4120
+#: inc/helpers.php:4128
 msgid "Discord"
 msgstr ""
 
-#: inc/helpers.php:4926
-#: inc/helpers.php:4936
-#: inc/helpers.php:4937
+#: inc/helpers.php:4132
+msgid "Mastodon"
+msgstr ""
+
+#: inc/helpers.php:4928
+#: inc/helpers.php:4938
+#: inc/helpers.php:4939
 #: inc/themepanel/views/layout/header.php:22
 msgid "OceanWP Panel"
 msgstr ""
 
-#: inc/helpers.php:4986
+#: inc/helpers.php:4988
 #: inc/themepanel/views/panes/home.php:74
 msgid "We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date."
 msgstr ""
 
-#: inc/helpers.php:4987
+#: inc/helpers.php:4989
 msgid "Update and get the new Theme Panel"
 msgstr ""
 
@@ -5743,16 +5755,16 @@ msgstr ""
 
 #: inc/oceanwp-svg.php:73
 #: inc/oceanwp-svg.php:179
-#: inc/oceanwp-theme-icons.php:741
-#: inc/oceanwp-theme-icons.php:792
+#: inc/oceanwp-theme-icons.php:761
+#: inc/oceanwp-theme-icons.php:812
 msgid "Please define default parameters in the form of an array."
 msgstr ""
 
-#: inc/oceanwp-theme-icons.php:696
+#: inc/oceanwp-theme-icons.php:716
 msgid "Please select an icon type."
 msgstr ""
 
-#: inc/oceanwp-theme-icons.php:805
+#: inc/oceanwp-theme-icons.php:825
 msgid "Please define an icon type."
 msgstr ""
 

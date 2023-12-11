@@ -1,5 +1,15 @@
 # OceanWP Changelog
 
+### _2023.12.11_ - 3.5.2
+- **Added**:: Header: Social Menu: New options: Facebook group, Slack, Threads, Mastodon.
+- **Added**:: Top Bar: Social Menu: New options: Facebook group, Slack, Threads, Mastodon.
+- **Updated**: Google Fonts function: Avoid loading selected fonts in WP admin area where unnecessary.
+- **Updated**: Font Awesome Library to 6.5.1 version.
+- **Fixed**: Compatibility: PHP 8.1+: Breadcrumbs: PHP Warning:  Trying to access array offset on value of type bool in .../wp-content/themes/oceanwp/inc/breadcrumbs.php on line 1373
+- **Changed**: OceanWP Panel whitelabeling function moved to Ocean White Label plugin.
+- **Deprecated**: Header: Social Menu: Tripadvisor option due to Tripadvisor's request towards Font Awesome: https://github.com/FortAwesome/Font-Awesome/blob/master/CHANGELOG.md#5154---2021-08-04
+- **Deprecated**: Top Bar: Social Menu: Tripadvisor option due to Tripadvisor's request towards Font Awesome: https://github.com/FortAwesome/Font-Awesome/blob/master/CHANGELOG.md#5154---2021-08-04
+
 ### _2023.11.07_ - 3.5.1
 - **Added**: WooCommerce: Product Archives: Filter for product thumbnail image.
 - **Fixed**: Header: Mega Menu: Incorrect position display when website layout is set to Boxed.

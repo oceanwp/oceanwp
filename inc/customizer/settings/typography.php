@@ -38,7 +38,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		 *
 		 * @since 1.0.0
 		 */
-		public function elements() {
+		public static function elements() {
 
 			// Return settings
 			return apply_filters(
@@ -359,21 +359,21 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 			);
 
 			if ( class_exists( 'Ocean_Extra' ) ) {
-			$wp_customize->add_control(
-				new WP_Customize_Control(
-					$wp_customize,
-					'ocean_local_google_font',
-					array(
-						'label'    => esc_html__( 'Google Fonts from Site', 'oceanwp' ),
-						'type'     => 'checkbox',
-						'section'  => 'ocean_typography_general',
-						'settings' => 'ocean_local_google_font',
-						'priority' => 10,
+				$wp_customize->add_control(
+					new WP_Customize_Control(
+						$wp_customize,
+						'ocean_local_google_font',
+						array(
+							'label'    => esc_html__( 'Google Fonts from Site', 'oceanwp' ),
+							'type'     => 'checkbox',
+							'section'  => 'ocean_typography_general',
+							'settings' => 'ocean_local_google_font',
+							'priority' => 10,
+						)
 					)
-				)
-			);
+				);
 
-			if ( did_action( 'elementor/loaded' ) ) {
+				if ( did_action( 'elementor/loaded' ) ) {
 					$wp_customize->add_setting(
 						'ocean_local_elementor_google_font',
 						array(
@@ -917,7 +917,7 @@ if ( ! class_exists( 'OceanWP_Typography_Customizer' ) ) :
 		 *
 		 * @since 1.0.0
 		 */
-		public function loop( $return = 'css' ) {
+		public static function loop( $return = 'css' ) {
 
 			// Define Vars
 			$css            = '';

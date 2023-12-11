@@ -24,7 +24,7 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 			add_action( 'after_setup_theme', array( $this, 'gutenberg_support' ), 10 );
 
 			add_action( 'admin_head', array( $this, 'gutenberg_editor_style' ) );
-			add_action( 'admin_enqueue_scripts', array( $this, 'add_google_fonts' ) );
+			add_action( 'enqueue_block_editor_assets', array( $this, 'add_google_fonts' ) );
 
 		}
 
@@ -45,7 +45,7 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 		/**
 		 * Typograhpy
 		 */
-		public function elements() {
+		public static function elements() {
 
 			return apply_filters(
 				'ocean_gutenberg_typography_tags',
@@ -124,7 +124,7 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 		 *
 		 * @param instance $return css.
 		 */
-		public function loop( $return = 'css' ) {
+		public static function loop( $return = 'css' ) {
 
 			// Define Vars.
 			$css      = '';

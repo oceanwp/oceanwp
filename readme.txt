@@ -1,7 +1,7 @@
 == OceanWP ==
 Contributors: oceanwp
-Tested up to: 6.4
-Stable tag: 3.5.1
+Tested up to: 6.4.2
+Stable tag: 3.5.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -113,12 +113,16 @@ normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
 License: MIT - https://opensource.org/licenses/MIT
 Source: https://necolas.github.io/normalize.css/
 
-Font Awesome Fonts, Copyright Dave Gandy
+Font Awesome Fonts, Copyright Fonticons, Inc.
 License: SIL OFL 1.1 License - https://scripts.sil.org/OFL
 Source: https://fontawesome.com/
 
-Font Awesome Icons, Copyright Dave Gandy
+Font Awesome Icons, Copyright Fonticons, Inc.
 License: CC BY 4.0 License - https://creativecommons.org/licenses/by/4.0/
+Source: https://fontawesome.com/
+
+Font Awesome Code, Copyright Fonticons, Inc.
+License: MIT License - https://opensource.org/licenses/MIT
 Source: https://fontawesome.com/
 
 Simple line icons, Copyright Jamal Jama & Ahmad Firoz

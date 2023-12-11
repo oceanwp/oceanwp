@@ -1370,7 +1370,7 @@ class OceanWP_Breadcrumb_Trail {
 
 		foreach ( $post_types as $type ) {
 
-			if ( $slug === $type->has_archive || ( true === $type->has_archive && $slug === $type->rewrite['slug'] ) ) {
+			if ( $slug === $type->has_archive || ( $type->has_archive && $slug === $type->rewrite['slug'] ) ) {
 				$return[] = $type;
 			}
 		}
