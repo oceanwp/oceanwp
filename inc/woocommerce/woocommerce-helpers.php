@@ -385,10 +385,6 @@ if ( ! function_exists( 'owp_yith_wishlist_browse_button_label' ) ) {
 	 */
 	function owp_yith_wishlist_browse_button_label() {
 
-		if ( oceanwp_is_woo_single() ) {
-			return;
-		}
-
 		$icon_option       = get_option( 'yith_wcwl_add_to_wishlist_icon' );
 		$custom_icon       = 'none' != $icon_option ? get_option( 'yith_wcwl_add_to_wishlist_custom_icon' ) : '';
 		$added_icon_option = get_option( 'yith_wcwl_added_to_wishlist_icon' );
