@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2023.12.14_ - 3.5.3
+- **Fixed**:: Compatibility: PHP 8.1+: Customizer not loading due to multi-select error.
+
 ### _2023.12.11_ - 3.5.2
 - **Added**:: Header: Social Menu: New options: Facebook group, Slack, Threads, Mastodon.
 - **Added**:: Top Bar: Social Menu: New options: Facebook group, Slack, Threads, Mastodon.
