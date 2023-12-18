@@ -173,8 +173,8 @@ class WooFloatingBar {
          */
         jQuery(document.body).trigger("wc_fragment_refresh");
         jQuery(document.body).trigger("added_to_cart", [
-          null,
-          null,
+          data.fragments,
+          data.cart_hash,
           jQuery(addToCartBtn),
         ]);
 
