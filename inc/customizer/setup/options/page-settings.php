@@ -19,11 +19,46 @@ $options = [
 		'default' => 'right-sidebar',
 		'priority' => 10,
 		'choices' => [
-			'right-sidebar' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/rs.png',
-			'left-sidebar'  => OCEANWP_INC_DIR_URI . 'customizer/assets/img/ls.png',
-			'full-width'    => OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
-			'full-screen'   => OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
-			'both-sidebars' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/bs.png',
+			// 'right-sidebar' => [
+			// 	'default' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/right-sidebar-default.png',
+			// 	'active'  => OCEANWP_INC_DIR_URI . 'customizer/assets/img/right-sidebar-active.png',
+			// ],
+			// 'left-sidebar'  => [
+			// 	'default' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/left-sidebar-default.png',
+			// 	'active'  => OCEANWP_INC_DIR_URI . 'customizer/assets/img/left-sidebar-active.png',
+			// ],
+			// 'full-width'    => [
+			// 	'default' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/full_width-no_sidebar-default.png',
+			// 	'active'  => OCEANWP_INC_DIR_URI . 'customizer/assets/img/full_width-no_sidebar-active.png',
+			// ],
+			// 'full-screen'   => [
+			// 	'default' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/fullscreen_width-default.png',
+			// 	'active'  => OCEANWP_INC_DIR_URI . 'customizer/assets/img/fullscreen_width-active.png',
+			// ],
+			// 'both-sidebars' => [
+			// 	'default' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/both_sidebar_layout-default.png',
+			// 	'active'  => OCEANWP_INC_DIR_URI . 'customizer/assets/img/both_sidebar_layout-active.png',
+			// ]
+			'right-sidebar' => [
+				'default' => oceanwp_customizer_print_svg('right-sidebar-default'),
+				'active'  => oceanwp_customizer_print_svg('right-sidebar-active'),
+			],
+			'left-sidebar'  => [
+				'default' => oceanwp_customizer_print_svg('left-sidebar-default'),
+				'active'  => oceanwp_customizer_print_svg('left-sidebar-active'),
+			],
+			'full-width'    => [
+				'default' => oceanwp_customizer_print_svg('full_width-no_sidebar-default'),
+				'active'  => oceanwp_customizer_print_svg('full_width-no_sidebar-active'),
+			],
+			'full-screen'   => [
+				'default' => oceanwp_customizer_print_svg('fullscreen_width-default'),
+				'active'  => oceanwp_customizer_print_svg('fullscreen_width-active'),
+			],
+			'both-sidebars' => [
+				'default' => oceanwp_customizer_print_svg('both_sidebar_layout-default'),
+				'active'  => oceanwp_customizer_print_svg('both_sidebar_layout-active'),
+			]
 		]
 	],
 
@@ -471,11 +506,28 @@ $options = [
 						'multiple' => false,
 						'active_callback' => 'oceanwp_is_page_title_display',
 						'choices' => [
-							''                 => esc_html__( 'Default', 'oceanwp' ),
-							'centered'         => esc_html__( 'Centered', 'oceanwp' ),
-							'centered-minimal' => esc_html__( 'Centered Minimal', 'oceanwp' ),
-							'background-image' => esc_html__( 'Background Image', 'oceanwp' ),
-							'hidden'           => esc_html__( 'Hidden', 'oceanwp' ),
+							// ''                 => esc_html__( 'Default', 'oceanwp' ),
+							// 'centered'         => esc_html__( 'Centered', 'oceanwp' ),
+							// 'centered-minimal' => esc_html__( 'Centered Minimal', 'oceanwp' ),
+							// 'background-image' => esc_html__( 'Background Image', 'oceanwp' ),
+							// 'hidden'           => esc_html__( 'Hidden', 'oceanwp' ),
+
+							'' => [
+								'default' => oceanwp_customizer_print_svg('page_title_default_style-default'),
+								'active'  => oceanwp_customizer_print_svg('page_title_default_style-active'),
+							],
+							'centered' => [
+								'default' => oceanwp_customizer_print_svg('page_title_centered_style-default'),
+								'active'  => oceanwp_customizer_print_svg('page_title_centered_style-active'),
+							],
+							'centered-minimal' => [
+								'default' => oceanwp_customizer_print_svg('page_title_centered_minimal_style-default'),
+								'active'  => oceanwp_customizer_print_svg('page_title_centered_minimal_style-active'),
+							],
+							'background-image' => [
+								'default' => oceanwp_customizer_print_svg('page_title_background_image_style-default'),
+								'active'  => oceanwp_customizer_print_svg('page_title_background_image_style-active'),
+							]
 						],
 					],
 

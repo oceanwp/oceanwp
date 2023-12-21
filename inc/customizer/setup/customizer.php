@@ -61,6 +61,17 @@ class OceanWP_Customizer_Init {
 			$this->register_options_recursive($wp_customize, $section_key, $section_options['options'] );
 		}
 
+		// $wp_customize->selective_refresh->add_partial( 'ocean_top_bar', array(
+		// 	'selector' => '#top-bar-wrap',
+		// 	'settings' => array( 'ocean_top_bar' ),
+		// 	'render_callback' => function() {
+		// 		if ( ! oceanwp_display_topbar() ) {
+		// 			return;
+		// 		}
+		// 		return get_template_part( 'partials/topbar/layout' );
+		// 	},
+		// ) );
+
 	}
 
     private function register_options_recursive( $wp_customize, $section_key, $options ) {

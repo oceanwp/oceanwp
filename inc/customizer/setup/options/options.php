@@ -35,6 +35,11 @@ $options = [
         'priority' => 1,
         'options' => ocean_customize_options( 'topbar' )
     ],
+    // 'ocean_topbar_copy_settings' => [
+    //     'title' => __( 'Top Bar Copy', 'oceanwp' ),
+    //     'priority' => 1,
+    //     'options' => ocean_customize_options( 'topbar-copy' )
+    // ],
     'ocean_header_settings' => [
         'title' => __( 'Header', 'oceanwp' ),
         'priority' => 1,
