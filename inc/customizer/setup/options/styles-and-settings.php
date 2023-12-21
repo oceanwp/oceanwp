@@ -67,14 +67,17 @@ $options = [
                     // 'separate' => esc_html__( 'Separate', 'oceanwp' ),
 
                     'wide' => [
+                        'label'   => esc_html__( 'Wide', 'oceanwp' ),
                         'default' => oceanwp_customizer_print_svg('wide_layout-default'),
                         'active'  => oceanwp_customizer_print_svg('wide_layout-active'),
                     ],
                     'boxed' => [
+                        'label'   => esc_html__( 'Boxed', 'oceanwp' ),
                         'default' => oceanwp_customizer_print_svg('boxed_layout-default'),
                         'active'  => oceanwp_customizer_print_svg('boxed_layout-active'),
                     ],
                     'separate' => [
+                        'label'   => esc_html__( 'Separate', 'oceanwp' ),
                         'default' => oceanwp_customizer_print_svg('separate_layout-default'),
                         'active'  => oceanwp_customizer_print_svg('separate_layout-active'),
                     ],
