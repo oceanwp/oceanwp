@@ -442,7 +442,7 @@ $options = [
 
                     'ocean_full_screen_header_hamburger_icon_height' => [
                         'id'      => 'ocean_full_screen_header_hamburger_icon_height',
-                        'label'    => esc_html__( 'Hamburger Height', 'oceanwp' ),
+                        'label'    => esc_html__( 'Hamburger Bars Height', 'oceanwp' ),
                         'type'     => 'ocean-range-slider',
                         'section'  => 'ocean_header_additional_styling_section',
                         'transport' => 'postMessage',
@@ -480,7 +480,7 @@ $options = [
 
                     'ocean_full_screen_header_hamburger_icon_gap' => [
                         'id'      => 'ocean_full_screen_header_hamburger_icon_gap',
-                        'label'    => esc_html__( 'Hamburger Height', 'oceanwp' ),
+                        'label'    => esc_html__( 'Hamburger Bars Gap', 'oceanwp' ),
                         'type'     => 'ocean-range-slider',
                         'section'  => 'ocean_header_additional_styling_section',
                         'transport' => 'postMessage',

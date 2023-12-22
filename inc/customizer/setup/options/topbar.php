@@ -104,7 +104,7 @@ $options = [
 
             'ocean_top_bar_padding' => [
                 'id' => 'ocean_top_bar_padding',
-                'label'    => esc_html__( 'Padding', 'oceanwp' ),
+                'label'    => esc_html__( 'Padding (px)', 'oceanwp' ),
                 'type'     => 'ocean-spacing',
                 'section'  => 'ocean_top_bar_general_section',
                 'transport' => 'postMessage',

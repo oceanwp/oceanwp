@@ -133,7 +133,7 @@ class OceanWP_Style_Settings_CSS {
 
         // Get site background image.
         if ( ! empty( $background_image ) ) {
-            $css .= 'body{background-image:url(' . $background_image . ');}';
+            $css .= 'body{background-image:url(' . wp_get_attachment_image_url( $background_image ) . ');}';
         }
 
         // Get site background position.
@@ -316,9 +316,6 @@ class OceanWP_Style_Settings_CSS {
         return $output;
 
     }
-
-
-
 }
 
 return new OceanWP_Style_Settings_CSS();
