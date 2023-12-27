@@ -370,7 +370,8 @@ class OceanWP_Customizer_Init {
 			array(
 				// 'options' => ocean_customize_options('options'),
 				// 'isPremium' => ocean_check_pro_license(),
-				'isOE' => ocean_is_oe_active()
+				'isOE' => ocean_is_oe_active(),
+				'sectionIcons' => ocean_customizer_section_icons()
 			)
 		);
 	}
@@ -380,6 +381,7 @@ class OceanWP_Customizer_Init {
 		require OCEANWP_INC_DIR . 'customizer/setup/functions.php';
         require OCEANWP_INC_DIR . 'customizer/setup/helpers.php';
 		require OCEANWP_INC_DIR . 'customizer/setup/callback.php';
+		require OCEANWP_INC_DIR . 'customizer/setup/svg.php';
 		require OCEANWP_INC_DIR . 'customizer/setup/css-output/css.php';
 	}
 
