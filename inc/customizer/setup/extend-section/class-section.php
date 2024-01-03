@@ -22,6 +22,10 @@ if ( class_exists( 'WP_Customize_Section' ) ) {
 
 				$array['customizeAction'] = sprintf( 'Customizing &#9656; %s', esc_html( $this->manager->get_panel( $this->panel )->title ) );
 
+			} else if ( $this->section ) {
+
+				$array['customizeAction'] = sprintf( 'Customizing &#9656; %s', esc_html( $this->manager->get_section( $this->section )->title ) );
+
 			} else {
 
 				$array['customizeAction'] = 'Customizing';

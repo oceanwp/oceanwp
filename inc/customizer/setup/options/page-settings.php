@@ -1330,7 +1330,7 @@ $options = [
 						'section' => 'ocean_section_page_title_style',
 						'transport' => 'postMessage',
 						'priority' => 10,
-						'class' => 'whatnext',
+						'class' => 'didyouknow',
 						'linkIcon' => 'link-2',
 						'titleIcon' => 'did-you-know',
 						'active_callback' => 'ocean_is_oe_active',
@@ -2006,6 +2006,369 @@ $options = [
 	],
 
 	'ocean_divider_after_page_breadcrumb_did_you_know' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_site_page_settings',
+		'transport' => 'postMessage',
+		'priority' => 10,
+	],
+
+	'ocean_section_page_search_result' => [
+		'type' => 'section',
+		'title' => esc_html__('Search Results Page', 'oceanwp'),
+		'section' => 'ocean_site_page_settings',
+		'after' => 'ocean_divider_after_page_breadcrumb_did_you_know',
+		'class' => 'section-site-layout',
+		'priority' => 10,
+		'options' => [
+			'ocean_search_layout' => [
+				'label' => esc_html__( 'Layout', 'oceanwp' ),
+				'type' => 'ocean-radio-image',
+				'section' => 'ocean_section_page_search_result',
+				'transport' => 'refresh',
+				'default' => 'right-sidebar',
+				'priority' => 10,
+				'choices' => [
+					'right-sidebar' => [
+						'label'   => esc_html__( 'Right Sidebar', 'oceanwp' ),
+						'default' => oceanwp_customizer_print_svg('right-sidebar-default'),
+						'active'  => oceanwp_customizer_print_svg('right-sidebar-active'),
+					],
+					'left-sidebar'  => [
+						'label'   => esc_html__( 'Left Sidebar', 'oceanwp' ),
+						'default' => oceanwp_customizer_print_svg('left-sidebar-default'),
+						'active'  => oceanwp_customizer_print_svg('left-sidebar-active'),
+					],
+					'full-width'    => [
+						'label'   => esc_html__( 'Full Width', 'oceanwp' ),
+						'default' => oceanwp_customizer_print_svg('full_width-no_sidebar-default'),
+						'active'  => oceanwp_customizer_print_svg('full_width-no_sidebar-active'),
+					],
+					'full-screen'   => [
+						'label'   => esc_html__( '100% Full Width', 'oceanwp' ),
+						'default' => oceanwp_customizer_print_svg('fullscreen_width-default'),
+						'active'  => oceanwp_customizer_print_svg('fullscreen_width-active'),
+					],
+					'both-sidebars' => [
+						'label'   => esc_html__( 'Both Sidebar', 'oceanwp' ),
+						'default' => oceanwp_customizer_print_svg('both_sidebar_layout-default'),
+						'active'  => oceanwp_customizer_print_svg('both_sidebar_layout-active'),
+					]
+				]
+			],
+
+			'ocean_divider_after_search_result_layout' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_section_page_search_result',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 10,
+			],
+
+			'ocean_section_page_search_result_sidebar_layout' => [
+				'type' => 'section',
+				'title' => esc_html__('Sidebar Layout Settings', 'oceanwp'),
+				'section' => 'ocean_section_page_search_result',
+				'after' => 'ocean_divider_after_search_result_layout',
+				'class' => 'section-site-layout',
+				'priority' => 10,
+				'options' => [
+					'ocean_desc_for_page_search_result_sidebar_layout' => [
+						'type' => 'ocean-content',
+						'isContent' => esc_html__('If you are using any of the sidebar layouts, additional options will appear here.', 'oceanwp'),
+						'section' => 'ocean_section_page_search_result_sidebar_layout',
+						'class' => 'description',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					],
+
+					'ocean_search_custom_sidebar' => [
+						'type' => 'ocean-switch',
+						'label' => esc_html__('Enable Custom Sidebar', 'oceanwp'),
+						'section' => 'ocean_section_page_search_result_sidebar_layout',
+						'default'  => true,
+						'transport' => 'refresh',
+						'priority' => 10,
+						'hideLabel' => false,
+						'active_callback' => 'ocean_cac_search_result_layout'
+					],
+
+					'ocean_search_both_sidebars_style' => [
+						'type' => 'ocean-select',
+						'label' => esc_html__('Both Sidebars: Content Order Style', 'oceanwp' ),
+						'section' => 'ocean_section_page_search_result_sidebar_layout',
+						'transport' => 'refresh',
+						'default' => 'scs-style',
+						'priority' => 10,
+						'hideLabel' => false,
+						'multiple' => false,
+						'active_callback' => 'oceanw_cac_is_search_bs_layout',
+						'choices' => [
+							'ssc-style' => esc_html__( 'Sidebar / Sidebar / Content', 'oceanwp' ),
+							'scs-style' => esc_html__( 'Sidebar / Content / Sidebar', 'oceanwp' ),
+							'css-style' => esc_html__( 'Content / Sidebar / Sidebar', 'oceanwp' ),
+						],
+					],
+
+					'ocean_search_both_sidebars_content_width' => [
+						'label'       => esc_html__( 'Both Sidebars: Content Width', 'oceanwp' ),
+						'type'     => 'ocean-range-slider',
+						'section'  => 'ocean_section_page_search_result_sidebar_layout',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel'    => false,
+						'isUnit'       => true,
+						'isResponsive' => false,
+						'min'          => 1,
+						'max'          => 100,
+						'step'         => 1,
+						'active_callback' => 'oceanw_cac_is_search_bs_layout',
+						'setting_args' => [
+							'desktop' => [
+								'id' => 'ocean_search_both_sidebars_content_width',
+								'label' => 'Desktop',
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'unit' => [
+								'id' => 'ocean_search_both_sidebars_content_width_unit',
+								'label' => 'Unit',
+								'attr' => [
+									'transport' => 'postMessage',
+									'default' => '%'
+								],
+							],
+						],
+					],
+
+					'ocean_search_both_sidebars_sidebars_width' => [
+						'label'       => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+						'type'     => 'ocean-range-slider',
+						'section'  => 'ocean_section_page_search_result_sidebar_layout',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel'    => false,
+						'isUnit'       => true,
+						'isResponsive' => false,
+						'min'          => 1,
+						'max'          => 100,
+						'step'         => 1,
+						'active_callback' => 'oceanw_cac_is_search_bs_layout',
+						'setting_args' => [
+							'desktop' => [
+								'id' => 'ocean_search_both_sidebars_sidebars_width',
+								'label' => 'Desktop',
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'unit' => [
+								'id' => 'ocean_search_both_sidebars_sidebars_width_unit',
+								'label' => 'Unit',
+								'attr' => [
+									'transport' => 'postMessage',
+									'default' => '%'
+								],
+							],
+						],
+					],
+
+					'ocean_search_sidebar_order' => [
+						'type' => 'ocean-select',
+						'label' => esc_html__('Mobile Sidebar Order', 'oceanwp' ),
+						'section' => 'ocean_section_page_search_result_sidebar_layout',
+						'transport' => 'refresh',
+						'default' => 'content-sidebar',
+						'priority' => 10,
+						'hideLabel' => false,
+						'multiple' => false,
+						'active_callback' => 'oceanw_cac_is_search_rs_layout',
+						'choices' => [
+							'content-sidebar' => esc_html__( 'Content / Sidebar', 'oceanwp' ),
+							'sidebar-content' => esc_html__( 'Sidebar / Content', 'oceanwp' ),
+						],
+					],
+				]
+			],
+
+			'ocean_divider_after_search_page_sidebar_layout_section' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_section_page_search_result',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 20,
+				'bottom' => 10
+			],
+
+			'ocean_menu_search_source' => [
+				'type' => 'ocean-select',
+				'label' => esc_html__('Select Source for SERP', 'oceanwp' ),
+				'section' => 'ocean_section_page_search_result',
+				'transport' => 'refresh',
+				'default' => 'any',
+				'priority' => 10,
+				'hideLabel' => false,
+				'multiple' => false,
+				'choices' => ocean_customizer_get_post_types(),
+			],
+
+			'ocean_search_post_per_page' => [
+				'label'       => esc_html__( 'Number of Search Results to Display per Page', 'oceanwp' ),
+				'type'     => 'ocean-range-slider',
+				'section'  => 'ocean_section_page_search_result',
+				'transport' => 'refresh',
+				'priority' => 10,
+				'hideLabel'    => false,
+				'isUnit'       => false,
+				'isResponsive' => false,
+				'min'          => 1,
+				'max'          => 100,
+				'step'         => 1,
+				'active_callback' => 'oceanw_cac_is_search_bs_layout',
+				'setting_args' => [
+					'desktop' => [
+						'id' => 'ocean_search_post_per_page',
+						'label' => 'Desktop',
+						'attr' => [
+							'transport' => 'refresh',
+						],
+					]
+				],
+			],
+
+			'ocean_divider_after_search_post_per_page' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_section_page_search_result',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 20,
+				'bottom' => 10
+			],
+
+			'ocean_search_logo' => [
+				'label' => esc_html__( 'Choose Logo', 'oceanwp' ),
+				'desc' => esc_html__( 'Select a search result page logo.', 'oceanwp' ),
+				'type' => 'ocean-image',
+				'section'  => 'ocean_section_page_search_result',
+				'transport' => 'refresh',
+				'priority' => 10,
+				'hideLabel' => false,
+				'mediaType' => 'image',
+			],
+		]
+	],
+
+	'ocean_spacer_for_404_error_section' => [
+		'type' => 'ocean-spacer',
+		'section' => 'ocean_site_page_settings',
+		'transport' => 'postMessage',
+		'priority' => 10
+	],
+
+	'ocean_section_page_404_error' => [
+		'type' => 'section',
+		'title' => esc_html__('404 Error Page', 'oceanwp'),
+		'section' => 'ocean_site_page_settings',
+		'after' => 'ocean_spacer_for_404_error_section',
+		'class' => 'section-site-layout',
+		'priority' => 10,
+		'options' => [
+			'ocean_error_page_layout' => [
+				'label' => esc_html__( 'Layout', 'oceanwp' ),
+				'type' => 'ocean-radio-image',
+				'section' => 'ocean_section_page_404_error',
+				'transport' => 'refresh',
+				'default' => 'full-width',
+				'priority' => 10,
+				'choices' => [
+					'right-sidebar' => [
+						'label'   => esc_html__( 'Right Sidebar', 'oceanwp' ),
+						'default' => oceanwp_customizer_print_svg('right-sidebar-default'),
+						'active'  => oceanwp_customizer_print_svg('right-sidebar-active'),
+					],
+					'left-sidebar'  => [
+						'label'   => esc_html__( 'Left Sidebar', 'oceanwp' ),
+						'default' => oceanwp_customizer_print_svg('left-sidebar-default'),
+						'active'  => oceanwp_customizer_print_svg('left-sidebar-active'),
+					],
+					'full-width'    => [
+						'label'   => esc_html__( 'Full Width', 'oceanwp' ),
+						'default' => oceanwp_customizer_print_svg('full_width-no_sidebar-default'),
+						'active'  => oceanwp_customizer_print_svg('full_width-no_sidebar-active'),
+					],
+					'full-screen'   => [
+						'label'   => esc_html__( '100% Full Width', 'oceanwp' ),
+						'default' => oceanwp_customizer_print_svg('fullscreen_width-default'),
+						'active'  => oceanwp_customizer_print_svg('fullscreen_width-active'),
+					],
+					'both-sidebars' => [
+						'label'   => esc_html__( 'Both Sidebar', 'oceanwp' ),
+						'default' => oceanwp_customizer_print_svg('both_sidebar_layout-default'),
+						'active'  => oceanwp_customizer_print_svg('both_sidebar_layout-active'),
+					]
+				]
+			],
+
+			'ocean_divider_after_404_error_layout' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_section_page_404_error',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 10,
+			],
+
+			'ocean_404_logo' => [
+				'label' => esc_html__( 'Choose Logo', 'oceanwp' ),
+				'desc' => esc_html__( 'Select a 404 error page logo.', 'oceanwp' ),
+				'type' => 'ocean-image',
+				'section'  => 'ocean_section_page_404_error',
+				'transport' => 'refresh',
+				'priority' => 10,
+				'hideLabel' => false,
+				'mediaType' => 'image',
+			],
+
+			'ocean_error_page_blank' => [
+                'id' => 'ocean_error_page_blank',
+                'type' => 'ocean-buttons',
+                'label' => esc_html__('Blank Page', 'oceanwp'),
+				'desc' => esc_html__( 'Enable this option to remove all the elements and have full control of the 404 error page.','oceanwp' ),
+                'section' => 'ocean_section_page_404_error',
+                'default'  => 'off',
+                'transport' => 'refresh',
+                'priority' => 10,
+                'hideLabel' => false,
+                'wrap'    => false,
+                'choices' => [
+                    'on' => [
+                        'id'     => 'on',
+                        'label'   => esc_html__('On', 'oceanwp'),
+                        'content' => esc_html__('On', 'oceanwp'),
+                    ],
+                    'off'  => [
+                        'id'     => 'off',
+                        'label'   => esc_html__('Off', 'oceanwp'),
+                        'content' => esc_html__('Off', 'oceanwp'),
+                    ]
+                ]
+            ],
+
+			'ocean_error_page_template' => [
+				'type' => 'ocean-select',
+				'label' => esc_html__('Select Template', 'oceanwp' ),
+				'desc' => esc_html__('Select a custom template you created in OceanWP > My Library that will replace the default 404 error page.', 'oceanwp'),
+				'section' => 'ocean_section_page_404_error',
+				'transport' => 'refresh',
+				'default' => '0',
+				'priority' => 10,
+				'hideLabel' => false,
+				'multiple' => false,
+				'choices' => oceanwp_library_template_choices(),
+			],
+		]
+	],
+
+	'ocean_divider_after_page_404_error_section' => [
 		'type' => 'ocean-divider',
 		'section' => 'ocean_site_page_settings',
 		'transport' => 'postMessage',

@@ -245,3 +245,29 @@ function oceanwp_customizer_print_svg( $svg ) {
 	return $svg_icons[$svg];
 
 }
+
+/**
+ * Get post types
+ *
+ * @param object $args    post type.
+ */
+function ocean_customizer_get_post_types( $args = array() ) {
+	$post_type_args = array(
+		'show_in_nav_menus' => true,
+	);
+
+	if ( ! empty( $args['post_type'] ) ) {
+		$post_type_args['name'] = $args['post_type'];
+	}
+
+	$_post_types = get_post_types( $post_type_args, 'objects' );
+
+	$post_types        = array();
+	$post_types['any'] = esc_html__( 'All Post Types', 'oceanwp' );
+
+	foreach ( $_post_types as $post_type => $object ) {
+		$post_types[ $post_type ] = $object->label;
+	}
+
+	return $post_types;
+}

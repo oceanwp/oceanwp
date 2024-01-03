@@ -486,3 +486,32 @@ function oceanwp_cac_not_single_post_title_cover_default() {
 	$return = ( 'sph_style_3' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) && 'default' !== get_theme_mod( 'oceanwp_single_post_header_style', 'default' ) ) ? true : false;
 	return $return;
 }
+
+function ocean_cac_search_result_layout() {
+	$layout = get_theme_mod( 'ocean_search_layout', 'right-sidebar' );
+	if ( 'right-sidebar' === $layout
+		|| 'left-sidebar' === $layout
+		|| 'both-sidebars' === $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanw_cac_is_search_rs_layout() {
+	$layout = get_theme_mod( 'ocean_search_layout', 'right-sidebar' );
+	if ( 'right-sidebar' === $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanw_cac_is_search_bs_layout() {
+	$layout = get_theme_mod( 'ocean_search_layout', 'right-sidebar' );
+	if ( 'both-sidebars' === $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
