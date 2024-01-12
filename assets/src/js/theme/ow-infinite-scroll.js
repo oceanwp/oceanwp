@@ -100,6 +100,9 @@ class OWInfiniteScroll {
             new ResponsiveAutoHeight(entryItemsSelectors.join(","));
           }
         }
+
+        // Added support for Variation Swatches by CartFlow.
+        document.dispatchEvent( new CustomEvent('cfvswVariationLoad', { detail: {} }) );
       });
       jQuery(document).trigger('maybe-init-oec-wishlist');
     });
