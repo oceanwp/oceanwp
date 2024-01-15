@@ -362,16 +362,16 @@
 	addIconToCustomizerSection('ocean_topbar_settings', oceanSectionCustomize.sectionIcons.topbar);
 	addIconToCustomizerSection('ocean_header_settings', oceanSectionCustomize.sectionIcons.header);
 	addIconToCustomizerSection('ocean_blog_settings', oceanSectionCustomize.sectionIcons.blog);
-
 	addIconToCustomizerSection('ocean_site_layout_section', oceanSectionCustomize.sectionIcons.siteLayout);
 	addIconToCustomizerSection('ocean_site_icon_section', oceanSectionCustomize.sectionIcons.siteIcon);
 	addIconToCustomizerSection('ocean_site_button_section', oceanSectionCustomize.sectionIcons.siteButton);
 	addIconToCustomizerSection('ocean_site_forms_section', oceanSectionCustomize.sectionIcons.siteForm);
 	addIconToCustomizerSection('ocean_scroll_to_top_section', oceanSectionCustomize.sectionIcons.siteScrollToTop);
 	addIconToCustomizerSection('ocean_site_pagination_section', oceanSectionCustomize.sectionIcons.sitePagination);
-
 	addIconToCustomizerSection('ocean_section_page_search_result', oceanSectionCustomize.sectionIcons.sitePageSearchResult);
 	addIconToCustomizerSection('ocean_section_page_404_error', oceanSectionCustomize.sectionIcons.sitePage404);
+	addIconToCustomizerSection('ocean_footer_widget_settings', oceanSectionCustomize.sectionIcons.footerWidget);
+	addIconToCustomizerSection('ocean_footer_copyright_settings', oceanSectionCustomize.sectionIcons.footerCopyright);
 
 
 })(jQuery);

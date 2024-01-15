@@ -49,5 +49,15 @@ $options = [
         'title' => __( 'Blog', 'oceanwp' ),
         'priority' => 1,
         'options' => ocean_customize_options( 'blog' )
+    ],
+    'ocean_footer_widget_settings' => [
+        'title' => __( 'Footer Widget', 'oceanwp' ),
+        'priority' => 1,
+        'options' => ocean_customize_options( 'footer-widget' )
+    ],
+    'ocean_footer_copyright_settings' => [
+        'title' => __( 'Footer Copyright', 'oceanwp' ),
+        'priority' => 1,
+        'options' => ocean_customize_options( 'footer-copyright' )
     ]
 ];

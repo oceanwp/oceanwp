@@ -16,3 +16,5 @@ require OCEANWP_INC_DIR . 'customizer/setup/css-output/style-settings.php';
 require OCEANWP_INC_DIR . 'customizer/setup/css-output/header.php';
 require OCEANWP_INC_DIR . 'customizer/setup/css-output/topbar.php';
 require OCEANWP_INC_DIR . 'customizer/setup/css-output/blog.php';
+require OCEANWP_INC_DIR . 'customizer/setup/css-output/footer-widget.php';
+require OCEANWP_INC_DIR . 'customizer/setup/css-output/footer-copyright.php';

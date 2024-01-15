@@ -515,3 +515,19 @@ function oceanw_cac_is_search_bs_layout() {
 		return false;
 	}
 }
+
+function ocean_cac_footer_widget() {
+	if ( true === get_theme_mod( 'ocean_footer_widgets', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_footer_copyright() {
+	if ( true === get_theme_mod( 'ocean_footer_bottom', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
