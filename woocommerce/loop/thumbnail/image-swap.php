@@ -93,7 +93,7 @@ if ( $secondary_img_id ) : ?>
 			echo wp_get_attachment_image( $attachment, 'woocommerce_thumbnail', '', $first_img );
 
 			// Secondary Image.
-			echo wp_get_attachment_image( $secondary_img_id, 'woocommerce_thumbnail', '', $second_img );;
+			echo wp_get_attachment_image( $secondary_img_id, 'woocommerce_thumbnail', '', $second_img );
 
 		}
 

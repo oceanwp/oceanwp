@@ -81,8 +81,9 @@ class FullScreenMobileMenu {
         event.stopPropagation();
         this.#closeMenu();
         setTimeout(() => {
+            const offset = targetElement.getBoundingClientRect().top + window.scrollY;
             window.scrollTo({
-                top: targetElement.offsetTop,
+                top: offset,
                 behavior: 'smooth'
             });
         }, 50);
