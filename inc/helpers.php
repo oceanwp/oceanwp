@@ -3386,7 +3386,7 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 
 		$fields['url'] = '<div class="comment-form-url"><label for="url" class="screen-reader-text">' . esc_html__( 'Enter your website URL (optional)', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr( $comment_site ) . '" size="22" tabindex="0" class="input-website" /></div>';
 
-		return $fields;
+		return apply_filters( 'ocean_post_comment_form_fields', $fields );
 
 	}
 
