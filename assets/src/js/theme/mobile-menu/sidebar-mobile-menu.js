@@ -154,14 +154,14 @@ class SidebarMobileMenu {
       document.body,
       '.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])',
       "click",
-      this.#closeSidr
+      this.#onAnchorLinkClick
     );
 
     delegate(
       document.body,
       '.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])',
       "touchend",
-      this.#closeSidr
+      this.#onAnchorLinkClick
     );
 
     document
@@ -282,10 +282,40 @@ class SidebarMobileMenu {
     }
   };
 
+  // New method to handle anchor link clicks
+  #onAnchorLinkClick = (event) => {
+    const targetLink = event.currentTarget;
+    const href = targetLink.getAttribute("href");
+
+    // Check if it's a valid anchor link
+    if (href && href.startsWith("#")) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const targetElem = document.querySelector(href);
+
+      if (targetElem) {
+        // Calculate scroll position based on target element
+        const scrollPosition = targetElem.offsetTop;
+
+        // Close the menu and scroll smoothly to the target element
+        this.#closeSidr(() => {
+          this.#elements.html.scrollTo({
+            top: scrollPosition,
+            behavior: "smooth",
+          });
+        });
+      }
+    }
+  };
+
   #closeSidr = () => {
     setTimeout(() => {
       sidr.close("sidr");
       this.#elements.hamburgerBtn?.classList.remove("is-active");
+      if (callback && typeof callback === 'function') {
+        callback();
+      }
     }, 50);
   };
 }

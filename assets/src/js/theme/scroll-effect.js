@@ -33,6 +33,13 @@ class ScrollEffect {
       .forEach((scrollItem) => {
         scrollItem.addEventListener("click", this.#onScrollItemClick);
       });
+
+    document.addEventListener('sectionLoaded', () => {
+        // Close the full-screen menu
+        if (window.oceanwp.fullScreenMobileMenu) {
+          window.oceanwp.fullScreenMobileMenu.closeMainMenu();
+        }
+    });
   };
 
 

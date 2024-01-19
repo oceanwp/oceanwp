@@ -79,14 +79,24 @@ class FullScreenMobileMenu {
 
     if (targetElement) {
         event.stopPropagation();
-        this.#closeMenu();
+        this.closeMainMenu();
         setTimeout(() => {
-            const offset = targetElement.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-                top: offset,
-                behavior: 'smooth'
-            });
-        }, 50);
+          const stickyHeader = document.querySelector('.oceanwp-sticky-header-holder .has-sticky-mobile');
+          if (stickyHeader) {
+              const headerHeight = stickyHeader.offsetHeight;
+              const offset = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+              window.scrollTo({
+                  top: offset,
+                  behavior: 'smooth'
+              });
+          } else {
+              const offset = targetElement.getBoundingClientRect().top + window.scrollY;
+              window.scrollTo({
+                  top: offset,
+                  behavior: 'smooth'
+              });
+          }
+      }, 50);
     }
 };
 
@@ -114,9 +124,25 @@ class FullScreenMobileMenu {
   #onCloseIconClick = (event) => {
     if (event.currentTarget.classList.contains('close')) {
       event.preventDefault();
-      this.#closeMenu();
+      // this.#closeMenu();
+
+      this.closeMainMenu();
     }
  }
+
+ closeMainMenu = () => {
+  if (visible(this.#elements.menu)) {
+      this.#elements.toggleMenuBtn.classList.remove("exit");
+      this.#elements.menu.classList.remove("active");
+
+      fadeOut(this.#elements.menu);
+
+      this.#elements.html.style.overflow = "";
+      this.#elements.html.style.marginRight = "";
+
+      this.#elements.hamburgerBtn?.classList.remove("is-active");
+  }
+};
 
   #closeMenu = () => {
 	// console.log("Inside closeMenu");
@@ -131,7 +157,7 @@ class FullScreenMobileMenu {
       this.#elements.html.style.marginRight = "";
 
       document
-        .querySelectorAll("#mobile-fullscreen nav ul > li.dropdown")
+        .querySelectorAll("#mobile-fullscreen nav ul > li.open-sub")
         .forEach((menuItem) => {
           menuItem.classList.remove("open-sub");
         });
@@ -148,7 +174,7 @@ class FullScreenMobileMenu {
 
   #onWindowResize = (event) => {
     if (window.innerWidth >= 960) {
-      this.#closeMenu();
+      this.closeMainMenu();
     }
   };
 
@@ -195,7 +221,9 @@ class FullScreenMobileMenu {
 
     if (escKey) {
       event.preventDefault();
-      this.#closeMenu();
+      //this.#closeMenu();
+
+      this.closeMainMenu();
     }
 
     if (
