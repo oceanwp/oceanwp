@@ -74,7 +74,7 @@ class FullScreenMobileMenu {
 
   #handleAnchorLinks = (event) => {
     const href = event.currentTarget.getAttribute('href');
-    const anchor = href.substring(href.lastIndexOf('#')); // Extract the #anchor part
+    const anchor = href.substring(href.lastIndexOf('#'));
     const targetElement = document.querySelector(anchor);
 
     if (targetElement) {
@@ -82,20 +82,18 @@ class FullScreenMobileMenu {
         this.closeMainMenu();
         setTimeout(() => {
           const stickyHeader = document.querySelector('.oceanwp-sticky-header-holder .has-sticky-mobile');
-          if (stickyHeader) {
-              const headerHeight = stickyHeader.offsetHeight;
-              const offset = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
-              window.scrollTo({
-                  top: offset,
-                  behavior: 'smooth'
-              });
-          } else {
-              const offset = targetElement.getBoundingClientRect().top + window.scrollY;
-              window.scrollTo({
-                  top: offset,
-                  behavior: 'smooth'
-              });
-          }
+          const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+
+          // If top bar has the sticky class, consider its height as well
+          const topBarStickyWrapper = document.querySelector('.oceanwp-sticky-top-bar-holder');
+          const topBarStickyHeight = topBarStickyWrapper ? topBarStickyWrapper.offsetHeight : 0;
+
+          const offset = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - topBarStickyHeight;
+
+          window.scrollTo({
+              top: offset,
+              behavior: 'smooth'
+          });
       }, 50);
     }
 };

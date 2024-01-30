@@ -1,4 +1,3 @@
-import delegate from "delegate";
 import { options } from "../../constants";
 import { fadeIn, fadeOut, slideDown, slideUp } from "../../lib/utils";
 
@@ -31,7 +30,6 @@ class SidebarMobileMenu {
 
   #start = () => {
     this.#isMenuOpen = false;
-
     this.#startSidrPlugin();
 
     if (!document.querySelector(".sidr-class-dropdown-toggle")) {
@@ -65,7 +63,6 @@ class SidebarMobileMenu {
       bind: "click",
       onOpen() {
         document.querySelector("a.sidr-class-toggle-sidr-close")?.focus();
-
         document.querySelector("a.sidr-class-toggle-sidr-close svg")?.classList.remove("sidr-class-owp-icon", "sidr-class-owp-icon--close");
         document.querySelector("a.sidr-class-toggle-sidr-close svg")?.classList.add("owp-icon", "owp-icon--close");
 
@@ -142,6 +139,34 @@ class SidebarMobileMenu {
       this.#onSidebarCloseMenuBtnClick
     );
 
+    // document.body.addEventListener("click", (event) => {
+    //   const target = event.target;
+
+    //   if (target.matches('.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])')) {
+    //     this.#onAnchorLinkClick(event);
+    //   }
+    // });
+
+    // document.body.addEventListener("touchend", (event) => {
+    //   const target = event.target;
+
+    //   if (target.matches('.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])')) {
+    //     this.#onAnchorLinkClick(event);
+    //   }
+    // });
+
+    document
+    .querySelectorAll('.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])')
+    .forEach((anchorLink) => {
+      anchorLink.addEventListener("click", this.#onAnchorLinkClick);
+    });
+
+    document
+    .querySelectorAll('.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])')
+    .forEach((anchorLink) => {
+      anchorLink.addEventListener("touchend", this.#onAnchorLinkClick);
+    });
+
     this.#menuItemsPlusIcon?.forEach((menuItemPlusIcon) => {
       menuItemPlusIcon.addEventListener("click", this.#onMenuItemPlusIconClick);
       menuItemPlusIcon.addEventListener(
@@ -149,20 +174,6 @@ class SidebarMobileMenu {
         this.#onMenuItemPlusIconClick
       );
     });
-
-    delegate(
-      document.body,
-      '.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])',
-      "click",
-      this.#onAnchorLinkClick
-    );
-
-    delegate(
-      document.body,
-      '.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])',
-      "touchend",
-      this.#onAnchorLinkClick
-    );
 
     document
       .querySelectorAll("li.sidr-class-nav-no-click > a")
@@ -186,7 +197,7 @@ class SidebarMobileMenu {
     event.preventDefault();
     event.stopPropagation();
 
-    this.#closeSidr();
+    this.closeSidr();
     this.#sidebarToggleMenuBtn.classList.remove("opened");
   };
 
@@ -219,7 +230,7 @@ class SidebarMobileMenu {
 
   #onWindowResize = (event) => {
     if (window.innerWidth >= 960) {
-      this.#closeSidr();
+      this.closeSidr();
     }
   };
 
@@ -265,7 +276,7 @@ class SidebarMobileMenu {
 
     if (escKey) {
       event.preventDefault();
-      this.#closeSidr();
+      this.closeSidr();
     }
 
     if (
@@ -284,38 +295,35 @@ class SidebarMobileMenu {
 
   // New method to handle anchor link clicks
   #onAnchorLinkClick = (event) => {
-    const targetLink = event.currentTarget;
-    const href = targetLink.getAttribute("href");
+    const href = event.currentTarget.getAttribute('href');
+    const anchor = href.substring(href.lastIndexOf('#'));
+    const targetElement = document.querySelector(anchor);
 
-    // Check if it's a valid anchor link
-    if (href && href.startsWith("#")) {
-      event.preventDefault();
-      event.stopPropagation();
+    if (targetElement) {
+        event.stopPropagation();
+        this.closeSidr();
+        setTimeout(() => {
+          const stickyHeader = document.querySelector('.oceanwp-sticky-header-holder .has-sticky-mobile');
+          const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
 
-      const targetElem = document.querySelector(href);
+          // If top bar has the sticky class, consider its height as well
+          const topBarStickyWrapper = document.querySelector('.oceanwp-sticky-top-bar-holder');
+          const topBarStickyHeight = topBarStickyWrapper ? topBarStickyWrapper.offsetHeight : 0;
 
-      if (targetElem) {
-        // Calculate scroll position based on target element
-        const scrollPosition = targetElem.offsetTop;
+          const offset = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - topBarStickyHeight;
 
-        // Close the menu and scroll smoothly to the target element
-        this.#closeSidr(() => {
-          this.#elements.html.scrollTo({
-            top: scrollPosition,
-            behavior: "smooth",
+          window.scrollTo({
+              top: offset,
+              behavior: 'smooth'
           });
-        });
-      }
+      }, 50);
     }
   };
 
-  #closeSidr = () => {
+  closeSidr = () => {
     setTimeout(() => {
       sidr.close("sidr");
       this.#elements.hamburgerBtn?.classList.remove("is-active");
-      if (callback && typeof callback === 'function') {
-        callback();
-      }
     }, 50);
   };
 }
