@@ -19,7 +19,7 @@
 $wrap_classes = array( 'products', 'oceanwp-row', 'clr' );
 
 // List/grid style.
-if ( ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() )
+if ( ( (function_exists( 'oceanwp_is_woo_shop' ) && oceanwp_is_woo_shop()) || (function_exists( 'oceanwp_is_woo_tax' ) && oceanwp_is_woo_tax()) )
 	&& get_theme_mod( 'ocean_woo_grid_list', true )
 	&& 'list' === get_theme_mod( 'ocean_woo_catalog_view', 'grid' ) ) {
 	$wrap_classes[] = 'list';
