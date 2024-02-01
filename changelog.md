@@ -1,5 +1,11 @@
 # OceanWP Changelog
 
+### _2024.XX.XX_ - 3.5.4
+- **Fixed**:: uncaught error - 'oceanwp_is_woo_shop' in oceanwp/woocommerce/loop/loop-start.php.
+- **Fixed**:: sidebar mobile menu - issue with anchor link.
+- **Fixed**:: fullscreen mobile menu - issue with anchor link.
+- **Fixed**:: dropdown mobile menu - issue with anchor link.
+
 ### _2023.12.14_ - 3.5.3
 - **Fixed**:: Compatibility: PHP 8.1+: Customizer not loading due to multi-select error.
 

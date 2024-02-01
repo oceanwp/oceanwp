@@ -2471,6 +2471,8 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 			// Add background image
 			$bg_img = get_theme_mod( 'ocean_page_header_bg_image' );
 
+			$bg_img_size = apply_filters( 'ocean_page_header_background_image_size', 'full' );
+
 			if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
 				&& is_singular( 'post' )
 				&& has_post_thumbnail() ) {
@@ -2482,7 +2484,11 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 
 			// Generate image URL if using ID
 			if ( is_numeric( $bg_img ) ) {
-				$bg_img = wp_get_attachment_image_src( $bg_img, 'full' );
+				$bg_img = wp_get_attachment_image_src( $bg_img, $bg_img_size );
+				$bg_img = $bg_img[0];
+			} else {
+				$bg_image_id = attachment_url_to_postid($bg_img);
+				$bg_img = wp_get_attachment_image_src( $bg_image_id, $bg_img_size );
 				$bg_img = $bg_img[0];
 			}
 
