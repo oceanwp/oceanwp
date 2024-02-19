@@ -673,7 +673,7 @@
   text-align: right;
 }
 .woocommerce ul.products li.owp-content-right.product.has-rating .woo-entry-inner .star-rating {
-  margin-right: 0;
+  margin-left: auto;
 }
 .woocommerce ul.products.archives-col-1 .product {
   clear: both;
