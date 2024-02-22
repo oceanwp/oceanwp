@@ -388,7 +388,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			// Down Arrows
 			if ( ! empty( $children_elements[ $element->$id_field ] ) && ( $depth == 0 )
-				|| $element->category_post != '' && $element->object == 'category'
+				|| ( isset( $element->category_post ) && $element->category_post != '' ) && $element->object == 'category'
 				&& 'full_screen' != $header_style ) {
 				$element->classes[] = 'dropdown';
 				if ( true == get_theme_mod( 'ocean_menu_arrow_down', true ) ) {
