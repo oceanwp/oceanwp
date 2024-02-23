@@ -2940,7 +2940,7 @@ if ( ! function_exists( 'oceanwp_gallery_is_lightbox_enabled' ) ) {
 
 		$has_gallery = get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true );
 
-		if ( 'on' == $has_gallery ) {
+		if ( 'on' == $has_gallery && get_theme_mod( 'ocean_performance_lightbox', 'enabled' ) === 'enabled' ) {
 			return true;
 		}
 
