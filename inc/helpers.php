@@ -319,10 +319,12 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			}
 		}
 
+		$perf_lightbox = get_theme_mod( 'ocean_performance_lightbox', 'enabled' );
+
 		/**
 		 * Performance Section
 		 */
-		if ( ! oceanwp_gallery_is_lightbox_enabled() && get_theme_mod( 'ocean_performance_lightbox', 'enabled' ) === 'disabled' ) {
+		if ( ! oceanwp_gallery_is_lightbox_enabled() && $perf_lightbox === 'disabled' ) {
 			$classes[] = 'no-lightbox';
 		}
 
@@ -2940,7 +2942,9 @@ if ( ! function_exists( 'oceanwp_gallery_is_lightbox_enabled' ) ) {
 
 		$has_gallery = get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true );
 
-		if ( 'on' == $has_gallery && get_theme_mod( 'ocean_performance_lightbox', 'enabled' ) === 'enabled' ) {
+		$perf_lightbox = get_theme_mod( 'ocean_performance_lightbox', 'enabled' );
+
+		if ( 'on' == $has_gallery && $perf_lightbox === 'enabled' ) {
 			return true;
 		}
 

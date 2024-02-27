@@ -609,8 +609,10 @@ final class OCEANWP_Theme_Class {
 			wp_enqueue_script( 'oceanwp-equal-height-elements', $dir . 'equal-height-elements.min.js', $main_script_dependencies, $theme_version, true );
 		}
 
+		$perf_lightbox = get_theme_mod( 'ocean_performance_lightbox', 'enabled' );
+
 		// Lightbox script.
-		if ( oceanwp_gallery_is_lightbox_enabled() || get_theme_mod( 'ocean_performance_lightbox', 'enabled' ) === 'enabled' ) {
+		if ( oceanwp_gallery_is_lightbox_enabled() || $perf_lightbox === 'enabled' ) {
 			array_push( $main_script_dependencies, 'ow-magnific-popup' );
 			wp_enqueue_script( 'ow-magnific-popup' );
 			wp_enqueue_script( 'oceanwp-lightbox', $dir . 'ow-lightbox.min.js', $main_script_dependencies, $theme_version, true );
