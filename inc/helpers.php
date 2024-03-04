@@ -5082,10 +5082,10 @@ if ( ! function_exists( 'ocean_get_site_name_anchors') ) {
 		$result     = '';
 		$site_url   = esc_url( home_url( '/#' ) );
 
-		if ( $content ) {
+		if ( $content && ! is_customize_preview() ) {
 			$result = $site_url . $content;
 		} else {
-			$result = $site_url . 'sitelink';
+			$result = '#';
 		}
 
 		$result = apply_filters( 'ocean_site_name_anchors', $result );
