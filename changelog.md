@@ -1,10 +1,18 @@
 # OceanWP Changelog
 
 ### _2024.XX.XX_ - 3.5.4
-- **Fixed**:: uncaught error - 'oceanwp_is_woo_shop' in oceanwp/woocommerce/loop/loop-start.php.
-- **Fixed**:: sidebar mobile menu - issue with anchor link.
-- **Fixed**:: fullscreen mobile menu - issue with anchor link.
-- **Fixed**:: dropdown mobile menu - issue with anchor link.
+- **Added**:: Filter: ocean_page_header_background_image_size: Page Title: Background Image style: alter image size.
+- **Added**:: Filter: ocean_post_comment_form_fields: Comment form field: Unset website or other fields.
+- **Fixed**:: PHP Warning: Undefined property: stdClass::$category_post in .../oceanwp/inc/walker/menu-walker.php on line 391
+- **Fixed**:: PHP Warning: Undefined array key 2 in .../oceanwp/inc/breadcrumbs.php on line 388
+- **Fixed**:: PHP Warning: Undefined constant: oceanwp_is_woo_shop.
+- **Fixed**:: Theme: Lightbox feature remains enabled on Gutenberg Gallery block even if disabled via Customize > General Options > Performance.
+- **Fixed**:: Customizer: Live preview in mobile responsive mode: Menu toggle button refreshes the preview.
+- **Fixed**:: Header: Mobile: Full Screen style: Using anchor links scrolls back to the top instead of the anchored section.
+- **Fixed**:: WooCommerce: Product layout in combination with infinite scroll issue: white gap display when reaching infinite scroll area.
+- **Fixed**:: WooCommerce: Variation swatches in combination with infinite scroll issue.
+- **Fixed**:: WooCommerce: Archive alignment of review stars issue: Customizer settings not applied.
+- **Fixed**:: WooCommerce: Floating Bar and menu cart display: Cart not displayed if product added using the Floating Bar.
 
 ### _2023.12.14_ - 3.5.3
 - **Fixed**:: Compatibility: PHP 8.1+: Customizer not loading due to multi-select error.
