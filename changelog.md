@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2024.03.13_ - 3.5.4
+### _2024.03.12_ - 3.5.4
 - **Added**:: Filter: ocean_page_header_background_image_size: Page Title: Background Image style: alter image size.
 - **Added**:: Filter: ocean_post_comment_form_fields: Comment form field: Unset website or other fields.
 - **Fixed**:: PHP Warning: Undefined property: stdClass::$category_post in .../oceanwp/inc/walker/menu-walker.php on line 391
