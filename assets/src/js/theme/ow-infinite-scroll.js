@@ -44,6 +44,52 @@ class OWInfiniteScroll {
     this.#infiniteScroll.on("load", function (body, path, response) {
       const items = body.querySelectorAll(".item-entry");
 
+      var firstElem = document.querySelector('.site-content .products .product');
+
+      var columns = 0;
+
+
+      if (firstElem) {
+        var nextElements = firstElem.nextElementSibling;
+        while (nextElements && !nextElements.classList.contains('first')) {
+            columns++;
+            nextElements = nextElements.nextElementSibling;
+        }
+
+        columns++;
+      }
+
+      var lastElem = document.querySelector('.site-content .products .product:last-child');
+
+      if ( lastElem && !lastElem.classList.contains('last') ) {
+        let offset = 0;
+        let sibling = lastElem.previousElementSibling;
+
+        while (sibling) {
+          offset++;
+          if (sibling.classList.contains('last')) {
+            break;
+          }
+          sibling = sibling.previousElementSibling;
+        }
+
+        let loop = 0;
+
+        items.forEach(item => {
+
+          loop++;
+
+          item.classList.remove('first');
+          item.classList.remove('last');
+
+          if ((loop + offset) % columns === 0) {
+            item.classList.add('last');
+          } else if (( ( loop - ( 1 - offset ) ) % columns ) === 0 ) {
+            item.classList.add('first');
+          }
+        });
+       }
+
       imagesLoaded(items, () => {
         // Blog masonry isotope
         if (this.element.classList.contains("blog-masonry-grid")) {
@@ -100,6 +146,9 @@ class OWInfiniteScroll {
             new ResponsiveAutoHeight(entryItemsSelectors.join(","));
           }
         }
+
+        // Added support for Variation Swatches by CartFlow.
+        document.dispatchEvent( new CustomEvent('cfvswVariationLoad', { detail: {} }) );
       });
       jQuery(document).trigger('maybe-init-oec-wishlist');
     });

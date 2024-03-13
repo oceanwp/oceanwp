@@ -28,11 +28,26 @@ class ScrollEffect {
   #setupEventListeners = () => {
     document
       .querySelectorAll(
-        'a.local[href*="#"]:not([href="#"]), .local a[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"]), a.sidr-class-menu-link[href*="#"]:not([href="#"])'
+        'a[href*="#"]:not([href="#"]), a.local[href*="#"]:not([href="#"]), .local a[href*="#"]:not([href="#"]), a.menu-link[href*="#"]:not([href="#"])'
       )
       .forEach((scrollItem) => {
         scrollItem.addEventListener("click", this.#onScrollItemClick);
       });
+
+    document.addEventListener('sectionLoaded', () => {
+        // Close the full-screen menu
+        if (window.oceanwp.fullScreenMobileMenu) {
+          window.oceanwp.fullScreenMobileMenu.closeMainMenu();
+        }
+
+        if (window.oceanwp.sidebarMobileMenu) {
+          window.oceanwp.sidebarMobileMenu.closeSidr();
+        }
+
+        if (window.oceanwp.dropDownMobileMenu) {
+          window.oceanwp.dropDownMobileMenu.onMenuCloseClick();
+        }
+    });
   };
 
 
@@ -66,6 +81,8 @@ class ScrollEffect {
           this.#getTopbarHeight() -
           this.#getStickyHeaderHeight();
 
+          console.log(scrollPosition);
+
         this.#elements.html.scrollTo({
           top: scrollPosition,
           behavior: "smooth",
@@ -77,8 +94,18 @@ class ScrollEffect {
   #getCustomOffsetValue = () =>
   !!oceanwpLocalize.customScrollOffset ? oceanwpLocalize.customScrollOffset : 0;
 
-  #getAdminBarHeight = () =>
-    !!this.#elements.WPAdminbar ? this.#elements.WPAdminbar.offsetHeight : 0;
+  #getAdminBarHeight = () => {
+    // Check if the window width is less than 600px
+    // const isMobile = window.innerWidth < 600;
+
+    // // If it's mobile, return 0
+    // if (isMobile) {
+    //   return 0;
+    // }
+
+    // If not mobile, proceed with the original logic to get the admin bar height
+    return !!this.#elements.WPAdminbar ? this.#elements.WPAdminbar.offsetHeight : 0;
+  };
 
   #getTopbarHeight = () =>
     !!this.#elements.topbarWrapper &&

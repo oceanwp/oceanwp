@@ -62,10 +62,10 @@ class DropDownMobileMenu {
     this.#elements.navWrapper
       ?.querySelectorAll('li a[href*="#"]:not([href="#"])')
       .forEach((menuItemLink) => {
-        menuItemLink.addEventListener("click", this.#onMenuCloseClick);
+        menuItemLink.addEventListener("click", this.#onAnchorLinkClick);
       });
 
-    document.addEventListener("click", this.#onMenuCloseClick);
+    document.addEventListener("click", this.onMenuCloseClick);
 
     this.#elements.navWrapper?.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -85,6 +85,33 @@ class DropDownMobileMenu {
     document.addEventListener("keydown", this.#onDocumentKeydown);
   };
 
+  // New method to handle anchor link clicks
+  #onAnchorLinkClick = (event) => {
+    const href = event.currentTarget.getAttribute('href');
+    const anchor = href.substring(href.lastIndexOf('#'));
+    const targetElement = document.querySelector(anchor);
+
+    if (targetElement) {
+        event.stopPropagation();
+        this.onMenuCloseClick();
+        setTimeout(() => {
+          const stickyHeader = document.querySelector('.oceanwp-sticky-header-holder .has-sticky-mobile');
+          const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+
+          // If top bar has the sticky class, consider its height as well
+          const topBarStickyWrapper = document.querySelector('.oceanwp-sticky-top-bar-holder');
+          const topBarStickyHeight = topBarStickyWrapper ? topBarStickyWrapper.offsetHeight : 0;
+
+          const offset = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - topBarStickyHeight;
+
+          window.scrollTo({
+              top: offset,
+              behavior: 'smooth'
+          });
+      }, 50);
+    }
+  };
+
   #onToggleMenuButtonClick = (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -95,7 +122,7 @@ class DropDownMobileMenu {
     this.#elements.toggleMenuBtn?.focus();
   };
 
-  #onMenuCloseClick = (event) => {
+  onMenuCloseClick = (event) => {
     !!this.#elements.navWrapper && slideUp(this.#elements.navWrapper, 250);
     this.#elements.toggleMenuBtn?.classList.remove("opened");
     this.#elements.hamburgerBtn?.classList.remove("is-active");
@@ -103,7 +130,7 @@ class DropDownMobileMenu {
 
   #onWindowResize = (event) => {
     if (window.innerWidth >= 960) {
-      this.#onMenuCloseClick();
+      this.onMenuCloseClick();
     }
   };
 
@@ -167,7 +194,7 @@ class DropDownMobileMenu {
 
     if (escKey) {
       event.preventDefault();
-      this.#onMenuCloseClick();
+      this.onMenuCloseClick();
     }
 
     if (

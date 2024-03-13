@@ -796,6 +796,10 @@ function get_ocean_icon( $args = array() ) {
 		$class = $args['class'];
 	}
 
+	if ( ! isset($theme_icons[$args['icon']]) ) {
+		return;
+	}
+
 	// Add SVG markup.
 	$icon_html = '<i class="' . $class . ' ' . $theme_icons[ $args['icon'] ][ $icon_class ] . '"' . $aria_hidden . ' role="img"></i>';
 

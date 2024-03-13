@@ -319,10 +319,12 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			}
 		}
 
+		$perf_lightbox = get_theme_mod( 'ocean_performance_lightbox', 'enabled' );
+
 		/**
 		 * Performance Section
 		 */
-		if ( ! oceanwp_gallery_is_lightbox_enabled() && get_theme_mod( 'ocean_performance_lightbox', 'enabled' ) === 'disabled' ) {
+		if ( ! oceanwp_gallery_is_lightbox_enabled() && $perf_lightbox === 'disabled' ) {
 			$classes[] = 'no-lightbox';
 		}
 
@@ -2471,6 +2473,8 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 			// Add background image
 			$bg_img = get_theme_mod( 'ocean_page_header_bg_image' );
 
+			$bg_img_size = apply_filters( 'ocean_page_header_background_image_size', 'full' );
+
 			if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
 				&& is_singular( 'post' )
 				&& has_post_thumbnail() ) {
@@ -2482,7 +2486,11 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 
 			// Generate image URL if using ID
 			if ( is_numeric( $bg_img ) ) {
-				$bg_img = wp_get_attachment_image_src( $bg_img, 'full' );
+				$bg_img = wp_get_attachment_image_src( $bg_img, $bg_img_size );
+				$bg_img = $bg_img[0];
+			} else {
+				$bg_image_id = attachment_url_to_postid($bg_img);
+				$bg_img = wp_get_attachment_image_src( $bg_image_id, $bg_img_size );
 				$bg_img = $bg_img[0];
 			}
 
@@ -2934,7 +2942,9 @@ if ( ! function_exists( 'oceanwp_gallery_is_lightbox_enabled' ) ) {
 
 		$has_gallery = get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true );
 
-		if ( 'on' == $has_gallery ) {
+		$perf_lightbox = get_theme_mod( 'ocean_performance_lightbox', 'enabled' );
+
+		if ( 'on' == $has_gallery && $perf_lightbox === 'enabled' ) {
 			return true;
 		}
 
@@ -3386,7 +3396,7 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 
 		$fields['url'] = '<div class="comment-form-url"><label for="url" class="screen-reader-text">' . esc_html__( 'Enter your website URL (optional)', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr( $comment_site ) . '" size="22" tabindex="0" class="input-website" /></div>';
 
-		return $fields;
+		return apply_filters( 'ocean_post_comment_form_fields', $fields );
 
 	}
 
@@ -5072,10 +5082,10 @@ if ( ! function_exists( 'ocean_get_site_name_anchors') ) {
 		$result     = '';
 		$site_url   = esc_url( home_url( '/#' ) );
 
-		if ( $content ) {
+		if ( $content && ! is_customize_preview() ) {
 			$result = $site_url . $content;
 		} else {
-			$result = $site_url . 'sitelink';
+			$result = '#';
 		}
 
 		$result = apply_filters( 'ocean_site_name_anchors', $result );
