@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $elements = oceanwp_medium_header_elements();
 
 // Define counter.
-$count = '';
+$count = 0;
 
 // Bottom header class.
 $classes = array( 'bottom-header-wrap', 'clr' );
