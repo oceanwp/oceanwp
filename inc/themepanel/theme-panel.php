@@ -182,6 +182,13 @@ final class OceanWP_Theme_Panel {
 	 * This function is called via admin-ajax.php.
 	 */
 	public function load_theme_panel_pane() {
+
+		// Check user capability.
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( 'You do not have sufficient permissions to access this page.' );
+			wp_die();
+		}
+
 		$slug = esc_attr( $_POST['slug'] );
 		ob_start();
 		$this->print_pane( $slug );
