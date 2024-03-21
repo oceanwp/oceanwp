@@ -124,6 +124,13 @@ class SidebarMobileMenu {
         );
       });
 
+
+    document
+      .querySelectorAll('#sidr [class*="sidr-class-dashicons"]')
+      .forEach((icon) => {
+        icon.className = icon.className.replace(/\bsidr-class-dashicons.*?\b/g, "dashicons");
+      });
+
     this.#sidebarToggleMenuBtn = document.querySelector(
       "a.sidr-class-toggle-sidr-close"
     );
