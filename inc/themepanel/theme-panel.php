@@ -189,6 +189,12 @@ final class OceanWP_Theme_Panel {
 			wp_die();
 		}
 
+		// Verify the nonce.
+		if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'oceanwp_theme_panel' ) ) {
+			wp_send_json_error( 'Nonce verification failed.' );
+			wp_die();
+		}
+
 		$slug = esc_attr( $_POST['slug'] );
 		ob_start();
 		$this->print_pane( $slug );
