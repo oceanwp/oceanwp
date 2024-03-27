@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.5.4\n"
+"Project-Id-Version: OceanWP 3.5.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-03-12T05:57:46+00:00\n"
+"POT-Creation-Date: 2024-03-27T05:40:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: oceanwp\n"
@@ -258,7 +258,7 @@ msgstr ""
 
 #: inc/breadcrumbs.php:447
 #: inc/customizer/settings/general.php:2053
-#: inc/themepanel/theme-panel.php:392
+#: inc/themepanel/theme-panel.php:405
 msgid "Home"
 msgstr ""
 
@@ -5998,145 +5998,145 @@ msgstr ""
 msgid "Let customers express the love for your products. Add social media sharing options for products."
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:203
-#: inc/themepanel/theme-panel.php:231
+#: inc/themepanel/theme-panel.php:216
+#: inc/themepanel/theme-panel.php:244
 msgid "New theme version is available"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:211
+#: inc/themepanel/theme-panel.php:224
 msgid "Warning icon"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:301
+#: inc/themepanel/theme-panel.php:314
 msgid "You should update plugin Ocean Elementor Widgets to use new features"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:304
+#: inc/themepanel/theme-panel.php:317
 msgid "You should update plugin Ocean Gutenberg Blocks to use new features"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:307
+#: inc/themepanel/theme-panel.php:320
 msgid "You should update plugin Ocean White Label to use new features"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:314
+#: inc/themepanel/theme-panel.php:327
 msgid "Available new versions some plugins"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:397
+#: inc/themepanel/theme-panel.php:410
 msgid "Customizer"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:402
+#: inc/themepanel/theme-panel.php:415
 #: inc/themepanel/views/panes/install-demos.php:47
 msgid "Install Demos"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:407
+#: inc/themepanel/theme-panel.php:420
 msgid "Ocean Images"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:412
+#: inc/themepanel/theme-panel.php:425
 msgid "Integration"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:417
+#: inc/themepanel/theme-panel.php:430
 msgid "Useful Plugins"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:422
+#: inc/themepanel/theme-panel.php:435
 msgid "Changelog"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:427
+#: inc/themepanel/theme-panel.php:440
 msgid "Free vs Pro"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:432
+#: inc/themepanel/theme-panel.php:445
 #: inc/themepanel/views/panes/elementor-widgets.php:24
 #: inc/themepanel/views/panes/free-vs-pro.php:76
 #: inc/themepanel/views/panes/home.php:110
 msgid "Elementor Widgets"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:437
+#: inc/themepanel/theme-panel.php:450
 #: inc/themepanel/views/panes/elementor-library.php:30
 msgid "Elementor Library"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:442
+#: inc/themepanel/theme-panel.php:455
 #: inc/themepanel/views/panes/gutenberg-blocks.php:23
 #: inc/themepanel/views/panes/home.php:114
 msgid "Gutenberg Blocks"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:447
+#: inc/themepanel/theme-panel.php:460
 #: inc/themepanel/views/panes/extra-settings.php:12
 msgid "Extra Settings"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:452
+#: inc/themepanel/theme-panel.php:465
 #: inc/themepanel/views/panes/admin-settings.php:26
 msgid "Admin Settings"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:457
+#: inc/themepanel/theme-panel.php:470
 #: inc/themepanel/views/panes/free-vs-pro.php:86
 #: inc/themepanel/views/panes/white-label.php:31
 msgid "White Label"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:462
+#: inc/themepanel/theme-panel.php:475
 #: inc/themepanel/views/panes/system-info.php:13
 msgid "System Info"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:467
+#: inc/themepanel/theme-panel.php:480
 msgid "Help"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:541
+#: inc/themepanel/theme-panel.php:554
 msgid "%1$sInstall free Ocean Extra recommended plugin%2$s to unlock this feature."
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:554
+#: inc/themepanel/theme-panel.php:567
 msgid "%1$sUpgrade to the Business or Agency Ocean Core Extensions Bundle plans%2$s to unlock this feature."
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:567
+#: inc/themepanel/theme-panel.php:580
 msgid "%1$sUpgrade to the Ocean Core Extensions Bundle%2$s to unlock this feature."
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:579
+#: inc/themepanel/theme-panel.php:592
 msgid "%1$s or %2$s"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:583
+#: inc/themepanel/theme-panel.php:596
 msgid "Install free Ocean Extra recommended plugin"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:588
+#: inc/themepanel/theme-panel.php:601
 msgid "upgrade to the Ocean Core Extensions Bundle"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:640
-#: inc/themepanel/theme-panel.php:805
+#: inc/themepanel/theme-panel.php:653
+#: inc/themepanel/theme-panel.php:818
 msgid "Something went wrong"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:643
+#: inc/themepanel/theme-panel.php:656
 msgid "You do not have sufficient privileges for this action."
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:779
+#: inc/themepanel/theme-panel.php:792
 msgid "Fonts folder does not exist"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:783
+#: inc/themepanel/theme-panel.php:796
 msgid "CSS folder does not exist"
 msgstr ""
 
-#: inc/themepanel/theme-panel.php:807
+#: inc/themepanel/theme-panel.php:820
 msgid "Data was cleared"
 msgstr ""
 
