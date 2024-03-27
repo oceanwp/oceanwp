@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### _2024.03.27_ - 3.5.5
+- **Fixed**:: Potential vulnerability patched: Report by Wordfence from March 18th 2024. And a special thanks to the Wordfence team for double-checking everything.
+- **Fixed**:: Compatibility: PHP 8.3: PHP Warning:  Trying to access array offset on value of type bool in ...\themes\oceanwp\inc\helpers.php on line 2494
+- **Fixed**:: Mobile Menu: Icons not displayed if not from the Font Awesome or Simple Line Icons library.
+
 ### _2024.03.12_ - 3.5.4
 - **Added**:: Filter: ocean_page_header_background_image_size: Page Title: Background Image style: alter image size.
 - **Added**:: Filter: ocean_post_comment_form_fields: Comment form field: Unset website or other fields.

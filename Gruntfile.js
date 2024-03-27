@@ -257,6 +257,8 @@ module.exports = function (grunt) {
             "inc/customizer/controls/typography/typography.css",
           "inc/customizer/assets/min/css/upsell.min.css":
             "inc/customizer/controls/upsell/upsell.css",
+          "inc/themepanel/assets/css/theme-panel.min.css":
+            "inc/themepanel/assets/css/theme-panel.css",
         },
       },
     },

@@ -208,7 +208,8 @@ jQuery(document).ready(function ($) {
             url: _wpUtilSettings.ajax.url,
             data: {
                 action: 'oceanwp_cp_load_pane_action',
-                slug: slug
+                slug: slug,
+				nonce: oceanwpThemePanel.nonce
             },
             success: function success(res) {
                 ThemePanelPanes.empty();

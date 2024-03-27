@@ -2486,12 +2486,12 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 
 			// Generate image URL if using ID
 			if ( is_numeric( $bg_img ) ) {
-				$bg_img = wp_get_attachment_image_src( $bg_img, $bg_img_size );
-				$bg_img = $bg_img[0];
+				$bg_img_src = wp_get_attachment_image_src( $bg_img, $bg_img_size );
+				$bg_img = is_array( $bg_img_src ) ? $bg_img_src[0] : $bg_img_src;
 			} else {
 				$bg_image_id = attachment_url_to_postid($bg_img);
-				$bg_img = wp_get_attachment_image_src( $bg_image_id, $bg_img_size );
-				$bg_img = $bg_img[0];
+				$bg_img_src = wp_get_attachment_image_src( $bg_image_id, $bg_img_size );
+				$bg_img = is_array( $bg_img_src ) ? $bg_img_src[0] : $bg_img_src;
 			}
 
 			$bg_img = $bg_img ? $bg_img : null;
