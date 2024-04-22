@@ -338,6 +338,7 @@ final class OCEANWP_Theme_Class {
 					'height'      => 1200,
 					'flex-height' => true,
 					'video'       => true,
+					'video-active-callback' => '__return_true'
 				)
 			)
 		);
@@ -1154,3 +1155,4 @@ if ( ! function_exists( 'owp_fs' ) ) {
 // endregion
 
 new OCEANWP_Theme_Class();
+
