@@ -5117,10 +5117,3 @@ if ( ! function_exists( 'ocean_wpml_filter_oceanwp_library_shortcode' ) ) {
 
     add_filter( 'shortcode_atts_oceanwp_library', 'ocean_wpml_filter_oceanwp_library_shortcode', 10, 3 );
 }
-
-
-if ( ! function_exists('is_header_video_active' ) ) {
-    function is_header_video_active() {
-        return true;
-    }
-}
