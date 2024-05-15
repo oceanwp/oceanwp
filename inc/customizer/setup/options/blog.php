@@ -11,70 +11,70 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $options = [
 
-    'ocean_spacer_for_blog_main_section' => [
-        'type' => 'ocean-spacer',
-        'section' => 'ocean_blog_settings',
-        'transport' => 'postMessage',
-        'priority' => 10,
-    ],
+    // 'ocean_spacer_for_blog_main_section' => [
+    //     'type' => 'ocean-spacer',
+    //     'section' => 'ocean_blog_settings',
+    //     'transport' => 'postMessage',
+    //     'priority' => 10,
+    // ],
 
-    'ocean_blog_main_page_section' => [
-		'type' => 'section',
-		'title' => esc_html__('Main Blog Page', 'oceanwp'),
-		'section' => 'ocean_blog_settings',
-		'after' => 'ocean_spacer_for_blog_main_section',
-		'class' => 'section-site-layout',
-		'priority' => 10,
-		'options' => [
-            'ocean_desc_for_blog_main_page_settings' => [
-                'type' => 'ocean-content',
-                'isContent' => esc_html__('By default, your Main Blog Page will have the exact same styling as your Blog Archives. Enabling this option enables you to style the Main Blog Page separately from archives.', 'oceanwp'),
-                'section' => 'ocean_blog_main_page_section',
-                'class' => 'description',
-                'transport' => 'postMessage',
-                'priority' => 10,
-            ],
+    // 'ocean_blog_main_page_section' => [
+	// 	'type' => 'section',
+	// 	'title' => esc_html__('Main Blog Page', 'oceanwp'),
+	// 	'section' => 'ocean_blog_settings',
+	// 	'after' => 'ocean_spacer_for_blog_main_section',
+	// 	'class' => 'section-site-layout',
+	// 	'priority' => 10,
+	// 	'options' => [
+    //         'ocean_desc_for_blog_main_page_settings' => [
+    //             'type' => 'ocean-content',
+    //             'isContent' => esc_html__('By default, your Main Blog Page will have the exact same styling as your Blog Archives. Enabling this option enables you to style the Main Blog Page separately from archives.', 'oceanwp'),
+    //             'section' => 'ocean_blog_main_page_section',
+    //             'class' => 'description',
+    //             'transport' => 'postMessage',
+    //             'priority' => 10,
+    //         ],
 
-            'ocean_blog_main_page_styling' => [
-                'type' => 'ocean-switch',
-                'label' => esc_html__('Main Blog Page Styling', 'oceanwp'),
-                'section' => 'ocean_blog_main_page_section',
-                'default'  => false,
-                'transport' => 'refresh',
-                'priority' => 10,
-                'hideLabel' => false
-            ],
+    //         'ocean_blog_main_page_styling' => [
+    //             'type' => 'ocean-switch',
+    //             'label' => esc_html__('Main Blog Page Styling', 'oceanwp'),
+    //             'section' => 'ocean_blog_main_page_section',
+    //             'default'  => false,
+    //             'transport' => 'refresh',
+    //             'priority' => 10,
+    //             'hideLabel' => false
+    //         ],
 
-            'ocean_divider_after_blog_main_page_styling' => [
-                'type' => 'ocean-divider',
-                'section' => 'ocean_blog_main_page_section',
-                'transport' => 'postMessage',
-                'priority' => 10,
-                'top' => 1,
-                'active_callback' => 'ocean_cac_blog_main_page_styling',
-            ],
+    //         'ocean_divider_after_blog_main_page_styling' => [
+    //             'type' => 'ocean-divider',
+    //             'section' => 'ocean_blog_main_page_section',
+    //             'transport' => 'postMessage',
+    //             'priority' => 10,
+    //             'top' => 1,
+    //             'active_callback' => 'ocean_cac_blog_main_page_styling',
+    //         ],
 
-            'ocean_blog_main_page_settings_section' => [
-                'type' => 'section',
-                'title' => esc_html__('Main Blog Page Settings', 'oceanwp'),
-                'section' => 'ocean_blog_main_page_section',
-                'after' => 'ocean_divider_after_blog_main_page_styling',
-                'class' => 'section-site-layout',
-                'priority' => 10,
-                'options' => [
-                    'ocean_desc_for_blog_main_page_settings_styling' => [
-                        'type' => 'ocean-content',
-                        'isContent' => esc_html__('Blog page styling main', 'oceanwp'),
-                        'section' => 'ocean_blog_main_page_settings_section',
-                        'class' => 'description',
-                        'transport' => 'postMessage',
-                        'priority' => 10,
-                        'active_callback' => 'ocean_cac_blog_main_page_styling',
-                    ],
-                ]
-            ]
-        ]
-    ],
+    //         'ocean_blog_main_page_settings_section' => [
+    //             'type' => 'section',
+    //             'title' => esc_html__('Main Blog Page Settings', 'oceanwp'),
+    //             'section' => 'ocean_blog_main_page_section',
+    //             'after' => 'ocean_divider_after_blog_main_page_styling',
+    //             'class' => 'section-site-layout',
+    //             'priority' => 10,
+    //             'options' => [
+    //                 'ocean_desc_for_blog_main_page_settings_styling' => [
+    //                     'type' => 'ocean-content',
+    //                     'isContent' => esc_html__('Blog page styling main', 'oceanwp'),
+    //                     'section' => 'ocean_blog_main_page_settings_section',
+    //                     'class' => 'description',
+    //                     'transport' => 'postMessage',
+    //                     'priority' => 10,
+    //                     'active_callback' => 'ocean_cac_blog_main_page_styling',
+    //                 ],
+    //             ]
+    //         ]
+    //     ]
+    // ],
 
     'ocean_spacer_for_blog_archive_section' => [
         'type' => 'ocean-spacer',
@@ -98,6 +98,7 @@ $options = [
                 'transport' => 'refresh',
                 'default' => 'right-sidebar',
                 'priority' => 10,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     'right-sidebar' => [
                         'label'   => esc_html__( 'Right Sidebar', 'oceanwp' ),
@@ -136,6 +137,7 @@ $options = [
 				'priority' => 10,
 				'hideLabel' => false,
 				'multiple' => false,
+                'sanitize_callback' => 'sanitize_key',
 				'choices' => [
 					'h1'   => esc_html__( 'H1', 'oceanwp' ),
 					'h2'   => esc_html__( 'H2', 'oceanwp' ),
@@ -184,6 +186,7 @@ $options = [
                         'hideLabel' => false,
                         'multiple' => false,
                         'active_callback' => 'ocean_cac_blog_archive_bs_layout',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
 							'ssc-style' => esc_html__( 'Sidebar / Sidebar / Content', 'oceanwp' ),
 							'scs-style' => esc_html__( 'Sidebar / Content / Sidebar', 'oceanwp' ),
@@ -204,6 +207,7 @@ $options = [
                         'max'          => 100,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_blog_archive_bs_layout',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_archives_both_sidebars_content_width',
@@ -228,6 +232,7 @@ $options = [
                         'max'          => 100,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_blog_archive_bs_layout',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_archives_both_sidebars_sidebars_width',
@@ -277,6 +282,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_blog_archive_sidebar_layout',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'content-sidebar' => [
                                 'id'     => 'content-sidebar',
@@ -307,6 +313,7 @@ $options = [
                 'default'  => 'large-entry',
                 'transport' => 'refresh',
                 'priority' => 10,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     'large-entry' => [
                         'label'   => esc_html__( 'Large Entry', 'oceanwp' ),
@@ -362,6 +369,7 @@ $options = [
                         'hideLabel' => false,
                         'multiple' => false,
                         'active_callback' => 'ocean_cac_blog_archive_grid_style',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => apply_filters(
 							'ocean_blog_grid_images_size', [
                                 'thumbnail'    => esc_html__( 'Thumbnail', 'oceanwp' ),
@@ -386,6 +394,7 @@ $options = [
                         'max'          => 6,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_blog_archive_grid_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_grid_columns',
@@ -424,6 +433,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_blog_archive_grid_style',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'fit-rows' => [
                                 'id'     => 'fit-rows',
@@ -448,6 +458,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_blog_archive_thumbnail_style',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'left' => [
                                 'id'     => 'left',
@@ -472,6 +483,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_blog_archive_thumbnail_style',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'top' => [
                                 'id'     => 'top',
@@ -527,6 +539,7 @@ $options = [
                         'priority' => 10,
                         'default'  => apply_filters( 'ocean_blog_blog_entry_default', [ 'featured_image', 'title', 'meta', 'content', 'read_more' ] ),
                         'active_callback' => 'oceanwp_cac_not_blog_archive_thumbnail_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
                         'hideLabel' => false,
                         'choices' => oceanwp_blog_entry_elements(),
                     ],
@@ -548,6 +561,7 @@ $options = [
                         'priority' => 10,
                         'default'  => apply_filters( 'ocean_blog_meta_default', [ 'author', 'date', 'categories', 'comments' ] ),
                         'active_callback' => 'oceanwp_cac_not_blog_archive_thumbnail_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
                         'hideLabel' => false,
                         'choices' => apply_filters(
 							'ocean_blog_meta_choices',
@@ -593,6 +607,7 @@ $options = [
                         'min'          => 1,
                         'max'          => 500,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_entry_excerpt_length',
@@ -622,6 +637,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'wrap'    => false,
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'standard' => [
                                 'id'     => 'standard',
@@ -669,6 +685,7 @@ $options = [
                                 'showAlpha' => true,
                                 'showPalette' => true,
                                 'active_callback' => 'oceanwp_cac_blog_archive_pagination_infinite_scroll',
+                                'sanitize_callback' => 'wp_kses_post',
                                 'setting_args' => [
                                     'normal' => [
                                         'id' => 'ocean_blog_infinite_scroll_spinners_color',
@@ -747,6 +764,7 @@ $options = [
                         'transport' => 'postMessage',
                         'priority' => 10,
                         'hideLabel' => false,
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_blog_image_overlay_color' => [
@@ -758,6 +776,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_blog_image_overlay_color',
@@ -793,6 +812,7 @@ $options = [
                         'min'          => 1,
                         'max'          => 2000,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_entry_image_width',
@@ -816,6 +836,7 @@ $options = [
                         'min'          => 1,
                         'max'          => 2000,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_entry_image_height',
@@ -856,42 +877,42 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'blog_entry_title_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'blog_entry_title_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'blog_entry_title_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'blog_entry_title_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'blog_entry_title_typography[font-subset]',
-                                'label' => 'Font Subset',
+                                'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'blog_entry_title_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 24
@@ -899,21 +920,21 @@ $options = [
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'blog_entry_title_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'blog_entry_title_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'blog_entry_title_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -921,28 +942,28 @@ $options = [
                             ],
                             'letterSpacing' => [
                                 'id' => 'blog_entry_title_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'blog_entry_title_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'blog_entry_title_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'blog_entry_title_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -950,7 +971,7 @@ $options = [
                             ],
                             'lineHeight' => [
                                 'id' => 'blog_entry_title_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 1.4
@@ -958,49 +979,49 @@ $options = [
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'blog_entry_title_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'blog_entry_title_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'blog_entry_title_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'blog_entry_title_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'blog_entry_title_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'blog_entry_title_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'blog_entry_title_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -1020,91 +1041,91 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'blog_entry_meta_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'blog_entry_meta_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'blog_entry_meta_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'blog_entry_meta_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'blog_entry_meta_typography[font-subset]',
-                                'label' => 'Font Subset',
+                               'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'blog_entry_meta_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'blog_entry_meta_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'blog_entry_meta_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'blog_entry_meta_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacing' => [
                                 'id' => 'blog_entry_meta_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'blog_entry_meta_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'blog_entry_meta_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'blog_entry_meta_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -1112,56 +1133,56 @@ $options = [
                             ],
                             'lineHeight' => [
                                 'id' => 'blog_entry_meta_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'blog_entry_meta_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'blog_entry_meta_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'blog_entry_meta_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'blog_entry_meta_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'blog_entry_meta_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'blog_entry_meta_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'blog_entry_meta_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -1181,91 +1202,91 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'blog_entry_content_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'blog_entry_content_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'blog_entry_content_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'blog_entry_content_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'blog_entry_content_typography[font-subset]',
-                                'label' => 'Font Subset',
+                               'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'blog_entry_content_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'blog_entry_content_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'blog_entry_content_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'blog_entry_content_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacing' => [
                                 'id' => 'blog_entry_content_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'blog_entry_content_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'blog_entry_content_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'blog_entry_content_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -1273,56 +1294,56 @@ $options = [
                             ],
                             'lineHeight' => [
                                 'id' => 'blog_entry_content_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'blog_entry_content_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'blog_entry_content_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'blog_entry_content_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'blog_entry_content_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'blog_entry_content_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'blog_entry_content_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'blog_entry_content_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -1342,91 +1363,91 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'blog_entry_readmore_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'blog_entry_readmore_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'blog_entry_readmore_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'blog_entry_readmore_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'blog_entry_readmore_typography[font-subset]',
-                                'label' => 'Font Subset',
+                               'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'blog_entry_readmore_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'blog_entry_readmore_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'blog_entry_readmore_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'blog_entry_readmore_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacing' => [
                                 'id' => 'blog_entry_readmore_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'blog_entry_readmore_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'blog_entry_readmore_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'blog_entry_readmore_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -1434,56 +1455,56 @@ $options = [
                             ],
                             'lineHeight' => [
                                 'id' => 'blog_entry_readmore_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'blog_entry_readmore_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'blog_entry_readmore_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'blog_entry_readmore_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'blog_entry_readmore_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'blog_entry_readmore_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'blog_entry_readmore_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'blog_entry_readmore_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -1509,6 +1530,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'blog_entry_title_typography[color]',
@@ -1545,6 +1567,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_blog_archive_meta_color',
@@ -1580,6 +1603,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_theme_blog_posts_icons_color',
@@ -1605,6 +1629,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_blog_archive_content_color',
@@ -1629,6 +1654,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_blog_archive_readmore_color',
@@ -1665,6 +1691,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_blog_archive_thumbnail_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_blog_thumbnail_category_color',
@@ -1703,6 +1730,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_blog_archive_thumbnail_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_blog_thumbnail_comments_color',
@@ -1741,6 +1769,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_blog_archive_thumbnail_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_blog_thumbnail_date_color',
@@ -1791,13 +1820,8 @@ $options = [
                 'transport' => 'refresh',
                 'default' => 'right-sidebar',
                 'priority' => 10,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
-                    // 'right-sidebar' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/rs.png',
-                    // 'left-sidebar'  => OCEANWP_INC_DIR_URI . 'customizer/assets/img/ls.png',
-                    // 'full-width'    => OCEANWP_INC_DIR_URI . 'customizer/assets/img/fw.png',
-                    // 'full-screen'   => OCEANWP_INC_DIR_URI . 'customizer/assets/img/fs.png',
-                    // 'both-sidebars' => OCEANWP_INC_DIR_URI . 'customizer/assets/img/bs.png',
-
                     'right-sidebar' => [
                         'label'   => esc_html__( 'Right Sidebar', 'oceanwp' ),
                         'default' => oceanwp_customizer_print_svg('right-sidebar-default'),
@@ -1864,6 +1888,7 @@ $options = [
                         'min'          => 0,
                         'max'          => 2000,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_archives_both_sidebars_content_width',
@@ -1886,6 +1911,7 @@ $options = [
                         'hideLabel' => false,
                         'multiple' => false,
                         'active_callback' => 'ocean_cac_blog_single_bs_layout',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
 							'ssc-style' => esc_html__( 'Sidebar / Sidebar / Content', 'oceanwp' ),
 							'scs-style' => esc_html__( 'Sidebar / Content / Sidebar', 'oceanwp' ),
@@ -1906,6 +1932,7 @@ $options = [
                         'max'          => 100,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_blog_single_bs_layout',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_single_both_sidebars_content_width',
@@ -1930,6 +1957,7 @@ $options = [
                         'max'          => 100,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_blog_single_bs_layout',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_single_both_sidebars_sidebars_width',
@@ -1979,6 +2007,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_blog_single_sidebar_layout',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'content-sidebar' => [
                                 'id'     => 'content-sidebar',
@@ -2008,18 +2037,10 @@ $options = [
                 'label' => esc_html__('Header Type', 'oceanwp' ),
                 'section' => 'ocean_blog_single_section',
                 'transport' => 'refresh',
-                'default' => 'minimal',
+                'default' => '',
                 'priority' => 10,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
-                    // 'minimal'     => esc_html__( 'Minimal', 'oceanwp' ),
-                    // 'transparent' => esc_html__( 'Transparent', 'oceanwp' ),
-                    // 'top'         => esc_html__( 'Top Menu', 'oceanwp' ),
-                    // 'full_screen' => esc_html__( 'Full Screen', 'oceanwp' ),
-                    // 'center'      => esc_html__( 'Center', 'oceanwp' ),
-                    // 'medium'      => esc_html__( 'Medium', 'oceanwp' ),
-                    // 'vertical'    => esc_html__( 'Vertical', 'oceanwp' ),
-                    // 'custom'      => esc_html__( 'Custom Header', 'oceanwp' ),
-
                     'minimal' => [
                         'label'   => esc_html__( 'Minimal', 'oceanwp' ),
                         'default' => oceanwp_customizer_print_svg('header_type_minimal_style-default'),
@@ -2106,15 +2127,8 @@ $options = [
                 'transport' => 'refresh',
                 'default' => 'default',
                 'priority' => 10,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
-                    // 'default'      => esc_html__( 'Default', 'oceanwp' ),
-                    // 'sph_style_2'  => esc_html__( 'Intro', 'oceanwp' ),
-                    // 'sph_style_3'  => esc_html__( 'Cover', 'oceanwp' ),
-                    // 'sph_style_4'  => esc_html__( 'Card', 'oceanwp' ),
-                    // 'sph_style_5'  => esc_html__( 'Card Invert', 'oceanwp' ),
-                    // 'sph_style_6'  => esc_html__( 'Screen', 'oceanwp' ),
-                    // 'sph_style_7'  => esc_html__( 'Screen Invert', 'oceanwp' ),
-
                     'default' => [
                         'label'   => esc_html__( 'Default', 'oceanwp' ),
                         'default' => oceanwp_customizer_print_svg('blog_post_title_default_style-default'),
@@ -2180,6 +2194,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_blog_single_post_title_default',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'blog' => [
                                 'id'     => 'blog',
@@ -2203,6 +2218,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_blog_single_post_title_default',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_blog_single_title_featured_image_section' => [
@@ -2223,6 +2239,7 @@ $options = [
                                 'hideLabel' => false,
                                 'wrap'    => false,
                                 'active_callback' => 'ocean_cac_blog_single_post_title_default',
+                                'sanitize_callback' => 'sanitize_key',
                                 'choices' => [
                                     'left' => [
                                         'id'     => 'left',
@@ -2265,6 +2282,7 @@ $options = [
                                 'max'          => 800,
                                 'step'         => 1,
                                 'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+                                'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                                 'setting_args' => [
                                     'desktop' => [
                                         'id' => 'ocean_blog_single_title_bg_image_height',
@@ -2301,6 +2319,7 @@ $options = [
                                 'hideLabel' => false,
                                 'multiple' => false,
                                 'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+                                'sanitize_callback' => 'sanitize_key',
                                 'choices' => [
                                     'initial'       => esc_html__( 'Default', 'oceanwp' ),
                                     'top left'      => esc_html__( 'Top Left', 'oceanwp' ),
@@ -2331,6 +2350,7 @@ $options = [
                                 'hideLabel' => false,
                                 'multiple' => false,
                                 'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+                                'sanitize_callback' => 'sanitize_key',
                                 'choices' => [
                                     'initial'   => esc_html__( 'Default', 'oceanwp' ),
                                     'no-repeat' => esc_html__( 'No-repeat', 'oceanwp' ),
@@ -2356,6 +2376,7 @@ $options = [
                                 'hideLabel' => false,
                                 'wrap'    => false,
                                 'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+                                'sanitize_callback' => 'sanitize_key',
                                 'choices' => [
                                     'initial' => [
                                         'id'     => 'initial',
@@ -2391,6 +2412,7 @@ $options = [
                                 'hideLabel' => false,
                                 'wrap'    => false,
                                 'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+                                'sanitize_callback' => 'sanitize_key',
                                 'choices' => [
                                     'initial' => [
                                         'id'     => 'initial',
@@ -2439,6 +2461,7 @@ $options = [
                                 'showAlpha' => true,
                                 'showPalette' => true,
                                 'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+                                'sanitize_callback' => 'wp_kses_post',
                                 'setting_args' => [
                                     'normal' => [
                                         'id' => 'ocean_blog_single_title_bg_image_overlay_color',
@@ -2499,6 +2522,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'oceanwp_cac_not_single_post_title_cover_default',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'oceanwp_single_post_header_background',
@@ -2525,6 +2549,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'oceanwp_cac_single_post_title_cover',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'oceanwp_single_post_header_background_cover',
@@ -2552,6 +2577,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_not_blog_single_post_title_default',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'spm_style_2' => [
                                 'id'     => 'spm_style_2',
@@ -2577,6 +2603,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_not_blog_single_post_title_default',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'none' => [
                                 'id'     => 'none',
@@ -2618,6 +2645,7 @@ $options = [
                         'priority' => 10,
                         'default'  => [ 'author', 'date', 'categories', 'comments', 'mod-date', 'reading-time', 'tags' ],
                         'active_callback' => 'ocean_cac_not_blog_single_post_title_default',
+                        'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
                         'hideLabel' => false,
                         'choices' => [
                             'author'        => esc_html__( 'Author', 'oceanwp' ),
@@ -2656,6 +2684,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'multiple' => false,
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'h1'   => esc_html__( 'H1', 'oceanwp' ),
                             'h2'   => esc_html__( 'H2', 'oceanwp' ),
@@ -2696,6 +2725,7 @@ $options = [
                         'default'  => [ 'featured_image', 'title', 'meta', 'content', 'tags', 'social_share', 'next_prev', 'author_box', 'related_posts', 'single_comments' ],
                         'hideLabel' => false,
                         'choices' => oceanwp_blog_single_elements(),
+                        'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
                     ],
 
                     'ocean_divider_after_blog_single_elements_positioning' => [
@@ -2725,6 +2755,7 @@ $options = [
 								'reading-time' => esc_html__( 'Reading Time', 'oceanwp' ),
                             ]
 						),
+                        'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
                     ],
 
                     'ocean_divider_after_blog_single_meta' => [
@@ -2745,6 +2776,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'wrap'    => false,
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'default'  => [
                                 'id'     => 'default',
@@ -2798,6 +2830,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'wrap'    => false,
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'before'  => [
                                 'id'     => 'before',
@@ -2830,6 +2863,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'wrap'    => false,
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'category'  => [
                                 'id'     => 'category',
@@ -2867,6 +2901,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'wrap'    => false,
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'category'  => [
                                 'id'     => 'category',
@@ -2893,6 +2928,7 @@ $options = [
                         'min'          => 2,
                         'max'          => 50,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_related_count',
@@ -2917,6 +2953,7 @@ $options = [
                         'min'          => 1,
                         'max'          => 6,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_related_columns',
@@ -2957,6 +2994,7 @@ $options = [
                         'min'          => 1,
                         'max'          => 800,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_related_img_width',
@@ -2980,6 +3018,7 @@ $options = [
                         'min'          => 1,
                         'max'          => 800,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_blog_related_img_height',
@@ -3022,42 +3061,42 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'single_post_title_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'single_post_title_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'single_post_title_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'single_post_title_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'single_post_title_typography[font-subset]',
-                                'label' => 'Font Subset',
+                               'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'single_post_title_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 34
@@ -3065,21 +3104,21 @@ $options = [
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'single_post_title_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'single_post_title_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'single_post_title_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -3087,7 +3126,7 @@ $options = [
                             ],
                             'letterSpacing' => [
                                 'id' => 'single_post_title_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 0.6
@@ -3095,28 +3134,28 @@ $options = [
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'single_post_title_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'single_post_title_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'single_post_title_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeight' => [
                                 'id' => 'single_post_title_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 1.4
@@ -3124,49 +3163,49 @@ $options = [
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'single_post_title_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'single_post_title_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'single_post_title_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'single_post_title_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'single_post_title_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'single_post_title_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'single_post_title_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -3187,42 +3226,42 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'single_post_meta_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'single_post_meta_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'single_post_meta_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'single_post_meta_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'single_post_meta_typography[font-subset]',
-                                'label' => 'Font Subset',
+                               'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'single_post_meta_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 13
@@ -3230,21 +3269,21 @@ $options = [
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'single_post_meta_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'single_post_meta_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'single_post_meta_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -3252,7 +3291,7 @@ $options = [
                             ],
                             'letterSpacing' => [
                                 'id' => 'single_post_meta_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 0.6
@@ -3260,28 +3299,28 @@ $options = [
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'single_post_meta_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'single_post_meta_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'single_post_meta_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeight' => [
                                 'id' => 'single_post_meta_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 1.4
@@ -3289,49 +3328,49 @@ $options = [
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'single_post_meta_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'single_post_meta_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'single_post_meta_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'single_post_meta_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'single_post_meta_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'single_post_meta_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'single_post_meta_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -3352,42 +3391,42 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'single_post_title_author_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'single_post_title_author_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'single_post_title_author_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'single_post_title_author_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'single_post_title_author_typography[font-subset]',
-                                'label' => 'Font Subset',
+                               'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'single_post_title_author_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 14
@@ -3395,21 +3434,21 @@ $options = [
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'single_post_title_author_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'single_post_title_author_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'single_post_title_author_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -3417,7 +3456,7 @@ $options = [
                             ],
                             'letterSpacing' => [
                                 'id' => 'single_post_title_author_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 0.6
@@ -3425,28 +3464,28 @@ $options = [
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'single_post_title_author_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'single_post_title_author_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'single_post_title_author_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeight' => [
                                 'id' => 'single_post_title_author_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 1.4
@@ -3454,49 +3493,49 @@ $options = [
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'single_post_title_author_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'single_post_title_author_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'single_post_title_author_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'single_post_title_author_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'single_post_title_author_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'single_post_title_author_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'single_post_title_author_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -3517,42 +3556,42 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'single_post_title_author_bio_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'single_post_title_author_bio_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'single_post_title_author_bio_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'single_post_title_author_bio_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'single_post_title_author_bio_typography[font-subset]',
-                                'label' => 'Font Subset',
+                               'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'single_post_title_author_bio_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 12
@@ -3560,21 +3599,21 @@ $options = [
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'single_post_title_author_bio_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'single_post_title_author_bio_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'single_post_title_author_bio_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -3582,7 +3621,7 @@ $options = [
                             ],
                             'letterSpacing' => [
                                 'id' => 'single_post_title_author_bio_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 0.6
@@ -3590,28 +3629,28 @@ $options = [
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'single_post_title_author_bio_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'single_post_title_author_bio_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'single_post_title_author_bio_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeight' => [
                                 'id' => 'single_post_title_author_bio_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 1.4
@@ -3619,49 +3658,49 @@ $options = [
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'single_post_title_author_bio_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'single_post_title_author_bio_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'single_post_title_author_bio_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'single_post_title_author_bio_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'single_post_title_author_bio_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'single_post_title_author_bio_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'single_post_title_author_bio_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -3681,42 +3720,42 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'blog_post_title_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'blog_post_title_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'blog_post_title_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'blog_post_title_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'blog_post_title_typography[font-subset]',
-                                'label' => 'Font Subset',
+                               'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'blog_post_title_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 34
@@ -3724,21 +3763,21 @@ $options = [
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'blog_post_title_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'blog_post_title_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'blog_post_title_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -3746,7 +3785,7 @@ $options = [
                             ],
                             'letterSpacing' => [
                                 'id' => 'blog_post_title_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 0.6
@@ -3754,28 +3793,28 @@ $options = [
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'blog_post_title_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'blog_post_title_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'blog_post_title_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeight' => [
                                 'id' => 'blog_post_title_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 1.4
@@ -3783,49 +3822,49 @@ $options = [
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'blog_post_title_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'blog_post_title_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'blog_post_title_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'blog_post_title_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'blog_post_title_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'blog_post_title_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'blog_post_title_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -3845,42 +3884,42 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'blog_post_meta_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'blog_post_meta_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'blog_post_meta_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'blog_post_meta_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'blog_post_meta_typography[font-subset]',
-                                'label' => 'Font Subset',
+                               'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'blog_post_meta_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 34
@@ -3888,21 +3927,21 @@ $options = [
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'blog_post_meta_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'blog_post_meta_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'blog_post_meta_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -3910,7 +3949,7 @@ $options = [
                             ],
                             'letterSpacing' => [
                                 'id' => 'blog_post_meta_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 0.6
@@ -3918,28 +3957,28 @@ $options = [
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'blog_post_meta_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'blog_post_meta_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'blog_post_meta_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeight' => [
                                 'id' => 'blog_post_meta_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 1.4
@@ -3947,49 +3986,49 @@ $options = [
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'blog_post_meta_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'blog_post_meta_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'blog_post_meta_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'blog_post_meta_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'blog_post_meta_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'blog_post_meta_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'blog_post_meta_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -4016,6 +4055,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_not_blog_single_post_title_default',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'single_post_title_typography[color]',
@@ -4042,6 +4082,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_not_blog_single_post_title_default',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'single_post_meta_typography[color]',
@@ -4079,6 +4120,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_not_blog_single_post_title_default',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'single_post_title_author_typography[color]',
@@ -4105,6 +4147,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_not_blog_single_post_title_default',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'single_post_title_author_bio_typography[color]',
@@ -4130,6 +4173,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'blog_post_title_typography[color]',
@@ -4155,6 +4199,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'blog_post_meta_color',
@@ -4191,6 +4236,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_theme_single_post_icons_color',
@@ -4217,6 +4263,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_blog_single_content_link_color',
@@ -4252,6 +4299,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_blog_single_related_post_title_color',
@@ -4287,6 +4335,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_blog_single_related_post_date_color',

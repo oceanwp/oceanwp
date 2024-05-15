@@ -94,6 +94,14 @@ function oceanwp_is_page_title_display() {
 	}
 }
 
+function oceanwp_is_page_title_when_oe_active() {
+	if ( ocean_is_oe_active() && true == get_theme_mod( 'ocean_page_title_display', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function oceanwp_is_bg_image_page_header() {
 	if ( true == get_theme_mod( 'ocean_page_title_display', true ) &&
 		'background-image' == get_theme_mod( 'ocean_page_header_style' ) ) {
@@ -526,6 +534,325 @@ function ocean_cac_footer_widget() {
 
 function ocean_cac_footer_copyright() {
 	if ( true === get_theme_mod( 'ocean_footer_bottom', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
+// Woocommerce.
+function oceanwp_cac_is_woo_bag_style() {
+	if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_not_woo_bag_style() {
+	if ( 'yes' == get_theme_mod( 'ocean_woo_menu_bag_style', 'no' ) ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function oceanwp_cac_is_woo_shop_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_woo_shop_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_shop_rl_layout() {
+	$layout = get_theme_mod( 'ocean_woo_shop_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_grid_list_buttons() {
+	if ( true == get_theme_mod( 'ocean_woo_grid_list', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_filter_button() {
+	if ( true == get_theme_mod( 'ocean_woo_off_canvas_filter', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_filter_close_button() {
+	if ( true == get_theme_mod( 'ocean_woo_off_canvas_close_button', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_default_products_style() {
+	if ( 'default' == get_theme_mod( 'ocean_woo_products_style', 'default' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_hover_products_style() {
+	if ( 'hover' == get_theme_mod( 'ocean_woo_products_style', 'default' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_shop_condition() {
+	if ( true === get_theme_mod( 'ocean_shop_conditional', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_shop_links_disabled() {
+	if ( true === get_theme_mod( 'ocean_shop_woo_disable_links', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_infinite_scroll() {
+	if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_product_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_woo_product_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_product_rl_layout() {
+	$layout = get_theme_mod( 'ocean_woo_product_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_single_condition() {
+	if ( true === get_theme_mod( 'ocean_woo_single_conditional', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_single_related_items() {
+	if ( 'on' === get_theme_mod( 'ocean_woocommerce_display_related_items', 'on' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_floating_bar() {
+	if ( 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'on' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_multistep_checkout() {
+	if ( true == get_theme_mod( 'ocean_woo_multi_step_checkout', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * EDD
+ */
+function oceanwp_cac_is_edd_bag_style() {
+	if ( 'yes' == get_theme_mod( 'ocean_edd_menu_bag_style', 'no' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_not_edd_bag_style() {
+	if ( 'yes' == get_theme_mod( 'ocean_edd_menu_bag_style', 'no' ) ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function oceanwp_cac_is_edd_archive_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_edd_archive_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_edd_archive_rl_layout() {
+	$layout = get_theme_mod( 'ocean_edd_archive_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_edd_download_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_edd_download_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_edd_download_rl_layout() {
+	$layout = get_theme_mod( 'ocean_edd_download_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * LifterLMS
+ */
+function oceanwp_cac_is_llms_global_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_llms_global_layout', 'full-width' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_llms_global_rl_layout() {
+	$layout = get_theme_mod( 'ocean_llms_global_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_llms_course_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_llms_course_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_llms_course_rl_layout() {
+	$layout = get_theme_mod( 'ocean_llms_course_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_llms_lesson_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_llms_lesson_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_llms_lesson_rl_layout() {
+	$layout = get_theme_mod( 'ocean_llms_lesson_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * LearnDash
+ */
+function oceanwp_cac_is_ld_global_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_ld_global_layout', 'full-width' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_ld_global_rl_layout() {
+	$layout = get_theme_mod( 'ocean_ld_global_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_ld_course_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_ld_course_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_ld_course_rl_layout() {
+	$layout = get_theme_mod( 'ocean_ld_course_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_ld_lesson_bs_layout() {
+	if ( 'both-sidebars' == get_theme_mod( 'ocean_ld_lesson_layout', 'left-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_ld_lesson_rl_layout() {
+	$layout = get_theme_mod( 'ocean_ld_lesson_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
 		return true;
 	} else {
 		return false;

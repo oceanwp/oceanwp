@@ -53,28 +53,22 @@ class OceanWP_Customizer_Init {
 				'priority' => $section_options['priority']
 			];
 
+			if ( isset( $section_options['condition'] ) ) {
+				$section_args['active_callback'] = function() use ($section_options) {
+					return $section_options['condition'];
+				};
+			}
+
 			$wp_customize->add_section(
 				$section_key,
 				$section_args
 			);
 
-			$this->register_options_recursive($wp_customize, $section_key, $section_options['options'] );
+			self::register_options_recursive($wp_customize, $section_key, $section_options['options'] );
 		}
-
-		// $wp_customize->selective_refresh->add_partial( 'ocean_top_bar', array(
-		// 	'selector' => '#top-bar-wrap',
-		// 	'settings' => array( 'ocean_top_bar' ),
-		// 	'render_callback' => function() {
-		// 		if ( ! oceanwp_display_topbar() ) {
-		// 			return;
-		// 		}
-		// 		return get_template_part( 'partials/topbar/layout' );
-		// 	},
-		// ) );
-
 	}
 
-    private function register_options_recursive( $wp_customize, $section_key, $options ) {
+    public static function register_options_recursive( $wp_customize, $section_key, $options ) {
 
 		foreach ( $options as $option_key => $option_data) {
 
@@ -101,16 +95,16 @@ class OceanWP_Customizer_Init {
                     $child_section_args['section_class'] = $option_data['class'];
                 }
 
-                $child_section = new OWP_Customize_Section(
-                    $wp_customize,
-                    $option_key,
-                    $child_section_args
-                );
+				$child_section = new OWP_Customize_Section(
+					$wp_customize,
+					$option_key,
+					$child_section_args
+				);
 
-                $wp_customize->add_section( $child_section );
+				$wp_customize->add_section( $child_section );
 
                 if ( isset( $option_data['options'] ) ) {
-                    $this->register_options_recursive( $wp_customize, $option_key, $option_data['options'] );
+                    self::register_options_recursive( $wp_customize, $option_key, $option_data['options'] );
                 }
 
             } else {
@@ -292,7 +286,7 @@ class OceanWP_Customizer_Init {
                 unset( $control_args );
 
                 if ( isset( $option_data['options'] ) ) {
-                    $this->register_options_recursive( $wp_customize, $option_key, $option_data['options'] );
+                    self::register_options_recursive( $wp_customize, $option_key, $option_data['options'] );
                 }
 
             }

@@ -31,6 +31,7 @@ $options = [
         'hideLabel' => false,
         'multiple' => false,
         'active_callback' => 'ocean_cac_footer_copyright',
+        'sanitize_callback' => 'sanitize_key',
         'choices' => [
             'all-devices' 			=> esc_html__( 'Show On All Devices', 'oceanwp' ),
             'hide-tablet' 			=> esc_html__( 'Hide On Tablet', 'oceanwp' ),
@@ -177,6 +178,7 @@ $options = [
             'toolbar1' => 'bold,italic,link,undo,redo',
         ],
         'active_callback' => 'ocean_cac_footer_copyright',
+        'sanitize_callback' => 'wp_kses_post',
     ],
 
     'ocean_title_for_footer_copyright_typography_colors_settings' => [
@@ -201,42 +203,42 @@ $options = [
         'setting_args' => [
             'fontFamily' => [
                 'id' => 'copyright_typography[font-family]',
-                'label' => 'Font Family',
+                'label' => esc_html__('Font Family', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontWeight' => [
                 'id' => 'copyright_typography[font-weight]',
-                'label' => 'Font Weight',
+                'label' => esc_html__('Font Weight', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontWeightTablet' => [
                 'id' => 'copyright_tablet_typography[font-weight]',
-                'label' => 'Font Weight',
+                'label' => esc_html__('Font Weight', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontWeightMobile' => [
                 'id' => 'copyright_mobile_typography[font-weight]',
-                'label' => 'Font Weight',
+                'label' => esc_html__('Font Weight', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSubset' => [
                 'id' => 'copyright_typography[font-subset]',
-                'label' => 'Font Subset',
+                'label' => esc_html__('Font Subset', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSize' => [
                 'id' => 'copyright_typography[font-size]',
-                'label' => 'Font Size',
+                'label' => esc_html__('Font Size', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                     'default'   => 12,
@@ -244,49 +246,49 @@ $options = [
             ],
             'fontSizeTablet' => [
                 'id' => 'copyright_tablet_typography[font-size]',
-                'label' => 'Font Size',
+                'label' => esc_html__('Font Size', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSizeMobile' => [
                 'id' => 'copyright_mobile_typography[font-size]',
-                'label' => 'Font Size',
+                'label' => esc_html__('Font Size', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSizeUnit' => [
                 'id' => 'copyright_typography[font-size-unit]',
-                'label' => 'Unit',
+                'label' => esc_html__('Unit', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacing' => [
                 'id' => 'copyright_typography[letter-spacing]',
-                'label' => 'Letter Spacing',
+                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacingTablet' => [
                 'id' => 'copyright_tablet_typography[letter-spacing]',
-                'label' => 'Letter Spacing',
+                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacingMobile' => [
                 'id' => 'copyright_mobile_typography[letter-spacing]',
-                'label' => 'Letter Spacing',
+                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacingUnit' => [
                 'id' => 'copyright_typography[letter-spacing-unit]',
-                'label' => 'Unit',
+                'label' => esc_html__('Unit', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                     'default'   => 'px'
@@ -294,7 +296,7 @@ $options = [
             ],
             'lineHeight' => [
                 'id' => 'copyright_typography[line-height]',
-                'label' => 'Line Height',
+                'label' => esc_html__('Line Height', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                     'default'   => 1,
@@ -302,49 +304,49 @@ $options = [
             ],
             'lineHeightTablet' => [
                 'id' => 'copyright_tablet_typography[line-height]',
-                'label' => 'Line Height',
+                'label' => esc_html__('Line Height', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'lineHeightMobile' => [
                 'id' => 'copyright_mobile_typography[line-height]',
-                'label' => 'Line Height',
+                'label' => esc_html__('Line Height', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'lineHeightUnit' => [
                 'id' => 'copyright_typography[line-height-unit]',
-                'label' => 'Unit',
+                'label' => esc_html__('Unit', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textTransform' => [
                 'id' => 'copyright_typography[text-transform]',
-                'label' => 'Text Transform',
+                'label' => esc_html__('Text Transform', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textTransformTablet' => [
                 'id' => 'copyright_tablet_typography[text-transform]',
-                'label' => 'Text Transform',
+                'label' => esc_html__('Text Transform', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textTransformMobile' => [
                 'id' => 'copyright_mobile_typography[text-transform]',
-                'label' => 'Text Transform',
+                'label' => esc_html__('Text Transform', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textDecoration' => [
                 'id' => 'copyright_typography[text-decoration]',
-                'label' => 'Text Decoration',
+                'label' => esc_html__('Text Decoration', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
@@ -365,42 +367,42 @@ $options = [
         'setting_args' => [
             'fontFamily' => [
                 'id' => 'footer_menu_typography[font-family]',
-                'label' => 'Font Family',
+                'label' => esc_html__('Font Family', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontWeight' => [
                 'id' => 'footer_menu_typography[font-weight]',
-                'label' => 'Font Weight',
+                'label' => esc_html__('Font Weight', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontWeightTablet' => [
                 'id' => 'footer_menu_tablet_typography[font-weight]',
-                'label' => 'Font Weight',
+                'label' => esc_html__('Font Weight', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontWeightMobile' => [
                 'id' => 'footer_menu_mobile_typography[font-weight]',
-                'label' => 'Font Weight',
+                'label' => esc_html__('Font Weight', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSubset' => [
                 'id' => 'footer_menu_typography[font-subset]',
-                'label' => 'Font Subset',
+                'label' => esc_html__('Font Subset', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSize' => [
                 'id' => 'footer_menu_typography[font-size]',
-                'label' => 'Font Size',
+                'label' => esc_html__('Font Size', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                     'default'   => 12,
@@ -408,49 +410,49 @@ $options = [
             ],
             'fontSizeTablet' => [
                 'id' => 'footer_menu_tablet_typography[font-size]',
-                'label' => 'Font Size',
+                'label' => esc_html__('Font Size', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSizeMobile' => [
                 'id' => 'footer_menu_mobile_typography[font-size]',
-                'label' => 'Font Size',
+                'label' => esc_html__('Font Size', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSizeUnit' => [
                 'id' => 'footer_menu_typography[font-size-unit]',
-                'label' => 'Unit',
+                'label' => esc_html__('Unit', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacing' => [
                 'id' => 'footer_menu_typography[letter-spacing]',
-                'label' => 'Letter Spacing',
+                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacingTablet' => [
                 'id' => 'footer_menu_tablet_typography[letter-spacing]',
-                'label' => 'Letter Spacing',
+                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacingMobile' => [
                 'id' => 'footer_menu_mobile_typography[letter-spacing]',
-                'label' => 'Letter Spacing',
+                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacingUnit' => [
                 'id' => 'footer_menu_typography[letter-spacing-unit]',
-                'label' => 'Unit',
+                'label' => esc_html__('Unit', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                     'default'   => 'px'
@@ -458,7 +460,7 @@ $options = [
             ],
             'lineHeight' => [
                 'id' => 'footer_menu_typography[line-height]',
-                'label' => 'Line Height',
+                'label' => esc_html__('Line Height', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                     'default'   => 1,
@@ -466,49 +468,49 @@ $options = [
             ],
             'lineHeightTablet' => [
                 'id' => 'footer_menu_tablet_typography[line-height]',
-                'label' => 'Line Height',
+                'label' => esc_html__('Line Height', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'lineHeightMobile' => [
                 'id' => 'footer_menu_mobile_typography[line-height]',
-                'label' => 'Line Height',
+                'label' => esc_html__('Line Height', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'lineHeightUnit' => [
                 'id' => 'footer_menu_typography[line-height-unit]',
-                'label' => 'Unit',
+                'label' => esc_html__('Unit', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textTransform' => [
                 'id' => 'footer_menu_typography[text-transform]',
-                'label' => 'Text Transform',
+                'label' => esc_html__('Text Transform', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textTransformTablet' => [
                 'id' => 'footer_menu_tablet_typography[text-transform]',
-                'label' => 'Text Transform',
+                'label' => esc_html__('Text Transform', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textTransformMobile' => [
                 'id' => 'footer_menu_mobile_typography[text-transform]',
-                'label' => 'Text Transform',
+                'label' => esc_html__('Text Transform', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textDecoration' => [
                 'id' => 'footer_menu_typography[text-decoration]',
-                'label' => 'Text Decoration',
+                'label' => esc_html__('Text Decoration', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
@@ -536,6 +538,7 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'active_callback' => 'ocean_cac_footer_copyright',
+        'sanitize_callback' => 'wp_kses_post',
         'setting_args' => [
             'normal' => [
                 'id' => 'ocean_bottom_footer_background',
@@ -562,6 +565,7 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'active_callback' => 'ocean_cac_footer_copyright',
+        'sanitize_callback' => 'wp_kses_post',
         'setting_args' => [
             'normal' => [
                 'id' => 'ocean_bottom_footer_color',
@@ -578,7 +582,7 @@ $options = [
         ]
     ],
 
-    'ocean_footer_link_color' => [
+    'ocean_bottom_footer_link_color' => [
         'type' => 'ocean-color',
         'label' => esc_html__( 'Links', 'oceanwp' ),
         'section' => 'ocean_footer_copyright_settings',
@@ -588,9 +592,10 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'active_callback' => 'ocean_cac_footer_copyright',
+        'sanitize_callback' => 'wp_kses_post',
         'setting_args' => [
             'normal' => [
-                'id' => 'ocean_footer_link_color',
+                'id' => 'ocean_bottom_footer_link_color',
                 'key' => 'normal',
                 'label' => 'Normal',
                 'selector' => [
@@ -602,7 +607,7 @@ $options = [
                 ],
             ],
             'hover' => [
-                'id' => 'ocean_footer_link_color_hover',
+                'id' => 'ocean_bottom_footer_link_color_hover',
                 'key' => 'hover',
                 'label' => 'Hover',
                 'selector' => [

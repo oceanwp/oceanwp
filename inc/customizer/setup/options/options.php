@@ -35,11 +35,6 @@ $options = [
         'priority' => 1,
         'options' => ocean_customize_options( 'topbar' )
     ],
-    // 'ocean_topbar_copy_settings' => [
-    //     'title' => __( 'Top Bar Copy', 'oceanwp' ),
-    //     'priority' => 1,
-    //     'options' => ocean_customize_options( 'topbar-copy' )
-    // ],
     'ocean_header_settings' => [
         'title' => __( 'Header', 'oceanwp' ),
         'priority' => 1,
@@ -59,5 +54,29 @@ $options = [
         'title' => __( 'Footer Copyright', 'oceanwp' ),
         'priority' => 1,
         'options' => ocean_customize_options( 'footer-copyright' )
+    ],
+    'ocean_woocommerce_settings' => [
+        'title' => __( 'WooCommerce', 'oceanwp' ),
+        'priority' => 1,
+        'options' => ocean_customize_options( 'woocommerce' ),
+        'condition' => OCEANWP_WOOCOMMERCE_ACTIVE
+    ],
+    'ocean_edd_settings' => [
+        'title' => __( 'Easy Digital Downloads', 'oceanwp' ),
+        'priority' => 2,
+        'options' => ocean_customize_options( 'edd' ),
+        'condition' => OCEANWP_EDD_ACTIVE
+    ],
+    'ocean_learndash_settings' => [
+        'title' => __( 'LearnDash', 'oceanwp' ),
+        'priority' => 3,
+        'options' => ocean_customize_options( 'learndash' ),
+        'condition' => OCEANWP_LEARNDASH_ACTIVE
+    ],
+    'ocean_lifterlms_settings' => [
+        'title' => __( 'LifterLMS', 'oceanwp' ),
+        'priority' => 4,
+        'options' => ocean_customize_options( 'lifterlms' ),
+        'condition' => OCEANWP_LIFTERLMS_ACTIVE
     ]
 ];

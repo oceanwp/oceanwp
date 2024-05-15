@@ -9,10 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function ocean_customize_options($path, $pass_inside = [], $relative = true) {
+function ocean_customize_options($path, $relative = true, $plugin_option_path = '', $pass_inside = []) {
 	if ($relative) {
 		$path = get_template_directory() . '/inc/customizer/setup/options/' . $path . '.php';
-	}
+	} else {
+        $path = $plugin_option_path . $path . '.php';
+    }
+
 
 	if (! file_exists($path)) {
 		return null;
@@ -270,4 +273,44 @@ function ocean_customizer_get_post_types( $args = array() ) {
 	}
 
 	return $post_types;
+}
+
+/**
+ * Get Cart Icons
+ */
+if ( ! function_exists( 'oceanwp_cart_icons_list' ) ) {
+
+	function oceanwp_cart_icons_list() {
+
+		$icons = [
+			'icon_basket' => [
+				'id'     => 'icon_basket',
+				'label'   => esc_html__('icon basket', 'oceanwp'),
+				'content' => oceanwp_icon( 'icon_basket', false ),
+			],
+			'icon_handbag'  => [
+				'id'     => 'icon_handbag',
+				'label'   => esc_html__('icon handbag', 'oceanwp'),
+				'content' => oceanwp_icon( 'icon_handbag', false ),
+			],
+			'shopping_basket'  => [
+				'id'     => 'shopping_basket',
+				'label'   => esc_html__('shopping basket', 'oceanwp'),
+				'content' => oceanwp_icon( 'shopping_basket', false ),
+			],
+			'shopping_bag'  => [
+				'id'     => 'shopping_bag',
+				'label'   => esc_html__('shopping bag', 'oceanwp'),
+				'content' => oceanwp_icon( 'shopping_bag', false ),
+			],
+			'shopping_cart'  => [
+				'id'     => 'shopping_cart',
+				'label'   => esc_html__('shopping cart', 'oceanwp'),
+				'content' => oceanwp_icon( 'double_arrows_up', false ),
+			]
+		];
+
+		return apply_filters( 'oceanwp_cart_icons_list', $icons );
+
+	}
 }

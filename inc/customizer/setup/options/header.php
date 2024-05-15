@@ -35,16 +35,8 @@ $options = [
                 'transport' => 'refresh',
                 'default' => 'minimal',
                 'priority' => 10,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
-                    // 'minimal'     => esc_html__( 'Minimal', 'oceanwp' ),
-                    // 'transparent' => esc_html__( 'Transparent', 'oceanwp' ),
-                    // 'top'         => esc_html__( 'Top Menu', 'oceanwp' ),
-                    // 'full_screen' => esc_html__( 'Full Screen', 'oceanwp' ),
-                    // 'center'      => esc_html__( 'Center', 'oceanwp' ),
-                    // 'medium'      => esc_html__( 'Medium', 'oceanwp' ),
-                    // 'vertical'    => esc_html__( 'Vertical', 'oceanwp' ),
-                    // 'custom'      => esc_html__( 'Custom Header', 'oceanwp' ),
-
                     'minimal' => [
                         'label'   => esc_html__( 'Minimal', 'oceanwp' ),
                         'default' => oceanwp_customizer_print_svg('header_type_minimal_style-default'),
@@ -121,6 +113,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_header_custom',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_header_template' => [
@@ -135,6 +128,7 @@ $options = [
                         'multiple' => false,
                         'active_callback' => 'ocean_cac_header_custom',
                         'choices' => oceanwp_library_template_choices(),
+                        'sanitize_callback' => 'sanitize_key',
                     ],
                 ]
             ],
@@ -168,6 +162,7 @@ $options = [
                         'max'          => 200,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_header_not_custom_and_vertical',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_header_height',
@@ -179,7 +174,7 @@ $options = [
                             ],
                             'unit' => [
                                 'id' => 'ocean_header_height_unit',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'px',
@@ -318,6 +313,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_header_not_medium_and_vertical',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_has_header_border_bottom' => [
@@ -329,6 +325,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_header_not_vertical',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
                 ]
             ],
@@ -376,6 +373,7 @@ $options = [
                         'hideLabel' => false,
                         'multiple' => false,
                         'active_callback' => 'ocean_cac_header_top_menu',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'before' => esc_html__( 'Before The Logo', 'oceanwp' ),
                             'after'  => esc_html__( 'After The Logo', 'oceanwp' ),
@@ -400,6 +398,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_full_screen_header_hamburger_icon_width' => [
@@ -416,6 +415,7 @@ $options = [
                         'max'          => 100,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_full_screen_header_hamburger_icon_width',
@@ -427,7 +427,7 @@ $options = [
                             ],
                             'unit' => [
                                 'id' => 'ocean_full_screen_header_hamburger_icon_width_unit',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'px',
@@ -454,6 +454,7 @@ $options = [
                         'max'          => 10,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_full_screen_header_hamburger_icon_height',
@@ -465,7 +466,7 @@ $options = [
                             ],
                             'unit' => [
                                 'id' => 'ocean_full_screen_header_hamburger_icon_height_unit',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'px',
@@ -492,6 +493,7 @@ $options = [
                         'max'          => 25,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_full_screen_header_hamburger_icon_gap',
@@ -503,7 +505,7 @@ $options = [
                             ],
                             'unit' => [
                                 'id' => 'ocean_full_screen_header_hamburger_icon_gap_unit',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'px',
@@ -537,6 +539,7 @@ $options = [
                         'hideLabel' => false,
                         'mediaType' => 'image',
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'oceanwp_sanitize_image',
                     ],
 
                     'ocean_full_screen_header_retina_logo' => [
@@ -549,6 +552,7 @@ $options = [
                         'hideLabel' => false,
                         'mediaType' => 'image',
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'oceanwp_sanitize_image',
                     ],
 
                     'ocean_title_for_center_header_settings' => [
@@ -569,6 +573,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_header_center_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_divider_after_center_header_transparent_settings' => [
@@ -592,6 +597,7 @@ $options = [
                         'multiple' => false,
                         'active_callback' => 'ocean_cac_header_center_style',
                         'choices' => oceanwp_get_menu_choices(),
+                        'sanitize_callback' => 'sanitize_key',
                     ],
 
                     'ocean_center_header_menu_position' => [
@@ -604,6 +610,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_header_center_style',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'wider' => [
                                 'id'     => 'wider',
@@ -641,6 +648,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_header_medium_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_title_for_medium_header_top_settings' => [
@@ -660,6 +668,7 @@ $options = [
                         'priority' => 20,
                         'default'  => [ 'searchfrom', 'logo', 'social' ],
                         'active_callback' => 'ocean_cac_header_medium_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
                         'hideLabel' => false,
                         'choices' => [
                             'searchfrom' => esc_html__( 'Search Form', 'oceanwp' ),
@@ -792,6 +801,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_header_medium_style',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'left-menu' => [
                                 'id'     => 'left-menu',
@@ -825,6 +835,7 @@ $options = [
                         'max'          => 150,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_header_medium_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_medium_header_menu_height',
@@ -836,7 +847,7 @@ $options = [
                             ],
                             'unit' => [
                                 'id' => 'ocean_medium_header_menu_height_unit',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'px',
@@ -932,6 +943,7 @@ $options = [
                         'priority' => 40,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_vertical_header_shadow' => [
@@ -943,6 +955,7 @@ $options = [
                         'priority' => 40,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_divider_after_vertical_header_shadow_settings' => [
@@ -964,6 +977,7 @@ $options = [
                         'priority' => 40,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_vertical_header_collapse_width' => [
@@ -980,6 +994,7 @@ $options = [
                         'max'          => 3000,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_vertical_header_collapse_width',
@@ -1012,6 +1027,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'left-header' => [
                                 'id'     => 'left-header',
@@ -1039,6 +1055,7 @@ $options = [
                         'max'          => 2000,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_vertical_header_width',
@@ -1172,6 +1189,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'left-logo' => [
                                 'id'     => 'left-logo',
@@ -1215,6 +1233,7 @@ $options = [
                         'max'          => 100,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_vertical_header_menu_items_padding',
@@ -1243,6 +1262,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'icon' => [
                                 'id'     => 'icon',
@@ -1276,6 +1296,7 @@ $options = [
                         'priority' => 40,
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_vertical_header_search_border_width' => [
@@ -1292,6 +1313,7 @@ $options = [
                         'max'          => 20,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_vertical_header_search_border_width',
@@ -1302,7 +1324,7 @@ $options = [
                             ],
                             'unit' => [
                                 'id' => 'ocean_vertical_header_search_border_width_unit',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'px',
@@ -1329,6 +1351,7 @@ $options = [
                         'max'          => 20,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_vertical_header_search_border_radius',
@@ -1339,7 +1362,7 @@ $options = [
                             ],
                             'unit' => [
                                 'id' => 'ocean_vertical_header_search_border_radius_unit',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'px',
@@ -1381,6 +1404,7 @@ $options = [
                                 'hideLabel' => false,
                                 'multiple' => false,
                                 'active_callback' => 'ocean_cac_header_vertical_style',
+                                'sanitize_callback' => 'sanitize_key',
                                 'choices' => oceanwp_library_template_choices(),
                             ],
 
@@ -1405,6 +1429,7 @@ $options = [
                                 'hideLabel' => false,
                                 'multiple' => false,
                                 'active_callback' => 'ocean_cac_header_vertical_style',
+                                'sanitize_callback' => 'sanitize_key',
                                 'choices' => oceanwp_library_template_choices(),
                             ],
                         ]
@@ -1443,6 +1468,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_header_background',
@@ -1468,6 +1494,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_header_border_bottom',
@@ -1503,6 +1530,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_transparent_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_transparent_header_bg',
@@ -1537,6 +1565,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_top_menu',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_top_header_menu_background',
@@ -1563,6 +1592,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_top_menu',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_top_header_search_button_color',
@@ -1601,6 +1631,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_top_menu',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_top_header_search_button_border_color',
@@ -1636,6 +1667,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_full_screen_header_menu_bar_color',
@@ -1662,6 +1694,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_full_screen_header_menu_bar_close_color',
@@ -1688,6 +1721,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_full_screen_header_links_bg_color',
@@ -1725,6 +1759,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_full_screen_header_links_color',
@@ -1774,6 +1809,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_full_screen_header_search_color',
@@ -1800,6 +1836,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_full_screen_header_search_dashed_bg',
@@ -1826,6 +1863,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_full_screen_header_search_border_color',
@@ -1885,6 +1923,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_medium_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_medium_header_top_header_bg',
@@ -1911,6 +1950,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_medium_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_medium_header_menu_bg',
@@ -1947,6 +1987,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_medium_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_medium_header_search_bg',
@@ -1973,6 +2014,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_medium_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_medium_header_search_color',
@@ -1999,6 +2041,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_medium_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_medium_header_search_placeholder_color',
@@ -2025,6 +2068,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_medium_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_medium_header_search_button_color',
@@ -2072,6 +2116,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_vertical_header_hamburger_color',
@@ -2108,6 +2153,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_vertical_header_menu_items_border_color',
@@ -2134,6 +2180,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_vertical_header_sub_menu_bg',
@@ -2160,6 +2207,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_vertical_header_sub_menu_links_color',
@@ -2198,6 +2246,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_vertical_header_sub_menu_links_bg',
@@ -2245,6 +2294,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_vertical_header_search_bg',
@@ -2271,6 +2321,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_vertical_header_search_color',
@@ -2297,6 +2348,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_vertical_header_search_placeholder_color',
@@ -2323,6 +2375,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_full_screen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_vertical_header_search_border_color',
@@ -2371,6 +2424,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_vertical_style',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_vertical_header_search_btn_color',
@@ -2435,7 +2489,8 @@ $options = [
                         'mediaButtons' => false,
                         'tinymce' => [
                             'toolbar1' => 'bold,italic,link,undo,redo',
-                        ]
+                        ],
+                        'sanitize_callback' => 'wp_kses_post',
                     ]
                 ]
             ],
@@ -2483,6 +2538,7 @@ $options = [
                 'hideLabel' => false,
                 'showAlpha' => true,
                 'showPalette' => true,
+                'sanitize_callback' => 'wp_kses_post',
                 'setting_args' => [
                     'normal' => [
                         'id' => 'ocean_header_image_overlay_color',
@@ -2517,6 +2573,7 @@ $options = [
                 'priority' => 40,
                 'hideLabel' => false,
                 'multiple' => false,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     'initial'       => esc_html__( 'Default', 'oceanwp' ),
                     'top left'      => esc_html__( 'Top Left', 'oceanwp' ),
@@ -2546,6 +2603,7 @@ $options = [
                 'priority' => 40,
                 'hideLabel' => false,
                 'multiple' => false,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     'initial'   => esc_html__( 'Default', 'oceanwp' ),
                     'no-repeat' => esc_html__( 'No-repeat', 'oceanwp' ),
@@ -2570,6 +2628,7 @@ $options = [
                 'priority' => 40,
                 'hideLabel' => false,
                 'wrap'    => false,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     'initial' => [
                         'id'     => 'initial',
@@ -2605,6 +2664,7 @@ $options = [
                 'hideLabel' => false,
                 'wrap'    => false,
                 'active_callback' => 'oceanwp_is_bg_image_page_header',
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     'initial' => [
                         'id'     => 'initial',
@@ -2662,7 +2722,8 @@ $options = [
                 'transport' => 'refresh',
                 'priority' => 40,
                 'hideLabel' => false,
-                'mediaType' => 'image'
+                'mediaType' => 'image',
+                'sanitize_callback' => 'oceanwp_sanitize_image',
             ],
 
             'ocean_divider_after_header_retina_logo_settings' => [
@@ -2687,6 +2748,7 @@ $options = [
                 'max'          => 500,
                 'step'         => 1,
                 'active_callback' => 'oceanwp_cac_custom_logo',
+                'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                 'setting_args' => [
                     'desktop' => [
                         'id' => 'ocean_logo_max_width',
@@ -2711,7 +2773,7 @@ $options = [
                     ],
                     'unit' => [
                         'id' => 'ocean_logo_max_width_unit',
-                        'label' => 'Unit',
+                        'label' => esc_html__('Unit', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => 'px',
@@ -2738,6 +2800,7 @@ $options = [
                 'max'          => 500,
                 'step'         => 1,
                 'active_callback' => 'oceanwp_cac_custom_logo',
+                'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                 'setting_args' => [
                     'desktop' => [
                         'id' => 'ocean_logo_max_height',
@@ -2762,7 +2825,7 @@ $options = [
                     ],
                     'unit' => [
                         'id' => 'ocean_logo_max_height_unit',
-                        'label' => 'Unit',
+                        'label' => esc_html__('Unit', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                             'default' => 'px',
@@ -2785,6 +2848,7 @@ $options = [
                 'showAlpha' => true,
                 'showPalette' => true,
                 'active_callback' => 'oceanwp_cac_not_custom_logo',
+                'sanitize_callback' => 'wp_kses_post',
                 'setting_args' => [
                     'normal' => [
                         'id' => 'ocean_logo_color',
@@ -2826,42 +2890,42 @@ $options = [
                 'setting_args' => [
                     'fontFamily' => [
                         'id' => 'logo_typography[font-family]',
-                        'label' => 'Font Family',
+                        'label' => esc_html__(esc_html__('Font Family', 'oceanwp'), 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'fontWeight' => [
                         'id' => 'logo_typography[font-weight]',
-                        'label' => 'Font Weight',
+                        'label' => esc_html__('Font Weight', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'fontWeightTablet' => [
                         'id' => 'logo_tablet_typography[font-weight]',
-                        'label' => 'Font Weight',
+                        'label' => esc_html__('Font Weight', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'fontWeightMobile' => [
                         'id' => 'logo_mobile_typography[font-weight]',
-                        'label' => 'Font Weight',
+                        'label' => esc_html__('Font Weight', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'fontSubset' => [
                         'id' => 'logo_typography[font-subset]',
-                        'label' => 'Font Subset',
+                        'label' => esc_html__('Font Subset', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'fontSize' => [
                         'id' => 'logo_typography[font-size]',
-                        'label' => 'Font Size',
+                        'label' => esc_html__('Font Size', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                             'default'   => 24
@@ -2869,21 +2933,21 @@ $options = [
                     ],
                     'fontSizeTablet' => [
                         'id' => 'logo_tablet_typography[font-size]',
-                        'label' => 'Font Size',
+                        'label' => esc_html__('Font Size', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'fontSizeMobile' => [
                         'id' => 'logo_mobile_typography[font-size]',
-                        'label' => 'Font Size',
+                        'label' => esc_html__('Font Size', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'fontSizeUnit' => [
                         'id' => 'logo_typography[font-size-unit]',
-                        'label' => 'Unit',
+                        'label' => esc_html__('Unit', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                             'default'   => 'px'
@@ -2891,28 +2955,28 @@ $options = [
                     ],
                     'letterSpacing' => [
                         'id' => 'logo_typography[letter-spacing]',
-                        'label' => 'Letter Spacing',
+                        'label' => esc_html__('Letter Spacing', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'letterSpacingTablet' => [
                         'id' => 'logo_tablet_typography[letter-spacing]',
-                        'label' => 'Letter Spacing',
+                        'label' => esc_html__('Letter Spacing', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'letterSpacingMobile' => [
                         'id' => 'logo_mobile_typography[letter-spacing]',
-                        'label' => 'Letter Spacing',
+                        'label' => esc_html__('Letter Spacing', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'letterSpacingUnit' => [
                         'id' => 'logo_typography[letter-spacing-unit]',
-                        'label' => 'Unit',
+                        'label' => esc_html__('Unit', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                             'default'   => 'px'
@@ -2920,7 +2984,7 @@ $options = [
                     ],
                     'lineHeight' => [
                         'id' => 'logo_typography[line-height]',
-                        'label' => 'Line Height',
+                        'label' => esc_html__('Line Height', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                             'default'   => 1.8
@@ -2928,49 +2992,49 @@ $options = [
                     ],
                     'lineHeightTablet' => [
                         'id' => 'logo_tablet_typography[line-height]',
-                        'label' => 'Line Height',
+                        'label' => esc_html__('Line Height', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'lineHeightMobile' => [
                         'id' => 'logo_mobile_typography[line-height]',
-                        'label' => 'Line Height',
+                        'label' => esc_html__('Line Height', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'lineHeightUnit' => [
                         'id' => 'logo_typography[line-height-unit]',
-                        'label' => 'Unit',
+                        'label' => esc_html__('Unit', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'textTransform' => [
                         'id' => 'logo_typography[text-transform]',
-                        'label' => 'Text Transform',
+                        'label' => esc_html__('Text Transform', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'textTransformTablet' => [
                         'id' => 'logo_tablet_typography[text-transform]',
-                        'label' => 'Text Transform',
+                        'label' => esc_html__('Text Transform', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'textTransformMobile' => [
                         'id' => 'logo_mobile_typography[text-transform]',
-                        'label' => 'Text Transform',
+                        'label' => esc_html__('Text Transform', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
                     ],
                     'textDecoration' => [
                         'id' => 'logo_typography[text-decoration]',
-                        'label' => 'Text Decoration',
+                        'label' => esc_html__('Text Decoration', 'oceanwp'),
                         'attr' => [
                             'transport' => 'postMessage',
                         ],
@@ -3004,6 +3068,7 @@ $options = [
                 'priority' => 10,
                 'hideLabel' => false,
                 'wrap'    => false,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     'left-menu' => [
                         'id'     => 'left-menu',
@@ -3032,6 +3097,7 @@ $options = [
                 'priority' => 10,
                 'hideLabel' => false,
                 'multiple' => false,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     'no' 		=> esc_html__( 'No Effect', 'oceanwp' ),
                     'one' 		=> esc_html__( 'Underline From Left', 'oceanwp' ),
@@ -3057,6 +3123,7 @@ $options = [
                 'showAlpha' => true,
                 'showPalette' => true,
                 'active_callback' => 'oceanwp_cac_menu_links_effect_blue',
+                'sanitize_callback' => 'wp_kses_post',
                 'setting_args' => [
                     'normal' => [
                         'id' => 'ocean_menu_links_effect_blue_color',
@@ -3084,6 +3151,7 @@ $options = [
                 'showAlpha' => true,
                 'showPalette' => true,
                 'active_callback' => 'oceanwp_cac_menu_links_effect_dark',
+                'sanitize_callback' => 'wp_kses_post',
                 'setting_args' => [
                     'normal' => [
                         'id' => 'ocean_menu_links_effect_dark_color',
@@ -3136,6 +3204,7 @@ $options = [
                         'hideLabel' => false,
                         'multiple' => false,
                         'choices' => oceanwp_library_template_choices(),
+                        'sanitize_callback' => 'sanitize_key',
                     ],
                 ]
             ],
@@ -3170,6 +3239,7 @@ $options = [
                         'min'          => 1,
                         'max'          => 50,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_menu_items_padding',
@@ -3181,7 +3251,7 @@ $options = [
                             ],
                             'unit' => [
                                 'id' => 'ocean_menu_items_padding_unit',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'px',
@@ -3216,91 +3286,91 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'menu_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'menu_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'menu_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'menu_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'menu_typography[font-subset]',
-                                'label' => 'Font Subset',
+                                'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'menu_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'menu_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'menu_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'menu_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacing' => [
                                 'id' => 'menu_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'menu_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'menu_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'menu_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -3308,56 +3378,56 @@ $options = [
                             ],
                             'lineHeight' => [
                                 'id' => 'menu_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'menu_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'menu_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'menu_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'menu_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'menu_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'menu_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'menu_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -3383,6 +3453,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_menu_link_background',
@@ -3419,6 +3490,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_menu_link_color',
@@ -3458,6 +3530,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_menu_link_color_active',
@@ -3483,6 +3556,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_menu_link_active_background',
@@ -3525,7 +3599,8 @@ $options = [
                         'default'  => true,
                         'transport' => 'refresh',
                         'priority' => 10,
-                        'hideLabel' => false
+                        'hideLabel' => false,
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_menu_arrow_side' => [
@@ -3535,7 +3610,8 @@ $options = [
                         'default'  => true,
                         'transport' => 'refresh',
                         'priority' => 10,
-                        'hideLabel' => false
+                        'hideLabel' => false,
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_menu_dropdown_top_border' => [
@@ -3545,7 +3621,8 @@ $options = [
                         'default'  => true,
                         'transport' => 'postMessage',
                         'priority' => 10,
-                        'hideLabel' => false
+                        'hideLabel' => false,
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_divider_after_menu_dropdown_top_border_setting' => [
@@ -3570,10 +3647,11 @@ $options = [
                         'min'          => 30,
                         'max'          => 500,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_dropdown_width',
-                                'label' => 'Desktop',
+                                'label' => esc_html__('Desktop', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 180,
@@ -3581,7 +3659,7 @@ $options = [
                             ],
                             'unit' => [
                                 'id' => 'ocean_dropdown_width_unit',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'px',
@@ -3620,6 +3698,7 @@ $options = [
                                 'hideLabel' => false,
                                 'showAlpha' => true,
                                 'showPalette' => true,
+                                'sanitize_callback' => 'wp_kses_post',
                                 'setting_args' => [
                                     'normal' => [
                                         'id' => 'ocean_dropdown_category_title_bg',
@@ -3645,6 +3724,7 @@ $options = [
                                 'hideLabel' => false,
                                 'showAlpha' => true,
                                 'showPalette' => true,
+                                'sanitize_callback' => 'wp_kses_post',
                                 'setting_args' => [
                                     'normal' => [
                                         'id' => 'ocean_dropdown_category_title_color',
@@ -3670,6 +3750,7 @@ $options = [
                                 'hideLabel' => false,
                                 'showAlpha' => true,
                                 'showPalette' => true,
+                                'sanitize_callback' => 'wp_kses_post',
                                 'setting_args' => [
                                     'normal' => [
                                         'id' => 'ocean_dropdown_category_links_color',
@@ -3707,6 +3788,7 @@ $options = [
                                 'hideLabel' => false,
                                 'showAlpha' => true,
                                 'showPalette' => true,
+                                'sanitize_callback' => 'wp_kses_post',
                                 'setting_args' => [
                                     'normal' => [
                                         'id' => 'ocean_dropdown_category_date_color',
@@ -3748,42 +3830,42 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'menu_dropdown_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'menu_dropdown_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'menu_dropdown_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'menu_dropdown_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'menu_dropdown_typography[font-subset]',
-                                'label' => 'Font Subset',
+                                'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'menu_dropdown_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 12
@@ -3791,21 +3873,21 @@ $options = [
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'menu_dropdown_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'menu_dropdown_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'menu_dropdown_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 'px'
@@ -3813,7 +3895,7 @@ $options = [
                             ],
                             'letterSpacing' => [
                                 'id' => 'menu_dropdown_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 0.6
@@ -3821,21 +3903,21 @@ $options = [
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'menu_dropdown_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'menu_dropdown_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'menu_dropdown_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -3843,7 +3925,7 @@ $options = [
                             ],
                             'lineHeight' => [
                                 'id' => 'menu_dropdown_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default' => 1.2
@@ -3851,49 +3933,49 @@ $options = [
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'menu_dropdown_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'menu_dropdown_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'menu_dropdown_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'menu_dropdown_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'menu_dropdown_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'menu_dropdown_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'menu_dropdown_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -3919,6 +4001,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_dropdown_menu_top_border',
@@ -3944,6 +4027,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_dropdown_menu_background',
@@ -3981,6 +4065,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_dropdown_menu_link_color',
@@ -4020,6 +4105,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_dropdown_menu_link_color_active',
@@ -4044,6 +4130,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_dropdown_menu_link_bg_active',
@@ -4087,6 +4174,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'multiple' => false,
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'disabled' 			=> esc_html__( 'Disabled','oceanwp' ),
                             'drop_down' 		=> esc_html__( 'Drop Down','oceanwp' ),
@@ -4114,6 +4202,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_search_dropdown',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_search_dropdown_input_background',
@@ -4139,6 +4228,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_search_dropdown',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_search_dropdown_input_color',
@@ -4165,6 +4255,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_search_dropdown',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_search_dropdown_input_border',
@@ -4203,6 +4294,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_search_overlay',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_search_overlay_bg',
@@ -4229,6 +4321,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_search_overlay',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_search_overlay_input_color',
@@ -4255,6 +4348,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_search_overlay',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_search_overlay_placeholder_color',
@@ -4281,6 +4375,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_search_overlay',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_search_overlay_input_dashed_bg',
@@ -4307,6 +4402,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_search_overlay',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_search_overlay_input_border_color',
@@ -4357,6 +4453,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_header_search_overlay',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_search_overlay_close_button_color',
@@ -4403,6 +4500,7 @@ $options = [
                 'transport' => 'refresh',
                 'priority' => 10,
                 'hideLabel' => false,
+                'sanitize_callback' => 'oceanwp_sanitize_checkbox',
             ],
 
             'ocean_divider_after_header_menu_social_setting' => [
@@ -4433,6 +4531,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_header_social_menu',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'blank' => [
                                 'id'     => 'blank',
@@ -4457,6 +4556,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_header_social_menu',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'simple' => [
                                 'id'     => 'simple',
@@ -4503,6 +4603,7 @@ $options = [
                                 'max'          => 100,
                                 'step'         => 1,
                                 'active_callback' => 'ocean_cac_header_social_menu',
+                                'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                                 'setting_args' => [
                                     'desktop' => [
                                         'id' => 'ocean_menu_social_font_size',
@@ -4527,7 +4628,7 @@ $options = [
                                     ],
                                     'unit' => [
                                         'id' => 'ocean_menu_social_font_size_unit',
-                                        'label' => esc_html__( 'Unit', 'oceanwp' ),
+                                        'label' => esc_html__( esc_html__('Unit', 'oceanwp'), 'oceanwp' ),
                                         'attr' => [
                                             'transport' => 'postMessage',
                                             'default' => 'px',
@@ -4555,6 +4656,7 @@ $options = [
                                 'max'          => 25,
                                 'step'         => 1,
                                 'active_callback' => 'ocean_cac_header_social_menu',
+                                'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                                 'setting_args' => [
                                     'desktop' => [
                                         'id' => 'ocean_menu_social_border_radius',
@@ -4774,6 +4876,7 @@ $options = [
                                 'showAlpha' => true,
                                 'showPalette' => true,
                                 'active_callback' => 'ocean_cac_header_social_menu_simple',
+                                'sanitize_callback' => 'wp_kses_post',
                                 'setting_args' => [
                                     'normal' => [
                                         'id' => 'ocean_menu_social_links_bg',
@@ -4810,6 +4913,7 @@ $options = [
                                 'showAlpha' => true,
                                 'showPalette' => true,
                                 'active_callback' => 'ocean_cac_header_social_menu_simple',
+                                'sanitize_callback' => 'wp_kses_post',
                                 'setting_args' => [
                                     'normal' => [
                                         'id' => 'ocean_menu_social_links_color',
@@ -4912,6 +5016,7 @@ $options = [
                         'hideLabel' => false,
                         'multiple' => false,
                         'active_callback' => 'ocean_cac_header_social_menu',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => oceanwp_library_template_choices(),
                     ],
 
@@ -4945,6 +5050,7 @@ $options = [
                 'priority' => 10,
                 'hideLabel' => false,
                 'multiple' => false,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     '1280' 		=> esc_html__( 'From 1280px', 'oceanwp' ),
 					'1080' 		=> esc_html__( 'From 1080px', 'oceanwp' ),
@@ -4969,6 +5075,7 @@ $options = [
                 'max'          => 3000,
                 'step'         => 1,
                 'active_callback' => 'ocean_cac_mobile_menu_has_custom_breakpoints',
+                'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                 'setting_args' => [
                     'desktop' => [
                         'id' => 'ocean_mobile_menu_custom_breakpoint',
@@ -4996,6 +5103,7 @@ $options = [
                 'default'  => 'dropdown',
                 'transport' => 'refresh',
                 'priority' => 10,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     'sidebar' => [
                         'label'   => esc_html__( 'Sidebar', 'oceanwp' ),
@@ -5033,6 +5141,7 @@ $options = [
                 'priority' => 10,
                 'hideLabel' => false,
                 'wrap'    => false,
+                'sanitize_callback' => 'sanitize_key',
                 'choices' => [
                     'disabled' => [
                         'id'     => 'disabled',
@@ -5081,6 +5190,7 @@ $options = [
                         'min'          => 1,
                         'max'          => 300,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_mobile_header_height',
@@ -5110,6 +5220,7 @@ $options = [
                         'default'  => 'one',
                         'hideLabel' => false,
                         'active_callback' => 'ocean_cac_mobile_header_not_medium_vetical_custom',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'one' 	=> esc_html__( 'Logo / Cart / Link', 'oceanwp' ),
                             'two' 	=> esc_html__( 'Cart / Logo / Link', 'oceanwp' ),
@@ -5135,6 +5246,7 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'mediaType' => 'image',
+                        'sanitize_callback' => 'oceanwp_sanitize_image',
                     ],
 
                     'ocean_responsive_logo_height' => [
@@ -5150,6 +5262,7 @@ $options = [
                         'min'          => 1,
                         'max'          => 500,
                         'step'         => 1,
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_responsive_logo_height',
@@ -5195,6 +5308,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_has_mobile_menu_sidebar',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'left' => [
                                 'id'     => 'left',
@@ -5217,7 +5331,8 @@ $options = [
                         'transport' => 'refresh',
                         'priority' => 10,
                         'hideLabel' => false,
-                        'active_callback' => 'ocean_cac_has_mobile_menu_sidebar'
+                        'active_callback' => 'ocean_cac_has_mobile_menu_sidebar',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_dropdown_mobile_menu_max_height' => [
@@ -5234,6 +5349,7 @@ $options = [
                         'max'          => 1000,
                         'step'         => 1,
                         'active_callback' => 'ocean_cac_has_mobile_menu_dropdown',
+                        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
                         'setting_args' => [
                             'desktop' => [
                                 'id' => 'ocean_dropdown_mobile_menu_max_height',
@@ -5267,7 +5383,8 @@ $options = [
                         'default'  => true,
                         'transport' => 'refresh',
                         'priority' => 10,
-                        'hideLabel' => false
+                        'hideLabel' => false,
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_divider_after_mobile_menu_search_setting' => [
@@ -5291,6 +5408,7 @@ $options = [
                         'hideLabel' => false,
                         'wrap'    => false,
                         'active_callback' => 'ocean_cac_has_mobile_menu_dropdown_sidebar',
+                        'sanitize_callback' => 'sanitize_key',
                         'choices' => [
                             'icon' => [
                                 'id'     => 'icon',
@@ -5321,6 +5439,7 @@ $options = [
                         'transport' => 'refresh',
                         'priority' => 10,
                         'hideLabel' => false,
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_mobile_menu_text' => [
@@ -5365,6 +5484,7 @@ $options = [
                         'default'  => 'default',
                         'hideLabel' => false,
                         'choices' => oceanwp_hamburgers_styles(),
+                        'sanitize_callback' => 'sanitize_key',
                     ],
 
                     'ocean_mobile_menu_open_hamburger_color' => [
@@ -5376,6 +5496,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_mobile_menu_open_hamburger_color',
@@ -5408,7 +5529,8 @@ $options = [
                         'transport' => 'refresh',
                         'priority' => 10,
                         'hideLabel' => false,
-                        'active_callback' => 'ocean_cac_has_mobile_menu_sidebar'
+                        'active_callback' => 'ocean_cac_has_mobile_menu_sidebar',
+                        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
                     ],
 
                     'ocean_mobile_menu_close_btn_text' => [
@@ -5431,7 +5553,8 @@ $options = [
 						'default'   => 'fas fa-times',
 						'priority' => 10,
 						'hideLabel' => false,
-						'active_callback' => 'ocean_cac_has_mobile_menu_sidebar'
+						'active_callback' => 'ocean_cac_has_mobile_menu_sidebar',
+                        'sanitize_callback' => 'wp_filter_nohtml_kses',
 					],
 
                     'ocean_mobile_menu_close_text' => [
@@ -5487,42 +5610,42 @@ $options = [
                         'setting_args' => [
                             'fontFamily' => [
                                 'id' => 'mobile_menu_dropdown_typography[font-family]',
-                                'label' => 'Font Family',
+                                'label' => esc_html__('Font Family', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeight' => [
                                 'id' => 'mobile_menu_dropdown_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightTablet' => [
                                 'id' => 'mobile_menu_dropdown_tablet_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontWeightMobile' => [
                                 'id' => 'mobile_menu_dropdown_mobile_typography[font-weight]',
-                                'label' => 'Font Weight',
+                                'label' => esc_html__('Font Weight', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSubset' => [
                                 'id' => 'mobile_menu_dropdown_typography[font-subset]',
-                                'label' => 'Font Subset',
+                                'label' => esc_html__('Font Subset', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSize' => [
                                 'id' => 'mobile_menu_dropdown_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 15
@@ -5530,21 +5653,21 @@ $options = [
                             ],
                             'fontSizeTablet' => [
                                 'id' => 'mobile_menu_dropdown_tablet_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeMobile' => [
                                 'id' => 'mobile_menu_dropdown_mobile_typography[font-size]',
-                                'label' => 'Font Size',
+                                'label' => esc_html__('Font Size', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'fontSizeUnit' => [
                                 'id' => 'mobile_menu_dropdown_typography[font-size-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -5552,28 +5675,28 @@ $options = [
                             ],
                             'letterSpacing' => [
                                 'id' => 'mobile_menu_dropdown_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingTablet' => [
                                 'id' => 'mobile_menu_dropdown_tablet_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingMobile' => [
                                 'id' => 'mobile_menu_dropdown_mobile_typography[letter-spacing]',
-                                'label' => 'Letter Spacing',
+                                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'letterSpacingUnit' => [
                                 'id' => 'mobile_menu_dropdown_typography[letter-spacing-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 'px'
@@ -5581,7 +5704,7 @@ $options = [
                             ],
                             'lineHeight' => [
                                 'id' => 'mobile_menu_dropdown_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                     'default'   => 1.8
@@ -5589,49 +5712,49 @@ $options = [
                             ],
                             'lineHeightTablet' => [
                                 'id' => 'mobile_menu_dropdown_tablet_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightMobile' => [
                                 'id' => 'mobile_menu_dropdown_mobile_typography[line-height]',
-                                'label' => 'Line Height',
+                                'label' => esc_html__('Line Height', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'lineHeightUnit' => [
                                 'id' => 'mobile_menu_dropdown_typography[line-height-unit]',
-                                'label' => 'Unit',
+                                'label' => esc_html__('Unit', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransform' => [
                                 'id' => 'mobile_menu_dropdown_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformTablet' => [
                                 'id' => 'mobile_menu_dropdown_tablet_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textTransformMobile' => [
                                 'id' => 'mobile_menu_dropdown_mobile_typography[text-transform]',
-                                'label' => 'Text Transform',
+                                'label' => esc_html__('Text Transform', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
                             ],
                             'textDecoration' => [
                                 'id' => 'mobile_menu_dropdown_typography[text-decoration]',
-                                'label' => 'Text Decoration',
+                                'label' => esc_html__('Text Decoration', 'oceanwp'),
                                 'attr' => [
                                     'transport' => 'postMessage',
                                 ],
@@ -5658,6 +5781,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_has_mobile_menu_sidebar',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_mobile_menu_sidr_close_button_background',
@@ -5684,6 +5808,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_has_mobile_menu_sidebar',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_mobile_menu_sidr_background',
@@ -5710,6 +5835,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_has_mobile_menu_sidebar',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_mobile_menu_sidr_borders',
@@ -5745,6 +5871,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_mobile_menu_links',
@@ -5793,6 +5920,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_mobile_menu_sidr_dropdowns_background',
@@ -5829,6 +5957,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_has_mobile_menu_dropdown_sidebar',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_mobile_menu_sidr_search_bg',
@@ -5853,6 +5982,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_mobile_menu_sidr_search_color',
@@ -5878,6 +6008,7 @@ $options = [
                         'hideLabel' => false,
                         'showAlpha' => true,
                         'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_mobile_menu_sidr_search_border_color',
@@ -5916,6 +6047,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_has_mobile_menu_fullscreen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_full_screen_mobile_menu_bg',
@@ -5942,6 +6074,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_has_mobile_menu_fullscreen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_full_screen_mobile_menu_links_bg',
@@ -5978,6 +6111,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_has_mobile_menu_fullscreen',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'hover' => [
                                 'id' => 'ocean_full_screen_mobile_menu_search_border_color_hover',
@@ -6004,6 +6138,7 @@ $options = [
                         'showAlpha' => true,
                         'showPalette' => true,
                         'active_callback' => 'ocean_cac_has_mobile_menu_dropdown_sidebar',
+                        'sanitize_callback' => 'wp_kses_post',
                         'setting_args' => [
                             'normal' => [
                                 'id' => 'ocean_mobile_menu_sidr_search_button_color',

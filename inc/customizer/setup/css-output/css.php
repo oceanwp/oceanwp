@@ -18,3 +18,23 @@ require OCEANWP_INC_DIR . 'customizer/setup/css-output/topbar.php';
 require OCEANWP_INC_DIR . 'customizer/setup/css-output/blog.php';
 require OCEANWP_INC_DIR . 'customizer/setup/css-output/footer-widget.php';
 require OCEANWP_INC_DIR . 'customizer/setup/css-output/footer-copyright.php';
+
+// If WooCommerce is activated.
+if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
+    require OCEANWP_INC_DIR . 'customizer/setup/css-output/woocommerce.php';
+}
+
+// Easy Digital Downloads Settings.
+if ( OCEANWP_EDD_ACTIVE ) {
+    require OCEANWP_INC_DIR . 'customizer/setup/css-output/edd.php';
+}
+
+// If LifterLMS is activated.
+if ( OCEANWP_LIFTERLMS_ACTIVE ) {
+    require OCEANWP_INC_DIR . 'customizer/setup/css-output/lifterlms.php';
+}
+
+// If LearnDash is activated.
+if ( OCEANWP_LEARNDASH_ACTIVE ) {
+    require OCEANWP_INC_DIR . 'customizer/setup/css-output/learndash.php';
+}

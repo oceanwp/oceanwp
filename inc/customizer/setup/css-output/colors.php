@@ -55,6 +55,9 @@ class OceanWP_Colors_CSS {
         $input_border_color            = get_theme_mod( 'ocean_input_border_color', '#dddddd' );
         $input_border_color_focus      = get_theme_mod( 'ocean_input_border_color_focus', '#bbbbbb' );
 
+        $page_header_title_color      = get_theme_mod( 'page_title_typography')['color'];
+        $page_header_text_color       = get_theme_mod( 'ocean_page_header_title_color' );
+
         $css = '';
 
         $texts       = ocean_primary_color_selector( 'texts' );
@@ -82,7 +85,7 @@ class OceanWP_Colors_CSS {
         // Borders.
         if ( ! empty( $borders ) && '#13aff0' != $primary_color ) {
             foreach ( $borders as $key => $val ) {
-                if ( isset( $val ) && $val ) {
+                if (!is_array($val) && isset($val) && $val !== '') {
                     $css .= $key . '{';
                     $css .= 'border-' . $val . '-color:' . $primary_color . ';';
                     $css .= '}';
@@ -197,6 +200,16 @@ class OceanWP_Colors_CSS {
         if ( ! empty( $input_placeholder_color ) && '' != $input_placeholder_color ) {
             $css .= 'form input[type="text"]::placeholder, form input[type="password"]::placeholder, form input[type="email"]::placeholder, form input[type="url"]::placeholder, form input[type="date"]::placeholder, form input[type="month"]::placeholder, form input[type="time"]::placeholder, form input[type="datetime"]::placeholder, form input[type="datetime-local"]::placeholder, form input[type="week"]::placeholder, form input[type="number"]::placeholder, form input[type="search"]::placeholder, form input[type="tel"]::placeholder, form input[type="color"]::placeholder, form select::placeholder, form textarea::placeholder{color:' . $input_placeholder_color . ';}';
             $css .= 'body div.wpforms-container-full .wpforms-form input[type=date]::placeholder, body div.wpforms-container-full .wpforms-form input[type=datetime]::placeholder, body div.wpforms-container-full .wpforms-form input[type=datetime-local]::placeholder, body div.wpforms-container-full .wpforms-form input[type=email]::placeholder, body div.wpforms-container-full .wpforms-form input[type=month]::placeholder, body div.wpforms-container-full .wpforms-form input[type=number]::placeholder, body div.wpforms-container-full .wpforms-form input[type=password]::placeholder, body div.wpforms-container-full .wpforms-form input[type=range]::placeholder, body div.wpforms-container-full .wpforms-form input[type=search]::placeholder, body div.wpforms-container-full .wpforms-form input[type=tel]::placeholder, body div.wpforms-container-full .wpforms-form input[type=text]::placeholder, body div.wpforms-container-full .wpforms-form input[type=time]::placeholder, body div.wpforms-container-full .wpforms-form input[type=url]::placeholder, body div.wpforms-container-full .wpforms-form input[type=week]::placeholder, body div.wpforms-container-full .wpforms-form select::placeholder, body div.wpforms-container-full .wpforms-form textarea::placeholder{color:' . $input_placeholder_color . ';}';
+        }
+
+        // Page header color.
+        if ( ! empty( $page_header_title_color ) && '#f5f5f5' != $page_header_title_color ) {
+            $css .= '.page-header .page-header-title, .page-header.background-image-page-header .page-header-title{color:' . $page_header_title_color . ';}';
+        }
+
+        // Page header color.
+        if ( ! empty( $page_header_text_color ) ) {
+            $css .= '.page-header {color:' . $page_header_title_color . ';}';
         }
 
 

@@ -2030,7 +2030,7 @@ if ( ! function_exists( 'oceanwp_has_page_header' ) ) {
 		$style  = oceanwp_page_header_style();
 
 		// Check if page header
-		if ( 'hide-all-devices' == get_theme_mod( 'ocean_page_header_visibility' )
+		if ( ( true !== get_theme_mod( 'ocean_page_title_display', true ) )
 			|| 'hidden' == $style
 			|| is_page_template( 'templates/landing.php' ) ) {
 			$return = false;
@@ -3246,6 +3246,25 @@ if ( ! function_exists( 'oceanwp_blog_single_meta' ) ) {
 
 	}
 }
+
+/**
+ * Modify the header style for single blog posts.
+ *
+ * @param string $style The current header style.
+ * @return string The modified header style.
+ */
+function ocean_single_blog_header_style( $style ) {
+	$header_style = get_theme_mod( 'ocean_blog_single_header_type', '' );
+
+	if ( ! empty( $header_style ) ) {
+		$style = $header_style;
+	}
+
+	return $style;
+}
+
+add_filter( 'ocean_header_style', 'ocean_single_blog_header_style', 1 );
+
 
 /**
  * Returns reading time

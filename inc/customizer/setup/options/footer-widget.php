@@ -31,6 +31,7 @@ $options = [
         'hideLabel' => false,
         'multiple' => false,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'sanitize_key',
         'choices' => [
             'all-devices' 			=> esc_html__( 'Show On All Devices', 'oceanwp' ),
             'hide-tablet' 			=> esc_html__( 'Hide On Tablet', 'oceanwp' ),
@@ -57,7 +58,8 @@ $options = [
         'transport' => 'postMessage',
         'priority' => 10,
         'hideLabel' => false,
-        'active_callback' => 'ocean_cac_footer_widget'
+        'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'oceanwp_sanitize_checkbox',
     ],
 
     'ocean_footer_padding_dimensions' => [
@@ -76,7 +78,7 @@ $options = [
                 'label' => esc_html__( 'Top', 'oceanwp' ),
                 'attr' => [
                     'transport' => 'postMessage',
-                    'default'   => 0,
+                    'default'   => 30,
                 ],
             ],
             'spacingRight' => [
@@ -84,7 +86,7 @@ $options = [
                 'label' => esc_html__( 'Right', 'oceanwp' ),
                 'attr' => [
                     'transport' => 'postMessage',
-                    'default'   => 30,
+                    'default'   => 0,
                 ],
             ],
             'spacingBottom' => [
@@ -92,7 +94,7 @@ $options = [
                 'label' => esc_html__( 'Bottom', 'oceanwp' ),
                 'attr' => [
                     'transport' => 'postMessage',
-                    'default'   => 0,
+                    'default'   => 30,
                 ],
             ],
             'spacingLeft' => [
@@ -100,7 +102,7 @@ $options = [
                 'label' => esc_html__( 'Left', 'oceanwp' ),
                 'attr' => [
                     'transport' => 'postMessage',
-                    'default'   => 30,
+                    'default'   => 0,
                 ],
             ],
             'spacingTopTablet' => [
@@ -187,6 +189,7 @@ $options = [
         'hideLabel' => false,
         'multiple' => false,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'sanitize_key',
         'choices' => [
             'h1'   => esc_html__( 'H1', 'oceanwp' ),
             'h2'   => esc_html__( 'H2', 'oceanwp' ),
@@ -214,6 +217,7 @@ $options = [
         'max'          => 4,
         'step'         => 1,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'oceanwp_sanitize_number_blank',
         'setting_args' => [
             'desktop' => [
                 'id' => 'ocean_footer_widgets_columns',
@@ -260,6 +264,7 @@ $options = [
         'hideLabel' => false,
         'multiple' => false,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'sanitize_key',
         'choices' => oceanwp_library_template_choices(),
     ],
 
@@ -283,6 +288,7 @@ $options = [
         'hideLabel' => false,
         'wrap'    => false,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'sanitize_key',
         'choices' => [
             'on' => [
                 'id'     => 'on',
@@ -308,6 +314,7 @@ $options = [
         'hideLabel' => false,
         'wrap'    => false,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'sanitize_key',
         'choices' => [
             'on' => [
                 'id'     => 'on',
@@ -344,42 +351,42 @@ $options = [
         'setting_args' => [
             'fontFamily' => [
                 'id' => 'footer_widget_title_typography[font-family]',
-                'label' => 'Font Family',
+                'label' => esc_html__('Font Family', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontWeight' => [
                 'id' => 'footer_widget_title_typography[font-weight]',
-                'label' => 'Font Weight',
+                'label' => esc_html__('Font Weight', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontWeightTablet' => [
                 'id' => 'footer_widget_title_tablet_typography[font-weight]',
-                'label' => 'Font Weight',
+                'label' => esc_html__('Font Weight', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontWeightMobile' => [
                 'id' => 'footer_widget_title_mobile_typography[font-weight]',
-                'label' => 'Font Weight',
+                'label' => esc_html__('Font Weight', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSubset' => [
                 'id' => 'footer_widget_title_typography[font-subset]',
-                'label' => 'Font Subset',
+                'label' => esc_html__('Font Subset', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSize' => [
                 'id' => 'footer_widget_title_typography[font-size]',
-                'label' => 'Font Size',
+                'label' => esc_html__('Font Size', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                     'default'   => 13,
@@ -387,28 +394,28 @@ $options = [
             ],
             'fontSizeTablet' => [
                 'id' => 'footer_widget_title_tablet_typography[font-size]',
-                'label' => 'Font Size',
+                'label' => esc_html__('Font Size', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSizeMobile' => [
                 'id' => 'footer_widget_title_mobile_typography[font-size]',
-                'label' => 'Font Size',
+                'label' => esc_html__('Font Size', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'fontSizeUnit' => [
                 'id' => 'footer_widget_title_typography[font-size-unit]',
-                'label' => 'Unit',
+                'label' => esc_html__('Unit', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacing' => [
                 'id' => 'footer_widget_title_typography[letter-spacing]',
-                'label' => 'Letter Spacing',
+                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                     'default'   => 1,
@@ -416,21 +423,21 @@ $options = [
             ],
             'letterSpacingTablet' => [
                 'id' => 'footer_widget_title_tablet_typography[letter-spacing]',
-                'label' => 'Letter Spacing',
+                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacingMobile' => [
                 'id' => 'footer_widget_title_mobile_typography[letter-spacing]',
-                'label' => 'Letter Spacing',
+                'label' => esc_html__('Letter Spacing', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'letterSpacingUnit' => [
                 'id' => 'footer_widget_title_typography[letter-spacing-unit]',
-                'label' => 'Unit',
+                'label' => esc_html__('Unit', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                     'default'   => 'px'
@@ -438,7 +445,7 @@ $options = [
             ],
             'lineHeight' => [
                 'id' => 'footer_widget_title_typography[line-height]',
-                'label' => 'Line Height',
+                'label' => esc_html__('Line Height', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                     'default'   => 1,
@@ -446,49 +453,49 @@ $options = [
             ],
             'lineHeightTablet' => [
                 'id' => 'footer_widget_title_tablet_typography[line-height]',
-                'label' => 'Line Height',
+                'label' => esc_html__('Line Height', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'lineHeightMobile' => [
                 'id' => 'footer_widget_title_mobile_typography[line-height]',
-                'label' => 'Line Height',
+                'label' => esc_html__('Line Height', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'lineHeightUnit' => [
                 'id' => 'footer_widget_title_typography[line-height-unit]',
-                'label' => 'Unit',
+                'label' => esc_html__('Unit', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textTransform' => [
                 'id' => 'footer_widget_title_typography[text-transform]',
-                'label' => 'Text Transform',
+                'label' => esc_html__('Text Transform', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textTransformTablet' => [
                 'id' => 'footer_widget_title_tablet_typography[text-transform]',
-                'label' => 'Text Transform',
+                'label' => esc_html__('Text Transform', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textTransformMobile' => [
                 'id' => 'footer_widget_title_mobile_typography[text-transform]',
-                'label' => 'Text Transform',
+                'label' => esc_html__('Text Transform', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
             ],
             'textDecoration' => [
                 'id' => 'footer_widget_title_typography[text-decoration]',
-                'label' => 'Text Decoration',
+                'label' => esc_html__('Text Decoration', 'oceanwp'),
                 'attr' => [
                     'transport' => 'postMessage',
                 ],
@@ -516,6 +523,7 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'wp_kses_post',
         'setting_args' => [
             'normal' => [
                 'id' => 'ocean_footer_background',
@@ -542,6 +550,7 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'wp_kses_post',
         'setting_args' => [
             'normal' => [
                 'id' => 'ocean_footer_borders',
@@ -568,6 +577,7 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'wp_kses_post',
         'setting_args' => [
             'normal' => [
                 'id' => 'footer_widget_title_typography[color]',
@@ -594,6 +604,7 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'wp_kses_post',
         'setting_args' => [
             'normal' => [
                 'id' => 'ocean_footer_color',
@@ -620,6 +631,7 @@ $options = [
         'showAlpha' => true,
         'showPalette' => true,
         'active_callback' => 'ocean_cac_footer_widget',
+        'sanitize_callback' => 'wp_kses_post',
         'setting_args' => [
             'normal' => [
                 'id' => 'ocean_footer_link_color',

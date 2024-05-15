@@ -309,9 +309,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.0
 		 */
 		public static function woo_section( $wp_customize ) {
-			$wp_customize->get_section( 'woocommerce_checkout' )->panel                                      = 'ocean_woocommerce_panel';
-			$wp_customize->get_section( 'woocommerce_store_notice' )->panel                                  = 'ocean_woocommerce_panel';
-			$wp_customize->get_section( 'woocommerce_product_images' )->panel                                = 'ocean_woocommerce_panel';
+			$wp_customize->get_section( 'woocommerce_checkout' )->type                                       = 'owp_section';
+			$wp_customize->get_section( 'woocommerce_store_notice' )->type                                   = 'owp_section';
+			$wp_customize->get_section( 'woocommerce_product_images' )->type                                 = 'owp_section';
 			$wp_customize->get_section( 'woocommerce_product_images' )->priority                             = 999;
 			$wp_customize->get_control( 'woocommerce_shop_page_display' )->section                           = 'ocean_woocommerce_archives';
 			$wp_customize->get_control( 'woocommerce_category_archive_display' )->section                    = 'ocean_woocommerce_archives';
