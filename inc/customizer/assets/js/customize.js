@@ -10,7 +10,7 @@ jQuery( document ).on( 'ready', function (e) {
             return true;
         }
 
-        // controls[ i ] = _wpCustomizeSettings.controls[ i ];
+        controls[ i ] = _wpCustomizeSettings.controls[ i ];
         // delete _wpCustomizeSettings.controls[ i ];
     })
 
