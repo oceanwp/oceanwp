@@ -165,21 +165,17 @@ $options = [
         'active_callback' => 'ocean_cac_footer_copyright',
     ],
 
-    'ocean_footer_copyright_text' => [
-        'type'     => 'ocean-rich-text',
-        'label'    => esc_html__( 'Copyright Text', 'oceanwp' ),
-        'section'  => 'ocean_footer_copyright_settings',
-        'transport' => 'postMessage',
-        'default' => 'Copyright [oceanwp_date] - OceanWP Theme by OceanWP',
-        'priority' => 10,
-        'hideLabel'    => false,
-        'mediaButtons' => false,
-        'tinymce' => [
-            'toolbar1' => 'bold,italic,link,undo,redo',
-        ],
-        'active_callback' => 'ocean_cac_footer_copyright',
-        'sanitize_callback' => 'wp_kses_post',
-    ],
+	'ocean_footer_copyright_text' => [
+		'type'     => 'ocean-textarea',
+		'label'    => esc_html__( 'Copyright Text', 'oceanwp' ),
+		'section'  => 'ocean_footer_copyright_settings',
+		'transport' => 'postMessage',
+		'default' => 'Copyright [oceanwp_date] - OceanWP Theme by OceanWP',
+		'priority' => 10,
+		'hideLabel'    => false,
+		'active_callback' => 'ocean_cac_footer_copyright',
+		'sanitize_callback' => 'wp_kses_post',
+	],
 
     'ocean_title_for_footer_copyright_typography_colors_settings' => [
         'type' => 'ocean-title',

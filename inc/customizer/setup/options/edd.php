@@ -454,12 +454,10 @@ $options = [
                 ],
                 'preview' => 'queryWithType',
                 'css' => [
-                    '.eddmenucart i' => 'font-size',
-                    '.eddmenucart .owp-icon' => 'width',
-                    '.eddmenucart .owp-icon' => 'height',
-                    '.oceanwp-mobile-menu-icon a.eddmenucart' => 'font-size',
-                    '.oceanwp-mobile-menu-icon a.eddmenucart .owp-icon' => 'width',
-                    '.oceanwp-mobile-menu-icon a.eddmenucart .owp-icon' => 'height',
+                    '.eddmenucart i' => ['font-size'],
+                    '.eddmenucart .owp-icon' => ['width', 'height'],
+                    '.oceanwp-mobile-menu-icon a.eddmenucart' => ['font-size'],
+                    '.oceanwp-mobile-menu-icon a.eddmenucart .owp-icon' => ['width', 'height'],
                 ]
             ],
 
@@ -504,8 +502,8 @@ $options = [
                 ],
                 'preview' => 'queryWithType',
                 'css' => [
-                    '.eddmenucart i' => 'top',
-                    '.oceanwp-mobile-menu-icon a.eddmenucart' => 'top',
+                    '.eddmenucart i' => ['top'],
+                    '.oceanwp-mobile-menu-icon a.eddmenucart' => ['top'],
                 ]
             ],
 
@@ -584,7 +582,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '.current-shop-items-dropdown' => 'width'
+                            '.current-shop-items-dropdown' => ['width']
                         ]
                     ],
 
@@ -1990,7 +1988,7 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.edd_downloads_list .edd_download_inner .button' => 'border-width'
+                                    '.edd_downloads_list .edd_download_inner .button' => ['border-width']
                                 ]
                             ],
 
@@ -2027,7 +2025,7 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.edd_downloads_list .edd_download_inner .button' => 'border-radius'
+                                    '.edd_downloads_list .edd_download_inner .button' => ['border-radius']
                                 ]
                             ],
 

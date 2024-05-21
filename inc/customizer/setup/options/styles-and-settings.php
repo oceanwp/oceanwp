@@ -122,12 +122,8 @@ $options = [
                     ],
                 ],
                 'preview' => 'queryWithType',
-                // 'css' => [
-                //     'selector' => '.container',
-                //     'property' => 'width'
-                // ]
                 'css' => [
-                    '.container' => 'width'
+                    '.container' => ['width']
                 ]
             ],
 
@@ -191,12 +187,8 @@ $options = [
                             ],
                         ],
                         'preview' => 'queryWithType',
-                        // 'css' => [
-                        //     'selector' => '.separate-layout .content-area, .separate-layout.content-left-sidebar .content-area, .content-both-sidebars.scs-style .content-area, .separate-layout.content-both-sidebars.ssc-style .content-area, body.separate-blog.separate-layout #blog-entries > *, body.separate-blog.separate-layout .oceanwp-pagination, body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner',
-                        //     'property' => 'padding'
-                        // ]
                         'css' => [
-                            '.separate-layout .content-area, .separate-layout.content-left-sidebar .content-area, .content-both-sidebars.scs-style .content-area, .separate-layout.content-both-sidebars.ssc-style .content-area, body.separate-blog.separate-layout #blog-entries > *, body.separate-blog.separate-layout .oceanwp-pagination, body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner' => 'padding'
+                            '.separate-layout .content-area, .separate-layout.content-left-sidebar .content-area, .content-both-sidebars.scs-style .content-area, .separate-layout.content-both-sidebars.ssc-style .content-area, body.separate-blog.separate-layout #blog-entries > *, body.separate-blog.separate-layout .oceanwp-pagination, body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner' => ['padding']
                         ]
                     ],
 
@@ -234,12 +226,8 @@ $options = [
                             ],
                         ],
                         'preview' => 'queryWithType',
-                        // 'css' => [
-                        //     'selector' => '.separate-layout .widget-area .sidebar-box',
-                        //     'property' => 'padding'
-                        // ]
                         'css' => [
-                            '.separate-layout .widget-area .sidebar-box' => 'padding'
+                            '.separate-layout .widget-area .sidebar-box' => ['padding']
                         ]
                     ],
                 ]
@@ -289,6 +277,7 @@ $options = [
                 'priority' => 10,
                 'hideLabel' => false,
                 'mediaType' => 'image',
+				'sanitize_callback' => 'oceanwp_sanitize_image',
             ],
 
             'ocean_background_image_position' => [
@@ -820,7 +809,7 @@ $options = [
                         ],
                     ],
                 ],
-                'preview' => 'queryWithType',
+                'preview' => 'queryWithAttr',
                 'css' => [
                     'selector' => 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button',
                     'property' => 'padding'
@@ -935,7 +924,7 @@ $options = [
                         ],
                     ],
                 ],
-                'preview' => 'queryWithType',
+                'preview' => 'queryWithAttr',
                 'css' => [
                     'selector' => 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button',
                     'property' => 'border-radius'
@@ -1028,12 +1017,8 @@ $options = [
                     ],
                 ],
                 'preview' => 'queryWithType',
-                // 'css' => [
-                //     'selector' => 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button',
-                //     'property' => 'border-width'
-                // ],
                 'css' => [
-                    'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button' => 'border-width'
+                    'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button' => ['border-width']
                 ]
             ],
 
@@ -1493,7 +1478,7 @@ $options = [
                         ],
                     ],
                 ],
-                'preview' => 'queryWithType',
+                'preview' => 'queryWithAttr',
                 'css' => [
                     'selector' => 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea',
                     'property' => 'padding'
@@ -1609,7 +1594,7 @@ $options = [
                         ],
                     ],
                 ],
-                'preview' => 'queryWithType',
+                'preview' => 'queryWithAttr',
                 'css' => [
                     'selector' => 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea',
                     'property' => 'border-radius'
@@ -1754,7 +1739,7 @@ $options = [
                         ],
                     ],
                 ],
-                'preview' => 'queryWithType',
+                'preview' => 'queryWithAttr',
                 'css' => [
                     'selector' => 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea',
                     'property' => 'border-width'
@@ -2507,8 +2492,7 @@ $options = [
                     'all-devices'        => esc_html__( 'Show On All Devices', 'oceanwp' ),
                     'hide-tablet'        => esc_html__( 'Hide On Tablet', 'oceanwp' ),
                     'hide-mobile'        => esc_html__( 'Hide On Mobile', 'oceanwp' ),
-                    'hide-tablet-mobile' => esc_html__( 'Hide On Tablet & Mobile', 'oceanwp' ),
-                    'hide-all-devices'   => esc_html__( 'Hide On All Devices', 'oceanwp' ),
+                    'hide-tablet-mobile' => esc_html__( 'Hide On Tablet & Mobile', 'oceanwp' )
                 ],
             ],
 
@@ -2571,9 +2555,7 @@ $options = [
                 ],
                 'preview' => 'queryWithType',
                 'css' => [
-                    '#scroll-top' => 'width',
-                    '#scroll-top' => 'height',
-                    '#scroll-top' => 'line-height'
+                    '#scroll-top' => ['width', 'height', 'line-height']
                 ]
             ],
 
@@ -2854,7 +2836,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#scroll-top' => 'bottom',
+                            '#scroll-top' => ['bottom'],
                         ]
                     ],
 
@@ -2946,9 +2928,8 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#scroll-top' => 'font-size',
-                            '#scroll-top .owp-icon' => 'width',
-                            '#scroll-top .owp-icon' => 'height',
+                            '#scroll-top' => ['font-size'],
+                            '#scroll-top .owp-icon' => ['width', 'height'],
                         ]
                     ],
 
@@ -3129,7 +3110,7 @@ $options = [
                 ],
                 'preview' => 'queryWithType',
                 'css' => [
-                    '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => 'font-size',
+                    '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => ['font-size'],
                 ]
             ],
 
@@ -3190,7 +3171,7 @@ $options = [
                 ],
                 'preview' => 'queryWithType',
                 'css' => [
-                    '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => 'border-width',
+                    '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => ['border-width'],
                 ]
             ],
 
@@ -3293,7 +3274,7 @@ $options = [
                         ],
                     ],
                 ],
-                'preview' => 'queryWithType',
+                'preview' => 'queryWithAttr',
                 'css' => [
                     'selector' => '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span',
                     'property' => 'border-radius'

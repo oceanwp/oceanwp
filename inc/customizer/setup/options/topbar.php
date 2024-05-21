@@ -242,17 +242,13 @@ $options = [
             ],
 
             'ocean_top_bar_content' => [
-                'type'     => 'ocean-rich-text',
+                'type'     => 'ocean-textarea',
                 'label'    => esc_html__( 'Content', 'oceanwp' ),
                 'section'  => 'ocean_top_bar_content_section',
                 'transport' => 'postMessage',
                 'default' => esc_html__( 'Place your content here', 'oceanwp' ),
                 'priority' => 10,
                 'hideLabel'    => false,
-                'mediaButtons' => false,
-                'tinymce' => [
-                    'toolbar1' => 'bold,italic,link,undo,redo',
-                ],
                 'active_callback' => 'ocean_cac_topbar',
                 'sanitize_callback' => 'wp_kses_post',
             ],
@@ -402,7 +398,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#top-bar-social li a' => 'font-size'
+                            '#top-bar-social li a' => ['font-size']
                         ]
                     ],
 

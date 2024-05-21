@@ -790,12 +790,10 @@ $options = [
                 ],
                 'preview' => 'queryWithType',
                 'css' => [
-                    '.wcmenucart i' => 'font-size',
-                    '.wcmenucart .owp-icon' => 'width',
-                    '.wcmenucart .owp-icon' => 'height',
-                    '.oceanwp-mobile-menu-icon a.wcmenucart' => 'font-size',
-                    '.oceanwp-mobile-menu-icon a.wcmenucart .owp-icon' => 'width',
-                    '.oceanwp-mobile-menu-icon a.wcmenucart .owp-icon' => 'height',
+                    '.wcmenucart i' => ['font-size'],
+                    '.wcmenucart .owp-icon' => ['width', 'height'],
+                    '.oceanwp-mobile-menu-icon a.wcmenucart' => ['font-size'],
+                    '.oceanwp-mobile-menu-icon a.wcmenucart .owp-icon' => ['width', 'height'],
                 ]
             ],
 
@@ -840,8 +838,8 @@ $options = [
                 ],
                 'preview' => 'queryWithType',
                 'css' => [
-                    '.wcmenucart i' => 'top',
-                    '.oceanwp-mobile-menu-icon a.wcmenucart' => 'top',
+                    '.wcmenucart i' => ['top'],
+                    '.oceanwp-mobile-menu-icon a.wcmenucart' => ['top'],
                 ]
             ],
 
@@ -920,7 +918,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '.current-shop-items-dropdown' => 'width'
+                            '.current-shop-items-dropdown' => ['width']
                         ]
                     ],
 
@@ -3617,7 +3615,7 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart' => 'border-width'
+                                    '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart' => ['border-width']
                                 ]
                             ],
 
@@ -3654,7 +3652,7 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart' => 'border-radius'
+                                    '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart' => ['border-radius']
                                 ]
                             ],
 
@@ -5475,10 +5473,7 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.owp-product-nav li a.owp-nav-link' => '-webkit-border-radius',
-                                    '.owp-product-nav li a.owp-nav-link' => '-moz-border-radius',
-                                    '.owp-product-nav li a.owp-nav-link' => '-ms-border-radius',
-                                    '.owp-product-nav li a.owp-nav-link' => 'border-radius',
+                                    '.owp-product-nav li a.owp-nav-link' => ['-webkit-border-radius', '-moz-border-radius', '-ms-border-radius', 'border-radius'],
                                 ]
                             ],
 
@@ -5680,7 +5675,7 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.woocommerce div.product div.summary button.single_add_to_cart_button' => 'border-width'
+                                    '.woocommerce div.product div.summary button.single_add_to_cart_button' => ['border-width']
                                 ]
                             ],
 
@@ -5717,7 +5712,7 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.woocommerce div.product div.summary button.single_add_to_cart_button' => 'border-radius'
+                                    '.woocommerce div.product div.summary button.single_add_to_cart_button' => ['border-radius']
                                 ]
                             ],
 

@@ -183,8 +183,8 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner, .after-header-content .after-header-content-inner' => 'height',
-                            '#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a, .after-header-content-inner > a' => 'line-height'
+                            '#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner, .after-header-content .after-header-content-inner' => ['height'],
+                            '#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a, .after-header-content-inner > a' => ['line-height']
                         ]
                     ],
 
@@ -436,7 +436,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-header.full_screen-header .menu-bar .ham,#site-header.full_screen-header .menu-bar .ham:before,#site-header.full_screen-header .menu-bar .ham:after' => 'width'
+                            '#site-header.full_screen-header .menu-bar .ham,#site-header.full_screen-header .menu-bar .ham:before,#site-header.full_screen-header .menu-bar .ham:after' => ['width']
                         ]
                     ],
 
@@ -475,7 +475,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-header.full_screen-header .menu-bar .ham,#site-header.full_screen-header .menu-bar .ham:before,#site-header.full_screen-header .menu-bar .ham:after' => 'height'
+                            '#site-header.full_screen-header .menu-bar .ham,#site-header.full_screen-header .menu-bar .ham:before,#site-header.full_screen-header .menu-bar .ham:after' => ['height']
                         ]
                     ],
 
@@ -514,8 +514,8 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-header.full_screen-header .menu-bar .ham:before' => 'top',
-                            '#site-header.full_screen-header .menu-bar .ham:after' => 'top',
+                            '#site-header.full_screen-header .menu-bar .ham:before' => ['top'],
+                            '#site-header.full_screen-header .menu-bar .ham:after' => ['top'],
                         ]
                     ],
 
@@ -856,7 +856,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header .oceanwp-mobile-menu-icon a' => 'line-height'
+                            '#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header .oceanwp-mobile-menu-icon a' => ['line-height']
                         ]
                     ],
 
@@ -1246,8 +1246,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-header.vertical-header #site-navigation-wrap .dropdown-menu > li > a' => 'padding-top',
-                            '#site-header.vertical-header #site-navigation-wrap .dropdown-menu > li > a' => 'padding-bottom'
+                            '#site-header.vertical-header #site-navigation-wrap .dropdown-menu > li > a' => ['padding-top', 'padding-bottom'],
                         ]
                     ],
 
@@ -1333,7 +1332,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-header.vertical-header #vertical-searchform form input' => 'border-width'
+                            '#site-header.vertical-header #vertical-searchform form input' => ['border-width']
                         ]
                     ],
 
@@ -1371,7 +1370,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-header.vertical-header #vertical-searchform form input, #site-header.vertical-header #vertical-searchform form .search-bg' => 'border-radius'
+                            '#site-header.vertical-header #vertical-searchform form input, #site-header.vertical-header #vertical-searchform form .search-bg' => ['border-radius']
                         ]
                     ],
 
@@ -2480,16 +2479,12 @@ $options = [
                     ],
 
                     'ocean_after_header_content' => [
-                        'type'     => 'ocean-rich-text',
+                        'type'     => 'ocean-textarea',
                         'label'    => esc_html__( 'Content After Header', 'oceanwp' ),
                         'section'  => 'ocean_header_content_section',
                         'transport' => 'postMessage',
                         'priority' => 10,
                         'hideLabel'    => false,
-                        'mediaButtons' => false,
-                        'tinymce' => [
-                            'toolbar1' => 'bold,italic,link,undo,redo',
-                        ],
                         'sanitize_callback' => 'wp_kses_post',
                     ]
                 ]
@@ -2782,7 +2777,7 @@ $options = [
                 ],
                 'preview' => 'queryWithType',
                 'css' => [
-                    '#site-logo #site-logo-inner a img, #site-header.center-header #site-navigation-wrap .middle-site-logo a img' => 'max-width'
+                    '#site-logo #site-logo-inner a img, #site-header.center-header #site-navigation-wrap .middle-site-logo a img' => ['max-width']
                 ]
             ],
 
@@ -2834,7 +2829,7 @@ $options = [
                 ],
                 'preview' => 'queryWithType',
                 'css' => [
-                    '#site-header #site-logo #site-logo-inner a img, #site-header.center-header #site-navigation-wrap .middle-site-logo a img' => 'max-height'
+                    '#site-header #site-logo #site-logo-inner a img, #site-header.center-header #site-navigation-wrap .middle-site-logo a img' => ['max-height']
                 ]
             ],
 
@@ -3260,8 +3255,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-navigation-wrap .dropdown-menu > li > a' => 'padding-top',
-                            '#site-navigation-wrap .dropdown-menu > li > a' => 'padding-bottom'
+                            '#site-navigation-wrap .dropdown-menu > li > a' => ['padding-top', 'padding-bottom'],
                         ]
                     ],
 
@@ -3668,7 +3662,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '.dropdown-menu .sub-menu' => 'min-width'
+                            '.dropdown-menu .sub-menu' => ['min-width']
                         ]
                     ],
 
@@ -4637,8 +4631,8 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a' => 'border-width',
-                                    '.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon' => 'width'
+                                    '.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a' => ['border-width'],
+                                    '.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon' => ['width']
                                 ]
                             ],
 
@@ -4668,7 +4662,7 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.oceanwp-social-menu ul li a' => 'border-radius'
+                                    '.oceanwp-social-menu ul li a' => ['border-radius']
                                 ]
                             ],
 
@@ -5274,7 +5268,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-logo.has-responsive-logo .responsive-logo-link img' => 'max-height'
+                            '#site-logo.has-responsive-logo .responsive-logo-link img' => ['max-height']
                         ]
                     ],
 
@@ -5362,7 +5356,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#mobile-dropdown' => 'max-height'
+                            '#mobile-dropdown' => ['max-height']
                         ]
                     ],
 

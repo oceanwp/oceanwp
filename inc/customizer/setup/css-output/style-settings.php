@@ -149,6 +149,19 @@ class OceanWP_Style_Settings_CSS {
         $pagination_border_color       = get_theme_mod( 'ocean_pagination_border_color', '#e9e9e9' );
         $pagination_border_hover_color = get_theme_mod( 'ocean_pagination_border_hover_color', '#e9e9e9' );
 
+        $scroll_top_bottom_position    = get_theme_mod( 'ocean_scroll_top_bottom_position', 20 );
+        $scroll_top_size               = get_theme_mod( 'ocean_scroll_top_size', 40 );
+        $scroll_top_size_tablet        = get_theme_mod( 'ocean_scroll_top_size_tablet' );
+        $scroll_top_size_mobile        = get_theme_mod( 'ocean_scroll_top_size_mobile' );
+        $scroll_top_size_unit          = get_theme_mod( 'ocean_scroll_top_size_unit', 'px' );
+        $scroll_top_icon_size          = get_theme_mod( 'ocean_scroll_top_icon_size', 18 );
+        $scroll_top_icon_size_unit     = get_theme_mod( 'ocean_scroll_top_icon_size_unit', 'px' );
+        $scroll_top_border_radius      = get_theme_mod( 'ocean_scroll_top_border_radius', 2 );
+        $scroll_top_bg                 = get_theme_mod( 'ocean_scroll_top_bg', 'rgba(0,0,0,0.4)' );
+        $scroll_top_bg_hover           = get_theme_mod( 'ocean_scroll_top_bg_hover', 'rgba(0,0,0,0.8)' );
+        $scroll_top_color              = get_theme_mod( 'ocean_scroll_top_color', '#ffffff' );
+        $scroll_top_color_hover        = get_theme_mod( 'ocean_scroll_top_color_hover', '#ffffff' );
+
         $css = '';
 
         // Texts.
@@ -167,7 +180,7 @@ class OceanWP_Style_Settings_CSS {
 
         // Get site background image.
         if ( ! empty( $background_image ) ) {
-            $css .= 'body{background-image:url(' . wp_get_attachment_image_url( $background_image ) . ');}';
+            $css .= 'body{background-image:url(' . wp_get_attachment_url( $background_image ) . ');}';
         }
 
         // Get site background position.
@@ -467,6 +480,55 @@ class OceanWP_Style_Settings_CSS {
         // Pagination border color hover.
         if ( ! empty( $pagination_border_hover_color ) && '#e9e9e9' != $pagination_border_hover_color ) {
             $css .= '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover{border-color:' . $pagination_border_hover_color . ';}';
+        }
+
+        // Scroll top button bottom position.
+        if ( ! empty( $scroll_top_bottom_position ) && 20 != $scroll_top_bottom_position ) {
+            $css .= '#scroll-top{bottom:' . $scroll_top_bottom_position . 'px;}';
+        }
+
+        // Scroll top button size.
+        if ( ! empty( $scroll_top_size ) && 40 != $scroll_top_size ) {
+            $css .= '#scroll-top{width:' . $scroll_top_size . $scroll_top_size_unit . ';height:' . $scroll_top_size . $scroll_top_size_unit . ';line-height:' . $scroll_top_size . $scroll_top_size_unit . ';}';
+        }
+        if ( ! empty( $scroll_top_size_tablet ) ) {
+            $css .= '@media (max-width: 768px){#scroll-top{width:' . $scroll_top_size_tablet . $scroll_top_size_unit . ';height:' . $scroll_top_size_tablet . $scroll_top_size_unit . ';line-height:' . $scroll_top_size_tablet . $scroll_top_size_unit . ';}}';
+        }
+        if ( ! empty( $scroll_top_size_mobile ) ) {
+            $css .= '@media (max-width: 480px){#scroll-top{width:' . $scroll_top_size_mobile . $scroll_top_size_unit . ';height:' . $scroll_top_size_mobile . $scroll_top_size_unit . ';line-height:' . $scroll_top_size_mobile . $scroll_top_size_unit . ';}}';
+        }
+
+        // Scroll top button icon size.
+        if ( ! empty( $scroll_top_icon_size ) && 18 != $scroll_top_icon_size ) {
+            $css .= '#scroll-top{font-size:' . $scroll_top_icon_size . $scroll_top_icon_size_unit . ';}';
+            $css .= '#scroll-top .owp-icon{width:' . $scroll_top_icon_size . $scroll_top_icon_size_unit . '; height:' . $scroll_top_icon_size . $scroll_top_icon_size_unit . ';}';
+        }
+
+        // Scroll top button border radius.
+        if ( ! empty( $scroll_top_border_radius ) && 2 != $scroll_top_border_radius ) {
+            $css .= '#scroll-top{border-radius:' . $scroll_top_border_radius . 'px;}';
+        }
+
+        // Scroll top button background color.
+        if ( ! empty( $scroll_top_bg ) && 'rgba(0,0,0,0.4)' != $scroll_top_bg ) {
+            $css .= '#scroll-top{background-color:' . $scroll_top_bg . ';}';
+        }
+
+        // Scroll top button background hover color.
+        if ( ! empty( $scroll_top_bg_hover ) && 'rgba(0,0,0,0.8)' != $scroll_top_bg_hover ) {
+            $css .= '#scroll-top:hover{background-color:' . $scroll_top_bg_hover . ';}';
+        }
+
+        // Scroll top button background color.
+        if ( ! empty( $scroll_top_color ) && '#ffffff' != $scroll_top_color ) {
+            $css .= '#scroll-top{color:' . $scroll_top_color . ';}';
+            $css .= '#scroll-top .owp-icon use{stroke:' . $scroll_top_color . ';}';
+        }
+
+        // Scroll top button background hover color.
+        if ( ! empty( $scroll_top_color_hover ) && '#ffffff' != $scroll_top_color_hover ) {
+            $css .= '#scroll-top:hover{color:' . $scroll_top_color_hover . ';}';
+            $css .= '#scroll-top:hover .owp-icon use{stroke:' . $scroll_top_color . ';}';
         }
 
         // Return CSS.

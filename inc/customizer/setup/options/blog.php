@@ -2295,7 +2295,7 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.single-post .page-header' => 'height'
+                                    '.single-post .page-header' => ['height']
                                 ]
                             ],
 
@@ -2504,7 +2504,7 @@ $options = [
                                 ],
                                 'preview' => 'queryWithType',
                                 'css' => [
-                                    '.single-post .background-image-page-header-overlay' => 'opacity'
+                                    '.single-post .background-image-page-header-overlay' => ['opacity']
                                 ]
                             ],
 
