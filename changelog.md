@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2024.05.20_ - 3.5.6
+### _2024.05.22_ - 3.5.6
 - **Added**:: Header: Mobile Header: Various icon support for the Sidebar mobile header type.
 - **Updated**:: Compatibility: WordPress: version number.
 - **Fixed**:: Header: Vertical header type causing mobile menu alignment issues.
