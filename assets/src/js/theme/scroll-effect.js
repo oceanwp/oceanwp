@@ -60,7 +60,11 @@ class ScrollEffect {
       !scrollItem.classList.contains("oew-modal-button") &&
       !scrollItem.closest(".oew-modal-button") &&
       !scrollItem.classList.contains("opl-link") &&
-      !scrollItem.parentNode.classList.contains("opl-link")
+      !scrollItem.parentNode.classList.contains("opl-link") &&
+      !scrollItem.classList.contains("oew-off-canvas-button") &&
+      !scrollItem.parentNode.classList.contains("oew-off-canvas-button") &&
+      !scrollItem.classList.contains("oec-off-canvas-button") &&
+      !scrollItem.parentNode.classList.contains("oec-off-canvas-button")
     ) {
       const href = scrollItem.getAttribute("href");
       const id = href.substring(href.indexOf("#")).slice(1);

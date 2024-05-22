@@ -2732,7 +2732,7 @@ a.pure-button-selected {
 	Fixed old Font Awesomes
 *------------------------------------*/
 #sidr .sidr-class-social-menu-inner .fa {
-  font-family: "Font Awesome 5 Brands";
+  font-family: "Font Awesome 6 Brands";
   font-weight: 400;
 }
 
@@ -9298,8 +9298,7 @@ body.default-breakpoint .after-header-content {
         transform: translateX(-50%);
   }
   body.default-breakpoint .oceanwp-mobile-menu-icon {
-    display: -ms-inline-flexbox;
-    display: inline-flex;
+    display: block;
   }
   body.default-breakpoint #top-bar.has-no-content #top-bar-social {
     text-align: center;

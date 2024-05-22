@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### _2024.05.22_ - 3.5.6
+- **Added**:: Header: Mobile Header: Various icon support for the Sidebar mobile header type.
+- **Updated**:: Compatibility: WordPress: version number.
+- **Fixed**:: Header: Vertical header type causing mobile menu alignment issues.
+- **Fixed**:: Compatibility: Elementor: Off Canvas widget from Ocean Elementor Widgets and Ocean eCommerce Pro: page position changes on button open action when anchor links used on the page.
+- **Fixed**:: Customizer: Section display issues on rare conditions.
+
 ### _2024.03.27_ - 3.5.5
 - **Fixed**:: Potential vulnerability patched: Report by Wordfence from March 18th 2024. And a special thanks to the Wordfence team for double-checking everything.
 - **Fixed**:: Compatibility: PHP 8.3: PHP Warning:  Trying to access array offset on value of type bool in ...\themes\oceanwp\inc\helpers.php on line 2494

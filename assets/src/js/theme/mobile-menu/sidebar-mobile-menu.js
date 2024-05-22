@@ -131,6 +131,24 @@ class SidebarMobileMenu {
         icon.className = icon.className.replace(/\bsidr-class-dashicons.*?\b/g, "dashicons");
       });
 
+    document
+      .querySelectorAll('#sidr [class*="sidr-class-elusive"]')
+      .forEach((icon) => {
+        icon.className = icon.className.replace(/\bsidr-class-el-icon.*?\b/g, "el-icon");
+      });
+
+    document
+      .querySelectorAll('#sidr [class*="sidr-class-genericon"]')
+      .forEach((icon) => {
+        icon.className = icon.className.replace(/\bsidr-class-genericon.*?\b/g, "genericon");
+      });
+
+    document
+      .querySelectorAll('#sidr [class*="sidr-class-foundation-icons"]')
+      .forEach((icon) => {
+        icon.className = icon.className.replace(/\bsidr-class-fi.*?\b/g, "fi");
+      });
+
     this.#sidebarToggleMenuBtn = document.querySelector(
       "a.sidr-class-toggle-sidr-close"
     );
