@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2024.05.24_ - 3.5.7
+- **Reversed**:: 3.5.6 changes: "Fixed: Customizer: Section display issues on rare conditions." due to Customizer image control type issues.
+
 ### _2024.05.22_ - 3.5.6
 - **Added**:: Header: Mobile Header: Various icon support for the Sidebar mobile header type.
 - **Updated**:: Compatibility: WordPress: version number.

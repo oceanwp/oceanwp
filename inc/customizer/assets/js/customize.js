@@ -11,7 +11,7 @@ jQuery( document ).on( 'ready', function (e) {
         }
 
         controls[ i ] = _wpCustomizeSettings.controls[ i ];
-        // delete _wpCustomizeSettings.controls[ i ];
+        delete _wpCustomizeSettings.controls[ i ];
     })
 
     wp.customize.bind('ready', function() {
