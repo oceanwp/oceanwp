@@ -924,7 +924,7 @@ $options = [
                         ],
                     ],
                 ],
-                'preview' => 'queryWithAttr',
+                'preview' => 'queryWithType',
                 'css' => [
                     'selector' => 'input[type="button"]', 'input[type="reset"]', 'input[type="submit"]', 'button[type="submit"]', '.button', '#site-navigation-wrap .dropdown-menu > li.btn > a > span', 'body div.wpforms-container-full .wpforms-form input[type=submit]', 'body div.wpforms-container-full .wpforms-form button[type=submit]', 'body div.wpforms-container-full .wpforms-form .wpforms-page-button',
                     'property' => 'border-radius'
@@ -1594,7 +1594,7 @@ $options = [
                         ],
                     ],
                 ],
-                'preview' => 'queryWithAttr',
+                'preview' => 'queryWithType',
                 'css' => [
                     'selector' => 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea',
                     'property' => 'border-radius'
@@ -3274,7 +3274,7 @@ $options = [
                         ],
                     ],
                 ],
-                'preview' => 'queryWithAttr',
+                'preview' => 'queryWithType',
                 'css' => [
                     'selector' => '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span',
                     'property' => 'border-radius'
@@ -3398,7 +3398,7 @@ $options = [
                         'key' => 'hover',
                         'label' => 'Hover',
                         'selector' => [
-                            '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover' => 'color',
+                            '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover' => 'border-color',
                         ],
                         'attr' => [
                             'transport' => 'postMessage',

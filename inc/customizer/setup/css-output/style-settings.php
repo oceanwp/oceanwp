@@ -156,7 +156,20 @@ class OceanWP_Style_Settings_CSS {
         $scroll_top_size_unit          = get_theme_mod( 'ocean_scroll_top_size_unit', 'px' );
         $scroll_top_icon_size          = get_theme_mod( 'ocean_scroll_top_icon_size', 18 );
         $scroll_top_icon_size_unit     = get_theme_mod( 'ocean_scroll_top_icon_size_unit', 'px' );
-        $scroll_top_border_radius      = get_theme_mod( 'ocean_scroll_top_border_radius', 2 );
+
+        $scroll_top_top_radius           = get_theme_mod( 'ocean_scroll_top_border_top_radius', 2 );
+        $scroll_top_right_radius         = get_theme_mod( 'ocean_scroll_top_border_right_radius', 2 );
+        $scroll_top_bottom_radius        = get_theme_mod( 'ocean_scroll_top_border_bottom_radius', 2 );
+        $scroll_top_left_radius          = get_theme_mod( 'ocean_scroll_top_border_left_radius', 2 );
+        $tablet_scroll_top_top_radius    = get_theme_mod( 'ocean_scroll_top_border_tablet_top_radius' );
+        $tablet_scroll_top_right_radius  = get_theme_mod( 'ocean_scroll_top_border_tablet_right_radius' );
+        $tablet_scroll_top_bottom_radius = get_theme_mod( 'ocean_scroll_top_border_tablet_bottom_radius' );
+        $tablet_scroll_top_left_radius   = get_theme_mod( 'ocean_scroll_top_border_tablet_left_radius' );
+        $mobile_scroll_top_top_radius    = get_theme_mod( 'ocean_scroll_top_border_mobile_top_radius' );
+        $mobile_scroll_top_right_radius  = get_theme_mod( 'ocean_scroll_top_border_mobile_right_radius' );
+        $mobile_scroll_top_bottom_radius = get_theme_mod( 'ocean_scroll_top_border_mobile_bottom_radius' );
+        $mobile_scroll_top_left_radius   = get_theme_mod( 'ocean_scroll_top_border_mobile_left_radius' );
+
         $scroll_top_bg                 = get_theme_mod( 'ocean_scroll_top_bg', 'rgba(0,0,0,0.4)' );
         $scroll_top_bg_hover           = get_theme_mod( 'ocean_scroll_top_bg_hover', 'rgba(0,0,0,0.8)' );
         $scroll_top_color              = get_theme_mod( 'ocean_scroll_top_color', '#ffffff' );
@@ -505,8 +518,27 @@ class OceanWP_Style_Settings_CSS {
         }
 
         // Scroll top button border radius.
-        if ( ! empty( $scroll_top_border_radius ) && 2 != $scroll_top_border_radius ) {
-            $css .= '#scroll-top{border-radius:' . $scroll_top_border_radius . 'px;}';
+        if ( isset( $scroll_top_top_radius ) && 2 != $scroll_top_top_radius && '' != $scroll_top_top_radius
+            || isset( $scroll_top_right_radius ) && 2 != $scroll_top_right_radius && '' != $scroll_top_right_radius
+            || isset( $scroll_top_bottom_radius ) && 2 != $scroll_top_bottom_radius && '' != $scroll_top_bottom_radius
+            || isset( $scroll_top_left_radius ) && 2 != $scroll_top_left_radius && '' != $scroll_top_left_radius ) {
+            $css .= '#scroll-top{border-radius:' . oceanwp_spacing_css( $scroll_top_top_radius, $scroll_top_right_radius, $scroll_top_bottom_radius, $scroll_top_left_radius ) . '}';
+        }
+
+        // Tablet input border width border radius.
+        if ( isset( $tablet_scroll_top_top_radius ) && '' != $tablet_scroll_top_top_radius
+            || isset( $tablet_scroll_top_right_radius ) && '' != $tablet_scroll_top_right_radius
+            || isset( $tablet_scroll_top_bottom_radius ) && '' != $tablet_scroll_top_bottom_radius
+            || isset( $tablet_scroll_top_left_radius ) && '' != $tablet_scroll_top_left_radius ) {
+            $css .= '@media (max-width: 768px){#scroll-top{border-radius:' . oceanwp_spacing_css( $tablet_scroll_top_top_radius, $tablet_scroll_top_right_radius, $tablet_scroll_top_bottom_radius, $tablet_scroll_top_left_radius ) . '}}';
+        }
+
+        // Mobile input border width border radius.
+        if ( isset( $mobile_scroll_top_top_radius ) && '' != $mobile_scroll_top_top_radius
+            || isset( $mobile_scroll_top_right_radius ) && '' != $mobile_scroll_top_right_radius
+            || isset( $mobile_scroll_top_bottom_radius ) && '' != $mobile_scroll_top_bottom_radius
+            || isset( $mobile_scroll_top_left_radius ) && '' != $mobile_scroll_top_left_radius ) {
+            $css .= '@media (max-width: 480px){#scroll-top{border-radius:' . oceanwp_spacing_css( $mobile_scroll_top_top_radius, $mobile_scroll_top_right_radius, $mobile_scroll_top_bottom_radius, $mobile_scroll_top_left_radius ) . '}}';
         }
 
         // Scroll top button background color.
