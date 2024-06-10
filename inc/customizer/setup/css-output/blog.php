@@ -52,6 +52,10 @@ class OceanWP_Customize_Blog_CSS {
         $blog_archive_readmore_color         = get_theme_mod( 'ocean_blog_archive_readmore_color' );
         $blog_archive_readmore_hover_color   = get_theme_mod( 'ocean_blog_archive_readmore_hover_color' );
 
+        $blog_title_color_setting        = get_theme_mod('blog_entry_title_typography');
+		$blog_title_color                = isset($blog_title_color_setting['color']) ? $blog_title_color_setting['color'] : '#333333';
+		$blog_title_color_hover         = get_theme_mod( 'ocean_blog_archive_title_color_hover', '' );
+
 
         // Define css var.
         $css = '';
@@ -165,6 +169,14 @@ class OceanWP_Customize_Blog_CSS {
             $css .= '.blog-entry.post .thumbnail .overlay{background-color:' . $blog_image_overlay_clr . ';}';
         }
 
+        if ( ! empty( $blog_title_color ) && '#333333' != $blog_title_color ) {
+            $css .= '.blog-entry.post .blog-entry-header .entry-title a{color:' . $blog_title_color . ';}';
+        }
+
+        if ( ! empty( $blog_title_color_hover ) && '' != $blog_title_color_hover ) {
+            $css .= '.blog-entry.post .blog-entry-header .entry-title a:hover{color:' . $blog_title_color_hover . ';}';
+        }
+
         if ( ! empty( $blog_archive_meta_color ) && '' != $blog_archive_meta_color ) {
             $css .= '.blog-entry ul.meta li a{color:' . $blog_archive_meta_color . ';}';
         }
@@ -182,10 +194,10 @@ class OceanWP_Customize_Blog_CSS {
         }
 
         if ( ! empty( $blog_archive_readmore_color ) && '' != $blog_archive_readmore_color ) {
-            $css .= '.blog-entry.large-entry .blog-entry-readmore a{color:' . $blog_archive_readmore_color . ';}';
+            $css .= '.blog-entry.post .blog-entry-readmore a{color:' . $blog_archive_readmore_color . ';}';
         }
         if ( ! empty( $blog_archive_readmore_hover_color ) && '' != $blog_archive_readmore_hover_color ) {
-            $css .= '.blog-entry.large-entry .blog-entry-readmore a:hover{color:' . $blog_archive_readmore_hover_color . ';}';
+            $css .= '.blog-entry.post .blog-entry-readmore a:hover{color:' . $blog_archive_readmore_hover_color . ';}';
         }
 
         // Single content width.

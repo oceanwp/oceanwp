@@ -606,7 +606,7 @@ $options = [
 								'hideLabel' => false,
 								'mediaType' => 'image',
 								'active_callback' => 'oceanwp_is_bg_image_page_header',
-								'sanitize_callback' => 'oceanwp_sanitize_image',
+								//'sanitize_callback' => 'oceanwp_sanitize_image',
 							],
 
 							'ocean_page_header_bg_image_height_setting' => [
@@ -2271,7 +2271,6 @@ $options = [
 				'priority' => 10,
 				'hideLabel' => false,
 				'mediaType' => 'image',
-				'sanitize_callback' => 'oceanwp_sanitize_image',
 			],
 		]
 	],
@@ -2345,7 +2344,6 @@ $options = [
 				'priority' => 10,
 				'hideLabel' => false,
 				'mediaType' => 'image',
-				'sanitize_callback' => 'oceanwp_sanitize_image',
 			],
 
 			'ocean_error_page_blank' => [

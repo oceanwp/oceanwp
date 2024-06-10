@@ -539,7 +539,6 @@ $options = [
                         'hideLabel' => false,
                         'mediaType' => 'image',
                         'active_callback' => 'ocean_cac_header_full_screen',
-                        'sanitize_callback' => 'oceanwp_sanitize_image',
                     ],
 
                     'ocean_full_screen_header_retina_logo' => [
@@ -552,7 +551,6 @@ $options = [
                         'hideLabel' => false,
                         'mediaType' => 'image',
                         'active_callback' => 'ocean_cac_header_full_screen',
-                        'sanitize_callback' => 'oceanwp_sanitize_image',
                     ],
 
                     'ocean_title_for_center_header_settings' => [
@@ -668,7 +666,6 @@ $options = [
                         'priority' => 20,
                         'default'  => [ 'searchfrom', 'logo', 'social' ],
                         'active_callback' => 'ocean_cac_header_medium_style',
-                        'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
                         'hideLabel' => false,
                         'choices' => [
                             'searchfrom' => esc_html__( 'Search Form', 'oceanwp' ),
@@ -2718,7 +2715,6 @@ $options = [
                 'priority' => 40,
                 'hideLabel' => false,
                 'mediaType' => 'image',
-                'sanitize_callback' => 'oceanwp_sanitize_image',
             ],
 
             'ocean_divider_after_header_retina_logo_settings' => [
@@ -2739,7 +2735,7 @@ $options = [
                 'hideLabel'    => false,
                 'isUnit'       => true,
                 'isResponsive' => true,
-                'min'          => 30,
+                'min'          => 0,
                 'max'          => 500,
                 'step'         => 1,
                 'active_callback' => 'oceanwp_cac_custom_logo',
@@ -5240,7 +5236,6 @@ $options = [
                         'priority' => 10,
                         'hideLabel' => false,
                         'mediaType' => 'image',
-                        'sanitize_callback' => 'oceanwp_sanitize_image',
                     ],
 
                     'ocean_responsive_logo_height' => [

@@ -3260,6 +3260,10 @@ function ocean_single_blog_header_style( $style ) {
 		$style = $header_style;
 	}
 
+	if ( ! ( is_single() && 'post' === get_post_type() ) ) {
+		return;
+	}
+
 	return $style;
 }
 

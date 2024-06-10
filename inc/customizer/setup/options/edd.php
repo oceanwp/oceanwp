@@ -1165,7 +1165,6 @@ $options = [
                         'priority' => 10,
                         'default'  => [ 'image', 'category', 'title', 'price', 'description', 'button' ],
                         'hideLabel' => false,
-                        'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
                         'choices' => [
                             'image'       => esc_html__( 'Image', 'oceanwp' ),
 							'category'    => esc_html__( 'Category', 'oceanwp' ),

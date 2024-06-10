@@ -399,7 +399,7 @@ class OceanWP_Customizer_Init {
 			'ocean-customize-preview',
 			'oceanCustomizePreview',
 			array(
-				'options' => ocean_customize_options('options'),
+				'options' => apply_filters( 'ocean_customize_options_data', ocean_customize_options('options')),
 				'googleFonts' => oceanwp_google_fonts_array()
 			)
 		);

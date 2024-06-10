@@ -14,214 +14,215 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class OceanWP_Colors_CSS {
 
-    /**
-     * fonts
-     *
-     * @var $fonts
-     * @access private
-     * @since 3.5.1
-     */
-    private $fonts = array();
+	/**
+	 * fonts
+	 *
+	 * @var $fonts
+	 * @access private
+	 * @since 3.5.1
+	 */
+	private $fonts = array();
 
-    /**
-     * Constructor
-     */
-    public function __construct() {
-        add_filter('ocean_head_css', array($this, 'generate_css'));
-    }
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		add_filter('ocean_head_css', array($this, 'generate_css'));
+	}
 
-    public function generate_Css($output) {
-        $primary_color       = get_theme_mod( 'ocean_primary_color', '#13aff0' );
-        $hover_primary_color = get_theme_mod( 'ocean_hover_primary_color', '#0b7cac' );
-        $main_border_color   = get_theme_mod( 'ocean_main_border_color', '#e9e9e9' );
-        $background_color    = get_theme_mod( 'ocean_background_color', '#ffffff' );
-        $links_color         = get_theme_mod( 'ocean_links_color', '#333333' );
-        $links_color_hover   = get_theme_mod( 'ocean_links_color_hover', '#13aff0' );
-        $boxed_outside_bg    = get_theme_mod( 'ocean_boxed_outside_bg', '#e9e9e9' );
+	public function generate_Css($output) {
+		$primary_color       = get_theme_mod( 'ocean_primary_color', '#13aff0' );
+		$hover_primary_color = get_theme_mod( 'ocean_hover_primary_color', '#0b7cac' );
+		$main_border_color   = get_theme_mod( 'ocean_main_border_color', '#e9e9e9' );
+		$background_color    = get_theme_mod( 'ocean_background_color', '#ffffff' );
+		$links_color         = get_theme_mod( 'ocean_links_color', '#333333' );
+		$links_color_hover   = get_theme_mod( 'ocean_links_color_hover', '#13aff0' );
+		$boxed_outside_bg    = get_theme_mod( 'ocean_boxed_outside_bg', '#e9e9e9' );
 		$separate_outside_bg = get_theme_mod( 'ocean_separate_outside_bg', '#f1f1f1' );
 		$boxed_inner_bg      = get_theme_mod( 'ocean_boxed_inner_bg', '#ffffff' );
 
-        $theme_button_bg               = get_theme_mod( 'ocean_theme_button_bg', '#13aff0' );
-        $theme_button_hover_bg         = get_theme_mod( 'ocean_theme_button_hover_bg', '#0b7cac' );
-        $theme_button_color            = get_theme_mod( 'ocean_theme_button_color', '#ffffff' );
-        $theme_button_hover_color      = get_theme_mod( 'ocean_theme_button_hover_color', '#ffffff' );
-        $theme_button_border_color     = get_theme_mod( 'ocean_theme_button_color', '#ffffff' );
-        $theme_button_hover_border     = get_theme_mod( 'ocean_theme_button_hover_color', '#ffffff' );
+		$theme_button_bg               = get_theme_mod( 'ocean_theme_button_bg', '#13aff0' );
+		$theme_button_hover_bg         = get_theme_mod( 'ocean_theme_button_hover_bg', '#0b7cac' );
+		$theme_button_color            = get_theme_mod( 'ocean_theme_button_color', '#ffffff' );
+		$theme_button_hover_color      = get_theme_mod( 'ocean_theme_button_hover_color', '#ffffff' );
+		$theme_button_border_color     = get_theme_mod( 'ocean_theme_button_color', '#ffffff' );
+		$theme_button_hover_border     = get_theme_mod( 'ocean_theme_button_hover_color', '#ffffff' );
 
-        $input_background              = get_theme_mod( 'ocean_input_background' );
+		$input_background              = get_theme_mod( 'ocean_input_background' );
 		$input_text_color              = get_theme_mod( 'ocean_input_color', '#333333' );
-        $input_placeholder_color       = get_theme_mod( 'ocean_input_placeholder' );
-        $input_label_color             = get_theme_mod( 'ocean_label_color', '#929292' );
-        $input_border_color            = get_theme_mod( 'ocean_input_border_color', '#dddddd' );
-        $input_border_color_focus      = get_theme_mod( 'ocean_input_border_color_focus', '#bbbbbb' );
+		$input_placeholder_color       = get_theme_mod( 'ocean_input_placeholder' );
+		$input_label_color             = get_theme_mod( 'ocean_label_color', '#929292' );
+		$input_border_color            = get_theme_mod( 'ocean_input_border_color', '#dddddd' );
+		$input_border_color_focus      = get_theme_mod( 'ocean_input_border_color_focus', '#bbbbbb' );
 
-        $page_header_title_color      = get_theme_mod( 'page_title_typography')['color'];
-        $page_header_text_color       = get_theme_mod( 'ocean_page_header_title_color' );
+		$page_title_typography         = get_theme_mod('page_title_typography');
+		$page_header_title_color       = isset($page_title_typography['color']) ? $page_title_typography['color'] : '';
+		$page_header_text_color        = get_theme_mod( 'ocean_page_header_title_color' );
 
-        $css = '';
+		$css = '';
 
-        $texts       = ocean_primary_color_selector( 'texts' );
-        $svg_icons   = ocean_primary_color_selector( 'svg_icons' );
-        $backgrounds = ocean_primary_color_selector( 'backgrounds' );
-        $borders     = ocean_primary_color_selector( 'borders' );
+		$texts       = ocean_primary_color_selector( 'texts' );
+		$svg_icons   = ocean_primary_color_selector( 'svg_icons' );
+		$backgrounds = ocean_primary_color_selector( 'backgrounds' );
+		$borders     = ocean_primary_color_selector( 'borders' );
 
-        // Get hover primary color arrays.
-        $hover_primary = ocean_primary_color_hover_selector( 'hover' );
+		// Get hover primary color arrays.
+		$hover_primary = ocean_primary_color_hover_selector( 'hover' );
 
-        // Get hover primary color arrays.
-        $main_border = ocean_main_border_selector();
+		// Get hover primary color arrays.
+		$main_border = ocean_main_border_selector();
 
-        // Texts.
-        if ( ! empty( $texts ) && '#13aff0' != $primary_color ) {
-            $css .= implode( ',', $texts ) . '{color:' . $primary_color . ';}';
-            $css .= implode( ',', $svg_icons ) . '{stroke:' . $primary_color . ';}';
-        }
+		// Texts.
+		if ( ! empty( $texts ) && '#13aff0' != $primary_color ) {
+			$css .= implode( ',', $texts ) . '{color:' . $primary_color . ';}';
+			$css .= implode( ',', $svg_icons ) . '{stroke:' . $primary_color . ';}';
+		}
 
-        // Backgrounds.
-        if ( ! empty( $backgrounds ) && '#13aff0' != $primary_color ) {
-            $css .= implode( ',', $backgrounds ) . '{background-color:' . $primary_color . ';}';
-        }
+		// Backgrounds.
+		if ( ! empty( $backgrounds ) && '#13aff0' != $primary_color ) {
+			$css .= implode( ',', $backgrounds ) . '{background-color:' . $primary_color . ';}';
+		}
 
-        // Borders.
-        if ( ! empty( $borders ) && '#13aff0' != $primary_color ) {
-            foreach ( $borders as $key => $val ) {
-                if (!is_array($val) && isset($val) && $val !== '') {
-                    $css .= $key . '{';
-                    $css .= 'border-' . $val . '-color:' . $primary_color . ';';
-                    $css .= '}';
-                } else {
-                    $css .= $key . '{border-color:' . $primary_color . ';}';
-                }
-            }
-        }
+		// Borders.
+		if ( ! empty( $borders ) && '#13aff0' != $primary_color ) {
+			foreach ( $borders as $key => $val ) {
+				if (!is_array($val) && isset($val) && $val !== '') {
+					$css .= $key . '{';
+					$css .= 'border-' . $val . '-color:' . $primary_color . ';';
+					$css .= '}';
+				} else {
+					$css .= $key . '{border-color:' . $primary_color . ';}';
+				}
+			}
+		}
 
-        // Hover primary color.
-        if ( ! empty( $hover_primary ) && '#0b7cac' != $hover_primary_color ) {
-            $css .= implode( ',', $hover_primary ) . '{background-color:' . $hover_primary_color . ';}';
-        }
+		// Hover primary color.
+		if ( ! empty( $hover_primary ) && '#0b7cac' != $hover_primary_color ) {
+			$css .= implode( ',', $hover_primary ) . '{background-color:' . $hover_primary_color . ';}';
+		}
 
-        // Main border color.
-        if ( ! empty( $main_border ) && '#e9e9e9' != $main_border_color ) {
-            $css .= implode( ',', $main_border ) . '{border-color:' . $main_border_color . ';}';
-        }
+		// Main border color.
+		if ( ! empty( $main_border ) && '#e9e9e9' != $main_border_color ) {
+			$css .= implode( ',', $main_border ) . '{border-color:' . $main_border_color . ';}';
+		}
 
-        // Get site background color.
-        if ( ! empty( $background_color ) && '#ffffff' != $background_color ) {
-            $css .= 'body, .has-parallax-footer:not(.separate-layout) #main{background-color:' . $background_color . ';}';
-        }
+		// Get site background color.
+		if ( ! empty( $background_color ) && '#ffffff' != $background_color ) {
+			$css .= 'body, .has-parallax-footer:not(.separate-layout) #main{background-color:' . $background_color . ';}';
+		}
 
-        // Links color.
-        if ( ! empty( $links_color ) && '#333333' != $links_color ) {
-            $css .= 'a{color:' . $links_color . ';}';
-            $css .= 'a .owp-icon use {stroke:' . $links_color . ';}';
-        }
+		// Links color.
+		if ( ! empty( $links_color ) && '#333333' != $links_color ) {
+			$css .= 'a{color:' . $links_color . ';}';
+			$css .= 'a .owp-icon use {stroke:' . $links_color . ';}';
+		}
 
-        // Links color hover.
-        if ( ! empty( $links_color_hover ) && '#13aff0' != $links_color_hover ) {
-            $css .= 'a:hover{color:' . $links_color_hover . ';}';
-            $css .= 'a:hover .owp-icon use {stroke:' . $links_color_hover . ';}';
-        }
+		// Links color hover.
+		if ( ! empty( $links_color_hover ) && '#13aff0' != $links_color_hover ) {
+			$css .= 'a:hover{color:' . $links_color_hover . ';}';
+			$css .= 'a:hover .owp-icon use {stroke:' . $links_color_hover . ';}';
+		}
 
-        // Boxed outside background.
-        if ( ! empty( $boxed_outside_bg ) && '#e9e9e9' != $boxed_outside_bg ) {
-            $css .= '.boxed-layout{background-color:' . $boxed_outside_bg . ';}';
-        }
+		// Boxed outside background.
+		if ( ! empty( $boxed_outside_bg ) && '#e9e9e9' != $boxed_outside_bg ) {
+			$css .= '.boxed-layout{background-color:' . $boxed_outside_bg . ';}';
+		}
 
-        // Separate outside background.
-        if ( ! empty( $separate_outside_bg ) && '#f1f1f1' != $separate_outside_bg ) {
-            $css .= '.separate-layout, .has-parallax-footer.separate-layout #main{background-color:' . $separate_outside_bg . ';}';
-        }
+		// Separate outside background.
+		if ( ! empty( $separate_outside_bg ) && '#f1f1f1' != $separate_outside_bg ) {
+			$css .= '.separate-layout, .has-parallax-footer.separate-layout #main{background-color:' . $separate_outside_bg . ';}';
+		}
 
-        // Boxed inner background.
-        if ( ! empty( $boxed_inner_bg ) && '#ffffff' != $boxed_inner_bg ) {
-            $css .= '.boxed-layout #wrap, .separate-layout .content-area, .separate-layout .widget-area .sidebar-box, body.separate-blog.separate-layout #blog-entries > *, body.separate-blog.separate-layout .oceanwp-pagination, body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner, .has-parallax-footer:not(.separate-layout) #main{background-color:' . $boxed_inner_bg . ';}';
-        }
+		// Boxed inner background.
+		if ( ! empty( $boxed_inner_bg ) && '#ffffff' != $boxed_inner_bg ) {
+			$css .= '.boxed-layout #wrap, .separate-layout .content-area, .separate-layout .widget-area .sidebar-box, body.separate-blog.separate-layout #blog-entries > *, body.separate-blog.separate-layout .oceanwp-pagination, body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner, .has-parallax-footer:not(.separate-layout) #main{background-color:' . $boxed_inner_bg . ';}';
+		}
 
-        // Theme buttons background color.
-        if ( ! empty( $theme_button_bg ) && '#13aff0' != $theme_button_bg ) {
-            $css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{background-color:' . $theme_button_bg . ';}';
-        }
+		// Theme buttons background color.
+		if ( ! empty( $theme_button_bg ) && '#13aff0' != $theme_button_bg ) {
+			$css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{background-color:' . $theme_button_bg . ';}';
+		}
 
-        // Theme buttons background color.
-        if ( ! empty( $theme_button_hover_bg ) && '#0b7cac' != $theme_button_hover_bg ) {
-            $css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active{background-color:' . $theme_button_hover_bg . ';}';
-        }
+		// Theme buttons background color.
+		if ( ! empty( $theme_button_hover_bg ) && '#0b7cac' != $theme_button_hover_bg ) {
+			$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active{background-color:' . $theme_button_hover_bg . ';}';
+		}
 
-        // Theme buttons background color.
-        if ( ! empty( $theme_button_color ) && '#ffffff' != $theme_button_color ) {
-            $css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{color:' . $theme_button_color . ';}';
-        }
+		// Theme buttons background color.
+		if ( ! empty( $theme_button_color ) && '#ffffff' != $theme_button_color ) {
+			$css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{color:' . $theme_button_color . ';}';
+		}
 
-        // Theme buttons hover color.
-        if ( ! empty( $theme_button_hover_color ) && '#ffffff' != $theme_button_hover_color ) {
-            $css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active{color:' . $theme_button_border_color . ';}';
-        }
+		// Theme buttons hover color.
+		if ( ! empty( $theme_button_hover_color ) && '#ffffff' != $theme_button_hover_color ) {
+			$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active{color:' . $theme_button_border_color . ';}';
+		}
 
-        // Theme buttons background color.
-        if ( ! empty( $theme_button_border_color ) && '' != $theme_button_border_color ) {
-            $css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{border-color:' . $theme_button_color . ';}';
-        }
+		// Theme buttons background color.
+		if ( ! empty( $theme_button_border_color ) && '' != $theme_button_border_color ) {
+			$css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button{border-color:' . $theme_button_color . ';}';
+		}
 
-        // Theme buttons hover color.
-        if ( ! empty( $theme_button_hover_border ) && '' != $theme_button_hover_border ) {
-            $css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active{border-color:' . $theme_button_hover_border . ';}';
-        }
+		// Theme buttons hover color.
+		if ( ! empty( $theme_button_hover_border ) && '' != $theme_button_hover_border ) {
+			$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active{border-color:' . $theme_button_hover_border . ';}';
+		}
 
-        // Input border color.
-        if ( ! empty( $input_border_color ) && '#dddddd' != $input_border_color ) {
-            $css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea,.select2-container .select2-choice, .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single{border-color:' . $input_border_color . ';}';
-            $css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{border-color:' . $input_border_color . ';}';
-        }
+		// Input border color.
+		if ( ! empty( $input_border_color ) && '#dddddd' != $input_border_color ) {
+			$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea,.select2-container .select2-choice, .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single{border-color:' . $input_border_color . ';}';
+			$css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{border-color:' . $input_border_color . ';}';
+		}
 
-        // Input border color focus.
-        if ( ! empty( $input_border_color_focus ) && '#bbbbbb' != $input_border_color_focus ) {
-            $css .= 'form input[type="text"]:focus,form input[type="password"]:focus,form input[type="email"]:focus,form input[type="tel"]:focus,form input[type="url"]:focus,form input[type="search"]:focus,form textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices{border-color:' . $input_border_color_focus . ';}';
-            $css .= 'body div.wpforms-container-full .wpforms-form input:focus, body div.wpforms-container-full .wpforms-form textarea:focus, body div.wpforms-container-full .wpforms-form select:focus{border-color:' . $input_border_color_focus . ';}';
-        }
+		// Input border color focus.
+		if ( ! empty( $input_border_color_focus ) && '#bbbbbb' != $input_border_color_focus ) {
+			$css .= 'form input[type="text"]:focus,form input[type="password"]:focus,form input[type="email"]:focus,form input[type="tel"]:focus,form input[type="url"]:focus,form input[type="search"]:focus,form textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices{border-color:' . $input_border_color_focus . ';}';
+			$css .= 'body div.wpforms-container-full .wpforms-form input:focus, body div.wpforms-container-full .wpforms-form textarea:focus, body div.wpforms-container-full .wpforms-form select:focus{border-color:' . $input_border_color_focus . ';}';
+		}
 
-        // Input border background.
-        if ( ! empty( $input_background ) ) {
-            $css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single{background-color:' . $input_background . ';}';
-            $css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{background-color:' . $input_background . ';}';
-        }
+		// Input border background.
+		if ( ! empty( $input_background ) ) {
+			$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single{background-color:' . $input_background . ';}';
+			$css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{background-color:' . $input_background . ';}';
+		}
 
-        // Input text color.
-        if ( ! empty( $input_text_color ) && '#333333' != $input_text_color ) {
-            $css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{color:' . $input_text_color . ';}';
-            $css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{color:' . $input_text_color . ';}';
-        }
+		// Input text color.
+		if ( ! empty( $input_text_color ) && '#333333' != $input_text_color ) {
+			$css .= 'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea{color:' . $input_text_color . ';}';
+			$css .= 'body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea{color:' . $input_text_color . ';}';
+		}
 
-        // Input label color.
-        if ( ! empty( $input_label_color ) && '#929292' != $input_label_color ) {
-            $css .= 'label, body div.wpforms-container-full .wpforms-form .wpforms-field-label{color:' . $input_label_color . ';}';
-        }
+		// Input label color.
+		if ( ! empty( $input_label_color ) && '#929292' != $input_label_color ) {
+			$css .= 'label, body div.wpforms-container-full .wpforms-form .wpforms-field-label{color:' . $input_label_color . ';}';
+		}
 
-        // Input placeholder color.
-        if ( ! empty( $input_placeholder_color ) && '' != $input_placeholder_color ) {
-            $css .= 'form input[type="text"]::placeholder, form input[type="password"]::placeholder, form input[type="email"]::placeholder, form input[type="url"]::placeholder, form input[type="date"]::placeholder, form input[type="month"]::placeholder, form input[type="time"]::placeholder, form input[type="datetime"]::placeholder, form input[type="datetime-local"]::placeholder, form input[type="week"]::placeholder, form input[type="number"]::placeholder, form input[type="search"]::placeholder, form input[type="tel"]::placeholder, form input[type="color"]::placeholder, form select::placeholder, form textarea::placeholder{color:' . $input_placeholder_color . ';}';
-            $css .= 'body div.wpforms-container-full .wpforms-form input[type=date]::placeholder, body div.wpforms-container-full .wpforms-form input[type=datetime]::placeholder, body div.wpforms-container-full .wpforms-form input[type=datetime-local]::placeholder, body div.wpforms-container-full .wpforms-form input[type=email]::placeholder, body div.wpforms-container-full .wpforms-form input[type=month]::placeholder, body div.wpforms-container-full .wpforms-form input[type=number]::placeholder, body div.wpforms-container-full .wpforms-form input[type=password]::placeholder, body div.wpforms-container-full .wpforms-form input[type=range]::placeholder, body div.wpforms-container-full .wpforms-form input[type=search]::placeholder, body div.wpforms-container-full .wpforms-form input[type=tel]::placeholder, body div.wpforms-container-full .wpforms-form input[type=text]::placeholder, body div.wpforms-container-full .wpforms-form input[type=time]::placeholder, body div.wpforms-container-full .wpforms-form input[type=url]::placeholder, body div.wpforms-container-full .wpforms-form input[type=week]::placeholder, body div.wpforms-container-full .wpforms-form select::placeholder, body div.wpforms-container-full .wpforms-form textarea::placeholder{color:' . $input_placeholder_color . ';}';
-        }
+		// Input placeholder color.
+		if ( ! empty( $input_placeholder_color ) && '' != $input_placeholder_color ) {
+			$css .= 'form input[type="text"]::placeholder, form input[type="password"]::placeholder, form input[type="email"]::placeholder, form input[type="url"]::placeholder, form input[type="date"]::placeholder, form input[type="month"]::placeholder, form input[type="time"]::placeholder, form input[type="datetime"]::placeholder, form input[type="datetime-local"]::placeholder, form input[type="week"]::placeholder, form input[type="number"]::placeholder, form input[type="search"]::placeholder, form input[type="tel"]::placeholder, form input[type="color"]::placeholder, form select::placeholder, form textarea::placeholder{color:' . $input_placeholder_color . ';}';
+			$css .= 'body div.wpforms-container-full .wpforms-form input[type=date]::placeholder, body div.wpforms-container-full .wpforms-form input[type=datetime]::placeholder, body div.wpforms-container-full .wpforms-form input[type=datetime-local]::placeholder, body div.wpforms-container-full .wpforms-form input[type=email]::placeholder, body div.wpforms-container-full .wpforms-form input[type=month]::placeholder, body div.wpforms-container-full .wpforms-form input[type=number]::placeholder, body div.wpforms-container-full .wpforms-form input[type=password]::placeholder, body div.wpforms-container-full .wpforms-form input[type=range]::placeholder, body div.wpforms-container-full .wpforms-form input[type=search]::placeholder, body div.wpforms-container-full .wpforms-form input[type=tel]::placeholder, body div.wpforms-container-full .wpforms-form input[type=text]::placeholder, body div.wpforms-container-full .wpforms-form input[type=time]::placeholder, body div.wpforms-container-full .wpforms-form input[type=url]::placeholder, body div.wpforms-container-full .wpforms-form input[type=week]::placeholder, body div.wpforms-container-full .wpforms-form select::placeholder, body div.wpforms-container-full .wpforms-form textarea::placeholder{color:' . $input_placeholder_color . ';}';
+		}
 
-        // Page header color.
-        if ( ! empty( $page_header_title_color ) && '#f5f5f5' != $page_header_title_color ) {
-            $css .= '.page-header .page-header-title, .page-header.background-image-page-header .page-header-title{color:' . $page_header_title_color . ';}';
-        }
+		// Page header color.
+		if ( ! empty( $page_header_title_color ) && '#f5f5f5' != $page_header_title_color ) {
+			$css .= '.page-header .page-header-title, .page-header.background-image-page-header .page-header-title{color:' . $page_header_title_color . ';}';
+		}
 
-        // Page header color.
-        if ( ! empty( $page_header_text_color ) ) {
-            $css .= '.page-header {color:' . $page_header_title_color . ';}';
-        }
+		// Page header color.
+		if ( ! empty( $page_header_text_color ) ) {
+			$css .= '.page-header {color:' . $page_header_title_color . ';}';
+		}
 
 
-        // Return CSS.
-        if ( ! empty( $css ) ) {
-            $output .= '/* Colors */' . $css;
-        }
+		// Return CSS.
+		if ( ! empty( $css ) ) {
+			$output .= '/* Colors */' . $css;
+		}
 
-        // Return output css.
-        return $output;
+		// Return output css.
+		return $output;
 
-    }
+	}
 
 
 

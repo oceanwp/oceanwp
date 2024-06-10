@@ -1531,6 +1531,7 @@ $options = [
 				'section' => 'ocean_google_font_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
+				'active_callback' => 'ocean_is_google_font_settings',
 			],
 
 			'ocean_google_font_subsets' => [
