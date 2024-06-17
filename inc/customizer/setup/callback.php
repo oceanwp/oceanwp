@@ -35,6 +35,14 @@ function ocean_is_oe_active() {
     }
 }
 
+function ocean_is_not_boxed_layout() {
+	if ( 'boxed' !== get_theme_mod( 'ocean_main_layout_style', 'wide' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function ocean_is_boxed_layout() {
 	if ( 'boxed' == get_theme_mod( 'ocean_main_layout_style', 'wide' ) ) {
 		return true;

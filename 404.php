@@ -107,9 +107,11 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 													<?php
 													$logo_404 = get_theme_mod( 'ocean_404_logo' );
 													if ( ! empty( $logo_404 ) ) {
+														$logo_404_src = wp_get_attachment_image_src( $logo_404, 'full' );
+														$logo_404_url = $logo_404_src[0];
 														?>
 
-														<img src="<?php echo esc_url( $logo_404 ); ?>" alt="<?php esc_attr_e( '404 Logo', 'oceanwp' ); ?>" title="<?php esc_attr_e( '404 Logo', 'oceanwp' ); ?>" />
+														<img src="<?php echo esc_url( $logo_404_url ); ?>" alt="<?php esc_attr_e( '404 Logo', 'oceanwp' ); ?>" title="<?php esc_attr_e( '404 Logo', 'oceanwp' ); ?>" />
 													<?php } ?>
 
 													<h2 class="error-title"><?php esc_html_e( 'This page could not be found!', 'oceanwp' ); ?></h2>

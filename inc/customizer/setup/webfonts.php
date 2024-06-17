@@ -64,7 +64,7 @@ function oceanwp_google_fonts_array() {
  *
  * @since 1.0.0
  */
-function oceanwp_enqueue_google_font( $font, $subset_value = '' ) {
+function oceanwp_enqueue_google_font( $font, $subset_value = '', $variant_value = '' ) {
 
 	// Return if disabled
 	if ( false === get_theme_mod( 'ocean_disable_google_font', false ) ) {
@@ -89,7 +89,12 @@ function oceanwp_enqueue_google_font( $font, $subset_value = '' ) {
 	$font = str_replace( ' ', '+', $font );
 
 	// Subset
-	$get_subsets = get_theme_mod( 'ocean_google_font_subsets', array( 'latin' ) );
+	$get_subsets = get_theme_mod( 'ocean_google_font_subsets', array('latin') );
+
+	if (is_string($get_subsets)) {
+		$get_subsets = json_decode($get_subsets, true);
+	}
+
 	$subsets     = '';
 	if ( isset( $subset_value ) && '' !== $subset_value ) {
 		$subsets = $subset_value;
@@ -112,9 +117,11 @@ function oceanwp_enqueue_google_font( $font, $subset_value = '' ) {
 	// Main URL
 	$url = '//fonts.googleapis.com/css?family=' . str_replace( ' ', '%20', $font ) . ':';
 
-	// Add weights to URL
-	if ( ! empty( $weights ) ) {
-		$url           .= implode( ',', $weights ) . ',';
+	if ( isset( $variant_value ) && '' !== $variant_value ) {
+		$variant = $variant_value;
+		$url .= $variant;
+	} else if ( ! empty( $weights ) ) {
+		$url .= implode( ',', $weights ) . ',';
 		$italic_weights = array();
 		if ( $italics ) {
 			foreach ( $weights as $weight ) {

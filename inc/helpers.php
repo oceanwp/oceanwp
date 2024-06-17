@@ -1524,6 +1524,10 @@ if ( ! function_exists( 'oceanwp_medium_header_elements' ) ) {
 		// Get array from Customizer
 		$array = get_theme_mod( 'ocean_medium_header_top_header_elements', $array );
 
+		if (is_string($array)) {
+			$array = json_decode($array, true);
+		}
+
 		// Turn into array if string
 		if ( $array && ! is_array( $array ) ) {
 			$array = explode( ',', $array );
@@ -3114,6 +3118,10 @@ if ( ! function_exists( 'oceanwp_blog_entry_elements_positioning' ) ) {
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'ocean_blog_entry_elements_positioning', $sections );
 
+		if (is_string($sections)) {
+			$sections = json_decode($sections, true);
+		}
+
 		// Turn into array if string
 		if ( $sections && ! is_array( $sections ) ) {
 			$sections = explode( ',', $sections );
@@ -3142,6 +3150,10 @@ if ( ! function_exists( 'oceanwp_blog_entry_meta' ) ) {
 
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'ocean_blog_entry_meta', $sections );
+
+		if (is_string($sections)) {
+			$sections = json_decode($sections, true);
+		}
 
 		// Turn into array if string
 		if ( $sections && ! is_array( $sections ) ) {
@@ -3204,6 +3216,10 @@ if ( ! function_exists( 'oceanwp_blog_single_elements_positioning' ) ) {
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'ocean_blog_single_elements_positioning', $sections );
 
+		if (is_string($sections)) {
+			$sections = json_decode($sections, true);
+		}
+
 		// Turn into array if string
 		if ( $sections && ! is_array( $sections ) ) {
 			$sections = explode( ',', $sections );
@@ -3232,6 +3248,10 @@ if ( ! function_exists( 'oceanwp_blog_single_meta' ) ) {
 
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'ocean_blog_single_meta', $sections );
+
+		if (is_string($sections)) {
+			$sections = json_decode($sections, true);
+		}
 
 		// Turn into array if string
 		if ( $sections && ! is_array( $sections ) ) {

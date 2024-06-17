@@ -121,13 +121,13 @@ $options = [
 	],
 
 	'ocean_spacer_after_page_content_padding' => [
-        'type' => 'ocean-spacer',
-        'section' => 'ocean_site_page_settings',
-        'transport' => 'postMessage',
-        'priority' => 10,
-    ],
+		'type' => 'ocean-spacer',
+		'section' => 'ocean_site_page_settings',
+		'transport' => 'postMessage',
+		'priority' => 10,
+	],
 
-    'ocean_section_page_layout_settings' => [
+	'ocean_section_page_layout_settings' => [
 		'type' => 'section',
 		'title' => esc_html__('Additional Layout Settings', 'oceanwp'),
 		'section' => 'ocean_site_page_settings',
@@ -231,13 +231,13 @@ $options = [
 	],
 
 	'ocean_spacer_after_page_layout_section' => [
-        'type' => 'ocean-spacer',
-        'section' => 'ocean_site_page_settings',
-        'transport' => 'postMessage',
-        'priority' => 10,
-    ],
+		'type' => 'ocean-spacer',
+		'section' => 'ocean_site_page_settings',
+		'transport' => 'postMessage',
+		'priority' => 10,
+	],
 
-    'ocean_section_page_responsive_section' => [
+	'ocean_section_page_responsive_section' => [
 		'type' => 'section',
 		'title' => esc_html__('Responsive Page Settings', 'oceanwp'),
 		'section' => 'ocean_site_page_settings',
@@ -1483,7 +1483,7 @@ $options = [
 				'transport' => 'postMessage',
 				'priority' => 10,
 				'hideLabel' => false,
-				'selector' => '.site-breadcrumbs',
+				'selector' => '.site-breadcrumbs, .site-breadcrumbs a',
 				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 				'setting_args' => [
 					'fontFamily' => [
@@ -1786,16 +1786,16 @@ $options = [
 					],
 
 					'ocean_breadcrumb_show_title' => [
-                        'type' => 'ocean-switch',
-                        'label' => esc_html__('Display Item Title', 'oceanwp'),
-                        'section' => 'ocean_section_breadcrumb_trail_settings',
-                        'default'  => true,
-                        'transport' => 'refresh',
-                        'priority' => 10,
-                        'hideLabel' => false,
-                        'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
+						'type' => 'ocean-switch',
+						'label' => esc_html__('Display Item Title', 'oceanwp'),
+						'section' => 'ocean_section_breadcrumb_trail_settings',
+						'default'  => true,
+						'transport' => 'refresh',
+						'priority' => 10,
+						'hideLabel' => false,
+						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 						'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-                    ],
+					],
 				]
 			],
 

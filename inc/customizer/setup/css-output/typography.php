@@ -258,243 +258,302 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class OceanWP_Typography_CSS {
 
-    /**
-     * fonts
-     *
-     * @var $fonts
-     * @access private
-     * @since 3.5.1
-     */
-    private $fonts = array();
+	/**
+	 * fonts
+	 *
+	 * @var $fonts
+	 * @access private
+	 * @since 3.5.1
+	 */
+	private $fonts = array();
 
-    /**
-     * Constructor
-     */
-    public function __construct() {
-        add_filter('ocean_head_css', array($this, 'generate_css'));
-    }
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		add_filter('ocean_head_css', array($this, 'generate_css'), 99 );
+	}
 
-    /**
-     * Generate css
-     *
-     * @var string $output  CSS String.
-     */
-    public function generate_css( $output ) {
+	/**
+	 * Generate css
+	 *
+	 * @var string $output  CSS String.
+	 */
+	public function generate_css( $output ) {
 
-        $options = ocean_customize_options('options');
-        $css = '';
+		$options = ocean_get_customize_settings_data();
 
-        foreach ( $options as $section_key => $section_options ) {
-            $section_css = $this->get_css_data( $section_options['options'] );
-            if ( ! empty( $section_css ) ) {
-                $css .= $section_css;
-            }
-        }
+		$css = '';
 
-        // Return CSS.
-        if ( ! empty( $css ) ) {
-            $output .= '/* Typography */' . $css;
-        }
+		foreach ( $options as $section_key => $section_options ) {
+			if ( isset($section_options['options']) ) {
+				$section_css = $this->get_css_data( $section_options['options'] );
+				if ( ! empty( $section_css ) ) {
+					$css .= $section_css;
+				}
+			}
+		}
 
-        return $output;
-    }
+		// Return CSS.
+		if ( ! empty( $css ) ) {
+			$output .= '/* Typography */' . $css;
+		}
 
-    /**
-     * Get css data
-     *
-     * @var object $options Settings.
-     */
-    public function get_css_data( $options ) {
+		return $output;
+	}
 
-        $css = '';
+	/**
+	 * Get css data
+	 *
+	 * @var object $options Settings.
+	 */
+	public function get_css_data( $options ) {
 
-        foreach ( $options as $option_key => $option_data ) {
-            if ( $this->is_typography_option( $option_data ) ) {
-                $settings = $this->get_typography_settings( $option_data );
-                if ( ! empty( $settings ) ) {
-                    $css .= $this->generate_css_string( $settings );
-                }
-            }
+		$css = '';
 
-            if ( isset( $option_data['options'] ) ) {
-                $css .= $this->get_css_data( $option_data['options'] );
-            }
-        }
+		if ( is_array($options) ) {
+			foreach ( $options as $option_key => $option_data ) {
+				if ( $this->is_typography_option( $option_data ) ) {
+					$settings = $this->get_typography_settings( $option_data );
+					if ( ! empty( $settings ) ) {
+						//error_log(print_r($settings, true));
+						$css .= $this->generate_css_string( $settings );
+					}
+				}
 
-        return $css;
-    }
+				if ( isset( $option_data['options'] ) ) {
+					$css .= $this->get_css_data( $option_data['options'] );
+				}
+			}
+		}
 
-    /**
-     * Check if type is typography
-     *
-     * @var object $option_data Settings.
-     */
-    private function is_typography_option( $option_data ) {
-        $result = isset( $option_data['type'] ) && $option_data['type'] === 'ocean-typography' &&
-                isset( $option_data['setting_args'] ) && is_array( $option_data['setting_args'] );
+		return $css;
+	}
 
-        return $result;
-    }
+	/**
+	 * Check if type is typography
+	 *
+	 * @var object $option_data Settings.
+	 */
+	private function is_typography_option( $option_data ) {
+		$result = isset( $option_data['type'] ) && $option_data['type'] === 'ocean-typography' &&
+				isset( $option_data['setting_args'] ) && is_array( $option_data['setting_args'] );
 
-    /**
-     * Get all existing settings at once
-     *
-     * @var object $option_data Settings.
-     */
-    private function get_typography_settings( $option_data ) {
+		return $result;
+	}
 
-        $settings = array();
+	/**
+	 * Get typography settings.
+	 *
+	 * @param array $option_data Option data.
+	 * @return array Typography settings.
+	 */
+	private function get_typography_settings($option_data) {
+		$settings = array();
 
-        foreach ( $option_data['setting_args'] as $setting_arg_key => $setting_arg_data ) {
+		foreach ($option_data['setting_args'] as $setting_arg_key => $setting_arg_data) {
+			$idName = $setting_arg_data['id'];
 
-            $idName = $setting_arg_data['id'];
-            $parts = explode('[', $idName);
-            $theme_mod = rtrim($parts[0], '[');
-            $property = rtrim($parts[1], ']');
+			// Check if the ID contains brackets
+			if (strpos($idName, '[') !== false && strpos($idName, ']') !== false) {
+				$parts = explode('[', $idName);
 
-            $selector = $option_data['selector'];
+				if (count($parts) > 1) {
+					$theme_mod = rtrim($parts[0], '[');
+					$property = rtrim($parts[1], ']');
 
-            if ( ! isset( $settings[$selector] ) ) {
-                $settings[$selector] = array();
-            }
+					$selector = $option_data['selector'];
 
-            if ( ! isset( $settings[$selector][$setting_arg_key] ) ) {
-                $value = get_theme_mod( $theme_mod, array() );
-                $settings[$selector][$setting_arg_key] = isset( $value[$property] ) ? $value[$property] : '';
-            }
-        }
+					if (!isset($settings[$selector])) {
+						$settings[$selector] = array();
+					}
 
-        return $settings;
-    }
+					// Fetch and assign the setting value
+					if (!isset($settings[$selector][$setting_arg_key])) {
+						$value = get_theme_mod($theme_mod, array());
+						$settings[$selector][$setting_arg_key] = isset($value[$property]) ? $value[$property] : '';
+					}
+				}
+			} else {
+				// Handle settings without brackets
+				$theme_mod = $idName;
+				$selector = $option_data['selector'];
 
-    /**
-     * Generate CSS string
-     *
-     * @var Object $settings Settings.
-     * @return string
-     */
-    public function generate_css_string( $settings ) {
+				if (!isset($settings[$selector])) {
+					$settings[$selector] = array();
+				}
 
-        $css = '';
+				// Fetch and assign the setting value
+				if (!isset($settings[$selector][$setting_arg_key])) {
+					$value = get_theme_mod($theme_mod);
+					$settings[$selector][$setting_arg_key] = isset($value) ? $value : '';
+				}
+			}
+		}
 
-        $properties = [
-            'font-family' => 'fontFamily',
-            'font-size' => 'fontSize',
-            'line-height' => 'lineHeight',
-            'letter-spacing' => 'letterSpacing',
-            'font-weight' => 'fontWeight',
-            'text-transform' => 'textTransform',
-            'text-decoration' => 'textDecoration',
-            'color' => 'textColor',
-        ];
+		return $settings;
+	}
 
-        foreach ( $settings as $selector => $settings_key ) {
 
-            $selector_css = '';
-            $selector_css_tablet = '';
-            $selector_css_mobile = '';
 
-            foreach ( $properties as $property => $key ) {
-                if ( isset( $settings_key[$key] ) && $settings_key[$key] ) {
-                    $value = $settings_key[$key];
 
-                    // Check if a unit is specified in the settings.
-                    $unit_key = $key . 'Unit';
 
-                    if ( 'fontSize' === $key || 'lineHeight' === $key || 'letterSpacing' === $key ) {
+	/**
+	 * Generate CSS string
+	 *
+	 * @var Object $settings Settings.
+	 * @return string
+	 */
+	public function generate_css_string( $settings ) {
 
-                        if ( isset( $settings_key[$unit_key] ) && $settings_key[$unit_key] ) {
-                            $value .= $settings_key[$unit_key];
-                        } else {
-                            $value .= 'px';
-                        }
-                    }
+		$css = '';
 
-                    if ( 'fontFamily' === $key ) {
+		$properties = [
+			'font-family' => 'fontFamily',
+			'font-size' => 'fontSize',
+			'line-height' => 'lineHeight',
+			'letter-spacing' => 'letterSpacing',
+			'font-weight' => 'fontWeight',
+			'text-transform' => 'textTransform',
+			'text-decoration' => 'textDecoration',
+			'color' => 'textColor',
+		];
 
-                        if ( isset($settings_key[$key] ) && $settings_key[$key] ) {
-                            $this->fonts[$settings_key[$key]]['name'] = $settings_key[$key];
-                            $this->fonts[$settings_key[$key]]['subset'] = $settings_key['fontSubset'];
-                        }
-                    }
+		foreach ( $settings as $selector => $settings_key ) {
 
-                    $selector_css .= $property . ': ' . $value . ';';
-                }
+			$selector_css = '';
+			$selector_css_tablet = '';
+			$selector_css_mobile = '';
 
-                // Check for tablet and mobile settings
-                $tabletKey = $key . 'Tablet';
-                $mobileKey = $key . 'Mobile';
+			foreach ( $properties as $property => $key ) {
+				if ( isset( $settings_key[$key] ) && $settings_key[$key] ) {
+					$value = $settings_key[$key];
 
-                // For tablet.
-                if ( isset($settings_key[$tabletKey] ) && $settings_key[$tabletKey] ) {
-                    $value = $settings_key[$tabletKey];
+					// Check if a unit is specified in the settings.
+					$unit_key = $key . 'Unit';
 
-                    // Check if a unit is specified in the settings
-                    $unit_key = $key . 'Unit';
+					if ( 'fontSize' === $key || 'letterSpacing' === $key ) {
 
-                    if ( 'fontSize' === $key || 'lineHeight' === $key || 'letterSpacing' === $key ) {
+						if ( isset( $settings_key[$unit_key] ) && $settings_key[$unit_key] ) {
+							$value .= $settings_key[$unit_key];
+						} else {
+							$value .= 'px';
+						}
+					}
 
-                        if ( isset($settings_key[$unit_key] ) && $settings_key[$unit_key] ) {
-                            $value .= $settings_key[$unit_key];
-                        } else {
-                            $value .= 'px';
-                        }
-                    }
+					if ( 'lineHeight' === $key  ) {
 
-                    $media_query = "@media screen and (max-width: 768px) { $selector {"
-                        . $property . ': ' . $value . ';}}';
-                    $selector_css_tablet .= $media_query;
-                }
+						if ( isset( $settings_key[$unit_key] ) && $settings_key[$unit_key] ) {
+							$value .= $settings_key[$unit_key];
+						} else {
+							$value .= '';
+						}
+					}
 
-                // For mobile.
-                if ( isset( $settings_key[$mobileKey] ) && $settings_key[$mobileKey] ) {
-                    $value = $settings_key[$mobileKey];
+					if ( 'fontFamily' === $key ) {
 
-                    // Check if a unit is specified in the settings
-                    $unit_key = $key . 'Unit';
+						if ( isset($settings_key[$key] ) && $settings_key[$key] ) {
+							$this->fonts[$settings_key[$key]]['name'] = $settings_key[$key];
+							$this->fonts[$settings_key[$key]]['subset'] = $settings_key['fontSubset'];
+							$this->fonts[$settings_key[$key]]['variant'] = $settings_key['fontWeight'];
+						}
+					}
 
-                    if ( 'fontSize' === $key || 'lineHeight' === $key || 'letterSpacing' === $key ) {
+					$selector_css .= $property . ': ' . $value . ';';
+				}
 
-                        if ( isset($settings_key[$unit_key] ) && $settings_key[$unit_key] ) {
-                            $value .= $settings_key[$unit_key];
-                        } else {
-                            $value .= 'px';
-                        }
-                    }
+				// Check for tablet and mobile settings
+				$tabletKey = $key . 'Tablet';
+				$mobileKey = $key . 'Mobile';
 
-                    $media_query = "@media screen and (max-width: 480px) { $selector {"
-                        . $property . ': ' . $value . ';}}';
-                    $selector_css_mobile .= $media_query;
-                }
-            }
+				// For tablet.
+				if ( isset($settings_key[$tabletKey] ) && $settings_key[$tabletKey] ) {
+					$value = $settings_key[$tabletKey];
 
-            // Check if the selector has any properties before adding it.
-            if ( ! empty( $selector_css ) ) {
-                $css .= $selector . '{' . $selector_css . '}';
-            }
+					// Check if a unit is specified in the settings
+					$unit_key = $key . 'Unit';
 
-            if ( ! empty( $selector_css_tablet ) ) {
-                $css .= $selector_css_tablet;
-            }
-            if ( ! empty( $selector_css_mobile ) ) {
-                $css .= $selector_css_mobile;
-            }
-            if ( isset( $settings_key['textColorHover'] ) && '' !== $settings_key['textColorHover'] ) {
-                $css .= $selector . ':hover {color:' . $settings_key['textColorHover'] . '}';
-            }
-        }
+					if ( 'fontSize' === $key || 'letterSpacing' === $key ) {
 
-        $fonts = $this->fonts;
+						if ( isset($settings_key[$unit_key] ) && $settings_key[$unit_key] ) {
+							$value .= $settings_key[$unit_key];
+						} else {
+							$value .= 'px';
+						}
+					}
 
-        // Loop through and enqueue fonts with associated subset.
-        if ( ! empty( $fonts ) && is_array( $fonts ) ) {
-            foreach ( $fonts as $font_key => $font ) {
-                oceanwp_enqueue_google_font( $font['name'], $font['subset'] );
-            }
-        }
+					if ( 'lineHeight' === $key  ) {
 
-        return $css;
-    }
+						if ( isset( $settings_key[$unit_key] ) && $settings_key[$unit_key] ) {
+							$value .= $settings_key[$unit_key];
+						} else {
+							$value .= '';
+						}
+					}
+
+					$media_query = "@media screen and (max-width: 768px) { $selector {"
+						. $property . ': ' . $value . ';}}';
+					$selector_css_tablet .= $media_query;
+				}
+
+				// For mobile.
+				if ( isset( $settings_key[$mobileKey] ) && $settings_key[$mobileKey] ) {
+					$value = $settings_key[$mobileKey];
+
+					// Check if a unit is specified in the settings
+					$unit_key = $key . 'Unit';
+
+					if ( 'fontSize' === $key || 'letterSpacing' === $key ) {
+
+						if ( isset($settings_key[$unit_key] ) && $settings_key[$unit_key] ) {
+							$value .= $settings_key[$unit_key];
+						} else {
+							$value .= 'px';
+						}
+					}
+
+					if ( 'lineHeight' === $key  ) {
+
+						if ( isset( $settings_key[$unit_key] ) && $settings_key[$unit_key] ) {
+							$value .= $settings_key[$unit_key];
+						} else {
+							$value .= '';
+						}
+					}
+
+					$media_query = "@media screen and (max-width: 480px) { $selector {"
+						. $property . ': ' . $value . ';}}';
+					$selector_css_mobile .= $media_query;
+				}
+			}
+
+			// Check if the selector has any properties before adding it.
+			if ( ! empty( $selector_css ) ) {
+				$css .= $selector . '{' . $selector_css . '}';
+			}
+
+			if ( ! empty( $selector_css_tablet ) ) {
+				$css .= $selector_css_tablet;
+			}
+			if ( ! empty( $selector_css_mobile ) ) {
+				$css .= $selector_css_mobile;
+			}
+			if ( isset( $settings_key['textColorHover'] ) && '' !== $settings_key['textColorHover'] ) {
+				$css .= $selector . ':hover {color:' . $settings_key['textColorHover'] . '}';
+			}
+		}
+
+		$fonts = $this->fonts;
+
+		// Loop through and enqueue fonts with associated subset.
+		if ( ! empty( $fonts ) && is_array( $fonts ) ) {
+			foreach ( $fonts as $font_key => $font ) {
+				oceanwp_enqueue_google_font( $font['name'], $font['subset'], $font['variant'] );
+			}
+		}
+
+		return $css;
+	}
 }
 
 return new OceanWP_Typography_CSS();

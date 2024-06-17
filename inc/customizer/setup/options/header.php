@@ -3251,7 +3251,7 @@ $options = [
                         ],
                         'preview' => 'queryWithType',
                         'css' => [
-                            '#site-navigation-wrap .dropdown-menu > li > a' => ['padding-top', 'padding-bottom'],
+                            '#site-navigation-wrap .dropdown-menu > li > a' => ['padding-left', 'padding-right'],
                         ]
                     ],
 
@@ -4008,9 +4008,35 @@ $options = [
                         ]
                     ],
 
+                    'ocean_dropdown_menu_borders' => [
+                        'type' => 'ocean-color',
+                        'label' => esc_html__( 'Borders Color', 'oceanwp' ),
+                        'section' => 'ocean_header_dropdown_menu_options_section',
+                        'transport' => 'postMessage',
+                        'priority' => 10,
+                        'hideLabel' => false,
+                        'showAlpha' => true,
+                        'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
+                        'setting_args' => [
+                            'normal' => [
+                                'id' => 'ocean_dropdown_menu_borders',
+                                'key' => 'normal',
+                                'label' => 'Normal',
+                                'selector' => [
+                                    '.dropdown-menu ul li.menu-item,.navigation > ul > li > ul.megamenu.sub-menu > li,.navigation .megamenu li ul.sub-menu' => 'border-color',
+                                ],
+                                'attr' => [
+                                    'transport' => 'postMessage',
+                                    'default'   => '#f1f1f1',
+                                ],
+                            ]
+                        ]
+                    ],
+
                     'ocean_dropdown_menu_background' => [
                         'type' => 'ocean-color',
-                        'label' => esc_html__( 'Links Background', 'oceanwp' ),
+                        'label' => esc_html__( 'Background Color', 'oceanwp' ),
                         'section' => 'ocean_header_dropdown_menu_options_section',
                         'transport' => 'postMessage',
                         'priority' => 10,
@@ -4028,19 +4054,7 @@ $options = [
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
-                                    'default'   => '#13aff0',
-                                ],
-                            ],
-                            'hover' => [
-                                'id' => 'ocean_dropdown_menu_link_hover_bg',
-                                'key' => 'hover',
-                                'label' => 'Hover',
-                                'selector' => [
-                                    '.dropdown-menu ul li a.menu-link:hover' => 'background-color'
-                                ],
-                                'attr' => [
-                                    'transport' => 'postMessage',
-                                    'default'   => '#f8f8f8',
+                                    'default'   => '#ffffff',
                                 ],
                             ]
                         ]
@@ -4106,6 +4120,32 @@ $options = [
                                 ],
                                 'attr' => [
                                     'transport' => 'postMessage',
+                                ],
+                            ]
+                        ]
+                    ],
+
+                    'ocean_dropdown_menu_link_hover_bg' => [
+                        'type' => 'ocean-color',
+                        'label' => esc_html__( 'Links Background Hover', 'oceanwp' ),
+                        'section' => 'ocean_header_dropdown_menu_options_section',
+                        'transport' => 'postMessage',
+                        'priority' => 10,
+                        'hideLabel' => false,
+                        'showAlpha' => true,
+                        'showPalette' => true,
+                        'sanitize_callback' => 'wp_kses_post',
+                        'setting_args' => [
+                            'normal' => [
+                                'id' => 'ocean_dropdown_menu_link_hover_bg',
+                                'key' => 'hover',
+                                'label' => 'Hover',
+                                'selector' => [
+                                    '.dropdown-menu ul li a.menu-link:hover' => 'background-color'
+                                ],
+                                'attr' => [
+                                    'transport' => 'postMessage',
+                                    'default'   => '#f8f8f8',
                                 ],
                             ]
                         ]

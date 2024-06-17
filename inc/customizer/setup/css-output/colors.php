@@ -59,6 +59,17 @@ class OceanWP_Colors_CSS {
 		$page_header_title_color       = isset($page_title_typography['color']) ? $page_title_typography['color'] : '';
 		$page_header_text_color        = get_theme_mod( 'ocean_page_header_title_color' );
 
+		$breadcrumbs_text_color        = get_theme_mod( 'ocean_breadcrumbs_text_color', '#c6c6c6' );
+		$breadcrumbs_seperator_color   = get_theme_mod( 'ocean_breadcrumbs_seperator_color', '#c6c6c6' );
+		$breadcrumbs_link_color        = get_theme_mod( 'ocean_breadcrumbs_link_color', '#333333' );
+		$breadcrumbs_link_color_hover  = get_theme_mod( 'ocean_breadcrumbs_link_color_hover', '#13aff0' );
+
+		// Meta.
+		$meta_breadcrumbs_text_color       = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_color', true );
+		$meta_breadcrumbs_seperator_color  = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_separator_color', true );
+		$meta_breadcrumbs_link_color       = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_color', true );
+		$meta_breadcrumbs_link_color_hover = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_hover_color', true );
+
 		$css = '';
 
 		$texts       = ocean_primary_color_selector( 'texts' );
@@ -211,6 +222,48 @@ class OceanWP_Colors_CSS {
 		// Page header color.
 		if ( ! empty( $page_header_text_color ) ) {
 			$css .= '.page-header {color:' . $page_header_title_color . ';}';
+		}
+
+		// Breadcrumbs text color.
+		if ( ! empty( $breadcrumbs_text_color ) && '#c6c6c6' != $breadcrumbs_text_color ) {
+			$css .= '.site-breadcrumbs, .background-image-page-header .site-breadcrumbs{color:' . $breadcrumbs_text_color . ';}';
+		}
+
+		// Breadcrumbs seperator color.
+		if ( ! empty( $breadcrumbs_seperator_color ) && '#c6c6c6' != $breadcrumbs_seperator_color ) {
+			$css .= '.site-breadcrumbs ul li .breadcrumb-sep, .site-breadcrumbs ol li .breadcrumb-sep{color:' . $breadcrumbs_seperator_color . ';}';
+		}
+
+		// Breadcrumbs link color.
+		if ( ! empty( $breadcrumbs_link_color ) && '#333333' != $breadcrumbs_link_color ) {
+			$css .= '.site-breadcrumbs a, .background-image-page-header .site-breadcrumbs a{color:' . $breadcrumbs_link_color . ';}';
+			$css .= '.site-breadcrumbs a .owp-icon use, .background-image-page-header .site-breadcrumbs a .owp-icon use{stroke:' . $breadcrumbs_link_color . ';}';
+		}
+
+		// Breadcrumbs link hover color.
+		if ( ! empty( $breadcrumbs_link_color_hover ) && '#13aff0' != $breadcrumbs_link_color_hover ) {
+			$css .= '.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover{color:' . $breadcrumbs_link_color_hover . ';}';
+			$css .= '.site-breadcrumbs a:hover .owp-icon use, .background-image-page-header .site-breadcrumbs a:hover .owp-icon use{stroke:' . $breadcrumbs_link_color_hover . ';}';
+		}
+
+		// Meta breadcrumbs text color.
+		if ( ! empty( $meta_breadcrumbs_text_color ) ) {
+			$css .= '.site-breadcrumbs, .background-image-page-header .site-breadcrumbs{color:' . $meta_breadcrumbs_text_color . ';}';
+		}
+
+		// Meta breadcrumbs seperator color.
+		if ( ! empty( $meta_breadcrumbs_seperator_color ) ) {
+			$css .= '.site-breadcrumbs ul li .breadcrumb-sep{color:' . $meta_breadcrumbs_seperator_color . ';}';
+		}
+
+		// Meta breadcrumbs link color.
+		if ( ! empty( $meta_breadcrumbs_link_color ) ) {
+			$css .= '.site-breadcrumbs a, .background-image-page-header .site-breadcrumbs a{color:' . $meta_breadcrumbs_link_color . ';}';
+		}
+
+		// Meta breadcrumbs link hover color.
+		if ( ! empty( $meta_breadcrumbs_link_color_hover ) ) {
+			$css .= '.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover{color:' . $meta_breadcrumbs_link_color_hover . ';}';
 		}
 
 

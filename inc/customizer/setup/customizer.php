@@ -31,27 +31,33 @@ class OceanWP_Customizer_Init {
 	}
 
 
-    public function register_settings( $wp_customize) {
+	public function register_settings( $wp_customize) {
 
-        require OCEANWP_INC_DIR . 'customizer/setup/extend-section/class-panel.php';
+		require OCEANWP_INC_DIR . 'customizer/setup/extend-section/class-panel.php';
 		require OCEANWP_INC_DIR . 'customizer/setup/extend-section/class-section.php';
 
 		// Tweak default controls
-		$wp_customize->get_setting( 'custom_logo' )->transport      = 'refresh';
-		$wp_customize->get_setting( 'blogname' )->transport 		= 'postMessage';
-		$wp_customize->get_setting( 'blogdescription' )->transport 	= 'postMessage';
+		$wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
+		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 		// Move custom logo setting
-		$wp_customize->get_control( 'custom_logo' )->section 		= 'ocean_header_logo_section';
+		$wp_customize->get_control( 'custom_logo' )->section = 'ocean_header_logo_section';
 
-		$options = ocean_customize_options('options');
+		//$options = ocean_customize_options('options');
+		$options = ocean_get_customize_settings_data();
 
 		foreach ( $options as $section_key => $section_options ) {
 
-			$section_args = [
-				'title'    => $section_options['title'],
-				'priority' => $section_options['priority']
-			];
+			$section_args = [];
+
+			if ( isset( $section_options['title'] ) && $section_options['title'] ) {
+				$section_args['title'] = $section_options['title'];
+			}
+
+			if ( isset( $section_options['priority'] ) && $section_options['priority'] ) {
+				$section_args['priority'] = $section_options['priority'];
+			}
 
 			if ( isset( $section_options['condition'] ) ) {
 				$section_args['active_callback'] = function() use ($section_options) {
@@ -64,36 +70,55 @@ class OceanWP_Customizer_Init {
 				$section_args
 			);
 
-			self::register_options_recursive($wp_customize, $section_key, $section_options['options'] );
+			if ( null !== $section_options['options'] && is_array($section_options['options'] ) ) {
+				self::register_options_recursive($wp_customize, $section_key, $section_options['options'] );
+			}
 		}
 	}
 
-    public static function register_options_recursive( $wp_customize, $section_key, $options ) {
+	public static function register_options_recursive( $wp_customize, $section_key, $options ) {
 
 		foreach ( $options as $option_key => $option_data) {
 
-            if ( 'section' ===  $option_data['type'] ) {
+			if ( 'section' ===  $option_data['type'] ) {
 
-                $child_section_args = [
-                    'title'    => $option_data['title'],
-                    'priority' => $option_data['priority']
-                ];
+				$child_section_args = [];
 
-                if ( isset( $option_data['panel'] ) && $option_data['panel'] ) {
-                    $child_section_args['panel'] = $option_data['panel'];
-                }
+				if ( isset( $option_data['title'] ) && $option_data['title'] ) {
+					if (!is_array($option_data['title'])) {
+						$child_section_args['title'] = $option_data['title'];
+					}
+				}
 
-                if ( isset( $option_data['section'] ) && $option_data['section'] ) {
-                    $child_section_args['section'] = $option_data['section'];
-                }
+				if ( isset( $option_data['priority'] ) && $option_data['priority'] ) {
+					if (!is_array($option_data['priority'])) {
+						$child_section_args['priority'] = $option_data['priority'];
+					}
+				}
+
+				if ( isset( $option_data['panel'] ) && $option_data['panel'] ) {
+					if (!is_array($option_data['panel'])) {
+						$child_section_args['panel'] = $option_data['panel'];
+					}
+				}
+
+				if ( isset( $option_data['section'] ) && $option_data['section'] ) {
+					if (!is_array($option_data['section'])) {
+						$child_section_args['section'] = $option_data['section'];
+					}
+				}
 
 				if ( isset( $option_data['after'] ) && $option_data['after'] ) {
-                    $child_section_args['after'] = $option_data['after'];
-                }
+					if (!is_array($option_data['after'])) {
+						$child_section_args['after'] = $option_data['after'];
+					}
+				}
 
 				if ( isset( $option_data['class'] ) && $option_data['class'] ) {
-                    $child_section_args['section_class'] = $option_data['class'];
-                }
+					if (!is_array($option_data['class'])) {
+						$child_section_args['section_class'] = $option_data['class'];
+					}
+				}
 
 				$child_section = new OWP_Customize_Section(
 					$wp_customize,
@@ -103,52 +128,56 @@ class OceanWP_Customizer_Init {
 
 				$wp_customize->add_section( $child_section );
 
-                if ( isset( $option_data['options'] ) ) {
-                    self::register_options_recursive( $wp_customize, $option_key, $option_data['options'] );
-                }
+				if ( isset( $option_data['options'] ) ) {
+					self::register_options_recursive( $wp_customize, $option_key, $option_data['options'] );
+				}
 
-            } else {
+			} else {
 
-                $setting_args = [
-                    'transport' => $option_data['transport'],
-                ];
+				$setting_args = [
+					'transport' => $option_data['transport'],
+				];
 
-                if ( isset($option_data['default']) && $option_data['default']) {
-                    $setting_args['default'] = $option_data['default'];
-                }
+				if (isset($option_data['default'])) {
+					if (is_array($option_data['default'])) {
+						$setting_args['default'] = json_encode($option_data['default']);
+					} else {
+						$setting_args['default'] = $option_data['default'];
+					}
+				}
 
-                if (isset($option_data['sanitize_callback']) && $option_data['sanitize_callback']) {
-                    $setting_args['sanitize_callback'] = $option_data['sanitize_callback'];
-                }
+				if (isset($option_data['sanitize_callback']) && $option_data['sanitize_callback']) {
+					$setting_args['sanitize_callback'] = $option_data['sanitize_callback'];
+				}
 
-                $wp_customize->add_setting(
-                    $option_key,
-                    $setting_args
-                );
+				$wp_customize->add_setting(
+					$option_key,
+					$setting_args
+				);
 
-                unset( $setting_args );
+				unset( $setting_args );
 
-                $control_args = [
-                    'label'       => isset($option_data['label']) ? $option_data['label'] : '',
-                    'description' => isset($option_data['desc']) ? $option_data['desc'] : '',
-                    'type'        => $option_data['type'],
-                    'section'     => isset($option_data['section']) ? $option_data['section'] : '',
-                    'priority'    => $option_data['priority'],
-                ];
+				$control_args = [
+					'label'       => isset($option_data['label']) ? $option_data['label'] : '',
+					'description' => isset($option_data['desc']) ? $option_data['desc'] : '',
+					'type'        => $option_data['type'],
+					'section'     => isset($option_data['section']) ? $option_data['section'] : '',
+					'priority'    => $option_data['priority'],
+				];
 
-                if ( isset( $option_data['active_callback'] ) && $option_data['active_callback'] ) {
-                    $control_args['active_callback'] = $option_data['active_callback'];
-                }
+				if ( isset( $option_data['active_callback'] ) && $option_data['active_callback'] ) {
+					$control_args['active_callback'] = $option_data['active_callback'];
+				}
 
-                if ( isset( $option_data['setting_args'] ) && $option_data['setting_args'] ) {
-                    foreach ( $option_data['setting_args'] as $setting_arg_key => $setting_arg_data ) {
+				if ( isset( $option_data['setting_args'] ) && $option_data['setting_args'] ) {
+					foreach ( $option_data['setting_args'] as $setting_arg_key => $setting_arg_data ) {
 
-                        $wp_customize->add_setting(
-                            $setting_arg_data['id'],
-			                $setting_arg_data['attr']
-                        );
+						$wp_customize->add_setting(
+							$setting_arg_data['id'],
+							$setting_arg_data['attr']
+						);
 
-                        $control_args['settings'][$setting_arg_key] = $setting_arg_data['id'];
+						$control_args['settings'][$setting_arg_key] = $setting_arg_data['id'];
 
 						if ( 'ocean-color' ===  $option_data['type'] ) {
 							$control_args['json']['settingGroup'][$setting_arg_key] = [
@@ -166,8 +195,8 @@ class OceanWP_Customizer_Init {
 								];
 							}
 						}
-                    }
-                }
+					}
+				}
 
 				if ( 'ocean-social-links' ===  $option_data['type'] && isset( $option_data['social_profiles'] ) && $option_data['social_profiles'] ) {
 					foreach ( $option_data['social_profiles'] as $social_profile_key => $social_profile_value ) {
@@ -190,51 +219,51 @@ class OceanWP_Customizer_Init {
 					}
 				}
 
-                if ( isset( $option_data['wrapper'] ) && $option_data['wrapper'] ) {
-                    $control_args['json']['wrapper'] = $option_data['wrapper'];
-                }
-                if ( isset( $option_data['class'] ) && $option_data['class'] ) {
-                    $control_args['json']['settingClass'] = $option_data['class'];
-                }
+				if ( isset( $option_data['wrapper'] ) && $option_data['wrapper'] ) {
+					$control_args['json']['wrapper'] = $option_data['wrapper'];
+				}
+				if ( isset( $option_data['class'] ) && $option_data['class'] ) {
+					$control_args['json']['settingClass'] = $option_data['class'];
+				}
 				if ( isset( $option_data['links'] ) && $option_data['links'] ) {
-                    $control_args['json']['links'] = $option_data['links'];
-                }
+					$control_args['json']['links'] = $option_data['links'];
+				}
 				if ( isset( $option_data['linkIcon'] ) && $option_data['linkIcon'] ) {
-                    $control_args['json']['linkIcon'] = $option_data['linkIcon'];
-                }
+					$control_args['json']['linkIcon'] = $option_data['linkIcon'];
+				}
 				if ( isset( $option_data['titleIcon'] ) && $option_data['titleIcon'] ) {
-                    $control_args['json']['titleIcon'] = $option_data['titleIcon'];
-                }
+					$control_args['json']['titleIcon'] = $option_data['titleIcon'];
+				}
 				if ( isset( $option_data['isContent'] ) && $option_data['isContent'] ) {
-                    $control_args['json']['isContent'] = $option_data['isContent'];
-                }
-                if ( isset( $option_data['top'] ) && $option_data['top'] ) {
-                    $control_args['json']['top'] = $option_data['top'];
-                }
-                if ( isset( $option_data['bottom'] ) && $option_data['bottom'] ) {
-                    $control_args['json']['bottom'] = $option_data['bottom'];
-                }
-                if ( isset( $option_data['choices'] ) && $option_data['choices'] ) {
-                    $control_args['json']['choices'] = $option_data['choices'];
-                }
-                if ( isset( $option_data['hideLabel'] ) && $option_data['hideLabel'] ) {
-                    $control_args['json']['hideLabel'] = $option_data['hideLabel'];
-                }
-                if ( isset( $option_data['showAlpha'] ) && $option_data['showAlpha'] ) {
-                    $control_args['json']['showAlpha'] = $option_data['showAlpha'];
-                }
-                if ( isset( $option_data['showPalette'] ) && $option_data['showPalette'] ) {
-                    $control_args['json']['showPalette'] = $option_data['showPalette'];
-                }
+					$control_args['json']['isContent'] = $option_data['isContent'];
+				}
+				if ( isset( $option_data['top'] ) && $option_data['top'] ) {
+					$control_args['json']['top'] = $option_data['top'];
+				}
+				if ( isset( $option_data['bottom'] ) && $option_data['bottom'] ) {
+					$control_args['json']['bottom'] = $option_data['bottom'];
+				}
+				if ( isset( $option_data['choices'] ) && $option_data['choices'] ) {
+					$control_args['json']['choices'] = $option_data['choices'];
+				}
+				if ( isset( $option_data['hideLabel'] ) && $option_data['hideLabel'] ) {
+					$control_args['json']['hideLabel'] = $option_data['hideLabel'];
+				}
+				if ( isset( $option_data['showAlpha'] ) && $option_data['showAlpha'] ) {
+					$control_args['json']['showAlpha'] = $option_data['showAlpha'];
+				}
+				if ( isset( $option_data['showPalette'] ) && $option_data['showPalette'] ) {
+					$control_args['json']['showPalette'] = $option_data['showPalette'];
+				}
 				if ( isset( $option_data['subType'] ) && $option_data['subType'] ) {
-                    $control_args['json']['subType'] = $option_data['subType'];
-                }
-                if ( isset( $option_data['wrap'] ) && $option_data['wrap'] ) {
-                    $control_args['json']['wrap'] = $option_data['wrap'];
-                }
+					$control_args['json']['subType'] = $option_data['subType'];
+				}
+				if ( isset( $option_data['wrap'] ) && $option_data['wrap'] ) {
+					$control_args['json']['wrap'] = $option_data['wrap'];
+				}
 				if ( isset( $option_data['selector'] ) && $option_data['selector'] ) {
-                    $control_args['json']['selector'] = $option_data['selector'];
-                }
+					$control_args['json']['selector'] = $option_data['selector'];
+				}
 
 				if ( 'ocean-range-slider' ===  $option_data['type'] ) {
 					if ( isset( $option_data['min'] ) && $option_data['min'] ) {
@@ -278,20 +307,18 @@ class OceanWP_Customizer_Init {
 					}
 				}
 
-                $wp_customize->add_control(
-                    $option_key,
-                    $control_args
-                );
+				$wp_customize->add_control(
+					$option_key,
+					$control_args
+				);
 
-                unset( $control_args );
+				unset( $control_args );
 
-                if ( isset( $option_data['options'] ) ) {
-                    self::register_options_recursive( $wp_customize, $option_key, $option_data['options'] );
-                }
+				if ( isset( $option_data['options'] ) ) {
+					self::register_options_recursive( $wp_customize, $option_key, $option_data['options'] );
+				}
 
-            }
-
-
+			}
 		}
 	}
 
@@ -365,7 +392,8 @@ class OceanWP_Customizer_Init {
 				// 'options' => ocean_customize_options('options'),
 				// 'isPremium' => ocean_check_pro_license(),
 				'isOE' => ocean_is_oe_active(),
-				'sectionIcons' => ocean_customizer_section_icons()
+				'sectionIcons' => ocean_customizer_section_icons(),
+				'pageChoices' => ocean_get_page_choices()
 			)
 		);
 	}
@@ -373,7 +401,7 @@ class OceanWP_Customizer_Init {
 	public function include_settings() {
 
 		require OCEANWP_INC_DIR . 'customizer/setup/functions.php';
-        require OCEANWP_INC_DIR . 'customizer/setup/helpers.php';
+		require OCEANWP_INC_DIR . 'customizer/setup/helpers.php';
 		require OCEANWP_INC_DIR . 'customizer/setup/callback.php';
 		require OCEANWP_INC_DIR . 'customizer/setup/svg.php';
 		require OCEANWP_INC_DIR . 'customizer/setup/css-output/css.php';
@@ -399,7 +427,7 @@ class OceanWP_Customizer_Init {
 			'ocean-customize-preview',
 			'oceanCustomizePreview',
 			array(
-				'options' => apply_filters( 'ocean_customize_options_data', ocean_customize_options('options')),
+				'options' => ocean_get_customize_settings_data(),
 				'googleFonts' => oceanwp_google_fonts_array()
 			)
 		);

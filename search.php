@@ -22,10 +22,12 @@ get_header(); ?>
 				<?php
 				$logo_search = get_theme_mod( 'ocean_search_logo' );
 				if ( ! empty( $logo_search ) ) {
+					$logo_search_src = wp_get_attachment_image_src( $logo_search, 'full' );
+					$logo_search_url = $logo_search_src[0];
 					?>
-					<img class="logo-search" src="<?php echo esc_url( $logo_search ); ?>" alt="<?php esc_attr_e( 'Search Logo', 'oceanwp' ); ?>" title="<?php esc_attr_e( 'Search Logo', 'oceanwp' ); ?>" />
+					<img class="logo-search" src="<?php echo esc_url( $logo_search_url ); ?>" alt="<?php esc_attr_e( 'Search Logo', 'oceanwp' ); ?>" title="<?php esc_attr_e( 'Search Logo', 'oceanwp' ); ?>" />
 				<?php } ?>
-			
+
 				<?php do_action( 'ocean_before_content_inner' ); ?>
 
 				<?php if ( have_posts() ) : ?>

@@ -87,6 +87,7 @@ $options = [
 				'section' => 'ocean_site_layout_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
+				'active_callback' => 'ocean_is_not_boxed_layout',
 			],
 
 			'ocean_main_container_width' => [
@@ -103,6 +104,7 @@ $options = [
 				'max'          => 4096,
 				'step'         => 1,
 				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+				'active_callback' => 'ocean_is_not_boxed_layout',
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_main_container_width',
@@ -127,13 +129,65 @@ $options = [
 				]
 			],
 
+			'ocean_left_container_width' => [
+				'id'      => 'ocean_left_container_width',
+				'label'    => esc_html__( 'Content Width (%)', 'oceanwp' ),
+				'type'     => 'ocean-range-slider',
+				'section'  => 'ocean_site_layout_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel'    => false,
+				'isUnit'       => false,
+				'isResponsive' => false,
+				'min'          => 0,
+				'max'          => 100,
+				'step'         => 1,
+				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+				'setting_args' => [
+					'desktop' => [
+						'id' => 'ocean_left_container_width',
+						'label' => 'Desktop',
+						'attr' => [
+							'transport' => 'postMessage',
+							'default' => 72,
+						],
+					]
+				]
+			],
+
+			'ocean_sidebar_width' => [
+				'id'      => 'ocean_sidebar_width',
+				'label'    => esc_html__( 'Sidebar Width (%)', 'oceanwp' ),
+				'type'     => 'ocean-range-slider',
+				'section'  => 'ocean_site_layout_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel'    => false,
+				'isUnit'       => false,
+				'isResponsive' => false,
+				'min'          => 0,
+				'max'          => 100,
+				'step'         => 1,
+				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+				'setting_args' => [
+					'desktop' => [
+						'id' => 'ocean_sidebar_width',
+						'label' => 'Desktop',
+						'attr' => [
+							'transport' => 'postMessage',
+							'default' => 28,
+						],
+					]
+				]
+			],
+
 			'ocean_divider_after_main_container_width' => [
 				'type' => 'ocean-divider',
 				'section' => 'ocean_site_layout_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
 				'top' => 10,
-				'bottom' => 20
+				'bottom' => 20,
 			],
 
 			'ocean_site_layout_content_settings' => [

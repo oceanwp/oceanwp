@@ -100,6 +100,7 @@ class OceanWP_Customize_WooCommerce_CSS {
         $checkout_timeline_active_color 					= get_theme_mod( 'ocean_woo_checkout_timeline_active_color', '#ffffff' );
         $onsale_bg 											= get_theme_mod( 'ocean_onsale_bg', '#3FC387' );
         $onsale_color 										= get_theme_mod( 'ocean_onsale_color', '#ffffff' );
+        $product_thumbs_layout                              = get_theme_mod( 'ocean_woo_product_thumbs_layout', 'horizontal' );
         $outofstock_bg 										= get_theme_mod( 'ocean_outofstock_bg', '#000000' );
         $outofstock_color 									= get_theme_mod( 'ocean_outofstock_color', '#ffffff' );
         $stars_color_before 								= get_theme_mod( 'ocean_stars_color_before', '#dfdbdf' );
@@ -634,6 +635,11 @@ class OceanWP_Customize_WooCommerce_CSS {
         // Add onsale color
         if ( ! empty( $onsale_color ) && '#ffffff' != $onsale_color ) {
             $css .= '.woocommerce span.onsale{color:'. $onsale_color .';}';
+        }
+
+        $has_product_thumbnails = get_post_meta( get_the_ID(), '_product_image_gallery', true );
+        if ( ! empty( 'vertical' === $product_thumbs_layout && $has_product_thumbnails ) ) {
+            $css .= '.woocommerce .owp-thumbs-layout-vertical span.onsale{left: 15% !important;}';
         }
 
         // Add out of stock bg

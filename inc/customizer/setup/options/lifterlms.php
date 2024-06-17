@@ -174,24 +174,24 @@ $options = [
         'bottom' => 10
     ],
 
-    'ocean_llms_course_details' => [
-        'type' => 'ocean-multiselect',
-        'label' => esc_html__('Course Details', 'oceanwp'),
-        'section' => 'ocean_lifterlms_settings',
-        'default'  => [ 'image', 'description', 'meta', 'author', 'progress', 'syllabus' ],
-        'transport' => 'refresh',
-        'priority' => 10,
-        'hideLabel' => false,
-        'sanitize_callback' => 'oceanwp_sanitize_multicheck',
-        'choices'  => [
-            'image'		 		=> esc_html__( 'Featured Image', 'oceanwp' ),
-            'description'		=> esc_html__( 'Description', 'oceanwp' ),
-            'meta' 				=> esc_html__( 'Meta', 'oceanwp' ),
-            'author' 			=> esc_html__( 'Author', 'oceanwp' ),
-            'progress' 			=> esc_html__( 'Progress', 'oceanwp' ),
-            'syllabus' 			=> esc_html__( 'Syllabus', 'oceanwp' ),
-        ],
-    ],
+	'ocean_llms_course_details' => [
+		'type' => 'ocean-multiselect',
+		'label' => esc_html__('Course Details', 'oceanwp'),
+		'section' => 'ocean_lifterlms_settings',
+		'default'  => [ 'image', 'description', 'meta', 'author', 'progress', 'syllabus' ],
+		'transport' => 'refresh',
+		'priority' => 10,
+		'hideLabel' => false,
+		'sanitize_callback' => 'oceanwp_sanitize_multicheck',
+		'choices'  => [
+			'image'		 		=> esc_html__( 'Featured Image', 'oceanwp' ),
+			'description'		=> esc_html__( 'Description', 'oceanwp' ),
+			'meta' 				=> esc_html__( 'Meta', 'oceanwp' ),
+			'author' 			=> esc_html__( 'Author', 'oceanwp' ),
+			'progress' 			=> esc_html__( 'Progress', 'oceanwp' ),
+			'syllabus' 			=> esc_html__( 'Syllabus', 'oceanwp' ),
+		],
+	],
 
     'ocean_divider_after_llms_course_details_setting' => [
         'type' => 'ocean-divider',

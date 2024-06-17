@@ -31,6 +31,12 @@ function ocean_customize_options($path, $relative = true, $plugin_option_path = 
 	), $path, $pass_inside);
 }
 
+function ocean_get_customize_settings_data() {
+	$options = apply_filters( 'ocean_customize_options_data', ocean_customize_options('options'));
+
+	return $options;
+}
+
 /**
  * Extract data from a file.
  *
@@ -313,4 +319,22 @@ if ( ! function_exists( 'oceanwp_cart_icons_list' ) ) {
 		return apply_filters( 'oceanwp_cart_icons_list', $icons );
 
 	}
+}
+
+function ocean_get_page_choices( $name = '', $selected = '', $show_option_none = '&mdash; Select &mdash;', $option_none_value = '' ) {
+
+	$name = '_customize-dropdown-pages-';
+	$selected = get_theme_mod( 'op_portfolio_page', '' );
+
+	$dropdown = wp_dropdown_pages(
+		array(
+			'name'              => esc_attr( $name ),
+			'echo'              => 0,
+			'show_option_none'  => esc_html__( $show_option_none, 'ocean-portfolio' ),
+			'option_none_value' => esc_attr( $option_none_value ),
+			'selected'          => esc_attr( $selected ),
+		)
+	);
+
+	return $dropdown;
 }
