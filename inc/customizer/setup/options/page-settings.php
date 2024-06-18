@@ -137,7 +137,7 @@ $options = [
 		'options' => [
 			'ocean_desc_for_layout_content_settings' => [
 				'type' => 'ocean-content',
-				'isContent' => esc_html__('If any, additional page layout settings will appear here based on your Page Layout choice. For now, additional page layout settings are available for the Both Sidebars Layout style.', 'oceanwp'),
+				'isContent' => esc_html__( 'Additional page layout settings are currently available for the Both Sidebars page layout style.', 'oceanwp' ),
 				'section' => 'ocean_section_page_layout_settings',
 				'class' => 'description',
 				'transport' => 'postMessage',
@@ -146,7 +146,7 @@ $options = [
 
 			'ocean_page_single_both_sidebars_style' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__('Both Sidebars: Content Order Style', 'oceanwp' ),
+				'label' => esc_html__( 'Both Sidebars: Content Order Style', 'oceanwp' ),
 				'section' => 'ocean_section_page_layout_settings',
 				'transport' => 'refresh',
 				'default' => 'scs-style',
@@ -239,7 +239,7 @@ $options = [
 
 	'ocean_section_page_responsive_section' => [
 		'type' => 'section',
-		'title' => esc_html__('Responsive Page Settings', 'oceanwp'),
+		'title' => esc_html__( 'Responsive Page Settings', 'oceanwp' ),
 		'section' => 'ocean_site_page_settings',
 		'after' => 'ocean_spacer_after_page_layout_section',
 		'class' => 'section-site-layout',
@@ -247,7 +247,7 @@ $options = [
 		'options' => [
 			'ocean_desc_for_page_responsive_settings' => [
 				'type' => 'ocean-content',
-				'isContent' => esc_html__('If any, additional page responsive settings will appear here based on your Page Layout choice. For now, additional page responsive settings are available for any of the single Sidebar Page Layout styles.', 'oceanwp'),
+				'isContent' => esc_html__( 'Additional responsive settings are currently available for any of the Single Sidebar page layout styles.', 'oceanwp' ),
 				'section' => 'ocean_section_page_responsive_section',
 				'class' => 'description',
 				'transport' => 'postMessage',
@@ -256,7 +256,7 @@ $options = [
 
 			'ocean_page_single_sidebar_order' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__('Both Sidebars: Content Order Style', 'oceanwp' ),
+				'label' => esc_html__( 'Both Sidebars: Content Order Style', 'oceanwp' ),
 				'section' => 'ocean_section_page_responsive_section',
 				'transport' => 'refresh',
 				'default' => 'content-sidebar',
@@ -292,7 +292,7 @@ $options = [
 		'options' => [
 			'ocean_page_title_display' => [
 				'type' => 'ocean-switch',
-				'label' => esc_html__('Enable Page Title', 'oceanwp'),
+				'label' => esc_html__( 'Enable Page Title', 'oceanwp' ),
 				'section' => 'ocean_section_page_title',
 				'default'  => true,
 				'transport' => 'refresh',
@@ -313,7 +313,7 @@ $options = [
 
 			'ocean_page_header_visibility' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__('Visibility', 'oceanwp' ),
+				'label' => esc_html__( 'Visibility', 'oceanwp' ),
 				'section' => 'ocean_section_page_title',
 				'transport' => 'postMessage',
 				'default' => 'all-devices',
@@ -535,7 +535,7 @@ $options = [
 
 					'ocean_section_page_title_additional_settings' => [
 						'type' => 'section',
-						'title' => esc_html__('Additional Title Settings', 'oceanwp'),
+						'title' => esc_html__( 'Additional Title Settings', 'oceanwp' ),
 						'section' => 'ocean_section_page_title_style',
 						'after' => 'ocean_spacer_after_page_title_style_setting',
 						'class' => 'section-site-layout',
@@ -543,7 +543,7 @@ $options = [
 						'options' => [
 							'ocean_desc_for_page_title_additional_settings' => [
 								'type' => 'ocean-content',
-								'isContent' => esc_html__('If any, additional Page Title style settings and options will appear here, based on your Page Title Style selection. For now, additional settings are available for the Background Image Page Title style.', 'oceanwp'),
+								'isContent' => esc_html__( 'Additional page title style settings are currently available for the Background Image page title style.', 'oceanwp' ),
 								'section' => 'ocean_section_page_title_additional_settings',
 								'class' => 'description',
 								'transport' => 'postMessage',
@@ -554,7 +554,7 @@ $options = [
 							'ocean_page_header_bg_title_breadcrumb_position' => [
 								'id' => 'ocean_page_header_bg_title_breadcrumb_position',
 								'type' => 'ocean-buttons',
-								'label' => esc_html__('Title / Breadcrumb Position', 'oceanwp'),
+								'label' => esc_html__( 'Title / Breadcrumbs Position', 'oceanwp'),
 								'section' => 'ocean_section_page_title_additional_settings',
 								'default'  => 'center',
 								'transport' => 'postMessage',
@@ -566,17 +566,17 @@ $options = [
 								'choices' => [
 									'right' => [
 										'id'     => 'right',
-										'label'   => esc_html__('Right', 'oceanwp'),
+										'label'   => esc_html__( 'Right', 'oceanwp' ),
 										'content' => 'right'
 									],
 									'center'  => [
 										'id'     => 'center',
-										'label'   => esc_html__('Center', 'oceanwp'),
+										'label'   => esc_html__( 'Center', 'oceanwp' ),
 										'content' => 'center'
 									],
 									'left'  => [
 										'id'     => 'left',
-										'label'   => esc_html__('Left', 'oceanwp'),
+										'label'   => esc_html__( 'Left', 'oceanwp' ),
 										'content' => 'left'
 									]
 								],
@@ -1323,7 +1323,7 @@ $options = [
 
 					'ocean_page_title_did_you_know_links' => [
 						'type' => 'ocean-links',
-						'label' => esc_html__('Did you know?', 'oceanwp' ),
+						'label' => esc_html__( 'Did you know?', 'oceanwp' ),
 						'section' => 'ocean_section_page_title_style',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -1333,8 +1333,8 @@ $options = [
 						'active_callback' => 'oceanwp_is_page_title_when_oe_active',
 						'links' => [
 							'google_font' => [
-								'label' => esc_html__('You can control the Page Title visibility and styling for each of your pages individually, regardless of the global Page Settings.', 'oceanwp'),
-								'url' => esc_url( '#' ),
+								'label' => esc_html__( 'OceanWP enables you to customize the visibility and styling of the Page Title for individual pages, giving you more control over website appearance.', 'oceanwp' ),
+								'url' => esc_url( 'https://docs.oceanwp.org/article/872-page-title-oceanwp-settings' ),
 							]
 						]
 					],
@@ -1351,7 +1351,7 @@ $options = [
 
 					'ocean_page_title_whatnext_links' => [
 						'type' => 'ocean-links',
-						'label' => esc_html__('What to do next?', 'oceanwp' ),
+						'label' => esc_html__( 'What to do next?', 'oceanwp' ),
 						'section' => 'ocean_section_page_title_style',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -1361,15 +1361,15 @@ $options = [
 						'active_callback' => 'oceanwp_is_page_title_when_oe_active',
 						'links' => [
 							'style_breadcrumb' => [
-								'label' => esc_html__('Style breadcrumbs.', 'oceanwp'),
+								'label' => esc_html__( 'Style breadcrumbs.', 'oceanwp' ),
 								'url' => '#'
 							],
 							'style_search_result' => [
-								'label' => esc_html__('Style the Search Results Page.', 'oceanwp'),
+								'label' => esc_html__( 'Style the Search Results Page.', 'oceanwp' ),
 								'url' => '#'
 							],
 							'seo_settings' => [
-								'label' => esc_html__('View SEO Settings.', 'oceanwp'),
+								'label' => esc_html__( 'View the 404 Page.', 'oceanwp' ),
 								'url' => '#'
 							],
 						]
@@ -1398,7 +1398,7 @@ $options = [
 
 	'ocean_section_page_breadcrumb' => [
 		'type' => 'section',
-		'title' => esc_html__('Page Breadcrumbs', 'oceanwp'),
+		'title' => esc_html__( 'Page Breadcrumbs', 'oceanwp' ),
 		'section' => 'ocean_site_page_settings',
 		'after' => 'ocean_spacer_after_page_title_section',
 		'class' => 'section-site-layout',
@@ -1406,7 +1406,7 @@ $options = [
 		'options' => [
 			'ocean_desc_for_page_breadcrumb_section' => [
 				'type' => 'ocean-content',
-				'isContent' => esc_html__('Your website can display breadcrumbs regardless of your additional SEO Settings or SEO plugins usage. Breadcrumbs are displayed in the Page Title area. If the Page Title is disabled, breadcrumbs will not display.', 'oceanwp'),
+				'isContent' => esc_html__( 'OceanWP breadcrumbs function independently of SEO plugin settings. Breadcrumbs display in the Page Title area. Disabling the Page Title will also hide breadcrumbs.', 'oceanwp' ),
 				'section' => 'ocean_section_page_breadcrumb',
 				'class' => 'description',
 				'transport' => 'postMessage',
@@ -1415,7 +1415,7 @@ $options = [
 
 			'ocean_breadcrumbs' => [
 				'type' => 'ocean-switch',
-				'label' => esc_html__('Enable Breadcrumbs', 'oceanwp'),
+				'label' => esc_html__( 'Enable Breadcrumbs', 'oceanwp' ),
 				'section' => 'ocean_section_page_breadcrumb',
 				'default'  => true,
 				'transport' => 'refresh',
@@ -2084,7 +2084,7 @@ $options = [
 				'options' => [
 					'ocean_desc_for_page_search_result_sidebar_layout' => [
 						'type' => 'ocean-content',
-						'isContent' => esc_html__('If you are using any of the sidebar layouts, additional options will appear here.', 'oceanwp'),
+						'isContent' => esc_html__( 'Additional customization options are currently available for any of the Sidebar layouts.', 'oceanwp' ),
 						'section' => 'ocean_section_page_search_result_sidebar_layout',
 						'class' => 'description',
 						'transport' => 'postMessage',
@@ -2093,7 +2093,7 @@ $options = [
 
 					'ocean_search_custom_sidebar' => [
 						'type' => 'ocean-switch',
-						'label' => esc_html__('Enable Custom Sidebar', 'oceanwp'),
+						'label' => esc_html__( 'Enable Custom Sidebar', 'oceanwp' ),
 						'section' => 'ocean_section_page_search_result_sidebar_layout',
 						'default'  => true,
 						'transport' => 'refresh',
@@ -2104,17 +2104,17 @@ $options = [
 					],
 
 					'ocean_search_both_sidebars_style' => [
-						'type' => 'ocean-select',
-						'label' => esc_html__('Both Sidebars: Content Order Style', 'oceanwp' ),
-						'section' => 'ocean_section_page_search_result_sidebar_layout',
-						'transport' => 'refresh',
-						'default' => 'scs-style',
-						'priority' => 10,
-						'hideLabel' => false,
-						'multiple' => false,
-						'active_callback' => 'oceanw_cac_is_search_bs_layout',
+						'type'              => 'ocean-select',
+						'label'             => esc_html__( 'Both Sidebars: Content Order Style', 'oceanwp' ),
+						'section'           => 'ocean_section_page_search_result_sidebar_layout',
+						'transport'         => 'refresh',
+						'default'           => 'scs-style',
+						'priority'          => 10,
+						'hideLabel'         => false,
+						'multiple'          => false,
+						'active_callback'   => 'oceanw_cac_is_search_bs_layout',
 						'sanitize_callback' => 'sanitize_key',
-						'choices' => [
+						'choices'           => [
 							'ssc-style' => esc_html__( 'Sidebar / Sidebar / Content', 'oceanwp' ),
 							'scs-style' => esc_html__( 'Sidebar / Content / Sidebar', 'oceanwp' ),
 							'css-style' => esc_html__( 'Content / Sidebar / Sidebar', 'oceanwp' ),
@@ -2122,83 +2122,83 @@ $options = [
 					],
 
 					'ocean_search_both_sidebars_content_width' => [
-						'label'       => esc_html__( 'Both Sidebars: Content Width', 'oceanwp' ),
-						'type'     => 'ocean-range-slider',
-						'section'  => 'ocean_section_page_search_result_sidebar_layout',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel'    => false,
-						'isUnit'       => true,
-						'isResponsive' => false,
-						'min'          => 1,
-						'max'          => 100,
-						'step'         => 1,
-						'active_callback' => 'oceanw_cac_is_search_bs_layout',
+						'label'             => esc_html__( 'Both Sidebars: Content Width', 'oceanwp' ),
+						'type'              => 'ocean-range-slider',
+						'section'           => 'ocean_section_page_search_result_sidebar_layout',
+						'transport'         => 'postMessage',
+						'priority'          => 10,
+						'hideLabel'         => false,
+						'isUnit'            => true,
+						'isResponsive'      => false,
+						'min'               => 1,
+						'max'               => 100,
+						'step'              => 1,
+						'active_callback'   => 'oceanw_cac_is_search_bs_layout',
 						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
-						'setting_args' => [
+						'setting_args'      => [
 							'desktop' => [
-								'id' => 'ocean_search_both_sidebars_content_width',
+								'id'    => 'ocean_search_both_sidebars_content_width',
 								'label' => 'Desktop',
-								'attr' => [
+								'attr'  => [
 									'transport' => 'postMessage',
 								],
 							],
-							'unit' => [
-								'id' => 'ocean_search_both_sidebars_content_width_unit',
-								'label' => esc_html__('Unit', 'oceanwp'),
-								'attr' => [
+							'unit'   => [
+								'id'    => 'ocean_search_both_sidebars_content_width_unit',
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
+								'attr'  => [
 									'transport' => 'postMessage',
-									'default' => '%'
+									'default'   => '%'
 								],
 							],
 						],
 					],
 
 					'ocean_search_both_sidebars_sidebars_width' => [
-						'label'       => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
-						'type'     => 'ocean-range-slider',
-						'section'  => 'ocean_section_page_search_result_sidebar_layout',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel'    => false,
-						'isUnit'       => true,
-						'isResponsive' => false,
-						'min'          => 1,
-						'max'          => 100,
-						'step'         => 1,
-						'active_callback' => 'oceanw_cac_is_search_bs_layout',
+						'label'             => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+						'type'              => 'ocean-range-slider',
+						'section'           => 'ocean_section_page_search_result_sidebar_layout',
+						'transport'         => 'postMessage',
+						'priority'          => 10,
+						'hideLabel'         => false,
+						'isUnit'            => true,
+						'isResponsive'      => false,
+						'min'               => 1,
+						'max'               => 100,
+						'step'              => 1,
+						'active_callback'   => 'oceanw_cac_is_search_bs_layout',
 						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
-						'setting_args' => [
+						'setting_args'      => [
 							'desktop' => [
-								'id' => 'ocean_search_both_sidebars_sidebars_width',
+								'id'    => 'ocean_search_both_sidebars_sidebars_width',
 								'label' => 'Desktop',
-								'attr' => [
+								'attr'  => [
 									'transport' => 'postMessage',
 								],
 							],
-							'unit' => [
-								'id' => 'ocean_search_both_sidebars_sidebars_width_unit',
+							'unit'   => [
+								'id'    => 'ocean_search_both_sidebars_sidebars_width_unit',
 								'label' => esc_html__('Unit', 'oceanwp'),
-								'attr' => [
+								'attr'  => [
 									'transport' => 'postMessage',
-									'default' => '%'
+									'default'   => '%'
 								],
 							],
 						],
 					],
 
 					'ocean_search_sidebar_order' => [
-						'type' => 'ocean-select',
-						'label' => esc_html__('Mobile Sidebar Order', 'oceanwp' ),
-						'section' => 'ocean_section_page_search_result_sidebar_layout',
-						'transport' => 'refresh',
-						'default' => 'content-sidebar',
-						'priority' => 10,
-						'hideLabel' => false,
-						'multiple' => false,
-						'active_callback' => 'oceanw_cac_is_search_rs_layout',
+						'type'              => 'ocean-select',
+						'label'             => esc_html__( 'Mobile Sidebar Order', 'oceanwp' ),
+						'section'           => 'ocean_section_page_search_result_sidebar_layout',
+						'transport'         => 'refresh',
+						'default'           => 'content-sidebar',
+						'priority'          => 10,
+						'hideLabel'         => false,
+						'multiple'          => false,
+						'active_callback'   => 'oceanw_cac_is_search_rs_layout',
 						'sanitize_callback' => 'sanitize_key',
-						'choices' => [
+						'choices'           => [
 							'content-sidebar' => esc_html__( 'Content / Sidebar', 'oceanwp' ),
 							'sidebar-content' => esc_html__( 'Sidebar / Content', 'oceanwp' ),
 						],
@@ -2207,46 +2207,46 @@ $options = [
 			],
 
 			'ocean_divider_after_search_page_sidebar_layout_section' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_section_page_search_result',
+				'type'      => 'ocean-divider',
+				'section'   => 'ocean_section_page_search_result',
 				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10
+				'priority'  => 10,
+				'top'       => 20,
+				'bottom'    => 10
 			],
 
 			'ocean_menu_search_source' => [
-				'type' => 'ocean-select',
-				'label' => esc_html__('Select Source for SERP', 'oceanwp' ),
-				'section' => 'ocean_section_page_search_result',
-				'transport' => 'refresh',
-				'default' => 'any',
-				'priority' => 10,
-				'hideLabel' => false,
-				'multiple' => false,
+				'type'              => 'ocean-select',
+				'label'             => esc_html__(' Select Source for SERP', 'oceanwp' ),
+				'section'           => 'ocean_section_page_search_result',
+				'transport'         => 'refresh',
+				'default'           => 'any',
+				'priority'          => 10,
+				'hideLabel'         => false,
+				'multiple'          => false,
 				'sanitize_callback' => 'sanitize_key',
-				'choices' => ocean_customizer_get_post_types(),
+				'choices'           => ocean_customizer_get_post_types(),
 			],
 
 			'ocean_search_post_per_page' => [
-				'label'       => esc_html__( 'Number of Search Results to Display per Page', 'oceanwp' ),
-				'type'     => 'ocean-range-slider',
-				'section'  => 'ocean_section_page_search_result',
-				'transport' => 'refresh',
-				'priority' => 10,
-				'hideLabel'    => false,
-				'isUnit'       => false,
-				'isResponsive' => false,
-				'min'          => 1,
-				'max'          => 100,
-				'step'         => 1,
-				'active_callback' => 'oceanw_cac_is_search_bs_layout',
+				'label'             => esc_html__( 'Number of Search Results to Display per Page', 'oceanwp' ),
+				'type'              => 'ocean-range-slider',
+				'section'           => 'ocean_section_page_search_result',
+				'transport'         => 'refresh',
+				'priority'          => 10,
+				'hideLabel'         => false,
+				'isUnit'            => false,
+				'isResponsive'      => false,
+				'min'               => 1,
+				'max'               => 100,
+				'step'              => 1,
+				'active_callback'   => 'oceanw_cac_is_search_bs_layout',
 				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
-				'setting_args' => [
+				'setting_args'      => [
 					'desktop' => [
-						'id' => 'ocean_search_post_per_page',
+						'id'    => 'ocean_search_post_per_page',
 						'label' => 'Desktop',
-						'attr' => [
+						'attr'  => [
 							'transport' => 'refresh',
 						],
 					]
@@ -2328,79 +2328,79 @@ $options = [
 			],
 
 			'ocean_divider_after_404_error_layout' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_section_page_404_error',
+				'type'      => 'ocean-divider',
+				'section'   => 'ocean_section_page_404_error',
 				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
+				'priority'  => 10,
+				'top'       => 10,
 			],
 
 			'ocean_404_logo' => [
-				'label' => esc_html__( 'Choose Logo', 'oceanwp' ),
-				'desc' => esc_html__( 'Select a 404 error page logo.', 'oceanwp' ),
-				'type' => 'ocean-image',
-				'section'  => 'ocean_section_page_404_error',
+				'label'     => esc_html__( 'Choose Logo', 'oceanwp' ),
+				'desc'      => esc_html__( 'Select a logo for the 404 error page.', 'oceanwp' ),
+				'type'      => 'ocean-image',
+				'section'   => 'ocean_section_page_404_error',
 				'transport' => 'refresh',
-				'priority' => 10,
+				'priority'  => 10,
 				'hideLabel' => false,
 				'mediaType' => 'image',
 			],
 
 			'ocean_error_page_blank' => [
-                'id' => 'ocean_error_page_blank',
-                'type' => 'ocean-buttons',
-                'label' => esc_html__('Blank Page', 'oceanwp'),
-				'desc' => esc_html__( 'Enable this option to remove all the elements and have full control of the 404 error page.','oceanwp' ),
-                'section' => 'ocean_section_page_404_error',
-                'default'  => 'off',
-                'transport' => 'refresh',
-                'priority' => 10,
-                'hideLabel' => false,
-                'wrap'    => false,
+                'id'                => 'ocean_error_page_blank',
+                'type'              => 'ocean-buttons',
+                'label'             => esc_html__( 'Blank Page', 'oceanwp' ),
+				'desc'              => esc_html__( 'Enabling this option will remove all default elements, giving you full control over the 404 error page.','oceanwp' ),
+                'section'           => 'ocean_section_page_404_error',
+                'default'           => 'off',
+                'transport'         => 'refresh',
+                'priority'          => 10,
+                'hideLabel'         => false,
+                'wrap'              => false,
 				'sanitize_callback' => 'sanitize_key',
-                'choices' => [
+                'choices'           => [
                     'on' => [
-                        'id'     => 'on',
-                        'label'   => esc_html__('On', 'oceanwp'),
-                        'content' => esc_html__('On', 'oceanwp'),
+                        'id'      => 'on',
+                        'label'   => esc_html__( 'On', 'oceanwp' ),
+                        'content' => esc_html__( 'On', 'oceanwp' ),
                     ],
-                    'off'  => [
-                        'id'     => 'off',
-                        'label'   => esc_html__('Off', 'oceanwp'),
-                        'content' => esc_html__('Off', 'oceanwp'),
+                    'off' => [
+                        'id'      => 'off',
+                        'label'   => esc_html__( 'Off', 'oceanwp' ),
+                        'content' => esc_html__( 'Off', 'oceanwp' ),
                     ]
                 ]
             ],
 
 			'ocean_error_page_template' => [
-				'type' => 'ocean-select',
-				'label' => esc_html__('Select Template', 'oceanwp' ),
-				'desc' => esc_html__('Select a custom template you created in OceanWP > My Library that will replace the default 404 error page.', 'oceanwp'),
-				'section' => 'ocean_section_page_404_error',
-				'transport' => 'refresh',
-				'default' => '0',
-				'priority' => 10,
-				'hideLabel' => false,
-				'multiple' => false,
+				'type'              => 'ocean-select',
+				'label'             => esc_html__( 'Select Template', 'oceanwp' ),
+				'desc'              => esc_html__( 'You can replace the default 404 error page with a custom page template. Select a template created in OceanWP > My Library.', 'oceanwp' ),
+				'section'           => 'ocean_section_page_404_error',
+				'transport'         => 'refresh',
+				'default'           => '0',
+				'priority'          => 10,
+				'hideLabel'         => false,
+				'multiple'          => false,
 				'sanitize_callback' => 'sanitize_key',
-				'choices' => oceanwp_library_template_choices(),
+				'choices'           => oceanwp_library_template_choices(),
 			],
 		]
 	],
 
 	'ocean_divider_after_page_404_error_section' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_site_page_settings',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'top' => 20,
-		'bottom' => 10,
+		'type'            => 'ocean-divider',
+		'section'         => 'ocean_site_page_settings',
+		'transport'       => 'postMessage',
+		'priority'        => 10,
+		'top'             => 20,
+		'bottom'          => 10,
 		'active_callback' => 'ocean_is_oe_active',
 	],
 
 	'ocean_page_settings_whatnext_links' => [
 		'type' => 'ocean-links',
-		'label' => esc_html__('What to do next?', 'oceanwp' ),
+		'label' => esc_html__( 'What to do next?', 'oceanwp' ),
 		'section' => 'ocean_site_page_settings',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -2410,27 +2410,27 @@ $options = [
 		'active_callback' => 'ocean_is_oe_active',
 		'links' => [
 			'style_search_result' => [
-				'label' => esc_html__('Style the Search Results Page.', 'oceanwp'),
-				'url' => '#'
+				'label' => esc_html__( 'Style the Search Results Page.', 'oceanwp' ),
+				'url'   => '#'
 			],
 			'style_404' => [
-				'label' => esc_html__('Style 404 page.', 'oceanwp'),
-				'url' => '#'
+				'label' => esc_html__( 'Style 404 page.', 'oceanwp' ),
+				'url'   => '#'
 			],
 			'seo_settings' => [
-				'label' => esc_html__('View SEO Settings.', 'oceanwp'),
-				'url' => '#'
+				'label' => esc_html__( 'View SEO Settings.', 'oceanwp' ),
+				'url'   => '#'
 			],
 		]
 	],
 
 	'ocean_page_settings_need_help' => [
-		'type' => 'ocean-content',
+		'type'      => 'ocean-content',
 		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
-		'class' => 'need-help',
-		'section' => 'ocean_site_page_settings',
+		'class'     => 'need-help',
+		'section'   => 'ocean_site_page_settings',
 		'transport' => 'postMessage',
-		'priority' => 10,
+		'priority'  => 10,
 	],
 
 ];

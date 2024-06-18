@@ -488,7 +488,7 @@ $options = [
 				'options' => [
 					'ocean_desc_for_site_background_settings' => [
 						'type' => 'ocean-content',
-						'isContent' => esc_html__( 'Additional background options are currenlty available for the Boxed and Separate Site Layout styles.', 'oceanwp' ),
+						'isContent' => esc_html__( 'Additional background options are currently available for the Boxed and Separate site layout styles.', 'oceanwp' ),
 						'section' => 'ocean_site_background_settings',
 						'class' => 'description',
 						'transport' => 'postMessage',
@@ -2504,7 +2504,7 @@ $options = [
 
 	'ocean_scroll_to_top_section' => [
 		'type' => 'section',
-		'title' => esc_html__('Scroll To Top', 'oceanwp'),
+		'title' => esc_html__( 'Scroll To Top', 'oceanwp' ),
 		'section' => 'ocean_styles_and_settings',
 		'after' => 'ocean_divider_after_site_forms_section',
 		'class' => 'section-site-layout',
@@ -2512,7 +2512,7 @@ $options = [
 		'options' => [
 			'ocean_scroll_top' => [
 				'type' => 'ocean-switch',
-				'label' => esc_html__('Scroll To Top', 'oceanwp'),
+				'label' => esc_html__( 'Enable Scroll To Top', 'oceanwp' ),
 				'section' => 'ocean_scroll_to_top_section',
 				'default'  => true,
 				'transport' => 'refresh',
@@ -2533,7 +2533,7 @@ $options = [
 
 			'ocean_scroll_top_visibility' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__('Visibility', 'oceanwp' ),
+				'label' => esc_html__( 'Visibility', 'oceanwp' ),
 				'section' => 'ocean_scroll_to_top_section',
 				'transport' => 'postMessage',
 				'default' => 'all-devices',
@@ -3474,7 +3474,7 @@ $options = [
 
 			'ocean_pagination_did_you_know_links' => [
 				'type' => 'ocean-links',
-				'label' => esc_html__('Did you know?', 'oceanwp' ),
+				'label' => esc_html__( 'Did you know?', 'oceanwp' ),
 				'section' => 'ocean_site_pagination_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -3484,7 +3484,7 @@ $options = [
 				'active_callback' => 'ocean_is_oe_active',
 				'links' => [
 					'google_font' => [
-						'label' => esc_html__('You can choose the pagination style for each option independently. For example, you can use a different pagination style for your blog posts and a different one for your eCommerce store.', 'oceanwp'),
+						'label' => esc_html__( 'OceanWP enables you to set unique pagination stlyes for different sections of your website. For example, you can choose one style for blog posts and another for your eCommerce store.', 'oceanwp' ),
 						'url' => esc_url( '#' ),
 					]
 				]
@@ -3502,7 +3502,7 @@ $options = [
 
 			'ocean_pagination_whatnext_links' => [
 				'type' => 'ocean-links',
-				'label' => esc_html__('What to do next?', 'oceanwp' ),
+				'label' => esc_html__( 'What to do next?', 'oceanwp' ),
 				'section' => 'ocean_site_pagination_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -3512,15 +3512,15 @@ $options = [
 				'active_callback' => 'ocean_is_oe_active',
 				'links' => [
 					'style_page_layout' => [
-						'label' => esc_html__('Style Pages Layout.', 'oceanwp'),
+						'label' => esc_html__( 'Style Pages Layout.', 'oceanwp' ),
 						'url' => '#'
 					],
 					'style_blog' => [
-						'label' => esc_html__('Style the Blog.', 'oceanwp'),
+						'label' => esc_html__( 'Style the Blog.', 'oceanwp' ),
 						'url' => '#'
 					],
 					'site_settings' => [
-						'label' => esc_html__('View Additional Site Settings.', 'oceanwp'),
+						'label' => esc_html__( 'View Additional Site Settings.', 'oceanwp' ),
 						'url' => '#'
 					],
 				]
