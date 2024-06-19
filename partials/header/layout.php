@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $header_style = oceanwp_header_style();
 
 // Header height, used for local scrolling.
-$header_height = get_theme_mod( 'ocean_header_height', '74' );
+$header_height = get_theme_mod( 'ocean_header_height', 74 );
 
 if ( class_exists( 'Ocean_Sticky_Header' ) ) {
 

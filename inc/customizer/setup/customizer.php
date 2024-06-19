@@ -28,6 +28,7 @@ class OceanWP_Customizer_Init {
 		add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'print_default_editor_scripts' ), 45 );
 		add_action( 'customize_register', array( $this, 'register_settings' ) );
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_init' ) );
+		add_filter( 'ocean_customize_options_data', array( $this, 'register_customize_options') );
 	}
 
 
@@ -320,6 +321,44 @@ class OceanWP_Customizer_Init {
 
 			}
 		}
+	}
+
+	/**
+	 * Adds customizer options
+	 */
+	public function register_customize_options($options) {
+
+		$settings = array(
+			'typography',
+			'colors',
+			'styles-and-settings',
+			'site-page-settings',
+			'blog',
+			'header',
+			'topbar',
+			'footer-widgets',
+			'footer-bottom',
+			'sidebar'
+		);
+
+		if ( ! empty( $settings ) ) {
+			foreach ( $settings as $setting ) {
+
+				$key = str_replace('-', '_', $setting);
+				$option_key = 'ocean_' . $key;
+
+				// If Ocean Extra is activated
+				if ( OCEAN_EXTRA_ACTIVE
+					&& class_exists( 'Ocean_Extra_Theme_Panel' ) ) {
+
+					if ( ! Ocean_Extra_Theme_Panel::get_setting( 'oe_'. $key .'_panel' ) ) {
+						unset($options[$option_key]);
+					}
+				}
+			}
+		}
+
+		return $options;
 	}
 
 	/**

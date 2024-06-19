@@ -11,12 +11,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $options = [
 	'ocean_typography' => [
-		'title' => __( 'Site Typography', 'oceanwp' ),
+		'title' => __( 'Typography', 'oceanwp' ),
 		'priority' => 1,
 		'options' => ocean_customize_options( 'typography' ),
 	],
 	'ocean_colors' => [
-		'title' => __( 'Site Colors', 'oceanwp' ),
+		'title' => __( 'Colors', 'oceanwp' ),
 		'priority' => 1,
 		'options' => ocean_customize_options( 'colors' )
 	],
@@ -26,31 +26,36 @@ $options = [
 		'options' => ocean_customize_options( 'styles-and-settings' )
 	],
 	'ocean_site_page_settings' => [
-		'title' => __( 'Site Page Settings', 'oceanwp' ),
+		'title' => __( 'Pages & Special Pages', 'oceanwp' ),
 		'priority' => 1,
 		'options' => ocean_customize_options( 'page-settings' )
 	],
-	'ocean_topbar_settings' => [
+	'ocean_topbar' => [
 		'title' => __( 'Top Bar', 'oceanwp' ),
 		'priority' => 1,
 		'options' => ocean_customize_options( 'topbar' )
 	],
-	'ocean_header_settings' => [
+	'ocean_header' => [
 		'title' => __( 'Header', 'oceanwp' ),
 		'priority' => 1,
 		'options' => ocean_customize_options( 'header' )
 	],
-	'ocean_blog_settings' => [
+	'ocean_blog' => [
 		'title' => __( 'Blog', 'oceanwp' ),
 		'priority' => 1,
 		'options' => ocean_customize_options( 'blog' )
 	],
-	'ocean_footer_widget_settings' => [
+	'ocean_sidebar' => [
+		'title' => __( 'Sidebar', 'oceanwp' ),
+		'priority' => 1,
+		'options' => ocean_customize_options( 'sidebar' )
+	],
+	'ocean_footer_widgets' => [
 		'title' => __( 'Footer Widget', 'oceanwp' ),
 		'priority' => 1,
 		'options' => ocean_customize_options( 'footer-widget' )
 	],
-	'ocean_footer_copyright_settings' => [
+	'ocean_footer_bottom' => [
 		'title' => __( 'Footer Copyright', 'oceanwp' ),
 		'priority' => 1,
 		'options' => ocean_customize_options( 'footer-copyright' )

@@ -3276,18 +3276,16 @@ if ( ! function_exists( 'oceanwp_blog_single_meta' ) ) {
 function ocean_single_blog_header_style( $style ) {
 	$header_style = get_theme_mod( 'ocean_blog_single_header_type', '' );
 
-	if ( ! empty( $header_style ) ) {
-		$style = $header_style;
-	}
-
-	if ( ! ( is_single() && 'post' === get_post_type() ) ) {
-		return;
+	if ( is_single() && 'post' === get_post_type() ) {
+		if ( ! empty( $header_style ) ) {
+			$style = $header_style;
+		}
 	}
 
 	return $style;
 }
 
-add_filter( 'ocean_header_style', 'ocean_single_blog_header_style', 1 );
+add_filter( 'ocean_header_style', 'ocean_single_blog_header_style' );
 
 
 /**

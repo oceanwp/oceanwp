@@ -136,13 +136,22 @@ function oceanwp_is_active_breadcrumb_callback() {
 	}
 }
 
+function oceanwp_is_active_breadcrumb_product_callback() {
+	if ( true == get_theme_mod( 'ocean_breadcrumbs', true )
+		&& ( class_exists( 'WooCommerce' ) || class_exists( 'Easy_Digital_Downloads' ) ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function oceanwp_is_active_breadcrumb_portfolio_callback() {
-    if ( true == get_theme_mod( 'ocean_breadcrumbs', true )
+	if ( true == get_theme_mod( 'ocean_breadcrumbs', true )
 		&& class_exists( 'Ocean_Portfolio' ) ) {
-        return true;
-    } else {
-        return false;
-    }
+		return true;
+	} else {
+		return false;
+	}
 }
 
 function oceanwp_cac_background_image() {

@@ -35,7 +35,7 @@ $options = [
 
 	'ocean_title_for_global_typography' => [
 		'type' => 'ocean-title',
-		'label' => 'Global Typography Settings',
+		'label' => esc_html__( 'Global Typography Settings', 'oceanwp' ),
 		'section' => 'ocean_typography',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -1543,7 +1543,6 @@ $options = [
 				'priority' => 10,
 				'hideLabel' => false,
 				'active_callback' => 'ocean_is_google_font_settings',
-				//'sanitize_callback' => 'oceanwp_sanitize_multicheck',
 				'choices'  => [
 					'latin'        => 'latin',
 					'latin-ext'    => 'latin-ext',

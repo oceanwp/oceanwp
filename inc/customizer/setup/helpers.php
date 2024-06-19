@@ -243,7 +243,7 @@ function oceanwp_customizer_print_svg( $svg ) {
 
 	$json = OCEANWP_INC_DIR_URI . 'customizer/setup/assets/svg.json';
 
-    $response = wp_remote_get( $json );
+	$response = wp_remote_get( $json );
 
 	if (is_wp_error($response)) {
 		return false;

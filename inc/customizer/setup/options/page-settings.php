@@ -135,7 +135,7 @@ $options = [
 		'class' => 'section-site-layout',
 		'priority' => 10,
 		'options' => [
-			'ocean_desc_for_layout_content_settings' => [
+			'ocean_desc_for_page_layout_content_settings' => [
 				'type' => 'ocean-content',
 				'isContent' => esc_html__('If any, additional page layout settings will appear here based on your Page Layout choice. For now, additional page layout settings are available for the Both Sidebars Layout style.', 'oceanwp'),
 				'section' => 'ocean_section_page_layout_settings',
@@ -567,17 +567,17 @@ $options = [
 									'right' => [
 										'id'     => 'right',
 										'label'   => esc_html__('Right', 'oceanwp'),
-										'content' => 'right'
+										'content' => esc_html__('Right', 'oceanwp'),
 									],
 									'center'  => [
 										'id'     => 'center',
 										'label'   => esc_html__('Center', 'oceanwp'),
-										'content' => 'center'
+										'content' => esc_html__('Center', 'oceanwp'),
 									],
 									'left'  => [
 										'id'     => 'left',
 										'label'   => esc_html__('Left', 'oceanwp'),
-										'content' => 'left'
+										'content' => esc_html__('Left', 'oceanwp'),
 									]
 								],
 								'preview' => 'queryWithAttr',
@@ -854,15 +854,16 @@ $options = [
 
 					],
 
-					'ocean_divider_after_page_header_bg_image_add_settings' => [
-						'type' => 'ocean-divider',
+					'ocean_title_for_site_background' => [
+						'type' => 'ocean-title',
+						'label' => esc_html__( 'Typography and Color', 'oceanwp' ),
 						'section' => 'ocean_section_page_title_style',
 						'transport' => 'postMessage',
 						'priority' => 10,
 						'top' => 20,
-						'bottom' => 10,
 						'active_callback' => 'oceanwp_is_page_title_display',
 					],
+
 
 					'ocean_page_header_background_setting' => [
 						'type' => 'ocean-color',
@@ -1390,11 +1391,11 @@ $options = [
 	],
 
 	'ocean_spacer_after_page_title_section' => [
-        'type' => 'ocean-spacer',
-        'section' => 'ocean_site_page_settings',
-        'transport' => 'postMessage',
-        'priority' => 10,
-    ],
+		'type' => 'ocean-spacer',
+		'section' => 'ocean_site_page_settings',
+		'transport' => 'postMessage',
+		'priority' => 10,
+	],
 
 	'ocean_section_page_breadcrumb' => [
 		'type' => 'section',
@@ -1465,13 +1466,12 @@ $options = [
 				]
 			],
 
-			'ocean_divider_after_breadcrumbs_position' => [
-				'type' => 'ocean-divider',
+			'ocean_title_for_breadcrumb_typography_and_colors' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__( 'Typography and Color', 'oceanwp' ),
 				'section' => 'ocean_section_page_breadcrumb',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10,
 				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 			],
 
@@ -1718,13 +1718,67 @@ $options = [
 				]
 			],
 
-			'ocean_divider_after_breadcrumbs_colors_settings' => [
-				'type' => 'ocean-divider',
+			'ocean_title_for_breadcrumb_additonal_settings' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__( 'Breadcrumbs Additional Settings', 'oceanwp' ),
 				'section' => 'ocean_section_page_breadcrumb',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'top' => 10,
-				'bottom' => 20,
+				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
+			],
+
+			'ocean_section_breadcrumb_homepage_settings' => [
+				'type' => 'section',
+				'title' => esc_html__('Breadcrumbs Homepage Settings', 'oceanwp'),
+				'section' => 'ocean_section_page_breadcrumb',
+				'after' => 'ocean_title_for_breadcrumb_additonal_settings',
+				'class' => 'section-site-layout',
+				'priority' => 10,
+				'options' => [
+					'ocean_breadcrumb_home_item' => [
+						'type' => 'ocean-buttons',
+						'label' => esc_html__('Display Home as Icon / Text', 'oceanwp'),
+						'section' => 'ocean_section_breadcrumb_homepage_settings',
+						'default'  => 'icon',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'wrap'    => false,
+						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
+						'sanitize_callback' => 'sanitize_key',
+						'choices' => [
+							'icon' => [
+								'id'     => 'icon',
+								'label'   => esc_html__('Icon', 'oceanwp'),
+								'content' => 'Icon'
+							],
+							'text'  => [
+								'id'     => 'text',
+								'label'   => esc_html__('Text', 'oceanwp'),
+								'content' => 'Text'
+							]
+						]
+					],
+
+					'ocean_breadcrumb_translation_home' => [
+						'label'    => esc_html__( 'Homepage Custom Text', 'oceanwp' ),
+						'type'     => 'ocean-text',
+						'section'  => 'ocean_section_breadcrumb_homepage_settings',
+						'transport' => 'postMessage',
+						'default' => esc_html__( 'Home', 'oceanwp' ),
+						'priority' => 10,
+						'hideLabel' => false,
+						'sanitize_callback' => 'wp_filter_nohtml_kses',
+						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
+					],
+				]
+			],
+
+			'ocean_spacer_after_breadcrumb_homepage_settings_section' => [
+				'type' => 'ocean-spacer',
+				'section' => 'ocean_section_page_breadcrumb',
+				'transport' => 'postMessage',
+				'priority' => 10,
 				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 			],
 
@@ -1732,7 +1786,7 @@ $options = [
 				'type' => 'section',
 				'title' => esc_html__('Breadcrumbs Trail Settings', 'oceanwp'),
 				'section' => 'ocean_section_page_breadcrumb',
-				'after' => 'ocean_divider_after_breadcrumbs_colors_settings',
+				'after' => 'ocean_spacer_after_breadcrumb_homepage_settings_section',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -1807,108 +1861,11 @@ $options = [
 				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 			],
 
-			'ocean_section_breadcrumb_homepage_settings' => [
-				'type' => 'section',
-				'title' => esc_html__('Breadcrumbs Homepage Settings', 'oceanwp'),
-				'section' => 'ocean_section_page_breadcrumb',
-				'after' => 'ocean_spacer_after_breadcrumb_trail_settings_section',
-				'class' => 'section-site-layout',
-				'priority' => 10,
-				'options' => [
-					'ocean_breadcrumb_home_item' => [
-						'type' => 'ocean-buttons',
-						'label' => esc_html__('Display Home as Icon / Text', 'oceanwp'),
-						'section' => 'ocean_section_breadcrumb_homepage_settings',
-						'default'  => 'icon',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel' => false,
-						'wrap'    => false,
-						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
-						'sanitize_callback' => 'sanitize_key',
-						'choices' => [
-							'icon' => [
-								'id'     => 'icon',
-								'label'   => esc_html__('Icon', 'oceanwp'),
-								'content' => 'Icon'
-							],
-							'text'  => [
-								'id'     => 'text',
-								'label'   => esc_html__('Text', 'oceanwp'),
-								'content' => 'Text'
-							]
-						]
-					],
-
-					'ocean_breadcrumb_translation_home' => [
-						'label'    => esc_html__( 'Homepage Custom Text', 'oceanwp' ),
-						'type'     => 'ocean-text',
-						'section'  => 'ocean_section_breadcrumb_homepage_settings',
-						'transport' => 'postMessage',
-						'default' => esc_html__( 'Home', 'oceanwp' ),
-						'priority' => 10,
-						'hideLabel' => false,
-						'sanitize_callback' => 'wp_filter_nohtml_kses',
-						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
-					],
-				]
-			],
-
-			'ocean_spacer_after_breadcrumb_homepage_settings_section' => [
-				'type' => 'ocean-spacer',
-				'section' => 'ocean_section_page_breadcrumb',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
-			],
-
-			'ocean_section_breadcrumb_custom_text' => [
-				'type' => 'section',
-				'title' => esc_html__('Breadcrumbs Custom Texts', 'oceanwp'),
-				'section' => 'ocean_section_page_breadcrumb',
-				'after' => 'ocean_spacer_after_breadcrumb_homepage_settings_section',
-				'class' => 'section-site-layout',
-				'priority' => 10,
-				'options' => [
-					'ocean_breadcrumb_translation_error' => [
-						'label'    => esc_html__( 'Custom Text: 404 Not Found', 'oceanwp' ),
-						'type'     => 'ocean-text',
-						'section'  => 'ocean_section_breadcrumb_custom_text',
-						'transport' => 'postMessage',
-						'default' => esc_html__( '404 Not Found', 'oceanwp' ),
-						'priority' => 10,
-						'hideLabel' => false,
-						'sanitize_callback' => 'wp_filter_nohtml_kses',
-						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
-					],
-
-					'ocean_breadcrumb_translation_search' => [
-						'label'    => esc_html__( 'Custom Text: Search results for', 'oceanwp' ),
-						'type'     => 'ocean-text',
-						'section'  => 'ocean_section_breadcrumb_custom_text',
-						'transport' => 'postMessage',
-						'default' => esc_html__( 'Search results for', 'oceanwp' ),
-						'priority' => 10,
-						'hideLabel' => false,
-						'sanitize_callback' => 'wp_filter_nohtml_kses',
-						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
-					],
-				]
-			],
-
-			'ocean_spacer_after_breadcrumb_custom_text_section' => [
-				'type' => 'ocean-spacer',
-				'section' => 'ocean_section_page_breadcrumb',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
-			],
-
 			'ocean_section_breadcrumb_taxonomy_setting' => [
 				'type' => 'section',
 				'title' => esc_html__('Breadcrumbs Taxonomy Settings', 'oceanwp'),
 				'section' => 'ocean_section_page_breadcrumb',
-				'after' => 'ocean_spacer_after_breadcrumb_custom_text_section',
+				'after' => 'ocean_spacer_after_breadcrumb_trail_settings_section',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -1940,7 +1897,7 @@ $options = [
 						'priority' => 10,
 						'hideLabel' => false,
 						'multiple' => false,
-						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
+						'active_callback' => 'oceanwp_is_active_breadcrumb_product_callback',
 						'sanitize_callback' => 'sanitize_key',
 						'choices' => [
 							'none'        => esc_html__( 'None', 'oceanwp' ),
@@ -1971,14 +1928,74 @@ $options = [
 				]
 			],
 
-			'ocean_divider_after_breadcrumb_taxonomy_section' => [
+			'ocean_spacer_after_breadcrumb_taxonomy_settings_section' => [
+				'type' => 'ocean-spacer',
+				'section' => 'ocean_section_page_breadcrumb',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
+			],
+
+			'ocean_section_breadcrumb_custom_text' => [
+				'type' => 'section',
+				'title' => esc_html__('Breadcrumbs Custom Texts', 'oceanwp'),
+				'section' => 'ocean_section_page_breadcrumb',
+				'after' => 'ocean_spacer_after_breadcrumb_taxonomy_settings_section',
+				'class' => 'section-site-layout',
+				'priority' => 10,
+				'options' => [
+					'ocean_breadcrumb_translation_error' => [
+						'label'    => esc_html__( 'Custom Text: 404 Not Found', 'oceanwp' ),
+						'type'     => 'ocean-text',
+						'section'  => 'ocean_section_breadcrumb_custom_text',
+						'transport' => 'postMessage',
+						'default' => esc_html__( '404 Not Found', 'oceanwp' ),
+						'priority' => 10,
+						'hideLabel' => false,
+						'sanitize_callback' => 'wp_filter_nohtml_kses',
+						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
+					],
+
+					'ocean_breadcrumb_translation_search' => [
+						'label'    => esc_html__( 'Custom Text: Search results for', 'oceanwp' ),
+						'type'     => 'ocean-text',
+						'section'  => 'ocean_section_breadcrumb_custom_text',
+						'transport' => 'postMessage',
+						'default' => esc_html__( 'Search results for', 'oceanwp' ),
+						'priority' => 10,
+						'hideLabel' => false,
+						'sanitize_callback' => 'wp_filter_nohtml_kses',
+						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
+					],
+				]
+			],
+
+			'ocean_divider_after_breadcrumb_custom_text_section' => [
 				'type' => 'ocean-divider',
 				'section' => 'ocean_section_page_breadcrumb',
 				'transport' => 'postMessage',
 				'priority' => 10,
 				'top' => 20,
-				'bottom' => 10,
+				'bottom' => 1,
 				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
+			],
+
+			'ocean_breadcrumb_did_you_know_links' => [
+				'type' => 'ocean-links',
+				'label' => esc_html__('Did you know?', 'oceanwp' ),
+				'section' => 'ocean_section_page_breadcrumb',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'class' => 'didyouknow',
+				'linkIcon' => 'link-2',
+				'titleIcon' => 'did-you-know',
+				'active_callback' => 'ocean_is_oe_active',
+				'links' => [
+					'link_one' => [
+						'label' => esc_html__('The [oceanwp_breadcrumb] shortcode allows you to easily display breadcrumbs at any desired location within website content.', 'oceanwp'),
+						'url' => esc_url( 'https://docs.oceanwp.org/article/468-oceanwpbreadcrumb-shortcode' ),
+					]
+				]
 			],
 
 			'ocean_breadcrumb_whatnext_links' => [
@@ -2253,17 +2270,8 @@ $options = [
 				],
 			],
 
-			'ocean_divider_after_search_post_per_page' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_section_page_search_result',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10
-			],
-
 			'ocean_search_logo' => [
-				'label' => esc_html__( 'Choose Logo', 'oceanwp' ),
+				'label' => esc_html__( 'Logo', 'oceanwp' ),
 				'desc' => esc_html__( 'Select a search result page logo.', 'oceanwp' ),
 				'type' => 'ocean-image',
 				'section'  => 'ocean_section_page_search_result',
@@ -2272,6 +2280,15 @@ $options = [
 				'hideLabel' => false,
 				'mediaType' => 'image',
 			],
+
+			'ocean_search_result_page_need_help' => [
+				'type' => 'ocean-content',
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+				'class' => 'need-help',
+				'section' => 'ocean_section_page_search_result',
+				'transport' => 'postMessage',
+				'priority' => 10,
+			]
 		]
 	],
 
@@ -2336,7 +2353,7 @@ $options = [
 			],
 
 			'ocean_404_logo' => [
-				'label' => esc_html__( 'Choose Logo', 'oceanwp' ),
+				'label' => esc_html__( 'Logo', 'oceanwp' ),
 				'desc' => esc_html__( 'Select a 404 error page logo.', 'oceanwp' ),
 				'type' => 'ocean-image',
 				'section'  => 'ocean_section_page_404_error',
@@ -2347,30 +2364,30 @@ $options = [
 			],
 
 			'ocean_error_page_blank' => [
-                'id' => 'ocean_error_page_blank',
-                'type' => 'ocean-buttons',
-                'label' => esc_html__('Blank Page', 'oceanwp'),
+				'id' => 'ocean_error_page_blank',
+				'type' => 'ocean-buttons',
+				'label' => esc_html__('Custom 404', 'oceanwp'),
 				'desc' => esc_html__( 'Enable this option to remove all the elements and have full control of the 404 error page.','oceanwp' ),
-                'section' => 'ocean_section_page_404_error',
-                'default'  => 'off',
-                'transport' => 'refresh',
-                'priority' => 10,
-                'hideLabel' => false,
-                'wrap'    => false,
+				'section' => 'ocean_section_page_404_error',
+				'default'  => 'off',
+				'transport' => 'refresh',
+				'priority' => 10,
+				'hideLabel' => false,
+				'wrap'    => false,
 				'sanitize_callback' => 'sanitize_key',
-                'choices' => [
-                    'on' => [
-                        'id'     => 'on',
-                        'label'   => esc_html__('On', 'oceanwp'),
-                        'content' => esc_html__('On', 'oceanwp'),
-                    ],
-                    'off'  => [
-                        'id'     => 'off',
-                        'label'   => esc_html__('Off', 'oceanwp'),
-                        'content' => esc_html__('Off', 'oceanwp'),
-                    ]
-                ]
-            ],
+				'choices' => [
+					'on' => [
+						'id'     => 'on',
+						'label'   => esc_html__('On', 'oceanwp'),
+						'content' => esc_html__('On', 'oceanwp'),
+					],
+					'off'  => [
+						'id'     => 'off',
+						'label'   => esc_html__('Off', 'oceanwp'),
+						'content' => esc_html__('Off', 'oceanwp'),
+					]
+				]
+			],
 
 			'ocean_error_page_template' => [
 				'type' => 'ocean-select',
@@ -2385,6 +2402,15 @@ $options = [
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => oceanwp_library_template_choices(),
 			],
+
+			'ocean_error_page_need_help' => [
+				'type' => 'ocean-content',
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+				'class' => 'need-help',
+				'section' => 'ocean_section_page_404_error',
+				'transport' => 'postMessage',
+				'priority' => 10,
+			]
 		]
 	],
 
