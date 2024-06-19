@@ -488,7 +488,7 @@ $options = [
 				'options' => [
 					'ocean_desc_for_site_background_settings' => [
 						'type' => 'ocean-content',
-						'isContent' => esc_html__('If any, additional site background style options will appear based on your Site Layout selection. For now, additional site background options are available for the Boxed and Separate Site Layout styles.', 'oceanwp'),
+						'isContent' => esc_html__( 'Additional background options are currently available for the Boxed and Separate site layout styles.', 'oceanwp' ),
 						'section' => 'ocean_site_background_settings',
 						'class' => 'description',
 						'transport' => 'postMessage',
@@ -497,7 +497,7 @@ $options = [
 
 					'ocean_boxed_dropdshadow' => [
 						'type' => 'ocean-switch',
-						'label' => esc_html__('Boxed layout shadow drop', 'oceanwp'),
+						'label' => esc_html__('Display Boxed Layout Shadow Drop', 'oceanwp'),
 						'section' => 'ocean_site_background_settings',
 						'default'  => true,
 						'transport' => 'postMessage',
@@ -509,7 +509,7 @@ $options = [
 
 					'ocean_boxed_outside_bg_color' => [
 						'type' => 'ocean-color',
-						'label' => esc_html__( 'Outside Background', 'oceanwp' ),
+						'label' => esc_html__( 'Outside Background Color', 'oceanwp' ),
 						'section' => 'ocean_site_background_settings',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -537,7 +537,7 @@ $options = [
 
 					'ocean_separate_outside_bg_color' => [
 						'type' => 'ocean-color',
-						'label' => esc_html__( 'Outside Background', 'oceanwp' ),
+						'label' => esc_html__( 'Outside Background Color', 'oceanwp' ),
 						'section' => 'ocean_site_background_settings',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -565,7 +565,7 @@ $options = [
 
 					'ocean_boxed_inner_bg_color' => [
 						'type' => 'ocean-color',
-						'label' => esc_html__( 'Inner Background', 'oceanwp' ),
+						'label' => esc_html__( 'Inner Background Color', 'oceanwp' ),
 						'section' => 'ocean_site_background_settings',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -614,15 +614,15 @@ $options = [
 				'active_callback' => 'ocean_is_oe_active',
 				'links' => [
 					'style_page_layout' => [
-						'label' => esc_html__('Style pages layout.', 'oceanwp'),
+						'label' => esc_html__( 'Style pages layout.', 'oceanwp' ),
 						'url' => '#'
 					],
 					'style_site_buttons' => [
-						'label' => esc_html__('Style site buttons.', 'oceanwp'),
+						'label' => esc_html__( 'Style site buttons.', 'oceanwp' ),
 						'url' => '#'
 					],
 					'style_site_forms' => [
-						'label' => esc_html__('Style site forms.', 'oceanwp'),
+						'label' => esc_html__( 'Style site forms.', 'oceanwp' ),
 						'url' => '#'
 					]
 				]
@@ -658,8 +658,8 @@ $options = [
 		'options' => [
 			'ocean_theme_default_icons' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__('Site Icons', 'oceanwp' ),
-				'desc' => esc_html__('Choose icons you would like to use in the theme.', 'oceanwp' ),
+				'label' => esc_html__( 'Site Icons', 'oceanwp' ),
+				'desc' => esc_html__( 'Select the main theme icons set.', 'oceanwp' ),
 				'section' => 'ocean_site_icon_section',
 				'transport' => 'refresh',
 				'default' => 'sili',
@@ -686,7 +686,7 @@ $options = [
 
 			'ocean_site_disable_unused_icon_links' => [
 				'type' => 'ocean-links',
-				'label' => esc_html__('Disable Unused Icons', 'oceanwp' ),
+				'label' => esc_html__( 'Disable Unused Icons', 'oceanwp' ),
 				'section' => 'ocean_site_icon_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -696,7 +696,7 @@ $options = [
 				'hideLabel' => false,
 				'links' => [
 					'disable_icons' => [
-						'label' => esc_html__('Disable unused icon from loading.', 'oceanwp'),
+						'label' => esc_html__( 'Disable unused icon libraries from loading.', 'oceanwp' ),
 						'url' => esc_url( '#' ),
 					]
 				]
@@ -713,7 +713,7 @@ $options = [
 
 			'ocean_site_icons_whatnext_links' => [
 				'type' => 'ocean-links',
-				'label' => esc_html__('What to do next?', 'oceanwp' ),
+				'label' => esc_html__( 'What to do next?', 'oceanwp' ),
 				'section' => 'ocean_site_icon_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -723,15 +723,15 @@ $options = [
 				'active_callback' => 'ocean_is_oe_active',
 				'links' => [
 					'style_site_buttons' => [
-						'label' => esc_html__('Style site buttons.', 'oceanwp'),
+						'label' => esc_html__( 'Style site buttons.', 'oceanwp' ),
 						'url' => '#'
 					],
 					'style_site_froms' => [
-						'label' => esc_html__('Style site forms.', 'oceanwp'),
+						'label' => esc_html__( 'Style site forms.', 'oceanwp' ),
 						'url' => '#'
 					],
 					'style_scroll_top' => [
-						'label' => esc_html__('Style the Scroll To Top button.', 'oceanwp'),
+						'label' => esc_html__( 'Style the Scroll To Top button.', 'oceanwp' ),
 						'url' => '#'
 					]
 				]
@@ -759,7 +759,7 @@ $options = [
 
 	'ocean_site_button_section' => [
 		'type' => 'section',
-		'title' => esc_html__('Site Buttons', 'oceanwp'),
+		'title' => esc_html__( 'Site Buttons', 'oceanwp' ),
 		'section' => 'ocean_styles_and_settings',
 		'after' => 'ocean_divider_after_site_icons_section',
 		'class' => 'section-site-layout',
@@ -2504,7 +2504,7 @@ $options = [
 
 	'ocean_scroll_to_top_section' => [
 		'type' => 'section',
-		'title' => esc_html__('Scroll To Top', 'oceanwp'),
+		'title' => esc_html__( 'Scroll To Top', 'oceanwp' ),
 		'section' => 'ocean_styles_and_settings',
 		'after' => 'ocean_divider_after_site_forms_section',
 		'class' => 'section-site-layout',
@@ -2512,7 +2512,7 @@ $options = [
 		'options' => [
 			'ocean_scroll_top' => [
 				'type' => 'ocean-switch',
-				'label' => esc_html__('Scroll To Top', 'oceanwp'),
+				'label' => esc_html__( 'Enable Scroll To Top', 'oceanwp' ),
 				'section' => 'ocean_scroll_to_top_section',
 				'default'  => true,
 				'transport' => 'refresh',
@@ -2533,7 +2533,7 @@ $options = [
 
 			'ocean_scroll_top_visibility' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__('Visibility', 'oceanwp' ),
+				'label' => esc_html__( 'Visibility', 'oceanwp' ),
 				'section' => 'ocean_scroll_to_top_section',
 				'transport' => 'postMessage',
 				'default' => 'all-devices',
@@ -3474,7 +3474,7 @@ $options = [
 
 			'ocean_pagination_did_you_know_links' => [
 				'type' => 'ocean-links',
-				'label' => esc_html__('Did you know?', 'oceanwp' ),
+				'label' => esc_html__( 'Did you know?', 'oceanwp' ),
 				'section' => 'ocean_site_pagination_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -3484,7 +3484,7 @@ $options = [
 				'active_callback' => 'ocean_is_oe_active',
 				'links' => [
 					'google_font' => [
-						'label' => esc_html__('You can choose the pagination style for each option independently. For example, you can use a different pagination style for your blog posts and a different one for your eCommerce store.', 'oceanwp'),
+						'label' => esc_html__( 'OceanWP enables you to set unique pagination stlyes for different sections of your website. For example, you can choose one style for blog posts and another for your eCommerce store.', 'oceanwp' ),
 						'url' => esc_url( '#' ),
 					]
 				]
@@ -3502,7 +3502,7 @@ $options = [
 
 			'ocean_pagination_whatnext_links' => [
 				'type' => 'ocean-links',
-				'label' => esc_html__('What to do next?', 'oceanwp' ),
+				'label' => esc_html__( 'What to do next?', 'oceanwp' ),
 				'section' => 'ocean_site_pagination_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -3512,15 +3512,15 @@ $options = [
 				'active_callback' => 'ocean_is_oe_active',
 				'links' => [
 					'style_page_layout' => [
-						'label' => esc_html__('Style Pages Layout.', 'oceanwp'),
+						'label' => esc_html__( 'Style Pages Layout.', 'oceanwp' ),
 						'url' => '#'
 					],
 					'style_blog' => [
-						'label' => esc_html__('Style the Blog.', 'oceanwp'),
+						'label' => esc_html__( 'Style the Blog.', 'oceanwp' ),
 						'url' => '#'
 					],
 					'site_settings' => [
-						'label' => esc_html__('View Additional Site Settings.', 'oceanwp'),
+						'label' => esc_html__( 'View Additional Site Settings.', 'oceanwp' ),
 						'url' => '#'
 					],
 				]
