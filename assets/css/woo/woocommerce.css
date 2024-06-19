@@ -673,7 +673,7 @@
   text-align: right;
 }
 .woocommerce ul.products li.owp-content-right.product.has-rating .woo-entry-inner .star-rating {
-  margin-right: 0;
+  margin-left: auto;
 }
 .woocommerce ul.products.archives-col-1 .product {
   clear: both;
@@ -2223,6 +2223,10 @@
 }
 .select2-container-active .select2-choices {
   border-color: #bbb;
+}
+
+.select2-container--open {
+  z-index: 99999;
 }
 
 @-webkit-keyframes spin {
@@ -4164,6 +4168,10 @@ Woo Off Canvas Filter
 }
 .woocommerce .oceanwp-off-canvas-filter i {
   margin-right: 6px;
+}
+.woocommerce .oceanwp-off-canvas-filter .owp-icon {
+  vertical-align: inherit;
+  margin-right: 5px;
 }
 
 #oceanwp-off-canvas-sidebar-wrap {

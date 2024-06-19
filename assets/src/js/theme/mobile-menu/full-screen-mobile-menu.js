@@ -42,6 +42,15 @@ class FullScreenMobileMenu {
 
     delegate(document.body, ".mobile-menu", "click", this.#onMenuButtonClick);
 
+	document
+	.querySelectorAll('#mobile-fullscreen ul > li > a[href^="#"]:not([href="#"]), #mobile-fullscreen ul > li > a[href*="/#"]:not([href="#"])')
+	.forEach((anchorLink) => {
+		anchorLink.addEventListener("click", this.#handleAnchorLinks);
+	});
+
+
+
+
     document
       .querySelectorAll(
         '#mobile-fullscreen nav ul > li.menu-item-has-children > a > span.dropdown-toggle, #mobile-fullscreen nav ul > li.menu-item-has-children > a[href="#"]'
@@ -61,6 +70,35 @@ class FullScreenMobileMenu {
 
     document.addEventListener("keydown", this.#onDocumentKeydown);
   };
+
+
+  #handleAnchorLinks = (event) => {
+    const href = event.currentTarget.getAttribute('href');
+    const anchor = href.substring(href.lastIndexOf('#'));
+    const targetElement = document.querySelector(anchor);
+
+    if (targetElement) {
+        event.stopPropagation();
+        this.closeMainMenu();
+        setTimeout(() => {
+          const stickyHeader = document.querySelector('.oceanwp-sticky-header-holder .has-sticky-mobile');
+          const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+
+          // If top bar has the sticky class, consider its height as well
+          const topBarStickyWrapper = document.querySelector('.oceanwp-sticky-top-bar-holder');
+          const topBarStickyHeight = topBarStickyWrapper ? topBarStickyWrapper.offsetHeight : 0;
+
+          const offset = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - topBarStickyHeight;
+
+          window.scrollTo({
+              top: offset,
+              behavior: 'smooth'
+          });
+      }, 50);
+    }
+};
+
+
 
   #onMenuButtonClick = (event) => {
     event.preventDefault();
@@ -84,12 +122,30 @@ class FullScreenMobileMenu {
   #onCloseIconClick = (event) => {
     if (event.currentTarget.classList.contains('close')) {
       event.preventDefault();
-      this.#closeMenu();
+      // this.#closeMenu();
+
+      this.closeMainMenu();
     }
  }
 
+ closeMainMenu = () => {
+  if (visible(this.#elements.menu)) {
+      this.#elements.toggleMenuBtn.classList.remove("exit");
+      this.#elements.menu.classList.remove("active");
+
+      fadeOut(this.#elements.menu);
+
+      this.#elements.html.style.overflow = "";
+      this.#elements.html.style.marginRight = "";
+
+      this.#elements.hamburgerBtn?.classList.remove("is-active");
+  }
+};
+
   #closeMenu = () => {
+	// console.log("Inside closeMenu");
     if (visible(this.#elements.menu)) {
+		// console.log("Menu is visible");
       this.#elements.toggleMenuBtn.classList.remove("exit");
       this.#elements.menu.classList.remove("active");
 
@@ -99,7 +155,7 @@ class FullScreenMobileMenu {
       this.#elements.html.style.marginRight = "";
 
       document
-        .querySelectorAll("#mobile-fullscreen nav ul > li.dropdown")
+        .querySelectorAll("#mobile-fullscreen nav ul > li.open-sub")
         .forEach((menuItem) => {
           menuItem.classList.remove("open-sub");
         });
@@ -111,12 +167,12 @@ class FullScreenMobileMenu {
         });
 
       this.#elements.hamburgerBtn?.classList.remove("is-active");
-    }
+	}
   };
 
   #onWindowResize = (event) => {
     if (window.innerWidth >= 960) {
-      this.#closeMenu();
+      this.closeMainMenu();
     }
   };
 
@@ -163,7 +219,9 @@ class FullScreenMobileMenu {
 
     if (escKey) {
       event.preventDefault();
-      this.#closeMenu();
+      //this.#closeMenu();
+
+      this.closeMainMenu();
     }
 
     if (

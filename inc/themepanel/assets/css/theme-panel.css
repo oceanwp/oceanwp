@@ -72,7 +72,7 @@ a:not(.button):not(.btn):not(.top-bar-links):not(.banner-button)[target="_blank"
 .oceanwp-tp-oceanwp-logo {
   display: inline-block;
   margin-top: 5px;
-  background: url(../../../assets/images/logo.png) no-repeat center center;
+  background: url(../../assets/images/logo.png) no-repeat center center;
   float: left;
   width: 170px;
   height: 50px;
@@ -197,7 +197,7 @@ a.oceanwp-tp-sidebar-link:focus {
 .oceanwp-tp-panes {
   background-color: #fff;
   float: left;
-  min-height: 750px;
+  min-height: 850px;
   padding-bottom: 50px;
   position: relative;
   margin-left: 200px;
@@ -381,52 +381,52 @@ h3.oceanwp-tp-block-description,
 }
 
 .oceanwp-tp-banner.help {
-  background-image: url('../../../assets/images/banners/help.jpg');
+  background-image: url('../../assets/images/banners/help.jpg');
 }
 
 .oceanwp-tp-banner.gunetberg-blocks {
-  background-image: url('../../../assets/images/banners/gunetberg-blocks.jpg');
+  background-image: url('../../assets/images/banners/gunetberg-blocks.jpg');
   margin-bottom: 50px;
   box-shadow: inset 2000px 0 0 0 rgb(33 33 33 / 80%);
 }
 
 .oceanwp-tp-banner.elementor-widgets {
-  background-image: url('../../../assets/images/banners/elementor-widgets.jpg');
+  background-image: url('../../assets/images/banners/elementor-widgets.jpg');
   margin-bottom: 50px;
 }
 
 .oceanwp-tp-banner.elementor-library {
-  background-image: url('../../../assets/images/banners/elementor-library.jpg');
+  background-image: url('../../assets/images/banners/elementor-library.jpg');
   margin-bottom: 50px;
 }
 
 .oceanwp-tp-banner.ocean-images {
-  background-image: url('../../../assets/images/banners/ocean-images.jpg');
+  background-image: url('../../assets/images/banners/ocean-images.jpg');
   margin-bottom: 50px;
   box-shadow: inset 2000px 0 0 0 rgb(33 33 33 / 80%);
 }
 
 .oceanwp-tp-banner.install-demos {
-  background-image: url('../../../assets/images/banners/install-demos.jpg');
+  background-image: url('../../assets/images/banners/install-demos.jpg');
   margin-bottom: 50px;
 }
 .oceanwp-tp-banner.admin-settings {
-  background-image: url('../../../assets/images/banners/admin-settings.jpg');
+  background-image: url('../../assets/images/banners/admin-settings.jpg');
   margin-bottom: 50px;
 }
 
 .oceanwp-tp-banner.home {
-  background-image: url('../../../assets/images/banners/home.jpg');
+  background-image: url('../../assets/images/banners/home.jpg');
   margin-bottom: 50px;
 }
 
 .oceanwp-tp-banner.useful-plugins {
-  background-image: url('../../../assets/images/banners/useful-plugins.jpg');
+  background-image: url('../../assets/images/banners/useful-plugins.jpg');
   margin-bottom: 50px;
 }
 
 .oceanwp-tp-banner.white-label {
-  background-image: url('../../../assets/images/banners/white-label.jpg');
+  background-image: url('../../assets/images/banners/white-label.jpg');
   margin-bottom: 50px;
   box-shadow: inset 2000px 0 0 0 rgb(33 33 33 / 65%);
 }
@@ -469,7 +469,7 @@ a.banner-button {
 .oceanwp-icon-check-solid {
   width: 16px;
   height: 16px;
-  background-image: url('../../../assets/images/check.svg');
+  background-image: url('../../assets/images/check.svg');
   display: inline-block;
 }
 
@@ -613,21 +613,21 @@ a.banner-button {
 .oceanwp-cancel-icon {
   width: 32px !important;
   height: 32px;
-  background-image: url('../../../assets/images/icons/cancel.png');
+  background-image: url('../../assets/images/icons/cancel.png');
   display: inline-block;
 }
 
 .oceanwp-tick-icon {
   width: 32px !important;
   height: 32px;
-  background-image: url('../../../assets/images/icons/tick.png');
+  background-image: url('../../assets/images/icons/tick.png');
   display: inline-block;
 }
 
 .oceanwp-limited-icon {
   width: 32px !important;
   height: 32px;
-  background-image: url('../../../assets/images/icons/limited.png');
+  background-image: url('../../assets/images/icons/limited.png');
   display: inline-block;
 }
 
@@ -1166,12 +1166,12 @@ p.submit {
 }
 
 .status-true {
-  background: url('../../../assets/images/icons/check-mark.svg') no-repeat;
+  background: url('../../assets/images/icons/check-mark.svg') no-repeat;
   background-size: contain;
 }
 
 .status-false {
-  background: url('../../../assets/images/icons/x-mark.svg') no-repeat;
+  background: url('../../assets/images/icons/x-mark.svg') no-repeat;
   background-size: contain;
 }
 

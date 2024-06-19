@@ -531,7 +531,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 			// Social icons.
 			'twitter'                => array(
 				'sili' => 'fab fa-twitter',
-				'fai'  => 'fab fa-twitter',
+				'fai'  => 'fab fa-x-twitter',
 				'svg'  => 'twitter',
 			),
 			'facebook'               => array(
@@ -571,7 +571,7 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 			),
 			'github'                 => array(
 				'sili' => 'fab fa-github-alt',
-				'fai'  => 'fab fa-github-alt',
+				'fai'  => 'fab fa-github',
 				'svg'  => 'github',
 			),
 			'flickr'                 => array(
@@ -669,6 +669,26 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'fai'  => 'fab fa-qq',
 				'svg'  => 'qq',
 			),
+			'mastodon'                     => array(
+				'sili' => 'fa-brands fa-mastodon',
+				'fai'  => 'fa-brands fa-mastodon',
+				'svg'  => 'mastodon',
+			),
+			'slack'                     => array(
+				'sili' => 'fa-brands fa-slack',
+				'fai'  => 'fa-brands fa-slack',
+				'svg'  => 'slack',
+			),
+			'threads'                     => array(
+				'sili' => 'fa-brands fa-threads',
+				'fai'  => 'fa-brands fa-threads',
+				'svg'  => 'threads',
+			),
+			'whatsapp'                     => array(
+				'sili' => 'fa-brands fa-whatsapp',
+				'fai'  => 'fa-brands fa-whatsapp',
+				'svg'  => 'whatsapp',
+			)
 		);
 
 		return apply_filters( 'oceanwp_theme_icons', $oceanwp_theme_icons );
@@ -774,6 +794,10 @@ function get_ocean_icon( $args = array() ) {
 	$class = '';
 	if ( ! empty( $args['class'] ) ) {
 		$class = $args['class'];
+	}
+
+	if ( ! isset($theme_icons[$args['icon']]) ) {
+		return;
 	}
 
 	// Add SVG markup.

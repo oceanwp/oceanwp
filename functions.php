@@ -339,6 +339,7 @@ final class OCEANWP_Theme_Class {
 					'height'      => 1200,
 					'flex-height' => true,
 					'video'       => true,
+					'video-active-callback' => '__return_true'
 				)
 			)
 		);
@@ -447,7 +448,7 @@ final class OCEANWP_Theme_Class {
 
 		// Enqueue font awesome style.
 		if ( get_theme_mod( 'ocean_performance_fontawesome', 'enabled' ) === 'enabled' ) {
-			wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI . '/assets/fonts/fontawesome/css/all.min.css', false, '5.15.1' );
+			wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI . '/assets/fonts/fontawesome/css/all.min.css', false, '6.4.2' );
 		}
 
 		// Enqueue simple line icons style.
@@ -610,8 +611,10 @@ final class OCEANWP_Theme_Class {
 			wp_enqueue_script( 'oceanwp-equal-height-elements', $dir . 'equal-height-elements.min.js', $main_script_dependencies, $theme_version, true );
 		}
 
+		$perf_lightbox = get_theme_mod( 'ocean_performance_lightbox', 'enabled' );
+
 		// Lightbox script.
-		if ( oceanwp_gallery_is_lightbox_enabled() || get_theme_mod( 'ocean_performance_lightbox', 'enabled' ) === 'enabled' ) {
+		if ( oceanwp_gallery_is_lightbox_enabled() || $perf_lightbox === 'enabled' ) {
 			array_push( $main_script_dependencies, 'ow-magnific-popup' );
 			wp_enqueue_script( 'ow-magnific-popup' );
 			wp_enqueue_script( 'oceanwp-lightbox', $dir . 'ow-lightbox.min.js', $main_script_dependencies, $theme_version, true );
@@ -1128,7 +1131,7 @@ if ( ! function_exists( 'owp_fs' ) ) {
 						'has_addons'                     => true,
 						'has_paid_plans'                 => true,
 						'menu'                           => array(
-'slug'    => 'oceanwp',
+							'slug'    => 'oceanwp',
 							'account' => true,
 							'contact' => false,
 							'support' => false,
@@ -1153,3 +1156,4 @@ if ( ! function_exists( 'owp_fs' ) ) {
 // endregion
 
 new OCEANWP_Theme_Class();
+

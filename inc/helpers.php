@@ -319,10 +319,12 @@ if ( ! function_exists( 'oceanwp_body_classes' ) ) {
 			}
 		}
 
+		$perf_lightbox = get_theme_mod( 'ocean_performance_lightbox', 'enabled' );
+
 		/**
 		 * Performance Section
 		 */
-		if ( ! oceanwp_gallery_is_lightbox_enabled() && get_theme_mod( 'ocean_performance_lightbox', 'enabled' ) === 'disabled' ) {
+		if ( ! oceanwp_gallery_is_lightbox_enabled() && $perf_lightbox === 'disabled' ) {
 			$classes[] = 'no-lightbox';
 		}
 
@@ -2475,6 +2477,8 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 			// Add background image
 			$bg_img = get_theme_mod( 'ocean_page_header_bg_image' );
 
+			$bg_img_size = apply_filters( 'ocean_page_header_background_image_size', 'full' );
+
 			if ( true == get_theme_mod( 'ocean_blog_single_featured_image_title', false )
 				&& is_singular( 'post' )
 				&& has_post_thumbnail() ) {
@@ -2486,8 +2490,12 @@ if ( ! function_exists( 'oceanwp_page_header_css' ) ) {
 
 			// Generate image URL if using ID
 			if ( is_numeric( $bg_img ) ) {
-				$bg_img = wp_get_attachment_image_src( $bg_img, 'full' );
-				$bg_img = $bg_img[0];
+				$bg_img_src = wp_get_attachment_image_src( $bg_img, $bg_img_size );
+				$bg_img = is_array( $bg_img_src ) ? $bg_img_src[0] : $bg_img_src;
+			} else {
+				$bg_image_id = attachment_url_to_postid($bg_img);
+				$bg_img_src = wp_get_attachment_image_src( $bg_image_id, $bg_img_size );
+				$bg_img = is_array( $bg_img_src ) ? $bg_img_src[0] : $bg_img_src;
 			}
 
 			$bg_img = $bg_img ? $bg_img : null;
@@ -2938,7 +2946,9 @@ if ( ! function_exists( 'oceanwp_gallery_is_lightbox_enabled' ) ) {
 
 		$has_gallery = get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true );
 
-		if ( 'on' == $has_gallery ) {
+		$perf_lightbox = get_theme_mod( 'ocean_performance_lightbox', 'enabled' );
+
+		if ( 'on' == $has_gallery && $perf_lightbox === 'enabled' ) {
 			return true;
 		}
 
@@ -3427,7 +3437,7 @@ if ( ! function_exists( 'oceanwp_modify_comment_form_fields' ) ) {
 
 		$fields['url'] = '<div class="comment-form-url"><label for="url" class="screen-reader-text">' . esc_html__( 'Enter your website URL (optional)', 'oceanwp' ) . '</label><input type="text" name="url" id="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr( $comment_site ) . '" size="22" tabindex="0" class="input-website" /></div>';
 
-		return $fields;
+		return apply_filters( 'ocean_post_comment_form_fields', $fields );
 
 	}
 
@@ -4058,12 +4068,24 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 			'ocean_social_options',
 			array(
 				'twitter'     => array(
-					'label'      => esc_html__( 'Twitter', 'oceanwp' ),
+					'label'      => esc_html__( 'X', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'twitter', false ),
 				),
 				'facebook'    => array(
 					'label'      => esc_html__( 'Facebook', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'facebook', false ),
+				),
+				'facebook_group' => array(
+					'label'      => esc_html__( 'Facebook Group', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'facebook', false ),
+				),
+				'slack'          => array(
+					'label'      => esc_html__( 'Slack', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'slack', false ),
+				),
+				'threads'          => array(
+					'label'      => esc_html__( 'Threads', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'threads', false ),
 				),
 				'pinterest'   => array(
 					'label'      => esc_html__( 'Pinterest', 'oceanwp' ),
@@ -4121,10 +4143,6 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 					'label'      => esc_html__( 'Yelp', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'yelp', false ),
 				),
-				'tripadvisor' => array(
-					'label'      => esc_html__( 'Tripadvisor', 'oceanwp' ),
-					'icon_class' => oceanwp_icon( 'tripadvisor', false ),
-				),
 				'rss'         => array(
 					'label'      => esc_html__( 'RSS', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'rss', false ),
@@ -4161,6 +4179,10 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 					'label'      => esc_html__( 'Discord', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'discord', false ),
 				),
+				'mastodon'          => array(
+					'label'      => esc_html__( 'Mastodon', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'mastodon', false ),
+				)
 			)
 		);
 	}
@@ -4943,16 +4965,6 @@ function oceanwp_includes() {
 
 }
 
-add_filter( 'gettext', 'oceanwp_white_labels_translate', 1, 3 );
-function oceanwp_white_labels_translate( $translation, $text, $domain ) {
-	$white_label_active = get_option( 'oceanwp_whitelabel_oceanwp_panel', false );
-	$white_label_val = get_option( 'oceanwp_theme_name' );
-	if( $white_label_active && $white_label_val && strpos($text, 'OceanWP') !== false ) {
-		$translation = str_replace( 'OceanWP', $white_label_val, $text );
-	}
-	return $translation;
-}
-
 /**
  * Register theme page.
  *
@@ -5111,14 +5123,38 @@ if ( ! function_exists( 'ocean_get_site_name_anchors') ) {
 		$result     = '';
 		$site_url   = esc_url( home_url( '/#' ) );
 
-		if ( $content ) {
+		if ( $content && ! is_customize_preview() ) {
 			$result = $site_url . $content;
 		} else {
-			$result = $site_url . 'sitelink';
+			$result = '#';
 		}
 
 		$result = apply_filters( 'ocean_site_name_anchors', $result );
 
 		return $result;
 	}
+}
+
+/**
+ * Workaround for WPML and Ocean Library Shortcode Translation.
+ * This function modifies the output of the 'oceanwp_library' shortcode for WPML compatibility.
+ *
+ * @param array $out   The output array of shortcode attributes.
+ * @param array $pairs Entire list of supported attributes and their defaults.
+ * @param array $atts  User defined attributes in shortcode tag.
+ *
+ * @return array Filtered output array of shortcode attributes.
+ */
+
+if ( ! function_exists( 'ocean_wpml_filter_oceanwp_library_shortcode' ) ) {
+
+    function ocean_wpml_filter_oceanwp_library_shortcode( $out, $pairs, $atts ) {
+        if ( class_exists( 'Sitepress' ) && isset( $out['id'] ) ) {
+            $post_type = get_post_type( $out['id'] );
+            $out['id'] = apply_filters( 'wpml_object_id', $out['id'], $post_type, true );
+        }
+        return $out;
+    }
+
+    add_filter( 'shortcode_atts_oceanwp_library', 'ocean_wpml_filter_oceanwp_library_shortcode', 10, 3 );
 }

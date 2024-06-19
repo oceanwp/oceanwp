@@ -74,12 +74,17 @@
 		    &.oceanwp-tripadvisor a:hover { color: #589442; }
 		    &.oceanwp-rss a:hover { color: #ff7900; }
 		    &.oceanwp-email a:hover { color: #13aff0; }
-			&.oceanwp-tiktok a:hover { color: #000000 }
+			&.oceanwp-tiktok a:hover { color: #000000; }
 			&.oceanwp-medium a:hover { color: #00ab6c; }
-			&.oceanwp-telegram a:hover { color: #0088cc }
-			&.oceanwp-twitch a:hover { color: #6441a5 }
-			&.oceanwp-line a:hover { color: #00c300 }
-			&.oceanwp-qq a:hover { color: #febf1b }
+			&.oceanwp-telegram a:hover { color: #0088cc; }
+			&.oceanwp-twitch a:hover { color: #6441a5; }
+			&.oceanwp-line a:hover { color: #00c300; }
+			&.oceanwp-qq a:hover { color: #febf1b; }
+			&.oceanwp-facebook_group a:hover { color: #37589b; }
+			&.oceanwp-slack a:hover { color: #4a154b; }
+			&.oceanwp-threads a:hover { color: #000000; }
+			&.oceanwp-mastodon a:hover { color: #563acc; }
+			&.oceanwp-discord a:hover { color: #5865f2; }
 	    }
 	}
 
@@ -150,12 +155,22 @@
 	    &.oceanwp-medium a:hover { background-color: #03945f; }
 		&.oceanwp-telegram a { background-color: #0088cc; }
 	    &.oceanwp-telegram a:hover { background-color: #0da4f0; }
-		&.oceanwp-twitch a { background-color: #6441a5 }
-		&.oceanwp-twitch a:hover { background-color: #702cee }
-		&.oceanwp-line a { background-color: #00c300 }
-		&.oceanwp-line a:hover { background-color: #09f309 }
-		&.oceanwp-qq a { background-color: #febf1b }
-		&.oceanwp-qq a:hover { background-color: #db9f07 }
+		&.oceanwp-twitch a { background-color: #6441a5; }
+		&.oceanwp-twitch a:hover { background-color: #702cee; }
+		&.oceanwp-line a { background-color: #00c300; }
+		&.oceanwp-line a:hover { background-color: #09f309; }
+		&.oceanwp-qq a { background-color: #febf1b; }
+		&.oceanwp-qq a:hover { background-color: #db9f07; }
+		&.oceanwp-facebook_group a { background-color: #37589b; }
+		&.oceanwp-facebook_group a:hover { background-color: #2d477c; }
+		&.oceanwp-slack a { background-color: #4a154b; }
+		&.oceanwp-slack a:hover { background-color: #3d0a3e; }
+		&.oceanwp-threads a { background-color: #000000; }
+		&.oceanwp-threads a:hover { background-color: #191919; }
+		&.oceanwp-mastodon a { background-color: #6364ff; }
+		&.oceanwp-mastodon a:hover { background-color: #563acc; }
+		&.oceanwp-discord a { background-color: #5865f2; }
+		&.oceanwp-discord a:hover { background-color: #7289da; }
 	}
 
 	.minimal ul li {
@@ -203,6 +218,11 @@
 		&.oceanwp-twitch a:hover { color: #702cee; border-color: #702cee; }
 		&.oceanwp-line a:hover { color: #00c300; border-color: #00c300; }
 		&.oceanwp-qq a:hover { color: #febf1b; border-color: #febf1b; }
+		&.oceanwp-facebook_group a:hover { color: #37589b; border-color: #37589b; }
+		&.oceanwp-slack a:hover { color: #4a154b; border-color: #4a154b; }
+		&.oceanwp-threads a:hover { color: #000000; border-color: #000000; }
+		&.oceanwp-mastodon a:hover { color: #563acc; border-color: #563acc; }
+		&.oceanwp-discord a:hover { color: #5865f2; border-color: #7289da; }
 	}
 
 	.dark ul li a {

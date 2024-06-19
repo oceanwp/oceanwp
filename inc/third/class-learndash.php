@@ -34,11 +34,6 @@ if ( ! class_exists( 'OceanWP_LearnDash' ) ) :
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_custom_scripts' ) );
 
-			// Fix for the OceanWP Settings values not saved
-			if ( OCEAN_EXTRA_ACTIVE ) {
-				add_action( 'learndash_metabox_after_save_learndash-course-options', array( $this, 'butterbean_fix' ) );
-			}
-
 			// Distraction free learning
 			add_filter( 'ocean_display_top_bar', array( $this, 'distraction_free' ), 11 );
 			add_filter( 'ocean_display_navigation', array( $this, 'distraction_free' ), 11 );
@@ -163,20 +158,11 @@ if ( ! class_exists( 'OceanWP_LearnDash' ) ) :
 		public static function distraction_free( $return ) {
 
 			if( ( is_singular( array( 'sfwd-courses', 'sfwd-lessons', 'sfwd-quiz', 'sfwd-topic' ) ) )
-				 && true == get_theme_mod( 'ocean_ld_distraction_free_learning', false ) ) {
+				&& true == get_theme_mod( 'ocean_ld_distraction_free_learning', false ) ) {
 				$return = false;
 			}
 
 			return $return;
-		}
-
-		/**
-		 * Fix for the OceanWP Settings values not saved
-		 *
-		 * @since 1.2.10
-		 */
-		public static function butterbean_fix( $post_id ) {
-			butterbean()->update( $post_id );
 		}
 
 		/**

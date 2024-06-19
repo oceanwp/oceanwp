@@ -383,8 +383,9 @@ class OceanWP_Breadcrumb_Trail {
 				}
 
 				// Separator.
-				if ( $item_count === $item_position ) {
+				if ( $item_count === $item_position && isset($this->items[$item_count - 1]) ) {
 					$sep  = '';
+					$item = sprintf( '<span itemprop="name">%s</span>', $this->items[$item_count - 1] );
 				} else {
 					$sep = $separator;
 				}
@@ -1369,7 +1370,7 @@ class OceanWP_Breadcrumb_Trail {
 
 		foreach ( $post_types as $type ) {
 
-			if ( $slug === $type->has_archive || ( true === $type->has_archive && $slug === $type->rewrite['slug'] ) ) {
+			if ( $slug === $type->has_archive || ( $type->has_archive && $slug === $type->rewrite['slug'] ) ) {
 				$return[] = $type;
 			}
 		}
