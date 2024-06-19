@@ -2353,7 +2353,7 @@ $options = [
 			],
 
 			'ocean_404_logo' => [
-				'label'     => esc_html__( 'Choose Logo', 'oceanwp' ),
+				'label'     => esc_html__( 'Logo', 'oceanwp' ),
 				'desc'      => esc_html__( 'Select a logo for the 404 error page.', 'oceanwp' ),
 				'type'      => 'ocean-image',
 				'section'   => 'ocean_section_page_404_error',
@@ -2371,7 +2371,7 @@ $options = [
 				'id' => 'ocean_error_page_blank',
 				'type' => 'ocean-buttons',
 				'label' => esc_html__('Custom 404', 'oceanwp'),
-				'desc' => esc_html__( 'Enable this option to remove all the elements and have full control of the 404 error page.','oceanwp' ),
+				'desc' => esc_html__( 'Enabling this option will remove all default elements, giving you full control over the 404 error page.','oceanwp' ),
 				'section' => 'ocean_section_page_404_error',
 				'default'  => 'off',
 				'transport' => 'refresh',
@@ -2382,13 +2382,13 @@ $options = [
 				'choices' => [
 					'on' => [
 						'id'     => 'on',
-						'label'   => esc_html__('On', 'oceanwp'),
-						'content' => esc_html__('On', 'oceanwp'),
+						'label'   => esc_html__( 'On', 'oceanwp' ),
+						'content' => esc_html__( 'On', 'oceanwp' ),
 					],
 					'off'  => [
 						'id'     => 'off',
-						'label'   => esc_html__('Off', 'oceanwp'),
-						'content' => esc_html__('Off', 'oceanwp'),
+						'label'   => esc_html__( 'Off', 'oceanwp' ),
+						'content' => esc_html__( 'Off', 'oceanwp' ),
 					]
 				]
 			],
