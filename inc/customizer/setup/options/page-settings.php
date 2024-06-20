@@ -273,20 +273,21 @@ $options = [
 		]
 	],
 
-	'ocean_divider_after_page_responsive_section' => [
-		'type' => 'ocean-divider',
+	'ocean_title_for_page_title_section' => [
+		'type' => 'ocean-title',
+		'label' => esc_html__( 'Page Title', 'oceanwp' ),
 		'section' => 'ocean_site_page_settings',
 		'transport' => 'postMessage',
 		'priority' => 10,
 		'top' => 20,
-		'bottom' => 20
+		'bottom' => 20,
 	],
 
 	'ocean_section_page_title' => [
 		'type' => 'section',
 		'title' => esc_html__('Page Title', 'oceanwp'),
 		'section' => 'ocean_site_page_settings',
-		'after' => 'ocean_divider_after_page_responsive_section',
+		'after' => 'ocean_title_for_page_title_section',
 		'class' => 'section-site-layout',
 		'priority' => 10,
 		'options' => [
@@ -365,8 +366,9 @@ $options = [
 				],
 			],
 
-			'ocean_divider_after_page_header_title_tag' => [
-				'type' => 'ocean-divider',
+			'ocean_title_for_page_title_style_sections' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__( 'Content Settings', 'oceanwp' ),
 				'section' => 'ocean_section_page_title',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -379,10 +381,44 @@ $options = [
 				'type' => 'section',
 				'title' => esc_html__('Page Title Style', 'oceanwp'),
 				'section' => 'ocean_section_page_title',
-				'after' => 'ocean_divider_after_page_header_title_tag',
+				'after' => 'ocean_title_for_page_title_style_sections',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
+					'ocean_page_header_style' => [
+						'type' => 'ocean-radio-image',
+						'label' => esc_html__('Style', 'oceanwp' ),
+						'section' => 'ocean_section_page_title_style',
+						'transport' => 'refresh',
+						'default' => '',
+						'priority' => 10,
+						'hideLabel' => false,
+						'active_callback' => 'oceanwp_is_page_title_display',
+						'sanitize_callback' => 'sanitize_key',
+						'choices' => [
+							'' => [
+								'label'   => esc_html__( 'Default', 'oceanwp' ),
+								'default' => oceanwp_customizer_print_svg('page_title_initial_style-default'),
+								'active'  => oceanwp_customizer_print_svg('page_title_initial_style-active'),
+							],
+							'centered' => [
+								'label'   => esc_html__( 'Centered', 'oceanwp' ),
+								'default' => oceanwp_customizer_print_svg('page_title_centered_style-default'),
+								'active'  => oceanwp_customizer_print_svg('page_title_centered_style-active'),
+							],
+							'centered-minimal' => [
+								'label'   => esc_html__( 'Centered Minimal', 'oceanwp' ),
+								'default' => oceanwp_customizer_print_svg('page_title_centered_minimal_style-default'),
+								'active'  => oceanwp_customizer_print_svg('page_title_centered_minimal_style-active'),
+							],
+							'background-image' => [
+								'label'   => esc_html__( 'Background Image', 'oceanwp' ),
+								'default' => oceanwp_customizer_print_svg('page_title_background_image_style-default'),
+								'active'  => oceanwp_customizer_print_svg('page_title_background_image_style-active'),
+							]
+						]
+					],
+
 					'ocean_page_header_padding' => [
 						'id' => 'ocean_page_header_padding',
 						'label'    => esc_html__( 'Padding (px)', 'oceanwp' ),
@@ -488,42 +524,7 @@ $options = [
 						],
 					],
 
-					'ocean_page_header_style' => [
-						'type' => 'ocean-radio-image',
-						'label' => esc_html__('Style', 'oceanwp' ),
-						'section' => 'ocean_section_page_title_style',
-						'transport' => 'refresh',
-						'default' => '',
-						'priority' => 10,
-						'hideLabel' => false,
-						'multiple' => false,
-						'active_callback' => 'oceanwp_is_page_title_display',
-						'sanitize_callback' => 'sanitize_key',
-						'choices' => [
-							'' => [
-								'label'   => esc_html__( 'Default', 'oceanwp' ),
-								'default' => oceanwp_customizer_print_svg('page_title_default_style-default'),
-								'active'  => oceanwp_customizer_print_svg('page_title_default_style-active'),
-							],
-							'centered' => [
-								'label'   => esc_html__( 'Centered', 'oceanwp' ),
-								'default' => oceanwp_customizer_print_svg('page_title_centered_style-default'),
-								'active'  => oceanwp_customizer_print_svg('page_title_centered_style-active'),
-							],
-							'centered-minimal' => [
-								'label'   => esc_html__( 'Centered Minimal', 'oceanwp' ),
-								'default' => oceanwp_customizer_print_svg('page_title_centered_minimal_style-default'),
-								'active'  => oceanwp_customizer_print_svg('page_title_centered_minimal_style-active'),
-							],
-							'background-image' => [
-								'label'   => esc_html__( 'Background Image', 'oceanwp' ),
-								'default' => oceanwp_customizer_print_svg('page_title_background_image_style-default'),
-								'active'  => oceanwp_customizer_print_svg('page_title_background_image_style-active'),
-							]
-						],
-					],
-
-					'ocean_spacer_after_page_title_style_setting' => [
+					'ocean_spacer_for_page_title_additional_settings_setting' => [
 						'type' => 'ocean-spacer',
 						'section' => 'ocean_section_page_title_style',
 						'transport' => 'postMessage',
@@ -537,7 +538,7 @@ $options = [
 						'type' => 'section',
 						'title' => esc_html__( 'Additional Title Settings', 'oceanwp' ),
 						'section' => 'ocean_section_page_title_style',
-						'after' => 'ocean_spacer_after_page_title_style_setting',
+						'after' => 'ocean_spacer_for_page_title_additional_settings_setting',
 						'class' => 'section-site-layout',
 						'priority' => 10,
 						'options' => [
@@ -1322,7 +1323,7 @@ $options = [
 						'active_callback' => 'oceanwp_is_page_title_display',
 					],
 
-					'ocean_page_title_did_you_know_links' => [
+					'ocean_page_title_style_did_you_know_links' => [
 						'type' => 'ocean-links',
 						'label' => esc_html__( 'Did you know?', 'oceanwp' ),
 						'section' => 'ocean_section_page_title_style',
@@ -1340,7 +1341,7 @@ $options = [
 						]
 					],
 
-					'ocean_divider_after_page_title_did_you_know' => [
+					'ocean_divider_after_page_title_style_did_you_know' => [
 						'type' => 'ocean-divider',
 						'section' => 'ocean_section_page_title_style',
 						'transport' => 'postMessage',
@@ -1350,7 +1351,7 @@ $options = [
 						'active_callback' => 'oceanwp_is_page_title_when_oe_active',
 					],
 
-					'ocean_page_title_whatnext_links' => [
+					'ocean_page_title_style_whatnext_links' => [
 						'type' => 'ocean-links',
 						'label' => esc_html__( 'What to do next?', 'oceanwp' ),
 						'section' => 'ocean_section_page_title_style',
@@ -1376,7 +1377,7 @@ $options = [
 						]
 					],
 
-					'ocean_pagination_need_help' => [
+					'ocean_page_title_style_need_help' => [
 						'type' => 'ocean-content',
 						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
 						'class' => 'need-help',
@@ -1387,6 +1388,26 @@ $options = [
 					]
 				]
 			],
+
+			'ocean_divider_after_page_title_style_section' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_section_page_title',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 20,
+				'bottom' => 10,
+				'active_callback' => 'oceanwp_is_page_title_display',
+			],
+
+			'ocean_page_title_need_help' => [
+				'type' => 'ocean-content',
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+				'class' => 'need-help',
+				'section' => 'ocean_section_page_title',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'active_callback' => 'oceanwp_is_page_title_display',
+			]
 		]
 	],
 
@@ -2031,18 +2052,21 @@ $options = [
 		]
 	],
 
-	'ocean_divider_after_page_breadcrumb_did_you_know' => [
-		'type' => 'ocean-divider',
+	'ocean_title_for_special_pages_section' => [
+		'type' => 'ocean-title',
+		'label' => esc_html__( 'Special Pages', 'oceanwp' ),
 		'section' => 'ocean_site_page_settings',
 		'transport' => 'postMessage',
 		'priority' => 10,
+		'top' => 20,
+		'bottom' => 20,
 	],
 
 	'ocean_section_page_search_result' => [
 		'type' => 'section',
 		'title' => esc_html__('Search Results Page', 'oceanwp'),
 		'section' => 'ocean_site_page_settings',
-		'after' => 'ocean_divider_after_page_breadcrumb_did_you_know',
+		'after' => 'ocean_title_for_special_pages_section',
 		'class' => 'section-site-layout',
 		'priority' => 10,
 		'options' => [
@@ -2342,14 +2366,6 @@ $options = [
 						'active'  => oceanwp_customizer_print_svg('both_sidebar_layout-active'),
 					]
 				]
-			],
-
-			'ocean_divider_after_404_error_layout' => [
-				'type'      => 'ocean-divider',
-				'section'   => 'ocean_section_page_404_error',
-				'transport' => 'postMessage',
-				'priority'  => 10,
-				'top'       => 10,
 			],
 
 			'ocean_404_logo' => [

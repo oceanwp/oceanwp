@@ -5158,3 +5158,10 @@ if ( ! function_exists( 'ocean_wpml_filter_oceanwp_library_shortcode' ) ) {
 
     add_filter( 'shortcode_atts_oceanwp_library', 'ocean_wpml_filter_oceanwp_library_shortcode', 10, 3 );
 }
+
+
+
+// Add custom font to font settings
+function ocean_add_custom_fonts() {
+	return array( 'My Custom Font' ); // You can add more then 1 font to the array!
+}

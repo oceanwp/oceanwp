@@ -1387,37 +1387,6 @@ $options = [
 		'class' => 'section-google-font',
 		'priority' => 10,
 		'options' => [
-			'ocean_typograhpy_google_font_quick_links' => [
-				'type' => 'ocean-links',
-				'label' => 'Quick Menu',
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'class' => 'top-quick-links',
-				'linkIcon' => 'link-2',
-				'titleIcon' => 'quick-menu',
-				'active_callback' => 'ocean_is_oe_active',
-				'links' => [
-					'google_font' => [
-						'label' => esc_html__('Apply Global Font Options', 'oceanwp'),
-						'url' => '#'
-					],
-					'google_font_local' => [
-						'label' => esc_html__('Apply Global Color Settings', 'oceanwp'),
-						'url' => '#'
-					]
-				]
-			],
-
-			'ocean_divider_after_google_font_quick_links_settings' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'bottom' => 1,
-				'active_callback' => 'ocean_is_oe_active',
-			],
-
 			'ocean_disable_google_font' => [
 				'type' => 'ocean-switch',
 				'label' => esc_html__('Enable Google Fonts', 'oceanwp'),
@@ -1578,6 +1547,33 @@ $options = [
 		'section' => 'ocean_typography',
 		'transport' => 'postMessage',
 		'priority' => 10,
+		'bottom' => 10
+	],
+
+	'ocean_typograhpy_did_you_know_links' => [
+		'type' => 'ocean-links',
+		'label' => 'Did you know?',
+		'section' => 'ocean_typography',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'class' => 'didyouknow',
+		'linkIcon' => 'link-2',
+		'titleIcon' => 'did-you-know',
+		'active_callback' => 'ocean_is_oe_active',
+		'links' => [
+			'google_font' => [
+				'label' => esc_html__('With OceanWP you can integrate Adobe Fonts for free.', 'oceanwp'),
+				'url' => esc_url( 'https://docs.oceanwp.org/article/849-how-to-add-adobe-fonts-typekit' ),
+			]
+		]
+	],
+
+	'ocean_divider_after_google_font_did_you_know_setting' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_typography',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'bottom' => 10
 	],
 
 	'ocean_typograhpy_whatnext_links' => [
@@ -1598,24 +1594,6 @@ $options = [
 			'google_font_local' => [
 				'label' => esc_html__('Apply Global Site Settings', 'oceanwp'),
 				'url' => '#'
-			]
-		]
-	],
-
-	'ocean_typograhpy_did_you_know_links' => [
-		'type' => 'ocean-links',
-		'label' => 'Did you know?',
-		'section' => 'ocean_typography',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'class' => 'didyouknow',
-		'linkIcon' => 'link-2',
-		'titleIcon' => 'did-you-know',
-		'active_callback' => 'ocean_is_oe_active',
-		'links' => [
-			'google_font' => [
-				'label' => esc_html__('With OceanWP you can integrate Adobe Fonts for free.', 'oceanwp'),
-				'url' => esc_url( 'https://docs.oceanwp.org/article/849-how-to-add-adobe-fonts-typekit' ),
 			]
 		]
 	],

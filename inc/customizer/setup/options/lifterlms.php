@@ -1551,7 +1551,6 @@ $options = [
                 ]
             ],
 
-
             'ocean_spacer_for_ocean_llms_styling_lession_section' => [
                 'type' => 'ocean-spacer',
                 'section' => 'ocean_llms_styling',

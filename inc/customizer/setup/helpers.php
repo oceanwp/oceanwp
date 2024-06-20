@@ -239,21 +239,42 @@ function oceanwp_get_menu_choices() {
 /**
  * Get SVG icon
  */
+// function oceanwp_customizer_print_svg( $svg ) {
+
+// 	$json = OCEANWP_INC_DIR_URI . 'customizer/setup/assets/svg.json';
+
+// 	$response = wp_remote_get( $json );
+
+// 	if (is_wp_error($response)) {
+// 		return false;
+// 	}
+
+// 	$svg_icons = json_decode($response['body'], true);
+
+// 	return $svg_icons[$svg];
+
+// }
+
 function oceanwp_customizer_print_svg( $svg ) {
 
 	$json = OCEANWP_INC_DIR_URI . 'customizer/setup/assets/svg.json';
 
 	$response = wp_remote_get( $json );
 
-	if (is_wp_error($response)) {
+	if ( is_wp_error( $response ) ) {
 		return false;
 	}
 
-	$svg_icons = json_decode($response['body'], true);
+	$body = wp_remote_retrieve_body( $response );
+	$svg_icons = json_decode( $body, true );
+
+	if ( ! is_array( $svg_icons ) || ! isset( $svg_icons[ $svg ] ) ) {
+		return false;
+	}
 
 	return $svg_icons[$svg];
-
 }
+
 
 /**
  * Get post types

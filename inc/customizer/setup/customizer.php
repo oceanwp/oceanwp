@@ -432,9 +432,22 @@ class OceanWP_Customizer_Init {
 				// 'isPremium' => ocean_check_pro_license(),
 				'isOE' => ocean_is_oe_active(),
 				'sectionIcons' => ocean_customizer_section_icons(),
-				'pageChoices' => ocean_get_page_choices()
+				'pageChoices' => ocean_get_page_choices(),
+				'customFonts' => function_exists( 'ocean_add_custom_fonts' ) ? ocean_add_custom_fonts() : array(),
+				'customizerFonts' => $this->get_customizer_fonts(),
 			)
 		);
+	}
+
+	/**
+	 * Fetch customizer fonts
+	 */
+	private function get_customizer_fonts() {
+		ob_start();
+		do_action('ocean_customizer_fonts');
+		$fonts_content = ob_get_clean();
+
+		return $fonts_content;
 	}
 
 	public function include_settings() {

@@ -370,62 +370,19 @@ $options = [
 						]
 					],
 
-					'ocean_top_bar_social_font_size' => [
-						'id'      => 'ocean_top_bar_social_font_size',
-						'label'    => esc_html__( 'Icon Size', 'oceanwp' ),
-						'type'     => 'ocean-range-slider',
-						'section'  => 'ocean_topbar_social_menu_default_section',
+					'ocean_divider_after_top_bar_social_target_setting' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_topbar_social_menu_default_section',
 						'transport' => 'postMessage',
 						'priority' => 10,
-						'hideLabel'    => false,
-						'isUnit'       => true,
-						'isResponsive' => true,
-						'min'          => 1,
-						'max'          => 100,
-						'step'         => 1,
+						'top' => 1,
+						'bottom' => 20,
 						'active_callback' => 'ocean_cac_topbar_social_menu',
-						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
-						'setting_args' => [
-							'desktop' => [
-								'id' => 'ocean_top_bar_social_font_size',
-								'label' => esc_html__( 'Desktop', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'  => 14,
-								],
-							],
-							'tablet' => [
-								'id' => 'ocean_top_bar_social_tablet_font_size',
-								'label' => esc_html__( 'Tablet', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'mobile' => [
-								'id' => 'ocean_top_bar_social_mobile_font_size',
-								'label' => esc_html__( 'Mobile', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'unit' => [
-								'id' => 'ocean_top_bar_social_font_size_unit',
-								'label' => esc_html__( 'Unit', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-									'default' => 'px',
-								],
-							],
-						],
-						'preview' => 'queryWithType',
-						'css' => [
-							'#top-bar-social li a' => ['font-size']
-						]
 					],
 
 					'ocean_top_bar_social_padding' => [
 						'id' => 'ocean_top_bar_social_padding',
-						'label'    => esc_html__( 'Padding', 'oceanwp' ),
+						'label'    => esc_html__( 'Padding (px)', 'oceanwp' ),
 						'type'     => 'ocean-spacing',
 						'section'  => 'ocean_topbar_social_menu_default_section',
 						'transport' => 'postMessage',
@@ -488,11 +445,76 @@ $options = [
 						],
 					],
 
-					'ocean_divider_after_top_bar_social_padding_setting' => [
+					'ocean_title_for_topbar_social_menu_typo_and_color_settings' => [
+						'type' => 'ocean-title',
+						'label' => esc_html__( 'Typography and Color', 'oceanwp' ),
+						'section' => 'ocean_topbar_social_menu_default_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 20,
+						'bottom' => 20,
+						'active_callback' => 'ocean_cac_topbar_social_menu',
+					],
+
+					'ocean_top_bar_social_font_size' => [
+						'id'      => 'ocean_top_bar_social_font_size',
+						'label'    => esc_html__( 'Icon Size', 'oceanwp' ),
+						'type'     => 'ocean-range-slider',
+						'section'  => 'ocean_topbar_social_menu_default_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel'    => false,
+						'isUnit'       => true,
+						'isResponsive' => true,
+						'min'          => 1,
+						'max'          => 100,
+						'step'         => 1,
+						'active_callback' => 'ocean_cac_topbar_social_menu',
+						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+						'setting_args' => [
+							'desktop' => [
+								'id' => 'ocean_top_bar_social_font_size',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'  => 14,
+								],
+							],
+							'tablet' => [
+								'id' => 'ocean_top_bar_social_tablet_font_size',
+								'label' => esc_html__( 'Tablet', 'oceanwp' ),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'mobile' => [
+								'id' => 'ocean_top_bar_social_mobile_font_size',
+								'label' => esc_html__( 'Mobile', 'oceanwp' ),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'unit' => [
+								'id' => 'ocean_top_bar_social_font_size_unit',
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
+								'attr' => [
+									'transport' => 'postMessage',
+									'default' => 'px',
+								],
+							],
+						],
+						'preview' => 'queryWithType',
+						'css' => [
+							'#top-bar-social li a' => ['font-size']
+						]
+					],
+
+					'ocean_divider_after_top_bar_social_font_size_setting' => [
 						'type' => 'ocean-divider',
 						'section' => 'ocean_topbar_social_menu_default_section',
 						'transport' => 'postMessage',
 						'priority' => 10,
+						'top' => 10,
 						'active_callback' => 'ocean_cac_topbar_social_menu',
 					],
 
@@ -571,13 +593,14 @@ $options = [
 				]
 			],
 
-			'ocean_divider_for_top_bar_social_menu_custom_template_section' => [
-				'type' => 'ocean-divider',
+			'ocean_title_for_top_bar_social_menu_custom_template_sections' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__( 'Custom Social', 'oceanwp' ),
 				'section' => 'ocean_top_bar_social_menu_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10,
+				'top' => 20,
+				'bottom' => 20,
 				'active_callback' => 'ocean_cac_topbar_social_menu',
 			],
 
@@ -585,7 +608,7 @@ $options = [
 				'type' => 'section',
 				'title' => esc_html__('Custom Template', 'oceanwp'),
 				'section' => 'ocean_top_bar_social_menu_section',
-				'after' => 'ocean_divider_for_top_bar_social_menu_custom_template_section',
+				'after' => 'ocean_title_for_top_bar_social_menu_custom_template_sections',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -614,6 +637,26 @@ $options = [
 					],
 
 				]
+			],
+
+			'ocean_divider_after_top_bar_social_menu_custom_template_section' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_top_bar_social_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 20,
+				'bottom' => 10,
+				'active_callback' => 'ocean_cac_topbar_social_menu',
+			],
+
+			'ocean_top_bar_social_menu_need_help' => [
+				'type' => 'ocean-content',
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+				'class' => 'need-help',
+				'section' => 'ocean_top_bar_social_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'active_callback' => 'ocean_cac_topbar_social_menu',
 			]
 		]
 	],
