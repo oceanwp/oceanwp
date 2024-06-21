@@ -339,6 +339,8 @@ class OceanWP_Customizer_Init {
 			'colors',
 			'styles-and-settings',
 			'site-page-settings',
+			'seo-settings',
+			'site-performance',
 			'blog',
 			'header',
 			'topbar',
