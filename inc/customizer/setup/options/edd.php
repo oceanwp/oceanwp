@@ -956,30 +956,25 @@ $options = [
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
 					'right-sidebar' => [
-						'label'   => esc_html__( 'Right Sidebar', 'oceanwp' ),
-						'default' => oceanwp_customizer_print_svg('right-sidebar-default'),
-						'active'  => oceanwp_customizer_print_svg('right-sidebar-active'),
-					],
-					'left-sidebar'  => [
-						'label'   => esc_html__( 'Left Sidebar', 'oceanwp' ),
-						'default' => oceanwp_customizer_print_svg('left-sidebar-default'),
-						'active'  => oceanwp_customizer_print_svg('left-sidebar-active'),
-					],
-					'full-width'    => [
-						'label'   => esc_html__( 'Full Width', 'oceanwp' ),
-						'default' => oceanwp_customizer_print_svg('full_width-no_sidebar-default'),
-						'active'  => oceanwp_customizer_print_svg('full_width-no_sidebar-active'),
-					],
-					'full-screen'   => [
-						'label'   => esc_html__( '100% Full Width', 'oceanwp' ),
-						'default' => oceanwp_customizer_print_svg('fullscreen_width-default'),
-						'active'  => oceanwp_customizer_print_svg('fullscreen_width-active'),
-					],
-					'both-sidebars' => [
-						'label'   => esc_html__( 'Both Sidebar', 'oceanwp' ),
-						'default' => oceanwp_customizer_print_svg('both_sidebar_layout-default'),
-						'active'  => oceanwp_customizer_print_svg('both_sidebar_layout-active'),
-					]
+                        'label' => esc_html__( 'Right Sidebar', 'oceanwp' ),
+                        'icon' => 'right-sidebar',
+                    ],
+                    'left-sidebar'  => [
+                        'label' => esc_html__( 'Left Sidebar', 'oceanwp' ),
+                        'icon' => 'left-sidebar',
+                    ],
+                    'full-width'    => [
+                        'label' => esc_html__( 'Full Width', 'oceanwp' ),
+                        'icon' => 'full_width-no_sidebar',
+                    ],
+                    'full-screen'   => [
+                        'label' => esc_html__( '100% Full Width', 'oceanwp' ),
+                        'icon' => 'fullscreen_width',
+                    ],
+                    'both-sidebars' => [
+                        'label' => esc_html__( 'Both Sidebar', 'oceanwp' ),
+                        'icon' => 'both_sidebar_layout',
+                    ]
 				]
 			],
 
@@ -2181,30 +2176,25 @@ $options = [
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
 					'right-sidebar' => [
-						'label'   => esc_html__( 'Right Sidebar', 'oceanwp' ),
-						'default' => oceanwp_customizer_print_svg('right-sidebar-default'),
-						'active'  => oceanwp_customizer_print_svg('right-sidebar-active'),
-					],
-					'left-sidebar'  => [
-						'label'   => esc_html__( 'Left Sidebar', 'oceanwp' ),
-						'default' => oceanwp_customizer_print_svg('left-sidebar-default'),
-						'active'  => oceanwp_customizer_print_svg('left-sidebar-active'),
-					],
-					'full-width'    => [
-						'label'   => esc_html__( 'Full Width', 'oceanwp' ),
-						'default' => oceanwp_customizer_print_svg('full_width-no_sidebar-default'),
-						'active'  => oceanwp_customizer_print_svg('full_width-no_sidebar-active'),
-					],
-					'full-screen'   => [
-						'label'   => esc_html__( '100% Full Width', 'oceanwp' ),
-						'default' => oceanwp_customizer_print_svg('fullscreen_width-default'),
-						'active'  => oceanwp_customizer_print_svg('fullscreen_width-active'),
-					],
-					'both-sidebars' => [
-						'label'   => esc_html__( 'Both Sidebar', 'oceanwp' ),
-						'default' => oceanwp_customizer_print_svg('both_sidebar_layout-default'),
-						'active'  => oceanwp_customizer_print_svg('both_sidebar_layout-active'),
-					]
+                        'label' => esc_html__( 'Right Sidebar', 'oceanwp' ),
+                        'icon' => 'right-sidebar',
+                    ],
+                    'left-sidebar'  => [
+                        'label' => esc_html__( 'Left Sidebar', 'oceanwp' ),
+                        'icon' => 'left-sidebar',
+                    ],
+                    'full-width'    => [
+                        'label' => esc_html__( 'Full Width', 'oceanwp' ),
+                        'icon' => 'full_width-no_sidebar',
+                    ],
+                    'full-screen'   => [
+                        'label' => esc_html__( '100% Full Width', 'oceanwp' ),
+                        'icon' => 'fullscreen_width',
+                    ],
+                    'both-sidebars' => [
+                        'label' => esc_html__( 'Both Sidebar', 'oceanwp' ),
+                        'icon' => 'both_sidebar_layout',
+                    ]
 				]
 			],
 

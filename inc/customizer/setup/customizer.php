@@ -308,6 +308,12 @@ class OceanWP_Customizer_Init {
 					}
 				}
 
+				if ( 'ocean-sortable' ===  $option_data['type'] ) {
+					if ( isset( $option_data['initialStatus'] ) ) {
+						$control_args['json']['initialStatus'] = $option_data['initialStatus'];
+					}
+				}
+
 				$wp_customize->add_control(
 					$option_key,
 					$control_args
@@ -351,7 +357,7 @@ class OceanWP_Customizer_Init {
 				if ( OCEAN_EXTRA_ACTIVE
 					&& class_exists( 'Ocean_Extra_Theme_Panel' ) ) {
 
-					if ( ! Ocean_Extra_Theme_Panel::get_setting( 'oe_'. $key .'_panel' ) ) {
+					if ( false === Ocean_Extra_Theme_Panel::get_setting( 'oe_'. $key .'_panel' ) ) {
 						unset($options[$option_key]);
 					}
 				}

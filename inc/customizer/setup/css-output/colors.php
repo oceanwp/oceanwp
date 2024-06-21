@@ -95,14 +95,30 @@ class OceanWP_Colors_CSS {
 		}
 
 		// Borders.
+		// if ( ! empty( $borders ) && '#13aff0' != $primary_color ) {
+		// 	foreach ( $borders as $key => $val ) {
+		// 		if (!is_array($val) && isset($val) && $val !== '') {
+		// 			var_dump($val);
+		// 			$css .= $key . '{border-color:' . $primary_color . ';}';
+		// 		} else {
+		// 			var_dump($val);
+		// 			$css .= $key . '{';
+		// 			$css .= 'border-' . $val . '-color:' . $primary_color . ';';
+		// 			$css .= '}';
+		// 		}
+		// 	}
+		// }
+
 		if ( ! empty( $borders ) && '#13aff0' != $primary_color ) {
 			foreach ( $borders as $key => $val ) {
-				if (!is_array($val) && isset($val) && $val !== '') {
+				if ( is_array( $val ) ) {
 					$css .= $key . '{';
-					$css .= 'border-' . $val . '-color:' . $primary_color . ';';
+					foreach ( $val as $key => $val ) {
+						$css .= 'border-' . $val . '-color:' . $primary_color . ';';
+					}
 					$css .= '}';
 				} else {
-					$css .= $key . '{border-color:' . $primary_color . ';}';
+					$css .= $val . '{border-color:' . $primary_color . ';}';
 				}
 			}
 		}

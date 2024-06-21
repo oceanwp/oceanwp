@@ -875,3 +875,14 @@ function oceanwp_cac_is_ld_lesson_rl_layout() {
 		return false;
 	}
 }
+
+function ocean_upsell_notice_callback() {
+	if ( class_exists('Ocean_Extra') ) {
+		if ( function_exists('ocean_check_pro_license') && null !== ocean_check_pro_license() ) {
+			if ( class_exists('Ocean_Sticky_Header') || class_exists('Ocean_eCommerce') ) {
+				return false;
+			}
+		}
+	}
+	return true;
+}

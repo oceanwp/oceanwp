@@ -60,6 +60,16 @@ $options = [
 		'priority' => 1,
 		'options' => ocean_customize_options( 'footer-copyright' )
 	],
+	'ocean_seo_settings' => [
+		'title' => __( 'SEO Settings', 'oceanwp' ),
+		'priority' => 1,
+		'options' => ocean_customize_options( 'seo' )
+	],
+	'ocean_site_performance' => [
+		'title' => __( 'Site Performance', 'oceanwp' ),
+		'priority' => 1,
+		'options' => ocean_customize_options( 'performance' )
+	],
 	'ocean_woocommerce_settings' => [
 		'title' => __( 'WooCommerce', 'oceanwp' ),
 		'priority' => 1,

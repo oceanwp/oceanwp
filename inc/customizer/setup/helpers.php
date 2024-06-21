@@ -359,3 +359,26 @@ function ocean_get_page_choices( $name = '', $selected = '', $show_option_none =
 
 	return $dropdown;
 }
+
+function ocean_render_upsell_notice() {
+    $check_icon = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M400-304 240-464l56-56 104 104 264-264 56 56-320 320Z"/></svg>';
+	ob_start();
+	?>
+    <div class="ocean-upsell-container">
+        <h3 class="upsell-heading"><?php echo esc_html__( 'Supercharge Your Site with OceanWP Pro Add-Ons!', 'oceanwp' ); ?></h3>
+        <p><?php echo esc_html__( 'Why Upgrade to Pro?', 'oceanwp' ); ?></p>
+        <ul class="upsell-content">
+            <li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky header', 'oceanwp' ); ?></li>
+			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Popup login', 'oceanwp' ); ?></li>
+			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Advanced hooks', 'oceanwp' ); ?></li>
+			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Readymade templates', 'oceanwp' ); ?></li>
+			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Page level settings', 'oceanwp' ); ?></li>
+			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Multiple header style', 'oceanwp' ); ?></li>
+            <li><?php echo $check_icon; ?> <?php echo esc_html__( 'Top level support', 'oceanwp' ); ?></li>
+		</ul>
+
+		<a href="#" class="button button-secondary">Upgrade to OceanWP Pro</a>
+    </div>
+    <?php
+	return ob_get_clean();
+}

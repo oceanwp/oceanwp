@@ -972,6 +972,16 @@ $options = [
 		'active_callback' => 'ocean_cac_topbar',
 	],
 
+	'ocean_topbar_upsell_notice' => [
+		'type' => 'ocean-content',
+		'isContent' => ocean_render_upsell_notice(),
+		'section' => 'ocean_topbar',
+		'class' => 'description',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'active_callback' => 'ocean_upsell_notice_callback'
+	],
+
 	'ocean_topbar_whatnext_links' => [
 		'type' => 'ocean-links',
 		'label' => esc_html__('What to do next?', 'oceanwp'),
