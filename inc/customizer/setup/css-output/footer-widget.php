@@ -42,6 +42,9 @@ class OceanWP_Customize_Footer_Widget_CSS {
         $footer_link_color            = get_theme_mod( 'ocean_footer_link_color', '#ffffff' );
         $footer_link_color_hover      = get_theme_mod( 'ocean_footer_link_color_hover', '#13aff0' );
 
+        $footer_widget_title_typography  = get_theme_mod('footer_widget_title_typography');
+		$footer_widget_title_typography  = isset($footer_widget_title_typography['color']) ? $footer_widget_title_typography['color'] : '#ffffff';
+
         // Define css var.
         $css = '';
 
@@ -72,6 +75,10 @@ class OceanWP_Customize_Footer_Widget_CSS {
         // Footer background.
         if ( ! empty( $footer_background ) && '#222222' != $footer_background ) {
             $css .= '#footer-widgets{background-color:' . $footer_background . ';}';
+        }
+
+        if ( ! empty( $footer_widget_title_typography ) && '#ffffff' != $footer_widget_title_typography ) {
+            $css .= '#footer-widgets .footer-box .widget-title{color:' . $footer_widget_title_typography . ';}';
         }
 
         // Footer color.
