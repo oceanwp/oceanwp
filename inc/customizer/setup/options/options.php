@@ -62,35 +62,36 @@ $options = [
 	],
 	'ocean_seo_settings' => [
 		'title' => __( 'SEO Settings', 'oceanwp' ),
-		'priority' => 1,
+		'priority' => 2,
 		'options' => ocean_customize_options( 'seo' )
 	],
 	'ocean_site_performance' => [
 		'title' => __( 'Site Performance', 'oceanwp' ),
-		'priority' => 1,
+		'priority' => 4,
 		'options' => ocean_customize_options( 'performance' )
 	],
+
 	'ocean_woocommerce_settings' => [
 		'title' => __( 'WooCommerce', 'oceanwp' ),
-		'priority' => 1,
+		'priority' => 8,
 		'options' => ocean_customize_options( 'woocommerce' ),
 		'condition' => OCEANWP_WOOCOMMERCE_ACTIVE
 	],
 	'ocean_edd_settings' => [
 		'title' => __( 'Easy Digital Downloads', 'oceanwp' ),
-		'priority' => 2,
+		'priority' => 9,
 		'options' => ocean_customize_options( 'edd' ),
 		'condition' => OCEANWP_EDD_ACTIVE
 	],
 	'ocean_learndash_settings' => [
 		'title' => __( 'LearnDash', 'oceanwp' ),
-		'priority' => 3,
+		'priority' => 10,
 		'options' => ocean_customize_options( 'learndash' ),
 		'condition' => OCEANWP_LEARNDASH_ACTIVE
 	],
 	'ocean_lifterlms_settings' => [
 		'title' => __( 'LifterLMS', 'oceanwp' ),
-		'priority' => 4,
+		'priority' => 11,
 		'options' => ocean_customize_options( 'lifterlms' ),
 		'condition' => OCEANWP_LIFTERLMS_ACTIVE
 	]
