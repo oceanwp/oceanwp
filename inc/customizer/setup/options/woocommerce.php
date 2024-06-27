@@ -7464,7 +7464,7 @@ $options = [
         'type' => 'ocean-spacer',
         'section' => 'ocean_woocommerce_settings',
         'transport' => 'postMessage',
-        'priority' => 10,
+        'priority' => 20,
         'top' => 1,
         'bottom' => 10,
     ],
@@ -7475,13 +7475,13 @@ $options = [
 		'section' => 'ocean_woocommerce_settings',
 		'after' => 'ocean_spacer_for_woo_product_image_section',
 		'class' => 'section-site-layout',
-		'priority' => 10,
+		'priority' => 20,
 		'options' => [
             'ocean_divider_before_woocommgderce_store_color_settings' => [
                 'type' => 'ocean-divider',
                 'section' => 'woocommerce_product_images',
                 'transport' => 'postMessage',
-                'priority' => 10,
+                'priority' => 20,
                 'top' => 20,
                 'bottom' => 20
             ],

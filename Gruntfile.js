@@ -412,6 +412,7 @@ module.exports = function (grunt) {
         src: [
           "**",
           "!node_modules/**",
+          "!**/node_modules/**",
           "!bower_components/**",
           "!build/**",
           "!vendor/**",
