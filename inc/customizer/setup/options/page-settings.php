@@ -846,9 +846,9 @@ $options = [
 
 					],
 
-					'ocean_title_for_site_background' => [
+					'ocean_title_for_page_title_typography_and_color' => [
 						'type' => 'ocean-title',
-						'label' => esc_html__( 'Typography and Color', 'oceanwp' ),
+						'label' => esc_html__( 'Typography and Colors', 'oceanwp' ),
 						'section' => 'ocean_section_page_title_style',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -1480,7 +1480,7 @@ $options = [
 
 			'ocean_title_for_breadcrumb_typography_and_colors' => [
 				'type' => 'ocean-title',
-				'label' => esc_html__( 'Typography and Color', 'oceanwp' ),
+				'label' => esc_html__( 'Typography and Colors', 'oceanwp' ),
 				'section' => 'ocean_section_page_breadcrumb',
 				'transport' => 'postMessage',
 				'priority' => 10,

@@ -1,30 +1,1388 @@
-.ocean-customize-component-color-picker .components-base-control__field{align-items:center;display:flex;justify-content:space-between;margin-bottom:0}.ocean-customize-component-color-picker .components-circular-button-icon.close-color{border-radius:0 4px 0 0;box-shadow:-1px 0 8px -5px rgba(33,35,38,.39);height:48px}.ocean-customize-component-color-picker .color-picker__container{width:100%}.ocean-customize-component-color-picker .color-picker__popup{display:none;margin-top:10px;right:0;width:100%;z-index:9}.ocean-customize-component-color-picker .color-picker__popup.show-popup{display:block}.ocean-customize-component-color-picker .color-picker__popup.style-inline{position:absolute}.ocean-customize-component-color-picker .color-picker__popup .color-picker__popup--area{background-color:#fff;border-radius:4px;box-shadow:0 8px 16px -4px rgba(30,41,59,.16)}.ocean-customize-component-color-picker .color-picker__palette{position:relative}.ocean-customize-component-color-picker .color-picker__palette .components-flex{overflow-x:auto;overflow-y:hidden;width:100%}.ocean-customize-component-color-picker .color-picker__palette .components-flex::-webkit-scrollbar{display:none}.ocean-customize-component-color-picker .color-picker__palette .components-circular-option-picker .components-circular-option-picker__swatches{display:flex;flex-wrap:nowrap;gap:6px;justify-content:flex-start;margin-right:0;padding:5px 0 5px 3px;position:relative;z-index:1}.ocean-customize-component-color-picker .color-picker__palette .components-circular-option-picker .components-circular-option-picker__swatches .components-circular-option-picker__option-wrapper{margin-right:0}.ocean-customize-component-color-picker .color-picker__sketch .components-color-picker,.ocean-customize-component-color-picker .color-picker__sketch .react-colorful{width:100%}.ocean-customize-component-color-picker .color-picker__sketch .components-color-picker .react-colorful__alpha,.ocean-customize-component-color-picker .color-picker__sketch .components-color-picker .react-colorful__hue,.ocean-customize-component-color-picker .color-picker__sketch .react-colorful .react-colorful__alpha,.ocean-customize-component-color-picker .color-picker__sketch .react-colorful .react-colorful__hue{width:90%}.ocean-customize-component-color-picker .color-picker__reset{padding:10px}.ocean-customize-component-color-picker .color-picker__reset .color-picker__reset-wrap{align-items:center;background:#f1f1f1;border-radius:3px;display:flex;justify-content:space-between;padding:0 10px}.ocean-customize-component-color-picker .color-picker__reset .color-picker__reset-wrap .color-picker-reset__button .circular-button-icon{box-shadow:none;padding:0}
-.ocean-customize-control__color-picker .customize-control-title{margin:0}.ocean-customize-control__color-picker .components-base-control__field{align-items:center;display:flex;justify-content:space-between}.ocean-customize-control__color-picker .components-base-control__field .control__color-picker--button-wrap{align-items:center;display:flex;gap:7px}.ocean-customize-control__color-picker .components-base-control__field .control__color-picker--button-wrap .components-base-control__field{margin-bottom:0}
-:root{--cssPosition:50%}.ocean-customize-component-range-slider{width:100%}.ocean-customize-component-range-slider .range-slider__container{align-items:center;display:flex;justify-content:space-between;margin-bottom:20px}.ocean-customize-component-range-slider .range-slider__container .range-slider--slider{border-radius:2px;cursor:pointer;height:18px;margin-inline-end:16px;position:relative;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:calc(67% - 5px)}.ocean-customize-component-range-slider .range-slider__container .range-slider--slider .range-slider--range-input{box-sizing:border-box;cursor:pointer;display:block;height:100%;left:0;margin:0 -6px;opacity:0;outline:none;position:absolute;right:0;top:0;width:calc(100% + 12px)}.ocean-customize-component-range-slider .range-slider__container .range-slider--slider .range-slider--track{border-radius:2px;cursor:pointer;height:18px;margin-inline-end:14px;position:relative;-webkit-user-select:none;-moz-user-select:none;user-select:none}.ocean-customize-component-range-slider .range-slider__container .range-slider--slider .range-slider--track:before{background:#cdd0d2;border-radius:inherit;content:"";height:2px;left:0;position:absolute;top:calc(50% - 1px);width:calc(100% + 14px)}.ocean-customize-component-range-slider .range-slider__container .range-slider--slider .range-slider--track div{background:var(--wp-components-color-accent,var(--wp-admin-theme-color,#007cba));border-radius:inherit;height:2px;left:0;padding-right:7px;position:absolute;top:calc(50% - 1px)}.ocean-customize-component-range-slider .range-slider__container .range-slider--slider .range-slider--track span{background:var(--wp-components-color-accent,var(--wp-admin-theme-color,#007cba));border-radius:100%;bottom:0;height:14px;left:var(--cssPosition);margin:auto 0;outline:none;position:absolute;top:0;transition:box-shadow .1s ease,background .1s ease;width:14px}.ocean-customize-component-range-slider .range-slider__container .range-slider--input{align-items:center;background:#fff;border:1px solid #cfcece;border-radius:3px;box-sizing:border-box;display:grid;grid-template-columns:repeat(1,1fr);height:30px;position:relative;transition:background .1s ease,border-color .1s ease;width:20%}.ocean-customize-component-range-slider .range-slider__container .range-slider--input input[type=number]{-moz-appearance:textfield;min-width:0;position:relative;text-align:center;z-index:1}.ocean-customize-component-range-slider .range-slider__container .range-slider--input input[type=number]::-webkit-inner-spin-button,.ocean-customize-component-range-slider .range-slider__container .range-slider--input input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.ocean-customize-component-range-slider .range-slider__container .range-slider--input input[type=number],.ocean-customize-component-range-slider .range-slider__container .range-slider--input input[type=text]{background-color:transparent;border:1px solid transparent!important;border-radius:3px!important;box-shadow:0 0 0 0 transparent;color:#555d66;font-size:11px!important;height:30px!important;line-height:normal;margin:-1px!important;min-height:auto;padding:5px!important;transition:box-shadow .1s linear,background .1s linear,border-radius .1s linear,border-color .1s linear;width:auto!important}.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit{align-items:center;color:#555d66;cursor:pointer;display:flex;flex-grow:1;font-size:10px;font-weight:600;height:100%;justify-content:center;letter-spacing:1px;line-height:normal;position:relative;text-transform:uppercase;transition:color .1s ease,font-weight .1s ease;-webkit-user-select:none;-moz-user-select:none;user-select:none}.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit:before{background:#ccc;content:"";height:50%;left:0;position:absolute;width:1px}.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit-list{grid-column-gap:5px;background:#fff;border:1px solid #ddd;border-radius:inherit;box-shadow:0 15px 15px rgba(0,0,0,.08);box-sizing:border-box;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));left:-1px;opacity:0;padding:0 2px;position:absolute;top:-1px;transform:scale3d(.95,.95,1);transform-origin:center top;transition:opacity .1s ease,visibility .1s ease,transform .1s ease-out;visibility:hidden;width:calc(100% + 2px);z-index:2}.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit-list.show{opacity:1;transform:scaleX(1);visibility:visible}.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit-list:after{align-self:center;border-inline-start:1px dashed #eee;content:"";height:calc(100% - 6px);justify-self:center;margin-inline-start:1px;position:absolute;width:1px}.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit-list .unit-option{align-items:center;background:inherit;border-bottom:1px dashed #eee;color:#555d66;cursor:pointer;display:flex;font-size:9px;font-weight:700;height:26px;justify-content:center;letter-spacing:.06em;padding:2px 0;position:relative;text-transform:uppercase;z-index:1}
-.ocean-customize-component-device-preview{display:flex;justify-content:flex-end}.ocean-customize-component-device-preview .ocean-device-preview{border-style:none;box-shadow:none!important;height:24px;padding:5px;width:24px}.ocean-customize-component-device-preview .ocean-device-preview.active-tab{color:var(--wp-admin-theme-color)}.ocean-customize-component-device-preview .ocean-device-preview .dashicon{font-size:15px;line-height:20px}
-.control__range_slider--header{align-items:center;display:flex;justify-content:space-between;margin-bottom:10px}.control__range_slider--header .customize-control-title,.control__range_slider--header .ocean-component-device-preview{margin:0}.control__range_slider--slider.has-unit--flex .range-slider--input{grid-template-columns:repeat(2,1fr);width:33%}
-.ocean-customize-component-typograhpy-popup .typography__popup{display:none;margin-top:10px;width:100%}.ocean-customize-component-typograhpy-popup .typography__popup.show-popup{display:block}.ocean-customize-component-typograhpy-popup .typography__popup--area{background-color:#fff;border-radius:4px;box-shadow:0 8px 16px -4px rgba(30,41,59,.16)}.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar{align-items:center;border-bottom:1px solid #eaeaea;display:flex;justify-content:space-between;padding:5px 10px}.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .components-button-group{align-items:center;display:flex;gap:10px}.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .components-button-group .components-button{margin:0}.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .ocean-customize-component-device-preview{margin-bottom:0}.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .ocean-customize-component-device-preview .dashicon{font-size:18px}.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .toolbar-additional{align-items:center;display:flex;gap:5px}.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .toolbar-additional .add-buttons{align-items:center;box-shadow:none!important;display:flex;padding:0}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area{padding:10px}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-component-label{margin-bottom:8px}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-component-label--text{font-weight:600;text-transform:capitalize}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .components-select-control .components-input-control__label{font-size:13px;font-weight:600;text-transform:capitalize}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .react-select__control{cursor:pointer}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .react-select__value-container{position:static}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .react-select__value-container .react-select__single-value{align-items:center;display:flex;flex-direction:row;height:100%}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .react-select__value-container input.react-select__input{box-shadow:none}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--content__font-family,.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--content__font-family .ocean-component-label{margin-bottom:8px}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--content__font-family .ocean-component-label--text{font-weight:600;text-transform:capitalize}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--font-object{display:flex;flex-direction:row;flex-grow:1;justify-content:center}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--font-object .ocean-font-object:nth-of-type(n+1){width:100%}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--font-object .ocean-font-object:nth-of-type(2){padding-left:15px}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-typograhpy--content__text-transform .ocean-editor-control-button.is-primary{z-index:0}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--font-formats{padding:10px 0}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-typograhpy--content__text-decoration .td-overline{text-decoration:overline}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-typograhpy--content__text-decoration .td-underline{text-decoration:underline}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-typograhpy--content__text-decoration .td-line-through{text-decoration:line-through}.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-typograhpy--content__text-decoration .td-underline-overline{text-decoration:underline overline}.ocean-customize-component-typograhpy-button .components-typography__item{animation:.3s ease-in-out;background:var(--ocean-customize-color-background-circular-btn);color:var(--ocean-customize-color-circular-btn);position:relative}.ocean-customize-component-typograhpy-button .components-typography__item.has-icon{min-width:10px;padding:5px}.ocean-customize-component-typograhpy-button .components-typography__item.has-icon .dashicon{color:var(--ocean-customize-color-icon-circular-btn);font-size:16px;margin-left:0}.ocean-customize-component-typograhpy-button .components-typography__item.has-icon svg{color:var(--ocean-customize-color-icon-circular-btn);height:16px;margin:1px 0 0 1px;width:16px}.ocean-customize-component-typograhpy-button .components-typography__item:after{border-color:var(--ocean-customize-color-border-circular-btn);box-shadow:inset 0 0 0 .3px var(--ocean-customize-color-boxshadow-circular-btn)}.ocean-customize-component-typograhpy-button .components-typography__item:hover,.ocean-customize-component-typograhpy-button .components-typography__item[aria-expanded=true]{color:var(--ocean-customize-color-circular-btn-active)}.ocean-customize-component-typograhpy-button .components-typography__item:hover .dashicon,.ocean-customize-component-typograhpy-button .components-typography__item:hover svg,.ocean-customize-component-typograhpy-button .components-typography__item[aria-expanded=true] .dashicon,.ocean-customize-component-typograhpy-button .components-typography__item[aria-expanded=true] svg{color:var(--ocean-customize-color-icon-circular-btn-active)}.ocean-customize-component-typograhpy-button .components-typography__item:hover:after,.ocean-customize-component-typograhpy-button .components-typography__item[aria-expanded=true]:after{border-width:1px;box-shadow:inset 0 0 0 1px var(--ocean-customize-color-boxshadow-circular-btn-active)}.ocean-customize-component-typograhpy-button .components-typography__item:active,.ocean-customize-component-typograhpy-button .components-typography__item:focus{background-color:var(--ocean-customize-color-circular-btn-active);color:var(--ocean-customize-color-circular-btn-active)}.ocean-customize-component-typograhpy-button .components-typography__item:active .dashicon,.ocean-customize-component-typograhpy-button .components-typography__item:active svg,.ocean-customize-component-typograhpy-button .components-typography__item:focus .dashicon,.ocean-customize-component-typograhpy-button .components-typography__item:focus svg{color:var(--ocean-customize-color-icon-circular-btn-active)}.ocean-customize-component-typograhpy-button .components-typography__item:active:after,.ocean-customize-component-typograhpy-button .components-typography__item:focus:after{border-width:1px;box-shadow:inset 0 0 0 1px var(--ocean-customize-color-boxshadow-circular-btn-active)}.ocean-customize-typography__color-picker{align-items:center;display:flex;justify-content:space-between}.ocean-customize-typography__color-picker .color-picker-inline-wrap{align-items:center;display:flex;gap:8px;justify-content:space-between;padding:8px 0}.ocean-customize-typography__color-picker .color-label{align-items:center;cursor:pointer;display:flex;font-size:14px;font-weight:600;gap:8px;line-height:1.75;margin-bottom:4px;transition:.2s ease-in-out}.ocean-customize-typography__color-picker .color-label:hover{transform:scale(1.1)}
-.ocean-customize-control__typography .customize-control-title{margin:0}.ocean-customize-control__typography>.components-base-control__field{align-items:center;display:flex;justify-content:space-between}.ocean-customize-control__typography>.components-base-control__field .control__typography--button-wrap{align-items:center;display:flex;gap:7px}.ocean-customize-control__typography>.components-base-control__field .control__typography--button-wrap .components-base-control__field{margin-bottom:0}
-:root{--hue-color:225;--first-color:hsl(var(--hue-color),48%,35%);--title-color:hsl(var(--hue-color),48%,22%);--text-color:hsl(var(--hue-color),12%,35%);--owp-accordian-small-font-size:.813rem;--owp-accordian-smaller-font-size:.75rem}@media screen and (min-width:968px){:root{--owp-accordian-small-font-size:.875rem;--owp-accordian-smaller-font-size:.813rem}}.ocean-accordion-component{align-content:center;display:grid}.ocean-accordion-component .accordion__container{display:grid;row-gap:.75rem}.ocean-accordion-component .accordion__title{color:var(--title-color);font-size:var(--owp-accordian-small-font-size);font-weight:400;margin-bottom:0;margin-top:.15rem;text-transform:capitalize;transition:.2s}.ocean-accordion-component .accordion__header{-moz-column-gap:.5rem;column-gap:.5rem;cursor:pointer;display:flex;padding:.75rem}.ocean-accordion-component .accordion__description{font-size:var(--owp-accordian-smaller-font-size);padding:.5rem .75rem 1rem}.ocean-accordion-component .accordion__icon{color:var(--title-color);font-size:1.5rem;height:-moz-max-content;height:max-content;transition:.3s}.ocean-accordion-component .accordion__item{background-color:#e4f5fc;border-radius:.25rem;box-shadow:0 2px 6px rgba(38,38,38,.1);position:relative;transition:all .25s ease}.ocean-accordion-component .accordion__item:after{background-color:#84d4ff;border-radius:.25rem 0 0 .25rem;content:"";height:100%;left:0;position:absolute;top:0;width:5px}.ocean-accordion-component .accordion__content{height:0;overflow:hidden;transition:height .3s ease}.accordion-open .accordion__icon{transform:rotate(45deg)}.accordion-open .accordion__title{font-weight:600}.accordion-open .accordion__content{height:auto}.accordion-open.accordion__item{background-color:#ebfffc}.accordion-open.accordion__item:after{background-color:#5ad882}
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/color-picker/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-component-color-picker .components-base-control__field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+.ocean-customize-component-color-picker .components-circular-button-icon.close-color {
+  box-shadow: rgba(33, 35, 38, 0.39) -1px 0px 8px -5px;
+  height: 48px;
+  border-radius: 0 4px 0 0;
+}
+.ocean-customize-component-color-picker .color-picker__container {
+  width: 100%;
+}
+.ocean-customize-component-color-picker .color-picker__popup {
+  z-index: 9;
+  right: 0;
+  width: 100%;
+  display: none;
+  margin-top: 10px;
+}
+.ocean-customize-component-color-picker .color-picker__popup.show-popup {
+  display: block;
+}
+.ocean-customize-component-color-picker .color-picker__popup.style-inline {
+  position: absolute;
+}
+.ocean-customize-component-color-picker .color-picker__popup .color-picker__popup--area {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px -4px rgba(30, 41, 59, 0.16);
+}
+.ocean-customize-component-color-picker .color-picker__palette {
+  position: relative;
+}
+.ocean-customize-component-color-picker .color-picker__palette .components-flex {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.ocean-customize-component-color-picker .color-picker__palette .components-flex::-webkit-scrollbar {
+  display: none;
+}
+.ocean-customize-component-color-picker .color-picker__palette .components-circular-option-picker .components-circular-option-picker__swatches {
+  margin-right: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 1;
+  gap: 6px;
+  padding: 5px 0 5px 3px;
+}
+.ocean-customize-component-color-picker .color-picker__palette .components-circular-option-picker .components-circular-option-picker__swatches .components-circular-option-picker__option-wrapper {
+  margin-right: 0;
+}
+.ocean-customize-component-color-picker .color-picker__sketch .components-color-picker,
+.ocean-customize-component-color-picker .color-picker__sketch .react-colorful {
+  width: 100%;
+}
+.ocean-customize-component-color-picker .color-picker__sketch .components-color-picker .react-colorful__hue,
+.ocean-customize-component-color-picker .color-picker__sketch .components-color-picker .react-colorful__alpha,
+.ocean-customize-component-color-picker .color-picker__sketch .react-colorful .react-colorful__hue,
+.ocean-customize-component-color-picker .color-picker__sketch .react-colorful .react-colorful__alpha {
+  width: 90%;
+}
+.ocean-customize-component-color-picker .color-picker__reset {
+  padding: 10px;
+}
+.ocean-customize-component-color-picker .color-picker__reset .color-picker__reset-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+.ocean-customize-component-color-picker .color-picker__reset .color-picker__reset-wrap .color-picker-reset__button .circular-button-icon {
+  padding: 0;
+  box-shadow: none;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/color-picker/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__color-picker .customize-control-title {
+  margin: 0;
+}
+.ocean-customize-control__color-picker .components-base-control__field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ocean-customize-control__color-picker .components-base-control__field .control__color-picker--button-wrap {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.ocean-customize-control__color-picker .components-base-control__field .control__color-picker--button-wrap .components-base-control__field {
+  margin-bottom: 0;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/range-slider/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+:root {
+  --cssPosition: 50%;
+}
 
-.ocean-customize-control__radio-image .ocean-accordion-component .accordion__item.accordion-open .accordion__icon{transform:rotate(90deg)}.ocean-customize-control__radio-image .ocean-accordion-component .accordion__item.accordion-open:after{display:none}.radio-image__container{display:flex;justify-content:center}.radio-image__container .radio-image__options{display:grid;gap:8px;grid-template-columns:repeat(2,1fr)}.radio-image__container .option{align-items:center;cursor:pointer;display:flex;flex-direction:column;transition:opacity .3s ease}.radio-image__container .option img,.radio-image__container .option svg{height:100%;width:100%}
-.ocean-customize-control__button-group .ocean-component-button-group{margin-top:20px}
-.ocean-customize-component-spacing .spacing__container{display:flex}.ocean-customize-component-spacing .spacing__container .spacing-item{flex:1 1;text-align:center}.ocean-customize-component-spacing .spacing__container .spacing-item input{border:1px solid #a4afb7;border-left:0;color:#3d3d3d;font-size:13px;height:28px}.ocean-customize-component-spacing .spacing__container .spacing-item input::-moz-placeholder{color:#a0a0a0}.ocean-customize-component-spacing .spacing__container .spacing-item input::placeholder{color:#a0a0a0}.ocean-customize-component-spacing .spacing__container .spacing-item input[readonly]{background-color:#e6e6e6}.ocean-customize-component-spacing .spacing__container .spacing-item:first-child input{border-left:1px solid;border-radius:3px 0 0 3px}.ocean-customize-component-spacing .spacing__container .spacing-item-label{color:#949698;font-size:12px}.ocean-customize-component-spacing .spacing__container .spacing-item .spacing__locked{border:1px solid #a4afb7;border-left:0;border-radius:0 3px 3px 0;box-shadow:unset;display:flex;height:30px;justify-content:center;width:100%}.ocean-customize-component-spacing .spacing__container .spacing-item .spacing__locked.is-secondary{background-color:#fff}
-.ocean-customize-control__spacing .control__spacing--header{align-items:center;display:flex;justify-content:space-between;margin-bottom:10px}.ocean-customize-control__spacing .control__spacing--header .customize-control-title,.ocean-customize-control__spacing .control__spacing--header .ocean-component-device-preview{margin:0}
-.ocean-customize-control__image-picker .image-picker--placeholder{align-items:center;background-color:#fff;border:1px dashed #feac68;border-radius:3px;color:#a5a5a5;cursor:pointer;display:flex;height:50px;justify-content:center}.ocean-customize-control__image-picker .image-picker--image{background-color:#fff;display:flex;justify-content:center}.ocean-customize-control__image-picker .image-picker--buttons{background-color:#fff;padding:5px}.ocean-customize-control__image-picker .image-picker--buttons .components-button-group{display:flex;gap:10px;justify-content:space-between;width:100%}.ocean-customize-control__image-picker .image-picker--buttons .components-button-group button{display:inline-block;flex-grow:1;text-align:center;width:45%}
-.ocean-customize-control__switch .switch--container{align-items:center;display:flex;justify-content:space-between;margin:15px 0}.ocean-customize-control__switch .switch--container .customize-control-title{margin:0}.ocean-customize-control__switch .switch--content .components-toggle-control{margin-bottom:0}.ocean-customize-control__switch .switch--content .components-toggle-control>div>*{gap:0}
-.ocean-customize-control__sortable .ocean-accordion-component .accordion__item.accordion-open{background-color:#fff}.ocean-customize-control__sortable .ocean-accordion-component .accordion__item.accordion-open .accordion__icon{transform:rotate(90deg)}.ocean-customize-control__sortable .ocean-accordion-component .accordion__item.accordion-open:after{display:none}.ocean-customize-control-sortable--list{-webkit-user-select:none;-moz-user-select:none;user-select:none}.ocean-customize-control-sortable--item{align-items:center;background-color:#ebfffc;border-radius:.25rem;box-shadow:0 2px 5px 0 rgba(50,50,105,.15),0 1px 1px 0 rgba(0,0,0,.05);color:#1b1b1b;cursor:grab;display:flex;flex-shrink:0;height:50px;justify-content:space-between;margin-bottom:10px;position:relative}.ocean-customize-control-sortable--item .item--inner{align-items:center;display:flex;height:100%}.ocean-customize-control-sortable--item .item--inner .item-icon-display{box-shadow:none;width:45px}.ocean-customize-control-sortable--item .item-icon-drag{margin-right:5px}.ocean-customize-control-sortable--item.disabled{background-color:#eaeaea}.ocean-customize-control-sortable--item.dragged{background-color:#adf7ec;z-index:99999999999}.ocean-customize-control-sortable--item.dragged.disabled{background-color:#eaeaea}
-.ocean-customize-control__select .components-select-control__input{height:35px!important}.ocean-customize-control__select .control__select--content{margin-top:20px}
+.ocean-customize-component-range-slider {
+  width: 100%;
+}
+.ocean-customize-component-range-slider .range-slider__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--slider {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  height: 18px;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-inline-end: 16px;
+  width: calc(67% - 5px);
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--slider .range-slider--range-input {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  left: 0px;
+  margin: 0px -6px;
+  opacity: 0;
+  outline: none;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: calc(100% + 12px);
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--slider .range-slider--track {
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  height: 18px;
+  cursor: pointer;
+  border-radius: 2px;
+  margin-inline-end: 14px;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--slider .range-slider--track::before {
+  position: absolute;
+  content: "";
+  top: calc(50% - 1px);
+  left: 0;
+  width: calc(100% + 14px);
+  height: 2px;
+  border-radius: inherit;
+  background: #cdd0d2;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--slider .range-slider--track div {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  height: 2px;
+  padding-right: 7px;
+  background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #007cba));
+  border-radius: inherit;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--slider .range-slider--track span {
+  position: absolute;
+  top: 0;
+  left: var(--cssPosition);
+  bottom: 0;
+  margin: auto 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background: var(--wp-components-color-accent, var(--wp-admin-theme-color, #007cba));
+  transition: box-shadow 0.1s ease, background 0.1s ease;
+  outline: none;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  position: relative;
+  height: 30px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 1px solid #cfcece;
+  background: #fff;
+  transition: background 0.1s ease, border-color 0.1s ease;
+  width: 20%;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input input[type=number] {
+  -moz-appearance: textfield;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  text-align: center;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input input[type=number]::-webkit-outer-spin-button, .ocean-customize-component-range-slider .range-slider__container .range-slider--input input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input input[type=number],
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input input[type=text] {
+  height: 30px !important;
+  width: auto !important;
+  margin: -1px !important;
+  padding: 5px !important;
+  min-height: initial;
+  font-size: 11px !important;
+  color: #555d66;
+  line-height: normal;
+  background-color: transparent;
+  border: 1px solid transparent !important;
+  border-radius: 3px !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow 0.1s linear, background 0.1s linear, border-radius 0.1s linear, border-color 0.1s linear;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  position: relative;
+  cursor: pointer;
+  height: 100%;
+  color: #555d66;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  transition: color 0.1s ease, font-weight 0.1s ease;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 1px;
+  height: 50%;
+  background: #ccc;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-column-gap: 5px;
+  position: absolute;
+  z-index: 2;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  padding: 0 2px;
+  background: #fff;
+  border-radius: inherit;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: center top;
+  transform: scale3d(0.95, 0.95, 1);
+  transition: opacity 0.1s ease, visibility 0.1s ease, transform 0.1s ease-out;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit-list.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale3d(1, 1, 1);
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit-list::after {
+  justify-self: center;
+  align-self: center;
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: calc(100% - 6px);
+  margin-inline-start: 1px;
+  border-inline-start: 1px dashed #eee;
+}
+.ocean-customize-component-range-slider .range-slider__container .range-slider--input .range-slider--unit-list .unit-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  padding: 2px 0;
+  cursor: pointer;
+  height: 26px;
+  color: #555d66;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: inherit;
+  border-bottom: 1px dashed #eee;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/device-type/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-component-device-preview {
+  display: flex;
+  justify-content: flex-end;
+}
+.ocean-customize-component-device-preview .ocean-device-preview {
+  height: 24px;
+  width: 24px;
+  padding: 5px;
+  box-shadow: none !important;
+  border-style: none;
+}
+.ocean-customize-component-device-preview .ocean-device-preview.active-tab {
+  color: var(--wp-admin-theme-color);
+}
+.ocean-customize-component-device-preview .ocean-device-preview .dashicon {
+  font-size: 15px;
+  line-height: 20px;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/range-slider/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.control__range_slider--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.control__range_slider--header .customize-control-title,
+.control__range_slider--header .ocean-component-device-preview {
+  margin: 0;
+}
 
-.ocean-customize-control__rich-text .control__rich-text--content .wp-editor-area{height:150px;margin:0;width:100%}
-.ocean-customize-control__text .components-text-control__input{height:35px!important}
+.control__range_slider--slider.has-unit--flex .range-slider--input {
+  grid-template-columns: repeat(2, 1fr);
+  width: 33%;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/typography/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-component-typograhpy-popup .typography__popup {
+  width: 100%;
+  display: none;
+  margin-top: 10px;
+}
+.ocean-customize-component-typograhpy-popup .typography__popup.show-popup {
+  display: block;
+}
+.ocean-customize-component-typograhpy-popup .typography__popup--area {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px -4px rgba(30, 41, 59, 0.16);
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .components-button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .components-button-group .components-button {
+  margin: 0;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .ocean-customize-component-device-preview {
+  margin-bottom: 0;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .ocean-customize-component-device-preview .dashicon {
+  font-size: 18px;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .toolbar-additional {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-toolbar .toolbar-additional .add-buttons {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  box-shadow: none !important;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area {
+  padding: 10px;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-component-label {
+  margin-bottom: 8px;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-component-label--text {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .components-select-control .components-input-control__label {
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 13px;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .react-select__control {
+  cursor: pointer;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .react-select__value-container {
+  position: initial;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .react-select__value-container .react-select__single-value {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .react-select__value-container input.react-select__input {
+  box-shadow: none;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--content__font-family {
+  margin-bottom: 8px;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--content__font-family .ocean-component-label {
+  margin-bottom: 8px;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--content__font-family .ocean-component-label--text {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--font-object {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-grow: 1;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--font-object .ocean-font-object:nth-of-type(n+1) {
+  width: 100%;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--font-object .ocean-font-object:nth-of-type(2) {
+  padding-left: 15px;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-typograhpy--content__text-transform .ocean-editor-control-button.is-primary {
+  z-index: 0;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .typograhpy--font-formats {
+  padding: 10px 0;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-typograhpy--content__text-decoration .td-overline {
+  text-decoration: overline;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-typograhpy--content__text-decoration .td-underline {
+  text-decoration: underline;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-typograhpy--content__text-decoration .td-line-through {
+  text-decoration: line-through;
+}
+.ocean-customize-component-typograhpy-popup .typograhpy-popup-area .ocean-typograhpy--content__text-decoration .td-underline-overline {
+  text-decoration: underline overline;
+}
 
-.ocean-customize-control__title .customize-control-title{background-color:#fff;border:1px solid var(--wp-admin-theme-color,var(--ocean-customize-color-primary));border-left:0;border-right:0;color:#080808;display:block;font-size:14px;font-weight:600;letter-spacing:.5px;line-height:1;margin:0 -12px;padding:13px 12px}
-.ocean-customize-control__divider .control__divider--span{border-bottom:1px solid #dadada;display:block;margin:20px 0}
-.ocean-customize-control__custom-content .control__custom-content-wrap.need-help{padding:50px}.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area{fill:currentColor;align-items:center;color:var(--ocean-customize-need-help-color,#8a8a8a);display:flex;justify-content:center}.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg,.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg svg{height:20px;width:20px}.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg,.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area svg{margin-left:7px}.ocean-customize-control__custom-content .control__custom-content-wrap.description{background-color:#f9f9f9;border:1px dashed #d1d1d1;border-radius:5px;display:block;font-style:normal;line-height:1.6;margin-top:10px;padding:10px}
-.ocean-customize-control__links{background-color:#f9f9f9;border:1px dashed #d1d1d1;border-radius:5px;line-height:1.6;margin-top:10px;padding:10px}.ocean-customize-control__links .whatnext .control__links--header .title--icon svg{width:30px}.ocean-customize-control__links .didyouknow .control__links--header .title--icon svg{width:18px}.ocean-customize-control__links .control__links--header .control__links--label{align-items:center;display:flex}.ocean-customize-control__links .control__links--header .title--icon{margin-right:8px}.ocean-customize-control__links .control__links--header .title--icon svg{width:15px}.ocean-customize-control__links .link--item{align-items:flex-start;display:flex;padding:3px;position:relative;width:-moz-fit-content;width:fit-content}.ocean-customize-control__links .link--item .link--icon{display:flex}.ocean-customize-control__links .link--item .link--icon .ocean-svg{align-items:center;display:flex;margin-right:8px}.ocean-customize-control__links .link--item .link--icon .ocean-svg svg{width:15px}.ocean-customize-control__links .link--item a{border-bottom:1px dashed transparent;box-shadow:none;outline:0;text-decoration:none}.ocean-customize-control__links .link--item a:focus,.ocean-customize-control__links .link--item a:hover{border-color:#1d1d1d}
+.ocean-customize-component-typograhpy-button .components-typography__item {
+  position: relative;
+  color: var(--ocean-customize-color-circular-btn);
+  background: var(--ocean-customize-color-background-circular-btn);
+  animation: 0.3s ease-in-out;
+}
+.ocean-customize-component-typograhpy-button .components-typography__item.has-icon {
+  min-width: 10px;
+  padding: 5px;
+}
+.ocean-customize-component-typograhpy-button .components-typography__item.has-icon .dashicon {
+  margin-left: 0;
+  font-size: 16px;
+  color: var(--ocean-customize-color-icon-circular-btn);
+}
+.ocean-customize-component-typograhpy-button .components-typography__item.has-icon svg {
+  width: 16px;
+  height: 16px;
+  color: var(--ocean-customize-color-icon-circular-btn);
+  margin: 1px 0 0 1px;
+}
+.ocean-customize-component-typograhpy-button .components-typography__item:after {
+  border-color: var(--ocean-customize-color-border-circular-btn);
+  box-shadow: inset 0 0 0 0.3px var(--ocean-customize-color-boxshadow-circular-btn);
+}
+.ocean-customize-component-typograhpy-button .components-typography__item:hover, .ocean-customize-component-typograhpy-button .components-typography__item[aria-expanded=true] {
+  color: var(--ocean-customize-color-circular-btn-active);
+}
+.ocean-customize-component-typograhpy-button .components-typography__item:hover .dashicon,
+.ocean-customize-component-typograhpy-button .components-typography__item:hover svg, .ocean-customize-component-typograhpy-button .components-typography__item[aria-expanded=true] .dashicon,
+.ocean-customize-component-typograhpy-button .components-typography__item[aria-expanded=true] svg {
+  color: var(--ocean-customize-color-icon-circular-btn-active);
+}
+.ocean-customize-component-typograhpy-button .components-typography__item:hover::after, .ocean-customize-component-typograhpy-button .components-typography__item[aria-expanded=true]::after {
+  border-width: 1px;
+  box-shadow: inset 0 0 0 1px var(--ocean-customize-color-boxshadow-circular-btn-active);
+}
+.ocean-customize-component-typograhpy-button .components-typography__item:focus, .ocean-customize-component-typograhpy-button .components-typography__item:active {
+  color: var(--ocean-customize-color-circular-btn-active);
+  background-color: var(--ocean-customize-color-circular-btn-active);
+}
+.ocean-customize-component-typograhpy-button .components-typography__item:focus .dashicon,
+.ocean-customize-component-typograhpy-button .components-typography__item:focus svg, .ocean-customize-component-typograhpy-button .components-typography__item:active .dashicon,
+.ocean-customize-component-typograhpy-button .components-typography__item:active svg {
+  color: var(--ocean-customize-color-icon-circular-btn-active);
+}
+.ocean-customize-component-typograhpy-button .components-typography__item:focus::after, .ocean-customize-component-typograhpy-button .components-typography__item:active::after {
+  border-width: 1px;
+  box-shadow: inset 0 0 0 1px var(--ocean-customize-color-boxshadow-circular-btn-active);
+}
 
-.control__social_links--content>*{margin-bottom:2em}.control__social_links--content>* .components-base-control__label{font-size:14px;text-transform:none}
-.ocean-customize-control__select .components-select-control__input{height:35px!important}.ocean-customize-control__select .control__select--content{margin-top:20px}
-.ocean-customize-control__custom-content .control__custom-content-wrap.need-help{padding:50px}.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area{fill:currentColor;align-items:center;color:var(--ocean-customize-need-help-color,#8a8a8a);display:flex;justify-content:center}.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg,.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg svg{height:20px;width:20px}.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg,.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area svg{margin-left:7px}.ocean-customize-control__custom-content .control__custom-content-wrap.description{background-color:#f9f9f9;border:1px dashed #d1d1d1;border-radius:5px;display:block;font-style:normal;line-height:1.6;margin-top:10px;padding:10px}
-:root{--ocean-customize-color-white:#fff;--ocean-customize-color-white-1:#f9f9f9;--ocean-customize-color-black:#000;--ocean-customize-color-grayish:#50575e;--ocean-customize-color-primary:#2271b1;--ocean-customize-color-secondary:#135e96;--ocean-customize-color-light-gray:#e7e7e7;--ocean-customize-color-light-gray-1:#d0d0d0}body{--ocean-customize-color-text:var(--ocean-customize-color-grayish);--ocean-customize-color-link:var(--ocean-customize-color-primary);--ocean-customize-color-background-section:var(--ocean-customize-color-white);--ocean-customize-color-background-inner:var(--ocean-customize-color-white-1);--ocean-customize-color-link-hover:var(--ocean-customize-color-secondary);--ocean-customize-color-border:var(--ocean-customize-color-light-gray);--ocean-customize-color-border-1:var(--ocean-customize-color-light-gray-1);--ocean-customize-color-background-circular-btn:var(--ocean-customize-color-white);--ocean-customize-color-background-circular-btn-active:var(--ocean-customize-color-white);--ocean-customize-color-border-circular-btn:var(--wp-admin-theme-color,var(--ocean-customize-color-primary));--ocean-customize-color-boxshadow-circular-btn:var(--wp-admin-theme-color,var(--ocean-customize-color-primary));--ocean-customize-color-boxshadow-circular-btn-active:var(--wp-admin-theme-color,var(--ocean-customize-color-primary));--ocean-customize-color-circular-btn:var(--ocean-customize-color-white);--ocean-customize-color-circular-btn-active:var(--ocean-customize-color-white);--ocean-customize-color-icon-circular-btn:var(--wp-admin-theme-color,var(--ocean-customize-color-primary));--ocean-customize-color-icon-circular-btn-active:var(--wp-admin-theme-color,var(--ocean-customize-color-secondary));--ocean-customize-color-border-title:var(--ocean-customize-color-primary)}body.dark-theme{--ocean-customize-color-background-container:var(--ocean-customize-color-white)}.customize-control:not(.customize-control-nav_menu_item){margin:0;padding:5px 0;position:relative}.customize-control-description,.ocean-customize-control--description{background-color:#f9f9f9;border:1px dashed #d1d1d1;border-radius:5px;display:block;font-style:normal;line-height:1.6;margin-top:10px;padding:10px}.ocean-customize-notice{position:relative}.ocean-customize-notice.is-warning{border:1px dashed #ffa229;border-radius:2px;font-size:12px;padding:3px 5px;width:100%}.ocean-component-button-group{display:block}.ocean-component-button-group .ocean-component-button-group__buttons{align-items:center;display:flex;flex-direction:row;margin-bottom:24px;width:100%}.ocean-component-button-group .ocean-component-button-group__buttons.is-wrap{flex-wrap:wrap}.ocean-component-button-group .ocean-component-button-group__buttons.is-wrap .components-button{height:50px;max-width:50px;width:50px}.ocean-component-button-group .ocean-component-button-group__buttons.is-wrap .components-button:not(:last-child){border-right:1px solid #d7d7d7}.ocean-component-button-group .ocean-component-button-group__buttons .components-button.arrow{bottom:0;position:relative}.ocean-component-button-group .ocean-component-button-group__label{display:block;padding-bottom:10px;width:100%}.ocean-component-button-group .components-button{border:1px solid #d7d7d7;box-shadow:none;color:#5b5a5a;display:flex;flex:1 1 auto;font-size:12px;font-weight:400;font-weight:500;height:35px;justify-content:center;outline:0;padding:5px}.ocean-component-button-group .components-button:not(:last-child){border-right:0}.ocean-component-button-group .components-button.is-primary{box-shadow:none;color:#fff}.ocean-component-button-group .components-button.is-primary:focus:not(:disabled),.ocean-component-button-group .components-button:focus:not(:disabled){box-shadow:none}.in-sub-panel #customize-theme-controls .customize-pane-child.current-panel-parent,.in-sub-panel #customize-theme-controls .customize-pane-child.current-section-parent{transform:translateX(-100%)}#customize-controls .control-section .control-section-owp_section{border-radius:3px;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);clear:both;float:none;overflow:hidden}#customize-controls .control-section .control-section-owp_section .accordion-section-title{background-color:var(--ocean-customize-color-background-section);border-bottom:0;border-left:0;border-radius:3px;color:var(--ocean-customize-color-text)}#customize-controls .control-section .control-section-owp_section .accordion-section-title:after{color:var(--ocean-customize-color-text)}.customize-control-title{color:#313131}#customize-theme-controls .customize-pane-child.accordion-section-content{overflow-y:hidden}#customize-theme-controls .customize-pane-child .ocean-customizer-section-icon{margin-left:-5px;margin-right:10px}#customize-theme-controls .ocean-customizer-section-icon{display:block;height:18px;margin-left:-10px;margin-right:15px;position:relative;width:18px}#customize-theme-controls .ocean-customizer-section-icon .components-panel__icon{height:24px;left:0;position:absolute;top:-1px;width:24px}#customize-theme-controls .accordion-section-title:not(.control-panel-themes .accordion-section-title){align-items:center;display:flex}.customize-control input[type=email]{font-size:13px;height:35px!important;line-height:normal}.ocean-customizer-separator{border-bottom:1px solid #dadada;display:block;margin:20px 0}.customize-control.customize-control-checkbox .customize-inside-control-row{margin-left:0;padding-bottom:0;padding-top:0}.customize-control-checkbox{border:1px solid #ccc;border-radius:2px;box-sizing:border-box;font-size:11px;font-weight:600;margin-bottom:-1px;margin-top:20px!important;padding:8px 10px!important;position:relative;text-transform:uppercase}.customize-control-checkbox label{margin:0;padding:0}.customize-control-checkbox input[type=checkbox]{height:20px;margin:0 6px 0 0;position:relative;vertical-align:top;width:20px}.customize-control-ocean-multi-check input[type=checkbox]{border-color:#c8c8c8;border-radius:2px;box-shadow:none!important;cursor:pointer;height:18px;margin:0 5px 4px 0;position:relative;width:18px}.customize-control-checkbox input[type=checkbox]:before,.customize-control-ocean-multi-check input[type=checkbox]:before{border:none;content:"";height:100%;left:0;margin:-4px 0 0 -3px;position:absolute;width:100%;z-index:1}.customize-control-checkbox input[type=checkbox]:checked:before,.customize-control-ocean-multi-check input[type=checkbox]:checked:before{content:"";font-family:dashicons;font-size:20px;left:0;line-height:1;top:2px}.customize-control-checkbox input[type=checkbox]:checked:before{font-size:22px}.customize-control-ocean-color .h1-h6,.customize-control-ocean-typography .h1-h6{padding-left:10px}#customize-controls .wp-full-overlay-sidebar-content{background-color:var(--ocean-customize-color-background-container)}body.is-customizer-style{--ocean-customize-color-light-sea-green:#6fbfbf;--ocean-customize-color-light-sea-green-1:#82d9d9;--ocean-customize-color-victory-blue:#393e59;--ocean-customize-color-background-container:#f0f2f2;--ocean-customize-color-background-circular-btn:var(--ocean-customize-color-white);--ocean-customize-color-background-circular-btn-active:var(--ocean-customize-color-light-sea-green);--ocean-customize-color-border-circular-btn:var(--ocean-customize-color-light-sea-green);--ocean-customize-color-boxshadow-circular-btn:var(--ocean-customize-color-light-sea-green);--ocean-customize-color-boxshadow-circular-btn-active:var(--ocean-customize-color-white);--ocean-customize-color-circular-btn:var(--ocean-customize-color-white);--ocean-customize-color-circular-btn-active:var(--ocean-customize-color-light-sea-green);--ocean-customize-color-icon-circular-btn:var(--ocean-customize-color-victory-blue);--ocean-customize-color-icon-circular-btn-active:var(--ocean-customize-color-white)}body.is-customizer-style #accordion-section-ocean_blog,body.is-customizer-style #accordion-section-ocean_colors,body.is-customizer-style #accordion-section-ocean_cookie_notice_settings,body.is-customizer-style #accordion-section-ocean_footer_bottom,body.is-customizer-style #accordion-section-ocean_header,body.is-customizer-style #accordion-section-ocean_lifterlms_settings,body.is-customizer-style #accordion-section-ocean_site_page_settings,body.is-customizer-style #accordion-section-ocean_site_performance{margin-bottom:10px}body.is-customizer-style #accordion-section-ocean_custom_code_panel,body.is-customizer-style #accordion-section-title_tagline{margin-top:10px}.ocean-upsell-container .upsell-heading{color:var(--ocean-customize-color-primary,#2271b1);font-style:italic}.ocean-upsell-container .upsell-content li{align-items:center;display:flex;gap:5px;list-style:none}.ocean-upsell-container .upsell-content li svg{color:var(--ocean-customize-color-primary,#2271b1)}.ocean-upsell-container a.button{background-color:var(--ocean-customize-color-primary,#2271b1);color:#fff;line-height:35px!important;margin:1em 0!important;text-align:center;width:100%}.ocean-upsell-container a.button:hover{background-color:var(--ocean-customize-color-secondary,#135e96);color:#fff}
+.ocean-customize-typography__color-picker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ocean-customize-typography__color-picker .color-picker-inline-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+}
+.ocean-customize-typography__color-picker .color-label {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 600;
+  margin-bottom: 4px;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.ocean-customize-typography__color-picker .color-label:hover {
+  transform: scale(1.1);
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/typography/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__typography .customize-control-title {
+  margin: 0;
+}
+.ocean-customize-control__typography > .components-base-control__field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ocean-customize-control__typography > .components-base-control__field .control__typography--button-wrap {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.ocean-customize-control__typography > .components-base-control__field .control__typography--button-wrap .components-base-control__field {
+  margin-bottom: 0;
+}
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/accordian/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+:root {
+  --hue-color: 225;
+  --first-color: hsl(var(--hue-color), 48%, 35%);
+  --title-color: hsl(var(--hue-color), 48%, 22%);
+  --text-color: hsl(var(--hue-color), 12%, 35%);
+  --owp-accordian-small-font-size: .813rem;
+  --owp-accordian-smaller-font-size: .75rem;
+}
+@media screen and (min-width: 968px) {
+  :root {
+    --owp-accordian-small-font-size: .875rem;
+    --owp-accordian-smaller-font-size: .813rem;
+  }
+}
+
+.ocean-accordion-component {
+  display: grid;
+  align-content: center;
+}
+.ocean-accordion-component .accordion__container {
+  display: grid;
+  row-gap: 0.75rem;
+}
+.ocean-accordion-component .accordion__title {
+  font-size: var(--owp-accordian-small-font-size);
+  color: var(--title-color);
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-top: 0.15rem;
+  margin-bottom: 0;
+  transition: 0.2s;
+}
+.ocean-accordion-component .accordion__header {
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+.ocean-accordion-component .accordion__description {
+  padding: 0.5rem 0.75rem 1rem 0.75rem;
+  font-size: var(--owp-accordian-smaller-font-size);
+}
+.ocean-accordion-component .accordion__icon {
+  font-size: 1.5rem;
+  height: -moz-max-content;
+  height: max-content;
+  color: var(--title-color);
+  transition: 0.3s;
+}
+.ocean-accordion-component .accordion__item {
+  box-shadow: 0 2px 6px hsla(0, 0%, 15%, 0.1);
+  border-radius: 0.25rem;
+  position: relative;
+  transition: all 0.25s ease;
+  background-color: hsl(196.62, 78.64%, 94.1%);
+}
+.ocean-accordion-component .accordion__item::after {
+  content: "";
+  background-color: hsl(201.05, 100%, 75.82%);
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+.ocean-accordion-component .accordion__content {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+.accordion-open .accordion__icon {
+  transform: rotate(45deg);
+}
+.accordion-open .accordion__title {
+  font-weight: 600;
+}
+.accordion-open .accordion__content {
+  height: auto;
+}
+.accordion-open.accordion__item {
+  background-color: hsl(171, 100%, 96%);
+}
+.accordion-open.accordion__item::after {
+  background-color: hsl(139, 62%, 60%);
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/radio-image/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/radio-image/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__radio-image .ocean-accordion-component .accordion__item.accordion-open .accordion__icon {
+  transform: rotate(90deg);
+}
+.ocean-customize-control__radio-image .ocean-accordion-component .accordion__item.accordion-open::after {
+  display: none;
+}
+
+.radio-image__container {
+  display: flex;
+  justify-content: center;
+}
+.radio-image__container .radio-image__options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.radio-image__container .option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.radio-image__container .option img, .radio-image__container .option svg {
+  width: 100%;
+  height: 100%;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/button-group/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__button-group .ocean-component-button-group {
+  margin-top: 20px;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/spacing/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-component-spacing .spacing__container {
+  display: flex;
+}
+.ocean-customize-component-spacing .spacing__container .spacing-item {
+  flex: 1 1;
+  text-align: center;
+}
+.ocean-customize-component-spacing .spacing__container .spacing-item input {
+  border: 1px solid #a4afb7;
+  border-left: 0;
+  height: 28px;
+  color: #3d3d3d;
+  font-size: 13px;
+  border-radius: 0;
+}
+.ocean-customize-component-spacing .spacing__container .spacing-item input::-moz-placeholder {
+  color: #a0a0a0;
+}
+.ocean-customize-component-spacing .spacing__container .spacing-item input::placeholder {
+  color: #a0a0a0;
+}
+.ocean-customize-component-spacing .spacing__container .spacing-item input[readonly] {
+  background-color: #e6e6e6;
+}
+.ocean-customize-component-spacing .spacing__container .spacing-item:first-child input {
+  border-left: 1px solid;
+  border-radius: 3px 0 0 3px;
+}
+.ocean-customize-component-spacing .spacing__container .spacing-item-label {
+  color: #949698;
+  font-size: 12px;
+}
+.ocean-customize-component-spacing .spacing__container .spacing-item .spacing__locked {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  box-shadow: unset;
+  border: 1px solid #a4afb7;
+  border-left: 0;
+  border-radius: 0 3px 3px 0;
+  height: 30px;
+}
+.ocean-customize-component-spacing .spacing__container .spacing-item .spacing__locked.is-secondary {
+  background-color: #fff;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/spacing/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__spacing .control__spacing--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.ocean-customize-control__spacing .control__spacing--header .customize-control-title,
+.ocean-customize-control__spacing .control__spacing--header .ocean-component-device-preview {
+  margin: 0;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/image-picker/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__image-picker .image-picker--placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border: 1px dashed #feac68;
+  background-color: #ffffff;
+  color: #a5a5a5;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.ocean-customize-control__image-picker .image-picker--image {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+.ocean-customize-control__image-picker .image-picker--buttons {
+  background-color: #ffffff;
+  padding: 5px 5px;
+}
+.ocean-customize-control__image-picker .image-picker--buttons .components-button-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.ocean-customize-control__image-picker .image-picker--buttons .components-button-group button {
+  width: 45%;
+  text-align: center;
+  display: inline-block;
+  flex-grow: 1;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/switch/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__switch .switch--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+.ocean-customize-control__switch .switch--container .customize-control-title {
+  margin: 0;
+}
+.ocean-customize-control__switch .switch--content .components-toggle-control {
+  margin-bottom: 0;
+}
+.ocean-customize-control__switch .switch--content .components-toggle-control > div > * {
+  gap: 0;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/sortable/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__sortable .ocean-accordion-component .accordion__item.accordion-open {
+  background-color: #ffffff;
+}
+.ocean-customize-control__sortable .ocean-accordion-component .accordion__item.accordion-open .accordion__icon {
+  transform: rotate(90deg);
+}
+.ocean-customize-control__sortable .ocean-accordion-component .accordion__item.accordion-open::after {
+  display: none;
+}
+
+.ocean-customize-control-sortable--list {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.ocean-customize-control-sortable--item {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(171, 100%, 96%);
+  color: #1b1b1b;
+  margin-bottom: 10px;
+  border-radius: 0.25rem;
+  height: 50px;
+  cursor: grab;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+.ocean-customize-control-sortable--item .item--inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.ocean-customize-control-sortable--item .item--inner .item-icon-display {
+  width: 45px;
+  box-shadow: none;
+}
+.ocean-customize-control-sortable--item .item-icon-drag {
+  margin-right: 5px;
+}
+.ocean-customize-control-sortable--item.disabled {
+  background-color: #eaeaea;
+}
+.ocean-customize-control-sortable--item.dragged {
+  background-color: hsl(171, 82.06%, 82.44%);
+  z-index: 99999999999;
+}
+.ocean-customize-control-sortable--item.dragged.disabled {
+  background-color: #eaeaea;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/select/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__select .components-select-control__input {
+  height: 35px !important;
+}
+.ocean-customize-control__select .control__select--content {
+  margin-top: 20px;
+}
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/multiselect/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/rich-text/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__rich-text .control__rich-text--content .wp-editor-area {
+  width: 100%;
+  margin: 0;
+  height: 150px;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/text/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__text .components-text-control__input {
+  height: 35px !important;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/text-area/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/title/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__title .customize-control-title {
+  display: block;
+  margin: 0 -12px;
+  padding: 13px 12px;
+  background-color: #fff;
+  color: #080808;
+  border: 1px solid var(--wp-admin-theme-color, var(--ocean-customize-color-primary));
+  border-left: 0;
+  border-right: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/divider/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__divider .control__divider--span {
+  margin: 20px 0;
+  border-bottom: 1px solid #dadada;
+  display: block;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/custom-content/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help {
+  padding: 50px;
+}
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ocean-customize-need-help-color, #8a8a8a);
+  fill: currentColor;
+}
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg {
+  width: 20px;
+  height: 20px;
+}
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg svg {
+  width: 20px;
+  height: 20px;
+}
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg,
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area svg {
+  margin-left: 7px;
+}
+.ocean-customize-control__custom-content .control__custom-content-wrap.description {
+  display: block;
+  font-style: normal;
+  padding: 10px;
+  border: 1px dashed #d1d1d1;
+  line-height: 1.6;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/links/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__links {
+  padding: 10px;
+  border: 1px dashed #d1d1d1;
+  line-height: 1.6;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+.ocean-customize-control__links .whatnext .control__links--header .title--icon svg {
+  width: 30px;
+}
+.ocean-customize-control__links .didyouknow .control__links--header .title--icon svg {
+  width: 18px;
+}
+.ocean-customize-control__links .control__links--header .control__links--label {
+  display: flex;
+  align-items: center;
+}
+.ocean-customize-control__links .control__links--header .title--icon {
+  margin-right: 8px;
+}
+.ocean-customize-control__links .control__links--header .title--icon svg {
+  width: 15px;
+}
+.ocean-customize-control__links .link--item {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  padding: 3px;
+  align-items: flex-start;
+}
+.ocean-customize-control__links .link--item .link--icon {
+  display: flex;
+}
+.ocean-customize-control__links .link--item .link--icon .ocean-svg {
+  align-items: center;
+  display: flex;
+  margin-right: 8px;
+}
+.ocean-customize-control__links .link--item .link--icon .ocean-svg svg {
+  width: 15px;
+}
+.ocean-customize-control__links .link--item a {
+  border-bottom: 1px dashed transparent;
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none;
+}
+.ocean-customize-control__links .link--item a:hover, .ocean-customize-control__links .link--item a:focus {
+  border-color: #1d1d1d;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/links/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/social-links/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.control__social_links--content > * {
+  margin-bottom: 2em;
+}
+.control__social_links--content > * .components-base-control__label {
+  text-transform: none;
+  font-size: 14px;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/dropdown-pages/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__select .components-select-control__input {
+  height: 35px !important;
+}
+.ocean-customize-control__select .control__select--content {
+  margin-top: 20px;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/controls/upsell/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help {
+  padding: 50px;
+}
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ocean-customize-need-help-color, #8a8a8a);
+  fill: currentColor;
+}
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg {
+  width: 20px;
+  height: 20px;
+}
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg svg {
+  width: 20px;
+  height: 20px;
+}
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area .ocean-svg,
+.ocean-customize-control__custom-content .control__custom-content-wrap.need-help .custom-content--area svg {
+  margin-left: 7px;
+}
+.ocean-customize-control__custom-content .control__custom-content-wrap.description {
+  display: block;
+  font-style: normal;
+  padding: 10px;
+  border: 1px dashed #d1d1d1;
+  line-height: 1.6;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+:root {
+  --ocean-customize-color-white: #ffffff;
+  --ocean-customize-color-white-1: #f9f9f9;
+  --ocean-customize-color-black: #000000;
+  --ocean-customize-color-grayish: #50575e;
+  --ocean-customize-color-primary: #2271b1;
+  --ocean-customize-color-secondary: #135e96;
+  --ocean-customize-color-light-gray: #e7e7e7;
+  --ocean-customize-color-light-gray-1: #d0d0d0;
+}
+
+body {
+  --ocean-customize-color-text: var(--ocean-customize-color-grayish);
+  --ocean-customize-color-link: var(--ocean-customize-color-primary);
+  --ocean-customize-color-background-section: var(--ocean-customize-color-white);
+  --ocean-customize-color-background-inner: var(--ocean-customize-color-white-1);
+  --ocean-customize-color-link-hover: var(--ocean-customize-color-secondary);
+  --ocean-customize-color-border: var(--ocean-customize-color-light-gray);
+  --ocean-customize-color-border-1: var(--ocean-customize-color-light-gray-1);
+  --ocean-customize-color-background-circular-btn: var(--ocean-customize-color-white);
+  --ocean-customize-color-background-circular-btn-active: var(--ocean-customize-color-white);
+  --ocean-customize-color-border-circular-btn: var(--wp-admin-theme-color, var(--ocean-customize-color-primary));
+  --ocean-customize-color-boxshadow-circular-btn: var(--wp-admin-theme-color, var(--ocean-customize-color-primary));
+  --ocean-customize-color-boxshadow-circular-btn-active: var(--wp-admin-theme-color, var(--ocean-customize-color-primary));
+  --ocean-customize-color-circular-btn: var(--ocean-customize-color-white);
+  --ocean-customize-color-circular-btn-active: var(--ocean-customize-color-white);
+  --ocean-customize-color-icon-circular-btn: var(--wp-admin-theme-color, var(--ocean-customize-color-primary));
+  --ocean-customize-color-icon-circular-btn-active: var(--wp-admin-theme-color, var(--ocean-customize-color-secondary));
+  --ocean-customize-color-border-title: var(--ocean-customize-color-primary);
+}
+body.dark-theme {
+  --ocean-customize-color-background-container: var(--ocean-customize-color-white);
+}
+
+.customize-control:not(.customize-control-nav_menu_item) {
+  position: relative;
+  margin: 0;
+  padding: 5px 0;
+}
+.ocean-customize-control--description,
+.customize-control-description {
+  display: block;
+  font-style: normal;
+  padding: 10px;
+  border: 1px dashed #d1d1d1;
+  line-height: 1.6;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.ocean-customize-notice {
+  position: relative;
+}
+.ocean-customize-notice.is-warning {
+  border: 1px dashed #ffa229;
+  border-radius: 2px;
+  padding: 3px 5px;
+  width: 100%;
+  font-size: 12px;
+}
+
+.ocean-component-button-group {
+  display: block;
+}
+.ocean-component-button-group .ocean-component-button-group__buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.ocean-component-button-group .ocean-component-button-group__buttons.is-wrap {
+  flex-wrap: wrap;
+}
+.ocean-component-button-group .ocean-component-button-group__buttons.is-wrap .components-button {
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+}
+.ocean-component-button-group .ocean-component-button-group__buttons.is-wrap .components-button:not(:last-child) {
+  border-right: 1px solid #d7d7d7;
+}
+.ocean-component-button-group .ocean-component-button-group__buttons .components-button.arrow {
+  position: relative;
+  bottom: 0;
+}
+.ocean-component-button-group .ocean-component-button-group__label {
+  width: 100%;
+  display: block;
+  padding-bottom: 10px;
+}
+.ocean-component-button-group .components-button {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  height: 35px;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 5px 5px;
+  border: 1px solid #d7d7d7;
+  outline: 0;
+  box-shadow: none;
+  color: #5b5a5a;
+  font-weight: 500;
+}
+.ocean-component-button-group .components-button:not(:last-child) {
+  border-right: 0;
+}
+.ocean-component-button-group .components-button.is-primary {
+  box-shadow: none;
+  color: #ffffff;
+}
+.ocean-component-button-group .components-button.is-primary:focus:not(:disabled) {
+  box-shadow: none;
+}
+.ocean-component-button-group .components-button:focus:not(:disabled) {
+  box-shadow: none;
+}
+
+.in-sub-panel #customize-theme-controls .customize-pane-child.current-panel-parent,
+.in-sub-panel #customize-theme-controls .customize-pane-child.current-section-parent {
+  transform: translateX(-100%);
+}
+
+#customize-controls .control-section .control-section-owp_section {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 3px;
+  float: none;
+  clear: both;
+  overflow: hidden;
+}
+#customize-controls .control-section .control-section-owp_section .accordion-section-title {
+  border-left: 0;
+  background-color: var(--ocean-customize-color-background-section);
+  color: var(--ocean-customize-color-text);
+  border-bottom: 0;
+  border-radius: 3px;
+}
+#customize-controls .control-section .control-section-owp_section .accordion-section-title::after {
+  color: var(--ocean-customize-color-text);
+}
+
+.customize-control-title {
+  color: #313131;
+}
+
+#customize-theme-controls .customize-pane-child.accordion-section-content {
+  overflow-y: hidden;
+}
+#customize-theme-controls .customize-pane-child .ocean-customizer-section-icon {
+  margin-right: 10px;
+  margin-left: -5px;
+}
+#customize-theme-controls .ocean-customizer-section-icon {
+  position: relative;
+  width: 18px;
+  display: block;
+  height: 18px;
+  margin-right: 15px;
+  margin-left: -10px;
+}
+#customize-theme-controls .ocean-customizer-section-icon .components-panel__icon {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 24px;
+  height: 24px;
+}
+#customize-theme-controls .accordion-section-title:not(.control-panel-themes .accordion-section-title) {
+  display: flex;
+  align-items: center;
+}
+
+.customize-control input[type=email] {
+  height: 35px !important;
+  font-size: 13px;
+  line-height: normal;
+}
+
+/*****************************************
+ New CSS for new Reactjs based settings.
+*****************************************/
+.ocean-customizer-separator {
+  margin: 20px 0;
+  border-bottom: 1px solid #dadada;
+  display: block;
+}
+
+/* Checkbox */
+.customize-control.customize-control-checkbox .customize-inside-control-row {
+  margin-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.customize-control-checkbox {
+  position: relative;
+  border: 1px solid #ccc;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 8px 10px !important;
+  border-radius: 2px;
+  margin-top: 20px !important;
+  margin-bottom: -1px;
+  box-sizing: border-box;
+}
+
+.customize-control-checkbox label {
+  padding: 0;
+  margin: 0;
+}
+
+.customize-control-checkbox input[type=checkbox] {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0 6px 0 0;
+  vertical-align: top;
+}
+
+.customize-control-ocean-multi-check input[type=checkbox] {
+  position: relative;
+  margin: 0 5px 4px 0;
+  border-color: #c8c8c8;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: none !important;
+}
+
+.customize-control-checkbox input[type=checkbox]:before,
+.customize-control-ocean-multi-check input[type=checkbox]:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: -4px 0 0 -3px;
+  border: none;
+}
+
+.customize-control-checkbox input[type=checkbox]:checked:before,
+.customize-control-ocean-multi-check input[type=checkbox]:checked:before {
+  content: "\f147";
+  font-family: dashicons;
+  font-size: 20px;
+  line-height: 1;
+  left: 0;
+  top: 2px;
+}
+
+.customize-control-checkbox input[type=checkbox]:checked:before {
+  font-size: 22px;
+}
+
+.customize-control-ocean-typography .h1-h6,
+.customize-control-ocean-color .h1-h6 {
+  padding-left: 10px;
+}
+
+#customize-controls .wp-full-overlay-sidebar-content {
+  background-color: var(--ocean-customize-color-background-container);
+}
+
+#customize-control-custom_css .CodeMirror {
+  height: calc(100vh - 185px);
+}
+#customize-control-ocean_custom_js .CodeMirror .CodeMirror-linenumber {
+  left: 0 !important;
+}
+#customize-control-ocean_custom_js .CodeMirror-lint-markers {
+  display: none;
+}
+
+body.is-customizer-style {
+  --ocean-customize-color-light-sea-green: #6FBFBF;
+  --ocean-customize-color-light-sea-green-1: #82D9D9;
+  --ocean-customize-color-victory-blue: #393E59;
+  --ocean-customize-color-background-container: #F0F2F2;
+  --ocean-customize-color-background-circular-btn: var(--ocean-customize-color-white);
+  --ocean-customize-color-background-circular-btn-active: var(--ocean-customize-color-light-sea-green);
+  --ocean-customize-color-border-circular-btn: var(--ocean-customize-color-light-sea-green);
+  --ocean-customize-color-boxshadow-circular-btn: var(--ocean-customize-color-light-sea-green);
+  --ocean-customize-color-boxshadow-circular-btn-active: var(--ocean-customize-color-white);
+  --ocean-customize-color-circular-btn: var(--ocean-customize-color-white);
+  --ocean-customize-color-circular-btn-active: var(--ocean-customize-color-light-sea-green);
+  --ocean-customize-color-icon-circular-btn: var(--ocean-customize-color-victory-blue);
+  --ocean-customize-color-icon-circular-btn-active: var(--ocean-customize-color-white);
+}
+
+.ocean-upsell-container .upsell-heading {
+  color: var(--ocean-customize-color-primary, #2271b1);
+  font-style: italic;
+}
+.ocean-upsell-container .upsell-content li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ocean-upsell-container .upsell-content li svg {
+  color: var(--ocean-customize-color-primary, #2271b1);
+}
+.ocean-upsell-container a.button {
+  width: 100%;
+  text-align: center;
+  margin: 1em 0 !important;
+  line-height: 35px !important;
+  color: #fff;
+  background-color: var(--ocean-customize-color-primary, #2271b1);
+}
+.ocean-upsell-container a.button:hover {
+  background-color: var(--ocean-customize-color-secondary, #135e96);
+  color: #fff;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -10,42 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $options = [
-
-    'ocean_ld_top_quick_links' => [
-		'type' => 'ocean-links',
-		'label' => 'Quick Menu',
-		'section' => 'ocean_learndash_settings',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'class' => 'top-quick-links',
-		'linkIcon' => 'link-2',
-		'titleIcon' => 'three-dot-menu',
-		'active_callback' => 'ocean_is_oe_active',
-		'links' => [
-			'website_layout' => [
-				'label' => esc_html__('Website Layout', 'oceanwp'),
-				'url' => '#'
-			],
-			'scroll_top' => [
-				'label' => esc_html__('Scroll To Top', 'oceanwp'),
-				'url' => '#'
-            ],
-            'pagination' => [
-				'label' => esc_html__('Pagination', 'oceanwp'),
-				'url' => '#'
-			]
-		]
-	],
-
-    'ocean_divider_after_ld_top_quick_links' => [
-        'type' => 'ocean-divider',
-        'section' => 'ocean_learndash_settings',
-        'transport' => 'postMessage',
-        'priority' => 10,
-        'top' => 10,
-        'bottom' => 1
-    ],
-
     'ocean_desc_for_ld_general_notice' => [
         'type' => 'ocean-content',
         'isContent' => esc_html__('For some options, you must save and refresh your live site to preview changes.', 'oceanwp'),

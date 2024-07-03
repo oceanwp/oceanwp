@@ -113,7 +113,7 @@ $options = [
 		'type' => 'ocean-title',
 		'label' => esc_html__( 'OpenGraph', 'oceanwp' ),
 		'desc' => esc_html__( 'This is information taken by social media when a link is shared', 'oceanwp' ),
-		'section' => 'ocean_site_layout_section',
+		'section' => 'ocean_seo_settings',
 		'transport' => 'postMessage',
 		'priority' => 10,
 	],

@@ -10,29 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $options = [
-
-	'ocean_typograhpy_top_quick_links' => [
-		'type' => 'ocean-links',
-		'label' => 'Quick Menu',
-		'section' => 'ocean_typography',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'class' => 'top-quick-links',
-		'linkIcon' => 'link-2',
-		'titleIcon' => 'quick-menu',
-		'active_callback' => 'ocean_is_oe_active',
-		'links' => [
-			'google_font' => [
-				'label' => esc_html__('Google Font Settings', 'oceanwp'),
-				'url' => '#'
-			],
-			'google_font_local' => [
-				'label' => esc_html__('Local Google Font Settings', 'oceanwp'),
-				'url' => '#'
-			]
-		]
-	],
-
 	'ocean_title_for_global_typography' => [
 		'type' => 'ocean-title',
 		'label' => esc_html__( 'Global Typography Settings', 'oceanwp' ),

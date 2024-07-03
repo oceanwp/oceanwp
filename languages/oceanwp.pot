@@ -8229,7 +8229,7 @@ msgstr ""
 
 #: inc/customizer/setup/options/footer-copyright.php:186
 #: inc/customizer/setup/options/footer-widget.php:334
-msgid "Typography And Colors"
+msgid "Typography and Colors"
 msgstr ""
 
 #: inc/customizer/setup/options/footer-copyright.php:533

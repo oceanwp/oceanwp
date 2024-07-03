@@ -33,10 +33,10 @@ $options = [
 		'active_callback' => 'ocean_cac_footer_copyright',
 		'sanitize_callback' => 'sanitize_key',
 		'choices' => [
-			'all-devices' 			=> esc_html__( 'Show On All Devices', 'oceanwp' ),
-			'hide-tablet' 			=> esc_html__( 'Hide On Tablet', 'oceanwp' ),
-			'hide-mobile' 			=> esc_html__( 'Hide On Mobile', 'oceanwp' ),
-			'hide-tablet-mobile' 	=> esc_html__( 'Hide On Tablet & Mobile', 'oceanwp' ),
+			'all-devices' => esc_html__( 'Show On All Devices', 'oceanwp' ),
+			'hide-tablet' => esc_html__( 'Hide On Tablet', 'oceanwp' ),
+			'hide-mobile' => esc_html__( 'Hide On Mobile', 'oceanwp' ),
+			'hide-tablet-mobile' => esc_html__( 'Hide On Tablet & Mobile', 'oceanwp' ),
 		]
 	],
 
@@ -179,7 +179,7 @@ $options = [
 
 	'ocean_title_for_footer_copyright_typography_colors_settings' => [
 		'type' => 'ocean-title',
-		'label' => esc_html__('Typography And Colors', 'oceanwp'),
+		'label' => esc_html__('Typography and Colors', 'oceanwp'),
 		'section' => 'ocean_footer_bottom',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -617,5 +617,19 @@ $options = [
 		]
 	],
 
+	'ocean_divider_for_footer_bottom_section' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_footer_bottom',
+		'transport' => 'postMessage',
+		'priority' => 10,
+	],
 
+	'ocean_footer_bottom_section_need_help' => [
+		'type' => 'ocean-content',
+		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+		'class' => 'need-help',
+		'priority' => 10,
+		'section' => 'ocean_footer_bottom',
+		'transport' => 'postMessage',
+	]
 ];

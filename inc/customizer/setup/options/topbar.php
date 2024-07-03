@@ -214,6 +214,14 @@ $options = [
 				],
 			],
 
+			'ocean_divider_for_topbar_general_need_help' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_top_bar_general_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'active_callback' => 'ocean_cac_topbar',
+			],
+
 			'ocean_topbar_general_need_help' => [
 				'type' => 'ocean-content',
 				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
@@ -221,6 +229,7 @@ $options = [
 				'section' => 'ocean_top_bar_general_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
+				'active_callback' => 'ocean_cac_topbar',
 			]
 		]
 	],
@@ -288,6 +297,14 @@ $options = [
 				'choices' => oceanwp_library_template_choices(),
 			],
 
+			'ocean_divider_for_topbar_content_need_help' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_top_bar_general_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'active_callback' => 'ocean_cac_topbar',
+			],
+
 			'ocean_topbar_content_need_help' => [
 				'type' => 'ocean-content',
 				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
@@ -295,6 +312,7 @@ $options = [
 				'section' => 'ocean_top_bar_content_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
+				'active_callback' => 'ocean_cac_topbar',
 			]
 		]
 	],
@@ -447,7 +465,7 @@ $options = [
 
 					'ocean_title_for_topbar_social_menu_typo_and_color_settings' => [
 						'type' => 'ocean-title',
-						'label' => esc_html__( 'Typography and Color', 'oceanwp' ),
+						'label' => esc_html__( 'Typography and Colors', 'oceanwp' ),
 						'section' => 'ocean_topbar_social_menu_default_section',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -663,7 +681,7 @@ $options = [
 
 	'ocean_title_for_topbar_typo_and_colors' => [
 		'type' => 'ocean-title',
-		'label' => esc_html__( 'Typography and Color', 'oceanwp' ),
+		'label' => esc_html__( 'Typography and Colors', 'oceanwp' ),
 		'section' => 'ocean_topbar',
 		'transport' => 'postMessage',
 		'priority' => 10,
