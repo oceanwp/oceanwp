@@ -10,11 +10,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $options = [
+	'ocean_spacer_for_styles_settings_site_layout' => [
+		'type' => 'ocean-spacer',
+		'section' => 'ocean_styles_and_settings',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 1,
+		'bottom' => 1
+	],
+
 	'ocean_site_layout_section' => [
 		'type' => 'section',
 		'title' => esc_html__('Site Layout', 'oceanwp'),
 		'section' => 'ocean_styles_and_settings',
-		'after' => 'ocean_divider_after_styles_settings_top_quick_links',
+		'after' => 'ocean_spacer_for_styles_settings_site_layout',
 		'class' => 'section-site-layout',
 		'priority' => 10,
 		'options' => [

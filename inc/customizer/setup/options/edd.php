@@ -10,11 +10,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $options = [
+
+	'ocean_spacer_for_edd_general_section' => [
+		'type' => 'ocean-spacer',
+		'section' => 'ocean_edd_settings',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 1,
+		'bottom' => 1,
+	],
+
 	'ocean_edd_general' => [
 		'type' => 'section',
 		'title' => esc_html__('General', 'oceanwp'),
 		'section' => 'ocean_edd_settings',
-		'after' => 'ocean_divider_after_edd_top_quick_links',
+		'after' => 'ocean_spacer_for_edd_general_section',
 		'class' => 'section-site-layout',
 		'priority' => 10,
 		'options' => [
@@ -47,31 +57,7 @@ $options = [
 				'bottom' => 10
 			],
 
-			'ocean_edd_display_cart_edd_added' => [
-				'id' => 'ocean_edd_display_cart_edd_added',
-				'type' => 'ocean-buttons',
-				'label' => esc_html__('Display Cart When Product Added', 'oceanwp'),
-				'desc' => esc_html__( 'Display the cart when a product is added, work in the shop and the single product pages if ajax is enabled.', 'oceanwp' ),
-				'section' => 'ocean_edd_general',
-				'default'  => 'no',
-				'transport' => 'refresh',
-				'priority' => 10,
-				'hideLabel' => false,
-				'wrap'    => false,
-				'sanitize_callback' => 'sanitize_key',
-				'choices' => [
-					'yes'  => [
-						'id'     => 'yes',
-						'label'   => esc_html__('Yes', 'oceanwp'),
-						'content' => esc_html__('Yes', 'oceanwp'),
-					],
-					'no'  => [
-						'id'     => 'no',
-						'label'   => esc_html__('No', 'oceanwp'),
-						'content' => esc_html__('No', 'oceanwp'),
-					]
-				]
-			],
+
 		]
 	],
 
@@ -92,26 +78,6 @@ $options = [
 		'class' => 'section-site-layout',
 		'priority' => 10,
 		'options' => [
-			'ocean_desc_for_edd_menu_cart_section' => [
-				'type' => 'ocean-content',
-				'isContent' => esc_html__('For some options, you must save and refresh your live site to preview changes.', 'oceanwp'),
-				'section' => 'ocean_edd_menu_cart',
-				'class' => 'description',
-				'transport' => 'postMessage',
-				'priority' => 10,
-			],
-
-			'ocean_edd_menu_icon_hide_if_empty' => [
-				'type' => 'ocean-switch',
-				'label' => esc_html__('Hide If Empty Cart', 'oceanwp'),
-				'section' => 'ocean_edd_menu_cart',
-				'default'  => false,
-				'transport' => 'refresh',
-				'priority' => 10,
-				'hideLabel' => false,
-				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-			],
-
 			'ocean_edd_menu_icon_visibility' => [
 				'type' => 'ocean-select',
 				'label' => esc_html__('Visibility', 'oceanwp' ),
@@ -129,7 +95,7 @@ $options = [
 				],
 			],
 
-			'ocean_divider_for_edd_menu_bag_style_section' => [
+			'ocean_divider_after_edd_menu_icon_visibility' => [
 				'type' => 'ocean-divider',
 				'section' => 'ocean_edd_menu_cart',
 				'transport' => 'postMessage',
@@ -137,58 +103,235 @@ $options = [
 				'top' => 10,
 			],
 
+			'ocean_edd_menu_icon_hide_if_empty' => [
+				'type' => 'ocean-switch',
+				'label' => esc_html__('Hide when empty', 'oceanwp'),
+				'section' => 'ocean_edd_menu_cart',
+				'default'  => false,
+				'transport' => 'refresh',
+				'priority' => 10,
+				'hideLabel' => false,
+				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+			],
+
+			'ocean_edd_display_cart_edd_added' => [
+				'id' => 'ocean_edd_display_cart_edd_added',
+				'type' => 'ocean-buttons',
+				'label' => esc_html__('Display Cart When Product Added', 'oceanwp'),
+				'desc' => esc_html__( 'Display the cart when a product is added, work in the shop and the single product pages if ajax is enabled.', 'oceanwp' ),
+				'section' => 'ocean_edd_menu_cart',
+				'default'  => 'no',
+				'transport' => 'refresh',
+				'priority' => 10,
+				'hideLabel' => false,
+				'wrap'    => false,
+				'sanitize_callback' => 'sanitize_key',
+				'choices' => [
+					'yes'  => [
+						'id'     => 'yes',
+						'label'   => esc_html__('Yes', 'oceanwp'),
+						'content' => esc_html__('Yes', 'oceanwp'),
+					],
+					'no'  => [
+						'id'     => 'no',
+						'label'   => esc_html__('No', 'oceanwp'),
+						'content' => esc_html__('No', 'oceanwp'),
+					]
+				]
+			],
+
+			'ocean_title_for_edd_menu_cart' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__( 'Menu Icon', 'oceanwp' ),
+				'section' => 'ocean_edd_menu_cart',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 20,
+				'bottom' => 20,
+			],
+
+			'ocean_edd_menu_bag_style' => [
+				'id' => 'ocean_edd_menu_bag_style',
+				'type' => 'ocean-buttons',
+				'label' => esc_html__('Menu Icon Style', 'oceanwp'),
+				'desc' => esc_html__( 'This setting replace the cart icon by a bag with the items count in it.', 'oceanwp' ),
+				'section' => 'ocean_edd_menu_cart',
+				'default'  => 'no',
+				'transport' => 'refresh',
+				'priority' => 10,
+				'hideLabel' => false,
+				'wrap'    => false,
+				'sanitize_callback' => 'sanitize_key',
+				'choices' => [
+					'yes'  => [
+						'id'     => 'yes',
+						'label'   => esc_html__('Bag Style', 'oceanwp'),
+						'content' => esc_html__('Bag Style', 'oceanwp'),
+					],
+					'no'  => [
+						'id'     => 'no',
+						'label'   => esc_html__('Icon', 'oceanwp'),
+						'content' => esc_html__('Icon', 'oceanwp'),
+					]
+				]
+			],
+
+			'ocean_divider_after_edd_menu_bag_style' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_edd_menu_cart',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 1,
+				'bottom' => 20,
+			],
+
 			'ocean_edd_menu_cart_bag_style_section' => [
 				'type' => 'section',
-				'title' => esc_html__('Bag Style', 'oceanwp'),
+				'title' => esc_html__('Menu Icon Style', 'oceanwp'),
 				'section' => 'ocean_edd_menu_cart',
-				'after' => 'ocean_divider_for_edd_menu_bag_style_section',
+				'after' => 'ocean_divider_after_edd_menu_bag_style',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
-					'ocean_desc_for_edd_menu_cart_bag_style_section' => [
-						'type' => 'ocean-content',
-						'isContent' => esc_html__('This section has settings related to menu cart bag style.', 'oceanwp'),
+					'ocean_edd_menu_icon_display' => [
+						'type' => 'ocean-select',
+						'label' => esc_html__('Display', 'oceanwp' ),
 						'section' => 'ocean_edd_menu_cart_bag_style_section',
-						'class' => 'description',
-						'transport' => 'postMessage',
+						'transport' => 'refresh',
+						'default' => 'icon_count',
 						'priority' => 10,
+						'hideLabel' => false,
+						'wrapper' => 'ocean_edd_menu_icon_display',
+						'multiple' => false,
+						'active_callback' => 'oceanwp_cac_is_not_edd_bag_style',
+						'sanitize_callback' => 'sanitize_key',
+						'choices'  => [
+							'icon' => esc_html__( 'Icon', 'oceanwp' ),
+							'icon_total' => esc_html__( 'Icon And Cart Total', 'oceanwp' ),
+							'icon_count' => esc_html__( 'Icon And Cart Count', 'oceanwp' ),
+							'icon_count_total' => esc_html__( 'Icon And Cart Count + Total', 'oceanwp' ),
+						],
 					],
 
-					'ocean_edd_menu_bag_style' => [
-						'id' => 'ocean_edd_menu_bag_style',
+					'ocean_edd_menu_icon' => [
 						'type' => 'ocean-buttons',
-						'label' => esc_html__('Bag Style', 'oceanwp'),
-						'desc' => esc_html__( 'This setting replace the cart icon by a bag with the items count in it.', 'oceanwp' ),
+						'label' => esc_html__('Cart Icon', 'oceanwp'),
 						'section' => 'ocean_edd_menu_cart_bag_style_section',
-						'default'  => 'no',
+						'default'  => 'icon_handbag',
 						'transport' => 'refresh',
 						'priority' => 10,
 						'hideLabel' => false,
-						'wrap'    => false,
-						'sanitize_callback' => 'sanitize_key',
-						'choices' => [
-							'yes'  => [
-								'id'     => 'yes',
-								'label'   => esc_html__('Yes', 'oceanwp'),
-								'content' => esc_html__('Yes', 'oceanwp'),
+						'wrap'    => true,
+						'sanitize_callback' => 'sanitize_text_field',
+						'active_callback' => 'oceanwp_cac_is_not_edd_bag_style',
+						'choices' => oceanwp_cart_icons_list(),
+					],
+
+					'ocean_edd_menu_custom_icon' => [
+						'label'    => esc_html__( 'Custom Icon', 'oceanwp' ),
+						'desc' => esc_html__( 'Enter your full icon class', 'oceanwp' ),
+						'type'     => 'ocean-text',
+						'section'  => 'ocean_edd_menu_cart_bag_style_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'sanitize_callback' => 'wp_filter_nohtml_kses',
+						'active_callback' => 'oceanwp_cac_is_not_edd_bag_style',
+					],
+
+					'ocean_edd_menu_icon_size' => [
+						'id'       => 'ocean_edd_menu_icon_size',
+						'label'    => esc_html__( 'Icon Size (px)', 'oceanwp' ),
+						'type'     => 'ocean-range-slider',
+						'section'  => 'ocean_edd_menu_cart_bag_style_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel'    => false,
+						'isUnit'       => false,
+						'isResponsive' => true,
+						'min'          => 10,
+						'max'          => 100,
+						'step'         => 1,
+						'active_callback' => 'oceanwp_cac_is_not_edd_bag_style',
+						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+						'setting_args' => [
+							'desktop' => [
+								'id' => 'ocean_edd_menu_icon_size',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
 							],
-							'no'  => [
-								'id'     => 'no',
-								'label'   => esc_html__('No', 'oceanwp'),
-								'content' => esc_html__('No', 'oceanwp'),
-							]
+							'tablet' => [
+								'id' => 'ocean_edd_menu_icon_size_tablet',
+								'label' => esc_html__( 'Tablet', 'oceanwp' ),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'mobile' => [
+								'id' => 'ocean_edd_menu_icon_size_mobile',
+								'label' => esc_html__( 'Mobile', 'oceanwp' ),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+						],
+						'preview' => 'queryWithType',
+						'css' => [
+							'.eddmenucart i' => ['font-size'],
+							'.eddmenucart .owp-icon' => ['width', 'height'],
+							'.oceanwp-mobile-menu-icon a.eddmenucart' => ['font-size'],
+							'.oceanwp-mobile-menu-icon a.eddmenucart .owp-icon' => ['width', 'height'],
 						]
 					],
 
-					'ocean_divider_after_edd_menu_bag_style' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_edd_menu_cart_bag_style_section',
+					'ocean_edd_menu_icon_center_vertically' => [
+						'id'       => 'ocean_edd_menu_icon_center_vertically',
+						'label'    => esc_html__( 'Center Vertically', 'oceanwp' ),
+						'desc'     => esc_html__( 'Use this field to center your icon vertically', 'oceanwp' ),
+						'type'     => 'ocean-range-slider',
+						'section'  => 'ocean_edd_menu_cart_bag_style_section',
 						'transport' => 'postMessage',
 						'priority' => 10,
-						'top' => 1,
-						'bottom' => 1,
-						'active_callback' => 'oceanwp_cac_is_edd_bag_style',
+						'hideLabel'    => false,
+						'isUnit'       => false,
+						'isResponsive' => true,
+						'min'          => 0,
+						'max'          => 100,
+						'step'         => 1,
+						'active_callback' => 'oceanwp_cac_is_not_edd_bag_style',
+						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+						'setting_args' => [
+							'desktop' => [
+								'id' => 'ocean_edd_menu_icon_center_vertically',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'tablet' => [
+								'id' => 'ocean_edd_menu_icon_center_vertically_tablet',
+								'label' => esc_html__( 'Tablet', 'oceanwp' ),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'mobile' => [
+								'id' => 'ocean_edd_menu_icon_center_vertically_mobile',
+								'label' => esc_html__( 'Mobile', 'oceanwp' ),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+						],
+						'preview' => 'queryWithType',
+						'css' => [
+							'.eddmenucart i' => ['top'],
+							'.oceanwp-mobile-menu-icon a.eddmenucart' => ['top'],
+						]
 					],
+
 
 					'ocean_edd_menu_bag_style_total' => [
 						'type' => 'ocean-switch',
@@ -291,36 +434,37 @@ $options = [
 								],
 							],
 						]
-					]
+					],
+
+					'ocean_divider_for_edd_menu_icon_style_need_help_link' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_edd_menu_cart_bag_style_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 20,
+						'bottom' => 10
+					],
+
+					'ocean_content_for_edd_menu_icon_style_need_help_link' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_edd_menu_cart_bag_style_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					],
 
 				]
 			],
 
-			'ocean_divider_after_edd_menu_bag_style_section' => [
-				'type' => 'ocean-divider',
+			'ocean_title_for_edd_menu_cart_icon_behaviour' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__( 'Menu Icon Behavior', 'oceanwp' ),
 				'section' => 'ocean_edd_menu_cart',
 				'transport' => 'postMessage',
 				'priority' => 10,
-			],
-
-			'ocean_edd_menu_icon_display' => [
-				'type' => 'ocean-select',
-				'label' => esc_html__('Display', 'oceanwp' ),
-				'section' => 'ocean_edd_menu_cart',
-				'transport' => 'refresh',
-				'default' => 'icon_count',
-				'priority' => 10,
-				'hideLabel' => false,
-				'wrapper' => 'ocean_edd_menu_icon_display',
-				'multiple' => false,
-				'active_callback' => 'oceanwp_cac_is_not_edd_bag_style',
-				'sanitize_callback' => 'sanitize_key',
-				'choices'  => [
-					'icon' => esc_html__( 'Icon', 'oceanwp' ),
-					'icon_total' => esc_html__( 'Icon And Cart Total', 'oceanwp' ),
-					'icon_count' => esc_html__( 'Icon And Cart Count', 'oceanwp' ),
-					'icon_count_total' => esc_html__( 'Icon And Cart Count + Total', 'oceanwp' ),
-				],
+				'top' => 20,
+				'bottom' => 20,
 			],
 
 			'ocean_edd_menu_icon_style' => [
@@ -352,138 +496,19 @@ $options = [
 				'sanitize_callback' => 'esc_url_raw'
 			],
 
-			'ocean_edd_menu_icon' => [
-				'type' => 'ocean-buttons',
-				'label' => esc_html__('Cart Icon', 'oceanwp'),
-				'section' => 'ocean_edd_menu_cart',
-				'default'  => 'icon_handbag',
-				'transport' => 'refresh',
-				'priority' => 10,
-				'hideLabel' => false,
-				'wrap'    => true,
-				'sanitize_callback' => 'sanitize_text_field',
-				'active_callback' => 'oceanwp_cac_is_not_edd_bag_style',
-				'choices' => oceanwp_cart_icons_list(),
-			],
-
-			'ocean_edd_menu_custom_icon' => [
-				'label'    => esc_html__( 'Custom Icon', 'oceanwp' ),
-				'desc' => esc_html__( 'Enter your full icon class', 'oceanwp' ),
-				'type'     => 'ocean-text',
-				'section'  => 'ocean_edd_menu_cart',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'hideLabel' => false,
-				'sanitize_callback' => 'wp_filter_nohtml_kses',
-				'active_callback' => 'oceanwp_cac_is_not_edd_bag_style',
-			],
-
-			'ocean_edd_menu_icon_size' => [
-				'id'       => 'ocean_edd_menu_icon_size',
-				'label'    => esc_html__( 'Icon Size (px)', 'oceanwp' ),
-				'type'     => 'ocean-range-slider',
-				'section'  => 'ocean_edd_menu_cart',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'hideLabel'    => false,
-				'isUnit'       => false,
-				'isResponsive' => true,
-				'min'          => 10,
-				'max'          => 100,
-				'step'         => 1,
-				'active_callback' => 'oceanwp_cac_is_not_edd_bag_style',
-				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
-				'setting_args' => [
-					'desktop' => [
-						'id' => 'ocean_edd_menu_icon_size',
-						'label' => esc_html__( 'Desktop', 'oceanwp' ),
-						'attr' => [
-							'transport' => 'postMessage',
-						],
-					],
-					'tablet' => [
-						'id' => 'ocean_edd_menu_icon_size_tablet',
-						'label' => esc_html__( 'Tablet', 'oceanwp' ),
-						'attr' => [
-							'transport' => 'postMessage',
-						],
-					],
-					'mobile' => [
-						'id' => 'ocean_edd_menu_icon_size_mobile',
-						'label' => esc_html__( 'Mobile', 'oceanwp' ),
-						'attr' => [
-							'transport' => 'postMessage',
-						],
-					],
-				],
-				'preview' => 'queryWithType',
-				'css' => [
-					'.eddmenucart i' => ['font-size'],
-					'.eddmenucart .owp-icon' => ['width', 'height'],
-					'.oceanwp-mobile-menu-icon a.eddmenucart' => ['font-size'],
-					'.oceanwp-mobile-menu-icon a.eddmenucart .owp-icon' => ['width', 'height'],
-				]
-			],
-
-			'ocean_edd_menu_icon_center_vertically' => [
-				'id'       => 'ocean_edd_menu_icon_center_vertically',
-				'label'    => esc_html__( 'Center Vertically', 'oceanwp' ),
-				'desc'     => esc_html__( 'Use this field to center your icon vertically', 'oceanwp' ),
-				'type'     => 'ocean-range-slider',
-				'section'  => 'ocean_edd_menu_cart',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'hideLabel'    => false,
-				'isUnit'       => false,
-				'isResponsive' => true,
-				'min'          => 0,
-				'max'          => 100,
-				'step'         => 1,
-				'active_callback' => 'oceanwp_cac_is_not_edd_bag_style',
-				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
-				'setting_args' => [
-					'desktop' => [
-						'id' => 'ocean_edd_menu_icon_center_vertically',
-						'label' => esc_html__( 'Desktop', 'oceanwp' ),
-						'attr' => [
-							'transport' => 'postMessage',
-						],
-					],
-					'tablet' => [
-						'id' => 'ocean_edd_menu_icon_center_vertically_tablet',
-						'label' => esc_html__( 'Tablet', 'oceanwp' ),
-						'attr' => [
-							'transport' => 'postMessage',
-						],
-					],
-					'mobile' => [
-						'id' => 'ocean_edd_menu_icon_center_vertically_mobile',
-						'label' => esc_html__( 'Mobile', 'oceanwp' ),
-						'attr' => [
-							'transport' => 'postMessage',
-						],
-					],
-				],
-				'preview' => 'queryWithType',
-				'css' => [
-					'.eddmenucart i' => ['top'],
-					'.oceanwp-mobile-menu-icon a.eddmenucart' => ['top'],
-				]
-			],
-
-			'ocean_divider_for_edd_cart_dropdown_styling_section' => [
+			'ocean_divider_after_edd_menu_icon_custom_link' => [
 				'type' => 'ocean-divider',
 				'section' => 'ocean_edd_menu_cart',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'top' => 1
+				'top' => 10,
 			],
 
 			'ocean_edd_cart_dropdown_styling_section' => [
 				'type' => 'section',
-				'title' => esc_html__('Cart Dropdown Styling', 'oceanwp'),
+				'title' => esc_html__('Drop-down Styling', 'oceanwp'),
 				'section' => 'ocean_edd_menu_cart',
-				'after' => 'ocean_divider_for_edd_cart_dropdown_styling_section',
+				'after' => 'ocean_divider_after_edd_menu_icon_custom_link',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -886,10 +911,44 @@ $options = [
 							]
 						]
 					],
+
+					'ocean_divider_for_edd_dropdown_style_need_help_link' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_edd_cart_dropdown_styling_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 20,
+						'bottom' => 10
+					],
+
+					'ocean_content_for_edd_dropdown_style_need_help_link' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_edd_cart_dropdown_styling_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					],
 				]
 			],
 
+			'ocean_divider_for_edd_menu_cart_need_help_link' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_edd_menu_cart',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 20,
+				'bottom' => 10
+			],
 
+			'ocean_content_for_edd_menu_cart_need_help_link' => [
+				'type' => 'ocean-content',
+				'isContent' => ocean_render_content_need_help(),
+				'class' => 'need-help',
+				'section' => 'ocean_edd_menu_cart',
+				'transport' => 'postMessage',
+				'priority' => 10,
+			],
 		]
 	],
 
@@ -920,25 +979,25 @@ $options = [
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
 					'right-sidebar' => [
-                        'label' => esc_html__( 'Right Sidebar', 'oceanwp' ),
-                        'icon' => 'right-sidebar',
-                    ],
-                    'left-sidebar'  => [
-                        'label' => esc_html__( 'Left Sidebar', 'oceanwp' ),
-                        'icon' => 'left-sidebar',
-                    ],
-                    'full-width'    => [
-                        'label' => esc_html__( 'Full Width', 'oceanwp' ),
-                        'icon' => 'full_width-no_sidebar',
-                    ],
-                    'full-screen'   => [
-                        'label' => esc_html__( '100% Full Width', 'oceanwp' ),
-                        'icon' => 'fullscreen_width',
-                    ],
-                    'both-sidebars' => [
-                        'label' => esc_html__( 'Both Sidebar', 'oceanwp' ),
-                        'icon' => 'both_sidebar_layout',
-                    ]
+						'label' => esc_html__( 'Right Sidebar', 'oceanwp' ),
+						'icon' => 'right-sidebar',
+					],
+					'left-sidebar'  => [
+						'label' => esc_html__( 'Left Sidebar', 'oceanwp' ),
+						'icon' => 'left-sidebar',
+					],
+					'full-width'    => [
+						'label' => esc_html__( 'Full Width', 'oceanwp' ),
+						'icon' => 'full_width-no_sidebar',
+					],
+					'full-screen'   => [
+						'label' => esc_html__( '100% Full Width', 'oceanwp' ),
+						'icon' => 'fullscreen_width',
+					],
+					'both-sidebars' => [
+						'label' => esc_html__( 'Both Sidebar', 'oceanwp' ),
+						'icon' => 'both_sidebar_layout',
+					]
 				]
 			],
 
@@ -1286,6 +1345,24 @@ $options = [
 								],
 							]
 						]
+					],
+
+					'ocean_divider_for_edd_archive_product_need_help_link' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_edd_archives_product_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 20,
+						'bottom' => 10
+					],
+
+					'ocean_content_for_edd_archive_product_need_help_link' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_edd_archives_product_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
 					],
 				]
 			],
@@ -2105,11 +2182,65 @@ $options = [
 										],
 									],
 								]
-							]
+							],
+
+							'ocean_divider_for_edd_archive_additional_styling_addtocart_need_help_link' => [
+								'type' => 'ocean-divider',
+								'section' => 'ocean_edd_archives_additional_styling_addtocart_section',
+								'transport' => 'postMessage',
+								'priority' => 10,
+								'top' => 20,
+								'bottom' => 10
+							],
+
+							'ocean_content_for_edd_archive_additional_styling_addtocart_need_help_link' => [
+								'type' => 'ocean-content',
+								'isContent' => ocean_render_content_need_help(),
+								'class' => 'need-help',
+								'section' => 'ocean_edd_archives_additional_styling_addtocart_section',
+								'transport' => 'postMessage',
+								'priority' => 10,
+							],
 						]
 					],
+
+					'ocean_divider_for_edd_archive_additional_styling_need_help_link' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_edd_archives_additional_styling_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 20,
+						'bottom' => 10
+					],
+
+					'ocean_content_for_edd_archive_additional_styling_need_help_link' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_edd_archives_additional_styling_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					],
 				]
-			]
+			],
+
+			'ocean_divider_for_edd_archive_need_help_link' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_edd_archives',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 20,
+				'bottom' => 10
+			],
+
+			'ocean_content_for_edd_archive_need_help_link' => [
+				'type' => 'ocean-content',
+				'isContent' => ocean_render_content_need_help(),
+				'class' => 'need-help',
+				'section' => 'ocean_edd_archives',
+				'transport' => 'postMessage',
+				'priority' => 10,
+			],
 		]
 	],
 
@@ -2140,25 +2271,25 @@ $options = [
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
 					'right-sidebar' => [
-                        'label' => esc_html__( 'Right Sidebar', 'oceanwp' ),
-                        'icon' => 'right-sidebar',
-                    ],
-                    'left-sidebar'  => [
-                        'label' => esc_html__( 'Left Sidebar', 'oceanwp' ),
-                        'icon' => 'left-sidebar',
-                    ],
-                    'full-width'    => [
-                        'label' => esc_html__( 'Full Width', 'oceanwp' ),
-                        'icon' => 'full_width-no_sidebar',
-                    ],
-                    'full-screen'   => [
-                        'label' => esc_html__( '100% Full Width', 'oceanwp' ),
-                        'icon' => 'fullscreen_width',
-                    ],
-                    'both-sidebars' => [
-                        'label' => esc_html__( 'Both Sidebar', 'oceanwp' ),
-                        'icon' => 'both_sidebar_layout',
-                    ]
+						'label' => esc_html__( 'Right Sidebar', 'oceanwp' ),
+						'icon' => 'right-sidebar',
+					],
+					'left-sidebar'  => [
+						'label' => esc_html__( 'Left Sidebar', 'oceanwp' ),
+						'icon' => 'left-sidebar',
+					],
+					'full-width'    => [
+						'label' => esc_html__( 'Full Width', 'oceanwp' ),
+						'icon' => 'full_width-no_sidebar',
+					],
+					'full-screen'   => [
+						'label' => esc_html__( '100% Full Width', 'oceanwp' ),
+						'icon' => 'fullscreen_width',
+					],
+					'both-sidebars' => [
+						'label' => esc_html__( 'Both Sidebar', 'oceanwp' ),
+						'icon' => 'both_sidebar_layout',
+					]
 				]
 			],
 
@@ -2393,6 +2524,24 @@ $options = [
 						],
 					]
 				]
+			],
+
+			'ocean_divider_for_edd_single_need_help_link' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_edd_single',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 10,
+				'bottom' => 10
+			],
+
+			'ocean_content_for_edd_single_need_help_link' => [
+				'type' => 'ocean-content',
+				'isContent' => ocean_render_content_need_help(),
+				'class' => 'need-help',
+				'section' => 'ocean_edd_single',
+				'transport' => 'postMessage',
+				'priority' => 10,
 			],
 
 		]
@@ -2678,6 +2827,24 @@ $options = [
 						],
 					],
 				]
+			],
+
+			'ocean_divider_for_edd_checkout_need_help_link' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_edd_cart_checkout',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 10,
+				'bottom' => 10
+			],
+
+			'ocean_content_for_edd_checkout_need_help_link' => [
+				'type' => 'ocean-content',
+				'isContent' => ocean_render_content_need_help(),
+				'class' => 'need-help',
+				'section' => 'ocean_edd_cart_checkout',
+				'transport' => 'postMessage',
+				'priority' => 10,
 			],
 		]
 	]

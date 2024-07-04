@@ -289,7 +289,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				}
 
 				// Add new typography settings.
-				add_filter( 'ocean_typography_settings', array( $this, 'typography_settings' ) );
+				// add_filter( 'ocean_typography_settings', array( $this, 'typography_settings' ) );
 
 				// WooCommerce Match Box extension single product layout support.
 				add_action( 'woocommerce_match_box_single_product_layout', array( $this, 'remove_wc_match_box_single_product_summary' ), 10 );
@@ -327,6 +327,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$wp_customize->get_control( 'woocommerce_terms_page_id' )->section                               = 'ocean_woocommerce_checkout';
 			$wp_customize->get_control( 'woocommerce_checkout_privacy_policy_text' )->section                = 'ocean_woocommerce_checkout';
 			$wp_customize->get_control( 'woocommerce_checkout_terms_and_conditions_checkbox_text' )->section = 'ocean_woocommerce_checkout';
+			$wp_customize->get_control( 'woocommerce_demo_store' )->type                                     = 'ocean-switch';
+			$wp_customize->get_control( 'woocommerce_demo_store' )->priority                                 = 5;
 		}
 
 		/**

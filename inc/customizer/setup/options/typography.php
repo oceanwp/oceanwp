@@ -10,12 +10,185 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $options = [
+	'ocean_spacer_for_google_font_section' => [
+		'type' => 'ocean-spacer',
+		'section' => 'ocean_typography',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 1,
+		'bottom' => 1
+	],
+
+	'ocean_google_font_section' => [
+		'type' => 'section',
+		'title' => esc_html__('Google Font Settings', 'oceanwp'),
+		'section' => 'ocean_typography',
+		'after' => 'ocean_spacer_for_google_font_section',
+		'class' => 'section-google-font',
+		'priority' => 10,
+		'options' => [
+			'ocean_disable_google_font' => [
+				'type' => 'ocean-switch',
+				'label' => esc_html__('Enable Google Fonts', 'oceanwp'),
+				'section' => 'ocean_google_font_section',
+				'default'  => false,
+				'transport' => 'refresh',
+				'priority' => 10,
+				'hideLabel' => false,
+				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+			],
+
+			'ocean_divider_after_disable_google_settings' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_google_font_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 1,
+				'active_callback' => 'ocean_is_google_font_settings',
+			],
+
+			'ocean_title_for_local_google_fonts' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__('Load Google Fonts Locally', 'oceanwp'),
+				'desc' => esc_html__('This feature allows you to host all your chosen Google Fonts directly on your website, improving performance and potentially enhancing user privacy.', 'oceanwp'),
+				'section' => 'ocean_google_font_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'active_callback' => 'ocean_is_google_font_settings',
+			],
+
+			'ocean_local_google_font' => [
+				'type' => 'ocean-switch',
+				'label' => esc_html__('Enable Local Google Fonts', 'oceanwp'),
+				'section' => 'ocean_google_font_section',
+				'default'  => false,
+				'transport' => 'refresh',
+				'priority' => 10,
+				'hideLabel' => false,
+				'active_callback' => 'ocean_is_google_font_settings',
+				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+			],
+
+			'ocean_local_elementor_google_font' => [
+				'type' => 'ocean-switch',
+				'label' => esc_html__('Apply on Elementor', 'oceanwp'),
+				'section' => 'ocean_google_font_section',
+				'default'  => false,
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'active_callback' => 'ocean_is_elementor_google_font',
+				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+			],
+
+			'ocean_preload_local_google_font' => [
+				'type' => 'ocean-switch',
+				'label' => esc_html__('Preload Local Google Fonts', 'oceanwp'),
+				'section' => 'ocean_google_font_section',
+				'default'  => false,
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'active_callback' => 'ocean_is_local_google_font',
+				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+			],
+
+			'ocean_local_google_font_format' => [
+				'type' => 'ocean-buttons',
+				'label' => esc_html__('Font Format', 'oceanwp'),
+				'desc' => esc_html__( 'Select the font format for locally hosted Google Fonts. The chosen selection can impact performance and browser compatibility.', 'oceanwp' ),
+				'section' => 'ocean_google_font_section',
+				'default'  => 'ttf',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'wrap'    => false,
+				'active_callback' => 'ocean_is_local_google_font',
+				'sanitize_callback' => 'sanitize_key',
+				'choices' => [
+					'ttf' => [
+						'id'     => 'ttf',
+						'label'   => 'ttf',
+						'content' => 'ttf'
+					],
+					'woff'  => [
+						'id'     => 'woff',
+						'label'   => 'woff',
+						'content' => 'woff'
+					],
+					'woff2'    => [
+						'id'     => 'woff2',
+						'label'   => 'woff2',
+						'content' => 'woff2'
+					]
+				]
+			],
+
+			'ocean_divider_after_local_font_format' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_google_font_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'active_callback' => 'ocean_is_google_font_settings',
+				'top' => 10,
+				'bottom' => 10
+			],
+
+			'ocean_title_for_font_subset' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__('Google Font Subsets', 'oceanwp'),
+				'section' => 'ocean_google_font_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'active_callback' => 'ocean_is_google_font_settings',
+			],
+
+			'ocean_google_font_subsets' => [
+				'type' => 'ocean-multiselect',
+				'label' => esc_html__('Font Subsets', 'oceanwp'),
+				'section' => 'ocean_google_font_section',
+				'default'  => [ 'latin' ],
+				'transport' => 'refresh',
+				'priority' => 10,
+				'hideLabel' => false,
+				'active_callback' => 'ocean_is_google_font_settings',
+				'choices'  => [
+					'latin'        => 'latin',
+					'latin-ext'    => 'latin-ext',
+					'cyrillic'     => 'cyrillic',
+					'cyrillic-ext' => 'cyrillic-ext',
+					'greek'        => 'greek',
+					'greek-ext'    => 'greek-ext',
+					'vietnamese'   => 'vietnamese',
+				],
+			],
+
+			'ocean_divider_google_font_subset' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_google_font_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 10,
+			],
+
+			'ocean_typography_google_font_need_help' => [
+				'type' => 'ocean-content',
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+				'class' => 'need-help',
+				'section' => 'ocean_google_font_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+			],
+		]
+	],
+
 	'ocean_title_for_global_typography' => [
 		'type' => 'ocean-title',
 		'label' => esc_html__( 'Global Typography Settings', 'oceanwp' ),
 		'section' => 'ocean_typography',
 		'transport' => 'postMessage',
 		'priority' => 10,
+		'top' => 20
 	],
 
 	'ocean_body_typography' => [
@@ -515,7 +688,7 @@ $options = [
 				],
 			],
 			'textDecoration' => [
-				'id' => 'headings_h1_typography[text-decoration]',
+				'id' => 'heading_h1_typography[text-decoration]',
 				'label' => esc_html__('Text Decoration', 'oceanwp'),
 				'attr' => [
 					'transport' => 'postMessage',
@@ -680,7 +853,7 @@ $options = [
 				],
 			],
 			'textDecoration' => [
-				'id' => 'headings_h2_typography[text-decoration]',
+				'id' => 'heading_h2_typography[text-decoration]',
 				'label' => esc_html__('Text Decoration', 'oceanwp'),
 				'attr' => [
 					'transport' => 'postMessage',
@@ -845,7 +1018,7 @@ $options = [
 				],
 			],
 			'textDecoration' => [
-				'id' => 'headings_h3_typography[text-decoration]',
+				'id' => 'heading_h3_typography[text-decoration]',
 				'label' => esc_html__('Text Decoration', 'oceanwp'),
 				'attr' => [
 					'transport' => 'postMessage',
@@ -1010,7 +1183,7 @@ $options = [
 				],
 			],
 			'textDecoration' => [
-				'id' => 'headings_h4_typography[text-decoration]',
+				'id' => 'heading_h4_typography[text-decoration]',
 				'label' => esc_html__('Text Decoration', 'oceanwp'),
 				'attr' => [
 					'transport' => 'postMessage',
@@ -1175,7 +1348,7 @@ $options = [
 				],
 			],
 			'textDecoration' => [
-				'id' => 'headings_h5_typography[text-decoration]',
+				'id' => 'heading_h5_typography[text-decoration]',
 				'label' => esc_html__('Text Decoration', 'oceanwp'),
 				'attr' => [
 					'transport' => 'postMessage',
@@ -1340,181 +1513,11 @@ $options = [
 				],
 			],
 			'textDecoration' => [
-				'id' => 'headings_h6_typography[text-decoration]',
+				'id' => 'heading_h6_typography[text-decoration]',
 				'label' => esc_html__('Text Decoration', 'oceanwp'),
 				'attr' => [
 					'transport' => 'postMessage',
 				],
-			],
-		]
-	],
-
-	'ocean_divider_after_global_typography' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_typography',
-		'transport' => 'postMessage',
-		'priority' => 10,
-	],
-
-	'ocean_google_font_section' => [
-		'type' => 'section',
-		'title' => esc_html__('Google Font Settings', 'oceanwp'),
-		'section' => 'ocean_typography',
-		'after' => 'ocean_divider_after_global_typography',
-		'class' => 'section-google-font',
-		'priority' => 10,
-		'options' => [
-			'ocean_disable_google_font' => [
-				'type' => 'ocean-switch',
-				'label' => esc_html__('Enable Google Fonts', 'oceanwp'),
-				'section' => 'ocean_google_font_section',
-				'default'  => false,
-				'transport' => 'refresh',
-				'priority' => 10,
-				'hideLabel' => false,
-				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-			],
-
-			'ocean_divider_after_disable_google_settings' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 1,
-				'active_callback' => 'ocean_is_google_font_settings',
-			],
-
-			'ocean_title_for_local_google_fonts' => [
-				'type' => 'ocean-title',
-				'label' => esc_html__('Load Google Fonts Locally', 'oceanwp'),
-				'desc' => esc_html__('This feature allows you to host all your chosen Google Fonts directly on your website, improving performance and potentially enhancing user privacy.', 'oceanwp'),
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'active_callback' => 'ocean_is_google_font_settings',
-			],
-
-			'ocean_local_google_font' => [
-				'type' => 'ocean-switch',
-				'label' => esc_html__('Enable Local Google Fonts', 'oceanwp'),
-				'section' => 'ocean_google_font_section',
-				'default'  => false,
-				'transport' => 'refresh',
-				'priority' => 10,
-				'hideLabel' => false,
-				'active_callback' => 'ocean_is_google_font_settings',
-				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-			],
-
-			'ocean_local_elementor_google_font' => [
-				'type' => 'ocean-switch',
-				'label' => esc_html__('Apply on Elementor', 'oceanwp'),
-				'section' => 'ocean_google_font_section',
-				'default'  => false,
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'hideLabel' => false,
-				'active_callback' => 'ocean_is_elementor_google_font',
-				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-			],
-
-			'ocean_preload_local_google_font' => [
-				'type' => 'ocean-switch',
-				'label' => esc_html__('Preload Local Google Fonts', 'oceanwp'),
-				'section' => 'ocean_google_font_section',
-				'default'  => false,
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'hideLabel' => false,
-				'active_callback' => 'ocean_is_local_google_font',
-				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-			],
-
-			'ocean_local_google_font_format' => [
-				'type' => 'ocean-buttons',
-				'label' => esc_html__('Font Format', 'oceanwp'),
-				'desc' => esc_html__( 'Select the font format for locally hosted Google Fonts. The chosen selection can impact performance and browser compatibility.', 'oceanwp' ),
-				'section' => 'ocean_google_font_section',
-				'default'  => 'ttf',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'hideLabel' => false,
-				'wrap'    => false,
-				'active_callback' => 'ocean_is_local_google_font',
-				'sanitize_callback' => 'sanitize_key',
-				'choices' => [
-					'ttf' => [
-						'id'     => 'ttf',
-						'label'   => 'ttf',
-						'content' => 'ttf'
-					],
-					'woff'  => [
-						'id'     => 'woff',
-						'label'   => 'woff',
-						'content' => 'woff'
-					],
-					'woff2'    => [
-						'id'     => 'woff2',
-						'label'   => 'woff2',
-						'content' => 'woff2'
-					]
-				]
-			],
-
-			'ocean_divider_after_local_font_format' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'active_callback' => 'ocean_is_google_font_settings',
-				'top' => 10,
-				'bottom' => 10
-			],
-
-			'ocean_title_for_font_subset' => [
-				'type' => 'ocean-title',
-				'label' => esc_html__('Google Font Subsets', 'oceanwp'),
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'active_callback' => 'ocean_is_google_font_settings',
-			],
-
-			'ocean_google_font_subsets' => [
-				'type' => 'ocean-multiselect',
-				'label' => esc_html__('Font Subsets', 'oceanwp'),
-				'section' => 'ocean_google_font_section',
-				'default'  => [ 'latin' ],
-				'transport' => 'refresh',
-				'priority' => 10,
-				'hideLabel' => false,
-				'active_callback' => 'ocean_is_google_font_settings',
-				'choices'  => [
-					'latin'        => 'latin',
-					'latin-ext'    => 'latin-ext',
-					'cyrillic'     => 'cyrillic',
-					'cyrillic-ext' => 'cyrillic-ext',
-					'greek'        => 'greek',
-					'greek-ext'    => 'greek-ext',
-					'vietnamese'   => 'vietnamese',
-				],
-			],
-
-			'ocean_divider_google_font_subset' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-			],
-
-			'ocean_typography_google_font_need_help' => [
-				'type' => 'ocean-content',
-				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
-				'class' => 'need-help',
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
 			],
 		]
 	],

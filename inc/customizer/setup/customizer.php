@@ -163,7 +163,7 @@ class OceanWP_Customizer_Init {
 					'description' => isset($option_data['desc']) ? $option_data['desc'] : '',
 					'type'        => $option_data['type'],
 					'section'     => isset($option_data['section']) ? $option_data['section'] : '',
-					'priority'    => $option_data['priority'],
+					'priority'    => isset($option_data['priority']) ? $option_data['priority'] : 10,
 				];
 
 				if ( isset( $option_data['active_callback'] ) && $option_data['active_callback'] ) {
