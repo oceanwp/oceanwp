@@ -669,7 +669,7 @@ $options = [
 
 	'ocean_footer_widgets_section_need_help' => [
 		'type' => 'ocean-content',
-		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+		'isContent' => ocean_render_content_need_help(),
 		'class' => 'need-help',
 		'priority' => 10,
 		'section' => 'ocean_footer_widgets',

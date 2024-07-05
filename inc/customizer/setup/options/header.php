@@ -2491,7 +2491,7 @@ $options = [
 
 			'ocean_header_general_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+				'isContent' => ocean_render_content_need_help(),
 				'class' => 'need-help',
 				'section' => 'ocean_header_general_section',
 				'transport' => 'postMessage',
@@ -5063,7 +5063,7 @@ $options = [
 
 			'ocean_header_social_menu_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+				'isContent' => ocean_render_content_need_help(),
 				'class' => 'need-help',
 				'section' => 'ocean_header_social_menu_section',
 				'transport' => 'postMessage',
@@ -5334,7 +5334,7 @@ $options = [
 
 					'ocean_header_mobile_menu_general_setting_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+						'isContent' => ocean_render_content_need_help(),
 						'class' => 'need-help',
 						'section' => 'ocean_header_mobile_menu_general_section',
 						'transport' => 'postMessage',
@@ -5657,7 +5657,7 @@ $options = [
 
 					'ocean_header_mobile_menu_options_setting_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+						'isContent' => ocean_render_content_need_help(),
 						'class' => 'need-help',
 						'section' => 'ocean_header_mobile_menu_options_section',
 						'transport' => 'postMessage',
@@ -6265,7 +6265,7 @@ $options = [
 
 			'ocean_header_mobile_menu_styling_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+				'isContent' => ocean_render_content_need_help(),
 				'class' => 'need-help',
 				'section' => 'ocean_header_mobile_menu_section',
 				'transport' => 'postMessage',
@@ -6317,7 +6317,7 @@ $options = [
 
 	'ocean_header_need_help' => [
 		'type' => 'ocean-content',
-		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+		'isContent' => ocean_render_content_need_help(),
 		'class' => 'need-help',
 		'section' => 'ocean_header',
 		'transport' => 'postMessage',

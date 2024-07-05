@@ -8375,6 +8375,7 @@ $options = [
 		'priority' => 10,
 		'top' => 1,
 		'bottom' => 10,
+		'active_callback' => 'ocean_cb_oec_active',
 	],
 
 	'ocean_divider_for_woo_cart_section' => [

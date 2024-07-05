@@ -1733,7 +1733,7 @@ $options = [
 
 			'ocean_blog_archive_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+				'isContent' => ocean_render_content_need_help(),
 				'class' => 'need-help',
 				'section' => 'ocean_blog_archive_section',
 				'transport' => 'postMessage',
@@ -1917,7 +1917,7 @@ $options = [
 
 					'ocean_blog_single_layout_settings_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+						'isContent' => ocean_render_content_need_help(),
 						'class' => 'need-help',
 						'section' => 'ocean_single_additional_layout_section',
 						'transport' => 'postMessage',
@@ -1986,7 +1986,7 @@ $options = [
 
 					'ocean_blog_single_responsive_settings_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+						'isContent' => ocean_render_content_need_help(),
 						'class' => 'need-help',
 						'section' => 'ocean_blog_single_responsive_settings_section',
 						'transport' => 'postMessage',
@@ -2654,7 +2654,7 @@ $options = [
 
 					'ocean_blog_single_title__options_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+						'isContent' => ocean_render_content_need_help(),
 						'class' => 'need-help',
 						'section' => 'ocean_blog_single_title_options_section',
 						'transport' => 'postMessage',
@@ -2818,7 +2818,7 @@ $options = [
 
 					'ocean_blog_single_content_builder_section_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+						'isContent' => ocean_render_content_need_help(),
 						'class' => 'need-help',
 						'section' => 'ocean_blog_single_content_builder_section',
 						'transport' => 'postMessage',
@@ -3063,7 +3063,7 @@ $options = [
 
 					'ocean_blog_single_post_options_section_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+						'isContent' => ocean_render_content_need_help(),
 						'class' => 'need-help',
 						'section' => 'ocean_blog_single_additional_single_post_options_section',
 						'transport' => 'postMessage',
@@ -4404,7 +4404,7 @@ $options = [
 
 					'ocean_blog_single_typography_and_colors_section_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+						'isContent' => ocean_render_content_need_help(),
 						'class' => 'need-help',
 						'section' => 'ocean_blog_single_typography_and_colors_section',
 						'transport' => 'postMessage',
@@ -4423,7 +4423,7 @@ $options = [
 
 			'ocean_blog_single_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+				'isContent' => ocean_render_content_need_help(),
 				'class' => 'need-help',
 				'section' => 'ocean_blog_single_section',
 				'transport' => 'postMessage',
@@ -4453,7 +4453,7 @@ $options = [
 
 	'ocean_blog_need_help' => [
 		'type' => 'ocean-content',
-		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' ),
+		'isContent' => ocean_render_content_need_help(),
 		'class' => 'need-help',
 		'section' => 'ocean_blog',
 		'transport' => 'postMessage',

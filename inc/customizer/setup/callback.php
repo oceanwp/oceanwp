@@ -886,3 +886,19 @@ function ocean_upsell_notice_callback() {
 	}
 	return true;
 }
+
+function ocean_cb_oec_active() {
+	if ( class_exists('Ocean_Extra') ) {
+		if ( function_exists('ocean_check_pro_license') && null !== ocean_check_pro_license() ) {
+			if ( class_exists('Ocean_eCommerce') ) {
+				if ( function_exists('oec_get_option') ) {
+					if ( oec_get_option( 'oec_product_swatches', 'oec_others_tabs', 'off' ) == 'on'
+						&& oec_get_option( 'oec_product_swatches_customizer_styling', 'oec_others_tabs', 'off' ) == 'on' ) {
+						return true;
+					}
+				}
+			}
+		}
+	}
+	return false;
+}
