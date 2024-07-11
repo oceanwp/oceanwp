@@ -57,7 +57,6 @@ $options = [
 				'section' => 'ocean_site_layout_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'active_callback' => 'ocean_is_not_boxed_layout',
 			],
 
 			'ocean_main_container_width' => [
@@ -287,6 +286,15 @@ $options = [
 							'.separate-layout .widget-area .sidebar-box' => ['padding']
 						]
 					],
+
+					'ocean_site_layout_additional_content_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_site_layout_content_settings',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					],
 				]
 			],
 
@@ -301,7 +309,7 @@ $options = [
 
 			'ocean_site_bg_color' => [
 				'type' => 'ocean-color',
-				'label' => esc_html__( 'Color', 'oceanwp' ),
+				'label' => esc_html__( 'Background Color', 'oceanwp' ),
 				'section' => 'ocean_site_layout_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -310,13 +318,14 @@ $options = [
 				'showPalette' => true,
 				'wrapper' => 'ocean_site_bg_color',
 				'sanitize_callback' => 'wp_kses_post',
+				'active_callback' => 'ocean_is_not_boxed_layout',
 				'setting_args' => [
 					'normal' => [
 						'id' => 'ocean_background_color',
 						'key' => 'normal',
 						'label' => 'Select Color',
 						'selector' => [
-							'body, .has-parallax-footer:not(.separate-layout) #main' => 'background-color'
+							'body, .separate-layout, .has-parallax-footer:not(.separate-layout) #main' => 'background-color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -518,7 +527,7 @@ $options = [
 						'showAlpha' => true,
 						'showPalette' => true,
 						'wrapper' => 'ocean_boxed_outside_bg_color',
-						'active_callback' => 'ocean_is_layout_boxed_separate',
+						'active_callback' => 'ocean_is_boxed_layout',
 						'sanitize_callback' => 'wp_kses_post',
 						'setting_args' => [
 							'normal' => [
@@ -554,7 +563,7 @@ $options = [
 								'key' => 'normal',
 								'label' => 'Select Color',
 								'selector' => [
-									'.separate-layout' => 'background-color'
+									'body.separate-layout' => 'background-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -591,41 +600,15 @@ $options = [
 							],
 						]
 					],
-				]
-			],
 
-			'ocean_divider_after_site_background_settings' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_site_layout_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10
-			],
-
-			'ocean_site_bg_whatnext_links' => [
-				'type' => 'ocean-links',
-				'label' => 'What to do next?',
-				'section' => 'ocean_site_layout_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'class' => 'whatnext',
-				'linkIcon' => 'link-2',
-				'titleIcon' => 'next-step',
-				'active_callback' => 'ocean_is_oe_active',
-				'links' => [
-					'style_page_layout' => [
-						'label' => esc_html__( 'Style pages layout.', 'oceanwp' ),
-						'url' => '#'
+					'ocean_site_bg_inner_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_site_background_settings',
+						'transport' => 'postMessage',
+						'priority' => 10,
 					],
-					'style_site_buttons' => [
-						'label' => esc_html__( 'Style site buttons.', 'oceanwp' ),
-						'url' => '#'
-					],
-					'style_site_forms' => [
-						'label' => esc_html__( 'Style site forms.', 'oceanwp' ),
-						'url' => '#'
-					]
 				]
 			],
 
@@ -698,42 +681,7 @@ $options = [
 				'links' => [
 					'disable_icons' => [
 						'label' => esc_html__( 'Disable unused icon libraries from loading.', 'oceanwp' ),
-						'url' => esc_url( '#' ),
-					]
-				]
-			],
-
-			'ocean_divider_after_disable_unused_icon_links' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_site_icon_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
-			],
-
-			'ocean_site_icons_whatnext_links' => [
-				'type' => 'ocean-links',
-				'label' => esc_html__( 'What to do next?', 'oceanwp' ),
-				'section' => 'ocean_site_icon_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'class' => 'whatnext',
-				'linkIcon' => 'link-2',
-				'titleIcon' => 'next-step',
-				'active_callback' => 'ocean_is_oe_active',
-				'links' => [
-					'style_site_buttons' => [
-						'label' => esc_html__( 'Style site buttons.', 'oceanwp' ),
-						'url' => '#'
-					],
-					'style_site_froms' => [
-						'label' => esc_html__( 'Style site forms.', 'oceanwp' ),
-						'url' => '#'
-					],
-					'style_scroll_top' => [
-						'label' => esc_html__( 'Style the Scroll To Top button.', 'oceanwp' ),
-						'url' => '#'
+						'url' => esc_url( admin_url( 'customize.php?autofocus[section]=ocean_site_performance' ) ),
 					]
 				]
 			],
@@ -1090,7 +1038,7 @@ $options = [
 			'ocean_theme_button_typography' => [
 				'id' => 'ocean_theme_button_typography',
 				'type' => 'ocean-typography',
-				'label' => esc_html__('Typography', 'oceanwp'),
+				'label' => esc_html__('Button Text', 'oceanwp'),
 				'section' => 'ocean_site_button_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -1369,41 +1317,6 @@ $options = [
 							'transport' => 'postMessage',
 						],
 					],
-				]
-			],
-
-			'ocean_divider_after_button_colors' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_site_button_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
-			],
-
-			'ocean_site_button_whatnext_links' => [
-				'type' => 'ocean-links',
-				'label' => esc_html__('What to do next?', 'oceanwp' ),
-				'section' => 'ocean_site_button_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'class' => 'whatnext',
-				'linkIcon' => 'link-2',
-				'titleIcon' => 'next-step',
-				'active_callback' => 'ocean_is_oe_active',
-				'links' => [
-					'style_scroll_top' => [
-						'label' => esc_html__('Style the Scroll to Top button.', 'oceanwp'),
-						'url' => '#'
-					],
-					'style_site_froms' => [
-						'label' => esc_html__('Style site forms.', 'oceanwp'),
-						'url' => '#'
-					],
-					'style_pagination' => [
-						'label' => esc_html__('Style Site Pagination.', 'oceanwp'),
-						'url' => '#'
-					]
 				]
 			],
 
@@ -2448,41 +2361,6 @@ $options = [
 				]
 			],
 
-			'ocean_divider_after_site_form_colors' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_site_forms_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
-			],
-
-			'ocean_site_forms_whatnext_links' => [
-				'type' => 'ocean-links',
-				'label' => esc_html__('What to do next?', 'oceanwp' ),
-				'section' => 'ocean_site_forms_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'class' => 'whatnext',
-				'linkIcon' => 'link-2',
-				'titleIcon' => 'next-step',
-				'active_callback' => 'ocean_is_oe_active',
-				'links' => [
-					'style_scroll_top' => [
-						'label' => esc_html__('Style the Scroll to Top button.', 'oceanwp'),
-						'url' => '#'
-					],
-					'style_pagination' => [
-						'label' => esc_html__('Style Site Pagination.', 'oceanwp'),
-						'url' => '#'
-					],
-					'style_page_layout' => [
-						'label' => esc_html__('Style Pages Layout.', 'oceanwp'),
-						'url' => '#'
-					]
-				]
-			],
-
 			'ocean_site_forms_need_help' => [
 				'type' => 'ocean-content',
 				'isContent' => ocean_render_content_need_help(),
@@ -2751,17 +2629,26 @@ $options = [
 						'active_callback' => 'ocean_is_scroll_top',
 						'sanitize_callback' => 'sanitize_key',
 						'choices' => [
-							'right' => [
-								'id'     => 'right',
-								'label'   => esc_html__('Right', 'oceanwp'),
-								'content' => 'right'
-							],
 							'left'  => [
 								'id'     => 'left',
 								'label'   => esc_html__('Left', 'oceanwp'),
 								'content' => 'left'
+							],
+							'right' => [
+								'id'     => 'right',
+								'label'   => esc_html__('Right', 'oceanwp'),
+								'content' => 'right'
 							]
 						],
+					],
+
+					'ocean_divider_after_scroll_top_position_setting' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_scroll_to_top_position_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 10,
+						'active_callback' => 'ocean_is_scroll_top',
 					],
 
 					'ocean_scroll_top_bottom_position_setting' => [
@@ -2836,6 +2723,16 @@ $options = [
 								],
 							],
 						],
+					],
+
+					'ocean_site_scroll_top_button_position_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_scroll_to_top_position_section',
+						'transport' => 'postMessage',
+						'active_callback' => 'ocean_is_scroll_top',
+						'priority' => 10,
 					],
 				]
 			],
@@ -2918,7 +2815,17 @@ $options = [
 						'active_callback' => 'ocean_is_scroll_top',
 						'sanitize_callback' => 'sanitize_key',
 						'choices' => oceanwp_get_scroll_top_icons(),
-					]
+					],
+
+					'ocean_site_scroll_top_button_icon_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_scroll_to_top_icon_section',
+						'transport' => 'postMessage',
+						'active_callback' => 'ocean_is_scroll_top',
+						'priority' => 10,
+					],
 				]
 			],
 
@@ -3014,42 +2921,6 @@ $options = [
 				]
 			],
 
-			'ocean_divider_after_scroll_colors' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_scroll_to_top_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 20,
-				'active_callback' => 'ocean_is_scroll_top',
-			],
-
-			'ocean_scroll_top_whatnext_links' => [
-				'type' => 'ocean-links',
-				'label' => esc_html__('What to do next?', 'oceanwp' ),
-				'section' => 'ocean_scroll_to_top_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'class' => 'whatnext',
-				'linkIcon' => 'link-2',
-				'titleIcon' => 'next-step',
-				'active_callback' => 'ocean_is_oe_active',
-				'links' => [
-					'style_pagination' => [
-						'label' => esc_html__('Style Site Pagination.', 'oceanwp'),
-						'url' => '#'
-					],
-					'style_page_layout' => [
-						'label' => esc_html__('Style Pages Layout.', 'oceanwp'),
-						'url' => '#'
-					],
-					'style_header' => [
-						'label' => esc_html__('Style the Header.', 'oceanwp'),
-						'url' => '#'
-					]
-				]
-			],
-
 			'ocean_site_scroll_top_need_help' => [
 				'type' => 'ocean-content',
 				'isContent' => ocean_render_content_need_help(),
@@ -3090,20 +2961,20 @@ $options = [
 				'wrap'    => false,
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
-					'right' => [
-						'id'     => 'right',
-						'label'   => esc_html__( 'Right','oceanwp' ),
-						'content' => esc_html__( 'Right','oceanwp' ),
+					'left' => [
+						'id'     => 'left',
+						'label'   => esc_html__( 'Left','oceanwp' ),
+						'content' => esc_html__( 'Left','oceanwp' ),
 					],
 					'center' => [
 						'id'     => 'center',
 						'label'   => esc_html__( 'Center','oceanwp' ),
 						'content' => esc_html__( 'Center','oceanwp' ),
 					],
-					'left' => [
-						'id'     => 'left',
-						'label'   => esc_html__( 'Left','oceanwp' ),
-						'content' => esc_html__( 'Left','oceanwp' ),
+					'right' => [
+						'id'     => 'right',
+						'label'   => esc_html__( 'Right','oceanwp' ),
+						'content' => esc_html__( 'Right','oceanwp' ),
 					]
 				]
 			],
@@ -3286,7 +3157,7 @@ $options = [
 
 			'ocean_pagination_font_size_setting' => [
 				'id' => 'ocean_pagination_font_size_setting',
-				'label'    => esc_html__( esc_html__('Font Size', 'oceanwp'), 'oceanwp' ),
+				'label'    => esc_html__( esc_html__('Pagination Text Size', 'oceanwp'), 'oceanwp' ),
 				'type'     => 'ocean-range-slider',
 				'section'  => 'ocean_site_pagination_section',
 				'transport' => 'postMessage',
@@ -3385,7 +3256,7 @@ $options = [
 
 			'ocean_pagination_color_setting' => [
 				'type' => 'ocean-color',
-				'label' => esc_html__( 'Text', 'oceanwp' ),
+				'label' => esc_html__( 'Pagination Text', 'oceanwp' ),
 				'section' => 'ocean_site_pagination_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -3483,46 +3354,11 @@ $options = [
 				'titleIcon' => 'did-you-know',
 				'active_callback' => 'ocean_is_oe_active',
 				'links' => [
-					'google_font' => [
+					'did_you_know_link_1' => [
 						'label' => esc_html__( 'OceanWP enables you to set unique pagination stlyes for different sections of your website. For example, you can choose one style for blog posts and another for your eCommerce store.', 'oceanwp' ),
 						'url' => esc_url( '#' ),
+						'target' => '_blank'
 					]
-				]
-			],
-
-			'ocean_divider_after_pagination_did_you_know' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_site_pagination_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10,
-				'active_callback' => 'ocean_is_oe_active',
-			],
-
-			'ocean_pagination_whatnext_links' => [
-				'type' => 'ocean-links',
-				'label' => esc_html__( 'What to do next?', 'oceanwp' ),
-				'section' => 'ocean_site_pagination_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'class' => 'whatnext',
-				'linkIcon' => 'link-2',
-				'titleIcon' => 'next-step',
-				'active_callback' => 'ocean_is_oe_active',
-				'links' => [
-					'style_page_layout' => [
-						'label' => esc_html__( 'Style Pages Layout.', 'oceanwp' ),
-						'url' => '#'
-					],
-					'style_blog' => [
-						'label' => esc_html__( 'Style the Blog.', 'oceanwp' ),
-						'url' => '#'
-					],
-					'site_settings' => [
-						'label' => esc_html__( 'View Additional Site Settings.', 'oceanwp' ),
-						'url' => '#'
-					],
 				]
 			],
 
@@ -3536,13 +3372,6 @@ $options = [
 			],
 
 		]
-	],
-
-	'ocean_divider_after_style_and_settings_section' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_styles_and_settings',
-		'transport' => 'postMessage',
-		'priority' => 10,
 	],
 
 	'ocean_style_and_settings_need_help' => [

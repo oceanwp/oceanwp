@@ -214,14 +214,6 @@ $options = [
 				],
 			],
 
-			'ocean_divider_for_topbar_general_need_help' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_top_bar_general_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'active_callback' => 'ocean_cac_topbar',
-			],
-
 			'ocean_topbar_general_need_help' => [
 				'type' => 'ocean-content',
 				'isContent' => ocean_render_content_need_help(),
@@ -295,14 +287,6 @@ $options = [
 				'active_callback' => 'ocean_cac_topbar',
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => oceanwp_library_template_choices(),
-			],
-
-			'ocean_divider_for_topbar_content_need_help' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_top_bar_general_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'active_callback' => 'ocean_cac_topbar',
 			],
 
 			'ocean_topbar_content_need_help' => [
@@ -622,49 +606,19 @@ $options = [
 				'active_callback' => 'ocean_cac_topbar_social_menu',
 			],
 
-			'ocean_top_bar_social_menu_custom_template_section' => [
-				'type' => 'section',
-				'title' => esc_html__('Custom Template', 'oceanwp'),
+			'ocean_top_bar_social_alt_template' => [
+				'type' => 'ocean-select',
+				'label' => esc_html__('Select Template', 'oceanwp' ),
+				'desc' => esc_html__('Select a template you created in OceanWP > My Library to replace the Topbar Social Icons.', 'oceanwp'),
 				'section' => 'ocean_top_bar_social_menu_section',
-				'after' => 'ocean_title_for_top_bar_social_menu_custom_template_sections',
-				'class' => 'section-site-layout',
+				'transport' => 'refresh',
+				'default' => '0',
 				'priority' => 10,
-				'options' => [
-					'ocean_desc_for_top_bar_social_menu_custom_template_settings' => [
-						'type' => 'ocean-content',
-						'isContent' => esc_html__('Select a template you created in OceanWP > My Library to replace the Topbar Social Icons.', 'oceanwp'),
-						'section' => 'ocean_top_bar_social_menu_custom_template_section',
-						'class' => 'description',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'active_callback' => 'ocean_cac_topbar_social_menu',
-					],
-
-					'ocean_top_bar_social_alt_template' => [
-						'type' => 'ocean-select',
-						'label' => esc_html__('Select Template', 'oceanwp' ),
-						'section' => 'ocean_top_bar_social_menu_custom_template_section',
-						'transport' => 'refresh',
-						'default' => '0',
-						'priority' => 10,
-						'hideLabel' => false,
-						'multiple' => false,
-						'active_callback' => 'ocean_cac_topbar_social_menu',
-						'sanitize_callback' => 'sanitize_key',
-						'choices' => oceanwp_library_template_choices(),
-					],
-
-				]
-			],
-
-			'ocean_divider_after_top_bar_social_menu_custom_template_section' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_top_bar_social_menu_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10,
+				'hideLabel' => false,
+				'multiple' => false,
 				'active_callback' => 'ocean_cac_topbar_social_menu',
+				'sanitize_callback' => 'sanitize_key',
+				'choices' => oceanwp_library_template_choices(),
 			],
 
 			'ocean_top_bar_social_menu_need_help' => [
@@ -691,7 +645,7 @@ $options = [
 	'ocean_top_menu_typography' => [
 		'id' => 'ocean_top_menu_typography',
 		'type' => 'ocean-typography',
-		'label' => esc_html__('Typography', 'oceanwp'),
+		'label' => esc_html__('Top Bar Content', 'oceanwp'),
 		'section' => 'ocean_topbar',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -945,7 +899,7 @@ $options = [
 
 	'ocean_top_bar_link_color' => [
 		'type' => 'ocean-color',
-		'label' => esc_html__( 'Link', 'oceanwp' ),
+		'label' => esc_html__( 'Links', 'oceanwp' ),
 		'section' => 'ocean_topbar',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -982,14 +936,6 @@ $options = [
 		]
 	],
 
-	'ocean_divider_after_top_bar_link_color' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_topbar',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'active_callback' => 'ocean_cac_topbar',
-	],
-
 	'ocean_topbar_upsell_notice' => [
 		'type' => 'ocean-content',
 		'isContent' => ocean_render_upsell_notice(),
@@ -998,28 +944,6 @@ $options = [
 		'transport' => 'postMessage',
 		'priority' => 10,
 		'active_callback' => 'ocean_upsell_notice_callback'
-	],
-
-	'ocean_topbar_whatnext_links' => [
-		'type' => 'ocean-links',
-		'label' => esc_html__('What to do next?', 'oceanwp'),
-		'section' => 'ocean_topbar',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'class' => 'whatnext',
-		'linkIcon' => 'link-2',
-		'titleIcon' => 'next-step',
-		'active_callback' => 'ocean_is_oe_active',
-		'links' => [
-			'google_font' => [
-				'label' => esc_html__('Apply Global Color Settings', 'oceanwp'),
-				'url' => '#'
-			],
-			'google_font_local' => [
-				'label' => esc_html__('Apply Global Site Settings', 'oceanwp'),
-				'url' => '#'
-			]
-		]
 	],
 
 	'ocean_topbar_need_help' => [

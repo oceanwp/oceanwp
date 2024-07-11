@@ -38,15 +38,6 @@ $options = [
 				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 			],
 
-			'ocean_divider_after_disable_google_settings' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 1,
-				'active_callback' => 'ocean_is_google_font_settings',
-			],
-
 			'ocean_title_for_local_google_fonts' => [
 				'type' => 'ocean-title',
 				'label' => esc_html__('Load Google Fonts Locally', 'oceanwp'),
@@ -124,16 +115,6 @@ $options = [
 				]
 			],
 
-			'ocean_divider_after_local_font_format' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'active_callback' => 'ocean_is_google_font_settings',
-				'top' => 10,
-				'bottom' => 10
-			],
-
 			'ocean_title_for_font_subset' => [
 				'type' => 'ocean-title',
 				'label' => esc_html__('Google Font Subsets', 'oceanwp'),
@@ -161,14 +142,6 @@ $options = [
 					'greek-ext'    => 'greek-ext',
 					'vietnamese'   => 'vietnamese',
 				],
-			],
-
-			'ocean_divider_google_font_subset' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_google_font_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
 			],
 
 			'ocean_typography_google_font_need_help' => [
@@ -1544,36 +1517,6 @@ $options = [
 			'google_font' => [
 				'label' => esc_html__('With OceanWP you can integrate Adobe Fonts for free.', 'oceanwp'),
 				'url' => esc_url( 'https://docs.oceanwp.org/article/849-how-to-add-adobe-fonts-typekit' ),
-			]
-		]
-	],
-
-	'ocean_divider_after_google_font_did_you_know_setting' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_typography',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'bottom' => 10
-	],
-
-	'ocean_typograhpy_whatnext_links' => [
-		'type' => 'ocean-links',
-		'label' => 'What to do next?',
-		'section' => 'ocean_typography',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'class' => 'whatnext',
-		'linkIcon' => 'link-2',
-		'titleIcon' => 'next-step',
-		'active_callback' => 'ocean_is_oe_active',
-		'links' => [
-			'google_font' => [
-				'label' => esc_html__('Apply Global Color Settings', 'oceanwp'),
-				'url' => '#'
-			],
-			'google_font_local' => [
-				'label' => esc_html__('Apply Global Site Settings', 'oceanwp'),
-				'url' => '#'
 			]
 		]
 	],

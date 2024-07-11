@@ -92,21 +92,12 @@ $options = [
 
 	'ocean_configure_breadcrumb_link' => [
 		'type' => 'ocean-content',
-		'label' => esc_html__( 'Configure Breadcrumb', 'oceanwp' ),
+		'label' => esc_html__( 'Configure Breadcrumbs', 'oceanwp' ),
 		'isContent' => sprintf( esc_html__( 'Go to the %1$s Breadcrumbs settings page %2$s', 'oceanwp' ), '<a href="' . admin_url( 'customize.php?autofocus%5Bcontrol%5D=ocean_breadcrumbs' ) . '">', '</a>' ),
 		'section' => 'ocean_seo_settings',
 		'class' => 'description',
 		'transport' => 'postMessage',
 		'priority' => 10,
-	],
-
-	'ocean_divider_after_configure_breadcrumb_link_setting' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_seo_settings',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'top' => 10,
-		'bottom' => 10
 	],
 
 	'ocean_opengraph_heading' => [
@@ -179,4 +170,13 @@ $options = [
 		'hideLabel' => false,
 		'sanitize_callback' => 'wp_filter_nohtml_kses',
 	],
+
+	'ocean_seo_settings_section_need_help' => [
+		'type' => 'ocean-content',
+		'isContent' => ocean_render_content_need_help(),
+		'class' => 'need-help',
+		'priority' => 10,
+		'section' => 'ocean_seo_settings',
+		'transport' => 'postMessage',
+	]
 ];

@@ -13,7 +13,7 @@ $options = [
 
 	'ocean_footer_bottom' => [
 		'type' => 'ocean-switch',
-		'label' => esc_html__('Enable Footer Widgets', 'oceanwp'),
+		'label' => esc_html__('Enable Footer Copyright', 'oceanwp'),
 		'section' => 'ocean_footer_bottom',
 		'default'  => true,
 		'transport' => 'refresh',
@@ -526,7 +526,7 @@ $options = [
 
 	'ocean_bottom_footer_background' => [
 		'type' => 'ocean-color',
-		'label' => esc_html__( 'Background', 'oceanwp' ),
+		'label' => esc_html__( 'Copyright Background', 'oceanwp' ),
 		'section' => 'ocean_footer_bottom',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -553,7 +553,7 @@ $options = [
 
 	'ocean_bottom_footer_color' => [
 		'type' => 'ocean-color',
-		'label' => esc_html__( 'Text', 'oceanwp' ),
+		'label' => esc_html__( 'Copyright Text', 'oceanwp' ),
 		'section' => 'ocean_footer_bottom',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -580,7 +580,7 @@ $options = [
 
 	'ocean_bottom_footer_link_color' => [
 		'type' => 'ocean-color',
-		'label' => esc_html__( 'Links', 'oceanwp' ),
+		'label' => esc_html__( 'Copyright Links', 'oceanwp' ),
 		'section' => 'ocean_footer_bottom',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -615,13 +615,6 @@ $options = [
 				],
 			],
 		]
-	],
-
-	'ocean_divider_for_footer_bottom_section' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_footer_bottom',
-		'transport' => 'postMessage',
-		'priority' => 10,
 	],
 
 	'ocean_footer_bottom_section_need_help' => [

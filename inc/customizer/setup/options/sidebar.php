@@ -126,7 +126,7 @@ $options = [
 
 	'ocean_sidebar_bg' => [
 		'type' => 'ocean-color',
-		'label' => esc_html__( 'Background Color', 'oceanwp' ),
+		'label' => esc_html__( 'Sidebar Background Color', 'oceanwp' ),
 		'section' => 'ocean_sidebar',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -150,7 +150,7 @@ $options = [
 
 	'ocean_title_for_sidebar_widget_heading' => [
 		'type' => 'ocean-title',
-		'label' => esc_html__( 'Widget Heading', 'oceanwp' ),
+		'label' => esc_html__( 'Widget Options', 'oceanwp' ),
 		'section' => 'ocean_sidebar',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -363,7 +363,7 @@ $options = [
 
 	'ocean_title_for_sidebar_widget_typo_and_color' => [
 		'type' => 'ocean-title',
-		'label' => esc_html__( 'Typography & Color', 'oceanwp' ),
+		'label' => esc_html__( 'Typography and Colors', 'oceanwp' ),
 		'section' => 'ocean_sidebar',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -539,7 +539,7 @@ $options = [
 	'ocean_widgets_typography' => [
 		'id' => 'ocean_widgets_typography',
 		'type' => 'ocean-typography',
-		'label' => esc_html__('Widgets', 'oceanwp'),
+		'label' => esc_html__('Widget Text', 'oceanwp'),
 		'section' => 'ocean_sidebar',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -706,7 +706,7 @@ $options = [
 
 	'ocean_widgets_bg' => [
 		'type' => 'ocean-color',
-		'label' => esc_html__( 'Widgets Background Color', 'oceanwp' ),
+		'label' => esc_html__( 'Widget Background Color', 'oceanwp' ),
 		'section' => 'ocean_sidebar',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -730,7 +730,7 @@ $options = [
 
 	'ocean_sidebar_widget_title_typography_color' => [
 		'type' => 'ocean-color',
-		'label' => esc_html__( 'Widgets Heading Color', 'oceanwp' ),
+		'label' => esc_html__( 'Widget Headings Colors', 'oceanwp' ),
 		'section' => 'ocean_sidebar',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -755,7 +755,7 @@ $options = [
 
 	'ocean_widgets_typography_color' => [
 		'type' => 'ocean-color',
-		'label' => esc_html__( 'Widgets Color', 'oceanwp' ),
+		'label' => esc_html__( 'Widget Text Color', 'oceanwp' ),
 		'section' => 'ocean_sidebar',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -800,13 +800,6 @@ $options = [
 				],
 			]
 		]
-	],
-
-	'ocean_divider_for_sidebar_section' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_sidebar',
-		'transport' => 'postMessage',
-		'priority' => 10,
 	],
 
 	'ocean_sidebar_section_need_help' => [

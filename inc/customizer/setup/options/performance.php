@@ -35,6 +35,15 @@ $options = [
 		]
 	],
 
+	'ocean_divider_after_performance_emoji_setting' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_site_performance',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 1,
+		'bottom' => 10
+	],
+
 	'ocean_performance_fontawesome' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Font Awesome Icons', 'oceanwp' ),
@@ -58,6 +67,15 @@ $options = [
 				'content' => esc_html__('Enabled', 'oceanwp'),
 			]
 		]
+	],
+
+	'ocean_divider_after_performance_fontawesome_setting' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_site_performance',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 1,
+		'bottom' => 10
 	],
 
 	'ocean_disable_svg_icons' => [
@@ -85,6 +103,15 @@ $options = [
 		]
 	],
 
+	'ocean_divider_after_performance_svg_setting' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_site_performance',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 1,
+		'bottom' => 10
+	],
+
 	'ocean_performance_simple_line_icons' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Simple Line Icons', 'oceanwp' ),
@@ -108,6 +135,15 @@ $options = [
 				'content' => esc_html__('Enabled', 'oceanwp'),
 			]
 		]
+	],
+
+	'ocean_divider_after_performance_simple_line_setting' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_site_performance',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 1,
+		'bottom' => 10
 	],
 
 	'ocean_performance_lightbox' => [
@@ -135,6 +171,16 @@ $options = [
 		]
 	],
 
+	'ocean_divider_after_performance_lightbox_setting' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_site_performance',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 1,
+		'bottom' => 10
+	],
+
+
 	'ocean_performance_custom_select' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Custom Select', 'oceanwp' ),
@@ -160,6 +206,16 @@ $options = [
 		]
 	],
 
+	'ocean_divider_after_performance_custom_select_setting' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_site_performance',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 1,
+		'bottom' => 10
+	],
+
+
 	'ocean_load_widgets_stylesheet' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Widgets Stylesheet Load', 'oceanwp' ),
@@ -184,6 +240,15 @@ $options = [
 				'content' => esc_html__('Enabled', 'oceanwp'),
 			]
 		]
+	],
+
+	'ocean_divider_after_performance_widgets_stylesheet_setting' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_site_performance',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 1,
+		'bottom' => 10
 	],
 
 	'ocean_performance_scroll_effect' => [
@@ -234,4 +299,13 @@ $options = [
 			]
 		]
 	],
+
+	'ocean_site_performance_section_need_help' => [
+		'type' => 'ocean-content',
+		'isContent' => ocean_render_content_need_help(),
+		'class' => 'need-help',
+		'priority' => 10,
+		'section' => 'ocean_site_performance',
+		'transport' => 'postMessage',
+	]
 ];

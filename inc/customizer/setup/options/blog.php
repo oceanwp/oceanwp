@@ -58,30 +58,7 @@ $options = [
 				]
 			],
 
-			'ocean_blog_entries_heading_tag' => [
-				'type' => 'ocean-select',
-				'label' => esc_html__('Heading Tag', 'oceanwp' ),
-				'section' => 'ocean_blog_archive_section',
-				'transport' => 'refresh',
-				'default' => 'h2',
-				'priority' => 10,
-				'hideLabel' => false,
-				'multiple' => false,
-				'sanitize_callback' => 'sanitize_key',
-				'choices' => [
-					'h1'   => esc_html__( 'H1', 'oceanwp' ),
-					'h2'   => esc_html__( 'H2', 'oceanwp' ),
-					'h3'   => esc_html__( 'H3', 'oceanwp' ),
-					'h4'   => esc_html__( 'H4', 'oceanwp' ),
-					'h5'   => esc_html__( 'H5', 'oceanwp' ),
-					'h6'   => esc_html__( 'H6', 'oceanwp' ),
-					'div'  => esc_html__( 'div', 'oceanwp' ),
-					'span' => esc_html__( 'span', 'oceanwp' ),
-					'p'    => esc_html__( 'p', 'oceanwp' ),
-				],
-			],
-
-			'ocean_divider_after_blog_entries_heading_tag_setting' => [
+			'ocean_divider_after_blog_archive_layout_setting' => [
 				'type' => 'ocean-divider',
 				'section' => 'ocean_blog_archive_section',
 				'transport' => 'postMessage',
@@ -93,7 +70,7 @@ $options = [
 				'type' => 'section',
 				'title' => esc_html__('Layout Settings', 'oceanwp'),
 				'section' => 'ocean_blog_archive_section',
-				'after' => 'ocean_divider_after_blog_entries_heading_tag_setting',
+				'after' => 'ocean_divider_after_blog_archive_layout_setting',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -173,6 +150,15 @@ $options = [
 							]
 						]
 					],
+
+					'ocean_blog_archive_additional_layout_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_blog_archive_additional_layout_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
 				]
 			],
 
@@ -226,6 +212,15 @@ $options = [
 							]
 						]
 					],
+
+					'ocean_blog_archive_responsive_settings_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_blog_archive_responsive_settings_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
 				]
 			],
 
@@ -263,20 +258,19 @@ $options = [
 				]
 			],
 
-			'ocean_spacer_for_blog_archive_additional_blog_style_settings_section' => [
-				'type' => 'ocean-spacer',
+			'ocean_divider_for_blog_archive_additional_blog_style_settings_section' => [
+				'type' => 'ocean-divider',
 				'section' => 'ocean_blog_archive_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'top' => 1,
-				'bottom' => 1
+				'top' => 10,
 			],
 
 			'ocean_blog_archive_additional_blog_style_settings_section' => [
 				'type' => 'section',
 				'title' => esc_html__('Blog Style Settings', 'oceanwp'),
 				'section' => 'ocean_blog_archive_section',
-				'after' => 'ocean_spacer_for_blog_archive_additional_blog_style_settings_section',
+				'after' => 'ocean_divider_for_blog_archive_additional_blog_style_settings_section',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -432,23 +426,64 @@ $options = [
 							]
 						]
 					],
+
+					'ocean_blog_archive_additional_blog_style_settings_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_blog_archive_additional_blog_style_settings_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
 				]
 			],
 
-			'ocean_spacer_for_blog_archive_content_builder_section' => [
-				'type' => 'ocean-spacer',
+			'ocean_title_for_blog_archive_content_settings' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__( 'Blog Archives Content', 'oceanwp' ),
 				'section' => 'ocean_blog_archive_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'top' => 1,
-				'bottom' => 10
+				'top' => 20,
+				'bottom' => 20,
+			],
+
+			'ocean_blog_entries_heading_tag' => [
+				'type' => 'ocean-select',
+				'label' => esc_html__('Heading Tag', 'oceanwp' ),
+				'section' => 'ocean_blog_archive_section',
+				'transport' => 'refresh',
+				'default' => 'h2',
+				'priority' => 10,
+				'hideLabel' => false,
+				'multiple' => false,
+				'sanitize_callback' => 'sanitize_key',
+				'choices' => [
+					'h1'   => esc_html__( 'H1', 'oceanwp' ),
+					'h2'   => esc_html__( 'H2', 'oceanwp' ),
+					'h3'   => esc_html__( 'H3', 'oceanwp' ),
+					'h4'   => esc_html__( 'H4', 'oceanwp' ),
+					'h5'   => esc_html__( 'H5', 'oceanwp' ),
+					'h6'   => esc_html__( 'H6', 'oceanwp' ),
+					'div'  => esc_html__( 'div', 'oceanwp' ),
+					'span' => esc_html__( 'span', 'oceanwp' ),
+					'p'    => esc_html__( 'p', 'oceanwp' ),
+				],
+			],
+
+			'ocean_divider_after_blog_entries_heading_tag_settings' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_blog_archive_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 10,
 			],
 
 			'ocean_blog_archive_content_builder_section' => [
 				'type' => 'section',
 				'title' => esc_html__('Content Builder', 'oceanwp'),
 				'section' => 'ocean_blog_archive_section',
-				'after' => 'ocean_spacer_for_blog_archive_content_builder_section',
+				'after' => 'ocean_divider_after_blog_entries_heading_tag_settings',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -505,6 +540,58 @@ $options = [
 							]
 						),
 					],
+
+					'ocean_divider_after_blog_entry_meta_setting' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_blog_archive_content_builder_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 10,
+						'bottom' => 10,
+					],
+
+					'ocean_blog_meta_separator' => [
+						'type' => 'ocean-buttons',
+						'label' => esc_html__( 'Meta Separator', 'oceanwp' ),
+						'section' => 'ocean_blog_archive_content_builder_section',
+						'default'  => 'default',
+						'transport' => 'refresh',
+						'priority' => 10,
+						'hideLabel' => false,
+						'wrap'    => false,
+						'sanitize_callback' => 'sanitize_key',
+						'choices' => [
+							'default' => [
+								'id'     => 'default',
+								'label'   => esc_html__('Default', 'oceanwp'),
+								'content' => esc_html__('Default', 'oceanwp'),
+							],
+							'modern'  => [
+								'id'     => 'modern',
+								'label'   => esc_html__('Modern', 'oceanwp'),
+								'content' => esc_html__('Modern', 'oceanwp'),
+							],
+							'stylish'  => [
+								'id'     => 'stylish',
+								'label'   => esc_html__('Stylish', 'oceanwp'),
+								'content' => esc_html__('Stylish', 'oceanwp'),
+							],
+							'none'  => [
+								'id'     => 'none',
+								'label'   => esc_html__('None', 'oceanwp'),
+								'content' => esc_html__('None', 'oceanwp'),
+							]
+						]
+					],
+
+					'ocean_blog_archive_content_builder_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_blog_archive_content_builder_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
 
 				]
 			],
@@ -667,8 +754,26 @@ $options = [
 								'sanitize_callback' => 'wp_kses_post',
 								'active_callback' => 'oceanwp_cac_blog_archive_pagination_infinite_scroll'
 							],
+
+							'ocean_blog_archive_infinite_scroll_section_need_help' => [
+								'type' => 'ocean-content',
+								'isContent' => ocean_render_content_need_help(),
+								'class' => 'need-help',
+								'section' => 'ocean_blog_archive_infinite_scroll_section',
+								'transport' => 'postMessage',
+								'priority' => 10,
+							]
 						]
 					],
+
+					'ocean_blog_archive_excerpt_and_pagination_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_blog_archive_excerpt_and_pagination_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
 				]
 			],
 
@@ -780,6 +885,15 @@ $options = [
 							]
 						]
 					],
+
+					'ocean_blog_archive_additional_image_settings_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_blog_archive_additional_image_settings_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
 				]
 			],
 
@@ -1721,14 +1835,16 @@ $options = [
 							]
 						]
 					],
-				]
-			],
 
-			'ocean_divider_after_blog_typography_and_color_section' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_blog_archive_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
+					'ocean_blog_archive_typography_and_colors_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_blog_archive_typography_and_colors_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
+				]
 			],
 
 			'ocean_blog_archive_need_help' => [
@@ -1789,19 +1905,19 @@ $options = [
 				]
 			],
 
-			'ocean_spacer_for_single_additional_layout_section' => [
-				'type' => 'ocean-spacer',
+			'ocean_divider_for_single_additional_layout_section' => [
+				'type' => 'ocean-divider',
 				'section' => 'ocean_blog_single_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'top' => 1
+				'top' => 10
 			],
 
 			'ocean_single_additional_layout_section' => [
 				'type' => 'section',
 				'title' => esc_html__('Layout Settings', 'oceanwp'),
 				'section' => 'ocean_blog_single_section',
-				'after' => 'ocean_spacer_for_single_additional_layout_section',
+				'after' => 'ocean_divider_for_single_additional_layout_section',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -1908,13 +2024,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_blog_single_layout_settings_section' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_single_additional_layout_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-					],
-
 					'ocean_blog_single_layout_settings_need_help' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -1975,13 +2084,6 @@ $options = [
 								'content' => esc_html__('Before Content', 'oceanwp'),
 							]
 						]
-					],
-
-					'ocean_divider_for_blog_single_responsive_settings_section' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_blog_single_responsive_settings_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
 					],
 
 					'ocean_blog_single_responsive_settings_need_help' => [
@@ -2133,23 +2235,44 @@ $options = [
 				],
 			],
 
-			'ocean_spacer_for_blog_single_title_options_section' => [
-				'type' => 'ocean-spacer',
+			'ocean_divider_for_blog_single_title_options_section' => [
+				'type' => 'ocean-divider',
 				'section' => 'ocean_blog_single_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'top' => 1,
-				'bottom' => 1
+				'top' => 10,
 			],
 
 			'ocean_blog_single_title_options_section' => [
 				'type' => 'section',
 				'title' => esc_html__('Single Post Title Options', 'oceanwp'),
 				'section' => 'ocean_blog_single_section',
-				'after' => 'ocean_spacer_for_blog_single_title_options_section',
+				'after' => 'ocean_divider_for_blog_single_title_options_section',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
+					'ocean_blog_single_featured_image_title' => [
+						'type' => 'ocean-switch',
+						'label' => esc_html__('Featured Image in Post Title', 'oceanwp'),
+						'section' => 'ocean_blog_single_title_options_section',
+						'default'  => false,
+						'transport' => 'refresh',
+						'priority' => 10,
+						'hideLabel' => false,
+						'active_callback' => 'ocean_cac_blog_single_post_title_default',
+						'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+					],
+
+					'ocean_divider_after_blog_single_featured_image_title_setting' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_blog_single_title_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 1,
+						'bottom' => 1,
+						'active_callback' => 'ocean_cac_blog_single_post_title_default',
+					],
+
 					'ocean_blog_single_page_header_title' => [
 						'type' => 'ocean-buttons',
 						'label' => esc_html__('Single Post Title', 'oceanwp'),
@@ -2176,28 +2299,6 @@ $options = [
 					],
 
 					'ocean_divider_after_blog_single_page_header_title_setting' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_blog_single_title_options_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 1,
-						'bottom' => 1,
-						'active_callback' => 'ocean_cac_blog_single_post_title_default',
-					],
-
-					'ocean_blog_single_featured_image_title' => [
-						'type' => 'ocean-switch',
-						'label' => esc_html__('Featured Image in Post Title', 'oceanwp'),
-						'section' => 'ocean_blog_single_title_options_section',
-						'default'  => false,
-						'transport' => 'refresh',
-						'priority' => 10,
-						'hideLabel' => false,
-						'active_callback' => 'ocean_cac_blog_single_post_title_default',
-						'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-					],
-
-					'ocean_divider_after_blog_single_featured_image_title_setting' => [
 						'type' => 'ocean-divider',
 						'section' => 'ocean_blog_single_title_options_section',
 						'transport' => 'postMessage',
@@ -2643,15 +2744,6 @@ $options = [
 						),
 					],
 
-					'ocean_divider_for_blog_single_title_options_need_help_setting' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_blog_single_title_options_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 20,
-						'bottom' => 10,
-					],
-
 					'ocean_blog_single_title__options_need_help' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -2807,13 +2899,6 @@ $options = [
 								'content' => esc_html__('None', 'oceanwp'),
 							],
 						]
-					],
-
-					'ocean_divider_for_blog_single_content_builder_section' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_blog_single_content_builder_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
 					],
 
 					'ocean_blog_single_content_builder_section_need_help' => [
@@ -3052,13 +3137,6 @@ $options = [
 								],
 							]
 						]
-					],
-
-					'ocean_divider_for_blog_single_post_options_section' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_blog_single_additional_single_post_options_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
 					],
 
 					'ocean_blog_single_post_options_section_need_help' => [
@@ -4395,13 +4473,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_blog_single_typography_and_colors_section' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_blog_single_typography_and_colors_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-					],
-
 					'ocean_blog_single_typography_and_colors_section_need_help' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -4410,15 +4481,6 @@ $options = [
 						'transport' => 'postMessage',
 					]
 				]
-			],
-
-			'ocean_divider_for_blog_single_need_help_setting' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_blog_single_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10,
 			],
 
 			'ocean_blog_single_need_help' => [
@@ -4439,6 +4501,7 @@ $options = [
 		'priority' => 10,
 		'top' => 20,
 		'bottom' => 10,
+		'active_callback' => 'ocean_upsell_notice_callback'
 	],
 
 	'ocean_blog_upsell_notice' => [

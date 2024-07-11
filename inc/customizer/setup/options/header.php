@@ -72,8 +72,8 @@ $options = [
 				],
 			],
 
-			'ocean_spacer_after_header_style_setting' => [
-				'type' => 'ocean-spacer',
+			'ocean_divider_after_header_style_setting' => [
+				'type' => 'ocean-divider',
 				'section' => 'ocean_header_general_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -83,7 +83,7 @@ $options = [
 				'type' => 'section',
 				'title' => esc_html__('Custom Header Settings', 'oceanwp'),
 				'section' => 'ocean_header_general_section',
-				'after' => 'ocean_spacer_after_header_style_setting',
+				'after' => 'ocean_divider_after_header_style_setting',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -122,6 +122,15 @@ $options = [
 						'choices' => oceanwp_library_template_choices(),
 						'sanitize_callback' => 'sanitize_key',
 					],
+
+					'ocean_header_custom_header_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_custom_header_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
 				]
 			],
 
@@ -135,198 +144,188 @@ $options = [
 				'bottom' => 20,
 			],
 
-			'ocean_header_styling_section' => [
-				'type' => 'section',
-				'title' => esc_html__('Styling', 'oceanwp'),
-				'section' => 'ocean_header_general_section',
-				'after' => 'ocean_title_for_header_default_styling_sections',
-				'class' => 'section-site-layout',
+			'ocean_header_height' => [
+				'id'      => 'ocean_header_height',
+				'label'    => esc_html__( 'Height', 'oceanwp' ),
+				'type'     => 'ocean-range-slider',
+				'section'  => 'ocean_header_general_section',
+				'transport' => 'postMessage',
 				'priority' => 10,
-				'options' => [
-					'ocean_header_height' => [
-						'id'      => 'ocean_header_height',
-						'label'    => esc_html__( 'Height', 'oceanwp' ),
-						'type'     => 'ocean-range-slider',
-						'section'  => 'ocean_header_styling_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel'    => false,
-						'isUnit'       => true,
-						'isResponsive' => false,
-						'min'          => 1,
-						'max'          => 200,
-						'step'         => 1,
-						'active_callback' => 'ocean_cac_header_not_custom_and_vertical',
-						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
-						'setting_args' => [
-							'desktop' => [
-								'id' => 'ocean_header_height',
-								'label' => 'Desktop',
-								'attr' => [
-									'transport' => 'postMessage',
-									'default' => 74,
-								],
-							],
-							'unit' => [
-								'id' => 'ocean_header_height_unit',
-								'label' => esc_html__('Unit', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-									'default' => 'px',
-								],
-							],
-						],
-						'preview' => 'queryWithType',
-						'css' => [
-							'#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner, .after-header-content .after-header-content-inner' => ['height'],
-							'#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a, .after-header-content-inner > a' => ['line-height']
-						]
-					],
-
-					'ocean_header_padding' => [
-						'id' => 'ocean_header_padding',
-						'label'    => esc_html__( 'Padding (px)', 'oceanwp' ),
-						'type'     => 'ocean-spacing',
-						'section'  => 'ocean_header_styling_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel'    => false,
-						'isType'       => 'padding',
-						'active_callback' => 'ocean_cac_header_not_medium_and_vertical',
-						'setting_args' => [
-							'spacingTop' => [
-								'id' => 'ocean_header_top_padding',
-								'label' => esc_html__( 'Top', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => 0,
-								],
-							],
-							'spacingRight' => [
-								'id' => 'ocean_header_right_padding',
-								'label' => esc_html__( 'Right', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => 0,
-								],
-							],
-							'spacingBottom' => [
-								'id' => 'ocean_header_bottom_padding',
-								'label' => esc_html__( 'Bottom', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => 0,
-								],
-							],
-							'spacingLeft' => [
-								'id' => 'ocean_header_left_padding',
-								'label' => esc_html__( 'Left', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => 0,
-								],
-							],
-							'spacingTopTablet' => [
-								'id' => 'ocean_header_tablet_top_padding',
-								'label' => esc_html__( 'Top', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'spacingRightTablet' => [
-								'id' => 'ocean_header_tablet_right_padding',
-								'label' => esc_html__( 'Right', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'spacingBottomTablet' => [
-								'id' => 'ocean_header_tablet_bottom_padding',
-								'label' => esc_html__( 'Bottom', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'spacingLeftTablet' => [
-								'id' => 'ocean_header_tablet_left_padding',
-								'label' => esc_html__( 'Left', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'spacingTopMobile' => [
-								'id' => 'ocean_header_mobile_top_padding',
-								'label' => esc_html__( 'Top', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'spacingRightMobile' => [
-								'id' => 'ocean_header_mobile_right_padding',
-								'label' => esc_html__( 'Right', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'spacingBottomMobile' => [
-								'id' => 'ocean_header_mobile_bottom_padding',
-								'label' => esc_html__( 'Bottom', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'spacingLeftMobile' => [
-								'id' => 'ocean_header_mobile_left_padding',
-								'label' => esc_html__( 'Left', 'oceanwp' ),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-						],
-						'preview' => 'queryWithType',
-						'css' => [
-							'selector' => '#site-header-inner',
-							'property' => 'padding'
+				'hideLabel'    => false,
+				'isUnit'       => true,
+				'isResponsive' => false,
+				'min'          => 1,
+				'max'          => 200,
+				'step'         => 1,
+				'active_callback' => 'ocean_cac_header_not_custom_and_vertical',
+				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+				'setting_args' => [
+					'desktop' => [
+						'id' => 'ocean_header_height',
+						'label' => 'Desktop',
+						'attr' => [
+							'transport' => 'postMessage',
+							'default' => 74,
 						],
 					],
-
-					'ocean_divider_after_header_padding' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_header_styling_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
+					'unit' => [
+						'id' => 'ocean_header_height_unit',
+						'label' => esc_html__('Unit', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+							'default' => 'px',
+						],
 					],
-
-					'ocean_header_full_width' => [
-						'type' => 'ocean-switch',
-						'label' => esc_html__('Full Width', 'oceanwp'),
-						'section' => 'ocean_header_styling_section',
-						'default'  => false,
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel' => false,
-						'active_callback' => 'ocean_cac_header_not_medium_and_vertical',
-						'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-					],
-
-					'ocean_has_header_border_bottom' => [
-						'type' => 'ocean-switch',
-						'label' => esc_html__('Border Bottom', 'oceanwp'),
-						'section' => 'ocean_header_styling_section',
-						'default'  => true,
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel' => false,
-						'active_callback' => 'ocean_cac_header_not_vertical',
-						'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-					],
+				],
+				'preview' => 'queryWithType',
+				'css' => [
+					'#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner, .after-header-content .after-header-content-inner' => ['height'],
+					'#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a, .after-header-content-inner > a' => ['line-height']
 				]
 			],
 
-			'ocean_spacer_after_header_style_section' => [
-				'type' => 'ocean-spacer',
+			'ocean_header_padding' => [
+				'id' => 'ocean_header_padding',
+				'label'    => esc_html__( 'Padding (px)', 'oceanwp' ),
+				'type'     => 'ocean-spacing',
+				'section'  => 'ocean_header_general_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel'    => false,
+				'isType'       => 'padding',
+				'active_callback' => 'ocean_cac_header_not_medium_and_vertical',
+				'setting_args' => [
+					'spacingTop' => [
+						'id' => 'ocean_header_top_padding',
+						'label' => esc_html__( 'Top', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => 0,
+						],
+					],
+					'spacingRight' => [
+						'id' => 'ocean_header_right_padding',
+						'label' => esc_html__( 'Right', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => 0,
+						],
+					],
+					'spacingBottom' => [
+						'id' => 'ocean_header_bottom_padding',
+						'label' => esc_html__( 'Bottom', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => 0,
+						],
+					],
+					'spacingLeft' => [
+						'id' => 'ocean_header_left_padding',
+						'label' => esc_html__( 'Left', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => 0,
+						],
+					],
+					'spacingTopTablet' => [
+						'id' => 'ocean_header_tablet_top_padding',
+						'label' => esc_html__( 'Top', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'spacingRightTablet' => [
+						'id' => 'ocean_header_tablet_right_padding',
+						'label' => esc_html__( 'Right', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'spacingBottomTablet' => [
+						'id' => 'ocean_header_tablet_bottom_padding',
+						'label' => esc_html__( 'Bottom', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'spacingLeftTablet' => [
+						'id' => 'ocean_header_tablet_left_padding',
+						'label' => esc_html__( 'Left', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'spacingTopMobile' => [
+						'id' => 'ocean_header_mobile_top_padding',
+						'label' => esc_html__( 'Top', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'spacingRightMobile' => [
+						'id' => 'ocean_header_mobile_right_padding',
+						'label' => esc_html__( 'Right', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'spacingBottomMobile' => [
+						'id' => 'ocean_header_mobile_bottom_padding',
+						'label' => esc_html__( 'Bottom', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'spacingLeftMobile' => [
+						'id' => 'ocean_header_mobile_left_padding',
+						'label' => esc_html__( 'Left', 'oceanwp' ),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+				],
+				'preview' => 'queryWithType',
+				'css' => [
+					'selector' => '#site-header-inner',
+					'property' => 'padding'
+				],
+			],
+
+			'ocean_divider_after_header_padding' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_header_general_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 10,
+				'bottom' => 10
+			],
+
+			'ocean_header_full_width' => [
+				'type' => 'ocean-switch',
+				'label' => esc_html__('Full Width', 'oceanwp'),
+				'section' => 'ocean_header_general_section',
+				'default'  => false,
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'active_callback' => 'ocean_cac_header_not_medium_and_vertical',
+				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+			],
+
+			'ocean_has_header_border_bottom' => [
+				'type' => 'ocean-switch',
+				'label' => esc_html__('Border Bottom', 'oceanwp'),
+				'section' => 'ocean_header_general_section',
+				'default'  => true,
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'active_callback' => 'ocean_cac_header_not_vertical',
+				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+			],
+
+			'ocean_divider_after_header_border_bottom' => [
+				'type' => 'ocean-divider',
 				'section' => 'ocean_header_general_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -336,7 +335,7 @@ $options = [
 				'type' => 'section',
 				'title' => esc_html__('Additional Styling & Settings', 'oceanwp'),
 				'section' => 'ocean_header_general_section',
-				'after' => 'ocean_spacer_after_header_style_section',
+				'after' => 'ocean_divider_after_header_border_bottom',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -1426,12 +1425,14 @@ $options = [
 						]
 					],
 
-					'ocean_spacer_after_custom_vertical_header_section' => [
-						'type' => 'ocean-spacer',
+					'ocean_header_additional_styling_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
 						'section' => 'ocean_header_additional_styling_section',
 						'transport' => 'postMessage',
-						'priority' => 50,
-					],
+						'priority' => 10,
+					]
 				]
 			],
 
@@ -2443,6 +2444,15 @@ $options = [
 							],
 						]
 					],
+
+					'ocean_header_colors_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_header_colors_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
 				]
 			],
 
@@ -2478,15 +2488,17 @@ $options = [
 						'priority' => 10,
 						'hideLabel'    => false,
 						'sanitize_callback' => 'wp_kses_post',
+					],
+
+					'ocean_header_content_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_header_content_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
 					]
 				]
-			],
-
-			'ocean_divider_after_header_general_content_section' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_header_general_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
 			],
 
 			'ocean_header_general_need_help' => [
@@ -2711,6 +2723,13 @@ $options = [
 		'class' => 'section-site-layout',
 		'priority' => 10,
 		'options' => [
+			'ocean_divider_after_header_logo_settings' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_header_logo_section',
+				'transport' => 'postMessage',
+				'priority' => 40,
+			],
+
 			'ocean_retina_logo' => [
 				'label' => esc_html__( 'Retina Logo', 'oceanwp' ),
 				'desc' => esc_html__( 'Select a retina logo twice the normal logo size.', 'oceanwp' ),
@@ -2728,6 +2747,7 @@ $options = [
 				'transport' => 'postMessage',
 				'top' => 10,
 				'priority' => 40,
+				'active_callback' => 'oceanwp_cac_custom_logo',
 			],
 
 			'ocean_logo_max_width' => [
@@ -2834,49 +2854,21 @@ $options = [
 				]
 			],
 
-			'ocean_logo_color' => [
-				'type' => 'ocean-color',
-				'label' => esc_html__( 'Color', 'oceanwp' ),
+			'ocean_title_for_logo_typography_and_color_settings' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__('Typography and Colors', 'oceanwp'),
 				'section' => 'ocean_header_logo_section',
 				'transport' => 'postMessage',
-				'priority' => 40,
-				'hideLabel' => false,
-				'showAlpha' => true,
-				'showPalette' => true,
+				'priority' => 10,
+				'top' => 20,
+				'bottom' => 20,
 				'active_callback' => 'oceanwp_cac_not_custom_logo',
-				'sanitize_callback' => 'wp_kses_post',
-				'setting_args' => [
-					'normal' => [
-						'id' => 'ocean_logo_color',
-						'key' => 'normal',
-						'label' => 'Normal',
-						'selector' => [
-							'#site-logo a.site-logo-text' => 'color'
-						],
-						'attr' => [
-							'transport' => 'postMessage',
-							'default'   => '#333333',
-						],
-					],
-					'hover' => [
-						'id' => 'ocean_logo_hover_color',
-						'key' => 'hover',
-						'label' => 'Hover',
-						'selector' => [
-							'#site-logo a.site-logo-text:hover' => 'color'
-						],
-						'attr' => [
-							'transport' => 'postMessage',
-							'default'   => '#13aff0',
-						],
-					],
-				]
 			],
 
 			'ocean_logo_typography' => [
 				'id' => 'ocean_logo_typography',
 				'type' => 'ocean-typography',
-				'label' => esc_html__('Typography', 'oceanwp'),
+				'label' => esc_html__('Textual Logo', 'oceanwp'),
 				'section' => 'ocean_header_logo_section',
 				'transport' => 'postMessage',
 				'priority' => 40,
@@ -3037,6 +3029,61 @@ $options = [
 					],
 				]
 			],
+
+			'ocean_divider_after_header_logo_typo_setting' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_header_logo_section',
+				'transport' => 'postMessage',
+				'priority' => 40
+			],
+
+			'ocean_logo_color' => [
+				'type' => 'ocean-color',
+				'label' => esc_html__( 'Textual Logo Color', 'oceanwp' ),
+				'section' => 'ocean_header_logo_section',
+				'transport' => 'postMessage',
+				'priority' => 40,
+				'hideLabel' => false,
+				'showAlpha' => true,
+				'showPalette' => true,
+				'active_callback' => 'oceanwp_cac_not_custom_logo',
+				'sanitize_callback' => 'wp_kses_post',
+				'setting_args' => [
+					'normal' => [
+						'id' => 'ocean_logo_color',
+						'key' => 'normal',
+						'label' => 'Normal',
+						'selector' => [
+							'#site-logo a.site-logo-text' => 'color'
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => '#333333',
+						],
+					],
+					'hover' => [
+						'id' => 'ocean_logo_hover_color',
+						'key' => 'hover',
+						'label' => 'Hover',
+						'selector' => [
+							'#site-logo a.site-logo-text:hover' => 'color'
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => '#13aff0',
+						],
+					],
+				]
+			],
+
+			'ocean_header_logo_section_need_help' => [
+				'type' => 'ocean-content',
+				'isContent' => ocean_render_content_need_help(),
+				'class' => 'need-help',
+				'section' => 'ocean_header_logo_section',
+				'transport' => 'postMessage',
+				'priority' => 40,
+			]
 		]
 	],
 
@@ -3060,7 +3107,7 @@ $options = [
 		'options' => [
 			'ocean_menu_position' => [
 				'type' => 'ocean-buttons',
-				'label' => esc_html__('Menus Position', 'oceanwp'),
+				'label' => esc_html__('Menu Position', 'oceanwp'),
 				'section' => 'ocean_header_menu_section',
 				'default'  => 'right-menu',
 				'transport' => 'postMessage',
@@ -3168,425 +3215,367 @@ $options = [
 				]
 			],
 
-			'ocean_divider_after_menu_links_effect_settings' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_header_menu_section',
-				'transport' => 'postMessage',
-				'top' => 10,
-				'priority' => 10,
-			],
-
-			'ocean_header_custom_menu_section' => [
-				'type' => 'section',
-				'title' => esc_html__('Custom Menu', 'oceanwp'),
-				'section' => 'ocean_header_menu_section',
-				'after' => 'ocean_divider_after_menu_links_effect_settings',
-				'class' => 'section-site-layout',
-				'priority' => 10,
-				'options' => [
-					'ocean_desc_for_header_custom_menu_settings' => [
-						'type' => 'ocean-content',
-						'isContent' => esc_html__('Select a custom template you created in OceanWP > My Library that will replace the default menu navigation only. If you want to create an entire custom header, it\'s best you select the Custom Header type in Customize > Header > General.', 'oceanwp'),
-						'section' => 'ocean_header_custom_menu_section',
-						'class' => 'description',
-						'transport' => 'postMessage',
-						'priority' => 10,
-					],
-
-					'ocean_custom_nav_template' => [
-						'type' => 'ocean-select',
-						'label' => esc_html__('Select Template', 'oceanwp' ),
-						'section' => 'ocean_header_custom_menu_section',
-						'transport' => 'refresh',
-						'default' => '0',
-						'priority' => 10,
-						'hideLabel' => false,
-						'multiple' => false,
-						'choices' => oceanwp_library_template_choices(),
-						'sanitize_callback' => 'sanitize_key',
-					],
-				]
-			],
-
-			'ocean_divider_after_custom_menu_section' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_header_menu_section',
+			'ocean_menu_items_padding' => [
+				'id'      => 'ocean_menu_items_padding',
+				'label'    => esc_html__( 'Menu Items Left and Right Spacing', 'oceanwp' ),
+				'type'     => 'ocean-range-slider',
+				'section'  => 'ocean_header_menu_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10
-			],
-
-			'ocean_header_main_menu_options_section' => [
-				'type' => 'section',
-				'title' => esc_html__('Main Menu Options', 'oceanwp'),
-				'section' => 'ocean_header_menu_section',
-				'after' => 'ocean_divider_after_custom_menu_section',
-				'class' => 'section-site-layout',
-				'priority' => 10,
-				'options' => [
-					'ocean_menu_items_padding' => [
-						'id'      => 'ocean_menu_items_padding',
-						'label'    => esc_html__( 'Menu Items Left and Right Spacing', 'oceanwp' ),
-						'type'     => 'ocean-range-slider',
-						'section'  => 'ocean_header_menu_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel'    => false,
-						'isUnit'       => true,
-						'isResponsive' => false,
-						'min'          => 1,
-						'max'          => 50,
-						'step'         => 1,
-						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
-						'setting_args' => [
-							'desktop' => [
-								'id' => 'ocean_menu_items_padding',
-								'label' => 'Desktop',
-								'attr' => [
-									'transport' => 'postMessage',
-									'default' => 15,
-								],
-							],
-							'unit' => [
-								'id' => 'ocean_menu_items_padding_unit',
-								'label' => esc_html__('Unit', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-									'default' => 'px',
-								],
-							],
+				'hideLabel'    => false,
+				'isUnit'       => true,
+				'isResponsive' => false,
+				'min'          => 1,
+				'max'          => 50,
+				'step'         => 1,
+				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
+				'setting_args' => [
+					'desktop' => [
+						'id' => 'ocean_menu_items_padding',
+						'label' => 'Desktop',
+						'attr' => [
+							'transport' => 'postMessage',
+							'default' => 15,
 						],
-						'preview' => 'queryWithType',
-						'css' => [
-							'#site-navigation-wrap .dropdown-menu > li > a' => ['padding-left', 'padding-right'],
-						]
 					],
-
-					'ocean_divider_after_menu_spacing_setting' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_header_menu_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 1,
-						'bottom' => 10
+					'unit' => [
+						'id' => 'ocean_menu_items_padding_unit',
+						'label' => esc_html__('Unit', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+							'default' => 'px',
+						],
 					],
-
-					'ocean_menu_typography' => [
-						'id' => 'ocean_menu_typography',
-						'type' => 'ocean-typography',
-						'label' => esc_html__('Typography', 'oceanwp'),
-						'section' => 'ocean_header_menu_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel' => false,
-						'selector' => '#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a',
-						'setting_args' => [
-							'fontFamily' => [
-								'id' => 'menu_typography[font-family]',
-								'label' => esc_html__('Font Family', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'fontWeight' => [
-								'id' => 'menu_typography[font-weight]',
-								'label' => esc_html__('Font Weight', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'fontWeightTablet' => [
-								'id' => 'menu_tablet_typography[font-weight]',
-								'label' => esc_html__('Font Weight', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'fontWeightMobile' => [
-								'id' => 'menu_mobile_typography[font-weight]',
-								'label' => esc_html__('Font Weight', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'fontSubset' => [
-								'id' => 'menu_typography[font-subset]',
-								'label' => esc_html__('Font Subset', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'fontSize' => [
-								'id' => 'menu_typography[font-size]',
-								'label' => esc_html__('Font Size', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'fontSizeTablet' => [
-								'id' => 'menu_tablet_typography[font-size]',
-								'label' => esc_html__('Font Size', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'fontSizeMobile' => [
-								'id' => 'menu_mobile_typography[font-size]',
-								'label' => esc_html__('Font Size', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'fontSizeUnit' => [
-								'id' => 'menu_typography[font-size-unit]',
-								'label' => esc_html__('Unit', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'letterSpacing' => [
-								'id' => 'menu_typography[letter-spacing]',
-								'label' => esc_html__('Letter Spacing', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'letterSpacingTablet' => [
-								'id' => 'menu_tablet_typography[letter-spacing]',
-								'label' => esc_html__('Letter Spacing', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'letterSpacingMobile' => [
-								'id' => 'menu_mobile_typography[letter-spacing]',
-								'label' => esc_html__('Letter Spacing', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'letterSpacingUnit' => [
-								'id' => 'menu_typography[letter-spacing-unit]',
-								'label' => esc_html__('Unit', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => 'px'
-								],
-							],
-							'lineHeight' => [
-								'id' => 'menu_typography[line-height]',
-								'label' => esc_html__('Line Height', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'lineHeightTablet' => [
-								'id' => 'menu_tablet_typography[line-height]',
-								'label' => esc_html__('Line Height', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'lineHeightMobile' => [
-								'id' => 'menu_mobile_typography[line-height]',
-								'label' => esc_html__('Line Height', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'lineHeightUnit' => [
-								'id' => 'menu_typography[line-height-unit]',
-								'label' => esc_html__('Unit', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'textTransform' => [
-								'id' => 'menu_typography[text-transform]',
-								'label' => esc_html__('Text Transform', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'textTransformTablet' => [
-								'id' => 'menu_tablet_typography[text-transform]',
-								'label' => esc_html__('Text Transform', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'textTransformMobile' => [
-								'id' => 'menu_mobile_typography[text-transform]',
-								'label' => esc_html__('Text Transform', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'textDecoration' => [
-								'id' => 'menu_typography[text-decoration]',
-								'label' => esc_html__('Text Decoration', 'oceanwp'),
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-						]
-					],
-
-					'ocean_divider_after_menu_typography_setting' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_header_menu_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 1,
-						'bottom' => 10
-					],
-
-					'ocean_menu_link_background' => [
-						'type' => 'ocean-color',
-						'label' => esc_html__( 'Links Background', 'oceanwp' ),
-						'section' => 'ocean_header_menu_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel' => false,
-						'showAlpha' => true,
-						'showPalette' => true,
-						'sanitize_callback' => 'wp_kses_post',
-						'setting_args' => [
-							'normal' => [
-								'id' => 'ocean_menu_link_background',
-								'key' => 'normal',
-								'label' => 'Normal',
-								'selector' => [
-									'#site-navigation-wrap .dropdown-menu > li > a' => 'background-color'
-								],
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-							'hover' => [
-								'id' => 'ocean_menu_link_hover_background',
-								'key' => 'hover',
-								'label' => 'Hover',
-								'selector' => [
-									'#site-navigation-wrap .dropdown-menu > li > a:hover,#site-navigation-wrap .dropdown-menu > li.sfHover > a' => 'background-color'
-								],
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => '#f8f8f8',
-								],
-							],
-						]
-					],
-
-					'ocean_menu_link_color' => [
-						'type' => 'ocean-color',
-						'label' => esc_html__( 'Links', 'oceanwp' ),
-						'section' => 'ocean_header_menu_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel' => false,
-						'showAlpha' => true,
-						'showPalette' => true,
-						'sanitize_callback' => 'wp_kses_post',
-						'setting_args' => [
-							'normal' => [
-								'id' => 'ocean_menu_link_color',
-								'key' => 'normal',
-								'label' => 'Normal',
-								'selector' => [
-									'#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close' => 'color',
-									'#site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use,#searchform-header-replace-close .owp-icon use' => 'stroke'
-								],
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => '#555555',
-								],
-							],
-							'hover' => [
-								'id' => 'ocean_menu_link_color_hover',
-								'key' => 'hover',
-								'label' => 'Hover',
-								'selector' => [
-									'#site-navigation-wrap .dropdown-menu > li > a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover' => 'color',
-									'#site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use,#searchform-header-replace-close:hover .owp-icon use' => 'stroke'
-								],
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => '#13aff0',
-								],
-							],
-						]
-					],
-
-					'ocean_menu_link_color_active' => [
-						'type' => 'ocean-color',
-						'label' => esc_html__( 'Current Menu: Link', 'oceanwp' ),
-						'section' => 'ocean_header_menu_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel' => false,
-						'showAlpha' => true,
-						'showPalette' => true,
-						'sanitize_callback' => 'wp_kses_post',
-						'setting_args' => [
-							'normal' => [
-								'id' => 'ocean_menu_link_color_active',
-								'key' => 'normal',
-								'label' => 'Select Color',
-								'selector' => [
-									'#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'color'
-								],
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => '#555555',
-								],
-							]
-						]
-					],
-
-					'ocean_menu_link_active_background' => [
-						'type' => 'ocean-color',
-						'label' => esc_html__( 'Current Menu: Background', 'oceanwp' ),
-						'section' => 'ocean_header_menu_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel' => false,
-						'showAlpha' => true,
-						'showPalette' => true,
-						'sanitize_callback' => 'wp_kses_post',
-						'setting_args' => [
-							'normal' => [
-								'id' => 'ocean_menu_link_active_background',
-								'key' => 'normal',
-								'label' => 'Select Color',
-								'selector' => [
-									'#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'background-color'
-								],
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							],
-						]
-					],
-
+				],
+				'preview' => 'queryWithType',
+				'css' => [
+					'#site-navigation-wrap .dropdown-menu > li > a' => ['padding-left', 'padding-right'],
 				]
 			],
 
-			'ocean_divider_after_main_menu_options_section' => [
-				'type' => 'ocean-divider',
+			'ocean_title_for_header_menu_typography_colors_settings' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__('Typography and Colors', 'oceanwp'),
 				'section' => 'ocean_header_menu_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
 				'top' => 20,
+				'bottom' => 20,
+			],
+
+			'ocean_menu_typography' => [
+				'id' => 'ocean_menu_typography',
+				'type' => 'ocean-typography',
+				'label' => esc_html__('Main Menu Item', 'oceanwp'),
+				'section' => 'ocean_header_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'selector' => '#site-navigation-wrap .dropdown-menu > li > a,#site-header.full_screen-header .fs-dropdown-menu > li > a,#site-header.top-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.center-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a',
+				'setting_args' => [
+					'fontFamily' => [
+						'id' => 'menu_typography[font-family]',
+						'label' => esc_html__('Font Family', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'fontWeight' => [
+						'id' => 'menu_typography[font-weight]',
+						'label' => esc_html__('Font Weight', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'fontWeightTablet' => [
+						'id' => 'menu_tablet_typography[font-weight]',
+						'label' => esc_html__('Font Weight', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'fontWeightMobile' => [
+						'id' => 'menu_mobile_typography[font-weight]',
+						'label' => esc_html__('Font Weight', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'fontSubset' => [
+						'id' => 'menu_typography[font-subset]',
+						'label' => esc_html__('Font Subset', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'fontSize' => [
+						'id' => 'menu_typography[font-size]',
+						'label' => esc_html__('Font Size', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'fontSizeTablet' => [
+						'id' => 'menu_tablet_typography[font-size]',
+						'label' => esc_html__('Font Size', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'fontSizeMobile' => [
+						'id' => 'menu_mobile_typography[font-size]',
+						'label' => esc_html__('Font Size', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'fontSizeUnit' => [
+						'id' => 'menu_typography[font-size-unit]',
+						'label' => esc_html__('Unit', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'letterSpacing' => [
+						'id' => 'menu_typography[letter-spacing]',
+						'label' => esc_html__('Letter Spacing', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'letterSpacingTablet' => [
+						'id' => 'menu_tablet_typography[letter-spacing]',
+						'label' => esc_html__('Letter Spacing', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'letterSpacingMobile' => [
+						'id' => 'menu_mobile_typography[letter-spacing]',
+						'label' => esc_html__('Letter Spacing', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'letterSpacingUnit' => [
+						'id' => 'menu_typography[letter-spacing-unit]',
+						'label' => esc_html__('Unit', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => 'px'
+						],
+					],
+					'lineHeight' => [
+						'id' => 'menu_typography[line-height]',
+						'label' => esc_html__('Line Height', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'lineHeightTablet' => [
+						'id' => 'menu_tablet_typography[line-height]',
+						'label' => esc_html__('Line Height', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'lineHeightMobile' => [
+						'id' => 'menu_mobile_typography[line-height]',
+						'label' => esc_html__('Line Height', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'lineHeightUnit' => [
+						'id' => 'menu_typography[line-height-unit]',
+						'label' => esc_html__('Unit', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'textTransform' => [
+						'id' => 'menu_typography[text-transform]',
+						'label' => esc_html__('Text Transform', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'textTransformTablet' => [
+						'id' => 'menu_tablet_typography[text-transform]',
+						'label' => esc_html__('Text Transform', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'textTransformMobile' => [
+						'id' => 'menu_mobile_typography[text-transform]',
+						'label' => esc_html__('Text Transform', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'textDecoration' => [
+						'id' => 'menu_typography[text-decoration]',
+						'label' => esc_html__('Text Decoration', 'oceanwp'),
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+				]
+			],
+
+			'ocean_divider_after_menu_typography_setting' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_header_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 1,
 				'bottom' => 10
+			],
+
+			'ocean_menu_link_background' => [
+				'type' => 'ocean-color',
+				'label' => esc_html__( 'Links Background', 'oceanwp' ),
+				'section' => 'ocean_header_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'showAlpha' => true,
+				'showPalette' => true,
+				'sanitize_callback' => 'wp_kses_post',
+				'setting_args' => [
+					'normal' => [
+						'id' => 'ocean_menu_link_background',
+						'key' => 'normal',
+						'label' => 'Normal',
+						'selector' => [
+							'#site-navigation-wrap .dropdown-menu > li > a' => 'background-color'
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+					'hover' => [
+						'id' => 'ocean_menu_link_hover_background',
+						'key' => 'hover',
+						'label' => 'Hover',
+						'selector' => [
+							'#site-navigation-wrap .dropdown-menu > li > a:hover,#site-navigation-wrap .dropdown-menu > li.sfHover > a' => 'background-color'
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => '#f8f8f8',
+						],
+					],
+				]
+			],
+
+			'ocean_menu_link_color' => [
+				'type' => 'ocean-color',
+				'label' => esc_html__( 'Links', 'oceanwp' ),
+				'section' => 'ocean_header_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'showAlpha' => true,
+				'showPalette' => true,
+				'sanitize_callback' => 'wp_kses_post',
+				'setting_args' => [
+					'normal' => [
+						'id' => 'ocean_menu_link_color',
+						'key' => 'normal',
+						'label' => 'Normal',
+						'selector' => [
+							'#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close' => 'color',
+							'#site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use,#searchform-header-replace-close .owp-icon use' => 'stroke'
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => '#555555',
+						],
+					],
+					'hover' => [
+						'id' => 'ocean_menu_link_color_hover',
+						'key' => 'hover',
+						'label' => 'Hover',
+						'selector' => [
+							'#site-navigation-wrap .dropdown-menu > li > a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover' => 'color',
+							'#site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use,#searchform-header-replace-close:hover .owp-icon use' => 'stroke'
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => '#13aff0',
+						],
+					],
+				]
+			],
+
+			'ocean_menu_link_color_active' => [
+				'type' => 'ocean-color',
+				'label' => esc_html__( 'Current Menu: Link', 'oceanwp' ),
+				'section' => 'ocean_header_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'showAlpha' => true,
+				'showPalette' => true,
+				'sanitize_callback' => 'wp_kses_post',
+				'setting_args' => [
+					'normal' => [
+						'id' => 'ocean_menu_link_color_active',
+						'key' => 'normal',
+						'label' => 'Select Color',
+						'selector' => [
+							'#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'color'
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => '#555555',
+						],
+					]
+				]
+			],
+
+			'ocean_menu_link_active_background' => [
+				'type' => 'ocean-color',
+				'label' => esc_html__( 'Current Menu: Background', 'oceanwp' ),
+				'section' => 'ocean_header_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'showAlpha' => true,
+				'showPalette' => true,
+				'sanitize_callback' => 'wp_kses_post',
+				'setting_args' => [
+					'normal' => [
+						'id' => 'ocean_menu_link_active_background',
+						'key' => 'normal',
+						'label' => 'Select Color',
+						'selector' => [
+							'#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'background-color'
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					],
+				]
+			],
+
+			'ocean_title_for_header_additional_menu_options' => [
+				'type' => 'ocean-title',
+				'label' => esc_html__('Additional Menu Options', 'oceanwp'),
+				'section' => 'ocean_header_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 20,
+				'bottom' => 20,
 			],
 
 			'ocean_header_dropdown_menu_options_section' => [
 				'type' => 'section',
 				'title' => esc_html__('Dropdown Menu Options', 'oceanwp'),
 				'section' => 'ocean_header_menu_section',
-				'after' => 'ocean_divider_after_main_menu_options_section',
+				'after' => 'ocean_title_for_header_additional_menu_options',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -3670,146 +3659,10 @@ $options = [
 						]
 					],
 
-					'ocean_divider_after_menu_dropdown_panel_width_setting' => [
-						'type' => 'ocean-divider',
+					'ocean_title_for_menu_dropdown_typography_and_colors_setting' => [
+						'type' => 'ocean-title',
 						'section' => 'ocean_header_dropdown_menu_options_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
-					],
-
-					'ocean_header_dropdown_post_categories_section' => [
-						'type' => 'section',
-						'title' => esc_html__('Post Categories Dropdown', 'oceanwp'),
-						'section' => 'ocean_header_dropdown_menu_options_section',
-						'after' => 'ocean_divider_after_menu_dropdown_panel_width_setting',
-						'class' => 'section-site-layout',
-						'priority' => 10,
-						'options' => [
-							'ocean_dropdown_category_title_bg' => [
-								'type' => 'ocean-color',
-								'label' => esc_html__( 'Category Title: Background', 'oceanwp' ),
-								'section' => 'ocean_header_dropdown_post_categories_section',
-								'transport' => 'postMessage',
-								'priority' => 10,
-								'hideLabel' => false,
-								'showAlpha' => true,
-								'showPalette' => true,
-								'sanitize_callback' => 'wp_kses_post',
-								'setting_args' => [
-									'normal' => [
-										'id' => 'ocean_dropdown_category_title_bg',
-										'key' => 'normal',
-										'label' => 'Normal',
-										'selector' => [
-											'.navigation li.mega-cat .mega-cat-title' => 'background-color'
-										],
-										'attr' => [
-											'transport' => 'postMessage',
-											'default'   => '#f8f8f8',
-										],
-									]
-								]
-							],
-
-							'ocean_dropdown_category_title_color' => [
-								'type' => 'ocean-color',
-								'label' => esc_html__( 'Category Title: Color', 'oceanwp' ),
-								'section' => 'ocean_header_dropdown_post_categories_section',
-								'transport' => 'postMessage',
-								'priority' => 10,
-								'hideLabel' => false,
-								'showAlpha' => true,
-								'showPalette' => true,
-								'sanitize_callback' => 'wp_kses_post',
-								'setting_args' => [
-									'normal' => [
-										'id' => 'ocean_dropdown_category_title_color',
-										'key' => 'normal',
-										'label' => 'Normal',
-										'selector' => [
-											'.navigation li.mega-cat .mega-cat-title' => 'color'
-										],
-										'attr' => [
-											'transport' => 'postMessage',
-											'default'   => '#222222',
-										],
-									]
-								]
-							],
-
-							'ocean_dropdown_category_links_color' => [
-								'type' => 'ocean-color',
-								'label' => esc_html__( 'Posts Links: Color', 'oceanwp' ),
-								'section' => 'ocean_header_dropdown_post_categories_section',
-								'transport' => 'postMessage',
-								'priority' => 10,
-								'hideLabel' => false,
-								'showAlpha' => true,
-								'showPalette' => true,
-								'sanitize_callback' => 'wp_kses_post',
-								'setting_args' => [
-									'normal' => [
-										'id' => 'ocean_dropdown_category_links_color',
-										'key' => 'normal',
-										'label' => 'Normal',
-										'selector' => [
-											'.navigation li.mega-cat ul li .mega-post-title a' => 'color'
-										],
-										'attr' => [
-											'transport' => 'postMessage',
-											'default'   => '#555555',
-										],
-									],
-									'hover' => [
-										'id' => 'ocean_dropdown_category_links_hover_color',
-										'key' => 'hover',
-										'label' => 'Hover',
-										'selector' => [
-											'.navigation li.mega-cat ul li .mega-post-title a:hover' => 'color'
-										],
-										'attr' => [
-											'transport' => 'postMessage',
-											'default'   => '#333333',
-										],
-									]
-								]
-							],
-
-							'ocean_dropdown_category_date_color' => [
-								'type' => 'ocean-color',
-								'label' => esc_html__( 'Posts Date: Color', 'oceanwp' ),
-								'section' => 'ocean_header_dropdown_post_categories_section',
-								'transport' => 'postMessage',
-								'priority' => 10,
-								'hideLabel' => false,
-								'showAlpha' => true,
-								'showPalette' => true,
-								'sanitize_callback' => 'wp_kses_post',
-								'setting_args' => [
-									'normal' => [
-										'id' => 'ocean_dropdown_category_date_color',
-										'key' => 'normal',
-										'label' => 'Normal',
-										'selector' => [
-											'.navigation li.mega-cat ul li .mega-post-date' => 'color',
-											'.navigation li.mega-cat ul li .mega-post-date .owp-icon use' => 'stroke'
-										],
-										'attr' => [
-											'transport' => 'postMessage',
-											'default'   => '#bbbbbb',
-										],
-									]
-								]
-							],
-
-						]
-					],
-
-					'ocean_divider_after_menu_dropdown_post_categories_setting' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_header_dropdown_menu_options_section',
+						'label' => esc_html__( 'Typograhpy and Colors', 'oceanwp' ),
 						'transport' => 'postMessage',
 						'priority' => 10,
 						'top' => 10,
@@ -3819,7 +3672,7 @@ $options = [
 					'ocean_menu_dropdown_typography' => [
 						'id' => 'ocean_menu_dropdown_typography',
 						'type' => 'ocean-typography',
-						'label' => esc_html__('Typography', 'oceanwp'),
+						'label' => esc_html__('Submenu Item', 'oceanwp'),
 						'section' => 'ocean_header_dropdown_menu_options_section',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -3986,7 +3839,7 @@ $options = [
 						'section' => 'ocean_header_dropdown_menu_options_section',
 						'transport' => 'postMessage',
 						'priority' => 10,
-						'top' => 10,
+						'top' => 1,
 						'bottom' => 10
 					],
 
@@ -4011,6 +3864,41 @@ $options = [
 								'attr' => [
 									'transport' => 'postMessage',
 									'default'   => '#13aff0',
+								],
+							]
+						]
+					],
+
+					'ocean_divider_after_dropdown_menu_top_border_setting' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 1,
+						'bottom' => 10
+					],
+
+					'ocean_dropdown_menu_background' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Background Color', 'oceanwp' ),
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'sanitize_callback' => 'wp_kses_post',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'ocean_dropdown_menu_background',
+								'key' => 'normal',
+								'label' => 'Normal',
+								'selector' => [
+									'.dropdown-menu .sub-menu,#searchform-dropdown,.current-shop-items-dropdown' => 'background-color',
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => '#ffffff',
 								],
 							]
 						]
@@ -4042,30 +3930,13 @@ $options = [
 						]
 					],
 
-					'ocean_dropdown_menu_background' => [
-						'type' => 'ocean-color',
-						'label' => esc_html__( 'Background Color', 'oceanwp' ),
+					'ocean_divider_after_dropdown_menu_borders_setting' => [
+						'type' => 'ocean-divider',
 						'section' => 'ocean_header_dropdown_menu_options_section',
 						'transport' => 'postMessage',
 						'priority' => 10,
-						'hideLabel' => false,
-						'showAlpha' => true,
-						'showPalette' => true,
-						'sanitize_callback' => 'wp_kses_post',
-						'setting_args' => [
-							'normal' => [
-								'id' => 'ocean_dropdown_menu_background',
-								'key' => 'normal',
-								'label' => 'Normal',
-								'selector' => [
-									'.dropdown-menu .sub-menu,#searchform-dropdown,.current-shop-items-dropdown' => 'background-color',
-								],
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => '#ffffff',
-								],
-							]
-						]
+						'top' => 1,
+						'bottom' => 10
 					],
 
 					'ocean_dropdown_menu_link_color' => [
@@ -4108,31 +3979,6 @@ $options = [
 						]
 					],
 
-					'ocean_dropdown_menu_link_color_active' => [
-						'type' => 'ocean-color',
-						'label' => esc_html__( 'Current Menu: Link', 'oceanwp' ),
-						'section' => 'ocean_header_dropdown_menu_options_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'hideLabel' => false,
-						'showAlpha' => true,
-						'showPalette' => true,
-						'sanitize_callback' => 'wp_kses_post',
-						'setting_args' => [
-							'normal' => [
-								'id' => 'ocean_dropdown_menu_link_color_active',
-								'key' => 'normal',
-								'label' => 'Select Color',
-								'selector' => [
-									'.dropdown-menu ul > .current-menu-item > a.menu-link' => 'color'
-								],
-								'attr' => [
-									'transport' => 'postMessage',
-								],
-							]
-						]
-					],
-
 					'ocean_dropdown_menu_link_hover_bg' => [
 						'type' => 'ocean-color',
 						'label' => esc_html__( 'Links Background Hover', 'oceanwp' ),
@@ -4154,6 +4000,40 @@ $options = [
 								'attr' => [
 									'transport' => 'postMessage',
 									'default'   => '#f8f8f8',
+								],
+							]
+						]
+					],
+
+					'ocean_divider_after_dropdown_menu_link_hover_bg_setting' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 10,
+						'bottom' => 10
+					],
+
+					'ocean_dropdown_menu_link_color_active' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Current Menu: Link', 'oceanwp' ),
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'sanitize_callback' => 'wp_kses_post',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'ocean_dropdown_menu_link_color_active',
+								'key' => 'normal',
+								'label' => 'Select Color',
+								'selector' => [
+									'.dropdown-menu ul > .current-menu-item > a.menu-link' => 'color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
 								],
 							]
 						]
@@ -4183,6 +4063,151 @@ $options = [
 							],
 						]
 					],
+
+					'ocean_title_for_header_dropdown_post_categories_section' => [
+						'type' => 'ocean-title',
+						'label' => esc_html__('Post Categories Dropdown', 'oceanwp'),
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 20,
+						'bottom' => 20
+					],
+
+					'ocean_dropdown_category_title_bg' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Category Title: Background', 'oceanwp' ),
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'sanitize_callback' => 'wp_kses_post',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'ocean_dropdown_category_title_bg',
+								'key' => 'normal',
+								'label' => 'Normal',
+								'selector' => [
+									'.navigation li.mega-cat .mega-cat-title' => 'background-color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => '#f8f8f8',
+								],
+							]
+						]
+					],
+
+					'ocean_dropdown_category_title_color' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Category Title: Name', 'oceanwp' ),
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'sanitize_callback' => 'wp_kses_post',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'ocean_dropdown_category_title_color',
+								'key' => 'normal',
+								'label' => 'Normal',
+								'selector' => [
+									'.navigation li.mega-cat .mega-cat-title' => 'color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => '#222222',
+								],
+							]
+						]
+					],
+
+					'ocean_divider_after_dropdown_category_title_color_setting' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 1,
+						'bottom' => 10
+					],
+
+					'ocean_dropdown_category_links_color' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Posts Links: Title', 'oceanwp' ),
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'sanitize_callback' => 'wp_kses_post',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'ocean_dropdown_category_links_color',
+								'key' => 'normal',
+								'label' => 'Normal',
+								'selector' => [
+									'.navigation li.mega-cat ul li .mega-post-title a' => 'color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => '#555555',
+								],
+							],
+							'hover' => [
+								'id' => 'ocean_dropdown_category_links_hover_color',
+								'key' => 'hover',
+								'label' => 'Hover',
+								'selector' => [
+									'.navigation li.mega-cat ul li .mega-post-title a:hover' => 'color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => '#333333',
+								],
+							]
+						]
+					],
+
+					'ocean_dropdown_category_date_color' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Posts Links: Date', 'oceanwp' ),
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'sanitize_callback' => 'wp_kses_post',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'ocean_dropdown_category_date_color',
+								'key' => 'normal',
+								'label' => 'Normal',
+								'selector' => [
+									'.navigation li.mega-cat ul li .mega-post-date' => 'color',
+									'.navigation li.mega-cat ul li .mega-post-date .owp-icon use' => 'stroke'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => '#bbbbbb',
+								],
+							]
+						]
+					],
+
+					'ocean_header_dropdown_menu_options_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_header_dropdown_menu_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
 				]
 			],
 
@@ -4506,9 +4531,78 @@ $options = [
 								],
 							]
 						]
+					],
+
+					'ocean_header_menu_search_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_header_search_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
 					]
 				]
 			],
+
+			'ocean_title_for_custom_menu_section' => [
+				'type' => 'ocean-divider',
+				'label' => esc_html__('Custom Menu', 'oceanwp'),
+				'section' => 'ocean_header_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'top' => 10,
+				'bottom' => 10
+			],
+
+			'ocean_header_custom_menu_section' => [
+				'type' => 'section',
+				'title' => esc_html__('Custom Menu', 'oceanwp'),
+				'section' => 'ocean_header_menu_section',
+				'after' => 'ocean_title_for_custom_menu_section',
+				'class' => 'section-site-layout',
+				'priority' => 10,
+				'options' => [
+					'ocean_desc_for_header_custom_menu_settings' => [
+						'type' => 'ocean-content',
+						'isContent' => esc_html__('Select a custom template you created in OceanWP > My Library that will replace the default menu navigation only. If you want to create an entire custom header, it\'s best you select the Custom Header type in Customize > Header > General.', 'oceanwp'),
+						'section' => 'ocean_header_custom_menu_section',
+						'class' => 'description',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					],
+
+					'ocean_custom_nav_template' => [
+						'type' => 'ocean-select',
+						'label' => esc_html__('Select Template', 'oceanwp' ),
+						'section' => 'ocean_header_custom_menu_section',
+						'transport' => 'refresh',
+						'default' => '0',
+						'priority' => 10,
+						'hideLabel' => false,
+						'multiple' => false,
+						'choices' => oceanwp_library_template_choices(),
+						'sanitize_callback' => 'sanitize_key',
+					],
+
+					'ocean_header_custom_menu_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_header_custom_menu_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+					]
+				]
+			],
+
+			'ocean_header_menu_section_need_help' => [
+				'type' => 'ocean-content',
+				'isContent' => ocean_render_content_need_help(),
+				'class' => 'need-help',
+				'section' => 'ocean_header_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+			]
 
 		]
 	],
@@ -4623,11 +4717,18 @@ $options = [
 				]
 			],
 
+			'ocean_divider_after_menu_social_style' => [
+				'type' => 'ocean-divider',
+				'section' => 'ocean_header_social_menu_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+			],
+
 			'ocean_header_default_social_icon_setting_section' => [
 				'type' => 'section',
 				'title' => esc_html__('Social Icons Settings', 'oceanwp'),
 				'section' => 'ocean_header_social_menu_section',
-				'after' => 'ocean_menu_social_style',
+				'after' => 'ocean_divider_after_menu_social_style',
 				'class' => 'section-site-layout',
 				'priority' => 10,
 				'options' => [
@@ -4937,7 +5038,7 @@ $options = [
 
 					'ocean_menu_social_links_color' => [
 						'type' => 'ocean-color',
-						'label' => esc_html__( 'Icons color', 'oceanwp' ),
+						'label' => esc_html__( 'Icons', 'oceanwp' ),
 						'section' => 'ocean_header_default_social_icon_setting_section',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -4973,6 +5074,16 @@ $options = [
 							],
 						]
 					],
+
+					'ocean_header_default_social_icon_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_header_default_social_icon_setting_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'active_callback' => 'ocean_cac_header_social_menu',
+					]
 				]
 			],
 
@@ -5005,6 +5116,16 @@ $options = [
 						'social_setting_id' => 'ocean_menu_social_profiles',
 						'social_profiles' => oceanwp_social_options()
 					],
+
+					'ocean_header_social_menu_links_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_header_social_menu_links_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'active_callback' => 'ocean_cac_header_social_menu',
+					]
 				]
 			],
 
@@ -5051,14 +5172,17 @@ $options = [
 						'choices' => oceanwp_library_template_choices(),
 					],
 
-				]
-			],
+					'ocean_header_social_menu_custom_template_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_header_social_menu_custom_template_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'active_callback' => 'ocean_cac_header_social_menu',
+					]
 
-			'ocean_divider_after_header_social_menu_section' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_header_social_menu_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
+				]
 			],
 
 			'ocean_header_social_menu_need_help' => [
@@ -5270,19 +5394,20 @@ $options = [
 						'active_callback' => 'ocean_cac_mobile_header_not_medium_vetical_custom',
 						'sanitize_callback' => 'sanitize_key',
 						'choices' => [
-							'one' 	=> esc_html__( 'Logo / Cart / Link', 'oceanwp' ),
-							'two' 	=> esc_html__( 'Cart / Logo / Link', 'oceanwp' ),
+							'one' => esc_html__( 'Logo / Cart / Link', 'oceanwp' ),
+							'two' => esc_html__( 'Cart / Logo / Link', 'oceanwp' ),
 							'three' => esc_html__( 'Link / Logo / Cart', 'oceanwp' ),
 						],
 					],
 
-					'ocean_divider_after_mobile_elements_positioning_setting' => [
+					'ocean_title_for_mobile_logo_setting' => [
 						'type' => 'ocean-divider',
+						'label' => esc_html__( 'Mobile Logo', 'oceanwp' ),
 						'section' => 'ocean_header_mobile_menu_general_section',
 						'transport' => 'postMessage',
 						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10,
+						'top' => 20,
+						'bottom' => 20,
 					],
 
 					'ocean_responsive_logo' => [
@@ -5294,6 +5419,15 @@ $options = [
 						'priority' => 10,
 						'hideLabel' => false,
 						'mediaType' => 'image',
+					],
+
+					'ocean_divider_after_responsive_logo_setting' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_header_mobile_menu_general_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 10,
+						'bottom' => 10,
 					],
 
 					'ocean_responsive_logo_height' => [
@@ -5323,13 +5457,6 @@ $options = [
 						'css' => [
 							'#site-logo.has-responsive-logo .responsive-logo-link img' => ['max-height']
 						]
-					],
-
-					'ocean_divider_after_responsive_logo_height_setting' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_header_mobile_menu_general_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
 					],
 
 					'ocean_header_mobile_menu_general_setting_need_help' => [
@@ -5646,13 +5773,6 @@ $options = [
 						'transport' => 'postMessage',
 						'priority' => 10,
 						'active_callback' => 'ocean_cac_has_mobile_menu_fullscreen'
-					],
-
-					'ocean_divider_after_no_mobile_fullscreen_setting' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_header_mobile_menu_options_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
 					],
 
 					'ocean_header_mobile_menu_options_setting_need_help' => [
@@ -6252,15 +6372,17 @@ $options = [
 								],
 							]
 						]
+					],
+
+					'ocean_header_mobile_menu_styling_section_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => ocean_render_content_need_help(),
+						'class' => 'need-help',
+						'section' => 'ocean_header_mobile_menu_styling_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
 					]
 				]
-			],
-
-			'ocean_divider_after_header_mobile_menu_styling_section' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_header_mobile_menu_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
 			],
 
 			'ocean_header_mobile_menu_styling_need_help' => [
@@ -6274,15 +6396,6 @@ $options = [
 		]
 	],
 
-	'ocean_divider_after_mobile_menu_section' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_header',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'top' => 20,
-		'bottom' => 10,
-	],
-
 	'ocean_header_upsell_notice' => [
 		'type' => 'ocean-content',
 		'isContent' => ocean_render_upsell_notice(),
@@ -6291,28 +6404,6 @@ $options = [
 		'transport' => 'postMessage',
 		'priority' => 10,
 		'active_callback' => 'ocean_upsell_notice_callback'
-	],
-
-	'ocean_header_whatnext_links' => [
-		'type' => 'ocean-links',
-		'label' => esc_html__('What to do next?', 'oceanwp'),
-		'section' => 'ocean_header',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'class' => 'whatnext',
-		'linkIcon' => 'link-2',
-		'titleIcon' => 'next-step',
-		'active_callback' => 'ocean_is_oe_active',
-		'links' => [
-			'google_font' => [
-				'label' => esc_html__('Apply Global Color Settings', 'oceanwp'),
-				'url' => '#'
-			],
-			'google_font_local' => [
-				'label' => esc_html__('Apply Global Site Settings', 'oceanwp'),
-				'url' => '#'
-			]
-		]
 	],
 
 	'ocean_header_need_help' => [

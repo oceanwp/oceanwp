@@ -318,7 +318,7 @@ $options = [
 
 	'ocean_links_colors' => [
 		'type' => 'ocean-color',
-		'label' => esc_html__( 'Link', 'oceanwp' ),
+		'label' => esc_html__( 'Links', 'oceanwp' ),
 		'section' => 'ocean_colors',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -353,41 +353,6 @@ $options = [
 					'transport' => 'postMessage',
 					'default'   => '#13aff0',
 				],
-			]
-		]
-	],
-
-	'ocean_divider_after_link_color' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_colors',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'top' => 10,
-		'bottom' => 10
-	],
-
-	'ocean_colors_whatnext_links' => [
-		'type' => 'ocean-links',
-		'label' => 'What to do next?',
-		'section' => 'ocean_colors',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'class' => 'whatnext',
-		'linkIcon' => 'link-2',
-		'titleIcon' => 'next-step',
-		'active_callback' => 'ocean_is_oe_active',
-		'links' => [
-			'site_background' => [
-				'label' => esc_html__('Set site background color or image.', 'oceanwp'),
-				'url' => '#'
-			],
-			'site_Style_settings' => [
-				'label' => esc_html__('Customize site style and settings.', 'oceanwp'),
-				'url' => '#'
-			],
-			'customize_header' => [
-				'label' => esc_html__('Customize the header.', 'oceanwp'),
-				'url' => '#'
 			]
 		]
 	],

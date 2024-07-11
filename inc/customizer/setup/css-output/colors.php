@@ -135,7 +135,7 @@ class OceanWP_Colors_CSS {
 
 		// Get site background color.
 		if ( ! empty( $background_color ) && '#ffffff' != $background_color ) {
-			$css .= 'body, .has-parallax-footer:not(.separate-layout) #main{background-color:' . $background_color . ';}';
+			$css .= 'body, .separate-layout, .has-parallax-footer:not(.separate-layout) #main{background-color:' . $background_color . ';}';
 		}
 
 		// Links color.

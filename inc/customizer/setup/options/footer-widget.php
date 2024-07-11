@@ -203,9 +203,18 @@ $options = [
 		],
 	],
 
+	'ocean_divider_after_footer_widget_heading_tag_setting' => [
+		'type' => 'ocean-divider',
+		'section' => 'ocean_footer_widgets',
+		'transport' => 'postMessage',
+		'priority' => 10,
+		'top' => 10,
+		'active_callback' => 'ocean_cac_footer_widget',
+	],
+
 	'ocean_footer_widgets_columns' => [
 		'id'      => 'ocean_footer_widgets_columns',
-		'label'    => esc_html__( 'Columns', 'oceanwp' ),
+		'label'    => esc_html__( 'Footer Columns', 'oceanwp' ),
 		'type'     => 'ocean-range-slider',
 		'section'  => 'ocean_footer_widgets',
 		'transport' => 'refresh',
@@ -341,7 +350,7 @@ $options = [
 	'footer_widget_title' => [
 		'id' => 'footer_widget_title',
 		'type' => 'ocean-typography',
-		'label' => esc_html__('Footer Widgets Heading', 'oceanwp'),
+		'label' => esc_html__('Footer Widget Headings', 'oceanwp'),
 		'section' => 'ocean_footer_widgets',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -569,7 +578,7 @@ $options = [
 
 	'footer_widget_title_typography_color' => [
 		'type' => 'ocean-color',
-		'label' => esc_html__( 'Widget Heading', 'oceanwp' ),
+		'label' => esc_html__( 'Widget Headings', 'oceanwp' ),
 		'section' => 'ocean_footer_widgets',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -658,13 +667,6 @@ $options = [
 				],
 			],
 		]
-	],
-
-	'ocean_divider_for_footer_widgets_section' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_footer_widgets',
-		'transport' => 'postMessage',
-		'priority' => 10,
 	],
 
 	'ocean_footer_widgets_section_need_help' => [
