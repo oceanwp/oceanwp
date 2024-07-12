@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### _2024.07.12_ - 3.5.8
+- **Updated**:: Compatibility: WooCommerce: Single product featured image template number.
+- **Updated**:: Compatibility: WordPress: version number.
+- **Updated**:: Translation: Polish: 'Previous Post' and 'Tags' strings.
+- **Updated**:: Template: woocommerce/single-product/product-image.php
+- **Fixed**:: WooCommerce: My Account: Password visibility toggle icon not visible.
+
 ### _2024.05.24_ - 3.5.7
 - **Reversed**:: 3.5.6 changes: "Fixed: Customizer: Section display issues on rare conditions." due to Customizer image control type issues.
 
