@@ -85,8 +85,6 @@ class ScrollEffect {
           this.#getTopbarHeight() -
           this.#getStickyHeaderHeight();
 
-          console.log(scrollPosition);
-
         this.#elements.html.scrollTo({
           top: scrollPosition,
           behavior: "smooth",
