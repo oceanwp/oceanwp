@@ -2745,7 +2745,7 @@ $options = [
 				'type' => 'ocean-divider',
 				'section' => 'ocean_header_logo_section',
 				'transport' => 'postMessage',
-				'top' => 10,
+				'top' => 40,
 				'priority' => 40,
 				'active_callback' => 'oceanwp_cac_custom_logo',
 			],
@@ -2859,7 +2859,7 @@ $options = [
 				'label' => esc_html__('Typography and Colors', 'oceanwp'),
 				'section' => 'ocean_header_logo_section',
 				'transport' => 'postMessage',
-				'priority' => 10,
+				'priority' => 40,
 				'top' => 20,
 				'bottom' => 20,
 				'active_callback' => 'oceanwp_cac_not_custom_logo',
@@ -3034,7 +3034,9 @@ $options = [
 				'type' => 'ocean-divider',
 				'section' => 'ocean_header_logo_section',
 				'transport' => 'postMessage',
-				'priority' => 40
+				'priority' => 40,
+				'top' => 1,
+				'bottom' => 10
 			],
 
 			'ocean_logo_color' => [
@@ -3145,17 +3147,17 @@ $options = [
 				'multiple' => false,
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
-					'no' 		=> esc_html__( 'No Effect', 'oceanwp' ),
-					'one' 		=> esc_html__( 'Underline From Left', 'oceanwp' ),
-					'two' 		=> esc_html__( 'Underline Up', 'oceanwp' ),
-					'three' 	=> esc_html__( 'Underline Down', 'oceanwp' ),
-					'four' 		=> esc_html__( 'Brackets', 'oceanwp' ),
-					'five' 		=> esc_html__( 'Overline & Fixed Underline', 'oceanwp' ),
-					'six' 		=> esc_html__( 'Circular Reveal', 'oceanwp' ),
-					'seven' 	=> esc_html__( 'Tripple Dot Under', 'oceanwp' ),
-					'eight' 	=> esc_html__( 'X Marks The Spot', 'oceanwp' ),
-					'nine' 		=> esc_html__( 'Underline & Overline', 'oceanwp' ),
-					'ten' 		=> esc_html__( 'Backlighting', 'oceanwp' ),
+					'no'    => esc_html__( 'No Effect', 'oceanwp' ),
+					'one'   => esc_html__( 'Underline From Left', 'oceanwp' ),
+					'two'   => esc_html__( 'Underline Up', 'oceanwp' ),
+					'three' => esc_html__( 'Underline Down', 'oceanwp' ),
+					'four'  => esc_html__( 'Brackets', 'oceanwp' ),
+					'five'  => esc_html__( 'Overline & Fixed Underline', 'oceanwp' ),
+					'six'   => esc_html__( 'Circular Reveal', 'oceanwp' ),
+					'seven' => esc_html__( 'Tripple Dot Under', 'oceanwp' ),
+					'eight' => esc_html__( 'X Marks The Spot', 'oceanwp' ),
+					'nine'  => esc_html__( 'Underline & Overline', 'oceanwp' ),
+					'ten'   => esc_html__( 'Backlighting', 'oceanwp' ),
 				]
 			],
 
