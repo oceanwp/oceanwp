@@ -6363,7 +6363,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'.price del,del .amount' => 'color'
+									'.woocommerce div.product div[itemprop="description"]' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6389,7 +6389,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'.price del,del .amount' => 'color'
+									'.quantity .qty,.quantity .qty-changer a' => 'border-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6415,7 +6415,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'.price del,del .amount' => 'color'
+									'body .quantity .qty:focus' => 'border-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6441,7 +6441,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'.price del,del .amount' => 'color'
+									'.quantity .qty' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6467,7 +6467,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
-									'.price del,del .amount' => 'color'
+									'.quantity .qty-changer a' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6479,7 +6479,7 @@ $options = [
 								'key' => 'hover',
 								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
-									'.price del,del .amount' => 'color'
+									'.quantity .qty-changer a:hover' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6505,7 +6505,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'.price del,del .amount' => 'color'
+									'.quantity .qty-changer a:hover' => 'border-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6531,7 +6531,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'.price del,del .amount' => 'color'
+									'.product_meta .posted_in,.product_meta .tagged_as' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6557,7 +6557,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
-									'.price del,del .amount' => 'color'
+									'.product_meta .posted_in a,.product_meta .tagged_as a' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6569,7 +6569,7 @@ $options = [
 								'key' => 'hover',
 								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
-									'.price del,del .amount' => 'color'
+									'.product_meta .posted_in a:hover,.product_meta .tagged_as a:hover' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -9882,7 +9882,7 @@ $options = [
 						'key' => 'normal',
 						'label' => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'#owp-checkout-timeline .timeline-step' => 'border-color'
+							'.woocommerce ul.products li.product.outofstock .outofstock-badge' => 'background-color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -9908,7 +9908,7 @@ $options = [
 						'key' => 'normal',
 						'label' => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'#owp-checkout-timeline .timeline-step' => 'border-color'
+							'.woocommerce ul.products li.product.outofstock .outofstock-badge' => 'color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -9944,7 +9944,7 @@ $options = [
 						'key' => 'normal',
 						'label' => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'#owp-checkout-timeline .timeline-step' => 'border-color'
+							'.woocommerce .star-rating:before' => 'color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -9970,7 +9970,7 @@ $options = [
 						'key' => 'normal',
 						'label' => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'#owp-checkout-timeline .timeline-step' => 'border-color'
+							'.woocommerce .star-rating span, .woocommerce .star-rating span:before' => 'color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',

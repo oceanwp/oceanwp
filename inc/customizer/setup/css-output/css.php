@@ -6,7 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
 require OCEANWP_INC_DIR . 'customizer/setup/css-output/selectors.php';
@@ -22,20 +22,20 @@ require OCEANWP_INC_DIR . 'customizer/setup/css-output/footer-copyright.php';
 
 // If WooCommerce is activated.
 if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
-    require OCEANWP_INC_DIR . 'customizer/setup/css-output/woocommerce.php';
+	require OCEANWP_INC_DIR . 'customizer/setup/css-output/woocommerce.php';
 }
 
 // Easy Digital Downloads Settings.
 if ( OCEANWP_EDD_ACTIVE ) {
-    require OCEANWP_INC_DIR . 'customizer/setup/css-output/edd.php';
+	require OCEANWP_INC_DIR . 'customizer/setup/css-output/edd.php';
 }
 
 // If LifterLMS is activated.
 if ( OCEANWP_LIFTERLMS_ACTIVE ) {
-    require OCEANWP_INC_DIR . 'customizer/setup/css-output/lifterlms.php';
+	require OCEANWP_INC_DIR . 'customizer/setup/css-output/lifterlms.php';
 }
 
 // If LearnDash is activated.
 if ( OCEANWP_LEARNDASH_ACTIVE ) {
-    require OCEANWP_INC_DIR . 'customizer/setup/css-output/learndash.php';
+	require OCEANWP_INC_DIR . 'customizer/setup/css-output/learndash.php';
 }

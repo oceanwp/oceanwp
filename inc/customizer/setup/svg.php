@@ -390,7 +390,7 @@ function ocean_customizer_section_icons() {
 				</g>
 			</svg>',
 
-		'footerWidget' => '<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+		'footerCopyright' => '<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
 				<defs>
 				<style>
 					.ofwc-1 {
@@ -427,7 +427,7 @@ function ocean_customizer_section_icons() {
 			<path class="osic-1" d="M20.8324785142,3.1975718481v25.5999755859H4.9925126939c-.9899902344,0-1.7900390625-.799987793-1.7900390625-1.7899780273V4.997559641c0-.9899902344.8000488281-1.799987793,1.7900390625-1.799987793h15.8399658203Z"/>
 			</svg>',
 
-		'footerCopyright' => '<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+		'footerWidget' => '<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
 				<defs>
 				<style>
 					.ofbcc-1 {

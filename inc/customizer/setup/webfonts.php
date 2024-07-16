@@ -11,28 +11,28 @@
  * @since 1.0.0
  */
 function oceanwp_standard_fonts() {
-   return apply_filters(
-        'ocean_standard_fonts_array',
-        array(
-            'Arial, Helvetica, sans-serif',
-            'Arial Black, Gadget, sans-serif',
-            'Bookman Old Style, serif',
-            'Comic Sans MS, cursive',
-            'Courier, monospace',
-            'Georgia, serif',
-            'Garamond, serif',
-            'Impact, Charcoal, sans-serif',
-            'Lucida Console, Monaco, monospace',
-            'Lucida Sans Unicode, Lucida Grande, sans-serif',
-            'MS Sans Serif, Geneva, sans-serif',
-            'MS Serif, New York, sans-serif',
-            'Palatino Linotype, Book Antiqua, Palatino, serif',
-            'Tahoma, Geneva, sans-serif',
-            'Times New Roman, Times, serif',
-            'Trebuchet MS, Helvetica, sans-serif',
-            'Verdana, Geneva, sans-serif',
-            'Paratina Linotype',
-            'Trebuchet MS',
+	return apply_filters(
+		'ocean_standard_fonts_array',
+		array(
+			'Arial, Helvetica, sans-serif',
+			'Arial Black, Gadget, sans-serif',
+			'Bookman Old Style, serif',
+			'Comic Sans MS, cursive',
+			'Courier, monospace',
+			'Georgia, serif',
+			'Garamond, serif',
+			'Impact, Charcoal, sans-serif',
+			'Lucida Console, Monaco, monospace',
+			'Lucida Sans Unicode, Lucida Grande, sans-serif',
+			'MS Sans Serif, Geneva, sans-serif',
+			'MS Serif, New York, sans-serif',
+			'Palatino Linotype, Book Antiqua, Palatino, serif',
+			'Tahoma, Geneva, sans-serif',
+			'Times New Roman, Times, serif',
+			'Trebuchet MS, Helvetica, sans-serif',
+			'Verdana, Geneva, sans-serif',
+			'Paratina Linotype',
+			'Trebuchet MS',
 		)
 	);
 }
@@ -46,7 +46,7 @@ function oceanwp_google_fonts_array() {
 
 	$json = OCEANWP_INC_DIR_URI . 'customizer/setup/assets/google-fonts.json';
 
-    $response = wp_remote_get( $json );
+	$response = wp_remote_get( $json );
 
 	if (is_wp_error($response)) {
 		return false;
@@ -56,7 +56,7 @@ function oceanwp_google_fonts_array() {
 
 	$fonts = apply_filters( 'ocean_google_fonts_array', $fonts );
 
-    return $fonts;
+	return $fonts;
 }
 
 /**

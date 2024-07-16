@@ -26,7 +26,7 @@ function oceanwp_sanitize_checkbox( $checked ) {
  */
 function oceanwp_sanitize_multicheck( $values ) {
 	$multi_values = ! is_array( $values ) ? explode( ',', $values ) : $values;
-    return ! empty( $multi_values ) ? array_map( 'sanitize_text_field', $multi_values ) : array();
+	return ! empty( $multi_values ) ? array_map( 'sanitize_text_field', $multi_values ) : array();
 }
 
 /**
@@ -48,21 +48,21 @@ function oceanwp_sanitize_dropdown_pages( $page_id, $setting ) {
  * @since 1.2.1
  */
 function oceanwp_sanitize_color( $color ) {
-    if ( empty( $color ) || is_array( $color ) ) {
-        return '';
-    }
+	if ( empty( $color ) || is_array( $color ) ) {
+		return '';
+	}
 
-    // If string does not start with 'rgba', then treat as hex.
+	// If string does not start with 'rgba', then treat as hex.
 	// sanitize the hex color and finally convert hex to rgba
-    if ( false === strpos( $color, 'rgba' ) ) {
-        return sanitize_hex_color( $color );
-    }
+	if ( false === strpos( $color, 'rgba' ) ) {
+		return sanitize_hex_color( $color );
+	}
 
-    // By now we know the string is formatted as an rgba color so we need to further sanitize it.
-    $color = str_replace( ' ', '', $color );
-    sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+	// By now we know the string is formatted as an rgba color so we need to further sanitize it.
+	$color = str_replace( ' ', '', $color );
+	sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
 
-    return 'rgba('.$red.','.$green.','.$blue.','.$alpha.')';
+	return 'rgba('.$red.','.$green.','.$blue.','.$alpha.')';
 }
 
 /**
@@ -87,23 +87,23 @@ function oceanwp_sanitize_multi_choices( $input, $setting ) {
 }
 
 function oceanwp_sanitize_multiple_select( $values, $setting ) {
-    // Ensure input is an array.
-    if (!is_array($values)) {
-        $values = explode(',', $values);
-    }
+	// Ensure input is an array.
+	if (!is_array($values)) {
+		$values = explode(',', $values);
+	}
 
-    // Get list of choices from the control associated with the setting.
-    $choices = $setting->manager->get_control($setting->id)->choices;
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control($setting->id)->choices;
 
-    // Check if the value exists in the choices; if not, unset it.
-    foreach ($values as $key => $value) {
-        if (!array_key_exists($value, $choices)) {
-            unset($values[$key]);
-        }
-    }
+	// Check if the value exists in the choices; if not, unset it.
+	foreach ($values as $key => $value) {
+		if (!array_key_exists($value, $choices)) {
+			unset($values[$key]);
+		}
+	}
 
-    // Return the sanitized array.
-    return $values;
+	// Return the sanitized array.
+	return $values;
 }
 
 
@@ -118,19 +118,19 @@ function oceanwp_sanitize_image( $image, $setting ) {
 	 *
 	 * The array includes image mime types that are included in wp_get_mime_types()
 	 */
-    $mimes = array(
-        'jpg|jpeg|jpe' => 'image/jpeg',
-        'gif'          => 'image/gif',
-        'png'          => 'image/png',
-        'bmp'          => 'image/bmp',
-        'tif|tiff'     => 'image/tiff',
-        'ico'          => 'image/x-icon',
+	$mimes = array(
+		'jpg|jpeg|jpe' => 'image/jpeg',
+		'gif'          => 'image/gif',
+		'png'          => 'image/png',
+		'bmp'          => 'image/bmp',
+		'tif|tiff'     => 'image/tiff',
+		'ico'          => 'image/x-icon',
 		'svg'          => 'image/svg+xml'
-    );
+	);
 	// Return an array with file extension and mime_type.
-    $file = wp_check_filetype( $image, $mimes );
+	$file = wp_check_filetype( $image, $mimes );
 	// If $image has a valid mime_type, return it; otherwise, return the default.
-    return ( $file['ext'] ? $image : $setting->default );
+	return ( $file['ext'] ? $image : $setting->default );
 }
 
 /**
