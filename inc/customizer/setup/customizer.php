@@ -184,7 +184,8 @@ class OceanWP_Customizer_Init {
 							$control_args['json']['settingGroup'][$setting_arg_key] = [
 								'id' => $setting_arg_key,
 								'key' => isset($setting_arg_data['key']) ? $setting_arg_data['key'] : '',
-								'label' => $setting_arg_data['label']
+								'label' => $setting_arg_data['label'],
+								'attr' => $setting_arg_data['attr']
 							];
 						}
 
