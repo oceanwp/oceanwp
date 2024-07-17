@@ -6491,7 +6491,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Customizer' ) ) :
 
 			// Add background color
 			if ( ! empty( $product_background_color ) ) {
-				$css .= '.woocommerce .products .product-inner, .woocommerce ul.products li.product .woo-product-info, .woocommerce ul.products li.product .woo-product-gallery{background-color:'. $product_background_color .';}';
+				$css .= '.woocommerce .products .product-inner, .woocommerce ul.products li.product .woo-product-info, .woocommerce ul.products li.product .woo-product-gallery{background-color:'. $product_background_color .' !important;}';
 			}
 
 			// Add border color
