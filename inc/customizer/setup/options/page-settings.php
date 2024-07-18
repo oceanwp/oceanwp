@@ -2299,7 +2299,8 @@ $options = [
 				'transport' => 'postMessage',
 				'priority'  => 10,
 				'top'       => 1,
-				'bottom'    => 10
+				'bottom'    => 10,
+				'active_callback'   => 'oceanw_cac_is_search_bs_layout',
 			],
 
 			'ocean_search_logo' => [
