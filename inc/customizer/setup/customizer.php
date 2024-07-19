@@ -440,7 +440,7 @@ class OceanWP_Customizer_Init {
 				// 'options' => ocean_customize_options('options'),
 				// 'isPremium' => ocean_check_pro_license(),
 				'isOE' => ocean_is_oe_active(),
-				'sectionIcons' => ocean_customizer_section_icons(),
+				//'sectionIcons' => ocean_customizer_section_icons(),
 				'pageChoices' => ocean_get_page_choices(),
 				'customFonts' => function_exists( 'ocean_add_custom_fonts' ) ? ocean_add_custom_fonts() : array(),
 				'customizerFonts' => $this->get_customizer_fonts(),
