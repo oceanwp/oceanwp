@@ -50,6 +50,16 @@ class OceanWP_Customizer_Init {
 
 		foreach ( $options as $section_key => $section_options ) {
 
+			// Execute and check condition
+			if ( isset( $section_options['condition'] ) ) {
+				$condition = $section_options['condition'];
+				if ( is_callable( $condition ) && ! call_user_func( $condition ) ) {
+					continue;
+				} elseif ( ! is_callable( $condition ) && ! $condition ) {
+					continue;
+				}
+			}
+
 			$section_args = [];
 
 			if ( isset( $section_options['title'] ) && $section_options['title'] ) {
@@ -60,11 +70,11 @@ class OceanWP_Customizer_Init {
 				$section_args['priority'] = $section_options['priority'];
 			}
 
-			if ( isset( $section_options['condition'] ) ) {
-				$section_args['active_callback'] = function() use ($section_options) {
-					return $section_options['condition'];
-				};
-			}
+			// if ( isset( $section_options['condition'] ) ) {
+			// 	$section_args['active_callback'] = function() use ($section_options) {
+			// 		return $section_options['condition'];
+			// 	};
+			// }
 
 			$wp_customize->add_section(
 				$section_key,

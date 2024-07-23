@@ -70,6 +70,24 @@ class OceanWP_Colors_CSS {
 		$meta_breadcrumbs_link_color       = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_color', true );
 		$meta_breadcrumbs_link_color_hover = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_hover_color', true );
 
+
+		$typography_body             = get_theme_mod('body_typography');
+		$typography_body_color       = isset($typography_body['color']) ? $typography_body['color'] : '';
+		$typography_headings         = get_theme_mod('headings_typography');
+		$typography_headings_color   = isset($typography_headings['color']) ? $typography_headings['color'] : '';
+		$typography_h1               = get_theme_mod('heading_h1_typography');
+		$typography_h1_color         = isset($typography_h1['color']) ? $typography_h1['color'] : '';
+		$typography_h2               = get_theme_mod('heading_h2_typography');
+		$typography_h2_color         = isset($typography_h2['color']) ? $typography_h2['color'] : '';
+		$typography_h3               = get_theme_mod('heading_h3_typography');
+		$typography_h3_color         = isset($typography_h3['color']) ? $typography_h3['color'] : '';
+		$typography_h4               = get_theme_mod('heading_h4_typography');
+		$typography_h4_color         = isset($typography_h4['color']) ? $typography_h4['color'] : '';
+		$typography_h5               = get_theme_mod('heading_h5_typography');
+		$typography_h5_color         = isset($typography_h5['color']) ? $typography_h5['color'] : '';
+		$typography_h6               = get_theme_mod('heading_h6_typography');
+		$typography_h6_color         = isset($typography_h6['color']) ? $typography_h6['color'] : '';
+
 		$css = '';
 
 		$texts       = ocean_primary_color_selector( 'texts' );
@@ -282,6 +300,30 @@ class OceanWP_Colors_CSS {
 			$css .= '.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover{color:' . $meta_breadcrumbs_link_color_hover . ';}';
 		}
 
+		if ( ! empty( $typography_body_color ) && '' != $typography_body_color ) {
+			$css .= 'body {color:' . $typography_body_color . ';}';
+		}
+		if ( ! empty( $typography_headings_color ) && '' != $typography_headings_color ) {
+			$css .= 'h1,h2,h3,h4,h5,h6,.theme-heading,.widget-title,.oceanwp-widget-recent-posts-title,.comment-reply-title,.entry-title,.sidebar-box .widget-title {color:' . $typography_headings_color . ';}';
+		}
+		if ( ! empty( $typography_h1_color ) && '' != $typography_h1_color ) {
+			$css .= 'h1 {color:' . $typography_h1_color . ';}';
+		}
+		if ( ! empty( $typography_h2_color ) && '' != $typography_h2_color ) {
+			$css .= 'h2 {color:' . $typography_h2_color . ';}';
+		}
+		if ( ! empty( $typography_h3_color ) && '' != $typography_h3_color ) {
+			$css .= 'h3 {color:' . $typography_h3_color . ';}';
+		}
+		if ( ! empty( $typography_h4_color ) && '' != $typography_h4_color ) {
+			$css .= 'h4 {color:' . $typography_h4_color . ';}';
+		}
+		if ( ! empty( $typography_h5_color ) && '' != $typography_h5_color ) {
+			$css .= 'h5 {color:' . $typography_h5_color . ';}';
+		}
+		if ( ! empty( $typography_h6_color ) && '' != $typography_h6_color ) {
+			$css .= 'h6 {color:' . $typography_h6_color . ';}';
+		}
 
 		// Return CSS.
 		if ( ! empty( $css ) ) {

@@ -132,7 +132,10 @@ $options = [
 			'normal' => [
 				'id' => 'body_typography[color]',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' =>  esc_html__( 'Select Color', 'oceanwp' ),
+				'selector' => [
+					'body' => 'color',
+				],
 				'attr' => [
 					'transport' => 'postMessage',
 				],
@@ -155,7 +158,10 @@ $options = [
 			'normal' => [
 				'id' => 'headings_typography[color]',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' =>  esc_html__( 'Select Color', 'oceanwp' ),
+				'selector' => [
+					'h1,h2,h3,h4,h5,h6,.theme-heading,.widget-title,.oceanwp-widget-recent-posts-title,.comment-reply-title,.entry-title,.sidebar-box .widget-title' => 'color',
+				],
 				'attr' => [
 					'transport' => 'postMessage',
 				],
@@ -163,7 +169,7 @@ $options = [
 		]
 	],
 
-	'ocean_headings_h1_colors' => [
+	'ocean_heading_h1_colors' => [
 		'type' => 'ocean-color',
 		'label' => esc_html__( 'Heading 1 (H1)', 'oceanwp' ),
 		'class' => 'h1-h6',
@@ -177,9 +183,12 @@ $options = [
 		'sanitize_callback' => 'wp_kses_post',
 		'setting_args' => [
 			'normal' => [
-				'id' => 'headings_h1_typography[color]',
+				'id' => 'heading_h1_typography[color]',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' =>  esc_html__( 'Select Color', 'oceanwp' ),
+				'selector' => [
+					'h1' => 'color',
+				],
 				'attr' => [
 					'transport' => 'postMessage',
 				],
@@ -187,7 +196,7 @@ $options = [
 		]
 	],
 
-	'ocean_headings_h2_colors' => [
+	'ocean_heading_h2_colors' => [
 		'type' => 'ocean-color',
 		'label' => esc_html__( 'Heading 2 (H2)', 'oceanwp' ),
 		'class' => 'h1-h6',
@@ -201,9 +210,12 @@ $options = [
 		'sanitize_callback' => 'wp_kses_post',
 		'setting_args' => [
 			'normal' => [
-				'id' => 'headings_h2_typography[color]',
+				'id' => 'heading_h2_typography[color]',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' =>  esc_html__( 'Select Color', 'oceanwp' ),
+				'selector' => [
+					'h2' => 'color',
+				],
 				'attr' => [
 					'transport' => 'postMessage',
 				],
@@ -211,7 +223,7 @@ $options = [
 		]
 	],
 
-	'ocean_headings_h3_colors' => [
+	'ocean_heading_h3_colors' => [
 		'type' => 'ocean-color',
 		'label' => esc_html__( 'Heading 3 (H3)', 'oceanwp' ),
 		'class' => 'h1-h6',
@@ -221,13 +233,16 @@ $options = [
 		'hideLabel' => false,
 		'showAlpha' => true,
 		'showPalette' => true,
-		'wrapper' => 'ocean_headings_h3_colors',
+		'wrapper' => 'ocean_heading_h3_colors',
 		'sanitize_callback' => 'wp_kses_post',
 		'setting_args' => [
 			'normal' => [
-				'id' => 'headings_h3_typography[color]',
+				'id' => 'heading_h3_typography[color]',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' =>  esc_html__( 'Select Color', 'oceanwp' ),
+				'selector' => [
+					'h3' => 'color',
+				],
 				'attr' => [
 					'transport' => 'postMessage',
 				],
@@ -235,7 +250,7 @@ $options = [
 		]
 	],
 
-	'ocean_headings_h4_colors' => [
+	'ocean_heading_h4_colors' => [
 		'type' => 'ocean-color',
 		'label' => esc_html__( 'Heading 4 (H4)', 'oceanwp' ),
 		'class' => 'h1-h6',
@@ -249,9 +264,12 @@ $options = [
 		'sanitize_callback' => 'wp_kses_post',
 		'setting_args' => [
 			'normal' => [
-				'id' => 'headings_h4_typography[color]',
+				'id' => 'heading_h4_typography[color]',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' =>  esc_html__( 'Select Color', 'oceanwp' ),
+				'selector' => [
+					'h4' => 'color',
+				],
 				'attr' => [
 					'transport' => 'postMessage',
 				],
@@ -259,7 +277,7 @@ $options = [
 		]
 	],
 
-	'ocean_headings_h5_colors' => [
+	'ocean_heading_h5_colors' => [
 		'type' => 'ocean-color',
 		'label' => esc_html__( 'Heading 5 (H5)', 'oceanwp' ),
 		'class' => 'h1-h6',
@@ -273,9 +291,12 @@ $options = [
 		'sanitize_callback' => 'wp_kses_post',
 		'setting_args' => [
 			'normal' => [
-				'id' => 'headings_h5_typography[color]',
+				'id' => 'heading_h5_typography[color]',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' =>  esc_html__( 'Select Color', 'oceanwp' ),
+				'selector' => [
+					'h5' => 'color',
+				],
 				'attr' => [
 					'transport' => 'postMessage',
 				],
@@ -283,7 +304,7 @@ $options = [
 		]
 	],
 
-	'ocean_headings_h6_colors' => [
+	'ocean_heading_h6_colors' => [
 		'type' => 'ocean-color',
 		'label' => esc_html__( 'Heading 6 (H6)', 'oceanwp' ),
 		'class' => 'h1-h6',
@@ -297,9 +318,12 @@ $options = [
 		'sanitize_callback' => 'wp_kses_post',
 		'setting_args' => [
 			'normal' => [
-				'id' => 'headings_h6_typography[color]',
+				'id' => 'heading_h6_typography[color]',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' =>  esc_html__( 'Select Color', 'oceanwp' ),
+				'selector' => [
+					'h6' => 'color',
+				],
 				'attr' => [
 					'transport' => 'postMessage',
 				],
