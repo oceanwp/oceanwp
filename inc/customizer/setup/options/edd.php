@@ -48,15 +48,14 @@ $options = [
 				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 			],
 
-			'ocean_divider_after_edd_custom_sidebar' => [
-				'type' => 'ocean-divider',
+			'ocean_content_for_edd_custom_sidebar_need_help_link' => [
+				'type' => 'ocean-content',
+				'isContent' => ocean_render_content_need_help(),
+				'class' => 'need-help',
 				'section' => 'ocean_edd_general',
 				'transport' => 'postMessage',
 				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
 			],
-
 
 		]
 	],
@@ -434,15 +433,6 @@ $options = [
 								],
 							],
 						]
-					],
-
-					'ocean_divider_for_edd_menu_icon_style_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_edd_menu_cart_bag_style_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 20,
-						'bottom' => 10
 					],
 
 					'ocean_content_for_edd_menu_icon_style_need_help_link' => [
@@ -912,15 +902,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_edd_dropdown_style_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_edd_cart_dropdown_styling_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 20,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_edd_dropdown_style_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -930,15 +911,6 @@ $options = [
 						'priority' => 10,
 					],
 				]
-			],
-
-			'ocean_divider_for_edd_menu_cart_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_edd_menu_cart',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10
 			],
 
 			'ocean_content_for_edd_menu_cart_need_help_link' => [
@@ -1345,15 +1317,6 @@ $options = [
 								],
 							]
 						]
-					],
-
-					'ocean_divider_for_edd_archive_product_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_edd_archives_product_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 20,
-						'bottom' => 10
 					],
 
 					'ocean_content_for_edd_archive_product_need_help_link' => [
@@ -2184,15 +2147,6 @@ $options = [
 								]
 							],
 
-							'ocean_divider_for_edd_archive_additional_styling_addtocart_need_help_link' => [
-								'type' => 'ocean-divider',
-								'section' => 'ocean_edd_archives_additional_styling_addtocart_section',
-								'transport' => 'postMessage',
-								'priority' => 10,
-								'top' => 20,
-								'bottom' => 10
-							],
-
 							'ocean_content_for_edd_archive_additional_styling_addtocart_need_help_link' => [
 								'type' => 'ocean-content',
 								'isContent' => ocean_render_content_need_help(),
@@ -2204,15 +2158,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_edd_archive_additional_styling_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_edd_archives_additional_styling_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 20,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_edd_archive_additional_styling_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -2222,15 +2167,6 @@ $options = [
 						'priority' => 10,
 					],
 				]
-			],
-
-			'ocean_divider_for_edd_archive_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_edd_archives',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10
 			],
 
 			'ocean_content_for_edd_archive_need_help_link' => [
@@ -2526,15 +2462,6 @@ $options = [
 				]
 			],
 
-			'ocean_divider_for_edd_single_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_edd_single',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
-			],
-
 			'ocean_content_for_edd_single_need_help_link' => [
 				'type' => 'ocean-content',
 				'isContent' => ocean_render_content_need_help(),
@@ -2827,15 +2754,6 @@ $options = [
 						],
 					],
 				]
-			],
-
-			'ocean_divider_for_edd_checkout_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_edd_cart_checkout',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
 			],
 
 			'ocean_content_for_edd_checkout_need_help_link' => [

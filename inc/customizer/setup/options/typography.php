@@ -1517,6 +1517,7 @@ $options = [
 			'google_font' => [
 				'label' => esc_html__('With OceanWP you can integrate Adobe Fonts for free.', 'oceanwp'),
 				'url' => esc_url( 'https://docs.oceanwp.org/article/849-how-to-add-adobe-fonts-typekit' ),
+				'target' => '_blank'
 			]
 		]
 	],

@@ -384,7 +384,7 @@ function ocean_render_upsell_notice() {
 }
 
 function ocean_render_content_need_help() {
-	$html = sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="http://docs.oceanwp.org/category/369-shortcodes" target="_blank">', '</a>' );
+	$html = sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/" target="_blank">', '</a>' );
 	return $html;
 }
 

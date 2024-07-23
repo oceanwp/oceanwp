@@ -3356,7 +3356,7 @@ $options = [
 				'links' => [
 					'did_you_know_link_1' => [
 						'label' => esc_html__( 'OceanWP enables you to set unique pagination stlyes for different sections of your website. For example, you can choose one style for blog posts and another for your eCommerce store.', 'oceanwp' ),
-						'url' => esc_url( '#' ),
+						'url' => esc_url( 'https://docs.oceanwp.org/' ),
 						'target' => '_blank'
 					]
 				]
