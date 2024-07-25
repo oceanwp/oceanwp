@@ -231,12 +231,14 @@ class SidebarMobileMenu {
     document.addEventListener("keydown", this.#onDocumentKeydown);
     window.addEventListener("resize", this.#onWindowResize);
 
-     // Add event listener for popup login link
-     document
+    // Add event listener for popup login link
+    document
      .querySelectorAll(".opl-login-li a.opl-link")
      .forEach((loginLink) => {
        loginLink.addEventListener("click", this.#onLoginLinkClick);
+       loginLink.addEventListener("touchend", this.#onLoginLinkClick);
      });
+
   };
 
   #onHamburgerBtnClick = (event) => {
@@ -345,7 +347,7 @@ class SidebarMobileMenu {
   };
 
   #onLoginLinkClick = (event) => {
-    sidr.close("sidr");
+    this.closeSidr();
   };
 
   // New method to handle anchor link clicks
