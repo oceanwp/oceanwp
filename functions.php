@@ -185,7 +185,7 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'oceanwp-svg.php';
 		require_once $dir . 'oceanwp-theme-icons.php';
 		require_once $dir . 'template-helpers.php';
-		require_once $dir . 'customizer/setup/webfonts.php';
+		require_once $dir . 'customizer/webfonts.php';
 		require_once $dir . 'walker/init.php';
 		require_once $dir . 'walker/menu-walker.php';
 		require_once $dir . 'third/class-gutenberg.php';
@@ -281,9 +281,8 @@ final class OCEANWP_Theme_Class {
 		require_once OCEANWP_INC_DIR . 'breadcrumbs.php';
 
 		// Customizer class.
-		require_once OCEANWP_INC_DIR . 'customizer/library/customizer-custom-controls/functions.php';
+		// require_once OCEANWP_INC_DIR . 'customizer/library/customizer-custom-controls/functions.php';
 		require_once OCEANWP_INC_DIR . 'customizer/customizer.php';
-		require_once OCEANWP_INC_DIR . 'customizer/setup/customizer.php';
 
 	}
 
