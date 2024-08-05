@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### _2024.08.05_ - 3.5.9
+- **Updated**:: WordPress version for compatibility.
+- **Fixed**:: Page Title: 'ocean_page_header_background_image' hook doesn't function with custom background image URL.
+- **Fixed**:: Header: Mobile Header: Sidebar Style: Ocean Popup Login window doesn't display with this mobile header style.
+- **Fixed**:: WooCommerce: Archives: Hover Style: Background color doesn't render on the front.
+- **Fixed**:: Compatibility: WPIDE plugin: Fatal error on plugin activation: Uncaught Error: Call to undefined function oceanwp_theme_panel().
+
 ### _2024.07.12_ - 3.5.8
 - **Updated**:: Compatibility: WooCommerce: Single product featured image template number.
 - **Updated**:: Compatibility: WordPress: version number.
