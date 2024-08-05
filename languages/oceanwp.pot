@@ -9,17 +9,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-12T05:57:21+00:00\n"
+"POT-Creation-Date: 2024-08-05T07:25:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: oceanwp\n"
 
 #. Theme Name of the theme
 #. Author of the theme
-#: inc/helpers.php:3877
-#: inc/helpers.php:4939
-#: inc/helpers.php:4957
-#: inc/helpers.php:4958
+#: inc/helpers.php:3882
+#: inc/helpers.php:4944
+#: inc/helpers.php:4962
+#: inc/helpers.php:4963
 msgid "OceanWP"
 msgstr ""
 
@@ -996,7 +996,7 @@ msgstr ""
 
 #: inc/customizer/settings/blog.php:329
 #: inc/customizer/settings/header.php:91
-#: inc/helpers.php:4118
+#: inc/helpers.php:4123
 msgid "Medium"
 msgstr ""
 
@@ -1117,7 +1117,7 @@ msgstr ""
 
 #: inc/customizer/settings/blog.php:763
 #: inc/customizer/settings/woocommerce.php:1903
-#: inc/helpers.php:3530
+#: inc/helpers.php:3535
 #: inc/woocommerce/woocommerce-config.php:611
 msgid "End of content"
 msgstr ""
@@ -1129,7 +1129,7 @@ msgstr ""
 
 #: inc/customizer/settings/blog.php:790
 #: inc/customizer/settings/woocommerce.php:1921
-#: inc/helpers.php:3535
+#: inc/helpers.php:3540
 #: inc/woocommerce/woocommerce-config.php:616
 msgid "No more pages to load"
 msgstr ""
@@ -1151,8 +1151,8 @@ msgstr ""
 #: inc/customizer/settings/blog.php:853
 #: inc/customizer/settings/blog.php:1696
 #: inc/customizer/settings/lifterlms.php:211
-#: inc/helpers.php:3100
-#: inc/helpers.php:3185
+#: inc/helpers.php:3105
+#: inc/helpers.php:3190
 msgid "Meta"
 msgstr ""
 
@@ -1179,7 +1179,7 @@ msgstr ""
 #: inc/customizer/settings/blog.php:863
 #: inc/customizer/settings/blog.php:1265
 #: inc/customizer/settings/blog.php:1706
-#: inc/helpers.php:3192
+#: inc/helpers.php:3197
 msgid "Comments"
 msgstr ""
 
@@ -1321,7 +1321,7 @@ msgid "Post Title Meta"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:1268
-#: inc/helpers.php:3187
+#: inc/helpers.php:3192
 msgid "Tags"
 msgstr ""
 
@@ -1910,8 +1910,8 @@ msgstr ""
 #: inc/customizer/settings/edd.php:1268
 #: inc/customizer/settings/woocommerce.php:1600
 #: inc/customizer/settings/woocommerce.php:2088
-#: inc/helpers.php:3099
-#: inc/helpers.php:3184
+#: inc/helpers.php:3104
+#: inc/helpers.php:3189
 msgid "Title"
 msgstr ""
 
@@ -3188,7 +3188,7 @@ msgstr ""
 #: inc/customizer/settings/header.php:1147
 #: inc/customizer/settings/header.php:2244
 #: inc/customizer/settings/header.php:3575
-#: inc/helpers.php:4002
+#: inc/helpers.php:4007
 #: partials/mobile/mobile-icon.php:40
 msgid "Menu"
 msgstr ""
@@ -3690,7 +3690,7 @@ msgid "Menu Text"
 msgstr ""
 
 #: inc/customizer/settings/header.php:3592
-#: inc/helpers.php:4003
+#: inc/helpers.php:4008
 #: partials/mobile/mobile-dropdown.php:72
 #: partials/mobile/mobile-icon.php:45
 msgid "Close"
@@ -3742,7 +3742,7 @@ msgid "Close Menu Button Icon Class"
 msgstr ""
 
 #: inc/customizer/settings/header.php:3771
-#: inc/helpers.php:4004
+#: inc/helpers.php:4009
 #: partials/mobile/mobile-sidr-close.php:31
 msgid "Close Menu"
 msgstr ""
@@ -3884,8 +3884,8 @@ msgstr ""
 #: inc/customizer/settings/lifterlms.php:209
 #: inc/customizer/settings/lifterlms.php:240
 #: inc/customizer/settings/woocommerce.php:1624
-#: inc/helpers.php:3098
-#: inc/helpers.php:3183
+#: inc/helpers.php:3103
+#: inc/helpers.php:3188
 msgid "Featured Image"
 msgstr ""
 
@@ -3984,8 +3984,8 @@ msgstr ""
 
 #: inc/customizer/settings/topbar.php:306
 #: inc/customizer/settings/topbar.php:340
-#: inc/helpers.php:3101
-#: inc/helpers.php:3186
+#: inc/helpers.php:3106
+#: inc/helpers.php:3191
 #: inc/third/class-beaver-themer.php:127
 msgid "Content"
 msgstr ""
@@ -4377,7 +4377,7 @@ msgid "Display Filter Button"
 msgstr ""
 
 #: inc/customizer/settings/woocommerce.php:1487
-#: inc/helpers.php:4009
+#: inc/helpers.php:4014
 #: inc/woocommerce/woocommerce-config.php:1011
 msgid "Filter"
 msgstr ""
@@ -4674,7 +4674,7 @@ msgid "Timeline Style"
 msgstr ""
 
 #: inc/customizer/settings/woocommerce.php:2885
-#: inc/helpers.php:3929
+#: inc/helpers.php:3934
 msgid "Arrow"
 msgstr ""
 
@@ -5133,330 +5133,330 @@ msgstr ""
 msgid "articles"
 msgstr ""
 
-#: inc/helpers.php:3102
+#: inc/helpers.php:3107
 msgid "Read More"
 msgstr ""
 
-#: inc/helpers.php:3188
+#: inc/helpers.php:3193
 msgid "Social Share"
 msgstr ""
 
-#: inc/helpers.php:3189
+#: inc/helpers.php:3194
 msgid "Next/Prev Links"
 msgstr ""
 
-#: inc/helpers.php:3190
+#: inc/helpers.php:3195
 msgid "Author Box"
 msgstr ""
 
-#: inc/helpers.php:3191
+#: inc/helpers.php:3196
 msgid "Related Posts"
 msgstr ""
 
 #. translators: 1: post reading time.
-#: inc/helpers.php:3279
+#: inc/helpers.php:3284
 msgid "%1$s mins read"
 msgstr ""
 
-#: inc/helpers.php:3303
+#: inc/helpers.php:3308
 msgid "Pingback:"
 msgstr ""
 
-#: inc/helpers.php:3303
+#: inc/helpers.php:3308
 msgid "(Edit)"
 msgstr ""
 
-#: inc/helpers.php:3321
+#: inc/helpers.php:3326
 msgid "%s "
 msgstr ""
 
-#: inc/helpers.php:3340
+#: inc/helpers.php:3345
 msgid "edit"
 msgstr ""
 
-#: inc/helpers.php:3353
+#: inc/helpers.php:3358
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/helpers.php:3393
+#: inc/helpers.php:3398
 msgid "Enter your name or username to comment"
 msgstr ""
 
-#: inc/helpers.php:3395
+#: inc/helpers.php:3400
 msgid "Enter your email address to comment"
 msgstr ""
 
-#: inc/helpers.php:3397
+#: inc/helpers.php:3402
 msgid "Enter your website URL (optional)"
 msgstr ""
 
-#: inc/helpers.php:3468
+#: inc/helpers.php:3473
 msgid "Go to the previous page"
 msgstr ""
 
-#: inc/helpers.php:3469
+#: inc/helpers.php:3474
 msgid "Go to the next page"
 msgstr ""
 
-#: inc/helpers.php:3501
-#: inc/helpers.php:3550
+#: inc/helpers.php:3506
+#: inc/helpers.php:3555
 #: inc/woocommerce/woocommerce-config.php:631
 msgid "Newer Posts"
 msgstr ""
 
-#: inc/helpers.php:3504
-#: inc/helpers.php:3551
+#: inc/helpers.php:3509
+#: inc/helpers.php:3556
 #: inc/woocommerce/woocommerce-config.php:632
 msgid "Older Posts"
 msgstr ""
 
-#: inc/helpers.php:3922
+#: inc/helpers.php:3927
 msgid "Default Icon"
 msgstr ""
 
-#: inc/helpers.php:3923
+#: inc/helpers.php:3928
 msgid "3D X"
 msgstr ""
 
-#: inc/helpers.php:3924
+#: inc/helpers.php:3929
 msgid "3D X Reverse"
 msgstr ""
 
-#: inc/helpers.php:3925
+#: inc/helpers.php:3930
 msgid "3D Y"
 msgstr ""
 
-#: inc/helpers.php:3926
+#: inc/helpers.php:3931
 msgid "3D Y Reverse"
 msgstr ""
 
-#: inc/helpers.php:3927
+#: inc/helpers.php:3932
 msgid "3D XY"
 msgstr ""
 
-#: inc/helpers.php:3928
+#: inc/helpers.php:3933
 msgid "3D XY Reverse"
 msgstr ""
 
-#: inc/helpers.php:3930
+#: inc/helpers.php:3935
 msgid "Arrow Reverse"
 msgstr ""
 
-#: inc/helpers.php:3931
+#: inc/helpers.php:3936
 msgid "Arrowalt"
 msgstr ""
 
-#: inc/helpers.php:3932
+#: inc/helpers.php:3937
 msgid "Arrowalt Reverse"
 msgstr ""
 
-#: inc/helpers.php:3933
+#: inc/helpers.php:3938
 msgid "Arrowturn"
 msgstr ""
 
-#: inc/helpers.php:3934
+#: inc/helpers.php:3939
 msgid "Arrowturn Reverse"
 msgstr ""
 
-#: inc/helpers.php:3935
+#: inc/helpers.php:3940
 msgid "Boring"
 msgstr ""
 
-#: inc/helpers.php:3936
+#: inc/helpers.php:3941
 msgid "Collapse"
 msgstr ""
 
-#: inc/helpers.php:3937
+#: inc/helpers.php:3942
 msgid "Collapse Reverse"
 msgstr ""
 
-#: inc/helpers.php:3938
+#: inc/helpers.php:3943
 msgid "Elastic"
 msgstr ""
 
-#: inc/helpers.php:3939
+#: inc/helpers.php:3944
 msgid "Elastic Reverse"
 msgstr ""
 
-#: inc/helpers.php:3940
+#: inc/helpers.php:3945
 msgid "Minus"
 msgstr ""
 
-#: inc/helpers.php:3941
+#: inc/helpers.php:3946
 msgid "Slider"
 msgstr ""
 
-#: inc/helpers.php:3942
+#: inc/helpers.php:3947
 msgid "Slider Reverse"
 msgstr ""
 
-#: inc/helpers.php:3943
+#: inc/helpers.php:3948
 msgid "Spin"
 msgstr ""
 
-#: inc/helpers.php:3944
+#: inc/helpers.php:3949
 msgid "Spin Reverse"
 msgstr ""
 
-#: inc/helpers.php:3945
+#: inc/helpers.php:3950
 msgid "Spring"
 msgstr ""
 
-#: inc/helpers.php:3946
+#: inc/helpers.php:3951
 msgid "Spring Reverse"
 msgstr ""
 
-#: inc/helpers.php:3947
+#: inc/helpers.php:3952
 msgid "Stand"
 msgstr ""
 
-#: inc/helpers.php:3948
+#: inc/helpers.php:3953
 msgid "Stand Reverse"
 msgstr ""
 
-#: inc/helpers.php:3949
+#: inc/helpers.php:3954
 msgid "Squeeze"
 msgstr ""
 
-#: inc/helpers.php:3950
+#: inc/helpers.php:3955
 msgid "Vortex"
 msgstr ""
 
-#: inc/helpers.php:3951
+#: inc/helpers.php:3956
 msgid "Vortex Reverse"
 msgstr ""
 
-#: inc/helpers.php:4005
+#: inc/helpers.php:4010
 msgid "Copyright [oceanwp_date] - OceanWP Theme by OceanWP"
 msgstr ""
 
-#: inc/helpers.php:4030
+#: inc/helpers.php:4035
 msgid "X"
 msgstr ""
 
-#: inc/helpers.php:4034
+#: inc/helpers.php:4039
 msgid "Facebook"
 msgstr ""
 
-#: inc/helpers.php:4038
+#: inc/helpers.php:4043
 msgid "Facebook Group"
 msgstr ""
 
-#: inc/helpers.php:4042
+#: inc/helpers.php:4047
 msgid "Slack"
 msgstr ""
 
-#: inc/helpers.php:4046
+#: inc/helpers.php:4051
 msgid "Threads"
 msgstr ""
 
-#: inc/helpers.php:4050
+#: inc/helpers.php:4055
 msgid "Pinterest"
 msgstr ""
 
-#: inc/helpers.php:4054
+#: inc/helpers.php:4059
 msgid "Dribbble"
 msgstr ""
 
-#: inc/helpers.php:4058
+#: inc/helpers.php:4063
 msgid "VK"
 msgstr ""
 
-#: inc/helpers.php:4062
+#: inc/helpers.php:4067
 #: inc/themepanel/views/panes/free-vs-pro.php:77
 msgid "Instagram"
 msgstr ""
 
-#: inc/helpers.php:4066
+#: inc/helpers.php:4071
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/helpers.php:4070
+#: inc/helpers.php:4075
 msgid "Tumblr"
 msgstr ""
 
-#: inc/helpers.php:4074
+#: inc/helpers.php:4079
 msgid "Github"
 msgstr ""
 
-#: inc/helpers.php:4078
+#: inc/helpers.php:4083
 msgid "Flickr"
 msgstr ""
 
-#: inc/helpers.php:4082
+#: inc/helpers.php:4087
 msgid "Skype"
 msgstr ""
 
-#: inc/helpers.php:4086
+#: inc/helpers.php:4091
 msgid "Youtube"
 msgstr ""
 
-#: inc/helpers.php:4090
+#: inc/helpers.php:4095
 msgid "Vimeo"
 msgstr ""
 
-#: inc/helpers.php:4094
+#: inc/helpers.php:4099
 msgid "Vine"
 msgstr ""
 
-#: inc/helpers.php:4098
+#: inc/helpers.php:4103
 msgid "Xing"
 msgstr ""
 
-#: inc/helpers.php:4102
+#: inc/helpers.php:4107
 msgid "Yelp"
 msgstr ""
 
-#: inc/helpers.php:4106
+#: inc/helpers.php:4111
 msgid "RSS"
 msgstr ""
 
-#: inc/helpers.php:4110
+#: inc/helpers.php:4115
 #: inc/oceanwp-strings.php:87
 msgid "Email"
 msgstr ""
 
-#: inc/helpers.php:4114
+#: inc/helpers.php:4119
 msgid "TikTok"
 msgstr ""
 
-#: inc/helpers.php:4122
+#: inc/helpers.php:4127
 msgid "Telegram"
 msgstr ""
 
-#: inc/helpers.php:4126
+#: inc/helpers.php:4131
 msgid "Twitch"
 msgstr ""
 
-#: inc/helpers.php:4130
+#: inc/helpers.php:4135
 msgid "Line"
 msgstr ""
 
-#: inc/helpers.php:4134
+#: inc/helpers.php:4139
 msgid "QQ"
 msgstr ""
 
-#: inc/helpers.php:4138
+#: inc/helpers.php:4143
 msgid "Discord"
 msgstr ""
 
-#: inc/helpers.php:4142
+#: inc/helpers.php:4147
 msgid "Mastodon"
 msgstr ""
 
-#: inc/helpers.php:4938
-#: inc/helpers.php:4948
-#: inc/helpers.php:4949
+#: inc/helpers.php:4943
+#: inc/helpers.php:4953
+#: inc/helpers.php:4954
 #: inc/themepanel/views/layout/header.php:22
 msgid "OceanWP Panel"
 msgstr ""
 
-#: inc/helpers.php:4998
+#: inc/helpers.php:5003
 #: inc/themepanel/views/panes/home.php:74
 msgid "We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date."
 msgstr ""
 
-#: inc/helpers.php:4999
+#: inc/helpers.php:5004
 msgid "Update and get the new Theme Panel"
 msgstr ""
 

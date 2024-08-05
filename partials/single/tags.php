@@ -19,5 +19,5 @@ if ( ! has_tag() ) {
 ?>
 
 <div class="post-tags clr">
-	<?php the_tags( '<span class="owp-tag-text">' . esc_attr__( 'Tags: ', 'oceanwp' ) . '</span>', '<span class="owp-sep">,</span> ', '' ); ?>
+	<?php the_tags( '<span class="owp-tag-texts">' . esc_attr__( 'Tags', 'oceanwp' ) . '</span>: ', '<span class="owp-sep">,</span> ', '' ); ?>
 </div>
