@@ -260,7 +260,7 @@ $options = [
 
 			'ocean_page_single_sidebar_order' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__( 'Both Sidebars: Content Order Style', 'oceanwp' ),
+				'label' => esc_html__( 'Content Order Style', 'oceanwp' ),
 				'section' => 'ocean_section_page_responsive_section',
 				'transport' => 'refresh',
 				'default' => 'content-sidebar',
