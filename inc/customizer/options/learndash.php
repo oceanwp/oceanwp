@@ -164,7 +164,7 @@ $options = [
 					],
 
 					'ocean_ld_global_both_sidebars_sidebars_width' => [
-						'label'       => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+						'label'       => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 						'type'     => 'ocean-range-slider',
 						'section'  => 'ocean_ld_layout_global_section',
 						'transport' => 'postMessage',
@@ -198,7 +198,7 @@ $options = [
 
 					'ocean_ld_global_sidebar_order' => [
 						'type' => 'ocean-select',
-						'label' => esc_html__('Content Order Style', 'oceanwp' ),
+						'label' => esc_html__('Responsive Setting: Content Order Layout', 'oceanwp' ),
 						'section' => 'ocean_ld_layout_global_section',
 						'transport' => 'refresh',
 						'default' => 'content-sidebar',
@@ -325,7 +325,7 @@ $options = [
 					],
 
 					'ocean_ld_course_both_sidebars_sidebars_width' => [
-						'label'       => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+						'label'       => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 						'type'     => 'ocean-range-slider',
 						'section'  => 'ocean_ld_layout_course_section',
 						'transport' => 'postMessage',
@@ -359,7 +359,7 @@ $options = [
 
 					'ocean_ld_course_sidebar_order' => [
 						'type' => 'ocean-select',
-						'label' => esc_html__('Content Order Style', 'oceanwp' ),
+						'label' => esc_html__('Responsive Setting: Content Order Layout', 'oceanwp' ),
 						'section' => 'ocean_ld_layout_course_section',
 						'transport' => 'refresh',
 						'default' => 'content-sidebar',
@@ -486,7 +486,7 @@ $options = [
 					],
 
 					'ocean_ld_lesson_both_sidebars_sidebars_width' => [
-						'label'       => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+						'label'       => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 						'type'     => 'ocean-range-slider',
 						'section'  => 'ocean_ld_layout_lesson_section',
 						'transport' => 'postMessage',
@@ -520,7 +520,7 @@ $options = [
 
 					'ocean_ld_lesson_sidebar_order' => [
 						'type' => 'ocean-select',
-						'label' => esc_html__('Content Order Style', 'oceanwp' ),
+						'label' => esc_html__('Responsive Setting: Content Order Layout', 'oceanwp' ),
 						'section' => 'ocean_ld_layout_lesson_section',
 						'transport' => 'refresh',
 						'default' => 'content-sidebar',

@@ -191,7 +191,7 @@ $options = [
 			],
 
 			'ocean_page_single_both_sidebars_sidebars_width' => [
-				'label'       => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+				'label'       => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 				'type'     => 'ocean-range-slider',
 				'section'  => 'ocean_section_page_layout_settings',
 				'transport' => 'postMessage',
@@ -260,7 +260,7 @@ $options = [
 
 			'ocean_page_single_sidebar_order' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__( 'Content Order Style', 'oceanwp' ),
+				'label' => esc_html__( 'Responsive Setting: Content Order Layout', 'oceanwp' ),
 				'section' => 'ocean_section_page_responsive_section',
 				'transport' => 'refresh',
 				'default' => 'content-sidebar',
@@ -565,20 +565,20 @@ $options = [
 						'active_callback' => 'oceanwp_is_bg_image_page_header',
 						'sanitize_callback' => 'sanitize_key',
 						'choices' => [
-							'right' => [
-								'id'     => 'right',
-								'label'   => esc_html__('Right', 'oceanwp'),
-								'content' => esc_html__('Right', 'oceanwp'),
+							'left'  => [
+								'id'     => 'left',
+								'label'   => esc_html__('Left', 'oceanwp'),
+								'content' => esc_html__('Left', 'oceanwp'),
 							],
 							'center'  => [
 								'id'     => 'center',
 								'label'   => esc_html__('Center', 'oceanwp'),
 								'content' => esc_html__('Center', 'oceanwp'),
 							],
-							'left'  => [
-								'id'     => 'left',
-								'label'   => esc_html__('Left', 'oceanwp'),
-								'content' => esc_html__('Left', 'oceanwp'),
+							'right' => [
+								'id'     => 'right',
+								'label'   => esc_html__('Right', 'oceanwp'),
+								'content' => esc_html__('Right', 'oceanwp'),
 							]
 						],
 						'preview' => 'queryWithAttr',
@@ -660,7 +660,7 @@ $options = [
 						'hideLabel' => false,
 						'multiple' => false,
 						'active_callback' => 'oceanwp_is_bg_image_page_header',
-						'sanitize_callback' => 'sanitize_key',
+						'sanitize_callback' => 'sanitize_text_field',
 						'choices' => [
 							'initial'       => esc_html__( 'Default', 'oceanwp' ),
 							'top left'      => esc_html__( 'Top Left', 'oceanwp' ),
@@ -2186,7 +2186,7 @@ $options = [
 					],
 
 					'ocean_search_both_sidebars_sidebars_width' => [
-						'label'             => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+						'label'             => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 						'type'              => 'ocean-range-slider',
 						'section'           => 'ocean_section_page_search_result_sidebar_layout',
 						'transport'         => 'postMessage',

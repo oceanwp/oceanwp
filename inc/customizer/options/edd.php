@@ -1034,7 +1034,7 @@ $options = [
 			],
 
 			'ocean_edd_archive_both_sidebars_sidebars_width' => [
-				'label'       => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+				'label'       => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 				'type'     => 'ocean-range-slider',
 				'section'  => 'ocean_edd_archives',
 				'transport' => 'postMessage',
@@ -1068,7 +1068,7 @@ $options = [
 
 			'ocean_edd_archive_sidebar_order' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__('Content Order Style', 'oceanwp' ),
+				'label' => esc_html__('Responsive Setting: Content Order Layout', 'oceanwp' ),
 				'section' => 'ocean_edd_archives',
 				'transport' => 'refresh',
 				'default' => 'content-sidebar',
@@ -2290,7 +2290,7 @@ $options = [
 			],
 
 			'ocean_edd_download_both_sidebars_sidebars_width' => [
-				'label'       => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+				'label'       => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 				'type'     => 'ocean-range-slider',
 				'section'  => 'ocean_edd_single',
 				'transport' => 'postMessage',
@@ -2324,7 +2324,7 @@ $options = [
 
 			'ocean_edd_download_sidebar_order' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__('Content Order Style', 'oceanwp' ),
+				'label' => esc_html__('Responsive Setting: Content Order Layout', 'oceanwp' ),
 				'section' => 'ocean_edd_single',
 				'transport' => 'refresh',
 				'default' => 'content-sidebar',

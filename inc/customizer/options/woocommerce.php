@@ -2016,7 +2016,7 @@ $options = [
 			],
 
 			'ocean_woo_shop_both_sidebars_sidebars_width' => [
-				'label'       => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+				'label'       => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 				'type'     => 'ocean-range-slider',
 				'section'  => 'ocean_woocommerce_archives',
 				'transport' => 'postMessage',
@@ -5545,7 +5545,7 @@ $options = [
 			],
 
 			'ocean_woo_product_both_sidebars_sidebars_width' => [
-				'label'       => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+				'label'       => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 				'type'     => 'ocean-range-slider',
 				'section'  => 'ocean_woocommerce_single',
 				'transport' => 'postMessage',

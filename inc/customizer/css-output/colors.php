@@ -59,6 +59,9 @@ class OceanWP_Colors_CSS {
 		$page_header_title_color       = isset($page_title_typography['color']) ? $page_title_typography['color'] : '';
 		$page_header_text_color        = get_theme_mod( 'ocean_page_header_title_color' );
 
+		$page_subheading             = get_theme_mod('page_subheading_typography');
+		$page_subheading_color       = isset($page_subheading['color']) ? $page_subheading['color'] : '';
+
 		$breadcrumbs_text_color        = get_theme_mod( 'ocean_breadcrumbs_text_color', '#c6c6c6' );
 		$breadcrumbs_seperator_color   = get_theme_mod( 'ocean_breadcrumbs_seperator_color', '#c6c6c6' );
 		$breadcrumbs_link_color        = get_theme_mod( 'ocean_breadcrumbs_link_color', '#333333' );
@@ -256,6 +259,11 @@ class OceanWP_Colors_CSS {
 		// Page header color.
 		if ( ! empty( $page_header_text_color ) ) {
 			$css .= '.page-header {color:' . $page_header_title_color . ';}';
+		}
+
+		// Page header subtitle color.
+		if ( ! empty( $page_subheading_color ) && '' != $page_subheading_color ) {
+			$css .= '.page-header .page-subheading {color:' . $page_subheading_color . ';}';
 		}
 
 		// Breadcrumbs text color.

@@ -127,7 +127,7 @@ $options = [
 					],
 
 					'ocean_blog_archives_both_sidebars_sidebars_width' => [
-						'label'    => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+						'label'    => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 						'type'     => 'ocean-range-slider',
 						'section'  => 'ocean_blog_archive_additional_layout_section',
 						'transport' => 'postMessage',
@@ -2000,7 +2000,7 @@ $options = [
 					],
 
 					'ocean_blog_single_both_sidebars_sidebars_width' => [
-						'label'    => esc_html__( 'Both Sidebars: Sidebars Width', 'oceanwp' ),
+						'label'    => esc_html__( 'Both Sidebars: Each Sidebar Width', 'oceanwp' ),
 						'type'     => 'ocean-range-slider',
 						'section'  => 'ocean_single_additional_layout_section',
 						'transport' => 'postMessage',

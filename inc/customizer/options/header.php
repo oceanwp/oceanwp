@@ -2573,7 +2573,7 @@ $options = [
 			],
 
 			'ocean_header_image_position' => [
-				'id' => 'ocean_page_header_bg_image_position',
+				'id' => 'ocean_header_image_position',
 				'type' => 'ocean-select',
 				'label' => esc_html__('Position', 'oceanwp' ),
 				'section' => 'header_image',
