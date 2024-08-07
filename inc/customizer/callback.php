@@ -546,6 +546,17 @@ function oceanw_cac_is_search_bs_layout() {
 	}
 }
 
+function oceanw_cac_is_search_single_sidebar_layout() {
+	$layout = get_theme_mod( 'ocean_search_layout', 'right-sidebar' );
+	if ( 'right-sidebar' == $layout
+		|| 'left-sidebar' == $layout ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+
 function ocean_cac_footer_widget() {
 	if ( true === get_theme_mod( 'ocean_footer_widgets', true ) ) {
 		return true;

@@ -10,6 +10,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! class_exists( 'OceanWP_Customizer_Color_Control' ) ) {
+	/**
+	 *  Control
+	 */
+	class OceanWP_Customizer_Color_Control extends WP_Customize_Control { // phpcs:ignore
+		/**
+		 * Render content.
+		 */
+		public function render_content() {}
+	}
+}
+
 if ( ! class_exists( 'OceanWP_Customizer_Dimensions_Control' ) ) {
 	/**
 	 *  Control
