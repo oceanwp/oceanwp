@@ -1149,6 +1149,10 @@ if ( ! function_exists( 'oceanwp_header_classes' ) ) {
 				$classes[] = 'has-social';
 			}
 
+			if ( ! empty( get_theme_mod( 'ocean_after_header_content' ) ) ) {
+				$classes[] = 'has-after-header-content';
+			}
+
 			// Menu position
 			if ( 'minimal' == $header_style || 'transparent' == $header_style ) {
 				if ( 'left-menu' == get_theme_mod( 'ocean_menu_position', 'right-menu' ) ) {

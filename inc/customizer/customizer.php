@@ -328,6 +328,12 @@ class OceanWP_Customizer_Init {
 					}
 				}
 
+				if ( 'ocean-image' ===  $option_data['type'] ) {
+					if ( isset( $option_data['savetype'] ) ) {
+						$control_args['json']['savetype'] = $option_data['savetype'];
+					}
+				}
+
 				$wp_customize->add_control(
 					$option_key,
 					$control_args

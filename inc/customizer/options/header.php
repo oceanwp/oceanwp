@@ -506,11 +506,6 @@ $options = [
 								],
 							],
 						],
-						'preview' => 'queryWithType',
-						'css' => [
-							'#site-header.full_screen-header .menu-bar .ham:before' => ['top'],
-							'#site-header.full_screen-header .menu-bar .ham:after' => ['top'],
-						]
 					],
 
 					'ocean_divider_after_fullscreen_hamburger_icon_settings' => [
@@ -532,6 +527,7 @@ $options = [
 						'priority' => 10,
 						'hideLabel' => false,
 						'mediaType' => 'image',
+						'savetype' => 'url',
 						'active_callback' => 'ocean_cac_header_full_screen',
 					],
 
@@ -544,6 +540,7 @@ $options = [
 						'priority' => 10,
 						'hideLabel' => false,
 						'mediaType' => 'image',
+						'savetype' => 'url',
 						'active_callback' => 'ocean_cac_header_full_screen',
 					],
 
@@ -594,7 +591,7 @@ $options = [
 
 					'ocean_center_header_menu_position' => [
 						'type' => 'ocean-buttons',
-						'label' => esc_html__('Menus Position', 'oceanwp'),
+						'label' => esc_html__('Menu Position', 'oceanwp'),
 						'section' => 'ocean_header_additional_styling_section',
 						'default'  => 'centered',
 						'transport' => 'postMessage',
@@ -1431,7 +1428,7 @@ $options = [
 						'class' => 'need-help',
 						'section' => 'ocean_header_additional_styling_section',
 						'transport' => 'postMessage',
-						'priority' => 10,
+						'priority' => 60,
 					]
 				]
 			],
@@ -1461,6 +1458,7 @@ $options = [
 						'showAlpha' => true,
 						'showPalette' => true,
 						'sanitize_callback' => 'wp_kses_post',
+						'active_callabck' => 'oceanwp_cac_hasnt_medium_or_transparent_header_styles',
 						'setting_args' => [
 							'normal' => [
 								'id' => 'ocean_header_background',
@@ -1756,7 +1754,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_full_screen_header_links_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'#site-header.full_screen-header .fs-dropdown-menu li a' => 'color'
 								],
@@ -1768,7 +1766,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_full_screen_header_links_hover_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'#site-header.full_screen-header .fs-dropdown-menu li a:hover' => 'color'
 								],
@@ -1806,7 +1804,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_full_screen_header_search_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input,#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li .search-text' => 'color'
 								],
@@ -1833,7 +1831,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_full_screen_header_search_dashed_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li .search-text i' => 'background-color'
 								],
@@ -1860,7 +1858,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_full_screen_header_search_border_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input' => 'border-color'
 								],
@@ -1872,7 +1870,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_full_screen_header_search_hover_border_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input:hover' => 'border-color'
 								],
@@ -1883,8 +1881,8 @@ $options = [
 							],
 							'focus' => [
 								'id' => 'ocean_full_screen_header_search_focus_border_color',
-								'key' => 'hover',
-								'label' => 'Hover',
+								'key' => 'focus',
+								'label' => esc_html__( 'Focus', 'oceanwp' ),
 								'selector' => [
 									'#site-header.full_screen-header .fs-dropdown-menu>li.search-toggle-li input:focus' => 'border-color'
 								],
@@ -1920,7 +1918,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_medium_header_top_header_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.medium-header .top-header-wrap,.is-sticky #site-header.medium-header.is-transparent .top-header-wrap,#searchform-header-replace' => 'background-color'
 								],
@@ -1947,7 +1945,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_medium_header_menu_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.medium-header #site-navigation-wrap,#site-header.medium-header .oceanwp-mobile-menu-icon,.is-sticky #site-header.medium-header.is-transparent #site-navigation-wrap,.is-sticky #site-header.medium-header.is-transparent .oceanwp-mobile-menu-icon,#site-header.medium-header.is-transparent .is-sticky #site-navigation-wrap,#site-header.medium-header.is-transparent .is-sticky .oceanwp-mobile-menu-icon' => 'background-color'
 								],
@@ -1984,7 +1982,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_medium_header_search_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.medium-header #medium-searchform .search-bg' => 'background-color'
 								],
@@ -2011,7 +2009,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_medium_header_search_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.medium-header #medium-searchform input' => 'color'
 								],
@@ -2038,7 +2036,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_medium_header_search_placeholder_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.medium-header #medium-searchform input::placeholder' => 'color'
 								],
@@ -2065,7 +2063,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_medium_header_search_button_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'#site-header.medium-header #medium-searchform button' => 'color'
 								],
@@ -2077,7 +2075,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_medium_header_search_button_hover_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'#site-header.medium-header #medium-searchform button:hover' => 'color'
 								],
@@ -2113,7 +2111,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_vertical_header_hamburger_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.vertical-toggle .hamburger-inner, .vertical-toggle .hamburger-inner::before, .vertical-toggle .hamburger-inner::after' => 'background-color'
 								],
@@ -2150,7 +2148,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_vertical_header_menu_items_border_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header #site-navigation-wrap .dropdown-menu li, #site-header.vertical-header #site-navigation-wrap .dropdown-menu .sub-menu' => 'border-color'
 								],
@@ -2177,7 +2175,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_vertical_header_sub_menu_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header #site-navigation-wrap .dropdown-menu .sub-menu' => 'background-color'
 								],
@@ -2204,7 +2202,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_vertical_header_sub_menu_links_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header .dropdown-menu ul li a.menu-link' => 'color'
 								],
@@ -2216,7 +2214,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_vertical_header_sub_menu_links_hover_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover' => 'color'
 								],
@@ -2243,7 +2241,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_vertical_header_sub_menu_links_bg',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header .dropdown-menu ul li a.menu-link' => 'background-color'
 								],
@@ -2254,7 +2252,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_vertical_header_sub_menu_links_hover_bg',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover' => 'background-color'
 								],
@@ -2291,7 +2289,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_vertical_header_search_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header #vertical-searchform form .search-bg' => 'background-color'
 								],
@@ -2318,7 +2316,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_vertical_header_search_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header #vertical-searchform form input, #site-header.vertical-header #vertical-searchform form label' => 'color'
 								],
@@ -2332,7 +2330,7 @@ $options = [
 
 					'ocean_vertical_header_search_placeholder_color' => [
 						'type' => 'ocean-color',
-						'label' => esc_html__( 'Search Form Input', 'oceanwp' ),
+						'label' => esc_html__( 'Search Form Placeholder', 'oceanwp' ),
 						'section' => 'ocean_header_colors_section',
 						'transport' => 'postMessage',
 						'priority' => 10,
@@ -2345,7 +2343,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_vertical_header_search_placeholder_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header #vertical-searchform form input::placeholder' => 'color'
 								],
@@ -2366,13 +2364,13 @@ $options = [
 						'hideLabel' => false,
 						'showAlpha' => true,
 						'showPalette' => true,
-						'active_callback' => 'ocean_cac_header_full_screen',
+						'active_callback' => 'ocean_cac_header_vertical_style',
 						'sanitize_callback' => 'wp_kses_post',
 						'setting_args' => [
 							'normal' => [
 								'id' => 'ocean_vertical_header_search_border_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header #vertical-searchform form input' => 'border-color'
 								],
@@ -2384,7 +2382,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_vertical_header_search_hover_border_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header #vertical-searchform form input:hover' => 'border-color'
 								],
@@ -2394,8 +2392,8 @@ $options = [
 							],
 							'focus' => [
 								'id' => 'ocean_vertical_header_search_focus_border_color',
-								'key' => 'hover',
-								'label' => 'Hover',
+								'key' => 'focus',
+								'label' => esc_html__( 'Focus', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header #vertical-searchform form input:focus' => 'border-color'
 								],
@@ -2421,7 +2419,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_vertical_header_search_btn_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header #vertical-searchform form button' => 'color'
 								],
@@ -2433,7 +2431,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_vertical_header_search_btn_hover_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'#site-header.vertical-header #vertical-searchform form button:hover' => 'color'
 								],
@@ -2739,6 +2737,7 @@ $options = [
 				'priority' => 40,
 				'hideLabel' => false,
 				'mediaType' => 'image',
+				'savetype' => 'url',
 			],
 
 			'ocean_divider_after_header_retina_logo_settings' => [
@@ -5421,6 +5420,7 @@ $options = [
 						'priority' => 10,
 						'hideLabel' => false,
 						'mediaType' => 'image',
+						'savetype' => 'url',
 					],
 
 					'ocean_divider_after_responsive_logo_setting' => [

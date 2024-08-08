@@ -343,6 +343,7 @@ $options = [
 				'priority' => 10,
 				'hideLabel' => false,
 				'mediaType' => 'image',
+				'savetype' => 'url',
 			],
 
 			'ocean_background_image_position' => [

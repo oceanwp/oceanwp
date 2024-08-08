@@ -189,3 +189,67 @@ if ( ! class_exists( 'OceanWP_Customizer_Upsell_Section_Control' ) ) {
 		public function render_content() {}
 	}
 }
+
+if ( ! class_exists( 'OceanWP_Customizer_Range_Control' ) ) {
+	/**
+	 *  Control
+	 */
+	class OceanWP_Customizer_Range_Control extends WP_Customize_Control { // phpcs:ignore
+		/**
+		 * Render content.
+		 */
+		public function render_content() {}
+	}
+}
+
+if ( ! class_exists( 'OceanWP_Customizer_Buttonset_Control' ) ) {
+	/**
+	 *  Control
+	 */
+	class OceanWP_Customizer_Buttonset_Control extends WP_Customize_Control { // phpcs:ignore
+		/**
+		 * Render content.
+		 */
+		public function render_content() {}
+	}
+}
+
+if ( ! class_exists( 'OceanWP_Customizer_Radio_Image_Control' ) ) {
+	/**
+	 *  Control
+	 */
+	class OceanWP_Customizer_Radio_Image_Control extends WP_Customize_Control { // phpcs:ignore
+		/**
+		 * Render content.
+		 */
+		public function render_content() {}
+	}
+}
+
+if ( ! class_exists( 'OceanWP_Customizer_Radio_Image_Control' ) ) {
+	/**
+	 *  Control
+	 */
+	class OceanWP_Customizer_Radio_Image_Control extends WP_Customize_Control { // phpcs:ignore
+		/**
+		 * Render content.
+		 */
+		public function render_content() {}
+	}
+}
+
+/**
+ * It will be removed soon.
+ * Added only for backward comptibility.
+ */
+if ( ! function_exists( 'ow_esc_attr' ) ) {
+	function ow_esc_attr( $text ) {
+		if ( is_array( $text ) || is_object( $text ) ) {
+			$text = is_string( current( $text ) ) ? current( $text ) : '';
+		} elseif ( ! is_string( $text ) ) {
+			$text = (string) $text;
+		}
+
+		return esc_attr( $text );
+	}
+}

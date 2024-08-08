@@ -606,6 +606,7 @@ $options = [
 						'priority' => 10,
 						'hideLabel' => false,
 						'mediaType' => 'image',
+						'savetype' => 'url',
 						'active_callback' => 'oceanwp_is_bg_image_page_header',
 						//'sanitize_callback' => 'oceanwp_sanitize_image',
 					],
@@ -817,10 +818,6 @@ $options = [
 									'default' => 0.5
 								],
 							]
-						],
-						'preview' => 'queryWithType',
-						'css' => [
-							'.background-image-page-header-overlay' => ['opacity'],
 						]
 					],
 
@@ -2329,6 +2326,7 @@ $options = [
 				'priority' => 10,
 				'hideLabel' => false,
 				'mediaType' => 'image',
+				'savetype' => 'url',
 			],
 
 			'ocean_search_result_page_need_help' => [
@@ -2401,14 +2399,11 @@ $options = [
 				'desc'      => esc_html__( 'Select a logo for the 404 error page.', 'oceanwp' ),
 				'type'      => 'ocean-image',
 				'section'   => 'ocean_section_page_404_error',
-				'label' => esc_html__( 'Logo', 'oceanwp' ),
-				'desc' => esc_html__( 'Select a 404 error page logo.', 'oceanwp' ),
-				'type' => 'ocean-image',
-				'section'  => 'ocean_section_page_404_error',
 				'transport' => 'refresh',
 				'priority'  => 10,
 				'hideLabel' => false,
 				'mediaType' => 'image',
+				'savetype' => 'url',
 			],
 
 			'ocean_title_for_page_error_custom_404' => [
