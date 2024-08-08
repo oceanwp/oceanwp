@@ -542,7 +542,7 @@ class OceanWP_Customize_Header_CSS {
 			}
 
 			// Vertical header top/bottom padding
-				if ( isset( $vertical_header_inner_top_padding ) && 30 != $vertical_header_inner_top_padding && '' != $vertical_header_inner_top_padding
+			if ( isset( $vertical_header_inner_top_padding ) && 30 != $vertical_header_inner_top_padding && '' != $vertical_header_inner_top_padding
 				|| isset( $vertical_header_inner_bottom_padding ) && 30 != $vertical_header_inner_bottom_padding && '' != $vertical_header_inner_bottom_padding ) {
 				$css .= '#site-header.vertical-header #site-header-inner{padding:'. oceanwp_spacing_css( $vertical_header_inner_top_padding, '', $vertical_header_inner_bottom_padding, '' ) .'}';
 			}

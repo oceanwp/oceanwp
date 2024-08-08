@@ -3450,7 +3450,7 @@ $options = [
 						'key' => 'normal',
 						'label' => 'Normal',
 						'selector' => [
-							'#site-navigation-wrap .dropdown-menu > li > a' => 'background-color'
+							'#site-header #site-navigation-wrap .dropdown-menu > li > a' => 'background-color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -3461,7 +3461,7 @@ $options = [
 						'key' => 'hover',
 						'label' => 'Hover',
 						'selector' => [
-							'#site-navigation-wrap .dropdown-menu > li > a:hover,#site-navigation-wrap .dropdown-menu > li.sfHover > a' => 'background-color'
+							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover,#site-navigation-wrap .dropdown-menu > li.sfHover > a' => 'background-color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -3487,8 +3487,8 @@ $options = [
 						'key' => 'normal',
 						'label' => 'Normal',
 						'selector' => [
-							'#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close' => 'color',
-							'#site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use,#searchform-header-replace-close .owp-icon use' => 'stroke'
+							'#site-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close' => 'color',
+							'#site-header #site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use,#searchform-header-replace-close .owp-icon use' => 'stroke'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -3500,8 +3500,8 @@ $options = [
 						'key' => 'hover',
 						'label' => 'Hover',
 						'selector' => [
-							'#site-navigation-wrap .dropdown-menu > li > a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover' => 'color',
-							'#site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use,#searchform-header-replace-close:hover .owp-icon use' => 'stroke'
+							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover' => 'color',
+							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use,#searchform-header-replace-close:hover .owp-icon use' => 'stroke'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -3527,7 +3527,7 @@ $options = [
 						'key' => 'normal',
 						'label' => 'Select Color',
 						'selector' => [
-							'#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'color'
+							'#site-header #site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -3553,7 +3553,7 @@ $options = [
 						'key' => 'normal',
 						'label' => 'Select Color',
 						'selector' => [
-							'#site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'background-color'
+							'#site-header #site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'background-color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
