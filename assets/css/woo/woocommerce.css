@@ -144,6 +144,10 @@
 .woocommerce ul.products li.product .woo-entry-inner li.image-wrap .product-entry-slider-wrap {
   display: block;
 }
+.woocommerce ul.products li.product .woo-entry-inner li.image-wrap .woo-entry-image img {
+  width: 100%;
+  height: auto;
+}
 .woocommerce ul.products li.product .woo-entry-image,
 .woocommerce ul.products li.product .product-entry-slider-wrap {
   display: none;
