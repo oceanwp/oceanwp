@@ -539,7 +539,7 @@ $options = [
 			'normal' => [
 				'id' => 'ocean_bottom_footer_background',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' => esc_html__( 'Select Color', 'oceanwp' ),
 				'selector' => [
 					'#footer-bottom' => 'background-color'
 				],
@@ -566,7 +566,7 @@ $options = [
 			'normal' => [
 				'id' => 'ocean_bottom_footer_color',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' => esc_html__( 'Select Color', 'oceanwp' ),
 				'selector' => [
 					'#footer-bottom,#footer-bottom p' => 'color'
 				],
@@ -593,7 +593,7 @@ $options = [
 			'normal' => [
 				'id' => 'ocean_bottom_footer_link_color',
 				'key' => 'normal',
-				'label' => 'Normal',
+				'label' => esc_html__( 'Normal', 'oceanwp' ),
 				'selector' => [
 					'#footer-bottom a,#footer-bottom #footer-bottom-menu a' => 'color'
 				],
@@ -605,7 +605,7 @@ $options = [
 			'hover' => [
 				'id' => 'ocean_bottom_footer_link_color_hover',
 				'key' => 'hover',
-				'label' => 'Hover',
+				'label' => esc_html__( 'Hover', 'oceanwp' ),
 				'selector' => [
 					'#footer-bottom a:hover,#footer-bottom #footer-bottom-menu a:hover' => 'color'
 				],

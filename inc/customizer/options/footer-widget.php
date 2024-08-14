@@ -537,7 +537,7 @@ $options = [
 			'normal' => [
 				'id' => 'ocean_footer_background',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' => esc_html__( 'Select Color', 'oceanwp' ),
 				'selector' => [
 					'#footer-widgets' => 'background-color'
 				],
@@ -564,7 +564,7 @@ $options = [
 			'normal' => [
 				'id' => 'ocean_footer_borders',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' => esc_html__( 'Select Color', 'oceanwp' ),
 				'selector' => [
 					'#footer-widgets li,#footer-widgets #wp-calendar caption,#footer-widgets #wp-calendar th,#footer-widgets #wp-calendar tbody,#footer-widgets .contact-info-widget i,#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"],#footer-widgets .posts-thumbnails-widget li,#footer-widgets .social-widget li a, #footer-widgets .contact-info-widget .owp-icon' => 'border-color'
 				],
@@ -591,7 +591,7 @@ $options = [
 			'normal' => [
 				'id' => 'footer_widget_title_typography[color]',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' => esc_html__( 'Select Color', 'oceanwp' ),
 				'selector' => [
 					'#footer-widgets .footer-box .widget-title' => 'color'
 				],
@@ -618,7 +618,7 @@ $options = [
 			'normal' => [
 				'id' => 'ocean_footer_color',
 				'key' => 'normal',
-				'label' => 'Select Color',
+				'label' => esc_html__( 'Select Color', 'oceanwp' ),
 				'selector' => [
 					'#footer-widgets,#footer-widgets p,#footer-widgets li a:before,#footer-widgets .contact-info-widget span.oceanwp-contact-title,#footer-widgets .recent-posts-date,#footer-widgets .recent-posts-comments,#footer-widgets .widget-recent-posts-icons li .fa' => 'color'
 				],
@@ -645,7 +645,7 @@ $options = [
 			'normal' => [
 				'id' => 'ocean_footer_link_color',
 				'key' => 'normal',
-				'label' => 'Normal',
+				'label' => esc_html__( 'Normal', 'oceanwp' ),
 				'selector' => [
 					'#footer-widgets .footer-box a,#footer-widgets a' => 'color'
 				],
@@ -657,7 +657,7 @@ $options = [
 			'hover' => [
 				'id' => 'ocean_footer_link_color_hover',
 				'key' => 'hover',
-				'label' => 'Hover',
+				'label' => esc_html__( 'Hover', 'oceanwp' ),
 				'selector' => [
 					'#footer-widgets .footer-box a:hover,#footer-widgets a:hover' => 'color'
 				],
@@ -677,5 +677,4 @@ $options = [
 		'section' => 'ocean_footer_widgets',
 		'transport' => 'postMessage',
 	]
-
 ];

@@ -370,7 +370,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_edd_menu_bag_icon_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'.eddmenucart-cart-icon .eddmenucart-count, .eddmenucart-cart-icon .eddmenucart-count:after' => 'border-color'
 								],
@@ -411,7 +411,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_edd_menu_bag_icon_count_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'.eddmenucart-cart-icon .eddmenucart-count, .edd-menu-icon .eddmenucart-total span' => 'color'
 								],
@@ -1017,14 +1017,14 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_edd_archive_both_sidebars_content_width',
-						'label' => 'Desktop',
+						'label' => esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
 					],
 					'unit' => [
 						'id' => 'ocean_edd_archive_both_sidebars_content_width_unit',
-						'label' => 'Unit',
+						'label' => esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => '%'
@@ -1050,14 +1050,14 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_edd_archive_both_sidebars_sidebars_width',
-						'label' => 'Desktop',
+						'label' => esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
 					],
 					'unit' => [
 						'id' => 'ocean_edd_archive_both_sidebars_sidebars_width_unit',
-						'label' => 'Unit',
+						'label' => esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => '%'
@@ -1244,7 +1244,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_edd_archive_image_width',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default' => 450
@@ -1252,7 +1252,7 @@ $options = [
 							],
 							'unit' => [
 								'id' => 'ocean_edd_archive_image_width_unit',
-								'label' => 'Unit',
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default' => 'px'
@@ -1277,7 +1277,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_edd_archive_image_height',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default' => 450
@@ -1285,7 +1285,7 @@ $options = [
 							],
 							'unit' => [
 								'id' => 'ocean_edd_archive_image_height_unit',
-								'label' => 'Unit',
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default' => 'px'
@@ -1310,7 +1310,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_edd_archive_excerpt_length',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default' => 5,
@@ -1970,14 +1970,14 @@ $options = [
 								'setting_args' => [
 									'desktop' => [
 										'id' => 'ocean_edd_entry_addtocart_border_size',
-										'label' => 'Desktop',
+										'label' => esc_html__( 'Desktop', 'oceanwp' ),
 										'attr' => [
 											'transport' => 'postMessage',
 										],
 									],
 									'unit' => [
 										'id' => 'ocean_edd_entry_addtocart_border_size_unit',
-										'label' => 'Unit',
+										'label' => esc_html__( 'Unit', 'oceanwp' ),
 										'attr' => [
 											'transport' => 'postMessage',
 											'default' => 'px',
@@ -2007,14 +2007,14 @@ $options = [
 								'setting_args' => [
 									'desktop' => [
 										'id' => 'ocean_edd_entry_addtocart_border_radius',
-										'label' => 'Desktop',
+										'label' => esc_html__( 'Desktop', 'oceanwp' ),
 										'attr' => [
 											'transport' => 'postMessage',
 										],
 									],
 									'unit' => [
 										'id' => 'ocean_edd_entry_addtocart_border_radius_unit',
-										'label' => 'Unit',
+										'label' => esc_html__( 'Unit', 'oceanwp' ),
 										'attr' => [
 											'transport' => 'postMessage',
 											'default' => 'px',
@@ -2273,14 +2273,14 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_edd_download_both_sidebars_content_width',
-						'label' => 'Desktop',
+						'label' => esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
 					],
 					'unit' => [
 						'id' => 'ocean_edd_download_both_sidebars_content_width_unit',
-						'label' => 'Unit',
+						'label' => esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => '%'
@@ -2306,14 +2306,14 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_edd_download_both_sidebars_sidebars_width',
-						'label' => 'Desktop',
+						'label' => esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
 					],
 					'unit' => [
 						'id' => 'ocean_edd_download_both_sidebars_sidebars_width_unit',
-						'label' => 'Unit',
+						'label' => esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => '%'

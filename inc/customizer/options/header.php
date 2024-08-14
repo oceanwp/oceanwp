@@ -162,7 +162,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_header_height',
-						'label' => 'Desktop',
+						'label' => esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => 74,
@@ -413,7 +413,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_full_screen_header_hamburger_icon_width',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 23,
@@ -452,7 +452,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_full_screen_header_hamburger_icon_height',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 2,
@@ -491,7 +491,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_full_screen_header_hamburger_icon_gap',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 8,
@@ -604,17 +604,17 @@ $options = [
 							'wider' => [
 								'id'     => 'wider',
 								'label'   => esc_html__('Wider', 'oceanwp'),
-								'content' => 'Wider'
+								'content' => esc_html__('Wider', 'oceanwp'),
 							],
 							'centered'  => [
 								'id'     => 'centered',
 								'label'   => esc_html__('Centered', 'oceanwp'),
-								'content' => 'Centered'
+								'content' => esc_html__('Centered', 'oceanwp'),
 							],
 							'closer'  => [
 								'id'     => 'closer',
 								'label'   => esc_html__('Closer', 'oceanwp'),
-								'content' => 'Closer'
+								'content' => esc_html__('Closer', 'oceanwp'),
 							]
 						]
 					],
@@ -794,17 +794,17 @@ $options = [
 							'left-menu' => [
 								'id'     => 'left-menu',
 								'label'   => esc_html__('Left', 'oceanwp'),
-								'content' => 'Left'
+								'content' => esc_html__('Left', 'oceanwp'),
 							],
 							'center-menu'  => [
 								'id'     => 'center-menu',
 								'label'   => esc_html__('Center', 'oceanwp'),
-								'content' => 'Center'
+								'content' => esc_html__('Center', 'oceanwp'),
 							],
 							'right-menu'  => [
 								'id'     => 'right-menu',
 								'label'   => esc_html__('Right', 'oceanwp'),
-								'content' => 'Right'
+								'content' => esc_html__('Right', 'oceanwp'),
 							]
 						]
 					],
@@ -827,7 +827,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_medium_header_menu_height',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 60,
@@ -986,7 +986,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_vertical_header_collapse_width',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 1280,
@@ -1020,12 +1020,12 @@ $options = [
 							'left-header' => [
 								'id'     => 'left-header',
 								'label'   => esc_html__('Left', 'oceanwp'),
-								'content' => 'Left'
+								'content' => esc_html__('Left', 'oceanwp'),
 							],
 							'right-header'  => [
 								'id'     => 'right-header',
 								'label'   => esc_html__('Right', 'oceanwp'),
-								'content' => 'Right'
+								'content' => esc_html__('Right', 'oceanwp'),
 							]
 						]
 					],
@@ -1047,7 +1047,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_vertical_header_width',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 300,
@@ -1182,17 +1182,17 @@ $options = [
 							'left-logo' => [
 								'id'     => 'left-logo',
 								'label'   => esc_html__('Left', 'oceanwp'),
-								'content' => 'Left'
+								'content' => esc_html__('Left', 'oceanwp'),
 							],
 							'center-logo'  => [
 								'id'     => 'center-logo',
 								'label'   => esc_html__('Center', 'oceanwp'),
-								'content' => 'Center'
+								'content' => esc_html__('Center', 'oceanwp'),
 							],
 							'right-logo'  => [
 								'id'     => 'right-logo',
 								'label'   => esc_html__('Right', 'oceanwp'),
-								'content' => 'Right'
+								'content' => esc_html__('Right', 'oceanwp'),
 							]
 						]
 					],
@@ -1225,7 +1225,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_vertical_header_menu_items_padding',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 17,
@@ -1254,12 +1254,12 @@ $options = [
 							'icon' => [
 								'id'     => 'icon',
 								'label'   => esc_html__('Icon', 'oceanwp'),
-								'content' => 'Icon'
+								'content' => esc_html__('Icon', 'oceanwp'),
 							],
 							'link'  => [
 								'id'     => 'link',
 								'label'   => esc_html__('Link', 'oceanwp'),
-								'content' => 'Link'
+								'content' => esc_html__('Link', 'oceanwp'),
 							]
 						]
 					],
@@ -1304,7 +1304,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_vertical_header_search_border_width',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
@@ -1342,7 +1342,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_vertical_header_search_border_radius',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
@@ -1463,7 +1463,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_header_background',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#site-header,.has-transparent-header .is-sticky #site-header,.has-vh-transparent .is-sticky #site-header.vertical-header,#searchform-header-replace' => 'background-color'
 								],
@@ -1489,7 +1489,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_header_border_bottom',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#site-header' => 'border-color'
 								],
@@ -1525,7 +1525,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_transparent_header_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#site-header.transparent-header' => 'background-color'
 								],
@@ -1560,7 +1560,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_top_header_menu_background',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#site-header.top-header .header-top,#site-header.top-header #searchform-header-replace' => 'background-color'
 								],
@@ -1626,7 +1626,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_top_header_search_button_border_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#site-header.top-header #search-toggle' => 'border-color'
 								],
@@ -1662,7 +1662,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_full_screen_header_menu_bar_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#site-header.full_screen-header .menu-bar .ham,#site-header.full_screen-header .menu-bar .ham:before,#site-header.full_screen-header .menu-bar .ham:after' => 'background-color'
 								],
@@ -1689,7 +1689,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_full_screen_header_menu_bar_close_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#site-header.full_screen-header .menu-bar.exit .ham:before,#site-header.full_screen-header .menu-bar.exit .ham:after' => 'background-color'
 								],
@@ -1716,7 +1716,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_full_screen_header_links_bg_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'#site-header.full_screen-header .fs-dropdown-menu li a' => 'background-color'
 								],
@@ -1728,7 +1728,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_full_screen_header_links_hover_bg_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'#site-header.full_screen-header .fs-dropdown-menu li a:hover' => 'background-color'
 								],
@@ -2550,7 +2550,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_header_image_overlay_color',
 						'key' => 'normal',
-						'label' => 'Select Color',
+						'label' => esc_html__('Select Color', 'oceanwp'),
 						'selector' => [
 							'#site-header.has-header-media .overlay-header-media' => 'background-color'
 						],
@@ -2819,7 +2819,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_logo_max_height',
-						'label' => 'Desktop',
+						'label' => esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
@@ -3053,7 +3053,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_logo_color',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' => esc_html__('Normal', 'oceanwp'),
 						'selector' => [
 							'#site-logo a.site-logo-text' => 'color'
 						],
@@ -3065,7 +3065,7 @@ $options = [
 					'hover' => [
 						'id' => 'ocean_logo_hover_color',
 						'key' => 'hover',
-						'label' => 'Hover',
+						'label' => esc_html__('Hover', 'oceanwp'),
 						'selector' => [
 							'#site-logo a.site-logo-text:hover' => 'color'
 						],
@@ -3120,17 +3120,17 @@ $options = [
 					'left-menu' => [
 						'id'     => 'left-menu',
 						'label'   => esc_html__('Left', 'oceanwp'),
-						'content' => 'Left'
+						'content' => esc_html__('Left', 'oceanwp'),
 					],
 					'center-menu'  => [
 						'id'     => 'center-menu',
 						'label'   => esc_html__('Center', 'oceanwp'),
-						'content' => 'Center'
+						'content' => esc_html__('Center', 'oceanwp'),
 					],
 					'right-menu'  => [
 						'id'     => 'right-menu',
 						'label'   => esc_html__('Right', 'oceanwp'),
-						'content' => 'Right'
+						'content' => esc_html__('Right', 'oceanwp'),
 					]
 				]
 			],
@@ -3175,7 +3175,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_menu_links_effect_blue_color',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' => esc_html__('Normal', 'oceanwp'),
 						'selector' => [
 							'.effect-one #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-three #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-five #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-five #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-nine #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-nine #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after' => 'background-color',
 							'.effect-four #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-four #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-seven #site-navigation-wrap .dropdown-menu > li > a.menu-link:hover > span:after, .effect-seven #site-navigation-wrap .dropdown-menu > li.sfHover > a.menu-link > span:after' => 'color'
@@ -3203,7 +3203,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_menu_links_effect_dark_color',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' => esc_html__('Normal', 'oceanwp'),
 						'selector' => [
 							'.effect-two #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after, .effect-eight #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-eight #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after' => 'background-color',
 							'.effect-six #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:before, .effect-six #site-navigation-wrap .dropdown-menu > li > a.menu-link > span:after' => 'border-color'
@@ -3233,7 +3233,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_menu_items_padding',
-						'label' => 'Desktop',
+						'label' => esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => 15,
@@ -3448,7 +3448,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_menu_link_background',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' => esc_html__('Normal', 'oceanwp'),
 						'selector' => [
 							'#site-header #site-navigation-wrap .dropdown-menu > li > a' => 'background-color'
 						],
@@ -3459,7 +3459,7 @@ $options = [
 					'hover' => [
 						'id' => 'ocean_menu_link_hover_background',
 						'key' => 'hover',
-						'label' => 'Hover',
+						'label' => esc_html__('Hover', 'oceanwp'),
 						'selector' => [
 							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover,#site-navigation-wrap .dropdown-menu > li.sfHover > a' => 'background-color'
 						],
@@ -3485,7 +3485,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_menu_link_color',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' => esc_html__('Normal', 'oceanwp'),
 						'selector' => [
 							'#site-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close' => 'color',
 							'#site-header #site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use,#searchform-header-replace-close .owp-icon use' => 'stroke'
@@ -3498,7 +3498,7 @@ $options = [
 					'hover' => [
 						'id' => 'ocean_menu_link_color_hover',
 						'key' => 'hover',
-						'label' => 'Hover',
+						'label' => esc_html__('Hover', 'oceanwp'),
 						'selector' => [
 							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover' => 'color',
 							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use,#searchform-header-replace-close:hover .owp-icon use' => 'stroke'
@@ -3525,7 +3525,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_menu_link_color_active',
 						'key' => 'normal',
-						'label' => 'Select Color',
+						'label' => esc_html__('Select Color', 'oceanwp'),
 						'selector' => [
 							'#site-header #site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'color'
 						],
@@ -3551,7 +3551,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_menu_link_active_background',
 						'key' => 'normal',
-						'label' => 'Select Color',
+						'label' => esc_html__('Select Color', 'oceanwp'),
 						'selector' => [
 							'#site-header #site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'background-color'
 						],
@@ -3858,7 +3858,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_menu_top_border',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'.dropdown-menu .sub-menu,#searchform-dropdown,.current-shop-items-dropdown' => 'border-color',
 								],
@@ -3893,7 +3893,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_menu_background',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'.dropdown-menu .sub-menu,#searchform-dropdown,.current-shop-items-dropdown' => 'background-color',
 								],
@@ -3919,7 +3919,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_menu_borders',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'.dropdown-menu ul li.menu-item,.navigation > ul > li > ul.megamenu.sub-menu > li,.navigation .megamenu li ul.sub-menu' => 'border-color',
 								],
@@ -3954,7 +3954,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_menu_link_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'.dropdown-menu ul li a.menu-link' => 'color',
 									'.dropdown-menu ul li a.menu-link .owp-icon use' => 'stroke'
@@ -3967,7 +3967,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_dropdown_menu_link_color_hover',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'.dropdown-menu ul li a.menu-link:hover' => 'color',
 									'.dropdown-menu ul li a.menu-link:hover .owp-icon use' => 'stroke'
@@ -3994,7 +3994,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_menu_link_hover_bg',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'.dropdown-menu ul li a.menu-link:hover' => 'background-color'
 								],
@@ -4029,7 +4029,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_menu_link_color_active',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'.dropdown-menu ul > .current-menu-item > a.menu-link' => 'color'
 								],
@@ -4054,7 +4054,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_menu_link_bg_active',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'.dropdown-menu ul > .current-menu-item > a.menu-link' => 'background-color'
 								],
@@ -4089,7 +4089,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_category_title_bg',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'.navigation li.mega-cat .mega-cat-title' => 'background-color'
 								],
@@ -4115,7 +4115,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_category_title_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'.navigation li.mega-cat .mega-cat-title' => 'color'
 								],
@@ -4150,7 +4150,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_category_links_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'.navigation li.mega-cat ul li .mega-post-title a' => 'color'
 								],
@@ -4162,7 +4162,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_dropdown_category_links_hover_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'.navigation li.mega-cat ul li .mega-post-title a:hover' => 'color'
 								],
@@ -4188,7 +4188,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_dropdown_category_date_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'.navigation li.mega-cat ul li .mega-post-date' => 'color',
 									'.navigation li.mega-cat ul li .mega-post-date .owp-icon use' => 'stroke'
@@ -4240,10 +4240,10 @@ $options = [
 						'multiple' => false,
 						'sanitize_callback' => 'sanitize_key',
 						'choices' => [
-							'disabled' 			=> esc_html__( 'Disabled','oceanwp' ),
-							'drop_down' 		=> esc_html__( 'Drop Down','oceanwp' ),
-							'header_replace' 	=> esc_html__( 'Header Replace','oceanwp' ),
-							'overlay' 			=> esc_html__( 'Overlay','oceanwp' ),
+							'disabled' => esc_html__( 'Disabled','oceanwp' ),
+							'drop_down' => esc_html__( 'Drop Down','oceanwp' ),
+							'header_replace' => esc_html__( 'Header Replace','oceanwp' ),
+							'overlay' => esc_html__( 'Overlay','oceanwp' ),
 						],
 					],
 
@@ -4271,7 +4271,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_search_dropdown_input_background',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#searchform-dropdown input' => 'background-color'
 								],
@@ -4297,7 +4297,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_search_dropdown_input_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#searchform-dropdown input' => 'color'
 								],
@@ -4324,7 +4324,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_search_dropdown_input_border',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'#searchform-dropdown input' => 'border-color'
 								],
@@ -4336,7 +4336,7 @@ $options = [
 							'focus' => [
 								'id' => 'ocean_search_dropdown_input_border_focus',
 								'key' => 'focus',
-								'label' => 'Select Color',
+								'label' => esc_html__('Focus', 'oceanwp'),
 								'selector' => [
 									'#searchform-dropdown input:focus' => 'border-color'
 								],
@@ -4363,7 +4363,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_search_overlay_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#searchform-overlay' => 'background-color'
 								],
@@ -4390,7 +4390,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_search_overlay_input_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#searchform-overlay form input, #searchform-overlay form .search-text' => 'background-color'
 								],
@@ -4417,7 +4417,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_search_overlay_placeholder_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#searchform-overlay form input::placeholder' => 'color'
 								],
@@ -4444,7 +4444,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_search_overlay_input_dashed_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#searchform-overlay form label i' => 'background-color'
 								],
@@ -4471,7 +4471,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_search_overlay_input_border_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'#searchform-overlay form input' => 'border-color'
 								],
@@ -4483,7 +4483,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_search_overlay_input_hover_border_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'#searchform-overlay form input:hover' => 'border-color'
 								],
@@ -4495,7 +4495,7 @@ $options = [
 							'focus' => [
 								'id' => 'ocean_search_overlay_input_focus_border_color',
 								'key' => 'focus',
-								'label' => 'Focus',
+								'label' => esc_html__('Focus', 'oceanwp'),
 								'selector' => [
 									'#searchform-overlay form input:focus' => 'border-color'
 								],
@@ -4522,7 +4522,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_search_overlay_close_button_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#searchform-overlay a.search-overlay-close span::before, #searchform-overlay a.search-overlay-close span::after' => 'background-color'
 								],
@@ -4804,7 +4804,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_menu_social_border_radius',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
@@ -5015,7 +5015,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_menu_social_links_bg',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'.oceanwp-social-menu.simple-social ul li a' => 'background-color'
 								],
@@ -5026,7 +5026,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_menu_social_hover_links_bg',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'.oceanwp-social-menu.simple-social ul li a:hover' => 'background-color'
 								],
@@ -5052,7 +5052,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_menu_social_links_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'.oceanwp-social-menu.simple-social ul li a' => 'color',
 									'.oceanwp-social-menu.simple-social ul li a .owp-icon use' => 'stroke'
@@ -5064,7 +5064,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_menu_social_hover_links_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'.oceanwp-social-menu.simple-social ul li a:hover' => 'color',
 									'.oceanwp-social-menu.simple-social ul li a:hover .owp-icon use' => 'stroke'
@@ -5227,13 +5227,13 @@ $options = [
 				'multiple' => false,
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
-					'1280' 		=> esc_html__( 'From 1280px', 'oceanwp' ),
-					'1080' 		=> esc_html__( 'From 1080px', 'oceanwp' ),
-					'959' 		=> esc_html__( 'From 959px', 'oceanwp' ),
-					'767' 		=> esc_html__( 'From 767px', 'oceanwp' ),
-					'480' 		=> esc_html__( 'From 480px', 'oceanwp' ),
-					'320' 		=> esc_html__( 'From 320px', 'oceanwp' ),
-					'custom' 	=> esc_html__( 'Custom media query', 'oceanwp' ),
+					'1280'   => esc_html__( 'From 1280px', 'oceanwp' ),
+					'1080'   => esc_html__( 'From 1080px', 'oceanwp' ),
+					'959'    => esc_html__( 'From 959px', 'oceanwp' ),
+					'767'    => esc_html__( 'From 767px', 'oceanwp' ),
+					'480'    => esc_html__( 'From 480px', 'oceanwp' ),
+					'320'    => esc_html__( 'From 320px', 'oceanwp' ),
+					'custom' => esc_html__( 'Custom media query', 'oceanwp' ),
 				]
 			],
 
@@ -5254,7 +5254,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_mobile_menu_custom_breakpoint',
-						'label' => 'Desktop',
+						'label' => esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'refresh',
 						],
@@ -5367,7 +5367,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_mobile_header_height',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
@@ -5449,7 +5449,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_responsive_logo_height',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
@@ -5544,7 +5544,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_dropdown_mobile_menu_max_height',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default'   => 400,
@@ -5699,7 +5699,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_mobile_menu_open_hamburger_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'.mobile-menu .hamburger-inner, .mobile-menu .hamburger-inner::before, .mobile-menu .hamburger-inner::after' => 'background-color'
 								],
@@ -5993,7 +5993,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_mobile_menu_sidr_close_button_background',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'a.sidr-class-toggle-sidr-close' => 'background-color'
 								],
@@ -6020,7 +6020,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_mobile_menu_sidr_background',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#sidr, #mobile-dropdown' => 'background-color'
 								],
@@ -6047,7 +6047,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_mobile_menu_sidr_borders',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#sidr li, #sidr ul, #mobile-dropdown ul li, #mobile-dropdown ul li ul' => 'border-color'
 								],
@@ -6083,7 +6083,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_mobile_menu_links',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'body .sidr a, body .sidr-class-dropdown-toggle, #mobile-dropdown ul li a, #mobile-dropdown ul li a .dropdown-toggle, #mobile-fullscreen ul li a, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a' => 'color',
 									'#mobile-fullscreen a.close .close-icon-inner, #mobile-fullscreen a.close .close-icon-inner::after' => 'background-color'
@@ -6096,7 +6096,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_mobile_menu_links_hover',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'body .sidr a:hover, body .sidr-class-dropdown-toggle:hover, body .sidr-class-dropdown-toggle .fa, body .sidr-class-menu-item-has-children.active > a, body .sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle, #mobile-dropdown ul li a:hover, #mobile-dropdown ul li a .dropdown-toggle:hover, #mobile-dropdown .menu-item-has-children.active > a, #mobile-dropdown .menu-item-has-children.active > a > .dropdown-toggle, #mobile-fullscreen ul li a:hover, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover' => 'color',
 									'#mobile-fullscreen a.close:hover .close-icon-inner, #mobile-fullscreen a.close:hover .close-icon-inner::after{background-color' => 'background-color'
@@ -6132,7 +6132,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_mobile_menu_sidr_dropdowns_background',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'.sidr-class-dropdown-menu ul, #mobile-dropdown ul li ul, #mobile-fullscreen ul ul.sub-menu' => 'background-color'
 								],
@@ -6169,7 +6169,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_mobile_menu_sidr_search_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'body .sidr-class-mobile-searchform input, #mobile-dropdown #mobile-menu-search form input' => 'background-color'
 								],
@@ -6194,7 +6194,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_mobile_menu_sidr_search_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'body .sidr-class-mobile-searchform input,body .sidr-class-mobile-searchform input:focus, #mobile-dropdown #mobile-menu-search form input, #mobile-fullscreen #mobile-search input, #mobile-fullscreen #mobile-search .search-text' => 'color'
 								],
@@ -6220,7 +6220,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_mobile_menu_sidr_search_border_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'body .sidr-class-mobile-searchform input, #mobile-dropdown #mobile-menu-search form input, #mobile-fullscreen #mobile-search input' => 'border-color'
 								],
@@ -6232,7 +6232,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_mobile_menu_sidr_search_border_color_focus',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'body .sidr-class-mobile-searchform input:focus, #mobile-dropdown #mobile-menu-search form input:focus, #mobile-fullscreen #mobile-search input:focus' => 'border-color'
 								],
@@ -6259,7 +6259,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_full_screen_mobile_menu_bg',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'#mobile-fullscreen' => 'background-color'
 								],
@@ -6286,7 +6286,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_full_screen_mobile_menu_links_bg',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'#mobile-fullscreen ul > li > a' => 'background-color'
 								],
@@ -6297,7 +6297,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_full_screen_mobile_menu_links_hover_bg',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'#mobile-fullscreen ul > li > a:hover' => 'background-color'
 								],
@@ -6323,7 +6323,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_full_screen_mobile_menu_search_border_color_hover',
 								'key' => 'hover',
-								'label' => 'Select Color',
+								'label' => esc_html__('Select Color', 'oceanwp'),
 								'selector' => [
 									'#mobile-fullscreen #mobile-search input:hover' => 'border-color'
 								],
@@ -6350,7 +6350,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_mobile_menu_sidr_search_button_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__('Normal', 'oceanwp'),
 								'selector' => [
 									'.sidr-class-mobile-searchform button, #mobile-dropdown #mobile-menu-search form button' => 'color',
 									'.sidr-class-mobile-searchform button .owp-icon use, #mobile-dropdown #mobile-menu-search form button .owp-icon use' => 'stroke'
@@ -6363,7 +6363,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_mobile_menu_sidr_search_button_hover_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__('Hover', 'oceanwp'),
 								'selector' => [
 									'.sidr-class-mobile-searchform button:hover, #mobile-dropdown #mobile-menu-search form button:hover' => 'color',
 									'.sidr-class-mobile-searchform button:hover .owp-icon use, #mobile-dropdown #mobile-menu-search form button:hover .owp-icon use' => 'stroke'

@@ -143,7 +143,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_blog_archives_both_sidebars_sidebars_width',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
@@ -710,7 +710,7 @@ $options = [
 									'normal' => [
 										'id' => 'ocean_blog_infinite_scroll_spinners_color',
 										'key' => 'normal',
-										'label' => 'Select Color',
+										'label' => esc_html__( 'Select Color', 'oceanwp' ),
 										'selector' => [
 											'.loader-ellips__dot' => 'background-color'
 										],
@@ -819,7 +819,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_blog_image_overlay_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.post .thumbnail .overlay' => 'background-color'
 								],
@@ -1585,7 +1585,7 @@ $options = [
 							'normal' => [
 								'id' => 'blog_entry_title_typography[color]',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.post .blog-entry-header .entry-title a' => 'color'
 								],
@@ -1597,7 +1597,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_blog_archive_title_color_hover',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.post .blog-entry-header .entry-title a:hover' => 'color'
 								],
@@ -1622,7 +1622,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_blog_archive_meta_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry ul.meta li a' => 'color'
 								],
@@ -1633,7 +1633,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_blog_archive_meta_hover_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry ul.meta li a:hover' => 'color'
 								],
@@ -1658,7 +1658,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_theme_blog_posts_icons_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry ul.meta li .owp-icon use' => 'stroke',
 									'.blog-entry ul.meta li i' => 'color'
@@ -1684,7 +1684,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_blog_archive_content_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.post .blog-entry-summary' => 'color'
 								],
@@ -1709,7 +1709,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_blog_archive_readmore_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.post .blog-entry-readmore a' => 'color'
 								],
@@ -1720,7 +1720,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_blog_archive_readmore_hover_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.post .blog-entry-readmore a:hover' => 'color'
 								],
@@ -1746,7 +1746,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_blog_thumbnail_category_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.thumbnail-entry .blog-entry-category a' => 'color'
 								],
@@ -1758,7 +1758,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_blog_thumbnail_category_hover_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.thumbnail-entry .blog-entry-category a:hover' => 'color'
 								],
@@ -1785,7 +1785,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_blog_thumbnail_comments_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.thumbnail-entry .blog-entry-comments, .blog-entry.thumbnail-entry .blog-entry-comments a' => 'color'
 								],
@@ -1797,7 +1797,7 @@ $options = [
 							'hover' => [
 								'id' => 'ocean_blog_thumbnail_comments_hover_color',
 								'key' => 'hover',
-								'label' => 'Hover',
+								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.thumbnail-entry .blog-entry-comments a:hover' => 'color'
 								],
@@ -1824,7 +1824,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_blog_thumbnail_date_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.blog-entry.thumbnail-entry .blog-entry-date' => 'color'
 								],
@@ -1947,7 +1947,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_blog_archives_both_sidebars_content_width',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 700,
@@ -1991,7 +1991,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_blog_single_both_sidebars_content_width',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
@@ -2016,7 +2016,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_blog_single_both_sidebars_sidebars_width',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
@@ -2096,93 +2096,6 @@ $options = [
 					]
 				]
 			],
-
-			// 'ocean_divider_after_blog_single_responsive_setting_section' => [
-			// 	'type' => 'ocean-divider',
-			// 	'section' => 'ocean_blog_single_section',
-			// 	'transport' => 'postMessage',
-			// 	'priority' => 10,
-			// 	'bottom' => 1,
-			// ],
-
-			// 'ocean_blog_single_header_type' => [
-			// 	'type' => 'ocean-radio-image',
-			// 	'label' => esc_html__('Header Type', 'oceanwp' ),
-			// 	'section' => 'ocean_blog_single_section',
-			// 	'transport' => 'refresh',
-			// 	'default' => '',
-			// 	'priority' => 10,
-			// 	'sanitize_callback' => 'sanitize_key',
-			// 	'choices' => [
-			// 		'minimal' => [
-			// 			'label'   => esc_html__( 'Minimal', 'oceanwp' ),
-			// 			'icon' => 'header_type_minimal_style',
-			// 		],
-			// 		'transparent' => [
-			// 			'label'   => esc_html__( 'Transparent', 'oceanwp' ),
-			// 			'icon' => 'header_type_transparent_style',
-			// 		],
-			// 		'top' => [
-			// 			'label'   => esc_html__( 'Top Menu', 'oceanwp' ),
-			// 			'icon' => 'header_type_topmenu_style',
-			// 		],
-			// 		'full_screen' => [
-			// 			'label'   => esc_html__( 'Full Screen', 'oceanwp' ),
-			// 			'icon' => 'header_type_fullscreen_style',
-			// 		],
-			// 		'center' => [
-			// 			'label'   => esc_html__( 'Center Header', 'oceanwp' ),
-			// 			'icon' => 'header_type_center_style',
-			// 		],
-			// 		'medium' => [
-			// 			'label'   => esc_html__( 'Medium Header', 'oceanwp' ),
-			// 			'icon' => 'header_type_medium_style',
-			// 		],
-			// 		'vertical' => [
-			// 			'label'   => esc_html__( 'Vertical Header', 'oceanwp' ),
-			// 			'icon' => 'header_type_vertical_style',
-			// 		],
-			// 		'custom' => [
-			// 			'label'   => esc_html__( 'Custom Header', 'oceanwp' ),
-			// 			'icon' => 'header_type_custom_style',
-			// 		]
-			// 	],
-			// ],
-
-			// 'ocean_spacer_for_blog_single_additional_header_settings_section' => [
-			// 	'type' => 'ocean-spacer',
-			// 	'section' => 'ocean_blog_single_section',
-			// 	'transport' => 'postMessage',
-			// 	'priority' => 10,
-			// 	'top' => 1,
-			// 	'bottom' => 1
-			// ],
-
-			// 'ocean_blog_single_additional_header_settings_section' => [
-			// 	'type' => 'section',
-			// 	'title' => esc_html__('Additional Header Settings', 'oceanwp'),
-			// 	'section' => 'ocean_blog_single_section',
-			// 	'after' => 'ocean_spacer_for_blog_single_additional_header_settings_section',
-			// 	'class' => 'section-site-layout',
-			// 	'priority' => 10,
-			// 	'options' => [
-			// 		'ocean_desc_for_blog_single_additional_header_settings' => [
-			// 			'type' => 'ocean-content',
-			// 			'isContent' => esc_html__('Additonal header type for global single post. To be worked on...', 'oceanwp'),
-			// 			'section' => 'ocean_blog_single_additional_header_settings_section',
-			// 			'class' => 'description',
-			// 			'transport' => 'postMessage',
-			// 			'priority' => 10,
-			// 		],
-			// 	]
-			// ],
-
-			// 'ocean_divider_after_blog_single_header_setting_section' => [
-			// 	'type' => 'ocean-divider',
-			// 	'section' => 'ocean_blog_single_section',
-			// 	'transport' => 'postMessage',
-			// 	'priority' => 10
-			// ],
 
 			'ocean_title_for_single_post_page_title' => [
 				'type' => 'ocean-title',
@@ -2364,7 +2277,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_blog_single_title_bg_image_height',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default'   => 400,
@@ -2459,17 +2372,17 @@ $options = [
 							'initial' => [
 								'id'     => 'initial',
 								'label'   => esc_html__('Default', 'oceanwp'),
-								'content' => 'Default'
+								'content' => esc_html__('Default', 'oceanwp'),
 							],
 							'scroll'  => [
 								'id'     => 'scroll',
 								'label'   => esc_html__('Scroll', 'oceanwp'),
-								'content' => 'Scroll'
+								'content' => esc_html__('Scroll', 'oceanwp'),
 							],
 							'fixed'  => [
 								'id'     => 'fixed',
 								'label'   => esc_html__('Fixed', 'oceanwp'),
-								'content' => 'Fixed'
+								'content' => esc_html__('Fixed', 'oceanwp'),
 							]
 						],
 						'preview' => 'queryWithAttr',
@@ -2495,22 +2408,22 @@ $options = [
 							'initial' => [
 								'id'     => 'initial',
 								'label'   => esc_html__('Default', 'oceanwp'),
-								'content' => 'Default'
+								'content' => esc_html__('Default', 'oceanwp'),
 							],
 							'auto'  => [
 								'id'     => 'auto',
 								'label'   => esc_html__('Auto', 'oceanwp'),
-								'content' => 'Auto'
+								'content' => esc_html__('Auto', 'oceanwp'),
 							],
 							'cover'  => [
 								'id'     => 'cover',
 								'label'   => esc_html__('Cover', 'oceanwp'),
-								'content' => 'Cover'
+								'content' => esc_html__('Cover', 'oceanwp'),
 							],
 							'contain'  => [
 								'id'     => 'contain',
 								'label'   => esc_html__('Contain', 'oceanwp'),
-								'content' => 'Contain'
+								'content' => esc_html__('Contain', 'oceanwp'),
 							]
 						],
 						'preview' => 'queryWithAttr',
@@ -2573,7 +2486,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_blog_single_title_bg_image_overlay_opacity',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default'   => 0.5,
@@ -3041,7 +2954,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_blog_related_count',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default'  => 3,
@@ -3107,7 +3020,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_blog_related_img_width',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 								],
@@ -3131,7 +3044,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_blog_related_img_height',
-								'label' => 'Desktop',
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 								],
