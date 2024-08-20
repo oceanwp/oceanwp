@@ -323,7 +323,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_background_color',
 						'key' => 'normal',
-						'label' => 'Select Color',
+						'label' => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
 							'body, .separate-layout, .has-parallax-footer:not(.separate-layout) #main' => 'background-color'
 						],
@@ -419,17 +419,17 @@ $options = [
 					'initial' => [
 						'id'     => 'initial',
 						'label'   => esc_html__('Initial', 'oceanwp'),
-						'content' => 'Initial'
+						'content' => esc_html__('Initial', 'oceanwp'),
 					],
 					'scroll'  => [
 						'id'     => 'scroll',
 						'label'   => esc_html__('Scroll', 'oceanwp'),
-						'content' => 'Scroll'
+						'content' => esc_html__('Scroll', 'oceanwp'),
 					],
 					'fixed'  => [
 						'id'     => 'fixed',
 						'label'   => esc_html__('Fixed', 'oceanwp'),
-						'content' => 'Fixed'
+						'content' => esc_html__('Fixed', 'oceanwp'),
 					]
 				],
 				'preview' => 'queryWithAttr',
@@ -455,22 +455,22 @@ $options = [
 					'initial' => [
 						'id'     => 'initial',
 						'label'   => esc_html__('Default', 'oceanwp'),
-						'content' => 'Initial'
+						'content' => esc_html__('Default', 'oceanwp'),
 					],
 					'auto'  => [
 						'id'     => 'auto',
 						'label'   => esc_html__('Auto', 'oceanwp'),
-						'content' => 'Auto'
+						'content' => esc_html__('Auto', 'oceanwp'),
 					],
 					'cover'  => [
 						'id'     => 'cover',
 						'label'   => esc_html__('Cover', 'oceanwp'),
-						'content' => 'Cover'
+						'content' => esc_html__('Cover', 'oceanwp'),
 					],
 					'contain'  => [
 						'id'     => 'contain',
 						'label'   => esc_html__('Contain', 'oceanwp'),
-						'content' => 'Contain'
+						'content' => esc_html__('Contain', 'oceanwp'),
 					]
 				],
 				'preview' => 'queryWithAttr',
@@ -534,7 +534,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_boxed_outside_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.boxed-layout' => 'background-color'
 								],
@@ -562,7 +562,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_separate_outside_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'body.separate-layout' => 'background-color'
 								],
@@ -590,7 +590,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_boxed_inner_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.boxed-layout #wrap, .separate-layout .content-area, .separate-layout .widget-area .sidebar-box, body.separate-blog.separate-layout #blog-entries > *, body.separate-blog.separate-layout .oceanwp-pagination, body.separate-blog.separate-layout .blog-entry.grid-entry .blog-entry-inner, .has-parallax-footer:not(.separate-layout) #main' => 'background-color'
 								],
@@ -1221,7 +1221,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_theme_button_bg',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' =>esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button' => 'background-color'
 						],
@@ -2232,7 +2232,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_input_background',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' =>esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea' => 'background-color'
 						],
@@ -2258,7 +2258,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_label_color',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' =>esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'label, body div.wpforms-container-full .wpforms-form .wpforms-field-label' => 'color'
 						],
@@ -2285,7 +2285,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_input_placeholder',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' =>esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'form input[type="text"]::placeholder, form input[type="password"]::placeholder, form input[type="email"]::placeholder, form input[type="url"]::placeholder, form input[type="date"]::placeholder, form input[type="month"]::placeholder, form input[type="time"]::placeholder, form input[type="datetime"]::placeholder, form input[type="datetime-local"]::placeholder, form input[type="week"]::placeholder, form input[type="number"]::placeholder, form input[type="search"]::placeholder, form input[type="tel"]::placeholder, form input[type="color"]::placeholder, form select::placeholder, form textarea::placeholder, body div.wpforms-container-full .wpforms-form input[type=date]::placeholder, body div.wpforms-container-full .wpforms-form input[type=datetime]::placeholder, body div.wpforms-container-full .wpforms-form input[type=datetime-local]::placeholder, body div.wpforms-container-full .wpforms-form input[type=email]::placeholder, body div.wpforms-container-full .wpforms-form input[type=month]::placeholder, body div.wpforms-container-full .wpforms-form input[type=number]::placeholder, body div.wpforms-container-full .wpforms-form input[type=password]::placeholder, body div.wpforms-container-full .wpforms-form input[type=range]::placeholder, body div.wpforms-container-full .wpforms-form input[type=search]::placeholder, body div.wpforms-container-full .wpforms-form input[type=tel]::placeholder, body div.wpforms-container-full .wpforms-form input[type=text]::placeholder, body div.wpforms-container-full .wpforms-form input[type=time]::placeholder, body div.wpforms-container-full .wpforms-form input[type=url]::placeholder, body div.wpforms-container-full .wpforms-form input[type=week]::placeholder, body div.wpforms-container-full .wpforms-form select::placeholder, body div.wpforms-container-full .wpforms-form textarea::placeholder' => 'color'
 						],
@@ -2311,7 +2311,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_input_color',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' =>esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea' => 'color'
 						],
@@ -2338,7 +2338,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_input_border_color',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' =>esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'form input[type="text"], form input[type="password"], form input[type="email"], form input[type="url"], form input[type="date"], form input[type="month"], form input[type="time"], form input[type="datetime"], form input[type="datetime-local"], form input[type="week"], form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="color"], form select, form textarea,.select2-container .select2-choice, .woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single, body div.wpforms-container-full .wpforms-form input[type=date], body div.wpforms-container-full .wpforms-form input[type=datetime], body div.wpforms-container-full .wpforms-form input[type=datetime-local], body div.wpforms-container-full .wpforms-form input[type=email], body div.wpforms-container-full .wpforms-form input[type=month], body div.wpforms-container-full .wpforms-form input[type=number], body div.wpforms-container-full .wpforms-form input[type=password], body div.wpforms-container-full .wpforms-form input[type=range], body div.wpforms-container-full .wpforms-form input[type=search], body div.wpforms-container-full .wpforms-form input[type=tel], body div.wpforms-container-full .wpforms-form input[type=text], body div.wpforms-container-full .wpforms-form input[type=time], body div.wpforms-container-full .wpforms-form input[type=url], body div.wpforms-container-full .wpforms-form input[type=week], body div.wpforms-container-full .wpforms-form select, body div.wpforms-container-full .wpforms-form textarea' => 'border-color'
 						],
@@ -2350,7 +2350,7 @@ $options = [
 					'focus' => [
 						'id' => 'ocean_input_border_color_focus',
 						'key' => 'focus',
-						'label' => 'Focus',
+						'label' =>esc_html__( 'Focus', 'oceanwp' ),
 						'selector' => [
 							'form input[type="text"]:focus,form input[type="password"]:focus,form input[type="email"]:focus,form input[type="tel"]:focus,form input[type="url"]:focus,form input[type="search"]:focus,form textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices, body div.wpforms-container-full .wpforms-form input:focus, body div.wpforms-container-full .wpforms-form textarea:focus, body div.wpforms-container-full .wpforms-form select:focus' => 'border-color'
 						],
@@ -2633,12 +2633,12 @@ $options = [
 							'left'  => [
 								'id'     => 'left',
 								'label'   => esc_html__('Left', 'oceanwp'),
-								'content' => 'left'
+								'content' => esc_html__('Left', 'oceanwp'),
 							],
 							'right' => [
 								'id'     => 'right',
 								'label'   => esc_html__('Right', 'oceanwp'),
-								'content' => 'right'
+								'content' => esc_html__('Right', 'oceanwp'),
 							]
 						],
 					],
@@ -2856,7 +2856,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_scroll_top_bg',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' => esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'#scroll-top' => 'background-color'
 						],
@@ -2868,7 +2868,7 @@ $options = [
 					'hover' => [
 						'id' => 'ocean_scroll_top_bg_hover',
 						'key' => 'hover',
-						'label' => 'Hover',
+						'label' => esc_html__( 'Hover', 'oceanwp' ),
 						'selector' => [
 							'#scroll-top:hover' => 'background-color'
 						],
@@ -2896,7 +2896,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_scroll_top_color',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' =>esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'#scroll-top' => 'color',
 							'#scroll-top .owp-icon use' => 'stroke'
@@ -2909,7 +2909,7 @@ $options = [
 					'hover' => [
 						'id' => 'ocean_scroll_top_color_hover',
 						'key' => 'hover',
-						'label' => 'Hover',
+						'label' => esc_html__( 'Hover', 'oceanwp' ),
 						'selector' => [
 							'#scroll-top:hover' => 'color',
 							'#scroll-top:hover .owp-icon use' => 'stroke'
@@ -3232,7 +3232,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_pagination_bg',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' =>esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => 'background-color',
 						],
@@ -3243,7 +3243,7 @@ $options = [
 					'hover' => [
 						'id' => 'ocean_pagination_hover_bg',
 						'key' => 'hover',
-						'label' => 'Hover',
+						'label' => esc_html__( 'Hover', 'oceanwp' ),
 						'selector' => [
 							'.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover' => 'background-color',
 						],
@@ -3270,7 +3270,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_pagination_color',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' =>esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => 'color',
 							'.page-numbers a .owp-icon use' => 'stroke'
@@ -3283,7 +3283,7 @@ $options = [
 					'hover' => [
 						'id' => 'ocean_pagination_hover_color',
 						'key' => 'hover',
-						'label' => 'Hover',
+						'label' => esc_html__( 'Hover', 'oceanwp' ),
 						'selector' => [
 							'.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover' => 'color',
 							'.page-numbers:hover a .owp-icon use' => 'stroke'
@@ -3311,7 +3311,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_pagination_border_color',
 						'key' => 'normal',
-						'label' => 'Normal',
+						'label' =>esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
 							'.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span' => 'border-color',
 						],
@@ -3323,7 +3323,7 @@ $options = [
 					'hover' => [
 						'id' => 'ocean_pagination_border_hover_color',
 						'key' => 'hover',
-						'label' => 'Hover',
+						'label' =>esc_html__( 'Hover', 'oceanwp' ),
 						'selector' => [
 							'.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover' => 'border-color',
 						],

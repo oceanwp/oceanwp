@@ -387,7 +387,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_woo_store_notice_bg_color',
 						'key' => 'normal',
-						'label' => 'Select Color',
+						'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
 							'.woocommerce-store-notice.demo_store' => 'background-color'
 						],
@@ -413,7 +413,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_woo_store_notice_dismiss_bg_color',
 						'key' => 'normal',
-						'label' => 'Select Color',
+						'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
 							'.demo_store .woocommerce-store-notice__dismiss-link' => 'background-color'
 						],
@@ -985,7 +985,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_menu_bag_icon_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'.wcmenucart-cart-icon .wcmenucart-count, .wcmenucart-cart-icon .wcmenucart-count:after' => 'border-color'
 								],
@@ -1026,7 +1026,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_menu_bag_icon_count_color',
 								'key' => 'normal',
-								'label' => 'Normal',
+								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
 									'.wcmenucart-cart-icon .wcmenucart-count, .woo-menu-icon .wcmenucart-total span' => 'color'
 								],
@@ -1999,14 +1999,14 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_woo_shop_both_sidebars_content_width',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
 					],
 					'unit' => [
 						'id' => 'ocean_woo_shop_both_sidebars_content_width_unit',
-						'label' => 'Unit',
+						'label' =>esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => '%'
@@ -2032,14 +2032,14 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_woo_shop_both_sidebars_sidebars_width',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
 					],
 					'unit' => [
 						'id' => 'ocean_woo_shop_both_sidebars_sidebars_width_unit',
-						'label' => 'Unit',
+						'label' =>esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => '%'
@@ -2127,7 +2127,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_woo_shop_posts_per_page',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'refresh',
 							'default'  => 12,
@@ -2353,7 +2353,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_woo_list_excerpt_length',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default' => 60,
@@ -3937,14 +3937,14 @@ $options = [
 								'setting_args' => [
 									'desktop' => [
 										'id' => 'ocean_product_entry_addtocart_border_size',
-										'label' => 'Desktop',
+										'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 										'attr' => [
 											'transport' => 'postMessage',
 										],
 									],
 									'unit' => [
 										'id' => 'ocean_product_entry_addtocart_border_size_unit',
-										'label' => 'Unit',
+										'label' =>esc_html__( 'Unit', 'oceanwp' ),
 										'attr' => [
 											'transport' => 'postMessage',
 											'default' => 'px',
@@ -3974,14 +3974,14 @@ $options = [
 								'setting_args' => [
 									'desktop' => [
 										'id' => 'ocean_product_entry_addtocart_border_radius',
-										'label' => 'Desktop',
+										'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 										'attr' => [
 											'transport' => 'postMessage',
 										],
 									],
 									'unit' => [
 										'id' => 'ocean_product_entry_addtocart_border_radius_unit',
-										'label' => 'Unit',
+										'label' =>esc_html__( 'Unit', 'oceanwp' ),
 										'attr' => [
 											'transport' => 'postMessage',
 											'default' => 'px',
@@ -5356,7 +5356,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_infinite_scroll_spinners_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.woocommerce .loader-ellips__dot' => 'background-color'
 								],
@@ -5528,14 +5528,14 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_woo_product_both_sidebars_content_width',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
 					],
 					'unit' => [
 						'id' => 'ocean_woo_product_both_sidebars_content_width_unit',
-						'label' => 'Unit',
+						'label' =>esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => '%'
@@ -5561,14 +5561,14 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_woo_product_both_sidebars_sidebars_width',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
 					],
 					'unit' => [
 						'id' => 'ocean_woo_product_both_sidebars_sidebars_width_unit',
-						'label' => 'Unit',
+						'label' =>esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => '%'
@@ -5656,14 +5656,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_single_product_navigation_border_radius',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_single_product_navigation_border_radius_unit',
-								'label' => 'Unit',
+								'label' =>esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 'px',
@@ -5874,7 +5874,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_woo_product_summary_width',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => 44
@@ -5882,7 +5882,7 @@ $options = [
 					],
 					'unit' => [
 						'id' => 'ocean_woo_product_summary_width_unit',
-						'label' => 'Unit',
+						'label' =>esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => '%'
@@ -6607,7 +6607,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_woo_product_image_width',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => 52
@@ -6615,7 +6615,7 @@ $options = [
 					],
 					'unit' => [
 						'id' => 'ocean_woo_product_image_width_unit',
-						'label' => 'Unit',
+						'label' =>esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 							'default' => '%'
@@ -6773,14 +6773,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_single_product_addtocart_border_size',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_single_product_addtocart_border_size_unit',
-								'label' => 'Unit',
+								'label' =>esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 'px',
@@ -6810,14 +6810,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_single_product_addtocart_border_radius',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_single_product_addtocart_border_radius_unit',
-								'label' => 'Unit',
+								'label' =>esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 'px',
@@ -7003,29 +7003,6 @@ $options = [
 							],
 						]
 					],
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 					'ocean_divider_after_woo_single_product_add_to_cart_typo_setting' => [
 						'type' => 'ocean-divider',
@@ -7763,7 +7740,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_woocommerce_upsells_count',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default' => 3,
@@ -7788,7 +7765,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_woocommerce_upsells_columns',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default' => 3,
@@ -7866,7 +7843,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_woocommerce_related_count',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default' => 3,
@@ -7892,7 +7869,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_woocommerce_related_columns',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'refresh',
 									'default' => 3,
@@ -7988,7 +7965,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_floating_bar_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.owp-floating-bar' => 'background-color'
 								],
@@ -8015,7 +7992,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_floating_bar_title_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.owp-floating-bar p.selected, .owp-floating-bar h2.entry-title' => 'color'
 								],
@@ -8042,7 +8019,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_floating_bar_price_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.owp-floating-bar .product_price del .amount, .owp-floating-bar .product_price .amount, .owp-floating-bar .out-of-stock' => 'color'
 								],
@@ -8156,7 +8133,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_floating_bar_quantity_input_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.owp-floating-bar form.cart .quantity .qty' => 'background-color'
 								],
@@ -8183,7 +8160,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_floating_bar_quantity_input_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'.owp-floating-bar form.cart .quantity .qty' => 'color'
 								],
@@ -8440,7 +8417,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_woocommerce_cross_sells_count',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'refresh',
 							'default' => 2,
@@ -8465,7 +8442,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_woocommerce_cross_sells_columns',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'refresh',
 							'default' => 2,
@@ -8760,7 +8737,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_checkout_timeline_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#owp-checkout-timeline .timeline-wrapper' => 'background-color',
 									'#owp-checkout-timeline.arrow .timeline-wrapper:before' => 'border-top-color',
@@ -8791,7 +8768,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_checkout_timeline_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#owp-checkout-timeline .timeline-wrapper' => 'color'
 								],
@@ -8818,7 +8795,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_checkout_timeline_number_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#owp-checkout-timeline .timeline-step' => 'background-color'
 								],
@@ -8845,7 +8822,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_checkout_timeline_number_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#owp-checkout-timeline .timeline-step' => 'color'
 								],
@@ -8872,7 +8849,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_checkout_timeline_number_border_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#owp-checkout-timeline .timeline-step' => 'border-color'
 								],
@@ -8899,7 +8876,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_checkout_timeline_active_bg',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#owp-checkout-timeline .active .timeline-wrapper' => 'background-color',
 									'#owp-checkout-timeline.arrow .active .timeline-wrapper:before' => 'border-top-color',
@@ -8930,7 +8907,7 @@ $options = [
 							'normal' => [
 								'id' => 'ocean_woo_checkout_timeline_active_color',
 								'key' => 'normal',
-								'label' => 'Select Color',
+								'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
 									'#owp-checkout-timeline .active .timeline-wrapper' => 'color'
 								],
@@ -8995,7 +8972,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_checkout_notices_borders_color',
 						'key' => 'normal',
-						'label' => 'Select Color',
+						'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
 							'.woocommerce-checkout .woocommerce-info' => 'border-color'
 						],
@@ -9021,7 +8998,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_checkout_notices_icon_color',
 						'key' => 'normal',
-						'label' => 'Select Color',
+						'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
 							'.woocommerce-checkout .woocommerce-info:before' => 'color'
 						],
@@ -9047,7 +9024,7 @@ $options = [
 					'normal' => [
 						'id' => 'ocean_checkout_notices_color',
 						'key' => 'normal',
-						'label' => 'Select Color',
+						'label' =>esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
 							'.woocommerce-checkout .woocommerce-info' => 'color'
 						],

@@ -285,14 +285,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_llms_global_both_sidebars_content_width',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_llms_global_both_sidebars_content_width_unit',
-								'label' => 'Unit',
+								'label' =>esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => '%'
@@ -318,14 +318,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_llms_global_both_sidebars_sidebars_width',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_llms_global_both_sidebars_sidebars_width_unit',
-								'label' => 'Unit',
+								'label' =>esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => '%'
@@ -446,14 +446,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_llms_course_both_sidebars_content_width',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_llms_course_both_sidebars_content_width_unit',
-								'label' => 'Unit',
+								'label' =>esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => '%'
@@ -479,14 +479,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_llms_course_both_sidebars_sidebars_width',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_llms_course_both_sidebars_sidebars_width_unit',
-								'label' => 'Unit',
+								'label' =>esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => '%'
@@ -607,14 +607,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_llms_lesson_both_sidebars_content_width',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_llms_lesson_both_sidebars_content_width_unit',
-								'label' => 'Unit',
+								'label' =>esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => '%'
@@ -640,14 +640,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_llms_lesson_both_sidebars_sidebars_width',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_llms_lesson_both_sidebars_sidebars_width_unit',
-								'label' => 'Unit',
+								'label' =>esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => '%'

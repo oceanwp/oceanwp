@@ -118,7 +118,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_blog_archives_both_sidebars_content_width',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],

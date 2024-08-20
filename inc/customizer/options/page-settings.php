@@ -174,7 +174,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_page_single_both_sidebars_content_width',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
@@ -207,7 +207,7 @@ $options = [
 				'setting_args' => [
 					'desktop' => [
 						'id' => 'ocean_page_single_both_sidebars_sidebars_width',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
 						],
@@ -341,7 +341,6 @@ $options = [
 					'hide-tablet'        => esc_html__( 'Hide On Tablet', 'oceanwp' ),
 					'hide-mobile'        => esc_html__( 'Hide On Mobile', 'oceanwp' ),
 					'hide-tablet-mobile' => esc_html__( 'Hide On Tablet And Mobile', 'oceanwp' ),
-					//'hide-all-devices'   => esc_html__( 'Hide On All Devices', 'oceanwp' ),
 				],
 			],
 
@@ -608,7 +607,6 @@ $options = [
 						'mediaType' => 'image',
 						'savetype' => 'url',
 						'active_callback' => 'oceanwp_is_bg_image_page_header',
-						//'sanitize_callback' => 'oceanwp_sanitize_image',
 					],
 
 					'ocean_page_header_bg_image_height_setting' => [
@@ -629,7 +627,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_page_header_bg_image_height',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 400
@@ -723,17 +721,17 @@ $options = [
 							'initial' => [
 								'id'     => 'initial',
 								'label'   => esc_html__('Initial', 'oceanwp'),
-								'content' => 'Initial'
+								'content' => esc_html__('Initial', 'oceanwp'),
 							],
 							'scroll'  => [
 								'id'     => 'scroll',
 								'label'   => esc_html__('Scroll', 'oceanwp'),
-								'content' => 'Scroll'
+								'content' => esc_html__('Scroll', 'oceanwp'),
 							],
 							'fixed'  => [
 								'id'     => 'fixed',
 								'label'   => esc_html__('Fixed', 'oceanwp'),
-								'content' => 'Fixed'
+								'content' => esc_html__('Fixed', 'oceanwp'),
 							]
 						],
 						'preview' => 'queryWithAttr',
@@ -759,22 +757,22 @@ $options = [
 							'initial' => [
 								'id'     => 'initial',
 								'label'   => esc_html__('Default', 'oceanwp'),
-								'content' => 'Initial'
+								'content' => esc_html__('Default', 'oceanwp'),
 							],
 							'auto'  => [
 								'id'     => 'auto',
 								'label'   => esc_html__('Auto', 'oceanwp'),
-								'content' => 'Auto'
+								'content' => esc_html__('Auto', 'oceanwp'),
 							],
 							'cover'  => [
 								'id'     => 'cover',
 								'label'   => esc_html__('Cover', 'oceanwp'),
-								'content' => 'Cover'
+								'content' => esc_html__('Cover', 'oceanwp'),
 							],
 							'contain'  => [
 								'id'     => 'contain',
 								'label'   => esc_html__('Contain', 'oceanwp'),
-								'content' => 'Contain'
+								'content' => esc_html__('Contain', 'oceanwp'),
 							]
 						],
 						'preview' => 'queryWithAttr',
@@ -812,7 +810,7 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_page_header_bg_image_overlay_opacity',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => 0.5
@@ -1729,12 +1727,12 @@ $options = [
 							'icon' => [
 								'id'     => 'icon',
 								'label'   => esc_html__('Icon', 'oceanwp'),
-								'content' => 'Icon'
+								'content' => esc_html__('Icon', 'oceanwp'),
 							],
 							'text'  => [
 								'id'     => 'text',
 								'label'   => esc_html__('Text', 'oceanwp'),
-								'content' => 'Text'
+								'content' => esc_html__('Text', 'oceanwp'),
 							]
 						]
 					],
@@ -2183,7 +2181,7 @@ $options = [
 						'setting_args'      => [
 							'desktop' => [
 								'id'    => 'ocean_search_both_sidebars_content_width',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr'  => [
 									'transport' => 'postMessage',
 								],
@@ -2216,7 +2214,7 @@ $options = [
 						'setting_args'      => [
 							'desktop' => [
 								'id'    => 'ocean_search_both_sidebars_sidebars_width',
-								'label' => 'Desktop',
+								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 								'attr'  => [
 									'transport' => 'postMessage',
 								],
@@ -2299,7 +2297,7 @@ $options = [
 				'setting_args'      => [
 					'desktop' => [
 						'id'    => 'ocean_search_post_per_page',
-						'label' => 'Desktop',
+						'label' =>esc_html__( 'Desktop', 'oceanwp' ),
 						'attr'  => [
 							'transport' => 'refresh',
 						],
