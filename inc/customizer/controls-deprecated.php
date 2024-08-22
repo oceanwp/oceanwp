@@ -253,3 +253,27 @@ if ( ! function_exists( 'ow_esc_attr' ) ) {
 		return esc_attr( $text );
 	}
 }
+
+if ( ! function_exists('oceanwp_customizer_layout') ) {
+	function oceanwp_customizer_layout() {
+		$layouts = array();
+		return $layouts;
+	}
+}
+
+function oceanwp_customizer_helpers( $return = NULL ) {
+
+	// Return library templates array
+	if ( 'library' == $return ) {
+		$templates     = array( '&mdash; '. esc_html__( 'Select', 'oceanwp' ) .' &mdash;' );
+		$get_templates = get_posts( array( 'post_type' => 'oceanwp_library', 'numberposts' => -1, 'post_status' => 'publish' ) );
+
+		if ( ! empty ( $get_templates ) ) {
+			foreach ( $get_templates as $template ) {
+				$templates[ $template->ID ] = $template->post_title;
+			}
+		}
+
+		return $templates;
+	}
+}

@@ -148,7 +148,7 @@ $options = [
 				'priority' => 10,
 				'hideLabel' => false,
 				'multiple' => false,
-				'active_callback' => 'oceanwp_is_page_single_bs_layout',
+				'active_callback' => 'oceanwp_cac_has_page_single_bs_layout',
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
 					'ssc-style' => esc_html__( 'Sidebar / Sidebar / Content', 'oceanwp' ),
@@ -169,7 +169,7 @@ $options = [
 				'min'          => 1,
 				'max'          => 100,
 				'step'         => 1,
-				'active_callback' => 'oceanwp_is_page_single_bs_layout',
+				'active_callback' => 'oceanwp_cac_has_page_single_bs_layout',
 				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
 				'setting_args' => [
 					'desktop' => [
@@ -202,7 +202,7 @@ $options = [
 				'min'          => 1,
 				'max'          => 100,
 				'step'         => 1,
-				'active_callback' => 'oceanwp_is_page_single_bs_layout',
+				'active_callback' => 'oceanwp_cac_has_page_single_bs_layout',
 				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
 				'setting_args' => [
 					'desktop' => [
@@ -267,7 +267,7 @@ $options = [
 				'priority' => 10,
 				'hideLabel' => false,
 				'multiple' => false,
-				'active_callback' => 'oceanwp_is_page_single_rl_layout',
+				'active_callback' => 'oceanwp_cac_has_page_single_rl_layout',
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
 					'content-sidebar' => esc_html__( 'Content / Sidebar', 'oceanwp' ),
@@ -2135,7 +2135,7 @@ $options = [
 						'transport' => 'postMessage',
 						'priority'  => 10,
 						'top'       => 1,
-						'active_callback'   => 'oceanw_cac_is_search_bs_layout',
+						'active_callback'   => 'oceanwp_cac_has_search_bs_layout',
 					],
 
 					'ocean_search_both_sidebars_style' => [
@@ -2147,7 +2147,7 @@ $options = [
 						'priority'          => 10,
 						'hideLabel'         => false,
 						'multiple'          => false,
-						'active_callback'   => 'oceanw_cac_is_search_bs_layout',
+						'active_callback'   => 'oceanwp_cac_has_search_bs_layout',
 						'sanitize_callback' => 'sanitize_key',
 						'choices'           => [
 							'ssc-style' => esc_html__( 'Sidebar / Sidebar / Content', 'oceanwp' ),
@@ -2161,7 +2161,7 @@ $options = [
 						'section'   => 'ocean_section_page_search_result_sidebar_layout',
 						'transport' => 'postMessage',
 						'priority'  => 10,
-						'active_callback'   => 'oceanw_cac_is_search_bs_layout',
+						'active_callback'   => 'oceanwp_cac_has_search_bs_layout',
 					],
 
 					'ocean_search_both_sidebars_content_width' => [
@@ -2176,7 +2176,7 @@ $options = [
 						'min'               => 1,
 						'max'               => 100,
 						'step'              => 1,
-						'active_callback'   => 'oceanw_cac_is_search_bs_layout',
+						'active_callback'   => 'oceanwp_cac_has_search_bs_layout',
 						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
 						'setting_args'      => [
 							'desktop' => [
@@ -2209,7 +2209,7 @@ $options = [
 						'min'               => 1,
 						'max'               => 100,
 						'step'              => 1,
-						'active_callback'   => 'oceanw_cac_is_search_bs_layout',
+						'active_callback'   => 'oceanwp_cac_has_search_bs_layout',
 						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
 						'setting_args'      => [
 							'desktop' => [
@@ -2239,13 +2239,23 @@ $options = [
 						'priority'          => 10,
 						'hideLabel'         => false,
 						'multiple'          => false,
-						'active_callback'   => 'oceanw_cac_is_search_single_sidebar_layout',
+						'active_callback'   => 'oceanwp_cac_has_search_rl_layout',
 						'sanitize_callback' => 'sanitize_key',
 						'choices'           => [
 							'content-sidebar' => esc_html__( 'Content / Sidebar', 'oceanwp' ),
 							'sidebar-content' => esc_html__( 'Sidebar / Content', 'oceanwp' ),
 						],
 					],
+
+					'ocean_section_page_search_result_sidebar_need_help' => [
+						'type' => 'ocean-content',
+						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '', '' ),
+						'class' => 'need-help',
+						'section' => 'ocean_section_page_search_result_sidebar_layout',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'active_callback' => 'oceanwp_cac_has_topbar',
+					]
 				]
 			],
 
@@ -2292,7 +2302,7 @@ $options = [
 				'min'               => 1,
 				'max'               => 100,
 				'step'              => 1,
-				'active_callback'   => 'oceanw_cac_is_search_bs_layout',
+				'active_callback'   => 'oceanwp_cac_has_search_bs_layout',
 				'sanitize_callback' => 'oceanwp_sanitize_number_blank',
 				'setting_args'      => [
 					'desktop' => [
@@ -2312,7 +2322,7 @@ $options = [
 				'priority'  => 10,
 				'top'       => 1,
 				'bottom'    => 10,
-				'active_callback'   => 'oceanw_cac_is_search_bs_layout',
+				'active_callback'   => 'oceanwp_cac_has_search_bs_layout',
 			],
 
 			'ocean_search_logo' => [
