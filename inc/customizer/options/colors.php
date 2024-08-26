@@ -383,7 +383,7 @@ $options = [
 
 	'ocean_colors_need_help' => [
 		'type' => 'ocean-content',
-		'isContent' => ocean_render_content_need_help(),
+		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/897-customizer-colors/" target="_blank">', '</a>' ),
 		'class' => 'need-help',
 		'section' => 'ocean_colors',
 		'transport' => 'postMessage',

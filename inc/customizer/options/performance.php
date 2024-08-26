@@ -13,7 +13,7 @@ $options = [
 	'ocean_performance_emoji' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Emoji', 'oceanwp' ),
-		'desc' => esc_html__( 'This style is all the css for the WP emoji.', 'oceanwp' ),
+		'desc' => esc_html__( 'This file contains all the CSS rules that define the appearance and behavior of WP emoji.', 'oceanwp' ),
 		'section' => 'ocean_site_performance',
 		'default'  => 'enabled',
 		'transport' => 'postMessage',
@@ -24,13 +24,13 @@ $options = [
 		'choices' => [
 			'disabled' => [
 				'id'     => 'disabled',
-				'label'   => esc_html__('Disabled', 'oceanwp'),
-				'content' => esc_html__('Disabled', 'oceanwp'),
+				'label'   => esc_html__( 'Disabled', 'oceanwp' ),
+				'content' => esc_html__( 'Disabled', 'oceanwp' ),
 			],
 			'enabled'  => [
 				'id'     => 'enabled',
-				'label'   => esc_html__('Enabled', 'oceanwp'),
-				'content' => esc_html__('Enabled', 'oceanwp'),
+				'label'   => esc_html__( 'Enabled', 'oceanwp' ),
+				'content' => esc_html__( 'Enabled', 'oceanwp' ),
 			]
 		]
 	],
@@ -47,7 +47,7 @@ $options = [
 	'ocean_performance_fontawesome' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Font Awesome Icons', 'oceanwp' ),
-		'desc' => esc_html__( 'This style is all the css for the font awesome icons.', 'oceanwp' ),
+		'desc' => esc_html__( 'This file contains all the CSS rules that define the appearance of Font Awesome icons.', 'oceanwp' ),
 		'section' => 'ocean_site_performance',
 		'default'  => 'enabled',
 		'transport' => 'postMessage',
@@ -58,13 +58,13 @@ $options = [
 		'choices' => [
 			'disabled' => [
 				'id'     => 'disabled',
-				'label'   => esc_html__('Disabled', 'oceanwp'),
-				'content' => esc_html__('Disabled', 'oceanwp'),
+				'label'   => esc_html__( 'Disabled', 'oceanwp' ),
+				'content' => esc_html__( 'Disabled', 'oceanwp' ),
 			],
 			'enabled'  => [
 				'id'     => 'enabled',
-				'label'   => esc_html__('Enabled', 'oceanwp'),
-				'content' => esc_html__('Enabled', 'oceanwp'),
+				'label'   => esc_html__( 'Enabled', 'oceanwp' ),
+				'content' => esc_html__( 'Enabled', 'oceanwp' ),
 			]
 		]
 	],
@@ -81,7 +81,7 @@ $options = [
 	'ocean_disable_svg_icons' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Ocean SVG Icons', 'oceanwp' ),
-		'desc' => esc_html__( 'This file is for all the Ocean SVG icons.', 'oceanwp' ),
+		'desc' => esc_html__( 'This file contains all the CSS rules that define the appearance of OceanWP SVG icons.', 'oceanwp' ),
 		'section' => 'ocean_site_performance',
 		'default'  => 'enabled',
 		'transport' => 'postMessage',
@@ -92,13 +92,13 @@ $options = [
 		'choices' => [
 			'disabled' => [
 				'id'     => 'disabled',
-				'label'   => esc_html__('Disabled', 'oceanwp'),
-				'content' => esc_html__('Disabled', 'oceanwp'),
+				'label'   => esc_html__( 'Disabled', 'oceanwp' ),
+				'content' => esc_html__( 'Disabled', 'oceanwp' ),
 			],
 			'enabled'  => [
 				'id'     => 'enabled',
-				'label'   => esc_html__('Enabled', 'oceanwp'),
-				'content' => esc_html__('Enabled', 'oceanwp'),
+				'label'   => esc_html__( 'Enabled', 'oceanwp' ),
+				'content' => esc_html__( 'Enabled', 'oceanwp' ),
 			]
 		]
 	],
@@ -115,7 +115,7 @@ $options = [
 	'ocean_performance_simple_line_icons' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Simple Line Icons', 'oceanwp' ),
-		'desc' => esc_html__( 'This style is all the css for the simple line icons.', 'oceanwp' ),
+		'desc' => esc_html__( 'This file contains all the CSS rules that define the appearance of Simple Line icons.', 'oceanwp' ),
 		'section' => 'ocean_site_performance',
 		'default'  => 'enabled',
 		'transport' => 'postMessage',
@@ -126,13 +126,13 @@ $options = [
 		'choices' => [
 			'disabled' => [
 				'id'     => 'disabled',
-				'label'   => esc_html__('Disabled', 'oceanwp'),
-				'content' => esc_html__('Disabled', 'oceanwp'),
+				'label'   => esc_html__( 'Disabled', 'oceanwp' ),
+				'content' => esc_html__( 'Disabled', 'oceanwp' ),
 			],
 			'enabled'  => [
 				'id'     => 'enabled',
-				'label'   => esc_html__('Enabled', 'oceanwp'),
-				'content' => esc_html__('Enabled', 'oceanwp'),
+				'label'   => esc_html__( 'Enabled', 'oceanwp' ),
+				'content' => esc_html__( 'Enabled', 'oceanwp' ),
 			]
 		]
 	],
@@ -149,7 +149,7 @@ $options = [
 	'ocean_performance_lightbox' => [
 		'type' => 'ocean-buttons',
 		'label'       => esc_html__( 'Lightbox', 'oceanwp' ),
-		'desc' => esc_html__( 'This script enables you to overlay your images on the current page, used for the gallerie, single product and content images.', 'oceanwp' ),
+		'desc' => esc_html__( 'This script enables image preview in a special window overlay that appears over the current page. It is used in galleries, single product and content images.', 'oceanwp' ),
 		'section' => 'ocean_site_performance',
 		'default'  => 'enabled',
 		'transport' => 'postMessage',
@@ -160,13 +160,13 @@ $options = [
 		'choices' => [
 			'disabled' => [
 				'id'     => 'disabled',
-				'label'   => esc_html__('Disabled', 'oceanwp'),
-				'content' => esc_html__('Disabled', 'oceanwp'),
+				'label'   => esc_html__( 'Disabled', 'oceanwp' ),
+				'content' => esc_html__( 'Disabled', 'oceanwp' ),
 			],
 			'enabled'  => [
 				'id'     => 'enabled',
-				'label'   => esc_html__('Enabled', 'oceanwp'),
-				'content' => esc_html__('Enabled', 'oceanwp'),
+				'label'   => esc_html__( 'Enabled', 'oceanwp' ),
+				'content' => esc_html__( 'Enabled', 'oceanwp' ),
 			]
 		]
 	],
@@ -184,7 +184,7 @@ $options = [
 	'ocean_performance_custom_select' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Custom Select', 'oceanwp' ),
-		'desc' => esc_html__( 'This script uses the native select box and add overlays a stylable <span> element in order to acheive the desired look.', 'oceanwp' ),
+		'desc' => esc_html__( 'This script enhances the native select box by adding a visually appealing overlay that can be styled to match your design.', 'oceanwp' ),
 		'section' => 'ocean_site_performance',
 		'default'  => 'enabled',
 		'transport' => 'postMessage',
@@ -195,13 +195,13 @@ $options = [
 		'choices' => [
 			'disabled' => [
 				'id'     => 'disabled',
-				'label'   => esc_html__('Disabled', 'oceanwp'),
-				'content' => esc_html__('Disabled', 'oceanwp'),
+				'label'   => esc_html__( 'Disabled', 'oceanwp' ),
+				'content' => esc_html__( 'Disabled', 'oceanwp' ),
 			],
 			'enabled'  => [
 				'id'     => 'enabled',
-				'label'   => esc_html__('Enabled', 'oceanwp'),
-				'content' => esc_html__('Enabled', 'oceanwp'),
+				'label'   => esc_html__( 'Enabled', 'oceanwp' ),
+				'content' => esc_html__( 'Enabled', 'oceanwp' ),
 			]
 		]
 	],
@@ -219,7 +219,7 @@ $options = [
 	'ocean_load_widgets_stylesheet' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Widgets Stylesheet Load', 'oceanwp' ),
-		'desc' => esc_html__( 'You can disable loading widgets.css stylesheet on your site.', 'oceanwp' ),
+		'desc' => esc_html__( 'This file contains all the CSS rules that define the appearance and behavior of OceanWP custom widgets for WordPress.', 'oceanwp' ),
 		'section' => 'ocean_site_performance',
 		'default'  => 'enabled',
 		'transport' => 'postMessage',
@@ -231,13 +231,13 @@ $options = [
 		'choices' => [
 			'disabled' => [
 				'id'     => 'disabled',
-				'label'   => esc_html__('Disabled', 'oceanwp'),
-				'content' => esc_html__('Disabled', 'oceanwp'),
+				'label'   => esc_html__( 'Disabled', 'oceanwp' ),
+				'content' => esc_html__( 'Disabled', 'oceanwp' ),
 			],
 			'enabled'  => [
 				'id'     => 'enabled',
-				'label'   => esc_html__('Enabled', 'oceanwp'),
-				'content' => esc_html__('Enabled', 'oceanwp'),
+				'label'   => esc_html__( 'Enabled', 'oceanwp' ),
+				'content' => esc_html__( 'Enabled', 'oceanwp' ),
 			]
 		]
 	],
@@ -254,7 +254,7 @@ $options = [
 	'ocean_performance_scroll_effect' => [
 		'type' => 'ocean-buttons',
 		'label' => esc_html__( 'Scroll Effect', 'oceanwp' ),
-		'desc' => esc_html__( 'This script is responsible for the scroll effect in theme.', 'oceanwp' ),
+		'desc' => esc_html__( 'This script controls the smooth scrolling effect within the theme. It is used for anchor links.', 'oceanwp' ),
 		'section' => 'ocean_site_performance',
 		'default'  => 'enabled',
 		'transport' => 'postMessage',
@@ -265,13 +265,13 @@ $options = [
 		'choices' => [
 			'disabled' => [
 				'id'     => 'disabled',
-				'label'   => esc_html__('Disabled', 'oceanwp'),
-				'content' => esc_html__('Disabled', 'oceanwp'),
+				'label'   => esc_html__( 'Disabled', 'oceanwp' ),
+				'content' => esc_html__( 'Disabled', 'oceanwp' ),
 			],
 			'enabled'  => [
 				'id'     => 'enabled',
-				'label'   => esc_html__('Enabled', 'oceanwp'),
-				'content' => esc_html__('Enabled', 'oceanwp'),
+				'label'   => esc_html__( 'Enabled', 'oceanwp' ),
+				'content' => esc_html__( 'Enabled', 'oceanwp' ),
 			]
 		]
 	],
@@ -301,11 +301,11 @@ $options = [
 	],
 
 	'ocean_site_performance_section_need_help' => [
-		'type' => 'ocean-content',
-		'isContent' => ocean_render_content_need_help(),
-		'class' => 'need-help',
-		'priority' => 10,
-		'section' => 'ocean_site_performance',
+		'type'      => 'ocean-content',
+		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/906-customizer-seo-settings/" target="_blank">', '</a>' ),
+		'class'     => 'need-help',
+		'priority'  => 10,
+		'section'   => 'ocean_site_performance',
 		'transport' => 'postMessage',
 	]
 ];

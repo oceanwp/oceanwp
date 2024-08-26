@@ -29,7 +29,7 @@ $options = [
 		'options' => [
 			'ocean_disable_google_font' => [
 				'type' => 'ocean-switch',
-				'label' => esc_html__('Enable Google Fonts', 'oceanwp'),
+				'label' => esc_html__( 'Enable Google Fonts', 'oceanwp' ),
 				'section' => 'ocean_google_font_section',
 				'default'  => false,
 				'transport' => 'refresh',
@@ -40,8 +40,8 @@ $options = [
 
 			'ocean_title_for_local_google_fonts' => [
 				'type' => 'ocean-title',
-				'label' => esc_html__('Load Google Fonts Locally', 'oceanwp'),
-				'desc' => esc_html__('This feature allows you to host all your chosen Google Fonts directly on your website, improving performance and potentially enhancing user privacy.', 'oceanwp'),
+				'label' => esc_html__( 'Load Google Fonts Locally', 'oceanwp' ),
+				'desc' => esc_html__( 'Host Google Fonts directly on your site for faster loading and improved privacy.', 'oceanwp' ),
 				'section' => 'ocean_google_font_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -50,7 +50,7 @@ $options = [
 
 			'ocean_local_google_font' => [
 				'type' => 'ocean-switch',
-				'label' => esc_html__('Enable Local Google Fonts', 'oceanwp'),
+				'label' => esc_html__( 'Enable Local Google Fonts', 'oceanwp' ),
 				'section' => 'ocean_google_font_section',
 				'default'  => false,
 				'transport' => 'refresh',
@@ -62,7 +62,7 @@ $options = [
 
 			'ocean_local_elementor_google_font' => [
 				'type' => 'ocean-switch',
-				'label' => esc_html__('Apply on Elementor', 'oceanwp'),
+				'label' => esc_html__( 'Apply on Elementor', 'oceanwp' ),
 				'section' => 'ocean_google_font_section',
 				'default'  => false,
 				'transport' => 'postMessage',
@@ -74,7 +74,7 @@ $options = [
 
 			'ocean_preload_local_google_font' => [
 				'type' => 'ocean-switch',
-				'label' => esc_html__('Preload Local Google Fonts', 'oceanwp'),
+				'label' => esc_html__( 'Preload Local Google Fonts', 'oceanwp' ),
 				'section' => 'ocean_google_font_section',
 				'default'  => false,
 				'transport' => 'postMessage',
@@ -86,8 +86,8 @@ $options = [
 
 			'ocean_local_google_font_format' => [
 				'type' => 'ocean-buttons',
-				'label' => esc_html__('Font Format', 'oceanwp'),
-				'desc' => esc_html__( 'Select the font format for locally hosted Google Fonts. The chosen selection can impact performance and browser compatibility.', 'oceanwp' ),
+				'label' => esc_html__( 'Font Format', 'oceanwp' ),
+				'desc' => esc_html__( 'Select the format for locally hosted Google Fonts. Your choice can affect performance and browser support.', 'oceanwp' ),
 				'section' => 'ocean_google_font_section',
 				'default'  => 'ttf',
 				'transport' => 'postMessage',
@@ -117,7 +117,7 @@ $options = [
 
 			'ocean_title_for_font_subset' => [
 				'type' => 'ocean-title',
-				'label' => esc_html__('Google Font Subsets', 'oceanwp'),
+				'label' => esc_html__( 'Google Font Subsets', 'oceanwp' ),
 				'section' => 'ocean_google_font_section',
 				'transport' => 'postMessage',
 				'priority' => 10,
@@ -126,7 +126,7 @@ $options = [
 
 			'ocean_google_font_subsets' => [
 				'type' => 'ocean-multiselect',
-				'label' => esc_html__('Font Subsets', 'oceanwp'),
+				'label' => esc_html__( 'Font Subsets', 'oceanwp' ),
 				'section' => 'ocean_google_font_section',
 				'default'  => [ 'latin' ],
 				'transport' => 'refresh',
@@ -146,7 +146,7 @@ $options = [
 
 			'ocean_typography_google_font_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => ocean_render_content_need_help(),
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/896-customizer-typography#Google-Font-Settings-EPxsL/" target="_blank">', '</a>' ),
 				'class' => 'need-help',
 				'section' => 'ocean_google_font_section',
 				'transport' => 'postMessage',
@@ -1508,7 +1508,7 @@ $options = [
 		'active_callback' => 'ocean_is_oe_active',
 		'links' => [
 			'google_font' => [
-				'label' => esc_html__('With OceanWP you can integrate Adobe Fonts for free.', 'oceanwp'),
+				'label' => esc_html__( 'With OceanWP you can integrate Adobe Fonts for free.', 'oceanwp' ),
 				'url' => esc_url( 'https://docs.oceanwp.org/article/849-how-to-add-adobe-fonts-typekit' ),
 				'target' => '_blank'
 			]
@@ -1517,7 +1517,7 @@ $options = [
 
 	'ocean_typography_need_help' => [
 		'type' => 'ocean-content',
-		'isContent' => ocean_render_content_need_help(),
+		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/896-customizer-typography/" target="_blank">', '</a>' ),
 		'class' => 'need-help',
 		'section' => 'ocean_typography',
 		'transport' => 'postMessage',
