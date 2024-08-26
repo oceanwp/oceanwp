@@ -5157,20 +5157,13 @@ if ( ! function_exists( 'ocean_get_site_name_anchors') ) {
 
 if ( ! function_exists( 'ocean_wpml_filter_oceanwp_library_shortcode' ) ) {
 
-    function ocean_wpml_filter_oceanwp_library_shortcode( $out, $pairs, $atts ) {
-        if ( class_exists( 'Sitepress' ) && isset( $out['id'] ) ) {
-            $post_type = get_post_type( $out['id'] );
-            $out['id'] = apply_filters( 'wpml_object_id', $out['id'], $post_type, true );
-        }
-        return $out;
-    }
+	function ocean_wpml_filter_oceanwp_library_shortcode( $out, $pairs, $atts ) {
+		if ( class_exists( 'Sitepress' ) && isset( $out['id'] ) ) {
+			$post_type = get_post_type( $out['id'] );
+			$out['id'] = apply_filters( 'wpml_object_id', $out['id'], $post_type, true );
+		}
+		return $out;
+	}
 
-    add_filter( 'shortcode_atts_oceanwp_library', 'ocean_wpml_filter_oceanwp_library_shortcode', 10, 3 );
-}
-
-
-
-// Add custom font to font settings
-function ocean_add_custom_fonts() {
-	return array( 'My Custom Font' ); // You can add more then 1 font to the array!
+	add_filter( 'shortcode_atts_oceanwp_library', 'ocean_wpml_filter_oceanwp_library_shortcode', 10, 3 );
 }

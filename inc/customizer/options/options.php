@@ -51,7 +51,7 @@ $options = [
 		'options' => ocean_customize_options( 'sidebar' )
 	],
 	'ocean_footer_widgets' => [
-		'title' => __( 'Footer Widget', 'oceanwp' ),
+		'title' => __( 'Footer Widgets', 'oceanwp' ),
 		'priority' => 6,
 		'options' => ocean_customize_options( 'footer-widget' )
 	],
