@@ -48,7 +48,17 @@ function ocean_is_not_boxed_layout() {
 	}
 }
 
-function ocean_is_boxed_layout() {
+// It will be removed soon. Added for compatibility.
+function oceanwp_cac_hasnt_boxed_layout() {
+	if ( 'wide' == get_theme_mod( 'ocean_main_layout_style', 'wide' )
+		|| 'separate' == get_theme_mod( 'ocean_main_layout_style', 'wide' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_has_boxed_layout() {
 	if ( 'boxed' == get_theme_mod( 'ocean_main_layout_style', 'wide' ) ) {
 		return true;
 	} else {
@@ -56,17 +66,17 @@ function ocean_is_boxed_layout() {
 	}
 }
 
-function ocean_is_layout_boxed_separate() {
-	if ( 'boxed' === get_theme_mod( 'ocean_main_layout_style', 'wide' )
-		|| 'separate' === get_theme_mod( 'ocean_main_layout_style', 'wide' ) ) {
+function oceanwp_cac_has_boxed_or_separate_layout() {
+	if ( 'boxed' == get_theme_mod( 'ocean_main_layout_style', 'wide' )
+		|| 'separate' == get_theme_mod( 'ocean_main_layout_style', 'wide' ) ) {
 		return true;
 	} else {
 		return false;
 	}
 }
 
-function ocean_cac_separate_layout() {
-	if ( 'separate' === get_theme_mod( 'ocean_main_layout_style', 'wide' ) ) {
+function oceanwp_cac_has_separate_layout() {
+	if ( 'separate' == get_theme_mod( 'ocean_main_layout_style', 'wide' ) ) {
 		return true;
 	} else {
 		return false;
@@ -81,7 +91,7 @@ function ocean_is_scroll_top() {
 	}
 }
 
-function oceanwp_is_page_single_bs_layout() {
+function oceanwp_cac_has_page_single_bs_layout() {
 	if ( 'both-sidebars' == get_theme_mod( 'ocean_page_single_layout', 'right-sidebar' ) ) {
 		return true;
 	} else {
@@ -89,7 +99,7 @@ function oceanwp_is_page_single_bs_layout() {
 	}
 }
 
-function oceanwp_is_page_single_rl_layout() {
+function oceanwp_cac_has_page_single_rl_layout() {
 	$layout = get_theme_mod( 'ocean_page_single_layout', 'right-sidebar' );
 	if ( 'right-sidebar' == $layout
 		|| 'left-sidebar' == $layout ) {
@@ -101,6 +111,15 @@ function oceanwp_is_page_single_rl_layout() {
 
 function oceanwp_is_page_title_display() {
 	if ( true == get_theme_mod( 'ocean_page_title_display', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+// It will be removed soon. Added for compatibility.
+function oceanwp_cac_has_page_header() {
+	if ( 'hide-all-devices' != get_theme_mod( 'ocean_page_header_visibility' ) ) {
 		return true;
 	} else {
 		return false;
@@ -159,7 +178,7 @@ function oceanwp_is_active_breadcrumb_portfolio_callback() {
 	}
 }
 
-function oceanwp_cac_background_image() {
+function oceanwp_cac_has_background_image() {
 	if ( '' != get_theme_mod( 'ocean_background_image' ) ) {
 		return true;
 	} else {
@@ -358,7 +377,7 @@ function ocean_cac_has_mobile_menu_display_close_menu_text() {
 	}
 }
 
-function ocean_cac_topbar() {
+function oceanwp_cac_has_topbar() {
 	if ( true === get_theme_mod( 'ocean_top_bar', true ) ) {
 		return true;
 	} else {
@@ -366,7 +385,7 @@ function ocean_cac_topbar() {
 	}
 }
 
-function ocean_cac_topbar_social_menu() {
+function oceanwp_cac_has_topbar_social() {
 	if ( true === get_theme_mod( 'ocean_top_bar', true )
 		&& true === get_theme_mod( 'ocean_top_bar_social', true ) ) {
 		return true;
@@ -546,7 +565,7 @@ function oceanw_cac_is_search_rs_layout() {
 	}
 }
 
-function oceanw_cac_is_search_bs_layout() {
+function oceanwp_cac_has_search_bs_layout() {
 	$layout = get_theme_mod( 'ocean_search_layout', 'right-sidebar' );
 	if ( 'both-sidebars' === $layout ) {
 		return true;
@@ -555,7 +574,7 @@ function oceanw_cac_is_search_bs_layout() {
 	}
 }
 
-function oceanw_cac_is_search_single_sidebar_layout() {
+function oceanwp_cac_has_search_rl_layout() {
 	$layout = get_theme_mod( 'ocean_search_layout', 'right-sidebar' );
 	if ( 'right-sidebar' == $layout
 		|| 'left-sidebar' == $layout ) {

@@ -427,6 +427,9 @@ class OceanWP_Customizer_Init {
 
 		wp_enqueue_script( 'owp-react-customizer' );
 
+		wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI .'/assets/fonts/fontawesome/css/all.min.css', false, '5.11.2'  );
+		wp_enqueue_style( 'simple-line-icons', OCEANWP_INC_DIR_URI .'customizer/assets/css/customizer-simple-line-icons.min.css', false, '2.4.0' );
+
 		$customize_loc = $this->localize_customize_script();
 		if ( is_array( $customize_loc ) ) {
 			wp_localize_script(
