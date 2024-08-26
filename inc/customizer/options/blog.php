@@ -2844,23 +2844,23 @@ $options = [
 				'priority' => 10,
 				'options'  => [
 					'ocean_comment_form_position' => [
-						'type' => 'ocean-buttons',
-						'label' => esc_html__( 'Comment Form Position', 'oceanwp' ),
-						'section' => 'ocean_blog_single_additional_single_post_options_section',
-						'default'  => 'after',
-						'transport' => 'refresh',
-						'priority' => 10,
-						'hideLabel' => false,
-						'wrap'    => false,
+						'type'              => 'ocean-buttons',
+						'label'             => esc_html__( 'Comment Form Position', 'oceanwp' ),
+						'section'           => 'ocean_blog_single_additional_single_post_options_section',
+						'default'           => 'after',
+						'transport'         => 'refresh',
+						'priority'          => 10,
+						'hideLabel'         => false,
+						'wrap'              => false,
 						'sanitize_callback' => 'sanitize_key',
-						'choices' => [
+						'choices'           => [
 							'before'  => [
-								'id'     => 'before',
+								'id'      => 'before',
 								'label'   => esc_html__( 'Before', 'oceanwp' ),
 								'content' => esc_html__( 'Before', 'oceanwp' ),
 							],
 							'after'  => [
-								'id'     => 'after',
+								'id'      => 'after',
 								'label'   => esc_html__( 'After', 'oceanwp' ),
 								'content' => esc_html__( 'After', 'oceanwp' ),
 							]
@@ -2873,7 +2873,7 @@ $options = [
 						'transport' => 'postMessage',
 						'priority' => 10,
 						'top' => 1,
-						'bottom' => 10
+						'bottom' => 10,
 					],
 
 					'ocean_single_post_next_prev_taxonomy' => [
@@ -2911,7 +2911,7 @@ $options = [
 						'transport' => 'postMessage',
 						'priority' => 10,
 						'top' => 1,
-						'bottom' => 10
+						'bottom' => 10,
 					],
 
 					'ocean_blog_related_taxonomy' => [
