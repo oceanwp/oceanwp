@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $options = [
 	'ocean_schema_markup' => [
 		'type' => 'ocean-switch',
-		'label' => esc_html__('Enable Schema Markup', 'oceanwp'),
+		'label' => esc_html__( 'Enable Schema Markup', 'oceanwp' ),
 		'section' => 'ocean_seo_settings',
 		'default'  => true,
 		'transport' => 'postMessage',
@@ -32,7 +32,7 @@ $options = [
 
 	'ocean_enable_be_fimage_alt' => [
 		'type' => 'ocean-switch',
-		'label' => esc_html__('Use featured image ALT text on blog entries', 'oceanwp'),
+		'label' => esc_html__( 'Use featured image ALT text on blog entries', 'oceanwp' ),
 		'section' => 'ocean_seo_settings',
 		'default'  => false,
 		'transport' => 'postMessage',
@@ -52,7 +52,7 @@ $options = [
 
 	'ocean_enable_sp_fimage_alt' => [
 		'type' => 'ocean-switch',
-		'label' => esc_html__('Use featured image ALT text on single posts', 'oceanwp'),
+		'label' => esc_html__( 'Use featured image ALT text on single posts', 'oceanwp' ),
 		'section' => 'ocean_seo_settings',
 		'default'  => false,
 		'transport' => 'postMessage',
@@ -72,7 +72,7 @@ $options = [
 
 	'ocean_enable_srp_fimage_alt' => [
 		'type' => 'ocean-switch',
-		'label' => esc_html__('Use featured image ALT text on single post related items', 'oceanwp'),
+		'label' => esc_html__( 'Use featured image ALT text on single post related items', 'oceanwp' ),
 		'section' => 'ocean_seo_settings',
 		'default'  => false,
 		'transport' => 'postMessage',
@@ -93,7 +93,7 @@ $options = [
 	'ocean_configure_breadcrumb_link' => [
 		'type' => 'ocean-content',
 		'label' => esc_html__( 'Configure Breadcrumbs', 'oceanwp' ),
-		'isContent' => sprintf( esc_html__( 'Go to the %1$s Breadcrumbs settings page %2$s', 'oceanwp' ), '<a href="' . admin_url( 'customize.php?autofocus%5Bcontrol%5D=ocean_breadcrumbs' ) . '">', '</a>' ),
+		'isContent' => sprintf( esc_html__( 'Visit the %1$s Breadcrumbs settings page %2$s', 'oceanwp' ), '<a href="' . admin_url( 'customize.php?autofocus%5Bcontrol%5D=ocean_breadcrumbs' ) . '">', '</a>' ),
 		'section' => 'ocean_seo_settings',
 		'class' => 'description',
 		'transport' => 'postMessage',
@@ -103,7 +103,7 @@ $options = [
 	'ocean_opengraph_heading' => [
 		'type' => 'ocean-title',
 		'label' => esc_html__( 'OpenGraph', 'oceanwp' ),
-		'desc' => esc_html__( 'This is information taken by social media when a link is shared', 'oceanwp' ),
+		'desc' => esc_html__( 'This is information read and used by social media when a link from your website is shared.', 'oceanwp' ),
 		'section' => 'ocean_seo_settings',
 		'transport' => 'postMessage',
 		'priority' => 10,
@@ -111,7 +111,7 @@ $options = [
 
 	'ocean_open_graph' => [
 		'type' => 'ocean-switch',
-		'label' => esc_html__('Enable OpenGraph', 'oceanwp'),
+		'label' => esc_html__( 'Enable OpenGraph', 'oceanwp' ),
 		'section' => 'ocean_seo_settings',
 		'default'  => false,
 		'transport' => 'postMessage',
@@ -161,22 +161,22 @@ $options = [
 	],
 
 	'ocean_facebook_appid' => [
-		'label'    => esc_html__( 'Facebook App ID', 'oceanwp' ),
-		'type'     => 'ocean-text',
-		'section'  => 'ocean_seo_settings',
-		'transport' => 'postMessage',
-		'default'   => '',
-		'priority' => 10,
-		'hideLabel' => false,
+		'label'             => esc_html__( 'Facebook App ID', 'oceanwp' ),
+		'type'              => 'ocean-text',
+		'section'           => 'ocean_seo_settings',
+		'transport'         => 'postMessage',
+		'default'           => '',
+		'priority'          => 10,
+		'hideLabel'         => false,
 		'sanitize_callback' => 'wp_filter_nohtml_kses',
 	],
 
 	'ocean_seo_settings_section_need_help' => [
-		'type' => 'ocean-content',
-		'isContent' => ocean_render_content_need_help(),
-		'class' => 'need-help',
-		'priority' => 10,
-		'section' => 'ocean_seo_settings',
+		'type'      => 'ocean-content',
+		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/906-customizer-seo-settings/" target="_blank">', '</a>' ),
+		'class'     => 'need-help',
+		'priority'  => 10,
+		'section'   => 'ocean_seo_settings',
 		'transport' => 'postMessage',
 	]
 ];

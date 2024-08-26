@@ -192,7 +192,7 @@ $options = [
 
 			'ocean_site_layout_content_settings' => [
 				'type' => 'section',
-				'title' => esc_html__('Additional Content Settings', 'oceanwp'),
+				'title' => esc_html__( 'Additional Content Settings', 'oceanwp' ),
 				'section' => 'ocean_site_layout_section',
 				'after' => 'ocean_divider_after_main_container_width',
 				'class' => 'section-site-layout',
@@ -200,7 +200,7 @@ $options = [
 				'options' => [
 					'ocean_desc_for_site_layout_content_settings' => [
 						'type' => 'ocean-content',
-						'isContent' => esc_html__('If any, additional content settings will appear here based on your Site Layout selection. For now, additional content settings are available for the Separate Site Layout style.', 'oceanwp'),
+						'isContent' => esc_html__( 'Additional content settings are currently available only for the Separate site layout style. ', 'oceanwp' ),
 						'section' => 'ocean_site_layout_content_settings',
 						'class' => 'description',
 						'transport' => 'postMessage',
@@ -289,7 +289,7 @@ $options = [
 
 					'ocean_site_layout_additional_content_section_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => ocean_render_content_need_help(),
+						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings#Additional-Content-Settings-panel-0dftA/" target="_blank">', '</a>' ),
 						'class' => 'need-help',
 						'section' => 'ocean_site_layout_content_settings',
 						'transport' => 'postMessage',
@@ -604,7 +604,7 @@ $options = [
 
 					'ocean_site_bg_inner_section_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => ocean_render_content_need_help(),
+						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings#Site-Background-Options-panel-gpEjd/" target="_blank">', '</a>' ),
 						'class' => 'need-help',
 						'section' => 'ocean_site_background_settings',
 						'transport' => 'postMessage',
@@ -615,7 +615,7 @@ $options = [
 
 			'ocean_site_bg_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => ocean_render_content_need_help(),
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings#Site-Layout-kC1LX/" target="_blank">', '</a>' ),
 				'class' => 'need-help',
 				'section' => 'ocean_site_layout_section',
 				'transport' => 'postMessage',
@@ -689,7 +689,7 @@ $options = [
 
 			'ocean_site_icons_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => ocean_render_content_need_help(),
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings#Site-Icons-GeV7c/" target="_blank">', '</a>' ),
 				'class' => 'need-help',
 				'section' => 'ocean_site_icon_section',
 				'transport' => 'postMessage',
@@ -1323,7 +1323,7 @@ $options = [
 
 			'ocean_site_button_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => ocean_render_content_need_help(),
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings#Site-Buttons-F_bj2/" target="_blank">', '</a>' ),
 				'class' => 'need-help',
 				'section' => 'ocean_site_button_section',
 				'transport' => 'postMessage',
@@ -2364,7 +2364,7 @@ $options = [
 
 			'ocean_site_forms_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => ocean_render_content_need_help(),
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings#Site-Forms-Zv0TX/" target="_blank">', '</a>' ),
 				'class' => 'need-help',
 				'section' => 'ocean_site_forms_section',
 				'transport' => 'postMessage',
@@ -2424,10 +2424,10 @@ $options = [
 				'active_callback' => 'ocean_is_scroll_top',
 				'sanitize_callback' => 'sanitize_key',
 				'choices'  => [
-					'all-devices'        => esc_html__( 'Show On All Devices', 'oceanwp' ),
-					'hide-tablet'        => esc_html__( 'Hide On Tablet', 'oceanwp' ),
-					'hide-mobile'        => esc_html__( 'Hide On Mobile', 'oceanwp' ),
-					'hide-tablet-mobile' => esc_html__( 'Hide On Tablet & Mobile', 'oceanwp' )
+					'all-devices'        => esc_html__( 'Show on All Devices', 'oceanwp' ),
+					'hide-tablet'        => esc_html__( 'Hide on Tablet', 'oceanwp' ),
+					'hide-mobile'        => esc_html__( 'Hide on Mobile', 'oceanwp' ),
+					'hide-tablet-mobile' => esc_html__( 'Hide on Tablet and Mobile', 'oceanwp' )
 				],
 			],
 
@@ -2728,7 +2728,7 @@ $options = [
 
 					'ocean_site_scroll_top_button_position_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => ocean_render_content_need_help(),
+						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings#Button-Position-panel-DKGjr/" target="_blank">', '</a>' ),
 						'class' => 'need-help',
 						'section' => 'ocean_scroll_to_top_position_section',
 						'transport' => 'postMessage',
@@ -2820,7 +2820,7 @@ $options = [
 
 					'ocean_site_scroll_top_button_icon_need_help' => [
 						'type' => 'ocean-content',
-						'isContent' => ocean_render_content_need_help(),
+						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings#Button-Icon-panel-Tsj_j/" target="_blank">', '</a>' ),
 						'class' => 'need-help',
 						'section' => 'ocean_scroll_to_top_icon_section',
 						'transport' => 'postMessage',
@@ -2924,7 +2924,7 @@ $options = [
 
 			'ocean_site_scroll_top_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => ocean_render_content_need_help(),
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings#Scroll-to-Top-0wIZt/" target="_blank">', '</a>' ),
 				'class' => 'need-help',
 				'section' => 'ocean_scroll_to_top_section',
 				'transport' => 'postMessage',
@@ -3356,7 +3356,7 @@ $options = [
 				'active_callback' => 'ocean_is_oe_active',
 				'links' => [
 					'did_you_know_link_1' => [
-						'label' => esc_html__( 'OceanWP enables you to set unique pagination stlyes for different sections of your website. For example, you can choose one style for blog posts and another for your eCommerce store.', 'oceanwp' ),
+						'label' => esc_html__( 'With OceanWP you can easily create unique pagination styles for your blog, shop, and other areas of your site..', 'oceanwp' ),
 						'url' => esc_url( 'https://docs.oceanwp.org/' ),
 						'target' => '_blank'
 					]
@@ -3365,7 +3365,7 @@ $options = [
 
 			'ocean_pagination_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => ocean_render_content_need_help(),
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings#Site-Pagination-xRn8b/" target="_blank">', '</a>' ),
 				'class' => 'need-help',
 				'section' => 'ocean_site_pagination_section',
 				'transport' => 'postMessage',
@@ -3377,7 +3377,7 @@ $options = [
 
 	'ocean_style_and_settings_need_help' => [
 		'type' => 'ocean-content',
-		'isContent' => ocean_render_content_need_help(),
+		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/898-customizer-site-style-settings/" target="_blank">', '</a>' ),
 		'class' => 'need-help',
 		'section' => 'ocean_styles_and_settings',
 		'transport' => 'postMessage',

@@ -56,10 +56,10 @@ $options = [
 		'active_callback' => 'ocean_cac_topbar',
 		'sanitize_callback' => 'sanitize_key',
 		'choices' => [
-			'all-devices' => esc_html__( 'Show On All Devices', 'oceanwp' ),
-			'hide-tablet' => esc_html__( 'Hide On Tablet', 'oceanwp' ),
-			'hide-mobile' => esc_html__( 'Hide On Mobile', 'oceanwp' ),
-			'hide-tablet-mobile' => esc_html__( 'Hide On Tablet & Mobile', 'oceanwp' ),
+			'all-devices' => esc_html__( 'Show on All Devices', 'oceanwp' ),
+			'hide-tablet' => esc_html__( 'Hide on Tablet', 'oceanwp' ),
+			'hide-mobile' => esc_html__( 'Hide on Mobile', 'oceanwp' ),
+			'hide-tablet-mobile' => esc_html__( 'Hide on Tablet and Mobile', 'oceanwp' ),
 		]
 	],
 
@@ -93,9 +93,9 @@ $options = [
 				'active_callback' => 'ocean_cac_topbar',
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
-					'one'   => esc_html__( 'Left Content And Right Social', 'oceanwp' ),
-					'two'   => esc_html__( 'Left Social And Right Content', 'oceanwp' ),
-					'three' => esc_html__( 'Centered Content And Social', 'oceanwp' ),
+					'one'   => esc_html__( 'Left Content and Right Social', 'oceanwp' ),
+					'two'   => esc_html__( 'Left Social and Right Content', 'oceanwp' ),
+					'three' => esc_html__( 'Centered Content and Social', 'oceanwp' ),
 				]
 			],
 
@@ -216,7 +216,7 @@ $options = [
 
 			'ocean_topbar_general_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => ocean_render_content_need_help(),
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/900-customizer-top-bar#General-6PHyM/" target="_blank">', '</a>' ),
 				'class' => 'need-help',
 				'section' => 'ocean_top_bar_general_section',
 				'transport' => 'postMessage',
@@ -244,7 +244,7 @@ $options = [
 		'options' => [
 			'ocean_desc_for_custom_topbar_template_settings' => [
 				'type' => 'ocean-content',
-				'isContent' => esc_html__('You can display regular text, HTML or shortcodes; or replace it with a custom template.', 'oceanwp'),
+				'isContent' => esc_html__( 'You can display regular text, HTML and shortcodes; or, you can replace the content with a custom template.', 'oceanwp' ),
 				'section' => 'ocean_top_bar_content_section',
 				'class' => 'description',
 				'transport' => 'refresh',
@@ -257,7 +257,7 @@ $options = [
 				'label'    => esc_html__( 'Content', 'oceanwp' ),
 				'section'  => 'ocean_top_bar_content_section',
 				'transport' => 'postMessage',
-				'default' => esc_html__( 'Place your content here', 'oceanwp' ),
+				'default' => esc_html__( 'Add your content here', 'oceanwp' ),
 				'priority' => 10,
 				'hideLabel'    => false,
 				'active_callback' => 'ocean_cac_topbar',
@@ -276,8 +276,8 @@ $options = [
 
 			'ocean_top_bar_template' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__('Select Template', 'oceanwp' ),
-				'desc' => esc_html__( ' Select a custom template you created in OceanWP > My Library.', 'oceanwp' ),
+				'label' => esc_html__( 'Select Template', 'oceanwp' ),
+				'desc' => esc_html__( 'Select a custom template you created in OceanWP > My Library.', 'oceanwp' ),
 				'section' => 'ocean_top_bar_content_section',
 				'transport' => 'refresh',
 				'default' => '0',
@@ -291,7 +291,7 @@ $options = [
 
 			'ocean_topbar_content_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => ocean_render_content_need_help(),
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/900-customizer-top-bar#Content-V_xxW/" target="_blank">', '</a>' ),
 				'class' => 'need-help',
 				'section' => 'ocean_top_bar_content_section',
 				'transport' => 'postMessage',
@@ -608,8 +608,8 @@ $options = [
 
 			'ocean_top_bar_social_alt_template' => [
 				'type' => 'ocean-select',
-				'label' => esc_html__('Select Template', 'oceanwp' ),
-				'desc' => esc_html__('Select a template you created in OceanWP > My Library to replace the Topbar Social Icons.', 'oceanwp'),
+				'label' => esc_html__( 'Select Template', 'oceanwp' ),
+				'desc' => esc_html__( 'Select a template you created in OceanWP > My Library to replace default Top Bar social icons.', 'oceanwp' ),
 				'section' => 'ocean_top_bar_social_menu_section',
 				'transport' => 'refresh',
 				'default' => '0',
@@ -623,7 +623,7 @@ $options = [
 
 			'ocean_top_bar_social_menu_need_help' => [
 				'type' => 'ocean-content',
-				'isContent' => ocean_render_content_need_help(),
+				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/900-customizer-top-bar#Social-Menu-68gLE/" target="_blank">', '</a>' ),
 				'class' => 'need-help',
 				'section' => 'ocean_top_bar_social_menu_section',
 				'transport' => 'postMessage',
@@ -948,7 +948,7 @@ $options = [
 
 	'ocean_topbar_need_help' => [
 		'type' => 'ocean-content',
-		'isContent' => ocean_render_content_need_help(),
+		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/900-customizer-top-bar/" target="_blank">', '</a>' ),
 		'class' => 'need-help',
 		'section' => 'ocean_topbar',
 		'transport' => 'postMessage',
