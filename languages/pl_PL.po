@@ -4646,7 +4646,7 @@ msgstr "Czytaj więcej"
 
 #: inc/helpers.php:3009
 msgid "Tags"
-msgstr ""
+msgstr "Tagi"
 
 #: inc/helpers.php:3010
 msgid "Social Share"
@@ -5953,7 +5953,7 @@ msgstr "Może ci się spodobać również"
 
 #: partials/single/tags.php:15
 msgid "Tags: "
-msgstr ""
+msgstr "Tagi"
 
 #: sidebar-left.php:10
 #, fuzzy

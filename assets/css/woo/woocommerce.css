@@ -642,6 +642,40 @@
 .woocommerce form .form-row::after {
   clear: both;
 }
+.woocommerce form .password-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  /* Hide the Edge "reveal password" native button */
+}
+.woocommerce form .password-input input[type=password] {
+  padding-right: 2.5rem;
+}
+.woocommerce form .password-input input::-ms-reveal {
+  display: none;
+}
+.woocommerce form .show-password-input {
+  position: absolute;
+  right: 0.7em;
+  top: 0.7em;
+  cursor: pointer;
+}
+.woocommerce form .show-password-input::after {
+  font-family: "Font Awesome 6 Free";
+  speak: never;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-left: 0.618em;
+  content: "\f06e";
+  text-decoration: none;
+}
+.woocommerce form .show-password-input.display-password::after {
+  color: #585858;
+}
 .woocommerce form.login .lost_password {
   margin: 0;
 }

@@ -12,7 +12,7 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.8.0
+ * @version 9.0.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -47,7 +47,10 @@ $wrapper_classes   = apply_filters(
 		if ( $post_thumbnail_id ) {
 			$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
 		} else {
-			$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
+			$wrapper_classname = $product->is_type( 'variable' ) && ! empty( $product->get_available_variations( 'image' ) ) ?
+				'woocommerce-product-gallery__image woocommerce-product-gallery__image--placeholder' :
+				'woocommerce-product-gallery__image--placeholder';
+			$html  = sprintf( '<div class="%s">', esc_attr( $wrapper_classname ) );
 			$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
 			$html .= '</div>';
 		}
