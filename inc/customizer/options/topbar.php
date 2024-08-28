@@ -632,23 +632,23 @@ $options = [
 			],
 
 			'ocean_top_bar_social_menu_need_help' => [
-				'type' => 'ocean-content',
-				'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/900-customizer-top-bar#Social-Menu-68gLE/" target="_blank">', '</a>' ),
-				'class' => 'need-help',
-				'section' => 'ocean_top_bar_social_menu_section',
-				'transport' => 'postMessage',
-				'priority' => 10,
+				'type'            => 'ocean-content',
+				'isContent'       => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/900-customizer-top-bar#Social-Menu-68gLE/" target="_blank">', '</a>' ),
+				'class'           => 'need-help',
+				'section'         => 'ocean_top_bar_social_menu_section',
+				'transport'       => 'postMessage',
+				'priority'        => 10,
 				'active_callback' => 'oceanwp_cac_has_topbar_social',
 			]
 		]
 	],
 
 	'ocean_title_for_topbar_typo_and_colors' => [
-		'type' => 'ocean-title',
-		'label' => esc_html__( 'Typography and Colors', 'oceanwp' ),
-		'section' => 'ocean_topbar',
-		'transport' => 'postMessage',
-		'priority' => 10,
+		'type'            => 'ocean-title',
+		'label'           => esc_html__( 'Typography and Colors', 'oceanwp' ),
+		'section'         => 'ocean_topbar',
+		'transport'       => 'postMessage',
+		'priority'        => 10,
 		'active_callback' => 'oceanwp_cac_has_topbar',
 	],
 
@@ -666,150 +666,150 @@ $options = [
 			'fontFamily' => [
 				'id' => 'top_menu_typography[font-family]',
 				'label' => esc_html__('Font Family', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'fontWeight' => [
-				'id' => 'top_menu_typography[font-weight]',
+				'id'    => 'top_menu_typography[font-weight]',
 				'label' => esc_html__('Font Weight', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'fontWeightTablet' => [
-				'id' => 'top_menu_tablet_typography[font-weight]',
+				'id'    => 'top_menu_tablet_typography[font-weight]',
 				'label' => esc_html__('Font Weight', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'fontWeightMobile' => [
-				'id' => 'top_menu_mobile_typography[font-weight]',
+				'id'    => 'top_menu_mobile_typography[font-weight]',
 				'label' => esc_html__('Font Weight', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'fontSubset' => [
-				'id' => 'top_menu_typography[font-subset]',
+				'id'    => 'top_menu_typography[font-subset]',
 				'label' => esc_html__('Font Subset', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'fontSize' => [
-				'id' => 'top_menu_typography[font-size]',
+				'id'    => 'top_menu_typography[font-size]',
 				'label' => esc_html__('Font Size', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 					'default'   => 12,
 				],
 			],
 			'fontSizeTablet' => [
-				'id' => 'top_menu_tablet_typography[font-size]',
+				'id'    => 'top_menu_tablet_typography[font-size]',
 				'label' => esc_html__('Font Size', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'fontSizeMobile' => [
-				'id' => 'top_menu_mobile_typography[font-size]',
+				'id'    => 'top_menu_mobile_typography[font-size]',
 				'label' => esc_html__('Font Size', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'fontSizeUnit' => [
-				'id' => 'top_menu_typography[font-size-unit]',
+				'id'    => 'top_menu_typography[font-size-unit]',
 				'label' => esc_html__('Unit', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'letterSpacing' => [
-				'id' => 'top_menu_typography[letter-spacing]',
+				'id'    => 'top_menu_typography[letter-spacing]',
 				'label' => esc_html__('Letter Spacing', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'letterSpacingTablet' => [
-				'id' => 'top_menu_tablet_typography[letter-spacing]',
+				'id'    => 'top_menu_tablet_typography[letter-spacing]',
 				'label' => esc_html__('Letter Spacing', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'letterSpacingMobile' => [
-				'id' => 'top_menu_mobile_typography[letter-spacing]',
+				'id'    => 'top_menu_mobile_typography[letter-spacing]',
 				'label' => esc_html__('Letter Spacing', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'letterSpacingUnit' => [
-				'id' => 'top_menu_typography[letter-spacing-unit]',
+				'id'    => 'top_menu_typography[letter-spacing-unit]',
 				'label' => esc_html__('Unit', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
-					'default'   => 'px'
+					'default'   => 'px',
 				],
 			],
 			'lineHeight' => [
-				'id' => 'top_menu_typography[line-height]',
+				'id'    => 'top_menu_typography[line-height]',
 				'label' => esc_html__('Line Height', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 					'default'   => 1.8,
 				],
 			],
 			'lineHeightTablet' => [
-				'id' => 'top_menu_tablet_typography[line-height]',
+				'id'    => 'top_menu_tablet_typography[line-height]',
 				'label' => esc_html__('Line Height', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'lineHeightMobile' => [
-				'id' => 'top_menu_mobile_typography[line-height]',
+				'id'    => 'top_menu_mobile_typography[line-height]',
 				'label' => esc_html__('Line Height', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'lineHeightUnit' => [
-				'id' => 'top_menu_typography[line-height-unit]',
+				'id'    => 'top_menu_typography[line-height-unit]',
 				'label' => esc_html__('Unit', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'textTransform' => [
-				'id' => 'top_menu_typography[text-transform]',
+				'id'    => 'top_menu_typography[text-transform]',
 				'label' => esc_html__('Text Transform', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'textTransformTablet' => [
-				'id' => 'top_menu_tablet_typography[text-transform]',
+				'id'    => 'top_menu_tablet_typography[text-transform]',
 				'label' => esc_html__('Text Transform', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'textTransformMobile' => [
-				'id' => 'top_menu_mobile_typography[text-transform]',
+				'id'    => 'top_menu_mobile_typography[text-transform]',
 				'label' => esc_html__('Text Transform', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
 			'textDecoration' => [
-				'id' => 'top_menu_typography[text-decoration]',
+				'id'    => 'top_menu_typography[text-decoration]',
 				'label' => esc_html__('Text Decoration', 'oceanwp'),
-				'attr' => [
+				'attr'  => [
 					'transport' => 'postMessage',
 				],
 			],
@@ -817,12 +817,12 @@ $options = [
 	],
 
 	'ocean_divider_after_top_bar_typography_setting' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_topbar',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'top' => 1,
-		'bottom' => 10,
+		'type'            => 'ocean-divider',
+		'section'         => 'ocean_topbar',
+		'transport'       => 'postMessage',
+		'priority'        => 10,
+		'top'             => 1,
+		'bottom'          => 10,
 		'active_callback' => 'oceanwp_cac_has_topbar',
 	],
 
@@ -841,7 +841,7 @@ $options = [
 			'normal' => [
 				'id' => 'ocean_top_bar_bg',
 				'key' => 'normal',
-				'label' =>esc_html__( 'Select Color', 'oceanwp' ),
+				'label' => esc_html__( 'Select Color', 'oceanwp' ),
 				'selector' => [
 					'#top-bar-wrap,.oceanwp-top-bar-sticky' => 'background-color'
 				],
@@ -868,7 +868,7 @@ $options = [
 			'normal' => [
 				'id' => 'ocean_top_bar_border_color',
 				'key' => 'normal',
-				'label' =>esc_html__( 'Select Color', 'oceanwp' ),
+				'label' => esc_html__( 'Select Color', 'oceanwp' ),
 				'selector' => [
 					'#top-bar-wrap{border-color' => 'border-color'
 				],
@@ -895,7 +895,7 @@ $options = [
 			'normal' => [
 				'id' => 'ocean_top_bar_text_color',
 				'key' => 'normal',
-				'label' =>esc_html__( 'Select Color', 'oceanwp' ),
+				'label' => esc_html__( 'Select Color', 'oceanwp' ),
 				'selector' => [
 					'#top-bar-wrap,#top-bar-content strong' => 'color'
 				],
@@ -934,7 +934,7 @@ $options = [
 			'hover' => [
 				'id' => 'ocean_top_bar_link_color_hover',
 				'key' => 'hover',
-				'label' =>esc_html__( 'Hover', 'oceanwp' ),
+				'label' => esc_html__( 'Hover', 'oceanwp' ),
 				'selector' => [
 					'#top-bar-content a:hover,#top-bar-social-alt a:hover' => 'color'
 				],
@@ -947,22 +947,22 @@ $options = [
 	],
 
 	'ocean_topbar_upsell_notice' => [
-		'type' => 'ocean-content',
-		'isContent' => ocean_render_upsell_notice(),
-		'section' => 'ocean_topbar',
-		'class' => 'description',
-		'transport' => 'postMessage',
-		'priority' => 10,
+		'type'            => 'ocean-content',
+		'isContent'       => owp_render_topbar_upsell_notice(),
+		'section'         => 'ocean_topbar',
+		'class'           => 'description',
+		'transport'       => 'postMessage',
+		'priority'        => 10,
 		'active_callback' => 'ocean_upsell_notice_callback'
 	],
 
 	'ocean_topbar_need_help' => [
-		'type' => 'ocean-content',
+		'type'      => 'ocean-content',
 		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/900-customizer-top-bar/" target="_blank">', '</a>' ),
-		'class' => 'need-help',
-		'section' => 'ocean_topbar',
+		'class'     => 'need-help',
+		'section'   => 'ocean_topbar',
 		'transport' => 'postMessage',
-		'priority' => 10,
+		'priority'  => 10,
 	]
 
 ];

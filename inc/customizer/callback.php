@@ -921,18 +921,17 @@ function oceanwp_cac_is_ld_lesson_rl_layout() {
 }
 
 function ocean_upsell_notice_callback() {
-	if ( ! class_exists('Ocean_Extra') ) {
+	if ( ! OCEAN_EXTRA_ACTIVE ) {
 		return false;
 	}
 
-	if ( function_exists('ocean_check_pro_license') || ocean_check_pro_license() !== null) {
+	global $owp_fs;
+	$need_to_upgrade = ! empty( $owp_fs ) ? $owp_fs->is_pricing_page_visible() : false;
+
+	if ( ! $need_to_upgrade ) {
 		return false;
 	}
-
-	// if ( class_exists('Ocean_Sticky_Header') || class_exists('Ocean_eCommerce') ) {
-	// 	return false;
-	// }
-
+	
 	return true;
 }
 
@@ -964,6 +963,7 @@ function oceanwp_cac_has_special_deal_enabled() {
 		return false;
 	}
 }
+
 function oceanwp_cac_special_deal_and_editor() {
 	if ('on' == get_theme_mod('ocean_woo_special_deal_enable', 'off') && 'editor' == get_theme_mod('ocean_woo_special_deal_source', 'editor')) {
 		return true;
@@ -982,6 +982,7 @@ function oceanwp_cac_has_custom_stock_enabled() {
 		return false;
 	}
 }
+
 /*-------------------------------------------------------------------------------*/
 /* [ Suggest Price ]
 /*-------------------------------------------------------------------------------*/
@@ -997,4 +998,3 @@ function oceanwp_cac_is_suggest_price_and_agree_checkbox_active() {
 		return false;
 	}
 }
-

@@ -4419,7 +4419,7 @@ $options = [
 
 	'ocean_blog_upsell_notice' => [
 		'type'            => 'ocean-content',
-		'isContent'       => ocean_render_upsell_notice(),
+		'isContent'       => owp_render_blog_upsell_notice(),
 		'section'         => 'ocean_blog',
 		'class'           => 'description',
 		'transport'       => 'postMessage',

@@ -77,8 +77,8 @@ if (! function_exists('ocean_extract_data_from_file')) {
  *
  * @return null|mixed
  */
-if (! function_exists('ocean_find_key_recursive')) {
-	function ocean_find_key_recursive($keys, $array_or_object, $default_value = null) {
+if ( ! function_exists( 'ocean_find_key_recursive' ) ) {
+	function ocean_find_key_recursive( $keys, $array_or_object, $default_value = null ) {
 		if (! is_array($keys)) {
 			$keys = explode('/', (string) $keys);
 		}
@@ -124,20 +124,6 @@ if (! function_exists('ocean_find_key_recursive')) {
 if ( ! function_exists( 'oceanwp_get_scroll_top_icons' ) ) {
 
 	function oceanwp_get_scroll_top_icons() {
-
-		// Add none to top of array
-		// $icons_array = array(
-		// 	'none' => '',
-		// );
-
-		// // Define return icons
-		// $return_icons = array();
-
-		// // Returns up arrows only
-		// if ( 'up_arrows' == $return ) {
-		// 	$return_icons = array( 'chevron_up', 'caret_up', 'angle_up', 'double_arrows_up', 'long_arrow_alt_up', 'arrow_alt_circle_up', 'arrow_up', 'level_up_alt', 'caret_square_up' );
-		// 	$return_icons = array_combine( $return_icons, $return_icons );
-		// }
 
 		$icons = [
 			'chevron_up' => [
@@ -223,83 +209,72 @@ function oceanwp_library_template_choices() {
 /**
  * Get all menus.
  */
-function oceanwp_get_menu_choices() {
+if ( ! function_exists( 'oceanwp_get_menu_choices' ) ) {
 
-	$menus = array( esc_html__( 'Select Your Menu', 'oceanwp' ) );
+	function oceanwp_get_menu_choices() {
 
-	$get_menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
+		$menus = array( esc_html__( 'Select Your Menu', 'oceanwp' ) );
 
-	foreach ( $get_menus as $menu) {
-		$menus[$menu->term_id] = $menu->name;
+		$get_menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
+
+		foreach ( $get_menus as $menu) {
+			$menus[$menu->term_id] = $menu->name;
+		}
+
+		return $menus;
 	}
-
-	return $menus;
 }
 
-/**
- * Get SVG icon
- */
-// function oceanwp_customizer_print_svg( $svg ) {
+if ( ! function_exists( 'oceanwp_customizer_print_svg' ) ) {
 
-// 	$json = OCEANWP_INC_DIR_URI . 'customizer/assets/svg.json';
+	function oceanwp_customizer_print_svg( $svg ) {
 
-// 	$response = wp_remote_get( $json );
+		$json = OCEANWP_INC_DIR_URI . 'customizer/assets/svg.json';
 
-// 	if (is_wp_error($response)) {
-// 		return false;
-// 	}
+		$response = wp_remote_get( $json );
 
-// 	$svg_icons = json_decode($response['body'], true);
+		if ( is_wp_error( $response ) ) {
+			return false;
+		}
 
-// 	return $svg_icons[$svg];
+		$body = wp_remote_retrieve_body( $response );
+		$svg_icons = json_decode( $body, true );
 
-// }
+		if ( ! is_array( $svg_icons ) || ! isset( $svg_icons[ $svg ] ) ) {
+			return false;
+		}
 
-function oceanwp_customizer_print_svg( $svg ) {
-
-	$json = OCEANWP_INC_DIR_URI . 'customizer/assets/svg.json';
-
-	$response = wp_remote_get( $json );
-
-	if ( is_wp_error( $response ) ) {
-		return false;
+		return $svg_icons[$svg];
 	}
-
-	$body = wp_remote_retrieve_body( $response );
-	$svg_icons = json_decode( $body, true );
-
-	if ( ! is_array( $svg_icons ) || ! isset( $svg_icons[ $svg ] ) ) {
-		return false;
-	}
-
-	return $svg_icons[$svg];
 }
-
 
 /**
  * Get post types
  *
  * @param object $args    post type.
  */
-function ocean_customizer_get_post_types( $args = array() ) {
-	$post_type_args = array(
-		'show_in_nav_menus' => true,
-	);
+if ( ! function_exists( 'ocean_customizer_get_post_types' ) ) {
 
-	if ( ! empty( $args['post_type'] ) ) {
-		$post_type_args['name'] = $args['post_type'];
+	function ocean_customizer_get_post_types( $args = array() ) {
+		$post_type_args = array(
+			'show_in_nav_menus' => true,
+		);
+
+		if ( ! empty( $args['post_type'] ) ) {
+			$post_type_args['name'] = $args['post_type'];
+		}
+
+		$_post_types = get_post_types( $post_type_args, 'objects' );
+
+		$post_types        = array();
+		$post_types['any'] = esc_html__( 'All Post Types', 'oceanwp' );
+
+		foreach ( $_post_types as $post_type => $object ) {
+			$post_types[ $post_type ] = $object->label;
+		}
+
+		return $post_types;
 	}
-
-	$_post_types = get_post_types( $post_type_args, 'objects' );
-
-	$post_types        = array();
-	$post_types['any'] = esc_html__( 'All Post Types', 'oceanwp' );
-
-	foreach ( $_post_types as $post_type => $object ) {
-		$post_types[ $post_type ] = $object->label;
-	}
-
-	return $post_types;
 }
 
 /**
@@ -342,48 +317,144 @@ if ( ! function_exists( 'oceanwp_cart_icons_list' ) ) {
 	}
 }
 
-function ocean_get_page_choices( $name = '', $selected = '', $show_option_none = '&mdash; Select &mdash;', $option_none_value = '' ) {
+if ( ! function_exists( 'ocean_get_page_choices' ) ) {
 
-	$name = '_customize-dropdown-pages-';
-	$selected = get_theme_mod( 'op_portfolio_page', '' );
+	function ocean_get_page_choices( $name = '', $selected = '', $show_option_none = '&mdash; Select &mdash;', $option_none_value = '' ) {
 
-	$dropdown = wp_dropdown_pages(
-		array(
-			'name'              => esc_attr( $name ),
-			'echo'              => 0,
-			'show_option_none'  => esc_html__( $show_option_none, 'ocean-portfolio' ),
-			'option_none_value' => esc_attr( $option_none_value ),
-			'selected'          => esc_attr( $selected ),
-		)
-	);
+		$name = '_customize-dropdown-pages-';
+		$selected = get_theme_mod( 'op_portfolio_page', '' );
 
-	return $dropdown;
+		$dropdown = wp_dropdown_pages(
+			array(
+				'name'              => esc_attr( $name ),
+				'echo'              => 0,
+				'show_option_none'  => esc_html__( $show_option_none, 'ocean-portfolio' ),
+				'option_none_value' => esc_attr( $option_none_value ),
+				'selected'          => esc_attr( $selected ),
+			)
+		);
+
+		return $dropdown;
+	}
 }
 
-function ocean_render_upsell_notice() {
-	$check_icon = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M400-304 240-464l56-56 104 104 264-264 56 56-320 320Z"/></svg>';
-	ob_start();
-	?>
-	<div class="ocean-upsell-container">
-		<h3 class="upsell-heading"><?php echo esc_html__( 'Supercharge Your Site with OceanWP Pro Add-Ons!', 'oceanwp' ); ?></h3>
-		<p><?php echo esc_html__( 'Why Upgrade to Pro?', 'oceanwp' ); ?></p>
-		<ul class="upsell-content">
-			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky header', 'oceanwp' ); ?></li>
-			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Popup login', 'oceanwp' ); ?></li>
-			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Advanced hooks', 'oceanwp' ); ?></li>
-			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Readymade templates', 'oceanwp' ); ?></li>
-			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Page level settings', 'oceanwp' ); ?></li>
-			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Multiple header style', 'oceanwp' ); ?></li>
-			<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Top level support', 'oceanwp' ); ?></li>
-		</ul>
+/**
+ * Customizer Upsell Notices
+ * 
+ * @since 4.0.0
+ */
+if ( ! function_exists( 'owp_render_header_upsell_notice' ) ) {
 
-		<a href="#" class="button button-secondary">Upgrade to OceanWP Pro</a>
-	</div>
-	<?php
-	return ob_get_clean();
+	function owp_render_header_upsell_notice() {
+		$check_icon = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M400-304 240-464l56-56 104 104 264-264 56 56-320 320Z"/></svg>';
+		ob_start();
+		?>
+		<div class="ocean-upsell-container">
+			<h3 class="upsell-heading"><?php echo esc_html__( 'Supercharge Your Site with OceanWP Pro Bundle!', 'oceanwp' ); ?></h3>
+			<p><?php echo esc_html__( 'Why Upgrade to Pro?', 'oceanwp' ); ?></p>
+			<ul class="upsell-content">
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky Header', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky Top Bar', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky Mobile Menu', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky Effects', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky Custom Header', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Full Site Templates', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Exceptional Support', 'oceanwp' ); ?></li>
+			</ul>
+
+			<a href="<?php echo esc_url( 'https://oceanwp.org/core-extensions-bundle/' ) ?>" target="_blank" class="button button-secondary">Upgrade to OceanWP Pro</a>
+		</div>
+		<?php
+		return ob_get_clean();
+	}
 }
 
-function ocean_render_content_need_help() {
-	$html = sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/" target="_blank">', '</a>' );
-	return $html;
+if ( ! function_exists( 'owp_render_topbar_upsell_notice' ) ) {
+
+	function owp_render_topbar_upsell_notice() {
+		$check_icon = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M400-304 240-464l56-56 104 104 264-264 56 56-320 320Z"/></svg>';
+		ob_start();
+		?>
+		<div class="ocean-upsell-container">
+			<h3 class="upsell-heading"><?php echo esc_html__( 'Elevate Your Site with OceanWP Pro Bundle!', 'oceanwp' ); ?></h3>
+			<p><?php echo esc_html__( 'Why Upgrade to Pro?', 'oceanwp' ); ?></p>
+			<ul class="upsell-content">
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky Header', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky Top Bar', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Popup Login', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Advanced Hooks', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Full Site Templates', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Dedicated Support', 'oceanwp' ); ?></li>
+			</ul>
+
+			<a href="<?php echo esc_url( 'https://oceanwp.org/core-extensions-bundle/' ) ?>" target="_blank" class="button button-secondary">Upgrade to OceanWP Pro</a>
+		</div>
+		<?php
+		return ob_get_clean();
+	}
+}
+
+if ( ! function_exists( 'owp_render_blog_upsell_notice' ) ) {
+
+	function owp_render_blog_upsell_notice() {
+		$check_icon = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M400-304 240-464l56-56 104 104 264-264 56 56-320 320Z"/></svg>';
+		ob_start();
+		?>
+		<div class="ocean-upsell-container">
+			<h3 class="upsell-heading"><?php echo esc_html__( 'Power Up Your Content with OceanWP Pro Bundle!', 'oceanwp' ); ?></h3>
+			<p><?php echo esc_html__( 'Why Upgrade to Pro?', 'oceanwp' ); ?></p>
+			<ul class="upsell-content">
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Custom Post Types', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Popup Builder', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Pixel Tracker', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Advanced Hooks', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Elementor Sections', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Full Site Templates', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Dedicated Support', 'oceanwp' ); ?></li>
+			</ul>
+
+			<a href="<?php echo esc_url( 'https://oceanwp.org/core-extensions-bundle/' ) ?>" target="_blank" class="button button-secondary">Upgrade to OceanWP Pro</a>
+		</div>
+		<?php
+		return ob_get_clean();
+	}
+}
+
+if ( ! function_exists( 'owp_render_footer_upsell_notice' ) ) {
+
+	function owp_render_footer_upsell_notice() {
+		$check_icon = '<svg height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M400-304 240-464l56-56 104 104 264-264 56 56-320 320Z"/></svg>';
+		ob_start();
+		?>
+		<div class="ocean-upsell-container">
+			<h3 class="upsell-heading"><?php echo esc_html__( 'Make Your Site Stand Out with OceanWP Pro Bundle!', 'oceanwp' ); ?></h3>
+			<p><?php echo esc_html__( 'Why Upgrade to Pro?', 'oceanwp' ); ?></p>
+			<ul class="upsell-content">
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Footer CTA', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky Footer', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Sticky Custom Footer', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Cookie Notice', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Elementor Sections', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Full Site Templates', 'oceanwp' ); ?></li>
+				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Dedicated Support', 'oceanwp' ); ?></li>
+			</ul>
+
+			<a href="<?php echo esc_url( 'https://oceanwp.org/core-extensions-bundle/' ) ?>" target="_blank" class="button button-secondary">Upgrade to OceanWP Pro</a>
+		</div>
+		<?php
+		return ob_get_clean();
+	}
+}
+
+/**
+ * Customizer Universal Help Link
+ * 
+ * @since 4.0.0
+ */
+if ( ! function_exists( 'ocean_render_content_need_help' ) ) {
+
+	function ocean_render_content_need_help() {
+		$html = sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/" target="_blank">', '</a>' );
+		return $html;
+	}
 }
