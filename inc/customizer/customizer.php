@@ -427,6 +427,11 @@ class OceanWP_Customizer_Init {
 
 		wp_enqueue_script( 'owp-react-customizer' );
 
+		if (is_customize_preview()) {
+			add_filter('gutenberg_use_widgets_block_editor', '__return_true');
+			add_filter('use_widgets_block_editor', '__return_true');
+		}
+
 		wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI .'/assets/fonts/fontawesome/css/all.min.css', false, '5.11.2'  );
 		wp_enqueue_style( 'simple-line-icons', OCEANWP_INC_DIR_URI .'customizer/assets/css/customizer-simple-line-icons.min.css', false, '2.4.0' );
 
