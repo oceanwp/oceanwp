@@ -350,7 +350,7 @@ $options = [
 	'footer_widget_title' => [
 		'id'              => 'footer_widget_title',
 		'type'            => 'ocean-typography',
-		'label'           => esc_html__( 'Footer Widget Headings', 'oceanwp' ),
+		'label'           => esc_html__( 'FW Widget Heading', 'oceanwp' ),
 		'section'         => 'ocean_footer_widgets',
 		'transport'       => 'postMessage',
 		'priority'        => 10,
@@ -524,7 +524,7 @@ $options = [
 
 	'ocean_footer_background' => [
 		'type'              => 'ocean-color',
-		'label'             => esc_html__( 'Background', 'oceanwp' ),
+		'label'             => esc_html__( 'FW Background', 'oceanwp' ),
 		'section'           => 'ocean_footer_widgets',
 		'transport'         => 'postMessage',
 		'priority'          => 10,
@@ -551,7 +551,7 @@ $options = [
 
 	'ocean_footer_borders' => [
 		'type'              => 'ocean-color',
-		'label'             => esc_html__( 'Borders', 'oceanwp' ),
+		'label'             => esc_html__( 'FW Borders', 'oceanwp' ),
 		'section'           => 'ocean_footer_widgets',
 		'transport'         => 'postMessage',
 		'priority'          => 10,
@@ -578,7 +578,7 @@ $options = [
 
 	'footer_widget_title_typography_color' => [
 		'type'              => 'ocean-color',
-		'label'             => esc_html__( 'Widget Headings', 'oceanwp' ),
+		'label'             => esc_html__( 'FW Widget Heading', 'oceanwp' ),
 		'section'           => 'ocean_footer_widgets',
 		'transport'         => 'postMessage',
 		'priority'          => 10,
@@ -605,7 +605,7 @@ $options = [
 
 	'ocean_footer_color' => [
 		'type'              => 'ocean-color',
-		'label'             => esc_html__( 'Text', 'oceanwp' ),
+		'label'             => esc_html__( 'FW Widget Text', 'oceanwp' ),
 		'section'           => 'ocean_footer_widgets',
 		'transport'         => 'postMessage',
 		'priority'          => 10,
@@ -632,7 +632,7 @@ $options = [
 
 	'ocean_footer_link_color' => [
 		'type'              => 'ocean-color',
-		'label'             => esc_html__( 'Links', 'oceanwp' ),
+		'label'             => esc_html__( 'FW Widget Links', 'oceanwp' ),
 		'section'           => 'ocean_footer_widgets',
 		'transport'         => 'postMessage',
 		'priority'          => 10,
