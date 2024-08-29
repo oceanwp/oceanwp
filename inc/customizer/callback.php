@@ -931,7 +931,7 @@ function ocean_upsell_notice_callback() {
 	if ( ! $need_to_upgrade ) {
 		return false;
 	}
-	
+
 	return true;
 }
 
