@@ -6400,7 +6400,7 @@ $options = [
 
 	'ocean_header_upsell_notice' => [
 		'type'            => 'ocean-content',
-		'isContent'       => ocean_render_upsell_notice(),
+		'isContent'       => owp_render_header_upsell_notice(),
 		'section'         => 'ocean_header',
 		'class'           => 'description',
 		'transport'       => 'postMessage',
