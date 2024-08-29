@@ -935,7 +935,6 @@ function ocean_upsell_notice_callback() {
 	return true;
 }
 
-
 function ocean_cb_oec_active() {
 	if ( class_exists('Ocean_Extra') ) {
 		if ( function_exists('ocean_check_pro_license') && null !== ocean_check_pro_license() ) {

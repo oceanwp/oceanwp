@@ -617,6 +617,26 @@ $options = [
 		]
 	],
 
+	'ocean_divider_before_copyright_upsell_notice' => [
+		'type'            => 'ocean-divider',
+		'section'         => 'ocean_footer_bottom',
+		'transport'       => 'postMessage',
+		'priority'        => 10,
+		'top'             => 1,
+		'bottom'          => 10,
+		'active_callback' => 'ocean_upsell_notice_callback',
+	],
+
+	'ocean_copyright_upsell_notice' => [
+		'type'            => 'ocean-content',
+		'isContent'       => owp_render_footer_upsell_notice(),
+		'section'         => 'ocean_footer_bottom',
+		'class'           => 'description',
+		'transport'       => 'postMessage',
+		'priority'        => 10,
+		'active_callback' => 'ocean_upsell_notice_callback',
+	],
+
 	'ocean_footer_bottom_section_need_help' => [
 		'type'      => 'ocean-content',
 		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/905-customizer-footer-copyright/" target="_blank">', '</a>' ),

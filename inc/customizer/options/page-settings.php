@@ -563,7 +563,7 @@ $options = [
 						'wrap'              => false,
 						'active_callback'   => 'oceanwp_is_bg_image_page_header',
 						'sanitize_callback' => 'sanitize_key',
-						'choices' => [
+						'choices'           => [
 							'left'  => [
 								'id'      => 'left',
 								'label'   => esc_html__( 'Left', 'oceanwp' ),
@@ -583,7 +583,7 @@ $options = [
 						'preview' => 'queryWithAttr',
 						'css' => [
 							'selector' => '.background-image-page-header .page-header-inner, .background-image-page-header .site-breadcrumbs',
-							'property' => 'text-align'
+							'property' => 'text-align',
 						]
 					],
 
@@ -699,9 +699,9 @@ $options = [
 							'repeat-y'  => esc_html__( 'Repeat-y', 'oceanwp' ),
 						],
 						'preview' => 'queryWithAttr',
-						'css' => [
+						'css'     => [
 							'selector' => '.page-header',
-							'property' => 'background-repeat'
+							'property' => 'background-repeat',
 						]
 					],
 
@@ -735,7 +735,7 @@ $options = [
 							]
 						],
 						'preview' => 'queryWithAttr',
-						'css' => [
+						'css'     => [
 							'selector' => '.page-header',
 							'property' => 'background-attachment'
 						]
@@ -813,7 +813,7 @@ $options = [
 								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr'  => [
 									'transport' => 'postMessage',
-									'default'   => 0.5
+									'default'   => 0.5,
 								],
 							]
 						]
@@ -888,7 +888,7 @@ $options = [
 						'key'      => 'normal',
 						'label'    => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'.page-header' => 'background-color'
+							'.page-header' => 'background-color',
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -915,7 +915,7 @@ $options = [
 						'key'      => 'normal',
 						'label'    => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'.page-header' => 'color'
+							'.page-header' => 'color',
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -1438,7 +1438,7 @@ $options = [
 				'active_callback'   => 'oceanwp_is_active_breadcrumb_callback',
 				'sanitize_callback' => 'sanitize_key',
 				'choices'           => [
-					'' => esc_html__( 'Absolute Right', 'oceanwp' ),
+					''            => esc_html__( 'Absolute Right', 'oceanwp' ),
 					'under-title' => esc_html__( 'Under Title', 'oceanwp' ),
 				]
 			],
