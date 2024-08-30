@@ -779,7 +779,7 @@ $options = [
 
 	'ocean_widgets_titles_border_color' => [
 		'type'              => 'ocean-color',
-		'label'             => esc_html__( 'Heading Border Color', 'oceanwp' ),
+		'label'             => esc_html__( 'SB Heading Border', 'oceanwp' ),
 		'section'           => 'ocean_sidebar',
 		'transport'         => 'postMessage',
 		'priority'          => 10,
