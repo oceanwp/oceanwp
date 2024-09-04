@@ -669,6 +669,16 @@ $options = [
 		]
 	],
 
+	'ocean_divider_before_footer_upsell_notice' => [
+		'type'            => 'ocean-divider',
+		'section'         => 'ocean_footer_widgets',
+		'transport'       => 'postMessage',
+		'priority'        => 10,
+		'top'             => 1,
+		'bottom'          => 10,
+		'active_callback' => 'ocean_upsell_notice_callback',
+	],
+
 	'ocean_footer_upsell_notice' => [
 		'type'            => 'ocean-content',
 		'isContent'       => owp_render_footer_upsell_notice(),
@@ -676,7 +686,7 @@ $options = [
 		'class'           => 'description',
 		'transport'       => 'postMessage',
 		'priority'        => 10,
-		'active_callback' => 'ocean_upsell_notice_callback'
+		'active_callback' => 'ocean_upsell_notice_callback',
 	],
 
 	'ocean_footer_widgets_section_need_help' => [

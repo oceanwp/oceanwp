@@ -161,6 +161,8 @@ final class OCEANWP_Theme_Class {
 
 		// Check if plugins are active.
 		define( 'OCEAN_EXTRA_ACTIVE', class_exists( 'Ocean_Extra' ) );
+		define( 'OCEANWP_STICKY_HEADER_ACTIVE', class_exists( 'Ocean_Sticky_Header' ) );
+		define( 'OCEANWP_STICKY_FOOTER_ACTIVE', class_exists( 'Ocean_Sticky_Footer' ) );
 		define( 'OCEANWP_ECOMM_ACTIVE', class_exists( 'Ocean_eCommerce' ) );
 		define( 'OCEANWP_ELEMENTOR_ACTIVE', class_exists( 'Elementor\Plugin' ) );
 		define( 'OCEANWP_BEAVER_BUILDER_ACTIVE', class_exists( 'FLBuilder' ) );
