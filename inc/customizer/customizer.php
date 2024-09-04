@@ -188,7 +188,7 @@ class OceanWP_Customizer_Init {
 
 						$wp_customize->add_setting(
 							$setting_arg_data['id'],
-							$setting_arg_data['attr']
+							isset($setting_arg_data['attr']) ? $setting_arg_data['attr'] : []
 						);
 
 						$control_args['settings'][$setting_arg_key] = $setting_arg_data['id'];

@@ -9,13 +9,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-29T06:10:06+00:00\n"
+"POT-Creation-Date: 2024-09-04T04:47:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: oceanwp\n"
 
 #. Theme Name of the theme
 #. Author of the theme
+#: C:/laragon/www/owp.ws/wp-content/themes/oceanwp/style.css
 #: inc/helpers.php:3927
 #: inc/helpers.php:4989
 #: inc/helpers.php:5007
@@ -24,14 +25,17 @@ msgid "OceanWP"
 msgstr ""
 
 #. Theme URI of the theme
+#: C:/laragon/www/owp.ws/wp-content/themes/oceanwp/style.css
 msgid "https://oceanwp.org/"
 msgstr ""
 
 #. Description of the theme
+#: C:/laragon/www/owp.ws/wp-content/themes/oceanwp/style.css
 msgid "OceanWP is the perfect theme for your project. Lightweight and highly extendable, it will enable you to create almost any type of website such a blog, portfolio, business website and WooCommerce storefront with a beautiful & professional design. Very fast, responsive, RTL & translation ready, best SEO practices, unique WooCommerce features to increase conversion and much more. You can even edit the settings on tablet & mobile so your site looks good on every device. Work with the most popular page builders as Elementor, Beaver Builder, Brizy, Visual Composer, Divi, SiteOrigin, etc... Developers will love his extensible codebase making it a joy to customize and extend. Best friend of Elementor & WooCommerce. Looking for a Multi-Purpose theme? Look no further! Check the demos to realize that it's the only theme you will ever need: https://oceanwp.org/demos/"
 msgstr ""
 
 #. Author URI of the theme
+#: C:/laragon/www/owp.ws/wp-content/themes/oceanwp/style.css
 msgid "https://oceanwp.org/about-oceanwp/"
 msgstr ""
 
