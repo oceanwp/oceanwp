@@ -149,7 +149,7 @@ class OceanWP_Customizer_Init {
 			} else {
 
 				$setting_args = [
-					'transport' => $option_data['transport'],
+					'transport' => isset($option_data['transport']) ? $option_data['transport'] : 'postMessage',
 				];
 
 				if (isset($option_data['default'])) {

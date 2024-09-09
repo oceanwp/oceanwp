@@ -4644,7 +4644,7 @@ $options = [
 				'priority'        => 10,
 				'top'             => 20,
 				'bottom'          => 20,
-				'active_callback' => 'ocean_cac_header_social_menu',
+				'active_callback' => 'oceanwp_cac_has_menu_social',
 			],
 
 			// 'ocean_header_social_menu_default_section' => [
@@ -4667,7 +4667,7 @@ $options = [
 				'priority'          => 10,
 				'hideLabel'         => false,
 				'wrap'              => false,
-				'active_callback'   => 'ocean_cac_header_social_menu',
+				'active_callback'   => 'oceanwp_cac_has_menu_social',
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
 					'blank' => [
@@ -4692,7 +4692,7 @@ $options = [
 				'priority'          => 10,
 				'hideLabel'         => false,
 				'wrap'              => false,
-				'active_callback'   => 'ocean_cac_header_social_menu',
+				'active_callback'   => 'oceanwp_cac_has_menu_social',
 				'sanitize_callback' => 'sanitize_key',
 				'choices'           => [
 					'simple' => [
@@ -4746,7 +4746,7 @@ $options = [
 						'min'               => 1,
 						'max'               => 100,
 						'step'              => 1,
-						'active_callback'   => 'ocean_cac_header_social_menu',
+						'active_callback'   => 'oceanwp_cac_has_menu_social',
 						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
 						'setting_args'      => [
 							'desktop' => [
@@ -4799,7 +4799,7 @@ $options = [
 						'min'               => 1,
 						'max'               => 25,
 						'step'              => 1,
-						'active_callback'   => 'ocean_cac_header_social_menu',
+						'active_callback'   => 'oceanwp_cac_has_menu_social',
 						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
 						'setting_args'      => [
 							'desktop' => [
@@ -4822,7 +4822,7 @@ $options = [
 						'transport'       => 'postMessage',
 						'priority'        => 10,
 						'top'             => 1,
-						'active_callback' => 'ocean_cac_header_social_menu',
+						'active_callback' => 'oceanwp_cac_has_menu_social',
 					],
 
 					'ocean_menu_social_margin' => [
@@ -4836,7 +4836,7 @@ $options = [
 						'isType'          => 'margin',
 						'isTop'           => false,
 						'isBottom'        => false,
-						'active_callback' => 'ocean_cac_header_social_menu',
+						'active_callback' => 'oceanwp_cac_has_menu_social',
 						'setting_args'    => [
 							'spacingRight' => [
 								'id'    => 'ocean_menu_social_right_margin',
@@ -5083,7 +5083,7 @@ $options = [
 						'section'         => 'ocean_header_default_social_icon_setting_section',
 						'transport'       => 'postMessage',
 						'priority'        => 10,
-						'active_callback' => 'ocean_cac_header_social_menu',
+						'active_callback' => 'oceanwp_cac_has_menu_social',
 					]
 				]
 			],
@@ -5095,7 +5095,7 @@ $options = [
 				'priority'        => 10,
 				'top'             => 10,
 				'bottom'          => 10,
-				'active_callback' => 'ocean_cac_header_social_menu',
+				'active_callback' => 'oceanwp_cac_has_menu_social',
 			],
 
 			'ocean_header_social_menu_links_section' => [
@@ -5113,7 +5113,7 @@ $options = [
 						'transport'         => 'postMessage',
 						'priority'          => 10,
 						'hideLabel'         => false,
-						'active_callback'   => 'ocean_cac_header_social_menu',
+						'active_callback'   => 'oceanwp_cac_has_menu_social',
 						'social_setting_id' => 'ocean_menu_social_profiles',
 						'social_profiles'   => oceanwp_social_options()
 					],
@@ -5125,7 +5125,7 @@ $options = [
 						'section'         => 'ocean_header_social_menu_links_section',
 						'transport'       => 'postMessage',
 						'priority'        => 10,
-						'active_callback' => 'ocean_cac_header_social_menu',
+						'active_callback' => 'oceanwp_cac_has_menu_social',
 					]
 				]
 			],
@@ -5138,7 +5138,7 @@ $options = [
 				'priority' => 10,
 				'top' => 20,
 				'bottom' => 20,
-				'active_callback' => 'ocean_cac_header_social_menu',
+				'active_callback' => 'oceanwp_cac_has_menu_social',
 			],
 
 			'ocean_header_social_menu_custom_template_section' => [
@@ -5156,7 +5156,7 @@ $options = [
 						'class' => 'description',
 						'transport' => 'postMessage',
 						'priority' => 10,
-						'active_callback' => 'ocean_cac_header_social_menu',
+						'active_callback' => 'oceanwp_cac_has_menu_social',
 					],
 
 					'ocean_menu_social_template' => [
@@ -5168,7 +5168,7 @@ $options = [
 						'priority' => 10,
 						'hideLabel' => false,
 						'multiple' => false,
-						'active_callback' => 'ocean_cac_header_social_menu',
+						'active_callback' => 'oceanwp_cac_has_menu_social',
 						'sanitize_callback' => 'sanitize_key',
 						'choices' => oceanwp_library_template_choices(),
 					],
@@ -5180,7 +5180,7 @@ $options = [
 						'section'         => 'ocean_header_social_menu_custom_template_section',
 						'transport'       => 'postMessage',
 						'priority'        => 10,
-						'active_callback' => 'ocean_cac_header_social_menu',
+						'active_callback' => 'oceanwp_cac_has_menu_social',
 					]
 
 				]

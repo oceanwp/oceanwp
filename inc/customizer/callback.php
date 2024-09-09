@@ -293,7 +293,7 @@ function ocean_cac_header_search_overlay() {
 	}
 }
 
-function ocean_cac_header_social_menu() {
+function oceanwp_cac_has_menu_social() {
 	if ( true === get_theme_mod( 'ocean_menu_social', false ) ) {
 		return true;
 	} else {
@@ -669,7 +669,7 @@ function oceanwp_cac_is_woo_default_products_style() {
 	}
 }
 
-function oceanwp_cac_is_woo_hover_products_style() {
+function oceanwp_cac_has_woo_hover_products_style() {
 	if ( 'hover' == get_theme_mod( 'ocean_woo_products_style', 'default' ) ) {
 		return true;
 	} else {

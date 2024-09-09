@@ -489,15 +489,6 @@ $options = [
 				]
 			],
 
-			'ocean_divider_for_woo_store_notice_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'woocommerce_store_notice',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
-			],
-
 			'ocean_content_for_woo_store_notice_need_help_link' => [
 				'type' => 'ocean-content',
 				'isContent' => ocean_render_content_need_help(),
@@ -652,15 +643,6 @@ $options = [
 				'priority' => 10,
 				'hideLabel' => false,
 				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-			],
-
-			'ocean_divider_for_woo_general_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_woocommerce_general',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
 			],
 
 			'ocean_content_for_woo_general_need_help_link' => [
@@ -1048,16 +1030,6 @@ $options = [
 								],
 							],
 						]
-					],
-
-					'ocean_divider_for_woo_menu_cart_bag_style_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_menu_cart_bag_style_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10,
-						'active_callback' => 'oceanwp_cac_is_woo_bag_style',
 					],
 
 					'ocean_content_for_woo_menu_cart_bag_style_need_help_link' => [
@@ -1689,15 +1661,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_woo_cart_dropdown_styling_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_cart_dropdown_styling_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_woo_cart_dropdown_styling_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -1846,15 +1809,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_woo_mobile_cart_sidebar_styling_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_mobile_cart_sidebar_styling_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_woo_mobile_cart_sidebar_styling_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -1864,15 +1818,6 @@ $options = [
 						'priority' => 10,
 					],
 				]
-			],
-
-			'ocean_divider_for_woo_menu_cart_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_woocommerce_menu_cart',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10
 			],
 
 			'ocean_content_for_woo_menu_cart_need_help_link' => [
@@ -2360,15 +2305,6 @@ $options = [
 								],
 							]
 						]
-					],
-
-					'ocean_divider_for_woo_archives_products_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_archives_products_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
 					],
 
 					'ocean_content_for_woo_archives_products_need_help_link' => [
@@ -3705,7 +3641,7 @@ $options = [
 						'hideLabel' => false,
 						'showAlpha' => true,
 						'showPalette' => true,
-						'active_callback' => 'oceanwp_cac_is_woo_hover_products_style',
+						'active_callback' => 'oceanwp_cac_has_woo_hover_products_style',
 						'sanitize_callback' => 'wp_kses_post',
 						'setting_args' => [
 							'normal' => [
@@ -3732,7 +3668,7 @@ $options = [
 						'hideLabel' => false,
 						'showAlpha' => true,
 						'showPalette' => true,
-						'active_callback' => 'oceanwp_cac_is_woo_hover_products_style',
+						'active_callback' => 'oceanwp_cac_has_woo_hover_products_style',
 						'sanitize_callback' => 'wp_kses_post',
 						'setting_args' => [
 							'normal' => [
@@ -3771,7 +3707,7 @@ $options = [
 						'hideLabel' => false,
 						'showAlpha' => true,
 						'showPalette' => true,
-						'active_callback' => 'oceanwp_cac_is_woo_hover_products_style',
+						'active_callback' => 'oceanwp_cac_has_woo_hover_products_style',
 						'sanitize_callback' => 'wp_kses_post',
 						'setting_args' => [
 							'normal' => [
@@ -3810,7 +3746,7 @@ $options = [
 						'hideLabel' => false,
 						'showAlpha' => true,
 						'showPalette' => true,
-						'active_callback' => 'oceanwp_cac_is_woo_hover_products_style',
+						'active_callback' => 'oceanwp_cac_has_woo_hover_products_style',
 						'sanitize_callback' => 'wp_kses_post',
 						'setting_args' => [
 							'normal' => [
@@ -3849,7 +3785,7 @@ $options = [
 						'hideLabel' => false,
 						'showAlpha' => true,
 						'showPalette' => true,
-						'active_callback' => 'oceanwp_cac_is_woo_hover_products_style',
+						'active_callback' => 'oceanwp_cac_has_woo_hover_products_style',
 						'sanitize_callback' => 'wp_kses_post',
 						'setting_args' => [
 							'normal' => [
@@ -4114,15 +4050,6 @@ $options = [
 								]
 							],
 
-							'ocean_divider_for_woo_archives_additional_styling_addtocart_need_help_link' => [
-								'type' => 'ocean-divider',
-								'section' => 'ocean_woocommerce_archives_additional_styling_addtocart_section',
-								'transport' => 'postMessage',
-								'priority' => 10,
-								'top' => 10,
-								'bottom' => 10
-							],
-
 							'ocean_content_for_woo_archives_additional_styling_addtocart_need_help_link' => [
 								'type' => 'ocean-content',
 								'isContent' => ocean_render_content_need_help(),
@@ -4358,15 +4285,6 @@ $options = [
 								]
 							],
 
-							'ocean_divider_for_woo_archives_additional_styling_quick_view_need_help_link' => [
-								'type' => 'ocean-divider',
-								'section' => 'ocean_woocommerce_archives_additional_styling_quick_view_section',
-								'transport' => 'postMessage',
-								'priority' => 10,
-								'top' => 10,
-								'bottom' => 10
-							],
-
 							'ocean_content_for_woo_archives_additional_styling_quick_view_need_help_link' => [
 								'type' => 'ocean-content',
 								'isContent' => ocean_render_content_need_help(),
@@ -4376,15 +4294,6 @@ $options = [
 								'priority' => 10,
 							],
 						]
-					],
-
-					'ocean_divider_for_woo_archives_additional_styling_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_archives_additional_styling_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 20,
-						'bottom' => 10
 					],
 
 					'ocean_content_for_woo_archives_additional_styling_need_help_link' => [
@@ -4694,15 +4603,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_woo_archives_shop_conditional_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_archives_shop_conditional_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_woo_archives_shop_conditional_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -5006,15 +4906,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_woo_archives_toolbar_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_archives_toolbar_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_woo_archives_toolbar_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -5251,15 +5142,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_woo_archives_offcanvas_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_archives_offcanvas_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_woo_archives_offcanvas_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -5270,10 +5152,6 @@ $options = [
 					],
 				]
 			],
-
-
-
-
 
 			'ocean_spacer_for_woo_archive_shop_pagination_section' => [
 				'type' => 'ocean-spacer',
@@ -5368,15 +5246,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_woo_archives_pagination_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_archives_pagination_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_woo_archives_pagination_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -5421,15 +5290,6 @@ $options = [
 						'content' => esc_html__('No', 'oceanwp'),
 					]
 				]
-			],
-
-			'ocean_divider_for_woo_archives_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_woocommerce_archives',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
 			],
 
 			'ocean_content_for_woo_archives_need_help_link' => [
@@ -5797,15 +5657,6 @@ $options = [
 								],
 							],
 						]
-					],
-
-					'ocean_divider_for_woo_single_additional_styling_product_nav_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_single_additional_styling_product_nav_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
 					],
 
 					'ocean_content_for_woo_single_additional_styling_product_nav_need_help_link' => [
@@ -7425,15 +7276,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_woo_single_product_conditional_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_single_product_conditional_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_woo_single_product_conditional_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -7687,15 +7529,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_woo_single_product_tab_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_single_product_tab_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_woo_single_product_tab_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -7876,15 +7709,6 @@ $options = [
 								],
 							]
 						]
-					],
-
-					'ocean_divider_for_woo_single_product_upsell_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_single_product_upsell_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
 					],
 
 					'ocean_content_for_woo_single_product_upsell_need_help_link' => [
@@ -8259,15 +8083,6 @@ $options = [
 						]
 					],
 
-					'ocean_divider_for_woo_single_product_floating_bar_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_single_product_floating_bar_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10
-					],
-
 					'ocean_content_for_woo_single_product_floating_bar_need_help_link' => [
 						'type' => 'ocean-content',
 						'isContent' => ocean_render_content_need_help(),
@@ -8277,15 +8092,6 @@ $options = [
 						'priority' => 10,
 					],
 				]
-			],
-
-			'ocean_divider_for_woo_single_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_woocommerce_single',
-				'transport' => 'postMessage',
-				'priority' => 50,
-				'top' => 20,
-				'bottom' => 10
 			],
 
 			'ocean_content_for_woo_single_need_help_link' => [
@@ -8323,15 +8129,6 @@ $options = [
 				'priority' => 10,
 				'top' => 1,
 				'bottom' => 1
-			],
-
-			'ocean_divider_for_woo_product_image_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'woocommerce_product_images',
-				'transport' => 'postMessage',
-				'priority' => 50,
-				'top' => 10,
-				'bottom' => 10
 			],
 
 			'ocean_content_for_woo_product_image_need_help_link' => [
@@ -8599,15 +8396,6 @@ $options = [
 						],
 					]
 				]
-			],
-
-			'ocean_divider_for_woo_cart_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_woocommerce_cart',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
 			],
 
 			'ocean_content_for_woo_cart_need_help_link' => [
@@ -8917,16 +8705,6 @@ $options = [
 								],
 							],
 						]
-					],
-
-					'ocean_divider_for_woo_checkout_multistep_need_help_link' => [
-						'type' => 'ocean-divider',
-						'section' => 'ocean_woocommerce_multistep_checkout_section',
-						'transport' => 'postMessage',
-						'priority' => 10,
-						'top' => 10,
-						'bottom' => 10,
-						'active_callback' => 'oceanwp_cac_is_woo_multistep_checkout',
 					],
 
 					'ocean_content_for_woo_checkout_multistep_need_help_link' => [
@@ -9332,15 +9110,6 @@ $options = [
 						],
 					],
 				]
-			],
-
-			'ocean_divider_for_woo_checkout_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_woocommerce_checkout',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 10,
-				'bottom' => 10
 			],
 
 			'ocean_content_for_woo_checkout_need_help_link' => [
@@ -9957,15 +9726,6 @@ $options = [
 				]
 			],
 
-			'ocean_divider_for_woo_styling_need_help_link' => [
-				'type' => 'ocean-divider',
-				'section' => 'ocean_woocommerce_styling',
-				'transport' => 'postMessage',
-				'priority' => 10,
-				'top' => 20,
-				'bottom' => 10
-			],
-
 			'ocean_content_for_woo_styling_need_help_link' => [
 				'type' => 'ocean-content',
 				'isContent' => ocean_render_content_need_help(),
@@ -9975,15 +9735,6 @@ $options = [
 				'priority' => 10,
 			],
 		]
-	],
-
-	'ocean_divider_for_woo_need_help_link' => [
-		'type' => 'ocean-divider',
-		'section' => 'ocean_woocommerce_settings',
-		'transport' => 'postMessage',
-		'priority' => 10,
-		'top' => 10,
-		'bottom' => 10
 	],
 
 	'ocean_content_for_woo_need_help_link' => [
