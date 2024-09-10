@@ -2,20 +2,21 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 3.5.8\n"
+"Project-Id-Version: OceanWP 3.5.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-05T07:25:06+00:00\n"
+"POT-Creation-Date: 2024-09-10T06:31:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.8.1\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: oceanwp\n"
 
 #. Theme Name of the theme
 #. Author of the theme
+#: style.css
 #: inc/helpers.php:3882
 #: inc/helpers.php:4944
 #: inc/helpers.php:4962
@@ -24,14 +25,17 @@ msgid "OceanWP"
 msgstr ""
 
 #. Theme URI of the theme
+#: style.css
 msgid "https://oceanwp.org/"
 msgstr ""
 
 #. Description of the theme
+#: style.css
 msgid "OceanWP is the perfect theme for your project. Lightweight and highly extendable, it will enable you to create almost any type of website such a blog, portfolio, business website and WooCommerce storefront with a beautiful & professional design. Very fast, responsive, RTL & translation ready, best SEO practices, unique WooCommerce features to increase conversion and much more. You can even edit the settings on tablet & mobile so your site looks good on every device. Work with the most popular page builders as Elementor, Beaver Builder, Brizy, Visual Composer, Divi, SiteOrigin, etc... Developers will love his extensible codebase making it a joy to customize and extend. Best friend of Elementor & WooCommerce. Looking for a Multi-Purpose theme? Look no further! Check the demos to realize that it's the only theme you will ever need: https://oceanwp.org/demos/"
 msgstr ""
 
 #. Author URI of the theme
+#: style.css
 msgid "https://oceanwp.org/about-oceanwp/"
 msgstr ""
 
@@ -1322,6 +1326,7 @@ msgstr ""
 
 #: inc/customizer/settings/blog.php:1268
 #: inc/helpers.php:3192
+#: partials/single/tags.php:22
 msgid "Tags"
 msgstr ""
 
@@ -7404,10 +7409,6 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: partials/single/tags.php:22
-msgid "Tags: "
-msgstr ""
-
 #: sidebar-left.php:12
 msgid "Secondary Sidebar"
 msgstr ""
@@ -7420,15 +7421,16 @@ msgstr ""
 msgid "Landing Page"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:73
+#. translators: %s is the product name
+#: woocommerce/cart/mini-cart.php:79
 msgid "Remove this item"
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:113
+#: woocommerce/cart/mini-cart.php:119
 msgid "No products in the cart."
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:122
+#: woocommerce/cart/mini-cart.php:128
 msgid "Add Products"
 msgstr ""
 
