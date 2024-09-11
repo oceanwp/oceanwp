@@ -266,6 +266,9 @@ node_modules/
 # build folder
 build/
 
+# src folder
+inc/customizer/src/
+
 # Theme files
 assets/fonts/owp-icons/files/
 

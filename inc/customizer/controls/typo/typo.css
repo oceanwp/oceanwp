@@ -1,9 +1,0 @@
-.customize-control-oceanwp-typo ul.oceanwp-typo-wrap { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap; margin: 0 -10px; }
-.customize-control-oceanwp-typo ul.oceanwp-typo-wrap li { width: 50%; padding: 0 10px; margin: 0 0 15px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-.customize-control-oceanwp-typo ul.oceanwp-typo-wrap li.typography-font-family { width: 100%; }
-.customize-control-oceanwp-typo ul.oceanwp-typo-wrap li span.label { display: block; margin: 0 0 6px; }
-
-@media only screen and (max-width: 480px) {
-	.customize-control-oceanwp-typo ul.oceanwp-typo-wrap { margin: 0; }
-	.customize-control-oceanwp-typo ul.oceanwp-typo-wrap li { width: 100%; padding: 0; }
-}

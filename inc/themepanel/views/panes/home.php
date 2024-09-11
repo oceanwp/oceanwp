@@ -26,37 +26,41 @@ function owp_get_customizer_options() {
 			'icon'  => 'favicon.png',
 			'customizer_autofocus' => 'blogname',
 		),
-		'ocean_primary_color'    => array(
+		'ocean_colors'    => array(
 			'label' => esc_html__( 'Primary Colors', 'oceanwp' ),
 			'desc'  => esc_html__( 'Set primary color and hover color for main styling.', 'oceanwp' ),
 			'icon'  => 'primary-colors.png',
-			'customizer_autofocus' => 'ocean_customzer_styling',
+			'section' => true,
 		),
-		'ocean_typography_panel' => array(
+		'ocean_typography' => array(
 			'label' => esc_html__( 'Typography', 'oceanwp' ),
 			'desc'  => esc_html__( 'Pick typography settings for any part of the website.', 'oceanwp' ),
 			'icon'  => 'typography.png',
-			'panel' => true,
+			'section' => true,
 		),
-		'ocean_top_bar'          => array(
+		'ocean_topbar'          => array(
 			'label' => esc_html__( 'Top Bar', 'oceanwp' ),
 			'desc'  => esc_html__( 'Enable or disable, add social media, menu and more.', 'oceanwp' ),
 			'icon'  => 'top-bar.png',
+			'section' => true,
 		),
-		'ocean_header_style'     => array(
+		'ocean_header'     => array(
 			'label' => esc_html__( 'Header', 'oceanwp' ),
 			'desc'  => esc_html__( 'Choose main website header style, adjust colors, padding...', 'oceanwp' ),
 			'icon'  => 'header.png',
+			'section' => true,
 		),
 		'ocean_footer_widgets'   => array(
 			'label' => esc_html__( 'Footer Widgets', 'oceanwp' ),
 			'desc'  => esc_html__( 'Select footer widgets or a custom template for website footer.', 'oceanwp' ),
 			'icon'  => 'footer-widgets.png',
+			'section' => true,
 		),
 		'ocean_footer_bottom'    => array(
-			'label' => esc_html__( 'Footer Bottom', 'oceanwp' ),
+			'label' => esc_html__( 'Footer Copyright', 'oceanwp' ),
 			'desc'  => esc_html__( 'Disable or adjust the footer copyright area of your website.', 'oceanwp' ),
 			'icon'  => 'footer-bottom.png',
+			'section' => true,
 		),
 	);
 

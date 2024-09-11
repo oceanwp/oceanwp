@@ -25,7 +25,7 @@ get_header(); ?>
 					?>
 					<img class="logo-search" src="<?php echo esc_url( $logo_search ); ?>" alt="<?php esc_attr_e( 'Search Logo', 'oceanwp' ); ?>" title="<?php esc_attr_e( 'Search Logo', 'oceanwp' ); ?>" />
 				<?php } ?>
-			
+
 				<?php do_action( 'ocean_before_content_inner' ); ?>
 
 				<?php if ( have_posts() ) : ?>

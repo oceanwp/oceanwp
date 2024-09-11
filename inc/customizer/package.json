@@ -1,0 +1,28 @@
+{
+    "name": "oceanwp-customizer",
+    "version": "1.0.0",
+    "description": "OceanWP Customizer",
+    "scripts": {
+        "build": "wp-scripts build src/index.js src/live-preview --output-path=assets/dist",
+        "start": "wp-scripts start src/index.js src/live-preview --output-path=assets/dist",
+        "lint:js": "wp-scripts lint-js",
+        "lint:pkg-json": "wp-scripts lint-pkg-json"
+    },
+    "dependencies": {
+        "array-move": "^4.0.0",
+        "classnames": "^2.3.2",
+        "react-easy-sort": "^1.5.2",
+        "react-select": "^5.7.3"
+    },
+    "devDependencies": {
+        "@wordpress/block-editor": "^12.4.0",
+        "@wordpress/components": "^25.1.0",
+        "@wordpress/compose": "^6.12.0",
+        "@wordpress/data": "^9.5.0",
+        "@wordpress/element": "^5.12.0",
+        "@wordpress/hooks": "^3.35.0",
+        "@wordpress/i18n": "^4.35.0",
+        "@wordpress/scripts": "^26.6.0",
+        "use-debounce": "^9.0.4"
+    }
+}
