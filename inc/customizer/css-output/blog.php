@@ -29,9 +29,13 @@ class OceanWP_Customize_Blog_CSS {
 
 		// Global vars.
 		$bs_archives_content_width      = get_theme_mod( 'ocean_blog_archives_both_sidebars_content_width' );
+		$bs_archives_content_width_unit = get_theme_mod( 'ocean_blog_archives_both_sidebars_content_width_unit', '%' );
 		$bs_archives_sidebars_width     = get_theme_mod( 'ocean_blog_archives_both_sidebars_sidebars_width' );
-		$bs_single_content_width        = get_theme_mod( 'ocean_blog_single_both_sidebars_content_width' );
+		$bs_archives_sidebars_width_unit = get_theme_mod( 'ocean_blog_archives_both_sidebars_sidebars_width_unit', '%'  );
+		$bs_single_content_width_unit   = get_theme_mod( 'ocean_blog_single_both_sidebars_content_width' );
+		$bs_single_content_width_unit   = get_theme_mod( 'ocean_blog_single_both_sidebars_content_width_unit', '%'  );
 		$bs_single_sidebars_width       = get_theme_mod( 'ocean_blog_single_both_sidebars_sidebars_width' );
+		$bs_single_sidebars_width_unit  = get_theme_mod( 'ocean_blog_single_both_sidebars_sidebars_width_unit', '%'  );
 		$thumbnail_category_color       = get_theme_mod( 'ocean_blog_thumbnail_category_color', '#13aff0' );
 		$thumbnail_category_hover_color = get_theme_mod( 'ocean_blog_thumbnail_category_hover_color', '#333333' );
 		$thumbnail_comments_color       = get_theme_mod( 'ocean_blog_thumbnail_comments_color', '#ababab' );
@@ -68,11 +72,11 @@ class OceanWP_Customize_Blog_CSS {
 				$css .=
 					'@media only screen and (min-width: 960px){
 						body.blog.content-both-sidebars .content-area,
-						body.archive.content-both-sidebars .content-area {width: ' . $bs_archives_content_width . '%;}
+						body.archive.content-both-sidebars .content-area {width: ' . $bs_archives_content_width . $bs_archives_content_width_unit . ';}
 						body.blog.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
 						body.blog.content-both-sidebars.ssc-style .widget-area,
 						body.archive.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
-						body.archive.content-both-sidebars.ssc-style .widget-area {left: -' . $bs_archives_content_width . '%;}
+						body.archive.content-both-sidebars.ssc-style .widget-area {left: -' . $bs_archives_content_width . $bs_archives_content_width_unit .';}
 					}';
 			}
 
@@ -81,11 +85,11 @@ class OceanWP_Customize_Blog_CSS {
 				$css .=
 					'@media only screen and (min-width: 960px){
 						body.blog.content-both-sidebars .widget-area,
-						body.archive.content-both-sidebars .widget-area{width:' . $bs_archives_sidebars_width . '%;}
+						body.archive.content-both-sidebars .widget-area{width:' . $bs_archives_sidebars_width . $bs_archives_sidebars_width . ';}
 						body.blog.content-both-sidebars.scs-style .content-area,
-						body.archive.content-both-sidebars.scs-style .content-area{left:' . $bs_archives_sidebars_width . '%;}
+						body.archive.content-both-sidebars.scs-style .content-area{left:' . $bs_archives_sidebars_width . $bs_archives_sidebars_width . ';}
 						body.blog.content-both-sidebars.ssc-style .content-area,
-						body.archive.content-both-sidebars.ssc-style .content-area{left:' . $bs_archives_sidebars_width * 2 . '%;}
+						body.archive.content-both-sidebars.ssc-style .content-area{left:' . $bs_archives_sidebars_width * 2 . $bs_archives_sidebars_width .';}
 					}';
 			}
 		}
@@ -97,9 +101,9 @@ class OceanWP_Customize_Blog_CSS {
 			if ( ! empty( $bs_single_content_width ) ) {
 				$css .=
 					'@media only screen and (min-width: 960px){
-						body.single-post.content-both-sidebars .content-area {width: ' . $bs_single_content_width . '%;}
+						body.single-post.content-both-sidebars .content-area {width: ' . $bs_single_content_width . $bs_single_content_width_unit . ';}
 						body.single-post.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
-						body.single-post.content-both-sidebars.ssc-style .widget-area {left: -' . $bs_single_content_width . '%;}
+						body.single-post.content-both-sidebars.ssc-style .widget-area {left: -' . $bs_single_content_width . $bs_single_content_width_unit .';}
 					}';
 			}
 
@@ -107,9 +111,9 @@ class OceanWP_Customize_Blog_CSS {
 			if ( ! empty( $bs_single_sidebars_width ) ) {
 				$css .=
 					'@media only screen and (min-width: 960px){
-						body.single-post.content-both-sidebars .widget-area{width:' . $bs_single_sidebars_width . '%;}
-						body.single-post.content-both-sidebars.scs-style .content-area{left:' . $bs_single_sidebars_width . '%;}
-						body.single-post.content-both-sidebars.ssc-style .content-area{left:' . $bs_single_sidebars_width * 2 . '%;}
+						body.single-post.content-both-sidebars .widget-area{width:' . $bs_single_sidebars_width . $bs_single_sidebars_width_unit . ';}
+						body.single-post.content-both-sidebars.scs-style .content-area{left:' . $bs_single_sidebars_width . $bs_single_sidebars_width_unit . ';}
+						body.single-post.content-both-sidebars.ssc-style .content-area{left:' . $bs_single_sidebars_width * 2 . $bs_single_sidebars_width_unit . ';}
 					}';
 			}
 		}

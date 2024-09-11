@@ -259,20 +259,28 @@ $options = [
 			],
 
 			'ocean_page_single_sidebar_order' => [
-				'type' => 'ocean-select',
+				'type' => 'ocean-buttons',
 				'label' => esc_html__( 'Responsive Setting: Content Order Layout', 'oceanwp' ),
 				'section' => 'ocean_section_page_responsive_section',
 				'transport' => 'refresh',
 				'default' => 'content-sidebar',
 				'priority' => 10,
 				'hideLabel' => false,
-				'multiple' => false,
+				'wrap' => false,
 				'active_callback' => 'oceanwp_cac_has_page_single_rl_layout',
 				'sanitize_callback' => 'sanitize_key',
-				'choices'           => [
-					'content-sidebar' => esc_html__( 'Content / Sidebar', 'oceanwp' ),
-					'sidebar-content' => esc_html__( 'Sidebar / Content', 'oceanwp' ),
-				],
+				'choices' => [
+					'content-sidebar' => [
+						'id'      => 'content-sidebar',
+						'label'   => esc_html__( 'After Content', 'oceanwp' ),
+						'content' => esc_html__( 'After Content', 'oceanwp' ),
+					],
+					'sidebar-content'  => [
+						'id'      => 'sidebar-content',
+						'label'   => esc_html__( 'Before Content', 'oceanwp' ),
+						'content' => esc_html__( 'Before Content', 'oceanwp' ),
+					]
+				]
 			],
 
 			'ocean_page_responsive_section_need_help' => [

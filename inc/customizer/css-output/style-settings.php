@@ -176,6 +176,18 @@ class OceanWP_Style_Settings_CSS {
 		$scroll_top_color              = get_theme_mod( 'ocean_scroll_top_color', '#ffffff' );
 		$scroll_top_color_hover        = get_theme_mod( 'ocean_scroll_top_color_hover', '#ffffff' );
 
+		$page_layout            = get_theme_mod( 'ocean_page_single_layout', 'right-sidebar' );
+		$bs_page_content_width  = get_theme_mod( 'ocean_page_single_both_sidebars_content_width' );
+		$bs_page_content_width_unit = get_theme_mod( 'ocean_page_single_both_sidebars_content_width_unit', '%' );
+		$bs_page_sidebars_width = get_theme_mod( 'ocean_page_single_both_sidebars_sidebars_width' );
+		$bs_page_sidebars_width_unit = get_theme_mod( 'ocean_page_single_both_sidebars_sidebars_width_unit', '%' );
+
+		$search_layout            = get_theme_mod( 'ocean_search_layout', 'right-sidebar' );
+		$bs_search_content_width  = get_theme_mod( 'ocean_search_both_sidebars_content_width' );
+		$bs_search_content_width_unit  = get_theme_mod( 'ocean_search_both_sidebars_content_width_unit', '%' );
+		$bs_search_sidebars_width = get_theme_mod( 'ocean_search_both_sidebars_sidebars_width' );
+		$bs_search_sidebars_width_unit = get_theme_mod( 'ocean_search_both_sidebars_sidebars_width_unit'. '%' );
+
 		$css = '';
 		$content_padding_css = '';
 
@@ -574,6 +586,55 @@ class OceanWP_Style_Settings_CSS {
 			$css .= '#scroll-top:hover{color:' . $scroll_top_color_hover . ';}';
 			$css .= '#scroll-top:hover .owp-icon use{stroke:' . $scroll_top_color . ';}';
 		}
+
+		// If page Both Sidebars layout.
+		if ( 'both-sidebars' == $page_layout ) {
+
+			// Both Sidebars layout page content width.
+			if ( ! empty( $bs_page_content_width ) ) {
+				$css .=
+					'@media only screen and (min-width: 960px){
+						body.page.content-both-sidebars .content-area {width: ' . $bs_page_content_width . $bs_page_content_width_unit .';}
+						body.page.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
+						body.page.content-both-sidebars.ssc-style .widget-area {left: -' . $bs_page_content_width . $bs_page_content_width_unit .';}
+					}';
+			}
+
+			// Both Sidebars layout page sidebars width.
+			if ( ! empty( $bs_page_sidebars_width ) ) {
+				$css .=
+					'@media only screen and (min-width: 960px){
+						body.page.content-both-sidebars .widget-area{width:' . $bs_page_sidebars_width . $bs_page_sidebars_width_unit . ';}
+						body.page.content-both-sidebars.scs-style .content-area{left:' . $bs_page_sidebars_width . $bs_page_sidebars_width_unit . ';}
+						body.page.content-both-sidebars.ssc-style .content-area{left:' . $bs_page_sidebars_width * 2 . $bs_page_sidebars_width_unit . ';}
+					}';
+			}
+		}
+
+		// If search Both Sidebars layout.
+		if ( 'both-sidebars' == $search_layout ) {
+
+			// Both Sidebars layout search content width.
+			if ( ! empty( $bs_search_content_width ) ) {
+				$css .=
+					'@media only screen and (min-width: 960px){
+						body.search-results.content-both-sidebars .content-area {width: ' . $bs_search_content_width . $bs_search_content_width_unit . ';}
+						body.search-results.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
+						body.search-results.content-both-sidebars.ssc-style .widget-area {left: -' . $bs_search_content_width . $bs_search_content_width_unit . ';}
+					}';
+			}
+
+			// Both Sidebars layout search sidebars width.
+			if ( ! empty( $bs_search_sidebars_width ) ) {
+				$css .=
+					'@media only screen and (min-width: 960px){
+						body.search-results.content-both-sidebars .widget-area{width:' . $bs_search_sidebars_width . $bs_search_content_width_unit . ';}
+						body.search-results.content-both-sidebars.scs-style .content-area{left:' . $bs_search_sidebars_width . $bs_search_content_width_unit . ';}
+						body.search-results.content-both-sidebars.ssc-style .content-area{left:' . $bs_search_sidebars_width * 2 . $bs_search_content_width_unit . ';}
+					}';
+			}
+		}
+
 
 		// Return CSS.
 		if ( ! empty( $css ) ) {

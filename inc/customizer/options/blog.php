@@ -108,7 +108,7 @@ $options = [
 						'transport'         => 'postMessage',
 						'priority'          => 10,
 						'hideLabel'         => false,
-						'isUnit'            => false,
+						'isUnit'            => true,
 						'isResponsive'      => false,
 						'min'               => 1,
 						'max'               => 100,
@@ -122,7 +122,15 @@ $options = [
 								'attr'  => [
 									'transport' => 'postMessage',
 								],
-							]
+							],
+							'unit' => [
+								'id'    => 'ocean_blog_archives_both_sidebars_content_width_unit',
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
+								'attr'  => [
+									'transport' => 'postMessage',
+									'default'   => '%',
+								],
+							],
 						]
 					],
 
@@ -133,7 +141,7 @@ $options = [
 						'transport'         => 'postMessage',
 						'priority'          => 10,
 						'hideLabel'         => false,
-						'isUnit'            => false,
+						'isUnit'            => true,
 						'isResponsive'      => false,
 						'min'               => 1,
 						'max'               => 100,
@@ -147,7 +155,15 @@ $options = [
 								'attr'  => [
 									'transport' => 'postMessage',
 								],
-							]
+							],
+							'unit' => [
+								'id'    => 'ocean_blog_archives_both_sidebars_sidebars_width_unit',
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
+								'attr'  => [
+									'transport' => 'postMessage',
+									'default'   => '%',
+								],
+							],
 						]
 					],
 
@@ -1946,7 +1962,7 @@ $options = [
 						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
 						'setting_args'      => [
 							'desktop' => [
-								'id'    => 'ocean_blog_archives_both_sidebars_content_width',
+								'id'    => 'ocean_blog_single_content_width',
 								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr'  => [
 									'transport' => 'postMessage',
@@ -1981,7 +1997,7 @@ $options = [
 						'transport'         => 'postMessage',
 						'priority'          => 10,
 						'hideLabel'         => false,
-						'isUnit'            => false,
+						'isUnit'            => true,
 						'isResponsive'      => false,
 						'min'               => 1,
 						'max'               => 100,
@@ -1995,7 +2011,15 @@ $options = [
 								'attr'  => [
 									'transport' => 'postMessage',
 								],
-							]
+							],
+							'unit' => [
+								'id'    => 'ocean_blog_single_both_sidebars_content_width_unit',
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
+								'attr'  => [
+									'transport' => 'postMessage',
+									'default'   => '%',
+								],
+							],
 						]
 					],
 
@@ -2006,7 +2030,7 @@ $options = [
 						'transport'         => 'postMessage',
 						'priority'          => 10,
 						'hideLabel'         => false,
-						'isUnit'            => false,
+						'isUnit'            => true,
 						'isResponsive'      => false,
 						'min'               => 1,
 						'max'               => 100,
@@ -2020,7 +2044,15 @@ $options = [
 								'attr'  => [
 									'transport' => 'postMessage',
 								],
-							]
+							],
+							'unit' => [
+								'id'    => 'ocean_blog_single_both_sidebars_sidebars_width_unit',
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
+								'attr'  => [
+									'transport' => 'postMessage',
+									'default'   => '%',
+								],
+							],
 						]
 					],
 
