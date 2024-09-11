@@ -500,6 +500,14 @@ function ocean_cac_blog_single_bs_layout() {
 	}
 }
 
+function ocean_cac_blog_single_fw_layout() {
+	if ( 'full-width' === get_theme_mod( 'ocean_blog_single_layout', 'right-sidebar' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function ocean_cac_blog_single_sidebar_layout() {
 	$layout = get_theme_mod( 'ocean_blog_single_layout', 'right-sidebar' );
 	if ( 'right-sidebar' == $layout
