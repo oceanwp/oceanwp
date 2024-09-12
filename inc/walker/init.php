@@ -68,7 +68,7 @@ class OceanWP_Nav_Walker {
 	public function add_custom_fields( $id, $item, $depth, $args ) { ?>
 		<p class="field-mega_template description description-wide">
 			<label for="edit-menu-item-mega_template-<?php echo esc_attr( $item->ID ); ?>">
-				<?php esc_html_e( 'Template', 'oceanwp' ); ?> | <small><?php esc_html_e( 'Theme Panel > My Library', 'oceanwp' ); ?></small>
+				<?php esc_html_e( 'Template', 'oceanwp' ); ?> | <small><?php esc_html_e( 'OceanWP > My Library', 'oceanwp' ); ?></small>
 				<select id="edit-menu-item-mega_template-<?php echo esc_attr( $item->ID ); ?>" class="widefat code edit-menu-item-custom" name="menu-item-mega_template[<?php echo esc_attr( $item->ID ); ?>]">
 					<option value="0"><?php esc_html_e( 'Select A Template', 'oceanwp' ); ?></option>
 					<?php $templates_list 	= get_posts( array( 'post_type' => 'oceanwp_library', 'numberposts' => -1, 'post_status' => 'publish' ) );
