@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2024.10.09_ - 3.6.0
+- **Updated**:: Compatibility: WooCommerce: Template version number for mini-cart.php
+
 ### _2024.08.05_ - 3.5.9
 - **Updated**:: WordPress version for compatibility.
 - **Fixed**:: Page Title: 'ocean_page_header_background_image' hook doesn't function with custom background image URL.
