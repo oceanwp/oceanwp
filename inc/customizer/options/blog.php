@@ -2531,6 +2531,431 @@ $options = [
 						]
 					],
 
+
+					'ocean_blog_single_title_bg_image_typo_and_colors' => [
+						'type' => 'ocean-title',
+						'label' => esc_html__( 'Typography and Colors', 'oceanwp' ),
+						'section' => 'ocean_blog_single_title_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 20,
+						'bottom' => 20,
+						'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+					],
+
+					'ocean_blog_single_title_bg_image_typography' => [
+						'id' => 'ocean_blog_single_title_bg_image_typography',
+						'type' => 'ocean-typography',
+						'label' => esc_html__('Page Title', 'oceanwp'),
+						'section' => 'ocean_blog_single_title_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'selector' => '.single .page-header.background-image-page-header .page-header-title',
+						'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+						'setting_args' => [
+							'fontFamily' => [
+								'id' => 'blog_single_title_bg_image_typography[font-family]',
+								'label' => esc_html__('Font Family', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontWeight' => [
+								'id' => 'blog_single_title_bg_image_typography[font-weight]',
+								'label' => esc_html__('Font Weight', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontWeightTablet' => [
+								'id' => 'heading_h5_tablet_typography[font-weight]',
+								'label' => esc_html__('Font Weight', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontWeightMobile' => [
+								'id' => 'heading_h5_mobile_typography[font-weight]',
+								'label' => esc_html__('Font Weight', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontSubset' => [
+								'id' => 'blog_single_title_bg_image_typography[font-subset]',
+								'label' => esc_html__('Font Subset', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontSize' => [
+								'id' => 'blog_single_title_bg_image_typography[font-size]',
+								'label' => esc_html__('Font Size', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontSizeTablet' => [
+								'id' => 'heading_h5_tablet_typography[font-size]',
+								'label' => esc_html__('Font Size', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontSizeMobile' => [
+								'id' => 'heading_h5_mobile_typography[font-size]',
+								'label' => esc_html__('Font Size', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontSizeUnit' => [
+								'id' => 'blog_single_title_bg_image_typography[font-size-unit]',
+								'label' => esc_html__('Unit', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => 'px'
+								],
+							],
+							'letterSpacing' => [
+								'id' => 'blog_single_title_bg_image_typography[letter-spacing]',
+								'label' => esc_html__('Letter Spacing', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'letterSpacingTablet' => [
+								'id' => 'heading_h5_tablet_typography[letter-spacing]',
+								'label' => esc_html__('Letter Spacing', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'letterSpacingMobile' => [
+								'id' => 'heading_h5_mobile_typography[letter-spacing]',
+								'label' => esc_html__('Letter Spacing', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'letterSpacingUnit' => [
+								'id' => 'blog_single_title_bg_image_typography[letter-spacing-unit]',
+								'label' => esc_html__('Unit', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => 'px'
+								],
+							],
+							'lineHeight' => [
+								'id' => 'blog_single_title_bg_image_typography[line-height]',
+								'label' => esc_html__('Line Height', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'lineHeightTablet' => [
+								'id' => 'heading_h5_tablet_typography[line-height]',
+								'label' => esc_html__('Line Height', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'lineHeightMobile' => [
+								'id' => 'heading_h5_mobile_typography[line-height]',
+								'label' => esc_html__('Line Height', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'lineHeightUnit' => [
+								'id' => 'blog_single_title_bg_image_typography[line-height-unit]',
+								'label' => esc_html__('Unit', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'textTransform' => [
+								'id' => 'blog_single_title_bg_image_typography[text-transform]',
+								'label' => esc_html__('Text Transform', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'textTransformTablet' => [
+								'id' => 'heading_h5_tablet_typography[text-transform]',
+								'label' => esc_html__('Text Transform', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'textTransformMobile' => [
+								'id' => 'heading_h5_mobile_typography[text-transform]',
+								'label' => esc_html__('Text Transform', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'textDecoration' => [
+								'id' => 'blog_single_title_bg_image_typography[text-decoration]',
+								'label' => esc_html__('Text Decoration', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+						]
+					],
+
+					'ocean_blog_single_title_bg_image_breadcrumb_typography' => [
+						'id' => 'ocean_blog_single_title_bg_image_breadcrumb_typography',
+						'type' => 'ocean-typography',
+						'label' => esc_html__('Page Title Breadcrumb', 'oceanwp'),
+						'section' => 'ocean_blog_single_title_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'selector' => '.single .background-image-page-header .site-breadcrumbs, .single .background-image-page-header .site-breadcrumbs a',
+						'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+						'setting_args' => [
+							'fontFamily' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[font-family]',
+								'label' => esc_html__('Font Family', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontWeight' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[font-weight]',
+								'label' => esc_html__('Font Weight', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontWeightTablet' => [
+								'id' => 'heading_h5_tablet_typography[font-weight]',
+								'label' => esc_html__('Font Weight', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontWeightMobile' => [
+								'id' => 'heading_h5_mobile_typography[font-weight]',
+								'label' => esc_html__('Font Weight', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontSubset' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[font-subset]',
+								'label' => esc_html__('Font Subset', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontSize' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[font-size]',
+								'label' => esc_html__('Font Size', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontSizeTablet' => [
+								'id' => 'heading_h5_tablet_typography[font-size]',
+								'label' => esc_html__('Font Size', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontSizeMobile' => [
+								'id' => 'heading_h5_mobile_typography[font-size]',
+								'label' => esc_html__('Font Size', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'fontSizeUnit' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[font-size-unit]',
+								'label' => esc_html__('Unit', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => 'px'
+								],
+							],
+							'letterSpacing' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[letter-spacing]',
+								'label' => esc_html__('Letter Spacing', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'letterSpacingTablet' => [
+								'id' => 'heading_h5_tablet_typography[letter-spacing]',
+								'label' => esc_html__('Letter Spacing', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'letterSpacingMobile' => [
+								'id' => 'heading_h5_mobile_typography[letter-spacing]',
+								'label' => esc_html__('Letter Spacing', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'letterSpacingUnit' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[letter-spacing-unit]',
+								'label' => esc_html__('Unit', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => 'px'
+								],
+							],
+							'lineHeight' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[line-height]',
+								'label' => esc_html__('Line Height', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'lineHeightTablet' => [
+								'id' => 'heading_h5_tablet_typography[line-height]',
+								'label' => esc_html__('Line Height', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'lineHeightMobile' => [
+								'id' => 'heading_h5_mobile_typography[line-height]',
+								'label' => esc_html__('Line Height', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'lineHeightUnit' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[line-height-unit]',
+								'label' => esc_html__('Unit', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'textTransform' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[text-transform]',
+								'label' => esc_html__('Text Transform', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'textTransformTablet' => [
+								'id' => 'heading_h5_tablet_typography[text-transform]',
+								'label' => esc_html__('Text Transform', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'textTransformMobile' => [
+								'id' => 'heading_h5_mobile_typography[text-transform]',
+								'label' => esc_html__('Text Transform', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+							'textDecoration' => [
+								'id' => 'blog_single_title_bg_image_breadcrumb_typography[text-decoration]',
+								'label' => esc_html__('Text Decoration', 'oceanwp'),
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+						]
+					],
+
+					'ocean_divider_after_blog_single_title_bg_image_breadcrumb_typography' => [
+						'type' => 'ocean-divider',
+						'section' => 'ocean_blog_single_title_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 1,
+						'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+					],
+
+					'ocean_blog_single_title_bg_image_title_color' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Page Title Color', 'oceanwp' ),
+						'section' => 'ocean_blog_single_title_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'sanitize_callback' => 'wp_kses_post',
+						'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'ocean_blog_single_title_bg_image_title_color',
+								'key' => 'normal',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
+								'selector' => [
+									'.single .page-header.background-image-page-header .page-header-title' => 'color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+						]
+					],
+
+					'ocean_blog_single_title_bg_image_breadcrumb_color' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Page Title Breadcrumb', 'oceanwp' ),
+						'section' => 'ocean_blog_single_title_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'sanitize_callback' => 'wp_kses_post',
+						'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'ocean_blog_single_title_bg_image_breadcrumb_color',
+								'key' => 'normal',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
+								'selector' => [
+									'.single .background-image-page-header .site-breadcrumbs, .single .background-image-page-header .site-breadcrumbs a' => 'color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+						]
+					],
+
+					'ocean_blog_single_title_bg_image_separator_color' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Page Title Separator', 'oceanwp' ),
+						'section' => 'ocean_blog_single_title_options_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'sanitize_callback' => 'wp_kses_post',
+						'active_callback' => 'ocean_cac_blog_single_post_title_has_featured_image',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'ocean_blog_single_title_bg_image_separator_color',
+								'key' => 'normal',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
+								'selector' => [
+									'.single .site-breadcrumbs ul li .breadcrumb-sep, .single .site-breadcrumbs ol li .breadcrumb-sep' => 'color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+								],
+							],
+						]
+					],
+
 					'oceanwp_single_post_header_background' => [
 						'type' => 'ocean-color',
 						'label' => esc_html__( 'Post Title Background', 'oceanwp' ),
