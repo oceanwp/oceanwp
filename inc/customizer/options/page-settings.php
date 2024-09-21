@@ -18,6 +18,7 @@ $options = [
 		'transport'         => 'refresh',
 		'default'           => 'right-sidebar',
 		'priority'          => 10,
+		'bottom'            => 40,
 		'sanitize_callback' => 'sanitize_key',
 		'choices'           => [
 			'right-sidebar' => [
@@ -260,14 +261,14 @@ $options = [
 
 			'ocean_page_single_sidebar_order' => [
 				'type' => 'ocean-buttons',
-				'label' => esc_html__( 'Responsive Setting: Content Order Layout', 'oceanwp' ),
+				'label' => esc_html__( 'Responsive Setting: Sidebar Order Layout', 'oceanwp' ),
 				'section' => 'ocean_section_page_responsive_section',
 				'transport' => 'refresh',
 				'default' => 'content-sidebar',
 				'priority' => 10,
 				'hideLabel' => false,
-				'wrap' => false,
-				'active_callback' => 'oceanwp_cac_has_page_single_rl_layout',
+				'wrap'              => false,
+				'active_callback'   => 'oceanwp_cac_has_page_single_rl_layout',
 				'sanitize_callback' => 'sanitize_key',
 				'choices' => [
 					'content-sidebar' => [
@@ -328,7 +329,7 @@ $options = [
 				'section'         => 'ocean_section_page_title',
 				'transport'       => 'postMessage',
 				'priority'        => 10,
-				'top'             => 10,
+				'top'             => 1,
 				'bottom'          => 10,
 				'active_callback' => 'oceanwp_is_page_title_display',
 			],
@@ -404,6 +405,7 @@ $options = [
 				'default'           => '',
 				'priority'          => 10,
 				'hideLabel'         => false,
+				'bottom'            => 40,
 				'active_callback'   => 'oceanwp_is_page_title_display',
 				'sanitize_callback' => 'sanitize_key',
 				'choices'           => [
@@ -530,14 +532,13 @@ $options = [
 					'property' => 'padding'
 				],
 			],
-
-			'ocean_spacer_for_page_title_additional_settings_setting' => [
-				'type'            => 'ocean-spacer',
+			
+			'ocean_divider_for_page_title_additional_settings_setting' => [
+				'type'            => 'ocean-divider',
 				'section'         => 'ocean_section_page_title',
 				'transport'       => 'postMessage',
 				'priority'        => 10,
 				'top'             => 10,
-				'bottom'          => 10,
 				'active_callback' => 'oceanwp_is_page_title_display',
 			],
 
@@ -545,7 +546,7 @@ $options = [
 				'type'     => 'section',
 				'title'    => esc_html__( 'Additional Title Settings', 'oceanwp' ),
 				'section'  => 'ocean_section_page_title',
-				'after'    => 'ocean_spacer_for_page_title_additional_settings_setting',
+				'after'    => 'ocean_divider_for_page_title_additional_settings_setting',
 				'class'    => 'section-site-layout',
 				'priority' => 10,
 				'options'  => [
@@ -601,7 +602,7 @@ $options = [
 						'transport'       => 'postMessage',
 						'priority'        => 10,
 						'top'             => 1,
-						'bottom'          => 10,
+						'bottom'          => 15,
 						'active_callback' => 'oceanwp_is_bg_image_page_header',
 					],
 
@@ -630,6 +631,7 @@ $options = [
 						'min'               => 1,
 						'max'               => 800,
 						'step'              => 1,
+						'top'               => 15,
 						'active_callback'   => 'oceanwp_is_bg_image_page_header',
 						'sanitize_callback' => 'oceanwp_sanitize_number_blank',
 						'setting_args'      => [
@@ -697,6 +699,8 @@ $options = [
 						'priority'          => 10,
 						'hideLabel'         => false,
 						'multiple'          => false,
+						'top'               => 20,
+						'bottom'            => 25,
 						'active_callback'   => 'oceanwp_is_bg_image_page_header',
 						'sanitize_callback' => 'sanitize_key',
 						'choices'           => [
@@ -795,8 +799,8 @@ $options = [
 						'section'         => 'ocean_section_page_title_additional_settings',
 						'transport'       => 'postMessage',
 						'priority'        => 10,
-						'top'             => 10,
-						'bottom'          => 10,
+						'top'             => 1,
+						'bottom'          => 15,
 						'active_callback' => 'oceanwp_is_bg_image_page_header',
 					],
 
@@ -937,8 +941,8 @@ $options = [
 				'section'         => 'ocean_section_page_title',
 				'transport'       => 'postMessage',
 				'priority'        => 10,
-				'top'             => 10,
-				'bottom'          => 10,
+				'top'             => 5,
+				'bottom'          => 15,
 				'active_callback' => 'oceanwp_is_page_title_display',
 			],
 
@@ -1407,8 +1411,8 @@ $options = [
 				'section'         => 'ocean_section_page_breadcrumb',
 				'transport'       => 'postMessage',
 				'priority'        => 10,
-				'top'             => 10,
-				'bottom'          => 20,
+				'top'             => 1,
+				'bottom'          => 15,
 				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 			],
 
@@ -1431,6 +1435,8 @@ $options = [
 				'section'         => 'ocean_section_page_breadcrumb',
 				'transport'       => 'postMessage',
 				'priority'        => 10,
+				'top'             => 10,
+				'bottom'          => 15,
 				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 			],
 
@@ -1630,8 +1636,8 @@ $options = [
 				'section'         => 'ocean_section_page_breadcrumb',
 				'transport'       => 'postMessage',
 				'priority'        => 10,
-				'top'             => 1,
-				'bottom'          => 10,
+				'top'             => 5,
+				'bottom'          => 15,
 				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 			],
 
@@ -1703,12 +1709,40 @@ $options = [
 				]
 			],
 
+			'ocean_breadcrumbs_seperator_color_setting' => [
+				'type'              => 'ocean-color',
+				'label'             => esc_html__( 'Separator', 'oceanwp' ),
+				'section'           => 'ocean_section_page_breadcrumb',
+				'transport'         => 'postMessage',
+				'priority'          => 10,
+				'hideLabel'         => false,
+				'showAlpha'         => true,
+				'showPalette'       => true,
+				'active_callback'   => 'oceanwp_is_active_breadcrumb_callback',
+				'sanitize_callback' => 'wp_kses_post',
+				'setting_args'      => [
+					'normal' => [
+						'id'       => 'ocean_breadcrumbs_seperator_color',
+						'key'      => 'normal',
+						'label'    => esc_html__( 'Select Color', 'oceanwp' ),
+						'selector' => [
+							'.site-breadcrumbs ul li .breadcrumb-sep, .site-breadcrumbs ol li .breadcrumb-sep' => 'color'
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+							'default'   => '#c6c6c6',
+						],
+					],
+				]
+			],
+
 			'ocean_title_for_breadcrumb_additonal_settings' => [
 				'type'            => 'ocean-title',
 				'label'           => esc_html__( 'Additional Settings', 'oceanwp' ),
 				'section'         => 'ocean_section_page_breadcrumb',
 				'transport'       => 'postMessage',
 				'priority'        => 10,
+				'bottom'          => 20,
 				'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 			],
 
@@ -1796,33 +1830,6 @@ $options = [
 						'active_callback'   => 'oceanwp_is_active_breadcrumb_callback',
 					],
 
-					'ocean_breadcrumbs_seperator_color_setting' => [
-						'type'              => 'ocean-color',
-						'label'             => esc_html__( 'Separator Color', 'oceanwp' ),
-						'section'           => 'ocean_section_breadcrumb_trail_settings',
-						'transport'         => 'postMessage',
-						'priority'          => 10,
-						'hideLabel'         => false,
-						'showAlpha'         => true,
-						'showPalette'       => true,
-						'active_callback'   => 'oceanwp_is_active_breadcrumb_callback',
-						'sanitize_callback' => 'wp_kses_post',
-						'setting_args'      => [
-							'normal' => [
-								'id'       => 'ocean_breadcrumbs_seperator_color',
-								'key'      => 'normal',
-								'label'    => esc_html__( 'Select Color', 'oceanwp' ),
-								'selector' => [
-									'.site-breadcrumbs ul li .breadcrumb-sep, .site-breadcrumbs ol li .breadcrumb-sep' => 'color'
-								],
-								'attr' => [
-									'transport' => 'postMessage',
-									'default'   => '#c6c6c6',
-								],
-							],
-						]
-					],
-
 					'ocean_divider_after_breadcrumbs_separator_color' => [
 						'type'            => 'ocean-divider',
 						'section'         => 'ocean_section_breadcrumb_trail_settings',
@@ -1900,6 +1907,8 @@ $options = [
 						'priority'          => 10,
 						'hideLabel'         => false,
 						'multiple'          => false,
+						'top'               => 20,
+						'bottom'            => 25,
 						'active_callback'   => 'oceanwp_is_active_breadcrumb_product_callback',
 						'sanitize_callback' => 'sanitize_key',
 						'choices'           => [
@@ -1963,6 +1972,7 @@ $options = [
 						'transport'         => 'postMessage',
 						'default'           => esc_html__( '404 Not Found', 'oceanwp' ),
 						'priority'          => 10,
+						'bottom'            => 25,
 						'hideLabel'         => false,
 						'sanitize_callback' => 'wp_filter_nohtml_kses',
 						'active_callback'   => 'oceanwp_is_active_breadcrumb_callback',
@@ -2256,12 +2266,12 @@ $options = [
 					],
 
 					'ocean_section_page_search_result_sidebar_need_help' => [
-						'type' => 'ocean-content',
-						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '', '' ),
-						'class' => 'need-help',
-						'section' => 'ocean_section_page_search_result_sidebar_layout',
-						'transport' => 'postMessage',
-						'priority' => 10,
+						'type'            => 'ocean-content',
+						'isContent'       => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/899-customizer-pages-special-pages#Sidebar-Layout-Settings-VgIIM/" target="_blank">', '</a>' ),
+						'class'           => 'need-help',
+						'section'         => 'ocean_section_page_search_result_sidebar_layout',
+						'transport'       => 'postMessage',
+						'priority'        => 10,
 						'active_callback' => 'oceanwp_cac_has_topbar',
 					]
 				]

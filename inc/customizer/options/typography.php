@@ -20,13 +20,13 @@ $options = [
 	],
 
 	'ocean_google_font_section' => [
-		'type' => 'section',
-		'title' => esc_html__('Google Font Settings', 'oceanwp'),
-		'section' => 'ocean_typography',
-		'after' => 'ocean_spacer_for_google_font_section',
-		'class' => 'section-google-font',
+		'type'     => 'section',
+		'title'    => esc_html__('Google Font Settings', 'oceanwp'),
+		'section'  => 'ocean_typography',
+		'after'    => 'ocean_spacer_for_google_font_section',
+		'class'    => 'section-google-font',
 		'priority' => 10,
-		'options' => [
+		'options'  => [
 			'ocean_disable_google_font' => [
 				'type' => 'ocean-switch',
 				'label' => esc_html__( 'Enable Google Fonts', 'oceanwp' ),
@@ -80,7 +80,8 @@ $options = [
 				'transport' => 'postMessage',
 				'priority' => 10,
 				'hideLabel' => false,
-				'active_callback' => 'ocean_is_local_google_font',
+				'bottom'            => 25,
+				'active_callback'   => 'ocean_is_local_google_font',
 				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 			],
 
@@ -100,17 +101,17 @@ $options = [
 					'ttf' => [
 						'id'     => 'ttf',
 						'label'   => 'ttf',
-						'content' => 'ttf'
+						'content' => 'TTF'
 					],
 					'woff'  => [
 						'id'     => 'woff',
 						'label'   => 'woff',
-						'content' => 'woff'
+						'content' => 'WOFF'
 					],
 					'woff2'    => [
 						'id'     => 'woff2',
 						'label'   => 'woff2',
-						'content' => 'woff2'
+						'content' => 'WOFF2'
 					]
 				]
 			],
