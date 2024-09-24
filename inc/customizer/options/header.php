@@ -660,6 +660,7 @@ $options = [
 						'default'  => [ 'searchfrom', 'logo', 'social' ],
 						'active_callback' => 'ocean_cac_header_medium_style',
 						'hideLabel' => false,
+						'sanitize_callback' => 'ocean_sanitize_sortable_control',
 						'choices' => [
 							'searchfrom' => esc_html__( 'Search Form', 'oceanwp' ),
 							'logo' => esc_html__( 'Logo', 'oceanwp' ),

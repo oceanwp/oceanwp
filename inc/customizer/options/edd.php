@@ -1155,6 +1155,7 @@ $options = [
 						'priority' => 10,
 						'default'  => [ 'image', 'category', 'title', 'price', 'description', 'button' ],
 						'hideLabel' => false,
+						'sanitize_callback' => 'ocean_sanitize_sortable_control',
 						'choices' => [
 							'image'       => esc_html__( 'Image', 'oceanwp' ),
 							'category'    => esc_html__( 'Category', 'oceanwp' ),

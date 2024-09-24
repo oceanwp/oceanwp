@@ -33,6 +33,15 @@ class OceanWP_Customizer_Init {
 		add_action( 'wp_ajax_ocean_update_search_box_light_mode', array( $this, 'update_search_box_light_Mode' ) );
 	}
 
+	public function include_settings() {
+
+		//require OCEANWP_INC_DIR . 'customizer/functions.php';
+		require OCEANWP_INC_DIR . 'customizer/helpers.php';
+		require OCEANWP_INC_DIR . 'customizer/callback.php';
+		require OCEANWP_INC_DIR . 'customizer/sanitize.php';
+		require OCEANWP_INC_DIR . 'customizer/svg.php';
+		require OCEANWP_INC_DIR . 'customizer/css-output/css.php';
+	}
 
 	public function register_settings( $wp_customize) {
 
@@ -160,13 +169,19 @@ class OceanWP_Customizer_Init {
 					}
 				}
 
-				if (isset($option_data['sanitize_callback']) && $option_data['sanitize_callback']) {
-					$setting_args['sanitize_callback'] = $option_data['sanitize_callback'];
-				}
+				// $wp_customize->add_setting(
+				// 	$option_key,
+				// 	$setting_args
+				// );
 
 				$wp_customize->add_setting(
 					$option_key,
-					$setting_args
+					array_merge(
+						$setting_args,
+						[
+							'sanitize_callback' => isset($option_data['sanitize_callback']) && $option_data['sanitize_callback'] ? $option_data['sanitize_callback'] : ''
+						]
+					)
 				);
 
 				unset( $setting_args );
@@ -186,9 +201,16 @@ class OceanWP_Customizer_Init {
 				if ( isset( $option_data['setting_args'] ) && $option_data['setting_args'] ) {
 					foreach ( $option_data['setting_args'] as $setting_arg_key => $setting_arg_data ) {
 
+						$setting_args = isset( $setting_arg_data['attr'] ) ? $setting_arg_data['attr'] : [];
+
 						$wp_customize->add_setting(
 							$setting_arg_data['id'],
-							isset($setting_arg_data['attr']) ? $setting_arg_data['attr'] : []
+							array_merge(
+								$setting_args,
+								[
+									'sanitize_callback' => isset($setting_args['sanitize_callback']) && $setting_args['sanitize_callback'] ? $option_data['sanitize_callback'] : ''
+								]
+							)
 						);
 
 						$control_args['settings'][$setting_arg_key] = $setting_arg_data['id'];
@@ -221,7 +243,8 @@ class OceanWP_Customizer_Init {
 						$wp_customize->add_setting(
 							$setting_name,
 							array(
-								'transport' => 'postMessage'
+								'transport' => 'postMessage',
+								'sanitize_callback' => isset( $option_data['sanitize_callback'] ) ? $option_data['sanitize_callback'] : 'oceanwp_default_sanitize',
 							)
 						);
 
@@ -484,16 +507,6 @@ class OceanWP_Customizer_Init {
 		$fonts_content = ob_get_clean();
 
 		return $fonts_content;
-	}
-
-	public function include_settings() {
-
-		//require OCEANWP_INC_DIR . 'customizer/functions.php';
-		require OCEANWP_INC_DIR . 'customizer/helpers.php';
-		require OCEANWP_INC_DIR . 'customizer/callback.php';
-		require OCEANWP_INC_DIR . 'customizer/sanitize.php';
-		require OCEANWP_INC_DIR . 'customizer/svg.php';
-		require OCEANWP_INC_DIR . 'customizer/css-output/css.php';
 	}
 
 	public function customize_preview_init() {

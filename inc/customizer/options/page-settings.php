@@ -616,6 +616,7 @@ $options = [
 						'mediaType'       => 'image',
 						'savetype'        => 'url',
 						'active_callback' => 'oceanwp_is_bg_image_page_header',
+						'sanitize_callback' => 'ocean_sanitize_image_control'
 					],
 
 					'ocean_page_header_bg_image_height_setting' => [
@@ -2353,6 +2354,7 @@ $options = [
 				'hideLabel' => false,
 				'mediaType' => 'image',
 				'savetype' => 'url',
+				'sanitize_callback' => 'ocean_sanitize_image_control'
 			],
 
 			'ocean_search_result_page_need_help' => [
@@ -2430,6 +2432,7 @@ $options = [
 				'hideLabel' => false,
 				'mediaType' => 'image',
 				'savetype' => 'url',
+				'sanitize_callback' => 'ocean_sanitize_image_control'
 			],
 
 			'ocean_title_for_page_error_custom_404' => [

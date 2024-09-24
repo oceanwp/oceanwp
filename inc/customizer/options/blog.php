@@ -523,6 +523,7 @@ $options = [
 						'hideLabel'       => false,
 						'initialStatus'   => true,
 						'choices'         => oceanwp_blog_entry_elements(),
+						'sanitize_callback' => 'ocean_sanitize_sortable_control',
 					],
 
 					'ocean_divider_after_blog_entry_elements_positioning_setting' => [
@@ -544,6 +545,8 @@ $options = [
 						'active_callback' => 'oceanwp_cac_not_blog_archive_thumbnail_style',
 						'hideLabel'       => false,
 						'initialStatus'   => true,
+						'sanitize_callback' => 'ocean_sanitize_sortable_control',
+						'sanitize_callback' => 'ocean_sanitize_sortable_control',
 						'choices'         => apply_filters(
 							'ocean_blog_meta_choices',
 							[
@@ -2679,6 +2682,7 @@ $options = [
 						'default'         => [ 'author', 'date', 'categories', 'comments', 'mod-date', 'reading-time', 'tags' ],
 						'active_callback' => 'ocean_cac_not_blog_single_post_title_default',
 						'hideLabel'       => false,
+						'sanitize_callback' => 'ocean_sanitize_sortable_control',
 						'choices'         => apply_filters(
 							'ocean_blog_header_meta_choices',
 							[
@@ -2774,6 +2778,7 @@ $options = [
 						'hideLabel'     => false,
 						'initialStatus' => true,
 						'choices'       => oceanwp_blog_single_elements(),
+						'sanitize_callback' => 'ocean_sanitize_sortable_control',
 					],
 
 					'ocean_divider_after_blog_single_elements_positioning' => [
@@ -2793,6 +2798,7 @@ $options = [
 						'default'       => [ 'author', 'date', 'categories', 'comments' ],
 						'hideLabel'     => false,
 						'initialStatus' => true,
+						'sanitize_callback' => 'ocean_sanitize_sortable_control',
 						'choices'       => apply_filters(
 							'ocean_blog_meta_choices',
 							[
@@ -2804,7 +2810,6 @@ $options = [
 								'reading-time' => esc_html__( 'Reading Time', 'oceanwp' ),
 							]
 						),
-						//'sanitize_callback' => 'oceanwp_sanitize_multi_choices',
 					],
 
 					'ocean_divider_after_blog_single_meta' => [

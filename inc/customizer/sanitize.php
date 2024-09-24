@@ -65,3 +65,58 @@ function oceanwp_sanitize_select( $input, $setting ) {
 	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
+
+/**
+ * Sanitize function for sortable controls in the customizer.
+ *
+ * @param array  $input   The input data to sanitize.
+ * @param object $setting The setting object, which includes valid choices.
+ * @return array The sanitized array of sortable elements.
+ */
+function ocean_sanitize_sortable_control( $input, $setting ) {
+
+	$valid_choices = $setting->manager->get_control( $setting->id )->choices;
+
+	if ( ! is_array( $input ) ) {
+		$input = [];
+	}
+
+	$sanitized = [];
+	foreach ( $input as $value ) {
+		if ( array_key_exists( $value, $valid_choices ) ) {
+			$sanitized[] = $value;
+		}
+	}
+
+	return $sanitized;
+}
+
+/**
+ * Sanitize function for image controls.
+ *
+ * @param mixed  $input   The input data to sanitize (either URL or ID).
+ * @param object $setting The setting object, which includes the 'savetype' attribute.
+ * @return mixed The sanitized URL or ID.
+ */
+function ocean_sanitize_image_control( $input, $setting ) {
+
+	$savetype = isset( $setting->manager->get_control( $setting->id )->savetype ) ? $setting->manager->get_control( $setting->id )->savetype : 'url';
+
+	if ( 'id' === $savetype ) {
+		return absint( $input );
+	} elseif ( 'url' === $savetype ) {
+		return esc_url_raw( $input );
+	}
+
+	return $input;
+}
+
+/**
+ * Default sanitization callback for Customizer settings.
+ *
+ * @param mixed $input The input data.
+ * @return mixed The sanitized data (which in this case is untouched).
+ */
+function oceanwp_default_sanitize( $input, $setting ) {
+	return $input;
+}
