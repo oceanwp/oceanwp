@@ -74,21 +74,7 @@ function oceanwp_sanitize_select( $input, $setting ) {
  * @return array The sanitized array of sortable elements.
  */
 function ocean_sanitize_sortable_control( $input, $setting ) {
-
-	$valid_choices = $setting->manager->get_control( $setting->id )->choices;
-
-	if ( ! is_array( $input ) ) {
-		$input = [];
-	}
-
-	$sanitized = [];
-	foreach ( $input as $value ) {
-		if ( array_key_exists( $value, $valid_choices ) ) {
-			$sanitized[] = $value;
-		}
-	}
-
-	return $sanitized;
+	return $input;
 }
 
 /**

@@ -546,7 +546,6 @@ $options = [
 						'hideLabel'       => false,
 						'initialStatus'   => true,
 						'sanitize_callback' => 'ocean_sanitize_sortable_control',
-						'sanitize_callback' => 'ocean_sanitize_sortable_control',
 						'choices'         => apply_filters(
 							'ocean_blog_meta_choices',
 							[
