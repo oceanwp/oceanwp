@@ -11,9 +11,15 @@ defined( 'ABSPATH' ) or exit;
 // Get meta sections.
 $sections = ocean_blog_single_header_meta();
 
-// Return if sections are empty, not post type or quote post format.
-if ( empty( $sections ) || 'post' !== get_post_type() || 'quote' === get_post_format() ) {
-	return;
+// Get the current post type.
+$post_type = get_post_type();
+
+// Allow post types for the single post header template.
+$allowed_post_types = apply_filters( 'oceanwp_single_post_header_allowed_post_types', array( 'post' ) );
+
+// Return if sections are empty, the post type is not allowed, or it's a quote post format.
+if ( empty( $sections ) || ! in_array( $post_type, $allowed_post_types, true ) || 'quote' === get_post_format() ) {
+    return;
 }
 
 // Don't display modified date if the same as the published date.

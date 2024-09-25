@@ -6600,38 +6600,43 @@ ul.obem-none li:after {
 /*------------------------------------*
 	Single Post Styling
 *------------------------------------*/
-.single-post ul.meta {
+.single-post ul.meta,
+.single.ocean-cpt ul.meta {
   font-size: 14.5px;
   border-bottom: 1px solid #f1f1f1;
   padding-bottom: 15px;
 }
-.single-post ul.meta li:after {
+.single-post ul.meta li:after,
+.single.ocean-cpt ul.meta li:after {
   padding: 0 8px;
 }
-.single-post ul.meta li i {
+.single-post ul.meta li i,
+.single.ocean-cpt ul.meta li i {
   padding-right: 9px;
 }
-.single-post ul.meta li .owp-icon {
+.single-post ul.meta li .owp-icon,
+.single.ocean-cpt ul.meta li .owp-icon {
   margin-right: 8px;
 }
-.single-post ul.meta li svg.owp-icon {
+.single-post ul.meta li svg.owp-icon,
+.single.ocean-cpt ul.meta li svg.owp-icon {
   width: 20px;
   height: 20px;
 }
 
-.single-post ul.ospm-default li:after {
+.single-post ul.ospm-default li:after, .single.ocean-cpt ul.ospm-default li:after {
   content: "-";
 }
 
-.single-post ul.ospm-modern li:after {
+.single-post ul.ospm-modern li:after, .single.ocean-cpt ul.ospm-modern li:after {
   content: "|";
 }
 
-.single-post ul.ospm-stylish li:after {
+.single-post ul.ospm-stylish li:after, .single.ocean-cpt ul.ospm-stylish li:after {
   content: "//";
 }
 
-.single-post ul.ospm-none li:after {
+.single-post ul.ospm-none li:after, .single.ocean-cpt ul.ospm-none li:after {
   content: "";
   margin: 0 10px;
 }
