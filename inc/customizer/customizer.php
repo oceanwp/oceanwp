@@ -357,6 +357,8 @@ class OceanWP_Customizer_Init {
 					}
 				}
 
+				$control_args['json']['optionType'] = 'owp-option';
+
 				$wp_customize->add_control(
 					$option_key,
 					$control_args
