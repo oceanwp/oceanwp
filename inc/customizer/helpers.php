@@ -328,7 +328,7 @@ if ( ! function_exists( 'ocean_get_page_choices' ) ) {
 			array(
 				'name'              => esc_attr( $name ),
 				'echo'              => 0,
-				'show_option_none'  => esc_html__( $show_option_none, 'ocean-portfolio' ),
+				'show_option_none'  => esc_html__( $show_option_none, 'oceanwp' ),
 				'option_none_value' => esc_attr( $option_none_value ),
 				'selected'          => esc_attr( $selected ),
 			)

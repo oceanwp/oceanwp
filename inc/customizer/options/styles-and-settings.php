@@ -325,7 +325,7 @@ $options = [
 						'key' => 'normal',
 						'label' => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'body, .separate-layout, .has-parallax-footer:not(.separate-layout) #main' => 'background-color'
+							'body, body.separate-layout, .has-parallax-footer:not(.separate-layout) #main' => 'background-color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',

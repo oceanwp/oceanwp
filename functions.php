@@ -94,7 +94,7 @@ final class OCEANWP_Theme_Class {
 			add_filter( 'wp_headers', array( 'OCEANWP_Theme_Class', 'x_ua_compatible_headers' ) );
 
 			// Outputs custom CSS to the head.
-			add_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'custom_css' ), 9999 );
+			add_action( 'wp_head', array( 'OCEANWP_Theme_Class', 'custom_css' ), 999 );
 
 			// Minify the WP custom CSS because WordPress doesn't do it by default.
 			add_filter( 'wp_get_custom_css', array( 'OCEANWP_Theme_Class', 'minify_custom_css' ) );
