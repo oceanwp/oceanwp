@@ -190,6 +190,8 @@ class OceanWP_Style_Settings_CSS {
 
 		$css = '';
 		$content_padding_css = '';
+		$tablet_content_padding_css = '';
+		$mobile_content_padding_css = '';
 
 		// Texts.
 		if ( ! empty( $main_container_width ) && 1200 != $main_container_width ) {
