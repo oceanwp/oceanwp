@@ -496,6 +496,7 @@ class OceanWP_Customizer_Init {
 				'pageChoices' => ocean_get_page_choices(),
 				'customFonts' => function_exists( 'ocean_add_custom_fonts' ) ? ocean_add_custom_fonts() : array(),
 				'customizerFonts' => $this->get_customizer_fonts(),
+				'colorPalettes' => oceanwp_default_color_palettes(),
 			)
 		);
 	}

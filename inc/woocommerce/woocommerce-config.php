@@ -480,9 +480,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// Add product thumbnail.
-			if ( 'hover' != get_theme_mod( 'ocean_woo_products_style', 'default' ) ) {
-				add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'loop_product_thumbnail' ), 10 );
-			}
+			// if ( 'hover' != get_theme_mod( 'ocean_woo_products_style', 'default' ) ) {
+			// 	add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'loop_product_thumbnail' ), 10 );
+			// }
 
 			// Remove related products if is set to no.
 			if ( 'on' != get_theme_mod( 'ocean_woocommerce_display_related_items', 'on' ) ) {
