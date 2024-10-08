@@ -1,6 +1,11 @@
 # OceanWP Changelog
 
-### _2024.10.09_ - 3.6.0
+### _2024.10.08_ - 3.6.1
+- **Updated**:: Magnific Popup library.
+- **Updated**:: WordPress version number for compatibility:
+- **Fixed**:: Potential vulnerability patched: Report by Wordfence from Oct 2nd 2024.
+
+### _2024.09.10_ - 3.6.0
 - **Updated**:: Compatibility: WooCommerce: Template version number for mini-cart.php
 
 ### _2024.08.05_ - 3.5.9
