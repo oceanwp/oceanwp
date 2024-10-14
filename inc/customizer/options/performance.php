@@ -10,6 +10,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $options = [
+	'ocean_customzer_styling' => [
+		'type'              => 'ocean-buttons',
+		'label'             => esc_html__( 'Styling Options Location', 'oceanwp' ),
+		'desc'              => esc_html__( 'Both settings apply only to the custom CSS added in the Custom CSS field in the Customizer. If you choose the Custom File location, a dedicated CSS file will be created in your uploads folder of your WordPress installation.', 'oceanwp' ),
+		'section'           => 'ocean_site_performance',
+		'default'           => 'head',
+		'transport'         => 'postMessage',
+		'priority'          => 10,
+		'hideLabel'         => false,
+		'wrap'              => false,
+		'sanitize_callback' => 'sanitize_key',
+		'choices'           => [
+			'head' => [
+				'id'      => 'head',
+				'label'   => esc_html__( 'WP Head', 'oceanwp' ),
+				'content' => esc_html__( 'WP Head', 'oceanwp' ),
+			],
+			'file'  => [
+				'id'      => 'file',
+				'label'   => esc_html__( 'Custom File', 'oceanwp' ),
+				'content' => esc_html__( 'Custom File', 'oceanwp' ),
+			]
+		]
+	],
+
+	'ocean_divider_after_ocean_customzer_styling_setting' => [
+		'type'      => 'ocean-divider',
+		'section'   => 'ocean_site_performance',
+		'transport' => 'postMessage',
+		'priority'  => 10,
+		'top'       => 1,
+		'bottom'    => 10,
+	],
+
 	'ocean_performance_emoji' => [
 		'type'              => 'ocean-buttons',
 		'label'             => esc_html__( 'Emoji', 'oceanwp' ),
