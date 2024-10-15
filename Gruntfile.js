@@ -118,78 +118,78 @@ module.exports = function (grunt) {
           [`${wooOutputsPath}/woo-quick-view.min.js`]: `${wooOutputsPath}/woo-quick-view.min.js`,
           [`${wooOutputsPath}/woo-thumbnails.min.js`]: `${wooOutputsPath}/woo-thumbnails.min.js`,
 
-          // Admin
-          "inc/customizer/assets/js/customize-preview.min.js":
-            "inc/customizer/assets/js/customize-preview.js",
+          // // Admin
+          // "inc/customizer/assets/js/customize-preview.min.js":
+          //   "inc/customizer/assets/js/customize-preview.js",
 
-          "inc/customizer/assets/js/typography-customize-preview.min.js":
-            "inc/customizer/assets/js/typography-customize-preview.js",
+          // "inc/customizer/assets/js/typography-customize-preview.min.js":
+          //   "inc/customizer/assets/js/typography-customize-preview.js",
 
-          "inc/customizer/assets/js/woo-typography-customize-preview.min.js":
-            "inc/customizer/assets/js/woo-typography-customize-preview.js",
+          // "inc/customizer/assets/js/woo-typography-customize-preview.min.js":
+          //   "inc/customizer/assets/js/woo-typography-customize-preview.js",
 
-          "inc/customizer/assets/js/woo-customize-preview.min.js":
-            "inc/customizer/assets/js/woo-customize-preview.js",
+          // "inc/customizer/assets/js/woo-customize-preview.min.js":
+          //   "inc/customizer/assets/js/woo-customize-preview.js",
 
-          "inc/customizer/assets/js/edd-customize-preview.min.js":
-            "inc/customizer/assets/js/edd-customize-preview.js",
+          // "inc/customizer/assets/js/edd-customize-preview.min.js":
+          //   "inc/customizer/assets/js/edd-customize-preview.js",
 
-          "inc/customizer/assets/js/llms-customize-preview.min.js":
-            "inc/customizer/assets/js/llms-customize-preview.js",
+          // "inc/customizer/assets/js/llms-customize-preview.min.js":
+          //   "inc/customizer/assets/js/llms-customize-preview.js",
 
-          "inc/customizer/assets/js/ld-customize-preview.min.js":
-            "inc/customizer/assets/js/ld-customize-preview.js",
+          // "inc/customizer/assets/js/ld-customize-preview.min.js":
+          //   "inc/customizer/assets/js/ld-customize-preview.js",
 
-          "inc/customizer/assets/min/js/general.min.js":
-            "inc/customizer/controls/general.js",
+          // "inc/customizer/assets/min/js/general.min.js":
+          //   "inc/customizer/controls/general.js",
 
-          "inc/customizer/assets/min/js/buttonset.min.js":
-            "inc/customizer/controls/buttonset/buttonset.js",
+          // "inc/customizer/assets/min/js/buttonset.min.js":
+          //   "inc/customizer/controls/buttonset/buttonset.js",
 
-          "inc/customizer/assets/min/js/color.min.js":
-            "inc/customizer/controls/color/color.js",
+          // "inc/customizer/assets/min/js/color.min.js":
+          //   "inc/customizer/controls/color/color.js",
 
-          "inc/customizer/assets/min/js/dimensions.min.js":
-            "inc/customizer/controls/dimensions/dimensions.js",
+          // "inc/customizer/assets/min/js/dimensions.min.js":
+          //   "inc/customizer/controls/dimensions/dimensions.js",
 
-          "inc/customizer/assets/min/js/dropdown-pages.min.js":
-            "inc/customizer/controls/dropdown-pages/dropdown-pages.js",
+          // "inc/customizer/assets/min/js/dropdown-pages.min.js":
+          //   "inc/customizer/controls/dropdown-pages/dropdown-pages.js",
 
-          "inc/customizer/assets/min/js/icon-select.min.js":
-            "inc/customizer/controls/icon-select/icon-select.js",
+          // "inc/customizer/assets/min/js/icon-select.min.js":
+          //   "inc/customizer/controls/icon-select/icon-select.js",
 
-          "inc/customizer/assets/min/js/multicheck.min.js":
-            "inc/customizer/controls/multicheck/multicheck.js",
+          // "inc/customizer/assets/min/js/multicheck.min.js":
+          //   "inc/customizer/controls/multicheck/multicheck.js",
 
-          "inc/customizer/assets/min/js/multiple-select.min.js":
-            "inc/customizer/controls/multiple-select/multiple-select.js",
+          // "inc/customizer/assets/min/js/multiple-select.min.js":
+          //   "inc/customizer/controls/multiple-select/multiple-select.js",
 
-          "inc/customizer/assets/min/js/radio-image.min.js":
-            "inc/customizer/controls/radio-image/radio-image.js",
+          // "inc/customizer/assets/min/js/radio-image.min.js":
+          //   "inc/customizer/controls/radio-image/radio-image.js",
 
-          "inc/customizer/assets/min/js/range.min.js":
-            "inc/customizer/controls/range/range.js",
+          // "inc/customizer/assets/min/js/range.min.js":
+          //   "inc/customizer/controls/range/range.js",
 
-          "inc/customizer/assets/min/js/slider.min.js":
-            "inc/customizer/controls/slider/slider.js",
+          // "inc/customizer/assets/min/js/slider.min.js":
+          //   "inc/customizer/controls/slider/slider.js",
 
-          "inc/customizer/assets/min/js/sortable.min.js":
-            "inc/customizer/controls/sortable/sortable.js",
+          // "inc/customizer/assets/min/js/sortable.min.js":
+          //   "inc/customizer/controls/sortable/sortable.js",
 
-          "inc/customizer/assets/min/js/text.min.js":
-            "inc/customizer/controls/text/text.js",
+          // "inc/customizer/assets/min/js/text.min.js":
+          //   "inc/customizer/controls/text/text.js",
 
-          "inc/customizer/assets/min/js/textarea.min.js":
-            "inc/customizer/controls/textarea/textarea.js",
+          // "inc/customizer/assets/min/js/textarea.min.js":
+          //   "inc/customizer/controls/textarea/textarea.js",
 
-          "inc/customizer/assets/min/js/typo.min.js":
-            "inc/customizer/controls/typo/typo.js",
+          // "inc/customizer/assets/min/js/typo.min.js":
+          //   "inc/customizer/controls/typo/typo.js",
 
-          "inc/customizer/assets/min/js/typography.min.js":
-            "inc/customizer/controls/typography/typography.js",
+          // "inc/customizer/assets/min/js/typography.min.js":
+          //   "inc/customizer/controls/typography/typography.js",
 
-          "inc/customizer/assets/min/js/upsell.min.js":
-            "inc/customizer/controls/upsell/upsell.js",
+          // "inc/customizer/assets/min/js/upsell.min.js":
+          //   "inc/customizer/controls/upsell/upsell.js",
         },
       },
     },
@@ -221,42 +221,42 @@ module.exports = function (grunt) {
           "assets/css/editor-style.min.css": "assets/css/editor-style.css",
           'assets/css/blog/blog-post-headers.min.css': 'assets/css/blog/blog-post-headers.css',
 
-          "inc/customizer/assets/css/customizer-simple-line-icons.min.css":
-            "inc/customizer/assets/css/customizer-simple-line-icons.css",
-          "inc/customizer/assets/min/css/rtl.min.css":
-            "inc/customizer/controls/rtl.css",
-          "inc/customizer/assets/min/css/general.min.css":
-            "inc/customizer/controls/general.css",
-          "inc/customizer/assets/min/css/buttonset.min.css":
-            "inc/customizer/controls/buttonset/buttonset.css",
-          "inc/customizer/assets/min/css/color.min.css":
-            "inc/customizer/controls/color/color.css",
-          "inc/customizer/assets/min/css/dimensions.min.css":
-            "inc/customizer/controls/dimensions/dimensions.css",
-          "inc/customizer/assets/min/css/heading.min.css":
-            "inc/customizer/controls/heading/heading.css",
-          "inc/customizer/assets/min/css/info.min.css":
-            "inc/customizer/controls/info/info.css",
-          "inc/customizer/assets/min/css/icon-select.min.css":
-            "inc/customizer/controls/icon-select/icon-select.css",
-          "inc/customizer/assets/min/css/multiple-select.min.css":
-            "inc/customizer/controls/multiple-select/multiple-select.css",
-          "inc/customizer/assets/min/css/radio-image.min.css":
-            "inc/customizer/controls/radio-image/radio-image.css",
-          "inc/customizer/assets/min/css/range.min.css":
-            "inc/customizer/controls/range/range.css",
-          "inc/customizer/assets/min/css/slider.min.css":
-            "inc/customizer/controls/slider/slider.css",
-          "inc/customizer/assets/min/css/sortable.min.css":
-            "inc/customizer/controls/sortable/sortable.css",
-          "inc/customizer/assets/min/css/textarea.min.css":
-            "inc/customizer/controls/textarea/textarea.css",
-          "inc/customizer/assets/min/css/typo.min.css":
-            "inc/customizer/controls/typo/typo.css",
-          "inc/customizer/assets/min/css/typography.min.css":
-            "inc/customizer/controls/typography/typography.css",
-          "inc/customizer/assets/min/css/upsell.min.css":
-            "inc/customizer/controls/upsell/upsell.css",
+          // "inc/customizer/assets/css/customizer-simple-line-icons.min.css":
+          //   "inc/customizer/assets/css/customizer-simple-line-icons.css",
+          // "inc/customizer/assets/min/css/rtl.min.css":
+          //   "inc/customizer/controls/rtl.css",
+          // "inc/customizer/assets/min/css/general.min.css":
+          //   "inc/customizer/controls/general.css",
+          // "inc/customizer/assets/min/css/buttonset.min.css":
+          //   "inc/customizer/controls/buttonset/buttonset.css",
+          // "inc/customizer/assets/min/css/color.min.css":
+          //   "inc/customizer/controls/color/color.css",
+          // "inc/customizer/assets/min/css/dimensions.min.css":
+          //   "inc/customizer/controls/dimensions/dimensions.css",
+          // "inc/customizer/assets/min/css/heading.min.css":
+          //   "inc/customizer/controls/heading/heading.css",
+          // "inc/customizer/assets/min/css/info.min.css":
+          //   "inc/customizer/controls/info/info.css",
+          // "inc/customizer/assets/min/css/icon-select.min.css":
+          //   "inc/customizer/controls/icon-select/icon-select.css",
+          // "inc/customizer/assets/min/css/multiple-select.min.css":
+          //   "inc/customizer/controls/multiple-select/multiple-select.css",
+          // "inc/customizer/assets/min/css/radio-image.min.css":
+          //   "inc/customizer/controls/radio-image/radio-image.css",
+          // "inc/customizer/assets/min/css/range.min.css":
+          //   "inc/customizer/controls/range/range.css",
+          // "inc/customizer/assets/min/css/slider.min.css":
+          //   "inc/customizer/controls/slider/slider.css",
+          // "inc/customizer/assets/min/css/sortable.min.css":
+          //   "inc/customizer/controls/sortable/sortable.css",
+          // "inc/customizer/assets/min/css/textarea.min.css":
+          //   "inc/customizer/controls/textarea/textarea.css",
+          // "inc/customizer/assets/min/css/typo.min.css":
+          //   "inc/customizer/controls/typo/typo.css",
+          // "inc/customizer/assets/min/css/typography.min.css":
+          //   "inc/customizer/controls/typography/typography.css",
+          // "inc/customizer/assets/min/css/upsell.min.css":
+          //   "inc/customizer/controls/upsell/upsell.css",
           "inc/themepanel/assets/css/theme-panel.min.css":
             "inc/themepanel/assets/css/theme-panel.css",
         },
@@ -412,8 +412,10 @@ module.exports = function (grunt) {
         src: [
           "**",
           "!node_modules/**",
+          "!**/node_modules/**",
           "!bower_components/**",
           "!build/**",
+          "!inc/customizer/src/**",
           "!vendor/**",
           "!composer.json",
           "!composer.lock",

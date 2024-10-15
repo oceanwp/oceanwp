@@ -158,6 +158,10 @@ if ( ! function_exists( 'oceanwp_edd_archive_elements_positioning' ) ) {
 		// Get sections from Customizer
 		$sections = get_theme_mod( 'oceanwp_edd_archive_elements_positioning', $sections );
 
+		if (is_string($sections)) {
+			$sections = json_decode($sections, true);
+		}
+
 		// Turn into array if string
 		if ( $sections && ! is_array( $sections ) ) {
 			$sections = explode( ',', $sections );

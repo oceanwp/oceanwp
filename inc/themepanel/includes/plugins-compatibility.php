@@ -97,12 +97,7 @@ function oceanwp_usefull_plugins() {
 			'leadin'       => array(
 				'name'              => esc_html__( 'HubSpot CRM', 'oceanwp' ),
 				'short_description' => esc_html__( 'Organize, capture, engage and grow your contact list with forms, live website chat with auto-replies and more.', 'oceanwp' ),
-			),
-			'weglot'       => array(
-				'name'              => esc_html__( 'Weglot', 'oceanwp' ),
-				'short_description' => esc_html__( 'Weglot is a translation plugin that helps online business grow by turning their websites multilingual in a matter of minutes.', 'oceanwp' ),
-				'image_url'         => esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/plugin-icons/weglot.svg' ),
-			),
+			)
 		)
 	);
 }

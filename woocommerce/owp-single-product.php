@@ -14,7 +14,7 @@ $ocean_woo_single_cond = get_theme_mod( 'ocean_woo_single_conditional', false );
 
 // Conditional vars.
 $show_woo_single = '';
-$show_woo_single = ( is_user_logged_in() && $ocean_woo_single_cond === true );
+$show_woo_single = ( ! $ocean_woo_single_cond ) || is_user_logged_in();
 
 /**
  * Display Single Product template
@@ -45,7 +45,7 @@ foreach ( $elements as $element ) {
 	// Price.
 	if ( 'price' === $element ) {
 
-		if ( false === $ocean_woo_single_cond || $show_woo_single ) {
+		if ( true !== $ocean_woo_single_cond || $show_woo_single ) {
 
 			woocommerce_template_single_price();
 

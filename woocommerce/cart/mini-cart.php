@@ -14,14 +14,14 @@
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 9.2.0
+ * @version 9.4.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_mini_cart' ); ?>
 
-<?php if ( ! WC()->cart->is_empty() ) : ?>
+<?php if ( WC()->cart && ! WC()->cart->is_empty() ) : ?>
 
 	<ul class="woocommerce-mini-cart cart_list product_list_widget <?php echo esc_attr( $args['list_class'] ); ?>">
 		<?php
@@ -118,7 +118,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 	<p class="woocommerce-mini-cart__empty-message">
 		<?php esc_html_e( 'No products in the cart.', 'oceanwp' ); ?>
 		<a class="owp-cart-shop-link" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>" >
-		<?php
+			<?php
 				/**
 				 * Filter "Return To Shop" text.
 				 *

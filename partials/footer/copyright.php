@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Get copyright text.
-$copy = get_theme_mod( 'ocean_footer_copyright_text', 'Copyright - OceanWP Theme by OceanWP' );
+$copy = get_theme_mod( 'ocean_footer_copyright_text', 'Copyright - WordPress Theme by OceanWP' );
 $copy = oceanwp_tm_translation( 'ocean_footer_copyright_text', $copy );
 
 // Get footer menu location and apply filters for child theming.
