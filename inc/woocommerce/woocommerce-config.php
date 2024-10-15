@@ -1119,11 +1119,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Get count
 			$count = get_theme_mod( 'ocean_woocommerce_upsells_count', 3 );
-			$count = $count ? $count : 3;
+			$count = ( isset($count) && $count !== '' ) ? $count : 3;
+
+			if ( $count === 0 ) {
+				if ( is_customize_preview() ) {
+					return;
+				}
+				return;
+			}
 
 			// Get columns
 			$columns = get_theme_mod( 'ocean_woocommerce_upsells_columns', 3 );
-			$columns = $columns ? $columns : 3;
+			$columns = ( isset($columns) && $columns !== '' ) ? $columns : 3;
 
 			// Alter upsell display
 			woocommerce_upsell_display( $count, $columns );
@@ -1139,7 +1146,14 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 			// Get count
 			$count = get_theme_mod( 'ocean_woocommerce_cross_sells_count', 2 );
-			$count = $count ? $count : 2;
+			$count = ( isset($count) && $count !== '' ) ? $count : 2;
+
+			if ( $count === 0 ) {
+				if ( is_customize_preview() ) {
+					return;
+				}
+				return;
+			}
 
 			// Get columns
 			$columns = get_theme_mod( 'ocean_woocommerce_cross_sells_columns', 2 );
