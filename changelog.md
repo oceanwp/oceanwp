@@ -1,5 +1,17 @@
 # OceanWP Changelog
 
+### _2024.10.16_ - 4.0.0
+- **NEW**:: Customizer: Library upgraded to default WordPress ReactJS.
+- **NEW**:: Customizer: Customizer Controls.
+- **NEW**:: Customizer: User Interface.
+- **NEW**:: Customizer: Reorganized settings for improved user experience.
+- **NEW**:: Customizer: Panels: Site Style & Settings, Pages & Special Pages, Colors.
+- **Added**:: Customizer: User documentation: https://docs.oceanwp.org/category/894-oceanwp-customizer
+- **Added**:: Customizer: Enhanced Device Preview support.
+- **Added**:: Customizer: Improved handling of nested settings.
+- **Removed**:: Customizer: Panels: General Options panel in favor of additional, smaller and more intuitive panels.
+- **Removed**:: Customizer: Legacy PHP Controls. (edited)
+
 ### _2024.10.08_ - 3.6.1
 - **Updated**:: Magnific Popup library.
 - **Updated**:: WordPress version number for compatibility:
