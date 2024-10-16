@@ -3235,10 +3235,6 @@ del .amount {
   border-radius: 50%;
 }
 
-.woocommerce .owp-thumbs-layout-vertical span.onsale {
-  left: 15% !important;
-}
-
 /* Sales Badge Responsive */
 @media only screen and (max-width: 1080px) {
   .woocommerce .has-product-nav span.onsale {

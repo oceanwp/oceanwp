@@ -4004,7 +4004,8 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
   border-radius: 25px;
 }
 
-.has-social #site-navigation-wrap {
+.has-social #site-navigation-wrap,
+.has-after-header-content #site-navigation-wrap {
   right: 0;
 }
 
@@ -6599,38 +6600,43 @@ ul.obem-none li:after {
 /*------------------------------------*
 	Single Post Styling
 *------------------------------------*/
-.single-post ul.meta {
+.single-post ul.meta,
+.single.ocean-cpt ul.meta {
   font-size: 14.5px;
   border-bottom: 1px solid #f1f1f1;
   padding-bottom: 15px;
 }
-.single-post ul.meta li:after {
+.single-post ul.meta li:after,
+.single.ocean-cpt ul.meta li:after {
   padding: 0 8px;
 }
-.single-post ul.meta li i {
+.single-post ul.meta li i,
+.single.ocean-cpt ul.meta li i {
   padding-right: 9px;
 }
-.single-post ul.meta li .owp-icon {
+.single-post ul.meta li .owp-icon,
+.single.ocean-cpt ul.meta li .owp-icon {
   margin-right: 8px;
 }
-.single-post ul.meta li svg.owp-icon {
+.single-post ul.meta li svg.owp-icon,
+.single.ocean-cpt ul.meta li svg.owp-icon {
   width: 20px;
   height: 20px;
 }
 
-.single-post ul.ospm-default li:after {
+.single-post ul.ospm-default li:after, .single.ocean-cpt ul.ospm-default li:after {
   content: "-";
 }
 
-.single-post ul.ospm-modern li:after {
+.single-post ul.ospm-modern li:after, .single.ocean-cpt ul.ospm-modern li:after {
   content: "|";
 }
 
-.single-post ul.ospm-stylish li:after {
+.single-post ul.ospm-stylish li:after, .single.ocean-cpt ul.ospm-stylish li:after {
   content: "//";
 }
 
-.single-post ul.ospm-none li:after {
+.single-post ul.ospm-none li:after, .single.ocean-cpt ul.ospm-none li:after {
   content: "";
   margin: 0 10px;
 }
@@ -6831,8 +6837,10 @@ ul.obem-none li:after {
 .single-post.content-max-width .wp-block-gallery,
 .single-post.content-max-width .wp-block-video,
 .single-post.content-max-width .wp-block-quote,
+.single-post.content-max-width .wp-block-table,
 .single-post.content-max-width .wp-block-text-columns,
 .single-post.content-max-width .wp-block-code,
+.single-post.content-max-width .wp-block-preformatted,
 .single-post.content-max-width .entry-content ul,
 .single-post.content-max-width .entry-content ol,
 .single-post.content-max-width .wp-block-cover-text,
@@ -6856,7 +6864,9 @@ ul.obem-none li:after {
 .single-post.content-max-width .wp-block-columns.alignfull .wp-block-gallery,
 .single-post.content-max-width .wp-block-columns.alignfull .wp-block-video,
 .single-post.content-max-width .wp-block-columns.alignfull .wp-block-quote,
+.single-post.content-max-width .wp-block-columns.alignfull .wp-block-table,
 .single-post.content-max-width .wp-block-columns.alignfull .wp-block-text-columns,
+.single-post.content-max-width .wp-block-columns.alignfull .wp-block-preformatted,
 .single-post.content-max-width .wp-block-columns.alignfull .wp-block-code,
 .single-post.content-max-width .wp-block-columns.alignfull ul,
 .single-post.content-max-width .wp-block-columns.alignfull ol,
@@ -6875,7 +6885,9 @@ ul.obem-none li:after {
 .single-post.content-max-width .wp-block-columns.alignwide .wp-block-gallery,
 .single-post.content-max-width .wp-block-columns.alignwide .wp-block-video,
 .single-post.content-max-width .wp-block-columns.alignwide .wp-block-quote,
+.single-post.content-max-width .wp-block-columns.alignwide .wp-block-table,
 .single-post.content-max-width .wp-block-columns.alignwide .wp-block-text-columns,
+.single-post.content-max-width .wp-block-columns.alignwide .wp-block-preformatted,
 .single-post.content-max-width .wp-block-columns.alignwide .wp-block-code,
 .single-post.content-max-width .wp-block-columns.alignwide ul,
 .single-post.content-max-width .wp-block-columns.alignwide ol,
@@ -6894,7 +6906,9 @@ ul.obem-none li:after {
 .single-post.content-max-width .elementor-section .wp-block-gallery,
 .single-post.content-max-width .elementor-section .wp-block-video,
 .single-post.content-max-width .elementor-section .wp-block-quote,
+.single-post.content-max-width .elementor-section .wp-block-table,
 .single-post.content-max-width .elementor-section .wp-block-text-columns,
+.single-post.content-max-width .elementor-section .wp-block-preformatted,
 .single-post.content-max-width .elementor-section .wp-block-code,
 .single-post.content-max-width .elementor-section ul,
 .single-post.content-max-width .elementor-section ol,

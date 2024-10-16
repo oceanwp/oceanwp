@@ -65,7 +65,8 @@ ul.obem-none li:after { content: ''; margin: 0 5px; }
 /*------------------------------------*
 	Single Post Styling
 *------------------------------------*/
-.single-post ul.meta {
+.single-post ul.meta,
+.single.ocean-cpt ul.meta {
 	font-size: 14.5px;
 	border-bottom: 1px solid $color-9;
 	padding-bottom: 15px;
@@ -91,10 +92,10 @@ ul.obem-none li:after { content: ''; margin: 0 5px; }
 	}
 }
 
-.single-post ul.ospm-default li:after { content: '-'; }
+.single-post ul.ospm-default li:after, .single.ocean-cpt ul.ospm-default li:after { content: '-'; }
 
-.single-post ul.ospm-modern li:after { content: '|'; }
+.single-post ul.ospm-modern li:after, .single.ocean-cpt ul.ospm-modern li:after { content: '|'; }
 
-.single-post ul.ospm-stylish li:after { content: '//'; }
+.single-post ul.ospm-stylish li:after, .single.ocean-cpt ul.ospm-stylish li:after { content: '//'; }
 
-.single-post ul.ospm-none li:after { content: ''; margin: 0 10px; }
+.single-post ul.ospm-none li:after, .single.ocean-cpt ul.ospm-none li:after { content: ''; margin: 0 10px; }

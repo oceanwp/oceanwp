@@ -19,6 +19,10 @@ if ( ! has_post_thumbnail() ) {
 if ( OCEANWP_LIFTERLMS_ACTIVE ) {
 	$details = get_theme_mod( 'ocean_llms_course_details', array( 'image', 'description', 'meta', 'author', 'progress', 'syllabus' ) );
 
+	if (is_string($details)) {
+		$details = json_decode($details, true);
+	}
+
 	if ( is_course() && ! in_array( 'image', $details, true ) ) {
 		return;
 	}

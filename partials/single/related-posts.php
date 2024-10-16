@@ -10,10 +10,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Only display for standard posts.
-if ( 'post' !== get_post_type() ) {
+// Get the current post type.
+$post_type = get_post_type();
+
+// Allow post types for the single post header template.
+$allowed_post_types = apply_filters( 'oceanwp_single_post_header_allowed_post_types', array( 'post' ) );
+
+// Only display for allowed post types.
+if ( ! in_array( $post_type, $allowed_post_types, true ) ) {
 	return;
 }
+
 
 // Number of columns for entries.
 $oceanwp_columns = apply_filters( 'ocean_related_blog_posts_columns', absint( get_theme_mod( 'ocean_blog_related_columns', '3' ) ) );
@@ -204,9 +211,9 @@ if ( $oceanwp_related_query->have_posts() ) :
 						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 					</h3><!-- .related-post-title -->
 
-					<?php if ( true === $srp_date ) { ?>			
+					<?php if ( true === $srp_date ) { ?>
 						<time class="published" datetime="<?php echo esc_html( get_the_date( 'c' ) ); ?>"><?php oceanwp_icon( 'date' ); ?><?php echo esc_html( get_the_date() ); ?></time>
-					<?php } ?>	
+					<?php } ?>
 
 				</article><!-- .related-post -->
 

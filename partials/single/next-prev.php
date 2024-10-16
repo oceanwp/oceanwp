@@ -10,8 +10,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Only display for standard posts.
-if ( 'post' !== get_post_type() ) {
+// Get the current post type.
+$post_type = get_post_type();
+
+// Allow post types for the single post header template.
+$allowed_post_types = apply_filters( 'oceanwp_single_post_header_allowed_post_types', array( 'post' ) );
+
+// Only display for allowed post types.
+if ( ! in_array( $post_type, $allowed_post_types, true ) ) {
 	return;
 }
 

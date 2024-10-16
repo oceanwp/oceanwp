@@ -13,9 +13,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Get meta sections.
 $sections = oceanwp_blog_single_meta();
 
-// Return if sections are empty.
-if ( empty( $sections )
-	|| 'post' !== get_post_type() ) {
+// Get the current post type.
+$post_type = get_post_type();
+
+// Allow post types for the single post header template.
+$allowed_post_types = apply_filters( 'oceanwp_single_post_header_allowed_post_types', array( 'post' ) );
+
+// Only display for allowed post types and if sections are not empty.
+if ( empty( $sections ) || ! in_array( $post_type, $allowed_post_types, true ) ) {
 	return;
 }
 
@@ -54,12 +59,12 @@ do_action( 'ocean_before_single_post_meta' );
 			<li class="meta-mod-date"<?php oceanwp_schema_markup( 'modified_date' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post last modified:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'm_date' ); ?><?php echo esc_html( get_the_modified_date() ); ?></li>
 		<?php } ?>
 
-		<?php if ( 'categories' === $section ) { ?>
+		<?php if ( 'categories' === $section && has_category() ) { ?>
 			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Post category:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'category' ); ?><?php the_category( ' <span class="owp-sep">/</span> ', get_the_ID() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'reading-time' === $section ) { ?>
-			<li class="meta-cat"><span class="screen-reader-text"><?php esc_html_e( 'Reading time:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'r_time' ); ?><?php echo esc_html( ocean_reading_time() ); ?></li>
+			<li class="meta-rt"><span class="screen-reader-text"><?php esc_html_e( 'Reading time:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'r_time' ); ?><?php echo esc_html( ocean_reading_time() ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'comments' === $section && comments_open() && ! post_password_required() ) { ?>

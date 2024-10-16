@@ -248,6 +248,10 @@ if ( ! class_exists( 'OceanWP_LifterLMS' ) ) :
 		function course_details(){
 			$details = get_theme_mod( 'ocean_llms_course_details', array( 'image', 'description', 'meta', 'author', 'progress', 'syllabus' ) );
 
+			if (is_string($details)) {
+				$details = json_decode($details, true);
+			}
+
 			if( in_array( 'image', $details) ) {
 
 			}
