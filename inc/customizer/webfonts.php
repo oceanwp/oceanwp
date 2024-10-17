@@ -65,7 +65,8 @@ function oceanwp_google_fonts_array() {
  * @since 1.0.0
  */
 function oceanwp_enqueue_google_font( $font, $subset_value = '', $variant_value = '' ) {
-    $google_fonts_enabled = get_theme_mod( 'ocean_disable_google_font', false );
+    $google_fonts_enabled = get_theme_mod( 'ocean_disable_google_font' );
+	$google_fonts_enabled = isset( $google_fonts_enabled ) ? $google_fonts_enabled : false;
 
     // Return if 'Enable Google Fonts' setting is not true
     if ( true !== $google_fonts_enabled ) {
