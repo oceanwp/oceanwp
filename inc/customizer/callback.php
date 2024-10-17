@@ -6,11 +6,15 @@
  */
 
 function ocean_legacy_google_font_disabled() {
-	$legacy_google_fonts_disabled = get_theme_mod( 'ocean_disable_google_font', false );
-	if  ( true === $legacy_google_fonts_disabled ) {
-		return false;
+	$legacy_google_fonts_disabled = get_theme_mod( 'ocean_disable_google_font' );
+	if ( isset( $legacy_google_fonts_disabled ) ) {
+		if ( true === $legacy_google_fonts_disabled ) {
+			return false;
+		} else {
+			return true;
+		}
 	} else {
-		return true;
+		return false;
 	}
 }
 
