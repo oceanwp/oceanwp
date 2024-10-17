@@ -5,6 +5,15 @@
  * @package OceanWP WordPress theme
  */
 
+function ocean_legacy_google_font_disabled() {
+	$legacy_google_fonts_disabled = get_theme_mod( 'ocean_disable_google_font', false );
+	if  ( true === $legacy_google_fonts_disabled ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
 function ocean_is_google_font_settings() {
 	if ( true === get_theme_mod( 'ocean_disable_google_font', false ) ) {
 		return true;

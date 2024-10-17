@@ -65,11 +65,12 @@ function oceanwp_google_fonts_array() {
  * @since 1.0.0
  */
 function oceanwp_enqueue_google_font( $font, $subset_value = '', $variant_value = '' ) {
+    $google_fonts_enabled = get_theme_mod( 'ocean_disable_google_font', false );
 
-	// Return if disabled
-	if ( false === get_theme_mod( 'ocean_disable_google_font', false ) ) {
-		return;
-	}
+    // Return if 'Enable Google Fonts' setting is not true
+    if ( true !== $google_fonts_enabled ) {
+        return;
+    }
 
 	// Get list of all Google Fonts
 	$google_fonts = oceanwp_google_fonts_array();
