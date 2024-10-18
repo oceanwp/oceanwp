@@ -1,4 +1,3 @@
-import { data } from "infinite-scroll";
 import { options } from "../../constants";
 import delegate from "delegate";
 
@@ -61,16 +60,6 @@ class WooAjaxAddToCart {
 
     const formData = this.#getFormData(form);
 
-    const formDataObj = this.#convertDataToObject(formData)
-
-    if (formDataObj['add-to-cart']) {
-      // Assign the value of 'add-to-cart' to 'product_id'
-      formDataObj['product_id'] = formDataObj['add-to-cart'];
-
-      // Delete the original 'add-to-cart' key
-      delete formDataObj['add-to-cart'];
-    }
-
     if (formData.some(({ name }) => name === "add-to-cart")) {
       event.preventDefault();
 
@@ -83,7 +72,7 @@ class WooAjaxAddToCart {
        */
       jQuery("body").trigger("adding_to_cart", [
         jQuery(addToCartBtn),
-        formDataObj,
+        formData,
       ]);
 
       /**
@@ -93,7 +82,8 @@ class WooAjaxAddToCart {
       jQuery.ajax({
         type: "POST",
         url: oceanwpLocalize.wc_ajax_url.toString().replace( '%%endpoint%%', 'add_to_cart' ),
-        data: formDataObj,
+        data: formData,
+
         success: function (response) {
 
           if ( response.error && response.product_url ) {
@@ -109,12 +99,11 @@ class WooAjaxAddToCart {
           jQuery("body").trigger("added_to_cart", [
             response.fragments,
             response.cart_hash,
-            jQuery(addToCartBtn),
-            'wc_fragments_refreshed',
+            jQuery(addToCartBtn)
           ]);
 
           if (options.cart_redirect_after_add === "yes") {
-            window.location = options.cart_url;
+            // window.location = options.cart_url;
             return;
           }
         },
@@ -133,8 +122,7 @@ class WooAjaxAddToCart {
       // Add view cart text.
       if (
         !options.is_cart &&
-        !cartBtn.parentNode.querySelector(".added_to_cart") &&
-        cart_hash
+        !cartBtn.parentNode.querySelector(".added_to_cart")
       ) {
         cartBtn.insertAdjacentHTML(
           "afterend",
@@ -143,12 +131,6 @@ class WooAjaxAddToCart {
       }
     }
   };
-
-  // #getFormData = (form) => {
-  //   form = form instanceof Element ? form : document.querySelector(form);
-  //   return new FormData(form); // Directly return the FormData object
-  // };
-
 
   #getFormData = (form) => {
     form = form instanceof Element ? form : document.querySelector(form);
@@ -185,19 +167,6 @@ class WooAjaxAddToCart {
           };
     });
   };
-
-  #convertDataToObject = (dataArray) => {
-    // Initialize an empty object to hold the converted data
-    const dataObject = {};
-
-    // Iterate over the array of data
-    dataArray.forEach(item => {
-      // Set each item into the object with its name as the key and value as the value
-      dataObject[item.name] = item.value;
-    });
-
-    return dataObject;
-  }
 }
 
 jQuery(function () {

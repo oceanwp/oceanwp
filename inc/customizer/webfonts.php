@@ -120,8 +120,19 @@ function oceanwp_enqueue_google_font( $font, $subset_value = '', $variant_value 
 	$url = '//fonts.googleapis.com/css?family=' . str_replace( ' ', '%20', $font ) . ':';
 
 	if ( isset( $variant_value ) && '' !== $variant_value ) {
-		$variant = $variant_value;
-		$url .= $variant;
+		if (in_array($variant_value, $weights, true)) {
+			$url .= implode( ',', $weights ) . ',';
+			$italic_weights = array();
+			if ( $italics ) {
+				foreach ( $weights as $weight ) {
+					$italic_weights[] = $weight . 'i';
+				}
+				$url .= implode( ',', $italic_weights );
+			}
+		} else {
+			$variant = $variant_value;
+			$url .= $variant;
+		}
 	} else if ( ! empty( $weights ) ) {
 		$url .= implode( ',', $weights ) . ',';
 		$italic_weights = array();
