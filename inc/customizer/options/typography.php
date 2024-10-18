@@ -35,7 +35,7 @@ $options = [
 				'priority' => 10,
 				'default'  => false,
 				'hideLabel' => false,
-				//'active_callback'   => 'ocean_legacy_setting_disabled';
+				'active_callback' => 'ocean_legacy_setting_disabled',
 				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 			],
 
@@ -46,7 +46,7 @@ $options = [
 				'transport' => 'refresh',
 				'priority' => 10,
 				'hideLabel' => false,
-				'default'           => ocean_inherit_legacy_google_settings(),
+				'default' => ocean_inherit_legacy_google_settings(),
 				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 			],
 

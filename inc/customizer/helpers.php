@@ -461,7 +461,7 @@ if ( ! function_exists( 'ocean_render_content_need_help' ) ) {
 
 /**
  * Customizer Inherit Legacy Google Font Settings
- * 
+ *
  * @return bool
  * @since 4.0.1
  */
@@ -480,20 +480,3 @@ if ( ! function_exists( 'ocean_inherit_legacy_google_settings') ) {
 		}
 	}
 }
-
-// if ( ! function_exists( 'ocean_inherit_legacy_google_settings') ) {
-// 	function ocean_inherit_legacy_google_settings() {
-
-// 		$legacy_settings = get_theme_mod( 'ocean_disable_google_font', null );
-
-// 		if ( is_null( $legacy_settings ) ) {
-// 			return false;
-// 		}
-
-// 		if ( false === $legacy_settings ) {
-// 			return true;
-// 		}
-
-// 		return false;
-// 	}
-// }
