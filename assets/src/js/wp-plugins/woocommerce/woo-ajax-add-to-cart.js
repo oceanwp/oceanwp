@@ -86,10 +86,10 @@ class WooAjaxAddToCart {
 
         success: function (response) {
 
-          // if ( response.error && response.product_url ) {
-					// 	window.location = response.product_url;
-					// 	return;
-					// }
+          if ( response.error && response.product_url ) {
+						window.location = response.product_url;
+						return;
+					}
 
           /**
            * Because Woocommerce plugin uses jQuery custom event,
