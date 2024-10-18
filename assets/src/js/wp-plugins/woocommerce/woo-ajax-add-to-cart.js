@@ -86,10 +86,10 @@ class WooAjaxAddToCart {
 
         success: function (response) {
 
-          if ( response.error && response.product_url ) {
-						window.location = response.product_url;
-						return;
-					}
+          // if ( response.error && response.product_url ) {
+					// 	window.location = response.product_url;
+					// 	return;
+					// }
 
           /**
            * Because Woocommerce plugin uses jQuery custom event,
@@ -103,7 +103,7 @@ class WooAjaxAddToCart {
           ]);
 
           if (options.cart_redirect_after_add === "yes") {
-            // window.location = options.cart_url;
+            window.location = options.cart_url;
             return;
           }
         },
