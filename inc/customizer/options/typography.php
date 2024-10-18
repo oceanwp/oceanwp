@@ -46,7 +46,7 @@ $options = [
 				'transport' => 'refresh',
 				'priority' => 10,
 				'hideLabel' => false,
-				'default'           => inherit_legacy_google_settings(),
+				'default'           => ocean_inherit_legacy_google_settings(),
 				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 			],
 
