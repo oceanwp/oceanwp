@@ -64,14 +64,14 @@ function oceanwp_google_fonts_array() {
  *
  * @since 1.0.0
  */
-function oceanwp_enqueue_google_font( $font, $subset_value = '', $variant_value = '' ) {
+function oceanwp_enqueue_google_font( $font ) {
 
-    $google_fonts_enabled = get_theme_mod( 'ocean_enable_google_fonts', ocean_inherit_legacy_google_settings() );
+	$google_fonts_enabled = get_theme_mod( 'ocean_enable_google_fonts', ocean_inherit_legacy_google_settings() );
 
-    // Return if 'Enable Google Fonts' setting is not true
-    if ( true !== $google_fonts_enabled ) {
-        return;
-    }
+	// Return if 'Enable Google Fonts' setting is not true
+	if ( true !== $google_fonts_enabled ) {
+		return;
+	}
 
 	// Get list of all Google Fonts
 	$google_fonts = oceanwp_google_fonts_array();
@@ -98,9 +98,7 @@ function oceanwp_enqueue_google_font( $font, $subset_value = '', $variant_value 
 	}
 
 	$subsets     = '';
-	if ( isset( $subset_value ) && '' !== $subset_value ) {
-		$subsets = $subset_value;
-	} else if ( ! empty( $get_subsets ) ) {
+	if ( ! empty( $get_subsets ) ) {
 		$font_subsets = array();
 		foreach ( $get_subsets as $get_subset ) {
 			$font_subsets[] = $get_subset;
@@ -119,22 +117,8 @@ function oceanwp_enqueue_google_font( $font, $subset_value = '', $variant_value 
 	// Main URL
 	$url = '//fonts.googleapis.com/css?family=' . str_replace( ' ', '%20', $font ) . ':';
 
-	if ( isset( $variant_value ) && '' !== $variant_value ) {
-		if (in_array($variant_value, $weights, true)) {
-			$url .= implode( ',', $weights ) . ',';
-			$italic_weights = array();
-			if ( $italics ) {
-				foreach ( $weights as $weight ) {
-					$italic_weights[] = $weight . 'i';
-				}
-				$url .= implode( ',', $italic_weights );
-			}
-		} else {
-			$variant = $variant_value;
-			$url .= $variant;
-		}
-	} else if ( ! empty( $weights ) ) {
-		$url .= implode( ',', $weights ) . ',';
+	if ( ! empty( $weights ) ) {
+		$url           .= implode( ',', $weights ) . ',';
 		$italic_weights = array();
 		if ( $italics ) {
 			foreach ( $weights as $weight ) {

@@ -316,7 +316,7 @@ class OceanWP_Typography_CSS {
 		// Loop through and enqueue fonts with associated subset.
 		if ( ! empty( $fonts ) && is_array( $fonts ) ) {
 			foreach ( $fonts as $font_key => $font ) {
-				oceanwp_enqueue_google_font( $font['name'], $font['subset'], $font['variant'] );
+				oceanwp_enqueue_google_font( $font['name'] );
 			}
 		}
 
