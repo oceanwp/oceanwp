@@ -1,12 +1,14 @@
 # OceanWP Changelog
 
 ### _2024.10.21_ - 4.0.1
-- **Fixed**:: Customizer: Enable Google Fonts option doesn't inherit old settings.
-- **Fixed**:: Customizer: Controls: Typography: typography panel displays incorrect font weights on second load.
-- **Fixed**:: Customizer: Controls: Typography: typography panel doesn't display font subset on second load.
+- **Fixed**:: Customizer: Enable Google Fonts option doesn't inherit old settings from version 3.6.1 and lower.
+- **Fixed**:: Customizer: Footer Copyright: Typography: option for footer menu missing.
 - **Fixed**:: Function: Enqueue Google Fonts: incorrect conditional check for enqueueing.
-- **Fixed**:: WooCommerce: Variable Products: parent product added to cart instead of product variation.
+- **Fixed**:: WooCommerce: Single Product: Variable Products: parent product added to cart instead of product variation.
 - **Fixed**:: Page Title: Page Title heading and subheading colors reset after update.
+- **Removed**:: Theme: method of loading Google fonts via a json file due to increased API calls. PHP method reinstated.
+- **Removed**:: Customizer: Controls: Typography: dynamic display of available font weights for simplicity. Standard font weights reinstated.
+- **Removed**:: Customizer: Controls: Typography: individual font subset for simplicity (global font Google fonts subset options available).
 
 ### _2024.10.16_ - 4.0.0
 - **NEW**:: Customizer: Library upgraded to default WordPress ReactJS.
