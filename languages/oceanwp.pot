@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-18T12:33:59+00:00\n"
+"POT-Creation-Date: 2024-10-21T06:11:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: oceanwp\n"
@@ -521,9 +521,9 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:2147
 #: inc/third/class-lifterlms.php:307
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/src/components/typography/font-family.js:822
-#: inc/customizer/src/components/typography/font-family.js:929
-#: inc/customizer/src/components/typography/font-family.js:987
+#: inc/customizer/src/components/typography/font-family.js:1042
+#: inc/customizer/src/components/typography/font-family.js:1149
+#: inc/customizer/src/components/typography/font-family.js:1209
 msgid "Default"
 msgstr ""
 
@@ -2353,7 +2353,7 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:6706
 #: inc/customizer/options/woocommerce.php:7079
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/src/components/typography/font-family.js:978
+#: inc/customizer/src/components/typography/font-family.js:1200
 msgid "Font Family"
 msgstr ""
 
@@ -2502,7 +2502,7 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7094
 #: inc/customizer/options/woocommerce.php:7101
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/src/components/typography/font-family.js:1003
+#: inc/customizer/src/components/typography/font-family.js:1225
 msgid "Font Weight"
 msgstr ""
 
@@ -3341,7 +3341,7 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:9545
 #: inc/customizer/options/woocommerce.php:9583
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/src/components/typography/font-family.js:930
+#: inc/customizer/src/components/typography/font-family.js:1150
 msgid "Normal"
 msgstr ""
 
@@ -6783,8 +6783,6 @@ msgid "Google Font Subsets"
 msgstr ""
 
 #: inc/customizer/options/typography.php:142
-#: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/src/components/typography/font-family.js:1014
 msgid "Font Subsets"
 msgstr ""
 
@@ -10161,22 +10159,22 @@ msgid "Choose Color"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/src/components/typography/font-family.js:827
+#: inc/customizer/src/components/typography/font-family.js:1047
 msgid "Custom Fonts"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/src/components/typography/font-family.js:848
+#: inc/customizer/src/components/typography/font-family.js:1068
 msgid "System Fonts"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/src/components/typography/font-family.js:855
+#: inc/customizer/src/components/typography/font-family.js:1075
 msgid "Google Fonts"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/src/components/typography/font-family.js:931
+#: inc/customizer/src/components/typography/font-family.js:1151
 msgid "Bold"
 msgstr ""
 
