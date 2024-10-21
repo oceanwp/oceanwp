@@ -7,6 +7,7 @@
 - **Fixed**:: Function: Enqueue Google Fonts: incorrect conditional check for enqueueing.
 - **Fixed**:: WooCommerce: Single Product: Variable Products: parent product added to cart instead of product variation.
 - **Fixed**:: Page Title: Page Title heading and subheading colors reset after update.
+- **Fixed**:: WooCommerce: Archives: Hover Style: Add to Cart button colors.
 - **Removed**:: Theme: method of loading Google fonts via a json file due to increased API calls. PHP method reinstated.
 - **Removed**:: Customizer: Controls: Typography: dynamic display of available font weights for simplicity. Standard font weights reinstated.
 - **Removed**:: Customizer: Controls: Typography: individual font subset for simplicity (global font Google fonts subset options available).

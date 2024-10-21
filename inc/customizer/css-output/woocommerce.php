@@ -975,12 +975,12 @@ class OceanWP_Customize_WooCommerce_CSS {
 
 		// Add product entry add to cart background color
 		if ( ! empty( $product_entry_addtocart_bg_color ) ) {
-			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart{background-color:'. $product_entry_addtocart_bg_color .';}';
+			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart, .woocommerce ul.products li.product:not(.product-category) .image-wrap .button{background-color:'. $product_entry_addtocart_bg_color .';}';
 		}
 
 		// Add product entry add to cart background color hover
 		if ( ! empty( $product_entry_addtocart_bg_color_hover ) ) {
-			$css .= '.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover{background-color:'. $product_entry_addtocart_bg_color_hover .';}';
+			$css .= '.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover, .woocommerce ul.products li.product:not(.product-category) .image-wrap .button:hover{background-color:'. $product_entry_addtocart_bg_color_hover .';}';
 		}
 
 		// Add product entry add to cart color

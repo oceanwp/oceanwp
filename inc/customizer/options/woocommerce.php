@@ -3955,7 +3955,7 @@ $options = [
 										'key' => 'normal',
 										'label' => esc_html__( 'Select Color', 'oceanwp' ),
 										'selector' => [
-											'.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart' => 'background-color'
+											'.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart, .woocommerce ul.products li.product:not(.product-category) .image-wrap .button' => 'background-color'
 										],
 										'attr' => [
 											'transport' => 'postMessage',
@@ -3966,7 +3966,7 @@ $options = [
 										'key' => 'hover',
 										'label' => esc_html__( 'Hover', 'oceanwp' ),
 										'selector' => [
-											'.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover' => 'background-color'
+											'.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover, .woocommerce ul.products li.product:not(.product-category) .image-wrap .button:hover' => 'background-color'
 										],
 										'attr' => [
 											'transport' => 'postMessage',
