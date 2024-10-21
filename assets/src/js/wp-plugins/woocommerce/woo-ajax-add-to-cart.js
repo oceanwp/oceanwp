@@ -52,12 +52,6 @@ class WooAjaxAddToCart {
 
     const addToCartBtn = event.delegateTarget;
     const form = addToCartBtn.closest("form.cart");
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
     const formData = this.#getFormData(form);
 
     if (formData.some(({ name }) => name === "add-to-cart")) {
@@ -81,16 +75,10 @@ class WooAjaxAddToCart {
        */
       jQuery.ajax({
         type: "POST",
-        url: oceanwpLocalize.wc_ajax_url.toString().replace( '%%endpoint%%', 'add_to_cart' ),
+        url: oceanwpLocalize.wc_ajax_url,
         data: formData,
 
         success: function (response) {
-
-          // if ( response.error && response.product_url ) {
-					// 	window.location = response.product_url;
-					// 	return;
-					// }
-
           /**
            * Because Woocommerce plugin uses jQuery custom event,
            * We also have to use jQuery to customize this event.
@@ -99,7 +87,8 @@ class WooAjaxAddToCart {
           jQuery("body").trigger("added_to_cart", [
             response.fragments,
             response.cart_hash,
-            jQuery(addToCartBtn)
+            jQuery(addToCartBtn),
+            'wc_fragments_refreshed',
           ]);
 
           if (options.cart_redirect_after_add === "yes") {
@@ -107,7 +96,6 @@ class WooAjaxAddToCart {
             return;
           }
         },
-        dataType: 'json',
       });
     }
   };
