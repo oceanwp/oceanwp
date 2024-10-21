@@ -3,6 +3,7 @@
 ### _2024.10.21_ - 4.0.1
 - **Fixed**:: Customizer: Enable Google Fonts option doesn't inherit old settings from version 3.6.1 and lower.
 - **Fixed**:: Customizer: Footer Copyright: Typography: option for footer menu missing.
+- **Fixed**:: Customizer: Performance: incorrect help document link.
 - **Fixed**:: Function: Enqueue Google Fonts: incorrect conditional check for enqueueing.
 - **Fixed**:: WooCommerce: Single Product: Variable Products: parent product added to cart instead of product variation.
 - **Fixed**:: Page Title: Page Title heading and subheading colors reset after update.

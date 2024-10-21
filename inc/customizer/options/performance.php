@@ -336,7 +336,7 @@ $options = [
 
 	'ocean_site_performance_section_need_help' => [
 		'type'      => 'ocean-content',
-		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/906-customizer-seo-settings/" target="_blank">', '</a>' ),
+		'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/907-customizer-performance/" target="_blank">', '</a>' ),
 		'class'     => 'need-help',
 		'priority'  => 10,
 		'section'   => 'ocean_site_performance',
