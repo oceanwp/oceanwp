@@ -38,7 +38,7 @@ class OceanWP_Customize_Topbar_CSS {
 		$social_font_size               = get_theme_mod( 'ocean_top_bar_social_font_size' );
 		$social_font_size_tablet        = get_theme_mod( 'ocean_top_bar_social_tablet_font_size' );
 		$social_font_size_mobile        = get_theme_mod( 'ocean_top_bar_social_mobile_font_size' );
-		$social_font_size_unit          = get_theme_mod( 'ocean_top_bar_social_font_size_unit' );
+		$social_font_size_unit          = get_theme_mod( 'ocean_top_bar_social_font_size_unit', 'px' );
 		$social_right_padding           = get_theme_mod( 'ocean_top_bar_social_right_padding', 6 );
 		$social_left_padding            = get_theme_mod( 'ocean_top_bar_social_left_padding', 6 );
 		$social_tablet_right_padding    = get_theme_mod( 'ocean_top_bar_social_tablet_right_padding' );
