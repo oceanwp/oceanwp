@@ -188,6 +188,14 @@ class OceanWP_Style_Settings_CSS {
 		$bs_search_sidebars_width = get_theme_mod( 'ocean_search_both_sidebars_sidebars_width' );
 		$bs_search_sidebars_width_unit = get_theme_mod( 'ocean_search_both_sidebars_sidebars_width_unit'. '%' );
 
+
+		$page_header_top_padding       = get_theme_mod( 'ocean_page_header_top_padding', 34 );
+		$page_header_bottom_padding    = get_theme_mod( 'ocean_page_header_bottom_padding', 34 );
+		$tablet_ph_top_padding         = get_theme_mod( 'ocean_page_header_tablet_top_padding' );
+		$tablet_ph_bottom_padding      = get_theme_mod( 'ocean_page_header_tablet_bottom_padding' );
+		$mobile_ph_top_padding         = get_theme_mod( 'ocean_page_header_mobile_top_padding' );
+		$mobile_ph_bottom_padding      = get_theme_mod( 'ocean_page_header_mobile_bottom_padding' );
+
 		$css = '';
 		$content_padding_css = '';
 		$tablet_content_padding_css = '';
@@ -635,6 +643,24 @@ class OceanWP_Style_Settings_CSS {
 						body.search-results.content-both-sidebars.ssc-style .content-area{left:' . $bs_search_sidebars_width * 2 . $bs_search_content_width_unit . ';}
 					}';
 			}
+		}
+
+		// Page header padding.
+		if ( isset( $page_header_top_padding ) && 34 != $page_header_top_padding && '' != $page_header_top_padding
+			|| isset( $page_header_bottom_padding ) && 34 != $page_header_bottom_padding && '' != $page_header_bottom_padding ) {
+			$css .= '.page-header, .has-transparent-header .page-header{padding:' . oceanwp_spacing_css( $page_header_top_padding, '', $page_header_bottom_padding, '' ) . '}';
+		}
+
+		// Tablet page header padding.
+		if ( isset( $tablet_ph_top_padding ) && '' != $tablet_ph_top_padding
+			|| isset( $tablet_ph_bottom_padding ) && '' != $tablet_ph_bottom_padding ) {
+			$css .= '@media (max-width: 768px){.page-header, .has-transparent-header .page-header{padding:' . oceanwp_spacing_css( $tablet_ph_top_padding, '', $tablet_ph_bottom_padding, '' ) . '}}';
+		}
+
+		// Mobile page header padding.
+		if ( isset( $mobile_ph_top_padding ) && '' != $mobile_ph_top_padding
+			|| isset( $mobile_ph_bottom_padding ) && '' != $mobile_ph_bottom_padding ) {
+			$css .= '@media (max-width: 480px){.page-header, .has-transparent-header .page-header{padding:' . oceanwp_spacing_css( $mobile_ph_top_padding, '', $mobile_ph_bottom_padding, '' ) . '}}';
 		}
 
 

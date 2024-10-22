@@ -28,6 +28,7 @@ class OceanWP_Typography_CSS {
 	 */
 	public function __construct() {
 		add_filter('ocean_head_css', array($this, 'generate_css'), 99 );
+		add_action('wp_enqueue_scripts', array($this, 'load_fonts'));
 	}
 
 	/**
@@ -72,7 +73,6 @@ class OceanWP_Typography_CSS {
 				if ( $this->is_typography_option( $option_data ) ) {
 					$settings = $this->get_typography_settings( $option_data );
 					if ( ! empty( $settings ) ) {
-						//error_log(print_r($settings, true));
 						$css .= $this->generate_css_string( $settings );
 					}
 				}
@@ -311,17 +311,90 @@ class OceanWP_Typography_CSS {
 			}
 		}
 
-		$fonts = $this->fonts;
+		return $css;
+	}
 
-		// Loop through and enqueue fonts with associated subset.
-		if ( ! empty( $fonts ) && is_array( $fonts ) ) {
-			foreach ( $fonts as $font_key => $font ) {
-				oceanwp_enqueue_google_font( $font['name'], $font['subset'], $font['variant'] );
+	/**
+	 * Get fonts
+	 *
+	 * @return array
+	 */
+	public function generate_fonts() {
+		$options = ocean_get_customize_settings_data();
+		$fonts = [];
+
+		foreach ($options as $section_key => $section_options) {
+			if (isset($section_options['options'])) {
+				$section_fonts = $this->get_fonts_array($section_options['options']);
+				if (!empty($section_fonts)) {
+					$fonts = array_merge($fonts, $section_fonts);
+				}
 			}
 		}
 
-		return $css;
+		return $fonts;
 	}
+
+	/**
+	 * Get font names from options
+	 *
+	 * @var object $options Settings.
+	 */
+	public function get_fonts_array($options) {
+		$fonts = [];
+
+		if (is_array($options)) {
+			foreach ($options as $option_key => $option_data) {
+				if ($this->is_typography_option($option_data)) {
+					$settings = $this->get_typography_settings($option_data);
+					if (!empty($settings)) {
+						$fonts = array_merge($fonts, $this->generate_font_data($settings));
+					}
+				}
+
+				if (isset($option_data['options'])) {
+					$fonts = array_merge($fonts, $this->get_fonts_array($option_data['options']));
+				}
+			}
+		}
+
+		return $fonts;
+	}
+
+	/**
+	 * Generate font names
+	 *
+	 * @var Object $settings Settings.
+	 * @return array Array of font names.
+	 */
+	public function generate_font_data($settings) {
+		$fonts = [];
+
+		foreach ($settings as $selector => $settings_key) {
+			if (isset($settings_key['fontFamily']) && !empty($settings_key['fontFamily'])) {
+				$fonts[] = $settings_key['fontFamily'];
+			}
+		}
+
+		return $fonts;
+	}
+
+
+	/**
+	 * Loads Google fonts
+	 */
+	public function load_fonts() {
+		$fonts = $this->generate_fonts();
+
+		if ( ! empty( $fonts ) && is_array( $fonts ) ) {
+			foreach ( $fonts as $font ) {
+				if (!empty($font)) {
+					oceanwp_enqueue_google_font( $font );
+				}
+			}
+		}
+	}
+
 }
 
 return new OceanWP_Typography_CSS();

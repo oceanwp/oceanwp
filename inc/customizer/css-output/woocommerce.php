@@ -200,7 +200,9 @@ class OceanWP_Customize_WooCommerce_CSS {
 		$product_entry_addtocart_border_color_hover 		= get_theme_mod( 'ocean_product_entry_addtocart_border_color_hover', '#13aff0' );
 		$product_entry_addtocart_border_style 				= get_theme_mod( 'ocean_product_entry_addtocart_border_style', 'double' );
 		$product_entry_addtocart_border_size 				= get_theme_mod( 'ocean_product_entry_addtocart_border_size' );
+		$product_entry_addtocart_border_size_unit 			= get_theme_mod( 'ocean_product_entry_addtocart_border_size_unit', 'px' );
 		$product_entry_addtocart_border_radius 				= get_theme_mod( 'ocean_product_entry_addtocart_border_radius' );
+		$product_entry_addtocart_border_radius_unit 		= get_theme_mod( 'ocean_product_entry_addtocart_border_radius_unit', 'px' );
 		$quick_view_button_bg 								= get_theme_mod( 'ocean_woo_quick_view_button_bg', 'rgba(0,0,0,0.6)' );
 		$quick_view_button_hover_bg 						= get_theme_mod( 'ocean_woo_quick_view_button_hover_bg', 'rgba(0,0,0,0.9)' );
 		$quick_view_button_color 							= get_theme_mod( 'ocean_woo_quick_view_button_color', '#ffffff' );
@@ -975,32 +977,32 @@ class OceanWP_Customize_WooCommerce_CSS {
 
 		// Add product entry add to cart background color
 		if ( ! empty( $product_entry_addtocart_bg_color ) ) {
-			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart{background-color:'. $product_entry_addtocart_bg_color .';}';
+			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart, .woocommerce ul.products li.product:not(.product-category) .image-wrap .button{background-color:'. $product_entry_addtocart_bg_color .';}';
 		}
 
 		// Add product entry add to cart background color hover
 		if ( ! empty( $product_entry_addtocart_bg_color_hover ) ) {
-			$css .= '.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover{background-color:'. $product_entry_addtocart_bg_color_hover .';}';
+			$css .= '.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover, .woocommerce ul.products li.product:not(.product-category) .image-wrap .button:hover{background-color:'. $product_entry_addtocart_bg_color_hover .';}';
 		}
 
 		// Add product entry add to cart color
 		if ( ! empty( $product_entry_addtocart_color ) && '#848494' != $product_entry_addtocart_color ) {
-			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart{color:'. $product_entry_addtocart_color .';}';
+			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart, .woocommerce ul.products li.product:not(.product-category) .image-wrap .button {color:'. $product_entry_addtocart_color .';}';
 		}
 
 		// Add product entry add to cart color hover
 		if ( ! empty( $product_entry_addtocart_color_hover ) && '#13aff0' != $product_entry_addtocart_color_hover ) {
-			$css .= '.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover{color:'. $product_entry_addtocart_color_hover .';}';
+			$css .= '.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover, .woocommerce ul.products li.product:not(.product-category) .image-wrap .button:hover{color:'. $product_entry_addtocart_color_hover .';}';
 		}
 
 		// Add product entry add to cart border color
 		if ( ! empty( $product_entry_addtocart_border_color ) && '#e4e4e4' != $product_entry_addtocart_border_color ) {
-			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart{border-color:'. $product_entry_addtocart_border_color .';}';
+			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart, .woocommerce ul.products li.product:not(.product-category) .image-wrap .button{border-color:'. $product_entry_addtocart_border_color .';}';
 		}
 
 		// Add product entry add to cart border color hover
 		if ( ! empty( $product_entry_addtocart_border_color_hover ) && '#13aff0' != $product_entry_addtocart_border_color_hover ) {
-			$css .= '.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover{border-color:'. $product_entry_addtocart_border_color_hover .';}';
+			$css .= '.woocommerce ul.products li.product .button:hover,.woocommerce ul.products li.product .product-inner .added_to_cart:hover, .woocommerce ul.products li.product:not(.product-category) .image-wrap .button:hover{border-color:'. $product_entry_addtocart_border_color_hover .';}';
 		}
 
 		// Add product entry add to cart border style
@@ -1010,12 +1012,12 @@ class OceanWP_Customize_WooCommerce_CSS {
 
 		// Add product entry add to cart border size
 		if ( ! empty( $product_entry_addtocart_border_size ) && '3' != $product_entry_addtocart_border_size ) {
-			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart{border-width:'. $product_entry_addtocart_border_size .';}';
+			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart{border-width:'. $product_entry_addtocart_border_size . $product_entry_addtocart_border_size_unit . ';}';
 		}
 
 		// Add product entry add to cart border radius
 		if ( ! empty( $product_entry_addtocart_border_radius ) ) {
-			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart{border-radius:'. $product_entry_addtocart_border_radius .';}';
+			$css .= '.woocommerce ul.products li.product .button,.woocommerce ul.products li.product .product-inner .added_to_cart{border-radius:'. $product_entry_addtocart_border_radius . $product_entry_addtocart_border_radius_unit . ';}';
 		}
 
 		// Add quick view button background
@@ -1092,7 +1094,7 @@ class OceanWP_Customize_WooCommerce_CSS {
 
 		// Add single product description color
 		if ( ! empty( $single_product_description_color ) && '#aaaaaa' != $single_product_description_color ) {
-			$css .= '.woocommerce div.product div[itemprop="description"]{color:'. $single_product_description_color .';}';
+			$css .= '.woocommerce div.product div[itemprop="description"], .woocommerce div.product .woocommerce-product-details__short-description{color:'. $single_product_description_color .';}';
 		}
 
 		// Add single product meta title color

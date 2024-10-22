@@ -5,8 +5,12 @@
  * @package OceanWP WordPress theme
  */
 
+function ocean_legacy_setting_disabled() {
+	return false;
+}
+
 function ocean_is_google_font_settings() {
-	if ( true === get_theme_mod( 'ocean_disable_google_font', false ) ) {
+	if ( true === get_theme_mod( 'ocean_enable_google_fonts' ) ) {
 		return true;
 	} else {
 		return false;
@@ -14,7 +18,7 @@ function ocean_is_google_font_settings() {
 }
 
 function ocean_is_local_google_font() {
-	if ( true === get_theme_mod( 'ocean_disable_google_font', false )
+	if ( true === get_theme_mod( 'ocean_enable_google_fonts' )
 		&& true === get_theme_mod( 'ocean_local_google_font', false ) ) {
 		return true;
 	} else {
@@ -23,7 +27,7 @@ function ocean_is_local_google_font() {
 }
 
 function ocean_is_elementor_google_font() {
-	if ( true === get_theme_mod( 'ocean_disable_google_font', false )
+	if ( true === get_theme_mod( 'ocean_enable_google_fonts' )
 		&& true === get_theme_mod( 'ocean_local_google_font', false )
 		&& did_action( 'elementor/loaded' ) ) {
 		return true;
@@ -271,6 +275,15 @@ function ocean_cac_header_transparent_style() {
 function oceanwp_cac_hasnt_medium_or_transparent_header_styles() {
 	if ( 'medium' == oceanwp_header_style()
 		|| 'transparent' == oceanwp_header_style() ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function oceanwp_cac_hasnt_top_or_medium_header_styles() {
+	if ( 'top' == oceanwp_header_style()
+		|| 'medium' == oceanwp_header_style() ) {
 		return false;
 	} else {
 		return true;

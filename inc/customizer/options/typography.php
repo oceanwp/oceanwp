@@ -29,12 +29,24 @@ $options = [
 		'options'  => [
 			'ocean_disable_google_font' => [
 				'type' => 'ocean-switch',
+				'label' => esc_html__( 'Disable Google Fonts', 'oceanwp' ),
+				'section' => 'ocean_google_font_section',
+				'transport' => 'refresh',
+				'priority' => 10,
+				'default'  => false,
+				'hideLabel' => false,
+				'active_callback' => 'ocean_legacy_setting_disabled',
+				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+			],
+
+			'ocean_enable_google_fonts' => [
+				'type' => 'ocean-switch',
 				'label' => esc_html__( 'Enable Google Fonts', 'oceanwp' ),
 				'section' => 'ocean_google_font_section',
-				'default'  => false,
 				'transport' => 'refresh',
 				'priority' => 10,
 				'hideLabel' => false,
+				'default' => ocean_inherit_legacy_google_settings(),
 				'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 			],
 

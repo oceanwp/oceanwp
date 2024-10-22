@@ -253,12 +253,12 @@ class OceanWP_Colors_CSS {
 
 		// Page header color.
 		if ( ! empty( $page_header_title_color ) && '#f5f5f5' != $page_header_title_color ) {
-			$css .= '.page-header .page-header-title, .page-header.background-image-page-header .page-header-title{color:' . $page_header_title_color . ';}';
+			$css .= '.page-header{color:' . $page_header_title_color . ';}';
 		}
 
 		// Page header color.
 		if ( ! empty( $page_header_text_color ) ) {
-			$css .= '.page-header {color:' . $page_header_title_color . ';}';
+			$css .= '.page-header .page-header-title, .page-header.background-image-page-header .page-header-title {color:' . $page_header_text_color . ';}';
 		}
 
 		// Page header subtitle color.

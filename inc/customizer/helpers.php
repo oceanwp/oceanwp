@@ -458,3 +458,25 @@ if ( ! function_exists( 'ocean_render_content_need_help' ) ) {
 		return $html;
 	}
 }
+
+/**
+ * Customizer Inherit Legacy Google Font Settings
+ *
+ * @return bool
+ * @since 4.0.1
+ */
+if ( ! function_exists( 'ocean_inherit_legacy_google_settings') ) {
+	function ocean_inherit_legacy_google_settings() {
+		$legacy_settings = get_theme_mod( 'ocean_disable_google_font', false );
+		if ( false === $legacy_settings ) {
+			// Google fonts enabled per old settings.
+			return true;
+		} else if ( true === $legacy_settings ) {
+			// Google fonts disabled per old settings.
+			return false;
+			// Return Google fonts as disabled if no value.
+		} else {
+			return false;
+		}
+	}
+}

@@ -883,7 +883,6 @@ $options = [
 				'active_callback' => 'oceanwp_is_page_title_display',
 			],
 
-
 			'ocean_page_header_background_setting' => [
 				'type'              => 'ocean-color',
 				'label'             => esc_html__( 'Background Color', 'oceanwp' ),
@@ -911,7 +910,7 @@ $options = [
 				]
 			],
 
-			'ocean_page_header_title_color_setting' => [
+			'page_title_typography_color_wrap' => [
 				'type'              => 'ocean-color',
 				'label'             => esc_html__( 'Text Color', 'oceanwp' ),
 				'section'           => 'ocean_section_page_title',
@@ -924,14 +923,15 @@ $options = [
 				'sanitize_callback' => 'wp_kses_post',
 				'setting_args'      => [
 					'normal' => [
-						'id'       => 'ocean_page_header_title_color',
+						'id'       => 'page_title_typography[color]',
 						'key'      => 'normal',
 						'label'    => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'.page-header' => 'color',
+							'.page-header' => 'color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
+							'default'   => '',
 						],
 					],
 				]
@@ -1112,7 +1112,7 @@ $options = [
 				]
 			],
 
-			'page_title_typography_color_wrap' => [
+			'ocean_page_header_title_color_setting' => [
 				'type'              => 'ocean-color',
 				'label'             => esc_html__( 'Title Color', 'oceanwp' ),
 				'section'           => 'ocean_section_page_title',
@@ -1125,15 +1125,14 @@ $options = [
 				'sanitize_callback' => 'wp_kses_post',
 				'setting_args'      => [
 					'normal' => [
-						'id'       => 'page_title_typography[color]',
+						'id'       => 'ocean_page_header_title_color',
 						'key'      => 'normal',
 						'label'    => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'.page-header .page-header-title, .page-header.background-image-page-header .page-header-title' => 'color'
+							'.page-header .page-header-title, .page-header.background-image-page-header .page-header-title' => 'color',
 						],
 						'attr' => [
 							'transport' => 'postMessage',
-							'default'   => '#f5f5f5',
 						],
 					],
 				]
