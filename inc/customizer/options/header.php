@@ -3119,6 +3119,7 @@ $options = [
 				'hideLabel'         => false,
 				'wrap'              => false,
 				'sanitize_callback' => 'sanitize_key',
+				'active_callback'   => 'oceanwp_cac_hasnt_top_or_medium_header_styles',
 				'choices'           => [
 					'left-menu' => [
 						'id'      => 'left-menu',

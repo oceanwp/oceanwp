@@ -860,7 +860,6 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				|| true == get_theme_mod( 'ocean_woo_product_ajax_add_to_cart', false )
 				|| 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'on' ) ) {
 				$array['ajax_url']                = admin_url( 'admin-ajax.php' );
-				$array['wc_ajax_url']             = WC_AJAX::get_endpoint( '%%endpoint%%' );
 				$array['cart_url']                = apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url(), null );
 				$array['cart_redirect_after_add'] = get_option( 'woocommerce_cart_redirect_after_add' );
 			}

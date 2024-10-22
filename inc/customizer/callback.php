@@ -281,6 +281,15 @@ function oceanwp_cac_hasnt_medium_or_transparent_header_styles() {
 	}
 }
 
+function oceanwp_cac_hasnt_top_or_medium_header_styles() {
+	if ( 'top' == oceanwp_header_style()
+		|| 'medium' == oceanwp_header_style() ) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
 function ocean_cac_header_search_dropdown() {
 	if ( 'drop_down' === get_theme_mod( 'ocean_menu_search_style', 'drop_down' ) ) {
 		return true;
