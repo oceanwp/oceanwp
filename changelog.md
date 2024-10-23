@@ -1,5 +1,14 @@
 # OceanWP Changelog
 
+### _2024.10.28_ - 4.0.2
+- **Updated**:: Library: Flickity JS: version 3.3.0.
+- **Updated**:: Compatibility: WordPress: version number.
+- **Fixed**:: Customizer: Site Style: Boxed: Content width not rendered correclty on the front end.
+- **Fixed**:: Customizer: WooCommerce: Archives: Product Display Options: Product Image Style: Gallery Slider style: images not rendered correctly.
+- **Fixed**:: Customizer: WooCommerce: Store Notice: Enable Store Notice: control option changed from dropdown options to toggle button.
+- **Fixed**:: Customizer: Live Preview: some typography options do not reneder line height changes in live preview.
+- **Fixed**:: Customizer: Top Bar: Social Menu: Social Menu Options: Icons Size: icon size not rendered correctly on the front end.
+
 ### _2024.10.21_ - 4.0.1
 - **Fixed**:: Customizer: Enable Google Fonts option doesn't inherit old settings from version 3.6.1 and lower.
 - **Fixed**:: Customizer: Footer Copyright: Typography: option for footer menu missing.
