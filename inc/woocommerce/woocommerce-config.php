@@ -1223,9 +1223,24 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			if ( function_exists( 'wc_get_template' ) ) {
 				// Get entry product media style
 				$style = get_theme_mod( 'ocean_woo_product_entry_style' );
+				$product_style = get_theme_mod( 'ocean_woo_products_style', 'default' );
+
 				$style = $style ? $style : 'image-swap';
+
+				$thumbnail_style = $style;
+
+				// If Customizer preview active
+				if ( is_customize_preview() ) {
+
+					if ( 'hover' === $product_style ) {
+						$thumbnail_style = '';
+					} else {
+						$thumbnail_style = $style;
+					}
+				}
+
 				// Get entry product media template part
-				wc_get_template( 'loop/thumbnail/' . $style . '.php' );
+				wc_get_template( 'loop/thumbnail/' . $thumbnail_style . '.php' );
 			}
 		}
 

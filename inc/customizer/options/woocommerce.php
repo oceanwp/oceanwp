@@ -5761,12 +5761,12 @@ $options = [
 				'hideLabel' => false,
 				'sanitize_callback' => 'ocean_sanitize_sortable_control',
 				'choices' => [
-					'title' => esc_html__( 'Title', 'oceanwp' ),
-					'rating' => esc_html__( 'Rating', 'oceanwp' ),
-					'price' => esc_html__( 'Price', 'oceanwp' ),
-					'excerpt' => esc_html__( 'Excerpt', 'oceanwp' ),
-					'quantity-button' => esc_html__( 'Quantity & Add To Cart', 'oceanwp' ),
-					'meta' => esc_html__( 'Product Meta', 'oceanwp' ),
+					'title' => __( 'Title', 'oceanwp' ),
+					'rating' => __( 'Rating', 'oceanwp' ),
+					'price' => __( 'Price', 'oceanwp' ),
+					'excerpt' => __( 'Excerpt', 'oceanwp' ),
+					'quantity-button' => __( 'Quantity & Add To Cart', 'oceanwp' ),
+					'meta' => __( 'Product Meta', 'oceanwp' ),
 				]
 			],
 

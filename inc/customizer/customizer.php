@@ -477,6 +477,24 @@ class OceanWP_Customizer_Init {
 			);
 		}
 
+		global $wp_version;
+
+		if (version_compare($wp_version, '6.7', '<')) {
+			wp_add_inline_style('owp-react-customizer', '
+				#customize-theme-controls .ocean-customizer-section-icon {
+					display: block;
+					height: 18px;
+					margin-left: -10px;
+					margin-right: 15px;
+					position: relative;
+					width: 18px;
+				}
+				#customize-theme-controls .customize-pane-child .ocean-customizer-section-icon {
+					margin-right: 10px;
+					margin-left: -5px;
+				}
+			');
+		}
 	}
 
 	/**

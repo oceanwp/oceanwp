@@ -3340,6 +3340,7 @@ $options = [
 						'label' => esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
+							'default'   => 'px'
 						],
 					],
 					'letterSpacing' => [
