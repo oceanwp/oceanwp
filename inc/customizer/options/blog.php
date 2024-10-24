@@ -4339,7 +4339,7 @@ $options = [
 								'label' => esc_html__( 'Font Size', 'oceanwp' ),
 								'attr'  => [
 									'transport' => 'postMessage',
-									'default'   => 34,
+									'default'   => 14,
 								],
 							],
 							'fontSizeTablet' => [
