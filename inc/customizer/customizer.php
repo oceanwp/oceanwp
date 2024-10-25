@@ -243,7 +243,7 @@ class OceanWP_Customizer_Init {
 						$wp_customize->add_setting(
 							$setting_name,
 							array(
-								'transport' => 'postMessage',
+								'transport' => 'refresh',
 								'sanitize_callback' => isset( $option_data['sanitize_callback'] ) ? $option_data['sanitize_callback'] : 'oceanwp_default_sanitize',
 							)
 						);
