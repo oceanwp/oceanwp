@@ -65,11 +65,15 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 
 		<?php
 		// Display copyright info.
-		if ( $copy ) :
+		if ( ! empty($copy) ) :
 			?>
 
 			<div id="copyright" class="clr" role="contentinfo">
-				<?php echo wp_kses_post( do_shortcode( $copy ) ); ?>
+				<?php
+				if ( ! empty($copy) ) {
+					echo wp_kses_post( do_shortcode( $copy ) );
+				}
+				?>
 			</div><!-- #copyright -->
 
 			<?php

@@ -1570,7 +1570,7 @@ if ( ! function_exists( 'oceanwp_display_after_header_content' ) ) {
 		// Display header content
 		if ( ( 'minimal' == $style
 				|| 'transparent' == $style )
-			&& $content
+			&& !empty($content)
 			|| ( 'minimal' == $style
 				|| 'transparent' == $style )
 			&& is_customize_preview() ) {
@@ -1579,7 +1579,9 @@ if ( ! function_exists( 'oceanwp_display_after_header_content' ) ) {
 				<div class="after-header-content-inner">
 					<?php
 					// Display top bar content
-					echo do_shortcode( $content );
+					if ( !empty($content) ) {
+						echo do_shortcode( $content );
+					}
 					?>
 				</div>
 			</div>
