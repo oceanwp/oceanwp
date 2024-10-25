@@ -3511,7 +3511,6 @@ $options = [
 						],
 						'attr' => [
 							'transport' => 'postMessage',
-							'default'   => '#f8f8f8',
 						],
 					],
 				]

@@ -32,7 +32,7 @@ class OceanWP_Customize_Blog_CSS {
 		$bs_archives_content_width_unit = get_theme_mod( 'ocean_blog_archives_both_sidebars_content_width_unit', '%' );
 		$bs_archives_sidebars_width     = get_theme_mod( 'ocean_blog_archives_both_sidebars_sidebars_width' );
 		$bs_archives_sidebars_width_unit = get_theme_mod( 'ocean_blog_archives_both_sidebars_sidebars_width_unit', '%'  );
-		$bs_single_content_width_unit   = get_theme_mod( 'ocean_blog_single_both_sidebars_content_width' );
+		$bs_single_content_width         = get_theme_mod( 'ocean_blog_single_both_sidebars_content_width' );
 		$bs_single_content_width_unit   = get_theme_mod( 'ocean_blog_single_both_sidebars_content_width_unit', '%'  );
 		$bs_single_sidebars_width       = get_theme_mod( 'ocean_blog_single_both_sidebars_sidebars_width' );
 		$bs_single_sidebars_width_unit  = get_theme_mod( 'ocean_blog_single_both_sidebars_sidebars_width_unit', '%'  );

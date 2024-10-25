@@ -4970,7 +4970,10 @@ add_action( 'admin_init', 'oceanwp_includes' );
 function oceanwp_includes() {
 	//Include theme panel.
 	if ( is_admin() ) {
-		require_once OCEANWP_THEME_DIR . '/inc/themepanel/theme-panel.php';
+		$theme_panel_path = OCEANWP_THEME_DIR . '/inc/themepanel/theme-panel.php';
+		if ( file_exists( $theme_panel_path ) ) {
+			require_once $theme_panel_path;
+		}
 	}
 
 }
