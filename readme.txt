@@ -75,7 +75,7 @@ Source: https://github.com/aFarkas/html5shiv
 
 Flickity, Copyright (c) 2015-2021 Metafizzy
 License: GPLv3 - https://www.gnu.org/licenses/gpl-3.0.html
-Source: https://flickity.metafizzy.com
+Source: https://flickity.metafizzy.co
 
 Perfect-Scrollbar, Copyright 2020 Hyunje Jun, MDBootstrap and Contributors
 License: MIT - https://opensource.org/licenses/MIT
