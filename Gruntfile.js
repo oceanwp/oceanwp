@@ -416,6 +416,7 @@ module.exports = function (grunt) {
           "!bower_components/**",
           "!build/**",
           "!inc/customizer/src/**",
+          "!inc/customizer/customizer-src/**",
           "!vendor/**",
           "!composer.json",
           "!composer.lock",
