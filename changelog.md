@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2024.10.28_ - 4.0.2
+### _2024.10.29_ - 4.0.2
 - **Added**:: Compatibility: WordPress: Customizer styling support for WordPress 6.7.
 - **Updated**:: Compatibility: WordPress: version number.
 - **Fixed**:: Customizer: Site Style: Boxed: Content width not rendered correclty on the front end.
@@ -10,7 +10,7 @@
 - **Fixed**:: Customizer: Top Bar: Social Menu: Social Menu Options: Icons Size: icon size not rendered correctly on the front end.
 - **Fixed**:: Customizer: Pages & Special Pages: Page Title: Background Image style: Title / Breadcrumbs position doesn't work.
 - **Fixed**:: Customizer: Blog: Single Post: Meta typography: default value not applied on the front end.
-- **Fixed**:: Customizer: Live Preview: some typography options do not reneder line height changes in live preview.
+- **Fixed**:: Customizer: Live Preview: some typography options do not render line height changes in live preview.
 - **Fixed**:: Customizer: Live Preview: WooCommerce border width changes for archives do not display changes in live preview.
 - **Fixed**:: Customizer: Control: Color: on options with previously no default color value the reset color option doesn't function.
 

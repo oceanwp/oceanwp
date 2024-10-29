@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-28T10:29:45+00:00\n"
+"POT-Creation-Date: 2024-10-29T05:53:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: oceanwp\n"
@@ -500,8 +500,8 @@ msgstr ""
 #: inc/customizer/options/blog.php:2413
 #: inc/customizer/options/blog.php:2448
 #: inc/customizer/options/blog.php:2449
-#: inc/customizer/options/blog.php:2836
-#: inc/customizer/options/blog.php:2837
+#: inc/customizer/options/blog.php:2864
+#: inc/customizer/options/blog.php:2865
 #: inc/customizer/options/header.php:2588
 #: inc/customizer/options/header.php:2618
 #: inc/customizer/options/header.php:2645
@@ -674,12 +674,12 @@ msgstr ""
 #: inc/customizer/options/blog.php:1870
 #: inc/customizer/options/blog.php:2064
 #: inc/customizer/options/blog.php:2126
-#: inc/customizer/options/blog.php:2701
-#: inc/customizer/options/blog.php:2859
-#: inc/customizer/options/blog.php:3099
-#: inc/customizer/options/blog.php:4876
-#: inc/customizer/options/blog.php:4886
-#: inc/customizer/options/blog.php:4917
+#: inc/customizer/options/blog.php:2729
+#: inc/customizer/options/blog.php:2887
+#: inc/customizer/options/blog.php:3127
+#: inc/customizer/options/blog.php:4904
+#: inc/customizer/options/blog.php:4914
+#: inc/customizer/options/blog.php:4945
 #: inc/customizer/options/colors.php:386
 #: inc/customizer/options/footer-copyright.php:642
 #: inc/customizer/options/footer-widget.php:694
@@ -918,10 +918,10 @@ msgstr ""
 #: inc/customizer/options/blog.php:2046
 #: inc/customizer/options/blog.php:2315
 #: inc/customizer/options/blog.php:2527
-#: inc/customizer/options/blog.php:2998
-#: inc/customizer/options/blog.php:3024
-#: inc/customizer/options/blog.php:3065
-#: inc/customizer/options/blog.php:3089
+#: inc/customizer/options/blog.php:3026
+#: inc/customizer/options/blog.php:3052
+#: inc/customizer/options/blog.php:3093
+#: inc/customizer/options/blog.php:3117
 #: inc/customizer/options/edd.php:259
 #: inc/customizer/options/edd.php:307
 #: inc/customizer/options/edd.php:1020
@@ -1034,30 +1034,30 @@ msgstr ""
 #: inc/customizer/options/blog.php:1547
 #: inc/customizer/options/blog.php:2020
 #: inc/customizer/options/blog.php:2053
-#: inc/customizer/options/blog.php:3196
-#: inc/customizer/options/blog.php:3225
-#: inc/customizer/options/blog.php:3254
-#: inc/customizer/options/blog.php:3359
-#: inc/customizer/options/blog.php:3388
-#: inc/customizer/options/blog.php:3417
-#: inc/customizer/options/blog.php:3523
-#: inc/customizer/options/blog.php:3553
-#: inc/customizer/options/blog.php:3582
-#: inc/customizer/options/blog.php:3688
-#: inc/customizer/options/blog.php:3718
-#: inc/customizer/options/blog.php:3747
-#: inc/customizer/options/blog.php:3853
-#: inc/customizer/options/blog.php:3883
-#: inc/customizer/options/blog.php:3912
-#: inc/customizer/options/blog.php:4018
-#: inc/customizer/options/blog.php:4048
-#: inc/customizer/options/blog.php:4077
-#: inc/customizer/options/blog.php:4197
-#: inc/customizer/options/blog.php:4227
-#: inc/customizer/options/blog.php:4256
-#: inc/customizer/options/blog.php:4361
-#: inc/customizer/options/blog.php:4391
-#: inc/customizer/options/blog.php:4420
+#: inc/customizer/options/blog.php:3224
+#: inc/customizer/options/blog.php:3253
+#: inc/customizer/options/blog.php:3282
+#: inc/customizer/options/blog.php:3387
+#: inc/customizer/options/blog.php:3416
+#: inc/customizer/options/blog.php:3445
+#: inc/customizer/options/blog.php:3551
+#: inc/customizer/options/blog.php:3581
+#: inc/customizer/options/blog.php:3610
+#: inc/customizer/options/blog.php:3716
+#: inc/customizer/options/blog.php:3746
+#: inc/customizer/options/blog.php:3775
+#: inc/customizer/options/blog.php:3881
+#: inc/customizer/options/blog.php:3911
+#: inc/customizer/options/blog.php:3940
+#: inc/customizer/options/blog.php:4046
+#: inc/customizer/options/blog.php:4076
+#: inc/customizer/options/blog.php:4105
+#: inc/customizer/options/blog.php:4225
+#: inc/customizer/options/blog.php:4255
+#: inc/customizer/options/blog.php:4284
+#: inc/customizer/options/blog.php:4389
+#: inc/customizer/options/blog.php:4419
+#: inc/customizer/options/blog.php:4448
 #: inc/customizer/options/edd.php:1027
 #: inc/customizer/options/edd.php:1060
 #: inc/customizer/options/edd.php:1256
@@ -1329,7 +1329,7 @@ msgid "Grid Columns"
 msgstr ""
 
 #: inc/customizer/options/blog.php:349
-#: inc/customizer/options/blog.php:3032
+#: inc/customizer/options/blog.php:3060
 #: inc/customizer/options/edd.php:266
 #: inc/customizer/options/edd.php:314
 #: inc/customizer/options/edd.php:1119
@@ -1351,7 +1351,7 @@ msgid "Tablet"
 msgstr ""
 
 #: inc/customizer/options/blog.php:357
-#: inc/customizer/options/blog.php:3040
+#: inc/customizer/options/blog.php:3068
 #: inc/customizer/options/edd.php:273
 #: inc/customizer/options/edd.php:321
 #: inc/customizer/options/edd.php:1126
@@ -1760,7 +1760,7 @@ msgid "Heading Tag"
 msgstr ""
 
 #: inc/customizer/options/blog.php:478
-#: inc/customizer/options/blog.php:2740
+#: inc/customizer/options/blog.php:2768
 #: inc/customizer/options/footer-widget.php:194
 #: inc/customizer/options/page-settings.php:379
 #: inc/customizer/options/sidebar.php:286
@@ -1769,7 +1769,7 @@ msgid "H1"
 msgstr ""
 
 #: inc/customizer/options/blog.php:479
-#: inc/customizer/options/blog.php:2741
+#: inc/customizer/options/blog.php:2769
 #: inc/customizer/options/footer-widget.php:195
 #: inc/customizer/options/page-settings.php:380
 #: inc/customizer/options/sidebar.php:287
@@ -1778,7 +1778,7 @@ msgid "H2"
 msgstr ""
 
 #: inc/customizer/options/blog.php:480
-#: inc/customizer/options/blog.php:2742
+#: inc/customizer/options/blog.php:2770
 #: inc/customizer/options/footer-widget.php:196
 #: inc/customizer/options/page-settings.php:381
 #: inc/customizer/options/sidebar.php:288
@@ -1787,7 +1787,7 @@ msgid "H3"
 msgstr ""
 
 #: inc/customizer/options/blog.php:481
-#: inc/customizer/options/blog.php:2743
+#: inc/customizer/options/blog.php:2771
 #: inc/customizer/options/footer-widget.php:197
 #: inc/customizer/options/page-settings.php:382
 #: inc/customizer/options/sidebar.php:289
@@ -1796,7 +1796,7 @@ msgid "H4"
 msgstr ""
 
 #: inc/customizer/options/blog.php:482
-#: inc/customizer/options/blog.php:2744
+#: inc/customizer/options/blog.php:2772
 #: inc/customizer/options/footer-widget.php:198
 #: inc/customizer/options/page-settings.php:383
 #: inc/customizer/options/sidebar.php:290
@@ -1805,7 +1805,7 @@ msgid "H5"
 msgstr ""
 
 #: inc/customizer/options/blog.php:483
-#: inc/customizer/options/blog.php:2745
+#: inc/customizer/options/blog.php:2773
 #: inc/customizer/options/footer-widget.php:199
 #: inc/customizer/options/page-settings.php:384
 #: inc/customizer/options/sidebar.php:291
@@ -1814,7 +1814,7 @@ msgid "H6"
 msgstr ""
 
 #: inc/customizer/options/blog.php:484
-#: inc/customizer/options/blog.php:2746
+#: inc/customizer/options/blog.php:2774
 #: inc/customizer/options/footer-widget.php:200
 #: inc/customizer/options/page-settings.php:385
 #: inc/customizer/options/sidebar.php:292
@@ -1823,7 +1823,7 @@ msgid "div"
 msgstr ""
 
 #: inc/customizer/options/blog.php:485
-#: inc/customizer/options/blog.php:2747
+#: inc/customizer/options/blog.php:2775
 #: inc/customizer/options/footer-widget.php:201
 #: inc/customizer/options/page-settings.php:386
 #: inc/customizer/options/sidebar.php:293
@@ -1832,7 +1832,7 @@ msgid "span"
 msgstr ""
 
 #: inc/customizer/options/blog.php:486
-#: inc/customizer/options/blog.php:2748
+#: inc/customizer/options/blog.php:2776
 #: inc/customizer/options/footer-widget.php:202
 #: inc/customizer/options/page-settings.php:387
 #: inc/customizer/options/sidebar.php:294
@@ -1841,7 +1841,7 @@ msgid "p"
 msgstr ""
 
 #: inc/customizer/options/blog.php:500
-#: inc/customizer/options/blog.php:2723
+#: inc/customizer/options/blog.php:2751
 msgid "Content Builder"
 msgstr ""
 
@@ -1850,87 +1850,87 @@ msgid "You can organize your blog archive content by using the drag & drop metho
 msgstr ""
 
 #: inc/customizer/options/blog.php:516
-#: inc/customizer/options/blog.php:2771
+#: inc/customizer/options/blog.php:2799
 msgid "Main Content Elements"
 msgstr ""
 
 #: inc/customizer/options/blog.php:539
-#: inc/customizer/options/blog.php:2792
+#: inc/customizer/options/blog.php:2820
 msgid "Meta Section Elements"
 msgstr ""
 
 #: inc/customizer/options/blog.php:552
-#: inc/customizer/options/blog.php:2688
-#: inc/customizer/options/blog.php:2804
+#: inc/customizer/options/blog.php:2716
+#: inc/customizer/options/blog.php:2832
 #: inc/customizer/options/lifterlms.php:153
 msgid "Author"
 msgstr ""
 
 #: inc/customizer/options/blog.php:553
 #: inc/customizer/options/blog.php:1832
-#: inc/customizer/options/blog.php:2689
-#: inc/customizer/options/blog.php:2805
-#: inc/customizer/options/blog.php:2942
-#: inc/customizer/options/blog.php:2943
+#: inc/customizer/options/blog.php:2717
+#: inc/customizer/options/blog.php:2833
+#: inc/customizer/options/blog.php:2970
+#: inc/customizer/options/blog.php:2971
 msgid "Date"
 msgstr ""
 
 #: inc/customizer/options/blog.php:554
-#: inc/customizer/options/blog.php:2690
-#: inc/customizer/options/blog.php:2806
+#: inc/customizer/options/blog.php:2718
+#: inc/customizer/options/blog.php:2834
 msgid "Categories"
 msgstr ""
 
 #: inc/customizer/options/blog.php:555
-#: inc/customizer/options/blog.php:2691
-#: inc/customizer/options/blog.php:2807
+#: inc/customizer/options/blog.php:2719
+#: inc/customizer/options/blog.php:2835
 #: inc/helpers.php:3216
 msgid "Comments"
 msgstr ""
 
 #: inc/customizer/options/blog.php:556
-#: inc/customizer/options/blog.php:2692
-#: inc/customizer/options/blog.php:2808
+#: inc/customizer/options/blog.php:2720
+#: inc/customizer/options/blog.php:2836
 msgid "Modified Date"
 msgstr ""
 
 #: inc/customizer/options/blog.php:557
-#: inc/customizer/options/blog.php:2693
-#: inc/customizer/options/blog.php:2809
+#: inc/customizer/options/blog.php:2721
+#: inc/customizer/options/blog.php:2837
 msgid "Reading Time"
 msgstr ""
 
 #: inc/customizer/options/blog.php:573
-#: inc/customizer/options/blog.php:2825
+#: inc/customizer/options/blog.php:2853
 msgid "Meta Separator"
 msgstr ""
 
 #: inc/customizer/options/blog.php:589
 #: inc/customizer/options/blog.php:590
-#: inc/customizer/options/blog.php:2659
-#: inc/customizer/options/blog.php:2660
-#: inc/customizer/options/blog.php:2841
-#: inc/customizer/options/blog.php:2842
+#: inc/customizer/options/blog.php:2687
+#: inc/customizer/options/blog.php:2688
+#: inc/customizer/options/blog.php:2869
+#: inc/customizer/options/blog.php:2870
 msgid "Modern"
 msgstr ""
 
 #: inc/customizer/options/blog.php:594
 #: inc/customizer/options/blog.php:595
-#: inc/customizer/options/blog.php:2623
-#: inc/customizer/options/blog.php:2624
-#: inc/customizer/options/blog.php:2654
-#: inc/customizer/options/blog.php:2655
-#: inc/customizer/options/blog.php:2846
-#: inc/customizer/options/blog.php:2847
+#: inc/customizer/options/blog.php:2651
+#: inc/customizer/options/blog.php:2652
+#: inc/customizer/options/blog.php:2682
+#: inc/customizer/options/blog.php:2683
+#: inc/customizer/options/blog.php:2874
+#: inc/customizer/options/blog.php:2875
 msgid "Stylish"
 msgstr ""
 
 #: inc/customizer/options/blog.php:599
 #: inc/customizer/options/blog.php:600
-#: inc/customizer/options/blog.php:2644
-#: inc/customizer/options/blog.php:2645
-#: inc/customizer/options/blog.php:2851
-#: inc/customizer/options/blog.php:2852
+#: inc/customizer/options/blog.php:2672
+#: inc/customizer/options/blog.php:2673
+#: inc/customizer/options/blog.php:2879
+#: inc/customizer/options/blog.php:2880
 #: inc/customizer/options/edd.php:1944
 #: inc/customizer/options/page-settings.php:1896
 #: inc/customizer/options/page-settings.php:1917
@@ -2002,15 +2002,16 @@ msgstr ""
 #: inc/customizer/options/blog.php:2498
 #: inc/customizer/options/blog.php:2555
 #: inc/customizer/options/blog.php:2582
-#: inc/customizer/options/blog.php:4480
-#: inc/customizer/options/blog.php:4506
-#: inc/customizer/options/blog.php:4532
-#: inc/customizer/options/blog.php:4558
-#: inc/customizer/options/blog.php:4623
-#: inc/customizer/options/blog.php:4650
-#: inc/customizer/options/blog.php:4691
-#: inc/customizer/options/blog.php:4754
-#: inc/customizer/options/blog.php:4862
+#: inc/customizer/options/blog.php:2609
+#: inc/customizer/options/blog.php:4508
+#: inc/customizer/options/blog.php:4534
+#: inc/customizer/options/blog.php:4560
+#: inc/customizer/options/blog.php:4586
+#: inc/customizer/options/blog.php:4651
+#: inc/customizer/options/blog.php:4678
+#: inc/customizer/options/blog.php:4719
+#: inc/customizer/options/blog.php:4782
+#: inc/customizer/options/blog.php:4890
 #: inc/customizer/options/colors.php:29
 #: inc/customizer/options/colors.php:98
 #: inc/customizer/options/colors.php:135
@@ -2282,8 +2283,8 @@ msgstr ""
 
 #: inc/customizer/options/blog.php:920
 #: inc/customizer/options/blog.php:930
-#: inc/customizer/options/blog.php:3111
-#: inc/customizer/options/blog.php:3121
+#: inc/customizer/options/blog.php:3139
+#: inc/customizer/options/blog.php:3149
 #: inc/customizer/options/footer-copyright.php:182
 #: inc/customizer/options/footer-widget.php:343
 #: inc/customizer/options/header.php:2861
@@ -2308,14 +2309,14 @@ msgstr ""
 #: inc/customizer/options/blog.php:1112
 #: inc/customizer/options/blog.php:1273
 #: inc/customizer/options/blog.php:1434
-#: inc/customizer/options/blog.php:3140
-#: inc/customizer/options/blog.php:3303
-#: inc/customizer/options/blog.php:3466
-#: inc/customizer/options/blog.php:3631
-#: inc/customizer/options/blog.php:3796
-#: inc/customizer/options/blog.php:3961
-#: inc/customizer/options/blog.php:4140
-#: inc/customizer/options/blog.php:4304
+#: inc/customizer/options/blog.php:3168
+#: inc/customizer/options/blog.php:3331
+#: inc/customizer/options/blog.php:3494
+#: inc/customizer/options/blog.php:3659
+#: inc/customizer/options/blog.php:3824
+#: inc/customizer/options/blog.php:3989
+#: inc/customizer/options/blog.php:4168
+#: inc/customizer/options/blog.php:4332
 #: inc/customizer/options/footer-copyright.php:202
 #: inc/customizer/options/footer-copyright.php:366
 #: inc/customizer/options/footer-widget.php:363
@@ -2369,30 +2370,30 @@ msgstr ""
 #: inc/customizer/options/blog.php:1441
 #: inc/customizer/options/blog.php:1448
 #: inc/customizer/options/blog.php:1455
-#: inc/customizer/options/blog.php:3147
-#: inc/customizer/options/blog.php:3154
-#: inc/customizer/options/blog.php:3161
-#: inc/customizer/options/blog.php:3310
-#: inc/customizer/options/blog.php:3317
-#: inc/customizer/options/blog.php:3324
-#: inc/customizer/options/blog.php:3473
-#: inc/customizer/options/blog.php:3480
-#: inc/customizer/options/blog.php:3487
-#: inc/customizer/options/blog.php:3638
-#: inc/customizer/options/blog.php:3645
-#: inc/customizer/options/blog.php:3652
-#: inc/customizer/options/blog.php:3803
-#: inc/customizer/options/blog.php:3810
-#: inc/customizer/options/blog.php:3817
-#: inc/customizer/options/blog.php:3968
-#: inc/customizer/options/blog.php:3975
-#: inc/customizer/options/blog.php:3982
-#: inc/customizer/options/blog.php:4147
-#: inc/customizer/options/blog.php:4154
-#: inc/customizer/options/blog.php:4161
-#: inc/customizer/options/blog.php:4311
-#: inc/customizer/options/blog.php:4318
-#: inc/customizer/options/blog.php:4325
+#: inc/customizer/options/blog.php:3175
+#: inc/customizer/options/blog.php:3182
+#: inc/customizer/options/blog.php:3189
+#: inc/customizer/options/blog.php:3338
+#: inc/customizer/options/blog.php:3345
+#: inc/customizer/options/blog.php:3352
+#: inc/customizer/options/blog.php:3501
+#: inc/customizer/options/blog.php:3508
+#: inc/customizer/options/blog.php:3515
+#: inc/customizer/options/blog.php:3666
+#: inc/customizer/options/blog.php:3673
+#: inc/customizer/options/blog.php:3680
+#: inc/customizer/options/blog.php:3831
+#: inc/customizer/options/blog.php:3838
+#: inc/customizer/options/blog.php:3845
+#: inc/customizer/options/blog.php:3996
+#: inc/customizer/options/blog.php:4003
+#: inc/customizer/options/blog.php:4010
+#: inc/customizer/options/blog.php:4175
+#: inc/customizer/options/blog.php:4182
+#: inc/customizer/options/blog.php:4189
+#: inc/customizer/options/blog.php:4339
+#: inc/customizer/options/blog.php:4346
+#: inc/customizer/options/blog.php:4353
 #: inc/customizer/options/footer-copyright.php:209
 #: inc/customizer/options/footer-copyright.php:216
 #: inc/customizer/options/footer-copyright.php:223
@@ -2510,14 +2511,14 @@ msgstr ""
 #: inc/customizer/options/blog.php:1140
 #: inc/customizer/options/blog.php:1301
 #: inc/customizer/options/blog.php:1462
-#: inc/customizer/options/blog.php:3168
-#: inc/customizer/options/blog.php:3331
-#: inc/customizer/options/blog.php:3494
-#: inc/customizer/options/blog.php:3659
-#: inc/customizer/options/blog.php:3824
-#: inc/customizer/options/blog.php:3989
-#: inc/customizer/options/blog.php:4168
-#: inc/customizer/options/blog.php:4332
+#: inc/customizer/options/blog.php:3196
+#: inc/customizer/options/blog.php:3359
+#: inc/customizer/options/blog.php:3522
+#: inc/customizer/options/blog.php:3687
+#: inc/customizer/options/blog.php:3852
+#: inc/customizer/options/blog.php:4017
+#: inc/customizer/options/blog.php:4196
+#: inc/customizer/options/blog.php:4360
 #: inc/customizer/options/footer-copyright.php:230
 #: inc/customizer/options/footer-copyright.php:394
 #: inc/customizer/options/footer-widget.php:391
@@ -2569,30 +2570,30 @@ msgstr ""
 #: inc/customizer/options/blog.php:1469
 #: inc/customizer/options/blog.php:1476
 #: inc/customizer/options/blog.php:1483
-#: inc/customizer/options/blog.php:3175
-#: inc/customizer/options/blog.php:3182
-#: inc/customizer/options/blog.php:3189
-#: inc/customizer/options/blog.php:3338
-#: inc/customizer/options/blog.php:3345
-#: inc/customizer/options/blog.php:3352
-#: inc/customizer/options/blog.php:3501
-#: inc/customizer/options/blog.php:3509
-#: inc/customizer/options/blog.php:3516
-#: inc/customizer/options/blog.php:3666
-#: inc/customizer/options/blog.php:3674
-#: inc/customizer/options/blog.php:3681
-#: inc/customizer/options/blog.php:3831
-#: inc/customizer/options/blog.php:3839
-#: inc/customizer/options/blog.php:3846
-#: inc/customizer/options/blog.php:3996
-#: inc/customizer/options/blog.php:4004
-#: inc/customizer/options/blog.php:4011
-#: inc/customizer/options/blog.php:4175
-#: inc/customizer/options/blog.php:4183
-#: inc/customizer/options/blog.php:4190
-#: inc/customizer/options/blog.php:4339
-#: inc/customizer/options/blog.php:4347
-#: inc/customizer/options/blog.php:4354
+#: inc/customizer/options/blog.php:3203
+#: inc/customizer/options/blog.php:3210
+#: inc/customizer/options/blog.php:3217
+#: inc/customizer/options/blog.php:3366
+#: inc/customizer/options/blog.php:3373
+#: inc/customizer/options/blog.php:3380
+#: inc/customizer/options/blog.php:3529
+#: inc/customizer/options/blog.php:3537
+#: inc/customizer/options/blog.php:3544
+#: inc/customizer/options/blog.php:3694
+#: inc/customizer/options/blog.php:3702
+#: inc/customizer/options/blog.php:3709
+#: inc/customizer/options/blog.php:3859
+#: inc/customizer/options/blog.php:3867
+#: inc/customizer/options/blog.php:3874
+#: inc/customizer/options/blog.php:4024
+#: inc/customizer/options/blog.php:4032
+#: inc/customizer/options/blog.php:4039
+#: inc/customizer/options/blog.php:4203
+#: inc/customizer/options/blog.php:4211
+#: inc/customizer/options/blog.php:4218
+#: inc/customizer/options/blog.php:4367
+#: inc/customizer/options/blog.php:4375
+#: inc/customizer/options/blog.php:4382
 #: inc/customizer/options/footer-copyright.php:237
 #: inc/customizer/options/footer-copyright.php:245
 #: inc/customizer/options/footer-copyright.php:252
@@ -2718,30 +2719,30 @@ msgstr ""
 #: inc/customizer/options/blog.php:1497
 #: inc/customizer/options/blog.php:1504
 #: inc/customizer/options/blog.php:1511
-#: inc/customizer/options/blog.php:3204
-#: inc/customizer/options/blog.php:3211
-#: inc/customizer/options/blog.php:3218
-#: inc/customizer/options/blog.php:3367
-#: inc/customizer/options/blog.php:3374
-#: inc/customizer/options/blog.php:3381
-#: inc/customizer/options/blog.php:3531
-#: inc/customizer/options/blog.php:3539
-#: inc/customizer/options/blog.php:3546
-#: inc/customizer/options/blog.php:3696
-#: inc/customizer/options/blog.php:3704
-#: inc/customizer/options/blog.php:3711
-#: inc/customizer/options/blog.php:3861
-#: inc/customizer/options/blog.php:3869
-#: inc/customizer/options/blog.php:3876
-#: inc/customizer/options/blog.php:4026
-#: inc/customizer/options/blog.php:4034
-#: inc/customizer/options/blog.php:4041
-#: inc/customizer/options/blog.php:4205
-#: inc/customizer/options/blog.php:4213
-#: inc/customizer/options/blog.php:4220
-#: inc/customizer/options/blog.php:4369
-#: inc/customizer/options/blog.php:4377
-#: inc/customizer/options/blog.php:4384
+#: inc/customizer/options/blog.php:3232
+#: inc/customizer/options/blog.php:3239
+#: inc/customizer/options/blog.php:3246
+#: inc/customizer/options/blog.php:3395
+#: inc/customizer/options/blog.php:3402
+#: inc/customizer/options/blog.php:3409
+#: inc/customizer/options/blog.php:3559
+#: inc/customizer/options/blog.php:3567
+#: inc/customizer/options/blog.php:3574
+#: inc/customizer/options/blog.php:3724
+#: inc/customizer/options/blog.php:3732
+#: inc/customizer/options/blog.php:3739
+#: inc/customizer/options/blog.php:3889
+#: inc/customizer/options/blog.php:3897
+#: inc/customizer/options/blog.php:3904
+#: inc/customizer/options/blog.php:4054
+#: inc/customizer/options/blog.php:4062
+#: inc/customizer/options/blog.php:4069
+#: inc/customizer/options/blog.php:4233
+#: inc/customizer/options/blog.php:4241
+#: inc/customizer/options/blog.php:4248
+#: inc/customizer/options/blog.php:4397
+#: inc/customizer/options/blog.php:4405
+#: inc/customizer/options/blog.php:4412
 #: inc/customizer/options/footer-copyright.php:266
 #: inc/customizer/options/footer-copyright.php:273
 #: inc/customizer/options/footer-copyright.php:280
@@ -2867,30 +2868,30 @@ msgstr ""
 #: inc/customizer/options/blog.php:1526
 #: inc/customizer/options/blog.php:1533
 #: inc/customizer/options/blog.php:1540
-#: inc/customizer/options/blog.php:3233
-#: inc/customizer/options/blog.php:3240
-#: inc/customizer/options/blog.php:3247
-#: inc/customizer/options/blog.php:3396
-#: inc/customizer/options/blog.php:3403
-#: inc/customizer/options/blog.php:3410
-#: inc/customizer/options/blog.php:3560
-#: inc/customizer/options/blog.php:3568
-#: inc/customizer/options/blog.php:3575
-#: inc/customizer/options/blog.php:3725
-#: inc/customizer/options/blog.php:3733
-#: inc/customizer/options/blog.php:3740
-#: inc/customizer/options/blog.php:3890
-#: inc/customizer/options/blog.php:3898
-#: inc/customizer/options/blog.php:3905
-#: inc/customizer/options/blog.php:4055
-#: inc/customizer/options/blog.php:4063
-#: inc/customizer/options/blog.php:4070
-#: inc/customizer/options/blog.php:4234
-#: inc/customizer/options/blog.php:4242
-#: inc/customizer/options/blog.php:4249
-#: inc/customizer/options/blog.php:4398
-#: inc/customizer/options/blog.php:4406
-#: inc/customizer/options/blog.php:4413
+#: inc/customizer/options/blog.php:3261
+#: inc/customizer/options/blog.php:3268
+#: inc/customizer/options/blog.php:3275
+#: inc/customizer/options/blog.php:3424
+#: inc/customizer/options/blog.php:3431
+#: inc/customizer/options/blog.php:3438
+#: inc/customizer/options/blog.php:3588
+#: inc/customizer/options/blog.php:3596
+#: inc/customizer/options/blog.php:3603
+#: inc/customizer/options/blog.php:3753
+#: inc/customizer/options/blog.php:3761
+#: inc/customizer/options/blog.php:3768
+#: inc/customizer/options/blog.php:3918
+#: inc/customizer/options/blog.php:3926
+#: inc/customizer/options/blog.php:3933
+#: inc/customizer/options/blog.php:4083
+#: inc/customizer/options/blog.php:4091
+#: inc/customizer/options/blog.php:4098
+#: inc/customizer/options/blog.php:4262
+#: inc/customizer/options/blog.php:4270
+#: inc/customizer/options/blog.php:4277
+#: inc/customizer/options/blog.php:4426
+#: inc/customizer/options/blog.php:4434
+#: inc/customizer/options/blog.php:4441
 #: inc/customizer/options/footer-copyright.php:295
 #: inc/customizer/options/footer-copyright.php:303
 #: inc/customizer/options/footer-copyright.php:310
@@ -3016,30 +3017,30 @@ msgstr ""
 #: inc/customizer/options/blog.php:1554
 #: inc/customizer/options/blog.php:1561
 #: inc/customizer/options/blog.php:1568
-#: inc/customizer/options/blog.php:3261
-#: inc/customizer/options/blog.php:3268
-#: inc/customizer/options/blog.php:3275
-#: inc/customizer/options/blog.php:3424
-#: inc/customizer/options/blog.php:3431
-#: inc/customizer/options/blog.php:3438
-#: inc/customizer/options/blog.php:3589
-#: inc/customizer/options/blog.php:3596
-#: inc/customizer/options/blog.php:3603
-#: inc/customizer/options/blog.php:3754
-#: inc/customizer/options/blog.php:3761
-#: inc/customizer/options/blog.php:3768
-#: inc/customizer/options/blog.php:3919
-#: inc/customizer/options/blog.php:3926
-#: inc/customizer/options/blog.php:3933
-#: inc/customizer/options/blog.php:4084
-#: inc/customizer/options/blog.php:4091
-#: inc/customizer/options/blog.php:4098
-#: inc/customizer/options/blog.php:4263
-#: inc/customizer/options/blog.php:4270
-#: inc/customizer/options/blog.php:4277
-#: inc/customizer/options/blog.php:4427
-#: inc/customizer/options/blog.php:4434
-#: inc/customizer/options/blog.php:4441
+#: inc/customizer/options/blog.php:3289
+#: inc/customizer/options/blog.php:3296
+#: inc/customizer/options/blog.php:3303
+#: inc/customizer/options/blog.php:3452
+#: inc/customizer/options/blog.php:3459
+#: inc/customizer/options/blog.php:3466
+#: inc/customizer/options/blog.php:3617
+#: inc/customizer/options/blog.php:3624
+#: inc/customizer/options/blog.php:3631
+#: inc/customizer/options/blog.php:3782
+#: inc/customizer/options/blog.php:3789
+#: inc/customizer/options/blog.php:3796
+#: inc/customizer/options/blog.php:3947
+#: inc/customizer/options/blog.php:3954
+#: inc/customizer/options/blog.php:3961
+#: inc/customizer/options/blog.php:4112
+#: inc/customizer/options/blog.php:4119
+#: inc/customizer/options/blog.php:4126
+#: inc/customizer/options/blog.php:4291
+#: inc/customizer/options/blog.php:4298
+#: inc/customizer/options/blog.php:4305
+#: inc/customizer/options/blog.php:4455
+#: inc/customizer/options/blog.php:4462
+#: inc/customizer/options/blog.php:4469
 #: inc/customizer/options/footer-copyright.php:324
 #: inc/customizer/options/footer-copyright.php:331
 #: inc/customizer/options/footer-copyright.php:338
@@ -3157,14 +3158,14 @@ msgstr ""
 #: inc/customizer/options/blog.php:1253
 #: inc/customizer/options/blog.php:1414
 #: inc/customizer/options/blog.php:1575
-#: inc/customizer/options/blog.php:3282
-#: inc/customizer/options/blog.php:3445
-#: inc/customizer/options/blog.php:3610
-#: inc/customizer/options/blog.php:3775
-#: inc/customizer/options/blog.php:3940
-#: inc/customizer/options/blog.php:4105
-#: inc/customizer/options/blog.php:4284
-#: inc/customizer/options/blog.php:4448
+#: inc/customizer/options/blog.php:3310
+#: inc/customizer/options/blog.php:3473
+#: inc/customizer/options/blog.php:3638
+#: inc/customizer/options/blog.php:3803
+#: inc/customizer/options/blog.php:3968
+#: inc/customizer/options/blog.php:4133
+#: inc/customizer/options/blog.php:4312
+#: inc/customizer/options/blog.php:4476
 #: inc/customizer/options/footer-copyright.php:345
 #: inc/customizer/options/footer-copyright.php:509
 #: inc/customizer/options/footer-widget.php:507
@@ -3237,10 +3238,10 @@ msgstr ""
 #: inc/customizer/options/blog.php:1730
 #: inc/customizer/options/blog.php:1767
 #: inc/customizer/options/blog.php:1806
-#: inc/customizer/options/blog.php:4585
-#: inc/customizer/options/blog.php:4717
-#: inc/customizer/options/blog.php:4781
-#: inc/customizer/options/blog.php:4826
+#: inc/customizer/options/blog.php:4613
+#: inc/customizer/options/blog.php:4745
+#: inc/customizer/options/blog.php:4809
+#: inc/customizer/options/blog.php:4854
 #: inc/customizer/options/colors.php:56
 #: inc/customizer/options/edd.php:373
 #: inc/customizer/options/edd.php:414
@@ -3350,10 +3351,10 @@ msgstr ""
 #: inc/customizer/options/blog.php:1741
 #: inc/customizer/options/blog.php:1779
 #: inc/customizer/options/blog.php:1818
-#: inc/customizer/options/blog.php:4597
-#: inc/customizer/options/blog.php:4729
-#: inc/customizer/options/blog.php:4792
-#: inc/customizer/options/blog.php:4837
+#: inc/customizer/options/blog.php:4625
+#: inc/customizer/options/blog.php:4757
+#: inc/customizer/options/blog.php:4820
+#: inc/customizer/options/blog.php:4865
 #: inc/customizer/options/colors.php:70
 #: inc/customizer/options/colors.php:371
 #: inc/customizer/options/edd.php:385
@@ -3461,10 +3462,10 @@ msgid "Meta Icons"
 msgstr ""
 
 #: inc/customizer/options/blog.php:1754
-#: inc/customizer/options/blog.php:2932
-#: inc/customizer/options/blog.php:2933
-#: inc/customizer/options/blog.php:2970
-#: inc/customizer/options/blog.php:2971
+#: inc/customizer/options/blog.php:2960
+#: inc/customizer/options/blog.php:2961
+#: inc/customizer/options/blog.php:2998
+#: inc/customizer/options/blog.php:2999
 #: inc/customizer/options/edd.php:1161
 #: inc/customizer/options/edd.php:2395
 #: inc/customizer/options/edd.php:2396
@@ -3744,76 +3745,80 @@ msgstr ""
 msgid "Post Title Overlay"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2606
+#: inc/customizer/options/blog.php:2596
+msgid "Meta Icon Color"
+msgstr ""
+
+#: inc/customizer/options/blog.php:2634
 msgid "Post Title Meta Style"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2618
-#: inc/customizer/options/blog.php:2619
+#: inc/customizer/options/blog.php:2646
+#: inc/customizer/options/blog.php:2647
 #: inc/customizer/options/header.php:41
 #: inc/customizer/options/header.php:4710
 #: inc/customizer/options/header.php:4711
 msgid "Minimal"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2632
+#: inc/customizer/options/blog.php:2660
 msgid "Post Title Meta Separator"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2649
-#: inc/customizer/options/blog.php:2650
+#: inc/customizer/options/blog.php:2677
+#: inc/customizer/options/blog.php:2678
 msgid "Classic"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2675
+#: inc/customizer/options/blog.php:2703
 msgid "Single Post Title Elements"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2694
+#: inc/customizer/options/blog.php:2722
 #: inc/helpers.php:3211
 #: partials/single/tags.php:22
 msgid "Tags"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2713
+#: inc/customizer/options/blog.php:2741
 msgid "Single Post Content"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2731
+#: inc/customizer/options/blog.php:2759
 #: inc/customizer/options/woocommerce.php:5684
 msgid "Title Tag"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2763
+#: inc/customizer/options/blog.php:2791
 msgid "You can organize your single blog post content by using the drag & drop method."
 msgstr ""
 
-#: inc/customizer/options/blog.php:2880
+#: inc/customizer/options/blog.php:2908
 msgid "Single Post Options"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2888
+#: inc/customizer/options/blog.php:2916
 msgid "Comment Form Position"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2899
-#: inc/customizer/options/blog.php:2900
+#: inc/customizer/options/blog.php:2927
+#: inc/customizer/options/blog.php:2928
 msgid "Before"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2904
-#: inc/customizer/options/blog.php:2905
+#: inc/customizer/options/blog.php:2932
+#: inc/customizer/options/blog.php:2933
 msgid "After"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2921
+#: inc/customizer/options/blog.php:2949
 msgid "Next/Prev Post Taxonomy"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2937
-#: inc/customizer/options/blog.php:2938
-#: inc/customizer/options/blog.php:2975
-#: inc/customizer/options/blog.php:2976
+#: inc/customizer/options/blog.php:2965
+#: inc/customizer/options/blog.php:2966
+#: inc/customizer/options/blog.php:3003
+#: inc/customizer/options/blog.php:3004
 #: inc/customizer/options/edd.php:2400
 #: inc/customizer/options/edd.php:2401
 #: inc/customizer/options/page-settings.php:1898
@@ -3822,91 +3827,91 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2959
+#: inc/customizer/options/blog.php:2987
 msgid "Related Posts Taxonomy"
 msgstr ""
 
-#: inc/customizer/options/blog.php:2982
+#: inc/customizer/options/blog.php:3010
 msgid "Related Posts Count"
 msgstr ""
 
-#: inc/customizer/options/blog.php:3008
+#: inc/customizer/options/blog.php:3036
 msgid "Related Post Columns"
 msgstr ""
 
-#: inc/customizer/options/blog.php:3050
+#: inc/customizer/options/blog.php:3078
 msgid "Related Posts Image Width (px)"
 msgstr ""
 
-#: inc/customizer/options/blog.php:3074
+#: inc/customizer/options/blog.php:3102
 msgid "Related Posts Image Height (px)"
 msgstr ""
 
-#: inc/customizer/options/blog.php:3130
+#: inc/customizer/options/blog.php:3158
 #: inc/customizer/options/page-settings.php:300
 #: inc/customizer/options/page-settings.php:310
 msgid "Page Title"
 msgstr ""
 
-#: inc/customizer/options/blog.php:3293
-#: inc/customizer/options/blog.php:4493
+#: inc/customizer/options/blog.php:3321
+#: inc/customizer/options/blog.php:4521
 msgid "Page Title Breadcrumbs"
 msgstr ""
 
-#: inc/customizer/options/blog.php:3456
-#: inc/customizer/options/blog.php:4545
+#: inc/customizer/options/blog.php:3484
+#: inc/customizer/options/blog.php:4573
 msgid "Blog Post Page Title Heading"
 msgstr ""
 
-#: inc/customizer/options/blog.php:3621
-#: inc/customizer/options/blog.php:4572
+#: inc/customizer/options/blog.php:3649
+#: inc/customizer/options/blog.php:4600
 msgid "Blog Post Page Title Meta"
 msgstr ""
 
-#: inc/customizer/options/blog.php:3786
+#: inc/customizer/options/blog.php:3814
 msgid "Blog Post Page Title Author "
 msgstr ""
 
-#: inc/customizer/options/blog.php:3951
-#: inc/customizer/options/blog.php:4637
+#: inc/customizer/options/blog.php:3979
+#: inc/customizer/options/blog.php:4665
 msgid "Blog Post Author Bio"
 msgstr ""
 
-#: inc/customizer/options/blog.php:4131
-#: inc/customizer/options/blog.php:4679
+#: inc/customizer/options/blog.php:4159
+#: inc/customizer/options/blog.php:4707
 msgid "Blog Post Content Title"
 msgstr ""
 
-#: inc/customizer/options/blog.php:4295
-#: inc/customizer/options/blog.php:4705
+#: inc/customizer/options/blog.php:4323
+#: inc/customizer/options/blog.php:4733
 msgid "Blog Post Content Meta"
 msgstr ""
 
-#: inc/customizer/options/blog.php:4467
+#: inc/customizer/options/blog.php:4495
 msgid "Page Title Color"
 msgstr ""
 
-#: inc/customizer/options/blog.php:4519
+#: inc/customizer/options/blog.php:4547
 msgid "Page Title Separator"
 msgstr ""
 
-#: inc/customizer/options/blog.php:4610
+#: inc/customizer/options/blog.php:4638
 msgid "Blog Post Page Title Author"
 msgstr ""
 
-#: inc/customizer/options/blog.php:4742
+#: inc/customizer/options/blog.php:4770
 msgid "Blog Post Content Meta Icons"
 msgstr ""
 
-#: inc/customizer/options/blog.php:4769
+#: inc/customizer/options/blog.php:4797
 msgid "Blog Post Content Links"
 msgstr ""
 
-#: inc/customizer/options/blog.php:4814
+#: inc/customizer/options/blog.php:4842
 msgid "Related Posts Title"
 msgstr ""
 
-#: inc/customizer/options/blog.php:4850
+#: inc/customizer/options/blog.php:4878
 msgid "Related Posts Date"
 msgstr ""
 

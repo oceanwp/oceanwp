@@ -566,6 +566,11 @@ function oceanwp_cac_not_single_post_title_cover_default() {
 	return $return;
 }
 
+function oceanwp_cac_not_single_post_meta_stylish() {
+	$return = ( 'spm_style_3' === get_theme_mod( 'oceanwp_single_post_header_meta_style', 'default' ) && ocean_cac_not_blog_single_post_title_default() ) ? true : false;
+	return $return;
+}
+
 function ocean_cac_search_result_layout() {
 	$layout = get_theme_mod( 'ocean_search_layout', 'right-sidebar' );
 	if ( 'right-sidebar' === $layout
