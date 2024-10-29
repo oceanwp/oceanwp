@@ -32,7 +32,7 @@ class OceanWP_Customize_Blog_CSS {
 		$bs_archives_content_width_unit = get_theme_mod( 'ocean_blog_archives_both_sidebars_content_width_unit', '%' );
 		$bs_archives_sidebars_width     = get_theme_mod( 'ocean_blog_archives_both_sidebars_sidebars_width' );
 		$bs_archives_sidebars_width_unit = get_theme_mod( 'ocean_blog_archives_both_sidebars_sidebars_width_unit', '%'  );
-		$bs_single_content_width_unit   = get_theme_mod( 'ocean_blog_single_both_sidebars_content_width' );
+		$bs_single_content_width         = get_theme_mod( 'ocean_blog_single_both_sidebars_content_width' );
 		$bs_single_content_width_unit   = get_theme_mod( 'ocean_blog_single_both_sidebars_content_width_unit', '%'  );
 		$bs_single_sidebars_width       = get_theme_mod( 'ocean_blog_single_both_sidebars_sidebars_width' );
 		$bs_single_sidebars_width_unit  = get_theme_mod( 'ocean_blog_single_both_sidebars_sidebars_width_unit', '%'  );
@@ -51,6 +51,7 @@ class OceanWP_Customize_Blog_CSS {
 		$blog_archive_meta_color        = get_theme_mod( 'ocean_blog_archive_meta_color' );
 		$blog_archive_meta_hover_color  = get_theme_mod( 'ocean_blog_archive_meta_hover_color' );
 		$blog_archive_meta_icon_color   = get_theme_mod( 'ocean_theme_blog_posts_icons_color' );
+		$theme_post_icons_color        = get_theme_mod( 'ocean_theme_single_post_icons_color', '#333333' );
 		$blog_archive_content_color     = get_theme_mod( 'ocean_blog_archive_content_color' );
 
 		$blog_archive_readmore_color         = get_theme_mod( 'ocean_blog_archive_readmore_color' );
@@ -206,6 +207,12 @@ class OceanWP_Customize_Blog_CSS {
 		}
 		if ( ! empty( $blog_archive_readmore_hover_color ) && '' != $blog_archive_readmore_hover_color ) {
 			$css .= '.blog-entry.post .blog-entry-readmore a:hover{color:' . $blog_archive_readmore_hover_color . ';}';
+		}
+
+		// Single post meta icons color.
+		if ( ! empty( $theme_post_icons_color ) && '#333333' != $theme_post_icons_color ) {
+			$css .= '.single-post ul.meta li i{color:' . $theme_post_icons_color . ';}';
+			$css .= '.single-post ul.meta li .owp-icon use{stroke:' . $theme_post_icons_color . ';}';
 		}
 
 		// Single content width.

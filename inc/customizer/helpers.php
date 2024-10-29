@@ -308,7 +308,7 @@ if ( ! function_exists( 'oceanwp_cart_icons_list' ) ) {
 			'shopping_cart'  => [
 				'id'     => 'shopping_cart',
 				'label'   => esc_html__('shopping cart', 'oceanwp'),
-				'content' => oceanwp_icon( 'double_arrows_up', false ),
+				'content' => oceanwp_icon( 'shopping_cart', false ),
 			]
 		];
 

@@ -129,6 +129,10 @@ class OceanWP_Typography_CSS {
 						$value = get_theme_mod($theme_mod, array());
 						$settings[$selector][$setting_arg_key] = isset($value[$property]) ? $value[$property] : '';
 					}
+
+					if (empty($settings[$selector][$setting_arg_key]) && isset($setting_arg_data['attr']['default'])) {
+						$settings[$selector][$setting_arg_key] = $setting_arg_data['attr']['default'];
+					}
 				}
 			} else {
 				// Handle settings without brackets
@@ -144,6 +148,11 @@ class OceanWP_Typography_CSS {
 					$value = get_theme_mod($theme_mod);
 					$settings[$selector][$setting_arg_key] = isset($value) ? $value : '';
 				}
+
+				if (empty($settings[$selector][$setting_arg_key]) && isset($setting_arg_data['attr']['default'])) {
+					$settings[$selector][$setting_arg_key] = $setting_arg_data['attr']['default'];
+				}
+
 			}
 		}
 

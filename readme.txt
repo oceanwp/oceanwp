@@ -1,7 +1,7 @@
 == OceanWP ==
 Contributors: oceanwp
-Tested up to: 6.6.2
-Stable tag: 4.0.1
+Tested up to: 6.7
+Stable tag: 4.0.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -75,7 +75,7 @@ Source: https://github.com/aFarkas/html5shiv
 
 Flickity, Copyright (c) 2015-2021 Metafizzy
 License: GPLv3 - https://www.gnu.org/licenses/gpl-3.0.html
-Source: https://flickity.metafizzy.com
+Source: https://flickity.metafizzy.co
 
 Perfect-Scrollbar, Copyright 2020 Hyunje Jun, MDBootstrap and Contributors
 License: MIT - https://opensource.org/licenses/MIT

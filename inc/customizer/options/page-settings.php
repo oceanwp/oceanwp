@@ -1798,6 +1798,7 @@ $options = [
 						'section'   => 'ocean_section_breadcrumb_homepage_settings',
 						'transport' => 'postMessage',
 						'priority'  => 10,
+						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 					]
 				]
 			],
@@ -1859,6 +1860,7 @@ $options = [
 						'section'   => 'ocean_section_breadcrumb_trail_settings',
 						'transport' => 'postMessage',
 						'priority'  => 10,
+						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 					]
 				]
 			],
@@ -1945,6 +1947,7 @@ $options = [
 						'section'   => 'ocean_section_breadcrumb_taxonomy_setting',
 						'transport' => 'postMessage',
 						'priority'  => 10,
+						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 					]
 				]
 			],
@@ -1997,6 +2000,7 @@ $options = [
 						'section'   => 'ocean_section_breadcrumb_custom_text',
 						'transport' => 'postMessage',
 						'priority'  => 10,
+						'active_callback' => 'oceanwp_is_active_breadcrumb_callback',
 					]
 				]
 			],

@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "OceanWP Customizer",
     "scripts": {
-        "build": "wp-scripts build src/index.js src/live-preview --output-path=assets/dist",
-        "start": "wp-scripts start src/index.js src/live-preview --output-path=assets/dist",
+        "build": "wp-scripts build customizer-src/index.js customizer-src/live-preview --output-path=assets/dist",
+        "start": "wp-scripts start customizer-src/index.js customizer-src/live-preview --output-path=assets/dist",
         "lint:js": "wp-scripts lint-js",
         "lint:pkg-json": "wp-scripts lint-pkg-json"
     },

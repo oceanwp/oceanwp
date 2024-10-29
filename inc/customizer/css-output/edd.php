@@ -140,14 +140,18 @@ class OceanWP_Customize_EDD_CSS {
 		$checkout_remove_button_color_hover  = get_theme_mod( 'ocean_edd_checkout_remove_button_color_hover', '#13aff0' );
 
 		// Both sidebars shop page layout.
-		$archives_layout            = get_theme_mod( 'ocean_edd_archive_layout', 'left-sidebar' );
-		$bs_archives_content_width  = get_theme_mod( 'ocean_edd_archive_both_sidebars_content_width' );
-		$bs_archives_sidebars_width = get_theme_mod( 'ocean_edd_archive_both_sidebars_sidebars_width' );
+		$archives_layout                 = get_theme_mod( 'ocean_edd_archive_layout', 'left-sidebar' );
+		$bs_archives_content_width       = get_theme_mod( 'ocean_edd_archive_both_sidebars_content_width' );
+		$bs_archives_content_width_unit  = get_theme_mod( 'ocean_edd_archive_both_sidebars_content_width_unit', '%' );
+		$bs_archives_sidebars_width      = get_theme_mod( 'ocean_edd_archive_both_sidebars_sidebars_width' );
+		$bs_archives_sidebars_width_unit = get_theme_mod( 'ocean_edd_archive_both_sidebars_sidebars_width_unit', '%' );
 
 		// Both sidebars single edd layout.
-		$single_layout            = get_theme_mod( 'ocean_edd_download_layout', 'left-sidebar' );
-		$bs_single_content_width  = get_theme_mod( 'ocean_edd_download_both_sidebars_content_width' );
-		$bs_single_sidebars_width = get_theme_mod( 'ocean_edd_download_both_sidebars_sidebars_width' );
+		$single_layout                 = get_theme_mod( 'ocean_edd_download_layout', 'left-sidebar' );
+		$bs_single_content_width       = get_theme_mod( 'ocean_edd_download_both_sidebars_content_width' );
+		$bs_single_content_width_unit  = get_theme_mod( 'ocean_edd_download_both_sidebars_content_width_unit', '%' );
+		$bs_single_sidebars_width      = get_theme_mod( 'ocean_edd_download_both_sidebars_sidebars_width' );
+		$bs_single_sidebars_width_unit = get_theme_mod( 'ocean_edd_download_both_sidebars_sidebars_width_unit', '%' );
 
 		// Define css var.
 		$css = '';
@@ -541,9 +545,9 @@ class OceanWP_Customize_EDD_CSS {
 			if ( ! empty( $bs_archives_content_width ) ) {
 				$css .=
 					'@media only screen and (min-width: 960px){
-						body.edd.archive.content-both-sidebars .content-area {width: ' . $bs_archives_content_width . '%;}
+						body.edd.archive.content-both-sidebars .content-area {width: ' . $bs_archives_content_width . $bs_archives_content_width_unit . ';}
 						body.edd.archive.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
-						body.edd.archive.content-both-sidebars.ssc-style .widget-area {left: -' . $bs_archives_content_width . '%;}
+						body.edd.archive.content-both-sidebars.ssc-style .widget-area {left: -' . $bs_archives_content_width .  $bs_archives_content_width_unit . ';}
 					}';
 			}
 
@@ -551,9 +555,9 @@ class OceanWP_Customize_EDD_CSS {
 			if ( ! empty( $bs_archives_sidebars_width ) ) {
 				$css .=
 					'@media only screen and (min-width: 960px){
-						body.edd.archive.content-both-sidebars .widget-area{width:' . $bs_archives_sidebars_width . '%;}
-						body.edd.archive.content-both-sidebars.scs-style .content-area{left:' . $bs_archives_sidebars_width . '%;}
-						body.edd.archive.content-both-sidebars.ssc-style .content-area{left:' . $bs_archives_sidebars_width * 2 . '%;}
+						body.edd.archive.content-both-sidebars .widget-area{width:' . $bs_archives_sidebars_width . $bs_archives_sidebars_width_unit . ';}
+						body.edd.archive.content-both-sidebars.scs-style .content-area{left:' . $bs_archives_sidebars_width .  $bs_archives_sidebars_width_unit . ';}
+						body.edd.archive.content-both-sidebars.ssc-style .content-area{left:' . $bs_archives_sidebars_width * 2 .  $bs_archives_sidebars_width_unit . ';}
 					}';
 			}
 		}
@@ -565,9 +569,9 @@ class OceanWP_Customize_EDD_CSS {
 			if ( ! empty( $bs_single_content_width ) ) {
 				$css .=
 					'@media only screen and (min-width: 960px){
-						body.single-edd.content-both-sidebars .content-area {width: ' . $bs_single_content_width . '%;}
+						body.single-edd.content-both-sidebars .content-area {width: ' . $bs_single_content_width . $bs_single_content_width_unit . ';}
 						body.single-edd.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
-						body.single-edd.content-both-sidebars.ssc-style .widget-area {left: -' . $bs_single_content_width . '%;}
+						body.single-edd.content-both-sidebars.ssc-style .widget-area {left: -' . $bs_single_content_width . $bs_single_content_width_unit . ';}
 					}';
 			}
 
@@ -575,9 +579,9 @@ class OceanWP_Customize_EDD_CSS {
 			if ( ! empty( $bs_single_sidebars_width ) ) {
 				$css .=
 					'@media only screen and (min-width: 960px){
-						body.single-edd.content-both-sidebars .widget-area{width:' . $bs_single_sidebars_width . '%;}
-						body.single-edd.content-both-sidebars.scs-style .content-area{left:' . $bs_single_sidebars_width . '%;}
-						body.single-edd.content-both-sidebars.ssc-style .content-area{left:' . $bs_single_sidebars_width * 2 . '%;}
+						body.single-edd.content-both-sidebars .widget-area{width:' . $bs_single_sidebars_width . $bs_single_sidebars_width_unit . ';}
+						body.single-edd.content-both-sidebars.scs-style .content-area{left:' . $bs_single_sidebars_width . $bs_single_sidebars_width_unit . ';}
+						body.single-edd.content-both-sidebars.ssc-style .content-area{left:' . $bs_single_sidebars_width * 2 . $bs_single_sidebars_width_unit . ';}
 					}';
 			}
 		}

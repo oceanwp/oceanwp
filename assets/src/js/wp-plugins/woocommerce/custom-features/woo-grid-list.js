@@ -73,7 +73,11 @@ class WooGridList {
           products.classList.add("grid");
           products.classList.remove("list");
 
-          fadeIn(products);
+          fadeIn(products, {
+            callback: () => {
+              this.#productCarousel();
+            },
+          });
         },
       });
     });
@@ -98,7 +102,11 @@ class WooGridList {
           products.classList.add("list");
           products.classList.remove("grid");
 
-          fadeIn(products);
+          fadeIn(products, {
+            callback: () => {
+              this.#productCarousel();
+            },
+          });
         },
       });
     });

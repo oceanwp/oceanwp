@@ -3340,6 +3340,7 @@ $options = [
 						'label' => esc_html__( 'Unit', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
+							'default'   => 'px'
 						],
 					],
 					'letterSpacing' => [
@@ -3510,7 +3511,6 @@ $options = [
 						],
 						'attr' => [
 							'transport' => 'postMessage',
-							'default'   => '#f8f8f8',
 						],
 					],
 				]
@@ -4782,8 +4782,8 @@ $options = [
 						],
 						'preview' => 'queryWithType',
 						'css' => [
-							'.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a' => ['border-width'],
-							'.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon' => ['width']
+							'.oceanwp-social-menu ul li a,.oceanwp-social-menu .colored ul li a,.oceanwp-social-menu .minimal ul li a,.oceanwp-social-menu .dark ul li a,.sidr-class-social-menu-inner ul li a' => ['font-size'],
+							'.oceanwp-social-menu ul li a .owp-icon,.oceanwp-social-menu .colored ul li a .owp-icon,.oceanwp-social-menu .minimal ul li a .owp-icon,.oceanwp-social-menu .dark ul li a .owp-icon' => ['width', 'height']
 						]
 					],
 
@@ -5111,7 +5111,7 @@ $options = [
 						'type'              => 'ocean-social-links',
 						'label'             => esc_html__( 'Social Profile', 'oceanwp' ),
 						'section'           => 'ocean_header_social_menu_links_section',
-						'transport'         => 'postMessage',
+						'transport'         => 'refresh',
 						'priority'          => 10,
 						'hideLabel'         => false,
 						'active_callback'   => 'oceanwp_cac_has_menu_social',

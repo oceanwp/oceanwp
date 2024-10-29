@@ -39,6 +39,7 @@ class OceanWP_Style_Settings_CSS {
 		$separate_content_padding_unit = get_theme_mod( 'ocean_separate_content_padding_unit', 'px' );
 		$separate_widgets_padding      = get_theme_mod( 'ocean_separate_widgets_padding', 30 );
 		$separate_widgets_padding_unit = get_theme_mod( 'ocean_separate_widgets_padding_unit', 'px' );
+		$boxed_width                   = get_theme_mod( 'ocean_boxed_width', 1280 );
 
 		$background_image              = get_theme_mod( 'ocean_background_image' );
 		$background_image_position     = get_theme_mod( 'ocean_background_image_position' );
@@ -122,6 +123,7 @@ class OceanWP_Style_Settings_CSS {
 		$tablet_content_bottom_padding = get_theme_mod( 'ocean_page_content_tablet_bottom_padding' );
 		$mobile_content_top_padding    = get_theme_mod( 'ocean_page_content_mobile_top_padding' );
 		$mobile_content_bottom_padding = get_theme_mod( 'ocean_page_content_mobile_bottom_padding' );
+		$title_breadcrumb_position     = get_theme_mod( 'ocean_page_header_bg_title_breadcrumb_position', 'center' );
 
 		$pagination_font_size          = get_theme_mod( 'ocean_pagination_font_size', 18 );
 		$pagination_font_size_tablet   = get_theme_mod( 'ocean_pagination_font_size_tablet');
@@ -223,6 +225,11 @@ class OceanWP_Style_Settings_CSS {
 		// Separate widgets padding.
 		if ( ! empty( $separate_widgets_padding ) && 30 != $separate_widgets_padding ) {
 			$css .= '.separate-layout .widget-area .sidebar-box{padding:' . $separate_widgets_padding . $separate_widgets_padding_unit . ';}';
+		}
+
+		// Boxed width.
+		if ( ! empty( $boxed_width ) && 1280 != $boxed_width ) {
+			$css .= '.boxed-layout #wrap, .boxed-layout .parallax-footer, .boxed-layout .owp-floating-bar{width:' . $boxed_width . 'px;}';
 		}
 
 		// Get site background image.
@@ -447,6 +454,11 @@ class OceanWP_Style_Settings_CSS {
 		if ( isset( $mobile_content_top_padding ) && '' != $mobile_content_top_padding
 			|| isset( $mobile_content_bottom_padding ) && '' != $mobile_content_bottom_padding ) {
 			$css .= '@media (max-width: 480px){#main #content-wrap, .separate-layout #main #content-wrap{' . $mobile_content_padding_css . '}}';
+		}
+
+		// Title/breadcrumb position.
+		if ( ! empty( $title_breadcrumb_position ) && 'center' != $title_breadcrumb_position ) {
+			$css .= '.background-image-page-header .page-header-inner, .background-image-page-header .site-breadcrumbs{text-align: ' . $title_breadcrumb_position . '}';
 		}
 
 		// Pagination font size.

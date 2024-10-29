@@ -327,7 +327,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$wp_customize->get_control( 'woocommerce_terms_page_id' )->section                               = 'ocean_woocommerce_checkout';
 			$wp_customize->get_control( 'woocommerce_checkout_privacy_policy_text' )->section                = 'ocean_woocommerce_checkout';
 			$wp_customize->get_control( 'woocommerce_checkout_terms_and_conditions_checkbox_text' )->section = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_demo_store' )->type                                     = 'ocean-switch';
+			$wp_customize->get_control( 'woocommerce_demo_store' )->type                                     = 'ocean-control-switch';
 			$wp_customize->get_control( 'woocommerce_demo_store' )->priority                                 = 5;
 		}
 
@@ -480,9 +480,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			}
 
 			// Add product thumbnail.
-			// if ( 'hover' != get_theme_mod( 'ocean_woo_products_style', 'default' ) ) {
-			// 	add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'loop_product_thumbnail' ), 10 );
-			// }
+			if ( 'hover' != get_theme_mod( 'ocean_woo_products_style', 'default' ) ) {
+				add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'loop_product_thumbnail' ), 10 );
+			}
 
 			// Remove related products if is set to no.
 			if ( 'on' != get_theme_mod( 'ocean_woocommerce_display_related_items', 'on' ) ) {
@@ -1223,9 +1223,24 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			if ( function_exists( 'wc_get_template' ) ) {
 				// Get entry product media style
 				$style = get_theme_mod( 'ocean_woo_product_entry_style' );
+				$product_style = get_theme_mod( 'ocean_woo_products_style', 'default' );
+
 				$style = $style ? $style : 'image-swap';
+
+				$thumbnail_style = $style;
+
+				// If Customizer preview active
+				if ( is_customize_preview() ) {
+
+					if ( 'hover' === $product_style ) {
+						$thumbnail_style = '';
+					} else {
+						$thumbnail_style = $style;
+					}
+				}
+
 				// Get entry product media template part
-				wc_get_template( 'loop/thumbnail/' . $style . '.php' );
+				wc_get_template( 'loop/thumbnail/' . $thumbnail_style . '.php' );
 			}
 		}
 

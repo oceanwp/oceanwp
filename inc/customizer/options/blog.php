@@ -2591,6 +2591,34 @@ $options = [
 						]
 					],
 
+					'oceanwp_single_post_meta_icon_clr' => [
+						'type'              => 'ocean-color',
+						'label'             => esc_html__( 'Meta Icon Color', 'oceanwp' ),
+						'section'           => 'ocean_blog_single_title_options_section',
+						'transport'         => 'postMessage',
+						'priority'          => 10,
+						'hideLabel'         => false,
+						'showAlpha'         => true,
+						'showPalette'       => true,
+						'active_callback'   => 'oceanwp_cac_not_single_post_meta_stylish',
+						'sanitize_callback' => 'wp_kses_post',
+						'setting_args'      => [
+							'normal' => [
+								'id'       => 'oceanwp_single_post_meta_icon_clr',
+								'key'      => 'normal',
+								'label'    => esc_html__( 'Select Color', 'oceanwp' ),
+								'selector' => [
+									'.ocean-single-post-header ul.meta-item li .owp-icon use' => 'stroke',
+									'.ocean-single-post-header ul.meta-item li i ' => 'color'
+								],
+								'attr'     => [
+									'transport' => 'postMessage',
+									'default'   => '#000',
+								],
+							]
+						]
+					],
+
 					'ocean_divider_after_blog_single_post_header_background_cover' => [
 						'type'            => 'ocean-divider',
 						'section'         => 'ocean_blog_single_title_options_section',
@@ -4339,7 +4367,7 @@ $options = [
 								'label' => esc_html__( 'Font Size', 'oceanwp' ),
 								'attr'  => [
 									'transport' => 'postMessage',
-									'default'   => 34,
+									'default'   => 14,
 								],
 							],
 							'fontSizeTablet' => [

@@ -1,5 +1,19 @@
 # OceanWP Changelog
 
+### _2024.10.29_ - 4.0.2
+- **Added**:: Compatibility: WordPress: Customizer styling support for WordPress 6.7.
+- **Updated**:: Compatibility: WordPress: version number.
+- **Fixed**:: Customizer: Site Style: Boxed: Content width not rendered correclty on the front end.
+- **Fixed**:: Customizer: WooCommerce: Archives: Product Display Options: Product Image Style: Gallery Slider style: images not rendered correctly.
+- **Fixed**:: Customizer: WooCommerce: Store Notice: Enable Store Notice: control option changed from input to toggle button.
+- **Fixed**:: Customizer: WooCommerce: Single Product: Product Summary Content Builder: Quantity and Add to Cart option displaying HTML in the label.
+- **Fixed**:: Customizer: Top Bar: Social Menu: Social Menu Options: Icons Size: icon size not rendered correctly on the front end.
+- **Fixed**:: Customizer: Pages & Special Pages: Page Title: Background Image style: Title / Breadcrumbs position doesn't work.
+- **Fixed**:: Customizer: Blog: Single Post: Meta typography: default value not applied on the front end.
+- **Fixed**:: Customizer: Live Preview: some typography options do not render line height changes in live preview.
+- **Fixed**:: Customizer: Live Preview: WooCommerce border width changes for archives do not display changes in live preview.
+- **Fixed**:: Customizer: Control: Color: on options with previously no default color value the reset color option doesn't function.
+
 ### _2024.10.21_ - 4.0.1
 - **Fixed**:: Customizer: Enable Google Fonts option doesn't inherit old settings from version 3.6.1 and lower.
 - **Fixed**:: Customizer: Footer Copyright: Typography: option for footer menu missing.

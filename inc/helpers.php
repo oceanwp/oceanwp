@@ -1570,7 +1570,7 @@ if ( ! function_exists( 'oceanwp_display_after_header_content' ) ) {
 		// Display header content
 		if ( ( 'minimal' == $style
 				|| 'transparent' == $style )
-			&& $content
+			&& !empty($content)
 			|| ( 'minimal' == $style
 				|| 'transparent' == $style )
 			&& is_customize_preview() ) {
@@ -1579,7 +1579,9 @@ if ( ! function_exists( 'oceanwp_display_after_header_content' ) ) {
 				<div class="after-header-content-inner">
 					<?php
 					// Display top bar content
-					echo do_shortcode( $content );
+					if ( !empty($content) ) {
+						echo do_shortcode( $content );
+					}
 					?>
 				</div>
 			</div>
@@ -4970,7 +4972,10 @@ add_action( 'admin_init', 'oceanwp_includes' );
 function oceanwp_includes() {
 	//Include theme panel.
 	if ( is_admin() ) {
-		require_once OCEANWP_THEME_DIR . '/inc/themepanel/theme-panel.php';
+		$theme_panel_path = OCEANWP_THEME_DIR . '/inc/themepanel/theme-panel.php';
+		if ( file_exists( $theme_panel_path ) ) {
+			require_once $theme_panel_path;
+		}
 	}
 
 }
