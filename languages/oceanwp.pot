@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-29T05:53:12+00:00\n"
+"POT-Creation-Date: 2024-10-31T04:30:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: oceanwp\n"
@@ -482,11 +482,12 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:2734
 #: inc/customizer/options/woocommerce.php:7341
 #: inc/customizer/options/woocommerce.php:7342
-#: inc/customizer/assets/dist/index.js:5
+#: inc/customizer/assets/dist/index.js:4024
 #: inc/customizer/customizer-src/components/spacing-two/index.js:295
 #: inc/customizer/customizer-src/components/spacing/index.js:622
 #: inc/customizer/customizer-src/components/spacing/index copy.js:358
 #: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:358
+#: inc/customizer/assets/dist/index.js:3628
 msgid "Left"
 msgstr ""
 
@@ -520,10 +521,15 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:2146
 #: inc/customizer/options/woocommerce.php:2147
 #: inc/third/class-lifterlms.php:307
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:5264
+#: inc/customizer/assets/dist/index.js:5370
+#: inc/customizer/assets/dist/index.js:5447
 #: inc/customizer/customizer-src/components/typography/font-family.js:1042
 #: inc/customizer/customizer-src/components/typography/font-family.js:1149
 #: inc/customizer/customizer-src/components/typography/font-family.js:1209
+#: inc/customizer/assets/dist/index.js:4888
+#: inc/customizer/assets/dist/index.js:4995
+#: inc/customizer/assets/dist/index.js:5055
 msgid "Default"
 msgstr ""
 
@@ -1513,11 +1519,12 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:2720
 #: inc/customizer/options/woocommerce.php:7351
 #: inc/customizer/options/woocommerce.php:7352
-#: inc/customizer/assets/dist/index.js:5
+#: inc/customizer/assets/dist/index.js:4004
 #: inc/customizer/customizer-src/components/spacing-two/index.js:257
 #: inc/customizer/customizer-src/components/spacing/index.js:596
 #: inc/customizer/customizer-src/components/spacing/index copy.js:318
 #: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:318
+#: inc/customizer/assets/dist/index.js:3602
 msgid "Right"
 msgstr ""
 
@@ -1617,11 +1624,12 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:2657
 #: inc/customizer/options/woocommerce.php:2685
 #: inc/customizer/options/woocommerce.php:2713
-#: inc/customizer/assets/dist/index.js:5
+#: inc/customizer/assets/dist/index.js:3994
 #: inc/customizer/customizer-src/components/spacing-two/index.js:238
 #: inc/customizer/customizer-src/components/spacing/index.js:583
 #: inc/customizer/customizer-src/components/spacing/index copy.js:298
 #: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:298
+#: inc/customizer/assets/dist/index.js:3589
 msgid "Top"
 msgstr ""
 
@@ -1740,11 +1748,12 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:2671
 #: inc/customizer/options/woocommerce.php:2699
 #: inc/customizer/options/woocommerce.php:2727
-#: inc/customizer/assets/dist/index.js:5
+#: inc/customizer/assets/dist/index.js:4014
 #: inc/customizer/customizer-src/components/spacing-two/index.js:276
 #: inc/customizer/customizer-src/components/spacing/index.js:609
 #: inc/customizer/customizer-src/components/spacing/index copy.js:338
 #: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:338
+#: inc/customizer/assets/dist/index.js:3615
 msgid "Bottom"
 msgstr ""
 
@@ -2353,8 +2362,9 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:5965
 #: inc/customizer/options/woocommerce.php:6706
 #: inc/customizer/options/woocommerce.php:7079
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:5443
 #: inc/customizer/customizer-src/components/typography/font-family.js:1200
+#: inc/customizer/assets/dist/index.js:5046
 msgid "Font Family"
 msgstr ""
 
@@ -2502,8 +2512,9 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7086
 #: inc/customizer/options/woocommerce.php:7094
 #: inc/customizer/options/woocommerce.php:7101
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:5464
 #: inc/customizer/customizer-src/components/typography/font-family.js:1225
+#: inc/customizer/assets/dist/index.js:5071
 msgid "Font Weight"
 msgstr ""
 
@@ -2702,8 +2713,9 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7115
 #: inc/customizer/options/woocommerce.php:7123
 #: inc/customizer/options/woocommerce.php:7130
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:5992
 #: inc/customizer/customizer-src/components/typography/font-format.js:548
+#: inc/customizer/assets/dist/index.js:5632
 msgid "Font Size"
 msgstr ""
 
@@ -2851,8 +2863,9 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7145
 #: inc/customizer/options/woocommerce.php:7153
 #: inc/customizer/options/woocommerce.php:7160
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:6024
 #: inc/customizer/customizer-src/components/typography/font-format.js:586
+#: inc/customizer/assets/dist/index.js:5670
 msgid "Letter Spacing"
 msgstr ""
 
@@ -3000,8 +3013,9 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7175
 #: inc/customizer/options/woocommerce.php:7183
 #: inc/customizer/options/woocommerce.php:7190
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:6008
 #: inc/customizer/customizer-src/components/typography/font-format.js:567
+#: inc/customizer/assets/dist/index.js:5651
 msgid "Line Height"
 msgstr ""
 
@@ -3149,8 +3163,9 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7204
 #: inc/customizer/options/woocommerce.php:7212
 #: inc/customizer/options/woocommerce.php:7219
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:6045
 #: inc/customizer/customizer-src/components/typography/font-format.js:606
+#: inc/customizer/assets/dist/index.js:5690
 msgid "Text Transform"
 msgstr ""
 
@@ -3202,8 +3217,9 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:6110
 #: inc/customizer/options/woocommerce.php:6852
 #: inc/customizer/options/woocommerce.php:7226
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:6064
 #: inc/customizer/customizer-src/components/typography/font-format.js:633
+#: inc/customizer/assets/dist/index.js:5717
 msgid "Text Decoration"
 msgstr ""
 
@@ -3341,8 +3357,9 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:9394
 #: inc/customizer/options/woocommerce.php:9545
 #: inc/customizer/options/woocommerce.php:9583
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:5373
 #: inc/customizer/customizer-src/components/typography/font-family.js:1150
+#: inc/customizer/assets/dist/index.js:4996
 msgid "Normal"
 msgstr ""
 
@@ -4326,9 +4343,10 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:1872
 #: inc/customizer/options/woocommerce.php:5326
 #: inc/third/class-lifterlms.php:304
-#: inc/customizer/assets/dist/index.js:5
+#: inc/customizer/assets/dist/index.js:7534
 #: inc/customizer/customizer-src/controls-wrapper/radio-image/index.js:63
 #: inc/customizer/customizer-src/controls/radio-image/radio-image.js:48
+#: inc/customizer/assets/dist/index.js:7148
 msgid "Layout"
 msgstr ""
 
@@ -4595,9 +4613,12 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:5587
 #: inc/customizer/options/woocommerce.php:6906
 #: inc/customizer/options/woocommerce.php:8548
-#: inc/customizer/assets/dist/index.js:2
+#: inc/customizer/assets/dist/index.js:4188
+#: inc/customizer/assets/dist/index.js:4226
 #: inc/customizer/customizer-src/components/typography/font-colors.js:130
 #: inc/customizer/customizer-src/components/typography/font-colors.js:179
+#: inc/customizer/assets/dist/index.js:3783
+#: inc/customizer/assets/dist/index.js:3832
 msgid "Color"
 msgstr ""
 
@@ -5797,10 +5818,12 @@ msgstr ""
 #: inc/helpers.php:4056
 #: partials/mobile/mobile-dropdown.php:72
 #: partials/mobile/mobile-icon.php:45
-#: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/assets/dist/index.js:3
+#: inc/customizer/assets/dist/index.js:2846
+#: inc/customizer/assets/dist/index.js:6191
 #: inc/customizer/customizer-src/components/color-picker/index.js:116
 #: inc/customizer/customizer-src/components/typography/index.js:94
+#: inc/customizer/assets/dist/index.js:2394
+#: inc/customizer/assets/dist/index.js:5853
 msgid "Close"
 msgstr ""
 
@@ -8451,16 +8474,20 @@ msgstr ""
 #: inc/template-helpers.php:272
 #: inc/template-helpers.php:314
 #: inc/woocommerce/woocommerce-config.php:2254
-#: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/assets/dist/index.js:2
-#: inc/customizer/assets/dist/index.js:3
-#: inc/customizer/assets/dist/index.js:5
+#: inc/customizer/assets/dist/index.js:2977
+#: inc/customizer/assets/dist/index.js:3092
+#: inc/customizer/assets/dist/index.js:6048
+#: inc/customizer/assets/dist/index.js:6069
 #: inc/customizer/customizer-src/components/device-type/index.js:70
 #: inc/customizer/customizer-src/components/radio-image/index.js:51
 #: inc/customizer/customizer-src/components/radio-image/index copy.js:53
 #: inc/customizer/customizer-src/components/radio-image/index copy working.js:51
 #: inc/customizer/customizer-src/components/typography/font-format.js:611
 #: inc/customizer/customizer-src/components/typography/font-format.js:640
+#: inc/customizer/assets/dist/index.js:2535
+#: inc/customizer/assets/dist/index.js:2649
+#: inc/customizer/assets/dist/index.js:5695
+#: inc/customizer/assets/dist/index.js:5724
 msgid "%s"
 msgstr ""
 
@@ -10135,96 +10162,51 @@ msgstr ""
 msgid "Share by email (opens in a new tab)"
 msgstr ""
 
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:2713
+#: inc/customizer/assets/dist/index.js:2817
 #: inc/customizer/customizer-src/components/color-picker/button.js:50
 #: inc/customizer/customizer-src/components/color-picker/index.js:77
 #: inc/customizer/customizer-src/components/color-picker/index copy.js:49
+#: inc/customizer/assets/dist/index.js:2257
+#: inc/customizer/assets/dist/index.js:2355
 msgid "Color picker"
 msgstr ""
 
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:2862
+#: inc/customizer/assets/dist/index.js:2865
 #: inc/customizer/customizer-src/components/color-picker/index.js:136
 #: inc/customizer/customizer-src/components/color-picker/index.js:139
 #: inc/customizer/customizer-src/components/color-picker/index copy.js:106
 #: inc/customizer/customizer-src/components/color-picker/index copy.js:109
+#: inc/customizer/assets/dist/index.js:2414
+#: inc/customizer/assets/dist/index.js:2417
 msgid "Reset Color"
 msgstr ""
 
-#: inc/customizer/assets/dist/index.js:1
+#: inc/customizer/assets/dist/index.js:2870
 #: inc/customizer/customizer-src/components/color-picker/index.js:143
 #: inc/customizer/customizer-src/components/color-picker/index copy.js:113
+#: inc/customizer/assets/dist/index.js:2421
 msgid "Reset color"
 msgstr ""
 
-#: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/controls-wrapper/color-picker/index.js:93
-#: inc/customizer/customizer-src/controls/color-picker/color-picker.js:88
-#: inc/customizer/customizer-src/controls/color-picker/color-picker copy.js:47
-msgid "Choose Color"
-msgstr ""
-
-#: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1047
-msgid "Custom Fonts"
-msgstr ""
-
-#: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1068
-msgid "System Fonts"
-msgstr ""
-
-#: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1075
-msgid "Google Fonts"
-msgstr ""
-
-#: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1151
-msgid "Bold"
-msgstr ""
-
-#: inc/customizer/assets/dist/index.js:2
-#: inc/customizer/customizer-src/components/typography/font-colors.js:148
-msgid "Hover Color"
-msgstr ""
-
-#: inc/customizer/assets/dist/index.js:2
-#: inc/customizer/customizer-src/components/typography/font-colors.js:176
-msgid "Back"
-msgstr ""
-
-#: inc/customizer/assets/dist/index.js:2
+#: inc/customizer/assets/dist/index.js:2972
 #: inc/customizer/customizer-src/components/device-type/index.js:64
+#: inc/customizer/assets/dist/index.js:2529
 msgid "Device"
 msgstr ""
 
-#: inc/customizer/assets/dist/index.js:4
-#: inc/customizer/customizer-src/controls-wrapper/image-picker/index.js:145
-#: inc/customizer/customizer-src/controls/image-picker/image-picker.js:145
-msgid "Replace"
-msgstr ""
-
-#: inc/customizer/assets/dist/index.js:4
-#: inc/customizer/customizer-src/controls-wrapper/image-picker/index.js:145
-#: inc/customizer/customizer-src/controls/image-picker/image-picker.js:145
-msgid "Add"
-msgstr ""
-
-#: inc/customizer/assets/dist/index.js:4
-#: inc/customizer/customizer-src/controls-wrapper/image-picker/index.js:154
-#: inc/customizer/customizer-src/controls/image-picker/image-picker.js:154
-msgid "Remove"
-msgstr ""
-
-#: inc/customizer/assets/dist/index.js:5
+#: inc/customizer/assets/dist/index.js:4027
 #: inc/customizer/customizer-src/components/spacing-two/index.js:300
 #: inc/customizer/customizer-src/components/spacing/index.js:627
 #: inc/customizer/customizer-src/components/spacing/index copy.js:363
 #: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:363
+#: inc/customizer/assets/dist/index.js:3633
 msgid "Unsync"
 msgstr ""
 
-#: inc/customizer/assets/dist/index.js:5
+#: inc/customizer/assets/dist/index.js:4027
+#: inc/customizer/assets/dist/index.js:4042
 #: inc/customizer/customizer-src/components/spacing-two/index.js:300
 #: inc/customizer/customizer-src/components/spacing-two/index.js:313
 #: inc/customizer/customizer-src/components/spacing/index.js:627
@@ -10233,21 +10215,90 @@ msgstr ""
 #: inc/customizer/customizer-src/components/spacing/index copy.js:377
 #: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:363
 #: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:376
+#: inc/customizer/assets/dist/index.js:3633
+#: inc/customizer/assets/dist/index.js:3645
 msgid "Sync"
 msgstr ""
 
-#: inc/customizer/assets/dist/index.js:5
+#: inc/customizer/assets/dist/index.js:4031
 #: inc/customizer/customizer-src/components/spacing/index.js:630
+#: inc/customizer/assets/dist/index.js:3636
 msgid "Sync Spacing"
 msgstr ""
 
-#: inc/customizer/assets/dist/index.js:5
+#: inc/customizer/assets/dist/index.js:4202
+#: inc/customizer/customizer-src/components/typography/font-colors.js:148
+#: inc/customizer/assets/dist/index.js:3801
+msgid "Hover Color"
+msgstr ""
+
+#: inc/customizer/assets/dist/index.js:4224
+#: inc/customizer/customizer-src/components/typography/font-colors.js:176
+#: inc/customizer/assets/dist/index.js:3829
+msgid "Back"
+msgstr ""
+
+#: inc/customizer/assets/dist/index.js:5268
+#: inc/customizer/customizer-src/components/typography/font-family.js:1047
+#: inc/customizer/assets/dist/index.js:4893
+msgid "Custom Fonts"
+msgstr ""
+
+#: inc/customizer/assets/dist/index.js:5290
+#: inc/customizer/customizer-src/components/typography/font-family.js:1068
+#: inc/customizer/assets/dist/index.js:4914
+msgid "System Fonts"
+msgstr ""
+
+#: inc/customizer/assets/dist/index.js:5299
+#: inc/customizer/customizer-src/components/typography/font-family.js:1075
+#: inc/customizer/assets/dist/index.js:4921
+msgid "Google Fonts"
+msgstr ""
+
+#: inc/customizer/assets/dist/index.js:5376
+#: inc/customizer/customizer-src/components/typography/font-family.js:1151
+#: inc/customizer/assets/dist/index.js:4997
+msgid "Bold"
+msgstr ""
+
+#: inc/customizer/assets/dist/index.js:6655
+#: inc/customizer/customizer-src/controls-wrapper/color-picker/index.js:93
+#: inc/customizer/customizer-src/controls/color-picker/color-picker.js:88
+#: inc/customizer/customizer-src/controls/color-picker/color-picker copy.js:47
+#: inc/customizer/assets/dist/index.js:6322
+msgid "Choose Color"
+msgstr ""
+
+#: inc/customizer/assets/dist/index.js:7186
+#: inc/customizer/customizer-src/controls-wrapper/image-picker/index.js:145
+#: inc/customizer/customizer-src/controls/image-picker/image-picker.js:145
+#: inc/customizer/assets/dist/index.js:6814
+msgid "Replace"
+msgstr ""
+
+#: inc/customizer/assets/dist/index.js:7186
+#: inc/customizer/customizer-src/controls-wrapper/image-picker/index.js:145
+#: inc/customizer/customizer-src/controls/image-picker/image-picker.js:145
+#: inc/customizer/assets/dist/index.js:6814
+msgid "Add"
+msgstr ""
+
+#: inc/customizer/assets/dist/index.js:7190
+#: inc/customizer/customizer-src/controls-wrapper/image-picker/index.js:154
+#: inc/customizer/customizer-src/controls/image-picker/image-picker.js:154
+#: inc/customizer/assets/dist/index.js:6823
+msgid "Remove"
+msgstr ""
+
+#: inc/customizer/assets/dist/index.js:8159
 #: inc/customizer/customizer-src/controls-wrapper/sortable/index.js:111
 #: inc/customizer/customizer-src/controls-wrapper/sortable/sortable.js:103
 #: inc/customizer/customizer-src/controls-wrapper/sortable/sortable copy.js:88
 #: inc/customizer/customizer-src/controls/section-settings/section-settings.js:47
 #: inc/customizer/customizer-src/controls/sortable/sortable.js:102
 #: inc/customizer/customizer-src/controls/sortable/sortable copy.js:88
+#: inc/customizer/assets/dist/index.js:7778
 msgid "Elements Position"
 msgstr ""
 

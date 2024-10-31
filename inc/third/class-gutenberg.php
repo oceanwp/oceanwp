@@ -23,7 +23,7 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 			// After setup theme - Gutenberg.
 			add_action( 'after_setup_theme', array( $this, 'gutenberg_support' ), 10 );
 
-			add_action( 'admin_head', array( $this, 'gutenberg_editor_style' ) );
+			add_action( 'enqueue_block_editor_assets', array( $this, 'gutenberg_editor_style' ) );
 			add_action( 'enqueue_block_editor_assets', array( $this, 'add_google_fonts' ) );
 
 		}
@@ -381,7 +381,7 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 
 				// Output the css.
 				if ( ! empty( $gutenberg_css ) ) {
-					echo '<style id="ocean-gutenberg-style"> ' . esc_attr( $gutenberg_css ) . '</style>';
+					wp_add_inline_style( 'wp-block-library', $gutenberg_css );
 				}
 			}
 

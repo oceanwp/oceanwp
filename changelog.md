@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2024.xx.xx_ - 4.0.3
+- **Fixed**:: Customizer - Range slider missing unique key prop (10747).
+
 ### _2024.10.29_ - 4.0.2
 - **Added**:: Compatibility: WordPress: Customizer styling support for WordPress 6.7.
 - **Updated**:: Compatibility: WordPress: version number.
