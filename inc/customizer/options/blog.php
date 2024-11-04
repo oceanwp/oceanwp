@@ -1642,7 +1642,7 @@ $options = [
 								'key'      => 'normal',
 								'label'    => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
-									'.blog-entry ul.meta li a' => 'color'
+									'.blog-entry ul.meta li, .blog-entry ul.meta li a' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',

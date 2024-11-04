@@ -65,6 +65,15 @@ class OceanWP_Customize_Blog_CSS {
 		$single_title_bg_image_breadcrumb = get_theme_mod( 'ocean_blog_single_title_bg_image_breadcrumb_color' );
 		$single_title_bg_image_sep        = get_theme_mod( 'ocean_blog_single_title_bg_image_separator_color' );
 
+		$blog_post_title_color_setting              = get_theme_mod('blog_post_title_typography');
+		$blog_post_title_color                      = isset($blog_post_title_color_setting['color']) ? $blog_post_title_color_setting['color'] : '#333333';
+		$blog_post_meta_color                       = get_theme_mod( 'blog_post_meta_color', '#333333' );
+		$blog_post_meta_color_hover                 = get_theme_mod( 'blog_post_meta_color_hover', '' );
+		$blog_single_content_link_color             = get_theme_mod( 'ocean_blog_single_content_link_color', '' );
+		$blog_single_content_link_color_hover       = get_theme_mod( 'ocean_blog_single_content_link_color_hover', '' );
+		$blog_single_related_post_title_color       = get_theme_mod( 'ocean_blog_single_related_post_title_color', '' );
+		$blog_single_related_post_title_color_hover = get_theme_mod( 'ocean_blog_single_related_post_title_color_hover', '' );
+		$blog_single_related_post_date_color        = get_theme_mod( 'ocean_blog_single_related_post_date_color', '' );
 
 		// Define css var.
 		$css = '';
@@ -187,7 +196,7 @@ class OceanWP_Customize_Blog_CSS {
 		}
 
 		if ( ! empty( $blog_archive_meta_color ) && '' != $blog_archive_meta_color ) {
-			$css .= '.blog-entry ul.meta li a{color:' . $blog_archive_meta_color . ';}';
+			$css .= '.blog-entry ul.meta li, .blog-entry ul.meta li a{color:' . $blog_archive_meta_color . ';}';
 		}
 		if ( ! empty( $blog_archive_meta_hover_color ) && '' != $blog_archive_meta_hover_color ) {
 			$css .= '.blog-entry ul.meta li a:hover{color:' . $blog_archive_meta_hover_color . ';}';
@@ -213,6 +222,39 @@ class OceanWP_Customize_Blog_CSS {
 		if ( ! empty( $theme_post_icons_color ) && '#333333' != $theme_post_icons_color ) {
 			$css .= '.single-post ul.meta li i{color:' . $theme_post_icons_color . ';}';
 			$css .= '.single-post ul.meta li .owp-icon use{stroke:' . $theme_post_icons_color . ';}';
+		}
+
+		if ( ! empty( $blog_post_title_color ) && '#333333' != $blog_post_title_color ) {
+			$css .= '.single-post .entry-title{color:' . $blog_post_title_color . ';}';
+		}
+
+		if ( ! empty( $blog_post_meta_color ) && '#333333' != $blog_post_meta_color ) {
+			$css .= '.single-post ul.meta li, .single-post ul.meta li a{color:' . $blog_post_meta_color . ';}';
+		}
+
+		if ( ! empty( $blog_post_meta_color_hover ) && '' != $blog_post_meta_color_hover ) {
+			$css .= '.single-post ul.meta li a:hover{color:' . $blog_post_meta_color_hover . ';}';
+		}
+
+		if ( ! empty( $blog_single_content_link_color ) && '' != $blog_single_content_link_color ) {
+			$css .= '.single-post .entry-content a{color:' . $blog_single_content_link_color . ';}';
+		}
+
+		if ( ! empty( $blog_single_content_link_color_hover ) && '' != $blog_single_content_link_color_hover ) {
+			$css .= '.single-post .entry-content a:hover{color:' . $blog_single_content_link_color_hover . ';}';
+		}
+
+		if ( ! empty( $blog_single_related_post_title_color ) && '' != $blog_single_related_post_title_color ) {
+			$css .= '.single-post .related-post-title a{color:' . $blog_single_related_post_title_color . ';}';
+		}
+
+		if ( ! empty( $blog_single_related_post_title_color_hover ) && '' != $blog_single_related_post_title_color_hover ) {
+			$css .= '.single-post .related-post-title a:hover{color:' . $blog_single_related_post_title_color_hover . ';}';
+		}
+
+		if ( ! empty( $blog_single_related_post_date_color ) && '' != $blog_single_related_post_date_color ) {
+			$css .= '.single-post #related-posts time.published{color:' . $blog_single_related_post_date_color . ';}';
+			$css .= '.single-post #related-posts time.published .owp-icon use{stroke:' . $blog_single_related_post_date_color . ';}';
 		}
 
 		// Single content width.
