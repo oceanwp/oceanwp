@@ -5757,17 +5757,20 @@ $options = [
 				'section'  => 'ocean_woocommerce_single',
 				'transport' => 'refresh',
 				'priority' => 10,
-				'default'  => [ 'title', 'rating', 'price', 'excerpt', 'quantity-button', 'meta' ],
+				'default'  => apply_filters( 'ocean_woo_summary_element_default', [ 'title', 'rating', 'price', 'excerpt', 'quantity-button', 'meta' ] ),
 				'hideLabel' => false,
 				'sanitize_callback' => 'ocean_sanitize_sortable_control',
-				'choices' => [
-					'title' => __( 'Title', 'oceanwp' ),
-					'rating' => __( 'Rating', 'oceanwp' ),
-					'price' => __( 'Price', 'oceanwp' ),
-					'excerpt' => __( 'Excerpt', 'oceanwp' ),
-					'quantity-button' => __( 'Quantity & Add To Cart', 'oceanwp' ),
-					'meta' => __( 'Product Meta', 'oceanwp' ),
-				]
+				'choices' => apply_filters(
+					'ocean_woo_summary_element_choices',
+					[
+						'title' => __( 'Title', 'oceanwp' ),
+						'rating' => __( 'Rating', 'oceanwp' ),
+						'price' => __( 'Price', 'oceanwp' ),
+						'excerpt' => __( 'Excerpt', 'oceanwp' ),
+						'quantity-button' => __( 'Quantity & Add To Cart', 'oceanwp' ),
+						'meta' => __( 'Product Meta', 'oceanwp' ),
+					]
+				),
 			],
 
 			'ocean_divider_for_woo_single_product_summary_typo_and_color_section' => [

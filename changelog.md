@@ -3,7 +3,10 @@
 ### _2024.xx.xx_ - 4.0.3
 - **Fixed**:: Customizer - Range slider missing unique key prop (10747).
 - **Fixed**:: Single post color doesn't work on the front (10763).
+- **Fixed**:: Color controller > opacity selection is missing (10785)
 - **Updated**:: OGB Style for Gutenberg issue when editing a post/page (10750).
+- **Added**:: Brand taxonomy positioning in product builder (8598).
+- **Added**:: oceanwp > woocommerce > owp-single-product.php altered to add support for brand taxonomy (8598).
 
 ### _2024.10.29_ - 4.0.2
 - **Added**:: Compatibility: WordPress: Customizer styling support for WordPress 6.7.
