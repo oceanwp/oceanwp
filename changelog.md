@@ -6,6 +6,7 @@
 - **Fixed**:: Color controller > opacity selection is missing (10785).
 - **Fixed**:: Typography: font family with and without comma based on their type (10820).
 - **Updated**:: OGB Style for Gutenberg issue when editing a post/page (10750).
+- **Updated**:: Customizer - remove deprecated function as per the new wp 6.7 which will be removed in wp7 (10755)
 - **Added**:: Brand taxonomy positioning in product builder (8598).
 - **Added**:: oceanwp > woocommerce > owp-single-product.php altered to add support for brand taxonomy (8598).
 
