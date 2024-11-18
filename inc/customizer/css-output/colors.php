@@ -308,7 +308,7 @@ class OceanWP_Colors_CSS {
 			$css .= '.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover{color:' . $meta_breadcrumbs_link_color_hover . ';}';
 		}
 
-		if ( ! empty( $typography_body_color ) && '' != $typography_body_color ) {
+		if ( ! empty( $typography_body_color ) && '#929292' != $typography_body_color ) {
 			$css .= 'body {color:' . $typography_body_color . ';}';
 		}
 		if ( ! empty( $typography_headings_color ) && '' != $typography_headings_color ) {
