@@ -331,13 +331,6 @@ $options = [
 					'transport' => 'postMessage',
 				],
 			],
-			'textColor' => [
-				'id' => 'body_typography[color]',
-				'label' => esc_html__('Color', 'oceanwp'),
-				'attr' => [
-					'transport' => 'postMessage',
-				],
-			],
 			'textDecoration' => [
 				'id' => 'body_typography[text-decoration]',
 				'label' => esc_html__('Text Decoration', 'oceanwp'),

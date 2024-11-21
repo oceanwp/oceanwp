@@ -181,7 +181,7 @@ class OceanWP_Typography_CSS {
 			'font-weight' => 'fontWeight',
 			'text-transform' => 'textTransform',
 			'text-decoration' => 'textDecoration',
-			'color' => 'textColor',
+			//'color' => 'textColor',
 		];
 
 		foreach ( $settings as $selector => $settings_key ) {
