@@ -75,6 +75,16 @@ class OceanWP_Customize_Blog_CSS {
 		$blog_single_related_post_title_color_hover = get_theme_mod( 'ocean_blog_single_related_post_title_color_hover', '' );
 		$blog_single_related_post_date_color        = get_theme_mod( 'ocean_blog_single_related_post_date_color', '' );
 
+		$blog_single_post_title_color_setting        = get_theme_mod('single_post_title_typography');
+		$blog_single_post_title_color                = isset($blog_single_post_title_color_setting['color']) ? $blog_single_post_title_color_setting['color'] : '#333333';
+		$blog_single_post_title_meta_color_setting   = get_theme_mod('single_post_meta_typography');
+		$blog_single_post_title_meta_color           = isset($blog_single_post_title_meta_color_setting['color']) ? $blog_single_post_title_meta_color_setting['color'] : '#333333';
+		$blog_single_post_title_meta_color_hvr       = get_theme_mod( 'single_post_meta_typography_color_hover', '#333333' );
+		$blog_single_post_title_author_color_setting = get_theme_mod('single_post_title_author_typography');
+		$blog_single_post_title_author_color         = isset($blog_single_post_title_author_color_setting['color']) ? $blog_single_post_title_author_color_setting['color'] : '#333333';
+		$blog_single_post_title_bio_color_setting    = get_theme_mod('single_post_title_author_bio_typography');
+		$blog_single_post_title_bio_color            = isset($blog_single_post_title_bio_color_setting['color']) ? $blog_single_post_title_bio_color_setting['color'] : '#333333';
+
 		// Define css var.
 		$css = '';
 
@@ -305,6 +315,27 @@ class OceanWP_Customize_Blog_CSS {
 		if ( ! empty( $single_title_bg_image_sep ) && '' != $single_title_bg_image_sep ) {
 			$css .= '.single .site-breadcrumbs ul li .breadcrumb-sep, .single .site-breadcrumbs ol li .breadcrumb-sep{color:' . $single_title_bg_image_sep . ';}';
 		}
+
+		if ( ! empty( $blog_single_post_title_color ) && '#333333' != $blog_single_post_title_color ) {
+			$css .= '.ocean-single-post-header .single-post-title{color:' . $blog_single_post_title_color . ';}';
+		}
+
+		if ( ! empty( $blog_single_post_title_meta_color ) && '#333333' != $blog_single_post_title_meta_color ) {
+			$css .= '.ocean-single-post-header ul.meta-item li, .ocean-single-post-header ul.meta-item li a{color:' . $blog_single_post_title_meta_color . ';}';
+		}
+
+		if ( ! empty( $blog_single_post_title_meta_color_hvr ) && '' != $blog_single_post_title_meta_color_hvr ) {
+			$css .= '.ocean-single-post-header ul.meta-item li a:hover{color:' . $blog_single_post_title_meta_color_hvr . ';}';
+		}
+
+		if ( ! empty( $blog_single_post_title_author_color ) && '#333333' != $blog_single_post_title_author_color ) {
+			$css .= '.ocean-single-post-header .post-author-name, .ocean-single-post-header .post-author-name a{color:' . $blog_single_post_title_author_color . ';}';
+		}
+
+		if ( ! empty( $blog_single_post_title_bio_color ) && '#333333' != $blog_single_post_title_bio_color ) {
+			$css .= '.ocean-single-post-header .post-author-description{color:' . $blog_single_post_title_bio_color . ';}';
+		}
+
 
 
 

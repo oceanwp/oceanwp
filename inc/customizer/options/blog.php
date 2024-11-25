@@ -4624,7 +4624,7 @@ $options = [
 								'key'      => 'hover',
 								'label'    => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
-									'.ocean-single-post-header ul.meta-item li a' => 'color'
+									'.ocean-single-post-header ul.meta-item li a:hover' => 'color'
 								],
 								'attr'     => [
 									'transport' => 'postMessage',

@@ -3,8 +3,10 @@
 ### _2024.xx.xx_ - 4.0.3
 - **Fixed**:: Customizer - Range slider missing unique key prop (10747).
 - **Fixed**:: Single post color doesn't work on the front (10763).
+- **Fixed**:: Single post title color doesn't work with custom page title on the front (10796).
 - **Fixed**:: Color controller > opacity selection is missing (10785).
 - **Fixed**:: Typography: font family with and without comma based on their type (10820).
+- **Fixed**:: This URL is wrong in our translation files (fa_IR) (10890)
 - **Updated**:: OGB Style for Gutenberg issue when editing a post/page (10750).
 - **Updated**:: Customizer - remove deprecated function as per the new wp 6.7 which will be removed in wp7 (10755)
 - **Added**:: Brand taxonomy positioning in product builder (8598).

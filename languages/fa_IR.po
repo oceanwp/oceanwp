@@ -5840,7 +5840,7 @@ msgstr ""
 "داشته باشید تا سایت شما به خوبی بر روی هر دستگاهی قابل نمایش باشد. سازگاری "
 "با صفحه سازهای معروفی نظیر: Elementor، Beaver، Brizy، Visual Composer، Divi، "
 "SiteOrigin، یکی دیگر از ویژگی های این قالب می باشد. پیش نمایش این قالب را در "
-"لینک که قرار داده می شود ببینید: https://demo.hamyarwp.com/oceanwp/"
+"لینک که قرار داده می شود ببینید: https://oceanwp.org/demos/"
 
 #. Author of the plugin/theme
 msgid "OceanWP"
@@ -5848,7 +5848,7 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://oceanwp.org/about-me/"
-msgstr "https://demo.hamyarwp.com/oceanwp/"
+msgstr "https://demo.hamyarwp.com/oceanwp"
 
 #~ msgid "Subtotal"
 #~ msgstr "کل"
