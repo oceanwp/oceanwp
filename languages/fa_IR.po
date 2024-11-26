@@ -5814,7 +5814,7 @@ msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "https://oceanwp.org/"
-msgstr "https://oceanwp.com/"
+msgstr "https://oceanwp.org/"
 
 #. Description of the plugin/theme
 msgid ""

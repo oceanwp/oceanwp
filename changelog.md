@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2024.xx.xx_ - 4.0.3
+### _2024.11.26_ - 4.0.3
 - **Fixed**:: Customizer - Range slider missing unique key prop (10747).
 - **Fixed**:: Single post color doesn't work on the front (10763).
 - **Fixed**:: Single post title color doesn't work with custom page title on the front (10796).

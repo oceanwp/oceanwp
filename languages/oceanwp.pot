@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 4.0.2\n"
+"Project-Id-Version: OceanWP 4.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-12T06:40:46+00:00\n"
+"POT-Creation-Date: 2024-11-26T07:27:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: oceanwp\n"
@@ -312,44 +312,44 @@ msgstr ""
 msgid "Week %s"
 msgstr ""
 
-#: inc/breadcrumbs.php:1065
+#: inc/breadcrumbs.php:1079
 msgctxt "minute and hour archives time format"
 msgid "g:i a"
 msgstr ""
 
-#: inc/breadcrumbs.php:1083
+#: inc/breadcrumbs.php:1097
 msgctxt "minute archives time format"
 msgid "i"
 msgstr ""
 
-#: inc/breadcrumbs.php:1101
+#: inc/breadcrumbs.php:1115
 msgctxt "hour archives time format"
 msgid "g a"
 msgstr ""
 
-#: inc/breadcrumbs.php:1118
-#: inc/breadcrumbs.php:1148
-#: inc/breadcrumbs.php:1173
-#: inc/breadcrumbs.php:1198
-#: inc/breadcrumbs.php:1545
+#: inc/breadcrumbs.php:1132
+#: inc/breadcrumbs.php:1162
+#: inc/breadcrumbs.php:1187
+#: inc/breadcrumbs.php:1212
+#: inc/breadcrumbs.php:1559
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/breadcrumbs.php:1119
-#: inc/breadcrumbs.php:1174
-#: inc/breadcrumbs.php:1549
+#: inc/breadcrumbs.php:1133
+#: inc/breadcrumbs.php:1188
+#: inc/breadcrumbs.php:1563
 msgctxt "monthly archives date format"
 msgid "F"
 msgstr ""
 
-#: inc/breadcrumbs.php:1120
-#: inc/breadcrumbs.php:1553
+#: inc/breadcrumbs.php:1134
+#: inc/breadcrumbs.php:1567
 msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
-#: inc/breadcrumbs.php:1149
+#: inc/breadcrumbs.php:1163
 msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
@@ -680,7 +680,7 @@ msgstr ""
 #: inc/customizer/options/blog.php:4904
 #: inc/customizer/options/blog.php:4914
 #: inc/customizer/options/blog.php:4945
-#: inc/customizer/options/colors.php:386
+#: inc/customizer/options/colors.php:387
 #: inc/customizer/options/footer-copyright.php:642
 #: inc/customizer/options/footer-widget.php:694
 #: inc/customizer/options/header.php:128
@@ -735,7 +735,7 @@ msgstr ""
 #: inc/customizer/options/topbar.php:636
 #: inc/customizer/options/topbar.php:971
 #: inc/customizer/options/typography.php:162
-#: inc/customizer/options/typography.php:1533
+#: inc/customizer/options/typography.php:1526
 msgid "%1$s Need Help? %2$s"
 msgstr ""
 
@@ -1159,27 +1159,27 @@ msgstr ""
 #: inc/customizer/options/typography.php:249
 #: inc/customizer/options/typography.php:278
 #: inc/customizer/options/typography.php:308
-#: inc/customizer/options/typography.php:419
-#: inc/customizer/options/typography.php:448
-#: inc/customizer/options/typography.php:478
-#: inc/customizer/options/typography.php:584
-#: inc/customizer/options/typography.php:613
-#: inc/customizer/options/typography.php:643
-#: inc/customizer/options/typography.php:749
-#: inc/customizer/options/typography.php:778
-#: inc/customizer/options/typography.php:808
-#: inc/customizer/options/typography.php:914
-#: inc/customizer/options/typography.php:943
-#: inc/customizer/options/typography.php:973
-#: inc/customizer/options/typography.php:1079
-#: inc/customizer/options/typography.php:1108
-#: inc/customizer/options/typography.php:1138
-#: inc/customizer/options/typography.php:1244
-#: inc/customizer/options/typography.php:1273
-#: inc/customizer/options/typography.php:1303
-#: inc/customizer/options/typography.php:1409
-#: inc/customizer/options/typography.php:1438
-#: inc/customizer/options/typography.php:1468
+#: inc/customizer/options/typography.php:412
+#: inc/customizer/options/typography.php:441
+#: inc/customizer/options/typography.php:471
+#: inc/customizer/options/typography.php:577
+#: inc/customizer/options/typography.php:606
+#: inc/customizer/options/typography.php:636
+#: inc/customizer/options/typography.php:742
+#: inc/customizer/options/typography.php:771
+#: inc/customizer/options/typography.php:801
+#: inc/customizer/options/typography.php:907
+#: inc/customizer/options/typography.php:936
+#: inc/customizer/options/typography.php:966
+#: inc/customizer/options/typography.php:1072
+#: inc/customizer/options/typography.php:1101
+#: inc/customizer/options/typography.php:1131
+#: inc/customizer/options/typography.php:1237
+#: inc/customizer/options/typography.php:1266
+#: inc/customizer/options/typography.php:1296
+#: inc/customizer/options/typography.php:1402
+#: inc/customizer/options/typography.php:1431
+#: inc/customizer/options/typography.php:1461
 #: inc/customizer/options/woocommerce.php:108
 #: inc/customizer/options/woocommerce.php:138
 #: inc/customizer/options/woocommerce.php:168
@@ -2015,13 +2015,13 @@ msgstr ""
 #: inc/customizer/options/colors.php:29
 #: inc/customizer/options/colors.php:98
 #: inc/customizer/options/colors.php:135
-#: inc/customizer/options/colors.php:161
-#: inc/customizer/options/colors.php:188
-#: inc/customizer/options/colors.php:215
-#: inc/customizer/options/colors.php:242
-#: inc/customizer/options/colors.php:269
-#: inc/customizer/options/colors.php:296
-#: inc/customizer/options/colors.php:323
+#: inc/customizer/options/colors.php:162
+#: inc/customizer/options/colors.php:189
+#: inc/customizer/options/colors.php:216
+#: inc/customizer/options/colors.php:243
+#: inc/customizer/options/colors.php:270
+#: inc/customizer/options/colors.php:297
+#: inc/customizer/options/colors.php:324
 #: inc/customizer/options/edd.php:592
 #: inc/customizer/options/edd.php:619
 #: inc/customizer/options/edd.php:646
@@ -2335,13 +2335,13 @@ msgstr ""
 #: inc/customizer/options/styles-and-settings.php:2064
 #: inc/customizer/options/topbar.php:668
 #: inc/customizer/options/typography.php:192
-#: inc/customizer/options/typography.php:363
-#: inc/customizer/options/typography.php:527
-#: inc/customizer/options/typography.php:692
-#: inc/customizer/options/typography.php:857
-#: inc/customizer/options/typography.php:1022
-#: inc/customizer/options/typography.php:1187
-#: inc/customizer/options/typography.php:1352
+#: inc/customizer/options/typography.php:356
+#: inc/customizer/options/typography.php:520
+#: inc/customizer/options/typography.php:685
+#: inc/customizer/options/typography.php:850
+#: inc/customizer/options/typography.php:1015
+#: inc/customizer/options/typography.php:1180
+#: inc/customizer/options/typography.php:1345
 #: inc/customizer/options/woocommerce.php:52
 #: inc/customizer/options/woocommerce.php:216
 #: inc/customizer/options/woocommerce.php:2766
@@ -2448,27 +2448,27 @@ msgstr ""
 #: inc/customizer/options/typography.php:199
 #: inc/customizer/options/typography.php:206
 #: inc/customizer/options/typography.php:213
+#: inc/customizer/options/typography.php:363
 #: inc/customizer/options/typography.php:370
 #: inc/customizer/options/typography.php:377
-#: inc/customizer/options/typography.php:384
+#: inc/customizer/options/typography.php:527
 #: inc/customizer/options/typography.php:534
 #: inc/customizer/options/typography.php:541
-#: inc/customizer/options/typography.php:548
+#: inc/customizer/options/typography.php:692
 #: inc/customizer/options/typography.php:699
 #: inc/customizer/options/typography.php:706
-#: inc/customizer/options/typography.php:713
+#: inc/customizer/options/typography.php:857
 #: inc/customizer/options/typography.php:864
 #: inc/customizer/options/typography.php:871
-#: inc/customizer/options/typography.php:878
+#: inc/customizer/options/typography.php:1022
 #: inc/customizer/options/typography.php:1029
 #: inc/customizer/options/typography.php:1036
-#: inc/customizer/options/typography.php:1043
+#: inc/customizer/options/typography.php:1187
 #: inc/customizer/options/typography.php:1194
 #: inc/customizer/options/typography.php:1201
-#: inc/customizer/options/typography.php:1208
+#: inc/customizer/options/typography.php:1352
 #: inc/customizer/options/typography.php:1359
 #: inc/customizer/options/typography.php:1366
-#: inc/customizer/options/typography.php:1373
 #: inc/customizer/options/woocommerce.php:59
 #: inc/customizer/options/woocommerce.php:66
 #: inc/customizer/options/woocommerce.php:73
@@ -2537,13 +2537,13 @@ msgstr ""
 #: inc/customizer/options/styles-and-settings.php:2092
 #: inc/customizer/options/topbar.php:696
 #: inc/customizer/options/typography.php:220
-#: inc/customizer/options/typography.php:391
-#: inc/customizer/options/typography.php:555
-#: inc/customizer/options/typography.php:720
-#: inc/customizer/options/typography.php:885
-#: inc/customizer/options/typography.php:1050
-#: inc/customizer/options/typography.php:1215
-#: inc/customizer/options/typography.php:1380
+#: inc/customizer/options/typography.php:384
+#: inc/customizer/options/typography.php:548
+#: inc/customizer/options/typography.php:713
+#: inc/customizer/options/typography.php:878
+#: inc/customizer/options/typography.php:1043
+#: inc/customizer/options/typography.php:1208
+#: inc/customizer/options/typography.php:1373
 #: inc/customizer/options/woocommerce.php:80
 #: inc/customizer/options/woocommerce.php:244
 #: inc/customizer/options/woocommerce.php:2794
@@ -2648,27 +2648,27 @@ msgstr ""
 #: inc/customizer/options/typography.php:227
 #: inc/customizer/options/typography.php:235
 #: inc/customizer/options/typography.php:242
+#: inc/customizer/options/typography.php:391
 #: inc/customizer/options/typography.php:398
 #: inc/customizer/options/typography.php:405
-#: inc/customizer/options/typography.php:412
-#: inc/customizer/options/typography.php:562
+#: inc/customizer/options/typography.php:555
+#: inc/customizer/options/typography.php:563
 #: inc/customizer/options/typography.php:570
-#: inc/customizer/options/typography.php:577
-#: inc/customizer/options/typography.php:727
+#: inc/customizer/options/typography.php:720
+#: inc/customizer/options/typography.php:728
 #: inc/customizer/options/typography.php:735
-#: inc/customizer/options/typography.php:742
-#: inc/customizer/options/typography.php:892
+#: inc/customizer/options/typography.php:885
+#: inc/customizer/options/typography.php:893
 #: inc/customizer/options/typography.php:900
-#: inc/customizer/options/typography.php:907
-#: inc/customizer/options/typography.php:1057
+#: inc/customizer/options/typography.php:1050
+#: inc/customizer/options/typography.php:1058
 #: inc/customizer/options/typography.php:1065
-#: inc/customizer/options/typography.php:1072
-#: inc/customizer/options/typography.php:1222
+#: inc/customizer/options/typography.php:1215
+#: inc/customizer/options/typography.php:1223
 #: inc/customizer/options/typography.php:1230
-#: inc/customizer/options/typography.php:1237
-#: inc/customizer/options/typography.php:1387
+#: inc/customizer/options/typography.php:1380
+#: inc/customizer/options/typography.php:1388
 #: inc/customizer/options/typography.php:1395
-#: inc/customizer/options/typography.php:1402
 #: inc/customizer/options/woocommerce.php:87
 #: inc/customizer/options/woocommerce.php:94
 #: inc/customizer/options/woocommerce.php:101
@@ -2797,27 +2797,27 @@ msgstr ""
 #: inc/customizer/options/typography.php:257
 #: inc/customizer/options/typography.php:264
 #: inc/customizer/options/typography.php:271
+#: inc/customizer/options/typography.php:420
 #: inc/customizer/options/typography.php:427
 #: inc/customizer/options/typography.php:434
-#: inc/customizer/options/typography.php:441
+#: inc/customizer/options/typography.php:585
 #: inc/customizer/options/typography.php:592
 #: inc/customizer/options/typography.php:599
-#: inc/customizer/options/typography.php:606
+#: inc/customizer/options/typography.php:750
 #: inc/customizer/options/typography.php:757
 #: inc/customizer/options/typography.php:764
-#: inc/customizer/options/typography.php:771
+#: inc/customizer/options/typography.php:915
 #: inc/customizer/options/typography.php:922
 #: inc/customizer/options/typography.php:929
-#: inc/customizer/options/typography.php:936
+#: inc/customizer/options/typography.php:1080
 #: inc/customizer/options/typography.php:1087
 #: inc/customizer/options/typography.php:1094
-#: inc/customizer/options/typography.php:1101
+#: inc/customizer/options/typography.php:1245
 #: inc/customizer/options/typography.php:1252
 #: inc/customizer/options/typography.php:1259
-#: inc/customizer/options/typography.php:1266
+#: inc/customizer/options/typography.php:1410
 #: inc/customizer/options/typography.php:1417
 #: inc/customizer/options/typography.php:1424
-#: inc/customizer/options/typography.php:1431
 #: inc/customizer/options/woocommerce.php:116
 #: inc/customizer/options/woocommerce.php:124
 #: inc/customizer/options/woocommerce.php:131
@@ -2946,27 +2946,27 @@ msgstr ""
 #: inc/customizer/options/typography.php:286
 #: inc/customizer/options/typography.php:294
 #: inc/customizer/options/typography.php:301
-#: inc/customizer/options/typography.php:456
+#: inc/customizer/options/typography.php:449
+#: inc/customizer/options/typography.php:457
 #: inc/customizer/options/typography.php:464
-#: inc/customizer/options/typography.php:471
-#: inc/customizer/options/typography.php:621
+#: inc/customizer/options/typography.php:614
+#: inc/customizer/options/typography.php:622
 #: inc/customizer/options/typography.php:629
-#: inc/customizer/options/typography.php:636
-#: inc/customizer/options/typography.php:786
+#: inc/customizer/options/typography.php:779
+#: inc/customizer/options/typography.php:787
 #: inc/customizer/options/typography.php:794
-#: inc/customizer/options/typography.php:801
-#: inc/customizer/options/typography.php:951
+#: inc/customizer/options/typography.php:944
+#: inc/customizer/options/typography.php:952
 #: inc/customizer/options/typography.php:959
-#: inc/customizer/options/typography.php:966
-#: inc/customizer/options/typography.php:1116
+#: inc/customizer/options/typography.php:1109
+#: inc/customizer/options/typography.php:1117
 #: inc/customizer/options/typography.php:1124
-#: inc/customizer/options/typography.php:1131
-#: inc/customizer/options/typography.php:1281
+#: inc/customizer/options/typography.php:1274
+#: inc/customizer/options/typography.php:1282
 #: inc/customizer/options/typography.php:1289
-#: inc/customizer/options/typography.php:1296
-#: inc/customizer/options/typography.php:1446
+#: inc/customizer/options/typography.php:1439
+#: inc/customizer/options/typography.php:1447
 #: inc/customizer/options/typography.php:1454
-#: inc/customizer/options/typography.php:1461
 #: inc/customizer/options/woocommerce.php:146
 #: inc/customizer/options/woocommerce.php:154
 #: inc/customizer/options/woocommerce.php:161
@@ -3095,27 +3095,27 @@ msgstr ""
 #: inc/customizer/options/typography.php:315
 #: inc/customizer/options/typography.php:322
 #: inc/customizer/options/typography.php:329
+#: inc/customizer/options/typography.php:478
 #: inc/customizer/options/typography.php:485
 #: inc/customizer/options/typography.php:492
-#: inc/customizer/options/typography.php:499
+#: inc/customizer/options/typography.php:643
 #: inc/customizer/options/typography.php:650
 #: inc/customizer/options/typography.php:657
-#: inc/customizer/options/typography.php:664
+#: inc/customizer/options/typography.php:808
 #: inc/customizer/options/typography.php:815
 #: inc/customizer/options/typography.php:822
-#: inc/customizer/options/typography.php:829
+#: inc/customizer/options/typography.php:973
 #: inc/customizer/options/typography.php:980
 #: inc/customizer/options/typography.php:987
-#: inc/customizer/options/typography.php:994
+#: inc/customizer/options/typography.php:1138
 #: inc/customizer/options/typography.php:1145
 #: inc/customizer/options/typography.php:1152
-#: inc/customizer/options/typography.php:1159
+#: inc/customizer/options/typography.php:1303
 #: inc/customizer/options/typography.php:1310
 #: inc/customizer/options/typography.php:1317
-#: inc/customizer/options/typography.php:1324
+#: inc/customizer/options/typography.php:1468
 #: inc/customizer/options/typography.php:1475
 #: inc/customizer/options/typography.php:1482
-#: inc/customizer/options/typography.php:1489
 #: inc/customizer/options/woocommerce.php:175
 #: inc/customizer/options/woocommerce.php:182
 #: inc/customizer/options/woocommerce.php:189
@@ -3183,14 +3183,14 @@ msgstr ""
 #: inc/customizer/options/styles-and-settings.php:2044
 #: inc/customizer/options/styles-and-settings.php:2205
 #: inc/customizer/options/topbar.php:811
-#: inc/customizer/options/typography.php:343
-#: inc/customizer/options/typography.php:506
-#: inc/customizer/options/typography.php:671
-#: inc/customizer/options/typography.php:836
-#: inc/customizer/options/typography.php:1001
-#: inc/customizer/options/typography.php:1166
-#: inc/customizer/options/typography.php:1331
-#: inc/customizer/options/typography.php:1496
+#: inc/customizer/options/typography.php:336
+#: inc/customizer/options/typography.php:499
+#: inc/customizer/options/typography.php:664
+#: inc/customizer/options/typography.php:829
+#: inc/customizer/options/typography.php:994
+#: inc/customizer/options/typography.php:1159
+#: inc/customizer/options/typography.php:1324
+#: inc/customizer/options/typography.php:1489
 #: inc/customizer/options/woocommerce.php:196
 #: inc/customizer/options/woocommerce.php:360
 #: inc/customizer/options/woocommerce.php:2911
@@ -3356,7 +3356,7 @@ msgstr ""
 #: inc/customizer/options/blog.php:4820
 #: inc/customizer/options/blog.php:4865
 #: inc/customizer/options/colors.php:70
-#: inc/customizer/options/colors.php:371
+#: inc/customizer/options/colors.php:372
 #: inc/customizer/options/edd.php:385
 #: inc/customizer/options/edd.php:426
 #: inc/customizer/options/edd.php:711
@@ -3939,47 +3939,47 @@ msgstr ""
 msgid "Body Color"
 msgstr ""
 
-#: inc/customizer/options/colors.php:148
-#: inc/customizer/options/typography.php:354
+#: inc/customizer/options/colors.php:149
+#: inc/customizer/options/typography.php:347
 #: inc/third/class-gutenberg.php:63
 msgid "All Headings"
 msgstr ""
 
-#: inc/customizer/options/colors.php:174
-#: inc/customizer/options/typography.php:518
+#: inc/customizer/options/colors.php:175
+#: inc/customizer/options/typography.php:511
 #: inc/third/class-gutenberg.php:72
 msgid "Heading 1 (H1)"
 msgstr ""
 
-#: inc/customizer/options/colors.php:201
-#: inc/customizer/options/typography.php:683
+#: inc/customizer/options/colors.php:202
+#: inc/customizer/options/typography.php:676
 #: inc/third/class-gutenberg.php:81
 msgid "Heading 2 (H2)"
 msgstr ""
 
-#: inc/customizer/options/colors.php:228
-#: inc/customizer/options/typography.php:848
+#: inc/customizer/options/colors.php:229
+#: inc/customizer/options/typography.php:841
 #: inc/third/class-gutenberg.php:90
 msgid "Heading 3 (H3)"
 msgstr ""
 
-#: inc/customizer/options/colors.php:255
-#: inc/customizer/options/typography.php:1013
+#: inc/customizer/options/colors.php:256
+#: inc/customizer/options/typography.php:1006
 #: inc/third/class-gutenberg.php:99
 msgid "Heading 4 (H4)"
 msgstr ""
 
-#: inc/customizer/options/colors.php:282
-#: inc/customizer/options/typography.php:1178
+#: inc/customizer/options/colors.php:283
+#: inc/customizer/options/typography.php:1171
 msgid "Heading 5 (H5)"
 msgstr ""
 
-#: inc/customizer/options/colors.php:309
-#: inc/customizer/options/typography.php:1343
+#: inc/customizer/options/colors.php:310
+#: inc/customizer/options/typography.php:1336
 msgid "Heading 6 (H6)"
 msgstr ""
 
-#: inc/customizer/options/colors.php:345
+#: inc/customizer/options/colors.php:346
 #: inc/customizer/options/header.php:1747
 #: inc/customizer/options/header.php:3445
 #: inc/customizer/options/header.php:3950
@@ -4590,7 +4590,6 @@ msgid "Border Radius"
 msgstr ""
 
 #: inc/customizer/options/edd.php:2077
-#: inc/customizer/options/typography.php:336
 #: inc/customizer/options/woocommerce.php:3980
 #: inc/customizer/options/woocommerce.php:5587
 #: inc/customizer/options/woocommerce.php:6909
@@ -6800,7 +6799,7 @@ msgstr ""
 msgid "Body"
 msgstr ""
 
-#: inc/customizer/options/typography.php:1524
+#: inc/customizer/options/typography.php:1517
 msgid "With OceanWP you can integrate Adobe Fonts for free."
 msgstr ""
 
