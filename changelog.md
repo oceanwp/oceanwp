@@ -10,6 +10,7 @@
 - **Fixed**:: Customizer: Controller: Color picker: Currently set color not displaying the correct color code in the box.
 - **Fixed**:: Customizer: Header: Logo: Max Height input box ignores manual input.
 - **Fixed**:: Customizer: Blog: Single Post: Color options not reflected on the front end.
+- **Fixed**:: Single Post Page Title: PHP Deprecated:  preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in C:\laragon\www\rc-401\wp-includes\kses.php.
 - **Fixed**:: Breadcrumbs: Fatal error: Uncaught Error: count(): Argument #1 ($value) must be of type Countable|array, null given in ...\inc\breadcrumbs.php on line 958.
 - **Fixed**:: Breadcrumbs: Fatal error: Uncaught Error: ltrim(): Argument #1 ($string) must be of type string, WP_Error given in ...\wp-includes\formatting.php on line 4467.
 - **Removed**:: Typography: Google Fonts: Font family: Source Sans Pro (removed by author or Google).

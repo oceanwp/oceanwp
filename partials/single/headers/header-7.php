@@ -33,6 +33,32 @@ if ( has_post_thumbnail() ) {
 	$class = 'header-has-post-thumbnail';
 }
 
+$author_avatar = ocean_get_post_author_avatar(
+	array(
+		'before' => '<div class="post-author-avatar">',
+		'after'  => '</div>',
+		'size'   => 80,
+	),
+	false
+);
+
+$author_name = ocean_get_post_author(
+	array(
+		'prefix' => esc_html( oceanwp_theme_strings( 'owp-string-written-by', false ) ),
+		'before' => '<div class="post-author-name">',
+		'after'  => '</div>',
+	),
+	false
+);
+
+$author_bio = ocean_get_post_author_bio(
+	array(
+		'before' => '<div class="post-author-description">',
+		'after'  => '</div>',
+	),
+	false
+);
+
 ?>
 
 <div class="ocean-single-post-header single-header-ocean-7 <?php echo esc_attr( $class ); ?>">
@@ -48,38 +74,20 @@ if ( has_post_thumbnail() ) {
 				<div class="blog-post-author">
 
 					<?php
-					wp_kses_post(
-						ocean_get_post_author_avatar(
-							array(
-								'before' => '<div class="post-author-avatar">',
-								'after'  => '</div>',
-								'size'   => 80,
-							)
-						)
-					);
+					if ( ! empty($author_avatar) ) {
+						echo wp_kses_post( $author_avatar );
+					}
 					?>
 
 					<div class="blog-post-author-content">
 						<?php
-						wp_kses_post(
-							ocean_get_post_author(
-								array(
-									'prefix' => esc_html( oceanwp_theme_strings( 'owp-string-written-by', false ) ),
-									'before' => '<div class="post-author-name">',
-									'after'  => '</div>',
-								)
-							)
-						);
-						?>
-						<?php
-						wp_kses_post(
-							ocean_get_post_author_bio(
-								array(
-									'before' => '<div class="post-author-description">',
-									'after'  => '</div>',
-								)
-							)
-						);
+						if ( ! empty($author_name) ) {
+							echo wp_kses_post( $author_name );
+						}
+
+						if ( ! empty($author_bio) ) {
+							echo wp_kses_post( $author_bio );
+						}
 						?>
 					</div>
 

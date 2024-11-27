@@ -32,6 +32,32 @@ $display_sph_meta = apply_filters( 'display_single_ocean_header_3_meta', $displa
 $display_author_bio = true;
 $display_author_bio = apply_filters( 'display_single_ocean_header_3_author_bio', $display_author_bio );
 
+$author_avatar = ocean_get_post_author_avatar(
+	array(
+		'prefix' => '',
+		'before' => '<span class="post-author-avatar">',
+		'after'  => '</span>',
+	),
+	false
+);
+
+$author_name = ocean_get_post_author(
+	array(
+		'prefix' => '',
+		'before' => '<span class="post-author-name">',
+		'after'  => '</span>',
+	),
+	false
+);
+
+$author_bio = ocean_get_post_author_bio(
+	array(
+		'before' => '<div class="post-author-description">',
+		'after'  => '</div>',
+	),
+	false
+);
+
 ?>
 
 <div class="ocean-single-post-header single-post-header-wrap single-header-ocean-3">
@@ -51,44 +77,24 @@ $display_author_bio = apply_filters( 'display_single_ocean_header_3_author_bio',
 				<div class="blog-post-author">
 
 					<?php
-					wp_kses_post(
-						ocean_get_post_author_avatar(
-							array(
-								'before' => '<div class="post-author-avatar">',
-								'after'  => '</div>',
-							)
-						)
-					);
+					if ( ! empty($author_avatar) ) {
+						echo wp_kses_post( $author_avatar );
+					}
 					?>
 
 					<div class="blog-post-author-content">
 
 						<?php
-						wp_kses_post(
-							ocean_get_post_author(
-								array(
-									'prefix' => '',
-									'before' => '<span class="post-author-name">',
-									'after'  => '</span>',
-								)
-							)
-						);
+						if ( ! empty($author_name) ) {
+							echo wp_kses_post( $author_name );
+						}
+
+						if ( true === $display_author_bio ) {
+							if ( ! empty($author_bio) ) {
+								echo wp_kses_post( $author_bio );
+							}
+						}
 						?>
-
-						<?php if ( true === $display_author_bio ) { ?>
-
-							<?php
-							wp_kses_post(
-								ocean_get_post_author_bio(
-									array(
-										'before' => '<div class="post-author-description">',
-										'after'  => '</div>',
-									)
-								)
-							);
-							?>
-
-						<?php } ?>
 
 					</div>
 
