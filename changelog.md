@@ -1,16 +1,18 @@
 # OceanWP Changelog
 
-### _2024.11.26_ - 4.0.3
-- **Fixed**:: Customizer - Range slider missing unique key prop (10747).
-- **Fixed**:: Single post color doesn't work on the front (10763).
-- **Fixed**:: Single post title color doesn't work with custom page title on the front (10796).
-- **Fixed**:: Color controller > opacity selection is missing (10785).
-- **Fixed**:: Typography: font family with and without comma based on their type (10820).
-- **Fixed**:: This URL is wrong in our translation files (fa_IR) (10890)
-- **Updated**:: OGB Style for Gutenberg issue when editing a post/page (10750).
-- **Updated**:: Customizer - remove deprecated function as per the new wp 6.7 which will be removed in wp7 (10755)
-- **Added**:: Brand taxonomy positioning in product builder (8598).
-- **Added**:: oceanwp > woocommerce > owp-single-product.php altered to add support for brand taxonomy (8598).
+### _2024.11.27_ - 4.0.3
+- **Added**:: Typography: Google Fonts: Font family: Source Sans 3.
+- **Added**:: Compatibility: Ocean eCommerce Pro: Single Product: Brands element added to the Product Builder.
+- **Added**:: Compatibility: Ocean Gutenberg Blocks: "add styles to iframes" browser console warning.
+- **Updated**:: Template: woocommerce/owp-single-product.php (for the Added compatibility for Ocean eCommerce Pro and the Brands element in the Product Builder).
+- **Fixed**:: Customizer: Controller: Range slider: "Unique key prop" error in the browser console.
+- **Fixed**:: Customizer: Controller: Color picker: Opacity selection missing.
+- **Fixed**:: Customizer: Controller: Color picker: Currently set color not displaying the correct color code in the box.
+- **Fixed**:: Customizer: Header: Logo: Max Height input box ignores manual input.
+- **Fixed**:: Customizer: Blog: Single Post: Color options not reflected on the front end.
+- **Fixed**:: Breadcrumbs: Fatal error: Uncaught Error: count(): Argument #1 ($value) must be of type Countable|array, null given in ...\inc\breadcrumbs.php on line 958.
+- **Fixed**:: Breadcrumbs: Fatal error: Uncaught Error: ltrim(): Argument #1 ($string) must be of type string, WP_Error given in ...\wp-includes\formatting.php on line 4467.
+- **Removed**:: Typography: Google Fonts: Font family: Source Sans Pro (removed by author or Google).
 
 ### _2024.10.29_ - 4.0.2
 - **Added**:: Compatibility: WordPress: Customizer styling support for WordPress 6.7.
