@@ -5814,7 +5814,7 @@ msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "https://oceanwp.org/"
-msgstr "https://hamyarwp.com/"
+msgstr "https://oceanwp.org/"
 
 #. Description of the plugin/theme
 msgid ""
@@ -5840,7 +5840,7 @@ msgstr ""
 "داشته باشید تا سایت شما به خوبی بر روی هر دستگاهی قابل نمایش باشد. سازگاری "
 "با صفحه سازهای معروفی نظیر: Elementor، Beaver، Brizy، Visual Composer، Divi، "
 "SiteOrigin، یکی دیگر از ویژگی های این قالب می باشد. پیش نمایش این قالب را در "
-"لینک که قرار داده می شود ببینید: https://demo.hamyarwp.com/oceanwp/"
+"لینک که قرار داده می شود ببینید: https://oceanwp.org/demos/"
 
 #. Author of the plugin/theme
 msgid "OceanWP"
@@ -5848,7 +5848,7 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://oceanwp.org/about-me/"
-msgstr "https://demo.hamyarwp.com/oceanwp/"
+msgstr "https://oceanwp.org/about-me/"
 
 #~ msgid "Subtotal"
 #~ msgstr "کل"
@@ -6010,15 +6010,6 @@ msgstr "https://demo.hamyarwp.com/oceanwp/"
 #~ msgid "Install Demo Setup"
 #~ msgstr "نصب دمو"
 
-#~ msgid ""
-#~ "For the demo content installation, install the Acme Demo Setup plugin and "
-#~ "other Recommended plugins, download demo content from %1$s here %2$s. "
-#~ "Then go to \"Acme Demo Setup\" and import demo. "
-#~ msgstr ""
-#~ "برای نصب محتوای دمو، افزونه Acme Demo Setup و دیگر افزونه های توصیه شده "
-#~ "را نصب کنید، محتوای نسخه ی دمو را از %1$s از  اینجا %2$s دانلود کنید. سپس "
-#~ "به \"Acme Demo Setup\" بروید و نسخه ی دمو را وارد کنید. "
-
 #~ msgid "Setting Static Front Page"
 #~ msgstr "تنظیم استاتیک صفحه اول"
 
@@ -6044,9 +6035,6 @@ msgstr "https://demo.hamyarwp.com/oceanwp/"
 
 #~ msgid "Set Static Page"
 #~ msgstr "صفحه استاتیک تنظیم شده است"
-
-#~ msgid "Hide Restaurant Recipe by Acme Themes from footer ? "
-#~ msgstr "مایل هستید که نام سازنده این قالب در فوتر نمایش داده شود؟ "
 
 #~ msgid "Please visit the blog post to know more about it."
 #~ msgstr "لطفا از پست های وبلاگ دیدن کنید تا اطلاعات بیشتری کسب کنید."
@@ -6898,16 +6886,16 @@ msgstr "https://demo.hamyarwp.com/oceanwp/"
 #~ msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 #~ msgstr "ادامه را بخوانید %s <span class=\"meta-nav\">&rarr;</span>"
 
-#~ msgid "https://www.acmethemes.com/themes/restaurant-recipe"
-#~ msgstr "https://demo.hamyarwp.com/restaurant-recipe"
+#~ msgid "https://oceanwp.org/demos/"
+#~ msgstr "https://oceanwp.org/demos/"
 
-#~ msgid "acmethemes"
+#~ msgid "oceanwp"
 #~ msgstr "همیار وردپرس"
 
-#~ msgid "https://www.acmethemes.com/"
-#~ msgstr "https://hamyarwp.com/"
+#~ msgid "https://www.oceanwp.org"
+#~ msgstr "https://www.oceanwp.org"
 
-#~ msgid "Portfolio Web Pro"
+#~ msgid "Portfolio web pro"
 #~ msgstr "نسخه حرفه ای نمونه کارهای وب"
 
 #~ msgid "Rectangle"

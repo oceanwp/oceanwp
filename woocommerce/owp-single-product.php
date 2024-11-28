@@ -52,6 +52,13 @@ foreach ( $elements as $element ) {
 		}
 	}
 
+	// Brands
+	if ( 'brands' === $element ) {
+
+		do_action('ocean_woo_template_single_brands');
+
+	}
+
 	// Excerpt.
 	if ( 'excerpt' === $element ) {
 

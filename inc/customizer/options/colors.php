@@ -138,6 +138,7 @@ $options = [
 				],
 				'attr' => [
 					'transport' => 'postMessage',
+					'default'   => '#929292',
 				],
 			],
 		]

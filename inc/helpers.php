@@ -2243,7 +2243,13 @@ if ( ! function_exists( 'oceanwp_get_page_subheading' ) ) {
 
 		// Search
 		if ( is_search() ) {
-			$subheading = esc_html__( 'You searched for:', 'oceanwp' ) . ' &quot;' . esc_html( get_search_query( false ) ) . '&quot;';
+			if ( isset( $_GET['search_key'] ) ) {
+				$search_term = sanitize_text_field( $_GET['s'] );
+			} else {
+				$search_term = get_search_query( false );
+			}
+
+			$subheading = esc_html__( 'You searched for:', 'oceanwp' ) . ' &quot;' . esc_html( $search_term ) . '&quot;';
 		}
 
 		// Author

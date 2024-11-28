@@ -954,27 +954,40 @@ class OceanWP_Breadcrumb_Trail {
 			}
 		}
 
-		// If there's a single post type for the taxonomy, use it.
-		if ( false === $done_post_type && 1 === count( $taxonomy->object_type ) && post_type_exists( $taxonomy->object_type[0] ) ) {
+		if ( isset( $term ) && isset( $term->taxonomy ) ) {
+			$taxonomy = get_taxonomy( $term->taxonomy );
 
-			// If the post type is 'post'.
-			if ( 'post' === $taxonomy->object_type[0] ) {
-				$post_id = get_option( 'page_for_posts' );
+			if ( $taxonomy
+				&& false === $done_post_type
+				&& isset($taxonomy->object_type)
+				&& is_array($taxonomy->object_type)
+				&& 1 === count( $taxonomy->object_type )
+				&& post_type_exists( $taxonomy->object_type[0] )
+			) {
 
-				if ( 'posts' !== get_option( 'show_on_front' ) && 0 < $post_id )
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), get_the_title( $post_id ) );
+				// If the post type is 'post'.
+				if ( 'post' === $taxonomy->object_type[0] ) {
+					$post_id = get_option( 'page_for_posts' );
 
-				// If the post type is not 'post'.
-			} else {
-				$post_type_object = get_post_type_object( $taxonomy->object_type[0] );
+					if ( 'posts' !== get_option( 'show_on_front' ) && 0 < $post_id ) {
+						$post_link = get_permalink( $post_id );
+						if ( ! is_wp_error( $post_link ) ) {
+							$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( $post_link ), get_the_title( $post_id ) );
+						}
+					}
 
-				$label = ! empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
+					// If the post type is not 'post'.
+				} else {
+					$post_type_object = get_post_type_object( $taxonomy->object_type[0] );
 
-				// Core filter hook.
-				$label = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
-				$url   = apply_filters( 'post_type_archive_url', get_post_type_archive_link( $post_type_object->name ) );
+					$label = ! empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
 
-				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), $label );
+					// Core filter hook.
+					$label = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
+					$url   = apply_filters( 'post_type_archive_url', get_post_type_archive_link( $post_type_object->name ) );
+
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( $url ), $label );
+				}
 			}
 		}
 
@@ -984,8 +997,9 @@ class OceanWP_Breadcrumb_Trail {
 		}
 
 		// Add the term name to the trail end.
-		if ( is_paged() || true === $this->args['show_title'] ) {
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $term->taxonomy ) ), single_term_title( '', false ) );
+		$term_link = get_term_link( $term, $term->taxonomy );
+		if ( ! is_wp_error( $term_link ) && ( is_paged() || true === $this->args['show_title'] ) ) {
+			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( $term_link ), single_term_title( '', false ) );
 		}
 	}
 

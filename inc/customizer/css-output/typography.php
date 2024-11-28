@@ -181,7 +181,7 @@ class OceanWP_Typography_CSS {
 			'font-weight' => 'fontWeight',
 			'text-transform' => 'textTransform',
 			'text-decoration' => 'textDecoration',
-			'color' => 'textColor',
+			//'color' => 'textColor',
 		];
 
 		foreach ( $settings as $selector => $settings_key ) {
@@ -220,6 +220,11 @@ class OceanWP_Typography_CSS {
 					}
 
 					if ( 'fontFamily' === $key ) {
+
+						if ((preg_match('/\s/', $value) && strpos($value, ',') === false) &&
+							!in_array(strtolower(trim($value)), ['serif', 'sans-serif', 'monospace'])) {
+							$value = "'" . $value . "'";
+						}
 
 						if ( isset($settings_key[$key] ) && $settings_key[$key] ) {
 							$this->fonts[$settings_key[$key]]['name'] = $settings_key[$key];
