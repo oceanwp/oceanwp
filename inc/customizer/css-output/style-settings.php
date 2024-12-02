@@ -152,6 +152,9 @@ class OceanWP_Style_Settings_CSS {
 		$pagination_border_color       = get_theme_mod( 'ocean_pagination_border_color', '#e9e9e9' );
 		$pagination_border_hover_color = get_theme_mod( 'ocean_pagination_border_hover_color', '#e9e9e9' );
 
+		$pagination_active_bg           = get_theme_mod( 'ocean_pagination_bg_active', '' );
+		$pagination_active_color        = get_theme_mod( 'ocean_pagination_color_active', '' );
+
 		$scroll_top_bottom_position    = get_theme_mod( 'ocean_scroll_top_bottom_position', 20 );
 		$scroll_top_size               = get_theme_mod( 'ocean_scroll_top_size', 40 );
 		$scroll_top_size_tablet        = get_theme_mod( 'ocean_scroll_top_size_tablet' );
@@ -514,6 +517,10 @@ class OceanWP_Style_Settings_CSS {
 			$css .= '.page-numbers a, .page-numbers span:not(.elementor-screen-only), .page-links span{background-color:' . $pagination_bg . ';}';
 		}
 
+		if ( ! empty( $pagination_active_bg ) ) {
+			$css .= '.page-numbers .page-numbers.current{background-color:' . $pagination_active_bg . ';}';
+		}
+
 		// Pagination background color hover.
 		if ( ! empty( $pagination_hover_bg ) && '#f8f8f8' != $pagination_hover_bg ) {
 			$css .= '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover{background-color:' . $pagination_hover_bg . ';}';
@@ -529,6 +536,10 @@ class OceanWP_Style_Settings_CSS {
 		if ( ! empty( $pagination_hover_color ) && '#333333' != $pagination_hover_color ) {
 			$css .= '.page-numbers a:hover, .page-links a:hover span, .page-numbers.current, .page-numbers.current:hover{color:' . $pagination_hover_color . ';}';
 			$css .= '.page-numbers a:hover .owp-icon use{stroke:' . $pagination_hover_color . ';}';
+		}
+
+		if ( ! empty( $pagination_active_color ) ) {
+			$css .= '.page-numbers .page-numbers.current{color:' . $pagination_active_color . ';}';
 		}
 
 		// Pagination border color.

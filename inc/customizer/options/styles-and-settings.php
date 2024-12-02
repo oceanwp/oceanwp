@@ -1735,7 +1735,7 @@ $options = [
 				'transport' => 'postMessage',
 				'priority' => 10,
 				'hideLabel' => false,
-				'selector' => 'form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=date], form input[type=month], form input[type=time], form input[type=datetime], form input[type=datetime-local], form input[type=week], form input[type=number], form input[type=search], form input[type=tel], form input[type=color], form select, form textarea',
+				'selector' => 'form label',
 				'setting_args' => [
 					'fontFamily' => [
 						'id' => 'form_label_typography[font-family]',
@@ -3339,6 +3339,59 @@ $options = [
 					]
 				]
 			],
+
+			'ocean_pagination_bg_active_setting' => [
+				'type' => 'ocean-color',
+				'label' => esc_html__( 'Background: Active', 'oceanwp' ),
+				'section' => 'ocean_site_pagination_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'showAlpha' => true,
+				'showPalette' => true,
+				'wrapper' => 'ocean_pagination_bg_active_setting',
+				'sanitize_callback' => 'wp_kses_post',
+				'setting_args' => [
+					'normal' => [
+						'id' => 'ocean_pagination_bg_active',
+						'key' => 'normal',
+						'label' => esc_html__( 'Select Color', 'oceanwp' ),
+						'selector' => [
+							'.page-numbers .page-numbers.current' => 'background-color',
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					]
+				]
+			],
+
+			'ocean_pagination_color_active_setting' => [
+				'type' => 'ocean-color',
+				'label' => esc_html__( 'Pagination Text: Active', 'oceanwp' ),
+				'section' => 'ocean_site_pagination_section',
+				'transport' => 'postMessage',
+				'priority' => 10,
+				'hideLabel' => false,
+				'showAlpha' => true,
+				'showPalette' => true,
+				'wrapper' => 'ocean_pagination_color_active_setting',
+				'sanitize_callback' => 'wp_kses_post',
+				'setting_args' => [
+					'normal' => [
+						'id' => 'ocean_pagination_color_active',
+						'key' => 'normal',
+						'label' => esc_html__( 'Select Color', 'oceanwp' ),
+						'selector' => [
+							'.page-numbers .page-numbers.current' => 'color',
+						],
+						'attr' => [
+							'transport' => 'postMessage',
+						],
+					]
+				]
+			],
+
 
 			'ocean_divider_after_pagination_colors_setting' => [
 				'type' => 'ocean-divider',

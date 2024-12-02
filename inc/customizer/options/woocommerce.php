@@ -1745,11 +1745,38 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'#oceanwp-cart-sidebar-wrap .oceanwp-cart-close .close-wrap>div, #oceanwp-cart-sidebar-wrap .oceanwp-cart-close .close-wrap>div:before' => 'background-color'
+									'#oceanwp-cart-sidebar-wrap .oceanwp-cart-sidebar .oceanwp-cart-close, #oceanwp-cart-sidebar-wrap .oceanwp-cart-close .close-wrap>div, #oceanwp-cart-sidebar-wrap .oceanwp-cart-close .close-wrap>div:before' => 'background-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
 									'default'   => '#000000'
+								],
+							]
+						]
+					],
+
+					'ocean_woo_mobile_cart_sidebar_close_button_color_icon' => [
+						'type' => 'ocean-color',
+						'label' => esc_html__( 'Close Button Color: Icon', 'oceanwp' ),
+						'section' => 'ocean_woocommerce_mobile_cart_sidebar_styling_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'showAlpha' => true,
+						'showPalette' => true,
+						'wrapper' => 'ocean_woo_mobile_cart_sidebar_close_button_color_icon',
+						'sanitize_callback' => 'wp_kses_post',
+						'setting_args' => [
+							'normal' => [
+								'id' => 'ocean_woo_mobile_cart_sidebar_close_button_color_icon',
+								'key' => 'normal',
+								'label' => esc_html__( 'Select Color', 'oceanwp' ),
+								'selector' => [
+									'#oceanwp-cart-sidebar-wrap .oceanwp-cart-sidebar .oceanwp-cart-close, #oceanwp-cart-sidebar-wrap .oceanwp-cart-close .close-wrap>div, #oceanwp-cart-sidebar-wrap .oceanwp-cart-close .close-wrap>div:before' => 'color'
+								],
+								'attr' => [
+									'transport' => 'postMessage',
+									'default'   => '#333'
 								],
 							]
 						]
@@ -6387,7 +6414,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'.product_meta .posted_in,.product_meta .tagged_as' => 'color'
+									'.product_meta .posted_in,.product_meta .tagged_as,.product_meta .sku_wrapper' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -8039,7 +8066,7 @@ $options = [
 								'key' => 'hover',
 								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
-									'.owp-floating-bar button.button:hover, .owp-floating-bar button.button:focus' => 'color'
+									'.owp-floating-bar button.button:hover, .owp-floating-bar button.button:focus' => 'background-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
