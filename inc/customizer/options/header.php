@@ -181,7 +181,7 @@ $options = [
 				'preview' => 'queryWithType',
 				'css' => [
 					'#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner, .after-header-content .after-header-content-inner' => ['height'],
-					'#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a, .after-header-content-inner > a' => ['line-height']
+					'#site-navigation-wrap .dropdown-menu > li > a,#site-navigation-wrap .dropdown-menu > li > span.opl-logout-link,.oceanwp-mobile-menu-icon a, .after-header-content-inner > a' => ['line-height']
 				]
 			],
 

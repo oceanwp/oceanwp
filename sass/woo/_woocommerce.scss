@@ -3584,6 +3584,12 @@ form.checkout {
   }
 }
 
+.vertical-header-style {
+  .woocommerce-store-notice.demo_store {
+    z-index: 9999;
+  }
+}
+
 @media (min-width: 768px) {
   .demo_store a {
     background: rgba(0, 0, 0, 0.1);

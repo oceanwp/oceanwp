@@ -295,7 +295,7 @@ class OceanWP_Customize_Header_CSS {
 			if ( 'custom' !== $header_style ) {
 				$css .= '#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner,.after-header-content .after-header-content-inner{height:'. $header_height . $header_height_unit . ';}';
 			}
-			$css .= '#site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,.mobile-menu-close,.after-header-content-inner > a{line-height:'. $header_height . $header_height_unit . ';}';
+			$css .= '#site-navigation-wrap .dropdown-menu > li > a,#site-navigation-wrap .dropdown-menu > li > span.opl-logout-link, .oceanwp-mobile-menu-icon a,.mobile-menu-close,.after-header-content-inner > a{line-height:'. $header_height . $header_height_unit . ';}';
 		}
 
 		if ( false === ( 'medium' === $header_style || 'vertical' === $header_style ) ) {
