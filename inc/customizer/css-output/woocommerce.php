@@ -239,7 +239,9 @@ class OceanWP_Customize_WooCommerce_CSS {
 		$single_product_addtocart_border_color_hover 		= get_theme_mod( 'ocean_single_product_addtocart_border_color_hover' );
 		$single_product_addtocart_border_style 				= get_theme_mod( 'ocean_single_product_addtocart_border_style' );
 		$single_product_addtocart_border_size 				= get_theme_mod( 'ocean_single_product_addtocart_border_size' );
+		$single_product_addtocart_border_size_unit 			= get_theme_mod( 'ocean_single_product_addtocart_border_size_unit', 'px' );
 		$single_product_addtocart_border_radius 			= get_theme_mod( 'ocean_single_product_addtocart_border_radius' );
+		$single_product_addtocart_border_radius_unit 	    = get_theme_mod( 'ocean_single_product_addtocart_border_radius_unit', 'px' );
 		$single_product_tabs_borders_color 					= get_theme_mod( 'ocean_single_product_tabs_borders_color', '#e9e9e9' );
 		$single_product_tabs_text_color 					= get_theme_mod( 'ocean_single_product_tabs_text_color', '#999999' );
 		$single_product_tabs_text_color_hover 				= get_theme_mod( 'ocean_single_product_tabs_text_color_hover', '#13aff0' );
@@ -1205,12 +1207,12 @@ class OceanWP_Customize_WooCommerce_CSS {
 
 		// Add product entry add to cart border size
 		if ( ! empty( $single_product_addtocart_border_size ) ) {
-			$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button{border-width:'. $single_product_addtocart_border_size .';}';
+			$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button{border-width:'. $single_product_addtocart_border_size . $single_product_addtocart_border_size_unit . ';}';
 		}
 
 		// Add product entry add to cart border radius
 		if ( ! empty( $single_product_addtocart_border_radius ) ) {
-			$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button{border-radius:'. $single_product_addtocart_border_radius .';}';
+			$css .= '.woocommerce div.product div.summary button.single_add_to_cart_button{border-radius:'. $single_product_addtocart_border_radius . $single_product_addtocart_border_radius_unit . ';}';
 		}
 
 		// Add single product tabs borders color
