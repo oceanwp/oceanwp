@@ -6272,7 +6272,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'.quantity .qty,.quantity .qty-changer a' => 'border-color'
+									'.quantity .qty,.quantity .qty-changer a, .quantity .plus, .quantity .minus' => 'border-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6350,7 +6350,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
-									'.quantity .qty-changer a' => 'color'
+									'.quantity .qty-changer a, .quantity .plus, .quantity .minus' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6362,7 +6362,7 @@ $options = [
 								'key' => 'hover',
 								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
-									'.quantity .qty-changer a:hover' => 'color'
+									'.quantity .qty-changer a:hover, .quantity .plus:hover, .quantity .minus:hover' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6388,7 +6388,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'.quantity .qty-changer a:hover' => 'border-color'
+									'.quantity .qty-changer a:hover, .quantity .plus:hover, .quantity .minus:hover' => 'border-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',

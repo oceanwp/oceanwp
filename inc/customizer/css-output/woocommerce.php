@@ -677,7 +677,7 @@ class OceanWP_Customize_WooCommerce_CSS {
 
 		// Add quantity border color
 		if ( ! empty( $quantity_border_color ) && '#e4e4e4' != $quantity_border_color ) {
-			$css .= '.quantity .qty,.quantity .qty-changer a{border-color:'. $quantity_border_color .';}';
+			$css .= '.quantity .qty,.quantity .qty-changer a, .quantity .plus, .quantity .minus{border-color:'. $quantity_border_color .';}';
 		}
 
 		// Add quantity border color focus
@@ -692,17 +692,17 @@ class OceanWP_Customize_WooCommerce_CSS {
 
 		// Add quantity plus/minus color
 		if ( ! empty( $quantity_plus_minus_color ) && '#cccccc' != $quantity_plus_minus_color ) {
-			$css .= '.quantity .qty-changer a{color:'. $quantity_plus_minus_color .';}';
+			$css .= '.quantity .qty-changer a, .quantity .plus, .quantity .minus{color:'. $quantity_plus_minus_color .';}';
 		}
 
 		// Add quantity plus/minus color hover
 		if ( ! empty( $quantity_plus_minus_color_hover ) && '#cccccc' != $quantity_plus_minus_color_hover ) {
-			$css .= '.quantity .qty-changer a:hover{color:'. $quantity_plus_minus_color_hover .';}';
+			$css .= '.quantity .qty-changer a:hover, .quantity .plus:hover, .quantity .minus:hover{color:'. $quantity_plus_minus_color_hover .';}';
 		}
 
 		// Add quantity plus/minus border color hover
 		if ( ! empty( $quantity_plus_minus_border_color_hover ) && '#e0e0e0' != $quantity_plus_minus_border_color_hover ) {
-			$css .= '.quantity .qty-changer a:hover{border-color:'. $quantity_plus_minus_border_color_hover .';}';
+			$css .= '.quantity .qty-changer a:hover, .quantity .plus:hover, .quantity .minus:hover{border-color:'. $quantity_plus_minus_border_color_hover .';}';
 		}
 
 		// Add toolbar border color
