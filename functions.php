@@ -284,7 +284,6 @@ final class OCEANWP_Theme_Class {
 		require_once OCEANWP_INC_DIR . 'breadcrumbs.php';
 
 		// Customizer class.
-		// require_once OCEANWP_INC_DIR . 'customizer/library/customizer-custom-controls/functions.php';
 		require_once OCEANWP_INC_DIR . 'customizer/customizer.php';
 
 	}
