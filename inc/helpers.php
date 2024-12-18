@@ -1884,7 +1884,9 @@ if ( ! function_exists( 'oceanwp_add_search_to_menu' ) ) {
 				$items .= '</form>';
 		} else {
 
-			$items     .= '<a href="' . esc_url( home_url( '/#' ) ) . '" class="site-search-toggle' . $class . '"><span class="screen-reader-text">' . esc_html( oceanwp_theme_strings( 'owp-string-website-search-icon', false ) ) . '</span>';
+			$link_anchor = is_customize_preview() ? '#' : home_url( '/#' );
+
+			$items     .= '<a href="' . esc_url( $link_anchor ) . '" class="site-search-toggle' . $class . '"><span class="screen-reader-text">' . esc_html( oceanwp_theme_strings( 'owp-string-website-search-icon', false ) ) . '</span>';
 				$items .= oceanwp_icon( 'search', false );
 			$items     .= '</a>';
 		}

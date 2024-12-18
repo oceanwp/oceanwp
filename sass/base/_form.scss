@@ -249,7 +249,9 @@ button[type="submit"],
 .button,
 body div.wpforms-container-full .wpforms-form input[type=submit],
 body div.wpforms-container-full .wpforms-form button[type=submit],
-body div.wpforms-container-full .wpforms-form .wpforms-page-button {
+body div.wpforms-container-full .wpforms-form .wpforms-page-button,
+.wp-element-button,
+.wp-block-button__link {
 	display: inline-block;
     font-family: inherit;
     background-color: $color-5;
@@ -279,7 +281,9 @@ button[type="submit"]:focus,
 .button:focus,
 body div.wpforms-container-full .wpforms-form input[type=submit]:hover,
 body div.wpforms-container-full .wpforms-form button[type=submit]:hover,
-body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
+body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover,
+.wp-element-button:hover,
+.wp-block-button__link:hover {
 	background-color: $color-6;
 	color: $color-1;
 }

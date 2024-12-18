@@ -2199,7 +2199,9 @@ button[type=submit],
 .button,
 body div.wpforms-container-full .wpforms-form input[type=submit],
 body div.wpforms-container-full .wpforms-form button[type=submit],
-body div.wpforms-container-full .wpforms-form .wpforms-page-button {
+body div.wpforms-container-full .wpforms-form .wpforms-page-button,
+.wp-element-button,
+.wp-block-button__link {
   display: inline-block;
   font-family: inherit;
   background-color: #13aff0;
@@ -2229,7 +2231,9 @@ button[type=submit]:focus,
 .button:focus,
 body div.wpforms-container-full .wpforms-form input[type=submit]:hover,
 body div.wpforms-container-full .wpforms-form button[type=submit]:hover,
-body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
+body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover,
+.wp-element-button:hover,
+.wp-block-button__link:hover {
   background-color: #0b7cac;
   color: #fff;
 }
@@ -3979,6 +3983,10 @@ body.vertical-header-style.vh-closed #site-header.vertical-header #site-navigati
 #site-navigation-wrap .dropdown-menu > li > a .nav-arrow {
   padding-left: 6px;
   line-height: 1;
+}
+#site-navigation-wrap .dropdown-menu > li > span.opl-logout-link {
+  line-height: 74px;
+  letter-spacing: 0.6px;
 }
 #site-navigation-wrap .dropdown-menu > li.btn > a {
   background-color: transparent !important;

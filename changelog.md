@@ -1,5 +1,19 @@
 # OceanWP Changelog
 
+### _2024.12.17_ - 4.0.4
+- **Added**:: Customizer: Pagination: New color options for active page background and text color.
+- **Added**:: Customizer: Live Preview: WooCommerce single product meta title color.
+- **Added**:: Customizer: Live Preview: WooCommerce floating bar (sticky add to cart) button background color.
+- **Added**:: Customizer: Live Preview: WooCommerce mobile cart sidebar.
+- **Added**:: Customizer: Live Preview: Site forms label typography settings.
+- **Added**:: Compatibility: Ocean Popup Login: Custom text for logged in users line height.
+- **Improved**:: Customizer: Responsive device buttons display on hover for better visibility.
+- **Fixed**:: Customizer: WooCommerce: Mobile cart close button color not applied.
+- **Fixed**:: WooCommerce: Shop notice displayed behind the Vertical header type.
+- **Fixed**:: WooCommerce: Single product Add to Cart button border width and radius default px unit not rendered on the front.
+- **Fixed**:: WooCommerce: Cart page Proceed to Checkout button doesn't inherit default theme button colors.
+- **Fixed**:: WooCommerce: Checkout page Place Order button doesn't inherit default theme button colors.
+
 ### _2024.11.27_ - 4.0.3
 - **Added**:: Typography: Google Fonts: Font family: Source Sans 3.
 - **Added**:: Compatibility: Ocean eCommerce Pro: Single Product: Brands element added to the Product Builder.
