@@ -2210,7 +2210,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function menu_cart_icon_fragments( $fragments ) {
 			ob_start();
 			oceanwp_wcmenucart_menu_item();
-			$fragments['li.woo-menu-icon a.wcmenucart, .oceanwp-mobile-menu-icon a.wcmenucart'] = ob_get_clean();
+
+			$menu_item_html = ob_get_clean();
+
+			if (is_customize_preview()) {
+				$menu_item_html = preg_replace(
+					'/href="[^"]*(wcmenucart)[^"]*"/',
+					'href="#"',
+					$menu_item_html
+				);
+			}
+
+			$fragments['li.woo-menu-icon a.wcmenucart, .oceanwp-mobile-menu-icon a.wcmenucart'] = $menu_item_html;
 
 			return $fragments;
 		}
