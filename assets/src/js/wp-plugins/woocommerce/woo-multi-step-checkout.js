@@ -211,51 +211,54 @@ class WooMultiStepCheckout {
 
   #onTimelineStepClick = (event) => {
     const clickedStep = event.currentTarget;
+    const nextBtn = this.#elements.formActions.querySelector(".button.next");
+    const prevBtn = this.#elements.formActions.querySelector(".button.prev");
     const targetStep = Number(clickedStep.getAttribute("data-step"));
     const currentStep = Number.parseInt(
       this.#elements.formActions.getAttribute("data-step")
     );
 
+    const isLoggedIn = options.is_logged_in;
+
     if (targetStep === currentStep) return;
 
     if (targetStep > currentStep) {
-      for (let i = currentStep; i < targetStep; i++) {
-        if (!this.#formValidate(this.#steps[i])) return;
-      }
+        for (let i = currentStep; i < targetStep; i++) {
+            if (!this.#formValidate(this.#steps[i])) return;
+        }
     }
 
     this.#elements.checkoutTimeline
-      .querySelectorAll(".active")
-      .forEach((activeItem) => {
-        activeItem.classList.remove("active");
-      });
+        .querySelectorAll(".active")
+        .forEach((activeItem) => {
+            activeItem.classList.remove("active");
+        });
 
     clickedStep.classList.add("active");
 
     fadeOut(this.#steps[currentStep], {
         display: "inline-block",
         callback: () => {
-          fadeIn(this.#steps[targetStep]);
+            fadeIn(this.#steps[targetStep]);
         },
     });
 
     this.#elements.formActions.setAttribute("data-step", targetStep);
 
-    const nextBtn = this.#elements.formActions.querySelector(".button.next");
-    const prevBtn = this.#elements.formActions.querySelector(".button.prev");
-
-    if (targetStep === 0) {
-      fadeOut(prevBtn, { display: "inline-block" });
+    if (targetStep === 1) {
+        fadeOut(prevBtn, { display: "inline-block" });
     } else {
-      fadeIn(prevBtn, { display: "inline-block" });
+        fadeIn(prevBtn, { display: "inline-block" });
     }
 
-    if (targetStep === this.#steps.length - 1) {
-      fadeOut(nextBtn, { display: "inline-block" });
+    if (targetStep === 3) {
+        fadeOut(nextBtn, { display: "inline-block" });
     } else {
-      fadeIn(nextBtn, { display: "inline-block" });
+        fadeIn(nextBtn, { display: "inline-block" });
+        nextBtn.value = isLoggedIn ? options.next : options.no_account_btn;
     }
   };
+
 
   #formValidate(section) {
     const invalidRows = Array.from(
