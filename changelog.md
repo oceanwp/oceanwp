@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2025.XX.XX_ - 4.0.5
+- **Added**:: Woo Multistep Checkout: added steps navigation (11129).
+
 ### _2024.12.17_ - 4.0.4
 - **Added**:: Customizer: Pagination: New color options for active page background and text color.
 - **Added**:: Customizer: Live Preview: WooCommerce single product meta title color.
