@@ -388,6 +388,18 @@ $options = [
 						]
 					],
 
+					'ocean_blog_grid_equal_heights' => [
+						'type' => 'ocean-switch',
+						'label' => esc_html__( 'Equal Heights', 'oceanwp' ),
+						'section' => 'ocean_blog_archive_additional_blog_style_settings_section',
+						'default'  => false,
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'active_callback' => 'oceanwp_cac_blog_supports_equal_heights',
+						'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+					],
+
 					'ocean_blog_thumbnail_image_position' => [
 						'type'              => 'ocean-buttons',
 						'label'             => esc_html__( 'Image Position', 'oceanwp' ),
