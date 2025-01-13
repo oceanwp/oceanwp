@@ -646,6 +646,11 @@ final class OCEANWP_Theme_Class {
 			wp_enqueue_script( 'oceanwp-infinite-scroll', $dir . 'ow-infinite-scroll.min.js', $main_script_dependencies, $theme_version, true );
 		}
 
+		// Load more pagination script
+		if ( 'load_more' === get_theme_mod( 'ocean_blog_pagination_style', 'standard' ) || 'load_more' === get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+			wp_enqueue_script( 'oceanwp-load-more', $dir . 'ow-load-more.min.js', $main_script_dependencies, $theme_version, true );
+		}
+
 		// WooCommerce scripts.
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
 		&& 'yes' !== get_theme_mod( 'ocean_woo_remove_custom_features', 'no' ) ) {

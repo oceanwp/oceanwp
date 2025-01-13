@@ -1,0 +1,149 @@
+import ResponsiveAutoHeight from "responsive-auto-height";
+
+class OWLoadMore {
+  #elements = {
+    loadMoreButton: document.querySelector(".load-more-button"),
+    loadMorePostsNav: document.querySelector(".load-more-posts-nav"),
+    loadMorePostsStatus: document.querySelector(".load-more-status__message"),
+  };
+
+  #loading = false;
+  #btnText = '';
+
+  constructor() {
+    if (this.#elements.loadMoreButton) {
+      this.#setupEventListeners();
+    }
+  }
+
+  #setupEventListeners = () => {
+    this.#elements.loadMoreButton.addEventListener("click", () => {
+      if (this.#loading) {
+        return;
+      }
+
+      this.#loading = true;
+      this.#btnText = this.#elements.loadMoreButton.textContent;
+      this.#elements.loadMoreButton.textContent = "Loading...";
+
+      this.#loadMoreContent();
+    });
+  };
+
+  #loadMoreContent = () => {
+    const loadMoreText = this.#btnText;
+
+    const path = document.querySelector(".older-posts a")?.href;
+
+    if (!path) {
+      this.#elements.loadMorePostsStatus.classList.add('show');
+      this.#elements.loadMoreButton?.remove();
+      this.#elements.loadMorePostsNav?.remove();
+      return;
+    }
+
+    fetch(path)
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        const newContent = doc.querySelectorAll(".item-entry");
+
+        if (newContent.length === 0) {
+          this.#elements.loadMorePostsStatus.classList.add('show');
+          this.#elements.loadMoreButton?.remove();
+          this.#elements.loadMorePostsNav?.remove();
+          return;
+        }
+
+        const firstItemEntry = document.querySelector(".item-entry");
+        const contentWrapper = firstItemEntry?.parentNode;
+
+        if (!contentWrapper) {
+          console.error("Content wrapper not found.");
+          this.#loading = false;
+          this.#elements.loadMoreButton.textContent = loadMoreText;
+          return;
+        }
+
+        newContent.forEach(item => contentWrapper.appendChild(item));
+
+        this.#adjustLayout(newContent);
+
+        const nextOlderPostsLink = new DOMParser().parseFromString(html, "text/html").querySelector(".older-posts a");
+        if (nextOlderPostsLink) {
+          document.querySelector(".older-posts a").href = nextOlderPostsLink.href;
+          setTimeout(() => {
+            this.#loading = false;
+            this.#elements.loadMoreButton.textContent = loadMoreText;
+          }, 10);
+        } else {
+          this.#elements.loadMorePostsStatus.classList.add('show');
+          this.#elements.loadMoreButton?.remove();
+          this.#elements.loadMorePostsNav?.remove();
+        }
+      })
+      .catch(error => {
+        console.error("Error loading more content:", error);
+        this.#loading = false;
+        this.#elements.loadMoreButton.textContent = loadMoreText;
+      });
+  };
+
+  #adjustLayout = (newContent) => {
+    const items = Array.from(newContent);
+
+    const masonryGrid = document.querySelector(".blog-masonry-grid");
+
+    if (masonryGrid) {
+      oceanwp?.blogMasonry?.isotop.appended(items);
+
+      if (items.some((item) => item.classList.contains("gallery-format"))) {
+        setTimeout(() => {
+          oceanwp?.blogMasonry?.isotop.layout();
+        }, 600 + 1);
+      }
+    }
+
+    if (!document.body.classList.contains("no-carousel")) {
+      const targetElements = items
+        .map((item) => item.querySelector(".gallery-format, .product-entry-slider"))
+        .filter((element) => element !== null);
+
+      oceanwp?.owSlider?.start(targetElements);
+    }
+
+    // Handle lightbox
+    if (!document.body.classList.contains("no-lightbox")) {
+      oceanwp?.owLightbox?.initSingleImageLightbox();
+      oceanwp?.owLightbox?.initGalleryLightbox();
+    }
+
+    // Handle responsive auto-height
+    if (!document.body.classList.contains("no-matchheight")) {
+      let entryItemsSelectors = Array.from(items)
+        .map((item) => (item.id ? `#${item.id} .blog-entry-inner` : undefined))
+        .filter((element) => element !== undefined);
+
+      if (entryItemsSelectors.length > 0) {
+        new ResponsiveAutoHeight(entryItemsSelectors.join(","));
+      }
+    }
+
+    document.dispatchEvent( new CustomEvent('cfvswVariationLoad', { detail: {} }) );
+    jQuery(document).trigger('maybe-init-oec-wishlist');
+
+    // Force re-parsing of images for Safari issue
+    items.forEach((item) => {
+      item.querySelectorAll("img")?.forEach((img) => {
+        img.outerHTML = img.outerHTML;
+      });
+    });
+  };
+}
+
+("use script");
+window.oceanwp = window.oceanwp || {};
+document.addEventListener("DOMContentLoaded", () => {
+  oceanwp.owLoadMore = new OWLoadMore();
+});

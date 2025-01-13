@@ -51,8 +51,13 @@ class OceanWP_Customize_Blog_CSS {
 		$blog_archive_meta_color        = get_theme_mod( 'ocean_blog_archive_meta_color' );
 		$blog_archive_meta_hover_color  = get_theme_mod( 'ocean_blog_archive_meta_hover_color' );
 		$blog_archive_meta_icon_color   = get_theme_mod( 'ocean_theme_blog_posts_icons_color' );
-		$theme_post_icons_color        = get_theme_mod( 'ocean_theme_single_post_icons_color', '#333333' );
+		$theme_post_icons_color         = get_theme_mod( 'ocean_theme_single_post_icons_color', '#333333' );
 		$blog_archive_content_color     = get_theme_mod( 'ocean_blog_archive_content_color' );
+
+		$load_more_btn_color            = get_theme_mod( 'ocean_blog_load_more_button_color' );
+		$load_more_btn_color_hover      = get_theme_mod( 'ocean_blog_load_more_button_color_hover' );
+		$load_more_btn_text_color            = get_theme_mod( 'ocean_blog_load_more_button_text_color' );
+		$load_more_btn_text_color_hover      = get_theme_mod( 'ocean_blog_load_more_button_text_color_hover' );
 
 		$blog_archive_readmore_color         = get_theme_mod( 'ocean_blog_archive_readmore_color' );
 		$blog_archive_readmore_hover_color   = get_theme_mod( 'ocean_blog_archive_readmore_hover_color' );
@@ -186,6 +191,20 @@ class OceanWP_Customize_Blog_CSS {
 		// Blog infinite scroll spinners color.
 		if ( ! empty( $infinite_scroll_spinners_color ) && '#333333' != $infinite_scroll_spinners_color ) {
 			$css .= '.loader-ellips__dot{background-color:' . $infinite_scroll_spinners_color . ';}';
+		}
+
+		// Blog load more pagination color.
+		if ( ! empty( $load_more_btn_color ) && '' != $load_more_btn_color ) {
+			$css .= '.load-more-pagination.load-more-post .button{background-color:' . $load_more_btn_color . ';}';
+		}
+		if ( ! empty( $load_more_btn_color_hover ) && '' != $load_more_btn_color_hover ) {
+			$css .= '.load-more-pagination.load-more-post .button:hover{background-color:' . $load_more_btn_color_hover . ';}';
+		}
+		if ( ! empty( $load_more_btn_text_color ) && '' != $load_more_btn_text_color ) {
+			$css .= '.load-more-pagination.load-more-post .button{color:' . $load_more_btn_text_color . ';}';
+		}
+		if ( ! empty( $load_more_btn_text_color_hover ) && '' != $load_more_btn_text_color_hover ) {
+			$css .= '.load-more-pagination.load-more-post .button:hover{color:' . $load_more_btn_text_color_hover . ';}';
 		}
 
 		// Title/breadcrumb position.

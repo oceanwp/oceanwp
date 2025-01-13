@@ -688,6 +688,11 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 				'sili' => 'fa-brands fa-whatsapp',
 				'fai'  => 'fa-brands fa-whatsapp',
 				'svg'  => 'whatsapp',
+			),
+			'bluesky'                     => array(
+				'sili' => 'fa-brands fa-bluesky',
+				'fai'  => 'fa-brands fa-bluesky',
+				'svg'  => 'bluesky',
 			)
 		);
 

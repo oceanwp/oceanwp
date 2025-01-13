@@ -7556,6 +7556,19 @@ ul.page-numbers li .owp-icon {
   display: none;
 }
 
+.load-more-pagination {
+  text-align: center;
+}
+.load-more-pagination .load-more-posts-nav {
+  display: none;
+}
+.load-more-pagination .load-more-status__message {
+  display: none;
+}
+.load-more-pagination .load-more-status__message.show {
+  display: block;
+}
+
 /*------------------------------------*
 	$COMMENT
 *------------------------------------*/

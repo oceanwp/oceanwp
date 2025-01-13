@@ -514,6 +514,14 @@ function oceanwp_cac_blog_archive_pagination_infinite_scroll() {
 	}
 }
 
+function oceanwp_cac_blog_archive_pagination_load_more() {
+	if ( 'load_more' == get_theme_mod( 'ocean_blog_pagination_style', 'standard' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function ocean_cac_blog_single_bs_layout() {
 	if ( 'both-sidebars' === get_theme_mod( 'ocean_blog_single_layout', 'right-sidebar' ) ) {
 		return true;
@@ -730,6 +738,14 @@ function oceanwp_cac_is_shop_links_disabled() {
 
 function oceanwp_cac_is_woo_infinite_scroll() {
 	if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function oceanwp_cac_is_woo_load_more_pagination() {
+	if ( 'load_more' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
 		return true;
 	} else {
 		return false;
