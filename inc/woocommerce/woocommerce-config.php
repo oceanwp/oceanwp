@@ -662,7 +662,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			<div class="load-more-product load-more-pagination">
 				<button class="load-more-button button"><?php echo esc_html( $load_more_text ); ?></button>
 				<p class="load-more-status__message load-more-eror"><?php echo esc_html( $no_more_posts_text ); ?></p>
-				<div class="load-more-posts-nav clr">
+				<div class="load-more-nav clr">
 					<div class="alignleft newer-posts"><?php echo get_previous_posts_link( '&larr; ' . esc_html__( 'Newer Posts', 'oceanwp' ) ); ?></div>
 					<div class="alignright older-posts"><?php echo get_next_posts_link( esc_html__( 'Older Posts', 'oceanwp' ) . ' &rarr;', $wp_query->max_num_pages ); ?></div>
 				</div>

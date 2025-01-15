@@ -3,7 +3,7 @@ import ResponsiveAutoHeight from "responsive-auto-height";
 class OWLoadMore {
   #elements = {
     loadMoreButton: document.querySelector(".load-more-button"),
-    loadMorePostsNav: document.querySelector(".load-more-posts-nav"),
+    loadMorePostsNav: document.querySelector(".load-more-nav"),
     loadMorePostsStatus: document.querySelector(".load-more-status__message"),
   };
 
@@ -11,10 +11,21 @@ class OWLoadMore {
   #btnText = '';
 
   constructor() {
-    if (this.#elements.loadMoreButton) {
+    if (
+      !!this.#elements.loadMorePostsNav &&
+      !!this.#elements.loadMorePostsNav.querySelector(".older-posts a")
+    ) {
       this.#setupEventListeners();
+      this.#setElements();
     }
   }
+
+  #setElements = () => {
+    this.#elements = {
+      ...this.#elements,
+      loadMoreWrapper: document.querySelector(".load-more-wrap"),
+    };
+  };
 
   #setupEventListeners = () => {
     this.#elements.loadMoreButton.addEventListener("click", () => {
@@ -56,17 +67,7 @@ class OWLoadMore {
           return;
         }
 
-        const firstItemEntry = document.querySelector(".item-entry");
-        const contentWrapper = firstItemEntry?.parentNode;
-
-        if (!contentWrapper) {
-          console.error("Content wrapper not found.");
-          this.#loading = false;
-          this.#elements.loadMoreButton.textContent = loadMoreText;
-          return;
-        }
-
-        newContent.forEach(item => contentWrapper.appendChild(item));
+        newContent.forEach(item => this.#elements.loadMoreWrapper.appendChild(item));
 
         this.#adjustLayout(newContent);
 
@@ -131,6 +132,7 @@ class OWLoadMore {
     }
 
     document.dispatchEvent( new CustomEvent('cfvswVariationLoad', { detail: {} }) );
+    jQuery(document).trigger('oec_product_swatches_shop_init');
     jQuery(document).trigger('maybe-init-oec-wishlist');
 
     // Force re-parsing of images for Safari issue

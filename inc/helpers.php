@@ -3642,7 +3642,7 @@ if ( ! function_exists( 'oceanwp_load_more_pagination' ) ) {
 		$output          = '<div class="load-more-post load-more-pagination">';
 			$output     .= '<button class="load-more-button button">' . esc_html( $load_more_text ) . '</button>';
 			$output     .= '<p class="load-more-status__message load-more-eror">' .  esc_html( $no_more_posts_text ) . '</p>';
-			$output     .= '<div class="load-more-posts-nav clr">';
+			$output     .= '<div class="load-more-nav clr">';
 				$output .= '<div class="alignleft newer-posts">' . get_previous_posts_link( '<span aria-hidden="true">&larr;</span> ' . esc_attr__( 'Newer Posts', 'oceanwp' ) ) . '</div>';
 				$output .= '<div class="alignright older-posts">' . get_next_posts_link( esc_attr__( 'Older Posts', 'oceanwp' ) . ' <span aria-hidden="true">&rarr;</span>' ) . '</div>';
 			$output     .= '</div>';

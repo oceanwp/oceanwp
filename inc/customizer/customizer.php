@@ -512,6 +512,7 @@ class OceanWP_Customizer_Init {
 				'isOE' => ocean_is_oe_active(),
 				//'sectionIcons' => ocean_customizer_section_icons(),
 				'pageChoices' => ocean_get_page_choices(),
+				'googleFonts' => oceanwp_google_fonts_array(),
 				'customFonts' => function_exists( 'ocean_add_custom_fonts' ) ? ocean_add_custom_fonts() : array(),
 				'customizerFonts' => $this->get_customizer_fonts(),
 				'colorPalettes' => oceanwp_default_color_palettes(),
