@@ -108,7 +108,7 @@ class OWLoadMore {
 
     if (!document.body.classList.contains("no-carousel")) {
       const targetElements = items
-        .map((item) => item.querySelector(".gallery-format, .product-entry-slider"))
+        .flatMap((item) => Array.from(item.querySelectorAll(".gallery-format, .product-entry-slider")))
         .filter((element) => element !== null);
 
       oceanwp?.owSlider?.start(targetElements);

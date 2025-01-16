@@ -449,7 +449,7 @@ final class OCEANWP_Theme_Class {
 
 		// Enqueue font awesome style.
 		if ( get_theme_mod( 'ocean_performance_fontawesome', 'enabled' ) === 'enabled' ) {
-			wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI . '/assets/fonts/fontawesome/css/all.min.css', false, '6.4.2' );
+			wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI . '/assets/fonts/fontawesome/css/all.min.css', false, '6.7.2' );
 		}
 
 		// Enqueue simple line icons style.
