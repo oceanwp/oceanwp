@@ -378,20 +378,8 @@ if ( get_theme_mod( 'ocean_performance_emoji', 'enabled' ) === 'disabled' ) {
 		}
 	);
 
-	add_filter(
-		'wp_resource_hints',
-		function ( $urls, $relation_type ) {
-			if ( 'dns-prefetch' === $relation_type ) {
-				$emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
-
-				$urls = array_diff( $urls, array( $emoji_svg_url ) );
-			}
-
-			return $urls;
-		},
-		10,
-		2
-	);
+	// Remove WP Emoji DNS prefetch from document head
+	add_filter( 'emoji_svg_url', '__return_false' );
 }
 
 /**
