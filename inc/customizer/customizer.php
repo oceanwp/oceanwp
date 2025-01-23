@@ -576,11 +576,33 @@ class OceanWP_Customizer_Init {
 		$settings = wp_parse_args( get_option( 'oe_panels_settings', [] ) );
 
 		if ( isset( $settings['customizer-search'] ) && (bool) $settings['customizer-search'] === true ) {
-			wp_enqueue_script( 'oceanwp-customize-search-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.js', array( 'lodash', 'wp-i18n', 'wp-util' ) );
-			wp_enqueue_style( 'oceanwp-customize-search', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.css' );
+
+			$uri   = OCEANWP_INC_DIR_URI . 'customizer/assets/dist/';
+			$asset = require OCEANWP_INC_DIR . 'customizer/assets/dist/search.asset.php';
+			$deps  = $asset['dependencies'];
+			array_push( $deps, 'customize-controls' );
+
+			wp_register_script(
+				'oceanwp-customize-search-js',
+				$uri . 'search.js',
+				$deps,
+				filemtime( OCEANWP_INC_DIR . 'customizer/assets/dist/search.js' ),
+				true
+			);
+
+			wp_enqueue_script( 'oceanwp-customize-search-js' );
+
+			wp_enqueue_style(
+				'oceanwp-customize-search',
+				$uri . 'style-search.css',
+				array(),
+				filemtime( OCEANWP_INC_DIR . 'customizer/assets/dist/style-search.css' )
+			);
+
 			wp_localize_script( 'oceanwp-customize-search-js', 'oceanCustomizerSearchOptions', [
 				'darkMode' => get_option( 'oceanCustomizerSearchdarkMode', false )
 			] );
+
 		}
 	}
 
