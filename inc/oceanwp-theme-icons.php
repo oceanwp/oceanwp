@@ -530,8 +530,8 @@ if ( ! function_exists( 'oceanwp_theme_icons' ) ) {
 
 			// Social icons.
 			'twitter'                => array(
-				'sili' => 'fab fa-x',
-				'fai'  => 'fab fa-x',
+				'sili' => 'fa-brands fa-x-twitter',
+				'fai'  => 'fa-brands fa-x-twitter',
 				'svg'  => 'twitter',
 			),
 			'facebook'               => array(
