@@ -22,9 +22,7 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 
 			// After setup theme - Gutenberg.
 			add_action( 'after_setup_theme', array( $this, 'gutenberg_support' ), 10 );
-
 			add_action( 'enqueue_block_editor_assets', array( $this, 'gutenberg_editor_style' ) );
-			add_action( 'enqueue_block_editor_assets', array( $this, 'add_google_fonts' ) );
 
 		}
 
@@ -43,241 +41,6 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 		}
 
 		/**
-		 * Typograhpy
-		 */
-		public static function elements() {
-
-			return apply_filters(
-				'ocean_gutenberg_typography_tags',
-				array(
-					'body'            => array(
-						'label'    => esc_html__( 'Body', 'oceanwp' ),
-						'target'   => '.block-editor .editor-styles-wrapper, .block-editor .editor-styles-wrapper .block-editor-block-list__layout',
-						'defaults' => array(
-							'font-size'   => '14px',
-							'color'       => '#929292',
-							'line-height' => '1.8',
-						),
-					),
-					'headings'        => array(
-						'label'    => esc_html__( 'All Headings', 'oceanwp' ),
-						'target'   => '.block-editor .editor-styles-wrapper .block-editor-block-list__layout h1, .block-editor .editor-styles-wrapper .block-editor-block-list__layout h2, .block-editor .editor-styles-wrapper .block-editor-block-list__layout h3, .block-editor .editor-styles-wrapper .block-editor-block-list__layout h4, .block-editor .editor-styles-wrapper .block-editor-block-list__layout h5, .block-editor .editor-styles-wrapper .block-editor-block-list__layout h6',
-						'exclude'  => array( 'font-size' ),
-						'defaults' => array(
-							'color'       => '#333333',
-							'line-height' => '1.4',
-						),
-					),
-					'heading_h1'      => array(
-						'label'    => esc_html__( 'Heading 1 (H1)', 'oceanwp' ),
-						'target'   => '.block-editor .editor-styles-wrapper .block-editor-block-list__layout h1, .block-editor .editor-styles-wrapper .block-editor-block-list__layout h1 a',
-						'defaults' => array(
-							'font-size'   => '23px',
-							'color'       => '#333333',
-							'line-height' => '1.4',
-						),
-					),
-					'heading_h2'      => array(
-						'label'    => esc_html__( 'Heading 2 (H2)', 'oceanwp' ),
-						'target'   => '.block-editor .editor-styles-wrapper .block-editor-block-list__layout h2, .block-editor .editor-styles-wrapper .block-editor-block-list__layout h2 a',
-						'defaults' => array(
-							'font-size'   => '20px',
-							'color'       => '#333333',
-							'line-height' => '1.4',
-						),
-					),
-					'heading_h3'      => array(
-						'label'    => esc_html__( 'Heading 3 (H3)', 'oceanwp' ),
-						'target'   => '.block-editor .editor-styles-wrapper .block-editor-block-list__layout h3, .block-editor .editor-styles-wrapper .block-editor-block-list__layout h3 a',
-						'defaults' => array(
-							'font-size'   => '18px',
-							'color'       => '#333333',
-							'line-height' => '1.4',
-						),
-					),
-					'heading_h4'      => array(
-						'label'    => esc_html__( 'Heading 4 (H4)', 'oceanwp' ),
-						'target'   => '.block-editor .editor-styles-wrapper .block-editor-block-list__layout h4, .block-editor .editor-styles-wrapper .block-editor-block-list__layout h4 a',
-						'defaults' => array(
-							'font-size'   => '17px',
-							'color'       => '#333333',
-							'line-height' => '1.4',
-						),
-					),
-					'blog_post_title' => array(
-						'label'    => esc_html__( 'Blog Post Title', 'oceanwp' ),
-						'target'   => '.block-editor .editor-styles-wrapper .editor-post-title__block .editor-post-title__input',
-						'defaults' => array(
-							'font-size'      => '34px',
-							'color'          => '#333333',
-							'line-height'    => '1.4',
-							'letter-spacing' => '0.6',
-						),
-					),
-				)
-			);
-
-		}
-
-		/**
-		 * Gutenberg editor css
-		 *
-		 * @param instance $return css.
-		 */
-		public static function loop( $return = 'css' ) {
-
-			// Define Vars.
-			$css      = '';
-			$fonts    = array();
-			$elements = self::elements();
-
-			if ( ! empty( $elements ) ) {
-
-				// Loop through each elements that need typography styling applied to them.
-				foreach ( $elements as $element => $array ) {
-
-					// Add empty css var.
-					$add_css    = '';
-					$tablet_css = '';
-					$mobile_css = '';
-
-					// Get target and current mod.
-					$target         = isset( $array['target'] ) ? $array['target'] : '';
-					$get_mod        = get_theme_mod( $element . '_typography' );
-					$tablet_get_mod = get_theme_mod( $element . '_tablet_typography' );
-					$mobile_get_mod = get_theme_mod( $element . '_mobile_typography' );
-
-					// Attributes to loop through.
-					if ( ! empty( $array['attributes'] ) ) {
-						$attributes = $array['attributes'];
-					} else {
-						$attributes = array(
-							'font-family',
-							'font-weight',
-							'font-style',
-							'font-size',
-							'color',
-							'line-height',
-							'letter-spacing',
-							'text-transform',
-						);
-					}
-
-					// Loop through attributes.
-					foreach ( $attributes as $attribute ) {
-
-						// Define val.
-						$default    = isset( $array['defaults'][ $attribute ] ) ? $array['defaults'][ $attribute ] : null;
-						$val        = isset( $get_mod[ $attribute ] ) ? $get_mod[ $attribute ] : $default;
-						$tablet_val = isset( $tablet_get_mod[ $attribute ] ) ? $tablet_get_mod[ $attribute ] : '';
-						$mobile_val = isset( $mobile_get_mod[ $attribute ] ) ? $mobile_get_mod[ $attribute ] : '';
-
-						// If there is a value lets do something.
-						if ( $val && $default !== $val ) {
-
-							// Sanitize.
-							$val = str_replace( '"', '', $val );
-
-							// Add px if font size or letter spacing.
-							$px = '';
-							if ( ( 'font-size' === $attribute
-									&& is_numeric( $val ) )
-								|| 'letter-spacing' === $attribute ) {
-								$px = 'px';
-							}
-
-							// Add quotes around font-family && font family to scripts array.
-							if ( 'font-family' === $attribute ) {
-								$fonts[] = $val;
-
-								// No brackets can be added as it cause issue with sans serif fonts.
-								$val = $val;
-							}
-
-							// Add to inline CSS.
-							if ( 'css' === $return ) {
-								$add_css .= $attribute . ':' . $val . $px . ';';
-							}
-						}
-
-						// If there is a value lets do something.
-						if ( $tablet_val
-							&& ( 'font-size' === $attribute
-								|| 'line-height' === $attribute
-								|| 'letter-spacing' === $attribute ) ) {
-
-							// Sanitize.
-							$tablet_val = str_replace( '"', '', $tablet_val );
-
-							// Add px if font size or letter spacing.
-							$px = '';
-							if ( ( 'font-size' === $attribute
-									&& is_numeric( $tablet_val ) )
-								|| 'letter-spacing' === $attribute ) {
-								$px = 'px';
-							}
-
-							// Add to inline CSS.
-							if ( 'css' === $return ) {
-								$tablet_css .= $attribute . ':' . $tablet_val . $px . ';';
-							}
-						}
-
-						// If there is a value lets do something.
-						if ( $mobile_val
-							&& ( 'font-size' === $attribute
-								|| 'line-height' === $attribute
-								|| 'letter-spacing' === $attribute ) ) {
-
-							// Sanitize.
-							$mobile_val = str_replace( '"', '', $mobile_val );
-
-							// Add px if font size or letter spacing.
-							$px = '';
-							if ( ( 'font-size' === $attribute
-									&& is_numeric( $mobile_val ) )
-								|| 'letter-spacing' === $attribute ) {
-								$px = 'px';
-							}
-
-							// Add to inline CSS.
-							if ( 'css' === $return ) {
-								$mobile_css .= $attribute . ':' . $mobile_val . $px . ';';
-							}
-						}
-					}
-
-					// Front-end inline CSS.
-					if ( $add_css && 'css' === $return ) {
-						$css .= $target . '{' . $add_css . '}';
-					}
-
-					// Front-end inline tablet CSS.
-					if ( $tablet_css && 'css' === $return ) {
-						$css .= '@media (max-width: 768px){' . $target . '{' . $tablet_css . '}}';
-					}
-
-					// Front-end inline mobile CSS.
-					if ( $mobile_css && 'css' === $return ) {
-						$css .= '@media (max-width: 480px){' . $target . '{' . $mobile_css . '}}';
-					}
-				}
-
-				// Return CSS.
-				if ( 'css' === $return && ! empty( $css ) ) {
-					$css = '/* OceanWP Gutenberg Style */' . $css;
-					return $css;
-				}
-
-				// Return Fonts Array.
-				if ( 'fonts' === $return && ! empty( $fonts ) ) {
-					return array_unique( $fonts );
-				}
-			}
-
-		}
-
-		/**
 		 * Output CSS
 		 *
 		 * @since 1.0.0
@@ -286,8 +49,6 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 		public function gutenberg_editor_style( $output ) {
 
 			if ( ! is_null( get_current_screen() ) && get_current_screen()->is_block_editor() ) {
-
-				$gutenberg_css = self::loop( 'css' );
 
 				// Add extra css based on customizer setting.
 				$primary_color     = get_theme_mod( 'ocean_primary_color', '#13aff0' );
@@ -304,23 +65,26 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout a:hover{color:' . $links_color_hover . ';}';
 				} elseif ( ! empty( $primary_color ) && '#13aff0' !== $primary_color ) {
 					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout a:hover{color:' . $primary_color . ';}';
-					$gutenberg_css .= '.block-editor .editor-styles-wrapper .block-editor-block-list__layout blockquote{border-left-color:' . $primary_color . ';}';
+					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout blockquote{border-left-color:' . $primary_color . ';}';
 				}
 
 				// Default color.
 				$default_color = '#333333';
 
+				$body        = get_theme_mod( 'body_typography' )['color'] ?? $default_color;
 				$headings    = get_theme_mod( 'headings_typography' )['color'] ?? $default_color;
 				$post_title  = get_theme_mod( 'blog_post_title_typography' )['color'] ?? $default_color;
 				$heading_h1  = get_theme_mod( 'heading_h1_typography' )['color'] ?? $default_color;
 				$heading_h2  = get_theme_mod( 'heading_h2_typography' )['color'] ?? $default_color;
 				$heading_h3  = get_theme_mod( 'heading_h3_typography' )['color'] ?? $default_color;
 				$heading_h4  = get_theme_mod( 'heading_h4_typography' )['color'] ?? $default_color;
+				$heading_h5  = get_theme_mod( 'heading_h5_typography' )['color'] ?? $default_color;
+				$heading_h6  = get_theme_mod( 'heading_h6_typography' )['color'] ?? $default_color;
 				$heading_tag = get_theme_mod( 'ocean_single_post_heading_tag', 'h2' );
 
 				// Input title style.
 				if ( 'h1' === $heading_tag && ! empty( $heading_h1 ) && empty( $headings ) && empty( $post_title ) ) {
-					$gutenberg_css .= '.editor-post-title__block .editor-post-title__input{color:' . $heading_h1 . ';}';
+					$gutenberg_css .= '.editor-post-title__block .editor-post-title__input, .editor-post-title.editor-post-title__input{color:' . $heading_h1 . ';}';
 				} elseif ( 'h2' === $heading_tag && ! empty( $heading_h2 ) && empty( $headings ) && empty( $post_title ) ) {
 					$gutenberg_css .= '.editor-post-title__block .editor-post-title__input{color:' . $heading_h2 . ';}';
 				} elseif ( 'h3' === $heading_tag && ! empty( $heading_h3 ) && empty( $headings ) && empty( $post_title ) ) {
@@ -331,6 +95,31 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 					$gutenberg_css .= '.editor-post-title__block .editor-post-title__input{color:' . $headings . ';}';
 				} else {
 					$gutenberg_css .= '.editor-post-title__block .editor-post-title__input{color:' . $post_title . ';}';
+				}
+
+				if ( ! empty( $body ) && '#929292' != $body ) {
+					$gutenberg_css .= '.editor-styles-wrapper, .editor-styles-wrapper .block-editor-block-list__layout{color:' . $body . ';}';
+				}
+				if ( ! empty( $headings ) && '#333333' != $headings ) {
+					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout h1, .editor-styles-wrapper .block-editor-block-list__layout h2, .editor-styles-wrapper .block-editor-block-list__layout h3, .editor-styles-wrapper .block-editor-block-list__layout h4, .editor-styles-wrapper .block-editor-block-list__layout h5, .editor-styles-wrapper .block-editor-block-list__layout h6{color:' . $headings . ';}';
+				}
+				if ( ! empty( $heading_h1 ) && '#333333' != $heading_h1 ) {
+					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout h1, .editor-styles-wrapper .block-editor-block-list__layout h1 a{color:' . $heading_h1 . ';}';
+				}
+				if ( ! empty( $heading_h2 ) && '#333333' != $heading_h2 ) {
+					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout h2, .editor-styles-wrapper .block-editor-block-list__layout h2 a{color:' . $heading_h2 . ';}';
+				}
+				if ( ! empty( $heading_h3 ) && '#333333' != $heading_h3 ) {
+					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout h3, .editor-styles-wrapper .block-editor-block-list__layout h3 a{color:' . $heading_h3 . ';}';
+				}
+				if ( ! empty( $heading_h4 ) && '#333333' != $heading_h4 ) {
+					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout h4, .editor-styles-wrapper .block-editor-block-list__layout h4 a{color:' . $heading_h4 . ';}';
+				}
+				if ( ! empty( $heading_h5 ) && '#333333' != $heading_h5 ) {
+					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout h5, .editor-styles-wrapper .block-editor-block-list__layout h5 a{color:' . $heading_h5 . ';}';
+				}
+				if ( ! empty( $heading_h6 ) && '#333333' != $heading_h6 ) {
+					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout h6, .editor-styles-wrapper .block-editor-block-list__layout h6 a{color:' . $heading_h6 . ';}';
 				}
 
 				// Background style value.
@@ -381,28 +170,11 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 
 				// Output the css.
 				if ( ! empty( $gutenberg_css ) ) {
-					wp_add_inline_style( 'wp-block-library', $gutenberg_css );
+					wp_add_inline_style( 'wp-block-editor', $gutenberg_css );
 				}
 			}
 
 		}
-
-		/**
-		 * Add Google fonts
-		 */
-		public function add_google_fonts() {
-
-			// Get fonts.
-			$fonts = self::loop( 'fonts' );
-
-			if ( ! empty( $fonts ) && is_array( $fonts ) ) {
-				foreach ( $fonts as $font ) {
-					oceanwp_enqueue_google_font( $font );
-				}
-			}
-
-		}
-
 	}
 
 }

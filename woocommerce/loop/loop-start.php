@@ -43,6 +43,8 @@ if ( ! empty( $mobile_columns ) ) {
 // If infinite scroll.
 if ( 'infinite_scroll' === get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
 	$wrap_classes[] = 'infinite-scroll-wrap';
+} else if ( 'load_more' === get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+	$wrap_classes[] = 'load-more-wrap';
 }
 
 $wrap_classes = implode( ' ', $wrap_classes ); ?>

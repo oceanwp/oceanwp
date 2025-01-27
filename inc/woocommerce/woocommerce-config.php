@@ -592,6 +592,9 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) && is_woocommerce() ) {
 				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 				add_action( 'woocommerce_after_shop_loop', array( $this, 'infinite_pagination' ), 10 );
+			} else if ( 'load_more' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) && is_woocommerce() ) {
+				remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
+				add_action( 'woocommerce_after_shop_loop', array( $this, 'load_more_pagination' ), 10 );
 			}
 		}
 
@@ -634,6 +637,38 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				<div class="alignright older-posts"><?php echo get_next_posts_link( esc_html__( 'Older Posts', 'oceanwp' ) . ' &rarr;', $wp_query->max_num_pages ); ?></div>
 			</div>
 			<?php
+		}
+
+		/**
+		 * Load More pagination
+		 */
+		public function load_more_pagination() {
+			global $wp_query;
+
+			if ( $wp_query->max_num_pages <= 1 ) {
+				return;
+			}
+
+			$load_more_text = get_theme_mod( 'ocean_woo_pagination_load_more_text' );
+			$load_more_text = oceanwp_tm_translation( 'ocean_woo_pagination_load_more_text', $load_more_text );
+			$load_more_text = $load_more_text ? $load_more_text : esc_html__( 'Load More', 'oceanwp' );
+
+			$no_more_posts_text = get_theme_mod( 'ocean_woo_pagination_load_more_no_more_posts_text' );
+			$no_more_posts_text = oceanwp_tm_translation( 'ocean_woo_pagination_load_more_no_more_posts_text', $no_more_posts_text );
+			$no_more_posts_text = $no_more_posts_text ? $no_more_posts_text : esc_html__( 'No more product to load', 'oceanwp' );
+
+			// Output pagination HTML
+			?>
+			<div class="load-more-product load-more-pagination">
+				<button class="load-more-button button"><?php echo esc_html( $load_more_text ); ?></button>
+				<p class="load-more-status__message load-more-eror"><?php echo esc_html( $no_more_posts_text ); ?></p>
+				<div class="load-more-nav clr">
+					<div class="alignleft newer-posts"><?php echo get_previous_posts_link( '&larr; ' . esc_html__( 'Newer Posts', 'oceanwp' ) ); ?></div>
+					<div class="alignright older-posts"><?php echo get_next_posts_link( esc_html__( 'Older Posts', 'oceanwp' ) . ' &rarr;', $wp_query->max_num_pages ); ?></div>
+				</div>
+			</div>
+			<?php
+
 		}
 
 		/**
@@ -1764,7 +1799,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$classes[] = 'owp-content-' . $content_alignment;
 
 				// If infinite scroll.
-				if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+				if ( 'infinite_scroll' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) || 'load_more' == get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
 					$classes[] = 'item-entry';
 				}
 			}
@@ -2210,7 +2245,18 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		public static function menu_cart_icon_fragments( $fragments ) {
 			ob_start();
 			oceanwp_wcmenucart_menu_item();
-			$fragments['li.woo-menu-icon a.wcmenucart, .oceanwp-mobile-menu-icon a.wcmenucart'] = ob_get_clean();
+
+			$menu_item_html = ob_get_clean();
+
+			if (is_customize_preview()) {
+				$menu_item_html = preg_replace(
+					'/href="[^"]*(wcmenucart)[^"]*"/',
+					'href="#"',
+					$menu_item_html
+				);
+			}
+
+			$fragments['li.woo-menu-icon a.wcmenucart, .oceanwp-mobile-menu-icon a.wcmenucart'] = $menu_item_html;
 
 			return $fragments;
 		}

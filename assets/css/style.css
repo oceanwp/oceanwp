@@ -2200,7 +2200,8 @@ button[type=submit],
 body div.wpforms-container-full .wpforms-form input[type=submit],
 body div.wpforms-container-full .wpforms-form button[type=submit],
 body div.wpforms-container-full .wpforms-form .wpforms-page-button,
-.wp-element-button,
+.woocommerce-cart .wp-element-button,
+.woocommerce-checkout .wp-element-button,
 .wp-block-button__link {
   display: inline-block;
   font-family: inherit;
@@ -2232,8 +2233,8 @@ button[type=submit]:focus,
 body div.wpforms-container-full .wpforms-form input[type=submit]:hover,
 body div.wpforms-container-full .wpforms-form button[type=submit]:hover,
 body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover,
-.wp-element-button:hover,
-.wp-block-button__link:hover {
+.woocommerce-cart .wp-element-button:hover,
+.woocommerce-checkout .wp-element-button:hover {
   background-color: #0b7cac;
   color: #fff;
 }
@@ -7553,6 +7554,19 @@ ul.page-numbers li .owp-icon {
 }
 .infinite-scroll-nav {
   display: none;
+}
+
+.load-more-pagination {
+  text-align: center;
+}
+.load-more-pagination .load-more-nav {
+  display: none;
+}
+.load-more-pagination .load-more-status__message {
+  display: none;
+}
+.load-more-pagination .load-more-status__message.show {
+  display: block;
 }
 
 /*------------------------------------*

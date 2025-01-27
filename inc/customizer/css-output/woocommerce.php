@@ -77,6 +77,12 @@ class OceanWP_Customize_WooCommerce_CSS {
 		$off_canvas_close_button_color 						= get_theme_mod( 'ocean_woo_off_canvas_close_button_color', '#333333' );
 		$off_canvas_close_button_hover_color 				= get_theme_mod( 'ocean_woo_off_canvas_close_button_hover_color', '#777777' );
 		$infinite_scroll_spinners_color 					= get_theme_mod( 'ocean_woo_infinite_scroll_spinners_color', '#333333' );
+
+		$load_more_btn_color                                = get_theme_mod( 'ocean_woo_pagination_load_more_button_color' );
+		$load_more_btn_color_hover                          = get_theme_mod( 'ocean_woo_pagination_load_more_button_color_hover' );
+		$load_more_btn_text_color                           = get_theme_mod( 'ocean_woo_pagination_load_more_button_text_color' );
+		$load_more_btn_text_color_hover                     = get_theme_mod( 'ocean_woo_pagination_load_more_button_text_color_hover' );
+
 		$woo_product_image_width 							= get_theme_mod( 'ocean_woo_product_image_width', '52' );
 		$woo_product_summary_width 							= get_theme_mod( 'ocean_woo_product_summary_width', '44' );
 		$floating_bar_bg 									= get_theme_mod( 'ocean_woo_floating_bar_bg', '#2c2c2c' );
@@ -528,6 +534,20 @@ class OceanWP_Customize_WooCommerce_CSS {
 		// Infinite scroll spinners color
 		if ( ! empty( $infinite_scroll_spinners_color ) && '#333333' != $infinite_scroll_spinners_color ) {
 			$css .= '.woocommerce .loader-ellips__dot{background-color:'. $infinite_scroll_spinners_color .';}';
+		}
+
+		// Blog load more pagination color.
+		if ( ! empty( $load_more_btn_color ) && '' != $load_more_btn_color ) {
+			$css .= '.load-more-pagination.load-more-product .button{background-color:' . $load_more_btn_color . ';}';
+		}
+		if ( ! empty( $load_more_btn_color_hover ) && '' != $load_more_btn_color_hover ) {
+			$css .= '.load-more-pagination.load-more-product .button:hover{background-color:' . $load_more_btn_color_hover . ';}';
+		}
+		if ( ! empty( $load_more_btn_text_color ) && '' != $load_more_btn_text_color ) {
+			$css .= '.load-more-pagination.load-more-product .button{color:' . $load_more_btn_text_color . ';}';
+		}
+		if ( ! empty( $load_more_btn_text_color_hover ) && '' != $load_more_btn_text_color_hover ) {
+			$css .= '.load-more-pagination.load-more-product .button:hover{color:' . $load_more_btn_text_color_hover . ';}';
 		}
 
 		// Product image width

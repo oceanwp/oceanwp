@@ -27,8 +27,10 @@ class OceanWP_Typography_CSS {
 	 * Constructor
 	 */
 	public function __construct() {
-		add_filter('ocean_head_css', array($this, 'generate_css'), 99 );
+		add_filter('ocean_head_css', array($this, 'generate_css'), 99);
+		add_action('enqueue_block_editor_assets', array( $this, 'gutenberg_editor_style' ));
 		add_action('wp_enqueue_scripts', array($this, 'load_fonts'));
+		add_action('block_editor_settings_all', array( $this, 'load_fonts_in_block_editor' ), 10, 1);
 	}
 
 	/**
@@ -60,25 +62,57 @@ class OceanWP_Typography_CSS {
 	}
 
 	/**
+	 * Generate css
+	 *
+	 * @since 4.0.5
+	 *
+	 * @var string $output  CSS String.
+	 */
+	public function gutenberg_editor_style( $output ) {
+
+		$options = ocean_get_customize_settings_data();
+
+		$css = '';
+
+		foreach ( $options as $section_key => $section_options ) {
+			if ( isset($section_options['options']) ) {
+				$section_css = $this->get_css_data( $section_options['options'], 'custom' );
+				if ( ! empty( $section_css ) ) {
+					$css .= $section_css;
+				}
+			}
+		}
+
+		// Return CSS.
+		if ( ! empty( $css ) ) {
+			$output .= '/* Editor Typography */' . $css;
+		}
+
+		if ( ! empty( $output ) ) {
+			wp_add_inline_style( 'wp-block-editor', $output );
+		}
+	}
+
+	/**
 	 * Get css data
 	 *
 	 * @var object $options Settings.
 	 */
-	public function get_css_data( $options ) {
+	public function get_css_data( $options, $isSelector='default' ) {
 
 		$css = '';
 
 		if ( is_array($options) ) {
 			foreach ( $options as $option_key => $option_data ) {
 				if ( $this->is_typography_option( $option_data ) ) {
-					$settings = $this->get_typography_settings( $option_data );
+					$settings = $this->get_typography_settings( $option_data, $isSelector );
 					if ( ! empty( $settings ) ) {
 						$css .= $this->generate_css_string( $settings );
 					}
 				}
 
 				if ( isset( $option_data['options'] ) ) {
-					$css .= $this->get_css_data( $option_data['options'] );
+					$css .= $this->get_css_data( $option_data['options'], $isSelector );
 				}
 			}
 		}
@@ -99,15 +133,126 @@ class OceanWP_Typography_CSS {
 	}
 
 	/**
+	 * Typograhpy
+	 *
+	 * @since 4.0.5
+	 */
+	public static function elements() {
+
+		return apply_filters(
+			'ocean_gutenberg_typography_tags',
+			array(
+				'ocean_body_typography' => array(
+					'label'    => esc_html__( 'Body', 'oceanwp' ),
+					'target'   => '.editor-styles-wrapper, .editor-styles-wrapper .block-editor-block-list__layout',
+					'defaults' => array(
+						'font-size'   => '14px',
+						'color'       => '#929292',
+						'line-height' => '1.8',
+					),
+				),
+				'ocean_headings_typography'        => array(
+					'label'    => esc_html__( 'All Headings', 'oceanwp' ),
+					'target'   => '.editor-styles-wrapper .block-editor-block-list__layout h1, .editor-styles-wrapper .block-editor-block-list__layout h2, .editor-styles-wrapper .block-editor-block-list__layout h3, .editor-styles-wrapper .block-editor-block-list__layout h4, .editor-styles-wrapper .block-editor-block-list__layout h5, .editor-styles-wrapper .block-editor-block-list__layout h6',
+					'exclude'  => array( 'font-size' ),
+					'defaults' => array(
+						'color'       => '#333333',
+						'line-height' => '1.4',
+					),
+				),
+				'ocean_heading_h1_typography'      => array(
+					'label'    => esc_html__( 'Heading 1 (H1)', 'oceanwp' ),
+					'target'   => '.editor-styles-wrapper .block-editor-block-list__layout h1, .editor-styles-wrapper .block-editor-block-list__layout h1 a',
+					'defaults' => array(
+						'font-size'   => '23px',
+						'color'       => '#333333',
+						'line-height' => '1.4',
+					),
+				),
+				'ocean_heading_h2_typography'      => array(
+					'label'    => esc_html__( 'Heading 2 (H2)', 'oceanwp' ),
+					'target'   => '.editor-styles-wrapper .block-editor-block-list__layout h2, .editor-styles-wrapper .block-editor-block-list__layout h2 a',
+					'defaults' => array(
+						'font-size'   => '20px',
+						'color'       => '#333333',
+						'line-height' => '1.4',
+					),
+				),
+				'ocean_heading_h3_typography'      => array(
+					'label'    => esc_html__( 'Heading 3 (H3)', 'oceanwp' ),
+					'target'   => '.editor-styles-wrapper .block-editor-block-list__layout h3, .editor-styles-wrapper .block-editor-block-list__layout h3 a',
+					'defaults' => array(
+						'font-size'   => '18px',
+						'color'       => '#333333',
+						'line-height' => '1.4',
+					),
+				),
+				'ocean_heading_h4_typography'      => array(
+					'label'    => esc_html__( 'Heading 4 (H4)', 'oceanwp' ),
+					'target'   => '.editor-styles-wrapper .block-editor-block-list__layout h4, .editor-styles-wrapper .block-editor-block-list__layout h4 a',
+					'defaults' => array(
+						'font-size'   => '17px',
+						'color'       => '#333333',
+						'line-height' => '1.4',
+					),
+				),
+				'ocean_title_for_single_post_page_title' => array(
+					'label'    => esc_html__( 'Blog Post Title', 'oceanwp' ),
+					'target'   => '.editor-styles-wrapper .editor-post-title__block .editor-post-title__input',
+					'defaults' => array(
+						'font-size'      => '34px',
+						'color'          => '#333333',
+						'line-height'    => '1.4',
+						'letter-spacing' => '0.6',
+					),
+				),
+			)
+		);
+
+	}
+
+	/**
 	 * Get typography settings.
 	 *
 	 * @param array $option_data Option data.
 	 * @return array Typography settings.
 	 */
-	private function get_typography_settings($option_data) {
+	private function get_typography_settings($option_data, $isSelector) {
 		$settings = array();
 
-		foreach ($option_data['setting_args'] as $setting_arg_key => $setting_arg_data) {
+		$custom_selector = '';
+		if ($isSelector === 'custom') {
+			$elements = self::elements();
+			foreach ($elements as $key => $element) {
+				if ($key === $option_data['id']) {
+					$custom_selector = isset($element['target']) ? $element['target'] : '';
+					break;
+				}
+			}
+
+			if (!empty($custom_selector)) {
+				$settings = $this->process_settings($option_data['setting_args'], $custom_selector);
+			}
+		} else {
+			$settings = $this->process_settings($option_data['setting_args'], $option_data['selector']);
+		}
+
+		return $settings;
+	}
+
+	/**
+	 * Reusable function to process settings.
+	 *
+	 * @since 4.0.5
+	 *
+	 * @param array $setting_args Array of setting arguments.
+	 * @param string $selector CSS selector for the settings.
+	 * @return array Processed settings.
+	 */
+	private function process_settings($setting_args, $selector) {
+		$settings = array();
+
+		foreach ($setting_args as $setting_arg_key => $setting_arg_data) {
 			$idName = $setting_arg_data['id'];
 
 			// Check if the ID contains brackets
@@ -118,18 +263,15 @@ class OceanWP_Typography_CSS {
 					$theme_mod = rtrim($parts[0], '[');
 					$property = rtrim($parts[1], ']');
 
-					$selector = $option_data['selector'];
-
 					if (!isset($settings[$selector])) {
 						$settings[$selector] = array();
 					}
 
 					// Fetch and assign the setting value
-					if (!isset($settings[$selector][$setting_arg_key])) {
-						$value = get_theme_mod($theme_mod, array());
-						$settings[$selector][$setting_arg_key] = isset($value[$property]) ? $value[$property] : '';
-					}
+					$value = get_theme_mod($theme_mod, array());
+					$settings[$selector][$setting_arg_key] = $value[$property] ?? '';
 
+					// Use default value if empty
 					if (empty($settings[$selector][$setting_arg_key]) && isset($setting_arg_data['attr']['default'])) {
 						$settings[$selector][$setting_arg_key] = $setting_arg_data['attr']['default'];
 					}
@@ -137,31 +279,24 @@ class OceanWP_Typography_CSS {
 			} else {
 				// Handle settings without brackets
 				$theme_mod = $idName;
-				$selector = $option_data['selector'];
 
 				if (!isset($settings[$selector])) {
 					$settings[$selector] = array();
 				}
 
 				// Fetch and assign the setting value
-				if (!isset($settings[$selector][$setting_arg_key])) {
-					$value = get_theme_mod($theme_mod);
-					$settings[$selector][$setting_arg_key] = isset($value) ? $value : '';
-				}
+				$value = get_theme_mod($theme_mod);
+				$settings[$selector][$setting_arg_key] = $value ?? '';
 
+				// Use default value if empty
 				if (empty($settings[$selector][$setting_arg_key]) && isset($setting_arg_data['attr']['default'])) {
 					$settings[$selector][$setting_arg_key] = $setting_arg_data['attr']['default'];
 				}
-
 			}
 		}
 
 		return $settings;
 	}
-
-
-
-
 
 	/**
 	 * Generate CSS string
@@ -360,7 +495,7 @@ class OceanWP_Typography_CSS {
 		if (is_array($options)) {
 			foreach ($options as $option_key => $option_data) {
 				if ($this->is_typography_option($option_data)) {
-					$settings = $this->get_typography_settings($option_data);
+					$settings = $this->get_typography_settings($option_data, 'default');
 					if (!empty($settings)) {
 						$fonts = array_merge($fonts, $this->generate_font_data($settings));
 					}
@@ -393,7 +528,6 @@ class OceanWP_Typography_CSS {
 		return $fonts;
 	}
 
-
 	/**
 	 * Loads Google fonts
 	 */
@@ -407,6 +541,128 @@ class OceanWP_Typography_CSS {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Loads Google fonts in block editor
+	 *
+	 * @since 4.0.5
+	 */
+	public function load_fonts_in_block_editor($editor_settings) {
+		$fonts = $this->generate_fonts();
+
+		$styles = '';
+
+		if ( ! empty( $fonts ) && is_array( $fonts ) ) {
+			foreach ( $fonts as $font ) {
+				if (!empty($font)) {
+					$font_url = $this->get_google_font_url( $font );
+					$styles .= "@import url('$font_url');\n";
+				}
+			}
+		}
+
+		if ( ! empty( $styles ) ) {
+			$editor_settings['styles'][] = [
+				'css'    => $styles,
+				'inline' => true,
+			];
+		}
+
+		return $editor_settings;
+
+		// $css = '';
+		// foreach ( $url as $font_name => $font_url ) {
+		// 	$css .= "@import url('$font_url');\n";
+		// }
+
+		// // Save to a file or inline the style dynamically
+		// $file = get_template_directory() . '/editor-fonts.css';
+		// file_put_contents( $file, $css );
+
+		// add_editor_style( 'editor-fonts.css' );
+	}
+
+	/**
+	 * Generate the Google Font URL for a specified font.
+	 *
+	 * @since 4.0.5
+	 *
+	 * @param string $font The name of the Google Font to generate the URL for.
+	 * @return string|null The constructed Google Fonts URL or null if the font is not enabled or valid.
+	 */
+	public function get_google_font_url( $font ) {
+		$google_fonts_enabled = get_theme_mod( 'ocean_enable_google_fonts', ocean_inherit_legacy_google_settings() );
+
+		// Return if 'Enable Google Fonts' setting is not true
+		if ( true !== $google_fonts_enabled ) {
+			return;
+		}
+
+		// Get list of all Google Fonts
+		$google_fonts = oceanwp_google_fonts_array();
+
+		// Make sure font is in our list of fonts
+		if ( ! $google_fonts || ! in_array( $font, $google_fonts ) ) {
+			return;
+		}
+
+		// Sanitize handle
+		$handle = trim( $font );
+		$handle = strtolower( $handle );
+		$handle = str_replace( ' ', '-', $handle );
+
+		// Sanitize font name
+		$font = trim( $font );
+		$font = str_replace( ' ', '+', $font );
+
+		// Subset
+		$get_subsets = get_theme_mod( 'ocean_google_font_subsets', array('latin') );
+
+		if (is_string($get_subsets)) {
+			$get_subsets = json_decode($get_subsets, true);
+		}
+
+		$subsets     = '';
+		if ( ! empty( $get_subsets ) ) {
+			$font_subsets = array();
+			foreach ( $get_subsets as $get_subset ) {
+				$font_subsets[] = $get_subset;
+			}
+			$subsets .= implode( ',', $font_subsets );
+		} else {
+			$subsets = 'latin';
+		}
+		$subset = '&amp;subset=' . $subsets;
+
+		// Weights
+		$weights = array( '100', '200', '300', '400', '500', '600', '700', '800', '900' );
+		$weights = apply_filters( 'ocean_google_font_enqueue_weights', $weights, $font );
+		$italics = apply_filters( 'ocean_google_font_enqueue_italics', true );
+
+		// Determine the protocol (http/https).
+		$protocol = is_ssl() ? 'https:' : 'http:';
+
+		// Main URL
+		$url = $protocol . '//fonts.googleapis.com/css?family=' . str_replace( ' ', '%20', $font ) . ':';
+
+		if ( ! empty( $weights ) ) {
+			$url .= implode( ',', $weights ) . ',';
+			$italic_weights = array();
+			if ( $italics ) {
+				foreach ( $weights as $weight ) {
+					$italic_weights[] = $weight . 'i';
+				}
+				$url .= implode( ',', $italic_weights );
+			}
+		}
+
+		// Add subset to URL
+		$url .= $subset;
+		$url  = $url . '&display=swap';
+
+		return apply_filters( 'oceanwp_enqueue_google_font_url', $url, $handle );
+
 	}
 
 }

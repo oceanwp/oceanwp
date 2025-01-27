@@ -449,7 +449,7 @@ final class OCEANWP_Theme_Class {
 
 		// Enqueue font awesome style.
 		if ( get_theme_mod( 'ocean_performance_fontawesome', 'enabled' ) === 'enabled' ) {
-			wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI . '/assets/fonts/fontawesome/css/all.min.css', false, '6.4.2' );
+			wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI . '/assets/fonts/fontawesome/css/all.min.css', false, '6.7.2' );
 		}
 
 		// Enqueue simple line icons style.
@@ -644,6 +644,11 @@ final class OCEANWP_Theme_Class {
 		// Infinite Scroll script.
 		if ( 'infinite_scroll' === get_theme_mod( 'ocean_blog_pagination_style', 'standard' ) || 'infinite_scroll' === get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
 			wp_enqueue_script( 'oceanwp-infinite-scroll', $dir . 'ow-infinite-scroll.min.js', $main_script_dependencies, $theme_version, true );
+		}
+
+		// Load more pagination script
+		if ( 'load_more' === get_theme_mod( 'ocean_blog_pagination_style', 'standard' ) || 'load_more' === get_theme_mod( 'ocean_woo_pagination_style', 'standard' ) ) {
+			wp_enqueue_script( 'oceanwp-load-more', $dir . 'ow-load-more.min.js', $main_script_dependencies, $theme_version, true );
 		}
 
 		// WooCommerce scripts.

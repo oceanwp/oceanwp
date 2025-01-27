@@ -173,3 +173,20 @@ ul.page-numbers {
 .infinite-scroll-nav {
     display: none;
 }
+
+.load-more-pagination {
+    text-align: center;
+
+    .load-more-nav {
+        display: none;
+    }
+
+    .load-more-status__message {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+}
+

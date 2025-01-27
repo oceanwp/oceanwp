@@ -24,6 +24,7 @@ Woo Multi-Step Checkout
   -ms-transition: all 0.1s ease;
   -o-transition: all 0.1s ease;
   transition: all 0.1s ease;
+  cursor: pointer;
 }
 #owp-checkout-timeline .active .timeline-wrapper {
   background-color: #13aff0;

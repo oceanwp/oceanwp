@@ -3,13 +3,14 @@
     "version": "1.0.0",
     "description": "OceanWP Customizer",
     "scripts": {
-        "build": "wp-scripts build customizer-src/index.js customizer-src/live-preview --output-path=assets/dist",
-        "start": "wp-scripts start customizer-src/index.js customizer-src/live-preview --output-path=assets/dist",
+        "build": "wp-scripts build customizer-src/index.js customizer-src/live-preview customizer-src/search --output-path=assets/dist",
+        "start": "wp-scripts start customizer-src/index.js customizer-src/live-preview customizer-src/search --output-path=assets/dist",
         "lint:js": "wp-scripts lint-js",
         "lint:pkg-json": "wp-scripts lint-pkg-json"
     },
     "dependencies": {
         "array-move": "^4.0.0",
+        "bootstrap": "^5.3.3",
         "classnames": "^2.3.2",
         "react-easy-sort": "^1.5.2",
         "react-select": "^5.7.3"

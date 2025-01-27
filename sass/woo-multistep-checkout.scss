@@ -40,6 +40,7 @@ Woo Multi-Step Checkout
         font-size: 15px;
         line-height: 40px;
         @include transition(all 0.1s ease);
+        cursor: pointer;
     }
 
     .active .timeline-wrapper {

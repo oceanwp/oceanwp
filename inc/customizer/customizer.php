@@ -457,7 +457,7 @@ class OceanWP_Customizer_Init {
 			add_filter('use_widgets_block_editor', '__return_true');
 		}
 
-		wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI .'/assets/fonts/fontawesome/css/all.min.css', false, '5.11.2'  );
+		wp_enqueue_style( 'font-awesome', OCEANWP_THEME_URI .'/assets/fonts/fontawesome/css/all.min.css', false, '6.7.2'  );
 		wp_enqueue_style( 'simple-line-icons', OCEANWP_INC_DIR_URI .'customizer/assets/css/customizer-simple-line-icons.min.css', false, '2.4.0' );
 
 		$customize_loc = $this->localize_customize_script();
@@ -512,6 +512,7 @@ class OceanWP_Customizer_Init {
 				'isOE' => ocean_is_oe_active(),
 				//'sectionIcons' => ocean_customizer_section_icons(),
 				'pageChoices' => ocean_get_page_choices(),
+				'googleFonts' => oceanwp_google_fonts_array(),
 				'customFonts' => function_exists( 'ocean_add_custom_fonts' ) ? ocean_add_custom_fonts() : array(),
 				'customizerFonts' => $this->get_customizer_fonts(),
 				'colorPalettes' => oceanwp_default_color_palettes(),
@@ -575,11 +576,33 @@ class OceanWP_Customizer_Init {
 		$settings = wp_parse_args( get_option( 'oe_panels_settings', [] ) );
 
 		if ( isset( $settings['customizer-search'] ) && (bool) $settings['customizer-search'] === true ) {
-			wp_enqueue_script( 'oceanwp-customize-search-js', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.js', array( 'lodash', 'wp-i18n', 'wp-util' ) );
-			wp_enqueue_style( 'oceanwp-customize-search', OCEANWP_INC_DIR_URI . 'customizer/assets/js/customize-search.css' );
+
+			$uri   = OCEANWP_INC_DIR_URI . 'customizer/assets/dist/';
+			$asset = require OCEANWP_INC_DIR . 'customizer/assets/dist/search.asset.php';
+			$deps  = $asset['dependencies'];
+			array_push( $deps, 'customize-controls' );
+
+			wp_register_script(
+				'oceanwp-customize-search-js',
+				$uri . 'search.js',
+				$deps,
+				filemtime( OCEANWP_INC_DIR . 'customizer/assets/dist/search.js' ),
+				true
+			);
+
+			wp_enqueue_script( 'oceanwp-customize-search-js' );
+
+			wp_enqueue_style(
+				'oceanwp-customize-search',
+				$uri . 'style-search.css',
+				array(),
+				filemtime( OCEANWP_INC_DIR . 'customizer/assets/dist/style-search.css' )
+			);
+
 			wp_localize_script( 'oceanwp-customize-search-js', 'oceanCustomizerSearchOptions', [
 				'darkMode' => get_option( 'oceanCustomizerSearchdarkMode', false )
 			] );
+
 		}
 	}
 

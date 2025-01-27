@@ -378,20 +378,8 @@ if ( get_theme_mod( 'ocean_performance_emoji', 'enabled' ) === 'disabled' ) {
 		}
 	);
 
-	add_filter(
-		'wp_resource_hints',
-		function ( $urls, $relation_type ) {
-			if ( 'dns-prefetch' === $relation_type ) {
-				$emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
-
-				$urls = array_diff( $urls, array( $emoji_svg_url ) );
-			}
-
-			return $urls;
-		},
-		10,
-		2
-	);
+	// Remove WP Emoji DNS prefetch from document head
+	add_filter( 'emoji_svg_url', '__return_false' );
 }
 
 /**
@@ -2650,6 +2638,10 @@ if ( ! function_exists( 'oceanwp_blog_wrap_classes' ) ) {
 			$classes[] = 'infinite-scroll-wrap';
 		}
 
+		if ( 'load_more' == oceanwp_blog_pagination_style() ) {
+			$classes[] = 'load-more-wrap';
+		}
+
 		// Add filter for child theming
 		$classes = apply_filters( 'ocean_blog_wrap_classes', $classes );
 
@@ -2708,7 +2700,7 @@ if ( ! function_exists( 'oceanwp_post_entry_classes' ) ) {
 		}
 
 		// Infinite scroll class
-		if ( 'infinite_scroll' == oceanwp_blog_pagination_style() ) {
+		if ( 'infinite_scroll' == oceanwp_blog_pagination_style() || 'load_more' == oceanwp_blog_pagination_style() ) {
 			$classes[] = 'item-entry';
 		}
 
@@ -3620,6 +3612,37 @@ if ( ! function_exists( 'oceanwp_infinite_scroll' ) ) {
 }
 
 /**
+ * Load More pagination
+ */
+if ( ! function_exists( 'oceanwp_load_more_pagination' ) ) {
+
+	function oceanwp_load_more_pagination() {
+
+		$load_more_text = get_theme_mod( 'oceanwp_blog_load_more_text' );
+		$load_more_text = oceanwp_tm_translation( 'oceanwp_blog_load_more_text', $load_more_text );
+		$load_more_text = $load_more_text ? $load_more_text : esc_html__( 'Load More', 'oceanwp' );
+
+		$no_more_posts_text = get_theme_mod( 'oceanwp_blog_no_more_posts_text' );
+		$no_more_posts_text = oceanwp_tm_translation( 'oceanwp_blog_no_more_posts_text', $no_more_posts_text );
+		$no_more_posts_text = $no_more_posts_text ? $no_more_posts_text : esc_html__( 'No more posts to load', 'oceanwp' );
+
+		// Output pagination HTML
+		$output          = '<div class="load-more-post load-more-pagination">';
+			$output     .= '<button class="load-more-button button">' . esc_html( $load_more_text ) . '</button>';
+			$output     .= '<p class="load-more-status__message load-more-eror">' .  esc_html( $no_more_posts_text ) . '</p>';
+			$output     .= '<div class="load-more-nav clr">';
+				$output .= '<div class="alignleft newer-posts">' . get_previous_posts_link( '<span aria-hidden="true">&larr;</span> ' . esc_attr__( 'Newer Posts', 'oceanwp' ) ) . '</div>';
+				$output .= '<div class="alignright older-posts">' . get_next_posts_link( esc_attr__( 'Older Posts', 'oceanwp' ) . ' <span aria-hidden="true">&rarr;</span>' ) . '</div>';
+			$output     .= '</div>';
+		$output         .= '</div>';
+
+		$output = apply_filters( 'oceanwp_load_more_pagination_output', $output );
+
+		echo wp_kses_post( $output );
+	}
+}
+
+/**
  * Blog Pagination
  * Used to load the correct pagination function for blog archives
  * Execute the correct pagination function based on the theme settings
@@ -3665,6 +3688,8 @@ if ( ! function_exists( 'oceanwp_blog_pagination' ) ) {
 		// Execute the correct pagination function
 		if ( 'infinite_scroll' == $pagination_style ) {
 			oceanwp_infinite_scroll( $infinite_type );
+		} elseif ('load_more' == $pagination_style) {
+			oceanwp_load_more_pagination();
 		} elseif ( $pagination_style == 'next_prev' ) {
 			oceanwp_pagejump();
 		} else {
@@ -4150,6 +4175,10 @@ if ( ! function_exists( 'oceanwp_social_options' ) ) {
 				'vimeo'       => array(
 					'label'      => esc_html__( 'Vimeo', 'oceanwp' ),
 					'icon_class' => oceanwp_icon( 'vimeo', false ),
+				),
+				'bluesky'          => array(
+					'label'      => esc_html__( 'BlueSky', 'oceanwp' ),
+					'icon_class' => oceanwp_icon( 'bluesky', false ),
 				),
 				'vine'        => array(
 					'label'      => esc_html__( 'Vine', 'oceanwp' ),

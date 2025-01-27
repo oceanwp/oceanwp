@@ -388,6 +388,18 @@ $options = [
 						]
 					],
 
+					'ocean_blog_grid_equal_heights' => [
+						'type' => 'ocean-switch',
+						'label' => esc_html__( 'Equal Heights', 'oceanwp' ),
+						'section' => 'ocean_blog_archive_additional_blog_style_settings_section',
+						'default'  => false,
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'hideLabel' => false,
+						'active_callback' => 'oceanwp_cac_blog_supports_equal_heights',
+						'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+					],
+
 					'ocean_blog_thumbnail_image_position' => [
 						'type'              => 'ocean-buttons',
 						'label'             => esc_html__( 'Image Position', 'oceanwp' ),
@@ -687,6 +699,11 @@ $options = [
 								'label'   => esc_html__( 'Infinite Scroll', 'oceanwp' ),
 								'content' => esc_html__( 'Infinite Scroll', 'oceanwp' ),
 							],
+							'load_more'  => [
+								'id'      => 'load_more',
+								'label'   => esc_html__( 'Load More', 'oceanwp' ),
+								'content' => esc_html__( 'Load More', 'oceanwp' ),
+							],
 							'next_prev'  => [
 								'id'      => 'next_prev',
 								'label'   => esc_html__( 'Next/Prev', 'oceanwp' ),
@@ -778,6 +795,150 @@ $options = [
 								'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/902-customizer-blog#Infinite-Scroll-Settings-t1c3L/" target="_blank">', '</a>' ),
 								'class'     => 'need-help',
 								'section'   => 'ocean_blog_archive_infinite_scroll_section',
+								'transport' => 'postMessage',
+								'priority'  => 10,
+							]
+						]
+					],
+
+					'ocean_spacer_for_pagination_load_more_section' => [
+						'type' => 'ocean-spacer',
+						'section' => 'ocean_blog_archive_excerpt_and_pagination_section',
+						'transport' => 'postMessage',
+						'priority' => 10,
+						'top' => 10,
+						'bottom' => 10,
+					],
+
+					'ocean_blog_archive_load_more_section' => [
+						'type'     => 'section',
+						'title'    => esc_html__( 'Load More Settings', 'oceanwp' ),
+						'section'  => 'ocean_blog_archive_excerpt_and_pagination_section',
+						'after'    => 'ocean_spacer_for_pagination_load_more_section',
+						'class'    => 'section-site-layout',
+						'priority' => 10,
+						'options'  => [
+							'ocean_desc_for_blog_archive_load_more_settings' => [
+								'type'            => 'ocean-content',
+								'isContent'       => esc_html__( 'If you select the Load More as the Archives Pagination Style, these settings will be applied.', 'oceanwp' ),
+								'section'         => 'ocean_blog_archive_load_more_section',
+								'class'           => 'description',
+								'transport'       => 'postMessage',
+								'priority'        => 10,
+							],
+
+							'oceanwp_blog_load_more_text' => [
+								'label'             => esc_html__( 'Load More Button Text', 'oceanwp' ),
+								'type'              => 'ocean-text',
+								'section'           => 'ocean_blog_archive_load_more_section',
+								'transport'         => 'postMessage',
+								'default'           => esc_html__( 'Load More', 'oceanwp' ),
+								'priority'          => 10,
+								'hideLabel'         => false,
+								'sanitize_callback' => 'wp_kses_post',
+								'active_callback' => 'oceanwp_cac_blog_archive_pagination_load_more',
+							],
+
+							'oceanwp_blog_no_more_posts_text' => [
+								'label'             => esc_html__( 'Load More: Last Text', 'oceanwp' ),
+								'type'              => 'ocean-text',
+								'section'           => 'ocean_blog_archive_load_more_section',
+								'transport'         => 'postMessage',
+								'default'           => esc_html__( 'No more posts to load', 'oceanwp' ),
+								'priority'          => 10,
+								'hideLabel'         => false,
+								'sanitize_callback' => 'wp_kses_post',
+								'active_callback' => 'oceanwp_cac_blog_archive_pagination_load_more',
+							],
+
+							'ocean_divider_after_blog_no_more_posts_text_color_settings' => [
+								'type'            => 'ocean-divider',
+								'section'         => 'ocean_blog_archive_load_more_section',
+								'transport'       => 'postMessage',
+								'priority'        => 10,
+								'top'             => 10,
+								'active_callback' => 'oceanwp_cac_blog_archive_pagination_load_more'
+							],
+
+							'ocean_blog_load_more_button_color' => [
+								'type'              => 'ocean-color',
+								'label'             => esc_html__( 'Button Color', 'oceanwp' ),
+								'section'           => 'ocean_blog_archive_load_more_section',
+								'transport'         => 'postMessage',
+								'priority'          => 10,
+								'hideLabel'         => false,
+								'showAlpha'         => true,
+								'showPalette'       => true,
+								'active_callback'   => 'oceanwp_cac_blog_archive_pagination_load_more',
+								'sanitize_callback' => 'wp_kses_post',
+								'setting_args'      => [
+									'normal' => [
+										'id'       => 'ocean_blog_load_more_button_color',
+										'key'      => 'normal',
+										'label'    => esc_html__( 'Normal', 'oceanwp' ),
+										'selector' => [
+											'.load-more-pagination.load-more-post .button' => 'background-color'
+										],
+										'attr' => [
+											'transport' => 'postMessage',
+										],
+									],
+									'hover' => [
+										'id'       => 'ocean_blog_load_more_button_color_hover',
+										'key'      => 'hover',
+										'label'    => esc_html__( 'Hover', 'oceanwp' ),
+										'selector' => [
+											'.load-more-pagination.load-more-post .button:hover' => 'background-color'
+										],
+										'attr' => [
+											'transport' => 'postMessage',
+										],
+									],
+								]
+							],
+
+							'ocean_blog_load_more_button_text_color' => [
+								'type'              => 'ocean-color',
+								'label'             => esc_html__( 'Button Text Color', 'oceanwp' ),
+								'section'           => 'ocean_blog_archive_load_more_section',
+								'transport'         => 'postMessage',
+								'priority'          => 10,
+								'hideLabel'         => false,
+								'showAlpha'         => true,
+								'showPalette'       => true,
+								'active_callback'   => 'oceanwp_cac_blog_archive_pagination_load_more',
+								'sanitize_callback' => 'wp_kses_post',
+								'setting_args'      => [
+									'normal' => [
+										'id'       => 'ocean_blog_load_more_button_text_color',
+										'key'      => 'normal',
+										'label'    => esc_html__( 'Normal', 'oceanwp' ),
+										'selector' => [
+											'.load-more-pagination.load-more-post .button' => 'color'
+										],
+										'attr' => [
+											'transport' => 'postMessage',
+										],
+									],
+									'hover' => [
+										'id'       => 'ocean_blog_load_more_button_text_color_hover',
+										'key'      => 'hover',
+										'label'    => esc_html__( 'Hover', 'oceanwp' ),
+										'selector' => [
+											'.load-more-pagination.load-more-post .button:hover' => 'color'
+										],
+										'attr' => [
+											'transport' => 'postMessage',
+										],
+									],
+								]
+							],
+
+							'ocean_blog_archive_load_more_section_need_help' => [
+								'type'      => 'ocean-content',
+								'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/902-customizer-blog#Infinite-Scroll-Settings-t1c3L/" target="_blank">', '</a>' ),
+								'class'     => 'need-help',
+								'section'   => 'ocean_blog_archive_load_more_section',
 								'transport' => 'postMessage',
 								'priority'  => 10,
 							]
@@ -2345,7 +2506,7 @@ $options = [
 						'hideLabel'         => false,
 						'multiple'          => false,
 						'active_callback'   => 'ocean_cac_blog_single_post_title_has_featured_image',
-						'sanitize_callback' => 'sanitize_key',
+						'sanitize_callback' => 'sanitize_text_field',
 						'bottom'            => 30,
 						'choices'           => [
 							'initial'       => esc_html__( 'Default', 'oceanwp' ),
