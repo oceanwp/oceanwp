@@ -55,6 +55,8 @@ if ( ! class_exists( 'OceanWP_Gutenberg_Editor' ) ) {
 				$links_color       = get_theme_mod( 'ocean_links_color', '#333333' );
 				$links_color_hover = get_theme_mod( 'ocean_links_color_hover', '#13aff0' );
 
+				$gutenberg_css = '';
+
 				// Links color.
 				if ( ! empty( $links_color ) && '#333333' !== $links_color ) {
 					$gutenberg_css .= '.editor-styles-wrapper .block-editor-block-list__layout a{color:' . $links_color . ';}';
