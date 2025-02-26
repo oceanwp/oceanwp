@@ -1,5 +1,5 @@
 <?php
-$diamond_link = "https://oceanwp.org/core-extensions-bundle/";
+$diamond_link = "https://see.oceanwp.org/bundle-pro-upgrade";
 $star_link = "https://wordpress.org/support/theme/oceanwp/reviews/#new-post";
 $help_link = "#help";
 ?>
@@ -13,7 +13,7 @@ $help_link = "#help";
 		</a>
 		<a href="<?php echo esc_url( $star_link ); ?>" target="_blank" class="top-bar-links">
 			<img class="oceanwp-top-panel-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/star.png' ); ?>" />
-		</a>		
+		</a>
 			<a href="<?php echo esc_url( $help_link ); ?>" class="top-bar-links oceanwp-tp-topbar-link">
 			<img class="oceanwp-top-panel-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/life-saver.png' ); ?>" />
 		</a>

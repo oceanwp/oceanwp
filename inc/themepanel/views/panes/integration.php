@@ -5,6 +5,8 @@ $ocean_popup_login_activated                         = oceanwp_theme_panel()->oc
 $upgrade_core_extensions_bundle_text_link            = oceanwp_theme_panel()->upgrade_core_extensions_bundle_text_link();
 $please_install_oe_text_link                         = oceanwp_theme_panel()->please_install_oe_text_link();
 $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->install_oe_upgrade_core_extensions_bundle_text_link();
+$opl_log_version                                     = get_option( 'ocean-popup-login-version' );
+$oew_log_version                                     = get_option( 'ocean-elementor-widgets-version' );
 ?>
 
 <div class="oceanwp-tp-pane-box" id="oceanwp-tp-integration">
@@ -70,24 +72,19 @@ $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->in
 		<?php endif; ?>
 	</div>
 
+	<?php if ( $extra_mode_actived && $ocean_popup_login_activated && version_compare( $opl_log_version, '2.2.1', '>=' )
+		|| $extra_mode_actived && $ocean_elementor_widgets_actived && version_compare( $oew_log_version, '2.4.7', '>=' ) ) : ?>
 	<!-- Cloudflare Turnstile -->
 	<div class="oceanwp-tp-wide-block">
 		<div class="oceanwp-tp-block-outer">
 			<img class="oceanwp-tp-wide-block-image" src="<?php echo esc_url( OCEANWP_THEME_PANEL_URI . '/assets/images/icons/google-recaptcha.png' ); ?>" />
 			<h2 class="oceanwp-tp-block-title"><?php esc_html_e( 'Cloudflare Turnstile', 'oceanwp' ); ?></h2>
 		</div>
-		<?php if ( $extra_mode_actived && $ocean_popup_login_activated || $extra_mode_actived && $ocean_elementor_widgets_actived ) : ?>
-			<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Adds Cloudflare Turnstile.', 'oceanwp' ); ?></h3>
+		<h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Adds Cloudflare Turnstile.', 'oceanwp' ); ?></h3>
 
-			<?php oceanwp_theme_panel()->print_pane( 'integration-cloudflare-turnstile' ); ?>
-
-		<?php else : ?>
-			<h3 class="oceanwp-tp-block-description">
-				<?php esc_html_e( 'Adds Cloudflare Turnstile.', 'oceanwp' ); ?>
-				<?php echo $upgrade_core_extensions_bundle_text_link; ?>
-			</h3>
-		<?php endif; ?>
+		<?php oceanwp_theme_panel()->print_pane( 'integration-cloudflare-turnstile' ); ?>
 	</div>
+	<?php endif; ?>
 
 	<!-- MailChimp -->
 	<div class="oceanwp-tp-wide-block">

@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### _2025.02.26_ - 4.0.6
+- **Added**:: Cloudalre Turnstile: A new method for forms validation.
+- **Added**:: Two new google fonts.
+
 ### _2025.01.27_ - 4.0.5
 - **Added**:: Pagination: New pagination style: Load More.
 - **Added**:: Header: Social Menu: Bluesky option.

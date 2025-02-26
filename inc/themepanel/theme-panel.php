@@ -541,7 +541,7 @@ final class OceanWP_Theme_Panel {
 	 * @return $string
 	 */
 	public function banner_upgrade_link() {
-		return 'https://oceanwp.org/core-extensions-bundle/';
+		return 'https://see.oceanwp.org/bundle-pro-upgrade';
 	}
 
 	/**

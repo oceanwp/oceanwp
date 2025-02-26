@@ -629,7 +629,7 @@ $options = [
 
 	'ocean_copyright_upsell_notice' => [
 		'type'            => 'ocean-content',
-		'isContent'       => owp_render_footer_upsell_notice(),
+		'isContent'       => owp_render_footer_copyright_upsell_notice(),
 		'section'         => 'ocean_footer_bottom',
 		'class'           => 'description',
 		'transport'       => 'postMessage',
