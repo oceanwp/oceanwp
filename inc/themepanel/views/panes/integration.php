@@ -5,8 +5,8 @@ $ocean_popup_login_activated                         = oceanwp_theme_panel()->oc
 $upgrade_core_extensions_bundle_text_link            = oceanwp_theme_panel()->upgrade_core_extensions_bundle_text_link();
 $please_install_oe_text_link                         = oceanwp_theme_panel()->please_install_oe_text_link();
 $install_oe_upgrade_core_extensions_bundle_text_link = oceanwp_theme_panel()->install_oe_upgrade_core_extensions_bundle_text_link();
-$opl_log_version                                     = get_option( 'ocean-popup-login-version' );
-$oew_log_version                                     = get_option( 'ocean-elementor-widgets-version' );
+$opl_log_version                                     = defined( 'OPL_PLUGIN_VERSION' ) ? OPL_PLUGIN_VERSION : '';
+$oew_log_version                                     = defined( 'OWP_ELEMENTOR_VERSION' ) ? OWP_ELEMENTOR_VERSION : '';
 ?>
 
 <div class="oceanwp-tp-pane-box" id="oceanwp-tp-integration">
