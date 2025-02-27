@@ -524,6 +524,8 @@ function oceanwp_google_fonts_array() {
 			'Fruktur',
 			'Fugaz One',
 			'Fuggles',
+			'Funnel Sans',
+			'Funnel Display',
 			'Fustat',
 			'Fuzzy Bubbles',
 			'GFS Didot',

@@ -1,5 +1,11 @@
 # OceanWP Changelog
 
+### _2025.02.27_ - 4.0.6
+- **Added**:: Turnstile integration for Popup Login and Elementor Widgets.
+- **Added**:: Google Fonts: Funnel Sans and Funnel Display.
+- **Updated**:: Template: woocommerce/single-product/product-image.php (version number for compatibility with WooCommerce 9.7).
+- **Fixed**:: PHP Warning: Undefined variable $gutenberg_css in ...inc/third/class-gutenberg.php** on line 60.
+
 ### _2025.01.27_ - 4.0.5
 - **Added**:: Pagination: New pagination style: Load More.
 - **Added**:: Header: Social Menu: Bluesky option.
