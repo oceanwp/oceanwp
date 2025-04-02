@@ -413,16 +413,17 @@ final class OCEANWP_Theme_Class {
 	 */
 	public static function oceanwp_theme_log() {
 
+		$parent_theme  = wp_get_theme()->parent();
 		$current_theme = wp_get_theme();
 		$theme_version = '';
 
-		if ($current_theme->parent()) {
-			$theme_version = OCEANWP_THEME_VERSION;
+		if ( ! empty( $parent_theme) ) {
+			$theme_version = $parent_theme->get('Version');
 		} else {
 			$theme_version = $current_theme->get('Version');
 		}
 
-		if (false === get_option( 'oceanwp_theme_installed_version')) {
+		if ( ! get_option( 'oceanwp_theme_installed_version')) {
 			update_option( 'oceanwp_theme_installed_version', $theme_version );
 		}
 	}
