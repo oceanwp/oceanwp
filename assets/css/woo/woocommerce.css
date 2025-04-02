@@ -658,12 +658,11 @@
 .woocommerce form .show-password-input {
   position: absolute;
   right: 0.7em;
-  top: 0.7em;
-  cursor: pointer;
   background: none;
   border: unset;
   margin: 0;
-  line-height: normal;
+  padding: 0;
+  cursor: pointer;
 }
 .woocommerce form .show-password-input::after {
   font-family: "Font Awesome 6 Free";
