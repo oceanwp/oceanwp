@@ -53,6 +53,9 @@ final class OCEANWP_Theme_Class {
 		// Setup theme => add_theme_support, register_nav_menus, load_theme_textdomain, etc.
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'theme_setup' ), 10 );
 
+		// Fires after the theme is switched.
+		add_action( 'switch_theme', array( 'OCEANWP_Theme_Class', 'theme_switch' ) );
+
 		// register sidebar widget areas.
 		add_action( 'widgets_init', array( 'OCEANWP_Theme_Class', 'register_sidebars' ) );
 
@@ -390,6 +393,39 @@ final class OCEANWP_Theme_Class {
 		// Declare support for selective refreshing of widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+		// Theme log.
+		self::oceanwp_theme_log();
+	}
+
+	/**
+	 * Theme Switch
+	 *
+	 * @since   4.0.7
+	 */
+	public static function theme_switch() {
+		self::oceanwp_theme_log();
+	}
+
+	/**
+	 * Log the installed version
+	 *
+	 * @since 4.0.7
+	 */
+	public static function oceanwp_theme_log() {
+
+		$parent_theme  = wp_get_theme()->parent();
+		$current_theme = wp_get_theme();
+		$theme_version = '';
+
+		if ( ! empty( $parent_theme) ) {
+			$theme_version = $parent_theme->get('Version');
+		} else {
+			$theme_version = $current_theme->get('Version');
+		}
+
+		if ( ! get_option( 'oceanwp_theme_installed_version')) {
+			update_option( 'oceanwp_theme_installed_version', $theme_version );
+		}
 	}
 
 	/**

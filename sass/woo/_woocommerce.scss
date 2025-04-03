@@ -627,8 +627,11 @@
 		.show-password-input {
 			position: absolute;
 			right: 0.7em;
-			top: 0.7em;
-			cursor: pointer;
+      background: none;
+      border: unset;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
 		}
 
 		.show-password-input::after {
@@ -1954,7 +1957,7 @@
     margin-left: 0;
   }
   button {
-    width: 100%;
+    width: auto;
     padding-top: 16px;
     padding-bottom: 16px;
   }

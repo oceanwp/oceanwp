@@ -658,7 +658,10 @@
 .woocommerce form .show-password-input {
   position: absolute;
   right: 0.7em;
-  top: 0.7em;
+  background: none;
+  border: unset;
+  margin: 0;
+  padding: 0;
   cursor: pointer;
 }
 .woocommerce form .show-password-input::after {
@@ -1988,7 +1991,7 @@
   margin-left: 0;
 }
 .woocommerce .lost_reset_password button {
-  width: 100%;
+  width: auto;
   padding-top: 16px;
   padding-bottom: 16px;
 }

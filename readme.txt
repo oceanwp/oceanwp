@@ -1,7 +1,7 @@
 == OceanWP ==
 Contributors: oceanwp
 Tested up to: 6.7.2
-Stable tag: 4.0.6
+Stable tag: 4.0.7
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -54,7 +54,7 @@ Source: https://stocksnap.io/photo/fireworks-celebration-R4GSFACUEC is by Travel
 
 == Copyright ==
 
-OceanWP WordPress Theme, Copyright 2021 OceanWP.org
+OceanWP WordPress Theme, Copyright 2016-2025 OceanWP LLC
 OceanWP is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
