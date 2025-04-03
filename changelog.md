@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### _2025.04.03_ - 4.0.7
+- **Added**:: OceanWP version constant for future updates.
+- **Added**:: Compatibility: WooCommerce: View password button (the eye icon) styling. Previously, this element was a pseudo element.
+- **Updated**:: OceanWP Copyright information.
+
 ### _2025.02.27_ - 4.0.6
 - **Added**:: Turnstile integration for Popup Login and Elementor Widgets.
 - **Added**:: Google Fonts: Funnel Sans and Funnel Display.

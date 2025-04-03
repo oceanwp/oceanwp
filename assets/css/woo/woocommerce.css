@@ -1991,7 +1991,7 @@
   margin-left: 0;
 }
 .woocommerce .lost_reset_password button {
-  width: 100%;
+  width: auto;
   padding-top: 16px;
   padding-bottom: 16px;
 }

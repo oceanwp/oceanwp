@@ -54,7 +54,7 @@ Source: https://stocksnap.io/photo/fireworks-celebration-R4GSFACUEC is by Travel
 
 == Copyright ==
 
-OceanWP WordPress Theme, Copyright 2021 OceanWP.org
+OceanWP WordPress Theme, Copyright 2016-2025 OceanWP LLC
 OceanWP is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
