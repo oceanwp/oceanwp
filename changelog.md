@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### _2025.04.21_ - 4.0.8
+- **Updated**:: Compatibility: WordPress version number.
+- **Fixed**:: Potential vulnerability patched: Report by Wordfence from APR 11th 2025. Related to Ocean Extra 1/3 report patch.
+
 ### _2025.04.03_ - 4.0.7
 - **Added**:: OceanWP version constant for future updates.
 - **Added**:: Compatibility: WooCommerce: View password button (the eye icon) styling. Previously, this element was a pseudo element.
