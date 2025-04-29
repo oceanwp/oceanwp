@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
 				},
 				success: function (response) {
 					if (response.data != '') {
-						$('.owp-notification-content').append(response.data);
+						$('.owp-notification-content-wrap').append(response.data);
 					}
 				},
 				complete: function () {
@@ -55,6 +55,22 @@ jQuery(document).ready(function ($) {
 				$(evt.target).text(owp_notification_i18n.activating);
 			} else if ($el.data('action') == 'install_activate') {
 				$(evt.target).text(owp_notification_i18n.installing_activating);
+			} else if ($el.data('action') == 'install_activate_setup_wizard') {
+				$(evt.target).text(owp_notification_i18n.installing_activating);
+			}
+
+			if (
+				$el.data('action') === 'activate' ||
+				$el.data('action') === 'install_activate' ||
+				$el.data('action') === 'skip_only'
+			) {
+				$.ajax(ajaxurl, {
+					type: 'POST',
+					data: {
+						action: 'oceanwp_dismissed_notice',
+						action_type: $el.data('action'),
+					},
+				});
 			}
 
 			$(evt.target).append('<i className="dashicons dashicons-update" />');
@@ -68,7 +84,29 @@ jQuery(document).ready(function ($) {
 				success: function (response) {
 					if (response.success) {
 						if (response.data.status === 'active') {
-							location.assign(response.data.pluginUrl)
+
+							if ($el.data('action') == 'install_activate_setup_wizard' || $el.data('action') == 'activate_setup_wizard') {
+
+								const newToken = Math.random().toString(36).slice(2, 11);
+
+								const currentState = {};
+
+								localStorage.setItem('wizardState', JSON.stringify({
+									// ...currentState,
+									isOpen: true,
+									wizardToken: newToken,
+								}));
+
+								const newUrl = new URL(response.data.pluginUrl, window.location.origin);
+								newUrl.searchParams.set("onboarding", "active");
+								newUrl.searchParams.set("_uid", newToken);
+
+								window.history.replaceState(null, "", newUrl.toString());
+
+								location.assign(newUrl.toString());
+							} else {
+								location.assign(response.data.pluginUrl)
+							}
 						}
 					}
 

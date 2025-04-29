@@ -1178,6 +1178,7 @@ if ( ! function_exists( 'owp_fs' ) ) {
 							'contact' => false,
 							'support' => false,
 						),
+						'anonymous_mode' => true,
 						'bundle_license_auto_activation' => true,
 						'navigation'                     => 'menu',
 						'is_org_compliant'               => true,

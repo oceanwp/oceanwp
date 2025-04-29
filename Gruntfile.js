@@ -45,6 +45,7 @@ module.exports = function (grunt) {
           [`${outputsPath}/ow-load-more.min.js`]: `${scriptsPath}/ow-load-more.js`,
           [`${outputsPath}/ow-slider.min.js`]: `${scriptsPath}/ow-slider.js`,
           [`${outputsPath}/ow-lightbox.min.js`]: `${scriptsPath}/ow-lightbox.js`,
+          ['./inc/activation-notice/assets/js/notice.min.js']: './inc/activation-notice/assets/js/notice.js',
         },
         options: {
           transform: [["babelify", { presets: ["@babel/preset-env"] }]],
@@ -98,6 +99,7 @@ module.exports = function (grunt) {
           [`${outputsPath}/ow-load-more.min.js`]: `${outputsPath}/ow-load-more.min.js`,
           [`${outputsPath}/ow-slider.min.js`]: `${outputsPath}/ow-slider.min.js`,
           [`${outputsPath}/ow-lightbox.min.js`]: `${outputsPath}/ow-lightbox.min.js`,
+          ['./inc/activation-notice/assets/js/notice.min.js']: './inc/activation-notice/assets/js/notice.min.js',
         },
       },
       dev: {
@@ -290,6 +292,7 @@ module.exports = function (grunt) {
           "assets/css/learndash/learndash.css": "sass/learndash.scss",
           "assets/css/style.css": "sass/stylesheet.scss",
           'assets/css/blog/blog-post-headers.css': 'sass/blog-post-headers.scss',
+          'inc/activation-notice/assets/css/notice.css': 'inc/activation-notice/assets/css/notice.scss',
         },
       },
       prod: {
@@ -317,6 +320,7 @@ module.exports = function (grunt) {
           "assets/css/learndash/learndash.min.css": "sass/learndash.scss",
           "assets/css/style.min.css": "sass/stylesheet.scss",
           'assets/css/blog/blog-post-headers.min.css': 'sass/blog-post-headers.scss',
+          'inc/activation-notice/assets/css/notice.min.css': 'inc/activation-notice/assets/css/notice.scss',
         },
       },
     },

@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 4.0.8\n"
+"Project-Id-Version: OceanWP 4.0.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-21T08:18:13+00:00\n"
+"POT-Creation-Date: 2025-04-29T06:41:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: oceanwp\n"
@@ -206,67 +206,83 @@ msgstr ""
 msgid "Widgets in this area are used in the fourth footer region."
 msgstr ""
 
-#: inc/activation-notice/api.php:21
-msgid "Activate Ocean Extra"
+#: inc/activation-notice/api.php:74
+#: inc/activation-notice/api.php:87
+#: inc/activation-notice/api.php:103
+#: inc/activation-notice/api.php:120
+#: inc/activation-notice/api.php:129
+#: inc/activation-notice/api.php:141
+msgid "Launch the Setup Wizard"
 msgstr ""
 
-#: inc/activation-notice/api.php:25
-msgid "Install & Activate Ocean Extra"
+#: inc/activation-notice/api.php:78
+#: inc/activation-notice/api.php:91
+msgid "Install free power options with Ocean Extra only"
 msgstr ""
 
-#: inc/activation-notice/template.php:30
+#: inc/activation-notice/api.php:107
+#: inc/activation-notice/api.php:145
+msgid "No thanks, I'm building from scratch"
+msgstr ""
+
+#: inc/activation-notice/api.php:124
+msgid "Activate Ocean Extra to unlock OceanWP power options"
+msgstr ""
+
+#: inc/activation-notice/api.php:133
+msgid "Highly recommended: Unlock free power options with Ocean Extra"
+msgstr ""
+
+#: inc/activation-notice/template.php:70
 msgid "Activating..."
 msgstr ""
 
-#: inc/activation-notice/template.php:31
+#: inc/activation-notice/template.php:71
 msgid "Installing & activating..."
 msgstr ""
 
-#: inc/activation-notice/template.php:76
+#: inc/activation-notice/template.php:168
 msgid "Dismiss this notice."
 msgstr ""
 
-#: inc/activation-notice/template.php:85
-msgid "Awesome Possum - You're Amazing!"
+#: inc/activation-notice/template.php:196
+msgid "Thanks for choosing OceanWP. Excellent choice! 🌟"
 msgstr ""
 
-#: inc/activation-notice/template.php:86
-msgid "Thank you for installing the OceanWP theme."
+#: inc/activation-notice/template.php:197
+msgid "It's like Magic! Start Your Website in Minutes ✨"
 msgstr ""
 
-#: inc/activation-notice/template.php:88
-msgid "We highly recommend you to install and activate the"
+#: inc/activation-notice/template.php:199
+msgid "Save time and don't worry about design."
 msgstr ""
 
-#: inc/activation-notice/template.php:89
-#: inc/themepanel/includes/plugins-compatibility.php:86
-#: inc/themepanel/includes/plugins-compatibility.php:171
-#: inc/themepanel/views/panes/home.php:224
-msgid "Ocean Extra"
+#: inc/activation-notice/template.php:200
+msgid "Launch the Setup Wizard, choose one of our full site templates and get started in a matter of minutes."
 msgstr ""
 
-#: inc/activation-notice/template.php:91
-msgid "This plugin will unlock new power tools to help you build an amazing website. Get access to:"
+#: inc/activation-notice/template.php:201
+msgid "All parts are customizable and adjustable for you to make them your very own."
 msgstr ""
 
-#: inc/activation-notice/template.php:93
-msgid "freemium website template demos,"
+#: inc/activation-notice/template.php:210
+msgid "Hi, there! 👋 We're here to help"
 msgstr ""
 
-#: inc/activation-notice/template.php:94
-msgid "WordPress widgets,"
+#: inc/activation-notice/template.php:211
+msgid "Launch the Setup Wizard 🧙"
 msgstr ""
 
-#: inc/activation-notice/template.php:95
-msgid "Metabox settings to control pages and posts individually,"
+#: inc/activation-notice/template.php:213
+msgid "The Setup Wizard is here to help you start a website in minutes."
 msgstr ""
 
-#: inc/activation-notice/template.php:96
-msgid "ability to create and use custom templates,"
+#: inc/activation-notice/template.php:214
+msgid "Check out our library of full site templates, and choose one to get started fast."
 msgstr ""
 
-#: inc/activation-notice/template.php:97
-msgid "and much, much more."
+#: inc/activation-notice/template.php:215
+msgid "Then simply adjust anything and everything, or start adding content."
 msgstr ""
 
 #: inc/breadcrumbs.php:446
@@ -522,10 +538,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7482
 #: inc/customizer/options/woocommerce.php:7483
 #: inc/customizer/assets/dist/index.js:5
-#: inc/customizer/customizer-src/components/spacing-two/index.js:295
-#: inc/customizer/customizer-src/components/spacing/index.js:622
-#: inc/customizer/customizer-src/components/spacing/index copy.js:358
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:358
 msgid "Left"
 msgstr ""
 
@@ -560,9 +572,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:2174
 #: inc/third/class-lifterlms.php:307
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1044
-#: inc/customizer/customizer-src/components/typography/font-family.js:1161
-#: inc/customizer/customizer-src/components/typography/font-family.js:1221
 msgid "Default"
 msgstr ""
 
@@ -1567,10 +1576,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7492
 #: inc/customizer/options/woocommerce.php:7493
 #: inc/customizer/assets/dist/index.js:5
-#: inc/customizer/customizer-src/components/spacing-two/index.js:257
-#: inc/customizer/customizer-src/components/spacing/index.js:596
-#: inc/customizer/customizer-src/components/spacing/index copy.js:318
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:318
 msgid "Right"
 msgstr ""
 
@@ -1671,10 +1676,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:2712
 #: inc/customizer/options/woocommerce.php:2740
 #: inc/customizer/assets/dist/index.js:5
-#: inc/customizer/customizer-src/components/spacing-two/index.js:238
-#: inc/customizer/customizer-src/components/spacing/index.js:583
-#: inc/customizer/customizer-src/components/spacing/index copy.js:298
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:298
 msgid "Top"
 msgstr ""
 
@@ -1794,10 +1795,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:2726
 #: inc/customizer/options/woocommerce.php:2754
 #: inc/customizer/assets/dist/index.js:5
-#: inc/customizer/customizer-src/components/spacing-two/index.js:276
-#: inc/customizer/customizer-src/components/spacing/index.js:609
-#: inc/customizer/customizer-src/components/spacing/index copy.js:338
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:338
 msgid "Bottom"
 msgstr ""
 
@@ -2466,7 +2463,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:9686
 #: inc/customizer/options/woocommerce.php:9724
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1162
 msgid "Normal"
 msgstr ""
 
@@ -2687,7 +2683,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:6847
 #: inc/customizer/options/woocommerce.php:7220
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1212
 msgid "Font Family"
 msgstr ""
 
@@ -2836,7 +2831,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7235
 #: inc/customizer/options/woocommerce.php:7242
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1237
 msgid "Font Weight"
 msgstr ""
 
@@ -3036,7 +3030,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7264
 #: inc/customizer/options/woocommerce.php:7271
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-format.js:548
 msgid "Font Size"
 msgstr ""
 
@@ -3185,7 +3178,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7294
 #: inc/customizer/options/woocommerce.php:7301
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-format.js:586
 msgid "Letter Spacing"
 msgstr ""
 
@@ -3334,7 +3326,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7324
 #: inc/customizer/options/woocommerce.php:7331
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-format.js:567
 msgid "Line Height"
 msgstr ""
 
@@ -3483,7 +3474,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7353
 #: inc/customizer/options/woocommerce.php:7360
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-format.js:606
 msgid "Text Transform"
 msgstr ""
 
@@ -3536,7 +3526,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:6993
 #: inc/customizer/options/woocommerce.php:7367
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-format.js:633
 msgid "Text Decoration"
 msgstr ""
 
@@ -4098,7 +4087,6 @@ msgstr ""
 #: inc/customizer/options/styles-and-settings.php:2418
 #: inc/customizer/options/topbar.php:49
 #: inc/customizer/options/woocommerce.php:678
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:65
 msgid "Visibility"
 msgstr ""
 
@@ -4406,8 +4394,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:5464
 #: inc/third/class-lifterlms.php:304
 #: inc/customizer/assets/dist/index.js:5
-#: inc/customizer/customizer-src/controls-wrapper/radio-image/index.js:63
-#: inc/customizer/customizer-src/controls/radio-image/radio-image.js:48
 msgid "Layout"
 msgstr ""
 
@@ -4475,7 +4461,6 @@ msgstr ""
 #: inc/customizer/options/header.php:655
 #: inc/customizer/options/topbar.php:86
 #: inc/customizer/options/woocommerce.php:2281
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:87
 msgid "Elements Positioning"
 msgstr ""
 
@@ -4674,8 +4659,6 @@ msgstr ""
 #: inc/customizer/options/woocommerce.php:7047
 #: inc/customizer/options/woocommerce.php:8689
 #: inc/customizer/assets/dist/index.js:2
-#: inc/customizer/customizer-src/components/typography/font-colors.js:130
-#: inc/customizer/customizer-src/components/typography/font-colors.js:179
 msgid "Color"
 msgstr ""
 
@@ -5877,8 +5860,6 @@ msgstr ""
 #: partials/mobile/mobile-icon.php:45
 #: inc/customizer/assets/dist/index.js:1
 #: inc/customizer/assets/dist/index.js:3
-#: inc/customizer/customizer-src/components/color-picker/index.js:133
-#: inc/customizer/customizer-src/components/typography/index.js:94
 msgid "Close"
 msgstr ""
 
@@ -6776,7 +6757,6 @@ msgid "Enable Top Bar"
 msgstr ""
 
 #: inc/customizer/options/topbar.php:27
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:57
 msgid "Enable Top Bar Full Width"
 msgstr ""
 
@@ -6801,7 +6781,6 @@ msgid "You can display regular text, HTML and shortcodes; or, you can replace th
 msgstr ""
 
 #: inc/customizer/options/topbar.php:260
-#: inc/customizer/customizer-src/controls/rich-text/rich-text-editor.js:177
 msgid "Add your content here"
 msgstr ""
 
@@ -8537,8 +8516,6 @@ msgstr ""
 #. translators: %s: post reading time.
 #. translators: %s: list of post categories.
 #. translators: %s: list of post tags.
-#. translators: Unit type
-#. translators: option name
 #: inc/template-helpers.php:73
 #: inc/template-helpers.php:79
 #: inc/template-helpers.php:235
@@ -8549,12 +8526,6 @@ msgstr ""
 #: inc/customizer/assets/dist/index.js:2
 #: inc/customizer/assets/dist/index.js:3
 #: inc/customizer/assets/dist/index.js:5
-#: inc/customizer/customizer-src/components/device-type/index.js:70
-#: inc/customizer/customizer-src/components/radio-image/index.js:51
-#: inc/customizer/customizer-src/components/radio-image/index copy.js:53
-#: inc/customizer/customizer-src/components/radio-image/index copy working.js:51
-#: inc/customizer/customizer-src/components/typography/font-format.js:611
-#: inc/customizer/customizer-src/components/typography/font-format.js:640
 msgid "%s"
 msgstr ""
 
@@ -8628,6 +8599,12 @@ msgstr ""
 #: inc/themepanel/includes/plugins-compatibility.php:47
 #: inc/themepanel/views/panes/useful-plugins.php:132
 msgid "+ many, many more options and benefits."
+msgstr ""
+
+#: inc/themepanel/includes/plugins-compatibility.php:86
+#: inc/themepanel/includes/plugins-compatibility.php:171
+#: inc/themepanel/views/panes/home.php:224
+msgid "Ocean Extra"
 msgstr ""
 
 #: inc/themepanel/includes/plugins-compatibility.php:87
@@ -10234,187 +10211,73 @@ msgid "Share by email (opens in a new tab)"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/color-picker/button.js:50
-#: inc/customizer/customizer-src/components/color-picker/index.js:93
-#: inc/customizer/customizer-src/components/color-picker/index copy.js:49
 msgid "Color picker"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/color-picker/index.js:155
-#: inc/customizer/customizer-src/components/color-picker/index.js:158
-#: inc/customizer/customizer-src/components/color-picker/index copy.js:107
-#: inc/customizer/customizer-src/components/color-picker/index copy.js:110
 msgid "Reset Color"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/color-picker/index.js:162
-#: inc/customizer/customizer-src/components/color-picker/index copy.js:114
 msgid "Reset color"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/controls-wrapper/color-picker/index.js:94
-#: inc/customizer/customizer-src/controls/color-picker/color-picker.js:88
-#: inc/customizer/customizer-src/controls/color-picker/color-picker copy.js:47
 msgid "Choose Color"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1049
 msgid "Custom Fonts"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1070
 msgid "System Fonts"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1089
 msgid "Google Fonts"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:1
-#: inc/customizer/customizer-src/components/typography/font-family.js:1163
 msgid "Bold"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:2
-#: inc/customizer/customizer-src/components/typography/font-colors.js:148
 msgid "Hover Color"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:2
-#: inc/customizer/customizer-src/components/typography/font-colors.js:176
 msgid "Back"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:2
-#: inc/customizer/customizer-src/components/device-type/index.js:64
 msgid "Device"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:4
-#: inc/customizer/customizer-src/controls-wrapper/image-picker/index.js:146
-#: inc/customizer/customizer-src/controls/image-picker/image-picker.js:145
 msgid "Replace"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:4
-#: inc/customizer/customizer-src/controls-wrapper/image-picker/index.js:146
-#: inc/customizer/customizer-src/controls/image-picker/image-picker.js:145
 msgid "Add"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:4
-#: inc/customizer/customizer-src/controls-wrapper/image-picker/index.js:155
-#: inc/customizer/customizer-src/controls/image-picker/image-picker.js:154
 msgid "Remove"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:5
-#: inc/customizer/customizer-src/components/spacing-two/index.js:300
-#: inc/customizer/customizer-src/components/spacing/index.js:627
-#: inc/customizer/customizer-src/components/spacing/index copy.js:363
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:363
 msgid "Unsync"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:5
-#: inc/customizer/customizer-src/components/spacing-two/index.js:300
-#: inc/customizer/customizer-src/components/spacing-two/index.js:313
-#: inc/customizer/customizer-src/components/spacing/index.js:627
-#: inc/customizer/customizer-src/components/spacing/index.js:639
-#: inc/customizer/customizer-src/components/spacing/index copy.js:363
-#: inc/customizer/customizer-src/components/spacing/index copy.js:377
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:363
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:376
 msgid "Sync"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:5
-#: inc/customizer/customizer-src/components/spacing/index.js:630
 msgid "Sync Spacing"
 msgstr ""
 
 #: inc/customizer/assets/dist/index.js:5
-#: inc/customizer/customizer-src/controls-wrapper/sortable/index.js:112
-#: inc/customizer/customizer-src/controls-wrapper/sortable/sortable.js:104
-#: inc/customizer/customizer-src/controls-wrapper/sortable/sortable copy.js:88
-#: inc/customizer/customizer-src/controls/section-settings/section-settings.js:47
-#: inc/customizer/customizer-src/controls/sortable/sortable.js:102
-#: inc/customizer/customizer-src/controls/sortable/sortable copy.js:88
 msgid "Elements Position"
-msgstr ""
-
-#. translators: Spacing aria-label
-#: inc/customizer/customizer-src/components/spacing-two/index.js:232
-#: inc/customizer/customizer-src/components/spacing/index copy.js:291
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:291
-msgid "%s top"
-msgstr ""
-
-#. translators: Spacing aria-label
-#: inc/customizer/customizer-src/components/spacing-two/index.js:251
-#: inc/customizer/customizer-src/components/spacing/index copy.js:311
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:311
-msgid "%s right"
-msgstr ""
-
-#. translators: Spacing aria-label
-#: inc/customizer/customizer-src/components/spacing-two/index.js:270
-#: inc/customizer/customizer-src/components/spacing/index copy.js:331
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:331
-msgid "%s bottom"
-msgstr ""
-
-#. translators: Spacing aria-label
-#: inc/customizer/customizer-src/components/spacing-two/index.js:289
-#: inc/customizer/customizer-src/components/spacing/index copy.js:351
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:351
-msgid "%s left"
-msgstr ""
-
-#: inc/customizer/customizer-src/components/spacing-two/index.js:304
-#: inc/customizer/customizer-src/components/spacing/index copy.js:368
-#: inc/customizer/customizer-src/ui-controls/spacing/spacing.js:367
-msgid "Sync %s"
-msgstr ""
-
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:48
-msgid "Display Top Bar"
-msgstr ""
-
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:69
-msgid "Show On All Devices"
-msgstr ""
-
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:70
-msgid "Hide On Tablet"
-msgstr ""
-
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:71
-msgid "Hide On Mobile"
-msgstr ""
-
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:72
-msgid "Hide On Tablet & Mobile"
-msgstr ""
-
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:82
-msgid "General Options"
-msgstr ""
-
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:91
-msgid "Left Content And Right Social"
-msgstr ""
-
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:92
-msgid "Left Social And Right Content"
-msgstr ""
-
-#: inc/customizer/customizer-src/controls/topbar/topbar.js:93
-msgid "Centered Content And Social"
 msgstr ""
