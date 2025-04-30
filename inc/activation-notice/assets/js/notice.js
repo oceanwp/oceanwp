@@ -7,10 +7,10 @@ jQuery(document).ready(function ($) {
 
 		init: function () {
 
-			if ($('.owp-ocean-extra-plugin-inner').length) {
+			if ($('.notice-ocean-onboarding .owp-ocean-extra-plugin-inner').length) {
 				this.render_actions();
-				$(document).on('click', '.owp-ocean-extra-plugin-inner .notice-dismiss', this.dismiss_notice);
-				$(document).on('click', '.owp-ocean-extra-plugin-inner .notice-actions button', this.main_action);
+				$(document).on('click', '.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .notice-dismiss', this.dismiss_notice);
+				$(document).on('click', '.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .notice-actions button', this.main_action);
 			}
 
 		},
@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
 				},
 				success: function (response) {
 					if (response.data != '') {
-						$('.owp-notification-content-wrap').append(response.data);
+						$('.notice-ocean-onboarding .owp-notification-content-wrap').append(response.data);
 					}
 				},
 				complete: function () {
@@ -34,7 +34,7 @@ jQuery(document).ready(function ($) {
 
 		dismiss_notice: function (evt) {
 
-			$(evt.target).closest('.notice-ocean-extra-plugin').remove();
+			$(evt.target).closest('.notice-ocean-onboarding.notice-ocean-extra-plugin').remove();
 
 			$.ajax(ajaxurl, {
 				type: 'POST',
