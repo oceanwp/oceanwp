@@ -190,8 +190,8 @@ function oceancp_output_ocean_extra_notice() {
 function ocean_first_notice_content() {
 	?>
 
-	<span class="notice-subheading"><?php esc_html_e( 'Thanks for choosing OceanWP. Excellent choice! 🌟', 'oceanwp' ); ?></span>
-	<h2><?php esc_html_e( 'It\'s like Magic! Start Your Website in Minutes ✨', 'oceanwp' ); ?></h2>
+	<span class="notice-subheading"><?php esc_html_e( 'Thanks for choosing OceanWP. Excellent choice! &#x1F31F;', 'oceanwp' ); ?></span>
+	<h2><?php esc_html_e( 'It\'s like Magic! Start Your Website in Minutes &#x2728;', 'oceanwp' ); ?></h2>
 	<p>
 		<?php esc_html_e( 'Save time and don\'t worry about design.', 'oceanwp' ); ?><br>
 		<?php esc_html_e( 'Launch the Setup Wizard, choose one of our full site templates and get started in a matter of minutes.', 'oceanwp' ); ?><br>
@@ -204,8 +204,8 @@ function ocean_first_notice_content() {
 function ocean_second_notice_content() {
 	?>
 
-	<span class="notice-subheading"><?php esc_html_e( 'Hi, there! 👋 We\'re here to help', 'oceanwp' ); ?></span>
-	<h2><?php esc_html_e( 'Launch the Setup Wizard 🧙', 'oceanwp' ); ?></h2>
+	<span class="notice-subheading"><?php esc_html_e( 'Hi, there! &#x1F44B; We\'re here to help', 'oceanwp' ); ?></span>
+	<h2><?php esc_html_e( 'Launch the Setup Wizard &#x1F9D9;', 'oceanwp' ); ?></h2>
 	<p>
 		<?php esc_html_e( 'The Setup Wizard is here to help you start a website in minutes.', 'oceanwp' ); ?><br>
 		<?php esc_html_e( 'Check out our library of full site templates, and choose one to get started fast.', 'oceanwp' ); ?><br>
@@ -214,13 +214,6 @@ function ocean_second_notice_content() {
 
 	<?php
 }
-
-
-
-
-
-
-
 
 function oceancp_output_ocean_extra_notice_panel_enqueue_scripts( $hook ) {
 	if ( ! apply_filters(
