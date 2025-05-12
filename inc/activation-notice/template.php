@@ -177,7 +177,7 @@ function oceancp_output_ocean_extra_notice() {
 				?>
 			</div>
 			<div class="owp-notification-content-image">
-				<img src="<?php echo esc_url( OCEANWP_INC_DIR_URI . '/activation-notice/assets/img/launch-wizard.png' ); ?>" />
+				<img src="<?php echo esc_url( OCEANWP_INC_DIR_URI . '/activation-notice/assets/img/onboarding-notice-banner.jpg' ); ?>" />
 			</div>
 		</div>
 	</div>
@@ -194,7 +194,7 @@ function ocean_first_notice_content() {
 	<h2><?php esc_html_e( 'It\'s like Magic! Start Your Website in Minutes &#x2728;', 'oceanwp' ); ?></h2>
 	<p>
 		<?php esc_html_e( 'Save time and don\'t worry about design.', 'oceanwp' ); ?><br>
-		<?php esc_html_e( 'Launch the Setup Wizard, choose one of our full site templates and get started in a matter of minutes.', 'oceanwp' ); ?><br>
+		<?php esc_html_e( 'Launch the Setup Wizard, pick a stunning full site template, and watch your site come to life effortlessly.', 'oceanwp' ); ?><br>
 		<?php esc_html_e( 'All parts are customizable and adjustable for you to make them your very own.', 'oceanwp' ); ?><br>
 	</p>
 

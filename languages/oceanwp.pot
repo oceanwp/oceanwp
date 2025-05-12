@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-30T11:13:29+00:00\n"
+"POT-Creation-Date: 2025-05-12T08:57:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: oceanwp\n"
@@ -242,26 +242,26 @@ msgid "Install & Activate Ocean Extra"
 msgstr ""
 
 #: inc/activation-notice/template.php:68
-#: inc/activation-notice/template.php:259
+#: inc/activation-notice/template.php:252
 msgid "Activating..."
 msgstr ""
 
 #: inc/activation-notice/template.php:69
-#: inc/activation-notice/template.php:260
+#: inc/activation-notice/template.php:253
 msgid "Installing & activating..."
 msgstr ""
 
 #: inc/activation-notice/template.php:165
-#: inc/activation-notice/template.php:312
+#: inc/activation-notice/template.php:305
 msgid "Dismiss this notice."
 msgstr ""
 
 #: inc/activation-notice/template.php:193
-msgid "Thanks for choosing OceanWP. Excellent choice! 🌟"
+msgid "Thanks for choosing OceanWP. Excellent choice! &#x1F31F;"
 msgstr ""
 
 #: inc/activation-notice/template.php:194
-msgid "It's like Magic! Start Your Website in Minutes ✨"
+msgid "It's like Magic! Start Your Website in Minutes &#x2728;"
 msgstr ""
 
 #: inc/activation-notice/template.php:196
@@ -269,7 +269,7 @@ msgid "Save time and don't worry about design."
 msgstr ""
 
 #: inc/activation-notice/template.php:197
-msgid "Launch the Setup Wizard, choose one of our full site templates and get started in a matter of minutes."
+msgid "Launch the Setup Wizard, pick a stunning full site template, and watch your site come to life effortlessly."
 msgstr ""
 
 #: inc/activation-notice/template.php:198
@@ -277,11 +277,11 @@ msgid "All parts are customizable and adjustable for you to make them your very 
 msgstr ""
 
 #: inc/activation-notice/template.php:207
-msgid "Hi, there! 👋 We're here to help"
+msgid "Hi, there! &#x1F44B; We're here to help"
 msgstr ""
 
 #: inc/activation-notice/template.php:208
-msgid "Launch the Setup Wizard 🧙"
+msgid "Launch the Setup Wizard &#x1F9D9;"
 msgstr ""
 
 #: inc/activation-notice/template.php:210
@@ -296,46 +296,46 @@ msgstr ""
 msgid "Then simply adjust anything and everything, or start adding content."
 msgstr ""
 
-#: inc/activation-notice/template.php:321
+#: inc/activation-notice/template.php:314
 msgid "Awesome Possum - You're Amazing!"
 msgstr ""
 
-#: inc/activation-notice/template.php:322
+#: inc/activation-notice/template.php:315
 msgid "Thank you for installing the OceanWP theme."
 msgstr ""
 
-#: inc/activation-notice/template.php:324
+#: inc/activation-notice/template.php:317
 msgid "We highly recommend you to install and activate the"
 msgstr ""
 
-#: inc/activation-notice/template.php:325
+#: inc/activation-notice/template.php:318
 #: inc/themepanel/includes/plugins-compatibility.php:86
 #: inc/themepanel/includes/plugins-compatibility.php:171
 #: inc/themepanel/views/panes/home.php:224
 msgid "Ocean Extra"
 msgstr ""
 
-#: inc/activation-notice/template.php:327
+#: inc/activation-notice/template.php:320
 msgid "This plugin will unlock new power tools to help you build an amazing website. Get access to:"
 msgstr ""
 
-#: inc/activation-notice/template.php:329
+#: inc/activation-notice/template.php:322
 msgid "freemium website template demos,"
 msgstr ""
 
-#: inc/activation-notice/template.php:330
+#: inc/activation-notice/template.php:323
 msgid "WordPress widgets,"
 msgstr ""
 
-#: inc/activation-notice/template.php:331
+#: inc/activation-notice/template.php:324
 msgid "Metabox settings to control pages and posts individually,"
 msgstr ""
 
-#: inc/activation-notice/template.php:332
+#: inc/activation-notice/template.php:325
 msgid "ability to create and use custom templates,"
 msgstr ""
 
-#: inc/activation-notice/template.php:333
+#: inc/activation-notice/template.php:326
 msgid "and much, much more."
 msgstr ""
 
