@@ -726,6 +726,7 @@ final class OCEANWP_Theme_Class {
 			'verticalHeaderTarget'  => $vh_target,
 			'customScrollOffset'    => $scroll_offset,
 			'customSelects'         => '.woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select',
+			'loadMoreLoadingText'   => esc_html__('Loading...', 'oceanwp'),
 		);
 
 		// WooCart.

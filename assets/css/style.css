@@ -1338,6 +1338,10 @@ img[class*=attachment-] {
   height: auto;
 }
 
+details > summary {
+  display: list-item;
+}
+
 .wp-caption {
   max-width: 100%;
   margin-bottom: 24px;
