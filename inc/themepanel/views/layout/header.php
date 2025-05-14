@@ -1,7 +1,11 @@
 <?php
-if( class_exists('Ocean_White_Label') ) {
-	$settings        = Ocean_White_Label::get_white_label_settings();
-	$custom_logo_url = $settings['panel_logo'];
+$custom_logo_url = '';
+
+if ( class_exists( 'Ocean_White_Label' ) ) {
+    $settings = Ocean_White_Label::get_white_label_settings();
+    $custom_logo_url = $settings['panel_logo'];
+} elseif ( get_option( 'oceanwp_theme_panel_logo' ) ) {
+    $custom_logo_url = wp_get_attachment_url( get_option( 'oceanwp_theme_panel_logo' ) );
 }
 ?>
 
@@ -9,7 +13,7 @@ if( class_exists('Ocean_White_Label') ) {
 <div class="oceanwp-tp-header">
 	<div class="oceanwp-tp-branding">
 		<?php if( ! empty( $custom_logo_url ) ) : ?>
-			<span class="oceanwp-tp-oceanwp-logo" 
+			<span class="oceanwp-tp-oceanwp-logo"
 				<?php if (  ! empty( $custom_logo_url ) && get_option( 'oceanwp_theme_panel_logo' ) ) :	?>
 					style="background: url(<?php echo esc_url( $custom_logo_url ); ?>) no-repeat center center;"
 				<?php endif; ?>>

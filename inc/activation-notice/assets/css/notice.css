@@ -1,48 +1,91 @@
-.notice-ocean-extra-plugin {
-    position: relative;
-    padding: 25px 20px;
-    border-left-color: #00a0d2;
-    font-family: 'Poppins', sans-serif;
+.notice-ocean-onboarding {
+  position: relative;
+  padding: 25px 20px;
+  border-left-color: #00a0d2;
+  font-family: "Poppins", sans-serif;
 }
-.owp-ocean-extra-plugin-inner {
-    display: flex;
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner {
+  display: flex;
 }
-.owp-ocean-extra-plugin-inner .owp-notification-icon {
-    display: flex;
-    align-items: center;
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .owp-notification-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .notice-subheading {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  display: block;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner p {
+  padding: 0;
+  margin: 0 0 16px 0;
+  line-height: 1.8;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner li {
+  list-style: disc;
+  margin-left: 40px;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .notice-actions {
+  display: block;
+  margin-top: 30px;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .notice-actions > * {
+  display: flex;
+  align-items: center;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .notice-actions > *:first-child {
+  margin-bottom: 10px;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .notice-actions a.btn {
+  width: fit-content;
+  padding: 7px 35px;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .notice-actions .button-secondary.type-link {
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .notice-actions .button-secondary.type-link:disabled {
+  padding: 0 10px;
+}
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .owp-notification-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+@media screen and (max-width: 1140px) {
+  .notice-ocean-onboarding .owp-ocean-extra-plugin-inner .owp-notification-content {
+    flex-direction: column-reverse;
     justify-content: center;
-    flex: 0 0 40px;
-    width: 40px;
-    height: 40px;
-    margin-right: 20px;
+    align-items: flex-start;
+  }
 }
-.owp-ocean-extra-plugin-inner h2 {
-    font-weight: 700;
-    margin: 0 0 10px 0;
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .owp-notification-content > .owp-notification-content-wrap {
+  max-width: 40%;
 }
-.owp-ocean-extra-plugin-inner .notice-subheading {
-    font-size: 14px;
-    font-weight: 500;
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .owp-notification-content > .owp-notification-content-image {
+  max-width: 60%;
 }
-.owp-ocean-extra-plugin-inner p {
-    padding: 0;
-    margin: 0 0 1.5em 0;
-    
+@media screen and (max-width: 1140px) {
+  .notice-ocean-onboarding .owp-ocean-extra-plugin-inner .owp-notification-content > .owp-notification-content-wrap,
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .owp-notification-content > .owp-notification-content-image {
+    max-width: 100%;
+  }
 }
-.owp-ocean-extra-plugin-inner li {
-    list-style: disc;
-    margin-left: 40px;
+.notice-ocean-onboarding .owp-ocean-extra-plugin-inner .owp-notification-content .owp-notification-content-image img {
+  width: 100%;
 }
-.owp-ocean-extra-plugin-inner .notice-actions {
-    display: flex;
-    align-items: center;
-}
-.owp-ocean-extra-plugin-inner .notice-actions > * {
-    display: flex;
-    align-items: center;
-}
-.owp-ocean-extra-plugin-inner .notice-actions > *:first-child {
-    margin-right: 10px;
-}
-
-

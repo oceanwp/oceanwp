@@ -726,6 +726,7 @@ final class OCEANWP_Theme_Class {
 			'verticalHeaderTarget'  => $vh_target,
 			'customScrollOffset'    => $scroll_offset,
 			'customSelects'         => '.woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select',
+			'loadMoreLoadingText'   => esc_html__('Loading...', 'oceanwp'),
 		);
 
 		// WooCart.
@@ -1178,6 +1179,7 @@ if ( ! function_exists( 'owp_fs' ) ) {
 							'contact' => false,
 							'support' => false,
 						),
+						'anonymous_mode' => true,
 						'bundle_license_auto_activation' => true,
 						'navigation'                     => 'menu',
 						'is_org_compliant'               => true,

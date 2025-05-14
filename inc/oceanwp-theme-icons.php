@@ -841,7 +841,7 @@ if ( ! function_exists( 'oceanwp_print_icon' ) ) {
 		 * Print or return icon
 		 */
 		if ( $echo ) {
-			echo wp_kses_post( $icon );
+			echo $icon;
 		} else {
 			return $icon;
 		}
@@ -888,7 +888,7 @@ if ( ! function_exists( 'oceanwp_icon' ) ) {
 		 * Print or return icon
 		 */
 		if ( $echo ) {
-			echo wp_kses_post( $icon );
+			echo $icon;
 		} else {
 			return $icon;
 		}

@@ -35,7 +35,7 @@ class OWLoadMore {
 
       this.#loading = true;
       this.#btnText = this.#elements.loadMoreButton.textContent;
-      this.#elements.loadMoreButton.textContent = "Loading...";
+      this.#elements.loadMoreButton.textContent = oceanwpLocalize.loadMoreLoadingText;
 
       this.#loadMoreContent();
     });
