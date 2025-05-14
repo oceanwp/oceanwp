@@ -25,7 +25,35 @@
         "lint": "@php ./vendor/bin/phpcs --standard=phpcs.xml.dist --report-summary --report-source",
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
         "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-        "make-pot": "wp i18n make-pot . languages/oceanwp.pot --exclude=build"
+        "make-pot": "wp i18n make-pot . languages/oceanwp.pot --exclude=build",
+        "update-mo": [
+            "msgmerge --backup=off --update languages/da_DK.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/de_DE.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/es_ES.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/fa_IR.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/fr_FR.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/nb_NO.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/nl_NL.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/pl_PL.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/pt_BR.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/sv_SE.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/tr_TR.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/zh_CN.po languages/oceanwp.pot",
+            "msgmerge --backup=off --update languages/zh_ZH.po languages/oceanwp.pot",
+            "msgfmt languages/da_DK.po -o languages/da_DK.mo",
+            "msgfmt languages/de_DE.po -o languages/de_DE.mo",
+            "msgfmt languages/es_ES.po -o languages/es_ES.mo",
+            "msgfmt languages/fa_IR.po -o languages/fa_IR.mo",
+            "msgfmt languages/fr_FR.po -o languages/fr_FR.mo",
+            "msgfmt languages/nb_NO.po -o languages/nb_NO.mo",
+            "msgfmt languages/nl_NL.po -o languages/nl_NL.mo",
+            "msgfmt languages/pl_PL.po -o languages/pl_PL.mo",
+            "msgfmt languages/pt_BR.po -o languages/pt_BR.mo",
+            "msgfmt languages/sv_SE.po -o languages/sv_SE.mo",
+            "msgfmt languages/tr_TR.po -o languages/tr_TR.mo",
+            "msgfmt languages/zh_CN.po -o languages/zh_CN.mo",
+            "msgfmt languages/zh_ZH.po -o languages/zh_ZH.mo"
+        ]
     },
 
     "config": {
