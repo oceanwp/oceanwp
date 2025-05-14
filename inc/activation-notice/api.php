@@ -3,7 +3,6 @@
 add_action(
 	'wp_ajax_oceanwp_dismissed_notice',
 	function () {
-		// update_option( 'dismissed-oceanwp_plugin_notice', true );
 
 		$action_type = isset($_POST['action_type']) ? sanitize_text_field($_POST['action_type']) : '';
 

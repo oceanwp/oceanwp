@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### _2025.05.14_ - 4.0.9
+- **NEW**:: Setup Wizard for new installations. Functions only in combination with the latest version of Ocean Extra plugin.
+- **Fixed**:: Theme Icons: SVG Icons: blog meta data icons not displayed.
+- **Fixed**:: Translation: Pagination: Load More style: string 'Loading...' can't be translated.
+
 ### _2025.04.21_ - 4.0.8
 - **Updated**:: Compatibility: WordPress version number.
 - **Fixed**:: Potential vulnerability patched: Report by Wordfence from APR 11th 2025. Related to Ocean Extra 1/3 report patch.

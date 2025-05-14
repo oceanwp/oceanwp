@@ -53,13 +53,6 @@ function oceancp_output_ocean_extra_notice_enqueue_scripts( $hook ) {
 		return;
 	}
 
-	$manager = new Oceanwp_Plugin_Manager();
-	$status  = $manager->get_ocean_extra_status()['status'];
-
-	// if ( $status === 'active' ) {
-	// 	return;
-	// }
-
 	wp_enqueue_script( 'ocean-extra-plugin-notice-js', OCEANWP_INC_DIR_URI . 'activation-notice/assets/js/notice.min.js', array( 'jquery' ), OCEANWP_THEME_VERSION, true );
 	wp_localize_script(
 		'ocean-extra-plugin-notice-js',
@@ -92,9 +85,6 @@ function oceancp_output_ocean_extra_notice() {
 	if ( ! current_user_can( 'activate_plugins' ) ) {
 		return;
 	}
-	// if ( get_option( 'dismissed-oceanwp_plugin_notice', false ) ) {
-	// 	return;
-	// }
 
 	$onboaridng_completed = get_option('owp_onboarding_completed');
 
@@ -145,14 +135,6 @@ function oceancp_output_ocean_extra_notice() {
 	) {
 		return;
 	}
-
-
-	$manager = new Oceanwp_Plugin_Manager();
-	$status  = $manager->get_ocean_extra_status()['status'];
-
-	// if ( $status === 'active' ) {
-	// 	return;
-	// }
 
 	echo '<div class="notice notice-ocean-extra-plugin notice-ocean-onboarding">';
 	echo '<div class="notice-ocean-extra-plugin-root">';
