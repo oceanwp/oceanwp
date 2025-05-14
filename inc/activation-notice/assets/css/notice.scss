@@ -1,0 +1,114 @@
+.notice-ocean-onboarding {
+    position: relative;
+    padding: 25px 20px;
+    border-left-color: #00a0d2;
+    font-family: 'Poppins', sans-serif;
+
+    .owp-ocean-extra-plugin-inner {
+        display: flex;
+
+        .owp-notification-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 40px;
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+        }
+
+        .notice-subheading {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        p {
+            padding: 0;
+            margin: 0 0 16px 0;
+            line-height: 1.8;
+        }
+
+        li {
+            list-style: disc;
+            margin-left: 40px;
+        }
+
+        .notice-actions {
+            display: block;
+            margin-top: 30px;
+
+            > * {
+                display: flex;
+                align-items: center;
+
+                > &:first-child {
+                    margin-bottom: 10px;
+                }
+            }
+
+            a.btn {
+                width: fit-content;
+                padding: 7px 35px;
+            }
+
+            .button-secondary {
+                &.type-link {
+                    border: 0;
+                    box-shadow: none;
+                    background: transparent;
+                    padding: 0;
+
+                    &:disabled {
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+
+        .owp-notification-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+
+            @media screen and (max-width: 1140px) {
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            > .owp-notification-content-wrap {
+                max-width: calc(100% - 60%);
+            }
+
+            > .owp-notification-content-image {
+                max-width: 60%;
+            }
+
+
+            @media screen and (max-width: 1140px) {
+                > .owp-notification-content-wrap,
+                > .owp-notification-content-image {
+                    max-width: 100%;
+                }
+            }
+
+            .owp-notification-content-image {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}
+
