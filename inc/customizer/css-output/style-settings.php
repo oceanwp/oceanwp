@@ -30,7 +30,7 @@ class OceanWP_Style_Settings_CSS {
 		add_filter('ocean_head_css', array($this, 'generate_css'));
 	}
 
-	public function generate_Css($output) {
+	public function generate_css($output) {
 		$main_container_width          = get_theme_mod( 'ocean_main_container_width', 1200 );
 		$main_container_width_unit     = get_theme_mod( 'ocean_main_container_width_unit', 'px' );
 		$left_container_width          = get_theme_mod( 'ocean_left_container_width', 72 );

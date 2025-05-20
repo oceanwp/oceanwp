@@ -30,7 +30,7 @@ class OceanWP_Customize_LearnDash_CSS {
 		add_filter('ocean_head_css', array($this, 'generate_css'));
 	}
 
-	public function generate_Css($output) {
+	public function generate_css($output) {
 
 		// Course Table.
 		$heading_color     = get_theme_mod( 'ocean_ld_heading_color' );
