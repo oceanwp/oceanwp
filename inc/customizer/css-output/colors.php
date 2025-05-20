@@ -30,7 +30,7 @@ class OceanWP_Colors_CSS {
 		add_filter('ocean_head_css', array($this, 'generate_css'));
 	}
 
-	public function generate_Css($output) {
+	public function generate_css($output) {
 		$primary_color       = get_theme_mod( 'ocean_primary_color', '#13aff0' );
 		$hover_primary_color = get_theme_mod( 'ocean_hover_primary_color', '#0b7cac' );
 		$main_border_color   = get_theme_mod( 'ocean_main_border_color', '#e9e9e9' );
