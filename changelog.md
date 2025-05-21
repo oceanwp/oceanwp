@@ -2,6 +2,7 @@
 
 ### _2025.XX.XX_ - 4.1.0
 - **Fixed**:: Post excerpt full content (12256)
+- **Fixed**:: Translations: Incorrect Customizer label in ...inc/customizer/options/learndash.php L#157. GH report #517.
 
 ### _2025.05.14_ - 4.0.9
 - **NEW**:: Setup Wizard for new installations. Functions only in combination with the latest version of Ocean Extra plugin.
