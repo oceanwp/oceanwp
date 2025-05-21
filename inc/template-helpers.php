@@ -211,29 +211,29 @@ if ( ! function_exists( 'ocean_get_post_modified_date' ) ) {
 }
 
 /**
- * Return post reading time
+ * Output blog post reading time in post title meta data area.
+ * 
+ * Outputs reading time with a custom message depending on whether the reading time is 1 minute or more.
+ * It also allows for the output to be echoed or returned based on the $echo parameter.
+ * 
+ * @param bool $echo Whether to echo the result (true) or return it (false). Default is true.
+ * @return string|void
  * 
  * @since 3.1.0
+ * @updated 4.0.9 Shortened. Extends the ocean_post_reading_time function.
  */
 if ( ! function_exists( 'ocean_get_post_reading_time' ) ) {
 
 	function ocean_get_post_reading_time( $echo = true ) {
-
-		global $post;
-
-		$content      = get_post_field( 'post_content', $post->ID );
-		$word_count   = str_word_count( strip_tags( $content ) );
-		$word_count   = apply_filters( 'ocean_post_reading_word_count', $word_count );
-		$reading_time = ceil( $word_count / 200 );
-
-		$reading_time = apply_filters( 'oceanwp_post_reading_time', $reading_time );
+		
+		$reading_time = ocean_post_reading_time( null, true );
 
 		$reading_time_txt = $reading_time > 1 ? oceanwp_theme_strings( 'owp-string-reading-more', false ) : oceanwp_theme_strings( 'owp-string-reading-one', false );
 
 		$owp_reading_time = sprintf(
 			/* translators: %s: post reading time. */
 			esc_html( __( '%s', 'oceanwp' ) . ' ' . $reading_time_txt ),
-			esc_html( $reading_time )
+			esc_html( number_format_i18n( $reading_time ) )
 		);
 
 		$owp_reading_time = apply_filters( 'ocean_meta_reading_time', $owp_reading_time );
