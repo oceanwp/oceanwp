@@ -147,14 +147,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_ld_global_both_sidebars_content_width',
-								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_ld_global_both_sidebars_content_width_unit',
-								'label' =>esc_html__( 'Unit'. 'oceanwp' ),
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => '%'
@@ -180,14 +180,14 @@ $options = [
 						'setting_args' => [
 							'desktop' => [
 								'id' => 'ocean_ld_global_both_sidebars_sidebars_width',
-								'label' =>esc_html__( 'Desktop', 'oceanwp' ),
+								'label' => esc_html__( 'Desktop', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 								],
 							],
 							'unit' => [
 								'id' => 'ocean_ld_global_both_sidebars_sidebars_width_unit',
-								'label' =>esc_html__( 'Unit', 'oceanwp' ),
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
 								'attr' => [
 									'transport' => 'postMessage',
 									'default' => '%'
