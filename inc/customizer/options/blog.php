@@ -675,7 +675,7 @@ $options = [
 						'section'   => 'ocean_blog_archive_excerpt_and_pagination_section',
 						'transport' => 'postMessage',
 						'priority'  => 10,
-						'top'       => 10,
+						'top'       => 1,
 					],
 
 					'ocean_blog_pagination_style' => [
