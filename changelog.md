@@ -1,5 +1,38 @@
 # OceanWP Changelog
 
+### _2025.XX.XX_ - 4.1.1
+- **NEW**:: SEO Settings: JSON-LD Schema support. Various options available, including JSON-LD breadcrumbs Schema support.
+- **Added**:: SEO Settings: Support for minimal Schema microdata usage only if legacy Schema in use.
+- **Updated**:: Template: .../404.php.
+- **Updated**:: Template: .../header-pwa.php.
+- **Updated**:: Template: .../header.php.
+- **Updated**:: Template: .../sidebar-left.php.
+- **Updated**:: Template: .../sidebar.php.
+- **Updated**:: Template: .../partials/page-header.php.
+- **Updated**:: Template: .../partials/edd/shortcode-content-image.php.
+- **Updated**:: Template: .../partials/entry/content.php.
+- **Updated**:: Template: .../partials/entry/meta.php.
+- **Updated**:: Template: .../partials/entry/media/blog-entry-link.php.
+- **Updated**:: Template: .../partials/entry/media/blog-entry.php.
+- **Updated**:: Template: .../partials/footer/layout.php.
+- **Updated**:: Template: .../partials/header/layout.php.
+- **Updated**:: Template: .../partials/header/logo.php.
+- **Updated**:: Template: .../partials/header/nav.php.
+- **Updated**:: Template: .../partials/header/style/center-header.php.
+- **Updated**:: Template: .../partials/library/layout.php.
+- **Updated**:: Template: .../partials/mobile/mobile-dropdown.php.
+- **Updated**:: Template: .../partials/mobile/mobile-fullscreen.php.
+- **Updated**:: Template: .../partials/page/article.php.
+- **Updated**:: Template: .../partials/search/content.php.
+- **Updated**:: Template: .../partials/single/content.php.
+- **Updated**:: Template: .../partials/single/header.php.
+- **Updated**:: Template: .../partials/single/meta.php.
+- **Updated**:: Template: .../partials/single/related-posts.php.
+- **Updated**:: Template: .../templates/landing.php.
+- **Updated**:: Template: .../woocommerce/single-product/title.php.
+- **Deprecated**:: Function: oceanwp_schema_markup(). To be removed in 4.5.0. Use oceanwp_schema_attr() instead.
+- **Deprecated**:: Function: oceanwp_get_schema_markup(). To be removed in 4.5.0. Use oceanwp_schema_data() instead.
+
 ### _2025.XX.XX_ - 4.1.0
 - **Added**:: Filter: oceanwp_post_reading_time_words_per_minute: Override words per minute for the blog post reading time functionality.
 - **Improved**:: Blog: Single Post: Reading Time: improved accuracy. All-language-friendly and non-latin-friendly functionality intact.

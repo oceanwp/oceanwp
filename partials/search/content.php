@@ -17,7 +17,7 @@ $length = apply_filters( 'ocean_search_results_excerpt_length', '30' );
 
 ?>
 
-<div class="search-entry-summary clr"<?php oceanwp_schema_markup( 'entry_content' ); ?>>
+<div class="search-entry-summary clr"<?php oceanwp_schema_attr( 'entry_content' ); ?>>
 	<p>
 		<?php
 		// Display excerpt.

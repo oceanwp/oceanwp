@@ -3,6 +3,8 @@
  * OceanWP Customizer Settings: SEO
  *
  * @package OceanWP WordPress theme
+ * @link https://oceanwp.org/
+ * @since 4.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,6 +21,76 @@ $options = [
 		'priority'          => 10,
 		'hideLabel'         => false,
 		'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+	],
+
+	'ocean_schema_min_microdata' => [
+		'type'              => 'ocean-switch',
+		'label'             => esc_html__( 'Use Minimal Microdata Only (Layout)', 'oceanwp' ),
+		'section'           => 'ocean_seo_settings',
+		'default'           => false,
+		'transport'         => 'postMessage',
+		'priority'          => 10,
+		'hideLabel'         => false,
+		'active_callback'   => 'oceanwp_cac_is_schema_markup_enabled',
+		'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+	],
+
+	'ocean_schema_manager' => [
+		'type'              => 'ocean-switch',
+		'label'             => esc_html__( 'Enable Schema Manager', 'oceanwp' ),
+		'section'           => 'ocean_seo_settings',
+		'default'           => false,
+		'transport'         => 'postMessage',
+		'priority'          => 10,
+		'hideLabel'         => false,
+		'active_callback'   => 'oceanwp_cac_is_schema_markup_enabled',
+		'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+	],
+
+	'ocean_schema_type' => [
+				'type'              => 'ocean-select',
+				'label'             => esc_html__( 'Select Schema Type', 'oceanwp' ),
+				'section'           => 'ocean_seo_settings',
+				'transport'         => 'refresh',
+				'default'           => 'jsonld',
+				'priority'          => 10,
+				'hideLabel'         => false,
+				'multiple'          => false,
+				'active_callback'   => 'oceanwp_cac_is_schema_markup_enabled',
+				'sanitize_callback' => 'sanitize_key',
+				'choices' => [
+					'jsonld'    => esc_html__( 'JSON-LD (Recommended)', 'oceanwp' ),
+					'mixed'     => esc_html__( 'Both', 'oceanwp' ),
+				],
+	],
+
+	'ocean_schema_breadcrumbs' => [
+		'type'              => 'ocean-switch',
+		'label'             => esc_html__( 'Include Breadcrumbs Schema', 'oceanwp' ),
+		'section'           => 'ocean_seo_settings',
+		'default'           => false,
+		'transport'         => 'postMessage',
+		'priority'          => 10,
+		'hideLabel'         => false,
+		'active_callback'   => 'oceanwp_cac_is_schema_markup_enabled',
+		'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+	],
+
+	'ocean_schema_output_location' => [
+				'type'              => 'ocean-select',
+				'label'             => esc_html__( 'Schema Output Location', 'oceanwp' ),
+				'section'           => 'ocean_seo_settings',
+				'transport'         => 'refresh',
+				'default'           => 'wp_head',
+				'priority'          => 10,
+				'hideLabel'         => false,
+				'multiple'          => false,
+				'active_callback'   => 'oceanwp_cac_is_schema_markup_enabled',
+				'sanitize_callback' => 'sanitize_key',
+				'choices' => [
+					'wp_head'   => esc_html__( 'WP Head (Recommended)', 'oceanwp' ),
+					'wp_footer' => esc_html__( 'WP Footer', 'oceanwp' ),
+				],
 	],
 
 	'ocean_divider_after_schema_markup_setting' => [

@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<div class="entry clr"<?php oceanwp_schema_markup( 'entry_content' ); ?>>
+<div class="entry clr"<?php oceanwp_schema_attr( 'entry_content' ); ?>>
 
 	<?php do_action( 'ocean_before_page_entry' ); ?>
 

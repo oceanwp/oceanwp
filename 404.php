@@ -3,6 +3,8 @@
  * The template for displaying 404 pages.
  *
  * @package OceanWP WordPress theme
+ * @link https://oceanwp.org/
+ * @since 1.0.0
  */
 
 // Get ID.
@@ -27,7 +29,7 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 		</head>
 
 		<!-- Begin Body -->
-		<body <?php body_class(); ?><?php oceanwp_schema_markup( 'html' ); ?>>
+		<body <?php body_class(); ?><?php oceanwp_schema_attr( 'html' ); ?>>
 
 			<?php wp_body_open(); ?>
 
@@ -43,7 +45,7 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 
 					<?php do_action( 'ocean_before_main' ); ?>
 
-					<main id="main" class="site-main clr"<?php oceanwp_schema_markup( 'main' ); ?> role="main">
+					<main id="main" class="site-main clr"<?php oceanwp_schema_attr( 'main' ); ?> role="main">
 
 	<?php
 } else {

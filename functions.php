@@ -205,6 +205,11 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'third/class-social-login.php';
 		require_once $dir . 'third/class-amp.php';
 		require_once $dir . 'third/class-pwa.php';
+		require_once $dir . 'schema/class-oceanwp-schema-loader.php';
+		require_once $dir . 'schema/class-oceanwp-jsonld-schema.php';
+		require_once $dir . 'schema/class-oceanwp-legacy-schema.php';
+		require_once $dir . 'schema/schema-helpers.php';
+		require_once $dir . 'deprecated/deprecated-functions.php';
 
 		// WooCommerce.
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {

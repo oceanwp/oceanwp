@@ -3393,7 +3393,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 
 			<article id="comment-<?php comment_ID(); ?>" class="comment-container">
-				<p><?php esc_html_e( 'Pingback:', 'oceanwp' ); ?> <span <?php oceanwp_schema_markup( 'author_name' ); ?>><?php comment_author_link(); ?></span> <?php edit_comment_link( esc_html__( '(Edit)', 'oceanwp' ), '<span class="edit-link">', '</span>' ); ?></p>
+				<p><?php esc_html_e( 'Pingback:', 'oceanwp' ); ?> <span <?php oceanwp_schema_attr( 'author_name' ); ?>><?php comment_author_link(); ?></span> <?php edit_comment_link( esc_html__( '(Edit)', 'oceanwp' ), '<span class="edit-link">', '</span>' ); ?></p>
 			</article>
 
 				<?php
@@ -4654,140 +4654,6 @@ if ( ! function_exists( 'oceanwp_top_bar_social_alt_content' ) ) {
 
 		// Return content
 		return apply_filters( 'oceanwp_top_bar_social_alt_content', $content );
-
-	}
-}
-
-/**
- * Return correct schema markup
- *
- * @since 1.2.10
- */
-if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
-
-	function oceanwp_get_schema_markup( $location ) {
-
-		// Return if disable
-		if ( ! get_theme_mod( 'ocean_schema_markup', true ) ) {
-			return null;
-		}
-
-		// Default
-		$schema = $itemprop = $itemtype = '';
-
-		// HTML
-		if ( 'html' == $location ) {
-			if ( is_home() || is_front_page() ) {
-				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
-			} elseif ( is_category() || is_tag() ) {
-				$schema = 'itemscope="itemscope" itemtype="https://schema.org/Blog"';
-			} elseif ( is_singular( 'post' ) ) {
-				$schema = 'itemscope="itemscope" itemtype="https://schema.org/Article"';
-			} elseif ( is_page() ) {
-				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
-			} else {
-				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
-			}
-
-			return apply_filters( 'oceanwp_schema_location_html', $schema );
-		}
-
-		// Header
-		elseif ( 'header' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPHeader"';
-		}
-
-		// Logo
-		elseif ( 'logo' == $location ) {
-			$schema = 'itemscope itemtype="https://schema.org/Brand"';
-		}
-
-		// Navigation
-		elseif ( 'site_navigation' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"';
-		}
-
-		// Main
-		elseif ( 'main' == $location ) {
-			$itemtype = 'https://schema.org/WebPageElement';
-			$itemprop = 'mainContentOfPage';
-		}
-
-		// Sidebar
-		elseif ( 'sidebar' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPSideBar"';
-		}
-
-		// Footer widgets
-		elseif ( 'footer' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPFooter"';
-		}
-
-		// Headings
-		elseif ( 'headline' == $location ) {
-			$schema = 'itemprop="headline"';
-		}
-
-		// Posts
-		elseif ( 'entry_content' == $location ) {
-			$schema = 'itemprop="text"';
-		}
-
-		// Publish date
-		elseif ( 'publish_date' == $location ) {
-			$schema = 'itemprop="datePublished"';
-		}
-
-		// Modified date
-		elseif ( 'modified_date' == $location ) {
-			$schema = 'itemprop="dateModified"';
-		}
-
-		// Author name
-		elseif ( 'author_name' == $location ) {
-			$schema = 'itemprop="name"';
-		}
-
-		// Author link
-		elseif ( 'author_link' == $location ) {
-			$schema = 'itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person"';
-		}
-
-		// Item
-		elseif ( 'item' == $location ) {
-			$schema = 'itemprop="item"';
-		}
-
-		// Url
-		elseif ( 'url' == $location ) {
-			$schema = 'itemprop="url"';
-		}
-
-		// Position
-		elseif ( 'position' == $location ) {
-			$schema = 'itemprop="position"';
-		}
-
-		// Image
-		elseif ( 'image' == $location ) {
-			$schema = 'itemprop="image"';
-		}
-
-		return ' ' . apply_filters( 'ocean_schema_markup', $schema );
-
-	}
-}
-
-/**
- * Outputs correct schema markup
- *
- * @since 1.2.10
- */
-if ( ! function_exists( 'oceanwp_schema_markup' ) ) {
-
-	function oceanwp_schema_markup( $location ) {
-
-		echo oceanwp_get_schema_markup( $location );
 
 	}
 }

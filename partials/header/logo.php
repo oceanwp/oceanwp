@@ -24,7 +24,7 @@ if ( display_header_text() && ! OCEAN_EXTRA_ACTIVE && ! class_exists( 'Ocean_Ext
 
 <?php do_action( 'ocean_before_logo' ); ?>
 
-<div id="site-logo" class="<?php echo esc_attr( oceanwp_header_logo_classes() ); ?>"<?php oceanwp_schema_markup( 'logo' ); ?> >
+<div id="site-logo" class="<?php echo esc_attr( oceanwp_header_logo_classes() ); ?>"<?php oceanwp_schema_attr( 'logo' ); ?> >
 
 	<?php do_action( 'ocean_before_logo_inner' ); ?>
 
