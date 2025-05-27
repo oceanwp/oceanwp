@@ -84,7 +84,7 @@ $anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-mobile-fullscree
 			</div>
 		</a>
 
-		<nav class="<?php echo esc_attr( $classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?> role="navigation">
+		<nav class="<?php echo esc_attr( $classes ); ?>"<?php oceanwp_schema_attr( 'site_navigation' ); ?> role="navigation">
 
 			<?php
 			// If has mobile menu.

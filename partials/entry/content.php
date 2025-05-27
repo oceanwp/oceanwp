@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <?php do_action( 'ocean_before_blog_entry_content' ); ?>
 
-<div class="blog-entry-summary clr"<?php oceanwp_schema_markup( 'entry_content' ); ?>>
+<div class="blog-entry-summary clr"<?php oceanwp_schema_attr( 'entry_content' ); ?>>
 
 	<?php
 	// Display excerpt.

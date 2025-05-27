@@ -803,6 +803,17 @@ function oceanwp_cac_is_woo_multistep_checkout() {
 }
 
 /**
+ * SEO
+ */
+function oceanwp_cac_is_schema_markup_enabled() {
+	if ( true == get_theme_mod( 'ocean_schema_markup', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
  * EDD
  */
 function oceanwp_cac_is_edd_bag_style() {

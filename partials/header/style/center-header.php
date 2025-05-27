@@ -99,7 +99,7 @@ $retina_logo = oceanwp_header_retina_logo_setting(); ?>
 
 		<?php do_action( 'ocean_before_nav_inner' ); ?>
 
-		<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?> role="navigation">
+		<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>"<?php oceanwp_schema_attr( 'site_navigation' ); ?> role="navigation">
 
 			<ul class="left-menu <?php echo esc_attr( $menu_classes ); ?>">
 				<?php
