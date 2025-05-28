@@ -47,11 +47,17 @@ final class OCEANWP_Theme_Class {
 		// Load required files.
 		$this->oceanwp_has_setup();
 
+		// Load core class files.
+		$this->oceanwp_load_core_classes();
+
 		// Load framework classes.
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'classes' ), 4 );
 
 		// Setup theme => add_theme_support, register_nav_menus, load_theme_textdomain, etc.
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'theme_setup' ), 10 );
+
+		// Load Schema Loader.
+		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'oceanwp_load_schema' ), 15 );
 
 		// Fires after the theme is switched.
 		add_action( 'switch_theme', array( 'OCEANWP_Theme_Class', 'theme_switch' ) );
@@ -205,10 +211,7 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'third/class-social-login.php';
 		require_once $dir . 'third/class-amp.php';
 		require_once $dir . 'third/class-pwa.php';
-		require_once $dir . 'schema/class-oceanwp-schema-loader.php';
-		require_once $dir . 'schema/class-oceanwp-jsonld-schema.php';
-		require_once $dir . 'schema/class-oceanwp-legacy-schema.php';
-		require_once $dir . 'schema/schema-helpers.php';
+		require_once $dir . 'core/schema/schema-helpers.php';
 		require_once $dir . 'deprecated/deprecated-functions.php';
 
 		// WooCommerce.
@@ -220,6 +223,18 @@ final class OCEANWP_Theme_Class {
 		if ( OCEANWP_EDD_ACTIVE ) {
 			require_once $dir . 'edd/edd-config.php';
 		}
+
+	}
+
+	/**
+	 * Load all class files in the inc/core folder.
+	 * 
+	 * @since 4.2.0
+	 */
+	public static function oceanwp_load_core_classes() {
+
+		require_once OCEANWP_INC_DIR . 'core/class-oceanwp-autoloader.php';
+		OceanWP_Core_Autoloader::instance();
 
 	}
 
@@ -400,6 +415,17 @@ final class OCEANWP_Theme_Class {
 
 		// Theme log.
 		self::oceanwp_theme_log();
+	}
+
+	/**
+	 * OceanWP Schema Loader
+	 * 
+	 * @since 4.2.0
+	 */
+	public static function oceanwp_load_schema() {
+		if ( class_exists( 'OceanWP_Schema_Loader' ) ) {
+			OceanWP_Schema_Loader::instance()->init();
+		}
 	}
 
 	/**
@@ -1110,19 +1136,18 @@ final class OCEANWP_Theme_Class {
 
 	/**
 	 * Add schema markup to the authors post link
-	 *
-	 * @param obj $link   Author link.
+	 * 
 	 * @since 1.0.0
+	 * @updated 4.2.0
+	 * 
+	 * @param obj $link   Author link.
 	 */
 	public static function the_author_posts_link( $link ) {
 
-		// Add schema markup.
-		$schema = oceanwp_get_schema_markup( 'author_link' );
+		$schema = oceanwp_schema_data()->get_microdata( 'author_link' );
 		if ( $schema ) {
 			$link = str_replace( 'rel="author"', 'rel="author" ' . $schema, $link );
 		}
-
-		// Return link.
 		return $link;
 
 	}

@@ -54,7 +54,7 @@ $first_img = array(
 	'class' => 'woo-entry-image-main',
 	'alt'   => get_the_title(),
 );
-if ( oceanwp_get_schema_markup( 'image' ) ) {
+if ( oceanwp_schema_data()->get_microdata( 'image' ) ) {
 	$first_img['itemprop'] = 'image';
 }
 // Second image args.
@@ -62,7 +62,7 @@ $second_img = array(
 	'class' => 'woo-entry-image-secondary',
 	'alt'   => get_the_title(),
 );
-if ( oceanwp_get_schema_markup( 'image' ) ) {
+if ( oceanwp_schema_data()->get_microdata( 'image' ) ) {
 	$second_img['itemprop'] = 'image';
 }
 

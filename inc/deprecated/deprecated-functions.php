@@ -4,7 +4,8 @@
  * 
  * @package OceanWP WordPress Theme
  * @link https://oceanwp.org/
- * @since 4.1.1
+ * @author OceanWP
+ * @since 4.2.0
  */
 
 // Exit if accessed directly.
@@ -16,14 +17,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Return correct schema markup.
  *
  * @since 1.2.10
- * @deprecated 4.1.1 Use oceanwp_schema_data() instead.
+ * @deprecated 4.2.0 Use oceanwp_schema_data() instead.
  * @see oceanwp_schema_data()
  *
  * @param string $location Schema location key.
  * @return string|null Schema microdata attributes.
  */
 function oceanwp_get_schema_markup( $location ) {
-	_deprecated_function( __FUNCTION__, '4.1.1', 'oceanwp_schema_data()' );
+	_deprecated_function( __FUNCTION__, '4.2.0', 'oceanwp_schema_data()' );
 
 	// Prefer new schema system.
 	if ( function_exists( 'oceanwp_schema_data' ) && oceanwp_schema_data() ) {
@@ -83,13 +84,13 @@ function oceanwp_get_schema_markup( $location ) {
  * Outputs correct schema markup.
  *
  * @since 1.2.10
- * @deprecated 4.1.1 Use oceanwp_schema_attr() instead.
+ * @deprecated 4.2.0 Use oceanwp_schema_attr() instead.
  * @see oceanwp_schema_attr()
  *
  * @param string $location Schema location key.
  */
 function oceanwp_schema_markup( $location ) {
-	_deprecated_function( __FUNCTION__, '4.1.1', 'oceanwp_schema_attr()' );
+	_deprecated_function( __FUNCTION__, '4.2.0', 'oceanwp_schema_attr()' );
 
 	// Prefer new system if available.
 	if ( function_exists( 'oceanwp_schema_attr' ) ) {

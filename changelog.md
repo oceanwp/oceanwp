@@ -1,6 +1,6 @@
 # OceanWP Changelog
 
-### _2025.XX.XX_ - 4.1.1
+### _2025.XX.XX_ - 4.2.0
 - **NEW**:: SEO Settings: JSON-LD Schema support. Various options available, including JSON-LD breadcrumbs Schema support.
 - **Added**:: SEO Settings: Support for minimal Schema microdata usage only if legacy Schema in use.
 - **Updated**:: Template: .../404.php.
@@ -12,8 +12,11 @@
 - **Updated**:: Template: .../partials/edd/shortcode-content-image.php.
 - **Updated**:: Template: .../partials/entry/content.php.
 - **Updated**:: Template: .../partials/entry/meta.php.
+- **Updated**:: Template: .../partials/entry/media/blog-single.php.
+- **Updated**:: Template: .../partials/entry/media/blog-single-link.php.
 - **Updated**:: Template: .../partials/entry/media/blog-entry-link.php.
 - **Updated**:: Template: .../partials/entry/media/blog-entry.php.
+- **Updated**:: Template: .../partials/entry/media/blog-entry-gallery.php.
 - **Updated**:: Template: .../partials/footer/layout.php.
 - **Updated**:: Template: .../partials/header/layout.php.
 - **Updated**:: Template: .../partials/header/logo.php.
@@ -24,12 +27,16 @@
 - **Updated**:: Template: .../partials/mobile/mobile-fullscreen.php.
 - **Updated**:: Template: .../partials/page/article.php.
 - **Updated**:: Template: .../partials/search/content.php.
+- **Updated**:: Template: .../partials/search/thumbnail.php.
 - **Updated**:: Template: .../partials/single/content.php.
 - **Updated**:: Template: .../partials/single/header.php.
 - **Updated**:: Template: .../partials/single/meta.php.
 - **Updated**:: Template: .../partials/single/related-posts.php.
 - **Updated**:: Template: .../templates/landing.php.
 - **Updated**:: Template: .../woocommerce/single-product/title.php.
+- **Updated**:: Template: .../woocommerce/owp-archive-product-thumbnails.php.
+- **Updated**:: Template: .../woocommerce/loop/thumbnail/gallery-slider.php.
+- **Updated**:: Template: .../woocommerce/loop/thumbnail/image-swap.php.
 - **Deprecated**:: Function: oceanwp_schema_markup(). To be removed in 4.5.0. Use oceanwp_schema_attr() instead.
 - **Deprecated**:: Function: oceanwp_get_schema_markup(). To be removed in 4.5.0. Use oceanwp_schema_data() instead.
 

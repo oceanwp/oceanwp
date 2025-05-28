@@ -1409,7 +1409,7 @@ if ( ! function_exists( 'oceanwp_header_full_screen_logo' ) ) {
 
 			// Output image
 			$html = sprintf(
-				'<a href="%1$s" class="full-screen-logo-link" rel="home"' . oceanwp_get_schema_markup( 'url' ) . '><img src="%2$s" class="full-screen-logo" width="%3$s" height="%4$s" alt="%5$s" %6$s /></a>',
+				'<a href="%1$s" class="full-screen-logo-link" rel="home"' . oceanwp_schema_data()->get_microdata( 'url' ) . '><img src="%2$s" class="full-screen-logo" width="%3$s" height="%4$s" alt="%5$s" %6$s /></a>',
 				esc_url( home_url( '/' ) ),
 				esc_url( $logo_data['url'] ),
 				esc_attr( $logo_data['width'] ),
@@ -1477,7 +1477,7 @@ if ( ! function_exists( 'oceanwp_header_responsive_logo' ) ) {
 
 			// Output image
 			$html = sprintf(
-				'<a href="%1$s" class="responsive-logo-link" rel="home"' . oceanwp_get_schema_markup( 'url' ) . '><img src="%2$s" class="responsive-logo" width="%3$s" height="%4$s" alt="%5$s" /></a>',
+				'<a href="%1$s" class="responsive-logo-link" rel="home"' . oceanwp_schema_data()->get_microdata( 'url' ) . '><img src="%2$s" class="responsive-logo" width="%3$s" height="%4$s" alt="%5$s" /></a>',
 				esc_url( home_url( '/' ) ),
 				esc_url( $logo_data['url'] ),
 				esc_attr( $logo_data['width'] ),

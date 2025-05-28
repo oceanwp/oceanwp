@@ -4,7 +4,8 @@
  * 
  * @package OceanWP WordPress Theme
  * @link https://oceanwp.org/
- * @since 4.1.1
+ * @author OceanWP
+ * @since 4.2.0
  */
 
 // Exit if accessed directly.
@@ -14,7 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'OceanWP_Schema_Loader' ) ) {
 
-	// Initiate Class.
+	/**
+	 * Main loader for schema output.
+	 */
 	class OceanWP_Schema_Loader {
 
 		protected static $instance = null;
@@ -36,6 +39,11 @@ if ( ! class_exists( 'OceanWP_Schema_Loader' ) ) {
 			}
 		}
 
+		/**
+		 * Returns the singleton instance of the class.
+		 *
+		 * @return OceanWP_Schema_Loader
+		 */
 		public static function instance() {
 			if ( self::$instance === null ) {
 				self::$instance = new self();
@@ -59,10 +67,20 @@ if ( ! class_exists( 'OceanWP_Schema_Loader' ) ) {
 			return $this;
 		}
 
+		/**
+		 * Get the legacy schema instance.
+		 *
+		 * @return OceanWP_Legacy_Schema|null
+		 */
 		public function legacy_schema() {
 			return $this->legacy_schema;
 		}
 
+		/**
+		 * Get the JSON-LD schema instance.
+		 *
+		 * @return OceanWP_JsonLD_Schema|null
+		 */
 		public function jsonld_schema() {
 			return $this->jsonld_schema;
 		}

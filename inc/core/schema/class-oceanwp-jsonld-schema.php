@@ -1,10 +1,11 @@
 <?php
 /**
- * JSONLD Schema Class
+ * JSON-LD Schema Class
  * 
  * @package OceanWP WordPress Theme
  * @link https://oceanwp.org/
- * @since 4.1.1
+ * @author OceanWP
+ * @since 4.2.0
  */
 
 // Exit if accessed directly.
@@ -14,7 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 
-	// Initiate Class.
+	/**
+	 * JSON-LD Schema handler class.
+	 */
 	class OceanWP_JsonLD_Schema {
 
 		protected static $instance = null;
@@ -30,13 +33,8 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			$this->schema_enabled      = get_theme_mod( 'ocean_schema_markup', true );
 			$this->use_schema_manager  = get_theme_mod( 'ocean_schema_manager', false );
 
-			// Stop executing if schema disabled.
-			if ( ! $this->schema_enabled ) {
-				return;
-			}
-
-			// Stop executing schema manager disabled.
-			if ( ! $this->use_schema_manager ) {
+			// Stop executing if schema or schema manager disabled.
+			if ( ! $this->schema_enabled || ! $this->use_schema_manager ) {
 				return;
 			}
 
@@ -48,14 +46,23 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			$this->init_output_hook();
 		}
 
+		/**
+		 * Returns the singleton instance of the class.
+		 *
+		 * @return OceanWP_JsonLD_Schema
+		 */
 		public static function instance() {
-			if ( self::$instance === null ) {
+			if ( null === self::$instance ) {
 				self::$instance = new self();
 			}
 			return self::$instance;
 		}
 
-		// Set the output location.
+		/**
+		 * Hook output to the desired location.
+		 *
+		 * @return void
+		 */
 		protected function init_output_hook() {
 			if ( 'wp_footer' === $this->schema_output_location ) {
 				add_action( 'wp_footer', [ $this, 'output_json_schema' ] );
@@ -64,17 +71,27 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			}
 		}
 
+		/**
+		 * Get basic site schema info.
+		 *
+		 * @return array
+		 */
 		protected function get_schema_info() {
 			return [
 				'site_name'        => get_bloginfo( 'name' ),
 				'site_url'         => home_url(),
-				'organization'     => get_bloginfo( 'name' ), // Left to extend in the future with user input. 
+				'organization'     => get_bloginfo( 'name' ), // Left to extend in the future with user input.
 				'organization_url' => home_url(), // Left to extend in the future with user input.
 				'description'      => get_bloginfo( 'description' ),
 				'language'         => get_bloginfo( 'language' ),
             ];
 		}
 
+		/**
+		 * Get logo schema markup.
+		 *
+		 * @return array|null
+		 */
 		protected function get_logo_schema() {
 			$logo_schema = null;
 			$logo_id     = get_theme_mod( 'custom_logo' );
@@ -99,6 +116,11 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			return $logo_schema;
 		}
 
+		/**
+		 * Output the JSON-LD schema.
+		 *
+		 * @return void
+		 */
 		public function output_json_schema() {
 			$schema_markup = $this->generate_schema();
 
@@ -107,6 +129,11 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			}
 		}
 
+		/**
+		 * Generate schema markup for the current page.
+		 *
+		 * @return array
+		 */
 		protected function generate_schema() {
 			$schema = [];
 
@@ -136,6 +163,11 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			return $schema;
 		}
 
+		/**
+		 * Get schema for homepage.
+		 *
+		 * @return array
+		 */
 		protected function get_homepage_schema() {
 			return [
 				'@context'    => 'https://schema.org',
@@ -153,6 +185,11 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			];
 		}
 
+		/**
+		 * Get schema for blog posts.
+		 *
+		 * @return array
+		 */
 		protected function get_blog_post_schema() {
 			$post_id   = get_the_ID();
 			$author_id = get_post_field( 'post_author', $post_id );
@@ -198,6 +235,11 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			return $schema;
 		}
 
+		/**
+		 * Get schema for taxonomy archives.
+		 *
+		 * @return array
+		 */
 		protected function get_taxonomy_archive_schema() {
 			$term     = get_queried_object();
 			$name     = $term->name ?? single_term_title( '', false );
@@ -213,6 +255,11 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			];
 		}
 
+		/**
+		 * Get schema for generic archives.
+		 *
+		 * @return array
+		 */
 		protected function get_generic_archive_schema() {
 			return [
 				'@context'    => 'https://schema.org',
@@ -223,6 +270,11 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			];
 		}
 
+		/**
+		 * Get schema for pages.
+		 *
+		 * @return array
+		 */
 		protected function get_webpage_schema() {
 			return [
 				'@context'    => 'https://schema.org',
@@ -234,13 +286,18 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			];
 		}
 
+		/**
+		 * Get schema for 404 pages.
+		 *
+		 * @return array
+		 */
 		protected function get_404_schema() {
 			return [
 				'@context'    => 'https://schema.org',
 				'@type'       => 'WebPage',
 				'name'        => esc_html_x( '404 Not Found', 'Schema: WebPage name for 404 error', 'oceanwp' ),
 				'description' => esc_html_x( 'The requested page could not be found on this server.', 'Schema: Description for 404 error page', 'oceanwp' ),
-				'url'         => home_url( $_SERVER['REQUEST_URI'] ),
+				'url'         => esc_url( home_url( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ),
 				'isPartOf'    => [
 					'@type' => 'WebSite',
 					'name'  => $this->settings['site_name'],
@@ -249,6 +306,11 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			];
 		}
 
+		/**
+		 * Get schema for author archives.
+		 *
+		 * @return array
+		 */
 		protected function get_author_schema() {
 			$author_id = get_queried_object_id();
 
@@ -273,6 +335,11 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			];
 		}
 
+		/**
+		 * Get breadcrumb schema.
+		 *
+		 * @return array|null
+		 */
 		protected function get_breadcrumb_schema() {
 			if ( ! $this->schema_breadcrumbs || is_front_page() ) {
 				return null;

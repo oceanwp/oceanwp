@@ -41,7 +41,7 @@ if ( is_customize_preview()
 $img_args = array(
 	'alt' => get_the_title(),
 );
-if ( oceanwp_get_schema_markup( 'image' ) ) {
+if ( oceanwp_schema_data()->get_microdata( 'image' ) ) {
 	$img_args['itemprop'] = 'image';
 }
 
