@@ -2,13 +2,14 @@
 /**
  * OceanWP_Legacy_Schema: Legacy Schema Class.
  * 
- * Outputs schema microdata.
+ * Outputs Schema microdata.
  * This Class supports the use of minimal (layout) microdata.
  * Minimal microdata can be used individually or in combination with the OceanWP_JsonLD_Schema class.
  * 
  * @package OceanWP WordPress Theme
  * @link https://oceanwp.org/
- * @since 4.1.1
+ * @author OceanWP
+ * @since 4.2.0
  */
 
 // Exit if accessed directly.
@@ -18,7 +19,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'OceanWP_Legacy_Schema' ) ) {
 
-	// Initiate Class.
+	/**
+	 * Legacy microdata Schema constructor
+	 */
 	class OceanWP_Legacy_Schema {
 
 		protected static $instance = null;
@@ -35,8 +38,13 @@ if ( ! class_exists( 'OceanWP_Legacy_Schema' ) ) {
 			$this->use_minimal = get_theme_mod( 'ocean_schema_min_microdata', false );
 		}
 
+		/**
+		 * Returns the singleton instance of the class.
+		 *
+		 * @return OceanWP_Legacy_Schema
+		 */
 		public static function instance() {
-			if ( self::$instance === null ) {
+			if ( null === self::$instance ) {
 				self::$instance = new self();
 			}
 			return self::$instance;
@@ -44,6 +52,9 @@ if ( ! class_exists( 'OceanWP_Legacy_Schema' ) ) {
 
 		/**
 		 * Returns microdata attribute string for given location.
+		 *
+		 * @param string $location Schema context location.
+		 * @return string|null Schema microdata attributes or null if not applicable.
 		 */
 		public function get_microdata( $location ) {
 			// Return null if schema is disabled.
@@ -74,7 +85,7 @@ if ( ! class_exists( 'OceanWP_Legacy_Schema' ) ) {
 				return null;
 			}
 
-			if ( $location === 'html' ) {
+			if ( 'html' === $location ) {
 				$type = 'WebPage';
 				if ( is_home() || is_front_page() ) {
 					$type = 'WebPage';
@@ -116,7 +127,7 @@ if ( ! class_exists( 'OceanWP_Legacy_Schema' ) ) {
 			if ( isset( $itemprops[ $location ] ) ) {
 				$schema = 'itemprop="' . esc_attr( $itemprops[ $location ] ) . '"';
 
-				if ( $location === 'main' ) {
+				if ( 'main' === $location ) {
 					$schema .= ' itemscope itemtype="https://schema.org/WebPageElement"';
 				}
 

@@ -192,7 +192,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 									$img_args = array(
 										'alt' => esc_attr( $srp_fimage_alt ),
 									);
-									if ( oceanwp_get_schema_markup( 'image' ) ) {
+									if ( oceanwp_schema_data()->get_microdata( 'image' ) ) {
 										$img_args['itemprop'] = 'image';
 									}
 
