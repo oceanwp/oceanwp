@@ -2,7 +2,9 @@
 
 ### _2025.XX.XX_ - 4.2.0
 - **NEW**:: SEO Settings: JSON-LD Schema support. Various options available, including JSON-LD breadcrumbs Schema support.
+- **NEW**:: Breadcrumbs: Old method replaced with a modular breadcrumb output system.
 - **Added**:: SEO Settings: Support for minimal Schema microdata usage only if legacy Schema in use.
+- **Added**:: Breadcrumbs: Last trail item not clickable.
 - **Updated**:: Template: .../404.php.
 - **Updated**:: Template: .../header-pwa.php.
 - **Updated**:: Template: .../header.php.
@@ -39,6 +41,11 @@
 - **Updated**:: Template: .../woocommerce/loop/thumbnail/image-swap.php.
 - **Deprecated**:: Function: oceanwp_schema_markup(). To be removed in 4.5.0. Use oceanwp_schema_attr() instead.
 - **Deprecated**:: Function: oceanwp_get_schema_markup(). To be removed in 4.5.0. Use oceanwp_schema_data() instead.
+- **Deprecated**:: Function: oceanwp_breadcrumbs_sources(). To be removed in 4.5.0. Handled directly in oceanwp_breadcrumbs_source_choices().
+- **Deprecated**:: Function: oceanwp_breadcrumb_trail(). To be removed in 4.5.0. Use oceanwp_display_breadcrumb() instead.
+- **Deprecated**:: Function: oceanwp_breadcrumbs_view(). To be removed in 4.5.0. Use oceanwp_output_breadcrumbs() instead.
+- **Deprecated**:: Class: OceanWP_Breadcrumb_Trail. To be removed in 4.5.0. Shim Class added for backward compatibility until removal.
+- **Deprecated**:: File: ...inc/breadcrumbs.php. To be removed in 4.5.0. Do not rely on this file. Use the new modular breadcrumb system.
 
 ### _2025.XX.XX_ - 4.1.0
 - **Added**:: Filter: oceanwp_post_reading_time_words_per_minute: Override words per minute for the blog post reading time functionality.

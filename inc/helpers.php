@@ -1409,7 +1409,7 @@ if ( ! function_exists( 'oceanwp_header_full_screen_logo' ) ) {
 
 			// Output image
 			$html = sprintf(
-				'<a href="%1$s" class="full-screen-logo-link" rel="home"' . oceanwp_schema_data()->get_microdata( 'url' ) . '><img src="%2$s" class="full-screen-logo" width="%3$s" height="%4$s" alt="%5$s" %6$s /></a>',
+				'<a href="%1$s" class="full-screen-logo-link" rel="home"' . oceanwp_schema_microdata( 'url' ) . '><img src="%2$s" class="full-screen-logo" width="%3$s" height="%4$s" alt="%5$s" %6$s /></a>',
 				esc_url( home_url( '/' ) ),
 				esc_url( $logo_data['url'] ),
 				esc_attr( $logo_data['width'] ),
@@ -1477,7 +1477,7 @@ if ( ! function_exists( 'oceanwp_header_responsive_logo' ) ) {
 
 			// Output image
 			$html = sprintf(
-				'<a href="%1$s" class="responsive-logo-link" rel="home"' . oceanwp_schema_data()->get_microdata( 'url' ) . '><img src="%2$s" class="responsive-logo" width="%3$s" height="%4$s" alt="%5$s" /></a>',
+				'<a href="%1$s" class="responsive-logo-link" rel="home"' . oceanwp_schema_microdata( 'url' ) . '><img src="%2$s" class="responsive-logo" width="%3$s" height="%4$s" alt="%5$s" /></a>',
 				esc_url( home_url( '/' ) ),
 				esc_url( $logo_data['url'] ),
 				esc_attr( $logo_data['width'] ),
@@ -2304,62 +2304,6 @@ if ( ! function_exists( 'oceanwp_tax_description' ) ) {
 
 	add_action( 'ocean_before_content_inner', 'oceanwp_tax_description' );
 
-}
-
-/**
- * Display breadcrumbs
- *
- * @since 1.1.2
- */
-if ( ! function_exists( 'oceanwp_has_breadcrumbs' ) ) {
-
-	function oceanwp_has_breadcrumbs() {
-
-		// Return true by default
-		$return = true;
-
-		// Return false if disabled via Customizer
-		if ( true != get_theme_mod( 'ocean_breadcrumbs', true ) ) {
-			$return = false;
-		}
-
-		// Apply filters and return
-		return apply_filters( 'ocean_display_breadcrumbs', $return );
-
-	}
-}
-
-/**
- * Display breadcrumbs
- *
- * @since 3.4.5
- */
-if ( ! function_exists( 'ocean_breadcrumbs_view') ) {
-
-	function ocean_breadcrumbs_view() {
-
-		if ( ! oceanwp_has_breadcrumbs() || is_front_page() ) {
-			return;
-		}
-
-		$woo_crumb = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' );
-
-		if ( 'yes' === $woo_crumb ) {
-			if ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() || oceanwp_is_woo_single() || is_cart() || is_checkout() || is_account_page() ) {
-				woocommerce_breadcrumb();
-			} else {
-				if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) {
-					oceanwp_breadcrumb_trail();
-				}
-			}
-		} else {
-			if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) {
-				oceanwp_breadcrumb_trail();
-			}
-		}
-	}
-
-	add_action( 'ocean_breadcrumbs_main', 'ocean_breadcrumbs_view' );
 }
 
 /**

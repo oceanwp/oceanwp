@@ -29,11 +29,16 @@ if ( ! class_exists( 'OceanWP_Core_Autoloader' ) ) {
 		 * 
 		 * Manually define allowed folders and subfolders:
 		 * eg. 'folder' and 'folder/subfolder/'
+		 * 
+		 * Do not add folders and subfolders that contain files that
+		 * should be loaded conditionally for backward compatibility if needed.
 		 *
 		 * @var array
 		 */
 		private $allowed_dirs = [
 			'schema',
+			'breadcrumb',
+			'breadcrumb/modules',
 		];
 
 		private function __construct() {

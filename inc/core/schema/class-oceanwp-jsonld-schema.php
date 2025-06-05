@@ -29,6 +29,9 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 		protected $schema_type;
 		protected $data = [];
 
+		/**
+		 * Constructor.
+		 */
 		private function __construct() {
 			$this->schema_enabled      = get_theme_mod( 'ocean_schema_markup', true );
 			$this->use_schema_manager  = get_theme_mod( 'ocean_schema_manager', false );

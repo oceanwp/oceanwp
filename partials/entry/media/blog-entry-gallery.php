@@ -72,7 +72,7 @@ if ( 'grid-entry' === oceanwp_blog_entry_style() ) {
 				$img_args = array(
 					'alt' => $attachment_alt,
 				);
-				if ( oceanwp_schema_data()->get_microdata( 'image' ) ) {
+				if ( oceanwp_schema_microdata( 'image' ) ) {
 					$img_args['itemprop'] = 'image';
 				}
 
