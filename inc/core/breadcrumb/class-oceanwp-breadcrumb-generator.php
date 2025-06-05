@@ -70,59 +70,30 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Generator' ) ) {
 		 * @return void
 		 */
 		protected function add_module_items() {
-		
-			// Always start with the home link.
-			$home = new OceanWP_Breadcrumb_Home();
-			$this->items = array_merge( $this->items, $home->get_items() );
 
-			// WooCommerce - check early and stop further modules if Woo page is active.
-			if ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
-				$woocommerce = new OceanWP_Breadcrumb_WooCommerce();
-				$this->items = array_merge( $this->items, $woocommerce->get_items() );
-				return; // Exit early — prevent post/page handlers from also adding the title.
-			}
+			$modules = [
+				new OceanWP_Breadcrumb_Home(),
+				new OceanWP_Breadcrumb_WooCommerce(),
+				new OceanWP_Breadcrumb_First_Page(),
+				new OceanWP_Breadcrumb_Singular(),
+				new OceanWP_Breadcrumb_Post(),
+				new OceanWP_Breadcrumb_Archive(),
+				new OceanWP_Breadcrumb_Taxonomy(),
+				new OceanWP_Breadcrumb_Author(),
+				new OceanWP_Breadcrumb_Search(),
+				new OceanWP_Breadcrumb_Date(),
+				new OceanWP_Breadcrumb_404(),
+			];
 
-			// Static blog page.
-			if ( is_home() && ! is_singular() ) {
-				$posts_page_id = get_option( 'page_for_posts' );
-				if ( $posts_page_id ) {
-					$this->items[] = [
-						'label'      => get_the_title( $posts_page_id ),
-						'url'        => '',
-						'is_current' => true,
-					];
+			foreach ( $modules as $module ) {
+				if ( method_exists( $module, 'get_items' ) ) {
+					$this->items = array_merge( $this->items, $module->get_items() );
 				}
-				return; // Home + blog page only; skip the rest.
-			}
-
-			// Handle other conditions...
-			if ( is_singular() && ! is_page() ) {
-				$post_handler = new OceanWP_Breadcrumb_Post();
-				$this->items = array_merge( $this->items, $post_handler->get_items() );
-			} elseif ( is_page() ) {
-				$singular = new OceanWP_Breadcrumb_Singular();
-				$this->items = array_merge( $this->items, $singular->get_items() );
-			} elseif ( is_search() ) {
-				$search = new OceanWP_Breadcrumb_Search();
-				$this->items = array_merge( $this->items, $search->get_items() );
-			} elseif ( is_404() ) {
-				$not_found = new OceanWP_Breadcrumb_404();
-				$this->items = array_merge( $this->items, $not_found->get_items() );
-			} elseif ( is_author() ) {
-				$author = new OceanWP_Breadcrumb_Author();
-				$this->items = array_merge( $this->items, $author->get_items() );
-			} elseif ( is_year() || is_month() || is_day() ) {
-				$date = new OceanWP_Breadcrumb_Date();
-				$this->items = array_merge( $this->items, $date->get_items() );
-			} elseif ( is_category() || is_tag() || is_tax() ) {
-				$taxonomy = new OceanWP_Breadcrumb_Taxonomy();
-				$this->items = array_merge( $this->items, $taxonomy->get_items() );
-			} elseif ( is_archive() ) {
-				$archive = new OceanWP_Breadcrumb_Archive();
-				$this->items = array_merge( $this->items, $archive->get_items() );
+				if ( method_exists( $module, 'is_terminal' ) && $module->is_terminal() ) {
+					return;
+				}
 			}
 		}
-
 	}
 
 }

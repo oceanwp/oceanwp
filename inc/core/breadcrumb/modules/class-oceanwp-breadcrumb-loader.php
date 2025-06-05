@@ -43,6 +43,7 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Loader' ) ) {
 		 */
 		private function load_modules() {
 			$this->modules[] = new OceanWP_Breadcrumb_Home();
+			$this->modules[] = new OceanWP_Breadcrumb_First_Page();
 			$this->modules[] = new OceanWP_Breadcrumb_Singular();
 			$this->modules[] = new OceanWP_Breadcrumb_Post();
 			$this->modules[] = new OceanWP_Breadcrumb_Archive();
@@ -51,9 +52,7 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Loader' ) ) {
 			$this->modules[] = new OceanWP_Breadcrumb_Search();
 			$this->modules[] = new OceanWP_Breadcrumb_Date();
 			$this->modules[] = new OceanWP_Breadcrumb_404();
-			if ( class_exists( 'WooCommerce' ) && is_woocommerce() ) {
-				$this->modules[] = new OceanWP_Breadcrumb_WooCommerce();
-			}
+			$this->modules[] = new OceanWP_Breadcrumb_WooCommerce();
 		}
 
 		/**

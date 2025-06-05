@@ -1853,6 +1853,47 @@ $options = [
 						'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 					],
 
+					'ocean_divider_after_breadcrumbs_show_title' => [
+						'type'            => 'ocean-divider',
+						'section'         => 'ocean_section_breadcrumb_trail_settings',
+						'transport'       => 'postMessage',
+						'priority'        => 10,
+						'top'             => 10,
+						'bottom'          => 10,
+						'active_callback' => 'oceanwp_is_active_breadcrumb_product_callback',
+					],
+
+					'ocean_breadcrumb_woo_tax_include_products' => [
+						'type'              => 'ocean-switch',
+						'label'             => esc_html__( 'Show Products Item in Woo Taxonomy', 'oceanwp' ),
+						'section'           => 'ocean_section_breadcrumb_trail_settings',
+						'default'           => true,
+						'transport'         => 'refresh',
+						'priority'          => 10,
+						'hideLabel'         => false,
+						'active_callback'   => 'oceanwp_is_active_breadcrumb_product_callback',
+						'sanitize_callback' => 'oceanwp_sanitize_checkbox',
+					],
+
+					'ocean_breadcrumb_woo_tax_products_label' => [
+						'type'              => 'ocean-select',
+						'label'             => esc_html__( 'Products Item Label', 'oceanwp' ),
+						'section'           => 'ocean_section_breadcrumb_trail_settings',
+						'transport'         => 'refresh',
+						'default'           => 'default',
+						'priority'          => 10,
+						'hideLabel'         => false,
+						'multiple'          => false,
+						'top'               => 10,
+						'bottom'            => 25,
+						'active_callback'   => 'oceanwp_is_active_breadcrumb_product_callback',
+						'sanitize_callback' => 'sanitize_key',
+						'choices'           => [
+							'default' => esc_html__( 'Products', 'oceanwp' ),
+							'shop'    => esc_html__( 'Shop Page Title', 'oceanwp' ),
+						],
+					],
+
 					'ocean_breadcrumbs_trail_settings_need_help' => [
 						'type'      => 'ocean-content',
 						'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/899-customizer-pages-special-pages#Breadcrumbs-Trail-Settings-jIA_k/" target="_blank">', '</a>' ),

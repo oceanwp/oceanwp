@@ -71,7 +71,7 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_separator' ) ) {
 			get_theme_mod( 'ocean_breadcrumb_separator', '>' )
 		);
 
-		return '<span class="breadcrumb-sep">' . esc_html( $separator ) . '</span>';
+		return '<span class="breadcrumb-sep" aria-hidden="true">' . esc_html( $separator ) . '</span>';
 	}
 }
 
@@ -144,7 +144,7 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 
 		$nav_attrs = [
 			'role="navigation"',
-			'aria-label="' . esc_attr__( 'Breadcrumbs', 'oceanwp' ) . '"',
+			'aria-label="' . esc_attr__( 'Breadcrumb', 'oceanwp' ) . '"',
 			'class="' . esc_attr( $css_classes ) . '"',
 		];
 

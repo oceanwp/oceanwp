@@ -50,6 +50,15 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Author' ) ) {
 
 			return $items;
 		}
+
+		/**
+		 * Whether this is a terminal breadcrumb (no more modules after it).
+		 *
+		 * @return bool
+		 */
+		public function is_terminal(): bool {
+			return is_author();
+		}
 	}
 
 }
