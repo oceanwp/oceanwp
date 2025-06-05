@@ -160,8 +160,10 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_WooCommerce' ) ) {
 				// Product title.
 				if ( get_theme_mod( 'ocean_breadcrumb_show_title', true ) ) {
 					$items[] = [
-						'label' => get_the_title(),
-						'url'   => '',
+						'label'      => get_the_title(),
+						'url'        => '',
+						'is_current' => true,
+						'is_title'   => true, // for use with cleanup in HTML output if needed
 					];
 				}
 

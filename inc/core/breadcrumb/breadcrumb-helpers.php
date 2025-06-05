@@ -123,7 +123,13 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 		$position      = 1;
 
 		// Remove last item of the trail if the title of the viewed item is not to be output.
-		if ( ! $show_title && is_singular( 'post' ) ) {
+		/* if ( ! $show_title && is_singular( 'post' ) ) {
+			$last_item = end( $items );
+			if ( isset( $last_item['is_title'] ) && $last_item['is_title'] ) {
+				array_pop( $items );
+			}
+		} */
+		if ( ! $show_title ) {
 			$last_item = end( $items );
 			if ( isset( $last_item['is_title'] ) && $last_item['is_title'] ) {
 				array_pop( $items );
