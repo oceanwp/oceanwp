@@ -53,15 +53,12 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 				$items = $this->get_generic_cpt_items( $post );
 			}
 
-			// Append post title if enabled.
-			if ( get_theme_mod( 'ocean_breadcrumb_show_title', true ) ) {
-				$items[] = [
-					'label'      => get_the_title( $post ),
-					'url'        => '',
-					'is_title'   => true,
-					'is_current' => true,
-				];
-			}
+			$items[] = [
+				'label'      => get_the_title( $post ),
+				'url'        => '',
+				'is_title'   => true,
+				'is_current' => true,
+			];
 
 			return $items;
 		}
