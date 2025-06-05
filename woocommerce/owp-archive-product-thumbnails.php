@@ -25,7 +25,7 @@ $attachments_count = count( $attachment_ids );
 $img_args = array(
 	'alt' => get_the_title(),
 );
-if ( oceanwp_schema_data()->get_microdata( 'image' ) ) {
+if ( oceanwp_schema_microdata( 'image' ) ) {
 	$img_args['itemprop'] = 'image';
 }
 

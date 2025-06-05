@@ -46,7 +46,7 @@ $img_args = array(
 	'alt' => esc_attr( $sp_fimage_alt ),
 );
 
-if ( oceanwp_schema_data()->get_microdata( 'image' ) ) {
+if ( oceanwp_schema_microdata( 'image' ) ) {
 	$img_args['itemprop'] = 'image';
 }
 

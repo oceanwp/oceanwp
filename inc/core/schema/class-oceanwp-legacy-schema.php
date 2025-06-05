@@ -1,6 +1,6 @@
 <?php
 /**
- * OceanWP_Legacy_Schema: Legacy Schema Class.
+ * OceanWP Legacy Schema Class.
  * 
  * Outputs Schema microdata.
  * This Class supports the use of minimal (layout) microdata.
@@ -31,6 +31,9 @@ if ( ! class_exists( 'OceanWP_Legacy_Schema' ) ) {
 		protected $schema_type;
 		protected $use_minimal;
 
+		/**
+		 * Constructor.
+		 */
 		private function __construct() {
 			$this->enabled     = get_theme_mod( 'ocean_schema_markup', true );
 			$this->use_manager = get_theme_mod( 'ocean_schema_manager', false );

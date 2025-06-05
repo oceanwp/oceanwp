@@ -56,6 +56,9 @@ final class OCEANWP_Theme_Class {
 		// Setup theme => add_theme_support, register_nav_menus, load_theme_textdomain, etc.
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'theme_setup' ), 10 );
 
+		// Load OceanWP Breadcrumb Trail legacy shim if necessary.
+		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'oceanwp_maybe_load_legacy_breadcrumb_trail' ), 11 );
+
 		// Load Schema Loader.
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'oceanwp_load_schema' ), 15 );
 
@@ -212,6 +215,7 @@ final class OCEANWP_Theme_Class {
 		require_once $dir . 'third/class-amp.php';
 		require_once $dir . 'third/class-pwa.php';
 		require_once $dir . 'core/schema/schema-helpers.php';
+		require_once $dir . 'core/breadcrumb/breadcrumb-helpers.php';
 		require_once $dir . 'deprecated/deprecated-functions.php';
 
 		// WooCommerce.
@@ -236,6 +240,50 @@ final class OCEANWP_Theme_Class {
 		require_once OCEANWP_INC_DIR . 'core/class-oceanwp-autoloader.php';
 		OceanWP_Core_Autoloader::instance();
 
+	}
+
+	/**
+	 * Conditionally loads the legacy breadcrumb shim for backward compatibility.
+	 *
+	 * This ensures support for third-party plugins, shortcodes, or child themes
+	 * that still rely on the old OceanWP_Breadcrumb_Trail class or related filters.
+	 * 
+	 * This function is to be removed with 4.5.0 version.
+	 * Use the new modular breadcrumb system instead.
+	 * See oceanwp_get_breadcrumb_html().
+	 * See oceanwp_display_breadcrumb().
+	 * See oceanwp_output_breadcrumbs().
+	 *
+	 * @since 4.2.0
+	 * @access public
+	 */
+	public static function oceanwp_maybe_load_legacy_breadcrumb_trail() {
+
+		// Bail early if the legacy class is already loaded (preloaded by plugin or child theme).
+		if ( class_exists( 'OceanWP_Breadcrumb_Trail', false ) ) {
+			return;
+		}
+
+		// Determine if legacy breadcrumb usage exists.
+		$should_load = has_filter( 'oceanwp_breadcrumb_trail_object' )
+			|| function_exists( 'oceanwp_breadcrumb_trail' )
+			|| ( did_action( 'wp_loaded' ) && ! empty( $GLOBALS['oceanwp_using_legacy_breadcrumbs'] ) );
+
+		if ( ! $should_load ) {
+			return;
+		}
+
+		// Load the legacy shim class.
+		require_once OCEANWP_INC_DIR . 'core/breadcrumb/legacy/class-oceanwp-breadcrumb-trail.php';
+
+		// Register the legacy object filter for compatibility.
+		add_filter( 'oceanwp_breadcrumb_trail_object', function( $breadcrumb, $args ) {
+			if ( is_object( $breadcrumb ) ) {
+				return $breadcrumb;
+			}
+
+			return new OceanWP_Breadcrumb_Trail( $args );
+		}, 10, 2 );
 	}
 
 	/**
@@ -1143,13 +1191,13 @@ final class OCEANWP_Theme_Class {
 	 * @param obj $link   Author link.
 	 */
 	public static function the_author_posts_link( $link ) {
-
-		$schema = oceanwp_schema_data()->get_microdata( 'author_link' );
+	
+		$schema = oceanwp_schema_microdata( 'author_link' );
 		if ( $schema ) {
 			$link = str_replace( 'rel="author"', 'rel="author" ' . $schema, $link );
 		}
 		return $link;
-
+		
 	}
 
 	/**
