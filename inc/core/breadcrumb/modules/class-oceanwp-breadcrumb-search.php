@@ -59,6 +59,15 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Search' ) ) {
 				],
 			];
 		}
+
+		/**
+		 * Whether this is a terminal breadcrumb (no more modules after it).
+		 *
+		 * @return bool
+		 */
+		public function is_terminal(): bool {
+			return is_search();
+		}
 	}
 
 }

@@ -83,6 +83,25 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_WooCommerce' ) ) {
 			if ( is_product_category() || is_product_tag() ) {
 				$term = get_queried_object();
 				if ( $term ) {
+
+					// Optional: Insert "Products" item before taxonomy terms.
+					if ( get_theme_mod( 'ocean_breadcrumb_woo_tax_include_products', true ) ) {
+						$label_setting = get_theme_mod( 'ocean_breadcrumb_woo_tax_products_label', 'default' );
+						$label = esc_html__( 'Products', 'oceanwp' );
+
+						if ( 'shop' === $label_setting ) {
+							$shop_id = wc_get_page_id( 'shop' );
+							if ( $shop_id && get_post_status( $shop_id ) === 'publish' ) {
+								$label = get_the_title( $shop_id );
+							}
+						}
+
+						$items[] = [
+							'label' => $label,
+							'url'   => get_permalink( wc_get_page_id( 'shop' ) ),
+						];
+					}
+
 					$ancestors = get_ancestors( $term->term_id, $term->taxonomy );
 					$ancestors = array_reverse( $ancestors );
 					foreach ( $ancestors as $ancestor_id ) {
@@ -94,6 +113,7 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_WooCommerce' ) ) {
 							];
 						}
 					}
+
 					$items[] = [
 						'label' => $term->name,
 						'url'   => '',
@@ -171,6 +191,15 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_WooCommerce' ) ) {
 			}
 
 			return $items;
+		}
+
+		/**
+		 * Whether this is a terminal breadcrumb (no more modules after it).
+		 *
+		 * @return bool
+		 */
+		public function is_terminal(): bool {
+			return is_woocommerce();
 		}
 	}
 

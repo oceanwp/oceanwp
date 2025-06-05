@@ -1,10 +1,13 @@
 # OceanWP Changelog
 
 ### _2025.XX.XX_ - 4.2.0
-- **NEW**:: SEO Settings: JSON-LD Schema support. Various options available, including JSON-LD breadcrumbs Schema support.
+- **NEW**:: SEO Settings: JSON-LD Schema support. Various options available. See Customize > SEO Settings.
+- **NEW**:: SEO Settings: JSON-LD breadcrumbs Schema support. Independant from breadcrumbs display on website.
 - **NEW**:: Breadcrumbs: Old method replaced with a modular breadcrumb output system.
 - **Added**:: SEO Settings: Support for minimal Schema microdata usage only if legacy Schema in use.
 - **Added**:: Breadcrumbs: Last trail item not clickable.
+- **Added**:: Breadcrumbs: Breadcrumbs Trail Settings: Display Products Item in WooCommerce Taxonomy: option to toggle on or off.
+- **Added**:: Breadcrumbs: Breadcrumbs Trail Settings: Products Item Label: option to display default label (products) or the Shop page title.
 - **Updated**:: Template: .../404.php.
 - **Updated**:: Template: .../header-pwa.php.
 - **Updated**:: Template: .../header.php.
