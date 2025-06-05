@@ -84,21 +84,11 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_separator' ) ) {
  */
 if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 
-	/**
-	 * Outputs the breadcrumb HTML.
-	 *
-	 * @return string
-	 */
 	function oceanwp_get_breadcrumb_html() {
-		// Don't display breadcrumbs on the homepage or main blog index unless paged.
-		if (
-			( is_front_page() && is_home() ) || // Default homepage
-			( is_front_page() && ! is_paged() ) // Static front page
-		) {
+		if ( ( is_front_page() && is_home() ) || ( is_front_page() && ! is_paged() ) ) {
 			return '';
 		}
 
-		// Check early if page is a WooCommerce page, and what breadcrumbs to apply on Woo pages.
 		$woo_source  = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' ) === 'yes';
 		$is_woo_page = function_exists( 'is_woocommerce' ) && is_woocommerce();
 
@@ -108,7 +98,6 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 			return ob_get_clean();
 		}
 
-		// Start generating OceanWP breadcrumb.
 		$generator = new OceanWP_Breadcrumb_Generator();
 		$items     = $generator->get_items();
 
@@ -116,34 +105,33 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 			return '';
 		}
 
-		// Settings and conditions necessary for correct breadcrumb output.
 		$show_title    = get_theme_mod( 'ocean_breadcrumb_show_title', true );
 		$use_microdata = oceanwp_should_output_legacy_schema();
 		$separator     = oceanwp_get_breadcrumb_separator();
 		$position      = 1;
 
-		// Remove last item of the trail if the title of the viewed item is not to be output.
-		/* if ( ! $show_title && is_singular( 'post' ) ) {
-			$last_item = end( $items );
-			if ( isset( $last_item['is_title'] ) && $last_item['is_title'] ) {
-				array_pop( $items );
+		// Track visible items
+		$visible_items = [];
+
+		foreach ( $items as $index => $item ) {
+			$visible = true;
+
+			if ( isset( $item['is_title'] ) && $item['is_title'] && ! $show_title ) {
+				// Replace with screen-reader fallback
+				$items[ $index ] = [
+					'label' => '<span class="screen-reader-text" aria-current="page">' . esc_html( get_the_title() ) . '</span>',
+					'url'   => '',
+					'raw'   => true,
+				];
+				$visible = false;
 			}
-		} */
-		if ( ! $show_title ) {
-			$last_item = end( $items );
-			if ( isset( $last_item['is_title'] ) && $last_item['is_title'] ) {
-				array_pop( $items );
-			}
+
+			$visible_items[ $index ] = $visible;
 		}
 
-		// Determine last item of the trail.
-		$last_index  = count( $items ) - 1;
-
-		// Get correct CSS classes for the main breadcrumb <nav> element.
 		$css_classes = get_breadcrumb_css_class_string();
 
 		$nav_attrs = [
-			'role="navigation"',
 			'aria-label="' . esc_attr__( 'Breadcrumb', 'oceanwp' ) . '"',
 			'class="' . esc_attr( $css_classes ) . '"',
 		];
@@ -153,12 +141,9 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 		}
 
 		ob_start();
-
 		echo '<nav ' . implode( ' ', $nav_attrs ) . '><ol class="trail-items">';
 
 		foreach ( $items as $index => $item ) {
-
-			// Get correct settings and conditions for every breadcrumb <li> element.
 			$is_current = isset( $item['is_current'] ) && $item['is_current'];
 			$is_link    = ! $is_current && ! empty( $item['url'] );
 			$label      = ! empty( $item['raw'] ) ? $item['label'] : esc_html( $item['label'] );
@@ -167,13 +152,12 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 			if ( 0 === $index ) {
 				$classes[] = 'trail-begin';
 			}
-			if ( $index === $last_index ) {
+			if ( $index === array_key_last( $items ) ) {
 				$classes[] = 'trail-end';
 			}
 
 			$class_attr = 'class="' . esc_attr( implode( ' ', $classes ) ) . '"';
-
-			$li_attrs = $use_microdata
+			$li_attrs   = $use_microdata
 				? $class_attr . ' itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"'
 				: $class_attr;
 
@@ -182,14 +166,15 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 			if ( $is_link ) {
 				$extra_attrs = '';
 				if ( 0 === $index ) {
-					$extra_attrs .= ' rel="home" aria-label="' . esc_attr__( 'First page', 'oceanwp' ) . '"';
+					$extra_attrs .= ' rel="home" aria-label="' . esc_attr__( 'Homepage', 'oceanwp' ) . '"';
 				}
 
 				echo '<a href="' . esc_url( $item['url'] ) . '" ' . ( $use_microdata ? 'itemprop="item"' : '' ) . $extra_attrs . '>';
 				echo '<span ' . ( $use_microdata ? 'itemprop="name"' : '' ) . '>' . $label . '</span>';
 				echo '</a>';
 			} else {
-				echo '<span ' . ( $use_microdata ? 'itemprop="name"' : '' ) . '>' . $label . '</span>';
+				$aria_current = $is_current ? ' aria-current="page"' : '';
+				echo '<span ' . ( $use_microdata ? 'itemprop="name" ' : '' ) . $aria_current . '>' . $label . '</span>';
 			}
 
 			if ( $use_microdata ) {
@@ -198,9 +183,17 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 
 			echo '</li>';
 
-			// Append breadcrumb separator if not last trail item.
-			if ( $index !== $last_index ) {
-				echo $separator;
+			// Show separator only if next visible item exists
+			$next_visible = false;
+			for ( $j = $index + 1; $j < count( $items ); $j++ ) {
+				if ( ! empty( $visible_items[ $j ] ) ) {
+					$next_visible = true;
+					break;
+				}
+			}
+
+			if ( $next_visible ) {
+				echo '<li class="trail-separator" aria-hidden="true">' . $separator . '</li>';
 			}
 
 			$position++;
@@ -210,8 +203,8 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 
 		return ob_get_clean();
 	}
-
 }
+
 
 /**
  * Outputs breadcrumb HTML.
