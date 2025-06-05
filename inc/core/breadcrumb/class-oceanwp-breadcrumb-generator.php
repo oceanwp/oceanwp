@@ -75,10 +75,11 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Generator' ) ) {
 			$home = new OceanWP_Breadcrumb_Home();
 			$this->items = array_merge( $this->items, $home->get_items() );
 
-			// WooCommerce - check early.
+			// WooCommerce - check early and stop further modules if Woo page is active.
 			if ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
 				$woocommerce = new OceanWP_Breadcrumb_WooCommerce();
 				$this->items = array_merge( $this->items, $woocommerce->get_items() );
+				return; // Exit early — prevent post/page handlers from also adding the title.
 			}
 
 			// Static blog page.
