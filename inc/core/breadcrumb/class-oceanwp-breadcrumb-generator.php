@@ -12,13 +12,13 @@
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-exit;
+	exit;
 }
 
 if ( ! class_exists( 'OceanWP_Breadcrumb_Generator' ) ) {
 
 	/**
-	 * Class to generate breadcrumb items.
+	 * Class to generate breadcrumb items and manage modules.
 	 */
 	class OceanWP_Breadcrumb_Generator {
 
@@ -30,70 +30,88 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Generator' ) ) {
 		protected $items = [];
 
 		/**
+		 * Registered breadcrumb modules.
+		 *
+		 * @var array
+		 */
+		protected $modules = [];
+
+		/**
 		 * Get the breadcrumb items if enabled.
 		 *
 		 * @return array
 		 */
 		public function get_items() {
-
 			if ( ! get_theme_mod( 'ocean_breadcrumbs', true ) ) {
 				return [];
 			}
 
 			$this->items = [];
+			$this->load_modules();
 
-			$this->add_module_items();
+			foreach ( $this->modules as $module ) {
+				if ( method_exists( $module, 'get_items' ) ) {
+					$this->items = array_merge( $this->items, $module->get_items() );
+				}
+				if ( method_exists( $module, 'is_terminal' ) && $module->is_terminal() ) {
+					break;
+				}
+			}
 
 			return apply_filters( 'oceanwp_breadcrumb_items', $this->items );
 		}
 
 		/**
-		 * Reset breadcrumb items if needed.
-		 * 
-		 * Example usage:
-		 * $generator = new OceanWP_Breadcrumb_Generator();
-		 * $generator->reset_items();
-		 * add_filter( 'oceanwp_breadcrumb_items', 'my_custom_breadcrumb_alter' );
-		 * $items = $generator->get_items();
-		 * remove_filter( 'oceanwp_breadcrumb_items', 'my_custom_breadcrumb_alter' );
+		 * Reset breadcrumb items manually.
 		 *
 		 * @return void
 		 */
 		public function reset_items() {
-
 			$this->items = [];
 		}
 
 		/**
-		 * Add breadcrumb items from the appropriate module.
+		 * Load all breadcrumb modules.
 		 *
 		 * @return void
 		 */
-		protected function add_module_items() {
-
-			$modules = [
+		protected function load_modules() {
+			$this->modules = [
 				new OceanWP_Breadcrumb_Home(),
 				new OceanWP_Breadcrumb_WooCommerce(),
 				new OceanWP_Breadcrumb_First_Page(),
-				new OceanWP_Breadcrumb_Singular(),
 				new OceanWP_Breadcrumb_Post(),
-				new OceanWP_Breadcrumb_Archive(),
-				new OceanWP_Breadcrumb_Taxonomy(),
+				new OceanWP_Breadcrumb_Singular(),
 				new OceanWP_Breadcrumb_Author(),
-				new OceanWP_Breadcrumb_Search(),
+				new OceanWP_Breadcrumb_Taxonomy(),
 				new OceanWP_Breadcrumb_Date(),
+				new OceanWP_Breadcrumb_Archive(),
+				new OceanWP_Breadcrumb_Search(),
 				new OceanWP_Breadcrumb_404(),
 			];
 
-			foreach ( $modules as $module ) {
-				if ( method_exists( $module, 'get_items' ) ) {
-					$this->items = array_merge( $this->items, $module->get_items() );
-				}
-				if ( method_exists( $module, 'is_terminal' ) && $module->is_terminal() ) {
-					return;
-				}
+			// Load portfolio module only if Ocean Portfolio plugin is active.
+			if ( class_exists( 'Ocean_Portfolio' ) ) {
+				$this->modules[] = new OceanWP_Breadcrumb_Portfolio();
 			}
 		}
-	}
 
+		/**
+		 * Get the loaded modules.
+		 *
+		 * @return array
+		 */
+		public function get_modules() {
+			return $this->modules;
+		}
+
+		/**
+		 * Reset modules if needed (eg. for dynamic reloading).
+		 *
+		 * @return void
+		 */
+		public function reset_modules() {
+			$this->modules = [];
+		}
+	}
 }

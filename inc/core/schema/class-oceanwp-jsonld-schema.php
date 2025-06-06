@@ -298,8 +298,8 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			return [
 				'@context'    => 'https://schema.org',
 				'@type'       => 'WebPage',
-				'name'        => esc_html_x( '404 Not Found', 'Schema: WebPage name for 404 error', 'oceanwp' ),
-				'description' => esc_html_x( 'The requested page could not be found on this server.', 'Schema: Description for 404 error page', 'oceanwp' ),
+				'name'        => esc_html_x( '404 Not Found', 'JSON Schema: WebPage name for 404 error', 'oceanwp' ),
+				'description' => esc_html_x( 'The requested page could not be found on this server.', 'JSON Schema: Description for 404 error page', 'oceanwp' ),
 				'url'         => esc_url( home_url( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ),
 				'isPartOf'    => [
 					'@type' => 'WebSite',
@@ -323,7 +323,7 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 				'name'       => get_the_author_meta( 'display_name', $author_id ),
 				'description'=> get_the_author_meta( 'description', $author_id ) ?: sprintf(
 					/* translators: %s: Author display name */
-					esc_html_x( 'Articles by %s', 'Schema: fallback author description', 'oceanwp' ),
+					esc_html_x( 'Articles by %s', 'JSON Schema: fallback author description', 'oceanwp' ),
 					get_the_author_meta( 'display_name', $author_id )
 				),
 				'url'        => get_author_posts_url( $author_id ),
@@ -389,7 +389,7 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 				'itemListElement' => $items,
 			];
 		}
-	
+
 	}
 
 }

@@ -17,65 +17,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'OceanWP_Breadcrumb_Singular' ) ) {
 
-	/**
-	 * Get breadcrumb items for singular pages and static posts page.
-	 *
-	 * @return array
-	 */
 	class OceanWP_Breadcrumb_Singular {
 
-		/**
-		 * Get breadcrumb items for singular pages and static posts page.
-		 *
-		 * @return array
-		 */
-		public function get_items() {
-			if ( is_front_page() || ! is_singular() || get_post_type() === 'post' ) {
+		public function get_items(): array {
+			if ( ! is_page() || is_front_page() ) {
 				return [];
 			}
 
 			global $post;
+			if ( ! $post instanceof WP_Post ) {
+				return [];
+			}
 
 			$items = [];
 
-			$post_type = get_post_type( $post );
-			$post_type_object = get_post_type_object( $post_type );
+			// Collect parent pages in correct hierarchy.
+			$ancestors = get_post_ancestors( $post );
+			$ancestors = array_reverse( $ancestors );
 
-			if ( $post_type_object && $post_type !== 'post' && ! is_attachment() ) {
-				if ( $post_type_object->has_archive ) {
+			foreach ( $ancestors as $ancestor_id ) {
+				$ancestor = get_post( $ancestor_id );
+				if ( $ancestor && $ancestor instanceof WP_Post ) {
 					$items[] = [
-						'label' => $post_type_object->labels->name,
-						'url'   => get_post_type_archive_link( $post_type ),
+						'label' => get_the_title( $ancestor->ID ),
+						'url'   => get_permalink( $ancestor->ID ),
 					];
 				}
 			}
 
-			if ( is_page() ) {
-				$parent_id = $post->post_parent;
-				$parent_links = [];
-
-				while ( $parent_id ) {
-					$page = get_post( $parent_id );
-					$parent_links[] = [
-						'label' => get_the_title( $page->ID ),
-						'url'   => get_permalink( $page->ID ),
-					];
-					$parent_id = $page->post_parent;
-				}
-
-				$parent_links = array_reverse( $parent_links );
-				$items = array_merge( $items, $parent_links );
-			}
-
-			$items[] = [
-				'label'      => get_the_title(),
-				'url'        => '',
-				'is_current' => true,
-			];
-
+			// No need to add current page — it will be handled in the output.
 			return $items;
 		}
 
+		public function is_terminal(): bool {
+			return is_page() && ! is_front_page();
+		}
 	}
-
 }
