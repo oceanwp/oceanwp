@@ -89,7 +89,7 @@ if ( ! function_exists( 'TESToceanwp_get_breadcrumb_html' ) ) {
 			return '';
 		}
 
-		$woo_source  = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' ) === 'yes';
+		$woo_source  = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' ) == 'yes';
 		$is_woo_page = function_exists( 'is_woocommerce' ) && is_woocommerce();
 
 		if ( $woo_source && $is_woo_page ) {
@@ -219,7 +219,7 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 			return '';
 		}
 
-		$woo_source  = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' ) === 'yes';
+		$woo_source  = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' ) == 'yes';
 		$is_woo_page = function_exists( 'is_woocommerce' ) && is_woocommerce();
 
 		if ( $woo_source && $is_woo_page ) {

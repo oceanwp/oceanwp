@@ -1,9 +1,19 @@
 <?php
 /**
- * OceanWP Breadcrumb Portfolio Module
+ * OceanWP Breadcrumb Portfolio Class
  *
  * Handles breadcrumbs for single portfolio items and portfolio taxonomies.
+ * 
+ * @package OceanWP WordPress Theme
+ * @link https://oceanwp.org/
+ * @author OceanWP
+ * @since 4.2.0
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( ! class_exists( 'OceanWP_Breadcrumb_Portfolio' ) ) {
 
