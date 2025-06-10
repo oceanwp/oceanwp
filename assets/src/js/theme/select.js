@@ -31,7 +31,7 @@ export default class Select {
 
       this.#select.classList.forEach(clsCustomSelect => {
         if (clsCustomSelect !== "hasCustomSelect") {
-            themeSelect.classList.add(cls);
+            themeSelect.classList.add(clsCustomSelect);
         }
       });
 
