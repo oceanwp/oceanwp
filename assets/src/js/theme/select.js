@@ -20,14 +20,16 @@ export default class Select {
     this.#elements.selectTags.forEach((select) => {
       this.#select = select;
 
-      this.#select.insertAdjacentHTML(
-        "afterend",
-        `<span class="theme-select ${this.#select.classList}">
-            <span class="theme-selectInner">
-                ${this.#select.options[this.#select.selectedIndex].text}
-            </span>
-        </span>`
-      );
+      const optionText = this.#select.options[this.#select.selectedIndex].text;
+      const themeSelectInner = document.createElement('span');
+      themeSelectInner.classList.add('theme-selectInner');
+      themeSelectInner.textContent = optionText;
+
+      const themeSelect = document.createElement('span');
+      themeSelect.classList.add('theme-select');
+      themeSelect.appendChild(themeSelectInner);
+
+      this.#select.insertAdjacentElement('afterend', themeSelect);
 
       this.#select.classList.add("hasCustomSelect");
 
