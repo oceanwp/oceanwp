@@ -21,6 +21,8 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Portfolio' ) ) {
 
 		/**
 		 * Return portfolio breadcrumb items if applicable.
+		 *
+		 * @return array
 		 */
 		public function get_items(): array {
 			if ( is_singular( 'ocean_portfolio' ) ) {
@@ -98,7 +100,7 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Portfolio' ) ) {
 		}
 
 		/**
-		 * Breadcrumbs for portfolio category or tag archives.
+		 * Breadcrumbs for portfolio category or tag archives with pagination support.
 		 */
 		protected function get_taxonomy_items( string $taxonomy ): array {
 			$term = get_queried_object();
@@ -129,10 +131,23 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Portfolio' ) ) {
 				}
 			}
 
+			// Term item — linked if paged, otherwise final
 			$items[] = [
-				'label' => $term->name,
-				'url'   => '',
+				'label'      => $term->name,
+				'url'        => is_paged() ? get_term_link( $term ) : '',
+				'is_current' => ! is_paged(),
+				'is_hidden'  => false,
 			];
+
+			// Append pagination item if paged
+			if ( is_paged() ) {
+				$items[] = [
+					'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), get_query_var( 'paged' ) ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
+				];
+			}
 
 			return $items;
 		}

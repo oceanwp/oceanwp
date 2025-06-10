@@ -16,18 +16,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! class_exists( 'OceanWP_Breadcrumb_Taxonomy' ) ) {
+
 	class OceanWP_Breadcrumb_Taxonomy {
+
+		/**
+		 * Get breadcrumb items for taxonomy archives (category, tag, custom taxonomies).
+		 *
+		 * @return array
+		 */
 		public function get_items(): array {
 			if ( ! is_tax() && ! is_category() && ! is_tag() ) {
 				return [];
 			}
 
 			$term = get_queried_object();
-			if ( ! $term || ! isset( $term->term_id ) ) {
+
+			if ( ! $term instanceof WP_Term ) {
 				return [];
 			}
 
-			// Skip portfolio taxonomies
+			// Skip Ocean Portfolio taxonomies — handled in a separate class.
 			if ( in_array( $term->taxonomy, [ 'ocean_portfolio_category', 'ocean_portfolio_tag' ], true ) ) {
 				return [];
 			}
@@ -38,49 +46,77 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Taxonomy' ) ) {
 			}
 
 			$items = [];
+
 			$object_types = $taxonomy->object_type;
 
-			// Posts Page for post taxonomies
+			// Posts page for native post taxonomies.
 			if ( in_array( 'post', $object_types, true ) ) {
-				$posts_page_id = get_option( 'page_for_posts' );
-				if ( $posts_page_id && get_post( $posts_page_id ) ) {
+				$page_id = get_option( 'page_for_posts' );
+				if ( $page_id && get_post_status( $page_id ) === 'publish' ) {
 					$items[] = [
-						'label' => get_the_title( $posts_page_id ),
-						'url'   => get_permalink( $posts_page_id ),
+						'label'      => get_the_title( $page_id ),
+						'url'        => get_permalink( $page_id ),
+						'is_current' => false,
+						'is_hidden'  => false,
 					];
 				}
-			} elseif ( ! empty( $object_types ) ) {
-				$post_type      = $object_types[0];
-				$post_type_obj  = get_post_type_object( $post_type );
+			}
+			// CPT archive page if available.
+			elseif ( ! empty( $object_types ) ) {
+				$post_type     = $object_types[0];
+				$post_type_obj = get_post_type_object( $post_type );
 				if ( $post_type_obj && $post_type_obj->has_archive ) {
 					$items[] = [
-						'label' => $post_type_obj->labels->name,
-						'url'   => get_post_type_archive_link( $post_type ),
+						'label'      => $post_type_obj->labels->name,
+						'url'        => get_post_type_archive_link( $post_type ),
+						'is_current' => false,
+						'is_hidden'  => false,
 					];
 				}
 			}
 
+			// Taxonomy term ancestors.
 			if ( is_taxonomy_hierarchical( $term->taxonomy ) && $term->parent ) {
 				$ancestors = array_reverse( get_ancestors( $term->term_id, $term->taxonomy ) );
 				foreach ( $ancestors as $ancestor_id ) {
 					$ancestor = get_term( $ancestor_id, $term->taxonomy );
 					if ( $ancestor && ! is_wp_error( $ancestor ) ) {
 						$items[] = [
-							'label' => $ancestor->name,
-							'url'   => get_term_link( $ancestor ),
+							'label'      => $ancestor->name,
+							'url'        => get_term_link( $ancestor ),
+							'is_current' => false,
+							'is_hidden'  => false,
 						];
 					}
 				}
 			}
 
+			// Current term (unlinked if paged)
 			$items[] = [
-				'label' => single_term_title( '', false ),
-				'url'   => '',
+				'label'      => single_term_title( '', false ),
+				'url'        => is_paged() ? get_term_link( $term ) : '',
+				'is_current' => ! is_paged(),
+				'is_hidden'  => false,
 			];
+
+			// Pagination trail if on paged archive.
+			if ( is_paged() ) {
+				$items[] = [
+					'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), get_query_var( 'paged' ) ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
+				];
+			}
 
 			return $items;
 		}
 
+		/**
+		 * Determine if this is a terminal breadcrumb context.
+		 *
+		 * @return bool
+		 */
 		public function is_terminal(): bool {
 			return is_category() || is_tag() || is_tax();
 		}

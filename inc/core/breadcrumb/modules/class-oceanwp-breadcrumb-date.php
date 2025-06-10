@@ -18,52 +18,80 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'OceanWP_Breadcrumb_Date' ) ) {
 
 	/**
-	 * Get breadcrumb items for date-based archives.
-	 *
-	 * @return array
+	 * Handles breadcrumb items for date-based archives.
 	 */
 	class OceanWP_Breadcrumb_Date {
 
 		/**
-		 * Get breadcrumb items for date-based archives.
+		 * Map of month numbers to translated month names.
+		 *
+		 * @var array
+		 */
+		protected $months = [
+			1  => 'January',
+			2  => 'February',
+			3  => 'March',
+			4  => 'April',
+			5  => 'May',
+			6  => 'June',
+			7  => 'July',
+			8  => 'August',
+			9  => 'September',
+			10 => 'October',
+			11 => 'November',
+			12 => 'December',
+		];
+
+		/**
+		 * Get breadcrumb items for date archives (year, month, day), with pagination support.
 		 *
 		 * @return array
 		 */
-		public function get_items() {
+		public function get_items(): array {
 			if ( ! is_date() ) {
 				return [];
 			}
 
-			global $wp_query;
-
 			$items = [];
 
-			if ( is_day() ) {
+			$year  = (int) get_query_var( 'year' );
+			$month = (int) get_query_var( 'monthnum' );
+			$day   = (int) get_query_var( 'day' );
+
+			if ( $year ) {
 				$items[] = [
-					'label' => get_the_time( 'Y' ),
-					'url'   => get_year_link( get_the_time( 'Y' ) ),
+					'label'      => $year,
+					'url'        => ( $month || $day || is_paged() ) ? get_year_link( $year ) : '',
+					'is_current' => ! $month && ! $day && ! is_paged(),
+					'is_hidden'  => false,
 				];
+			}
+
+			if ( $month ) {
+				$month_name = $this->get_month_name( $month );
 				$items[] = [
-					'label' => get_the_time( 'F' ),
-					'url'   => get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ),
+					'label'      => $month_name,
+					'url'        => ( $day || is_paged() ) ? get_month_link( $year, $month ) : '',
+					'is_current' => ! $day && ! is_paged(),
+					'is_hidden'  => false,
 				];
+			}
+
+			if ( $day ) {
 				$items[] = [
-					'label' => get_the_time( 'd' ),
-					'url'   => '',
+					'label'      => sprintf( '%02d', $day ),
+					'url'        => '',
+					'is_current' => ! is_paged(),
+					'is_hidden'  => false,
 				];
-			} elseif ( is_month() ) {
+			}
+
+			if ( is_paged() ) {
 				$items[] = [
-					'label' => get_the_time( 'Y' ),
-					'url'   => get_year_link( get_the_time( 'Y' ) ),
-				];
-				$items[] = [
-					'label' => get_the_time( 'F' ),
-					'url'   => '',
-				];
-			} elseif ( is_year() ) {
-				$items[] = [
-					'label' => get_the_time( 'Y' ),
-					'url'   => '',
+					'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), get_query_var( 'paged' ) ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
 				];
 			}
 
@@ -71,7 +99,20 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Date' ) ) {
 		}
 
 		/**
-		 * Whether this is a terminal breadcrumb (no more modules after it).
+		 * Get translated month name from number.
+		 *
+		 * @param int $month_num
+		 * @return string
+		 */
+		protected function get_month_name( int $month_num ): string {
+			if ( isset( $this->months[ $month_num ] ) ) {
+				return esc_html__( $this->months[ $month_num ], 'oceanwp' );
+			}
+			return '';
+		}
+
+		/**
+		 * Whether this is a terminal breadcrumb module.
 		 *
 		 * @return bool
 		 */
@@ -79,5 +120,4 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Date' ) ) {
 			return is_date();
 		}
 	}
-
 }

@@ -50,10 +50,17 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Generator' ) ) {
 			$this->load_modules();
 
 			foreach ( $this->modules as $module ) {
+				$class = get_class( $module );
+
+				$is_terminal = method_exists( $module, 'is_terminal' ) && $module->is_terminal();
+				// Line below added for testing purposes. Comment out to check which module is loaded on which page.
+				//error_log( sprintf( '[Breadcrumb] Checking module: %s — Terminal: %s', $class, $is_terminal ? 'yes' : 'no' ) );
+
 				if ( method_exists( $module, 'get_items' ) ) {
 					$this->items = array_merge( $this->items, $module->get_items() );
 				}
-				if ( method_exists( $module, 'is_terminal' ) && $module->is_terminal() ) {
+
+				if ( $is_terminal ) {
 					break;
 				}
 			}

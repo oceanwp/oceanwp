@@ -18,48 +18,62 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'OceanWP_Breadcrumb_First_Page' ) ) {
 
 	/**
-	 * Handles breadcrumb items for the website's first page:
-	 * - Static front page
-	 * - Blog index (when set as homepage or separate page)
+	 * Handles breadcrumb items for the website's homepage or blog index
+	 * when used as the static front page or posts page.
 	 */
 	class OceanWP_Breadcrumb_First_Page {
 
 		/**
-		 * Returns breadcrumb items for the homepage or blog index.
+		 * Returns breadcrumb items for front page or blog-as-homepage (paged).
 		 *
 		 * @return array
 		 */
 		public function get_items(): array {
 
-			// Only handle default front page or static posts page on homepage.
-			if ( ( is_front_page() && is_home() ) || ( is_home() && ! is_singular() ) ) {
+			$page_id = null;
 
-				$posts_page_id = get_option( 'page_for_posts' );
+			// Static front page (actual page selected in Settings > Reading)
+			if ( is_front_page() && ! is_home() ) {
+				$page_id = get_option( 'page_on_front' );
+			}
 
-				if ( is_home() && $posts_page_id ) {
-					return [
-						[
-							'label'      => get_the_title( $posts_page_id ),
-							'url'        => '',
-							'is_current' => true,
-						],
+			// Posts page used as homepage and we're on a paginated view
+			if ( is_home() && is_front_page() && is_paged() ) {
+				$page_id = get_option( 'page_for_posts' );
+			}
+
+			if ( $page_id ) {
+				$items = [
+					[
+						'label'      => get_the_title( $page_id ),
+						'url'        => get_permalink( $page_id ),
+						'is_current' => ! is_paged(),
+					],
+				];
+
+				if ( is_paged() ) {
+					$items[] = [
+						'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), get_query_var( 'paged' ) ),
+						'url'        => '',
+						'is_current' => true,
+						'is_hidden'  => false,
 					];
 				}
 
-				// Static front page with no separate posts page
-				return [];
+				return $items;
 			}
 
 			return [];
 		}
 
 		/**
-		 * This is a terminal condition — no further breadcrumb modules should run.
+		 * This is a terminal condition — only for true homepage or paginated blog-as-homepage.
 		 *
 		 * @return bool
 		 */
 		public function is_terminal(): bool {
-			return ( is_front_page() && is_home() ) || ( is_home() && ! is_singular() );
+			// True homepage (static or default), or paginated home-as-blog
+			return is_front_page();
 		}
 	}
 }

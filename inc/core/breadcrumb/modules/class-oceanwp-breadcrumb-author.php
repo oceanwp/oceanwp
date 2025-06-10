@@ -18,9 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'OceanWP_Breadcrumb_Author' ) ) {
 
 	/**
-	 * Get breadcrumb items for author archive pages.
-	 *
-	 * @return array
+	 * Handles breadcrumb items for author archive pages.
 	 */
 	class OceanWP_Breadcrumb_Author {
 
@@ -29,7 +27,7 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Author' ) ) {
 		 *
 		 * @return array
 		 */
-		public function get_items() {
+		public function get_items(): array {
 			if ( ! is_author() ) {
 				return [];
 			}
@@ -42,17 +40,30 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Author' ) ) {
 
 			$items = [];
 
-			// Translators: %s represents the Author's name for author archive pages.
 			$items[] = [
-				'label' => sprintf( esc_html_x( 'Author: %s', 'Author name for author archive pages', 'oceanwp' ), esc_html( $author->display_name ) ),
-				'url'   => '',
+				'label'      => sprintf(
+					esc_html_x( 'Author: %s', 'Author name for author archive pages', 'oceanwp' ),
+					$author->display_name
+				),
+				'url'        => is_paged() ? get_author_posts_url( $author->ID ) : '',
+				'is_current' => ! is_paged(),
+				'is_hidden'  => false,
 			];
+
+			if ( is_paged() ) {
+				$items[] = [
+					'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), get_query_var( 'paged' ) ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
+				];
+			}
 
 			return $items;
 		}
 
 		/**
-		 * Whether this is a terminal breadcrumb (no more modules after it).
+		 * Whether this is a terminal breadcrumb module.
 		 *
 		 * @return bool
 		 */
@@ -60,5 +71,4 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Author' ) ) {
 			return is_author();
 		}
 	}
-
 }

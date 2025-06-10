@@ -33,16 +33,37 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 
 			$post_type = get_post_type( $post );
 
-			// Skip pages and portfolio.
+			// Skip pages and portfolio (handled by separate modules).
 			if ( in_array( $post_type, [ 'page', 'ocean_portfolio' ], true ) ) {
 				return [];
 			}
 
+			$items = [];
+
 			if ( $post_type === 'post' ) {
-				return $this->get_post_items( $post );
+				$items = $this->get_post_items( $post );
+			} else {
+				$items = $this->get_generic_cpt_items( $post );
 			}
 
-			return $this->get_generic_cpt_items( $post );
+			// Append pagination info if this is a paginated post view.
+			if ( is_singular() && get_query_var( 'page' ) > 1 ) {
+				$items[] = [
+					'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), get_query_var( 'page' ) ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
+				];
+			} elseif ( is_singular() && get_option( 'page_comments' ) && get_query_var( 'cpage' ) > 1 ) {
+				$items[] = [
+					'label'      => sprintf( esc_html__( 'Comment Page %d', 'oceanwp' ), get_query_var( 'cpage' ) ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
+				];
+			}
+
+			return $items;
 		}
 
 		protected function get_post_items( WP_Post $post ): array {

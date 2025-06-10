@@ -19,6 +19,11 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Singular' ) ) {
 
 	class OceanWP_Breadcrumb_Singular {
 
+		/**
+		 * Get breadcrumb items for static pages (with parent pages and optional pagination).
+		 *
+		 * @return array
+		 */
 		public function get_items(): array {
 			if ( ! is_page() || is_front_page() ) {
 				return [];
@@ -39,16 +44,42 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Singular' ) ) {
 				$ancestor = get_post( $ancestor_id );
 				if ( $ancestor && $ancestor instanceof WP_Post ) {
 					$items[] = [
-						'label' => get_the_title( $ancestor->ID ),
-						'url'   => get_permalink( $ancestor->ID ),
+						'label'      => get_the_title( $ancestor->ID ),
+						'url'        => get_permalink( $ancestor->ID ),
+						'is_current' => false,
+						'is_hidden'  => false,
 					];
 				}
 			}
 
-			// No need to add current page — it will be handled in the output.
+			// If on a paginated page (<!--nextpage--> or paged comments), show pagination label.
+			$current_page = get_query_var( 'page' );
+			$current_comment_page = get_query_var( 'cpage' );
+
+			if ( $current_page > 1 ) {
+				$items[] = [
+					'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), $current_page ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
+				];
+			} elseif ( get_option( 'page_comments' ) && $current_comment_page > 1 ) {
+				$items[] = [
+					'label'      => sprintf( esc_html__( 'Comment Page %d', 'oceanwp' ), $current_comment_page ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
+				];
+			}
+
 			return $items;
 		}
 
+		/**
+		 * Determine if this is a terminal breadcrumb context.
+		 *
+		 * @return bool
+		 */
 		public function is_terminal(): bool {
 			return is_page() && ! is_front_page();
 		}
