@@ -21,7 +21,7 @@ class OceanWP_Customize_Blog_CSS {
 		add_filter('ocean_head_css', array($this, 'generate_css'));
 	}
 
-	public function generate_Css($output) {
+	public function generate_css($output) {
 
 		// Layout.
 		$entries_layout = get_theme_mod( 'ocean_blog_archives_layout', 'right-sidebar' );

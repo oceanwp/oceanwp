@@ -21,7 +21,7 @@ class OceanWP_Customize_Topbar_CSS {
 		add_filter('ocean_head_css', array($this, 'generate_css'));
 	}
 
-	public function generate_Css($output) {
+	public function generate_css($output) {
 
 		$top_padding                    = get_theme_mod( 'ocean_top_bar_top_padding', 8 );
 		$right_padding                  = get_theme_mod( 'ocean_top_bar_right_padding', 0 );

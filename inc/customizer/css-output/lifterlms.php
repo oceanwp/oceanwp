@@ -30,7 +30,7 @@ class OceanWP_Customize_LifterLMS_CSS {
 		add_filter('ocean_head_css', array($this, 'generate_css'));
 	}
 
-	public function generate_Css($output) {
+	public function generate_css($output) {
 
 		// Styling vars
 		$llms_top_padding 								= get_theme_mod( 'ocean_llms_top_padding' );

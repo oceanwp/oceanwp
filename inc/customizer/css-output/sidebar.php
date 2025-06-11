@@ -21,7 +21,7 @@ class OceanWP_Customize_Sidebar_CSS {
 		add_filter('ocean_head_css', array($this, 'generate_css'));
 	}
 
-	public function generate_Css($output) {
+	public function generate_css($output) {
 
 		$sidebar_bg 							= get_theme_mod( 'ocean_sidebar_bg' );
 		$sidebar_top_padding 					= get_theme_mod( 'ocean_sidebar_top_padding', 0 );

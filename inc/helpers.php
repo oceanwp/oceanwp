@@ -3309,29 +3309,69 @@ function ocean_single_blog_header_style( $style ) {
 
 add_filter( 'ocean_header_style', 'ocean_single_blog_header_style' );
 
+/**
+ * Returns estimated reading time for a blog post.
+ *
+ * @param int|null $post_id Optional. Post ID. Defaults to current post.
+ * @param bool     $apply_word_count_filter Whether to apply the 'ocean_post_reading_word_count' filter.
+ * @return int Estimated reading time in minutes.
+ * 
+ * @since 4.1.0
+*/
+if ( ! function_exists( 'ocean_post_reading_time' ) ) {
+
+	function ocean_post_reading_time( $post_id = null, $apply_word_count_filter = false ) {
+
+		$post_id = $post_id ? $post_id : get_the_id();
+		$content = get_post_field( 'post_content', $post_id );
+
+		// Remove shortcodes and tags.
+		$owp_post_content = strip_shortcodes( $content );
+		$owp_post_content = wp_strip_all_tags( $owp_post_content );
+
+		// Count words/content separated by whitespace.
+		$word_count = count( preg_split( '/\s+/', $owp_post_content, -1, PREG_SPLIT_NO_EMPTY ) );
+
+		if ( $apply_word_count_filter ) {
+			$word_count = apply_filters( 'ocean_post_reading_word_count', $word_count );
+		}
+
+		// Words per minute reading speed.
+		$words_per_minute = 200;
+		$words_per_minute = apply_filters( 'oceanwp_post_reading_time_words_per_minute', $words_per_minute );
+
+		// Calculate and filter reading time.
+		$reading_time = absint( ceil( $word_count / $words_per_minute ) );
+		$reading_time = apply_filters( 'oceanwp_post_reading_time', $reading_time );
+
+		return $reading_time;
+
+	}
+}
 
 /**
- * Returns reading time
- *
+ * Outputs blog post reading time in the main meta data area.
+ * 
+ * Retrieves the reading time using the ocean_post_reading_time() function
+ * and outputs it as a localized string with singular/plural support.
+ * 
+ * @return void
+ * 
  * @since 1.8.4
+ * @updated 4.1.0 Shortened. Extends the ocean_post_reading_time function.
 */
 if ( ! function_exists( 'ocean_reading_time' ) ) {
 
 	function ocean_reading_time() {
 
-		global $post;
-
-		$content      = get_post_field( 'post_content', $post->ID );
-		$word_count   = str_word_count( $content );
-		$reading_time = ceil( $word_count / 200 );
-
-		$reading_time = apply_filters( 'oceanwp_post_reading_time', $reading_time );
+		$reading_time = ocean_post_reading_time();
 
 		$owp_reading_time = printf(
-			/* translators: 1: post reading time. */
-			esc_html__( '%1$s mins read', 'oceanwp' ),
+			/* Translators: %s: post reading time. */
+			_n( '%s min read', '%s mins read', $reading_time, 'oceanwp' ),
 			number_format_i18n( $reading_time )
 		);
+
 	}
 }
 
