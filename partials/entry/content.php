@@ -18,13 +18,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php
 	// Display excerpt.
-	if ( '500' !== get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' ) ) :
+	if ( 500 !== get_theme_mod( 'ocean_blog_entry_excerpt_length', 30 ) ) :
 		?>
 
 		<p>
 			<?php
 			// Display custom excerpt.
-			echo oceanwp_excerpt( get_theme_mod( 'ocean_blog_entry_excerpt_length', '30' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo oceanwp_excerpt( get_theme_mod( 'ocean_blog_entry_excerpt_length', 30 ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			?>
 		</p>
 

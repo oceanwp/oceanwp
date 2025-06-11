@@ -31,7 +31,7 @@ class OceanWP_Customize_Header_CSS {
 		add_filter( 'ocean_head_css', array( $this, 'header_image_css' ) );
 	}
 
-	public function generate_Css($output) {
+	public function generate_css($output) {
 
 		$header_style = oceanwp_header_style();
 		$mobile_style = oceanwp_mobile_menu_style();
