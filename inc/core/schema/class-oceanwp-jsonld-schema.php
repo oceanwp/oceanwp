@@ -299,7 +299,7 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 				'@context'    => 'https://schema.org',
 				'@type'       => 'WebPage',
 				'name'        => esc_html_x( '404 Not Found', 'JSON Schema: WebPage name for 404 error', 'oceanwp' ),
-				'description' => esc_html_x( 'The requested page could not be found on this server.', 'JSON Schema: Description for 404 error page', 'oceanwp' ),
+				'description' => esc_html_x( 'The requested page could not be found on this server.', 'JSON Schema: 404 error page description', 'oceanwp' ),
 				'url'         => esc_url( home_url( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ),
 				'isPartOf'    => [
 					'@type' => 'WebSite',

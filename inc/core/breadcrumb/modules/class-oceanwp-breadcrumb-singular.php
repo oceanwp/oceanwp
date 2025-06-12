@@ -58,14 +58,16 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Singular' ) ) {
 
 			if ( $current_page > 1 ) {
 				$items[] = [
-					'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), $current_page ),
+					/* translators: %d: comment page number in breadcrumb trail */
+					'label'      => sprintf( esc_html_x( 'Page %d', 'Breadcrumb: paged items trail', 'oceanwp' ), $current_page ),
 					'url'        => '',
 					'is_current' => true,
 					'is_hidden'  => false,
 				];
 			} elseif ( get_option( 'page_comments' ) && $current_comment_page > 1 ) {
 				$items[] = [
-					'label'      => sprintf( esc_html__( 'Comment Page %d', 'oceanwp' ), $current_comment_page ),
+					/* translators: %d: comment page number in breadcrumb trail */
+					'label'      => sprintf( esc_html_x( 'Comment Page %d', 'Breadcrumb: comments paged items trail', 'oceanwp' ), $current_comment_page ),
 					'url'        => '',
 					'is_current' => true,
 					'is_hidden'  => false,

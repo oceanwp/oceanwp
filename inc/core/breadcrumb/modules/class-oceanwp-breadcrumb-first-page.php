@@ -53,7 +53,8 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_First_Page' ) ) {
 
 				if ( is_paged() ) {
 					$items[] = [
-						'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), get_query_var( 'paged' ) ),
+						/* translators: %d: page number in breadcrumb trail */
+						'label'      => sprintf( esc_html_x( 'Page %d', 'Breadcrumb: paged items trail', 'oceanwp' ), get_query_var( 'paged' ) ),
 						'url'        => '',
 						'is_current' => true,
 						'is_hidden'  => false,

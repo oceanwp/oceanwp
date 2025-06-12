@@ -49,14 +49,16 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 			// Append pagination info if this is a paginated post view.
 			if ( is_singular() && get_query_var( 'page' ) > 1 ) {
 				$items[] = [
-					'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), get_query_var( 'page' ) ),
+					/* translators: %d: page number in breadcrumb trail */
+					'label'      => sprintf( esc_html_x( 'Page %d', 'Breadcrumb: paged items trail', 'oceanwp' ), get_query_var( 'page' ) ),
 					'url'        => '',
 					'is_current' => true,
 					'is_hidden'  => false,
 				];
 			} elseif ( is_singular() && get_option( 'page_comments' ) && get_query_var( 'cpage' ) > 1 ) {
 				$items[] = [
-					'label'      => sprintf( esc_html__( 'Comment Page %d', 'oceanwp' ), get_query_var( 'cpage' ) ),
+					/* translators: %d: comments page number in breadcrumb trail */
+					'label'      => sprintf( esc_html_x( 'Comment Page %d', 'Breadcrumb: comments paged items trail', 'oceanwp' ), get_query_var( 'cpage' ) ),
 					'url'        => '',
 					'is_current' => true,
 					'is_hidden'  => false,

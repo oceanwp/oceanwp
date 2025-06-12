@@ -17,9 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'OceanWP_Breadcrumb_Date' ) ) {
 
-	/**
-	 * Handles breadcrumb items for date-based archives.
-	 */
 	class OceanWP_Breadcrumb_Date {
 
 		/**
@@ -27,26 +24,28 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Date' ) ) {
 		 *
 		 * @var array
 		 */
-		protected $months = [
-			1  => 'January',
-			2  => 'February',
-			3  => 'March',
-			4  => 'April',
-			5  => 'May',
-			6  => 'June',
-			7  => 'July',
-			8  => 'August',
-			9  => 'September',
-			10 => 'October',
-			11 => 'November',
-			12 => 'December',
-		];
+		protected $months = [];
 
 		/**
-		 * Get breadcrumb items for date archives (year, month, day), with pagination support.
-		 *
-		 * @return array
+		 * Constructor: Populate translated months.
 		 */
+		public function __construct() {
+			$this->months = [
+				1  => __( 'January', 'oceanwp' ),
+				2  => __( 'February', 'oceanwp' ),
+				3  => __( 'March', 'oceanwp' ),
+				4  => __( 'April', 'oceanwp' ),
+				5  => __( 'May', 'oceanwp' ),
+				6  => __( 'June', 'oceanwp' ),
+				7  => __( 'July', 'oceanwp' ),
+				8  => __( 'August', 'oceanwp' ),
+				9  => __( 'September', 'oceanwp' ),
+				10 => __( 'October', 'oceanwp' ),
+				11 => __( 'November', 'oceanwp' ),
+				12 => __( 'December', 'oceanwp' ),
+			];
+		}
+
 		public function get_items(): array {
 			if ( ! is_date() ) {
 				return [];
@@ -68,9 +67,8 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Date' ) ) {
 			}
 
 			if ( $month ) {
-				$month_name = $this->get_month_name( $month );
 				$items[] = [
-					'label'      => $month_name,
+					'label'      => $this->get_month_name( $month ),
 					'url'        => ( $day || is_paged() ) ? get_month_link( $year, $month ) : '',
 					'is_current' => ! $day && ! is_paged(),
 					'is_hidden'  => false,
@@ -88,7 +86,8 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Date' ) ) {
 
 			if ( is_paged() ) {
 				$items[] = [
-					'label'      => sprintf( esc_html__( 'Page %d', 'oceanwp' ), get_query_var( 'paged' ) ),
+					/* translators: %d: comment page number in breadcrumb trail */
+					'label'      => sprintf( esc_html_x( 'Page %d', 'Breadcrumb: paged items trail', 'oceanwp' ), get_query_var( 'paged' ) ),
 					'url'        => '',
 					'is_current' => true,
 					'is_hidden'  => false,
@@ -99,20 +98,14 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Date' ) ) {
 		}
 
 		/**
-		 * Get translated month name from number.
-		 *
-		 * @param int $month_num
-		 * @return string
+		 * Get translated month name.
 		 */
 		protected function get_month_name( int $month_num ): string {
-			if ( isset( $this->months[ $month_num ] ) ) {
-				return esc_html__( $this->months[ $month_num ], 'oceanwp' );
-			}
-			return '';
+			return esc_html( $this->months[ $month_num ] ) ?? '';
 		}
 
 		/**
-		 * Whether this is a terminal breadcrumb module.
+		 * Determine if this is a terminal breadcrumb context.
 		 *
 		 * @return bool
 		 */

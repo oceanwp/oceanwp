@@ -128,7 +128,7 @@ if ( ! class_exists( 'OceanWP_Legacy_Schema' ) ) {
 			];
 
 			if ( isset( $itemprops[ $location ] ) ) {
-				$schema = 'itemprop="' . esc_attr( $itemprops[ $location ] ) . '"';
+				$schema = ' itemprop="' . esc_attr( $itemprops[ $location ] ) . '"';
 
 				if ( 'main' === $location ) {
 					$schema .= ' itemscope itemtype="https://schema.org/WebPageElement"';
