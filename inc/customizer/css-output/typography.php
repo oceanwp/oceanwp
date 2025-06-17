@@ -133,7 +133,7 @@ class OceanWP_Typography_CSS {
 	}
 
 	/**
-	 * Typograhpy
+	 * Typography
 	 *
 	 * @since 4.0.5
 	 */

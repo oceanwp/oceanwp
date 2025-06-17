@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-11T07:28:42+00:00\n"
+"POT-Creation-Date: 2025-06-17T06:38:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: oceanwp\n"
@@ -2677,6 +2677,7 @@ msgstr ""
 #: inc/customizer/options/footer-widget.php:343
 #: inc/customizer/options/header.php:2861
 #: inc/customizer/options/header.php:3264
+#: inc/customizer/options/header.php:3671
 #: inc/customizer/options/page-settings.php:878
 #: inc/customizer/options/page-settings.php:1462
 #: inc/customizer/options/sidebar.php:366
@@ -5507,10 +5508,6 @@ msgstr ""
 
 #: inc/customizer/options/header.php:3632
 msgid "Dropdown Panel Width"
-msgstr ""
-
-#: inc/customizer/options/header.php:3671
-msgid "Typograhpy and Colors"
 msgstr ""
 
 #: inc/customizer/options/header.php:3681
