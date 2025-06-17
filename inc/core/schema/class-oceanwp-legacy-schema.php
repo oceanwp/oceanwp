@@ -93,7 +93,7 @@ if ( ! class_exists( 'OceanWP_Legacy_Schema' ) ) {
 				if ( is_home() || is_front_page() ) {
 					$type = 'WebPage';
 				} elseif ( is_category() || is_tag() ) {
-					$type = 'CollectionPage'; // Perhaps Blog instead?
+					$type = 'CollectionPage';
 				} elseif ( is_singular( 'post' ) ) {
 					$type = 'Article';
 				} elseif ( is_page() ) {
@@ -108,7 +108,7 @@ if ( ! class_exists( 'OceanWP_Legacy_Schema' ) ) {
 
 			// Layout components.
 			if ( isset( $layout_schemas[ $location ] ) ) {
-				$schema = 'itemscope itemtype="' . esc_url( $layout_schemas[ $location ] ) . '"';
+				$schema = ' itemscope itemtype="' . esc_url( $layout_schemas[ $location ] ) . '"';
 				return apply_filters( 'oceanwp_new_schema_markup', $schema, $location );
 			}
 
@@ -128,7 +128,7 @@ if ( ! class_exists( 'OceanWP_Legacy_Schema' ) ) {
 			];
 
 			if ( isset( $itemprops[ $location ] ) ) {
-				$schema = 'itemprop="' . esc_attr( $itemprops[ $location ] ) . '"';
+				$schema = ' itemprop="' . esc_attr( $itemprops[ $location ] ) . '"';
 
 				if ( 'main' === $location ) {
 					$schema .= ' itemscope itemtype="https://schema.org/WebPageElement"';

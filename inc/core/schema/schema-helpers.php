@@ -118,3 +118,48 @@ if ( ! function_exists( 'oceanwp_schema_attr' ) ) {
 		}
 	}
 }
+
+/**
+ * Check if JSON Schema output is enabled in the Customizer.
+ * 
+ * @since 4.2.0
+ *
+ * @return bool
+ */
+if ( ! function_exists( 'oceanwp_is_json_schema_enabled' ) ) {
+	function oceanwp_is_json_schema_enabled() {
+		return get_theme_mod( 'ocean_schema_markup', true )
+			&& get_theme_mod( 'ocean_schema_manager', false );
+	}
+}
+
+/**
+ * Check if JSON Schema should use the caching option.
+ * 
+ * @since 4.2.0
+ *
+ * @return bool
+ */
+if ( ! function_exists( 'oceanwp_should_use_schema_cache' ) ) {
+	function oceanwp_should_use_schema_cache() {
+		return oceanwp_is_json_schema_enabled()
+			&& get_theme_mod( 'ocean_schema_cache_enable', false );
+	}
+}
+
+/**
+ * Additional checks to prevent Schema from being
+ * rendered in all non-frontend situations, including preview mode.
+ * 
+ * @since 4.2.0
+ *
+ * @return bool
+ */
+if ( ! function_exists( 'oceanwp_should_output_jsonld' ) ) {
+	function oceanwp_should_output_jsonld() {
+		return ! is_admin()
+			&& ! is_preview()
+			&& ! wp_doing_ajax()
+			&& ( ! defined( 'REST_REQUEST' ) || ! REST_REQUEST );
+	}
+}

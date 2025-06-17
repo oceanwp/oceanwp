@@ -3254,27 +3254,49 @@ function ocean_single_blog_header_style( $style ) {
 add_filter( 'ocean_header_style', 'ocean_single_blog_header_style' );
 
 /**
+ * Returns word count for a blog post.
+ * 
+ * @since 4.2.0
+ *
+ * @param int|null $post_id Optional. Post ID. Defaults to current post.
+ * @return int Word count.
+*/
+if ( ! function_exists( 'oceanwp_get_post_word_count' ) ) {
+
+	function oceanwp_get_post_word_count( $post_id = null ) {
+
+	$post_id = $post_id ?: get_the_ID();
+	$content = get_post_field( 'post_content', $post_id );
+
+	// Remove shortcodes and tags.
+	$owp_post_content = strip_shortcodes( $content );
+	$owp_post_content = wp_strip_all_tags( $owp_post_content );
+
+	// Count words/content separated by whitespace.
+	$word_count = count( preg_split( '/\s+/', $owp_post_content, -1, PREG_SPLIT_NO_EMPTY ) );
+
+	return $word_count;
+
+	}
+}
+
+/**
  * Returns estimated reading time for a blog post.
+ * 
+ * @since 4.1.0
+ * @updated 4.2.0 Use of oceanwp_get_post_word_count()
  *
  * @param int|null $post_id Optional. Post ID. Defaults to current post.
  * @param bool     $apply_word_count_filter Whether to apply the 'ocean_post_reading_word_count' filter.
  * @return int Estimated reading time in minutes.
- * 
- * @since 4.1.0
 */
 if ( ! function_exists( 'ocean_post_reading_time' ) ) {
 
 	function ocean_post_reading_time( $post_id = null, $apply_word_count_filter = false ) {
 
 		$post_id = $post_id ? $post_id : get_the_id();
-		$content = get_post_field( 'post_content', $post_id );
 
-		// Remove shortcodes and tags.
-		$owp_post_content = strip_shortcodes( $content );
-		$owp_post_content = wp_strip_all_tags( $owp_post_content );
-
-		// Count words/content separated by whitespace.
-		$word_count = count( preg_split( '/\s+/', $owp_post_content, -1, PREG_SPLIT_NO_EMPTY ) );
+		$word_count = oceanwp_get_post_word_count( $post_id );
 
 		if ( $apply_word_count_filter ) {
 			$word_count = apply_filters( 'ocean_post_reading_word_count', $word_count );

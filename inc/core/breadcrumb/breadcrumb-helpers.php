@@ -37,9 +37,7 @@ if ( ! function_exists( 'get_breadcrumb_css_classes' ) ) {
 }
 
 /**
- * Get the breadcrumb CSS classes as a space-separated string.
- *
- * Useful for outputting directly into an HTML class attribute.
+ * Get breadcrumb CSS classes as a space-separated string.
  * 
  * @since 4.2.0
  *
@@ -55,9 +53,6 @@ if ( ! function_exists( 'get_breadcrumb_css_class_string' ) ) {
 /**
  * Get the breadcrumb separator HTML.
  *
- * Retrieves the breadcrumb separator character
- * and wraps it in a span element with a CSS class for styling.
- *
  * @since 4.2.0
  *
  * @return string HTML string containing the breadcrumb separator.
@@ -71,7 +66,7 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_separator' ) ) {
 			get_theme_mod( 'ocean_breadcrumb_separator', '>' )
 		);
 
-		return '<span class="breadcrumb-sep" aria-hidden="true">' . esc_html( $separator ) . '</span>';
+		return '<span class="breadcrumb-sep">' . esc_html( $separator ) . '</span>';
 	}
 }
 
@@ -84,12 +79,17 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_separator' ) ) {
  */
 if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 
+	/**
+	 * Outputs the breadcrumb HTML for OceanWP.
+	 *
+	 * @return string HTML output.
+	 */
 	function oceanwp_get_breadcrumb_html() {
 		if ( ( is_front_page() && is_home() ) || ( is_front_page() && ! is_paged() ) ) {
 			return '';
 		}
 
-		$woo_source  = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' ) === 'yes';
+		$woo_source  = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' ) == 'yes';
 		$is_woo_page = function_exists( 'is_woocommerce' ) && is_woocommerce();
 
 		if ( $woo_source && $is_woo_page ) {
@@ -110,29 +110,29 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 		$separator     = oceanwp_get_breadcrumb_separator();
 		$position      = 1;
 
-		// Track visible items
-		$visible_items = [];
+		// Add the final title item.
+		if ( is_singular() && ! is_front_page() ) {
+			$label = get_the_title();
 
-		foreach ( $items as $index => $item ) {
-			$visible = true;
-
-			if ( isset( $item['is_title'] ) && $item['is_title'] && ! $show_title ) {
-				// Replace with screen-reader fallback
-				$items[ $index ] = [
-					'label' => '<span class="screen-reader-text" aria-current="page">' . esc_html( get_the_title() ) . '</span>',
-					'url'   => '',
-					'raw'   => true,
-				];
-				$visible = false;
-			}
-
-			$visible_items[ $index ] = $visible;
+			$items[] = [
+				'label'      => $show_title ? $label : '<span class="screen-reader-text" aria-current="page">' . esc_html( $label ) . '</span>',
+				'url'        => '',
+				'raw'        => ! $show_title,
+				'is_current' => true,
+				'is_hidden'  => ! $show_title,
+			];
 		}
+
+		// Build a filtered list of visible items (for separator placement only).
+		$renderable_items = array_filter(
+			$items,
+			fn( $item ) => empty( $item['is_hidden'] )
+		);
 
 		$css_classes = get_breadcrumb_css_class_string();
 
 		$nav_attrs = [
-			'aria-label="' . esc_attr__( 'Breadcrumb', 'oceanwp' ) . '"',
+			'aria-label="' . esc_attr_x( 'Breadcrumb', 'Breadcrumb: Aria label for website breadcrumbs.', 'oceanwp' ) . '"',
 			'class="' . esc_attr( $css_classes ) . '"',
 		];
 
@@ -144,7 +144,7 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 		echo '<nav ' . implode( ' ', $nav_attrs ) . '><ol class="trail-items">';
 
 		foreach ( $items as $index => $item ) {
-			$is_current = isset( $item['is_current'] ) && $item['is_current'];
+			$is_current = ! empty( $item['is_current'] );
 			$is_link    = ! $is_current && ! empty( $item['url'] );
 			$label      = ! empty( $item['raw'] ) ? $item['label'] : esc_html( $item['label'] );
 
@@ -166,7 +166,7 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 			if ( $is_link ) {
 				$extra_attrs = '';
 				if ( 0 === $index ) {
-					$extra_attrs .= ' rel="home" aria-label="' . esc_attr__( 'Homepage', 'oceanwp' ) . '"';
+					$extra_attrs .= ' rel="home" aria-label="' . esc_attr_x( 'Homepage', 'Breadcrumb: Aria label for the homepage (first) item.', 'oceanwp' ) . '"';
 				}
 
 				echo '<a href="' . esc_url( $item['url'] ) . '" ' . ( $use_microdata ? 'itemprop="item"' : '' ) . $extra_attrs . '>';
@@ -183,16 +183,9 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 
 			echo '</li>';
 
-			// Show separator only if next visible item exists
-			$next_visible = false;
-			for ( $j = $index + 1; $j < count( $items ); $j++ ) {
-				if ( ! empty( $visible_items[ $j ] ) ) {
-					$next_visible = true;
-					break;
-				}
-			}
-
-			if ( $next_visible ) {
+			// Output separator only if the next visible item exists.
+			$next_visible_index = array_search( $item, $renderable_items, true );
+			if ( false !== $next_visible_index && isset( $renderable_items[ $next_visible_index + 1 ] ) ) {
 				echo '<li class="trail-separator" aria-hidden="true">' . $separator . '</li>';
 			}
 
@@ -205,7 +198,6 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
 	}
 }
 
-
 /**
  * Outputs breadcrumb HTML.
  * 
@@ -213,13 +205,9 @@ if ( ! function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
  */
 if ( ! function_exists( 'oceanwp_display_breadcrumb' ) ) {
 
-	/**
-	 * Displays the breadcrumb HTML.
-	 */
 	function oceanwp_display_breadcrumb() {
 		echo oceanwp_get_breadcrumb_html();
 	}
-
 }
 
 /**

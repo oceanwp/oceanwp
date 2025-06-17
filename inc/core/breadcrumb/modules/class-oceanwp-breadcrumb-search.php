@@ -19,13 +19,11 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Search' ) ) {
 
 	/**
 	 * Get breadcrumb items for search results.
-	 *
-	 * @return array
 	 */
 	class OceanWP_Breadcrumb_Search {
 
 		/**
-		 * Get breadcrumb items for search results.
+		 * Get breadcrumb items for search result pages.
 		 *
 		 * @return array
 		 */
@@ -44,24 +42,39 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Search' ) ) {
 
 			$label_base = trim( $label_base );
 
-			// Construct label.
+			// Construct the base label (with raw span).
 			$label = sprintf(
 				'<span class="breadcrumb-search">%s</span>: %s',
 				esc_html( $label_base ),
 				esc_html( $search_query )
 			);
 
-			return [
+			$items = [
 				[
-					'label' => $label,
-					'url'   => '',
-					'raw'   => true, // Label contains raw HTML.
+					'label'      => $label,
+					'url'        => '',
+					'raw'        => true,
+					'is_current' => ! is_paged(),
+					'is_hidden'  => false,
 				],
 			];
+
+			// Add pagination label if needed.
+			if ( is_paged() ) {
+				$items[] = [
+					/* translators: %d: comment page number in breadcrumb trail */
+					'label'      => sprintf( esc_html_x( 'Page %d', 'Breadcrumb: paged items trail', 'oceanwp' ), get_query_var( 'paged' ) ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
+				];
+			}
+
+			return $items;
 		}
 
 		/**
-		 * Whether this is a terminal breadcrumb (no more modules after it).
+		 * Whether this module is terminal.
 		 *
 		 * @return bool
 		 */
@@ -69,5 +82,4 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Search' ) ) {
 			return is_search();
 		}
 	}
-
 }

@@ -1430,6 +1430,25 @@ $options = [
 				'choices'           => oceanwp_breadcrumbs_source_choices(),
 			],
 
+			'ocean_breadcrumb_woocommerce' => [
+				'type'              => 'ocean-select',
+				'label'             => esc_html__( 'Woo Pages Breadcrumbs Source', 'oceanwp' ),
+				'section'           => 'ocean_section_page_breadcrumb',
+				'transport'         => 'refresh',
+				'default'           => 'no',
+				'priority'          => 10,
+				'top'               => 15,
+				'bottom'            => 15,
+				'hideLabel'         => false,
+				'multiple'          => false,
+				'active_callback'   => 'oceanwp_is_active_breadcrumb_product_callback',
+				'sanitize_callback' => 'sanitize_key',
+				'choices'           => [
+					'no'  => esc_html__( 'Default', 'oceanwp' ),
+					'yes' => esc_html__( 'WooCommerce', 'oceanwp' ),
+				]
+			],
+
 			'ocean_divider_after_breadcrumbs_source' => [
 				'type'            => 'ocean-divider',
 				'section'         => 'ocean_section_page_breadcrumb',

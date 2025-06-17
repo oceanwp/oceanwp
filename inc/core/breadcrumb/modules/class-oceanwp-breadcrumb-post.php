@@ -2,7 +2,7 @@
 /**
  * OceanWP Breadcrumb Post Class
  * 
- * Module for single blog posts, Ocean Portfolio CPTs, and
+ * Module for single blog posts, and
  * general CPTs.
  *
  * @package OceanWP WordPress Theme
@@ -18,18 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 
-	/**
-	 * Get breadcrumb items for single posts, ocean_portfolio, or general CPTs.
-	 *
-	 * @return array
-	 */
 	class OceanWP_Breadcrumb_Post {
 
-		/**
-		 * Get breadcrumb items for single posts, ocean_portfolio, or general CPTs.
-		 *
-		 * @return array
-		 */
 		public function get_items(): array {
 			if ( ! is_singular() || is_front_page() ) {
 				return [];
@@ -42,30 +32,42 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 			}
 
 			$post_type = get_post_type( $post );
-			$items     = [];
 
-			// Only support valid post types.
-			if ( 'post' === $post_type ) {
+			// Skip pages and portfolio (handled by separate modules).
+			if ( in_array( $post_type, [ 'page', 'ocean_portfolio' ], true ) ) {
+				return [];
+			}
+
+			$items = [];
+
+			if ( $post_type === 'post' ) {
 				$items = $this->get_post_items( $post );
-			} elseif ( 'ocean_portfolio' === $post_type && class_exists( 'Ocean_Portfolio' ) ) {
-				$items = $this->get_portfolio_items( $post );
 			} else {
 				$items = $this->get_generic_cpt_items( $post );
 			}
 
-			$items[] = [
-				'label'      => get_the_title( $post ),
-				'url'        => '',
-				'is_title'   => true,
-				'is_current' => true,
-			];
+			// Append pagination info if this is a paginated post view.
+			if ( is_singular() && get_query_var( 'page' ) > 1 ) {
+				$items[] = [
+					/* translators: %d: page number in breadcrumb trail */
+					'label'      => sprintf( esc_html_x( 'Page %d', 'Breadcrumb: paged items trail', 'oceanwp' ), get_query_var( 'page' ) ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
+				];
+			} elseif ( is_singular() && get_option( 'page_comments' ) && get_query_var( 'cpage' ) > 1 ) {
+				$items[] = [
+					/* translators: %d: comments page number in breadcrumb trail */
+					'label'      => sprintf( esc_html_x( 'Comment Page %d', 'Breadcrumb: comments paged items trail', 'oceanwp' ), get_query_var( 'cpage' ) ),
+					'url'        => '',
+					'is_current' => true,
+					'is_hidden'  => false,
+				];
+			}
 
 			return $items;
 		}
 
-		/**
-		 * Breadcrumbs for standard blog posts.
-		 */
 		protected function get_post_items( WP_Post $post ): array {
 			$items           = [];
 			$taxonomy_option = get_theme_mod( 'ocean_breadcrumb_posts_taxonomy', 'category' );
@@ -86,7 +88,7 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 					$terms = get_the_category( $post->ID );
 					if ( ! empty( $terms ) ) {
 						$term = $terms[0];
-						if ( 'category' === $taxonomy_option ) {
+						if ( $taxonomy_option === 'category' ) {
 							$items = array_merge( $items, $this->get_term_ancestors( $term, 'category' ) );
 						}
 						$items[] = [
@@ -111,57 +113,6 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 			return $items;
 		}
 
-		/**
-		 * Breadcrumbs for Ocean Portfolio posts.
-		 */
-		protected function get_portfolio_items( WP_Post $post ): array {
-			$items           = [];
-			$taxonomy_option = get_theme_mod( 'ocean_breadcrumb_portfolio_taxonomy', 'ocean_portfolio_category' );
-
-			switch ( $taxonomy_option ) {
-				case 'portfolio':
-					$page_id = get_theme_mod( 'op_portfolio_page' );
-					if ( $page_id ) {
-						$items[] = [
-							'label' => get_the_title( $page_id ),
-							'url'   => get_permalink( $page_id ),
-						];
-					}
-					break;
-
-				case 'ocean_portfolio_category':
-				case 'none':
-					$terms = get_the_terms( $post->ID, 'ocean_portfolio_category' );
-					if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-						$term = $terms[0];
-						if ( 'ocean_portfolio_category' === $taxonomy_option ) {
-							$items = array_merge( $items, $this->get_term_ancestors( $term, 'ocean_portfolio_category' ) );
-						}
-						$items[] = [
-							'label' => $term->name,
-							'url'   => get_term_link( $term ),
-						];
-					}
-					break;
-
-				case 'ocean_portfolio_tag':
-					$tags = get_the_terms( $post->ID, 'ocean_portfolio_tag' );
-					if ( ! empty( $tags ) && ! is_wp_error( $tags ) ) {
-						$tag = $tags[0];
-						$items[] = [
-							'label' => $tag->name,
-							'url'   => get_term_link( $tag ),
-						];
-					}
-					break;
-			}
-
-			return $items;
-		}
-
-		/**
-		 * Fallback breadcrumbs for general custom post types.
-		 */
 		protected function get_generic_cpt_items( WP_Post $post ): array {
 			$items = [];
 
@@ -172,7 +123,6 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 				return [];
 			}
 
-			// Archive page (if any)
 			if ( $post_type_obj->has_archive ) {
 				$items[] = [
 					'label' => $post_type_obj->labels->name,
@@ -180,7 +130,6 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 				];
 			}
 
-			// Try to fetch the first public taxonomy with a term.
 			$taxonomies = get_object_taxonomies( $post_type, 'objects' );
 			foreach ( $taxonomies as $taxonomy ) {
 				if ( $taxonomy->public ) {
@@ -194,7 +143,7 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 							'label' => $term->name,
 							'url'   => get_term_link( $term ),
 						];
-						break; // Use only one taxonomy.
+						break;
 					}
 				}
 			}
@@ -202,13 +151,6 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 			return $items;
 		}
 
-		/**
-		 * Get parent terms for hierarchical taxonomies.
-		 *
-		 * @param WP_Term $term     Term object.
-		 * @param string  $taxonomy Taxonomy name.
-		 * @return array
-		 */
 		protected function get_term_ancestors( WP_Term $term, string $taxonomy ): array {
 			$breadcrumbs = [];
 			$ancestors   = get_ancestors( $term->term_id, $taxonomy );
@@ -226,5 +168,4 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Post' ) ) {
 			return $breadcrumbs;
 		}
 	}
-
 }
