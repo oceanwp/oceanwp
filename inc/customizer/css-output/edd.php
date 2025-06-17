@@ -30,7 +30,7 @@ class OceanWP_Customize_EDD_CSS {
 		add_filter('ocean_head_css', array($this, 'generate_css'));
 	}
 
-	public function generate_Css($output) {
+	public function generate_css($output) {
 
 		// Global vars.
 		$menu_icon_size                            = get_theme_mod( 'ocean_edd_menu_icon_size' );

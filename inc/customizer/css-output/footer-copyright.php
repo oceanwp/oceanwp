@@ -21,7 +21,7 @@ class OceanWP_Customize_Footer_Copyright_CSS {
 		add_filter('ocean_head_css', array($this, 'generate_css'));
 	}
 
-	public function generate_Css($output) {
+	public function generate_css($output) {
 
 		// Global vars.
 		$bottom_top_padding      = get_theme_mod( 'ocean_bottom_footer_top_padding', 15 );

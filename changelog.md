@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### _2025.06.17_ - 4.1.0
+- **Added**:: Filter: oceanwp_post_reading_time_words_per_minute: Override words per minute for the blog post reading time functionality.
+- **Improved**:: Blog: Single Post: Reading Time: improved accuracy. All-language-friendly and non-latin-friendly functionality intact.
+- **Fixed**:: Blog: Archives: Full content strips HTML and doesn't display formatting (12256).
+- **Fixed**:: Translations: Incorrect Customizer label in ...inc/customizer/options/learndash.php L#157. GH report #517.
+- **Fixed**:: Potential vulnerability patched: Report by Wordfence from JUN 9th 2025. Shoutout and a thanks to the Wordfence team for patch test and confirmation.
+
 ### _2025.05.14_ - 4.0.9
 - **NEW**:: Setup Wizard for new installations. Functions only in combination with the latest version of Ocean Extra plugin.
 - **Fixed**:: Theme Icons: SVG Icons: blog meta data icons not displayed.

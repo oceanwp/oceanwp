@@ -9,6 +9,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+// Check if a custom Elementor checkout template is active.
+$custom_checkout_template = get_option( 'oec_checkout_template', '0' );
+if ( '0' !== $custom_checkout_template && ! empty( $custom_checkout_template ) ) {
+	return; // Exit early if a custom Elementor template is applied.
+}
+
 // Vars.
 $i = 0;
 
