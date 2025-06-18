@@ -44,7 +44,7 @@ $img_args = array(
 	'alt' => esc_attr( $be_fimage_alt ),
 );
 
-if ( oceanwp_get_schema_markup( 'image' ) ) {
+if ( oceanwp_schema_microdata( 'image' ) ) {
 	$img_args['itemprop'] = 'image';
 }
 
@@ -78,7 +78,7 @@ $caption = get_the_post_thumbnail_caption();
 
 			?>
 
-			<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts['width'], $img_atts['height'], $img_atts['crop'], true, $img_atts['upscale'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" alt="<?php the_title_attribute(); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>"<?php oceanwp_schema_markup( 'image' ); ?> />
+			<img src="<?php echo ocean_extra_resize( $img_url[0], $img_atts['width'], $img_atts['height'], $img_atts['crop'], true, $img_atts['upscale'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" alt="<?php the_title_attribute(); ?>" width="<?php echo esc_attr( $img_width ); ?>" height="<?php echo esc_attr( $img_height ); ?>"<?php oceanwp_schema_attr( 'image' ); ?> />
 
 			<?php
 		} else {

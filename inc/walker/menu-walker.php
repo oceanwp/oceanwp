@@ -325,7 +325,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 								$img_args = array(
 									'alt' => esc_attr( oceanwp_theme_strings( 'owp-string-read-more-article', false ) ) . ' ' . get_the_title(),
 								);
-								if ( oceanwp_get_schema_markup( 'image' ) ) {
+								if ( oceanwp_schema_microdata( 'image' ) ) {
 									$img_args['itemprop'] = 'image';
 								}
 

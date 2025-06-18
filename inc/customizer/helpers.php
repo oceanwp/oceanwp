@@ -179,16 +179,6 @@ if ( ! function_exists( 'oceanwp_get_scroll_top_icons' ) ) {
 }
 
 /**
- * Breadcrumb source choice
- */
-function oceanwp_breadcrumbs_source_choices() {
-
-	$source_list = array( 'default' => esc_html__( 'Default', 'oceanwp' ) );
-
-	return apply_filters( 'oceanwp_breadcrumbs_source_list', $source_list );
-}
-
-/**
  * Get all library template.
  */
 function oceanwp_library_template_choices() {

@@ -34,7 +34,7 @@ $img_args = array(
 	'class' => 'woo-entry-image-main',
 	'alt'   => get_the_title(),
 );
-if ( oceanwp_get_schema_markup( 'image' ) ) {
+if ( oceanwp_schema_microdata( 'image' ) ) {
 	$img_args['itemprop'] = 'image';
 }
 

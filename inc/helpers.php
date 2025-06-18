@@ -1409,7 +1409,7 @@ if ( ! function_exists( 'oceanwp_header_full_screen_logo' ) ) {
 
 			// Output image
 			$html = sprintf(
-				'<a href="%1$s" class="full-screen-logo-link" rel="home"' . oceanwp_get_schema_markup( 'url' ) . '><img src="%2$s" class="full-screen-logo" width="%3$s" height="%4$s" alt="%5$s" %6$s /></a>',
+				'<a href="%1$s" class="full-screen-logo-link" rel="home"' . oceanwp_schema_microdata( 'url' ) . '><img src="%2$s" class="full-screen-logo" width="%3$s" height="%4$s" alt="%5$s" %6$s /></a>',
 				esc_url( home_url( '/' ) ),
 				esc_url( $logo_data['url'] ),
 				esc_attr( $logo_data['width'] ),
@@ -1477,7 +1477,7 @@ if ( ! function_exists( 'oceanwp_header_responsive_logo' ) ) {
 
 			// Output image
 			$html = sprintf(
-				'<a href="%1$s" class="responsive-logo-link" rel="home"' . oceanwp_get_schema_markup( 'url' ) . '><img src="%2$s" class="responsive-logo" width="%3$s" height="%4$s" alt="%5$s" /></a>',
+				'<a href="%1$s" class="responsive-logo-link" rel="home"' . oceanwp_schema_microdata( 'url' ) . '><img src="%2$s" class="responsive-logo" width="%3$s" height="%4$s" alt="%5$s" /></a>',
 				esc_url( home_url( '/' ) ),
 				esc_url( $logo_data['url'] ),
 				esc_attr( $logo_data['width'] ),
@@ -2304,62 +2304,6 @@ if ( ! function_exists( 'oceanwp_tax_description' ) ) {
 
 	add_action( 'ocean_before_content_inner', 'oceanwp_tax_description' );
 
-}
-
-/**
- * Display breadcrumbs
- *
- * @since 1.1.2
- */
-if ( ! function_exists( 'oceanwp_has_breadcrumbs' ) ) {
-
-	function oceanwp_has_breadcrumbs() {
-
-		// Return true by default
-		$return = true;
-
-		// Return false if disabled via Customizer
-		if ( true != get_theme_mod( 'ocean_breadcrumbs', true ) ) {
-			$return = false;
-		}
-
-		// Apply filters and return
-		return apply_filters( 'ocean_display_breadcrumbs', $return );
-
-	}
-}
-
-/**
- * Display breadcrumbs
- *
- * @since 3.4.5
- */
-if ( ! function_exists( 'ocean_breadcrumbs_view') ) {
-
-	function ocean_breadcrumbs_view() {
-
-		if ( ! oceanwp_has_breadcrumbs() || is_front_page() ) {
-			return;
-		}
-
-		$woo_crumb = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' );
-
-		if ( 'yes' === $woo_crumb ) {
-			if ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() || oceanwp_is_woo_single() || is_cart() || is_checkout() || is_account_page() ) {
-				woocommerce_breadcrumb();
-			} else {
-				if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) {
-					oceanwp_breadcrumb_trail();
-				}
-			}
-		} else {
-			if ( function_exists( 'oceanwp_breadcrumb_trail' ) ) {
-				oceanwp_breadcrumb_trail();
-			}
-		}
-	}
-
-	add_action( 'ocean_breadcrumbs_main', 'ocean_breadcrumbs_view' );
 }
 
 /**
@@ -3310,27 +3254,49 @@ function ocean_single_blog_header_style( $style ) {
 add_filter( 'ocean_header_style', 'ocean_single_blog_header_style' );
 
 /**
+ * Returns word count for a blog post.
+ * 
+ * @since 4.2.0
+ *
+ * @param int|null $post_id Optional. Post ID. Defaults to current post.
+ * @return int Word count.
+*/
+if ( ! function_exists( 'oceanwp_get_post_word_count' ) ) {
+
+	function oceanwp_get_post_word_count( $post_id = null ) {
+
+	$post_id = $post_id ?: get_the_ID();
+	$content = get_post_field( 'post_content', $post_id );
+
+	// Remove shortcodes and tags.
+	$owp_post_content = strip_shortcodes( $content );
+	$owp_post_content = wp_strip_all_tags( $owp_post_content );
+
+	// Count words/content separated by whitespace.
+	$word_count = count( preg_split( '/\s+/', $owp_post_content, -1, PREG_SPLIT_NO_EMPTY ) );
+
+	return $word_count;
+
+	}
+}
+
+/**
  * Returns estimated reading time for a blog post.
+ * 
+ * @since 4.1.0
+ * @updated 4.2.0 Use of oceanwp_get_post_word_count()
  *
  * @param int|null $post_id Optional. Post ID. Defaults to current post.
  * @param bool     $apply_word_count_filter Whether to apply the 'ocean_post_reading_word_count' filter.
  * @return int Estimated reading time in minutes.
- * 
- * @since 4.1.0
 */
 if ( ! function_exists( 'ocean_post_reading_time' ) ) {
 
 	function ocean_post_reading_time( $post_id = null, $apply_word_count_filter = false ) {
 
 		$post_id = $post_id ? $post_id : get_the_id();
-		$content = get_post_field( 'post_content', $post_id );
 
-		// Remove shortcodes and tags.
-		$owp_post_content = strip_shortcodes( $content );
-		$owp_post_content = wp_strip_all_tags( $owp_post_content );
-
-		// Count words/content separated by whitespace.
-		$word_count = count( preg_split( '/\s+/', $owp_post_content, -1, PREG_SPLIT_NO_EMPTY ) );
+		$word_count = oceanwp_get_post_word_count( $post_id );
 
 		if ( $apply_word_count_filter ) {
 			$word_count = apply_filters( 'ocean_post_reading_word_count', $word_count );
@@ -3393,7 +3359,7 @@ if ( ! function_exists( 'oceanwp_comment' ) ) {
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 
 			<article id="comment-<?php comment_ID(); ?>" class="comment-container">
-				<p><?php esc_html_e( 'Pingback:', 'oceanwp' ); ?> <span <?php oceanwp_schema_markup( 'author_name' ); ?>><?php comment_author_link(); ?></span> <?php edit_comment_link( esc_html__( '(Edit)', 'oceanwp' ), '<span class="edit-link">', '</span>' ); ?></p>
+				<p><?php esc_html_e( 'Pingback:', 'oceanwp' ); ?> <span <?php oceanwp_schema_attr( 'author_name' ); ?>><?php comment_author_link(); ?></span> <?php edit_comment_link( esc_html__( '(Edit)', 'oceanwp' ), '<span class="edit-link">', '</span>' ); ?></p>
 			</article>
 
 				<?php
@@ -4654,140 +4620,6 @@ if ( ! function_exists( 'oceanwp_top_bar_social_alt_content' ) ) {
 
 		// Return content
 		return apply_filters( 'oceanwp_top_bar_social_alt_content', $content );
-
-	}
-}
-
-/**
- * Return correct schema markup
- *
- * @since 1.2.10
- */
-if ( ! function_exists( 'oceanwp_get_schema_markup' ) ) {
-
-	function oceanwp_get_schema_markup( $location ) {
-
-		// Return if disable
-		if ( ! get_theme_mod( 'ocean_schema_markup', true ) ) {
-			return null;
-		}
-
-		// Default
-		$schema = $itemprop = $itemtype = '';
-
-		// HTML
-		if ( 'html' == $location ) {
-			if ( is_home() || is_front_page() ) {
-				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
-			} elseif ( is_category() || is_tag() ) {
-				$schema = 'itemscope="itemscope" itemtype="https://schema.org/Blog"';
-			} elseif ( is_singular( 'post' ) ) {
-				$schema = 'itemscope="itemscope" itemtype="https://schema.org/Article"';
-			} elseif ( is_page() ) {
-				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
-			} else {
-				$schema = 'itemscope="itemscope" itemtype="https://schema.org/WebPage"';
-			}
-
-			return apply_filters( 'oceanwp_schema_location_html', $schema );
-		}
-
-		// Header
-		elseif ( 'header' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPHeader"';
-		}
-
-		// Logo
-		elseif ( 'logo' == $location ) {
-			$schema = 'itemscope itemtype="https://schema.org/Brand"';
-		}
-
-		// Navigation
-		elseif ( 'site_navigation' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"';
-		}
-
-		// Main
-		elseif ( 'main' == $location ) {
-			$itemtype = 'https://schema.org/WebPageElement';
-			$itemprop = 'mainContentOfPage';
-		}
-
-		// Sidebar
-		elseif ( 'sidebar' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPSideBar"';
-		}
-
-		// Footer widgets
-		elseif ( 'footer' == $location ) {
-			$schema = 'itemscope="itemscope" itemtype="https://schema.org/WPFooter"';
-		}
-
-		// Headings
-		elseif ( 'headline' == $location ) {
-			$schema = 'itemprop="headline"';
-		}
-
-		// Posts
-		elseif ( 'entry_content' == $location ) {
-			$schema = 'itemprop="text"';
-		}
-
-		// Publish date
-		elseif ( 'publish_date' == $location ) {
-			$schema = 'itemprop="datePublished"';
-		}
-
-		// Modified date
-		elseif ( 'modified_date' == $location ) {
-			$schema = 'itemprop="dateModified"';
-		}
-
-		// Author name
-		elseif ( 'author_name' == $location ) {
-			$schema = 'itemprop="name"';
-		}
-
-		// Author link
-		elseif ( 'author_link' == $location ) {
-			$schema = 'itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person"';
-		}
-
-		// Item
-		elseif ( 'item' == $location ) {
-			$schema = 'itemprop="item"';
-		}
-
-		// Url
-		elseif ( 'url' == $location ) {
-			$schema = 'itemprop="url"';
-		}
-
-		// Position
-		elseif ( 'position' == $location ) {
-			$schema = 'itemprop="position"';
-		}
-
-		// Image
-		elseif ( 'image' == $location ) {
-			$schema = 'itemprop="image"';
-		}
-
-		return ' ' . apply_filters( 'ocean_schema_markup', $schema );
-
-	}
-}
-
-/**
- * Outputs correct schema markup
- *
- * @since 1.2.10
- */
-if ( ! function_exists( 'oceanwp_schema_markup' ) ) {
-
-	function oceanwp_schema_markup( $location ) {
-
-		echo oceanwp_get_schema_markup( $location );
 
 	}
 }
