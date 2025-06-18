@@ -50,11 +50,12 @@
 - **Deprecated**:: Class: OceanWP_Breadcrumb_Trail. To be removed in 4.5.0. Shim Class added for backward compatibility until removal.
 - **Deprecated**:: File: ...inc/breadcrumbs.php. To be removed in 4.5.0. Do not rely on this file. Use the new modular breadcrumb system.
 
-### _2025.XX.XX_ - 4.1.0
+### _2025.06.17_ - 4.1.0
 - **Added**:: Filter: oceanwp_post_reading_time_words_per_minute: Override words per minute for the blog post reading time functionality.
 - **Improved**:: Blog: Single Post: Reading Time: improved accuracy. All-language-friendly and non-latin-friendly functionality intact.
 - **Fixed**:: Blog: Archives: Full content strips HTML and doesn't display formatting (12256).
 - **Fixed**:: Translations: Incorrect Customizer label in ...inc/customizer/options/learndash.php L#157. GH report #517.
+- **Fixed**:: Potential vulnerability patched: Report by Wordfence from JUN 9th 2025. Shoutout and a thanks to the Wordfence team for patch test and confirmation.
 
 ### _2025.05.14_ - 4.0.9
 - **NEW**:: Setup Wizard for new installations. Functions only in combination with the latest version of Ocean Extra plugin.

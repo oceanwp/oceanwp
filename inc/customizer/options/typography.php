@@ -1502,7 +1502,7 @@ $options = [
 		'bottom' => 10
 	],
 
-	'ocean_typograhpy_did_you_know_links' => [
+	'ocean_typography_did_you_know_links' => [
 		'type' => 'ocean-links',
 		'label' => 'Did you know?',
 		'section' => 'ocean_typography',
