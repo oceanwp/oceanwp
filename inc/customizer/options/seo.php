@@ -17,7 +17,7 @@ $options = [
 		'label'             => esc_html__( 'Enable Schema Markup', 'oceanwp' ),
 		'section'           => 'ocean_seo_settings',
 		'default'           => true,
-		'transport'         => 'postMessage',
+		'transport'         => 'refresh',
 		'priority'          => 10,
 		'hideLabel'         => false,
 		'sanitize_callback' => 'oceanwp_sanitize_checkbox',
@@ -40,7 +40,7 @@ $options = [
 		'label'             => esc_html__( 'Enable Schema Manager', 'oceanwp' ),
 		'section'           => 'ocean_seo_settings',
 		'default'           => false,
-		'transport'         => 'postMessage',
+		'transport'         => 'refresh',
 		'priority'          => 10,
 		'hideLabel'         => false,
 		'active_callback'   => 'oceanwp_cac_is_schema_markup_enabled',
@@ -48,20 +48,20 @@ $options = [
 	],
 
 	'ocean_schema_type' => [
-				'type'              => 'ocean-select',
-				'label'             => esc_html__( 'Select Schema Type', 'oceanwp' ),
-				'section'           => 'ocean_seo_settings',
-				'transport'         => 'refresh',
-				'default'           => 'jsonld',
-				'priority'          => 10,
-				'hideLabel'         => false,
-				'multiple'          => false,
-				'active_callback'   => 'oceanwp_cac_is_schema_markup_enabled',
-				'sanitize_callback' => 'sanitize_key',
-				'choices' => [
-					'jsonld'    => esc_html__( 'JSON-LD (Recommended)', 'oceanwp' ),
-					'mixed'     => esc_html__( 'Both', 'oceanwp' ),
-				],
+		'type'              => 'ocean-select',
+		'label'             => esc_html__( 'Select Schema Type', 'oceanwp' ),
+		'section'           => 'ocean_seo_settings',
+		'transport'         => 'postMessage',
+		'default'           => 'jsonld',
+		'priority'          => 10,
+		'hideLabel'         => false,
+		'multiple'          => false,
+		'active_callback'   => 'oceanwp_cac_is_schema_manager_enabled',
+		'sanitize_callback' => 'sanitize_key',
+		'choices' => [
+			'jsonld' => esc_html__( 'JSON-LD (Recommended)', 'oceanwp' ),
+			'mixed'  => esc_html__( 'Both', 'oceanwp' ),
+		],
 	],
 
 	'ocean_schema_breadcrumbs' => [
@@ -72,34 +72,72 @@ $options = [
 		'transport'         => 'postMessage',
 		'priority'          => 10,
 		'hideLabel'         => false,
-		'active_callback'   => 'oceanwp_cac_is_schema_markup_enabled',
+		'active_callback'   => 'oceanwp_cac_is_schema_manager_enabled',
 		'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 	],
 
-	'ocean_schema_output_location' => [
-				'type'              => 'ocean-select',
-				'label'             => esc_html__( 'Schema Output Location', 'oceanwp' ),
-				'section'           => 'ocean_seo_settings',
-				'transport'         => 'refresh',
-				'default'           => 'wp_head',
-				'priority'          => 10,
-				'hideLabel'         => false,
-				'multiple'          => false,
-				'active_callback'   => 'oceanwp_cac_is_schema_markup_enabled',
-				'sanitize_callback' => 'sanitize_key',
-				'choices' => [
-					'wp_head'   => esc_html__( 'WP Head (Recommended)', 'oceanwp' ),
-					'wp_footer' => esc_html__( 'WP Footer', 'oceanwp' ),
-				],
+	'ocean_configure_breadcrumb_link' => [
+		'type'      => 'ocean-content',
+		'label'     => esc_html__( 'Configure Breadcrumbs Trail', 'oceanwp' ),
+		'isContent' => sprintf( esc_html__( 'Visit the %1$s Breadcrumbs settings page %2$s', 'oceanwp' ), '<a href="' . admin_url( 'customize.php?autofocus%5Bcontrol%5D=ocean_breadcrumbs' ) . '">', '</a>' ),
+		'section'   => 'ocean_seo_settings',
+		'class'     => 'description',
+		'transport' => 'postMessage',
+		'bottom'    => 20,
+		'priority'  => 10,
 	],
 
-	'ocean_divider_after_schema_markup_setting' => [
+	'ocean_schema_output_location' => [
+		'type'              => 'ocean-select',
+		'label'             => esc_html__( 'Schema Output Location', 'oceanwp' ),
+		'section'           => 'ocean_seo_settings',
+		'transport'         => 'postMessage',
+		'default'           => 'wp_head',
+		'priority'          => 10,
+		'hideLabel'         => false,
+		'multiple'          => false,
+		'active_callback'   => 'oceanwp_cac_is_schema_manager_enabled',
+		'sanitize_callback' => 'sanitize_key',
+		'choices' => [
+			'wp_head'   => esc_html__( 'WP Head (Recommended)', 'oceanwp' ),
+			'wp_footer' => esc_html__( 'WP Footer', 'oceanwp' ),
+		],
+	],
+
+	'ocean_configure_portfolio_schema_link' => [
+		'type'      => 'ocean-content',
+		'label'     => esc_html__( 'Configure Portfolio Schema', 'oceanwp' ),
+		'isContent' => sprintf( esc_html__( 'Visit %1$s Portfolio Schema Settings %2$s', 'oceanwp' ), '<a href="' . admin_url( 'customize.php?autofocus%5Bcontrol%5D=ocean_breadcrumbs' ) . '">', '</a>' ),
+		'section'   => 'ocean_seo_settings',
+		'class'     => 'description',
+		'transport' => 'postMessage',
+		'top'       => 20,
+		'bottom'    => 10,
+		'priority'  => 10,
+		'active_callback' => function() {
+			return oceanwp_cac_is_portfolio_schema_available();
+		},
+	],
+
+	'ocean_divider_before_schema_caching' => [
 		'type'      => 'ocean-divider',
 		'section'   => 'ocean_seo_settings',
 		'transport' => 'postMessage',
 		'priority'  => 10,
 		'top'       => 10,
 		'bottom'    => 10,
+		'active_callback' => function() {
+			return oceanwp_cac_is_schema_caching_available();
+		},
+	],
+
+	'ocean_seo_image_alt_heading' => [
+		'type'      => 'ocean-title',
+		'label'     => esc_html__( 'Image ALT Text', 'oceanwp' ),
+		'desc'      => esc_html__( 'Choose what ALT text should featured images return.', 'oceanwp' ),
+		'section'   => 'ocean_seo_settings',
+		'transport' => 'postMessage',
+		'priority'  => 10,
 	],
 
 	'ocean_enable_be_fimage_alt' => [
@@ -151,25 +189,6 @@ $options = [
 		'priority'          => 10,
 		'hideLabel'         => false,
 		'sanitize_callback' => 'oceanwp_sanitize_checkbox',
-	],
-
-	'ocean_divider_after_enable_srp_fimage_alt_setting' => [
-		'type'      => 'ocean-divider',
-		'section'   => 'ocean_seo_settings',
-		'transport' => 'postMessage',
-		'priority'  => 10,
-		'top'       => 10,
-		'bottom'    => 10,
-	],
-
-	'ocean_configure_breadcrumb_link' => [
-		'type'      => 'ocean-content',
-		'label'     => esc_html__( 'Configure Breadcrumbs', 'oceanwp' ),
-		'isContent' => sprintf( esc_html__( 'Visit the %1$s Breadcrumbs settings page %2$s', 'oceanwp' ), '<a href="' . admin_url( 'customize.php?autofocus%5Bcontrol%5D=ocean_breadcrumbs' ) . '">', '</a>' ),
-		'section'   => 'ocean_seo_settings',
-		'class'     => 'description',
-		'transport' => 'postMessage',
-		'priority'  => 10,
 	],
 
 	'ocean_opengraph_heading' => [
