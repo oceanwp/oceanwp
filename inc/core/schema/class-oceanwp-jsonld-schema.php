@@ -239,31 +239,85 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 		public function generate_schema() {
 			$schema = [];
 
-			if ( is_front_page() ) {
+			// WooCommerce Schema integration.
+			if ( OCEANWP_WOOCOMMERCE_ACTIVE && class_exists( 'OceanWP_WooCommerce_Schema' ) ) {
+				if ( get_theme_mod( 'ocean_schema_woocommerce_enable', false ) ) {
+					$woo_schema = null;
+
+					if ( is_product() ) {
+						$woo_schema = OceanWP_WooCommerce_Schema::get_single_product_schema();
+					} elseif ( is_shop() ) {
+						$woo_schema = OceanWP_WooCommerce_Schema::get_shop_page_schema();
+					} elseif ( is_product_category() || is_product_tag() ) {
+						$woo_schema = OceanWP_WooCommerce_Schema::get_product_taxonomy_schema();
+					}
+
+					if ( ! empty( $woo_schema ) ) {
+						$schema[] = $woo_schema;
+					}
+				}
+			}
+
+			// Ocean Portfolio plugin Schema integration.
+			if ( class_exists( 'Ocean_Portfolio_Schema_Helper' ) ) {
+				if ( get_theme_mod( 'ocean_portfolio_schema_enable', false ) ) {
+					$portfolio_schema = null;
+
+					if ( is_singular( 'ocean_portfolio' ) ) {
+						$portfolio_schema = Ocean_Portfolio_Schema_Helper::get_single_schema();
+					} elseif ( is_tax( [ 'ocean_portfolio_category', 'ocean_portfolio_tag' ] ) || ( function_exists( 'op_portfolio_page_id' ) && is_page( op_portfolio_page_id() ) ) ) {
+						$portfolio_schema = Ocean_Portfolio_Schema_Helper::get_archive_schema();
+					} elseif ( function_exists( 'oceanwp_is_main_portfolio_page' ) && oceanwp_is_main_portfolio_page() ) {
+						$portfolio_schema[] = Ocean_Portfolio_Schema_Helper::get_portfolio_collection_schema();
+					}
+
+					if ( ! empty( $portfolio_schema ) ) {
+						$schema[] = $portfolio_schema;
+					}
+				}
+			}
+
+			// Theme-integrated schema filters.
+			if ( apply_filters( 'oceanwp_enable_schema_home', true ) && is_front_page() ) {
 				$schema[] = $this->get_homepage_schema();
-			} elseif ( is_home() ) {
+
+			} elseif ( apply_filters( 'oceanwp_enable_schema_blog_page', true ) && is_home() ) {
 				$schema[] = $this->get_blog_archive_schema();
-			} elseif ( is_singular( 'post' ) ) {
+
+			} elseif ( apply_filters( 'oceanwp_enable_schema_single_post', true ) && is_singular( 'post' ) ) {
 				$schema[] = $this->get_blog_post_schema();
-			} elseif ( is_page() || is_singular() ) {
+
+			} elseif ( apply_filters( 'oceanwp_enable_schema_page', true ) && is_page() ) {
 				$schema[] = $this->get_webpage_schema();
-			} elseif ( is_search() ) {
+
+			} elseif ( apply_filters( 'oceanwp_enable_schema_cpt', true ) && is_singular() && ! is_singular( 'post' ) && ! is_page() && ! is_singular( 'ocean_portfolio' ) && ! is_product() ) {
+				$schema[] = $this->get_webpage_schema();
+
+			} elseif ( apply_filters( 'oceanwp_enable_schema_search', true ) && is_search() ) {
 				$schema[] = $this->get_search_schema();
-			} elseif ( is_category() || is_tag() ) {
+
+			} elseif ( apply_filters( 'oceanwp_enable_schema_taxonomy', true ) && ( is_category() || is_tag() || is_tax() ) ) {
 				$schema[] = $this->get_taxonomy_archive_schema();
-			} elseif ( is_archive() ) {
+
+			} elseif ( apply_filters( 'oceanwp_enable_schema_archive', true ) && is_archive() ) {
 				$schema[] = $this->get_generic_archive_schema();
-			} elseif ( is_404() ) {
+
+			} elseif ( apply_filters( 'oceanwp_enable_schema_404', true ) && is_404() ) {
 				$schema[] = $this->get_404_schema();
-			} elseif ( is_author() ) {
+
+			} elseif ( apply_filters( 'oceanwp_enable_schema_author', true ) && is_author() ) {
 				$schema[] = $this->get_author_schema();
 			}
 
+			// Breadcrumb always has its own toggle.
 			$breadcrumb = $this->get_breadcrumb_schema();
 			if ( ! empty( $breadcrumb ) ) {
 				$schema[] = $breadcrumb;
 			}
 
+			/**
+			 * Final filter to alter the schema array.
+			 */
 			return apply_filters( 'oceanwp_jsonld_schema_output', $schema );
 		}
 
