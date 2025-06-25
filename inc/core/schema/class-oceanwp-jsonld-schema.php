@@ -211,7 +211,12 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 		 * @return void
 		 */
 		public function output_json_schema() {
+
 			if ( ! oceanwp_should_output_jsonld() ) {
+				return;
+			}
+
+			if ( is_preview() || is_customize_preview() || is_admin() || wp_doing_ajax() ) {
 				return;
 			}
 
@@ -300,7 +305,11 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 				$schema[] = $this->get_taxonomy_archive_schema();
 
 			} elseif ( apply_filters( 'oceanwp_enable_schema_archive', true ) && is_archive() ) {
-				$schema[] = $this->get_generic_archive_schema();
+				if ( $this->should_skip_general_schema() ) {
+					$schema[] = [];
+				} else {
+					$schema[] = $this->get_generic_archive_schema();
+				}
 
 			} elseif ( apply_filters( 'oceanwp_enable_schema_404', true ) && is_404() ) {
 				$schema[] = $this->get_404_schema();
@@ -311,7 +320,7 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 
 			// Breadcrumb always has its own toggle.
 			$breadcrumb = $this->get_breadcrumb_schema();
-			if ( ! empty( $breadcrumb ) ) {
+			if ( ! empty( $breadcrumb ) && ! is_front_page() ) {
 				$schema[] = $breadcrumb;
 			}
 
@@ -319,6 +328,20 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 			 * Final filter to alter the schema array.
 			 */
 			return apply_filters( 'oceanwp_jsonld_schema_output', $schema );
+		}
+
+		/**
+		 * Determine if general schema should be skipped due to specific schema.
+		 *
+		 * @return bool
+		 */
+		protected function should_skip_general_schema(): bool {
+			if ( OCEANWP_WOOCOMMERCE_ACTIVE && get_theme_mod( 'ocean_schema_woocommerce_enable', false ) ) {
+				if ( is_shop() || is_product() || is_product_category() || is_product_tag() ) {
+					return true;
+				}
+			}
+			return false;
 		}
 
 		/**
@@ -543,7 +566,7 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 		 * @return array|null
 		 */
 		protected function get_breadcrumb_schema() {
-			if ( ! $this->schema_breadcrumbs || is_front_page() ) {
+			if ( ! get_theme_mod( 'ocean_schema_breadcrumbs', false ) ) {
 				return null;
 			}
 
