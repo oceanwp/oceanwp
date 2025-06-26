@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'OceanWP_Breadcrumb_WooCommerce' ) ) {
+if ( ! class_exists( 'OceanWP_Breadcrumb_WooCommerce' ) && OCEANWP_WOOCOMMERCE_ACTIVE ) {
 
 	class OceanWP_Breadcrumb_WooCommerce {
 

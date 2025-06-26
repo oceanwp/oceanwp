@@ -83,9 +83,16 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Generator' ) ) {
 		 * @return void
 		 */
 		protected function load_modules() {
-			$this->modules = [
+			$this->modules = [];
+
+			// WooCommerce first if active.
+			if ( defined( 'OCEANWP_WOOCOMMERCE_ACTIVE' ) && OCEANWP_WOOCOMMERCE_ACTIVE ) {
+				$this->modules[] = new OceanWP_Breadcrumb_WooCommerce();
+			}
+
+			// Load remaining modules.
+			$this->modules = array_merge( $this->modules, [
 				new OceanWP_Breadcrumb_Home(),
-				new OceanWP_Breadcrumb_WooCommerce(),
 				new OceanWP_Breadcrumb_First_Page(),
 				new OceanWP_Breadcrumb_Post(),
 				new OceanWP_Breadcrumb_Singular(),
@@ -95,9 +102,9 @@ if ( ! class_exists( 'OceanWP_Breadcrumb_Generator' ) ) {
 				new OceanWP_Breadcrumb_Archive(),
 				new OceanWP_Breadcrumb_Search(),
 				new OceanWP_Breadcrumb_404(),
-			];
+			]);
 
-			// Load portfolio module only if Ocean Portfolio plugin is active.
+			// Load Portfolio module if Ocean Portfolio plugin is active.
 			if ( class_exists( 'Ocean_Portfolio' ) ) {
 				$this->modules[] = new OceanWP_Breadcrumb_Portfolio();
 			}
