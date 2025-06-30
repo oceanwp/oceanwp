@@ -507,6 +507,31 @@ if ( ! class_exists( 'OceanWP_JsonLD_Schema' ) ) {
 		}
 
 		/**
+		 * Generate JSON-LD schema for search results page.
+		 *
+		 * @return array|null Schema array or null.
+		 */
+		protected function get_search_schema() {
+
+			$search_query = get_search_query();
+			$site_url     = home_url();
+			$current_url  = home_url( add_query_arg( null, null ) );
+
+			return [
+				'@context'    => 'https://schema.org',
+				'@type'       => 'SearchResultsPage',
+				'name'        => sprintf( esc_html__( 'Search results for "%s"', 'oceanwp' ), $search_query ),
+				'description' => sprintf( esc_html__( 'Search results page for the query "%s" on %s.', 'oceanwp' ), $search_query, get_bloginfo( 'name' ) ),
+				'url'         => esc_url( $current_url ),
+				'mainEntity'  => [
+					'@type'      => 'SearchAction',
+					'target'     => esc_url( $site_url ) . '/?s={search_term_string}',
+					'query-input'=> 'required name=search_term_string',
+				],
+			];
+		}
+
+		/**
 		 * Get schema for 404 pages.
 		 *
 		 * @return array
