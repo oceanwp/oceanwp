@@ -813,6 +813,18 @@ function oceanwp_cac_is_schema_markup_enabled() {
 	}
 }
 
+function oceanwp_cac_is_schema_manager_enabled() {
+	return (bool) get_theme_mod( 'ocean_schema_manager', false );
+}
+
+function oceanwp_cac_is_portfolio_schema_available() {
+	return class_exists( 'Ocean_Portfolio' ) && class_exists( 'Ocean_Portfolio_Schema_Helper' ) && oceanwp_cac_is_schema_manager_enabled();
+}
+
+function oceanwp_cac_is_schema_caching_available() {
+	return OCEAN_EXTRA_ACTIVE && class_exists( 'OceanWP_Schema_Cache_Handler' ) && oceanwp_cac_is_schema_manager_enabled();
+}
+
 /**
  * EDD
  */
