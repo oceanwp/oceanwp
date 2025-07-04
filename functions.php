@@ -50,6 +50,9 @@ final class OCEANWP_Theme_Class {
 		// Load core class files.
 		$this->oceanwp_load_core_classes();
 
+		// Set breadcrumb compatibility filter value.
+		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'oceanwp_maybe_disable_legacy_breadcrumb_filter' ), 0 );
+
 		// Load framework classes.
 		add_action( 'after_setup_theme', array( 'OCEANWP_Theme_Class', 'classes' ), 4 );
 
@@ -240,6 +243,15 @@ final class OCEANWP_Theme_Class {
 		require_once OCEANWP_INC_DIR . 'core/class-oceanwp-autoloader.php';
 		OceanWP_Core_Autoloader::instance();
 
+	}
+
+	/**
+	 * Set compatibility filter to false when theme updated
+	 * 
+	 * @since 4.2.0
+	 */
+	public static function oceanwp_maybe_disable_legacy_breadcrumb_filter() {
+		add_filter( 'oceanwp_enable_legacy_breadcrumb_filters', '__return_false' );
 	}
 
 	/**
