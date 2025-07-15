@@ -1,60 +1,11 @@
 # OceanWP Changelog
 
-### _2025.XX.XX_ - 4.2.0
-- **NEW**:: SEO Settings: JSON-LD Schema support. Various options available. See Customize > SEO Settings.
-- **NEW**:: SEO Settings: JSON-LD breadcrumbs Schema support. Independant from breadcrumbs display on website.
-- **NEW**:: Breadcrumbs: Old method replaced with a modular breadcrumb output system.
-- **Added**:: SEO Settings: Support for minimal Schema microdata usage only if legacy Schema in use.
-- **Added**:: Breadcrumbs: Last trail item not clickable.
-- **Added**:: Breadcrumbs: Breadcrumbs Trail Settings: Display Products Item in WooCommerce Taxonomy: option to toggle on or off.
-- **Added**:: Breadcrumbs: Breadcrumbs Trail Settings: Products Item Label: option to display default label (products) or the Shop page title.
-- **Updated**:: Template: .../404.php.
-- **Updated**:: Template: .../header-pwa.php.
-- **Updated**:: Template: .../header.php.
-- **Updated**:: Template: .../sidebar-left.php.
-- **Updated**:: Template: .../sidebar.php.
-- **Updated**:: Template: .../partials/page-header.php.
-- **Updated**:: Template: .../partials/edd/shortcode-content-image.php.
-- **Updated**:: Template: .../partials/entry/content.php.
-- **Updated**:: Template: .../partials/entry/meta.php.
-- **Updated**:: Template: .../partials/entry/media/blog-single.php.
-- **Updated**:: Template: .../partials/entry/media/blog-single-link.php.
-- **Updated**:: Template: .../partials/entry/media/blog-entry-link.php.
-- **Updated**:: Template: .../partials/entry/media/blog-entry.php.
-- **Updated**:: Template: .../partials/entry/media/blog-entry-gallery.php.
-- **Updated**:: Template: .../partials/footer/layout.php.
-- **Updated**:: Template: .../partials/header/layout.php.
-- **Updated**:: Template: .../partials/header/logo.php.
-- **Updated**:: Template: .../partials/header/nav.php.
-- **Updated**:: Template: .../partials/header/style/center-header.php.
-- **Updated**:: Template: .../partials/library/layout.php.
-- **Updated**:: Template: .../partials/mobile/mobile-dropdown.php.
-- **Updated**:: Template: .../partials/mobile/mobile-fullscreen.php.
-- **Updated**:: Template: .../partials/page/article.php.
-- **Updated**:: Template: .../partials/search/content.php.
-- **Updated**:: Template: .../partials/search/thumbnail.php.
-- **Updated**:: Template: .../partials/single/content.php.
-- **Updated**:: Template: .../partials/single/header.php.
-- **Updated**:: Template: .../partials/single/meta.php.
-- **Updated**:: Template: .../partials/single/related-posts.php.
-- **Updated**:: Template: .../templates/landing.php.
-- **Updated**:: Template: .../woocommerce/single-product/title.php.
-- **Updated**:: Template: .../woocommerce/owp-archive-product-thumbnails.php.
-- **Updated**:: Template: .../woocommerce/loop/thumbnail/gallery-slider.php.
-- **Updated**:: Template: .../woocommerce/loop/thumbnail/image-swap.php.
-- **Deprecated**:: Function: oceanwp_schema_markup(). To be removed in 4.5.0. Use oceanwp_schema_attr() instead.
-- **Deprecated**:: Function: oceanwp_get_schema_markup(). To be removed in 4.5.0. Use oceanwp_schema_data() instead.
-- **Deprecated**:: Function: oceanwp_breadcrumbs_sources(). To be removed in 4.5.0. Handled directly in oceanwp_breadcrumbs_source_choices().
-- **Deprecated**:: Function: oceanwp_breadcrumb_trail(). To be removed in 4.5.0. Use oceanwp_display_breadcrumb() instead.
-- **Deprecated**:: Function: oceanwp_breadcrumbs_view(). To be removed in 4.5.0. Use oceanwp_output_breadcrumbs() instead.
-- **Deprecated**:: Class: OceanWP_Breadcrumb_Trail. To be removed in 4.5.0. Shim Class added for backward compatibility until removal.
-- **Deprecated**:: File: ...inc/breadcrumbs.php. To be removed in 4.5.0. Do not rely on this file. Use the new modular breadcrumb system.
-
-### _2025.XX.XX_ - 4.1.0
+### _2025.06.17_ - 4.1.0
 - **Added**:: Filter: oceanwp_post_reading_time_words_per_minute: Override words per minute for the blog post reading time functionality.
 - **Improved**:: Blog: Single Post: Reading Time: improved accuracy. All-language-friendly and non-latin-friendly functionality intact.
 - **Fixed**:: Blog: Archives: Full content strips HTML and doesn't display formatting (12256).
 - **Fixed**:: Translations: Incorrect Customizer label in ...inc/customizer/options/learndash.php L#157. GH report #517.
+- **Fixed**:: Potential vulnerability patched: Report by Wordfence from JUN 9th 2025. Shoutout and a thanks to the Wordfence team for patch test and confirmation.
 
 ### _2025.05.14_ - 4.0.9
 - **NEW**:: Setup Wizard for new installations. Functions only in combination with the latest version of Ocean Extra plugin.
