@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2025.06.17_ - 4.1.1
+- **Updated**:: Template: woocommerce/cart/mini-cart.php (version number for compatibility with WooCommerce 10+).
+
 ### _2025.06.17_ - 4.1.0
 - **Added**:: Filter: oceanwp_post_reading_time_words_per_minute: Override words per minute for the blog post reading time functionality.
 - **Improved**:: Blog: Single Post: Reading Time: improved accuracy. All-language-friendly and non-latin-friendly functionality intact.
