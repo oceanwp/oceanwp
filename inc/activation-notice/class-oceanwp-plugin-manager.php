@@ -1,4 +1,13 @@
 <?php
+/**
+ * OceanWP Plugin Manager
+ *
+ * @package OceanWP WordPress theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 if ( ! class_exists( 'Oceanwp_Plugin_Manager' ) ) {
 

@@ -18,9 +18,10 @@ jQuery(document).ready(function ($) {
 		render_actions: function () {
 			$.ajax({
 				type: 'post',
-				url: ajaxurl,
+				url: owp_notification_i18n.ajax_url,
 				data: {
-					action: 'oceanwp_check_notice_actions'
+					action: 'oceanwp_check_notice_actions',
+					_ajax_nonce: owp_notification_i18n.nonce
 				},
 				success: function (response) {
 					if (response.data != '') {
@@ -36,10 +37,11 @@ jQuery(document).ready(function ($) {
 
 			$(evt.target).closest('.notice-ocean-onboarding.notice-ocean-extra-plugin').remove();
 
-			$.ajax(ajaxurl, {
+			$.ajax(owp_notification_i18n.ajax_url, {
 				type: 'POST',
 				data: {
 					action: 'oceanwp_dismissed_notice',
+					_ajax_nonce: owp_notification_i18n.nonce
 				},
 			})
 
@@ -64,11 +66,12 @@ jQuery(document).ready(function ($) {
 				$el.data('action') === 'install_activate' ||
 				$el.data('action') === 'skip_only'
 			) {
-				$.ajax(ajaxurl, {
+				$.ajax(owp_notification_i18n.ajax_url, {
 					type: 'POST',
 					data: {
 						action: 'oceanwp_dismissed_notice',
 						action_type: $el.data('action'),
+						_ajax_nonce: owp_notification_i18n.nonce
 					},
 				});
 			}
@@ -77,9 +80,10 @@ jQuery(document).ready(function ($) {
 
 			$.ajax({
 				type: 'post',
-				url: ajaxurl,
+				url: owp_notification_i18n.ajax_url,
 				data: {
-					action: 'oceanwp_notice_button_click'
+					action: 'oceanwp_notice_button_click',
+					_ajax_nonce: owp_notification_i18n.nonce
 				},
 				success: function (response) {
 					if (response.success) {
