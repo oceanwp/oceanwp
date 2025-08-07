@@ -47,6 +47,7 @@ module.exports = function (grunt) {
           [`${outputsPath}/ow-lightbox.min.js`]: `${scriptsPath}/ow-lightbox.js`,
           ['./inc/activation-notice/assets/js/notice.min.js']: './inc/activation-notice/assets/js/notice.js',
           ['./inc/activation-notice/assets/js/panel-notice.min.js']: './inc/activation-notice/assets/js/panel-notice.js',
+          ['./inc/themepanel/assets/js/theme-panel.min.js']: './inc/themepanel/assets/js/theme-panel.js',
         },
         options: {
           transform: [["babelify", { presets: ["@babel/preset-env"] }]],
@@ -102,7 +103,8 @@ module.exports = function (grunt) {
           [`${outputsPath}/ow-lightbox.min.js`]: `${outputsPath}/ow-lightbox.min.js`,
           ['./inc/activation-notice/assets/js/notice.min.js']: './inc/activation-notice/assets/js/notice.min.js',
           ['./inc/activation-notice/assets/js/panel-notice.min.js']: './inc/activation-notice/assets/js/panel-notice.min.js',
-        },
+          ['./inc/themepanel/assets/js/theme-panel.min.js']: './inc/themepanel/assets/js/theme-panel.js'
+        }
       },
       dev: {
         files: {

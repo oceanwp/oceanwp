@@ -10,7 +10,8 @@ jQuery(document).ready(function ($) {
             type: 'POST',
             url: _wpUtilSettings.ajax.url,
             data: {
-                action: 'oceanwp_cp_load_awaiting_mods_action'
+                action: 'oceanwp_cp_load_awaiting_mods_action',
+                _ajax_nonce: oceanwpThemePanelAdmin.nonce
             },
             success: function success(res) {
                 if( res.success ) {
