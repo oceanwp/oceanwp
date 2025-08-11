@@ -163,6 +163,10 @@ class OceanWP_Style_Settings_CSS {
 		$scroll_top_icon_size          = get_theme_mod( 'ocean_scroll_top_icon_size', 18 );
 		$scroll_top_icon_size_unit     = get_theme_mod( 'ocean_scroll_top_icon_size_unit', 'px' );
 
+		$ocean_scroll_top_position       = get_theme_mod( 'ocean_scroll_top_position', 'right' );
+		$scroll_top_side_position        = get_theme_mod( 'ocean_scroll_top_side_position', 20 );
+		$scroll_top_side_position_unit   = get_theme_mod( 'ocean_scroll_top_side_position_unit', 'px' );
+
 		$scroll_top_top_radius           = get_theme_mod( 'ocean_scroll_top_border_top_radius', 2 );
 		$scroll_top_right_radius         = get_theme_mod( 'ocean_scroll_top_border_right_radius', 2 );
 		$scroll_top_bottom_radius        = get_theme_mod( 'ocean_scroll_top_border_bottom_radius', 2 );
@@ -555,6 +559,18 @@ class OceanWP_Style_Settings_CSS {
 		// Scroll top button bottom position.
 		if ( ! empty( $scroll_top_bottom_position ) && 20 != $scroll_top_bottom_position ) {
 			$css .= '#scroll-top{bottom:' . $scroll_top_bottom_position . 'px;}';
+		}
+
+		if ( ! empty( $ocean_scroll_top_position ) && 'right' === $ocean_scroll_top_position ) {
+			if ( ! empty( $scroll_top_side_position ) && 20 != $scroll_top_side_position ) {
+				$css .= '#scroll-top.scroll-top-right{right:' . $scroll_top_side_position . $scroll_top_side_position_unit . ';}';
+			}
+		}
+
+		if ( ! empty( $ocean_scroll_top_position ) && 'left' === $ocean_scroll_top_position ) {
+			if ( ! empty( $scroll_top_side_position ) && 20 != $scroll_top_side_position ) {
+				$css .= '#scroll-top.scroll-top-left{left:' . $scroll_top_side_position . $scroll_top_side_position_unit . ';}';
+			}
 		}
 
 		// Scroll top button size.

@@ -266,7 +266,8 @@ jQuery(document).ready(function ($) {
             type: 'POST',
             url: _wpUtilSettings.ajax.url,
             data: {
-                action: 'oceanwp_cp_load_sidebar_warnings_action'
+                action: 'oceanwp_cp_load_sidebar_warnings_action',
+                _ajax_nonce: oceanwpThemePanel.nonce
             },
             success: function success(res) {
                 if( res.success ) {

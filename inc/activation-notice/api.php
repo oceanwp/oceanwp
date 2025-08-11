@@ -1,8 +1,19 @@
 <?php
+/**
+ * OceanWP Notice API
+ *
+ * @package OceanWP WordPress theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 add_action(
 	'wp_ajax_oceanwp_dismissed_notice',
 	function () {
+
+		check_ajax_referer('oceanwp_notice_nonce');
 
 		$action_type = isset($_POST['action_type']) ? sanitize_text_field($_POST['action_type']) : '';
 
@@ -31,6 +42,8 @@ add_action(
 add_action(
 	'wp_ajax_oceanwp_check_notice_actions',
 	function () {
+
+		check_ajax_referer('oceanwp_notice_nonce');
 
 		$manager            = new Oceanwp_Plugin_Manager();
 		$status             = $manager->get_ocean_extra_status();
@@ -157,6 +170,9 @@ add_action(
 add_action(
 	'wp_ajax_oceanwp_notice_button_click',
 	function () {
+
+		check_ajax_referer('oceanwp_notice_nonce');
+
 		if ( ! current_user_can( 'activate_plugins' ) ) {
 			return;
 		}
@@ -203,6 +219,7 @@ add_action(
 add_action(
 	'wp_ajax_oceanwp_dismissed_panel_notice',
 	function () {
+		check_ajax_referer('oceanwp_panel_notice_nonce');
 		update_option( 'dismissed-oceanwp_plugin_notice', true );
 		wp_die();
 	}
@@ -212,6 +229,8 @@ add_action(
 add_action(
 	'wp_ajax_oceanwp_check_panel_notice_actions',
 	function () {
+
+		check_ajax_referer('oceanwp_panel_notice_nonce');
 
 		$manager      = new Oceanwp_Plugin_Manager();
 		$status       = $manager->get_ocean_extra_status();
@@ -235,6 +254,9 @@ add_action(
 add_action(
 	'wp_ajax_oceanwp_panel_notice_button_click',
 	function () {
+
+		check_ajax_referer('oceanwp_panel_notice_nonce');
+
 		if ( ! current_user_can( 'activate_plugins' ) ) {
 			return;
 		}

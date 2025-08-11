@@ -1,4 +1,13 @@
 <?php
+/**
+ * OceanWP Plugin Installer Skin
+ *
+ * @package OceanWP WordPress theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 class Oceanwp_Upgrader_Skin extends Plugin_Installer_Skin {
 

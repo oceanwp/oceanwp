@@ -1,4 +1,13 @@
 <?php
+/**
+ * OceanWP Notice template
+ *
+ * @package OceanWP WordPress theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 function oceancp_output_ocean_extra_notice_enqueue_scripts( $hook ) {
 	if ( ! apply_filters(
@@ -60,6 +69,8 @@ function oceancp_output_ocean_extra_notice_enqueue_scripts( $hook ) {
 		array(
 			'activating'            => __( 'Activating...', 'oceanwp' ),
 			'installing_activating' => __( 'Installing & activating...', 'oceanwp' ),
+			'ajax_url'              => admin_url('admin-ajax.php'),
+    		'nonce'                 => wp_create_nonce('oceanwp_notice_nonce'),
 		)
 	);
 	wp_register_style( 'ocean-extra-plugin-notice-css', OCEANWP_INC_DIR_URI . 'activation-notice/assets/css/notice.min.css', array(), OCEANWP_THEME_VERSION );
@@ -233,6 +244,8 @@ function oceancp_output_ocean_extra_notice_panel_enqueue_scripts( $hook ) {
 		array(
 			'activating'            => __( 'Activating...', 'oceanwp' ),
 			'installing_activating' => __( 'Installing & activating...', 'oceanwp' ),
+			'ajax_url'              => admin_url('admin-ajax.php'),
+    		'nonce'                 => wp_create_nonce('oceanwp_panel_notice_nonce'),
 		)
 	);
 	wp_register_style( 'ocean-extra-plugin-panel-notice-css', OCEANWP_INC_DIR_URI . 'activation-notice/assets/css/panel-notice.min.css', array(), OCEANWP_THEME_VERSION );

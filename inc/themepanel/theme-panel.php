@@ -174,6 +174,14 @@ final class OceanWP_Theme_Panel {
 
 	function enqueue_admin_assets() {
 		wp_enqueue_script( 'oceanwp-admin-theme-panel', OCEANWP_THEME_PANEL_URI . '/assets/js/admin.js', array( 'jquery', 'wp-util' ), OCEANWP_THEME_VERSION, true );
+
+		wp_localize_script(
+			'oceanwp-admin-theme-panel',
+			'oceanwpThemePanelAdmin',
+			array(
+				'nonce' => wp_create_nonce( 'oceanwp_theme_panel_admin' ),
+			)
+		);
 	}
 
 	/**
@@ -210,6 +218,9 @@ final class OceanWP_Theme_Panel {
 	 * @return void
 	 */
 	public function load_sidebar_warnings() {
+
+		check_ajax_referer('oceanwp_theme_panel');
+
 		$warnings = array();
 
 		if( ! empty( get_theme_update_available( wp_get_theme() ) ) ) {
@@ -238,6 +249,9 @@ final class OceanWP_Theme_Panel {
 	 * @return void
 	 */
 	public function load_awaiting_mods() {
+
+		check_ajax_referer('oceanwp_theme_panel_admin');
+
 		$warnings = array();
 
 		if( ! empty( get_theme_update_available( wp_get_theme() ) ) ) {
