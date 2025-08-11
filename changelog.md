@@ -1,6 +1,11 @@
 # OceanWP Changelog
 
-### _2025.06.17_ - 4.1.1
+### _2025.08.11_ - 4.1.2
+- **Added**:: Compatibility: PHP: 8.3+: Warning: Trying to access array offset on false in .../themes/oceanwp/inc/breadcrumbs.php on line 1387
+- **Fixed**:: Scroll to Top: Button side position not rendered on the front.
+- **Fixed**:: Potential vulnerability patched: Report by CleanTalk from AUG 6th 2025.
+
+### _2025.07.17_ - 4.1.1
 - **Updated**:: Template: woocommerce/cart/mini-cart.php (version number for compatibility with WooCommerce 10+).
 
 ### _2025.06.17_ - 4.1.0

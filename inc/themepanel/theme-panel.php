@@ -176,7 +176,7 @@ final class OceanWP_Theme_Panel {
 		wp_enqueue_script( 'oceanwp-admin-theme-panel', OCEANWP_THEME_PANEL_URI . '/assets/js/admin.js', array( 'jquery', 'wp-util' ), OCEANWP_THEME_VERSION, true );
 
 		wp_localize_script(
-			'oceanwp-changelog-markdown',
+			'oceanwp-admin-theme-panel',
 			'oceanwpThemePanelAdmin',
 			array(
 				'nonce' => wp_create_nonce( 'oceanwp_theme_panel_admin' ),
