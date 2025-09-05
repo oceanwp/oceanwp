@@ -2693,7 +2693,7 @@ if ( ! function_exists( 'oceanwp_post_entry_classes' ) ) {
 		// Add columns for grid style entries
 		if ( $entry_style == 'grid-entry' ) {
 			$classes[]     = 'col';
-				$classes[] = oceanwp_grid_class( oceanwp_blog_entry_columns() );
+				$classes[] = oceanwp_grid_class();
 
 			// Counter
 			global $oceanwp_count;
