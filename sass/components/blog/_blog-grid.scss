@@ -7,6 +7,23 @@
 		flex-wrap: wrap;
 		margin: 0 auto;
 		height: auto!important;
+
+		@media (max-width: 959px) {
+			[class*="tablet-span_1_of_"] {
+				&.tablet-span_1_of_2 { width: 50%; }
+				&.tablet-span_1_of_3 { width: 33.333%; }
+				&.tablet-span_1_of_4 { width: 25%; }
+			}
+		}
+
+		@media (max-width: 767px) {
+			[class*="mobile-span_1_of_"] {
+				&.mobile-span_1_of_1 { width: 100%; }
+				&.mobile-span_1_of_2 { width: 50%; }
+				&.mobile-span_1_of_3 { width: 33.333%; }
+			}
+		}
+
 	}
 }
 

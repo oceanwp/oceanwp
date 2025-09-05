@@ -768,11 +768,21 @@ if ( ! function_exists( 'oceanwp_get_second_sidebar' ) ) {
  * @since 1.0.0
  */
 if ( ! function_exists( 'oceanwp_grid_class' ) ) {
+	function oceanwp_grid_class() {
+		$desktop = oceanwp_blog_entry_columns( 'desktop' );
+		$tablet  = oceanwp_blog_entry_columns( 'tablet' );
+		$mobile  = oceanwp_blog_entry_columns( 'mobile' );
 
-	function oceanwp_grid_class( $col = '4' ) {
-		return esc_attr( apply_filters( 'ocean_grid_class', 'span_1_of_' . $col ) );
+		$classes = array(
+			'span_1_of_' . $desktop,
+			'tablet-span_1_of_' . $tablet,
+			'mobile-span_1_of_' . $mobile,
+		);
+
+		return esc_attr( implode( ' ', $classes ) );
 	}
 }
+
 
 /**
  * Removes the scheme of the passed URL to fit the current page.
@@ -2842,20 +2852,37 @@ if ( ! function_exists( 'oceanwp_blog_entry_equal_heights' ) ) {
  */
 if ( ! function_exists( 'oceanwp_blog_entry_columns' ) ) {
 
-	function oceanwp_blog_entry_columns() {
+	function oceanwp_blog_entry_columns( $device = 'desktop' ) {
 
-		// Get columns from customizer setting
-		$columns = get_theme_mod( 'ocean_blog_grid_columns', '2' );
+		$defaults = array(
+			'desktop' => 3,
+			'tablet'  => 2,
+			'mobile'  => 1,
+		);
 
-		// Sanitize
-		$columns = $columns ? $columns : '2';
+		if ( 'tablet' === $device ) {
+			$columns = get_theme_mod( 'ocean_blog_grid_columns_tablet', $defaults['tablet'] );
+		} elseif ( 'mobile' === $device ) {
+			$columns = get_theme_mod( 'ocean_blog_grid_columns_mobile', $defaults['mobile'] );
+		} else {
+			$columns = get_theme_mod( 'ocean_blog_grid_columns', $defaults['desktop'] );
+		}
 
-		// Apply filters for child theming
-		$columns = apply_filters( 'ocean_blog_entry_columns', $columns );
+		$columns = absint( $columns ) ? absint( $columns ) : $defaults[$device];
 
-		// Return columns
+		$columns = apply_filters( "ocean_blog_entry_columns_{$device}", $columns );
+
+		if ( has_filter( 'ocean_blog_entry_columns' ) ) {
+			_deprecated_hook(
+				'ocean_blog_entry_columns',
+				'3.0.0',
+				"ocean_blog_entry_columns_{$device}"
+			);
+
+			$columns = apply_filters( 'ocean_blog_entry_columns', $columns );
+		}
+
 		return $columns;
-
 	}
 }
 
