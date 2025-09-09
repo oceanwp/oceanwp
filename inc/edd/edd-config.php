@@ -383,7 +383,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			}
 
 			// Only used for the main menu
-			if ( 'main_menu' != $args->theme_location ) {
+			if ( 'main_menu' != $args->theme_location && 'mobile_menu' != $args->theme_location ) {
 				return $items;
 			}
 
@@ -406,7 +406,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			if ( 'full_screen' == $header_style ) {
 				$items .= '<li class="edd-cart-link"><a href="' . edd_get_checkout_uri() . '">' . esc_html__( 'Your cart', 'oceanwp' ) . '</a></li>';
 			} else {
-				$items .= self::get_cart_icon();
+				$items .= self::get_cart_icon($args);
 			}
 
 			// Return menu items
@@ -418,7 +418,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 		 *
 		 * @since 1.5.0
 		 */
-		public static function get_cart_icon() {
+		public static function get_cart_icon($args = null) {
 
 			// Style
 			$style        = oceanwp_edd_menu_cart_style();
@@ -445,7 +445,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			}
 
 			// Prevent clicking on cart and checkout
-			if ( 'drop_down' == $style ) {
+			if ( 'drop_down' == $style && isset( $args->custom_output ) && 'mobile_menu' !== $args->custom_output ) {
 				$classes[] = 'nav-no-click';
 			}
 
@@ -466,7 +466,7 @@ if ( ! class_exists( 'OceanWP_EDD_Config' ) ) {
 			?>
 
 			<li class="<?php echo esc_attr( $classes ); ?>">
-				<?php oceanwp_eddmenucart_menu_item(); ?>
+				<?php oceanwp_eddmenucart_menu_item($args); ?>
 				<?php
 				if ( 'drop_down' == $style
 					&& 'full_screen' != $header_style

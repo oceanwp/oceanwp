@@ -18,6 +18,7 @@ $menu_args = array(
 	'theme_location' => $menu_location,
 	'container'      => false,
 	'fallback_cb'    => false,
+	'custom_output'  => 'mobile_menu',
 );
 
 // If sidebar mobile menu style.

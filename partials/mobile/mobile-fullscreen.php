@@ -39,6 +39,7 @@ $menu_args = array(
 	'menu_class'     => 'fs-dropdown-menu',
 	'container'      => false,
 	'fallback_cb'    => false,
+	'custom_output'  => 'mobile_menu',
 );
 
 // Check if custom menu.

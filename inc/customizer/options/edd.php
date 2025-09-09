@@ -486,6 +486,24 @@ $options = [
 				'sanitize_callback' => 'esc_url_raw'
 			],
 
+			'ocean_edd_menu_cart_mobile_behavior' => [
+				'type' => 'ocean-select',
+				'label' => esc_html__('Menu Cart Behaviour (Mobile)', 'oceanwp' ),
+				'section' => 'ocean_edd_menu_cart',
+				'transport' => 'postMessage',
+				'default' => 'default',
+				'priority' => 10,
+				'hideLabel' => false,
+				'wrapper' => 'ocean_edd_menu_cart_mobile_behavior',
+				'multiple' => false,
+				'sanitize_callback' => 'sanitize_key',
+				'choices'  => [
+					'default' => esc_html__( 'Drop-Down', 'oceanwp' ),
+					'cart'    => esc_html__( 'Go To Cart', 'oceanwp' ),
+				]
+			],
+
+
 			'ocean_divider_after_edd_menu_icon_custom_link' => [
 				'type' => 'ocean-divider',
 				'section' => 'ocean_edd_menu_cart',
