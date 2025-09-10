@@ -117,8 +117,7 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 		// Cart Icon
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
 
-		$mobile_cart_behavior = get_theme_mod( 'ocean_edd_menu_cart_mobile_behavior', 'default' );
-		if ( isset( $args->custom_output ) && 'mobile_menu' === $args->custom_output && 'cart' === $mobile_cart_behavior ) {
+		if ( isset( $args->custom_output ) && 'mobile_menu' === $args->custom_output ) {
 			echo '<a href="' . esc_url( $url ) . '" class="simple-style eddmenucart">';
 				echo '<span class="eddmenucart-container">' . $cart_icon . wp_kses_post( $cart_extra ) . '</span>';
 			echo '</a>';
