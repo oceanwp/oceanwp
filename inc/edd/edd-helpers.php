@@ -66,7 +66,7 @@ if ( ! function_exists( 'oceanwp_edd_menu_cart_style' ) ) {
  */
 if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 
-	function oceanwp_eddmenucart_menu_item() {
+	function oceanwp_eddmenucart_menu_item($args = null) {
 
 		// Return if is in the Elementor edit mode, to avoid error
 		if ( OCEANWP_ELEMENTOR_ACTIVE
@@ -116,6 +116,13 @@ if ( ! function_exists( 'oceanwp_eddmenucart_menu_item' ) ) {
 
 		// Cart Icon
 		$cart_icon = apply_filters( 'ocean_menu_cart_icon_html', $cart_icon );
+
+		if ( isset( $args->custom_output ) && 'mobile_menu' === $args->custom_output ) {
+			echo '<a href="' . esc_url( $url ) . '" class="simple-style eddmenucart">';
+				echo '<span class="eddmenucart-container">' . $cart_icon . wp_kses_post( $cart_extra ) . '</span>';
+			echo '</a>';
+			return;
+		}
 
 		// If bag style
 		if ( 'yes' == get_theme_mod( 'ocean_edd_menu_bag_style', 'no' ) ) { ?>

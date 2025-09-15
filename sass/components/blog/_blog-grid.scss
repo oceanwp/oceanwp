@@ -1,14 +1,79 @@
-.has-blog-grid {
-	.blog-grid {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-flex-wrap: wrap;
-		flex-wrap: wrap;
-		margin: 0 auto;
-		height: auto!important;
-	}
+@media only screen and (min-width: 481px) and (max-width: 980px) {
+  .tablet-col .col.first {
+    clear: none;
+  }
+
+  .has-blog-grid {
+    .blog-grid.oceanwp-row,
+    .blog-masonry-grid.oceanwp-row {
+      &.tablet-col .col {
+        clear: none;
+      }
+
+      &.tablet-1-col .blog-entry {
+        clear: both;
+      }
+      &.tablet-2-col .blog-entry:nth-child(2n + 1),
+      &.tablet-3-col .blog-entry:nth-child(3n + 1),
+      &.tablet-4-col .blog-entry:nth-child(4n + 1),
+      &.tablet-5-col .blog-entry:nth-child(5n + 1),
+      &.tablet-6-col .blog-entry:nth-child(6n + 1),
+      &.tablet-7-col .blog-entry:nth-child(7n + 1) {
+        clear: both;
+      }
+    }
+
+    .blog-grid,
+    .blog-masonry-grid {
+      &.tablet-1-col .blog-entry { width: 100% !important; }
+      &.tablet-2-col .blog-entry { width: 50% !important; }
+      &.tablet-3-col .blog-entry { width: 33.33% !important; }
+      &.tablet-4-col .blog-entry { width: 25% !important; }
+      &.tablet-5-col .blog-entry { width: 20% !important; }
+      &.tablet-6-col .blog-entry { width: 16.66% !important; }
+      &.tablet-7-col .blog-entry { width: 14.28% !important; }
+    }
+  }
 }
+
+@media only screen and (max-width: 480px) {
+  .mobile-col .col.first {
+    clear: none;
+  }
+
+  .has-blog-grid {
+    .blog-grid.oceanwp-row,
+    .blog-masonry-grid.oceanwp-row {
+      &.mobile-col .col {
+        clear: none;
+      }
+
+      &.mobile-1-col .blog-entry {
+        clear: both;
+      }
+      &.mobile-2-col .blog-entry:nth-child(2n + 1),
+      &.mobile-3-col .blog-entry:nth-child(3n + 1),
+      &.mobile-4-col .blog-entry:nth-child(4n + 1),
+      &.mobile-5-col .blog-entry:nth-child(5n + 1),
+      &.mobile-6-col .blog-entry:nth-child(6n + 1),
+      &.mobile-7-col .blog-entry:nth-child(7n + 1) {
+        clear: both;
+      }
+    }
+
+    .blog-grid,
+    .blog-masonry-grid {
+      &.mobile-1-col .blog-entry { width: 100% !important; }
+      &.mobile-2-col .blog-entry { width: 50% !important; }
+      &.mobile-3-col .blog-entry { width: 33.33% !important; }
+      &.mobile-4-col .blog-entry { width: 25% !important; }
+      &.mobile-5-col .blog-entry { width: 20% !important; }
+      &.mobile-6-col .blog-entry { width: 16.66% !important; }
+      &.mobile-7-col .blog-entry { width: 14.28% !important; }
+    }
+  }
+}
+
 
 .blog-entry.grid-entry {
 	justify-content: flex-start;

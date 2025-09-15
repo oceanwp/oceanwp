@@ -2628,6 +2628,18 @@ if ( ! function_exists( 'oceanwp_blog_wrap_classes' ) ) {
 			}
 		}
 
+		$tablet_columns = get_theme_mod( 'ocean_blog_grid_columns_tablet' );
+		$mobile_columns = get_theme_mod( 'ocean_blog_grid_columns_mobile' );
+
+		if ( ! empty( $tablet_columns ) ) {
+			$classes[] = 'tablet-col';
+			$classes[] = 'tablet-' . $tablet_columns . '-col';
+		}
+		if ( ! empty( $mobile_columns ) ) {
+			$classes[] = 'mobile-col';
+			$classes[] = 'mobile-' . $mobile_columns . '-col';
+		}
+
 		// Equal heights
 		if ( oceanwp_blog_entry_equal_heights() ) {
 			$classes[] = 'blog-equal-heights';
@@ -2842,20 +2854,37 @@ if ( ! function_exists( 'oceanwp_blog_entry_equal_heights' ) ) {
  */
 if ( ! function_exists( 'oceanwp_blog_entry_columns' ) ) {
 
-	function oceanwp_blog_entry_columns() {
+	function oceanwp_blog_entry_columns( $device = 'desktop' ) {
 
-		// Get columns from customizer setting
-		$columns = get_theme_mod( 'ocean_blog_grid_columns', '2' );
+		$defaults = array(
+			'desktop' => 3,
+			'tablet'  => 2,
+			'mobile'  => 1,
+		);
 
-		// Sanitize
-		$columns = $columns ? $columns : '2';
+		if ( 'tablet' === $device ) {
+			$columns = get_theme_mod( 'ocean_blog_grid_columns_tablet', $defaults['tablet'] );
+		} elseif ( 'mobile' === $device ) {
+			$columns = get_theme_mod( 'ocean_blog_grid_columns_mobile', $defaults['mobile'] );
+		} else {
+			$columns = get_theme_mod( 'ocean_blog_grid_columns', $defaults['desktop'] );
+		}
 
-		// Apply filters for child theming
-		$columns = apply_filters( 'ocean_blog_entry_columns', $columns );
+		$columns = absint( $columns ) ? absint( $columns ) : $defaults[$device];
 
-		// Return columns
+		$columns = apply_filters( "ocean_blog_entry_columns_{$device}", $columns );
+
+		if ( has_filter( 'ocean_blog_entry_columns' ) ) {
+			_deprecated_hook(
+				'ocean_blog_entry_columns',
+				'4.1.3',
+				"ocean_blog_entry_columns_{$device}"
+			);
+
+			$columns = apply_filters( 'ocean_blog_entry_columns', $columns );
+		}
+
 		return $columns;
-
 	}
 }
 
