@@ -768,21 +768,11 @@ if ( ! function_exists( 'oceanwp_get_second_sidebar' ) ) {
  * @since 1.0.0
  */
 if ( ! function_exists( 'oceanwp_grid_class' ) ) {
-	function oceanwp_grid_class() {
-		$desktop = oceanwp_blog_entry_columns( 'desktop' );
-		$tablet  = oceanwp_blog_entry_columns( 'tablet' );
-		$mobile  = oceanwp_blog_entry_columns( 'mobile' );
 
-		$classes = array(
-			'span_1_of_' . $desktop,
-			'tablet-span_1_of_' . $tablet,
-			'mobile-span_1_of_' . $mobile,
-		);
-
-		return esc_attr( implode( ' ', $classes ) );
+	function oceanwp_grid_class( $col = '4' ) {
+		return esc_attr( apply_filters( 'ocean_grid_class', 'span_1_of_' . $col ) );
 	}
 }
-
 
 /**
  * Removes the scheme of the passed URL to fit the current page.
@@ -2638,6 +2628,18 @@ if ( ! function_exists( 'oceanwp_blog_wrap_classes' ) ) {
 			}
 		}
 
+		$tablet_columns = get_theme_mod( 'ocean_blog_grid_columns_tablet' );
+		$mobile_columns = get_theme_mod( 'ocean_blog_grid_columns_mobile' );
+
+		if ( ! empty( $tablet_columns ) ) {
+			$classes[] = 'tablet-col';
+			$classes[] = 'tablet-' . $tablet_columns . '-col';
+		}
+		if ( ! empty( $mobile_columns ) ) {
+			$classes[] = 'mobile-col';
+			$classes[] = 'mobile-' . $mobile_columns . '-col';
+		}
+
 		// Equal heights
 		if ( oceanwp_blog_entry_equal_heights() ) {
 			$classes[] = 'blog-equal-heights';
@@ -2693,7 +2695,7 @@ if ( ! function_exists( 'oceanwp_post_entry_classes' ) ) {
 		// Add columns for grid style entries
 		if ( $entry_style == 'grid-entry' ) {
 			$classes[]     = 'col';
-				$classes[] = oceanwp_grid_class();
+				$classes[] = oceanwp_grid_class( oceanwp_blog_entry_columns() );
 
 			// Counter
 			global $oceanwp_count;
