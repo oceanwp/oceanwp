@@ -2877,7 +2877,7 @@ if ( ! function_exists( 'oceanwp_blog_entry_columns' ) ) {
 		if ( has_filter( 'ocean_blog_entry_columns' ) ) {
 			_deprecated_hook(
 				'ocean_blog_entry_columns',
-				'3.0.0',
+				'4.1.3',
 				"ocean_blog_entry_columns_{$device}"
 			);
 

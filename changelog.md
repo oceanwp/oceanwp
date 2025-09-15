@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### _2025.09.15_ - 4.1.3
+- **Added**:: Compatibility: EDD: Archive pages: Support for new EDD JSON-LD schema output.
+- **Improved**:: Compatibility: EDD: Menu cart behavior on mobile following default EDD mobile behavior.
+- **Deprecated**:: Hooks: ocean_blog_entry_columns. Will be removed entirely with 5.0.0 version. Use ocean_blog_entry_columns_{$device} instead.
+
 ### _2025.08.11_ - 4.1.2
 - **Added**:: Compatibility: PHP: 8.3+: Warning: Trying to access array offset on false in .../themes/oceanwp/inc/breadcrumbs.php on line 1387
 - **Fixed**:: Scroll to Top: Button side position not rendered on the front.
