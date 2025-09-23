@@ -3162,7 +3162,7 @@ $options = [
 
 			'ocean_pagination_font_size_setting' => [
 				'id' => 'ocean_pagination_font_size_setting',
-				'label'    => esc_html__( esc_html__( 'Pagination Text Size', 'oceanwp' ), 'oceanwp' ),
+				'label'    => esc_html__( 'Pagination Text Size', 'oceanwp' ),
 				'type'     => 'ocean-range-slider',
 				'section'  => 'ocean_site_pagination_section',
 				'transport' => 'postMessage',
