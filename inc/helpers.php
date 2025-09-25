@@ -2867,6 +2867,16 @@ if ( ! function_exists( 'oceanwp_blog_entry_columns' ) ) {
 		// Apply filters for child theming
 		$columns = apply_filters( 'ocean_blog_entry_columns_desktop', $columns );
 
+		if ( has_filter( 'ocean_blog_entry_columns' ) ) {
+			_deprecated_hook(
+				'ocean_blog_entry_columns',
+				'4.1.3',
+				'ocean_blog_entry_columns_desktop'
+			);
+
+			$columns = apply_filters( 'ocean_blog_entry_columns', $columns );
+		}
+
 		// Return columns
 		return $columns;
 
