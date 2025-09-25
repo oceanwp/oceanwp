@@ -2344,7 +2344,7 @@ if ( ! function_exists( 'ocean_breadcrumbs_view') ) {
 
 		$woo_crumb = get_theme_mod( 'ocean_breadcrumb_woocommerce', 'no' );
 
-		if ( 'yes' === $woo_crumb ) {
+		if ( 'yes' === $woo_crumb && OCEANWP_WOOCOMMERCE_ACTIVE ) {
 			if ( oceanwp_is_woo_shop() || oceanwp_is_woo_tax() || oceanwp_is_woo_single() || is_cart() || is_checkout() || is_account_page() ) {
 				woocommerce_breadcrumb();
 			} else {
