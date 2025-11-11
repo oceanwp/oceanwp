@@ -2136,6 +2136,7 @@ $options = [
 						'label' => esc_html__( 'Tablet', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
+							'default' => 2,
 						],
 					],
 					'mobile' => [
@@ -2143,6 +2144,7 @@ $options = [
 						'label' => esc_html__( 'Mobile', 'oceanwp' ),
 						'attr' => [
 							'transport' => 'postMessage',
+							'default' => 1,
 						],
 					]
 				]

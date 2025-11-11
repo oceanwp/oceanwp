@@ -28,8 +28,8 @@ if ( ( (function_exists( 'oceanwp_is_woo_shop' ) && oceanwp_is_woo_shop()) || (f
 }
 
 // Responsive columns.
-$tablet_columns = get_theme_mod( 'ocean_woocommerce_tablet_shop_columns' );
-$mobile_columns = get_theme_mod( 'ocean_woocommerce_mobile_shop_columns' );
+$tablet_columns = get_theme_mod( 'ocean_woocommerce_tablet_shop_columns', 2 );
+$mobile_columns = get_theme_mod( 'ocean_woocommerce_mobile_shop_columns', 1 );
 
 if ( ! empty( $tablet_columns ) ) {
 	$wrap_classes[] = 'tablet-col';
