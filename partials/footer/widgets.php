@@ -20,12 +20,13 @@ $elementor = get_post_meta( $get_id, '_elementor_edit_mode', true );
 $get_content = oceanwp_footer_template_content();
 
 // Get footer widgets columns.
-$columns    = apply_filters( 'ocean_footer_widgets_columns', get_theme_mod( 'ocean_footer_widgets_columns', '4' ) );
+$columns    = apply_filters( 'ocean_footer_widgets_columns', get_theme_mod( 'ocean_footer_widgets_columns', 4 ) );
+$columns 	= empty( $columns ) ? 4 : (int) $columns;
 $grid_class = oceanwp_grid_class( $columns );
 
 // Responsive columns.
-$tablet_columns = get_theme_mod( 'ocean_footer_widgets_tablet_columns' );
-$mobile_columns = get_theme_mod( 'ocean_footer_widgets_mobile_columns' );
+$tablet_columns = get_theme_mod( 'ocean_footer_widgets_tablet_columns', 2 );
+$mobile_columns = get_theme_mod( 'ocean_footer_widgets_mobile_columns', 1 );
 
 // Visibility.
 $visibility = get_theme_mod( 'ocean_footer_widgets_visibility', 'all-devices' );

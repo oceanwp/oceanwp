@@ -7,7 +7,7 @@
     .blog-grid.oceanwp-row,
     .blog-masonry-grid.oceanwp-row {
       &.tablet-col .col {
-        clear: none;
+        // clear: none;
       }
 
       &.tablet-1-col .blog-entry {
@@ -45,7 +45,7 @@
     .blog-grid.oceanwp-row,
     .blog-masonry-grid.oceanwp-row {
       &.mobile-col .col {
-        clear: none;
+        // clear: none;
       }
 
       &.mobile-1-col .blog-entry {
