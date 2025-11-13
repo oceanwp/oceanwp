@@ -26,7 +26,10 @@ $grid_class = oceanwp_grid_class( $columns );
 
 // Responsive columns.
 $tablet_columns = get_theme_mod( 'ocean_footer_widgets_tablet_columns', 2 );
+$tablet_columns = empty( $tablet_columns ) ? (int) $columns : $tablet_columns;
+
 $mobile_columns = get_theme_mod( 'ocean_footer_widgets_mobile_columns', 1 );
+$mobile_columns = empty( $mobile_columns ) ? $tablet_columns : $mobile_columns;
 
 // Visibility.
 $visibility = get_theme_mod( 'ocean_footer_widgets_visibility', 'all-devices' );

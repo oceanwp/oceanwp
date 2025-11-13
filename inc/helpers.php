@@ -2628,9 +2628,12 @@ if ( ! function_exists( 'oceanwp_blog_wrap_classes' ) ) {
 			}
 		}
 
+		$columns        = get_theme_mod( 'ocean_blog_grid_columns', 2 );
 		$tablet_columns = get_theme_mod( 'ocean_blog_grid_columns_tablet', 2 );
+		$tablet_columns = empty( $tablet_columns ) ? (int) $columns : $tablet_columns;
 		$tablet_columns = apply_filters( 'ocean_blog_entry_columns_tablet', $tablet_columns );
 		$mobile_columns = get_theme_mod( 'ocean_blog_grid_columns_mobile', 1 );
+		$mobile_columns = empty( $mobile_columns ) ? $tablet_columns : $mobile_columns;
 		$mobile_columns = apply_filters( 'ocean_blog_entry_columns_mobile', $mobile_columns );
 
 		if ( ! empty( $tablet_columns ) ) {
