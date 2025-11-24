@@ -1,5 +1,14 @@
 # OceanWP Changelog
 
+### _2025.11.24_ - 4.1.4
+- **Updated**:: Compatibility: WordPress: Upcoming 6.9 version.
+- **Fixed**:: Blog: Archives: Grid Layout: Tablet and Mobile layout display 1 column if no value was added in the Customizer.
+- **Fixed**:: Shop: Archives: Grid Layout: Tablet and Mobile layout display 1 column if no value was added in the Customizer.
+- **Fixed**:: Footer Widgets: Layout: Grid Layout: Tablet and Mobile layout display 1 column if no value was added in the Customizer.
+- **Fixed**:: WooCommerce: Sale Badge display with RTL languages.
+- **Fixed**:: Compatibility: PHP: 8.3+: in specific conditions theme breadcrumbs usage on WooCommerce pages triggers Warning:Trying to access array offset on false in .../wp-content/themes/oceanwp/inc/breadcrumbs.php on line 1387
+- **Fixed**:: Customizer: UI elements styling: increased styling script loading priority to avoid elements displaying incorrect or broken styling in specific conditions.
+
 ### _2025.09.15_ - 4.1.3
 - **Added**:: Compatibility: EDD: Archive pages: Support for new EDD JSON-LD schema output.
 - **Improved**:: Compatibility: EDD: Menu cart behavior on mobile following default EDD mobile behavior.

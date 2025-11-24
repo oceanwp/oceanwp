@@ -4773,7 +4773,7 @@ $options = [
 							],
 							'unit' => [
 								'id'    => 'ocean_menu_social_font_size_unit',
-								'label' => esc_html__( esc_html__( 'Unit', 'oceanwp' ), 'oceanwp' ),
+								'label' => esc_html__( 'Unit', 'oceanwp' ),
 								'attr'  => [
 									'transport' => 'postMessage',
 									'default'   => 'px',
