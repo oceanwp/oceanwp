@@ -67,7 +67,7 @@
 /* Sale & out of stock tags */
 .woocommerce span.onsale,
 .woocommerce ul.products li.product.outofstock .outofstock-badge,
-.woocommerce ul.products li.product .onsale { right: 20px; left: auto; }
+.woocommerce ul.products li.product .onsale { right: 20px; left: auto !important; }
 
 /* Product entry */
 .woocommerce ul.products.owp-content-left .product-inner { text-align: right; }
