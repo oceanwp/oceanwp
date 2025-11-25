@@ -44,6 +44,11 @@ class OceanWP_Nav_Walker {
 	 * @return object The menu item.
 	 */
 	public function add_custom_fields_meta( $menu_item ) {
+		// check if $menu_item is not an object or has no ID
+		if (! is_object($menu_item) || empty($menu_item->ID)) {
+			return $menu_item;
+		}
+		
 		$menu_item->template 				= get_post_meta( $menu_item->ID, '_menu_item_template', true );
 		$menu_item->mega_template 			= get_post_meta( $menu_item->ID, '_menu_item_mega_template', true );
 		$menu_item->nolink 					= get_post_meta( $menu_item->ID, '_menu_item_nolink', true );
