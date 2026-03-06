@@ -284,7 +284,10 @@ final class OCEANWP_Theme_Class {
 		}
 
 		// Breadcrumbs class.
-		require_once OCEANWP_INC_DIR . 'breadcrumbs.php';
+		$breadcrumbs = locate_template( 'inc/breadcrumbs.php' );
+		if ( $breadcrumbs ) {
+			require_once $breadcrumbs;
+		}
 
 		// Customizer class.
 		require_once OCEANWP_INC_DIR . 'customizer/customizer.php';
