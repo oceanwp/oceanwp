@@ -62,7 +62,7 @@ do_action( 'ocean_before_single_post_header_meta' );
 		<?php } ?>
 
 		<?php if ( 'comments' === $section && comments_open() && ! post_password_required() ) { ?>
-			<li class="meta-comments" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-comments' ) ); ?>"><?php oceanwp_icon( 'comment' ); ?><?php comments_popup_link( esc_html__( '0 Comments', 'oceanwp' ), esc_html__( '1 Comment', 'oceanwp' ), esc_html__( '% Comments', 'oceanwp' ), 'comments-link' ); ?></li>
+			<li class="meta-comments" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-wai-comments' ) ); ?>"><?php oceanwp_icon( 'comment' ); ?><?php comments_popup_link( esc_html__( '0 Comments', 'oceanwp' ), esc_html__( '1 Comment', 'oceanwp' ), esc_html__( '% Comments', 'oceanwp' ), 'comments-link' ); ?></li>
 		<?php } ?>
 
 	<?php } ?>
