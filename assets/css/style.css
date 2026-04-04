@@ -6362,9 +6362,6 @@ body.breadcrumbs-position-default .page-header-title {
 }
 
 @media only screen and (min-width: 481px) and (max-width: 980px) {
-  .tablet-col .col.first {
-    clear: none;
-  }
   .has-blog-grid .blog-grid.oceanwp-row.tablet-col .col,
 .has-blog-grid .blog-masonry-grid.oceanwp-row.tablet-col .col {
     clear: none;

@@ -6011,7 +6011,7 @@ $options = [
 						'hideLabel' => false,
 						'showAlpha' => true,
 						'showPalette' => true,
-						'active_callback' => 'ocean_cac_has_mobile_menu_sidebar',
+						'active_callback' => 'ocean_cac_has_mobile_menu_dropdown_sidebar',
 						'sanitize_callback' => 'wp_kses_post',
 						'setting_args' => [
 							'normal' => [
@@ -6038,7 +6038,7 @@ $options = [
 						'hideLabel' => false,
 						'showAlpha' => true,
 						'showPalette' => true,
-						'active_callback' => 'ocean_cac_has_mobile_menu_sidebar',
+						'active_callback' => 'ocean_cac_has_mobile_menu_dropdown_sidebar',
 						'sanitize_callback' => 'wp_kses_post',
 						'setting_args' => [
 							'normal' => [
@@ -6063,7 +6063,7 @@ $options = [
 						'priority' => 10,
 						'top' => 10,
 						'bottom' => 10,
-						'active_callback' => 'ocean_cac_has_mobile_menu_sidebar',
+						'active_callback' => 'ocean_cac_has_mobile_menu_dropdown_sidebar',
 					],
 
 					'ocean_mobile_menu_links' => [

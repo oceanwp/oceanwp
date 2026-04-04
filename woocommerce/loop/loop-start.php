@@ -28,8 +28,13 @@ if ( ( (function_exists( 'oceanwp_is_woo_shop' ) && oceanwp_is_woo_shop()) || (f
 }
 
 // Responsive columns.
-$tablet_columns = get_theme_mod( 'ocean_woocommerce_tablet_shop_columns' );
-$mobile_columns = get_theme_mod( 'ocean_woocommerce_mobile_shop_columns' );
+$columns        = get_theme_mod( 'ocean_woocommerce_shop_columns', 3 );
+$tablet_columns = get_theme_mod( 'ocean_woocommerce_tablet_shop_columns', 2 );
+$tablet_columns = empty( $tablet_columns ) ? (int) $columns : $tablet_columns;
+$tablet_columns = apply_filters( 'ocean_shop_grid_columns_tablet', $tablet_columns );
+$mobile_columns = get_theme_mod( 'ocean_woocommerce_mobile_shop_columns', 1 );
+$mobile_columns = empty( $mobile_columns ) ? $tablet_columns : $mobile_columns;
+$mobile_columns = apply_filters( 'ocean_shop_grid_columns_mobile', $mobile_columns );
 
 if ( ! empty( $tablet_columns ) ) {
 	$wrap_classes[] = 'tablet-col';

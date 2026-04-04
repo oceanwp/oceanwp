@@ -23,7 +23,7 @@ class OceanWP_Customizer_Init {
 
 		$this->include_settings();
 
-		add_action( 'customize_controls_enqueue_scripts',   array( $this, 'custom_customize_enqueue' ), 7 );
+		add_action( 'customize_controls_enqueue_scripts',   array( $this, 'custom_customize_enqueue' ), 15 );
 		add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'force_uncompressed_tinymce' ), 1 );
 		add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'print_default_editor_scripts' ), 45 );
 		add_action( 'customize_register', array( $this, 'register_settings' ) );

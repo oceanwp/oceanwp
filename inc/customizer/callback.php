@@ -802,6 +802,14 @@ function oceanwp_cac_is_woo_multistep_checkout() {
 	}
 }
 
+function oceanwp_cac_is_woo_shop_result_count_enabled() {
+	if ( true == get_theme_mod( 'ocean_woo_shop_result_count', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 /**
  * EDD
  */

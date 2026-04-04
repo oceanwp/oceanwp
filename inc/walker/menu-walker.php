@@ -95,12 +95,12 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			}
 
 			// Latest post for menu item categories
-			if ( $item->category_post != '' && $item->object == 'category' && 'vertical' != oceanwp_header_style() ) {
+			if ( isset( $item->category_post ) && $item->category_post != '' && $item->object == 'category' && 'vertical' != oceanwp_header_style() ) {
 				$classes[] = 'menu-item-has-children megamenu-li full-mega mega-cat';
 			}
 
 			// Nav no click
-			if ( $item->nolink != '' ) {
+			if ( ! empty( $item->nolink ) ) {
 				$classes[] = 'nav-no-click';
 			}
 
@@ -208,7 +208,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			$item_output .= '</a>';
 
-			if ( ( $item->template || $item->mega_template ) && $this->megamenu != '' && 'vertical' != oceanwp_header_style() ) {
+			if ( ( ! empty( $item->template ) || ! empty( $item->mega_template ) ) && $this->megamenu != '' && 'vertical' != oceanwp_header_style() ) {
 				ob_start();
 					include OCEANWP_INC_DIR . 'walker/template.php';
 					$template_content = ob_get_contents();
@@ -216,7 +216,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 				$item_output .= $template_content;
 			}
 
-			if ( $item->megamenu_widgetarea && $this->megamenu != '' && 'vertical' != oceanwp_header_style() ) {
+			if ( ! empty( $item->megamenu_widgetarea ) && $this->megamenu != '' && 'vertical' != oceanwp_header_style() ) {
 				ob_start();
 					dynamic_sidebar( $item->megamenu_widgetarea );
 					$sidebar_content = ob_get_contents();
@@ -261,14 +261,19 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 			// Header style
 			$header_style = oceanwp_header_style();
 
-			if ( $depth === 0 && $item->category_post != ''
-				&& 'full_screen' != $header_style && 'vertical' != $header_style ) {
+			if (
+				$depth === 0
+				&& isset( $item->category_post )
+				&& $item->category_post !== ''
+				&& 'full_screen' !== $header_style
+				&& 'vertical' !== $header_style
+			 ) {
 				global $post;
 
 				$output .= "\n<ul class=\"megamenu col-4 sub-menu\">\n";
 
 					// Sub Categories ===============================================================
-				if ( $item->category_post != '' && $item->object == 'category' ) {
+				if ( isset( $item->category_post ) && $item->category_post != '' && $item->object == 'category' ) {
 					$no_sub_categories = $sub_categories_exists = $sub_categories = '';
 
 					$query_args     = array(
@@ -388,7 +393,7 @@ if ( ! class_exists( 'OceanWP_Custom_Nav_Walker' ) ) {
 
 			// Down Arrows
 			if ( ! empty( $children_elements[ $element->$id_field ] ) && ( $depth == 0 )
-				|| ( isset( $element->category_post ) && $element->category_post != '' ) && $element->object == 'category'
+				|| ( isset( $element->category_post ) && $element->category_post !== '' ) && $element->object === 'category'
 				&& 'full_screen' != $header_style ) {
 				$element->classes[] = 'dropdown';
 				if ( true == get_theme_mod( 'ocean_menu_arrow_down', true ) ) {

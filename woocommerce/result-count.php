@@ -14,12 +14,29 @@ if ( is_single() || ! have_posts() ) {
 	return;
 }
 
-$products_per_page = get_theme_mod( 'ocean_woo_shop_posts_per_page', '12' );
+$products_per_page = get_theme_mod( 'ocean_woo_shop_posts_per_page', 12 );
+$max_cap           = oceanwp_get_shop_result_max_cap();
 
-$num_prod = ( isset( $_GET['products-per-page'] ) ) ? sanitize_text_field( wp_unslash( $_GET['products-per-page'] ) ) : $products_per_page;
+$num_prod = 0;
+$requested_view = '';
+
+if ( isset( $_GET['products-per-page'] ) ) {
+
+	$requested_view = sanitize_text_field( wp_unslash( $_GET['products-per-page'] ) );
+
+	if ( $requested_view === 'all' ) {
+		$num_prod = $max_cap;
+	} else {
+		$num_prod = min( absint( $requested_view ), $max_cap );
+	}
+
+} else {
+	$requested_view = (string) $products_per_page;
+	$num_prod       = min( $products_per_page, $max_cap );
+}
 
 $num_prod_x1 = $products_per_page;
-$num_prod_x2 = $num_prod_x1 * 2;
+$num_prod_x2 = $products_per_page * 2;
 
 $obj  = get_queried_object();
 $link = '';
@@ -61,7 +78,7 @@ if ( ! empty( $_GET ) ) {
 
 <ul class="result-count">
 	<li class="view-title"><?php esc_html_e( 'View:', 'oceanwp' ); ?></li>
-	<li><a class="view-first<?php if ( $num_prod === $num_prod_x1 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x1, $link ) ); ?>"><?php echo esc_html( $num_prod_x1 ); ?></a></li>
-	<li><a class="view-second<?php if ( (int)$num_prod === $num_prod_x2 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x2, $link ) ); ?>"><?php echo esc_html( $num_prod_x2 ); ?></a></li>
-	<li><a class="view-all<?php if ( $num_prod === 'all' ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', 'all', $link ) ); ?>"><?php esc_html_e( 'All', 'oceanwp' ); ?></a></li>
+	<li><a class="view-first<?php if ( $requested_view === $num_prod_x1 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x1, $link ) ); ?>" rel="nofollow"><?php echo esc_html( $num_prod_x1 ); ?></a></li>
+	<li><a class="view-second<?php if ( (int)$requested_view === $num_prod_x2 ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', $num_prod_x2, $link ) ); ?>" rel="nofollow"><?php echo esc_html( $num_prod_x2 ); ?></a></li>
+	<li><a class="view-all<?php if ( $requested_view === 'all' ) echo ' active'; ?>" href="<?php echo esc_url( add_query_arg( 'products-per-page', 'all', $link ) ); ?>" rel="nofollow"><?php esc_html_e( 'All', 'oceanwp' ); ?></a></li>
 </ul>

@@ -414,3 +414,26 @@ if ( ! function_exists( 'owp_yith_wishlist_browse_button_label' ) ) {
 		}
 	}
 }
+
+/**
+ * Get shop result max cap.
+ */
+if ( ! function_exists( 'oceanwp_get_shop_result_max_cap') ) {
+	/**
+	 * Get Shop Result Count Max Cap
+	 *
+	 * @return int
+	 * @since 4.1.5
+	 */
+	function oceanwp_get_shop_result_max_cap() {
+
+		$default = owp_shop_result_count_cap_max_default();
+		$value   = get_theme_mod( 'ocean_woo_shop_result_count_max_cap', $default );
+
+		if ( $value === '' || ! is_numeric( $value ) || absint( $value ) < 1 ) {
+			return absint( $default );
+		}
+
+		return absint( $value );
+	}
+}

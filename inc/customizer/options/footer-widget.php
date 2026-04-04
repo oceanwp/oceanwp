@@ -241,6 +241,7 @@ $options = [
 				'label' => esc_html__( 'Tablet', 'oceanwp' ),
 				'attr'  => [
 					'transport' => 'refresh',
+					'default'   => 2,
 				],
 			],
 			'mobile' => [
@@ -248,6 +249,7 @@ $options = [
 				'label' => esc_html__( 'Mobile', 'oceanwp' ),
 				'attr'  => [
 					'transport' => 'refresh',
+					'default'   => 1,
 				],
 			]
 		]
