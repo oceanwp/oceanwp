@@ -6,8 +6,6 @@ https://flickity.metafizzy.co
   position: relative;
 }
 
-.flickity-enabled:focus { outline: none; }
-
 .flickity-viewport {
   overflow: hidden;
   position: relative;
@@ -55,8 +53,7 @@ https://flickity.metafizzy.co
   cursor: pointer;
 }
 
-.flickity-button:focus {
-  outline: none;
+.flickity-button:focus-visible {
   box-shadow: 0 0 0 5px #19F;
 }
 

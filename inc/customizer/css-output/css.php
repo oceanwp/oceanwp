@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require OCEANWP_INC_DIR . 'customizer/css-output/selectors.php';
+require OCEANWP_INC_DIR . 'customizer/css-output/css-variables.php';
 require OCEANWP_INC_DIR . 'customizer/css-output/typography.php';
 require OCEANWP_INC_DIR . 'customizer/css-output/colors.php';
 require OCEANWP_INC_DIR . 'customizer/css-output/style-settings.php';
@@ -39,3 +40,6 @@ if ( OCEANWP_LIFTERLMS_ACTIVE ) {
 if ( OCEANWP_LEARNDASH_ACTIVE ) {
 	require OCEANWP_INC_DIR . 'customizer/css-output/learndash.php';
 }
+
+// If Accessibility CSS is activated.
+// require OCEANWP_INC_DIR . 'customizer/css-output/a11y.php';

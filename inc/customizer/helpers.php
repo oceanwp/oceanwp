@@ -148,7 +148,7 @@ if ( ! function_exists( 'oceanwp_get_scroll_top_icons' ) ) {
 			],
 			'long_arrow_alt_up'  => [
 				'id'     => 'long_arrow_alt_up',
-				'label'   => esc_html__('Left', 'oceanwp'),
+				'label'   => esc_html__( 'Left', 'oceanwp' ),
 				'content' => oceanwp_icon( 'double_arrows_up', false ),
 			],
 			'arrow_alt_circle_up'  => [
@@ -319,10 +319,15 @@ if ( ! function_exists( 'oceanwp_cart_icons_list' ) ) {
 
 if ( ! function_exists( 'ocean_get_page_choices' ) ) {
 
-	function ocean_get_page_choices( $name = '', $selected = '', $show_option_none = '&mdash; ' . __( 'Select', 'oceanwp' ) . ' &mdash;', $option_none_value = '' ) {
+	function ocean_get_page_choices( $name = '', $selected = '', $show_option_none = false, $option_none_value = '' ) {
 
 		$name = '_customize-dropdown-pages-';
 		$selected = get_theme_mod( 'op_portfolio_page', '' );
+
+		// If no custom string is provided, handle the translatable default string here.
+		if ( false === $show_option_none ) {
+			$show_option_none = __( '&mdash; Select &mdash;', 'oceanwp' );
+		}
 
 		$dropdown = wp_dropdown_pages(
 			array(

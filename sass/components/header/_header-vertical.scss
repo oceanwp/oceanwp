@@ -64,12 +64,6 @@
 
     #site-logo {
         margin: 20px 0 45px;
-
-        a {
-            &:focus {
-                outline: 1px dashed rgba($color: #000, $alpha: 0.3);
-            }
-        }
     }
 
     .has-social #site-navigation-wrap {
@@ -96,10 +90,6 @@
                 line-height: 1;
                 padding: 17px 30px;
 
-                &:focus {
-                    outline: 1px dashed rgba($color: #000, $alpha: 0.3);
-                }
-
                 .dropdown-toggle {
                     position: absolute;
                     right: 0;
@@ -109,10 +99,6 @@
                     line-height: 1;
                     cursor: pointer;
                     text-align: center;
-
-                    &:focus {
-                        outline: 1px dashed rgba($color: #000, $alpha: 0.3);
-                    }
 
                     &:before {
                         content: "+";
@@ -176,10 +162,6 @@
                 top: 50%;
                 margin: 0;
                 @include transform(translateY(-50%));
-
-                &:focus {
-                    outline: 1px dashed rgba($color: #000, $alpha: 0.3);
-                }
             }
 
             label {

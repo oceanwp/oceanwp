@@ -1,4 +1,5 @@
 import { fadeIn, fadeOut, slideDown, slideUp } from "../../lib/utils";
+import initAccessibleSubmenus from "./accessible-submenus";
 
 class FullScreenMenu {
   #elements = {
@@ -30,6 +31,21 @@ class FullScreenMenu {
   };
 
   #start = () => {
+    const hasPhpSubmenuControls =
+      !!this.#elements.menu?.querySelector("[data-oceanwp-submenu-toggle]");
+
+    if (hasPhpSubmenuControls) {
+      initAccessibleSubmenus({
+        root: this.#elements.menu,
+        itemSelector: "li.menu-item-has-children",
+        openClass: "open-sub",
+        toggleSelector: "[data-oceanwp-submenu-toggle]",
+        duration: 250,
+      });
+
+      return;
+    }
+
     this.#elements.menu.querySelectorAll(".nav-arrow").forEach((plusBtn) => {
       plusBtn.setAttribute("tabindex", 0);
     });
@@ -41,24 +57,43 @@ class FullScreenMenu {
       this.#onToggleMenuBtnClick
     );
 
-    document
-      .querySelectorAll(
-        '#full-screen-menu #site-navigation ul > li.dropdown > a > .text-wrap > span.nav-arrow, #full-screen-menu #site-navigation ul > li.dropdown > a[href="#"]'
-      )
-      ?.forEach((menuItemLink) => {
-        menuItemLink.addEventListener("click", this.#onMenuLinkClick);
-        menuItemLink.addEventListener("tap", this.#onMenuLinkClick);
-      });
+    this.#elements.toggleMenuBtn.addEventListener(
+      "keydown",
+      this.#onToggleMenuBtnKeydown
+    );
+
+    const hasPhpSubmenuControls =
+      !!this.#elements.menu?.querySelector("[data-oceanwp-submenu-toggle]");
+
+    if (!hasPhpSubmenuControls) {
+      document
+        .querySelectorAll(
+          '#full-screen-menu #site-navigation ul > li.dropdown > a > .text-wrap > span.nav-arrow, #full-screen-menu #site-navigation ul > li.dropdown > a[href="#"]'
+        )
+        ?.forEach((menuItemLink) => {
+          menuItemLink.addEventListener("click", this.#onMenuLinkClick);
+          menuItemLink.addEventListener("tap", this.#onMenuLinkClick);
+        });
+    }
 
     document
       .querySelectorAll(
-        '#full-screen-menu #site-navigation a.menu-link[href*="#"]:not([href="#"])'
+        '#full-screen-menu #site-navigation a.menu-link[href*="#"]:not([href="#"]):not([data-oceanwp-submenu-toggle])'
       )
       .forEach((menuItemLink) => {
         menuItemLink.addEventListener("click", this.#onMenuHashtagLinkClick);
       });
 
     document.addEventListener("keydown", this.#onDocumentKeydown);
+  };
+
+  #onToggleMenuBtnKeydown = (event) => {
+    if (!this.#isActivationKey(event) || event.currentTarget.tagName === "BUTTON") {
+      return;
+    }
+
+    event.preventDefault();
+    event.currentTarget.click();
   };
 
   #onToggleMenuBtnClick = (event) => {
@@ -94,19 +129,40 @@ class FullScreenMenu {
     this.#closeMenu();
   };
 
-  #openMenu = () => {
+ #openMenu = () => {
     this.#elements.header.classList.add("nav-open");
     this.#elements.toggleMenuBtn.classList.add("exit");
     this.#elements.logo?.classList.add("opened");
     this.#elements.menu.classList.add("active");
 
+    this.#elements.toggleMenuBtn.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
     fadeIn(this.#elements.menu);
 
-    const htmlWidthBeforeOverflowHidden = this.#elements.html.innerWidth;
+    const htmlWidthBeforeOverflowHidden =
+      this.#elements.html.innerWidth;
+
     this.#elements.html.style.overflow = "hidden";
-    const htmlWidthAfterOverflowHidden = this.#elements.html.innerWidth;
+
+    const htmlWidthAfterOverflowHidden =
+      this.#elements.html.innerWidth;
+
     this.#elements.html.style.marginRight =
-      htmlWidthBeforeOverflowHidden - htmlWidthAfterOverflowHidden + "px";
+      htmlWidthBeforeOverflowHidden -
+      htmlWidthAfterOverflowHidden +
+      "px";
+
+    setTimeout(() => {
+      const firstFocusable =
+        this.#elements.menu.querySelector(
+          'a, button, input, [tabindex="0"]'
+        );
+
+      firstFocusable?.focus();
+    }, 100);
   };
 
   #closeMenu = () => {
@@ -115,22 +171,35 @@ class FullScreenMenu {
     this.#elements.logo?.classList.remove("opened");
     this.#elements.menu.classList.remove("active");
 
+    this.#elements.toggleMenuBtn.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
     fadeOut(this.#elements.menu);
 
     this.#elements.html.style.overflow = "";
     this.#elements.html.style.marginRight = "";
 
     document
-      .querySelectorAll("#full-screen-menu #site-navigation ul > li.dropdown")
+      .querySelectorAll(
+        "#full-screen-menu #site-navigation ul > li.dropdown"
+      )
       .forEach((menuItem) => {
         menuItem.classList.remove("open-sub");
       });
 
     document
-      .querySelectorAll("#full-screen-menu #site-navigation ul.sub-menu")
+      .querySelectorAll(
+        "#full-screen-menu #site-navigation ul.sub-menu"
+      )
       .forEach((subMenu) => {
         slideUp(subMenu, 250);
       });
+
+    setTimeout(() => {
+      this.#elements.toggleMenuBtn?.focus();
+    }, 100);
   };
 
   /**
@@ -141,49 +210,110 @@ class FullScreenMenu {
       return;
     }
 
-    const tabKey = event.keyCode === 9;
+    const tabKey = event.key === "Tab" || event.keyCode === 9;
     const shiftKey = event.shiftKey;
-    const escKey = event.keyCode === 27;
-    const enterKey = event.keyCode === 13;
+    const escKey = event.key === "Escape" || event.keyCode === 27;
+    const activationKey = this.#isActivationKey(event);
 
     const closeIcon = this.#elements.toggleMenuBtn;
 
-    const navElements = this.#elements.menu
-      .querySelector("nav")
-      .querySelectorAll("a, span.nav-arrow, input, button");
+    const focusableInside = [
+      ...this.#elements.menu.querySelectorAll(
+        'a, button, input, [tabindex="0"]'
+      ),
+    ].filter(
+      (element) =>
+        element.offsetWidth > 0 ||
+        element.offsetHeight > 0 ||
+        element.getClientRects().length
+    );
 
-    const navFirstElement = navElements[0];
-    const navLastElement = navElements[navElements.length - 1];
+    if (!focusableInside.length) {
+      return;
+    }
+
+    const firstMenuElement = focusableInside[0];
+    const lastMenuElement =
+      focusableInside[focusableInside.length - 1];
+
+    if (!closeIcon) {
+      return;
+    }
 
     closeIcon.style.outline = "";
 
+    // ESC closes menu.
     if (escKey) {
       event.preventDefault();
       this.#closeMenu();
+      return;
     }
 
-    if (enterKey && document.activeElement.classList.contains("nav-arrow")) {
+    // ENTER and SPACE activate submenu toggle.
+    if (
+      activationKey &&
+      document.activeElement?.matches(
+        ".nav-arrow, .dropdown-toggle, .oceanwp-sub-menu-toggle, [data-oceanwp-submenu-toggle]"
+      )
+    ) {
       event.preventDefault();
       document.activeElement.click();
+      return;
     }
 
-    if (!shiftKey && tabKey && navLastElement === document.activeElement) {
+    if (!tabKey) {
+      return;
+    }
+
+    // Shift + Tab from trigger -> last menu item.
+    if (
+      shiftKey &&
+      document.activeElement === closeIcon
+    ) {
       event.preventDefault();
-      closeIcon.style.outline = "1px dashed rgba(255, 255, 255, 0.6)";
+      lastMenuElement.focus();
+      return;
+    }
+
+    // Tab from last menu item -> trigger.
+    if (
+      !shiftKey &&
+      document.activeElement === lastMenuElement
+    ) {
+      event.preventDefault();
+
+      closeIcon.style.outline =
+        "1px dashed rgba(255, 255, 255, 0.6)";
+
       closeIcon.focus();
+      return;
     }
 
-    if (shiftKey && tabKey && navFirstElement === document.activeElement) {
+    // Shift + Tab from first menu item -> trigger.
+    if (
+      shiftKey &&
+      document.activeElement === firstMenuElement
+    ) {
       event.preventDefault();
-      closeIcon.style.outline = "1px dashed rgba(255, 255, 255, 0.6)";
+
+      closeIcon.style.outline =
+        "1px dashed rgba(255, 255, 255, 0.6)";
+
       closeIcon.focus();
-    }
-
-    // If there are no elements in the menu, don't move the focus
-    if (tabKey && navFirstElement === navLastElement) {
-      event.preventDefault();
+      return;
     }
   };
+
+  #isActivationKey = (event) => {
+    return (
+      event.key === "Enter" ||
+      event.key === " " ||
+      event.key === "Spacebar" ||
+      event.keyCode === 13 ||
+      event.keyCode === 32
+    );
+  };
+
 }
 
 ("use script");

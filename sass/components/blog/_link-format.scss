@@ -22,7 +22,7 @@
 }
 
 .thumbnail:hover i {
-    background-color: $color-5;
+    background-color: var(--owp-primary-color, #{$color-5});
 }
 
 .link-post-svg-icon {

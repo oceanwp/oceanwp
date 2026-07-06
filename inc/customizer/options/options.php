@@ -65,6 +65,11 @@ $options = [
 		'priority' => 7,
 		'options' => ocean_customize_options( 'seo' )
 	],
+	'ocean_accessibility' => [
+		'title' => __( 'Accessibility - A11Y', 'oceanwp' ),
+		'priority' => 7,
+		'options' => ocean_customize_options( 'a11y' )
+	],
 	'ocean_site_performance' => [
 		'title' => __( 'Performance', 'oceanwp' ),
 		'priority' => 7,

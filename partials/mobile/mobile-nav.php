@@ -13,6 +13,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Menu Location.
 $menu_location = apply_filters( 'ocean_mobile_menu_location', 'mobile_menu' );
 
+$mobile_style = oceanwp_mobile_menu_style();
+
+if (
+	'sidebar' === $mobile_style
+	&& ! has_nav_menu( $menu_location )
+	&& has_nav_menu( 'main_menu' )
+) {
+	$menu_location = apply_filters( 'ocean_main_menu_location', 'main_menu' );
+}
+
 // Menu arguments.
 $menu_args = array(
 	'theme_location' => $menu_location,
@@ -22,8 +32,14 @@ $menu_args = array(
 );
 
 // If sidebar mobile menu style.
-if ( 'sidebar' === oceanwp_mobile_menu_style() ) {
+if ( 'sidebar' === $mobile_style ) {
 	$menu_args['menu_class'] = 'mobile-menu dropdown-menu';
+}
+
+if ( 'dropdown' === $mobile_style ) {
+	$menu_args = oceanwp_apply_nav_walker_context( $menu_args, 'mobile-dropdown' );
+} elseif ( 'fullscreen' === $mobile_style ) {
+	$menu_args = oceanwp_apply_nav_walker_context( $menu_args, 'mobile-fullscreen' );
 }
 
 // Display menu if defined.

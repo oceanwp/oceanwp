@@ -75,10 +75,10 @@
 	    margin-bottom: 10px;
 
 	    a {
-	    	color: $color-5;
+	    	color: var(--owp-link-color, #{$color-5});
 
 	    	&:hover {
-	    		color: $color-2;
+	    		color: var(--owp-link-color-hover, #{$color-2});
 	    	}
 	    }
     }

@@ -22,10 +22,6 @@
                 padding: 12px 40px;
                 text-align: left;
 
-                &:focus {
-                    outline: 1px dashed #e3e3e3;
-                }
-
                 i,
                 img {
                     margin-right: 10px;
@@ -47,10 +43,6 @@
                     padding-right: 40px;
                     text-align: center;
                     @include transition(all 0.3s ease);
-
-                    &:focus {
-                        outline: 1px dashed rgba($color: #000, $alpha: 0.4);
-                    }
 
                     &:before {
                         content: "+";
@@ -136,8 +128,9 @@
                 width: 30px;
                 padding: 0;
                 text-align: center;
-                top: 50%;
-                margin-top: -15px;
+                top: auto;
+                bottom: 5px;
+                margin-top: 0px;
                 background-color: transparent !important;
                 color: #555;
                 border: 0;

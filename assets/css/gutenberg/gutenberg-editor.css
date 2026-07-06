@@ -148,7 +148,7 @@ a:hover {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+a:focus-visible:not(.wp-block-button__link):not(.wp-block-file__button) {
   /* Only visible in Windows High Contrast mode */
   outline: 2px solid transparent;
   text-decoration: underline 1px dotted #13aff0;

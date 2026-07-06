@@ -34,12 +34,10 @@ class OceanWP_Customizer_Init {
 	}
 
 	public function include_settings() {
-
-		//require OCEANWP_INC_DIR . 'customizer/functions.php';
 		require OCEANWP_INC_DIR . 'customizer/helpers.php';
+		require OCEANWP_INC_DIR . 'customizer/customizer-defaults.php';
 		require OCEANWP_INC_DIR . 'customizer/callback.php';
 		require OCEANWP_INC_DIR . 'customizer/sanitize.php';
-		require OCEANWP_INC_DIR . 'customizer/svg.php';
 		require OCEANWP_INC_DIR . 'customizer/css-output/css.php';
 	}
 
@@ -81,12 +79,6 @@ class OceanWP_Customizer_Init {
 			if ( isset( $section_options['priority'] ) && $section_options['priority'] ) {
 				$section_args['priority'] = $section_options['priority'];
 			}
-
-			// if ( isset( $section_options['condition'] ) ) {
-			// 	$section_args['active_callback'] = function() use ($section_options) {
-			// 		return $section_options['condition'];
-			// 	};
-			// }
 
 			$wp_customize->add_section(
 				$section_key,
@@ -168,11 +160,6 @@ class OceanWP_Customizer_Init {
 						$setting_args['default'] = $option_data['default'];
 					}
 				}
-
-				// $wp_customize->add_setting(
-				// 	$option_key,
-				// 	$setting_args
-				// );
 
 				$wp_customize->add_setting(
 					$option_key,

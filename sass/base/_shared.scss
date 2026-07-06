@@ -263,8 +263,7 @@ dl:after,
 }
 
 .gallery-item a,
-.gallery-item a:hover,
-.gallery-item a:focus {
+.gallery-item a:hover {
     @include box-shadow(none);
     background: none;
     display: inline-block;

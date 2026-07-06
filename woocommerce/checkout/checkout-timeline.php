@@ -9,10 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-// Check if a custom Elementor checkout template is active.
+// Check if a custom OTB checkout template is active.
 $custom_checkout_template = get_option( 'oec_checkout_template', '0' );
-if ( '0' !== $custom_checkout_template && ! empty( $custom_checkout_template ) ) {
-	return; // Exit early if a custom Elementor template is applied.
+$is_otb_active            = function_exists( 'oec_get_theme_version' );
+if ( $is_otb_active && '0' !== $custom_checkout_template && ! empty( $custom_checkout_template ) ) {
+	return; // Exit early if a custom OTB template is applied.
 }
 
 // Vars.

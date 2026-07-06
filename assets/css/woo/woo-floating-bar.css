@@ -107,7 +107,7 @@ Woo Floating Bar
   height: 46px;
   padding: 0 40px;
 }
-.owp-floating-bar button.button:hover, .owp-floating-bar button.button:focus {
+.owp-floating-bar button.button:hover, .owp-floating-bar button.button:focus-visible {
   background-color: #f1f1f1;
 }
 .owp-floating-bar .added_to_cart {

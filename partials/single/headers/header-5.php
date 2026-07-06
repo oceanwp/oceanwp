@@ -19,7 +19,6 @@ if ( ! in_array( $post_type, $allowed_post_types, true ) ) {
 	return;
 }
 
-
 // Heading tag.
 $heading = 'h1';
 $heading = apply_filters( 'single_ocean_header_5_h_tag', $heading );

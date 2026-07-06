@@ -144,10 +144,6 @@
                 &:hover {
                     color: $color-4;
                 }
-
-                &:focus {
-                    outline: 1px dashed rgba($color: #fff, $alpha: 0.3);
-                }
             }
 
             > a .nav-arrow {
@@ -158,10 +154,6 @@
 
                 &:before {
                     content: "+";
-                }
-
-                &:focus {
-                    outline: 1px dashed rgba($color: #fff, $alpha: 0.3);
                 }
             }
 
@@ -222,8 +214,7 @@
                 @include border-radius(0);
                 z-index: 2;
 
-                &:hover,
-                &:focus {
+                &:hover {
                     border-color: $color-1;
                 }
             }

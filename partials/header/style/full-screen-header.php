@@ -18,11 +18,26 @@ if ( true !== get_theme_mod( 'ocean_header_full_width', false ) ) {
 	$classes[] = 'container';
 }
 
-// Turn classes into space seperated string.
+// Turn classes into space separated string.
 $classes = implode( ' ', $classes );
 
 // SEO link txt.
 $anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-fullscreen-header-anchor', false ) );
+
+// New accessibility and customizer settings.
+$a11y_mode_tags  = oceanwp_is_semantic_desktop_header_enabled();
+$menu_label_text = esc_html__( 'Main Menu', 'oceanwp' );
+
+// Construct accessible operational attributes for disclosure control components
+$aria_attrs = 'aria-expanded="false" aria-controls="full-screen-menu"';
+
+$trigger_tag   = 'a';
+$trigger_attrs = sprintf( 'href="%s" class="menu-bar" %s', esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ), $aria_attrs );
+
+if ( $a11y_mode_tags ) {
+	$trigger_tag   = 'button';
+	$trigger_attrs = 'type="button" class="menu-bar" ' . $aria_attrs;
+}
 
 ?>
 
@@ -38,13 +53,23 @@ $anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-fullscreen-heade
 
 		<div class="menu-bar-wrap clr">
 			<div class="menu-bar-inner clr">
-				<a href="<?php echo esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ); ?>" class="menu-bar"><span class="ham"></span><span class="screen-reader-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-open-menu', false ) ); ?></span></a>
+				
+				<<?php echo $trigger_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output already escaped. ?> <?php echo $trigger_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output already escaped. ?>>
+					<span class="ham" aria-hidden="true" focusable="false"></span>
+					<span class="screen-reader-text"><?php echo esc_html( $menu_label_text ); ?></span>
+				</<?php echo $trigger_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output already escaped ?>>
+
 			</div>
 		</div>
 
 		<div id="full-screen-menu" class="clr">
 			<div id="full-screen-menu-inner" class="clr">
 				<?php get_template_part( 'partials/header/nav' ); ?>
+
+				<span class="screen-reader-text">
+					<?php echo esc_html__( 'Press Escape to close the Main Menu panel', 'oceanwp') ?>
+				</span>
+
 			</div>
 		</div>
 

@@ -20,6 +20,9 @@ if ( display_header_text() && ! OCEAN_EXTRA_ACTIVE && ! class_exists( 'Ocean_Ext
 	$header_text_color = ' style=color:#' . get_header_textcolor() . ';';
 }
 
+// New accessibility toggle framework checklist
+$a11y_mode_enabled = oceanwp_is_semantic_desktop_header_enabled();
+$tagline_tag       = $a11y_mode_enabled ? 'p' : 'h2';
 ?>
 
 <?php do_action( 'ocean_before_logo' ); ?>
@@ -81,7 +84,11 @@ if ( display_header_text() && ! OCEAN_EXTRA_ACTIVE && ! class_exists( 'Ocean_Ext
 		if ( 'top' === oceanwp_header_style()
 			&& '' !== get_bloginfo( 'description' ) ) {
 			?>
-			<div id="site-description"><h2 <?php echo esc_attr( $header_text_color ); ?>><?php echo bloginfo( 'description' ); ?></h2></div>
+			<div id="site-description">
+				<<?php echo $tagline_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <?php echo esc_attr( $header_text_color ); ?>>
+					<?php echo esc_html( get_bloginfo( 'description' ) ); ?>
+				</<?php echo $tagline_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			</div>
 			<?php
 		}
 	}

@@ -17,21 +17,23 @@ class Theme {
   };
 
   #setupEventListeners = () => {
-    document.addEventListener(
-      "keydown",
-      this.#actionActive
-    );
+      const skipLink = document.querySelector(".skip-link");
+
+      skipLink?.addEventListener("click", this.#onSkipLinkClick);
   };
 
-  #actionActive = (event) => {
-    const enterKey = event.keyCode === 13;
-    if ( enterKey ) {
-      document.querySelector('.skip-link').addEventListener('keydown', function(e) {
-          var target = document.getElementById('main');
+  #onSkipLinkClick = () => {
+      const target = document.getElementById("main");
+
+      if (!target) {
+          return;
+      }
+
+      // Wait until the browser has navigated to #main.
+      requestAnimationFrame(() => {
           target.tabIndex = -1;
-          target.focus();
+          target.focus({ preventScroll: true });
       });
-    }
   };
 
 }

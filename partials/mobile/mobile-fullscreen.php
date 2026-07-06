@@ -70,8 +70,36 @@ $top_menu_args = array(
 	'fallback_cb'    => false,
 );
 
+$menu_args      = oceanwp_apply_nav_walker_context( $menu_args, 'mobile-fullscreen' );
+$left_menu_args = oceanwp_apply_nav_walker_context( $left_menu_args, 'mobile-fullscreen' );
+$top_menu_args  = oceanwp_apply_nav_walker_context( $top_menu_args, 'mobile-fullscreen' );
+
+// New accessibility settings.
+$a11y_mode_tags = oceanwp_is_semantic_mobile_header_enabled();
+
 // SEO link txt.
 $anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-mobile-fullscreen-anchor', false ) );
+
+// Close button text.
+$close_label = oceanwp_theme_strings( 'owp-string-close-mobile-menu', false );
+$close_label = $close_label ? $close_label : esc_html__( 'Close mobile menu', 'oceanwp' );
+
+if ( $a11y_mode_tags ) {
+	$close_tag   = 'button';
+	$close_attrs = sprintf(
+		'type="button" class="close" aria-label="%s" aria-controls="mobile-fullscreen" %s',
+		esc_attr( $close_label ),
+		$fs_menu_close_attrs
+	);
+} else {
+	$close_tag   = 'a';
+	$close_attrs = sprintf(
+		'href="%s" class="close" aria-label="%s" aria-controls="mobile-fullscreen" %s',
+		esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ),
+		esc_attr( $close_label ),
+		$fs_menu_close_attrs
+	);
+}
 
 ?>
 
@@ -79,13 +107,13 @@ $anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-mobile-fullscree
 
 	<div id="mobile-fullscreen-inner" class="clr">
 
-		<a href="<?php echo esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ); ?>" class="close" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-close-mobile-menu', false ) ); ?>" <?php echo $fs_menu_close_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-			<div class="close-icon-wrap">
+		<<?php echo $close_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <?php echo $close_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			<div class="close-icon-wrap" aria-hidden="true">
 				<div class="close-icon-inner"></div>
 			</div>
-		</a>
+		</<?php echo $close_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
-		<nav class="<?php echo esc_attr( $classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?> role="navigation">
+		<nav class="<?php echo esc_attr( $classes ); ?>" aria-label="<?php esc_attr_e( 'Mobile navigation', 'oceanwp' ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?>>
 
 			<?php
 			// If has mobile menu.

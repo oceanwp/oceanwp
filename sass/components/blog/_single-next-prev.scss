@@ -18,7 +18,7 @@
     .nav-links {
     	.title {
 		    display: block;
-		    color: $color-5;
+		    color: var(--owp-primary-color, #{$color-5});
 		    line-height: 20px;
 		}
 

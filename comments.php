@@ -2,12 +2,19 @@
 /**
  * The template for displaying Comments.
  *
- * The area of the page that contains both current comments and the comment
- * form. The actual display of comments is handled by a callback to
- * oceanwp_comment() which is located at functions/comments-callback.php
+ * The area of the page that contains both current comments
+ * and the comment form.
+ *
+ * For additional options check:
+ * oceanwp_comments() and oceanwp_modify_comment_form_fields( $fields )
  *
  * @package OceanWP WordPress theme
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 // Return if password is required.
 if ( post_password_required() ) {
@@ -34,6 +41,29 @@ if ( 'full-screen' === oceanwp_post_layout() ) {
 $comment_position = apply_filters( 'ocean_comment_form_position', get_theme_mod( 'ocean_comment_form_position' ) );
 $comment_position = $comment_position ? $comment_position : 'after';
 
+// New accessibility and customizer settings.
+$display_comment_label = oceanwp_is_accessibility_feature_enabled( 'ocean_display_comment_form_label' );
+
+// Setup conditional Textarea formatting parameters.
+$textarea_label_class = $display_comment_label ? 'comment-form-visible-label' : 'screen-reader-text';
+$textarea_label_text  = esc_html__( 'Comment', 'oceanwp' );
+
+if ( $display_comment_label ) {
+	$textarea_label_text .= ' <span class="required">*</span>';
+	$textarea_placeholder = ''; // Completely strip placeholder text when visible labels are enabled.
+} else {
+	$textarea_placeholder = esc_attr( oceanwp_theme_strings( 'owp-string-comment-placeholder', false ) );
+}
+
+// Construct clean textarea markup block.
+$comment_field_html  = '<div class="comment-textarea">';
+$comment_field_html .= '<label for="comment" class="' . esc_attr( $textarea_label_class ) . '">' . $textarea_label_text . '</label>';
+$comment_field_html .= '<textarea name="comment" id="comment" cols="39" rows="4" tabindex="0" class="textarea-comment" required aria-required="true"';
+if ( ! empty( $textarea_placeholder ) ) {
+	$comment_field_html .= ' placeholder="' . $textarea_placeholder . '"';
+}
+$comment_field_html .= '></textarea></div>';
+
 // Comment form args.
 $args = array(
 	/* translators: 1: logged in to comment */
@@ -41,28 +71,25 @@ $args = array(
 	'logged_in_as'         => '<p class="logged-in-as">' . esc_html__( 'Logged in as', 'oceanwp' ) . ' <a href="' . admin_url( 'profile.php' ) . '">' . $user_identity . '</a>.<span class="screen-reader-text">' . esc_html( oceanwp_theme_strings( 'owp-string-comment-profile-edit', false ) ) . '</span> <a href="' . wp_logout_url( get_permalink() ) . '" aria-label="' . esc_attr( oceanwp_theme_strings( 'owp-string-comment-logout-text', false ) ) . '">' . esc_html__( 'Log out &raquo;', 'oceanwp' ) . '</a></p>',
 	'comment_notes_before' => false,
 	'comment_notes_after'  => false,
-	'comment_field'        => '<div class="comment-textarea"><label for="comment" class="screen-reader-text">' . esc_html__( 'Comment', 'oceanwp' ) . '</label><textarea name="comment" id="comment" cols="39" rows="4" tabindex="0" class="textarea-comment" placeholder="' . esc_attr( oceanwp_theme_strings( 'owp-string-comment-placeholder', false ) ) . '"></textarea></div>',
+	'comment_field'        => $comment_field_html, // Include fixed accessible element upstream.
 	'id_submit'            => 'comment-submit',
 	'label_submit'         => esc_html( oceanwp_theme_strings( 'owp-string-comment-post-button', false ) ),
 );
 
 ?>
 
-<section id="comments" class="<?php echo esc_attr( $classes ); ?>">
+<section id="comments" class="<?php echo esc_attr( $classes ); ?>" aria-label="<?php echo esc_attr_x( 'Comments', 'Aria label for the comments section', 'oceanwp' ); ?>">
 
 	<?php
-	// You can start editing here -- including this comment!
 	// Display comment form if position set to before the comment list.
 	if ( 'before' === $comment_position ) {
 		comment_form( $args );
 	}
 	?>
 
-	<?php
+	<?php if ( have_comments() ) : ?>
 
-	if ( have_comments() ) :
-
-		// Get comments title.
+		<?php
 		$comments_number = number_format_i18n( get_comments_number() );
 		if ( '1' === $comments_number ) {
 			$comments_title = esc_html__( 'This Post Has One Comment', 'oceanwp' );
@@ -71,7 +98,6 @@ $args = array(
 			$comments_title = sprintf( esc_html__( 'This Post Has %s Comments', 'oceanwp' ), $comments_number );
 		}
 		$comments_title = apply_filters( 'ocean_comments_title', $comments_title );
-
 		?>
 
 		<h3 class="theme-heading comments-title">
@@ -80,7 +106,6 @@ $args = array(
 
 		<ol class="comment-list">
 			<?php
-			// List comments.
 			wp_list_comments(
 				array(
 					'callback' => 'oceanwp_comment',
@@ -92,7 +117,7 @@ $args = array(
 		</ol><!-- .comment-list -->
 
 		<?php
-		// Display comment navigation - WP 4.4.0.
+		// Display comment navigation.
 		if ( function_exists( 'the_comments_navigation' ) ) :
 
 			$prev_comm_txt = is_rtl() ? oceanwp_icon( 'angle_right', false ) : oceanwp_icon( 'angle_left', false );
@@ -106,7 +131,6 @@ $args = array(
 			);
 
 		elseif ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
-
 			?>
 
 			<div class="comment-navigation clr">
@@ -122,10 +146,7 @@ $args = array(
 
 		<?php endif; ?>
 
-		<?php
-		// Display comments closed message.
-		if ( ! comments_open() && get_comments_number() ) :
-			?>
+		<?php if ( ! comments_open() && get_comments_number() ) : ?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'oceanwp' ); ?></p>
 		<?php endif; ?>
 

@@ -19,8 +19,8 @@
             z-index: 100;
 
             &:hover {
-                color: $color-5;
-                border-color: $color-5;
+                color: var(--owp-link-color-hover, #{$color-5});
+                border-color: var(--owp-link-color-hover, #{$color-5});
             }
         }
 

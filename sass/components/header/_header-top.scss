@@ -85,11 +85,39 @@
 	    border-left: 1px solid $color-9;
 	    padding: 0 6px;
 
-	    a {
+	    a,
+	    button.site-search-toggle {
 	    	display: inline-block;
 	    	font-size: 12px;
 		    width: 28px;
 		    text-align: center;
+	    }
+
+	    a,
+	    button.site-search-toggle {
+		    color: $color-2;
+	    }
+
+	    a:hover,
+	    button.site-search-toggle:hover {
+		    color: $color-5;
+	    }
+
+	    a .owp-icon use,
+	    button.site-search-toggle .owp-icon use {
+		    stroke: currentColor;
+	    }
+
+	    button.site-search-toggle {
+	    	height: auto;
+	    	line-height: inherit;
+	    	font-weight: inherit;
+	    	letter-spacing: 0;
+	    	text-transform: none;
+		    background-color: transparent;
+		    border: 0;
+		    padding: 0;
+		    cursor: pointer;
 	    }
 	}
 

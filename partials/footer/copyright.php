@@ -68,7 +68,7 @@ $wrap_classes = implode( ' ', $wrap_classes ); ?>
 		if ( ! empty($copy) ) :
 			?>
 
-			<div id="copyright" class="clr" role="contentinfo">
+			<div id="copyright" class="clr">
 				<?php
 				if ( ! empty($copy) ) {
 					echo wp_kses_post( do_shortcode( $copy ) );

@@ -1,21 +1,59 @@
 # OceanWP Changelog
 
-### _2026.02.16_ - 4.1.5
-- **NEW: Customizer**:: WooCommerce: Archives: Toolbar: Shop Result Count Max Cap option for the 'ALL' preview link: Added to protect server performance. Defaults to 36 for new sites and 100 for existing sites (max limit 1200).
-- **Added**:: Compatibility: PHP 8.X+: Deprecated: Increment on non-alphanumeric string is deprecated in .../themes/oceanwp/partials/header/style/medium-header.php on line 50
-- **Added**:: Compatibility: PHP 8.X+: Warning: Undefined property: stdClass::$category_post in .../themes/oceanwp/inc/walker/menu-walker.php on line 98
-- **Added**:: Compatibility: PHP 8.X+: Warning: Undefined property: stdClass::$nolink in .../themes/oceanwp/inc/walker/menu-walker.php on line 103
-- **Added**:: Compatibility: PHP 8.X+: Warning: Undefined property: stdClass::$template in .../themes/oceanwp/inc/walker/menu-walker.php on line 211
-- **Added**:: Compatibility: PHP 8.X+: Warning: Undefined property: stdClass::$mega_template in .../themes/oceanwp/inc/walker/menu-walker.php on line 211
-- **Added**:: Compatibility: PHP 8.X+: Warning: Undefined property: stdClass::$megamenu_widgetarea in .../themes/oceanwp/inc/walker/menu-walker.php on line 219
-- **Added**:: Compatibility: PHP 8.X+: Warning: Undefined property: stdClass::$category_post in .../themes/oceanwp/inc/walker/menu-walker.php on line 264
-- **Added**:: Compatibility: WooCommerce: 10.5 version.
-- **Improved**:: SEO: WooCommerce: Shop Result Count: Added ' rel="nofollow" ' to toolbar preview links. This prevents unnecessary crawls and indexing of multiple view variations.
-- **Updated**:: Template: .../woocommerce/single-product/product-image.php (version number for compatibility with WooCommerce 10.5).
-- **Updated**:: Template: .../woocommerce/result-count.php
-- **Updated**:: Compatibility: WordPress: Version number.
-- **Fixed**:: Customizer: Mobile Menu: Dropdown Style: Menu Background color option missing (Customize > Header > Mobile Menu > Mobile Menu Styling).
-- **Fixed**:: Customizer: Mobile Menu: Dropdown Style: Separators color option missing (Customize > Header > Mobile Menu > Mobile Menu Styling).
+### _2026.07.01_ - 4.2.1
+- **Improved**:: Accessibility: Focus outline colors logic and fallbacks for keyboard navigation.
+- **Fixed**:: Accessibility: Focus outline color not visible on existing websites that upgraded from previous OceanWP versions to 4.2.0 and enabled the new Accessibility Mode option via Customize > Accessibility - A11Y.
 
-### _2025.11.24_ - 4.1.4
+### _2026.06.29_ - 4.2.0
+- **NEW**:: Customizer: Panel: Accessibility - A11Y
+- **NEW**:: Customizer: Accessibility - A11: Accessibility Mode: Global switch. Accessibility improvements are enabled by default for new installations and disabled by default for existing installations.
+- **NEW**:: Customizer: Accessibility - A11: Semantic Main Header Tags option: Improved header, navigation and menu markup.
+- **NEW**:: Customizer: Accessibility - A11: Semantic Mobile Header Tags option: Improved header, navigation and menu markup.
+- **NEW**:: Customizer: Accessibility - A11: Search Forms: Improved all theme search forms markup, with additional options.
+- **NEW**:: Customizer: Accessibility - A11: Comment Form: Display visible labels above comment form fields.
+- **NEW**:: Customizer: Accessibility - A11: Header Media: Options for accessible header media video output.
+- **NEW**:: Customizer: Accessibility - A11: Main Header Social Menu: Add optional visual indicators on social links that open in a new tab.
+- **NEW**:: Customizer: Accessibility - A11: Top Bar Social Menu: Add optional visual indicators on social links that open in a new tab.
+- **Added**:: Accessibility Statement: accessibility.txt in the main theme folder.
+- **Added**:: Accessibility: 'focus-visible' support for modern browsers for improved keyboard navigation.
+- **Improved**:: Accessibility: Menu Walker: Added context-aware submenu toggle support with aria-expanded, aria-controls, generated submenu IDs and support for parent-link or icon-based submenu triggers.
+- **Improved**:: Accessibility: Keyboard support for menu and submenu toggles, including Enter, Space and Escape key handling where applicable.
+- **Improved**:: Accessibility: Focus trapping behavior for Dropdown search, Overlay search, Header Replace search, Mobile Dropdown menu and Full Screen Mobile menu.
+- **Improved**:: Accessibility: 'focus' support for older browsers without interferring with keyboard or click navigation.
+- **Improved**:: Accessibility: Included Aria labels for relevant 'section' markups.
+- **Updated**:: Template: .../comments.php
+- **Updated**:: Template: .../searchform.php
+- **Updated**:: Template: .../partials/single/author-bio.php
+- **Updated**:: Template: .../partials/single/related-posts.php
+- **Updated**:: Template: .../partials/footer/copyright.php
+- **Updated**:: Template: .../partials/search/readmore.php
+- **Updated**:: Template: .../partials/header/layout.php
+- **Updated**:: Template: .../partials/header/logo.php
+- **Updated**:: Template: .../partials/header/nav.php
+- **Updated**:: Template: .../partials/header/search-dropdown.php
+- **Updated**:: Template: .../partials/header/search-overlay.php
+- **Updated**:: Template: .../partials/header/search-replace.php
+- **Updated**:: Template: .../partials/header/social.php
+- **Updated**:: Template: .../partials/header/style/center-header.php
+- **Updated**:: Template: .../partials/header/style/full-screen-header.php
+- **Updated**:: Template: .../partials/header/style/medium-header.php
+- **Updated**:: Template: .../partials/header/style/vertical-header-search.php
+- **Updated**:: Template: .../partials/header/style/vertical-header-toggle.php
+- **Updated**:: Template: .../partials/mobile/mobile-dropdown.php
+- **Updated**:: Template: .../partials/mobile/mobile-fullscreen-search.php
+- **Updated**:: Template: .../partials/mobile/mobile-fullscreen.php
+- **Updated**:: Template: .../partials/mobile/mobile-nav.php
+- **Updated**:: Template: .../partials/mobile/mobile-search.php
+- **Updated**:: Template: .../partials/mobile/mobile-sidr-close.php
+- **Updated**:: Template: .../partials/mobile/mobile-icon.php
+- **Updated**:: Template: .../partials/topbar/social.php
+- **Fixed**:: Accessibility: Theme: Colors: Default colors failed the contrast test in some areas.
+- **Fixed**:: Accessibility: Theme: Some elements did not communicate the open/close state via 'aria-expanded'.
+- **Fixed**:: Accessibility: Footer: Duplicate 'contentinfo' landmark.
+- **Fixed**:: Accessibility: Focus: Insufficient focus outline styling.
+- **Fixed**:: Accessibility: Focus: Some elements missing focus outline on keyboard navigation.
+- **Fixed**:: Customizer: Header: Social Menu: Border radius CSS output missing unit.
+- **Fixed**:: Theme Panel: Missing plugin file check before reading plugin data.
+
+### _2026.05.20_ - 4.1.6
 - All previous changelogs available at: https://docs.oceanwp.org/article/653-oceanwp-theme-changelog

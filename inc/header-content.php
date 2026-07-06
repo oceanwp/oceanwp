@@ -48,6 +48,10 @@ if ( OCEANWP_WOOCOMMERCE_ACTIVE
 	add_action( 'ocean_before_mobile_icon_inner', 'oceanwp_mobile_cart_icon_not_medium_header', 10 );
 }
 
+if ( oceanwp_is_accessible_header_video_enabled() ) {
+	add_action( 'wp', 'oceanwp_accessible_header_video_boot', 20 );
+}
+
 if ( ! function_exists( 'oceanwp_mobile_cart_icon' ) ) {
 
 	/**
@@ -182,5 +186,92 @@ if ( ! function_exists( 'oceanwp_mobile_cart_icon_not_medium_header' ) ) {
 
 		echo oceanwp_wcmenucart_menu_item(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
+	}
+}
+
+/**
+ * Header video render
+ *
+ * @since 4.2.0
+ */
+function oceanwp_accessible_header_media_render() {
+
+	$video_enabled = function_exists( 'has_header_video' ) && has_header_video();
+	$image_enabled = function_exists( 'has_header_image' ) && has_header_image();
+
+	$mobile_fallback = oceanwp_is_accessibility_feature_enabled( 'ocean_accessible_header_video_fallback_mobile', ocean_accessibility_get_header_media_default_value() );
+
+	$media_classes = [];
+
+	if ( $mobile_fallback ) {
+		$media_classes[] = 'has-mobile-fallback';
+	}
+
+	if ( $video_enabled ) {
+
+		if ( $mobile_fallback && $image_enabled ) {
+			echo '<div class="custom-header-media ocean-accessible-header-media ocean-accessible-image">';
+				the_custom_header_markup();
+			echo '</div>';
+			return;
+		}
+
+		echo '<div class="custom-header-media ocean-accessible-header-media ocean-accessible-video ' . esc_attr( implode( ' ', $media_classes ) ) . '">';
+			the_custom_header_markup();
+		echo '</div>';
+
+		return;
+	}
+
+	if ( $image_enabled ) {
+		echo '<div class="custom-header-media ocean-accessible-header-media ocean-accessible-image">';
+			the_custom_header_markup();
+		echo '</div>';
+	}
+}
+
+/**
+ * Header video
+ *
+ * @since 4.2.0
+ */
+function oceanwp_accessible_header_video_boot() {
+
+	$video_enabled = function_exists( 'has_header_video' ) && has_header_video();
+	$image_enabled = function_exists( 'has_header_image' ) && has_header_image();
+
+	if ( ! $video_enabled && ! $image_enabled ) {
+		return;
+	}
+
+	if ( ! oceanwp_is_header_style_supported( [ 'minimal', 'top', 'center', 'medium' ] ) ) {
+		return;
+	}
+
+	$position   = get_theme_mod( 'ocean_accessible_header_video_position', 'above_top_bar' );
+	$visibility = get_theme_mod( 'ocean_accessible_header_video_visibility', 'homepage' );
+
+	$is_homepage = is_front_page() || is_home();
+
+	// visibility check
+	if ( $visibility === 'homepage' && ! $is_homepage ) {
+		return;
+	}
+
+	$topbar_enabled = get_theme_mod( 'ocean_top_bar', true );
+
+	// If topbar is disabled, force fallback to header
+	if ( ! $topbar_enabled ) {
+		$position = 'above_header';
+	}
+
+	// inject above top bar
+	if ( $position === 'above_top_bar' ) {
+		add_action( 'ocean_before_top_bar', 'oceanwp_accessible_header_media_render', 5 );
+	}
+
+	// inject above header
+	if ( $position === 'above_header' ) {
+		add_action( 'ocean_before_header', 'oceanwp_accessible_header_media_render', 5 );
 	}
 }

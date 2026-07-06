@@ -1,0 +1,1111 @@
+// Configuration
+@import "config";
+
+// Mixins
+@import "mixins";
+
+// Focus-visible helpers.
+// Keep :focus as the fallback for browsers that do not understand :focus-visible.
+// Modern browsers suppress the ring for pointer/click focus through :focus:not(:focus-visible).
+@mixin owp-focus-ring($offset: var(--owp-focus-outline-offset, 2px)) {
+    outline: var(--owp-focus-outline-width, 2px) solid var(--owp-focus-outline-color, currentColor);
+    outline-offset: $offset;
+}
+
+@mixin owp-focus-visible-only($offset: var(--owp-focus-outline-offset, 2px)) {
+    &:focus {
+        @include owp-focus-ring($offset);
+        }
+
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    &:focus-visible {
+        @include owp-focus-ring($offset);
+    }
+}
+
+@mixin owp-form-focus-ring() {
+    border-color: var(--owp-form-focus-border-color, var(--owp-input-border-color, var(--owp-focus-outline-color, currentColor)));
+    outline: var(--owp-form-focus-outline-width, 0) solid transparent;
+    box-shadow: 0 0 0 4px rgba(0, 122, 153, 0.18);
+    box-shadow: 0 0 0 4px color-mix(
+        in srgb,
+        var(--owp-focus-outline-color, currentColor) 18%,
+        transparent
+    );
+}
+
+body input[type="button"],
+body input[type="reset"],
+body input[type="submit"],
+body button[type="submit"],
+body .theme-button,
+body .button,
+body div.wpforms-container-full .wpforms-form input[type="submit"],
+body div.wpforms-container-full .wpforms-form button[type="submit"],
+body div.wpforms-container-full .wpforms-form .wpforms-page-button,
+body.woocommerce-cart .wp-element-button,
+body.woocommerce-checkout .wp-element-button,
+body .wp-block-button__link {
+    background-color: var(--owp-button-bg-color, #{$color-5});
+    color: var(--owp-button-text-color, #ffffff);
+    font-size: var(--owp-button-font-size, 12px);
+    font-weight: var(--owp-button-font-weight, 600);
+    text-transform: var(--owp-button-text-transform, uppercase);
+    padding: var(--owp-button-padding-top, 14px)
+        var(--owp-button-padding-right, 20px)
+        var(--owp-button-padding-bottom, 14px)
+        var(--owp-button-padding-left, 20px);
+    letter-spacing: var(--owp-button-letter-spacing, 0.1em);
+    line-height: var(--owp-button-line-height, 1);
+}
+
+body input[type="button"]:hover,
+body input[type="reset"]:hover,
+body input[type="submit"]:hover,
+body button[type="submit"]:hover,
+body input[type="button"]:active,
+body input[type="reset"]:active,
+body input[type="submit"]:active,
+body button[type="submit"]:active,
+body input[type="button"]:focus,
+body input[type="reset"]:focus,
+body input[type="submit"]:focus,
+body button[type="submit"]:focus,
+body .theme-button:hover,
+body .theme-button:focus,
+body .button:hover,
+body .button:focus,
+body div.wpforms-container-full .wpforms-form input[type="submit"]:hover,
+body div.wpforms-container-full .wpforms-form input[type="submit"]:active,
+body div.wpforms-container-full .wpforms-form button[type="submit"]:hover,
+body div.wpforms-container-full .wpforms-form button[type="submit"]:active,
+body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover,
+body div.wpforms-container-full .wpforms-form .wpforms-page-button:active,
+body.woocommerce-cart .wp-element-button:hover,
+body.woocommerce-checkout .wp-element-button:hover,
+body .wp-block-button__link:hover,
+body .wp-block-button__link:focus {
+    background-color: var(--owp-button-bg-color-hover, #0b7cac);
+    color: var(--owp-button-text-color-hover, #ffffff);
+    @include transition( all .3s ease );
+}
+
+body :where(
+    a[href],
+    area[href],
+    button:not([disabled]),
+    input:not([type="hidden"]):not([disabled]),
+    select:not([disabled]),
+    textarea:not([disabled]),
+    summary,
+    iframe,
+    [tabindex]:not([tabindex="-1"]),
+    [role="button"],
+    [role="link"],
+    [role="menuitem"],
+    [role="tab"],
+    [contenteditable="true"]
+) {
+    @include owp-focus-visible-only;
+}
+
+body :where(
+    input[type="button"]:not([disabled]),
+    input[type="reset"]:not([disabled]),
+    input[type="submit"]:not([disabled]),
+    button[type="submit"]:not([disabled]),
+    .theme-button,
+    .button,
+    div.wpforms-container-full .wpforms-form input[type="submit"],
+    div.wpforms-container-full .wpforms-form button[type="submit"],
+    div.wpforms-container-full .wpforms-form .wpforms-page-button,
+    .wp-block-button__link,
+    .wp-element-button
+):focus-visible {
+    outline-color: var(
+        --owp-button-focus-outline-color,
+        var(--owp-primary-color, currentColor)
+    );
+}
+
+@media (forced-colors: active) {
+    body :where(
+        a[href],
+        area[href],
+        button:not([disabled]),
+        input:not([type="hidden"]):not([disabled]),
+        select:not([disabled]),
+        textarea:not([disabled]),
+        summary,
+        iframe,
+        [tabindex]:not([tabindex="-1"]),
+        [role="button"],
+        [role="link"],
+        [role="menuitem"],
+        [role="tab"],
+        [contenteditable="true"]
+    ):focus-visible {
+        outline-color: Highlight;
+    }
+}
+
+form :where(
+    input:not([type]),
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="week"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    select,
+    textarea
+) {
+    &:focus {
+        @include owp-form-focus-ring;
+    }
+
+    &:focus:not(:focus-visible) {
+        box-shadow: none;
+    }
+
+    &:focus-visible {
+        @include owp-form-focus-ring;
+    }
+
+    &:focus-within {
+        border: 2px solid var(--owp-input-border-color);
+        box-shadow: 0 0 0 4px color-mix(
+            in srgb,
+            var(--owp-focus-outline-color) 18%,
+            transparent
+        );
+    }
+}
+
+.sidebar-container.widget-area {
+    a {
+        color: var(--owp-widget-link-color, var(--owp-link-color, #333333));
+        text-decoration: var(--owp-widget-link-text-decoration, underline) 0.1em;
+        text-underline-offset: var(--owp-widget-link-underline-offset, 0.2em);
+
+        &:hover {
+            color: var(--owp-widget-link-color-hover, var(--owp-link-color-hover, #{$color-5}));
+            text-decoration: none;
+            @include transition( all .3s ease );
+        }
+
+        &:focus-visible {
+            outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+            text-decoration: none;
+            outline-offset: var(--owp-focus-outline-offset);
+        }
+    }
+}
+
+.header-search-visible-label,
+.medium-header-search-visible-label,
+.vertical-header-search-visible-label,
+.mobile-fs-search-visible-label,
+#icon-searchform-overlay form .mobile-overlay-search-visible-label,
+.oceanwp-mobile-menu-search-visible-label,
+.mobile-dropdown-search-visible-label {
+    color: var(--owp-search-form-label-color, inherit);
+    font-size: var(--owp-search-form-label-font-size, inherit);
+}
+
+.comment-form-visible-label {
+    color: var(--owp-comment-form-label-color, inherit);
+    font-size: var(--owp-comment-form-label-font-size, inherit);
+}
+
+.comment-form-visible-label span {
+    color: var(--owp-comment-form-label-required-mark-color, inherit);
+}
+
+.oceanwp-social-menu {
+
+    ul li a {
+        position: relative;
+    }
+
+    .header-social-menu-external-mark {
+
+        --owp-social-external-mark-padding: calc(var(--owp-social-external-mark-size) * 0.25);
+
+        position: absolute;
+        inset-block-start: var(--owp-social-external-mark-offset-y);
+        inset-inline-end: var(--owp-social-external-mark-offset-x);
+
+        width: var(--owp-social-external-mark-size);
+        height: var(--owp-social-external-mark-size);
+        padding: var(--owp-social-external-mark-padding);
+
+        display: block;
+        box-sizing: content-box;
+
+        color: var(--owp-social-external-mark-color);
+        fill: currentColor;
+        background-color: var(--owp-social-external-mark-bg);
+        border-radius: 50%;
+
+        line-height: 1;
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+#top-bar-social {
+
+    ul li a {
+        position: relative;
+    }
+    
+    .top-bar-social-menu-external-mark {
+
+        --owp-topbar-social-external-mark-padding: calc(var(--owp-topbar-social-external-mark-size) * 0.25);
+
+        position: absolute;
+        inset-block-start: var(--owp-topbar-social-external-mark-offset-y);
+        inset-inline-end: var(--owp-topbar-social-external-mark-offset-x);
+
+        width: var(--owp-topbar-social-external-mark-size);
+        height: var(--owp-topbar-social-external-mark-size);
+        padding: var(--owp-topbar-social-external-mark-padding);
+
+        display: block;
+        box-sizing: content-box;
+
+        color: var(--owp-topbar-social-external-mark-color);
+        fill: currentColor;
+        background-color: var(--owp-topbar-social-external-mark-bg);
+        border-radius: 50%;
+
+        line-height: 1;
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+.custom-header-media.ocean-accessible-header-media {
+    position: relative;
+	width: 100%;
+	overflow: hidden;
+	background: #000;
+    height: var(--owp-header-media-height, 600px);
+
+    img,
+	video,
+	iframe {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+        display: block;
+	}
+
+    img {
+		object-position: var(--owp-header-media-image-position, 'initial');
+		object-fit: var(--owp-header-media-image-size, fill);
+	}
+
+	// overlay (shared for both video + image)
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+        background-color: var(--owp-header-media-overlay-color, rgba(0, 0, 0, 0.3));
+	}
+
+    .wp-custom-header-video-button {
+        position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 44px;
+		height: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 2px;
+		cursor: pointer;
+		z-index: 5;
+		transition: all 0.2s ease-in-out;
+        background-color: var(--owp-header-media-button-bg-color, rgba(0, 0, 0, 0.5));
+        color: var(--owp-header-media-button-icon-color, rgba(255, 255, 255, 0.8));
+        border: 1px solid var(--owp-header-media-button-border-color, rgba(255, 255, 255, 0.6));
+
+        svg,
+		i {
+			width: 18px;
+			height: 18px;
+			fill: currentColor;
+			color: inherit;
+		}
+
+		&:hover {
+			outline: none;
+            @include transition( all .3s ease );
+		}
+
+        &:hover {
+            background-color: var(--owp-header-media-button-bg-color-hover, rgba(0, 0, 0, 0.75));
+            color: var(--owp-header-media-button-icon-color-hover, #ffffff);
+            border-color: var(--owp-header-media-button-border-color-hover, rgba(255, 255, 255, 0.9));
+            @include transition( all .3s ease );
+        }
+
+        &:focus-visible {
+            outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+            outline-offset: var(--owp-focus-outline-offset);
+            background-color: var(--owp-header-media-button-bg-color-focus, rgba(0, 0, 0, 0.75));
+            color: var(--owp-header-media-button-icon-color-focus, #ffffff);
+            border-color: var(--owp-header-media-button-border-color-focus, rgba(255, 255, 255, 0.9));
+            @include transition( all .3s ease );
+        }
+    }
+}
+
+body.admin-bar {
+
+	.custom-header-media.ocean-accessible-header-media {
+
+		.wp-custom-header-video-button {
+			top: 52px;
+		}
+	}
+}
+
+// Sidr close button
+button.sidr-class-toggle-sidr-close {
+    display: block;
+    background-color: $color-8;
+    color: $color-2;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 20px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: left;
+    border:0;
+
+    &:hover {
+        background-color: $color-8;
+    }
+
+    i {
+        display: inline-block;
+        padding-right: 8px;
+        margin: 0;
+        width: auto;
+        height: auto;
+        line-height: 1;
+        vertical-align: bottom;
+    }
+
+    .owp-icon {
+        margin-right: 8px;
+    }
+}
+
+form.sidr-class-mobile-searchform {
+    margin-top: 15px;
+
+    button[type="submit"] {
+        border: 0;
+        margin-top: 0;
+
+        &:focus-visible {
+            outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+            outline-offset: var(--owp-focus-outline-offset);
+        }
+    }
+}
+
+// Mobile fullscreen search
+label.mobile-fs-search-visible-label {
+    position: absolute;
+    top: -15px;
+    transform: translateX(50px);
+}
+
+// Site tagline
+#site-header.top-header {
+    #site-logo #site-description {
+        p {
+            color: #929292;
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+    }
+}
+
+// Medium header
+#site-header.medium-header {
+    #medium-searchform {
+        label.medium-header-search-visible-label {
+            top: -32px;
+            left: 0;
+        }
+    }
+}
+
+// Vertical header
+#site-header.vertical-header {
+
+    #vertical-searchform form {
+        label.vertical-header-search-visible-label {
+            left: 0;
+            top: -15px;
+        }
+    }
+
+    .vertical-toggle {
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    #site-navigation-wrap {
+
+        .dropdown-menu {
+
+            li {
+
+                > button.menu-link.dropdown-toggle {
+                    display: flex;
+                    position: relative;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    line-height: 1;
+                    padding: 17px 30px;
+                    text-align: left;
+                    color: $color-11;
+                    background: transparent;
+                    border: 0;
+                    border-color: transparent;
+                    border-radius: 0;
+                    box-shadow: none;
+                    cursor: pointer;
+                    font: inherit;
+                    letter-spacing: 0.6px;
+                    text-transform: none;
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        background: transparent;
+                        border-color: transparent;
+                        box-shadow: none;
+                    }
+
+                    .nav-arrow {
+                        display: flex;
+                        padding-left: 6px;
+                        line-height: 1;
+                        pointer-events: none;
+                    }
+                }
+            }
+
+            > li {
+
+                > button.menu-link.dropdown-toggle {
+
+                    &:hover,
+                    &:focus-visible {
+                        color: var(--owp-primary-color-hover, #{$color-5});
+                    }
+                }
+            }
+
+            ul {
+
+                li {
+
+                    > button.menu-link.dropdown-toggle {
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: 1;
+                        text-transform: capitalize;
+
+                        &:hover,
+                        &:focus-visible {
+                            color: $color-11;
+                            background-color: $color-8;
+                        }
+                    }
+                }
+            }
+        }
+
+		.oceanwp-has-accessible-toggle {
+
+			> .dropdown-toggle {
+                padding: 17px 30px;
+
+				.nav-arrow {
+					display: flex;
+				}
+			}
+		}
+	}
+}
+
+// Full-screen header
+#site-header.full_screen-header {
+    .menu-bar {
+        background-color: transparent;
+        border: 0;
+
+        &:hover {
+            background-color: transparent;
+        }
+
+        &:focus-visible {
+            outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+            outline-offset: var(--owp-focus-outline-offset);
+        }
+
+    }
+}
+
+#mobile-fullscreen {
+    button.close {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background-color: transparent;
+        border: 0;
+
+        &:hover {
+            background-color: transparent;
+        }
+
+        &:focus-visible {
+            outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+            outline-offset: var(--owp-focus-outline-offset);
+        }
+
+        .close-icon-wrap {
+            display: inline-block;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            line-height: 33px;
+            @include transition(opacity 0.15s linear);
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+
+        .close-icon-inner,
+        .close-icon-inner::after {
+            display: inline-block;
+            width: 40px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 3px;
+        }
+
+        .close-icon-inner {
+            @include transform(rotate(45deg));
+        }
+
+        .close-icon-inner::after {
+            content: "";
+            display: block;
+            @include transform(rotate(-90deg));
+        }
+    }
+
+    ul.sub-menu {
+
+		li {
+
+			> a,
+			> .oceanwp-sub-menu-toggle {
+				min-height: 26px;
+				height: 26px;
+				line-height: 26px;
+			}
+		}
+
+		ul.sub-menu {
+
+			li {
+
+				> a,
+				> .oceanwp-sub-menu-toggle {
+					min-height: 26px;
+					height: 26px;
+					line-height: 26px;
+				}
+			}
+		}
+	}
+
+	.oceanwp-sub-menu-toggle::before,
+	.oceanwp-sub-menu-toggle::after {
+		content: none !important;
+		display: none !important;
+	}
+}
+
+#site-navigation-wrap {
+    .dropdown-menu {
+        > li {
+
+            button.dropdown-toggle {
+                font-size: 13px;
+                color: $color-11;
+                letter-spacing: 0.6px;
+
+                &:hover {
+                    color: var(--owp-primary-color, #{$color-5});
+                }
+            }
+
+            > button.site-search-toggle {
+                display: block;
+                font-size: 13px;
+                line-height: 74px;
+                color: $color-11;
+                padding: 0 15px;
+                letter-spacing: 0;
+                background-color: transparent;
+                border: 0;
+                cursor: pointer;
+
+                &:hover {
+                    color: var(--owp-primary-color, #{$color-5});
+                }
+
+                &:focus-visible {
+                    outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+                    outline-offset: var(--owp-focus-outline-offset);
+                }
+            
+            }
+        }
+    }
+}
+
+.oceanwp-mobile-menu-icon {
+    & > button {
+        font-size: 13px;
+        line-height: 74px;
+        color: #555;
+        padding-left: 15px;
+        letter-spacing: 0.6px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:hover {
+            color: var(--owp-primary-color, #{$color-5});
+            background-color: transparent;
+        }
+
+        &:focus-visible {
+            outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+            outline-offset: var(--owp-focus-outline-offset);
+        }
+
+        &.mobile-menu {
+            .oceanwp-text,
+            .oceanwp-close-text {
+                padding-left: 6px;
+            }
+
+            .oceanwp-close-text,
+            &.opened .oceanwp-text {
+                display: none;
+            }
+
+            &.opened .oceanwp-close-text {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+#searchform-overlay,
+#icon-searchform-overlay {
+    .search-overlay-close {
+        line-height: 40px;
+		border: 0;
+
+        &:focus-visible {
+            outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+            outline-offset: var(--owp-focus-outline-offset);
+        }
+    }
+}
+
+#searchform-header-replace {
+    .header-search-visible-label {
+        position: absolute;
+        top: 0;
+    }
+}
+
+#searchform-header-replace-close {
+    background: transparent;
+    border: 0;
+
+    &:focus-visible {
+        outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+        outline-offset: var(--owp-focus-outline-offset);
+    }
+}
+
+#mobile-dropdown {
+    #mobile-menu-search {
+        padding-top: 10px;
+
+        .oceanwp-mobile-menu-search-visible-label {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        button[type="submit"] {
+            &:focus-visible {
+                outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+                outline-offset: var(--owp-focus-outline-offset);
+            }
+        }
+       
+    }
+}
+
+button.dropdown-toggle,
+.oceanwp-sub-menu-toggle {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0);
+    width: 100%;
+}
+
+button.dropdown-toggle,
+.oceanwp-sub-menu-toggle {
+
+    &:focus-visible {
+        outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+        outline-offset: var(--owp-focus-outline-offset);
+    }
+}
+
+#mobile-dropdown {
+
+    ul {
+
+        li {
+
+            > button.menu-link.dropdown-toggle,
+            > button.oceanwp-sub-menu-toggle-icon {
+                color: #555;
+                background: transparent;
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+                cursor: pointer;
+                font: inherit;
+                letter-spacing: inherit;
+                text-transform: none;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background: transparent;
+                    border-color: transparent;
+                    box-shadow: none;
+                }
+
+                &:hover,
+                &:focus-visible {
+                    color: var(--owp-primary-color-hover, #{$color-5});
+                }
+            }
+
+            > button.menu-link.dropdown-toggle {
+                display: flex;
+                position: relative;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 12px 40px;
+                text-align: left;
+            }
+
+            &.active,
+            &.open-sub {
+
+                > button.menu-link.dropdown-toggle,
+                > button.oceanwp-sub-menu-toggle-icon {
+                    color: var(--owp-primary-color-hover, #{$color-5});
+                    background: transparent;
+                    border-color: transparent;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+[data-oceanwp-submenu-toggle] {
+
+    &:focus-visible {
+        outline: var(--owp-focus-outline-width) solid var(--owp-focus-outline-color, currentColor);
+        outline-offset: var(--owp-focus-outline-offset);
+    }
+}
+
+.oceanwp-sub-menu-toggle .nav-arrow {
+    pointer-events: none;
+}
+
+.oceanwp-has-submenu-toggle,
+.oceanwp-has-accessible-toggle {
+    position: relative;
+
+    > .oceanwp-sub-menu-toggle-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        z-index: 2;
+
+        .nav-arrow {
+            transition: transform .25s ease;
+        }
+    }
+
+    > .oceanwp-sub-menu-toggle-icon + .sub-menu {
+        clear: both;
+    }
+}
+
+/* Rotate top-level submenu arrows */
+.oceanwp-has-submenu-toggle,
+.oceanwp-has-accessible-toggle {
+
+    &.active,
+    &.open-sub {
+
+        > .oceanwp-sub-menu-toggle-icon .nav-arrow,
+        > .menu-link.oceanwp-sub-menu-toggle-parent .nav-arrow {
+            transition: transform .5s ease;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+/* Rotate nested submenu arrows */
+.sub-menu {
+
+    .oceanwp-has-accessible-toggle {
+
+        &.active,
+        &.open-sub {
+
+            > .oceanwp-sub-menu-toggle-icon .nav-arrow {
+                transition: transform .25s ease;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+#mobile-fullscreen,
+#full-screen-menu {
+
+    li {
+
+        > button.menu-link {
+            display: block;
+            color: $color-1;
+            background: transparent;
+            border: 0;
+            border-color: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            cursor: pointer;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 12px 0;
+            text-align: center;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background: transparent;
+                border-color: transparent;
+                box-shadow: none;
+            }
+
+            &:hover,
+            &:focus-visible {
+                color: $color-4;
+            }
+
+            .nav-arrow {
+                position: absolute;
+                top: 25%;
+                right: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+                background: rgba(0, 0, 0, 0);
+                border: 0;
+                cursor: pointer;
+                z-index: 2;
+            }
+        }
+
+        button.dropdown-toggle {
+            padding-left: 0;
+        }
+
+        > .menu-link .nav-arrow,
+        > .oceanwp-sub-menu-toggle-icon .nav-arrow {
+            display: inline-block;
+            width: 26px;
+            padding-left: 0;
+            text-align: center;
+            color: #ffffff;
+            font-size: 18px;
+
+            &::before {
+                content: "+";
+            }
+        }
+
+        &.open-sub {
+
+            > .menu-link .nav-arrow,
+            > .oceanwp-sub-menu-toggle-icon .nav-arrow {
+
+                &::before {
+                    content: "-";
+                }
+            }
+        }
+    }
+
+    .oceanwp-has-submenu-toggle,
+    .oceanwp-has-accessible-toggle {
+
+        &.active,
+        &.open-sub {
+
+            > .oceanwp-sub-menu-toggle-icon .nav-arrow,
+            > .menu-link.oceanwp-sub-menu-toggle-parent .nav-arrow {
+                transform: none;
+            }
+        }
+    }
+
+    .sub-menu {
+
+        .oceanwp-has-accessible-toggle {
+
+            &.active,
+            &.open-sub {
+
+                > .oceanwp-sub-menu-toggle-icon .nav-arrow {
+                    transform: none;
+                }
+            }
+        }
+    }
+}
+
+#full-screen-menu {
+
+    li {
+
+        > button.menu-link {
+            font-size: 24px;
+            line-height: 1.2;
+
+            .nav-arrow {
+                width: 48px;
+                height: auto;
+            }
+        }
+    }
+}
+
+#mobile-fullscreen {
+
+    li {
+
+        > button.menu-link {
+            font-size: 15px;
+            line-height: 1.2;
+            width: 100%;
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+.comment-respond .logged-in-as a {
+	color: var(--owp-link-color, #333333);
+	text-decoration: underline 0.1em;
+	text-underline-offset: 0.2em;
+}
+
+.comment-respond .logged-in-as a:hover,
+.comment-respond .logged-in-as a:focus-visible {
+	color: var(--owp-link-color-hover, #{$color-5});
+    text-decoration: none;
+    @include transition( all .3s ease );
+}

@@ -23,7 +23,7 @@ if ( true === get_theme_mod( 'ocean_menu_social', false ) ) {
 	$classes[] = 'has-social';
 }
 
-// Turn classes into space seperated string.
+// Turn classes into space separated string.
 $classes = implode( ' ', $classes );
 
 // Menu Location.
@@ -67,16 +67,15 @@ $top_menu_args = array(
 	'fallback_cb'    => false,
 );
 
-// Get close menu text.
-$close_text = get_theme_mod( 'ocean_mobile_menu_close_text' );
-$close_text = oceanwp_tm_translation( 'ocean_mobile_menu_close_text', $close_text );
-$close_text = $close_text ? $close_text : esc_html__( 'Close', 'oceanwp' );
+$menu_args      = oceanwp_apply_nav_walker_context( $menu_args, 'mobile-dropdown' );
+$left_menu_args = oceanwp_apply_nav_walker_context( $left_menu_args, 'mobile-dropdown' );
+$top_menu_args  = oceanwp_apply_nav_walker_context( $top_menu_args, 'mobile-dropdown' );
 
 ?>
 
 <div id="mobile-dropdown" class="clr" <?php echo $dropdown_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
-	<nav class="<?php echo esc_attr( $classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?>>
+	<nav class="<?php echo esc_attr( $classes ); ?>" aria-label="<?php esc_attr_e( 'Mobile navigation', 'oceanwp' ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?>>
 
 		<?php
 		// If has mobile menu.

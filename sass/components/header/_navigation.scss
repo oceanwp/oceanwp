@@ -25,7 +25,7 @@
                 }
 
                 &:hover {
-                    color: $color-5;
+                    color: var(--owp-primary-color-hover, #{$color-5});
                 }
 
                 .nav-arrow {
@@ -387,10 +387,6 @@
 
         &:hover {
             color: #13aff0;
-        }
-
-        &:focus {
-            outline: 1px dashed #e3e3e3;
         }
 
         &.mobile-menu {

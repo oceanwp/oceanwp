@@ -583,8 +583,11 @@ body.separate-blog.separate-layout {
 		width: 100% !important;
 	}
 
-	body.boxed-layout #wrap {
-		width: auto !important;
+	body.boxed-layout {
+		#wrap,
+		.parallax-footer {
+			width: auto !important;
+		}
 	}
 
 	.boxed-layout #top-bar-social {

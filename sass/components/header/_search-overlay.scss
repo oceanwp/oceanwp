@@ -15,7 +15,7 @@
     	height: 100%;
     }
 
-    a.search-overlay-close {
+    .search-overlay-close {
     	position: absolute;
 	    top: -50px;
 	    left: 50%;
@@ -91,7 +91,7 @@
 		    	border-color: $color-15;
 		    }
 
-		    &:focus {
+		    &:focus-visible {
 		    	border-color: $color-1;
 		    }
 	    }

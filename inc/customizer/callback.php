@@ -1056,3 +1056,45 @@ function oceanwp_cac_is_suggest_price_and_agree_checkbox_active() {
 		return false;
 	}
 }
+
+/**
+ * Check if a header video is assigned.
+ */
+function oceanwp_cac_has_header_video() {
+
+	if ( function_exists( 'has_header_video' ) && has_header_video() ) {
+		return true;
+	}
+
+	return false;
+}
+
+function oceanwp_cac_header_video_controls() {
+
+	if (
+		function_exists( 'has_header_video' )
+		&& has_header_video()
+		&& true === get_theme_mod( 'ocean_display_header_video_controls', true )
+	) {
+		return true;
+	}
+
+	return false;
+}
+
+function ocean_cac_display_search_form_label() {
+	if ( true == get_theme_mod( 'ocean_display_header_search_form_label', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function ocean_cac_display_comment_form_label() {
+	if ( true == get_theme_mod( 'ocean_display_comment_form_label', true ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+

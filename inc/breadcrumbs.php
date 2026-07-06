@@ -90,7 +90,7 @@ function oceanwp_breadcrumb_trail( $args = array() ) {
 		if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
 			$classes .= ' position-' . $breadcrumbs_position;
 		}
-		return yoast_breadcrumb( '<nav class="' . $classes . '">', '</nav>' );
+		return yoast_breadcrumb( '<nav aria-label="' . esc_attr_x( 'Site breadcrumbs', 'Aria label for breadcrumbs', 'oceanwp' ) . '" class="' . $classes . '">', '</nav>' );
 	}
 
 	// SEOPress breadcrumbs.

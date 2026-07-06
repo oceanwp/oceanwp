@@ -181,7 +181,7 @@ $options = [
 				'preview' => 'queryWithType',
 				'css' => [
 					'#site-logo #site-logo-inner,.oceanwp-social-menu .social-menu-inner,#site-header.full_screen-header .menu-bar-inner, .after-header-content .after-header-content-inner' => ['height'],
-					'#site-navigation-wrap .dropdown-menu > li > a,#site-navigation-wrap .dropdown-menu > li > span.opl-logout-link,.oceanwp-mobile-menu-icon a, .after-header-content-inner > a' => ['line-height']
+					'#site-navigation-wrap .dropdown-menu > li > a,#site-navigation-wrap .dropdown-menu > li > button.site-search-toggle,#site-navigation-wrap .dropdown-menu > li > span.opl-logout-link,.oceanwp-mobile-menu-icon a, .after-header-content-inner > a' => ['line-height']
 				]
 			],
 
@@ -847,7 +847,7 @@ $options = [
 						],
 						'preview' => 'queryWithType',
 						'css' => [
-							'#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header .oceanwp-mobile-menu-icon a' => ['line-height']
+							'#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > button.site-search-toggle,#site-header.medium-header .oceanwp-mobile-menu-icon a' => ['line-height']
 						]
 					],
 
@@ -911,7 +911,7 @@ $options = [
 						],
 						'preview' => 'queryWithType',
 						'css' => [
-							'selector' => '#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a',
+							'selector' => '#site-header.medium-header #site-navigation-wrap .dropdown-menu > li > a, #site-header.medium-header #site-navigation-wrap .dropdown-menu > li > button.site-search-toggle',
 							'property' => 'padding'
 						],
 					],
@@ -1237,7 +1237,7 @@ $options = [
 						],
 						'preview' => 'queryWithType',
 						'css' => [
-							'#site-header.vertical-header #site-navigation-wrap .dropdown-menu > li > a' => ['padding-top', 'padding-bottom'],
+							'#site-header.vertical-header #site-navigation-wrap .dropdown-menu > li > a,#site-header.vertical-header #site-navigation-wrap .dropdown-menu > li > button.menu-link.dropdown-toggle,#site-header.vertical-header #site-navigation-wrap .dropdown-menu > li > button.site-search-toggle' => ['padding-top', 'padding-bottom'],
 						]
 					],
 
@@ -1592,7 +1592,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
-									'#site-header.top-header #search-toggle a' => 'color'
+									'#site-header.top-header #search-toggle a, #site-header.top-header #search-toggle button.site-search-toggle' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -1604,7 +1604,7 @@ $options = [
 								'key' => 'hover',
 								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
-									'#site-header.top-header #search-toggle a:hover' => 'color'
+									'#site-header.top-header #search-toggle a:hover, #site-header.top-header #search-toggle button.site-search-toggle:hover' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -2207,7 +2207,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
-									'#site-header.vertical-header .dropdown-menu ul li a.menu-link' => 'color'
+									'#site-header.vertical-header .dropdown-menu ul li a.menu-link, #site-header.vertical-header .dropdown-menu ul li > button.menu-link.dropdown-toggle' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -2219,7 +2219,7 @@ $options = [
 								'key' => 'hover',
 								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
-									'#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover' => 'color'
+									'#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover, #site-header.vertical-header .dropdown-menu ul li > button.menu-link.dropdown-toggle:hover, #site-header.vertical-header .dropdown-menu ul li > button.menu-link.dropdown-toggle:focus-visible' => 'color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -2246,7 +2246,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
-									'#site-header.vertical-header .dropdown-menu ul li a.menu-link' => 'background-color'
+									'#site-header.vertical-header .dropdown-menu ul li a.menu-link, #site-header.vertical-header .dropdown-menu ul li > button.menu-link.dropdown-toggle' => 'background-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -2257,7 +2257,7 @@ $options = [
 								'key' => 'hover',
 								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
-									'#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover' => 'background-color'
+									'#site-header.vertical-header .dropdown-menu ul li a.menu-link:hover, #site-header.vertical-header .dropdown-menu ul li > button.menu-link.dropdown-toggle:hover, #site-header.vertical-header .dropdown-menu ul li > button.menu-link.dropdown-toggle:focus-visible' => 'background-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -2555,7 +2555,8 @@ $options = [
 						'key' => 'normal',
 						'label' => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'#site-header.has-header-media .overlay-header-media' => 'background-color'
+							'#site-header.has-header-media .overlay-header-media' => 'background-color',
+							'.custom-header-media.ocean-accessible-header-media::before' => 'background-color',
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -3255,7 +3256,7 @@ $options = [
 				],
 				'preview' => 'queryWithType',
 				'css' => [
-					'#site-navigation-wrap .dropdown-menu > li > a' => ['padding-left', 'padding-right'],
+					'#site-navigation-wrap .dropdown-menu > li > a,#site-navigation-wrap .dropdown-menu > li > button.site-search-toggle' => ['padding-left', 'padding-right'],
 				]
 			],
 
@@ -3456,7 +3457,7 @@ $options = [
 						'key' => 'normal',
 						'label' => esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
-							'#site-header #site-navigation-wrap .dropdown-menu > li > a,.oceanwp-mobile-menu-icon a,#searchform-header-replace-close' => 'color',
+							'#site-header #site-navigation-wrap .dropdown-menu > li > a, #site-header #site-navigation-wrap .dropdown-menu > li > button.dropdown-toggle, #site-header #site-navigation-wrap .dropdown-menu > li > button.site-search-toggle, .oceanwp-mobile-menu-icon a,#searchform-header-replace-close' => 'color',
 							'#site-header #site-navigation-wrap .dropdown-menu > li > a .owp-icon use,.oceanwp-mobile-menu-icon a .owp-icon use,#searchform-header-replace-close .owp-icon use' => 'stroke'
 						],
 						'attr' => [
@@ -3469,7 +3470,7 @@ $options = [
 						'key' => 'hover',
 						'label' => esc_html__( 'Hover', 'oceanwp' ),
 						'selector' => [
-							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover' => 'color',
+							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover,#site-header #site-navigation-wrap .dropdown-menu > li > button.dropdown-toggle:hover, #site-header #site-navigation-wrap .dropdown-menu > li > button.site-search-toggle:hover,.oceanwp-mobile-menu-icon a:hover,#searchform-header-replace-close:hover' => 'color',
 							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover .owp-icon use,.oceanwp-mobile-menu-icon a:hover .owp-icon use,#searchform-header-replace-close:hover .owp-icon use' => 'stroke'
 						],
 						'attr' => [
@@ -3496,7 +3497,7 @@ $options = [
 						'key' => 'normal',
 						'label' => esc_html__( 'Normal', 'oceanwp' ),
 						'selector' => [
-							'#site-header #site-navigation-wrap .dropdown-menu > li > a' => 'background-color'
+							'#site-header #site-navigation-wrap .dropdown-menu > li > a,#site-header #site-navigation-wrap .dropdown-menu > li > button.dropdown-toggle, #site-header #site-navigation-wrap .dropdown-menu > li > button.site-search-toggle' => 'background-color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -3507,7 +3508,7 @@ $options = [
 						'key' => 'hover',
 						'label' => esc_html__( 'Hover', 'oceanwp' ),
 						'selector' => [
-							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover,#site-navigation-wrap .dropdown-menu > li.sfHover > a' => 'background-color'
+							'#site-header #site-navigation-wrap .dropdown-menu > li > a:hover,#site-header #site-navigation-wrap .dropdown-menu > li > button.dropdown-toggle:hover, #site-header #site-navigation-wrap .dropdown-menu > li > button.site-search-toggle:hover,#site-navigation-wrap .dropdown-menu > li.sfHover > a' => 'background-color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -3532,7 +3533,7 @@ $options = [
 						'key' => 'normal',
 						'label' => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'#site-header #site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'color'
+							'#site-header #site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-header #site-navigation-wrap .dropdown-menu > .current-menu-item > button.dropdown-toggle,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -3558,7 +3559,7 @@ $options = [
 						'key' => 'normal',
 						'label' => esc_html__( 'Select Color', 'oceanwp' ),
 						'selector' => [
-							'#site-header #site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'background-color'
+							'#site-header #site-navigation-wrap .dropdown-menu > .current-menu-item > a,#site-header #site-navigation-wrap .dropdown-menu > .current-menu-item > button.dropdown-toggle,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a,#site-navigation-wrap .dropdown-menu > .current-menu-item > a:hover,#site-navigation-wrap .dropdown-menu > .current-menu-ancestor > a:hover' => 'background-color'
 						],
 						'attr' => [
 							'transport' => 'postMessage',
@@ -4535,7 +4536,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Select Color', 'oceanwp' ),
 								'selector' => [
-									'#searchform-overlay a.search-overlay-close span::before, #searchform-overlay a.search-overlay-close span::after' => 'background-color'
+									'#searchform-overlay .search-overlay-close span::before, #searchform-overlay .search-overlay-close span::after' => 'background-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -5810,7 +5811,7 @@ $options = [
 						'transport'    => 'postMessage',
 						'priority'     => 10,
 						'hideLabel'    => false,
-						'selector'     => '.sidr-class-dropdown-menu li a, a.sidr-class-toggle-sidr-close, #mobile-dropdown ul li a, body #mobile-fullscreen ul li a',
+						'selector'     => '.sidr-class-dropdown-menu li a, a.sidr-class-toggle-sidr-close, button.sidr-class-toggle-sidr-close, #mobile-dropdown ul li a, #mobile-dropdown ul li > button.menu-link.dropdown-toggle, body #mobile-fullscreen ul li a, body #mobile-fullscreen ul li > button.menu-link.dropdown-toggle',
 						'setting_args' => [
 							'fontFamily' => [
 								'id'    => 'mobile_menu_dropdown_typography[font-family]',
@@ -6082,8 +6083,8 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
-									'body .sidr a, body .sidr-class-dropdown-toggle, #mobile-dropdown ul li a, #mobile-dropdown ul li a .dropdown-toggle, #mobile-fullscreen ul li a, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a' => 'color',
-									'#mobile-fullscreen a.close .close-icon-inner, #mobile-fullscreen a.close .close-icon-inner::after' => 'background-color'
+									'body .sidr a, body .sidr-class-dropdown-toggle, #mobile-dropdown ul li a, #mobile-dropdown ul li > button.menu-link.dropdown-toggle, #mobile-dropdown ul li a .dropdown-toggle,.menu-item-has-children>.oceanwp-sub-menu-toggle:not(.oceanwp-sub-menu-toggle-vertical-header), #mobile-fullscreen ul li a, #mobile-fullscreen ul li > button.menu-link.dropdown-toggle, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a' => 'color',
+									'#mobile-fullscreen a.close .close-icon-inner, #mobile-fullscreen a.close .close-icon-inner::after, #mobile-fullscreen button.close .close-icon-inner, #mobile-fullscreen button.close .close-icon-inner::after' => 'background-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6095,8 +6096,8 @@ $options = [
 								'key' => 'hover',
 								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
-									'body .sidr a:hover, body .sidr-class-dropdown-toggle:hover, body .sidr-class-dropdown-toggle .fa, body .sidr-class-menu-item-has-children.active > a, body .sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle, #mobile-dropdown ul li a:hover, #mobile-dropdown ul li a .dropdown-toggle:hover, #mobile-dropdown .menu-item-has-children.active > a, #mobile-dropdown .menu-item-has-children.active > a > .dropdown-toggle, #mobile-fullscreen ul li a:hover, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover' => 'color',
-									'#mobile-fullscreen a.close:hover .close-icon-inner, #mobile-fullscreen a.close:hover .close-icon-inner::after{background-color' => 'background-color'
+									'body .sidr a:hover, body .sidr-class-dropdown-toggle:hover,.menu-item-has-children>.oceanwp-sub-menu-toggle:not(.oceanwp-sub-menu-toggle-vertical-header):hover, body .sidr-class-dropdown-toggle .fa, body .sidr-class-menu-item-has-children.active > a, body .sidr-class-menu-item-has-children.active > a > .sidr-class-dropdown-toggle, #mobile-dropdown ul li a:hover, #mobile-dropdown ul li > button.menu-link.dropdown-toggle:hover, #mobile-dropdown ul li > button.menu-link.dropdown-toggle:focus-visible, #mobile-dropdown ul li a .dropdown-toggle:hover, #mobile-dropdown .menu-item-has-children.active > a, #mobile-dropdown .menu-item-has-children.active > button.menu-link.dropdown-toggle, #mobile-dropdown .menu-item-has-children.active > a > .dropdown-toggle, #mobile-dropdown .menu-item-has-children.open-sub > button.menu-link.dropdown-toggle, #mobile-fullscreen ul li a:hover, #mobile-fullscreen ul li > button.menu-link.dropdown-toggle:hover, #mobile-fullscreen ul li > button.menu-link.dropdown-toggle:focus-visible, #mobile-fullscreen .menu-item-has-children.active > button.menu-link.dropdown-toggle, #mobile-fullscreen .menu-item-has-children.open-sub > button.menu-link.dropdown-toggle, #mobile-fullscreen .oceanwp-social-menu.simple-social ul li a:hover' => 'color',
+									'#mobile-fullscreen a.close:hover .close-icon-inner, #mobile-fullscreen a.close:hover .close-icon-inner::after, #mobile-fullscreen button.close:hover .close-icon-inner, #mobile-fullscreen button.close:hover .close-icon-inner::after' => 'background-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6285,7 +6286,7 @@ $options = [
 								'key' => 'normal',
 								'label' => esc_html__( 'Normal', 'oceanwp' ),
 								'selector' => [
-									'#mobile-fullscreen ul > li > a' => 'background-color'
+									'#mobile-fullscreen ul > li > a, #mobile-fullscreen ul > li > button.menu-link.dropdown-toggle' => 'background-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',
@@ -6296,7 +6297,7 @@ $options = [
 								'key' => 'hover',
 								'label' => esc_html__( 'Hover', 'oceanwp' ),
 								'selector' => [
-									'#mobile-fullscreen ul > li > a:hover' => 'background-color'
+									'#mobile-fullscreen ul > li > a:hover, #mobile-fullscreen ul > li > button.menu-link.dropdown-toggle:hover, #mobile-fullscreen ul > li > button.menu-link.dropdown-toggle:focus-visible' => 'background-color'
 								],
 								'attr' => [
 									'transport' => 'postMessage',

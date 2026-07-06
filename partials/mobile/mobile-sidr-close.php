@@ -33,10 +33,32 @@ $text = $text ? $text : esc_html__( 'Close Menu', 'oceanwp' );
 // SEO link txt.
 $anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-sidr-close-anchor', false ) );
 
+// New accessibility settings.
+$a11y_mode_tags = oceanwp_is_semantic_mobile_header_enabled();
+
+// Close label.
+$close_label = oceanwp_theme_strings( 'owp-string-close-mobile-menu', false );
+$close_label = $close_label ? $close_label : esc_html__( 'Close mobile menu', 'oceanwp' );
+
+if ( $a11y_mode_tags ) {
+	$close_tag   = 'button';
+	$close_attrs = sprintf(
+		'type="button" class="toggle-sidr-close" aria-label="%s" aria-controls="sidr"',
+		esc_attr( $close_label )
+	);
+} else {
+	$close_tag   = 'a';
+	$close_attrs = sprintf(
+		'href="%s" class="toggle-sidr-close" aria-label="%s" aria-controls="sidr"',
+		esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ),
+		esc_attr( $close_label )
+	);
+}
 ?>
 
 <div id="sidr-close">
-	<a href="<?php echo esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ); ?>" class="toggle-sidr-close" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-close-mobile-menu', false ) ); ?>">
-		<?php echo wp_kses_post( $icon_html ); ?><span class="close-text"><?php echo do_shortcode( $text ); ?></span>
-	</a>
+	<<?php echo $close_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <?php echo $close_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+		<?php echo wp_kses_post( $icon_html ); ?>
+		<span class="close-text"><?php echo do_shortcode( $text ); ?></span>
+	</<?php echo $close_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 </div>

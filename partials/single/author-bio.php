@@ -30,7 +30,7 @@ if ( ! $description ) {
 
 <?php do_action( 'ocean_before_single_post_author_bio' ); ?>
 
-<section id="author-bio" class="clr">
+<section id="author-bio" class="clr" aria-label="<?php echo esc_attr_x( 'Author biography', 'Aria label for the post author biography section', 'oceanwp' ); ?>">
 
 	<div id="author-bio-inner">
 

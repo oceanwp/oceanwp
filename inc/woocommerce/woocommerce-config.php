@@ -1081,7 +1081,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 			$grid_view_icon = oceanwp_icon( 'grid', false );
 			$list_view_icon = oceanwp_icon( 'list', false );
 
-			$output = '<nav class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="' . esc_html( $grid_view ) . '" class="' . esc_attr( $grid ) . ' grid-btn">' . $grid_view_icon . '</a><a href="#" id="oceanwp-list" title="' . esc_html( $list_view ) . '" class="' . esc_attr( $list ) . ' list-btn">' . $list_view_icon . '</a></nav>';
+			$output = '<nav aria-label="' . esc_attr_x( 'Product preview style', 'Aria label for the product grid/list preview toolbar', 'oceanwp' ) . '" class="oceanwp-grid-list"><a href="#" id="oceanwp-grid" title="' . esc_html( $grid_view ) . '" class="' . esc_attr( $grid ) . ' grid-btn">' . $grid_view_icon . '</a><a href="#" id="oceanwp-list" title="' . esc_html( $list_view ) . '" class="' . esc_attr( $list ) . ' list-btn">' . $list_view_icon . '</a></nav>';
 
 			echo apply_filters( 'oceanwp_grid_list_buttons_output', $output );
 		}

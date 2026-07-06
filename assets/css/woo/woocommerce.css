@@ -18,7 +18,7 @@
   opacity: 0.5 !important;
   cursor: not-allowed;
 }
-.woocommerce .button:focus {
+.woocommerce .button:focus-visible {
   background-color: #0b7cac;
   color: #fff;
 }
@@ -1147,7 +1147,6 @@
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
   position: absolute;
   z-index: 2;
-  outline: none;
   top: -4px;
   margin-left: -6px;
   width: 14px;
@@ -1975,9 +1974,6 @@
   padding-top: 15px;
   text-align: center;
 }
-.woocommerce .oceanwp-loginform-wrap input:focus {
-  outline: -webkit-focus-ring-color 1px solid;
-}
 
 .woocommerce .lost_reset_password {
   width: 480px;
@@ -2363,7 +2359,7 @@
   background-color: #0b7cac;
   color: #fff;
 }
-.woocommerce-message a:focus {
+.woocommerce-message a:focus-visible {
   background-color: #0b7cac;
   color: #fff;
 }
@@ -2826,7 +2822,7 @@ ul.order_details li strong {
   margin: 0 8px 0 0;
   border-color: #ddd;
 }
-.woocommerce-cart table.cart td.actions .coupon .input-text:focus {
+.woocommerce-cart table.cart td.actions .coupon .input-text:focus-visible {
   border-color: #bbb;
 }
 .woocommerce-cart table.cart td.actions .coupon label {

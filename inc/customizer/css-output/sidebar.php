@@ -126,7 +126,7 @@ class OceanWP_Customize_Sidebar_CSS {
 		}
 
 		// Widgets margin bottom
-		if ( ! empty( $widgets_margin_bottom ) ) {
+		if ( $widgets_margin_bottom !== '' && $widgets_margin_bottom !== null ) {
 			$css .= '.widget-area .sidebar-box, .separate-layout .sidebar-box{margin-bottom:'. $widgets_margin_bottom .'px;}';
 		}
 

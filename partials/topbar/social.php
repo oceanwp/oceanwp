@@ -21,6 +21,7 @@ if ( empty( $social_options ) ) {
 // Add classes based on topbar style.
 $classes      = '';
 $topbar_style = get_theme_mod( 'ocean_top_bar_style', 'one' );
+
 if ( 'one' === $topbar_style ) {
 	$classes = 'top-bar-right';
 } elseif ( 'two' === $topbar_style ) {
@@ -48,13 +49,12 @@ if ( $get_id ) : ?>
 
 			OceanWP_Elementor::get_topbar_social_alt_content();
 
-			// If Beaver Builder.
+		// If Beaver Builder.
 		} elseif ( OCEANWP_BEAVER_BUILDER_ACTIVE && ! empty( $get_id ) ) {
 
 			echo do_shortcode( '[fl_builder_insert_layout id="' . $get_id . '"]' );
 
-			// Else.
-		} else if ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $get_id, 'panels_data', true ) ) {
+		} elseif ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $get_id, 'panels_data', true ) ) {
 
 			echo SiteOrigin_Panels::renderer()->render( $get_id );
 
@@ -76,22 +76,33 @@ if ( $get_id ) : ?>
 	return;
 
 endif;
-?>
 
-<?php
 // Return if there aren't any profiles defined and define var.
 $profiles = get_theme_mod( 'ocean_top_bar_social_profiles' );
+
 if ( ! $profiles ) {
 	return;
 }
 
 // Get theme mods.
-$link_target = get_theme_mod( 'ocean_top_bar_social_target', 'blank' );
-$link_target = $link_target ? $link_target : 'blank';
+$link_target           = get_theme_mod( 'ocean_top_bar_social_target', 'blank' );
+$link_target           = $link_target ? $link_target : 'blank';
+$display_external_mark = get_theme_mod( 'ocean_display_top_bar_social_external_icon', false );
 
 $link_rel = '';
+
 if ( 'blank' === $link_target ) {
 	$link_rel = 'rel="noopener noreferrer"';
+}
+
+// Construct visual external link mark component.
+$external_icon_markup = '';
+
+if ( $display_external_mark && 'blank' === $link_target ) {
+	// Outputs a visual indicator icon hidden safely from assistive text narrators.
+	$external_icon_markup = '<svg class="top-bar-social-menu-external-mark oceanwp-social-external-mark" aria-hidden="true" focusable="false" viewBox="0 0 16 16" width="1em" height="1em">
+		<path d="M5 3h8v8h-2V6.41l-6.29 6.3-1.42-1.42L9.59 5H5V3z" fill="currentColor"></path>
+	</svg>';
 }
 ?>
 
@@ -110,6 +121,7 @@ if ( 'blank' === $link_target ) {
 
 			// Get correct label.
 			$label = ! empty( $val['label'] ) ? esc_attr( $val['label'] ) : '';
+
 			if ( 'blank' === $link_target ) {
 				$aria_label = 'aria-label="' . $label . ' ' . esc_attr__( '(opens in a new tab)', 'oceanwp' ) . '"';
 			} else {
@@ -119,24 +131,35 @@ if ( 'blank' === $link_target ) {
 			// Display if there is a value defined.
 			if ( $url ) {
 
-				// Display link.
-				echo '<li class="oceanwp-' . esc_attr( $key ) . '">';
+				echo '<li class="oceanwp-' . esc_attr( $key ) . '">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output already escaped.
 
-				if ( in_array( $key, array( 'skype' ), true ) ) {
-					echo '<a href="skype:' . esc_attr( $url ) . '?call" aria-label="' . esc_attr__( 'Skype (opens in your application)', 'oceanwp' ) . '" target="_self">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
-				} elseif ( in_array( $key, array( 'email' ), true ) ) {
-					echo '<a href="mailto:' . antispambot( esc_attr( $url ) ) . '" aria-label="' . esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) . '" target="_self">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above.
-				} else {
-					echo '<a href="' . $esc_url . '" ' . $aria_label . ' target="_' . esc_attr( $link_target ) . '" ' . $link_rel . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped  -- Escaped above.
-				}
+					if ( in_array( $key, array( 'skype' ), true ) ) {
 
-				echo $val['icon_class']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped  -- Escaped during generation.
+						echo '<a href="skype:' . esc_attr( $url ) . '?call" aria-label="' . esc_attr__( 'Skype (opens in your application)', 'oceanwp' ) . '" target="_self">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output already escaped.
 
-				echo '</a>';
+					} elseif ( in_array( $key, array( 'email' ), true ) ) {
+
+						echo '<a href="mailto:' . antispambot( esc_attr( $url ) ) . '" aria-label="' . esc_attr__( 'Send email (opens in your application)', 'oceanwp' ) . '" target="_self">'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output already escaped.
+
+					} else {
+
+						echo '<a href="' . $esc_url . '" ' . $aria_label . ' target="_' . esc_attr( $link_target ) . '" ' . $link_rel . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output already escaped.
+
+					}
+
+					echo $val['icon_class']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped during generation.
+
+					// Add visual arrow icon for external links if conditions match.
+					if ( ! empty( $external_icon_markup ) && ! in_array( $key, array( 'skype', 'email' ), true ) ) {
+						echo $external_icon_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Safe SVG markup.
+					}
+
+					echo '</a>';
 
 				echo '</li>';
 
 			} // End url check.
+
 		} // End loop.
 		?>
 

@@ -1,6 +1,7 @@
 import delegate from "delegate";
 import { options } from "../../constants";
 import { slideUp, slideDown, slideToggle } from "../../lib/utils";
+import initAccessibleSubmenus from "../menu/accessible-submenus";
 
 class DropDownMobileMenu {
   #elements = {
@@ -32,8 +33,38 @@ class DropDownMobileMenu {
     };
   };
 
+  #getMobileDropdownTarget = () => {
+    return options.mobileDropdownTarget || options.sidrDropdownTarget || "link";
+  };
+
+  #getToggleMenuButtonFromEvent = (event) => {
+    return (
+      event.delegateTarget ||
+      event.target?.closest?.(".mobile-menu") ||
+      event.currentTarget?.closest?.(".mobile-menu") ||
+      this.#elements.toggleMenuBtn
+    );
+  };
+
   #start = () => {
     this.#isMenuOpen = false;
+
+    const hasPhpSubmenuControls =
+      !!this.#elements.navWrapper?.querySelector(
+        "[data-oceanwp-submenu-toggle]"
+      );
+
+    if (hasPhpSubmenuControls) {
+      initAccessibleSubmenus({
+        root: this.#elements.navWrapper,
+        openClass: "active",
+        toggleSelector: "[data-oceanwp-submenu-toggle]",
+        duration: 250,
+      });
+
+      this.#menuItemsToggleIcon = [];
+      return;
+    }
 
     this.#elements.parentMenuItems?.forEach((menuItem) => {
       let span = document.createElement("span");
@@ -44,7 +75,7 @@ class DropDownMobileMenu {
     });
 
     this.#menuItemsToggleIcon =
-      options.sidrDropdownTarget == "link"
+      this.#getMobileDropdownTarget() === "link"
         ? this.#elements.navWrapper?.querySelectorAll(
             "li.menu-item-has-children > a"
           )
@@ -59,8 +90,15 @@ class DropDownMobileMenu {
       this.#onToggleMenuButtonClick
     );
 
+    delegate(
+      document.body,
+      ".mobile-menu",
+      "keydown",
+      this.#onToggleMenuButtonKeydown
+    );
+
     this.#elements.navWrapper
-      ?.querySelectorAll('li a[href*="#"]:not([href="#"])')
+      ?.querySelectorAll('li a[href*="#"]:not([href="#"]):not([data-oceanwp-submenu-toggle])')
       .forEach((menuItemLink) => {
         menuItemLink.addEventListener("click", this.#onAnchorLinkClick);
       });
@@ -112,20 +150,56 @@ class DropDownMobileMenu {
     }
   };
 
+  #onToggleMenuButtonKeydown = (event) => {
+    const toggleMenuBtn = this.#getToggleMenuButtonFromEvent(event);
+
+    if (!toggleMenuBtn || event.repeat || !this.#isActivationKey(event)) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    toggleMenuBtn.click();
+  };
+
   #onToggleMenuButtonClick = (event) => {
+    const toggleMenuBtn = this.#getToggleMenuButtonFromEvent(event);
+
+    if (!toggleMenuBtn) {
+      return;
+    }
+
     event.preventDefault();
     event.stopPropagation();
 
     !!this.#elements.navWrapper && slideToggle(this.#elements.navWrapper, 400);
-    this.#elements.toggleMenuBtn?.classList.toggle("opened");
+    toggleMenuBtn.classList.toggle("opened");
     this.#elements.hamburgerBtn?.classList.toggle("is-active");
-    this.#elements.toggleMenuBtn?.focus();
+
+    const isOpen = toggleMenuBtn.classList.contains("opened");
+
+    toggleMenuBtn.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+    this.#elements.hamburgerBtn?.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+    toggleMenuBtn.focus();
   };
 
   onMenuCloseClick = (event) => {
     !!this.#elements.navWrapper && slideUp(this.#elements.navWrapper, 250);
     this.#elements.toggleMenuBtn?.classList.remove("opened");
     this.#elements.hamburgerBtn?.classList.remove("is-active");
+
+    this.#elements.toggleMenuBtn?.setAttribute("aria-expanded", "false");
+    this.#elements.hamburgerBtn?.setAttribute("aria-expanded", "false");
+
+    this.#isMenuOpen = false;
   };
 
   #onWindowResize = (event) => {
@@ -145,7 +219,7 @@ class DropDownMobileMenu {
 
     const menuItemPlusIcon = event.currentTarget;
     const menuItem =
-      options.sidrDropdownTarget == "link"
+      this.#getMobileDropdownTarget() == "link"
         ? menuItemPlusIcon.parentNode
         : menuItemPlusIcon.parentNode.parentNode;
     const subMenu = menuItem.lastElementChild;
@@ -177,12 +251,12 @@ class DropDownMobileMenu {
     const tabKey = event.keyCode === 9;
     const shiftKey = event.shiftKey;
     const escKey = event.keyCode === 27;
-    const enterKey = event.keyCode === 13;
+    const activationKey = this.#isActivationKey(event);
 
     const closeIcon = this.#elements.toggleMenuBtn;
 
     const navElements = this.#elements.nav?.querySelectorAll(
-      "a, span.dropdown-toggle, input, button"
+      "a, button, [role='button'], input"
     );
 
     const navFirstElement = navElements[0];
@@ -195,26 +269,57 @@ class DropDownMobileMenu {
     if (escKey) {
       event.preventDefault();
       this.onMenuCloseClick();
+      return;
     }
 
-    if (
-      enterKey &&
-      document.activeElement.classList.contains("dropdown-toggle")
-    ) {
+    const activeElement = document.activeElement;
+
+    const isLegacyDropdownToggle =
+      activeElement?.classList.contains("dropdown-toggle") ||
+      (
+        this.#getMobileDropdownTarget() === "link" &&
+        activeElement?.matches?.(
+          "#mobile-dropdown li.menu-item-has-children > a:not([data-oceanwp-submenu-toggle])"
+        )
+      );
+
+    if (activationKey && isLegacyDropdownToggle) {
       event.preventDefault();
-      document.activeElement.click();
+      event.stopPropagation();
+      activeElement.click();
+      return;
     }
 
     if (!shiftKey && tabKey && navLastElement === document.activeElement) {
       event.preventDefault();
-      closeIcon.style.outline = "1px dashed rgba(255, 255, 255, 0.6)";
       closeIcon.focus();
+      return;
+    }
+
+    if (
+      !shiftKey &&
+      tabKey &&
+      document.activeElement === closeIcon
+    ) {
+      event.preventDefault();
+      navFirstElement.focus();
+      return;
     }
 
     if (shiftKey && tabKey && navFirstElement === document.activeElement) {
       event.preventDefault();
-      closeIcon.style.outline = "1px dashed rgba(255, 255, 255, 0.6)";
       closeIcon.focus();
+      return;
+    }
+
+    if (
+      shiftKey &&
+      tabKey &&
+      document.activeElement === closeIcon
+    ) {
+      event.preventDefault();
+      navLastElement.focus();
+      return;
     }
 
     // If there are no elements in the menu, don't move the focus
@@ -222,6 +327,17 @@ class DropDownMobileMenu {
       event.preventDefault();
     }
   };
+
+  #isActivationKey = (event) => {
+    return (
+      event.key === "Enter" ||
+      event.key === " " ||
+      event.key === "Spacebar" ||
+      event.keyCode === 13 ||
+      event.keyCode === 32
+    );
+  };
+
 }
 
 ("use script");

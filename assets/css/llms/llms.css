@@ -37,10 +37,10 @@
   color: #fff;
 }
 
-.llms-button-action:focus,
-.llms-button-secondary:focus,
-.llms-field-button:focus,
-.llms-button-primary:focus {
+.llms-button-action:focus-visible,
+.llms-button-secondary:focus-visible,
+.llms-field-button:focus-visible,
+.llms-button-primary:focus-visible {
   background-color: #0b7cac;
   color: #fff;
 }

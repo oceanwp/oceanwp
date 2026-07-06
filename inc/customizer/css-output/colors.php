@@ -31,18 +31,28 @@ class OceanWP_Colors_CSS {
 	}
 
 	public function generate_css($output) {
-		$primary_color       = get_theme_mod( 'ocean_primary_color', '#13aff0' );
-		$hover_primary_color = get_theme_mod( 'ocean_hover_primary_color', '#0b7cac' );
+		$primary_color_default = function_exists( 'oceanwp_get_customizer_default' ) ? oceanwp_get_customizer_default( 'ocean_primary_color', '#13aff0' ) : '#13aff0';
+		$primary_color         = get_theme_mod( 'ocean_primary_color', $primary_color_default );
+
+		$hover_primary_color_default = function_exists( 'oceanwp_get_customizer_default' ) ? oceanwp_get_customizer_default( 'ocean_hover_primary_color', '#0b7cac' ) : '#0b7cac';
+		$hover_primary_color         = get_theme_mod( 'ocean_hover_primary_color', $hover_primary_color_default );
+
 		$main_border_color   = get_theme_mod( 'ocean_main_border_color', '#e9e9e9' );
 		$background_color    = get_theme_mod( 'ocean_background_color', '#ffffff' );
-		$links_color         = get_theme_mod( 'ocean_links_color', '#333333' );
-		$links_color_hover   = get_theme_mod( 'ocean_links_color_hover', '#13aff0' );
+
+		$links_color_default       = function_exists( 'oceanwp_get_customizer_default' ) ? oceanwp_get_customizer_default( 'ocean_links_color', '#333333' ) : '#333333';
+		$links_color               = get_theme_mod( 'ocean_links_color', $links_color_default );
+		$links_color_hover_default = function_exists( 'oceanwp_get_customizer_default' ) ? oceanwp_get_customizer_default( 'ocean_links_color_hover', '#13aff0' ) : '#13aff0';
+		$links_color_hover         = get_theme_mod( 'ocean_links_color_hover', $links_color_hover_default );
+
 		$boxed_outside_bg    = get_theme_mod( 'ocean_boxed_outside_bg', '#e9e9e9' );
 		$separate_outside_bg = get_theme_mod( 'ocean_separate_outside_bg', '#f1f1f1' );
 		$boxed_inner_bg      = get_theme_mod( 'ocean_boxed_inner_bg', '#ffffff' );
 
-		$theme_button_bg               = get_theme_mod( 'ocean_theme_button_bg', '#13aff0' );
-		$theme_button_hover_bg         = get_theme_mod( 'ocean_theme_button_hover_bg', '#0b7cac' );
+		$theme_button_bg_default       = function_exists( 'oceanwp_get_customizer_default' ) ? oceanwp_get_customizer_default( 'ocean_theme_button_bg', '#13aff0' ) : '#13aff0';
+		$theme_button_bg               = get_theme_mod( 'ocean_theme_button_bg', $theme_button_bg_default );
+		$theme_button_hover_bg_default = function_exists( 'oceanwp_get_customizer_default' ) ? oceanwp_get_customizer_default( 'ocean_theme_button_hover_bg', '#0b7cac' ) : '#0b7cac';
+		$theme_button_hover_bg         = get_theme_mod( 'ocean_theme_button_hover_bg', $theme_button_hover_bg_default );
 		$theme_button_color            = get_theme_mod( 'ocean_theme_button_color', '#ffffff' );
 		$theme_button_hover_color      = get_theme_mod( 'ocean_theme_button_hover_color', '#ffffff' );
 		$theme_button_border_color     = get_theme_mod( 'ocean_theme_button_color', '#ffffff' );
@@ -105,32 +115,17 @@ class OceanWP_Colors_CSS {
 		$main_border = ocean_main_border_selector();
 
 		// Texts.
-		if ( ! empty( $texts ) && '#13aff0' != $primary_color ) {
+		if ( ! empty( $texts ) && $primary_color_default != $primary_color ) {
 			$css .= implode( ',', $texts ) . '{color:' . $primary_color . ';}';
 			$css .= implode( ',', $svg_icons ) . '{stroke:' . $primary_color . ';}';
 		}
 
 		// Backgrounds.
-		if ( ! empty( $backgrounds ) && '#13aff0' != $primary_color ) {
+		if ( ! empty( $backgrounds ) && $primary_color_default != $primary_color ) {
 			$css .= implode( ',', $backgrounds ) . '{background-color:' . $primary_color . ';}';
 		}
 
-		// Borders.
-		// if ( ! empty( $borders ) && '#13aff0' != $primary_color ) {
-		// 	foreach ( $borders as $key => $val ) {
-		// 		if (!is_array($val) && isset($val) && $val !== '') {
-		// 			var_dump($val);
-		// 			$css .= $key . '{border-color:' . $primary_color . ';}';
-		// 		} else {
-		// 			var_dump($val);
-		// 			$css .= $key . '{';
-		// 			$css .= 'border-' . $val . '-color:' . $primary_color . ';';
-		// 			$css .= '}';
-		// 		}
-		// 	}
-		// }
-
-		if ( ! empty( $borders ) && '#13aff0' != $primary_color ) {
+		if ( ! empty( $borders ) && $primary_color_default != $primary_color ) {
 			foreach ( $borders as $key => $val ) {
 				if ( is_array( $val ) ) {
 					$css .= $key . '{';
@@ -145,7 +140,7 @@ class OceanWP_Colors_CSS {
 		}
 
 		// Hover primary color.
-		if ( ! empty( $hover_primary ) && '#0b7cac' != $hover_primary_color ) {
+		if ( ! empty( $hover_primary ) && $hover_primary_color_default != $hover_primary_color ) {
 			$css .= implode( ',', $hover_primary ) . '{background-color:' . $hover_primary_color . ';}';
 		}
 
@@ -160,13 +155,13 @@ class OceanWP_Colors_CSS {
 		}
 
 		// Links color.
-		if ( ! empty( $links_color ) && '#333333' != $links_color ) {
+		if ( ! empty( $links_color ) && $links_color_default != $links_color ) {
 			$css .= 'a{color:' . $links_color . ';}';
 			$css .= 'a .owp-icon use {stroke:' . $links_color . ';}';
 		}
 
 		// Links color hover.
-		if ( ! empty( $links_color_hover ) && '#13aff0' != $links_color_hover ) {
+		if ( ! empty( $links_color_hover ) && $links_color_hover_default != $links_color_hover ) {
 			$css .= 'a:hover{color:' . $links_color_hover . ';}';
 			$css .= 'a:hover .owp-icon use {stroke:' . $links_color_hover . ';}';
 		}
@@ -187,31 +182,31 @@ class OceanWP_Colors_CSS {
 		}
 
 		// Theme buttons background color.
-		if ( ! empty( $theme_button_bg ) && '#13aff0' != $theme_button_bg ) {
+		if ( ! empty( $theme_button_bg ) && $theme_button_bg_default != $theme_button_bg ) {
 			$css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button,.woocommerce-cart .wp-element-button,.woocommerce-checkout .wp-element-button,.wp-block-button__link{background-color:' . $theme_button_bg . ';}';
 		}
 
 		// Theme buttons background color.
-		if ( ! empty( $theme_button_hover_bg ) && '#0b7cac' != $theme_button_hover_bg ) {
+		if ( ! empty( $theme_button_hover_bg ) && $theme_button_hover_bg_default != $theme_button_hover_bg ) {
 			$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active,.woocommerce-cart .wp-element-button:hover,.woocommerce-checkout .wp-element-button:hover,.wp-block-button__link:hover{background-color:' . $theme_button_hover_bg . ';}';
 		}
 
-		// Theme buttons background color.
+		// Theme buttons text color.
 		if ( ! empty( $theme_button_color ) && '#ffffff' != $theme_button_color ) {
 			$css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button,.woocommerce-cart .wp-element-button,.woocommerce-checkout .wp-element-button,.wp-block-button__link{color:' . $theme_button_color . ';}';
 		}
 
-		// Theme buttons hover color.
+		// Theme buttons text hover color.
 		if ( ! empty( $theme_button_hover_color ) && '#ffffff' != $theme_button_hover_color ) {
 			$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active,.woocommerce-cart .wp-element-button:hover,.woocommerce-checkout .wp-element-button:hover,.wp-block-button__link:hover{color:' . $theme_button_border_color . ';}';
 		}
 
-		// Theme buttons background color.
+		// Theme buttons border color.
 		if ( ! empty( $theme_button_border_color ) && '' != $theme_button_border_color ) {
 			$css .= 'body .theme-button,body input[type="submit"],body button[type="submit"],body button,body .button, body div.wpforms-container-full .wpforms-form input[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form .wpforms-page-button,.woocommerce-cart .wp-element-button,.woocommerce-checkout .wp-element-button,.wp-block-button__link{border-color:' . $theme_button_color . ';}';
 		}
 
-		// Theme buttons hover color.
+		// Theme buttons border hover color.
 		if ( ! empty( $theme_button_hover_border ) && '' != $theme_button_hover_border ) {
 			$css .= 'body .theme-button:hover,body input[type="submit"]:hover,body button[type="submit"]:hover,body button:hover,body .button:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:hover, body div.wpforms-container-full .wpforms-form input[type=submit]:active, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:active, body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover, body div.wpforms-container-full .wpforms-form .wpforms-page-button:active,.woocommerce-cart .wp-element-button:hover,.woocommerce-checkout .wp-element-button:hover,.wp-block-button__link:hover{border-color:' . $theme_button_hover_border . ';}';
 		}
@@ -342,8 +337,6 @@ class OceanWP_Colors_CSS {
 		return $output;
 
 	}
-
-
 
 }
 

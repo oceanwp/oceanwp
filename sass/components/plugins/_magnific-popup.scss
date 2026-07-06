@@ -18,7 +18,6 @@
     height: 100%;
     z-index: 1043;
     position: fixed;
-    outline: none !important;
     -webkit-backface-visibility: hidden;
 }
 
@@ -132,7 +131,6 @@ button.mfp-arrow {
     border: 0;
     -webkit-appearance: none;
     display: block;
-    outline: none;
     padding: 0;
     z-index: 1046;
     box-shadow: none;
@@ -161,7 +159,7 @@ button::-moz-focus-inner {
     font-family: Arial, Baskerville, monospace;
 }
 .mfp-close:hover,
-.mfp-close:focus {
+.mfp-close:focus-visible {
     opacity: 1;
 }
 .mfp-close:active {
@@ -206,7 +204,7 @@ button::-moz-focus-inner {
     margin-top: -54px;
 }
 .mfp-arrow:hover,
-.mfp-arrow:focus {
+.mfp-arrow:focus-visible {
     opacity: 1;
 }
 .mfp-arrow:before,

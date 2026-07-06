@@ -15,7 +15,7 @@
     cursor: not-allowed;
   }
 
-  .button:focus {
+  .button:focus-visible {
     background-color: #0b7cac;
     color: #fff;
   }
@@ -1134,7 +1134,6 @@
       .ui-slider-handle {
         position: absolute;
         z-index: 2;
-        outline: none;
         top: -4px;
         margin-left: -6px;
         width: 14px;
@@ -1942,9 +1941,6 @@
     padding-top: 15px;
     text-align: center;
   }
-  input:focus {
-    outline: -webkit-focus-ring-color 1px solid;
-  }
 }
 .woocommerce .lost_reset_password {
   width: 480px;
@@ -2337,7 +2333,7 @@
       background-color: #0b7cac;
       color: #fff;
     }
-    &:focus {
+    &:focus-visible {
       background-color: #0b7cac;
       color: #fff;
     }
@@ -2781,7 +2777,7 @@ ul {
           padding: 0 0.8em;
           margin: 0 8px 0 0;
           border-color: #ddd;
-          &:focus {
+          &:focus-visible {
             border-color: #bbb;
           }
         }

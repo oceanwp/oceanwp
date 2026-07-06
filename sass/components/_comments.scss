@@ -36,10 +36,6 @@
 		width: 100%;
 	}
 
-	#wp-comment-cookies-consent:focus {
-		outline: 1px solid;
-	}
-
 	.form-submit {
 		float: right;
     	margin-bottom: 0;
@@ -101,7 +97,7 @@
 	.comment-meta {
 		float: right;
 		text-align: right;
-		font-size: 10px;
+		font-size: 11px;
 		line-height: 2.5;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
@@ -113,11 +109,11 @@
 }
 
 .comment-author .comment-meta .comment-reply-link {
-	color: $color-5;
+	color: var(--owp-link-color, #{$color-5});
 }
 
 .comment-author .comment-meta .comment-reply-link:hover {
-	color: $color-2;
+	color: var(--owp-link-color-hover, #{$color-2});
 }
 
 #respond #cancel-comment-reply-link {
@@ -131,17 +127,17 @@
     letter-spacing: 0.1em;
 
     &:hover {
-    	color: $color-5;
-    	border-color: $color-5;
+    	color: var(--owp-link-color-hover, #{$color-5});
+    	border-color: var(--owp-link-color-hover, #{$color-5});
     }
 }
 
 span.required {
 	position: relative;
 	top: -4px;
-	font-size: 10px;
+	font-size: 14px;
 	margin-left: 3px;
-	color: #F00;
+	color: #b50000;
 }
 
 .comment-body p {

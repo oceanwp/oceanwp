@@ -4,6 +4,7 @@ import SearchBase from "./base";
 
 class OverlaySearch extends SearchBase {
   #elements;
+  #activeTrigger = null;
 
   constructor() {
     super();
@@ -18,12 +19,15 @@ class OverlaySearch extends SearchBase {
 
   #setElements = () => {
     this.#elements = {
-      toggleSearchBtn: document.querySelector("a.search-overlay-toggle"),
+      toggleSearchBtn: document.querySelector(".search-overlay-toggle"),
       closeBtn: document.querySelector(
-        "#searchform-overlay a.search-overlay-close"
+        "#searchform-overlay .search-overlay-close"
       ),
       form: document.querySelector("#searchform-overlay"),
       html: document.querySelector("html"),
+      input: document.querySelector(
+        "#searchform-overlay .searchform-overlay-input"
+      ),
     };
   };
 
@@ -33,17 +37,38 @@ class OverlaySearch extends SearchBase {
       this.#onToggleSearchBtnClick
     );
     this.#elements.closeBtn?.addEventListener("click", this.#onCloseBtnClick);
+
+    document.addEventListener(
+      "keydown",
+      this.#onDocumentKeydown
+    );
+
+    this.#elements.form?.addEventListener(
+      "keydown",
+      this.#onFormKeydown
+    );
   };
 
   #onToggleSearchBtnClick = (event) => {
     event.preventDefault();
 
-    const { form } = this.#elements;
+    this.#activeTrigger = event.currentTarget;
+
+    const {
+      form,
+      input,
+      toggleSearchBtn,
+    } = this.#elements;
 
     form.classList.add("active");
     fadeIn(form);
 
-    this.focus(form, 'input[type="search"]');
+    toggleSearchBtn?.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+    input?.focus();
 
     setTimeout(() => {
       this.#elements.html.style.overflow = "hidden";
@@ -53,15 +78,86 @@ class OverlaySearch extends SearchBase {
   #onCloseBtnClick = (event) => {
     event.preventDefault();
 
-    const { form } = this.#elements;
+    const {
+      form,
+      toggleSearchBtn,
+    } = this.#elements;
 
     form.classList.remove("active");
     fadeOut(form);
+
+    toggleSearchBtn?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    if (this.#activeTrigger) {
+      setTimeout(() => {
+        this.#activeTrigger.focus();
+      }, 50);
+    }
 
     setTimeout(() => {
       this.#elements.html.style.overflow = "visible";
     }, 400);
   };
+
+  #onDocumentKeydown = (event) => {
+
+    if (
+      event.key === "Escape" &&
+      this.#elements.form?.classList.contains(
+        "active"
+      )
+    ) {
+      event.preventDefault();
+
+      this.#elements.closeBtn?.click();
+    }
+  };
+
+  #onFormKeydown = (event) => {
+
+    if (
+      event.key !== "Tab" ||
+      !this.#elements.form?.classList.contains(
+        "active"
+      )
+    ) {
+      return;
+    }
+
+    const focusable = Array.from(
+      this.#elements.form.querySelectorAll(
+        'input, button, a[href]'
+      )
+    );
+
+    if (!focusable.length) {
+      return;
+    }
+
+    const first = focusable[0];
+    const last =
+      focusable[focusable.length - 1];
+
+    if (
+      event.shiftKey &&
+      document.activeElement === first
+    ) {
+      event.preventDefault();
+      last.focus();
+    }
+
+    if (
+      !event.shiftKey &&
+      document.activeElement === last
+    ) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
 }
 
 ("use script");

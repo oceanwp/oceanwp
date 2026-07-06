@@ -781,7 +781,14 @@ final class OceanWP_Theme_Panel {
 	 * Get plugin version
 	 */
 	function get_current_plugin_version( $plugin_slug ) {
-		$plugin_data         = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin_slug );
+		$plugin_file = WP_PLUGIN_DIR . '/' . $plugin_slug;
+
+		// Check if the file actually exists before reading it.
+		if ( ! file_exists( $plugin_file ) ) {
+			return false;
+		}
+
+		$plugin_data         = get_plugin_data( $plugin_file );
 		$plugin_data_version = ! empty( $plugin_data['Version'] ) ? $plugin_data['Version'] : false;
 		return $plugin_data_version;
 	}

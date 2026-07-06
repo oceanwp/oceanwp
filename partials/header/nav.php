@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 static $ocean_nav_plugin = false;
 
-// Retunr if disabled.
+// Return if disabled.
 if ( ! oceanwp_display_navigation() ) {
 	return;
 }
@@ -35,6 +35,10 @@ $inner_classes = oceanwp_header_menu_classes( 'inner' );
 
 // Nav attributes.
 $owp_nav_attrs = apply_filters( 'oceanwp_attrs_main_nav', '' );
+
+// New accessibility checks.
+$nav_label_text = esc_html__( 'Main website navigation', 'oceanwp' );
+$nav_aria_label = sprintf( 'aria-label="%s"', esc_attr( $nav_label_text ) );
 
 if ( ! empty( $template ) && ! defined( 'OCEANWP_NAV_SHORTCODE_DONE' ) ) {
 	do_action( 'ocean_before_nav' );
@@ -120,8 +124,16 @@ if ( ! empty( $template ) && ! defined( 'OCEANWP_NAV_SHORTCODE_DONE' ) ) {
 			$menu_classes[] = 'sf-menu';
 		}
 
-		// Turn menu classes into space seperated string.
+		// Turn menu classes into space separated string.
 		$menu_classes = implode( ' ', $menu_classes );
+
+		$walker_context = 'default';
+
+		if ( 'vertical' === $header_style ) {
+			$walker_context = 'vertical-header';
+		} elseif ( 'full_screen' === $header_style ) {
+			$walker_context = 'full-screen-header';
+		}
 
 		// Menu arguments.
 		$menu_args = array(
@@ -131,7 +143,7 @@ if ( ! empty( $template ) && ! defined( 'OCEANWP_NAV_SHORTCODE_DONE' ) ) {
 			'fallback_cb'    => false,
 			'link_before'    => '<span class="text-wrap">',
 			'link_after'     => '</span>',
-			'walker'         => new OceanWP_Custom_Nav_Walker(),
+			'walker'         => oceanwp_get_nav_walker( $walker_context ),
 		);
 
 		// Check if custom menu.
@@ -160,7 +172,7 @@ if ( ! empty( $template ) && ! defined( 'OCEANWP_NAV_SHORTCODE_DONE' ) ) {
 			}
 			?>
 
-			<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?> role="navigation" <?php echo $owp_nav_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>" <?php oceanwp_schema_markup( 'site_navigation' ); ?> <?php echo $nav_aria_label; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output already escaped ?> <?php echo $owp_nav_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
 				<?php
 				// Display global multisite menu.
@@ -215,6 +227,7 @@ if ( ! empty( $template ) && ! defined( 'OCEANWP_NAV_SHORTCODE_DONE' ) ) {
 		if ( 'full_screen' !== $header_style ) {
 			?>
 			</div><!-- #site-navigation-wrap -->
+
 			<?php
 		}
 		?>

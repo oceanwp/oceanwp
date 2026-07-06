@@ -81,7 +81,7 @@
  * Header media
  */
 #site-header.has-header-media {
-    > *:not(.overlay-header-media) {
+    > *:not(.custom-header-media) {
         position: relative;
         z-index: 2;
     }
@@ -161,6 +161,12 @@
 @media only screen and (max-width: 959px) {
     .has-left-menu #site-logo {
         padding: 0 !important;
+    }
+
+    .has-responsive-logo  {
+        a.site-logo-text {
+            display: none;
+        }
     }
 }
 

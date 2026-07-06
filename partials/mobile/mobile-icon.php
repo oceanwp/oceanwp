@@ -47,6 +47,46 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 	// SEO link txt.
 	$anchorlink_text = esc_html( oceanwp_theme_strings( 'owp-string-mobile-icon-anchor', false ) );
 
+	// New accessibility setting.
+	$a11y_mode_tags = oceanwp_is_semantic_mobile_header_enabled();
+
+	// Mobile menu controlled panel.
+	$mobile_menu_style = oceanwp_mobile_menu_style();
+	$aria_controls     = 'sidr';
+
+	if ( 'dropdown' === $mobile_menu_style ) {
+		$aria_controls = 'mobile-dropdown';
+	} elseif ( 'fullscreen' === $mobile_menu_style ) {
+		$aria_controls = 'mobile-fullscreen';
+	}
+
+	// Avoid duplicate aria-expanded if a third-party integration/filter already adds it.
+	$state_attrs = 'aria-controls="' . esc_attr( $aria_controls ) . '"';
+	if ( false === strpos( $toggle_menu_attrs, 'aria-expanded' ) ) {
+		$state_attrs .= ' aria-expanded="false"';
+	}
+
+	$aria_label = esc_attr__( 'Mobile Menu', 'oceanwp' );
+
+	$toggle_tag   = 'a';
+	$toggle_attrs = sprintf(
+		'href="%1$s" class="mobile-menu" %2$s %3$s aria-label="%4$s"',
+		esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ),
+		$toggle_menu_attrs,
+		$state_attrs,
+		$aria_label
+	);
+
+	if ( $a11y_mode_tags ) {
+		$toggle_tag   = 'button';
+		$toggle_attrs = sprintf(
+			'type="button" class="mobile-menu" %1$s %2$s aria-label="%3$s"',
+			$toggle_menu_attrs,
+			$state_attrs,
+			$aria_label
+		);
+	}
+
 	if ( OCEANWP_WOOCOMMERCE_ACTIVE ) {
 
 		// Get cart icon.
@@ -100,11 +140,11 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 
 		<?php do_action( 'ocean_before_mobile_icon_inner' ); ?>
 
-		<a href="<?php echo esc_url( ocean_get_site_name_anchors( $anchorlink_text ) ); ?>" class="mobile-menu" <?php echo $toggle_menu_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> aria-label="<?php esc_attr_e( 'Mobile Menu', 'oceanwp' ); ?>">
+		<<?php echo $toggle_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> <?php echo $toggle_attrs; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 			<?php
 			if ( 'default' !== $btn ) {
 				?>
-				<div class="hamburger hamburger--<?php echo esc_attr( $btn ); ?>" aria-expanded="false" role="navigation">
+				<div class="hamburger hamburger--<?php echo esc_attr( $btn ); ?>" aria-hidden="true">
 					<div class="hamburger-box">
 						<div class="hamburger-inner"></div>
 					</div>
@@ -124,7 +164,7 @@ if ( has_nav_menu( $menu_location ) || $ms_global_menu ) :
 				<?php
 			}
 			?>
-		</a>
+		</<?php echo $toggle_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
 		<?php do_action( 'ocean_after_mobile_icon_inner' ); ?>
 

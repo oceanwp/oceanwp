@@ -74,10 +74,6 @@
                 text-transform: uppercase;
                 text-align: center;
 
-                &:focus {
-                    outline: 1px dashed rgba($color: #fff, $alpha: 0.6);
-                }
-
                 &:hover {
                     color: $color-4;
                 }
@@ -103,10 +99,6 @@
                     font-family: "Font Awesome 5 Free";
                     font-weight: 600;
                     content: "+";
-                }
-
-                &:focus {
-                    outline: 1px dashed rgba($color: #fff, $alpha: 0.6);
                 }
             }
 
@@ -171,8 +163,7 @@
             @include border-radius(0);
             z-index: 2;
 
-            &:hover,
-            &:focus {
+            &:hover {
                 border-color: $color-1;
             }
         }

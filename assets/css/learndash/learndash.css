@@ -34,15 +34,15 @@ a#quiz_continue_link {
 }
 
 .btn-join:hover,
-.btn-join:focus,
+.btn-join:focus-visible,
 .btn-join:active,
 .btn-join:visited,
 .btn-join.active,
 #btn-join:hover,
-#btn-join:focus,
+#btn-join:focus-visible,
 a#quiz_continue_link:hover,
 .learndash_checkout_buttons input.btn-join[type=button]:hover,
-a#quiz_continue_link:focus {
+a#quiz_continue_link:focus-visible {
   background-color: #0b7cac;
   color: #fff;
   border: 0;
@@ -236,7 +236,7 @@ body #ld_course_list .btn {
   transition: all 0.3s ease;
 }
 body #ld_course_list .btn-primary:hover,
-body #ld_course_list .btn-primary:focus,
+body #ld_course_list .btn-primary:focus-visible,
 body #ld_course_list .btn-primary:active,
 body #ld_course_list .btn-primary.active,
 body #ld_course_list .open .dropdown-toggle.btn-primary {

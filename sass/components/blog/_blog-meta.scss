@@ -29,7 +29,7 @@ ul.meta {
 			color: $color-18;
 
 		    &:hover {
-				color: $color-5;
+				color: var(--owp-link-color-hover, #{$color-5});
 			}
 		}
 

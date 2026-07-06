@@ -23,7 +23,7 @@ $position  = get_theme_mod( 'ocean_center_header_menu_position', 'centered' );
 $position  = $position ? $position : 'centered';
 $classes[] = $position;
 
-// Turn classes into space seperated string.
+// Turn classes into space separated string.
 $classes = implode( ' ', $classes );
 
 // Left menu.
@@ -36,7 +36,12 @@ $right_menu        = apply_filters( 'ocean_main_menu_location', 'main_menu' );
 $right_custom_menu = apply_filters( 'ocean_custom_menu', $right_menu );
 
 // Retina logo.
-$retina_logo = oceanwp_header_retina_logo_setting(); ?>
+$retina_logo = oceanwp_header_retina_logo_setting(); 
+
+// New accessibility checks.
+$nav_label_text = esc_html__( 'Main website navigation', 'oceanwp' );
+$nav_aria_label = sprintf( 'aria-label="%s"', esc_attr( $nav_label_text ) );
+?>
 
 <?php do_action( 'ocean_before_header_inner' ); ?>
 
@@ -61,7 +66,7 @@ $retina_logo = oceanwp_header_retina_logo_setting(); ?>
 	// Get menu classes.
 	$menu_classes = array( 'main-menu', 'dropdown-menu', 'sf-menu', 'clr' );
 
-	// Turn menu classes into space seperated string.
+	// Turn menu classes into space separated string.
 	$menu_classes = implode( ' ', $menu_classes );
 
 	// Left menu arguments.
@@ -99,7 +104,7 @@ $retina_logo = oceanwp_header_retina_logo_setting(); ?>
 
 		<?php do_action( 'ocean_before_nav_inner' ); ?>
 
-		<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>"<?php oceanwp_schema_markup( 'site_navigation' ); ?> role="navigation">
+		<nav id="site-navigation" class="<?php echo esc_attr( $inner_classes ); ?>" <?php oceanwp_schema_markup( 'site_navigation' ); ?> <?php echo $nav_aria_label; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output already escaped. ?>>
 
 			<ul class="left-menu <?php echo esc_attr( $menu_classes ); ?>">
 				<?php

@@ -54,6 +54,7 @@ if ( ! function_exists( 'oceanwp_theme_strings' ) ) {
 				'owp-string-close-search-form'           => apply_filters( 'ocean_wai_close_search_form', __( 'Close this search form', 'oceanwp' ) ),
 				'owp-string-search-field'                => apply_filters( 'ocean_wai_search_field', __( 'Insert search query', 'oceanwp' ) ),
 				'owp-string-search-text'                 => apply_filters( 'ocean_search_text', __( 'Search', 'oceanwp' ) ),
+				'owp-string-esc-close-notice'            => apply_filters( 'ocean_close_search_panel', __( 'Press Escape to close the search panel.', 'oceanwp' )),
 
 				// Mobile Search Forms General.
 				'owp-string-mobile-search-text'          => apply_filters( 'ocean_mobile_search_text', __( 'Search', 'oceanwp' ) ),

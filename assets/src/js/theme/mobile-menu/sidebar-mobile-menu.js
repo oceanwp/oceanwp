@@ -24,6 +24,7 @@ class SidebarMobileMenu {
     this.#elements = {
       ...this.#elements,
       hamburgerBtn: document.querySelector(".mobile-menu > .hamburger"),
+      toggleMenuBtn: document.querySelector(".mobile-menu"),
       header: document.querySelector("#site-header"),
     };
   };
@@ -62,9 +63,25 @@ class SidebarMobileMenu {
       timing: "ease",
       bind: "click",
       onOpen() {
-        document.querySelector("a.sidr-class-toggle-sidr-close")?.focus();
-        document.querySelector("a.sidr-class-toggle-sidr-close svg")?.classList.remove("sidr-class-owp-icon", "sidr-class-owp-icon--close");
-        document.querySelector("a.sidr-class-toggle-sidr-close svg")?.classList.add("owp-icon", "owp-icon--close");
+        const closeBtn = document.querySelector(
+          "#sidr .sidr-class-toggle-sidr-close"
+        );
+
+        closeBtn?.focus();
+
+        closeBtn
+          ?.querySelector("svg")
+          ?.classList.remove(
+            "sidr-class-owp-icon",
+            "sidr-class-owp-icon--close"
+          );
+
+        closeBtn
+          ?.querySelector("svg")
+          ?.classList.add(
+            "owp-icon",
+            "owp-icon--close"
+          );
 
         self.#elements.hamburgerBtn?.classList.add("is-active");
 
@@ -158,7 +175,7 @@ class SidebarMobileMenu {
       });
 
     this.#sidebarToggleMenuBtn = document.querySelector(
-      "a.sidr-class-toggle-sidr-close"
+      "#sidr .sidr-class-toggle-sidr-close"
     );
   };
 
@@ -167,28 +184,16 @@ class SidebarMobileMenu {
       "click",
       this.#onHamburgerBtnClick
     );
+    this.#elements.toggleMenuBtn?.addEventListener(
+      "keydown",
+      this.#onToggleMenuBtnKeydown
+    );
     this.#sidebarToggleMenuBtn?.addEventListener(
       "click",
       this.#onSidebarCloseMenuBtnClick
     );
 
-    // document.body.addEventListener("click", (event) => {
-    //   const target = event.target;
-
-    //   if (target.matches('.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])')) {
-    //     this.#onAnchorLinkClick(event);
-    //   }
-    // });
-
-    // document.body.addEventListener("touchend", (event) => {
-    //   const target = event.target;
-
-    //   if (target.matches('.sidr-class-dropdown-menu a[href*="#"]:not([href="#"]), .sidr-class-menu-item > a[href*="#"]:not([href="#"])')) {
-    //     this.#onAnchorLinkClick(event);
-    //   }
-    // });
-
-    // Remove comments from the event listeners and add exclusion for popup login link
+    // Remove comments from the event listeners and add exclusion for popup login link.
     document.body.addEventListener("click", (event) => {
       const target = event.target;
 
@@ -239,6 +244,16 @@ class SidebarMobileMenu {
        loginLink.addEventListener("touchend", this.#onLoginLinkClick);
      });
 
+  };
+
+  #onToggleMenuBtnKeydown = (event) => {
+    if (!this.#isActivationKey(event) || event.currentTarget.tagName === "BUTTON") {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+    event.currentTarget.click();
   };
 
   #onHamburgerBtnClick = (event) => {
@@ -300,7 +315,7 @@ class SidebarMobileMenu {
     const tabKey = event.keyCode === 9;
     const shiftKey = event.shiftKey;
     const escKey = event.keyCode === 27;
-    const enterKey = event.keyCode === 13;
+    const activationKey = this.#isActivationKey(event);
 
     const closeIcon = this.#sidebarToggleMenuBtn;
 
@@ -333,11 +348,12 @@ class SidebarMobileMenu {
     }
 
     if (
-      enterKey &&
+      activationKey &&
       document.activeElement.classList.contains("sidr-class-dropdown-toggle")
     ) {
       event.preventDefault();
       document.activeElement.click();
+      return;
     }
 
     // If there are no elements in the menu, don't move the focus
@@ -383,6 +399,17 @@ class SidebarMobileMenu {
       this.#elements.hamburgerBtn?.classList.remove("is-active");
     }, 50);
   };
+
+  #isActivationKey = (event) => {
+    return (
+      event.key === "Enter" ||
+      event.key === " " ||
+      event.key === "Spacebar" ||
+      event.keyCode === 13 ||
+      event.keyCode === 32
+    );
+  };
+
 }
 
 ("use script");

@@ -7,7 +7,7 @@
 
 .dropcap {
 	float: left;
-	color: $color-5;
+	color: var(--owp-primary-color, #{$color-5});
     font-size: 120px;
     line-height: 80px;
     margin-top: 6px;

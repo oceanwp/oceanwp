@@ -28,11 +28,37 @@ if ( 'vertical' === $header_style ) {
 	$header_height = 0;
 }
 
-
 // Add container class if the header is not full width.
 $class = '';
 if ( true !== get_theme_mod( 'ocean_header_full_width', false ) ) {
 	$class = 'container';
+}
+
+$has_video = function_exists( 'has_header_video' ) && has_header_video();
+$has_image = has_header_image();
+
+$enabled_accessible_header_media = oceanwp_is_accessible_header_video_enabled();
+
+$header_media_state = '';
+
+if ( $has_video && $has_image ) {
+	$header_media_state = 'has-video-image';
+} elseif ( $has_video ) {
+	$header_media_state = 'has-video';
+} elseif ( $has_image ) {
+	$header_media_state = 'has-image';
+}
+
+$media_classes = array();
+
+if ( $header_media_state ) {
+	$media_classes[] = $header_media_state;
+}
+
+$overlay_classes = array();
+
+if ( $header_media_state ) {
+	$overlay_classes[] = $header_media_state;
 }
 
 do_action( 'ocean_before_header' );
@@ -56,10 +82,12 @@ if ( 'transparent' === $header_style
 
 		<?php
 		// If header video.
-		if ( function_exists( 'has_header_video' ) && has_header_video() ) {
+		if ( $has_video && ! $enabled_accessible_header_media ) {
 			?>
-			<div class="custom-header-media">
+			<div class="custom-header-media <?php echo esc_attr( implode( ' ', $media_classes ) ); ?>">
+
 				<?php the_custom_header_markup(); ?>
+
 			</div>
 			<?php
 		}
@@ -113,14 +141,11 @@ if ( 'transparent' === $header_style
 
 		<?php
 		// If header media.
-		if ( has_header_image() ) {
+		if ( $has_image && ! $enabled_accessible_header_media ) {
 			?>
-			<div class="overlay-header-media"></div>
+			<div class="overlay-header-media <?php echo esc_attr( implode( ' ', $overlay_classes ) ); ?>"></div>
 			<?php
 		}
-		?>
-
-		<?php
 	}
 	?>
 

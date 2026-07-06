@@ -56,7 +56,7 @@ function upgrade_now_button () {
 		</div>
 	</div>
 
-	<section class="oceanwp-comparison-table">
+	<section class="oceanwp-comparison-table" aria-label="<?php echo esc_attr__( 'Free vs. Pro features comparison', 'oceanwp' ); ?>">
 		<ul>
 			<li class="ct-table-heading"><span><?php esc_html_e( 'Features', 'oceanwp' ); ?></span><span><?php esc_html_e( 'Free', 'oceanwp' ); ?></span><span><?php esc_html_e( 'Pro', 'oceanwp' ); ?></span></li>
 			<li><span><?php esc_html_e( 'Forum & Community Support', 'oceanwp' ); ?></span><span class="oceanwp-tick-icon"></span><span class="oceanwp-tick-icon"></span></li>

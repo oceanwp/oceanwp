@@ -92,7 +92,7 @@ if ( $oceanwp_related_query->have_posts() ) :
 		$classes .= ' container';
 	} ?>
 
-	<section id="related-posts" class="<?php echo esc_attr( $classes ); ?>">
+	<section id="related-posts" class="<?php echo esc_attr( $classes ); ?>" aria-label="<?php echo esc_attr_x( 'Related posts', 'Aria label for the related posts section', 'oceanwp' ); ?>">
 
 		<<?php echo esc_attr( $heading_tag ); ?> class="theme-heading related-posts-title">
 			<span class="text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-single-related-posts', false ) ); ?></span>
