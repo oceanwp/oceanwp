@@ -24,8 +24,6 @@ class OceanWP_Customizer_Init {
 		$this->include_settings();
 
 		add_action( 'customize_controls_enqueue_scripts',   array( $this, 'custom_customize_enqueue' ), 15 );
-		add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'force_uncompressed_tinymce' ), 1 );
-		add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'print_default_editor_scripts' ), 45 );
 		add_action( 'customize_register', array( $this, 'register_settings' ) );
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_init' ) );
 		add_filter( 'ocean_customize_options_data', array( $this, 'register_customize_options') );
@@ -56,7 +54,12 @@ class OceanWP_Customizer_Init {
 		$wp_customize->get_control( 'custom_logo' )->section = 'ocean_header_logo_section';
 
 		//$options = ocean_customize_options('options');
-		$options = ocean_get_customize_settings_data();
+		$options = ocean_get_customize_settings_data(true);
+
+		if ( ocean_customize_tree_has_control_type( $options, 'ocean-rich-text' ) ) {
+			add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'force_uncompressed_tinymce' ), 1 );
+			add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'print_default_editor_scripts' ), 45 );
+		}
 
 		foreach ( $options as $section_key => $section_options ) {
 
@@ -418,7 +421,7 @@ class OceanWP_Customizer_Init {
 			'extend-section',
 			OCEANWP_INC_DIR_URI . 'customizer/extend-section/script.js',
 			array(),
-			'1.0',
+			filemtime( OCEANWP_INC_DIR . 'customizer/extend-section/script.js' ),
 			true
 		);
 
@@ -454,13 +457,13 @@ class OceanWP_Customizer_Init {
 				'oceanCustomize',
 				$customize_loc
 			);
-		}
 
-		if ( is_array( $customize_loc ) ) {
 			wp_localize_script(
 				'extend-section',
 				'oceanSectionCustomize',
-				$customize_loc
+				array(
+					'isOE' => isset( $customize_loc['isOE'] ) ? $customize_loc['isOE'] : false,
+				)
 			);
 		}
 
@@ -503,6 +506,7 @@ class OceanWP_Customizer_Init {
 				'customFonts' => function_exists( 'ocean_add_custom_fonts' ) ? ocean_add_custom_fonts() : array(),
 				'customizerFonts' => $this->get_customizer_fonts(),
 				'colorPalettes' => oceanwp_default_color_palettes(),
+				'icons' => ocean_get_customize_control_icons(),
 			)
 		);
 	}
@@ -538,8 +542,16 @@ class OceanWP_Customizer_Init {
 			'ocean-customize-preview',
 			'oceanCustomizePreview',
 			array(
-				'options' => ocean_get_customize_settings_data(),
-				'googleFonts' => oceanwp_google_fonts_array()
+				'options'            => ocean_get_customize_preview_data(),
+				'standardFonts'      => oceanwp_standard_fonts(),
+				'customFonts'        => function_exists( 'ocean_add_custom_fonts' ) ? ocean_add_custom_fonts() : array(),
+				'googleFontsEnabled' => (bool) get_theme_mod( 'ocean_enable_google_fonts', ocean_inherit_legacy_google_settings() ),
+				'integrations'       => array(
+					'woocommerce' => OCEANWP_WOOCOMMERCE_ACTIVE,
+					'edd'         => OCEANWP_EDD_ACTIVE,
+					'learndash'   => OCEANWP_LEARNDASH_ACTIVE,
+					'lifterlms'   => OCEANWP_LIFTERLMS_ACTIVE,
+				),
 			)
 		);
 	}

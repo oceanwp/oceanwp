@@ -286,7 +286,7 @@ $options = [
 				'multiple'          => false,
 				'active_callback'   => 'oceanwp_cac_has_topbar',
 				'sanitize_callback' => 'sanitize_key',
-				'choices'           => oceanwp_library_template_choices(),
+				'choices_callback'  => 'oceanwp_library_template_choices',
 			],
 
 			'ocean_topbar_content_need_help' => [
@@ -628,7 +628,7 @@ $options = [
 				'multiple'          => false,
 				'active_callback'   => 'oceanwp_cac_has_topbar_social',
 				'sanitize_callback' => 'sanitize_key',
-				'choices'           => oceanwp_library_template_choices(),
+				'choices_callback'  => 'oceanwp_library_template_choices',
 			],
 
 			'ocean_top_bar_social_menu_need_help' => [

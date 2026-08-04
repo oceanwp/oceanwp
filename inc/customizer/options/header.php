@@ -119,7 +119,7 @@ $options = [
 						'hideLabel'         => false,
 						'multiple'          => false,
 						'active_callback'   => 'ocean_cac_header_custom',
-						'choices'           => oceanwp_library_template_choices(),
+						'choices_callback'  => 'oceanwp_library_template_choices',
 						'sanitize_callback' => 'sanitize_key',
 					],
 
@@ -587,7 +587,7 @@ $options = [
 						'hideLabel' => false,
 						'multiple' => false,
 						'active_callback' => 'ocean_cac_header_center_style',
-						'choices' => oceanwp_get_menu_choices(),
+						'choices_callback' => 'oceanwp_get_menu_choices',
 						'sanitize_callback' => 'sanitize_key',
 					],
 
@@ -1395,7 +1395,7 @@ $options = [
 								'multiple' => false,
 								'active_callback' => 'ocean_cac_header_vertical_style',
 								'sanitize_callback' => 'sanitize_key',
-								'choices' => oceanwp_library_template_choices(),
+								'choices_callback' => 'oceanwp_library_template_choices',
 							],
 
 							'ocean_divider_after_custom_vertical_header_top_selection_settings' => [
@@ -1420,7 +1420,7 @@ $options = [
 								'multiple'          => false,
 								'active_callback'   => 'ocean_cac_header_vertical_style',
 								'sanitize_callback' => 'sanitize_key',
-								'choices'           => oceanwp_library_template_choices(),
+								'choices_callback'  => 'oceanwp_library_template_choices',
 							],
 						]
 					],
@@ -4593,7 +4593,7 @@ $options = [
 						'priority'          => 10,
 						'hideLabel'         => false,
 						'multiple'          => false,
-						'choices'           => oceanwp_library_template_choices(),
+						'choices_callback' => 'oceanwp_library_template_choices',
 						'sanitize_callback' => 'sanitize_key',
 					],
 
@@ -5172,7 +5172,7 @@ $options = [
 						'multiple' => false,
 						'active_callback' => 'oceanwp_cac_has_menu_social',
 						'sanitize_callback' => 'sanitize_key',
-						'choices' => oceanwp_library_template_choices(),
+						'choices_callback' => 'oceanwp_library_template_choices',
 					],
 
 					'ocean_header_social_menu_custom_template_section_need_help' => [

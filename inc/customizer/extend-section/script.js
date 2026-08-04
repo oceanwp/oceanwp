@@ -1,324 +1,395 @@
-( function( $ ) {
+/* global _, jQuery */
 
-	var api = wp.customize;
+( function ( $ ) {
+	const api = wp.customize;
+	const nestedSectionsByParent = new Map();
+	const nestedPanelsByParent = new Map();
+	const controlsBySection = new Map();
+	const sectionsByPanel = new Map();
 
-	api.bind( 'pane-contents-reflowed', function() {
+	function rebuildNestedMap( collection, parentKey, targetMap ) {
+		targetMap.clear();
 
-		var sections = [];
+		collection.each( function ( child ) {
+			const parentId = child.params[ parentKey ];
 
-		api.section.each( function( section ) {
+			if ( ! parentId ) {
+				return;
+			}
 
-		if (
-			'owp_section' !== section.params.type ||
-			'undefined' === typeof section.params.section
-		) {
+			if ( ! targetMap.has( parentId ) ) {
+				targetMap.set( parentId, [] );
+			}
 
-			return;
+			targetMap.get( parentId ).push( child );
+		} );
+	}
 
+	function getNestedChildren( parentId, collection, parentKey, targetMap ) {
+		if ( ! targetMap.has( parentId ) ) {
+			rebuildNestedMap( collection, parentKey, targetMap );
 		}
 
-		sections.push( section );
+		return targetMap.get( parentId ) || [];
+	}
 
-		});
+	function rebuildDirectChildrenMaps() {
+		controlsBySection.clear();
+		sectionsByPanel.clear();
+
+		api.control.each( function ( control ) {
+			const sectionId = control.section();
+
+			if ( ! sectionId ) {
+				return;
+			}
+
+			if ( ! controlsBySection.has( sectionId ) ) {
+				controlsBySection.set( sectionId, [] );
+			}
+
+			controlsBySection.get( sectionId ).push( control );
+		} );
+
+		api.section.each( function ( section ) {
+			const panelId = section.panel();
+
+			if ( ! panelId ) {
+				return;
+			}
+
+			if ( ! sectionsByPanel.has( panelId ) ) {
+				sectionsByPanel.set( panelId, [] );
+			}
+
+			sectionsByPanel.get( panelId ).push( section );
+		} );
+	}
+
+	function getSectionControls( sectionId ) {
+		if ( ! controlsBySection.size ) {
+			rebuildDirectChildrenMaps();
+		}
+
+		return controlsBySection.get( sectionId ) || [];
+	}
+
+	function getPanelSections( panelId ) {
+		if ( ! sectionsByPanel.size ) {
+			rebuildDirectChildrenMaps();
+		}
+
+		return sectionsByPanel.get( panelId ) || [];
+	}
+
+	/**
+	 * Keep a parent translated while any of its nested children is expanded.
+	 * Checking the final state avoids an old child removing the class after a
+	 * newly clicked sibling has already opened.
+	 *
+	 * @param {Object} parent    Parent Customizer section or panel.
+	 * @param {Array}  children  Nested children of the parent.
+	 * @param {string} className Class toggled on the parent container.
+	 */
+	function syncParentState( parent, children, className ) {
+		if ( ! parent ) {
+			return;
+		}
+
+		const hasExpandedChild = children.some( function ( child ) {
+			return child.expanded();
+		} );
+
+		parent.contentContainer.toggleClass( className, hasExpandedChild );
+	}
+
+	function scheduleParentStateSync( parent, children, className ) {
+		window.requestAnimationFrame( function () {
+			syncParentState( parent, children, className );
+		} );
+	}
+
+	api.bind( 'pane-contents-reflowed', function () {
+		rebuildNestedMap( api.section, 'section', nestedSectionsByParent );
+		rebuildNestedMap( api.panel, 'panel', nestedPanelsByParent );
+		rebuildDirectChildrenMaps();
+
+		const sections = [];
+
+		api.section.each( function ( section ) {
+			if (
+				'owp_section' !== section.params.type ||
+				'undefined' === typeof section.params.section
+			) {
+				return;
+			}
+
+			sections.push( section );
+		} );
 
 		sections.sort( api.utils.prioritySort ).reverse();
 
-		$.each( sections, function( i, section ) {
+		$.each( sections, function ( i, section ) {
+			const parentContainer = $(
+				'#customize-control-' + section.params.after
+			);
 
-			var parentContainer = $( '#customize-control-' + section.params.after );
+			section.headContainer.addClass(
+				section.params.section_class || ''
+			);
 
-			section.headContainer.addClass( section.params.section_class )
+			if ( parentContainer.length ) {
+				parentContainer.after( section.headContainer );
+			}
+		} );
 
-			parentContainer.after( section.headContainer );
+		const panels = [];
 
-		});
+		api.panel.each( function ( panel ) {
+			if (
+				'owp_panel' !== panel.params.type ||
+				'undefined' === typeof panel.params.panel
+			) {
+				return;
+			}
 
-		var panels = [];
-
-		api.panel.each( function( panel ) {
-
-		if (
-			'owp_panel' !== panel.params.type ||
-			'undefined' === typeof panel.params.panel
-		) {
-
-			return;
-
-		}
-
-		panels.push( panel );
-
-		});
+			panels.push( panel );
+		} );
 
 		panels.sort( api.utils.prioritySort ).reverse();
 
-		$.each( panels, function( i, panel ) {
+		$.each( panels, function ( i, panel ) {
+			const parentContainer = $(
+				'#sub-accordion-panel-' + panel.params.panel
+			);
 
-		var parentContainer = $( '#sub-accordion-panel-' + panel.params.panel );
+			const panelMeta = parentContainer.children( '.panel-meta' );
 
-		parentContainer.children( '.panel-meta' ).after( panel.headContainer );
-
-		});
-
-	});
+			if ( panelMeta.length ) {
+				panelMeta.after( panel.headContainer );
+			}
+		} );
+	} );
 
 	// Extend Panel
-	var _panelEmbed = wp.customize.Panel.prototype.embed;
-	var _panelIsContextuallyActive = wp.customize.Panel.prototype.isContextuallyActive;
-	var _panelAttachEvents = wp.customize.Panel.prototype.attachEvents;
+	const _panelEmbed = wp.customize.Panel.prototype.embed;
+	const _panelIsContextuallyActive =
+		wp.customize.Panel.prototype.isContextuallyActive;
+	const _panelAttachEvents = wp.customize.Panel.prototype.attachEvents;
 
-	wp.customize.Panel = wp.customize.Panel.extend({
-		attachEvents: function() {
+	wp.customize.Panel = wp.customize.Panel.extend( {
+		attachEvents() {
+			if (
+				'owp_panel' !== this.params.type ||
+				'undefined' === typeof this.params.panel
+			) {
+				_panelAttachEvents.call( this );
 
-		if (
-			'owp_panel' !== this.params.type ||
-			'undefined' === typeof this.params.panel
-		) {
+				return;
+			}
 
 			_panelAttachEvents.call( this );
 
-			return;
+			const panel = this;
 
-		}
+			panel.expanded.bind( function () {
+				const parent = api.panel( panel.params.panel );
+				const children = getNestedChildren(
+					panel.params.panel,
+					api.panel,
+					'panel',
+					nestedPanelsByParent
+				);
 
-		_panelAttachEvents.call( this );
+				scheduleParentStateSync(
+					parent,
+					children,
+					'current-panel-parent'
+				);
+			} );
 
-		var panel = this;
+			panel.container
+				.find( '.customize-panel-back' )
+				.off( 'click keydown' )
+				.on( 'click keydown', function ( event ) {
+					if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
+						return;
+					}
 
-		panel.expanded.bind( function( expanded ) {
+					event.preventDefault(); // Keep this AFTER the key filter above
 
-			var parent = api.panel( panel.params.panel );
+					const parent = api.panel( panel.params.panel );
 
-			if ( expanded ) {
-
-			parent.contentContainer.addClass( 'current-panel-parent' );
-
-			} else {
-
-			parent.contentContainer.removeClass( 'current-panel-parent' );
-
-			}
-
-		});
-
-		panel.container.find( '.customize-panel-back' )
-			.off( 'click keydown' )
-			.on( 'click keydown', function( event ) {
-
-			if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
+					if ( panel.expanded() && parent ) {
+						parent.expand();
+					}
+				} );
+		},
+		embed() {
+			if (
+				'owp_panel' !== this.params.type ||
+				'undefined' === typeof this.params.panel
+			) {
+				_panelEmbed.call( this );
 
 				return;
-
 			}
-
-			event.preventDefault(); // Keep this AFTER the key filter above
-
-			if ( panel.expanded() ) {
-
-				api.panel( panel.params.panel ).expand();
-
-			}
-
-			});
-
-		},
-		embed: function() {
-
-		if (
-			'owp_panel' !== this.params.type ||
-			'undefined' === typeof this.params.panel
-		) {
 
 			_panelEmbed.call( this );
 
-			return;
+			const panel = this;
+			const parentContainer = $(
+				'#sub-accordion-panel-' + this.params.panel
+			);
 
-		}
-
-		_panelEmbed.call( this );
-
-		var panel = this;
-		var parentContainer = $( '#sub-accordion-panel-' + this.params.panel );
-
-		parentContainer.append( panel.headContainer );
-
+			parentContainer.append( panel.headContainer );
 		},
-		isContextuallyActive: function() {
-
-		if (
-			'owp_panel' !== this.params.type
-		) {
-
-			return _panelIsContextuallyActive.call( this );
-
-		}
-
-		var panel = this;
-		var children = this._children( 'panel', 'section' );
-
-		api.panel.each( function( child ) {
-
-			if ( ! child.params.panel ) {
-				return;
+		isContextuallyActive() {
+			if ( 'owp_panel' !== this.params.type ) {
+				return _panelIsContextuallyActive.call( this );
 			}
 
-			if ( child.params.panel !== panel.id ) {
-				return;
-			}
+			const panel = this;
+			const children = getPanelSections( panel.id ).slice();
 
-			children.push( child );
+			getNestedChildren(
+				panel.id,
+				api.panel,
+				'panel',
+				nestedPanelsByParent
+			).forEach( function ( child ) {
+				children.push( child );
+			} );
 
-		});
+			children.sort( api.utils.prioritySort );
 
-		children.sort( api.utils.prioritySort );
+			let activeCount = 0;
 
-		var activeCount = 0;
+			_( children ).each( function ( child ) {
+				if ( child.active() && child.isContextuallyActive() ) {
+					activeCount += 1;
+				}
+			} );
 
-		_( children ).each( function ( child ) {
-
-			if ( child.active() && child.isContextuallyActive() ) {
-				activeCount += 1;
-			}
-
-		});
-
-		return ( activeCount !== 0 );
-
-		}
-
-	});
-
+			return activeCount !== 0;
+		},
+	} );
 
 	// Extend Section
-	var _sectionEmbed = wp.customize.Section.prototype.embed;
-	var _sectionIsContextuallyActive = wp.customize.Section.prototype.isContextuallyActive;
-	var _sectionAttachEvents = wp.customize.Section.prototype.attachEvents;
+	const _sectionEmbed = wp.customize.Section.prototype.embed;
+	const _sectionExpand = wp.customize.Section.prototype.expand;
+	const _sectionIsContextuallyActive =
+		wp.customize.Section.prototype.isContextuallyActive;
+	const _sectionAttachEvents = wp.customize.Section.prototype.attachEvents;
 
-	wp.customize.Section = wp.customize.Section.extend({
-		attachEvents: function() {
+	wp.customize.Section = wp.customize.Section.extend( {
+		expand( params ) {
+			document.dispatchEvent(
+				new CustomEvent( 'ocean-customizer-before-section-expand', {
+					detail: { sectionId: this.id },
+				} )
+			);
 
-		if (
-			'owp_section' !== this.params.type ||
-			'undefined' === typeof this.params.section
-		) {
+			return _sectionExpand.call( this, params );
+		},
+		attachEvents() {
+			if (
+				'owp_section' !== this.params.type ||
+				'undefined' === typeof this.params.section
+			) {
+				_sectionAttachEvents.call( this );
+
+				return;
+			}
 
 			_sectionAttachEvents.call( this );
 
-			return;
+			const section = this;
 
-		}
+			section.expanded.bind( function () {
+				const parent = api.section( section.params.section );
+				const children = getNestedChildren(
+					section.params.section,
+					api.section,
+					'section',
+					nestedSectionsByParent
+				);
 
-		_sectionAttachEvents.call( this );
+				scheduleParentStateSync(
+					parent,
+					children,
+					'current-section-parent'
+				);
+			} );
 
-		var section = this;
+			section.container
+				.find( '.customize-section-back' )
+				.off( 'click keydown' )
+				.on( 'click keydown', function ( event ) {
+					if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
+						return;
+					}
 
-		section.expanded.bind( function( expanded ) {
+					event.preventDefault(); // Keep this AFTER the key filter above
 
-			var parent = api.section( section.params.section );
+					const parent = api.section( section.params.section );
 
-			if ( expanded ) {
-				parent.contentContainer.addClass( 'current-section-parent' );
-			} else {
-				parent.contentContainer.removeClass( 'current-section-parent' );
-			}
-
-		});
-
-		section.container.find( '.customize-section-back' )
-			.off( 'click keydown' )
-			.on( 'click keydown', function( event ) {
-
-				if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
-					return;
-				}
-
-				event.preventDefault(); // Keep this AFTER the key filter above
-
-				if ( section.expanded() ) {
-					api.section( section.params.section ).expand();
-				}
-
-			});
-
+					if ( section.expanded() && parent ) {
+						parent.expand();
+					}
+				} );
 		},
-		embed: function() {
+		embed() {
+			if (
+				'owp_section' !== this.params.type ||
+				'undefined' === typeof this.params.section
+			) {
+				_sectionEmbed.call( this );
 
-		if (
-			'owp_section' !== this.params.type ||
-			'undefined' === typeof this.params.section
-		) {
+				return;
+			}
 
 			_sectionEmbed.call( this );
 
-			return;
+			const section = this;
+			const parentContainer = $(
+				'#sub-accordion-section-' + this.params.section
+			);
 
-		}
-
-		_sectionEmbed.call( this );
-
-		var section = this;
-		var parentContainer = $( '#sub-accordion-section-' + this.params.section );
-
-		parentContainer.append( section.headContainer );
-
+			parentContainer.append( section.headContainer );
 		},
-		isContextuallyActive: function() {
-
-		if (
-			'owp_section' !== this.params.type
-		) {
-
-			return _sectionIsContextuallyActive.call( this );
-
-		}
-
-		var section = this;
-		var children = this._children( 'section', 'control' );
-
-		api.section.each( function( child ) {
-
-			if ( ! child.params.section ) {
-				return;
+		isContextuallyActive() {
+			if ( 'owp_section' !== this.params.type ) {
+				return _sectionIsContextuallyActive.call( this );
 			}
 
-			if ( child.params.section !== section.id ) {
-				return;
-			}
+			const section = this;
+			const children = getSectionControls( section.id ).slice();
 
-			children.push( child );
+			getNestedChildren(
+				section.id,
+				api.section,
+				'section',
+				nestedSectionsByParent
+			).forEach( function ( child ) {
+				children.push( child );
+			} );
 
-		});
+			children.sort( api.utils.prioritySort );
 
-		children.sort( api.utils.prioritySort );
+			let activeCount = 0;
 
-		var activeCount = 0;
-
-		_( children ).each( function ( child ) {
-
-			if ( 'undefined' !== typeof child.isContextuallyActive ) {
-
-				if ( child.active() && child.isContextuallyActive() ) {
-
+			_( children ).each( function ( child ) {
+				if ( 'undefined' !== typeof child.isContextuallyActive ) {
+					if ( child.active() && child.isContextuallyActive() ) {
+						activeCount += 1;
+					}
+				} else if ( child.active() ) {
 					activeCount += 1;
-
 				}
+			} );
 
-			} else {
-
-				if ( child.active() ) {
-
-					activeCount += 1;
-
-				}
-
-			}
-
-		});
-
-		return ( activeCount !== 0 );
-
-		}
-
-	});
-
-})( jQuery );
+			return activeCount !== 0;
+		},
+	} );
+} )( jQuery );
