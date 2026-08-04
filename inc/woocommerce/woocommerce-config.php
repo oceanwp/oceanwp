@@ -309,26 +309,61 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.0
 		 */
 		public static function woo_section( $wp_customize ) {
-			$wp_customize->get_section( 'woocommerce_checkout' )->type                                       = 'owp_section';
-			$wp_customize->get_section( 'woocommerce_store_notice' )->type                                   = 'owp_section';
-			$wp_customize->get_section( 'woocommerce_product_images' )->type                                 = 'owp_section';
-			$wp_customize->get_section( 'woocommerce_product_images' )->priority                             = 999;
-			$wp_customize->get_control( 'woocommerce_shop_page_display' )->section                           = 'ocean_woocommerce_archives';
-			$wp_customize->get_control( 'woocommerce_category_archive_display' )->section                    = 'ocean_woocommerce_archives';
-			$wp_customize->get_control( 'woocommerce_default_catalog_orderby' )->section                     = 'ocean_woocommerce_archives';
-			$wp_customize->get_control( 'woocommerce_checkout_company_field' )->section                      = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_checkout_address_2_field' )->section                    = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_checkout_phone_field' )->section                        = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_checkout_highlight_required_fields' )->section          = 'ocean_woocommerce_checkout';
+			$section_ids = array(
+				'woocommerce_checkout',
+				'woocommerce_store_notice',
+				'woocommerce_product_images',
+			);
+
+			foreach ( $section_ids as $section_id ) {
+				$section = $wp_customize->get_section( $section_id );
+
+				if ( $section ) {
+					$section->type = 'owp_section';
+				}
+			}
+
+			$product_images_section = $wp_customize->get_section( 'woocommerce_product_images' );
+
+			if ( $product_images_section ) {
+				$product_images_section->priority = 999;
+			}
+
+			$control_sections = array(
+				'woocommerce_shop_page_display'                      => 'ocean_woocommerce_archives',
+				'woocommerce_category_archive_display'               => 'ocean_woocommerce_archives',
+				'woocommerce_default_catalog_orderby'                => 'ocean_woocommerce_archives',
+				'woocommerce_checkout_company_field'                 => 'ocean_woocommerce_checkout',
+				'woocommerce_checkout_address_2_field'               => 'ocean_woocommerce_checkout',
+				'woocommerce_checkout_phone_field'                   => 'ocean_woocommerce_checkout',
+				'woocommerce_checkout_highlight_required_fields'     => 'ocean_woocommerce_checkout',
+				'woocommerce_terms_page_id'                          => 'ocean_woocommerce_checkout',
+				'woocommerce_checkout_privacy_policy_text'           => 'ocean_woocommerce_checkout',
+				'woocommerce_checkout_terms_and_conditions_checkbox_text' => 'ocean_woocommerce_checkout',
+			);
+
+			foreach ( $control_sections as $control_id => $section_id ) {
+				$control = $wp_customize->get_control( $control_id );
+
+				if ( $control ) {
+					$control->section = $section_id;
+				}
+			}
 
 			if ( current_user_can( 'manage_privacy_options' ) ) {
-				$wp_customize->get_control( 'wp_page_for_privacy_policy' )->section                          = 'ocean_woocommerce_checkout';
+				$privacy_control = $wp_customize->get_control( 'wp_page_for_privacy_policy' );
+
+				if ( $privacy_control ) {
+					$privacy_control->section = 'ocean_woocommerce_checkout';
+				}
 			}
-			$wp_customize->get_control( 'woocommerce_terms_page_id' )->section                               = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_checkout_privacy_policy_text' )->section                = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_checkout_terms_and_conditions_checkbox_text' )->section = 'ocean_woocommerce_checkout';
-			$wp_customize->get_control( 'woocommerce_demo_store' )->type                                     = 'ocean-control-switch';
-			$wp_customize->get_control( 'woocommerce_demo_store' )->priority                                 = 5;
+
+			$demo_store_control = $wp_customize->get_control( 'woocommerce_demo_store' );
+
+			if ( $demo_store_control ) {
+				$demo_store_control->type     = 'ocean-control-switch';
+				$demo_store_control->priority = 5;
+			}
 		}
 
 		/**
