@@ -117,13 +117,6 @@ function ocean_get_customize_control_icons() {
 
 /**
  * Return client-side equivalents for active callbacks that depend only on
- * Customizer settings. Server-side callbacks remain the source of truth on
- * load and for callbacks that are not represented here.
- *
- * Extensions may add rules with the ocean_customize_active_callback_rules
- * filter. Supported nodes are setting/operator/value, all, any, not and
- * literal. Supported operators are equals, not-equals, in, not-in, truthy,
- * falsy and not-empty.
  *
  * @return array
  * @since 4.2.3
