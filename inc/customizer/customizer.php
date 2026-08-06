@@ -513,6 +513,8 @@ class OceanWP_Customizer_Init {
 			$route_ids
 		);
 
+		$active_rules = ocean_get_customize_active_callback_rules();
+
 		foreach ( $control_locations as $control_id => $location ) {
 			$control = $wp_customize->get_control( $control_id );
 
@@ -525,6 +527,13 @@ class OceanWP_Customizer_Init {
 			$control->json['oceanRoutePath']   = $location['path'];
 			$control->json['oceanTopSection']  = $section_key;
 			$control->json['optionType']       = 'owp-composite-option';
+
+			if ( is_string( $control->active_callback ) ) {
+				if ( isset( $active_rules[ $control->active_callback ] ) ) {
+					$control->json['oceanActiveRule'] = $active_rules[ $control->active_callback ];
+				}
+			}
+
 			$control->type                     = 'ocean-headless';
 			$control->section                  = $section_key;
 		}
@@ -557,6 +566,29 @@ class OceanWP_Customizer_Init {
 		}
 
 		foreach ( $route_ids as $route_id ) {
+			if ( isset( $routes[ $route_id ]['items'] ) ) {
+				foreach ( $routes[ $route_id ]['items'] as $item_order => &$route_item ) {
+					$route_item['_oceanOrder'] = $item_order;
+				}
+				unset( $route_item );
+
+				usort(
+					$routes[ $route_id ]['items'],
+					static function ( $first, $second ) {
+						$priority_order = ( $first['priority'] ?? 10 ) <=> ( $second['priority'] ?? 10 );
+
+						return 0 !== $priority_order
+							? $priority_order
+							: $first['_oceanOrder'] <=> $second['_oceanOrder'];
+					}
+				);
+
+				foreach ( $routes[ $route_id ]['items'] as &$route_item ) {
+					unset( $route_item['_oceanOrder'] );
+				}
+				unset( $route_item );
+			}
+
 			if ( $section_key !== $route_id ) {
 				$wp_customize->remove_section( $route_id );
 			}
@@ -659,9 +691,10 @@ class OceanWP_Customizer_Init {
 					: '';
 
 				$routes[ $route_id ]['items'][] = array(
-					'type'  => 'route',
-					'id'    => $option_key,
-					'class' => isset( $option_data['class'] ) ? $option_data['class'] : '',
+					'type'     => 'route',
+					'id'       => $option_key,
+					'class'    => isset( $option_data['class'] ) ? $option_data['class'] : '',
+					'priority' => isset( $option_data['priority'] ) ? $option_data['priority'] : 10,
 				);
 
 				self::collect_composite_routes(

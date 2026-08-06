@@ -116,6 +116,75 @@ function ocean_get_customize_control_icons() {
 }
 
 /**
+ * Return client-side equivalents for active callbacks that depend only on
+ * Customizer settings. Server-side callbacks remain the source of truth on
+ * load and for callbacks that are not represented here.
+ *
+ * Extensions may add rules with the ocean_customize_active_callback_rules
+ * filter. Supported nodes are setting/operator/value, all, any, not and
+ * literal. Supported operators are equals, not-equals, in, not-in, truthy,
+ * falsy and not-empty.
+ *
+ * @return array
+ * @since 4.2.3
+ */
+function ocean_get_customize_active_callback_rules() {
+	$equals = static function ( $setting, $value ) {
+		return array( 'setting' => $setting, 'operator' => 'equals', 'value' => $value );
+	};
+	$in = static function ( $setting, $values ) {
+		return array( 'setting' => $setting, 'operator' => 'in', 'value' => $values );
+	};
+
+	$rules = array(
+		'ocean_is_google_font_settings'                 => $equals( 'ocean_enable_google_fonts', true ),
+		'ocean_is_local_google_font'                    => array( 'all' => array( $equals( 'ocean_enable_google_fonts', true ), $equals( 'ocean_local_google_font', true ) ) ),
+		'ocean_is_not_boxed_layout'                     => array( 'setting' => 'ocean_main_layout_style', 'operator' => 'not-equals', 'value' => 'boxed' ),
+		'oceanwp_cac_has_boxed_layout'                  => $equals( 'ocean_main_layout_style', 'boxed' ),
+		'oceanwp_cac_has_boxed_or_separate_layout'      => $in( 'ocean_main_layout_style', array( 'boxed', 'separate' ) ),
+		'oceanwp_cac_has_separate_layout'               => $equals( 'ocean_main_layout_style', 'separate' ),
+		'ocean_is_scroll_top'                           => $equals( 'ocean_scroll_top', true ),
+		'oceanwp_cac_has_page_single_bs_layout'         => $equals( 'ocean_page_single_layout', 'both-sidebars' ),
+		'oceanwp_cac_has_page_single_rl_layout'         => $in( 'ocean_page_single_layout', array( 'right-sidebar', 'left-sidebar' ) ),
+		'oceanwp_is_page_title_display'                 => $equals( 'ocean_page_title_display', true ),
+		'oceanwp_is_bg_image_page_header'               => array( 'all' => array( $equals( 'ocean_page_title_display', true ), $equals( 'ocean_page_header_style', 'background-image' ) ) ),
+		'oceanwp_is_not_bg_image_page_header'           => array( 'all' => array( $equals( 'ocean_page_title_display', true ), array( 'setting' => 'ocean_page_header_style', 'operator' => 'not-equals', 'value' => 'background-image' ) ) ),
+		'oceanwp_is_active_breadcrumb_callback'         => $equals( 'ocean_breadcrumbs', true ),
+		'oceanwp_cac_has_background_image'              => array( 'setting' => 'ocean_background_image', 'operator' => 'not-empty' ),
+		'ocean_cac_header_custom'                       => $equals( 'ocean_header_style', 'custom' ),
+		'ocean_cac_header_not_vertical'                 => array( 'setting' => 'ocean_header_style', 'operator' => 'not-equals', 'value' => 'vertical' ),
+		'ocean_cac_header_top_menu'                     => $equals( 'ocean_header_style', 'top' ),
+		'ocean_cac_header_full_screen'                  => $equals( 'ocean_header_style', 'full_screen' ),
+		'ocean_cac_header_center_style'                 => $equals( 'ocean_header_style', 'center' ),
+		'ocean_cac_header_medium_style'                 => $equals( 'ocean_header_style', 'medium' ),
+		'ocean_cac_header_vertical_style'               => $equals( 'ocean_header_style', 'vertical' ),
+		'ocean_cac_header_transparent_style'            => $equals( 'ocean_header_style', 'transparent' ),
+		'oceanwp_cac_custom_logo'                       => array( 'setting' => 'custom_logo', 'operator' => 'truthy' ),
+		'oceanwp_cac_not_custom_logo'                   => array( 'setting' => 'custom_logo', 'operator' => 'falsy' ),
+		'oceanwp_cac_has_topbar'                        => $equals( 'ocean_top_bar', true ),
+		'oceanwp_cac_has_topbar_social'                 => array( 'all' => array( $equals( 'ocean_top_bar', true ), $equals( 'ocean_top_bar_social', true ) ) ),
+		'ocean_cac_footer_widget'                       => $equals( 'ocean_footer_widgets', true ),
+		'ocean_cac_footer_copyright'                    => $equals( 'ocean_footer_bottom', true ),
+		'ocean_cac_blog_archive_bs_layout'              => $equals( 'ocean_blog_archives_layout', 'both-sidebars' ),
+		'ocean_cac_blog_archive_sidebar_layout'         => $in( 'ocean_blog_archives_layout', array( 'right-sidebar', 'left-sidebar' ) ),
+		'ocean_cac_blog_archive_grid_style'             => $equals( 'ocean_blog_style', 'grid-entry' ),
+		'oceanwp_cac_blog_archive_pagination_infinite_scroll' => $equals( 'ocean_blog_pagination_style', 'infinite_scroll' ),
+		'oceanwp_cac_blog_archive_pagination_load_more' => $equals( 'ocean_blog_pagination_style', 'load_more' ),
+		'ocean_cac_blog_single_bs_layout'               => $equals( 'ocean_blog_single_layout', 'both-sidebars' ),
+		'ocean_cac_blog_single_fw_layout'               => $equals( 'ocean_blog_single_layout', 'full-width' ),
+		'ocean_cac_blog_single_sidebar_layout'          => $in( 'ocean_blog_single_layout', array( 'right-sidebar', 'left-sidebar' ) ),
+		'ocean_cac_blog_single_post_title_default'      => $equals( 'oceanwp_single_post_header_style', 'default' ),
+		'ocean_cac_not_blog_single_post_title_default'  => array( 'setting' => 'oceanwp_single_post_header_style', 'operator' => 'not-equals', 'value' => 'default' ),
+		'oceanwp_cac_single_post_title_cover'           => $equals( 'oceanwp_single_post_header_style', 'sph_style_3' ),
+		'ocean_cac_search_result_layout'                => $in( 'ocean_search_layout', array( 'right-sidebar', 'left-sidebar', 'both-sidebars' ) ),
+		'oceanwp_cac_has_search_bs_layout'              => $equals( 'ocean_search_layout', 'both-sidebars' ),
+		'oceanwp_cac_has_search_rl_layout'              => $in( 'ocean_search_layout', array( 'right-sidebar', 'left-sidebar' ) ),
+	);
+
+	return apply_filters( 'ocean_customize_active_callback_rules', $rules );
+}
+
+/**
  * Collect icon keys recursively from control arguments and radio choices.
  *
  * @param array $items Settings data to inspect.
