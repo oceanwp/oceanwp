@@ -367,7 +367,7 @@ if ( ! function_exists( 'owp_render_header_upsell_notice' ) ) {
 				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Exceptional Support', 'oceanwp' ); ?></li>
 			</ul>
 
-			<a href="<?php echo esc_url( 'https://see.oceanwp.org/tcheader-bundle-upgrade' ) ?>" target="_blank" class="button button-secondary">Upgrade to OceanWP Pro</a>
+			<a href="<?php echo esc_url( 'https://see.oceanwp.org/tcheader-bundle-upgrade' ) ?>" target="_blank" class="button button-secondary"><?php echo esc_html__( 'Upgrade to OceanWP Pro', 'oceanwp' ); ?></a>
 		</div>
 		<?php
 		return ob_get_clean();
@@ -392,7 +392,7 @@ if ( ! function_exists( 'owp_render_topbar_upsell_notice' ) ) {
 				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Dedicated Support', 'oceanwp' ); ?></li>
 			</ul>
 
-			<a href="<?php echo esc_url( 'https://see.oceanwp.org/tctopbar-bundle-upgrade' ) ?>" target="_blank" class="button button-secondary">Upgrade to OceanWP Pro</a>
+			<a href="<?php echo esc_url( 'https://see.oceanwp.org/tctopbar-bundle-upgrade' ) ?>" target="_blank" class="button button-secondary"><?php echo esc_html__( 'Upgrade to OceanWP Pro', 'oceanwp' ); ?></a>
 		</div>
 		<?php
 		return ob_get_clean();
@@ -418,7 +418,7 @@ if ( ! function_exists( 'owp_render_blog_upsell_notice' ) ) {
 				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Dedicated Support', 'oceanwp' ); ?></li>
 			</ul>
 
-			<a href="<?php echo esc_url( 'https://see.oceanwp.org/tcblog-bundle-upgrade' ) ?>" target="_blank" class="button button-secondary">Upgrade to OceanWP Pro</a>
+			<a href="<?php echo esc_url( 'https://see.oceanwp.org/tcblog-bundle-upgrade' ) ?>" target="_blank" class="button button-secondary"><?php echo esc_html__( 'Upgrade to OceanWP Pro', 'oceanwp' ); ?></a>
 		</div>
 		<?php
 		return ob_get_clean();
@@ -444,7 +444,7 @@ if ( ! function_exists( 'owp_render_footer_upsell_notice' ) ) {
 				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Dedicated Support', 'oceanwp' ); ?></li>
 			</ul>
 
-			<a href="<?php echo esc_url( 'https://see.oceanwp.org/tcfwidgets-bundle-upgrade' ) ?>" target="_blank" class="button button-secondary">Upgrade to OceanWP Pro</a>
+			<a href="<?php echo esc_url( 'https://see.oceanwp.org/tcfwidgets-bundle-upgrade' ) ?>" target="_blank" class="button button-secondary"><?php echo esc_html__( 'Upgrade to OceanWP Pro', 'oceanwp' ); ?></a>
 		</div>
 		<?php
 		return ob_get_clean();
@@ -470,7 +470,7 @@ if ( ! function_exists( 'owp_render_footer_copyright_upsell_notice' ) ) {
 				<li><?php echo $check_icon; ?> <?php echo esc_html__( 'Dedicated Support', 'oceanwp' ); ?></li>
 			</ul>
 
-			<a href="<?php echo esc_url( 'https://see.oceanwp.org/tccopyright-bundle-upgrade' ) ?>" target="_blank" class="button button-secondary">Upgrade to OceanWP Pro</a>
+			<a href="<?php echo esc_url( 'https://see.oceanwp.org/tccopyright-bundle-upgrade' ) ?>" target="_blank" class="button button-secondary"><?php echo esc_html__( 'Upgrade to OceanWP Pro', 'oceanwp' ); ?></a>
 		</div>
 		<?php
 		return ob_get_clean();
