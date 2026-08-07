@@ -341,12 +341,25 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				'woocommerce_checkout_privacy_policy_text'           => 'ocean_woocommerce_checkout',
 				'woocommerce_checkout_terms_and_conditions_checkbox_text' => 'ocean_woocommerce_checkout',
 			);
+			$control_priorities = array(
+				'woocommerce_shop_page_display'                      => 6,
+				'woocommerce_category_archive_display'               => 7,
+				'woocommerce_default_catalog_orderby'                => 8,
+				'woocommerce_checkout_company_field'                 => 1,
+				'woocommerce_checkout_address_2_field'               => 2,
+				'woocommerce_checkout_phone_field'                   => 3,
+				'woocommerce_checkout_highlight_required_fields'     => 4,
+				'woocommerce_terms_page_id'                          => 5,
+				'woocommerce_checkout_privacy_policy_text'           => 7,
+				'woocommerce_checkout_terms_and_conditions_checkbox_text' => 8,
+			);
 
 			foreach ( $control_sections as $control_id => $section_id ) {
 				$control = $wp_customize->get_control( $control_id );
 
 				if ( $control ) {
-					$control->section = $section_id;
+					$control->section  = $section_id;
+					$control->priority = $control_priorities[ $control_id ];
 				}
 			}
 
@@ -354,15 +367,36 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$privacy_control = $wp_customize->get_control( 'wp_page_for_privacy_policy' );
 
 				if ( $privacy_control ) {
-					$privacy_control->section = 'ocean_woocommerce_checkout';
+					$privacy_control->section  = 'ocean_woocommerce_checkout';
+					$privacy_control->priority = 6;
 				}
+			}
+
+			$store_notice_control = $wp_customize->get_control( 'woocommerce_demo_store_notice' );
+
+			if ( $store_notice_control ) {
+				$store_notice_control->priority = 2;
 			}
 
 			$demo_store_control = $wp_customize->get_control( 'woocommerce_demo_store' );
 
 			if ( $demo_store_control ) {
 				$demo_store_control->type     = 'ocean-control-switch';
-				$demo_store_control->priority = 5;
+				$demo_store_control->priority = 1;
+			}
+
+			$product_image_priorities = array(
+				'woocommerce_single_image_width'    => 20,
+				'woocommerce_thumbnail_image_width' => 30,
+				'woocommerce_thumbnail_cropping'    => 40,
+			);
+
+			foreach ( $product_image_priorities as $control_id => $priority ) {
+				$control = $wp_customize->get_control( $control_id );
+
+				if ( $control ) {
+					$control->priority = $priority;
+				}
 			}
 		}
 

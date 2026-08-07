@@ -4312,6 +4312,17 @@ $options = [
 								|| ocean_cac_not_blog_single_post_title_default( $true )
 							);
 						},
+						'active_rule' => array(
+							'any' => array(
+								array(
+									'all' => array(
+										ocean_customize_active_rule_equals( 'ocean_blog_single_featured_image_title', true ),
+										ocean_customize_active_rule_equals( 'oceanwp_single_post_header_style', 'default' ),
+									),
+								),
+								array( 'setting' => 'oceanwp_single_post_header_style', 'operator' => 'not-equals', 'value' => 'default' ),
+							),
+						),
 					],
 
 					'ocean_blog_post_title_typography' => [
@@ -4861,6 +4872,21 @@ $options = [
 								|| ocean_cac_not_blog_single_post_title_default( $true )
 							);
 						},
+						'active_rule' => array(
+							'any' => array(
+								array(
+									'all' => array(
+										ocean_customize_active_rule_equals( 'ocean_blog_single_featured_image_title', true ),
+										ocean_customize_active_rule_equals( 'oceanwp_single_post_header_style', 'default' ),
+									),
+								),
+								array(
+									'setting' => 'oceanwp_single_post_header_style',
+									'operator' => 'not-equals',
+									'value' => 'default'
+								),
+							),
+						),
 					],
 
 					'ocean_blog_post_title_color' => [

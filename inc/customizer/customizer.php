@@ -311,6 +311,9 @@ class OceanWP_Customizer_Init {
 				if ( isset( $option_data['active_callback'] ) && $option_data['active_callback'] ) {
 					$control_args['active_callback'] = $option_data['active_callback'];
 				}
+				if ( isset( $option_data['active_rule'] ) && is_array( $option_data['active_rule'] ) ) {
+					$control_args['json']['oceanActiveRule'] = $option_data['active_rule'];
+				}
 
 				if ( isset( $option_data['setting_args'] ) && $option_data['setting_args'] ) {
 					foreach ( $option_data['setting_args'] as $setting_arg_key => $setting_arg_data ) {
@@ -396,7 +399,25 @@ class OceanWP_Customizer_Init {
 					$control_args['json']['bottom'] = $option_data['bottom'];
 				}
 				if ( isset( $option_data['choices'] ) && $option_data['choices'] ) {
-					$control_args['json']['choices'] = $option_data['choices'];
+					$choices = $option_data['choices'];
+
+					if ( 'ocean-radio-image' === $option_data['type'] ) {
+						$icon_catalog = ocean_get_customize_icon_catalog();
+
+						foreach ( $choices as &$choice ) {
+							if ( ! is_array( $choice ) || empty( $choice['icon'] ) ) {
+								continue;
+							}
+
+							$active_icon  = $choice['icon'] . '-active';
+							$default_icon = $choice['icon'] . '-default';
+							$choice['active']  = $choice['active'] ?? ( $icon_catalog[ $active_icon ] ?? '' );
+							$choice['default'] = $choice['default'] ?? ( $icon_catalog[ $default_icon ] ?? '' );
+						}
+						unset( $choice );
+					}
+
+					$control_args['json']['choices'] = $choices;
 				}
 				if ( isset( $option_data['hideLabel'] ) && $option_data['hideLabel'] ) {
 					$control_args['json']['hideLabel'] = $option_data['hideLabel'];
@@ -556,7 +577,12 @@ class OceanWP_Customizer_Init {
 			$control->json['oceanRoute']           = $location['route'];
 			$control->json['oceanRoutePath']       = $location['path'];
 			$control->json['oceanTopSection']      = $section_key;
-			$control->section                      = $section_key;
+
+			if ( is_string( $control->active_callback ) && isset( $active_rules[ $control->active_callback ] ) ) {
+				$control->json['oceanActiveRule'] = $active_rules[ $control->active_callback ];
+			}
+
+			$control->section = $section_key;
 
 			$routes[ $location['route'] ]['items'][] = array(
 				'type'     => 'native-control',
