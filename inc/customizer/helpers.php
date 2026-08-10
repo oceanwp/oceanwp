@@ -89,7 +89,7 @@ function ocean_get_customize_icon_catalog() {
 		return $catalog;
 	}
 
-	$icon_file = OCEANWP_INC_DIR . 'customizer/customizer-src/utils/icon/icons.json';
+	$icon_file = OCEANWP_INC_DIR . 'customizer/assets/svg.json';
 	$catalog   = array();
 
 	if ( is_readable( $icon_file ) ) {
