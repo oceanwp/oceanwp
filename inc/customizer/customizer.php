@@ -172,8 +172,31 @@ class OceanWP_Customizer_Init {
 	 * @return bool
 	 */
 	private static function supports_composite_options( $options ) {
+		foreach ( $options as $option_data ) {
+			if ( ! isset( $option_data['type'] ) ) {
+				return false;
+			}
 
-		$supported_types = array(
+			if (
+				isset( $option_data['options'] ) &&
+				is_array( $option_data['options'] ) &&
+				! self::supports_composite_options( $option_data['options'] )
+			) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Return control types rendered directly by the composite interface.
+	 * Other registered types remain supported through native control slots.
+	 *
+	 * @return array
+	 */
+	private static function get_composite_control_types() {
+		return array(
 			'ocean-buttons',
 			'ocean-color',
 			'ocean-content',
@@ -195,27 +218,7 @@ class OceanWP_Customizer_Init {
 			'ocean-title',
 			'ocean-typography',
 			'ocean-upsell',
-			'section',
 		);
-
-		foreach ( $options as $option_data ) {
-			if (
-				! isset( $option_data['type'] ) ||
-				! in_array( $option_data['type'], $supported_types, true )
-			) {
-				return false;
-			}
-
-			if (
-				isset( $option_data['options'] ) &&
-				is_array( $option_data['options'] ) &&
-				! self::supports_composite_options( $option_data['options'] )
-			) {
-				return false;
-			}
-		}
-
-		return true;
 	}
 
 	public static function register_options_recursive( $wp_customize, $section_key, $options ) {
@@ -543,11 +546,9 @@ class OceanWP_Customizer_Init {
 				continue;
 			}
 
-			$control->json['oceanControlType'] = $control->type;
 			$control->json['oceanRoute']       = $location['route'];
 			$control->json['oceanRoutePath']   = $location['path'];
 			$control->json['oceanTopSection']  = $section_key;
-			$control->json['optionType']       = 'owp-composite-option';
 
 			if ( is_string( $control->active_callback ) ) {
 				if ( isset( $active_rules[ $control->active_callback ] ) ) {
@@ -555,8 +556,15 @@ class OceanWP_Customizer_Init {
 				}
 			}
 
-			$control->type                     = 'ocean-headless';
-			$control->section                  = $section_key;
+			if ( in_array( $control->type, self::get_composite_control_types(), true ) ) {
+				$control->json['oceanControlType'] = $control->type;
+				$control->json['optionType']       = 'owp-composite-option';
+				$control->type                     = 'ocean-headless';
+			} else {
+				$control->json['oceanNativeComposite'] = true;
+			}
+
+			$control->section = $section_key;
 		}
 
 		foreach ( $wp_customize->controls() as $control_id => $control ) {
