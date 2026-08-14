@@ -4266,6 +4266,7 @@ $options = [
 								|| ocean_cac_header_search_overlay( $true )
 							);
 						},
+						'active_rule' => ocean_customize_active_rule_in( 'ocean_menu_search_style', array( 'drop_down', 'overlay' ) ),
 					],
 
 					'ocean_search_dropdown_input_background' => [
@@ -5725,6 +5726,7 @@ $options = [
 								|| ocean_cac_has_mobile_menu_dropdown( $true )
 							);
 						},
+						'active_rule' => ocean_customize_active_rule_in( 'ocean_mobile_menu_style', array( 'sidebar', 'dropdown' ) ),
 					],
 
 					'ocean_mobile_menu_close_btn' => [

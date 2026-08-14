@@ -77,6 +77,30 @@ function ocean_get_customize_preview_data() {
 }
 
 /**
+ * Get the complete Customizer SVG icon catalog.
+ *
+ * @return array
+ * @since 4.2.3
+ */
+function ocean_get_customize_icon_catalog() {
+	static $catalog = null;
+
+	if ( null !== $catalog ) {
+		return $catalog;
+	}
+
+	$icon_file = OCEANWP_INC_DIR . 'customizer/assets/svg.json';
+	$catalog   = array();
+
+	if ( is_readable( $icon_file ) ) {
+		$decoded = json_decode( file_get_contents( $icon_file ), true );
+		$catalog = is_array( $decoded ) ? $decoded : array();
+	}
+
+	return $catalog;
+}
+
+/**
  * Get only the SVG icons referenced by the active Customizer settings tree.
  *
  * @return array
@@ -96,13 +120,7 @@ function ocean_get_customize_control_icons() {
 		$icon_keys
 	);
 
-	$icon_file = OCEANWP_INC_DIR . 'customizer/customizer-src/utils/icon/icons.json';
-	$catalog   = array();
-
-	if ( is_readable( $icon_file ) ) {
-		$decoded = json_decode( file_get_contents( $icon_file ), true );
-		$catalog = is_array( $decoded ) ? $decoded : array();
-	}
+	$catalog = ocean_get_customize_icon_catalog();
 
 	$control_icons = array();
 
@@ -114,6 +132,46 @@ function ocean_get_customize_control_icons() {
 
 	return apply_filters( 'ocean_customize_control_icons', $control_icons );
 }
+
+/**
+ * Build an equality rule for a client-side active callback.
+ *
+ * @param string $setting Customizer setting ID.
+ * @param mixed  $value   Expected setting value.
+ * @return array
+ * @since 4.2.3
+ */
+function ocean_customize_active_rule_equals( $setting, $value ) {
+	return array(
+		'setting'  => $setting,
+		'operator' => 'equals',
+		'value'    => $value,
+	);
+}
+
+/**
+ * Build an inclusion rule for a client-side active callback.
+ *
+ * @param string $setting Customizer setting ID.
+ * @param array  $values  Accepted setting values.
+ * @return array
+ * @since 4.2.3
+ */
+function ocean_customize_active_rule_in( $setting, $values ) {
+	return array(
+		'setting'  => $setting,
+		'operator' => 'in',
+		'value'    => $values,
+	);
+}
+
+/**
+ * Return client-side equivalents for active callbacks that depend only on
+ *
+ * @return array
+ * @since 4.2.3
+ */
+require_once OCEANWP_INC_DIR . 'customizer/active-callback-rules/active-callback-rules.php';
 
 /**
  * Collect icon keys recursively from control arguments and radio choices.
@@ -145,9 +203,9 @@ function ocean_collect_customize_control_icon_keys( $items, &$icon_keys ) {
 }
 
 /**
- * Collect controls used by the live preview from the settings tree.
+ * Collect controls used by the live preview from the settings.
  *
- * @param array $items Settings tree.
+ * @param array $items Settings.
  * @return array
  *
  * @since 4.2.3
