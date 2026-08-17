@@ -31,6 +31,7 @@ $label_class = $display_label ? 'vertical-header-search-visible-label' : 'screen
 
 // Search form conditional input aria attribute.
 $form_input_aria_label_attr = '';
+$form_placeholder_attr      = '';
 if ( ! $display_label ) {
 	$form_input_aria_label_attr = sprintf( 'aria-label="%s"', esc_attr( $input_aria_text ) );
 	$form_placeholder_attr      = sprintf( 'placeholder="%s"', esc_attr( $form_placeholder ) );
