@@ -1,5 +1,14 @@
 # OceanWP Changelog
 
+### _2026.08.18_ - 4.2.3
+- **Added**:: Compatibility: WordPress 7.1.
+- **Added**:: Compatibility: WooCommerce 11.
+- **Added**:: Compatibility: PHP: Warning: Undefined variable $form_placeholder_attr in ...partials/header/style/vertical-header-search.php on line 36.
+- **Improved**:: Customizer: Panels and options rendering logic for improved Customizer speed.
+- **Improved**:: Minified CSS files: Encoding changed from 'UTF-8 with BOM' to 'UTF-8' to avoid issues with CSS file combination features delivered by optimization plugins: edd.min.css, gutenberg-editor.min.css, learndash.min.css, llms.min.css, style.min.css, woo-quick-view.min.css, woocommerce.min.css.
+- **Updated**:: Template: ...woocommerce/cart/mini-cart.php (compatibility with WooCommerce 11)
+- **Updated**:: Template: ...partials/header/style/vertical-header-search.php
+
 ### _2026.07.28_ - 4.2.2
 - **Added**:: Customizer: Accessibility - A11Y: Enable Keyboard Focus Outline: Option to display inline style for keyboard navigation when all other accessibility options are disabled.
 - **Added**:: OceanWP Theme Panel: Admin Settings: Display Front-End Style Inside the Block Editor option. Minimum requirements: WordPress version 7, and Ocean Extra 2.5.8.

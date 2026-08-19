@@ -10,20 +10,22 @@
     },
     "dependencies": {
         "array-move": "^4.0.0",
-        "bootstrap": "^5.3.3",
-        "classnames": "^2.3.2",
-        "react-easy-sort": "^1.5.2",
-        "react-select": "^5.7.3"
+        "classnames": "^2.5.1",
+        "react-easy-sort": "^1.8.0",
+        "react-select": "^5.10.2"
     },
     "devDependencies": {
-        "@wordpress/block-editor": "^12.4.0",
-        "@wordpress/components": "^25.1.0",
-        "@wordpress/compose": "^6.12.0",
-        "@wordpress/data": "^9.5.0",
-        "@wordpress/element": "^5.12.0",
-        "@wordpress/hooks": "^3.35.0",
-        "@wordpress/i18n": "^4.35.0",
-        "@wordpress/scripts": "^26.6.0",
+        "@wordpress/api-fetch": "^7.53.0",
+        "@wordpress/block-editor": "^16.2.0",
+        "@wordpress/components": "^39.0.0",
+        "@wordpress/compose": "^8.6.0",
+        "@wordpress/data": "^10.53.0",
+        "@wordpress/element": "^8.5.0",
+        "@wordpress/hooks": "^4.53.0",
+        "@wordpress/html-entities": "^4.53.0",
+        "@wordpress/i18n": "^6.26.0",
+        "@wordpress/icons": "^15.4.0",
+        "@wordpress/scripts": "^34.1.0",
         "use-debounce": "^9.0.4"
     }
 }

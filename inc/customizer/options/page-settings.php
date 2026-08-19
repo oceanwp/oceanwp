@@ -1427,7 +1427,7 @@ $options = [
 				'multiple'          => false,
 				'active_callback'   => 'oceanwp_is_active_breadcrumb_callback',
 				'sanitize_callback' => 'sanitize_key',
-				'choices'           => oceanwp_breadcrumbs_source_choices(),
+				'choices_callback'  => 'oceanwp_breadcrumbs_source_choices',
 			],
 
 			'ocean_divider_after_breadcrumbs_source' => [
@@ -2485,7 +2485,7 @@ $options = [
 				'hideLabel'         => false,
 				'multiple'          => false,
 				'sanitize_callback' => 'sanitize_key',
-				'choices'           => oceanwp_library_template_choices(),
+				'choices_callback'  => 'oceanwp_library_template_choices',
 			],
 
 			'ocean_error_page_need_help' => [

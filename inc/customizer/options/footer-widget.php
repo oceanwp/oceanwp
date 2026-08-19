@@ -276,7 +276,7 @@ $options = [
 		'multiple'          => false,
 		'active_callback'   => 'ocean_cac_footer_widget',
 		'sanitize_callback' => 'sanitize_key',
-		'choices'           => oceanwp_library_template_choices(),
+		'choices_callback'  => 'oceanwp_library_template_choices',
 	],
 
 	'ocean_title_for_footer_special_effect_settings' => [

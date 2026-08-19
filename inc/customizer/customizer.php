@@ -15,6 +15,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 class OceanWP_Customizer_Init {
 
 	/**
+	 * Whether the composite Customizer renderer is enabled.
+	 *
+	 * @var bool|null
+	 */
+	private $use_composite_customizer = null;
+
+	/**
+	 * Whether at least one section requires legacy nested navigation.
+	 *
+	 * @var bool
+	 */
+	private $has_legacy_customizer_sections = false;
+
+	/**
+	 * Sections waiting for the final composite compatibility pass.
+	 *
+	 * @var array
+	 */
+	private $composite_customizer_sections = array();
+
+	/**
 	 * Setup class.
 	 *
 	 * @since 1.0
@@ -24,9 +45,8 @@ class OceanWP_Customizer_Init {
 		$this->include_settings();
 
 		add_action( 'customize_controls_enqueue_scripts',   array( $this, 'custom_customize_enqueue' ), 15 );
-		add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'force_uncompressed_tinymce' ), 1 );
-		add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'print_default_editor_scripts' ), 45 );
 		add_action( 'customize_register', array( $this, 'register_settings' ) );
+		add_action( 'customize_register', array( $this, 'finalize_composite_customizer' ), PHP_INT_MAX );
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_init' ) );
 		add_filter( 'ocean_customize_options_data', array( $this, 'register_customize_options') );
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'customize_panel_init' ) );
@@ -44,6 +64,7 @@ class OceanWP_Customizer_Init {
 	public function register_settings( $wp_customize) {
 
 		require OCEANWP_INC_DIR . 'customizer/controls-deprecated.php';
+		require OCEANWP_INC_DIR . 'customizer/controls/class-composite-control.php';
 		require OCEANWP_INC_DIR . 'customizer/extend-section/class-panel.php';
 		require OCEANWP_INC_DIR . 'customizer/extend-section/class-section.php';
 
@@ -56,7 +77,12 @@ class OceanWP_Customizer_Init {
 		$wp_customize->get_control( 'custom_logo' )->section = 'ocean_header_logo_section';
 
 		//$options = ocean_customize_options('options');
-		$options = ocean_get_customize_settings_data();
+		$options = ocean_get_customize_settings_data(true);
+
+		if ( ocean_customize_tree_has_control_type( $options, 'ocean-rich-text' ) ) {
+			add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'force_uncompressed_tinymce' ), 1 );
+			add_action( 'customize_controls_print_footer_scripts', array( '_WP_Editors', 'print_default_editor_scripts' ), 45 );
+		}
 
 		foreach ( $options as $section_key => $section_options ) {
 
@@ -86,9 +112,113 @@ class OceanWP_Customizer_Init {
 			);
 
 			if ( null !== $section_options['options'] && is_array($section_options['options'] ) ) {
-				self::register_options_recursive($wp_customize, $section_key, $section_options['options'] );
+				self::register_options_recursive( $wp_customize, $section_key, $section_options['options'] );
+
+				if (
+					$this->is_composite_customizer_enabled() &&
+					self::supports_composite_options( $section_options['options'] )
+				) {
+					$this->composite_customizer_sections[ $section_key ] = array(
+						'title'   => isset( $section_options['title'] ) ? $section_options['title'] : '',
+						'options' => $section_options['options'],
+					);
+				} else {
+					$this->has_legacy_customizer_sections = true;
+				}
 			}
 		}
+	}
+
+	/**
+	 * Convert compatible sections after WordPress and plugins finish registering.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Customizer manager.
+	 */
+	public function finalize_composite_customizer( $wp_customize ) {
+
+		foreach ( $this->composite_customizer_sections as $section_key => $section_data ) {
+			if ( ! self::can_finalize_composite_section( $wp_customize, $section_key, $section_data ) ) {
+				$this->has_legacy_customizer_sections = true;
+				continue;
+			}
+
+			self::register_composite_options(
+				$wp_customize,
+				$section_key,
+				$section_data['title'],
+				$section_data['options']
+			);
+		}
+	}
+
+	/**
+	 * Determine whether the composite Customizer renderer is enabled.
+	 *
+	 * @return bool
+	 */
+	private function is_composite_customizer_enabled() {
+
+		if ( null === $this->use_composite_customizer ) {
+			$this->use_composite_customizer = (bool) apply_filters( 'oceanwp_use_composite_customizer', true );
+		}
+
+		return $this->use_composite_customizer;
+	}
+
+	/**
+	 * Check whether every option type in a section has a composite component.
+	 *
+	 * @param array $options Section options.
+	 * @return bool
+	 */
+	private static function supports_composite_options( $options ) {
+		foreach ( $options as $option_data ) {
+			if ( ! isset( $option_data['type'] ) ) {
+				return false;
+			}
+
+			if (
+				isset( $option_data['options'] ) &&
+				is_array( $option_data['options'] ) &&
+				! self::supports_composite_options( $option_data['options'] )
+			) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Return control types rendered directly by the composite interface.
+	 * Other registered types remain supported through native control slots.
+	 *
+	 * @return array
+	 */
+	private static function get_composite_control_types() {
+		return array(
+			'ocean-buttons',
+			'ocean-color',
+			'ocean-content',
+			'ocean-divider',
+			'ocean-dropdown-pages',
+			'ocean-image',
+			'ocean-links',
+			'ocean-multiselect',
+			'ocean-radio-image',
+			'ocean-range-slider',
+			'ocean-select',
+			'ocean-social-links',
+			'ocean-sortable',
+			'ocean-spacer',
+			'ocean-spacing',
+			'ocean-switch',
+			'ocean-text',
+			'ocean-textarea',
+			'ocean-title',
+			'ocean-typography',
+			'ocean-upsell',
+		);
 	}
 
 	public static function register_options_recursive( $wp_customize, $section_key, $options ) {
@@ -184,6 +314,9 @@ class OceanWP_Customizer_Init {
 				if ( isset( $option_data['active_callback'] ) && $option_data['active_callback'] ) {
 					$control_args['active_callback'] = $option_data['active_callback'];
 				}
+				if ( isset( $option_data['active_rule'] ) && is_array( $option_data['active_rule'] ) ) {
+					$control_args['json']['oceanActiveRule'] = $option_data['active_rule'];
+				}
 
 				if ( isset( $option_data['setting_args'] ) && $option_data['setting_args'] ) {
 					foreach ( $option_data['setting_args'] as $setting_arg_key => $setting_arg_data ) {
@@ -269,7 +402,25 @@ class OceanWP_Customizer_Init {
 					$control_args['json']['bottom'] = $option_data['bottom'];
 				}
 				if ( isset( $option_data['choices'] ) && $option_data['choices'] ) {
-					$control_args['json']['choices'] = $option_data['choices'];
+					$choices = $option_data['choices'];
+
+					if ( 'ocean-radio-image' === $option_data['type'] ) {
+						$icon_catalog = ocean_get_customize_icon_catalog();
+
+						foreach ( $choices as &$choice ) {
+							if ( ! is_array( $choice ) || empty( $choice['icon'] ) ) {
+								continue;
+							}
+
+							$active_icon  = $choice['icon'] . '-active';
+							$default_icon = $choice['icon'] . '-default';
+							$choice['active']  = $choice['active'] ?? ( $icon_catalog[ $active_icon ] ?? '' );
+							$choice['default'] = $choice['default'] ?? ( $icon_catalog[ $default_icon ] ?? '' );
+						}
+						unset( $choice );
+					}
+
+					$control_args['json']['choices'] = $choices;
 				}
 				if ( isset( $option_data['hideLabel'] ) && $option_data['hideLabel'] ) {
 					$control_args['json']['hideLabel'] = $option_data['hideLabel'];
@@ -362,6 +513,252 @@ class OceanWP_Customizer_Init {
 	}
 
 	/**
+	 * Register an OceanWP section using one composite UI control.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Customizer manager.
+	 * @param string               $section_key   Top-level section ID.
+	 * @param string               $section_title Top-level section title.
+	 * @param array                $options       Section options.
+	 */
+	private static function register_composite_options( $wp_customize, $section_key, $section_title, $options ) {
+
+		$routes            = array();
+		$control_locations = array();
+		$route_ids         = array();
+
+		self::collect_composite_routes(
+			$section_key,
+			$section_title,
+			$options,
+			'',
+			array(),
+			$routes,
+			$control_locations,
+			$route_ids
+		);
+
+		$active_rules = ocean_get_customize_active_callback_rules();
+
+		foreach ( $control_locations as $control_id => $location ) {
+			$control = $wp_customize->get_control( $control_id );
+
+			if ( ! $control ) {
+				continue;
+			}
+
+			$control->json['oceanRoute']       = $location['route'];
+			$control->json['oceanRoutePath']   = $location['path'];
+			$control->json['oceanTopSection']  = $section_key;
+
+			if ( is_string( $control->active_callback ) ) {
+				if ( isset( $active_rules[ $control->active_callback ] ) ) {
+					$control->json['oceanActiveRule'] = $active_rules[ $control->active_callback ];
+				}
+			}
+
+			if ( in_array( $control->type, self::get_composite_control_types(), true ) ) {
+				$control->json['oceanControlType'] = $control->type;
+				$control->json['optionType']       = 'owp-composite-option';
+				$control->type                     = 'ocean-headless';
+			} else {
+				$control->json['oceanNativeComposite'] = true;
+			}
+
+			$control->section = $section_key;
+		}
+
+		foreach ( $wp_customize->controls() as $control_id => $control ) {
+			if (
+				isset( $control_locations[ $control_id ] ) ||
+				! isset( $routes[ $control->section ] ) ||
+				$section_key === $control->section
+			) {
+				continue;
+			}
+
+			$location = array(
+				'route' => $control->section,
+				'path'  => $routes[ $control->section ]['path'],
+			);
+
+			$control->json['oceanNativeComposite'] = true;
+			$control->json['oceanRoute']           = $location['route'];
+			$control->json['oceanRoutePath']       = $location['path'];
+			$control->json['oceanTopSection']      = $section_key;
+
+			if ( is_string( $control->active_callback ) && isset( $active_rules[ $control->active_callback ] ) ) {
+				$control->json['oceanActiveRule'] = $active_rules[ $control->active_callback ];
+			}
+
+			$control->section = $section_key;
+
+			$routes[ $location['route'] ]['items'][] = array(
+				'type'     => 'native-control',
+				'id'       => $control_id,
+				'priority' => $control->priority,
+			);
+		}
+
+		foreach ( $route_ids as $route_id ) {
+			if ( isset( $routes[ $route_id ]['items'] ) ) {
+				foreach ( $routes[ $route_id ]['items'] as $item_order => &$route_item ) {
+					$route_item['_oceanOrder'] = $item_order;
+				}
+				unset( $route_item );
+
+				usort(
+					$routes[ $route_id ]['items'],
+					static function ( $first, $second ) {
+						$priority_order = ( $first['priority'] ?? 10 ) <=> ( $second['priority'] ?? 10 );
+
+						return 0 !== $priority_order
+							? $priority_order
+							: $first['_oceanOrder'] <=> $second['_oceanOrder'];
+					}
+				);
+
+				foreach ( $routes[ $route_id ]['items'] as &$route_item ) {
+					unset( $route_item['_oceanOrder'] );
+				}
+				unset( $route_item );
+			}
+
+			if ( $section_key !== $route_id ) {
+				$wp_customize->remove_section( $route_id );
+			}
+		}
+
+		$composite_control               = new OWP_Customize_Composite_Control(
+			$wp_customize,
+			'ocean_composite_' . $section_key,
+			array(
+				'section'  => $section_key,
+				'settings' => array(),
+				'priority' => -1000,
+			)
+		);
+		$composite_control->routes       = $routes;
+		$composite_control->root_section = $section_key;
+
+		$wp_customize->add_control( $composite_control );
+	}
+
+	/**
+	 * Check for extension sections that cannot safely become internal routes.
+	 *
+	 * @param WP_Customize_Manager $wp_customize Customizer manager.
+	 * @param string               $section_key   Top-level section ID.
+	 * @param array                $section_data  Candidate section data.
+	 * @return bool
+	 */
+	private static function can_finalize_composite_section( $wp_customize, $section_key, $section_data ) {
+
+		$routes            = array();
+		$control_locations = array();
+		$route_ids         = array();
+
+		self::collect_composite_routes(
+			$section_key,
+			$section_data['title'],
+			$section_data['options'],
+			'',
+			array(),
+			$routes,
+			$control_locations,
+			$route_ids
+		);
+
+		foreach ( $wp_customize->sections() as $customize_section ) {
+			if (
+				! isset( $customize_section->section ) ||
+				! in_array( $customize_section->section, $route_ids, true )
+			) {
+				continue;
+			}
+
+			if ( ! in_array( $customize_section->id, $route_ids, true ) ) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Build route metadata without changing the existing option schema.
+	 *
+	 * @param string $route_id          Current route ID.
+	 * @param string $route_title       Current route title.
+	 * @param array  $options           Route options.
+	 * @param string $parent_route      Parent route ID.
+	 * @param array  $parent_path       Parent title path.
+	 * @param array  $routes            Collected routes.
+	 * @param array  $control_locations Control-to-route lookup.
+	 * @param array  $route_ids         Collected nested section IDs.
+	 */
+	private static function collect_composite_routes( $route_id, $route_title, $options, $parent_route, $parent_path, &$routes, &$control_locations, &$route_ids ) {
+
+		$current_path = $parent_path;
+
+		if ( '' !== $route_title ) {
+			$current_path[] = $route_title;
+		}
+
+		$routes[ $route_id ] = array(
+			'id'     => $route_id,
+			'title'  => $route_title,
+			'parent' => $parent_route,
+			'path'   => $current_path,
+			'items'  => array(),
+		);
+
+		$route_ids[] = $route_id;
+
+		foreach ( $options as $option_key => $option_data ) {
+			if ( ! isset( $option_data['type'] ) ) {
+				continue;
+			}
+
+			if ( 'section' === $option_data['type'] ) {
+				$child_title = isset( $option_data['title'] ) && ! is_array( $option_data['title'] )
+					? $option_data['title']
+					: '';
+
+				$routes[ $route_id ]['items'][] = array(
+					'type'     => 'route',
+					'id'       => $option_key,
+					'class'    => isset( $option_data['class'] ) ? $option_data['class'] : '',
+					'priority' => isset( $option_data['priority'] ) ? $option_data['priority'] : 10,
+				);
+
+				self::collect_composite_routes(
+					$option_key,
+					$child_title,
+					isset( $option_data['options'] ) && is_array( $option_data['options'] ) ? $option_data['options'] : array(),
+					$route_id,
+					$current_path,
+					$routes,
+					$control_locations,
+					$route_ids
+				);
+
+				continue;
+			}
+
+			$routes[ $route_id ]['items'][] = array(
+				'type'     => 'control',
+				'id'       => $option_key,
+				'priority' => isset( $option_data['priority'] ) ? $option_data['priority'] : 10,
+			);
+
+			$control_locations[ $option_key ] = array(
+				'route' => $route_id,
+				'path'  => $current_path,
+			);
+		}
+	}
+
+	/**
 	 * Adds customizer options
 	 */
 	public function register_customize_options($options) {
@@ -414,13 +811,18 @@ class OceanWP_Customizer_Init {
 
 		array_push( $deps, 'customize-controls' );
 
-		wp_enqueue_script(
-			'extend-section',
-			OCEANWP_INC_DIR_URI . 'customizer/extend-section/script.js',
-			array(),
-			'1.0',
-			true
-		);
+		if (
+			! $this->is_composite_customizer_enabled() ||
+			$this->has_legacy_customizer_sections
+		) {
+			wp_enqueue_script(
+				'extend-section',
+				OCEANWP_INC_DIR_URI . 'customizer/extend-section/script.js',
+				array(),
+				filemtime( OCEANWP_INC_DIR . 'customizer/extend-section/script.js' ),
+				true
+			);
+		}
 
 		wp_register_script(
 			'owp-react-customizer',
@@ -454,14 +856,27 @@ class OceanWP_Customizer_Init {
 				'oceanCustomize',
 				$customize_loc
 			);
-		}
 
-		if ( is_array( $customize_loc ) ) {
-			wp_localize_script(
-				'extend-section',
-				'oceanSectionCustomize',
-				$customize_loc
+			$section_customize = array(
+				'isOE' => isset( $customize_loc['isOE'] ) ? $customize_loc['isOE'] : false,
 			);
+
+			if ( wp_script_is( 'oe-customize-script', 'enqueued' ) ) {
+				wp_localize_script(
+					'oe-customize-script',
+					'oceanSectionCustomize',
+					$section_customize
+				);
+			} elseif (
+				! $this->is_composite_customizer_enabled() ||
+				$this->has_legacy_customizer_sections
+			) {
+				wp_localize_script(
+					'extend-section',
+					'oceanSectionCustomize',
+					$section_customize
+				);
+			}
 		}
 
 		global $wp_version;
@@ -503,6 +918,7 @@ class OceanWP_Customizer_Init {
 				'customFonts' => function_exists( 'ocean_add_custom_fonts' ) ? ocean_add_custom_fonts() : array(),
 				'customizerFonts' => $this->get_customizer_fonts(),
 				'colorPalettes' => oceanwp_default_color_palettes(),
+				'icons' => ocean_get_customize_control_icons(),
 			)
 		);
 	}
@@ -538,8 +954,16 @@ class OceanWP_Customizer_Init {
 			'ocean-customize-preview',
 			'oceanCustomizePreview',
 			array(
-				'options' => ocean_get_customize_settings_data(),
-				'googleFonts' => oceanwp_google_fonts_array()
+				'options'            => ocean_get_customize_preview_data(),
+				'standardFonts'      => oceanwp_standard_fonts(),
+				'customFonts'        => function_exists( 'ocean_add_custom_fonts' ) ? ocean_add_custom_fonts() : array(),
+				'googleFontsEnabled' => (bool) get_theme_mod( 'ocean_enable_google_fonts', ocean_inherit_legacy_google_settings() ),
+				'integrations'       => array(
+					'woocommerce' => OCEANWP_WOOCOMMERCE_ACTIVE,
+					'edd'         => OCEANWP_EDD_ACTIVE,
+					'learndash'   => OCEANWP_LEARNDASH_ACTIVE,
+					'lifterlms'   => OCEANWP_LIFTERLMS_ACTIVE,
+				),
 			)
 		);
 	}

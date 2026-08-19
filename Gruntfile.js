@@ -279,6 +279,7 @@ module.exports = function (grunt) {
           implementation: sass,
           outputStyle: "expanded",
           sourceMap: false,
+          charset: false,
         },
         files: {
           "assets/css/woo/woocommerce.css": "sass/woocommerce.scss",
@@ -307,6 +308,7 @@ module.exports = function (grunt) {
           implementation: sass,
           outputStyle: "compressed",
           sourceMap: false,
+          charset: false,
         },
         files: {
           "style.css": "sass/style.scss",
