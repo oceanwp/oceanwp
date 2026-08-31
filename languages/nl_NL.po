@@ -11599,7 +11599,7 @@ msgstr "Menupositie"
 #~ "according to the WordPress guidelines."
 #~ msgstr ""
 #~ "Gelieve contact op te nemen met de aanbieder van de plugin en vraag hen "
-#~ "de plugin aan te leveren volgens de Wordpress richtlijnen."
+#~ "de plugin aan te leveren volgens de WordPress richtlijnen."
 
 #~ msgid ""
 #~ "The remote plugin package consists of more than one file, but the files "

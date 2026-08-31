@@ -18,8 +18,14 @@ class WooResetVariations {
         .querySelectorAll("select")
         .forEach((select) => {
           setTimeout(() => {
-            select.nextSibling.innerHTML =
-              select.options[select.selectedIndex].text;
+            const customSelectLabel = select.nextElementSibling?.querySelector(
+              ".theme-selectInner"
+            );
+
+            if (customSelectLabel) {
+              customSelectLabel.textContent =
+                select.options[select.selectedIndex]?.text || "";
+            }
           }, 100);
         });
     });

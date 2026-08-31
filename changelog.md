@@ -1,5 +1,9 @@
 # OceanWP Changelog
 
+### _2026.08.31_ - 4.2.4
+- **Fixed**:: WooCommerce: Variable Products: Disabling 'Custom Select' via Customizer > Performance, causes the 'Clear' button to display an incorrect label after clearing the variation selection.
+- **Fixed**:: WooCommerce: Variable Products: After clearing variation selection, the UI doesn't update when a new variation is selected.
+
 ### _2026.08.18_ - 4.2.3
 - **Added**:: Compatibility: WordPress 7.1.
 - **Added**:: Compatibility: WooCommerce 11.

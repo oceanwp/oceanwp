@@ -349,7 +349,7 @@ msgstr ""
 #: inc/activation-notice/template.php:305
 #, fuzzy
 msgid "WordPress widgets,"
-msgstr "Wordpress Arkivnavn"
+msgstr "WordPress Arkivnavn"
 
 #: inc/activation-notice/template.php:306
 msgid "Metabox settings to control pages and posts individually,"
@@ -9366,7 +9366,7 @@ msgstr ""
 #: inc/themepanel/views/panes/extra-settings.php:64
 #, fuzzy
 msgid "WordPress Widgets"
-msgstr "Wordpress Arkivnavn"
+msgstr "WordPress Arkivnavn"
 
 #: inc/themepanel/views/panes/extra-settings.php:66
 msgid ""
@@ -9576,7 +9576,7 @@ msgstr ""
 #: inc/themepanel/views/panes/help.php:127
 #, fuzzy
 msgid "WordPress Forum"
-msgstr "Wordpress Arkivnavn"
+msgstr "WordPress Arkivnavn"
 
 #: inc/themepanel/views/panes/help.php:128
 msgid ""
@@ -11455,7 +11455,7 @@ msgstr "Element Placeringer"
 #~ "according to the WordPress guidelines."
 #~ msgstr ""
 #~ "Venligst kontakt Plugin udbyderen, og bed dem om at pakke deres Plugin i "
-#~ "forhold til Wordpress’ retningslinjer."
+#~ "forhold til WordPress’ retningslinjer."
 
 #~ msgid ""
 #~ "The remote plugin package consists of more than one file, but the files "
