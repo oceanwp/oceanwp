@@ -58,7 +58,7 @@ msgstr ""
 "und vieles mehr. Als Entwickler wirst Du OceanWPs erweiterbare Codebasis "
 "lieben, mit der Du das Theme nach Deinen Vorstellungen anpassen und "
 "erweitern kannst. Du bist auf der Suche nach einem vielfältigen und "
-"flexiblen Wordpress-Theme? Dann hast Du es jetzt gefunden!"
+"flexiblen WordPress-Theme? Dann hast Du es jetzt gefunden!"
 
 #. Author URI of the theme
 #: style.css
