@@ -3721,6 +3721,11 @@ li.wc-gzd {
   margin-top: 10px;
 }
 
+.woocommerce.single-product .woocommerce-product-gallery__wrapper video {
+  max-width: 100%;
+  height: auto;
+}
+
 /*.product_meta {
 	.tagged_as::before {
 		@include font-awesome();
