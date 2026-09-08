@@ -4180,19 +4180,18 @@ if ( ! function_exists( 'oceanwp_tm_translation' ) ) {
 
 	function oceanwp_tm_translation( $id, $val = '' ) {
 
-		// Translate theme mod val
+		// Translate theme mod val.
 		if ( $val ) {
 
-			// Polylang Translation
+			// Polylang Translation.
 			if ( function_exists( 'pll__' ) && $id ) {
 				$val = pll__( $val );
 			}
 
-			// Return the value
-			return $val;
-
 		}
 
+		// Always return the supplied/translated value, including empty strings.
+		return $val;
 	}
 }
 

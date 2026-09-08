@@ -1,5 +1,10 @@
 # OceanWP Changelog
 
+### _2026.09.08_ - 4.2.5
+- **Added**:: Compatibility: WooCommerce 11.1.
+- **Improved**:: Language: Polylang: Existing helper function for Polylang supported translations always returns empty string instead of 'null' when no text exists.
+- **Updated**:: Template: .../woocommerce/single-product/product-image.php
+
 ### _2026.08.31_ - 4.2.4
 - **Fixed**:: WooCommerce: Variable Products: Disabling 'Custom Select' via Customizer > Performance, causes the 'Clear' button to display an incorrect label after clearing the variation selection.
 - **Fixed**:: WooCommerce: Variable Products: After clearing variation selection, the UI doesn't update when a new variation is selected.

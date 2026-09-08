@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 4.2.4\n"
+"Project-Id-Version: OceanWP 4.2.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-31T08:30:57+00:00\n"
+"POT-Creation-Date: 2026-09-08T07:33:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: oceanwp\n"
@@ -19,9 +19,9 @@ msgstr ""
 #: style.css:2
 #: style.css:8
 #: inc/helpers.php:4088
-#: inc/helpers.php:5267
+#: inc/helpers.php:5266
+#: inc/helpers.php:5284
 #: inc/helpers.php:5285
-#: inc/helpers.php:5286
 msgid "OceanWP"
 msgstr ""
 
@@ -936,8 +936,8 @@ msgid "Header Search Form Label"
 msgstr ""
 
 #: inc/customizer/options/a11y.php:131
-#: inc/helpers.php:5095
-#: inc/helpers.php:5896
+#: inc/helpers.php:5094
+#: inc/helpers.php:5895
 #: inc/oceanwp-strings.php:53
 msgid "Search this website"
 msgstr ""
@@ -2232,7 +2232,7 @@ msgid "Image Size"
 msgstr ""
 
 #: inc/customizer/options/blog.php:316
-#: inc/helpers.php:4333
+#: inc/helpers.php:4332
 msgid "Medium"
 msgstr ""
 
@@ -5675,7 +5675,7 @@ msgstr ""
 
 #: inc/customizer/options/header.php:3107
 #: inc/customizer/options/header.php:5644
-#: inc/helpers.php:4213
+#: inc/helpers.php:4212
 #: partials/mobile/mobile-icon.php:40
 msgid "Menu"
 msgstr ""
@@ -6167,7 +6167,7 @@ msgid "Mobile Close Button Text"
 msgstr ""
 
 #: inc/customizer/options/header.php:5749
-#: inc/helpers.php:4215
+#: inc/helpers.php:4214
 #: partials/mobile/mobile-sidr-close.php:31
 msgid "Close Menu"
 msgstr ""
@@ -6181,7 +6181,7 @@ msgid "Close Menu Text"
 msgstr ""
 
 #: inc/customizer/options/header.php:5773
-#: inc/helpers.php:4214
+#: inc/helpers.php:4213
 #: partials/mobile/mobile-icon.php:45
 #: inc/customizer/assets/dist/index.js:1
 #: inc/customizer/assets/dist/index.js:9
@@ -7621,7 +7621,7 @@ msgid "Filter Button Text"
 msgstr ""
 
 #: inc/customizer/options/woocommerce.php:5010
-#: inc/helpers.php:4220
+#: inc/helpers.php:4219
 #: inc/woocommerce/woocommerce-config.php:1117
 msgid "Filter"
 msgstr ""
@@ -8411,149 +8411,149 @@ msgstr ""
 msgid "Vortex Reverse"
 msgstr ""
 
-#: inc/helpers.php:4216
+#: inc/helpers.php:4215
 msgid "Copyright [oceanwp_date] - WordPress Theme by OceanWP"
 msgstr ""
 
-#: inc/helpers.php:4241
+#: inc/helpers.php:4240
 msgid "X"
 msgstr ""
 
-#: inc/helpers.php:4245
+#: inc/helpers.php:4244
 msgid "Facebook"
 msgstr ""
 
-#: inc/helpers.php:4249
+#: inc/helpers.php:4248
 msgid "Facebook Group"
 msgstr ""
 
-#: inc/helpers.php:4253
+#: inc/helpers.php:4252
 msgid "Slack"
 msgstr ""
 
-#: inc/helpers.php:4257
+#: inc/helpers.php:4256
 msgid "Threads"
 msgstr ""
 
-#: inc/helpers.php:4261
+#: inc/helpers.php:4260
 msgid "Pinterest"
 msgstr ""
 
-#: inc/helpers.php:4265
+#: inc/helpers.php:4264
 msgid "Dribbble"
 msgstr ""
 
-#: inc/helpers.php:4269
+#: inc/helpers.php:4268
 msgid "VK"
 msgstr ""
 
-#: inc/helpers.php:4273
+#: inc/helpers.php:4272
 #: inc/themepanel/views/panes/free-vs-pro.php:77
 msgid "Instagram"
 msgstr ""
 
-#: inc/helpers.php:4277
+#: inc/helpers.php:4276
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/helpers.php:4281
+#: inc/helpers.php:4280
 msgid "Tumblr"
 msgstr ""
 
-#: inc/helpers.php:4285
+#: inc/helpers.php:4284
 msgid "Github"
 msgstr ""
 
-#: inc/helpers.php:4289
+#: inc/helpers.php:4288
 msgid "Flickr"
 msgstr ""
 
-#: inc/helpers.php:4293
+#: inc/helpers.php:4292
 msgid "Skype"
 msgstr ""
 
-#: inc/helpers.php:4297
+#: inc/helpers.php:4296
 msgid "Youtube"
 msgstr ""
 
-#: inc/helpers.php:4301
+#: inc/helpers.php:4300
 msgid "Vimeo"
 msgstr ""
 
-#: inc/helpers.php:4305
+#: inc/helpers.php:4304
 msgid "BlueSky"
 msgstr ""
 
-#: inc/helpers.php:4309
+#: inc/helpers.php:4308
 msgid "Vine"
 msgstr ""
 
-#: inc/helpers.php:4313
+#: inc/helpers.php:4312
 msgid "Xing"
 msgstr ""
 
-#: inc/helpers.php:4317
+#: inc/helpers.php:4316
 msgid "Yelp"
 msgstr ""
 
-#: inc/helpers.php:4321
+#: inc/helpers.php:4320
 msgid "RSS"
 msgstr ""
 
-#: inc/helpers.php:4325
+#: inc/helpers.php:4324
 #: inc/oceanwp-strings.php:88
 msgid "Email"
 msgstr ""
 
-#: inc/helpers.php:4329
+#: inc/helpers.php:4328
 msgid "TikTok"
 msgstr ""
 
-#: inc/helpers.php:4337
+#: inc/helpers.php:4336
 msgid "Telegram"
 msgstr ""
 
-#: inc/helpers.php:4341
+#: inc/helpers.php:4340
 msgid "Twitch"
 msgstr ""
 
-#: inc/helpers.php:4345
+#: inc/helpers.php:4344
 msgid "Line"
 msgstr ""
 
-#: inc/helpers.php:4349
+#: inc/helpers.php:4348
 msgid "QQ"
 msgstr ""
 
-#: inc/helpers.php:4353
+#: inc/helpers.php:4352
 msgid "Discord"
 msgstr ""
 
-#: inc/helpers.php:4357
+#: inc/helpers.php:4356
 msgid "Mastodon"
 msgstr ""
 
-#: inc/helpers.php:5266
+#: inc/helpers.php:5265
+#: inc/helpers.php:5275
 #: inc/helpers.php:5276
-#: inc/helpers.php:5277
 #: inc/themepanel/views/layout/header.php:26
 msgid "OceanWP Panel"
 msgstr ""
 
-#: inc/helpers.php:5326
+#: inc/helpers.php:5325
 #: inc/themepanel/views/panes/home.php:78
 msgid "We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date."
 msgstr ""
 
-#: inc/helpers.php:5327
+#: inc/helpers.php:5326
 msgid "Update and get the new Theme Panel"
 msgstr ""
 
-#: inc/helpers.php:5870
+#: inc/helpers.php:5869
 msgid "Play background video"
 msgstr ""
 
-#: inc/helpers.php:5876
+#: inc/helpers.php:5875
 msgid "Pause background video"
 msgstr ""
 
