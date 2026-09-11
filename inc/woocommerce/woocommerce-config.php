@@ -1517,7 +1517,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 
 				<li class="next-li">
 					<a href="<?php echo esc_url( get_the_permalink( $next_post->ID ) ); ?>" class="owp-nav-text next-text"><?php echo esc_html( oceanwp_theme_strings( 'owp-string-woo-nav-next-product', false ) ); ?></a>
-					<a href="<?php echo esc_url( get_the_permalink( $next_post->ID ) ); ?>" class="owp-nav-link next" rel="next" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-next-product', false ) ); ?>"><?php echo $prev_arrow; ?></i></a>
+					<a href="<?php echo esc_url( get_the_permalink( $next_post->ID ) ); ?>" class="owp-nav-link next" rel="next" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-next-product', false ) ); ?>"><?php echo $prev_arrow; ?></a>
 					<div class="owp-nav-thumb">
 						<a title="<?php echo esc_attr( get_the_title( $next_post->ID ) ); ?>" href="<?php echo esc_url( get_the_permalink( $next_post->ID ) ); ?>"><?php echo get_the_post_thumbnail( $next_post->ID, apply_filters( 'single_product_small_thumbnail_size', 'shop_thumbnail' ) ); ?></a>
 					</div>
