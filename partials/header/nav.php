@@ -71,13 +71,16 @@ if ( ! empty( $template ) && ! defined( 'OCEANWP_NAV_SHORTCODE_DONE' ) ) {
 
 		} else {
 
-			// If Gutenberg.
+			// If Gutenberg, process trusted template shortcodes before rendering blocks.
 			if ( ocean_is_block_template( $template ) ) {
+				$get_content = do_shortcode( $get_content );
 				$get_content = apply_filters( 'oceanwp_nav_template_content', do_blocks( $get_content ) );
+			} else {
+				$get_content = do_shortcode( $get_content );
 			}
 
-			// Display template content.
-			echo do_shortcode( $get_content );
+			// Display template content without re-processing dynamic block output.
+			echo $get_content;
 
 		}
 		?>

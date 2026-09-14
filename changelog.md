@@ -1,5 +1,8 @@
 # OceanWP Changelog
 
+### _2026.09.14_ - 4.2.6
+- **Improved**:: Customizer: Custom Templates: Gutenberg template processing and rendering.
+
 ### _2026.09.08_ - 4.2.5
 - **Added**:: Compatibility: WooCommerce 11.1.
 - **Improved**:: Language: Polylang: Existing helper function for Polylang supported translations always returns empty string instead of 'null' when no text exists.
