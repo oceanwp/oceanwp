@@ -91,13 +91,16 @@ if ( 'on' === get_theme_mod( 'ocean_error_page_blank', 'off' ) ) { ?>
 
 												} else {
 
-													// If Gutenberg.
+													// If Gutenberg, process trusted template shortcodes before rendering blocks.
 													if ( ocean_is_block_template( $get_id ) ) {
+														$get_content = do_shortcode( $get_content );
 														$get_content = apply_filters( 'ocean_error_page_template_content', do_blocks( $get_content ) );
+													} else {
+														$get_content = do_shortcode( $get_content );
 													}
 
-													// Display template content.
-													echo do_shortcode( $get_content );
+													// Display template content without re-processing dynamic block output.
+													echo $get_content;
 
 												}
 											} else {

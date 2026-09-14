@@ -48,12 +48,15 @@ else if ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $get_id, 'panels
 // Else
 else {
 
-	// If Gutenberg.
+	// If Gutenberg, process trusted template shortcodes before rendering blocks.
 	if ( ocean_is_block_template( $get_id ) ) {
+		$content = do_shortcode( $content );
 		$content = apply_filters( 'ocean_mega_menu_template_content', do_blocks( $content ) );
+	} else {
+		$content = do_shortcode( $content );
 	}
 
-	// Display template content.
-	echo do_shortcode( $content );
+	// Display template content without re-processing dynamic block output.
+	echo $content;
 
 }
