@@ -41,7 +41,7 @@ $heading = apply_filters( 'single_ocean_header_2_h_tag', $heading );
 
 			<header class="blog-post-title">
 
-				<?php the_title( '<' . esc_attr( $heading ) . ' class="single-post-title">', '</' . esc_attr( $heading ) . '>' ); ?>
+				<?php the_title( '<' . esc_attr( $heading ) . ' class="single-post-title"' . oceanwp_get_schema_markup( 'headline' ) . '>', '</' . esc_attr( $heading ) . '>' ); ?>
 
 				<?php if ( true === $display_sph_meta ) { ?>
 

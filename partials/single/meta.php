@@ -48,15 +48,15 @@ do_action( 'ocean_before_single_post_meta' );
 		?>
 
 		<?php if ( 'author' === $section ) { ?>
-			<li class="meta-author"<?php oceanwp_schema_markup( 'author_name' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post author:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'user' ); ?><?php echo esc_html( the_author_posts_link() ); ?></li>
+			<li class="meta-author"<?php oceanwp_schema_markup( 'author_link' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post author:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'user' ); ?><span<?php oceanwp_schema_markup( 'author_name' ); ?>><?php the_author_posts_link(); ?></span></li>
 		<?php } ?>
 
 		<?php if ( 'date' === $section ) { ?>
-			<li class="meta-date"<?php oceanwp_schema_markup( 'publish_date' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post published:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'date' ); ?><?php echo get_the_date(); ?></li>
+			<li class="meta-date"><span class="screen-reader-text"><?php esc_html_e( 'Post published:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'date' ); ?><?php ocean_get_post_date( array( 'prefix' => '' ) ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'mod-date' === $section && true === $display_mod_date ) { ?>
-			<li class="meta-mod-date"<?php oceanwp_schema_markup( 'modified_date' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post last modified:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'm_date' ); ?><?php echo esc_html( get_the_modified_date() ); ?></li>
+			<li class="meta-mod-date"><span class="screen-reader-text"><?php esc_html_e( 'Post last modified:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'm_date' ); ?><?php ocean_get_post_modified_date( array( 'prefix' => '' ) ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'categories' === $section && has_category() ) { ?>

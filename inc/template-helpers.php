@@ -74,10 +74,18 @@ if ( ! function_exists( 'ocean_get_post_author' ) ) {
 			esc_html( get_the_author() )
 		);
 
+		$author_schema      = oceanwp_get_schema_markup( 'author_link' );
+		$author_name_schema = oceanwp_get_schema_markup( 'author_name' );
+		$author_name        = esc_html( get_the_author_meta( 'display_name', $author_id ) );
+
+		if ( $author_schema ) {
+			$author_name = '<span' . $author_name_schema . '>' . $author_name . '</span>';
+		}
+
 		$author = sprintf(
 			/* translators: %s: author name for link meta. */
 			esc_html( $args['prefix'] . ' ' . __( '%s', 'oceanwp' ) ),
-			'<a href="' . esc_url( get_author_posts_url( $author_id ) ) . '" rel="author" aria-label="' . esc_attr( $aria_label ) . '">' . esc_html( get_the_author_meta( 'display_name', $author_id ) )  . '</a>'
+			'<a href="' . esc_url( get_author_posts_url( $author_id ) ) . '" rel="author" aria-label="' . esc_attr( $aria_label ) . '"' . $author_schema . '>' . $author_name . '</a>'
 		);
 
 		$author_meta = $args['before'] . $author . $args['after'];
@@ -133,7 +141,7 @@ if ( ! function_exists( 'ocean_get_post_date' ) ) {
 
 	function ocean_get_post_date( $args = array(), $echo = true ) {
 
-		$format = 'F j, Y';
+		$format = get_option( 'date_format' );
 		$format = apply_filters( 'ocean_get_post_date_format', $format );
 
 		$default_args = array(
@@ -149,12 +157,13 @@ if ( ! function_exists( 'ocean_get_post_date' ) ) {
 
 		$date_format = $args['date_format'];
 
-		$time_string = '<time class="meta-date published" datetime-local="%1$s">%2$s</time>';
+		$time_string = '<time class="meta-date published" datetime="%1$s"%3$s>%2$s</time>';
 
 		$time_string = sprintf(
 			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date( $date_format ) )
+			esc_html( get_the_date( $date_format ) ),
+			oceanwp_get_schema_markup( 'publish_date' )
 		);
 
 		$date_meta = $args['before'] . $args['prefix'] . ' ' . $time_string . $args['after'];
@@ -177,7 +186,7 @@ if ( ! function_exists( 'ocean_get_post_modified_date' ) ) {
 
 	function ocean_get_post_modified_date( $args = array(), $echo = true ) {
 
-		$format = 'F j, Y';
+		$format = get_option( 'date_format' );
 		$format = apply_filters( 'ocean_get_post_modified_date_format', $format );
 
 		$default_args = array(
@@ -191,12 +200,13 @@ if ( ! function_exists( 'ocean_get_post_modified_date' ) ) {
 
 		$date_format = $args['date_format'];
 
-		$time_string = '<time class="meta-mod-date updated" datetime-local="%1$s">%2$s</time>';
+		$time_string = '<time class="meta-mod-date updated" datetime="%1$s"%3$s>%2$s</time>';
 
 		$time_string = sprintf(
 			$time_string,
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date( $date_format ) )
+			esc_html( get_the_modified_date( $date_format ) ),
+			oceanwp_get_schema_markup( 'modified_date' )
 		);
 
 		$date_mod_meta = esc_html( $args['prefix'] ) . ' ' . $time_string;
