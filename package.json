@@ -5,8 +5,13 @@
     "main": "Gruntfile.js",
     "scripts": {
         "start": "npm install && npm run build",
-        "build": "cross-env NODE_ENV=production webpack --mode production",
-        "dev": "cross-env NODE_ENV=development webpack --watch --mode development",
+        "build": "grunt",
+        "dev": "grunt watch",
+        "start:wp-env": "wp-env start",
+        "reset:wp-env": "wp-env reset all",
+        "stop:wp-env": "wp-env stop",
+        "destroy:wp-env": "wp-env destroy",
+        "shell:wp-env": "wp-env run cli /bin/bash",
         "lint:js": "eslint assets/src",
         "format:js": "eslint --fix assets/src",
         "make:json": "wp i18n make-json languages --no-purge"
@@ -20,6 +25,7 @@
         "@babel/preset-env": "^7.14.1",
         "@babel/preset-react": "^7.16.0",
         "@wordpress/babel-preset-default": "^6.3.2",
+        "@wordpress/env": "^11.16.0",
         "babel-loader": "^8.2.3",
         "babelify": "^10.0.0",
         "bootstrap": "^5.1.1",
