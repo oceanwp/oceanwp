@@ -14,7 +14,7 @@
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 11.0.0
+ * @version 11.2.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -33,12 +33,17 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 			$visible    = apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key );
 
 			if ( $_product instanceof WC_Product && $_product->exists() && $cart_item['quantity'] > 0 && $visible ) {
+				if ( is_callable( array( WC()->cart, 'get_item_product_name' ) ) ) {
+					$cart_item_name = WC()->cart->get_item_product_name( $cart_item, $_product );
+				} else {
+					$cart_item_name = $_product->get_name();
+				}
 				/**
 				 * This filter is documented in woocommerce/templates/cart/cart.php.
 				 *
 				 * @since 2.1.0
 				 */
-				$product_name      = apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key );
+				$product_name      = apply_filters( 'woocommerce_cart_item_name', $cart_item_name, $cart_item, $cart_item_key );
 				$thumbnail         = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
 				$product_price     = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
@@ -69,7 +74,14 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 									</h3>
 								<?php endif; ?>
 
-								<?php echo wc_get_formatted_cart_item_data( $cart_item ); ?>
+								
+								<?php
+								if ( is_callable( array( WC()->cart, 'get_item_product_name' ) ) ) {
+									echo wc_get_formatted_cart_item_data( $cart_item, false, $cart_item_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								} else {
+									echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								}
+								?>
 
 								<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
 								<?php

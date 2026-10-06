@@ -32,7 +32,7 @@ $inner_classes[] = $ver_position;
 // Turn inner classes into space seperated string.
 $inner_classes = implode( ' ', $inner_classes ); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?><?php oceanwp_schema_markup( 'blog_posting' ); ?>>
 
 	<div class="blog-entry-inner clr <?php echo esc_attr( $inner_classes ); ?>">
 

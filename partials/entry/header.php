@@ -23,7 +23,7 @@ $link_target = ocean_link_post_url_target( get_the_ID() );
 <?php do_action( 'ocean_before_blog_entry_title' ); ?>
 
 <header class="blog-entry-header clr">
-	<<?php echo esc_attr( $heading ); ?> class="blog-entry-title entry-title">
+	<<?php echo esc_attr( $heading ); ?> class="blog-entry-title entry-title"<?php oceanwp_schema_markup( 'headline' ); ?>>
 		<a href="<?php echo esc_url( $post_link ); ?>" <?php if ( $link_target ) { ?> target="<?php echo esc_attr( $link_target ); ?>" <?php } ?> rel="bookmark"><?php the_title(); ?></a>
 	</<?php echo esc_attr( $heading ); ?>><!-- .blog-entry-title -->
 </header><!-- .blog-entry-header -->

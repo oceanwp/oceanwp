@@ -171,6 +171,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 					}
 					add_action( 'wp_ajax_oceanwp_product_quick_view', array( $this, 'product_quick_view_ajax' ) );
 					add_action( 'wp_ajax_nopriv_oceanwp_product_quick_view', array( $this, 'product_quick_view_ajax' ) );
+					add_action( 'wp_ajax_oceanwp_add_cart_quick_view', array( $this, 'add_cart_quick_view_ajax' ) );
+					add_action( 'wp_ajax_nopriv_oceanwp_add_cart_quick_view', array( $this, 'add_cart_quick_view_ajax' ) );
 					add_action( 'wp_footer', array( $this, 'quick_view_template' ) );
 					add_action( 'ocean_woo_quick_view_product_image', 'woocommerce_show_product_sale_flash', 10 );
 					add_action( 'ocean_woo_quick_view_product_image', array( $this, 'quick_view_image' ), 20 );
@@ -944,9 +946,8 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 */
 		public static function localize_array( $array ) {
 
-			// If single product ajax add to cart
+			// If single product ajax add to cart.
 			if ( true == get_theme_mod( 'ocean_woo_product_ajax_add_to_cart', false ) ) {
-				$array['is_cart']  = is_cart();
 				$array['cart_url'] = apply_filters( 'ocean_woocommerce_add_to_cart_redirect', wc_get_cart_url() );
 			}
 
@@ -959,13 +960,24 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$array['next']                   = esc_html__( 'Next', 'oceanwp' );
 			}
 
-			// If quick view, ajax add to cart or floating bar
+			// If quick view, ajax add to cart or floating bar.
 			if ( get_theme_mod( 'ocean_woo_quick_view', true )
 				|| true == get_theme_mod( 'ocean_woo_product_ajax_add_to_cart', false )
 				|| 'on' == get_theme_mod( 'ocean_woo_display_floating_bar', 'on' ) ) {
-				$array['ajax_url']                = admin_url( 'admin-ajax.php' );
-				$array['cart_url']                = apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url(), null );
-				$array['cart_redirect_after_add'] = get_option( 'woocommerce_cart_redirect_after_add' );
+				/**
+				 * Filters product types supported by OceanWP AJAX add-to-cart flows.
+				 *
+				 * @since 4.2.7
+				 *
+				 * @param array $product_types Supported product type slugs.
+				 */
+				$supported_product_types = (array) apply_filters( 'ocean_woo_ajax_add_to_cart_supported_product_types', array( 'simple', 'variable' ) );
+
+				$array['ajax_url']                    = admin_url( 'admin-ajax.php' );
+				$array['cart_url']                    = apply_filters( 'woocommerce_add_to_cart_redirect', wc_get_cart_url(), null );
+				$array['cart_redirect_after_add']     = get_option( 'woocommerce_cart_redirect_after_add' );
+				$array['is_cart']                     = is_cart();
+				$array['woo_ajax_supported_products'] = array_values( $supported_product_types );
 			}
 
 			// Add the View Cart here to avoid the undefined word on the related products
@@ -989,18 +1001,134 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.0
 		 */
 		public static function add_cart_single_product_ajax() {
+			self::process_ajax_add_to_cart( 'single_product' );
+		}
 
-			$product_id   = sanitize_text_field( $_POST['product_id'] );
-			$variation_id = sanitize_text_field( $_POST['variation_id'] );
-			$variation    = $_POST['variation'];
-			$quantity     = sanitize_text_field( $_POST['quantity'] );
+		/**
+		 * Quick View add to cart ajax request.
+		 *
+		 * @since 4.2.7
+		 */
+		public static function add_cart_quick_view_ajax() {
+			self::process_ajax_add_to_cart( 'quick_view' );
+		}
 
-			if ( $variation_id ) {
-				WC()->cart->add_to_cart( $product_id, $quantity, $variation_id, $variation );
-			} else {
-				WC()->cart->add_to_cart( $product_id, $quantity );
+		/**
+		 * Process OceanWP WooCommerce AJAX add-to-cart requests.
+		 *
+		 * @since 4.2.7
+		 *
+		 * @param string $context Request context.
+		 */
+		private static function process_ajax_add_to_cart( $context = 'single_product' ) {
+
+			if ( ! isset( $_POST['product_id'] ) ) {
+				wp_send_json(
+					array(
+						'error'       => true,
+						'notices'     => '',
+						'product_url' => '',
+					)
+				);
 			}
-			die();
+
+			$product_id              = apply_filters( 'woocommerce_add_to_cart_product_id', absint( wp_unslash( $_POST['product_id'] ) ) );
+			$variation_id            = isset( $_POST['variation_id'] ) ? absint( wp_unslash( $_POST['variation_id'] ) ) : 0;
+			$quantity                = isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : 1;
+			$variation               = array();
+			$product                 = wc_get_product( $product_id );
+			$product_status          = get_post_status( $product_id );
+			$supported_product_types = (array) apply_filters( 'ocean_woo_ajax_add_to_cart_supported_product_types', array( 'simple', 'variable' ) );
+
+			if ( $product && $product->is_type( $supported_product_types ) ) {
+				// phpcs:ignore WordPress.Security.NonceVerification.Missing
+				foreach ( $_POST as $key => $value ) {
+					if ( 0 !== strpos( $key, 'attribute_' ) || ! is_scalar( $value ) ) {
+						continue;
+					}
+
+					$variation[ sanitize_title( wp_unslash( $key ) ) ] = wc_clean( wp_unslash( $value ) );
+				}
+			}
+
+			$added_to_cart    = false;
+			$unexpected_output = '';
+			$buffer_level      = ob_get_level();
+
+			ob_start(
+				static function ( $output ) use ( &$unexpected_output ) {
+					$unexpected_output .= $output;
+					return '';
+				}
+			);
+
+			try {
+				if ( $product && 'publish' === $product_status && $product->is_type( $supported_product_types ) && $product->is_type( 'variable' ) ) {
+					$passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variation );
+
+					if ( $passed_validation ) {
+						$added_to_cart = false !== WC()->cart->add_to_cart( $product_id, $quantity, $variation_id, $variation );
+					}
+				} elseif ( $product && 'publish' === $product_status && $product->is_type( $supported_product_types ) ) {
+					$passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity );
+
+					if ( $passed_validation ) {
+						$added_to_cart = false !== WC()->cart->add_to_cart( $product_id, $quantity );
+					}
+				}
+
+				if ( $added_to_cart ) {
+					do_action( 'woocommerce_ajax_added_to_cart', $product_id );
+
+					/**
+					 * Match WooCommerce's native AJAX add-to-cart request lifecycle.
+					 */
+					do_action( 'internal_woocommerce_cart_item_added_from_user_request', $variation_id ? $variation_id : $product_id, $quantity );
+
+					if ( 'yes' === get_option( 'woocommerce_cart_redirect_after_add' ) ) {
+						wc_add_to_cart_message( array( $product_id => $quantity ), true );
+					}
+				}
+			} finally {
+				while ( ob_get_level() > $buffer_level ) {
+					ob_end_clean();
+				}
+			}
+
+			if ( '' !== $unexpected_output && defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+				error_log( // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+					sprintf(
+						'OceanWP AJAX add-to-cart discarded %d bytes of unexpected output in the %s context.',
+						strlen( $unexpected_output ),
+						$context
+					)
+				);
+			}
+
+			if ( $added_to_cart ) {
+				WC_AJAX::get_refreshed_fragments();
+			}
+
+			$notices = function_exists( 'wc_print_notices' ) ? wc_print_notices( true ) : '';
+
+			/**
+			 * Filters WooCommerce notice HTML returned after a failed OceanWP AJAX add-to-cart request.
+			 *
+			 * @since 4.2.7
+			 *
+			 * @param string $notices    Rendered WooCommerce notices.
+			 * @param int    $product_id Product ID submitted by the AJAX request.
+			 * @param string $context    Request context: single_product, quick_view or floating_bar.
+			 */
+			$notices = apply_filters( 'ocean_woo_ajax_add_to_cart_notices_html', $notices, $product_id, $context );
+
+			wp_send_json(
+				array(
+					'error'       => true,
+					'notices'     => $notices,
+					'product_url' => $product ? apply_filters( 'woocommerce_cart_redirect_after_error', get_permalink( $product_id ), $product_id ) : '',
+				)
+			);
 
 		}
 
@@ -1651,18 +1779,11 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 		 * @since 1.5.0
 		 */
 		public static function add_cart_floating_bar_ajax() {
-			if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'oceanwp' ) ) {
+			if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'oceanwp' ) ) {
 				wp_die();
 			}
 
-			$product_id = sanitize_text_field( $_POST['product_id'] );
-			$quantity   = sanitize_text_field( $_POST['quantity'] );
-
-			$cart_item_key = WC()->cart->add_to_cart( $product_id, $quantity );
-
-			echo $cart_item_key;
-			wp_die();
-
+			self::process_ajax_add_to_cart( 'floating_bar' );
 		}
 
 		/**

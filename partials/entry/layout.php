@@ -34,7 +34,7 @@ if ( 'thumbnail-entry' === $style ) {
 	// Add classes to the blog entry post class.
 	$classes = oceanwp_post_entry_classes(); ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?><?php oceanwp_schema_markup( 'blog_posting' ); ?>>
 
 		<div class="blog-entry-inner clr">
 

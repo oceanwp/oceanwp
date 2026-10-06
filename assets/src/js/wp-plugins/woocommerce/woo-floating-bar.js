@@ -1,8 +1,6 @@
 import { options } from "../../constants";
 import { offset } from "../../lib/utils";
 import delegate from "delegate";
-import axios from "axios";
-import qs from "qs";
 
 class WooFloatingBar {
   #elements = {
@@ -12,7 +10,7 @@ class WooFloatingBar {
   #tabsTopOffset;
 
   constructor() {
-    if (!!this.#elements.floatingBar) {
+    if (this.#elements.floatingBar) {
       this.#setElements();
       this.#start();
       this.#setupEventListeners();
@@ -23,21 +21,23 @@ class WooFloatingBar {
     this.#elements = {
       ...this.#elements,
       header: document.querySelector("#site-header"),
+      product: document.querySelector(".woocommerce div.product"),
       productTabs: document.querySelector(
         ".woocommerce div.product .woocommerce-tabs"
       ),
       WPAdminbar: document.querySelector("#wpadminbar"),
       productCarts: document.querySelectorAll(".woocommerce div.product .cart"),
       html: document.querySelector("html"),
-      quantity: document.querySelector('input[name="quantity"]'),
     };
   };
 
-  #start = () => {};
+  #start = () => {
+    this.#onDocumentScroll();
+    this.#onWindowScroll();
+  };
 
   #setupEventListeners = () => {
     document.addEventListener("scroll", this.#onDocumentScroll);
-
     window.addEventListener("scroll", this.#onWindowScroll);
 
     this.#elements.floatingBar
@@ -46,67 +46,60 @@ class WooFloatingBar {
 
     delegate(
       document.body,
-      ".owp-floating-bar .floating_add_to_cart_button",
+      ".owp-floating-bar .floating_add_to_cart_button:not(.disabled)",
       "click",
       this.#onAddToCartBtnClick
     );
 
     /**
-     * Because Woocommerce plugin uses jQuery custom event,
-     * We also have to use jQuery to customize this event
+     * Because WooCommerce uses jQuery custom events,
+     * we also use jQuery for compatibility with WooCommerce and extensions.
      */
     jQuery(document.body).on("added_to_cart", this.#updateCart);
   };
 
-  #onDocumentScroll = (event) => {
+  #onDocumentScroll = () => {
     const header = this.#elements.header;
     const stickyTopbarWrapper = document.querySelector(
       "#top-bar-sticky-wrapper"
     );
 
     this.#offset = 0;
-    this.#tabsTopOffset = !!this.#elements.productTabs
+    this.#tabsTopOffset = this.#elements.productTabs
       ? offset(this.#elements.productTabs).top
       : 0;
 
-    // Adminbar offset
-    if (!!this.#elements.WPAdminbar && window.innerWidth > 600) {
-      this.#offset = this.#offset + this.#elements.WPAdminbar.offsetHeight;
+    if (this.#elements.WPAdminbar && window.innerWidth > 600) {
+      this.#offset += this.#elements.WPAdminbar.offsetHeight;
     }
 
-    // Sticky topbar offset
-    if (!!stickyTopbarWrapper) {
-      this.#offset = this.#offset + stickyTopbarWrapper.offsetHeight;
+    if (stickyTopbarWrapper) {
+      this.#offset += stickyTopbarWrapper.offsetHeight;
     }
 
-    // Sticky header
-    if (!!header) {
+    if (header) {
       if (header.classList.contains("top-header")) {
-        this.#offset =
-          this.#offset + header.querySelector(".header-top")?.offsetHeight;
+        this.#offset += header.querySelector(".header-top")?.offsetHeight || 0;
       } else if (header.classList.contains("medium-header")) {
         if (
           header
             .querySelector(".bottom-header-wrap")
             ?.classList.contains("fixed-scroll")
         ) {
-          this.#offset =
-            this.#offset +
-            header.querySelector(".bottom-header-wrap").offsetHeight;
+          this.#offset +=
+            header.querySelector(".bottom-header-wrap")?.offsetHeight || 0;
         } else {
-          this.#offset =
-            this.#offset +
+          this.#offset +=
             document.querySelector(".is-sticky #site-header-inner")
-              ?.offsetHeight;
+              ?.offsetHeight || 0;
         }
       } else if (
         header.classList.contains("center-header") ||
         header.classList.contains("custom-header")
       ) {
-        this.#offset = this.#offset + header.offsetHeight;
+        this.#offset += header.offsetHeight;
       } else if (header.classList.contains("fixed-scroll")) {
-        this.#offset =
-          this.#offset + parseInt(header.getAttribute("data-height"));
+        this.#offset += parseInt(header.getAttribute("data-height"), 10) || 0;
       }
     }
 
@@ -116,26 +109,24 @@ class WooFloatingBar {
     this.#elements.floatingBar.style.top = `${this.#offset}px`;
   };
 
-  #onWindowScroll = (event) => {
+  #onWindowScroll = () => {
     if (this.#tabsTopOffset !== 0) {
       if (window.pageYOffset > this.#tabsTopOffset) {
         this.#elements.floatingBar.classList.add("show");
       } else {
         this.#elements.floatingBar.classList.remove("show");
       }
+    } else if (window.pageYOffset > this.#offset) {
+      this.#elements.floatingBar.classList.add("show");
     } else {
-      if (window.pageYOffset > this.#offset) {
-        this.#elements.floatingBar.classList.add("show");
-      } else {
-        this.#elements.floatingBar.classList.remove("show");
-      }
+      this.#elements.floatingBar.classList.remove("show");
     }
   };
 
   #onTopBtnClick = (event) => {
     event.preventDefault();
 
-    if (!!this.#elements.productCarts) {
+    if (this.#elements.productCarts.length) {
       const scrollPosition =
         offset(this.#elements.productCarts[0]).top - this.#offset;
 
@@ -147,62 +138,158 @@ class WooFloatingBar {
   };
 
   #onAddToCartBtnClick = (event) => {
+    const addToCartBtn = event.delegateTarget;
+    const form = addToCartBtn.closest("form.cart");
+
+    if (!form) {
+      return;
+    }
+
+    const formData = this.#getFormData(form, addToCartBtn);
+
+    if (!formData) {
+      return;
+    }
+
     event.preventDefault();
 
-    const addToCartBtn = event.delegateTarget;
-    const productID = addToCartBtn.value;
-    const quantity = this.#elements.quantity.value;
+    this.#clearNotices();
 
+    addToCartBtn.disabled = true;
     addToCartBtn.classList.remove("added");
     addToCartBtn.classList.add("loading");
 
-    axios
-      .post(
-        options.ajax_url,
-        qs.stringify({
-          action: "oceanwp_add_cart_floating_bar",
-          nonce: options.nonce,
-          product_id: productID,
-          quantity: quantity,
-        })
-      )
-      .then(({ data }) => {
-        /**
-         * Because Woocommerce plugin uses jQuery custom event,
-         * We also have to use jQuery to customize this event
-         */
-        jQuery(document.body).trigger("wc_fragment_refresh");
+    jQuery(document.body).trigger("adding_to_cart", [
+      jQuery(addToCartBtn),
+      this.#formDataToArray(formData),
+    ]);
+
+    jQuery.ajax({
+      type: "POST",
+      url: options.ajax_url,
+      data: formData,
+      processData: false,
+      contentType: false,
+
+      success: (response) => {
+        if (response && response.error) {
+          this.#renderNotices(response.notices);
+
+          jQuery(document.body).trigger("oceanwp_ajax_add_to_cart_error", [
+            response,
+            jQuery(addToCartBtn),
+            "floating_bar",
+          ]);
+
+          return;
+        }
+
+        if (!response || !response.fragments) {
+          jQuery(document.body).trigger("oceanwp_ajax_add_to_cart_error", [
+            response,
+            jQuery(addToCartBtn),
+            "floating_bar",
+          ]);
+
+          return;
+        }
+
         jQuery(document.body).trigger("added_to_cart", [
-          data.fragments,
-          data.cart_hash,
+          response.fragments,
+          response.cart_hash,
           jQuery(addToCartBtn),
         ]);
 
-        // Redirect to cart option
         if (options.cart_redirect_after_add === "yes") {
           window.location = options.cart_url;
-          return;
         }
-      });
+      },
+
+      error: (xhr) => {
+        jQuery(document.body).trigger("oceanwp_ajax_add_to_cart_error", [
+          xhr,
+          jQuery(addToCartBtn),
+          "floating_bar",
+        ]);
+      },
+
+      complete: () => {
+        addToCartBtn.disabled = false;
+        addToCartBtn.classList.remove("loading");
+      },
+    });
   };
 
-  #updateCart = (e, fragments, cart_hash, $button) => {
+  #updateCart = (event, fragments, cartHash, $button) => {
     const cartBtn = typeof $button === "undefined" ? false : $button.get(0);
 
-    if (!!cartBtn) {
-      cartBtn.classList.remove("loading");
-      cartBtn.classList.add("added");
+    if (!cartBtn || !this.#elements.floatingBar.contains(cartBtn)) {
+      return;
+    }
 
-      // View cart text.
-      if (
-        !options.is_cart &&
-        !cartBtn.parentNode.querySelector(".added_to_cart")
-      ) {
-        cartBtn.insertAdjacentHTML(
-          "afterend",
-          `<a href="${options.cart_url}" class="added_to_cart wc-forward" title="${options.view_cart}">${options.view_cart}</a>`
-        );
-      }
+    cartBtn.classList.remove("loading");
+    cartBtn.classList.add("added");
+
+    if (!options.is_cart && !cartBtn.parentNode.querySelector(".added_to_cart")) {
+      cartBtn.insertAdjacentHTML(
+        "afterend",
+        `<a href="${options.cart_url}" class="added_to_cart wc-forward" title="${options.view_cart}">${options.view_cart}</a>`
+      );
+    }
+  };
+
+  #getFormData = (form, addToCartBtn) => {
+    const formData = new FormData(form);
+    const productId = formData.get("product_id") || addToCartBtn.value;
+
+    if (!productId) {
+      return false;
+    }
+
+    formData.delete("add-to-cart");
+    formData.set("product_id", productId);
+    formData.set("action", "oceanwp_add_cart_floating_bar");
+    formData.set("nonce", options.nonce);
+
+    return formData;
+  };
+
+  #formDataToArray = (formData) => {
+    const data = [];
+
+    formData.forEach((value, name) => {
+      data.push({ name, value });
+    });
+
+    return data;
+  };
+
+  #clearNotices = () => {
+    const noticesWrapper = document.querySelector(".woocommerce-notices-wrapper");
+
+    if (noticesWrapper) {
+      noticesWrapper.innerHTML = "";
+    }
+  };
+
+  #renderNotices = (notices) => {
+    if (!notices) {
+      return;
+    }
+
+    let noticesWrapper = document.querySelector(".woocommerce-notices-wrapper");
+
+    if (!noticesWrapper && this.#elements.product?.parentNode) {
+      noticesWrapper = document.createElement("div");
+      noticesWrapper.className = "woocommerce-notices-wrapper";
+      this.#elements.product.parentNode.insertBefore(
+        noticesWrapper,
+        this.#elements.product
+      );
+    }
+
+    if (noticesWrapper) {
+      noticesWrapper.innerHTML = notices;
     }
   };
 }

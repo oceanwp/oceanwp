@@ -9,7 +9,8 @@ class WooAjaxAddToCart {
   constructor() {
     if (
       typeof options === "undefined" ||
-      this.#elements.product.classList.contains("product-type-grouped")
+      !this.#elements.product ||
+      !this.#isSupportedProduct()
     ) {
       return;
     }
@@ -28,86 +29,109 @@ class WooAjaxAddToCart {
   #setupEventListeners = () => {
     delegate(
       this.#elements.body,
-      ".product:not(.product-type-external) .single_add_to_cart_button:not(.disabled)",
+      ".single_add_to_cart_button:not(.disabled):not(.buy_now_button):not([data-oceanwp-ajax-add-to-cart='false'])",
       "click",
       this.#onAddToCartBtnClick
     );
 
-    delegate(
-      this.#elements.body,
-      ".product:not(.product-type-external) .single_add_to_cart_button:not(.disabled)",
-      "touchend",
-      this.#onAddToCartBtnClick
-    );
-
     /**
-     * Because Woocommerce plugin uses jQuery custom event,
-     * We also have to use jQuery to customize this event.
+     * Because WooCommerce uses jQuery custom events,
+     * we also use jQuery for compatibility with WooCommerce and extensions.
      */
     jQuery("body").on("added_to_cart", this.#updateCart);
   };
 
   #onAddToCartBtnClick = (event) => {
-    event.preventDefault();
-
     const addToCartBtn = event.delegateTarget;
     const form = addToCartBtn.closest("form.cart");
-    const formData = this.#getFormData(form);
 
-    if (formData.some(({ name }) => name === "add-to-cart")) {
-      event.preventDefault();
+    if (!form || !this.#elements.product.contains(form)) {
+      return;
+    }
 
-      addToCartBtn.classList.remove("added");
-      addToCartBtn.classList.add("loading");
+    const formData = this.#getFormData(form, addToCartBtn);
 
-      /**
-       * Because Woocommerce plugin uses jQuery custom event,
-       * We also have to use jQuery to customize this event.
-       */
-      jQuery("body").trigger("adding_to_cart", [
-        jQuery(addToCartBtn),
-        formData,
-      ]);
+    if (!formData) {
+      return;
+    }
 
-      /**
-       * Because Woocommerce plugin uses jQuery dynamic nonce,
-       * We also have to use jQuery to customize.
-       */
-      jQuery.ajax({
-        type: "POST",
-        url: oceanwpLocalize.wc_ajax_url,
-        data: formData,
+    event.preventDefault();
 
-        success: function (response) {
-          /**
-           * Because Woocommerce plugin uses jQuery custom event,
-           * We also have to use jQuery to customize this event.
-           */
-          jQuery("body").trigger("wc_fragment_refresh");
-          jQuery("body").trigger("added_to_cart", [
-            response.fragments,
-            response.cart_hash,
+    this.#clearNotices();
+
+    addToCartBtn.disabled = true;
+    addToCartBtn.classList.remove("added");
+    addToCartBtn.classList.add("loading");
+
+    /**
+     * Keep the standard WooCommerce adding_to_cart event so extensions
+     * listening for it continue to receive the submitted form data.
+     */
+    jQuery("body").trigger("adding_to_cart", [
+      jQuery(addToCartBtn),
+      this.#formDataToArray(formData),
+    ]);
+
+    jQuery.ajax({
+      type: "POST",
+      url: options.ajax_url,
+      data: formData,
+      processData: false,
+      contentType: false,
+
+      success: (response) => {
+        if (response && response.error) {
+          this.#renderNotices(response.notices, form);
+
+          jQuery("body").trigger("oceanwp_ajax_add_to_cart_error", [
+            response,
             jQuery(addToCartBtn),
-            'wc_fragments_refreshed',
           ]);
 
-          if (options.cart_redirect_after_add === "yes") {
-            window.location = options.cart_url;
-            return;
-          }
-        },
-      });
-    }
+          return;
+        }
+
+        if (!response || !response.fragments) {
+          jQuery("body").trigger("oceanwp_ajax_add_to_cart_error", [
+            response,
+            jQuery(addToCartBtn),
+          ]);
+
+          return;
+        }
+
+        jQuery("body").trigger("added_to_cart", [
+          response.fragments,
+          response.cart_hash,
+          jQuery(addToCartBtn),
+        ]);
+
+        if (options.cart_redirect_after_add === "yes") {
+          window.location = options.cart_url;
+        }
+      },
+
+      error: (xhr) => {
+        jQuery("body").trigger("oceanwp_ajax_add_to_cart_error", [
+          xhr,
+          jQuery(addToCartBtn),
+        ]);
+      },
+
+      complete: () => {
+        addToCartBtn.disabled = false;
+        addToCartBtn.classList.remove("loading");
+      },
+    });
   };
 
-  #updateCart = (e, fragments, cart_hash, $button) => {
+  #updateCart = (e, fragments, cartHash, $button) => {
     const cartBtn = typeof $button === "undefined" ? false : $button.get(0);
 
     if (cartBtn) {
       cartBtn.classList.remove("loading");
       cartBtn.classList.add("added");
 
-      // Add view cart text.
       if (
         !options.is_cart &&
         !cartBtn.parentNode.querySelector(".added_to_cart")
@@ -120,40 +144,73 @@ class WooAjaxAddToCart {
     }
   };
 
-  #getFormData = (form) => {
-    form = form instanceof Element ? form : document.querySelector(form);
-    const rCRLF = /\r?\n/g;
+  #getFormData = (form, addToCartBtn) => {
+    const formData = new FormData(form);
+    const existingProductId = formData.get("product_id");
+    const buttonProductId = addToCartBtn.value;
+    const productId = existingProductId || buttonProductId;
 
-    return Array.from(form.elements).map((element, index) => {
-      const elementValue = element.value;
-      const elementName = element.name;
+    if (!productId) {
+      return false;
+    }
 
-      if (elementValue == null) {
-        return { name: elementName, value: "" };
-      } else if (element.type.toLowerCase() === "checkbox") {
-        return {
-          name: elementName,
-          value: element.checked ? elementValue : "",
-        };
-      } else if (element.type.toLowerCase() === "radio") {
-        return {
-          name: elementName,
-          value: element.checked ? elementValue : "",
-        };
-      }
+    // Prevent WooCommerce's normal form handler from processing this request too.
+    formData.delete("add-to-cart");
+    formData.set("product_id", productId);
+    formData.set("action", "oceanwp_add_cart_single_product");
 
-      return Array.isArray(elementValue)
-        ? Array.from(elementValue).map((val, index) => {
-            return {
-              name: elementName,
-              value: val.replace(rCRLF, "\r\n"),
-            };
-          })
-        : {
-            name: elementName,
-            value: elementValue.replace(rCRLF, "\r\n"),
-          };
+    return formData;
+  };
+
+  #formDataToArray = (formData) => {
+    const data = [];
+
+    formData.forEach((value, name) => {
+      data.push({ name, value });
     });
+
+    return data;
+  };
+
+  #clearNotices = () => {
+    const noticesWrapper = document.querySelector(".woocommerce-notices-wrapper");
+
+    if (noticesWrapper) {
+      noticesWrapper.innerHTML = "";
+    }
+  };
+
+  #renderNotices = (notices, form) => {
+    if (!notices) {
+      return;
+    }
+
+    let noticesWrapper = document.querySelector(".woocommerce-notices-wrapper");
+
+    if (!noticesWrapper) {
+      noticesWrapper = document.createElement("div");
+      noticesWrapper.className = "woocommerce-notices-wrapper";
+
+      const product = form.closest(".product");
+
+      if (product && product.parentNode) {
+        product.parentNode.insertBefore(noticesWrapper, product);
+      } else {
+        return;
+      }
+    }
+
+    noticesWrapper.innerHTML = notices;
+  };
+
+  #isSupportedProduct = () => {
+    const supportedProducts = Array.isArray(options.woo_ajax_supported_products)
+      ? options.woo_ajax_supported_products
+      : ["simple", "variable"];
+
+    return supportedProducts.some((productType) =>
+      this.#elements.product.classList.contains(`product-type-${productType}`)
+    );
   };
 }
 
