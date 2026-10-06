@@ -1121,9 +1121,16 @@ final class OCEANWP_Theme_Class {
 	public static function the_author_posts_link( $link ) {
 
 		// Add schema markup.
-		$schema = oceanwp_get_schema_markup( 'author_link' );
-		if ( $schema ) {
-			$link = str_replace( 'rel="author"', 'rel="author" ' . $schema, $link );
+		$author_schema      = oceanwp_get_schema_markup( 'author_link' );
+		$author_name_schema = oceanwp_get_schema_markup( 'author_name' );
+
+		if ( $author_schema ) {
+			$link = str_replace( 'rel="author"', 'rel="author"' . $author_schema, $link );
+
+			// Keep the author name inside the Person scope.
+			if ( $author_name_schema && false === strpos( $link, 'itemprop="name"' ) ) {
+				$link = preg_replace( '/(<a\b[^>]*>)(.*?)(<\/a>)/is', '$1<span' . $author_name_schema . '>$2</span>$3', $link, 1 );
+			}
 		}
 
 		// Return link.

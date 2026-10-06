@@ -1,5 +1,31 @@
 # OceanWP Changelog
 
+### _2026.10.06_ - 4.2.7
+- **Added**:: Compatibility: WooCommerce 11.2 version.
+- **Improved**:: WooCommerce: Single Product: AJAX Add to Cart handling, including product validation, stock handling, notices, cart fragments, and success/error events.
+- **Improved**:: WooCommerce: Single Product: Floating Bar: AJAX Add to Cart handling, including product validation, stock handling, notices, cart fragments, and success/error events.
+- **Improved**:: WooCommerce: Archives: Quick View: AJAX Add to Cart handling, including product validation, stock handling, notices, cart fragments, and success/error events.
+- **Improved**:: Schema Markup: Blog: Single Post: BlogPosting, headline, author, and related posts schema placement and structure.
+- **Updated**:: Template: ...woocommerce/cart/mini-cart.php
+- **Updated**:: Template: ...partials/entry/header.php
+- **Updated**:: Template: ...partials/entry/layout.php
+- **Updated**:: Template: ...partials/entry/meta.php
+- **Updated**:: Template: ...partials/entry/thumbnail-style/layout.php
+- **Updated**:: Template: ...partials/page-header.php
+- **Updated**:: Template: ...partials/single/header.php
+- **Updated**:: Template: ...partials/single/headers/header-2.php
+- **Updated**:: Template: ...partials/single/headers/header-3.php
+- **Updated**:: Template: ...partials/single/headers/header-4.php
+- **Updated**:: Template: ...partials/single/headers/header-5.php
+- **Updated**:: Template: ...partials/single/headers/header-6.php
+- **Updated**:: Template: ...partials/single/headers/header-7.php
+- **Updated**:: Template: ...partials/single/meta.php
+- **Updated**:: Template: ...partials/single/related-posts.php
+- **Fixed**:: Schema Markup: Blog: Single Post: Meta: Published Date output markup and value while preserving the configured WordPress date format.
+- **Fixed**:: Schema Markup: Blog: Single Post: Meta: Modified Date output markup and value while preserving the configured WordPress date format.
+- **Fixed**:: Schema Markup: Blog: Archive: Meta: Published Date output markup and value while preserving the configured WordPress date format.
+- **Fixed**:: Schema Markup: Blog: Archive: Meta: Modified Date output markup and value while preserving the configured WordPress date format.
+
 ### _2026.09.14_ - 4.2.6
 - **Improved**:: Customizer: Custom Templates: Gutenberg template processing and rendering.
 

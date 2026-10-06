@@ -48,7 +48,7 @@ do_action( 'ocean_before_single_post_meta' );
 		?>
 
 		<?php if ( 'author' === $section ) { ?>
-			<li class="meta-author"<?php oceanwp_schema_markup( 'author_link' ); ?>><span class="screen-reader-text"><?php esc_html_e( 'Post author:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'user' ); ?><span<?php oceanwp_schema_markup( 'author_name' ); ?>><?php the_author_posts_link(); ?></span></li>
+			<li class="meta-author"><span class="screen-reader-text"><?php esc_html_e( 'Post author:', 'oceanwp' ); ?></span><?php oceanwp_icon( 'user' ); ?><?php the_author_posts_link(); ?></li>
 		<?php } ?>
 
 		<?php if ( 'date' === $section ) { ?>
