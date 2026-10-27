@@ -5,7 +5,6 @@ class SidebarMobileMenu {
   #elements = {
     body: document.body,
   };
-  #isMenuOpen;
   #menuItemsPlusIcon;
   #sidebarToggleMenuBtn;
 
@@ -30,7 +29,6 @@ class SidebarMobileMenu {
   };
 
   #start = () => {
-    this.#isMenuOpen = false;
     this.#startSidrPlugin();
 
     if (!document.querySelector(".sidr-class-dropdown-toggle")) {
@@ -84,6 +82,12 @@ class SidebarMobileMenu {
           );
 
         self.#elements.hamburgerBtn?.classList.add("is-active");
+        self.#elements.toggleMenuBtn?.setAttribute("aria-expanded", "true");
+
+        // A previous overlay may still be fading when the menu is reopened.
+        document.querySelectorAll(".oceanwp-sidr-overlay").forEach((overlay) => {
+          overlay.remove();
+        });
 
         self.#elements.header.insertAdjacentHTML(
           "afterend",
@@ -99,7 +103,7 @@ class SidebarMobileMenu {
         );
 
         sidrLinks.forEach((link) => {
-          if (link.matches(".opl-login-li a.opl-link")) {
+          if (link.matches(".opl-login-li a.opl-link, .sidr-class-toggle-sidr-close")) {
             return;
           }
 
@@ -114,9 +118,6 @@ class SidebarMobileMenu {
             self.#onAnchorLinkClick(event, link);
           });
 
-          link.addEventListener("touchend", (event) => {
-            self.#onAnchorLinkClick(event, link);
-          });
         });
 
         overlay.addEventListener("click", (event) => {
@@ -128,6 +129,7 @@ class SidebarMobileMenu {
       },
       onClose() {
         self.#elements.hamburgerBtn?.classList.remove("is-active");
+        self.#elements.toggleMenuBtn?.setAttribute("aria-expanded", "false");
 
         document
           .querySelectorAll(".sidr-class-menu-item-has-children.active > ul")
@@ -143,11 +145,9 @@ class SidebarMobileMenu {
 
         const overlay = document.querySelector(".oceanwp-sidr-overlay");
 
-        fadeOut(overlay);
-
-        setTimeout(() => {
-          overlay.remove();
-        });
+        if (overlay) {
+          fadeOut(overlay, { duration: 150, callback: () => overlay.remove() });
+        }
       },
     });
 
@@ -205,10 +205,6 @@ class SidebarMobileMenu {
   };
 
   #setupEventListeners = () => {
-    this.#elements.hamburgerBtn?.addEventListener(
-      "click",
-      this.#onHamburgerBtnClick
-    );
     this.#elements.toggleMenuBtn?.addEventListener(
       "keydown",
       this.#onToggleMenuBtnKeydown
@@ -256,11 +252,6 @@ class SidebarMobileMenu {
     event.preventDefault();
     event.stopPropagation();
     event.currentTarget.click();
-  };
-
-  #onHamburgerBtnClick = (event) => {
-    this.#isMenuOpen = !this.#isMenuOpen;
-    event.currentTarget.setAttribute("aria-expanded", this.#isMenuOpen);
   };
 
   #onSidebarCloseMenuBtnClick = (event) => {
@@ -368,64 +359,79 @@ class SidebarMobileMenu {
     this.closeSidr();
   };
 
-  // New method to handle anchor link clicks
- #onAnchorLinkClick = (event, link) => {
-  event.preventDefault();
-  event.stopPropagation();
+  // Intercept only in-page anchors; allow ordinary links and cross-page
+  // fragment URLs to follow the browser's native navigation behavior.
+  #onAnchorLinkClick = (event, link) => {
+    const href = link.getAttribute("href");
 
-  const href = link.getAttribute("href");
+    if (!href || href === "#") {
+      return;
+    }
 
-  if (!href) {
-    return;
-  }
+    let url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (e) {
+      return;
+    }
 
-  const anchor = href.substring(href.lastIndexOf("#"));
+    if (
+      !url.hash ||
+      url.origin !== window.location.origin ||
+      url.pathname !== window.location.pathname ||
+      url.search !== window.location.search
+    ) {
+      return;
+    }
 
-  let targetElement = null;
+    let id;
+    try {
+      id = decodeURIComponent(url.hash.substring(1));
+    } catch (e) {
+      return;
+    }
 
-  try {
-    targetElement = document.querySelector(anchor);
-  } catch (e) {
-    return;
-  }
+    const targetElement = document.getElementById(id);
+    if (!targetElement) {
+      return;
+    }
 
-  if (!targetElement) {
-    return;
-  }
+    event.preventDefault();
+    event.stopPropagation();
+    this.closeSidr();
 
-  this.closeSidr();
+    setTimeout(() => {
+      const stickyHeader = document.querySelector(
+        ".oceanwp-sticky-header-holder .has-sticky-mobile"
+      );
+      const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
 
-  setTimeout(() => {
-    const stickyHeader = document.querySelector(
-      ".oceanwp-sticky-header-holder .has-sticky-mobile"
-    );
-    const headerHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+      const topBarStickyWrapper = document.querySelector(
+        ".oceanwp-sticky-top-bar-holder"
+      );
+      const topBarStickyHeight = topBarStickyWrapper
+        ? topBarStickyWrapper.offsetHeight
+        : 0;
 
-    const topBarStickyWrapper = document.querySelector(
-      ".oceanwp-sticky-top-bar-holder"
-    );
-    const topBarStickyHeight = topBarStickyWrapper
-      ? topBarStickyWrapper.offsetHeight
-      : 0;
+      const offset =
+        targetElement.getBoundingClientRect().top +
+        window.scrollY -
+        headerHeight -
+        topBarStickyHeight;
 
-    const offset =
-      targetElement.getBoundingClientRect().top +
-      window.scrollY -
-      headerHeight -
-      topBarStickyHeight;
+      const reduceMotion = window.matchMedia?.(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
 
-    window.scrollTo({
-      top: offset,
-      behavior: "smooth",
-    });
-  }, 50);
-};
+      window.scrollTo({
+        top: offset,
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
+    }, 50);
+  };
 
   closeSidr = () => {
-    setTimeout(() => {
-      sidr.close("sidr");
-      this.#elements.hamburgerBtn?.classList.remove("is-active");
-    }, 50);
+    sidr.close("sidr");
   };
 
   #isActivationKey = (event) => {

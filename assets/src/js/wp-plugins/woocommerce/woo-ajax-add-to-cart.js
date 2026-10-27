@@ -100,6 +100,10 @@ class WooAjaxAddToCart {
           return;
         }
 
+        if (typeof wc_add_to_cart_params === "undefined") {
+          this.#updateFragments(response.fragments);
+        }
+
         jQuery("body").trigger("added_to_cart", [
           response.fragments,
           response.cart_hash,
@@ -123,6 +127,18 @@ class WooAjaxAddToCart {
         addToCartBtn.classList.remove("loading");
       },
     });
+  };
+
+  #updateFragments = (fragments) => {
+    if (!fragments) {
+      return;
+    }
+
+    jQuery.each(fragments, (selector, html) => {
+      jQuery(selector).replaceWith(html);
+    });
+
+    jQuery(document.body).trigger("wc_fragments_loaded");
   };
 
   #updateCart = (e, fragments, cartHash, $button) => {

@@ -1,5 +1,12 @@
 # OceanWP Changelog
 
+### _2026.10.26_ - 4.2.8
+- **Updated**:: Template: ...partials/page-header-subheading.php
+- **Fixed**:: Breadcrumbs: Breadcrumbs Trail: The Title Item: The breadcrumbs' title item gets cut off on responsive screens if the title is too long.
+- **Fixed**:: Customizer: Small typography issue in the Breadcrumbs panel.
+- **Fixed**:: Header: Mobile: Sidebar Type: Mobile menu doesn't close on some mobile devices.
+- **Fixed**:: Security: Potential vulnerability patched. Patchstack report from October 22, 2026.
+
 ### _2026.10.06_ - 4.2.7
 - **Added**:: Compatibility: WooCommerce 11.2 version.
 - **Improved**:: WooCommerce: Single Product: AJAX Add to Cart handling, including product validation, stock handling, notices, cart fragments, and success/error events.

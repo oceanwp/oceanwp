@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: OceanWP 4.2.7\n"
+"Project-Id-Version: OceanWP 4.2.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/oceanwp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-06T04:21:50+00:00\n"
+"POT-Creation-Date: 2026-10-26T09:18:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: oceanwp\n"
@@ -6610,7 +6610,7 @@ msgid "Using the [oceanwp_breadcrumb] shortcode, you can display breadcrumbs at 
 msgstr ""
 
 #: inc/customizer/options/page-settings.php:2049
-msgid "OceanWP enables you to customize Breadcrumbs visbility and styling for individual pages, giving you more control over website appearance."
+msgid "OceanWP enables you to customize Breadcrumbs visibility and styling for individual pages, giving you more control over website appearance."
 msgstr ""
 
 #: inc/customizer/options/page-settings.php:2069

@@ -148,14 +148,14 @@ body.breadcrumbs-position-default .page-header-title {
   right: 0;
   top: 50%;
   max-width: 50%;
-  height: 32px;
+  height: auto;
   line-height: 32px;
   margin-top: -16px;
   font-size: 13px;
   color: #6f6f6f;
   font-weight: normal;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;
+  overflow: visible;
 
   ol {
     margin: 0;
@@ -163,7 +163,8 @@ body.breadcrumbs-position-default .page-header-title {
     list-style: none;
 
     li {
-      display: inline-block;
+      display: inline;
+      overflow-wrap: anywhere;
 
       .breadcrumb-sep {
         margin: 0 6px;

@@ -69,10 +69,10 @@ class OceanWP_Colors_CSS {
 		$breadcrumbs_link_color_hover  = get_theme_mod( 'ocean_breadcrumbs_link_color_hover', '#13aff0' );
 
 		// Meta.
-		$meta_breadcrumbs_text_color       = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_color', true );
-		$meta_breadcrumbs_seperator_color  = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_separator_color', true );
-		$meta_breadcrumbs_link_color       = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_color', true );
-		$meta_breadcrumbs_link_color_hover = get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_hover_color', true );
+		$meta_breadcrumbs_text_color       = sanitize_hex_color( get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_color', true ) );
+		$meta_breadcrumbs_seperator_color  = sanitize_hex_color( get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_separator_color', true ) );
+		$meta_breadcrumbs_link_color       = sanitize_hex_color( get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_color', true ) );
+		$meta_breadcrumbs_link_color_hover = sanitize_hex_color( get_post_meta( oceanwp_post_id(), 'ocean_breadcrumbs_links_hover_color', true ) );
 
 
 		$typography_body             = get_theme_mod('body_typography');
@@ -281,17 +281,19 @@ class OceanWP_Colors_CSS {
 
 		// Meta breadcrumbs seperator color.
 		if ( ! empty( $meta_breadcrumbs_seperator_color ) ) {
-			$css .= '.site-breadcrumbs ul li .breadcrumb-sep{color:' . $meta_breadcrumbs_seperator_color . ';}';
+			$css .= '.site-breadcrumbs ul li .breadcrumb-sep, .site-breadcrumbs ol li .breadcrumb-sep{color:' . $meta_breadcrumbs_seperator_color . ';}';
 		}
 
 		// Meta breadcrumbs link color.
 		if ( ! empty( $meta_breadcrumbs_link_color ) ) {
 			$css .= '.site-breadcrumbs a, .background-image-page-header .site-breadcrumbs a{color:' . $meta_breadcrumbs_link_color . ';}';
+			$css .= '.site-breadcrumbs a .owp-icon use, .background-image-page-header .site-breadcrumbs a .owp-icon use{stroke:' . $meta_breadcrumbs_link_color . ';}';
 		}
 
 		// Meta breadcrumbs link hover color.
 		if ( ! empty( $meta_breadcrumbs_link_color_hover ) ) {
 			$css .= '.site-breadcrumbs a:hover, .background-image-page-header .site-breadcrumbs a:hover{color:' . $meta_breadcrumbs_link_color_hover . ';}';
+			$css .= '.site-breadcrumbs a:hover .owp-icon use, .background-image-page-header .site-breadcrumbs a:hover .owp-icon use{stroke:' . $meta_breadcrumbs_link_color_hover . ';}';
 		}
 
 		if ( ! empty( $typography_body_color ) && '#929292' != $typography_body_color ) {
