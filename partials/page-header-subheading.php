@@ -15,7 +15,13 @@ if ( $subheading = oceanwp_get_page_subheading() ) :
 	?>
 
 	<div class="clr page-subheading">
-		<?php echo do_shortcode( $subheading ); ?>
+		<?php
+		if ( is_search() ) {
+			echo wp_kses_post( $subheading );
+		} else {
+			echo do_shortcode( $subheading );
+		}
+		?>
 	</div><!-- .page-subheading -->
 
 <?php endif; ?>

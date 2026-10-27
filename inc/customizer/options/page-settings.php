@@ -2046,7 +2046,7 @@ $options = [
 				'active_callback' => 'ocean_is_oe_active',
 				'links'           => [
 					'link_one' => [
-						'label'  => esc_html__( 'OceanWP enables you to customize Breadcrumbs visbility and styling for individual pages, giving you more control over website appearance.', 'oceanwp' ),
+						'label'  => esc_html__( 'OceanWP enables you to customize Breadcrumbs visibility and styling for individual pages, giving you more control over website appearance.', 'oceanwp' ),
 						'url'    => esc_url( 'https://docs.oceanwp.org/article/873-breadcrumbs-oceanwp-settings' ),
 						'target' => '_blank'
 					]
