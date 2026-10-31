@@ -38,31 +38,31 @@ do_action( 'ocean_before_single_post_header_meta' );
 		?>
 
 		<?php if ( 'author' === $section ) { ?>
-			<li class="meta-author" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-written-by' ) ); ?>"><?php oceanwp_icon( 'user' ); ?><?php ocean_get_post_author( array( 'prefix' => '', 'aria_prefix' => '' ) ); ?></li>
+			<li class="meta-author" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-written-by', false ) ); ?>"><?php oceanwp_icon( 'user' ); ?><?php ocean_get_post_author( array( 'prefix' => '', 'aria_prefix' => '' ) ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'date' === $section ) { ?>
-			<li class="meta-date" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-wai-published-on' ) ); ?>"><?php oceanwp_icon( 'date' ); ?><?php ocean_get_post_date( array( 'prefix' => '' ) ); ?></li>
+			<li class="meta-date" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-published-on', false ) ); ?>"><?php oceanwp_icon( 'date' ); ?><?php ocean_get_post_date( array( 'prefix' => '' ) ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'mod-date' === $section && true === $display_mod_date ) { ?>
-			<li class="meta-mod-date" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-wai-updated-on' ) ); ?>"><?php oceanwp_icon( 'm_date' ); ?><?php ocean_get_post_modified_date( array( 'prefix' => '' ) ); ?></li>
+			<li class="meta-mod-date" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-updated-on', false ) ); ?>"><?php oceanwp_icon( 'm_date' ); ?><?php ocean_get_post_modified_date( array( 'prefix' => '' ) ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'categories' === $section && has_category() ) { ?>
-			<li class="meta-cat" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-posted-in' ) ); ?>"><?php oceanwp_icon( 'category' ); ?><?php ocean_get_post_categories( array( 'prefix' => '' ) ); ?></li>
+			<li class="meta-cat" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-posted-in', false ) ); ?>"><?php oceanwp_icon( 'category' ); ?><?php ocean_get_post_categories( array( 'prefix' => '' ) ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'tags' === $section && ! empty( ocean_get_post_tags( '', false ) ) ) { ?>
-			<li class="meta-tag" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-tagged-as' ) ); ?>"><?php oceanwp_icon( 'hashtag' ); ?><?php ocean_get_post_tags( array( 'prefix' => '' ) ); ?></li>
+			<li class="meta-tag" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-tagged-as', false ) ); ?>"><?php oceanwp_icon( 'hashtag' ); ?><?php ocean_get_post_tags( array( 'prefix' => '' ) ); ?></li>
 		<?php } ?>
 
 		<?php if ( 'reading-time' === $section ) { ?>
-			<li class="meta-rt" aria-label="<?php esc_attr( oceanwp_theme_strings( 'owp-string-wai-reading-time' ) ); ?>"><?php oceanwp_icon( 'r_time' ); ?><?php ocean_get_post_reading_time(); ?></li>
+			<li class="meta-rt" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-reading-time', false ) ); ?>"><?php oceanwp_icon( 'r_time' ); ?><?php ocean_get_post_reading_time(); ?></li>
 		<?php } ?>
 
 		<?php if ( 'comments' === $section && comments_open() && ! post_password_required() ) { ?>
-			<li class="meta-comments" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-comments' ) ); ?>"><?php oceanwp_icon( 'comment' ); ?><?php comments_popup_link( esc_html__( '0 Comments', 'oceanwp' ), esc_html__( '1 Comment', 'oceanwp' ), esc_html__( '% Comments', 'oceanwp' ), 'comments-link' ); ?></li>
+			<li class="meta-comments" aria-label="<?php echo esc_attr( oceanwp_theme_strings( 'owp-string-wai-comments', false ) ); ?>"><?php oceanwp_icon( 'comment' ); ?><?php comments_popup_link( esc_html__( '0 Comments', 'oceanwp' ), esc_html__( '1 Comment', 'oceanwp' ), esc_html__( '% Comments', 'oceanwp' ), 'comments-link' ); ?></li>
 		<?php } ?>
 
 	<?php } ?>
