@@ -752,7 +752,7 @@ class OceanWP_Breadcrumb_Trail {
 			$ancestor = get_term( $ancestor, $taxonomy );
 
 			if ( ! is_wp_error( $ancestor ) && $ancestor ) {
-				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $ancestor ) ), $ancestor->name );
+				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $ancestor ) ), esc_html( $ancestor->name ) );
 			}
 		}
 	}
@@ -831,7 +831,7 @@ class OceanWP_Breadcrumb_Trail {
 				if ( $terms ) {
 					$main_term = apply_filters( 'woocommerce_breadcrumb_main_term', $terms[0], $terms );
 					$this->term_ancestors( $main_term->term_id, $products_tax );
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $main_term ) ), $main_term->name );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $main_term ) ), esc_html( $main_term->name ) );
 				}
 
 			} else {
@@ -999,7 +999,7 @@ class OceanWP_Breadcrumb_Trail {
 		// Add the term name to the trail end.
 		$term_link = get_term_link( $term, $term->taxonomy );
 		if ( ! is_wp_error( $term_link ) && ( is_paged() || true === $this->args['show_title'] ) ) {
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( $term_link ), single_term_title( '', false ) );
+			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( $term_link ), esc_html( single_term_title( '', false ) ) );
 		}
 	}
 
@@ -1427,7 +1427,7 @@ class OceanWP_Breadcrumb_Trail {
 			}
 
 			// Add the category archive link to the trail.
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), $term->name );
+			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), esc_html( $term->name ) );
 		}
 	}
 
@@ -1511,7 +1511,7 @@ class OceanWP_Breadcrumb_Trail {
 			$term = get_term( $term_id, $taxonomy );
 
 			// Add the formatted term link to the array of parent terms.
-			$parents[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), $term->name );
+			$parents[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), esc_html( $term->name ) );
 
 			// Set the parent term's parent as the parent ID.
 			$term_id = $term->parent;

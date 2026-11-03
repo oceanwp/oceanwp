@@ -1940,7 +1940,7 @@ if ( ! class_exists( 'OceanWP_WooCommerce_Config' ) ) {
 				$image        = wp_get_attachment_url( $thumbnail_id );
 
 				if ( $image ) {
-					echo '<div class="category-image"><img src="' . $image . '" alt="' . $cat->name . '" /></div>';
+					echo '<div class="category-image"><img src="' . esc_url( $image ) . '" alt="' . esc_attr( $cat->name ) . '" /></div>';
 				}
 			}
 		}

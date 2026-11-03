@@ -191,12 +191,22 @@ if ( ! function_exists( 'oceanwp_edd_archive_elements_positioning' ) ) {
 if ( ! function_exists( 'oceanwp_edd_terms_list' ) ) {
 
 	function oceanwp_edd_terms_list( $taxonomy_name ) {
-		$terms = get_terms( $taxonomy_name );
-		?>
-		<?php foreach ( $terms as $term ) : ?>
-		<a href="<?php echo esc_attr( get_term_link( $term, $taxonomy_name ) ); ?>" title="<?php echo $term->name; ?>"><?php echo $term->name; ?></a>
-	<?php endforeach; ?>
-		<?php
+		$terms = get_terms( array( 'taxonomy' => $taxonomy_name ) );
+
+		if ( is_wp_error( $terms ) || empty( $terms ) ) {
+			return;
+		}
+
+		foreach ( $terms as $term ) {
+			$term_link = get_term_link( $term, $taxonomy_name );
+
+			if ( is_wp_error( $term_link ) ) {
+				continue;
+			}
+			?>
+			<a href="<?php echo esc_url( $term_link ); ?>" title="<?php echo esc_attr( $term->name ); ?>"><?php echo esc_html( $term->name ); ?></a>
+			<?php
+		}
 	}
 }
 
