@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-29T09:01:08+00:00\n"
+"POT-Creation-Date: 2026-11-10T04:21:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: oceanwp\n"
@@ -10583,16 +10583,11 @@ msgstr ""
 msgid "Landing Page"
 msgstr ""
 
-#. translators: %s is the product name
-#: woocommerce/cart/mini-cart.php:92
-msgid "Remove this item"
-msgstr ""
-
-#: woocommerce/cart/mini-cart.php:132
+#: woocommerce/cart/mini-cart.php:134
 msgid "No products in the cart."
 msgstr ""
 
-#: woocommerce/cart/mini-cart.php:141
+#: woocommerce/cart/mini-cart.php:143
 msgid "Add Products"
 msgstr ""
 

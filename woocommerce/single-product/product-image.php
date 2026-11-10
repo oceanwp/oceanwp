@@ -61,7 +61,7 @@ $wrapper_classes   = apply_filters(
 	'woocommerce_single_product_image_gallery_classes',
 	array(
 		'woocommerce-product-gallery',
-		'woocommerce-product-gallery--' . ( $post_thumbnail_id ? 'with-images' : 'without-images' ),
+		'woocommerce-product-gallery--' . ( $has_media ? 'with-images' : 'without-images' ),
 		'woocommerce-product-gallery--columns-' . absint( $columns ),
 		'images',
 	)
@@ -85,7 +85,7 @@ $wrapper_classes   = apply_filters(
 				true
 			);
 
-		} elseif ( $post_thumbnail_id ) {
+		} elseif ( $has_media && $first_media_id ) {
 
 			/*
 			 * Works with both older WooCommerce and 11.1+.
