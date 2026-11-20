@@ -14,7 +14,7 @@
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 11.2.0
+ * @version 11.2.2
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -83,16 +83,18 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 								}
 								?>
 
-								<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+								<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', esc_html( $cart_item['quantity'] ), $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
 								<?php
 									echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-										'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
+										'<a role="button" href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s" data-success_message="%s">&times;</a>',
 										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 										/* translators: %s is the product name */
-										__( 'Remove this item', 'oceanwp' ),
+										esc_attr( sprintf( __( 'Remove %s from cart', 'woocommerce' ), wp_strip_all_tags( $product_name ) ) ),
 										esc_attr( $product_id ),
 										esc_attr( $cart_item_key ),
-										esc_attr( $_product->get_sku() )
+										esc_attr( $_product->get_sku() ),
+										/* translators: %s is the product name */
+										esc_attr( sprintf( __( '&ldquo;%s&rdquo; has been removed from your cart', 'woocommerce' ), wp_strip_all_tags( $product_name ) ) )
 									),
 									$cart_item_key
 								);

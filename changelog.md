@@ -1,5 +1,21 @@
 # OceanWP Changelog
 
+### _2026.11.20_ - 4.2.9
+- **Added**:: Compatibility: WooCommerce 11.3.1 version.
+- **Improved**:: WooCommerce: Product Gallery: Product media detection to support products featuring gallery images or other media without a designated featured image.
+- **Improved**:: WooCommerce: Category Images: Category image URL handling and ALT text.
+- **Improved**:: Easy Digital Downloads: Categories: Category link generation.
+- **Improved**:: Easy Digital Downloads: Excerpts: Content filtering for download excerpts.
+- **Improved**:: Easy Digital Downloads: Images: URL handling for download images and default placeholders.
+- **Improved**:: Breadcrumbs: Handling of taxonomy term names: category archives, hierarchical taxonomies, and WooCommerce product breadcrumbs.
+- **Improved**:: Script: Lightbox: Image and gallery functionality.
+- **Updated**:: Template: ...woocommerce/cart/mini-cart.php
+- **Updated**:: Template: ...woocommerce/single-product/product-image.php
+- **Updated**:: Template: ...partials/edd/shortcode-content-excerpt.php
+- **Updated**:: Template: ...partials/edd/shortcode-content-image.php
+- **Fixed**:: Security: Potential vulnerability patched. VulnCheck report from October 29, 2026.
+- **Fixed**:: Security: Potential vulnerability patched. Wordfence report from November 14, 2026.
+
 ### _2026.10.26_ - 4.2.8
 - **Updated**:: Template: ...partials/page-header-subheading.php
 - **Fixed**:: Breadcrumbs: Breadcrumbs Trail: The Title Item: The breadcrumbs' title item gets cut off on responsive screens if the title is too long.
