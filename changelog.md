@@ -1,13 +1,14 @@
 # OceanWP Changelog
 
-### _2026.XX.XX_ - 4.2.9
-- **Added**:: Compatibility: WooCommerce 11.2.2 version.
+### _2026.11.20_ - 4.2.9
+- **Added**:: Compatibility: WooCommerce 11.3.1 version.
 - **Improved**:: WooCommerce: Product Gallery: Product media detection to support products featuring gallery images or other media without a designated featured image.
 - **Improved**:: WooCommerce: Category Images: Category image URL handling and ALT text.
 - **Improved**:: Easy Digital Downloads: Categories: Category link generation.
 - **Improved**:: Easy Digital Downloads: Excerpts: Content filtering for download excerpts.
 - **Improved**:: Easy Digital Downloads: Images: URL handling for download images and default placeholders.
 - **Improved**:: Breadcrumbs: Handling of taxonomy term names: category archives, hierarchical taxonomies, and WooCommerce product breadcrumbs.
+- **Improved**:: Script: Lightbox: Image and gallery functionality.
 - **Updated**:: Template: ...woocommerce/cart/mini-cart.php
 - **Updated**:: Template: ...woocommerce/single-product/product-image.php
 - **Updated**:: Template: ...partials/edd/shortcode-content-excerpt.php

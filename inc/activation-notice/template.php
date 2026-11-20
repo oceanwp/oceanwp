@@ -183,12 +183,12 @@ function oceancp_output_ocean_extra_notice() {
 function ocean_first_notice_content() {
 	?>
 
-	<span class="notice-subheading"><?php esc_html_e( 'Thanks for choosing OceanWP. Excellent choice! &#x1F31F;', 'oceanwp' ); ?></span>
-	<h2><?php esc_html_e( 'It\'s like Magic! Start Your Website in Minutes &#x2728;', 'oceanwp' ); ?></h2>
+	<span class="notice-subheading"><?php esc_html_e( 'Thanks for choosing OceanWP!', 'oceanwp' ); ?></span>
+	<h2><?php esc_html_e( 'Launch your website in minutes &#x2728;', 'oceanwp' ); ?></h2>
 	<p>
-		<?php esc_html_e( 'Save time and don\'t worry about design.', 'oceanwp' ); ?><br>
-		<?php esc_html_e( 'Launch the Setup Wizard, pick a stunning full site template, and watch your site come to life effortlessly.', 'oceanwp' ); ?><br>
-		<?php esc_html_e( 'All parts are customizable and adjustable for you to make them your very own.', 'oceanwp' ); ?><br>
+		<?php esc_html_e( 'Whatever you\'re building, there\'s a template for it.', 'oceanwp' ); ?><br>
+		<?php esc_html_e( 'Browse our huge library of free and Pro website templates for almost any kind of site, from blogs and portfolios to online stores and businesses. Import one in a few clicks, then edit anything you like to fit your needs: text, images, colors and layout.', 'oceanwp' ); ?><br>
+		<?php esc_html_e( 'No design skills needed.', 'oceanwp' ); ?><br>
 	</p>
 
 	<?php
