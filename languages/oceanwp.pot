@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T04:21:27+00:00\n"
+"POT-Creation-Date: 2026-11-20T15:47:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: oceanwp\n"
@@ -269,23 +269,23 @@ msgid "Dismiss this notice."
 msgstr ""
 
 #: inc/activation-notice/template.php:186
-msgid "Thanks for choosing OceanWP. Excellent choice! &#x1F31F;"
+msgid "Thanks for choosing OceanWP!"
 msgstr ""
 
 #: inc/activation-notice/template.php:187
-msgid "It's like Magic! Start Your Website in Minutes &#x2728;"
+msgid "Launch your website in minutes &#x2728;"
 msgstr ""
 
 #: inc/activation-notice/template.php:189
-msgid "Save time and don't worry about design."
+msgid "Whatever you're building, there's a template for it."
 msgstr ""
 
 #: inc/activation-notice/template.php:190
-msgid "Launch the Setup Wizard, pick a stunning full site template, and watch your site come to life effortlessly."
+msgid "Browse our huge library of free and Pro website templates for almost any kind of site, from blogs and portfolios to online stores and businesses. Import one in a few clicks, then edit anything you like to fit your needs: text, images, colors and layout."
 msgstr ""
 
 #: inc/activation-notice/template.php:191
-msgid "All parts are customizable and adjustable for you to make them your very own."
+msgid "No design skills needed."
 msgstr ""
 
 #: inc/activation-notice/template.php:200
